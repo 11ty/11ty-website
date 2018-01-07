@@ -20,6 +20,6 @@
     "eleventy-cli": "^0.1.9"
   },
   "dependencies": {
-    "@11ty/logo": "^1.0.1"
+    "@11ty/logo": "^1.0.3"
   }
 }
