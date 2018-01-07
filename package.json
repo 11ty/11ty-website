@@ -1,0 +1,25 @@
+{
+  "name": "@11ty/website",
+  "version": "1.0.0",
+  "description": "The website of 11ty.io",
+  "main": "_site/index.html",
+  "scripts": {
+    "build": "npx eleventy --formats=html && cp node_modules/@11ty/logo/logo.png _site/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/11ty/11ty.io.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/11ty/11ty.io/issues"
+  },
+  "homepage": "https://github.com/11ty/11ty.io#readme",
+  "devDependencies": {
+    "eleventy-cli": "^0.1.9"
+  },
+  "dependencies": {
+    "@11ty/logo": "^1.0.1"
+  }
+}
