@@ -1,6 +1,6 @@
 {
   "name": "@11ty/website",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The website of 11ty.io",
   "main": "_site/index.html",
   "scripts": {
