@@ -3,7 +3,7 @@
 }
 body {
 	font-family: sans-serif;
-	max-width: 40em;
+	max-width: 42em;
 	padding: 1rem;
 	margin: 0 auto;
 }
@@ -28,12 +28,15 @@ a:visited {
 .elv-hed {
 	margin-top: 1.5em;
 	margin-bottom: .25em;
+	text-align: center;
 }
 
 /* Main */
 main {
 	text-align: left;
 	font-size: 1em; /* 16px /16 */
+}
+main:not(:empty) {
 	border-top: 1px solid #bbb;
 }
 main h2 {
@@ -100,4 +103,9 @@ pre + .note {
 	margin-top: -2.875em; /* 46px /16 */
 	margin-bottom: 2.5em; /* 40px /16 */
 	text-align: right;
+}
+
+/* Widows */
+.widow {
+	white-space: nowrap;
 }
