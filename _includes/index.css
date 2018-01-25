@@ -1,0 +1,103 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: sans-serif;
+	max-width: 40em;
+	padding: 1rem;
+	margin: 0 auto;
+}
+header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 90vh;
+	color: #222;
+}
+img {
+	border: 0;
+	max-height: 50vh;
+}
+a,
+a:visited {
+	color: #222;
+}
+
+/* Header */
+.elv-hed {
+	margin-top: 1.5em;
+	margin-bottom: .25em;
+}
+
+/* Main */
+main {
+	text-align: left;
+	font-size: 1em; /* 16px /16 */
+	border-top: 1px solid #bbb;
+}
+main h2 {
+	font-size: 2em; /* 32px /16 */
+}
+
+@media (min-width: 31.25em) { /* 500px */
+	main {
+		font-size: 1.5em; /* 24px /16 */
+	}
+	main h2 {
+		font-size: 1.333333333333em; /* 32px /24 */
+	}
+}
+
+/* Lists */
+ul {
+	list-style: none;
+	width: 100%;
+	padding: 0;
+}
+li {
+	padding: .25em 0;
+}
+@media (min-width: 28.125em ) { /* 450px */
+	ul {
+		width: auto;
+	}
+	li {
+		float: left;
+	}
+	li a {
+		line-height: 2;
+	}
+	li:not(:last-child) a:not(:hover) {
+		text-decoration: none;
+	}
+	li:not(:first-child):before {
+		content: "";
+		border-left: 1px solid #ccc;
+		padding: 0 0 0 1em;
+		margin-left: 1em;
+	}
+}
+
+/* Syntax highlighting and Code blocks */
+pre {
+	display: block;
+	padding: .5em;
+	margin: 1em -1rem 2em -1rem;
+	overflow-x: auto;
+}
+pre,
+code {
+	font-family: Monaco, monospace;
+	background-color: #eee;
+}
+code.terminal:before {
+	content: "$ ";
+	color: rgb(50, 205, 50);
+}
+pre + .note {
+	font-size: 0.6666666666667em; /* 16px /24 */
+	margin-top: -2.875em; /* 46px /16 */
+	margin-bottom: 2.5em; /* 40px /16 */
+	text-align: right;
+}

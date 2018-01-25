@@ -4,7 +4,8 @@
   "description": "The website of 11ty.io",
   "main": "_site/index.html",
   "scripts": {
-    "build": "npx eleventy --formats=html && cp node_modules/@11ty/logo/logo.png _site/"
+    "assets": "cp node_modules/@11ty/logo/logo.png .",
+    "build": "npx eleventy --formats=html,png"
   },
   "repository": {
     "type": "git",
@@ -17,9 +18,9 @@
   },
   "homepage": "https://github.com/11ty/11ty.io#readme",
   "devDependencies": {
-    "eleventy-cli": "^0.1.9"
+    "@11ty/eleventy": "^0.2.10"
   },
   "dependencies": {
-    "@11ty/logo": "^1.0.3"
+    "@11ty/logo": "^1.0.4"
   }
 }
