@@ -61,20 +61,22 @@ ul {
 li {
 	padding: .25em 0;
 }
+
+/* Navigation */
 @media (min-width: 28.125em ) { /* 450px */
-	ul {
+	.elv-nav {
 		width: auto;
 	}
-	li {
+	.elv-nav-li {
 		float: left;
 	}
-	li a {
+	.elv-nav-li a {
 		line-height: 2;
 	}
-	li:not(:last-child) a:not(:hover) {
+	.elv-nav-li:not(:last-child) a:not(:hover) {
 		text-decoration: none;
 	}
-	li:not(:first-child):before {
+	.elv-nav-li:not(:first-child):before {
 		content: "";
 		border-left: 1px solid #ccc;
 		padding: 0 0 0 1em;
@@ -108,4 +110,17 @@ pre + .note {
 /* Widows */
 .widow {
 	white-space: nowrap;
+}
+
+/* Main Content */
+main li {
+	color: #777;
+}
+main li ul {
+	margin: .5em 0;
+	padding-left: 1em;
+}
+main a[href],
+main .elv-b {
+	color: #222;
 }
