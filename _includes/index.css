@@ -1,3 +1,11 @@
+@font-face {
+	font-family: BenchNine;
+  src: url(css/fonts/BenchNine-Bold-subset.woff2) format("woff2"), url(css/fonts/BenchNine-Bold-subset.zopfli.woff) format("woff");
+	font-weight: 700;
+  font-display: swap;
+  unicode-range: U+20-7E,U+2014,U+2019;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -24,8 +32,18 @@ a:visited {
 	color: #222;
 }
 
+/* Web Fonts */
+.benchnine h1,
+.benchnine h2,
+.benchnine h3,
+.benchnine h4,
+.benchnine h5 {
+	font-family: BenchNine;
+}
+
 /* Header */
 .elv-hed {
+	font-size: 3em;
 	margin-top: 1.5em;
 	margin-bottom: .25em;
 	text-align: center;
@@ -34,22 +52,17 @@ a:visited {
 /* Main */
 main {
 	text-align: left;
-	font-size: 1em; /* 16px /16 */
+	font-size: 1.125em; /* 18px /16 */
 }
 main:not(:empty) {
 	border-top: 1px solid #bbb;
 }
 main h2 {
-	font-size: 2em; /* 32px /16 */
+	font-size: 1.777777777778em; /* 32px /18 */
+	margin: 1em 0 .25em;
 }
-
-@media (min-width: 31.25em) { /* 500px */
-	main {
-		font-size: 1.5em; /* 24px /16 */
-	}
-	main h2 {
-		font-size: 1.333333333333em; /* 32px /24 */
-	}
+.benchnine main h2 {
+	font-size: 2em; /* 36px /18 */
 }
 
 /* Lists */

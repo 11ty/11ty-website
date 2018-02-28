@@ -17,4 +17,11 @@ layout: layouts/base.njk
 
 <main>{{ layoutContent | safe }}</main>
 
+<script>
+if( "fonts" in document ) {
+	document.fonts.load("1em BenchNine").then(function() {
+		document.documentElement.classList.add("benchnine");
+	})
+}
+</script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
