@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/11ty/11ty.io#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.2.14"
+    "@11ty/eleventy": "^0.2.15"
   },
   "dependencies": {
     "@11ty/logo": "^1.0.4"
