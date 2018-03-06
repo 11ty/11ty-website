@@ -2,6 +2,8 @@
 layout: layouts/main.njk
 ---
 
+## Latest version: {{ version.version }}
+
 ## Documentation
 
 * [Usage and Documentation](https://github.com/11ty/eleventy/blob/master/README.md) on GitHub
