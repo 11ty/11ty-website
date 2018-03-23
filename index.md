@@ -2,7 +2,7 @@
 layout: layouts/main.njk
 ---
 
-## Latest version: {{ version.version }}
+<h2 class="news">🚨🚨 <a href="https://www.zachleat.com/web/eleventy-google-award/">Eleventy wins Google Open Source Award </a> 🚨🚨</h2>
 
 ## Documentation
 

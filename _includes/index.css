@@ -137,3 +137,17 @@ main a[href],
 main .elv-b {
 	color: #222;
 }
+
+/* Version */
+.latestversion {
+	font-size: 2em;
+	margin-top: 0;
+}
+.benchnine .latestversion {
+	font-family: BenchNine;
+}
+
+/* News */
+.news {
+	text-align: center;
+}
