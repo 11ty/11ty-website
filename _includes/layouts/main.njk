@@ -11,7 +11,7 @@ layout: layouts/base.njk
 		<li class="elv-nav-li"><a href="https://medium.com/@11ty">Medium</a></li>
 		<li class="elv-nav-li">By <a href="https://twitter.com/zachleat/">zachleat</a></li>
 	</ul>
-	<h2 class="latestversion">Version {{ version.version }}</h2>
+	<h2 class="latestversion">Version {{ pkg.devDependencies["@11ty/eleventy"].substr(1) }}</h2>
 	<a class="github-button" href="https://github.com/11ty/eleventy" data-size="large" data-show-count="true" aria-label="Star 11ty/eleventy on GitHub">Star</a>
 	<p>
 		Starring Eleventy on GitHub will increase our project’s visibility on <a href="https://www.staticgen.com/">staticgen.com</a>, a big giant list of static site generators.
@@ -24,7 +24,7 @@ layout: layouts/base.njk
 if( "fonts" in document ) {
 	document.fonts.load("1em BenchNine").then(function() {
 		document.documentElement.classList.add("benchnine");
-	})
+	});
 }
 </script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>

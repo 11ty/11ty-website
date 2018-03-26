@@ -2,7 +2,7 @@
 layout: layouts/main.njk
 ---
 
-<h2 class="news">🚨🚨 <a href="https://www.zachleat.com/web/eleventy-google-award/">Eleventy wins Google Open Source Award </a> 🚨🚨</h2>
+<h2 class="news">🚨 <a href="https://www.zachleat.com/web/eleventy-google-award/">Eleventy wins Google Open Source Award </a> 🚨</h2>
 
 ## Documentation
 
