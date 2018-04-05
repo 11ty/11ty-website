@@ -1,1 +1,0 @@
-echo "{\"version\":\"v$(npx eleventy --version)\"}" > _data/version.json
