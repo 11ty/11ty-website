@@ -21,7 +21,7 @@ layout: layouts/main.njk
 
 ## Sites Built with Eleventy
 
-* [fontspeed](https://www.fontspeed.io/), a faster way to load web fonts.
-* [11ty.io](https://www.11ty.io/) _(this web site)_
-* [zachleat.com](https://www.zachleat.com/web/)
+{% for site in eleventysites -%}
+* [{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}
+{% endfor -%}
 * [_Have another to add?_](https://github.com/11ty/11ty.io/issues/new?title=I+built+a+site+with+Eleventy!)
