@@ -20,6 +20,8 @@ layout: layouts/main.njk
 	* [Level 2—Adding Filters](https://medium.com/@11ty/making-a-simple-web-site-with-eleventy-level-2-1b356183377c)
 * [Import your Disqus Comments into Eleventy](https://github.com/11ty/eleventy-import-disqus/blob/master/README.md) on GitHub
 
+_See all [Eleventy blog posts](https://www.zachleat.com/web/eleventy/)._
+
 ## Sites Built with Eleventy
 
 {% for site in eleventysites -%}
