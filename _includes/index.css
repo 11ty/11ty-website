@@ -56,6 +56,9 @@ main {
 }
 main:not(:empty) {
 	border-top: 1px solid #bbb;
+	border-bottom: 1px solid #bbb;
+	padding-bottom: 3em;
+	margin-bottom: 3em;
 }
 main h2 {
 	font-size: 1.777777777778em; /* 32px /18 */
@@ -142,6 +145,9 @@ main .elv-b {
 .latestversion {
 	font-size: 2em;
 	margin-top: 0;
+}
+.latestversion code {
+	font-size: 0.75em; /* 24px /32 */
 }
 .benchnine .latestversion {
 	font-family: BenchNine;

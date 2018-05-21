@@ -18,5 +18,20 @@
 		"url": "https://jamstack-comments.netlify.com/",
 		"name": "Jamstack Comments Engine",
 		"description": "is an example of a comments engine you could add to any JAMstack site hosted on Netlify."
+	},
+	{
+		"url": "https://wiltomakesfood.com/",
+		"name": "Wilto Makes Food",
+		"description": "is the professional cooking site of Mat Marquis."
+	},
+	{
+		"url": "https://2018.nejsconf.com/",
+		"name": "NEJS CONF 2018",
+		"description": "is a single day, single track Web Development conference."
+	},
+	{
+		"url": "https://mannahfoundation.org/",
+		"name": "Mannah Foundation",
+		"description": "is empowering individuals to make great changes."
 	}
 ]
