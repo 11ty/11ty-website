@@ -2,15 +2,13 @@
 layout: layouts/main.njk
 ---
 
-<h2 class="news">🚨 <a href="https://www.zachleat.com/web/eleventy-google-award/">Eleventy wins Google Open Source Award </a> 🚨</h2>
+{% for page in collections.home %}
+{{ page.templateContent | safe }}
+{% endfor %}
 
-## Documentation
+## News
 
-* [Usage and Documentation](https://github.com/11ty/eleventy/blob/master/README.md) on GitHub
-
-## Sample Projects
-
-* [eleventy-base-blog, a Blog](https://github.com/11ty/eleventy-base-blog) on GitHub
+* 2017 March—<a href="https://www.zachleat.com/web/eleventy-google-award/">Eleventy wins Google Open Source Award </a>
 
 ## Tutorials
 
@@ -22,9 +20,24 @@ layout: layouts/main.njk
 
 _See all [Eleventy blog posts](https://www.zachleat.com/web/eleventy/)._
 
+
+## Sample Projects
+
+{% for site in samples -%}
+{% if site.disabled != true -%}
+1. [{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}
+{% endif -%}
+{% endfor -%}
+
 ## Sites Built with Eleventy
 
 {% for site in eleventysites -%}
-* [{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}
+1. [{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}{% if site.source_url %} [Source Code]({{ site.source_url }}){% endif %}
 {% endfor -%}
-* [_Have another to add?_](https://github.com/11ty/11ty.io/issues/new?title=I+built+a+site+with+Eleventy!)
+1. [Have a suggestion?](https://github.com/11ty/11ty.io/issues/new?title=I+built+a+site+with+Eleventy!)
+
+## Versions
+
+{% for version in versions -%}
+* `{{ version.tag }}`—[Documentation](https://github.com/11ty/eleventy/blob/{{ version.tag }}/README.md){% if version.ignore_release_notes !== true %} and [Release Notes](https://github.com/11ty/eleventy/releases/tag/{{ version.tag }}){% endif %}
+{% endfor -%}

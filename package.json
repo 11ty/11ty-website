@@ -21,6 +21,8 @@
     "@11ty/eleventy": "^0.3.4"
   },
   "dependencies": {
-    "@11ty/logo": "^1.0.4"
+    "@11ty/eleventy-plugin-syntaxhighlight": "^1.0.4",
+    "@11ty/logo": "^1.0.4",
+    "markdown-it-anchor": "^4.0.0"
   }
 }

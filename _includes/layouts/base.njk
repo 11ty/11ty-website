@@ -1,12 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en"{% if templateClass %} class="{{ templateClass }}"{% endif %}>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Eleventy</title>
-		<style>
-			{% include 'index.css' %}
-		</style>
+		<style>{% include 'index.css' %}</style>
+		<style>{% include 'prism-theme.css' %}</style>
 	</head>
 	<body>
 

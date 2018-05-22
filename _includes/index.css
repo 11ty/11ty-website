@@ -1,6 +1,6 @@
 @font-face {
 	font-family: BenchNine;
-  src: url(css/fonts/BenchNine-Bold-subset.woff2) format("woff2"), url(css/fonts/BenchNine-Bold-subset.zopfli.woff) format("woff");
+  src: url(/css/fonts/BenchNine-Bold-subset.woff2) format("woff2"), url(/css/fonts/BenchNine-Bold-subset.zopfli.woff) format("woff");
 	font-weight: 700;
   font-display: swap;
   unicode-range: U+20-7E,U+2014,U+2019;
@@ -11,21 +11,45 @@
 }
 body {
 	font-family: sans-serif;
-	max-width: 42em;
+}
+header,
+footer,
+main {
 	padding: 1rem;
+}
+.tmpl-docs header,
+.tmpl-docs footer,
+.tmpl-docs main {
+	padding: 1rem 15rem 1rem 1rem;	
+}
+.tmpl-default header,
+.tmpl-default footer,
+.tmpl-default main {
 	margin: 0 auto;
+	max-width: 42rem;
 }
 header {
+	color: #222;
+}
+.tmpl-default header {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	min-height: 90vh;
-	color: #222;
+}
+.tmpl-docs header {
+	overflow: hidden;
+}
+.tmpl-docs header .elv-hero {
+	float: left;
+	margin-right: 1.5em;
+}
+.tmpl-docs header .elv-hed {
+	margin: 0;
+	text-align: left;
 }
 img {
 	border: 0;
-	max-height: 50vh;
 }
 a,
 a:visited {
@@ -48,6 +72,22 @@ a:visited {
 	margin-bottom: .25em;
 	text-align: center;
 }
+.tmpl-docs .elv-hed {
+	font-size: 2.3em;
+}
+@media (min-width: 44.375em) { /* 710px */
+	.tmpl-docs .elv-hed {
+		font-size: 3em;
+	}
+}
+/* Hero */
+.elv-hero img {
+	max-height: 50vh;
+}
+.tmpl-docs .elv-hero img {
+	height: 7em;
+}
+
 
 /* Main */
 main {
@@ -71,11 +111,18 @@ main h2 {
 /* Lists */
 ul {
 	list-style: none;
+}
+ol,
+ul {
 	width: 100%;
 	padding: 0;
 }
 li {
-	padding: .25em 0;
+	padding: .4em 0;
+}
+li li {
+	padding-top: .1em;
+	padding-bottom: .1em;
 }
 
 /* Navigation */
@@ -98,19 +145,22 @@ li {
 		padding: 0 0 0 1em;
 		margin-left: 1em;
 	}
+	.tmpl-docs .elv-nav {
+		margin: 0;
+	}
 }
 
 /* Syntax highlighting and Code blocks */
 pre {
 	display: block;
 	padding: .5em;
-	margin: 1em -1rem 2em -1rem;
+	margin: 1em -.5em 2em -.5em;
 	overflow-x: auto;
+	background-color: #eee;
 }
 pre,
 code {
 	font-family: Monaco, monospace;
-	background-color: #eee;
 }
 code.terminal:before {
 	content: "$ ";
@@ -124,7 +174,7 @@ pre + .note {
 }
 
 /* Widows */
-.widow {
+.prevent-orphan {
 	white-space: nowrap;
 }
 
@@ -152,8 +202,41 @@ main .elv-b {
 .benchnine .latestversion {
 	font-family: BenchNine;
 }
+.tmpl-docs .latestversion {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	margin: 0;
+}
 
 /* News */
 .news {
 	text-align: center;
+}
+
+/* Direct Links */
+.direct-link {
+	position: absolute;
+	height: 1px;
+	width: 1px; 
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+
+	font-family: sans-serif;
+	text-decoration: none;
+	font-style: normal;
+	margin-left: .1em;
+}
+a[href].direct-link,
+a[href].direct-link:visited {
+	color: #aaa;
+}
+.direct-link:focus,
+:hover > .direct-link,
+:focus > .direct-link {
+	position: static;
+	height: auto;
+	width: auto; 
+	overflow: visible;
+	clip: auto;
 }

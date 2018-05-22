@@ -1,0 +1,112 @@
+[
+	{
+		"tag": "v0.3.4"
+	},
+	{
+		"tag": "v0.3.3"
+	},
+	{
+		"tag": "v0.3.1"
+	},
+	{
+		"tag": "v0.3.0"
+	},
+	{
+		"tag": "v0.2.15"
+	},
+	{
+		"tag": "v0.2.14"
+	},
+	{
+		"tag": "v0.2.13",
+		"ignore_release_notes": true
+	},
+	{
+		"tag": "v0.2.12",
+		"ignore_release_notes": true
+	},
+	{
+		"tag": "v0.2.11",
+		"ignore_release_notes": true
+	},
+	{
+		"tag": "v0.2.10"
+	},
+	{
+		"tag": "v0.2.9",
+		"ignore_release_notes": true
+	},
+	{
+		"tag": "v0.2.8",
+		"ignore_release_notes": true
+	},
+	{
+		"tag": "v0.2.7"
+	},
+	{
+		"tag": "v0.2.6"
+	},
+	{
+		"tag": "v0.2.5",
+		"ignore_release_notes": true
+	},
+	{
+		"tag": "v0.2.4",
+		"ignore_release_notes": true
+	},
+	{
+		"tag": "v0.2.3",
+		"ignore_release_notes": true
+	},
+	{
+		"tag": "v0.2.2"
+	},
+	{
+		"tag": "v0.2.1",
+		"ignore_release_notes": true
+	},
+	{
+		"tag": "v0.2.0",
+		"ignore_release_notes": true
+	},
+	{
+		"tag": "v0.1.9",
+		"ignore_release_notes": true
+	},
+	{
+		"tag": "v0.1.8",
+		"ignore_release_notes": true
+	},
+	{
+		"tag": "v0.1.7",
+		"ignore_release_notes": true
+	},
+	{
+		"tag": "v0.1.6",
+		"ignore_release_notes": true
+	},
+	{
+		"tag": "v0.1.5",
+		"ignore_release_notes": true
+	},
+	{
+		"tag": "v0.1.4",
+		"ignore_release_notes": true
+	},
+	{
+		"tag": "v0.1.3",
+		"ignore_release_notes": true
+	},
+	{
+		"tag": "v0.1.2",
+		"ignore_release_notes": true
+	},
+	{
+		"tag": "v0.1.1",
+		"ignore_release_notes": true
+	},
+	{
+		"tag": "v0.1.0",
+		"ignore_release_notes": true
+	}
+]
