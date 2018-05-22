@@ -2,6 +2,7 @@
 	<a href="/" class="elv-hero"><img src="{{ "/img/logo.png" | url }}" alt="11ty"></a>
 	<h1 class="elv-hed">{{ title | orphanWrap | safe }}</h1>
 	<ul class="elv-nav">
+		<li class="elv-nav-li">Version {{ pkg.devDependencies["@11ty/eleventy"] | version }}</li>
 {% if config.enable_docs and isDocs != true %}
 		<li class="elv-nav-li"><a href="{{ "docs/index.html" | url }}">Documentation</a></li>
 {% endif %}
@@ -10,5 +11,4 @@
 		<li class="elv-nav-li"><a href="https://twitter.com/eleven_ty">Twitter</a></li>
 		<li class="elv-nav-li">By <a href="https://twitter.com/zachleat/">zachleat</a></li>
 	</ul>
-	<h2 class="latestversion">Version <code>{{ pkg.devDependencies["@11ty/eleventy"] | version }}</code></h2>
 </header>

@@ -11,6 +11,7 @@
 }
 body {
 	font-family: sans-serif;
+	margin: 0;
 }
 header,
 footer,
@@ -95,7 +96,6 @@ main {
 	font-size: 1.125em; /* 18px /16 */
 }
 main:not(:empty) {
-	border-top: 1px solid #bbb;
 	border-bottom: 1px solid #bbb;
 	padding-bottom: 3em;
 	margin-bottom: 3em;
@@ -126,15 +126,12 @@ li li {
 }
 
 /* Navigation */
-@media (min-width: 28.125em ) { /* 450px */
+@media (min-width: 31.25em) { /* 500px */
 	.elv-nav {
 		width: auto;
 	}
 	.elv-nav-li {
 		float: left;
-	}
-	.elv-nav-li a {
-		line-height: 2;
 	}
 	.elv-nav-li:not(:last-child) a:not(:hover) {
 		text-decoration: none;
