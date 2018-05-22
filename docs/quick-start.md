@@ -2,7 +2,7 @@
 tags:
   - home
 ---
-# Getting Started
+# Quick Start
 
 Eleventy requires Node.js version 8 or higher.
 

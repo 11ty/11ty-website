@@ -112,7 +112,9 @@ main h2 {
 ul {
 	list-style: none;
 }
-ol,
+ol {
+	width: 100%;
+}
 ul {
 	width: 100%;
 	padding: 0;
@@ -124,9 +126,14 @@ li li {
 	padding-top: .1em;
 	padding-bottom: .1em;
 }
+@media (min-width: 43.75em) { /* 700px */
+	ol {
+		padding: 0;
+	}
+}
 
 /* Navigation */
-@media (min-width: 31.25em) { /* 500px */
+@media (min-width: 37.5em) { /* 600px */
 	.elv-nav {
 		width: auto;
 	}
@@ -139,8 +146,8 @@ li li {
 	.elv-nav-li:not(:first-child):before {
 		content: "";
 		border-left: 1px solid #ccc;
-		padding: 0 0 0 1em;
-		margin-left: 1em;
+		padding: 0 0 0 .75em;
+		margin-left: .75em;
 	}
 	.tmpl-docs .elv-nav {
 		margin: 0;

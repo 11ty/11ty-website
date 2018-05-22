@@ -28,6 +28,7 @@ _See all [Eleventy blog posts](https://www.zachleat.com/web/eleventy/)._
 1. [{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}
 {% endif -%}
 {% endfor -%}
+1. …for more examples, see the _Source Code_ links below. [Have a suggestion?](https://github.com/11ty/eleventy/issues/new?labels=sample-project)
 
 ## Sites Built with Eleventy
 
@@ -39,5 +40,5 @@ _See all [Eleventy blog posts](https://www.zachleat.com/web/eleventy/)._
 ## Versions
 
 {% for version in versions -%}
-* `{{ version.tag }}`—[Documentation](https://github.com/11ty/eleventy/blob/{{ version.tag }}/README.md){% if version.ignore_release_notes !== true %} and [Release Notes](https://github.com/11ty/eleventy/releases/tag/{{ version.tag }}){% endif %}
+* `{{ version.tag }}`—[Docs](https://github.com/11ty/eleventy/blob/{{ version.tag }}/README.md){% if version.ignore_release_notes !== true %} and [Release Notes](https://github.com/11ty/eleventy/releases/tag/{{ version.tag }}){% endif %}
 {% endfor -%}
