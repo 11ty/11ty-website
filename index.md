@@ -8,7 +8,7 @@ layout: layouts/main.njk
 
 ## News
 
-* 2017 March—<a href="https://www.zachleat.com/web/eleventy-google-award/">Eleventy wins Google Open Source Award </a>
+* 2018 March—<a href="https://www.zachleat.com/web/eleventy-google-award/">Eleventy wins Google Open Source Award </a>
 
 ## Tutorials
 
