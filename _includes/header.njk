@@ -1,10 +1,11 @@
 <header>
 	<a href="/" class="elv-hero"><img src="{{ "/img/logo.png" | url }}" alt="11ty"></a>
+	<a href="https://twitter.com/jameswillweb/status/999052022497316865"><img src="{{ "/img/possum.png" | url }}" class="elv-possum"></a>
 	<h1 class="elv-hed">{{ title | orphanWrap | safe }}</h1>
 	<ul class="elv-nav">
 {% set latestversion %}{{ pkg.devDependencies["@11ty/eleventy"] | version }}{% endset %}
 {% if config.enable_docs and isDocs != true %}
-		<li class="elv-nav-li"><a href="https://github.com/11ty/eleventy/blob/v{{ latestversion }}/README.md"><strong>Documentation</strong></a></li>
+		<li class="elv-nav-li"><a href="https://github.com/11ty/eleventy/blob/v{{ latestversion }}/README.md">Documentation</a></li>
 {% endif %}
 		<li class="elv-nav-li">v{{ latestversion }}</li>
 		<li class="elv-nav-li"><a href="https://github.com/11ty/eleventy/">GitHub</a></li>

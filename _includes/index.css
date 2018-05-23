@@ -10,7 +10,7 @@
 	box-sizing: border-box;
 }
 body {
-	font-family: sans-serif;
+	font-family: system-ui, sans-serif;
 	margin: 0;
 }
 header,
@@ -73,6 +73,12 @@ a:visited {
 	margin-bottom: .25em;
 	text-align: center;
 }
+.elv-possum {
+	position: absolute;
+	right: 2em;
+	top: 2em;
+	width: 16vmin;
+}
 .tmpl-docs .elv-hed {
 	font-size: 2.3em;
 }
@@ -121,6 +127,9 @@ ul {
 }
 li {
 	padding: .4em 0;
+}
+li a {
+	font-weight: 600;
 }
 li li {
 	padding-top: .1em;
@@ -218,7 +227,7 @@ main .elv-b {
 	text-align: center;
 }
 
-/* Direct Links */
+/* Direct Links / Markdown Headers */
 .direct-link {
 	position: absolute;
 	height: 1px;
@@ -243,4 +252,20 @@ a[href].direct-link:visited {
 	width: auto; 
 	overflow: visible;
 	clip: auto;
+}
+
+/* Mini link */
+.minilink {
+	display: inline-block;
+	padding: .125em .375em;
+	text-transform: uppercase;
+	font-size: 0.875rem; /* 14px /16 */
+	text-decoration: none;
+	background-color: #efefef;
+	border-radius: 0.1875em; /* 3px /16 */
+	font-weight: 500;
+}
+.minilink:hover,
+.minilink:focus {
+	background-color: #dfdfdf;
 }

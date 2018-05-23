@@ -39,5 +39,11 @@
 		"url": "https://mannahfoundation.org/",
 		"name": "Mannah Foundation",
 		"description": "is empowering individuals to make great changes."
+	},
+	{
+		"url": "https://alexcarpenter.me/",
+		"name": "Alex Carpenter",
+		"description": "Front-end Web Developer",
+		"source_url": "https://github.com/alexcarpenter/alexcarpenter.me"
 	}
 ]

@@ -33,7 +33,7 @@ _See all [Eleventy blog posts](https://www.zachleat.com/web/eleventy/)._
 ## Sites Built with Eleventy
 
 {% for site in eleventysites -%}
-1. [{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}{% if site.source_url %} [Source Code]({{ site.source_url }}){% endif %}
+1. [{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}{% if site.source_url %} <a href="{{ site.source_url }}" class="minilink">Source Code</a>{% endif %}
 {% endfor -%}
 1. [Have a suggestion?](https://github.com/11ty/11ty.io/issues/new?title=I+built+a+site+with+Eleventy!)
 
