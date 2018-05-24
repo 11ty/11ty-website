@@ -33,12 +33,6 @@ _See all [Eleventy blog posts](https://www.zachleat.com/web/eleventy/)._
 ## Sites Built with Eleventy
 
 {% for site in eleventysites -%}
-1. [{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}{% if site.source_url %} <a href="{{ site.source_url }}" class="minilink">Source Code</a>{% endif %}
+* {% if site.source_url %}<a href="{{ site.source_url }}" class="minilink">Source Code</a> {% endif %}[{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}
 {% endfor -%}
-1. [Have a suggestion?](https://github.com/11ty/11ty.io/issues/new?title=I+built+a+site+with+Eleventy!)
-
-## Versions
-
-{% for version in versions -%}
-* `{{ version.tag }}`—[Docs](https://github.com/11ty/eleventy/blob/{{ version.tag }}/README.md){% if version.ignore_release_notes !== true %} and [Release Notes](https://github.com/11ty/eleventy/releases/tag/{{ version.tag }}){% endif %}
-{% endfor -%}
+* [Have a suggestion?](https://github.com/11ty/11ty.io/issues/new?title=I+built+a+site+with+Eleventy!)

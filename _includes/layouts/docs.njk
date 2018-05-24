@@ -1,7 +1,13 @@
 ---
 layout: layouts/main.njk
 title: Eleventy Documentation
-templateClass: tmpl-docs
+headerClass: elv-header-docs
+layoutClass: elv-layout-wider
 isDocs: true
 ---
+
+<p class="elv-warning">⚠️ Please be patient as we move our documentation out of GitHub to a more flexible, Eleventy-generated home here. Until the move is complete, please consider <a href="https://github.com/11ty/eleventy/blob/master/README.md"><strong>the GitHub documentation</strong></a> to be the primary source of truth.</p>
+
+{% include "components/docs-toc.njk" %}
+
 {{ layoutContent | safe }}

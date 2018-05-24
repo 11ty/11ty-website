@@ -1,16 +1,13 @@
-<header>
-	<a href="/" class="elv-hero"><img src="{{ "/img/logo.png" | url }}" alt="11ty"></a>
+<header class="elv-layout elv-layout-full elv-header{% if headerClass %} {{ headerClass }}{% endif %}">
+	<a href="{% if logoLink %}{{ logoLink | url }}{% else %}/{% endif %}" class="elv-hero"><img src="{{ "/img/logo.png" | url }}" alt="11ty"></a>
 	<a href="https://twitter.com/jameswillweb/status/999052022497316865"><img src="{{ "/img/possum.png" | url }}" class="elv-possum"></a>
 	<h1 class="elv-hed">{{ title | orphanWrap | safe }}</h1>
 	<ul class="elv-nav">
-{% set latestversion %}{{ pkg.devDependencies["@11ty/eleventy"] | version }}{% endset %}
-{% if config.enable_docs and isDocs != true %}
-		<li class="elv-nav-li"><a href="https://github.com/11ty/eleventy/blob/v{{ latestversion }}/README.md">Documentation</a></li>
-{% endif %}
-		<li class="elv-nav-li">v{{ latestversion }}</li>
-		<li class="elv-nav-li"><a href="https://github.com/11ty/eleventy/">GitHub</a></li>
-		<li class="elv-nav-li"><a href="https://www.npmjs.com/org/11ty">NPM</a></li>
-		<li class="elv-nav-li"><a href="https://twitter.com/eleven_ty">Twitter</a></li>
-		<li class="elv-nav-li">By <a href="https://twitter.com/zachleat/">zachleat</a></li>
+{% set latestversion %}{{ pkg.devDependencies["@11ty/eleventy"] | version }}{% endset -%}
+		<li class="elv-nav-item"><a href="{{ "/docs/" | url }}">Docs <span class="elv-nav-light">v{{ latestversion }}</span></a></li>
+		<li class="elv-nav-item"><a href="https://github.com/11ty/eleventy/">GitHub</a></li>
+		<li class="elv-nav-item"><a href="https://www.npmjs.com/org/11ty">NPM</a></li>
+		<li class="elv-nav-item"><a href="https://twitter.com/eleven_ty">Twitter</a></li>
+		<li class="elv-nav-item"><a href="https://twitter.com/zachleat/" class="elv-nav-light">@zachleat</a></li>
 	</ul>
 </header>

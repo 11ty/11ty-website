@@ -1,0 +1,16 @@
+<h2>Contents</h2>
+
+<ol>
+{% for navpage in collections.docs -%}
+<li><a href="/docs/#{{ navpage.data.title | slug }}">{{ navpage.data.title }}</a>
+{%- if navpage.data.sections %}
+<ul>
+{%- for section in navpage.data.sections -%}
+{% set url %}/docs/{{ section | slug }}/{% endset %}
+<li{% if page.url == url %} class="elv-toc-active"{% endif %}><a href="{{ url }}">{{ section }}</a></li>
+{% endfor -%}</li>
+</ul>
+{% endif -%}
+</li>
+{% endfor -%}
+</ol>

@@ -1,11 +1,5 @@
 [
 	{
-		"url": "https://www.fontspeed.io/",
-		"name": "fontspeed",
-		"description": "is a newsletter about loading your web fonts.",
-		"source_url": "https://github.com/fontspeed/fontspeed-teaser"
-	},
-	{
 		"url": "https://www.11ty.io/",
 		"name": "Eleventy, the web site",
 		"description": "_(spoiler alert: it’s this web site)_",
@@ -16,6 +10,12 @@
 		"name": "zachleat.com",
 		"description": "is a 10+ years-running blog about web development.",
 		"source_url": "https://github.com/zachleat/zachleat.com"
+	},
+	{
+		"url": "https://www.fontspeed.io/",
+		"name": "fontspeed",
+		"description": "is a newsletter about loading your web fonts.",
+		"source_url": "https://github.com/fontspeed/fontspeed-teaser"
 	},
 	{
 		"url": "https://jamstack-comments.netlify.com/",

@@ -1,17 +1,22 @@
 ---
 title: Eleventy is a simpler static site generator.
 layout: layouts/base.njk
-templateClass: tmpl-default
+templateClass: elv-default
+headerClass: elv-header-default
 ---
 {% include "header.njk" %}
 
-<main>{{ layoutContent | safe }}</main>
+<main class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">{{ layoutContent | safe }}</main>
 
-<footer>
+<footer class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">
 	<a class="github-button" href="https://github.com/11ty/eleventy" data-size="large" data-show-count="true" aria-label="Star 11ty/eleventy on GitHub">Star</a>
 	<p>
 		Starring Eleventy on GitHub will increase our project’s visibility on <a href="https://www.staticgen.com/">staticgen.com</a>, a big giant list of static site generators.
 	</p>
+
+	<ul class="elv-nav">
+		<li class="elv-nav-item"><a href="/styleguide/">11ty.io Style Guide</a></li>
+	</ul>
 </footer>
 
 <script>{% include "index.js" %}</script>

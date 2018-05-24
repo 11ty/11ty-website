@@ -19,10 +19,8 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addFilter("orphanWrap", str => {
 		let splitSpace = str.split(" ");
 		let after = "";
-		if( splitSpace.length > 1 ) {
-			if( splitSpace.length > 2 ) {
-				after += " ";
-			}
+		if( splitSpace.length > 2 ) {
+			after += " ";
 
 			// TODO strip HTML from this?
 			let lastWord = splitSpace.pop();
@@ -45,13 +43,15 @@ module.exports = function(eleventyConfig) {
 	let opts = {
 		permalink: true,
 		permalinkClass: "direct-link",
-		permalinkSymbol: "#"
+		permalinkSymbol: "#",
+		level: [1,2,3]
 	};
 
 	eleventyConfig.setLibrary("md", markdownIt(options).use(markdownItAnchor, opts));
 
 	return {
 		templateFormats: ["html", "njk", "md"],
-		markdownTemplateEngine: "njk"
+		markdownTemplateEngine: "njk",
+		htmlTemplateEngine: "njk"
 	};
 };
