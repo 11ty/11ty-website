@@ -1,5 +1,0 @@
----
-subtitle: Home
-tags:
-  - docs
----
