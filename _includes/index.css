@@ -96,15 +96,14 @@ pre,
 code {
 	font-family: Monaco, monospace;
 }
-code.terminal:before {
-	content: "$ ";
-	color: rgb(50, 205, 50);
-}
 pre + .note {
 	font-size: 0.6666666666667em; /* 16px /24 */
 	margin-top: -2.875em; /* 46px /16 */
 	margin-bottom: 2.5em; /* 40px /16 */
 	text-align: right;
+}
+code {
+	background-color: #efefef;
 }
 
 /* Layout */
@@ -116,9 +115,16 @@ pre + .note {
 .elv-layout-full {
 	max-width: none;
 }
-.elv-layout-wider {
-	max-width: 60rem;
+@media (min-width: 64em) { /* 1024px */
+	.elv-layout-toc {
+		margin-left: 18rem;
+		max-width: 60rem;
+		margin-right: 1rem;
+	}
 }
+/*.elv-layout-wider {
+	max-width: 60rem;
+}*/
 
 /* Header */
 .elv-header {
@@ -153,6 +159,7 @@ pre + .note {
 }
 @media (min-width: 37.5em) { /* 600px */
 	.elv-header-docs .elv-hero img {
+		width: 4.303125em; /* 68.85px /16 */
 		height: 6em;
 	}
 }
@@ -163,6 +170,7 @@ pre + .note {
 	right: 1em;
 	top: 1em;
 	width: 16vmin;
+	z-index: -1;
 }
 @media (min-width: 25em) { /* 400px */
 	.elv-possum {
@@ -309,10 +317,45 @@ a[href].direct-link:visited {
 }
 
 /* Table of Contents */
-.elv-toc-active {
-	background-color: #eee;
-	font-weight: 500;
+.elv-toc-hed {
+	display: block;
 }
-.elv-toc-active:after {
-	content: " (You are here)";
+.elv-toc-list ul {
+	padding: 0;
+	padding-left: 1em;
+	list-style: none;
+}
+.elv-toc-list li {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin: .1em 0 .5em;
+}
+.elv-toc-active > a {
+	font-weight: 700;
+}
+.elv-toc-active > a:after {
+	content: " ⬅";
+	line-height: .5;
+}
+@media (min-width: 43.75em) { /* 700px */
+	.elv-toc-list {
+		list-style: disc;
+	}
+}
+@media (min-width: 64em) { /* 1024px */
+	.elv-toc {
+		font-size: 1rem;
+		position: absolute;
+		left: 2.5em;
+		top: 10.3125em; /* 165px /16 */
+		width: 13rem;
+	}
+	.elv-toc-hed {
+		display: none;
+	}
+}
+@media (min-width: 64em) and (min-height: 25em) { /* 400px */
+	.elv-toc {
+		position: fixed;
+	}
 }

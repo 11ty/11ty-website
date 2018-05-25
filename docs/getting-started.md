@@ -1,11 +1,10 @@
 ---
-title: Getting Started
-sections:
-  - Local Installation
+subtitle: Getting Started
+sectionName: docs-getting-started
 tags:
   - docs
 ---
-## {{ title }}
+## {{ subtitle }}
 
 Requires version 8 of Node.js or higher.
 
@@ -47,4 +46,4 @@ Writing _site/index.html from ./index.html
 Wrote 2 files in 0.10 seconds
 ```
 
-This will compile any content templates in the current directory or subdirectories into the output folder (defaults to `_site`). Congratulations—you made something with eleventy! Now put it to work with templating syntax, front matter, and data files (read on below).
+This will compile any content templates in the current directory or subdirectories into the output folder (defaults to `_site`). Congratulations—you made something with Eleventy! Now put it to work with templating syntax, front matter, and data files.

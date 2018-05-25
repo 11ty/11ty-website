@@ -1,3 +1,8 @@
+---
+subtitle: Install Locally
+tags:
+  - docs-getting-started
+---
 ## Think Local, not Global
 
 Rather than a global install, like so:
@@ -6,7 +11,7 @@ Rather than a global install, like so:
 npm install -g @11ty/eleventy
 ```
 
-You can install locally into your current project, like so:
+You can install locally into your current project. This requires that your project has a `package.json`. If you do not have a `package.json` in your project, use `npm init` to create one.
 
 ```bash
 npm install --save-dev @11ty/eleventy
