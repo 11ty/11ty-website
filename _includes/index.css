@@ -170,7 +170,6 @@ code {
 	right: 1em;
 	top: 1em;
 	width: 16vmin;
-	z-index: -1;
 }
 @media (min-width: 25em) { /* 400px */
 	.elv-possum {
