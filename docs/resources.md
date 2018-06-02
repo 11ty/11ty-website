@@ -32,7 +32,7 @@ Take care to make sure that <span class="buzzword">serverless</span> functions a
 
 ### Zero Config
 
-### Convention over Configuration Decentralized File-System Routing
+### Convention over Configuration Routing
 
 ### Pre-rendered Templates
 

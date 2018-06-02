@@ -42,7 +42,7 @@ Read more about [Eleventy’s project goals.](https://www.zachleat.com/web/intro
     <li><a href="/docs/resources/#serverless-friendly">Serverless Friendly</a></li>
     <li><a href="/docs/resources/#lean-web">Lean Web</a></li>
     <li><a href="/docs/resources/#zero-config">Zero Config</a></li>
-    <li><a href="/docs/resources/#convention-over-configuration-decentralized-file-system-routing">Convention over Configuration Decentralized File-System Routing</a></li>
+    <li><a href="/docs/resources/#convention-over-configuration-routing">Convention over Configuration Routing</a></li>
     <li><a href="/docs/resources/#pre-rendered-templates">Pre-rendered Templates</a></li>
     <li><a href="/docs/resources/#build-time-renderednot-server-side-rendered">Build Time Rendered <em>Not</em> Server Side Rendered</a></li>
     <li><a href="/docs/resources/#apps-not-app-servers">Apps not App Servers</a></li>
