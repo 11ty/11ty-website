@@ -385,9 +385,11 @@ a[href].direct-link:visited {
 	margin: 4px 4px 4px 0;
 	transition: .15s linear outline;
 }
-a.buzzword,
-.buzzword-list li a,
-.inlinelist li a {
+a.buzzword {
+	text-decoration: underline;
+}
+.buzzword-list a,
+.inlinelist a {
 	text-decoration: none;
 }
 .inlinelist li {
@@ -421,9 +423,10 @@ a.buzzword,
 }
 .buzzword-list li:hover a,
 .buzzword-list li:focus a,
-.buzzword:hover a,
-.buzzword:focus a {
-	color: inherit;
+a.buzzword:hover,
+a.buzzword:focus {
+	color: #fff;
+	text-decoration: none;
 }
 /*
 I wish there were a PE friendly way to do this but media queries don’t work work with @supports
@@ -459,6 +462,10 @@ main p .buzzword {
 	margin: 0;
 	line-height: 1.444444444444; /* 26px /18 */
 	font-family: inherit;
+}
+main h2 a.buzzword,
+main h3 a.buzzword,
+main p a.buzzword {
 	text-decoration: underline;
 }
 
