@@ -6,7 +6,7 @@ tags:
 
 ## {{ subtitle }} and Buzzwords
 
-Bask in the warmth of this feel-good industry jargon.
+Bask in the warm glow of this _“Nobody ever got fired for buying IBM”_-style feel-good industry jargon.
 
 ### Static Sites
 

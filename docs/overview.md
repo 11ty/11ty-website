@@ -8,11 +8,11 @@ permalink: /docs/
 
 ## Eleventy is a simpler static site generator.
 
-Eleventy was created to be a JavaScript alternative to Jekyll. It’s <a href="/docs/resources/#zero-config" class="buzzword">zero-config</a> by default but has flexible configuration options. Eleventy works with your project’s existing directory structure.
+Eleventy was created to be a JavaScript alternative to Jekyll. It’s <a href="/docs/resources/#zero-config" class="buzzword">zero-config</a> by default but has flexible configuration options. Eleventy **works with your project’s existing directory structure.**
 
-Eleventy uses independent template engines. We don’t want to hold your content hostage. If you decide to use something else later, having your content decoupled in this way will make migration easier.
+Eleventy uses **independent template engines**. We don’t want to hold your content hostage. If you decide to use something else later, having your content decoupled in this way will make migration easier.
 
-Eleventy works with multiple template languages. You can pick one or use them all together in a single project:
+Eleventy **works with multiple template languages**. You can pick one or use them all together in a single project:
 
 <ul class="inlinelist">
   <li>HTML</li>
@@ -27,11 +27,11 @@ Eleventy works with multiple template languages. You can pick one or use them al
   <li>JavaScript Template Literals</li>
 </ul>
 
-Eleventy is not a JavaScript framework—that means *zero boilerplate client-side JavaScript*. This allows you to set your own <a href="/docs/resources/#progressive-enhancement" class="buzzword">Progressive Enhancement</a> baselines to suit your project’s browser support requirements.
+Eleventy is **not a JavaScript framework**—that means *zero boilerplate client-side JavaScript*. We’re thinking long term and opting out of the framework rat race. The tool chain, code conventions, and modules you use in your front end stack are decoupled from this tool. Work from a solid foundation of <a href="/docs/resources/#pre-rendered-templates" class="buzzword">pre-rendered templates</a> that suit your project’s <a href="/docs/resources/#progressive-enhancement" class="buzzword">progressive enhancement</a> baseline requirements.
 
-Eleventy works great with data—use both front matter and external data files to inject content into templates.
+Eleventy **works great with data**—use both front matter and external data files to inject content into templates.
 
-Read more about [Eleventy’s project goals.](https://www.zachleat.com/web/introducing-eleventy/)
+Read more about [**Eleventy’s project goals**.](https://www.zachleat.com/web/introducing-eleventy/)
 
 ### Learn More:
 
