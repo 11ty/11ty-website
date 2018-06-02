@@ -10,6 +10,7 @@ module.exports = function(eleventyConfig) {
 		let order = [
 			"overview",
 			"getting-started",
+			"tutorials",
 			"versions",
 		].map(file => `./docs/${file}.md`);
 

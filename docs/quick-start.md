@@ -17,4 +17,4 @@ Writing _site/README/index.html from ./README.md
 Wrote 1 file in 0.10 seconds
 ```
 
-Keep going! Read the [documentation](/docs/).
+Keep going!
