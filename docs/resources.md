@@ -28,7 +28,7 @@ Take care to make sure that <span class="buzzword">serverless</span> functions a
 
 ### Lean Web
 
-“Eliminate waste [and] deliver as fast as possible.”—[Lean Software Development on Wikipedia](https://en.wikipedia.org/wiki/Lean_software_development). Don’t spend a bunch of time wiring up project boilerplate. Start writing templates and content! Eleventy will glue them together.
+To be honest I’m not really sure how this relates but it seems marginally/tangentially related.
 
 ### Zero Config
 
