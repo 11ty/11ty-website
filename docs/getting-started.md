@@ -3,7 +3,6 @@ subtitle: Getting Started
 sectionName: docs-getting-started
 tags:
   - docs
-permalink: /docs/
 ---
 ## {{ subtitle }}
 

@@ -6,6 +6,24 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("css/fonts");
 	eleventyConfig.addPassthroughCopy("img");
 
+	eleventyConfig.addCollection("mainDocs", function(collection) {
+		let order = [
+			"overview",
+			"getting-started",
+			"versions",
+		].map(file => `./docs/${file}.md`);
+
+		return collection.getFilteredByTag("docs").sort(function(a, b) {
+			let firstIndex = order.indexOf(a.inputPath);
+			let secondIndex = order.indexOf(b.inputPath);
+
+			if( firstIndex === -1 ) return 1;
+			if( secondIndex === -1 ) return -1;
+
+			return firstIndex - secondIndex;
+		});
+	});
+
 	eleventyConfig.addFilter("version", function(pkgVersion) {
 		if(pkgVersion.indexOf("file:") === 0) {
 			return "(local)";
