@@ -197,8 +197,9 @@ code {
 
 /* Navigation */
 .elv-nav {
+	padding: 0;
+	margin: 1em 0 0 0;
 	clear: both;
-	margin-top: 1em;
 	list-style: none;
 }
 .elv-nav-item a {
