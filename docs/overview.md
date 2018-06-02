@@ -27,7 +27,7 @@ Eleventy works with multiple template languages. You can pick one or use them al
   <li>JavaScript Template Literals</li>
 </ul>
 
-Eleventy is not a JavaScript framework—that means *zero boilerplate client-side JavaScript*. This allows you to set your own <a href="/docs/resources/#progressive-enhancement" class="buzzword">Progressive Enhancement</a> baselines to suit your project’s browser support and deadline requirements.
+Eleventy is not a JavaScript framework—that means *zero boilerplate client-side JavaScript*. This allows you to set your own <a href="/docs/resources/#progressive-enhancement" class="buzzword">Progressive Enhancement</a> baselines to suit your project’s browser support requirements.
 
 Eleventy works great with data—use both front matter and external data files to inject content into templates.
 
