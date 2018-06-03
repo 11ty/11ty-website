@@ -27,10 +27,10 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.addFilter("version", function(pkgVersion) {
 		if(pkgVersion.indexOf("file:") === 0) {
-			return "(local)";
+			return "Local";
 		}
 		if(pkgVersion.indexOf("^") === 0) {
-			return pkgVersion.substr(1);
+			return "v" + pkgVersion.substr(1);
 		}
 		return pkgVersion;
 	});

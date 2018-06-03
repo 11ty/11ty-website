@@ -18,7 +18,7 @@ Wrote 1 file in 0.10 seconds
 ```
 
 {% set latestversion %}{{ pkg.devDependencies["@11ty/eleventy"] | version }}{% endset -%}
-Keep going! Read the [Documentation for v{{ latestversion }}]({{ "/docs/" | url }}).
+Keep going! Read the [Documentation for {{ latestversion }}]({{ "/docs/" | url }}).
 
 ## News
 
