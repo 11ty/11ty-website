@@ -32,11 +32,15 @@ To be honest I’m not really sure how this relates but it seems marginally/tang
 
 ### Zero Config
 
+Run `eleventy` out of the box with sensible defaults.
+
 ### Convention over Configuration Routing
+
+Can you believe that some frameworks require a centralized piece of configuration for routing? `eleventy` routes map the file system, unless you override with a `permalink`.
 
 ### Pre-rendered Templates
 
-### Build Time Rendered—Not Server Side Rendered
+### Not Server Side Rendered
 
 ### Hydration-less
 

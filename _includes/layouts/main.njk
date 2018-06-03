@@ -6,6 +6,10 @@ headerClass: elv-header-default
 ---
 {% include "header.njk" %}
 
+{% if config.outdated -%}
+<div class="elv-warning">⚠️ This documentation is for an older version. Go to the <a href="https://www.11ty.io/docs/">newest Eleventy docs</a> or check out the <a href="https://www.11ty.io/docs/versions/">full release history.</a></div>
+{% endif -%}
+
 <main class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">{{ layoutContent | safe }}</main>
 
 <footer class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">
@@ -15,6 +19,7 @@ headerClass: elv-header-default
 	</p>
 
 	<ul class="elv-nav">
+		<li class="elv-nav-item"><a href="{{ config.githubEdit }}{{ page.inputPath }}">Edit this page on GitHub {% if config.outdated -%} (in latest version){% endif -%}</a></li>
 		<li class="elv-nav-item"><a href="/styleguide/">11ty.io Style Guide</a></li>
 	</ul>
 </footer>
