@@ -106,6 +106,15 @@ code {
 	background-color: #efefef;
 }
 
+#quick-start ~ .language-text {
+	border: 2px solid #666;
+}
+#quick-start ~ .language-text,
+#quick-start ~ .language-text code {
+	background-color: #fff;
+	color: #222;
+}
+
 /* Layout */
 .elv-layout {
 	padding: 1rem;

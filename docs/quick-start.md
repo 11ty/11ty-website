@@ -17,4 +17,5 @@ Writing _site/README/index.html from ./README.md
 Wrote 1 file in 0.10 seconds
 ```
 
-Keep going!
+{% set latestversion %}{{ pkg.devDependencies["@11ty/eleventy"] | version }}{% endset -%}
+Keep going! Read the [Documentation for v{{ latestversion }}]({{ "/docs/" | url }}).
