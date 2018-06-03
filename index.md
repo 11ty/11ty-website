@@ -2,7 +2,7 @@
 layout: layouts/main.njk
 ---
 
-# Quick Start
+## Quick Start
 
 ``` bash
 npm install -g @11ty/eleventy
