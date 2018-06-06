@@ -10,7 +10,7 @@ _(New in Eleventy `v0.2.13`)_ Plugins are custom code that Eleventy can import i
 ## List of Official Plugins
 
 * [`eleventy-plugin-rss`](https://github.com/11ty/eleventy-plugin-rss) is a collection of Nunjucks filters for RSS/Atom feed templates.
-* [`eleventy-plugin-syntaxhighlight`](https://github.com/11ty/eleventy-plugin-syntaxhighlight) for custom syntax highlighting Liquid tags.
+* [`eleventy-plugin-syntaxhighlight`](https://github.com/11ty/eleventy-plugin-syntaxhighlight) for syntax highlighting using Markdown and Liquid tags.
 
 ## Adding a Plugin
 
