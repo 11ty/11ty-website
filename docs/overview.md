@@ -22,6 +22,8 @@ Eleventy **works great with data**—use both front matter and external data fil
 
 Read more about [**Eleventy’s project goals**.](https://www.zachleat.com/web/introducing-eleventy/)
 
+➡ Keep going! Read [**Getting Started**](/docs/getting-started/).
+
 {% include "testimonials.md" %}
 
 ## Competitors
