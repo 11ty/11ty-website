@@ -3,7 +3,7 @@ subtitle: Install Locally
 tags:
   - docs-getting-started
 ---
-## Think Local, not Global
+# Think Local, not Global
 
 Rather than using a global install, like so:
 

@@ -19,7 +19,7 @@ headerClass: elv-header-default
 	</p>
 
 	<ul class="elv-nav">
-		<li class="elv-nav-item"><a href="{{ config.githubEdit }}{{ page.inputPath }}">Edit this page on GitHub {% if config.outdated -%} (in latest version){% endif -%}</a></li>
+		<li class="elv-nav-item">{% include "edit-on-github.njk" %}</li>
 		<li class="elv-nav-item"><a href="/styleguide/">11ty.io Style Guide</a></li>
 	</ul>
 </footer>

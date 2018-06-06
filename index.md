@@ -24,3 +24,4 @@ Keep going! Read the [Documentation for {{ latestversion }}]({{ "/docs/" | url }
 
 * 2018 March—<a href="https://www.zachleat.com/web/eleventy-google-award/">Eleventy wins Google Open Source Award</a>
 
+{% include "testimonials.md" %}

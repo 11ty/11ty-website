@@ -1,9 +1,9 @@
 ---
-subtitle: Sample Projects
+subtitle: Examples
 tags:
   - docs-getting-started
 ---
-## {{ subtitle }}
+# {{ subtitle }}
 
 {% for site in samples -%}
 {% if site.disabled != true -%}

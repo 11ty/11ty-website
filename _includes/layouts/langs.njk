@@ -1,0 +1,13 @@
+---
+layout: layouts/docs.njk
+tags:
+  - docs-languages
+---
+<h1>{{ subtitle }}</h1>
+
+<div class="elv-langlist">
+<h2 class="elv-langlist-hed">Template Languages:</h2>
+{% include "template-languages.md" %}
+</div>
+
+{{ layoutContent | safe }}

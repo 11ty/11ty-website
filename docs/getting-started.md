@@ -1,10 +1,15 @@
 ---
 subtitle: Getting Started
-sectionName: docs-getting-started
+menuSectionName: docs-getting-started
+submenuSortOrder:
+  - usage
+  - local-installation
+  - debugging
+  - samples
 tags:
   - docs
 ---
-## {{ subtitle }}
+# {{ subtitle }}
 
 Requires version 8 of Node.js or higher.
 
@@ -12,9 +17,9 @@ Requires version 8 of Node.js or higher.
 npm install -g @11ty/eleventy
 ```
 
-Available [on npm](https://www.npmjs.com/package/@11ty/eleventy). Previously known as [`eleventy-cli`](https://www.npmjs.com/package/eleventy-cli). [Read more about local installation.](/docs/local-installation/)
+Available [on npm](https://www.npmjs.com/package/@11ty/eleventy). Previously known as [`eleventy-cli`](https://www.npmjs.com/package/eleventy-cli). Read more about [local installation.](/docs/local-installation/)
 
-### Run Eleventy
+## Run Eleventy
 
 Make a directory with your project in it. Don’t include `~ $` when you run these commands.
 
@@ -47,3 +52,15 @@ Wrote 2 files in 0.10 seconds
 ```
 
 This will compile any content templates in the current directory or subdirectories into the output folder (defaults to `_site`). Congratulations—you made something with Eleventy! Now put it to work with templating syntax, front matter, and data files.
+
+**➡ Continue: [Command Line Usage](/docs/usage/)**
+
+## More tutorials
+
+* <span class="elv-b">Making a Simple Web Site with the Simplest Static Site Generator</span>, on Medium:
+    * [Level 1—Making Content with Data](https://medium.com/@11ty/making-a-simple-web-site-with-the-simplest-static-site-generator-level-1-7fc6febca1)
+    * [Level 2—Adding Filters](https://medium.com/@11ty/making-a-simple-web-site-with-eleventy-level-2-1b356183377c)
+* [Import your Disqus Comments into Eleventy](https://github.com/11ty/eleventy-import-disqus/blob/master/README.md) on GitHub
+* [The Simplest Web Site That Could Possibly Work](https://www.zachleat.com/web/that-could-possibly-work/) shows how to create a CSS minifier filter and inline CSS into your HTML.
+
+_See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/eleventy/)._

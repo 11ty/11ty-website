@@ -34,7 +34,7 @@ pre[class*="language-"] {
 }
 
 @media (min-width: 44.375em) { /* 710px */
-	pre[class*="language-"] {
+	pre {
 		border-radius: 0.3em;
 	}
 }

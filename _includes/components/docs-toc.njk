@@ -1,12 +1,13 @@
 <div class="elv-toc">
 <h2 class="elv-toc-hed sr-only">Documentation Pages</h2>
 
+
 <ul class="elv-toc-list">
-{% for navpage in collections.mainDocs -%}
+{% for navpage in collections.docs | sortMenu(menuSortOrder) -%}
 <li{% if page.url == navpage.data.page.url %} class="elv-toc-active"{% endif %}><a href="{{ navpage.data.page.url }}">{{ navpage.data.subtitle }}</a>
-{%- if navpage.data.sectionName %}
-<ul>
-{%- for section in collections[navpage.data.sectionName] -%}
+{%- if navpage.data.menuSectionName %}
+<ul{% for section in collections[navpage.data.menuSectionName] %}{% if page.url == section.data.page.url %} class="elv-toc-active"{% endif %}{% endfor %}>
+{%- for section in collections[navpage.data.menuSectionName] | sortMenu(navpage.data.submenuSortOrder) -%}
 <li{% if page.url == section.data.page.url %} class="elv-toc-active"{% endif %}><a href="{{ section.data.page.url }}">{{ section.data.subtitle }}</a></li>
 {% endfor -%}</li>
 </ul>
@@ -14,4 +15,6 @@
 </li>
 {% endfor -%}
 </ul>
+
+
 </div>

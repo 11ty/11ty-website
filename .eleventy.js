@@ -6,15 +6,14 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("css/fonts");
 	eleventyConfig.addPassthroughCopy("img");
 
-	eleventyConfig.addCollection("mainDocs", function(collection) {
-		let order = [
-			"overview",
-			"getting-started",
-			"tutorials",
-			"versions",
-		].map(file => `./docs/${file}.md`);
+	eleventyConfig.addFilter("sortMenu", function(collection, sortOrder) {
+		if(!sortOrder) {
+			return collection;
+		}
 
-		return collection.getFilteredByTag("docs").sort(function(a, b) {
+		let order = sortOrder.map(path => `./docs/${path}.md`);
+
+		return collection.sort(function(a, b) {
 			let firstIndex = order.indexOf(a.inputPath);
 			let secondIndex = order.indexOf(b.inputPath);
 
@@ -63,7 +62,7 @@ module.exports = function(eleventyConfig) {
 		permalink: true,
 		permalinkClass: "direct-link",
 		permalinkSymbol: "#",
-		level: [1,2,3]
+		level: [1,2,3,4]
 	};
 
 	eleventyConfig.setLibrary("md", markdownIt(options).use(markdownItAnchor, opts));
