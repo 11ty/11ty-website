@@ -6,15 +6,14 @@
 {% for navpage in collections.docs | sortMenu(menuSortOrder) -%}
 <li{% if page.url == navpage.data.page.url %} class="elv-toc-active"{% endif %}><a href="{{ navpage.data.page.url }}">{{ navpage.data.subtitle }}</a>
 {%- if navpage.data.menuSectionName %}
-<ul{% for section in collections[navpage.data.menuSectionName] %}{% if page.url == section.data.page.url %} class="elv-toc-active"{% endif %}{% endfor %}>
+<ul class="{% for section in collections[navpage.data.menuSectionName] %}{% if page.url == section.data.page.url %}elv-toc-active{% endif %}{% endfor %}{% for section in collections[navpage.data.menuSectionName] %}{% for subsection in collections[section.data.menuSectionName] %}{% if page.url == subsection.data.page.url %} elv-toc-active{% endif %}{% endfor %}{% endfor %}">
 {%- for section in collections[navpage.data.menuSectionName] | sortMenu(navpage.data.submenuSortOrder) -%}
-<li{% if page.url == section.data.page.url %} class="elv-toc-active"{% endif %}><a href="{{ section.data.page.url }}">{{ section.data.subtitle }}</a></li>
+<li class="{% if page.url == section.data.page.url %} elv-toc-active{% endif %}{% for subsection in collections[section.data.menuSectionName] %}{% if page.url == subsection.data.page.url %} elv-toc-active{% endif %}{% endfor %}"><a href="{{ section.data.page.url }}">{{ section.data.subtitle }}</a></li>
 {% endfor -%}</li>
 </ul>
 {% endif -%}
 </li>
 {% endfor -%}
 </ul>
-
 
 </div>

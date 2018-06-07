@@ -1,0 +1,15 @@
+---
+layout: layouts/docs.njk
+---
+<h1>Quick Tip #{{ tipindex }}—{{ tiptitle }}</h1>
+
+{{ layoutContent | safe }}
+
+<h2>All Quick Tips</h2>
+<ul>
+{% for tip in collections.quicktips %}
+{% if page.url != tip.url %}
+	<li>Quick Tip <a href="{{ tip.url }}"><code>#{{ tip.data.tipindex }}</code>—{{ tip.data.tiptitle }}</a></li>
+{% endif %}
+{%- endfor %}
+</ul>

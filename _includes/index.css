@@ -26,11 +26,17 @@ strong,
 b {
 	font-weight: 600;
 }
-
+hr {
+	margin: 3em 0;
+	border: none;
+	border-top: 1px solid #ddd;
+}
 p {
 	max-width: 42em;
 	line-height: 1.5;
 }
+
+/* Blockquotes */
 blockquote {
 	font-family: Georgia, serif;
 	font-size: 1.1875em; /* 19px /16 */
@@ -102,6 +108,7 @@ h1 {
 	margin: 0 0 .5em;
 }
 main h1 {
+	margin-top: 1em;
 	border-bottom: 2px dotted #666;
 }
 h2 {
@@ -136,23 +143,19 @@ h5 code {
 }
 
 /* Lists */
+ul {
+	padding: 0 1em;
+}
 li {
 	padding: .25em 0;
 }
 li ul {
 	margin: .5em 0;
 	padding-left: 1em;
-	list-style: disc;
 }
 li li {
 	padding-top: .1em;
 	padding-bottom: .1em;
-}
-@media (min-width: 43.75em) { /* 700px */
-	ul,
-	ol {
-		padding: 0;
-	}
 }
 
 /* Syntax highlighting and Code blocks */
@@ -454,6 +457,9 @@ body > .elv-warning {
 .elv-toc-hed {
 	display: block;
 }
+.elv-toc-list {
+	font-size: 0.7777777777778em; /* 14px /18 */
+}
 .elv-toc-list ul {
 	padding: 0;
 	padding-left: 1em;
@@ -476,9 +482,9 @@ body > .elv-warning {
 	content: " ⬅";
 	line-height: .5;
 }
-@media (min-width: 43.75em) { /* 700px */
+@media (min-width: 28.125em) { /* 450px */
 	.elv-toc-list {
-		list-style: disc;
+		font-size: 1em;
 	}
 }
 @media (min-width: 64em) { /* 1024px */

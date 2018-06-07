@@ -1,0 +1,4 @@
+{
+	"tags": ["quicktips", "docs-quicktips"],
+	"layout": "layouts/quicktips.njk"
+}
