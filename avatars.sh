@@ -18,3 +18,6 @@ mv profile_image?size=bigger img/avatars/codypeterson.jpg
 
 wget https://twitter.com/wilto/profile_image?size=bigger
 mv profile_image?size=bigger img/avatars/wilto.jpg
+
+wget https://twitter.com/nice2meatu/profile_image?size=bigger
+mv profile_image?size=bigger img/avatars/nice2meatu.jpg

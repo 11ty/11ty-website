@@ -15,3 +15,5 @@
 > “I've been digging into Eleventy, a new static site generator. Really like the way it handles pagination!”—[![@jameswillweb](/img/avatars/jameswillweb.jpg)James Williamson](https://twitter.com/jameswillweb/status/951488360543121408)
 
 > “I tried Eleventy last night on a personal project and today we implemented it on a (non-public facing) client project. It's really good.”—[![@codypeterson](/img/avatars/codypeterson.jpg)Cody Peterson](https://twitter.com/codypeterson/status/950568228559904768)
+
+> “Just gave @eleven_ty a first run/try and I must say it's pretty dang awesome. Especially for someone like me, who is most familiar with HTML and CSS and some JS. ❤️”—[![@jameswillweb](/img/avatars/nice2meatu.jpg)Marco Hengstenberg](https://twitter.com/nice2meatu/status/1004665956885520384)
