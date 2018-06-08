@@ -1,5 +1,5 @@
 {
-	"tags": ["docs-quicktips"],
+	"tags": ["quicktips", "docs-quicktips"],
 	"layout": "layouts/quicktips.njk",
 	"permalink": "/docs/quicktips/{{ page.fileSlug }}/",
 	"feedTitle": "Quick Tips RSS Feed",
