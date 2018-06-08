@@ -10,6 +10,9 @@
 {% include 'prism-theme.css' %}
 {% endset %}
 		<style>{{ css | cssmin | safe }}</style>
+{% if feedTitle and feedUrl %}
+		<link rel="alternate" href="{{ feedUrl }}" title="{{ feedTitle }}" type="application/atom+xml">
+{% endif %}
 	</head>
 	<body>
 
