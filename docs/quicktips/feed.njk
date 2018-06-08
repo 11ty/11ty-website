@@ -1,0 +1,39 @@
+---
+layout: false
+permalink: /docs/quicktips/feed.xml
+metadata:
+  title: Eleventy Quick Tips
+  url: http://www.11ty.io/
+  author:
+    name: Zach Leatherman
+    email: zach@zachleat.com
+  feed:
+    subtitle: Eleventy Quick Tips!
+    filename: feed.xml
+    path: docs/quicktips/feed.xml
+    url: https://www.11ty.io/docs/quicktips/feed.xml
+    id: https://www.11ty.io/
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ metadata.title }}</title>
+  <subtitle>{{ metadata.feed.subtitle }}</subtitle>
+  <link href="{{ metadata.feed.url }}" rel="self"/>
+  <link href="{{ metadata.url }}"/>
+  <updated>{{ collections.quicktips | rssLastUpdatedDate }}</updated>
+  <id>{{ metadata.feed.id }}</id>
+  <author>
+    <name>{{ metadata.author.name }}</name>
+    <email>{{ metadata.author.email }}</email>
+  </author>
+  {%- for post in collections.quicktips %}
+  {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+  <entry>
+    <title>Quick Tip #{{ post.data.tipindex }}—{{ post.data.tiptitle }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ post.date | rssDate }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+  </entry>
+  {%- endfor %}
+</feed>
