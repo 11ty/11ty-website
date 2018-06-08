@@ -40,7 +40,9 @@ To be honest it’s kind of a stretch to relate Lean methodology to this project
 
 ## Zero Config
 
-Run `eleventy` out of the box with sensible defaults. Lower the barrier to entry for that first project build to get up and running faster.
+Zero config means that Eleventy can run without any command line parameters or configuration files.
+
+We’ve taken care to setup Eleventy so that that running the stock  `eleventy` command uses sensible defaults. Lower the barrier to entry for that first project build to get up and running faster.
 
 ## Convention over Configuration Routing
 
