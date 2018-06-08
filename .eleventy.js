@@ -57,6 +57,12 @@ module.exports = function(eleventyConfig) {
 		return splitSpace.join(" ") + after;
 	});
 
+	eleventyConfig.addCollection("quicktipssorted", function(collection) {
+		return collection.getFilteredByTag("quicktips").sort(function(a, b) {
+			return parseInt(a.data.tipindex, 10) - parseInt(b.data.tipindex, 10);
+		});
+	});
+
 	/* Markdown */
 	let markdownIt = require("markdown-it");
 	let markdownItAnchor = require("markdown-it-anchor");

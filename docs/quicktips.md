@@ -8,7 +8,7 @@ feedUrl: /docs/quicktips/feed.xml
 ---
 # Quick Tips
 
-{% for tip in collections.quicktips %}
+{% for tip in collections.quicktipssorted %}
 * Quick Tip <a href="{{ tip.url }}"><code>#{{ tip.data.tipindex }}</code>—{{ tip.data.tiptitle }}</a>
 {%- endfor %}
 

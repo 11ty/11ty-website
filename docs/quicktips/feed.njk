@@ -20,13 +20,13 @@ metadata:
   <subtitle>{{ metadata.feed.subtitle }}</subtitle>
   <link href="{{ metadata.feed.url }}" rel="self"/>
   <link href="{{ metadata.url }}"/>
-  <updated>{{ collections.quicktips | rssLastUpdatedDate }}</updated>
+  <updated>{{ collections.quicktipssorted | rssLastUpdatedDate }}</updated>
   <id>{{ metadata.feed.id }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
   </author>
-  {%- for post in collections.quicktips %}
+  {%- for post in collections.quicktipssorted | reverse %}
   {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
   <entry>
     <title>Quick Tip #{{ post.data.tipindex }}—{{ post.data.tiptitle }}</title>
