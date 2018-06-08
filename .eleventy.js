@@ -1,5 +1,6 @@
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
+const CleanCSS = require("clean-css");
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(syntaxHighlightPlugin);
@@ -8,6 +9,9 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("css/fonts");
 	eleventyConfig.addPassthroughCopy("img");
 
+	eleventyConfig.addFilter("cssmin", function(code) {
+		return new CleanCSS({}).minify(code).styles;
+	});
 
 	eleventyConfig.addFilter("sortMenu", function(collection, sortOrder) {
 		if(!sortOrder) {
