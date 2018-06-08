@@ -1,6 +1,8 @@
 ---
 tipindex: "001"
 tiptitle: "Inline Minified CSS"
+tags:
+  - quicktips
 ---
 * **Related**: [Quick Tip #002—Inline Minified JavaScript](/docs/quicktips/inline-js/)
 
