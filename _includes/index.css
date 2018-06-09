@@ -107,14 +107,19 @@ h1 {
 	font-size: 2.666666666667em; /* 48px /18 */
 	margin: 0 0 .5em;
 }
-main h1 {
+main .elv-toc + h1 {
 	margin-top: 1em;
+}
+main h1:first-child,
+main .elv-toc + h1 {
 	border-bottom: 2px dotted #666;
 }
 @media (min-width: 64em) { /* 1024px */
-	main h1 {
+	main .elv-toc + h1,
+	main .elv-toc + h2 {
 		margin-top: 0;
 	}
+
 }
 h2 {
 	font-size: 2.222222222222em; /* 40px /18 */
@@ -284,6 +289,7 @@ footer.elv-layout {
 	margin-top: 1.5em;
 	margin-bottom: .25em;
 	text-align: center;
+	text-transform: none;
 }
 .elv-header-docs .elv-hed {
 	font-size: 2.3em;
@@ -426,10 +432,9 @@ main .elv-toc + h1 .direct-link {
 /* Style Guide */
 .elv-sg-component {
 	background-color: #f9f9f9;
-	border-top: 2px dotted #ddd;
-	border-bottom: 2px dotted #ddd;
-	margin-left: -1rem;
-	margin-right: -1rem;
+	border-top: 1px dotted #ddd;
+	border-bottom: 1px dotted #ddd;
+	margin: 2rem 0;
 }
 
 /* Warning */
@@ -497,7 +502,6 @@ body > .elv-warning {
 		font-size: 1rem;
 		position: absolute;
 		left: -16rem;
-		top: 0;
 		width: 13rem;
 	}
 	.elv-toc-hed {

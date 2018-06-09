@@ -30,6 +30,12 @@ layout: layouts/docs.njk
 </ul>
 </div>
 
+## Blockquotes
+
+<div class="elv-sg-component">
+    <blockquote>“Seriously can't remember enjoying using a Static Site Generator this much. Yes Hugo is rapid, but this is all so logical. It feels like it was designed by someone who has been through lots of pain and success using other SSGs.”—<a href="https://twitter.com/philhawksworth"><img src="/img/avatars/philhawksworth.jpg" alt="@philhawksworth">Phil Hawksworth</a></blockquote>
+</div>
+
 ## Buzzwords
 
 ### Inline Buzzwords
@@ -48,4 +54,10 @@ layout: layouts/docs.njk
   <li><a href="/docs/resources/#static-sites">Static Sites</a></li>
   <li><a href="/docs/resources/#jamstack">JAMstack</a></li>
 </ul>
+</div>
+
+## Warning
+
+<div class="elv-sg-component">
+    <div class="elv-warning">⚠️ This documentation is for an older version. Go to the <a href="https://www.11ty.io/docs/">newest Eleventy docs</a> or check out the <a href="https://www.11ty.io/docs/versions/">full release history.</a></div>
 </div>
