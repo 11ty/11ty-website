@@ -226,3 +226,59 @@ You can use the alias in your content too {{ wonder[0] }}.
 {% endraw %}
 
 This writes to `_site/different/item1/index.html` and `_site/different/item3/index.html`.
+
+## Blacklisting or Filtering Values
+
+_Added in Eleventy v0.3.7_
+
+Use the `filter` pagination property to remove values from paginated data.
+
+```markdown
+---
+pagination:
+  data: testdata
+  size: 1
+  filter:
+    - item3
+testdata:
+  item1: itemvalue1
+  item2: itemvalue2
+  item3: itemvalue3
+---
+```
+
+Paginates to:
+
+```js
+[
+  [ "item1" ],
+  [ "item2" ],
+]
+```
+
+This will work the same with paginated arrays or with `resolve: values` for paginated objects.
+
+```markdown
+---
+pagination:
+  data: testdata
+  size: 1
+  resolve: values
+  filter:
+    - itemvalue3
+testdata:
+  item1: itemvalue1
+  item2: itemvalue2
+  item3: itemvalue3
+---
+```
+
+Paginates to:
+
+```js
+[
+  [ "itemvalue1" ],
+  [ "itemvalue2" ],
+]
+```
+
