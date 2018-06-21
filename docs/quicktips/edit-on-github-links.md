@@ -2,6 +2,7 @@
 tipindex: "003"
 tiptitle: "Add Edit on GitHub Links to All Pages"
 date: 2018-06-08
+tags: ["quicktips", "docs-quicktips"]
 ---
 It’s nice to be able to instantly edit your HTML on GitHub when you spot an error or an improvement you can make. Why not facilitate this by adding an *Edit this page on GitHub* link to every page? You can see an example of this on our page footer.
 

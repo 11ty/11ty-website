@@ -213,6 +213,7 @@ code {
 	padding: 1rem;
 	margin: 0 auto;
 	max-width: 42rem;
+	clear: both;
 }
 footer.elv-layout {
 	margin-bottom: 5em;
@@ -539,6 +540,7 @@ body > .elv-warning {
 .inlinelist .active {
 	background-color: #222;
 	color: #fff;
+	font-weight: inherit;
 }
 .inlinelist .active :link,
 .inlinelist .active :visited {
@@ -660,4 +662,23 @@ main p a.buzzword {
 .elv-langlist > .inlinelist {
 	display: inline;
 	margin-left: 1em;
+}
+
+/* Quick Tips TOC */
+.quicktipstoc {
+	font-size: 0.8888888888889em; /* 16px /18 */
+	background-color: #eee;
+	list-style: none;
+	padding: 0.5em 1em;
+}
+.quicktipstoc .active {
+	font-weight: 600;
+}
+
+@media (min-width: 37.5em) { /* 600px */
+	.quicktipstoc {
+		margin-left: 3%;
+		float: right;
+		width: 32%;
+	}
 }

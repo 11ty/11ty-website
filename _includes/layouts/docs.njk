@@ -17,3 +17,12 @@ menuSortOrder:
 {% include "components/docs-toc.njk" %}
 
 {{ layoutContent | safe }}
+
+{% if relatedKey and collections[ "related-" + relatedKey ].length %}
+<h2>Related Docs</h2>
+<ul>
+{% for related in collections[ "related-" + relatedKey ] %}
+	<li><a href="{{ related.url }}">{{ related.data.relatedTitle }}</a></li>
+{%- endfor %}
+</ul>
+{% endif %}
