@@ -1,5 +1,6 @@
 ---
 subtitle: Filters and Tags
+relatedKey: filters
 tags:
   - docs-config
 ---

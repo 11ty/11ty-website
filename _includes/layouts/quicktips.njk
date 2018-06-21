@@ -3,13 +3,12 @@ layout: layouts/docs.njk
 ---
 <h1>Quick Tip #{{ tipindex }}—{{ tiptitle }}</h1>
 
-{{ layoutContent | safe }}
-
-<h2>All Quick Tips</h2>
-<ul>
+<h2 class="sr-only">All Quick Tips</h2>
+<ul class="quicktipstoc">
 {% for tip in collections.quicktipssorted %}
-{% if page.url != tip.url %}
-	<li>Quick Tip <a href="{{ tip.url }}"><code>#{{ tip.data.tipindex }}</code>—{{ tip.data.tiptitle }}</a></li>
-{% endif %}
+	<li{% if page.url == tip.url %} class="active"{% endif %}><a href="{{ tip.url }}"><code>#{{ tip.data.tipindex }}</code>—{{ tip.data.tiptitle }}</a></li>
 {%- endfor %}
 </ul>
+
+{{ layoutContent | safe }}
+

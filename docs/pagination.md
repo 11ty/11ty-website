@@ -3,6 +3,7 @@ subtitle: Pagination
 excerpt: Iterate over a data set and create multiple files from a single template.
 tags:
   - docs-templates
+relatedKey: pagination
 ---
 # Pagination
 
