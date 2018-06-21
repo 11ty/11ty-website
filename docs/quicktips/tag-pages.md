@@ -6,9 +6,9 @@ tags: ["quicktips", "docs-quicktips", "related-pagination"]
 relatedTitle: "Quick Tip #004—Zero Maintenance Tag Pages for your Blog"
 ---
 
-_This post applies to Eleventy 0.4.0 and newer._
+_This post uses features available in Eleventy 0.4.0 and newer._
 
-This quick tip will show you how to create Tag Pages (lists of content tagged into a collection).
+This quick tip will show you how to automatically generate Tag Pages (lists of content tagged into a collection).
 
 We’ll use pagination to automatically generate a template for each tag we want to link to. Here’s a sample pagination template using Nunjucks:
 
