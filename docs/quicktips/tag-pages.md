@@ -1,9 +1,9 @@
 ---
 tipindex: "004"
-tiptitle: "Create Tag Pages for your Blog"
+tiptitle: "Zero Maintenance Tag Pages for your Blog"
 date: 2018-06-08
 tags: ["quicktips", "docs-quicktips", "related-pagination"]
-relatedTitle: "Quick Tip #004—Create Tag Pages for your Blog"
+relatedTitle: "Quick Tip #004—Zero Maintenance Tag Pages for your Blog"
 ---
 
 _This post applies to Eleventy 0.4.0 and newer._
