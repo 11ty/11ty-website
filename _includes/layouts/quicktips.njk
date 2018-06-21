@@ -1,7 +1,8 @@
 ---
 layout: layouts/docs.njk
 ---
-<h1>Quick Tip #{{ tipindex }}—{{ tiptitle }}</h1>
+{% set quicktipheadertitle %}Quick Tip #{{ tipindex }}—{{ tiptitle }}{% endset %}
+<h1>{{ quicktipheadertitle | orphanWrap | safe }}</h1>
 
 <h2 class="sr-only">All Quick Tips</h2>
 <ul class="quicktipstoc">
