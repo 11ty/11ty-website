@@ -283,3 +283,26 @@ Paginates to:
 ]
 ```
 
+## Paging a Collection
+
+If you’d like to make a paginated list of all of your blog posts (any content with the tag `post` on it), use something like the following Liquid/Nunjucks template to iterate over a specific collection:
+
+{% raw %}
+```markdown
+---
+title: My Posts
+pagination:
+  data: collections.post
+  size: 6
+  alias: posts
+---
+
+<ol>
+{% for post in posts %}
+  <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+{% endfor %}
+</ol>
+```
+{% endraw %}
+
+The above generates a list of links but you could do a lot more. See what’s available in the [Collection documentation](/docs/collections/#individual-collection-items-(useful-for-sort-callbacks)) (specifically `templateContent`). If you’d like to use this to automatically generate Tag pages for your content, please read [Quick Tip #004—Create Tag Pages for your Blog](/docs/quicktips/tag-pages/).
