@@ -79,6 +79,7 @@ table td {
 	border-top: 1px solid #eee;
 	border-bottom: 1px solid #eee;
 	padding: .4em;
+	font-size: 0.8125em; /* 13px /16 */
 }
 table th:first-child,
 table td:first-child {
@@ -91,6 +92,7 @@ table th {
 	table th,
 	table td {
 		padding: .4em .8em;
+		font-size: 1em; /* 16px /16 */
 	}
 }
 
@@ -425,6 +427,9 @@ main .elv-toc + h1 .direct-link {
 	background-color: #efefef;
 	border-radius: 0.1875em; /* 3px /16 */
 	font-weight: 500;
+	margin: 0 0.4285714285714em 0.07142857142857em 0; /* 0 6px 1px 0 /14 */
+	line-height: 1.285714285714; /* 18px /14 */
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,1);
 }
 .minilink:hover,
 .minilink:focus {
@@ -681,5 +686,17 @@ main p a.buzzword {
 		margin: 0 0 0 3%;
 		float: right;
 		width: 32%;
+	}
+}
+
+/* Breakpoint Overrides */
+@media (max-width: 37.4375em) { /* 599px */
+	.bp-notsm.bp-notsm.bp-notsm.bp-notsm {
+		display: none;
+	}
+}
+@media (min-width: 37.5em) { /* 600px */
+	.bp-sm.bp-sm.bp-sm.bp-sm {
+		display: none ;
 	}
 }

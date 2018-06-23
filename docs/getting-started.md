@@ -4,10 +4,10 @@ menuSectionName: docs-getting-started
 submenuSortOrder:
   - usage
   - local-installation
+  - starter
   - debugging
   - tutorials
   - quicktips
-  - samples
 tags:
   - docs
 ---

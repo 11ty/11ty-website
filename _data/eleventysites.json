@@ -2,48 +2,65 @@
 	{
 		"url": "https://www.11ty.io/",
 		"name": "Eleventy, the web site",
-		"description": "_(spoiler alert: it’s this web site)_",
+		"description": "Spoiler alert: it’s this web site.",
 		"source_url": "https://github.com/11ty/11ty.io"
 	},
 	{
 		"url": "https://www.zachleat.com/web/",
 		"name": "zachleat.com",
-		"description": "is a 10+ years-running blog about web development.",
+		"description": "A 10+ years-running blog about web development.",
 		"source_url": "https://github.com/zachleat/zachleat.com"
 	},
 	{
 		"url": "https://www.fontspeed.io/",
 		"name": "fontspeed",
-		"description": "is a newsletter about loading your web fonts.",
+		"description": "A newsletter about loading your web fonts.",
 		"source_url": "https://github.com/fontspeed/fontspeed-teaser"
 	},
 	{
 		"url": "https://jamstack-comments.netlify.com/",
 		"name": "Jamstack Comments Engine",
-		"description": "is an example of a comments engine you could add to any JAMstack site hosted on Netlify.",
+		"description": "An example of a comments engine you could add to any JAMstack site hosted on Netlify.",
 		"source_url": "https://github.com/philhawksworth/jamstack-comments-engine"
 	},
 	{
 		"url": "https://wiltomakesfood.com/",
 		"name": "Wilto Makes Food",
-		"description": "is the professional cooking site of Mat Marquis.",
+		"description": "The professional cooking site of Mat Marquis.",
 		"source_url": "https://github.com/Wilto/wilto-makes-food"
 	},
 	{
 		"url": "https://2018.nejsconf.com/",
 		"name": "NEJS CONF 2018",
-		"description": "is a single day, single track Web Development conference.",
+		"description": "A single day, single track Web Development conference.",
 		"source_url": "https://github.com/NebraskaJS/2018.nejsconf.com"
 	},
 	{
 		"url": "https://mannahfoundation.org/",
 		"name": "Mannah Foundation",
-		"description": "is empowering individuals to make great changes."
+		"description": "Empowering individuals to make great changes."
 	},
 	{
 		"url": "https://alexcarpenter.me/",
 		"name": "Alex Carpenter",
 		"description": "Front-end Web Developer",
 		"source_url": "https://github.com/alexcarpenter/alexcarpenter.me"
+	},
+	{
+		"name": "Heydon Pickering’s Inclusive Web Design Checklist, converted to use <code>eleventy</code>",
+		"description": "The <a href='https://github.com/Heydon/inclusive-design-checklist'>original project</a> took a JSON file and converted it HTML with some one-off JavaScript. This uses eleventy to transform the data using a nunjucks template, resulting in a cleaner, templated setup.",
+		"source_url": "https://github.com/11ty/eleventy-inclusive-design-checklist"
+	},
+	{
+		"url": "https://github.com/11ty/logo",
+		"name": "11ty-logo",
+		"description": "This project generates a template with `eleventy` that has hundreds of different font combinations in an attempt to pick a logo.",
+		"disabled": true
+	},
+	{
+		"name": "Netlify Templates",
+		"url": "https://templates.netlify.com/",
+		"description": "This is a board with templates for static site generators and boilerplates.",
+		"source_url": "https://github.com/netlify/templates"
 	}
 ]

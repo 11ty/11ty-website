@@ -1,0 +1,12 @@
+[
+	{
+		"url": "https://github.com/11ty/eleventy-base-blog",
+		"name": "eleventy-base-blog",
+		"description": "How to build a blog web site with Eleventy."
+	},
+	{
+		"url": "https://github.com/philhawksworth/eleventyone",
+		"name": "eleventyone",
+		"description": "is an Eleventy scaffold project created by the legendary Phil Hawksworth. Makes use of gulp with Eleventy and Sass."
+	}
+]
