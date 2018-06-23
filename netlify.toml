@@ -1,3 +1,7 @@
 [build]
   publish = "_site"
   command = "eleventy"
+[[headers]]
+  for = "/css/fonts/*"
+  [headers.value]
+    max-age = "86400"
