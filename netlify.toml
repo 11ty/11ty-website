@@ -1,7 +1,7 @@
 [build]
-  publish = "_site"
-  command = "eleventy"
+	publish = "_site"
+	command = "eleventy"
 [[headers]]
-  for = "/css/fonts/*"
-  [headers.value]
-    max-age = "86400"
+	for = "/css/fonts/*"
+	[headers.values]
+		cache-control = "max-age=2592000, public"
