@@ -103,7 +103,7 @@ table th {
 .benchnine h3,
 .benchnine h4,
 .benchnine h5 {
-	font-family: BenchNine;
+	font-family: BenchNine, system-ui, sans-serif;
 }
 h1 {
 	font-size: 2.666666666667em; /* 48px /18 */
@@ -379,7 +379,7 @@ footer.elv-layout {
 	font-size: 0.75em; /* 24px /32 */
 }
 .benchnine .latestversion {
-	font-family: BenchNine;
+	font-family: BenchNine, system-ui, sans-serif;
 }
 .tmpl-docs .latestversion {
 	position: absolute;
