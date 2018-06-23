@@ -1,5 +1,6 @@
 ---
 layout: layouts/main.njk
+ignoreGitHubButtons: true
 ---
 
 ## Quick Start
