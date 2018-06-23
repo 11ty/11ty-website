@@ -12,6 +12,10 @@ _(New in Eleventy `v0.2.13`)_ Plugins are custom code that Eleventy can import i
 * [`eleventy-plugin-rss`](https://github.com/11ty/eleventy-plugin-rss) is a collection of Nunjucks filters for RSS/Atom feed templates.
 * [`eleventy-plugin-syntaxhighlight`](https://github.com/11ty/eleventy-plugin-syntaxhighlight) for syntax highlighting using Markdown and Liquid tags.
 
+### Unofficial Plugins
+
+* [`eleventy-plugin-toc`](https://www.npmjs.com/package/eleventy-plugin-toc) by [James Steinbach](https://twitter.com/jdsteinbach) will generate a table of contents from your headings.
+
 ## Adding a Plugin
 
 ### Install the plugin through npm.
