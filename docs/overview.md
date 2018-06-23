@@ -26,6 +26,15 @@ Read more about [**Eleventy’s project goals**.](https://www.zachleat.com/web/i
 
 {% include "testimonials.md" %}
 
+## Sites Using Eleventy
+
+{% for site in eleventysites -%}
+{% if site.disabled != true and site.url -%}
+* [{{ site.name | safe }}]({{ site.url }})
+{% endif -%}
+{% endfor -%}
+* [**Want to add yours?**](https://github.com/11ty/11ty.io/issues/new?title=I+built+a+site+with+Eleventy!)
+
 ## Competitors
 
 This project aims to directly compete with all other Static Site Generators. We encourage you to try out our competition:
