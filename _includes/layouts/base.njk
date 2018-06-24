@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Eleventy</title>
 		<link rel="preload" href="/css/fonts/BenchNine-Bold-subset.woff2" as="font" type="font/woff2" crossorigin>
+		<script>{% include "index.js" %}</script>
 {%- set css %}
 {% include 'index.css' %}
 {% include 'prism-theme.css' %}
@@ -13,7 +14,6 @@
 {% if feedTitle and feedUrl %}
 		<link rel="alternate" href="{{ feedUrl }}" title="{{ feedTitle }}" type="application/atom+xml">
 {% endif %}
-		<script>{% include "index.js" %}</script>
 	</head>
 	<body>
 
