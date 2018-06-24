@@ -6,4 +6,3 @@
 	[headers.values]
 		cache-control = "max-age=2592000, public"
 
-		Link = "</css/fonts/BenchNine-Bold-subset.woff2>; rel=preload; as=font; crossorigin; type=\"font/woff2\""
