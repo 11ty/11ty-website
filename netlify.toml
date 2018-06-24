@@ -2,7 +2,7 @@
 	publish = "_site"
 	command = "eleventy"
 [[headers]]
-	for = "/css/fonts/*"
+	for = "/_site/css/fonts/*"
 	[headers.values]
 		cache-control = "max-age=2592000, public"
 
