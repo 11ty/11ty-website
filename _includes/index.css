@@ -178,6 +178,7 @@ pre {
 	overflow-x: auto;
 	background-color: #eee;
 	clear: both;
+	font-size: 0.875em; /* 14px /16 */
 }
 pre,
 code {
@@ -189,6 +190,7 @@ code {
 	-webkit-hyphens: manual;
 	-moz-hyphens: manual;
 	hyphens: manual;
+	background-color: #efefef;
 }
 pre + pre[class*="language-"] {
 	margin-top: 1em;
@@ -199,9 +201,12 @@ pre + .note {
 	margin-bottom: 2.5em; /* 40px /16 */
 	text-align: right;
 }
-code {
-	background-color: #efefef;
+@media (min-width: 37.5em) { /* 600px */
+	pre {
+		font-size: 1em; /* 16px /16 */
+	}
 }
+
 
 #quick-start ~ .language-text {
 	border-top: 2px solid #666;
