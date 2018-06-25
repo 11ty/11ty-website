@@ -1,31 +1,22 @@
 ---
-subtitle: Filters and Tags
+subtitle: Filters
 relatedKey: filters
+relatedTitle: Template Engine Filters
 tags:
   - docs-config
+  - related-custom-tags
 ---
-# Filters and Tags
+# Filters
 
-Various template engines can be extended with custom filters, helpers, or tags.
+Various template engines can be extended with custom filters or helpers.
 
 Read more:
 
-* [Nunjucks docs: Filters](https://mozilla.github.io/nunjucks/templating.html#filters)
-* [Handlebars docs: Helpers](http://handlebarsjs.com/#helpers)
-* [LiquidJS docs: Filters](https://github.com/harttle/liquidjs#register-filters)
-* [LiquidJS docs: Tags](https://github.com/harttle/liquidjs#register-tags)
+* External: [Nunjucks: Filters](https://mozilla.github.io/nunjucks/templating.html#filters)
+* External: [Handlebars: Helpers](http://handlebarsjs.com/#helpers)
+* External: [LiquidJS: Filters](https://github.com/harttle/liquidjs#register-filters)
 
 This can be customized using the [Configuration API](/docs/config/#using-the-configuration-api). Here are a few examples:
-
-```js
-module.exports = function(eleventyConfig) {
-  // Liquid Tag
-  eleventyConfig.addLiquidTag("myTag",
-    function(tagToken, remainingTokens) {},
-    function(scope, hash) {}
-  );
-};
-```
 
 ```js
 module.exports = function(eleventyConfig) {
