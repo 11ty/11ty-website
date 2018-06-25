@@ -17,7 +17,6 @@ This can be customized using the [Configuration API](/docs/config/#using-the-con
 
 {% raw %}
 ```js
-const Liquid = require("liquidjs");
 module.exports = function(eleventyConfig) {
   // Usage: {% uppercase myVar %} where myVar has a value of "alice"
   // Usage: {% uppercase "alice" %}
@@ -28,7 +27,7 @@ module.exports = function(eleventyConfig) {
       },
       render: function(scope, hash) {
         // Resolve variables
-        var str = Liquid.evalValue(this.str, scope); // "alice"
+        var str = liquidEngine.evalValue(this.str, scope); // "alice"
 
         // Do the uppercasing
         return Promise.resolve(str.toUpperCase()); // "ALICE"
