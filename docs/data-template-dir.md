@@ -5,7 +5,9 @@ tags:
 ---
 # Template and Directory Specific Data Files
 
-_(New in Eleventy `v0.2.14`)_ While it is useful to have globally available data to all of your templates, you may want some of your data to be available locally only to one specific template or to a directory of templates. For that use, we also search for JSON data files in specific places in your directory structure.
+{% addedin "0.2.14" %}
+
+While it is useful to have globally available data to all of your templates, you may want some of your data to be available locally only to one specific template or to a directory of templates. For that use, we also search for JSON data files in specific places in your directory structure.
 
 _Important exception:_ Template and Directory Specific Data Files are **not** processed through a templating engine. Global Data files are.
 

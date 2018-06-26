@@ -21,7 +21,9 @@ tags:
 
 ## Overriding the Template Language
 
-_(New in Eleventy `v0.2.14`)_ There are a couple of different ways you can tell Eleventy how you want to process a file:
+{% addedin "0.2.14" %}
+
+There are a couple of different ways you can tell Eleventy how you want to process a file:
 
 1. The file extension (importantly, this is also used to find files to process).
 2. [Configuration options](/docs/config/):

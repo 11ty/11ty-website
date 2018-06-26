@@ -18,7 +18,9 @@ The only listed options here are the ones that differ from the default `markdown
 
 ### Set your own library instance
 
-_New in Eleventy `v0.3.0`:_ Pass in your own instance of the Markdown library using the Configuration API. See [all `markdown-it` options](https://github.com/markdown-it/markdown-it#init-with-presets-and-options).
+{% addedin "0.3.0" %}
+
+Pass in your own instance of the Markdown library using the Configuration API. See [all `markdown-it` options](https://github.com/markdown-it/markdown-it#init-with-presets-and-options).
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -35,7 +37,9 @@ module.exports = function(eleventyConfig) {
 
 ## Add your own plugins
 
-_New in Eleventy `v0.3.0`:_ Pass in your own `markdown-it` plugins using the `setLibrary` Configuration API method (building on the method described in “Using your own options”).
+{% addedin "0.3.0" %}
+
+Pass in your own `markdown-it` plugins using the `setLibrary` Configuration API method (building on the method described in “Using your own options”).
 
 1. Find your [own `markdown-it` plugin on NPM](https://www.npmjs.com/search?q=keywords:markdown-it-plugin)
 2. `npm install` the plugin.

@@ -5,6 +5,7 @@ relatedTitle: Template Engine Filters
 tags:
   - docs-config
   - related-custom-tags
+  - related-shortcodes
 ---
 # Filters
 
@@ -36,7 +37,9 @@ module.exports = function(eleventyConfig) {
 
 ## Asynchronous Nunjucks Filters
 
-_(New in Eleventy `v0.2.13`)_ By default, almost all templating engines are synchronous. Nunjucks supports some asynchronous behavior, like filters. Here’s how that works:
+{% addedin "0.2.13" %}
+
+By default, almost all templating engines are synchronous. Nunjucks supports some asynchronous behavior, like filters. Here’s how that works:
 
 ```js
 module.exports = function(eleventyConfig) {

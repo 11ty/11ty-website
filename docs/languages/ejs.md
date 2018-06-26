@@ -10,7 +10,9 @@ You can override a `.ejs` file’s template engine. Read more at [Changing a Tem
 
 ## Set your own Library instance
 
-_New in Eleventy `v0.3.0`:_ As an escape mechanism for advanced usage, pass in your own instance of the EJS library using the Configuration API.
+{% addedin "0.3.0" %}
+
+As an escape mechanism for advanced usage, pass in your own instance of the EJS library using the Configuration API.
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -21,7 +23,9 @@ module.exports = function(eleventyConfig) {
 
 ## Compile/Render Options
 
-_New in Eleventy `v0.3.0`:_ See “Options” on the [EJS home page](http://ejs.co/).
+{% addedin "0.3.0" %}
+
+See “Options” on the [EJS home page](http://ejs.co/).
 
 ```
 module.exports = function(eleventyConfig) {

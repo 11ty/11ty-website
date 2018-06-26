@@ -12,7 +12,10 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 * [Level 1—Making Content with Data](https://www.zachleat.com/web/eleventy-tutorial-level-1/)
 * [Level 2—Adding Filters](https://www.zachleat.com/web/eleventy-tutorial-level-2/)
 
-## [{{ collections.quicktips.length }} Quick Tips](/docs/quicktips/)
+## Quick Tips
+
+* [See all {{ collections.quicktips.length }} Quick Tips](/docs/quicktips/)
+* [Subscribe to the _Eleventy Quick Tips RSS Feed_](/docs/quicktips/feed.xml)
 
 ## Third Party Integration
 

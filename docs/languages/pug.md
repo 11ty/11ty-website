@@ -12,7 +12,9 @@ You can override a `.pug` file’s template engine. Read more at [Changing a Tem
 
 ## Set your own Library instance
 
-_New in Eleventy `v0.3.0`:_ As an escape mechanism for advanced usage, pass in your own instance of the Pug library using the Configuration API.
+{% addedin "0.3.0" %}
+
+As an escape mechanism for advanced usage, pass in your own instance of the Pug library using the Configuration API.
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -23,7 +25,9 @@ module.exports = function(eleventyConfig) {
 
 ## Compile/Render Options
 
-_New in Eleventy `v0.2.15`:_ Set compile/render options using the Configuration API. See all [Pug options](https://pugjs.org/api/reference.html#options).
+{% addedin "0.2.15" %}
+
+Set compile/render options using the Configuration API. See all [Pug options](https://pugjs.org/api/reference.html#options).
 
 ```js
 module.exports = function(eleventyConfig) {

@@ -80,7 +80,9 @@ Writes to `_site/2016/01/01/index.html`. There are a variety of ways that the pa
 
 ### Ignore the output directory
 
-_(New in Eleventy `v0.1.4`)_ To remap your template’s output to a directory independent of the output directory (`--output`), use `permalinkBypassOutputDir: true` in your front matter.
+{% addedin "0.1.4" %}
+
+To remap your template’s output to a directory independent of the output directory (`--output`), use `permalinkBypassOutputDir: true` in your front matter.
 
 ```
 ---

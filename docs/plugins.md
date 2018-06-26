@@ -5,7 +5,9 @@ tags:
 ---
 # Plugins
 
-_(New in Eleventy `v0.2.13`)_ Plugins are custom code that Eleventy can import into a project from an external repository.
+{% addedin "0.2.13" %}
+
+Plugins are custom code that Eleventy can import into a project from an external repository.
 
 ## List of Official Plugins
 

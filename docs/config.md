@@ -1,6 +1,12 @@
 ---
 subtitle: Configuration
 menuSectionName: docs-config
+submenuSortOrder:
+  - copy
+  - filters
+  - shortcodes
+  - custom-tags
+  - plugins
 tags:
   - docs
 ---
@@ -206,7 +212,7 @@ Specify which types of templates should be transformed.
 | _Default_ | `html,liquid,ejs,md,hbs,mustache,haml,pug,njk` |
 | _Valid Options_ | Array of [template engine short names](/docs/languages/) |
 | _Command Line Override_ | `--formats` _(accepts a comma separated string)_ |
-| _Configuration API_ | `setTemplateFormats` _(New in Eleventy `v0.2.14`)_ |
+| _Configuration API_ | `setTemplateFormats` {% addedin "0.2.14", "span" %} |
 
 #### Examples
 
@@ -238,7 +244,7 @@ If your site lives in a different subdirectory (particularly useful with GitHub 
 | _Object Key_ | `pathPrefix` |
 | _Default_ | `/` |
 | _Valid Options_ | A prefix directory added to links |
-| _Command Line Override_ | `--pathprefix` _(New in Eleventy `v0.2.11`)_ |
+| _Command Line Override_ | `--pathprefix` {% addedin "0.2.11", "span" %} |
 
 #### Example
 

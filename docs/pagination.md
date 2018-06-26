@@ -47,7 +47,9 @@ If the above file were named `paged.njk`, it would create two pages: `_site/page
 
 ## Paging an Object
 
-_Added in Eleventy v0.4.0_ All of the examples thus far have paged Array data. Eleventy does allow paging objects too. Objects are resolved to pagination arrays using either the `Object.keys` or `Object.values` JavaScript functions. Consider the following Nunjucks template:
+{% addedin "0.4.0" %}
+
+All of the examples thus far have paged Array data. Eleventy does allow paging objects too. Objects are resolved to pagination arrays using either the `Object.keys` or `Object.values` JavaScript functions. Consider the following Nunjucks template:
 
 {% raw %}
 ```markdown
@@ -230,7 +232,7 @@ This writes to `_site/different/item1/index.html` and `_site/different/item3/ind
 
 ## Blacklisting or Filtering Values
 
-_Added in Eleventy v0.4.0_
+{% addedin "0.4.0" %}
 
 Use the `filter` pagination property to remove values from paginated data.
 

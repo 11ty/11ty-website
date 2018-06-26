@@ -6,6 +6,17 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(syntaxHighlightPlugin);
 	eleventyConfig.addPlugin(rssPlugin);
 
+	eleventyConfig.addShortcode("addedin", function(version, tag) {
+		if( typeof version !== "string" ) {
+			tag = version.tag;
+			version = version.version;
+		}
+
+		tag = tag || "p";
+
+		return `<${tag} class="minilink">Added in Eleventy ${version}</${tag}>`;
+	});
+
 	eleventyConfig.addPassthroughCopy("css/fonts");
 	eleventyConfig.addPassthroughCopy("img");
 

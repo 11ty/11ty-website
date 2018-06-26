@@ -234,21 +234,23 @@ module.exports = function(eleventyConfig) {
 
 ```js
 module.exports = function(eleventyConfig) {
-  // Filter source file names using a glob (New in Eleventy `v0.2.14`)
+  // Filter source file names using a glob
   eleventyConfig.addCollection("onlyMarkdown", function(collection) {
     return collection.getFilteredByGlob("**/*.md");
   });
 };
 ```
+{% addedin "0.2.14" %}
 
 ```js
 module.exports = function(eleventyConfig) {
-  // Filter source file names using a glob (New in Eleventy `v0.2.14`)
+  // Filter source file names using a glob
   eleventyConfig.addCollection("posts", function(collection) {
     return collection.getFilteredByGlob("_posts/*.md");
   });
 };
 ```
+{% addedin "0.2.14" %}
 
 ```js
 module.exports = function(eleventyConfig) {
