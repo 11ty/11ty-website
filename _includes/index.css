@@ -476,24 +476,27 @@ p.minilink {
 }
 
 /* Warning */
-.elv-warning {
-	background-color: #ffa;
+.elv-info {
+	background-color: lightblue;
 	line-height: 1.5;
 	padding: 1rem;
 	margin-left: -1rem;
 	margin-right: -1rem;
 	margin-bottom: 2em;
 }
-.elv-warning:first-child {
+.elv-warning {
+	background-color: #ffa;
+}
+.elv-info:first-child {
 	margin-top: 0;
 }
-body > .elv-warning {
+body > .elv-info {
 	margin-left: 0;
 	margin-right: 0;
 	padding: .5rem 1rem;
 }
 @media (min-width: 37.5em) and (min-height: 25em) { /* 600px / 400px */
-	body > .elv-warning {
+	body > .elv-info {
 		position: sticky;
 		top: 0;
 		z-index: 2;

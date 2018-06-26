@@ -56,8 +56,12 @@ layout: layouts/docs.njk
 </ul>
 </div>
 
-## Warning
+## Info Block
 
 <div class="elv-sg-component">
-    <div class="elv-warning">⚠️ This documentation is for an older version. Go to the <a href="https://www.11ty.io/docs/">newest Eleventy docs</a> or check out the <a href="https://www.11ty.io/docs/versions/">full release history.</a></div>
+    <div class="elv-info">ℹ️ This documentation is for an upcoming version of Eleventy. Go to the <a href="https://www.11ty.io/docs/">latest stable version of Eleventy docs</a> or check out the <a href="https://www.11ty.io/docs/versions/">full release history.</a></div>
+</div>
+
+<div class="elv-sg-component">
+    <div class="elv-info elv-warning">⚠️ This documentation is for an older version. Go to the <a href="https://www.11ty.io/docs/">newest Eleventy docs</a> or check out the <a href="https://www.11ty.io/docs/versions/">full release history.</a></div>
 </div>
