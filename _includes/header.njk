@@ -3,8 +3,7 @@
 	<a href="https://twitter.com/jameswillweb/status/999052022497316865"><img src="{{ "/img/possum-sm.png" | url }}" class="elv-possum"></a>
 	<h1 class="elv-hed">{{ title | orphanWrap | safe }}</h1>
 	<ul class="elv-nav">
-{% set latestversion %}{{ pkg.devDependencies["@11ty/eleventy"] | version }}{% endset -%}
-		<li class="elv-nav-item"><a href="{{ "/docs/" | url }}">Docs <span class="elv-nav-light">{{ latestversion }}</span></a></li>
+		<li class="elv-nav-item"><a href="{{ "/docs/" | url }}">Docs <span class="elv-nav-light">{{ versions | latestVersion }}</span></a></li>
 		<li class="elv-nav-item"><a href="https://github.com/11ty/eleventy/">GitHub</a></li>
 		<li class="elv-nav-item"><a href="https://www.npmjs.com/org/11ty">NPM</a></li>
 		<li class="elv-nav-item"><a href="https://twitter.com/eleven_ty">Twitter</a></li>

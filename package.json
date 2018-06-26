@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/11ty/11ty.io#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.4.0",
+    "@11ty/eleventy": "git://github.com/11ty/eleventy.git",
     "@11ty/eleventy-plugin-rss": "^1.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^1.0.5",
     "clean-css": "^4.1.11",

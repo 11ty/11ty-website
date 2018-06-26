@@ -31,14 +31,14 @@ module.exports = function(eleventyConfig) {
 		});
 	});
 
-	eleventyConfig.addFilter("version", function(pkgVersion) {
-		if(pkgVersion.indexOf("file:") === 0) {
-			return "Local";
+	eleventyConfig.addFilter("latestVersion", function(versions) {
+		for( let version of versions ) {
+			if( version.tag === "LATEST" ) {
+				continue;
+			}
+
+			return version.tag;
 		}
-		if(pkgVersion.indexOf("^") === 0) {
-			return "v" + pkgVersion.substr(1);
-		}
-		return pkgVersion;
 	});
 
 	eleventyConfig.addFilter("orphanWrap", str => {
