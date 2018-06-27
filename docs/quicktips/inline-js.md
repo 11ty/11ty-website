@@ -49,7 +49,7 @@ Capture the JavaScript into a variable and run it through the filter (this sampl
 <!-- capture the JS content as a Nunjucks variable -->
 {% set js %}{% include "sample.js" %}{% endset %}
 <!-- feed it through our jsmin filter to minify -->
-<style>{{ js | jsmin | safe }}</style>
+<script>{{ js | jsmin | safe }}</script>
 ```
 {% endraw %}
 
