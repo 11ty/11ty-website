@@ -185,7 +185,6 @@ pre {
 	margin: 1em -.5em 2em -.5em;
 	overflow-x: auto;
 	background-color: #eee;
-	clear: both;
 	font-size: 0.875em; /* 14px /16 */
 }
 pre,
@@ -725,9 +724,11 @@ main p a.buzzword {
 
 @media (min-width: 37.5em) { /* 600px */
 	.quicktipstoc {
-		margin: 0 0 0 3%;
+		margin: 0 0 3% 3%;
 		float: right;
 		width: 32%;
+		border-radius: .25em;
+		font-size: 0.8125em; /* 13px /16 */
 	}
 }
 
