@@ -6,6 +6,10 @@ tags: ["quicktips", "docs-quicktips", "related-filters"]
 relatedTitle: "Quick Tip #001—Inline Minified CSS"
 ---
 
+_Originally posted on [The Simplest Web Site That Could Possible Work Well on zachleat.com](https://www.zachleat.com/web/that-could-possibly-work/)_
+
+This tip works well on small sites that don’t have a lot of CSS. Inlining your CSS removes an external request from your critical path and speeds up page rendering times! If your CSS file is small enough, this is a simplification/end-around for [Critical CSS approaches](https://www.smashingmagazine.com/2015/08/understanding-critical-css/).
+
 ## Installation
 
 `npm install clean-css` to make the CSS minifier available in your project.
@@ -45,5 +49,3 @@ Capture the CSS into a variable and run it through the filter (this sample is us
 <style>{{ css | cssmin | safe }}</style>
 ```
 {% endraw %}
-
-_Originally posted on [The Simplest Web Site That Could Possible Work Well on zachleat.com](https://www.zachleat.com/web/that-could-possibly-work/)_

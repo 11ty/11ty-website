@@ -6,6 +6,10 @@ tags: ["quicktips", "docs-quicktips", "related-filters"]
 relatedTitle: "Quick Tip #002—Inline Minified JavaScript"
 ---
 
+_Originally posted on [The Simplest Web Site That Could Possible Work Well on zachleat.com](https://www.zachleat.com/web/that-could-possibly-work/)_
+
+This tip works great if you have small JS utilities that you’d like to have in your `<head>`. For example, this works great with the Filament Group [`loadJS`](https://github.com/filamentgroup/loadJS) or [`loadCSS`](https://github.com/filamentgroup/loadCSS) utilities.
+
 ## Installation
 
 `npm install uglify-js` to make the Uglify JS minifier available in your project.
@@ -49,4 +53,3 @@ Capture the JavaScript into a variable and run it through the filter (this sampl
 ```
 {% endraw %}
 
-_Originally posted on [The Simplest Web Site That Could Possible Work Well on zachleat.com](https://www.zachleat.com/web/that-could-possibly-work/)_

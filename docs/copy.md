@@ -16,13 +16,15 @@ If you list a format in the `templateFormats` array that isn’t a valid templat
 module.exports = {
   templateFormats: [
     "md",
-    "png" // png is not yet a valid template extension
+    "css" // css is not yet a valid template extension
   ],
   passthroughFileCopy: true
 };
 ```
 
-Although `png` is not a recognized Eleventy template, Eleventy will now search for any `*.png` files inside of the input directory and copy them to output (keeping directory structure).
+Although `css` is not currently a recognized Eleventy template, Eleventy will now search for any `*.css` files inside of the input directory and copy them to output (keeping directory structure).
+
+You might also imagine using this for images by adding `"jpg"`, `"png"`, or maybe even `"webp"`.
 
 ## Manual Passthrough Copy (Faster)
 
