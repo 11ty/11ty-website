@@ -18,7 +18,7 @@ Writing _site/README/index.html from ./README.md
 Wrote 1 file in 0.10 seconds
 ```
 
-➡ Keep going! Check out the [**Documentation for {{ versions | latestVersion }}**]({{ "/docs/" | url }}).
+➡ Keep going! Check out the [**Documentation for {% latestVersion versions, config %}**]({{ "/docs/" | url }}).
 
 ## News
 

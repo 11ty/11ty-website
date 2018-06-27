@@ -5,7 +5,8 @@
 		"ignore_release_notes": true
 	},{
 		"tag": "v0.5.0",
-		"docs_url": "https://v0-5-0.11ty.io/docs/"
+		"docs_url": "https://v0-5-0.11ty.io/docs/",
+		"prerelease": true
 	},{
 		"tag": "v0.4.0",
 		"docs_url": "https://v0-4-0.11ty.io/docs/"

@@ -42,9 +42,12 @@ module.exports = function(eleventyConfig) {
 		});
 	});
 
-	eleventyConfig.addFilter("latestVersion", function(versions) {
+	eleventyConfig.addShortcode("latestVersion", function(versions, config) {
 		for( let version of versions ) {
 			if( version.tag === "LATEST" ) {
+				continue;
+			}
+			if( !config.prerelease && version.prerelease ) {
 				continue;
 			}
 
