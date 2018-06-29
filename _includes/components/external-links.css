@@ -1,0 +1,28 @@
+/* External links */
+main a[href^="http://"]:not(.minilink):not([href*="11ty.io"]),
+main a[href^="https://"]:not(.minilink):not([href*="11ty.io"]), 
+main a[href^="//"]:not(.minilink):not([href*="11ty.io"]) {
+	text-decoration-color: #00bcd4;
+}
+main a[href^="http://"]:not(.minilink):not([href*="11ty.io"]):after,
+main a[href^="https://"]:not(.minilink):not([href*="11ty.io"]):after, 
+main a[href^="//"]:not(.minilink):not([href*="11ty.io"]):after {
+  content: "↗";
+	font-family: system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+	color: #00bcd4;
+	padding-left: 2px;
+	line-height: .75;
+}
+/* External link hovers */
+main a[href^="http://"]:not(.minilink):not([href*="11ty.io"]):hover,
+main a[href^="https://"]:not(.minilink):not([href*="11ty.io"]):hover, 
+main a[href^="//"]:not(.minilink):not([href*="11ty.io"]):hover {
+	text-decoration-color: inherit;
+}
+main a[href^="http://"]:not(.minilink):not([href*="11ty.io"]):hover:after,
+main a[href^="https://"]:not(.minilink):not([href*="11ty.io"]):hover:after, 
+main a[href^="//"]:not(.minilink):not([href*="11ty.io"]):hover:after {
+	color: inherit;
+}

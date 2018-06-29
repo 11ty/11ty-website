@@ -6,6 +6,8 @@
 		<title>Eleventy</title>
 {%- set css %}
 {% include 'index.css' %}
+{% include 'components/external-links.css' %}
+{% include 'components/toc.css' %}
 {% include 'prism-theme.css' %}
 {% endset %}
 		<style>{{ css | cssmin | safe }}</style>

@@ -22,14 +22,7 @@ a:visited,
 a[href] {
 	color: #222;
 }
-/* External links */
-main a[href^="http://"]:not([href*="11ty.io"]):after,
-main a[href^="https://"]:not([href*="11ty.io"]):after, 
-main a[href^="//"]:not([href*="11ty.io"]):after {
-  content: " ➡🚪";
-  font-style: normal;
-	color: #999;
-}
+
 strong,
 b {
 	font-weight: 600;
@@ -96,6 +89,10 @@ table td:first-child {
 table th {
 	border-color: #ddd;
 }
+h2 + table {
+	margin-top: -0.625em; /* -10px /16 */
+}
+
 @media (min-width: 37.5em) { /* 600px */
 	table th,
 	table td {
@@ -511,51 +508,7 @@ body > .elv-info {
 	}
 }
 
-/* Table of Contents */
-.elv-toc-hed {
-	display: block;
-}
-.elv-toc-list {
-	font-size: 0.7777777777778em; /* 14px /18 */
-}
-.elv-toc-list ul {
-	padding: 0;
-	padding-left: 1em;
-	list-style: none;
-	display: none;
-}
-.elv-toc-list ul.elv-toc-active,
-.elv-toc-list li.elv-toc-active > ul {
-	display: block;
-}
-.elv-toc-list li {
-	padding-top: 0;
-	padding-bottom: 0;
-	margin: .1em 0 .5em;
-}
-.elv-toc-active > a {
-	font-weight: 700;
-}
-.elv-toc-active > a:after {
-	content: " ⬅";
-	line-height: .5;
-}
-@media (min-width: 28.125em) { /* 450px */
-	.elv-toc-list {
-		font-size: 1em;
-	}
-}
-@media (min-width: 64em) { /* 1024px */
-	.elv-toc {
-		font-size: 1rem;
-		position: absolute;
-		left: -16rem;
-		width: 13rem;
-	}
-	.elv-toc-hed {
-		display: none;
-	}
-}
+
 
 /* Buzzwords */
 @keyframes rainbow {
