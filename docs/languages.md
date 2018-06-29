@@ -17,7 +17,7 @@ tags:
 ---
 # {{ subtitle }}
 
-{% include "template-languages.md" %}
+{% templatelangs templatetypes, page %}
 
 ## Overriding the Template Language
 

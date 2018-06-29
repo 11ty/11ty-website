@@ -8,6 +8,8 @@ layout: layouts/langs.njk
 
 You can override a `.njk` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
 
+## Nunjucks Options
+
 ### Use your Nunjucks Environment
 
 {% addedin "0.3.0" %}
@@ -25,7 +27,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Supported Features
+## Supported Features
 
 | Feature                                                                      | Syntax                                                                    |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
@@ -36,3 +38,62 @@ module.exports = function(eleventyConfig) {
 | ✅ [Eleventy Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{% name | filterName %}{% endraw %}` Read more about [Filters](/docs/filters/). |
 | ✅ [Custom Tags](/docs/custom-tags/) | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Custom Tags](/docs/custom-tags/). {% addedin "0.5.0", "span" %}|
 | ✅ [Shortcodes](/docs/shortcodes/) | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/). {% addedin "0.5.0", "span" %}|
+
+## Filters
+
+Filters are used to transform or modify content. You can add Nunjucks specific filters, but you probably want to add a [Universal filter](/docs/filters/) instead.
+
+Read more about [Nunjucks Filter syntax](https://mozilla.github.io/nunjucks/templating.html#filters).
+
+```js
+module.exports = function(eleventyConfig) {
+  // Nunjucks Filter
+  eleventyConfig.addNunjucksFilter("myNjkFilter", function(value) { … });
+  
+  // Nunjucks Asynchronous Filter (read on below)
+  eleventyConfig.addNunjucksAsyncFilter("myAsyncNjkFilter", function(value, callback) { … });
+  
+  // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
+  eleventyConfig.addFilter("myFilter", function(value) { … });
+};
+```
+
+### Usage:
+
+{% raw %}
+```html
+<h1>{{ myVariable | myFilter }}</h1>
+```
+{% endraw %}
+
+### Asynchronous Nunjucks Filters
+
+{% addedin "0.2.13" %}
+
+By default, almost all templating engines are synchronous. Nunjucks supports some asynchronous behavior, like filters. Here’s how that works:
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addNunjucksAsyncFilter("myAsyncFilter", function(value, callback) {
+    window.setTimeout(function() {
+      callback(null, "My Result");
+    }, 100);
+  });
+};
+```
+
+The last argument here is the callback function, the first argument of which is the error object and the second is the result data. Use this filter like you would any other: `{% raw %}{{ myValue | myAsyncFilter }}{% endraw %}`.
+
+Here’s a Nunjucks example with 2 arguments:
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addNunjucksAsyncFilter("myAsyncFilter", function(value1, value2, callback) {
+    window.setTimeout(function() {
+      callback(null, "My Result");
+    }, 100);
+  });
+};
+```
+
+Multi-argument filters in Nunjucks are called like this: `{% raw %}{{ myValue1 | myAsyncFilter(myValue2) }}{% endraw %}`.

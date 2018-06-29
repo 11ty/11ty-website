@@ -4,11 +4,13 @@ layout: layouts/langs.njk
 ---
 | Eleventy Short Name | File Extension | NPM Package    |
 | ------------------- | -------------- | -------------- |
-| `haml`              | `.haml`        | [`haml.js`](c) |
+| `haml`              | `.haml`        | [`haml.js`](https://github.com/tj/haml.js) |
 
 You can override a `.haml` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
 
-## Set your own Library instance
+## HAML Options
+
+### Set your own Library instance
 
 {% addedin "0.3.0" %}
 

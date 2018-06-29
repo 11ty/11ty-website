@@ -9,13 +9,17 @@ tags:
 ---
 # Custom Tags
 
-Various template engines can be extended with custom tags. It’s unlikely that you want this feature. You probably want [shortcodes](/docs/shortcodes/) instead, Eleventy’s custom tags sugar.
+Various template engines can be extended with custom tags.
 
-Custom Tags are unrelated to Eleventy’s [Collections using Tags](/docs/collections/) feature. Add a Custom Tag using the [Configuration API](/docs/config/#using-the-configuration-api). 
+⚠️ It’s unlikely that you want this feature. You probably want [shortcodes](/docs/shortcodes/) instead, Eleventy’s custom tags sugar (it’s easier to use).
+
+Custom Tags are unrelated to Eleventy’s [Collections using Tags](/docs/collections/) feature. Unfortunately we’ve inherited this name from various upstream template languages.
+
+But, after all that, you can still add a Custom Tag using the [Configuration API](/docs/config/#using-the-configuration-api). 
 
 ## LiquidJS example
 
-* External: [LiquidJS: Tags](https://github.com/harttle/liquidjs#register-tags)
+* [LiquidJS: Tags](https://github.com/harttle/liquidjs#register-tags)
 
 {% raw %}
 ```js
@@ -46,7 +50,7 @@ See all of the [built-in tag implementations for LiquidJS](https://github.com/ha
 
 {% addedin "0.5.0" %}
 
-* External: [Nunjucks: Custom Tags](https://mozilla.github.io/nunjucks/api.html#custom-tags)
+* [Nunjucks: Custom Tags](https://mozilla.github.io/nunjucks/api.html#custom-tags)
 
 
 {% raw %}

@@ -14,7 +14,7 @@ Eleventy uses **independent template engines**. We don’t want to hold your con
 
 Eleventy **works with multiple template languages**. You can pick one or use them all together in a single project:
 
-{% include "template-languages.md" %}
+{% templatelangs templatetypes, page %}
 
 Eleventy is **not a JavaScript framework**—that means *zero boilerplate client-side JavaScript*. We’re thinking long term and opting out of the framework rat race. The tool chain, code conventions, and modules you use in your front end stack are decoupled from this tool. Work from a solid foundation of <a href="/docs/resources/#pre-rendered-templates" class="buzzword">pre-rendered templates</a> that suit your project’s <a href="/docs/resources/#progressive-enhancement" class="buzzword">progressive enhancement</a> baseline requirements.
 

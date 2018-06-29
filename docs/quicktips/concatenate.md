@@ -39,3 +39,9 @@ In our [Inline CSS Quick Tip](/docs/quicktips/inline-css/), we discussed how to 
 <style>{{ css | cssmin | safe }}</style>
 ```
 {% endraw %}
+
+## Work with what you have
+
+Of course, Eleventy has no desire to replace your existing build pipeline. This is just a super simple example if you want something up and running quickly.
+
+That said, Eleventy wants to work with what you have. As an example, the [`EleventyOne` project scaffold](https://github.com/philhawksworth/eleventyone/) is a fine example of using Eleventy with Gulp and Sass. The [zachleat.com source code](https://github.com/zachleat/zachleat.com) is an older example that works with Grunt and Sass.

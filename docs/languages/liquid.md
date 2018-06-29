@@ -8,7 +8,7 @@ layout: layouts/langs.njk
 
 You can override a `.liquid` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
 
-## Library Options
+## Liquid Options
 
 ### Defaults
 
@@ -28,7 +28,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-## Set your own Library instance
+### Set your own Library instance
 
 {% addedin "0.3.0" %}
 
@@ -61,3 +61,27 @@ module.exports = function(eleventyConfig) {
 | ✅ [Eleventy Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{% name | filterName %}{% endraw %}` Read more about [Filters](/docs/filters/)                                                          |
 | ✅ [Custom Tags](/docs/custom-tags/) | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Custom Tags](/docs/custom-tags/). {% addedin "0.5.0", "span" %}|
 | ✅ [Shortcodes](/docs/shortcodes/) | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/). {% addedin "0.5.0", "span" %}|
+
+## Filters
+
+Filters are used to transform or modify content. You can add Handlebars specific filters (called Helpers), but you probably want to add a [Universal filter](/docs/filters/) instead.
+
+Read more about [LiquidJS Filter syntax](https://github.com/harttle/liquidjs#register-filters)
+
+```js
+module.exports = function(eleventyConfig) {
+  // Liquid Filter
+  eleventyConfig.addLiquidFilter("myLiquidFilter", function(value) { … });
+  
+  // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
+  eleventyConfig.addFilter("myFilter", function(value) { … });
+};
+```
+
+### Usage:
+
+{% raw %}
+```html
+<h1>{{ myVariable | myFilter }}</h1>
+```
+{% endraw %}

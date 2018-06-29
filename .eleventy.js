@@ -42,6 +42,12 @@ module.exports = function(eleventyConfig) {
 		});
 	});
 
+	eleventyConfig.addShortcode("templatelangs", function(languages, page, whitelist, anchor) {
+		return `<ul class="inlinelist">
+${languages.filter(lang => !whitelist ? true : whitelist.indexOf(lang.ext) > -1).map(lang => `<li${page.url == lang.url ? ' class="active"' : ''}><a href="${lang.url}${anchor || ''}">${lang.name} (<code>.${lang.ext}</code>)</a></li>`).join(" ")}
+</ul>`;
+	});
+
 	eleventyConfig.addShortcode("latestVersion", function(versions, config) {
 		for( let version of versions ) {
 			if( version.tag === "LATEST" ) {

@@ -1,5 +1,6 @@
 ---
 subtitle: Filters
+menuSectionName: docs-filters
 relatedKey: filters
 relatedTitle: Template Engine Filters
 tags:
@@ -11,12 +12,6 @@ tags:
 
 Various template engines can be extended with custom filters or helpers.
 
-Read more:
-
-* External: [Nunjucks: Filters](https://mozilla.github.io/nunjucks/templating.html#filters)
-* External: [Handlebars: Helpers](http://handlebarsjs.com/#helpers)
-* External: [LiquidJS: Filters](https://github.com/harttle/liquidjs#register-filters)
-
 This can be customized using the [Configuration API](/docs/config/#using-the-configuration-api). Here are a few examples:
 
 ```js
@@ -25,56 +20,44 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addLiquidFilter("myLiquidFilter", function(value) { … });
   
   // Nunjucks Filter
-  eleventyConfig.addNunjucksFilter(name, function(value) { … });
+  eleventyConfig.addNunjucksFilter("myNjkFilter", function(value) { … });
   
   // Handlebars Filter
-  eleventyConfig.addHandlebarsHelper(name, function(value) { … });
+  eleventyConfig.addHandlebarsHelper("myNjkFilter", function(value) { … });
   
   // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
-  eleventyConfig.addFilter(name, function(value) { … });
+  eleventyConfig.addFilter("myFilter", function(value) { … });
 };
 ```
 
-## Asynchronous Nunjucks Filters
+Read more about filters at the individual Template Language documentation pages:
 
-{% addedin "0.2.13" %}
+{% templatelangs templatetypes, page, ["njk", "liquid", "hbs"], "#filters" %}
 
-By default, almost all templating engines are synchronous. Nunjucks supports some asynchronous behavior, like filters. Here’s how that works:
+### Template Example Usage
 
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addNunjucksAsyncFilter("myAsyncFilter", function(value, callback) {
-    window.setTimeout(function() {
-      callback(null, "My Result");
-    }, 100);
-  });
-};
+{% raw %}
+```html
+<!-- Nunjucks and Liquid use the same syntax -->
+<h1>{{ name | myFilter }}</h1>
 ```
+{% endraw %}
 
-The last argument here is the callback function, the first argument of which is the error object and the second is the result data. Use this filter like you would any other: `{% raw %}{{ myValue | myAsyncFilter }}{% endraw %}`.
-
-Here’s a Nunjucks example with 2 arguments:
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addNunjucksAsyncFilter("myAsyncFilter", function(value1, value2, callback) {
-    window.setTimeout(function() {
-      callback(null, "My Result");
-    }, 100);
-  });
-};
+{% raw %}
+```html
+<!-- Handlebars -->
+<h1>{{ myFilter name }}</h1>
 ```
-
-Multi-argument filters in Nunjucks are called like this: `{% raw %}{{ myValue1 | myAsyncFilter(myValue2) }}{% endraw %}`.
+{% endraw %}
 
 ## Universal Filters
 
-Eleventy provides a few universal filters that can be used in supported template types (currently Nunjucks, Liquid, and Handlebars). This allows you to add the filter in one place and it will be available in multiple templating engines, simultaneously.
+Universal filters can be added in a single place and are available to multiple template engines, simultaneously. This is currently supported in Nunjucks, Liquid, and Handlebars.
 
 ```js
 module.exports = function(eleventyConfig) {
   // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
-  eleventyConfig.addFilter("myFilterName", function(value) {
+  eleventyConfig.addFilter("myFilter", function(value) {
     return value;
   });
 };
@@ -82,48 +65,8 @@ module.exports = function(eleventyConfig) {
 
 ### Eleventy Provided Universal Filters
 
-#### `url`
+We also provide a few universal filters, built-in:
 
-Works with the `pathPrefix` configuration option to properly normalize absolute paths in your content with the `pathPrefix` added. Useful if you host your site on GitHub Pages, which normally live in a subdirectory, e.g. `https://11ty.github.io/eleventy-base-blog/`. We set `pathPrefix: "/eleventy-base-blog/"` and our absolute links all have this prepended to the beginning.
+* [`url`](/docs/filters/url/): normalize absolute paths in your content, allows easily changing deploy subdirectories for your project. [Read more →](/docs/filters/url/)
+* [`slug`](/docs/filters/slug/): `"My string"` to `"my-string"` for permalinks. [Read more →](/docs/filters/slug/)
 
-_If you don’t need `pathPrefix` (or don’t ever plan on moving your site’s top-level directory structure), you probably don’t need to use the `url` filter._
-
-{% raw %}
-```
-<a href="{{ post.url | url }}">Liquid or Nunjucks Link</a>
-```
-{% endraw %}
-
-##### Sample URL Transformations
-
-| Sample URL   | `pathPrefix` | Return value                                                                           |
-| ------------ | ------------ | -------------------------------------------------------------------------------------- |
-| `''`         | `'/'`        | `'.'` ⚠️ This style is probably not what you want—careful!                             |
-| `'/'`        | `'/'`        | `'/'`                                                                                  |
-| `'./'`       | `'/'`        | `'./'`                                                                                 |
-| `'..'`       | `'/'`        | `'..'`                                                                                 |
-| `'myDir'`    | `'/'`        | `'myDir'` ⚠️ This style is not safe for globally linking to other content. Be careful! |
-| `'/myDir'`   | `'/'`        | `'/myDir'`                                                                             |
-| `'./myDir'`  | `'/'`        | `'myDir'` ⚠️ This style is not safe for globally linking to other content. Be careful! |
-| `'../myDir'` | `'/'`        | `'../myDir'`                                                                           |
-
-| Sample URL   | `pathPrefix` | Return value                                                   |
-| ------------ | ------------ | -------------------------------------------------------------- |
-| `''`         | `'/rootDir'` | `'.'` ⚠️ This style is probably not what you want—careful!     |
-| `'/'`        | `'/rootDir'` | `'/rootDir/'`                                                  |
-| `'./'`       | `'/rootDir'` | `'./'`                                                         |
-| `'..'`       | `'/rootDir'` | `'..'`                                                         |
-| `'myDir'`    | `'/rootDir'` | `'myDir'` ⚠️ This style is probably not what you want—careful! |
-| `'/myDir'`   | `'/rootDir'` | `'/rootDir/myDir'`                                             |
-| `'./myDir'`  | `'/rootDir'` | `'myDir'` ⚠️ This style is probably not what you want—careful! |
-| `'../myDir'` | `'/rootDir'` | `'../myDir'`                                                   |
-
-#### `slug`
-
-Uses the `slugify` package to convert a string into a URL slug. Can be used in pagination or permalinks.
-
-{% raw %}
-```
-{{ "My Title" | slug }} -> `my-title`
-```
-{% endraw %}

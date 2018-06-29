@@ -8,7 +8,9 @@ layout: layouts/langs.njk
 
 You can override a `.mustache` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
 
-## Set your own Library instance
+## Mustache Options
+
+### Set your own Library instance
 
 {% addedin "0.3.0" %}
 

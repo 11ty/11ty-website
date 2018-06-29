@@ -8,21 +8,9 @@ layout: layouts/langs.njk
 
 You can override a `.ejs` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
 
-## Set your own Library instance
+## EJS Options
 
-{% addedin "0.3.0" %}
-
-As an escape mechanism for advanced usage, pass in your own instance of the EJS library using the Configuration API.
-
-```js
-module.exports = function(eleventyConfig) {
-  let ejs = require("ejs");
-  eleventyConfig.setLibrary("ejs", ejs);
-};
-```
-
-## Compile/Render Options
-
+### Compile/Render Options
 {% addedin "0.3.0" %}
 
 See “Options” on the [EJS home page](http://ejs.co/).
@@ -33,6 +21,19 @@ module.exports = function(eleventyConfig) {
     // use <? ?> instead of <% %>
     delimiter: "?"
   });
+};
+```
+
+### Set your own Library instance
+
+{% addedin "0.3.0" %}
+
+As an escape mechanism for advanced usage, pass in your own instance of the EJS library using the Configuration API.
+
+```js
+module.exports = function(eleventyConfig) {
+  let ejs = require("ejs");
+  eleventyConfig.setLibrary("ejs", ejs);
 };
 ```
 

@@ -9,8 +9,21 @@ layout: layouts/langs.njk
 Pug templates used to be called Jade templates and the project was renamed.
 
 You can override a `.pug` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
+## Pug Options
 
-## Set your own Library instance
+### Compile/Render Options
+
+{% addedin "0.2.15" %}
+
+Set compile/render options using the Configuration API. See all [Pug options](https://pugjs.org/api/reference.html#options).
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setPugOptions({ debug: true });
+};
+```
+
+### Set your own Library instance
 
 {% addedin "0.3.0" %}
 
@@ -23,17 +36,6 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-## Compile/Render Options
-
-{% addedin "0.2.15" %}
-
-Set compile/render options using the Configuration API. See all [Pug options](https://pugjs.org/api/reference.html#options).
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setPugOptions({ debug: true });
-};
-```
 
 ## Supported Features
 

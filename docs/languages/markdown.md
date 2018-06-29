@@ -8,7 +8,7 @@ layout: layouts/langs.njk
 
 Markdown files can be optionally pre-processed with an additional template engine. This can be configured on a per-template basis or globally. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
 
-## Markdown Library Options
+## Markdown Options
 
 ### Defaults
 
