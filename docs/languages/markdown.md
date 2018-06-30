@@ -10,13 +10,13 @@ Markdown files can be optionally pre-processed with an additional template engin
 
 ## Markdown Options
 
-### Defaults
+### Default Options
 
 * `html: true` (`markdown-it` default is `false`)
 
 The only listed options here are the ones that differ from the default `markdown-it` options. See [all `markdown-it` options and defaults](https://github.com/markdown-it/markdown-it#init-with-presets-and-options).
 
-### Set your own library instance
+### Optional: Set your own library instance
 
 {% addedin "0.3.0" %}
 

@@ -1,5 +1,9 @@
 ---
 subtitle: Handlebars
+relatedKey: nunjucks
+relatedTitle: Template Language—Handlebars
+tags:
+  - related-filters
 layout: layouts/langs.njk
 ---
 | Eleventy Short Name | File Extension | NPM Package                                                |
@@ -10,7 +14,7 @@ You can override a `.hbs` file’s template engine. Read more at [Changing a Tem
 
 ## Handlebars Options
 
-### Set your own Library instance
+### Optional: Set your own Library instance
 
 {% addedin "0.3.0" %}
 

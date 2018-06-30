@@ -58,6 +58,25 @@ Read more about [Plugins](/docs/plugins/).
 
 ## Configuration Options
 
+### Jump to:
+{% set toc = [
+  "Input Directory",
+  "Directory for Includes",
+  "Directory for Global Data Files",
+  "Output Directory",
+  "Default Template Engine for Global Data Files",
+  "Default Template Engine for Markdown Files",
+  "Default Template Engine for HTML Files",
+  "Template Formats",
+  "Deploy to a Subdirectory with a Path Prefix",
+  "Copy Files to Output using Pass-through File Copy",
+  "Change Exception Case Suffix for HTML Files",
+  "Transforms"
+] %}
+{%- for link in toc %}
+* [{{ link }}](#{{ link | slug }})
+{%- endfor %}
+
 ### Input Directory
 
 Controls the top level directory that we’ll use to look for templates.
@@ -130,7 +149,7 @@ Controls the directory inside which the finished templates will be written to.
 
 | Output Directory |  |
 | --- | --- |
-| _Object Key_ | `dir.data` |
+| _Object Key_ | `dir.output` |
 | _Default_ | `_data` |
 | _Valid Options_ | Any string that will work as a directory name. Eleventy creates this if it doesn’t exist. |
 | _Command Line Override_ | `--output` |

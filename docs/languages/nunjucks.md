@@ -1,5 +1,10 @@
 ---
 subtitle: Nunjucks
+relatedKey: nunjucks
+relatedTitle: Template Language—Nunjucks
+tags:
+  - related-filters
+  - related-shortcodes
 layout: layouts/langs.njk
 ---
 | Eleventy Short Name | File Extension | NPM Package                                       |
@@ -10,7 +15,7 @@ You can override a `.njk` file’s template engine. Read more at [Changing a Tem
 
 ## Nunjucks Options
 
-### Use your Nunjucks Environment
+### Optional: Use your Nunjucks Environment
 
 {% addedin "0.3.0" %}
 
@@ -58,7 +63,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Usage:
+### Usage
 
 {% raw %}
 ```html
@@ -97,3 +102,49 @@ module.exports = function(eleventyConfig) {
 ```
 
 Multi-argument filters in Nunjucks are called like this: `{% raw %}{{ myValue1 | myAsyncFilter(myValue2) }}{% endraw %}`.
+
+## Shortcodes
+
+Shortcodes are basically reusable bits of content. You can add Nunjucks specific shortcodes, but you probably want to add a [Universal shortcode](/docs/shortcodes/) instead.
+
+### Single Shortcode
+
+```js
+module.exports = function(eleventyConfig) {
+  // Nunjucks Shortcode
+  eleventyConfig.addNunjucksShortcode("user", function(firstName, lastName) { … });
+  
+  // Universal Shortcodes (Adds to Liquid, Nunjucks)
+  eleventyConfig.addShortcode("user", function(firstName, lastName) { … });
+};
+```
+
+#### Usage
+
+{% raw %}
+```html
+<h1>{% user "Zach", "Leatherman" %}</h1>
+```
+{% endraw %}
+
+### Paired Shortcode
+
+```js
+module.exports = function(eleventyConfig) {
+  // Nunjucks Shortcode
+  eleventyConfig.addPairedNunjucksShortcode("user", function(content, firstName, lastName) { … });
+  
+  // Universal Shortcodes (Adds to Liquid, Nunjucks)
+  eleventyConfig.addPairedShortcode("user", function(content, firstName, lastName) { … });
+};
+```
+
+#### Usage
+
+{% raw %}
+```html
+{% user "Zach", "Leatherman" %}
+  Zach likes to take long walks on Nebraska beaches.
+{% enduser %}
+```
+{% endraw %}

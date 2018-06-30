@@ -2,53 +2,47 @@
 subtitle: Filters
 menuSectionName: docs-filters
 relatedKey: filters
-relatedTitle: Template Engine Filters
+relatedTitle: Template Filters
 tags:
   - docs-config
   - related-custom-tags
   - related-shortcodes
+  - related-nunjucks
+  - related-liquid
+  - related-handlebars
 ---
 # Filters
 
-Various template engines can be extended with custom filters or helpers.
-
-This can be customized using the [Configuration API](/docs/config/#using-the-configuration-api). Here are a few examples:
-
-```js
-module.exports = function(eleventyConfig) {
-  // Liquid Filter
-  eleventyConfig.addLiquidFilter("myLiquidFilter", function(value) { … });
-  
-  // Nunjucks Filter
-  eleventyConfig.addNunjucksFilter("myNjkFilter", function(value) { … });
-  
-  // Handlebars Filter
-  eleventyConfig.addHandlebarsHelper("myNjkFilter", function(value) { … });
-  
-  // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
-  eleventyConfig.addFilter("myFilter", function(value) { … });
-};
-```
-
-Read more about filters at the individual Template Language documentation pages:
-
-{% templatelangs templatetypes, page, ["njk", "liquid", "hbs"], "#filters" %}
-
-### Template Example Usage
+Various template engines can be extended with custom filters to modify content. Here’s an example:
 
 {% raw %}
 ```html
 <!-- Nunjucks and Liquid use the same syntax -->
-<h1>{{ name | myFilter }}</h1>
+<h1>{{ name | makeUppercase }}</h1>
 ```
 {% endraw %}
 
-{% raw %}
-```html
-<!-- Handlebars -->
-<h1>{{ myFilter name }}</h1>
+This can be added using the [Configuration API](/docs/config/#using-the-configuration-api). Here are a few examples:
+
+```js
+module.exports = function(eleventyConfig) {
+  // Liquid Filter
+  eleventyConfig.addLiquidFilter("makeUppercase", function(value) { … });
+  
+  // Nunjucks Filter
+  eleventyConfig.addNunjucksFilter("makeUppercase", function(value) { … });
+  
+  // Handlebars Filter
+  eleventyConfig.addHandlebarsHelper("makeUppercase", function(value) { … });
+  
+  // or, use a Universal filter (an alias for all of the above)
+  eleventyConfig.addFilter("makeUppercase", function(value) { … });
+};
 ```
-{% endraw %}
+
+Read more about filters on the individual Template Language documentation pages:
+
+{% templatelangs templatetypes, page, ["njk", "liquid", "hbs"], "#filters" %}
 
 ## Universal Filters
 

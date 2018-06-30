@@ -1,17 +1,19 @@
 ---
 subtitle: Custom Tags
 relatedKey: custom-tags
-relatedTitle: Template Engine Custom Tags
+relatedTitle: Template Custom Tags
 tags:
   - docs-config
   - related-filters
   - related-shortcodes
+  - related-nunjucks
+  - related-liquid
 ---
 # Custom Tags
 
-Various template engines can be extended with custom tags.
+<div class="elv-info">It’s unlikely that you want this feature. You probably want <a href="/docs/shortcodes/">shortcodes</a> instead, Eleventy’s custom tags sugar (it’s easier to use).</div>
 
-⚠️ It’s unlikely that you want this feature. You probably want [shortcodes](/docs/shortcodes/) instead, Eleventy’s custom tags sugar (it’s easier to use).
+Various template engines can be extended with custom tags.
 
 Custom Tags are unrelated to Eleventy’s [Collections using Tags](/docs/collections/) feature. Unfortunately we’ve inherited this name from various upstream template languages.
 

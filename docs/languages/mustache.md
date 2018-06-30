@@ -10,7 +10,7 @@ You can override a `.mustache` file’s template engine. Read more at [Changing 
 
 ## Mustache Options
 
-### Set your own Library instance
+### Optional: Set your own Library instance
 
 {% addedin "0.3.0" %}
 

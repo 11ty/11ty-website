@@ -10,7 +10,7 @@ You can override a `.ejs` file’s template engine. Read more at [Changing a Tem
 
 ## EJS Options
 
-### Compile/Render Options
+### Optional: Compile/Render Options
 {% addedin "0.3.0" %}
 
 See “Options” on the [EJS home page](http://ejs.co/).
@@ -24,7 +24,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Set your own Library instance
+### Optional: Set your own Library instance
 
 {% addedin "0.3.0" %}
 

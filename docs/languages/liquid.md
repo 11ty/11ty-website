@@ -1,5 +1,10 @@
 ---
 subtitle: Liquid
+relatedKey: liquid
+relatedTitle: Template Language—Liquid
+tags:
+  - related-filters
+  - related-shortcodes
 layout: layouts/langs.njk
 ---
 | Eleventy Short Name | File Extension | NPM Package                                          |
@@ -10,11 +15,11 @@ You can override a `.liquid` file’s template engine. Read more at [Changing a 
 
 ## Liquid Options
 
-### Defaults
+### Default Options
 
 Rather than constantly fixing outdated documentation, [find `getLiquidOptions` in `Liquid.js`](https://github.com/11ty/eleventy/blob/master/src/Engines/Liquid.js). These options are different than the [default `liquidjs` options](https://github.com/harttle/liquidjs#options).
 
-### Use your own options
+### Optional: Use your own options
 
 {% addedin "0.2.15" %}
 
@@ -28,13 +33,13 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Set your own Library instance
+### Optional: Set your own Library instance
 
 {% addedin "0.3.0" %}
 
 As an escape mechanism for advanced usage, pass in your own instance of the Liquid library using the Configuration API. See [all `liquidjs` options](https://github.com/harttle/liquidjs#options).
 
-⚠️ Not compatible with `setLiquidOptions` above—this method will ignore any configuration set there.
+<div class="elv-info elv-info-warn">Not compatible with <code>setLiquidOptions</code> above—this method will ignore any configuration set there.</div>
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -64,7 +69,7 @@ module.exports = function(eleventyConfig) {
 
 ## Filters
 
-Filters are used to transform or modify content. You can add Handlebars specific filters (called Helpers), but you probably want to add a [Universal filter](/docs/filters/) instead.
+Filters are used to transform or modify content. You can add Liquid specific filters, but you probably want to add a [Universal filter](/docs/filters/) instead.
 
 Read more about [LiquidJS Filter syntax](https://github.com/harttle/liquidjs#register-filters)
 
@@ -78,10 +83,56 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Usage:
+### Usage
 
 {% raw %}
 ```html
 <h1>{{ myVariable | myFilter }}</h1>
+```
+{% endraw %}
+
+## Shortcodes
+
+Shortcodes are basically reusable bits of content. You can add Liquid specific shortcodes, but you probably want to add a [Universal shortcode](/docs/shortcodes/) instead.
+
+### Single Shortcode
+
+```js
+module.exports = function(eleventyConfig) {
+  // Liquid Shortcode
+  eleventyConfig.addLiquidShortcode("user", function(firstName, lastName) { … });
+  
+  // Universal Shortcodes (Adds to Liquid, Nunjucks)
+  eleventyConfig.addShortcode("user", function(firstName, lastName) { … });
+};
+```
+
+#### Usage
+
+{% raw %}
+```html
+<h1>{% user "Zach" "Leatherman" %}</h1>
+```
+{% endraw %}
+
+### Paired Shortcode
+
+```js
+module.exports = function(eleventyConfig) {
+  // Liquid Shortcode
+  eleventyConfig.addPairedLiquidShortcode("user", function(content, firstName, lastName) { … });
+  
+  // Universal Shortcodes (Adds to Liquid, Nunjucks)
+  eleventyConfig.addPairedShortcode("user", function(content, firstName, lastName) { … });
+};
+```
+
+#### Usage
+
+{% raw %}
+```html
+{% user "Zach" "Leatherman" %}
+  Zach likes to take long walks on Nebraska beaches.
+{% enduser %}
 ```
 {% endraw %}
