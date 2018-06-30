@@ -13,7 +13,7 @@ tags:
 
 {% addedin "0.5.0" %}
 
-Various template engines can be extended with shortcodes to for easy reusable content. This is sugar around Template Language [Custom Tags](/docs/custom-tags/). Here’s an example:
+Various template engines can be extended with shortcodes for easy reusable content. This is sugar around Template Language [Custom Tags](/docs/custom-tags/). Here’s an example:
 
 {% raw %}
 ```html
