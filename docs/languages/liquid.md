@@ -3,6 +3,7 @@ subtitle: Liquid
 relatedKey: liquid
 relatedTitle: Template Language—Liquid
 tags:
+  - docs-languages
   - related-filters
   - related-shortcodes
 layout: layouts/langs.njk

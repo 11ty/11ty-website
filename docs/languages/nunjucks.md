@@ -3,6 +3,7 @@ subtitle: Nunjucks
 relatedKey: nunjucks
 relatedTitle: Template Language—Nunjucks
 tags:
+  - docs-languages
   - related-filters
   - related-shortcodes
 layout: layouts/langs.njk

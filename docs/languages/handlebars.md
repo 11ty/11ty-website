@@ -3,6 +3,7 @@ subtitle: Handlebars
 relatedKey: nunjucks
 relatedTitle: Template Language—Handlebars
 tags:
+  - docs-languages
   - related-filters
 layout: layouts/langs.njk
 ---
