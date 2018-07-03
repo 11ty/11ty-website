@@ -113,10 +113,15 @@ Shortcodes are basically reusable bits of content. You can add Nunjucks specific
 ```js
 module.exports = function(eleventyConfig) {
   // Nunjucks Shortcode
-  eleventyConfig.addNunjucksShortcode("user", function(firstName, lastName) { … });
+  eleventyConfig.addNunjucksShortcode("user", function(name, twitterUsername) { … });
   
   // Universal Shortcodes (Adds to Liquid, Nunjucks)
-  eleventyConfig.addShortcode("user", function(firstName, lastName) { … });
+  eleventyConfig.addShortcode("user", function(name, twitterUsername) {
+    return `<div class="user">
+<div class="user_name">${name}</div>
+<div class="user_twitter">@${twitterUsername}</div>
+</div>`;
+  });
 };
 ```
 
@@ -124,28 +129,109 @@ module.exports = function(eleventyConfig) {
 
 {% raw %}
 ```html
-<h1>{% user "Zach", "Leatherman" %}</h1>
+{% user "Zach Leatherman", "zachleat" %}
 ```
 {% endraw %}
+
+#### Outputs
+
+```html
+<div class="user">
+  <div class="user_name">Zach Leatherman</div>
+  <div class="user_twitter">@zachleat</div>>
+</div>
+```
 
 ### Paired Shortcode
 
 ```js
 module.exports = function(eleventyConfig) {
   // Nunjucks Shortcode
-  eleventyConfig.addPairedNunjucksShortcode("user", function(content, firstName, lastName) { … });
+  eleventyConfig.addPairedNunjucksShortcode("user", function(bioContent, name, twitterUsername) { … });
   
   // Universal Shortcodes (Adds to Liquid, Nunjucks)
-  eleventyConfig.addPairedShortcode("user", function(content, firstName, lastName) { … });
+  eleventyConfig.addPairedShortcode("user", function(bioContent, name, twitterUsername) {
+    return `<div class="user">
+<div class="user_name">${name}</div>
+<div class="user_twitter">@${twitterUsername}</div>
+<div class="user_bio">${bioContent}</div>
+</div>`;
+  });
 };
 ```
 
 #### Usage
 
+Note that you can put any Nunjucks tags or content inside the `{% raw %}{% user %}{% endraw %}` shortcode! Yes, even other shortcodes!
+
 {% raw %}
 ```html
-{% user "Zach", "Leatherman" %}
+{% user "Zach Leatherman", "zachleat" %}
   Zach likes to take long walks on Nebraska beaches.
 {% enduser %}
 ```
 {% endraw %}
+
+##### Outputs
+
+```html
+<div class="user">
+  <div class="user_name">Zach Leatherman</div>
+  <div class="user_twitter">@zachleat</div>
+  <div class="user_bio">Zach likes to take long walks on Nebraska beaches.</div>
+</div>
+```
+
+### Shortcode Named Argument Syntax (Nunjucks-only)
+
+Creates a single argument object to pass to the shortcode.
+
+```js
+module.exports = function(eleventyConfig) {
+  // Nunjucks Shortcode
+  eleventyConfig.addNunjucksShortcode("user", function(user) {
+    return `<div class="user">
+<div class="user_name">${user.name}</div>
+${user.twitter ? `<div class="user_twitter">@${user.twitter}</div>` : ''}
+</div>`;
+  });
+};
+```
+
+#### Usage
+
+The order of the arguments doesn’t matter.
+
+{% raw %}
+```html
+{% user name="Zach Leatherman", twitter="zachleat" %}
+{% user twitter="zachleat", name="Zach Leatherman" %}
+```
+{% endraw %}
+
+##### Outputs
+
+```html
+<div class="user">
+  <div class="user_name">Zach Leatherman</div>
+  <div class="user_twitter">@zachleat</div>
+</div>
+```
+
+#### Usage
+
+Importantly, this syntax means that any of the arguments can be optional (without having to pass in a bunch of `null, null, null` to maintain order).
+
+{% raw %}
+```html
+{% user name="Zach Leatherman" %}
+```
+{% endraw %}
+
+##### Outputs
+
+```html
+<div class="user">
+  <div class="user_name">Zach Leatherman</div>
+</div>
+```

@@ -101,10 +101,15 @@ Shortcodes are basically reusable bits of content. You can add Liquid specific s
 ```js
 module.exports = function(eleventyConfig) {
   // Liquid Shortcode
-  eleventyConfig.addLiquidShortcode("user", function(firstName, lastName) { … });
+  eleventyConfig.addLiquidShortcode("user", function(name, twitterUsername) { … });
   
   // Universal Shortcodes (Adds to Liquid, Nunjucks)
-  eleventyConfig.addShortcode("user", function(firstName, lastName) { … });
+  eleventyConfig.addShortcode("user", function(name, twitterUsername) {
+    return `<div class="user">
+<div class="user_name">${name}</div>
+<div class="user_twitter">@${twitterUsername}</div>
+</div>`;
+  });
 };
 ```
 
@@ -112,28 +117,55 @@ module.exports = function(eleventyConfig) {
 
 {% raw %}
 ```html
-<h1>{% user "Zach" "Leatherman" %}</h1>
+{% user "Zach Leatherman" "zachleat" %}
 ```
 {% endraw %}
+
+##### Outputs
+
+```html
+<div class="user">
+  <div class="user_name">Zach Leatherman</div>
+  <div class="user_twitter">@zachleat</div>
+</div>
+```
 
 ### Paired Shortcode
 
 ```js
 module.exports = function(eleventyConfig) {
   // Liquid Shortcode
-  eleventyConfig.addPairedLiquidShortcode("user", function(content, firstName, lastName) { … });
+  eleventyConfig.addPairedLiquidShortcode("user", function(bioContent, name, twitterUsername) { … });
   
   // Universal Shortcodes (Adds to Liquid, Nunjucks)
-  eleventyConfig.addPairedShortcode("user", function(content, firstName, lastName) { … });
+  eleventyConfig.addPairedShortcode("user", function(bioContent, name, twitterUsername) {
+    return `<div class="user">
+<div class="user_name">${name}</div>
+<div class="user_twitter">@${twitterUsername}</div>
+<div class="user_bio">${bioContent}</div>
+</div>`;
+  });
 };
 ```
 
 #### Usage
 
+Note that you can put any Liquid tags or content inside the `{% raw %}{% user %}{% endraw %}` shortcode! Yes, even other shortcodes!
+
 {% raw %}
 ```html
-{% user "Zach" "Leatherman" %}
+{% user "Zach Leatherman" "zachleat" %}
   Zach likes to take long walks on Nebraska beaches.
 {% enduser %}
 ```
 {% endraw %}
+
+##### Outputs
+
+```html
+<div class="user">
+  <div class="user_name">Zach Leatherman</div>
+  <div class="user_twitter">@zachleat</div>
+  <div class="user_bio">Zach likes to take long walks on Nebraska beaches.</div>
+</div>
+```
