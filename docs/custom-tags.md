@@ -4,10 +4,10 @@ relatedKey: custom-tags
 relatedTitle: Template Custom Tags
 tags:
   - docs-config
-  - related-filters
   - related-shortcodes
   - related-nunjucks
   - related-liquid
+  - related-handlebars
 ---
 # Custom Tags
 
@@ -60,7 +60,7 @@ See all of the [built-in tag implementations for LiquidJS](https://github.com/ha
 module.exports = function(eleventyConfig) {
   // Usage: {% uppercase myVar %} where myVar has a value of "alice"
   // Usage: {% uppercase "alice" %}
-  this.addNunjucksTag("uppercase", function(nunjucksEngine) {
+  eleventyConfig.addNunjucksTag("uppercase", function(nunjucksEngine) {
     return new function() {
       this.tags = ["uppercase"];
 
@@ -80,6 +80,22 @@ module.exports = function(eleventyConfig) {
         callback(null, ret);
       };
     }();
+  });
+};
+```
+{% endraw %}
+
+## Handlebars example
+
+Simply—these are helpers!
+
+{% raw %}
+```js
+module.exports = function(eleventyConfig) {
+  // Usage: {{ uppercase myVar }} where myVar has a value of "alice"
+  // Usage: {{ uppercase "alice" }}
+  eleventyConfig.addHandlebarsHelper("uppercase", function(myStringArg) {
+    return myStringArg.toUpperCase();
   });
 };
 ```

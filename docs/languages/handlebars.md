@@ -1,10 +1,12 @@
 ---
 subtitle: Handlebars
-relatedKey: nunjucks
+relatedKey: handlebars
 relatedTitle: Template Language—Handlebars
 tags:
   - docs-languages
   - related-filters
+  - related-shortcodes
+  - related-custom-tags
 layout: layouts/langs.njk
 ---
 | Eleventy Short Name | File Extension | NPM Package                                                |
@@ -33,21 +35,23 @@ module.exports = function(eleventyConfig) {
 | Feature                                                                      | Syntax                                                                                                                                  |
 | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | ✅ Partials                                                                  | `{% raw %}{{> user}}{% endraw %}` looks for `_includes/user.hbs`                                                                                             |
-| ✅ Helpers                                                                   | `{% raw %}{{ filterName myObject }}{% endraw %}` Handlebars calls them Helpers, but Eleventy calls them filters. Read more about [Filters](/docs/filters/).                                |
+| ✅ Helpers (Custom Tags)                                                                   | `{% raw %}{{ helperName myObject }}{% endraw %}` Handlebars calls them Helpers, but Eleventy calls them Shortcodes. Read more about [Shortcodes](/docs/shortcodes/) or [Custom Tags](/docs/custom-tags/).                                |
 | ✅ [Eleventy Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{{ filterName myObject }}{% endraw %}` Read more about [Filters](/docs/filters/). |
+| ✅ [Shortcodes](/docs/shortcodes/) | `{% raw %}{{ uppercase name }}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/). {% addedin "0.5.0", "span" %}|
 
-## Filters
+## Helpers
 
-Filters are used to transform or modify content. You can add Liquid specific filters, but you probably want to add a [Universal filter](/docs/filters/) instead.
+Helpers are used to transform or modify content. You can add Handlebars specific helpers, but you probably want to add a [Universal shortcode](/docs/filters/) instead.
 
 Read more about [Handlebars Helpers syntax](http://handlebarsjs.com/#helpers)
 
 ```js
 module.exports = function(eleventyConfig) {
-  // Handlebars Filter
-  eleventyConfig.addHandlebarsHelper("myHandlebarsFilter", function(value) { … });
+  // Handlebars Helper
+  eleventyConfig.addHandlebarsHelper("myHandlebarsHelper", function(value) { … });
   
   // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
+  // Read the note about Universal Filters below: Use a shortcode instead!
   eleventyConfig.addFilter("myFilter", function(value) { … });
 };
 ```
@@ -56,6 +60,97 @@ module.exports = function(eleventyConfig) {
 
 {% raw %}
 ```html
-<h1>{{ myFilter myVariable }}</h1>
+<h1>{{ myHandlebarsHelper myVariable }}</h1>
 ```
 {% endraw %}
+
+### A note about Universal Filters
+
+Universal filters have always been funneled into Handlebars helpers. In v0.5.0, Shortcode support was added to Eleventy. Shortcodes (Paired/Single) match better with the semantic footprint of Handlebars Helpers.
+
+```js
+module.exports = function(eleventyConfig) {  
+  // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
+  eleventyConfig.addFilter("myFilter", function(value) { … });
+};
+```
+
+Moving forward for Handlebars content, using Universal Shortcodes are preferred to Universal Filters. We will continue to support funneling Universal filters to Handlebars helpers. This will not affect your template content as the syntax for Handlebars filters/helpers/shortcodes will continue to be the same. They’re all just helpers.
+
+## Shortcodes
+
+Shortcodes are basically reusable bits of content. You can add Handlebars specific shortcodes, but you probably want to add a [Universal shortcode](/docs/shortcodes/) instead.
+
+### Single Shortcode
+
+```js
+module.exports = function(eleventyConfig) {
+  // Handlebars Shortcode
+  eleventyConfig.addHandlebarsShortcode("user", function(name, twitterUsername) { … });
+  
+  // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
+  eleventyConfig.addShortcode("user", function(name, twitterUsername) {
+    return `<div class="user">
+<div class="user_name">${name}</div>
+<div class="user_twitter">@${twitterUsername}</div>
+</div>`;
+  });
+};
+```
+
+#### Usage
+
+{% raw %}
+```html
+{{ user "Zach Leatherman" "zachleat" }}
+```
+{% endraw %}
+
+##### Outputs
+
+```html
+<div class="user">
+  <div class="user_name">Zach Leatherman</div>
+  <div class="user_twitter">@zachleat</div>
+</div>
+```
+
+### Paired Shortcode
+
+```js
+module.exports = function(eleventyConfig) {
+  // Handlebars Shortcode
+  eleventyConfig.addPairedHandlebarsShortcode("user", function(bioContent, name, twitterUsername) { … });
+  
+  // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
+  eleventyConfig.addPairedShortcode("user", function(bioContent, name, twitterUsername) {
+    return `<div class="user">
+<div class="user_name">${name}</div>
+<div class="user_twitter">@${twitterUsername}</div>
+<div class="user_bio">${bioContent}</div>
+</div>`;
+  });
+};
+```
+
+#### Usage
+
+Note that you can put any Handlebars tags or content inside the `{% raw %}{{ user }}{% endraw %}` shortcode! Yes, even other shortcodes!
+
+{% raw %}
+```html
+{{# user "Zach Leatherman" "zachleat" }}
+  Zach likes to take long walks on Nebraska beaches.
+{{/ user }}
+```
+{% endraw %}
+
+##### Outputs
+
+```html
+<div class="user">
+  <div class="user_name">Zach Leatherman</div>
+  <div class="user_twitter">@zachleat</div>
+  <div class="user_bio">Zach likes to take long walks on Nebraska beaches.</div>
+</div>
+```

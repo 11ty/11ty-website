@@ -6,6 +6,7 @@ tags:
   - docs-languages
   - related-filters
   - related-shortcodes
+  - related-custom-tags
 layout: layouts/langs.njk
 ---
 | Eleventy Short Name | File Extension | NPM Package                                       |
@@ -115,7 +116,7 @@ module.exports = function(eleventyConfig) {
   // Nunjucks Shortcode
   eleventyConfig.addNunjucksShortcode("user", function(name, twitterUsername) { … });
   
-  // Universal Shortcodes (Adds to Liquid, Nunjucks)
+  // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
   eleventyConfig.addShortcode("user", function(name, twitterUsername) {
     return `<div class="user">
 <div class="user_name">${name}</div>
@@ -149,7 +150,7 @@ module.exports = function(eleventyConfig) {
   // Nunjucks Shortcode
   eleventyConfig.addPairedNunjucksShortcode("user", function(bioContent, name, twitterUsername) { … });
   
-  // Universal Shortcodes (Adds to Liquid, Nunjucks)
+  // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
   eleventyConfig.addPairedShortcode("user", function(bioContent, name, twitterUsername) {
     return `<div class="user">
 <div class="user_name">${name}</div>

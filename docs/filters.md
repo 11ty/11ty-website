@@ -5,7 +5,6 @@ relatedKey: filters
 relatedTitle: Template Filters
 tags:
   - docs-config
-  - related-custom-tags
   - related-shortcodes
   - related-nunjucks
   - related-liquid
