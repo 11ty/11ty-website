@@ -47,7 +47,7 @@ module.exports = function(eleventyConfig) {
   // Handlebars Shortcode
   eleventyConfig.addHandlebarsShortcode("user", function(firstName, lastName) { … });
   
-  // Universal Shortcodes (Adds to Liquid and Nunjucks)
+  // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
   eleventyConfig.addShortcode("user", function(firstName, lastName) { … });
 };
 ```
