@@ -312,7 +312,7 @@ If an HTML template has matching input and output directories, index.html files 
 
 ### Transforms
 
-(These used to be called Filters but were renamed to Transforms, so they’re not confused with Template Filters).
+(These used to be called Filters but were renamed to Transforms, to avoid confusion with Template Filters).
 
 Transforms can modify a template’s output. For example, use a transform to format/prettify an HTML file with proper whitespace.
 
@@ -324,13 +324,26 @@ Transforms can modify a template’s output. For example, use a transform to for
 | _Command Line Override_ | _None_ |
 | _Configuration API_ | `addTransform` _(This is definitely available in Eleventy v0.3.3 but was likely in earlier versions as well)_ |
 
-#### Example
+#### Transforms Example: Minify HTML Output
 
 ```
+const htmlmin = require("html-minifier");
+
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addTransform( "doNothing", function(str, outputPath) {
-    return str;
+  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+    if( outputPath.indexOf(".html") > -1 ) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true
+      });
+      return minified;
+    }
+
+    return content;
   });
 };
 ```
+
+
 

@@ -1,6 +1,8 @@
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const CleanCSS = require("clean-css");
+const cfg = require("./_data/config.json");
+const htmlmin = require("html-minifier");
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(syntaxHighlightPlugin);
@@ -100,6 +102,21 @@ module.exports = function(eleventyConfig) {
 	};
 
 	eleventyConfig.setLibrary("md", markdownIt(options).use(markdownItAnchor, opts));
+
+	if( cfg.minifyHtml ) {
+		eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+			if( outputPath.indexOf(".html") > -1 ) {
+				let minified = htmlmin.minify(content, {
+					useShortDoctype: true,
+					removeComments: true,
+					collapseWhitespace: true
+				});
+				return minified;
+			}
+
+			return content;
+		});
+	}
 
 	return {
 		templateFormats: ["html", "njk", "md"],
