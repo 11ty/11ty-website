@@ -326,7 +326,7 @@ Transforms can modify a template’s output. For example, use a transform to for
 
 #### Transforms Example: Minify HTML Output
 
-```
+```js
 const htmlmin = require("html-minifier");
 
 module.exports = function(eleventyConfig) {
