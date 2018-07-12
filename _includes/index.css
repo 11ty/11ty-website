@@ -297,7 +297,7 @@ footer.elv-layout {
 	top: 1em;
 	width: 16vmin;
 }
-@media (min-width: 25em) { /* 400px */
+@media (min-width: 31.25em) { /* 500px */
 	.elv-possum {
 		display: block;
 	}
@@ -359,7 +359,7 @@ footer.elv-layout {
 		padding-right: .45em;
 	}
 }
-@media (min-width: 28.75em) { /* 460px */
+@media (min-width: 35.625em) { /* 570px */
 	.elv-nav {
 		clear: none;
 		width: auto;

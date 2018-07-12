@@ -4,14 +4,15 @@
 @media (min-width: 64em) { /* 1024px */
 	.elv-toc {
 		position: absolute;
-		left: -16rem;
-		width: 15rem;
+		left: -17rem;
+		width: 16rem;
 	}
 }
 
 
 .elv-toc-list {
 	padding-left: 0;
+	padding-right: 0;
 	list-style: none;
 }
 /* Nested lists */
