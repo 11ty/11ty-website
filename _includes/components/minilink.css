@@ -35,3 +35,6 @@ p.minilink {
 	margin-left: 2em;
 	margin-bottom: 2em;
 }
+.minilink + pre[class*=language-] {
+	clear: both;
+}
