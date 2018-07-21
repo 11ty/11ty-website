@@ -21,3 +21,9 @@ mv profile_image?size=bigger img/avatars/wilto.jpg
 
 wget https://twitter.com/nice2meatu/profile_image?size=bigger
 mv profile_image?size=bigger img/avatars/nice2meatu.jpg
+
+wget https://twitter.com/TJacobDesign/profile_image?size=bigger
+mv profile_image?size=bigger img/avatars/tjacobdesign.jpg
+
+wget https://twitter.com/splitinfinities/profile_image?size=bigger
+mv profile_image?size=bigger img/avatars/splitinfinities.jpg

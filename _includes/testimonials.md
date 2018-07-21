@@ -17,3 +17,7 @@
 > “I tried Eleventy last night on a personal project and today we implemented it on a (non-public facing) client project. It's really good.”—[![@codypeterson](/img/avatars/codypeterson.jpg)Cody Peterson](https://twitter.com/codypeterson/status/950568228559904768)
 
 > “Just gave Eleventy a first run/try and I must say it's pretty dang awesome. Especially for someone like me, who is most familiar with HTML and CSS and some JS. ❤️”—[![@jameswillweb](/img/avatars/nice2meatu.jpg)Marco Hengstenberg](https://twitter.com/nice2meatu/status/1004665956885520384)
+
+> “It's clean, elegant, easy to use, and does just enough to be useful without getting in the way. Excellent work 😊”—[![@TJacobDesign](/img/avatars/tjacobdesign.jpg)Timothy Miller](https://twitter.com/TJacobDesign/status/1017594017402572811)
+
+> “Holy cow! Eleventy is so crazy simple to work with.”—[![@splitinfinities](/img/avatars/splitinfinities.jpg)Will Riley](https://twitter.com/splitinfinities/status/1018874121755746310)

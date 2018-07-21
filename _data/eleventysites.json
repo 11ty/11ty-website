@@ -62,5 +62,11 @@
 		"url": "https://templates.netlify.com/",
 		"description": "This is a board with templates for static site generators and boilerplates.",
 		"source_url": "https://github.com/netlify/templates"
+	},
+	{
+		"name": "Set Your Watch By",
+		"url": "https://setyourwatchby.netlify.com/",
+		"description": "A static site generated clock! Runs a Netlify build every minute.",
+		"source_url": "https://github.com/philhawksworth/html-time"
 	}
 ]
