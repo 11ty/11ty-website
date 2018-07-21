@@ -68,5 +68,11 @@
 		"url": "https://setyourwatchby.netlify.com/",
 		"description": "A static site generated clock! Runs a Netlify build every minute.",
 		"source_url": "https://github.com/philhawksworth/html-time"
+	},
+	{
+		"name": "Front-end Foundations",
+		"url": "https://frontend-foundations.com/",
+		"description": "A resource and community for developers learning HTML, CSS, & Javascript. Mostly for beginners–but everyone is welcome.",
+		"source_url": "https://github.com/alexcarpenter/frontend-foundations"
 	}
 ]
