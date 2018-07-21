@@ -78,10 +78,10 @@ Read more about [LiquidJS Filter syntax](https://github.com/harttle/liquidjs#reg
 ```js
 module.exports = function(eleventyConfig) {
   // Liquid Filter
-  eleventyConfig.addLiquidFilter("myLiquidFilter", function(value) { … });
+  eleventyConfig.addLiquidFilter("myLiquidFilter", function(myVariable) { … });
   
   // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
-  eleventyConfig.addFilter("myFilter", function(value) { … });
+  eleventyConfig.addFilter("myFilter", function(myVariable) { … });
 };
 ```
 
@@ -90,6 +90,23 @@ module.exports = function(eleventyConfig) {
 {% raw %}
 ```html
 <h1>{{ myVariable | myFilter }}</h1>
+```
+{% endraw %}
+
+### Multiple Filter Arguments
+
+```js
+module.exports = function(eleventyConfig) {
+  // Liquid Filter
+  eleventyConfig.addLiquidFilter("concatThreeStrings", function(arg1, arg2, arg3) {
+    return arg1 + arg2 + arg3;
+  });
+};
+```
+
+{% raw %}
+```html
+<h1>{{ "first" | concatThreeThings: "second", "third" }}</h1>
 ```
 {% endraw %}
 
