@@ -27,3 +27,6 @@ mv profile_image?size=bigger img/avatars/tjacobdesign.jpg
 
 wget https://twitter.com/splitinfinities/profile_image?size=bigger
 mv profile_image?size=bigger img/avatars/splitinfinities.jpg
+
+wget https://twitter.com/hankchizljaw/profile_image?size=bigger
+mv profile_image?size=bigger img/avatars/hankchizljaw.jpg

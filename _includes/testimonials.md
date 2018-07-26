@@ -4,6 +4,8 @@
 
 > “Don’t tell Zach I said it but Eleventy is seeming fresh as hell so far”—[![@wilto](/img/avatars/wilto.jpg)Mat Marquis](https://twitter.com/wilto)
 
+> “Jekyll is dead to me”—[![@hankchizljaw](/img/avatars/hankchizljaw.jpg)Andy Bell](https://twitter.com/hankchizljaw)
+
 > “Just go through moving a project to Eleventy. Never used nunjucks or a static site generator before, but it was so easy. This will make my life so much easier.”—[![@micahmills](/img/avatars/micahmills.jpg)Micah Mills](https://twitter.com/micahmills/status/973660230453211136)
 
 > “After a day or so tweaking my existing build, here is a preview of the site running on Eleventy. I'm sold! The main thing to me was the ability to run custom JavaScript logic to sort, filter, and augment data in collections.”—[![@eduardoboucas](/img/avatars/eduardoboucas.jpg)Eduardo Bouças](https://twitter.com/eduardoboucas/status/1001158411583721473)
@@ -16,7 +18,7 @@
 
 > “I tried Eleventy last night on a personal project and today we implemented it on a (non-public facing) client project. It's really good.”—[![@codypeterson](/img/avatars/codypeterson.jpg)Cody Peterson](https://twitter.com/codypeterson/status/950568228559904768)
 
-> “Just gave Eleventy a first run/try and I must say it's pretty dang awesome. Especially for someone like me, who is most familiar with HTML and CSS and some JS. ❤️”—[![@jameswillweb](/img/avatars/nice2meatu.jpg)Marco Hengstenberg](https://twitter.com/nice2meatu/status/1004665956885520384)
+> “Just gave Eleventy a first run/try and I must say it's pretty dang awesome. Especially for someone like me, who is most familiar with HTML and CSS and some JS. ❤️”—[![@nice2meatu](/img/avatars/nice2meatu.jpg)Marco Hengstenberg](https://twitter.com/nice2meatu/status/1004665956885520384)
 
 > “It's clean, elegant, easy to use, and does just enough to be useful without getting in the way. Excellent work 😊”—[![@TJacobDesign](/img/avatars/tjacobdesign.jpg)Timothy Miller](https://twitter.com/TJacobDesign/status/1017594017402572811)
 
