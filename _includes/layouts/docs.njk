@@ -16,7 +16,7 @@ menuSortOrder:
 
 {% include "components/docs-toc.njk" %}
 
-{{ layoutContent | safe }}
+{{ content | safe }}
 
 {% if relatedKey and collections[ "related-" + relatedKey ].length %}
 <hr>
