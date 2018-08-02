@@ -74,7 +74,7 @@ module.exports = function(eleventyConfig) {
 			let lastWord = splitSpace.pop();
 			let secondLastWord = splitSpace.pop();
 
-			after += `<span class="prevent-orphan">${secondLastWord} ${lastWord}</span>`;
+			after += `${secondLastWord}&nbsp;${lastWord}`;
 		}
 
 		return splitSpace.join(" ") + after;

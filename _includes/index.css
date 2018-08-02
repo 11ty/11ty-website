@@ -381,11 +381,6 @@ footer.elv-layout {
 	}
 }
 
-/* Widows */
-.prevent-orphan {
-	white-space: nowrap;
-}
-
 /* Version */
 .latestversion {
 	font-size: 2em;
