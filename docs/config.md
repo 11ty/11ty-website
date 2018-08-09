@@ -150,7 +150,7 @@ Controls the directory inside which the finished templates will be written to.
 | Output Directory |  |
 | --- | --- |
 | _Object Key_ | `dir.output` |
-| _Default_ | `_data` |
+| _Default_ | `_site` |
 | _Valid Options_ | Any string that will work as a directory name. Eleventy creates this if it doesn’t exist. |
 | _Command Line Override_ | `--output` |
 
