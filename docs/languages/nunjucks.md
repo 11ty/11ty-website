@@ -24,8 +24,9 @@ You can override a `.njk` file’s template engine. Read more at [Changing a Tem
 As an escape mechanism for advanced usage, pass in your own instance of a [Nunjucks Environment](https://mozilla.github.io/nunjucks/api.html#environment) using the Configuration API.
 
 ```js
+let Nunjucks = require("nunjucks");
+
 module.exports = function(eleventyConfig) {
-  let Nunjucks = require("nunjucks");
   let nunjucksEnvironment = new Nunjucks.Environment(
     new Nunjucks.FileSystemLoader("_includes")
   );
