@@ -41,5 +41,5 @@ module.exports = function(eleventyConfig) {
 
 | Feature                             | Syntax                                                                            |
 | ----------------------------------- | --------------------------------------------------------------------------------- |
-| ✅ Include (Preprocessor Directive) | `<% include /user/show %>` looks for `_includes/user/show.ejs`                    |
-| ✅ Include (pass in Data)           | `<%- include('/user/show', {user: 'Ava'}) %>` looks for `_includes/user/show.ejs` |
+| ✅ Include (Preprocessor Directive) | `<% include /user/show %>` looks for `_includes/user/show.ejs` (does not process front matter)                    |
+| ✅ Include (pass in Data)           | `<%- include('/user/show', {user: 'Ava'}) %>` looks for `_includes/user/show.ejs` (does not process front matter) |

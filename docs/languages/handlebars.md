@@ -34,7 +34,7 @@ module.exports = function(eleventyConfig) {
 
 | Feature                                                                      | Syntax                                                                                                                                  |
 | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| ✅ Partials                                                                  | `{% raw %}{{> user}}{% endraw %}` looks for `_includes/user.hbs`                                                                                             |
+| ✅ Partials                                                                  | `{% raw %}{{> user}}{% endraw %}` looks for `_includes/user.hbs` (does not process front matter)                                                                                             |
 | ✅ Helpers (Custom Tags)                                                                   | `{% raw %}{{ helperName myObject }}{% endraw %}` Handlebars calls them Helpers, but Eleventy calls them Shortcodes. Read more about [Shortcodes](/docs/shortcodes/) or [Custom Tags](/docs/custom-tags/).                                |
 | ✅ [Eleventy Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{{ filterName myObject }}{% endraw %}` Read more about [Filters](/docs/filters/). |
 | ✅ [Shortcodes](/docs/shortcodes/) | `{% raw %}{{ uppercase name }}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/). {% addedin "0.5.0", "span" %}|

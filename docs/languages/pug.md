@@ -42,7 +42,7 @@ module.exports = function(eleventyConfig) {
 
 | Feature                                              | Syntax                                                          |
 | ---------------------------------------------------- | --------------------------------------------------------------- |
-| ✅ Includes (Absolute)                               | `include /includedvar.pug` looks in `_includes/includedvar.pug` |
-| ✅ Includes (Relative) _(New in Eleventy `v0.2.15`)_ | `include includedvar.pug` looks in `_includes/includedvar.pug`  |
-| ✅ Extends (Absolute)                                | `extends /layout.pug` looks in `_includes/layout.pug`           |
-| ✅ Extends (Relative) _(New in Eleventy `v0.2.15`)_  | `extends layout.pug` looks in `_includes/layout.pug`            |
+| ✅ Includes (Absolute)                               | `include /includedvar.pug` looks in `_includes/includedvar.pug` (does not process front matter) |
+| ✅ Includes (Relative) _(New in Eleventy `v0.2.15`)_ | `include includedvar.pug` looks in `_includes/includedvar.pug` (does not process front matter) |
+| ✅ Extends (Absolute)                                | `extends /layout.pug` looks in `_includes/layout.pug` (does not process front matter)           |
+| ✅ Extends (Relative) _(New in Eleventy `v0.2.15`)_  | `extends layout.pug` looks in `_includes/layout.pug` (does not process front matter)           |

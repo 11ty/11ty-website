@@ -27,5 +27,5 @@ module.exports = function(eleventyConfig) {
 
 | Feature     | Syntax                                           |
 | ----------- | ------------------------------------------------ |
-| ✅ Partials | `{% raw %}{{> user}}{% endraw %}` looks for `_includes/user.mustache` |
+| ✅ Partials | `{% raw %}{{> user}}{% endraw %}` looks for `_includes/user.mustache` (does not process front matter) |
 
