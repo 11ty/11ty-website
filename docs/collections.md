@@ -106,7 +106,7 @@ This collection would be sorted like this:
 
 ### Sort descending
 
-To sort descending in your template, just use `Array.reverse()`. For example, in Nunjucks it’d look like this:
+To sort descending in your template, just use `Array.prototype.reverse()`. For example, in Nunjucks it’d look like this:
 
 {% raw %}
 ```
