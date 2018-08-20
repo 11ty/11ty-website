@@ -16,7 +16,7 @@ Data can be used on a template from multiple different sources. The order of pri
 
 1. [Front Matter Data](/docs/data-frontmatter/)
 1. [Template Data File](/docs/data-template-dir/)
-1. [Directory (and parent Directory) Data Files](/docs/data-template-dir/)
+1. [Directory Data Files (and Ascending Parent Directories)](/docs/data-template-dir/)
 1. [Global Data Files](/docs/data-global/)
 
 ## Special Data Variables
