@@ -105,7 +105,7 @@ module.exports = function(eleventyConfig) {
 
 	if( cfg.minifyHtml ) {
 		eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-			if( outputPath.indexOf(".html") > -1 ) {
+			if( outputPath.endsWith(".html") ) {
 				let minified = htmlmin.minify(content, {
 					useShortDoctype: true,
 					removeComments: true,

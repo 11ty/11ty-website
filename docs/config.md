@@ -299,7 +299,6 @@ module.exports = {
 };
 ```
 
-
 ### Change exception case suffix for HTML files
 
 If an HTML template has matching input and output directories, index.html files will have this suffix added to their output filename to prevent overwriting the template. Read more at [Common Pitfalls](/docs/pitfalls/).
@@ -359,7 +358,7 @@ const htmlmin = require("html-minifier");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-    if( outputPath.indexOf(".html") > -1 ) {
+    if( outputPath.endsWith(".html") ) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
