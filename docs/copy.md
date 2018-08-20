@@ -9,7 +9,7 @@ tags:
 
 Eleventy, by default, searches for any file in the input directory with an extension listed in the `templateFormats` configuration option. That means if you’ve listed `njk` in your `templateFormats`, we’ll look for any Nunjucks templates (files with the `.njk` file extension).
 
-If you list a format in the `templateFormats` array that isn’t a valid template, it’ll throw an error. Enabling `passthroughFileCopy` in your configuration changes this behavior. Setting `passthroughFileCopy: true` will copy unknown files directly to your output directory without modification.
+If you list a format in the `templateFormats` array that isn’t a valid template, it’ll throw an error. Enabling `passthroughFileCopy` in your configuration changes this behavior. Setting `passthroughFileCopy: true` will copy files with non-matdching template file extensions directly to your output directory without modification.
 
 ```js
 // .eleventy.js
@@ -44,4 +44,17 @@ module.exports = function(eleventyConfig) {
     passthroughFileCopy: true
   };
 };
+```
+
+## Passthrough All Content
+
+{% addedin "0.5.3" %}
+
+Given that blind copy of all content in the directory may be a security risk, we do not copy anything that doesn’t match the file extensions listed in `templateFormats`. However, we do provide a command line flag to bypass this behavior: `--passthroughall`. There is no configuration option to do this automatically.
+
+<div class="elv-info elv-info-warn"><strong>Warning:</strong> This may be a security risk—this is intended only for demos and other non-production use.</div>
+
+```
+# Copies ALL files in the input directory to the output directory
+npx eleventy --passthroughall
 ```
