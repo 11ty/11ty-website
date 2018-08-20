@@ -1,12 +1,12 @@
 /* External links */
-main a[href^="http://"]:not(.minilink),
-main a[href^="https://"]:not(.minilink), 
-main a[href^="//"]:not(.minilink) {
+a[href^="http://"]:not(.minilink):not(.elv-externalexempt),
+a[href^="https://"]:not(.minilink):not(.elv-externalexempt), 
+a[href^="//"]:not(.minilink):not(.elv-externalexempt) {
 	text-decoration-color: #00bcd4;
 }
-main a[href^="http://"]:not(.minilink):after,
-main a[href^="https://"]:not(.minilink):after, 
-main a[href^="//"]:not(.minilink):after {
+a[href^="http://"]:not(.minilink):not(.elv-externalexempt):after,
+a[href^="https://"]:not(.minilink):not(.elv-externalexempt):after, 
+a[href^="//"]:not(.minilink):not(.elv-externalexempt):after {
   content: "↗";
 	font-family: system-ui, sans-serif;
   font-style: normal;
@@ -16,13 +16,13 @@ main a[href^="//"]:not(.minilink):after {
 	line-height: .75;
 }
 /* External link hovers */
-main a[href^="http://"]:not(.minilink):hover,
-main a[href^="https://"]:not(.minilink):hover, 
-main a[href^="//"]:not(.minilink):hover {
+a[href^="http://"]:not(.minilink):not(.elv-externalexempt):hover,
+a[href^="https://"]:not(.minilink):not(.elv-externalexempt):hover, 
+a[href^="//"]:not(.minilink):not(.elv-externalexempt):hover {
 	text-decoration-color: inherit;
 }
-main a[href^="http://"]:not(.minilink):hover:after,
-main a[href^="https://"]:not(.minilink):hover:after, 
-main a[href^="//"]:not(.minilink):hover:after {
+a[href^="http://"]:not(.minilink):not(.elv-externalexempt):hover:after,
+a[href^="https://"]:not(.minilink):not(.elv-externalexempt):hover:after, 
+a[href^="//"]:not(.minilink):not(.elv-externalexempt):hover:after {
 	color: inherit;
 }
