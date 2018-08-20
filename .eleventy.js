@@ -16,7 +16,7 @@ module.exports = function(eleventyConfig) {
 
 		tag = tag || "p";
 
-		return `<${tag} class="minilink">Added in Eleventy ${version}</${tag}>`;
+		return `<${tag} class="minilink minilink-addedin">New in v${version}</${tag}>`;
 	});
 
 	eleventyConfig.addPassthroughCopy("css/fonts");
