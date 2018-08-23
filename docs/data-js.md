@@ -58,7 +58,7 @@ module.exports = async function() {
 
 ## Example: Using GraphQL
 
-This "Hello World" GraphQL example style works out of the box with Eleventy:
+This "Hello World" GraphQL example works out of the box with Eleventy:
 
 ```js
 var { graphql, buildSchema } = require("graphql");
