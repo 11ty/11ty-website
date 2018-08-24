@@ -168,7 +168,18 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+### Return values
+
+* These `addCollection` callbacks should return an array of [template objects](#individual-collection-items-(useful-for-sort-callbacks)) (in Eleventy 0.5.2 and prior).
+* {% addedin "0.5.3", "span" %} `addCollection` callbacks can now return any arbitrary object type and it’ll be available as data in the template. Arrays, strings, objects—have fun with it.
+
+### Collection API Methods
+
 The data collection gets passed to the callback. You can use it in all sorts of ways:
+
+#### getAll()
+
+Returns an array.
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -178,6 +189,35 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+```js
+module.exports = function(eleventyConfig) {
+  // Filter using `Array.filter`
+  eleventyConfig.addCollection("keyMustExistInData", function(collection) {
+    return collection.getAll().filter(function(item) {
+      // Side-step tags and do your own filtering
+      return "myCustomDataKey" in item.data;
+    });
+  });
+};
+```
+
+```js
+module.exports = function(eleventyConfig) {
+  // Sort with `Array.sort`
+  eleventyConfig.addCollection("myCustomSort", function(collection) {
+    return collection.getAll().sort(function(a, b) {
+      return b.date - a.date;
+    });
+  });
+};
+```
+
+For example, that last `myCustomSort` collection will be available in your templates as `collections.myCustomSort`.
+
+#### getAllSorted()
+
+Returns an array.
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -200,27 +240,6 @@ module.exports = function(eleventyConfig) {
 
 ```js
 module.exports = function(eleventyConfig) {
-  // Get only content that matches a tag
-  eleventyConfig.addCollection("myPosts", function(collection) {
-    return collection.getFilteredByTag("post");
-  });
-};
-```
-
-```js
-module.exports = function(eleventyConfig) {
-  // Filter using `Array.filter`
-  eleventyConfig.addCollection("keyMustExistInData", function(collection) {
-    return collection.getAll().filter(function(item) {
-      // Side-step tags and do your own filtering
-      return "myCustomDataKey" in item.data;
-    });
-  });
-};
-```
-
-```js
-module.exports = function(eleventyConfig) {
   // Filter using `Array.filter`
   eleventyConfig.addCollection("onlyMarkdown", function(collection) {
     return collection.getAllSorted().filter(function(item) {
@@ -231,6 +250,21 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+#### getFilteredByTag( tagName )
+
+Returns an array.
+
+```js
+module.exports = function(eleventyConfig) {
+  // Get only content that matches a tag
+  eleventyConfig.addCollection("myPosts", function(collection) {
+    return collection.getFilteredByTag("post");
+  });
+};
+```
+
+#### getFilteredByGlob( glob )
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -251,19 +285,6 @@ module.exports = function(eleventyConfig) {
 };
 ```
 {% addedin "0.2.14" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  // Sort with `Array.sort`
-  eleventyConfig.addCollection("myCustomSort", function(collection) {
-    return collection.getAll().sort(function(a, b) {
-      return b.date - a.date;
-    });
-  });
-};
-```
-
-For example, that last `myCustomSort` collection will be available in your templates as `collections.myCustomSort`.
 
 ### Individual collection items (useful for sort callbacks)
 
