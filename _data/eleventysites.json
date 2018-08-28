@@ -122,5 +122,11 @@
 		"url": "https://jamesdoc.com/",
 		"description": "Sitting at the intersection of Christianity and technology…",
 		"source_url": "https://github.com/jamesdoc/jamesdoc.com"
+	},
+	{
+		"name": "Shutter Documentation",
+		"url": "https://docs.shutter.sh/",
+		"description": "A tool for Visual Snapshot Testing",
+		"source_url": "https://github.com/shuttersh/shutter/tree/master/docs"
 	}
 ]
