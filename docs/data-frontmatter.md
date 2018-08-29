@@ -64,3 +64,5 @@ Eleventy uses the [`gray-matter` package](https://github.com/jonschlinkert/gray-
 <html>
 …
 ```
+
+{% include "datasources.md" %}

@@ -38,3 +38,4 @@ _(Changed in Eleventy `v0.2.15` to search parent directories for data files—sp
 
 Try adding `{ "layout": "layouts/post.njk" }` to `posts/posts.json` to configure a layout for all of the templates inside of `posts/*`.
 
+{% include "datasources.md" %}

@@ -12,12 +12,9 @@ tags:
 ---
 # Using Data
 
-Data can be used on a template from multiple different sources. The order of priority for duplicate keys is as follows (from highest priority to lowest):
+Data can be used on a template from multiple different sources.
 
-1. [Front Matter Data](/docs/data-frontmatter/)
-1. [Template Data File](/docs/data-template-dir/)
-1. [Directory Data Files (and Ascending Parent Directories)](/docs/data-template-dir/)
-1. [Global Data Files](/docs/data-global/)
+{% include "datasources.md" %}
 
 ## Special Data Variables
 
@@ -31,27 +28,41 @@ Here are a few data values we supply to your page that you can use in your templ
 ### `page` Variable Contents:
 
 ```js
-{
+let page = {
+  
   // URL can be used in <a href> to link to other templates
-  url: "/current/page/file.html",
-  
-  // JS Date Object for current page
-  date: new Date(),
-  
-  // the path to the original source file for the template
-  inputPath: "/current/page/file.md",
+  url: "/current/page/myFile/",
   
   // New in Eleventy v0.3.4
-  // mapped from inputPath, useful for clean permalinks
-  fileSlug: "file"
+  // Mapped from inputPath, useful for permalinks
+  fileSlug: "myFile",
   
-  // More inputPath => fileSlug examples:
-  //    2018-01-01-file.md       => file
-  //    dir/file.md              => file
-  // Returns parent directory if an `index` template
-  //    index.md                 => "" (empty)
-  //    dir/index.md             => dir
-  //    dir/2018-01-01-index.md  => dir
-}
+  // JS Date Object for current page (used to sort collections)
+  date: new Date(),
+  
+  // The path to the original source file for the template
+  inputPath: "/current/page/myFile.md",
+  
+  // Eleventy internals
+  // You probably won’t use `outputPath`: `url` is more useful.
+  // Depends on your output directory (the default is _site)
+  outputPath: "./_site/current/page/myFile/index.html"
+};
 ```
 
+#### `fileSlug`
+
+The `fileSlug` variable is mapped from inputPath and is useful for creating your own clean permalinks.
+
+| `inputPath` | Resulting `fileSlug` |
+| --- | --- |
+| `"2018-01-01-myFile.md"` | `"myFile"` |
+| `"myDir/myFile.md"` | `"myFile"` |
+
+`fileSlug` returns information on the parent directory if the file is an `index` template:
+
+| `inputPath` | Resulting `fileSlug` |
+| --- | --- |
+| `"index.md"` | `""` (empty) |
+| `"myDir/index.md"` | `"myDir"` |
+| `"myDir/2018-01-01-index.md"` | `"myDir"` |

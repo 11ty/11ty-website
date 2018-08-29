@@ -49,3 +49,5 @@ Our data will be now available to your templates under a `users` key like so:
 ### Using JavaScript instead of JSON
 
 Read more about using `module.exports` values in arbitrary [JavaScript data files](/docs/data-js/).
+
+{% include "datasources.md" %}
