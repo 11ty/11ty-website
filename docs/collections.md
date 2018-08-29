@@ -266,6 +266,8 @@ module.exports = function(eleventyConfig) {
 
 #### getFilteredByGlob( glob )
 
+Returns an array. Will match an arbitrary glob against the input file’s full `inputPath` (including the input directory).
+
 ```js
 module.exports = function(eleventyConfig) {
   // Filter source file names using a glob
@@ -290,8 +292,8 @@ module.exports = function(eleventyConfig) {
 
 See how the `Array.sort` function above uses `a.date` and `b.date`? Similarly, any of the following items can be used for sorting and filtering the content.
 
-* `inputPath`: the path to the source input file
-* `outputPath`: the path to the output file to be written for this content
+* `inputPath`: the full path to the source input file (including the path to the input directory)
+* `outputPath`: the full path to the output file to be written for this content
 * `url`: actual url used to link to the content on the site
 * `data`: all data for this content
 * `date`: the resolved date used for sorting
