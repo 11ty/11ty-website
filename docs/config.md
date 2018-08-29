@@ -71,6 +71,7 @@ Read more about [Plugins](/docs/plugins/).
   "Deploy to a Subdirectory with a Path Prefix",
   "Copy Files to Output using Pass-through File Copy",
   "Change Exception Case Suffix for HTML Files",
+  "Change File Suffix for Template and Directory Data Files",
   "Transforms"
 ] %}
 {%- for link in toc %}
@@ -123,7 +124,7 @@ module.exports = {
 ### Directory for Global Data Files
 
 
-Controls the directory inside which the global data template files, available to all templates, can be found.
+Controls the directory inside which the global data template files, available to all templates, can be found. Read more about [Global Data Files](/docs/data-global/).
 
 | Data Files Directory |  |
 | --- | --- |
@@ -166,7 +167,7 @@ module.exports = {
 
 ### Default template engine for global data files
 
-The `data.dir` global data files run through this template engine before transforming to JSON.
+The `data.dir` global data files run through this template engine before transforming to JSON. Read more about [Global Data Files](/docs/data-global/).
 
 | Data Template Engine |  |
 | --- | --- |
@@ -298,7 +299,6 @@ module.exports = {
 };
 ```
 
-
 ### Change exception case suffix for HTML files
 
 If an HTML template has matching input and output directories, index.html files will have this suffix added to their output filename to prevent overwriting the template. Read more at [Common Pitfalls](/docs/pitfalls/).
@@ -309,6 +309,33 @@ If an HTML template has matching input and output directories, index.html files 
 | _Default_ | `-o` |
 | _Valid Options_ | Any valid string |
 | _Command Line Override_ | _None_ |
+
+#### Example
+
+```
+module.exports = {
+    htmlOutputSuffix: "-o"
+};
+```
+
+### Change File Suffix for Template and Directory Data Files
+
+{% addedin "0.5.3", "span" %} When using [Template and Directory Specific Data Files](/docs/data-template-dir/), to prevent file name conflicts with non-Eleventy files in the project directory, we scope these files with a unique-to-Eleventy suffix. This key is customizable using `jsDataFileSuffix`. For example, using `.11tydata` for this value will search for `*.11tydata.js` and `*.11tydata.json` data files. Read more about [Template and Directory Specific Data Files](/docs/data-template-dir/).
+
+| File Suffix |  |
+| --- | --- |
+| _Object Key_ | `jsDataFileSuffix` |
+| _Default_ | `.11tydata` |
+| _Valid Options_ | Any valid string |
+| _Command Line Override_ | _None_ |
+
+#### Example
+
+```
+module.exports = {
+    jsDataFileSuffix: ".11tydata"
+};
+```
 
 ### Transforms
 
@@ -331,7 +358,7 @@ const htmlmin = require("html-minifier");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-    if( outputPath.indexOf(".html") > -1 ) {
+    if( outputPath.endsWith(".html") ) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,

@@ -16,7 +16,7 @@ module.exports = function(eleventyConfig) {
 
 		tag = tag || "p";
 
-		return `<${tag} class="minilink">Added in Eleventy ${version}</${tag}>`;
+		return `<${tag} class="minilink minilink-addedin">New in v${version}</${tag}>`;
 	});
 
 	eleventyConfig.addPassthroughCopy("css/fonts");
@@ -105,7 +105,7 @@ module.exports = function(eleventyConfig) {
 
 	if( cfg.minifyHtml ) {
 		eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-			if( outputPath.indexOf(".html") > -1 ) {
+			if( outputPath.endsWith(".html") ) {
 				let minified = htmlmin.minify(content, {
 					useShortDoctype: true,
 					removeComments: true,

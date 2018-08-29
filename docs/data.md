@@ -2,110 +2,72 @@
 subtitle: Using Data
 menuSectionName: docs-data
 submenuSortOrder:
-  - data-global
+  - data-frontmatter
   - data-template-dir
+  - data-global
+  - data-js
   - data-preprocessing
 tags:
   - docs
 ---
 # Using Data
 
-## Front Matter Data
+Data can be used on a template from multiple different sources.
 
-Add data in your template front matter, like this:
+{% include "datasources.md" %}
 
-```
----
-title: My page title
----
-<!doctype html>
-<html>
-…
-```
-
-The above is using [YAML syntax](https://learnxinyminutes.com/docs/yaml/).
-
-Locally assigned front matter values override things further up the layout chain. Note also that layouts can contain front matter variables that you can use in your local template. Leaf template front matter takes precedence over layout front matter. Read more about [Layouts](/docs/layouts/).
-
-### Special Front Matter Customizations
-
-Here are a few special front matter keys you can assign:
-
-* `permalink`: Add in front matter to change the output target of the current template. You can use template syntax for variables here. [Read more about Permalinks](/docs/permalinks/).
-* `layout`: Wrap current template with a layout template found in the `_includes` folder. [Read more about Layouts](/docs/layouts/).
-* `pagination`: Enable to iterate over data. Output multiple HTML files from a single template. [Read more about Pagination](/docs/pagination/).
-* `tags`: A single string or array that identifies that a piece of content is part of a collection. Collections can be reused in any other template. [Read more about Collections](/docs/collections/).
-* `date`: Override the default date (file creation) to customize how the file is sorted in a collection. [Read more about Collections](/docs/collections/).
-* `templateEngineOverride`: Override the template engine on a per-file basis, usually configured with a file extension or globally using the `markdownTemplateEngine` and `htmlTemplateEngine` configuration options. [Read more about Changing a Template’s Rendering Engine](/docs/languages/#overriding-the-template-language).
-
-### Special Data Variables
+## Eleventy Provided Data Variables
 
 Here are a few data values we supply to your page that you can use in your templates:
 
 * `pkg`: The local project’s `package.json` values.
-* `pagination`: (When enabled using pagination in front matter) [Read more about Pagination](/docs/pagination/).
+* `pagination`, when enabled using pagination in [front matter](/docs/data-frontmatter/). [Read more about Pagination](/docs/pagination/).
 * `collections`: Lists of all of your content, grouped by tags. [Read more about Collections](/docs/collections/)
 * `page`: Has information about the current page. See code block below for `page` contents. For example, `page.url` is useful for finding the current page in a collection. [Read more about Collections](/docs/collections/) (look at _Example: Navigation Links with an `active` class added for on the current page_).
 
-#### `page` Variable Contents:
+### `page` Variable Contents:
 
 ```js
-{
+let page = {
+  
   // URL can be used in <a href> to link to other templates
-  url: "/current/page/file.html",
-  
-  // JS Date Object for current page
-  date: new Date(),
-  
-  // the path to the original source file for the template
-  inputPath: "/current/page/file.md",
+  url: "/current/page/myFile/",
   
   // New in Eleventy v0.3.4
-  // mapped from inputPath, useful for clean permalinks
-  fileSlug: "file"
+  // Mapped from inputPath, useful for permalinks
+  fileSlug: "myFile",
   
-  // More inputPath => fileSlug examples:
-  //    2018-01-01-file.md       => file
-  //    dir/file.md              => file
-  // Returns parent directory if an `index` template
-  //    index.md                 => "" (empty)
-  //    dir/index.md             => dir
-  //    dir/2018-01-01-index.md  => dir
-}
+  // JS Date Object for current page (used to sort collections)
+  date: new Date(),
+  
+  // The path to the original source file for the template
+  // Note: this will include your input directory path!
+  inputPath: "./current/page/myFile.md",
+  
+  // Eleventy internals
+  // You probably won’t use `outputPath`: `url` is more useful.
+  // Depends on your output directory (the default is _site)
+  outputPath: "./_site/current/page/myFile/index.html"
+};
 ```
 
+#### `fileSlug`
 
-### Alternative Front Matter Formats
+{% addedin "0.3.4", "span" %} The `fileSlug` variable is mapped from inputPath and is useful for creating your own clean permalinks.
 
-Eleventy uses the [`gray-matter` package](https://github.com/jonschlinkert/gray-matter) for front matter processing. `gray-matter` includes support for YAML, JSON, and even arbitrary JavaScript front matter.
+| `inputPath` | Resulting `fileSlug` |
+| --- | --- |
+| `"2018-01-01-myFile.md"` | `"myFile"` |
+| `"myDir/myFile.md"` | `"myFile"` |
 
-#### JSON Front Matter
+`fileSlug` returns information on the parent directory if the file is an `index` template:
 
-```
----json
-{
-  "title": "My page title"
-}
----
-<!doctype html>
-<html>
-…
-```
+| `inputPath` | Resulting `fileSlug` |
+| --- | --- |
+| `"index.md"` | `""` _(empty)_ |
+| `"myDir/index.md"` | `"myDir"` |
+| `"myDir/2018-01-01-index.md"` | `"myDir"` |
 
-#### JavaScript Front Matter
+### `date`
 
-```
----js
-{
-  title: "My page title"
-  currentDate: function() {
-    // wow you can have a function in here
-    return (new Date()).toLocaleString();
-  }
-}
----
-<!doctype html>
-<html>
-…
-```
-
+The date associated with the page. Defaults to the content’s file created date but can be overridden. [Read more at Content Dates](/docs/dates/).

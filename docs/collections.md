@@ -81,6 +81,39 @@ tags:
 
 This content would show up in the template data inside of `collections.cat` and `collections.dog`.
 
+### Collection Item Data Structure
+
+{% raw %}
+```
+<ul>
+{%- for post in collections.post -%}
+  <li>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+```
+{% endraw %}
+
+Note in the above example that we output the `post.data.title` value? Similarly, each collection item will have the following data:
+
+* `inputPath`: the full path to the source input file (including the path to the input directory)
+* `fileSlug`: {% addedin "0.5.3", "span" %} Mapped from the input file name, useful for permalinks. Read more about [`fileSlug`](/docs/data/#fileslug).
+* `outputPath`: the full path to the output file to be written for this content
+* `url`: url used to link to this piece of content.
+* `date`: the resolved date used for sorting. Read more about [Content Dates](/docs/dates/).
+* `data`: all data for this piece of content (includes any data inherited from layouts)
+* `templateContent`: the rendered content of this template. This does _not_ include layout wrappers.
+
+```
+{ inputPath: './test1.md',
+  fileSlug: 'test1', // fileSlug was added in 0.5.3
+  outputPath: './_site/test1/index.html',
+  url: 'test1/index.html',
+  date: 2018-01-09T04:10:17.000Z,
+  data: { title: 'Test Title', tags: ['tag1', 'tag2'], date: 'Last Modified' },
+  templateContent: '<h1>This is my title</h1>\n\n<p>This is content…' }
+```
+
+
 ## Sorting
 
 The default collection sorting algorithm sorts in ascending order using:
@@ -120,25 +153,13 @@ To sort descending in your template, just use `Array.prototype.reverse()`. For e
 
 ### Overriding Content Dates
 
-Add a `date` key to your front matter to override the default date (file creation) and customize how the file is sorted in a collection.
+You can modify how a piece of content is sorted in a collection by changing it’s default `date`. [Read more at Content Dates](/docs/dates/).
 
 ```
 ---
 date: 2016-01-01
 ---
 ```
-
-Valid `date` values:
-
-* `Last Modified`: automatically resolves to the file’s last modified date
-* `Created`: automatically resolves to the file’s created date (default, this is what is used when `date` is omitted).
-* `2016-01-01` or any other valid YAML date value
-* `"2016-01-01"` or any other valid UTC **string** that [Luxon’s `DateTime.fromISO`](https://moment.github.io/luxon/docs/manual/parsing.html#parsing-technical-formats) can parse (see also the [Luxon API docs](https://moment.github.io/luxon/docs/class/src/datetime.js~DateTime.html#static-method-fromISO)).
-
-If a `date` key is omitted from the file, the date is assumed to be:
-
-1. If the file name has a `YYYY-MM-DD` format (anywhere), this date is used.
-1. File creation date.
 
 ## Advanced: Custom Filtering and Sorting
 
@@ -167,6 +188,11 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+### Return values
+
+* These `addCollection` callbacks should return an array of [template objects](#individual-collection-items-(useful-for-sort-callbacks)) (in Eleventy 0.5.2 and prior).
+* {% addedin "0.5.3", "span" %} `addCollection` callbacks can now return any arbitrary object type and it’ll be available as data in the template. Arrays, strings, objects—have fun with it.
 
 ### Collection API Methods
 
@@ -208,7 +234,9 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-For example, that last `myCustomSort` collection will be available in your templates as `collections.myCustomSort`.
+Curious where the date is coming from? [Read more about Content Dates](/docs/dates/).
+
+Note that the last example adding the `myCustomSort` collection will be available in your templates as `collections.myCustomSort`.
 
 #### getAllSorted()
 
@@ -261,7 +289,7 @@ module.exports = function(eleventyConfig) {
 
 #### getFilteredByGlob( glob )
 
-Returns an array. Will match an arbitrary glob against the input file’s full `inputPath` (including the input directory).
+Returns an array. Will match an arbitrary glob (or an array of globs) against the input file’s full `inputPath` (including the input directory).
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -283,22 +311,14 @@ module.exports = function(eleventyConfig) {
 ```
 {% addedin "0.2.14" %}
 
-### Individual collection items (useful for sort callbacks)
-
-See how the `Array.sort` function above uses `a.date` and `b.date`? Similarly, any of the following items can be used for sorting and filtering the content.
-
-* `inputPath`: the full path to the source input file (including the path to the input directory)
-* `outputPath`: the full path to the output file to be written for this content
-* `url`: actual url used to link to the content on the site
-* `data`: all data for this content
-* `date`: the resolved date used for sorting
-* `templateContent`: the rendered content of this template (does _not_ include layout wrappers)
-
+```js
+module.exports = function(eleventyConfig) {
+  // Filter source file names using a glob
+  eleventyConfig.addCollection("posts", function(collection) {
+    // Also accepts an array of globs!
+    return collection.getFilteredByGlob(["posts/*.md", "notes/*.md"]);
+  });
+};
 ```
-{ inputPath: './test1.md',
-  outputPath: './_site/test1/index.html',
-  url: 'test1/index.html',
-  data: { title: 'Test Title', tags: ['tag1', 'tag2'], date: 'Last Modified' },
-  date: 2018-01-09T04:10:17.000Z,
-  templateContent: '<h1>This is my title</h1>\n\n<p>This is content…' }
-```
+{% addedin "0.2.14" %}
+

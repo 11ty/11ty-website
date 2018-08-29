@@ -5,30 +5,49 @@ tags:
 ---
 # Global Data Files
 
-Your global data folder is controlled by the `dir.data` configuration option. All `json` files in this directory will be parsed into a global data object available to all templates.
+Your global data folder is controlled by the [`dir.data` configuration option](/docs/config/#directory-for-global-data-files). All `*.json` and `module.exports` values from [`*.js` files](/docs/data-js/) in this directory will be added into a global data object available to all templates.
 
-If a data file is in a subdirectory, the subdirectory structure will inform your global data object structure. For example, consider `_data/users/userList.json` with the following data:
+## Example
+
+Consider a JSON data file located at `_data/userList.json` with the following content:
 
 ```js
 [
   "user1",
-  "user2",
-  "user3",
-  …
+  "user2"
 ]
 ```
 
-This data will be available to your templates like so:
+This data will be available to your templates under the `userList` key like this:
+
+```js
+{
+  userList: [
+    "user1",
+    "user2"
+  ]
+}
+```
+
+### Folders
+
+If a data file is in a folder, the folder name will inform your global data object structure. For example, in our previous example, consider if our `userList.json` file was moved into a `users` folder at `_data/users/userList.json`.
+
+Our data will be now available to your templates under a `users` key like so:
 
 ```js
 {
   users: {
     userList: [
       "user1",
-      "user2",
-      "user3",
-      …
+      "user2"
     ]
   }
 }
 ```
+
+### Using JavaScript instead of JSON
+
+Read more about using `module.exports` values in arbitrary [JavaScript data files](/docs/data-js/).
+
+{% include "datasources.md" %}
