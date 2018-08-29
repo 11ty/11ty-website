@@ -168,7 +168,13 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+### Collection API Methods
+
 The data collection gets passed to the callback. You can use it in all sorts of ways:
+
+#### getAll()
+
+Returns an array.
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -178,6 +184,35 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+```js
+module.exports = function(eleventyConfig) {
+  // Filter using `Array.filter`
+  eleventyConfig.addCollection("keyMustExistInData", function(collection) {
+    return collection.getAll().filter(function(item) {
+      // Side-step tags and do your own filtering
+      return "myCustomDataKey" in item.data;
+    });
+  });
+};
+```
+
+```js
+module.exports = function(eleventyConfig) {
+  // Sort with `Array.sort`
+  eleventyConfig.addCollection("myCustomSort", function(collection) {
+    return collection.getAll().sort(function(a, b) {
+      return b.date - a.date;
+    });
+  });
+};
+```
+
+For example, that last `myCustomSort` collection will be available in your templates as `collections.myCustomSort`.
+
+#### getAllSorted()
+
+Returns an array.
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -200,27 +235,6 @@ module.exports = function(eleventyConfig) {
 
 ```js
 module.exports = function(eleventyConfig) {
-  // Get only content that matches a tag
-  eleventyConfig.addCollection("myPosts", function(collection) {
-    return collection.getFilteredByTag("post");
-  });
-};
-```
-
-```js
-module.exports = function(eleventyConfig) {
-  // Filter using `Array.filter`
-  eleventyConfig.addCollection("keyMustExistInData", function(collection) {
-    return collection.getAll().filter(function(item) {
-      // Side-step tags and do your own filtering
-      return "myCustomDataKey" in item.data;
-    });
-  });
-};
-```
-
-```js
-module.exports = function(eleventyConfig) {
   // Filter using `Array.filter`
   eleventyConfig.addCollection("onlyMarkdown", function(collection) {
     return collection.getAllSorted().filter(function(item) {
@@ -231,6 +245,23 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+#### getFilteredByTag( tagName )
+
+Returns an array.
+
+```js
+module.exports = function(eleventyConfig) {
+  // Get only content that matches a tag
+  eleventyConfig.addCollection("myPosts", function(collection) {
+    return collection.getFilteredByTag("post");
+  });
+};
+```
+
+#### getFilteredByGlob( glob )
+
+Returns an array. Will match an arbitrary glob against the input file’s full `inputPath` (including the input directory).
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -252,25 +283,12 @@ module.exports = function(eleventyConfig) {
 ```
 {% addedin "0.2.14" %}
 
-```js
-module.exports = function(eleventyConfig) {
-  // Sort with `Array.sort`
-  eleventyConfig.addCollection("myCustomSort", function(collection) {
-    return collection.getAll().sort(function(a, b) {
-      return b.date - a.date;
-    });
-  });
-};
-```
-
-For example, that last `myCustomSort` collection will be available in your templates as `collections.myCustomSort`.
-
 ### Individual collection items (useful for sort callbacks)
 
 See how the `Array.sort` function above uses `a.date` and `b.date`? Similarly, any of the following items can be used for sorting and filtering the content.
 
-* `inputPath`: the path to the source input file
-* `outputPath`: the path to the output file to be written for this content
+* `inputPath`: the full path to the source input file (including the path to the input directory)
+* `outputPath`: the full path to the output file to be written for this content
 * `url`: actual url used to link to the content on the site
 * `data`: all data for this content
 * `date`: the resolved date used for sorting
