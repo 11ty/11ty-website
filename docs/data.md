@@ -16,7 +16,7 @@ Data can be used on a template from multiple different sources.
 
 {% include "datasources.md" %}
 
-## Special Data Variables
+## Eleventy Provided Data Variables
 
 Here are a few data values we supply to your page that you can use in your templates:
 
@@ -41,7 +41,8 @@ let page = {
   date: new Date(),
   
   // The path to the original source file for the template
-  inputPath: "/current/page/myFile.md",
+  // Note: this will include your input directory path!
+  inputPath: "./current/page/myFile.md",
   
   // Eleventy internals
   // You probably won’t use `outputPath`: `url` is more useful.
@@ -52,7 +53,7 @@ let page = {
 
 #### `fileSlug`
 
-The `fileSlug` variable is mapped from inputPath and is useful for creating your own clean permalinks.
+{% addedin "0.3.4", "span" %} The `fileSlug` variable is mapped from inputPath and is useful for creating your own clean permalinks.
 
 | `inputPath` | Resulting `fileSlug` |
 | --- | --- |
@@ -63,6 +64,10 @@ The `fileSlug` variable is mapped from inputPath and is useful for creating your
 
 | `inputPath` | Resulting `fileSlug` |
 | --- | --- |
-| `"index.md"` | `""` (empty) |
+| `"index.md"` | `""` _(empty)_ |
 | `"myDir/index.md"` | `"myDir"` |
 | `"myDir/2018-01-01-index.md"` | `"myDir"` |
+
+### `date`
+
+The date associated with the page. Defaults to the content’s file created date but can be overridden. [Read more at Content Dates](/docs/dates/).

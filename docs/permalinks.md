@@ -76,7 +76,7 @@ permalink: "/{{ page.date | date: '%Y/%m/%d' }}/index.html"
 
 _(the above is using Liquid syntax and was buggy (sorry!)—fixed in Eleventy 0.2.15)_
 
-Writes to `_site/2016/01/01/index.html`. There are a variety of ways that the page.date variable can be set (using `date` in your front matter is just one of them). Read more about [Overriding content dates](/docs/collections/#overriding-content-dates).
+Writes to `_site/2016/01/01/index.html`. There are a variety of ways that the page.date variable can be set (using `date` in your front matter is just one of them). Read more about [Content dates](/docs/dates/).
 
 ### Ignore the output directory
 

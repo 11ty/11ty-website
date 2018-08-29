@@ -2,9 +2,10 @@
 subtitle: Working with Templates
 menuSectionName: docs-templates
 submenuSortOrder:
-  - collections
   - layouts
+  - collections
   - pagination
+  - dates
   - permalinks
   - pitfalls
 tags: docs
