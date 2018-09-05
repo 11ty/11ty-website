@@ -52,7 +52,7 @@ module.exports = function(eleventyConfig) {
 
 Given that global copy of all content in the directory may be a security risk, we do not copy anything that doesn’t match the file extensions listed in `templateFormats`. However, we do provide a command line flag to bypass this behavior: `--passthroughall`. Intentionally, there is no configuration option to do this.
 
-<div class="elv-info elv-info-warn"><strong>Warning:</strong> This may be a security risk—this is intended only for demos and other non-production use.</div>
+<div class="elv-callout elv-callout-warn"><strong>Warning:</strong> This may be a security risk—this is intended only for demos and other non-production use.</div>
 
 ```
 # Copies ALL files in the input directory to the output directory

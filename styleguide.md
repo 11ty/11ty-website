@@ -58,12 +58,16 @@ layout: layouts/docs.njk
 
 ## Info Block
 
-Use the `elv-info-sticky` class to affix to the top of the viewport while scrolling.
+Use the `elv-callout-sticky` class to affix to the top of the viewport while scrolling.
 
 <div class="elv-sg-component">
-    <div class="elv-info">This documentation is for an upcoming version of Eleventy. Go to the <a href="https://www.11ty.io/docs/">latest stable version of Eleventy docs</a> or check out the <a href="https://www.11ty.io/docs/versions/">full release history.</a></div>
+    <div class="elv-callout">Default</div>
 </div>
 
 <div class="elv-sg-component">
-    <div class="elv-info elv-info-warn">This documentation is for an older version. Go to the <a href="https://www.11ty.io/docs/">newest Eleventy docs</a> or check out the <a href="https://www.11ty.io/docs/versions/">full release history.</a></div>
+    <div class="elv-callout elv-callout-info">This documentation is for an upcoming version of Eleventy. Go to the <a href="https://www.11ty.io/docs/">latest stable version of Eleventy docs</a> or check out the <a href="https://www.11ty.io/docs/versions/">full release history.</a></div>
+</div>
+
+<div class="elv-sg-component">
+    <div class="elv-callout elv-callout-warn">This documentation is for an older version. Go to the <a href="https://www.11ty.io/docs/">newest Eleventy docs</a> or check out the <a href="https://www.11ty.io/docs/versions/">full release history.</a></div>
 </div>

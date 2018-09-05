@@ -132,6 +132,7 @@ h2 {
 	font-size: 2.222222222222em; /* 40px /18 */
 	border-bottom: 1px solid #ddd;
 	margin: 1em 0 .25em;
+	line-height: 1.1;
 }
 h3 {
 	font-size: 1.666666666667em; /* 30px /18 */

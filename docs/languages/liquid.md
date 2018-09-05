@@ -41,7 +41,7 @@ module.exports = function(eleventyConfig) {
 
 As an escape mechanism for advanced usage, pass in your own instance of the Liquid library using the Configuration API. See [all `liquidjs` options](https://github.com/harttle/liquidjs#options).
 
-<div class="elv-info elv-info-warn">Not compatible with <code>setLiquidOptions</code> above—this method will ignore any configuration set there.</div>
+<div class="elv-callout elv-callout-warn">Not compatible with <code>setLiquidOptions</code> above—this method will ignore any configuration set there.</div>
 
 ```js
 module.exports = function(eleventyConfig) {

@@ -11,7 +11,7 @@ tags:
 ---
 # Custom Tags
 
-<div class="elv-info">It’s unlikely that you want this feature. You probably want <a href="/docs/shortcodes/">shortcodes</a> instead, Eleventy’s custom tags sugar (it’s easier to use).</div>
+<div class="elv-callout elv-callout-info">It’s unlikely that you want this feature. You probably want <a href="/docs/shortcodes/">shortcodes</a> instead, Eleventy’s custom tags sugar (it’s easier to use).</div>
 
 Various template engines can be extended with custom tags.
 

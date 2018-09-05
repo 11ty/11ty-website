@@ -7,10 +7,10 @@ headerClass: elv-header-default
 {% include "header.njk" %}
 
 {% if config.outdated -%}
-<div class="elv-info elv-info-warn elv-info-sticky">This documentation is for an older version. Go to the <a href="https://www.11ty.io/docs/">newest Eleventy docs</a> or check out the <a href="https://www.11ty.io/docs/versions/">full release history.</a></div>
+<div class="elv-callout elv-callout-warn elv-callout-sticky">This is an <strong>older version of Eleventy</strong>. <a href="https://www.11ty.io/docs/versions/">Full release history</a>. Go to the <a href="https://www.11ty.io/docs/">newest Eleventy docs</a>. You could try <a href="https://www.11ty.io{{ page.url }}">{{ page.url }}</a> although it may not exist.</div>
 {% endif -%}
 {% if config.prerelease -%}
-<div class="elv-info elv-info-sticky">This documentation is for an upcoming version of Eleventy. Go to the <a href="https://www.11ty.io/docs/">latest stable version of Eleventy docs</a> or check out the <a href="https://www.11ty.io/docs/versions/">full release history.</a></div>
+<div class="elv-callout elv-callout-info elv-callout-sticky">This documentation is for an upcoming version of Eleventy. Go to the <a href="https://www.11ty.io/docs/">latest stable version of Eleventy docs</a> or check out the <a href="https://www.11ty.io/docs/versions/">full release history.</a></div>
 {% endif -%}
 
 <main class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">{{ content | safe }}</main>
@@ -18,10 +18,10 @@ headerClass: elv-header-default
 <footer class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">
 	<!--<a href="https://github.com/11ty/eleventy"><img src="https://img.shields.io/github/stars/11ty/eleventy.svg?style=for-the-badge" alt="Star 11ty/eleventy on GitHub"></a>-->
 {%- if ignoreGitHubButtons %}{% else %}
-	<a class="github-button" href="https://github.com/11ty/eleventy" data-size="large" data-show-count="true" aria-label="Star 11ty/eleventy on GitHub">Star</a>
-	<p>
-		Starring Eleventy on GitHub will increase our project’s visibility on <a href="https://www.staticgen.com/">staticgen.com</a>, a big giant list of static site generators.
-	</p>
+	<div class="elv-callout">
+		<div><a class="github-button" href="https://github.com/11ty/eleventy" data-size="large" data-show-count="true" aria-label="Star 11ty/eleventy on GitHub">Star</a></div>
+		<strong>⭐️ Please star Eleventy on GitHub!</strong> This is an easy way to support our underrated project and bump our ranking on <a href="https://www.staticgen.com/">staticgen.com</a>, a giant list of static site generators.
+	</div>
 {%- endif %}
 
 	<ul class="elv-nav">
