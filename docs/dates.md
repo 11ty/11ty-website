@@ -34,3 +34,6 @@ If a `date` key is omitted from the file, the date is assumed to be:
 1. File creation date.
 
 <div class="elv-callout elv-callout-warn"><strong>Running Eleventy on a Continuous Integration Server?</strong> Your collections may appear out of order! See <a href="/docs/pitfalls/#file-creation-dates-reset-on-continuous-integration-server">Common Pitfalls</a>.</div>
+
+<div class="elv-callout elv-callout-warn"><strong>Are your dates displaying off by one day?</strong> You’re probably displaying UTC dates in a local time zone. See <a href="/docs/pitfalls/#dates-off-by-one-day%3F">Common Pitfalls</a>.</div>
+

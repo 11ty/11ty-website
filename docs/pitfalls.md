@@ -3,6 +3,7 @@ subtitle: Pitfalls
 excerpt: Some common problems.
 tags:
   - docs-templates
+sampleDate: 2018-01-01
 ---
 # Common Pitfalls
 
@@ -28,3 +29,32 @@ Moreover, you may notice in the above output that the second template wrote to `
 ## File Creation Dates reset on Continuous Integration server
 
 Be careful relying on the default `date` associated with a piece of content. By default Eleventy uses file creation dates, which works fine if you run Eleventy locally but may reset in some conditions if you run Eleventy on a Continuous Integration server. Work around this by using explicit date assignments, either in your front matter or your content’s file name. [Read more at Content Dates](/docs/dates/).
+
+## Dates off by One Day?
+
+Many date formats in Eleventy (when set in your content‘s filename as `YYYY-MM-DD-myfile.md` or in your front matter as `date: YYYY-MM-DD`) assume midnight in UTC. When displaying your dates, make sure you’re using the UTC time and not your own local time zone, which may be the default.
+
+### Example
+
+```
+---
+date: 2018-01-01
+---
+```
+
+```
+{% raw %}{{ page.date }}{% endraw %} will display a local time zone date.
+{{ sampleDate }}
+```
+
+```
+{% raw %}{{ page.date.toString() }}{% endraw %} will display a local time zone date.
+{{ sampleDate.toString() }}
+```
+
+```
+{% raw %}{{ page.date.toUTCString() }}{% endraw %} will display a UTC time zone date.
+{{ sampleDate.toUTCString() }}
+```
+
+Read more at [Content Dates](/docs/dates/).
