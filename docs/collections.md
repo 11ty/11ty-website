@@ -139,12 +139,12 @@ This collection would be sorted like this:
 
 ### Sort descending
 
-To sort descending in your template, just use `Array.prototype.reverse()`. For example, in Nunjucks it’d look like this:
+To sort descending in your template, you can use a filter to reverse the sort order. For example, in Nunjucks it’d look like this (Liquid also has a `reverse` filter built in):
 
 {% raw %}
 ```
 <ul>
-{%- for post in collections.post.reverse() -%}
+{%- for post in collections.post | reverse -%}
   <li>{{ post.data.title }}</li>
 {%- endfor -%}
 </ul>
