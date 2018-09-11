@@ -30,7 +30,8 @@ It’s recommended to use the Configuration API to set override the default opti
 ```js
 module.exports = function(eleventyConfig) {
   eleventyConfig.setLiquidOptions({
-    dynamicPartials: true
+    dynamicPartials: true,
+    strict_filters: true
   });
 };
 ```
@@ -49,6 +50,7 @@ module.exports = function(eleventyConfig) {
   let options = {
     extname: ".liquid",
     dynamicPartials: true,
+    strict_filters: true,
     root: ["_includes"]
   };
 
