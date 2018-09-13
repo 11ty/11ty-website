@@ -13,7 +13,7 @@ eleventy
 eleventy --input=. --output=_site
 ```
 
-A hypothetical `template.md` in the current directory would be rendered to `_site/template/index.html`. Read more at [Permalinks](docs/permalinks/).
+A hypothetical `template.md` in the current directory would be rendered to `_site/template/index.html`. Read more at [Permalinks](../permalinks/).
 
 ```bash
 # Automatically run when input template files change.
