@@ -87,7 +87,7 @@ module.exports = function(eleventyConfig) {
 
 ## Handlebars example
 
-Simply—these are helpers!
+Surprise—these are helpers!
 
 {% raw %}
 ```js
