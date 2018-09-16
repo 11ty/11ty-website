@@ -91,20 +91,20 @@ You can expose environment variables (e.g. `ELEVENTY_ENV`) to your templates by 
 
 ```js
 module.exports = {
-  'environment': process.env.ELEVENTY_ENV
+  environment: process.env.ELEVENTY_ENV
 };
 ```
 
-Saving this as `eleventy.js` in your global data directory (by default, it’s `_data`) gives you access to `eleventy.environment` in your templates.
+Saving this as `eleventyConfig.js` in your global data directory (using the default, this would be `_data/eleventyConfig.js`) gives you access to `eleventyConfig.environment` in your templates.
 
 **Serve for development**:
 
 ```
-ELEVENTY_ENV=development eleventy --serve
+ELEVENTY_ENV=development npx eleventy --serve
 ```
 
 **Build for production**:
 
 ```
-ELEVENTY_ENV=production eleventy
+ELEVENTY_ENV=production npx eleventy
 ```
