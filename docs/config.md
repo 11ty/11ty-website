@@ -3,6 +3,7 @@ subtitle: Configuration
 menuSectionName: docs-config
 submenuSortOrder:
   - copy
+  - ignores
   - filters
   - shortcodes
   - custom-tags
