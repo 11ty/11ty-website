@@ -23,6 +23,8 @@ Various template engines can be extended with custom filters to modify content. 
 
 This can be added using the [Configuration API](/docs/config/#using-the-configuration-api). Here are a few examples:
 
+{% codetitle ".eleventy.js" %}
+
 ```js
 module.exports = function(eleventyConfig) {
   // Liquid Filter
@@ -46,6 +48,8 @@ Read more about filters on the individual Template Language documentation pages:
 ## Universal Filters
 
 Universal filters can be added in a single place and are available to multiple template engines, simultaneously. This is currently supported in Nunjucks, Liquid, and Handlebars.
+
+{% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {

@@ -36,6 +36,8 @@ Various template engines can be extended with shortcodes for easy reusable conte
 
 Supported in Liquid, Nunjucks, Handlebars templates.
 
+{% codetitle ".eleventy.js" %}
+
 ```js
 module.exports = function(eleventyConfig) {
   // Liquid Shortcode
@@ -93,6 +95,8 @@ The shortcodes we saw above were nice, I suppose. But really, they are not all t
 
 When adding paired shortcodes using the Configuration API, the first argument to your shortcode callback is the nested content.
 
+{% codetitle ".eleventy.js" %}
+
 ```js
 module.exports = function(eleventyConfig) {
   // Liquid Shortcode
@@ -116,6 +120,8 @@ Read more about using paired shortcodes on the individual Template Language docu
 ## Universal Shortcodes
 
 Universal shortcodes are added in a single place and subsequently available to multiple template engines, simultaneously. This is currently supported in Nunjucks and Liquid.
+
+{% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {

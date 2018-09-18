@@ -9,7 +9,9 @@ Add an `.eleventyignore` file to the _root of your input directory_ for a new li
 
 Important note: if you do not have a `.gitignore` file in your project, the `node_modules` directory will be ignored automatically.
 
-## Example `.eleventyignore` File
+## Example
+
+{% codetitle ".eleventyignore" %}
 
 ```
 README.md
@@ -19,4 +21,14 @@ secretNunjucksTemplates/anotherFolder/**/*.njk
 
 ## Opt-out of using `.gitignore`
 
-{% addedin "0.3.5", "span" %} You can disable automatic use of your `.gitignore` file by using the Configuration API method: `eleventyConfig.setUseGitIgnore(false);`. When using `.gitignore` is disabled, `.eleventyignore` will be the single source of truth for ignored files. This also means that your `node_modules` directory will be processed unless otherwise specified in your `.eleventyignore` file._
+{% addedin "0.3.5", "span" %} You can disable automatic use of your `.gitignore` file by using the Configuration API method: `eleventyConfig.setUseGitIgnore(false);`.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+    eleventyConfig.setUseGitIgnore(false);
+};
+```
+
+When using `.gitignore` is disabled, `.eleventyignore` will be the single source of truth for ignored files. This also means that your `node_modules` directory will be processed unless otherwise specified in your `.eleventyignore` file.

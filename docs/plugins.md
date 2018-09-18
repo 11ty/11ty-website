@@ -31,6 +31,8 @@ npm install @11ty/eleventy-plugin-rss --save
 
 Your config file is probably named `.eleventy.js`.
 
+{% codetitle ".eleventy.js" %}
+
 ```js
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 module.exports = function(eleventyConfig) {
@@ -41,6 +43,8 @@ module.exports = function(eleventyConfig) {
 ### Namespace the plugin additions
 
 You can namespace parts of your configuration using `eleventyConfig.namespace`. This will add a string prefix to all filters, tags, helpers, collections, and transforms.
+
+{% codetitle ".eleventy.js" %}
 
 ```js
 const pluginRss = require("@11ty/eleventy-plugin-rss");

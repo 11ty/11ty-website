@@ -23,6 +23,8 @@ But, after all that, you can still add a Custom Tag using the [Configuration API
 
 * [LiquidJS: Tags](https://github.com/harttle/liquidjs#register-tags)
 
+{% codetitle ".eleventy.js" %}
+
 {% raw %}
 ```js
 module.exports = function(eleventyConfig) {
@@ -54,6 +56,8 @@ See all of the [built-in tag implementations for LiquidJS](https://github.com/ha
 
 * [Nunjucks: Custom Tags](https://mozilla.github.io/nunjucks/api.html#custom-tags)
 
+
+{% codetitle ".eleventy.js" %}
 
 {% raw %}
 ```js
@@ -88,6 +92,8 @@ module.exports = function(eleventyConfig) {
 ## Handlebars example
 
 Surprise—these are helpers!
+
+{% codetitle ".eleventy.js" %}
 
 {% raw %}
 ```js

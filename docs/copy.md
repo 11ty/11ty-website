@@ -11,8 +11,9 @@ Eleventy, by default, searches for any file in the input directory with an exten
 
 If you list a format in the `templateFormats` array that isn’t a valid template, it’ll throw an error. Enabling `passthroughFileCopy` in your configuration changes this behavior. Setting `passthroughFileCopy: true` will copy files with non-matching template file extensions directly to your output directory without modification.
 
+{% codetitle ".eleventy.js" %}
+
 ```js
-// .eleventy.js
 module.exports = {
   templateFormats: [
     "md",
@@ -32,8 +33,9 @@ You might also imagine using this for images by adding `"jpg"`, `"png"`, or mayb
 
 Searching the entire directory structure for files to copy based on file extensions is not optimal with large directory structures. If we know what non-template static content we want to appear in our output, we can opt-in to specify _files_ or _directories_ for Eleventy to copy. This will probably speed up your build times. These entries are relative to your the root of your project and _not_ your Eleventy input directory.
 
+{% codetitle ".eleventy.js" %}
+
 ```js
-// .eleventy.js
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("img");
   

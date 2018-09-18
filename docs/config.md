@@ -15,6 +15,8 @@ tags:
 
 Configuration is an optional feature. Add an `.eleventy.js` file to root directory of your project to override these configuration options with your own preferences.
 
+{% codetitle ".eleventy.js" %}
+
 ```js
 module.exports = {
   dir: {
@@ -27,6 +29,8 @@ module.exports = {
 ## Using the Configuration API
 
 If you expose your config as a function instead of an object literal, we’ll pass in a `config` argument that you can use!
+
+{% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -92,6 +96,8 @@ Controls the top level directory that we’ll use to look for templates.
 
 #### Example
 
+{% codetitle ".eleventy.js" %}
+
 ```
 module.exports = {
     dir: {
@@ -112,6 +118,8 @@ Controls the directory inside which the template includes/extends/partials/etc c
 | _Command Line Override_ | _None_ |
 
 #### Example
+
+{% codetitle ".eleventy.js" %}
 
 ```
 module.exports = {
@@ -136,6 +144,8 @@ Controls the directory inside which the global data template files, available to
 
 #### Example
 
+{% codetitle ".eleventy.js" %}
+
 ```
 module.exports = {
     dir: {
@@ -158,6 +168,8 @@ Controls the directory inside which the finished templates will be written to.
 
 #### Example
 
+{% codetitle ".eleventy.js" %}
+
 ```
 module.exports = {
     dir: {
@@ -179,6 +191,8 @@ The `data.dir` global data files run through this template engine before transfo
 
 #### Example
 
+{% codetitle ".eleventy.js" %}
+
 ```
 module.exports = {
     "dataTemplateEngine": "njk"
@@ -198,6 +212,8 @@ Markdown files run through this template engine before transforming to HTML.
 
 #### Example
 
+{% codetitle ".eleventy.js" %}
+
 ```
 module.exports = {
     markdownTemplateEngine: "njk"
@@ -216,6 +232,8 @@ HTML templates run through this template engine before transforming to (better) 
 | _Command Line Override_ | _None_ |
 
 #### Example
+
+{% codetitle ".eleventy.js" %}
 
 ```
 module.exports = {
@@ -237,11 +255,15 @@ Specify which types of templates should be transformed.
 
 #### Examples
 
+{% codetitle ".eleventy.js" %}
+
 ```
 module.exports = {
     templateFormats: ["html", "liquid", "njk"]
 };
 ```
+
+{% codetitle ".eleventy.js" %}
 
 ```
 module.exports = function(eleventyConfig) {
@@ -269,6 +291,8 @@ If your site lives in a different subdirectory (particularly useful with GitHub 
 
 #### Example
 
+{% codetitle ".eleventy.js" %}
+
 ```
 module.exports = {
     pathPrefix: "/eleventy-base-blog/"
@@ -294,6 +318,8 @@ Files found (that don’t have a valid template engine) from white-listed file e
 
 #### Example
 
+{% codetitle ".eleventy.js" %}
+
 ```
 module.exports = {
     passthroughFileCopy: false
@@ -313,6 +339,8 @@ If an HTML template has matching input and output directories, index.html files 
 
 #### Example
 
+{% codetitle ".eleventy.js" %}
+
 ```
 module.exports = {
     htmlOutputSuffix: "-o"
@@ -331,6 +359,8 @@ module.exports = {
 | _Command Line Override_ | _None_ |
 
 #### Example
+
+{% codetitle ".eleventy.js" %}
 
 ```
 module.exports = {
@@ -353,6 +383,8 @@ Transforms can modify a template’s output. For example, use a transform to for
 | _Configuration API_ | `addTransform` _(This is definitely available in Eleventy v0.3.3 but was likely in earlier versions as well)_ |
 
 #### Transforms Example: Minify HTML Output
+
+{% codetitle ".eleventy.js" %}
 
 ```js
 const htmlmin = require("html-minifier");
