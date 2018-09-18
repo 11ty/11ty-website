@@ -8,8 +8,8 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(syntaxHighlightPlugin);
 	eleventyConfig.addPlugin(rssPlugin);
 
-	eleventyConfig.addShortcode("codetitle", function(title, subtitle) {
-		return `<div class="codetitle"><b>${subtitle || "Filename"} </b>${title}</div>`;
+	eleventyConfig.addShortcode("codetitle", function(title, subtitle = "Filename") {
+		return `<div class="codetitle"><b>${subtitle} </b>${title}</div>`;
 	});
 
 	eleventyConfig.addShortcode("addedin", function(version, tag) {
