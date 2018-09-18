@@ -8,6 +8,8 @@ tags:
 
 Layouts are templates that can be used to wrap other content. To denote that a piece of content should be wrapped in a template, simply use the `layout` key in your front matter, like so:
 
+{% codetitle "layout-example.md" %}
+
 ```
 ---
 layout: mylayout.njk
@@ -21,6 +23,8 @@ This will look for a `mylayout.njk` Nunjucks template file in your `_includes` f
 If you omit the file extension (`layout: mylayout`), eleventy will cycle through all of the supported template formats (`mylayout.*`) to look for a matching layout file.
 
 Next, we need to create a `mylayout.njk` file. It can contain any type of text, but here we’re using HTML:
+
+{% codetitle "_includes/mylayout.njk" %}
 
 {% raw %}
 ```
@@ -43,6 +47,8 @@ Note that the layout template will populate the `content` data with the child te
 Layouts can contain their own front matter data! It’ll be merged with the content’s data on render (content data takes precedence, if conflicting keys arise).
 
 All of this will output the following HTML content:
+
+{% codetitle "_site/layout-example/index.html" %}
 
 ```
 <!doctype html>
@@ -78,6 +84,8 @@ This will look for `_includes/layouts/base.njk`.
 
 Configuration API: use `eleventyConfig.addLayoutAlias(from, to)` to add layout aliases! Say you have a bunch of existing content using `layout: post`. If you don’t want to rewrite all of those values, just map `post` to a new file like this:
 
+{% codetitle ".eleventy.js" %}
+
 ```js
 module.exports = function(eleventyConfig) {
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
@@ -106,6 +114,8 @@ Your layouts can also use a layout! Add the same `layout` front matter data to y
 
 To chain a layout, let’s look at an example:
 
+{% codetitle "layout-chain-example.md" %}
+
 ```
 ---
 layout: mainlayout.njk
@@ -115,6 +125,8 @@ title: My Rad Blog
 ```
 
 We want to add a main element around our post’s content because we like accessibility. Here’s what `mainlayout.njk` would look like:
+
+{% codetitle "_includes/mainlayout.njk" %}
 
 {% raw %}
 ```
@@ -127,7 +139,29 @@ layout: mylayout.njk
 ```
 {% endraw %}
 
-This would build on the previous `mylayout.njk` layout to write a file with:
+This layout would then be itself wrapped in the same `mylayout.njk` we used in our previous example:
+
+{% codetitle "_includes/mylayout.njk" %}
+
+{% raw %}
+```
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+  </head>
+  <body>
+    {{ content | safe }}
+  </body>
+</html>
+```
+{% endraw %}
+
+Used together, this would output:
+
+{% codetitle "_site/layout-chain-example/index.html" %}
 
 ```
 <!doctype html>
