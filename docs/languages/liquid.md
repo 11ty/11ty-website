@@ -42,7 +42,7 @@ module.exports = function(eleventyConfig) {
 
 As an escape mechanism for advanced usage, pass in your own instance of the Liquid library using the Configuration API. See [all `liquidjs` options](https://github.com/harttle/liquidjs#options).
 
-<div class="elv-callout elv-callout-warn">Not compatible with <code>setLiquidOptions</code> above—this method will ignore any configuration set there.</div>
+<div class="elv-callout elv-callout-warn">Not compatible with <code>setLiquidOptions</code> above—this method will override any configuration set there.</div>
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -63,13 +63,27 @@ module.exports = function(eleventyConfig) {
 | Feature                                                                      | Syntax                                                                                                                             |
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | ✅ Include                                                                   | `{% raw %}{% include user %}{% endraw %}` looks for `_includes/user.liquid`                                                                             |
-| ✅ Include                                                                   | `{% raw %}{% include 'user' %}{% endraw %}` looks for `_includes/user.liquid` (quotes around includes require `dynamicPartials: true`—read more at #72) (does not process front matter) |
-| ✅ Include (pass in Data)                                                    | `{% raw %}{% include 'user' with 'Ava' %}{% endraw %}` (does not process front matter)                                                                                                  |
-| ✅ Include (pass in Data)                                                    | `{% raw %}{% include 'user', user1: 'Ava', user2: 'Bill' %}{% endraw %}` (does not process front matter)                                                                                |
+| ✅ Include                                                                   | `{% raw %}{% include 'user' %}{% endraw %}` looks for `_includes/user.liquid` (quotes around includes require `dynamicPartials: true`—Read more at [Quoted Include Paths](#quoted-include-paths)) (does not process front matter in the include file) |
+| ✅ Include (pass in Data)                                                    | `{% raw %}{% include 'user' with 'Ava' %}{% endraw %}` (does not process front matter in the include file)                                                                                                  |
+| ✅ Include (pass in Data)                                                    | `{% raw %}{% include 'user', user1: 'Ava', user2: 'Bill' %}{% endraw %}` (does not process front matter in the include file)                                                                                |
 | ✅ Custom Filters                                                            | `{% raw %}{{ name | upper }}{% endraw %}`  Read more about [Filters](/docs/filters/)                                                         |
 | ✅ [Eleventy Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{% name | filterName %}{% endraw %}` Read more about [Filters](/docs/filters/)                                                          |
 | ✅ [Custom Tags](/docs/custom-tags/) | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Custom Tags](/docs/custom-tags/). {% addedin "0.5.0", "span" %}|
 | ✅ [Shortcodes](/docs/shortcodes/) | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/). {% addedin "0.5.0", "span" %}|
+
+### Quoted Include Paths
+
+<div class="elv-callout elv-callout-warn">This is a common pitfall if you’re using Liquid templates.</div>
+
+If you’d like to use quoted include paths, you must enable `dynamicPartials: true` in your Liquid options. This [default may change in a future major version](https://github.com/11ty/eleventy/issues/240). Read more about this limitation at [Issue #72](https://github.com/11ty/eleventy/issues/72).
+
+#### Default behavior, `dynamicPartials: false`
+
+`{% raw %}{% include user %}{% endraw %}` looks for `_includes/user.liquid`
+
+#### Quoted includes with `dynamicPartials: true`
+
+`{% raw %}{% include 'user' %}{% endraw %}` looks for `_includes/user.liquid`
 
 ## Filters
 

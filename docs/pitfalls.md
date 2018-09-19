@@ -58,3 +58,7 @@ date: 2018-01-01
 ```
 
 Read more at [Content Dates](/docs/dates/).
+
+## Quoted Include Paths and Liquid Templates
+
+Read more at [Liquid Templates](/docs/languages/liquid/#quoted-include-paths).
