@@ -16,22 +16,6 @@ eleventy --input=. --output=_site
 A hypothetical `template.md` in the current directory would be rendered to `_site/template/index.html`. Read more at [Permalinks](/docs/permalinks/).
 
 ```bash
-# Automatically run when input template files change.
-eleventy --watch
-```
-
-```bash
-# Boot up a browsersync web server to automatically apply changes.
-# We’ll --watch for you automatically.
-eleventy --serve
-```
-
-```bash
-# Override the default eleventy project config filename (.eleventy.js)
-eleventy --config=myeleventyconfig.js
-```
-
-```bash
 # Use only a subset of template types
 eleventy --formats=md,html,ejs
 ```
@@ -41,7 +25,47 @@ eleventy --formats=md,html,ejs
 eleventy --help
 ```
 
-### Example: Same Input and Output
+### Run Eleventy when you save
+
+```bash
+# Boot up a browsersync web server to automatically apply changes.
+# We’ll --watch for you automatically.
+eleventy --serve
+eleventy --serve --port=8081
+```
+
+```bash
+# Automatically run when input template files change.
+# Useful if you have your own web server.
+eleventy --watch
+```
+
+### `--quiet` if the Output is Too Noisy
+
+```bash
+# Shhhhh—Don’t log so much to the console
+eleventy --quiet
+```
+
+### `--dryrun` to do a Little Testing
+
+Useful when [debugging](/docs/debugging/).
+
+```bash
+# Run Eleventy but don’t write any files
+eleventy --dryrun
+```
+
+### `--config` to Change the Config file name
+
+```bash
+# Override the default eleventy project config filename (.eleventy.js)
+eleventy --config=myeleventyconfig.js
+```
+
+## Examples
+
+### Using the Same Input and Output
 
 Yes, you can use the same `input` and `output` directories, like so:
 
