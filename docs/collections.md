@@ -167,31 +167,37 @@ To get fancier with your collections (and even do a bit of your own custom filte
 
 Inside of your `.eleventy.js` config file, use the first argument to the config function (`eleventyConfig` below) to call the API (note that module exports is a function and not an object literal):
 
+{% codetitle ".eleventy.js" %}
+
 ```js
 module.exports = function(eleventyConfig) {
   // API is available in `eleventyConfig` argument
-
+  
   return {
     // your normal config options
     markdownTemplateEngine: "njk"
-  }
+  };
 };
 ```
 
 You can use `eleventyConfig` like so:
 
+{% codetitle ".eleventy.js" %}
+
 ```js
 module.exports = function(eleventyConfig) {
+  
   eleventyConfig.addCollection("myCollectionName", function(collection) {
     // get unsorted items
     return collection.getAll();
   });
+  
 };
 ```
 
 ### Return values
 
-* These `addCollection` callbacks should return an array of [template objects](#individual-collection-items-(useful-for-sort-callbacks)) (in Eleventy 0.5.2 and prior).
+* These `addCollection` callbacks should return an array of [template objects](#collection-item-data-structure) (in Eleventy 0.5.2 and prior).
 * {% addedin "0.5.3", "span" %} `addCollection` callbacks can now return any arbitrary object type and it’ll be available as data in the template. Arrays, strings, objects—have fun with it.
 
 ### Collection API Methods
@@ -202,6 +208,8 @@ The data collection gets passed to the callback. You can use it in all sorts of 
 
 Returns an array.
 
+{% codetitle ".eleventy.js" %}
+
 ```js
 module.exports = function(eleventyConfig) {
   // Unsorted items (in whatever order they were added)
@@ -210,6 +218,8 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+{% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -222,6 +232,8 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+{% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -242,6 +254,8 @@ Note that the last example adding the `myCustomSort` collection will be availabl
 
 Returns an array.
 
+{% codetitle ".eleventy.js" %}
+
 ```js
 module.exports = function(eleventyConfig) {
   // Use the default sorting algorithm (ascending by date, filename tiebreaker)
@@ -250,6 +264,8 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+{% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -260,6 +276,8 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+{% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -278,6 +296,8 @@ module.exports = function(eleventyConfig) {
 
 Returns an array.
 
+{% codetitle ".eleventy.js" %}
+
 ```js
 module.exports = function(eleventyConfig) {
   // Get only content that matches a tag
@@ -291,6 +311,9 @@ module.exports = function(eleventyConfig) {
 
 Returns an array. Will match an arbitrary glob (or an array of globs) against the input file’s full `inputPath` (including the input directory).
 
+{% codetitle ".eleventy.js" %}
+{% addedin "0.2.14" %}
+
 ```js
 module.exports = function(eleventyConfig) {
   // Filter source file names using a glob
@@ -299,6 +322,8 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+{% codetitle ".eleventy.js" %}
 {% addedin "0.2.14" %}
 
 ```js
@@ -309,6 +334,8 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+{% codetitle ".eleventy.js" %}
 {% addedin "0.2.14" %}
 
 ```js
@@ -320,5 +347,4 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
-{% addedin "0.2.14" %}
 

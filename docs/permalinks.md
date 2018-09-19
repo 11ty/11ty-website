@@ -33,7 +33,7 @@ The above will write to `_site/this-is-a-new-path/subdirectory/testing/index.htm
 
 ### Use data variables in Permalink
 
-You may use data variables available here. These will be parsed with the current template’s rendering engine.
+You may use data variables here (and template syntax, too). These will be parsed with the current template’s rendering engine.
 
 For example, in a Nunjucks template:
 

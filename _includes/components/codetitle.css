@@ -1,4 +1,5 @@
 .codetitle {
+	clear: right;
 	float: right;
 	padding: .25em 0 .25em .5em;
 	border-radius: .25em .25em 0 0;
@@ -8,10 +9,28 @@
 }
 .codetitle b {
 	text-transform: uppercase;
-	font-size: 0.8333333333333em; /* 10px /12 */
+	font-size: 0.6875rem; /* 11px /16 */
 	margin-right: .5em;
 	color: #666;
+	font-weight: 100;
 }
 .codetitle + pre {
 	clear: both;
+}
+.codetitle + pre,
+.codetitle + .minilink + pre {
+	margin-top: 0;
+}
+.codetitle + .minilink {
+	float: right;
+	margin: 0 2em 0 0;
+	padding: 0;
+	background-color: #fff;
+	border-width: 0;
+	box-shadow: none;
+	text-transform: uppercase;
+	font-size: 0.6875rem; /* 11px /16 */
+	font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+	font-weight: 100;
+	line-height: 2.25; /* 24.75px /11 */
 }
