@@ -89,22 +89,36 @@ module.exports = function() {
 
 You can expose environment variables (e.g. `ELEVENTY_ENV`) to your templates by using [Node.js’ `process.env` property](https://nodejs.org/api/process.html#process_process_env).
 
+{% codetitle "_data/myProject.js" %}
+
 ```js
 module.exports = {
   environment: process.env.ELEVENTY_ENV
 };
 ```
 
-Saving this as `eleventyConfig.js` in your global data directory (using the default, this would be `_data/eleventyConfig.js`) gives you access to `eleventyConfig.environment` in your templates.
+Saving this as `myProject.js` in your global data directory (by default, this is `_data/`) gives you access to the `myProject.environment` variable in your templates.
 
-**Serve for development**:
+### Sample commands
 
 ```
+# Serve for Development
 ELEVENTY_ENV=development npx eleventy --serve
-```
 
-**Build for production**:
-
-```
+# Build for Production
 ELEVENTY_ENV=production npx eleventy
 ```
+
+### Template Usage
+
+Working from our [Inline CSS Quick Tip](/docs/quicktips/inline-css/), we can modify the output to only minify our CSS if we’re building for production:
+
+{% raw %}
+```
+{% if myProject.environment == "production" %}
+<style>{{ css | cssmin | safe }}</style>
+{% else %}
+<style>{{ css | safe }}</style>
+{% endif %}
+```
+{% endraw %}
