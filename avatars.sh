@@ -30,3 +30,6 @@ mv profile_image?size=bigger img/avatars/splitinfinities.jpg
 
 wget https://twitter.com/hankchizljaw/profile_image?size=bigger
 mv profile_image?size=bigger img/avatars/hankchizljaw.jpg
+
+wget https://twitter.com/minamarkham/profile_image?size=bigger
+mv profile_image?size=bigger img/avatars/minamarkham.jpg

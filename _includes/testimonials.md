@@ -23,3 +23,7 @@
 > “It's clean, elegant, easy to use, and does just enough to be useful without getting in the way. Excellent work 😊”—[![@TJacobDesign](/img/avatars/tjacobdesign.jpg)Timothy Miller](https://twitter.com/TJacobDesign/status/1017594017402572811)
 
 > “Holy cow! Eleventy is so crazy simple to work with.”—[![@splitinfinities](/img/avatars/splitinfinities.jpg)Will Riley](https://twitter.com/splitinfinities/status/1018874121755746310)
+
+> Eleventy + Netlify have become my new workflow for static sites.
+> 
+> I think I'm in love.—[![@MinaMarkham](/img/avatars/minamarkham.jpg)Mina Markham](https://twitter.com/MinaMarkham/status/1037088841520168960)
