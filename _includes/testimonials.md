@@ -1,4 +1,6 @@
-## Happy Developers
+## Don’t just take my word for it 🌈
+
+Listen to what these happy developers are saying about Eleventy:
 
 > “Seriously can't remember enjoying using a Static Site Generator this much. Yes Hugo is rapid, but this is all so logical. It feels like it was designed by someone who has been through lots of pain and success using other SSGs.”—[![@philhawksworth](/img/avatars/philhawksworth.jpg)Phil Hawksworth](https://twitter.com/philhawksworth)
 
