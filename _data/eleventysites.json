@@ -127,5 +127,17 @@
 		"url": "https://docs.shutter.sh/",
 		"description": "A tool for Visual Snapshot Testing",
 		"source_url": "https://github.com/shuttersh/shutter/tree/master/docs"
+	},
+	{
+		"name": "Yoncé",
+		"url": "https://yoncetheme.com/",
+		"description": "Queen Bey-inspired themes for Bash-It, Visual Studio Code, iTerm, Slack & Alfred.",
+		"source_url": "https://github.com/minamarkham/yonce/tree/yoncetheme.com"
+	},
+	{
+		"name": "Formation",
+		"url": "https://slay.sh/",
+		"description": "A shell script to set up a macOS machine for design and development.",
+		"source_url": "https://github.com/minamarkham/formation/tree/slay.sh"
 	}
 ]

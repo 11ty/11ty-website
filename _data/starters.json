@@ -13,5 +13,10 @@
 		"url": "https://github.com/danurbanowicz/eleventy-netlify-boilerplate",
 		"name": "eleventy-netlify-boilerplate",
 		"description": "A template for building a simple blog web site with Eleventy and deploying it to Netlify. Includes Netlify CMS and Netlify Forms."
+	},
+	{
+		"url": "https://github.com/adamduncan/eleventy-shortcomps",
+		"name": "eleventy-shortcomps",
+		"description": "Starter project for static site by Adam Duncan, using Eleventy and shortcode components pattern."
 	}
 ]
