@@ -14,7 +14,8 @@
 	{
 		"text": "Jekyll is dead to me",
 		"twitter": "hankchizljaw",
-		"name": "Andy Bell"
+		"name": "Andy Bell",
+		"featured": true
 	},
 	{
 		"text": "Just got through moving a project to Eleventy. Never used nunjucks or a static site generator before, but it was so easy. This will make my life so much easier.",
@@ -26,7 +27,8 @@
 		"text": "After a day or so tweaking my existing build, here is a preview of the site running on Eleventy. I'm sold! The main thing to me was the ability to run custom JavaScript logic to sort, filter, and augment data in collections.",
 		"twitter": "eduardoboucas",
 		"name": "Eduardo Bouças",
-		"source": "https://twitter.com/eduardoboucas/status/1001158411583721473"
+		"source": "https://twitter.com/eduardoboucas/status/1001158411583721473",
+		"featured": true
 	},
 	{
 		"text": "Every time I make something with Eleventy it makes me smile. I think that might be to do with its focus on simplicity.",
