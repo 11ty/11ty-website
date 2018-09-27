@@ -1,0 +1,83 @@
+[
+	{
+		"text": "Seriously can't remember enjoying using a Static Site Generator this much. Yes Hugo is rapid, but this is all so logical. It feels like it was designed by someone who has been through lots of pain and success using other SSGs.",
+		"twitter": "philhawksworth",
+		"name": "Phil Hawksworth"
+	},
+	{
+		"text": "Don’t tell Zach I said it but Eleventy is seeming fresh as hell so far",
+		"twitter": "wilto",
+		"name": "Mat Marquis"
+	},
+	{
+		"text": "Jekyll is dead to me",
+		"twitter": "hankchizljaw",
+		"name": "Andy Bell"
+	},
+	{
+		"text": "Just got through moving a project to Eleventy. Never used nunjucks or a static site generator before, but it was so easy. This will make my life so much easier.",
+		"twitter": "micahmills",
+		"name": "Micah Mills",
+		"source": "https://twitter.com/micahmills/status/973660230453211136"
+	},
+	{
+		"text": "After a day or so tweaking my existing build, here is a preview of the site running on Eleventy. I'm sold! The main thing to me was the ability to run custom JavaScript logic to sort, filter, and augment data in collections.",
+		"twitter": "eduardoboucas",
+		"name": "Eduardo Bouças",
+		"source": "https://twitter.com/eduardoboucas/status/1001158411583721473"
+	},
+	{
+		"text": "Every time I make something with Eleventy it makes me smile. I think that might be to do with its focus on simplicity.",
+		"twitter": "philhawksworth",
+		"name": "Phil Hawksworth",
+		"source": "https://twitter.com/philhawksworth/status/998891176550977537"
+	},
+	{
+		"text": "I really like the flexibity Eleventy offers in comparision to my previous Jekyll build.",
+		"twitter": "hybrid_alex",
+		"name": "Alex Carpenter",
+		"source": "https://alexcarpenter.me/posts/2018/05/back-to-static"
+	},
+	{
+		"text": "I've been digging into Eleventy, a new static site generator. Really like the way it handles pagination!",
+		"twitter": "jameswillweb",
+		"name": "James Williamson",
+		"source": "https://twitter.com/jameswillweb/status/951488360543121408"
+	},
+	{
+		"text": "I tried Eleventy last night on a personal project and today we implemented it on a (non-public facing) client project. It's really good.",
+		"twitter": "codypeterson",
+		"name": "Cody Peterson",
+		"source": "https://twitter.com/codypeterson/status/950568228559904768"
+	},
+	{
+		"text": "Just gave Eleventy a first run/try and I must say it's pretty dang awesome. Especially for someone like me, who is most familiar with HTML and CSS and some JS. ❤️",
+		"twitter": "nice2meatu",
+		"name": "Marco Hengstenberg",
+		"source": "https://twitter.com/nice2meatu/status/1004665956885520384"
+	},
+	{
+		"text": "It's clean, elegant, easy to use, and does just enough to be useful without getting in the way. Excellent work 😊",
+		"twitter": "TJacobDesign",
+		"name": "Timothy Miller",
+		"source": "https://twitter.com/TJacobDesign/status/1017594017402572811"
+	},
+	{
+		"text": "Holy cow! Eleventy is so crazy simple to work with.",
+		"twitter": "splitinfinities",
+		"name": "Will Riley",
+		"source": "https://twitter.com/splitinfinities/status/1018874121755746310"
+	},
+	{
+		"text": "Eleventy + Netlify have become my new workflow for static sites. I think I'm in love.",
+		"twitter": "MinaMarkham",
+		"name": "Mina Markham",
+		"source": "https://twitter.com/MinaMarkham/status/1037088841520168960"
+	},
+	{
+		"text": "I looked into and actively tried using various static site generators for this project. Eleventy was the only one I could find that gave me the fine-grained control I needed at blazingly fast build times.",
+		"twitter": "mathias",
+		"name": "Mathias Bynens",
+		"source": "https://twitter.com/mathias/status/1044232502309789696"
+	}
+]

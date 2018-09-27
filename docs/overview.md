@@ -32,7 +32,7 @@ Read more about [**Eleventy’s project goals**.](https://www.zachleat.com/web/i
 
 {% for site in eleventysites -%}
 {% if site.disabled != true and site.url -%}
-* [{{ site.name | safe }}]({{ site.url }})
+* <a href="{{ site.url }}"><img alt="@{{ site.twitter }}" src="/img/avatars/{{ site.twitter }}.jpg" class="avatar">{{ site.name | safe }}</a>
 {% endif -%}
 {% endfor -%}
 * [**Want to add yours?**](https://github.com/11ty/11ty.io/issues/new?title=I+built+a+site+with+Eleventy!)

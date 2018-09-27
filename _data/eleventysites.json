@@ -3,53 +3,68 @@
 		"url": "https://www.11ty.io/",
 		"name": "Eleventy, the web site",
 		"description": "Spoiler alert: it’s this web site.",
-		"source_url": "https://github.com/11ty/11ty.io"
+		"source_url": "https://github.com/11ty/11ty.io",
+		"twitter": "eleven_ty"
+	},
+	{
+		"name": "V8",
+		"url": "https://v8.dev/",
+		"description": "V8 is Google’s open source high-performance JavaScript and WebAssembly engine, written in C++.",
+		"twitter": "v8js"
 	},
 	{
 		"url": "https://www.zachleat.com/web/",
 		"name": "Zach Leatherman",
 		"description": "A 10+ years-running blog about web development.",
-		"source_url": "https://github.com/zachleat/zachleat.com"
+		"source_url": "https://github.com/zachleat/zachleat.com",
+		"twitter": "zachleat"
 	},
 	{
 		"url": "https://www.fontspeed.io/",
 		"name": "fontspeed",
 		"description": "A newsletter about loading your web fonts.",
-		"source_url": "https://github.com/fontspeed/fontspeed-teaser"
+		"source_url": "https://github.com/fontspeed/fontspeed-teaser",
+		"disabled": true
 	},
 	{
 		"url": "https://jamstack-comments.netlify.com/",
 		"name": "Jamstack Comments Engine",
 		"description": "An example of a comments engine you could add to any JAMstack site hosted on Netlify.",
-		"source_url": "https://github.com/philhawksworth/jamstack-comments-engine"
+		"source_url": "https://github.com/philhawksworth/jamstack-comments-engine",
+		"twitter": "philhawksworth"
 	},
 	{
 		"url": "https://wiltomakesfood.com/",
 		"name": "Wilto Makes Food",
 		"description": "The professional cooking site of Mat Marquis.",
-		"source_url": "https://github.com/Wilto/wilto-makes-food"
+		"source_url": "https://github.com/Wilto/wilto-makes-food",
+		"twitter": "wilto"
 	},
 	{
 		"url": "https://2018.nejsconf.com/",
 		"name": "NEJS CONF 2018",
 		"description": "A single day, single track Web Development conference.",
-		"source_url": "https://github.com/NebraskaJS/2018.nejsconf.com"
+		"source_url": "https://github.com/NebraskaJS/2018.nejsconf.com",
+		"twitter": "nejsconf"
 	},
 	{
 		"url": "https://mannahfoundation.org/",
 		"name": "Mannah Foundation",
-		"description": "Empowering individuals to make great changes."
+		"description": "Empowering individuals to make great changes.",
+		"twitter": "MannahFdn"
 	},
 	{
 		"url": "https://alexcarpenter.me/",
 		"name": "Alex Carpenter",
 		"description": "Front-end Web Developer",
-		"source_url": "https://github.com/alexcarpenter/alexcarpenter.me"
+		"source_url": "https://github.com/alexcarpenter/alexcarpenter.me",
+		"twitter": "hybrid_alex"
 	},
 	{
 		"name": "Heydon Pickering’s Inclusive Web Design Checklist, converted to use <code>eleventy</code>",
 		"description": "The <a href='https://github.com/Heydon/inclusive-design-checklist'>original project</a> took a JSON file and converted it HTML with some one-off JavaScript. This uses eleventy to transform the data using a nunjucks template, resulting in a cleaner, templated setup.",
-		"source_url": "https://github.com/11ty/eleventy-inclusive-design-checklist"
+		"source_url": "https://github.com/11ty/eleventy-inclusive-design-checklist",
+		"twitter": "eleven_ty"
 	},
 	{
 		"url": "https://github.com/11ty/logo",
@@ -61,88 +76,109 @@
 		"name": "Netlify Templates",
 		"url": "https://templates.netlify.com/",
 		"description": "This is a board with templates for static site generators and boilerplates.",
-		"source_url": "https://github.com/netlify/templates"
+		"source_url": "https://github.com/netlify/templates",
+		"twitter": "netlify"
 	},
 	{
 		"name": "Set Your Watch By",
 		"url": "https://setyourwatchby.netlify.com/",
 		"description": "A static site generated clock! Runs a Netlify build every minute.",
-		"source_url": "https://github.com/philhawksworth/html-time"
+		"source_url": "https://github.com/philhawksworth/html-time",
+		"twitter": "philhawksworth"
 	},
 	{
 		"name": "Front-end Foundations",
 		"url": "https://frontend-foundations.com/",
 		"description": "A resource and community for developers learning HTML, CSS, & Javascript. Mostly for beginners–but everyone is welcome.",
-		"source_url": "https://github.com/alexcarpenter/frontend-foundations"
+		"source_url": "https://github.com/alexcarpenter/frontend-foundations",
+		"twitter": "hybrid_alex"
 	},
 	{
 		"name": "Andy Bell",
 		"url": "https://hankchizljaw.io/",
-		"description": "The personal web site of Andy Bell, a front-end developer and designer with No Divide"
+		"description": "The personal web site of Andy Bell, a front-end developer and designer with No Divide",
+		"twitter": "hankchizljaw"
 	},
 	{
 		"name": "Personal sites are awesome!",
 		"url": "https://personalsit.es",
 		"description": "Personal sites are awesome, so this site was built so we can all discover each others.",
-		"source_url": "https://github.com/hankchizljaw/personalsit.es/"
+		"source_url": "https://github.com/hankchizljaw/personalsit.es/",
+		"twitter": "hankchizljaw"
 	},
 	{
 		"name": "kleinfreund.de",
 		"url": "https://kleinfreund.de/",
 		"description": "The personal web site of Philipp, a web developer from Weimar, Germany.",
-		"source_url": "https://github.com/kleinfreund/kleinfreund.de"
+		"source_url": "https://github.com/kleinfreund/kleinfreund.de",
+		"twitter": "kleinfreund"
 	},
 	{
 		"name": "James Steinbach",
 		"url": "https://jdsteinbach.com/",
 		"description": "The personal web site of James Steinbach: Front-end architect, Speaker & Writer.",
-		"source_url": "https://github.com/jdsteinbach/jdsteinbach.github.io"
+		"source_url": "https://github.com/jdsteinbach/jdsteinbach.github.io",
+		"twitter": "jdsteinbach"
 	},
 	{
 		"name": "Web Components Club",
 		"url": "https://webcomponents.club/",
 		"description": "A blog to document my learning about web components.",
-		"source_url": "https://github.com/hankchizljaw/webcomponents.club"
+		"source_url": "https://github.com/hankchizljaw/webcomponents.club",
+		"twitter": "hankchizljaw"
 	},
 	{
 		"name": "Split Infinities",
 		"url": "https://splitinfinities.com/",
 		"description": "The professional website of William M. Riley.",
-		"source_url": "https://github.com/splitinfinities/splitinfinities"
+		"source_url": "https://github.com/splitinfinities/splitinfinities",
+		"twitter": "splitinfinities"
 	},
 	{
 		"name": "Johan Brook",
 		"url": "https://www.johanbrook.com/",
 		"description": "The personal website of Johan, a Swedish designer & developer",
-		"source_url": "https://github.com/johanbrook/johanbrook.com"
+		"source_url": "https://github.com/johanbrook/johanbrook.com",
+		"twitter": "johanbrook"
 	},
 	{
 		"name": "James Doc",
 		"url": "https://jamesdoc.com/",
 		"description": "Sitting at the intersection of Christianity and technology…",
-		"source_url": "https://github.com/jamesdoc/jamesdoc.com"
+		"source_url": "https://github.com/jamesdoc/jamesdoc.com",
+		"twitter": "jamesdoc"
 	},
 	{
 		"name": "Shutter Documentation",
 		"url": "https://docs.shutter.sh/",
 		"description": "A tool for Visual Snapshot Testing",
-		"source_url": "https://github.com/shuttersh/shutter/tree/master/docs"
+		"source_url": "https://github.com/shuttersh/shutter/tree/master/docs",
+		"twitter": "shuttersh"
 	},
 	{
 		"name": "Yoncé",
 		"url": "https://yoncetheme.com/",
 		"description": "Queen Bey-inspired themes for Bash-It, Visual Studio Code, iTerm, Slack & Alfred.",
-		"source_url": "https://github.com/minamarkham/yonce/tree/yoncetheme.com"
+		"source_url": "https://github.com/minamarkham/yonce/tree/yoncetheme.com",
+		"twitter": "minamarkham"
 	},
 	{
 		"name": "Formation",
 		"url": "https://slay.sh/",
 		"description": "A shell script to set up a macOS machine for design and development.",
-		"source_url": "https://github.com/minamarkham/formation/tree/slay.sh"
+		"source_url": "https://github.com/minamarkham/formation/tree/slay.sh",
+		"twitter": "minamarkham"
 	},
 	{
 		"name": "Ed Horsford",
 		"url": "https://www.edwardhorsford.com/",
-		"description": "Portfolio website for London based designer Ed Horsford."
+		"description": "Portfolio website for London based designer Ed Horsford.",
+		"twitter": "edwardhorsford"
+	},
+	{
+		"name": "Unabridged Software",
+		"url": "https://www.unabridgedsoftware.com/",
+		"description": "Unabridged Software specializes in creating robust products that remain easy to change over time.",
+		"twitter": "unabridgedsoft"
 	}
 ]

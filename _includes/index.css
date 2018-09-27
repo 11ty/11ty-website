@@ -51,6 +51,7 @@ blockquote {
 blockquote + blockquote {
 	margin-top: 2em;
 }
+.avatar,
 blockquote img {
 	height: 1.3em;
 	width: 1.3em;
