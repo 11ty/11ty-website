@@ -1,7 +1,10 @@
 ---
 subtitle: Tutorials
+menuSectionName: docs-tutorials
 tags:
     - docs-getting-started
+feedTitle: Quick Tips RSS Feed
+feedUrl: /docs/quicktips/feed.xml
 ---
 # Tutorials
 
@@ -14,8 +17,11 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 
 ## Quick Tips
 
-* [See all {{ collections.quicktips.length }} Quick Tips](/docs/quicktips/)
-* [Subscribe to the _Eleventy Quick Tips RSS Feed_](/docs/quicktips/feed.xml)
+{% for tip in collections.quicktipssorted %}
+* Quick Tip <a href="{{ tip.url }}"><code>#{{ tip.data.tipindex }}</code>—{{ tip.data.tiptitle }}</a>
+{%- endfor %}
+
+📢 [Subscribe to the **Eleventy Quick Tips RSS Feed**](/docs/quicktips/feed.xml)
 
 ## Third Party Integration
 

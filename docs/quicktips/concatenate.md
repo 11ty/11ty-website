@@ -2,7 +2,7 @@
 tipindex: "005"
 tiptitle: "Super Simple CSS Concatenation"
 date: 2018-06-27
-tags: ["quicktips", "docs-quicktips"]
+tags: ["quicktips", "docs-tutorials"]
 relatedTitle: "Quick Tip #005—Super Simple CSS Concatenation"
 ---
 

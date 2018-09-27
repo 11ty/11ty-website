@@ -8,6 +8,13 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(syntaxHighlightPlugin);
 	eleventyConfig.addPlugin(rssPlugin);
 
+	eleventyConfig.addShortcode("avatar", function(twitterName, linkUrl, text = "") {
+		return (linkUrl ? `<a href="${linkUrl}">` : "") +
+			`<img src="/img/avatars/${twitterName}.jpg" class="avatar" alt="@${twitterName}">` +
+			text + 
+			(linkUrl ? `</a>` : "") ;
+	});
+
 	eleventyConfig.addShortcode("codetitle", function(title, subtitle = "Filename") {
 		return `<div class="codetitle"><b>${subtitle} </b>${title}</div>`;
 	});

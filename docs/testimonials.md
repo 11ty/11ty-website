@@ -9,5 +9,5 @@ tags:
 Don’t just take my word for it. 🌈 Listen to what these happy developers are saying about Eleventy:
 
 {% for testimonial in testimonials %}
-{% include "testimonial.md" %}
+> “{{ testimonial.text }}”—{% avatar testimonial.twitter, testimonial.source, testimonial.name %}
 {% endfor %}

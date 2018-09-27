@@ -2,7 +2,7 @@
 tipindex: "004"
 tiptitle: "Zero Maintenance Tag Pages for your Blog"
 date: 2018-06-08
-tags: ["quicktips", "docs-quicktips", "related-pagination"]
+tags: ["quicktips", "docs-tutorials", "related-pagination"]
 relatedTitle: "Quick Tip #004—Zero Maintenance Tag Pages for your Blog"
 ---
 
