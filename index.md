@@ -22,6 +22,10 @@ Wrote 1 file in 0.10 seconds
 
 ## News
 
-* 2018 March—<a href="https://www.zachleat.com/web/eleventy-google-award/">Eleventy wins Google Open Source Award</a>
+* 2018 March—[Eleventy wins Google Open Source Award](https://www.zachleat.com/web/eleventy-google-award/)
+
+## Don’t just take my word for it 🌈
+
+Listen to what these [happy developers](/docs/testimonials/) are saying about Eleventy:
 
 {% include "testimonials.md" %}

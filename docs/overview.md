@@ -26,6 +26,10 @@ Read more about [**Eleventy’s project goals**.](https://www.zachleat.com/web/i
 
 ➡ Keep going! Read [**Getting Started**](/docs/getting-started/).
 
+## Don’t just take my word for it 🌈
+
+Listen to what these [happy developers](/docs/testimonials/) are saying about Eleventy:
+
 {% include "testimonials.md" %}
 
 ## Sites Using Eleventy

@@ -2,12 +2,14 @@
 	{
 		"text": "Seriously can't remember enjoying using a Static Site Generator this much. Yes Hugo is rapid, but this is all so logical. It feels like it was designed by someone who has been through lots of pain and success using other SSGs.",
 		"twitter": "philhawksworth",
-		"name": "Phil Hawksworth"
+		"name": "Phil Hawksworth",
+		"featured": true
 	},
 	{
 		"text": "Don’t tell Zach I said it but Eleventy is seeming fresh as hell so far",
 		"twitter": "wilto",
-		"name": "Mat Marquis"
+		"name": "Mat Marquis",
+		"featured": true
 	},
 	{
 		"text": "Jekyll is dead to me",
@@ -72,12 +74,14 @@
 		"text": "Eleventy + Netlify have become my new workflow for static sites. I think I'm in love.",
 		"twitter": "MinaMarkham",
 		"name": "Mina Markham",
-		"source": "https://twitter.com/MinaMarkham/status/1037088841520168960"
+		"source": "https://twitter.com/MinaMarkham/status/1037088841520168960",
+		"featured": true
 	},
 	{
 		"text": "I looked into and actively tried using various static site generators for this project. Eleventy was the only one I could find that gave me the fine-grained control I needed at blazingly fast build times.",
 		"twitter": "mathias",
 		"name": "Mathias Bynens",
-		"source": "https://twitter.com/mathias/status/1044232502309789696"
+		"source": "https://twitter.com/mathias/status/1044232502309789696",
+		"featured": true
 	}
 ]

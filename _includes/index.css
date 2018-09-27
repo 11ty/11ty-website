@@ -22,6 +22,9 @@ a:visited,
 a[href] {
 	color: #222;
 }
+a[href].naked {
+	text-decoration: none;
+}
 
 strong,
 b {
