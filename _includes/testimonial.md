@@ -1,1 +1,1 @@
-> ”{{ testimonial.text }}“—[![@{{ testimonial.twitter }}](/img/avatars/{{ testimonial.twitter }}.jpg){{ testimonial.name }}]({% if testimonial.source %}{{ testimonial.source }}{% else %}https://twitter.com/{{ testimonial.twitter }}{% endif %})
+> “{{ testimonial.text }}”—[![@{{ testimonial.twitter }}](/img/avatars/{{ testimonial.twitter }}.jpg){{ testimonial.name }}]({% if testimonial.source %}{{ testimonial.source }}{% else %}https://twitter.com/{{ testimonial.twitter }}{% endif %})
