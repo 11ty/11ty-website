@@ -10,7 +10,7 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.addShortcode("avatar", function(twitterName, linkUrl, text = "") {
 		return (linkUrl ? `<a href="${linkUrl}">` : "") +
-			`<img src="/img/avatars/${twitterName}.jpg" class="avatar" alt="@${twitterName}">` +
+			`<img src="/img/avatars/${twitterName}.jpg" class="avatar" alt="@${twitterName} Twitter Photo">` +
 			text + 
 			(linkUrl ? `</a>` : "") ;
 	});

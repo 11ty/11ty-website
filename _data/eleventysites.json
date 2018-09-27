@@ -10,14 +10,17 @@
 		"name": "V8",
 		"url": "https://v8.dev/",
 		"description": "V8 is Google’s open source high-performance JavaScript and WebAssembly engine, written in C++.",
-		"twitter": "v8js"
+		"source_url": "https://github.com/v8/v8.dev",
+		"twitter": "v8js",
+		"featured": true
 	},
 	{
 		"url": "https://www.zachleat.com/web/",
 		"name": "Zach Leatherman",
 		"description": "A 10+ years-running blog about web development.",
 		"source_url": "https://github.com/zachleat/zachleat.com",
-		"twitter": "zachleat"
+		"twitter": "zachleat",
+		"featured": true
 	},
 	{
 		"url": "https://www.fontspeed.io/",
@@ -38,14 +41,16 @@
 		"name": "Wilto Makes Food",
 		"description": "The professional cooking site of Mat Marquis.",
 		"source_url": "https://github.com/Wilto/wilto-makes-food",
-		"twitter": "wilto"
+		"twitter": "wilto",
+		"featured": true
 	},
 	{
 		"url": "https://2018.nejsconf.com/",
 		"name": "NEJS CONF 2018",
 		"description": "A single day, single track Web Development conference.",
 		"source_url": "https://github.com/NebraskaJS/2018.nejsconf.com",
-		"twitter": "nejsconf"
+		"twitter": "nejsconf",
+		"featured": true
 	},
 	{
 		"url": "https://mannahfoundation.org/",
@@ -77,14 +82,16 @@
 		"url": "https://templates.netlify.com/",
 		"description": "This is a board with templates for static site generators and boilerplates.",
 		"source_url": "https://github.com/netlify/templates",
-		"twitter": "netlify"
+		"twitter": "netlify",
+		"featured": true
 	},
 	{
 		"name": "Set Your Watch By",
 		"url": "https://setyourwatchby.netlify.com/",
 		"description": "A static site generated clock! Runs a Netlify build every minute.",
 		"source_url": "https://github.com/philhawksworth/html-time",
-		"twitter": "philhawksworth"
+		"twitter": "philhawksworth",
+		"featured": true
 	},
 	{
 		"name": "Front-end Foundations",
@@ -167,7 +174,8 @@
 		"url": "https://slay.sh/",
 		"description": "A shell script to set up a macOS machine for design and development.",
 		"source_url": "https://github.com/minamarkham/formation/tree/slay.sh",
-		"twitter": "minamarkham"
+		"twitter": "minamarkham",
+		"featured": true
 	},
 	{
 		"name": "Ed Horsford",

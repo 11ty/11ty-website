@@ -500,3 +500,24 @@ main .elv-toc + h1 .direct-link {
 		display: none ;
 	}
 }
+
+/* Featured sites */
+.featured-sites {
+	text-align: center;
+	margin: 2em 0;
+}
+.featured-sites .avatar {
+	width: 73px;
+	height: 73px;
+}
+
+/* Testimonials */
+.testimonials-more {
+	text-transform: uppercase;
+	font-size: 0.875em; /* 14px /16 */
+}
+.testimonials-more .avatar {
+	width: 40px;
+	height: 40px;
+	vertical-align: middle;
+}
