@@ -40,6 +40,26 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+### Plugin Configuration Options
+
+{% addedin "0.5.4", "span" %} Use an optional second argument to `addPlugin` to customize your plugin’s behavior. These options are specific to the plugin. Please consult the plugin’s documentation (e.g. the [`eleventy-plugin-syntaxhighlight` README](https://github.com/11ty/eleventy-plugin-syntaxhighlight/blob/master/README.md)) to learn what options are available to you.
+
+```js
+const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(pluginSyntaxHighlight, {
+
+    // only install the markdown highlighter
+    templateFormats: ["md"],
+
+    init: function({ Prism }) {
+        // Add your own custom language to Prism!
+    }
+  });
+};
+```
+
+
 ### Namespace the plugin additions
 
 You can namespace parts of your configuration using `eleventyConfig.namespace`. This will add a string prefix to all filters, tags, helpers, collections, and transforms.
@@ -56,4 +76,6 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-This feature isn’t limited to plugins, you could use it yourself with `addFilter` or `addCollection` in your config but your code will be more readable if you just change the name string arguments manually (it’s your call).
+{% callout %}
+Plugin namespacing is an application feature and should not be used if you are creating your own plugin (in your plugin configuration code). Follow along at <a href="https://github.com/11ty/eleventy/issues/256">Issue #256</a>.
+{% endcallout %}
