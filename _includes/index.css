@@ -180,42 +180,6 @@ li li {
 	padding-bottom: .1em;
 }
 
-/* Syntax highlighting and Code blocks */
-pre {
-	display: block;
-	padding: .5em;
-	margin: 1em -.5em 2em -.5em;
-	overflow-x: auto;
-	background-color: #eee;
-	font-size: 0.875em; /* 14px /16 */
-}
-pre,
-code {
-	font-family: Monaco, monospace;
-}
-code {
-	-ms-word-break: break-all;
-	word-break: break-word;
-	-webkit-hyphens: manual;
-	-moz-hyphens: manual;
-	hyphens: manual;
-	background-color: #efefef;
-}
-pre + pre[class*="language-"] {
-	margin-top: 1em;
-}
-pre + .note {
-	font-size: 0.6666666666667em; /* 16px /24 */
-	margin-top: -2.875em; /* 46px /16 */
-	margin-bottom: 2.5em; /* 40px /16 */
-	text-align: right;
-}
-@media (min-width: 37.5em) { /* 600px */
-	pre {
-		font-size: 1em; /* 16px /16 */
-	}
-}
-
 
 #quick-start ~ .language-text {
 	border-top: 2px solid #666;
@@ -504,7 +468,8 @@ main .elv-toc + h1 .direct-link {
 /* Featured sites */
 .featured-sites {
 	text-align: center;
-	margin: 2em 0;
+	margin: 2em 0 3em;
+	line-height: 2;
 }
 .featured-sites .avatar {
 	width: 73px;
@@ -515,6 +480,7 @@ main .elv-toc + h1 .direct-link {
 .testimonials-more {
 	text-transform: uppercase;
 	font-size: 0.875em; /* 14px /16 */
+	line-height: 3.214285714286; /* 45px /14 */
 }
 .testimonials-more .avatar {
 	width: 40px;

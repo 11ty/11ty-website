@@ -6,13 +6,13 @@
 		<title>{{ subtitle + ' - ' if subtitle}} Eleventy</title>
 {%- set css %}
 {% include 'index.css' %}
+{% include 'components/code.css' %}
 {% include 'components/lists.css' %}
 {% include 'components/external-links.css' %}
 {% include 'components/minilink.css' %}
 {% include 'components/toc.css' %}
 {% include 'components/callout.css' %}
 {% include 'components/codetitle.css' %}
-{% include 'prism-theme.css' %}
 {% endset %}
 		<style>{{ css | cssmin | safe }}</style>
 {% if feedTitle and feedUrl %}

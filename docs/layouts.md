@@ -27,7 +27,7 @@ Next, we need to create a `mylayout.njk` file. It can contain any type of text, 
 {% codetitle "_includes/mylayout.njk" %}
 
 {% raw %}
-```
+``` html
 <!doctype html>
 <html lang="en">
   <head>
