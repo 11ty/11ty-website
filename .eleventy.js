@@ -1,12 +1,24 @@
+const htmlmin = require("html-minifier");
+const chalk = require("chalk");
+const CleanCSS = require("clean-css");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
-const CleanCSS = require("clean-css");
 const cfg = require("./_data/config.json");
-const htmlmin = require("html-minifier");
 
 module.exports = function(eleventyConfig) {
-	eleventyConfig.addPlugin(syntaxHighlightPlugin);
+	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
+		templateFormats: "md"
+	});
 	eleventyConfig.addPlugin(rssPlugin);
+
+	eleventyConfig.addPairedShortcode("callout", function(content, level = "warn") {
+		return `<div class="elv-callout elv-callout-${level}">${content}</div>`;
+	});
+
+	eleventyConfig.addShortcode("emoji", function(emoji, alt = "") {
+		return `<span aria-hidden="true">${emoji}</span>` + 
+			(alt ? `<span class="sr-only">${alt}</span>` : "");
+	});
 
 	eleventyConfig.addShortcode("avatar", function(twitterName, linkUrl, text = "") {
 		return (linkUrl ? `<a href="${linkUrl}">` : "") +
