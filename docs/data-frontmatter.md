@@ -53,7 +53,7 @@ Eleventy uses the [`gray-matter` package](https://github.com/jonschlinkert/gray-
 ```
 ---js
 {
-  title: "My page title"
+  title: "My page title",
   currentDate: function() {
     // wow you can have a function in here
     return (new Date()).toLocaleString();
