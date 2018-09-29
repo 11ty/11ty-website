@@ -63,6 +63,8 @@ Eleventy uses the [`gray-matter` package](https://github.com/jonschlinkert/gray-
 <!doctype html>
 <html>
 …
+<title>{{ title }} - published on {{ currentDate() }}</title>
+
 ```
 
 {% include "datasources.md" %}
