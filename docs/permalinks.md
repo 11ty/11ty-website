@@ -13,11 +13,41 @@ Eleventy automatically helps you make sure that [Cool URIs don’t change](https
 > What to leave out…
 > File name extension. This is a very common one. "cgi", even ".html" is something which will change. You may not be using HTML for that page in 20 years time, but you might want today's links to it to still be valid. The canonical way of making links to the W3C site doesn't use the extension.
 
+## Default Input/Output Examples
+
 Assuming your `--output` directory is the default, `_site`:
 
-* `template.njk` outputs to `_site/template/index.html`, pairs nicely with `<a href="/template/">`
-* `subdir/template.njk` outputs to `_site/subdir/template/index.html`, pairs nicely with `<a href="/subdir/template/">`
-* _Notably_, if your template file name and parent directory match, it’ll be simplified to a single folder. So, `subdir/template/template.njk` outputs to `_site/subdir/template/index.html` (note only one template folder).
+<table>
+    <thead>
+        <tr>
+            <th>Input File</th>
+            <th>Output (with <code>--output=_site</code>)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>template.njk</code></td>
+            <td>
+                <div class="nowrap"><strong>File</strong>: <code>_site/template/index.html</code></div>
+                <div class="nowrap"><strong>Href</strong>: <code>/template/</code></div>
+            </td>
+        </tr>
+        <tr>
+            <td><code>subdir/template.njk</code></td>
+            <td>
+                <div class="nowrap"><strong>File</strong>: <code>_site/subdir/template/index.html</code></div>
+                <div class="nowrap"><strong>Href</strong>: <code>/subdir/template/</code></div>
+            </td>
+        </tr>
+        <tr>
+            <td><code>subdir/template/template.njk</code></td>
+            <td>
+                <div class="nowrap"><strong>File</strong>: <code>_site/subdir/template/index.html</code></div>
+                <div class="nowrap"><strong>Href</strong>: <code>/subdir/template/</code></div>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 ## Remapping Output (Permalink)
 
