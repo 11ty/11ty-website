@@ -41,8 +41,27 @@ p.minilink {
 
 .minilink-addedin {
 	text-transform: none;
-	box-shadow: 0 0 0 1px rgba(0,0,0,0.4);
+	box-shadow: 0 0 0 1px rgba(0,0,0,0.3);
 }
 .minilink-addedin:not(:first-child) {
 	margin-left: 1em;
+}
+
+.minilink-lower {
+	text-transform: none;
+	background-color: transparent;
+}
+.minilink-lower[href] {
+	box-shadow: 0 0 0 1px rgba(0,0,0,0.5);
+}
+.minilink-lower[href]:hover,
+.minilink-lower[href]:focus {
+	background-color: #eee;
+}
+
+.minilink > .minilink {
+	margin: -.125em .375em -.125em -.375em;
+	box-shadow: none;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
 }

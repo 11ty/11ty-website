@@ -7,23 +7,23 @@ tags:
 
 {% addedin "0.2.14" %}
 
-While you can provide [global data files](/docs/data-global/) to supply data to all of your templates, you may want some of your data to be available locally only to one specific template or to a directory of templates. For that use, we also search for JSON and [JavaScript data files](/docs/data-js/) in specific places in your directory structure.
+While you can provide [global data files](/docs/data-global/) to supply data to all of your templates, you may want some of your data to be available locally only to one specific template or to a directory of templates. For that use, we also search for JSON and [JavaScript Data Files](/docs/data-js/) in specific places in your directory structure.
 
-_Important exception:_ Template and Directory Specific Data Files are **not** [preprocessed through a templating engine](/docs/data-preprocessing/). [Global Data files](/docs/data-global/) are.
+<em>Important exception:</em> Template and Directory Specific Data Files are **not** [preprocessed through a templating engine](/docs/data-preprocessing/). [Global Data files](/docs/data-global/) are.
 
 For example, consider a template located at `posts/subdir/my-first-blog-post.md`. Eleventy will look for data in the following places (starting with highest priority, local data keys override global data):
 
 1. [Template Front Matter Data](/docs/data-frontmatter/)
 1. Template Data File (data is only applied to `posts/subdir/my-first-blog-post.md`)
-    * `posts/subdir/my-first-blog-post.11tydata.js` {% addedin "0.5.3", "span" %}
+    * `posts/subdir/my-first-blog-post.11tydata.js` {% minilink "/docs/data-js" %}{% addedin "0.5.3", "span" %}JavaScript Data Files{% endminilink %}
     * `posts/subdir/my-first-blog-post.11tydata.json` {% addedin "0.5.3", "span" %}
     * `posts/subdir/my-first-blog-post.json`
 1. Directory Data File (data applies to all templates in `posts/subdir/*`)
-    * `posts/subdir/subdir.11tydata.js` {% addedin "0.5.3", "span" %}
+    * `posts/subdir/subdir.11tydata.js` {% minilink "/docs/data-js" %}{% addedin "0.5.3", "span" %}JavaScript Data Files{% endminilink %}
     * `posts/subdir/subdir.11tydata.json` {% addedin "0.5.3", "span" %}
     * `posts/subdir/subdir.json`
 1. Parent Directory Data File (data applies to all templates in `posts/**/*`, including subdirectories)
-    * `posts/posts.11tydata.js` {% addedin "0.5.3", "span" %}
+    * `posts/posts.11tydata.js` {% minilink "/docs/data-js" %}{% addedin "0.5.3", "span" %}JavaScript Data Files{% endminilink %}
     * `posts/posts.11tydata.json` {% addedin "0.5.3", "span" %}
     * `posts/posts.json`
 1. [Global Data Files](/docs/data-global/) in `_data/*` (available to all templates)

@@ -31,6 +31,10 @@ module.exports = function(eleventyConfig) {
 		return `<div class="codetitle"><b>${subtitle} </b>${title}</div>`;
 	});
 
+	eleventyConfig.addPairedShortcode("minilink", function(text, href) {
+		return `<a href="${href}" class="minilink minilink-lower">${text}</a>`;
+	});
+
 	eleventyConfig.addShortcode("addedin", function(version, tag) {
 		if( typeof version !== "string" ) {
 			tag = version.tag;
