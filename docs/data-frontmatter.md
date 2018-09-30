@@ -50,6 +50,7 @@ Eleventy uses the [`gray-matter` package](https://github.com/jonschlinkert/gray-
 
 ### JavaScript Front Matter
 
+{% raw %}
 ```
 ---js
 {
@@ -68,5 +69,6 @@ Eleventy uses the [`gray-matter` package](https://github.com/jonschlinkert/gray-
   <p>Published on {{ currentDate() }}</p>
   <!-- … -->
 ```
+{% endraw %}
 
 {% include "datasources.md" %}
