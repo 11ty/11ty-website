@@ -55,16 +55,18 @@ Eleventy uses the [`gray-matter` package](https://github.com/jonschlinkert/gray-
 {
   title: "My page title",
   currentDate: function() {
-    // wow you can have a function in here
+    // You can have a JavaScript function here!
     return (new Date()).toLocaleString();
   }
 }
 ---
 <!doctype html>
 <html>
-…
-<title>{{ title }} - published on {{ currentDate() }}</title>
-
+<!-- … -->
+<body>
+  <h1>{{ title }}</h1>
+  <p>Published on {{ currentDate() }}</p>
+  <!-- … -->
 ```
 
 {% include "datasources.md" %}
