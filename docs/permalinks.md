@@ -18,33 +18,52 @@ Eleventy automatically helps you make sure that [Cool URIs don’t change](https
 Assuming your `--output` directory is the default, `_site`:
 
 <table>
-    <thead>
-        <tr>
-            <th>Input File</th>
-            <th>Output (with <code>--output=_site</code>)</th>
-        </tr>
-    </thead>
     <tbody>
         <tr>
+            <th>Input File</th>
             <td><code>template.njk</code></td>
-            <td>
-                <div class="nowrap"><strong>File</strong>: <code>_site/template/index.html</code></div>
-                <div class="nowrap"><strong>Href</strong>: <code>/template/</code></div>
-            </td>
         </tr>
         <tr>
+            <th>Output File</th>
+            <td><code>_site/template/index.html</code></td>
+        </tr>
+        <tr>
+            <th>Href</th>
+            <td><code>/template/</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Input File</th>
             <td><code>subdir/template.njk</code></td>
-            <td>
-                <div class="nowrap"><strong>File</strong>: <code>_site/subdir/template/index.html</code></div>
-                <div class="nowrap"><strong>Href</strong>: <code>/subdir/template/</code></div>
-            </td>
         </tr>
         <tr>
+            <th>Output File</th>
+            <td><code>_site/subdir/template/index.html</code></td>
+        </tr>
+        <tr>
+            <th>Href</th>
+            <td><code>/subdir/template/</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Input File</th>
             <td><code>subdir/template/template.njk</code></td>
-            <td>
-                <div class="nowrap"><strong>File</strong>: <code>_site/subdir/template/index.html</code></div>
-                <div class="nowrap"><strong>Href</strong>: <code>/subdir/template/</code></div>
-            </td>
+        </tr>
+        <tr>
+            <th>Output File</th>
+            <td><code>_site/subdir/template/index.html</code></td>
+        </tr>
+        <tr>
+            <th>Href</th>
+            <td><code>/subdir/template/</code></td>
         </tr>
     </tbody>
 </table>
