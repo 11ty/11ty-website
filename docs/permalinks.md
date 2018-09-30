@@ -80,6 +80,10 @@ permalink: this-is-a-new-path/subdirectory/testing/index.html
 
 The above will write to `_site/this-is-a-new-path/subdirectory/testing/index.html`.
 
+### `permalink: false`
+
+If you set the `permalink` value to be `false`, this will disable writing the file to disk in your output folder. The file will still be processed normally (and present in collections) but will not be available in your output directory as a standalone template.
+
 ### Use data variables in Permalink
 
 You may use data variables here (and template syntax, too). These will be parsed with the current template’s rendering engine.
