@@ -41,7 +41,7 @@
 		"name": "Wilto Makes Food",
 		"description": "The professional cooking site of Mat Marquis.",
 		"source_url": "https://github.com/Wilto/wilto-makes-food",
-		"twitter": "wilto",
+		"twitter": "WiltoMakesFood",
 		"featured": true
 	},
 	{
@@ -188,5 +188,12 @@
 		"url": "https://www.unabridgedsoftware.com/",
 		"description": "Unabridged Software specializes in creating robust products that remain easy to change over time.",
 		"twitter": "unabridgedsoft"
+	},
+	{
+		"name": "Jeff Posnick",
+		"url": "https://jeffy.info/",
+		"source_url": "https://github.com/jeffposnick/jeffposnick.github.io",
+		"description": "The blog of Jeff Posnick (of Google's Web DevRel Team)",
+		"twitter": "jeffposnick"
 	}
 ]
