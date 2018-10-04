@@ -14,6 +14,8 @@ tags:
 
 Data can be used on a template from multiple different sources.
 
+## Sources of Data
+
 {% include "datasources.md" %}
 
 ## Eleventy Provided Data Variables

@@ -1,8 +1,7 @@
-## Sources of Data
-
 The order of priority for sources of data is (from highest priority to lowest):
 
-1. [Front Matter Data](/docs/data-frontmatter/){% if page.url == "/docs/data-frontmatter/" %} ⬅{% endif %}
+1. [Front Matter Data in a Template](/docs/data-frontmatter/){% if page.url == "/docs/data-frontmatter/" %} ⬅{% endif %}
+1. [Front Matter Data in Layouts](/docs/layouts/#front-matter-data-in-layouts){% if page.url == "/docs/layouts/" %} ⬅{% endif %}
 1. [Template Data Files](/docs/data-template-dir/){% if page.url == "/docs/data-template-dir/" %} ⬅{% endif %}
 1. [Directory Data Files (and ascending Parent Directories)](/docs/data-template-dir/){% if page.url == "/docs/data-template-dir/" %} ⬅{% endif %}
 1. [Global Data Files](/docs/data-global/){% if page.url == "/docs/data-global/" %} ⬅{% endif %}

@@ -64,6 +64,16 @@ All of this will output the following HTML content:
 </html>
 ```
 
+## Front Matter Data in Layouts
+
+Take note that in [Eleventy’s Data Cascade](/docs/data/), front matter data in your template is merged with Layout front matter data! All data is merged ahead of time so that you can mix and match variables in your content and layout templates interchangeably.
+
+Note that front matter data set in a content template takes priority over layout front matter! Chained layouts (described below) have similar merge behavior. The closer to the content, the higher priority the data.
+
+### Sources of Data
+
+{% include "datasources.md" %}
+
 ## Layouts in a Subdirectory
 
 {% addedin "0.2.7" %}
@@ -132,6 +142,7 @@ We want to add a main element around our post’s content because we like access
 ```
 ---
 layout: mylayout.njk
+myOtherData: hello
 ---
 <main>
   {{ content | safe }}
