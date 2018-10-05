@@ -1,5 +1,6 @@
 ---
 layout: layouts/main.njk
+logoLink: /docs/
 ignoreGitHubButtons: true
 ---
 
