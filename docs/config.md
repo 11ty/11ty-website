@@ -108,7 +108,7 @@ module.exports = {
 
 ### Directory for Includes
 
-Controls the directory inside which the template includes/extends/partials/etc can be found.
+Controls the which directory is the _includes_ directory. The _includes_ folder is meant for templates and data in general like layout templates.
 
 | Includes Directory |  |
 | --- | --- |
