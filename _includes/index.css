@@ -62,10 +62,15 @@ blockquote + blockquote {
 blockquote img {
 	height: 1.3em;
 	width: 1.3em;
+	display: inline-block;
 	border-radius: 50%;
 	vertical-align: text-top;
 	margin-left: 2px;
 	margin-right: 6px;
+	background-color: #eee;
+}
+.avatar {
+	vertical-align: middle;
 }
 
 /* Main */
@@ -182,6 +187,11 @@ li ul {
 li li {
 	padding-top: .1em;
 	padding-bottom: .1em;
+}
+
+.list-bare {
+	list-style: none;
+	padding: 0;
 }
 
 

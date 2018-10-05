@@ -195,5 +195,16 @@
 		"source_url": "https://github.com/jeffposnick/jeffposnick.github.io",
 		"description": "The blog of Jeff Posnick (of Google's Web DevRel Team)",
 		"twitter": "jeffposnick"
+	},
+	{
+		"name": "Roland Toth",
+		"url": "https://rolandtoth.hu/portfolio/",
+		"description": "The portfolio site of Roland Toth",
+		"twitter": "tproli"
+	},
+	{
+		"name": "Neptun Brigád",
+		"url": "https://neptunbrigad.hu/",
+		"description": "The web site for an Open Theater Company"
 	}
 ]

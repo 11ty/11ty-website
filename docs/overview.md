@@ -34,12 +34,14 @@ Listen to what these [happy developers](/docs/testimonials/) are saying about El
 
 ## Sites Using Eleventy
 
+<ul class="list-bare">
 {% for site in eleventysites -%}
 {% if site.disabled != true and site.url -%}
-* <a href="{{ site.url }}">{% avatar site.twitter %}{{ site.name | safe }}</a>
+  <li><a href="{{ site.url }}">{% avatar site.twitter %}{{ site.name | safe }}</a></li>
 {% endif -%}
 {% endfor -%}
-* [**Want to add yours?**](https://github.com/11ty/11ty.io/issues/new?title=I+built+a+site+with+Eleventy!)
+  <li><a href="https://github.com/11ty/11ty.io/issues/new?title=I+built+a+site+with+Eleventy!"><strong>Want to add yours?</strong></a></li>
+</ul>
 
 ## Competitors
 

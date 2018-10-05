@@ -24,6 +24,15 @@ layout: layouts/docs.njk
 ## Lists
 
 <div class="elv-sg-component">
+<ul class="list-bare">
+  <li class="list-bare-item"><a href="/docs/resources/#static-sites">Static Sites</a></li>
+  <li class="list-bare-item"><a href="/docs/resources/#jamstack">JAMstack</a></li>
+</ul>
+</div>
+
+### Inline List
+
+<div class="elv-sg-component">
 <ul class="inlinelist">
   <li class="inlinelist-item"><a href="/docs/resources/#static-sites">Static Sites</a></li>
   <li class="inlinelist-item"><a href="/docs/resources/#jamstack">JAMstack</a></li>
