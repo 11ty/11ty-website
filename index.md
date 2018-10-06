@@ -29,7 +29,7 @@ Wrote 1 file in 0.10 seconds
 
 <div class="featured-sites">{% for site in eleventysites -%}{% if site.disabled != true and site.url and site.featured -%}<a href="{{ site.url }}" class="elv-externalexempt">{% avatar site.twitter %}<span class="sr-only">{{ site.name | safe }}</span></a>{% endif -%}{% endfor -%}</div>
 
-## Don’t just take my word for it {% emoji "🌈" %}
+## Don’t take my word for it {% emoji "🌈" %}
 
 Listen to what these [happy developers](/docs/testimonials/) are saying about Eleventy:
 

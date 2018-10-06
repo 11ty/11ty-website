@@ -3,6 +3,7 @@ const chalk = require("chalk");
 const CleanCSS = require("clean-css");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
+const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language");
 const cfg = require("./_data/config.json");
 
 module.exports = function(eleventyConfig) {
@@ -10,6 +11,7 @@ module.exports = function(eleventyConfig) {
 		templateFormats: "md"
 	});
 	eleventyConfig.addPlugin(rssPlugin);
+	eleventyConfig.addPlugin(inclusiveLanguagePlugin);
 
 	eleventyConfig.addPairedShortcode("callout", function(content, level = "warn") {
 		return `<div class="elv-callout elv-callout-${level}">${content}</div>`;

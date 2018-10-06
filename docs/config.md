@@ -77,7 +77,8 @@ Read more about [Plugins](/docs/plugins/).
   "Copy Files to Output using Pass-through File Copy",
   "Change Exception Case Suffix for HTML Files",
   "Change File Suffix for Template and Directory Data Files",
-  "Transforms"
+  "Transforms",
+  "Linters"
 ] %}
 {%- for link in toc %}
 * [{{ link }}](#{{ link | slug }})
@@ -401,6 +402,41 @@ module.exports = function(eleventyConfig) {
     }
 
     return content;
+  });
+};
+```
+
+### Linters
+
+Similar to Transforms, Linters are provided to analyze a template’s output without modifying it.
+
+| Linters |  |
+| --- | --- |
+| _Object Key_ | _N/A_ |
+| _Valid Options_ | Callback function |
+| _Command Line Override_ | _None_ |
+| _Configuration API_ | `addLinter` {% addedin "0.5.4", "span" %} |
+
+#### Linters Example: Use Inclusive Language
+
+Inspired by the [CSS Tricks post _Words to Avoid in Educational Writing_](https://css-tricks.com/words-avoid-educational-writing/), this linter will log a warning to the console when it finds a trigger word in a markdown file.
+
+This example has been packaged as a plugin in [`eleventy-plugin-inclusive-language`](https://github.com/11ty/eleventy-plugin-inclusive-language).
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addLinter("inclusive-language", function(content, inputPath, outputPath) {
+    let words = "simply,obviously,basically,of course,clearly,just,everyone knows,however,easy".split(",");
+    if( inputPath.endsWith(".md") ) {
+      for( let word of words) {
+        let regexp = new RegExp("\\b(" + word + ")\\b", "gi");
+        if(content.match(regexp)) {
+          console.warn(chalk.yellow(`Inclusive Language Linter (${inputPath}) Found: ${word}`));
+        }
+      }
+    }
   });
 };
 ```
