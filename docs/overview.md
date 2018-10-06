@@ -37,7 +37,7 @@ Listen to what these [happy developers](/docs/testimonials/) are saying about El
 <ul class="list-bare">
 {% for site in eleventysites -%}
 {% if site.disabled != true and site.url -%}
-  <li><a href="{{ site.url }}">{% avatar site.twitter %}{{ site.name | safe }}</a></li>
+  <li><a href="{{ site.url }}">{% avatar site.twitter or site.avatar_filename %}{{ site.name | safe }}</a></li>
 {% endif -%}
 {% endfor -%}
   <li><a href="https://github.com/11ty/11ty.io/issues/new?title=I+built+a+site+with+Eleventy!"><strong>Want to add yours?</strong></a></li>

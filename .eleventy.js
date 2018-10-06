@@ -20,13 +20,21 @@ module.exports = function(eleventyConfig) {
 			(alt ? `<span class="sr-only">${alt}</span>` : "");
 	});
 
-	eleventyConfig.addShortcode("avatar", function(twitterName, linkUrl, text = "") {
-		if(!twitterName) {
+	eleventyConfig.addShortcode("avatar", function(filename, linkUrl, text = "") {
+		if(!filename) {
 			return '<span class="avatar"></span>';
 		}
 
+		let twitterName;
+		if( filename.endsWith(".jpg") || filename.endsWith(".png") ) {
+			twitterName = filename.substr(0, -4);
+		} else {
+			twitterName = filename;
+			filename += ".jpg";
+		}
+
 		return (linkUrl ? `<a href="${linkUrl}">` : "") +
-			`<img src="/img/avatars/${twitterName}.jpg" class="avatar" alt="@${twitterName} Twitter Photo">` +
+			`<img src="/img/avatars/${filename}" class="avatar" alt="@${twitterName} Twitter Photo">` +
 			text + 
 			(linkUrl ? `</a>` : "") ;
 	});

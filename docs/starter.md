@@ -26,7 +26,7 @@ tags:
 {% for site in eleventysites -%}
 {% if site.disabled != true -%}
     <tr>
-      <td><strong>{% avatar site.twitter %}{{ site.name | safe }}</strong></td>
+      <td><strong>{% avatar site.twitter or site.avatar_filename %}{{ site.name | safe }}</strong></td>
       <td class="bp-notsm">{% if site.url %}<a href="{{ site.url }}" class="minilink">Demo</a>{% endif %}</td>
       <td class="bp-notsm">{% if site.source_url %}<a href="{{ site.source_url }}" class="minilink">Source</a>{% endif %}</td>
       <td>{% if site.url %}<a href="{{ site.url }}" class="minilink bp-sm">Demo</a>{% endif %}{% if site.source_url %}<a href="{{ site.source_url }}" class="minilink bp-sm">Source</a>{% endif %}{{ site.description | safe }}</td>
