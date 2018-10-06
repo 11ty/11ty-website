@@ -14,6 +14,8 @@ _Work in progress: {% include "edit-on-github.njk" %}_
 
 ## Static Sites
 
+A static site basically is a group of HTML files that contain their content instead of using JavaScript or back end languages to display the content on-the-fly.
+
 ## JAMstack
 
 > Modern web development architecture based on client-side JavaScript, reusable APIs, and prebuilt Markup.—[jamstack.org](https://jamstack.org/)
