@@ -14,7 +14,7 @@ _Work in progress: {% include "edit-on-github.njk" %}_
 
 ## Static Sites
 
-A static site basically is a group of HTML files that contain their content instead of using JavaScript or back end languages to display the content on-the-fly.
+A static site is a group of generated HTML files. Content is built into the HTML files rather than using a dynamic back end language to generate the content on-the-fly. A dynamic site can appear static when you add caching rules to make the content stickier. A static site can appear dynamic when you run your build quickly and often.
 
 ## JAMstack
 
