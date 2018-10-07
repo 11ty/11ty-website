@@ -444,7 +444,7 @@ module.exports = function(eleventyConfig) {
 
 ### Experiments
 
-Experiments are experimental Eleventy features that need a public trial. Power users may opt-in to these features in order to try out new things before they are released to the general public.
+Experiments are experimental Eleventy features that need a public trial. Power users may opt-in to these features in order to try out new things before they are released to the general public. Do not use these in production code! Experiments are not guaranteed and may be removed at any time.
 
 | Experiments |  |
 | --- | --- |
