@@ -457,7 +457,7 @@ Experiments are experimental Eleventy features that need a public trial. Power u
 
  {% addedin "0.6.0" %}
 
-Opts into a full deep merge when combining the Data Cascade. This will use `lodash.mergewith` to combine Arrays and deep merge Objects, rather than a simple top-level merge using `Object.assign`. Read more at [Issue #147](https://github.com/11ty/eleventy/issues/147).
+Opts in to a full deep merge when combining the Data Cascade. This will use `lodash.mergewith` to combine Arrays and deep merge Objects, rather than a simple top-level merge using `Object.assign`. Read more at [Issue #147](https://github.com/11ty/eleventy/issues/147).
 
 {% codetitle ".eleventy.js" %}
 
