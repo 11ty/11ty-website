@@ -463,7 +463,7 @@ Opts in to a full deep merge when combining the Data Cascade. This will use `lod
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addExeriment("DATA_DEEP_MERGE");
+  eleventyConfig.addExperiment("DATA_DEEP_MERGE");
 };
 ```
 
