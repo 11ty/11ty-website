@@ -78,7 +78,8 @@ Read more about [Plugins](/docs/plugins/).
   "Change Exception Case Suffix for HTML Files",
   "Change File Suffix for Template and Directory Data Files",
   "Transforms",
-  "Linters"
+  "Linters",
+  "Experiments"
 ] %}
 {%- for link in toc %}
 * [{{ link }}](#{{ link | slug }})
@@ -438,6 +439,29 @@ module.exports = function(eleventyConfig) {
       }
     }
   });
+};
+```
+
+### Experiments
+
+Experiments are experimental Eleventy features that need a public trial. Power users may opt-in to these features in order to try out new things before they are released to the general public.
+
+| Experiments |  |
+| --- | --- |
+| _Object Key_ | _N/A_ |
+| _Valid Options_ | String |
+| _Command Line Override_ | _None_ |
+| _Configuration API_ | `addExperiment` {% addedin "0.6.0", "span" %} |
+
+#### Data Deep Merge
+
+Opts into a full deep merge when combining the Data Cascade. This will use `lodash.mergewith` to combine Arrays and deep merge Objects, rather than a simple top-level merge using `Object.assign`. Read more at [Issue #147](https://github.com/11ty/eleventy/issues/147).
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addExeriment("DATA_DEEP_MERGE");
 };
 ```
 
