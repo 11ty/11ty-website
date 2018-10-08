@@ -486,10 +486,7 @@ Use the `override:` prefix on any data key to opt-out of this merge behavior for
 ---
 override:tags: []
 ---
-Even though normally this file would inherit the `posts`
-tag from the directory data file (per normal data cascade
-rules), we can override the `tags` value to be an empty
-array to opt-out of this behavior.
 ```
 
+Even though normally the `posts/firstpost.md` file would inherit the `posts` tag from the directory data file (per normal [data cascade rules](/docs/data/)), we can override the `tags` value to be an empty array to opt-out of this behavior.
 
