@@ -127,7 +127,7 @@ Controls the directory inside which the template includes/extends/partials/etc c
 module.exports = {
     dir: {
         // ⚠️ This value is relative to your input directory.
-        includes: "SEND_INCLUDES"
+        includes: "my_includes"
     }
 };
 ```
