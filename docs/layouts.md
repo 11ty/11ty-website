@@ -59,7 +59,7 @@ All of this will output the following HTML content:
     <title>My Rad Blog</title>
   </head>
   <body>
-    <h1>My Rad Markdown Blog Post
+    <h1>My Rad Markdown Blog Post</h1>
   </body>
 </html>
 ```
@@ -184,7 +184,7 @@ Used together, this would output:
   </head>
   <body>
     <main>
-      <h1>My Rad Markdown Blog Post
+      <h1>My Rad Markdown Blog Post<h1>
     </main>
   </body>
 </html>
