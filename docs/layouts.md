@@ -53,7 +53,7 @@ All of this will output the following HTML content:
     <title>My Rad Blog</title>
   </head>
   <body>
-    <h1>My Rad Markdown Blog Post
+    <h1>My Rad Markdown Blog Post</h1>
   </body>
 </html>
 ```
@@ -139,7 +139,7 @@ This would build on the previous `mylayout.njk` layout to write a file with:
   </head>
   <body>
     <main>
-      <h1>My Rad Markdown Blog Post
+      <h1>My Rad Markdown Blog Post<h1>
     </main>
   </body>
 </html>

@@ -103,7 +103,7 @@ For example, to generate a JSON search index to be used by popular search librar
 ---
 permalink: index.json
 ---
-<%- JSON.stringify(collections.all) _%>
+<%- JSON.stringify(collections.all) -%>
 ```
 
 ### Pagination
