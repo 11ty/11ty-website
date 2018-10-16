@@ -193,6 +193,15 @@ li li {
 	list-style: none;
 	padding: 0;
 }
+.list-bare-desc {
+	display: block;
+	font-size: 80%;
+	color: #555;
+	margin-bottom: 6px;
+}
+.list-bare-desc-avatar {
+	margin-left: 29.4px;
+}
 
 
 #quick-start ~ .language-text {
@@ -482,12 +491,14 @@ main .elv-toc + h1 .direct-link {
 /* Featured sites */
 .featured-sites {
 	text-align: center;
-	margin: 2em 0 3em;
+	margin: 2em auto 3em;
 	line-height: 2;
+	max-width: 23em;
 }
 .featured-sites .avatar {
 	width: 73px;
 	height: 73px;
+	margin-bottom: 6px;
 }
 
 /* Testimonials */

@@ -96,7 +96,7 @@
 	{
 		"name": "Front-end Foundations",
 		"url": "https://frontend-foundations.com/",
-		"description": "A resource and community for developers learning HTML, CSS, & Javascript. Mostly for beginners–but everyone is welcome.",
+		"description": "A resource and community for developers learning HTML, CSS, & Javascript.",
 		"source_url": "https://github.com/alexcarpenter/frontend-foundations",
 		"twitter": "hybrid_alex"
 	},
@@ -229,5 +229,25 @@
 		"source_url": "https://github.com/philhawksworth/hawksworx.com",
 		"description": "The blog, playground, and generally a home on the web for Phil Hawksworth.",
 		"twitter": "philhawksworth"
+	},
+	{
+		"name": "Bentley Davis",
+		"url": "https://bentleydavis.com/",
+		"twitter": "BntlyD"
+	},
+	{
+		"name": "Soldier Packers",
+		"url": "https://soldierpackers.com/",
+		"description": "Soldier special packers & movers in Agartala is trusted one packers & movers company, providing different type of moving services."
+	},
+	{
+		"name": "Daffodil Pedagogy",
+		"url": "https://daffodilpedagogy.com/",
+		"description": "Daffodil Pedagogy is a tutorial home at Agartala that offers tuitions to nursery kids who needs special support to groom and adapt to educational challenges."
+	},
+	{
+		"name": "Jayanta Chakraborti",
+		"url": "https://jayantachakraborti.com/",
+		"description": "Jayanta Chakraborti is an Associate Professor of Business Analytics and Digital Marketing at ICFAI University Tripura."
 	}
 ]
