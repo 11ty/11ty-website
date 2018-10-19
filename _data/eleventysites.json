@@ -256,5 +256,12 @@
 		"description": "A collection of funny, quirky and lovely console messages from around the web",
 		"twitter": "maelb",
 		"source_url": "https://github.com/maeligg/console.love"
+	},
+	{
+		"name": "Coral Sea Cable System",
+		"url": "https://www.coralseacablesystem.com.au/",
+		"description": "The Coral Sea Cable System is a 4,700km long fibre optic submarine cable system linking Sydney, Australia, to Port Moresby, Papua New Guinea and Honiara, Solomon Islands.",
+		"avatar_filename": "coralseacablesystem.png",
+		"avatar_src": "https://res.cloudinary.com/vocus/image/upload/q_auto,f_auto,w_200/cscs/logo-cs2.png"
 	}
 ]
