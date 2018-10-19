@@ -12,6 +12,8 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 
 ## Making a Simple Web Site with the Simplest Static Site Generator
 
+Not sure where to start? Start by reading these:
+
 * [Level 1—Making Content with Data](https://www.zachleat.com/web/eleventy-tutorial-level-1/)
 * [Level 2—Adding Filters](https://www.zachleat.com/web/eleventy-tutorial-level-2/)
 
@@ -23,6 +25,9 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 
 📢 [Subscribe to the **Eleventy Quick Tips RSS Feed**](/docs/quicktips/feed.xml)
 
-## Third Party Integration
+## How To’s, Elsewhere:
 
-* [Import your Disqus Comments into Eleventy](https://github.com/11ty/eleventy-import-disqus/blob/master/README.md) on GitHub
+* [**Create Your Own Search** without a Third Party Service](https://www.hawksworx.com/blog/adding-search-to-a-jamstack-site/) by {% avatar "philhawksworth" %}Phil Hawksworth
+* Sample Project: [Import your **Notist** events to an Eleventy site](https://eleventy-notist-example.netlify.com/) by {% avatar "philhawksworth" %}Phil Hawksworth
+* Sample Project: [Import your **Medium** posts to an Eleventy site](https://rss-jamstack.netlify.com/) by {% avatar "philhawksworth" %}Phil Hawksworth
+* [Import your **Disqus Comments** into Eleventy](https://github.com/11ty/eleventy-import-disqus/blob/master/README.md) by {% avatar "zachleat" %}Zach Leatherman
