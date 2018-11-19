@@ -35,9 +35,19 @@ We enable pagination and then give it a dataset with the `data` key. We control 
 {
   items: [], // current page’s chunk of data
   pageNumber: 0, // current page number, 0 indexed
+
+  // Cool URLs, added in v0.6.0
+  nextPageHref: "", // put inside <a href="{{ pagination.nextPageHref }}">Next Page</a>
+  previousPageHref: "", // put inside <a href="{{ pagination.previousPageHref }}">Previous Page</a>
+  hrefs: [], // all page hrefs
+
+  // Not cool URLs (these include index.html file names)
   nextPageLink: "", // put inside <a href="{{ pagination.nextPageLink }}">Next Page</a>
   previousPageLink: "", // put inside <a href="{{ pagination.previousPageLink }}">Previous Page</a>
-  pageLinks: [], // all page links
+
+  links: [], // all page links
+  pageLinks: [], // deprecated alias to `links`
+
   data: "", // pointer to dataset
   size: 1, // chunk sizes
 }
