@@ -44,7 +44,6 @@ We enable pagination and then give it a dataset with the `data` key. We control 
   // Not cool URLs (these include index.html file names)
   nextPageLink: "", // put inside <a href="{{ pagination.nextPageLink }}">Next Page</a>
   previousPageLink: "", // put inside <a href="{{ pagination.previousPageLink }}">Previous Page</a>
-
   links: [], // all page links
   pageLinks: [], // deprecated alias to `links`
 
