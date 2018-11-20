@@ -107,7 +107,7 @@ eleventy --input=.
 # A single file
 eleventy --input=README.md
 
-# A glob of files
+# A glob of files (added in v0.6.0)
 eleventy --input=*.md
 
 # A subdirectory
