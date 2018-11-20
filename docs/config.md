@@ -79,7 +79,7 @@ Read more about [Plugins](/docs/plugins/).
   "Change File Suffix for Template and Directory Data Files",
   "Transforms",
   "Linters",
-  "Experiments"
+  "Data Deep Merge"
 ] %}
 {%- for link in toc %}
 * [{{ link }}](#{{ link | slug }})
@@ -461,33 +461,22 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Experiments
-
-Experiments are experimental Eleventy features that need a public trial. Power users may opt-in to these features in order to try out new things before they are released to the general public. Do not use these in production code! Experiments are not guaranteed and may be removed at any time.
-
-| Experiments |  |
-| --- | --- |
-| _Object Key_ | _N/A_ |
-| _Valid Options_ | String |
-| _Command Line Override_ | _None_ |
-| _Configuration API_ | `addExperiment` {% addedin "0.6.0", "span" %} |
-
-#### Data Deep Merge
+### Data Deep Merge
 
  {% addedin "0.6.0" %}
 
-Opts in to a full deep merge when combining the Data Cascade. This will use `lodash.mergewith` to combine Arrays and deep merge Objects, rather than a simple top-level merge using `Object.assign`. Read more at [Issue #147](https://github.com/11ty/eleventy/issues/147).
+Opts in to a full deep merge when combining the Data Cascade. This will use `lodash.mergewith` to combine Arrays and deep merge Objects, rather than a simple top-level merge using `Object.assign`. Read more at [Issue #147](https://github.com/11ty/eleventy/issues/147). This will likely become the default in an upcoming major version.
 
 
 {% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addExperiment("DATA_DEEP_MERGE");
+  eleventyConfig.setDataDeepMerge(true);
 };
 ```
 
-##### Using the `override:` prefix
+#### Using the `override:` prefix
 
 Use the `override:` prefix on any data key to opt-out of this merge behavior for specific values or nested values.
 
@@ -509,3 +498,15 @@ override:tags: []
 
 Even though normally the `posts/firstpost.md` file would inherit the `posts` tag from the directory data file (per normal [data cascade rules](/docs/data/)), we can override the `tags` value to be an empty array to opt-out of this behavior.
 
+<!--
+### Experiments
+
+Experiments are experimental Eleventy features that need a public trial. Power users may opt-in to these features in order to try out new things before they are released to the general public. Do not use these in production code! Experiments are not guaranteed and may be removed at any time.
+
+| Experiments |  |
+| --- | --- |
+| _Object Key_ | _N/A_ |
+| _Valid Options_ | String |
+| _Command Line Override_ | _None_ |
+| _Configuration API_ | `addExperiment` {% addedin "0.6.0", "span" %} |
+-->
