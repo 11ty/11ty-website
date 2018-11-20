@@ -13,6 +13,8 @@ eleventy
 eleventy --input=. --output=_site
 ```
 
+Read more about [`--input`](/docs/config/#input-directory) and [`--output`](/docs/config/#output-directory).
+
 A hypothetical `template.md` in the current directory would be rendered to `_site/template/index.html`. Read more at [Permalinks](/docs/permalinks/).
 
 ```bash
@@ -28,8 +30,8 @@ eleventy --help
 ### Run Eleventy when you save
 
 ```bash
-# Boot up a browsersync web server to automatically apply changes.
-# We’ll --watch for you automatically.
+# Boot up a browsersync web server to apply changes and
+# refresh automatically. We’ll also --watch for you.
 eleventy --serve
 eleventy --serve --port=8081
 ```
@@ -49,7 +51,7 @@ eleventy --quiet
 
 ### `--dryrun` to do a Little Testing
 
-Useful when [debugging](/docs/debugging/).
+Runs without writing to the file system. Useful when [debugging](/docs/debugging/).
 
 ```bash
 # Run Eleventy but don’t write any files

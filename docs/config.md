@@ -87,7 +87,7 @@ Read more about [Plugins](/docs/plugins/).
 
 ### Input Directory
 
-Controls the top level directory that we’ll use to look for templates.
+Controls the top level directory/file/glob that we’ll use to look for templates. Glob support was added in v0.6.0.
 
 | Input Directory |  |
 | --- | --- |
@@ -96,17 +96,36 @@ Controls the top level directory that we’ll use to look for templates.
 | _Valid Options_ | Any valid directory. |
 | _Command Line Override_ | `--input` |
 
-#### Example
+#### Examples
+
+##### Command Line
+
+```bash
+# The current directory
+eleventy --input=.
+
+# A single file
+eleventy --input=README.md
+
+# A glob of files
+eleventy --input=*.md
+
+# A subdirectory
+eleventy --input=views
+```
+
+##### Configuration
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     dir: {
         input: "views"
     }
 };
 ```
+
 
 ### Directory for Includes
 
