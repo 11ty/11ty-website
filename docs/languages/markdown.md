@@ -6,7 +6,9 @@ layout: layouts/langs.njk
 | ------------------- | -------------- | ---------------------------------------------------------- |
 | `md`                | `.md`          | [`markdown-it`](https://www.npmjs.com/package/markdown-it) |
 
-Markdown files can be optionally pre-processed with an additional template engine. This can be configured on a per-template basis or globally. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
+{% callout "warn" %}
+Markdown files are by default pre-processed as Liquid templates. <a href="/docs/config/#default-template-engine-for-markdown-files">You can change this default in your configuration file</a> (or disable it altogether). To change this for a single template and not globally, read <a href="/docs/languages/">Changing a Template’s Rendering Engine</a>.
+{% endcallout %}
 
 ## Markdown Options
 
