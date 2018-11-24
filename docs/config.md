@@ -476,6 +476,8 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+Note that all data stored in the `pagination` variable is exempted from this behavior (we don’t want `pagination.items` to be merged together).
+
 #### Using the `override:` prefix
 
 Use the `override:` prefix on any data key to opt-out of this merge behavior for specific values or nested values.
