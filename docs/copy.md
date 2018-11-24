@@ -37,9 +37,11 @@ Searching the entire directory structure for files to copy based on file extensi
 
 ```js
 module.exports = function(eleventyConfig) {
+  // Copy the `img/` directory 
   eleventyConfig.addPassthroughCopy("img");
   
-  // use a subdirectory, it’ll copy using the same directory structure.
+  // Copy the `css/fonts/` directory
+  // If you use a subdirectory, it’ll copy using the same directory structure.
   eleventyConfig.addPassthroughCopy("css/fonts");
   
   return {
