@@ -7,7 +7,7 @@ const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-languag
 const cfg = require("./_data/config.json");
 
 module.exports = function(eleventyConfig) {
-	eleventyConfig.addExperiment("DATA_DEEP_MERGE");
+	eleventyConfig.setDataDeepMerge(true);
 
 	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
 		templateFormats: "md"
