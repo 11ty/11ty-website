@@ -156,7 +156,7 @@ pagination:
 
 ## Remapping with permalinks
 
-Pagination variables also work here. Here’s an example of a permalink using the pagination page number:
+Normally, front matter does not support template syntax, but `permalink` does, enabling parametric URLs via pagination variables. Here’s an example of a permalink using the pagination page number:
 
 {% raw %}
 ```markdown
