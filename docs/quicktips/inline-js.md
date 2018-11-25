@@ -2,7 +2,7 @@
 tipindex: "002"
 tiptitle: "Inline Minified JavaScript"
 date: 2018-06-08
-tags: ["quicktips", "docs-tutorials", "related-filters"]
+tags: ["related-filters"]
 relatedTitle: "Quick Tip #002—Inline Minified JavaScript"
 ---
 
