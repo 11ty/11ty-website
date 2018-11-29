@@ -270,5 +270,12 @@
 		"description": "Front-end designer & developer",
 		"twitter": "bradtaunt",
 		"source_url": "https://github.com/bradleytaunt/eleventy-taunt"
+	},
+	{
+		"name": "Paul Robert Lloyd",
+		"url": "https://paulrobertlloyd.com/",
+		"description": "Paul is an independent designer, writer and speaker based in Brighton, England.",
+		"twitter": "paulrobertlloyd",
+		"source_url": "https://github.com/paulrobertlloyd/paulrobertlloyd-v4"
 	}
 ]
