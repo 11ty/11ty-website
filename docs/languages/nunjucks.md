@@ -83,7 +83,7 @@ By default, almost all templating engines are synchronous. Nunjucks supports som
 ```js
 module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksAsyncFilter("myAsyncFilter", function(value, callback) {
-    window.setTimeout(function() {
+    setTimeout(function() {
       callback(null, "My Result");
     }, 100);
   });
@@ -97,7 +97,7 @@ Here’s a Nunjucks example with 2 arguments:
 ```js
 module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksAsyncFilter("myAsyncFilter", function(value1, value2, callback) {
-    window.setTimeout(function() {
+    setTimeout(function() {
       callback(null, "My Result");
     }, 100);
   });
