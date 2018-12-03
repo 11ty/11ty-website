@@ -59,7 +59,6 @@ pre + .note {
 
 .highlight-line {
   display: inline-block;
-  min-width: 100%;
 
   /* del, ins, mark default styles */
   text-decoration: none;
@@ -69,6 +68,10 @@ pre + .note {
 /* allow highlighting empty lines */
 .highlight-line:empty:before {
   content: " ";
+}
+
+.highlight-line:not(:last-child) {
+	min-width: 100%;
 }
 
 .highlight-line-isdir {
