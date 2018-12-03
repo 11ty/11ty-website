@@ -58,7 +58,7 @@ pre + .note {
 
 
 .highlight-line {
-  display: block;
+  display: inline-block;
 
   /* del, ins, mark default styles */
   text-decoration: none;
@@ -69,9 +69,9 @@ pre + .note {
 .highlight-line:empty:before {
   content: " ";
 }
-/* avoid double line breaks when using display: block; */
-.highlight-line + br {
-  display: none;
+
+.highlight-line:not(:last-child) {
+	min-width: 100%;
 }
 
 .highlight-line-isdir {
