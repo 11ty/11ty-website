@@ -4,7 +4,8 @@
 		"name": "Eleventy, the web site",
 		"description": "Spoiler alert: it’s this web site.",
 		"source_url": "https://github.com/11ty/11ty.io",
-		"twitter": "eleven_ty"
+		"twitter": "eleven_ty",
+		"featured": true
 	},
 	{
 		"name": "V8",
@@ -171,6 +172,14 @@
 		"featured": true
 	},
 	{
+		"name": "Paul Robert Lloyd",
+		"url": "https://paulrobertlloyd.com/",
+		"description": "Paul is an independent designer, writer and speaker based in Brighton, England.",
+		"twitter": "paulrobertlloyd",
+		"source_url": "https://github.com/paulrobertlloyd/paulrobertlloyd-v4",
+		"featured": true
+	},
+	{
 		"name": "Formation",
 		"url": "https://slay.sh/",
 		"description": "A shell script to set up a macOS machine for design and development.",
@@ -270,13 +279,5 @@
 		"description": "Front-end designer & developer",
 		"twitter": "bradtaunt",
 		"source_url": "https://github.com/bradleytaunt/eleventy-taunt"
-	},
-	{
-		"name": "Paul Robert Lloyd",
-		"url": "https://paulrobertlloyd.com/",
-		"description": "Paul is an independent designer, writer and speaker based in Brighton, England.",
-		"twitter": "paulrobertlloyd",
-		"source_url": "https://github.com/paulrobertlloyd/paulrobertlloyd-v4",
-		"featured": true
 	}
 ]
