@@ -17,6 +17,10 @@ Not sure where to start? Start by reading these:
 * [Level 1—Making Content with Data](https://www.zachleat.com/web/eleventy-tutorial-level-1/)
 * [Level 2—Adding Filters](https://www.zachleat.com/web/eleventy-tutorial-level-2/)
 
+## Using Jekyll?
+
+* [**Turn Jekyll up to Eleventy**, a guide to converting a Jekyll site to use Eleventy](https://24ways.org/2018/turn-jekyll-up-to-eleventy/) by {% avatar "paulrobertlloyd" %}Paul Robert Lloyd
+
 ## Quick Tips
 
 {% for tip in collections.quicktipssorted %}
@@ -27,7 +31,6 @@ Not sure where to start? Start by reading these:
 
 ## How To’s
 
-* [**Turn Jekyll up to Eleventy**, a guide to converting a Jekyll site to use Eleventy](https://24ways.org/2018/turn-jekyll-up-to-eleventy/) by {% avatar "paulrobertlloyd" %}Paul Robert Lloyd
 * [**Create Your Own Search** without a Third Party Service](https://www.hawksworx.com/blog/adding-search-to-a-jamstack-site/) by {% avatar "philhawksworth" %}Phil Hawksworth
 * Sample Project: [Import your **Notist** events to an Eleventy site](https://eleventy-notist-example.netlify.com/) by {% avatar "philhawksworth" %}Phil Hawksworth
 * Sample Project: [Import your **Medium** posts to an Eleventy site](https://rss-jamstack.netlify.com/) by {% avatar "philhawksworth" %}Phil Hawksworth
