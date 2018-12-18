@@ -84,14 +84,17 @@ a.buzzword:focus {
 	color: #fff;
 	text-decoration: none;
 }
-/*
-I wish there were a PE friendly way to do this but media queries don’t work work with @supports
-@media (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: reduce) {
+	.inlinelist .inlinelist-item:hover,
+	.inlinelist .inlinelist-item:focus,
+	.buzzword-list li:hover,
+	.buzzword-list li:focus,
 	.buzzword:hover,
 	.buzzword:focus {
-		animation: rainbow 1s infinite;
+		animation: none;
 	}
-}*/
+}
+
 .buzzword-list li:hover:after,
 .buzzword-list li:focus:after,
 .buzzword:hover:after,
