@@ -27,7 +27,7 @@ Wrote 1 file in 0.10 seconds
 * 2018 September—[Google’s V8 web site launches using Eleventy](https://twitter.com/v8js/status/1044202940494475265)
 * 2018 November—[Happy First Birthday, Eleventy! 🎉](https://www.zachleat.com/web/eleventy-birthday/)
 
-## Featured
+## Built With Eleventy
 
 <div class="featured-sites">{% for site in eleventysites -%}{% if site.disabled != true and site.url and site.featured -%}<a href="{{ site.url }}" class="elv-externalexempt">{% avatar site.twitter %}<span class="sr-only">{{ site.name | safe }}</span></a>{% endif -%}{% endfor -%}</div>
 

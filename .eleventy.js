@@ -39,8 +39,8 @@ module.exports = function(eleventyConfig) {
 
 		return (linkUrl ? `<a href="${linkUrl}">` : "") +
 			`<img src="/img/avatars/${filename}" class="avatar" alt="@${twitterName} Twitter Photo">` +
-			text + 
-			(linkUrl ? `</a>` : "") ;
+			text +
+			(linkUrl ? `</a>` : "");
 	});
 
 	eleventyConfig.addShortcode("codetitle", function(title, subtitle = "Filename") {
