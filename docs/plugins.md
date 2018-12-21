@@ -64,7 +64,7 @@ module.exports = function(eleventyConfig) {
 
 ### Namespace the plugin additions
 
-You can namespace parts of your configuration using `eleventyConfig.namespace`. This will add a string prefix to all filters, tags, helpers, collections, and transforms.
+You can namespace parts of your configuration using `eleventyConfig.namespace`. This will add a string prefix to all filters, tags, helpers, shortcodes (as of 0.7.0), collections, and transforms.
 
 {% codetitle ".eleventy.js" %}
 
