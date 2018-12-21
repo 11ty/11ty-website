@@ -7,7 +7,9 @@ relatedKey: pagination
 ---
 # Pagination
 
-To iterate over a data set and create pages for individual chunks of data, use pagination. Enable in your template’s front matter by adding the `pagination` key. Consider this Nunjucks template:
+To iterate over a data set and create pages for individual chunks of data, use pagination. Enable in your template’s front matter by adding the `pagination` key. Consider the following template:
+
+{% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
 ```markdown
@@ -31,9 +33,11 @@ testdata:
 
 We enable pagination and then give it a dataset with the `data` key. We control the number of items in each chunk with `size`. The pagination data variable will be populated with what you need to create each template. Here’s what’s in `pagination`:
 
+{% codetitle "JavaScript Object", "Syntax" %}
+
 ```js
 {
-  items: [], // current page’s chunk of data
+  items: [], // Array of current page’s chunk of data
   pageNumber: 0, // current page number, 0 indexed
 
   // Cool URLs, added in v0.6.0
@@ -41,15 +45,15 @@ We enable pagination and then give it a dataset with the `data` key. We control 
   previousPageHref: "…", // put inside <a href="{{ pagination.previousPageHref }}">Previous Page</a>
   firstPageHref: "…",
   lastPageHref: "…", 
-  hrefs: [], // all page hrefs (in order)
+  hrefs: [], // Array of all page hrefs (in order)
 
   // Uncool URLs (these include index.html file names)
   nextPageLink: "…", // put inside <a href="{{ pagination.nextPageLink }}">Next Page</a>
   previousPageLink: "…", // put inside <a href="{{ pagination.previousPageLink }}">Previous Page</a>
   firstPageLink: "…", // added in v0.6.0
   lastPageLink: "…", // added in v0.6.0
-  links: [], // all page links (in order)
-  pageLinks: [], // deprecated alias to `links`
+  links: [], // Array of all page links (in order)
+  pageLinks: [], // Array of deprecated alias to `links`
 
   data: …, // pointer to dataset
   size: 1, // chunk sizes
@@ -63,6 +67,8 @@ If the above file were named `paged.njk`, it would create two pages: `_site/page
 {% addedin "0.4.0" %}
 
 All of the examples thus far have paged Array data. Eleventy does allow paging objects too. Objects are resolved to pagination arrays using either the `Object.keys` or `Object.values` JavaScript functions. Consider the following Nunjucks template:
+
+{% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
 ```markdown
@@ -85,6 +91,8 @@ testdata:
 
 In this example, we would get 3 pages, with the paged items holding the object keys:
 
+{% codetitle "JavaScript Object", "Syntax" %}
+
 ```js
 [
   [ "itemkey1" ], // pagination.items[0] holds the object key
@@ -96,6 +104,8 @@ In this example, we would get 3 pages, with the paged items holding the object k
 You can use these keys to get access to the original value: `testdata[ pagination.items[0] ]`.
 
 If you’d like the pagination to iterate over the values instead of the keys (using `Object.values` instead of `Object.keys`), add `resolve: values` to your `pagination` front matter:
+
+{% codetitle "YAML Front Matter", "Syntax" %}
 
 {% raw %}
 ```markdown
@@ -114,6 +124,8 @@ testdata:
 
 This resolves to:
 
+{% codetitle "JavaScript Object", "Syntax" %}
+
 ```js
 [
   [ "itemvalue1" ], // pagination.items[0] holds the object value
@@ -125,6 +137,8 @@ This resolves to:
 ## Paginate a global or local data file
 
 [Read more about Template Data Files](/docs/data/). The only change here is that you point your `data` pagination key to the global or local data instead of data in the front matter. For example, consider the following `globalDataSet.json` file in your global data directory.
+
+{% codetitle "JavaScript Object", "Syntax" %}
 
 ```js
 {
@@ -138,6 +152,8 @@ This resolves to:
 ```
 
 Your front matter would look like this:
+
+{% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
 ```markdown
@@ -158,6 +174,8 @@ pagination:
 
 Normally, front matter does not support template syntax, but `permalink` does, enabling parametric URLs via pagination variables. Here’s an example of a permalink using the pagination page number:
 
+{% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
+
 {% raw %}
 ```markdown
 ---
@@ -169,6 +187,8 @@ permalink: different/page-{{ pagination.pageNumber }}/index.html
 Writes to `_site/different/page-0/index.html`, `_site/different/page-1/index.html`, et cetera.
 
 That means Nunjucks will also let you start your page numbers with 1 instead of 0, by just adding 1 here:
+
+{% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
 ```markdown
@@ -183,6 +203,8 @@ Writes to `_site/different/page-1/index.html`, `_site/different/page-2/index.htm
 ### Use page item data in the permalink
 
 You can do more advanced things like this:
+
+{% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
 ```markdown
@@ -203,6 +225,8 @@ Using a universal `slug` filter (transforms `My Item` to `my-item`), this output
 
 Ok, so `pagination.items[0]` is ugly. We provide an option to alias this to something different.
 
+{% codetitle "Liquid, Nunjucks", "Syntax" %}
+
 {% raw %}
 ```markdown
 ---
@@ -222,6 +246,8 @@ You can use the alias in your content too {{ wonder }}.
 This writes to `_site/different/item1/index.html` and `_site/different/item2/index.html`.
 
 If your chunk `size` is greater than 1, the alias will be an array instead of a single value.
+
+{% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
 ```markdown
@@ -249,6 +275,8 @@ This writes to `_site/different/item1/index.html` and `_site/different/item3/ind
 
 Use the `filter` pagination property to remove values from paginated data.
 
+{% codetitle "YAML Front Matter", "Syntax" %}
+
 ```markdown
 ---
 pagination:
@@ -265,6 +293,8 @@ testdata:
 
 Paginates to:
 
+{% codetitle "JavaScript Object", "Syntax" %}
+
 ```js
 [
   [ "item1" ],
@@ -273,6 +303,8 @@ Paginates to:
 ```
 
 This will work the same with paginated arrays or with `resolve: values` for paginated objects.
+
+{% codetitle "YAML Front Matter", "Syntax" %}
 
 ```markdown
 ---
@@ -291,6 +323,8 @@ testdata:
 
 Paginates to:
 
+{% codetitle "JavaScript Object", "Syntax" %}
+
 ```js
 [
   [ "itemvalue1" ],
@@ -300,7 +334,9 @@ Paginates to:
 
 ## Paging a Collection
 
-If you’d like to make a paginated list of all of your blog posts (any content with the tag `post` on it), use something like the following Liquid/Nunjucks template to iterate over a specific collection:
+If you’d like to make a paginated list of all of your blog posts (any content with the tag `post` on it), use something like the following template to iterate over a specific collection:
+
+{% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
 ```markdown

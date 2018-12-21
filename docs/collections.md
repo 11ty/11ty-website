@@ -6,11 +6,13 @@ tags:
 ---
 # Collections (using Tags)
 
-While [pagination](/docs/pagination/) allows you do iterate over a data set to create multiple templates, a collection allows you to group content in interesting ways. A piece of content can be a part of multiple collections, merely by assigning the same string value to the `tags` key in the front matter.
+While [pagination](/docs/pagination/) allows you do iterate over a data set to create multiple templates, a collection allows you to group content in interesting ways. A piece of content can be a part of multiple collections, if you assign the same string value to the `tags` key in the front matter.
 
 ## A Blog Example
 
 For a blog site, your individual post files may use a tag called `post`, but it can be whatever you want. In this example, `mypost.md` has a single tag `post`:
+
+{% codetitle "Markdown", "Syntax" %}
 
 ```
 ---
@@ -19,7 +21,9 @@ title: Hot Take—Social Media is Considered Harmful
 ---
 ```
 
-This will place this `mypost.md` into the `post` collection with all other pieces of content sharing the `post` tag. To reference this collection and make a list of all posts, use the `collections` object in any template (this example is using Nunjucks syntax):
+This will place this `mypost.md` into the `post` collection with all other pieces of content sharing the `post` tag. To reference this collection and make a list of all posts, use the `collections` object in any template:
+
+{% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
 ```
@@ -34,6 +38,8 @@ This will place this `mypost.md` into the `post` collection with all other piece
 ### Example: Navigation Links with an `active` class added for on the current page
 
 Compare the `post.url` and special Eleventy-provided `page.url` variable to find the current page. Building on the previous example:
+
+{% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
 ```
@@ -82,6 +88,8 @@ tags:
 This content would show up in the template data inside of `collections.cat` and `collections.dog`.
 
 ### Collection Item Data Structure
+
+{% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
 ```

@@ -9,11 +9,15 @@ tags:
 
 Add a `date` key to your front matter to override the default date (file creation) and customize how the file is sorted in a collection.
 
+{% codetitle "YAML Front Matter", "Syntax" %}
+
 ```
 ---
 date: 2016-01-01
 ---
 ```
+
+{% codetitle "YAML Front Matter", "Syntax" %}
 
 ```
 ---
