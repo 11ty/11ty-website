@@ -7,6 +7,10 @@
 	"ext": "md",
 	"url": "/docs/languages/markdown/"
 },{
+	"name": "JavaScript",
+	"ext": "11ty.js",
+	"url": "/docs/languages/javascript/"
+},{
 	"name": "Liquid",
 	"ext": "liquid",
 	"url": "/docs/languages/liquid/"

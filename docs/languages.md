@@ -4,14 +4,15 @@ menuSectionName: docs-languages
 submenuSortOrder:
   - languages/html
   - languages/markdown
-  - languages/liquid
+  - languages/javascript
+  - languages/jstl
   - languages/nunjucks
+  - languages/liquid
   - languages/handlebars
   - languages/mustache
   - languages/ejs
   - languages/haml
   - languages/pug
-  - languages/jstl
 tags:
   - docs
 ---
