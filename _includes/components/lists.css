@@ -36,6 +36,19 @@
 }
 .inlinelist .inlinelist-item code {
 	background-color: transparent;
+	font-size: 80%;
+	margin-left: 6px;
+	padding-left: 6px;
+	display: inline-block;
+	position: relative;
+}
+.inlinelist .inlinelist-item code:before {
+	content: " ";
+	border-left: 1px solid rgba(255,255,255,.8);
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	bottom: 2px;
 }
 a.buzzword {
 	text-decoration: underline;
