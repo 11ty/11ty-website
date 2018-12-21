@@ -24,9 +24,9 @@ Wrote 1 file in 0.10 seconds
 ## News
 
 * 2018 March—[Eleventy wins Google Open Source Award](https://www.zachleat.com/web/eleventy-google-award/)
-* 2018 September—[Google’s V8 web site launches using Eleventy](https://twitter.com/v8js/status/1044202940494475265)
+* 2018 September—[Google’s {% avatar "v8js" %}V8 web site launches using Eleventy](https://twitter.com/v8js/status/1044202940494475265)
 * 2018 November—[Happy First Birthday, Eleventy! 🎉](https://www.zachleat.com/web/eleventy-birthday/)
-* 2018 December—[Turn Jekyll up to Eleventy a lovely tutorial on 24 Ways by Paul Robert Lloyd](https://24ways.org/2018/turn-jekyll-up-to-eleventy/)
+* 2018 December—[Turn Jekyll up to Eleventy—a lovely tutorial by {% avatar "paulrobertlloyd" %}Paul Robert Lloyd](https://24ways.org/2018/turn-jekyll-up-to-eleventy/)
 
 ## Built With Eleventy
 

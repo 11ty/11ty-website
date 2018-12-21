@@ -72,6 +72,13 @@ blockquote img {
 .avatar {
 	vertical-align: middle;
 }
+li > a > .avatar {
+	width: auto;
+	height: 1.111111111111em; /* 20px /18 */
+	vertical-align: top;
+	margin-left: 4px;
+	margin-right: 4px;
+}
 
 /* Main */
 main {
