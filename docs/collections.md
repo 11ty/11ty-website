@@ -107,7 +107,7 @@ Note in the above example that we output the `post.data.title` value? Similarly,
 { inputPath: './test1.md',
   fileSlug: 'test1', // fileSlug was added in 0.5.3
   outputPath: './_site/test1/index.html',
-  url: 'test1/index.html',
+  url: '/test1/',
   date: 2018-01-09T04:10:17.000Z,
   data: { title: 'Test Title', tags: ['tag1', 'tag2'], date: 'Last Modified' },
   templateContent: '<h1>This is my title</h1>\n\n<p>This is content…' }
