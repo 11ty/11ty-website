@@ -456,7 +456,7 @@ main .elv-toc + h1 .direct-link {
 .elv-langlist-hed {
 	margin: 0;
 	display: inline;
-	vertical-align: text-top;
+	vertical-align: middle;
 	border: none;
 	font-size: 1.4em; /* 21px /15 */
 }
