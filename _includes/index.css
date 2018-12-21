@@ -72,7 +72,7 @@ blockquote img {
 .avatar {
 	vertical-align: middle;
 }
-li > a > .avatar {
+ul:not(.list-bare) > li > a > .avatar {
 	width: auto;
 	height: 1.111111111111em; /* 20px /18 */
 	vertical-align: top;
@@ -455,7 +455,8 @@ main .elv-toc + h1 .direct-link {
 }
 .elv-langlist-hed {
 	margin: 0;
-	float: left;
+	display: inline;
+	vertical-align: text-top;
 	border: none;
 	font-size: 1.4em; /* 21px /15 */
 }
