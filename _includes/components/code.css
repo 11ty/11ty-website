@@ -73,6 +73,9 @@ pre + .note {
 .highlight-line:not(:last-child) {
 	min-width: 100%;
 }
+.highlight-line .highlight-line:not(:last-child) {
+	min-width: 0;
+}
 
 .highlight-line-isdir {
   color: #b0b0b0;
