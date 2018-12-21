@@ -272,14 +272,16 @@ footer.elv-layout {
 }
 /* Header Hero */
 .elv-hero img {
-	max-width: 80vw;
-	max-height: 60vh;
+	width: 42.95774646vh;
+	height: 60vh;
+	background-color: #222;
 }
 .elv-header-docs .elv-hero {
 	float: left;
 	margin-right: 1.5em;
 }
 .elv-header-docs .elv-hero img {
+	width: auto;
 	height: 3em;
 }
 @media (min-width: 37.5em) { /* 600px */
