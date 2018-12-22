@@ -391,7 +391,7 @@ module.exports = {
 
 ### Transforms
 
-(These used to be called Filters but were renamed to Transforms, to avoid confusion with Template Filters).
+_These used to be called Filters but were renamed to Transforms to avoid confusion with Template Language Filters._
 
 Transforms can modify a template’s output. For example, use a transform to format/prettify an HTML file with proper whitespace.
 
@@ -401,7 +401,7 @@ Transforms can modify a template’s output. For example, use a transform to for
 | _Default_ | `{}` |
 | _Valid Options_ | Object literal |
 | _Command Line Override_ | _None_ |
-| _Configuration API_ | `addTransform` _(This is definitely available in Eleventy v0.3.3 but was likely in earlier versions as well)_ |
+| _Configuration API_ | `addTransform` {% addedin "0.3.3", "span" %} |
 
 #### Transforms Example: Minify HTML Output
 
@@ -465,8 +465,7 @@ module.exports = function(eleventyConfig) {
 
  {% addedin "0.6.0" %}
 
-Opts in to a full deep merge when combining the Data Cascade. This will use `lodash.mergewith` to combine Arrays and deep merge Objects, rather than a simple top-level merge using `Object.assign`. Read more at [Issue #147](https://github.com/11ty/eleventy/issues/147). This will likely become the default in an upcoming major version.
-
+Opts in to a full deep merge when combining the Data Cascade. This will use something like `lodash.mergewith` to combine Arrays and deep merge Objects, rather than a simple top-level merge using `Object.assign`. Read more at [Issue #147](https://github.com/11ty/eleventy/issues/147). This will likely become the default in an upcoming major version.
 
 {% codetitle ".eleventy.js" %}
 
