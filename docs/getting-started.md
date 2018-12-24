@@ -40,7 +40,7 @@ Wrote 0 files in 0.02 seconds
 Makes sense—this is an empty folder with no templates inside. So, let’s make a few templates.
 
 ```bash
-~/eleventy-sample $ echo '<!doctype html><title>Page title</title>' > index.html
+~/eleventy-sample $ echo '<!doctype html><html><head><title>Page title</title></head><body><p>Hi</p></body></html>' > index.html
 ~/eleventy-sample $ echo '# Page header' > README.md
 ```
 
