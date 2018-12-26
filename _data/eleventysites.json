@@ -279,5 +279,12 @@
 		"description": "Front-end designer & developer",
 		"twitter": "bradtaunt",
 		"source_url": "https://github.com/bradleytaunt/eleventy-taunt"
+	},
+	{
+		"name": "Zell Liew",
+		"url": "https://zellwk.com",
+		"description": "The place where Zell shares everything he knows about frontend development. Contains 300++ pages worth of articles and page content. Also has a workflow that includes Gulp for dealing with assets and circleci for continuous deployment.",
+		"twitter": "zellwk",
+		"source_url": "https://github.com/zellwk/zellwk.com"
 	}
 ]
