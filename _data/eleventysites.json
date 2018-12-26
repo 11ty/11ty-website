@@ -287,11 +287,18 @@
 		"twitter": "zellwk",
 		"source_url": "https://github.com/zellwk/zellwk.com"
 	},
-  {
-    "name": "Benedikt Meurer",
+	{
+		"name": "Benedikt Meurer",
 		"url": "https://benediktmeurer.de",
 		"description": "JavaScript engine hacker",
 		"twitter": "bmeurer",
 		"source_url": "https://github.com/bmeurer/benediktmeurer.de"
-  }
+	},
+	{
+		"name": "Nanda Okitavera",
+		"url": "https://okitavera.me/",
+		"description": "I am UX Designer and Kotlin-Android Developer from an exotic country called Indonesia.",
+		"twitter": "okitavera",
+		"source_url": "https://github.com/okitavera/okitavera.me"
+	}
 ]
