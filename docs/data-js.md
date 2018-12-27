@@ -14,11 +14,6 @@ This file applies to both [Global Data Files](/docs/data-global/) (`*.js` inside
 * [Change the file suffix `.11tydata` for Template/Directory data files](/docs/config/#change-file-suffix-for-template-and-directory-data-files)
 * [Watch JavaScript Dependencies](/docs/config/#watch-javascript-dependencies)
 
-## Examples
-
-- [Example: Using GraphQL](#example%3A-using-graphql)
-- [Example: Exposing Environment Variables](#example%3A-exposing-environment-variables)
-
 ## Using JS Data Files
 
 You can export data from a JavaScript file to add data, too. This allows you to execute arbitrary code to fetch data at build time.
@@ -68,7 +63,12 @@ module.exports = async function() {
 };
 ```
 
-## Example: Using GraphQL
+## Examples
+
+- [Example: Using GraphQL](#example%3A-using-graphql)
+- [Example: Exposing Environment Variables](#example%3A-exposing-environment-variables)
+
+### Example: Using GraphQL
 
 This “Hello World” GraphQL example works out of the box with Eleventy:
 
@@ -90,7 +90,7 @@ module.exports = function() {
 };
 ```
 
-## Example: Exposing Environment Variables
+### Example: Exposing Environment Variables
 
 You can expose environment variables (e.g. `ELEVENTY_ENV`) to your templates by using [Node.js’ `process.env` property](https://nodejs.org/api/process.html#process_process_env).
 
@@ -104,7 +104,7 @@ module.exports = {
 
 Saving this as `myProject.js` in your global data directory (by default, this is `_data/`) gives you access to the `myProject.environment` variable in your templates.
 
-### Sample commands
+#### Sample commands
 
 ```
 # Serve for Development
@@ -114,7 +114,7 @@ ELEVENTY_ENV=development npx eleventy --serve
 ELEVENTY_ENV=production npx eleventy
 ```
 
-### Template Usage
+#### Template Usage
 
 Working from our [Inline CSS Quick Tip](/docs/quicktips/inline-css/), we can modify the output to only minify our CSS if we’re building for production:
 
