@@ -7,6 +7,10 @@ tags:
 
 Your global data folder is controlled by the [`dir.data` configuration option](/docs/config/#directory-for-global-data-files). All `*.json` and `module.exports` values from [`*.js` files](/docs/data-js/) in this directory will be added into a global data object available to all templates.
 
+## Related Configuration
+
+* [Default Template Engine for Global Data Files](/docs/config/#default-template-engine-for-global-data-files)
+
 ## Example
 
 Consider a JSON data file located at `_data/userList.json` with the following content:

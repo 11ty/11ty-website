@@ -254,3 +254,7 @@ module.exports = function(data) {
 };
 ```
 {% endraw %}
+
+## Related Configuration
+
+* [Watch JavaScript Dependencies](/docs/config/#watch-javascript-dependencies)

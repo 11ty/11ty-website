@@ -24,7 +24,7 @@ Writing ./README/index-o.html from ./README/index.html
 
 If you’re going to use `--formats=html`, it’s probably best not using the same input and output directories.
 
-Moreover, you may notice in the above output that the second template wrote to `index-o.html`. When the input and output directories are the same _and_ the source template is named `index.html`, we add an `-o` suffix to avoid overwriting itself. This is a special case that only applies to `index.html` filenames. You can customize the `-o` suffix with the `htmlOutputSuffix` configuration option.
+Moreover, you may notice in the above output that the second template wrote to `index-o.html`. When the input and output directories are the same _and_ the source template is named `index.html`, we add an `-o` suffix to avoid overwriting itself. This is a special case that only applies to `index.html` filenames. You can customize the `-o` suffix with the [`htmlOutputSuffix` configuration option](/docs/config/#change-exception-case-suffix-for-html-files).
 
 ## File Creation Dates reset on Continuous Integration server
 

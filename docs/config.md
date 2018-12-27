@@ -48,18 +48,11 @@ module.exports = function(eleventyConfig) {
 
 This allows you further customization options using Eleventy’s provided helper methods.
 
-### Add Tags/Filters
-
-Read more about [Tags and Filters](/docs/filters/)
-
-### Add Collections
-
-Read more about [Collections](/docs/collections/) and [Advanced Collection Filtering and Sorting](/docs/collections/#advanced-custom-filtering-and-sorting).
-
-### Use Plugins
-
-Read more about [Plugins](/docs/plugins/).
-
+* Add [Filters](/docs/filters/).
+* Add [Shortcodes](/docs/shortcodes/).
+* Add [Custom Tags](/docs/custom-tags/).
+* Add custom [Collections](/docs/collections/) and use [Advanced Collection Filtering and Sorting](/docs/collections/#advanced-custom-filtering-and-sorting).
+* Add some [Plugins](/docs/plugins/).
 
 ## Configuration Options
 
@@ -79,7 +72,8 @@ Read more about [Plugins](/docs/plugins/).
   "Change File Suffix for Template and Directory Data Files",
   "Transforms",
   "Linters",
-  "Data Deep Merge"
+  "Data Deep Merge",
+  "Watch JavaScript Dependencies"
 ] %}
 {%- for link in toc %}
 * [{{ link }}](#{{ link | slug }})
@@ -463,7 +457,7 @@ module.exports = function(eleventyConfig) {
 
 ### Data Deep Merge
 
- {% addedin "0.6.0" %}
+{% addedin "0.6.0" %}
 
 Opts in to a full deep merge when combining the Data Cascade. This will use something like `lodash.mergewith` to combine Arrays and deep merge Objects, rather than a simple top-level merge using `Object.assign`. Read more at [Issue #147](https://github.com/11ty/eleventy/issues/147). This will likely become the default in an upcoming major version.
 
@@ -498,6 +492,22 @@ override:tags: []
 ```
 
 Even though normally the `posts/firstpost.md` file would inherit the `posts` tag from the directory data file (per normal [data cascade rules](/docs/data/)), we can override the `tags` value to be an empty array to opt-out of this behavior.
+
+### Watch JavaScript Dependencies
+
+ {% addedin "0.7.0" %}
+
+When in `--watch` mode, Eleventy will spider the dependencies of your [JavaScript Templates](/docs/languages/javascript/) (`.11ty.js`), [JavaScript Data Files](/docs/data-js/) (`.11tydata.js` or `_data/**/*.js`), or Configuration File (usually `.eleventy.js`) to watch those files as well (`node_modules` are exempted). This feature is _enabled by default_.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // Enabled by default
+  eleventyConfig.setWatchJavaScriptDependencies(false);
+};
+```
+
 
 <!--
 ### Experiments
