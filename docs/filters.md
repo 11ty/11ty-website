@@ -9,19 +9,37 @@ tags:
   - related-nunjucks
   - related-liquid
   - related-handlebars
+  - related-javascript
 ---
 # Filters
 
 Various template engines can be extended with custom filters to modify content. Here’s an example:
 
+{% codetitle "Nunjucks or Liquid", "Syntax" %}
+
 {% raw %}
 ```html
-<!-- Nunjucks and Liquid use the same syntax -->
 <h1>{{ name | makeUppercase }}</h1>
 ```
 {% endraw %}
 
-This can be added using the [Configuration API](/docs/config/#using-the-configuration-api). Here are a few examples:
+{% codetitle "Handlebars", "Syntax" %}
+
+{% raw %}
+```html
+<h1>{{ makeUppercase name }}</h1>
+```
+{% endraw %}
+
+{% codetitle "JavaScript", "Syntax" %}
+
+```js
+module.exports = function({name}) {
+  return `<h1>${this.makeUppercase(name)}</h1>`;
+};
+```
+
+These can be added using the [Configuration API](/docs/config/#using-the-configuration-api). Here are a few examples:
 
 {% codetitle ".eleventy.js" %}
 
@@ -35,6 +53,9 @@ module.exports = function(eleventyConfig) {
   
   // Handlebars Filter
   eleventyConfig.addHandlebarsHelper("makeUppercase", function(value) { … });
+
+  // JavaScript Template Function
+  eleventyConfig.addJavaScriptFunction("makeUppercase", function(value) { … });
   
   // or, use a Universal filter (an alias for all of the above)
   eleventyConfig.addFilter("makeUppercase", function(value) { … });
@@ -43,11 +64,11 @@ module.exports = function(eleventyConfig) {
 
 Read more about filters on the individual Template Language documentation pages:
 
-{% templatelangs templatetypes, page, ["njk", "liquid", "hbs"], "#filters" %}
+{% templatelangs templatetypes, page, ["njk", "liquid", "hbs", "11ty.js"], "#filters" %}
 
 ## Universal Filters
 
-Universal filters can be added in a single place and are available to multiple template engines, simultaneously. This is currently supported in Nunjucks, Liquid, and Handlebars.
+Universal filters can be added in a single place and are available to multiple template engines, simultaneously. This is currently supported in JavaScript, Nunjucks, Liquid, and Handlebars.
 
 {% codetitle ".eleventy.js" %}
 

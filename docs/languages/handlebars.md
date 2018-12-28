@@ -39,6 +39,9 @@ module.exports = function(eleventyConfig) {
 | ✅ [Eleventy Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{{ filterName myObject }}{% endraw %}` Read more about [Filters](/docs/filters/). |
 | ✅ [Shortcodes](/docs/shortcodes/) | `{% raw %}{{ uppercase name }}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/). {% addedin "0.5.0", "span" %}|
 
+
+<span id="filters"></span><span id="shortcodes"></span>
+
 ## Helpers
 
 Helpers are used to transform or modify content. You can add Handlebars specific helpers, but you probably want to add a [Universal shortcode](/docs/filters/) instead.

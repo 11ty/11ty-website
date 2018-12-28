@@ -1,5 +1,11 @@
 ---
 subtitle: JavaScript
+relatedKey: javascript
+relatedTitle: Template Language—JavaScript
+tags:
+  - docs-languages
+  - related-filters
+  - related-shortcodes
 layout: layouts/langs.njk
 ---
 | Eleventy Short Name | File Extension | NPM Package |
@@ -194,7 +200,9 @@ class Test {
 module.exports = Test;
 ```
 
-{% callout "info" %}While <code>templateEngineOverride: 11ty.js,md</code> works to add markdown support, the special behavior of JavaScript does not allow template engines to be supported here. This will be mitigated with <a href="https://github.com/11ty/eleventy/issues/148">Enhancement Request Issue #148</a>.{% endcallout %}
+{% callout "info" %}While <code>templateEngineOverride: 11ty.js,md</code> works to add markdown support, the special behavior of JavaScript does not allow other template engines to be supported here (e.g. <code>templateEngineOverride: njk,md</code>). This will be mitigated with <a href="https://github.com/11ty/eleventy/issues/148">Enhancement Request Issue #148</a>.{% endcallout %}
+
+<span id="filters"></span><span id="shortcodes"></span>
 
 ## JavaScript Template Functions
 
