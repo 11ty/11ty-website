@@ -1,5 +1,6 @@
 ---
 subtitle: JavaScript
+addedInVersion: 0.7.0
 relatedKey: javascript
 relatedTitle: Template Language—JavaScript
 tags:
@@ -14,7 +15,7 @@ layout: layouts/langs.njk
 | ------------------- | -------------- | ----------- |
 | `11ty.js`              | `.11ty.js`        | N/A         |
 
-{% addedin "0.7.0" %} Eleventy supports many different types of JavaScript content that will be parsed as Eleventy templates:
+Eleventy supports many different types of JavaScript content that will be parsed as Eleventy templates:
 
 ## String
 

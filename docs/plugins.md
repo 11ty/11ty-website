@@ -3,9 +3,7 @@ subtitle: Plugins
 tags:
   - docs-config
 ---
-# Plugins
-
-{% addedin "0.2.13" %}
+# Plugins {% addedin "0.2.13", "span" %}
 
 Plugins are custom code that Eleventy can import into a project from an external repository.
 
@@ -42,9 +40,9 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Plugin Configuration Options
+### Plugin Configuration Options {% addedin "0.5.4", "span" %}
 
-{% addedin "0.5.4", "span" %} Use an optional second argument to `addPlugin` to customize your plugin’s behavior. These options are specific to the plugin. Please consult the plugin’s documentation (e.g. the [`eleventy-plugin-syntaxhighlight` README](https://github.com/11ty/eleventy-plugin-syntaxhighlight/blob/master/README.md)) to learn what options are available to you.
+Use an optional second argument to `addPlugin` to customize your plugin’s behavior. These options are specific to the plugin. Please consult the plugin’s documentation (e.g. the [`eleventy-plugin-syntaxhighlight` README](https://github.com/11ty/eleventy-plugin-syntaxhighlight/blob/master/README.md)) to learn what options are available to you.
 
 ```js
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");

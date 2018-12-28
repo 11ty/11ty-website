@@ -21,9 +21,7 @@ You can override a `.liquid` file’s template engine. Read more at [Changing a 
 
 Rather than constantly fixing outdated documentation, [find `getLiquidOptions` in `Liquid.js`](https://github.com/11ty/eleventy/blob/master/src/Engines/Liquid.js). These options are different than the [default `liquidjs` options](https://github.com/harttle/liquidjs#options).
 
-### Optional: Use your own options
-
-{% addedin "0.2.15" %}
+### Optional: Use your own options {% addedin "0.2.15", "span" %}
 
 It’s recommended to use the Configuration API to set override the default options above.
 
@@ -36,9 +34,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Optional: Set your own Library instance
-
-{% addedin "0.3.0" %}
+### Optional: Set your own Library instance {% addedin "0.3.0", "span" %}
 
 As an escape mechanism for advanced usage, pass in your own instance of the Liquid library using the Configuration API. See [all `liquidjs` options](https://github.com/harttle/liquidjs#options).
 

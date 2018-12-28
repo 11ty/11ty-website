@@ -17,9 +17,7 @@ You can override a `.hbs` file’s template engine. Read more at [Changing a Tem
 
 ## Handlebars Options
 
-### Optional: Set your own Library instance
-
-{% addedin "0.3.0" %}
+### Optional: Set your own Library instance {% addedin "0.3.0", "span" %}
 
 As an escape mechanism for advanced usage, pass in your own instance of the Handlebars library using the Configuration API.
 

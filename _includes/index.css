@@ -136,6 +136,7 @@ h1 {
 }
 main .elv-toc + h1 {
 	margin-top: 1em;
+	line-height: 1.1;
 }
 main h1:first-child,
 main .elv-toc + h1 {

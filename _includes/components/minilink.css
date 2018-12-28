@@ -35,6 +35,18 @@ p.minilink {
 	margin-left: 2em;
 	margin-bottom: 2em;
 }
+h1 .minilink,
+h2 .minilink,
+h3 .minilink,
+h4 .minilink {
+	font-size: 0.9375rem; /* 15px /16 */
+	vertical-align: middle;
+	margin-left: 1em;
+}
+h3 .minilink,
+h4 .minilink {
+	font-size: 0.8125rem; /* 13px /16 */
+}
 .minilink + pre[class*=language-] {
 	clear: both;
 }

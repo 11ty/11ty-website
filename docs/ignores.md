@@ -19,9 +19,9 @@ _drafts/
 secretNunjucksTemplates/anotherFolder/**/*.njk
 ```
 
-## Opt-out of using `.gitignore`
+## Opt-out of using `.gitignore` {% addedin "0.3.5", "span" %}
 
-{% addedin "0.3.5", "span" %} You can disable automatic use of your `.gitignore` file by using the Configuration API method: `eleventyConfig.setUseGitIgnore(false);`.
+You can disable automatic use of your `.gitignore` file by using the Configuration API method: `eleventyConfig.setUseGitIgnore(false);`.
 
 {% codetitle ".eleventy.js" %}
 

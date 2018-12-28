@@ -145,9 +145,7 @@ permalink: "/{{ page.date | date: '%Y/%m/%d' }}/index.html"
 
 Writes to `_site/2016/01/01/index.html`. There are a variety of ways that the page.date variable can be set (using `date` in your front matter is just one of them). Read more about [Content dates](/docs/dates/).
 
-### Ignore the output directory
-
-{% addedin "0.1.4" %}
+### Ignore the output directory {% addedin "0.1.4", "span" %}
 
 To remap your template’s output to a directory independent of the output directory (`--output`), use `permalinkBypassOutputDir: true` in your front matter.
 

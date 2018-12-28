@@ -50,9 +50,7 @@ module.exports = function(eleventyConfig) {
 
 See all of the [built-in tag implementations for LiquidJS](https://github.com/harttle/liquidjs/tree/master/tags).
 
-## Nunjucks example
-
-{% addedin "0.5.0" %}
+## Nunjucks example {% addedin "0.5.0", "span" %}
 
 * [Nunjucks: Custom Tags](https://mozilla.github.io/nunjucks/api.html#custom-tags)
 

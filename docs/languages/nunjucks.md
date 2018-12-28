@@ -17,9 +17,7 @@ You can override a `.njk` file’s template engine. Read more at [Changing a Tem
 
 ## Nunjucks Options
 
-### Optional: Use your Nunjucks Environment
-
-{% addedin "0.3.0" %}
+### Optional: Use your Nunjucks Environment {% addedin "0.3.0", "span" %}
 
 As an escape mechanism for advanced usage, pass in your own instance of a [Nunjucks Environment](https://mozilla.github.io/nunjucks/api.html#environment) using the Configuration API.
 
@@ -74,9 +72,7 @@ module.exports = function(eleventyConfig) {
 ```
 {% endraw %}
 
-### Asynchronous Nunjucks Filters
-
-{% addedin "0.2.13" %}
+### Asynchronous Nunjucks Filters {% addedin "0.2.13", "span" %}
 
 By default, almost all templating engines are synchronous. Nunjucks supports some asynchronous behavior, like filters. Here’s how that works:
 

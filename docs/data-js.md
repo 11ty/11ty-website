@@ -6,9 +6,7 @@ relatedLinks:
   /docs/config/#change-file-suffix-for-template-and-directory-data-files: Change the file suffix `.11tydata` for Template/Directory data files
   /docs/config/#watch-javascript-dependencies: Watch JavaScript Dependencies
 ---
-# JavaScript Data Files
-
-{% addedin "0.5.3" %}
+# JavaScript Data Files {% addedin "0.5.3", "span" %}
 
 This file applies to both [Global Data Files](/docs/data-global/) (`*.js` inside of your `_data` directory) and [Template and Directory Data Files](/docs/data-template-dir/) (`*.11tydata.js` files that are paired with a template file).
 

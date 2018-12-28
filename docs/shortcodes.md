@@ -11,9 +11,7 @@ tags:
   - related-handlebars
   - related-javascript
 ---
-# Shortcodes
-
-{% addedin "0.5.0" %}
+# Shortcodes {% addedin "0.5.0", "span" %}
 
 Various template engines can be extended with shortcodes for easy reusable content. This is sugar around Template Language [Custom Tags](/docs/custom-tags/). Here’s a few examples:
 
@@ -71,7 +69,11 @@ module.exports = function(eleventyConfig) {
   // JavaScript Template Function (New in 0.7.0)
   eleventyConfig.addJavaScriptFunction("user", function(firstName, lastName) { … });
 
-  // Universal Shortcodes (Adds to JavaScript, Liquid, Nunjucks, Handlebars)
+  // Universal Shortcodes are added to:
+  // * Liquid
+  // * Nunjucks
+  // * Handlebars
+  // * JavaScript (New in 0.7.0)
   eleventyConfig.addShortcode("user", function(firstName, lastName) { … });
 };
 ```
@@ -144,17 +146,21 @@ When adding paired shortcodes using the Configuration API, the first argument to
 module.exports = function(eleventyConfig) {
   // Liquid Shortcode
   eleventyConfig.addPairedLiquidShortcode("user", function(content, firstName, lastName) { … });
-  
+
   // Nunjucks Shortcode
   eleventyConfig.addPairedNunjucksShortcode("user", function(content, firstName, lastName) { … });
-  
+
   // Handlebars Shortcode
   eleventyConfig.addPairedHandlebarsShortcode("user", function(content, firstName, lastName) { … });
 
   // JavaScript Template Function (New in 0.7.0)
   eleventyConfig.addJavaScriptFunction("user", function(content, firstName, lastName) { … });
-  
-  // Universal Shortcodes (Adds to JavaScript, Liquid, Nunjucks, Handlebars)
+
+  // Universal Shortcodes are added to:
+  // * Liquid
+  // * Nunjucks
+  // * Handlebars
+  // * JavaScript (New in 0.7.0)
   eleventyConfig.addPairedShortcode("user", function(content, firstName, lastName) { … });
 };
 ```
@@ -171,7 +177,7 @@ Universal shortcodes are added in a single place and subsequently available to m
 
 ```js
 module.exports = function(eleventyConfig) {
-  // Universal Shortcodes adds to:
+  // Universal Shortcodes are added to:
   // * Liquid
   // * Nunjucks
   // * Handlebars
@@ -179,7 +185,7 @@ module.exports = function(eleventyConfig) {
   
   // Single Universal Shortcode
   eleventyConfig.addShortcode("myShortcode", function(firstName, lastName) { … });
-  
+
   // Paired Universal Shortcode
   eleventyConfig.addPairedShortcode("user", function(content, firstName, lastName) { … });
 };

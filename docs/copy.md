@@ -3,9 +3,7 @@ subtitle: Pass-through Copy
 tags:
   - docs-config
 ---
-# Pass-through File Copy
-
-{% addedin "0.2.7" %}
+# Pass-through File Copy  {% addedin "0.2.7", "span" %}
 
 Eleventy, by default, searches for any file in the input directory with an extension listed in the `templateFormats` configuration option. That means if you’ve listed `njk` in your `templateFormats`, we’ll look for any Nunjucks templates (files with the `.njk` file extension).
 
@@ -27,9 +25,7 @@ Although `css` is not currently a recognized Eleventy template, Eleventy will no
 
 You might also imagine using this for images by adding `"jpg"`, `"png"`, or maybe even `"webp"`.
 
-## Manual Passthrough Copy (Faster)
-
-{% addedin "0.2.14" %}
+## Manual Passthrough Copy (Faster) {% addedin "0.2.14", "span" %}
 
 Searching the entire directory structure for files to copy based on file extensions is not optimal with large directory structures. If we know what non-template static content we want to appear in our output, we can opt-in to specify _files_ or _directories_ for Eleventy to copy. This will probably speed up your build times. These entries are relative to your the root of your project and _not_ your Eleventy input directory.
 
@@ -52,9 +48,7 @@ module.exports = function(eleventyConfig) {
 
 As shown in the code sample above, this feature requires `passthroughFileCopy: true` in your Eleventy config file.
 
-## Passthrough All Content
-
-{% addedin "0.5.4" %}
+## Passthrough All Content {% addedin "0.5.4", "span" %}
 
 Given that global copy of all content in the directory may be a security risk, we do not copy anything that doesn’t match the file extensions listed in `templateFormats`. Note that we do provide a command line flag to bypass this behavior: `--passthroughall`. Intentionally, there is no configuration option to do this.
 

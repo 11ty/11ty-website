@@ -1,5 +1,5 @@
 ---
-subtitle: Usage
+subtitle: Command Line Usage
 tags:
 	- docs-getting-started
 ---

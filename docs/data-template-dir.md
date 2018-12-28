@@ -3,9 +3,7 @@ subtitle: Template and Directory Data Files
 tags:
   - docs-data
 ---
-# Template and Directory Specific Data Files
-
-{% addedin "0.2.14" %}
+# Template and Directory Specific Data Files {% addedin "0.2.14", "span" %}
 
 While you can provide [global data files](/docs/data-global/) to supply data to all of your templates, you may want some of your data to be available locally only to one specific template or to a directory of templates. For that use, we also search for JSON and [JavaScript Data Files](/docs/data-js/) in specific places in your directory structure.
 
@@ -31,9 +29,9 @@ For example, consider a template located at `posts/subdir/my-first-blog-post.md`
 
 _(Changed in Eleventy `v0.2.15` to search parent directories for data files—specifically step 4 above was added in the sequence)_
 
-### Change the `.11tydata.js` file suffix
+### Change the `.11tydata.js` file suffix {% addedin "0.5.3", "span" %}
 
-{% addedin "0.5.3", "span" %} Use the [Configuration API to change the file suffix](/docs/config/#change-file-suffix-for-template-and-directory-data-files) used to search for Eleventy data files.
+Use the [Configuration API to change the file suffix](/docs/config/#change-file-suffix-for-template-and-directory-data-files) used to search for Eleventy data files.
 
 ## Example: Apply a default layout to multiple templates
 

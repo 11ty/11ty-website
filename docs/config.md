@@ -82,7 +82,9 @@ This allows you further customization options using Eleventy’s provided helper
 
 ### Input Directory
 
-Controls the top level directory/file/glob that we’ll use to look for templates. Glob support was added in v0.6.0.
+Controls the top level directory/file/glob that we’ll use to look for templates.
+
+Glob support is {% addedin "0.6.0", "span" %}.
 
 | Input Directory |  |
 | --- | --- |
@@ -102,7 +104,7 @@ eleventy --input=.
 # A single file
 eleventy --input=README.md
 
-# A glob of files (added in v0.6.0)
+# A glob of files (New in v0.6.0)
 eleventy --input=*.md
 
 # A subdirectory
@@ -363,9 +365,8 @@ module.exports = {
 };
 ```
 
-### Change File Suffix for Template and Directory Data Files
-
-{% addedin "0.5.3", "span" %} When using [Template and Directory Specific Data Files](/docs/data-template-dir/), to prevent file name conflicts with non-Eleventy files in the project directory, we scope these files with a unique-to-Eleventy suffix. This key is customizable using `jsDataFileSuffix`. For example, using `.11tydata` for this value will search for `*.11tydata.js` and `*.11tydata.json` data files. Read more about [Template and Directory Specific Data Files](/docs/data-template-dir/).
+### Change File Suffix for Template and Directory Data Files {% addedin "0.5.3", "span" %}
+When using [Template and Directory Specific Data Files](/docs/data-template-dir/), to prevent file name conflicts with non-Eleventy files in the project directory, we scope these files with a unique-to-Eleventy suffix. This key is customizable using `jsDataFileSuffix`. For example, using `.11tydata` for this value will search for `*.11tydata.js` and `*.11tydata.json` data files. Read more about [Template and Directory Specific Data Files](/docs/data-template-dir/).
 
 | File Suffix |  |
 | --- | --- |
@@ -456,9 +457,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Data Deep Merge
-
-{% addedin "0.6.0" %}
+### Data Deep Merge {% addedin "0.6.0", "span" %}
 
 Opts in to a full deep merge when combining the Data Cascade. This will use something like `lodash.mergewith` to combine Arrays and deep merge Objects, rather than a simple top-level merge using `Object.assign`. Read more at [Issue #147](https://github.com/11ty/eleventy/issues/147). This will likely become the default in an upcoming major version.
 
@@ -494,9 +493,7 @@ override:tags: []
 
 Even though normally the `posts/firstpost.md` file would inherit the `posts` tag from the directory data file (per normal [data cascade rules](/docs/data/)), we can override the `tags` value to be an empty array to opt-out of this behavior.
 
-### Watch JavaScript Dependencies
-
- {% addedin "0.7.0" %}
+### Watch JavaScript Dependencies {% addedin "0.7.0", "span" %}
 
 When in `--watch` mode, Eleventy will spider the dependencies of your [JavaScript Templates](/docs/languages/javascript/) (`.11ty.js`), [JavaScript Data Files](/docs/data-js/) (`.11tydata.js` or `_data/**/*.js`), or Configuration File (usually `.eleventy.js`) to watch those files too. Files in `node_modules` directories are ignored. This feature is _enabled by default_.
 
