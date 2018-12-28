@@ -6,6 +6,8 @@ tags:
   - docs-languages
   - related-filters
   - related-shortcodes
+relatedLinks:
+  /docs/config/#watch-javascript-dependencies: Watch JavaScript Dependencies
 layout: layouts/langs.njk
 ---
 | Eleventy Short Name | File Extension | NPM Package |
@@ -262,7 +264,3 @@ module.exports = function(data) {
 };
 ```
 {% endraw %}
-
-## Related Configuration
-
-* [Watch JavaScript Dependencies](/docs/config/#watch-javascript-dependencies)

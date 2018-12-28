@@ -1,6 +1,8 @@
 ---
 subtitle: HTML
 layout: layouts/langs.njk
+relatedLinks:
+  /docs/config/#default-template-engine-for-html-files: Default Template Engine for HTML Files
 ---
 | Eleventy Short Name | File Extension | NPM Package |
 | ------------------- | -------------- | ----------- |
@@ -12,6 +14,3 @@ HTML files can be optionally pre-processed with an additional template engine. T
 Careful with this template type when using the same <code>--input</code> and <code>--output</code> directory (this is not the default). Read more at <a href="/docs/pitfalls/">Common Pitfalls</a>.
 {% endcallout %}
 
-## Related Configuration
-
-* [Default Template Engine for HTML Files](/docs/config/#default-template-engine-for-html-files)

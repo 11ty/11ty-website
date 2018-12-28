@@ -498,7 +498,7 @@ Even though normally the `posts/firstpost.md` file would inherit the `posts` tag
 
  {% addedin "0.7.0" %}
 
-When in `--watch` mode, Eleventy will spider the dependencies of your [JavaScript Templates](/docs/languages/javascript/) (`.11ty.js`), [JavaScript Data Files](/docs/data-js/) (`.11tydata.js` or `_data/**/*.js`), or Configuration File (usually `.eleventy.js`) to watch those files as well (`node_modules` are exempted). This feature is _enabled by default_.
+When in `--watch` mode, Eleventy will spider the dependencies of your [JavaScript Templates](/docs/languages/javascript/) (`.11ty.js`), [JavaScript Data Files](/docs/data-js/) (`.11tydata.js` or `_data/**/*.js`), or Configuration File (usually `.eleventy.js`) to watch those files too. Files in `node_modules` directories are ignored. This feature is _enabled by default_.
 
 {% codetitle ".eleventy.js" %}
 

@@ -18,12 +18,15 @@ menuSortOrder:
 
 {{ content | safe }}
 
-{% if relatedKey and collections[ "related-" + relatedKey ].length %}
+{% if relatedLinks or (relatedKey and collections[ "related-" + relatedKey ].length) %}
 <hr>
 <h3>Related Docs</h3>
 <ul>
 {% for related in collections[ "related-" + relatedKey ] %}
 	<li><a href="{{ related.url }}">{{ related.data.relatedTitle }}</a></li>
 {%- endfor %}
+{% for url,title in relatedLinks %}
+	<li><a href="{{ url }}">{{ title }}</a></li>
+{% endfor %}
 </ul>
 {% endif %}
