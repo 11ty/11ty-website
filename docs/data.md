@@ -35,8 +35,7 @@ let page = {
   // URL can be used in <a href> to link to other templates
   url: "/current/page/myFile/",
   
-  // New in Eleventy v0.3.4
-  // Mapped from inputPath, useful for permalinks
+  // Mapped from inputPath, useful for permalinks (New in v0.3.4)
   fileSlug: "myFile",
   
   // JS Date Object for current page (used to sort collections)
@@ -46,9 +45,8 @@ let page = {
   // Note: this will include your input directory path!
   inputPath: "./current/page/myFile.md",
   
-  // Eleventy internals
-  // You probably won’t use `outputPath`: `url` is more useful.
   // Depends on your output directory (the default is _site)
+  // You probably won’t use this: `url` is better.
   outputPath: "./_site/current/page/myFile/index.html"
 };
 ```
