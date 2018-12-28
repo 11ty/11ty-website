@@ -1,5 +1,5 @@
-const htmlmin = require("html-minifier");
 const chalk = require("chalk");
+const htmlmin = require("html-minifier");
 const CleanCSS = require("clean-css");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
@@ -67,7 +67,11 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("favicon.ico");
 
 	eleventyConfig.addFilter("cssmin", function(code) {
-		return new CleanCSS({}).minify(code).styles;
+		if(process.env.ELEVENTY_PRODUCTION) {
+			return new CleanCSS({}).minify(code).styles;
+		} else {
+			return code;
+		}
 	});
 
 	eleventyConfig.addFilter("sortMenu", function(collection, sortOrder) {
@@ -149,7 +153,7 @@ module.exports = function(eleventyConfig) {
 
 	if( cfg.minifyHtml ) {
 		eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-			if( outputPath.endsWith(".html") ) {
+			if( process.env.ELEVENTY_PRODUCTION && outputPath.endsWith(".html") ) {
 				let minified = htmlmin.minify(content, {
 					useShortDoctype: true,
 					removeComments: true,
