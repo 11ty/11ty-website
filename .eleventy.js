@@ -44,7 +44,7 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addShortcode("codetitle", function(title, subtitle = "Filename") {
-		return `<div class="codetitle"><b>${subtitle} </b>${title}</div>`;
+		return `<div class="codetitle codetitle-left"><b>${subtitle} </b>${title}</div>`;
 	});
 
 	eleventyConfig.addPairedShortcode("minilink", function(text, href) {

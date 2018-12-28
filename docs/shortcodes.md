@@ -43,6 +43,7 @@ Various template engines can be extended with shortcodes for easy reusable conte
 {% endraw %}
 
 {% codetitle "JavaScript", "Syntax" %}
+{% addedin "0.7.0" %}
 
 ```js
 module.exports = function({ firstName, lastName }) {
@@ -67,7 +68,7 @@ module.exports = function(eleventyConfig) {
   // Handlebars Shortcode
   eleventyConfig.addHandlebarsShortcode("user", function(firstName, lastName) { … });
 
-  // JavaScript Template Function
+  // JavaScript Template Function (New in 0.7.0)
   eleventyConfig.addJavaScriptFunction("user", function(firstName, lastName) { … });
 
   // Universal Shortcodes (Adds to JavaScript, Liquid, Nunjucks, Handlebars)
@@ -102,7 +103,6 @@ The shortcodes we saw above were nice, I suppose. But really, they are not all t
 
 {% raw %}
 ```html
-<!-- Liquid -->
 {% user firstName lastName %}
   Hello {{ someOtherVariable }}.
   
@@ -115,7 +115,6 @@ The shortcodes we saw above were nice, I suppose. But really, they are not all t
 
 {% raw %}
 ```html
-<!-- Handlebars -->
 {{# user firstName lastName }}
   Hello {{ someOtherVariable }}.
   
@@ -124,7 +123,9 @@ The shortcodes we saw above were nice, I suppose. But really, they are not all t
 ```
 {% endraw %}
 
+
 {% codetitle "JavaScript", "Syntax" %}
+{% addedin "0.7.0" %}
 
 ```js
 module.exports = function(data) {
@@ -150,10 +151,10 @@ module.exports = function(eleventyConfig) {
   // Handlebars Shortcode
   eleventyConfig.addPairedHandlebarsShortcode("user", function(content, firstName, lastName) { … });
 
-  // JavaScript Template Function
+  // JavaScript Template Function (New in 0.7.0)
   eleventyConfig.addJavaScriptFunction("user", function(content, firstName, lastName) { … });
   
-  // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
+  // Universal Shortcodes (Adds to JavaScript, Liquid, Nunjucks, Handlebars)
   eleventyConfig.addPairedShortcode("user", function(content, firstName, lastName) { … });
 };
 ```
@@ -164,13 +165,17 @@ Read more about using paired shortcodes on the individual Template Language docu
 
 ## Universal Shortcodes
 
-Universal shortcodes are added in a single place and subsequently available to multiple template engines, simultaneously. This is currently supported in JavaScript, Nunjucks, Liquid, and Handlebars template types.
+Universal shortcodes are added in a single place and subsequently available to multiple template engines, simultaneously. This is currently supported in JavaScript (New in 0.7.0), Nunjucks, Liquid, and Handlebars template types.
 
 {% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
-  // Universal Shortcodes (Adds to JavaScript, Liquid, Nunjucks, Handlebars)
+  // Universal Shortcodes adds to:
+  // * Liquid
+  // * Nunjucks
+  // * Handlebars
+  // * JavaScript (New in 0.7.0)
   
   // Single Universal Shortcode
   eleventyConfig.addShortcode("myShortcode", function(firstName, lastName) { … });

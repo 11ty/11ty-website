@@ -51,7 +51,7 @@ This allows you further customization options using Eleventy’s provided helper
 * Add [Filters](/docs/filters/).
 * Add [Shortcodes](/docs/shortcodes/).
 * Add [Custom Tags](/docs/custom-tags/).
-* Add [JavaScript Functions](/docs/languages/javascript/#javascript-template-functions).
+* Add [JavaScript Functions](/docs/languages/javascript/#javascript-template-functions) {% addedin "0.7.0", "span" %}
 * Add custom [Collections](/docs/collections/) and use [Advanced Collection Filtering and Sorting](/docs/collections/#advanced-custom-filtering-and-sorting).
 * Add some [Plugins](/docs/plugins/).
 

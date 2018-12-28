@@ -32,6 +32,7 @@ Various template engines can be extended with custom filters to modify content. 
 {% endraw %}
 
 {% codetitle "JavaScript", "Syntax" %}
+{% addedin "0.7.0" %}
 
 ```js
 module.exports = function({name}) {
@@ -54,7 +55,7 @@ module.exports = function(eleventyConfig) {
   // Handlebars Filter
   eleventyConfig.addHandlebarsHelper("makeUppercase", function(value) { … });
 
-  // JavaScript Template Function
+  // JavaScript Template Function (New in 0.7.0)
   eleventyConfig.addJavaScriptFunction("makeUppercase", function(value) { … });
   
   // or, use a Universal filter (an alias for all of the above)
@@ -68,13 +69,18 @@ Read more about filters on the individual Template Language documentation pages:
 
 ## Universal Filters
 
-Universal filters can be added in a single place and are available to multiple template engines, simultaneously. This is currently supported in JavaScript, Nunjucks, Liquid, and Handlebars.
+Universal filters can be added in a single place and are available to multiple template engines, simultaneously. This is currently supported in JavaScript (New in 0.7.0), Nunjucks, Liquid, and Handlebars.
 
 {% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
-  // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
+  // Universal filters adds to:
+  // * Liquid
+  // * Nunjucks
+  // * Handlebars
+  // * JavaScript (New in 0.7.0)
+
   eleventyConfig.addFilter("myFilter", function(value) {
     return value;
   });
