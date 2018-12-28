@@ -5,7 +5,8 @@
   "main": "_site/index.html",
   "scripts": {
     "assets": "cp node_modules/@11ty/logo/logo.png .",
-    "build": "npx eleventy"
+    "build": "npx eleventy",
+    "build-production": "ELEVENTY_PRODUCTION=true npx eleventy"
   },
   "repository": {
     "type": "git",
