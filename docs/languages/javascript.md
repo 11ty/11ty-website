@@ -29,6 +29,18 @@ Raw values will not have access to Data or [JavaScript Template Functions](#java
 module.exports = "<p>Zach</p>";
 ```
 
+Or [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals):
+
+{% codetitle "JavaScript", "Syntax" %}
+
+```js
+module.exports = `<p>These can
+span
+multiple
+lines!</p>`;
+```
+
+
 ### Buffer
 
 Some templating libraries return [Buffers](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_string_encoding) (e.g. [viperHTML](https://github.com/WebReflection/viperHTML)).
@@ -53,7 +65,7 @@ module.exports = new Promise((resolve, reject) => {
 
 ## Function
 
-Can return any [raw value](#raw-values) (e.g. String, Buffer, Promise).
+Can return any [raw value](#raw-values) (e.g. String, Buffer, Promise). Use [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) to embed data values without having to concatenate strings!
 
 {% codetitle "JavaScript", "Syntax" %}
 
@@ -63,7 +75,7 @@ module.exports = function(data) {
 };
 ```
 
-De-structuring syntax may read better to you:
+De-structuring syntax is a little bit easier to read:
 
 {% codetitle "JavaScript", "Syntax" %}
 
@@ -71,6 +83,14 @@ De-structuring syntax may read better to you:
 module.exports = function({name}) {
   return `<p>${name}</p>`;
 };
+```
+
+Maybe you like arrow functions:
+
+{% codetitle "JavaScript", "Syntax" %}
+
+```js
+module.exports = ({name}) => `<p>${name}</p>`;
 ```
 
 `async` functions work too:
@@ -200,7 +220,7 @@ module.exports = Test;
 
 ### Markdown and JavaScript
 
-Yes, you can use JavaScript as your preprocessor language for Markdown.
+Yes, you can use JavaScript as your preprocessor language for Markdown. Read more about [`templateEngineOverride`](/docs/languages/#overriding-the-template-language).
 
 {% codetitle "JavaScript and Markdown", "Syntax" %}
 
@@ -221,7 +241,7 @@ class Test {
 module.exports = Test;
 ```
 
-{% callout "info" %}While <code>templateEngineOverride: 11ty.js,md</code> works to add markdown support, the special behavior of JavaScript does not allow other template engines to be supported here (e.g. <code>templateEngineOverride: njk,md</code>). This will be mitigated with <a href="https://github.com/11ty/eleventy/issues/148">Enhancement Request Issue #148</a>.{% endcallout %}
+{% callout "info" %}While <code>templateEngineOverride: 11ty.js,md</code> works to add markdown support, the special behavior of JavaScript templates does not allow other template engines to be supported here (e.g. <code>templateEngineOverride: njk,md</code>). This will be mitigated with <a href="https://github.com/11ty/eleventy/issues/148">Enhancement Request Issue #148</a>.{% endcallout %}
 
 <span id="filters"></span><span id="shortcodes"></span>
 
