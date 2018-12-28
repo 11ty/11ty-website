@@ -17,9 +17,11 @@ layout: layouts/langs.njk
 
 Eleventy supports many different types of JavaScript content that will be parsed as Eleventy templates:
 
-## String
+## Raw Values
 
-Raw strings do not have access to data or [JavaScript Template Functions](#javascript-template-functions).
+Raw values will not have access to Data or [JavaScript Template Functions](#javascript-template-functions). [Use a function](#function) that returns a value instead.
+
+### String
 
 {% codetitle "JavaScript", "Syntax" %}
 
@@ -27,9 +29,9 @@ Raw strings do not have access to data or [JavaScript Template Functions](#javas
 module.exports = "<p>Zach</p>";
 ```
 
-## Buffer
+### Buffer
 
-Raw buffers do not have access to data or [JavaScript Template Functions](#javascript-template-functions).
+Some templating libraries return [Buffers](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_string_encoding) (e.g. [viperHTML](https://github.com/WebReflection/viperHTML)).
 
 {% codetitle "JavaScript", "Syntax" %}
 
@@ -37,9 +39,21 @@ Raw buffers do not have access to data or [JavaScript Template Functions](#javas
 module.exports = Buffer.from("<p>Zách</p>");
 ```
 
+### Promise
+
+{% codetitle "JavaScript", "Syntax" %}
+
+```js
+module.exports = new Promise((resolve, reject) => {
+  setTimeout(function() {
+    resolve("<p>Zach</p>");
+  }, 1000);
+});
+```
+
 ## Function
 
-Can return a String or a Buffer (or a Promise).
+Can return any [raw value](#raw-values) (e.g. String, Buffer, Promise).
 
 {% codetitle "JavaScript", "Syntax" %}
 
@@ -64,6 +78,8 @@ module.exports = function({name}) {
 {% codetitle "JavaScript", "Syntax" %}
 
 ```js
+const getAnAsyncThing = require("./lib/asyncThing");
+
 module.exports = async function(data) {
   return `<p>${await getAnAsyncThing()}</p>`;
 };
@@ -73,7 +89,7 @@ module.exports = async function(data) {
 
 Eleventy looks for classes that have a `render` method and uses `render` to return the content of the template. `render` methods can be `async`.
 
-`render` can return a String or a Buffer (or a Promise).
+`render` can return any [raw value](#raw-values) (e.g. String, Buffer, Promise).
 
 {% codetitle "JavaScript", "Syntax" %}
 
@@ -117,7 +133,7 @@ module.exports = Test;
 
 ### Permalinks
 
-The `permalink` data key will work here. It can be a `String` or a `Function`.
+The `permalink` data key will work here. Permalinks can be a [raw value](#raw-values) (e.g. String, Buffer, Promise) or a Function that returns any raw value.
 
 #### Permalink String
 
@@ -129,7 +145,7 @@ class Test {
     return {
       // Writes to "/my-permalink/index.html"
       permalink: "/my-permalink/"
-    }
+    };
   }
 
   render(data) { /* … */ }
@@ -140,6 +156,8 @@ module.exports = Test;
 
 #### Permalink Function
 
+Permalink Functions can return any [raw value](#raw-values) (e.g. String, Buffer, Promise).
+
 {% codetitle "JavaScript", "Syntax" %}
 
 ```js
@@ -149,7 +167,7 @@ class Test {
       key: "hello",
       // Writes to "/my-permalink/hello/index.html"
       permalink: data => `/my-permalink/${data.key}/`
-    }
+    };
   }
 
   render(data) { /* … */ }
@@ -171,7 +189,7 @@ class Test {
       title: "This is my blog post title",
       // Writes to "/this-is-my-blog-post-title/index.html"
       permalink: data => `/${this.slug(data.key)}/`
-    }
+    };
   }
 
   render(data) { /* … */ }
@@ -192,7 +210,7 @@ class Test {
     return {
       myName: "Zach",
       templateEngineOverride: "11ty.js,md"
-    }
+    };
   }
 
   render(data) {
