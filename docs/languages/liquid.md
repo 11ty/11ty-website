@@ -21,7 +21,7 @@ You can override a `.liquid` file’s template engine. Read more at [Changing a 
 
 Rather than constantly fixing outdated documentation, [find `getLiquidOptions` in `Liquid.js`](https://github.com/11ty/eleventy/blob/master/src/Engines/Liquid.js). These options are different than the [default `liquidjs` options](https://github.com/harttle/liquidjs#options).
 
-### Optional: Use your own options {% addedin "0.2.15", "span" %}
+### Optional: Use your own options {% addedin "0.2.15" %}
 
 It’s recommended to use the Configuration API to set override the default options above.
 
@@ -34,7 +34,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Optional: Set your own Library instance {% addedin "0.3.0", "span" %}
+### Optional: Set your own Library instance {% addedin "0.3.0" %}
 
 As an escape mechanism for advanced usage, pass in your own instance of the Liquid library using the Configuration API. See [all `liquidjs` options](https://github.com/harttle/liquidjs#options).
 
@@ -64,8 +64,8 @@ module.exports = function(eleventyConfig) {
 | ✅ Include (pass in Data)                                                    | `{% raw %}{% include 'user', user1: 'Ava', user2: 'Bill' %}{% endraw %}` (does not process front matter in the include file)                                                                                |
 | ✅ Custom Filters                                                            | `{% raw %}{{ name | upper }}{% endraw %}`  Read more about [Filters](/docs/filters/)                                                         |
 | ✅ [Eleventy Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{% name | filterName %}{% endraw %}` Read more about [Filters](/docs/filters/)                                                          |
-| ✅ [Custom Tags](/docs/custom-tags/) | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Custom Tags](/docs/custom-tags/). {% addedin "0.5.0", "span" %}|
-| ✅ [Shortcodes](/docs/shortcodes/) | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/). {% addedin "0.5.0", "span" %}|
+| ✅ [Custom Tags](/docs/custom-tags/) | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Custom Tags](/docs/custom-tags/). {% addedin "0.5.0" %}|
+| ✅ [Shortcodes](/docs/shortcodes/) | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/). {% addedin "0.5.0" %}|
 
 ### Quoted Include Paths
 

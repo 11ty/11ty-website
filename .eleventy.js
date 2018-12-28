@@ -57,7 +57,7 @@ module.exports = function(eleventyConfig) {
 			version = version.version;
 		}
 
-		tag = tag || "p";
+		tag = tag || "span";
 
 		return `<${tag} class="minilink minilink-addedin">New in v${version}</${tag}>`;
 	});

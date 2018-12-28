@@ -74,7 +74,7 @@ Note that front matter data set in a content template takes priority over layout
 
 {% include "datasources.md" %}
 
-## Layouts in a Subdirectory {% addedin "0.2.7", "span" %}
+## Layouts in a Subdirectory {% addedin "0.2.7" %}
 
 Layouts can be a full path inside of the _includes folder_, like so:
 
@@ -86,7 +86,7 @@ layout: layouts/base.njk
 
 This will look for `_includes/layouts/base.njk`.
 
-## Layout Aliasing {% addedin "0.2.8", "span" %}
+## Layout Aliasing {% addedin "0.2.8" %}
 
 Configuration API: use `eleventyConfig.addLayoutAlias(from, to)` to add layout aliases! Say you have a bunch of existing content using `layout: post`. If you don’t want to rewrite all of those values, just map `post` to a new file like this:
 

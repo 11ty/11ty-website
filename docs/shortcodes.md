@@ -11,7 +11,7 @@ tags:
   - related-handlebars
   - related-javascript
 ---
-# Shortcodes {% addedin "0.5.0", "span" %}
+# Shortcodes {% addedin "0.5.0" %}
 
 Various template engines can be extended with shortcodes for easy reusable content. This is sugar around Template Language [Custom Tags](/docs/custom-tags/). Here’s a few examples:
 

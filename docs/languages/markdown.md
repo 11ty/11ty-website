@@ -20,7 +20,7 @@ Markdown files are by default pre-processed as Liquid templates. <a href="/docs/
 
 The only listed options here are the ones that differ from the default `markdown-it` options. See [all `markdown-it` options and defaults](https://github.com/markdown-it/markdown-it#init-with-presets-and-options).
 
-### Optional: Set your own library instance {% addedin "0.3.0", "span" %}
+### Optional: Set your own library instance {% addedin "0.3.0" %}
 
 Pass in your own instance of the Markdown library using the Configuration API. See [all `markdown-it` options](https://github.com/markdown-it/markdown-it#init-with-presets-and-options).
 
@@ -37,7 +37,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-## Add your own plugins {% addedin "0.3.0", "span" %}
+## Add your own plugins {% addedin "0.3.0" %}
 
 Pass in your own `markdown-it` plugins using the `setLibrary` Configuration API method (building on the method described in “Using your own options”).
 

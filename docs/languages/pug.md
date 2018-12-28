@@ -12,7 +12,7 @@ You can override a `.pug` file’s template engine. Read more at [Changing a Tem
 
 ## Pug Options
 
-### Optional: Compile/Render Options {% addedin "0.2.15", "span" %}
+### Optional: Compile/Render Options {% addedin "0.2.15" %}
 
 Set compile/render options using the Configuration API. See all [Pug options](https://pugjs.org/api/reference.html#options).
 
@@ -22,7 +22,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Optional: Set your own Library instance {% addedin "0.3.0", "span" %}
+### Optional: Set your own Library instance {% addedin "0.3.0" %}
 
 As an escape mechanism for advanced usage, pass in your own instance of the Pug library using the Configuration API.
 

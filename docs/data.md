@@ -53,7 +53,7 @@ let page = {
 };
 ```
 
-#### `fileSlug` {% addedin "0.3.4", "span" %}
+#### `fileSlug` {% addedin "0.3.4" %}
 
 The `fileSlug` variable is mapped from inputPath and is useful for creating your own clean permalinks.
 

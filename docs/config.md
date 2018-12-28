@@ -51,7 +51,7 @@ This allows you further customization options using Eleventy’s provided helper
 * Add [Filters](/docs/filters/).
 * Add [Shortcodes](/docs/shortcodes/).
 * Add [Custom Tags](/docs/custom-tags/).
-* Add [JavaScript Functions](/docs/languages/javascript/#javascript-template-functions) {% addedin "0.7.0", "span" %}
+* Add [JavaScript Functions](/docs/languages/javascript/#javascript-template-functions) {% addedin "0.7.0" %}
 * Add custom [Collections](/docs/collections/) and use [Advanced Collection Filtering and Sorting](/docs/collections/#advanced-custom-filtering-and-sorting).
 * Add some [Plugins](/docs/plugins/).
 
@@ -84,7 +84,7 @@ This allows you further customization options using Eleventy’s provided helper
 
 Controls the top level directory/file/glob that we’ll use to look for templates.
 
-Glob support is {% addedin "0.6.0", "span" %}.
+Glob support is {% addedin "0.6.0" %}.
 
 | Input Directory |  |
 | --- | --- |
@@ -269,7 +269,7 @@ Specify which types of templates should be transformed.
 | _Default_ | `html,liquid,ejs,md,hbs,mustache,haml,pug,njk` |
 | _Valid Options_ | Array of [template engine short names](/docs/languages/) |
 | _Command Line Override_ | `--formats` _(accepts a comma separated string)_ |
-| _Configuration API_ | `setTemplateFormats` {% addedin "0.2.14", "span" %} |
+| _Configuration API_ | `setTemplateFormats` {% addedin "0.2.14" %} |
 
 #### Examples
 
@@ -305,7 +305,7 @@ If your site lives in a different subdirectory (particularly useful with GitHub 
 | _Object Key_ | `pathPrefix` |
 | _Default_ | `/` |
 | _Valid Options_ | A prefix directory added to links |
-| _Command Line Override_ | `--pathprefix` {% addedin "0.2.11", "span" %} |
+| _Command Line Override_ | `--pathprefix` {% addedin "0.2.11" %} |
 
 #### Example
 
@@ -365,7 +365,7 @@ module.exports = {
 };
 ```
 
-### Change File Suffix for Template and Directory Data Files {% addedin "0.5.3", "span" %}
+### Change File Suffix for Template and Directory Data Files {% addedin "0.5.3" %}
 When using [Template and Directory Specific Data Files](/docs/data-template-dir/), to prevent file name conflicts with non-Eleventy files in the project directory, we scope these files with a unique-to-Eleventy suffix. This key is customizable using `jsDataFileSuffix`. For example, using `.11tydata` for this value will search for `*.11tydata.js` and `*.11tydata.json` data files. Read more about [Template and Directory Specific Data Files](/docs/data-template-dir/).
 
 | File Suffix |  |
@@ -397,7 +397,7 @@ Transforms can modify a template’s output. For example, use a transform to for
 | _Default_ | `{}` |
 | _Valid Options_ | Object literal |
 | _Command Line Override_ | _None_ |
-| _Configuration API_ | `addTransform` {% addedin "0.3.3", "span" %} |
+| _Configuration API_ | `addTransform` {% addedin "0.3.3" %} |
 
 #### Transforms Example: Minify HTML Output
 
@@ -431,7 +431,7 @@ Similar to Transforms, Linters are provided to analyze a template’s output wit
 | _Object Key_ | _N/A_ |
 | _Valid Options_ | Callback function |
 | _Command Line Override_ | _None_ |
-| _Configuration API_ | `addLinter` {% addedin "0.5.4", "span" %} |
+| _Configuration API_ | `addLinter` {% addedin "0.5.4" %} |
 
 #### Linters Example: Use Inclusive Language
 
@@ -457,7 +457,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Data Deep Merge {% addedin "0.6.0", "span" %}
+### Data Deep Merge {% addedin "0.6.0" %}
 
 Opts in to a full deep merge when combining the Data Cascade. This will use something like `lodash.mergewith` to combine Arrays and deep merge Objects, rather than a simple top-level merge using `Object.assign`. Read more at [Issue #147](https://github.com/11ty/eleventy/issues/147). This will likely become the default in an upcoming major version.
 
@@ -493,7 +493,7 @@ override:tags: []
 
 Even though normally the `posts/firstpost.md` file would inherit the `posts` tag from the directory data file (per normal [data cascade rules](/docs/data/)), we can override the `tags` value to be an empty array to opt-out of this behavior.
 
-### Watch JavaScript Dependencies {% addedin "0.7.0", "span" %}
+### Watch JavaScript Dependencies {% addedin "0.7.0" %}
 
 When in `--watch` mode, Eleventy will spider the dependencies of your [JavaScript Templates](/docs/languages/javascript/) (`.11ty.js`), [JavaScript Data Files](/docs/data-js/) (`.11tydata.js` or `_data/**/*.js`), or Configuration File (usually `.eleventy.js`) to watch those files too. Files in `node_modules` directories are ignored. This feature is _enabled by default_.
 
@@ -517,5 +517,5 @@ Experiments are experimental Eleventy features that need a public trial. Power u
 | _Object Key_ | _N/A_ |
 | _Valid Options_ | String |
 | _Command Line Override_ | _None_ |
-| _Configuration API_ | `addExperiment` {% addedin "0.6.0", "span" %} |
+| _Configuration API_ | `addExperiment` {% addedin "0.6.0" %} |
 -->

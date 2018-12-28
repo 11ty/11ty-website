@@ -10,7 +10,7 @@ You can override a `.haml` file’s template engine. Read more at [Changing a Te
 
 ## HAML Options
 
-### Optional: Set your own Library instance {% addedin "0.3.0", "span" %}
+### Optional: Set your own Library instance {% addedin "0.3.0" %}
 
 As an escape mechanism for advanced usage, pass in your own instance of the HAML library using the Configuration API.
 

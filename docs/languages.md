@@ -20,7 +20,7 @@ tags:
 
 {% templatelangs templatetypes, page %}
 
-## Overriding the Template Language {% addedin "0.2.14", "span" %}
+## Overriding the Template Language {% addedin "0.2.14" %}
 
 There are a couple of different ways you can tell Eleventy how you want to process a file:
 

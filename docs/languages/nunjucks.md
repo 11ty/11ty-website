@@ -17,7 +17,7 @@ You can override a `.njk` file’s template engine. Read more at [Changing a Tem
 
 ## Nunjucks Options
 
-### Optional: Use your Nunjucks Environment {% addedin "0.3.0", "span" %}
+### Optional: Use your Nunjucks Environment {% addedin "0.3.0" %}
 
 As an escape mechanism for advanced usage, pass in your own instance of a [Nunjucks Environment](https://mozilla.github.io/nunjucks/api.html#environment) using the Configuration API.
 
@@ -42,8 +42,8 @@ module.exports = function(eleventyConfig) {
 | ✅ Imports                                                                   | `{% raw %}{% import 'macros.njk' %}{% endraw %}` looks in `_includes/macros.njk` (does not process front matter)               |
 | ✅ Filters                                                                   | `{% raw %}{% name | filterName %}{% endraw %}` Read more about [Filters](/docs/filters/).                                |
 | ✅ [Eleventy Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{% name | filterName %}{% endraw %}` Read more about [Filters](/docs/filters/). |
-| ✅ [Custom Tags](/docs/custom-tags/) | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Custom Tags](/docs/custom-tags/). {% addedin "0.5.0", "span" %}|
-| ✅ [Shortcodes](/docs/shortcodes/) | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/). {% addedin "0.5.0", "span" %}|
+| ✅ [Custom Tags](/docs/custom-tags/) | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Custom Tags](/docs/custom-tags/). {% addedin "0.5.0" %}|
+| ✅ [Shortcodes](/docs/shortcodes/) | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/). {% addedin "0.5.0" %}|
 
 ## Filters
 
@@ -72,7 +72,7 @@ module.exports = function(eleventyConfig) {
 ```
 {% endraw %}
 
-### Asynchronous Nunjucks Filters {% addedin "0.2.13", "span" %}
+### Asynchronous Nunjucks Filters {% addedin "0.2.13" %}
 
 By default, almost all templating engines are synchronous. Nunjucks supports some asynchronous behavior, like filters. Here’s how that works:
 

@@ -17,7 +17,7 @@ You can override a `.hbs` file’s template engine. Read more at [Changing a Tem
 
 ## Handlebars Options
 
-### Optional: Set your own Library instance {% addedin "0.3.0", "span" %}
+### Optional: Set your own Library instance {% addedin "0.3.0" %}
 
 As an escape mechanism for advanced usage, pass in your own instance of the Handlebars library using the Configuration API.
 
@@ -35,7 +35,7 @@ module.exports = function(eleventyConfig) {
 | ✅ Partials                                                                  | `{% raw %}{{> user}}{% endraw %}` looks for `_includes/user.hbs` (does not process front matter)                                                                                             |
 | ✅ Helpers (Custom Tags)                                                                   | `{% raw %}{{ helperName myObject }}{% endraw %}` Handlebars calls them Helpers, but Eleventy calls them Shortcodes. Read more about [Shortcodes](/docs/shortcodes/) or [Custom Tags](/docs/custom-tags/).                                |
 | ✅ [Eleventy Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{{ filterName myObject }}{% endraw %}` Read more about [Filters](/docs/filters/). |
-| ✅ [Shortcodes](/docs/shortcodes/) | `{% raw %}{{ uppercase name }}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/). {% addedin "0.5.0", "span" %}|
+| ✅ [Shortcodes](/docs/shortcodes/) | `{% raw %}{{ uppercase name }}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/). {% addedin "0.5.0" %}|
 
 
 <span id="filters"></span><span id="shortcodes"></span>
