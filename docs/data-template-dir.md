@@ -7,7 +7,7 @@ tags:
 
 While you can provide [global data files](/docs/data-global/) to supply data to all of your templates, you may want some of your data to be available locally only to one specific template or to a directory of templates. For that use, we also search for JSON and [JavaScript Data Files](/docs/data-js/) in specific places in your directory structure.
 
-<em>Important exception:</em> Template and Directory Specific Data Files are **not** [preprocessed through a templating engine](/docs/data-preprocessing/). [Global Data files](/docs/data-global/) are.
+{% callout "info" %}<em>Important exception:</em> Template and Directory Specific Data Files are <strong>not</strong> <a href="/docs/data-preprocessing/">preprocessed through a templating engine</a>. <a href="/docs/data-global/">Global Data files</a> are.{% endcallout %}
 
 For example, consider a template located at `posts/subdir/my-first-blog-post.md`. Eleventy will look for data in the following places (starting with highest priority, local data keys override global data):
 
@@ -21,13 +21,11 @@ For example, consider a template located at `posts/subdir/my-first-blog-post.md`
     * `posts/subdir/subdir.11tydata.js` {% minilink "/docs/data-js" %}{% addedin "0.5.3" %}JavaScript Data Files{% endminilink %}
     * `posts/subdir/subdir.11tydata.json` {% addedin "0.5.3" %}
     * `posts/subdir/subdir.json`
-1. Parent Directory Data File (data applies to all templates in `posts/**/*`, including subdirectories)
+1. Parent Directory Data File (data applies to all templates in `posts/**/*`, including subdirectories) {% addedin "0.2.15" %}
     * `posts/posts.11tydata.js` {% minilink "/docs/data-js" %}{% addedin "0.5.3" %}JavaScript Data Files{% endminilink %}
     * `posts/posts.11tydata.json` {% addedin "0.5.3" %}
     * `posts/posts.json`
 1. [Global Data Files](/docs/data-global/) in `_data/*` (available to all templates)
-
-_(Changed in Eleventy `v0.2.15` to search parent directories for data files—specifically step 4 above was added in the sequence)_
 
 ### Change the `.11tydata.js` file suffix {% addedin "0.5.3" %}
 
