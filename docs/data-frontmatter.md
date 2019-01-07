@@ -25,6 +25,7 @@ Locally assigned front matter values override things further up the layout chain
 Here are a few special front matter keys you can assign:
 
 * `permalink`: Add in front matter to change the output target of the current template. Normally, you cannot use template syntax for variables in front matter, but `permalink` is an exception. [Read more about Permalinks](/docs/permalinks/).
+* `dynamicPermalink`: Enable or disable template syntax for the `permalink` key. [Read more](/permalinks/#disable-templating-in-permalinks).
 * `layout`: Wrap current template with a layout template found in the `_includes` folder. [Read more about Layouts](/docs/layouts/).
 * `pagination`: Enable to iterate over data. Output multiple HTML files from a single template. [Read more about Pagination](/docs/pagination/).
 * `tags`: A single string or array that identifies that a piece of content is part of a collection. Collections can be reused in any other template. [Read more about Collections](/docs/collections/).
