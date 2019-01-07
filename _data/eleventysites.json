@@ -24,11 +24,17 @@
 		"featured": true
 	},
 	{
+		"name": "Filament Group",
+		"url": "https://www.filamentgroup.com/",
+		"description": "We help companies design and build super-fast responsive sites and web apps that are simple to use and accessible to everyone.",
+		"twitter": "filamentgroup",
+		"featured": true
+	},
+	{
 		"url": "https://www.fontspeed.io/",
 		"name": "fontspeed",
 		"description": "A newsletter about loading your web fonts.",
-		"source_url": "https://github.com/fontspeed/fontspeed-teaser",
-		"disabled": true
+		"source_url": "https://github.com/fontspeed/fontspeed-teaser"
 	},
 	{
 		"url": "https://jamstack-comments.netlify.com/",
@@ -300,5 +306,38 @@
 		"description": "I am UX Designer and Kotlin-Android Developer from an exotic country called Indonesia.",
 		"twitter": "okitavera",
 		"source_url": "https://github.com/okitavera/okitavera.me"
+	},
+	{
+		"name": "Max Böck",
+		"url": "https://mxb.at/",
+		"description": "I’m Max Böck, a frontend web developer and designer based in Vienna, Austria.",
+		"twitter": "mxbck",
+		"source_url": "https://github.com/maxboeck/mxb"
+	},
+	{
+		"name": "Andrea Corinti",
+		"url": "https://www.andreacorinti.com/",
+		"description": "An Italian Web World citizen.",
+		"twitter": "AndreaCorinti",
+		"source_url": "https://github.com/andreacorinti/andreacorinti.com"
+	},
+	{
+		"name": "Developurrs",
+		"url": "https://developur.rs/",
+		"description": "An interview series where I talk to web professionals about their beloved pets...and tech, I suppose.",
+		"twitter": "developurrs"
+	},
+	{
+		"name": "Lookback",
+		"url": "https://lookback.io/",
+		"description": "Talk to your users. See how they’re using your app or website.",
+		"twitter": "lookback"
+	},
+	{
+		"name": "Cathy Dutton",
+		"url": "https://cathydutton.co.uk/",
+		"description": "I’m Cathy Dutton a human centered designer from Cheshire, I design and build inclusive services focusing on usability, accessibility and information architecture.",
+		"twitter": "cathy_dutton",
+		"source_url": "https://github.com/cathydutton/cathydutton.co.uk"
 	}
 ]
