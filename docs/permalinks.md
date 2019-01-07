@@ -113,6 +113,34 @@ permalink: subdir/{{ mySlug }}/index.html
 
 Writes to `_site/subdir/this-is-a-new-path/index.html`.
 
+### Disable templating in permalinks {% addedin "0.7.0" %}
+
+Some template syntaxes are nicer than others and you may want to opt-out of the templating engine here. Use the `dynamicPermalink` option in your front matter to disable this on a per-template basis. This has been a common hiccup for users of the Pug templating engine, for example.
+
+{% codetitle "YAML Front Matter", "Syntax" %}
+
+```
+---
+permalink: "/this-will-be-a-string-without-templating/"
+dynamicPermalink: false
+---
+```
+
+#### Globally disable templating in permalinks {% addedin "0.3.4" %}
+
+Eleventy has long had a global configuration option to disable dynamic templating altogether, like so:
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // Enabled by default
+  eleventyConfig.setDynamicPermalinks(false);
+};
+```
+
+
+
 ### Use filters!
 
 Use the provided [`slug` filter](/docs/filters/#slug) to modify other data available in the template.
