@@ -32,9 +32,16 @@ code {
 	-moz-hyphens: manual;
 	hyphens: manual;
 	background-color: #efefef;
+	padding-left: 4px;
+	padding-right: 4px;
+	border-radius: .15em;
+}
+pre code {
+	border-radius: 0;
 }
 pre > code {
 	background-color: transparent;
+	padding: 0;
 }
 pre + pre[class*="language-"] {
 	margin-top: 1em;

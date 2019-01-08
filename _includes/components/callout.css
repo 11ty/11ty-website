@@ -10,11 +10,17 @@
 .elv-callout-info:before {
 	content: "ℹ️ ";
 }
+.elv-callout-info code {
+	background-color: #99e6ff;
+}
 .elv-callout-warn {
 	background-color: #ffa;
 }
 .elv-callout-warn:before {
 	content: "⚠️ ";
+}
+.elv-callout-warn code {
+	background-color: #ffff24;
 }
 .elv-callout:first-child {
 	margin-top: 0;

@@ -5,9 +5,9 @@ tags:
 ---
 # Ignore Template Files
 
-Add an `.eleventyignore` file to the _root of your input directory_ for a new line-separated list of files (or globs) that will not be processed by Eleventy. Paths listed in your project’s `.gitignore` file are automatically ignored.
+Add an `.eleventyignore` file to your _input directory_ (or your _project root_ {% addedin "0.7.0", "span", "minilink-inline" %}) for a new line-separated list of files (or globs) that will not be processed by Eleventy. Paths listed in your project’s `.gitignore` file are automatically ignored.
 
-Important note: if you do not have a `.gitignore` file in your project, the `node_modules` directory will be ignored automatically.
+{% callout "info" %}If you do not have a <code>.gitignore</code> file in your project, the <code>node_modules</code> directory will be ignored automatically.{% endcallout %}
 
 ## Example
 

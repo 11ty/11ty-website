@@ -51,7 +51,7 @@ module.exports = function(eleventyConfig) {
 		return `<a href="${href}" class="minilink minilink-lower">${text}</a>`;
 	});
 
-	eleventyConfig.addShortcode("addedin", function(version, tag) {
+	eleventyConfig.addShortcode("addedin", function(version, tag, extraClass) {
 		if( typeof version !== "string" ) {
 			tag = version.tag;
 			version = version.version;
@@ -59,7 +59,7 @@ module.exports = function(eleventyConfig) {
 
 		tag = tag || "span";
 
-		return `<${tag} class="minilink minilink-addedin">New in v${version}</${tag}>`;
+		return `<${tag} class="minilink minilink-addedin${extraClass ? ` ${extraClass}`: ""}">New in v${version}</${tag}>`;
 	});
 
 	eleventyConfig.addPassthroughCopy("css/fonts");
