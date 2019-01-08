@@ -95,7 +95,9 @@ a.buzzword {
 .buzzword-list li:hover,
 .buzzword-list li:focus,
 .buzzword:hover,
-.buzzword:focus {
+.buzzword:focus,
+.rainbow-active:hover,
+.rainbow-active:focus {
 	position: relative;
 	background-image: linear-gradient(238deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff0080);
 	background-size: 1200% 1200%;
@@ -108,7 +110,9 @@ a.buzzword {
 .buzzword-list li:hover a,
 .buzzword-list li:focus a,
 a.buzzword:hover,
-a.buzzword:focus {
+a.buzzword:focus,
+a.rainbow-active:hover,
+a.rainbow-active:focus {
 	color: #fff;
 	text-decoration: none;
 }
@@ -118,7 +122,9 @@ a.buzzword:focus {
 	.buzzword-list li:hover,
 	.buzzword-list li:focus,
 	.buzzword:hover,
-	.buzzword:focus {
+	.buzzword:focus,
+	.rainbow-active:hover,
+	.rainbow-active:focus {
 		animation: none;
 	}
 }

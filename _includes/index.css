@@ -127,7 +127,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+.benchnine {
 	font-family: BenchNine, system-ui, sans-serif;
 }
 h1 {
@@ -522,4 +523,43 @@ main .elv-toc + h1 .direct-link {
 	width: 40px;
 	height: 40px;
 	vertical-align: middle;
+}
+
+/* Big primary button */
+.btn-primary {
+	display: block;
+	border: 2px solid;
+	padding: .5em .5em .4em;
+	font-size: 1em;
+	text-align: center;
+	font-weight: 700;
+	text-transform: uppercase;
+	border-radius: 1.5em;
+	text-decoration: none;
+	box-shadow: 0 8px 6px -6px #000;
+	margin: 1.5em 0 0;
+}
+.btn-primary:hover {
+	border-color: transparent;
+	background-color: #222;
+	color: #fff;
+}
+.btn-primary span {
+	text-transform: none;
+}
+.btn-primary + span {
+	display: block;
+	text-align: center;
+	margin-top: .25em;
+	font-size: .75em;
+}
+@media (min-width: 20em) and (max-width: 40.5625em) { /* 320px–649px */
+	.btn-primary {
+		font-size: 6.5vw;
+	}
+}
+@media (min-width: 40.625em) { /* 650px */
+	.btn-primary {
+		font-size: 2.6365625rem; /* 42.185px /16 */
+	}
 }
