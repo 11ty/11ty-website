@@ -399,6 +399,15 @@ Transforms can modify a template’s output. For example, use a transform to for
 | _Command Line Override_ | _None_ |
 | _Configuration API_ | `addTransform` {% addedin "0.3.3" %} |
 
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addTransform("transform-name", function(content, outputPath) {});
+
+  // Support for async transforms was added in 0.7.0
+  eleventyConfig.addTransform("async-transform-name", async function(content, outputPath) {});
+};
+```
+
 #### Transforms Example: Minify HTML Output
 
 {% codetitle ".eleventy.js" %}
@@ -432,6 +441,13 @@ Similar to Transforms, Linters are provided to analyze a template’s output wit
 | _Valid Options_ | Callback function |
 | _Command Line Override_ | _None_ |
 | _Configuration API_ | `addLinter` {% addedin "0.5.4" %} |
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addLinter("linter-name", function(content, inputPath, outputPath) {});
+  eleventyConfig.addLinter("async-linter-name", async function(content, inputPath, outputPath) {});
+};
+```
 
 #### Linters Example: Use Inclusive Language
 
