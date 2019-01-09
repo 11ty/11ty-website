@@ -21,7 +21,7 @@ Wrote 1 file in 0.10 seconds
 
 ➡ Keep going! Check out the [**Documentation for {% latestVersion versions, config %}**]({{ "/docs/" | url }}).
 
-<a href="{{ "/docs/" | url }}" class="btn-primary benchnine rainbow-active">Documentation for <span>Eleventy {% latestVersion versions, config %}</span></a><span>Todd said this button should be bigger and as you can see he was right</span>
+<a href="{{ "/docs/" | url }}" class="btn-primary benchnine rainbow-active rainbow-active-noanim">Documentation for <span>Eleventy {% latestVersion versions, config %}</span></a><span>Todd said this button should be bigger and as you can see he was right</span>
 
 ## News
 

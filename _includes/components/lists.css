@@ -101,9 +101,13 @@ a.buzzword {
 	position: relative;
 	background-image: linear-gradient(238deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff0080);
 	background-size: 1200% 1200%;
+	background-position: 0 80%;
 	color: #fff;
 	text-shadow: 0 0 2px rgba(0,0,0,.9);
 	animation: rainbow 1.6s infinite;
+}
+.rainbow-active-noanim {
+	animation: none !important;
 }
 .inlinelist .inlinelist-item:hover a,
 .inlinelist .inlinelist-item:focus a,
