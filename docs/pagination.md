@@ -353,3 +353,43 @@ pagination:
 {% endraw %}
 
 The above generates a list of links but you could do a lot more. See what’s available in the [Collection documentation](/docs/collections/#individual-collection-items-(useful-for-sort-callbacks)) (specifically `templateContent`). If you’d like to use this to automatically generate Tag pages for your content, please read [Quick Tip #004—Create Tag Pages for your Blog](/docs/quicktips/tag-pages/).
+
+## How to Reverse a Data Set prior to Pagination {% addedin "0.7.0" %}
+
+Use `reverse: true`.
+
+As an aside, this could also be achieved in a more verbose way using the [Collection API](/docs/collections/#advanced%3A-custom-filtering-and-sorting).
+
+```markdown
+---
+pagination:
+  data: testdata
+  size: 2
+  reverse: true
+testdata:
+ - item1
+ - item2
+ - item3
+ - item4
+---
+```
+
+Paginates to:
+
+```js
+[
+  ["item4", "item3"],
+  ["item2", "item1"],
+]
+```
+
+_(More discussion at [Issue #194](https://github.com/11ty/eleventy/issues/194))_
+
+## Full Pagination Option List
+
+* `data` (String) [Lodash.get path](https://lodash.com/docs/4.17.10#get) to point to the target data set.
+* `size` (Number, required)
+* `alias` (String) [Lodash.set path](https://lodash.com/docs/4.17.10#set) to point to the property to set.
+* `resolve: values`
+* `filter` (Array)
+* `reverse: true` (Boolean)
