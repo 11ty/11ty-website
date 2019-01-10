@@ -1,8 +1,7 @@
 /* Buzzwords */
 @keyframes rainbow {
 	0% { background-position: 0% 50%; }
-	50% { background-position: 100% 50%; }
-	100% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
 }
 .buzzword-list,
 .inlinelist {
@@ -104,7 +103,7 @@ a.buzzword {
 	background-position: 0 80%;
 	color: #fff;
 	text-shadow: 0 0 2px rgba(0,0,0,.9);
-	animation: rainbow 1.6s infinite;
+	animation: rainbow 4s ease-out alternate infinite;
 }
 .rainbow-active-noanim {
 	animation: none !important;
