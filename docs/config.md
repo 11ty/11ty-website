@@ -74,7 +74,8 @@ This allows you further customization options using Eleventy’s provided helper
   "Transforms",
   "Linters",
   "Data Deep Merge",
-  "Watch JavaScript Dependencies"
+  "Watch JavaScript Dependencies",
+  "Override BrowserSync Server Options"
 ] %}
 {%- for link in toc %}
 * [{{ link }}](#{{ link | slug }})
