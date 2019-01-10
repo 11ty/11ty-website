@@ -522,6 +522,20 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+### Override BrowserSync Server Options {% addedin "0.7.0" %}
+
+Useful if you want to change or override the default BrowserSync configuration. Find the Eleventy defaults in [`EleventyServe.js`](https://github.com/11ty/eleventy/blob/master/src/EleventyServe.js). Take special note that Eleventy does not use BrowserSync’s watch options and trigger reloads manually after our own internal watch methods are complete. See full options list on the [BrowserSync documentation](https://browsersync.io/docs/options).
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setBrowserSyncConfig({
+    notify: true
+  });
+};
+```
+
 
 <!--
 ### Experiments
