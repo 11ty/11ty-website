@@ -206,6 +206,9 @@ li li {
 	display: block;
 	font-size: 80%;
 	color: #555;
+	margin-bottom: 3px;
+}
+.list-bare-desc:last-child {
 	margin-bottom: 6px;
 }
 .list-bare-desc-avatar {
@@ -505,11 +508,10 @@ main .elv-toc + h1 .direct-link {
 	text-align: center;
 	margin: 2em auto 3em;
 	line-height: 2;
-	max-width: 23em;
 }
 .featured-sites .avatar {
-	width: 73px;
-	height: 73px;
+	width: 60px;
+	height: 60px;
 	margin-bottom: 6px;
 }
 

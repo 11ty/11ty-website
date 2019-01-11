@@ -32,7 +32,12 @@ Wrote 1 file in 0.10 seconds
 
 ## Built With Eleventy
 
-<div class="featured-sites">{% for site in eleventysites -%}{% if site.disabled != true and site.url and site.featured -%}<a href="{{ site.url }}" class="elv-externalexempt">{% avatar site.twitter %}<span class="sr-only">{{ site.name | safe }}</span></a>{% endif -%}{% endfor -%}</div>
+<div class="featured-sites">
+    {% for site in eleventysites -%}{% if site.twitter and site.disabled != true and site.url and site.featured -%}<a href="{{ site.url }}" class="elv-externalexempt">{% avatar site.twitter %}<span class="sr-only">{{ site.name | safe }}</span></a>{% endif -%}{% endfor -%}
+    {% for site in eleventysites | shuffle %}{% if site.twitter and site.disabled != true and not site.featured and not site.hideOnHomepage -%}<a href="{{ site.url or site.source_url }}" class="elv-externalexempt">{% avatar site.twitter %}<span class="sr-only">{{ site.name | safe }}</span></a>{% endif -%}{% endfor %}
+</div>
+
+View the [full list](/docs/sites/).
 
 ## Don’t take my word for it {% emoji "🌈" %}
 

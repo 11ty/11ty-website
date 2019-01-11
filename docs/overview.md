@@ -28,20 +28,9 @@ Read more about [**Eleventy’s project goals**.](https://www.zachleat.com/web/i
 
 ## Don’t just take my word for it 🌈
 
-Listen to what these [happy developers](/docs/testimonials/) are saying about Eleventy:
+There are bunch of [sites built using Eleventy](/docs/sites/). But listen to what these [happy developers](/docs/testimonials/) are saying about Eleventy:
 
 {% include "testimonials.md" %}
-
-## Sites Using Eleventy
-
-<ul class="list-bare">
-{% for site in eleventysites -%}
-{% if site.disabled != true and site.url -%}
-  <li><a href="{{ site.url }}">{% avatar site.twitter or site.avatar_filename %}{{ site.name | safe }}</a>{% if site.description %}<em class="list-bare-desc list-bare-desc-avatar">{{ site.description }}</em>{% endif %}</li>
-{% endif -%}
-{% endfor -%}
-  <li><a href="https://github.com/11ty/11ty.io/issues/new?title=I+built+a+site+with+Eleventy!"><strong>Want to add yours?</strong></a></li>
-</ul>
 
 ## Competitors
 

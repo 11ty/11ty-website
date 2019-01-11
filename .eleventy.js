@@ -128,6 +128,20 @@ module.exports = function(eleventyConfig) {
 		return splitSpace.join(" ") + after;
 	});
 
+	// Thanks to https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+	eleventyConfig.addFilter("shuffle", arr => {
+		let a = arr.slice(0);
+		for (let i = a.length - 1; i > 0; i--) {
+				const j = Math.floor(Math.random() * (i + 1));
+				[a[i], a[j]] = [a[j], a[i]];
+		}
+		return a;
+	});
+
+	eleventyConfig.addShortcode("addToSampleSites", function() {
+		return `<a href="https://github.com/11ty/11ty.io/issues/new?title=I+built+a+site+with+Eleventy!"><strong>Want to add your site to this list?</strong></a>`;
+	});
+
 	eleventyConfig.addCollection("quicktipssorted", function(collection) {
 		return collection.getFilteredByTag("quicktips").sort(function(a, b) {
 			return parseInt(a.data.tipindex, 10) - parseInt(b.data.tipindex, 10);
