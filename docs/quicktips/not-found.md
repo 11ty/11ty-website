@@ -7,6 +7,7 @@ A `404: Not Found` page is a pretty standard thing on the web. It’s particular
 
 But first let’s make our `404.html` template:
 
+{% raw %}
 ```html
 ---
 title: Oops! Not Found
@@ -25,6 +26,7 @@ permalink: 404.html
     </body>
 </html>
 ```
+{% endraw %}
 
 Eleventy will output this template to `404.html`.
 
