@@ -36,6 +36,8 @@ There are a couple of different ways you can tell Eleventy how you want to proce
 
 If your file is called `example.liquid`—instead of `liquid`, this will be parsed as a `njk` Nunjucks template:
 
+{% codetitle "example.liquid" %}
+
 ```
 ---
 templateEngineOverride: njk
