@@ -28,7 +28,7 @@ Read more about [**Eleventy’s project goals**.](https://www.zachleat.com/web/i
 
 ## Don’t just take my word for it 🌈
 
-There are bunch of [sites built using Eleventy](/docs/sites/). But listen to what these [happy developers](/docs/testimonials/) are saying about Eleventy:
+There are a bunch of [sites built using Eleventy](/docs/sites/). But listen to what these [happy developers](/docs/testimonials/) are saying about Eleventy:
 
 {% include "testimonials.md" %}
 
