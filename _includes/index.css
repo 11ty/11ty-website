@@ -480,12 +480,14 @@ main .elv-toc + h1 .direct-link {
 .quicktipstoc .active {
 	font-weight: 600;
 }
+.quicktipstoc h3 {
+	margin-top: 0;
+}
 
 @media (min-width: 37.5em) { /* 600px */
 	.quicktipstoc {
-		margin: 0 0 3% 3%;
-		float: right;
-		width: 32%;
+		margin: 3% 0;
+		float: left;
 		border-radius: .25em;
 		font-size: 0.8125em; /* 13px /16 */
 	}

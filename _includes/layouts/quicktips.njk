@@ -4,12 +4,11 @@ layout: layouts/docs.njk
 {% set quicktipheadertitle %}Quick Tip #{{ tipindex }}—{{ tiptitle }}{% endset %}
 <h1>{{ quicktipheadertitle | orphanWrap | safe }}</h1>
 
-<h2 class="sr-only">All Quick Tips</h2>
+{{ content | safe }}
+
 <ul class="quicktipstoc">
+	<li><h3><strong>All Quick Tips</strong></h3></li>
 {% for tip in collections.quicktipssorted %}
 	<li{% if page.url == tip.url %} class="active"{% endif %}><a href="{{ tip.url }}"><code>#{{ tip.data.tipindex }}</code>—{{ tip.data.tiptitle }}</a></li>
 {%- endfor %}
 </ul>
-
-{{ content | safe }}
-
