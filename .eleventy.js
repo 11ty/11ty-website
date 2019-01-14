@@ -5,6 +5,7 @@ const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language");
 const cfg = require("./_data/config.json");
+const avatarExceptions = require("./_data/avatarFileMap.json");
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.setDataDeepMerge(true);
@@ -35,6 +36,9 @@ module.exports = function(eleventyConfig) {
 		} else {
 			twitterName = filename;
 			filename += ".jpg";
+		}
+		if( avatarExceptions[twitterName] ) {
+			filename = avatarExceptions[twitterName];
 		}
 
 		return (linkUrl ? `<a href="${linkUrl}">` : "") +
