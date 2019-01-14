@@ -70,7 +70,11 @@ layout: layouts/docs.njk
 Use the `elv-callout-sticky` class to affix to the top of the viewport while scrolling.
 
 <div class="elv-sg-component">
-    <div class="elv-callout">Default</div>
+    <div class="elv-callout">Default <code>Code block</code></div>
+</div>
+
+<div class="elv-sg-component">
+    <div class="elv-callout elv-callout-warn">Default <code>Code block</code></div>
 </div>
 
 <div class="elv-sg-component">
