@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{{ subtitle + ' - ' if subtitle}} Eleventy</title>
+		<meta name="description" content="{% if subtitle %}{{ subtitle }} for Eleventy,{% else %}Eleventy is{% endif %} a simpler static site generator.">
+		<title>{{ subtitle + '-' if subtitle}} Eleventy</title>
 {%- set css %}
 {% include 'index.css' %}
 {% include 'components/code.css' %}
