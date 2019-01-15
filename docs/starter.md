@@ -7,7 +7,7 @@ tags:
 
 {% for site in starters -%}
 {% if site.disabled != true -%}
-1. [{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}
+1. [{% avatar site.author %}{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}
 {% endif -%}
 {% endfor -%}
 

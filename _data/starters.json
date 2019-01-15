@@ -2,21 +2,31 @@
 	{
 		"url": "https://github.com/11ty/eleventy-base-blog",
 		"name": "eleventy-base-blog",
-		"description": "How to build a blog web site with Eleventy."
+		"description": "How to build a blog web site with Eleventy.",
+		"author": "eleven_ty"
+	},
+	{
+		"url": "https://glitch.com/~11ty",
+		"name": "eleventy-on-glitch",
+		"description": "A playground site for Eleventy on Glitch with live rendered views right on the web!",
+		"author": "eleven_ty"
 	},
 	{
 		"url": "https://github.com/philhawksworth/eleventyone",
 		"name": "eleventyone",
-		"description": "is an Eleventy scaffold project created by the legendary Phil Hawksworth. Makes use of gulp with Eleventy and Sass."
+		"description": "is an Eleventy scaffold project created by the legendary Phil Hawksworth. Makes use of gulp with Eleventy and Sass.",
+		"author": "philhawksworth"
 	},
 	{
 		"url": "https://github.com/danurbanowicz/eleventy-netlify-boilerplate",
 		"name": "eleventy-netlify-boilerplate",
-		"description": "A template for building a simple blog web site with Eleventy and deploying it to Netlify. Includes Netlify CMS and Netlify Forms."
+		"description": "A template for building a simple blog web site with Eleventy and deploying it to Netlify. Includes Netlify CMS and Netlify Forms.",
+		"author": "DanUrbanowicz"
 	},
 	{
 		"url": "https://github.com/adamduncan/eleventy-shortcomps",
 		"name": "eleventy-shortcomps",
-		"description": "Starter project for static site by Adam Duncan, using Eleventy and shortcode components pattern."
+		"description": "Starter project for static site by Adam Duncan, using Eleventy and shortcode components pattern.",
+		"author": "duncanadam"
 	}
 ]
