@@ -26,8 +26,8 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 * Sample Project: [Import your **Notist** events to an Eleventy site](https://eleventy-notist-example.netlify.com/) by {% avatar "philhawksworth" %}Phil Hawksworth
 * Sample Project: [Import your **Medium** posts to an Eleventy site](https://rss-jamstack.netlify.com/) by {% avatar "philhawksworth" %}Phil Hawksworth
 * [Import your **Disqus Comments** into Eleventy](https://github.com/11ty/eleventy-import-disqus/blob/master/README.md) by {% avatar "zachleat" %}Zach Leatherman
-* [Static Indieweb pt1: Syndicating Content](https://mxb.at/blog/syndicating-content-to-twitter-with-netlify-functions/) by {% avatar "mxbck" %} Max Böck
-* [Static Indieweb pt2: Using Webmentions](https://mxb.at/blog/using-webmentions-on-static-sites/) by {% avatar "mxbck" %} Max Böck
+* [Static Indieweb pt1: Syndicating Content](https://mxb.at/blog/syndicating-content-to-twitter-with-netlify-functions/) by {% avatar "mxbck" %}Max Böck
+* [Static Indieweb pt2: Using Webmentions](https://mxb.at/blog/using-webmentions-on-static-sites/) by {% avatar "mxbck" %}Max Böck
 
 ## Quick Tips
 
