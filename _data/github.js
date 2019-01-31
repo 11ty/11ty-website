@@ -4,7 +4,7 @@ const path = require("path");
 
 function getCacheKey() {
 	let date = new Date();
-	return `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()} ${date.getUTCHours()}:${date.getUTCMinutes()}`;
+	return `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()} ${date.getUTCHours()}`;
 }
 
 module.exports = async function() {
