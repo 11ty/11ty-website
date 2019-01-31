@@ -67,3 +67,5 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+_Thank you [Cassey Lottman](https://github.com/clottman)._
