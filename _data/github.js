@@ -2,18 +2,18 @@ const fetch = require("node-fetch");
 const flatcache = require("flat-cache");
 const path = require("path");
 
-function getDateKey() {
+function getCacheKey() {
 	let date = new Date();
-	return `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()}`;
+	return `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()} ${date.getUTCHours()}:${date.getUTCMinutes()}`;
 }
 
 module.exports = async function() {
 	let cache = flatcache.load("github-stargazers", path.resolve("./_datacache"));
-	let key = getDateKey();
+	let key = getCacheKey();
 	let cachedData = cache.getKey(key);
 	if(!cachedData) {
 		console.log( "Fetching new github stargazers count…" );
-		//https://developer.github.com/v3/repos/#get
+		// https://developer.github.com/v3/repos/#get
 		let newData = await fetch("https://api.github.com/repos/11ty/eleventy")
 			.then(res => res.json())
 			.then(json => {
