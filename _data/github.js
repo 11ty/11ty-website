@@ -26,6 +26,7 @@ module.exports = async function() {
 		cache.save();
 		return newData;
 	}
+	console.log( `Using cached github stargazers count (${key})` );
 
 	return cachedData;
 };
