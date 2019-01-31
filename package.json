@@ -25,8 +25,11 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.0",
     "chalk": "^2.4.1",
     "clean-css": "^4.1.11",
+    "flat-cache": "^2.0.1",
     "html-minifier": "^3.5.18",
-    "markdown-it-anchor": "^5.0.2"
+    "human-readable-numbers": "^0.9.4",
+    "markdown-it-anchor": "^5.0.2",
+    "node-fetch": "^2.3.0"
   },
   "dependencies": {
     "@11ty/logo": "^1.0.4"

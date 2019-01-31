@@ -1,6 +1,7 @@
 const chalk = require("chalk");
 const htmlmin = require("html-minifier");
 const CleanCSS = require("clean-css");
+const HumanReadable = require('human-readable-numbers');
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language");
@@ -76,6 +77,10 @@ module.exports = function(eleventyConfig) {
 		} else {
 			return code;
 		}
+	});
+
+	eleventyConfig.addFilter("humanReadableNum", function(num) {
+		return HumanReadable.toHumanString(num);
 	});
 
 	eleventyConfig.addFilter("sortMenu", function(collection, sortOrder) {

@@ -3,7 +3,7 @@ title: 11ty.io Style Guide
 layout: layouts/docs.njk
 ---
 
-## Headers
+## Header/Footer
 
 ### Home Header
 
@@ -19,6 +19,12 @@ layout: layouts/docs.njk
 {% set headerClass = "elv-header-docs" %}
 {% set title = "Docs Header" %}
 {% include "header.njk" %}
+</div>
+
+### Footer Navigation
+
+<div class="elv-sg-component">
+{% include "footer-nav.njk" %}
 </div>
 
 ## Lists

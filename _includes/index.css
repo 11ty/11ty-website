@@ -328,65 +328,6 @@ footer.elv-layout {
 	}
 }
 
-/* Navigation */
-.elv-nav {
-	padding: 0;
-	margin: 1em 0 0 0;
-	clear: both;
-	list-style: none;
-}
-.elv-nav-item {
-	float: left;
-	padding-left: .25em;
-	padding-right: .25em;
-	font-size: 0.8125rem; /* 13px /16 */
-}
-.elv-nav-item:first-child {
-	padding-left: 0;
-}
-.elv-nav-item:last-child {
-	padding-right: 0;
-}
-.elv-nav-item a {
-		font-weight: 600;
-	}
-.elv-nav-item .elv-nav-light {
-	font-weight: 300;
-}
-@media (min-width: 20em) { /* 320px */
-	.elv-nav-item {
-		font-size: 4vw;
-	}
-}
-@media (min-width: 25em) { /* 400px */
-	.elv-nav-item {
-		font-size: 1rem; /* 16px /16 */
-		padding-left: .45em;
-		padding-right: .45em;
-	}
-}
-@media (min-width: 35.625em) { /* 570px */
-	.elv-nav {
-		clear: none;
-		width: auto;
-		margin-top: 0;
-	}
-	.elv-nav-item {
-		float: left;
-		padding-left: 0;
-		padding-right: 0;
-	}
-	.elv-nav-item a:not(:hover) {
-		text-decoration: none;
-	}
-	.elv-nav-item:not(:first-child):before {
-		content: "";
-		border-left: 1px solid #ccc;
-		padding: 0 0 0 .75em;
-		margin-left: .75em;
-	}
-}
-
 /* Version */
 .latestversion {
 	font-size: 2em;
@@ -440,6 +381,7 @@ main .elv-toc + h1 .direct-link {
 	border-top: 1px dotted #ddd;
 	border-bottom: 1px dotted #ddd;
 	margin: 2rem 0;
+	overflow: hidden; /* clearfix */
 }
 
 /* Screen readers only */
