@@ -34,6 +34,16 @@ If you’re using [GitHub Pages](https://help.github.com/articles/creating-a-cus
 
 Netlify even has lovely [multi-language 404 page support too using `Redirects`](https://www.netlify.com/docs/redirects/#custom-404).
 
+## .htaccess
+
+For other hosts, if you use `.htaccess` for configuration you can use `ErrorDocument`. Make sure your root directory matches here!
+
+```
+ErrorDocument 404 /404.html
+```
+
+## With `--serve`
+
 If you're using `eleventy --serve`, you can configure BrowserSync to do the 404 routing by passing a callback in your config. Read more on [the BrowserSyncConfig option](https://www.11ty.io/docs/config/#override-browsersync-server-options), the [BrowserSync callbacks option](https://browsersync.io/docs/options#option-callbacks), and [how to provide a 404 using a BrowserSync callback](https://github.com/BrowserSync/browser-sync/issues/1398). 
 
 {% codetitle ".eleventy.js" %}
@@ -57,12 +67,3 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
-
-## .htaccess
-
-For other hosts, if you use `.htaccess` for configuration you can use `ErrorDocument`. Make sure your root directory matches here!
-
-```
-ErrorDocument 404 /404.html
-```
-
