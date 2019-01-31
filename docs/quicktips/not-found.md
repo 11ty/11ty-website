@@ -35,19 +35,27 @@ If you’re using [GitHub Pages](https://help.github.com/articles/creating-a-cus
 Netlify even has lovely [multi-language 404 page support too using `Redirects`](https://www.netlify.com/docs/redirects/#custom-404).
 
 If you're using `eleventy --serve`, you can configure BrowserSync to do the 404 routing by passing a callback in your config. Read more on [the BrowserSyncConfig option](https://www.11ty.io/docs/config/#override-browsersync-server-options), the [BrowserSync callbacks option](https://browsersync.io/docs/options#option-callbacks), and [how to provide a 404 using a BrowserSync callback](https://github.com/BrowserSync/browser-sync/issues/1398). 
-```
+
+{% codetitle ".eleventy.js" %}
+
+```js
+const fs = require("fs");
+
+module.exports = function(eleventyConfig) {
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
-     ready: function(err, bs) {
-       const content_404 = fs.readFileSync('_site/404.html');
-       bs.addMiddleware("*", (req, res) => {
-        // Provides the 404 content without redirect.
-        res.write(content_404);
-        res.end();
-      });
-     }
+      ready: function(err, bs) {
+        const content_404 = fs.readFileSync('_site/404.html');
+
+        bs.addMiddleware("*", (req, res) => {
+          // Provides the 404 content without redirect.
+          res.write(content_404);
+          res.end();
+        });
+      }
     }
   });
+};
 ```
 
 ## .htaccess
