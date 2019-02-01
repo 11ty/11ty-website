@@ -351,9 +351,15 @@
 	{
 		"name": "Fifty by Fifty",
 		"url": "https://fifty.snook.ca/",
-		"description": "On a Quest to Eat at the World’s 50 Best Restaurants Before I Turn 50 ",
+		"description": "On a Quest to Eat at the World’s 50 Best Restaurants Before I Turn 50.",
 		"twitter": "snookca",
 		"source_url": "https://github.com/snookca/50by50",
 		"featured": true
+	},
+	{
+		"name": "DN Handcrafted",
+		"url": "https://dnhandcrafted.com/",
+		"description": "I’m a web developer by day with a passion for making things in the physical world. ",
+		"twitter": "dougneiner"
 	}
 ]
