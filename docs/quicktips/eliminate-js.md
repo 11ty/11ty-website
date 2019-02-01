@@ -131,3 +131,7 @@ function getCacheKey() {
   <li>Current <a href="https://developer.github.com/v3/#rate-limiting">GitHub rate limits</a> are limited to 60 requests per hour, so this will only be a problem if you do more than 60 Netlify builds in an hour.</li>
   <li>The <a href="https://blog.npmjs.org/post/164799520460/api-rate-limiting-rolling-out">npm API doesn’t seem to have a hard limit</a>.</li>
 </ul>{% endcallout %}
+
+## Update Counts Daily
+
+If you want to update these counts automatically every day, read [Quick Tip #008—Trigger a Netlify Build Every Day with IFTTT](/docs/quicktips/netlify-ifttt/).
