@@ -3,14 +3,14 @@ const fetch = require("node-fetch");
 const flatcache = require("flat-cache");
 const path = require("path");
 
-function getDateKey() {
+function getCacheKey() {
 	let date = new Date();
 	return `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()}`;
 }
 
 module.exports = async function() {
 	let cache = flatcache.load("npm-downloads", path.resolve("./_datacache"));
-	let key = getDateKey();
+	let key = getCacheKey();
 	let cachedData = cache.getKey(key);
 	if(!cachedData) {
 		console.log( "Fetching new npm download count…" );

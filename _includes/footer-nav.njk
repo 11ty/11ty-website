@@ -2,7 +2,14 @@
 	<li class="elv-nav-item">{% include "edit-on-github.njk" %}</li>
 	<li class="elv-nav-item"><a href="/styleguide/">Style Guide</a></li>
 	<li class="elv-nav-item">Hosted on <a href="https://www.netlify.com/">Netlify</a></li>
+	<li class="elv-nav-item">By <a href="https://twitter.com/zachleat">Zach Leatherman</a></li>
+{% if github and github.stargazers %}
 	<li class="elv-nav-item elv-nav-item-br elv-nav-item-sm"><a href="https://github.com/11ty/eleventy/" class="elv-externalexempt elv-nav-light">{{ github.stargazers | humanReadableNum }} GitHub Stars</a></li>
+{% endif %}
+{% if twitter and twitter.followers %}
 	<li class="elv-nav-item elv-nav-item-sm"><a href="https://twitter.com/eleven_ty/" class="elv-externalexempt elv-nav-light">{{ twitter.followers | humanReadableNum }} Twitter Followers</a></li>
+{% endif %}
+{% if npm and npm.downloads %}
 	<li class="elv-nav-item elv-nav-item-sm"><a href="https://www.npmjs.com/package/@11ty/eleventy" class="elv-externalexempt elv-nav-light">{{ npm.downloads | humanReadableNum }} npm Downloads Last Month</a></li>
+{% endif %}
 </ul>

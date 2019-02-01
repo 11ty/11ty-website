@@ -4,7 +4,7 @@ const path = require("path");
 
 function getCacheKey() {
 	let date = new Date();
-	return `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()} ${date.getUTCHours()}`;
+	return `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()}`;
 }
 
 module.exports = async function() {
@@ -26,7 +26,7 @@ module.exports = async function() {
 		cache.save();
 		return newData;
 	}
-	console.log( `Using cached github stargazers count (${key})` );
+	// console.log( `Using cached github stargazers count (${key})` );
 
 	return cachedData;
 };
