@@ -22,7 +22,7 @@ _Heavily inspired by [Phil Hawksworth’s work on RSS Jamstack](https://twitter.
 
 ## Add an IFTTT Applet
 
-1. Go to `New Applet`
+1. Go to [`New Applet` on ifttt.com](https://ifttt.com/create)
 2. Click `+this`
 3. Select the `Date & Time` service
 4. Select the `Every day at` option (or whatever frequency you’d like)
@@ -37,5 +37,3 @@ _Heavily inspired by [Phil Hawksworth’s work on RSS Jamstack](https://twitter.
 13. Click the `Create action` button.
 14. Click `Finish`.
 
-
-{% callout "info" %}Do take note that if you are using the recommended <code>flat-cache</code> file system cache from the previous Quick Tip, running the build more frequently than the file system cache updates won’t hurt anything but it would be wasteful. If your data cache updates every week and you run the build every day, the data won’t change anyway so make sure those frequencies align.{% endcallout %}
