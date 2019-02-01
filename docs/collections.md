@@ -368,7 +368,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-<div class="elv-community">
+<div class="elv-community" id="community-resources">
   <h3 class="elv-community-hed">Community Resources</h3>
   <ul>
     <li><a href="https://www.pborenstein.com/articles/collections/">Working with Collections</a> by {% avatar "pborenstein" %}Philip Borenstein</li>
