@@ -2,6 +2,7 @@
 filemap=""
 addComma="no"
 
+# Testimonials
 for handle in $(cat _data/testimonials.json | jq -r '.[] | .twitter'); do
   if [[ "$handle" == "" || "$handle" == "null" ]]
   then
@@ -35,6 +36,7 @@ for handle in $(cat _data/testimonials.json | jq -r '.[] | .twitter'); do
   fi
 done
 
+# Build with Eleventy sites, twitter avatars
 for handle in $(cat _data/eleventysites.json | jq -r '.[] | .twitter'); do
   if [[ "$handle" == "" || "$handle" == "null" ]]
   then
@@ -68,6 +70,7 @@ for handle in $(cat _data/eleventysites.json | jq -r '.[] | .twitter'); do
   fi
 done
 
+# Build with Eleventy sites, avatar filenames
 for handle in $(cat _data/eleventysites.json | jq -r '.[] | .avatar_filename'); do
   if [[ "$handle" == "" || "$handle" == "null" ]]
   then
@@ -95,7 +98,42 @@ for handle in $(cat _data/eleventysites.json | jq -r '.[] | .avatar_filename'); 
   fi
 done
 
+# Starter sites
 for handle in $(cat _data/starters.json | jq -r '.[] | .author'); do
+  if [[ "$handle" == "" || "$handle" == "null" ]]
+  then
+    echo "$handle is not valid";
+  else
+    echo ${handle}
+    wget --quiet -O img/avatars/${handle}.jpg https://twitter.com/${handle}/profile_image?size=bigger
+
+    file="img/avatars/${handle}.jpg"
+    type=$(file-type $file)
+    if [[ $type == *"image/jpeg"* ]]
+    then
+      jpegtran "$file" > "$file."
+      mv "$file." "$file"
+    fi
+
+    if [[ $type == *"image/png"* ]]
+    then
+      pngcrush -brute "$file"{,.}
+      rm img/avatars/${handle}.jpg
+      mv img/avatars/${handle}.jpg. img/avatars/${handle}.png
+
+      if [[ "$addComma" == "no" ]]
+      then
+        addComma="yes"
+      else
+        filemap="$filemap,"
+      fi
+      filemap="$filemap\n\t\"$handle\": \"$handle.png\""
+    fi
+  fi
+done
+
+# Extra avatars not listed in other methods
+for handle in $(cat _data/extraAvatars.json | jq -r '.[] | .twitter'); do
   if [[ "$handle" == "" || "$handle" == "null" ]]
   then
     echo "$handle is not valid";

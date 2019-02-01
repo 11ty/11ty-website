@@ -412,29 +412,6 @@ main .elv-toc + h1 .direct-link {
 	margin-left: 1em;
 }
 
-/* Quick Tips TOC */
-.quicktipstoc {
-	font-size: 0.8888888888889em; /* 16px /18 */
-	background-color: #eee;
-	list-style: none;
-	padding: 0.5em 1em;
-}
-.quicktipstoc .active {
-	font-weight: 600;
-}
-.quicktipstoc h3 {
-	margin-top: 0;
-}
-
-@media (min-width: 37.5em) { /* 600px */
-	.quicktipstoc {
-		margin: 3% 0;
-		float: left;
-		border-radius: .25em;
-		font-size: 0.8125em; /* 13px /16 */
-	}
-}
-
 /* Breakpoint Overrides */
 @media (max-width: 37.4375em) { /* 599px */
 	.bp-notsm.bp-notsm.bp-notsm.bp-notsm {
