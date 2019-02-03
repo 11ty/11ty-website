@@ -102,13 +102,6 @@
 		"featured": true
 	},
 	{
-		"name": "Front-end Foundations",
-		"url": "https://frontend-foundations.com/",
-		"description": "A resource and community for developers learning HTML, CSS, & Javascript.",
-		"source_url": "https://github.com/alexcarpenter/frontend-foundations",
-		"twitter": "hybrid_alex"
-	},
-	{
 		"name": "Andy Bell",
 		"url": "https://hankchizljaw.io/",
 		"description": "The personal web site of Andy Bell, a front-end developer and designer with No Divide",
