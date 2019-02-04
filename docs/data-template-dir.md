@@ -27,6 +27,8 @@ For example, consider a template located at `posts/subdir/my-first-blog-post.md`
     * `posts/posts.json`
 1. [Global Data Files](/docs/data-global/) in `_data/*` (available to all templates)
 
+{% callout "info" %}Note that the name of the data file must match either the post or the directory it resides within.{% endcallout %}
+
 ### Change the `.11tydata.js` file suffix {% addedin "0.5.3" %}
 
 Use the [Configuration API to change the file suffix](/docs/config/#change-file-suffix-for-template-and-directory-data-files) used to search for Eleventy data files.

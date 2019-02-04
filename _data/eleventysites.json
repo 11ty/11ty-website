@@ -102,13 +102,6 @@
 		"featured": true
 	},
 	{
-		"name": "Front-end Foundations",
-		"url": "https://frontend-foundations.com/",
-		"description": "A resource and community for developers learning HTML, CSS, & Javascript.",
-		"source_url": "https://github.com/alexcarpenter/frontend-foundations",
-		"twitter": "hybrid_alex"
-	},
-	{
 		"name": "Andy Bell",
 		"url": "https://hankchizljaw.io/",
 		"description": "The personal web site of Andy Bell, a front-end developer and designer with No Divide",
@@ -368,5 +361,11 @@
 		"description": "I'm a UX designer trying to help make the web more usable and accessible for everyone.",
 		"source_url": "https://github.com/levimcg/levimcg.com",		
 		"twitter": "levimcg"
+	},
+	{
+		"name": "Ask questions. Get answers.",
+		"url": "https://ask.netlify.com",
+		"description": "Gerald and Phil are collecting your questions and will answer as many as they can in a series of videos, tutorials and blog posts.",
+		"twitter": "netlify"
 	}
 ]
