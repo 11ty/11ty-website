@@ -1,0 +1,7 @@
+{
+	"name": "Heydon Pickering’s Inclusive Web Design Checklist, converted to use <code>eleventy</code>",
+	"description": "The <a href='https://github.com/Heydon/inclusive-design-checklist'>original project</a> took a JSON file and converted it HTML with some one-off JavaScript. This uses eleventy to transform the data using a nunjucks template, resulting in a cleaner, templated setup.",
+	"source_url": "https://github.com/11ty/eleventy-inclusive-design-checklist",
+	"twitter": "eleven_ty",
+	"hideOnHomepage": true
+}

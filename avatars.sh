@@ -2,6 +2,83 @@
 filemap=""
 addComma="no"
 
+function getAvatar() {
+  filename=$1
+  src=$2
+  wget --quiet -O img/avatars/${filename} $src
+}
+
+function optimizeImageByFileName() {
+  handle=$1
+  extension=$1
+  file="img/avatars/${filename}"
+  type=$(file-type $file)
+  if [[ $type == *"image/jpeg"* ]]
+  then
+    jpegtran "$file" > "$file."
+    mv "$file." "$file"
+  fi
+
+  if [[ $type == *"image/png"* ]]
+  then
+    pngcrush -brute "$file"{,.}
+    rm "img/avatars/${filename}"
+    mv "img/avatars/${filename}." "img/avatars/${filename}"
+  fi
+}
+
+function optimizeImage() {
+  handle=$1
+  file="img/avatars/${handle}.jpg"
+  type=$(file-type $file)
+  if [[ $type == *"image/jpeg"* ]]
+  then
+    jpegtran "$file" > "$file."
+    mv "$file." "$file"
+  fi
+
+  if [[ $type == *"image/png"* ]]
+  then
+    pngcrush -brute "$file"{,.}
+    rm img/avatars/${handle}.jpg
+    mv img/avatars/${handle}.jpg. img/avatars/${handle}.png
+
+    if [[ "$addComma" == "no" ]]
+    then
+      addComma="yes"
+    else
+      filemap="$filemap,"
+    fi
+    filemap="$filemap\n\t\"$handle\": \"$handle.png\""
+  fi
+}
+
+for jsonFile in _data/sites/*.json
+do
+  # Build with Eleventy sites, twitter avatars
+  for handle in $(cat "$jsonFile" | jq -r '.twitter'); do
+    if [[ "$handle" == "" || "$handle" == "null" ]]
+    then
+      echo "no twitter handle found for $jsonFile";
+    else
+      echo ${handle}
+      getAvatar "$handle.jpg" "https://twitter.com/${handle}/profile_image?size=bigger"
+      optimizeImage $handle
+    fi
+  done
+
+  # Build with Eleventy sites, avatar filenames
+  for filename in $(cat "$jsonFile" | jq -r '.avatar_filename'); do
+    if [[ "$filename" != "" && "$filename" != "null" ]]
+    then
+      src=$(cat "$jsonFile" | jq -r ".avatar_src")
+      echo ${src}
+      getAvatar $filename $src
+      optimizeImageByFileName $filename
+    fi
+  done
+done
+
 # Testimonials
 for handle in $(cat _data/testimonials.json | jq -r '.[] | .twitter'); do
   if [[ "$handle" == "" || "$handle" == "null" ]]
@@ -9,92 +86,8 @@ for handle in $(cat _data/testimonials.json | jq -r '.[] | .twitter'); do
     echo "$handle is not valid";
   else
     echo ${handle}
-    wget --quiet -O img/avatars/${handle}.jpg https://twitter.com/${handle}/profile_image?size=bigger
-
-    file="img/avatars/${handle}.jpg"
-    type=$(file-type $file)
-    if [[ $type == *"image/jpeg"* ]]
-    then
-      jpegtran "$file" > "$file."
-      mv "$file." "$file"
-    fi
-
-    if [[ $type == *"image/png"* ]]
-    then
-      pngcrush -brute "$file"{,.}
-      rm img/avatars/${handle}.jpg
-      mv img/avatars/${handle}.jpg. img/avatars/${handle}.png
-
-      if [[ "$addComma" == "no" ]]
-      then
-        addComma="yes"
-      else
-        filemap="$filemap,"
-      fi
-      filemap="$filemap\n\t\"$handle\": \"$handle.png\""
-    fi
-  fi
-done
-
-# Build with Eleventy sites, twitter avatars
-for handle in $(cat _data/eleventysites.json | jq -r '.[] | .twitter'); do
-  if [[ "$handle" == "" || "$handle" == "null" ]]
-  then
-    echo "$handle is not valid";
-  else
-    echo ${handle}
-    wget --quiet -O img/avatars/${handle}.jpg https://twitter.com/${handle}/profile_image?size=bigger
-
-    file="img/avatars/${handle}.jpg"
-    type=$(file-type $file)
-    if [[ $type == *"image/jpeg"* ]]
-    then
-      jpegtran "$file" > "$file."
-      mv "$file." "$file"
-    fi
-
-    if [[ $type == *"image/png"* ]]
-    then
-      pngcrush -brute "$file"{,.}
-      rm img/avatars/${handle}.jpg
-      mv img/avatars/${handle}.jpg. img/avatars/${handle}.png
-
-      if [[ "$addComma" == "no" ]]
-      then
-        addComma="yes"
-      else
-        filemap="$filemap,"
-      fi
-      filemap="$filemap\n\t\"$handle\": \"$handle.png\""
-    fi
-  fi
-done
-
-# Build with Eleventy sites, avatar filenames
-for handle in $(cat _data/eleventysites.json | jq -r '.[] | .avatar_filename'); do
-  if [[ "$handle" == "" || "$handle" == "null" ]]
-  then
-    echo "$handle is not valid";
-  else
-    src=$(cat _data/eleventysites.json | jq -r ".[] | select(.avatar_filename == \"$handle\") | .avatar_src")
-    echo ${src}
-    wget --quiet -O img/avatars/${handle} ${src}
-
-    file="img/avatars/${handle}"
-    type=$(file-type $file)
-    if [[ $type == *"image/jpeg"* ]]
-    then
-      jpegtran "$file" > "$file."
-      mv "$file." "$file"
-    fi
-
-    if [[ $type == *"image/png"* ]]
-    then
-      pngcrush -brute "$file"{,.}
-      mv img/avatars/${handle}. img/avatars/${handle}
-    fi
-
-    # avatar_filename should match up and handle the correct file type
+    getAvatar "$handle.jpg" "https://twitter.com/${handle}/profile_image?size=bigger"
+    optimizeImage $handle
   fi
 done
 
@@ -105,30 +98,8 @@ for handle in $(cat _data/starters.json | jq -r '.[] | .author'); do
     echo "$handle is not valid";
   else
     echo ${handle}
-    wget --quiet -O img/avatars/${handle}.jpg https://twitter.com/${handle}/profile_image?size=bigger
-
-    file="img/avatars/${handle}.jpg"
-    type=$(file-type $file)
-    if [[ $type == *"image/jpeg"* ]]
-    then
-      jpegtran "$file" > "$file."
-      mv "$file." "$file"
-    fi
-
-    if [[ $type == *"image/png"* ]]
-    then
-      pngcrush -brute "$file"{,.}
-      rm img/avatars/${handle}.jpg
-      mv img/avatars/${handle}.jpg. img/avatars/${handle}.png
-
-      if [[ "$addComma" == "no" ]]
-      then
-        addComma="yes"
-      else
-        filemap="$filemap,"
-      fi
-      filemap="$filemap\n\t\"$handle\": \"$handle.png\""
-    fi
+    getAvatar "$handle.jpg" "https://twitter.com/${handle}/profile_image?size=bigger"
+    optimizeImage $handle
   fi
 done
 
@@ -139,30 +110,8 @@ for handle in $(cat _data/extraAvatars.json | jq -r '.[] | .twitter'); do
     echo "$handle is not valid";
   else
     echo ${handle}
-    wget --quiet -O img/avatars/${handle}.jpg https://twitter.com/${handle}/profile_image?size=bigger
-
-    file="img/avatars/${handle}.jpg"
-    type=$(file-type $file)
-    if [[ $type == *"image/jpeg"* ]]
-    then
-      jpegtran "$file" > "$file."
-      mv "$file." "$file"
-    fi
-
-    if [[ $type == *"image/png"* ]]
-    then
-      pngcrush -brute "$file"{,.}
-      rm img/avatars/${handle}.jpg
-      mv img/avatars/${handle}.jpg. img/avatars/${handle}.png
-
-      if [[ "$addComma" == "no" ]]
-      then
-        addComma="yes"
-      else
-        filemap="$filemap,"
-      fi
-      filemap="$filemap\n\t\"$handle\": \"$handle.png\""
-    fi
+    getAvatar "$handle.jpg" "https://twitter.com/${handle}/profile_image?size=bigger"
+    optimizeImage $handle
   fi
 done
 

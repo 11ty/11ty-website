@@ -23,7 +23,7 @@ This list shows all of the sample sites that have provided a link to their sourc
     </tr>
   </thead>
   <tbody>
-{% for site in eleventysites -%}
+{% for key, site in sites -%}
 {% if site.disabled != true and site.source_url -%}
     <tr>
       <td>{% if site.source_url %}<a href="{{ site.source_url }}" class="minilink">Source Code</a>{% endif %}</td>

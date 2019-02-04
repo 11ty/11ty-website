@@ -1,0 +1,7 @@
+{
+	"name": "Medium to Small JAMstack",
+	"url": "https://rss-jamstack.netlify.com/",
+	"source_url": "https://github.com/philhawksworth/medium-export",
+	"description": "A demo of generating an JAMstack site from an RSS feed",
+	"twitter": "philhawksworth"
+}

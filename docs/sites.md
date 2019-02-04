@@ -7,7 +7,7 @@ tags:
 ## {{ subtitle }}
 
 <ul class="list-bare">
-{% for site in eleventysites -%}
+{% for key, site in sites | shuffle -%}
 {% if site.disabled != true and site.url -%}
   <li><a href="{{ site.url }}">{% avatar site.twitter or site.avatar_filename %}{{ site.name | safe }}</a>
     {%- if site.description %}<em class="list-bare-desc list-bare-desc-avatar">{{ site.description }}</em>{% endif -%}

@@ -1,0 +1,6 @@
+{
+	"url": "https://github.com/11ty/logo",
+	"name": "11ty-logo",
+	"description": "This project generates a template with `eleventy` that has hundreds of different font combinations in an attempt to pick a logo.",
+	"disabled": true
+}

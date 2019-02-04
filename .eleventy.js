@@ -5,7 +5,7 @@ const HumanReadable = require('human-readable-numbers');
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language");
-const cfg = require("./_data/config.json");
+const cfg = require("./_data/config.js");
 const avatarExceptions = require("./_data/avatarFileMap.json");
 
 module.exports = function(eleventyConfig) {
@@ -137,12 +137,25 @@ module.exports = function(eleventyConfig) {
 		return splitSpace.join(" ") + after;
 	});
 
-	// Thanks to https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
-	eleventyConfig.addFilter("shuffle", arr => {
+	function randomizeArray(arr) {
 		let a = arr.slice(0);
 		for (let i = a.length - 1; i > 0; i--) {
 				const j = Math.floor(Math.random() * (i + 1));
 				[a[i], a[j]] = [a[j], a[i]];
+		}
+		return a;
+	}
+
+	// Thanks to https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+	eleventyConfig.addFilter("shuffle", arr => {
+		if( Array.isArray(arr) ) {
+			return randomizeArray(arr);
+		}
+
+		let keys = randomizeArray(Object.keys(arr));
+		let a = {};
+		for(let key of keys) {
+			a[key] = arr[key];
 		}
 		return a;
 	});
