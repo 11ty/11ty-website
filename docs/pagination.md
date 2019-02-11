@@ -385,11 +385,49 @@ Paginates to:
 
 _(More discussion at [Issue #194](https://github.com/11ty/eleventy/issues/194))_
 
+## Add All Pagination Pages to Collections {% addedin "0.7.2" %}
+
+By default, any tags listed in a paginated template will only add the very first page to the appropriate collection.
+
+Consider the following pagination template:
+
+```
+tags:
+  - myCollection
+pagination:
+  data: testdata
+  size: 2
+testdata:
+  - item1
+  - item2
+  - item3
+  - item4
+```
+
+This means that `collections.myCollection` will have only the first page added to the collection array. However, if you’d like all the pagination pages to the collections, use `addAllPagesToCollections: true` to the pagination front matter options, like so:
+
+```
+tags:
+  - myCollection
+pagination:
+  data: testdata
+  size: 2
+  addAllPagesToCollections: true
+testdata:
+  - item1
+  - item2
+  - item3
+  - item4
+```
+
+Now `collections.myCollection` will have both pages in the collection array.
+
 ## Full Pagination Option List
 
 * `data` (String) [Lodash.get path](https://lodash.com/docs/4.17.10#get) to point to the target data set.
 * `size` (Number, required)
 * `alias` (String) [Lodash.set path](https://lodash.com/docs/4.17.10#set) to point to the property to set.
-* `resolve: values`
-* `filter` (Array)
-* `reverse: true` (Boolean)
+* `resolve: values` {% addedin "0.4.0" %}
+* `filter` (Array) {% addedin "0.4.0" %}
+* `reverse: true` (Boolean) {% addedin "0.7.0" %}
+* `addAllPagesToCollections: true` (Boolean) {% addedin "0.7.2" %}
