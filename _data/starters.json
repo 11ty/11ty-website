@@ -28,5 +28,11 @@
 		"name": "eleventy-shortcomps",
 		"description": "Starter project for static site by Adam Duncan, using Eleventy and shortcode components pattern.",
 		"author": "duncanadam"
+	},
+	{
+		"url": "https://skeleventy.netlify.com/",
+		"name": "Skeleventy",
+		"description": "A skeleton boilerplate built with Eleventy and Tailwind CSS.",
+		"author": "joe_dyer1"
 	}
 ]
