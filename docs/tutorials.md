@@ -19,6 +19,7 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 
 * [**Turn Jekyll up to Eleventy**, a guide to converting a Jekyll site to use Eleventy](https://24ways.org/2018/turn-jekyll-up-to-eleventy/) by {% avatar "paulrobertlloyd" %}Paul Robert Lloyd
 * [Build your own Blog from Scratch using Eleventy](https://www.filamentgroup.com/lab/build-a-blog/) on the {% avatar "filamentgroup" %}Filament Group blog
+* [A Site for Front-End Development Conferences (Built with 11ty on Netlify) ](https://css-tricks.com/a-site-for-front-end-development-conferences-built-with-11ty-on-netlify/) on {% avatar "css" %}CSS-Tricks
 
 ### Put it on the web
 

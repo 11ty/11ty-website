@@ -1,4 +1,4 @@
-{% for testimonial in testimonials %}
+{% for testimonial in testimonials | shuffle %}
 {% if testimonial.featured -%}
 > “{{ testimonial.text }}”—{% avatar testimonial.twitter, testimonial.source, testimonial.name %}
 {% endif %}

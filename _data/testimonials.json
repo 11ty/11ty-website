@@ -30,8 +30,7 @@
 		"text": "After a day or so tweaking my existing build, here is a preview of the site running on Eleventy. I'm sold! The main thing to me was the ability to run custom JavaScript logic to sort, filter, and augment data in collections.",
 		"twitter": "eduardoboucas",
 		"name": "Eduardo Bouças",
-		"source": "https://twitter.com/eduardoboucas/status/1001158411583721473",
-		"featured": true
+		"source": "https://twitter.com/eduardoboucas/status/1001158411583721473"
 	},
 	{
 		"text": "Every time I make something with Eleventy it makes me smile. I think that might be to do with its focus on simplicity.",
@@ -94,6 +93,13 @@
 		"twitter": "heydonworks",
 		"name": "Heydon Pickering",
 		"source": "https://twitter.com/heydonworks/status/1075691449776267265",
+		"featured": true
+	},
+	{
+		"text": "Eleventy is almost fascinatingly simple.",
+		"twitter": "chriscoyier",
+		"name": "Chris Coyier",
+		"source": "https://css-tricks.com/a-site-for-front-end-development-conferences-built-with-11ty-on-netlify/",
 		"featured": true
 	}
 ]

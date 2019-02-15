@@ -8,6 +8,6 @@ tags:
 
 Don’t just take my word for it. 🌈 Listen to what these happy developers are saying about Eleventy:
 
-{% for testimonial in testimonials %}
+{% for testimonial in testimonials | shuffle %}
 > “{{ testimonial.text }}”—{% avatar testimonial.twitter, testimonial.source, testimonial.name %}
 {% endfor %}
