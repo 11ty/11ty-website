@@ -246,7 +246,7 @@ footer.elv-layout {
 }
 @media (min-width: 64em) { /* 1024px */
 	.elv-layout-toc {
-		margin-left: 18rem;
+		margin-left: 15rem;
 		max-width: 60rem;
 		margin-right: 1rem;
 		position: relative;

@@ -4,8 +4,8 @@
 @media (min-width: 64em) { /* 1024px */
 	.elv-toc {
 		position: absolute;
-		left: -17rem;
-		width: 16rem;
+		left: -14rem;
+		width: 13rem;
 	}
 }
 
@@ -21,11 +21,12 @@
 	display: none;
 	margin-bottom: 1.5em;
 	list-style: none;
+	font-size: 0.875em; /* 14px /16 */
 }
 .elv-toc-list ul li {
-	padding-left: 0.875em; /* 14px /16 */
+	padding-left: 1em; /* 16px /16 */
 }
-@media (min-width: 64em) and (min-height: 48em) { /* 1024 x 768px */
+@media (min-width: 64em) and (min-height: 31.25em) { /* 1024 x 500px */
 	.elv-toc-list ul {
 		display: block;
 	}
@@ -49,12 +50,13 @@
 
 /* Active links */
 .elv-toc-list li.elv-toc-active > a {
-	font-weight: 700;
 	text-decoration: underline;
 }
-.elv-toc-active > a:after {
-	content: " ⬅";
-	line-height: .5;
+.elv-toc-active > a:before {
+	content: "➡";
+	position: absolute;
+	left: 0;
+	margin-top: 1px;
 }
 /* Show only active nested lists */
 .elv-toc-list ul.elv-toc-active,
