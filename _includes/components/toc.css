@@ -52,12 +52,18 @@
 .elv-toc-list li.elv-toc-active > a {
 	text-decoration: underline;
 }
-.elv-toc-active > a:before {
+.elv-toc-active > a:after {
+	content: " ⬅";
+	line-height: .5;
+}
+.elv-toc-list ul .elv-toc-active > a:after {
 	content: "➡";
 	position: absolute;
 	left: 0;
 	margin-top: 1px;
+	line-height: 1;
 }
+
 /* Show only active nested lists */
 .elv-toc-list ul.elv-toc-active,
 .elv-toc-list li.elv-toc-active > ul {
