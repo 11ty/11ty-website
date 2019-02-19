@@ -63,6 +63,22 @@ Compare the `post.url` and special Eleventy-provided `page.url` variable to find
 ```
 {% endraw %}
 
+## The Special `all` Collection
+
+By default Eleventy puts all of your content (independent of whether or not it has any assigned tags) into the `collections.all` Collection. This allows you to iterate over all of your content inside of a template.
+
+### Example: A list of links to all Eleventy generated content
+
+{% raw %}
+```
+<ul>
+{%- for content in collections.all -%}
+  <li><a href="{{ post.url }}">{{ post.url }}</a></li>
+{%- endfor -%}
+</ul>
+```
+{% endraw %}
+
 ## Tag Syntax
 
 You can use a single tag, as in the above example OR you can use any number of tags for the content, using YAML syntax for a list.
