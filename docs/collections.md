@@ -79,6 +79,20 @@ By default Eleventy puts all of your content (independent of whether or not it h
 ```
 {% endraw %}
 
+## Option: Exclude content from Collections {% addedin "0.7.2" %}
+
+In front matter (or further upstream in the data cascade), set the `eleventyExcludeFromCollections` option to true to opt out of specific pieces of content added to all collections (including `collections.all`, collections set using tags, or collections added from the Configuration API in your config file). Useful for your RSS feed, `sitemap.xml`, custom templated `.htaccess` files, et cetera.
+
+{% codetitle "excluded.md" %}
+
+```
+---
+eleventyExcludeFromCollections: true
+tags: post
+---
+This will not be available in `collections.all` or `collections.post`.
+```
+
 ## Tag Syntax
 
 You can use a single tag, as in the above example OR you can use any number of tags for the content, using YAML syntax for a list.
