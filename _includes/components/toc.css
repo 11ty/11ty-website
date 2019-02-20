@@ -57,9 +57,6 @@
 .elv-toc-list li.elv-toc-active > a {
 	text-decoration: underline;
 }
-.elv-toc-list > .elv-toc-active > a {
-	font-weight: bold;
-}
 .elv-toc-list ul .elv-toc-active > a:after {
 	content: "";
 }
