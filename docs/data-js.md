@@ -8,7 +8,7 @@ relatedLinks:
 ---
 # JavaScript Data Files {% addedin "0.5.3" %}
 
-This file applies to both [Global Data Files](/docs/data-global/) (`*.js` inside of your `_data` directory) and [Template and Directory Data Files](/docs/data-template-dir/) (`*.11tydata.js` files that are paired with a template file).
+This file applies to both [Global Data Files](/docs/data-global/) (`*.js` inside of your `_data` directory) and [Template and Directory Data Files](/docs/data-template-dir/) (`*.11tydata.js` files that are paired with a template file or directory).
 
 ## Using JS Data Files
 
