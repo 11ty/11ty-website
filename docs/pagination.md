@@ -391,6 +391,8 @@ By default, any tags listed in a paginated template will only add the very first
 
 Consider the following pagination template:
 
+{% codetitle "my-page.md" %}
+
 ```
 tags:
   - myCollection
@@ -404,7 +406,9 @@ testdata:
   - item4
 ```
 
-This means that `collections.myCollection` will have only the first page added to the collection array. However, if you’d like all the pagination pages to the collections, use `addAllPagesToCollections: true` to the pagination front matter options, like so:
+This means that `collections.myCollection` will have only the first page added to the collection array (`_site/my-page/index.html`). However, if you’d like all the pagination pages to the collections, use `addAllPagesToCollections: true` to the pagination front matter options like so:
+
+{% codetitle "my-page.md" %}
 
 ```
 tags:
@@ -420,7 +424,7 @@ testdata:
   - item4
 ```
 
-Now `collections.myCollection` will have both pages in the collection array.
+Now `collections.myCollection` will have both output pages in the collection array (`_site/my-page/index.html` and `_site/-my-page/1/index.html`).
 
 ## Full Pagination Option List
 
