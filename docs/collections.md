@@ -72,7 +72,7 @@ By default Eleventy puts all of your content (independent of whether or not it h
 {% raw %}
 ```
 <ul>
-{%- for content in collections.all -%}
+{%- for post in collections.all -%}
   <li><a href="{{ post.url }}">{{ post.url }}</a></li>
 {%- endfor -%}
 </ul>
