@@ -15,7 +15,7 @@ module.exports = function(eleventyConfig) {
 		templateFormats: "md"
 	});
 	eleventyConfig.addPlugin(rssPlugin);
-	eleventyConfig.addPlugin(inclusiveLanguagePlugin);
+	// eleventyConfig.addPlugin(inclusiveLanguagePlugin);
 
 	eleventyConfig.addPairedShortcode("callout", function(content, level = "warn") {
 		return `<div class="elv-callout elv-callout-${level}">${content}</div>`;
