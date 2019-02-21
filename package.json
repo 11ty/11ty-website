@@ -6,7 +6,7 @@
   "scripts": {
     "assets": "cp node_modules/@11ty/logo/logo.png .",
     "build": "eleventy",
-    "build-production": "./avatars.sh; ELEVENTY_PRODUCTION=true eleventy"
+    "build-production": "ELEVENTY_PRODUCTION=true eleventy"
   },
   "repository": {
     "type": "git",
