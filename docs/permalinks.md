@@ -17,6 +17,24 @@ Eleventy automatically helps you make sure that [Cool URIs don’t change](https
 
 Assuming your `--output` directory is the default, `_site`:
 
+
+<table>
+    <tbody>
+        <tr>
+            <th>Input File</th>
+            <td><code>index.njk</code></td>
+        </tr>
+        <tr>
+            <th>Output File</th>
+            <td><code>_site/index.html</code></td>
+        </tr>
+        <tr>
+            <th>Href</th>
+            <td><code>/</code></td>
+        </tr>
+    </tbody>
+</table>
+
 <table>
     <tbody>
         <tr>
