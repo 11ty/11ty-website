@@ -53,7 +53,28 @@ Writing _site/index.html from ./index.html
 Wrote 2 files in 0.10 seconds
 ```
 
-This will compile any content templates in the current directory or subdirectories into the output folder (defaults to `_site`). Congratulations—you made something with Eleventy! Now put it to work with templating syntax, front matter, and data files.
+This will compile any content templates in the current directory or subdirectories into the output folder (defaults to `_site`).
+
+Use `eleventy --serve` to start up a hot-reloading local web server.
+
+```bash
+~/eleventy-sample $ eleventy --serve
+Writing _site/README/index.html from ./README.md
+Writing _site/index.html from ./index.html
+Wrote 2 files in 0.10 seconds
+Watching…
+[Browsersync] Access URLs:
+ ------------------------------------
+       Local: http://localhost:8080
+
+ (some output truncated)
+
+[Browsersync] Serving files from: _site
+```
+
+Go to `http://localhost:8080/` or `http://localhost:8080/README/` to see your Eleventy site live! Save your files and watch the page refresh for you automatically.
+
+Congratulations—you made something with Eleventy! Now put it to work with templating syntax, front matter, and data files.
 
 **➡ Continue: [Command Line Usage](/docs/usage/)**
 

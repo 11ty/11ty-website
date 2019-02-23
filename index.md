@@ -9,7 +9,7 @@ ignoreGitHubButtons: true
 ``` bash
 npm install -g @11ty/eleventy
 echo '# Page header' > README.md
-eleventy --serve
+eleventy
 ```
 
 This will compile any files matching valid template file extensions in the current directory into the output folder (defaults to `_site`).
@@ -18,9 +18,10 @@ This will compile any files matching valid template file extensions in the curre
 Writing _site/README/index.html from ./README.md
 Wrote 1 file in 0.10 seconds
 ```
-Open:  http://localhost:8080/README/index.html 
 
-➡ Keep going! Check out the [**Documentation for {% latestVersion versions, config %}**]({{ "/docs/" | url }}).
+If you run `eleventy --serve` you’ll get a hot-reloading web server and you’ll be able to open `http://localhost:8080/README/` in your web browser of choice to see your Eleventy output.
+
+➡ Keep going! Read a longer [Getting Started guide](/docs/getting-started/) or  check out the full [**Documentation for {% latestVersion versions, config %}**]({{ "/docs/" | url }}).
 
 <a href="{{ "/docs/" | url }}" class="btn-primary benchnine rainbow-active rainbow-active-noanim">Documentation for <span>Eleventy {% latestVersion versions, config %}</span></a><span>Todd said this button should be bigger and as you can see he was right</span>
 
