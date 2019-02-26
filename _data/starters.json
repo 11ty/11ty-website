@@ -34,5 +34,11 @@
 		"name": "Skeleventy",
 		"description": "A skeleton boilerplate built with Eleventy and Tailwind CSS.",
 		"author": "joe_dyer1"
+	},
+	{
+		"url": "https://tsuwave.studio/",
+		"name": "Tsuwave",
+		"description": "Small Shopify Experts agency since 2013!",
+		"author": "ajmalafif"
 	}
 ]
