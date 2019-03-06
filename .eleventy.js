@@ -160,6 +160,14 @@ module.exports = function(eleventyConfig) {
 		return a;
 	});
 
+	eleventyConfig.addFilter("getsize", arr => {
+		if( Array.isArray(arr) ) {
+			return arr.length
+		}
+
+		return Object.keys(arr).length;
+	});
+
 	eleventyConfig.addShortcode("addToSampleSites", function() {
 		return `<a href="https://github.com/11ty/11ty.io/issues/new?title=I+built+a+site+with+Eleventy!"><strong>Want to add your site to this list?</strong></a>`;
 	});
