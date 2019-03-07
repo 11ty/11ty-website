@@ -327,6 +327,15 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+Note that while Array `.reverse()` alters an array _in-place_, all Eleventy Collection API methods return new copies of a collection arrays and can be modified without side effects to other collections.
+
+<div class="elv-callout elv-callout-warn elv-callout-warn-block" id="array-reverse">
+  <p>However, you should <em>not</em> use Array <code>reverse()</code> on <code>collections.all</code> (or other arrays in the <code>collections</code> global) in your templates! This will modify the order of the collection <em>in-place</em> and could have side effects for any use of that collection in other templates.</p>
+  <p>Instead, use one of the many template engine utilities provided for you to do this, such as <a href="http://shopify.github.io/liquid/filters/reverse/">Liquid’s <code>reverse</code></a> or <a href="https://mozilla.github.io/nunjucks/templating.html#reverse">Nunjucks’ <code>reverse</code></a></p>
+  <p>This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</p>
+</div>
+
+
 {% codetitle ".eleventy.js" %}
 
 ```js

@@ -19,6 +19,18 @@
 .elv-callout-warn:before {
 	content: "⚠️ ";
 }
+.elv-callout-warn-block:before {
+	content: "";
+}
+.elv-callout-warn-block > :first-child {
+	margin-top: 0;
+}
+.elv-callout-warn-block > :last-child {
+	margin-bottom: 0;
+}
+.elv-callout-warn-block > :first-child:before {
+	content: "⚠️ ";
+}
 .elv-callout-warn code {
 	background-color: #ffff24;
 }

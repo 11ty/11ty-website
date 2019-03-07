@@ -56,3 +56,48 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setLibrary("md", markdownLib);
 };
 ```
+
+## There are extra `<pre>` and `<code>` in my output
+
+<div class="elv-callout elv-callout-warn">This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</div>
+
+Markdown has a lesser known feature called [Indented Code Blocks](https://spec.commonmark.org/0.28/#indented-code-blocks), which means any content that is indented by four or more spaces (and has a preceding line break) will be transformed into a code block.
+
+```markdown
+    a simple
+      indented code block
+```
+
+is transformed into:
+
+```html
+<pre><code>a simple
+  indented code block
+</code></pre>
+```
+
+_(Example borrowed from the [CommonMark Specification](https://spec.commonmark.org/0.28/#indented-code-blocks))_
+
+That means any content that follows this four (or more) space indent may be subject to transformation. If you pre-process your markdown using Nunjucks or Liquid or another templating engine, that means the content retrieved from an `include` or a shortcode may also fit this formatting. Careful when you include extra whitespace in your includes or shortcodes!
+
+{% codetitle ".eleventy.js" %}
+
+```js
+// 🛑 Bad, don’t do this
+eleventyConfig.addShortcode("badShortcode", function() {
+    return `
+    This is a code block in a markdown file!
+`;
+});
+```
+
+{% codetitle ".eleventy.js" %}
+
+```js
+// ✅ This will return expected output
+eleventyConfig.addShortcode("goodShortcode", function() {
+    return `
+This will not be a code block in a markdown file.
+`;
+});
+```
