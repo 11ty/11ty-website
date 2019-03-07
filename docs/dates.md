@@ -2,6 +2,7 @@
 subtitle: Content Dates
 tags:
   - docs-templates
+sampleDate: 2018-01-01
 ---
 # {{ subtitle }}
 
@@ -37,7 +38,41 @@ If a `date` key is omitted from the file, the date is assumed to be:
 1. If the file name has a `YYYY-MM-DD` format (anywhere), this date is used.
 1. File creation date.
 
-<div class="elv-callout elv-callout-warn"><strong>Running Eleventy on a Continuous Integration Server?</strong> Your collections may appear out of order! See <a href="/docs/pitfalls/#file-creation-dates-reset-on-continuous-integration-server">Common Pitfalls</a>.</div>
+## Dates off by one day?
 
-<div class="elv-callout elv-callout-warn"><strong>Are your dates displaying off by one day?</strong> You’re probably displaying UTC dates in a local time zone. See <a href="/docs/pitfalls/#dates-off-by-one-day%3F">Common Pitfalls</a>.</div>
+<div class="elv-callout elv-callout-warn">This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</div>
+
+You’re probably displaying UTC dates in a local time zone.
+
+Many date formats in Eleventy (when set in your content‘s filename as `YYYY-MM-DD-myfile.md` or in your front matter as `date: YYYY-MM-DD`) assume midnight in UTC. When displaying your dates, make sure you’re using the UTC time and not your own local time zone, which may be the default.
+
+### Example
+
+```
+---
+date: 2018-01-01
+---
+```
+
+```
+{% raw %}{{ page.date }}{% endraw %} will display a local time zone date.
+{{ sampleDate }}
+```
+
+```
+{% raw %}{{ page.date.toString() }}{% endraw %} will display a local time zone date.
+{{ sampleDate.toString() }}
+```
+
+```
+{% raw %}{{ page.date.toUTCString() }}{% endraw %} will display a UTC time zone date.
+{{ sampleDate.toUTCString() }}
+```
+
+## Collections out of order when you run Eleventy on your Server?
+
+<div class="elv-callout elv-callout-warn">This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</div>
+
+Be careful relying on the default `date` associated with a piece of content. By default Eleventy uses file creation dates, which works fine if you run Eleventy locally but may reset in some conditions if you run Eleventy on a Continuous Integration server. Work around this by using explicit date assignments, either in your front matter or your content’s file name. [Read more at Content Dates](/docs/dates/).
+
 

@@ -189,7 +189,10 @@ module.exports = function(eleventyConfig) {
 	let opts = {
 		permalink: true,
 		slugify: function(s) {
-			return encodeURIComponent(String(s).replace(/New\ in\ v\d+\.\d+\.\d+/, '').trim().toLowerCase().replace(/\s+/g, '-'));
+			let newStr = String(s).replace(/New\ in\ v\d+\.\d+\.\d+/, '');
+			newStr = newStr.replace(/⚠️/g, '');
+			newStr = newStr.replace(/[?!]/g, '');
+			return encodeURIComponent(newStr.trim().toLowerCase().replace(/\s+/g, '-'));
 		},
 		permalinkClass: "direct-link",
 		permalinkSymbol: "#",
