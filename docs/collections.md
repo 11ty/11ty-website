@@ -169,7 +169,7 @@ Note in the above example that we output the `post.data.title` value? Similarly,
 The default collection sorting algorithm sorts in ascending order using:
 
 1. The input file’s Created Date (you can override using `date` in front matter, as shown below)
-2. Files created at the exact same time are tiebroken using the input file’s full path including filename
+2. Files created at the exact same time are tie-broken using the input file’s full path including filename
 
 For example, assume I only write blog posts on New Years Day:
 
@@ -200,6 +200,14 @@ To sort descending in your template, you can use a filter to reverse the sort or
 </ul>
 ```
 {% endraw %}
+
+<div class="elv-callout elv-callout-warn elv-callout-warn-block" id="array-reverse">
+  <p>You should <em><strong>not</strong></em> use Array <code>reverse()</code> on collection arrays in your templates, like so:</p>
+  <p><code>{%raw %}{%- for post in collections.post.reverse() -%}{% endraw %}</code></p>
+  <p>This will <a href="https://doesitmutate.xyz/reverse/">mutate the array</a> and re-order it <em>in-place</em> and will have side effects for any use of that collection in other templates.</p>
+  <p>Instead, use one of the many template engine utilities provided for you to do this, such as <a href="http://shopify.github.io/liquid/filters/reverse/">Liquid’s <code>reverse</code></a> or <a href="https://mozilla.github.io/nunjucks/templating.html#reverse">Nunjucks’ <code>reverse</code></a></p>
+  <p>This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</p>
+</div>
 
 ### Overriding Content Dates
 
@@ -327,14 +335,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-Note that while Array `.reverse()` alters an array _in-place_, all Eleventy Collection API methods return new copies of a collection arrays and can be modified without side effects to other collections.
-
-<div class="elv-callout elv-callout-warn elv-callout-warn-block" id="array-reverse">
-  <p>However, you should <em>not</em> use Array <code>reverse()</code> on <code>collections.all</code> (or other arrays in the <code>collections</code> global) in your templates! This will modify the order of the collection <em>in-place</em> and could have side effects for any use of that collection in other templates.</p>
-  <p>Instead, use one of the many template engine utilities provided for you to do this, such as <a href="http://shopify.github.io/liquid/filters/reverse/">Liquid’s <code>reverse</code></a> or <a href="https://mozilla.github.io/nunjucks/templating.html#reverse">Nunjucks’ <code>reverse</code></a></p>
-  <p>This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</p>
-</div>
-
+Note that while Array `.reverse()` mutates the array _in-place_, all Eleventy Collection API methods return new copies of collection arrays and can be modified without side effects to other collections. <a href="#array-reverse">However, you do need to be careful ⚠️ when using Array `.reverse()` in templates!</a>
 
 {% codetitle ".eleventy.js" %}
 
