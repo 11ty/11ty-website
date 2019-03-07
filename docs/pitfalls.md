@@ -1,5 +1,5 @@
 ---
-subtitle: Pitfalls
+subtitle: Common Pitfalls
 excerpt: Some common problems.
 tags:
   - docs-templates

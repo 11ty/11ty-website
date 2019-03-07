@@ -381,7 +381,14 @@ main .elv-toc + h1 .direct-link {
 	border-top: 1px dotted #ddd;
 	border-bottom: 1px dotted #ddd;
 	margin: 2rem 0;
-	overflow: hidden; /* clearfix */
+}
+.elv-sg-component:before,
+.elv-sg-component:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+.elv-sg-component:after {
+  clear: both;
 }
 
 /* Screen readers only */
