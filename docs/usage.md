@@ -76,7 +76,7 @@ Yes, you can use the same `input` and `output` directories, like so:
 eleventy --input=. --output=. --formats=md
 ```
 
-<div class="elv-callout elv-callout-warn">Careful with <code>--formats=html</code> here! If you run eleventy more than once, it’ll try to process the output files too. Read more at <a href="/docs/pitfalls/">Common Pitfalls</a>.
+<div class="elv-callout elv-callout-warn">Careful with <code>--formats=html</code> here! If you run eleventy more than once, it’ll try to process the output files too. Read more at the <a href="/docs/languages/html/#using-the-same-input-and-output-directories">HTML template docs</a>.
 
 <!-- 
 ### Example: Process a Single File

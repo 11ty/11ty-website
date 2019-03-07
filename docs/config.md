@@ -347,7 +347,7 @@ module.exports = {
 
 ### Change exception case suffix for HTML files
 
-If an HTML template has matching input and output directories, index.html files will have this suffix added to their output filename to prevent overwriting the template. Read more at [Common Pitfalls](/docs/pitfalls/).
+If an HTML template has matching input and output directories, index.html files will have this suffix added to their output filename to prevent overwriting the template. Read more at the [HTML template docs](/docs/languages/html/#using-the-same-input-and-output-directories).
 
 | Exception Suffix |  |
 | --- | --- |
