@@ -27,6 +27,8 @@ Here are a few data values we supply to your page that you can use in your templ
 * `collections`: Lists of all of your content, grouped by tags. [Read more about Collections](/docs/collections/)
 * `page`: Has information about the current page. See code block below for `page` contents. For example, `page.url` is useful for finding the current page in a collection. [Read more about Collections](/docs/collections/) (look at _Example: Navigation Links with an `active` class added for on the current page_).
 
+<div id="page-variable-contents"></div>
+
 ### `page` Variable Contents:
 
 ```js
