@@ -108,7 +108,7 @@ If you set the `permalink` value to be `false`, this will disable writing the fi
 
 ```
 ---
-permalink: this-is-a-new-path/subdirectory/testing/index.html
+permalink: false
 ---
 ```
 
