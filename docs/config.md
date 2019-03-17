@@ -61,6 +61,7 @@ This allows you further customization options using Eleventy’s provided helper
 {% set toc = [
   "Input Directory",
   "Directory for Includes",
+  "Directory for Layouts (Optional)",
   "Directory for Global Data Files",
   "Output Directory",
   "Default Template Engine for Global Data Files",
@@ -133,7 +134,7 @@ The includes directory is meant for layout templates, include files, extends fil
 | --- | --- |
 | _Object Key_ | `dir.includes` |
 | _Default_ | `_includes` |
-| _Valid Options_ | Any valid directory inside of `dir.input` |
+| _Valid Options_ | Any valid directory inside of `dir.input` (an empty string `""` is supported) |
 | _Command Line Override_ | _None_ |
 
 #### Example
@@ -148,6 +149,32 @@ module.exports = {
     }
 };
 ```
+
+### Directory for Layouts (Optional) {% addedin "0.7.2" %}
+
+The layouts directory is optional and intended only for projects that don’t want their layout templates to live in the [Includes directory](#directory-for-includes). These files will not be processed as input files, but can be consumed by other templates.
+
+| Includes Directory |  |
+| --- | --- |
+| _Object Key_ | `dir.layouts` |
+| _Default_ | _The value in `dir.includes`_ |
+| _Valid Options_ | Any valid directory inside of `dir.input` (an empty string `""` is supported) |
+| _Command Line Override_ | _None_ |
+
+#### Example
+
+{% codetitle ".eleventy.js" %}
+
+```
+module.exports = {
+    dir: {
+        // ⚠️ These values are both relative to your input directory.
+        includes: "_includes",
+        layouts: "_layouts"
+    }
+};
+```
+
 
 ### Directory for Global Data Files
 
