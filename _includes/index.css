@@ -493,3 +493,10 @@ main .elv-toc + h1 .direct-link {
 		font-size: 2.6365625rem; /* 42.185px /16 */
 	}
 }
+@media (min-width: 64em) { /* 1024px */
+	.btn-primary {
+		font-size: 4em; /* 64px /16 */
+		margin-left: -2em;
+		margin-right: -2em;
+	}
+}
