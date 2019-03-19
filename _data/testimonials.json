@@ -1,5 +1,13 @@
 [
 	{
+		"text": "Read the replies to: _[“Fans of Eleventy.... why do you like it better than other static site generators?”](https://twitter.com/jensimmons/status/1107377359546736641)_",
+		"twitter": "jensimmons",
+		"name": "posted by Jen Simmons",
+		"source": "https://twitter.com/jensimmons/status/1107377359546736641",
+		"featured": true,
+		"indirect": true
+	},
+	{
 		"text": "Seriously can't remember enjoying using a Static Site Generator this much. Yes Hugo is rapid, but this is all so logical. It feels like it was designed by someone who has been through lots of pain and success using other SSGs.",
 		"twitter": "philhawksworth",
 		"name": "Phil Hawksworth",
