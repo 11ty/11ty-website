@@ -133,7 +133,9 @@ Writes to `_site/subdir/this-is-a-new-path/index.html`.
 
 ### Disable templating in permalinks {% addedin "0.7.0" %}
 
-Some template syntaxes are nicer than others and you may want to opt-out of the templating engine here. Use the `dynamicPermalink` option in your front matter to disable this on a per-template basis. This has been a common hiccup for users of the Pug templating engine, for example.
+Some template syntaxes are nicer than others and you may want to opt-out of the templating engine here. Use the `dynamicPermalink` option in your front matter to disable this on a per-template basis.
+
+{% callout "warn" %}This is a <a href="/docs/pitfalls/"><strong>common pitfall</strong></a> for users of the Pug templating engine.{% endcallout %}
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
@@ -146,7 +148,7 @@ dynamicPermalink: false
 
 #### Globally disable templating in permalinks {% addedin "0.3.4" %}
 
-Eleventy has long had a global configuration option to disable dynamic templating altogether, like so:
+Eleventy includes a global configuration option to disable dynamic templating altogether. This will save a few template renders and is probably marginally faster, too.
 
 {% codetitle ".eleventy.js" %}
 
@@ -156,8 +158,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setDynamicPermalinks(false);
 };
 ```
-
-
 
 ### Use filters!
 

@@ -8,25 +8,9 @@ const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-languag
 const cfg = require("./_data/config.js");
 const avatarExceptions = require("./_data/avatarFileMap.json");
 
-module.exports = function(eleventyConfig) {
-	eleventyConfig.setDataDeepMerge(true);
 
-	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
-		templateFormats: "md"
-	});
-	eleventyConfig.addPlugin(rssPlugin);
-	// eleventyConfig.addPlugin(inclusiveLanguagePlugin);
-
-	eleventyConfig.addPairedShortcode("callout", function(content, level = "warn") {
-		return `<div class="elv-callout elv-callout-${level}">${content}</div>`;
-	});
-
-	eleventyConfig.addShortcode("emoji", function(emoji, alt = "") {
-		return `<span aria-hidden="true">${emoji}</span>` + 
-			(alt ? `<span class="sr-only">${alt}</span>` : "");
-	});
-
-	eleventyConfig.addShortcode("avatar", function(filename, linkUrl, text = "") {
+const shortcodes = {
+	avatar: function(filename, linkUrl, text = "") {
 		if(!filename) {
 			return '<span class="avatar"></span>';
 		}
@@ -46,7 +30,28 @@ module.exports = function(eleventyConfig) {
 			`<img src="/img/avatars/${filename}" class="avatar" alt="@${twitterName} Twitter Photo">` +
 			text +
 			(linkUrl ? `</a>` : "");
+	}
+};
+
+module.exports = function(eleventyConfig) {
+	eleventyConfig.setDataDeepMerge(true);
+
+	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
+		templateFormats: "md"
 	});
+	eleventyConfig.addPlugin(rssPlugin);
+	// eleventyConfig.addPlugin(inclusiveLanguagePlugin);
+
+	eleventyConfig.addPairedShortcode("callout", function(content, level = "warn") {
+		return `<div class="elv-callout elv-callout-${level}">${content}</div>`;
+	});
+
+	eleventyConfig.addShortcode("emoji", function(emoji, alt = "") {
+		return `<span aria-hidden="true">${emoji}</span>` + 
+			(alt ? `<span class="sr-only">${alt}</span>` : "");
+	});
+
+	eleventyConfig.addShortcode("avatar", shortcodes.avatar);
 
 	eleventyConfig.addShortcode("codetitle", function(title, subtitle = "Filename") {
 		return `<div class="codetitle codetitle-left"><b>${subtitle} </b>${title}</div>`;
@@ -160,6 +165,16 @@ module.exports = function(eleventyConfig) {
 		return a;
 	});
 
+	// Thanks to https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+	eleventyConfig.addFilter("randompick", arr => {
+		if( Array.isArray(arr) ) {
+			return arr[Math.floor(Math.random() * arr.length)];
+		}
+
+		let randkey = Object.keys(arr)[Math.floor(Math.random() * arr.length)];
+		return arr[randkey]
+	});
+
 	eleventyConfig.addFilter("getsize", arr => {
 		if( Array.isArray(arr) ) {
 			return arr.length
@@ -176,6 +191,10 @@ module.exports = function(eleventyConfig) {
 		return collection.getFilteredByTag("quicktips").sort(function(a, b) {
 			return parseInt(a.data.tipindex, 10) - parseInt(b.data.tipindex, 10);
 		});
+	});
+
+	eleventyConfig.addShortcode("testimonial", function(testimonial) {
+		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `”—${shortcodes.avatar(testimonial.twitter, testimonial.source, testimonial.name)}` : ``}</p></blockquote>`;
 	});
 
 	/* Markdown */

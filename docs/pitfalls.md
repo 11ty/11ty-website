@@ -12,3 +12,4 @@ tags:
 * [My collections are out of order because I’m using Array reverse() on the collections global](/docs/collections/#array-reverse)
 * [My collections are out of order when I deploy on a server.](/docs/dates/#collections-out-of-order-when-you-run-eleventy-on-your-server)
 * [I’m porting from Jekyll and I want to use Quoted Include Paths in my Liquid Templates.](/docs/languages/liquid/#quoted-include-paths)
+* [I’m having trouble with modifying a permalink in a Pug template](/docs/permalinks/#disable-templating-in-permalinks)

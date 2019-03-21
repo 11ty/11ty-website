@@ -22,6 +22,10 @@ headerClass: elv-header-default
 		<a href="https://github.com/11ty/eleventy"><strong>Please star Eleventy on GitHub!</strong></a> This is a good way to support our underrated project and help boost our rank on <a href="https://www.staticgen.com/">staticgen.com</a>, a giant list of static site generators.
 	</div>
 {%- endif %}
+{%- if page.url != "/" and not page.url.endsWith("/docs/") and not page.url.endsWith("/docs/testimonials/")  %}
+	{%- set randomTestimonial = testimonials | randompick %}
+	{%- testimonial randomTestimonial %}
+{%- endif %}
 
 	{% include "footer-nav.njk" %}
 </footer>

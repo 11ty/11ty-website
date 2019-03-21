@@ -1,8 +1,8 @@
 [
 	{
-		"text": "Read the replies to: _[“Fans of Eleventy.... why do you like it better than other static site generators?”](https://twitter.com/jensimmons/status/1107377359546736641)_",
+		"text": "Read the replies to: <em><a href='https://twitter.com/jensimmons/status/1107377359546736641'>“Fans of Eleventy.... why do you like it better than other static site generators?”</a></em>",
 		"twitter": "jensimmons",
-		"name": "posted by Jen Simmons",
+		"name": "Jen Simmons",
 		"source": "https://twitter.com/jensimmons/status/1107377359546736641",
 		"featured": true,
 		"indirect": true
@@ -97,7 +97,7 @@
 		"featured": true
 	},
 	{
-		"text": "Using Eleventy for two projects: one personal, the other for a high profile org. Just the kind of simple / common sense tool I love. The data/folder hierarchy mechanism is super obvious and elegant.",
+		"text": "Just the kind of simple / common sense tool I love. The data/folder hierarchy mechanism is super obvious and elegant.",
 		"twitter": "heydonworks",
 		"name": "Heydon Pickering",
 		"source": "https://twitter.com/heydonworks/status/1075691449776267265",
