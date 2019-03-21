@@ -4,7 +4,7 @@ tags:
   - docs-overview
 ---
 
-## {{ sites | getsize }} {{ subtitle }}
+# {{ sites | getsize }} {{ subtitle }}
 
 <ul class="list-bare">
 {% for key, site in sites | shuffle -%}
