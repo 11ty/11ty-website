@@ -35,7 +35,7 @@ module.exports = function(eleventyConfig) {
 | ✅ Partials                                                                  | `{% raw %}{{> user}}{% endraw %}` looks for `_includes/user.hbs` (does not process front matter)                                                                                             |
 | ✅ Helpers (Custom Tags)                                                                   | `{% raw %}{{ helperName myObject }}{% endraw %}` Handlebars calls them Helpers, but Eleventy calls them Shortcodes. Read more about [Shortcodes](/docs/shortcodes/) or [Custom Tags](/docs/custom-tags/).                                |
 | ✅ [Eleventy Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{{ filterName myObject }}{% endraw %}` Read more about [Filters](/docs/filters/). |
-| ✅ [Shortcodes](/docs/shortcodes/) | `{% raw %}{{ uppercase name }}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/). {% addedin "0.5.0" %}|
+| ✅ [Shortcodes](/docs/shortcodes/) | `{% raw %}{{{ uppercase name }}}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/). {% addedin "0.5.0" %}|
 
 
 <span id="filters"></span><span id="shortcodes"></span>
@@ -61,9 +61,11 @@ module.exports = function(eleventyConfig) {
 
 {% raw %}
 ```html
-<h1>{{ myHandlebarsHelper myVariable }}</h1>
+<h1>{{{ myHandlebarsHelper myVariable }}}</h1>
 ```
 {% endraw %}
+
+{% callout "info" %}Note that if you return HTML in your Handlebars helper, you need to use the Handlebars triple-stash syntax (three opening and three closing curly brackets) to avoid double-escaped HTML.{% endcallout %}
 
 ### A note about Universal Filters
 
@@ -103,9 +105,11 @@ module.exports = function(eleventyConfig) {
 
 {% raw %}
 ```html
-{{ user "Zach Leatherman" "zachleat" }}
+{{{ user "Zach Leatherman" "zachleat" }}}
 ```
 {% endraw %}
+
+{% callout "info" %}Note that if you return HTML in your Handlebars shortcode, you need to use the Handlebars triple-stash syntax (three opening and three closing curly brackets) to avoid double-escaped HTML.{% endcallout %}
 
 ##### Outputs
 
@@ -145,6 +149,8 @@ Note that you can put any Handlebars tags or content inside the `{% raw %}{{ use
 {{/ user }}
 ```
 {% endraw %}
+
+{% callout "info" %}While unpaired shortcodes and helpers required that you use the Handlebars triple-stash syntax (three opening and three closing curly brackets) to avoid double-escaped HTML, paired Handlebars shortcodes do not have this requirement.{% endcallout %}
 
 ##### Outputs
 
