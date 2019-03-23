@@ -32,7 +32,7 @@ Run `eleventy --serve` to start up a hot-reloading web server. Then open `http:/
 * 2018 November—[Happy First Birthday, Eleventy! 🎉](https://www.zachleat.com/web/eleventy-birthday/)
 * 2018 December—[Turn Jekyll up to Eleventy—a lovely tutorial by {% avatar "paulrobertlloyd" %}Paul Robert Lloyd](https://24ways.org/2018/turn-jekyll-up-to-eleventy/)
 
-## Used By
+## Used At
 
 <div class="used-by">
     <a href="https://home.cern/" class="elv-externalexempt"><img src="/img/orgs/cern.png" alt="CERN"></a>
