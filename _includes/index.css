@@ -459,6 +459,21 @@ main .elv-toc + h1 .direct-link {
 	vertical-align: middle;
 }
 
+/* Used by */
+.used-by {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.used-by img {
+	height: 75px;
+	margin: 1rem .5rem;
+}
+.used-by img[src$="svg"] {
+	padding: 1rem;
+}
+
 /* Big primary button */
 .btn-primary {
 	display: block;

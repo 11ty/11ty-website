@@ -32,6 +32,15 @@ Run `eleventy --serve` to start up a hot-reloading web server. Then open `http:/
 * 2018 November—[Happy First Birthday, Eleventy! 🎉](https://www.zachleat.com/web/eleventy-birthday/)
 * 2018 December—[Turn Jekyll up to Eleventy—a lovely tutorial by {% avatar "paulrobertlloyd" %}Paul Robert Lloyd](https://24ways.org/2018/turn-jekyll-up-to-eleventy/)
 
+## Used By
+
+<div class="used-by">
+    <a href="https://home.cern/" class="elv-externalexempt"><img src="/img/orgs/cern.png" alt="CERN"></a>
+    <a href="https://www.google.com/" class="elv-externalexempt"><img src="/img/orgs/google.svg" alt="Google"></a>
+    <a href="https://www.netlify.com/" class="elv-externalexempt"><img src="/img/orgs/netlify.png" alt="Netlify"></a>
+    <a href="https://css-tricks.com/" class="elv-externalexempt"><img src="/img/orgs/css-tricks.png" alt="CSS-Tricks"></a>
+</div>
+
 ## Built With Eleventy
 
 <div class="featured-sites">
