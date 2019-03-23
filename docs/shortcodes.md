@@ -36,9 +36,12 @@ Various template engines can be extended with shortcodes for easy reusable conte
 
 {% raw %}
 ```html
-{{ user firstName lastName }}
+<!-- Note the three opening and closing curly brackets (the triple-stash) -->
+{{{ user firstName lastName }}}
 ```
 {% endraw %}
+
+{% callout "info" %}Note that if you return HTML in your Handlebars shortcode, you need to use the Handlebars triple-stash syntax (three opening and three closing curly brackets, e.g. <code>{% raw %}{{{ shortcodeName }}}{% endraw %}</code>) to avoid double-escaped HTML. If it’s double-escaped a paragraph tag may render as <code>&amp;lt;p&amp;gt;</code>{% endcallout %}
 
 {% codetitle "JavaScript", "Syntax" %}
 {% addedin "0.7.0" %}
