@@ -34,5 +34,11 @@
 		"name": "Skeleventy",
 		"description": "A skeleton boilerplate built with Eleventy and Tailwind CSS.",
 		"author": "joe_dyer1"
+	},
+	{
+		"url": "https://7ty.tech/",
+		"name": "Seven",
+		"description": "An eleventy template based on bootstrap4layouts. Includes webpack, sass version of bootstrap, vue.js powered search and a whole lot more.",
+		"author": "planetoftheweb"
 	}
 ]
