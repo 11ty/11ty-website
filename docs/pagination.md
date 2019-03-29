@@ -385,7 +385,7 @@ Paginates to:
 
 _(More discussion at [Issue #194](https://github.com/11ty/eleventy/issues/194))_
 
-## Add All Pagination Pages to Collections {% addedin "0.7.2" %}
+## Add All Pagination Pages to Collections {% addedin "0.8.0" %}
 
 By default, any tags listed in a paginated template will only add the very first page to the appropriate collection.
 
@@ -434,4 +434,4 @@ Now `collections.myCollection` will have both output pages in the collection arr
 * `resolve: values` {% addedin "0.4.0" %}
 * `filter` (Array) {% addedin "0.4.0" %}
 * `reverse: true` (Boolean) {% addedin "0.7.0" %}
-* `addAllPagesToCollections: true` (Boolean) {% addedin "0.7.2" %}
+* `addAllPagesToCollections: true` (Boolean) {% addedin "0.8.0" %}

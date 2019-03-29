@@ -150,7 +150,7 @@ module.exports = {
 };
 ```
 
-### Directory for Layouts (Optional) {% addedin "0.7.2" %}
+### Directory for Layouts (Optional) {% addedin "0.8.0" %}
 
 The layouts directory is optional and intended only for projects that don’t want their layout templates to live in the [Includes directory](#directory-for-includes). These files will not be processed as input files, but can be consumed by other templates.
 
