@@ -209,7 +209,7 @@ class Test {
       title: "This is my blog post title",
       // Writes to "/this-is-my-blog-post-title/index.html"
       permalink: function(data) {
-        return `/${this.slug(data.key)}/`;
+        return `/${this.slug(data.title)}/`;
       }
     };
   }
