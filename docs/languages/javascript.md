@@ -208,7 +208,9 @@ class Test {
     return {
       title: "This is my blog post title",
       // Writes to "/this-is-my-blog-post-title/index.html"
-      permalink: data => `/${this.slug(data.key)}/`
+      permalink: function(data) {
+        return `/${this.slug(data.key)}/`;
+      }
     };
   }
 
