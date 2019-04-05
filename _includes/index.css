@@ -513,3 +513,8 @@ main .elv-toc + h1 .direct-link {
 		width: calc(90vw - 2rem);
 	}
 }
+
+/* Emoji */
+.emoji {
+	line-height: 1;
+}

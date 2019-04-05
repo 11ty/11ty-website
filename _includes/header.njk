@@ -2,10 +2,10 @@
 	<a href="{% if logoLink %}{{ logoLink | url }}{% else %}/{% endif %}" class="elv-hero elv-externalexempt"><img src="{{ "/img/logo.png" | url }}" alt="11ty"></a>
 	<a href="https://twitter.com/jameswillweb/status/999052022497316865" class="elv-externalexempt"><img src="{{ "/img/possum-sm.png" | url }}" class="elv-possum" alt="The possum is Eleventy’s mascot"></a>
 	<h1 class="elv-hed">{{ title | orphanWrap | safe }}</h1>
-	<ul class="elv-nav">
+	<ul class="elv-nav elv-nav-header">
 		<li class="elv-nav-item"><a href="{{ "/docs/" | url }}" class="elv-externalexempt">Docs <span class="elv-nav-light">{% latestVersion versions, config %}</span></a></li>
+		<li class="elv-nav-item"><a href="https://opencollective.com/11ty" class="elv-externalexempt">Support Eleventy {% emoji "🎁" %}</a></li>
 		<li class="elv-nav-item"><a href="https://github.com/11ty/eleventy/" class="elv-externalexempt">GitHub</a></li>
-		<li class="elv-nav-item"><a href="https://www.npmjs.com/org/11ty" class="elv-externalexempt">npm</a></li>
 		<li class="elv-nav-item"><a href="https://twitter.com/eleven_ty" class="elv-externalexempt">Twitter</a></li>
 		<li class="elv-nav-item"><a href="https://twitter.com/zachleat/" class="elv-nav-light elv-externalexempt">@zachleat</a></li>
 	</ul>

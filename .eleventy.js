@@ -47,7 +47,7 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addShortcode("emoji", function(emoji, alt = "") {
-		return `<span aria-hidden="true">${emoji}</span>` + 
+		return `<span aria-hidden="true" class="emoji">${emoji}</span>` + 
 			(alt ? `<span class="sr-only">${alt}</span>` : "");
 	});
 
