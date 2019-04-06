@@ -290,6 +290,9 @@ footer.elv-layout {
 	height: 3em;
 }
 @media (min-width: 38.75em) { /* 620px */
+	.elv-header-docs .elv-hero {
+		margin-right: 1em;
+	}
 	.elv-header-docs .elv-hero img {
 		width: 4.303125em; /* 68.85px /16 */
 		height: 6em;
