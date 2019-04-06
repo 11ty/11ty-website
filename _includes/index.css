@@ -283,13 +283,13 @@ footer.elv-layout {
 }
 .elv-header-docs .elv-hero {
 	float: left;
-	margin-right: 1.5em;
+	margin-right: .5em;
 }
 .elv-header-docs .elv-hero img {
 	width: auto;
 	height: 3em;
 }
-@media (min-width: 37.5em) { /* 600px */
+@media (min-width: 38.75em) { /* 620px */
 	.elv-header-docs .elv-hero img {
 		width: 4.303125em; /* 68.85px /16 */
 		height: 6em;
@@ -311,20 +311,22 @@ footer.elv-layout {
 
 /* Header Heading */
 .elv-hed {
-	font-size: 3em;
+	font-size: 2.625em; /* 42px /16 */
+	line-height: 1.2;
 	margin-top: 1.5em;
 	margin-bottom: .25em;
 	text-align: center;
 	text-transform: none;
 }
 .elv-header-docs .elv-hed {
-	font-size: 2.3em;
+	font-size: 2.125em; /* 34px /16 */
+	line-height: 1.5;
 	margin: 0;
 	text-align: left;
 }
-@media (min-width: 37.5em) { /* 600px */
+@media (min-width: 38.75em) { /* 620px */
 	.elv-header-docs .elv-hed {
-		font-size: 3em;
+		font-size: 2.625em; /* 42px /16 */
 	}
 }
 

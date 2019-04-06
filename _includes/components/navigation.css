@@ -1,9 +1,9 @@
 .elv-nav {
 	padding: 0;
-	margin: 1em 0 0 0;
+	margin: 1em auto 0;
 	clear: both;
-	list-style: none;
 	width: 100%;
+	list-style: none;
 	font-size: 1rem; /* 16px /16 */
 }
 .elv-nav-footer {
@@ -12,8 +12,10 @@
 .elv-nav-item {
 	float: left;
 	min-width: 50%;
-	font-size: 0.875em; /* 14px /16 */
 	white-space: nowrap;
+}
+.elv-nav-header .elv-nav-item {
+	min-width: 40%;
 }
 .elv-nav-item a {
 	font-weight: 600;
@@ -22,45 +24,17 @@
 .elv-nav-item .elv-nav-light {
 	font-weight: 300;
 }
-@media (max-width: 24.9375em) { /* 399px */
-	.elv-nav-header .elv-nav-item:nth-child(2n) {
-		text-align: right;
-	}
-}
-@media (max-width: 37.4375em) { /* 599px */
-	.elv-nav-footer .elv-nav-item:nth-child(2n) {
-		text-align: right;
-	}
-}
-@media (min-width: 25em) { /* 400px */
-	.elv-nav-header .elv-nav-item {
-		min-width: 0;
-		width: 33.333%;
-	}
-	.elv-nav-header .elv-nav-item:nth-child(3n) {
-		text-align: right;
-	}
-	.elv-nav-header .elv-nav-item:nth-child(3n + 2) {
-		text-align: center;
-	}
-}
+
 @media (min-width: 37.5em) { /* 600px */
-	.elv-nav {
-		clear: none;
-		width: auto;
-		margin-top: 0;
+	.elv-nav-footer .elv-nav-item-sm {
+		font-size: 0.875em; /* 14px /16 */
 	}
-	.elv-nav-item {
-		font-size: 0.9375em; /* 15px /16 */
-	}
-	.elv-nav-item-sm {
-		font-size: 0.8125em; /* 13px /16 */
-	}
-	.elv-nav .elv-nav-item {
+
+	.elv-nav-footer .elv-nav-item {
 		width: auto;
 		min-width: 0;
 	}
-	.elv-nav .elv-nav-item:not(:first-child):before {
+	.elv-nav-footer .elv-nav-item:not(:first-child):before {
 		content: "";
 		border-left: 1px solid #ccc;
 		padding: 0 0 0 .5em;
@@ -74,5 +48,24 @@
 		border: none;
 		padding-left: 0;
 		margin-left: 0;
+	}
+}
+
+@media (min-width: 38.75em) { /* 620px */
+	/* Header nav */
+	.elv-nav-header {
+		clear: none;
+		margin-top: 0;
+		width: auto;
+	}
+	.elv-nav-header .elv-nav-item {
+		width: auto;
+		min-width: 0;
+	}
+	.elv-nav-header .elv-nav-item:not(:first-child):before {
+		content: "";
+		border-left: 1px solid #ccc;
+		padding: 0 0 0 .5em;
+		margin-left: .5em;
 	}
 }
