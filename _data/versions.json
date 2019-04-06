@@ -4,6 +4,9 @@
 		"docs_url": "https://www.11ty.io/docs/",
 		"ignore_release_notes": true
 	},{
+		"tag": "v0.8.1",
+		"docs_url": "https://v0-8-1.11ty.io/docs/"
+	},{
 		"tag": "v0.8.0",
 		"docs_url": "https://v0-8-0.11ty.io/docs/"
 	},{
