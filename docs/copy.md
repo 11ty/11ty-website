@@ -27,7 +27,7 @@ You might also imagine using this for images by adding `"jpg"`, `"png"`, or mayb
 
 ## Manual Passthrough Copy (Faster) {% addedin "0.2.14" %}
 
-Searching the entire directory structure for files to copy based on file extensions is not optimal with large directory structures. If we know what non-template static content we want to appear in our output, we can opt-in to specify _files_ or _directories_ for Eleventy to copy. This will probably speed up your build times. These entries are relative to your the root of your project and _not_ your Eleventy input directory.
+Searching the entire directory structure for files to copy based on file extensions is not optimal with large directory structures. If we know what non-template static content we want to appear in our output, we can opt-in to specify _files_ or _directories_ for Eleventy to copy. This will probably speed up your build times. These entries are relative to the root of your project and _not_ your Eleventy input directory.
 
 {% codetitle ".eleventy.js" %}
 
