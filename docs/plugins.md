@@ -16,6 +16,7 @@ Plugins are custom code that Eleventy can import into a project from an external
 ### Unofficial Plugins
 
 * [`eleventy-plugin-toc`](https://www.npmjs.com/package/eleventy-plugin-toc) by [James Steinbach](https://twitter.com/jdsteinbach) will generate a table of contents from your headings.
+* [`eleventy-plugin-nesting-toc`](https://www.npmjs.com/package/eleventy-plugin-nesting-toc) by [Jordan Shurmer](https://github.com/JordanShurmer) will generate a nested table of contents from your site's headings.
 * [`eleventy-plugin-cache-buster`](https://www.npmjs.com/package/@mightyplow/eleventy-plugin-cache-buster) by [mightyplow](https://twitter.com/mightyplow) will add content hashes to JavaScript and CSS resources.
 * [**Search for `eleventy-plugin` on `npm`**](https://www.npmjs.com/search?q=eleventy-plugin)
 
