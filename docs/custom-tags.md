@@ -48,7 +48,7 @@ module.exports = function(eleventyConfig) {
 ```
 {% endraw %}
 
-See all of the [built-in tag implementations for LiquidJS](https://github.com/harttle/liquidjs/tree/master/tags).
+See all of the [built-in tag implementations for LiquidJS](https://github.com/harttle/liquidjs/wiki/Builtin-Tags).
 
 ## Nunjucks example {% addedin "0.5.0" %}
 
