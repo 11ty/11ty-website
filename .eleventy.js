@@ -8,7 +8,6 @@ const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-languag
 const cfg = require("./_data/config.js");
 const avatarExceptions = require("./_data/avatarFileMap.json");
 
-
 const shortcodes = {
 	avatar: function(filename, linkUrl, text = "") {
 		if(!filename) {
@@ -79,9 +78,9 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addFilter("cssmin", function(code) {
 		if(process.env.ELEVENTY_PRODUCTION) {
 			return new CleanCSS({}).minify(code).styles;
-		} else {
-			return code;
 		}
+
+		return code;
 	});
 
 	eleventyConfig.addFilter("humanReadableNum", function(num) {
@@ -236,9 +235,10 @@ module.exports = function(eleventyConfig) {
 	}
 
 	return {
-		templateFormats: ["html", "njk", "md"],
+		templateFormats: ["html", "njk", "md", "js"],
 		markdownTemplateEngine: "njk",
 		htmlTemplateEngine: "njk",
-		dataTemplateEngine: false
+		dataTemplateEngine: false,
+		passthroughFileCopy: true
 	};
 };

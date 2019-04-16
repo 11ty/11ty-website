@@ -32,6 +32,7 @@
     "node-fetch": "^2.3.0"
   },
   "dependencies": {
-    "@11ty/logo": "^1.0.4"
+    "@11ty/logo": "^1.0.4",
+    "instant.page": "^1.2.2"
   }
 }
