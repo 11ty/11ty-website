@@ -109,5 +109,24 @@
 		"name": "Chris Coyier",
 		"source": "https://css-tricks.com/a-site-for-front-end-development-conferences-built-with-11ty-on-netlify/",
 		"featured": true
+	},
+	{
+		"text": "Eleventy… makes my life so much easier.",
+		"twitter": "hj_chen",
+		"name": "HJ Chen",
+		"source": "https://twitter.com/hj_chen/status/1117501300483207168"
+	},
+	{
+		"text": "Eleventy is my fave.",
+		"twitter": "TatianaTMac",
+		"name": "Tatiana Mac",
+		"source": "https://twitter.com/TatianaTMac/status/1117110784830525440"
+	},
+	{
+		"text": "I actually used Eleventy for the first time this week. Loved it.",
+		"twitter": "aerotwist",
+		"name": "Paul Lewis",
+		"source": "https://twitter.com/aerotwist/status/1106904383390924801",
+		"featured": true
 	}
 ]
