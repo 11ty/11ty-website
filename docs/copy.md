@@ -48,6 +48,8 @@ module.exports = function(eleventyConfig) {
 
 As shown in the code sample above, this feature requires `passthroughFileCopy: true` in your Eleventy config file.
 
+{% callout "info" %}Individual <em>files</em> and <em>directories</em> are supported. <em>Globs</em> are not yet supported for manual passthrough copy.{% endcallout %}
+
 ## Passthrough All Content {% addedin "0.5.4" %}
 
 Given that global copy of all content in the directory may be a security risk, we do not copy anything that doesn’t match the file extensions listed in `templateFormats`. Note that we do provide a command line flag to bypass this behavior: `--passthroughall`. Intentionally, there is no configuration option to do this.

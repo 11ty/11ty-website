@@ -244,14 +244,16 @@ You can use `eleventyConfig` like so:
 
 ```js
 module.exports = function(eleventyConfig) {
-  
+
   eleventyConfig.addCollection("myCollectionName", function(collection) {
     // get unsorted items
     return collection.getAll();
   });
-  
+
 };
 ```
+
+{% addedin "0.8.0" %} `addCollection` can accept `async` functions too. Use `await` in your callback to do some asynchronous things!
 
 ### Return values
 
