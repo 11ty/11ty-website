@@ -27,7 +27,7 @@ const shortcodes = {
 		}
 
 		return (linkUrl ? `<a href="${linkUrl}">` : "") +
-			`<img src="/img/avatars/${filename}" class="avatar" alt="@${twitterName} Twitter Photo">` +
+			`<img src="/img/avatars/${filename}" class="avatar" alt="@${twitterName} Twitter Photo" loading="lazy">` +
 			text +
 			(linkUrl ? `</a>` : "");
 	}
