@@ -1,11 +1,21 @@
 .elv-toc {
 	font-size: 1rem; /* Reset */
 }
+.elv-toc details {
+	--details-force-closed: (max-width: 63.9375em); /* 1023px */
+}
+.elv-toc details > summary {
+	font-size: 1.0625rem; /* 17px /16 */
+	margin-bottom: .5em;
+}
 @media (min-width: 64em) { /* 1024px */
 	.elv-toc {
 		position: absolute;
 		left: -14rem;
 		width: 13rem;
+	}
+	.js .elv-toc details > summary {
+		display: none;
 	}
 }
 

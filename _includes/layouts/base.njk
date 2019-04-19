@@ -29,6 +29,9 @@
 		{{ content | safe }}
 
 		<!-- Built on {{ config.now }} by Eleventy -->
+		<script>
+		{% include "components/details-force-state.js" %}
+		</script>
 		<script src="/js/instant.page.js" async></script>
 	</body>
 </html>
