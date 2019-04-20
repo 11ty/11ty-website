@@ -77,10 +77,10 @@ pre + .note {
   content: " ";
 }
 
-.highlight-line:not(:last-child) {
+.highlight-line {
 	min-width: 100%;
 }
-.highlight-line .highlight-line:not(:last-child) {
+.highlight-line .highlight-line {
 	min-width: 0;
 }
 
