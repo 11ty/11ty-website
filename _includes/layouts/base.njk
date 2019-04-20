@@ -23,6 +23,9 @@
 		<link rel="alternate" href="{{ feedUrl }}" title="{{ feedTitle }}" type="application/atom+xml">
 {% endif %}
 		<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon.png">
+		<script>
+		{%- include "components/js-class.js" -%}
+		</script>
 	</head>
 	<body>
 
@@ -30,7 +33,7 @@
 
 		<!-- Built on {{ config.now }} by Eleventy -->
 		<script>
-		{% include "components/details-force-state.js" %}
+		{%- include "components/details-force-state.js" -%}
 		</script>
 		<script src="/js/instant.page.js" async></script>
 	</body>

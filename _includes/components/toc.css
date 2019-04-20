@@ -19,22 +19,25 @@
 	}
 }
 
-
 .elv-toc-list {
 	padding-left: 0;
 	padding-right: 0;
-	margin: 0;
+	margin: 0 0 2.5em;
 	list-style: none;
 }
 /* Nested lists */
 .elv-toc-list ul {
-	display: none;
 	padding: 0 0 .75em 0;
 	margin: 0;
 	list-style: none;
 	font-size: 0.875em; /* 14px /16 */
 }
 
+@media (min-width: 64em) { /* 1024 */
+	.elv-toc-list ul {
+		display: none;
+	}
+}
 @media (min-width: 64em) and (min-height: 31.25em) { /* 1024 x 500px */
 	.elv-toc-list ul {
 		display: block;
@@ -42,6 +45,7 @@
 }
 
 /* List items */
+.elv-toc summary,
 .elv-toc-list a {
 	display: block;
 	padding: .15em .25em;

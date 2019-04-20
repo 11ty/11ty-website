@@ -1,7 +1,3 @@
-if("classList" in document.documentElement) {
-	document.documentElement.classList.add("js");
-}
-
 if( "querySelector" in document ) {
 	var details = document.querySelector("details");
 	var forceOpen = window.getComputedStyle(details).getPropertyValue("--details-force-closed");
