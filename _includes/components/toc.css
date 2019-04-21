@@ -5,7 +5,7 @@
 	--details-force-closed: (max-width: 63.9375em); /* 1023px */
 }
 .elv-toc details > summary {
-	font-size: 1.0625rem; /* 17px /16 */
+	font-size: 1.375rem; /* 22px /16 */
 	margin-bottom: .5em;
 }
 @media (min-width: 64em) { /* 1024px */
@@ -47,9 +47,11 @@
 /* List items */
 .elv-toc summary,
 .elv-toc-list a {
-	display: block;
 	padding: .15em .25em;
 	line-height: 1.4;
+}
+.elv-toc-list a {
+	display: block;
 }
 .elv-toc-list ul a {
 	padding-left: 1em;

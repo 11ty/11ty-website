@@ -481,7 +481,7 @@ main .elv-toc + h1 .direct-link {
 
 /* Big primary button */
 .btn-primary {
-	display: block;
+	cursor: pointer;
 	border: 2px solid;
 	padding: .5em .5em .4em;
 	font-size: 1em;
@@ -492,6 +492,9 @@ main .elv-toc + h1 .direct-link {
 	text-decoration: none;
 	box-shadow: 0 8px 6px -6px #000;
 	margin: 1.5em 0 0;
+}
+.btn-primary:not(summary) {
+	display: block;
 }
 .btn-primary:hover {
 	border-color: transparent;
@@ -513,7 +516,7 @@ main .elv-toc + h1 .direct-link {
 	}
 }
 @media (min-width: 46.875em) { /* 750px */
-	.btn-primary {
+	.btn-primary:not(summary) {
 		margin-left: calc( (90vw - 42rem) / -2 );
 		width: calc(90vw - 2rem);
 	}
