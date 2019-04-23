@@ -3,10 +3,15 @@ const htmlmin = require("html-minifier");
 const CleanCSS = require("clean-css");
 const HumanReadable = require('human-readable-numbers');
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
+const loadLanguages = require('prismjs/components/');
+
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language");
 const cfg = require("./_data/config.js");
 const avatarExceptions = require("./_data/avatarFileMap.json");
+
+// Load yaml from Prism to highlight frontmatter
+loadLanguages(['yaml']);
 
 const shortcodes = {
 	avatar: function(filename, linkUrl, text = "") {
@@ -36,7 +41,16 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.setDataDeepMerge(true);
 
 	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
-		templateFormats: "md"
+    templateFormats: "md",
+    init: function({ Prism }) {
+      Prism.languages.markdown = Prism.languages.extend('markup', {
+        'frontmatter': {
+          pattern: /^---[\s\S]*?^---$/m,
+          greedy: true,
+          inside: Prism.languages.yaml
+        }
+      });
+    }
 	});
 	eleventyConfig.addPlugin(rssPlugin);
 	// eleventyConfig.addPlugin(inclusiveLanguagePlugin);
@@ -46,7 +60,7 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addShortcode("emoji", function(emoji, alt = "") {
-		return `<span aria-hidden="true" class="emoji">${emoji}</span>` + 
+		return `<span aria-hidden="true" class="emoji">${emoji}</span>` +
 			(alt ? `<span class="sr-only">${alt}</span>` : "");
 	});
 
