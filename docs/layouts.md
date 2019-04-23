@@ -10,7 +10,7 @@ Layouts are templates that can be used to wrap other content. To denote that a p
 
 {% codetitle "layout-example.md" %}
 
-```
+```markdown
 ---
 layout: mylayout.njk
 title: My Rad Blog
@@ -78,7 +78,7 @@ Note that front matter data set in a content template takes priority over layout
 
 Layouts can be a full path inside of the _includes folder_, like so:
 
-```
+```markdown
 ---
 layout: layouts/base.njk
 ---
@@ -122,7 +122,7 @@ To chain a layout, let’s look at an example:
 
 {% codetitle "layout-chain-example.md" %}
 
-```
+```markdown
 ---
 layout: mainlayout.njk
 title: My Rad Blog
@@ -135,7 +135,7 @@ We want to add a main element around our post’s content because we like access
 {% codetitle "_includes/mainlayout.njk" %}
 
 {% raw %}
-```
+```markdown
 ---
 layout: mylayout.njk
 myOtherData: hello

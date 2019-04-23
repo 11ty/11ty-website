@@ -7,7 +7,7 @@ tags:
 
 Add data in your template front matter, like this:
 
-```
+```markdown
 ---
 title: My page title
 ---

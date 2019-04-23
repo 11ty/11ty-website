@@ -3,7 +3,7 @@ const htmlmin = require("html-minifier");
 const CleanCSS = require("clean-css");
 const HumanReadable = require('human-readable-numbers');
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
-const loadLanguages = require('prismjs/components/');
+const loadLanguages = require("prismjs/components/");
 
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language");
@@ -41,16 +41,16 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.setDataDeepMerge(true);
 
 	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
-    templateFormats: "md",
-    init: function({ Prism }) {
-      Prism.languages.markdown = Prism.languages.extend('markup', {
-        'frontmatter': {
-          pattern: /^---[\s\S]*?^---$/m,
-          greedy: true,
-          inside: Prism.languages.yaml
-        }
-      });
-    }
+		templateFormats: "md",
+		init: function({ Prism }) {
+			Prism.languages.markdown = Prism.languages.extend('markup', {
+				'frontmatter': {
+					pattern: /^---[\s\S]*?^---$/m,
+					greedy: true,
+					inside: Prism.languages.yaml
+				}
+			});
+		}
 	});
 	eleventyConfig.addPlugin(rssPlugin);
 	// eleventyConfig.addPlugin(inclusiveLanguagePlugin);
