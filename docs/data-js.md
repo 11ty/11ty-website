@@ -70,18 +70,18 @@ This “Hello World” GraphQL example works out of the box with Eleventy:
 
 ```js
 var { graphql, buildSchema } = require("graphql");
-  
+
 // this could also be `async function`
 module.exports = function() {
   // if you want to `await` for other things here, use `async function`
   var schema = buildSchema(`type Query {
     hello: String
   }`);
-  
+
   var root = {
     hello: () => "Hello world async!"
   };
-  
+
   return graphql(schema, "{ hello }", root);
 };
 ```
