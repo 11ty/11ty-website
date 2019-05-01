@@ -30,7 +30,7 @@ eleventy --help
 ### Run Eleventy when you save
 
 ```bash
-# Boot up a browsersync web server to apply changes and
+# Boot up a Browsersync web server to apply changes and
 # refresh automatically. We’ll also --watch for you.
 eleventy --serve
 eleventy --serve --port=8081

@@ -44,7 +44,7 @@ ErrorDocument 404 /404.html
 
 ## With `--serve`
 
-If you're using `eleventy --serve`, you can configure BrowserSync to do the 404 routing by passing a callback in your config. Read more on [the BrowserSyncConfig option](https://www.11ty.io/docs/config/#override-browsersync-server-options), the [BrowserSync callbacks option](https://browsersync.io/docs/options#option-callbacks), and [how to provide a 404 using a BrowserSync callback](https://github.com/BrowserSync/browser-sync/issues/1398). 
+If you're using `eleventy --serve`, you can configure Browsersync to do the 404 routing by passing a callback in your config. Read more on [the BrowserSyncConfig option](https://www.11ty.io/docs/config/#override-browsersync-server-options), the [Browsersync callbacks option](https://browsersync.io/docs/options#option-callbacks), and [how to provide a 404 using a Browsersync callback](https://github.com/browsersync/browser-sync/issues/1398). 
 
 {% codetitle ".eleventy.js" %}
 
