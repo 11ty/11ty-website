@@ -36,6 +36,8 @@ eleventy --serve
 eleventy --serve --port=8081
 ```
 
+{% callout "info" %}<strong>Important Note</strong>: <a href="https://browsersync.io/docs/#requirements">Browsersync requires a <code>&lt;body&gt;</code> tag in your template</a> for live-reload to work properly.{% endcallout %}
+
 ```bash
 # Automatically run when input template files change.
 # Useful if you have your own web server.
