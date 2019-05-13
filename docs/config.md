@@ -36,7 +36,7 @@ If you expose your config as a function instead of an object literal, we’ll pa
 module.exports = function(eleventyConfig) {
   // Add a filter using the Config API
   eleventyConfig.addFilter( "myFilter", function() {});
-  
+
   // You can return your Config object (optional).
   return {
     dir: {
@@ -153,6 +153,11 @@ module.exports = {
 ### Directory for Layouts (Optional) {% addedin "0.8.0" %}
 
 The layouts directory is optional and intended only for projects that don’t want their layout templates to live in the [Includes directory](#directory-for-includes). These files will not be processed as input files, but can be consumed by other templates.
+
+<div class="elv-callout elv-callout-warn elv-callout-warn-block">
+  <p>This setting <strong>only applies</strong> to Eleventy's language-agnostic <a href="/docs/layouts/">layouts</a> (i.e. when defined in front matter or directory data files).</p>
+  <p>When using <code>{% raw %}{% extends %}{% endraw %}</code>, Eleventy will <strong>still search the <code>_includes</code> directory</strong>. See <a href="/docs/layouts/#addendum-about-existing-templating-features">this note about existing templating features</a>.</p>
+</div>
 
 | Includes Directory |  |
 | --- | --- |
@@ -289,7 +294,7 @@ module.exports = {
 
 ### Template Formats
 
-Specify which types of templates should be transformed. 
+Specify which types of templates should be transformed.
 
 | Template Formats |  |
 | --- | --- |
