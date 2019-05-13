@@ -155,7 +155,7 @@ module.exports = {
 The layouts directory is optional and intended only for projects that don’t want their layout templates to live in the [Includes directory](#directory-for-includes). These files will not be processed as input files, but can be consumed by other templates.
 
 <div class="elv-callout elv-callout-warn elv-callout-warn-block">
-  <p>This setting <strong>only applies</strong> to Eleventy's language-agnostic <a href="/docs/layouts/">layouts</a> (i.e. when defined in front matter or directory data files).</p>
+  <p>This setting <strong>only applies</strong> to Eleventy's language-agnostic <a href="/docs/layouts/">layouts</a> (i.e. when defined in front matter or data files).</p>
   <p>When using <code>{% raw %}{% extends %}{% endraw %}</code>, Eleventy will <strong>still search the <code>_includes</code> directory</strong>. See <a href="/docs/layouts/#addendum-about-existing-templating-features">this note about existing templating features</a>.</p>
 </div>
 
