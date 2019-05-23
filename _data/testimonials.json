@@ -72,7 +72,7 @@
 	},
 	{
 		"text": "It's clean, elegant, easy to use, and does just enough to be useful without getting in the way. Excellent work 😊",
-		"twitter": "TJacobDesign",
+		"twitter": "WebInspectInc",
 		"name": "Timothy Miller",
 		"source": "https://twitter.com/TJacobDesign/status/1017594017402572811"
 	},
@@ -127,6 +127,13 @@
 		"twitter": "aerotwist",
 		"name": "Paul Lewis",
 		"source": "https://twitter.com/aerotwist/status/1106904383390924801",
+		"featured": true
+	},
+	{
+		"text": "Eleventy is absolutely wonderful. It’s by far the nicest static site generator I’ve used in what feels like forever.",
+		"twitter": "addyosmani",
+		"name": "Addy Osmani",
+		"source": "https://twitter.com/addyosmani/",
 		"featured": true
 	}
 ]
