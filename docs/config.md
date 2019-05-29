@@ -324,6 +324,8 @@ module.exports = function(eleventyConfig) {
 eleventy --formats=html,liquid,njk
 ```
 
+{% callout "info" %}{% addedin "0.8.4" %} <strong>Case sensitivity</strong>: File extensions should be considered case insensitive, cross-platform. While Mac OS—by default—already behaves this way, other operating systems do not and needed additional Eleventy code to enable this behavior.{% endcallout %}
+
 ### Deploy to a subdirectory with a Path Prefix
 
 If your site lives in a different subdirectory (particularly useful with GitHub pages), use pathPrefix to specify this. It’s used by the `url` filter and inserted at the beginning of all absolute url href links. It does not affect your file structure. Leading or trailing slashes are all normalized away, so don’t worry about it.
