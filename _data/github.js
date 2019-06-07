@@ -14,17 +14,24 @@ module.exports = async function() {
 	if(!cachedData) {
 		console.log( "Fetching new github stargazers count…" );
 		// https://developer.github.com/v3/repos/#get
-		let newData = await fetch("https://api.github.com/repos/11ty/eleventy")
-			.then(res => res.json())
-			.then(json => {
-				return {
-					stargazers: json.stargazers_count
-				};
-			});
+		try {
+			let newData = await fetch("https://api.github.com/repos/11ty/eleventy")
+				.then(res => res.json())
+				.then(json => {
+					return {
+						stargazers: json.stargazers_count
+					};
+				});
 
-		cache.setKey(key, newData);
-		cache.save();
-		return newData;
+			cache.setKey(key, newData);
+			cache.save();
+			return newData;
+		} catch(e) {
+			console.log( "Failed, returning 0" );
+			return {
+				stargazers: 0
+			};
+		}
 	}
 	// console.log( `Using cached github stargazers count (${key})` );
 

@@ -14,18 +14,25 @@ module.exports = async function() {
 	let cachedData = cache.getKey(key);
 	if(!cachedData) {
 		console.log( "Fetching new twitter follower count…" );
-		let newData = await fetch("https://twitter.com/eleven_ty/")
-			.then(res => res.text())
-			.then(text => {
-				let match = text.match(/followers_count\&quot\;\:(\d+)/i);
-				return {
-					followers: match && match.length > 1 ? parseInt(match[1], 10) : undefined
-				};
-			});
+		try {
+			let newData = await fetch("https://twitter.com/eleven_ty/")
+				.then(res => res.text())
+				.then(text => {
+					let match = text.match(/followers_count\&quot\;\:(\d+)/i);
+					return {
+						followers: match && match.length > 1 ? parseInt(match[1], 10) : undefined
+					};
+				});
 
-		cache.setKey(key, newData);
-		cache.save();
-		return newData;
+			cache.setKey(key, newData);
+			cache.save();
+			return newData;
+		} catch(e) {
+			console.log( "Failed, returning 0" );
+			return {
+				followers: 0
+			};
+		}
 	}
 
 	return cachedData;
