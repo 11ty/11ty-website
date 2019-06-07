@@ -45,7 +45,6 @@ blockquote {
 	padding: 0 1em;
 	max-width: 31.57894736842em; /* 600px /19 */
 	border-left: 6px solid #ddd;
-	/*text-indent: -0.3684210526316em;*/ /* 7px /19 */
 }
 blockquote + blockquote {
 	margin-top: 2em;
@@ -180,6 +179,7 @@ ul {
 }
 li {
 	padding: .25em 0;
+	line-height: 1.4;
 }
 li ul {
 	margin: .5em 0;
