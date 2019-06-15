@@ -198,6 +198,18 @@ permalink: different/page-{{ pagination.pageNumber + 1 }}/index.html
 
 Writes to `_site/different/page-1/index.html`, `_site/different/page-2/index.html`, et cetera.
 
+You can even use template logic here too:
+
+{% raw %}
+```markdown
+---
+permalink: different/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html
+---
+```
+{% endraw %}
+
+Writes to `_site/different/index.html`, `_site/different/page-2/index.html`, et cetera.
+
 ### Use page item data in the permalink
 
 You can do more advanced things like this:
