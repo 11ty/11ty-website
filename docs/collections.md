@@ -87,6 +87,10 @@ You can add multiple documents to a collection at once based on the directory th
 }
 ```
 
+<div class="elv-callout elv-callout-info">
+  For this to work as expected, you may want to use the <a href="/docs/config/#data-deep-merge">“data deep merge”</a> configuration. It allows the data of your documents to supplement the data specified in data directory files rather than overriding it.
+</div>
+
 
 
 ### Example: A list of blog posts
@@ -122,7 +126,7 @@ This will place this `mypost.md` document into the `posts` collection together w
 ```js
 module.exports = function({collections}) {
   return `<ul>
-    ${collections.post.map((post) => `<li>${ post.data.title }</li>`).join("\n")}
+    ${collections.posts.map((post) => `<li>${ post.data.title }</li>`).join("\n")}
   </ul>`;
 };
 ```
@@ -192,12 +196,12 @@ This will not be available in `collections.all` or `collections.post`.
 
 Eleventy populates each collection item with a set of useful information. Each item in a collection has access to the following variables:
 
-* `inputPath`: the full path to the source input file (including the path to the input directory)
+* `inputPath`: the full path to the source input file (including the path to the input directory).
 * `fileSlug`: {% addedin "0.5.3" %} Mapped from the input file name, useful for permalinks. Read more about [`fileSlug`](/docs/data/#fileslug).
-* `outputPath`: the full path to the output file to be written for this content
+* `outputPath`: the full path to the output file to be written for this content.
 * `url`: url used to link to this piece of content.
 * `date`: the resolved date used for sorting. Read more about [Content Dates](/docs/dates/).
-* `data`: all front matter data for this piece of content (includes any data inherited from layouts).
+* `data`: all data for this piece of content (includes any data inherited from layouts).
 * `templateContent`: the rendered content of this template. This does _not_ include layout wrappers.
 
 Here is an example of what these variables could contain for a collection item:
