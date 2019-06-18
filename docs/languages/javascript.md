@@ -126,7 +126,7 @@ module.exports = Test;
 
 ### Optional `data` Method
 
-{% callout "info" %}YAML Front Matter is not supported in JavaScript template types. Use <code>data</code> methods instead!{% endcallout %}
+{% callout "info" %}<a href="/docs/data-frontmatter/">YAML Front Matter</a> is not supported in JavaScript template types. Use <code>data</code> methods instead!{% endcallout %}
 
 This data acts as Front Matter for the template and similarly to Front Matter will take precedence over all other data in the data cascade. The `data` method can be asynchronous `async data()` or it can be a getter `get data()`.
 
@@ -138,7 +138,9 @@ class Test {
   // or `get data() {`
   data() {
     return {
-      name: "Ted"
+      name: "Ted",
+      layout: "teds-rad-layout",
+      // … other front matter keys
     };
   }
 
