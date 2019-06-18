@@ -14,21 +14,28 @@ module.exports = async function() {
 	let cachedData = cache.getKey(key);
 	if(!cachedData) {
 		console.log( "Fetching new opencollective backer count…" );
-		let newData = await fetch("https://opencollective.com/11ty/members/all.json")
-			.then(res => res.json())
-			.then(json => {
-				let backers = json.filter(function(entry) {
-					return entry.role.toLowerCase() === "backer";
-				}).length;
+		try {
+			let newData = await fetch("https://opencollective.com/11ty/members/all.json")
+				.then(res => res.json())
+				.then(json => {
+					let backers = json.filter(function(entry) {
+						return entry.role.toLowerCase() === "backer";
+					}).length;
 
-				return {
-					backers: backers
-				};
-			});
+					return {
+						backers: backers
+					};
+				});
 
-		cache.setKey(key, newData);
-		cache.save();
-		return newData;
+			cache.setKey(key, newData);
+			cache.save();
+			return newData;
+		} catch(e) {
+			console.log( "Failed, returning 0" );
+			return {
+				backers: 0
+			};
+		}
 	}
 
 	return cachedData;

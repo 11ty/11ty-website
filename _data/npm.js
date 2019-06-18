@@ -25,18 +25,25 @@ module.exports = async function() {
 	let cachedData = cache.getKey(key);
 	if(!cachedData) {
 		console.log( "Fetching new npm download count…" );
-		// let newData = await fetch("https://api.npmjs.org/downloads/point/last-month/@11ty/eleventy")
-		let newData = await fetch(`https://api.npmjs.org/downloads/point/${getDateRange(-365)}:${getDateRange()}/@11ty/eleventy`)
-			.then(res => res.json())
-			.then(json => {
-				return {
-					downloads: json.downloads
-				};
-			});
+		try {
+			// let newData = await fetch("https://api.npmjs.org/downloads/point/last-month/@11ty/eleventy")
+			let newData = await fetch(`https://api.npmjs.org/downloads/point/${getDateRange(-365)}:${getDateRange()}/@11ty/eleventy`)
+				.then(res => res.json())
+				.then(json => {
+					return {
+						downloads: json.downloads
+					};
+				});
 
-		cache.setKey(key, newData);
-		cache.save();
-		return newData;
+			cache.setKey(key, newData);
+			cache.save();
+			return newData;
+		} catch(e) {
+			console.log( "Failed, returning 0" );
+			return {
+				downloads: 0
+			};
+		}
 	}
 
 	return cachedData;

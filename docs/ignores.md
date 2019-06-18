@@ -7,8 +7,6 @@ tags:
 
 Add an `.eleventyignore` file to your _input directory_ (or your _project root_ {% addedin "0.7.0", "span", "minilink-inline" %}) for a new line-separated list of files (or globs) that will not be processed by Eleventy. Paths listed in your project’s `.gitignore` file are automatically ignored.
 
-{% callout "info" %}If you do not have a <code>.gitignore</code> file in your project, the <code>node_modules</code> directory will be ignored automatically.{% endcallout %}
-
 ## Example
 
 {% codetitle ".eleventyignore" %}
@@ -18,6 +16,12 @@ README.md
 _drafts/
 secretNunjucksTemplates/anotherFolder/**/*.njk
 ```
+
+## `node_modules` Exemption
+
+If you do not have a `.gitignore` file in your project, the `node_modules` directory will be ignored automatically. This makes new Eleventy projects a little easier and helps developers new to Eleventy get ramped up easier too.
+
+{% callout "info" %}{% addedin "0.8.4" %}<strong>If <code>.gitignore</code> exists but is empty</strong>: if you have a <code>.gitignore</code> file and it is empty (or only contains white-space), <code>node_modules</code> will be ignored automatically.{% endcallout %}
 
 ## Opt-out of using `.gitignore` {% addedin "0.3.5" %}
 

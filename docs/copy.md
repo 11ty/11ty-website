@@ -39,16 +39,12 @@ module.exports = function(eleventyConfig) {
   // Copy the `css/fonts/` directory
   // If you use a subdirectory, it’ll copy using the same directory structure.
   eleventyConfig.addPassthroughCopy("css/fonts");
-  
-  return {
-    passthroughFileCopy: true
-  };
 };
 ```
 
-As shown in the code sample above, this feature requires `passthroughFileCopy: true` in your Eleventy config file.
+{% callout "info" %}The <code>addPassthroughCopy</code> method does not require <code>passthroughFileCopy: true</code> in your Eleventy config file.{% endcallout %}
 
-{% callout "info" %}Individual <em>files</em> and <em>directories</em> are supported. <em>Globs</em> are not yet supported for manual passthrough copy.{% endcallout %}
+{% callout "info" %}Only individual <em>files</em> and <em>directories</em> are supported. <em>Globs</em> are not yet supported for manual passthrough copy.{% endcallout %}
 
 ## Passthrough All Content {% addedin "0.5.4" %}
 

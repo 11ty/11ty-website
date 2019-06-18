@@ -23,7 +23,7 @@ pre {
 }
 pre,
 code {
-	font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+	font-family: Roboto Mono, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
 }
 code {
 	-ms-word-break: break-all;

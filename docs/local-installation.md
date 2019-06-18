@@ -30,3 +30,5 @@ npx eleventy
 ```
 
 Using a local installation is preferable as you’ll run into fewer interoperability issues when using Eleventy on multiple projects. When Eleventy eventually bumps to a new major version, you’ll want the project specific version of Eleventy installed locally.
+
+{% callout "info" %}If you’re planning on deploying your site using a service like Netlify (that will run your build on their servers), you <strong>must use the local installation method</strong> above.{% endcallout %}
