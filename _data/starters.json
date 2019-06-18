@@ -40,5 +40,11 @@
 		"name": "Seven",
 		"description": "An eleventy template based on bootstrap4layouts. Includes webpack, sass version of bootstrap, vue.js powered search and a whole lot more.",
 		"author": "planetoftheweb"
+	},
+	{
+		"url": "https://github.com/kmelve/eleventy-sanity-blog-boilerplate",
+		"name": "eleventy-sanity-blog-boilerplate",
+		"description": "An eleventy + headless CMS blog boilerplate. Includes Sanity Studio, quick start, config and intstructions for deploying on Netlify and `now`.",
+		"author": "kmelve"
 	}
 ]
