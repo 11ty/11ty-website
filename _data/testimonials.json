@@ -120,7 +120,8 @@
 		"text": "Eleventy is my fave.",
 		"twitter": "TatianaTMac",
 		"name": "Tatiana Mac",
-		"source": "https://twitter.com/TatianaTMac/status/1117110784830525440"
+		"source": "https://twitter.com/TatianaTMac/status/1117110784830525440",
+		"featured": true
 	},
 	{
 		"text": "I actually used Eleventy for the first time this week. Loved it.",
