@@ -106,7 +106,7 @@ This will not be a code block in a markdown file.
 
 <div class="elv-callout elv-callout-warn">This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</div>
 
-The truth is, you can return markdown inside shortcodes (as long the file is transforming markdown, either as a `.md` file extension or [with `templateEngineOverride`](/docs/languages/#overriding-the-template-language))
+The truth is, you can return markdown inside shortcodes (as long as the file is transforming markdown, either as a `.md` file extension or [with `templateEngineOverride`](/docs/languages/#overriding-the-template-language)). However, there is one small wrinkle that might catch you off guard.
 
 {% codetitle ".eleventy.js" %}
 
