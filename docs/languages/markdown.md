@@ -101,3 +101,32 @@ This will not be a code block in a markdown file.
 `;
 });
 ```
+
+## Why can’t I return markdown from paired shortcodes to use in a markdown file?
+
+<div class="elv-callout elv-callout-warn">This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</div>
+
+The truth is, you can return markdown inside shortcodes (as long the file is transforming markdown, either as a `.md` file extension or [with `templateEngineOverride`](/docs/languages/#overriding-the-template-language))
+
+{% codetitle ".eleventy.js" %}
+
+```js
+eleventyConfig.addPairedShortcode("myShortcode", function(content) {
+    // Method A: ✅ This works fine
+    return content;
+
+    // Method B: ⚠️ Careful when wrapping with HTML
+    return `<div>${content}</div>`;
+});
+```
+
+{% codetitle "Liquid, Nunjucks", "Syntax" %}
+
+{% raw %}
+```
+{% myShortcode %}My really *important* content.{% endmyShortcode %}
+```
+{% endraw %}
+
+1. Method A returns: `My really *important* content.` which is successfully [transformed as markdown into `My really <em>important</em> content`](https://spec.commonmark.org/dingus/?text=My%20really%20*important*%20content.).
+1. Method B returns: `<div>My really *important* content.</div>` which markdown treats as an HTML block which cannot have nested markdown inside of it. It’s [transformed into `<div>My really *important* content.</div>`](https://spec.commonmark.org/dingus/?text=%3Cdiv%3EMy%20really%20*important*%20content.%3C%2Fdiv%3E). Read more at the [CommonMark specification on HTML blocks](https://spec.commonmark.org/0.28/#html-blocks).
