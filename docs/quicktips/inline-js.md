@@ -12,18 +12,18 @@ This tip works great if you have small JS utilities that you’d like to have in
 
 ## Installation
 
-`npm install uglify-js` to make the Uglify JS minifier available in your project.
+`npm install terser` to make the terser minifier available in your project.
 
 ## Configuration
 
 Add the following `jsmin` filter to your Eleventy Config file:
 
 ```js
-const UglifyJS = require("uglify-js");
+const Terser = require("terser");
 eleventyConfig.addFilter("jsmin", function(code) {
-    let minified = UglifyJS.minify(code);
+    let minified = Terser.minify(code);
     if( minified.error ) {
-        console.log("UglifyJS error: ", minified.error);
+        console.log("Terser error: ", minified.error);
         return code;
     }
 
