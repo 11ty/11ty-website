@@ -3,6 +3,5 @@
 	"name": "NEJS CONF 2018",
 	"description": "A single day, single track Web Development conference.",
 	"source_url": "https://github.com/NebraskaJS/2018.nejsconf.com",
-	"twitter": "nejsconf",
-	"featured": true
+	"twitter": "nejsconf"
 }

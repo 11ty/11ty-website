@@ -1,0 +1,9 @@
+{
+	"name": "web.dev",
+	"url": "https://web.dev/",
+	"description": "V8 is Google’s open source high-performance JavaScript and WebAssembly engine, written in C++.",
+	"source_url": "https://github.com/GoogleChrome/web.dev",
+	"twitter": "ChromiumDev",
+	"featured": true,
+	"superfeatured": true
+}
