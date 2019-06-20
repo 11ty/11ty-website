@@ -16,7 +16,7 @@ Here’s a sample:
 ```html
     …
     <footer>
-    © 2018 Eleventy
+      © 2019 Eleventy
     </footer>
   </body>
 </html>
@@ -30,8 +30,8 @@ Edit your your layout file to add the link. Provide the URL to the base of your 
 ```html
     …
     <footer>
-    © 2018 Eleventy
-    <a href="https://github.com/11ty/11ty.io/tree/master/{{ page.inputPath }}">Edit this page on GitHub</a>
+      © 2019 Eleventy
+      <a href="https://github.com/11ty/11ty.io/tree/master/{{ page.inputPath }}">Edit this page on GitHub</a>
     </footer>
   </body>
 </html>

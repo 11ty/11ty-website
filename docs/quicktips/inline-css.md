@@ -44,8 +44,12 @@ Capture the CSS into a variable and run it through the filter (this sample is us
 {% raw -%}
 ```html
 <!-- capture the CSS content as a Nunjucks variable -->
-{% set css %}{% include "sample.css" %}{% endset %}
+{% set css %}
+  {% include "sample.css" %}
+{% endset %}
 <!-- feed it through our cssmin filter to minify -->
-<style>{{ css | cssmin | safe }}</style>
+<style>
+  {{ css | cssmin | safe }}
+</style>
 ```
 {% endraw %}

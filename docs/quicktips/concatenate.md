@@ -35,7 +35,9 @@ In our [Inline CSS Quick Tip](/docs/quicktips/inline-css/), we discussed how to 
   {% include "components/footer.css" %}
 {% endset %}
 <!-- feed it through our cssmin filter to minify -->
-<style>{{ css | cssmin | safe }}</style>
+<style>
+  {{ css | cssmin | safe }}
+</style>
 ```
 {% endraw %}
 
