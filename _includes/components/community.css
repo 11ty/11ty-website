@@ -2,6 +2,8 @@
 	font-size: 0.8888888888889em; /* 16px /18 */
 	background-color: #eee;
 	padding: 0.5em 1em;
+	margin-left: -1rem;
+	margin-right: -1rem;
 }
 .elv-community-hed {
 	margin-top: 0;

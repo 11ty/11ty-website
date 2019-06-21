@@ -70,6 +70,9 @@ ul:not(.list-bare) > li > a > .avatar {
 	margin-left: 4px;
 	margin-right: 4px;
 }
+blockquote .bio-source {
+	white-space: nowrap;
+}
 
 /* Main */
 main {
