@@ -14,6 +14,9 @@
 		left: -14rem;
 		width: 13rem;
 	}
+	.elv-toc details > summary {
+		margin-top: 0;
+	}
 	.js .elv-toc details > summary {
 		display: none;
 	}
@@ -32,7 +35,6 @@
 	list-style: none;
 	font-size: 0.875em; /* 14px /16 */
 }
-
 @media (min-width: 64em) { /* 1024 */
 	.elv-toc-list ul {
 		display: none;
@@ -83,4 +85,16 @@
 .elv-toc-list ul.elv-toc-active,
 .elv-toc-list li.elv-toc-active > ul {
 	display: block;
+}
+
+/* Two column menu */
+@media (min-width: 31.25em) and (max-width: 63.9375em) { /* 500px 1023px */
+	.elv-toc-list {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.elv-toc-list > li {
+		flex: 0 0 50%;
+		margin-bottom: 1em;
+	}
 }

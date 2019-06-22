@@ -1,7 +1,7 @@
 <div class="elv-toc">
 
 <details open>
-	<summary class="btn-primary benchnine rainbow-active rainbow-active-noanim">Documentation Menu</summary>
+	<summary class="btn-primary benchnine rainbow-active rainbow-active-noanim">Menu</summary>
 	<ul class="elv-toc-list">
 	{%- for navpage in collections.docs | sortMenu(menuSortOrder) %}
 		<li{% if page.url == navpage.data.page.url %} class="elv-toc-active"{% endif %}><a href="{{ navpage.data.page.url }}">{{ navpage.data.subtitle }}</a>
