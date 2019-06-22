@@ -26,6 +26,7 @@ Plugins are custom code that Eleventy can import into a project from an external
 * [eleventy-plugin-typeset](https://www.npmjs.com/package/eleventy-plugin-typeset) by [Johan Brook](https://www.johanbrook.com/) will make your typography nicer.
 * [eleventy-plugin-yamldata](https://www.npmjs.com/package/eleventy-plugin-yamldata) by [Sungkwang Lee](https://gwangyi.github.io/) will allow you to use a yaml file as local data file.
 * [@shawnsandy/npm_info](https://www.npmjs.com/package/@shawnsandy/npm_info) by [Shawn Sandy](https://github.com/shawn-sandy) will provide you with package detail for an npm package or GitHub info.
+* [eleventy-plugin-lazyimages](https://www.npmjs.com/package/eleventy-plugin-lazyimages) by [Liam Fiddler](https://liamfiddler.com) will add progressive lazy loading to your images.
 * [**Search for `eleventy-plugin` on `npm`**](https://www.npmjs.com/search?q=eleventy-plugin)
 
 
