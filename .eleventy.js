@@ -207,7 +207,7 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addShortcode("testimonial", function(testimonial) {
-		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `”—${shortcodes.avatar(testimonial.twitter, testimonial.source, testimonial.name)}` : ``}</p></blockquote>`;
+		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `”<span class="bio-source">—${shortcodes.avatar(testimonial.twitter, testimonial.source, testimonial.name)}` : ``}</span></p></blockquote>`;
 	});
 
 	/* Markdown */
