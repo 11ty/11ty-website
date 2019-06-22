@@ -6,34 +6,40 @@ tags:
 ---
 # Layouts
 
-Layouts are templates that can be used to wrap other content. To denote that a piece of content should be wrapped in a template, simply use the `layout` key in your front matter, like so:
+Eleventy Layouts are special templates that can be used to wrap other content. To denote that a piece of content should be wrapped in a template, simply use the `layout` key in your front matter, like so:
 
-{% codetitle "layout-example.md" %}
-
+{% codetitle "content-using-layout.md" %}
+{% raw %}
 ```markdown
 ---
 layout: mylayout.njk
-title: My Rad Blog
+title: My Rad Markdown Blog Post
 ---
-# My Rad Markdown Blog Post
+# {{ title }}
 ```
+{% endraw %}
 
-This will look for a `mylayout.njk` Nunjucks template file in your _includes folder_ (`_includes/mylayout.njk`). You can use any template type in your layout—it doesn’t have to match the template type of the content. An `ejs` template can use a `njk` layout, for example.
+This will look for a `mylayout.njk` Nunjucks file in your _includes folder_ (`_includes/mylayout.njk`). Note that you can have a [separate folder for Eleventy layouts](/docs/config/#directory-for-layouts-(optional)) if you’d prefer that to having them live in your _includes folder._
 
-If you omit the file extension (`layout: mylayout`), eleventy will cycle through all of the supported template formats (`mylayout.*`) to look for a matching layout file.
+You can use any template language in your layout—it doesn’t need to match the template language of the content. An `ejs` template can use a `njk` layout, for example.
+
+{% callout "info" %}If you omit the file extension (for example <code>layout: mylayout</code>), Eleventy will cycle through all of the supported template formats (<code>mylayout.*</code>) to look for a matching layout file.{% endcallout %}
 
 Next, we need to create a `mylayout.njk` file. It can contain any type of text, but here we’re using HTML:
 
 {% codetitle "_includes/mylayout.njk" %}
 
 {% raw %}
-``` html
+```html
+---
+title: My Rad Blog
+---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
+    <title>{{ title }}</title>
   </head>
   <body>
     {{ content | safe }}
@@ -44,11 +50,11 @@ Next, we need to create a `mylayout.njk` file. It can contain any type of text, 
 
 Note that the layout template will populate the `content` data with the child template’s content. Also note that we don’t want to double-escape the output, so we’re using the provided Nunjuck’s `safe` filter here (see more language double-escaping syntax below).
 
-Layouts can contain their own front matter data! It’ll be merged with the content’s data on render (content data takes precedence, if conflicting keys arise).
+{% callout "info" %}Layouts can contain their own front matter data! It’ll be merged with the content’s data on render. Content data takes precedence, if conflicting keys arise. Read more about <a href="/docs/data-template-dir/">how Eleventy merges data</a>.{% endcallout %}
 
 All of this will output the following HTML content:
 
-{% codetitle "_site/layout-example/index.html" %}
+{% codetitle "_site/content-using-layout/index.html" %}
 
 ```
 <!doctype html>
@@ -56,7 +62,7 @@ All of this will output the following HTML content:
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Rad Blog</title>
+    <title>My Rad Markdown Blog Post</title>
   </head>
   <body>
     <h1>My Rad Markdown Blog Post</h1>
@@ -94,9 +100,9 @@ Configuration API: use `eleventyConfig.addLayoutAlias(from, to)` to add layout a
 
 ```js
 module.exports = function(eleventyConfig) {
+
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
 
-  return {};
 };
 ```
 
