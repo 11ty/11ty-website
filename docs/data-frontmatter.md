@@ -73,6 +73,108 @@ Eleventy uses the [`gray-matter` package](https://github.com/jonschlinkert/gray-
 ```
 {% endraw %}
 
+### Add your own
+
+You can customize Front Matter Parsing in Eleventy to add your own custom format. We have an [example to do this with support for TOML below](#example%3A-using-toml-for-front-matter-parsing).
+
+## Advanced: Customize Front Matter Parsing {% addedin "0.8.4" %}
+
+Eleventy uses the [`gray-matter` npm package](https://www.npmjs.com/package/gray-matter) for parsing front matter. `gray-matter` allows additional options that aren’t available by default in Eleventy.
+
+Check out the [full list of available `gray-matter` options](https://www.npmjs.com/package/gray-matter#options). By default, Eleventy uses `gray-matter`’s default options.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setFrontMatterParsingOptions({
+    /* … */
+  });
+};
+```
+
+### Example: using Front Matter Excerpts {% addedin "0.8.4" %}
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setFrontMatterParsingOptions({
+    excerpt: true,
+    excerpt_separator: '---' // Optional
+  });
+};
+```
+
+Now you can do things like this:
+
+{% codetitle "sample.md" %}
+
+```markdown
+---
+title: My page title
+---
+This is an excerpt.
+---
+<!doctype html>
+<html>
+…
+```
+
+This will not alter your template’s content in collections. Your excerpt will now be available in the template’s `page.excerpt` variable.
+
+#### Changing where your excerpt is stored
+
+If you don’t want to use `page.excerpt` to store your excerpt value, then use your own `excerpt_alias` option ([any valid path to Lodash Set will work](https://lodash.com/docs/4.17.11#set)) like so:
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setFrontMatterParsingOptions({
+    excerpt: true,
+    // Eleventy custom option
+    // The variable where the excerpt will be stored.
+    excerpt_alias: 'my_custom_excerpt'
+  });
+};
+```
+
+Using `excerpt_alias: 'my_custom_excerpt'` means that the excerpt will be available in your templates as the `my_custom_excerpt` variable instead of `page.excerpt`.
+
+### Example: using TOML for front matter parsing {% addedin "0.8.4" %}
+
+While Eleventy does include support for [JSON, YAML, and JS front matter out of the box](#alternative-front-matter-formats), you may want to add additional formats too.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+const toml = require("toml");
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setFrontMatterParsingOptions({
+    engines: {
+      toml: toml.parse.bind(toml)
+    }
+  });
+};
+```
+
+For more information, read [this example on the `gray-matter` documentation](https://www.npmjs.com/package/gray-matter#optionsengines).
+
+Now you can use TOML in your front matter like this:
+
+{% codetitle "sample.md" %}
+
+```markdown
+---toml
+title = "My page title using TOML"
+---
+<!doctype html>
+<html>
+…
+```
+
 ## Sources of Data
 
 {% include "datasources.md" %}

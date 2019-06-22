@@ -76,7 +76,8 @@ This allows you further customization options using Eleventy’s provided helper
   "Linters",
   "Data Deep Merge",
   "Watch JavaScript Dependencies",
-  "Override Browsersync Server Options"
+  "Override Browsersync Server Options",
+  "Customize Front Matter Parsing Options"
 ] %}
 {%- for link in toc %}
 * [{{ link }}](#{{ link | slug }})
@@ -572,6 +573,10 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+### Customize Front Matter Parsing Options {% addedin "0.8.4" %}
+
+* Documented at [Front Matter Data](/docs/data-frontmatter/#advanced%3A-customize-front-matter-parsing).
 
 
 <!--
