@@ -21,6 +21,7 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 * [Build your own Blog from Scratch using Eleventy](https://www.filamentgroup.com/lab/build-a-blog/) on the {% avatar "filamentgroup" %}Filament Group blog
 * [A Site for Front-End Development Conferences (Built with 11ty on Netlify) ](https://css-tricks.com/a-site-for-front-end-development-conferences-built-with-11ty-on-netlify/) on {% avatar "css" %}CSS-Tricks
 * [Video Series: Create an 11ty Theme from a free set of HTML templates](https://www.youtube.com/playlist?list=PLOSLUtJ_J3rrJ1R1qEf8CCEpV3GgbJGNr) by {% avatar "bryanrobinson" %} Bryan Robinson
+* [Creating A Blog With Eleventy](https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/) by Jon Keeping
 
 ### Put it on the web
 
