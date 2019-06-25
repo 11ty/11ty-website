@@ -38,7 +38,7 @@ module.exports = function(eleventyConfig) {
 
 | Feature                                              | Syntax                                                          |
 | ---------------------------------------------------- | --------------------------------------------------------------- |
-| ✅ Includes (Absolute)                               | `include /includedvar.pug` looks in `_includes/includedvar.pug` (does not process front matter) |
-| ✅ Includes (Relative) _(New in Eleventy `v0.2.15`)_ | `include includedvar.pug` looks in `_includes/includedvar.pug` (does not process front matter) |
-| ✅ Extends (Absolute)                                | `extends /layout.pug` looks in `_includes/layout.pug` (does not process front matter)           |
-| ✅ Extends (Relative) _(New in Eleventy `v0.2.15`)_  | `extends layout.pug` looks in `_includes/layout.pug` (does not process front matter)           |
+| ✅ Includes (Absolute Path)                               | `include /includedvar.pug` looks in `_includes/includedvar.pug`. Does not process front matter in the include file. |
+| ✅ Includes (Relative Path) {% addedin "0.2.15" %} | Relative paths use `./` (template’s directory) or `../` (template’s parent directory).<br><br>Example: `{% raw %}{% include ./included.pug %}{% endraw %}` looks for `included.pug` in the template’s current directory. Does not process front matter in the include file. |
+| ✅ Extends (Absolute Path)                                | `extends /layout.pug` looks in `_includes/layout.pug`. Does not process front matter in the include file.           |
+| ✅ Extends (Relative Path) {% addedin "0.2.15" %}  | Relative paths use `./` (template’s directory) or `../` (template’s parent directory).<br><br>Example: `{% raw %}{% extends ./layout.pug %}{% endraw %}` looks for `layout.pug` in the template’s current directory. Does not process front matter in the extends file.           |

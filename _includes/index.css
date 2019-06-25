@@ -95,6 +95,7 @@ table td {
 	border-bottom: 1px solid #eee;
 	padding: .4em;
 	font-size: 0.8125em; /* 13px /16 */
+	vertical-align: top;
 }
 table th:first-child,
 table td:first-child {
@@ -520,4 +521,12 @@ main .elv-toc + h1 .direct-link {
 /* Emoji */
 .emoji {
 	line-height: 1;
+}
+
+/* Supported Features Tables */
+@media (min-width: 43.75em) { /* 700px */
+	#supported-features + table th:first-child,
+	#supported-features + table td:first-child {
+		min-width: 12em;
+	}
 }
