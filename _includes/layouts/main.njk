@@ -15,7 +15,7 @@ headerClass: elv-header-default
 
 <main class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">{{ content | safe }}</main>
 
-<footer class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">
+<footer class="elv-layout">
 {%- if ignoreGitHubButtons %}{% else %}
 	<div class="elv-callout">
 		<a href="https://github.com/11ty/eleventy" class="minilink">⭐ <strong>{{ github.stargazers | humanReadableNum }}</strong></a>

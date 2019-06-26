@@ -229,9 +229,9 @@ li li {
 
 /* Layout */
 .elv-layout {
-	
 	padding: 1rem;
 	margin: 0 auto;
+	max-width: 42rem;
 	clear: both;
 }
 
@@ -239,7 +239,7 @@ li li {
 	.elv-layout-toc {
 		display: grid;
 		grid-template-columns: minmax(6rem, 20rem) 1fr;
-		/* justify-content: center; */
+		max-width: 100%;
 	}
 }
 .page-content {
