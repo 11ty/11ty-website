@@ -250,6 +250,7 @@ li li {
 	align-content: start;
 	grid-row-gap: 1.5rem;
 }
+
 .page-content > * {
 	max-width: 100%;
 	grid-column: content;
