@@ -263,9 +263,21 @@ li li {
 .page-content .breakout, .page-content pre {
 	grid-column: breakout;
 }
-footer.elv-layout {
-	margin-bottom: 5em;
+.elv-footer {
+	margin-bottom: 1rem;
 }
+.elv-footer .elv-callout {
+	margin: 0;
+	text-align: center;
+}
+.elv-footer-content {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+}
+
 .elv-layout-full {
 	max-width: none;
 }

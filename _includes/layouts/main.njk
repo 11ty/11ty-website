@@ -15,17 +15,20 @@ headerClass: elv-header-default
 
 <main class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">{{ content | safe }}</main>
 
-<footer class="elv-layout">
+<footer class="elv-footer">
 {%- if ignoreGitHubButtons %}{% else %}
 	<div class="elv-callout">
 		<a href="https://github.com/11ty/eleventy" class="minilink">⭐ <strong>{{ github.stargazers | humanReadableNum }}</strong></a>
 		<a href="https://github.com/11ty/eleventy"><strong>Please star Eleventy on GitHub!</strong></a> This is a good way to support our underrated project and help boost our rank on <a href="https://www.staticgen.com/">staticgen.com</a>, a giant list of static site generators.
 	</div>
 {%- endif %}
-{%- if page.url != "/" and not page.url.endsWith("/docs/") and not page.url.endsWith("/docs/testimonials/")  %}
-	{%- set randomTestimonial = testimonials | randompick %}
-	{%- testimonial randomTestimonial %}
-{%- endif %}
+<section class="elv-footer-content">
+	{%- if page.url != "/" and not page.url.endsWith("/docs/") and not page.url.endsWith("/docs/testimonials/")  %}
+		{%- set randomTestimonial = testimonials | randompick %}
+		{%- testimonial randomTestimonial %}
+	{%- endif %}
 
 	{% include "footer-nav.njk" %}
+
+	</section>
 </footer>
