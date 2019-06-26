@@ -251,6 +251,10 @@ li li {
 	grid-row-gap: 1.5rem;
 }
 
+.page-content * + h1, .page-content * + h2, .page-content * + h3, .page-content * + h4 {
+	margin-top: .5em;
+}
+
 .page-content > * {
 	max-width: 100%;
 	grid-column: content;
