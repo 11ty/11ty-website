@@ -1,5 +1,5 @@
 .elv-toc {
-	font-size: 1rem; /* Reset */
+	font-size: 1.2rem; /* Reset */
 }
 .elv-toc details {
 	--details-force-closed: (max-width: 63.9375em); /* 1023px */
@@ -9,14 +9,7 @@
 	margin-bottom: .5em;
 }
 @media (min-width: 64em) { /* 1024px */
-	.elv-toc {
-		position: absolute;
-		left: -14rem;
-		width: 13rem;
-	}
-	.elv-toc details > summary {
-		margin-top: 0;
-	}
+
 	.js .elv-toc details > summary {
 		display: none;
 	}
@@ -49,14 +42,14 @@
 /* List items */
 .elv-toc summary,
 .elv-toc-list a {
-	padding: .15em .25em;
+	padding: .15em .25rem;
 	line-height: 1.4;
 }
 .elv-toc-list a {
 	display: block;
 }
 .elv-toc-list ul a {
-	padding-left: 1em;
+	padding: .3rem .5rem;
 }
 .elv-toc-list a:not(:hover) {
 	text-decoration: none;
@@ -68,8 +61,11 @@
 /* Top level links */
 .elv-toc-list > li > a {
 	font-weight: 400;
-	font-size: 1.0625em; /* 17px /16 */
+	font-size: 1.4em;
 	color: #222;
+}
+.elv-toc-list > li {
+	margin-bottom: 1.5rem;
 }
 
 /* Active links */
