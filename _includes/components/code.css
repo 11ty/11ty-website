@@ -36,6 +36,9 @@ code {
 	padding-right: 4px;
 	border-radius: .15em;
 }
+em code {
+	font-style: normal;
+}
 pre code {
 	border-radius: 0;
 }
@@ -225,3 +228,31 @@ pre + .note {
 		font-weight: normal;
 	}
 }
+
+
+[data-preprefix-cmdhomedir="all"] .highlight-line:before,
+[data-preprefix-cmdhomedir="last"] .highlight-line:last-child:before,
+[data-preprefix-cmdhomedir="first"] .highlight-line:first-child:before,
+[data-preprefix-cmdhomedir="odd"] .highlight-line:nth-child(4n+3):before {
+	color: #aaa;
+	content: "~ $ ";
+}
+[data-preprefix-eleventysample="all"] .highlight-line:before,
+[data-preprefix-eleventysample="last"] .highlight-line:last-child:before,
+[data-preprefix-eleventysample="first"] .highlight-line:first-child:before {
+	color: #aaa;
+	content: "~/eleventy-sample $ ";
+}
+[data-preprefix-npxeleventy="all"] .highlight-line:before,
+[data-preprefix-npxeleventy="last"] .highlight-line:last-child:before,
+[data-preprefix-npxeleventy="first"] .highlight-line:first-child:before {
+	color: #bbb;
+	content: "npx @11ty/eleventy ";
+}
+
+/*#localinstall:checked ~ .globalinstall {
+	display: none;
+}
+#globalinstall:checked ~ .localinstall {
+	display: none;
+}*/
