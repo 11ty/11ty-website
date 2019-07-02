@@ -15,10 +15,11 @@ Please supply the following information:
 * Twitter avatar of either the site or the author
 * _Optional_: URL to the source code
 
+---
 
-ℹ️ _Alternatively, If you can, open a pull request instead!_
+Sometimes it can take a little bit to get all of these on the live site. If you want a faster turnaround (or want to be nice to our lovely maintainers ❤️), please open a pull request instead!
 
-Eleventy sites live in `_data/sites/*.json` files with the format (the `source_url` field is optional):
+Build with Eleventy sites each have a separate file in `_data/sites/*.json` with this format: (the `source_url` field is optional)
 
 ```json
 {
