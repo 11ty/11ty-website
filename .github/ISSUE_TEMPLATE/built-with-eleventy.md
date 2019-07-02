@@ -19,7 +19,7 @@ Please supply the following information:
 
 Sometimes it can take a little bit to get all of these on the live site. If you want a faster turnaround (or want to be nice to our lovely maintainers ❤️), please open a pull request instead!
 
-Build with Eleventy sites each have a separate file in `_data/sites/*.json` with this format: (the `source_url` field is optional)
+Built with Eleventy sites each have a separate file in `_data/sites/*.json` with this format: (the `source_url` field is optional)
 
 ```json
 {
