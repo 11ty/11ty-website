@@ -26,7 +26,8 @@ For example, in the above code sample `css` is not currently a recognized Eleven
 
 You might want to use this for images by adding `"jpg"`, `"png"`, or maybe even `"webp"`.
 
-## Manual Pass-through Copy (Faster) {% addedin "0.2.14" %}
+<a id="{{ 'Manual Pass-through Copy (Faster)' | slug }}"></a>
+## Manual Passthrough Copy (Faster) {% addedin "0.2.14" %}
 
 Searching the entire directory structure for files to copy based on file extensions is not optimal with large directory structures. If we know what non-template static content we want to appear in our output, we can opt-in to specify _files_ or _directories_ for Eleventy to copy. This will probably speed up your build times. These entries are relative to the root of your project and _not_ your Eleventy input directory.
 
