@@ -52,10 +52,14 @@ Given that global copy of all content in the directory may be a security risk, w
 
 <div class="elv-callout elv-callout-warn"><strong>Warning:</strong> This may be a security risk—this is intended only for demos and other non-production use.</div>
 
-```
+<div data-preprefix-npxeleventy="last">
+
+```bash
 # Copies ALL files in the input directory to the output directory
-npx eleventy --passthroughall
+--passthroughall
 ```
+
+</div>
 
 ## Disabling Passthrough File Copy
 

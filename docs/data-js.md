@@ -104,10 +104,10 @@ Saving this as `myProject.js` in your global data directory (by default, this is
 
 ```
 # Serve for Development
-ELEVENTY_ENV=development npx eleventy --serve
+ELEVENTY_ENV=development npx @11ty/eleventy --serve
 
 # Build for Production
-ELEVENTY_ENV=production npx eleventy
+ELEVENTY_ENV=production npx @11ty/eleventy
 ```
 
 #### Template Usage
