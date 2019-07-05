@@ -1,29 +1,30 @@
 ---
-subtitle: Pass-through Copy
+subtitle: Passthrough Copy
 tags:
   - docs-config
 ---
-# Pass-through File Copy  {% addedin "0.2.7" %}
+# Passthrough File Copy  {% addedin "0.2.7" %}
 
-Eleventy, by default, searches for any file in the input directory with an extension listed in the `templateFormats` configuration option. That means if you’ve listed `njk` in your `templateFormats`, we’ll look for any Nunjucks templates (files with the `.njk` file extension).
+Eleventy, by default, searches for any file in the input directory with a file extension listed in your [`templateFormats` configuration](/docs/config/#template-formats). That means if you’ve listed `njk` in your `templateFormats`, we’ll look for any Nunjucks templates (files with the `.njk` file extension).
 
-If you list a format in the `templateFormats` array that isn’t a valid template, it’ll throw an error. Enabling `passthroughFileCopy` in your configuration changes this behavior. Setting `passthroughFileCopy: true` will copy files with non-matching template file extensions directly to your output directory without modification.
+If a file format is not recognized by Eleventy as a valid template file extension, Eleventy will simply copy this file directly to your output.
 
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = {
-  templateFormats: [
-    "md",
-    "css" // css is not yet a valid template extension
-  ],
-  passthroughFileCopy: true
+module.exports = function(eleventyConfig) {
+  return {
+    templateFormats: [
+      "md",
+      "css" // css is not yet a recognized template extension in Eleventy
+    ]
+  };
 };
 ```
 
-Although `css` is not currently a recognized Eleventy template, Eleventy will now search for any `*.css` files inside of the input directory and copy them to output (keeping directory structure).
+For example, in the above code sample `css` is not currently a recognized Eleventy template, but Eleventy will search for any `*.css` files inside of the input directory and copy them to output (keeping directory structure).
 
-You might also imagine using this for images by adding `"jpg"`, `"png"`, or maybe even `"webp"`.
+You might want to use this for images by adding `"jpg"`, `"png"`, or maybe even `"webp"`.
 
 ## Manual Passthrough Copy (Faster) {% addedin "0.2.14" %}
 
@@ -42,8 +43,6 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-{% callout "info" %}The <code>addPassthroughCopy</code> method does not require <code>passthroughFileCopy: true</code> in your Eleventy config file.{% endcallout %}
-
 {% callout "info" %}Only individual <em>files</em> and <em>directories</em> are supported. <em>Globs</em> are not yet supported for manual passthrough copy.{% endcallout %}
 
 ## Passthrough All Content {% addedin "0.5.4" %}
@@ -55,4 +54,18 @@ Given that global copy of all content in the directory may be a security risk, w
 ```
 # Copies ALL files in the input directory to the output directory
 npx eleventy --passthroughall
+```
+
+## Disabling Passthrough File Copy
+
+If you’d like to disable passthrough file copy, use `passthroughFileCopy: false`.
+
+{% callout "info" %}Note that this will disable both automatic and manual passthrough copy (the <code>addPassthroughCopy</code> configuration API method).{% endcallout %}
+
+```js
+module.exports = function(eleventyConfig) {
+  return {
+    passthroughFileCopy: false
+  };
+};
 ```
