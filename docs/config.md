@@ -69,7 +69,7 @@ This allows you further customization options using Eleventy’s provided helper
   "Default Template Engine for HTML Files",
   "Template Formats",
   "Deploy to a Subdirectory with a Path Prefix",
-  "Copy Files to Output using Pass-through File Copy",
+  "Copy Files to Output using Passthrough File Copy",
   "Change Exception Case Suffix for HTML Files",
   "Change File Suffix for Template and Directory Data Files",
   "Transforms",
@@ -359,11 +359,12 @@ Deploy to https://11ty.github.io/eleventy-base-blog/ on GitHub pages without mod
 eleventy --pathprefix=eleventy-base-blog
 ```
 
-### Copy Files to Output using Pass-through File Copy
+<a id="{{ 'Copy Files to Output using Pass-through File Copy' | slug }}"></a>
+### Copy Files to Output using Passthrough File Copy
 
-Files found (that don’t have a valid template engine) from white-listed file extensions (in `templateFormats`) will pass-through to the output directory. Read more about [Pass-through Copy](/docs/copy/).
+Files found (that don’t have a valid template engine) from white-listed file extensions (in `templateFormats`) will passthrough to the output directory. Read more about [Passthrough Copy](/docs/copy/).
 
-| Pass-through Copy |  |
+| Passthrough Copy |  |
 | --- | --- |
 | _Object Key_ | `passthroughFileCopy` |
 | _Default_ | `true` |

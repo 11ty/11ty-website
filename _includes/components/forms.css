@@ -1,0 +1,4 @@
+label.radio-align,
+input[type=radio] + label {
+	vertical-align: middle;
+}
