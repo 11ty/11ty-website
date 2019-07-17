@@ -277,6 +277,15 @@ footer.elv-layout {
 	height: 60vh;
 	background-color: #222;
 }
+.elv-header-default .elv-hero {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	background: #222;
+	width: calc(100% + 2rem);
+	margin-left: -1rem;
+	margin-right: -1rem;
+}
 .elv-header-docs .elv-hero {
 	float: left;
 	margin-right: .5em;
@@ -299,10 +308,10 @@ footer.elv-layout {
 	display: none;
 	position: absolute;
 	right: 1em;
-	top: 1em;
-	width: 16vmin;
+	top: 2em;
+	width: 64px;
 }
-@media (min-width: 31.25em) { /* 500px */
+@media (min-width: 25em) { /* 400px */
 	.elv-possum {
 		display: block;
 	}
@@ -385,11 +394,11 @@ main .elv-toc + h1 .direct-link {
 }
 .elv-sg-component:before,
 .elv-sg-component:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
+	content: " "; /* 1 */
+	display: table; /* 2 */
 }
 .elv-sg-component:after {
-  clear: both;
+	clear: both;
 }
 
 /* Screen readers only */
