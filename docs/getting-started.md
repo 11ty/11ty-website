@@ -79,7 +79,7 @@ Do you see `{% latestVersion versions, config, "" %}`? Good! Now we can run Elev
 
 ```bash
 npx @11ty/eleventy
-Wrote 0 files in 0.02 seconds
+Processed 0 files in 0.02 seconds
 ```
 
 </div>
