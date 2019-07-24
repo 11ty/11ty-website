@@ -107,7 +107,7 @@ We’ve now created an HTML template and a markdown template. Let’s run Eleven
 npx @11ty/eleventy
 Writing _site/README/index.html from ./README.md
 Writing _site/index.html from ./index.html
-Wrote 2 files in 0.10 seconds
+Processed 2 files in 0.10 seconds
 ```
 
 </div>
@@ -124,7 +124,7 @@ Use `--serve` to start up a hot-reloading local web server.
 npx @11ty/eleventy --serve
 Writing _site/README/index.html from ./README.md
 Writing _site/index.html from ./index.html
-Wrote 2 files in 0.10 seconds
+Processed 2 files in 0.10 seconds
 Watching…
 
  (some output truncated)
