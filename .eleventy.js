@@ -197,7 +197,7 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addShortcode("addToSampleSites", function() {
-		return `<a href="https://github.com/11ty/11ty.io/issues/new?title=I+built+a+site+with+Eleventy!"><strong>Want to add your site to this list?</strong></a>`;
+		return `<a href="https://github.com/11ty/11ty.io/issues/new/choose"><strong>Want to add your site to this list?</strong></a>`;
 	});
 
 	eleventyConfig.addCollection("quicktipssorted", function(collection) {
