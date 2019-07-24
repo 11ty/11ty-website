@@ -52,6 +52,10 @@ Eleventy uses the [`gray-matter` package](https://github.com/jonschlinkert/gray-
 
 ### JavaScript Front Matter
 
+Note that Liquid templates do not allow executing a function in output `{% raw %}{{ currentDate() }}{% endraw %}`. However, the following example does work in Nunjucks:
+
+{% codetitle "Nunjucks", "Syntax" %}
+
 {% raw %}
 ```
 ---js
