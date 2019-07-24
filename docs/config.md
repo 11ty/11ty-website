@@ -69,7 +69,7 @@ This allows you further customization options using Eleventy’s provided helper
   "Default Template Engine for HTML Files",
   "Template Formats",
   "Deploy to a Subdirectory with a Path Prefix",
-  "Copy Files to Output using Pass-through File Copy",
+  "Copy Files to Output using Passthrough File Copy",
   "Change Exception Case Suffix for HTML Files",
   "Change File Suffix for Template and Directory Data Files",
   "Transforms",
@@ -129,7 +129,7 @@ module.exports = {
 
 ### Directory for Includes
 
-The includes directory is meant for layout templates, include files, extends files, partials, or macros. These files will not be processed as input files, but can be consumed by other templates.
+The includes directory is meant for [Eleventy layouts](/docs/layouts/), include files, extends files, partials, or macros. These files will not be processed as full template files, but can be consumed by other templates.
 
 | Includes Directory |  |
 | --- | --- |
@@ -153,10 +153,10 @@ module.exports = {
 
 ### Directory for Layouts (Optional) {% addedin "0.8.0" %}
 
-The layouts directory is optional and intended only for projects that don’t want their layout templates to live in the [Includes directory](#directory-for-includes). These files will not be processed as input files, but can be consumed by other templates.
+This configuration option is optional but useful if you want your [Eleventy layouts](/docs/layouts/) to live outside of the [Includes directory](#directory-for-includes). Just like the [Includes directory](#directory-for-includes), these files will not be processed as full template files, but can be consumed by other templates.
 
 <div class="elv-callout elv-callout-warn elv-callout-warn-block">
-  <p>This setting <strong>only applies</strong> to Eleventy's language-agnostic <a href="/docs/layouts/">layouts</a> (i.e. when defined in front matter or data files).</p>
+  <p>This setting <strong>only applies</strong> to Eleventy's language-agnostic <a href="/docs/layouts/">layouts</a> (when defined in front matter or data files).</p>
   <p>When using <code>{% raw %}{% extends %}{% endraw %}</code>, Eleventy will <strong>still search the <code>_includes</code> directory</strong>. See <a href="/docs/layouts/#addendum-about-existing-templating-features">this note about existing templating features</a>.</p>
 </div>
 
@@ -359,11 +359,12 @@ Deploy to https://11ty.github.io/eleventy-base-blog/ on GitHub pages without mod
 eleventy --pathprefix=eleventy-base-blog
 ```
 
-### Copy Files to Output using Pass-through File Copy
+<a id="{{ 'Copy Files to Output using Pass-through File Copy' | slug }}"></a>
+### Copy Files to Output using Passthrough File Copy
 
-Files found (that don’t have a valid template engine) from white-listed file extensions (in `templateFormats`) will pass-through to the output directory. Read more about [Pass-through Copy](/docs/copy/).
+Files found (that don’t have a valid template engine) from white-listed file extensions (in `templateFormats`) will passthrough to the output directory. Read more about [Passthrough Copy](/docs/copy/).
 
-| Pass-through Copy |  |
+| Passthrough Copy |  |
 | --- | --- |
 | _Object Key_ | `passthroughFileCopy` |
 | _Default_ | `true` |

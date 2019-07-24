@@ -7,6 +7,12 @@
 	margin-bottom: 2em;
 	background-color: #dff7ff;
 }
+table .elv-callout {
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 1em;
+}
+
 .elv-callout-info:before {
 	content: "ℹ️ ";
 }

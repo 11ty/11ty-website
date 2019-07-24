@@ -50,21 +50,26 @@ Many date formats in Eleventy (when set in your content‘s filename as `YYYY-MM
 
 ### Example
 
+{% codetitle "YAML Front Matter", "Syntax" %}
+
 ```
 ---
 date: 2018-01-01
 ---
 ```
 
+If you output the Date object in a template, it will convert it to a string for display:
+
+{% codetitle "Liquid, Nunjucks", "Syntax" %}
+
 ```
 {% raw %}{{ page.date }}{% endraw %} will display a local time zone date.
 {{ sampleDate }}
 ```
 
-```
-{% raw %}{{ page.date.toString() }}{% endraw %} will display a local time zone date.
-{{ sampleDate.toString() }}
-```
+Nunjucks allows you to call JavaScript methods in output `{% raw %}{{ page.date.toString() }}{% endraw %}`. Liquid does not allow this.
+
+{% codetitle "Nunjucks", "Syntax" %}
 
 ```
 {% raw %}{{ page.date.toUTCString() }}{% endraw %} will display a UTC time zone date.

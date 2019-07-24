@@ -126,7 +126,7 @@ module.exports = function(eleventyConfig) {
 		return `<${parentTag} class="inlinelist">${languages.filter(lang => !whitelist ? true : whitelist.indexOf(lang.ext) > -1).map(lang => `<${childTag} class="inlinelist-item${page.url == lang.url ? ' active' : ''}"><a href="${lang.url}${anchor || ''}">${lang.name} <code>*.${lang.ext}</code></a></${childTag}>`).join(" ")}</${parentTag}>`;
 	});
 
-	eleventyConfig.addShortcode("latestVersion", function(versions, config) {
+	eleventyConfig.addShortcode("latestVersion", function(versions, config, prefix = "v") {
 		for( let version of versions ) {
 			if( version.tag === "LATEST" ) {
 				continue;
@@ -135,7 +135,7 @@ module.exports = function(eleventyConfig) {
 				continue;
 			}
 
-			return version.tag;
+			return prefix + version.tag.substr(1);
 		}
 	});
 
@@ -197,7 +197,7 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addShortcode("addToSampleSites", function() {
-		return `<a href="https://github.com/11ty/11ty.io/issues/new?title=I+built+a+site+with+Eleventy!"><strong>Want to add your site to this list?</strong></a>`;
+		return `<a href="https://github.com/11ty/11ty.io/issues/new/choose"><strong>Want to add your site to this list?</strong></a>`;
 	});
 
 	eleventyConfig.addCollection("quicktipssorted", function(collection) {
@@ -207,7 +207,7 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addShortcode("testimonial", function(testimonial) {
-		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `”<span class="bio-source">—${shortcodes.avatar(testimonial.twitter, testimonial.source, testimonial.name)}` : ``}</span></p></blockquote>`;
+		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.avatar(testimonial.twitter, testimonial.source, testimonial.name)}` : ``}</span></p></blockquote>`;
 	});
 
 	/* Markdown */

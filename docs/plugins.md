@@ -9,6 +9,8 @@ Plugins are custom code that Eleventy can import into a project from an external
 
 ## List of Official Plugins
 
+All official plugins live under the `@11ty` npm organization and plugin names will include the `@11ty/` prefix.
+
 * [@11ty/eleventy-plugin-rss](https://www.npmjs.com/package/@11ty/eleventy-plugin-rss) is a collection of Nunjucks filters for RSS/Atom feed templates.
 * [@11ty/eleventy-plugin-syntaxhighlight](https://www.npmjs.com/package/@11ty/eleventy-plugin-syntaxhighlight) for syntax highlighting using Markdown and Liquid tags.
 * [@11ty/eleventy-plugin-inclusive-language](https://www.npmjs.com/package/@11ty/eleventy-plugin-inclusive-language) includes a simple linter to help your writing use more inclusive language. Inspired by [_CSS Tricks’ Words to Avoid in Educational Writing_](https://css-tricks.com/words-avoid-educational-writing/).
@@ -27,6 +29,7 @@ Plugins are custom code that Eleventy can import into a project from an external
 * [eleventy-plugin-yamldata](https://www.npmjs.com/package/eleventy-plugin-yamldata) by [Sungkwang Lee](https://gwangyi.github.io/) will allow you to use a yaml file as local data file.
 * [@shawnsandy/npm_info](https://www.npmjs.com/package/@shawnsandy/npm_info) by [Shawn Sandy](https://github.com/shawn-sandy) will provide you with package detail for an npm package or GitHub info.
 * [eleventy-plugin-lazyimages](https://www.npmjs.com/package/eleventy-plugin-lazyimages) by [Liam Fiddler](https://liamfiddler.com) will add progressive lazy loading to your images.
+* [eleventy-xml-plugin](https://www.npmjs.com/package/eleventy-xml-plugin) by [Jeremias Menichelli](https://jeremenichelli.io) adds Liquid filters used for sitemap and RSS/feed file generation.
 * [**Search for `eleventy-plugin` on `npm`**](https://www.npmjs.com/search?q=eleventy-plugin)
 
 
