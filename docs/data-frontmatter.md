@@ -81,7 +81,7 @@ Note that Liquid templates do not allow executing a function in output `{% raw %
 
 You can customize Front Matter Parsing in Eleventy to add your own custom format. We have an [example to do this with support for TOML below](#example%3A-using-toml-for-front-matter-parsing).
 
-## Advanced: Customize Front Matter Parsing {% addedin "0.8.4" %}
+## Advanced: Customize Front Matter Parsing {% addedin "0.9.0" %}
 
 Eleventy uses the [`gray-matter` npm package](https://www.npmjs.com/package/gray-matter) for parsing front matter. `gray-matter` allows additional options that aren’t available by default in Eleventy.
 
@@ -97,7 +97,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Example: using Front Matter Excerpts {% addedin "0.8.4" %}
+### Example: Parse excerpts from content {% addedin "0.9.0" %}
 
 {% codetitle ".eleventy.js" %}
 
@@ -146,7 +146,7 @@ module.exports = function(eleventyConfig) {
 
 Using `excerpt_alias: 'my_custom_excerpt'` means that the excerpt will be available in your templates as the `my_custom_excerpt` variable instead of `page.excerpt`.
 
-### Example: using TOML for front matter parsing {% addedin "0.8.4" %}
+### Example: using TOML for front matter parsing {% addedin "0.9.0" %}
 
 While Eleventy does include support for [JSON, YAML, and JS front matter out of the box](#alternative-front-matter-formats), you may want to add additional formats too.
 

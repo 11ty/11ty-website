@@ -330,7 +330,7 @@ module.exports = function(eleventyConfig) {
 eleventy --formats=html,liquid,njk
 ```
 
-{% callout "info" %}{% addedin "0.8.4" %} <strong>Case sensitivity</strong>: File extensions should be considered case insensitive, cross-platform. While Mac OS—by default—already behaves this way, other operating systems do not and needed additional Eleventy code to enable this behavior.{% endcallout %}
+{% callout "info" %}{% addedin "0.9.0" %} <strong>Case sensitivity</strong>: File extensions should be considered case insensitive, cross-platform. While Mac OS—by default—already behaves this way, other operating systems do not and needed additional Eleventy code to enable this behavior.{% endcallout %}
 
 ### Deploy to a subdirectory with a Path Prefix
 
@@ -575,7 +575,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Customize Front Matter Parsing Options {% addedin "0.8.4" %}
+### Customize Front Matter Parsing Options {% addedin "0.9.0" %}
 
 * Documented at [Front Matter Data](/docs/data-frontmatter/#advanced%3A-customize-front-matter-parsing).
 
