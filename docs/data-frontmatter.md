@@ -105,7 +105,8 @@ module.exports = function(eleventyConfig) {
 module.exports = function(eleventyConfig) {
   eleventyConfig.setFrontMatterParsingOptions({
     excerpt: true,
-    excerpt_separator: '---' // Optional
+    // Optional, default is "---"
+    excerpt_separator: "<!-- excerpt -->"
   });
 };
 ```
@@ -118,14 +119,21 @@ Now you can do things like this:
 ---
 title: My page title
 ---
-This is an excerpt.
----
-<!doctype html>
-<html>
-…
+This is the start of my content and this will be shown as the excerpt.
+<!-- excerpt -->
+This is a continuation of my content…
 ```
 
-This will not alter your template’s content in collections. Your excerpt will now be available in the template’s `page.excerpt` variable.
+Your template’s content will include the excerpt but remove the separator:
+
+```
+This is the start of my content and this will be shown as the excerpt.
+This is a continuation of my content…
+```
+
+`page.excerpt` now holds `This is the start of my content and this will be shown as the excerpt.`
+
+{% callout "info" %}<strong>Don’t want your excerpt included with your content?</strong> The unique feature of this configuration is that you can keep your excerpt right at the beginning of your content. You can add a delimiter where you want the excerpt to end and the rest of the content to begin. If you want the excerpt to be separate from the content, make a new key for this and store it separately in your front matter or a data file.{% endcallout %}
 
 #### Changing where your excerpt is stored
 
@@ -165,6 +173,8 @@ module.exports = function(eleventyConfig) {
 ```
 
 For more information, read [this example on the `gray-matter` documentation](https://www.npmjs.com/package/gray-matter#optionsengines).
+
+{% callout "warn" %}<strong>Windows users</strong>: There is an upstream issue with the TOML dependency used here: <code>Expected "\n" but end of input found.</code>, logged at <a href="https://github.com/11ty/eleventy/issues/586">Eleventy #586</a>.{% endcallout %}
 
 Now you can use TOML in your front matter like this:
 
