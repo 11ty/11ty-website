@@ -1,7 +1,8 @@
 const chalk = require("chalk");
 const htmlmin = require("html-minifier");
 const CleanCSS = require("clean-css");
-const HumanReadable = require('human-readable-numbers');
+const HumanReadable = require("human-readable-numbers");
+const markdownIt = require("markdown-it");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const loadLanguages = require("prismjs/components/");
 
@@ -55,7 +56,11 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(rssPlugin);
 	// eleventyConfig.addPlugin(inclusiveLanguagePlugin);
 
-	eleventyConfig.addPairedShortcode("callout", function(content, level = "warn") {
+	let md = new markdownIt();
+	eleventyConfig.addPairedShortcode("callout", function(content, level = "warn", format = "html") {
+		if( format === "md" ) {
+			content = md.renderInline(content);
+		}
 		return `<div class="elv-callout elv-callout-${level}">${content}</div>`;
 	});
 
@@ -211,7 +216,6 @@ module.exports = function(eleventyConfig) {
 	});
 
 	/* Markdown */
-	let markdownIt = require("markdown-it");
 	let markdownItAnchor = require("markdown-it-anchor");
 	let options = {
 		html: true,
