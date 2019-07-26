@@ -100,6 +100,8 @@ permalink: this-is-a-new-path/subdirectory/testing/index.html
 
 The above will write to `_site/this-is-a-new-path/subdirectory/testing/index.html`.
 
+{% callout "info" %}If multiple input files attempt to write to the same permalink output file, Eleventy will throw an error {% addedin "0.9.0" %}.{% endcallout %}
+
 ### `permalink: false`
 
 If you set the `permalink` value to be `false`, this will disable writing the file to disk in your output folder. The file will still be processed normally (and present in collections) but will not be available in your output directory as a standalone template.
