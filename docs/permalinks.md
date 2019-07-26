@@ -131,6 +131,8 @@ permalink: subdir/{{ mySlug }}/index.html
 
 Writes to `_site/subdir/this-is-a-new-path/index.html`.
 
+{% callout "info", "md" %}Make sure you read about the special `page` variables useful for permalinks too: [`page.fileSlug`](/docs/data/#fileslug) and [`page.filePathStem`](/docs/data/#filepathstem).{% endcallout %}
+
 ### Disable templating in permalinks {% addedin "0.7.0" %}
 
 Some template syntaxes are nicer than others and you may want to opt-out of the templating engine here. Use the `dynamicPermalink` option in your front matter to disable this on a per-template basis.
