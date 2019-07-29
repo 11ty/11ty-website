@@ -1,68 +1,74 @@
 [
-	{
-		"url": "https://github.com/11ty/eleventy-base-blog",
-		"name": "eleventy-base-blog",
-		"description": "How to build a blog web site with Eleventy.",
-		"author": "eleven_ty"
-	},
-	{
-		"url": "https://glitch.com/~11ty",
-		"name": "eleventy-on-glitch",
-		"description": "A playground site for Eleventy on Glitch with live rendered views right on the web!",
-		"author": "eleven_ty"
-	},
-	{
-		"url": "https://github.com/philhawksworth/eleventyone",
-		"name": "eleventyone",
-		"description": "is an Eleventy scaffold project created by the legendary Phil Hawksworth. Makes use of gulp with Eleventy and Sass.",
-		"author": "philhawksworth"
-	},
-	{
-		"url": "https://hylia.website/",
-		"name": "Hylia",
-		"description": "is a lightweight Eleventy starter kit with Netlify CMS pre-configured, so that you can one-click install a progressive, accessible blog in minutes. ",
-		"author": "andybelldesign"
-	},
-	{
-		"url": "https://github.com/ianrose/deventy",
-		"name": "deventy",
-		"description": "A minimal 11ty starting point for building static websites with modern tools.",
-		"author": "thatianrose"
-	},
-	{
-		"url": "https://github.com/danurbanowicz/eleventy-netlify-boilerplate",
-		"name": "eleventy-netlify-boilerplate",
-		"description": "A template for building a simple blog web site with Eleventy and deploying it to Netlify. Includes Netlify CMS and Netlify Forms.",
-		"author": "DanUrbanowicz"
-	},
-	{
-		"url": "https://github.com/adamduncan/eleventy-shortcomps",
-		"name": "eleventy-shortcomps",
-		"description": "Starter project for static site by Adam Duncan, using Eleventy and shortcode components pattern.",
-		"author": "duncanadam"
-	},
-	{
-		"url": "https://skeleventy.netlify.com/",
-		"name": "Skeleventy",
-		"description": "A skeleton boilerplate built with Eleventy and Tailwind CSS.",
-		"author": "joe_dyer1"
-	},
-	{
-		"url": "https://github.com/chrisssycollins/simple-journal",
-		"name": "Simple Journal",
-		"description": "A simple journal/photo log website built on top of 11ty.",
-		"author": "scottishstoater"
-	},
-	{
-		"url": "https://7ty.tech/",
-		"name": "Seven",
-		"description": "An eleventy template based on bootstrap4layouts. Includes webpack, sass version of bootstrap, vue.js powered search and a whole lot more.",
-		"author": "planetoftheweb"
-	},
-	{
-		"url": "https://github.com/kmelve/eleventy-sanity-blog-boilerplate",
-		"name": "eleventy-sanity-blog-boilerplate",
-		"description": "An eleventy + headless CMS blog boilerplate. Includes Sanity Studio, quick start, config and intstructions for deploying on Netlify and `now`.",
-		"author": "kmelve"
-	}
+  {
+    "url": "https://github.com/11ty/eleventy-base-blog",
+    "name": "eleventy-base-blog",
+    "description": "How to build a blog web site with Eleventy.",
+    "author": "eleven_ty"
+  },
+  {
+    "url": "https://glitch.com/~11ty",
+    "name": "eleventy-on-glitch",
+    "description": "A playground site for Eleventy on Glitch with live rendered views right on the web!",
+    "author": "eleven_ty"
+  },
+  {
+    "url": "https://github.com/philhawksworth/eleventyone",
+    "name": "eleventyone",
+    "description": "is an Eleventy scaffold project created by the legendary Phil Hawksworth. Makes use of gulp with Eleventy and Sass.",
+    "author": "philhawksworth"
+  },
+  {
+    "url": "https://hylia.website/",
+    "name": "Hylia",
+    "description": "is a lightweight Eleventy starter kit with Netlify CMS pre-configured, so that you can one-click install a progressive, accessible blog in minutes. ",
+    "author": "andybelldesign"
+  },
+  {
+    "url": "https://github.com/ianrose/deventy",
+    "name": "deventy",
+    "description": "A minimal 11ty starting point for building static websites with modern tools.",
+    "author": "thatianrose"
+  },
+  {
+    "url": "https://github.com/danurbanowicz/eleventy-netlify-boilerplate",
+    "name": "eleventy-netlify-boilerplate",
+    "description": "A template for building a simple blog web site with Eleventy and deploying it to Netlify. Includes Netlify CMS and Netlify Forms.",
+    "author": "DanUrbanowicz"
+  },
+  {
+    "url": "https://github.com/adamduncan/eleventy-shortcomps",
+    "name": "eleventy-shortcomps",
+    "description": "Starter project for static site by Adam Duncan, using Eleventy and shortcode components pattern.",
+    "author": "duncanadam"
+  },
+  {
+    "url": "https://skeleventy.netlify.com/",
+    "name": "Skeleventy",
+    "description": "A skeleton boilerplate built with Eleventy and Tailwind CSS.",
+    "author": "joe_dyer1"
+  },
+  {
+    "url": "https://github.com/chrisssycollins/simple-journal",
+    "name": "Simple Journal",
+    "description": "A simple journal/photo log website built on top of 11ty.",
+    "author": "scottishstoater"
+  },
+  {
+    "url": "https://7ty.tech/",
+    "name": "Seven",
+    "description": "An eleventy template based on bootstrap4layouts. Includes webpack, sass version of bootstrap, vue.js powered search and a whole lot more.",
+    "author": "planetoftheweb"
+  },
+  {
+    "url": "https://github.com/kmelve/eleventy-sanity-blog-boilerplate",
+    "name": "eleventy-sanity-blog-boilerplate",
+    "description": "An eleventy + headless CMS blog boilerplate. Includes Sanity Studio, quick start, config and intstructions for deploying on Netlify and `now`.",
+    "author": "kmelve"
+  },
+  {
+    "url": "https://github.com/TryGhost/eleventy-starter-ghost",
+    "name": "Eleventy Starter Ghost",
+    "description": "A starter template to build websites with Ghost & Eleventy.",
+    "author": "DavidDarnes"
+  }
 ]
