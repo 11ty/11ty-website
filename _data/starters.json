@@ -64,5 +64,11 @@
 		"name": "eleventy-sanity-blog-boilerplate",
 		"description": "An eleventy + headless CMS blog boilerplate. Includes Sanity Studio, quick start, config and intstructions for deploying on Netlify and `now`.",
 		"author": "kmelve"
+	},
+	{
+		"url": "https://github.com/TryGhost/eleventy-starter-ghost",
+		"name": "Eleventy Starter Ghost",
+		"description": "A starter template to build websites with Ghost & Eleventy.",
+		"author": "DavidDarnes"
 	}
 ]
