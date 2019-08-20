@@ -1,0 +1,6 @@
+<h2 id="eleventy-is-supported-by">Eleventy is <a href="/docs/supporters/">supported</a> by… <a class="direct-link" href="#eleventy-is-supported-by" aria-hidden="true">#</a></h2>
+<div class="facepile">
+{% for supporter in supporters %}{% if supporter.role === "BACKER" -%}
+	<a href="{{ supporter.profile }}" class="elv-externalexempt"><img src="{% if supporter.imageSlug %}{{ supporter.imageSlug }}.jpg{% else %}/img/default-avatar.png{% endif %}" alt="{{ supporter.name }}" loading="lazy" class="avatar"></a>
+{%- endif %}{% endfor %}
+</div>

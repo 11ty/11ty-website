@@ -165,7 +165,9 @@ h5 {
 }
 main h1,
 main h2,
-main h3 {
+main h3,
+footer h2,
+footer h3 {
 	text-transform: uppercase;
 }
 h1 code,
@@ -442,24 +444,24 @@ main .elv-toc + h1 .direct-link {
 }
 
 /* Featured sites */
-.featured-sites {
+.facepile {
 	margin: 2em auto 3em;
 	line-height: 2;
 	padding: 0 0 0 25px;
 }
-.featured-sites > a {
+.facepile > a {
 	display: inline-block;
 	margin-left: -25px;
 	transition: opacity .3s;
 	opacity: .9;
 }
-.featured-sites > a:focus,
-.featured-sites > a:hover {
+.facepile > a:focus,
+.facepile > a:hover {
 	opacity: 1;
 	position: relative;
 	z-index: 1;
 }
-.featured-sites .avatar {
+.facepile .avatar {
 	width: 30px;
 	height: 30px;
 	width: calc(30px + 5vw);
@@ -471,7 +473,7 @@ main .elv-toc + h1 .direct-link {
 	border: 2px solid;
 	transition: border .3s;
 }
-.featured-sites > a:after {
+.facepile > a:after {
 	content: "";
 	position: absolute;
 	border-radius: 50%;
@@ -479,8 +481,8 @@ main .elv-toc + h1 .direct-link {
 	pointer-events: none;
 	opacity: 0;
 }
-.featured-sites > a:focus:after,
-.featured-sites > a:hover:after {
+.facepile > a:focus:after,
+.facepile > a:hover:after {
 	left: -24px; /* Right - 4px */
 	right: -20px;
 	top: -24px; /* Right - 4px */
@@ -491,48 +493,48 @@ main .elv-toc + h1 .direct-link {
 	background-size: 1200% 1200%;
 	background-position: 0 80%;
 }
-.featured-sites > a:nth-child(11n+1):focus:after,
-.featured-sites > a:nth-child(11n+1):hover:after {
+.facepile > a:nth-child(11n+1):focus:after,
+.facepile > a:nth-child(11n+1):hover:after {
 	background-position: 0% 80%;
 }
-.featured-sites > a:nth-child(11n+2):focus:after,
-.featured-sites > a:nth-child(11n+2):hover:after {
+.facepile > a:nth-child(11n+2):focus:after,
+.facepile > a:nth-child(11n+2):hover:after {
 	background-position: 9% 80%;
 }
-.featured-sites > a:nth-child(11n+3):focus:after,
-.featured-sites > a:nth-child(11n+3):hover:after {
+.facepile > a:nth-child(11n+3):focus:after,
+.facepile > a:nth-child(11n+3):hover:after {
 	background-position: 18% 80%;
 }
-.featured-sites > a:nth-child(11n+4):focus:after,
-.featured-sites > a:nth-child(11n+4):hover:after {
+.facepile > a:nth-child(11n+4):focus:after,
+.facepile > a:nth-child(11n+4):hover:after {
 	background-position: 27% 80%;
 }
-.featured-sites > a:nth-child(11n+5):focus:after,
-.featured-sites > a:nth-child(11n+5):hover:after {
+.facepile > a:nth-child(11n+5):focus:after,
+.facepile > a:nth-child(11n+5):hover:after {
 	background-position: 36% 80%;
 }
-.featured-sites > a:nth-child(11n+6):focus:after,
-.featured-sites > a:nth-child(11n+6):hover:after {
+.facepile > a:nth-child(11n+6):focus:after,
+.facepile > a:nth-child(11n+6):hover:after {
 	background-position: 45% 80%;
 }
-.featured-sites > a:nth-child(11n+7):focus:after,
-.featured-sites > a:nth-child(11n+7):hover:after {
+.facepile > a:nth-child(11n+7):focus:after,
+.facepile > a:nth-child(11n+7):hover:after {
 	background-position: 54% 80%;
 }
-.featured-sites > a:nth-child(11n+8):focus:after,
-.featured-sites > a:nth-child(11n+8):hover:after {
+.facepile > a:nth-child(11n+8):focus:after,
+.facepile > a:nth-child(11n+8):hover:after {
 	background-position: 63% 80%;
 }
-.featured-sites > a:nth-child(11n+9):focus:after,
-.featured-sites > a:nth-child(11n+9):hover:after {
+.facepile > a:nth-child(11n+9):focus:after,
+.facepile > a:nth-child(11n+9):hover:after {
 	background-position: 72% 80%;
 }
-.featured-sites > a:nth-child(11n+10):focus:after,
-.featured-sites > a:nth-child(11n+10):hover:after {
+.facepile > a:nth-child(11n+10):focus:after,
+.facepile > a:nth-child(11n+10):hover:after {
 	background-position: 81% 80%;
 }
-.featured-sites > a:nth-child(11n+11):focus:after,
-.featured-sites > a:nth-child(11n+11):hover:after {
+.facepile > a:nth-child(11n+11):focus:after,
+.facepile > a:nth-child(11n+11):hover:after {
 	background-position: 90% 80%;
 }
 

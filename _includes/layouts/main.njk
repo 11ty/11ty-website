@@ -13,9 +13,12 @@ headerClass: elv-header-default
 <div class="elv-callout elv-callout-info elv-callout-sticky">This documentation is for an upcoming version of Eleventy. Go to the <a href="https://www.11ty.io/docs/">latest stable version of Eleventy docs</a> or check out the <a href="https://www.11ty.io/docs/versions/">full release history.</a></div>
 {% endif -%}
 
-<main class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">{{ content | safe }}</main>
+<main class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">
+	{{ content | safe }}
+</main>
 
 <footer class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">
+{% if ignoreSupporters %}{% else %}{% include "supporters.njk" %}{% endif %}
 {%- if ignoreGitHubButtons %}{% else %}
 	<div class="elv-callout">
 		<a href="https://github.com/11ty/eleventy" class="minilink">⭐ <strong>{{ github.stargazers | humanReadableNum }}</strong></a>

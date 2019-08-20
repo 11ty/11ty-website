@@ -215,6 +215,16 @@ module.exports = function(eleventyConfig) {
 		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.avatar(testimonial.twitter, testimonial.source, testimonial.name)}` : ``}</span></p></blockquote>`;
 	});
 
+	eleventyConfig.addShortcode("supporterAmount", function(amount) {
+		let result = [];
+		for( let j = 0, k = amount; j<=k; j+= 50) {
+			result.push("💵");
+		}
+		return result.join("");
+	});
+
+
+
 	/* Markdown */
 	let markdownItAnchor = require("markdown-it-anchor");
 	let options = {
