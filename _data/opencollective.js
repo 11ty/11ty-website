@@ -30,8 +30,6 @@ module.exports = async function() {
 						avatarCache.fetchUrl(entry.image, path).then(function(files) {
 							console.log( `Wrote ${path}.{webp,png,jpg}` );
 						});
-
-						entry.imageSlug = `/${path}`;
 					}
 					return entry;
 				});
