@@ -218,7 +218,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addShortcode("supporterAmount", function(amount) {
 		let result = [];
 		for( let j = 0, k = amount; j<=k; j+= 50) {
-			result.push("💵");
+			result.push("❤️");
 		}
 		return result.join("");
 	});
