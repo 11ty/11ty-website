@@ -3,8 +3,9 @@
 }
 body {
 	font-family: system-ui, sans-serif;
-	margin: 0;
 	color: #222;
+	max-width: 76em;
+	margin: 0 auto;
 }
 img {
 	border: 0;
