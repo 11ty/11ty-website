@@ -4,6 +4,9 @@
 body {
 	font-family: system-ui, sans-serif;
 	color: #222;
+	margin: 0;
+}
+.elv-docs body {
 	max-width: 76em;
 	margin: 0 auto;
 }
