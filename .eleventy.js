@@ -71,8 +71,8 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.addShortcode("avatar", shortcodes.avatar);
 
-	eleventyConfig.addShortcode("codetitle", function(title, subtitle = "Filename") {
-		return `<div class="codetitle codetitle-left"><b>${subtitle} </b>${title}</div>`;
+	eleventyConfig.addShortcode("codetitle", function(title, heading = "Filename") {
+		return `<div class="codetitle codetitle-left"><b>${heading} </b>${title}</div>`;
 	});
 
 	eleventyConfig.addPairedShortcode("minilink", function(text, href) {
