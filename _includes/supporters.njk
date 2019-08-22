@@ -1,6 +1,7 @@
 <h2 id="eleventy-is-supported-by">Eleventy is <a href="/docs/supporters/">supported</a> by… <a class="direct-link" href="#eleventy-is-supported-by" aria-hidden="true">#</a></h2>
 <div class="facepile">
 {% for supporter in supporters %}{% if supporter.role === "BACKER" -%}
-	<a href="{{ supporter.profile }}" class="elv-externalexempt"><img src="{% if supporter.image %}/img/avatar-local-cache/{{ supporter.name | slug | lower }}.jpg{% else %}/img/default-avatar.png{% endif %}" alt="{{ supporter.name }}" loading="lazy" class="avatar"></a>
+{%- set nameToSlug = supporter.name | slug | lower -%}
+	<a href="{{ supporter.profile }}" class="elv-externalexempt">{% if supporter.image %}{% supporterAvatar nameToSlug, supporter.name %}{% else %}<img src="/img/default-avatar.png" alt="{{ supporter.name }}" loading="lazy" class="avatar">{% endif %}</a>
 {%- endif %}{% endfor %}
 </div>

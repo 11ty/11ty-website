@@ -23,16 +23,25 @@ module.exports = async function() {
 			let newDataJson = await fetch("https://opencollective.com/11ty/members/all.json").then(res => res.json());
 
 			if( process.env.ELEVENTY_AVATARS ) {
-				newDataJson = newDataJson.map(function(entry) {
+				let supporterImageMap = {};
+				let supporterPromises = [];
+				for(let entry of newDataJson) {
+					if( entry.role.toLowerCase() !== "backer" ) {
+						continue;
+					}
+
 					let slug = slugify(entry.name).toLowerCase();
 					let path = `img/avatar-local-cache/${slug}`;
 					if(entry.image) {
-						avatarCache.fetchUrl(entry.image, path).then(function(files) {
-							console.log( `Wrote ${path}.{webp,png,jpg}` );
-						});
+						supporterPromises.push(avatarCache.fetchUrl(entry.image, path).then(function(files) {
+							supporterImageMap[slug] = files;
+							console.log( `Wrote ${files.join(", ")}` );
+						}));
 					}
-					return entry;
-				});
+				}
+				await Promise.all(supporterPromises);
+				await fs.writeFile("./_data/supportersAvatarMap.json", JSON.stringify(supporterImageMap, null, 2));
+				console.log( "Wrote _data/supportersAvatarMap.json" );
 			}
 
 			newDataJson.sort(function(a, b) {
@@ -54,7 +63,7 @@ module.exports = async function() {
 			cache.save();
 			return newData;
 		} catch(e) {
-			console.log( "Failed, returning 0 opencollective backers." );
+			console.log( "Failed, returning 0 opencollective backers.", e );
 			return {
 				backers: 0
 			};

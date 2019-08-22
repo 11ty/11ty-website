@@ -10,11 +10,27 @@ const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language");
 const cfg = require("./_data/config.js");
 const avatarExceptions = require("./_data/avatarFileMap.json");
+const supporterAvatarFileMap = require("./_data/supportersAvatarMap.json");
 
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);
 
 const shortcodes = {
+	supporterAvatar: function(slug, alt) {
+		let mapEntry = supporterAvatarFileMap[slug];
+		if(mapEntry) {
+			let ret = [];
+			if( mapEntry.length > 1 ) {
+				ret.push("<picture>");
+				ret.push(`<source srcset="/${mapEntry[0].path}" type="image/webp">`);
+			}
+			ret.push(`<img src="/${mapEntry[mapEntry.length - 1].path}" alt="${alt}" loading="lazy" class="avatar">`);
+			if( mapEntry.length > 1 ) {
+				ret.push("</picture>");
+			}
+			return ret.join("");
+		}
+	},
 	avatar: function(filename, linkUrl, text = "") {
 		if(!filename) {
 			return '<span class="avatar"></span>';
@@ -69,6 +85,7 @@ module.exports = function(eleventyConfig) {
 			(alt ? `<span class="sr-only">${alt}</span>` : "");
 	});
 
+	eleventyConfig.addShortcode("supporterAvatar", shortcodes.supporterAvatar);
 	eleventyConfig.addShortcode("avatar", shortcodes.avatar);
 
 	eleventyConfig.addShortcode("codetitle", function(title, heading = "Filename") {
