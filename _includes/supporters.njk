@@ -2,6 +2,6 @@
 <div class="facepile">
 {% for supporter in supporters %}{% if supporter.role === "BACKER" -%}
 {%- set nameToSlug = supporter.name | slug | lower -%}
-	<a href="{{ supporter.profile }}" class="elv-externalexempt">{% if supporter.image %}{% supporterAvatar nameToSlug, supporter.name %}{% else %}<img src="/img/default-avatar.png" alt="{{ supporter.name }}" loading="lazy" class="avatar">{% endif %}</a>
+	<a href="{{ supporter.profile }}" class="elv-externalexempt">{% if supporter.image %}{% avatarlocalcache nameToSlug, supporter.name %}{% else %}<img src="/img/default-avatar.png" alt="{{ supporter.name }}" loading="lazy" class="avatar">{% endif %}</a>
 {%- endif %}{% endfor %}
 </div>

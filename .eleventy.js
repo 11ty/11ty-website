@@ -16,7 +16,7 @@ const supporterAvatarFileMap = require("./_data/supportersAvatarMap.json");
 loadLanguages(['yaml']);
 
 const shortcodes = {
-	supporterAvatar: function(slug, alt) {
+	avatarLocalCache: function(slug, alt) {
 		let mapEntry = supporterAvatarFileMap[slug];
 		if(mapEntry) {
 			let ret = [];
@@ -24,7 +24,7 @@ const shortcodes = {
 				ret.push("<picture>");
 				ret.push(`<source srcset="/${mapEntry[0].path}" type="image/webp">`);
 			}
-			ret.push(`<img src="/${mapEntry[mapEntry.length - 1].path}" alt="${alt}" loading="lazy" class="avatar">`);
+			ret.push(`<img src="${ "/" + mapEntry[mapEntry.length - 1].path }" alt="${alt}" loading="lazy" class="avatar">`);
 			if( mapEntry.length > 1 ) {
 				ret.push("</picture>");
 			}
@@ -85,7 +85,7 @@ module.exports = function(eleventyConfig) {
 			(alt ? `<span class="sr-only">${alt}</span>` : "");
 	});
 
-	eleventyConfig.addShortcode("supporterAvatar", shortcodes.supporterAvatar);
+	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatarLocalCache);
 	eleventyConfig.addShortcode("avatar", shortcodes.avatar);
 
 	eleventyConfig.addShortcode("codetitle", function(title, heading = "Filename") {
