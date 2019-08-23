@@ -9,47 +9,34 @@ const loadLanguages = require("prismjs/components/");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language");
 const cfg = require("./_data/config.js");
-const avatarExceptions = require("./_data/avatarFileMap.json");
-const supporterAvatarFileMap = require("./_data/supportersAvatarMap.json");
 
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);
 
 const shortcodes = {
-	avatarLocalCache: function(slug, alt) {
-		let mapEntry = supporterAvatarFileMap[slug];
-		if(mapEntry) {
-			let ret = [];
-			if( mapEntry.length > 1 ) {
-				ret.push("<picture>");
-				ret.push(`<source srcset="/${mapEntry[0].path}" type="image/webp">`);
+	avatarlocalcache: function(datasource, slug, alt = "") {
+		const avatarMap = require(`./_data/avatarmap/${datasource}.json`);
+		if( slug ) {
+			let mapEntry = avatarMap[slug.toLowerCase()];
+			if(mapEntry && mapEntry.length) {
+				let ret = [];
+				if( mapEntry.length >= 2 ) {
+					ret.push("<picture>");
+					ret.push(`<source srcset="/${mapEntry[0].path}" type="image/${mapEntry[0].path.split(".").pop()}">`);
+				}
+				ret.push(`<img src="${ "/" + mapEntry[mapEntry.length - 1].path }" alt="${alt || `${slug}’s ${datasource} avatar`}" loading="lazy" class="avatar">`);
+				if( mapEntry.length >= 2 ) {
+					ret.push("</picture>");
+				}
+				return ret.join("");
 			}
-			ret.push(`<img src="${ "/" + mapEntry[mapEntry.length - 1].path }" alt="${alt}" loading="lazy" class="avatar">`);
-			if( mapEntry.length > 1 ) {
-				ret.push("</picture>");
-			}
-			return ret.join("");
 		}
+
+		return `<img src="/img/default-avatar.png" alt="${alt}" loading="lazy" class="avatar">`;
 	},
-	avatar: function(filename, linkUrl, text = "") {
-		if(!filename) {
-			return '<span class="avatar"></span>';
-		}
-
-		let twitterName;
-		if( filename.endsWith(".jpg") || filename.endsWith(".png") ) {
-			twitterName = filename.substr(0, -4);
-		} else {
-			twitterName = filename;
-			filename += ".jpg";
-		}
-		if( avatarExceptions[twitterName] ) {
-			filename = avatarExceptions[twitterName];
-		}
-
+	link: function(linkUrl, content) {
 		return (linkUrl ? `<a href="${linkUrl}">` : "") +
-			`<img src="/img/avatars/${filename}" class="avatar" alt="@${twitterName} Twitter Photo" loading="lazy">` +
-			text +
+			content +
 			(linkUrl ? `</a>` : "");
 	}
 };
@@ -85,8 +72,7 @@ module.exports = function(eleventyConfig) {
 			(alt ? `<span class="sr-only">${alt}</span>` : "");
 	});
 
-	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatarLocalCache);
-	eleventyConfig.addShortcode("avatar", shortcodes.avatar);
+	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatarlocalcache);
 
 	eleventyConfig.addShortcode("codetitle", function(title, heading = "Filename") {
 		return `<div class="codetitle codetitle-left"><b>${heading} </b>${title}</div>`;
@@ -229,7 +215,7 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addShortcode("testimonial", function(testimonial) {
-		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.avatar(testimonial.twitter, testimonial.source, testimonial.name)}` : ``}</span></p></blockquote>`;
+		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, shortcodes.avatarlocalcache("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`) + testimonial.name)}` : ``}</span></p></blockquote>`;
 	});
 
 	eleventyConfig.addShortcode("supporterAmount", function(amount) {

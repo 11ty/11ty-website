@@ -98,6 +98,6 @@ Plugin namespacing is an application feature and should not be used if you are c
 <div class="elv-community" id="community-resources">
   <h3 class="elv-community-hed">Community Resources</h3>
   <ul>
-    <li><a href="https://bryanlrobinson.com/blog/2019/06/21/creating-11ty-plugin-embed-svg-contents/">Creating an 11ty Plugin—SVG Embed Tool</a> by {% avatar "brob" %}Bryan Robinson</li>
+    <li><a href="https://bryanlrobinson.com/blog/2019/06/21/creating-11ty-plugin-embed-svg-contents/">Creating an 11ty Plugin—SVG Embed Tool</a> by {% avatarlocalcache "twitter", "brob" %}Bryan Robinson</li>
   </ul>
 </div>
