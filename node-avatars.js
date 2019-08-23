@@ -11,6 +11,7 @@ async function fetchAvatar(name, image, cacheName) {
 	let outputSlugPath = `${dir}${slug}`;
 	if(image) {
 		let avatarCache = new AvatarLocalCache();
+		avatarCache.width = 73;
 		return avatarCache.fetchUrl(image, outputSlugPath);
 	}
 
