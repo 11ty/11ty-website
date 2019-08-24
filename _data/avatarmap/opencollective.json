@@ -1,28 +1,4 @@
 {
-  "andy-bell": [
-    {
-      "name": "andy-bell",
-      "path": "img/avatar-local-cache/opencollective/andy-bell.webp",
-      "size": 1154
-    },
-    {
-      "name": "andy-bell",
-      "path": "img/avatar-local-cache/opencollective/andy-bell.jpg",
-      "size": 1761
-    }
-  ],
-  "heydon-pickering": [
-    {
-      "name": "heydon-pickering",
-      "path": "img/avatar-local-cache/opencollective/heydon-pickering.webp",
-      "size": 1672
-    },
-    {
-      "name": "heydon-pickering",
-      "path": "img/avatar-local-cache/opencollective/heydon-pickering.png",
-      "size": 2095
-    }
-  ],
   "jerome-coupe": [
     {
       "name": "jerome-coupe",
@@ -47,52 +23,16 @@
       "size": 1341
     }
   ],
-  "bridget-stewart": [
+  "manuel-matuzovic": [
     {
-      "name": "bridget-stewart",
-      "path": "img/avatar-local-cache/opencollective/bridget-stewart.webp",
-      "size": 1296
+      "name": "manuel-matuzovic",
+      "path": "img/avatar-local-cache/opencollective/manuel-matuzovic.webp",
+      "size": 1966
     },
     {
-      "name": "bridget-stewart",
-      "path": "img/avatar-local-cache/opencollective/bridget-stewart.jpg",
-      "size": 1849
-    }
-  ],
-  "max-bock": [
-    {
-      "name": "max-bock",
-      "path": "img/avatar-local-cache/opencollective/max-bock.webp",
-      "size": 796
-    },
-    {
-      "name": "max-bock",
-      "path": "img/avatar-local-cache/opencollective/max-bock.jpg",
-      "size": 1436
-    }
-  ],
-  "rob-dodson": [
-    {
-      "name": "rob-dodson",
-      "path": "img/avatar-local-cache/opencollective/rob-dodson.webp",
-      "size": 1100
-    },
-    {
-      "name": "rob-dodson",
-      "path": "img/avatar-local-cache/opencollective/rob-dodson.jpg",
-      "size": 1642
-    }
-  ],
-  "eric-bailey": [
-    {
-      "name": "eric-bailey",
-      "path": "img/avatar-local-cache/opencollective/eric-bailey.webp",
-      "size": 1526
-    },
-    {
-      "name": "eric-bailey",
-      "path": "img/avatar-local-cache/opencollective/eric-bailey.png",
-      "size": 2011
+      "name": "manuel-matuzovic",
+      "path": "img/avatar-local-cache/opencollective/manuel-matuzovic.jpg",
+      "size": 2316
     }
   ],
   "dave-rupert": [
@@ -107,18 +47,6 @@
       "size": 1988
     }
   ],
-  "hans-gerwitz": [
-    {
-      "name": "hans-gerwitz",
-      "path": "img/avatar-local-cache/opencollective/hans-gerwitz.webp",
-      "size": 1320
-    },
-    {
-      "name": "hans-gerwitz",
-      "path": "img/avatar-local-cache/opencollective/hans-gerwitz.jpg",
-      "size": 1902
-    }
-  ],
   "keenan-payne": [
     {
       "name": "keenan-payne",
@@ -131,59 +59,16 @@
       "size": 1698
     }
   ],
-  "manuel-matuzovic": [
+  "hans-gerwitz": [
     {
-      "name": "manuel-matuzovic",
-      "path": "img/avatar-local-cache/opencollective/manuel-matuzovic.webp",
-      "size": 1966
+      "name": "hans-gerwitz",
+      "path": "img/avatar-local-cache/opencollective/hans-gerwitz.webp",
+      "size": 1320
     },
     {
-      "name": "manuel-matuzovic",
-      "path": "img/avatar-local-cache/opencollective/manuel-matuzovic.jpg",
-      "size": 2316
-    }
-  ],
-  "benjamin-randall": [
-    {
-      "name": "benjamin-randall",
-      "path": "img/avatar-local-cache/opencollective/benjamin-randall.webp",
-      "size": 1602
-    },
-    {
-      "name": "benjamin-randall",
-      "path": "img/avatar-local-cache/opencollective/benjamin-randall.jpg",
-      "size": 2114
-    }
-  ],
-  "kyle-mitofsky": [
-    {
-      "name": "kyle-mitofsky",
-      "path": "img/avatar-local-cache/opencollective/kyle-mitofsky.webp",
-      "size": 1698
-    },
-    {
-      "name": "kyle-mitofsky",
-      "path": "img/avatar-local-cache/opencollective/kyle-mitofsky.jpg",
-      "size": 2155
-    }
-  ],
-  "ray-villalobos": [
-    {
-      "name": "ray-villalobos",
-      "path": "img/avatar-local-cache/opencollective/ray-villalobos.webp",
-      "size": 1022
-    },
-    {
-      "name": "ray-villalobos",
-      "path": "img/avatar-local-cache/opencollective/ray-villalobos.jpg",
-      "size": 1573
-    }
-  ],
-  "vadim-makeev": [
-    {
-      "name": "vadim-makeev",
-      "path": "img/avatar-local-cache/opencollective/vadim-makeev.png",
-      "size": 2113
+      "name": "hans-gerwitz",
+      "path": "img/avatar-local-cache/opencollective/hans-gerwitz.jpg",
+      "size": 1902
     }
   ],
   "christopher-salmon": [
@@ -198,6 +83,73 @@
       "size": 1949
     }
   ],
+  "benjamin-randall": [
+    {
+      "name": "benjamin-randall",
+      "path": "img/avatar-local-cache/opencollective/benjamin-randall.webp",
+      "size": 1602
+    },
+    {
+      "name": "benjamin-randall",
+      "path": "img/avatar-local-cache/opencollective/benjamin-randall.jpg",
+      "size": 2114
+    }
+  ],
+  "max-bock": [
+    {
+      "name": "max-bock",
+      "path": "img/avatar-local-cache/opencollective/max-bock.webp",
+      "size": 796
+    },
+    {
+      "name": "max-bock",
+      "path": "img/avatar-local-cache/opencollective/max-bock.jpg",
+      "size": 1436
+    }
+  ],
+  "ray-villalobos": [
+    {
+      "name": "ray-villalobos",
+      "path": "img/avatar-local-cache/opencollective/ray-villalobos.webp",
+      "size": 1022
+    },
+    {
+      "name": "ray-villalobos",
+      "path": "img/avatar-local-cache/opencollective/ray-villalobos.jpg",
+      "size": 1573
+    }
+  ],
+  "eric-bailey": [
+    {
+      "name": "eric-bailey",
+      "path": "img/avatar-local-cache/opencollective/eric-bailey.webp",
+      "size": 1526
+    },
+    {
+      "name": "eric-bailey",
+      "path": "img/avatar-local-cache/opencollective/eric-bailey.png",
+      "size": 2011
+    }
+  ],
+  "kyle-mitofsky": [
+    {
+      "name": "kyle-mitofsky",
+      "path": "img/avatar-local-cache/opencollective/kyle-mitofsky.webp",
+      "size": 1698
+    },
+    {
+      "name": "kyle-mitofsky",
+      "path": "img/avatar-local-cache/opencollective/kyle-mitofsky.jpg",
+      "size": 2155
+    }
+  ],
+  "vadim-makeev": [
+    {
+      "name": "vadim-makeev",
+      "path": "img/avatar-local-cache/opencollective/vadim-makeev.png",
+      "size": 2113
+    }
+  ],
   "mat-marquis": [
     {
       "name": "mat-marquis",
@@ -208,6 +160,30 @@
       "name": "mat-marquis",
       "path": "img/avatar-local-cache/opencollective/mat-marquis.png",
       "size": 1726
+    }
+  ],
+  "heydon-pickering": [
+    {
+      "name": "heydon-pickering",
+      "path": "img/avatar-local-cache/opencollective/heydon-pickering.webp",
+      "size": 1672
+    },
+    {
+      "name": "heydon-pickering",
+      "path": "img/avatar-local-cache/opencollective/heydon-pickering.png",
+      "size": 2095
+    }
+  ],
+  "rob-dodson": [
+    {
+      "name": "rob-dodson",
+      "path": "img/avatar-local-cache/opencollective/rob-dodson.webp",
+      "size": 1100
+    },
+    {
+      "name": "rob-dodson",
+      "path": "img/avatar-local-cache/opencollective/rob-dodson.jpg",
+      "size": 1642
     }
   ],
   "kyosuke-nakamura": [
@@ -222,16 +198,28 @@
       "size": 1573
     }
   ],
-  "nick-colley": [
+  "bridget-stewart": [
     {
-      "name": "nick-colley",
-      "path": "img/avatar-local-cache/opencollective/nick-colley.webp",
-      "size": 2456
+      "name": "bridget-stewart",
+      "path": "img/avatar-local-cache/opencollective/bridget-stewart.webp",
+      "size": 1296
     },
     {
-      "name": "nick-colley",
-      "path": "img/avatar-local-cache/opencollective/nick-colley.jpg",
-      "size": 2651
+      "name": "bridget-stewart",
+      "path": "img/avatar-local-cache/opencollective/bridget-stewart.jpg",
+      "size": 1849
+    }
+  ],
+  "andy-bell": [
+    {
+      "name": "andy-bell",
+      "path": "img/avatar-local-cache/opencollective/andy-bell.webp",
+      "size": 1154
+    },
+    {
+      "name": "andy-bell",
+      "path": "img/avatar-local-cache/opencollective/andy-bell.jpg",
+      "size": 1761
     }
   ],
   "daniel-rafaj": [
@@ -246,6 +234,18 @@
       "size": 1663
     }
   ],
+  "nick-colley": [
+    {
+      "name": "nick-colley",
+      "path": "img/avatar-local-cache/opencollective/nick-colley.webp",
+      "size": 2456
+    },
+    {
+      "name": "nick-colley",
+      "path": "img/avatar-local-cache/opencollective/nick-colley.jpg",
+      "size": 2651
+    }
+  ],
   "frank-taillandier": [
     {
       "name": "frank-taillandier",
@@ -256,18 +256,6 @@
       "name": "frank-taillandier",
       "path": "img/avatar-local-cache/opencollective/frank-taillandier.jpg",
       "size": 1748
-    }
-  ],
-  "piotr-swiderek": [
-    {
-      "name": "piotr-swiderek",
-      "path": "img/avatar-local-cache/opencollective/piotr-swiderek.webp",
-      "size": 1174
-    },
-    {
-      "name": "piotr-swiderek",
-      "path": "img/avatar-local-cache/opencollective/piotr-swiderek.jpg",
-      "size": 1742
     }
   ],
   "william-riley": [
@@ -282,16 +270,16 @@
       "size": 1594
     }
   ],
-  "pelle-wessman": [
+  "piotr-swiderek": [
     {
-      "name": "pelle-wessman",
-      "path": "img/avatar-local-cache/opencollective/pelle-wessman.webp",
-      "size": 1484
+      "name": "piotr-swiderek",
+      "path": "img/avatar-local-cache/opencollective/piotr-swiderek.webp",
+      "size": 1174
     },
     {
-      "name": "pelle-wessman",
-      "path": "img/avatar-local-cache/opencollective/pelle-wessman.png",
-      "size": 1941
+      "name": "piotr-swiderek",
+      "path": "img/avatar-local-cache/opencollective/piotr-swiderek.jpg",
+      "size": 1742
     }
   ],
   "andrew-pucci": [
@@ -328,6 +316,18 @@
       "name": "nicolas-hoizey",
       "path": "img/avatar-local-cache/opencollective/nicolas-hoizey.jpg",
       "size": 1915
+    }
+  ],
+  "pelle-wessman": [
+    {
+      "name": "pelle-wessman",
+      "path": "img/avatar-local-cache/opencollective/pelle-wessman.webp",
+      "size": 1484
+    },
+    {
+      "name": "pelle-wessman",
+      "path": "img/avatar-local-cache/opencollective/pelle-wessman.png",
+      "size": 1941
     }
   ]
 }

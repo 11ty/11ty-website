@@ -21,8 +21,8 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 * [**Turn Jekyll up to Eleventy**, a guide to converting a Jekyll site to use Eleventy](https://24ways.org/2018/turn-jekyll-up-to-eleventy/) by {% avatarlocalcache "twitter", "paulrobertlloyd" %}Paul Robert Lloyd
 * [Build your own Blog from Scratch using Eleventy](https://www.filamentgroup.com/lab/build-a-blog/) on the {% avatarlocalcache "twitter", "filamentgroup" %}Filament Group blog
 * [A Site for Front-End Development Conferences (Built with 11ty on Netlify) ](https://css-tricks.com/a-site-for-front-end-development-conferences-built-with-11ty-on-netlify/) on {% avatarlocalcache "twitter", "css" %}CSS-Tricks
-* [Video Series: Create an 11ty Theme from a free set of HTML templates](https://www.youtube.com/playlist?list=PLOSLUtJ_J3rrJ1R1qEf8CCEpV3GgbJGNr) by {% avatarlocalcache "twitter", "bryanrobinson" %} Bryan Robinson
-* [Creating A Blog With Eleventy](https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/) by Jon Keeping
+* [Video Series: Create an 11ty Theme from a free set of HTML templates](https://www.youtube.com/playlist?list=PLOSLUtJ_J3rrJ1R1qEf8CCEpV3GgbJGNr) by {% avatarlocalcache "twitter", "brob" %} Bryan Robinson
+* [Creating A Blog With Eleventy](https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/) by {% avatarlocalcache "twitter", "jon_keeping" %} Jon Keeping
 
 ### Put it on the web
 
@@ -33,7 +33,7 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 
 * [**Create Your Own Search** without a Third Party Service](https://www.hawksworx.com/blog/adding-search-to-a-jamstack-site/) by {% avatarlocalcache "twitter", "philhawksworth" %}Phil Hawksworth
 * [Lightweight lazy loading with Netlify Large Media](https://lazy-load-nlm.netlify.com/) by {% avatarlocalcache "twitter", "philhawksworth" %}Phil Hawksworth
-* [Multilingual sites with Eleventy](https://www.webstoemp.com/blog/multilingual-sites-eleventy/) (i18n, Internationalization) by <!-- {% avatarlocalcache "twitter", "jeromecoupe" %} -->jérôme coupé
+* [Multilingual sites with Eleventy](https://www.webstoemp.com/blog/multilingual-sites-eleventy/) (i18n, Internationalization) by {% avatarlocalcache "twitter", "jeromecoupe" %}jérôme coupé
 
 ### Using Third Party Data
 
@@ -46,7 +46,7 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 
 ### Tooling Integration
 
-* [Using pHTML with Eleventy](https://github.com/phtmlorg/phtml-11ty) by <!-- {% avatarlocalcache "twitter", "jon_neal" %} -->Jon Neal
+* [Using pHTML with Eleventy](https://github.com/phtmlorg/phtml-11ty) by {% avatarlocalcache "twitter", "jon_neal" %}Jon Neal
 
 ## Quick Tips
 
