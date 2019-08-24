@@ -17,7 +17,7 @@ Eleventy is [available on npm](https://www.npmjs.com/package/@11ty/eleventy) and
 
 _Don’t include `~ $` or `~/eleventy-sample $` when you run these commands (you can’t copy and paste that text anyway)._
 
-## Step 1: Make a Project Directory
+## <span class="numberflag"><span class="sr-only">Step</span> 1</span> Make a Project Directory
 
 Make a directory with your project in it.
 
@@ -32,7 +32,7 @@ cd eleventy-sample
 
 You’re now in your new project’s directory.
 
-## Step 2: Install Eleventy
+## <span class="numberflag"><span class="sr-only">Step</span> 2</span> Install Eleventy
 
 ### Create a package.json
 
@@ -60,7 +60,7 @@ npm install --save-dev @11ty/eleventy
 
 Installing locally is preferred to [global installation](/docs/global-installation/).
 
-## Step 3: Run Eleventy
+## <span class="numberflag"><span class="sr-only">Step</span> 3</span> Run Eleventy
 
 We can use npx to run our local project version’s version of Eleventy. Let’s make sure our installation went okay and check what version we’re using:
 
@@ -86,7 +86,7 @@ Processed 0 files in 0.02 seconds
 
 This makes sense—we have an empty folder with no templates inside.
 
-## Step 4: Create some templates
+## <span class="numberflag"><span class="sr-only">Step</span> 4</span> Create some templates
 
 Let’s run two commands to create two new template files.
 
@@ -114,7 +114,7 @@ Processed 2 files in 0.10 seconds
 
 This will compile any content templates in the current directory or subdirectories into the output folder (defaults to `_site`).
 
-## Step 5: Look at your templates
+## <span class="numberflag"><span class="sr-only">Step</span> 5</span> Gaze upon your templates
 
 Use `--serve` to start up a hot-reloading local web server.
 
