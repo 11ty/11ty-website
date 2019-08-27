@@ -203,6 +203,18 @@
       "size": 2316
     }
   ],
+  "mark-buskbjerg": [
+    {
+      "name": "mark-buskbjerg",
+      "path": "img/avatar-local-cache/opencollective/mark-buskbjerg.webp",
+      "size": 650
+    },
+    {
+      "name": "mark-buskbjerg",
+      "path": "img/avatar-local-cache/opencollective/mark-buskbjerg.png",
+      "size": 1208
+    }
+  ],
   "mat-marquis": [
     {
       "name": "mat-marquis",
@@ -309,6 +321,18 @@
       "name": "rob-dodson",
       "path": "img/avatar-local-cache/opencollective/rob-dodson.jpg",
       "size": 1642
+    }
+  ],
+  "robin-rendle": [
+    {
+      "name": "robin-rendle",
+      "path": "img/avatar-local-cache/opencollective/robin-rendle.webp",
+      "size": 828
+    },
+    {
+      "name": "robin-rendle",
+      "path": "img/avatar-local-cache/opencollective/robin-rendle.jpg",
+      "size": 1326
     }
   ],
   "vadim-makeev": [
