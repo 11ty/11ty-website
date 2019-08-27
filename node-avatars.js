@@ -1,4 +1,5 @@
 const slugify = require("slugify");
+const sortObject = require("sort-object");
 const fs = require("fs-extra");
 const fastglob = require("fast-glob");
 const AvatarLocalCache = require("avatar-local-cache");
@@ -36,7 +37,7 @@ async function fetchAvatarsForDataSource(sourceName, entries, fetchCallbacks) {
 	}
 
 	await Promise.all(promises);
-	await fs.writeFile(`./_data/avatarmap/${sourceName}.json`, JSON.stringify(map, null, 2));
+	await fs.writeFile(`./_data/avatarmap/${sourceName}.json`, JSON.stringify(sortObject(map), null, 2));
 	console.log( `Wrote ./_data/avatarmap/${sourceName}.json.` );
 }
 
