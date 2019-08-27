@@ -1,4 +1,5 @@
 const slugify = require("slugify");
+const defer = require("lodash.defer");
 const sortObject = require("sort-object");
 const fs = require("fs-extra");
 const fastglob = require("fast-glob");
@@ -9,15 +10,19 @@ async function fetchAvatar(name, image, cacheName) {
 	let dir = `img/avatar-local-cache/${cacheName ? `${cacheName}/` : ""}`;
 	await fs.ensureDir(dir);
 
-	let outputSlugPath = `${dir}${slug}`;
-	if(image) {
-		let avatarCache = new AvatarLocalCache();
-		avatarCache.width = 73;
-		return avatarCache.fetchUrl(image, outputSlugPath);
-	}
-
 	return new Promise((resolve, reject) => {
-		resolve([]);
+		defer(async function() {
+			if(image) {
+				let avatarCache = new AvatarLocalCache();
+				avatarCache.width = 73;
+
+				let outputSlugPath = `${dir}${slug}`;
+				let results = await avatarCache.fetchUrl(image, outputSlugPath);
+				resolve(results);
+			} else {
+				resolve([]);
+			}
+		});
 	});
 }
 
