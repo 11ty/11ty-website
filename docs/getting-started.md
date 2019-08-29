@@ -62,29 +62,18 @@ Installing locally is preferred to [global installation](/docs/global-installati
 
 ## <span class="numberflag"><span class="sr-only">Step</span> 3</span> Run Eleventy
 
-We can use npx to run our local project version’s version of Eleventy. Let’s make sure our installation went okay and check what version we’re using:
-
-<div data-preprefix-eleventysample="first">
-
-```bash
-npx @11ty/eleventy --version
-{% latestVersion versions, config, "" %}
-```
-
-</div>
-
-Do you see `{% latestVersion versions, config, "" %}`? Good! Now we can run Eleventy for real:
+We can use npx to run our local project version’s version of Eleventy. Let’s make sure our installation went okay and try to run Eleventy:
 
 <div data-preprefix-eleventysample="first">
 
 ```bash
 npx @11ty/eleventy
-Processed 0 files in 0.02 seconds
+Processed 0 files in 0.03 seconds ({% latestVersion versions, config %})
 ```
 
 </div>
 
-This makes sense—we have an empty folder with no templates inside.
+Make sure that you see `({% latestVersion versions, config %})` in your output. This lets you know you’re using the newest version. However, Eleventy didn’t process any files! This is expected—we have an empty folder with no templates inside.
 
 ## <span class="numberflag"><span class="sr-only">Step</span> 4</span> Create some templates
 
@@ -107,7 +96,7 @@ We’ve now created an HTML template and a markdown template. Let’s run Eleven
 npx @11ty/eleventy
 Writing _site/README/index.html from ./README.md
 Writing _site/index.html from ./index.html
-Processed 2 files in 0.10 seconds
+Processed 2 files in 0.12 seconds ({% latestVersion versions, config %})
 ```
 
 </div>
@@ -124,7 +113,7 @@ Use `--serve` to start up a hot-reloading local web server.
 npx @11ty/eleventy --serve
 Writing _site/README/index.html from ./README.md
 Writing _site/index.html from ./index.html
-Processed 2 files in 0.10 seconds
+Processed 2 files in 0.12 seconds ({% latestVersion versions, config %})
 Watching…
 
  (some output truncated)
