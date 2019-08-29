@@ -1,6 +1,7 @@
+const chalk = require("chalk");
 const slugify = require("slugify");
 const defer = require("lodash.defer");
-const sortObject = require("sort-object");
+const sortObject = require("sorted-object");
 const fs = require("fs-extra");
 const fastglob = require("fast-glob");
 const AvatarLocalCache = require("avatar-local-cache");
@@ -28,20 +29,22 @@ async function fetchAvatar(name, image, cacheName) {
 
 async function fetchAvatarsForDataSource(sourceName, entries, fetchCallbacks) {
 	let map = {};
-	let promises = [];
 
 	await fs.ensureDir("_data/avatarmap/");
 
 	for(let entry of entries) {
-		promises.push(fetchAvatar(fetchCallbacks.name(entry), fetchCallbacks.image(entry), sourceName).then(function(files) {
+		try {
+			// we await here inside the loop (anti-pattern) as a cheap way to throttle too many simultaneous requests ¯\_(ツ)_/¯
+			let files = await fetchAvatar(fetchCallbacks.name(entry), fetchCallbacks.image(entry), sourceName);
 			if( Array.isArray(files) && files.length ) {
 				map[files[0].name] = files;
 				console.log( `Wrote ${files.join(", ")}` );
 			}
-		}));
+		} catch(e) {
+			console.log( chalk.red(`Failed getting ${fetchCallbacks.name(entry)} from ${sourceName}`), e );
+		}
 	}
 
-	await Promise.all(promises);
 	await fs.writeFile(`./_data/avatarmap/${sourceName}.json`, JSON.stringify(sortObject(map), null, 2));
 	console.log( `Wrote ./_data/avatarmap/${sourceName}.json.` );
 }
