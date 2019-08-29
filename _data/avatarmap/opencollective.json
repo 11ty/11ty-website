@@ -299,6 +299,13 @@
       "size": 1742
     }
   ],
+  "quentin-delcourt": [
+    {
+      "name": "quentin-delcourt",
+      "path": "img/avatar-local-cache/opencollective/quentin-delcourt.png",
+      "size": 2053
+    }
+  ],
   "ray-villalobos": [
     {
       "name": "ray-villalobos",
@@ -333,6 +340,18 @@
       "name": "robin-rendle",
       "path": "img/avatar-local-cache/opencollective/robin-rendle.jpg",
       "size": 1326
+    }
+  ],
+  "todd-libby": [
+    {
+      "name": "todd-libby",
+      "path": "img/avatar-local-cache/opencollective/todd-libby.webp",
+      "size": 636
+    },
+    {
+      "name": "todd-libby",
+      "path": "img/avatar-local-cache/opencollective/todd-libby.png",
+      "size": 1210
     }
   ],
   "vadim-makeev": [
