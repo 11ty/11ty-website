@@ -243,12 +243,22 @@ module.exports = function(eleventyConfig) {
 			newStr = newStr.replace(/[?!]/g, '');
 			return encodeURIComponent(newStr.trim().toLowerCase().replace(/\s+/g, '-'));
 		},
+		permalinkBefore: false,
 		permalinkClass: "direct-link",
 		permalinkSymbol: "#",
 		level: [1,2,3,4]
 	};
 
 	eleventyConfig.setLibrary("md", markdownIt(options).use(markdownItAnchor, opts));
+
+	// Until https://github.com/valeriangalliat/markdown-it-anchor/issues/58 is fixed
+	eleventyConfig.addTransform("remove-aria-hidden-markdown-anchor", function(content, outputPath) {
+		if( outputPath.endsWith(".html") ) {
+			return content.replace(/ aria\-hidden\=\"true\"\>\#\<\/a\>/g, ">#</a>");
+		}
+
+		return content;
+	});
 
 	if( cfg.minifyHtml ) {
 		eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
