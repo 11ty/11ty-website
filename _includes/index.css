@@ -476,6 +476,7 @@ main .elv-toc + h1 .direct-link {
 	color: #fff;
 	border: 2px solid;
 	transition: border .3s;
+	object-fit: cover;
 }
 .facepile > a:after {
 	content: "";
