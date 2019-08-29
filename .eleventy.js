@@ -254,7 +254,7 @@ module.exports = function(eleventyConfig) {
 	// Until https://github.com/valeriangalliat/markdown-it-anchor/issues/58 is fixed
 	eleventyConfig.addTransform("remove-aria-hidden-markdown-anchor", function(content, outputPath) {
 		if( outputPath.endsWith(".html") ) {
-			return content.replace(/ aria\-hidden\=\"true\"\>\#\<\/a\>/g, ">#</a>");
+			return content.replace(/ aria\-hidden\=\"true\"\>\#\<\/a\>/g, ` title="Direct link to this heading">#</a>`);
 		}
 
 		return content;
