@@ -33,15 +33,24 @@ async function fetchAvatarsForDataSource(sourceName, entries, fetchCallbacks) {
 	await fs.ensureDir("_data/avatarmap/");
 
 	for(let entry of entries) {
+		let files;
 		try {
 			// we await here inside the loop (anti-pattern) as a cheap way to throttle too many simultaneous requests ¯\_(ツ)_/¯
-			let files = await fetchAvatar(fetchCallbacks.name(entry), fetchCallbacks.image(entry), sourceName);
-			if( Array.isArray(files) && files.length ) {
-				map[files[0].name] = files;
-				console.log( `Wrote ${files.join(", ")}` );
-			}
+			files = await fetchAvatar(fetchCallbacks.name(entry), fetchCallbacks.image(entry), sourceName);
+			
 		} catch(e) {
-			console.log( chalk.red(`Failed getting ${fetchCallbacks.name(entry)} from ${sourceName}`), e );
+			try {
+				console.log( chalk.yellow(`Failed once getting ${fetchCallbacks.name(entry)} from ${sourceName}`), e2 );
+				console.log( "Trying again" );
+				files = await fetchAvatar(fetchCallbacks.name(entry), fetchCallbacks.image(entry), sourceName);
+			} catch(e2) {
+				console.log( chalk.red(`Failed getting ${fetchCallbacks.name(entry)} from ${sourceName}`), e2 );
+			}
+		}
+
+		if( Array.isArray(files) && files.length ) {
+			map[files[0].name] = files;
+			console.log( `Wrote ${files.join(", ")}` );
 		}
 	}
 
