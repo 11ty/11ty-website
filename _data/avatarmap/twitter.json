@@ -35,6 +35,18 @@
       "size": 2174
     }
   ],
+  "alex_kaul": [
+    {
+      "name": "alex_kaul",
+      "path": "img/avatar-local-cache/twitter/alex_kaul.webp",
+      "size": 558
+    },
+    {
+      "name": "alex_kaul",
+      "path": "img/avatar-local-cache/twitter/alex_kaul.jpg",
+      "size": 1163
+    }
+  ],
   "andreacorinti": [
     {
       "name": "andreacorinti",
@@ -743,6 +755,18 @@
       "size": 1257
     }
   ],
+  "lp_cast": [
+    {
+      "name": "lp_cast",
+      "path": "img/avatar-local-cache/twitter/lp_cast.webp",
+      "size": 1440
+    },
+    {
+      "name": "lp_cast",
+      "path": "img/avatar-local-cache/twitter/lp_cast.jpg",
+      "size": 2126
+    }
+  ],
   "maelb": [
     {
       "name": "maelb",
@@ -791,6 +815,18 @@
       "size": 2355
     }
   ],
+  "mattradford": [
+    {
+      "name": "mattradford",
+      "path": "img/avatar-local-cache/twitter/mattradford.webp",
+      "size": 1350
+    },
+    {
+      "name": "mattradford",
+      "path": "img/avatar-local-cache/twitter/mattradford.jpg",
+      "size": 1966
+    }
+  ],
   "micahmills": [
     {
       "name": "micahmills",
@@ -813,6 +849,18 @@
       "name": "minamarkham",
       "path": "img/avatar-local-cache/twitter/minamarkham.jpg",
       "size": 2006
+    }
+  ],
+  "mirisuzanne": [
+    {
+      "name": "mirisuzanne",
+      "path": "img/avatar-local-cache/twitter/mirisuzanne.webp",
+      "size": 1324
+    },
+    {
+      "name": "mirisuzanne",
+      "path": "img/avatar-local-cache/twitter/mirisuzanne.jpg",
+      "size": 1916
     }
   ],
   "misprintedtype": [
@@ -1043,6 +1091,30 @@
       "size": 1444
     }
   ],
+  "shannonethomas": [
+    {
+      "name": "shannonethomas",
+      "path": "img/avatar-local-cache/twitter/shannonethomas.webp",
+      "size": 952
+    },
+    {
+      "name": "shannonethomas",
+      "path": "img/avatar-local-cache/twitter/shannonethomas.png",
+      "size": 1496
+    }
+  ],
+  "shreyasminocha": [
+    {
+      "name": "shreyasminocha",
+      "path": "img/avatar-local-cache/twitter/shreyasminocha.webp",
+      "size": 598
+    },
+    {
+      "name": "shreyasminocha",
+      "path": "img/avatar-local-cache/twitter/shreyasminocha.jpg",
+      "size": 1232
+    }
+  ],
   "shuttersh": [
     {
       "name": "shuttersh",
@@ -1144,6 +1216,18 @@
       "name": "v8js",
       "path": "img/avatar-local-cache/twitter/v8js.png",
       "size": 1482
+    }
+  ],
+  "vtcodecamp": [
+    {
+      "name": "vtcodecamp",
+      "path": "img/avatar-local-cache/twitter/vtcodecamp.webp",
+      "size": 504
+    },
+    {
+      "name": "vtcodecamp",
+      "path": "img/avatar-local-cache/twitter/vtcodecamp.png",
+      "size": 891
     }
   ],
   "webinspectinc": [
