@@ -261,14 +261,38 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Usage
-
 {% codetitle "js-fn-example.11ty.js" %}
 
 {% raw %}
-```html
+```
 module.exports = function(data) {
   return `<h1>${this.myFunction(data.a, data.b)}</h1>`;
+};
+```
+{% endraw %}
+
+### Asynchronous JavaScript Template Functions
+
+This works the same as any `async` JavaScript function or function that returns a `Promise`.
+
+This is the same as the example above but adds `async` before the `function`.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addJavaScriptFunction("myAsyncFunction", async function(a, b) { … });
+};
+```
+
+This is the same as the example above but adds `await` before the function is called.
+
+{% codetitle "js-async-fn-example.11ty.js" %}
+
+{% raw %}
+```
+module.exports = function(data) {
+  return `<h1>${await this.myAsyncFunction(data.a, data.b)}</h1>`;
 };
 ```
 {% endraw %}
@@ -292,12 +316,10 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-#### Usage
-
 {% codetitle "universal-examples.11ty.js" %}
 
 {% raw %}
-```html
+```
 module.exports = function(data) {
   return `
 <h1>${this.myFilter(data.myVar)}</h1>

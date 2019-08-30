@@ -128,13 +128,16 @@ module.exports = function(eleventyConfig) {
 
 Shortcodes are basically reusable bits of content. You can add Liquid specific shortcodes, but you probably want to add a [Universal shortcode](/docs/shortcodes/) instead.
 
-### Single Shortcode
+### Shortcode
 
-```js
+{% codetitle ".eleventy.js" %}
+
+```
 module.exports = function(eleventyConfig) {
   // Liquid Shortcode
+  // These can be async functions too
   eleventyConfig.addLiquidShortcode("user", function(name, twitterUsername) { … });
-  
+
   // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
   eleventyConfig.addShortcode("user", function(name, twitterUsername) {
     return `<div class="user">
@@ -145,10 +148,15 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+`liquidjs` is already `Promise`-based internally, so an `async function` for a shortcode function works out of the box here.
+
 #### Usage
 
 {% raw %}
 ```html
+{% user "Zach Leatherman", "zachleat" %}
+
+<!-- The comma between arguments is optional in Liquid templates -->
 {% user "Zach Leatherman" "zachleat" %}
 ```
 {% endraw %}
@@ -164,13 +172,14 @@ module.exports = function(eleventyConfig) {
 
 ### Paired Shortcode
 
-```js
+```
 module.exports = function(eleventyConfig) {
   // Liquid Shortcode
-  eleventyConfig.addPairedLiquidShortcode("user", function(bioContent, name, twitterUsername) { … });
+  // These can be async functions too
+  eleventyConfig.addPairedLiquidShortcode("user2", function(bioContent, name, twitterUsername) { … });
   
   // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
-  eleventyConfig.addPairedShortcode("user", function(bioContent, name, twitterUsername) {
+  eleventyConfig.addPairedShortcode("user2", function(bioContent, name, twitterUsername) {
     return `<div class="user">
 <div class="user_name">${name}</div>
 <div class="user_twitter">@${twitterUsername}</div>
@@ -180,13 +189,15 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+`liquidjs` is already `Promise`-based internally, so an `async function` for a shortcode function works out of the box here.
+
 #### Usage
 
 Note that you can put any Liquid tags or content inside the `{% raw %}{% user %}{% endraw %}` shortcode! Yes, even other shortcodes!
 
 {% raw %}
 ```html
-{% user "Zach Leatherman" "zachleat" %}
+{% user2 "Zach Leatherman" "zachleat" %}
   Zach likes to take long walks on Nebraska beaches.
 {% enduser %}
 ```
@@ -201,3 +212,36 @@ Note that you can put any Liquid tags or content inside the `{% raw %}{% user %}
   <div class="user_bio">Zach likes to take long walks on Nebraska beaches.</div>
 </div>
 ```
+
+### Asynchronous Shortcodes
+
+Liquid is already promise-based internally so `async` functions with `await` work fine out of the box.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addLiquidShortcode("user", async function(name, twitterUsername) {
+    return await fetchAThing();
+  });
+
+  eleventyConfig.addPairedShortcode("user2", async function(content, name, twitterUsername) {
+    return await fetchAThing();
+  });
+};
+```
+
+#### Usage
+
+(It’s the same.)
+
+{% raw %}
+```html
+{% user "Zach Leatherman", "zachleat" %}
+
+{% user2 "Zach Leatherman" "zachleat" %}
+  Zach likes to take long walks on Nebraska beaches.
+{% enduser2 %}
+```
+{% endraw %}
+

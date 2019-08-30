@@ -111,7 +111,7 @@ Shortcodes are basically reusable bits of content. You can add Nunjucks specific
 
 ### Single Shortcode
 
-```js
+```
 module.exports = function(eleventyConfig) {
   // Nunjucks Shortcode
   eleventyConfig.addNunjucksShortcode("user", function(name, twitterUsername) { … });
@@ -145,7 +145,7 @@ module.exports = function(eleventyConfig) {
 
 ### Paired Shortcode
 
-```js
+```
 module.exports = function(eleventyConfig) {
   // Nunjucks Shortcode
   eleventyConfig.addPairedNunjucksShortcode("user", function(bioContent, name, twitterUsername) { … });
@@ -187,7 +187,7 @@ Note that you can put any Nunjucks tags or content inside the `{% raw %}{% user 
 
 Creates a single argument object to pass to the shortcode.
 
-```js
+```
 module.exports = function(eleventyConfig) {
   // Nunjucks Shortcode
   eleventyConfig.addNunjucksShortcode("user", function(user) {
@@ -236,3 +236,36 @@ Importantly, this syntax means that any of the arguments can be optional (withou
   <div class="user_name">Zach Leatherman</div>
 </div>
 ```
+
+### Asynchronous Shortcodes
+
+Note that the configuration methods here to add asynchronous shortcodes are different than their synchronous counterparts.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addNunjucksAsyncShortcode("user", async function(name, twitterUsername) {
+    return await fetchAThing();
+  });
+
+  eleventyConfig.addPairedNunjucksAsyncShortcode("user2", async function(content, name, twitterUsername) {
+    return await fetchAThing();
+  });
+};
+```
+
+#### Usage
+
+(It’s the same.)
+
+{% raw %}
+```html
+{% user "Zach Leatherman", "zachleat" %}
+
+{% user2 "Zach Leatherman" "zachleat" %}
+  Zach likes to take long walks on Nebraska beaches.
+{% enduser2 %}
+```
+{% endraw %}
+

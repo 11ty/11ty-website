@@ -58,7 +58,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Usage:
+#### Usage
 
 {% raw %}
 ```html
@@ -67,6 +67,11 @@ module.exports = function(eleventyConfig) {
 {% endraw %}
 
 {% callout "info" %}Note that if you return HTML in your Handlebars helper, you need to use the Handlebars triple-stash syntax (three opening and three closing curly brackets) to avoid double-escaped HTML.{% endcallout %}
+
+### Asynchronous Helpers
+
+These are not supported by Handlebars. Read more at [this Handlebars issue](https://github.com/wycats/handlebars.js/issues/717).
+
 
 ### A note about Universal Filters
 
@@ -162,3 +167,8 @@ Note that you can put any Handlebars tags or content inside the `{% raw %}{{ use
   <div class="user_bio">Zach likes to take long walks on Nebraska beaches.</div>
 </div>
 ```
+
+### Asynchronous Shortcodes
+
+These are not supported by Handlebars. Read more at [this Handlebars issue](https://github.com/wycats/handlebars.js/issues/717).
+
