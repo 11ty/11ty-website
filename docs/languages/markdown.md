@@ -102,6 +102,12 @@ This will not be a code block in a markdown file.
 });
 ```
 
+If you do need to disable indented code blocks, you can do so by configuring your `markdown-it` instance to disable the `code` rule.
+
+```js
+let markdownLib = markdownIt(options).disable('code');
+```
+
 ## Why can’t I return markdown from paired shortcodes to use in a markdown file?
 
 <div class="elv-callout elv-callout-warn">This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</div>
