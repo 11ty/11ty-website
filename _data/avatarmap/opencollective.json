@@ -71,6 +71,30 @@
       "size": 1849
     }
   ],
+  "bryce-wray": [
+    {
+      "name": "bryce-wray",
+      "path": "img/avatar-local-cache/opencollective/bryce-wray.webp",
+      "size": 716
+    },
+    {
+      "name": "bryce-wray",
+      "path": "img/avatar-local-cache/opencollective/bryce-wray.jpg",
+      "size": 1641
+    }
+  ],
+  "christian-fei": [
+    {
+      "name": "christian-fei",
+      "path": "img/avatar-local-cache/opencollective/christian-fei.webp",
+      "size": 896
+    },
+    {
+      "name": "christian-fei",
+      "path": "img/avatar-local-cache/opencollective/christian-fei.jpg",
+      "size": 1409
+    }
+  ],
   "christopher-salmon": [
     {
       "name": "christopher-salmon",
@@ -167,6 +191,18 @@
       "size": 1702
     }
   ],
+  "joel-krause": [
+    {
+      "name": "joel-krause",
+      "path": "img/avatar-local-cache/opencollective/joel-krause.webp",
+      "size": 1400
+    },
+    {
+      "name": "joel-krause",
+      "path": "img/avatar-local-cache/opencollective/joel-krause.jpg",
+      "size": 1911
+    }
+  ],
   "keenan-payne": [
     {
       "name": "keenan-payne",
@@ -227,18 +263,6 @@
       "size": 1208
     }
   ],
-  "mat-marquis": [
-    {
-      "name": "mat-marquis",
-      "path": "img/avatar-local-cache/opencollective/mat-marquis.webp",
-      "size": 1186
-    },
-    {
-      "name": "mat-marquis",
-      "path": "img/avatar-local-cache/opencollective/mat-marquis.png",
-      "size": 1726
-    }
-  ],
   "max-bock": [
     {
       "name": "max-bock",
@@ -249,6 +273,18 @@
       "name": "max-bock",
       "path": "img/avatar-local-cache/opencollective/max-bock.jpg",
       "size": 1436
+    }
+  ],
+  "nate-steiner": [
+    {
+      "name": "nate-steiner",
+      "path": "img/avatar-local-cache/opencollective/nate-steiner.webp",
+      "size": 992
+    },
+    {
+      "name": "nate-steiner",
+      "path": "img/avatar-local-cache/opencollective/nate-steiner.jpg",
+      "size": 1582
     }
   ],
   "nick-colley": [
@@ -383,6 +419,18 @@
       "name": "william-riley",
       "path": "img/avatar-local-cache/opencollective/william-riley.jpg",
       "size": 1594
+    }
+  ],
+  "yuhei-yasuda": [
+    {
+      "name": "yuhei-yasuda",
+      "path": "img/avatar-local-cache/opencollective/yuhei-yasuda.webp",
+      "size": 888
+    },
+    {
+      "name": "yuhei-yasuda",
+      "path": "img/avatar-local-cache/opencollective/yuhei-yasuda.png",
+      "size": 1367
     }
   ]
 }

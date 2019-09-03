@@ -1,10 +1,11 @@
-const chalk = require("chalk");
 const slugify = require("slugify");
 const defer = require("lodash.defer");
 const sortObject = require("sorted-object");
 const fs = require("fs-extra");
 const fastglob = require("fast-glob");
 const AvatarLocalCache = require("avatar-local-cache");
+
+const skipUrls = ["https://www.gravatar.com/avatar/36386473ee7de091db26bd82f8d18ca8?default=404"];
 
 async function fetchAvatar(name, image, cacheName) {
 	let slug = slugify(name).toLowerCase();
@@ -29,33 +30,36 @@ async function fetchAvatar(name, image, cacheName) {
 
 async function fetchAvatarsForDataSource(sourceName, entries, fetchCallbacks) {
 	let map = {};
+	let path = `./_data/avatarmap/${sourceName}.json`;
+	let existing = require(path);
 
 	await fs.ensureDir("_data/avatarmap/");
 
 	for(let entry of entries) {
-		let files;
-		try {
-			// we await here inside the loop (anti-pattern) as a cheap way to throttle too many simultaneous requests ¯\_(ツ)_/¯
-			files = await fetchAvatar(fetchCallbacks.name(entry), fetchCallbacks.image(entry), sourceName);
-			
-		} catch(e) {
-			try {
-				console.log( chalk.yellow(`Failed once getting ${fetchCallbacks.name(entry)} from ${sourceName}`), e2 );
-				console.log( "Trying again" );
-				files = await fetchAvatar(fetchCallbacks.name(entry), fetchCallbacks.image(entry), sourceName);
-			} catch(e2) {
-				console.log( chalk.red(`Failed getting ${fetchCallbacks.name(entry)} from ${sourceName}`), e2 );
-			}
-		}
+		// we await here inside the loop (anti-pattern) as a cheap way to throttle too many simultaneous requests ¯\_(ツ)_/¯
+		let name = fetchCallbacks.name(entry);
+		let sluggedName = slugify(name).toLowerCase();
+		let url = fetchCallbacks.image(entry);
 
-		if( Array.isArray(files) && files.length ) {
-			map[files[0].name] = files;
-			console.log( `Wrote ${files.join(", ")}` );
+		if( skipUrls.indexOf(url) > -1 ) {
+			if(existing[sluggedName]) {
+				map[sluggedName] = existing[sluggedName];
+				console.log( `Kept from existing ${sluggedName}` );
+			} else {
+				console.log( `Skipped ${sluggedName}, couldn’t find existing record:`, existing[sluggedName] );
+			}
+		} else {
+			let files = await fetchAvatar(name, url, sourceName);
+
+			if( Array.isArray(files) && files.length ) {
+				map[files[0].name] = files;
+				console.log( `Wrote for ${files[0].name}` );
+			}
 		}
 	}
 
-	await fs.writeFile(`./_data/avatarmap/${sourceName}.json`, JSON.stringify(sortObject(map), null, 2));
-	console.log( `Wrote ./_data/avatarmap/${sourceName}.json.` );
+	await fs.writeFile(path, JSON.stringify(sortObject(map), null, 2));
+	console.log( `Wrote ${path}.` );
 }
 
 (async function() {
