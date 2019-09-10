@@ -15,3 +15,5 @@ You too can <a href="https://opencollective.com/11ty"><strong>Support Eleventy</
 {%- endif %}{% endfor %}
 	<li><a href="https://opencollective.com/11ty"><img src="/img/default-avatar.png" alt="Default Avatar Image" loading="lazy" class="avatar"><strong>and you?</strong> {% emoji "🎁" %}{% emoji "🎁" %}{% emoji "🎁" %}</a></li>
 </ol>
+
+_Monthly supporters have the added benefit of being listed in the footer of (almost) all documentation pages._

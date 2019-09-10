@@ -1,6 +1,6 @@
 <h2 id="eleventy-is-supported-by">Eleventy is <a href="/docs/supporters/">supported</a> by… <a class="direct-link" href="#eleventy-is-supported-by">#</a></h2>
 <div class="facepile">
-{% for supporter in supporters %}{% if supporter.role === "BACKER" -%}
+{% for supporter in supporters %}{% if supporter.role === "BACKER" and supporter.tier -%}
 {%- set nameToSlug = supporter.name | slug | lower -%}
 	<a href="{{ supporter.profile }}" class="elv-externalexempt">{% avatarlocalcache "opencollective", nameToSlug, supporter.name %}</a>
 {%- endif %}{% endfor %}
