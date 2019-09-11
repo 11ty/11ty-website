@@ -263,7 +263,7 @@ module.exports = function(eleventyConfig) {
 ```html
 {% user "Zach Leatherman", "zachleat" %}
 
-{% user2 "Zach Leatherman" "zachleat" %}
+{% user2 "Zach Leatherman", "zachleat" %}
   Zach likes to take long walks on Nebraska beaches.
 {% enduser2 %}
 ```
