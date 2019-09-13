@@ -3,6 +3,7 @@ tipindex: "008"
 tiptitle: "Trigger a Netlify Build Every Day with IFTTT"
 date: 2019-02-01
 ---
+
 In [Quick Tip #007](/docs/quicktips/eliminate-js/) we talked about migrating away from using a Client-side third-party JavaScript widget to display GitHub stargazer counts and towards a Data fetched at Build time approach.
 
 Updating this data at build time means that the data isn’t necessarily “live” (although the counts are likely cached at by at least one of the upstream dependencies of this widget, with a frequency that is out of your control).
@@ -36,4 +37,3 @@ _Heavily inspired by [Phil Hawksworth’s work on RSS Jamstack](https://twitter.
 12. For the Body field, type `{}`.
 13. Click the `Create action` button.
 14. Click `Finish`.
-

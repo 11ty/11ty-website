@@ -3,6 +3,7 @@ subtitle: Ignore Files
 tags:
   - docs-config
 ---
+
 # Ignore Template Files
 
 Add an `.eleventyignore` file to your _input directory_ (or your _project root_ {% addedin "0.7.0", "span", "minilink-inline" %}) for a new line-separated list of files (or globs) that will not be processed by Eleventy. Paths listed in your project’s `.gitignore` file are automatically ignored.
@@ -31,7 +32,7 @@ You can disable automatic use of your `.gitignore` file by using the Configurati
 
 ```js
 module.exports = function(eleventyConfig) {
-    eleventyConfig.setUseGitIgnore(false);
+  eleventyConfig.setUseGitIgnore(false);
 };
 ```
 

@@ -4,6 +4,7 @@ layout: layouts/langs.njk
 relatedLinks:
   /docs/config/#default-template-engine-for-markdown-files: Default Template Engine for Markdown Files
 ---
+
 | Eleventy Short Name | File Extension | NPM Package                                                |
 | ------------------- | -------------- | ---------------------------------------------------------- |
 | `md`                | `.md`          | [`markdown-it`](https://www.npmjs.com/package/markdown-it) |
@@ -16,7 +17,7 @@ Markdown files are by default pre-processed as Liquid templates. <a href="/docs/
 
 ### Default Options
 
-* `html: true` (`markdown-it` default is `false`)
+- `html: true` (`markdown-it` default is `false`)
 
 The only listed options here are the ones that differ from the default `markdown-it` options. See [all `markdown-it` options and defaults](https://github.com/markdown-it/markdown-it#init-with-presets-and-options).
 
@@ -32,7 +33,7 @@ module.exports = function(eleventyConfig) {
     breaks: true,
     linkify: true
   };
-  
+
   eleventyConfig.setLibrary("md", markdownIt(options));
 };
 ```
@@ -52,7 +53,7 @@ module.exports = function(eleventyConfig) {
     html: true
   };
   let markdownLib = markdownIt(options).use(markdownItEmoji);
-  
+
   eleventyConfig.setLibrary("md", markdownLib);
 };
 ```
@@ -85,7 +86,7 @@ That means any content that follows this four (or more) space indent may be subj
 ```js
 // 🛑 Bad, don’t do this
 eleventyConfig.addShortcode("badShortcode", function() {
-    return `
+  return `
     This is a code block in a markdown file!
 `;
 });
@@ -96,7 +97,7 @@ eleventyConfig.addShortcode("badShortcode", function() {
 ```js
 // ✅ This will return expected output
 eleventyConfig.addShortcode("goodShortcode", function() {
-    return `
+  return `
 This will not be a code block in a markdown file.
 `;
 });
@@ -105,7 +106,7 @@ This will not be a code block in a markdown file.
 If you do need to disable indented code blocks, you can do so by configuring your `markdown-it` instance to disable the `code` rule.
 
 ```js
-let markdownLib = markdownIt(options).disable('code');
+let markdownLib = markdownIt(options).disable("code");
 ```
 
 ## Why can’t I return markdown from paired shortcodes to use in a markdown file?
@@ -118,20 +119,22 @@ The truth is, **you can** return markdown inside shortcodes (as long as the file
 
 ```js
 eleventyConfig.addPairedShortcode("myShortcode", function(content) {
-    // Method A: ✅ This works fine
-    return content;
+  // Method A: ✅ This works fine
+  return content;
 
-    // Method B: ⚠️ Careful when wrapping with HTML
-    return `<div>${content}</div>`;
+  // Method B: ⚠️ Careful when wrapping with HTML
+  return `<div>${content}</div>`;
 });
 ```
 
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```
 {% myShortcode %}My really *important* content.{% endmyShortcode %}
 ```
+
 {% endraw %}
 
 1. Method A returns: `My really *important* content.` which is successfully [transformed as markdown into `My really <em>important</em> content`](https://spec.commonmark.org/dingus/?text=My%20really%20*important*%20content.).

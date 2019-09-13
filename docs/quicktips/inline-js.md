@@ -21,13 +21,13 @@ Add the following `jsmin` filter to your Eleventy Config file:
 ```js
 const Terser = require("terser");
 eleventyConfig.addFilter("jsmin", function(code) {
-    let minified = Terser.minify(code);
-    if( minified.error ) {
-        console.log("Terser error: ", minified.error);
-        return code;
-    }
+  let minified = Terser.minify(code);
+  if (minified.error) {
+    console.log("Terser error: ", minified.error);
+    return code;
+  }
 
-    return minified.code;
+  return minified.code;
 });
 ```
 
@@ -45,14 +45,18 @@ console.log("Hi");
 Capture the JavaScript into a variable and run it through the filter (this sample is using Nunjucks syntax)
 
 {% raw -%}
+
 ```html
 <!-- capture the JS content as a Nunjucks variable -->
-{% set js %}
-  {% include "sample.js" %}
-{% endset %}
+{% set js %} {% include "sample.js" %} {% endset %}
 <!-- feed it through our jsmin filter to minify -->
 <script>
-  {{ js | jsmin | safe }}
+  {
+    {
+      js | jsmin | safe;
+    }
+  }
 </script>
 ```
+
 {% endraw %}

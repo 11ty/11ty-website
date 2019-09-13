@@ -3,6 +3,7 @@ subtitle: Front Matter Data
 tags:
   - docs-data
 ---
+
 # Front Matter Data
 
 Add data in your template front matter, like this:
@@ -11,6 +12,7 @@ Add data in your template front matter, like this:
 ---
 title: My page title
 ---
+
 <!doctype html>
 <html>
 …
@@ -24,14 +26,14 @@ Locally assigned front matter values override things further up the layout chain
 
 Here are a few special front matter keys you can assign:
 
-* `permalink`: Add in front matter to change the output target of the current template. Normally, you cannot use template syntax for variables in front matter, but `permalink` is an exception. [Read more about Permalinks](/docs/permalinks/).
-* `dynamicPermalink`: Enable or disable template syntax for the `permalink` key. [Read more](/docs/permalinks/#disable-templating-in-permalinks).
-* `layout`: Wrap current template with a layout template found in the `_includes` folder. [Read more about Layouts](/docs/layouts/).
-* `pagination`: Enable to iterate over data. Output multiple HTML files from a single template. [Read more about Pagination](/docs/pagination/).
-* `tags`: A single string or array that identifies that a piece of content is part of a collection. Collections can be reused in any other template. [Read more about Collections](/docs/collections/).
-* `date`: Override the default date (file creation) to customize how the file is sorted in a collection. [Read more at Content Dates](/docs/dates/).
-* `templateEngineOverride`: Override the template engine on a per-file basis, usually configured with a file extension or globally using the `markdownTemplateEngine` and `htmlTemplateEngine` configuration options. [Read more about Changing a Template’s Rendering Engine](/docs/languages/#overriding-the-template-language).
-* `eleventyExcludeFromCollections`: {% addedin "0.8.0" %} Set to `true` to exclude this content from any and all [Collections](/docs/collections/) (those tagged in data or setup using the Configuration API).
+- `permalink`: Add in front matter to change the output target of the current template. Normally, you cannot use template syntax for variables in front matter, but `permalink` is an exception. [Read more about Permalinks](/docs/permalinks/).
+- `dynamicPermalink`: Enable or disable template syntax for the `permalink` key. [Read more](/docs/permalinks/#disable-templating-in-permalinks).
+- `layout`: Wrap current template with a layout template found in the `_includes` folder. [Read more about Layouts](/docs/layouts/).
+- `pagination`: Enable to iterate over data. Output multiple HTML files from a single template. [Read more about Pagination](/docs/pagination/).
+- `tags`: A single string or array that identifies that a piece of content is part of a collection. Collections can be reused in any other template. [Read more about Collections](/docs/collections/).
+- `date`: Override the default date (file creation) to customize how the file is sorted in a collection. [Read more at Content Dates](/docs/dates/).
+- `templateEngineOverride`: Override the template engine on a per-file basis, usually configured with a file extension or globally using the `markdownTemplateEngine` and `htmlTemplateEngine` configuration options. [Read more about Changing a Template’s Rendering Engine](/docs/languages/#overriding-the-template-language).
+- `eleventyExcludeFromCollections`: {% addedin "0.8.0" %} Set to `true` to exclude this content from any and all [Collections](/docs/collections/) (those tagged in data or setup using the Configuration API).
 
 ## Alternative Front Matter Formats
 
@@ -57,6 +59,7 @@ Note that Liquid templates do not allow executing a function in output `{% raw %
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```
 ---js
 {
@@ -75,6 +78,7 @@ Note that Liquid templates do not allow executing a function in output `{% raw %
   <p>Published on {{ currentDate() }}</p>
   <!-- … -->
 ```
+
 {% endraw %}
 
 ### Add your own
@@ -119,8 +123,11 @@ Now you can do things like this:
 ---
 title: My page title
 ---
+
 This is the start of my content and this will be shown as the excerpt.
+
 <!-- excerpt -->
+
 This is a continuation of my content…
 ```
 
@@ -147,7 +154,7 @@ module.exports = function(eleventyConfig) {
     excerpt: true,
     // Eleventy custom option
     // The variable where the excerpt will be stored.
-    excerpt_alias: 'my_custom_excerpt'
+    excerpt_alias: "my_custom_excerpt"
   });
 };
 ```
@@ -183,7 +190,9 @@ Now you can use TOML in your front matter like this:
 ```markdown
 ---toml
 title = "My page title using TOML"
+
 ---
+
 <!doctype html>
 <html>
 …

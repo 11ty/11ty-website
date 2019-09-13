@@ -4,6 +4,7 @@ excerpt: Group, reuse, and sort content in interesting ways.
 tags:
   - docs-templates
 ---
+
 # Collections (using Tags)
 
 While [pagination](/docs/pagination/) allows you to iterate over a data set to create multiple templates, a collection allows you to group content in interesting ways. A piece of content can be a part of multiple collections, if you assign the same string value to the `tags` key in the front matter.
@@ -26,25 +27,29 @@ This will place this `mypost.md` into the `post` collection with all other piece
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```html
 <ul>
-{%- for post in collections.post -%}
+  {%- for post in collections.post -%}
   <li>{{ post.data.title }}</li>
-{%- endfor -%}
+  {%- endfor -%}
 </ul>
 ```
+
 {% endraw %}
 
 {% codetitle "JavaScript .11ty.js", "Syntax" %}
 
 {% raw %}
+
 ```js
-module.exports = function({collections}) {
+module.exports = function({ collections }) {
   return `<ul>
-${collections.post.map((post) => `<li>${ post.data.title }</li>`).join("\n")}
+${collections.post.map(post => `<li>${post.data.title}</li>`).join("\n")}
 </ul>`;
 };
 ```
+
 {% endraw %}
 
 ### Example: Navigation Links with an `active` class added for on the current page
@@ -54,6 +59,7 @@ Compare the `post.url` and special Eleventy-provided `page.url` variable to find
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```
 <ul>
 {%- for post in collections.post -%}
@@ -61,6 +67,7 @@ Compare the `post.url` and special Eleventy-provided `page.url` variable to find
 {%- endfor -%}
 </ul>
 ```
+
 {% endraw %}
 
 ## The Special `all` Collection
@@ -70,6 +77,7 @@ By default Eleventy puts all of your content (independent of whether or not it h
 ### Example: A list of links to all Eleventy generated content
 
 {% raw %}
+
 ```
 <ul>
 {%- for post in collections.all -%}
@@ -77,6 +85,7 @@ By default Eleventy puts all of your content (independent of whether or not it h
 {%- endfor -%}
 </ul>
 ```
+
 {% endraw %}
 
 ## Option: Exclude content from Collections {% addedin "0.8.0" %}
@@ -134,6 +143,7 @@ This content would show up in the template data inside of `collections.cat` and 
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```
 <ul>
 {%- for post in collections.post -%}
@@ -141,17 +151,18 @@ This content would show up in the template data inside of `collections.cat` and 
 {%- endfor -%}
 </ul>
 ```
+
 {% endraw %}
 
 Note in the above example that we output the `post.data.title` value? Similarly, each collection item will have the following data:
 
-* `inputPath`: the full path to the source input file (including the path to the input directory)
-* `fileSlug`: {% addedin "0.5.3" %} Mapped from the input file name, useful for permalinks. Read more about [`fileSlug`](/docs/data/#fileslug).
-* `outputPath`: the full path to the output file to be written for this content
-* `url`: url used to link to this piece of content.
-* `date`: the resolved date used for sorting. Read more about [Content Dates](/docs/dates/).
-* `data`: all data for this piece of content (includes any data inherited from layouts)
-* `templateContent`: the rendered content of this template. This does _not_ include layout wrappers.
+- `inputPath`: the full path to the source input file (including the path to the input directory)
+- `fileSlug`: {% addedin "0.5.3" %} Mapped from the input file name, useful for permalinks. Read more about [`fileSlug`](/docs/data/#fileslug).
+- `outputPath`: the full path to the output file to be written for this content
+- `url`: url used to link to this piece of content.
+- `date`: the resolved date used for sorting. Read more about [Content Dates](/docs/dates/).
+- `data`: all data for this piece of content (includes any data inherited from layouts)
+- `templateContent`: the rendered content of this template. This does _not_ include layout wrappers.
 
 ```
 { inputPath: './test1.md',
@@ -162,7 +173,6 @@ Note in the above example that we output the `post.data.title` value? Similarly,
   data: { title: 'Test Title', tags: ['tag1', 'tag2'], date: 'Last Modified' },
   templateContent: '<h1>This is my title</h1>\n\n<p>This is content…' }
 ```
-
 
 ## Sorting
 
@@ -192,6 +202,7 @@ This collection would be sorted like this:
 To sort descending in your template, you can use a filter to reverse the sort order. For example, in Nunjucks it’d look like this (Liquid also has a `reverse` filter built in):
 
 {% raw %}
+
 ```
 <ul>
 {%- for post in collections.post | reverse -%}
@@ -199,6 +210,7 @@ To sort descending in your template, you can use a filter to reverse the sort or
 {%- endfor -%}
 </ul>
 ```
+
 {% endraw %}
 
 <div class="elv-callout elv-callout-warn elv-callout-warn-block" id="array-reverse">
@@ -230,7 +242,7 @@ Inside of your `.eleventy.js` config file, use the first argument to the config 
 ```js
 module.exports = function(eleventyConfig) {
   // API is available in `eleventyConfig` argument
-  
+
   return {
     // your normal config options
     markdownTemplateEngine: "njk"
@@ -244,12 +256,10 @@ You can use `eleventyConfig` like so:
 
 ```js
 module.exports = function(eleventyConfig) {
-
   eleventyConfig.addCollection("myCollectionName", function(collection) {
     // get unsorted items
     return collection.getAll();
   });
-
 };
 ```
 
@@ -257,8 +267,8 @@ module.exports = function(eleventyConfig) {
 
 ### Return values
 
-* These `addCollection` callbacks should return an array of [template objects](#collection-item-data-structure) (in Eleventy 0.5.2 and prior).
-* {% addedin "0.5.3" %} `addCollection` callbacks can now return any arbitrary object type and it’ll be available as data in the template. Arrays, strings, objects—have fun with it.
+- These `addCollection` callbacks should return an array of [template objects](#collection-item-data-structure) (in Eleventy 0.5.2 and prior).
+- {% addedin "0.5.3" %} `addCollection` callbacks can now return any arbitrary object type and it’ll be available as data in the template. Arrays, strings, objects—have fun with it.
 
 ### Collection API Methods
 
@@ -347,7 +357,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("onlyMarkdown", function(collection) {
     return collection.getAllSorted().filter(function(item) {
       // Only return content that was originally a markdown file
-      let extension = item.inputPath.split('.').pop();
+      let extension = item.inputPath.split(".").pop();
       return extension === "md";
     });
   });

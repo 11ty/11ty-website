@@ -4,6 +4,7 @@ layout: layouts/langs.njk
 relatedLinks:
   /docs/config/#default-template-engine-for-html-files: Default Template Engine for HTML Files
 ---
+
 | Eleventy Short Name | File Extension | NPM Package |
 | ------------------- | -------------- | ----------- |
 | `html`              | `.html`        | N/A         |

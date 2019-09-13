@@ -2,7 +2,7 @@
 subtitle: url Universal Filter
 menuSectionName: docs-filters
 tags:
-	- docs-filters
+  - docs-filters
 ---
 
 # `url` Universal Filter
@@ -12,9 +12,11 @@ Works with the `pathPrefix` configuration option to properly normalize absolute 
 _If you don’t need `pathPrefix` (or don’t ever plan on moving your site’s top-level directory structure), you probably don’t need to use the `url` filter._
 
 {% raw %}
+
 ```
 <a href="{{ post.url | url }}">Liquid or Nunjucks Link</a>
 ```
+
 {% endraw %}
 
 ##### Sample URL Transformations
@@ -41,4 +43,4 @@ _If you don’t need `pathPrefix` (or don’t ever plan on moving your site’s 
 | `'./myDir'`  | `'/rootDir'` | `'myDir'` ⚠️ This style is probably not what you want—careful! |
 | `'../myDir'` | `'/rootDir'` | `'../myDir'`                                                   |
 
-* [← Back to Filters documentation.](/docs/filters/)
+- [← Back to Filters documentation.](/docs/filters/)

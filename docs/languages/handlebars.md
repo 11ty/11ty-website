@@ -9,6 +9,7 @@ tags:
   - related-custom-tags
 layout: layouts/langs.njk
 ---
+
 | Eleventy Short Name | File Extension | NPM Package                                                |
 | ------------------- | -------------- | ---------------------------------------------------------- |
 | `hbs`               | `.hbs`         | [`handlebars.js`](https://github.com/wycats/handlebars.js) |
@@ -30,14 +31,13 @@ module.exports = function(eleventyConfig) {
 
 ## Supported Features
 
-| Feature                                                                      | Syntax                                                                                                                                  |
-| ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| ✅ Partials                                                                  | `{% raw %}{{> user}}{% endraw %}` looks for `_includes/user.hbs`. Does not process front matter in the include file.                                                                                             |
-| 🚫 Partials (Relative Path)                                                                  | **Not yet supported**: `{% raw %}{{> ./user}}{% endraw %}` looks for `user.hbs` in the template’s current directory.                                                                                             |
-| ✅ Helpers (Custom Tags)                                                                   | `{% raw %}{{ helperName myObject }}{% endraw %}` Handlebars calls them Helpers, but Eleventy calls them Shortcodes. Read more about [Shortcodes](/docs/shortcodes/) or [Custom Tags](/docs/custom-tags/).                                |
-| ✅ [Eleventy Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{{ filterName myObject }}{% endraw %}` Read more about [Filters](/docs/filters/). |
-| ✅ [Shortcodes](/docs/shortcodes/) | `{% raw %}{{{ uppercase name }}}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/). {% addedin "0.5.0" %}|
-
+| Feature                                                           | Syntax                                                                                                                                                                                                    |
+| ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ✅ Partials                                                       | `{% raw %}{{> user}}{% endraw %}` looks for `_includes/user.hbs`. Does not process front matter in the include file.                                                                                      |
+| 🚫 Partials (Relative Path)                                       | **Not yet supported**: `{% raw %}{{> ./user}}{% endraw %}` looks for `user.hbs` in the template’s current directory.                                                                                      |
+| ✅ Helpers (Custom Tags)                                          | `{% raw %}{{ helperName myObject }}{% endraw %}` Handlebars calls them Helpers, but Eleventy calls them Shortcodes. Read more about [Shortcodes](/docs/shortcodes/) or [Custom Tags](/docs/custom-tags/). |
+| ✅ [Eleventy Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{{ filterName myObject }}{% endraw %}` Read more about [Filters](/docs/filters/).                                                                                                               |
+| ✅ [Shortcodes](/docs/shortcodes/)                                | `{% raw %}{{{ uppercase name }}}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/). {% addedin "0.5.0" %}                                                                                      |
 
 <span id="filters"></span><span id="shortcodes"></span>
 
@@ -51,7 +51,7 @@ Read more about [Handlebars Helpers syntax](http://handlebarsjs.com/#helpers)
 module.exports = function(eleventyConfig) {
   // Handlebars Helper
   eleventyConfig.addHandlebarsHelper("myHandlebarsHelper", function(value) { … });
-  
+
   // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
   // Read the note about Universal Filters below: Use a shortcode instead!
   eleventyConfig.addFilter("myFilter", function(value) { … });
@@ -61,9 +61,11 @@ module.exports = function(eleventyConfig) {
 #### Usage
 
 {% raw %}
+
 ```html
 <h1>{{{ myHandlebarsHelper myVariable }}}</h1>
 ```
+
 {% endraw %}
 
 {% callout "info" %}Note that if you return HTML in your Handlebars helper, you need to use the Handlebars triple-stash syntax (three opening and three closing curly brackets) to avoid double-escaped HTML.{% endcallout %}
@@ -72,13 +74,12 @@ module.exports = function(eleventyConfig) {
 
 These are not supported by Handlebars. Read more at [this Handlebars issue](https://github.com/wycats/handlebars.js/issues/717).
 
-
 ### A note about Universal Filters
 
 Universal filters have always been funneled into Handlebars helpers. In v0.5.0, Shortcode support was added to Eleventy. Shortcodes (Paired/Single) match better with the semantic footprint of Handlebars Helpers.
 
 ```js
-module.exports = function(eleventyConfig) {  
+module.exports = function(eleventyConfig) {
   // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
   eleventyConfig.addFilter("myFilter", function(value) { … });
 };
@@ -96,7 +97,7 @@ Shortcodes are basically reusable bits of content. You can add Handlebars specif
 module.exports = function(eleventyConfig) {
   // Handlebars Shortcode
   eleventyConfig.addHandlebarsShortcode("user", function(name, twitterUsername) { … });
-  
+
   // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
   eleventyConfig.addShortcode("user", function(name, twitterUsername) {
     return `<div class="user">
@@ -110,9 +111,11 @@ module.exports = function(eleventyConfig) {
 #### Usage
 
 {% raw %}
+
 ```html
 {{{ user "Zach Leatherman" "zachleat" }}}
 ```
+
 {% endraw %}
 
 {% callout "info" %}Note that if you return HTML in your Handlebars shortcode, you need to use the Handlebars triple-stash syntax (three opening and three closing curly brackets) to avoid double-escaped HTML.{% endcallout %}
@@ -132,7 +135,7 @@ module.exports = function(eleventyConfig) {
 module.exports = function(eleventyConfig) {
   // Handlebars Shortcode
   eleventyConfig.addPairedHandlebarsShortcode("user", function(bioContent, name, twitterUsername) { … });
-  
+
   // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
   eleventyConfig.addPairedShortcode("user", function(bioContent, name, twitterUsername) {
     return `<div class="user">
@@ -149,11 +152,12 @@ module.exports = function(eleventyConfig) {
 Note that you can put any Handlebars tags or content inside the `{% raw %}{{ user }}{% endraw %}` shortcode! Yes, even other shortcodes!
 
 {% raw %}
+
 ```html
-{{# user "Zach Leatherman" "zachleat" }}
-  Zach likes to take long walks on Nebraska beaches.
-{{/ user }}
+{{# user "Zach Leatherman" "zachleat" }} Zach likes to take long walks on
+Nebraska beaches. {{/ user }}
 ```
+
 {% endraw %}
 
 {% callout "info" %}While unpaired shortcodes and helpers required that you use the Handlebars triple-stash syntax (three opening and three closing curly brackets) to avoid double-escaped HTML, paired Handlebars shortcodes do not have this requirement.{% endcallout %}
@@ -171,4 +175,3 @@ Note that you can put any Handlebars tags or content inside the `{% raw %}{{ use
 ### Asynchronous Shortcodes
 
 These are not supported by Handlebars. Read more at [this Handlebars issue](https://github.com/wycats/handlebars.js/issues/717).
-

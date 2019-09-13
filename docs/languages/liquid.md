@@ -9,6 +9,7 @@ tags:
   - related-custom-tags
 layout: layouts/langs.njk
 ---
+
 | Eleventy Short Name | File Extension | NPM Package                                          |
 | ------------------- | -------------- | ---------------------------------------------------- |
 | `liquid`            | `.liquid`      | [`liquidjs`](https://www.npmjs.com/package/liquidjs) |
@@ -56,18 +57,18 @@ module.exports = function(eleventyConfig) {
 
 ## Supported Features
 
-| Feature                                                                      | Syntax                                                                                                                             |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| ✅ Include                                                                   | `{% raw %}{% include user %}{% endraw %}` looks for `_includes/user.liquid`. Does not process front matter in the include file.                                                                             |
-| ✅ Includes (Relative Path) {% addedin "0.9.0" %}                                                                   | Relative paths use `./` (template’s directory) or `../` (template’s parent directory): `{% raw %}{% include ./included %}{% endraw %}` looks for `included.liquid` in the template’s current directory. Does not process front matter.<br><br>{% callout "warn" %}If `_includes/included.liquid` also exists, Liquid will use this file instead.{% endcallout %}        |
-| ✅ Include (Quoted)                                                                   |{% callout "info" %}Liquid includes that use quotation marks require `dynamicPartials: true`—Read more at [Quoted Include Paths](#quoted-include-paths).{% endcallout %}`{% raw %}{% include 'user' %}{% endraw %}` looks for `_includes/user.liquid`. Does not process front matter in the include file. |
-| ✅ Include (Relative Path, Quoted) {% addedin "0.9.0" %}                                                                   |{% callout "info" %}Liquid includes that use quotation marks require `dynamicPartials: true`—Read more at [Quoted Include Paths](#quoted-include-paths).{% endcallout %}Relative paths use `./` (template’s directory) or `../` (template’s parent directory): `{% raw %}{% include './dir/user' %}{% endraw %}` looks for `./dir/user.liquid` from the template’s current directory. Does not process front matter in the include file.<br><br>{% callout "warn" %}If `_includes/dir/user.liquid` also exists, Liquid will use this file instead.{% endcallout %} |
-| ✅ Include (pass in Data)                                                    | `{% raw %}{% include 'user' with 'Ava' %}{% endraw %}`. Does not process front matter in the include file.                                                                                                  |
-| ✅ Include (pass in Data)                                                    | `{% raw %}{% include 'user', user1: 'Ava', user2: 'Bill' %}{% endraw %}`. Does not process front matter in the include file.                                                                                |
-| ✅ Custom Filters                                                            | `{% raw %}{{ name | upper }}{% endraw %}`  Read more about [Filters](/docs/filters/)                                                         |
-| ✅ [Eleventy Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{% name | filterName %}{% endraw %}` Read more about [Filters](/docs/filters/)                                                          |
-| ✅ [Custom Tags](/docs/custom-tags/) {% addedin "0.5.0" %} | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Custom Tags](/docs/custom-tags/).|
-| ✅ [Shortcodes](/docs/shortcodes/) {% addedin "0.5.0" %} | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/).|
+| Feature                                                           | Syntax                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ✅ Include                                                        | `{% raw %}{% include user %}{% endraw %}` looks for `_includes/user.liquid`. Does not process front matter in the include file.                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ✅ Includes (Relative Path) {% addedin "0.9.0" %}                 | Relative paths use `./` (template’s directory) or `../` (template’s parent directory): `{% raw %}{% include ./included %}{% endraw %}` looks for `included.liquid` in the template’s current directory. Does not process front matter.<br><br>{% callout "warn" %}If `_includes/included.liquid` also exists, Liquid will use this file instead.{% endcallout %}                                                                                                                                                                                                   |
+| ✅ Include (Quoted)                                               | {% callout "info" %}Liquid includes that use quotation marks require `dynamicPartials: true`—Read more at [Quoted Include Paths](#quoted-include-paths).{% endcallout %}`{% raw %}{% include 'user' %}{% endraw %}` looks for `_includes/user.liquid`. Does not process front matter in the include file.                                                                                                                                                                                                                                                          |
+| ✅ Include (Relative Path, Quoted) {% addedin "0.9.0" %}          | {% callout "info" %}Liquid includes that use quotation marks require `dynamicPartials: true`—Read more at [Quoted Include Paths](#quoted-include-paths).{% endcallout %}Relative paths use `./` (template’s directory) or `../` (template’s parent directory): `{% raw %}{% include './dir/user' %}{% endraw %}` looks for `./dir/user.liquid` from the template’s current directory. Does not process front matter in the include file.<br><br>{% callout "warn" %}If `_includes/dir/user.liquid` also exists, Liquid will use this file instead.{% endcallout %} |
+| ✅ Include (pass in Data)                                         | `{% raw %}{% include 'user' with 'Ava' %}{% endraw %}`. Does not process front matter in the include file.                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ✅ Include (pass in Data)                                         | `{% raw %}{% include 'user', user1: 'Ava', user2: 'Bill' %}{% endraw %}`. Does not process front matter in the include file.                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ✅ Custom Filters                                                 | `{% raw %}{{ name | upper }}{% endraw %}` Read more about [Filters](/docs/filters/)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| ✅ [Eleventy Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{% name | filterName %}{% endraw %}` Read more about [Filters](/docs/filters/)                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ✅ [Custom Tags](/docs/custom-tags/) {% addedin "0.5.0" %}        | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Custom Tags](/docs/custom-tags/).                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ✅ [Shortcodes](/docs/shortcodes/) {% addedin "0.5.0" %}          | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/).                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 ### Quoted Include Paths
 
@@ -93,7 +94,7 @@ Read more about [LiquidJS Filter syntax](https://github.com/harttle/liquidjs#reg
 module.exports = function(eleventyConfig) {
   // Liquid Filter
   eleventyConfig.addLiquidFilter("myLiquidFilter", function(myVariable) { … });
-  
+
   // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
   eleventyConfig.addFilter("myFilter", function(myVariable) { … });
 };
@@ -102,9 +103,11 @@ module.exports = function(eleventyConfig) {
 ### Usage
 
 {% raw %}
+
 ```html
 <h1>{{ myVariable | myFilter }}</h1>
 ```
+
 {% endraw %}
 
 ### Multiple Filter Arguments
@@ -112,16 +115,22 @@ module.exports = function(eleventyConfig) {
 ```js
 module.exports = function(eleventyConfig) {
   // Liquid Filter
-  eleventyConfig.addLiquidFilter("concatThreeStrings", function(arg1, arg2, arg3) {
+  eleventyConfig.addLiquidFilter("concatThreeStrings", function(
+    arg1,
+    arg2,
+    arg3
+  ) {
     return arg1 + arg2 + arg3;
   });
 };
 ```
 
 {% raw %}
+
 ```html
 <h1>{{ "first" | concatThreeThings: "second", "third" }}</h1>
 ```
+
 {% endraw %}
 
 ## Shortcodes
@@ -153,12 +162,14 @@ module.exports = function(eleventyConfig) {
 #### Usage
 
 {% raw %}
+
 ```html
 {% user "Zach Leatherman", "zachleat" %}
 
 <!-- The comma between arguments is optional in Liquid templates -->
 {% user "Zach Leatherman" "zachleat" %}
 ```
+
 {% endraw %}
 
 ##### Outputs
@@ -177,7 +188,7 @@ module.exports = function(eleventyConfig) {
   // Liquid Shortcode
   // These can be async functions too
   eleventyConfig.addPairedLiquidShortcode("user2", function(bioContent, name, twitterUsername) { … });
-  
+
   // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
   eleventyConfig.addPairedShortcode("user2", function(bioContent, name, twitterUsername) {
     return `<div class="user">
@@ -196,11 +207,12 @@ module.exports = function(eleventyConfig) {
 Note that you can put any Liquid tags or content inside the `{% raw %}{% user %}{% endraw %}` shortcode! Yes, even other shortcodes!
 
 {% raw %}
+
 ```html
-{% user2 "Zach Leatherman" "zachleat" %}
-  Zach likes to take long walks on Nebraska beaches.
-{% enduser %}
+{% user2 "Zach Leatherman" "zachleat" %} Zach likes to take long walks on
+Nebraska beaches. {% enduser %}
 ```
+
 {% endraw %}
 
 ##### Outputs
@@ -221,11 +233,18 @@ Liquid is already promise-based internally so `async` functions with `await` wor
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addLiquidShortcode("user", async function(name, twitterUsername) {
+  eleventyConfig.addLiquidShortcode("user", async function(
+    name,
+    twitterUsername
+  ) {
     return await fetchAThing();
   });
 
-  eleventyConfig.addPairedShortcode("user2", async function(content, name, twitterUsername) {
+  eleventyConfig.addPairedShortcode("user2", async function(
+    content,
+    name,
+    twitterUsername
+  ) {
     return await fetchAThing();
   });
 };
@@ -236,12 +255,10 @@ module.exports = function(eleventyConfig) {
 (It’s the same.)
 
 {% raw %}
+
 ```html
-{% user "Zach Leatherman", "zachleat" %}
-
-{% user2 "Zach Leatherman" "zachleat" %}
-  Zach likes to take long walks on Nebraska beaches.
-{% enduser2 %}
+{% user "Zach Leatherman", "zachleat" %} {% user2 "Zach Leatherman" "zachleat"
+%} Zach likes to take long walks on Nebraska beaches. {% enduser2 %}
 ```
-{% endraw %}
 
+{% endraw %}

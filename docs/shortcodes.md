@@ -11,6 +11,7 @@ tags:
   - related-handlebars
   - related-javascript
 ---
+
 # Shortcodes {% addedin "0.5.0" %}
 
 Various template engines can be extended with shortcodes for easy reusable content. This is sugar around Template Language [Custom Tags](/docs/custom-tags/). Here’s a few examples:
@@ -18,9 +19,11 @@ Various template engines can be extended with shortcodes for easy reusable conte
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```html
 {% user firstName, lastName %}
 ```
+
 {% endraw %}
 
 The comma between arguments is **required** in Nunjucks but is **optional** in Liquid templates.
@@ -28,10 +31,12 @@ The comma between arguments is **required** in Nunjucks but is **optional** in L
 {% codetitle "Handlebars", "Syntax" %}
 
 {% raw %}
+
 ```html
 <!-- Note the three opening and closing curly brackets (the triple-stash) -->
 {{{ user firstName lastName }}}
 ```
+
 {% endraw %}
 
 {% callout "info" %}Note that if you return HTML in your Handlebars shortcode, you need to use the Handlebars triple-stash syntax (three opening and three closing curly brackets, e.g. <code>{% raw %}{{{ shortcodeName }}}{% endraw %}</code>) to avoid double-escaped HTML. If it’s double-escaped a paragraph tag may render as <code>&amp;lt;p&amp;gt;</code>{% endcallout %}
@@ -45,8 +50,6 @@ module.exports = function({ firstName, lastName }) {
 };
 ```
 
-
-
 Supported in JavaScript, Liquid, Nunjucks, Handlebars templates.
 
 {% codetitle ".eleventy.js" %}
@@ -55,10 +58,10 @@ Supported in JavaScript, Liquid, Nunjucks, Handlebars templates.
 module.exports = function(eleventyConfig) {
   // Liquid Shortcode
   eleventyConfig.addLiquidShortcode("user", function(firstName, lastName) { … });
-  
+
   // Nunjucks Shortcode
   eleventyConfig.addNunjucksShortcode("user", function(firstName, lastName) { … });
-  
+
   // Handlebars Shortcode
   eleventyConfig.addHandlebarsShortcode("user", function(firstName, lastName) { … });
 
@@ -78,10 +81,10 @@ A shortcode returns content (a JavaScript string or template literal) that is in
 
 Read more about using shortcodes on the individual Template Language documentation pages:
 
-* [JavaScript `*.11ty.js`](/docs/languages/javascript/#javascript-template-functions) (with async support)
-* [Liquid `*.liquid`](/docs/languages/liquid/#shortcodes) (with async support)
-* [Nunjucks `*.njk`](/docs/languages/nunjucks/#shortcodes) (with async support)
-* [Handlebars `*.hbs`](/docs/languages/handlebars/#shortcodes)
+- [JavaScript `*.11ty.js`](/docs/languages/javascript/#javascript-template-functions) (with async support)
+- [Liquid `*.liquid`](/docs/languages/liquid/#shortcodes) (with async support)
+- [Nunjucks `*.njk`](/docs/languages/nunjucks/#shortcodes) (with async support)
+- [Handlebars `*.hbs`](/docs/languages/handlebars/#shortcodes)
 
 ## Paired Shortcodes
 
@@ -90,13 +93,12 @@ The shortcodes we saw above were nice, I suppose. But really, they are not all t
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```html
-{% user firstName, lastName %}
-  Hello {{ someOtherVariable }}.
-  
-  Hello {% anotherShortcode %}.
-{% enduser %}
+{% user firstName, lastName %} Hello {{ someOtherVariable }}. Hello {%
+anotherShortcode %}. {% enduser %}
 ```
+
 {% endraw %}
 
 The comma between arguments is **required** in Nunjucks but is **optional** in Liquid templates.
@@ -104,15 +106,13 @@ The comma between arguments is **required** in Nunjucks but is **optional** in L
 {% codetitle "Handlebars", "Syntax" %}
 
 {% raw %}
-```html
-{{# user firstName lastName }}
-  Hello {{ someOtherVariable }}.
-  
-  Hello {{ anotherShortcode }}.
-{{/ user }}
-```
-{% endraw %}
 
+```html
+{{# user firstName lastName }} Hello {{ someOtherVariable }}. Hello {{
+anotherShortcode }}. {{/ user }}
+```
+
+{% endraw %}
 
 {% codetitle "JavaScript", "Syntax" %}
 {% addedin "0.7.0" %}
@@ -126,7 +126,6 @@ Hello ${this.anotherShortCode()}`;
   return `<h1>${this.user(userContent, data.firstName, data.lastName)}</h1>`;
 };
 ```
-
 
 When adding paired shortcodes using the Configuration API, the first argument to your shortcode callback is the nested content.
 
@@ -157,10 +156,10 @@ module.exports = function(eleventyConfig) {
 
 Read more about using paired shortcodes on the individual Template Language documentation pages:
 
-* [JavaScript `*.11ty.js`](/docs/languages/javascript/#javascript-template-functions) (with async support)
-* [Liquid `*.liquid`](/docs/languages/liquid/#shortcodes) (with async support)
-* [Nunjucks `*.njk`](/docs/languages/nunjucks/#shortcodes) (with async support)
-* [Handlebars `*.hbs`](/docs/languages/handlebars/#shortcodes)
+- [JavaScript `*.11ty.js`](/docs/languages/javascript/#javascript-template-functions) (with async support)
+- [Liquid `*.liquid`](/docs/languages/liquid/#shortcodes) (with async support)
+- [Nunjucks `*.njk`](/docs/languages/nunjucks/#shortcodes) (with async support)
+- [Handlebars `*.hbs`](/docs/languages/handlebars/#shortcodes)
 
 ## Universal Shortcodes
 
@@ -175,7 +174,7 @@ module.exports = function(eleventyConfig) {
   // * Nunjucks
   // * Handlebars
   // * JavaScript (New in 0.7.0)
-  
+
   // Single Universal Shortcode
   eleventyConfig.addShortcode("myShortcode", function(firstName, lastName) { … });
 

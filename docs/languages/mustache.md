@@ -2,6 +2,7 @@
 subtitle: Mustache
 layout: layouts/langs.njk
 ---
+
 | Eleventy Short Name | File Extension | NPM Package                                           |
 | ------------------- | -------------- | ----------------------------------------------------- |
 | `mustache`          | `.mustache`    | [`mustache.js`](https://github.com/janl/mustache.js/) |
@@ -23,8 +24,7 @@ module.exports = function(eleventyConfig) {
 
 ## Supported Features
 
-| Feature     | Syntax                                           |
-| ----------- | ------------------------------------------------ |
-| ✅ Partials | `{% raw %}{{> user}}{% endraw %}` looks for `_includes/user.mustache`. Does not process front matter in the include file. |
-| 🚫 Partials (Relative Path)                                                                  | **Not yet supported**: `{% raw %}{{> ./user}}{% endraw %}` looks for `user.mustache` in the template’s current directory.                                                                                             |
-
+| Feature                     | Syntax                                                                                                                    |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| ✅ Partials                 | `{% raw %}{{> user}}{% endraw %}` looks for `_includes/user.mustache`. Does not process front matter in the include file. |
+| 🚫 Partials (Relative Path) | **Not yet supported**: `{% raw %}{{> ./user}}{% endraw %}` looks for `user.mustache` in the template’s current directory. |

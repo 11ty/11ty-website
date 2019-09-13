@@ -33,7 +33,7 @@ Add a sample CSS file to your `_includes` directory. Let’s call it `sample.css
 
 ```css
 body {
-    font-family: fantasy;
+  font-family: fantasy;
 }
 ```
 
@@ -42,14 +42,14 @@ body {
 Capture the CSS into a variable and run it through the filter (this sample is using Nunjucks syntax)
 
 {% raw -%}
+
 ```html
 <!-- capture the CSS content as a Nunjucks variable -->
-{% set css %}
-  {% include "sample.css" %}
-{% endset %}
+{% set css %} {% include "sample.css" %} {% endset %}
 <!-- feed it through our cssmin filter to minify -->
 <style>
   {{ css | cssmin | safe }}
 </style>
 ```
+
 {% endraw %}

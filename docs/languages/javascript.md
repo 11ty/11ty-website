@@ -11,9 +11,10 @@ relatedLinks:
   /docs/config/#watch-javascript-dependencies: Watch JavaScript Dependencies
 layout: layouts/langs.njk
 ---
+
 | Eleventy Short Name | File Extension | NPM Package |
 | ------------------- | -------------- | ----------- |
-| `11ty.js`              | `.11ty.js`        | N/A         |
+| `11ty.js`           | `.11ty.js`     | N/A         |
 
 Eleventy supports many different types of JavaScript content that will be parsed as Eleventy templates:
 
@@ -39,7 +40,6 @@ span
 multiple
 lines!</p>`;
 ```
-
 
 ### Buffer
 
@@ -80,7 +80,7 @@ De-structuring syntax is a little bit easier to read:
 {% codetitle "JavaScript", "Syntax" %}
 
 ```js
-module.exports = function({name}) {
+module.exports = function({ name }) {
   return `<p>${name}</p>`;
 };
 ```
@@ -90,7 +90,7 @@ Maybe you like arrow functions:
 {% codetitle "JavaScript", "Syntax" %}
 
 ```js
-module.exports = ({name}) => `<p>${name}</p>`;
+module.exports = ({ name }) => `<p>${name}</p>`;
 ```
 
 `async` functions work too:
@@ -116,7 +116,7 @@ Eleventy looks for classes that have a `render` method and uses `render` to retu
 ```js
 class Test {
   // or `async render({name}) {`
-  render({name}) {
+  render({ name }) {
     return `<p>${name}</p>`;
   }
 }
@@ -139,12 +139,12 @@ class Test {
   data() {
     return {
       name: "Ted",
-      layout: "teds-rad-layout",
+      layout: "teds-rad-layout"
       // … other front matter keys
     };
   }
 
-  render({name}) {
+  render({ name }) {
     // will always be "Ted"
     return `<p>${name}</p>`;
   }
@@ -170,7 +170,9 @@ class Test {
     };
   }
 
-  render(data) { /* … */ }
+  render(data) {
+    /* … */
+  }
 }
 
 module.exports = Test;
@@ -192,7 +194,9 @@ class Test {
     };
   }
 
-  render(data) { /* … */ }
+  render(data) {
+    /* … */
+  }
 }
 
 module.exports = Test;
@@ -216,7 +220,9 @@ class Test {
     };
   }
 
-  render(data) { /* … */ }
+  render(data) {
+    /* … */
+  }
 }
 
 module.exports = Test;
@@ -264,11 +270,13 @@ module.exports = function(eleventyConfig) {
 {% codetitle "js-fn-example.11ty.js" %}
 
 {% raw %}
+
 ```
 module.exports = function(data) {
   return `<h1>${this.myFunction(data.a, data.b)}</h1>`;
 };
 ```
+
 {% endraw %}
 
 ### Asynchronous JavaScript Template Functions
@@ -290,11 +298,13 @@ This is the same as the example above but adds `await` before the function is ca
 {% codetitle "js-async-fn-example.11ty.js" %}
 
 {% raw %}
+
 ```
 module.exports = function(data) {
   return `<h1>${await this.myAsyncFunction(data.a, data.b)}</h1>`;
 };
 ```
+
 {% endraw %}
 
 ### Relationship to Filters and Shortcodes
@@ -319,6 +329,7 @@ module.exports = function(eleventyConfig) {
 {% codetitle "universal-examples.11ty.js" %}
 
 {% raw %}
+
 ```
 module.exports = function(data) {
   return `
@@ -328,4 +339,5 @@ module.exports = function(data) {
 `;
 };
 ```
+
 {% endraw %}

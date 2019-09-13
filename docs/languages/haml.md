@@ -2,8 +2,9 @@
 subtitle: Haml
 layout: layouts/langs.njk
 ---
-| Eleventy Short Name | File Extension | NPM Package    |
-| ------------------- | -------------- | -------------- |
+
+| Eleventy Short Name | File Extension | NPM Package                                |
+| ------------------- | -------------- | ------------------------------------------ |
 | `haml`              | `.haml`        | [`haml.js`](https://github.com/tj/haml.js) |
 
 You can override a `.haml` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
@@ -23,7 +24,7 @@ module.exports = function(eleventyConfig) {
 
 ## Supported Features
 
-| Feature                                                                             | Syntax                                                                 |
-| ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| 🚫 Filters                                                                   | **Not yet supported** `:filterName some text` Read more about [Filters](/docs/filters/).                                                |
+| Feature                                                           | Syntax                                                                                   |
+| ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| 🚫 Filters                                                        | **Not yet supported** `:filterName some text` Read more about [Filters](/docs/filters/). |
 | 🚫 [Eleventy Universal Filters](/docs/filters/#universal-filters) | **Not yet supported** `:filterName some text` Read more about [Filters](/docs/filters/). |

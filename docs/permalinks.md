@@ -4,6 +4,7 @@ excerpt: Remap a template to a new output location
 tags:
   - docs-templates
 ---
+
 # Permalinks
 
 ## Cool URIs don’t change
@@ -16,7 +17,6 @@ Eleventy automatically helps you make sure that [Cool URIs don’t change](https
 ## Default Input/Output Examples
 
 Assuming your `--output` directory is the default, `_site`:
-
 
 <table>
     <tbody>
@@ -123,12 +123,14 @@ For example, in a Nunjucks template:
 {% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```
 ---
 mySlug: this-is-a-new-path
 permalink: subdir/{{ mySlug }}/index.html
 ---
 ```
+
 {% endraw %}
 
 Writes to `_site/subdir/this-is-a-new-path/index.html`.
@@ -170,12 +172,14 @@ Use the provided [`slug` filter](/docs/filters/#slug) to modify other data avail
 {% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```
 ---
 title: My Article Title
 permalink: subdir/{{ title | slug }}/index.html
 ---
 ```
+
 {% endraw %}
 
 _(the above is using syntax that works in at least Liquid and Nunjucks)_
@@ -185,12 +189,14 @@ Writes to `_site/subdir/my-article-title/index.html`.
 {% codetitle "YAML Front Matter using Liquid", "Syntax" %}
 
 {% raw %}
+
 ```
 ---
 date: "2016-01-01T06:00-06:00"
 permalink: "/{{ page.date | date: '%Y/%m/%d' }}/index.html"
 ---
 ```
+
 {% endraw %}
 
 Writes to `_site/2016/01/01/index.html`. There are a variety of ways that the page.date variable can be set (using `date` in your front matter is just one of them). Read more about [Content dates](/docs/dates/).

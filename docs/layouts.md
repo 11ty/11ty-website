@@ -4,41 +4,47 @@ excerpt: Wrap content in other content.
 tags:
   - docs-templates
 ---
+
 # Layouts
 
 Eleventy Layouts are special templates that can be used to wrap other content. To denote that a piece of content should be wrapped in a template, simply use the `layout` key in your front matter, like so:
 
 {% codetitle "content-using-layout.md" %}
 {% raw %}
+
 ```markdown
 ---
 layout: mylayout.njk
 title: My Rad Markdown Blog Post
 ---
+
 # {{ title }}
 ```
+
 {% endraw %}
 
-This will look for a `mylayout.njk` Nunjucks file in your _includes folder_ (`_includes/mylayout.njk`). Note that you can have a [separate folder for Eleventy layouts](/docs/config/#directory-for-layouts-(optional)) if you’d prefer that to having them live in your _includes folder._
+This will look for a `mylayout.njk` Nunjucks file in your _includes folder_ (`_includes/mylayout.njk`). Note that you can have a [separate folder for Eleventy layouts](</docs/config/#directory-for-layouts-(optional)>) if you’d prefer that to having them live in your _includes folder._
 
 You can use any template language in your layout—it doesn’t need to match the template language of the content. An `ejs` template can use a `njk` layout, for example.
 
-{% callout "info" %}If you omit the file extension (for example <code>layout: mylayout</code>), Eleventy will cycle through all of the supported template formats (<code>mylayout.*</code>) to look for a matching layout file.{% endcallout %}
+{% callout "info" %}If you omit the file extension (for example <code>layout: mylayout</code>), Eleventy will cycle through all of the supported template formats (<code>mylayout.\*</code>) to look for a matching layout file.{% endcallout %}
 
 Next, we need to create a `mylayout.njk` file. It can contain any type of text, but here we’re using HTML:
 
 {% codetitle "_includes/mylayout.njk" %}
 
 {% raw %}
+
 ```html
 ---
 title: My Rad Blog
 ---
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title }}</title>
   </head>
   <body>
@@ -46,6 +52,7 @@ title: My Rad Blog
   </body>
 </html>
 ```
+
 {% endraw %}
 
 Note that the layout template will populate the `content` data with the child template’s content. Also note that we don’t want to double-escape the output, so we’re using the provided Nunjuck’s `safe` filter here (see more language double-escaping syntax below).
@@ -100,24 +107,22 @@ Configuration API: use `eleventyConfig.addLayoutAlias(from, to)` to add layout a
 
 ```js
 module.exports = function(eleventyConfig) {
-
-  eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
-
+  eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
 };
 ```
 
 ## Prevent double-escaping in layouts
 
 {% raw %}
-| Template Language | Unescaped Content (for layout content)                 | Comparison with an Escaped Output | Docs                                                                                 |
+| Template Language | Unescaped Content (for layout content) | Comparison with an Escaped Output | Docs |
 | ----------------- | ------------------------------------------------------ | --------------------------------- | ------------------------------------------------------------------------------------ |
-| Nunjucks          | `{{ content | safe }}`                                | `{{ value }}`                     | [Docs](https://mozilla.github.io/nunjucks/templating.html#safe)                      |
-| EJS               | `<%- content %>`                                       | `<%= value %>`                    | [Docs](https://www.npmjs.com/package/ejs#tags)                                       |
-| Handlebars        | `{{{ content }}}` (triple stash)                       | `{{ value }}` (double stash)      | [Docs](http://handlebarsjs.com/#html-escaping)                                       |
-| Mustache          | `{{{ content }}}` (triple stash)                       | `{{ value }}` (double stash)      | [Docs](https://github.com/janl/mustache.js#variables)                                |
-| Liquid            | is by default unescaped so you can use `{{ content }}` | `{{ value | escape}}`            | [Docs](http://shopify.github.io/liquid/filters/escape/)                              |
-| HAML              | `! #{ content }`                                       | `= #{ content }`                  | [Docs](http://haml.info/docs/yardoc/file.REFERENCE.html#unescaping_html)             |
-| Pug               | `!{content}`                                           | `#{value}`                        | [Docs](https://pugjs.org/language/interpolation.html#string-interpolation-unescaped) |
+| Nunjucks | `{{ content | safe }}` | `{{ value }}` | [Docs](https://mozilla.github.io/nunjucks/templating.html#safe) |
+| EJS | `<%- content %>` | `<%= value %>` | [Docs](https://www.npmjs.com/package/ejs#tags) |
+| Handlebars | `{{{ content }}}` (triple stash) | `{{ value }}` (double stash) | [Docs](http://handlebarsjs.com/#html-escaping) |
+| Mustache | `{{{ content }}}` (triple stash) | `{{ value }}` (double stash) | [Docs](https://github.com/janl/mustache.js#variables) |
+| Liquid | is by default unescaped so you can use `{{ content }}` | `{{ value | escape}}` | [Docs](http://shopify.github.io/liquid/filters/escape/) |
+| HAML | `! #{ content }` | `= #{ content }` | [Docs](http://haml.info/docs/yardoc/file.REFERENCE.html#unescaping_html) |
+| Pug | `!{content}` | `#{value}` | [Docs](https://pugjs.org/language/interpolation.html#string-interpolation-unescaped) |
 {% endraw %}
 
 ## Layout Chaining
@@ -133,6 +138,7 @@ To chain a layout, let’s look at an example:
 layout: mainlayout.njk
 title: My Rad Blog
 ---
+
 # My Rad Markdown Blog Post
 ```
 
@@ -141,15 +147,18 @@ We want to add a main element around our post’s content because we like access
 {% codetitle "_includes/mainlayout.njk" %}
 
 {% raw %}
+
 ```markdown
 ---
 layout: mylayout.njk
 myOtherData: hello
 ---
+
 <main>
   {{ content | safe }}
 </main>
 ```
+
 {% endraw %}
 
 This layout would then be itself wrapped in the same `mylayout.njk` we used in our previous example:
@@ -157,6 +166,7 @@ This layout would then be itself wrapped in the same `mylayout.njk` we used in o
 {% codetitle "_includes/mylayout.njk" %}
 
 {% raw %}
+
 ```
 <!doctype html>
 <html lang="en">
@@ -170,6 +180,7 @@ This layout would then be itself wrapped in the same `mylayout.njk` we used in o
   </body>
 </html>
 ```
+
 {% endraw %}
 
 Used together, this would output:

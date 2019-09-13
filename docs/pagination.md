@@ -5,6 +5,7 @@ tags:
   - docs-templates
 relatedKey: pagination
 ---
+
 # Pagination
 
 To iterate over a data set and create pages for individual chunks of data, use pagination. Enable in your template’s front matter by adding the `pagination` key. Consider the following template:
@@ -12,23 +13,26 @@ To iterate over a data set and create pages for individual chunks of data, use p
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```markdown
 ---
 pagination:
   data: testdata
   size: 2
 testdata:
- - item1
- - item2
- - item3
- - item4
+  - item1
+  - item2
+  - item3
+  - item4
 ---
+
 <ol>
 {%- for item in pagination.items %}
   <li>{{ item }}</li>
 {% endfor -%}
 </ol>
 ```
+
 {% endraw %}
 
 We enable pagination and then give it a dataset with the `data` key. We control the number of items in each chunk with `size`. The pagination data variable will be populated with what you need to create each template. Here’s what’s in `pagination`:
@@ -44,7 +48,7 @@ We enable pagination and then give it a dataset with the `data` key. We control 
   nextPageHref: "…", // put inside <a href="{{ pagination.nextPageHref }}">Next Page</a>
   previousPageHref: "…", // put inside <a href="{{ pagination.previousPageHref }}">Previous Page</a>
   firstPageHref: "…",
-  lastPageHref: "…", 
+  lastPageHref: "…",
   hrefs: [], // Array of all page hrefs (in order)
 
   // Uncool URLs (these include index.html file names)
@@ -69,6 +73,7 @@ All of the examples thus far have paged Array data. Eleventy does allow paging o
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```markdown
 ---
 pagination:
@@ -79,12 +84,14 @@ testdata:
   itemkey2: itemvalue2
   itemkey3: itemvalue3
 ---
+
 <ol>
 {%- for item in pagination.items %}
   <li>{{ item }}</li>
 {% endfor -%}
 </ol>
 ```
+
 {% endraw %}
 
 In this example, we would get 3 pages, with the paged items holding the object keys:
@@ -93,10 +100,10 @@ In this example, we would get 3 pages, with the paged items holding the object k
 
 ```js
 [
-  [ "itemkey1" ], // pagination.items[0] holds the object key
-  [ "itemkey2" ],
-  [ "itemkey3" ]
-]
+  ["itemkey1"], // pagination.items[0] holds the object key
+  ["itemkey2"],
+  ["itemkey3"]
+];
 ```
 
 You can use these keys to get access to the original value: `testdata[ pagination.items[0] ]`.
@@ -106,6 +113,7 @@ If you’d like the pagination to iterate over the values instead of the keys (u
 {% codetitle "YAML Front Matter", "Syntax" %}
 
 {% raw %}
+
 ```markdown
 ---
 pagination:
@@ -118,6 +126,7 @@ testdata:
   itemkey3: itemvalue3
 ---
 ```
+
 {% endraw %}
 
 This resolves to:
@@ -126,10 +135,10 @@ This resolves to:
 
 ```js
 [
-  [ "itemvalue1" ], // pagination.items[0] holds the object value
-  [ "itemvalue2" ],
-  [ "itemvalue3" ]
-]
+  ["itemvalue1"], // pagination.items[0] holds the object value
+  ["itemvalue2"],
+  ["itemvalue3"]
+];
 ```
 
 ## Paginate a global or local data file
@@ -140,12 +149,7 @@ This resolves to:
 
 ```js
 {
-  myData: [
-    "item1",
-    "item2",
-    "item3",
-    "item4"
-  ]
+  myData: ["item1", "item2", "item3", "item4"];
 }
 ```
 
@@ -154,18 +158,21 @@ Your front matter would look like this:
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```markdown
 ---
 pagination:
   data: globalDataSet.myData
   size: 1
 ---
+
 <ol>
 {%- for item in pagination.items %}
   <li>{{ item }}</li>
 {% endfor -%}
 </ol>
 ```
+
 {% endraw %}
 
 ## Remapping with permalinks
@@ -175,11 +182,13 @@ Normally, front matter does not support template syntax, but `permalink` does, e
 {% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```markdown
 ---
 permalink: different/page-{{ pagination.pageNumber }}/index.html
 ---
 ```
+
 {% endraw %}
 
 Writes to `_site/different/page-0/index.html`, `_site/different/page-1/index.html`, et cetera.
@@ -189,11 +198,13 @@ That means Nunjucks will also let you start your page numbers with 1 instead of 
 {% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```markdown
 ---
 permalink: different/page-{{ pagination.pageNumber + 1 }}/index.html
 ---
 ```
+
 {% endraw %}
 
 Writes to `_site/different/page-1/index.html`, `_site/different/page-2/index.html`, et cetera.
@@ -201,11 +212,13 @@ Writes to `_site/different/page-1/index.html`, `_site/different/page-2/index.htm
 You can even use template logic here too:
 
 {% raw %}
+
 ```markdown
 ---
 permalink: different/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html
 ---
 ```
+
 {% endraw %}
 
 Writes to `_site/different/index.html`, `_site/different/page-2/index.html`, et cetera.
@@ -217,6 +230,7 @@ You can do more advanced things like this:
 {% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```markdown
 ---
 pagination:
@@ -227,6 +241,7 @@ testdata:
 permalink: different/{{ pagination.items[0] | slug }}/index.html
 ---
 ```
+
 {% endraw %}
 
 Using a universal `slug` filter (transforms `My Item` to `my-item`), this outputs: `_site/different/my-item/index.html`.
@@ -238,6 +253,7 @@ Ok, so `pagination.items[0]` is ugly. We provide an option to alias this to some
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```markdown
 ---
 pagination:
@@ -249,8 +265,10 @@ testdata:
   - Item2
 permalink: different/{{ wonder | slug }}/index.html
 ---
+
 You can use the alias in your content too {{ wonder }}.
 ```
+
 {% endraw %}
 
 This writes to `_site/different/item1/index.html` and `_site/different/item2/index.html`.
@@ -260,6 +278,7 @@ If your chunk `size` is greater than 1, the alias will be an array instead of a 
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```markdown
 ---
 pagination:
@@ -273,8 +292,10 @@ testdata:
   - Item4
 permalink: different/{{ wonder[0] | slug }}/index.html
 ---
+
 You can use the alias in your content too {{ wonder[0] }}.
 ```
+
 {% endraw %}
 
 This writes to `_site/different/item1/index.html` and `_site/different/item3/index.html`.
@@ -304,10 +325,7 @@ Paginates to:
 {% codetitle "JavaScript Object", "Syntax" %}
 
 ```js
-[
-  [ "item1" ],
-  [ "item2" ],
-]
+[["item1"], ["item2"]];
 ```
 
 This will work the same with paginated arrays or with `resolve: values` for paginated objects.
@@ -334,10 +352,7 @@ Paginates to:
 {% codetitle "JavaScript Object", "Syntax" %}
 
 ```js
-[
-  [ "itemvalue1" ],
-  [ "itemvalue2" ],
-]
+[["itemvalue1"], ["itemvalue2"]];
 ```
 
 ## Paging a Collection
@@ -347,6 +362,7 @@ If you’d like to make a paginated list of all of your blog posts (any content 
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```markdown
 ---
 title: My Posts
@@ -362,9 +378,10 @@ pagination:
 {% endfor %}
 </ol>
 ```
+
 {% endraw %}
 
-The above generates a list of links but you could do a lot more. See what’s available in the [Collection documentation](/docs/collections/#individual-collection-items-(useful-for-sort-callbacks)) (specifically `templateContent`). If you’d like to use this to automatically generate Tag pages for your content, please read [Quick Tip #004—Create Tag Pages for your Blog](/docs/quicktips/tag-pages/).
+The above generates a list of links but you could do a lot more. See what’s available in the [Collection documentation](</docs/collections/#individual-collection-items-(useful-for-sort-callbacks)>) (specifically `templateContent`). If you’d like to use this to automatically generate Tag pages for your content, please read [Quick Tip #004—Create Tag Pages for your Blog](/docs/quicktips/tag-pages/).
 
 ## How to Reverse a Data Set prior to Pagination {% addedin "0.7.0" %}
 
@@ -379,20 +396,17 @@ pagination:
   size: 2
   reverse: true
 testdata:
- - item1
- - item2
- - item3
- - item4
+  - item1
+  - item2
+  - item3
+  - item4
 ---
 ```
 
 Paginates to:
 
 ```js
-[
-  ["item4", "item3"],
-  ["item2", "item1"],
-]
+[["item4", "item3"], ["item2", "item1"]];
 ```
 
 _(More discussion at [Issue #194](https://github.com/11ty/eleventy/issues/194))_
@@ -440,10 +454,10 @@ Now `collections.myCollection` will have both output pages in the collection arr
 
 ## Full Pagination Option List
 
-* `data` (String) [Lodash.get path](https://lodash.com/docs/4.17.10#get) to point to the target data set.
-* `size` (Number, required)
-* `alias` (String) [Lodash.set path](https://lodash.com/docs/4.17.10#set) to point to the property to set.
-* `resolve: values` {% addedin "0.4.0" %}
-* `filter` (Array) {% addedin "0.4.0" %}
-* `reverse: true` (Boolean) {% addedin "0.7.0" %}
-* `addAllPagesToCollections: true` (Boolean) {% addedin "0.8.0" %}
+- `data` (String) [Lodash.get path](https://lodash.com/docs/4.17.10#get) to point to the target data set.
+- `size` (Number, required)
+- `alias` (String) [Lodash.set path](https://lodash.com/docs/4.17.10#set) to point to the property to set.
+- `resolve: values` {% addedin "0.4.0" %}
+- `filter` (Array) {% addedin "0.4.0" %}
+- `reverse: true` (Boolean) {% addedin "0.7.0" %}
+- `addAllPagesToCollections: true` (Boolean) {% addedin "0.8.0" %}

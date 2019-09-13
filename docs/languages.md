@@ -16,6 +16,7 @@ submenuSortOrder:
 tags:
   - docs
 ---
+
 # {{ subtitle }}
 
 {% templatelangs templatetypes, page %}
@@ -26,8 +27,8 @@ There are a couple of different ways you can tell Eleventy how you want to proce
 
 1. The file extension (importantly, this is also used to find files to process).
 2. [Configuration options](/docs/config/):
-    * `markdownTemplateEngine`: The default global template engine to pre-process markdown files. Use `false` to avoid pre-processing and only transform markdown.
-    * `htmlTemplateEngine`: The default global template engine to pre-process HTML files. Use `false` to avoid pre-processing and passthrough copy the content (HTML is not transformed, so technically this could be any plaintext).
+   - `markdownTemplateEngine`: The default global template engine to pre-process markdown files. Use `false` to avoid pre-processing and only transform markdown.
+   - `htmlTemplateEngine`: The default global template engine to pre-process HTML files. Use `false` to avoid pre-processing and passthrough copy the content (HTML is not transformed, so technically this could be any plaintext).
 3. `templateEngineOverride` in the template’s front matter. Should be _one_ templating engine (`liquid`) or markdown paired with another templating engine (`liquid,md`). See examples below.
 
 ### `templateEngineOverride` Examples

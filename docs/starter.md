@@ -3,13 +3,15 @@ subtitle: Starter Projects
 tags:
   - docs-getting-started
 ---
+
 # {{ subtitle }}
 
 {% for site in starters -%}
 {% if site.disabled != true -%}
+
 1. [{% avatarlocalcache "twitter", site.author, site.author %}{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}
-{% endif -%}
-{% endfor -%}
+   {% endif -%}
+   {% endfor -%}
 
 ## Source Code Samples
 
@@ -33,4 +35,3 @@ This list shows all of the sample sites that have provided a link to their sourc
 {% endfor -%}
   </tbody>
 </table>
-

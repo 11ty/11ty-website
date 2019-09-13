@@ -11,6 +11,7 @@ submenuSortOrder:
 tags:
   - docs
 ---
+
 # Configuration
 
 Configuration is an optional feature. Add an `.eleventy.js` file to root directory of your project to override these configuration options with your own preferences.
@@ -35,7 +36,7 @@ If you expose your config as a function instead of an object literal, we’ll pa
 ```js
 module.exports = function(eleventyConfig) {
   // Add a filter using the Config API
-  eleventyConfig.addFilter( "myFilter", function() {});
+  eleventyConfig.addFilter("myFilter", function() {});
 
   // You can return your Config object (optional).
   return {
@@ -48,16 +49,17 @@ module.exports = function(eleventyConfig) {
 
 This allows you further customization options using Eleventy’s provided helper methods.
 
-* Add [Filters](/docs/filters/).
-* Add [Shortcodes](/docs/shortcodes/).
-* Add [Custom Tags](/docs/custom-tags/).
-* Add [JavaScript Functions](/docs/languages/javascript/#javascript-template-functions) {% addedin "0.7.0" %}
-* Add custom [Collections](/docs/collections/) and use [Advanced Collection Filtering and Sorting](/docs/collections/#advanced-custom-filtering-and-sorting).
-* Add some [Plugins](/docs/plugins/).
+- Add [Filters](/docs/filters/).
+- Add [Shortcodes](/docs/shortcodes/).
+- Add [Custom Tags](/docs/custom-tags/).
+- Add [JavaScript Functions](/docs/languages/javascript/#javascript-template-functions) {% addedin "0.7.0" %}
+- Add custom [Collections](/docs/collections/) and use [Advanced Collection Filtering and Sorting](/docs/collections/#advanced-custom-filtering-and-sorting).
+- Add some [Plugins](/docs/plugins/).
 
 ## Configuration Options
 
 ### Jump to:
+
 {% set toc = [
   "Input Directory",
   "Directory for Includes",
@@ -76,12 +78,14 @@ This allows you further customization options using Eleventy’s provided helper
   "Linters",
   "Data Deep Merge",
   "Watch JavaScript Dependencies",
+  "Additional Watch Targets",
   "Override Browsersync Server Options",
   "Customize Front Matter Parsing Options"
 ] %}
 {%- for link in toc %}
-* [{{ link }}](#{{ link | slug }})
-{%- endfor %}
+
+- [{{ link }}](#{{ link | slug }})
+  {%- endfor %}
 
 ### Input Directory
 
@@ -89,12 +93,12 @@ Controls the top level directory/file/glob that we’ll use to look for template
 
 Glob support is {% addedin "0.6.0" %}.
 
-| Input Directory |  |
-| --- | --- |
-| _Object Key_ | `dir.input` |
-| _Default Value_ | `.` _(current directory)_ |
-| _Valid Options_ | Any valid directory. |
-| _Command Line Override_ | `--input` |
+| Input Directory         |                           |
+| ----------------------- | ------------------------- |
+| _Object Key_            | `dir.input`               |
+| _Default Value_         | `.` _(current directory)_ |
+| _Valid Options_         | Any valid directory.      |
+| _Command Line Override_ | `--input`                 |
 
 #### Examples
 
@@ -120,23 +124,22 @@ eleventy --input=views
 
 ```js
 module.exports = {
-    dir: {
-        input: "views"
-    }
+  dir: {
+    input: "views"
+  }
 };
 ```
-
 
 ### Directory for Includes
 
 The includes directory is meant for [Eleventy layouts](/docs/layouts/), include files, extends files, partials, or macros. These files will not be processed as full template files, but can be consumed by other templates.
 
-| Includes Directory |  |
-| --- | --- |
-| _Object Key_ | `dir.includes` |
-| _Default_ | `_includes` |
-| _Valid Options_ | Any valid directory inside of `dir.input` (an empty string `""` is supported) |
-| _Command Line Override_ | _None_ |
+| Includes Directory      |                                                                               |
+| ----------------------- | ----------------------------------------------------------------------------- |
+| _Object Key_            | `dir.includes`                                                                |
+| _Default_               | `_includes`                                                                   |
+| _Valid Options_         | Any valid directory inside of `dir.input` (an empty string `""` is supported) |
+| _Command Line Override_ | _None_                                                                        |
 
 #### Example
 
@@ -160,12 +163,12 @@ This configuration option is optional but useful if you want your [Eleventy layo
   <p>When using <code>{% raw %}{% extends %}{% endraw %}</code>, Eleventy will <strong>still search the <code>_includes</code> directory</strong>. See <a href="/docs/layouts/#addendum-about-existing-templating-features">this note about existing templating features</a>.</p>
 </div>
 
-| Includes Directory |  |
-| --- | --- |
-| _Object Key_ | `dir.layouts` |
-| _Default_ | _The value in `dir.includes`_ |
-| _Valid Options_ | Any valid directory inside of `dir.input` (an empty string `""` is supported) |
-| _Command Line Override_ | _None_ |
+| Includes Directory      |                                                                               |
+| ----------------------- | ----------------------------------------------------------------------------- |
+| _Object Key_            | `dir.layouts`                                                                 |
+| _Default_               | _The value in `dir.includes`_                                                 |
+| _Valid Options_         | Any valid directory inside of `dir.input` (an empty string `""` is supported) |
+| _Command Line Override_ | _None_                                                                        |
 
 #### Example
 
@@ -181,18 +184,16 @@ module.exports = {
 };
 ```
 
-
 ### Directory for Global Data Files
-
 
 Controls the directory inside which the global data template files, available to all templates, can be found. Read more about [Global Data Files](/docs/data-global/).
 
-| Data Files Directory |  |
-| --- | --- |
-| _Object Key_ | `dir.data` |
-| _Default_ | `_data` |
-| _Valid Options_ | Any valid directory inside of `dir.input` |
-| _Command Line Override_ | _None_ |
+| Data Files Directory    |                                           |
+| ----------------------- | ----------------------------------------- |
+| _Object Key_            | `dir.data`                                |
+| _Default_               | `_data`                                   |
+| _Valid Options_         | Any valid directory inside of `dir.input` |
+| _Command Line Override_ | _None_                                    |
 
 #### Example
 
@@ -211,12 +212,12 @@ module.exports = {
 
 Controls the directory inside which the finished templates will be written to.
 
-| Output Directory |  |
-| --- | --- |
-| _Object Key_ | `dir.output` |
-| _Default_ | `_site` |
-| _Valid Options_ | Any string that will work as a directory name. Eleventy creates this if it doesn’t exist. |
-| _Command Line Override_ | `--output` |
+| Output Directory        |                                                                                           |
+| ----------------------- | ----------------------------------------------------------------------------------------- |
+| _Object Key_            | `dir.output`                                                                              |
+| _Default_               | `_site`                                                                                   |
+| _Valid Options_         | Any string that will work as a directory name. Eleventy creates this if it doesn’t exist. |
+| _Command Line Override_ | `--output`                                                                                |
 
 #### Example
 
@@ -234,12 +235,12 @@ module.exports = {
 
 The `data.dir` global data files run through this template engine before transforming to JSON. Read more about [Global Data Files](/docs/data-global/).
 
-| Data Template Engine |  |
-| --- | --- |
-| _Object Key_ | `dataTemplateEngine` |
-| _Default_ | `liquid` |
-| _Valid Options_ | A valid [template engine short name](/docs/languages/) or `false` |
-| _Command Line Override_ | _None_ |
+| Data Template Engine    |                                                                   |
+| ----------------------- | ----------------------------------------------------------------- |
+| _Object Key_            | `dataTemplateEngine`                                              |
+| _Default_               | `liquid`                                                          |
+| _Valid Options_         | A valid [template engine short name](/docs/languages/) or `false` |
+| _Command Line Override_ | _None_                                                            |
 
 #### Example
 
@@ -255,12 +256,12 @@ module.exports = {
 
 Markdown files run through this template engine before transforming to HTML.
 
-| Markdown Template Engine |  |
-| --- | --- |
-| _Object Key_ | `markdownTemplateEngine` |
-| _Default_ | `liquid` |
-| _Valid Options_ | A valid [template engine short name](/docs/languages/) or `false` |
-| _Command Line Override_ | _None_ |
+| Markdown Template Engine |                                                                   |
+| ------------------------ | ----------------------------------------------------------------- |
+| _Object Key_             | `markdownTemplateEngine`                                          |
+| _Default_                | `liquid`                                                          |
+| _Valid Options_          | A valid [template engine short name](/docs/languages/) or `false` |
+| _Command Line Override_  | _None_                                                            |
 
 #### Example
 
@@ -276,12 +277,12 @@ module.exports = {
 
 HTML templates run through this template engine before transforming to (better) HTML.
 
-| HTML Template Engine |  |
-| --- | --- |
-| _Object Key_ | `htmlTemplateEngine` |
-| _Default_ | `liquid` |
-| _Valid Options_ | A valid [template engine short name](/docs/languages/) or `false` |
-| _Command Line Override_ | _None_ |
+| HTML Template Engine    |                                                                   |
+| ----------------------- | ----------------------------------------------------------------- |
+| _Object Key_            | `htmlTemplateEngine`                                              |
+| _Default_               | `liquid`                                                          |
+| _Valid Options_         | A valid [template engine short name](/docs/languages/) or `false` |
+| _Command Line Override_ | _None_                                                            |
 
 #### Example
 
@@ -297,13 +298,13 @@ module.exports = {
 
 Specify which types of templates should be transformed.
 
-| Template Formats |  |
-| --- | --- |
-| _Object Key_ | `templateFormats` |
-| _Default_ | `html,liquid,ejs,md,hbs,mustache,haml,pug,njk` |
-| _Valid Options_ | Array of [template engine short names](/docs/languages/) |
-| _Command Line Override_ | `--formats` _(accepts a comma separated string)_ |
-| _Configuration API_ | `setTemplateFormats` {% addedin "0.2.14" %} |
+| Template Formats        |                                                          |
+| ----------------------- | -------------------------------------------------------- |
+| _Object Key_            | `templateFormats`                                        |
+| _Default_               | `html,liquid,ejs,md,hbs,mustache,haml,pug,njk`           |
+| _Valid Options_         | Array of [template engine short names](/docs/languages/) |
+| _Command Line Override_ | `--formats` _(accepts a comma separated string)_         |
+| _Configuration API_     | `setTemplateFormats` {% addedin "0.2.14" %}              |
 
 #### Examples
 
@@ -336,11 +337,11 @@ eleventy --formats=html,liquid,njk
 
 If your site lives in a different subdirectory (particularly useful with GitHub pages), use pathPrefix to specify this. It’s used by the `url` filter and inserted at the beginning of all absolute url href links. It does not affect your file structure. Leading or trailing slashes are all normalized away, so don’t worry about it.
 
-| Path Prefix |  |
-| --- | --- |
-| _Object Key_ | `pathPrefix` |
-| _Default_ | `/` |
-| _Valid Options_ | A prefix directory added to links |
+| Path Prefix             |                                       |
+| ----------------------- | ------------------------------------- |
+| _Object Key_            | `pathPrefix`                          |
+| _Default_               | `/`                                   |
+| _Valid Options_         | A prefix directory added to links     |
 | _Command Line Override_ | `--pathprefix` {% addedin "0.2.11" %} |
 
 #### Example
@@ -360,16 +361,17 @@ eleventy --pathprefix=eleventy-base-blog
 ```
 
 <a id="{{ 'Copy Files to Output using Pass-through File Copy' | slug }}"></a>
+
 ### Copy Files to Output using Passthrough File Copy
 
 Files found (that don’t have a valid template engine) from white-listed file extensions (in `templateFormats`) will passthrough to the output directory. Read more about [Passthrough Copy](/docs/copy/).
 
-| Passthrough Copy |  |
-| --- | --- |
-| _Object Key_ | `passthroughFileCopy` |
-| _Default_ | `true` |
-| _Valid Options_ | `true` or `false` |
-| _Command Line Override_ | _None_ |
+| Passthrough Copy        |                       |
+| ----------------------- | --------------------- |
+| _Object Key_            | `passthroughFileCopy` |
+| _Default_               | `true`                |
+| _Valid Options_         | `true` or `false`     |
+| _Command Line Override_ | _None_                |
 
 #### Example
 
@@ -385,12 +387,12 @@ module.exports = {
 
 If an HTML template has matching input and output directories, index.html files will have this suffix added to their output filename to prevent overwriting the template. Read more at the [HTML template docs](/docs/languages/html/#using-the-same-input-and-output-directories).
 
-| Exception Suffix |  |
-| --- | --- |
-| _Object Key_ | `htmlOutputSuffx` |
-| _Default_ | `-o` |
-| _Valid Options_ | Any valid string |
-| _Command Line Override_ | _None_ |
+| Exception Suffix        |                   |
+| ----------------------- | ----------------- |
+| _Object Key_            | `htmlOutputSuffx` |
+| _Default_               | `-o`              |
+| _Valid Options_         | Any valid string  |
+| _Command Line Override_ | _None_            |
 
 #### Example
 
@@ -403,14 +405,15 @@ module.exports = {
 ```
 
 ### Change File Suffix for Template and Directory Data Files {% addedin "0.5.3" %}
+
 When using [Template and Directory Specific Data Files](/docs/data-template-dir/), to prevent file name conflicts with non-Eleventy files in the project directory, we scope these files with a unique-to-Eleventy suffix. This key is customizable using `jsDataFileSuffix`. For example, using `.11tydata` for this value will search for `*.11tydata.js` and `*.11tydata.json` data files. Read more about [Template and Directory Specific Data Files](/docs/data-template-dir/).
 
-| File Suffix |  |
-| --- | --- |
-| _Object Key_ | `jsDataFileSuffix` |
-| _Default_ | `.11tydata` |
-| _Valid Options_ | Any valid string |
-| _Command Line Override_ | _None_ |
+| File Suffix             |                    |
+| ----------------------- | ------------------ |
+| _Object Key_            | `jsDataFileSuffix` |
+| _Default_               | `.11tydata`        |
+| _Valid Options_         | Any valid string   |
+| _Command Line Override_ | _None_             |
 
 #### Example
 
@@ -428,20 +431,26 @@ _These used to be called Filters but were renamed to Transforms to avoid confusi
 
 Transforms can modify a template’s output. For example, use a transform to format/prettify an HTML file with proper whitespace.
 
-| Transforms |  |
-| --- | --- |
-| _Object Key_ | `filters` _(Deprecated and renamed, use the Configuration API instead)_ |
-| _Default_ | `{}` |
-| _Valid Options_ | Object literal |
-| _Command Line Override_ | _None_ |
-| _Configuration API_ | `addTransform` {% addedin "0.3.3" %} |
+| Transforms              |                                                                         |
+| ----------------------- | ----------------------------------------------------------------------- |
+| _Object Key_            | `filters` _(Deprecated and renamed, use the Configuration API instead)_ |
+| _Default_               | `{}`                                                                    |
+| _Valid Options_         | Object literal                                                          |
+| _Command Line Override_ | _None_                                                                  |
+| _Configuration API_     | `addTransform` {% addedin "0.3.3" %}                                    |
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addTransform("transform-name", function(content, outputPath) {});
+  eleventyConfig.addTransform("transform-name", function(
+    content,
+    outputPath
+  ) {});
 
   // Support for async transforms was added in 0.7.0
-  eleventyConfig.addTransform("async-transform-name", async function(content, outputPath) {});
+  eleventyConfig.addTransform("async-transform-name", async function(
+    content,
+    outputPath
+  ) {});
 };
 ```
 
@@ -454,7 +463,7 @@ const htmlmin = require("html-minifier");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-    if( outputPath.endsWith(".html") ) {
+    if (outputPath.endsWith(".html")) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
@@ -472,17 +481,25 @@ module.exports = function(eleventyConfig) {
 
 Similar to Transforms, Linters are provided to analyze a template’s output without modifying it.
 
-| Linters |  |
-| --- | --- |
-| _Object Key_ | _N/A_ |
-| _Valid Options_ | Callback function |
-| _Command Line Override_ | _None_ |
-| _Configuration API_ | `addLinter` {% addedin "0.5.4" %} |
+| Linters                 |                                   |
+| ----------------------- | --------------------------------- |
+| _Object Key_            | _N/A_                             |
+| _Valid Options_         | Callback function                 |
+| _Command Line Override_ | _None_                            |
+| _Configuration API_     | `addLinter` {% addedin "0.5.4" %} |
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addLinter("linter-name", function(content, inputPath, outputPath) {});
-  eleventyConfig.addLinter("async-linter-name", async function(content, inputPath, outputPath) {});
+  eleventyConfig.addLinter("linter-name", function(
+    content,
+    inputPath,
+    outputPath
+  ) {});
+  eleventyConfig.addLinter("async-linter-name", async function(
+    content,
+    inputPath,
+    outputPath
+  ) {});
 };
 ```
 
@@ -496,13 +513,23 @@ This example has been packaged as a plugin in [`eleventy-plugin-inclusive-langua
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addLinter("inclusive-language", function(content, inputPath, outputPath) {
-    let words = "simply,obviously,basically,of course,clearly,just,everyone knows,however,easy".split(",");
-    if( inputPath.endsWith(".md") ) {
-      for( let word of words) {
+  eleventyConfig.addLinter("inclusive-language", function(
+    content,
+    inputPath,
+    outputPath
+  ) {
+    let words = "simply,obviously,basically,of course,clearly,just,everyone knows,however,easy".split(
+      ","
+    );
+    if (inputPath.endsWith(".md")) {
+      for (let word of words) {
         let regexp = new RegExp("\\b(" + word + ")\\b", "gi");
-        if(content.match(regexp)) {
-          console.warn(chalk.yellow(`Inclusive Language Linter (${inputPath}) Found: ${word}`));
+        if (content.match(regexp)) {
+          console.warn(
+            chalk.yellow(
+              `Inclusive Language Linter (${inputPath}) Found: ${word}`
+            )
+          );
         }
       }
     }
@@ -577,8 +604,7 @@ module.exports = function(eleventyConfig) {
 
 ### Customize Front Matter Parsing Options {% addedin "0.9.0" %}
 
-* Documented at [Front Matter Data](/docs/data-frontmatter/#advanced%3A-customize-front-matter-parsing).
-
+- Documented at [Front Matter Data](/docs/data-frontmatter/#advanced%3A-customize-front-matter-parsing).
 
 <!--
 ### Experiments

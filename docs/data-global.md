@@ -5,6 +5,7 @@ tags:
 relatedLinks:
   /docs/config/#default-template-engine-for-global-data-files: Default Template Engine for Global Data Files
 ---
+
 # Global Data Files
 
 Your global data folder is controlled by the [`dir.data` configuration option](/docs/config/#directory-for-global-data-files). All `*.json` and `module.exports` values from [`*.js` files](/docs/data-js/) in this directory will be added into a global data object available to all templates.
@@ -14,20 +15,14 @@ Your global data folder is controlled by the [`dir.data` configuration option](/
 Consider a JSON data file located at `_data/userList.json` with the following content:
 
 ```js
-[
-  "user1",
-  "user2"
-]
+["user1", "user2"];
 ```
 
 This data will be available to your templates under the `userList` key like this:
 
 ```js
 {
-  userList: [
-    "user1",
-    "user2"
-  ]
+  userList: ["user1", "user2"];
 }
 ```
 
@@ -40,10 +35,7 @@ Our data will be now available to your templates under a `users` key like so:
 ```js
 {
   users: {
-    userList: [
-      "user1",
-      "user2"
-    ]
+    userList: ["user1", "user2"];
   }
 }
 ```

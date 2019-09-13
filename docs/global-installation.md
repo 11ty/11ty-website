@@ -1,6 +1,7 @@
 ---
 subtitle: Install Eleventy Globally
 ---
+
 # {{ subtitle }}
 
 {% callout "warn" %}Installing globally is a quick way to get started but <strong>it is preferred to use <a href="/docs/getting-started/">local project installation</a> instead</strong>. Local installation will cause fewer interoperability issues later if you use Eleventy on multiple projects that may want to use different Eleventy versions.{% endcallout %}
@@ -39,4 +40,3 @@ npm uninstall -g eleventy-cli
 ```
 
 </div>
-

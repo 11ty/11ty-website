@@ -3,7 +3,8 @@ subtitle: Passthrough File Copy
 tags:
   - docs-config
 ---
-# Passthrough File Copy  {% addedin "0.2.7" %}
+
+# Passthrough File Copy {% addedin "0.2.7" %}
 
 Eleventy, by default, searches for any file in the input directory with a file extension listed in your [`templateFormats` configuration](/docs/config/#template-formats). That means if you’ve listed `njk` in your `templateFormats`, we’ll look for any Nunjucks templates (files with the `.njk` file extension).
 
@@ -27,6 +28,7 @@ For example, in the above code sample `css` is not currently a recognized Eleven
 You might want to use this for images by adding `"jpg"`, `"png"`, or maybe even `"webp"`.
 
 <a id="{{ 'Manual Pass-through Copy (Faster)' | slug }}"></a>
+
 ## Manual Passthrough File Copy (Faster) {% addedin "0.2.14" %}
 
 Searching the entire directory structure for files to copy based on file extensions is not optimal with large directory structures. If we know what non-template static content we want to appear in our output, we can opt-in to specify _files_ or _directories_ for Eleventy to copy. This will probably speed up your build times.
@@ -41,7 +43,7 @@ module.exports = function(eleventyConfig) {
 
   // Copy `img/` to `_site/img`
   eleventyConfig.addPassthroughCopy("img");
-  
+
   // Copy `css/fonts/` to `_site/css/fonts`
   // If you use a subdirectory, it’ll copy using the same directory structure.
   eleventyConfig.addPassthroughCopy("css/fonts");
@@ -56,8 +58,8 @@ As stated above, passthrough file copy paths are relative to the project root an
 
 For example:
 
-* `input` directory is `src`
-* `output` directory is `_site`.
+- `input` directory is `src`
+- `output` directory is `_site`.
 
 If we copy `src/img` using passthrough file copy, it will copy to `_site/img`.
 
@@ -78,7 +80,7 @@ module.exports = function(eleventyConfig) {
 
 This example emulates the `templateFormats` passthrough file copy method above, copying all `jpg` image files to the output folder, maintaining their directory structure. If you do not want to maintain the same directory structure, [change the output directory.](#using-globs-and-output-directories)
 
-Note that this method is slower than manual passthrough file copy without globs, as it searching the entire directory structure and copies each file in Eleventy individually.
+Note that this method is slower than manual passthrough file copy without globs, as it’s searching the entire directory structure and copies each file in Eleventy individually.
 
 {% codetitle ".eleventy.js" %}
 
@@ -91,8 +93,8 @@ module.exports = function(eleventyConfig) {
 
 With an output directory of `_site`:
 
- * `img/avatar.jpg` will copy to `_site/img/avatar.jpg`
- * `subdir/img/avatar.jpg` will copy to `_site/subdir/img/avatar.jpg`
+- `img/avatar.jpg` will copy to `_site/img/avatar.jpg`
+- `subdir/img/avatar.jpg` will copy to `_site/subdir/img/avatar.jpg`
 
 ### Change the Output Directory {% addedin "0.9.0" %}
 
@@ -107,7 +109,7 @@ module.exports = function(eleventyConfig) {
   // Output directory: _site
 
   // Copy `img/` to `_site/subfolder/img`
-  eleventyConfig.addPassthroughCopy({ "img": "subfolder/img" });
+  eleventyConfig.addPassthroughCopy({ img: "subfolder/img" });
 
   // Copy `src/img/` to `_site/subfolder/img`
   eleventyConfig.addPassthroughCopy({ "src/img": "subfolder/img" });
@@ -131,7 +133,7 @@ module.exports = function(eleventyConfig) {
 
 #### Using Globs and Output Directories
 
-Note that this method is slower than manual passthrough file copy without globs, as it searching the entire directory structure and copies each file in Eleventy individually.
+Note that this method is slower than manual passthrough file copy without globs, as it’s searching the entire directory structure and copies each file in Eleventy individually.
 
 {% codetitle ".eleventy.js" %}{% codetitle "_site", "Output Dir" %}
 
@@ -147,9 +149,8 @@ module.exports = function(eleventyConfig) {
 
 With an output directory of `_site`:
 
- * `img/avatar.jpg` would copy to `_site/img/avatar.jpg`
- * `subdir/img/avatar.jpg` would copy to `_site/img/avatar.jpg`
-
+- `img/avatar.jpg` would copy to `_site/img/avatar.jpg`
+- `subdir/img/avatar.jpg` would copy to `_site/img/avatar.jpg`
 
 ## Passthrough All Content {% addedin "0.5.4" %}
 

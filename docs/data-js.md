@@ -6,6 +6,7 @@ relatedLinks:
   /docs/config/#change-file-suffix-for-template-and-directory-data-files: Change the file suffix `.11tydata` for Template/Directory data files
   /docs/config/#watch-javascript-dependencies: Watch JavaScript Dependencies
 ---
+
 # JavaScript Data Files {% addedin "0.5.3" %}
 
 This file applies to both [Global Data Files](/docs/data-global/) (`*.js` inside of your `_data` directory) and [Template and Directory Data Files](/docs/data-template-dir/) (`*.11tydata.js` files that are paired with a template file or directory).
@@ -15,20 +16,14 @@ This file applies to both [Global Data Files](/docs/data-global/) (`*.js` inside
 You can export data from a JavaScript file to add data, too. This allows you to execute arbitrary code to fetch data at build time.
 
 ```js
-module.exports = [
-  "user1",
-  "user2"
-];
+module.exports = ["user1", "user2"];
 ```
 
 If you return a `function`, we’ll use the return value from that function.
 
 ```js
 module.exports = function() {
-  return [
-    "user1",
-    "user2"
-  ];
+  return ["user1", "user2"];
 };
 ```
 
@@ -37,10 +32,7 @@ We use `await` on the return value, so you can return a promise and/or use an `a
 ```js
 module.exports = function() {
   return new Promise((resolve, reject) => {
-    resolve([
-      "user1",
-      "user2"
-    ]);
+    resolve(["user1", "user2"]);
   });
 };
 ```
@@ -50,7 +42,7 @@ async function fetchUserData(username) {
   // do some async things
   return username;
 }
- 
+
 module.exports = async function() {
   let user1 = await fetchUserData("user1");
   let user2 = await fetchUserData("user2");
@@ -115,6 +107,7 @@ ELEVENTY_ENV=production npx @11ty/eleventy
 Working from our [Inline CSS Quick Tip](/docs/quicktips/inline-css/), we can modify the output to only minify our CSS if we’re building for production:
 
 {% raw %}
+
 ```
 {% if myProject.environment == "production" %}
 <style>{{ css | cssmin | safe }}</style>
@@ -122,4 +115,5 @@ Working from our [Inline CSS Quick Tip](/docs/quicktips/inline-css/), we can mod
 <style>{{ css | safe }}</style>
 {% endif %}
 ```
+
 {% endraw %}

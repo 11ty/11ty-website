@@ -3,11 +3,13 @@ tipindex: "006"
 tiptitle: "Adding a 404 Not Found Page to your Static Site"
 date: 2018-09-20
 ---
+
 A `404: Not Found` page is a pretty standard thing on the web. It’s particularly useful when someone shares a broken or mistyped link. You don’t need dynamic middleware to do this, it’s pretty easy to add to a statically generated site. There are a few options, depending on your web host:
 
 But first let’s make our `404.html` template:
 
 {% raw %}
+
 ```html
 ---
 title: Oops! Not Found
@@ -26,6 +28,7 @@ permalink: 404.html
   </body>
 </html>
 ```
+
 {% endraw %}
 
 Eleventy will output this template to `404.html`.
@@ -44,7 +47,7 @@ ErrorDocument 404 /404.html
 
 ## With `--serve`
 
-If you're using `eleventy --serve`, you can configure Browsersync to do the 404 routing by passing a callback in your config. Read more on [the BrowserSyncConfig option](https://www.11ty.io/docs/config/#override-browsersync-server-options), the [Browsersync callbacks option](https://browsersync.io/docs/options#option-callbacks), and [how to provide a 404 using a Browsersync callback](https://github.com/browsersync/browser-sync/issues/1398). 
+If you're using `eleventy --serve`, you can configure Browsersync to do the 404 routing by passing a callback in your config. Read more on [the BrowserSyncConfig option](https://www.11ty.io/docs/config/#override-browsersync-server-options), the [Browsersync callbacks option](https://browsersync.io/docs/options#option-callbacks), and [how to provide a 404 using a Browsersync callback](https://github.com/browsersync/browser-sync/issues/1398).
 
 {% codetitle ".eleventy.js" %}
 
@@ -55,7 +58,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
       ready: function(err, bs) {
-        const content_404 = fs.readFileSync('_site/404.html');
+        const content_404 = fs.readFileSync("_site/404.html");
 
         bs.addMiddleware("*", (req, res) => {
           // Provides the 404 content without redirect.

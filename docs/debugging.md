@@ -3,6 +3,7 @@ subtitle: Debugging
 tags:
   - docs-getting-started
 ---
+
 # Debugging
 
 Having trouble? Want to see what Eleventy is doing behind the scenes? Use `DEBUG` mode. We’re taking advantage of the [excellent `debug` package](https://www.npmjs.com/package/debug) for this. Enable with the `DEBUG` env variable, either specific to eleventy (`DEBUG=Eleventy*`) or globally (`DEBUG=*`):

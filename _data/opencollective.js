@@ -5,44 +5,53 @@ const flatcache = require("flat-cache");
 const path = require("path");
 
 function getCacheKey() {
-	let date = new Date();
-	return `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()}`;
+  let date = new Date();
+  return `${date.getUTCFullYear()}-${date.getUTCMonth() +
+    1}-${date.getUTCDate()}`;
 }
 
 module.exports = async function() {
-	let cache = flatcache.load("opencollective-backers", path.resolve("./_datacache"));
-	let key = getCacheKey();
-	let cachedData = cache.getKey(key);
-	if(!cachedData || process.env.ELEVENTY_AVATARS) {
-		console.log( "Fetching new opencollective backers…" );
-		try {
-			let newDataJson = await fetch("https://opencollective.com/11ty/members/all.json").then(res => res.json());
+  let cache = flatcache.load(
+    "opencollective-backers",
+    path.resolve("./_datacache")
+  );
+  let key = getCacheKey();
+  let cachedData = cache.getKey(key);
+  if (!cachedData || process.env.ELEVENTY_AVATARS) {
+    console.log("Fetching new opencollective backers…");
+    try {
+      let newDataJson = await fetch(
+        "https://opencollective.com/11ty/members/all.json"
+      ).then(res => res.json());
 
-			newDataJson.sort(function(a, b) {
-				// Sort by total amount donated (desc)
-				return b.totalAmountDonated - a.totalAmountDonated;
-			});
+      newDataJson.sort(function(a, b) {
+        // Sort by total amount donated (desc)
+        return b.totalAmountDonated - a.totalAmountDonated;
+      });
 
-			await fs.writeFile("./_data/supporters.json", JSON.stringify(newDataJson, null, 2));
+      await fs.writeFile(
+        "./_data/supporters.json",
+        JSON.stringify(newDataJson, null, 2)
+      );
 
-			let backers = newDataJson.filter(function(entry) {
-				return entry.role.toLowerCase() === "backer";
-			}).length;
+      let backers = newDataJson.filter(function(entry) {
+        return entry.role.toLowerCase() === "backer";
+      }).length;
 
-			let newData = {
-				backers: backers
-			};
+      let newData = {
+        backers: backers
+      };
 
-			cache.setKey(key, newData);
-			cache.save();
-			return newData;
-		} catch(e) {
-			console.log( "Failed, returning 0 opencollective backers.", e );
-			return {
-				backers: 0
-			};
-		}
-	}
+      cache.setKey(key, newData);
+      cache.save();
+      return newData;
+    } catch (e) {
+      console.log("Failed, returning 0 opencollective backers.", e);
+      return {
+        backers: 0
+      };
+    }
+  }
 
-	return cachedData;
+  return cachedData;
 };

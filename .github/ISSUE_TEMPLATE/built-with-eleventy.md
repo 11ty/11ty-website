@@ -3,17 +3,16 @@ name: Built with Eleventy
 about: I built something with Eleventy and want to add it to 11ty.io!
 title: I built a site with Eleventy!
 labels: new-site!
-assignees: ''
-
+assignees: ""
 ---
 
 Please supply the following information:
 
-* URL of the live site
-* Name of the site
-* A text description of the site
-* Twitter avatar of either the site or the author
-* _Optional_: URL to the source code
+- URL of the live site
+- Name of the site
+- A text description of the site
+- Twitter avatar of either the site or the author
+- _Optional_: URL to the source code
 
 ---
 
@@ -23,10 +22,10 @@ Built with Eleventy sites each have a separate file in `_data/sites/*.json` with
 
 ```json
 {
-	"url": "https://www.zachleat.com/",
-	"name": "Zach Leatherman",
-	"description": "A 10+ years-running blog about web development.",
-	"twitter": "zachleat",
-	"source_url": "https://github.com/zachleat/zachleat.com"
+  "url": "https://www.zachleat.com/",
+  "name": "Zach Leatherman",
+  "description": "A 10+ years-running blog about web development.",
+  "twitter": "zachleat",
+  "source_url": "https://github.com/zachleat/zachleat.com"
 }
 ```

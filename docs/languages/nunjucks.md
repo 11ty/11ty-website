@@ -9,6 +9,7 @@ tags:
   - related-custom-tags
 layout: layouts/langs.njk
 ---
+
 | Eleventy Short Name | File Extension | NPM Package                                       |
 | ------------------- | -------------- | ------------------------------------------------- |
 | `njk`               | `.njk`         | [`nunjucks`](https://mozilla.github.io/nunjucks/) |
@@ -35,18 +36,18 @@ module.exports = function(eleventyConfig) {
 
 ## Supported Features
 
-| Feature                                                                      | Syntax                                                                    |
-| ---------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| ✅ Includes                                                                  | `{% raw %}{% include 'included.njk' %}{% endraw %}` looks in `_includes/included.njk`. Does not process front matter in the include file.         |
-| ✅ Includes (Relative Path) {% addedin "0.9.0" %}                                                                   | Relative paths use `./` (template’s directory) or `../` (template’s parent directory).<br><br>Example: `{% raw %}{% include './included.njk' %}{% endraw %}` looks for `included.njk` in the template’s current directory. Does not process front matter in the include file.         |
-| ✅ Extends                                                                   | `{% raw %}{% extends 'base.njk' %}{% endraw %}` looks in `_includes/base.njk`. Does not process front matter in the include file.                  |
-| ✅ Extends (Relative Path) {% addedin "0.9.0" %}                                                                   | Relative paths use `./` (template’s directory) or `../` (template’s parent directory)<br><br>Example: `{% raw %}{% extends './base.njk' %}{% endraw %}` looks for `base.njk` in the template’s current directory. Does not process front matter in the include file.                  |
-| ✅ Imports                                                                   | `{% raw %}{% import 'macros.njk' %}{% endraw %}` looks in `_includes/macros.njk`. Does not process front matter in the include file.               |
-| ✅ Imports (Relative Path) {% addedin "0.9.0" %}                                                                   | Relative paths use `./` (template’s directory) or `../` (template’s parent directory):<br>`{% raw %}{% import './macros.njk' %}{% endraw %}` looks for `macros.njk` in the template’s current directory. Does not process front matter in the include file.               |
-| ✅ Filters                                                                   | `{% raw %}{% name | filterName %}{% endraw %}` Read more about [Filters](/docs/filters/).                                |
-| ✅ [Eleventy Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{% name | filterName %}{% endraw %}` Read more about [Filters](/docs/filters/). |
-| ✅ [Custom Tags](/docs/custom-tags/) | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Custom Tags](/docs/custom-tags/). {% addedin "0.5.0" %}|
-| ✅ [Shortcodes](/docs/shortcodes/) | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/). {% addedin "0.5.0" %}|
+| Feature                                                           | Syntax                                                                                                                                                                                                                                                                        |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ✅ Includes                                                       | `{% raw %}{% include 'included.njk' %}{% endraw %}` looks in `_includes/included.njk`. Does not process front matter in the include file.                                                                                                                                     |
+| ✅ Includes (Relative Path) {% addedin "0.9.0" %}                 | Relative paths use `./` (template’s directory) or `../` (template’s parent directory).<br><br>Example: `{% raw %}{% include './included.njk' %}{% endraw %}` looks for `included.njk` in the template’s current directory. Does not process front matter in the include file. |
+| ✅ Extends                                                        | `{% raw %}{% extends 'base.njk' %}{% endraw %}` looks in `_includes/base.njk`. Does not process front matter in the include file.                                                                                                                                             |
+| ✅ Extends (Relative Path) {% addedin "0.9.0" %}                  | Relative paths use `./` (template’s directory) or `../` (template’s parent directory)<br><br>Example: `{% raw %}{% extends './base.njk' %}{% endraw %}` looks for `base.njk` in the template’s current directory. Does not process front matter in the include file.          |
+| ✅ Imports                                                        | `{% raw %}{% import 'macros.njk' %}{% endraw %}` looks in `_includes/macros.njk`. Does not process front matter in the include file.                                                                                                                                          |
+| ✅ Imports (Relative Path) {% addedin "0.9.0" %}                  | Relative paths use `./` (template’s directory) or `../` (template’s parent directory):<br>`{% raw %}{% import './macros.njk' %}{% endraw %}` looks for `macros.njk` in the template’s current directory. Does not process front matter in the include file.                   |
+| ✅ Filters                                                        | `{% raw %}{% name | filterName %}{% endraw %}` Read more about [Filters](/docs/filters/).                                                                                                                                                                                     |
+| ✅ [Eleventy Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{% name | filterName %}{% endraw %}` Read more about [Filters](/docs/filters/).                                                                                                                                                                                     |
+| ✅ [Custom Tags](/docs/custom-tags/)                              | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Custom Tags](/docs/custom-tags/). {% addedin "0.5.0" %}                                                                                                                                                          |
+| ✅ [Shortcodes](/docs/shortcodes/)                                | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/). {% addedin "0.5.0" %}                                                                                                                                                            |
 
 ## Filters
 
@@ -58,10 +59,10 @@ Read more about [Nunjucks Filter syntax](https://mozilla.github.io/nunjucks/temp
 module.exports = function(eleventyConfig) {
   // Nunjucks Filter
   eleventyConfig.addNunjucksFilter("myNjkFilter", function(value) { … });
-  
+
   // Nunjucks Asynchronous Filter (read on below)
   eleventyConfig.addNunjucksAsyncFilter("myAsyncNjkFilter", function(value, callback) { … });
-  
+
   // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
   eleventyConfig.addFilter("myFilter", function(value) { … });
 };
@@ -70,9 +71,11 @@ module.exports = function(eleventyConfig) {
 ### Usage
 
 {% raw %}
+
 ```html
 <h1>{{ myVariable | myFilter }}</h1>
 ```
+
 {% endraw %}
 
 ### Asynchronous Nunjucks Filters {% addedin "0.2.13" %}
@@ -81,7 +84,10 @@ By default, almost all templating engines are synchronous. Nunjucks supports som
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addNunjucksAsyncFilter("myAsyncFilter", function(value, callback) {
+  eleventyConfig.addNunjucksAsyncFilter("myAsyncFilter", function(
+    value,
+    callback
+  ) {
     setTimeout(function() {
       callback(null, "My Result");
     }, 100);
@@ -95,7 +101,11 @@ Here’s a Nunjucks example with 2 arguments:
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addNunjucksAsyncFilter("myAsyncFilter", function(value1, value2, callback) {
+  eleventyConfig.addNunjucksAsyncFilter("myAsyncFilter", function(
+    value1,
+    value2,
+    callback
+  ) {
     setTimeout(function() {
       callback(null, "My Result");
     }, 100);
@@ -115,7 +125,7 @@ Shortcodes are basically reusable bits of content. You can add Nunjucks specific
 module.exports = function(eleventyConfig) {
   // Nunjucks Shortcode
   eleventyConfig.addNunjucksShortcode("user", function(name, twitterUsername) { … });
-  
+
   // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
   eleventyConfig.addShortcode("user", function(name, twitterUsername) {
     return `<div class="user">
@@ -129,9 +139,11 @@ module.exports = function(eleventyConfig) {
 #### Usage
 
 {% raw %}
+
 ```html
 {% user "Zach Leatherman", "zachleat" %}
 ```
+
 {% endraw %}
 
 #### Outputs
@@ -139,7 +151,8 @@ module.exports = function(eleventyConfig) {
 ```html
 <div class="user">
   <div class="user_name">Zach Leatherman</div>
-  <div class="user_twitter">@zachleat</div>>
+  <div class="user_twitter">@zachleat</div>
+  >
 </div>
 ```
 
@@ -149,7 +162,7 @@ module.exports = function(eleventyConfig) {
 module.exports = function(eleventyConfig) {
   // Nunjucks Shortcode
   eleventyConfig.addPairedNunjucksShortcode("user", function(bioContent, name, twitterUsername) { … });
-  
+
   // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
   eleventyConfig.addPairedShortcode("user", function(bioContent, name, twitterUsername) {
     return `<div class="user">
@@ -166,11 +179,12 @@ module.exports = function(eleventyConfig) {
 Note that you can put any Nunjucks tags or content inside the `{% raw %}{% user %}{% endraw %}` shortcode! Yes, even other shortcodes!
 
 {% raw %}
+
 ```html
-{% user "Zach Leatherman", "zachleat" %}
-  Zach likes to take long walks on Nebraska beaches.
-{% enduser %}
+{% user "Zach Leatherman", "zachleat" %} Zach likes to take long walks on
+Nebraska beaches. {% enduser %}
 ```
+
 {% endraw %}
 
 ##### Outputs
@@ -204,10 +218,12 @@ ${user.twitter ? `<div class="user_twitter">@${user.twitter}</div>` : ''}
 The order of the arguments doesn’t matter.
 
 {% raw %}
+
 ```html
-{% user name="Zach Leatherman", twitter="zachleat" %}
-{% user twitter="zachleat", name="Zach Leatherman" %}
+{% user name="Zach Leatherman", twitter="zachleat" %} {% user
+twitter="zachleat", name="Zach Leatherman" %}
 ```
+
 {% endraw %}
 
 ##### Outputs
@@ -224,9 +240,11 @@ The order of the arguments doesn’t matter.
 Importantly, this syntax means that any of the arguments can be optional (without having to pass in a bunch of `null, null, null` to maintain order).
 
 {% raw %}
+
 ```html
 {% user name="Zach Leatherman" %}
 ```
+
 {% endraw %}
 
 ##### Outputs
@@ -245,11 +263,18 @@ Note that the configuration methods here to add asynchronous shortcodes are diff
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addNunjucksAsyncShortcode("user", async function(name, twitterUsername) {
+  eleventyConfig.addNunjucksAsyncShortcode("user", async function(
+    name,
+    twitterUsername
+  ) {
     return await fetchAThing();
   });
 
-  eleventyConfig.addPairedNunjucksAsyncShortcode("user2", async function(content, name, twitterUsername) {
+  eleventyConfig.addPairedNunjucksAsyncShortcode("user2", async function(
+    content,
+    name,
+    twitterUsername
+  ) {
     return await fetchAThing();
   });
 };
@@ -260,12 +285,10 @@ module.exports = function(eleventyConfig) {
 (It’s the same.)
 
 {% raw %}
+
 ```html
-{% user "Zach Leatherman", "zachleat" %}
-
-{% user2 "Zach Leatherman" "zachleat" %}
-  Zach likes to take long walks on Nebraska beaches.
-{% enduser2 %}
+{% user "Zach Leatherman", "zachleat" %} {% user2 "Zach Leatherman" "zachleat"
+%} Zach likes to take long walks on Nebraska beaches. {% enduser2 %}
 ```
-{% endraw %}
 
+{% endraw %}

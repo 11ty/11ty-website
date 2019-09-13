@@ -2,6 +2,7 @@
 subtitle: JavaScript Template Literals
 layout: layouts/langs.njk
 ---
+
 | Eleventy Short Name | File Extension | NPM Package |
 | ------------------- | -------------- | ----------- |
 | `jstl`              | `.jstl`        | N/A         |

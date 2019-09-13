@@ -1,7 +1,7 @@
 # 11ty.io
 
-* https://www.11ty.io/
-* https://www.11ty.io/docs/
+- https://www.11ty.io/
+- https://www.11ty.io/docs/
 
 The website and documentation for the [Eleventy static site generator](https://github.com/11ty/eleventy/).
 
