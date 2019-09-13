@@ -70,5 +70,11 @@
 		"name": "Eleventy Starter Ghost",
 		"description": "A starter template to build websites with Ghost & Eleventy.",
 		"author": "DavidDarnes"
+	},
+	{
+		"url": "https://github.com/danfascia/tai11s",
+		"name": "Tai11s",
+		"description": "An Eleventy starter with Tailwind CSS and PurgeCSS",
+		"author": "danfascia"
 	}
 ]
