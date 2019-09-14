@@ -76,6 +76,7 @@ This allows you further customization options using Eleventy’s provided helper
   "Linters",
   "Data Deep Merge",
   "Watch JavaScript Dependencies",
+  "Additional Watch Targets"
   "Override Browsersync Server Options",
   "Customize Front Matter Parsing Options"
 ] %}
@@ -556,6 +557,18 @@ When in `--watch` mode, Eleventy will spider the dependencies of your [JavaScrip
 module.exports = function(eleventyConfig) {
   // Enabled by default
   eleventyConfig.setWatchJavaScriptDependencies(false);
+};
+```
+
+### Additional Watch Targets
+
+The `addWatchTarget` config option allows you to manually add a directory for Eleventy to watch. When files in this directory change Eleventy will trigger a rebuild. This is useful if Eleventy is not directly aware filedependencies.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addWatchTarget("./src/scss/");
 };
 ```
 
