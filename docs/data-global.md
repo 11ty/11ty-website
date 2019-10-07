@@ -31,6 +31,8 @@ This data will be available to your templates under the `userList` key like this
 }
 ```
 
+(Note: `kebab-case` is not supported in global data filenames.)
+
 ### Folders
 
 If a data file is in a folder, the folder name will inform your global data object structure. For example, in our previous example, consider if our `userList.json` file was moved into a `users` folder at `_data/users/userList.json`.
