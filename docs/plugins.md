@@ -30,6 +30,7 @@ All official plugins live under the `@11ty` npm organization and plugin names wi
 * [@shawnsandy/npm_info](https://www.npmjs.com/package/@shawnsandy/npm_info) by [Shawn Sandy](https://github.com/shawn-sandy) will provide you with package detail for an npm package or GitHub info.
 * [eleventy-plugin-lazyimages](https://www.npmjs.com/package/eleventy-plugin-lazyimages) by [Liam Fiddler](https://liamfiddler.com) will add progressive lazy loading to your images.
 * [eleventy-xml-plugin](https://www.npmjs.com/package/eleventy-xml-plugin) by [Jeremias Menichelli](https://jeremenichelli.io) adds Liquid filters used for sitemap and RSS/feed file generation.
+* [eleventy-plugin-sass](https://www.npmjs.com/package/eleventy-plugin-sass) by [Maarten Schroeven](https://github.com/Sonaryr) will add the ability to use Sass for your stylesheets
 * [**Search for `eleventy-plugin` on `npm`**](https://www.npmjs.com/search?q=eleventy-plugin)
 
 
