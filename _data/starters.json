@@ -70,5 +70,11 @@
 		"name": "Eleventy Starter Ghost",
 		"description": "A starter template to build websites with Ghost & Eleventy.",
 		"author": "DavidDarnes"
+	},
+	{
+		"url": "https://jamstackthemes.dev/ssg/eleventy/",
+		"name": "JAMStack Themes",
+		"description": "A list of starter themes filterable by supported static site generator and CMS. Link is directly to 11ty category.",
+		"author": "stackbithq"
 	}
 ]
