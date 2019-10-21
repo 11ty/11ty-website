@@ -63,6 +63,19 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+As a convenience, you can use the `this` variable within a filter to access the data values of the page such as `page.url` and `pkg`:
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addFilter("linkRelCanonical", function(value) {
+    // "canonicalRoot" comes from package.json 
+    return `<link rel="canonical" href="${this.pkg.canonicalRoot}${this.page.url}">`;
+  });
+};
+```
+
+Note that you *must* use the `function(value) { … }` form to make use of this, not arrow (`(value) => { … }`) functions!
+
 Read more about filters on the individual Template Language documentation pages:
 
 {% templatelangs templatetypes, page, ["njk", "liquid", "hbs", "11ty.js"], "#filters" %}
