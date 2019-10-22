@@ -1,7 +1,8 @@
 ---
 subtitle: Supporting Eleventy
+menuSectionName: docs-support
 tags:
-  - docs-overview
+  - docs
 ignoreGitHubButtons: true
 ignoreSupporters: true
 ---

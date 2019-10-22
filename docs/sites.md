@@ -1,7 +1,7 @@
 ---
 subtitle: Sites Using Eleventy
 tags:
-  - docs-overview
+  - docs-support
 ---
 
 # {{ sites | getsize }} {{ subtitle }}

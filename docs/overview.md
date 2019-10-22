@@ -3,9 +3,9 @@ subtitle: Overview
 menuSectionName: docs-overview
 submenuSortOrder:
   - resources
+  - how-to-support
   - testimonials
   - sites
-  - how-to-support
   - supporters
 tags:
   - docs

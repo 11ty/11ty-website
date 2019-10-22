@@ -1,6 +1,8 @@
 ---
 subtitle: Eleventy Supporters
 ignoreSupporters: true
+tags:
+  - docs-support
 ---
 # {{ "Eleventy Is Supported Financially By The Following Lovely People" | orphanWrap | safe }}
 
