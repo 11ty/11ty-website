@@ -83,6 +83,18 @@
       "size": 1641
     }
   ],
+  "chris-collins": [
+    {
+      "name": "chris-collins",
+      "path": "img/avatar-local-cache/opencollective/chris-collins.webp",
+      "size": 808
+    },
+    {
+      "name": "chris-collins",
+      "path": "img/avatar-local-cache/opencollective/chris-collins.jpg",
+      "size": 1380
+    }
+  ],
   "christian-fei": [
     {
       "name": "christian-fei",
@@ -129,6 +141,18 @@
       "name": "dave-rupert",
       "path": "img/avatar-local-cache/opencollective/dave-rupert.jpg",
       "size": 1988
+    }
+  ],
+  "ed-spencer": [
+    {
+      "name": "ed-spencer",
+      "path": "img/avatar-local-cache/opencollective/ed-spencer.webp",
+      "size": 1752
+    },
+    {
+      "name": "ed-spencer",
+      "path": "img/avatar-local-cache/opencollective/ed-spencer.jpg",
+      "size": 2111
     }
   ],
   "eric-bailey": [
@@ -203,6 +227,18 @@
       "size": 1911
     }
   ],
+  "kayce-basques": [
+    {
+      "name": "kayce-basques",
+      "path": "img/avatar-local-cache/opencollective/kayce-basques.webp",
+      "size": 1734
+    },
+    {
+      "name": "kayce-basques",
+      "path": "img/avatar-local-cache/opencollective/kayce-basques.png",
+      "size": 2051
+    }
+  ],
   "keenan-payne": [
     {
       "name": "keenan-payne",
@@ -237,6 +273,18 @@
       "name": "kyosuke-nakamura",
       "path": "img/avatar-local-cache/opencollective/kyosuke-nakamura.jpg",
       "size": 1573
+    }
+  ],
+  "makoto-kawasaki": [
+    {
+      "name": "makoto-kawasaki",
+      "path": "img/avatar-local-cache/opencollective/makoto-kawasaki.webp",
+      "size": 654
+    },
+    {
+      "name": "makoto-kawasaki",
+      "path": "img/avatar-local-cache/opencollective/makoto-kawasaki.jpg",
+      "size": 1237
     }
   ],
   "manuel-matuzovic": [
@@ -400,6 +448,18 @@
       "name": "todd-libby",
       "path": "img/avatar-local-cache/opencollective/todd-libby.png",
       "size": 1210
+    }
+  ],
+  "tyler-williams": [
+    {
+      "name": "tyler-williams",
+      "path": "img/avatar-local-cache/opencollective/tyler-williams.webp",
+      "size": 1002
+    },
+    {
+      "name": "tyler-williams",
+      "path": "img/avatar-local-cache/opencollective/tyler-williams.jpg",
+      "size": 1568
     }
   ],
   "vadim-makeev": [
