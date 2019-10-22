@@ -300,7 +300,7 @@ Specify which types of templates should be transformed.
 | Template Formats |  |
 | --- | --- |
 | _Object Key_ | `templateFormats` |
-| _Default_ | `html,liquid,ejs,md,hbs,mustache,haml,pug,njk` |
+| _Default_ | `html,liquid,ejs,md,hbs,mustache,haml,pug,njk,11ty.js` |
 | _Valid Options_ | Array of [template engine short names](/docs/languages/) |
 | _Command Line Override_ | `--formats` _(accepts a comma separated string)_ |
 | _Configuration API_ | `setTemplateFormats` {% addedin "0.2.14" %} |
