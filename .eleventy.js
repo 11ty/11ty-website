@@ -93,6 +93,7 @@ module.exports = function(eleventyConfig) {
 		return `<${tag} class="minilink minilink-addedin${extraClass ? ` ${extraClass}`: ""}">New in v${version}</${tag}>`;
 	});
 
+	eleventyConfig.addPassthroughCopy("js/instant.page.js");
 	eleventyConfig.addPassthroughCopy("css/fonts");
 	eleventyConfig.addPassthroughCopy("img");
 	eleventyConfig.addPassthroughCopy("favicon.ico");
