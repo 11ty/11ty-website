@@ -5,6 +5,7 @@ submenuSortOrder:
   - resources
   - testimonials
   - sites
+  - how-to-support
   - supporters
 tags:
   - docs

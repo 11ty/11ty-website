@@ -488,6 +488,10 @@ main .elv-toc + h1 .direct-link {
 	transition: border .3s;
 	object-fit: cover;
 }
+.elv-docs .facepile-supporters .avatar {
+	width: calc(30px + 2vw);
+	height: calc(30px + 2vw);
+}
 .facepile > a:after {
 	content: "";
 	position: absolute;

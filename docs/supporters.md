@@ -1,12 +1,10 @@
 ---
 subtitle: Eleventy Supporters
-tags:
-  - docs-overview
 ignoreSupporters: true
 ---
 # {{ "Eleventy Is Supported Financially By The Following Lovely People" | orphanWrap | safe }}
 
-You too can <a href="https://opencollective.com/11ty"><strong>Support Eleventy</strong> on Open Collective {% emoji "🎁" %}</a>!
+You too can <a href="https://opencollective.com/11ty"><strong>Support Eleventy</strong> on Open Collective {% emoji "🎁" %}</a>! There are <a href="/docs/how-to-support/">other ways to support Eleventy too</a>.
 
 <ol class="facepile">
 {% for supporter in supporters %}{% if supporter.role === "BACKER" -%}
@@ -15,5 +13,7 @@ You too can <a href="https://opencollective.com/11ty"><strong>Support Eleventy</
 {%- endif %}{% endfor %}
 	<li><a href="https://opencollective.com/11ty"><img src="/img/default-avatar.png" alt="Default Avatar Image" loading="lazy" class="avatar"><strong>and you?</strong> {% emoji "🎁" %}{% emoji "🎁" %}{% emoji "🎁" %}</a></li>
 </ol>
+
+There are <a href="/docs/how-to-support/"><strong>other ways to support Eleventy</strong> too</a>!
 
 _Monthly supporters have the added benefit of being listed in the footer of (almost) all documentation pages._
