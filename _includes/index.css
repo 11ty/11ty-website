@@ -237,6 +237,9 @@ li li {
 }
 
 /* Layout */
+header.elv-layout {
+	padding: 0 1rem 1rem 1rem;
+}
 .elv-layout {
 	padding: 1rem;
 	margin: 0 auto;
