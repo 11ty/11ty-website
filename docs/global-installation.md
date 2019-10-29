@@ -7,13 +7,9 @@ subtitle: Install Eleventy Globally
 
 _Don’t include `~ $` when you run these commands._
 
-<div data-preprefix-cmdhomedir="first">
-
-```bash
+{% codewithprompt "cmdhomedir", "first" %}
 npm install -g @11ty/eleventy
-```
-
-</div>
+{% endcodewithprompt %}
 
 The above adds an `eleventy` command that you can use in any directory.
 

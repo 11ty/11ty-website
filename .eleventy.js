@@ -82,6 +82,16 @@ module.exports = function(eleventyConfig) {
 		return `<a href="${href}" class="minilink minilink-lower">${text}</a>`;
 	});
 
+	eleventyConfig.addPairedShortcode("codewithprompt", function(text, prePrefixCode, when) {
+		return `<div data-preprefix-${prePrefixCode}="${when}">
+
+\`\`\`bash
+${text.trim()}
+\`\`\`
+
+</div>`;
+	});
+
 	eleventyConfig.addShortcode("addedin", function(version, tag, extraClass) {
 		if( typeof version !== "string" ) {
 			tag = version.tag;
