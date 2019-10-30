@@ -5,6 +5,7 @@ submenuSortOrder:
   - layouts
   - collections
   - pagination
+  - pages-from-data
   - dates
   - permalinks
   - pitfalls
