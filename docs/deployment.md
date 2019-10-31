@@ -10,7 +10,7 @@ tags: docs
 
 Deploying your Eleventy site is the **fine reward** you receive for crafting it. This section contains options for deploying your site, making it available for all those wishing to see your work.
 
-When deploying your Eleventy site, the end goal is to provide a web host with your **build output**, this is the end result of running the `build` script from a `package.json` file.
+When deploying your Eleventy site, the goal is to provide a web host with your **build output**, this is the result of running the `build` script from a `package.json` file.
 
 ## Production Builds
 
