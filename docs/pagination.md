@@ -7,6 +7,10 @@ relatedKey: pagination
 ---
 # Pagination
 
+[[toc]]
+
+## Paging an Array
+
 To iterate over a data set and create pages for individual chunks of data, use pagination. Enable in your template’s front matter by adding the `pagination` key. Consider the following template:
 
 {% codetitle "Liquid, Nunjucks", "Syntax" %}

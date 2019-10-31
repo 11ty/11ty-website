@@ -57,31 +57,19 @@ This allows you further customization options using Eleventy’s provided helper
 
 ## Configuration Options
 
-### Jump to:
-{% set toc = [
-  "Input Directory",
-  "Directory for Includes",
-  "Directory for Layouts (Optional)",
-  "Directory for Global Data Files",
-  "Output Directory",
-  "Default Template Engine for Global Data Files",
-  "Default Template Engine for Markdown Files",
-  "Default Template Engine for HTML Files",
-  "Template Formats",
-  "Deploy to a Subdirectory with a Path Prefix",
-  "Copy Files to Output using Passthrough File Copy",
-  "Change Exception Case Suffix for HTML Files",
-  "Change File Suffix for Template and Directory Data Files",
-  "Transforms",
-  "Linters",
-  "Data Deep Merge",
-  "Watch JavaScript Dependencies",
-  "Override Browsersync Server Options",
-  "Customize Front Matter Parsing Options"
-] %}
-{%- for link in toc %}
-* [{{ link }}](#{{ link | slug }})
-{%- endfor %}
+<style>
+/* Hide the irrelevant stuff above this TOC in the document */
+.table-of-contents > ul > li:first-child,
+.table-of-contents > ul > li:first-child + li > a {
+  display: none;
+}
+.table-of-contents > ul > li:first-child + li > ul {
+  padding-left: 0;
+  list-style: disc;
+}
+</style>
+
+[[toc]]
 
 ### Input Directory
 

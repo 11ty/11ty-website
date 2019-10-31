@@ -231,26 +231,41 @@ module.exports = function(eleventyConfig) {
 
 	/* Markdown */
 	let markdownItAnchor = require("markdown-it-anchor");
-	let options = {
-		html: true,
-		breaks: true,
-		linkify: true
-	};
-	let opts = {
-		permalink: true,
-		slugify: function(s) {
-			let newStr = String(s).replace(/New\ in\ v\d+\.\d+\.\d+/, '');
-			newStr = newStr.replace(/⚠️/g, '');
-			newStr = newStr.replace(/[?!]/g, '');
-			return encodeURIComponent(newStr.trim().toLowerCase().replace(/\s+/g, '-'));
-		},
-		permalinkBefore: false,
-		permalinkClass: "direct-link",
-		permalinkSymbol: "#",
-		level: [1,2,3,4]
-	};
+	let markdownItToc = require("markdown-it-table-of-contents");
 
-	eleventyConfig.setLibrary("md", markdownIt(options).use(markdownItAnchor, opts));
+	function removeExtraText(s) {
+		let newStr = String(s).replace(/New\ in\ v\d+\.\d+\.\d+/, "");
+		newStr = newStr.replace(/⚠️/g, "");
+		newStr = newStr.replace(/[?!]/g, "");
+		newStr = newStr.replace(/<[^>]*>/g, "");
+		return newStr;
+	}
+
+	function markdownItSlugify(s) {
+		return encodeURIComponent(removeExtraText(s).trim().toLowerCase().replace(/\s+/g, '-'));
+	}
+
+	eleventyConfig.setLibrary("md", markdownIt({
+			html: true,
+			breaks: true,
+			linkify: true
+		})
+		.use(markdownItAnchor, {
+			permalink: true,
+			slugify: markdownItSlugify,
+			permalinkBefore: false,
+			permalinkClass: "direct-link",
+			permalinkSymbol: "#",
+			level: [1,2,3,4]
+		})
+		.use(markdownItToc, {
+			includeLevel: [2, 3],
+			slugify: markdownItSlugify,
+			format: function(heading) {
+				return removeExtraText(heading);
+			}
+		})
+	);
 
 	// Until https://github.com/valeriangalliat/markdown-it-anchor/issues/58 is fixed
 	eleventyConfig.addTransform("remove-aria-hidden-markdown-anchor", function(content, outputPath) {
