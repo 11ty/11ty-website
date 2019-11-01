@@ -66,6 +66,10 @@ We enable pagination and then give it a dataset with the `data` key. We control 
 
 If the above file were named `paged.njk`, it would create two pages: `_site/paged/0/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
 
+## Creating Navigation Links to your Pages
+
+* Check out the full example on [Pagination Navigation](/docs/pagination-nav/)
+
 ## Paging an Object {% addedin "0.4.0" %}
 
 All of the examples thus far have paged Array data. Eleventy does allow paging objects too. Objects are resolved to pagination arrays using either the `Object.keys` or `Object.values` JavaScript functions. Consider the following Nunjucks template:
