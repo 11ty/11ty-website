@@ -111,7 +111,7 @@ Shortcodes are basically reusable bits of content. You can add Nunjucks specific
 
 ### Single Shortcode
 
-```
+```js
 module.exports = function(eleventyConfig) {
   // Nunjucks Shortcode
   eleventyConfig.addNunjucksShortcode("user", function(name, twitterUsername) { … });
@@ -145,7 +145,7 @@ module.exports = function(eleventyConfig) {
 
 ### Paired Shortcode
 
-```
+```js
 module.exports = function(eleventyConfig) {
   // Nunjucks Shortcode
   eleventyConfig.addPairedNunjucksShortcode("user", function(bioContent, name, twitterUsername) { … });
@@ -187,7 +187,7 @@ Note that you can put any Nunjucks tags or content inside the `{% raw %}{% user 
 
 Creates a single argument object to pass to the shortcode.
 
-```
+```js
 module.exports = function(eleventyConfig) {
   // Nunjucks Shortcode
   eleventyConfig.addNunjucksShortcode("user", function(user) {
