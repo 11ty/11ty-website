@@ -12,7 +12,7 @@ Pagination can be used for traditional style pagination outputs like `/result/pa
 
 ## An Example
 
-Let's look at an example where we dynamically build pages based on data from a json file. First let's consider this simple data file stores in `_data\cats.json`:
+Let's look at an example where we dynamically build pages based on data from a json file. First let's consider this simple data file stores in `_data\possums.json`:
 
 ```js
 [
@@ -35,21 +35,21 @@ Let's look at an example where we dynamically build pages based on data from a j
 ]
 ```
 
-In order to create one page per cat, we can use the following template.
+In order to create one page per possum, we can use the following template.
 
 ```html
 ---
 pagination:
-    data: cats
+    data: possums
     size: 1
-    alias: cat
-permalink: cats/{{ cat.name | slug }}/index.html
+    alias: possum
+permalink: possums/{{ possum.name | slug }}/
 ---
 
-{{ cat.name }} is {{ cat.age }} years old
+{{ possum.name }} is {{ possum.age }} years old
 ```
 
-This template will generate four files, one for each cat, where the filename is based on the cat's name passed through the `slug` function. As cats are added, edited, and removed, the resultant cat details page will be updated automatically.
+This template will generate four files, one for each possum, where the filename is based on the possum's name passed through the `slug` function. As possums are added and edited the resultant possum details page will be updated automatically.
 
 ## Related Pagination Topics:
 
