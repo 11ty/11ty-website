@@ -62,7 +62,7 @@ Alright, you definitely read all of those right? 😇 Here’s some accessible c
   <h2 id="my-pagination">This is my Pagination</h2>
   <ol>
 {%- for pageHref in pagination.hrefs %}
-    <li><a href="{{ pageHref }}"{%- if page.url == pageHref %} aria-current="page"{% endif -%}>Page {{ loop.index }}</a></li>
+    <li><a href="{{ pageHref }}"{% if page.url == pageHref %} aria-current="page"{% endif %}>Page {{ loop.index }}</a></li>
 {%- endfor %}
   </ol>
 </nav>
@@ -86,9 +86,9 @@ For our example, this code will output the following markup for our example (on 
 
 {% callout "info" %}<strong>HTML tip</strong>: make sure the <code>id</code> attribute used on your heading (<code>id="my-pagination"</code>) is unique to your page!{% endcallout %}
 
-### Visually Style the Current Page
+### Visually Style the Current Page Link
 
-You’ll probably also want to add some kind of visual styling to indicate that the user is on the current page. Let’s use a light `background-color`.
+You’ll probably also want to add some kind of visual styling to indicate that the user is on the current page. For this let’s use a light `background-color`.
 
 {% codetitle "CSS", "Syntax" %}
 
@@ -102,7 +102,7 @@ You’ll probably also want to add some kind of visual styling to indicate that 
 
 ## Add Previous and Next Links
 
-Note that if the current page is the first or last in the set, this code will not output links.
+Note that if the current page (`page.url`) is the first or last in the set, we won’t output links.
 
 {% codetitle "Nunjucks", "Syntax" %}
 
@@ -111,11 +111,11 @@ Note that if the current page is the first or last in the set, this code will no
 <nav aria-labelledby="my-pagination">
   <h2 id="my-pagination">This is my Pagination</h2>
   <ol>
-    <li>{% if pagination.pageNumber > 0 %}<a href="{{ pagination.hrefs[pagination.pageNumber - 1] }}">Previous</a>{% else %}Previous{% endif %}</li>
+    <li>{% if pagination.previousPageHref %}<a href="{{ pagination.previousPageHref }}">Previous</a>{% else %}Previous{% endif %}</li>
 {%- for pageHref in pagination.hrefs %}
-    <li><a href="{{ pageHref }}"{%- if page.url == pageHref %} aria-current="page"{% endif -%}>Page {{ loop.index }}</a></li>
+    <li><a href="{{ pageHref }}"{% if page.url == pageHref %} aria-current="page"{% endif %}>Page {{ loop.index }}</a></li>
 {%- endfor %}
-    <li>{% if pagination.hrefs.length > pagination.pageNumber + 1 %}<a href="{{ pagination.hrefs[pagination.pageNumber + 1] }}">Next</a>{% else %}Next{% endif %}</li>
+    <li>{% if pagination.nextPageHref %}<a href="{{ pagination.nextPageHref }}">Next</a>{% else %}Next{% endif %}</li>
   </ol>
 </nav>
 ```
@@ -123,26 +123,24 @@ Note that if the current page is the first or last in the set, this code will no
 
 ## Add First and Last Links
 
-For clarity here, we’re omitting the previous and next links from the previous section.
+For clarity here, we’re omitting the previous and next links from the previous section. Note the code below to show the links only if `pagination.firstPageHref` and `pagination.lastPageHref` don’t match the current `page.url`.
 
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
-```html/3,5
+```html/3,7
 <nav aria-labelledby="my-pagination">
   <h2 id="my-pagination">This is my Pagination</h2>
   <ol>
-    <li>{% if page.url != pagination.hrefs[0] %}<a href="{{ pagination.hrefs[0] }}">First</a>{% else %}First{% endif %}</li>
+    <li>{% if page.url != pagination.firstPageHref %}<a href="{{ pagination.firstPageHref }}">First</a>{% else %}First{% endif %}</li>
 {%- for pageHref in pagination.hrefs %}
     <li><a href="{{ pageHref }}"{% if page.url == pageHref %} aria-current="page"{% endif %}>Page {{ loop.index }}</a></li>
 {%- endfor %}
-    <li>{% if page.url != pagination.hrefs[pagination.hrefs.length - 1] %}<a href="{{ pagination.hrefs[pagination.hrefs.length - 1] }}">Last</a>{% else %}Last{% endif %}</li>
+   <li>{% if page.url != pagination.lastPageHref %}<a href="{{ pagination.lastPageHref }}">Last</a>{% else %}Last{% endif %}</li>
   </ol>
 </nav>
 ```
 {% endraw %}
-
-Astute readers may be uncomfortable using `pagination.hrefs[0]` without checking the length of `pagination.hrefs` to make sure pages exist—but rest assured that Eleventy will not process this template at all if there aren’t pages 😎.
 
 ## Put It All Together
 
@@ -151,17 +149,17 @@ Here’s the final pagination navigation template code, pieced together:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
-```
+```html
 <nav aria-labelledby="my-pagination">
   <h2 id="my-pagination">This is my Pagination</h2>
   <ol>
-    <li>{% if page.url != pagination.hrefs[0] %}<a href="{{ pagination.hrefs[0] }}">First</a>{% else %}First{% endif %}</li>
-    <li>{% if pagination.pageNumber > 0 %}<a href="{{ pagination.hrefs[pagination.pageNumber - 1] }}">Previous</a>{% else %}Previous{% endif %}</li>
+    <li>{% if page.url != pagination.firstPageHref %}<a href="{{ pagination.firstPageHref }}">First</a>{% else %}First{% endif %}</li>
+    <li>{% if pagination.previousPageHref %}<a href="{{ pagination.previousPageHref }}">Previous</a>{% else %}Previous{% endif %}</li>
 {%- for pageHref in pagination.hrefs %}
     <li><a href="{{ pageHref }}"{% if page.url == pageHref %} aria-current="page"{% endif %}>Page {{ loop.index }}</a></li>
 {%- endfor %}
-    <li>{% if pagination.hrefs.length > pagination.pageNumber + 1 %}<a href="{{ pagination.hrefs[pagination.pageNumber + 1] }}">Next</a>{% else %}Next{% endif %}</li>
-    <li>{% if page.url != pagination.hrefs[pagination.hrefs.length - 1] %}<a href="{{ pagination.hrefs[pagination.hrefs.length - 1] }}">Last</a>{% else %}Last{% endif %}</li>
+    <li>{% if pagination.nextPageHref %}<a href="{{ pagination.nextPageHref }}">Next</a>{% else %}Next{% endif %}</li>
+    <li>{% if page.url != pagination.lastPageHref %}<a href="{{ pagination.lastPageHref }}">Last</a>{% else %}Last{% endif %}</li>
   </ol>
 </nav>
 ```
@@ -172,7 +170,7 @@ Alright, you’ve copied the above—but don’t leave yet—*your work is not d
 * Change `my-pagination` to a better `id` attribute for your use case and update it in `aria-labelledby` too.
 * Update the `This is my Pagination` text to make more sense for your use case.
 * Think about maybe changing the `<h2>` to better suit your document structure.
-* Add some [CSS to highlight the current page in the navigation, visually](#visually-style-the-current-page).
+* Add some [CSS to highlight the current page in the navigation, visually](#visually-style-the-current-page-link).
 
 {% callout "info" %}<strong>HTML tip</strong>: You might be tempted to use <code>role="navigation"</code> here, but it’s superfluous when using <code>&lt;nav&gt;</code>.{% endcallout %}
 
