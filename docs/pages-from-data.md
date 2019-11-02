@@ -37,6 +37,7 @@ Let's look at an example where we dynamically build pages based on data from a j
 
 In order to create one page per possum, we can use the following template.
 
+{% raw %}
 ```html
 ---
 pagination:
@@ -48,6 +49,7 @@ permalink: possums/{{ possum.name | slug }}/
 
 {{ possum.name }} is {{ possum.age }} years old
 ```
+{% endraw %}
 
 This template will generate four files, one for each possum, where the filename is based on the possum's name passed through the `slug` function. As possums are added and edited the resultant possum details page will be updated automatically.
 
