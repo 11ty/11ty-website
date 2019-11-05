@@ -1,3 +1,12 @@
+/* Screen readers only */
+.sr-only {
+	position: absolute;
+	height: 1px;
+	width: 1px; 
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -141,6 +150,7 @@ main .elv-toc + h1 {
 	margin-top: .5em;
 	line-height: 1.1;
 }
+main .breadcrumb + h1,
 main h1:first-child,
 main .elv-toc + h1 {
 	border-bottom: 2px dotted #666;
@@ -415,15 +425,6 @@ main .elv-toc + h1 .direct-link {
 }
 .elv-sg-component:after {
 	clear: both;
-}
-
-/* Screen readers only */
-.sr-only {
-	position: absolute;
-	height: 1px;
-	width: 1px; 
-	overflow: hidden;
-	clip: rect(1px, 1px, 1px, 1px);
 }
 
 /* Language List */

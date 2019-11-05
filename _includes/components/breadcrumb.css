@@ -1,0 +1,27 @@
+.breadcrumb ol,
+.breadcrumb ul {
+	--lo-margin-h: .5em;
+	list-style-type: none;
+	padding: 0;
+}
+.breadcrumb li {
+	font-size: 0.8333333333333em; /* 15px /18 */
+	white-space: nowrap;
+}
+/* Restore list semantics for voiceover:
+ * https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/
+ */
+.breadcrumb li:before {
+	content: "\200B";
+}
+.breadcrumb li:after {
+	--breadcrumb-arrow-size: .4em;
+	display: inline-block;
+	margin-left: var(--lo-margin-h);
+	content: "";
+	width: 0; 
+  height: 0; 
+  border-top: var(--breadcrumb-arrow-size) solid transparent;
+  border-bottom: var(--breadcrumb-arrow-size) solid transparent;
+  border-left: var(--breadcrumb-arrow-size) solid #bbb;
+}

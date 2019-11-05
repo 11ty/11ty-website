@@ -1,0 +1,34 @@
+/* Layout component code */
+.lo {
+  /* The custom properties should not inherit from parent layouts */
+  --lo-stackpoint: initial;
+  --lo-margin-h: 0;
+  --lo-margin-v: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-top: calc(-1 * var(--lo-margin-v, 0));
+  margin-left: calc(-1 * var(--lo-margin-h, 0));
+}
+.lo-c {
+  /* if a margin is in play, account for this in our stackpoint calculations */
+  /* notably this will also work if a stackpoint is not used. */
+  --lo-margin-mod: calc( var(--lo-stackpoint, -1 * var(--lo-margin-h, 0px)) - var(--lo-stackpoint, 0px) + var(--lo-margin-h, 0px) );
+  --lo-stackpoint-calc: calc( ( var(--lo-stackpoint, 100%) - 100% + var(--lo-margin-mod, 0px) ) * 999);
+
+  flex-grow: 1;
+  flex-basis: var(--lo-stackpoint-calc, auto);
+  margin: 0;
+  margin-top: var(--lo-margin-v, 0);
+  margin-left: var(--lo-margin-h, 0);
+}
+.lo-debug > .lo-c {
+  outline: 1px dotted;
+}
+.lo-inline > .lo-c {
+  flex-grow: 0;
+}
+.lo pre {
+  margin-left: 0;
+  margin-right: 0;
+}

@@ -44,31 +44,65 @@ We enable pagination and then give it a dataset with the `data` key. We control 
   items: [], // Array of current page’s chunk of data
   pageNumber: 0, // current page number, 0 indexed
 
-  // Cool URLs, added in v0.6.0
+  // Cool URLs, new in v0.10.0
+  hrefs: [], // Array of all page hrefs (in order)
+  href: {
+    next: "…", // put inside <a href="{{ pagination.href.next }}">Next Page</a>
+    previous: "…", // put inside <a href="{{ pagination.href.previous }}">Previous Page</a>
+    first: "…",
+    last: "…",
+  },
+
+  // New in v0.10.0
+  pages: [], // Array of all chunks of paginated data (in order)
+  page: {
+    next: "…", // Next page’s chunk of data
+    previous: "…", // Previous page’s chunk of data
+    first: "…",
+    last: "…",
+  }
+}
+```
+
+<details data-details-oneway>
+  <summary>Here’s some extra stuff in the <code>pagination</code> object that you probably don’t need. ℹ️</summary>
+
+In addition to the `pagination` object entries documented above, it also has:
+
+{% codetitle "JavaScript Object", "Syntax" %}
+
+```js
+{
+  data: …, // the original string key to the dataset
+  size: 1, // page chunk sizes
+
+  // Cool URLs, new in v0.6.0
+  // Use pagination.href.next, pagination.href.previous, et al instead.
   nextPageHref: "…", // put inside <a href="{{ pagination.nextPageHref }}">Next Page</a>
   previousPageHref: "…", // put inside <a href="{{ pagination.previousPageHref }}">Previous Page</a>
   firstPageHref: "…",
-  lastPageHref: "…", 
-  hrefs: [], // Array of all page hrefs (in order)
+  lastPageHref: "…",
 
-  // Uncool URLs (these include index.html file names)
-  nextPageLink: "…", // put inside <a href="{{ pagination.nextPageLink }}">Next Page</a>
-  previousPageLink: "…", // put inside <a href="{{ pagination.previousPageLink }}">Previous Page</a>
-  firstPageLink: "…", // added in v0.6.0
-  lastPageLink: "…", // added in v0.6.0
+  // Uncool URLs
+  // These include index.html file names, use `hrefs` instead
   links: [], // Array of all page links (in order)
-  pageLinks: [], // Array of deprecated alias to `links`
 
-  data: …, // pointer to dataset
-  size: 1, // chunk sizes
+  // Deprecated things:
+  // nextPageLink
+  // previousPageLink
+  // firstPageLink (new in v0.6.0)
+  // lastPageLink (new in v0.6.0)
+  // pageLinks (alias to `links`)
 }
 ```
+
+</details>
 
 If the above file were named `paged.njk`, it would create two pages: `_site/paged/0/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
 
 ## Creating Navigation Links to your Pages
 
-* Check out the full example on [Pagination Navigation](/docs/pagination-nav/)
+Learn how to create a list of links to every paginated page on a pagination template with a full [Pagination Navigation](/docs/pagination/nav/) tutorial.
 
 ## Paging an Object {% addedin "0.4.0" %}
 
