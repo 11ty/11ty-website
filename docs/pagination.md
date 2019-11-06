@@ -321,7 +321,66 @@ You can use the alias in your content too {{ wonder[0] }}.
 
 This writes to `_site/different/item1/index.html` and `_site/different/item3/index.html`.
 
-## Blacklisting or Filtering Values {% addedin "0.4.0" %}
+## Paging a Collection
+
+If you’d like to make a paginated list of all of your blog posts (any content with the tag `post` on it), use something like the following template to iterate over a specific collection:
+
+{% codetitle "Liquid, Nunjucks", "Syntax" %}
+
+{% raw %}
+```markdown
+---
+title: My Posts
+pagination:
+  data: collections.post
+  size: 6
+  alias: posts
+---
+
+<ol>
+{% for post in posts %}
+  <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+{% endfor %}
+</ol>
+```
+{% endraw %}
+
+The above generates a list of links but you could do a lot more. See what’s available in the [Collection documentation](/docs/collections/#individual-collection-items-(useful-for-sort-callbacks)) (specifically `templateContent`). If you’d like to use this to automatically generate Tag pages for your content, please read [Quick Tip #004—Create Tag Pages for your Blog](/docs/quicktips/tag-pages/).
+
+## Modifying the Data Set prior to Pagination
+
+### Reverse the Data {% addedin "0.7.0" %}
+
+Use `reverse: true`.
+
+```markdown
+---
+pagination:
+  data: testdata
+  size: 2
+  reverse: true
+testdata:
+ - item1
+ - item2
+ - item3
+ - item4
+---
+```
+
+Paginates to:
+
+```js
+[
+  ["item4", "item3"],
+  ["item2", "item1"],
+]
+```
+
+_(More discussion at [Issue #194](https://github.com/11ty/eleventy/issues/194))_
+
+As an aside, this could also be achieved in a more verbose way using the [Collection API](/docs/collections/#advanced%3A-custom-filtering-and-sorting). This could also be done using the new `before` callback {% addedin "0.10.0" %}.
+
+### Blacklisting or Filtering Values {% addedin "0.4.0" %}
 
 Use the `filter` pagination property to remove values from paginated data.
 
@@ -382,62 +441,44 @@ Paginates to:
 ]
 ```
 
-## Paging a Collection
+### The `before` Callback
 
-If you’d like to make a paginated list of all of your blog posts (any content with the tag `post` on it), use something like the following template to iterate over a specific collection:
-
-{% codetitle "Liquid, Nunjucks", "Syntax" %}
+The most powerful tool to change the data. Use this callback to modify, filter, or otherwise change the pagination data however you see fit *before* pagination occurs.
 
 {% raw %}
 ```markdown
+---js
+{
+  pagination: {
+    data: "testdata"
+    size: 2
+    before: function(data) {
+      return data.map(entry => `${entry} with a suffix`);
+    }
+  },
+  testdata: [
+    "item1",
+    "item2",
+    "item3",
+    "item4"
+  ]
+}
 ---
-title: My Posts
-pagination:
-  data: collections.post
-  size: 6
-  alias: posts
----
-
-<ol>
-{% for post in posts %}
-  <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
-{% endfor %}
-</ol>
+<!-- the rest of the template -->
 ```
 {% endraw %}
 
-The above generates a list of links but you could do a lot more. See what’s available in the [Collection documentation](/docs/collections/#individual-collection-items-(useful-for-sort-callbacks)) (specifically `templateContent`). If you’d like to use this to automatically generate Tag pages for your content, please read [Quick Tip #004—Create Tag Pages for your Blog](/docs/quicktips/tag-pages/).
+The above will iterate over a data set containing: `["item1 with a suffix", "item2 with a suffix", "item3 with a suffix", "item4 with a suffix"]`.
 
-## How to Reverse a Data Set prior to Pagination {% addedin "0.7.0" %}
+You can do anything in this `before` callback. Maybe a custom `.sort()`, `.filter()`, `.map()` to remap the entires, `.slice()` to paginate only a subset of the data, etc!
 
-Use `reverse: true`.
+### Order of Operations
 
-As an aside, this could also be achieved in a more verbose way using the [Collection API](/docs/collections/#advanced%3A-custom-filtering-and-sorting).
+If you use more than one of these data set modification features, here’s the order in which they operate:
 
-```markdown
----
-pagination:
-  data: testdata
-  size: 2
-  reverse: true
-testdata:
- - item1
- - item2
- - item3
- - item4
----
-```
-
-Paginates to:
-
-```js
-[
-  ["item4", "item3"],
-  ["item2", "item1"],
-]
-```
-
-_(More discussion at [Issue #194](https://github.com/11ty/eleventy/issues/194))_
+* The `before` callback
+* `reverse: true`
+* `filter` entries
 
 ## Add All Pagination Pages to Collections {% addedin "0.8.0" %}
 

@@ -7,6 +7,8 @@ tags:
 
 Add data in your template front matter, like this:
 
+{% codetitle "YAML", "Syntax" %}
+
 ```markdown
 ---
 title: My page title
@@ -16,7 +18,7 @@ title: My page title
 …
 ```
 
-The above is using [YAML syntax](https://learnxinyminutes.com/docs/yaml/).
+The above is using [YAML syntax](https://learnxinyminutes.com/docs/yaml/). You can [use other formats too](#alternative-front-matter-formats).
 
 Locally assigned front matter values override things further up the layout chain. Note also that layouts can contain front matter variables that you can use in your local template. Leaf template front matter takes precedence over layout front matter. Read more about [Layouts](/docs/layouts/).
 
@@ -32,6 +34,10 @@ Here are a few special front matter keys you can assign:
 * `date`: Override the default date (file creation) to customize how the file is sorted in a collection. [Read more at Content Dates](/docs/dates/).
 * `templateEngineOverride`: Override the template engine on a per-file basis, usually configured with a file extension or globally using the `markdownTemplateEngine` and `htmlTemplateEngine` configuration options. [Read more about Changing a Template’s Rendering Engine](/docs/languages/#overriding-the-template-language).
 * `eleventyExcludeFromCollections`: {% addedin "0.8.0" %} Set to `true` to exclude this content from any and all [Collections](/docs/collections/) (those tagged in data or setup using the Configuration API).
+
+## Sources of Data
+
+{% include "datasources.md" %}
 
 ## Alternative Front Matter Formats
 
@@ -188,7 +194,3 @@ title = "My page title using TOML"
 <html>
 …
 ```
-
-## Sources of Data
-
-{% include "datasources.md" %}
