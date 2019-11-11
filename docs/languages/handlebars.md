@@ -1,9 +1,11 @@
 ---
-subtitle: Handlebars
+eleventyNavigation:
+  parent: Template Languages
+  key: Handlebars
+  order: 7
 relatedKey: handlebars
 relatedTitle: Template Language—Handlebars
 tags:
-  - docs-languages
   - related-filters
   - related-shortcodes
   - related-custom-tags

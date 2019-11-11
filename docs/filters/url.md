@@ -1,8 +1,10 @@
 ---
-subtitle: url Universal Filter
-menuSectionName: docs-filters
-tags:
-	- docs-filters
+eleventyNavigation:
+  parent: Filters
+  key: url Filter
+  title: '<code>url</code> Filter'
+  order: 1
+  excerpt: Normalize absolute paths in your content, allows easily changing deploy subdirectories for your project.
 ---
 
 # `url` Universal Filter

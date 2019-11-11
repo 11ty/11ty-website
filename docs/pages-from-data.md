@@ -1,10 +1,11 @@
 ---
-subtitle: Create Pages from Data
-excerpt: Iterate over a data set and create multiple output files.
-tags:
-  - docs-templates
+eleventyNavigation:
+  parent: Working with Templates
+  key: Create Pages From Data
+  order: 4
+  excerpt: Iterate over a data set and create multiple output files.
 ---
-# {{ subtitle }}
+# Create Pages From Data
 
 While it can be confusing for beginners to Eleventy to learn this, but the [Pagination feature](/docs/pagination/) is used for iterating over any data to create multiple output files.
 

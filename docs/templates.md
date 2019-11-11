@@ -1,18 +1,8 @@
 ---
-subtitle: Working with Templates
-menuSectionName: docs-templates
-submenuSortOrder:
-  - layouts
-  - collections
-  - pagination
-  - pages-from-data
-  - dates
-  - permalinks
-  - pitfalls
-tags: docs
+eleventyNavigation:
+  key: Working with Templates
+  order: 4
 ---
-# {{ subtitle }}
+# Working with Templates
 
-{% for section in collections["docs-templates"] | sortMenu(submenuSortOrder) -%}
-* [{{ section.data.subtitle }}]({{ section.data.page.url }}){% if section.data.excerpt %}: {{ section.data.excerpt }}{% endif %}
-{% endfor %}
+{{ collections.all | eleventyNavigation("Working with Templates") | eleventyNavigationToHtml({ showExcerpt: true }) | safe }}

@@ -1,7 +1,8 @@
 ---
-subtitle: Plugins
-tags:
-  - docs-config
+eleventyNavigation:
+  parent: Configuration
+  key: Plugins
+  order: 6
 ---
 # Plugins {% addedin "0.2.13" %}
 

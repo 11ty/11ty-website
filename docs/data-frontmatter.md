@@ -1,7 +1,8 @@
 ---
-subtitle: Front Matter Data
-tags:
-  - docs-data
+eleventyNavigation:
+  parent: Using Data
+  key: Front Matter Data
+  order: 1
 ---
 # Front Matter Data
 

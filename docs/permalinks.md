@@ -1,8 +1,9 @@
 ---
-subtitle: Permalinks
-excerpt: Remap a template to a new output location
-tags:
-  - docs-templates
+eleventyNavigation:
+  parent: Working with Templates
+  key: Permalinks
+  order: 6
+  excerpt: Remap a template to a new output location
 ---
 # Permalinks
 

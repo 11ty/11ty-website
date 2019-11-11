@@ -1,9 +1,11 @@
 ---
-subtitle: Liquid
+eleventyNavigation:
+  parent: Template Languages
+  key: Liquid
+  order: 6
 relatedKey: liquid
 relatedTitle: Template Language—Liquid
 tags:
-  - docs-languages
   - related-filters
   - related-shortcodes
   - related-custom-tags

@@ -1,8 +1,7 @@
 ---
-subtitle: Supporting Eleventy
-menuSectionName: docs-support
-tags:
-  - docs
+eleventyNavigation:
+  key: Supporting Eleventy
+  order: 2
 ignoreGitHubButtons: true
 ignoreSupporters: true
 ---

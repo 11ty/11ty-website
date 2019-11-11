@@ -1,5 +1,8 @@
 ---
-subtitle: JavaScript Template Literals
+eleventyNavigation:
+  parent: Template Languages
+  key: JavaScript Template Literals
+  order: 4
 layout: layouts/langs.njk
 ---
 | Eleventy Short Name | File Extension | NPM Package |

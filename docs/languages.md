@@ -1,22 +1,9 @@
 ---
-subtitle: Template Languages
-menuSectionName: docs-languages
-submenuSortOrder:
-  - languages/html
-  - languages/markdown
-  - languages/javascript
-  - languages/jstl
-  - languages/nunjucks
-  - languages/liquid
-  - languages/handlebars
-  - languages/mustache
-  - languages/ejs
-  - languages/haml
-  - languages/pug
-tags:
-  - docs
+eleventyNavigation:
+  key: Template Languages
+  order: 7
 ---
-# {{ subtitle }}
+# Template Languages
 
 {% templatelangs templatetypes, page %}
 

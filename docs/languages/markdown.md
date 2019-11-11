@@ -1,5 +1,8 @@
 ---
-subtitle: Markdown
+eleventyNavigation:
+  parent: Template Languages
+  key: Markdown
+  order: 2
 layout: layouts/langs.njk
 relatedLinks:
   /docs/config/#default-template-engine-for-markdown-files: Default Template Engine for Markdown Files

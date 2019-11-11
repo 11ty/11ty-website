@@ -1,15 +1,7 @@
 ---
-subtitle: Configuration
-menuSectionName: docs-config
-submenuSortOrder:
-  - copy
-  - ignores
-  - filters
-  - shortcodes
-  - custom-tags
-  - plugins
-tags:
-  - docs
+eleventyNavigation:
+  key: Configuration
+  order: 5
 ---
 # Configuration
 

@@ -55,8 +55,8 @@
 .elv-toc-list a {
 	display: block;
 }
-.elv-toc-list ul a {
-	padding-left: 1em;
+.elv-toc-list ul {
+	padding-left: 0.625rem; /* 10px /16 */
 }
 .elv-toc-list a:not(:hover) {
 	text-decoration: none;
@@ -73,8 +73,7 @@
 }
 
 /* Active links */
-.elv-toc-list > li.elv-toc-active > a,
-.elv-toc-list ul li.elv-toc-active {
+.elv-toc-list li.elv-toc-active > a {
 	background-color: #dff7ff;
 }
 .elv-toc-list ul .elv-toc-active > a:after {

@@ -1,9 +1,11 @@
 ---
-subtitle: Nunjucks
+eleventyNavigation:
+  parent: Template Languages
+  key: Nunjucks
+  order: 5
 relatedKey: nunjucks
 relatedTitle: Template Language—Nunjucks
 tags:
-  - docs-languages
   - related-filters
   - related-shortcodes
   - related-custom-tags

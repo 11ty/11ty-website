@@ -1,17 +1,11 @@
 ---
-subtitle: Pagination Navigation
+eleventyNavigation:
+  parent: Pagination
+  key: Pagination Navigation
+  excerpt: Create a list of links to every paginated page on a pagination template.
 tags: ["related-pagination"]
 relatedTitle: "Create a list of Navigation Links for your Pagination."
 ---
-<nav class="breadcrumb" aria-labelledby="breadcrumb">
-  <h2 class="sr-only" id="breadcrumb">Breadcrumbs: </h2>
-  <ul class="lo lo-inline">
-    <li class="lo-c"><a href="/docs/templates/">Working with Templates</a></li>
-    <li class="lo-c"><a href="/docs/pagination/">Pagination</a></li>
-    <!-- <li class="lo-c"><a href="/docs/pagination/nav/" aria-current="page">Pagination Navigation</a></li> -->
-  </ul>
-</nav>
-
 # Pagination Navigation
 
 How to create a list of links to every paginated page on a pagination template.

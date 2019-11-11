@@ -1,14 +1,7 @@
 ---
-subtitle: Using Data
-menuSectionName: docs-data
-submenuSortOrder:
-  - data-frontmatter
-  - data-template-dir
-  - data-global
-  - data-js
-  - data-preprocessing
-tags:
-  - docs
+eleventyNavigation:
+  key: Using Data
+  order: 6
 ---
 # Using Data
 

@@ -1,10 +1,12 @@
 ---
-subtitle: JavaScript
+eleventyNavigation:
+  parent: Template Languages
+  key: JavaScript
+  order: 3
 addedInVersion: 0.7.0
 relatedKey: javascript
 relatedTitle: Template Language—JavaScript
 tags:
-  - docs-languages
   - related-filters
   - related-shortcodes
 relatedLinks:

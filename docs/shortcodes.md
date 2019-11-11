@@ -1,9 +1,11 @@
 ---
-subtitle: Shortcodes
+eleventyNavigation:
+  parent: Configuration
+  key: Shortcodes
+  order: 4
 relatedKey: shortcodes
 relatedTitle: Template Shortcodes
 tags:
-  - docs-config
   - related-filters
   - related-custom-tags
   - related-nunjucks

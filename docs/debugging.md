@@ -1,7 +1,8 @@
 ---
-subtitle: Debugging
-tags:
-  - docs-getting-started
+eleventyNavigation:
+  parent: Getting Started
+  key: Debugging
+  order: 3
 ---
 # Debugging
 

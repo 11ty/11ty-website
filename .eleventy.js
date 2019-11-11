@@ -5,6 +5,7 @@ const HumanReadable = require("human-readable-numbers");
 const markdownIt = require("markdown-it");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const loadLanguages = require("prismjs/components/");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language");
@@ -58,6 +59,7 @@ module.exports = function(eleventyConfig) {
 	});
 	eleventyConfig.addPlugin(rssPlugin);
 	// eleventyConfig.addPlugin(inclusiveLanguagePlugin);
+	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
 	let md = new markdownIt();
 	eleventyConfig.addPairedShortcode("callout", function(content, level = "warn", format = "html") {
@@ -226,8 +228,6 @@ module.exports = function(eleventyConfig) {
 		}
 		return result.join("");
 	});
-
-
 
 	/* Markdown */
 	let markdownItAnchor = require("markdown-it-anchor");

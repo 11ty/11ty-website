@@ -1,8 +1,9 @@
 ---
-subtitle: Collections
-excerpt: Group, reuse, and sort content in interesting ways.
-tags:
-  - docs-templates
+eleventyNavigation:
+  parent: Working with Templates
+  key: Collections
+  order: 2
+  excerpt: Group, reuse, and sort content in interesting ways.
 ---
 # Collections (using Tags)
 

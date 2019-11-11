@@ -1,8 +1,9 @@
 ---
-subtitle: Common Pitfalls
-excerpt: Some common problems.
-tags:
-  - docs-templates
+eleventyNavigation:
+  parent: Working with Templates
+  key: Common Pitfalls
+  order: 7
+  excerpt: Some common problems that people run into.
 ---
 # Common Pitfalls
 

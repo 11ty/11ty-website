@@ -1,8 +1,9 @@
 ---
-subtitle: Pagination
-excerpt: Iterate over a data set and create multiple files from a single template.
-tags:
-  - docs-templates
+eleventyNavigation:
+  parent: Working with Templates
+  key: Pagination
+  order: 3
+  excerpt: Iterate over a data set and create multiple files from a single template.
 relatedKey: pagination
 ---
 # Pagination
