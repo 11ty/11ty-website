@@ -14,6 +14,7 @@ All official plugins live under the `@11ty` npm organization and plugin names wi
 
 * [@11ty/eleventy-plugin-rss](https://www.npmjs.com/package/@11ty/eleventy-plugin-rss) is a collection of Nunjucks filters for RSS/Atom feed templates.
 * [@11ty/eleventy-plugin-syntaxhighlight](https://www.npmjs.com/package/@11ty/eleventy-plugin-syntaxhighlight) for syntax highlighting using Markdown and Liquid tags.
+* [@11ty/eleventy-navigation](https://www.npmjs.com/package/@11ty/eleventy-navigation) is a plugin for creating hierarchical navigation—supports breadcrumbs too!
 * [@11ty/eleventy-plugin-inclusive-language](https://www.npmjs.com/package/@11ty/eleventy-plugin-inclusive-language) includes a simple linter to help your writing use more inclusive language. Inspired by [_CSS Tricks’ Words to Avoid in Educational Writing_](https://css-tricks.com/words-avoid-educational-writing/).
 
 ### Unofficial Plugins
