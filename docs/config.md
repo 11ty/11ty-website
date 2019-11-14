@@ -492,39 +492,7 @@ module.exports = function(eleventyConfig) {
 
 ### Data Deep Merge {% addedin "0.6.0" %}
 
-Opts in to a full deep merge when combining the Data Cascade. This will use something like `lodash.mergewith` to combine Arrays and deep merge Objects, rather than a simple top-level merge using `Object.assign`. Read more at [Issue #147](https://github.com/11ty/eleventy/issues/147). This will likely become the default in an upcoming major version.
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setDataDeepMerge(true);
-};
-```
-
-Note that all data stored in the `pagination` variable is exempted from this behavior (we don’t want `pagination.items` to be merged together).
-
-#### Using the `override:` prefix
-
-Use the `override:` prefix on any data key to opt-out of this merge behavior for specific values or nested values.
-
-{% codetitle "posts/posts.json" %}
-
-```json
-{
-  "tags": ["posts"]
-}
-```
-
-{% codetitle "posts/firstpost.md" %}
-
-```
----
-override:tags: []
----
-```
-
-Even though normally the `posts/firstpost.md` file would inherit the `posts` tag from the directory data file (per normal [data cascade rules](/docs/data/)), we can override the `tags` value to be an empty array to opt-out of this behavior.
+* Documentation for [Data Deep Merging has been moved to its own page](/docs/data-deep-merge/) under the Data Cascade.
 
 ### Watch JavaScript Dependencies {% addedin "0.7.0" %}
 

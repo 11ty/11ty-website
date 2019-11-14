@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Using Data
+  parent: Data Cascade
   key: Global Data Files
   order: 3
 relatedLinks:

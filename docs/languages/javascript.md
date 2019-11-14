@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Template Languages
   key: JavaScript
-  order: 3
+  order: 4
 addedInVersion: 0.7.0
 relatedKey: javascript
 relatedTitle: Template Language—JavaScript

@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Using Data
+  parent: Data Cascade
   key: Template and Directory Data Files
   order: 2
 ---

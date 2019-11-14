@@ -46,6 +46,14 @@
 	}
 }
 
+/* Menus nested 2 or more deep */
+.elv-toc-list ul ul {
+	padding-bottom: 0;
+}
+.elv-toc-list ul ul > li:not(.elv-toc-active) > ul > li:not(.elv-toc-active) {
+	display: none;
+}
+
 /* List items */
 .elv-toc summary,
 .elv-toc-list a {
