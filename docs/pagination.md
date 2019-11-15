@@ -229,7 +229,7 @@ Writes to `_site/different/page-0/index.html`, `_site/different/page-1/index.htm
 
 That means Nunjucks will also let you start your page numbers with 1 instead of 0, by just adding 1 here:
 
-{% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
+{% codetitle "YAML Front Matter using Nunjucks", "Syntax" %}
 
 {% raw %}
 ```markdown
@@ -252,6 +252,8 @@ permalink: "different/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber
 {% endraw %}
 
 Writes to `_site/different/index.html`, `_site/different/page-2/index.html`, et cetera.
+
+{% callout "info" %}Note that the above example works in Nunjucks but {% raw %}<code>{{ pagination.pageNumber + 1 }}</code>{% endraw %} is not supported in Liquid. Use {% raw %}<code>{{ pagination.pageNumber | plus: 1 }}</code>{% endraw %} instead.{% endcallout %}
 
 ### Use page item data in the permalink
 

@@ -7,6 +7,8 @@ eleventyNavigation:
 ---
 # Permalinks
 
+[[toc]]
+
 ## Cool URIs don’t change
 
 Eleventy automatically helps you make sure that [Cool URIs don’t change](https://www.w3.org/Provider/Style/URI.html).
