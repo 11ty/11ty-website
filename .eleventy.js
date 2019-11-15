@@ -112,24 +112,6 @@ module.exports = function(eleventyConfig) {
 		return HumanReadable.toHumanString(num);
 	});
 
-	eleventyConfig.addFilter("sortMenu", function(collection, sortOrder) {
-		if(!sortOrder) {
-			return collection;
-		}
-
-		let order = sortOrder.map(path => `./docs/${path}.md`);
-
-		return collection.sort(function(a, b) {
-			let firstIndex = order.indexOf(a.inputPath);
-			let secondIndex = order.indexOf(b.inputPath);
-
-			if( firstIndex === -1 ) return 1;
-			if( secondIndex === -1 ) return -1;
-
-			return firstIndex - secondIndex;
-		});
-	});
-
 	eleventyConfig.addShortcode("templatelangs", function(languages, page, whitelist, anchor, isinline) {
 		let parentTag = isinline ? "span" : "ul";
 		let childTag = isinline ? "span" : "li";
