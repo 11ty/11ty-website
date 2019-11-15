@@ -348,7 +348,7 @@ pagination:
 ```
 {% endraw %}
 
-The above generates a list of links but you could do a lot more. See what’s available in the [Collection documentation](/docs/collections/#individual-collection-items-(useful-for-sort-callbacks)) (specifically `templateContent`). If you’d like to use this to automatically generate Tag pages for your content, please read [Quick Tip #004—Create Tag Pages for your Blog](/docs/quicktips/tag-pages/).
+The above generates a list of links but you could do a lot more. See what’s available in the [Collection documentation](/docs/collections/) (specifically `templateContent`). If you’d like to use this to automatically generate Tag pages for your content, please read [Quick Tip #004—Create Tag Pages for your Blog](/docs/quicktips/tag-pages/).
 
 ## Modifying the Data Set prior to Pagination
 
