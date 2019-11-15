@@ -36,7 +36,7 @@ There are a bunch of [sites built using Eleventy](/docs/sites/). But listen to w
 This project aims to directly compete with all other Static Site Generators. We encourage you to try out our competition:
 
 * [Jekyll](https://jekyllrb.com/) (Ruby)
-* [Hugo](http://gohugo.io/) (Go)
+* [Hugo](https://gohugo.io/) (Go)
 * [Hexo](https://hexo.io/) (JavaScript)
 * [Gatsby](https://www.gatsbyjs.org/) (JavaScript using React)
 * [Nuxt](https://www.staticgen.com/nuxt) (JavaScript using Vue)

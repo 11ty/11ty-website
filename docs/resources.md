@@ -32,7 +32,7 @@ Make components and markup data-driven so that you don’t have a bunch of one-o
 
 ## Serverless Friendly
 
-> “You can take your front-end skills and do things that typically only a back-end can do. You can write a JavaScript function that you run and receive a response from by hitting a URL.”—[The Power of Serverless](https://thepowerofserverless.info/) from [Chris Coyier](https://twitter.com/chriscoyier)
+> “You can take your front-end skills and do things that typically only a back-end can do. You can write a JavaScript function that you run and receive a response from by hitting a URL.”—[The Power of Serverless](https://serverless.css-tricks.com/) from [Chris Coyier](https://twitter.com/chriscoyier)
 
 Take care to make sure that <span class="buzzword">serverless</span> functions are <span class="buzzword">progressively enhanced</span>. That means they should either run at build time. If you call <span class="buzzword">serverless</span> functions in client-side JavaScript, they should be used for features that are outside the core functionality of the site.
 

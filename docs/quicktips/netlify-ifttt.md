@@ -7,7 +7,7 @@ In [Quick Tip #007](/docs/quicktips/eliminate-js/) we talked about migrating awa
 
 Updating this data at build time means that the data isn’t necessarily “live” (although the counts are likely cached at by at least one of the upstream dependencies of this widget, with a frequency that is out of your control).
 
-I’m comfortable with these numbers being a little delayed (more than the JS widget method was) and with this new approach I get more control over the frequency of updates BUT I do probably want to run the build at least once a day. To do this, I used an [IFTTT](https://ifttt.com/) applet to trigger my Netlify build to run every morning using [Netlify’s Build Hooks](https://www.netlify.com/docs/webhooks/#incoming-webhooks).
+I’m comfortable with these numbers being a little delayed (more than the JS widget method was) and with this new approach I get more control over the frequency of updates BUT I do probably want to run the build at least once a day. To do this, I used an [IFTTT](https://ifttt.com/) applet to trigger my Netlify build to run every morning using [Netlify’s Build Hooks](https://docs.netlify.com/configure-builds/build-hooks/).
 
 _Heavily inspired by [Phil Hawksworth’s work on RSS Jamstack](https://twitter.com/philhawksworth/status/1038067638369443840)._
 
