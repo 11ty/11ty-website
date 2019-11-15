@@ -70,7 +70,7 @@ The `fileSlug` variable is mapped from inputPath and is useful for creating your
 
 The `filePathStem` variable is mapped from inputPath and is useful if you’ve inherited a project that doesn’t use clean [permalinks](/docs/permalinks/).
 
-{% callout "info" %}<strong>Careful with this one</strong> and remember that <a href="/docs/permalinks/#cool-uris-don’t-change">Cool URI’s don’t change</a>.{% endcallout %}
+{% callout "info" %}<strong>Careful with this one</strong> and remember that <a href="/docs/permalinks/#cool-uris-dont-change">Cool URI’s don’t change</a>.{% endcallout %}
 
 If you absolutely need a file extension on your output, you might use it like this:
 

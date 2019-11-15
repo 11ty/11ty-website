@@ -44,7 +44,7 @@ This allows you further customization options using Eleventy’s provided helper
 * Add [Shortcodes](/docs/shortcodes/).
 * Add [Custom Tags](/docs/custom-tags/).
 * Add [JavaScript Functions](/docs/languages/javascript/#javascript-template-functions) {% addedin "0.7.0" %}
-* Add custom [Collections](/docs/collections/) and use [Advanced Collection Filtering and Sorting](/docs/collections/#advanced%3A-custom-filtering-and-sorting).
+* Add custom [Collections](/docs/collections/) and use [Advanced Collection Filtering and Sorting](/docs/collections/#advanced-custom-filtering-and-sorting).
 * Add some [Plugins](/docs/plugins/).
 
 ## Configuration Options
@@ -525,7 +525,7 @@ module.exports = function(eleventyConfig) {
 
 ### Customize Front Matter Parsing Options {% addedin "0.9.0" %}
 
-* Documented at [Front Matter Data](/docs/data-frontmatter/#advanced%3A-customize-front-matter-parsing).
+* Documented at [Front Matter Data](/docs/data-frontmatter/#advanced-customize-front-matter-parsing).
 
 
 <!--

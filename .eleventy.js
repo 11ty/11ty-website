@@ -11,6 +11,7 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language");
 const cfg = require("./_data/config.js");
+const slugify = require('slugify');
 
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);
@@ -238,7 +239,7 @@ module.exports = function(eleventyConfig) {
 	}
 
 	function markdownItSlugify(s) {
-		return encodeURIComponent(removeExtraText(s).trim().toLowerCase().replace(/\s+/g, '-'));
+		return slugify(removeExtraText(s), { lower: true, remove: /[:’'`,]/g });
 	}
 
 	eleventyConfig.setLibrary("md", markdownIt({

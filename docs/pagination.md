@@ -381,7 +381,7 @@ Paginates to:
 
 _(More discussion at [Issue #194](https://github.com/11ty/eleventy/issues/194))_
 
-As an aside, this could also be achieved in a more verbose way using the [Collection API](/docs/collections/#advanced%3A-custom-filtering-and-sorting). This could also be done using the new `before` callback {% addedin "0.10.0" %}.
+As an aside, this could also be achieved in a more verbose way using the [Collection API](/docs/collections/#advanced-custom-filtering-and-sorting). This could also be done using the new `before` callback {% addedin "0.10.0" %}.
 
 ### Blacklisting or Filtering Values {% addedin "0.4.0" %}
 
