@@ -95,7 +95,7 @@ To remap your template’s output to a different path than the default, use the 
 
 ```
 ---
-permalink: this-is-a-new-path/subdirectory/testing/index.html
+permalink: "this-is-a-new-path/subdirectory/testing/index.html"
 ---
 ```
 
@@ -127,7 +127,7 @@ For example, in a Nunjucks template:
 ```
 ---
 mySlug: this-is-a-new-path
-permalink: subdir/{{ mySlug }}/index.html
+permalink: "subdir/{{ mySlug }}/index.html"
 ---
 ```
 {% endraw %}
@@ -135,6 +135,21 @@ permalink: subdir/{{ mySlug }}/index.html
 Writes to `_site/subdir/this-is-a-new-path/index.html`.
 
 {% callout "info", "md" %}Make sure you read about the special `page` variables useful for permalinks too: [`page.fileSlug`](/docs/data/#fileslug) and [`page.filePathStem`](/docs/data/#filepathstem).{% endcallout %}
+
+#### Warning about YAML Objects
+
+{% callout "warn" %}When you use variables, make sure that you use quotes! Without quotes YAML may try to parse this as an object if the first character is a <code>{</code>, for example <code>permalink: {% raw %}{{ page.filePathStem }}{% endraw %}.html</code>. This is a <a href="/docs/pitfalls/"><strong>common pitfall</strong></a>.{% endcallout %}
+
+{% codetitle "YAML", "Syntax" %}
+
+{% raw %}
+```
+permalink: "{{ page.filePathStem }}.html"
+```
+{% endraw %}
+
+The error message might look like `can not read a block mapping entry; a multiline key may not be an implicit key`.
+
 
 ### Disable templating in permalinks {% addedin "0.7.0" %}
 
@@ -174,7 +189,7 @@ Use the provided [`slug` filter](/docs/filters/#slug) to modify other data avail
 ```
 ---
 title: My Article Title
-permalink: subdir/{{ title | slug }}/index.html
+permalink: "subdir/{{ title | slug }}/index.html"
 ---
 ```
 {% endraw %}
@@ -204,7 +219,7 @@ To remap your template’s output to a directory independent of the output direc
 
 ```
 ---
-permalink: _includes/index.html
+permalink: "_includes/index.html"
 permalinkBypassOutputDir: true
 ---
 ```
@@ -221,7 +236,7 @@ For example, to generate a JSON search index to be used by popular search librar
 
 ```
 ---
-permalink: index.json
+permalink: "index.json"
 ---
 <%- JSON.stringify(collections.all) -%>
 ```
@@ -229,3 +244,4 @@ permalink: index.json
 ### Pagination
 
 Pagination variables also work here. [Read more about Pagination](/docs/pagination/)
+

@@ -45,7 +45,7 @@ pagination:
     data: possums
     size: 1
     alias: possum
-permalink: possums/{{ possum.name | slug }}/
+permalink: "possums/{{ possum.name | slug }}/"
 ---
 
 {{ possum.name }} is {{ possum.age }} years old

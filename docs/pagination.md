@@ -220,7 +220,7 @@ Normally, front matter does not support template syntax, but `permalink` does, e
 {% raw %}
 ```markdown
 ---
-permalink: different/page-{{ pagination.pageNumber }}/index.html
+permalink: "different/page-{{ pagination.pageNumber }}/index.html"
 ---
 ```
 {% endraw %}
@@ -234,7 +234,7 @@ That means Nunjucks will also let you start your page numbers with 1 instead of 
 {% raw %}
 ```markdown
 ---
-permalink: different/page-{{ pagination.pageNumber + 1 }}/index.html
+permalink: "different/page-{{ pagination.pageNumber + 1 }}/index.html"
 ---
 ```
 {% endraw %}
@@ -246,7 +246,7 @@ You can even use template logic here too:
 {% raw %}
 ```markdown
 ---
-permalink: different/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html
+permalink: "different/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 ---
 ```
 {% endraw %}
@@ -267,7 +267,7 @@ pagination:
   size: 1
 testdata:
   - My Item
-permalink: different/{{ pagination.items[0] | slug }}/index.html
+permalink: "different/{{ pagination.items[0] | slug }}/index.html"
 ---
 ```
 {% endraw %}
@@ -290,7 +290,7 @@ pagination:
 testdata:
   - Item1
   - Item2
-permalink: different/{{ wonder | slug }}/index.html
+permalink: "different/{{ wonder | slug }}/index.html"
 ---
 You can use the alias in your content too {{ wonder }}.
 ```
@@ -314,7 +314,7 @@ testdata:
   - Item2
   - Item3
   - Item4
-permalink: different/{{ wonder[0] | slug }}/index.html
+permalink: "different/{{ wonder[0] | slug }}/index.html"
 ---
 You can use the alias in your content too {{ wonder[0] }}.
 ```

@@ -76,11 +76,13 @@ If you absolutely need a file extension on your output, you might use it like th
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
+{% raw %}
 ```
 ---
-permalink: {% raw %}{{ page.filePathStem }}{% endraw %}.html
+permalink: "{{ page.filePathStem }}.html"
 ---
 ```
+{% endraw %}
 
 Example Output below is using the above permalink value.
 
