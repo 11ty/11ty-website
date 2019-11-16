@@ -60,7 +60,7 @@ This is a continuation of my content…
 
 #### Changing where your excerpt is stored
 
-If you don’t want to use `page.excerpt` to store your excerpt value, then use your own `excerpt_alias` option ([any valid path to Lodash Set will work](https://lodash.com/docs/4.17.11#set)) like so:
+If you don’t want to use `page.excerpt` to store your excerpt value, then use your own `excerpt_alias` option ([any valid path to Lodash Set will work](https://lodash.com/docs/4.17.15#set)) like so:
 
 {% codetitle ".eleventy.js" %}
 

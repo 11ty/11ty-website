@@ -526,9 +526,9 @@ Now `collections.myCollection` will have both output pages in the collection arr
 
 ## Full Pagination Option List
 
-* `data` (String) [Lodash.get path](https://lodash.com/docs/4.17.10#get) to point to the target data set.
+* `data` (String) [Lodash.get path](https://lodash.com/docs/4.17.15#get) to point to the target data set.
 * `size` (Number, required)
-* `alias` (String) [Lodash.set path](https://lodash.com/docs/4.17.10#set) to point to the property to set.
+* `alias` (String) [Lodash.set path](https://lodash.com/docs/4.17.15#set) to point to the property to set.
 * `resolve: values` {% addedin "0.4.0" %}
 * `filter` (Array) {% addedin "0.4.0" %}
 * `reverse: true` (Boolean) {% addedin "0.7.0" %}
