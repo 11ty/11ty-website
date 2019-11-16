@@ -5,7 +5,7 @@
   "main": "_site/index.html",
   "scripts": {
     "assets": "cp node_modules/@11ty/logo/logo.png .",
-    "links-external": "hyperlink -r --root _site --canonicalroot https://11ty.io/ --todo 'Unknown error' --todo 'unbound namespace prefix:' _site/*.html | tap-spot",
+    "links-external": "hyperlink -r --root _site --canonicalroot https://11ty.io/ --todo 'unbound namespace prefix:' _site/*.html | tap-spot",
     "links-internal": "hyperlink -ri --root _site --canonicalroot https://11ty.io/ _site/*.html | tap-spot",
     "build": "eleventy",
     "build-production": "node node-avatars.js && ELEVENTY_PRODUCTION=true eleventy",
@@ -35,7 +35,7 @@
     "fs-extra": "^8.1.0",
     "html-minifier": "^3.5.21",
     "human-readable-numbers": "^0.9.5",
-    "hyperlink": "^4.4.1",
+    "hyperlink": "^4.4.2",
     "lodash.defer": "^4.1.0",
     "markdown-it-anchor": "^5.0.2",
     "markdown-it-table-of-contents": "^0.4.4",
