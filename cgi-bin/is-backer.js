@@ -1,4 +1,8 @@
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
+
+function hashCode(str) {
+  return str.split("").reduce((prevHash, currVal) => (((prevHash << 5) - prevHash) + currVal.charCodeAt(0))|0, 0);
+}
 
 exports.handler = async (event, context) => {
   let query = `
@@ -46,12 +50,19 @@ query eleventyBackers {
       };
     }
 
-    let email = event.queryStringParameters.email;
+    let email = event.queryStringParameters.q;
 
-    for(let supporter of result.data.collective.members.nodes) {
-      if(supporter.account.email === email) {
-        isBacker = true;
-        name = supporter.account.name;
+    if(email) {
+      for(let supporter of result.data.collective.members.nodes) {
+        let emailCompare = supporter.account.email;
+        if(email.indexOf("@") === -1) {
+          emailCompare = hashCode(emailCompare);
+        }
+
+        if(emailCompare === email) {
+          isBacker = true;
+          name = supporter.account.name;
+        }
       }
     }
   }
