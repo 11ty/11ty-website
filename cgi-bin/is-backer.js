@@ -1,5 +1,7 @@
+const fetch = require('node-fetch');
+
 exports.handler = async (event, context) => {
-  const query = `
+  let query = `
 query eleventyBackers {
   collective(slug: "11ty") {
     members {
@@ -20,8 +22,8 @@ query eleventyBackers {
   let name = "";
 
   if(process.env.OPENCOLLECT_API_KEY) {
-    const url = "https://api.opencollective.com/graphql/v2";
-    const opts = {
+    let url = "https://api.opencollective.com/graphql/v2";
+    let opts = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
