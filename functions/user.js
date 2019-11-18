@@ -53,6 +53,7 @@ query eleventyBackers {
     }
 
     const {identity, user} = context.clientContext;
+    let name = "";
     if(user) {
 console.log( "user email: ", user );
       if(user.email) {
