@@ -49,7 +49,7 @@ query eleventyBackers {
     }
 
     const {identity, user} = context.clientContext;
-console.log( user );
+console.log( context.clientContext );
     if(user && user.email) {
 console.log( "user email: ", user.email );
       for(let supporter of result.data.collective.members.nodes) {
