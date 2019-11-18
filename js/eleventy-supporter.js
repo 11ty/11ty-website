@@ -14,7 +14,32 @@ EleventySupporter.prototype.check = function() {
 	});
 
 	var user = auth.currentUser();
+	this.getCurrentUser();
 	return !!user;
+};
+EleventySupporter.prototype.getCurrentUser = function() {
+	function generateHeaders() {
+	  const headers = { "Content-Type": "application/json" };
+	  if (netlifyIdentity.currentUser()) {
+	    return netlifyIdentity.currentUser().jwt().then((token) => {
+	      return { ...headers, Authorization: `Bearer ${token}` };
+	    })
+	  }
+	  return Promise.resolve(headers);
+	}
+
+	generateHeaders().then((headers) => {
+    fetch('/.netlify/cgi-bin/user', {
+      method: "POST",
+      headers
+    })
+    .then(response => {
+      if (!response.ok) {
+        return response.text().then(err => {throw(err)});
+      }
+      console.log( response );
+    });
+  });
 };
 EleventySupporter.prototype.login = function() {
 	if(this.check()) {

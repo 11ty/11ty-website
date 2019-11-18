@@ -22,8 +22,12 @@ query eleventyBackers {
 }
 `;
 
-  let name = "";
-  if(process.env.OPENCOLLECT_API_KEY) {
+  if(!process.env.OPENCOLLECT_API_KEY) {
+    return {
+      statusCode: 500,
+      body: `{ "error": "Missing OpenCollective API KEY" }`
+    };
+  } else {
     let url = "https://api.opencollective.com/graphql/v2";
     let opts = {
       method: "POST",
@@ -49,23 +53,28 @@ query eleventyBackers {
     }
 
     const {identity, user} = context.clientContext;
-console.log( context.clientContext );
-    if(user && user.email) {
-console.log( "user email: ", user.email );
-      for(let supporter of result.data.collective.members.nodes) {
-console.log( "supporter email:", supporter.account.email );
-        if(supporter.account.email === user.email) {
-          name = supporter.account.name;
+    if(user) {
+console.log( "user email: ", user );
+      if(user.email) {
+        for(let supporter of result.data.collective.members.nodes) {
+          if(supporter.account.email === user.email) {
+            name = supporter.account.name;
+          }
         }
       }
-    }
-  }
 
-  return {
-    statusCode: 200,
-    body: `{
+      return {
+        statusCode: 200,
+        body: `{
   "name": "${name}",
   "slug": "${slugify(name).toLowerCase()}"
 }`
-  };
+      };
+    } else {
+      return {
+        statusCode: 401,
+        body: `{"error": "You must be signed in to call this function"}`
+      };
+    }
+  }
 };
