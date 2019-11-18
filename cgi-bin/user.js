@@ -23,7 +23,6 @@ query eleventyBackers {
 `;
 
   let name = "";
-
   if(process.env.OPENCOLLECT_API_KEY) {
     let url = "https://api.opencollective.com/graphql/v2";
     let opts = {
@@ -50,12 +49,9 @@ query eleventyBackers {
     }
 
     const {identity, user} = context.clientContext;
-    let name = "";
-    let email = user.email;
-
-    if(email) {
+    if(user && user.email) {
       for(let supporter of result.data.collective.members.nodes) {
-        if(supporter.account.email === email) {
+        if(supporter.account.email === user.email) {
           name = supporter.account.name;
         }
       }
