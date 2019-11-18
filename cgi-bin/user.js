@@ -1,7 +1,7 @@
 const slugify = require("slugify");
 
 exports.handler = async (event, context) => {
-  const supporters = require("./node-supporters.json");
+  const supporters = require("../node-supporters.json");
   let isBacker = false;
   let name = "";
 

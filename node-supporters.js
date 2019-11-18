@@ -54,5 +54,6 @@ query eleventyMembers {
       });
 
     await fs.writeFile("./node-supporters.json", JSON.stringify(result, null, 2));
+    console.log( "Wrote node-supporters.json." );
   }
 })();
