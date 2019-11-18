@@ -35,7 +35,9 @@ EleventySupporter.prototype.getCurrentUser = function() {
     })
     .then(response => {
       if (response.ok) {
-      	console.log( response.json() );
+      	response.json().then(function(jsonResult) {
+      		console.log( jsonResult );
+      	});
       } else {
         return response.text().then(err => {throw(err)});
       }
