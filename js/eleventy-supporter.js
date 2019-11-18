@@ -29,7 +29,7 @@ EleventySupporter.prototype.getCurrentUser = function() {
 	}
 
 	generateHeaders().then((headers) => {
-    fetch('/.netlify/cgi-bin/user', {
+    fetch('/.netlify/functions/user', {
       method: "POST",
       headers
     })
