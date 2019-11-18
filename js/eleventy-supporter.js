@@ -34,10 +34,11 @@ EleventySupporter.prototype.getCurrentUser = function() {
       headers
     })
     .then(response => {
-      if (!response.ok) {
+      if (response.ok) {
+      	console.log( response.json() );
+      } else {
         return response.text().then(err => {throw(err)});
       }
-      console.log( response );
     });
   });
 };
