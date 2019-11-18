@@ -50,7 +50,9 @@ query eleventyBackers {
 
     const {identity, user} = context.clientContext;
     if(user && user.email) {
+console.log( "user email: ", user.email );
       for(let supporter of result.data.collective.members.nodes) {
+console.log( "supporter email:", supporter.account.email );
         if(supporter.account.email === user.email) {
           name = supporter.account.name;
         }
