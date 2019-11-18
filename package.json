@@ -6,7 +6,7 @@
   "scripts": {
     "assets": "cp node_modules/@11ty/logo/logo.png .",
     "build": "eleventy",
-    "build-production": "node node-avatars.js && ELEVENTY_PRODUCTION=true eleventy"
+    "build-production": "node node-avatars.js && node node-update-supporters.js && ELEVENTY_PRODUCTION=true eleventy"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "avatar-local-cache": "^2.0.3",
     "chalk": "^2.4.2",
     "clean-css": "^4.2.1",
+    "dotenv": "^8.2.0",
     "flat-cache": "^2.0.1",
     "fs-extra": "^8.1.0",
     "html-minifier": "^3.5.21",
