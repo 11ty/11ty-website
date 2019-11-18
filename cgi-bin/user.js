@@ -1,18 +1,63 @@
+// TODO
+// avatars are keyed by lowercase slugs of names
+
+const fetch = require("node-fetch");
 const slugify = require("slugify");
 
 exports.handler = async (event, context) => {
-  const supporters = require("../node-supporters.json");
-  let isBacker = false;
+  let query = `
+query eleventyBackers {
+  collective(slug: "11ty") {
+    members {
+      nodes {
+        account {
+          name
+          ... on Individual {
+            email
+          }
+        }
+      }
+    }
+  }
+}
+`;
+
   let name = "";
 
-  const {identity, user} = context.clientContext;
-  let email = user.email;
+  if(process.env.OPENCOLLECT_API_KEY) {
+    let url = "https://api.opencollective.com/graphql/v2";
+    let opts = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Api-Key": process.env.OPENCOLLECT_API_KEY
+      },
+      body: JSON.stringify({ query })
+    };
 
-  if(email) {
-    for(let supporter of supporters.data.collective.members.nodes) {
-      if(supporter.account.email === email) {
-        isBacker = true;
-        name = supporter.account.name;
+    let jsonError;
+    let result = await fetch(url, opts)
+      .then(res => res.json())
+      .catch(function(error) {
+        jsonError = error;
+      });
+
+    if(jsonError) {
+      return {
+        statusCode: 500,
+        body: `{ "error": "${jsonError}" }`
+      };
+    }
+
+    const {identity, user} = context.clientContext;
+    let name = "";
+    let email = user.email;
+
+    if(email) {
+      for(let supporter of result.data.collective.members.nodes) {
+        if(supporter.account.email === email) {
+          name = supporter.account.name;
+        }
       }
     }
   }
@@ -20,7 +65,6 @@ exports.handler = async (event, context) => {
   return {
     statusCode: 200,
     body: `{
-  "is-backer": ${isBacker},
   "name": "${name}",
   "slug": "${slugify(name).toLowerCase()}"
 }`
