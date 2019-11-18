@@ -52,12 +52,12 @@ query eleventyBackers {
       };
     }
 
-    const {identity, user} = context.clientContext;
+    const {user} = context.clientContext;
     let name = "";
     if(user) {
-console.log( "user email: ", user );
       if(user.email) {
         for(let supporter of result.data.collective.members.nodes) {
+console.log( user.email, supporter.account.email );
           if(supporter.account.email === user.email) {
             name = supporter.account.name;
           }
