@@ -4,7 +4,7 @@
 const fetch = require("node-fetch");
 const slugify = require("slugify");
 
-exports.handler = async (event, context) => {
+exports.handler = async (event, context, callback) => {
   let query = `
 query eleventyBackers {
   collective(slug: "11ty") {
@@ -23,10 +23,10 @@ query eleventyBackers {
 `;
 
   if(!process.env.OPENCOLLECT_API_KEY) {
-    return {
+    return callback(null, {
       statusCode: 500,
       body: `{ "error": "Missing OpenCollective API KEY" }`
-    };
+    });
   } else {
     let url = "https://api.opencollective.com/graphql/v2";
     let opts = {
@@ -46,36 +46,39 @@ query eleventyBackers {
       });
 
     if(jsonError) {
-      return {
+      return callback(null, {
         statusCode: 500,
         body: `{ "error": "${jsonError}" }`
-      };
+      });
     }
 
     const {user} = context.clientContext;
-    let name = "";
     if(user) {
       if(user.email) {
         for(let supporter of result.data.collective.members.nodes) {
-console.log( user.email, supporter.account.email );
           if(supporter.account.email === user.email) {
-            name = supporter.account.name;
+            return callback(null, {
+              statusCode: 200,
+              body: `{
+  "name": "${supporter.account.name}",
+  "slug": "${slugify(supporter.account.name).toLowerCase()}"
+}`
+            });
           }
         }
       }
 
-      return {
-        statusCode: 200,
+      return callback(null, {
+        statusCode: 404,
         body: `{
-  "name": "${name}",
-  "slug": "${slugify(name).toLowerCase()}"
+          "error": "User not found."
 }`
-      };
+      });
     } else {
-      return {
+      return callback(null, {
         statusCode: 401,
         body: `{"error": "You must be signed in to call this function"}`
-      };
+      });
     }
   }
 };
