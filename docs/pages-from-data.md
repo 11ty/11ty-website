@@ -36,7 +36,7 @@ Let's look at an example where we dynamically build pages based on data from a j
 ]
 ```
 
-In order to create one page per possum, we can use the following template.
+In order to create one page per possum, we can use the following template in [add template location for clarity].
 
 {% raw %}
 ```html
