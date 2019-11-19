@@ -32,7 +32,7 @@ Let's look at an example where we dynamically build pages based on data from a j
   {
     "name":"Pennywise",
     "age":9
-  },
+  }
 ]
 ```
 
