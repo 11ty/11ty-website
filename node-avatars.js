@@ -17,6 +17,9 @@ async function fetchAvatar(name, image, cacheName) {
 			if(image) {
 				let avatarCache = new AvatarLocalCache();
 				avatarCache.width = 73;
+				if(cacheName === "opencollective") {
+					avatarCache.formats = ["jpeg"];
+				}
 
 				let outputSlugPath = `${dir}${slug}`;
 				let results = await avatarCache.fetchUrl(image, outputSlugPath);
@@ -65,7 +68,8 @@ async function fetchAvatarsForDataSource(sourceName, entries, fetchCallbacks) {
 
 (async function() {
 	// Open Collective
-	let supporters = require("./_data/supporters.json").filter(entry => entry.role.toLowerCase() === "backer");
+	// let supporters = require("./_data/supporters.json").filter(entry => entry.role.toLowerCase() === "backer");
+	let supporters = require("./_data/supporters.json");
 	fetchAvatarsForDataSource("opencollective", supporters, {
 		name: supporter => supporter.name,
 		image: supporter => supporter.image
