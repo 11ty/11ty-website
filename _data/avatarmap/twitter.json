@@ -1766,6 +1766,37 @@
       "size": 1905
     }
   ],
+  "lachzeat": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "lachzeat",
+      "path": "img/avatar-local-cache/twitter/lachzeat.webp",
+      "size": 1084
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "lachzeat",
+      "path": "img/avatar-local-cache/twitter/lachzeat.png",
+      "size": 1464
+    }
+  ],
   "leedsjs": [
     {
       "format": "webp",
@@ -3253,7 +3284,7 @@
       "hasAlpha": false,
       "name": "zachleat",
       "path": "img/avatar-local-cache/twitter/zachleat.webp",
-      "size": 850
+      "size": 1022
     },
     {
       "format": "jpeg",
@@ -3268,7 +3299,7 @@
       "hasAlpha": false,
       "name": "zachleat",
       "path": "img/avatar-local-cache/twitter/zachleat.jpg",
-      "size": 1431
+      "size": 1543
     }
   ],
   "zellwk": [
