@@ -26,7 +26,7 @@ class EleventySupporter {
   }
 
   async getCurrentUser(success, failure) {
-    return success({name: "Zach Leatherman", slug: "zach-leatherman"});
+    // return success({name: "Zach Leatherman", slug: "zach-leatherman"});
 
     let headers = await this.getAuthHeaders();
     let response = await fetch("/.netlify/functions/user", {
