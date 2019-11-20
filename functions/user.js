@@ -53,6 +53,7 @@ query eleventyBackers {
     if(user) {
       if(user.email) {
         for(let supporter of result.data.collective.members.nodes) {
+console.log( user.email, "vs", supporter.account.email, "same?", supporter.account.email === user.email );
           if(supporter.account.email === user.email) {
             return callback(null, {
               statusCode: 200,
