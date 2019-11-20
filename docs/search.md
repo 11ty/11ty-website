@@ -13,7 +13,7 @@ searchTitle: Search The Eleventy Documentation
 			<button type="submit" class="search-btn">Search</button>
 		</div>
 	</div>
-	<p>Search provided by <span data-investors-avatar="prepend"><span data-investors-toggle="you—thank you for supporting Eleventy!"></span></span><span class="investors-noauth"><a href="https://duckduckgo.com/">Duck Duck Go</a>.</span><span class="investors-noauth"> As a thank you, Eleventy Supporters get access to on-site documentation search. <a href="/docs/supporters/#your-supporters-account">Already have a supporter account? Log in!</a></span></p>
+	<p>Search provided by <span data-investors-avatar="prepend"><span data-investors-toggle="you—thank you for supporting Eleventy!"></span></span><span class="investors-noauth"><a href="https://duckduckgo.com/">Duck Duck Go</a>.</span><span class="investors-noauth"> As a thank you, Eleventy Supporters get access to on-site documentation search. <a href="/docs/account/">Already have a supporter account? Log in!</a></span></p>
 </form>
 <div id="search-results" class="hide">
 	<h2 id="search-results-count">Results</h2>
