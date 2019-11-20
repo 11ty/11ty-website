@@ -9,7 +9,27 @@
 .search-results-notfound {
 	list-style-type: none;
 }
+.search-results-item {
+	display: block;
+	text-decoration: none;
+	padding: .25em .5em;
+}
+.search-results-item:hover,
+.search-results-item:focus {
+	background-color: #f7f7f7;
+}
+.search-results-item:hover code,
+.search-results-item:focus code {
+	background-color: #ddd;
+}
+.search-results-item-title {
+	display: block;
+}
+.search-results-item-title strong {
+	text-decoration: underline;
+}
 .search-results-item-matches {
 	font-size: .75em;
-	line-height: 1.8
+	line-height: 1.8;
+	max-width: 50em;
 }

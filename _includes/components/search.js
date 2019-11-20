@@ -41,21 +41,31 @@ class Search {
 		let matchCount = matches.length;
 		let listItem = document.createElement("li");
 		//<code>${page.url}</code>
-		listItem.innerHTML = `<a href="${page.url}">${page.title ? `<strong>${page.title}</strong>` : page.url}</a>
-${matchCount > 1 ? ` (${matchCount} matches)` : ""}
-${matchCount ? `<p class="search-results-item-matches truncate-overflow" style="--truncate-lh: 1.8em; --truncate-lines: 3">` : ""}
-${matches.slice(0, maxMatchPreview).map(match => {
-	let beforeText = match.haystack.substring(Math.max(0, match.indeces.start - indexTolerance), match.indeces.start);
-	let text = match.haystack.substring(match.indeces.start, match.indeces.end);
-	let afterText = match.haystack.substring(match.indeces.end, Math.min(match.indeces.end + indexTolerance, match.haystack.length));
-	// console.log( match, Math.max(0, match.indeces.start - indexTolerance), Math.min(match.indeces.end + indexTolerance, match.haystack.length) );
-	// console.log( match.needle );
-	// console.log( "before", beforeText );
-	// console.log( "text", text );
-	// console.log( "after", afterText );
-	return `<code>${beforeText}<strong>${text}</strong>${afterText}</code>`;
-}).join("\n")}
-${matchCount ? "</p>" : ""}
+		listItem.innerHTML = `<a href="${page.url}" class="search-results-item">
+	<span class="search-results-item-title">
+		${page.title ? `<strong>${page.title}</strong>` : page.url}
+		${matchCount > 1 ? ` (${matchCount} matches)` : ""}
+	</span>
+	${matchCount ? `<p class="search-results-item-matches truncate-overflow" style="--truncate-lh: 1.8em; --truncate-lines: 3">` : ""}
+	${matches.slice(0, maxMatchPreview).map(match => {
+		let beforeIndexStart = Math.max(0, match.indeces.start - indexTolerance);
+		let showBeforeEllipsis = beforeIndexStart > 0;
+		let beforeText = match.haystack.substring(beforeIndexStart, match.indeces.start);
+
+		let text = match.haystack.substring(match.indeces.start, match.indeces.end);
+
+		let afterIndexEnd = Math.min(match.indeces.end + indexTolerance, match.haystack.length);
+		let showAfterEllipsis = afterIndexEnd !== match.haystack.length;
+		let afterText = match.haystack.substring(match.indeces.end, afterIndexEnd);
+		// console.log( match, Math.max(0, match.indeces.start - indexTolerance), Math.min(match.indeces.end + indexTolerance, match.haystack.length) );
+		// console.log( match.needle );
+		// console.log( "before", beforeText );
+		// console.log( "text", text );
+		// console.log( "after", afterText );
+		return `${showBeforeEllipsis ? "…" : ""}<code>${beforeText}<strong>${text}</strong>${afterText}</code>${showAfterEllipsis ? "…" : ""}`;
+	}).join("\n")}
+	${matchCount ? "</p>" : ""}
+</a>
 `;
 
 		this.searchResultsList.append(listItem);
