@@ -47,14 +47,16 @@ class EleventySupporter {
     this.setContentElements(true);
   }
 
-  setupCurrentUser() {
+  setupCurrentUser(success) {
     let currentUser = window.localStorage.eleventySupporterUser;
     if(currentUser) {
       currentUser = JSON.parse(currentUser);
       this._setupCurrentUser(currentUser);
+      success(currentUser);
     } else {
       this.getCurrentUser(user => {
         this._setupCurrentUser(user);
+        success(user);
         window.localStorage.eleventySupporterUser = JSON.stringify(user);
       }, function(err) {
         delete window.localStorage.eleventySupporterUser;
@@ -124,8 +126,9 @@ class EleventySupporter {
 
   login() {
     if(this.check()) {
-      this.docEl.classList.add(this.className);
-      this.setupCurrentUser();
+      this.setupCurrentUser(() => {
+        this.docEl.classList.add(this.className);
+      });
     }
   }
 

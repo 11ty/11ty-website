@@ -1,5 +1,6 @@
 ---
 searchTitle: Search The Eleventy Documentation
+putTheJsInTheHead: true
 ---
 # Search the Eleventy Documentation
 
