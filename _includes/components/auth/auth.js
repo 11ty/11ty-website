@@ -57,7 +57,8 @@ class EleventySupporter {
       currentUser = JSON.parse(currentUser);
       this._setupCurrentUser(currentUser);
       success(currentUser);
-    } else {
+    } else if("netlifyIdentity" in window) {
+      // this should only run on the login page.
       this.getCurrentUser(user => {
         this._setupCurrentUser(user);
         success(user);
