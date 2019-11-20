@@ -1,4 +1,5 @@
 .github
+.netlify
 _cache
 functions
 README.md
