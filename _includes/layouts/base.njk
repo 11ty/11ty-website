@@ -24,6 +24,9 @@
 {% include 'components/callout.css' %}
 {% include 'components/codetitle.css' %}
 {% include 'components/forms.css' %}
+{% include 'components/supporters.css' %}
+{% include 'components/search.css' %}
+{% include 'components/truncate.css' %}
 {% include 'components/details-oneway.css' %}
 {% endset %}
 		<style>{{ css | cssmin | safe }}</style>
@@ -45,7 +48,6 @@
 		{%- include "components/details-force-state.js" -%}
 		</script>
 		<script src="/js/instant.page.js" async></script>
-		<script src="/js/gotrue.js"></script>
-		<script src="/js/eleventy-supporter.js"></script>
+		<script src="/js/eleventy.js" type="module" async></script>
 	</body>
 </html>

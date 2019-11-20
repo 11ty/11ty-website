@@ -1,8 +1,5 @@
 ---
-eleventyNavigation:
-  parent: Getting Started
-  key: Install Eleventy Globally
-  order: 5
+searchTitle: Install Eleventy Globally
 ---
 # Install Eleventy Globally
 

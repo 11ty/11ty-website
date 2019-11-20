@@ -1,8 +1,9 @@
 <ul class="elv-nav elv-nav-footer">
 	<li class="elv-nav-item">{% include "edit-on-github.njk" %}</li>
+	<li class="elv-nav-item"><a href="/docs/account/" class="elv-externalexempt">Contributor Account</a></li>
 	<li class="elv-nav-item"><a href="/styleguide/">Style Guide</a></li>
 	<li class="elv-nav-item"><a href="https://www.netlify.com/" class="elv-externalexempt">Netlify</a> Hosted</li>
-	<li class="elv-nav-item"><a href="https://www.npmjs.com/org/11ty" class="elv-externalexempt">npm</a> Delivered</li>
+	<!-- <li class="elv-nav-item"><a href="https://www.npmjs.com/org/11ty" class="elv-externalexempt">npm</a> Delivered</li> -->
 	<li class="elv-nav-item">Created by <a href="https://twitter.com/zachleat" class="elv-externalexempt">@zachleat</a></li>
 {% if github and github.stargazers %}
 	<li class="elv-nav-item elv-nav-item-br elv-nav-item-sm"><a href="https://github.com/11ty/eleventy/" class="elv-externalexempt elv-nav-light">{{ github.stargazers | humanReadableNum }} GitHub Stars</a></li>

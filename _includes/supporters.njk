@@ -1,6 +1,9 @@
 <div class="facepile facepile-supporters">
 {% for supporter in supporters %}{% if supporter.role === "BACKER" and supporter.tier -%}
 {%- set nameToSlug = supporter.name | slug | lower -%}
-	<a href="{{ supporter.profile }}" class="elv-externalexempt">{% avatarlocalcache "opencollective", nameToSlug, supporter.name %}</a>
+	<a href="{{ supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}">{% avatarlocalcache "opencollective", nameToSlug, supporter.name %}</a>
 {%- endif %}{% endfor %}
+{%- if config.localDev -%}
+	<a href="https://opencollective.com/zachleat" class="elv-externalexempt" data-supporters-slug="zach-leatherman"><img src="/img/avatar-local-cache/opencollective/zach-leatherman.jpg" alt="Zach Leatherman" loading="lazy" class="avatar"></a>
+{%- endif -%}
 </div>

@@ -37,7 +37,8 @@
     "markdown-it-table-of-contents": "^0.4.4",
     "node-fetch": "^2.3.0",
     "slugify": "^1.3.4",
-    "sorted-object": "^2.0.1"
+    "sorted-object": "^2.0.1",
+    "terser": "^4.4.0"
   },
   "dependencies": {
     "@11ty/logo": "^1.0.4",

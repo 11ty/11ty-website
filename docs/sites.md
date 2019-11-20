@@ -2,6 +2,7 @@
 eleventyNavigation:
   parent: Supporting Eleventy
   key: Sites Using Eleventy
+  order: 3
 ---
 
 # {{ sites | getsize }} Sites Using Eleventy

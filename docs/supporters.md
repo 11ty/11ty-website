@@ -1,21 +1,27 @@
 ---
 eleventyNavigation:
   parent: Supporting Eleventy
-  key: Eleventy Supporters
+  key: Eleventy Contributors
+  order: 1
 ignoreSupporters: true
 ---
-# {{ "Eleventy Is Supported Financially By The Following Lovely People" | orphanWrap | safe }}
+# Thank You Eleventy Contributors!
 
-You too can <a href="https://opencollective.com/11ty"><strong>Support Eleventy</strong> on Open Collective {% emoji "🎁" %}</a>! There are <a href="/docs/how-to-support/">other ways to support Eleventy too</a>.
+Eleventy is made possible by financial contributions from these lovely people:
 
-<ol class="facepile">
+<div class="facepile supporters-facepile lo">
 {% for supporter in supporters %}{% if supporter.role === "BACKER" -%}
 {%- set nameToSlug = supporter.name | slug | lower -%}
-	<li><a href="{{ supporter.profile }}" class="elv-externalexempt">{% avatarlocalcache "opencollective", nameToSlug, supporter.name %}{{ supporter.name }}</a><em> is {% if supporter.tier %}a  Monthly{% else %}an{% endif %} Eleventy Supporter</em> {% supporterAmount supporter.totalAmountDonated %}</li>
+	<div class="lo-c">
+    <a href="{{ supporter.profile }}" class="elv-externalexempt supporters-link">{% avatarlocalcache "opencollective", nameToSlug, supporter.name %}{{ supporter.name }}</a>
+    <span class="lo">
+        <span class="lo-c supporters-tier">{% if supporter.tier %}{% emoji "📅" %} Monthly{% endif %} Supporter</span>
+        <span class="lo-c supporters-hearts">{% supporterAmount supporter.totalAmountDonated %}</span>
+    </span>
+  </div>
 {%- endif %}{% endfor %}
-	<li><a href="https://opencollective.com/11ty"><img src="/img/default-avatar.png" alt="Default Avatar Image" loading="lazy" class="avatar"><strong>and you?</strong> {% emoji "🎁" %}{% emoji "🎁" %}{% emoji "🎁" %}</a></li>
-</ol>
+{%- if config.localDev %}<div data-supporters-slug="zach-leatherman" class="lo-c"><a href="https://opencollective.com/zachleat" class="supporters-link"><img src="/img/avatar-local-cache/opencollective/zach-leatherman.jpg" alt="Zach Leatherman" loading="lazy" class="avatar">Zach Leatherman</a><span class="lo"><span class="lo-c supporters-tier"> Supporter</span><span class="lo-c supporters-hearts">❤️❤️❤️<span class="supporters-hearts-empty">💛💛💛💛💛💛💛</span></span></span></div>{% endif %}
+  <div class="lo-c"><a href="https://opencollective.com/11ty"><img src="/img/default-avatar.png" alt="Default Avatar Image" loading="lazy" class="avatar"><strong>and you?</strong> {% emoji "🎁" %}{% emoji "🎁" %}{% emoji "🎁" %}</a></div>
+</div>
 
 There are <a href="/docs/how-to-support/"><strong>other ways to support Eleventy</strong> too</a>!
-
-_Monthly supporters have the added benefit of being listed in the footer of (almost) all documentation pages._

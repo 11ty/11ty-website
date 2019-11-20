@@ -1,0 +1,10 @@
+---
+permalink: js/eleventy.js
+eleventyExcludeFromCollections: true
+---
+{% set js %}
+{% include "components/auth/gotrue.js" %}
+{% include "components/auth/eleventy-supporter.js" %}
+{% include "components/search.js" %}
+{% endset %}
+{{ js | jsmin | safe }}

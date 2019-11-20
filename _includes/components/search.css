@@ -1,0 +1,15 @@
+.search-txt {
+	width: 100%;
+	max-width: 20em;
+}
+.search-txt,
+.search-btn {
+	font-size: 1.25em; /* 20px /16 */
+}
+.search-results-notfound {
+	list-style-type: none;
+}
+.search-results-item-matches {
+	font-size: .75em;
+	line-height: 1.8
+}

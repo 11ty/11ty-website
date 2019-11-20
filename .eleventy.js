@@ -1,6 +1,7 @@
 const chalk = require("chalk");
 const htmlmin = require("html-minifier");
 const CleanCSS = require("clean-css");
+const Terser = require("terser");
 const HumanReadable = require("human-readable-numbers");
 const markdownIt = require("markdown-it");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -95,17 +96,18 @@ module.exports = function(eleventyConfig) {
 		return `<${tag} class="minilink minilink-addedin${extraClass ? ` ${extraClass}`: ""}">New in v${version}</${tag}>`;
 	});
 
-	eleventyConfig.addPassthroughCopy("js");
+	eleventyConfig.addPassthroughCopy("js/instant.page.js");
 	eleventyConfig.addPassthroughCopy("css/fonts");
 	eleventyConfig.addPassthroughCopy("img");
 	eleventyConfig.addPassthroughCopy("favicon.ico");
 
-	eleventyConfig.addFilter("cssmin", function(code) {
-		if(process.env.ELEVENTY_PRODUCTION) {
-			return new CleanCSS({}).minify(code).styles;
-		}
+	eleventyConfig.addFilter("toJSON", function(obj) {
+		return JSON.stringify(obj);
+	});
 
-		return code;
+	eleventyConfig.addFilter("toSearchEntry", function(str) {
+		// <a class="direct-link" href="#eleventy-is-supported-financially-by-the-following-lovely-people" title="Direct link to this heading">#</a>
+		return str.replace(/<a class="direct-link"[^>]*>#<\/a\>/g, "");
 	});
 
 	eleventyConfig.addFilter("humanReadableNum", function(num) {
@@ -203,12 +205,23 @@ module.exports = function(eleventyConfig) {
 		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, shortcodes.avatarlocalcache("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`) + testimonial.name)}` : ``}</span></p></blockquote>`;
 	});
 
-	eleventyConfig.addShortcode("supporterAmount", function(amount) {
-		let result = [];
-		for( let j = 0, k = amount; j<=k; j+= 50) {
-			result.push("❤️");
+	eleventyConfig.addShortcode("supporterAmount", function(amount, maxAmount = 1000) {
+		// let increments = [1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987];
+		// mostly fibonacci
+		let increments = [5,8,13,21,34,55,89,144,233,377,610,987,1597];
+		let incrementCounter = 0;
+		let fullHearts = [];
+		let emptyHearts = [];
+		let j = 0;
+		for( let k = amount; j <= k; j+= increments[incrementCounter]) {
+			fullHearts.push("❤️");
+			incrementCounter++;
 		}
-		return result.join("");
+		for(; j <= maxAmount; j+= increments[incrementCounter]) {
+			emptyHearts.push("💛");
+			incrementCounter++;
+		}
+		return `${fullHearts.join("")}<span class="supporters-hearts-empty">${emptyHearts.join("")}</span>`;
 	});
 
 	/* Markdown */
@@ -272,6 +285,28 @@ module.exports = function(eleventyConfig) {
 			return content;
 		});
 	}
+
+	eleventyConfig.addFilter("jsmin", function(code) {
+		if(process.env.ELEVENTY_PRODUCTION) {
+			let minified = Terser.minify(code);
+			if( minified.error ) {
+				console.log("Terser error: ", minified.error);
+				return code;
+			}
+
+			return minified.code;
+		}
+
+		return code;
+	});
+
+	eleventyConfig.addFilter("cssmin", function(code) {
+		if(process.env.ELEVENTY_PRODUCTION) {
+			return new CleanCSS({}).minify(code).styles;
+		}
+
+		return code;
+	});
 
 	return {
 		templateFormats: ["html", "njk", "md", "11ty.js"],

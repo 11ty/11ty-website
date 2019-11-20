@@ -6,6 +6,9 @@
 	overflow: hidden;
 	clip: rect(1px, 1px, 1px, 1px);
 }
+.hide {
+	display: none;
+}
 
 * {
 	box-sizing: border-box;
@@ -323,8 +326,10 @@ footer.elv-layout {
 	}
 }
 /* Header Possum */
-.elv-possum {
+.elv-possum-anchor {
 	display: none;
+}
+.elv-possum {
 	position: absolute;
 	right: 1em;
 	top: 2em;
@@ -336,7 +341,7 @@ a[href]:focus .elv-possum {
 	filter: drop-shadow(0px 0px 6px rgba(255,255,255,.8));
 }
 @media (min-width: 25em) { /* 400px */
-	.elv-possum {
+	.elv-possum-anchor {
 		display: block;
 	}
 }
@@ -588,6 +593,7 @@ main .elv-toc + h1 .direct-link {
 
 /* Big primary button */
 .btn-primary {
+	display: block;
 	cursor: pointer;
 	border: 2px solid;
 	padding: .5em .5em .4em;
@@ -599,9 +605,6 @@ main .elv-toc + h1 .direct-link {
 	text-decoration: none;
 	box-shadow: 0 8px 6px -6px #000;
 	margin: 1.5em 0 0;
-}
-.btn-primary:not(summary) {
-	display: block;
 }
 .btn-primary:hover {
 	border-color: transparent;
@@ -617,13 +620,32 @@ main .elv-toc + h1 .direct-link {
 	margin-top: .25em;
 	font-size: .75em;
 }
+.btn-inline {
+	display: inline-block;
+	margin-top: .25em;
+	margin-bottom: .25em;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+.btn-c {
+	margin-left: auto;
+	margin-right: auto;
+}
 @media (min-width: 20em) {
 	.btn-primary {
 		font-size: 6.5vw;
 	}
+	.btn-primary-sm {
+		font-size: 1em;
+	}
+}
+@media (min-width: 28.125em) { /* 450px */
+	.btn-primary-sm {
+		font-size: 4vw;
+	}
 }
 @media (min-width: 46.875em) { /* 750px */
-	.btn-primary:not(summary) {
+	.btn-primary:not(summary):not(.btn-inline) {
 		margin-left: calc( (90vw - 42rem) / -2 );
 		width: calc(90vw - 2rem);
 	}
@@ -632,6 +654,7 @@ main .elv-toc + h1 .direct-link {
 /* Emoji */
 .emoji {
 	line-height: 1;
+	vertical-align: middle;
 }
 
 /* Supported Features Tables */

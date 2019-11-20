@@ -21,6 +21,12 @@
 	font-weight: 600;
 	text-decoration-color: #00bcd4;
 }
+.elv-nav-item-nou a {
+	text-decoration: none;
+}
+.elv-nav-item .emoji {
+	margin-right: -4px;
+}
 .elv-nav-item .elv-nav-light {
 	font-weight: 300;
 }

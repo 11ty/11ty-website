@@ -1,4 +1,5 @@
 .github
 _cache
+functions
 README.md
 .eleventy.js

@@ -1,6 +1,3 @@
-// TODO
-// avatars are keyed by lowercase slugs of names
-
 const fetch = require("node-fetch");
 const slugify = require("slugify");
 
