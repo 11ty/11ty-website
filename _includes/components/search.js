@@ -131,7 +131,7 @@ class Search {
 	}
 
 	hydrate() {
-		if("eleventySupporter" in window && window.eleventySupporter.check()) {
+		if("eleventySupporter" in window && window.eleventySupporter.checkOpenCollectiveAuth()) {
 		} else {
 			return;
 		}

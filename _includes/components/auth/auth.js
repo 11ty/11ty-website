@@ -10,9 +10,12 @@ class EleventySupporter {
       setCookie: true
     });
 
-    // var user = auth.currentUser() && "eleventySupporterUser" in window.localStorage;
     var user = auth.currentUser();
     return !!user;
+  }
+
+  checkOpenCollectiveAuth() {
+    return this.check() && "eleventySupporterUser" in window.localStorage;
   }
 
   async getAuthHeaders() {
