@@ -1,10 +1,11 @@
 ---
-subtitle: Sites Using Eleventy
-tags:
-  - docs-overview
+eleventyNavigation:
+  parent: Supporting Eleventy
+  key: Sites Using Eleventy
+  order: 3
 ---
 
-# {{ sites | getsize }} {{ subtitle }}
+# {{ sites | getsize }} Sites Using Eleventy
 
 <ul class="list-bare">
 {% for key, site in sites | shuffle -%}

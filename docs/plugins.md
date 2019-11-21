@@ -1,7 +1,8 @@
 ---
-subtitle: Plugins
-tags:
-  - docs-config
+eleventyNavigation:
+  parent: Configuration
+  key: Plugins
+  order: 6
 ---
 # Plugins {% addedin "0.2.13" %}
 
@@ -13,6 +14,7 @@ All official plugins live under the `@11ty` npm organization and plugin names wi
 
 * [@11ty/eleventy-plugin-rss](https://www.npmjs.com/package/@11ty/eleventy-plugin-rss) is a collection of Nunjucks filters for RSS/Atom feed templates.
 * [@11ty/eleventy-plugin-syntaxhighlight](https://www.npmjs.com/package/@11ty/eleventy-plugin-syntaxhighlight) for syntax highlighting using Markdown and Liquid tags.
+* [@11ty/eleventy-navigation](https://www.npmjs.com/package/@11ty/eleventy-navigation) is a plugin for creating hierarchical navigation—supports breadcrumbs too!
 * [@11ty/eleventy-plugin-inclusive-language](https://www.npmjs.com/package/@11ty/eleventy-plugin-inclusive-language) includes a simple linter to help your writing use more inclusive language. Inspired by [_CSS Tricks’ Words to Avoid in Educational Writing_](https://css-tricks.com/words-avoid-educational-writing/).
 
 ### Unofficial Plugins
@@ -31,6 +33,7 @@ All official plugins live under the `@11ty` npm organization and plugin names wi
 * [eleventy-plugin-lazyimages](https://www.npmjs.com/package/eleventy-plugin-lazyimages) by [Liam Fiddler](https://liamfiddler.com) will add progressive lazy loading to your images.
 * [eleventy-xml-plugin](https://www.npmjs.com/package/eleventy-xml-plugin) by [Jeremias Menichelli](https://jeremenichelli.io) adds Liquid filters used for sitemap and RSS/feed file generation.
 * [eleventy-plugin-markdown-shortcode](https://www.npmjs.com/package/eleventy-plugin-markdown-shortcode) by [Tyler Williams](https://ogdenstudios.xyz) adds a universal shortcode to render markdown. 
+* [eleventy-plugin-sass](https://www.npmjs.com/package/eleventy-plugin-sass) by [Maarten Schroeven](https://github.com/Sonaryr) will add the ability to use Sass for your stylesheets
 * [**Search for `eleventy-plugin` on `npm`**](https://www.npmjs.com/search?q=eleventy-plugin)
 
 

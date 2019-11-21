@@ -1,3 +1,15 @@
+/* Screen readers only */
+.sr-only {
+	position: absolute;
+	height: 1px;
+	width: 1px; 
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+.hide {
+	display: none;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -39,6 +51,12 @@ p {
 .nowrap {
 	white-space: nowrap;
 }
+.und {
+	text-decoration: underline;
+}
+.nound {
+	text-decoration: none;
+}
 
 /* Blockquotes */
 blockquote {
@@ -66,6 +84,9 @@ blockquote img {
 }
 .avatar {
 	vertical-align: middle;
+}
+.avatar[alt="Bryce Wray"] {
+	border-radius: 10%;
 }
 ul:not(.list-bare) > li > a > .avatar {
 	width: auto;
@@ -138,6 +159,7 @@ main .elv-toc + h1 {
 	margin-top: .5em;
 	line-height: 1.1;
 }
+main .breadcrumb + h1,
 main h1:first-child,
 main .elv-toc + h1 {
 	border-bottom: 2px dotted #666;
@@ -310,18 +332,23 @@ footer.elv-layout {
 	}
 }
 /* Header Possum */
-.elv-possum {
+.elv-possum-anchor {
 	display: none;
-	position: absolute;
-	right: 1em;
-	top: 2em;
-	width: 64px;
 }
-@media (min-width: 25em) { /* 400px */
-	.elv-possum {
+.elv-possum {
+	position: absolute;
+	right: .5rem;
+	top: 1rem;
+	width: 64px;
+	filter: drop-shadow(0px 0px 2px rgba(255,255,255,.8));
+}
+a[href]:hover .elv-possum,
+a[href]:focus .elv-possum {
+	filter: drop-shadow(0px 0px 6px rgba(255,255,255,.8));
+}
+	.elv-possum-anchor {
 		display: block;
 	}
-}
 
 /* Header Heading */
 .elv-hed {
@@ -409,15 +436,6 @@ main .elv-toc + h1 .direct-link {
 	clear: both;
 }
 
-/* Screen readers only */
-.sr-only {
-	position: absolute;
-	height: 1px;
-	width: 1px; 
-	overflow: hidden;
-	clip: rect(1px, 1px, 1px, 1px);
-}
-
 /* Language List */
 .elv-langlist {
 	font-size: 0.8333333333333em; /* 15px /18 */
@@ -479,6 +497,10 @@ main .elv-toc + h1 .direct-link {
 	border: 2px solid;
 	transition: border .3s;
 	object-fit: cover;
+}
+.elv-docs .facepile-supporters .avatar {
+	width: calc(30px + 2vw);
+	height: calc(30px + 2vw);
 }
 .facepile > a:after {
 	content: "";
@@ -574,22 +596,31 @@ main .elv-toc + h1 .direct-link {
 }
 
 /* Big primary button */
+.btn-form,
 .btn-primary {
 	cursor: pointer;
 	border: 2px solid;
-	padding: .5em .5em .4em;
 	font-size: 1em;
 	text-align: center;
 	font-weight: 700;
 	text-transform: uppercase;
-	border-radius: 1.5em;
 	text-decoration: none;
-	box-shadow: 0 8px 6px -6px #000;
-	margin: 1.5em 0 0;
+	background-color: #fff;
 }
-.btn-primary:not(summary) {
+.btn-form {
+	border-radius: 1em;
+	padding-left: .75em;
+	padding-right: .75em;
+	box-shadow: 0 4px 3px -3px #000;
+}
+.btn-primary {
 	display: block;
+	border-radius: 1.5em;
+	margin: 1.5em 0 0;
+	padding: .5em .5em .4em;
+	box-shadow: 0 8px 6px -6px #000;
 }
+.btn-form:hover,
 .btn-primary:hover {
 	border-color: transparent;
 	background-color: #222;
@@ -604,13 +635,37 @@ main .elv-toc + h1 .direct-link {
 	margin-top: .25em;
 	font-size: .75em;
 }
+.btn-inline {
+	display: inline-block;
+	margin-top: .25em;
+	margin-bottom: .25em;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+.btn-c {
+	margin-left: auto;
+	margin-right: auto;
+}
 @media (min-width: 20em) {
 	.btn-primary {
 		font-size: 6.5vw;
 	}
+	.btn-primary-sm {
+		font-size: 1.4em;
+	}
+}
+@media (min-width: 28.125em) { /* 450px */
+	.btn-primary-sm {
+		font-size: 5.6vw;
+	}
+}
+@media (min-width: 53.125em) { /* 850px */
+	.btn-primary-sm {
+		font-size: 2.666666666667em; /* 48px /18 */
+	}
 }
 @media (min-width: 46.875em) { /* 750px */
-	.btn-primary:not(summary) {
+	.btn-primary:not(summary):not(.btn-inline) {
 		margin-left: calc( (90vw - 42rem) / -2 );
 		width: calc(90vw - 2rem);
 	}
@@ -619,6 +674,7 @@ main .elv-toc + h1 .direct-link {
 /* Emoji */
 .emoji {
 	line-height: 1;
+	vertical-align: middle;
 }
 
 /* Supported Features Tables */

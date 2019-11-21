@@ -5,10 +5,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="{% if subtitle %}{{ subtitle }} for Eleventy,{% else %}Eleventy is{% endif %} a simpler static site generator.">
 		<title>{{ subtitle + '—' if subtitle}}Eleventy</title>
+		<meta name="monetization" content="$pay.stronghold.co/1a155e3a09e210742be8c38ba7cab4795c4">
+
 {%- set css %}
 {% include 'components/font-titles.css' %}
 {{ googlefonts | safe }}
 {% include 'index.css' %}
+{% include 'components/layout.css' %}
+{% include 'components/breadcrumb.css' %}
 {% include 'components/navigation.css' %}
 {% include 'components/quicktips.css' %}
 {% include 'components/community.css' %}
@@ -20,6 +24,10 @@
 {% include 'components/callout.css' %}
 {% include 'components/codetitle.css' %}
 {% include 'components/forms.css' %}
+{% include 'components/supporters.css' %}
+{% include 'components/search.css' %}
+{% include 'components/truncate.css' %}
+{% include 'components/details-oneway.css' %}
 {% endset %}
 		<style>{{ css | cssmin | safe }}</style>
 		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -30,6 +38,12 @@
 		<script>
 		{%- include "components/js-class.js" -%}
 		</script>
+{% if loadNetlifyIdentity %}
+		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+		<script src="/js/eleventy.js" type="module"></script>
+{% elseif putTheJsInTheHead %}
+		<script src="/js/eleventy.js" type="module" async></script>
+{% endif %}
 	</head>
 	<body>
 
@@ -40,5 +54,8 @@
 		{%- include "components/details-force-state.js" -%}
 		</script>
 		<script src="/js/instant.page.js" async></script>
+{% if not putTheJsInTheHead %}
+		<script src="/js/eleventy.js" type="module" async></script>
+{% endif %}
 	</body>
 </html>

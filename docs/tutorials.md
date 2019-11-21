@@ -1,8 +1,8 @@
 ---
-subtitle: Tutorials
-menuSectionName: docs-tutorials
-tags:
-    - docs-getting-started
+eleventyNavigation:
+  parent: Getting Started
+  key: Tutorials
+  order: 4
 feedTitle: Quick Tips RSS Feed
 feedUrl: /docs/quicktips/feed.xml
 ---

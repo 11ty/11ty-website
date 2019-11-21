@@ -36,6 +36,10 @@ code {
 	padding-right: 4px;
 	border-radius: .15em;
 }
+table code {
+	-ms-word-break: normal;
+	word-break: normal;
+}
 em code {
 	font-style: normal;
 }

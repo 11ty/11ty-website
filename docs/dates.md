@@ -1,10 +1,12 @@
 ---
-subtitle: Content Dates
-tags:
-  - docs-templates
+eleventyNavigation:
+  parent: Working with Templates
+  key: Content Dates
+  order: 5
+  excerpt: Assigning dates to content, using dates in front matter.
 sampleDate: 2018-01-01
 ---
-# {{ subtitle }}
+# Content Dates
 
 ## Setting a Content Date in Front Matter
 

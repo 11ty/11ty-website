@@ -1,7 +1,8 @@
 ---
-subtitle: Ignore Files
-tags:
-  - docs-config
+eleventyNavigation:
+  parent: Configuration
+  key: Ignore Files
+  order: 2
 ---
 # Ignore Template Files
 

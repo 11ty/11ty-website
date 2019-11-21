@@ -1,15 +1,7 @@
 ---
-subtitle: Configuration
-menuSectionName: docs-config
-submenuSortOrder:
-  - copy
-  - ignores
-  - filters
-  - shortcodes
-  - custom-tags
-  - plugins
-tags:
-  - docs
+eleventyNavigation:
+  key: Configuration
+  order: 5
 ---
 # Configuration
 
@@ -57,31 +49,19 @@ This allows you further customization options using Eleventy’s provided helper
 
 ## Configuration Options
 
-### Jump to:
-{% set toc = [
-  "Input Directory",
-  "Directory for Includes",
-  "Directory for Layouts (Optional)",
-  "Directory for Global Data Files",
-  "Output Directory",
-  "Default Template Engine for Global Data Files",
-  "Default Template Engine for Markdown Files",
-  "Default Template Engine for HTML Files",
-  "Template Formats",
-  "Deploy to a Subdirectory with a Path Prefix",
-  "Copy Files to Output using Passthrough File Copy",
-  "Change Exception Case Suffix for HTML Files",
-  "Change File Suffix for Template and Directory Data Files",
-  "Transforms",
-  "Linters",
-  "Data Deep Merge",
-  "Watch JavaScript Dependencies",
-  "Override Browsersync Server Options",
-  "Customize Front Matter Parsing Options"
-] %}
-{%- for link in toc %}
-* [{{ link }}](#{{ link | slug }})
-{%- endfor %}
+<style>
+/* Hide the irrelevant stuff above this TOC in the document */
+.table-of-contents > ul > li:first-child,
+.table-of-contents > ul > li:first-child + li > a {
+  display: none;
+}
+.table-of-contents > ul > li:first-child + li > ul {
+  padding-left: 0;
+  list-style: disc;
+}
+</style>
+
+[[toc]]
 
 ### Input Directory
 
@@ -300,7 +280,7 @@ Specify which types of templates should be transformed.
 | Template Formats |  |
 | --- | --- |
 | _Object Key_ | `templateFormats` |
-| _Default_ | `html,liquid,ejs,md,hbs,mustache,haml,pug,njk` |
+| _Default_ | `html,liquid,ejs,md,hbs,mustache,haml,pug,njk,11ty.js` |
 | _Valid Options_ | Array of [template engine short names](/docs/languages/) |
 | _Command Line Override_ | `--formats` _(accepts a comma separated string)_ |
 | _Configuration API_ | `setTemplateFormats` {% addedin "0.2.14" %} |
@@ -512,39 +492,7 @@ module.exports = function(eleventyConfig) {
 
 ### Data Deep Merge {% addedin "0.6.0" %}
 
-Opts in to a full deep merge when combining the Data Cascade. This will use something like `lodash.mergewith` to combine Arrays and deep merge Objects, rather than a simple top-level merge using `Object.assign`. Read more at [Issue #147](https://github.com/11ty/eleventy/issues/147). This will likely become the default in an upcoming major version.
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setDataDeepMerge(true);
-};
-```
-
-Note that all data stored in the `pagination` variable is exempted from this behavior (we don’t want `pagination.items` to be merged together).
-
-#### Using the `override:` prefix
-
-Use the `override:` prefix on any data key to opt-out of this merge behavior for specific values or nested values.
-
-{% codetitle "posts/posts.json" %}
-
-```json
-{
-  "tags": ["posts"]
-}
-```
-
-{% codetitle "posts/firstpost.md" %}
-
-```
----
-override:tags: []
----
-```
-
-Even though normally the `posts/firstpost.md` file would inherit the `posts` tag from the directory data file (per normal [data cascade rules](/docs/data/)), we can override the `tags` value to be an empty array to opt-out of this behavior.
+* Documentation for [Data Deep Merging has been moved to its own page](/docs/data-deep-merge/) under the Data Cascade.
 
 ### Watch JavaScript Dependencies {% addedin "0.7.0" %}
 

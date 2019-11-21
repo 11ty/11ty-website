@@ -1,7 +1,8 @@
 ---
-subtitle: Passthrough File Copy
-tags:
-  - docs-config
+eleventyNavigation:
+  parent: Configuration
+  key: Passthrough File Copy
+  order: 1
 ---
 # Passthrough File Copy  {% addedin "0.2.7" %}
 

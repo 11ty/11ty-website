@@ -1,11 +1,16 @@
 ---
-subtitle: Pagination
-excerpt: Iterate over a data set and create multiple files from a single template.
-tags:
-  - docs-templates
+eleventyNavigation:
+  parent: Working with Templates
+  key: Pagination
+  order: 3
+  excerpt: Iterate over a data set and create multiple files from a single template.
 relatedKey: pagination
 ---
 # Pagination
+
+[[toc]]
+
+## Paging an Array
 
 To iterate over a data set and create pages for individual chunks of data, use pagination. Enable in your template’s front matter by adding the `pagination` key. Consider the following template:
 
@@ -40,27 +45,65 @@ We enable pagination and then give it a dataset with the `data` key. We control 
   items: [], // Array of current page’s chunk of data
   pageNumber: 0, // current page number, 0 indexed
 
-  // Cool URLs, added in v0.6.0
-  nextPageHref: "…", // put inside <a href="{{ pagination.nextPageHref }}">Next Page</a>
-  previousPageHref: "…", // put inside <a href="{{ pagination.previousPageHref }}">Previous Page</a>
-  firstPageHref: "…",
-  lastPageHref: "…", 
+  // Cool URLs, new in v0.10.0
   hrefs: [], // Array of all page hrefs (in order)
+  href: {
+    next: "…", // put inside <a href="{{ pagination.href.next }}">Next Page</a>
+    previous: "…", // put inside <a href="{{ pagination.href.previous }}">Previous Page</a>
+    first: "…",
+    last: "…",
+  },
 
-  // Uncool URLs (these include index.html file names)
-  nextPageLink: "…", // put inside <a href="{{ pagination.nextPageLink }}">Next Page</a>
-  previousPageLink: "…", // put inside <a href="{{ pagination.previousPageLink }}">Previous Page</a>
-  firstPageLink: "…", // added in v0.6.0
-  lastPageLink: "…", // added in v0.6.0
-  links: [], // Array of all page links (in order)
-  pageLinks: [], // Array of deprecated alias to `links`
-
-  data: …, // pointer to dataset
-  size: 1, // chunk sizes
+  // New in v0.10.0
+  pages: [], // Array of all chunks of paginated data (in order)
+  page: {
+    next: "…", // Next page’s chunk of data
+    previous: "…", // Previous page’s chunk of data
+    first: "…",
+    last: "…",
+  }
 }
 ```
 
+<details data-details-oneway>
+  <summary>Here’s some extra stuff in the <code>pagination</code> object that you probably don’t need. ℹ️</summary>
+
+In addition to the `pagination` object entries documented above, it also has:
+
+{% codetitle "JavaScript Object", "Syntax" %}
+
+```js
+{
+  data: …, // the original string key to the dataset
+  size: 1, // page chunk sizes
+
+  // Cool URLs, new in v0.6.0
+  // Use pagination.href.next, pagination.href.previous, et al instead.
+  nextPageHref: "…", // put inside <a href="{{ pagination.nextPageHref }}">Next Page</a>
+  previousPageHref: "…", // put inside <a href="{{ pagination.previousPageHref }}">Previous Page</a>
+  firstPageHref: "…",
+  lastPageHref: "…",
+
+  // Uncool URLs
+  // These include index.html file names, use `hrefs` instead
+  links: [], // Array of all page links (in order)
+
+  // Deprecated things:
+  // nextPageLink
+  // previousPageLink
+  // firstPageLink (new in v0.6.0)
+  // lastPageLink (new in v0.6.0)
+  // pageLinks (alias to `links`)
+}
+```
+
+</details>
+
 If the above file were named `paged.njk`, it would create two pages: `_site/paged/0/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
+
+## Creating Navigation Links to your Pages
+
+Learn how to create a list of links to every paginated page on a pagination template with a full [Pagination Navigation](/docs/pagination/nav/) tutorial.
 
 ## Paging an Object {% addedin "0.4.0" %}
 
@@ -177,7 +220,7 @@ Normally, front matter does not support template syntax, but `permalink` does, e
 {% raw %}
 ```markdown
 ---
-permalink: different/page-{{ pagination.pageNumber }}/index.html
+permalink: "different/page-{{ pagination.pageNumber }}/index.html"
 ---
 ```
 {% endraw %}
@@ -186,12 +229,12 @@ Writes to `_site/different/page-0/index.html`, `_site/different/page-1/index.htm
 
 That means Nunjucks will also let you start your page numbers with 1 instead of 0, by just adding 1 here:
 
-{% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
+{% codetitle "YAML Front Matter using Nunjucks", "Syntax" %}
 
 {% raw %}
 ```markdown
 ---
-permalink: different/page-{{ pagination.pageNumber + 1 }}/index.html
+permalink: "different/page-{{ pagination.pageNumber + 1 }}/index.html"
 ---
 ```
 {% endraw %}
@@ -203,12 +246,14 @@ You can even use template logic here too:
 {% raw %}
 ```markdown
 ---
-permalink: different/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html
+permalink: "different/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 ---
 ```
 {% endraw %}
 
 Writes to `_site/different/index.html`, `_site/different/page-2/index.html`, et cetera.
+
+{% callout "info" %}Note that the above example works in Nunjucks but {% raw %}<code>{{ pagination.pageNumber + 1 }}</code>{% endraw %} is not supported in Liquid. Use {% raw %}<code>{{ pagination.pageNumber | plus: 1 }}</code>{% endraw %} instead.{% endcallout %}
 
 ### Use page item data in the permalink
 
@@ -224,7 +269,7 @@ pagination:
   size: 1
 testdata:
   - My Item
-permalink: different/{{ pagination.items[0] | slug }}/index.html
+permalink: "different/{{ pagination.items[0] | slug }}/index.html"
 ---
 ```
 {% endraw %}
@@ -247,7 +292,7 @@ pagination:
 testdata:
   - Item1
   - Item2
-permalink: different/{{ wonder | slug }}/index.html
+permalink: "different/{{ wonder | slug }}/index.html"
 ---
 You can use the alias in your content too {{ wonder }}.
 ```
@@ -271,7 +316,7 @@ testdata:
   - Item2
   - Item3
   - Item4
-permalink: different/{{ wonder[0] | slug }}/index.html
+permalink: "different/{{ wonder[0] | slug }}/index.html"
 ---
 You can use the alias in your content too {{ wonder[0] }}.
 ```
@@ -279,7 +324,66 @@ You can use the alias in your content too {{ wonder[0] }}.
 
 This writes to `_site/different/item1/index.html` and `_site/different/item3/index.html`.
 
-## Blacklisting or Filtering Values {% addedin "0.4.0" %}
+## Paging a Collection
+
+If you’d like to make a paginated list of all of your blog posts (any content with the tag `post` on it), use something like the following template to iterate over a specific collection:
+
+{% codetitle "Liquid, Nunjucks", "Syntax" %}
+
+{% raw %}
+```markdown
+---
+title: My Posts
+pagination:
+  data: collections.post
+  size: 6
+  alias: posts
+---
+
+<ol>
+{% for post in posts %}
+  <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+{% endfor %}
+</ol>
+```
+{% endraw %}
+
+The above generates a list of links but you could do a lot more. See what’s available in the [Collection documentation](/docs/collections/#individual-collection-items-(useful-for-sort-callbacks)) (specifically `templateContent`). If you’d like to use this to automatically generate Tag pages for your content, please read [Quick Tip #004—Create Tag Pages for your Blog](/docs/quicktips/tag-pages/).
+
+## Modifying the Data Set prior to Pagination
+
+### Reverse the Data {% addedin "0.7.0" %}
+
+Use `reverse: true`.
+
+```markdown
+---
+pagination:
+  data: testdata
+  size: 2
+  reverse: true
+testdata:
+ - item1
+ - item2
+ - item3
+ - item4
+---
+```
+
+Paginates to:
+
+```js
+[
+  ["item4", "item3"],
+  ["item2", "item1"],
+]
+```
+
+_(More discussion at [Issue #194](https://github.com/11ty/eleventy/issues/194))_
+
+As an aside, this could also be achieved in a more verbose way using the [Collection API](/docs/collections/#advanced%3A-custom-filtering-and-sorting). This could also be done using the new `before` callback {% addedin "0.10.0" %}.
+
+### Blacklisting or Filtering Values {% addedin "0.4.0" %}
 
 Use the `filter` pagination property to remove values from paginated data.
 
@@ -340,62 +444,44 @@ Paginates to:
 ]
 ```
 
-## Paging a Collection
+### The `before` Callback {% addedin "0.10.0" %}
 
-If you’d like to make a paginated list of all of your blog posts (any content with the tag `post` on it), use something like the following template to iterate over a specific collection:
-
-{% codetitle "Liquid, Nunjucks", "Syntax" %}
+The most powerful tool to change the data. Use this callback to modify, filter, or otherwise change the pagination data however you see fit *before* pagination occurs.
 
 {% raw %}
 ```markdown
+---js
+{
+  pagination: {
+    data: "testdata"
+    size: 2
+    before: function(data) {
+      return data.map(entry => `${entry} with a suffix`);
+    }
+  },
+  testdata: [
+    "item1",
+    "item2",
+    "item3",
+    "item4"
+  ]
+}
 ---
-title: My Posts
-pagination:
-  data: collections.post
-  size: 6
-  alias: posts
----
-
-<ol>
-{% for post in posts %}
-  <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
-{% endfor %}
-</ol>
+<!-- the rest of the template -->
 ```
 {% endraw %}
 
-The above generates a list of links but you could do a lot more. See what’s available in the [Collection documentation](/docs/collections/#individual-collection-items-(useful-for-sort-callbacks)) (specifically `templateContent`). If you’d like to use this to automatically generate Tag pages for your content, please read [Quick Tip #004—Create Tag Pages for your Blog](/docs/quicktips/tag-pages/).
+The above will iterate over a data set containing: `["item1 with a suffix", "item2 with a suffix", "item3 with a suffix", "item4 with a suffix"]`.
 
-## How to Reverse a Data Set prior to Pagination {% addedin "0.7.0" %}
+You can do anything in this `before` callback. Maybe a custom `.sort()`, `.filter()`, `.map()` to remap the entires, `.slice()` to paginate only a subset of the data, etc!
 
-Use `reverse: true`.
+### Order of Operations
 
-As an aside, this could also be achieved in a more verbose way using the [Collection API](/docs/collections/#advanced%3A-custom-filtering-and-sorting).
+If you use more than one of these data set modification features, here’s the order in which they operate:
 
-```markdown
----
-pagination:
-  data: testdata
-  size: 2
-  reverse: true
-testdata:
- - item1
- - item2
- - item3
- - item4
----
-```
-
-Paginates to:
-
-```js
-[
-  ["item4", "item3"],
-  ["item2", "item1"],
-]
-```
-
-_(More discussion at [Issue #194](https://github.com/11ty/eleventy/issues/194))_
+* The `before` callback
+* `reverse: true`
+* `filter` entries
 
 ## Add All Pagination Pages to Collections {% addedin "0.8.0" %}
 

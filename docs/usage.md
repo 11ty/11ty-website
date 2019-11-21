@@ -1,9 +1,10 @@
 ---
-subtitle: Command Line Usage
-tags:
-	- docs-getting-started
+eleventyNavigation:
+  parent: Getting Started
+  key: Command Line Usage
+  order: 1
 ---
-# {{ subtitle }}
+# Command Line Usage
 
 These examples assume [local project installation](/docs/getting-started/) instead of [global installation](/docs/global-installation/).
 

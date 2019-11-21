@@ -5,17 +5,16 @@ templateClass: elv-docs
 headerClass: elv-header-docs
 layoutClass: elv-layout-toc
 isDocs: true
-menuSortOrder:
-  - overview
-  - getting-started
-  - templates
-  - config
-  - data
-  - languages
-  - versions
 ---
 
 {% include "components/docs-toc.njk" %}
+
+{% if eleventyNavigation and eleventyNavigation.key and eleventyNavigation.parent %}
+<nav class="breadcrumb" aria-labelledby="breadcrumb">
+  <h2 class="sr-only" id="breadcrumb">Breadcrumbs: </h2>
+  {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | eleventyNavigationToHtml({ listClass: 'lo lo-inline', listItemClass: 'lo-c', activeListItemClass: 'breadcrumb-active' }) | safe }}
+</nav>
+{% endif %}
 
 {{ content | safe }}
 

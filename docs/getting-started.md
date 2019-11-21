@@ -1,17 +1,9 @@
 ---
-subtitle: Getting Started
-menuSectionName: docs-getting-started
-submenuSortOrder:
-  - usage
-  - local-installation
-  - starter
-  - debugging
-  - tutorials
-  - quicktips
-tags:
-  - docs
+eleventyNavigation:
+  key: Getting Started
+  order: 2
 ---
-# {{ subtitle }}
+# Getting Started
 
 Eleventy is [available on npm](https://www.npmjs.com/package/@11ty/eleventy) and **requires version 8 of [Node.js](https://nodejs.org/) or higher.**
 

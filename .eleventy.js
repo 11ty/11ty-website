@@ -1,10 +1,12 @@
 const chalk = require("chalk");
 const htmlmin = require("html-minifier");
 const CleanCSS = require("clean-css");
+const Terser = require("terser");
 const HumanReadable = require("human-readable-numbers");
 const markdownIt = require("markdown-it");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const loadLanguages = require("prismjs/components/");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language");
@@ -58,6 +60,7 @@ module.exports = function(eleventyConfig) {
 	});
 	eleventyConfig.addPlugin(rssPlugin);
 	// eleventyConfig.addPlugin(inclusiveLanguagePlugin);
+	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
 	let md = new markdownIt();
 	eleventyConfig.addPairedShortcode("callout", function(content, level = "warn", format = "html") {
@@ -93,38 +96,23 @@ module.exports = function(eleventyConfig) {
 		return `<${tag} class="minilink minilink-addedin${extraClass ? ` ${extraClass}`: ""}">New in v${version}</${tag}>`;
 	});
 
+	eleventyConfig.addPassthroughCopy("netlify-email");
+	eleventyConfig.addPassthroughCopy("js/instant.page.js");
 	eleventyConfig.addPassthroughCopy("css/fonts");
 	eleventyConfig.addPassthroughCopy("img");
 	eleventyConfig.addPassthroughCopy("favicon.ico");
 
-	eleventyConfig.addFilter("cssmin", function(code) {
-		if(process.env.ELEVENTY_PRODUCTION) {
-			return new CleanCSS({}).minify(code).styles;
-		}
+	eleventyConfig.addFilter("toJSON", function(obj) {
+		return JSON.stringify(obj);
+	});
 
-		return code;
+	eleventyConfig.addFilter("toSearchEntry", function(str) {
+		// <a class="direct-link" href="#eleventy-is-supported-financially-by-the-following-lovely-people" title="Direct link to this heading">#</a>
+		return str.replace(/<a class="direct-link"[^>]*>#<\/a\>/g, "");
 	});
 
 	eleventyConfig.addFilter("humanReadableNum", function(num) {
 		return HumanReadable.toHumanString(num);
-	});
-
-	eleventyConfig.addFilter("sortMenu", function(collection, sortOrder) {
-		if(!sortOrder) {
-			return collection;
-		}
-
-		let order = sortOrder.map(path => `./docs/${path}.md`);
-
-		return collection.sort(function(a, b) {
-			let firstIndex = order.indexOf(a.inputPath);
-			let secondIndex = order.indexOf(b.inputPath);
-
-			if( firstIndex === -1 ) return 1;
-			if( secondIndex === -1 ) return -1;
-
-			return firstIndex - secondIndex;
-		});
 	});
 
 	eleventyConfig.addShortcode("templatelangs", function(languages, page, whitelist, anchor, isinline) {
@@ -218,38 +206,62 @@ module.exports = function(eleventyConfig) {
 		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, shortcodes.avatarlocalcache("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`) + testimonial.name)}` : ``}</span></p></blockquote>`;
 	});
 
-	eleventyConfig.addShortcode("supporterAmount", function(amount) {
-		let result = [];
-		for( let j = 0, k = amount; j<=k; j+= 50) {
-			result.push("❤️");
+	eleventyConfig.addShortcode("supporterAmount", function(amount, maxAmount = 1000) {
+		// let increments = [1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987];
+		// mostly fibonacci
+		let increments = [5,8,13,21,34,55,89,144,233,377,610,987,1597];
+		let incrementCounter = 0;
+		let fullHearts = [];
+		let emptyHearts = [];
+		let j = 0;
+		for( let k = amount; j <= k; j+= increments[incrementCounter]) {
+			fullHearts.push("❤️");
+			incrementCounter++;
 		}
-		return result.join("");
+		for(; j <= maxAmount; j+= increments[incrementCounter]) {
+			emptyHearts.push("💛");
+			incrementCounter++;
+		}
+		return `${fullHearts.join("")}<span class="supporters-hearts-empty">${emptyHearts.join("")}</span>`;
 	});
-
-
 
 	/* Markdown */
 	let markdownItAnchor = require("markdown-it-anchor");
-	let options = {
-		html: true,
-		breaks: true,
-		linkify: true
-	};
-	let opts = {
-		permalink: true,
-		slugify: function(s) {
-			let newStr = String(s).replace(/New\ in\ v\d+\.\d+\.\d+/, '');
-			newStr = newStr.replace(/⚠️/g, '');
-			newStr = newStr.replace(/[?!]/g, '');
-			return encodeURIComponent(newStr.trim().toLowerCase().replace(/\s+/g, '-'));
-		},
-		permalinkBefore: false,
-		permalinkClass: "direct-link",
-		permalinkSymbol: "#",
-		level: [1,2,3,4]
-	};
+	let markdownItToc = require("markdown-it-table-of-contents");
 
-	eleventyConfig.setLibrary("md", markdownIt(options).use(markdownItAnchor, opts));
+	function removeExtraText(s) {
+		let newStr = String(s).replace(/New\ in\ v\d+\.\d+\.\d+/, "");
+		newStr = newStr.replace(/⚠️/g, "");
+		newStr = newStr.replace(/[?!]/g, "");
+		newStr = newStr.replace(/<[^>]*>/g, "");
+		return newStr;
+	}
+
+	function markdownItSlugify(s) {
+		return encodeURIComponent(removeExtraText(s).trim().toLowerCase().replace(/\s+/g, '-'));
+	}
+
+	eleventyConfig.setLibrary("md", markdownIt({
+			html: true,
+			breaks: true,
+			linkify: true
+		})
+		.use(markdownItAnchor, {
+			permalink: true,
+			slugify: markdownItSlugify,
+			permalinkBefore: false,
+			permalinkClass: "direct-link",
+			permalinkSymbol: "#",
+			level: [1,2,3,4]
+		})
+		.use(markdownItToc, {
+			includeLevel: [2, 3],
+			slugify: markdownItSlugify,
+			format: function(heading) {
+				return removeExtraText(heading);
+			}
+		})
+	);
 
 	// Until https://github.com/valeriangalliat/markdown-it-anchor/issues/58 is fixed
 	eleventyConfig.addTransform("remove-aria-hidden-markdown-anchor", function(content, outputPath) {
@@ -275,8 +287,30 @@ module.exports = function(eleventyConfig) {
 		});
 	}
 
+	eleventyConfig.addFilter("jsmin", function(code) {
+		if(process.env.ELEVENTY_PRODUCTION) {
+			let minified = Terser.minify(code);
+			if( minified.error ) {
+				console.log("Terser error: ", minified.error);
+				return code;
+			}
+
+			return minified.code;
+		}
+
+		return code;
+	});
+
+	eleventyConfig.addFilter("cssmin", function(code) {
+		if(process.env.ELEVENTY_PRODUCTION) {
+			return new CleanCSS({}).minify(code).styles;
+		}
+
+		return code;
+	});
+
 	return {
-		templateFormats: ["html", "njk", "md", "js"],
+		templateFormats: ["html", "njk", "md", "11ty.js"],
 		markdownTemplateEngine: "njk",
 		htmlTemplateEngine: "njk",
 		dataTemplateEngine: false,
