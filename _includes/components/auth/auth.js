@@ -150,19 +150,25 @@ var eleventySupporter = new EleventySupporter();
 eleventySupporter.login();
 window.eleventySupporter = eleventySupporter;
 
-if("netlifyIdentity" in window) {
-  // netlifyIdentity.on('init', user => {
-  //   console.log('init', user);
-  // });
-  netlifyIdentity.on("login", user => {
-    eleventySupporter.login();
-  });
-  netlifyIdentity.on("logout", () => {
-    eleventySupporter.logout();
-  });
-  netlifyIdentity.on("error", err => {
-    console.error("Netlify Identity Error", err);
-  });
-  // netlifyIdentity.on('open', () => console.log('Widget opened'));
-  // netlifyIdentity.on('close', () => console.log('Widget closed'));
-}
+window.addEventListener("load", function() {
+  // important to wait for the other script to load before we fire these
+  // console.log( "netlifyIdentity" in window );
+  if("netlifyIdentity" in window) {
+    window.netlifyIdentity.on('init', user => {
+      console.log('init', user);
+    });
+    window.netlifyIdentity.on("login", user => {
+      console.log( "login, Netlify Identity login complete" );
+      eleventySupporter.login();
+    });
+    window.netlifyIdentity.on("logout", () => {
+      console.log( "logout, Netlify Identity login complete" );
+      eleventySupporter.logout();
+    });
+    window.netlifyIdentity.on("error", err => {
+      console.error("Netlify Identity Error", err);
+    });
+    // window.netlifyIdentity.on('open', () => console.log('Widget opened'));
+    // window.netlifyIdentity.on('close', () => console.log('Widget closed'));
+  }
+}, false);

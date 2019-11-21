@@ -38,7 +38,10 @@
 		<script>
 		{%- include "components/js-class.js" -%}
 		</script>
-{% if putTheJsInTheHead %}
+{% if loadNetlifyIdentity %}
+		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+		<script src="/js/eleventy.js" type="module"></script>
+{% elseif putTheJsInTheHead %}
 		<script src="/js/eleventy.js" type="module" async></script>
 {% endif %}
 	</head>
