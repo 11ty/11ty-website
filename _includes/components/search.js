@@ -130,6 +130,12 @@ class Search {
 		}, 100);
 	}
 
+	getQueryString() {
+		let url = new URL(document.location.href);
+		let searchQueryParam = url.searchParams.get("q");
+		return searchQueryParam ? decodeURIComponent(searchQueryParam) : "";
+	}
+
 	hydrate() {
 		if("eleventySupporter" in window && window.eleventySupporter.checkOpenCollectiveAuth()) {
 		} else {
@@ -145,12 +151,19 @@ class Search {
 
 		let text = document.getElementById("search-term");
 		if(text) {
-			text.value = "";
-
 			text.addEventListener("input", async (event) => {
 				let value = event.target.value;
 				await this.onInput(value);
+				window.history.replaceState({}, "", `/docs/search/${value ? `?q=${encodeURIComponent(value)}` : ""}`);
 			}, false);
+
+			let queryString = this.getQueryString();
+			if( queryString ) {
+				text.value = queryString;
+				this.onInput(queryString);
+			} else {
+				text.value = "";
+			}
 		}
 
 		let results = document.getElementById("search-results");

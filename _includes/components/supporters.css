@@ -1,7 +1,7 @@
 .elv-possum + .supporters-avatar {
 	position: absolute;
-	top: 35.5px;
-	right: 26px;
+	top: 19px;
+	right: 19px;
 	/*filter: invert(13%) sepia(91%) saturate(2000%) hue-rotate(353deg) brightness(100%) contrast(90%);*/
 	filter: grayscale(.4) hue-rotate(222deg) brightness(1);
 	opacity: .9;
