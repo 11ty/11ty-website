@@ -1,9 +1,11 @@
 ---
-subtitle: Liquid
+eleventyNavigation:
+  parent: Template Languages
+  key: Liquid
+  order: 6
 relatedKey: liquid
 relatedTitle: Template Language—Liquid
 tags:
-  - docs-languages
   - related-filters
   - related-shortcodes
   - related-custom-tags
@@ -237,7 +239,7 @@ module.exports = function(eleventyConfig) {
 
 {% raw %}
 ```html
-{% user "Zach Leatherman", "zachleat" %}
+{% user "Zach Leatherman" "zachleat" %}
 
 {% user2 "Zach Leatherman" "zachleat" %}
   Zach likes to take long walks on Nebraska beaches.

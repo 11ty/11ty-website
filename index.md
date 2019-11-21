@@ -3,6 +3,7 @@ layout: layouts/main.njk
 logoLink: /docs/
 ignoreGitHubButtons: true
 ignoreSupporters: true
+searchTitle: Eleventy Home
 ---
 
 ## Quick Start
@@ -23,6 +24,8 @@ Wrote 1 file in 0.10 seconds
 Run `eleventy --serve` to start up a hot-reloading web server. Then open `http://localhost:8080/README/` in your web browser of choice to see your Eleventy output.
 
 ➡ Keep going! Read a longer [Getting Started guide](/docs/getting-started/) or check out the full [**Documentation for {% latestVersion versions, config %}**]({{ "/docs/" | url }}).
+
+<h2 id="eleventy-is-supported-by">Eleventy is <a href="/docs/supporters/">supported</a> by… <a class="direct-link" href="#eleventy-is-supported-by">#</a></h2>
 
 {% include "supporters.njk" %}
 

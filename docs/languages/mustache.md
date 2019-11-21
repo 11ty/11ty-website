@@ -1,5 +1,8 @@
 ---
-subtitle: Mustache
+eleventyNavigation:
+  parent: Template Languages
+  key: Mustache
+  order: 8
 layout: layouts/langs.njk
 ---
 | Eleventy Short Name | File Extension | NPM Package                                           |

@@ -1,9 +1,10 @@
 ---
-subtitle: Starter Projects
-tags:
-  - docs-getting-started
+eleventyNavigation:
+  parent: Getting Started
+  key: Starter Projects
+  order: 2
 ---
-# {{ subtitle }}
+# Starter Projects
 
 {% for site in starters -%}
 {% if site.disabled != true -%}

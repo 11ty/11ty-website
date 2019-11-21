@@ -1,13 +1,7 @@
 ---
-subtitle: Overview
-menuSectionName: docs-overview
-submenuSortOrder:
-  - resources
-  - testimonials
-  - sites
-  - supporters
-tags:
-  - docs
+eleventyNavigation:
+  key: Overview
+  order: 1
 permalink: /docs/
 ---
 

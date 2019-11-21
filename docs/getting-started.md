@@ -1,17 +1,9 @@
 ---
-subtitle: Getting Started
-menuSectionName: docs-getting-started
-submenuSortOrder:
-  - usage
-  - local-installation
-  - starter
-  - debugging
-  - tutorials
-  - quicktips
-tags:
-  - docs
+eleventyNavigation:
+  key: Getting Started
+  order: 2
 ---
-# {{ subtitle }}
+# Getting Started
 
 Eleventy is [available on npm](https://www.npmjs.com/package/@11ty/eleventy) and **requires version 8 of [Node.js](https://nodejs.org/) or higher.**
 
@@ -123,7 +115,9 @@ Watching…
 
 </div>
 
-Go to `http://localhost:8080/` or `http://localhost:8080/README/` to see your Eleventy site live! Make a change to your template files and save them—Eleventy using BrowserSync will refresh the browser with your new changes automatically.
+Go to `http://localhost:8080/` or `http://localhost:8080/README/` to see your Eleventy site live! Make a change to your template files and save them—Eleventy using BrowserSync will refresh the browser with your new changes automatically. 
+
+{% callout "info" %}<strong>Important Note</strong>: Editing README.md won't refresh your browser automatically, because <a href="https://browsersync.io/docs/#requirements">Browsersync requires a <code>&lt;body&gt;</code> tag in your template</a> for live-reload to work properly.{% endcallout %}
 
 Congratulations—you made something with Eleventy! Now put it to work with templating syntax, front matter, and data files.
 

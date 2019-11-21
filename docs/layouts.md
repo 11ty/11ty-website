@@ -1,8 +1,9 @@
 ---
-subtitle: Layouts
-excerpt: Wrap content in other content.
-tags:
-  - docs-templates
+eleventyNavigation:
+  parent: Working with Templates
+  key: Layouts
+  order: 1
+  excerpt: Wrap content in other content.
 ---
 # Layouts
 

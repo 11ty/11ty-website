@@ -1,4 +1,4 @@
-The order of priority for sources of data is (from highest priority to lowest):
+When the data is merged in the {% if page.url != "/docs/data-cascade/" %}[Eleventy Data Cascade](/docs/data-cascade/){% else %}Eleventy Data Cascade{% endif %}, the order of priority for sources of data is (from highest priority to lowest):
 
 1. [Front Matter Data in a Template](/docs/data-frontmatter/){% if page.url == "/docs/data-frontmatter/" %} ⬅{% endif %}
 1. [Front Matter Data in Layouts](/docs/layouts/#front-matter-data-in-layouts){% if page.url == "/docs/layouts/" %} ⬅{% endif %}

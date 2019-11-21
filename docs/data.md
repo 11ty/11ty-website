@@ -1,14 +1,7 @@
 ---
-subtitle: Using Data
-menuSectionName: docs-data
-submenuSortOrder:
-  - data-frontmatter
-  - data-template-dir
-  - data-global
-  - data-js
-  - data-preprocessing
-tags:
-  - docs
+eleventyNavigation:
+  key: Using Data
+  order: 6
 ---
 # Using Data
 
@@ -83,11 +76,13 @@ If you absolutely need a file extension on your output, you might use it like th
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
+{% raw %}
 ```
 ---
-permalink: {% raw %}{{ page.filePathStem }}{% endraw %}.html
+permalink: "{{ page.filePathStem }}.html"
 ---
 ```
+{% endraw %}
 
 Example Output below is using the above permalink value.
 

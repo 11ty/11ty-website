@@ -1,5 +1,8 @@
 ---
-subtitle: EJS
+eleventyNavigation:
+  parent: Template Languages
+  key: EJS
+  order: 9
 layout: layouts/langs.njk
 ---
 | Eleventy Short Name | File Extension | NPM Package                                |

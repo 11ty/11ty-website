@@ -1,5 +1,8 @@
 ---
-subtitle: Pug
+eleventyNavigation:
+  parent: Template Languages
+  key: Pug
+  order: 11
 layout: layouts/langs.njk
 ---
 | Eleventy Short Name | File Extension | NPM Package                           |

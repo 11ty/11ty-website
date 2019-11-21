@@ -14,14 +14,14 @@
 	{
 		"url": "https://github.com/philhawksworth/eleventyone",
 		"name": "eleventyone",
-		"description": "is an Eleventy scaffold project created by the legendary Phil Hawksworth. Makes use of gulp with Eleventy and Sass.",
+		"description": "is an Eleventy scaffold project created by the legendary Phil Hawksworth. Makes use of Eleventy and PostCSS.",
 		"author": "philhawksworth"
 	},
 	{
 		"url": "https://hylia.website/",
 		"name": "Hylia",
 		"description": "is a lightweight Eleventy starter kit with Netlify CMS pre-configured, so that you can one-click install a progressive, accessible blog in minutes. ",
-		"author": "andybelldesign"
+		"author": "hankchizljaw"
 	},
 	{
 		"url": "https://github.com/ianrose/deventy",
@@ -72,9 +72,15 @@
 		"author": "DavidDarnes"
 	},
 	{
+		"url": "https://jamstackthemes.dev/ssg/eleventy/",
+		"name": "JAMStack Themes",
+		"description": "A list of starter themes filterable by supported static site generator and CMS. Link is directly to 11ty category.",
+		"author": "stackbithq"
+	},
+  {
 		"url": "https://github.com/danfascia/tai11s",
 		"name": "Tai11s",
 		"description": "An Eleventy starter with Tailwind CSS and PurgeCSS",
 		"author": "danfascia"
-	}
+  }
 ]

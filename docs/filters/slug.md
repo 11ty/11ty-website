@@ -1,8 +1,10 @@
 ---
-subtitle: slug Universal Filter
-menuSectionName: docs-filters
-tags:
-	- docs-filters
+eleventyNavigation:
+  parent: Filters
+  key: slug Filter
+  title: '<code>slug</code> Filter'
+  order: 2
+  excerpt: '<code>"My string"</code> to <code>"my-string"</code> for permalinks.'
 ---
 
 # `slug` Universal Filter
