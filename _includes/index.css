@@ -290,6 +290,7 @@ footer.elv-layout {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding-top: 0;
 }
 .elv-header-docs:before,
 .elv-header-docs:after {
