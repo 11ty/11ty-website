@@ -444,7 +444,7 @@ Paginates to:
 ]
 ```
 
-### The `before` Callback
+### The `before` Callback {% addedin "0.10.0" %}
 
 The most powerful tool to change the data. Use this callback to modify, filter, or otherwise change the pagination data however you see fit *before* pagination occurs.
 
