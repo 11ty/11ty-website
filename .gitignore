@@ -1,5 +1,5 @@
 node_modules/
 _site/
 package-lock.json
-node-supporters.json
+node-supporters/
 .env

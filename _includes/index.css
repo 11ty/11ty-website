@@ -651,12 +651,17 @@ main .elv-toc + h1 .direct-link {
 		font-size: 6.5vw;
 	}
 	.btn-primary-sm {
-		font-size: 1em;
+		font-size: 1.4em;
 	}
 }
 @media (min-width: 28.125em) { /* 450px */
 	.btn-primary-sm {
-		font-size: 4vw;
+		font-size: 5.6vw;
+	}
+}
+@media (min-width: 53.125em) { /* 850px */
+	.btn-primary-sm {
+		font-size: 2.666666666667em; /* 48px /18 */
 	}
 }
 @media (min-width: 46.875em) { /* 750px */
