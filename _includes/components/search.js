@@ -136,9 +136,18 @@ class Search {
 		return searchQueryParam ? decodeURIComponent(searchQueryParam) : "";
 	}
 
+	initUnauthenticatedSearchTerm() {
+		let queryString = this.getQueryString();
+		let text = document.getElementById("search-term");
+		if( queryString && text ) {
+			text.value = text.value + queryString;
+		}
+	}
+
 	hydrate() {
 		if("eleventySupporter" in window && window.eleventySupporter.checkOpenCollectiveAuth()) {
 		} else {
+			this.initUnauthenticatedSearchTerm();
 			return;
 		}
 
