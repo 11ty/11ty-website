@@ -154,9 +154,9 @@ window.addEventListener("load", function() {
   // important to wait for the other script to load before we fire these
   // console.log( "netlifyIdentity" in window );
   if("netlifyIdentity" in window) {
-    window.netlifyIdentity.on('init', user => {
-      console.log('init', user);
-    });
+    // window.netlifyIdentity.on('init', user => {
+    //   console.log('init', user);
+    // });
     window.netlifyIdentity.on("login", user => {
       console.log( "login, Netlify Identity login complete" );
       eleventySupporter.login();
