@@ -51,6 +51,12 @@ p {
 .nowrap {
 	white-space: nowrap;
 }
+.und {
+	text-decoration: underline;
+}
+.nound {
+	text-decoration: none;
+}
 
 /* Blockquotes */
 blockquote {
@@ -331,8 +337,8 @@ footer.elv-layout {
 }
 .elv-possum {
 	position: absolute;
-	right: 1em;
-	top: 2em;
+	right: .5rem;
+	top: 1rem;
 	width: 64px;
 	filter: drop-shadow(0px 0px 2px rgba(255,255,255,.8));
 }
@@ -340,11 +346,9 @@ a[href]:hover .elv-possum,
 a[href]:focus .elv-possum {
 	filter: drop-shadow(0px 0px 6px rgba(255,255,255,.8));
 }
-@media (min-width: 25em) { /* 400px */
 	.elv-possum-anchor {
 		display: block;
 	}
-}
 
 /* Header Heading */
 .elv-hed {
@@ -592,20 +596,31 @@ main .elv-toc + h1 .direct-link {
 }
 
 /* Big primary button */
+.btn-form,
 .btn-primary {
-	display: block;
 	cursor: pointer;
 	border: 2px solid;
-	padding: .5em .5em .4em;
 	font-size: 1em;
 	text-align: center;
 	font-weight: 700;
 	text-transform: uppercase;
-	border-radius: 1.5em;
 	text-decoration: none;
-	box-shadow: 0 8px 6px -6px #000;
-	margin: 1.5em 0 0;
+	background-color: #fff;
 }
+.btn-form {
+	border-radius: 1em;
+	padding-left: .75em;
+	padding-right: .75em;
+	box-shadow: 0 4px 3px -3px #000;
+}
+.btn-primary {
+	display: block;
+	border-radius: 1.5em;
+	margin: 1.5em 0 0;
+	padding: .5em .5em .4em;
+	box-shadow: 0 8px 6px -6px #000;
+}
+.btn-form:hover,
 .btn-primary:hover {
 	border-color: transparent;
 	background-color: #222;

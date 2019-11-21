@@ -32,3 +32,6 @@
   margin-left: 0;
   margin-right: 0;
 }
+.lo-maxgrow {
+  flex-grow: 999;
+}
