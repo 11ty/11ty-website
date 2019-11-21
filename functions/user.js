@@ -52,9 +52,10 @@ query eleventyBackers {
     const {user} = context.clientContext;
     if(user) {
       if(user.email) {
+        console.log( `Log in from ${user.email}` );
         for(let supporter of result.data.collective.members.nodes) {
-console.log( user.email, "vs", supporter.account.email, "same?", supporter.account.email === user.email );
           if(supporter.account.email === user.email) {
+            console.log( `Match found for ${supporter.account.email}!` );
             return callback(null, {
               statusCode: 200,
               body: `{
