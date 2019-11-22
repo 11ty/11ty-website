@@ -69,24 +69,20 @@ query eleventyMembers {
         console.error( error );
       });
 
-    //   "data": {
-    // "collective": {
-    //   "members": {
-    //     "nodes": [
+    let alreadySentFile = await fs.readFile("./node-supporters/invited.csv", "utf-8");
+    let alreadySentEmails = alreadySentFile.split("\n").map(entry => entry.trim());
     let emailsOnly = new Set();
     let members = result.data.collective.members.nodes;
     for(let member of members) {
-      if(member.account.email) {
-        // TODO check node-supporters/invite.csv for duplicates
+      if(member.account.email && alreadySentEmails.indexOf(member.account.email) === -1) {
         emailsOnly.add(member.account.email);
       }
     }
 
-
-    await fs.writeFile("./node-supporters.json", JSON.stringify(result, null, 2));
+    await fs.writeFile("./node-supporters/node-supporters.json", JSON.stringify(result, null, 2));
     console.log( "Wrote node-supporters.json." );
 
-    await fs.writeFile("./node-supporters.csv", Array.from(emailsOnly).join("\n"));
-    console.log( "Wrote node-supporters.csv." );
+    await fs.writeFile("./node-supporters/need-to-invite.csv", Array.from(emailsOnly).join("\n"));
+    console.log( "Wrote need-to-invite.csv." );
   }
 })();
