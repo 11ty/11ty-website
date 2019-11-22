@@ -5,7 +5,11 @@ const fs = require("fs-extra");
 const fastglob = require("fast-glob");
 const AvatarLocalCache = require("avatar-local-cache");
 
-const skipUrls = ["https://www.gravatar.com/avatar/36386473ee7de091db26bd82f8d18ca8?default=404"];
+// const skipUrls = ["https://www.gravatar.com/avatar/36386473ee7de091db26bd82f8d18ca8?default=404"];
+const skipUrls = [];
+const skipSlugs = {
+	opencollective: ["open-source-collective-501(c)(6)"]
+};
 
 async function fetchAvatar(name, image, cacheName) {
 	let slug = slugify(name).toLowerCase();
@@ -42,10 +46,17 @@ async function fetchAvatarsForDataSource(sourceName, entries, fetchCallbacks) {
 		// we await here inside the loop (anti-pattern) as a cheap way to throttle too many simultaneous requests ¯\_(ツ)_/¯
 		let name = fetchCallbacks.name(entry);
 		let sluggedName = slugify(name).toLowerCase();
-		console.log( "⇢ Fetching", sluggedName );
-		let url = fetchCallbacks.image(entry);
+		console.log( `⇢ Fetching ${sluggedName} from ${sourceName}` );
 
-		if( skipUrls.indexOf(url) > -1 ) {
+		if(skipSlugs[sourceName] && skipSlugs[sourceName].indexOf(sluggedName) > -1) {
+			console.log( `❌ Skip slug entry for ${sluggedName} from ${sourceName}` );
+			continue;
+		}
+
+		let url = fetchCallbacks.image(entry);
+		if(!url) {
+			console.log( `❌ No image for ${sluggedName}` );
+		} else if( skipUrls.indexOf(url) > -1 ) {
 			if(existing[sluggedName]) {
 				map[sluggedName] = existing[sluggedName];
 				console.log( `Kept from existing ${sluggedName}` );
@@ -63,17 +74,19 @@ async function fetchAvatarsForDataSource(sourceName, entries, fetchCallbacks) {
 	}
 
 	await fs.writeFile(path, JSON.stringify(sortObject(map), null, 2));
-	console.log( `Wrote ${path}.` );
+	console.log( `>>> Mapping, wrote ${path}.` );
 }
 
 (async function() {
+	let promises = [];
+
 	// Open Collective
 	// let supporters = require("./_data/supporters.json").filter(entry => entry.role.toLowerCase() === "backer");
 	let supporters = require("./_data/supporters.json");
-	fetchAvatarsForDataSource("opencollective", supporters, {
-		name: supporter => supporter.name,
-		image: supporter => supporter.image
-	});
+	promises.push(fetchAvatarsForDataSource("opencollective", supporters, {
+		name: supporter => supporter && supporter.name,
+		image: supporter => supporter && supporter.image
+	}));
 
 	// Twitter
 	let twitters = new Set();
@@ -100,8 +113,10 @@ async function fetchAvatarsForDataSource(sourceName, entries, fetchCallbacks) {
 		}
 	}
 
-	fetchAvatarsForDataSource("twitter", twitters, {
+	promises.push(fetchAvatarsForDataSource("twitter", twitters, {
 		name: twitter => twitter,
 		image: twitter => `https://twitter.com/${twitter}/profile_image?size=bigger`
-	});
+	}));
+
+	await Promise.all(promises);
 })();

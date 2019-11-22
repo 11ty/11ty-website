@@ -1,4 +1,21 @@
 {
+  "alex-ward": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "alex-ward",
+      "path": "img/avatar-local-cache/opencollective/alex-ward.jpg",
+      "size": 1935
+    }
+  ],
   "andrew-pucci": [
     {
       "format": "jpeg",
@@ -30,7 +47,7 @@
       "hasAlpha": false,
       "name": "andy-bell",
       "path": "img/avatar-local-cache/opencollective/andy-bell.jpg",
-      "size": 1761
+      "size": 1780
     }
   ],
   "ben-brignell": [
@@ -167,6 +184,23 @@
       "name": "christopher-salmon",
       "path": "img/avatar-local-cache/opencollective/christopher-salmon.jpg",
       "size": 1949
+    }
+  ],
+  "cody-peterson": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "cody-peterson",
+      "path": "img/avatar-local-cache/opencollective/cody-peterson.jpg",
+      "size": 1812
     }
   ],
   "daniel-rafaj": [
@@ -439,6 +473,23 @@
       "name": "mark-buskbjerg",
       "path": "img/avatar-local-cache/opencollective/mark-buskbjerg.jpg",
       "size": 1226
+    }
+  ],
+  "mat-marquis": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "mat-marquis",
+      "path": "img/avatar-local-cache/opencollective/mat-marquis.jpg",
+      "size": 1244
     }
   ],
   "matthew-tole": [
@@ -762,6 +813,23 @@
       "name": "yuhei-yasuda",
       "path": "img/avatar-local-cache/opencollective/yuhei-yasuda.jpg",
       "size": 1385
+    }
+  ],
+  "zach-leatherman": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "zach-leatherman",
+      "path": "img/avatar-local-cache/opencollective/zach-leatherman.jpg",
+      "size": 1333
     }
   ]
 }
