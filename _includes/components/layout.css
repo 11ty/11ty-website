@@ -35,3 +35,10 @@
 .lo-maxgrow {
   flex-grow: 999;
 }
+
+/* Specific layouts */
+@media (min-width: 37.5em) { /* 600px */
+  .sites-lo .lo-c {
+    flex-basis: calc(50% - 2em);
+  }
+}
