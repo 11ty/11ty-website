@@ -215,11 +215,11 @@ module.exports = function(eleventyConfig) {
 		let emptyHearts = [];
 		let j = 0;
 		for( let k = amount; j <= k; j+= increments[incrementCounter]) {
-			fullHearts.push("❤️");
+			fullHearts.push("🎈");
 			incrementCounter++;
 		}
 		for(; j <= maxAmount; j+= increments[incrementCounter]) {
-			emptyHearts.push("💛");
+			emptyHearts.push("🎈");
 			incrementCounter++;
 		}
 		return `${fullHearts.join("")}<span class="supporters-hearts-empty">${emptyHearts.join("")}</span>`;
