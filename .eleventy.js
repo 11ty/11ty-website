@@ -259,6 +259,10 @@ module.exports = function(eleventyConfig) {
 			slugify: markdownItSlugify,
 			format: function(heading) {
 				return removeExtraText(heading);
+			},
+			transformLink: function(link) {
+				// remove backticks from markdown code
+				return link.replace(/\%60/g, "");
 			}
 		})
 	);
