@@ -1,13 +1,14 @@
 ---
-subtitle: Starter Projects
-tags:
-  - docs-getting-started
+eleventyNavigation:
+  parent: Getting Started
+  key: Starter Projects
+  order: 2
 ---
-# {{ subtitle }}
+# Starter Projects
 
 {% for site in starters -%}
 {% if site.disabled != true -%}
-1. [{% avatar site.author %}{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}
+1. [{% avatarlocalcache "twitter", site.author, site.author %}{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}
 {% endif -%}
 {% endfor -%}
 
@@ -27,7 +28,7 @@ This list shows all of the sample sites that have provided a link to their sourc
 {% if site.disabled != true and site.source_url -%}
     <tr>
       <td>{% if site.source_url %}<a href="{{ site.source_url }}" class="minilink">Source Code</a>{% endif %}</td>
-      <td>{% if site.url %}<a href="{{ site.url }}">{% endif %}{% avatar site.twitter or site.avatar_filename %}{{ site.name | safe }}{% if site.url %}</a>{% endif %}</td>
+      <td>{% if site.url %}<a href="{{ site.url }}">{% endif %}{% avatarlocalcache "twitter", site.twitter %}{{ site.name | safe }}{% if site.url %}</a>{% endif %}</td>
     </tr>
 {% endif -%}
 {% endfor -%}

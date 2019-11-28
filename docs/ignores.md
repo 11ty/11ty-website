@@ -1,7 +1,8 @@
 ---
-subtitle: Ignore Files
-tags:
-  - docs-config
+eleventyNavigation:
+  parent: Configuration
+  key: Ignore Files
+  order: 2
 ---
 # Ignore Template Files
 
@@ -21,7 +22,7 @@ secretNunjucksTemplates/anotherFolder/**/*.njk
 
 If you do not have a `.gitignore` file in your project, the `node_modules` directory will be ignored automatically. This makes new Eleventy projects a little easier and helps developers new to Eleventy get ramped up easier too.
 
-{% callout "info" %}{% addedin "0.8.4" %}<strong>If <code>.gitignore</code> exists but is empty</strong>: if you have a <code>.gitignore</code> file and it is empty (or only contains white-space), <code>node_modules</code> will be ignored automatically.{% endcallout %}
+{% callout "info" %}{% addedin "0.9.0" %}<strong>If <code>.gitignore</code> exists but is empty</strong>: if you have a <code>.gitignore</code> file and it is empty (or only contains white-space), <code>node_modules</code> will be ignored automatically.{% endcallout %}
 
 ## Opt-out of using `.gitignore` {% addedin "0.3.5" %}
 

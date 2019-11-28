@@ -12,6 +12,9 @@
 	line-height: 1.285714285714; /* 18px /14 */
 	font-family: system-ui, sans-serif;
 }
+table .minilink {
+	margin-top: 6px;
+}
 .minilink[href] {
 	box-shadow: 0 1px 1px 0 rgba(0,0,0,.5);
 }
@@ -56,7 +59,7 @@ h4 .minilink {
 	box-shadow: 0 0 0 1px rgba(0,0,0,0.3);
 }
 .minilink-addedin:not(:first-child) {
-	margin-left: 1em;
+	margin-left: .5em;
 }
 .minilink-addedin.minilink-inline {
 	margin: 0 4px;

@@ -1,10 +1,10 @@
 ---
-subtitle: Glossary
-tags:
-  - docs-overview
+eleventyNavigation:
+  parent: Overview
+  key: Glossary
 ---
 
-# {{ subtitle }} and Buzzwords
+# Glossary and Buzzwords
 
 Bask in the warm glow of this _“Nobody ever got fired for buying IBM”_-style feel-good industry jargon.
 

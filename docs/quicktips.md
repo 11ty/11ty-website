@@ -1,5 +1,5 @@
 ---
-subtitle: Quick Tips
+excludeFromSearch: true
 ---
 # Quick Tips
 

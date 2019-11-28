@@ -1,14 +1,7 @@
 ---
-subtitle: Using Data
-menuSectionName: docs-data
-submenuSortOrder:
-  - data-frontmatter
-  - data-template-dir
-  - data-global
-  - data-js
-  - data-preprocessing
-tags:
-  - docs
+eleventyNavigation:
+  key: Using Data
+  order: 6
 ---
 # Using Data
 
@@ -37,8 +30,11 @@ let page = {
   // URL can be used in <a href> to link to other templates
   url: "/current/page/myFile/",
   
-  // Mapped from inputPath, useful for permalinks (New in v0.3.4)
+  // For permalinks: inputPath filename minus template file extension (New in v0.3.4)
   fileSlug: "myFile",
+
+  // For permalinks: inputPath minus template file extension (New in v0.9.0)
+  filePathStem: "/current/page/myFile",
   
   // JS Date Object for current page (used to sort collections)
   date: new Date(),
@@ -55,20 +51,46 @@ let page = {
 
 #### `fileSlug` {% addedin "0.3.4" %}
 
-The `fileSlug` variable is mapped from inputPath and is useful for creating your own clean permalinks.
+The `fileSlug` variable is mapped from inputPath and is useful for creating your own clean [permalinks](/docs/permalinks/).
 
-| `inputPath` | Resulting `fileSlug` |
+| `inputPath` | `page.fileSlug` Result |
 | --- | --- |
 | `"2018-01-01-myFile.md"` | `"myFile"` |
 | `"myDir/myFile.md"` | `"myFile"` |
 
 `fileSlug` returns information on the parent directory if the file is an `index` template:
 
-| `inputPath` | Resulting `fileSlug` |
+| `inputPath` | `page.fileSlug` Result |
 | --- | --- |
 | `"index.md"` | `""` _(empty)_ |
 | `"myDir/index.md"` | `"myDir"` |
 | `"myDir/2018-01-01-index.md"` | `"myDir"` |
+
+#### `filePathStem` {% addedin "0.9.0" %}
+
+The `filePathStem` variable is mapped from inputPath and is useful if you’ve inherited a project that doesn’t use clean [permalinks](/docs/permalinks/).
+
+{% callout "info" %}<strong>Careful with this one</strong> and remember that <a href="/docs/permalinks/#cool-uris-don’t-change">Cool URI’s don’t change</a>.{% endcallout %}
+
+If you absolutely need a file extension on your output, you might use it like this:
+
+{% codetitle "YAML Front Matter", "Syntax" %}
+
+{% raw %}
+```
+---
+permalink: "{{ page.filePathStem }}.html"
+---
+```
+{% endraw %}
+
+Example Output below is using the above permalink value.
+
+| `inputPath` | `page.filePathStem` Result | Example Output |
+| --- | --- | --- |
+| `"2018-01-01-myFile.md"` | `"myFile"` | `myFile.html` |
+| `"myDir/myFile.md"` | `"myDir/myFile"` | `myDir/myFile.html` |
+
 
 ### `date`
 

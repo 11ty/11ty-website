@@ -1,7 +1,8 @@
 ---
-subtitle: Plugins
-tags:
-  - docs-config
+eleventyNavigation:
+  parent: Configuration
+  key: Plugins
+  order: 6
 ---
 # Plugins {% addedin "0.2.13" %}
 
@@ -9,8 +10,11 @@ Plugins are custom code that Eleventy can import into a project from an external
 
 ## List of Official Plugins
 
+All official plugins live under the `@11ty` npm organization and plugin names will include the `@11ty/` prefix.
+
 * [@11ty/eleventy-plugin-rss](https://www.npmjs.com/package/@11ty/eleventy-plugin-rss) is a collection of Nunjucks filters for RSS/Atom feed templates.
 * [@11ty/eleventy-plugin-syntaxhighlight](https://www.npmjs.com/package/@11ty/eleventy-plugin-syntaxhighlight) for syntax highlighting using Markdown and Liquid tags.
+* [@11ty/eleventy-navigation](https://www.npmjs.com/package/@11ty/eleventy-navigation) is a plugin for creating hierarchical navigation—supports breadcrumbs too!
 * [@11ty/eleventy-plugin-inclusive-language](https://www.npmjs.com/package/@11ty/eleventy-plugin-inclusive-language) includes a simple linter to help your writing use more inclusive language. Inspired by [_CSS Tricks’ Words to Avoid in Educational Writing_](https://css-tricks.com/words-avoid-educational-writing/).
 
 ### Unofficial Plugins
@@ -26,6 +30,10 @@ Plugins are custom code that Eleventy can import into a project from an external
 * [eleventy-plugin-typeset](https://www.npmjs.com/package/eleventy-plugin-typeset) by [Johan Brook](https://www.johanbrook.com/) will make your typography nicer.
 * [eleventy-plugin-yamldata](https://www.npmjs.com/package/eleventy-plugin-yamldata) by [Sungkwang Lee](https://gwangyi.github.io/) will allow you to use a yaml file as local data file.
 * [@shawnsandy/npm_info](https://www.npmjs.com/package/@shawnsandy/npm_info) by [Shawn Sandy](https://github.com/shawn-sandy) will provide you with package detail for an npm package or GitHub info.
+* [eleventy-plugin-lazyimages](https://www.npmjs.com/package/eleventy-plugin-lazyimages) by [Liam Fiddler](https://liamfiddler.com) will add progressive lazy loading to your images.
+* [eleventy-xml-plugin](https://www.npmjs.com/package/eleventy-xml-plugin) by [Jeremias Menichelli](https://jeremenichelli.io) adds Liquid filters used for sitemap and RSS/feed file generation.
+* [eleventy-plugin-markdown-shortcode](https://www.npmjs.com/package/eleventy-plugin-markdown-shortcode) by [Tyler Williams](https://ogdenstudios.xyz) adds a universal shortcode to render markdown. 
+* [eleventy-plugin-sass](https://www.npmjs.com/package/eleventy-plugin-sass) by [Maarten Schroeven](https://github.com/Sonaryr) will add the ability to use Sass for your stylesheets
 * [**Search for `eleventy-plugin` on `npm`**](https://www.npmjs.com/search?q=eleventy-plugin)
 
 
@@ -94,6 +102,6 @@ Plugin namespacing is an application feature and should not be used if you are c
 <div class="elv-community" id="community-resources">
   <h3 class="elv-community-hed">Community Resources</h3>
   <ul>
-    <li><a href="https://bryanlrobinson.com/blog/2019/06/21/creating-11ty-plugin-embed-svg-contents/">Creating an 11ty Plugin—SVG Embed Tool</a> by {% avatar "brob" %}Bryan Robinson</li>
+    <li><a href="https://bryanlrobinson.com/blog/2019/06/21/creating-11ty-plugin-embed-svg-contents/">Creating an 11ty Plugin—SVG Embed Tool</a> by {% avatarlocalcache "twitter", "brob" %}Bryan Robinson</li>
   </ul>
 </div>

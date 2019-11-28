@@ -1,12 +1,13 @@
 ---
-subtitle: Collections
-excerpt: Group, reuse, and sort content in interesting ways.
-tags:
-  - docs-templates
+eleventyNavigation:
+  parent: Working with Templates
+  key: Collections
+  order: 2
+  excerpt: Group, reuse, and sort content in interesting ways.
 ---
 # Collections (using Tags)
 
-While [pagination](/docs/pagination/) allows you do iterate over a data set to create multiple templates, a collection allows you to group content in interesting ways. A piece of content can be a part of multiple collections, if you assign the same string value to the `tags` key in the front matter.
+While [pagination](/docs/pagination/) allows you to iterate over a data set to create multiple templates, a collection allows you to group content in interesting ways. A piece of content can be a part of multiple collections, if you assign the same string value to the `tags` key in the front matter.
 
 ## A Blog Example
 
@@ -189,7 +190,9 @@ This collection would be sorted like this:
 
 ### Sort descending
 
-To sort descending in your template, you can use a filter to reverse the sort order. For example, in Nunjucks it’d look like this (Liquid also has a `reverse` filter built in):
+To sort descending in your template, you can use a filter to reverse the sort order. For example, in Nunjucks it’d look like this:
+
+{% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
 ```
@@ -200,6 +203,22 @@ To sort descending in your template, you can use a filter to reverse the sort or
 </ul>
 ```
 {% endraw %}
+
+And in Liquid it’d look like this:
+
+{% codetitle "Liquid", "Syntax" %}
+
+{% raw %}
+```
+<ul>
+{%- assign posts = collections.post | reverse -%}
+{%- for post in posts -%}
+  <li>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+```
+{% endraw %}
+
 
 <div class="elv-callout elv-callout-warn elv-callout-warn-block" id="array-reverse">
   <p>You should <em><strong>not</strong></em> use Array <code>reverse()</code> on collection arrays in your templates, like so:</p>
@@ -413,6 +432,6 @@ module.exports = function(eleventyConfig) {
 <div class="elv-community" id="community-resources">
   <h3 class="elv-community-hed">Community Resources</h3>
   <ul>
-    <li><a href="https://www.pborenstein.com/articles/collections/">Working with Collections</a> by {% avatar "pborenstein" %}Philip Borenstein</li>
+    <li><a href="https://www.pborenstein.com/articles/collections/">Working with Collections</a> by {% avatarlocalcache "twitter", "pborenstein" %}Philip Borenstein</li>
   </ul>
 </div>

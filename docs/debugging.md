@@ -1,7 +1,8 @@
 ---
-subtitle: Debugging
-tags:
-  - docs-getting-started
+eleventyNavigation:
+  parent: Getting Started
+  key: Debugging
+  order: 3
 ---
 # Debugging
 
@@ -11,7 +12,7 @@ Having trouble? Want to see what Eleventy is doing behind the scenes? Use `DEBUG
 DEBUG=Eleventy* eleventy
 ```
 
-It’s [different if you’re on Windows](https://www.npmjs.com/package/debug#windows-note).
+It’s [different if you’re on Windows](https://www.npmjs.com/package/debug#windows-command-prompt-notes).
 
 This will tell you exactly what directories Eleventy is using for data, includes, input, and output. It’ll tell you what search globs it uses to find your templates and what templates it finds. If you’re having trouble, enable this.
 

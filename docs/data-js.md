@@ -1,7 +1,8 @@
 ---
-subtitle: JavaScript Data Files
-tags:
-  - docs-data
+eleventyNavigation:
+  parent: Using Data
+  key: JavaScript Data Files
+  order: 2
 relatedLinks:
   /docs/config/#change-file-suffix-for-template-and-directory-data-files: Change the file suffix `.11tydata` for Template/Directory data files
   /docs/config/#watch-javascript-dependencies: Watch JavaScript Dependencies
@@ -104,10 +105,10 @@ Saving this as `myProject.js` in your global data directory (by default, this is
 
 ```
 # Serve for Development
-ELEVENTY_ENV=development npx eleventy --serve
+ELEVENTY_ENV=development npx @11ty/eleventy --serve
 
 # Build for Production
-ELEVENTY_ENV=production npx eleventy
+ELEVENTY_ENV=production npx @11ty/eleventy
 ```
 
 #### Template Usage

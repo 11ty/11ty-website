@@ -1,5 +1,8 @@
 ---
-subtitle: Mustache
+eleventyNavigation:
+  parent: Template Languages
+  key: Mustache
+  order: 8
 layout: layouts/langs.njk
 ---
 | Eleventy Short Name | File Extension | NPM Package                                           |
@@ -25,5 +28,6 @@ module.exports = function(eleventyConfig) {
 
 | Feature     | Syntax                                           |
 | ----------- | ------------------------------------------------ |
-| ✅ Partials | `{% raw %}{{> user}}{% endraw %}` looks for `_includes/user.mustache` (does not process front matter) |
+| ✅ Partials | `{% raw %}{{> user}}{% endraw %}` looks for `_includes/user.mustache`. Does not process front matter in the include file. |
+| 🚫 Partials (Relative Path)                                                                  | **Not yet supported**: `{% raw %}{{> ./user}}{% endraw %}` looks for `user.mustache` in the template’s current directory.                                                                                             |
 

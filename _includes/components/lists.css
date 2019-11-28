@@ -184,3 +184,35 @@ main p a.buzzword {
 		white-space: nowrap;
 	}
 }
+
+.numberflag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #dff7ff;
+	border-radius: 50%;
+	width: 1.75em;
+	height: 1.75em;
+	font-weight: 600;
+}
+h1 .numberflag,
+h2 .numberflag,
+h3 .numberflag,
+h4 .numberflag,
+h5 .numberflag {
+	width: 1.25em;
+	height: 1.25em;
+}
+h2 .numberflag {
+	position: relative;
+	margin-right: 0.25em; /* 10px /40 */
+}
+h2 .numberflag:after {
+	content: " ";
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	height: 1px;
+	background-color: #fff;
+	width: calc(100% + 0.4em); /* 16px /40 */
+}

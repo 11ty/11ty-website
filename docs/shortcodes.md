@@ -1,9 +1,11 @@
 ---
-subtitle: Shortcodes
+eleventyNavigation:
+  parent: Configuration
+  key: Shortcodes
+  order: 4
 relatedKey: shortcodes
 relatedTitle: Template Shortcodes
 tags:
-  - docs-config
   - related-filters
   - related-custom-tags
   - related-nunjucks
@@ -15,22 +17,15 @@ tags:
 
 Various template engines can be extended with shortcodes for easy reusable content. This is sugar around Template Language [Custom Tags](/docs/custom-tags/). Here’s a few examples:
 
-{% codetitle "Liquid", "Syntax" %}
+{% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
 ```html
-{% user firstName lastName %}
-```
-{% endraw %}
-
-{% codetitle "Nunjucks", "Syntax" %}
-
-{% raw %}
-```html
-<!-- Note the comma between arguments -->
 {% user firstName, lastName %}
 ```
 {% endraw %}
+
+The comma between arguments is **required** in Nunjucks but is **optional** in Liquid templates.
 
 {% codetitle "Handlebars", "Syntax" %}
 
@@ -85,17 +80,19 @@ A shortcode returns content (a JavaScript string or template literal) that is in
 
 Read more about using shortcodes on the individual Template Language documentation pages:
 
-{% templatelangs templatetypes, page, ["11ty.js", "njk", "liquid", "hbs"], "#shortcodes" %}
+* [JavaScript `*.11ty.js`](/docs/languages/javascript/#javascript-template-functions) (with async support)
+* [Liquid `*.liquid`](/docs/languages/liquid/#shortcodes) (with async support)
+* [Nunjucks `*.njk`](/docs/languages/nunjucks/#shortcodes) (with async support)
+* [Handlebars `*.hbs`](/docs/languages/handlebars/#shortcodes)
 
 ## Paired Shortcodes
 
 The shortcodes we saw above were nice, I suppose. But really, they are not all that different from a filter. The real ultimate power of Shortcodes comes when they are Paired. Paired Shortcodes have a start and end tag—and allow you to nest other template content inside!
 
-{% codetitle "Nunjucks", "Syntax" %}
+{% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
 ```html
-<!-- Note the comma between arguments -->
 {% user firstName, lastName %}
   Hello {{ someOtherVariable }}.
   
@@ -104,17 +101,7 @@ The shortcodes we saw above were nice, I suppose. But really, they are not all t
 ```
 {% endraw %}
 
-{% codetitle "Liquid", "Syntax" %}
-
-{% raw %}
-```html
-{% user firstName lastName %}
-  Hello {{ someOtherVariable }}.
-  
-  Hello {% anotherShortcode %}.
-{% enduser %}
-```
-{% endraw %}
+The comma between arguments is **required** in Nunjucks but is **optional** in Liquid templates.
 
 {% codetitle "Handlebars", "Syntax" %}
 
@@ -134,9 +121,11 @@ The shortcodes we saw above were nice, I suppose. But really, they are not all t
 
 ```js
 module.exports = function(data) {
-  return `<h1>${this.user(`Hello ${data.someOtherVariable}
+  let userContent = `Hello ${data.someOtherVariable}
 
-Hello ${this.anotherShortCode()}`, data.firstName, data.lastName)}</h1>`;
+Hello ${this.anotherShortCode()}`;
+
+  return `<h1>${this.user(userContent, data.firstName, data.lastName)}</h1>`;
 };
 ```
 
@@ -170,7 +159,10 @@ module.exports = function(eleventyConfig) {
 
 Read more about using paired shortcodes on the individual Template Language documentation pages:
 
-{% templatelangs templatetypes, page, ["11ty.js", "njk", "liquid", "hbs"], "#shortcodes" %}
+* [JavaScript `*.11ty.js`](/docs/languages/javascript/#javascript-template-functions) (with async support)
+* [Liquid `*.liquid`](/docs/languages/liquid/#shortcodes) (with async support)
+* [Nunjucks `*.njk`](/docs/languages/nunjucks/#shortcodes) (with async support)
+* [Handlebars `*.hbs`](/docs/languages/handlebars/#shortcodes)
 
 ## Universal Shortcodes
 

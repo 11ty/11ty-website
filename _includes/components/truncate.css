@@ -1,0 +1,8 @@
+/* https://css-tricks.com/multi-line-truncation-with-pure-css/ */
+.truncate-overflow {
+	--truncate-lh: 1.5em;
+	--truncate-lines: 3;
+	line-height: var(--truncate-lh);
+	max-height: calc(var(--truncate-lh) * var(--truncate-lines));
+	overflow: hidden;
+}

@@ -25,7 +25,7 @@
 		"text": "Jekyll is dead to me",
 		"twitter": "hankchizljaw",
 		"name": "Andy Bell",
-		"source": "https://twitter.com/andybelldesign/",
+		"source": "https://twitter.com/hankchizljaw/",
 		"featured": true
 	},
 	{
@@ -135,6 +135,13 @@
 		"twitter": "addyosmani",
 		"name": "Addy Osmani",
 		"source": "https://twitter.com/addyosmani/",
+		"featured": true
+	},
+	{
+		"text": "I heard Eleventy was good",
+		"twitter": "lachzeat",
+		"name": "Lach Zeatherman",
+		"source": "https://twitter.com/lachzeat/status/1196789524535431168",
 		"featured": true
 	}
 ]
