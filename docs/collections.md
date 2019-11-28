@@ -190,7 +190,9 @@ This collection would be sorted like this:
 
 ### Sort descending
 
-To sort descending in your template, you can use a filter to reverse the sort order. For example, in Nunjucks it’d look like this (Liquid also has a `reverse` filter built in):
+To sort descending in your template, you can use a filter to reverse the sort order. For example, in Nunjucks it’d look like this:
+
+{% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
 ```
@@ -201,6 +203,22 @@ To sort descending in your template, you can use a filter to reverse the sort or
 </ul>
 ```
 {% endraw %}
+
+And in Liquid it’d look like this:
+
+{% codetitle "Liquid", "Syntax" %}
+
+{% raw %}
+```
+<ul>
+{%- assign posts = collections.post | reverse -%}
+{%- for post in posts -%}
+  <li>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+```
+{% endraw %}
+
 
 <div class="elv-callout elv-callout-warn elv-callout-warn-block" id="array-reverse">
   <p>You should <em><strong>not</strong></em> use Array <code>reverse()</code> on collection arrays in your templates, like so:</p>
