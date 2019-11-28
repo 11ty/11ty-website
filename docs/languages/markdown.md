@@ -1,5 +1,8 @@
 ---
-subtitle: Markdown
+eleventyNavigation:
+  parent: Template Languages
+  key: Markdown
+  order: 2
 layout: layouts/langs.njk
 relatedLinks:
   /docs/config/#default-template-engine-for-markdown-files: Default Template Engine for Markdown Files
@@ -100,6 +103,12 @@ eleventyConfig.addShortcode("goodShortcode", function() {
 This will not be a code block in a markdown file.
 `;
 });
+```
+
+If you do need to disable indented code blocks, you can do so by configuring your `markdown-it` instance to disable the `code` rule.
+
+```js
+let markdownLib = markdownIt(options).disable('code');
 ```
 
 ## Why can’t I return markdown from paired shortcodes to use in a markdown file?

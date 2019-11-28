@@ -1,19 +1,20 @@
 ---
-subtitle: Sites Using Eleventy
-tags:
-  - docs-overview
+eleventyNavigation:
+  parent: Supporting Eleventy
+  key: Sites Using Eleventy
+  order: 3
 ---
 
-# {{ sites | getsize }} {{ subtitle }}
+# {{ sites | getsize }} Sites Using Eleventy
 
-<ul class="list-bare">
+<div class="lo sites-lo" style="--lo-margin-h: 2em; --lo-margin-v: 1em; --lo-stackpoint: 31.25em;">
 {% for key, site in sites | shuffle -%}
 {% if site.disabled != true and site.url -%}
-  <li><a href="{{ site.url }}">{% avatar site.twitter or site.avatar_filename %}{{ site.name | safe }}</a>
+  <div class="lo-c"><a href="{{ site.url }}">{% avatarlocalcache "twitter", site.twitter %}{{ site.name | safe }}</a>
     {%- if site.description %}<em class="list-bare-desc list-bare-desc-avatar">{{ site.description }}</em>{% endif -%}
     {%- if site.source_url %}<em class="list-bare-desc list-bare-desc-avatar">Includes <a href="{{ site.source_url }}">sample source code</a>.</em>{% endif -%}
-  </li>
+  </div>
 {% endif -%}
 {% endfor -%}
-  <li>{% addToSampleSites %}</li>
-</ul>
+  <div class="lo-c">{% addToSampleSites %}</div>
+</div>

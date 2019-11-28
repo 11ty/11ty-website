@@ -47,3 +47,7 @@
 	position: relative;
 	bottom: -2px;
 }
+.codetitle-left + .codetitle-left {
+	clear: none;
+	margin-left: 2em;
+}

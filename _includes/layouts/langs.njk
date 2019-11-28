@@ -1,9 +1,7 @@
 ---
 layout: layouts/docs.njk
-tags:
-  - docs-languages
 ---
-<h1>{{ subtitle }}{% if addedInVersion %}{% addedin addedInVersion%}{% endif %}</h1>
+<h1>{{ eleventyNavigation.key }}{% if addedInVersion %}{% addedin addedInVersion%}{% endif %}</h1>
 
 <div class="elv-langlist">
 <h2 class="elv-langlist-hed">Template Languages:</h2>

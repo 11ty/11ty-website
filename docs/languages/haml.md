@@ -1,5 +1,8 @@
 ---
-subtitle: Haml
+eleventyNavigation:
+  parent: Template Languages
+  key: HAML
+  order: 10
 layout: layouts/langs.njk
 ---
 | Eleventy Short Name | File Extension | NPM Package    |
@@ -25,5 +28,5 @@ module.exports = function(eleventyConfig) {
 
 | Feature                                                                             | Syntax                                                                 |
 | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| 🚫 _TODO_ Filters                                                                   | `:filterName some text` Read more about [Filters](/docs/filters/).                                                |
-| 🚫 _TODO_ [Eleventy Universal Filters](/docs/filters/#universal-filters) | `:filterName some text` Read more about [Filters](/docs/filters/). |
+| 🚫 Filters                                                                   | **Not yet supported** `:filterName some text` Read more about [Filters](/docs/filters/).                                                |
+| 🚫 [Eleventy Universal Filters](/docs/filters/#universal-filters) | **Not yet supported** `:filterName some text` Read more about [Filters](/docs/filters/). |

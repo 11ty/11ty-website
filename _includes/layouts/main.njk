@@ -13,16 +13,22 @@ headerClass: elv-header-default
 <div class="elv-callout elv-callout-info elv-callout-sticky">This documentation is for an upcoming version of Eleventy. Go to the <a href="https://www.11ty.io/docs/">latest stable version of Eleventy docs</a> or check out the <a href="https://www.11ty.io/docs/versions/">full release history.</a></div>
 {% endif -%}
 
-<main class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">{{ content | safe }}</main>
+<main class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">
+	{{ content | safe }}
+</main>
 
 <footer class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">
+{% if ignoreSupporters %}{% else %}
+	<h2 id="eleventy-is-supported-by">Eleventy is <a href="/docs/supporters/">supported</a> by… <a class="direct-link" href="#eleventy-is-supported-by">#</a></h2>
+	{% include "supporters.njk" %}
+{% endif %}
 {%- if ignoreGitHubButtons %}{% else %}
 	<div class="elv-callout">
-		<a href="https://github.com/11ty/eleventy" class="minilink">⭐ <strong>{{ github.stargazers | humanReadableNum }}</strong></a>
-		<a href="https://github.com/11ty/eleventy"><strong>Please star Eleventy on GitHub!</strong></a> This is a good way to support our underrated project and help boost our rank on <a href="https://www.staticgen.com/">staticgen.com</a>, a giant list of static site generators.
+		{% include "star-on-github.njk" %}
 	</div>
 {%- endif %}
-{%- if page.url != "/" and not page.url.endsWith("/docs/") and not page.url.endsWith("/docs/testimonials/")  %}
+{%- if ignoreFooterTestimonial -%}
+{%- elseif page.url != "/" and not page.url.endsWith("/docs/") and not page.url.endsWith("/docs/testimonials/")  %}
 	{%- set randomTestimonial = testimonials | randompick %}
 	{%- testimonial randomTestimonial %}
 {%- endif %}

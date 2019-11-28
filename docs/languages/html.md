@@ -1,5 +1,8 @@
 ---
-subtitle: HTML
+eleventyNavigation:
+  parent: Template Languages
+  key: HTML
+  order: 1
 layout: layouts/langs.njk
 relatedLinks:
   /docs/config/#default-template-engine-for-html-files: Default Template Engine for HTML Files

@@ -45,10 +45,32 @@ layout: layouts/docs.njk
 </ul>
 </div>
 
+<h3>Number Flags</h3>
+
+<div class="elv-sg-component">
+<span class="numberflag">1</span>
+<span class="numberflag">2</span>
+<span class="numberflag">3</span>
+<span class="numberflag">4</span>
+<span class="numberflag">5</span>
+<span class="numberflag">6</span>
+<span class="numberflag">7</span>
+<span class="numberflag">8</span>
+<span class="numberflag">9</span>
+</div>
+
+<h4>Number Flags in Headings</h4>
+<div class="elv-sg-component">
+<h2><span class="numberflag"><span class="sr-only">Step</span> 1</span> Notice how the border disappears under the flag</h2>
+<h3><span class="numberflag"><span class="sr-only">Step</span> 2</span> Do a thing</h3>
+<h4><span class="numberflag"><span class="sr-only">Step</span> 3</span> Do a thing</h4>
+<h5><span class="numberflag"><span class="sr-only">Step</span> 4</span> Do a thing</h5>
+</div>
+
 <h2>Blockquotes</h2>
 
 <div class="elv-sg-component">
-    <blockquote>“Seriously can't remember enjoying using a Static Site Generator this much. Yes Hugo is rapid, but this is all so logical. It feels like it was designed by someone who has been through lots of pain and success using other SSGs.”—<a href="https://twitter.com/philhawksworth"><img src="/img/avatars/philhawksworth.jpg" alt="@philhawksworth">Phil Hawksworth</a></blockquote>
+    <blockquote>“Seriously can't remember enjoying using a Static Site Generator this much. Yes Hugo is rapid, but this is all so logical. It feels like it was designed by someone who has been through lots of pain and success using other SSGs.”—<a href="https://twitter.com/philhawksworth">{% avatarlocalcache "twitter", "philhawksworth" %}Phil Hawksworth</a></blockquote>
 </div>
 
 <h2>Buzzwords</h2>

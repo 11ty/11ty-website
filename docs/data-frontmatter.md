@@ -1,11 +1,14 @@
 ---
-subtitle: Front Matter Data
-tags:
-  - docs-data
+eleventyNavigation:
+  parent: Data Cascade
+  key: Front Matter Data
+  order: 1
 ---
 # Front Matter Data
 
 Add data in your template front matter, like this:
+
+{% codetitle "YAML", "Syntax" %}
 
 ```markdown
 ---
@@ -16,11 +19,12 @@ title: My page title
 …
 ```
 
-The above is using [YAML syntax](https://learnxinyminutes.com/docs/yaml/).
+The above is using [YAML syntax](https://learnxinyminutes.com/docs/yaml/). You can [use other formats too](#alternative-front-matter-formats).
 
 Locally assigned front matter values override things further up the layout chain. Note also that layouts can contain front matter variables that you can use in your local template. Leaf template front matter takes precedence over layout front matter. Read more about [Layouts](/docs/layouts/).
 
-## User Defined Front Matter Customizations
+## Front Matter Configuration
+<span id="user-defined-front-matter-customizations"></span>
 
 Here are a few special front matter keys you can assign:
 
@@ -32,6 +36,10 @@ Here are a few special front matter keys you can assign:
 * `date`: Override the default date (file creation) to customize how the file is sorted in a collection. [Read more at Content Dates](/docs/dates/).
 * `templateEngineOverride`: Override the template engine on a per-file basis, usually configured with a file extension or globally using the `markdownTemplateEngine` and `htmlTemplateEngine` configuration options. [Read more about Changing a Template’s Rendering Engine](/docs/languages/#overriding-the-template-language).
 * `eleventyExcludeFromCollections`: {% addedin "0.8.0" %} Set to `true` to exclude this content from any and all [Collections](/docs/collections/) (those tagged in data or setup using the Configuration API).
+
+## Sources of Data
+
+{% include "datasources.md" %}
 
 ## Alternative Front Matter Formats
 
@@ -51,6 +59,10 @@ Eleventy uses the [`gray-matter` package](https://github.com/jonschlinkert/gray-
 ```
 
 ### JavaScript Front Matter
+
+Note that Liquid templates do not allow executing a function in output `{% raw %}{{ currentDate() }}{% endraw %}`. However, the following example does work in Nunjucks:
+
+{% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
 ```
@@ -73,108 +85,10 @@ Eleventy uses the [`gray-matter` package](https://github.com/jonschlinkert/gray-
 ```
 {% endraw %}
 
-### Add your own
+### Add your own format {% addedin "0.9.0" %}
 
-You can customize Front Matter Parsing in Eleventy to add your own custom format. We have an [example to do this with support for TOML below](#example%3A-using-toml-for-front-matter-parsing).
+You can [customize Front Matter Parsing](/docs/data-frontmatter-customize/) in Eleventy to add your own custom format. We have an [example to do this with support for TOML](/docs/data-frontmatter-customize/#example%3A-using-toml-for-front-matter-parsing).
 
-## Advanced: Customize Front Matter Parsing {% addedin "0.8.4" %}
+## Advanced: Customize Front Matter Parsing {% addedin "0.9.0" %}
 
-Eleventy uses the [`gray-matter` npm package](https://www.npmjs.com/package/gray-matter) for parsing front matter. `gray-matter` allows additional options that aren’t available by default in Eleventy.
-
-Check out the [full list of available `gray-matter` options](https://www.npmjs.com/package/gray-matter#options). By default, Eleventy uses `gray-matter`’s default options.
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setFrontMatterParsingOptions({
-    /* … */
-  });
-};
-```
-
-### Example: using Front Matter Excerpts {% addedin "0.8.4" %}
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setFrontMatterParsingOptions({
-    excerpt: true,
-    excerpt_separator: '---' // Optional
-  });
-};
-```
-
-Now you can do things like this:
-
-{% codetitle "sample.md" %}
-
-```markdown
----
-title: My page title
----
-This is an excerpt.
----
-<!doctype html>
-<html>
-…
-```
-
-This will not alter your template’s content in collections. Your excerpt will now be available in the template’s `page.excerpt` variable.
-
-#### Changing where your excerpt is stored
-
-If you don’t want to use `page.excerpt` to store your excerpt value, then use your own `excerpt_alias` option ([any valid path to Lodash Set will work](https://lodash.com/docs/4.17.11#set)) like so:
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setFrontMatterParsingOptions({
-    excerpt: true,
-    // Eleventy custom option
-    // The variable where the excerpt will be stored.
-    excerpt_alias: 'my_custom_excerpt'
-  });
-};
-```
-
-Using `excerpt_alias: 'my_custom_excerpt'` means that the excerpt will be available in your templates as the `my_custom_excerpt` variable instead of `page.excerpt`.
-
-### Example: using TOML for front matter parsing {% addedin "0.8.4" %}
-
-While Eleventy does include support for [JSON, YAML, and JS front matter out of the box](#alternative-front-matter-formats), you may want to add additional formats too.
-
-{% codetitle ".eleventy.js" %}
-
-```js
-const toml = require("toml");
-
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setFrontMatterParsingOptions({
-    engines: {
-      toml: toml.parse.bind(toml)
-    }
-  });
-};
-```
-
-For more information, read [this example on the `gray-matter` documentation](https://www.npmjs.com/package/gray-matter#optionsengines).
-
-Now you can use TOML in your front matter like this:
-
-{% codetitle "sample.md" %}
-
-```markdown
----toml
-title = "My page title using TOML"
----
-<!doctype html>
-<html>
-…
-```
-
-## Sources of Data
-
-{% include "datasources.md" %}
+Configure [front matter for customized excerpts, TOML parsing, and more](/docs/data-frontmatter-customize/).

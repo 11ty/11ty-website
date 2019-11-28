@@ -1,10 +1,10 @@
 ---
-subtitle: Testimonials
-tags:
-  - docs-overview
+eleventyNavigation:
+  parent: Overview
+  key: Testimonials
 ---
 
-# {{ subtitle }}
+# Testimonials
 
 Don’t just take my word for it. 🌈 Listen to what these happy developers are saying about Eleventy:
 

@@ -35,15 +35,13 @@
 	list-style: none;
 	font-size: 0.875em; /* 14px /16 */
 }
-@media (min-width: 64em) { /* 1024 */
-	.elv-toc-list ul {
-		display: none;
-	}
+
+/* Menus nested 2 or more deep */
+.elv-toc-list ul ul {
+	padding-bottom: 0;
 }
-@media (min-width: 64em) and (min-height: 31.25em) { /* 1024 x 500px */
-	.elv-toc-list ul {
-		display: block;
-	}
+.elv-toc-list ul ul > li:not(.elv-toc-active) > ul > li:not(.elv-toc-active) {
+	display: none;
 }
 
 /* List items */
@@ -55,8 +53,8 @@
 .elv-toc-list a {
 	display: block;
 }
-.elv-toc-list ul a {
-	padding-left: 1em;
+.elv-toc-list ul {
+	padding-left: 0.625rem; /* 10px /16 */
 }
 .elv-toc-list a:not(:hover) {
 	text-decoration: none;
@@ -73,8 +71,7 @@
 }
 
 /* Active links */
-.elv-toc-list > li.elv-toc-active > a,
-.elv-toc-list ul li.elv-toc-active {
+.elv-toc-list li.elv-toc-active > a {
 	background-color: #dff7ff;
 }
 .elv-toc-list ul .elv-toc-active > a:after {
