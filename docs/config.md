@@ -507,6 +507,18 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+### Additional Watch Targets
+
+The `addWatchTarget` config method allows you to manually add a file or directory for Eleventy to watch. When the file or the files in this directory change Eleventy will trigger a build. This is useful if Eleventy is not directly aware any external file dependencies.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addWatchTarget("./src/scss/");
+};
+```
+
 ### Override Browsersync Server Options {% addedin "0.7.0" %}
 
 Useful if you want to change or override the default Browsersync configuration. Find the Eleventy defaults in [`EleventyServe.js`](https://github.com/11ty/eleventy/blob/master/src/EleventyServe.js). Take special note that Eleventy does not use Browsersync’s watch options and trigger reloads manually after our own internal watch methods are complete. See full options list on the [Browsersync documentation](https://browsersync.io/docs/options).
