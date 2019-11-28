@@ -195,7 +195,8 @@ To sort descending in your template, you can use a filter to reverse the sort or
 {% raw %}
 ```
 <ul>
-{%- for post in collections.post | reverse -%}
+{% assign posts = collections.post | reverse %}
+{%- for post in posts -%}
   <li>{{ post.data.title }}</li>
 {%- endfor -%}
 </ul>
