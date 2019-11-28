@@ -743,6 +743,37 @@
       "size": 1670
     }
   ],
+  "dandevri": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "dandevri",
+      "path": "img/avatar-local-cache/twitter/dandevri.webp",
+      "size": 1062
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "dandevri",
+      "path": "img/avatar-local-cache/twitter/dandevri.jpg",
+      "size": 1703
+    }
+  ],
   "danfascia": [
     {
       "format": "webp",
@@ -2864,7 +2895,7 @@
       "hasAlpha": false,
       "name": "ryzokuken",
       "path": "img/avatar-local-cache/twitter/ryzokuken.webp",
-      "size": 1898
+      "size": 1634
     },
     {
       "format": "jpeg",
@@ -2879,7 +2910,7 @@
       "hasAlpha": false,
       "name": "ryzokuken",
       "path": "img/avatar-local-cache/twitter/ryzokuken.jpg",
-      "size": 2407
+      "size": 2283
     }
   ],
   "saschadiercks": [
@@ -3190,6 +3221,37 @@
       "name": "thatianrose",
       "path": "img/avatar-local-cache/twitter/thatianrose.jpg",
       "size": 1862
+    }
+  ],
+  "thegreengreek": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "thegreengreek",
+      "path": "img/avatar-local-cache/twitter/thegreengreek.webp",
+      "size": 1740
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "thegreengreek",
+      "path": "img/avatar-local-cache/twitter/thegreengreek.jpg",
+      "size": 2281
     }
   ],
   "thetalesofimmo": [
