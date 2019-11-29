@@ -348,7 +348,7 @@ pagination:
 ```
 {% endraw %}
 
-The above generates a list of links but you could do a lot more. See what’s available in the [Collection documentation](/docs/collections/#individual-collection-items-(useful-for-sort-callbacks)) (specifically `templateContent`). If you’d like to use this to automatically generate Tag pages for your content, please read [Quick Tip #004—Create Tag Pages for your Blog](/docs/quicktips/tag-pages/).
+The above generates a list of links but you could do a lot more. See what’s available in the [Collection documentation](/docs/collections/#collection-item-data-structure) (specifically `templateContent`). If you’d like to use this to automatically generate Tag pages for your content, please read [Quick Tip #004—Create Tag Pages for your Blog](/docs/quicktips/tag-pages/).
 
 ## Modifying the Data Set prior to Pagination
 
@@ -381,7 +381,7 @@ Paginates to:
 
 _(More discussion at [Issue #194](https://github.com/11ty/eleventy/issues/194))_
 
-As an aside, this could also be achieved in a more verbose way using the [Collection API](/docs/collections/#advanced%3A-custom-filtering-and-sorting). This could also be done using the new `before` callback {% addedin "0.10.0" %}.
+As an aside, this could also be achieved in a more verbose way using the [Collection API](/docs/collections/#advanced-custom-filtering-and-sorting). This could also be done using the new `before` callback {% addedin "0.10.0" %}.
 
 ### Blacklisting or Filtering Values {% addedin "0.4.0" %}
 
@@ -526,9 +526,9 @@ Now `collections.myCollection` will have both output pages in the collection arr
 
 ## Full Pagination Option List
 
-* `data` (String) [Lodash.get path](https://lodash.com/docs/4.17.10#get) to point to the target data set.
+* `data` (String) [Lodash.get path](https://lodash.com/docs/4.17.15#get) to point to the target data set.
 * `size` (Number, required)
-* `alias` (String) [Lodash.set path](https://lodash.com/docs/4.17.10#set) to point to the property to set.
+* `alias` (String) [Lodash.set path](https://lodash.com/docs/4.17.15#set) to point to the property to set.
 * `resolve: values` {% addedin "0.4.0" %}
 * `filter` (Array) {% addedin "0.4.0" %}
 * `reverse: true` (Boolean) {% addedin "0.7.0" %}
