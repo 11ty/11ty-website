@@ -26,7 +26,7 @@ All official plugins live under the `@11ty` npm organization and plugin names wi
 * [eleventy-plugin-meta-generator](https://www.npmjs.com/package/eleventy-plugin-meta-generator) by [André Jaenisch](https://jaenis.ch/) will render a generator `<meta />` tag for you.
 * [eleventy-plugin-pwa](https://www.npmjs.com/package/eleventy-plugin-pwa) by [Nanda Okitavera](https://okitavera.me/) will generate a Service Worker for you.
 * [eleventy-plugin-reading-time](https://www.npmjs.com/package/eleventy-plugin-reading-time) by [Johan Brook](https://www.johanbrook.com/) will generate a tag for the estimated reading time.
-* [eleventy-plugin-respimg](https://www.npmjs.com/package/eleventy-plugin-respimg) by [Eric Portis](https://ericportis.com/) will take core of `srcset` attribute for responsive images for you.
+* [eleventy-plugin-respimg](https://www.npmjs.com/package/eleventy-plugin-respimg) by [Eric Portis](https://ericportis.com/) will take care of the `srcset` attribute for responsive images for you.
 * [eleventy-plugin-typeset](https://www.npmjs.com/package/eleventy-plugin-typeset) by [Johan Brook](https://www.johanbrook.com/) will make your typography nicer.
 * [eleventy-plugin-yamldata](https://www.npmjs.com/package/eleventy-plugin-yamldata) by [Sungkwang Lee](https://gwangyi.github.io/) will allow you to use a yaml file as local data file.
 * [@shawnsandy/npm_info](https://www.npmjs.com/package/@shawnsandy/npm_info) by [Shawn Sandy](https://github.com/shawn-sandy) will provide you with package detail for an npm package or GitHub info.
