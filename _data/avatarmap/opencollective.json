@@ -115,7 +115,7 @@
       "hasAlpha": false,
       "name": "bridget-stewart",
       "path": "img/avatar-local-cache/opencollective/bridget-stewart.jpg",
-      "size": 1849
+      "size": 1962
     }
   ],
   "bryce-wray": [
@@ -320,6 +320,23 @@
       "name": "heydon-pickering",
       "path": "img/avatar-local-cache/opencollective/heydon-pickering.jpg",
       "size": 2113
+    }
+  ],
+  "jeremias-menichelli": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "jeremias-menichelli",
+      "path": "img/avatar-local-cache/opencollective/jeremias-menichelli.jpg",
+      "size": 1825
     }
   ],
   "jerome-coupe": [
@@ -543,6 +560,23 @@
       "size": 1582
     }
   ],
+  "ned-zimmerman": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "ned-zimmerman",
+      "path": "img/avatar-local-cache/opencollective/ned-zimmerman.jpg",
+      "size": 2269
+    }
+  ],
   "nick-colley": [
     {
       "format": "jpeg",
@@ -660,6 +694,23 @@
       "name": "ray-villalobos",
       "path": "img/avatar-local-cache/opencollective/ray-villalobos.jpg",
       "size": 1573
+    }
+  ],
+  "rhian-van-esch": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "rhian-van-esch",
+      "path": "img/avatar-local-cache/opencollective/rhian-van-esch.jpg",
+      "size": 1916
     }
   ],
   "rob-dodson": [
