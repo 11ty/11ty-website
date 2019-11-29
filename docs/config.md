@@ -537,7 +537,7 @@ module.exports = function(eleventyConfig) {
 
 ### Customize Front Matter Parsing Options {% addedin "0.9.0" %}
 
-* Documented at [Front Matter Data](/docs/data-frontmatter/#advanced%3A-customize-front-matter-parsing).
+* Documented at [Customize Front Matter Parsing](/docs/data-frontmatter-customize/).
 
 
 <!--

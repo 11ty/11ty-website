@@ -87,7 +87,7 @@ Note that Liquid templates do not allow executing a function in output `{% raw %
 
 ### Add your own format {% addedin "0.9.0" %}
 
-You can [customize Front Matter Parsing](/docs/data-frontmatter-customize/) in Eleventy to add your own custom format. We have an [example to do this with support for TOML](/docs/data-frontmatter-customize/#example%3A-using-toml-for-front-matter-parsing).
+You can [customize Front Matter Parsing](/docs/data-frontmatter-customize/) in Eleventy to add your own custom format. We have an [example to do this with support for TOML](/docs/data-frontmatter-customize/#example-using-toml-for-front-matter-parsing).
 
 ## Advanced: Customize Front Matter Parsing {% addedin "0.9.0" %}
 

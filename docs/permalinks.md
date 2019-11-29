@@ -183,7 +183,7 @@ module.exports = function(eleventyConfig) {
 
 ### Use filters!
 
-Use the provided [`slug` filter](/docs/filters/#slug) to modify other data available in the template.
+Use the provided [`slug` filter](/docs/filters/slug/) to modify other data available in the template.
 
 {% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
 

@@ -5,8 +5,11 @@
   "main": "_site/index.html",
   "scripts": {
     "assets": "cp node_modules/@11ty/logo/logo.png .",
+    "links-external": "hyperlink -r --root _site --canonicalroot https://11ty.io/ --skip '/.netlify/functions' _site/*.html | tap-spot",
+    "links-internal": "hyperlink -ri --root _site --canonicalroot https://11ty.io/ --skip '/.netlify/functions' _site/*.html | tap-spot",
     "build": "eleventy",
-    "build-production": "node node-avatars.js && ELEVENTY_PRODUCTION=true eleventy"
+    "build-production": "node node-avatars.js && ELEVENTY_PRODUCTION=true eleventy",
+    "postbuild-production": "npm run links-internal"
   },
   "repository": {
     "type": "git",
@@ -32,12 +35,14 @@
     "fs-extra": "^8.1.0",
     "html-minifier": "^3.5.21",
     "human-readable-numbers": "^0.9.5",
+    "hyperlink": "^4.4.3",
     "lodash.defer": "^4.1.0",
     "markdown-it-anchor": "^5.0.2",
     "markdown-it-table-of-contents": "^0.4.4",
     "node-fetch": "^2.3.0",
     "slugify": "^1.3.4",
     "sorted-object": "^2.0.1",
+    "tap-spot": "^1.1.1",
     "terser": "^4.4.0"
   },
   "dependencies": {

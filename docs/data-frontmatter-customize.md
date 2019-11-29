@@ -60,7 +60,7 @@ This is a continuation of my content…
 
 #### Changing where your excerpt is stored
 
-If you don’t want to use `page.excerpt` to store your excerpt value, then use your own `excerpt_alias` option ([any valid path to Lodash Set will work](https://lodash.com/docs/4.17.11#set)) like so:
+If you don’t want to use `page.excerpt` to store your excerpt value, then use your own `excerpt_alias` option ([any valid path to Lodash Set will work](https://lodash.com/docs/4.17.15#set)) like so:
 
 {% codetitle ".eleventy.js" %}
 
@@ -79,7 +79,7 @@ Using `excerpt_alias: 'my_custom_excerpt'` means that the excerpt will be availa
 
 ### Example: using TOML for front matter parsing {% addedin "0.9.0" %}
 
-While Eleventy does include support for [JSON, YAML, and JS front matter out of the box](#alternative-front-matter-formats), you may want to add additional formats too.
+While Eleventy does include support for [JSON, YAML, and JS front matter out of the box](/docs/data-frontmatter/#alternative-front-matter-formats), you may want to add additional formats too.
 
 {% codetitle ".eleventy.js" %}
 

@@ -6,7 +6,7 @@ date: 2019-01-31
 
 Older iterations of this website used a third party JavaScript widget to show the number of GitHub Stars the project currently had. You can see it in action on the [versioned docs for 0.7.1](https://v0-7-1.11ty.io/docs/) (scroll to the bottom).
 
-This was in fact the only `<script>` tag on the entire 11ty.io web site and it was from a third party. Naturally, it needed to be annihilated.
+This was in fact the only `<script>` tag on the entire [11ty.io](https://www.11ty.io/) web site and it was from a third party. Naturally, it needed to be annihilated.
 
 Let’s change up our architecture to ruthlessly eliminate this client-side JavaScript.
 
