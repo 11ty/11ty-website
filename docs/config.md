@@ -82,16 +82,16 @@ Glob support is {% addedin "0.6.0" %}.
 
 ```bash
 # The current directory
-eleventy --input=.
+npx @11ty/eleventy --input=.
 
 # A single file
-eleventy --input=README.md
+npx @11ty/eleventy --input=README.md
 
 # A glob of files (New in v0.6.0)
-eleventy --input=*.md
+npx @11ty/eleventy --input=*.md
 
 # A subdirectory
-eleventy --input=views
+npx @11ty/eleventy --input=views
 ```
 
 ##### Configuration
@@ -122,7 +122,7 @@ The includes directory is meant for [Eleventy layouts](/docs/layouts/), include 
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     dir: {
         // ⚠️ This value is relative to your input directory.
@@ -151,7 +151,7 @@ This configuration option is optional but useful if you want your [Eleventy layo
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     dir: {
         // ⚠️ These values are both relative to your input directory.
@@ -178,7 +178,7 @@ Controls the directory inside which the global data template files, available to
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     dir: {
         // ⚠️ This value is relative to your input directory.
@@ -202,7 +202,7 @@ Controls the directory inside which the finished templates will be written to.
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     dir: {
         output: "dist"
@@ -225,7 +225,7 @@ The `data.dir` global data files run through this template engine before transfo
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     "dataTemplateEngine": "njk"
 };
@@ -246,7 +246,7 @@ Markdown files run through this template engine before transforming to HTML.
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     markdownTemplateEngine: "njk"
 };
@@ -267,7 +267,7 @@ HTML templates run through this template engine before transforming to (better) 
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     htmlTemplateEngine: "njk"
 };
@@ -289,7 +289,7 @@ Specify which types of templates should be transformed.
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     templateFormats: ["html", "liquid", "njk"]
 };
@@ -297,7 +297,7 @@ module.exports = {
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = function(eleventyConfig) {
     eleventyConfig.setTemplateFormats("html,liquid,njk");
 
@@ -307,10 +307,38 @@ module.exports = function(eleventyConfig) {
 ```
 
 ```
-eleventy --formats=html,liquid,njk
+npx @11ty/eleventy --formats=html,liquid,njk
 ```
 
 {% callout "info" %}{% addedin "0.9.0" %} <strong>Case sensitivity</strong>: File extensions should be considered case insensitive, cross-platform. While Mac OS—by default—already behaves this way, other operating systems do not and needed additional Eleventy code to enable this behavior.{% endcallout %}
+
+### Enable Quiet Mode to Reduce Console Noise
+
+In order to maximize user-friendliness to beginners, Eleventy will show each file it processes and the output file. To disable this noisy console output, use quiet mode!
+
+| Path Prefix |  |
+| --- | --- |
+| _Default_ | `false` |
+| _Valid Options_ | `true` or `false` | |
+| _Command Line Override_ | `--quiet` |
+
+{% addedin "0.10.0" %} This configuration API method was added in 0.10.0 but the `--quiet` command line option has existed long before that.
+
+#### Example
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setQuietMode(true);
+};
+```
+
+The command line will override any setting in configuration:
+
+```
+npx @11ty/eleventy --quiet
+```
 
 ### Deploy to a subdirectory with a Path Prefix
 
@@ -336,7 +364,7 @@ module.exports = {
 Deploy to https://11ty.github.io/eleventy-base-blog/ on GitHub pages without modifying your config. This allows you to use the same code-base to deploy to either GitHub pages or Netlify, like the [`eleventy-base-blog`](https://github.com/11ty/eleventy-base-blog) project does.
 
 ```
-eleventy --pathprefix=eleventy-base-blog
+npx @11ty/eleventy --pathprefix=eleventy-base-blog
 ```
 
 <a id="{{ 'Copy Files to Output using Pass-through File Copy' | slug }}"></a>
