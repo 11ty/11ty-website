@@ -103,6 +103,9 @@ blockquote .bio-source {
 main {
 	font-size: 1.125em; /* 18px /16 */
 }
+main img {
+	max-width: 100%;
+}
 main:not(:empty) {
 	padding-bottom: 3em;
 	margin-bottom: 3em;
