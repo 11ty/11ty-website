@@ -143,5 +143,12 @@
 		"name": "Lach Zeatherman",
 		"source": "https://twitter.com/lachzeat/status/1196789524535431168",
 		"featured": true
+	},
+	{
+		"text": "Eleventy is a killer static site generator. That’s all.",
+		"twitter": "SaraSoueidan",
+		"name": "Sara Soueidan",
+		"source": "https://twitter.com/SaraSoueidan/status/1144696081403523072",
+		"featured": true
 	}
 ]
