@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: Inclusive Language
+  order: 4
   excerpt: A plugin to check for inclusive language in markdown files.
 ---
 # Inclusive Language Plugin

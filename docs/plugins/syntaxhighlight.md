@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: Syntax Highlighting
+  order: 2
   excerpt: Code syntax highlighting using PrismJS without client-side JavaScript.
 ---
 # Syntax Highlighting Plugin

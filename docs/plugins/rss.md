@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: RSS
+  order: 1
   excerpt: Generate an Atom feed to allow others to subscribe to your content using a feed reader.
 ---
 # RSS Plugin

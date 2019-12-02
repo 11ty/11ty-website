@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: Navigation
+  order: 3
   excerpt: A plugin for creating hierarchical navigation in Eleventy projects. Supports breadcrumbs too!
 ---
 # Navigation Plugin
