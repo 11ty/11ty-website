@@ -367,28 +367,6 @@ Deploy to https://11ty.github.io/eleventy-base-blog/ on GitHub pages without mod
 npx @11ty/eleventy --pathprefix=eleventy-base-blog
 ```
 
-<a id="{{ 'Copy Files to Output using Pass-through File Copy' | slug }}"></a>
-### Copy Files to Output using Passthrough File Copy
-
-Files found (that don’t have a valid template engine) from white-listed file extensions (in `templateFormats`) will passthrough to the output directory. Read more about [Passthrough Copy](/docs/copy/).
-
-| Passthrough Copy |  |
-| --- | --- |
-| _Object Key_ | `passthroughFileCopy` |
-| _Default_ | `true` |
-| _Valid Options_ | `true` or `false` |
-| _Command Line Override_ | _None_ |
-
-#### Example
-
-{% codetitle ".eleventy.js" %}
-
-```
-module.exports = {
-    passthroughFileCopy: false
-};
-```
-
 ### Change exception case suffix for HTML files
 
 If an HTML template has matching input and output directories, index.html files will have this suffix added to their output filename to prevent overwriting the template. Read more at the [HTML template docs](/docs/languages/html/#using-the-same-input-and-output-directories).
@@ -518,10 +496,6 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Data Deep Merge {% addedin "0.6.0" %}
-
-* Documentation for [Data Deep Merging has been moved to its own page](/docs/data-deep-merge/) under the Data Cascade.
-
 ### Watch JavaScript Dependencies {% addedin "0.7.0" %}
 
 When in `--watch` mode, Eleventy will spider the dependencies of your [JavaScript Templates](/docs/languages/javascript/) (`.11ty.js`), [JavaScript Data Files](/docs/data-js/) (`.11tydata.js` or `_data/**/*.js`), or Configuration File (usually `.eleventy.js`) to watch those files too. Files in `node_modules` directories are ignored. This feature is _enabled by default_.
@@ -563,7 +537,18 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Customize Front Matter Parsing Options {% addedin "0.9.0" %}
+### Documentation Moved to Dedicated Pages
+
+<a id="{{ 'Copy Files to Output using Pass-through File Copy' | slug }}"></a>
+#### Copy Files to Output using Passthrough File Copy
+
+Files found (that don’t have a valid template engine) from opt-in file extensions in `templateFormats` will passthrough to the output directory. Read more about [Passthrough Copy](/docs/copy/). This feature is enabled by default and [can be disabled](/docs/copy/#disabling-passthrough-file-copy).
+
+#### Data Deep Merge {% addedin "0.6.0" %}
+
+* Documentation for [Data Deep Merging has been moved to its own page](/docs/data-deep-merge/) under the Data Cascade.
+
+#### Customize Front Matter Parsing Options {% addedin "0.9.0" %}
 
 * Documented at [Customize Front Matter Parsing](/docs/data-frontmatter-customize/).
 

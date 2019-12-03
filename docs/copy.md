@@ -14,18 +14,27 @@ If a file format is not recognized by Eleventy as a valid template file extensio
 
 ```js
 module.exports = function(eleventyConfig) {
-  return {
-    templateFormats: [
-      "md",
-      "css" // css is not yet a recognized template extension in Eleventy
-    ]
-  };
+  eleventyConfig.setTemplateFormats([
+    "md",
+    "css" // css is not yet a recognized template extension in Eleventy
+  ]);
 };
 ```
 
 For example, in the above code sample `css` is not currently a recognized Eleventy template, but Eleventy will search for any `*.css` files inside of the input directory and copy them to output (keeping directory structure).
 
 You might want to use this for images by adding `"jpg"`, `"png"`, or maybe even `"webp"`.
+
+## Learn more
+
+<style>
+/* Hide the irrelevant stuff above this TOC in the document */
+.table-of-contents > ul > li:first-child {
+  display: none;
+}
+</style>
+
+[[toc]]
 
 <a id="{{ 'Manual Pass-through Copy (Faster)' | slug }}"></a>
 ## Manual Passthrough File Copy (Faster) {% addedin "0.2.14" %}
