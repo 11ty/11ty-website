@@ -23,6 +23,9 @@
 }
 
 .elv-toc-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 	padding-left: 0;
 	padding-right: 0;
 	margin: 0 0 2.5em;
@@ -39,7 +42,9 @@
 /* Menus nested 2 or more deep */
 .elv-toc-list ul ul {
 	padding-bottom: 0;
+	padding-left: 0.625rem; /* 10px /16 */
 }
+/* Hide inactive menus 3 or more deep */
 .elv-toc-list ul ul > li:not(.elv-toc-active) > ul > li:not(.elv-toc-active) {
 	display: none;
 }
@@ -53,9 +58,6 @@
 .elv-toc-list a {
 	display: block;
 }
-.elv-toc-list ul {
-	padding-left: 0.625rem; /* 10px /16 */
-}
 .elv-toc-list a:not(:hover) {
 	text-decoration: none;
 }
@@ -63,11 +65,17 @@
 	margin: 0;
 	padding: 0;
 }
+.elv-toc-list > li {
+	flex-grow: 1;
+	flex-basis: 14.375rem; /* 230px /16 */
+}
 /* Top level links */
 .elv-toc-list > li > a {
-	font-weight: 400;
 	font-size: 1.0625em; /* 17px /16 */
 	color: #222;
+	font-weight: 600;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 0.2352941176471em; /* 4px /17 */
 }
 
 /* Active links */
@@ -82,16 +90,4 @@
 .elv-toc-list ul.elv-toc-active,
 .elv-toc-list li.elv-toc-active > ul {
 	display: block;
-}
-
-/* Two column menu */
-@media (min-width: 31.25em) and (max-width: 63.9375em) { /* 500px 1023px */
-	.elv-toc-list {
-		display: flex;
-		flex-wrap: wrap;
-	}
-	.elv-toc-list > li {
-		flex: 0 0 50%;
-		margin-bottom: 1em;
-	}
 }

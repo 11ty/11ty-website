@@ -2,6 +2,7 @@
 eleventyNavigation:
   parent: Data Cascade
   key: Template and Directory Data Files
+  title: Template & Directory Data Files
   order: 2
 ---
 # Template and Directory Specific Data Files {% addedin "0.2.14" %}
