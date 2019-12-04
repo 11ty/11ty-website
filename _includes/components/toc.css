@@ -31,12 +31,15 @@
 	margin: 0 0 2.5em;
 	list-style: none;
 }
+.elv-toc-list li {
+	font-size: 0.9375em; /* 15px /16 */
+	line-height: 1.466666666667; /* 22px /15 */
+}
 /* Nested lists */
 .elv-toc-list ul {
 	padding: 0 0 .75em 0;
 	margin: 0;
 	list-style: none;
-	font-size: 0.875em; /* 14px /16 */
 }
 
 /* Menus nested 2 or more deep */
@@ -53,7 +56,6 @@
 .elv-toc summary,
 .elv-toc-list a {
 	padding: .15em .25em;
-	line-height: 1.4;
 }
 .elv-toc-list a {
 	display: block;
@@ -71,11 +73,10 @@
 }
 /* Top level links */
 .elv-toc-list > li > a {
-	font-size: 1.0625em; /* 17px /16 */
 	color: #222;
 	font-weight: 600;
 	border-bottom: 1px solid #ddd;
-	margin-bottom: 0.2352941176471em; /* 4px /17 */
+	margin-bottom: 0.25em; /* 4px /16 */
 }
 
 /* Active links */
