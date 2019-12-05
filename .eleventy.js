@@ -206,7 +206,7 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addShortcode("addToSampleSites", function() {
-		return `<a href="https://github.com/11ty/11ty.io/issues/new/choose"><strong>Want to add your site to this list?</strong></a>`;
+		return `<a href="https://github.com/11ty/11ty-website/issues/new/choose"><strong>Want to add your site to this list?</strong></a>`;
 	});
 
 	eleventyConfig.addCollection("quicktipssorted", function(collection) {

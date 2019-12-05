@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/11ty/11ty.io.git"
+    "url": "git+https://github.com/11ty/11ty-website.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/11ty/11ty.io/issues"
+    "url": "https://github.com/11ty/11ty-website/issues"
   },
-  "homepage": "https://github.com/11ty/11ty.io#readme",
+  "homepage": "https://github.com/11ty/11ty-website#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0",
     "@11ty/eleventy-navigation": "^0.1.1",

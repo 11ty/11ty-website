@@ -2,7 +2,7 @@
 	"url": "https://www.11ty.dev/",
 	"name": "11ty.dev, the Eleventy web site",
 	"description": "Spoiler alert: it’s this web site.",
-	"source_url": "https://github.com/11ty/11ty.io",
+	"source_url": "https://github.com/11ty/11ty-website",
 	"twitter": "eleven_ty",
 	"featured": true
 }
