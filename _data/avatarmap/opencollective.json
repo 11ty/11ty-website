@@ -509,6 +509,23 @@
       "size": 1244
     }
   ],
+  "matheus-ligabue-da-silva": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "matheus-ligabue-da-silva",
+      "path": "img/avatar-local-cache/opencollective/matheus-ligabue-da-silva.jpg",
+      "size": 2374
+    }
+  ],
   "matthew-tole": [
     {
       "format": "jpeg",
