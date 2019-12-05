@@ -5,7 +5,7 @@ eleventyNavigation:
 ignoreGitHubButtons: true
 ignoreSupporters: true
 ---
-# How can you Support Eleventy?
+# How can you Contribute to Eleventy?
 
 {% set count = 1 %}
 ## <span class="numberflag"><span class="sr-only">Step</span> {{ count }}</span> Participate
