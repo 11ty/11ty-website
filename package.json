@@ -37,6 +37,7 @@
     "human-readable-numbers": "^0.9.5",
     "hyperlink": "^4.4.3",
     "lodash.defer": "^4.1.0",
+    "luxon": "^1.21.3",
     "markdown-it-anchor": "^5.0.2",
     "markdown-it-table-of-contents": "^0.4.4",
     "node-fetch": "^2.3.0",

@@ -1,3 +1,4 @@
+const { DateTime } = require("luxon");
 const chalk = require("chalk");
 const htmlmin = require("html-minifier");
 const CleanCSS = require("clean-css");
@@ -62,6 +63,11 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(rssPlugin);
 	// eleventyConfig.addPlugin(inclusiveLanguagePlugin);
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
+
+	eleventyConfig.addCollection("sidebarNav", function(collection) {
+		// everything but news
+		return collection.getAll().filter(item => (item.data.tags || []).indexOf("news") === -1);
+	});
 
 	let md = new markdownIt();
 	eleventyConfig.addPairedShortcode("callout", function(content, level = "warn", format = "html") {
@@ -254,31 +260,37 @@ ${text.trim()}
 		return slugify(removeExtraText(s), { lower: true, remove: /[:’'`,]/g });
 	}
 
-	eleventyConfig.setLibrary("md", markdownIt({
-			html: true,
-			breaks: true,
-			linkify: true
-		})
-		.use(markdownItAnchor, {
-			permalink: true,
-			slugify: markdownItSlugify,
-			permalinkBefore: false,
-			permalinkClass: "direct-link",
-			permalinkSymbol: "#",
-			level: [1,2,3,4]
-		})
-		.use(markdownItToc, {
-			includeLevel: [2, 3],
-			slugify: markdownItSlugify,
-			format: function(heading) {
-				return removeExtraText(heading);
-			},
-			transformLink: function(link) {
-				// remove backticks from markdown code
-				return link.replace(/\%60/g, "");
-			}
-		})
-	);
+	let mdIt = markdownIt({
+		html: true,
+		breaks: true,
+		linkify: true
+	})
+	.use(markdownItAnchor, {
+		permalink: true,
+		slugify: markdownItSlugify,
+		permalinkBefore: false,
+		permalinkClass: "direct-link",
+		permalinkSymbol: "#",
+		level: [1,2,3,4]
+	})
+	.use(markdownItToc, {
+		includeLevel: [2, 3],
+		slugify: markdownItSlugify,
+		format: function(heading) {
+			return removeExtraText(heading);
+		},
+		transformLink: function(link) {
+			// remove backticks from markdown code
+			return link.replace(/\%60/g, "");
+		}
+	});
+
+	mdIt.linkify.tlds('.io', false);
+	eleventyConfig.setLibrary("md", mdIt);
+
+	eleventyConfig.addFilter("newsDate", dateObj => {
+		return DateTime.fromJSDate(dateObj).toFormat("yyyy LLLL dd");
+	});
 
 	// Until https://github.com/valeriangalliat/markdown-it-anchor/issues/58 is fixed
 	eleventyConfig.addTransform("remove-aria-hidden-markdown-anchor", function(content, outputPath) {
