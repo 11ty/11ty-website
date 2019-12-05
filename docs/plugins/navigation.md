@@ -32,8 +32,6 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-Read more about [Eleventy plugins.](https://www.11ty.io/docs/plugins/)
-
 ## Adding Templates to the Navigation
 
 Add the `eleventyNavigation` object to your front matter data (or in a [data directory file](https://www.11ty.io/docs/data-template-dir/)). Assign a unique string to the `key` property inside of `eleventyNavigation`:
