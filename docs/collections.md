@@ -39,7 +39,7 @@ This will place this `mypost.md` into the `post` collection with all other piece
 {% codetitle "JavaScript .11ty.js", "Syntax" %}
 
 {% raw %}
-```js
+```
 module.exports = function({collections}) {
   return `<ul>
 ${collections.post.map((post) => `<li>${ post.data.title }</li>`).join("\n")}
