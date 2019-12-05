@@ -3,6 +3,7 @@ eleventyNavigation:
   key: News
   order: 9
 layout: "layouts/docs.njk"
+permalink: "/news/"
 override:tags:
 ---
 # News

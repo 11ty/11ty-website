@@ -1,4 +1,5 @@
 {
 	"tags": ["news"],
-	"layout": "layouts/news.md"
+	"layout": "layouts/news.md",
+	"permalink": "/news/{{ page.fileSlug }}/"
 }
