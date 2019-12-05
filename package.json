@@ -1,12 +1,12 @@
 {
   "name": "@11ty/website",
   "version": "1.0.2",
-  "description": "The website of 11ty.io",
+  "description": "The website of 11ty.dev",
   "main": "_site/index.html",
   "scripts": {
     "assets": "cp node_modules/@11ty/logo/logo.png .",
-    "links-external": "hyperlink -r --root _site --canonicalroot https://11ty.io/ --skip '/.netlify/functions' _site/*.html | tap-spot",
-    "links-internal": "hyperlink -ri --root _site --canonicalroot https://11ty.io/ --skip '/.netlify/functions' _site/*.html | tap-spot",
+    "links-external": "hyperlink -r --root _site --canonicalroot https://11ty.dev/ --skip '/.netlify/functions' _site/*.html | tap-spot",
+    "links-internal": "hyperlink -ri --root _site --canonicalroot https://11ty.dev/ --skip '/.netlify/functions' _site/*.html | tap-spot",
     "build": "eleventy",
     "build-production": "node node-avatars.js && ELEVENTY_PRODUCTION=true eleventy",
     "postbuild-production": "npm run links-internal"

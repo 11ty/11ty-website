@@ -1,6 +1,6 @@
 ---
 name: Built with Eleventy
-about: I built something with Eleventy and want to add it to 11ty.io!
+about: I built something with Eleventy and want to add it to 11ty.dev!
 title: I built a site with Eleventy!
 labels: new-site!
 assignees: ''
