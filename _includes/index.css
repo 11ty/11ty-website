@@ -71,15 +71,20 @@ blockquote {
 blockquote + blockquote {
 	margin-top: 2em;
 }
+
+.icon,
 .avatar,
 blockquote img {
 	height: 1.3em;
 	width: 1.3em;
 	display: inline-block;
-	border-radius: 50%;
 	vertical-align: text-top;
 	margin-left: 2px;
 	margin-right: 6px;
+}
+.avatar,
+blockquote img {
+	border-radius: 50%;
 	background-color: #eee;
 }
 .avatar {
@@ -326,7 +331,7 @@ footer.elv-layout {
 	width: auto;
 	height: 3em;
 }
-@media (min-width: 38.75em) { /* 620px */
+@media (min-width: 43.75em) { /* 700px */
 	.elv-header-docs .elv-hero {
 		margin-right: 1em;
 	}
@@ -369,7 +374,7 @@ a[href]:focus .elv-possum {
 	margin: 0;
 	text-align: left;
 }
-@media (min-width: 38.75em) { /* 620px */
+@media (min-width: 43.75em) { /* 700px */
 	.elv-header-docs .elv-hed {
 		font-size: 2.625em; /* 42px /16 */
 	}
@@ -620,15 +625,21 @@ main .elv-toc + h1 .direct-link {
 .btn-primary {
 	display: block;
 	border-radius: 1.5em;
-	margin: 1.5em 0 0;
-	padding: .5em .5em .4em;
+	margin: 0;
+	padding: .5em 1em .4em;
 	box-shadow: 0 8px 6px -6px #000;
+}
+.btn-primary-why-are-you-doing-this {
+	margin-top: 1.5em;
 }
 .btn-form:hover,
 .btn-primary:hover {
 	border-color: transparent;
 	background-color: #222;
 	color: #fff;
+}
+.btn-primary:hover {
+	border-color: rgba(255,255,255,.3);
 }
 .btn-primary span {
 	text-transform: none;
@@ -638,13 +649,6 @@ main .elv-toc + h1 .direct-link {
 	text-align: center;
 	margin-top: .25em;
 	font-size: .75em;
-}
-.btn-inline {
-	display: inline-block;
-	margin-top: .25em;
-	margin-bottom: .25em;
-	padding-left: 1em;
-	padding-right: 1em;
 }
 .btn-c {
 	margin-left: auto;
@@ -669,7 +673,7 @@ main .elv-toc + h1 .direct-link {
 	}
 }
 @media (min-width: 46.875em) { /* 750px */
-	.btn-primary:not(summary):not(.btn-inline) {
+	.btn-primary-why-are-you-doing-this {
 		margin-left: calc( (90vw - 42rem) / -2 );
 		width: calc(90vw - 2rem);
 	}

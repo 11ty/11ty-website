@@ -29,7 +29,11 @@
 }
 .elv-nav-social > .lo {
 	--lo-margin-h: 0.5em; /* 7px /14 */;
-	--lo-stackpoint: 150px;
+	--lo-margin-v: 0.2142857142857em; /* 3px /14 */
+	--lo-stackpoint: 16.375rem; /* 262px /16 */
+}
+.elv-nav-social .lo-c {
+	text-align: right;
 }
 
 .elv-nav-header > .lo {
@@ -69,10 +73,17 @@
 	/* Header nav */
 	.elv-nav-header {
 		clear: none;
-		float: left;
 		margin-top: 0;
+		min-width: 34.375em; /* 550px /16 */
 	}
 	.elv-nav-header.lo .elv-nav-item.lo-c:first-child {
 		margin-left: 0;
+	}
+}
+@media (min-width: 43.75em) { /* 700px */
+	.elv-docs .elv-nav-header {
+		float: left;
+		/* adjust for logo in Safari */
+		width: calc(100% - 4.303125em - 1em);
 	}
 }
