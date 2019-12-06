@@ -8,6 +8,8 @@ override:tags:
 ---
 # News
 
+📢 [Subscribe to the **Eleventy News Feed**](/news/feed.xml)
+
 {%- for news in collections.news %}
 * {{ news.date | newsDate }}—[{{ news.data.newstitle }}]({{ news.data.page.url }})
 {%- endfor %}

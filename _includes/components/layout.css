@@ -45,3 +45,34 @@
     flex-basis: calc(50% - 2em);
   }
 }
+
+/* Separators */
+@supports (clip-path: inset(0px 0px)) or (-webkit-clip-path: inset(0px 0px)) {
+  .lo-separator-v,
+  .lo-separator-h {
+    --lo-separator-color-fallback: rgba(100,100,100,.35);
+
+    -webkit-clip-path: inset(var(--lo-margin-v, 0px) 0 0 var(--lo-margin-h, 0px));
+    clip-path: inset(var(--lo-margin-v, 0px) 0 0 var(--lo-margin-h, 0px));
+  }
+  .lo-separator-v > .lo-c,
+  .lo-separator-h > .lo-c {
+    position: relative;
+  }
+  .lo-separator-h > .lo-c:before {
+    content: "";
+    position: absolute;
+    left: calc(-.5 * var(--lo-margin-h, 0) - .5px);
+    top: 0;
+    bottom: 0;
+    border-left: 1px solid var(--lo-separator-h-color, var(--lo-separator-color, var(--lo-separator-color-fallback)));
+  }
+  .lo-separator-v > .lo-c:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: calc(-.5 * var(--lo-margin-v, 0) - 1px);
+    right: 0;
+    border-top: 1px solid var(--lo-separator-v-color, var(--lo-separator-color, var(--lo-separator-color-fallback)));
+  }
+}
