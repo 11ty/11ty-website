@@ -22,3 +22,4 @@ override:tags:
 * 2018 March—[Eleventy wins Google Open Source Award](https://www.zachleat.com/web/eleventy-google-award/)
 * 2018 February—[Introducing Eleventy, a new Static Site Generator](https://www.zachleat.com/web/introducing-eleventy/)
 * 2017 December 20—[Eleventy’s very first (and second and third) release](https://github.com/11ty/eleventy/releases?after=v0.1.3)
+* 2017 November 26—Eleventy’s [first commit](https://github.com/11ty/eleventy/commit/00ad9192605d5d501de6aae193701c5a2297ef2c) makes the auspicious claim: “It’s doing what it’s supposed to do”
