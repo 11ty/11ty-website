@@ -656,7 +656,7 @@ main .elv-toc + h1 .direct-link {
 }
 @media (min-width: 20em) {
 	.btn-primary {
-		font-size: 6.5vw;
+		font-size: 6vw;
 	}
 	.btn-primary-sm {
 		font-size: 1.4em;
