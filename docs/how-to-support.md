@@ -26,17 +26,13 @@ Eleventy isn’t backed by rich venture capitalists. It’s supported by individ
 
 <div class="lo" style="--lo-margin-h: 1em; --lo-margin-v: .5em">
     <div class="lo-c">
-        <a href="https://opencollective.com/11ty" class="btn-primary btn-primary-sm btn-inline benchnine rainbow-active rainbow-active-noanim elv-externalexempt">Contribute</a>
+        <a href="https://opencollective.com/11ty" class="btn-primary btn-primary-sm benchnine rainbow-active rainbow-active-noanim elv-externalexempt">Contribute</a>
     </div>
     <div class="lo-c" style="flex-basis: 30em">
 
 As a thank you to our Supporters, Eleventy will:
 
-1. Display your [name and avatar on the Eleventy documentation](/docs/supporters/). Monthly supporter avatars are listed in the footer of _almost_ all documentation pages.
-1. Provide access to <a href="/docs/search/">on-site documentation Search</a>!
-1. No advertisements, tag managers, or third party trackers on Eleventy documentation pages. (Okay, everyone gets this)
-1. <em>More to come!</em>
-<!-- 1. **Future Roadmap** Access to documentation offline (Progressive Web App). -->
+{% include "supporter-benefits.njk" %}
 
 </div><!-- /lo-c --></div><!-- /lo -->
 
