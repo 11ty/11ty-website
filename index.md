@@ -9,8 +9,8 @@ searchTitle: Eleventy Home
 ## Quick Start
 
 ``` bash
-npm install -g @11ty/eleventy
-echo '# Page header' > README.md
+npm install -g @11ty/eleventy;
+echo '# Page header' > README.md;
 eleventy
 ```
 
