@@ -15,10 +15,18 @@
     "type": "git",
     "url": "git+https://github.com/11ty/11ty-website.git"
   },
-  "author": "",
+  "author": {
+    "name": "Zach Leatherman",
+    "email": "zachleatherman@gmail.com",
+    "url": "https://zachleat.com/"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/11ty/11ty-website/issues"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/11ty"
   },
   "homepage": "https://github.com/11ty/11ty-website#readme",
   "devDependencies": {
