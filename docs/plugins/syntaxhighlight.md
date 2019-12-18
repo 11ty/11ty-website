@@ -8,6 +8,8 @@ eleventyNavigation:
 
 A pack of Eleventy plugins for syntax highlighting. No browser/client JavaScript here, these highlight transformations are all done at build-time. Supports individual line highlighting.
 
+* [GitHub](https://github.com/11ty/eleventy-plugin-syntaxhighlight).
+
 ## Template Compatibility
 
 * Nunjucks

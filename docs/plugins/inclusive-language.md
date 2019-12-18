@@ -8,6 +8,8 @@ eleventyNavigation:
 
 An Eleventy linter plugin to check for inclusive language in markdown files. Inspired by [_CSS Tricks’ Words to Avoid in Educational Writing_](https://css-tricks.com/words-avoid-educational-writing/). No browser/client JavaScript here—everything is this plugin is done at build-time.
 
+* [GitHub](https://github.com/11ty/eleventy-plugin-inclusive-language).
+
 <img src="/img/plugins/inclusive-language-sample.png" alt="Sample screenshot of eleventy-plugin-inclusive-language in action">
 
 ## Template Compatibility

@@ -8,6 +8,8 @@ eleventyNavigation:
 
 A pack of plugins for generating an RSS feed (actually an Atom feed, but who’s counting) using the Nunjucks templating engine.
 
+* [GitHub](https://github.com/11ty/eleventy-plugin-rss).
+
 ## Template Compatibility
 
 * Nunjucks
