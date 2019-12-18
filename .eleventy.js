@@ -1,5 +1,4 @@
 const { DateTime } = require("luxon");
-const chalk = require("chalk");
 const htmlmin = require("html-minifier");
 const CleanCSS = require("clean-css");
 const Terser = require("terser");

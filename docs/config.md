@@ -488,7 +488,7 @@ module.exports = function(eleventyConfig) {
       for( let word of words) {
         let regexp = new RegExp("\\b(" + word + ")\\b", "gi");
         if(content.match(regexp)) {
-          console.warn(chalk.yellow(`Inclusive Language Linter (${inputPath}) Found: ${word}`));
+          console.warn(`Inclusive Language Linter (${inputPath}) Found: ${word}`);
         }
       }
     }
