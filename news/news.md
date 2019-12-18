@@ -10,7 +10,7 @@ override:tags:
 
 📢 [Subscribe to the **Eleventy News Feed**](/news/feed.xml)
 
-{%- for news in collections.news %}
+{%- for news in collections.news | reverse %}
 * {{ news.date | newsDate }}—[{{ news.data.newstitle }}]({{ news.data.page.url }})
 {%- endfor %}
 * 2019 April 26—[Eleventy wins second Google Open Source Award](https://opensource.googleblog.com/2019/04/google-open-source-peer-bonus-winners.html)

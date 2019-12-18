@@ -31,7 +31,7 @@ Run `eleventy --serve` to start up a hot-reloading web server. Then open `http:/
 
 ## Latest [News]({{ '/news/' | url }})
 
-{%- set news = collections.news | first %}
+{%- set news = collections.news | reverse | first %}
 {%- if news %}
 [{{ news.data.newstitle }}]({{ news.data.page.url }}) ({{ news.date | newsDate }})
 {%- endif %}
