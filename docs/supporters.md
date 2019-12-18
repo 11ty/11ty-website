@@ -15,7 +15,7 @@ Eleventy is made possible by financial contributions from these lovely people:
 	<div class="lo-c">
     <a href="{{ supporter.profile }}" class="elv-externalexempt supporters-link">{% avatarlocalcache "opencollective", nameToSlug, supporter.name %}{{ supporter.name }}</a>
     <span class="lo">
-        <span class="lo-c supporters-tier">{% if supporter.tier %}{% emoji "📅" %} Monthly{% endif %} Supporter</span>
+        <span class="lo-c supporters-tier">{% if supporter.tier and supporter.isActive %}{% emoji "📅" %} Monthly{% endif %} Supporter</span>
         <span class="lo-c supporters-hearts">{% supporterAmount supporter.totalAmountDonated %}</span>
     </span>
   </div>
