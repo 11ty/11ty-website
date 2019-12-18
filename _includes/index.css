@@ -87,6 +87,7 @@ blockquote img {
 	border-radius: 50%;
 	background-color: #eee;
 }
+.icon,
 .avatar {
 	vertical-align: middle;
 }
