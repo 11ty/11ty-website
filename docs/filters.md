@@ -76,7 +76,7 @@ Universal filters can be added in a single place and are available to multiple t
 
 ```js
 module.exports = function(eleventyConfig) {
-  // Universal filters adds to:
+  // Universal filters add to:
   // * Liquid
   // * Nunjucks
   // * Handlebars
