@@ -9,7 +9,6 @@ const loadLanguages = require("prismjs/components/");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
-const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language");
 const cfg = require("./_data/config.js");
 const slugify = require('slugify');
 
@@ -59,8 +58,7 @@ module.exports = function(eleventyConfig) {
 			});
 		}
 	});
-	eleventyConfig.addPlugin(rssPlugin);
-	// eleventyConfig.addPlugin(inclusiveLanguagePlugin);
+	eleventyConfig.addPlugin(rssPlugin) ;
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
 	eleventyConfig.addCollection("sidebarNav", function(collection) {
