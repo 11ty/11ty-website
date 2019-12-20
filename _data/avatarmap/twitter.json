@@ -508,7 +508,7 @@
       "hasAlpha": false,
       "name": "cezaraugusto",
       "path": "img/avatar-local-cache/twitter/cezaraugusto.webp",
-      "size": 1172
+      "size": 1008
     },
     {
       "format": "jpeg",
@@ -523,7 +523,7 @@
       "hasAlpha": false,
       "name": "cezaraugusto",
       "path": "img/avatar-local-cache/twitter/cezaraugusto.jpg",
-      "size": 1880
+      "size": 1747
     }
   ],
   "chinchang457": [
@@ -586,6 +586,37 @@
       "name": "chriscoyier",
       "path": "img/avatar-local-cache/twitter/chriscoyier.jpg",
       "size": 1667
+    }
+  ],
+  "christian_fei": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "christian_fei",
+      "path": "img/avatar-local-cache/twitter/christian_fei.webp",
+      "size": 1094
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "christian_fei",
+      "path": "img/avatar-local-cache/twitter/christian_fei.jpg",
+      "size": 1635
     }
   ],
   "chromiumdev": [
@@ -3267,7 +3298,7 @@
       "hasAlpha": false,
       "name": "thegreengreek",
       "path": "img/avatar-local-cache/twitter/thegreengreek.webp",
-      "size": 1740
+      "size": 1860
     },
     {
       "format": "jpeg",
@@ -3282,7 +3313,7 @@
       "hasAlpha": false,
       "name": "thegreengreek",
       "path": "img/avatar-local-cache/twitter/thegreengreek.jpg",
-      "size": 2281
+      "size": 2368
     }
   ],
   "thetalesofimmo": [

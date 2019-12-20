@@ -322,6 +322,23 @@
       "size": 2113
     }
   ],
+  "ivan-buncic": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "ivan-buncic",
+      "path": "img/avatar-local-cache/opencollective/ivan-buncic.jpg",
+      "size": 1637
+    }
+  ],
   "jeremias-menichelli": [
     {
       "format": "jpeg",
@@ -353,7 +370,7 @@
       "hasAlpha": false,
       "name": "jerome-coupe",
       "path": "img/avatar-local-cache/opencollective/jerome-coupe.jpg",
-      "size": 1702
+      "size": 2359
     }
   ],
   "joel-krause": [
