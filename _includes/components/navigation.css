@@ -31,6 +31,7 @@
 	--lo-margin-h: 0.5em; /* 7px /14 */;
 	--lo-margin-v: 0.2142857142857em; /* 3px /14 */
 	--lo-stackpoint: 16.375rem; /* 262px /16 */
+	min-width: 10em;
 }
 .elv-nav-social .lo-c {
 	text-align: left;
