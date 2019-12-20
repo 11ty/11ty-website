@@ -82,7 +82,9 @@ query eleventyMembers {
     await fs.writeFile("./node-supporters/node-supporters.json", JSON.stringify(result, null, 2));
     console.log( "Wrote node-supporters.json." );
 
-    await fs.writeFile("./node-supporters/need-to-invite.csv", Array.from(emailsOnly).join("\n"));
+    let newEmails = Array.from(emailsOnly);
+    await fs.writeFile("./node-supporters/need-to-invite.csv", newEmails.join("\n"));
     console.log( "Wrote need-to-invite.csv." );
+    console.log( `${newEmails.length} ${newEmails.length != 1 ? "entries" : "entry"}.` );
   }
 })();
