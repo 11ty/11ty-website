@@ -33,6 +33,9 @@
 	--lo-stackpoint: 16.375rem; /* 262px /16 */
 }
 .elv-nav-social .lo-c {
+	text-align: left;
+}
+.elv-header-default .elv-nav-social .lo-c {
 	text-align: right;
 }
 
