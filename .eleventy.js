@@ -45,7 +45,7 @@ const shortcodes = {
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.setDataDeepMerge(true);
-	eleventyConfig.setQuietMode(true);
+	// eleventyConfig.setQuietMode(true);
 
 	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
 		templateFormats: "md",
