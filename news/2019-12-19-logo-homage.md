@@ -11,7 +11,7 @@ It was [originally a cat](https://twitter.com/jameswillweb/status/99905202249731
 
 James’ [quickly iterated to the now-iconic Eleventy possum](https://twitter.com/jameswillweb/status/999059541798072320).
 
-<img src="/img/possum.jpg" alt="James Williamson’s classic Eleventy possum">
+<img src="/img/possum.jpg" alt="James Williamson’s classic Eleventy possum" style="max-width: 12em">
 
 Why a possum? Why is the possum floating? Why a balloon? Exactly. _42._
 
