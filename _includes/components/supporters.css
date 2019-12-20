@@ -1,10 +1,23 @@
 .elv-possum + .supporters-avatar {
 	position: absolute;
-	top: 19px;
-	right: 19px;
-	/*filter: invert(13%) sepia(91%) saturate(2000%) hue-rotate(353deg) brightness(100%) contrast(90%);*/
-	filter: grayscale(.4) hue-rotate(222deg) brightness(1);
+	top: calc(1.0625rem + .3vw);
+	right: calc(.5625rem + .75vw);
 	opacity: .9;
+	width: 9vw;
+	height: auto;
+	margin: 0;
+}
+@media (min-width: 41.875em) { /* 670px */
+	.elv-possum + .supporters-avatar {
+		top: 1.25rem; /* 20px /16 */
+		right: 0.9375rem; /* 15px /16 */
+		width: 3.75rem; /* 60px /16 */
+	}
+}
+.elv-header-default .elv-possum + .supporters-avatar {
+	top: .5rem;
+	right: .5rem;
+	pointer-events: none;
 }
 
 /* Supporters Page */

@@ -4,6 +4,7 @@ logoLink: /docs/
 ignoreGitHubButtons: true
 ignoreSupporters: true
 searchTitle: Eleventy Home
+bigPossum: true
 ---
 
 ## Quick Start
