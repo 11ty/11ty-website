@@ -340,6 +340,37 @@
       "size": 2041
     }
   ],
+  "brycewraytx": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "brycewraytx",
+      "path": "img/avatar-local-cache/twitter/brycewraytx.webp",
+      "size": 652
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "brycewraytx",
+      "path": "img/avatar-local-cache/twitter/brycewraytx.jpg",
+      "size": 1670
+    }
+  ],
   "bseymour": [
     {
       "format": "webp",
@@ -1857,6 +1888,37 @@
       "name": "jon_neal",
       "path": "img/avatar-local-cache/twitter/jon_neal.jpg",
       "size": 2524
+    }
+  ],
+  "joshuakeel": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "joshuakeel",
+      "path": "img/avatar-local-cache/twitter/joshuakeel.webp",
+      "size": 1288
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "joshuakeel",
+      "path": "img/avatar-local-cache/twitter/joshuakeel.jpg",
+      "size": 1923
     }
   ],
   "kleinfreund": [
