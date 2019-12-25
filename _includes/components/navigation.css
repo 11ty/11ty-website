@@ -21,27 +21,35 @@
 .elv-nav-item .elv-nav-light {
 	font-weight: 300;
 }
-.elv-nav-social a {
-	font-weight: 300;
+.elv-nav-item .icon,
+.elv-nav-item .avatar {
+	margin-left: 0;
 }
-.lo > .lo-c.elv-nav-social {
-	flex-grow: 999;
+.elv-nav-header {
+	width: 100%;
 }
-.elv-nav-social > .lo {
-	--lo-margin-h: 0.5em; /* 7px /14 */;
-	--lo-margin-v: 0.2142857142857em; /* 3px /14 */
-	--lo-stackpoint: 16.375rem; /* 262px /16 */
-	min-width: 10em;
+.elv-nav-header > .lo > .lo-c {
+	flex-basis: 50%;
 }
-.elv-nav-social .lo-c {
-	text-align: left;
+@media (min-width: 25em) { /* 400px */
+	.elv-nav-header > .lo > .lo-c {
+		flex-basis: 33%;
+	}
 }
-.elv-header-default .elv-nav-social .lo-c {
-	text-align: right;
+@media (min-width: 38.75em) { /* 620px */
+	.elv-nav-header {
+		width: auto;
+	}
+	.elv-nav-header > .lo {
+		--lo-margin-h: 0.8125em; /* 13px /16 */
+	}
+	.elv-nav-header > .lo > .lo-c {
+		flex-basis: 0;
+	}
 }
 
-.elv-nav-header > .lo {
-	--lo-margin-h: 0.8125em; /* 13px /16 */
+.elv-nav-header b {
+	font-weight: 300;
 }
 .elv-nav-footer {
 	font-size: 0.875rem; /* 14px /16 */
@@ -78,7 +86,6 @@
 	.elv-nav-header {
 		clear: none;
 		margin-top: 0;
-		min-width: 34.375em; /* 550px /16 */
 	}
 	.elv-nav-header.lo .elv-nav-item.lo-c:first-child {
 		margin-left: 0;
