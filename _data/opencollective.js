@@ -9,6 +9,10 @@ function getCacheKey() {
 	return `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()}`;
 }
 
+function isMonthlyBacker(backer) {
+	return backer.role === "BACKER" && backer.tier;
+}
+
 module.exports = async function() {
 	let cache = flatcache.load("opencollective-backers", path.resolve("./_datacache"));
 	let key = getCacheKey();
@@ -22,6 +26,15 @@ module.exports = async function() {
 				// Sort by total amount donated (desc)
 				return b.totalAmountDonated - a.totalAmountDonated;
 			});
+
+			let monthlyBackers = {};
+			for(let backer of newDataJson) {
+				if(isMonthlyBacker(backer)) {
+					monthlyBackers[backer.profile] = true;
+				}
+			}
+
+			newDataJson = newDataJson.filter(backer => isMonthlyBacker(backer) || !monthlyBackers[backer.profile]);
 
 			await fs.writeFile("./_data/supporters.json", JSON.stringify(newDataJson, null, 2));
 
