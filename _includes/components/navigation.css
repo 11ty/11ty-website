@@ -45,10 +45,15 @@
 	vertical-align: text-top;
 }
 @media (max-width: 38.6875em) { /* 619px */
+	.elv-nav-header .elv-nav-item {
+		position: relative;
+		padding-left: 1.6rem;
+	}
 	.elv-nav-header .elv-nav-item .emoji,
 	.elv-nav-header .elv-nav-item .icon,
 	.elv-nav-header .elv-nav-item .avatar {
-		width: 1.3rem;
+		position: absolute;
+		left: 0;
 	}
 }
 @media (min-width: 38.75em) { /* 620px */
