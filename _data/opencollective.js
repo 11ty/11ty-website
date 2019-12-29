@@ -13,6 +13,25 @@ function isMonthlyBacker(backer) {
 	return backer.role === "BACKER" && backer.tier;
 }
 
+function hasMonthlyBackerProfile(backers, compareBacker) {
+	for(let backer of backers) {
+		if(isMonthlyBacker(backer) && backer.profile === compareBacker.profile) {
+			return true;
+		}
+	}
+	return false;
+}
+
+function getUniqueNonMonthlyEntries(backers) {
+	let nonMonthlyBackers = {};
+	for(let backer of backers) {
+		if(!isMonthlyBacker(backer)) {
+			nonMonthlyBackers[backer.profile] = backer;
+		}
+	}
+	return backers.filter(backer => isMonthlyBacker(backer)).concat(Object.values(nonMonthlyBackers));
+}
+
 module.exports = async function() {
 	let cache = flatcache.load("opencollective-backers", path.resolve("./_datacache"));
 	let key = getCacheKey();
@@ -22,19 +41,16 @@ module.exports = async function() {
 		try {
 			let newDataJson = await fetch("https://opencollective.com/11ty/members/all.json").then(res => res.json());
 
+			newDataJson = getUniqueNonMonthlyEntries(newDataJson);
+
 			newDataJson.sort(function(a, b) {
 				// Sort by total amount donated (desc)
 				return b.totalAmountDonated - a.totalAmountDonated;
 			});
 
-			let monthlyBackers = {};
-			for(let backer of newDataJson) {
-				if(isMonthlyBacker(backer)) {
-					monthlyBackers[backer.profile] = true;
-				}
-			}
-
-			newDataJson = newDataJson.filter(backer => isMonthlyBacker(backer) || !monthlyBackers[backer.profile]);
+			// is monthly backer or has no other monthly backer profile
+			let allBackers = newDataJson.filter(() => true);
+			newDataJson = newDataJson.filter(backer => isMonthlyBacker(backer) || !hasMonthlyBackerProfile(allBackers, backer));
 
 			await fs.writeFile("./_data/supporters.json", JSON.stringify(newDataJson, null, 2));
 
