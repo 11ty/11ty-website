@@ -88,7 +88,7 @@ module.exports = function(eleventyConfig) {
 
 This example emulates the `templateFormats` passthrough file copy method above, copying all `jpg` image files to the output folder, maintaining their directory structure. If you do not want to maintain the same directory structure, [change the output directory.](#using-globs-and-output-directories)
 
-Note that this method is slower than manual passthrough file copy without globs, as it searching the entire directory structure and copies each file in Eleventy individually.
+Note that this method is slower than manual passthrough file copy without globs, as it searches the entire directory structure and copies each file in Eleventy individually.
 
 {% codetitle ".eleventy.js" %}
 
