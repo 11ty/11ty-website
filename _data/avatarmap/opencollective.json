@@ -16,6 +16,23 @@
       "size": 1935
     }
   ],
+  "andrew-harvard": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "andrew-harvard",
+      "path": "img/avatar-local-cache/opencollective/andrew-harvard.jpg",
+      "size": 1610
+    }
+  ],
   "andrew-pucci": [
     {
       "format": "jpeg",
@@ -626,6 +643,23 @@
       "name": "nick-colley",
       "path": "img/avatar-local-cache/opencollective/nick-colley.jpg",
       "size": 2651
+    }
+  ],
+  "nick-nisi": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "nick-nisi",
+      "path": "img/avatar-local-cache/opencollective/nick-nisi.jpg",
+      "size": 1895
     }
   ],
   "nicolas-hoizey": [
