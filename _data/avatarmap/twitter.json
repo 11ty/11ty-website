@@ -1301,6 +1301,37 @@
       "size": 871
     }
   ],
+  "geteslint": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "geteslint",
+      "path": "img/avatar-local-cache/twitter/geteslint.webp",
+      "size": 1126
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "geteslint",
+      "path": "img/avatar-local-cache/twitter/geteslint.jpg",
+      "size": 2000
+    }
+  ],
   "gvonkoss": [
     {
       "format": "webp",
@@ -2012,6 +2043,37 @@
       "name": "lachzeat",
       "path": "img/avatar-local-cache/twitter/lachzeat.png",
       "size": 1464
+    }
+  ],
+  "layoutplusplus": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "layoutplusplus",
+      "path": "img/avatar-local-cache/twitter/layoutplusplus.webp",
+      "size": 1692
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "layoutplusplus",
+      "path": "img/avatar-local-cache/twitter/layoutplusplus.png",
+      "size": 2206
     }
   ],
   "leedsjs": [
@@ -2851,6 +2913,37 @@
       "size": 1814
     }
   ],
+  "polymer": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "polymer",
+      "path": "img/avatar-local-cache/twitter/polymer.webp",
+      "size": 992
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "polymer",
+      "path": "img/avatar-local-cache/twitter/polymer.jpg",
+      "size": 1811
+    }
+  ],
   "ramigsdev": [
     {
       "format": "webp",
@@ -3500,6 +3593,37 @@
       "name": "unabridgedsoft",
       "path": "img/avatar-local-cache/twitter/unabridgedsoft.png",
       "size": 1513
+    }
+  ],
+  "uwmadison": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "uwmadison",
+      "path": "img/avatar-local-cache/twitter/uwmadison.webp",
+      "size": 1424
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "uwmadison",
+      "path": "img/avatar-local-cache/twitter/uwmadison.jpg",
+      "size": 1850
     }
   ],
   "v8js": [

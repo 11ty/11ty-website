@@ -216,3 +216,19 @@ h2 .numberflag:after {
 	background-color: #fff;
 	width: calc(100% + 0.4em); /* 16px /40 */
 }
+
+.inlinelist-superfeatured .avatar {
+	width: 60px;
+	height: 60px;
+	margin-bottom: .25em;
+	margin-left: 0;
+}
+.inlinelist-superfeatured .inlinelist-item {
+	font-size: 120%;
+	background-color: transparent;
+	padding-left: 0;
+}
+.inlinelist-superfeatured .avatar[alt^="CERN"],
+.inlinelist-superfeatured .avatar[alt^="eleven_ty"] {
+	border-radius: 0;
+}
