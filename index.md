@@ -42,8 +42,8 @@ Run `eleventy --serve` to start up a hot-reloading web server. Then open `http:/
 
 ## Built With Eleventy
 
-<ul class="inlinelist inlinelist-superfeatured">
-    {% for key, site in sites | shuffle -%}{% if site.twitter and site.disabled != true and site.url and site.featured and site.superfeatured -%}<li class="inlinelist-item"><a href="{{ site.url }}" class="elv-externalexempt">{% avatarlocalcache "twitter", site.twitter %}{{ site.name | safe }}</a></li>{% endif %}{% endfor -%}
+<ul class="inlinelist list-superfeatured">
+    {% for key, site in sites -%}{% if site.twitter and site.disabled != true and site.url and site.featured and site.superfeatured -%}<li class="inlinelist-item"><a href="{{ site.url }}" class="elv-externalexempt">{% avatarlocalcache "twitter", site.twitter %}{{ site.name | safe }}</a></li>{% endif %}{% endfor -%}
 </ul>
 
 <div class="facepile">
