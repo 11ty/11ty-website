@@ -217,6 +217,7 @@ h2 .numberflag:after {
 	width: calc(100% + 0.4em); /* 16px /40 */
 }
 
+/* Super featured list on home page */
 .list-superfeatured .avatar {
 	width: calc(30px + 5vw);
 	height: calc(30px + 5vw);
@@ -235,4 +236,10 @@ h2 .numberflag:after {
 	.list-superfeatured .inlinelist-item {
 		font-size: 110%;
 	}
+}
+
+/* Only top level */
+.inlinelist-no-nest ul,
+.inlinelist-no-nest ol {
+	display: none;
 }

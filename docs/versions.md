@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
+  parent: News
   key: Release History
-  order: 8
 ---
 # Release History
 

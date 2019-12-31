@@ -92,3 +92,8 @@
 .elv-toc-list li.elv-toc-active > ul {
 	display: block;
 }
+
+/* Footer catgory navigation */
+.elv-cat-list-active {
+	font-weight: 600;
+}
