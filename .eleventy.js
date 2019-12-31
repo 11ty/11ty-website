@@ -93,7 +93,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPairedShortcode("codewithprompt", function(text, prePrefixCode, when) {
 		return `<div data-preprefix-${prePrefixCode}="${when}">
 
-\`\`\`bash
+\`\`\`bash/-
 ${text.trim()}
 \`\`\`
 

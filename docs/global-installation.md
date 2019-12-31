@@ -13,14 +13,10 @@ npm install -g @11ty/eleventy
 
 The above adds an `eleventy` command that you can use in any directory.
 
-<div data-preprefix-cmdhomedir="first">
-
-```bash
+{% codewithprompt "cmdhomedir", "first" %}
 eleventy --version
 {% latestVersion versions, config, "" %}
-```
-
-</div>
+{% endcodewithprompt %}
 
 {% callout "info" %}If you’re planning on deploying your site using a service like Netlify (that will run your build on their servers), you <strong>must use the local installation method</strong> and not global installation.{% endcallout %}
 
@@ -28,11 +24,6 @@ eleventy --version
 
 If you see `0.1.9` after you run `eleventy --version` you have installed the deprecated [`eleventy-cli`](https://www.npmjs.com/package/eleventy-cli) instead. We renamed Eleventy to use our `@11ty` npm organization a long time ago. You will need to uninstall `eleventy-cli`:
 
-<div data-preprefix-cmdhomedir="first">
-
-```bash
+{% codewithprompt "cmdhomedir", "first" %}
 npm uninstall -g eleventy-cli
-```
-
-</div>
-
+{% endcodewithprompt %}
