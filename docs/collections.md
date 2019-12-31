@@ -39,7 +39,7 @@ This will place this `mypost.md` into the `post` collection with all other piece
 {% codetitle "JavaScript .11ty.js", "Syntax" %}
 
 {% raw %}
-```
+```js
 module.exports = function({collections}) {
   return `<ul>
 ${collections.post.map((post) => `<li>${ post.data.title }</li>`).join("\n")}
@@ -55,7 +55,7 @@ Compare the `post.url` and special Eleventy-provided `page.url` variable to find
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
-```
+```html
 <ul>
 {%- for post in collections.post -%}
   <li{% if page.url == post.url %} class="active"{% endif %}>{{ post.data.title }}</li>
@@ -71,7 +71,7 @@ By default Eleventy puts all of your content (independent of whether or not it h
 ### Example: A list of links to all Eleventy generated content
 
 {% raw %}
-```
+```html
 <ul>
 {%- for post in collections.all -%}
   <li><a href="{{ post.url }}">{{ post.url }}</a></li>
@@ -86,7 +86,7 @@ In front matter (or further upstream in the data cascade), set the `eleventyExcl
 
 {% codetitle "excluded.md" %}
 
-```
+```markdown
 ---
 eleventyExcludeFromCollections: true
 tags: post
@@ -100,7 +100,7 @@ You can use a single tag, as in the above example OR you can use any number of t
 
 ### A single tag: cat
 
-```
+```markdown
 ---
 tags: cat
 ---
@@ -110,7 +110,7 @@ This content would show up in the template data inside of `collections.cat`.
 
 ### Multiple tags, single line
 
-```
+```markdown
 ---
 tags: ['cat', 'dog']
 ---
@@ -120,7 +120,7 @@ This content would show up in the template data inside of `collections.cat` and 
 
 ### Multiple tags, multiple lines
 
-```
+```markdown
 ---
 tags:
   - cat
@@ -135,7 +135,7 @@ This content would show up in the template data inside of `collections.cat` and 
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
-```
+```html
 <ul>
 {%- for post in collections.post -%}
   <li>{{ post.data.title }}</li>
@@ -154,7 +154,7 @@ Note in the above example that we output the `post.data.title` value? Similarly,
 * `data`: all data for this piece of content (includes any data inherited from layouts)
 * `templateContent`: the rendered content of this template. This does _not_ include layout wrappers.
 
-```
+```js
 { inputPath: './test1.md',
   fileSlug: 'test1', // fileSlug was added in 0.5.3
   outputPath: './_site/test1/index.html',
@@ -195,7 +195,7 @@ To sort descending in your template, you can use a filter to reverse the sort or
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
-```
+```html
 <ul>
 {%- for post in collections.post | reverse -%}
   <li>{{ post.data.title }}</li>
@@ -209,7 +209,7 @@ And in Liquid it’d look like this:
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
-```
+```html
 <ul>
 {%- assign posts = collections.post | reverse -%}
 {%- for post in posts -%}
@@ -232,7 +232,7 @@ And in Liquid it’d look like this:
 
 You can modify how a piece of content is sorted in a collection by changing it’s default `date`. [Read more at Content Dates](/docs/dates/).
 
-```
+```markdown
 ---
 date: 2016-01-01
 ---
