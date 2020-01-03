@@ -8,6 +8,7 @@ eleventyNavigation:
 
 A plugin for creating hierarchical navigation in Eleventy projects. Supports breadcrumbs too! Used in production on this very website!
 
+* This documentation is for `eleventy-navigation` `v0.1.3`.
 * [GitHub](https://github.com/11ty/eleventy-navigation).
 
 ## Contents
