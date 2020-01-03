@@ -1407,7 +1407,7 @@
       "hasAlpha": false,
       "name": "heydonworks",
       "path": "img/avatar-local-cache/twitter/heydonworks.webp",
-      "size": 1430
+      "size": 1798
     },
     {
       "format": "jpeg",
@@ -1422,7 +1422,7 @@
       "hasAlpha": false,
       "name": "heydonworks",
       "path": "img/avatar-local-cache/twitter/heydonworks.jpg",
-      "size": 1987
+      "size": 2327
     }
   ],
   "hiberglobal": [
@@ -1950,6 +1950,37 @@
       "name": "joshuakeel",
       "path": "img/avatar-local-cache/twitter/joshuakeel.jpg",
       "size": 1923
+    }
+  ],
+  "khanacademy": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "khanacademy",
+      "path": "img/avatar-local-cache/twitter/khanacademy.webp",
+      "size": 770
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "khanacademy",
+      "path": "img/avatar-local-cache/twitter/khanacademy.jpg",
+      "size": 1511
     }
   ],
   "kleinfreund": [
