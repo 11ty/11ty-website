@@ -10,6 +10,10 @@ A plugin for creating hierarchical navigation in Eleventy projects. Supports bre
 
 * [GitHub](https://github.com/11ty/eleventy-navigation).
 
+## Contents
+
+[[toc]]
+
 ## Template Compatibility
 
 * Any template language can add to navigation.
@@ -34,11 +38,15 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+Read more about [Eleventy plugins.](/docs/plugins/)
+
 ## Adding Templates to the Navigation
 
-Add the `eleventyNavigation` object to your front matter data (or in a [data directory file](/docs/data-template-dir/)). Assign a unique string to the `key` property inside of `eleventyNavigation`:
+Add the `eleventyNavigation` object to your front matter data (or in a [data directory file](https://www.11ty.io/docs/data-template-dir/)). Assign a unique string to the `key` property inside of `eleventyNavigation`.
 
-### `mammals.md`:
+### Example
+
+#### mammals.md
 
 ```yaml
 ---
@@ -51,7 +59,7 @@ This gives us:
 
 * Mammals
 
-### `humans.md`
+#### humans.md
 
 To nest a template inside of the Mammals template, use `parent: Mammals`:
 
@@ -70,7 +78,7 @@ Now our navigation structure looks like:
 * Mammals
     - Humans
 
-### `bats.md`
+#### bats.md
 
 ```yaml
 ---
@@ -88,7 +96,7 @@ Now our navigation structure looks like:
 
 You can nest these as deep as you want! Want to put something under Humans or Bats? Use `parent: Humans` or `parent: Bats`. If you want to add another root template, leave out `parent`.
 
-## Use alternate text for the navigation link
+### Use alternate text for the navigation link
 
 If you want your key and your link text to be different, use the `title` property:
 
@@ -100,7 +108,7 @@ eleventyNavigation:
 ---
 ```
 
-## Re-ordering Items
+### Re-Ordering Items
 
 To ensure that Humans comes first before Bats, use the `order` property. It can have an arbitrary number. If omitted, `order: 0` is the default.
 
@@ -122,11 +130,13 @@ eleventyNavigation:
 ---
 ```
 
-## Rendering the Navigation Bar (Nunjucks)
+## Rendering the Navigation Bar (Nunjucks-only)
 
 Currently only Nunjucks support is available for this plugin. More to come!
 
-### Full Navigation Tree
+### Just Give Me Some Code
+
+If you’re tired of reading, just use the following:
 
 {% raw %}
 ```
@@ -134,29 +144,170 @@ Currently only Nunjucks support is available for this plugin. More to come!
 ```
 {% endraw %}
 
-### Just one Branch
+This is using [the Nunjucks filters documented below](#render-with-a-filter). If you want more control or need additional customization, keep reading!
 
-Just show the children of a specific key, passing a key to `eleventyNavigation`:
+### Fetch the Structure
+
+The `eleventyNavigation` filter returns a _sorted_ array of objects with `url` and `title` properties (sorted using `order`, as noted above). If an entry has nested children, it will also include a `children` property with an array of similar objects (and those may contain `children` too, and so on).
+
+#### Example
+
+For our documented templates above with the following Nunjucks template:
 
 {% raw %}
 ```
-{{ collections.all | eleventyNavigation("Humans") | eleventyNavigationToHtml | safe }}
+{% set navPages = collections.all | eleventyNavigation %}
+{{ navPages | dump | safe }}
 ```
 {% endraw %}
 
-### Breadcrumbs
+{% callout "info" %}Note that you can also pass any collection into <code>eleventyNavigation</code>. It doesn’t have to be <code>collections.all</code>!{% endcallout %}
+
+Shows that `navPages` has the following structure:
+
+```json
+[
+  {
+    "key": "Mammals",
+    "url": "/mammals/",
+    "title": "Mammals",
+    "children": [
+      {
+        "key": "Humans",
+        "parentKey": "Mammals",
+        "url": "/humans/",
+        "title": "Humans"
+      },
+      {
+        "key": "Bats",
+        "parentKey": "Mammals",
+        "url": "/bats/",
+        "title": "Bats"
+      }
+    ]
+  }
+]
+```
+
+#### Get just one Branch
+
+Just show the children of a specific key, pass a key to `eleventyNavigation`:
+
+{% raw %}
+```
+{% set navPages = collections.all | eleventyNavigation("Mammals") %}
+{{ navPages | dump | safe }}
+```
+{% endraw %}
+
+```json
+[
+  {
+    "key": "Humans",
+    "parentKey": "Mammals",
+    "url": "/humans/",
+    "title": "Humans"
+  },
+  {
+    "key": "Bats",
+    "parentKey": "Mammals",
+    "url": "/bats/",
+    "title": "Bats"
+  }
+]
+```
+
+#### Breadcrumbs
 
 You can also render only the parents of a specific key too, to make breadcrumb navigation. Pass a key to `eleventyNavigationBreadcrumb` like this:
 
 {% raw %}
 ```
+{% set navPages = collections.all | eleventyNavigationBreadcrumb("Bats") %}
+{{ navPages | dump | safe }}
+```
+{% endraw %}
+
+And an array of all the parents of the Bats entry will be returned (top-most parent is first):
+
+```json
+[
+  {
+    "key": "Mammals",
+    "url": "/mammals/",
+    "title": "Mammals"
+  }
+]
+```
+
+### Render the Structure
+
+There are a couple of methods for rendering:
+
+1. Copy and Paste templates give you full control of the markup. Use this if your navigation will have one level/tier of items.
+2. A `eleventyNavigationToHtml` filter that will render the full navigation tree. Use this if you want to easily scale to an unlimited number of tiers/levels in your navigation.
+
+#### Copy and Paste Templates
+
+This template will render a single tier of items (no children).
+
+{% raw %}
+```html
+{% set navPages = collections.all | eleventyNavigation %}
+<ul>
+{%- for entry in navPages %}
+  <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
+    <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+  </li>
+{%- endfor %}
+</ul>
+```
+{% endraw %}
+
+You _can_ use a Nunjucks macro to recursively render list items of any depth but the code isn’t quite as clean:
+
+<details>
+  <summary><strong>Nunjucks Macro Code for Rendering Unlimited Child Levels:</strong></summary>
+
+{% raw %}
+```html
+{% set navPages = collections.all | eleventyNavigation %}
+{% macro renderNavListItem(entry) -%}
+<li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
+  <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+{%- if entry.children.length -%}
+  <ul>
+    {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
+  </ul>
+{%- endif -%}
+</li>
+{%- endmacro %}
+
+<ul>
+{%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
+</ul>
+```
+{% endraw %}
+
+</details>
+
+#### Render with a Filter
+
+With the Navigation structure returned from `eleventyNavigation` or `eleventyNavigationBreadcrumb`, we can render the navigation HTML. Pass the object to the  `eleventyNavigationToHtml` filter to automatically output the full HTML menu:
+
+{% raw %}
+```
+{{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+```
+
+```
 {{ collections.all | eleventyNavigationBreadcrumb("Bats") | eleventyNavigationToHtml | safe }}
 ```
 {% endraw %}
 
-### Showing excerpts
+##### Showing excerpts
 
-You can also use this to display a longer list of navigation items with description text. Add `excerpt` to the `eleventyNavigation` object.
+You can also use this to display a longer list of navigation items with description text. This is useful for category/index pages. Add `excerpt` to the `eleventyNavigation` object.
 
 ```yaml
 ---
@@ -174,7 +325,7 @@ When you render a navigation list, pass `showExcerpt: true` to the `eleventyNavi
 ```
 {% endraw %}
 
-### Advanced Rendering Options for `eleventyNavigationToHtml`
+##### Advanced: All Rendering Options for `eleventyNavigationToHtml`
 
 You can change the HTML elements, classes on the list and list items, and add an additional class for the current page’s navigation entry!
 
@@ -189,7 +340,10 @@ You can change the HTML elements, classes on the list and list items, and add an
     listItemHasChildrenClass: "", // Add a class if the item has children
     activeListItemClass: "",      // Add a class to the current page’s item
 
-    // If matched, `activeListItemClass` will be added to the item
+    anchorClass: "",              // Add a class to the anchor
+    activeAnchorClass: "",        // Add a class to the current page’s anchor
+
+    // If matched, `activeListItemClass` and `activeAnchorClass` will be added
     activeKey: "",
     // It’s likely you want to pass in `eleventyNavigation.key` here, e.g.:
     // activeKey: eleventyNavigation.key
@@ -202,4 +356,5 @@ You can change the HTML elements, classes on the list and list items, and add an
 
 These work with `eleventyNavigationBreadcrumb | eleventyNavigationToHtml` too.
 
-If you need _even more_ power than this filter provides, you can look at the JSON structure returned from `eleventyNavigation` and `eleventyNavigationBreadcrumb` and write your own filter to output HTML!
+If you find yourself using a lot of these `class` options, maybe you should use the _Advanced: Unlimited Child Levels_ example above and have full control of your HTML!
+
