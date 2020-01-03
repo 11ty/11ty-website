@@ -8,7 +8,12 @@ eleventyNavigation:
 
 A pack of Eleventy plugins for syntax highlighting. No browser/client JavaScript here, these highlight transformations are all done at build-time. Supports individual line highlighting.
 
+* This is the documentation for `eleventy-plugin-syntaxhighlight` `v3.x`.
 * [GitHub](https://github.com/11ty/eleventy-plugin-syntaxhighlight).
+
+## Contents
+
+[[toc]]
 
 ## Template Compatibility
 
@@ -56,13 +61,17 @@ module.exports = function(eleventyConfig) {
     init: function({ Prism }) {
       Prism.languages.myCustomLanguage = /* */;
     }
+
+    // Added in 3.0, set to true to always wrap lines in `<span class="highlight-line">`
+    // The default (false) only wraps when line numbers are passed in.
+    alwaysWrapLineHighlights: false
   });
 };
 ```
 
 ## Usage
 
-### This plugin provides the following syntax highlighters using PrismJS:
+This plugin provides the following syntax highlighters using PrismJS:
 
 * Markdown Highlighter (triple backtick <code>```</code>) Supports individual line highlighting.
 * Liquid Custom Tag {% raw %}`{% highlight %}`{% endraw %}
@@ -86,6 +95,7 @@ function myFunction() {
 ````
 <!--
   Line highlighting classes (single highlight)
+  Wraps each line in `<span class="highlight-line">`
   Adds `highlight-line-active` class to lines 1,3,4,5 (for line highlighting)
 -->
 
@@ -101,6 +111,7 @@ function myFunction() {
 ````
 <!--
   Line highlighting classes (add and remove mode)
+  Wraps each line in `<span class="highlight-line">`
   Adds `highlight-line-add` class to lines 1,3
   Adds `highlight-line-remove` class to lines 5,6,7,8
 -->
@@ -146,6 +157,7 @@ function myFunction() {
 ```
 <!--
   Line highlighting classes (single highlight)
+  Wraps each line in `<span class="highlight-line">`
   Adds `highlight-line-active` class to lines 1,3,4,5 (for line highlighting)
 -->
 
@@ -163,6 +175,7 @@ function myFunction() {
 ```
 <!--
   Line highlighting classes (add and remove)
+  Wraps each line in `<span class="highlight-line">`
   Adds `highlight-line-add` class to lines 1,3
   Adds `highlight-line-remove` class to lines 5,6,7,8
 -->
@@ -212,6 +225,7 @@ function myFunction() {
 ```
 <!--
   Line highlighting classes (single highlight)
+  Wraps each line in `<span class="highlight-line">`
   Adds `highlight-line-active` class to lines 1,3,4,5 (for line highlighting)
 -->
 
@@ -229,6 +243,7 @@ function myFunction() {
 ```
 <!--
   Line highlighting classes (add and remove)
+  Wraps each line in `<span class="highlight-line">`
   Adds `highlight-line-add` class to lines 1,3
   Adds `highlight-line-remove` class to lines 5,6,7,8
 -->
