@@ -4,7 +4,6 @@ eleventyNavigation:
   key: Content Dates
   order: 5
   excerpt: Assigning dates to content, using dates in front matter.
-sampleDate: 2018-01-01
 ---
 # Content Dates
 
@@ -65,18 +64,26 @@ If you output the Date object in a template, it will convert it to a string for 
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 ```
-{% raw %}{{ page.date }}{% endraw %} will display a local time zone date.
-{{ sampleDate }}
+Using {% raw %}{{ page.date }}{% endraw %} will display a
+date using a local time zone like:
+
+Sun Dec 31 2017 18:00:00 GMT-0600 (Central Standard Time)
 ```
+
+Note that this appears to be the wrong day!
 
 Nunjucks allows you to call JavaScript methods in output `{% raw %}{{ page.date.toString() }}{% endraw %}`. Liquid does not allow this.
 
 {% codetitle "Nunjucks", "Syntax" %}
 
 ```
-{% raw %}{{ page.date.toUTCString() }}{% endraw %} will display a UTC time zone date.
-{{ sampleDate.toUTCString() }}
+But {% raw %}{{ page.date.toUTCString() }}{% endraw %} will correctly
+display a date with a UTC time zone like:
+
+Mon, 01 Jan 2018 00:00:00 GMT
 ```
+
+You could very easily just add a `toUTCString` [filter in Liquid](/docs/filters/) to perform the same task.
 
 ## Collections out of order when you run Eleventy on your Server?
 
