@@ -150,5 +150,25 @@
 		"name": "Sara Soueidan",
 		"source": "https://twitter.com/SaraSoueidan/status/1144696081403523072",
 		"featured": true
+	},
+	{
+		"text": "Eleventy and web components go really, really well together.",
+		"twitter": "justinfagnani",
+		"name": "Justin Fagnani",
+		"source": "https://twitter.com/justinfagnani/status/1212847104718061569",
+		"featured": true
+	},
+	{
+		"text": "Think the reason everyone is loving [Eleventy] so much (myself included) is that it doesn't come with a prescription about data sources or template rendering.",
+		"twitter": "brianleroux",
+		"name": "Brian Leroux",
+		"source": "https://twitter.com/brianleroux/status/1213129879245295619",
+		"featured": true
+	},
+	{
+		"text": "I think what's great about Eleventy is how it was able to simplify SSGs to just 2 concepts: data sources and templates.",
+		"twitter": "matthewcp",
+		"name": "Matthew Phillips",
+		"source": "https://twitter.com/matthewcp/status/1213129379414446080"
 	}
 ]
