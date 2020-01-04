@@ -3409,6 +3409,37 @@
       "size": 1442
     }
   ],
+  "surajsjdhv": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "surajsjdhv",
+      "path": "img/avatar-local-cache/twitter/surajsjdhv.webp",
+      "size": 1488
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "surajsjdhv",
+      "path": "img/avatar-local-cache/twitter/surajsjdhv.jpg",
+      "size": 2047
+    }
+  ],
   "tatianatmac": [
     {
       "format": "webp",

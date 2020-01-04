@@ -900,6 +900,23 @@
       "size": 1285
     }
   ],
+  "web-inspect-inc": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "web-inspect-inc",
+      "path": "img/avatar-local-cache/opencollective/web-inspect-inc.jpg",
+      "size": 1310
+    }
+  ],
   "william-riley": [
     {
       "format": "jpeg",
