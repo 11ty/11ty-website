@@ -149,7 +149,7 @@
       "hasAlpha": false,
       "name": "bryce-wray",
       "path": "img/avatar-local-cache/opencollective/bryce-wray.jpg",
-      "size": 1641
+      "size": 2339
     }
   ],
   "chris-collins": [
@@ -235,6 +235,23 @@
       "name": "daniel-rafaj",
       "path": "img/avatar-local-cache/opencollective/daniel-rafaj.jpg",
       "size": 1663
+    }
+  ],
+  "darby-dixon-iii": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "darby-dixon-iii",
+      "path": "img/avatar-local-cache/opencollective/darby-dixon-iii.jpg",
+      "size": 1901
     }
   ],
   "dave-rupert": [
@@ -337,6 +354,23 @@
       "name": "heydon-pickering",
       "path": "img/avatar-local-cache/opencollective/heydon-pickering.jpg",
       "size": 2113
+    }
+  ],
+  "horacio-gonzalez": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "horacio-gonzalez",
+      "path": "img/avatar-local-cache/opencollective/horacio-gonzalez.jpg",
+      "size": 2133
     }
   ],
   "ivan-buncic": [
@@ -507,6 +541,23 @@
       "name": "manuel-matuzovic",
       "path": "img/avatar-local-cache/opencollective/manuel-matuzovic.jpg",
       "size": 2316
+    }
+  ],
+  "mark-boulton": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "mark-boulton",
+      "path": "img/avatar-local-cache/opencollective/mark-boulton.jpg",
+      "size": 1782
     }
   ],
   "mark-buskbjerg": [

@@ -91,9 +91,6 @@ blockquote img {
 .avatar {
 	vertical-align: middle;
 }
-.avatar[alt="Bryce Wray"] {
-	border-radius: 10%;
-}
 ul:not(.list-bare):not(.inlinelist) > li > a > .avatar {
 	width: auto;
 	height: 1.111111111111em; /* 20px /18 */
