@@ -66,6 +66,9 @@
 	.elv-nav-header > .lo > .lo-c {
 		flex-basis: 0;
 	}
+	.elv-nav-header > .lo > .lo-nocontentwrap {
+		flex-basis: auto;
+	}
 }
 
 .elv-nav-header b {
@@ -112,7 +115,7 @@
 	}
 }
 @media (min-width: 43.75em) { /* 700px */
-	.elv-docs .elv-nav-header {
+	.elv-header-docs .elv-nav-header {
 		float: left;
 		/* adjust for logo in Safari */
 		width: calc(100% - 4.303125em - 1em);

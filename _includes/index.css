@@ -471,6 +471,10 @@ main .elv-toc + h1 .direct-link {
 .elv-sg-component:after {
 	clear: both;
 }
+.elv-layout .elv-sg-component-full {
+	margin-left: -1rem;
+	margin-right: -1rem;
+}
 
 /* Language List */
 .elv-langlist {
