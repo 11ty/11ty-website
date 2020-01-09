@@ -7,7 +7,7 @@ headerClass: elv-header-default
 {% include "header.njk" %}
 
 {% if config.outdated -%}
-<div class="elv-callout elv-callout-warn elv-callout-sticky">This is an <strong>older version of Eleventy</strong>. <a href="https://www.11ty.dev/docs/versions/">Full release history</a>. Go to the <a href="https://www.11ty.dev/docs/">newest Eleventy docs</a>. You could try <a href="https://www.11ty.dev{{ page.url }}">{{ page.url }}</a> although it may not exist.</div>
+<div class="elv-callout elv-callout-warn elv-callout-sticky">This is an <strong>older version of Eleventy</strong>. Go to the <a href="https://www.11ty.dev/docs/">newest Eleventy docs</a> (current path: <a href="https://www.11ty.dev{{ page.url }}"><code>{{ page.url }}</code></a>) or the <a href="https://www.11ty.dev/docs/versions/">full release history</a>.</div>
 {% endif -%}
 {% if config.prerelease -%}
 <div class="elv-callout elv-callout-info elv-callout-sticky">This documentation is for an upcoming version of Eleventy. Go to the <a href="https://www.11ty.dev/docs/">latest stable version of Eleventy docs</a> or check out the <a href="https://www.11ty.dev/docs/versions/">full release history.</a></div>
