@@ -764,6 +764,23 @@
       "size": 1959
     }
   ],
+  "peter-dehaan": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "peter-dehaan",
+      "path": "img/avatar-local-cache/opencollective/peter-dehaan.jpg",
+      "size": 1756
+    }
+  ],
   "phil-hawksworth": [
     {
       "format": "jpeg",
