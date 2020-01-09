@@ -388,6 +388,22 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+#### getFilteredByTags( tagName, secondTagName, […] )
+
+Retrieve content that includes *all* of the tags passed in. Returns an array.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // Get only content that matches a tag
+  eleventyConfig.addCollection("myTravelPostsWithPhotos", function(collection) {
+    return collection.getFilteredByTags("post", "travel", "photo");
+  });
+};
+```
+
+
 #### getFilteredByGlob( glob )
 
 Returns an array. Will match an arbitrary glob (or an array of globs) against the input file’s full `inputPath` (including the input directory).
