@@ -45,7 +45,9 @@ const shortcodes = {
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.setDataDeepMerge(true);
-	// eleventyConfig.setQuietMode(true);
+	if(!process.env.ELEVENTY_PRODUCTION) {
+		eleventyConfig.setQuietMode(true);
+	}
 
 	eleventyConfig.setBrowserSyncConfig({
 		ui: false,

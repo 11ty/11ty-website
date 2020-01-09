@@ -185,6 +185,37 @@
       "size": 1621
     }
   ],
+  "bartzia": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "bartzia",
+      "path": "img/avatar-local-cache/twitter/bartzia.webp",
+      "size": 768
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "bartzia",
+      "path": "img/avatar-local-cache/twitter/bartzia.jpg",
+      "size": 1350
+    }
+  ],
   "bmeurer": [
     {
       "format": "webp",
@@ -1330,6 +1361,37 @@
       "name": "filamentgroup",
       "path": "img/avatar-local-cache/twitter/filamentgroup.png",
       "size": 871
+    }
+  ],
+  "frontendnorth": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "frontendnorth",
+      "path": "img/avatar-local-cache/twitter/frontendnorth.webp",
+      "size": 816
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "frontendnorth",
+      "path": "img/avatar-local-cache/twitter/frontendnorth.png",
+      "size": 1407
     }
   ],
   "geteslint": [

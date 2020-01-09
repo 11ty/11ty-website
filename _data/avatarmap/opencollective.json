@@ -118,6 +118,23 @@
       "size": 1660
     }
   ],
+  "brian-koser": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "brian-koser",
+      "path": "img/avatar-local-cache/opencollective/brian-koser.jpg",
+      "size": 2476
+    }
+  ],
   "bridget-stewart": [
     {
       "format": "jpeg",
