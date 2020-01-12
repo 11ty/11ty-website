@@ -3,6 +3,8 @@ eleventyNavigation:
   parent: Front Matter Data
   key: Customize Front Matter Parsing
   order: 1
+relatedLinks:
+  /docs/data-custom/: Custom Data File Formats
 ---
 # Customize Front Matter Parsing {% addedin "0.9.0" %}
 
