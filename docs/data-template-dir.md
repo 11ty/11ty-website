@@ -18,24 +18,20 @@ For example, consider a template located at `posts/subdir/my-first-blog-post.md`
 1. Template Data File (data is only applied to `posts/subdir/my-first-blog-post.md`)
     * `posts/subdir/my-first-blog-post.11tydata.js` {% minilink "/docs/data-js" %}{% addedin "0.5.3" %}JavaScript Data Files{% endminilink %}
     * `posts/subdir/my-first-blog-post.11tydata.json` {% addedin "0.5.3" %}
-    * `posts/subdir/my-first-blog-post.11tydata.*` [Custom formats](/docs/data-custom/) {% addedin "0.10.0" %}
     * `posts/subdir/my-first-blog-post.json`
-    * `posts/subdir/my-first-blog-post.*` [Custom formats](/docs/data-custom/) {% addedin "0.10.0" %}
 1. Directory Data File (data applies to all templates in `posts/subdir/*`)
     * `posts/subdir/subdir.11tydata.js` {% minilink "/docs/data-js" %}{% addedin "0.5.3" %}JavaScript Data Files{% endminilink %}
     * `posts/subdir/subdir.11tydata.json` {% addedin "0.5.3" %}
-    * `posts/subdir/subdir.11tydata.*` [Custom formats](/docs/data-custom/) {% addedin "0.10.0" %}
     * `posts/subdir/subdir.json`
-    * `posts/subdir/subdir.*` [Custom formats](/docs/data-custom/) {% addedin "0.10.0" %}
 1. Parent Directory Data File (data applies to all templates in `posts/**/*`, including subdirectories) {% addedin "0.2.15" %}
     * `posts/posts.11tydata.js` {% minilink "/docs/data-js" %}{% addedin "0.5.3" %}JavaScript Data Files{% endminilink %}
     * `posts/posts.11tydata.json` {% addedin "0.5.3" %}
-    * `posts/posts.11tydata.*` [Custom formats](/docs/data-custom/) {% addedin "0.10.0" %}
     * `posts/posts.json`
-    * `posts/posts.*` [Custom formats](/docs/data-custom/) {% addedin "0.10.0" %}
-1. [Global Data Files](/docs/data-global/) in `_data/*` (`.js` or `.json` files) available to all templates. Also includes any [Custom formats](/docs/data-custom/) {% addedin "0.10.0" %}.
+1. [Global Data Files](/docs/data-global/) in `_data/*` (`.js` or `.json` files) available to all templates.
 
 {% callout "info" %}Note that the name of the data file must match either the post or the directory it resides within.{% endcallout %}
+
+Note that any [Custom Formats](/docs/data-custom/#ordering-in-the-data-cascade) {% addedin "0.10.0" %} specified in your configuration will also be taken into account at a lower priority than their JavaScript or JSON counterparts.
 
 ### Change the `.11tydata.js` file suffix {% addedin "0.5.3" %}
 

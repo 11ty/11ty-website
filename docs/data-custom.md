@@ -47,7 +47,7 @@ module.exports = eleventyConfig => {
 ```
 
 
-### Another file extension for JSON
+### A custom JSON file extension
 
 {% codetitle ".eleventy.js" %}
 
@@ -59,7 +59,7 @@ module.exports = eleventyConfig => {
 
 ## Ordering in the Data Cascade
 
-Note that in the [data cascade](/docs/data-cascade) JavaScript files take priority over JSON. The custom data file formats you add will be treated as lower priority than both JavaScript and JSON. There is a full example of this on the [Template and Directory Specific Data Files docs](/docs/data-template-dir/).
+Note that in the [data cascade](/docs/data-cascade) there is a specific confliction resolution order when the same keys are used in data files. For example, [JavaScript files take priority over JSON](/docs/data-template-dir/). These new custom data file formats are treated as lower priority than both JavaScript and JSON.
 
 If you add multiple file extensions, the latter ones take priority over the earlier ones. In the following example, if there is ever conflicting data between `*.toml` and `*.yaml` files, the `yaml` file will take precedence.
 
@@ -77,3 +77,17 @@ module.exports = eleventyConfig => {
   eleventyConfig.addDataExtension("yaml", contents => yaml.safeLoad(contents));
 };
 ```
+
+### Example
+
+Consider the [template data file search](/docs/data-template-dir/) for a `my-first-blog-post.md` file. The order with custom `toml` and `yaml` formats (as seen above) will go as follows:
+
+* `my-first-blog-post.11tydata.js`
+* `my-first-blog-post.11tydata.json`
+* `my-first-blog-post.11tydata.yaml` (custom)
+* `my-first-blog-post.11tydata.toml` (custom)
+* `my-first-blog-post.json`
+* `my-first-blog-post.yaml` (custom)
+* `my-first-blog-post.toml` (custom)
+
+This same ordering would be used for [template directory data files](/docs/data-template-dir/) as well.
