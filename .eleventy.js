@@ -113,9 +113,14 @@ ${text.trim()}
 			version = version.version;
 		}
 
+		let versionPrefix = "";
+		if(("" + version).match(/^[0-9]/)) {
+			versionPrefix = "v";
+		}
+
 		tag = tag || "span";
 
-		return `<${tag} class="minilink minilink-addedin${extraClass ? ` ${extraClass}`: ""}">New in v${version}</${tag}>`;
+		return `<${tag} class="minilink minilink-addedin${extraClass ? ` ${extraClass}`: ""}">New in ${versionPrefix}${version}</${tag}>`;
 	});
 
 	eleventyConfig.addPassthroughCopy({
@@ -304,7 +309,7 @@ ${text.trim()}
 
 	// Until https://github.com/valeriangalliat/markdown-it-anchor/issues/58 is fixed
 	eleventyConfig.addTransform("remove-aria-hidden-markdown-anchor", function(content, outputPath) {
-		if( outputPath.endsWith(".html") ) {
+		if( outputPath && outputPath.endsWith(".html") ) {
 			return content.replace(/ aria\-hidden\=\"true\"\>\#\<\/a\>/g, ` title="Direct link to this heading">#</a>`);
 		}
 
@@ -313,7 +318,7 @@ ${text.trim()}
 
 	if( cfg.minifyHtml ) {
 		eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-			if( process.env.ELEVENTY_PRODUCTION && outputPath.endsWith(".html") ) {
+			if( process.env.ELEVENTY_PRODUCTION && outputPath && outputPath.endsWith(".html") ) {
 				let minified = htmlmin.minify(content, {
 					useShortDoctype: true,
 					removeComments: true,

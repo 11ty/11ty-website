@@ -28,7 +28,7 @@ headerClass: elv-header-default
 	</div>
 {%- endif %}
 {%- if ignoreFooterTestimonial -%}
-{%- elseif page.url != "/" and not page.url.endsWith("/docs/") and not page.url.endsWith("/docs/testimonials/")  %}
+{%- elseif page.url and page.url != "/" and not page.url.endsWith("/docs/") and not page.url.endsWith("/docs/testimonials/")  %}
 	{%- set randomTestimonial = testimonials | randompick %}
 	{%- testimonial randomTestimonial %}
 {%- endif %}

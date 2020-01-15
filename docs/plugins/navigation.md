@@ -8,7 +8,7 @@ eleventyNavigation:
 
 A plugin for creating hierarchical navigation in Eleventy projects. Supports breadcrumbs too! Used in production on this very website!
 
-* This documentation is for `eleventy-navigation` `v0.1.3`.
+* This documentation is for `eleventy-navigation` `v0.1.4`.
 * [GitHub](https://github.com/11ty/eleventy-navigation).
 
 ## Contents
@@ -130,6 +130,22 @@ eleventyNavigation:
   order: 2
 ---
 ```
+
+### Overriding the URL
+
+{% addedin "Navigation v0.1.4" %} If you’d like to add a link to an external URL that is not on your local page, create a new template for it and add a `url` key.
+
+```yaml
+---
+eleventyNavigation:
+  key: Zach’s site
+  url: https://www.zachleat.com/
+permalink: false
+---
+```
+
+Use [`permalink: false`](/docs/permalinks/#permalink-false) to ensure that this meta-template doesn’t create a file in your Eleventy site output.
+
 
 ## Rendering the Navigation Bar (Nunjucks-only)
 
