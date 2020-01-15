@@ -10,6 +10,9 @@ const skipUrls = [];
 const skipSlugs = {
 	opencollective: ["open-source-collective-501(c)(6)"]
 };
+const hiRes = {
+	opencollective: ["sanity.io"]
+};
 
 async function fetchAvatar(name, image, cacheName) {
 	let slug = slugify(name).toLowerCase();
@@ -20,7 +23,11 @@ async function fetchAvatar(name, image, cacheName) {
 		defer(async function() {
 			if(image) {
 				let avatarCache = new AvatarLocalCache();
-				avatarCache.width = 73;
+				if(hiRes[cacheName] && hiRes[cacheName].indexOf(slug) > -1) {
+					avatarCache.width = 150;
+				} else {
+					avatarCache.width = 73;
+				}
 				if(cacheName === "opencollective") {
 					avatarCache.formats = ["jpeg"];
 				}

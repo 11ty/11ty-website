@@ -76,3 +76,28 @@
     border-top: 1px solid var(--lo-separator-v-color, var(--lo-separator-color, var(--lo-separator-color-fallback)));
   }
 }
+
+.lo-c-align-v-center,
+.lo-c-align-v-end,
+.lo-c-align-h-center,
+.lo-c-align-h-end {
+  display: flex;
+}
+.lo-c-align-v-center {
+  align-items: center;
+}
+.lo-c-align-v-end {
+  align-items: flex-end;
+}
+.lo-c-align-h-center {
+  justify-content: center;
+}
+.lo-c-align-h-end {
+  justify-content: flex-end;
+}
+.lo-c-align-v-center > .flu,
+.lo-c-align-v-end > .flu,
+.lo-c-align-h-center > .flu,
+.lo-c-align-h-end > .flu {
+  flex-grow: 1;
+}

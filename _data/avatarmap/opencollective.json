@@ -900,6 +900,23 @@
       "size": 1326
     }
   ],
+  "sanity.io": [
+    {
+      "format": "jpeg",
+      "width": 150,
+      "height": 150,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "sanity.io",
+      "path": "img/avatar-local-cache/opencollective/sanity.io.jpg",
+      "size": 2471
+    }
+  ],
   "sebastian-murphy": [
     {
       "format": "jpeg",
@@ -915,6 +932,23 @@
       "name": "sebastian-murphy",
       "path": "img/avatar-local-cache/opencollective/sebastian-murphy.jpg",
       "size": 1922
+    }
+  ],
+  "soren-birkemeyer": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "soren-birkemeyer",
+      "path": "img/avatar-local-cache/opencollective/soren-birkemeyer.jpg",
+      "size": 1916
     }
   ],
   "todd-libby": [

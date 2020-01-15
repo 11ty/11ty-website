@@ -14,9 +14,11 @@ Eleventy is made possible by financial contributions from these lovely people:
 {%- set nameToSlug = supporter.name | slug | lower -%}
 	<div class="lo-c">
     <a href="{{ supporter.profile }}" class="elv-externalexempt supporters-link">{% avatarlocalcache "opencollective", nameToSlug, supporter.name %}{{ supporter.name }}</a>
-    <span class="lo">
-        <span class="lo-c supporters-tier">{% if supporter.tier and supporter.isActive %}{% emoji "📅" %} Monthly{% endif %} Supporter</span>
-        <span class="lo-c supporters-hearts">{% supporterAmount supporter.totalAmountDonated %}</span>
+    <span class="lo lo-inline">
+        <span class="lo-c lo-nocontentwrap supporters-hearts">{% supporterAmount supporter.totalAmountDonated %}</span>
+        {%- if supporter.tier and supporter.isActive %}
+        <span class="lo-c supporters-tier">{% emoji "📅" %} Monthly</span>
+        {%- endif %}
     </span>
   </div>
 {%- endif %}{% endfor %}
@@ -25,3 +27,10 @@ Eleventy is made possible by financial contributions from these lovely people:
 </div>
 
 There are <a href="/docs/how-to-support/"><strong>other ways to support Eleventy</strong> too</a>!
+
+{#
+---
+
+Eleventy currently has `${{ opencollectiveMonthly }}` in recurring monthly donations. (Yearly estimate: `${{ opencollectiveMonthly * 12 }}`)
+
+#}

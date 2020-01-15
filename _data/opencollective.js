@@ -10,7 +10,7 @@ function getCacheKey() {
 }
 
 function isMonthlyBacker(backer) {
-	return backer.role === "BACKER" && backer.tier;
+	return backer.role === "BACKER" && backer.tier && backer.isActive;
 }
 
 function hasMonthlyBackerProfile(backers, compareBacker) {

@@ -73,7 +73,6 @@
 }
 .supporters-facepile .avatar {
 	margin-bottom: 0;
-	/*vertical-align: top;*/
 }
 .supporters-facepile .supporters-active {
 	font-weight: 900;
@@ -109,6 +108,21 @@
 }
 .is-eleventy-supporter .facepile-supporters .supporters-active img {
 	filter: grayscale(0);
+}
+/* Gold supporters */
+.supporters-gold {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+.supporters-gold .avatar {
+	max-width: 75px;
+	max-height: 75px;
+}
+.supporters-gold .subhed strong {
+	color: #867202;
+}
+.supporters-gold + .facepile-supporters {
+	margin-top: 0;
 }
 
 /* Modify content */
