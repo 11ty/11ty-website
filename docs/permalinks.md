@@ -76,7 +76,7 @@ Assuming your `--output` directory is the default, `_site`:
     <tbody>
         <tr>
             <th>Input File</th>
-            <td><code>subdir/template/template.njk</code></td>
+            <td><code>subdir/template/template.njk</code> or <code>subdir/template/index.njk</code></td>
         </tr>
         <tr>
             <th>Output File</th>
