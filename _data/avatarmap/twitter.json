@@ -1469,7 +1469,7 @@
       "hasAlpha": false,
       "name": "hankchizljaw",
       "path": "img/avatar-local-cache/twitter/hankchizljaw.webp",
-      "size": 1276
+      "size": 1694
     },
     {
       "format": "jpeg",
@@ -1484,7 +1484,7 @@
       "hasAlpha": false,
       "name": "hankchizljaw",
       "path": "img/avatar-local-cache/twitter/hankchizljaw.jpg",
-      "size": 1901
+      "size": 2210
     }
   ],
   "heydonworks": [
@@ -2043,6 +2043,37 @@
       "name": "joshuakeel",
       "path": "img/avatar-local-cache/twitter/joshuakeel.jpg",
       "size": 1923
+    }
+  ],
+  "juanfernandes": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "juanfernandes",
+      "path": "img/avatar-local-cache/twitter/juanfernandes.webp",
+      "size": 1704
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "juanfernandes",
+      "path": "img/avatar-local-cache/twitter/juanfernandes.jpg",
+      "size": 2246
     }
   ],
   "justinfagnani": [
@@ -2678,7 +2709,7 @@
       "hasAlpha": false,
       "name": "misprintedtype",
       "path": "img/avatar-local-cache/twitter/misprintedtype.webp",
-      "size": 1692
+      "size": 1486
     },
     {
       "format": "jpeg",
@@ -2693,7 +2724,7 @@
       "hasAlpha": false,
       "name": "misprintedtype",
       "path": "img/avatar-local-cache/twitter/misprintedtype.jpg",
-      "size": 2287
+      "size": 2091
     }
   ],
   "mmatuzo": [
@@ -3360,7 +3391,7 @@
       "hasAlpha": false,
       "name": "scottishstoater",
       "path": "img/avatar-local-cache/twitter/scottishstoater.webp",
-      "size": 836
+      "size": 1274
     },
     {
       "format": "jpeg",
@@ -3375,7 +3406,38 @@
       "hasAlpha": false,
       "name": "scottishstoater",
       "path": "img/avatar-local-cache/twitter/scottishstoater.jpg",
-      "size": 1444
+      "size": 1831
+    }
+  ],
+  "screenspan": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "screenspan",
+      "path": "img/avatar-local-cache/twitter/screenspan.webp",
+      "size": 1478
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "screenspan",
+      "path": "img/avatar-local-cache/twitter/screenspan.jpg",
+      "size": 2093
     }
   ],
   "shannonethomas": [

@@ -64,7 +64,7 @@
       "hasAlpha": false,
       "name": "andy-bell",
       "path": "img/avatar-local-cache/opencollective/andy-bell.jpg",
-      "size": 1780
+      "size": 2058
     }
   ],
   "ben-brignell": [
@@ -133,6 +133,40 @@
       "name": "brian-koser",
       "path": "img/avatar-local-cache/opencollective/brian-koser.jpg",
       "size": 2476
+    }
+  ],
+  "brian-louis-ramirez": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "brian-louis-ramirez",
+      "path": "img/avatar-local-cache/opencollective/brian-louis-ramirez.jpg",
+      "size": 2033
+    }
+  ],
+  "brian-zerangue": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "brian-zerangue",
+      "path": "img/avatar-local-cache/opencollective/brian-zerangue.jpg",
+      "size": 1481
     }
   ],
   "bridget-stewart": [
@@ -337,6 +371,23 @@
       "name": "frank-taillandier",
       "path": "img/avatar-local-cache/opencollective/frank-taillandier.jpg",
       "size": 1748
+    }
+  ],
+  "glenn-dixon": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 95,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "glenn-dixon",
+      "path": "img/avatar-local-cache/opencollective/glenn-dixon.jpg",
+      "size": 2068
     }
   ],
   "hans-gerwitz": [
