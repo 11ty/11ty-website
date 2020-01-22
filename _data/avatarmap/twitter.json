@@ -2231,6 +2231,37 @@
       "size": 1464
     }
   ],
+  "lahi_tapiola": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "lahi_tapiola",
+      "path": "img/avatar-local-cache/twitter/lahi_tapiola.webp",
+      "size": 1262
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "lahi_tapiola",
+      "path": "img/avatar-local-cache/twitter/lahi_tapiola.jpg",
+      "size": 2153
+    }
+  ],
   "layoutplusplus": [
     {
       "format": "webp",

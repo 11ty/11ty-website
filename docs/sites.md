@@ -1,11 +1,13 @@
 ---
 eleventyNavigation:
   parent: Supporting Eleventy
-  key: Sites Using Eleventy
+  key: Built With Eleventy
   order: 3
 ---
 
-# {{ sites | getsize }} Sites Using Eleventy
+# Built Using Eleventy
+
+{{ sites | getsize }} sites featured below. {% addToSampleSites %}
 
 <div class="lo sites-lo" style="--lo-margin-h: 2em; --lo-margin-v: 1em; --lo-stackpoint: 31.25em;">
 {% for key, site in sites | shuffle -%}
