@@ -408,6 +408,10 @@ module.exports = function(eleventyConfig) {
 
 Returns an array. Will match an arbitrary glob (or an array of globs) against the input file’s full `inputPath` (including the input directory).
 
+{% callout "info" %}
+<strong>Note</strong>: <code>getFilteredByGlob</code> filters results returned from <a href="#getallsorted()"><code>getAllSorted</code></a>. It will not search the file system for new templates. It will not match files in your <code>_includes</code> directory or anything excluded by <code>eleventyExcludeFromCollections</code>.
+{% endcallout %}
+
 {% codetitle ".eleventy.js" %}
 {% addedin "0.2.14" %}
 
