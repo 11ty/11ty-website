@@ -322,6 +322,23 @@
       "size": 1988
     }
   ],
+  "devin-clark": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "devin-clark",
+      "path": "img/avatar-local-cache/opencollective/devin-clark.jpg",
+      "size": 1742
+    }
+  ],
   "ed-spencer": [
     {
       "format": "jpeg",
@@ -439,6 +456,23 @@
       "name": "horacio-gonzalez",
       "path": "img/avatar-local-cache/opencollective/horacio-gonzalez.jpg",
       "size": 2133
+    }
+  ],
+  "inventage-ag": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "inventage-ag",
+      "path": "img/avatar-local-cache/opencollective/inventage-ag.jpg",
+      "size": 825
     }
   ],
   "ivan-buncic": [
