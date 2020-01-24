@@ -9,4 +9,7 @@ for(let backer of backers) {
 	monthlyDonations += backer.lastTransactionAmount;
 }
 
-module.exports = monthlyDonations;
+module.exports = {
+	contributorCount: backers.length,
+	recurringAmount: monthlyDonations
+};

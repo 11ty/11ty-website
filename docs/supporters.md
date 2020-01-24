@@ -27,10 +27,3 @@ Eleventy is made possible by financial contributions from these lovely people:
 </div>
 
 There are <a href="/docs/how-to-support/"><strong>other ways to support Eleventy</strong> too</a>!
-
-{#
----
-
-Eleventy currently has `${{ opencollectiveMonthly }}` in recurring monthly donations. (Yearly estimate: `${{ opencollectiveMonthly * 12 }}`)
-
-#}
