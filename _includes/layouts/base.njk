@@ -2,6 +2,7 @@
 social:
   imgsrc: https://www.11ty.dev/img/open-graph.jpg
   imgalt: The 11ty logo text with a small floating possum on a balloon
+  description: Eleventy is a simpler static site generator.
 ---
 <!doctype html>
 <html lang="en"{% if templateClass %} class="{{ templateClass }}"{% endif %}>
@@ -20,8 +21,8 @@ social:
 		<meta property="og:url" content="https://www.11ty.dev/">
 		<meta property="og:site_name" content="Eleventy">
 		<meta property="og:locale" content="en_US">
-		<meta property="og:title" content="{{ subtitleText }}">
-		<meta property="og:description" content="{{ subtitleText }}">
+		<meta property="og:title" content="{{ subtitle }}">
+		<meta property="og:description" content="{{ social.description }}">
 		<meta property="og:image" content="{{ social.imgsrc }}">
 		<meta property="og:image:width" content="1280">
 		<meta property="og:image:height" content="640">
@@ -33,7 +34,7 @@ social:
 		<meta property="twitter:creator" content="@zachleat">
 		<meta property="twitter:url" content="https://www.11ty.dev/">
 		<meta property="twitter:title" content="{{ subtitleText }}">
-		<meta property="twitter:description" content="{{ subtitleText }}">
+		<meta property="twitter:description" content="{{ social.description }}">
 		<meta property="twitter:image" content="{{ social.imgsrc }}">
 		<meta property="twitter:image:alt" content="{{ social.imgalt }}">
 
