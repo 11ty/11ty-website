@@ -101,7 +101,19 @@ permalink: "this-is-a-new-path/subdirectory/testing/index.html"
 ---
 ```
 
-The above will write to `_site/this-is-a-new-path/subdirectory/testing/index.html`.
+The above is functionally equivalent to:
+
+{% codetitle "YAML Front Matter", "Syntax" %}
+
+```
+---
+permalink: "this-is-a-new-path/subdirectory/testing/"
+---
+```
+
+Both of the above examples will write to `_site/this-is-a-new-path/subdirectory/testing/index.html`.
+
+{% callout "warn" %}While <code>index.html</code> is optional, it is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a> to leave off the trailing slash! If you forget it, the browser may attempt to download the file instead of displaying it (unless you’ve done some extra work to set up your <code>Content-Type</code> headers correctly).{% endcallout %}
 
 {% callout "info" %}If multiple input files attempt to write to the same permalink output file, Eleventy will throw an error {% addedin "0.9.0" %}.{% endcallout %}
 

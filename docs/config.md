@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: Configuration
-  order: 5
+  order: 6
 ---
 # Configuration
 

@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: Using Data
-  order: 6
+  order: 5
 ---
 # Using Data
 
