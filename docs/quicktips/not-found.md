@@ -60,6 +60,9 @@ module.exports = function(eleventyConfig) {
         bs.addMiddleware("*", (req, res) => {
           // Provides the 404 content without redirect.
           res.write(content_404);
+          // Add 404 http status code in request header.
+          // res.writeHead(404, { "Content-Type": "text/html" });
+          res.writeHead(404);
           res.end();
         });
       }
