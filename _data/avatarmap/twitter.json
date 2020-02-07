@@ -681,6 +681,37 @@
       "size": 1667
     }
   ],
+  "chriskrycho": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "chriskrycho",
+      "path": "img/avatar-local-cache/twitter/chriskrycho.webp",
+      "size": 1372
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "chriskrycho",
+      "path": "img/avatar-local-cache/twitter/chriskrycho.jpg",
+      "size": 2008
+    }
+  ],
   "christian_fei": [
     {
       "format": "webp",
@@ -1301,6 +1332,37 @@
       "size": 999
     }
   ],
+  "equinusocio": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "equinusocio",
+      "path": "img/avatar-local-cache/twitter/equinusocio.webp",
+      "size": 2298
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "equinusocio",
+      "path": "img/avatar-local-cache/twitter/equinusocio.jpg",
+      "size": 2796
+    }
+  ],
   "ffconf": [
     {
       "format": "webp",
@@ -1640,6 +1702,37 @@
       "name": "icemagic",
       "path": "img/avatar-local-cache/twitter/icemagic.jpg",
       "size": 2128
+    }
+  ],
+  "ivoputzer": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "ivoputzer",
+      "path": "img/avatar-local-cache/twitter/ivoputzer.webp",
+      "size": 1506
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "ivoputzer",
+      "path": "img/avatar-local-cache/twitter/ivoputzer.jpg",
+      "size": 2013
     }
   ],
   "jamesdoc": [

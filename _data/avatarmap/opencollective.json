@@ -217,7 +217,7 @@
       "hasAlpha": false,
       "name": "chris-collins",
       "path": "img/avatar-local-cache/opencollective/chris-collins.jpg",
-      "size": 1380
+      "size": 1745
     }
   ],
   "christian-fei": [
@@ -322,6 +322,23 @@
       "size": 1988
     }
   ],
+  "david-beesley": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "david-beesley",
+      "path": "img/avatar-local-cache/opencollective/david-beesley.jpg",
+      "size": 1634
+    }
+  ],
   "devin-clark": [
     {
       "format": "jpeg",
@@ -354,6 +371,23 @@
       "name": "ed-spencer",
       "path": "img/avatar-local-cache/opencollective/ed-spencer.jpg",
       "size": 2111
+    }
+  ],
+  "eli-levit": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "eli-levit",
+      "path": "img/avatar-local-cache/opencollective/eli-levit.jpg",
+      "size": 1526
     }
   ],
   "eric-bailey": [
@@ -541,6 +575,23 @@
       "name": "joel-krause",
       "path": "img/avatar-local-cache/opencollective/joel-krause.jpg",
       "size": 1911
+    }
+  ],
+  "john-sj-anderson": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "john-sj-anderson",
+      "path": "img/avatar-local-cache/opencollective/john-sj-anderson.jpg",
+      "size": 2161
     }
   ],
   "kayce-basques": [
@@ -983,6 +1034,23 @@
       "name": "robin-rendle",
       "path": "img/avatar-local-cache/opencollective/robin-rendle.jpg",
       "size": 1326
+    }
+  ],
+  "ryan-swaney": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "ryan-swaney",
+      "path": "img/avatar-local-cache/opencollective/ryan-swaney.jpg",
+      "size": 1339
     }
   ],
   "sanity.io": [
