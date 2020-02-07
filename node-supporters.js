@@ -52,7 +52,9 @@ query eleventyMembers {
 `;
 
 (async function() {
-  if(process.env.OPENCOLLECT_API_KEY) {
+  if(!process.env.OPENCOLLECT_API_KEY) {
+    console.log( "Missing OPENCOLLECT_API_KEY. Do you have a .env file?" );
+  } else {
     let url = "https://api.opencollective.com/graphql/v2";
     let opts = {
       method: "POST",
