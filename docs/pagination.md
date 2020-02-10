@@ -246,7 +246,7 @@ You can even use template logic here too:
 {% raw %}
 ```markdown
 ---
-permalink: "different/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+permalink: "different/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 ---
 ```
 {% endraw %}
