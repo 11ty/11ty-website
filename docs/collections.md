@@ -412,6 +412,10 @@ Returns an array. Will match an arbitrary glob (or an array of globs) against th
 <strong>Note</strong>: <code>getFilteredByGlob</code> filters results returned from <a href="#getallsorted()"><code>getAllSorted</code></a>. It will not search the file system for new templates. It will not match files in your <code>_includes</code> directory or anything excluded by <code>eleventyExcludeFromCollections</code>.
 {% endcallout %}
 
+{% callout "info" %}
+<strong>Note</strong>: <code>getFilteredByGlob</code> will not "find" files that are not supported by Eleventy. For example, a file with the extension <code>.ray</code> will be ignored even if it would match the glob.
+{% endcallout %}
+
 {% codetitle ".eleventy.js" %}
 {% addedin "0.2.14" %}
 
