@@ -94,5 +94,11 @@
 		"name": "1y",
 		"description": "A template project to build a short URL manager with Eleventy",
 		"author": "nhoizey"
+	},
+	{
+		"url": "https://github.com/eastslopestudio/eleventy-starter",
+		"name": "eleventy-starter",
+		"description": "A project scaffold for quickly starting a site build with Tailwindcss, PurgeCSS, Parcel JS",
+		"author": "ryanscherler"
 	}
 ]
