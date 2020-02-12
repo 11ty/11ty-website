@@ -88,5 +88,11 @@
 		"name": "XITY Starter",
 		"description": "A bare bone blog-ready starter based on PostCSS, Native Elements and Parcel. With RSS feed and service worker out of the box!",
 		"author": "equinusocio"
+	},
+	{
+		"url": "https://github.com/nhoizey/1y",
+		"name": "1y",
+		"description": "A template project to build a short URL manager with Eleventy",
+		"author": "nhoizey"
 	}
 ]
