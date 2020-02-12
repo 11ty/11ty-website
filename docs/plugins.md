@@ -33,6 +33,7 @@ All official plugins live under the `@11ty` npm organization and plugin names wi
 * [eleventy-plugin-markdown-shortcode](https://www.npmjs.com/package/eleventy-plugin-markdown-shortcode) by [Tyler Williams](https://ogdenstudios.xyz) adds a universal shortcode to render markdown. 
 * [eleventy-plugin-sass](https://www.npmjs.com/package/eleventy-plugin-sass) by [Maarten Schroeven](https://github.com/Sonaryr) will add the ability to use Sass for your stylesheets
 * [eleventy-plugin-youtube-embed](https://www.npmjs.com/package/eleventy-plugin-youtube-embed) by [Graham F. Scott](https://twitter.com/gfscott) automatically embeds YouTube videos based on just their URLs.
+* [@infinity-interactive/eleventy-plugin-injector](https://www.npmjs.com/package/@infinity-interactive/eleventy-plugin-injector) by [John Anderson](https://twitter.com/genehack) allows you to run an arbitrary callback at build time or when using `--serve` or `--watch`
 * [**Search for `eleventy-plugin` on `npm`**](https://www.npmjs.com/search?q=eleventy-plugin)
 
 
