@@ -100,5 +100,11 @@
 		"name": "eleventy-starter",
 		"description": "A project scaffold for quickly starting a site build with Tailwindcss, PurgeCSS, Parcel JS",
 		"author": "ryanscherler"
-	}
+	},
+  {
+		"url": "https://github.com/deviousdodo/elevenpack",
+		"name": "Elevenpack",
+		"description": "An Eleventy starter pack with webpack, PostCSS and cache busting for production deployments.",
+		"author": "deviousdodo"
+  }
 ]
