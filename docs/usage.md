@@ -20,68 +20,72 @@ If you’re using a global install of Eleventy, remove `npx @11ty/` from the beg
 eleventy
 ```
 
-{% codewithprompt "npxeleventy", "last" %}
+```bash
 # `npx @11ty/eleventy` is the same as:
---input=. --output=_site
-{% endcodewithprompt %}
+npx @11ty/eleventy --input=. --output=_site
+```
 
 Read more about [`--input`](/docs/config/#input-directory) and [`--output`](/docs/config/#output-directory).
 
 A hypothetical `template.md` in the current directory would be rendered to `_site/template/index.html`. Read more at [Permalinks](/docs/permalinks/).
 
-{% codewithprompt "npxeleventy", "last" %}
+```bash
 # Use only a subset of template types
---formats=md,html,ejs
-{% endcodewithprompt %}
+npx @11ty/eleventy --formats=md,html,ejs
+```
 
-{% codewithprompt "npxeleventy", "last" %}
+```bash
 # Find out the most up-to-date list of commands (there are more)
---help
-{% endcodewithprompt %}
+npx @11ty/eleventy --help
+```
 
 ### Re-run Eleventy when you save
 
-{% codewithprompt "npxeleventy", "last" %}
+```bash
 # Boot up a Browsersync web server to apply changes and
 # refresh automatically. We’ll also --watch for you.
---serve
-{% endcodewithprompt %}
+npx @11ty/eleventy --serve
+```
 
-{% codewithprompt "npxeleventy", "last" %}
+
+```bash
 # Change the web server’s port—use localhost:8081
---serve --port=8081
-{% endcodewithprompt %}
+npx @11ty/eleventy --serve --port=8081
+```
+
 
 {% callout "info" %}<strong>Important Note</strong>: <a href="https://browsersync.io/docs/#requirements">Browsersync requires a <code>&lt;body&gt;</code> tag in your template</a> for live-reload to work properly.{% endcallout %}
 
-{% codewithprompt "npxeleventy", "last" %}
+```bash
 # Automatically run when input template files change.
 # Useful if you have your own web server.
---watch
-{% endcodewithprompt %}
+npx @11ty/eleventy --watch
+```
+
 
 ### `--quiet` if the Output is Too Noisy
 
-{% codewithprompt "npxeleventy", "last" %}
+```bash
 # Shhhhh—Don’t log so much to the console
---quiet
-{% endcodewithprompt %}
+npx @11ty/eleventy --quiet
+```
+
 
 ### `--dryrun` to do a Little Testing
 
 Runs without writing to the file system. Useful when [debugging](/docs/debugging/).
 
-{% codewithprompt "npxeleventy", "last" %}
+```bash
 # Run Eleventy but don’t write any files
---dryrun
-{% endcodewithprompt %}
+npx @11ty/eleventy --dryrun
+```
 
 ### `--config` to Change the Config file name
 
-{% codewithprompt "npxeleventy", "last" %}
+```bash
 # Override the default eleventy project config filename (.eleventy.js)
---config=myeleventyconfig.js
-{% endcodewithprompt %}
+npx @11ty/eleventy --config=myeleventyconfig.js
+```
 
 ## Examples
 
