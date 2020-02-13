@@ -93,10 +93,10 @@ npx @11ty/eleventy --config=myeleventyconfig.js
 
 Yes, you can use the same `input` and `output` directories, like so:
 
-{% codewithprompt "npxeleventy", "last" %}
+```bash
 # Parse and write Markdown to HTML, respecting directory structure.
---input=. --output=. --formats=md
-{% endcodewithprompt %}
+npx @11ty/eleventy --input=. --output=. --formats=md
+```
 
 {% callout "warn" %}Careful with <code>--formats=html</code> here! If you run eleventy more than once, it’ll try to process the output files too. Read more at the <a href="/docs/languages/html/#using-the-same-input-and-output-directories">HTML template docs</a>.{% endcallout %}
 
