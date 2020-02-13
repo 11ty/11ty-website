@@ -94,5 +94,11 @@
 		"name": "1y",
 		"description": "A template project to build a short URL manager with Eleventy",
 		"author": "nhoizey"
+	},
+	{
+		"url": "https://github.com/deviousdodo/elevenpack",
+		"name": "Elevenpack",
+		"description": "An Eleventy starter pack with webpack, PostCSS and cache busting for production deployments.",
+		"author": "deviousdodo"
 	}
 ]
