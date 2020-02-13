@@ -170,5 +170,11 @@
 		"twitter": "matthewcp",
 		"name": "Matthew Phillips",
 		"source": "https://twitter.com/matthewcp/status/1213129379414446080"
+	},
+	{
+		"text": "Eleventy is as close as we’ve gotten to how the web was always meant to be built (ya’ know, once we realized the value of templates and JavaScript).",
+		"twitter": "reubenlillie",
+		"name": "Reuben L. Lillie",
+		"source": "https://twitter.com/reubenlillie/"
 	}
 ]
