@@ -6,27 +6,22 @@ labels: new-site!
 assignees: ''
 
 ---
+If you want to list your site on 11ty.dev you must create a Pull Request. Unfortunately we can no longer keep up with the scale of creating these files manually from GitHub issues.
 
-Please supply the following information:
-
-* URL of the live site
-* Name of the site
-* A text description of the site
-* Twitter avatar of either the site or the author
-* _Optional_: URL to the source code
-
----
-
-Sometimes it can take a little bit to get all of these on the live site. If you want a faster turnaround (or want to be nice to our lovely maintainers ❤️), please open a pull request instead!
-
-Built with Eleventy sites each have a separate file in `_data/sites/*.json` with this format: (the `source_url` field is optional)
+To do this, create a new file in `_data/sites/*.json` with this format: (the `source_url` field is optional)
 
 ```json
 {
 	"url": "https://www.zachleat.com/",
-	"name": "Zach Leatherman",
+	"name": "Zach Leatherman’s Blog",
 	"description": "A 10+ years-running blog about web development.",
 	"twitter": "zachleat",
 	"source_url": "https://github.com/zachleat/zachleat.com"
 }
 ```
+
+* `url`: URL of the live site
+* `name`: Name of the site
+* `description`: A short text description of the site
+* `twitter`: Twitter avatar of either the site or the author (optional but recommended)
+* `source_url`: URL to the source code (optional)
