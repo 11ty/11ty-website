@@ -13,8 +13,7 @@ Pagination can be used for traditional style pagination outputs like `/result/pa
 
 ## An Example
 
-Let's look at an example where we dynamically build pages based on data from a json file. First let's consider this simple data file stores in `_data\possums.json`:
-
+Let's look at an example where we dynamically build pages based on data from a json file. First let's consider this simple data file stores in `_data/possums.json`:
 ```js
 [
   {
