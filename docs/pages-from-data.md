@@ -7,7 +7,7 @@ eleventyNavigation:
 ---
 # Create Pages From Data
 
-While it can be confusing for beginners to Eleventy to learn this, but the [Pagination feature](/docs/pagination/) is used for iterating over any data to create multiple output files.
+The [Pagination feature](/docs/pagination/) is used for iterating over any data to create multiple output files.
 
 Pagination can be used for traditional style pagination outputs like `/result/page-0/`, `/result/page-1/`. Pagination can also iterate over an object too and output any `permalink` value!
 
