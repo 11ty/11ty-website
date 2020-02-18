@@ -46,6 +46,7 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 * [Using Eleventy to Generate a Ghost Blog](https://david.darn.es/tutorial/2019/06/01/use-eleventy-to-generate-a-ghost-blog/) by {% avatarlocalcache "twitter", "DavidDarnes" %}David Darnes
 * [Consuming a headless CMS GraphQL API with Eleventy](https://www.webstoemp.com/blog/headless-cms-graphql-api-eleventy/) by {% avatarlocalcache "twitter", "jeromecoupe" %}Jérôme Coupé
 * [Import Tweets from Twitter API](https://www.d-hagemeier.com/en/articles/embed-twitter/) by {% avatarlocalcache "twitter", "DennisView" %}Dennis Hagemeier
+* [Convert a WordPress blog to Eleventy](https://www.joshcanhelp.com/taking-wordpress-to-eleventy/) by {% avatarlocalcache "twitter", "joshcanhelp" %}Josh Cunningham
 
 ### Tooling Integration
 
