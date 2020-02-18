@@ -513,7 +513,7 @@ module.exports = function(eleventyConfig) {
 
 ### Add Your Own Watch Targets {% addedin "0.10.0" %}
 
-The `addWatchTarget` config method allows you to manually add a file or directory for Eleventy to watch. When the file or the files in this directory change Eleventy will trigger a build. This is useful if Eleventy is not directly aware any external file dependencies.
+The `addWatchTarget` config method allows you to manually add a file or directory for Eleventy to watch. When the file or the files in this directory change Eleventy will trigger a build. This is useful if Eleventy is not directly aware of any external file dependencies.
 
 {% codetitle ".eleventy.js" %}
 
