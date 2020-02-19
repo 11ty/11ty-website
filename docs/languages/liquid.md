@@ -38,13 +38,13 @@ module.exports = function(eleventyConfig) {
 
 ### Optional: Set your own Library instance {% addedin "0.3.0" %}
 
-As an escape mechanism for advanced usage, pass in your own instance of the Liquid library using the Configuration API. See [all `liquidjs` options](https://github.com/harttle/liquidjs#options).
+As an escape mechanism for advanced usage, pass in your own instance of the Liquid library using the Configuration API. See [all `liquidjs` options](https://harttle.land/liquidjs/interfaces/_liquid_options_.liquidoptions.html).
 
 <div class="elv-callout elv-callout-warn">Not compatible with <code>setLiquidOptions</code> above—this method will override any configuration set there.</div>
 
 ```js
 module.exports = function(eleventyConfig) {
-  let liquidJs = require("liquidjs");
+  let { Liquid } = require("liquidjs");
   let options = {
     extname: ".liquid",
     dynamicPartials: true,
@@ -52,7 +52,7 @@ module.exports = function(eleventyConfig) {
     root: ["_includes"]
   };
 
-  eleventyConfig.setLibrary("liquid", liquidJs(options));
+  eleventyConfig.setLibrary("liquid", new Liquid(options));
 };
 ```
 
