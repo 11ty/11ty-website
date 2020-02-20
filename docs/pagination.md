@@ -453,8 +453,8 @@ The most powerful tool to change the data. Use this callback to modify, filter, 
 ---js
 {
   pagination: {
-    data: "testdata"
-    size: 2
+    data: "testdata",
+    size: 2,
     before: function(data) {
       return data.map(entry => `${entry} with a suffix`);
     }
