@@ -44,15 +44,15 @@ As an escape mechanism for advanced usage, pass in your own instance of the Liqu
 
 ```js
 module.exports = function(eleventyConfig) {
-  let liquidJs = require("liquidjs");
+  let {Liquid} = require("liquidjs");
   let options = {
     extname: ".liquid",
     dynamicPartials: true,
-    strict_filters: true,
+    strictFilters: true,
     root: ["_includes"]
   };
 
-  eleventyConfig.setLibrary("liquid", liquidJs(options));
+  eleventyConfig.setLibrary("liquid", new Liquid(options));
 };
 ```
 
