@@ -3,7 +3,7 @@ eleventyNavigation:
   parent: Working with Templates
   key: Permalinks
   order: 6
-  excerpt: Remap a template to a new output location
+  excerpt: Remap a template to a new output location (or prevent writing a file)
 ---
 # Permalinks
 
