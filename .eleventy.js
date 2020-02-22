@@ -1,19 +1,16 @@
 const { DateTime } = require("luxon");
-const htmlmin = require("html-minifier");
-const CleanCSS = require("clean-css");
-const Terser = require("terser");
 const HumanReadable = require("human-readable-numbers");
 const markdownIt = require("markdown-it");
 const loadLanguages = require("prismjs/components/");
 
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
-const addedInPlugin = require("./config/addedin");
+const addedInLocalPlugin = require("./config/addedin");
+const minificationLocalPlugin = require("./config/minification");
 
 const cfg = require("./_data/config.js");
 const slugify = require('slugify');
-
 
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);
@@ -70,7 +67,9 @@ module.exports = function(eleventyConfig) {
 		}
 	});
 	eleventyConfig.addPlugin(rssPlugin) ;
-	eleventyConfig.addPlugin(eleventyNavigationPlugin);
+	eleventyConfig.addPlugin(navigationPlugin);
+	eleventyConfig.addPlugin(addedInLocalPlugin);
+	eleventyConfig.addPlugin(minificationLocalPlugin);
 
 	eleventyConfig.addCollection("sidebarNav", function(collection) {
 		// everything but news
@@ -109,8 +108,6 @@ ${text.trim()}
 
 </div>`;
 	});
-
-	eleventyConfig.addPlugin(addedInPlugin);
 
 	eleventyConfig.addPassthroughCopy({
 		"node_modules/instant.page/instantpage.js": "js/instant.page.js",
@@ -303,43 +300,6 @@ ${text.trim()}
 		}
 
 		return content;
-	});
-
-	if( cfg.minifyHtml ) {
-		eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-			if( process.env.ELEVENTY_PRODUCTION && outputPath && outputPath.endsWith(".html") ) {
-				let minified = htmlmin.minify(content, {
-					useShortDoctype: true,
-					removeComments: true,
-					collapseWhitespace: true
-				});
-				return minified;
-			}
-
-			return content;
-		});
-	}
-
-	eleventyConfig.addFilter("jsmin", function(code) {
-		if(process.env.ELEVENTY_PRODUCTION) {
-			let minified = Terser.minify(code);
-			if( minified.error ) {
-				console.log("Terser error: ", minified.error);
-				return code;
-			}
-
-			return minified.code;
-		}
-
-		return code;
-	});
-
-	eleventyConfig.addFilter("cssmin", function(code) {
-		if(process.env.ELEVENTY_PRODUCTION) {
-			return new CleanCSS({}).minify(code).styles;
-		}
-
-		return code;
 	});
 
 	return {

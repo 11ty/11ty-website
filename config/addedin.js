@@ -13,7 +13,9 @@ module.exports = eleventyConfig => {
 		let hasBeenReleased = true;
 		if(("" + version).match(/^[0-9]/)) {
 			versionPrefix = "v";
-			hasBeenReleased = semver.lte(version, semver.coerce(newestPublishedVersion.tag))
+			// only works for versions starting with a number (plugins don’t do this)
+			// is the latest version less than or equal to the version being passed in here?
+			hasBeenReleased = semver.lte(version, semver.coerce(newestPublishedVersion.tag));
 		}
 
 		tag = tag || "span";
