@@ -4,13 +4,16 @@ const CleanCSS = require("clean-css");
 const Terser = require("terser");
 const HumanReadable = require("human-readable-numbers");
 const markdownIt = require("markdown-it");
-const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const loadLanguages = require("prismjs/components/");
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
+const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
+const addedInPlugin = require("./config/addedin");
+
 const cfg = require("./_data/config.js");
 const slugify = require('slugify');
+
 
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);
@@ -107,21 +110,7 @@ ${text.trim()}
 </div>`;
 	});
 
-	eleventyConfig.addShortcode("addedin", function(version, tag, extraClass) {
-		if( typeof version !== "string" ) {
-			tag = version.tag;
-			version = version.version;
-		}
-
-		let versionPrefix = "";
-		if(("" + version).match(/^[0-9]/)) {
-			versionPrefix = "v";
-		}
-
-		tag = tag || "span";
-
-		return `<${tag} class="minilink minilink-addedin${extraClass ? ` ${extraClass}`: ""}">New in ${versionPrefix}${version}</${tag}>`;
-	});
+	eleventyConfig.addPlugin(addedInPlugin);
 
 	eleventyConfig.addPassthroughCopy({
 		"node_modules/instant.page/instantpage.js": "js/instant.page.js",
