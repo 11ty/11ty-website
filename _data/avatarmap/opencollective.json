@@ -953,6 +953,24 @@
       "size": 1915
     }
   ],
+  "noel-forte": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "noel-forte",
+      "path": "img/avatar-local-cache/opencollective/noel-forte.jpg",
+      "size": 1404
+    }
+  ],
   "pelle-wessman": [
     {
       "format": "jpeg",
@@ -1311,6 +1329,24 @@
       "name": "william-riley",
       "path": "img/avatar-local-cache/opencollective/william-riley.jpg",
       "size": 1594
+    }
+  ],
+  "woorke": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "woorke",
+      "path": "img/avatar-local-cache/opencollective/woorke.jpg",
+      "size": 1536
     }
   ],
   "yuhei-yasuda": [
