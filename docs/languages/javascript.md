@@ -293,7 +293,7 @@ This is the same as the example above but adds `await` before the function is ca
 
 {% raw %}
 ```js
-module.exports = function(data) {
+module.exports = async function(data) {
   return `<h1>${await this.myAsyncFunction(data.a, data.b)}</h1>`;
 };
 ```
