@@ -338,7 +338,7 @@ module.exports = function(eleventyConfig) {
 {% codetitle "universal-examples.11ty.js" %}
 
 {% raw %}
-```
+```js
 module.exports = function(data) {
   return `
 <h1>${this.myFilter(data.myVar)}</h1>
