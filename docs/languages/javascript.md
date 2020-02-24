@@ -311,7 +311,7 @@ Note that by definition (<a href="https://developer.mozilla.org/en-US/docs/Web/J
 ```js
 module.exports = (data) => {
   // Using `this` in an arrow function will throw an error!
-  return `<h1>${await this.myFunction(data.a, data.b)}</h1>`;
+  return `<h1>${this.myFunction(data.a, data.b)}</h1>`;
 };
 ```
 {% endraw %}
