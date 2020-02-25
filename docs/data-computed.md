@@ -139,8 +139,7 @@ We put a lot of work into making this feature as easy to use as possible. Most o
 ---
 key: My Key
 eleventyComputed:
-  eleventyNavigation:
-    key: "This Is {{key}}"
+  key: "This Is {{key}}"
 ---
 ```
 {% endraw %}
