@@ -127,7 +127,7 @@ The above would also resolve to the same Data Cascade:
 We put a lot of work into making this feature as easy to use as possible. Most of these details shouldn’t matter to you as it should Just Work™. But here’s a few things we thought of already and handle in a good way:
 
 * You can put `eleventyComputed` anywhere in the Data Cascade: Front Matter, any Data Files (you could even make an `eleventyComputed.js` global data file if you wanted to set this for your entire site).
-* Reference any of the existing data properties (including [ones created by Eleventy like `page`](/docs/data/#eleventy-provided-data-variables)).
+* Reference any of the existing data properties (including [ones created by Eleventy like `page`](/docs/data-eleventy-supplied/)).
   * You can use *or* set `permalink` in `eleventyComputed` and it will work (`permalink` is a top-level special case computed property anyway).
 * You can use a computed property that depends on other computed properties (just reference them like they were any other property `data.propName` and ⚠️ **not** `data.eleventyComputed.propName`)
   * The order of the keys in the object doesn’t matter—we smartly figure out what order these should be computed in.

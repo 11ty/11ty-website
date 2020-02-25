@@ -39,7 +39,7 @@ If a `date` key is omitted from the file, the date is assumed to be:
 1. If the file name has a `YYYY-MM-DD` format (anywhere), this date is used.
 1. File creation date.
 
-{% callout "info" %}<strong>Trying to use <code>date</code> in your templates?</strong> The <code>date</code> value will likely not be of much use, since Eleventy performs no transformation on this front matter value. You probably want <code>page.date</code> instead. Check out <a href="/docs/data/#page-variable-contents">the values available in the <code>page</code> variable</a>.{% endcallout %}
+{% callout "info" %}<strong>Trying to use <code>date</code> in your templates?</strong> The <code>date</code> value will likely not be of much use, since Eleventy performs no transformation on this front matter value. You probably want <code>page.date</code> instead. Check out <a href="/docs/data-eleventy-supplied/#page-variable-contents">the values available in the <code>page</code> variable</a>.{% endcallout %}
 
 ## Dates off by one day?
 

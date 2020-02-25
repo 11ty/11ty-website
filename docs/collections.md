@@ -147,7 +147,7 @@ This content would show up in the template data inside of `collections.cat` and 
 Note in the above example that we output the `post.data.title` value? Similarly, each collection item will have the following data:
 
 * `inputPath`: the full path to the source input file (including the path to the input directory)
-* `fileSlug`: {% addedin "0.5.3" %} Mapped from the input file name, useful for permalinks. Read more about [`fileSlug`](/docs/data/#fileslug).
+* `fileSlug`: {% addedin "0.5.3" %} Mapped from the input file name, useful for permalinks. Read more about [`fileSlug`](/docs/data-eleventy-supplied/#fileslug).
 * `outputPath`: the full path to the output file to be written for this content
 * `url`: url used to link to this piece of content.
 * `date`: the resolved date used for sorting. Read more about [Content Dates](/docs/dates/).
