@@ -31,7 +31,7 @@
   {%- for post in collections.news | reverse %}
   {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
   <entry>
-    <title>{{ post.data.title }}</title>
+    <title>{{ post.data.newstitle }}</title>
     <link href="{{ absolutePostUrl }}"/>
     <updated>{{ post.date | rssDate }}</updated>
     <id>{{ absolutePostUrl }}</id>
