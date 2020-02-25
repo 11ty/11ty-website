@@ -16,7 +16,7 @@ putTheJsInTheHead: true
 	</div>
 	<p>Search provided by <span data-investors-avatar="prepend"><span data-investors-toggle="you—thank you for supporting Eleventy!"></span></span><span class="investors-noauth"><a href="https://duckduckgo.com/">Duck Duck Go</a>.</span></p>
 	<p class="investors-noauth">As a special thank you, <a href="/docs/account/">Eleventy Contributor Accounts</a> are provided access to an enhanced on-site documentation search. If you would like access to this feature too, <a href="https://opencollective.com/11ty">donate to Eleventy on Open Collective!</a></p>
-	<p class="investors-noauth">Already a contributor? <a href="/docs/account/">Log in!</a></span></p>
+	<p class="investors-noauth">Already a contributor? <a href="/docs/account/">Log in!</a></p>
 </form>
 <div id="search-results" class="hide">
 	<h2 id="search-results-count" aria-live="polite">Results</h2>
