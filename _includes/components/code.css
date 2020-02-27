@@ -40,6 +40,9 @@ table code {
 	-ms-word-break: normal;
 	word-break: normal;
 }
+.lo-c > pre {
+	margin-top: 0;
+}
 em code {
 	font-style: normal;
 }

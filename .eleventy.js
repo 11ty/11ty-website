@@ -55,7 +55,7 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
-		templateFormats: "md",
+		templateFormats: ["md", "njk"],
 		init: function({ Prism }) {
 			Prism.languages.markdown = Prism.languages.extend('markup', {
 				'frontmatter': {

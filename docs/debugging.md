@@ -6,16 +6,49 @@ eleventyNavigation:
 ---
 # Debugging
 
-Having trouble? Want to see what Eleventy is doing behind the scenes? Use `DEBUG` mode. We’re taking advantage of the [excellent `debug` package](https://www.npmjs.com/package/debug) for this. Enable with the `DEBUG` env variable, either specific to eleventy (`DEBUG=Eleventy*`) or globally (`DEBUG=*`):
+Having trouble? Want to see what Eleventy is doing behind the scenes? Use `DEBUG` mode. We’re taking advantage of the [excellent `debug` package](https://www.npmjs.com/package/debug) for this.
 
-```bash
-DEBUG=Eleventy* eleventy
-```
+`debug` will tell you exactly what directories Eleventy is using for data, includes, input, and output. It’ll tell you what search globs it uses to find your templates and what templates it finds. If you’re having trouble, enable this.
+
+This makes use of something called Environment variables to enable, specifically the `DEBUG` environment variable. In this case we’re just putting some text before the command we use to run Eleventy.
+
+## Commands
+
+### Mac OS (or Linux, etc)
+
+<div class="lo" style="--lo-stackpoint: 30em; --lo-margin-h: 1em; --lo-margin-v: .5em">
+	<div class="lo-c">Installed Globally</div>
+	<div class="lo-c lo-maxgrow">{% highlight "bash" %}DEBUG=Eleventy* eleventy{% endhighlight %}</div>
+</div>
+
+<div class="lo" style="--lo-stackpoint: 30em; --lo-margin-h: 1em; --lo-margin-v: .5em">
+	<div class="lo-c">Installed Locally</div>
+	<div class="lo-c lo-maxgrow">{% highlight "bash" %}DEBUG=Eleventy* npx @11ty/eleventy{% endhighlight %}</div>
+</div>
+
+### Windows
 
 It’s [different if you’re on Windows](https://www.npmjs.com/package/debug#windows-command-prompt-notes).
 
-This will tell you exactly what directories Eleventy is using for data, includes, input, and output. It’ll tell you what search globs it uses to find your templates and what templates it finds. If you’re having trouble, enable this.
+<div class="lo" style="--lo-stackpoint: 30em; --lo-margin-h: 1em; --lo-margin-v: .5em">
+	<div class="lo-c">Installed Globally</div>
+	<div class="lo-c lo-maxgrow">{% highlight "bash" %}set DEBUG=Eleventy* & eleventy{% endhighlight %}</div>
+</div>
+
+<div class="lo" style="--lo-stackpoint: 30em; --lo-margin-h: 1em; --lo-margin-v: .5em">
+	<div class="lo-c">Installed Locally</div>
+	<div class="lo-c lo-maxgrow">{% highlight "bash" %}set DEBUG=Eleventy* & npx @11ty/eleventy{% endhighlight %}</div>
+</div>
+
+## Learn More
+
+Read more at the [`debug` package documentation](https://www.npmjs.com/package/debug).
+
+### Try with `--dryrun`
 
 {% addedin "0.3.0" %} Works great with `--dryrun` if you want to run Eleventy but not actually write any files.
 
-Read more at the [`debug` package documentation](https://www.npmjs.com/package/debug).
+### View all messages
+
+The commands above limit the messages from `debug` to Eleventy specific things with `DEBUG=Eleventy*` but you can view all of the messages from any dependency with `DEBUG=*`.
+
