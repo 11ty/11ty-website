@@ -183,7 +183,7 @@ This resolves to:
 
 ```js
 {
-  myData: [
+  "myData": [
     "item1",
     "item2",
     "item3",
