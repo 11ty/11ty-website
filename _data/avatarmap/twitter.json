@@ -1168,7 +1168,7 @@
       "extension": "webp",
       "name": "dandevri",
       "path": "img/avatar-local-cache/twitter/dandevri.webp",
-      "size": 1062
+      "size": 1270
     },
     {
       "format": "jpeg",
@@ -1184,7 +1184,7 @@
       "extension": "jpg",
       "name": "dandevri",
       "path": "img/avatar-local-cache/twitter/dandevri.jpg",
-      "size": 1703
+      "size": 1891
     }
   ],
   "danfascia": [
@@ -1911,6 +1911,39 @@
       "name": "gvonkoss",
       "path": "img/avatar-local-cache/twitter/gvonkoss.png",
       "size": 1370
+    }
+  ],
+  "hamandhoney": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "hamandhoney",
+      "path": "img/avatar-local-cache/twitter/hamandhoney.webp",
+      "size": 1738
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "hamandhoney",
+      "path": "img/avatar-local-cache/twitter/hamandhoney.jpg",
+      "size": 2408
     }
   ],
   "hankchizljaw": [
@@ -3676,7 +3709,7 @@
       "extension": "webp",
       "name": "paulrobertlloyd",
       "path": "img/avatar-local-cache/twitter/paulrobertlloyd.webp",
-      "size": 1748
+      "size": 1692
     },
     {
       "format": "jpeg",
@@ -3692,7 +3725,7 @@
       "extension": "jpg",
       "name": "paulrobertlloyd",
       "path": "img/avatar-local-cache/twitter/paulrobertlloyd.jpg",
-      "size": 2266
+      "size": 2228
     }
   ],
   "pborenstein": [
@@ -4303,7 +4336,7 @@
       "extension": "webp",
       "name": "shannonethomas",
       "path": "img/avatar-local-cache/twitter/shannonethomas.webp",
-      "size": 952
+      "size": 1762
     },
     {
       "format": "jpeg",
@@ -4316,10 +4349,10 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
-      "extension": "png",
+      "extension": "jpg",
       "name": "shannonethomas",
-      "path": "img/avatar-local-cache/twitter/shannonethomas.png",
-      "size": 1496
+      "path": "img/avatar-local-cache/twitter/shannonethomas.jpg",
+      "size": 2318
     }
   ],
   "shreyasminocha": [
@@ -4600,7 +4633,7 @@
       "extension": "webp",
       "name": "surajsjdhv",
       "path": "img/avatar-local-cache/twitter/surajsjdhv.webp",
-      "size": 1488
+      "size": 1916
     },
     {
       "format": "jpeg",
@@ -4616,7 +4649,7 @@
       "extension": "jpg",
       "name": "surajsjdhv",
       "path": "img/avatar-local-cache/twitter/surajsjdhv.jpg",
-      "size": 2047
+      "size": 2349
     }
   ],
   "tatianatmac": [
