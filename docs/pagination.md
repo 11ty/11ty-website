@@ -181,7 +181,7 @@ This resolves to:
 
 {% codetitle "JavaScript Object", "Syntax" %}
 
-```js
+```json
 {
   "myData": [
     "item1",
