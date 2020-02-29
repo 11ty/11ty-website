@@ -176,5 +176,11 @@
 		"twitter": "reubenlillie",
 		"name": "Reuben L. Lillie",
 		"source": "https://twitter.com/reubenlillie/"
+	},
+	{
+		"text": "I challenged myself to build the site in a day. I started at noon on Saturday and had something launched by 1am Saturday night. Built on [Eleventy] served by GitHub Pages, using [TravisCi] to deploy.",
+		"twitter": "snookca",
+		"name": "Snook",
+		"source": "https://twitter.com/snookca/status/1082278684214657024"
 	}
 ]
