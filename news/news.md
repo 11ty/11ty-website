@@ -2,6 +2,7 @@
 eleventyNavigation:
   key: News
   order: 9
+excludeFromSidebar: false
 layout: "layouts/docs.njk"
 permalink: "/news/"
 override:tags:

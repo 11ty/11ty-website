@@ -3,7 +3,6 @@ newstitle: An Homage to the James Williamson Possum Balloon
 eleventyNavigation:
   parent: News
   key: Logo homage
-  breadcrumbOnly: true
 ---
 As many of you may know, [James Williamson](/news/james-williamson/) first came up with _animal suspended from the floating red balloon_ logo for the Eleventy project in May of 2018.
 

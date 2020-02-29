@@ -72,8 +72,9 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(minificationLocalPlugin);
 
 	eleventyConfig.addCollection("sidebarNav", function(collection) {
-		// everything but news
-		return collection.getAll().filter(item => (item.data.tags || []).indexOf("news") === -1);
+		// filter out excludeFromSidebar options
+		return collection.getAll()
+			.filter(item => (item.data || {}).excludeFromSidebar !== true);
 	});
 
 	let md = new markdownIt();
