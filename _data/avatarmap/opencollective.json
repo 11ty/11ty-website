@@ -215,6 +215,24 @@
       "size": 2339
     }
   ],
+  "buskers-bern": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "buskers-bern",
+      "path": "img/avatar-local-cache/opencollective/buskers-bern.jpg",
+      "size": 1714
+    }
+  ],
   "chris-collins": [
     {
       "format": "jpeg",
@@ -393,6 +411,24 @@
       "name": "devin-clark",
       "path": "img/avatar-local-cache/opencollective/devin-clark.jpg",
       "size": 1742
+    }
+  ],
+  "dimitrios-grammatikogiannis": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "dimitrios-grammatikogiannis",
+      "path": "img/avatar-local-cache/opencollective/dimitrios-grammatikogiannis.jpg",
+      "size": 1854
     }
   ],
   "ed-spencer": [
