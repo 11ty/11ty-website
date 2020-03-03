@@ -473,7 +473,7 @@ The most powerful tool to change the data. Use this callback to modify, filter, 
 
 The above will iterate over a data set containing: `["item1 with a suffix", "item2 with a suffix", "item3 with a suffix", "item4 with a suffix"]`.
 
-You can do anything in this `before` callback. Maybe a custom `.sort()`, `.filter()`, `.map()` to remap the entires, `.slice()` to paginate only a subset of the data, etc!
+You can do anything in this `before` callback. Maybe a custom `.sort()`, `.filter()`, `.map()` to remap the entries, `.slice()` to paginate only a subset of the data, etc!
 
 ### Order of Operations
 
