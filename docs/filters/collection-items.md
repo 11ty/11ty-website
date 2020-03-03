@@ -14,8 +14,8 @@ eleventyNavigation:
 
 {% raw %}
 ```
-{{ set previousPost = collections.posts | getPreviousCollectionItem(page) }}
-{{ set nextPost = collections.posts | getNextCollectionItem(page) }}
+{% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+{% set nextPost = collections.posts | getNextCollectionItem(page) %}
 ```
 {% endraw %}
 
