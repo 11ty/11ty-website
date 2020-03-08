@@ -19,7 +19,7 @@ A pack of plugins for generating an RSS feed (actually an Atom feed, but who’s
 Available on [npm](https://www.npmjs.com/package/@11ty/eleventy-plugin-rss).
 
 ```
-npm install @11ty/eleventy-plugin-rss --save-dev
+npm install @11ty/eleventy-plugin-rss --save
 ```
 
 Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
