@@ -503,6 +503,24 @@
       "size": 2029
     }
   ],
+  "flaki": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "flaki",
+      "path": "img/avatar-local-cache/opencollective/flaki.jpg",
+      "size": 1982
+    }
+  ],
   "frank-taillandier": [
     {
       "format": "jpeg",
@@ -627,6 +645,24 @@
       "name": "ivan-buncic",
       "path": "img/avatar-local-cache/opencollective/ivan-buncic.jpg",
       "size": 1637
+    }
+  ],
+  "ivo-herrmann": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "ivo-herrmann",
+      "path": "img/avatar-local-cache/opencollective/ivo-herrmann.jpg",
+      "size": 2307
     }
   ],
   "jeremias-menichelli": [
@@ -1022,7 +1058,7 @@
       "extension": "jpg",
       "name": "noel-forte",
       "path": "img/avatar-local-cache/opencollective/noel-forte.jpg",
-      "size": 1404
+      "size": 1946
     }
   ],
   "pelle-wessman": [
