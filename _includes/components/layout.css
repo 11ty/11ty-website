@@ -101,3 +101,26 @@
 .lo-c-align-h-end > .flu {
   flex-grow: 1;
 }
+
+.lo-carousel {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+.lo-carousel > .lo-c {
+  min-width: var(--lo-c-minwidth);
+}
+.ampcarousel > .lo-c {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-right: 16px;
+}
+.ampcarousel a {
+  display: block;
+  border: 1px solid #dfe1e5;
+  border-radius: 8px;
+  padding: 16px;
+  text-decoration: none;
+}
+.ampcarousel a:hover {
+  text-decoration: underline;
+}

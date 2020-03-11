@@ -20,3 +20,17 @@ eleventyNavigation:
 {% endfor -%}
   <div class="lo-c">{% addToSampleSites %}</div>
 </div>
+
+<div style="margin-top: 50vh"></div>
+
+#### Any site using AMP
+
+<div class="lo lo-carousel ampcarousel" style="--lo-c-minwidth: 13.125em">
+	<div class="lo-c"><a href="#">{% avatarlocalcache "twitter", "AMPhtml" %}A site using AMP</a></div>
+	<div class="lo-c"><a href="#">{% avatarlocalcache "twitter", "AMPhtml" %}A site using AMP</a></div>
+	<div class="lo-c"><a href="#">{% avatarlocalcache "twitter", "AMPhtml" %}A site using AMP</a></div>
+	<div class="lo-c"><a href="#">{% avatarlocalcache "twitter", "AMPhtml" %}A site using AMP</a></div>
+	<div class="lo-c"><a href="#">{% avatarlocalcache "twitter", "AMPhtml" %}A site using AMP</a></div>
+	<div class="lo-c"><a href="#">{% avatarlocalcache "twitter", "AMPhtml" %}A site using AMP</a></div>
+	<div class="lo-c"><a href="#">{% avatarlocalcache "twitter", "AMPhtml" %}A site using AMP</a></div>
+</div>
