@@ -737,6 +737,24 @@
       "size": 2161
     }
   ],
+  "joshua-vaage": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "joshua-vaage",
+      "path": "img/avatar-local-cache/opencollective/joshua-vaage.jpg",
+      "size": 2031
+    }
+  ],
   "kayce-basques": [
     {
       "format": "jpeg",
@@ -1167,6 +1185,24 @@
       "name": "ray-villalobos",
       "path": "img/avatar-local-cache/opencollective/ray-villalobos.jpg",
       "size": 1573
+    }
+  ],
+  "reach-digital": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "reach-digital",
+      "path": "img/avatar-local-cache/opencollective/reach-digital.jpg",
+      "size": 321
     }
   ],
   "rhian-van-esch": [
