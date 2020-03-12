@@ -26,11 +26,7 @@ eleventyNavigation:
 #### Any site using AMP
 
 <div class="lo lo-carousel ampcarousel" style="--lo-c-minwidth: 13.125em">
-	<div class="lo-c"><a href="#">{% avatarlocalcache "twitter", "AMPhtml" %}A site using AMP</a></div>
-	<div class="lo-c"><a href="#">{% avatarlocalcache "twitter", "AMPhtml" %}A site using AMP</a></div>
-	<div class="lo-c"><a href="#">{% avatarlocalcache "twitter", "AMPhtml" %}A site using AMP</a></div>
-	<div class="lo-c"><a href="#">{% avatarlocalcache "twitter", "AMPhtml" %}A site using AMP</a></div>
-	<div class="lo-c"><a href="#">{% avatarlocalcache "twitter", "AMPhtml" %}A site using AMP</a></div>
-	<div class="lo-c"><a href="#">{% avatarlocalcache "twitter", "AMPhtml" %}A site using AMP</a></div>
-	<div class="lo-c"><a href="#">{% avatarlocalcache "twitter", "AMPhtml" %}A site using AMP</a></div>
+{%- for j in [1,2,3,4,5,6,7,8] %}
+	<div class="lo-c"><a>{% avatarlocalcache "twitter", "AMPhtml" %}A site using AMP</a></div>
+{%- endfor %}
 </div>

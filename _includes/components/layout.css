@@ -115,12 +115,27 @@
   padding-right: 16px;
 }
 .ampcarousel a {
+  --border-radius: 8px;
   display: block;
   border: 1px solid #dfe1e5;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   padding: 16px;
   text-decoration: none;
+  font-family: Roboto, Arial, sans-serif;
 }
-.ampcarousel a:hover {
+.ampcarousel a:before {
+  content: "";
+  display: block;
+  height: 7.4375em;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  background-color: #f6f6f6;
+  margin: -16px -16px 16px -16px;
+}
+.ampcarousel a[href]:hover {
+  cursor: pointer;
   text-decoration: underline;
+  border-color: #ccc;
+}
+.ampcarousel a[href]:hover:before {
+  background-color: #f3f3f3;
 }
