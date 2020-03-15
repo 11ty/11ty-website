@@ -36,6 +36,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "avatar-local-cache": "^2.0.3",
     "clean-css": "^4.2.1",
+    "comma-number": "^2.0.1",
     "dotenv": "^8.2.0",
     "flat-cache": "^2.0.1",
     "fs-extra": "^8.1.0",

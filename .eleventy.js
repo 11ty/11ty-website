@@ -1,5 +1,6 @@
 const { DateTime } = require("luxon");
 const HumanReadable = require("human-readable-numbers");
+const commaNumber = require("comma-number");
 const markdownIt = require("markdown-it");
 const loadLanguages = require("prismjs/components/");
 
@@ -134,6 +135,10 @@ ${text.trim()}
 
 	eleventyConfig.addFilter("humanReadableNum", function(num) {
 		return HumanReadable.toHumanString(num);
+	});
+
+	eleventyConfig.addFilter("commaNumber", function(num) {
+		return commaNumber(num);
 	});
 
 	eleventyConfig.addShortcode("templatelangs", function(languages, page, whitelist, anchor, isinline) {
@@ -301,6 +306,25 @@ ${text.trim()}
 		}
 
 		return content;
+	});
+
+	eleventyConfig.addFilter("calc", (sites, type, key) => {
+		let sum = 0;
+		let values = [];
+		for(let site of sites) {
+			if(typeof site[key] === "number") {
+				sum += site[key];
+				values.push(site[key]);
+			}
+		}
+		if(type === "mean") {
+			return sum / values.length;
+		}
+		if(type === "median") {
+			if(values.length > 0) {
+				return values.sort((a, b) => b - a)[Math.floor(values.length / 2)];
+			}
+		}
 	});
 
 	eleventyConfig.addFilter("findSiteDataByUrl", (url, sites) => {
