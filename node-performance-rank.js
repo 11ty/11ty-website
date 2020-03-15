@@ -35,7 +35,7 @@ async function runLighthouse(url, opts, config) {
     results.push(await lighthouse(url, opts, config).then(results => mapResultData(results.lhr)));
   }
   results.sort(sortResultData);
-  return results[0];
+  return results[Math.floor(NUMBER_OF_RUNS / 2)];
 }
 
 function run(urls, opts, config = null) {
