@@ -28,7 +28,7 @@ eleventyNavigation:
 			{%- endif -%}
 			{%- if site.source_url %}<em class="list-bare-desc list-bare-desc-avatar">Includes <a href="{{ site.source_url }}">sample source code</a>.</em>{% endif -%}
 		</div>
-		{%- if perf.rank <= 11 %}<img src="/img/sites/{{ site.url | screenshotFilenameFromUrl }}" alt="Screenshot of {{ site.url }}" class="sites-screenshot">{% endif -%}
+		{%- if perf.rank <= 11 %}<div><img src="/img/sites/{{ site.url | screenshotFilenameFromUrl }}" alt="Screenshot of {{ site.url }}" class="sites-screenshot"></div>{% endif -%}
 	</div>
 {% endif -%}
 {% endfor -%}
