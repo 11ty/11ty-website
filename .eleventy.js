@@ -312,6 +312,10 @@ ${text.trim()}
 		}
 	});
 
+	eleventyConfig.addFilter("screenshotFilenameFromUrl", (url) => {
+		let slug = url.replace(/https?\:\//, "");
+		return slugify(slug, { lower: true, remove: /[:\/]/g }) + ".png";
+	});
 	return {
 		templateFormats: ["html", "njk", "md", "11ty.js"],
 		markdownTemplateEngine: "njk",

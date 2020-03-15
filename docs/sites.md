@@ -13,18 +13,22 @@ eleventyNavigation:
 {% for perf in fastestSites -%}
 {%- set site = perf.url | findSiteDataByUrl(sites) %}
 {% if site.disabled != true and site.url -%}
-	<div class="lo-c"><a href="{{ site.url }}">{% avatarlocalcache "twitter", site.twitter %}{{ site.name | safe }}</a>
-		{%- if site.description %}<em class="list-bare-desc list-bare-desc-avatar">{{ site.description }}</em>{% endif -%}
-		{%- if perf.lighthouseScore >= 0.9 -%}
-		<em class="list-bare-desc list-bare-desc-avatar">
-			<div class="lo lo-inline lo-nocontentwrap lo-separator-h" style="--lo-margin-h: 1.5rem">
-				<div class="lo-c sites-perf-rank">Performance Rank <strong>{{ perf.rank }}</strong> of {{ fastestSites | length }}</div>
-				<div class="lo-c sites-perf-lh">Lighthouse Score <strong>{{ perf.lighthouseScore * 100 }}</strong></div>
-				<div class="lo-c sites-perf-si">Speed Index <strong>{{ perf.speedIndex | round(1) }}</strong></div>
-			</div>
-		</em>
-		{%- endif -%}
-		{%- if site.source_url %}<em class="list-bare-desc list-bare-desc-avatar">Includes <a href="{{ site.source_url }}">sample source code</a>.</em>{% endif -%}
+	<div class="lo-c{% if perf.rank <= 11 %} site-top{% endif %}">
+		<div>
+			<a href="{{ site.url }}">{% avatarlocalcache "twitter", site.twitter %}{{ site.name | safe }}</a>
+			{%- if site.description %}<em class="list-bare-desc list-bare-desc-avatar">{{ site.description }}</em>{% endif -%}
+			{%- if perf.lighthouseScore >= 0.9 -%}
+			<em class="list-bare-desc list-bare-desc-avatar">
+				<div class="lo lo-inline lo-nocontentwrap lo-separator-h" style="--lo-margin-h: 1.5rem">
+					<div class="lo-c sites-perf-rank">Performance Rank <strong>#{{ perf.rank }}</strong></div>
+					<div class="lo-c sites-perf-lh">Lighthouse <strong>{{ perf.lighthouseScore * 100 }}</strong></div>
+					<div class="lo-c sites-perf-si">Speed Index <strong>{{ perf.speedIndex | round(1) }}</strong></div>
+				</div>
+			</em>
+			{%- endif -%}
+			{%- if site.source_url %}<em class="list-bare-desc list-bare-desc-avatar">Includes <a href="{{ site.source_url }}">sample source code</a>.</em>{% endif -%}
+		</div>
+		{%- if perf.rank <= 11 %}<img src="/img/sites/{{ site.url | screenshotFilenameFromUrl }}" alt="Screenshot of {{ site.url }}" class="sites-screenshot">{% endif -%}
 	</div>
 {% endif -%}
 {% endfor -%}
