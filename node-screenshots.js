@@ -7,11 +7,15 @@ async function screenshot(url, filename) {
 	const page = await browser.newPage();
 	await page.goto(url);
 	await page.setViewport({
-		width: 1024,
-		height: 768,
-		deviceScaleFactor: 2,
+		width: 800,
+		height: 600,
+		deviceScaleFactor: 1,
 	});
-	await page.screenshot({path: filename});
+	await page.screenshot({
+		path: filename,
+		type: "jpeg",
+		quality: 80
+	});
 	await browser.close();
 }
 
@@ -21,7 +25,7 @@ async function screenshot(url, filename) {
 			console.log( "Fetching", site.url );
 			let slug = site.url.replace(/https?\:\//, "");
 			let filename = slugify(slug, { lower: true, remove: /[:\/]/g });
-			await screenshot(site.url, `./img/sites/${filename}.png`);
+			await screenshot(site.url, `./img/sites/${filename}.jpg`);
 		}
 	}
 })();
