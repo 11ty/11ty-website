@@ -303,6 +303,15 @@ ${text.trim()}
 		return content;
 	});
 
+	eleventyConfig.addFilter("findSiteDataByUrl", (url, sites) => {
+		for(let key in sites) {
+			let site = sites[key];
+			if(url === site.url || url === `${site.url}/`) {
+				return site;
+			}
+		}
+	});
+
 	return {
 		templateFormats: ["html", "njk", "md", "11ty.js"],
 		markdownTemplateEngine: "njk",
