@@ -38,6 +38,12 @@ const opts = {
 
   run(Array.from(urls), opts).then(results => {
     let finalResults = results.map(result => {
+      // if(siteData.url.startsWith("https://github.com/")) {
+      //   return {
+      //     url: result.requestedUrl
+      //   };
+      // }
+
       return {
         url: result.requestedUrl,
         finalUrl: result.finalUrl,

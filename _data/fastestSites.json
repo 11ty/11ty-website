@@ -1,1672 +1,1666 @@
 [
   {
-    "url": "https://rss-jamstack.netlify.com/",
-    "finalUrl": "https://rss-jamstack.netlify.com/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 880.89,
-    "firstMeaningfulPaint": 880.89,
-    "speedIndex": 880.89,
-    "rank": 1
-  },
-  {
-    "url": "https://eleventy-notist-example.netlify.com/",
-    "finalUrl": "https://eleventy-notist-example.netlify.com/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 883.184,
-    "firstMeaningfulPaint": 883.184,
-    "speedIndex": 883.184,
-    "rank": 2
-  },
-  {
-    "url": "https://nho.io/",
-    "finalUrl": "https://nho.io/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 897.376,
-    "firstMeaningfulPaint": 897.376,
-    "speedIndex": 897.376,
-    "rank": 3
-  },
-  {
-    "url": "https://www.hawksworx.com/",
-    "finalUrl": "https://www.hawksworx.com/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 946.584,
-    "firstMeaningfulPaint": 946.584,
-    "speedIndex": 986.6551628334555,
-    "rank": 4
-  },
-  {
-    "url": "https://leedsjs.com/",
-    "finalUrl": "https://leedsjs.com/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1017.59,
-    "firstMeaningfulPaint": 1017.59,
-    "speedIndex": 1017.59,
-    "rank": 5
-  },
-  {
-    "url": "https://jamstack-comments.netlify.com/",
-    "finalUrl": "https://jamstack-comments.netlify.com/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1022.3340000000001,
-    "firstMeaningfulPaint": 1022.3340000000001,
-    "speedIndex": 1022.3340000000001,
-    "rank": 6
-  },
-  {
-    "url": "https://hankchizljaw.com/",
-    "finalUrl": "https://hankchizljaw.com/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1023.624,
-    "firstMeaningfulPaint": 1023.624,
-    "speedIndex": 1058.5091039897557,
-    "rank": 7
-  },
-  {
-    "url": "https://hire.wil.to/",
-    "finalUrl": "https://hire.wil.to/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1069.1016,
-    "firstMeaningfulPaint": 1069.1016,
-    "speedIndex": 1069.1016,
-    "rank": 8
-  },
-  {
-    "url": "https://benediktmeurer.de/",
-    "finalUrl": "https://benediktmeurer.de/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1014.6959999999999,
-    "firstMeaningfulPaint": 1014.6959999999999,
-    "speedIndex": 1074.3350639984842,
-    "rank": 9
-  },
-  {
     "url": "https://alexcarpenter.me/",
     "finalUrl": "https://alexcarpenter.me/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 979.626,
-    "firstMeaningfulPaint": 979.626,
-    "speedIndex": 1075.1364239852662,
-    "rank": 10
-  },
-  {
-    "url": "https://ride.netlify.com/latest",
-    "finalUrl": "https://ride.netlify.com/latest",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1020.422,
-    "firstMeaningfulPaint": 1020.422,
-    "speedIndex": 1076.2245600196595,
-    "rank": 11
-  },
-  {
-    "url": "https://crlf.site/",
-    "finalUrl": "https://crlf.site/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1047.876,
-    "firstMeaningfulPaint": 1047.876,
-    "speedIndex": 1130.8447380155453,
-    "rank": 12
-  },
-  {
-    "url": "https://reubenlillie.com/",
-    "finalUrl": "https://reubenlillie.com/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1105.41,
-    "firstMeaningfulPaint": 1105.41,
-    "speedIndex": 1143.9160079920293,
-    "rank": 13
+    "firstContentfulPaint": 992.931,
+    "firstMeaningfulPaint": 992.931,
+    "speedIndex": 1050.3460939781899,
+    "rank": 1
   },
   {
     "url": "https://setyourwatchby.netlify.com/",
     "finalUrl": "https://setyourwatchby.netlify.com/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 1043.2530000000002,
-    "firstMeaningfulPaint": 1043.2530000000002,
-    "speedIndex": 1175.2080420038817,
-    "rank": 14
+    "firstContentfulPaint": 1142.889,
+    "firstMeaningfulPaint": 1142.889,
+    "speedIndex": 1326.7697059932705,
+    "rank": 2
   },
   {
     "url": "https://jeffy.info/",
     "finalUrl": "https://jeffy.info/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 924.132,
-    "firstMeaningfulPaint": 924.132,
-    "speedIndex": 1209.2550639981507,
-    "rank": 15
-  },
-  {
-    "url": "https://joshuakeel.com/",
-    "finalUrl": "https://joshuakeel.com/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1087.906,
-    "firstMeaningfulPaint": 1087.906,
-    "speedIndex": 1209.9535887961779,
-    "rank": 16
-  },
-  {
-    "url": "https://hire.wil.to/",
-    "finalUrl": "https://hire.wil.to/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1222.478,
-    "firstMeaningfulPaint": 1222.478,
-    "speedIndex": 1257.614292017651,
-    "rank": 17
-  },
-  {
-    "url": "https://www.webstoemp.com/",
-    "finalUrl": "https://www.webstoemp.com/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1270.2749999999999,
-    "firstMeaningfulPaint": 1570.2749999999999,
-    "speedIndex": 1284.143346003651,
-    "rank": 18
-  },
-  {
-    "url": "https://surajjadhav.me/",
-    "finalUrl": "https://surajjadhav.me/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1218.752,
-    "firstMeaningfulPaint": 1218.752,
-    "speedIndex": 1287.2474360034346,
-    "rank": 19
+    "firstContentfulPaint": 925.479,
+    "firstMeaningfulPaint": 925.479,
+    "speedIndex": 1332.2946139847993,
+    "rank": 3
   },
   {
     "url": "https://ajmalafif.design/",
     "finalUrl": "https://ajmalafif.design/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 1187.066,
-    "firstMeaningfulPaint": 1187.066,
-    "speedIndex": 1304.3112839970827,
-    "rank": 20
+    "firstContentfulPaint": 1197.5199999999998,
+    "firstMeaningfulPaint": 1197.5199999999998,
+    "speedIndex": 1370.4934600014685,
+    "rank": 4
   },
   {
-    "url": "https://disjfa.github.io/eleventy-encore/",
-    "finalUrl": "https://disjfa.github.io/eleventy-encore/",
+    "url": "https://rss-jamstack.netlify.com/",
+    "finalUrl": "https://rss-jamstack.netlify.com/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 1298.634,
-    "firstMeaningfulPaint": 1298.634,
-    "speedIndex": 1320.2458720102063,
-    "rank": 21
+    "firstContentfulPaint": 1008.316,
+    "firstMeaningfulPaint": 1008.316,
+    "speedIndex": 1415.3118639841318,
+    "rank": 5
   },
   {
-    "url": "https://wiltomakesfood.com/",
-    "finalUrl": "https://wiltomakesfood.com/",
+    "url": "https://screen-read.com/",
+    "finalUrl": "https://screen-read.com/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 934.1469999999999,
-    "firstMeaningfulPaint": 934.1469999999999,
-    "speedIndex": 1330.4428459846267,
-    "rank": 22
+    "firstContentfulPaint": 1173.55,
+    "firstMeaningfulPaint": 1173.55,
+    "speedIndex": 1449.5035680081842,
+    "rank": 6
   },
   {
-    "url": "https://everydayia.com/",
-    "finalUrl": "https://everydayia.com/",
+    "url": "https://nho.io/",
+    "finalUrl": "https://nho.io/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 1166.932,
-    "firstMeaningfulPaint": 1166.932,
-    "speedIndex": 1336.8029760261657,
-    "rank": 23
+    "firstContentfulPaint": 1020.123,
+    "firstMeaningfulPaint": 1020.123,
+    "speedIndex": 1518.4247500073432,
+    "rank": 7
   },
   {
-    "url": "https://every-layout.dev/",
-    "finalUrl": "https://every-layout.dev/",
+    "url": "https://leedsjs.com/",
+    "finalUrl": "https://leedsjs.com/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 1230.8429999999998,
-    "firstMeaningfulPaint": 1230.8429999999998,
-    "speedIndex": 1368.7836299783705,
-    "rank": 24
-  },
-  {
-    "url": "https://developer.chrome.com/devsummit/",
-    "finalUrl": "https://developer.chrome.com/devsummit/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 959.574,
-    "firstMeaningfulPaint": 959.574,
-    "speedIndex": 1407.259519987917,
-    "rank": 25
-  },
-  {
-    "url": "https://devreldiaries.commons.host/",
-    "finalUrl": "https://devreldiaries.commons.host/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1139.014,
-    "firstMeaningfulPaint": 1858.521,
-    "speedIndex": 1414.3564960084914,
-    "rank": 26
-  },
-  {
-    "url": "https://www.londoncss.dev/",
-    "finalUrl": "https://www.londoncss.dev/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1323.7060000000001,
-    "firstMeaningfulPaint": 1323.7060000000001,
-    "speedIndex": 1494.7992600122334,
-    "rank": 27
+    "firstContentfulPaint": 1042.68,
+    "firstMeaningfulPaint": 1042.68,
+    "speedIndex": 1534.9582640148396,
+    "rank": 8
   },
   {
     "url": "https://zoepage.github.io/",
     "finalUrl": "https://zoepage.github.io/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 1425.5640000000003,
-    "firstMeaningfulPaint": 1425.5640000000003,
-    "speedIndex": 1504.3452639784575,
-    "rank": 28
+    "firstContentfulPaint": 1438.2030000000002,
+    "firstMeaningfulPaint": 1438.2030000000002,
+    "speedIndex": 1632.1178140224338,
+    "rank": 9
   },
   {
-    "url": "https://www.d-hagemeier.com/",
-    "finalUrl": "https://www.d-hagemeier.com/en/",
+    "url": "https://hire.wil.to/",
+    "finalUrl": "https://hire.wil.to/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 1388.292,
-    "firstMeaningfulPaint": 1388.292,
-    "speedIndex": 1538.2215280043115,
-    "rank": 29
+    "firstContentfulPaint": 1236.0610000000001,
+    "firstMeaningfulPaint": 1236.0610000000001,
+    "speedIndex": 1653.6471220266458,
+    "rank": 10
   },
   {
-    "url": "https://smth.uk/",
-    "finalUrl": "https://smth.uk/",
+    "url": "https://surajjadhav.me/",
+    "finalUrl": "https://surajjadhav.me/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 1204.8400000000001,
-    "firstMeaningfulPaint": 1547.5200000000002,
-    "speedIndex": 1542.618771993517,
-    "rank": 30
-  },
-  {
-    "url": "https://interviews.shanehudson.net/",
-    "finalUrl": "https://interviews.shanehudson.net/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 996.6579999999999,
-    "firstMeaningfulPaint": 996.6579999999999,
-    "speedIndex": 1543.2499639714479,
-    "rank": 31
-  },
-  {
-    "url": "https://elisted.org/",
-    "finalUrl": "https://elisted.org/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1447.1390000000001,
-    "firstMeaningfulPaint": 1707.7780000000002,
-    "speedIndex": 1545.493701111489,
-    "rank": 32
-  },
-  {
-    "url": "https://personalsit.es/",
-    "finalUrl": "https://personalsit.es/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1296.854,
-    "firstMeaningfulPaint": 1296.854,
-    "speedIndex": 1553.7523639714477,
-    "rank": 33
-  },
-  {
-    "url": "https://okitavera.me/",
-    "finalUrl": "https://okitavera.me/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1382.7930000000001,
-    "firstMeaningfulPaint": 1382.7930000000001,
-    "speedIndex": 1599.0100379995224,
-    "rank": 34
+    "firstContentfulPaint": 1308.346,
+    "firstMeaningfulPaint": 1308.346,
+    "speedIndex": 1656.1565560097931,
+    "rank": 11
   },
   {
     "url": "https://precious-prana.com/",
     "finalUrl": "https://precious-prana.com/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 1245.256,
-    "firstMeaningfulPaint": 1647.7715000000003,
-    "speedIndex": 1644.241631497407,
-    "rank": 35
+    "firstContentfulPaint": 1066.528,
+    "firstMeaningfulPaint": 1066.528,
+    "speedIndex": 1671.1781600194095,
+    "rank": 12
   },
   {
-    "url": "https://2018.nejsconf.com/",
-    "finalUrl": "https://2018.nejsconf.com/",
+    "url": "https://jamstack-comments.netlify.com/",
+    "finalUrl": "https://jamstack-comments.netlify.com/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 962.945,
-    "firstMeaningfulPaint": 962.945,
-    "speedIndex": 1649.4509154317045,
-    "rank": 36
+    "firstContentfulPaint": 1174.172,
+    "firstMeaningfulPaint": 1174.172,
+    "speedIndex": 1748.1906640291093,
+    "rank": 13
   },
   {
-    "url": "https://www.juanfernandes.uk/",
-    "finalUrl": "https://www.juanfernandes.uk/",
+    "url": "https://developur.rs/",
+    "finalUrl": "https://developur.rs/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 1484.9360000000001,
-    "firstMeaningfulPaint": 1511.9360000000001,
-    "speedIndex": 1653.602764471531,
-    "rank": 37
+    "firstContentfulPaint": 1191.567,
+    "firstMeaningfulPaint": 1191.567,
+    "speedIndex": 1755.1983219985245,
+    "rank": 14
   },
   {
-    "url": "https://us-coffee-roasters.com/",
-    "finalUrl": "https://us-coffee-roasters.com/",
+    "url": "https://hankchizljaw.com/",
+    "finalUrl": "https://hankchizljaw.com/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 1248.95,
-    "firstMeaningfulPaint": 1262.45,
-    "speedIndex": 1668.1837999674904,
-    "rank": 38
+    "firstContentfulPaint": 1123.5629999999999,
+    "firstMeaningfulPaint": 1135.5629999999999,
+    "speedIndex": 1759.5603954552464,
+    "rank": 15
   },
   {
-    "url": "https://thefutureislikepie.com/",
-    "finalUrl": "https://thefutureislikepie.com/",
+    "url": "https://www.hawksworx.com/",
+    "finalUrl": "https://www.hawksworx.com/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 1228.098,
-    "firstMeaningfulPaint": 1228.098,
-    "speedIndex": 1690.547700428417,
-    "rank": 39
+    "firstContentfulPaint": 1088.1779999999999,
+    "firstMeaningfulPaint": 1088.1779999999999,
+    "speedIndex": 1811.6154440147407,
+    "rank": 16
+  },
+  {
+    "url": "https://personalsit.es/",
+    "finalUrl": "https://personalsit.es/",
+    "lighthouseScore": 1,
+    "firstContentfulPaint": 1269.365,
+    "firstMeaningfulPaint": 1269.365,
+    "speedIndex": 1861.171713999152,
+    "rank": 17
+  },
+  {
+    "url": "https://crlf.site/",
+    "finalUrl": "https://crlf.site/",
+    "lighthouseScore": 1,
+    "firstContentfulPaint": 1228.6399999999999,
+    "firstMeaningfulPaint": 1228.6399999999999,
+    "speedIndex": 1862.502000005841,
+    "rank": 18
+  },
+  {
+    "url": "https://eystein.no/",
+    "finalUrl": "https://eystein.no/",
+    "lighthouseScore": 1,
+    "firstContentfulPaint": 1514.406,
+    "firstMeaningfulPaint": 1514.406,
+    "speedIndex": 1875.5125120204202,
+    "rank": 19
   },
   {
     "url": "https://www.11ty.dev/",
     "finalUrl": "https://www.11ty.dev/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 1573.624,
-    "firstMeaningfulPaint": 1573.624,
-    "speedIndex": 1720.7243828652738,
-    "rank": 40
+    "firstContentfulPaint": 1579.821,
+    "firstMeaningfulPaint": 1579.821,
+    "speedIndex": 1906.6119954387807,
+    "rank": 20
   },
   {
-    "url": "https://www.briangershon.com/",
-    "finalUrl": "https://www.briangershon.com/",
+    "url": "https://okitavera.me/",
+    "finalUrl": "https://okitavera.me/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 1389.926,
-    "firstMeaningfulPaint": 1389.926,
-    "speedIndex": 1738.3470959937213,
-    "rank": 41
+    "firstContentfulPaint": 1223.7559999999999,
+    "firstMeaningfulPaint": 1223.7559999999999,
+    "speedIndex": 1990.7716640110839,
+    "rank": 21
   },
   {
-    "url": "https://www.filamentgroup.com/",
-    "finalUrl": "https://www.filamentgroup.com/",
+    "url": "https://reubenlillie.com/",
+    "finalUrl": "https://reubenlillie.com/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 1185.622,
-    "firstMeaningfulPaint": 1185.622,
-    "speedIndex": 1739.4623275052213,
-    "rank": 42
+    "firstContentfulPaint": 1283.0519999999997,
+    "firstMeaningfulPaint": 1283.0519999999997,
+    "speedIndex": 1993.938275996792,
+    "rank": 22
   },
   {
-    "url": "https://mattrad.uk/",
-    "finalUrl": "https://mattrad.uk/",
+    "url": "https://us-coffee-roasters.com/",
+    "finalUrl": "https://us-coffee-roasters.com/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 1186.438,
-    "firstMeaningfulPaint": 1186.438,
-    "speedIndex": 1756.3627000150204,
-    "rank": 43
-  },
-  {
-    "url": "https://lennyanders.dev/",
-    "finalUrl": "https://lennyanders.dev/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1442.371,
-    "firstMeaningfulPaint": 1442.371,
-    "speedIndex": 1771.727666019106,
-    "rank": 44
-  },
-  {
-    "url": "https://rolandtoth.hu/",
-    "finalUrl": "https://rolandtoth.hu/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1041.949,
-    "firstMeaningfulPaint": 1041.949,
-    "speedIndex": 1866.9508585737174,
-    "rank": 45
-  },
-  {
-    "url": "http://lewicowo.pl/",
-    "finalUrl": "http://lewicowo.pl/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1363.1399999999999,
-    "firstMeaningfulPaint": 1363.1399999999999,
-    "speedIndex": 1868.9632639689437,
-    "rank": 46
-  },
-  {
-    "url": "https://nejsconf.com/",
-    "finalUrl": "https://nejsconf.com/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1530.1749999999997,
-    "firstMeaningfulPaint": 1530.1749999999997,
-    "speedIndex": 1893.2907399836774,
-    "rank": 47
-  },
-  {
-    "url": "https://kleinfreund.de/",
-    "finalUrl": "https://kleinfreund.de/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1145.629,
-    "firstMeaningfulPaint": 1145.629,
-    "speedIndex": 1925.8481899900198,
-    "rank": 48
-  },
-  {
-    "url": "https://corina-rudel.de/",
-    "finalUrl": "https://corina-rudel.de/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1232.62,
-    "firstMeaningfulPaint": 1232.62,
-    "speedIndex": 1928.1677823450445,
-    "rank": 49
-  },
-  {
-    "url": "https://mxb.dev/",
-    "finalUrl": "https://mxb.dev/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1062.0120000000002,
-    "firstMeaningfulPaint": 1062.0120000000002,
-    "speedIndex": 2101.950076007889,
-    "rank": 50
-  },
-  {
-    "url": "https://homan.io/",
-    "finalUrl": "https://homan.io/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1003.399,
-    "firstMeaningfulPaint": 1003.399,
-    "speedIndex": 2254.6668660216096,
-    "rank": 51
-  },
-  {
-    "url": "https://2019.nejsconf.com/",
-    "finalUrl": "https://2019.nejsconf.com/",
-    "lighthouseScore": 1,
-    "firstContentfulPaint": 1342.8559999999998,
-    "firstMeaningfulPaint": 1342.8559999999998,
-    "speedIndex": 2276.003336001181,
-    "rank": 52
+    "firstContentfulPaint": 1300.231,
+    "firstMeaningfulPaint": 1365.231,
+    "speedIndex": 2014.3985158534265,
+    "rank": 23
   },
   {
     "url": "https://www.matuzo.at/",
     "finalUrl": "https://www.matuzo.at/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1028.262,
-    "firstMeaningfulPaint": 1988.1515,
-    "speedIndex": 1110.439047990727,
-    "rank": 53
+    "lighthouseScore": 1,
+    "firstContentfulPaint": 1243.4099999999999,
+    "firstMeaningfulPaint": 1243.4099999999999,
+    "speedIndex": 2039.3036880092013,
+    "rank": 24
   },
   {
-    "url": "https://kula.blog/",
-    "finalUrl": "https://kula.blog/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1424.2649999999999,
-    "firstMeaningfulPaint": 1424.2649999999999,
-    "speedIndex": 1511.806664011836,
-    "rank": 54
+    "url": "https://joshuakeel.com/",
+    "finalUrl": "https://joshuakeel.com/",
+    "lighthouseScore": 1,
+    "firstContentfulPaint": 1284.1220000000003,
+    "firstMeaningfulPaint": 1284.1220000000003,
+    "speedIndex": 2094.227340016889,
+    "rank": 25
   },
   {
-    "url": "https://ivoputzer.blog/",
-    "finalUrl": "https://ivoputzer.blog/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1612.429,
-    "firstMeaningfulPaint": 1612.429,
-    "speedIndex": 1665.506978001809,
-    "rank": 55
+    "url": "https://hire.wil.to/",
+    "finalUrl": "https://hire.wil.to/",
+    "lighthouseScore": 1,
+    "firstContentfulPaint": 1317.9740000000002,
+    "firstMeaningfulPaint": 1317.9740000000002,
+    "speedIndex": 2184.782644008314,
+    "rank": 26
   },
   {
-    "url": "https://developur.rs/",
-    "finalUrl": "https://developur.rs/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1676.407,
-    "firstMeaningfulPaint": 1676.407,
-    "speedIndex": 1676.407,
-    "rank": 56
+    "url": "https://smth.uk/",
+    "finalUrl": "https://smth.uk/",
+    "lighthouseScore": 1,
+    "firstContentfulPaint": 1307.406,
+    "firstMeaningfulPaint": 1307.406,
+    "speedIndex": 2227.620387990678,
+    "rank": 27
   },
   {
-    "url": "https://deletescape.ch/",
-    "finalUrl": "https://deletescape.ch/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1703.4470000000001,
-    "firstMeaningfulPaint": 1703.4470000000001,
-    "speedIndex": 1703.4470000000001,
-    "rank": 57
+    "url": "https://developer.chrome.com/devsummit/",
+    "finalUrl": "https://developer.chrome.com/devsummit/",
+    "lighthouseScore": 1,
+    "firstContentfulPaint": 975.0560000000002,
+    "firstMeaningfulPaint": 975.0560000000002,
+    "speedIndex": 2256.441870018623,
+    "rank": 28
   },
   {
-    "url": "https://www.robinrendle.com/",
-    "finalUrl": "https://www.robinrendle.com/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1716.6,
-    "firstMeaningfulPaint": 2040.6744999999999,
-    "speedIndex": 1716.6,
-    "rank": 58
+    "url": "https://eleventy-notist-example.netlify.com/",
+    "finalUrl": "https://eleventy-notist-example.netlify.com/",
+    "lighthouseScore": 1,
+    "firstContentfulPaint": 925.293,
+    "firstMeaningfulPaint": 925.293,
+    "speedIndex": 2276.5494119836203,
+    "rank": 29
   },
   {
-    "url": "https://cassey-til.glitch.me/",
-    "finalUrl": "https://cassey-til.glitch.me/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1503.8880000000001,
-    "firstMeaningfulPaint": 1503.8880000000001,
-    "speedIndex": 1731.5162640264393,
-    "rank": 59
-  },
-  {
-    "url": "https://genehack.blog/",
-    "finalUrl": "https://genehack.blog/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1693.121,
-    "firstMeaningfulPaint": 1693.1210000000003,
-    "speedIndex": 1800.6471339721313,
-    "rank": 60
-  },
-  {
-    "url": "https://www.signalkuppe.com/",
-    "finalUrl": "https://www.signalkuppe.com/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1804.437,
-    "firstMeaningfulPaint": 1804.437,
-    "speedIndex": 1804.437,
-    "rank": 61
-  },
-  {
-    "url": "https://fifty.snook.ca/",
-    "finalUrl": "https://fifty.snook.ca/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1741.844,
-    "firstMeaningfulPaint": 1741.844,
-    "speedIndex": 1811.3264360044361,
-    "rank": 62
-  },
-  {
-    "url": "https://levimcg.com/",
-    "finalUrl": "https://levimcg.com/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1818.0639999999999,
-    "firstMeaningfulPaint": 1818.0639999999999,
-    "speedIndex": 1818.0639999999999,
-    "rank": 63
-  },
-  {
-    "url": "https://cathydutton.co.uk/",
-    "finalUrl": "https://cathydutton.co.uk/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1840.496,
-    "firstMeaningfulPaint": 1840.496,
-    "speedIndex": 1840.496,
-    "rank": 64
-  },
-  {
-    "url": "https://unslump.me/",
-    "finalUrl": "https://unslump.me/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1771.972,
-    "firstMeaningfulPaint": 1771.972,
-    "speedIndex": 1870.9062639841318,
-    "rank": 65
-  },
-  {
-    "url": "https://ryzokuken.js.org/",
-    "finalUrl": "https://ryzokuken.js.org/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1786.013,
-    "firstMeaningfulPaint": 1786.013,
-    "speedIndex": 1876.2005260073065,
-    "rank": 66
-  },
-  {
-    "url": "https://ask.netlify.com/",
-    "finalUrl": "https://ask.netlify.com/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1883.9940000000001,
-    "firstMeaningfulPaint": 1883.9940000000001,
-    "speedIndex": 1883.9940000000001,
-    "rank": 67
-  },
-  {
-    "url": "https://conferences.css-tricks.com/",
-    "finalUrl": "https://conferences.css-tricks.com/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1916.9129999999996,
-    "firstMeaningfulPaint": 1916.9129999999996,
-    "speedIndex": 1916.9129999999996,
-    "rank": 68
-  },
-  {
-    "url": "https://lilypond-in-markdown.netlify.com/",
-    "finalUrl": "https://lilypond-in-markdown.netlify.com/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1907.26,
-    "firstMeaningfulPaint": 1907.26,
-    "speedIndex": 1925.0027479873893,
-    "rank": 69
-  },
-  {
-    "url": "https://www.bridgestew.com/",
-    "finalUrl": "https://www.bridgestew.com/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1774.515,
-    "firstMeaningfulPaint": 1921.104,
-    "speedIndex": 1937.4345980154276,
-    "rank": 70
-  },
-  {
-    "url": "https://www.kajrietberg.nl/",
-    "finalUrl": "https://www.kajrietberg.nl/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1939.143,
-    "firstMeaningfulPaint": 1939.143,
-    "speedIndex": 1939.143,
-    "rank": 71
-  },
-  {
-    "url": "https://ffconf.org/",
-    "finalUrl": "https://ffconf.org/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1456.8390000000002,
-    "firstMeaningfulPaint": 1456.8390000000002,
-    "speedIndex": 1939.8750280077334,
-    "rank": 72
+    "url": "https://wiltomakesfood.com/",
+    "finalUrl": "https://wiltomakesfood.com/",
+    "lighthouseScore": 1,
+    "firstContentfulPaint": 1020.8910000000001,
+    "firstMeaningfulPaint": 1020.8910000000001,
+    "speedIndex": 2295.9014100033864,
+    "rank": 30
   },
   {
     "url": "https://www.chriscollins.me/",
     "finalUrl": "https://www.chriscollins.me/",
     "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1750.1840000000002,
-    "firstMeaningfulPaint": 1750.1840000000002,
-    "speedIndex": 1977.4255760093092,
-    "rank": 73
+    "firstContentfulPaint": 1691.3400000000001,
+    "firstMeaningfulPaint": 1691.3400000000001,
+    "speedIndex": 1981.3882640010722,
+    "rank": 31
   },
   {
-    "url": "https://annualbeta.com/",
-    "finalUrl": "https://annualbeta.com/",
+    "url": "https://everydayia.com/",
+    "finalUrl": "https://everydayia.com/",
     "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1773.0724999999998,
-    "firstMeaningfulPaint": 1773.0724999999998,
-    "speedIndex": 1979.542413997817,
-    "rank": 74
+    "firstContentfulPaint": 1512.7440000000001,
+    "firstMeaningfulPaint": 1512.7440000000001,
+    "speedIndex": 2035.02812801466,
+    "rank": 32
   },
   {
-    "url": "https://screen-read.com/",
-    "finalUrl": "https://screen-read.com/",
+    "url": "https://www.robinrendle.com/",
+    "finalUrl": "https://www.robinrendle.com/",
     "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1440.112,
-    "firstMeaningfulPaint": 1440.112,
-    "speedIndex": 2033.6842680185314,
-    "rank": 75
+    "firstContentfulPaint": 1834.214,
+    "firstMeaningfulPaint": 1834.214,
+    "speedIndex": 2060.353019997096,
+    "rank": 33
+  },
+  {
+    "url": "https://www.briangershon.com/",
+    "finalUrl": "https://www.briangershon.com/",
+    "lighthouseScore": 0.99,
+    "firstContentfulPaint": 1569.6660000000002,
+    "firstMeaningfulPaint": 1569.6660000000002,
+    "speedIndex": 2141.376777987206,
+    "rank": 34
+  },
+  {
+    "url": "https://ramigs.dev/",
+    "finalUrl": "https://ramigs.dev/",
+    "lighthouseScore": 0.99,
+    "firstContentfulPaint": 1527.8159999999998,
+    "firstMeaningfulPaint": 1527.8159999999998,
+    "speedIndex": 2149.6591960104934,
+    "rank": 35
+  },
+  {
+    "url": "https://devreldiaries.commons.host/",
+    "finalUrl": "https://devreldiaries.commons.host/",
+    "lighthouseScore": 0.99,
+    "firstContentfulPaint": 1255.5639999999999,
+    "firstMeaningfulPaint": 2033.3459999999998,
+    "speedIndex": 2175.29040399084,
+    "rank": 36
+  },
+  {
+    "url": "https://deletescape.ch/",
+    "finalUrl": "https://deletescape.ch/",
+    "lighthouseScore": 0.99,
+    "firstContentfulPaint": 1741.1970000000001,
+    "firstMeaningfulPaint": 1741.1970000000001,
+    "speedIndex": 2203.132938018548,
+    "rank": 37
+  },
+  {
+    "url": "https://ride.netlify.com/latest",
+    "finalUrl": "https://ride.netlify.com/latest",
+    "lighthouseScore": 0.99,
+    "firstContentfulPaint": 1214.683,
+    "firstMeaningfulPaint": 1227.183,
+    "speedIndex": 2221.977748004328,
+    "rank": 38
+  },
+  {
+    "url": "https://www.bridgestew.com/",
+    "finalUrl": "https://www.bridgestew.com/",
+    "lighthouseScore": 0.99,
+    "firstContentfulPaint": 1801.1390000000001,
+    "firstMeaningfulPaint": 1912.171,
+    "speedIndex": 2350.4883900173063,
+    "rank": 39
   },
   {
     "url": "https://tatianamac.com/",
     "finalUrl": "https://tatianamac.com/",
     "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1407.6209999999996,
-    "firstMeaningfulPaint": 1407.6209999999996,
-    "speedIndex": 2074.069526022575,
-    "rank": 76
+    "firstContentfulPaint": 1416.6479999999997,
+    "firstMeaningfulPaint": 1416.6479999999997,
+    "speedIndex": 2351.047888024221,
+    "rank": 40
   },
   {
-    "url": "https://nuotsu.com/",
-    "finalUrl": "https://nuotsu.com/",
+    "url": "https://cezaraugusto.net/",
+    "finalUrl": "https://cezaraugusto.net/",
     "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1793.0870000000002,
-    "firstMeaningfulPaint": 1793.0870000000002,
-    "speedIndex": 2080.7243940344324,
-    "rank": 77
-  },
-  {
-    "url": "https://saschadiercks.de/",
-    "finalUrl": "https://saschadiercks.de/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1617.6270000000004,
-    "firstMeaningfulPaint": 1765.3090000000002,
-    "speedIndex": 2134.3189820089224,
-    "rank": 78
-  },
-  {
-    "url": "https://design.saschadiercks.de/",
-    "finalUrl": "https://design.saschadiercks.de/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1593.471,
-    "firstMeaningfulPaint": 1742.497,
-    "speedIndex": 2162.0956460135812,
-    "rank": 79
-  },
-  {
-    "url": "https://johanbrook.com/",
-    "finalUrl": "https://johanbrook.com/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1919.5349999999996,
-    "firstMeaningfulPaint": 1919.5349999999996,
-    "speedIndex": 2169.321126011728,
-    "rank": 80
-  },
-  {
-    "url": "https://eystein.no/",
-    "finalUrl": "https://eystein.no/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1757.406,
-    "firstMeaningfulPaint": 1757.406,
-    "speedIndex": 2171.2237759835234,
-    "rank": 81
-  },
-  {
-    "url": "https://jamesdoc.com/",
-    "finalUrl": "https://jamesdoc.com/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1824.0569999999998,
-    "firstMeaningfulPaint": 1824.0569999999998,
-    "speedIndex": 2358.6089780283446,
-    "rank": 82
-  },
-  {
-    "url": "https://spirits.bischoff.wtf/",
-    "finalUrl": "https://spirits.bischoff.wtf/",
-    "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1535.949,
-    "firstMeaningfulPaint": 1535.949,
-    "speedIndex": 2366.8598100085605,
-    "rank": 83
+    "firstContentfulPaint": 1319.69,
+    "firstMeaningfulPaint": 1319.69,
+    "speedIndex": 2434.4688280211685,
+    "rank": 41
   },
   {
     "url": "https://blr.design/",
     "finalUrl": "https://blr.design/",
     "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1054.773,
-    "firstMeaningfulPaint": 1054.773,
-    "speedIndex": 2377.8820060092908,
-    "rank": 84
+    "firstContentfulPaint": 1173.113,
+    "firstMeaningfulPaint": 1173.113,
+    "speedIndex": 2458.3949579882724,
+    "rank": 42
+  },
+  {
+    "url": "https://spirits.bischoff.wtf/",
+    "finalUrl": "https://spirits.bischoff.wtf/",
+    "lighthouseScore": 0.99,
+    "firstContentfulPaint": 1539.1779999999999,
+    "firstMeaningfulPaint": 1539.1779999999999,
+    "speedIndex": 2511.156659998964,
+    "rank": 43
+  },
+  {
+    "url": "https://ask.netlify.com/",
+    "finalUrl": "https://ask.netlify.com/",
+    "lighthouseScore": 0.99,
+    "firstContentfulPaint": 1867.689,
+    "firstMeaningfulPaint": 1867.689,
+    "speedIndex": 2525.5854020070187,
+    "rank": 44
+  },
+  {
+    "url": "https://disjfa.github.io/eleventy-encore/",
+    "finalUrl": "https://disjfa.github.io/eleventy-encore/",
+    "lighthouseScore": 0.99,
+    "firstContentfulPaint": 1449.636,
+    "firstMeaningfulPaint": 1449.636,
+    "speedIndex": 2525.842280006492,
+    "rank": 45
+  },
+  {
+    "url": "https://2018.nejsconf.com/",
+    "finalUrl": "https://2018.nejsconf.com/",
+    "lighthouseScore": 0.99,
+    "firstContentfulPaint": 1004.107,
+    "firstMeaningfulPaint": 1004.107,
+    "speedIndex": 2545.3073159599844,
+    "rank": 46
+  },
+  {
+    "url": "https://nejsconf.com/",
+    "finalUrl": "https://nejsconf.com/",
+    "lighthouseScore": 0.99,
+    "firstContentfulPaint": 1488.6180000000004,
+    "firstMeaningfulPaint": 1488.6180000000004,
+    "speedIndex": 2546.873704009784,
+    "rank": 47
   },
   {
     "url": "https://nicolas-hoizey.com/",
     "finalUrl": "https://nicolas-hoizey.com/",
     "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1236.9850000000001,
-    "firstMeaningfulPaint": 1284.9850000000001,
-    "speedIndex": 2390.4375018455085,
-    "rank": 85
+    "firstContentfulPaint": 1258.489,
+    "firstMeaningfulPaint": 1295.989,
+    "speedIndex": 2625.2446082224633,
+    "rank": 48
   },
   {
-    "url": "https://worldwideweb.cern.ch/",
-    "finalUrl": "https://worldwideweb.cern.ch/",
+    "url": "https://mxb.dev/",
+    "finalUrl": "https://mxb.dev/",
     "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1245.998,
-    "firstMeaningfulPaint": 1245.998,
-    "speedIndex": 2458.5343703995104,
-    "rank": 86
+    "firstContentfulPaint": 1210.234,
+    "firstMeaningfulPaint": 1210.234,
+    "speedIndex": 2732.0549880014414,
+    "rank": 49
   },
   {
-    "url": "https://paulrobertlloyd.com/",
-    "finalUrl": "https://paulrobertlloyd.com/",
+    "url": "https://2019.nejsconf.com/",
+    "finalUrl": "https://2019.nejsconf.com/",
     "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1136.559,
-    "firstMeaningfulPaint": 1136.559,
-    "speedIndex": 2558.6052779882907,
-    "rank": 87
+    "firstContentfulPaint": 1389.3339999999998,
+    "firstMeaningfulPaint": 1389.3339999999998,
+    "speedIndex": 2815.6914804212793,
+    "rank": 50
   },
   {
-    "url": "https://thedixons.net/",
-    "finalUrl": "https://thedixons.net/",
+    "url": "https://www.filamentgroup.com/",
+    "finalUrl": "https://www.filamentgroup.com/",
     "lighthouseScore": 0.99,
-    "firstContentfulPaint": 1434.508,
-    "firstMeaningfulPaint": 1434.508,
-    "speedIndex": 2567.5634520059352,
-    "rank": 88
+    "firstContentfulPaint": 1232.836,
+    "firstMeaningfulPaint": 1232.836,
+    "speedIndex": 2884.0268566531786,
+    "rank": 51
   },
   {
-    "url": "https://jdsteinbach.com/",
-    "finalUrl": "https://jdsteinbach.com/",
-    "lighthouseScore": 0.98,
-    "firstContentfulPaint": 1620.788,
-    "firstMeaningfulPaint": 2460.5860000000002,
-    "speedIndex": 1688.269172920848,
-    "rank": 89
+    "url": "https://rolandtoth.hu/",
+    "finalUrl": "https://rolandtoth.hu/",
+    "lighthouseScore": 0.99,
+    "firstContentfulPaint": 1115.2379999999998,
+    "firstMeaningfulPaint": 1115.2379999999998,
+    "speedIndex": 2955.3006156959527,
+    "rank": 52
   },
   {
-    "url": "https://myclientwants.com/",
-    "finalUrl": "https://myclientwants.com/",
+    "url": "https://templates.netlify.com/",
+    "finalUrl": "https://templates.netlify.com/",
     "lighthouseScore": 0.98,
-    "firstContentfulPaint": 1614.538,
-    "firstMeaningfulPaint": 1917.951,
-    "speedIndex": 1748.0149400178907,
-    "rank": 90
+    "firstContentfulPaint": 1785.3580000000002,
+    "firstMeaningfulPaint": 1785.3580000000002,
+    "speedIndex": 2184.285439986181,
+    "rank": 53
   },
   {
-    "url": "https://indiewebguides.org/",
-    "finalUrl": "https://indiewebguides.org/",
+    "url": "https://www.webstoemp.com/",
+    "finalUrl": "https://www.webstoemp.com/",
     "lighthouseScore": 0.98,
-    "firstContentfulPaint": 1766.3890000000001,
-    "firstMeaningfulPaint": 1766.3890000000001,
-    "speedIndex": 1766.3890000000001,
-    "rank": 91
+    "firstContentfulPaint": 1412.0839999999998,
+    "firstMeaningfulPaint": 1765.1049999999998,
+    "speedIndex": 2358.138258015312,
+    "rank": 54
   },
   {
-    "url": "https://kushagra.dev/",
-    "finalUrl": "https://kushagra.dev/",
+    "url": "https://elisted.org/",
+    "finalUrl": "https://elisted.org/",
     "lighthouseScore": 0.98,
-    "firstContentfulPaint": 1794.1819999999998,
-    "firstMeaningfulPaint": 1794.1819999999998,
-    "speedIndex": 1794.1819999999998,
-    "rank": 92
+    "firstContentfulPaint": 1504.0430000000001,
+    "firstMeaningfulPaint": 2247.6075,
+    "speedIndex": 2432.087510673969,
+    "rank": 55
   },
   {
-    "url": "https://dsmun.in/",
-    "finalUrl": "https://dsmun.in/",
+    "url": "https://kula.blog/",
+    "finalUrl": "https://kula.blog/",
     "lighthouseScore": 0.98,
-    "firstContentfulPaint": 1043.1879999999999,
-    "firstMeaningfulPaint": 1043.1879999999999,
-    "speedIndex": 1840.2069874040765,
-    "rank": 93
+    "firstContentfulPaint": 1617.72,
+    "firstMeaningfulPaint": 1617.72,
+    "speedIndex": 2488.363864001154,
+    "rank": 56
   },
   {
-    "url": "https://www.console.love/",
-    "finalUrl": "https://www.console.love/",
+    "url": "https://www.kajrietberg.nl/",
+    "finalUrl": "https://www.kajrietberg.nl/",
     "lighthouseScore": 0.98,
-    "firstContentfulPaint": 1061.85,
-    "firstMeaningfulPaint": 1061.85,
-    "speedIndex": 1850.200677813671,
-    "rank": 94
+    "firstContentfulPaint": 1907.6429999999998,
+    "firstMeaningfulPaint": 1907.6429999999998,
+    "speedIndex": 2613.683358006131,
+    "rank": 57
   },
   {
-    "url": "https://brycewray.com/",
-    "finalUrl": "https://brycewray.com/",
+    "url": "https://unslump.me/",
+    "finalUrl": "https://unslump.me/",
     "lighthouseScore": 0.98,
-    "firstContentfulPaint": 2012.594,
-    "firstMeaningfulPaint": 2012.594,
-    "speedIndex": 2012.594,
-    "rank": 95
-  },
-  {
-    "url": "https://www.andreacorinti.com/",
-    "finalUrl": "https://www.andreacorinti.com/",
-    "lighthouseScore": 0.98,
-    "firstContentfulPaint": 2016.141,
-    "firstMeaningfulPaint": 2166.1410000000005,
-    "speedIndex": 2175.368042012477,
-    "rank": 96
-  },
-  {
-    "url": "https://sia.codes/",
-    "finalUrl": "https://sia.codes/",
-    "lighthouseScore": 0.98,
-    "firstContentfulPaint": 1912.6729999999998,
-    "firstMeaningfulPaint": 1987.6729999999998,
-    "speedIndex": 2240.5173749496416,
-    "rank": 97
+    "firstContentfulPaint": 1824.8000000000002,
+    "firstMeaningfulPaint": 1824.8000000000002,
+    "speedIndex": 2632.472223991275,
+    "rank": 58
   },
   {
     "url": "https://www.barcia.dev/",
     "finalUrl": "https://www.barcia.dev/",
     "lighthouseScore": 0.98,
-    "firstContentfulPaint": 1955.6980000000003,
-    "firstMeaningfulPaint": 1955.6980000000003,
-    "speedIndex": 2312.083096012831,
-    "rank": 98
+    "firstContentfulPaint": 1312.0479999999998,
+    "firstMeaningfulPaint": 1312.0479999999998,
+    "speedIndex": 2670.2456120188344,
+    "rank": 59
   },
   {
-    "url": "https://tempertemper.net/",
-    "finalUrl": "https://www.tempertemper.net/",
+    "url": "https://jamesdoc.com/",
+    "finalUrl": "https://jamesdoc.com/",
     "lighthouseScore": 0.98,
-    "firstContentfulPaint": 2042.8489999999997,
-    "firstMeaningfulPaint": 2042.8489999999997,
-    "speedIndex": 2360.0008020131945,
-    "rank": 99
+    "firstContentfulPaint": 1823.163,
+    "firstMeaningfulPaint": 1823.163,
+    "speedIndex": 2678.35526999159,
+    "rank": 60
   },
   {
-    "url": "https://grochtdreis.de/",
-    "finalUrl": "https://grochtdreis.de/",
+    "url": "https://cassey-til.glitch.me/",
+    "finalUrl": "https://cassey-til.glitch.me/",
     "lighthouseScore": 0.98,
-    "firstContentfulPaint": 1372.8200000000002,
-    "firstMeaningfulPaint": 2059.2300000000005,
-    "speedIndex": 2379.9964799919717,
-    "rank": 100
+    "firstContentfulPaint": 1727.8139999999999,
+    "firstMeaningfulPaint": 1727.8139999999999,
+    "speedIndex": 2700.6053879849187,
+    "rank": 61
   },
   {
-    "url": "https://3lp.me/",
-    "finalUrl": "https://3lp.me/",
+    "url": "https://www.d-hagemeier.com/",
+    "finalUrl": "https://www.d-hagemeier.com/en/",
     "lighthouseScore": 0.98,
-    "firstContentfulPaint": 1627.3990000000003,
-    "firstMeaningfulPaint": 1665.8990000000003,
-    "speedIndex": 2828.6976822907354,
-    "rank": 101
+    "firstContentfulPaint": 1732.2060000000001,
+    "firstMeaningfulPaint": 1732.2060000000001,
+    "speedIndex": 2744.4825319771285,
+    "rank": 62
   },
   {
-    "url": "https://jeremenichelli.io/",
-    "finalUrl": "https://jeremenichelli.io/",
+    "url": "https://ryzokuken.js.org/",
+    "finalUrl": "https://ryzokuken.js.org/",
     "lighthouseScore": 0.98,
-    "firstContentfulPaint": 1461.841,
-    "firstMeaningfulPaint": 1461.841,
-    "speedIndex": 2859.5567819822195,
-    "rank": 102
+    "firstContentfulPaint": 1836.6309999999999,
+    "firstMeaningfulPaint": 1836.6309999999999,
+    "speedIndex": 2796.7724220293994,
+    "rank": 63
   },
   {
-    "url": "https://neptunbrigad.hu/",
-    "finalUrl": "https://neptunbrigad.hu/",
+    "url": "https://levimcg.com/",
+    "finalUrl": "https://levimcg.com/",
     "lighthouseScore": 0.98,
-    "firstContentfulPaint": 1206.808,
-    "firstMeaningfulPaint": 1206.808,
-    "speedIndex": 3100.7854459104865,
-    "rank": 103
+    "firstContentfulPaint": 1668.464,
+    "firstMeaningfulPaint": 1668.464,
+    "speedIndex": 2841.5464440010537,
+    "rank": 64
   },
   {
-    "url": "https://v8.dev/",
-    "finalUrl": "https://v8.dev/",
-    "lighthouseScore": 0.97,
-    "firstContentfulPaint": 1258.1135,
-    "firstMeaningfulPaint": 1258.1135,
-    "speedIndex": 2059.8327590624185,
-    "rank": 104
+    "url": "https://thefutureislikepie.com/",
+    "finalUrl": "https://thefutureislikepie.com/",
+    "lighthouseScore": 0.98,
+    "firstContentfulPaint": 1487.518,
+    "firstMeaningfulPaint": 1487.518,
+    "speedIndex": 2912.2189160004987,
+    "rank": 65
   },
   {
-    "url": "https://gvonkoss.com/",
-    "finalUrl": "https://gvonkoss.com/",
-    "lighthouseScore": 0.97,
-    "firstContentfulPaint": 2078.224,
-    "firstMeaningfulPaint": 2228.224,
-    "speedIndex": 2078.224,
-    "rank": 105
+    "url": "https://www.londoncss.dev/",
+    "finalUrl": "https://www.londoncss.dev/",
+    "lighthouseScore": 0.98,
+    "firstContentfulPaint": 1557.7999999999997,
+    "firstMeaningfulPaint": 1557.7999999999997,
+    "speedIndex": 2913.6714280174956,
+    "rank": 66
   },
   {
-    "url": "https://templates.netlify.com/",
-    "finalUrl": "https://templates.netlify.com/",
-    "lighthouseScore": 0.97,
-    "firstContentfulPaint": 2085.298,
-    "firstMeaningfulPaint": 2085.298,
-    "speedIndex": 2085.298,
-    "rank": 106
+    "url": "http://lewicowo.pl/",
+    "finalUrl": "http://lewicowo.pl/",
+    "lighthouseScore": 0.98,
+    "firstContentfulPaint": 1520.284,
+    "firstMeaningfulPaint": 1520.284,
+    "speedIndex": 2931.5487239782583,
+    "rank": 67
   },
   {
-    "url": "https://webcomponents.club/",
-    "finalUrl": "https://webcomponents.club/",
-    "lighthouseScore": 0.97,
-    "firstContentfulPaint": 1275.227,
-    "firstMeaningfulPaint": 1275.227,
-    "speedIndex": 2088.4899806900416,
-    "rank": 107
+    "url": "https://homan.io/",
+    "finalUrl": "https://homan.io/",
+    "lighthouseScore": 0.98,
+    "firstContentfulPaint": 1125.578,
+    "firstMeaningfulPaint": 1125.578,
+    "speedIndex": 2974.5112840247866,
+    "rank": 68
   },
   {
-    "url": "http://www.guangshi.io/",
-    "finalUrl": "https://www.guangshi.io/",
+    "url": "https://corina-rudel.de/",
+    "finalUrl": "https://corina-rudel.de/",
+    "lighthouseScore": 0.98,
+    "firstContentfulPaint": 1476.1019999999999,
+    "firstMeaningfulPaint": 1476.1019999999999,
+    "speedIndex": 3021.0271059029546,
+    "rank": 69
+  },
+  {
+    "url": "https://worldwideweb.cern.ch/",
+    "finalUrl": "https://worldwideweb.cern.ch/",
+    "lighthouseScore": 0.98,
+    "firstContentfulPaint": 1442.5240000000003,
+    "firstMeaningfulPaint": 1442.5240000000003,
+    "speedIndex": 3086.3051479989053,
+    "rank": 70
+  },
+  {
+    "url": "https://kleinfreund.de/",
+    "finalUrl": "https://kleinfreund.de/",
+    "lighthouseScore": 0.98,
+    "firstContentfulPaint": 1127.492,
+    "firstMeaningfulPaint": 1127.492,
+    "speedIndex": 3326.7412639757863,
+    "rank": 71
+  },
+  {
+    "url": "https://www.duetds.com/",
+    "finalUrl": "https://www.duetds.com/",
     "lighthouseScore": 0.97,
-    "firstContentfulPaint": 2092.7709999999997,
-    "firstMeaningfulPaint": 2092.7709999999997,
-    "speedIndex": 2092.7709999999997,
-    "rank": 108
+    "firstContentfulPaint": 1308.694,
+    "firstMeaningfulPaint": 1312.588,
+    "speedIndex": 1976.687630527439,
+    "rank": 72
+  },
+  {
+    "url": "https://cathydutton.co.uk/",
+    "finalUrl": "https://cathydutton.co.uk/",
+    "lighthouseScore": 0.97,
+    "firstContentfulPaint": 1996.277,
+    "firstMeaningfulPaint": 1996.277,
+    "speedIndex": 2451.064229974198,
+    "rank": 73
+  },
+  {
+    "url": "https://indiewebguides.org/",
+    "finalUrl": "https://indiewebguides.org/",
+    "lighthouseScore": 0.97,
+    "firstContentfulPaint": 1810.469,
+    "firstMeaningfulPaint": 2298.352,
+    "speedIndex": 2517.062414015925,
+    "rank": 74
   },
   {
     "url": "https://www.fontspeed.io/",
     "finalUrl": "https://www.fontspeed.io/",
     "lighthouseScore": 0.97,
-    "firstContentfulPaint": 1026.839,
-    "firstMeaningfulPaint": 1026.839,
-    "speedIndex": 2104.438311139672,
-    "rank": 109
+    "firstContentfulPaint": 1014.5219999999999,
+    "firstMeaningfulPaint": 1014.5219999999999,
+    "speedIndex": 2627.93848881582,
+    "rank": 75
   },
   {
-    "url": "https://lowtus.fr/",
-    "finalUrl": "https://lowtus.fr/",
+    "url": "https://dsmun.in/",
+    "finalUrl": "https://dsmun.in/",
     "lighthouseScore": 0.97,
-    "firstContentfulPaint": 1308.2189999999998,
-    "firstMeaningfulPaint": 1308.2189999999998,
-    "speedIndex": 2214.5686509151337,
-    "rank": 110
+    "firstContentfulPaint": 1223.442,
+    "firstMeaningfulPaint": 1223.442,
+    "speedIndex": 2915.9682394984256,
+    "rank": 76
   },
   {
-    "url": "https://debitpay.directory/",
-    "finalUrl": "https://debitpay.directory/",
+    "url": "https://www.juanfernandes.uk/",
+    "finalUrl": "https://www.juanfernandes.uk/",
     "lighthouseScore": 0.97,
-    "firstContentfulPaint": 2246.1839999999997,
-    "firstMeaningfulPaint": 2246.1839999999997,
-    "speedIndex": 2246.1839999999997,
-    "rank": 111
+    "firstContentfulPaint": 1513.714,
+    "firstMeaningfulPaint": 1513.714,
+    "speedIndex": 2992.301007765738,
+    "rank": 77
   },
   {
-    "url": "https://andrewhudson.dev/",
-    "finalUrl": "https://andrewhudson.dev/",
+    "url": "https://ivoputzer.blog/",
+    "finalUrl": "https://ivoputzer.blog/",
     "lighthouseScore": 0.97,
-    "firstContentfulPaint": 1074.812,
-    "firstMeaningfulPaint": 1074.812,
-    "speedIndex": 2339.7137212187035,
-    "rank": 112
+    "firstContentfulPaint": 1780.29,
+    "firstMeaningfulPaint": 1780.29,
+    "speedIndex": 3133.067063985467,
+    "rank": 78
   },
   {
-    "url": "https://glenn.thedixons.net/",
-    "finalUrl": "https://glenn.thedixons.net/",
-    "lighthouseScore": 0.97,
-    "firstContentfulPaint": 1187.746,
-    "firstMeaningfulPaint": 1778.5555000000002,
-    "speedIndex": 2361.413232885959,
-    "rank": 113
-  },
-  {
-    "url": "https://cw2architects.com/",
-    "finalUrl": "https://cw2architects.com/",
-    "lighthouseScore": 0.97,
-    "firstContentfulPaint": 2045.4189999999999,
-    "firstMeaningfulPaint": 2195.419,
-    "speedIndex": 2676.8527139815446,
-    "rank": 114
-  },
-  {
-    "url": "https://www.duetds.com/",
-    "finalUrl": "https://www.duetds.com/",
+    "url": "https://kushagra.dev/",
+    "finalUrl": "https://kushagra.dev/",
     "lighthouseScore": 0.96,
-    "firstContentfulPaint": 2028.501,
-    "firstMeaningfulPaint": 2028.501,
-    "speedIndex": 2028.501,
-    "rank": 115
+    "firstContentfulPaint": 1919.7469999999998,
+    "firstMeaningfulPaint": 1919.7469999999998,
+    "speedIndex": 2433.2638379683963,
+    "rank": 79
   },
   {
-    "url": "https://cezaraugusto.net/",
-    "finalUrl": "https://cezaraugusto.net/",
+    "url": "https://jdsteinbach.com/",
+    "finalUrl": "https://jdsteinbach.com/",
     "lighthouseScore": 0.96,
-    "firstContentfulPaint": 2147.37,
-    "firstMeaningfulPaint": 2147.37,
-    "speedIndex": 2164.7084280341855,
-    "rank": 116
+    "firstContentfulPaint": 1915.2799999999997,
+    "firstMeaningfulPaint": 2751.3920000000003,
+    "speedIndex": 2462.5413736244363,
+    "rank": 80
   },
   {
-    "url": "https://www.coralseacablesystem.com.au/",
-    "finalUrl": "https://www.coralseacablesystem.com.au/",
+    "url": "https://myclientwants.com/",
+    "finalUrl": "https://myclientwants.com/",
     "lighthouseScore": 0.96,
-    "firstContentfulPaint": 1956.2240000000002,
-    "firstMeaningfulPaint": 1956.2240000000002,
-    "speedIndex": 2166.670587978994,
-    "rank": 117
-  },
-  {
-    "url": "https://www.miriamsuzanne.com/",
-    "finalUrl": "https://www.miriamsuzanne.com/",
-    "lighthouseScore": 0.96,
-    "firstContentfulPaint": 2092.522,
-    "firstMeaningfulPaint": 2715.1965,
-    "speedIndex": 2252.829520017791,
-    "rank": 118
-  },
-  {
-    "url": "https://bentleydavis.com/",
-    "finalUrl": "https://bentleydavis.com/",
-    "lighthouseScore": 0.96,
-    "firstContentfulPaint": 2244.2090000000003,
-    "firstMeaningfulPaint": 2272.2090000000003,
-    "speedIndex": 2378.5363346144986,
-    "rank": 119
-  },
-  {
-    "url": "https://forte.is/",
-    "finalUrl": "https://forte.is/",
-    "lighthouseScore": 0.96,
-    "firstContentfulPaint": 1799.64,
-    "firstMeaningfulPaint": 2402.446,
-    "speedIndex": 2405.7950158780914,
-    "rank": 120
+    "firstContentfulPaint": 1747.003,
+    "firstMeaningfulPaint": 2050.586,
+    "speedIndex": 2523.0808779928793,
+    "rank": 81
   },
   {
     "url": "https://mochajs.org/",
     "finalUrl": "https://mochajs.org/",
     "lighthouseScore": 0.96,
-    "firstContentfulPaint": 1926.3339999999998,
-    "firstMeaningfulPaint": 1926.3339999999998,
-    "speedIndex": 2606.427533163292,
-    "rank": 121
+    "firstContentfulPaint": 1982.462,
+    "firstMeaningfulPaint": 1982.462,
+    "speedIndex": 2644.353377014117,
+    "rank": 82
   },
   {
-    "url": "https://christianfei.com/",
-    "finalUrl": "https://christianfei.com/",
+    "url": "https://lowtus.fr/",
+    "finalUrl": "https://lowtus.fr/",
     "lighthouseScore": 0.96,
-    "firstContentfulPaint": 1977.272,
-    "firstMeaningfulPaint": 1977.272,
-    "speedIndex": 2736.248388009535,
-    "rank": 122
-  },
-  {
-    "url": "https://anchorthemes.com/",
-    "finalUrl": "https://anchorthemes.com/",
-    "lighthouseScore": 0.96,
-    "firstContentfulPaint": 2354.263,
-    "firstMeaningfulPaint": 2354.263,
-    "speedIndex": 2831.3889660245277,
-    "rank": 123
-  },
-  {
-    "url": "https://kack.dev/",
-    "finalUrl": "https://kack.dev/",
-    "lighthouseScore": 0.96,
-    "firstContentfulPaint": 1524.714,
-    "firstMeaningfulPaint": 2743.2495,
-    "speedIndex": 2847.879859991704,
-    "rank": 124
-  },
-  {
-    "url": "https://www.timothymiller.dev/",
-    "finalUrl": "https://timothymiller.dev/",
-    "lighthouseScore": 0.96,
-    "firstContentfulPaint": 1846.4020000000003,
-    "firstMeaningfulPaint": 2620.8655000000003,
-    "speedIndex": 2897.1568679948323,
-    "rank": 125
-  },
-  {
-    "url": "https://zellwk.com/",
-    "finalUrl": "https://zellwk.com/",
-    "lighthouseScore": 0.96,
-    "firstContentfulPaint": 1933.504,
-    "firstMeaningfulPaint": 1933.504,
-    "speedIndex": 3484.698343692288,
-    "rank": 126
-  },
-  {
-    "url": "https://www.vtcodecamp.org/",
-    "finalUrl": "https://www.vtcodecamp.org/",
-    "lighthouseScore": 0.95,
-    "firstContentfulPaint": 1970.7129999999997,
-    "firstMeaningfulPaint": 2225.9265,
-    "speedIndex": 2460.6111063666585,
-    "rank": 127
-  },
-  {
-    "url": "https://uglyduck.ca/",
-    "finalUrl": "https://uglyduck.ca/",
-    "lighthouseScore": 0.95,
-    "firstContentfulPaint": 2556.35,
-    "firstMeaningfulPaint": 2556.35,
-    "speedIndex": 2556.35,
-    "rank": 128
-  },
-  {
-    "url": "https://shotplot.app/",
-    "finalUrl": "https://shotplot.app/",
-    "lighthouseScore": 0.95,
-    "firstContentfulPaint": 1516.59,
-    "firstMeaningfulPaint": 2391.385,
-    "speedIndex": 2761.776708398468,
-    "rank": 129
+    "firstContentfulPaint": 1332.868,
+    "firstMeaningfulPaint": 1332.868,
+    "speedIndex": 2647.2921675529633,
+    "rank": 83
   },
   {
     "url": "https://toddl.dev/",
     "finalUrl": "https://toddl.dev/",
-    "lighthouseScore": 0.95,
-    "firstContentfulPaint": 1878.8625000000002,
-    "firstMeaningfulPaint": 1878.8625000000002,
-    "speedIndex": 2860.828479501086,
-    "rank": 130
+    "lighthouseScore": 0.96,
+    "firstContentfulPaint": 1565.2375000000002,
+    "firstMeaningfulPaint": 1565.2375000000002,
+    "speedIndex": 2721.6898384334436,
+    "rank": 84
   },
   {
-    "url": "https://usac.ucla.edu/",
-    "finalUrl": "https://usac.ucla.edu/",
-    "lighthouseScore": 0.95,
-    "firstContentfulPaint": 2256.134,
-    "firstMeaningfulPaint": 2406.134,
-    "speedIndex": 2910.8159879847535,
-    "rank": 131
+    "url": "https://andrewhudson.dev/",
+    "finalUrl": "https://andrewhudson.dev/",
+    "lighthouseScore": 0.96,
+    "firstContentfulPaint": 1266.2600000000002,
+    "firstMeaningfulPaint": 1266.2600000000002,
+    "speedIndex": 2889.5059470658753,
+    "rank": 85
   },
   {
-    "url": "https://blog.tomayac.com/",
-    "finalUrl": "https://blog.tomayac.com/",
-    "lighthouseScore": 0.95,
-    "firstContentfulPaint": 2145.3475,
-    "firstMeaningfulPaint": 2145.3475,
-    "speedIndex": 3282.4462019810667,
-    "rank": 132
+    "url": "https://www.console.love/",
+    "finalUrl": "https://www.console.love/",
+    "lighthouseScore": 0.96,
+    "firstContentfulPaint": 1249.964,
+    "firstMeaningfulPaint": 1249.964,
+    "speedIndex": 2946.877878572548,
+    "rank": 86
+  },
+  {
+    "url": "https://conferences.css-tricks.com/",
+    "finalUrl": "https://conferences.css-tricks.com/",
+    "lighthouseScore": 0.96,
+    "firstContentfulPaint": 2217.022,
+    "firstMeaningfulPaint": 2217.022,
+    "speedIndex": 3022.984207981514,
+    "rank": 87
   },
   {
     "url": "https://slay.sh/",
     "finalUrl": "https://slay.sh/",
-    "lighthouseScore": 0.94,
-    "firstContentfulPaint": 2505.8329999999996,
-    "firstMeaningfulPaint": 2710.5134999999996,
-    "speedIndex": 2697.1014720634976,
-    "rank": 133
-  },
-  {
-    "url": "https://www.zachleat.com/",
-    "finalUrl": "https://www.zachleat.com/",
-    "lighthouseScore": 0.94,
-    "firstContentfulPaint": 1122.473,
-    "firstMeaningfulPaint": 1122.473,
-    "speedIndex": 2878.090283951563,
-    "rank": 134
-  },
-  {
-    "url": "https://www.edwardhorsford.com/",
-    "finalUrl": "https://www.edwardhorsford.com/",
-    "lighthouseScore": 0.94,
-    "firstContentfulPaint": 2178.921,
-    "firstMeaningfulPaint": 2178.921,
-    "speedIndex": 2901.9839293209516,
-    "rank": 135
-  },
-  {
-    "url": "https://docs.shutter.sh/",
-    "finalUrl": "https://docs.shutter.sh/",
-    "lighthouseScore": 0.94,
-    "firstContentfulPaint": 2324.77,
-    "firstMeaningfulPaint": 2472.272,
-    "speedIndex": 3133.3041879993543,
-    "rank": 136
-  },
-  {
-    "url": "https://github.com/PolymerLabs/lit-element-starter-ts",
-    "finalUrl": "https://github.com/PolymerLabs/lit-element-starter-ts",
-    "lighthouseScore": 0.94,
-    "firstContentfulPaint": 1795.455,
-    "firstMeaningfulPaint": 1887.1205,
-    "speedIndex": 4125.031548173711,
-    "rank": 137
-  },
-  {
-    "url": "https://frontendnorth.com/",
-    "finalUrl": "https://frontendnorth.com/",
-    "lighthouseScore": 0.93,
-    "firstContentfulPaint": 1669.5365000000002,
-    "firstMeaningfulPaint": 1669.5365000000002,
-    "speedIndex": 2597.635187000206,
-    "rank": 138
-  },
-  {
-    "url": "https://eleventy-html5up-txt.appseed.us/",
-    "finalUrl": "https://eleventy-html5up-txt.appseed.us/",
-    "lighthouseScore": 0.93,
-    "firstContentfulPaint": 2328.15,
-    "firstMeaningfulPaint": 2710.965,
-    "speedIndex": 2946.5478960030673,
-    "rank": 139
-  },
-  {
-    "url": "https://www.dandevri.es/",
-    "finalUrl": "https://www.dandevri.es/",
-    "lighthouseScore": 0.93,
-    "firstContentfulPaint": 1961.9769999999999,
-    "firstMeaningfulPaint": 1961.9769999999999,
-    "speedIndex": 3244.402220470972,
-    "rank": 140
-  },
-  {
-    "url": "https://dassur.ma/",
-    "finalUrl": "https://dassur.ma/",
-    "lighthouseScore": 0.93,
-    "firstContentfulPaint": 1590.4,
-    "firstMeaningfulPaint": 2507.6,
-    "speedIndex": 3396.330555843161,
-    "rank": 141
+    "lighthouseScore": 0.96,
+    "firstContentfulPaint": 1907.057,
+    "firstMeaningfulPaint": 2435.1785,
+    "speedIndex": 3063.497766771326,
+    "rank": 88
   },
   {
     "url": "https://mohitkarekar.com/",
     "finalUrl": "https://mohitkarekar.com/",
-    "lighthouseScore": 0.93,
-    "firstContentfulPaint": 2052.777,
-    "firstMeaningfulPaint": 2052.777,
-    "speedIndex": 3622.4033260166525,
-    "rank": 142
+    "lighthouseScore": 0.96,
+    "firstContentfulPaint": 1774.3110000000001,
+    "firstMeaningfulPaint": 1774.3110000000001,
+    "speedIndex": 3123.8046859845754,
+    "rank": 89
   },
   {
-    "url": "https://shannonethomas.com/",
-    "finalUrl": "https://shannonethomas.com/",
-    "lighthouseScore": 0.93,
-    "firstContentfulPaint": 1676.9850000000001,
-    "firstMeaningfulPaint": 1676.9850000000001,
-    "speedIndex": 4339.222006799534,
-    "rank": 143
+    "url": "https://annualbeta.com/",
+    "finalUrl": "https://annualbeta.com/",
+    "lighthouseScore": 0.96,
+    "firstContentfulPaint": 2172.7875000000004,
+    "firstMeaningfulPaint": 2172.7875000000004,
+    "speedIndex": 3154.720913993477,
+    "rank": 90
   },
   {
-    "url": "https://www.stevenhicks.me/",
-    "finalUrl": "https://www.stevenhicks.me/",
-    "lighthouseScore": 0.92,
-    "firstContentfulPaint": 2578.4029999999993,
-    "firstMeaningfulPaint": 3008.8579999999993,
-    "speedIndex": 2578.4029999999993,
-    "rank": 144
+    "url": "https://interviews.shanehudson.net/",
+    "finalUrl": "https://interviews.shanehudson.net/",
+    "lighthouseScore": 0.96,
+    "firstContentfulPaint": 2050.68,
+    "firstMeaningfulPaint": 2050.68,
+    "speedIndex": 3300.307864006161,
+    "rank": 91
   },
   {
-    "url": "https://nothingrandom.com/",
-    "finalUrl": "https://nothingrandom.com/",
-    "lighthouseScore": 0.91,
-    "firstContentfulPaint": 1808.589,
-    "firstMeaningfulPaint": 3745.0879999999997,
-    "speedIndex": 2222.3059139646048,
-    "rank": 145
+    "url": "https://thedixons.net/",
+    "finalUrl": "https://thedixons.net/",
+    "lighthouseScore": 0.96,
+    "firstContentfulPaint": 1673.638,
+    "firstMeaningfulPaint": 1673.638,
+    "speedIndex": 3555.793591990781,
+    "rank": 92
   },
   {
-    "url": "https://tsuwave.studio/",
-    "finalUrl": "https://tsuwave.studio/",
-    "lighthouseScore": 0.91,
-    "firstContentfulPaint": 1872.42,
-    "firstMeaningfulPaint": 2326.192,
-    "speedIndex": 2923.2021959882977,
-    "rank": 146
-  },
-  {
-    "url": "https://www.chercheurd.art/",
-    "finalUrl": "https://www.chercheurd.art/",
-    "lighthouseScore": 0.91,
-    "firstContentfulPaint": 1499.553,
-    "firstMeaningfulPaint": 1649.6910000000003,
-    "speedIndex": 4625.060522895434,
-    "rank": 147
-  },
-  {
-    "url": "https://web.dev/",
-    "finalUrl": "https://web.dev/",
-    "lighthouseScore": 0.9,
-    "firstContentfulPaint": 1630.8940000000002,
-    "firstMeaningfulPaint": 2617.657,
-    "speedIndex": 1792.850787912429,
-    "rank": 148
-  },
-  {
-    "url": "https://eslint.org/",
-    "finalUrl": "https://eslint.org/",
-    "lighthouseScore": 0.9,
-    "firstContentfulPaint": 2717.4799999999996,
-    "firstMeaningfulPaint": 3245.0949999999993,
-    "speedIndex": 2781.853713646478,
-    "rank": 149
-  },
-  {
-    "url": "https://ramigs.dev/",
-    "finalUrl": "https://ramigs.dev/",
-    "lighthouseScore": 0.9,
-    "firstContentfulPaint": 2944.629,
-    "firstMeaningfulPaint": 2944.629,
-    "speedIndex": 2944.629,
-    "rank": 150
-  },
-  {
-    "url": "https://pdx.ashur.cab/",
-    "finalUrl": "https://pdx.ashur.cab/",
-    "lighthouseScore": 0.9,
-    "firstContentfulPaint": 1897.2219999999998,
-    "firstMeaningfulPaint": 3470.2720000000004,
-    "speedIndex": 3599.4813439953814,
-    "rank": 151
-  },
-  {
-    "url": "https://v5.chriskrycho.com/",
-    "finalUrl": "https://v5.chriskrycho.com/",
-    "lighthouseScore": 0.89,
-    "firstContentfulPaint": 2273.053,
-    "firstMeaningfulPaint": 4031.721499999999,
-    "speedIndex": 2273.053,
-    "rank": 152
+    "url": "https://every-layout.dev/",
+    "finalUrl": "https://every-layout.dev/",
+    "lighthouseScore": 0.96,
+    "firstContentfulPaint": 1572.5225,
+    "firstMeaningfulPaint": 1572.5225,
+    "speedIndex": 3699.6864179950835,
+    "rank": 93
   },
   {
     "url": "https://www.progressionapp.com/blog/",
     "finalUrl": "https://www.progressionapp.com/blog/",
-    "lighthouseScore": 0.89,
-    "firstContentfulPaint": 1204.125,
-    "firstMeaningfulPaint": 1480.25,
-    "speedIndex": 2615.857393997129,
-    "rank": 153
+    "lighthouseScore": 0.95,
+    "firstContentfulPaint": 1211.196,
+    "firstMeaningfulPaint": 1484.3919999999998,
+    "speedIndex": 2319.8769971736992,
+    "rank": 94
   },
   {
-    "url": "https://jayantachakraborti.com/",
-    "finalUrl": "https://jayantachakraborti.com/",
-    "lighthouseScore": 0.89,
-    "firstContentfulPaint": 2086.346,
-    "firstMeaningfulPaint": 2940.951,
-    "speedIndex": 3210.1474739676796,
-    "rank": 154
+    "url": "https://webcomponents.club/",
+    "finalUrl": "https://webcomponents.club/",
+    "lighthouseScore": 0.95,
+    "firstContentfulPaint": 1418.615,
+    "firstMeaningfulPaint": 1418.615,
+    "speedIndex": 2758.780600039615,
+    "rank": 95
   },
   {
-    "url": "https://eleventy-step.netlify.com/",
-    "finalUrl": "https://eleventy-step.netlify.com/",
-    "lighthouseScore": 0.89,
-    "firstContentfulPaint": 2733.3060000000005,
-    "firstMeaningfulPaint": 2733.3060000000005,
-    "speedIndex": 3311.4170819885594,
-    "rank": 155
+    "url": "https://bentleydavis.com/",
+    "finalUrl": "https://bentleydavis.com/",
+    "lighthouseScore": 0.95,
+    "firstContentfulPaint": 1938.513,
+    "firstMeaningfulPaint": 2181.604,
+    "speedIndex": 3093.775173059491,
+    "rank": 96
   },
   {
-    "url": "https://www.unabridgedsoftware.com/",
-    "finalUrl": "https://www.unabridgedsoftware.com/",
-    "lighthouseScore": 0.88,
-    "firstContentfulPaint": 2493.4370000000004,
-    "firstMeaningfulPaint": 2493.4370000000004,
-    "speedIndex": 3347.0413031242433,
-    "rank": 156
+    "url": "https://sia.codes/",
+    "finalUrl": "https://sia.codes/",
+    "lighthouseScore": 0.95,
+    "firstContentfulPaint": 2148.199,
+    "firstMeaningfulPaint": 2148.199,
+    "speedIndex": 3224.216937989925,
+    "rank": 97
+  },
+  {
+    "url": "https://gvonkoss.com/",
+    "finalUrl": "https://gvonkoss.com/",
+    "lighthouseScore": 0.95,
+    "firstContentfulPaint": 2017.161,
+    "firstMeaningfulPaint": 2206.574,
+    "speedIndex": 3322.058442011142,
+    "rank": 98
+  },
+  {
+    "url": "https://brycewray.com/",
+    "finalUrl": "https://brycewray.com/",
+    "lighthouseScore": 0.95,
+    "firstContentfulPaint": 1895.796,
+    "firstMeaningfulPaint": 1895.796,
+    "speedIndex": 3690.0043479850524,
+    "rank": 99
+  },
+  {
+    "url": "https://github.com/PolymerLabs/lit-element-starter-ts",
+    "finalUrl": "https://github.com/PolymerLabs/lit-element-starter-ts",
+    "lighthouseScore": 0.95,
+    "firstContentfulPaint": 1836.121,
+    "firstMeaningfulPaint": 1930.6455,
+    "speedIndex": 3785.806536833895,
+    "rank": 100
+  },
+  {
+    "url": "https://mattrad.uk/",
+    "finalUrl": "https://mattrad.uk/",
+    "lighthouseScore": 0.95,
+    "firstContentfulPaint": 1643.65,
+    "firstMeaningfulPaint": 1643.65,
+    "speedIndex": 3786.537700001001,
+    "rank": 101
+  },
+  {
+    "url": "https://fifty.snook.ca/",
+    "finalUrl": "https://fifty.snook.ca/",
+    "lighthouseScore": 0.95,
+    "firstContentfulPaint": 1844.9949999999994,
+    "firstMeaningfulPaint": 1844.9949999999994,
+    "speedIndex": 3893.8528340235353,
+    "rank": 102
+  },
+  {
+    "url": "https://jeremenichelli.io/",
+    "finalUrl": "https://jeremenichelli.io/",
+    "lighthouseScore": 0.95,
+    "firstContentfulPaint": 1601.898,
+    "firstMeaningfulPaint": 1601.898,
+    "speedIndex": 4015.982248005247,
+    "rank": 103
+  },
+  {
+    "url": "https://neptunbrigad.hu/",
+    "finalUrl": "https://neptunbrigad.hu/",
+    "lighthouseScore": 0.95,
+    "firstContentfulPaint": 1271.31,
+    "firstMeaningfulPaint": 1271.31,
+    "speedIndex": 4103.198202467657,
+    "rank": 104
+  },
+  {
+    "url": "https://nothingrandom.com/",
+    "finalUrl": "https://nothingrandom.com/",
+    "lighthouseScore": 0.94,
+    "firstContentfulPaint": 1725.375,
+    "firstMeaningfulPaint": 3388.924,
+    "speedIndex": 2005.284702003598,
+    "rank": 105
+  },
+  {
+    "url": "https://zellwk.com/",
+    "finalUrl": "https://zellwk.com/",
+    "lighthouseScore": 0.94,
+    "firstContentfulPaint": 2066.532,
+    "firstMeaningfulPaint": 2066.532,
+    "speedIndex": 3744.061172506108,
+    "rank": 106
+  },
+  {
+    "url": "https://www.zachleat.com/",
+    "finalUrl": "https://www.zachleat.com/",
+    "lighthouseScore": 0.93,
+    "firstContentfulPaint": 1124.2069999999999,
+    "firstMeaningfulPaint": 1135.2069999999999,
+    "speedIndex": 2738.3018471778832,
+    "rank": 107
+  },
+  {
+    "url": "https://v8.dev/",
+    "finalUrl": "https://v8.dev/",
+    "lighthouseScore": 0.93,
+    "firstContentfulPaint": 1559.4225000000001,
+    "firstMeaningfulPaint": 1559.4225000000001,
+    "speedIndex": 2977.05660686205,
+    "rank": 108
+  },
+  {
+    "url": "https://www.miriamsuzanne.com/",
+    "finalUrl": "https://www.miriamsuzanne.com/",
+    "lighthouseScore": 0.93,
+    "firstContentfulPaint": 2194.1839999999997,
+    "firstMeaningfulPaint": 2917.0579999999995,
+    "speedIndex": 3225.5927720030313,
+    "rank": 109
+  },
+  {
+    "url": "https://cw2architects.com/",
+    "finalUrl": "https://cw2architects.com/",
+    "lighthouseScore": 0.93,
+    "firstContentfulPaint": 1937.1715000000004,
+    "firstMeaningfulPaint": 2204.9930000000004,
+    "speedIndex": 3336.037744000054,
+    "rank": 110
+  },
+  {
+    "url": "https://ffconf.org/",
+    "finalUrl": "https://ffconf.org/",
+    "lighthouseScore": 0.93,
+    "firstContentfulPaint": 2173.17,
+    "firstMeaningfulPaint": 2173.17,
+    "speedIndex": 3781.517931985141,
+    "rank": 111
+  },
+  {
+    "url": "https://kack.dev/",
+    "finalUrl": "https://kack.dev/",
+    "lighthouseScore": 0.93,
+    "firstContentfulPaint": 1501.9899999999998,
+    "firstMeaningfulPaint": 2703.4824999999996,
+    "speedIndex": 3889.126712001977,
+    "rank": 112
+  },
+  {
+    "url": "https://www.signalkuppe.com/",
+    "finalUrl": "https://www.signalkuppe.com/",
+    "lighthouseScore": 0.93,
+    "firstContentfulPaint": 1909.4019999999996,
+    "firstMeaningfulPaint": 1909.4019999999996,
+    "speedIndex": 3982.4136139011302,
+    "rank": 113
+  },
+  {
+    "url": "https://johanbrook.com/",
+    "finalUrl": "https://johanbrook.com/",
+    "lighthouseScore": 0.93,
+    "firstContentfulPaint": 2078.639,
+    "firstMeaningfulPaint": 2078.639,
+    "speedIndex": 4016.417558003879,
+    "rank": 114
+  },
+  {
+    "url": "https://eslint.org/",
+    "finalUrl": "https://eslint.org/",
+    "lighthouseScore": 0.92,
+    "firstContentfulPaint": 1828.826,
+    "firstMeaningfulPaint": 3298.326,
+    "speedIndex": 2644.3916480211847,
+    "rank": 115
+  },
+  {
+    "url": "https://frontendnorth.com/",
+    "finalUrl": "https://frontendnorth.com/",
+    "lighthouseScore": 0.92,
+    "firstContentfulPaint": 1133.886,
+    "firstMeaningfulPaint": 1133.886,
+    "speedIndex": 2824.071781498157,
+    "rank": 116
+  },
+  {
+    "url": "https://www.dandevri.es/",
+    "finalUrl": "https://www.dandevri.es/",
+    "lighthouseScore": 0.92,
+    "firstContentfulPaint": 1945.678,
+    "firstMeaningfulPaint": 1945.678,
+    "speedIndex": 3334.276898643684,
+    "rank": 117
+  },
+  {
+    "url": "https://www.andreacorinti.com/",
+    "finalUrl": "https://www.andreacorinti.com/",
+    "lighthouseScore": 0.92,
+    "firstContentfulPaint": 2347.297,
+    "firstMeaningfulPaint": 2510.7335000000003,
+    "speedIndex": 3607.5015420275804,
+    "rank": 118
+  },
+  {
+    "url": "https://www.coralseacablesystem.com.au/",
+    "finalUrl": "https://www.coralseacablesystem.com.au/",
+    "lighthouseScore": 0.92,
+    "firstContentfulPaint": 1830.769,
+    "firstMeaningfulPaint": 2124.264,
+    "speedIndex": 4397.554481998241,
+    "rank": 119
+  },
+  {
+    "url": "https://3lp.me/",
+    "finalUrl": "https://3lp.me/",
+    "lighthouseScore": 0.92,
+    "firstContentfulPaint": 1742.049,
+    "firstMeaningfulPaint": 1780.549,
+    "speedIndex": 4429.060309663308,
+    "rank": 120
+  },
+  {
+    "url": "http://www.guangshi.io/",
+    "finalUrl": "https://www.guangshi.io/",
+    "lighthouseScore": 0.91,
+    "firstContentfulPaint": 2749.854,
+    "firstMeaningfulPaint": 2749.854,
+    "speedIndex": 3383.029131981885,
+    "rank": 121
+  },
+  {
+    "url": "https://nuotsu.com/",
+    "finalUrl": "https://nuotsu.com/",
+    "lighthouseScore": 0.91,
+    "firstContentfulPaint": 2382.3175,
+    "firstMeaningfulPaint": 2382.3175,
+    "speedIndex": 4191.448675986526,
+    "rank": 122
+  },
+  {
+    "url": "https://uglyduck.ca/",
+    "finalUrl": "https://uglyduck.ca/",
+    "lighthouseScore": 0.9,
+    "firstContentfulPaint": 2722.4750000000004,
+    "firstMeaningfulPaint": 2756.97,
+    "speedIndex": 3717.01410797125,
+    "rank": 123
+  },
+  {
+    "url": "https://forte.is/",
+    "finalUrl": "https://forte.is/",
+    "lighthouseScore": 0.9,
+    "firstContentfulPaint": 2104.013,
+    "firstMeaningfulPaint": 2781.2,
+    "speedIndex": 3729.265258508893,
+    "rank": 124
+  },
+  {
+    "url": "https://genehack.blog/",
+    "finalUrl": "https://genehack.blog/",
+    "lighthouseScore": 0.9,
+    "firstContentfulPaint": 2598.545,
+    "firstMeaningfulPaint": 2598.545,
+    "speedIndex": 3944.7369260261653,
+    "rank": 125
+  },
+  {
+    "url": "https://biehler-josef.de/",
+    "finalUrl": "https://biehler-josef.de/",
+    "lighthouseScore": 0.9,
+    "firstContentfulPaint": 2105.45,
+    "firstMeaningfulPaint": 2627.0299999999997,
+    "speedIndex": 4313.659335997343,
+    "rank": 126
+  },
+  {
+    "url": "https://shannonethomas.com/",
+    "finalUrl": "https://shannonethomas.com/",
+    "lighthouseScore": 0.9,
+    "firstContentfulPaint": 1839.5709999999997,
+    "firstMeaningfulPaint": 1839.5709999999997,
+    "speedIndex": 4787.123546006655,
+    "rank": 127
   },
   {
     "url": "https://duncan.dev/",
     "finalUrl": "https://duncan.dev/",
-    "lighthouseScore": 0.88,
-    "firstContentfulPaint": 3001.143,
-    "firstMeaningfulPaint": 3001.143,
-    "speedIndex": 3560.5919900047875,
-    "rank": 157
+    "lighthouseScore": 0.9,
+    "firstContentfulPaint": 1406.044,
+    "firstMeaningfulPaint": 1406.044,
+    "speedIndex": 4941.439991980349,
+    "rank": 128
   },
   {
-    "url": "https://www.wisc.edu/",
-    "finalUrl": "https://www.wisc.edu/",
-    "lighthouseScore": 0.88,
-    "firstContentfulPaint": 2812.2729999999997,
-    "firstMeaningfulPaint": 3197.8705,
-    "speedIndex": 3766.879749998795,
-    "rank": 158
+    "url": "https://lennyanders.dev/",
+    "finalUrl": "https://lennyanders.dev/",
+    "lighthouseScore": 0.9,
+    "firstContentfulPaint": 1624.59,
+    "firstMeaningfulPaint": 1624.59,
+    "speedIndex": 4963.832283980558,
+    "rank": 129
   },
   {
-    "url": "https://www.jeremyswinnen.com/",
-    "finalUrl": "https://www.jeremyswinnen.com/",
+    "url": "https://benediktmeurer.de/",
+    "finalUrl": "https://benediktmeurer.de/",
+    "lighthouseScore": 0.9,
+    "firstContentfulPaint": 1192.3919999999998,
+    "firstMeaningfulPaint": 1192.3919999999998,
+    "speedIndex": 4999.856264000404,
+    "rank": 130
+  },
+  {
+    "url": "https://paulrobertlloyd.com/",
+    "finalUrl": "https://paulrobertlloyd.com/",
+    "lighthouseScore": 0.9,
+    "firstContentfulPaint": 1209.799,
+    "firstMeaningfulPaint": 1209.799,
+    "speedIndex": 5001.226277979944,
+    "rank": 131
+  },
+  {
+    "url": "https://docs.shutter.sh/",
+    "finalUrl": "https://docs.shutter.sh/",
+    "lighthouseScore": 0.89,
+    "firstContentfulPaint": 2663.857,
+    "firstMeaningfulPaint": 2834.0405,
+    "speedIndex": 3887.845570023047,
+    "rank": 132
+  },
+  {
+    "url": "https://tempertemper.net/",
+    "finalUrl": "https://www.tempertemper.net/",
+    "lighthouseScore": 0.89,
+    "firstContentfulPaint": 2674.38,
+    "firstMeaningfulPaint": 2674.38,
+    "speedIndex": 3947.056540001869,
+    "rank": 133
+  },
+  {
+    "url": "https://www.stevenhicks.me/",
+    "finalUrl": "https://www.stevenhicks.me/",
+    "lighthouseScore": 0.89,
+    "firstContentfulPaint": 2176.66,
+    "firstMeaningfulPaint": 2176.66,
+    "speedIndex": 4519.907328033269,
+    "rank": 134
+  },
+  {
+    "url": "https://tsuwave.studio/",
+    "finalUrl": "https://tsuwave.studio/",
     "lighthouseScore": 0.88,
-    "firstContentfulPaint": 2108.3730000000005,
-    "firstMeaningfulPaint": 3346.4840000000004,
-    "speedIndex": 4088.570354000939,
-    "rank": 159
+    "firstContentfulPaint": 1977.7329999999997,
+    "firstMeaningfulPaint": 2563.497,
+    "speedIndex": 3462.6006659917366,
+    "rank": 135
   },
   {
     "url": "https://cafeiso.com/",
     "finalUrl": "https://cafeiso.com/",
     "lighthouseScore": 0.87,
-    "firstContentfulPaint": 2831.1530000000002,
-    "firstMeaningfulPaint": 2831.1530000000002,
-    "speedIndex": 3485.7124160076287,
-    "rank": 160
+    "firstContentfulPaint": 2751.8869999999997,
+    "firstMeaningfulPaint": 2751.8869999999997,
+    "speedIndex": 3678.2305139180116,
+    "rank": 136
   },
   {
-    "url": "https://pflry.eu/",
-    "finalUrl": "https://pflry.eu/",
+    "url": "https://www.vtcodecamp.org/",
+    "finalUrl": "https://www.vtcodecamp.org/",
     "lighthouseScore": 0.87,
-    "firstContentfulPaint": 2720.489,
-    "firstMeaningfulPaint": 2720.489,
-    "speedIndex": 3588.5231945728974,
-    "rank": 161
+    "firstContentfulPaint": 2081.473,
+    "firstMeaningfulPaint": 2634.75,
+    "speedIndex": 4296.678224772524,
+    "rank": 137
   },
   {
-    "url": "https://www.pborenstein.com/",
-    "finalUrl": "https://www.pborenstein.com/",
+    "url": "https://grochtdreis.de/",
+    "finalUrl": "https://grochtdreis.de/",
     "lighthouseScore": 0.87,
-    "firstContentfulPaint": 2877.9100000000008,
-    "firstMeaningfulPaint": 2877.9100000000008,
-    "speedIndex": 4054.1083279882923,
-    "rank": 162
+    "firstContentfulPaint": 1594.404,
+    "firstMeaningfulPaint": 2391.6059999999998,
+    "speedIndex": 5357.156296013751,
+    "rank": 138
   },
   {
-    "url": "https://splitinfinities.com/",
-    "finalUrl": "https://splitinfinities.com/",
+    "url": "https://amorgunov.com/",
+    "finalUrl": "https://amorgunov.com/",
     "lighthouseScore": 0.86,
-    "firstContentfulPaint": 1981.056,
-    "firstMeaningfulPaint": 1981.056,
-    "speedIndex": 5110.95944118136,
-    "rank": 163
+    "firstContentfulPaint": 1469.438,
+    "firstMeaningfulPaint": 1469.438,
+    "speedIndex": 3935.1853727003136,
+    "rank": 139
   },
   {
-    "url": "https://lookback.io/",
-    "finalUrl": "https://lookback.io/",
-    "lighthouseScore": 0.85,
-    "firstContentfulPaint": 2360.4139999999998,
-    "firstMeaningfulPaint": 2360.4139999999998,
-    "speedIndex": 3411.202440022563,
-    "rank": 164
+    "url": "https://www.unabridgedsoftware.com/",
+    "finalUrl": "https://www.unabridgedsoftware.com/",
+    "lighthouseScore": 0.86,
+    "firstContentfulPaint": 2399.069,
+    "firstMeaningfulPaint": 2549.3779999999997,
+    "speedIndex": 4171.132086836295,
+    "rank": 140
   },
   {
-    "url": "https://yoncetheme.com/",
-    "finalUrl": "https://yoncetheme.com/",
-    "lighthouseScore": 0.85,
-    "firstContentfulPaint": 2776.264,
-    "firstMeaningfulPaint": 3828.3810000000003,
-    "speedIndex": 3619.143800004673,
-    "rank": 165
+    "url": "https://debitpay.directory/",
+    "finalUrl": "https://debitpay.directory/",
+    "lighthouseScore": 0.86,
+    "firstContentfulPaint": 2619.9300000000003,
+    "firstMeaningfulPaint": 2619.9300000000003,
+    "speedIndex": 4635.904564018429,
+    "rank": 141
   },
   {
-    "url": "https://deuso.de/",
-    "finalUrl": "https://deuso.de/",
-    "lighthouseScore": 0.85,
-    "firstContentfulPaint": 2466.0364999999993,
-    "firstMeaningfulPaint": 3401.1949999999993,
-    "speedIndex": 4361.356186017036,
-    "rank": 166
+    "url": "https://dassur.ma/",
+    "finalUrl": "https://dassur.ma/",
+    "lighthouseScore": 0.86,
+    "firstContentfulPaint": 1695.4850000000001,
+    "firstMeaningfulPaint": 2809.455,
+    "speedIndex": 4989.81637518019,
+    "rank": 142
   },
   {
-    "url": "https://www.ianrose.me/",
-    "finalUrl": "https://www.ianrose.me/",
+    "url": "https://saschadiercks.de/",
+    "finalUrl": "https://saschadiercks.de/",
+    "lighthouseScore": 0.86,
+    "firstContentfulPaint": 2379.947,
+    "firstMeaningfulPaint": 2425.9230000000002,
+    "speedIndex": 5093.858986017871,
+    "rank": 143
+  },
+  {
+    "url": "https://eleventy-step.netlify.com/",
+    "finalUrl": "https://eleventy-step.netlify.com/",
     "lighthouseScore": 0.84,
-    "firstContentfulPaint": 1932.966,
-    "firstMeaningfulPaint": 4863.8640000000005,
-    "speedIndex": 2160.0428270424627,
-    "rank": 167
+    "firstContentfulPaint": 2526.349,
+    "firstMeaningfulPaint": 2526.349,
+    "speedIndex": 4366.732369977985,
+    "rank": 144
+  },
+  {
+    "url": "https://design.saschadiercks.de/",
+    "finalUrl": "https://design.saschadiercks.de/",
+    "lighthouseScore": 0.84,
+    "firstContentfulPaint": 2686.8475,
+    "firstMeaningfulPaint": 3149.217,
+    "speedIndex": 4721.759349991907,
+    "rank": 145
   },
   {
     "url": "https://mannahfoundation.org/",
     "finalUrl": "https://mannahfoundation.org/",
-    "lighthouseScore": 0.84,
-    "firstContentfulPaint": 1979.6749999999997,
-    "firstMeaningfulPaint": 2130.339,
-    "speedIndex": 2812.716157712617,
-    "rank": 168
+    "lighthouseScore": 0.83,
+    "firstContentfulPaint": 1759.48,
+    "firstMeaningfulPaint": 2305.17,
+    "speedIndex": 4053.056762395516,
+    "rank": 146
+  },
+  {
+    "url": "https://lookback.io/",
+    "finalUrl": "https://lookback.io/",
+    "lighthouseScore": 0.82,
+    "firstContentfulPaint": 1922.713,
+    "firstMeaningfulPaint": 1922.713,
+    "speedIndex": 4359.108250021944,
+    "rank": 147
+  },
+  {
+    "url": "https://eleventy-html5up-txt.appseed.us/",
+    "finalUrl": "https://eleventy-html5up-txt.appseed.us/",
+    "lighthouseScore": 0.82,
+    "firstContentfulPaint": 1820.478,
+    "firstMeaningfulPaint": 3456.9315,
+    "speedIndex": 5179.574276291673,
+    "rank": 148
+  },
+  {
+    "url": "https://shotplot.app/",
+    "finalUrl": "https://shotplot.app/",
+    "lighthouseScore": 0.81,
+    "firstContentfulPaint": 1896.5499999999997,
+    "firstMeaningfulPaint": 2956.29,
+    "speedIndex": 5151.079181869356,
+    "rank": 149
+  },
+  {
+    "url": "https://www.edwardhorsford.com/",
+    "finalUrl": "https://www.edwardhorsford.com/",
+    "lighthouseScore": 0.81,
+    "firstContentfulPaint": 2041.6125,
+    "firstMeaningfulPaint": 2041.6125,
+    "speedIndex": 5583.917134108513,
+    "rank": 150
+  },
+  {
+    "url": "https://anchorthemes.com/",
+    "finalUrl": "https://anchorthemes.com/",
+    "lighthouseScore": 0.81,
+    "firstContentfulPaint": 2435.918,
+    "firstMeaningfulPaint": 2435.918,
+    "speedIndex": 5648.37094108104,
+    "rank": 151
+  },
+  {
+    "url": "https://usac.ucla.edu/",
+    "finalUrl": "https://usac.ucla.edu/",
+    "lighthouseScore": 0.8,
+    "firstContentfulPaint": 2544.761,
+    "firstMeaningfulPaint": 2844.761,
+    "speedIndex": 5883.931465976382,
+    "rank": 152
+  },
+  {
+    "url": "https://www.timothymiller.dev/",
+    "finalUrl": "https://timothymiller.dev/",
+    "lighthouseScore": 0.78,
+    "firstContentfulPaint": 2373.441,
+    "firstMeaningfulPaint": 4623.946999999999,
+    "speedIndex": 4261.09306200757,
+    "rank": 153
+  },
+  {
+    "url": "https://pflry.eu/",
+    "finalUrl": "https://pflry.eu/",
+    "lighthouseScore": 0.78,
+    "firstContentfulPaint": 2747.001,
+    "firstMeaningfulPaint": 2747.001,
+    "speedIndex": 4970.773512974294,
+    "rank": 154
   },
   {
     "url": "https://andrewpucci.com/",
     "finalUrl": "https://andrewpucci.com/",
-    "lighthouseScore": 0.82,
-    "firstContentfulPaint": 1600.5700000000002,
-    "firstMeaningfulPaint": 1600.5700000000002,
-    "speedIndex": 1868.8203560057038,
-    "rank": 169
+    "lighthouseScore": 0.77,
+    "firstContentfulPaint": 1802.1574999999996,
+    "firstMeaningfulPaint": 1802.1574999999996,
+    "speedIndex": 3125.040853978072,
+    "rank": 155
   },
   {
-    "url": "https://coastline941.com/",
-    "finalUrl": "https://coastline941.com/",
-    "lighthouseScore": 0.82,
-    "firstContentfulPaint": 2512.84,
-    "firstMeaningfulPaint": 2879.577,
-    "speedIndex": 3933.411750667366,
-    "rank": 170
+    "url": "https://deuso.de/",
+    "finalUrl": "https://deuso.de/",
+    "lighthouseScore": 0.77,
+    "firstContentfulPaint": 2343.081,
+    "firstMeaningfulPaint": 3778.413,
+    "speedIndex": 5660.01302600622,
+    "rank": 156
+  },
+  {
+    "url": "https://jayantachakraborti.com/",
+    "finalUrl": "https://jayantachakraborti.com/",
+    "lighthouseScore": 0.76,
+    "firstContentfulPaint": 2684.207,
+    "firstMeaningfulPaint": 4553.407999999999,
+    "speedIndex": 4335.203153867409,
+    "rank": 157
   },
   {
     "url": "https://flatmonthlyfee.co/",
     "finalUrl": "https://flatmonthlyfee.co/",
-    "lighthouseScore": 0.81,
-    "firstContentfulPaint": 1879.967,
-    "firstMeaningfulPaint": 2542.7885,
-    "speedIndex": 2819.8391909814172,
-    "rank": 171
-  },
-  {
-    "url": "https://jaenis.ch/",
-    "finalUrl": "https://jaenis.ch/",
-    "lighthouseScore": 0.78,
-    "firstContentfulPaint": 2898.9090000000006,
-    "firstMeaningfulPaint": 2898.9090000000006,
-    "speedIndex": 6070.616166007923,
-    "rank": 172
-  },
-  {
-    "url": "https://khanacademyannualreport.org/",
-    "finalUrl": "https://khanacademyannualreport.org/",
     "lighthouseScore": 0.75,
-    "firstContentfulPaint": 2993.995,
-    "firstMeaningfulPaint": 3293.995,
-    "speedIndex": 4790.864186943265,
-    "rank": 173
+    "firstContentfulPaint": 1967.908,
+    "firstMeaningfulPaint": 2575.0924999999997,
+    "speedIndex": 4090.0289297039476,
+    "rank": 158
+  },
+  {
+    "url": "https://christianfei.com/",
+    "finalUrl": "https://christianfei.com/",
+    "lighthouseScore": 0.75,
+    "firstContentfulPaint": 2962.433,
+    "firstMeaningfulPaint": 2962.433,
+    "speedIndex": 6186.171714026441,
+    "rank": 159
+  },
+  {
+    "url": "https://web.dev/",
+    "finalUrl": "https://web.dev/",
+    "lighthouseScore": 0.74,
+    "firstContentfulPaint": 2465.5989999999997,
+    "firstMeaningfulPaint": 3389.964,
+    "speedIndex": 5207.779925990198,
+    "rank": 160
+  },
+  {
+    "url": "https://www.wisc.edu/",
+    "finalUrl": "https://www.wisc.edu/",
+    "lighthouseScore": 0.73,
+    "firstContentfulPaint": 3016.895,
+    "firstMeaningfulPaint": 3016.895,
+    "speedIndex": 7021.978770000933,
+    "rank": 161
+  },
+  {
+    "url": "https://blog.tomayac.com/",
+    "finalUrl": "https://blog.tomayac.com/",
+    "lighthouseScore": 0.73,
+    "firstContentfulPaint": 2785.49,
+    "firstMeaningfulPaint": 2785.49,
+    "speedIndex": 7851.993548017268,
+    "rank": 162
+  },
+  {
+    "url": "https://www.chercheurd.art/",
+    "finalUrl": "https://www.chercheurd.art/",
+    "lighthouseScore": 0.73,
+    "firstContentfulPaint": 1398.6659999999997,
+    "firstMeaningfulPaint": 2098.1249999999995,
+    "speedIndex": 10565.542779349415,
+    "rank": 163
+  },
+  {
+    "url": "https://alextheward.com/",
+    "finalUrl": "https://alextheward.com/",
+    "lighthouseScore": 0.72,
+    "firstContentfulPaint": 2309.589,
+    "firstMeaningfulPaint": 2309.589,
+    "speedIndex": 2814.2862200040217,
+    "rank": 164
+  },
+  {
+    "url": "https://www.jeremyswinnen.com/",
+    "finalUrl": "https://www.jeremyswinnen.com/",
+    "lighthouseScore": 0.72,
+    "firstContentfulPaint": 2160.0080000000003,
+    "firstMeaningfulPaint": 4294.849,
+    "speedIndex": 6263.636131995569,
+    "rank": 165
   },
   {
     "url": "https://www.hairscalpcenter.com/en/",
     "finalUrl": "https://www.hairscalpcenter.com/en/",
-    "lighthouseScore": 0.73,
-    "firstContentfulPaint": 1224.257,
-    "firstMeaningfulPaint": 1239.257,
-    "speedIndex": 3880.375013360106,
-    "rank": 174
+    "lighthouseScore": 0.71,
+    "firstContentfulPaint": 1309.79,
+    "firstMeaningfulPaint": 1324.29,
+    "speedIndex": 4070.1921744842107,
+    "rank": 166
+  },
+  {
+    "url": "https://lilypond-in-markdown.netlify.com/",
+    "finalUrl": "https://lilypond-in-markdown.netlify.com/",
+    "lighthouseScore": 0.7,
+    "firstContentfulPaint": 2189.664,
+    "firstMeaningfulPaint": 2189.664,
+    "speedIndex": 17605.010199995493,
+    "rank": 167
+  },
+  {
+    "url": "https://yoncetheme.com/",
+    "finalUrl": "https://yoncetheme.com/",
+    "lighthouseScore": 0.69,
+    "firstContentfulPaint": 3149.1835,
+    "firstMeaningfulPaint": 3888.4674999999997,
+    "speedIndex": 6487.61454200246,
+    "rank": 168
+  },
+  {
+    "url": "https://markboulton.co.uk/",
+    "finalUrl": "https://markboulton.co.uk/",
+    "lighthouseScore": 0.67,
+    "firstContentfulPaint": 3416.214,
+    "firstMeaningfulPaint": 3417.167,
+    "speedIndex": 6694.502968473761,
+    "rank": 169
+  },
+  {
+    "url": "https://biaskata.com/",
+    "finalUrl": "https://biaskata.com/",
+    "lighthouseScore": 0.67,
+    "firstContentfulPaint": 2819.6155,
+    "firstMeaningfulPaint": 2819.6155,
+    "speedIndex": 11572.33573505522,
+    "rank": 170
+  },
+  {
+    "url": "https://coastline941.com/",
+    "finalUrl": "https://coastline941.com/",
+    "lighthouseScore": 0.66,
+    "firstContentfulPaint": 2939.35,
+    "firstMeaningfulPaint": 3253.7895,
+    "speedIndex": 5866.3708810640765,
+    "rank": 171
+  },
+  {
+    "url": "https://khanacademyannualreport.org/",
+    "finalUrl": "https://khanacademyannualreport.org/",
+    "lighthouseScore": 0.66,
+    "firstContentfulPaint": 3093.628,
+    "firstMeaningfulPaint": 3093.628,
+    "speedIndex": 6168.221554770895,
+    "rank": 172
+  },
+  {
+    "url": "https://www.hamandhoney.com/",
+    "finalUrl": "https://www.hamandhoney.com/",
+    "lighthouseScore": 0.64,
+    "firstContentfulPaint": 1727.726,
+    "firstMeaningfulPaint": 1727.726,
+    "speedIndex": 8206.303629475937,
+    "rank": 173
   },
   {
     "url": "https://dnhandcrafted.com/",
     "finalUrl": "https://dnhandcrafted.com/",
-    "lighthouseScore": 0.73,
-    "firstContentfulPaint": 2766.7479999999996,
-    "firstMeaningfulPaint": 2766.7479999999996,
-    "speedIndex": 5061.25284948717,
+    "lighthouseScore": 0.63,
+    "firstContentfulPaint": 3118.0135,
+    "firstMeaningfulPaint": 3118.0135,
+    "speedIndex": 4924.821777988041,
+    "rank": 174
+  },
+  {
+    "url": "https://jaenis.ch/",
+    "finalUrl": "https://jaenis.ch/",
+    "lighthouseScore": 0.61,
+    "firstContentfulPaint": 3744.929000000001,
+    "firstMeaningfulPaint": 3744.929000000001,
+    "speedIndex": 8529.803954033065,
     "rank": 175
   },
   {
     "url": "https://eu-testbook.com/",
     "finalUrl": "https://eu-testbook.com/",
-    "lighthouseScore": 0.72,
-    "firstContentfulPaint": 3791.2600000000007,
-    "firstMeaningfulPaint": 4391.450000000001,
-    "speedIndex": 4288.992456022978,
+    "lighthouseScore": 0.59,
+    "firstContentfulPaint": 4458.757,
+    "firstMeaningfulPaint": 4458.757,
+    "speedIndex": 6178.243710014987,
     "rank": 176
   },
   {
-    "url": "https://www.hamandhoney.com/",
-    "finalUrl": "https://www.hamandhoney.com/",
-    "lighthouseScore": 0.69,
-    "firstContentfulPaint": 1421.1599999999999,
-    "firstMeaningfulPaint": 1983.629,
-    "speedIndex": 7387.89859423921,
+    "url": "https://www.pborenstein.com/",
+    "finalUrl": "https://www.pborenstein.com/",
+    "lighthouseScore": 0.55,
+    "firstContentfulPaint": 4751.5599999999995,
+    "firstMeaningfulPaint": 4751.5599999999995,
+    "speedIndex": 6731.757744008981,
     "rank": 177
-  },
-  {
-    "url": "https://alextheward.com/",
-    "finalUrl": "https://alextheward.com/",
-    "lighthouseScore": 0.68,
-    "firstContentfulPaint": 2312.3215,
-    "firstMeaningfulPaint": 5934.0255,
-    "speedIndex": 2722.5440239958643,
-    "rank": 178
-  },
-  {
-    "url": "https://biaskata.com/",
-    "finalUrl": "https://biaskata.com/",
-    "lighthouseScore": 0.66,
-    "firstContentfulPaint": 3014.0265,
-    "firstMeaningfulPaint": 3014.0265,
-    "speedIndex": 9661.865386420224,
-    "rank": 179
-  },
-  {
-    "url": "https://markboulton.co.uk/",
-    "finalUrl": "https://markboulton.co.uk/",
-    "lighthouseScore": 0.64,
-    "firstContentfulPaint": 4054.715,
-    "firstMeaningfulPaint": 4054.715,
-    "speedIndex": 6035.702101798269,
-    "rank": 180
   },
   {
     "url": "https://www.contentthread.com/",
     "finalUrl": "https://www.contentthread.com/",
-    "lighthouseScore": 0.57,
-    "firstContentfulPaint": 4135.462999999999,
-    "firstMeaningfulPaint": 4994.576999999999,
-    "speedIndex": 5966.84285598311,
-    "rank": 181
+    "lighthouseScore": 0.49,
+    "firstContentfulPaint": 4258.865,
+    "firstMeaningfulPaint": 4859.065,
+    "speedIndex": 7768.7680703495935,
+    "rank": 178
   },
   {
-    "url": "https://andrewrico.com/",
-    "finalUrl": "https://www.andrewrico.com/",
-    "lighthouseScore": 0.47,
-    "firstContentfulPaint": 5234.711500000001,
-    "firstMeaningfulPaint": 5234.711500000001,
-    "speedIndex": 6703.502374008548,
-    "rank": 182
+    "url": "https://splitinfinities.com/",
+    "finalUrl": "https://splitinfinities.com/",
+    "lighthouseScore": 0.49,
+    "firstContentfulPaint": 1961.8305000000005,
+    "firstMeaningfulPaint": 1961.8305000000005,
+    "speedIndex": 10588.420272675608,
+    "rank": 179
   },
   {
     "url": "https://hiber.global/",
     "finalUrl": "https://hiber.global/",
     "lighthouseScore": 0.38,
-    "firstContentfulPaint": 1996.3425000000002,
-    "firstMeaningfulPaint": 2576.2435,
-    "speedIndex": 11232.575713516899,
-    "rank": 183
+    "firstContentfulPaint": 2911.7700000000004,
+    "firstMeaningfulPaint": 4548.540000000002,
+    "speedIndex": 10443.215671447944,
+    "rank": 180
   },
   {
-    "url": "https://www.teami.io/",
-    "finalUrl": "https://www.teami.io/",
-    "lighthouseScore": 0.27,
-    "firstContentfulPaint": 5723.315,
-    "firstMeaningfulPaint": 5723.315,
-    "speedIndex": 8374.42225797367,
-    "rank": 184
+    "url": "https://andrewrico.com/",
+    "finalUrl": "https://www.andrewrico.com/",
+    "lighthouseScore": 0.3,
+    "firstContentfulPaint": 6066.730499999998,
+    "firstMeaningfulPaint": 6066.730499999998,
+    "speedIndex": 11563.35638798902,
+    "rank": 181
   },
   {
     "url": "https://auradix.com/",
     "finalUrl": "https://auradix.com/",
     "lighthouseScore": 0.26,
-    "firstContentfulPaint": 4896.4385,
-    "firstMeaningfulPaint": 7704.6585,
-    "speedIndex": 8736.642196344717,
-    "rank": 185
+    "firstContentfulPaint": 3784.636000000001,
+    "firstMeaningfulPaint": 7303.5520000000015,
+    "speedIndex": 9637.209115552985,
+    "rank": 182
+  },
+  {
+    "url": "https://www.teami.io/",
+    "finalUrl": "https://www.teami.io/",
+    "lighthouseScore": 0.19,
+    "firstContentfulPaint": 6175.939999999998,
+    "firstMeaningfulPaint": 6333.745499999999,
+    "speedIndex": 10575.596357199593,
+    "rank": 183
   },
   {
     "url": "https://tobiasschmidt.me/",
     "finalUrl": "https://tobiasschmidt.me/",
+    "lighthouseScore": null,
+    "rank": 184
+  },
+  {
+    "url": "https://soldierpackers.com/",
+    "finalUrl": "https://soldierpackers.com/",
+    "lighthouseScore": null,
+    "rank": 185
+  },
+  {
+    "url": "https://daffodilpedagogy.com/",
+    "finalUrl": "https://daffodilpedagogy.com/",
     "lighthouseScore": null,
     "rank": 186
   },
@@ -1674,20 +1668,40 @@
     "url": "https://statebox.org/",
     "finalUrl": "https://statebox.org/",
     "lighthouseScore": null,
-    "firstContentfulPaint": 1131.452,
-    "speedIndex": 1609.9023413651294,
+    "firstContentfulPaint": 1234.59,
+    "speedIndex": 2282.34760799128,
     "rank": 187
   },
   {
-    "url": "https://soldierpackers.com/",
-    "finalUrl": "https://soldierpackers.com/",
+    "url": "https://www.ianrose.me/",
+    "finalUrl": "https://www.ianrose.me/",
     "lighthouseScore": null,
+    "firstContentfulPaint": 1996.411,
+    "speedIndex": 3015.8054021349717,
     "rank": 188
   },
   {
-    "url": "https://daffodilpedagogy.com/",
-    "finalUrl": "https://daffodilpedagogy.com/",
+    "url": "https://glenn.thedixons.net/",
+    "finalUrl": "https://glenn.thedixons.net/",
     "lighthouseScore": null,
+    "firstContentfulPaint": 1450.118,
+    "speedIndex": 3401.5360853367747,
     "rank": 189
+  },
+  {
+    "url": "https://v5.chriskrycho.com/",
+    "finalUrl": "https://v5.chriskrycho.com/",
+    "lighthouseScore": null,
+    "firstContentfulPaint": 3021.964,
+    "speedIndex": 6269.210443999549,
+    "rank": 190
+  },
+  {
+    "url": "https://pdx.ashur.cab/",
+    "finalUrl": "https://pdx.ashur.cab/",
+    "lighthouseScore": null,
+    "firstContentfulPaint": 2491.5950000000003,
+    "speedIndex": 9036.394900009436,
+    "rank": 191
   }
 ]
