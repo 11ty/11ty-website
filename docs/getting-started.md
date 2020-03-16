@@ -13,14 +13,10 @@ _Don’t include `~ $` or `~/eleventy-sample $` when you run these commands (you
 
 Make a directory with your project in it.
 
-<div data-preprefix-cmdhomedir="all">
-
-```bash
+{% codewithprompt "cmdhomedir", "all" %}
 mkdir eleventy-sample
 cd eleventy-sample
-```
-
-</div>
+{% endcodewithprompt %}
 
 You’re now in your new project’s directory.
 
@@ -30,25 +26,17 @@ You’re now in your new project’s directory.
 
 Installing Eleventy into our project requires a `package.json` file. Let’s create it with [`npm init`](https://docs.npmjs.com/cli/init). The `-y` parameter tells npm to skip all the questions and just use the defaults.
 
-<div data-preprefix-eleventysample="first">
-
-```bash
+{% codewithprompt "eleventysample", "first" %}
 npm init -y
-```
-
-</div>
+{% endcodewithprompt %}
 
 ### Install Eleventy into package.json
 
 Now we can install and save Eleventy into our project’s `package.json` by running:
 
-<div data-preprefix-eleventysample="first">
-
-```bash
+{% codewithprompt "eleventysample", "first" %}
 npm install --save-dev @11ty/eleventy
-```
-
-</div>
+{% endcodewithprompt %}
 
 Installing locally is preferred to [global installation](/docs/global-installation/).
 
@@ -56,14 +44,10 @@ Installing locally is preferred to [global installation](/docs/global-installati
 
 We can use npx to run our local project version’s version of Eleventy. Let’s make sure our installation went okay and try to run Eleventy:
 
-<div data-preprefix-eleventysample="first">
-
-```bash
+{% codewithprompt "eleventysample", "first" %}
 npx @11ty/eleventy
 Processed 0 files in 0.03 seconds ({% latestVersion versions, config %})
-```
-
-</div>
+{% endcodewithprompt %}
 
 Make sure that you see `({% latestVersion versions, config %})` in your output. This lets you know you’re using the newest version. However, Eleventy didn’t process any files! This is expected—we have an empty folder with no templates inside.
 
@@ -71,27 +55,19 @@ Make sure that you see `({% latestVersion versions, config %})` in your output. 
 
 Let’s run two commands to create two new template files.
 
-<div data-preprefix-eleventysample="all">
-
-```bash
+{% codewithprompt "eleventysample", "all" %}
 echo '<!doctype html><html><head><title>Page title</title></head><body><p>Hi</p></body></html>' > index.html
 echo '# Page header' > README.md
-```
-
-</div>
+{% endcodewithprompt %}
 
 We’ve now created an HTML template and a markdown template. Let’s run Eleventy again:
 
-<div data-preprefix-eleventysample="first">
-
-```bash
+{% codewithprompt "eleventysample", "first" %}
 npx @11ty/eleventy
 Writing _site/README/index.html from ./README.md
 Writing _site/index.html from ./index.html
 Processed 2 files in 0.12 seconds ({% latestVersion versions, config %})
-```
-
-</div>
+{% endcodewithprompt %}
 
 This will compile any content templates in the current directory or subdirectories into the output folder (defaults to `_site`).
 
@@ -99,9 +75,7 @@ This will compile any content templates in the current directory or subdirectori
 
 Use `--serve` to start up a hot-reloading local web server.
 
-<div data-preprefix-eleventysample="first">
-
-```bash
+{% codewithprompt "eleventysample", "first" %}
 npx @11ty/eleventy --serve
 Writing _site/README/index.html from ./README.md
 Writing _site/index.html from ./index.html
@@ -111,9 +85,7 @@ Watching…
  (some output truncated)
 
 [Browsersync] Serving files from: _site
-```
-
-</div>
+{% endcodewithprompt %}
 
 Go to `http://localhost:8080/` or `http://localhost:8080/README/` to see your Eleventy site live! Make a change to your template files and save them—Eleventy using BrowserSync will refresh the browser with your new changes automatically. 
 

@@ -62,8 +62,8 @@ module.exports = async function() {
 
 ## Examples
 
-- [Example: Using GraphQL](#example%3A-using-graphql)
-- [Example: Exposing Environment Variables](#example%3A-exposing-environment-variables)
+- [Example: Using GraphQL](#example-using-graphql)
+- [Example: Exposing Environment Variables](#example-exposing-environment-variables)
 
 ### Example: Using GraphQL
 

@@ -14,18 +14,27 @@ If a file format is not recognized by Eleventy as a valid template file extensio
 
 ```js
 module.exports = function(eleventyConfig) {
-  return {
-    templateFormats: [
-      "md",
-      "css" // css is not yet a recognized template extension in Eleventy
-    ]
-  };
+  eleventyConfig.setTemplateFormats([
+    "md",
+    "css" // css is not yet a recognized template extension in Eleventy
+  ]);
 };
 ```
 
 For example, in the above code sample `css` is not currently a recognized Eleventy template, but Eleventy will search for any `*.css` files inside of the input directory and copy them to output (keeping directory structure).
 
 You might want to use this for images by adding `"jpg"`, `"png"`, or maybe even `"webp"`.
+
+## Learn more
+
+<style>
+/* Hide the irrelevant stuff above this TOC in the document */
+.table-of-contents > ul > li:first-child {
+  display: none;
+}
+</style>
+
+[[toc]]
 
 <a id="{{ 'Manual Pass-through Copy (Faster)' | slug }}"></a>
 ## Manual Passthrough File Copy (Faster) {% addedin "0.2.14" %}
@@ -79,7 +88,7 @@ module.exports = function(eleventyConfig) {
 
 This example emulates the `templateFormats` passthrough file copy method above, copying all `jpg` image files to the output folder, maintaining their directory structure. If you do not want to maintain the same directory structure, [change the output directory.](#using-globs-and-output-directories)
 
-Note that this method is slower than manual passthrough file copy without globs, as it searching the entire directory structure and copies each file in Eleventy individually.
+Note that this method is slower than manual passthrough file copy without globs, as it searches the entire directory structure and copies each file in Eleventy individually.
 
 {% codetitle ".eleventy.js" %}
 
@@ -158,14 +167,10 @@ Given that global copy of all content in the directory may be a security risk, w
 
 <div class="elv-callout elv-callout-warn"><strong>Warning:</strong> This may be a security risk—this is intended only for demos and other non-production use.</div>
 
-<div data-preprefix-npxeleventy="last">
-
-```bash
+{% codewithprompt "npxeleventy", "last" %}
 # Copies ALL files in the input directory to the output directory
 --passthroughall
-```
-
-</div>
+{% endcodewithprompt %}
 
 ## Disabling Passthrough File Copy
 

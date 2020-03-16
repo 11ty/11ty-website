@@ -15,25 +15,64 @@
 .elv-nav-item a {
 	text-decoration-color: #00bcd4;
 }
-.elv-nav-item .emoji {
-	margin-right: -2px;
-}
 .elv-nav-item .elv-nav-light {
 	font-weight: 300;
 }
-.elv-nav-social a {
-	font-weight: 300;
+.elv-nav-item .icon,
+.elv-nav-item .avatar {
+	margin-left: 0;
 }
-.lo > .lo-c.elv-nav-social {
-	flex-grow: 999;
+.elv-nav-header {
+	width: 100%;
 }
-.elv-nav-social > .lo {
-	--lo-margin-h: 0.5em; /* 7px /14 */;
-	--lo-stackpoint: 150px;
+.elv-nav-header > .lo > .lo-c {
+	flex-basis: 50%;
+}
+@media (min-width: 25em) { /* 400px */
+	.elv-nav-header > .lo > .lo-c {
+		flex-basis: 33%;
+	}
+}
+.elv-nav-header .elv-nav-item .emoji,
+.elv-nav-header .elv-nav-item .icon,
+.elv-nav-header .elv-nav-item .avatar {
+	display: inline-block;
+	margin: 0;
+	margin-right: .2rem;
+}
+.elv-nav-header .elv-nav-item .emoji {
+	font-size: 1.2rem;
+	vertical-align: text-top;
+}
+@media (max-width: 38.6875em) { /* 619px */
+	.elv-nav-header .elv-nav-item {
+		position: relative;
+		padding-left: 1.6rem;
+	}
+	.elv-nav-header .elv-nav-item .emoji,
+	.elv-nav-header .elv-nav-item .icon,
+	.elv-nav-header .elv-nav-item .avatar {
+		position: absolute;
+		left: 0;
+	}
+}
+@media (min-width: 38.75em) { /* 620px */
+	.elv-nav-header {
+		width: auto;
+	}
+	.elv-nav-header > .lo {
+		--lo-margin-h: 0.8125em; /* 13px /16 */
+	}
+	.elv-nav-header > .lo > .lo-c {
+		flex-basis: 0;
+	}
+	.elv-nav-header > .lo > .lo-nocontentwrap {
+		flex-basis: auto;
+	}
 }
 
-.elv-nav-header.lo {
-	--lo-margin-h: 0.8125em; /* 13px /16 */
+.elv-nav-header b {
+	font-weight: 300;
 }
 .elv-nav-footer {
 	font-size: 0.875rem; /* 14px /16 */
@@ -74,24 +113,11 @@
 	.elv-nav-header.lo .elv-nav-item.lo-c:first-child {
 		margin-left: 0;
 	}
-	/*.elv-nav-header .elv-nav-item:not(:first-child):before {
-		content: "";
-		border-left: 1px solid #ccc;
-		padding: 0 0 0 .5em;
-		margin-left: .5em;
-	}
-	.elv-nav-header .elv-nav-item.lo-c:not(:first-child):before {
-		margin-left: 0;
-	}*/
 }
-
-@supports(display: initial) {
-	.elv-nav-widevp {
-		display: none;
-	}
-	@media (min-width: 47.5em) { /* 760px */
-		.elv-nav-widevp {
-			display: initial;
-		}
+@media (min-width: 43.75em) { /* 700px */
+	.elv-header-docs .elv-nav-header {
+		float: left;
+		/* adjust for logo in Safari */
+		width: calc(100% - 4.303125em - 1em);
 	}
 }

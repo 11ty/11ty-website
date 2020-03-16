@@ -74,7 +74,7 @@
 		"text": "It's clean, elegant, easy to use, and does just enough to be useful without getting in the way. Excellent work 😊",
 		"twitter": "WebInspectInc",
 		"name": "Timothy Miller",
-		"source": "https://twitter.com/TJacobDesign/status/1017594017402572811"
+		"source": "https://twitter.com/WebInspectInc/status/1017594017402572811"
 	},
 	{
 		"text": "Holy cow! Eleventy is so crazy simple to work with.",
@@ -143,5 +143,44 @@
 		"name": "Lach Zeatherman",
 		"source": "https://twitter.com/lachzeat/status/1196789524535431168",
 		"featured": true
+	},
+	{
+		"text": "Eleventy is a killer static site generator. That’s all.",
+		"twitter": "SaraSoueidan",
+		"name": "Sara Soueidan",
+		"source": "https://twitter.com/SaraSoueidan/status/1144696081403523072",
+		"featured": true
+	},
+	{
+		"text": "Eleventy and web components go really, really well together.",
+		"twitter": "justinfagnani",
+		"name": "Justin Fagnani",
+		"source": "https://twitter.com/justinfagnani/status/1212847104718061569",
+		"featured": true
+	},
+	{
+		"text": "Think the reason everyone is loving [Eleventy] so much (myself included) is that it doesn't come with a prescription about data sources or template rendering.",
+		"twitter": "brianleroux",
+		"name": "Brian Leroux",
+		"source": "https://twitter.com/brianleroux/status/1213129879245295619",
+		"featured": true
+	},
+	{
+		"text": "I think what's great about Eleventy is how it was able to simplify SSGs to just 2 concepts: data sources and templates.",
+		"twitter": "matthewcp",
+		"name": "Matthew Phillips",
+		"source": "https://twitter.com/matthewcp/status/1213129379414446080"
+	},
+	{
+		"text": "Eleventy is as close as we’ve gotten to how the web was always meant to be built (ya’ know, once we realized the value of templates and JavaScript).",
+		"twitter": "reubenlillie",
+		"name": "Reuben L. Lillie",
+		"source": "https://twitter.com/reubenlillie/"
+	},
+	{
+		"text": "I challenged myself to build the site in a day. I started at noon on Saturday and had something launched by 1am Saturday night. Built on [Eleventy] served by GitHub Pages, using [TravisCi] to deploy.",
+		"twitter": "snookca",
+		"name": "Snook",
+		"source": "https://twitter.com/snookca/status/1082278684214657024"
 	}
 ]

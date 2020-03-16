@@ -292,9 +292,26 @@ This is the same as the example above but adds `await` before the function is ca
 {% codetitle "js-async-fn-example.11ty.js" %}
 
 {% raw %}
-```
-module.exports = function(data) {
+```js
+module.exports = async function(data) {
   return `<h1>${await this.myAsyncFunction(data.a, data.b)}</h1>`;
+};
+```
+{% endraw %}
+
+### Warning about Arrow Functions
+
+{% callout "warn" %}
+Note that by definition (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#No_separate_this">read on MDN</a>) arrow functions do not have access to <code>this</code>, so any use of JavaScript Functions inside of an arrow function template will throw an error.
+{% endcallout %}
+
+{% codetitle "js-arrow-fn-example.11ty.js" %}
+
+{% raw %}
+```js
+module.exports = (data) => {
+  // Using `this` in an arrow function will throw an error!
+  return `<h1>${this.myFunction(data.a, data.b)}</h1>`;
 };
 ```
 {% endraw %}
@@ -321,7 +338,7 @@ module.exports = function(eleventyConfig) {
 {% codetitle "universal-examples.11ty.js" %}
 
 {% raw %}
-```
+```js
 module.exports = function(data) {
   return `
 <h1>${this.myFilter(data.myVar)}</h1>

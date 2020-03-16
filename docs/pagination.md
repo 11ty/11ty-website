@@ -181,9 +181,9 @@ This resolves to:
 
 {% codetitle "JavaScript Object", "Syntax" %}
 
-```js
+```json
 {
-  myData: [
+  "myData": [
     "item1",
     "item2",
     "item3",
@@ -246,7 +246,7 @@ You can even use template logic here too:
 {% raw %}
 ```markdown
 ---
-permalink: "different/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+permalink: "different/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 ---
 ```
 {% endraw %}
@@ -348,7 +348,7 @@ pagination:
 ```
 {% endraw %}
 
-The above generates a list of links but you could do a lot more. See what’s available in the [Collection documentation](/docs/collections/#individual-collection-items-(useful-for-sort-callbacks)) (specifically `templateContent`). If you’d like to use this to automatically generate Tag pages for your content, please read [Quick Tip #004—Create Tag Pages for your Blog](/docs/quicktips/tag-pages/).
+The above generates a list of links but you could do a lot more. See what’s available in the [Collection documentation](/docs/collections/#collection-item-data-structure) (specifically `templateContent`). If you’d like to use this to automatically generate Tag pages for your content, please read [Quick Tip #004—Create Tag Pages for your Blog](/docs/quicktips/tag-pages/).
 
 ## Modifying the Data Set prior to Pagination
 
@@ -381,7 +381,7 @@ Paginates to:
 
 _(More discussion at [Issue #194](https://github.com/11ty/eleventy/issues/194))_
 
-As an aside, this could also be achieved in a more verbose way using the [Collection API](/docs/collections/#advanced%3A-custom-filtering-and-sorting). This could also be done using the new `before` callback {% addedin "0.10.0" %}.
+As an aside, this could also be achieved in a more verbose way using the [Collection API](/docs/collections/#advanced-custom-filtering-and-sorting). This could also be done using the new `before` callback {% addedin "0.10.0" %}.
 
 ### Blacklisting or Filtering Values {% addedin "0.4.0" %}
 
@@ -453,8 +453,8 @@ The most powerful tool to change the data. Use this callback to modify, filter, 
 ---js
 {
   pagination: {
-    data: "testdata"
-    size: 2
+    data: "testdata",
+    size: 2,
     before: function(data) {
       return data.map(entry => `${entry} with a suffix`);
     }
@@ -473,7 +473,7 @@ The most powerful tool to change the data. Use this callback to modify, filter, 
 
 The above will iterate over a data set containing: `["item1 with a suffix", "item2 with a suffix", "item3 with a suffix", "item4 with a suffix"]`.
 
-You can do anything in this `before` callback. Maybe a custom `.sort()`, `.filter()`, `.map()` to remap the entires, `.slice()` to paginate only a subset of the data, etc!
+You can do anything in this `before` callback. Maybe a custom `.sort()`, `.filter()`, `.map()` to remap the entries, `.slice()` to paginate only a subset of the data, etc!
 
 ### Order of Operations
 
@@ -526,9 +526,9 @@ Now `collections.myCollection` will have both output pages in the collection arr
 
 ## Full Pagination Option List
 
-* `data` (String) [Lodash.get path](https://lodash.com/docs/4.17.10#get) to point to the target data set.
+* `data` (String) [Lodash.get path](https://lodash.com/docs/4.17.15#get) to point to the target data set.
 * `size` (Number, required)
-* `alias` (String) [Lodash.set path](https://lodash.com/docs/4.17.10#set) to point to the property to set.
+* `alias` (String) [Lodash.set path](https://lodash.com/docs/4.17.15#set) to point to the property to set.
 * `resolve: values` {% addedin "0.4.0" %}
 * `filter` (Array) {% addedin "0.4.0" %}
 * `reverse: true` (Boolean) {% addedin "0.7.0" %}

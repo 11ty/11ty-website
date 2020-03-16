@@ -1,9 +1,23 @@
+<div class="lo lo-separator-h supporters-gold" style="--lo-margin-h: 2em">
+	<div class="lo-c">
+		<ul class="inlinelist list-superfeatured">
+		{% for supporter in supporters %}{% if supporter.tier == "Exclusive Gold Sponsor" -%}
+		{%- set nameToSlug = supporter.name | slug | lower -%}
+			<li class="inlinelist-item"><a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}">{% avatarlocalcache "opencollective", nameToSlug, supporter.name %}{{ supporter.name }}</a></li>
+		{%- endif %}{% endfor %}
+		</ul>
+	</div>
+	<div class="lo-c lo-maxgrow lo-nocontentwrap lo-c-align-v-center">
+		<h3 class="subhed">Exclusive <strong>Gold</strong> Sponsor</h3>
+	</div>
+</div>
+
 <div class="facepile facepile-supporters">
-{% for supporter in supporters %}{% if supporter.role === "BACKER" and supporter.tier -%}
+{% for supporter in supporters %}{% if supporter.role === "BACKER" and supporter.tier and supporter.tier != "Exclusive Gold Sponsor" -%}
 {%- set nameToSlug = supporter.name | slug | lower -%}
-	<a href="{{ supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}">{% avatarlocalcache "opencollective", nameToSlug, supporter.name %}</a>
+	<a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}">{% avatarlocalcache "opencollective", nameToSlug, supporter.name %}</a>
 {%- endif %}{% endfor %}
 {%- if config.localDev -%}
-	<a href="https://opencollective.com/zachleat" class="elv-externalexempt" data-supporters-slug="zach-leatherman"><img src="/img/avatar-local-cache/opencollective/zach-leatherman.jpg" alt="Zach Leatherman" loading="lazy" class="avatar"></a>
+	<a href="https://zachleat.com/" class="elv-externalexempt" data-supporters-slug="zach-leatherman"><img src="/img/avatar-local-cache/opencollective/zach-leatherman.jpg" alt="Zach Leatherman" loading="lazy" class="avatar"></a>
 {%- endif -%}
 </div>

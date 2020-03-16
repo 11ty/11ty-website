@@ -11,9 +11,46 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "alex-ward",
       "path": "img/avatar-local-cache/opencollective/alex-ward.jpg",
       "size": 1935
+    }
+  ],
+  "andrew-chou": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "andrew-chou",
+      "path": "img/avatar-local-cache/opencollective/andrew-chou.jpg",
+      "size": 2251
+    }
+  ],
+  "andrew-harvard": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "andrew-harvard",
+      "path": "img/avatar-local-cache/opencollective/andrew-harvard.jpg",
+      "size": 1610
     }
   ],
   "andrew-pucci": [
@@ -28,6 +65,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "andrew-pucci",
       "path": "img/avatar-local-cache/opencollective/andrew-pucci.jpg",
       "size": 1875
@@ -45,9 +83,10 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "andy-bell",
       "path": "img/avatar-local-cache/opencollective/andy-bell.jpg",
-      "size": 1780
+      "size": 2058
     }
   ],
   "ben-brignell": [
@@ -62,6 +101,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "ben-brignell",
       "path": "img/avatar-local-cache/opencollective/ben-brignell.jpg",
       "size": 2274
@@ -79,6 +119,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "benjamin-randall",
       "path": "img/avatar-local-cache/opencollective/benjamin-randall.jpg",
       "size": 2114
@@ -96,9 +137,64 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "brett-nelson",
       "path": "img/avatar-local-cache/opencollective/brett-nelson.jpg",
       "size": 1660
+    }
+  ],
+  "brian-koser": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "brian-koser",
+      "path": "img/avatar-local-cache/opencollective/brian-koser.jpg",
+      "size": 2476
+    }
+  ],
+  "brian-louis-ramirez": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "brian-louis-ramirez",
+      "path": "img/avatar-local-cache/opencollective/brian-louis-ramirez.jpg",
+      "size": 2033
+    }
+  ],
+  "brian-zerangue": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "brian-zerangue",
+      "path": "img/avatar-local-cache/opencollective/brian-zerangue.jpg",
+      "size": 1481
     }
   ],
   "bridget-stewart": [
@@ -113,9 +209,10 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "bridget-stewart",
       "path": "img/avatar-local-cache/opencollective/bridget-stewart.jpg",
-      "size": 1849
+      "size": 1962
     }
   ],
   "bryce-wray": [
@@ -130,9 +227,28 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "bryce-wray",
       "path": "img/avatar-local-cache/opencollective/bryce-wray.jpg",
-      "size": 1641
+      "size": 2339
+    }
+  ],
+  "buskers-bern": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "buskers-bern",
+      "path": "img/avatar-local-cache/opencollective/buskers-bern.jpg",
+      "size": 1714
     }
   ],
   "chris-collins": [
@@ -147,9 +263,10 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "chris-collins",
       "path": "img/avatar-local-cache/opencollective/chris-collins.jpg",
-      "size": 1380
+      "size": 1745
     }
   ],
   "christian-fei": [
@@ -164,6 +281,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "christian-fei",
       "path": "img/avatar-local-cache/opencollective/christian-fei.jpg",
       "size": 1409
@@ -181,6 +299,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "christopher-salmon",
       "path": "img/avatar-local-cache/opencollective/christopher-salmon.jpg",
       "size": 1949
@@ -198,9 +317,28 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "cody-peterson",
       "path": "img/avatar-local-cache/opencollective/cody-peterson.jpg",
       "size": 1812
+    }
+  ],
+  "corina-rudel": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "corina-rudel",
+      "path": "img/avatar-local-cache/opencollective/corina-rudel.jpg",
+      "size": 1666
     }
   ],
   "daniel-rafaj": [
@@ -215,9 +353,28 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "daniel-rafaj",
       "path": "img/avatar-local-cache/opencollective/daniel-rafaj.jpg",
       "size": 1663
+    }
+  ],
+  "darby-dixon-iii": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "darby-dixon-iii",
+      "path": "img/avatar-local-cache/opencollective/darby-dixon-iii.jpg",
+      "size": 1901
     }
   ],
   "dave-rupert": [
@@ -232,9 +389,82 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "dave-rupert",
       "path": "img/avatar-local-cache/opencollective/dave-rupert.jpg",
       "size": 1988
+    }
+  ],
+  "david-beesley": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "david-beesley",
+      "path": "img/avatar-local-cache/opencollective/david-beesley.jpg",
+      "size": 1634
+    }
+  ],
+  "devin-clark": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "devin-clark",
+      "path": "img/avatar-local-cache/opencollective/devin-clark.jpg",
+      "size": 1742
+    }
+  ],
+  "dimitrios-grammatikogiannis": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "dimitrios-grammatikogiannis",
+      "path": "img/avatar-local-cache/opencollective/dimitrios-grammatikogiannis.jpg",
+      "size": 1854
+    }
+  ],
+  "doxford": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "doxford",
+      "path": "img/avatar-local-cache/opencollective/doxford.jpg",
+      "size": 1917
     }
   ],
   "ed-spencer": [
@@ -249,9 +479,28 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "ed-spencer",
       "path": "img/avatar-local-cache/opencollective/ed-spencer.jpg",
       "size": 2111
+    }
+  ],
+  "eli-levit": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "eli-levit",
+      "path": "img/avatar-local-cache/opencollective/eli-levit.jpg",
+      "size": 1526
     }
   ],
   "eric-bailey": [
@@ -266,9 +515,28 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "eric-bailey",
       "path": "img/avatar-local-cache/opencollective/eric-bailey.jpg",
       "size": 2029
+    }
+  ],
+  "flaki": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "flaki",
+      "path": "img/avatar-local-cache/opencollective/flaki.jpg",
+      "size": 1982
     }
   ],
   "frank-taillandier": [
@@ -283,9 +551,28 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "frank-taillandier",
       "path": "img/avatar-local-cache/opencollective/frank-taillandier.jpg",
       "size": 1748
+    }
+  ],
+  "glenn-dixon": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 95,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "glenn-dixon",
+      "path": "img/avatar-local-cache/opencollective/glenn-dixon.jpg",
+      "size": 2068
     }
   ],
   "hans-gerwitz": [
@@ -300,6 +587,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "hans-gerwitz",
       "path": "img/avatar-local-cache/opencollective/hans-gerwitz.jpg",
       "size": 1902
@@ -317,9 +605,100 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "heydon-pickering",
       "path": "img/avatar-local-cache/opencollective/heydon-pickering.jpg",
       "size": 2113
+    }
+  ],
+  "horacio-gonzalez": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "horacio-gonzalez",
+      "path": "img/avatar-local-cache/opencollective/horacio-gonzalez.jpg",
+      "size": 2133
+    }
+  ],
+  "inventage-ag": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "inventage-ag",
+      "path": "img/avatar-local-cache/opencollective/inventage-ag.jpg",
+      "size": 825
+    }
+  ],
+  "ivan-buncic": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "ivan-buncic",
+      "path": "img/avatar-local-cache/opencollective/ivan-buncic.jpg",
+      "size": 1637
+    }
+  ],
+  "ivo-herrmann": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "ivo-herrmann",
+      "path": "img/avatar-local-cache/opencollective/ivo-herrmann.jpg",
+      "size": 2307
+    }
+  ],
+  "jeremias-menichelli": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "jeremias-menichelli",
+      "path": "img/avatar-local-cache/opencollective/jeremias-menichelli.jpg",
+      "size": 1825
     }
   ],
   "jerome-coupe": [
@@ -334,9 +713,10 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "jerome-coupe",
       "path": "img/avatar-local-cache/opencollective/jerome-coupe.jpg",
-      "size": 1702
+      "size": 2359
     }
   ],
   "joel-krause": [
@@ -351,9 +731,46 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "joel-krause",
       "path": "img/avatar-local-cache/opencollective/joel-krause.jpg",
       "size": 1911
+    }
+  ],
+  "john-sj-anderson": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "john-sj-anderson",
+      "path": "img/avatar-local-cache/opencollective/john-sj-anderson.jpg",
+      "size": 2161
+    }
+  ],
+  "joshua-vaage": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "joshua-vaage",
+      "path": "img/avatar-local-cache/opencollective/joshua-vaage.jpg",
+      "size": 2031
     }
   ],
   "kayce-basques": [
@@ -368,6 +785,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "kayce-basques",
       "path": "img/avatar-local-cache/opencollective/kayce-basques.jpg",
       "size": 2069
@@ -385,6 +803,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "keenan-payne",
       "path": "img/avatar-local-cache/opencollective/keenan-payne.jpg",
       "size": 1698
@@ -402,6 +821,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "kyle-mitofsky",
       "path": "img/avatar-local-cache/opencollective/kyle-mitofsky.jpg",
       "size": 2155
@@ -419,6 +839,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "kyosuke-nakamura",
       "path": "img/avatar-local-cache/opencollective/kyosuke-nakamura.jpg",
       "size": 1573
@@ -436,6 +857,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "makoto-kawasaki",
       "path": "img/avatar-local-cache/opencollective/makoto-kawasaki.jpg",
       "size": 1237
@@ -453,9 +875,28 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "manuel-matuzovic",
       "path": "img/avatar-local-cache/opencollective/manuel-matuzovic.jpg",
       "size": 2316
+    }
+  ],
+  "mark-boulton": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "mark-boulton",
+      "path": "img/avatar-local-cache/opencollective/mark-boulton.jpg",
+      "size": 1782
     }
   ],
   "mark-buskbjerg": [
@@ -470,6 +911,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "mark-buskbjerg",
       "path": "img/avatar-local-cache/opencollective/mark-buskbjerg.jpg",
       "size": 1226
@@ -487,9 +929,28 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "mat-marquis",
       "path": "img/avatar-local-cache/opencollective/mat-marquis.jpg",
       "size": 1244
+    }
+  ],
+  "matheus-ligabue-da-silva": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "matheus-ligabue-da-silva",
+      "path": "img/avatar-local-cache/opencollective/matheus-ligabue-da-silva.jpg",
+      "size": 2374
     }
   ],
   "matthew-tole": [
@@ -504,6 +965,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "matthew-tole",
       "path": "img/avatar-local-cache/opencollective/matthew-tole.jpg",
       "size": 1487
@@ -521,9 +983,10 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "max-bock",
       "path": "img/avatar-local-cache/opencollective/max-bock.jpg",
-      "size": 1436
+      "size": 1627
     }
   ],
   "nate-steiner": [
@@ -538,9 +1001,28 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "nate-steiner",
       "path": "img/avatar-local-cache/opencollective/nate-steiner.jpg",
       "size": 1582
+    }
+  ],
+  "ned-zimmerman": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "ned-zimmerman",
+      "path": "img/avatar-local-cache/opencollective/ned-zimmerman.jpg",
+      "size": 2269
     }
   ],
   "nick-colley": [
@@ -555,9 +1037,28 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "nick-colley",
       "path": "img/avatar-local-cache/opencollective/nick-colley.jpg",
       "size": 2651
+    }
+  ],
+  "nick-nisi": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "nick-nisi",
+      "path": "img/avatar-local-cache/opencollective/nick-nisi.jpg",
+      "size": 1895
     }
   ],
   "nicolas-hoizey": [
@@ -572,9 +1073,28 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "nicolas-hoizey",
       "path": "img/avatar-local-cache/opencollective/nicolas-hoizey.jpg",
       "size": 1915
+    }
+  ],
+  "noel-forte": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "noel-forte",
+      "path": "img/avatar-local-cache/opencollective/noel-forte.jpg",
+      "size": 1946
     }
   ],
   "pelle-wessman": [
@@ -589,9 +1109,28 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "pelle-wessman",
       "path": "img/avatar-local-cache/opencollective/pelle-wessman.jpg",
       "size": 1959
+    }
+  ],
+  "peter-dehaan": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "peter-dehaan",
+      "path": "img/avatar-local-cache/opencollective/peter-dehaan.jpg",
+      "size": 1756
     }
   ],
   "phil-hawksworth": [
@@ -606,6 +1145,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "phil-hawksworth",
       "path": "img/avatar-local-cache/opencollective/phil-hawksworth.jpg",
       "size": 1341
@@ -623,6 +1163,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "piotr-swiderek",
       "path": "img/avatar-local-cache/opencollective/piotr-swiderek.jpg",
       "size": 1742
@@ -640,6 +1181,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "quentin-delcourt",
       "path": "img/avatar-local-cache/opencollective/quentin-delcourt.jpg",
       "size": 2071
@@ -657,9 +1199,46 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "ray-villalobos",
       "path": "img/avatar-local-cache/opencollective/ray-villalobos.jpg",
       "size": 1573
+    }
+  ],
+  "reach-digital": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "reach-digital",
+      "path": "img/avatar-local-cache/opencollective/reach-digital.jpg",
+      "size": 1089
+    }
+  ],
+  "rhian-van-esch": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "rhian-van-esch",
+      "path": "img/avatar-local-cache/opencollective/rhian-van-esch.jpg",
+      "size": 1916
     }
   ],
   "rob-dodson": [
@@ -674,6 +1253,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "rob-dodson",
       "path": "img/avatar-local-cache/opencollective/rob-dodson.jpg",
       "size": 1642
@@ -691,9 +1271,46 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "robin-rendle",
       "path": "img/avatar-local-cache/opencollective/robin-rendle.jpg",
       "size": 1326
+    }
+  ],
+  "ryan-swaney": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "ryan-swaney",
+      "path": "img/avatar-local-cache/opencollective/ryan-swaney.jpg",
+      "size": 1339
+    }
+  ],
+  "sanity.io": [
+    {
+      "format": "jpeg",
+      "width": 150,
+      "height": 150,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "sanity.io",
+      "path": "img/avatar-local-cache/opencollective/sanity.io.jpg",
+      "size": 2471
     }
   ],
   "sebastian-murphy": [
@@ -708,9 +1325,46 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "sebastian-murphy",
       "path": "img/avatar-local-cache/opencollective/sebastian-murphy.jpg",
       "size": 1922
+    }
+  ],
+  "soren-birkemeyer": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "soren-birkemeyer",
+      "path": "img/avatar-local-cache/opencollective/soren-birkemeyer.jpg",
+      "size": 1916
+    }
+  ],
+  "takuya-fukuju": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "takuya-fukuju",
+      "path": "img/avatar-local-cache/opencollective/takuya-fukuju.jpg",
+      "size": 1800
     }
   ],
   "todd-libby": [
@@ -725,6 +1379,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "todd-libby",
       "path": "img/avatar-local-cache/opencollective/todd-libby.jpg",
       "size": 1228
@@ -742,6 +1397,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "tyler-williams",
       "path": "img/avatar-local-cache/opencollective/tyler-williams.jpg",
       "size": 1568
@@ -759,6 +1415,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "vadim-makeev",
       "path": "img/avatar-local-cache/opencollective/vadim-makeev.jpg",
       "size": 2131
@@ -776,9 +1433,28 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "viljami-salminen",
       "path": "img/avatar-local-cache/opencollective/viljami-salminen.jpg",
       "size": 1285
+    }
+  ],
+  "web-inspect-inc": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "web-inspect-inc",
+      "path": "img/avatar-local-cache/opencollective/web-inspect-inc.jpg",
+      "size": 1310
     }
   ],
   "william-riley": [
@@ -793,9 +1469,28 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "william-riley",
       "path": "img/avatar-local-cache/opencollective/william-riley.jpg",
       "size": 1594
+    }
+  ],
+  "woorke": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "woorke",
+      "path": "img/avatar-local-cache/opencollective/woorke.jpg",
+      "size": 1536
     }
   ],
   "yuhei-yasuda": [
@@ -810,6 +1505,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "yuhei-yasuda",
       "path": "img/avatar-local-cache/opencollective/yuhei-yasuda.jpg",
       "size": 1385
@@ -827,6 +1523,7 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
+      "extension": "jpg",
       "name": "zach-leatherman",
       "path": "img/avatar-local-cache/opencollective/zach-leatherman.jpg",
       "size": 1333
