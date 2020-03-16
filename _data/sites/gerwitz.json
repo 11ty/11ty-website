@@ -3,6 +3,6 @@
 	"url": "https://hans.gerwitz.com/",
 	"description": "A narcissistic personal blog, with two decades of content. Figuring out how to bring IndieWeb to a static site.",
 	"source_url": "https://github.com/gerwitz/hgc-v12",
-	"avatar_filename": "gerwitz.png",
+	"twitter": "gerwitz",
 	"featured": true
 }
