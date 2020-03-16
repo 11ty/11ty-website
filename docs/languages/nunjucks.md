@@ -239,7 +239,7 @@ Importantly, this syntax means that any of the arguments can be optional (withou
 </div>
 ```
 
-### Asynchronous Shortcodes {% addedin "0.9.1" %}
+### Asynchronous Shortcodes {% addedin "0.10.0" %}
 
 Note that the configuration methods here to add asynchronous shortcodes are different than their synchronous counterparts.
 

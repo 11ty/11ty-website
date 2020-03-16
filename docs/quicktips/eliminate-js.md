@@ -4,9 +4,9 @@ tiptitle: "Fetch GitHub Stargazers Count (and More) at Build Time"
 date: 2019-01-31
 ---
 
-Older iterations of this website used a third party JavaScript widget to show the number of GitHub Stars the project currently had. You can see it in action on the [versioned docs for 0.7.1](https://v0-7-1.11ty.io/docs/) (scroll to the bottom).
+Older iterations of this website used a third party JavaScript widget to show the number of GitHub Stars the project currently had. You can see it in action on the [versioned docs for 0.7.1](https://v0-7-1.11ty.dev/docs/) (scroll to the bottom).
 
-This was in fact the only `<script>` tag on the entire 11ty.io web site and it was from a third party. Naturally, it needed to be annihilated.
+This was in fact the only `<script>` tag on the entire [11ty.dev](https://www.11ty.dev/) web site and it was from a third party. Naturally, it needed to be annihilated.
 
 Let’s change up our architecture to ruthlessly eliminate this client-side JavaScript.
 
@@ -55,15 +55,15 @@ which outputs
 1515 GitHub Stars
 ```
 
-Bonus: I created a [`humanReadableNum` filter](https://github.com/11ty/11ty.io/blob/ac3579909078f860f4af1185c8f7353d56833c22/.eleventy.js#L82)) using the [`human-readable-numbers`](https://www.npmjs.com/package/human-readable-numbers) package to format the number.
+Bonus: I created a [`humanReadableNum` filter](https://github.com/11ty/11ty-website/blob/ac3579909078f860f4af1185c8f7353d56833c22/.eleventy.js#L82)) using the [`human-readable-numbers`](https://www.npmjs.com/package/human-readable-numbers) package to format the number.
 
 ## More Examples
 
 You can look in the footer of this page to see examples of this in use on this very web site. I used it for:
 
-* [NPM Download Count](https://github.com/11ty/11ty.io/blob/ac3579909078f860f4af1185c8f7353d56833c22/_data/npm.js)
-* [GitHub Stargazers Count](https://github.com/11ty/11ty.io/blob/ac3579909078f860f4af1185c8f7353d56833c22/_data/github.js)
-* [Twitter Followers Count](https://github.com/11ty/11ty.io/blob/ac3579909078f860f4af1185c8f7353d56833c22/_data/twitter.js) (careful here, this one is super brittle but Twitter’s API is historically anti-developer so 😇)
+* [NPM Download Count](https://github.com/11ty/11ty-website/blob/ac3579909078f860f4af1185c8f7353d56833c22/_data/npm.js)
+* [GitHub Stargazers Count](https://github.com/11ty/11ty-website/blob/ac3579909078f860f4af1185c8f7353d56833c22/_data/github.js)
+* [Twitter Followers Count](https://github.com/11ty/11ty-website/blob/ac3579909078f860f4af1185c8f7353d56833c22/_data/twitter.js) (careful here, this one is super brittle but Twitter’s API is historically anti-developer so 😇)
 
 These all use the recommended caching mechanism described in the next section.
 

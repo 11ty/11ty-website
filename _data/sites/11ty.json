@@ -1,8 +1,9 @@
 {
-	"url": "https://www.11ty.io/",
-	"name": "11ty.io, the Eleventy web site",
+	"url": "https://www.11ty.dev/",
+	"name": "Eleventy Docs",
 	"description": "Spoiler alert: it’s this web site.",
-	"source_url": "https://github.com/11ty/11ty.io",
+	"source_url": "https://github.com/11ty/11ty-website",
 	"twitter": "eleven_ty",
-	"featured": true
+	"featured": true,
+	"superfeatured": true
 }

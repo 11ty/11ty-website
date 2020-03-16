@@ -1,0 +1,7 @@
+{
+	"url": "https://mochajs.org/",
+	"name": "Mocha",
+	"description": "A feature-rich JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun.",
+	"source_url": "https://github.com/mochajs/mocha",
+	"featured": true
+}

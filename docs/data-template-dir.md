@@ -2,6 +2,7 @@
 eleventyNavigation:
   parent: Data Cascade
   key: Template and Directory Data Files
+  title: Template & Directory Data Files
   order: 2
 ---
 # Template and Directory Specific Data Files {% addedin "0.2.14" %}
@@ -26,9 +27,11 @@ For example, consider a template located at `posts/subdir/my-first-blog-post.md`
     * `posts/posts.11tydata.js` {% minilink "/docs/data-js" %}{% addedin "0.5.3" %}JavaScript Data Files{% endminilink %}
     * `posts/posts.11tydata.json` {% addedin "0.5.3" %}
     * `posts/posts.json`
-1. [Global Data Files](/docs/data-global/) in `_data/*` (available to all templates)
+1. [Global Data Files](/docs/data-global/) in `_data/*` (`.js` or `.json` files) available to all templates.
 
 {% callout "info" %}Note that the name of the data file must match either the post or the directory it resides within.{% endcallout %}
+
+Note that any [Custom Formats](/docs/data-custom/#ordering-in-the-data-cascade) {% addedin "0.10.0" %} specified in your configuration will also be taken into account at a lower priority than their JavaScript or JSON counterparts.
 
 ### Change the `.11tydata.js` file suffix {% addedin "0.5.3" %}
 

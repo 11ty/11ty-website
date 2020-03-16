@@ -6,7 +6,7 @@ class EleventySupporter {
 
   check() {
     var auth = new GoTrue({
-      APIUrl: "https://www.11ty.io/.netlify/identity",
+      APIUrl: "https://www.11ty.dev/.netlify/identity",
       setCookie: true
     });
 

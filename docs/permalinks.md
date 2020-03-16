@@ -3,7 +3,7 @@ eleventyNavigation:
   parent: Working with Templates
   key: Permalinks
   order: 6
-  excerpt: Remap a template to a new output location
+  excerpt: Remap a template to a new output location (or prevent writing a file)
 ---
 # Permalinks
 
@@ -76,7 +76,7 @@ Assuming your `--output` directory is the default, `_site`:
     <tbody>
         <tr>
             <th>Input File</th>
-            <td><code>subdir/template/template.njk</code></td>
+            <td><code>subdir/template/template.njk</code> or <code>subdir/template/index.njk</code></td>
         </tr>
         <tr>
             <th>Output File</th>
@@ -101,7 +101,19 @@ permalink: "this-is-a-new-path/subdirectory/testing/index.html"
 ---
 ```
 
-The above will write to `_site/this-is-a-new-path/subdirectory/testing/index.html`.
+The above is functionally equivalent to:
+
+{% codetitle "YAML Front Matter", "Syntax" %}
+
+```
+---
+permalink: "this-is-a-new-path/subdirectory/testing/"
+---
+```
+
+Both of the above examples will write to `_site/this-is-a-new-path/subdirectory/testing/index.html`.
+
+{% callout "warn" %}While <code>index.html</code> is optional, it is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a> to leave off the trailing slash! If you forget it, the browser may attempt to download the file instead of displaying it (unless you’ve done some extra work to set up your <code>Content-Type</code> headers correctly).{% endcallout %}
 
 {% callout "info" %}If multiple input files attempt to write to the same permalink output file, Eleventy will throw an error {% addedin "0.9.0" %}.{% endcallout %}
 
@@ -136,7 +148,7 @@ permalink: "subdir/{{ mySlug }}/index.html"
 
 Writes to `_site/subdir/this-is-a-new-path/index.html`.
 
-{% callout "info", "md" %}Make sure you read about the special `page` variables useful for permalinks too: [`page.fileSlug`](/docs/data/#fileslug) and [`page.filePathStem`](/docs/data/#filepathstem).{% endcallout %}
+{% callout "info", "md" %}Make sure you read about the special `page` variables useful for permalinks too: [`page.fileSlug`](/docs/data-eleventy-supplied/#fileslug) and [`page.filePathStem`](/docs/data-eleventy-supplied/#filepathstem).{% endcallout %}
 
 #### Warning about YAML Objects
 
@@ -183,7 +195,7 @@ module.exports = function(eleventyConfig) {
 
 ### Use filters!
 
-Use the provided [`slug` filter](/docs/filters/#slug) to modify other data available in the template.
+Use the provided [`slug` filter](/docs/filters/slug/) to modify other data available in the template.
 
 {% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
 

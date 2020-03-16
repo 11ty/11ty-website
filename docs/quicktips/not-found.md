@@ -30,9 +30,9 @@ permalink: 404.html
 
 Eleventy will output this template to `404.html`.
 
-If you’re using [GitHub Pages](https://help.github.com/articles/creating-a-custom-404-page-for-your-github-pages-site/) or [Netlify](https://www.netlify.com/docs/redirects/#custom-404), there is no step two! A `404.html` file in your output directory is all you need.
+If you’re using [GitHub Pages](https://help.github.com/en/github/working-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site) or [Netlify](https://docs.netlify.com/routing/redirects/redirect-options/#custom-404-page-handling), there is no step two! A `404.html` file in your output directory is all you need.
 
-Netlify even has lovely [multi-language 404 page support too using `Redirects`](https://www.netlify.com/docs/redirects/#custom-404).
+Netlify even has lovely [multi-language 404 page support too using `Redirects`](https://docs.netlify.com/routing/redirects/redirect-options/#custom-404-page-handling).
 
 ## .htaccess
 
@@ -44,7 +44,7 @@ ErrorDocument 404 /404.html
 
 ## With `--serve`
 
-If you're using `eleventy --serve`, you can configure Browsersync to do the 404 routing by passing a callback in your config. Read more on [the BrowserSyncConfig option](https://www.11ty.io/docs/config/#override-browsersync-server-options), the [Browsersync callbacks option](https://browsersync.io/docs/options#option-callbacks), and [how to provide a 404 using a Browsersync callback](https://github.com/browsersync/browser-sync/issues/1398). 
+If you're using `eleventy --serve`, you can configure Browsersync to do the 404 routing by passing a callback in your config. Read more on [the BrowserSyncConfig option](/docs/config/#override-browsersync-server-options), the [Browsersync callbacks option](https://browsersync.io/docs/options#option-callbacks), and [how to provide a 404 using a Browsersync callback](https://github.com/browsersync/browser-sync/issues/1398). 
 
 {% codetitle ".eleventy.js" %}
 
@@ -60,6 +60,9 @@ module.exports = function(eleventyConfig) {
         bs.addMiddleware("*", (req, res) => {
           // Provides the 404 content without redirect.
           res.write(content_404);
+          // Add 404 http status code in request header.
+          // res.writeHead(404, { "Content-Type": "text/html" });
+          res.writeHead(404);
           res.end();
         });
       }

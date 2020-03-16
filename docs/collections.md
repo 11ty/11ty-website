@@ -55,7 +55,7 @@ Compare the `post.url` and special Eleventy-provided `page.url` variable to find
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
-```
+```html
 <ul>
 {%- for post in collections.post -%}
   <li{% if page.url == post.url %} class="active"{% endif %}>{{ post.data.title }}</li>
@@ -71,7 +71,7 @@ By default Eleventy puts all of your content (independent of whether or not it h
 ### Example: A list of links to all Eleventy generated content
 
 {% raw %}
-```
+```html
 <ul>
 {%- for post in collections.all -%}
   <li><a href="{{ post.url }}">{{ post.url }}</a></li>
@@ -86,7 +86,7 @@ In front matter (or further upstream in the data cascade), set the `eleventyExcl
 
 {% codetitle "excluded.md" %}
 
-```
+```markdown
 ---
 eleventyExcludeFromCollections: true
 tags: post
@@ -100,7 +100,7 @@ You can use a single tag, as in the above example OR you can use any number of t
 
 ### A single tag: cat
 
-```
+```markdown
 ---
 tags: cat
 ---
@@ -110,7 +110,7 @@ This content would show up in the template data inside of `collections.cat`.
 
 ### Multiple tags, single line
 
-```
+```markdown
 ---
 tags: ['cat', 'dog']
 ---
@@ -120,7 +120,7 @@ This content would show up in the template data inside of `collections.cat` and 
 
 ### Multiple tags, multiple lines
 
-```
+```markdown
 ---
 tags:
   - cat
@@ -135,7 +135,7 @@ This content would show up in the template data inside of `collections.cat` and 
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
-```
+```html
 <ul>
 {%- for post in collections.post -%}
   <li>{{ post.data.title }}</li>
@@ -147,14 +147,14 @@ This content would show up in the template data inside of `collections.cat` and 
 Note in the above example that we output the `post.data.title` value? Similarly, each collection item will have the following data:
 
 * `inputPath`: the full path to the source input file (including the path to the input directory)
-* `fileSlug`: {% addedin "0.5.3" %} Mapped from the input file name, useful for permalinks. Read more about [`fileSlug`](/docs/data/#fileslug).
+* `fileSlug`: {% addedin "0.5.3" %} Mapped from the input file name, useful for permalinks. Read more about [`fileSlug`](/docs/data-eleventy-supplied/#fileslug).
 * `outputPath`: the full path to the output file to be written for this content
 * `url`: url used to link to this piece of content.
 * `date`: the resolved date used for sorting. Read more about [Content Dates](/docs/dates/).
 * `data`: all data for this piece of content (includes any data inherited from layouts)
 * `templateContent`: the rendered content of this template. This does _not_ include layout wrappers.
 
-```
+```js
 { inputPath: './test1.md',
   fileSlug: 'test1', // fileSlug was added in 0.5.3
   outputPath: './_site/test1/index.html',
@@ -195,7 +195,7 @@ To sort descending in your template, you can use a filter to reverse the sort or
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
-```
+```html
 <ul>
 {%- for post in collections.post | reverse -%}
   <li>{{ post.data.title }}</li>
@@ -209,7 +209,7 @@ And in Liquid it’d look like this:
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
-```
+```html
 <ul>
 {%- assign posts = collections.post | reverse -%}
 {%- for post in posts -%}
@@ -232,7 +232,7 @@ And in Liquid it’d look like this:
 
 You can modify how a piece of content is sorted in a collection by changing it’s default `date`. [Read more at Content Dates](/docs/dates/).
 
-```
+```markdown
 ---
 date: 2016-01-01
 ---
@@ -388,9 +388,33 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+#### getFilteredByTags( tagName, secondTagName, […] )
+
+Retrieve content that includes *all* of the tags passed in. Returns an array.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // Get only content that matches a tag
+  eleventyConfig.addCollection("myTravelPostsWithPhotos", function(collection) {
+    return collection.getFilteredByTags("post", "travel", "photo");
+  });
+};
+```
+
+
 #### getFilteredByGlob( glob )
 
 Returns an array. Will match an arbitrary glob (or an array of globs) against the input file’s full `inputPath` (including the input directory).
+
+{% callout "info" %}
+<strong>Note</strong>: <code>getFilteredByGlob</code> filters results returned from <a href="#getallsorted()"><code>getAllSorted</code></a>. It will not search the file system for new templates. It will not match files in your <code>_includes</code> directory or anything excluded by <code>eleventyExcludeFromCollections</code>.
+{% endcallout %}
+
+{% callout "info" %}
+<strong>Note</strong>: <code>getFilteredByGlob</code> will not "find" files that are not supported by Eleventy. For example, a file with the extension <code>.ray</code> will be ignored even if it would match the glob.
+{% endcallout %}
 
 {% codetitle ".eleventy.js" %}
 {% addedin "0.2.14" %}
@@ -432,6 +456,6 @@ module.exports = function(eleventyConfig) {
 <div class="elv-community" id="community-resources">
   <h3 class="elv-community-hed">Community Resources</h3>
   <ul>
-    <li><a href="https://www.pborenstein.com/articles/collections/">Working with Collections</a> by {% avatarlocalcache "twitter", "pborenstein" %}Philip Borenstein</li>
+    <li><a href="https://www.pborenstein.com/posts/collections/">Working with Collections</a> by {% avatarlocalcache "twitter", "pborenstein" %}Philip Borenstein</li>
   </ul>
 </div>

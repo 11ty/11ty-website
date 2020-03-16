@@ -4,6 +4,7 @@ logoLink: /docs/
 ignoreGitHubButtons: true
 ignoreSupporters: true
 searchTitle: Eleventy Home
+bigPossum: true
 ---
 
 ## Quick Start
@@ -29,34 +30,24 @@ Run `eleventy --serve` to start up a hot-reloading web server. Then open `http:/
 
 {% include "supporters.njk" %}
 
-<a href="{{ "/docs/" | url }}" class="btn-primary benchnine rainbow-active rainbow-active-noanim">Documentation for <span>Eleventy {% latestVersion versions, config %}</span></a><span>Todd and [Bruce](https://twitter.com/brucel/status/1107699886584143872) said this button should be bigger and as you can see they were right</span>
+## Latest [News]({{ '/news/' | url }})
 
-## News
+{%- set news = collections.news | reverse | first %}
+{%- if news %}
+[{{ news.data.newstitle }}]({{ news.data.page.url }}) ({{ news.date | newsDate }})
+{%- endif %}
 
-* 2019 April 26—[Eleventy wins second Google Open Source Award](https://opensource.googleblog.com/2019/04/google-open-source-peer-bonus-winners.html)
-* 2019 March—[CERN 2019 WorldWideWeb Rebuild](https://twitter.com/eleven_ty/status/1106589569238085637) site rebuilt using Eleventy!
-* 2018 December—[Turn Jekyll up to Eleventy—a lovely tutorial by {% avatarlocalcache "twitter", "paulrobertlloyd" %}Paul Robert Lloyd](https://24ways.org/2018/turn-jekyll-up-to-eleventy/)
-* 2018 November—[Happy First Birthday, Eleventy! 🎉](https://www.zachleat.com/web/eleventy-birthday/)
-* 2018 September—[Google’s {% avatarlocalcache "twitter", "v8js" %}V8 web site launches using Eleventy](https://twitter.com/v8js/status/1044202940494475265)
-* 2018 May 23—{% avatarlocalcache "twitter", "jameswillweb" %}James Williamson delivers [Eleventy’s mascot](https://twitter.com/jameswillweb/status/999052022497316865), named [Edison the Static-Generating Possum](https://twitter.com/jameswillweb/status/1131956888332058624).
-* 2018 March—[Eleventy wins Google Open Source Award](https://www.zachleat.com/web/eleventy-google-award/)
-* 2018 February—[Introducing Eleventy, a new Static Site Generator](https://www.zachleat.com/web/introducing-eleventy/)
-* 2017 December 20—[Eleventy’s very first (and second and third) release](https://github.com/11ty/eleventy/releases?after=v0.1.3)
 
-## Used At
-
-<div class="used-by">
-    <a href="https://home.cern/" class="elv-externalexempt"><img src="/img/orgs/cern.png" alt="CERN"></a>
-    <a href="https://www.google.com/" class="elv-externalexempt"><img src="/img/orgs/google.svg" alt="Google"></a>
-    <a href="https://www.netlify.com/" class="elv-externalexempt"><img src="/img/orgs/netlify.png" alt="Netlify"></a>
-    <a href="https://css-tricks.com/" class="elv-externalexempt"><img src="/img/orgs/css-tricks.png" alt="CSS-Tricks"></a>
-</div>
+<a href="{{ "/docs/" | url }}" class="btn-primary btn-primary-why-are-you-doing-this benchnine rainbow-active rainbow-active-noanim">Documentation for <span>Eleventy {% latestVersion versions, config %}</span></a><span>Todd and [Bruce](https://twitter.com/brucel/status/1107699886584143872) said this button should be bigger and as you can see they were right</span>
 
 ## Built With Eleventy
 
+<ul class="inlinelist list-superfeatured">
+    {% for key, site in sites -%}{% if site.twitter and site.disabled != true and site.url and site.featured and site.superfeatured -%}<li class="inlinelist-item"><a href="{{ site.url }}" class="elv-externalexempt">{% avatarlocalcache "twitter", site.twitter %}{{ site.name | safe }}</a></li>{% endif %}{% endfor -%}
+</ul>
+
 <div class="facepile">
-    {% for key, site in sites -%}{% if site.twitter and site.disabled != true and site.url and site.featured and site.superfeatured -%}<a href="{{ site.url }}" class="elv-externalexempt">{% avatarlocalcache "twitter", site.twitter %}<span class="sr-only">{{ site.name | safe }}</span></a>{% endif -%}{% endfor -%}
-    {% for key, site in sites -%}{% if site.twitter and site.disabled != true and site.url and site.featured and not site.superfeatured -%}<a href="{{ site.url }}" class="elv-externalexempt">{% avatarlocalcache "twitter", site.twitter %}<span class="sr-only">{{ site.name | safe }}</span></a>{% endif -%}{% endfor -%}
+    {% for key, site in sites | shuffle -%}{% if site.twitter and site.disabled != true and site.url and site.featured and not site.superfeatured -%}<a href="{{ site.url }}" class="elv-externalexempt">{% avatarlocalcache "twitter", site.twitter %}<span class="sr-only">{{ site.name | safe }}</span></a>{% endif -%}{% endfor -%}
     {% for key, site in sites | shuffle %}{% if site.twitter and site.disabled != true and not site.featured and not site.superfeatured and not site.hideOnHomepage -%}<a href="{{ site.url or site.source_url }}" class="elv-externalexempt">{% avatarlocalcache "twitter", site.twitter %}<span class="sr-only">{{ site.name | safe }}</span></a>{% endif -%}{% endfor %}
 </div>
 
