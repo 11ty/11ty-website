@@ -136,7 +136,7 @@ a.rainbow-active:focus {
 .buzzword-list li:focus:after,
 .buzzword:hover:after,
 .buzzword:focus:after {
-	font-family: system-ui, sans-serif;
+	font-family: system-ui, -apple-system, sans-serif;
 	content: "Buzzword alert!!!";
 	position: absolute;
 	left: 0;

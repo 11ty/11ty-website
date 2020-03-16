@@ -14,7 +14,7 @@
 	box-sizing: border-box;
 }
 body {
-	font-family: system-ui, sans-serif;
+	font-family: system-ui, -apple-system, sans-serif;
 	color: #222;
 	margin: 0;
 }
@@ -155,7 +155,7 @@ h3,
 h4,
 h5,
 .benchnine {
-	font-family: BenchNine, system-ui, sans-serif;
+	font-family: BenchNine, system-ui, -apple-system, sans-serif;
 }
 h1 {
 	font-size: 2.666666666667em; /* 48px /18 */
@@ -211,7 +211,7 @@ h5 code {
 }
 
 .subhed {
-	font-family: system-ui, sans-serif;
+	font-family: system-ui, -apple-system, sans-serif;
 	font-size: 0.875rem; /* 14px /16 */
 	line-height: 1;
 	font-weight: 400;
@@ -425,7 +425,7 @@ footer.elv-layout {
 	font-size: 0.75em; /* 24px /32 */
 }
 .latestversion {
-	font-family: BenchNine, system-ui, sans-serif;
+	font-family: BenchNine, system-ui, -apple-system, sans-serif;
 }
 .tmpl-docs .latestversion {
 	position: absolute;
