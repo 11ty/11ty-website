@@ -26,7 +26,7 @@ Only sites with Lighthouse scores greater than or equal to 90 are ordered by per
 			</em>
 			{%- if site.source_url %}<em class="list-bare-desc list-bare-desc-avatar">Includes <a href="{{ site.source_url }}">sample source code</a>.</em>{% endif -%}
 		</div>
-		{%- if perf.rank <= 11 %}<div><img src="/img/sites/{{ site.url | screenshotFilenameFromUrl }}" alt="Screenshot of {{ site.url }}" class="sites-screenshot"></div>{% endif %}
+		{%- if perf.rank <= 11 %}<div><img src="/img/sites/{{ site.url | screenshotFilenameFromUrl }}" alt="Screenshot of {{ site.url }}" class="sites-screenshot" loading="lazy"></div>{% endif %}
 	</div>
 {% endif -%}
 {% endfor -%}
