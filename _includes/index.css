@@ -13,6 +13,9 @@
 * {
 	box-sizing: border-box;
 }
+html{
+	overflow-y: scroll;
+}
 body {
 	font-family: system-ui, -apple-system, sans-serif;
 	color: #222;
