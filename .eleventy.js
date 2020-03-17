@@ -296,6 +296,9 @@ ${text.trim()}
 	eleventyConfig.setLibrary("md", mdIt);
 
 	eleventyConfig.addFilter("newsDate", dateObj => {
+		if(typeof dateObj === "number") {
+			dateObj = new Date(dateObj);
+		}
 		return DateTime.fromJSDate(dateObj).toFormat("yyyy LLLL dd");
 	});
 

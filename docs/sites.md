@@ -7,7 +7,11 @@ eleventyNavigation:
 
 # {{ sites | getsize }} Sites Built With Eleventy
 
-Only sites with Lighthouse scores greater than or equal to 90 are ordered by performance. The remainder are ordered randomly. Performance rankings are updated approximately once per week. {% addToSampleSites %}
+{% addToSampleSites %}
+
+Sites with Lighthouse scores greater than or equal to 90 are ordered by performance. The remainder are ordered randomly. Performance rankings are updated approximately once per week on Sunday. _Last generated {{ fastestSitesMeta.generated | newsDate }}_.
+
+<br>
 
 <div class="lo sites-lo" style="--lo-margin-h: 2rem; --lo-margin-v: 1rem; --lo-stackpoint: 31.25em;">
 {% for perf in fastestSites -%}
@@ -26,7 +30,7 @@ Only sites with Lighthouse scores greater than or equal to 90 are ordered by per
 			</em>
 			{%- if site.source_url %}<em class="list-bare-desc list-bare-desc-avatar">Includes <a href="{{ site.source_url }}">sample source code</a>.</em>{% endif -%}
 		</div>
-		{%- if perf.rank <= 11 %}<div><img src="/img/sites/{{ site.url | screenshotFilenameFromUrl }}" alt="Screenshot of {{ site.url }}" class="sites-screenshot" loading="lazy"></div>{% endif %}
+		{%- if perf.rank <= 11 %}<div><img src="/img/sites/{{ site.url | screenshotFilenameFromUrl }}" alt="Screenshot of {{ site.url }}" class="sites-screenshot" loading="lazy" width="405" height="304"></div>{% endif %}
 	</div>
 {% endif -%}
 {% endfor -%}

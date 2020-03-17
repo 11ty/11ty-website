@@ -103,11 +103,14 @@ class ResultLogger {
     }
   }
 
-  let finalUrls = Array.from(urls); //.slice(0, 3);
+  let finalUrls = Array.from(urls);
   console.log( `Testing ${finalUrls.length} sites:` );
 
   let results = await runLighthouse(finalUrls);
   fs.writeFile("./_data/fastestSites.json", JSON.stringify(results, null, 2));
+  fs.writeFile("./_data/fastestSitesMeta.json", JSON.stringify({
+    generated: Date.now()
+  }, null, 2));
 
   console.log( results );
 })();

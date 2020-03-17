@@ -112,6 +112,9 @@ main {
 main img {
 	max-width: 100%;
 }
+main img[height] {
+	height: auto;
+}
 main:not(:empty) {
 	padding-bottom: 3em;
 	margin-bottom: 3em;
