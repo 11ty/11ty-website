@@ -377,6 +377,24 @@
       "size": 1901
     }
   ],
+  "dave-powers": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "dave-powers",
+      "path": "img/avatar-local-cache/opencollective/dave-powers.jpg",
+      "size": 2089
+    }
+  ],
   "dave-rupert": [
     {
       "format": "jpeg",
@@ -629,6 +647,24 @@
       "size": 2133
     }
   ],
+  "hotmagma": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "hotmagma",
+      "path": "img/avatar-local-cache/opencollective/hotmagma.jpg",
+      "size": 321
+    }
+  ],
   "inventage-ag": [
     {
       "format": "jpeg",
@@ -699,6 +735,24 @@
       "name": "jeremias-menichelli",
       "path": "img/avatar-local-cache/opencollective/jeremias-menichelli.jpg",
       "size": 1825
+    }
+  ],
+  "jeremy-schoonover": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "jeremy-schoonover",
+      "path": "img/avatar-local-cache/opencollective/jeremy-schoonover.jpg",
+      "size": 2316
     }
   ],
   "jerome-coupe": [

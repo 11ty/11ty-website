@@ -67,7 +67,7 @@ module.exports = function(eleventyConfig) {
 			});
 		}
 	});
-	eleventyConfig.addPlugin(rssPlugin) ;
+	eleventyConfig.addPlugin(rssPlugin);
 	eleventyConfig.addPlugin(navigationPlugin);
 	eleventyConfig.addPlugin(addedInLocalPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
