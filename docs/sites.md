@@ -18,14 +18,14 @@ eleventyNavigation:
 {%- set meanSi = fastestSites | calc("mean", "speedIndex") %}
 <div><strong class="sites-val">{{ medianSi | round | commaNumber }}</strong> Median Speed Index</div>
 <div><strong class="sites-val">{{ meanSi | round | commaNumber }}</strong> Mean Speed Index</div>
-<!-- {%- set medianFmp = fastestSites | calc("median", "firstMeaningfulPaint") %}
-{%- set meanFmp = fastestSites | calc("mean", "firstMeaningfulPaint") %}
-<div><strong class="sites-val">{{ medianFmp | round | commaNumber }}</strong> Median First Meaningful Paint</div>
-<div><strong class="sites-val">{{ meanFmp | round | commaNumber }}</strong> Mean First Meaningful Paint</div> -->
 {%- set medianFcp = fastestSites | calc("median", "firstContentfulPaint") %}
 {%- set meanFcp = fastestSites | calc("mean", "firstContentfulPaint") %}
 <div><strong class="sites-val">{{ medianFcp | round | commaNumber }}</strong> Median First Contentful Paint</div>
 <div><strong class="sites-val">{{ meanFcp | round | commaNumber }}</strong> Mean First Contentful Paint</div>
+<!-- {%- set medianFmp = fastestSites | calc("median", "firstMeaningfulPaint") %}
+{%- set meanFmp = fastestSites | calc("mean", "firstMeaningfulPaint") %}
+<div><strong class="sites-val">{{ medianFmp | round | commaNumber }}</strong> Median First Meaningful Paint</div>
+<div><strong class="sites-val">{{ meanFmp | round | commaNumber }}</strong> Mean First Meaningful Paint</div> -->
 
 <br>
 
