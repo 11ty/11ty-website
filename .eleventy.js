@@ -339,6 +339,10 @@ ${text.trim()}
 		}
 	});
 
+	eleventyConfig.addFilter("supportersFacepile", (supporters) => {
+		return supporters.filter(supporter => supporter.role === "BACKER" && supporter.tier && supporter.tier != "Exclusive Gold Sponsor");
+	});
+
 	eleventyConfig.addFilter("screenshotFilenameFromUrl", (url) => {
 		let slug = url.replace(/https?\:\//, "");
 		return slugify(slug, { lower: true, remove: /[:\/]/g }) + ".jpg";

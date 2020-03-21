@@ -4,12 +4,18 @@
 	line-height: 2;
 	padding: 0 0 0 25px;
 }
+.facepile-block {
+	display: inline;
+}
+.facepile-block > a,
 .facepile > a {
 	display: inline-block;
 	margin-left: -25px;
 	transition: opacity .3s;
 	opacity: .9;
 }
+.facepile-block > a:focus,
+.facepile-block > a:hover,
 .facepile > a:focus,
 .facepile > a:hover {
 	opacity: 1;
@@ -33,6 +39,7 @@
 	width: calc(30px + 2vw);
 	height: calc(30px + 2vw);
 }
+.facepile-block > a:after,
 .facepile > a:after {
 	content: "";
 	position: absolute;
@@ -41,6 +48,8 @@
 	pointer-events: none;
 	opacity: 0;
 }
+.facepile-block > a:focus:after,
+.facepile-block > a:hover:after,
 .facepile > a:focus:after,
 .facepile > a:hover:after {
 	left: -24px; /* Right - 4px */
@@ -53,46 +62,68 @@
 	background-size: 1200% 1200%;
 	background-position: 0 80%;
 }
+.facepile-block > a:nth-child(11n+1):focus:after,
+.facepile-block > a:nth-child(11n+1):hover:after,
 .facepile > a:nth-child(11n+1):focus:after,
 .facepile > a:nth-child(11n+1):hover:after {
 	background-position: 0% 80%;
 }
+.facepile-block > a:nth-child(11n+2):focus:after,
+.facepile-block > a:nth-child(11n+2):hover:after,
 .facepile > a:nth-child(11n+2):focus:after,
 .facepile > a:nth-child(11n+2):hover:after {
 	background-position: 9% 80%;
 }
+.facepile-block > a:nth-child(11n+3):focus:after,
+.facepile-block > a:nth-child(11n+3):hover:after,
 .facepile > a:nth-child(11n+3):focus:after,
 .facepile > a:nth-child(11n+3):hover:after {
 	background-position: 18% 80%;
 }
+.facepile-block > a:nth-child(11n+4):focus:after,
+.facepile-block > a:nth-child(11n+4):hover:after,
 .facepile > a:nth-child(11n+4):focus:after,
 .facepile > a:nth-child(11n+4):hover:after {
 	background-position: 27% 80%;
 }
+.facepile-block > a:nth-child(11n+5):focus:after,
+.facepile-block > a:nth-child(11n+5):hover:after,
 .facepile > a:nth-child(11n+5):focus:after,
 .facepile > a:nth-child(11n+5):hover:after {
 	background-position: 36% 80%;
 }
+.facepile-block > a:nth-child(11n+6):focus:after,
+.facepile-block > a:nth-child(11n+6):hover:after,
 .facepile > a:nth-child(11n+6):focus:after,
 .facepile > a:nth-child(11n+6):hover:after {
 	background-position: 45% 80%;
 }
+.facepile-block > a:nth-child(11n+7):focus:after,
+.facepile-block > a:nth-child(11n+7):hover:after,
 .facepile > a:nth-child(11n+7):focus:after,
 .facepile > a:nth-child(11n+7):hover:after {
 	background-position: 54% 80%;
 }
+.facepile-block > a:nth-child(11n+8):focus:after,
+.facepile-block > a:nth-child(11n+8):hover:after,
 .facepile > a:nth-child(11n+8):focus:after,
 .facepile > a:nth-child(11n+8):hover:after {
 	background-position: 63% 80%;
 }
+.facepile-block > a:nth-child(11n+9):focus:after,
+.facepile-block > a:nth-child(11n+9):hover:after,
 .facepile > a:nth-child(11n+9):focus:after,
 .facepile > a:nth-child(11n+9):hover:after {
 	background-position: 72% 80%;
 }
+.facepile-block > a:nth-child(11n+10):focus:after,
+.facepile-block > a:nth-child(11n+10):hover:after,
 .facepile > a:nth-child(11n+10):focus:after,
 .facepile > a:nth-child(11n+10):hover:after {
 	background-position: 81% 80%;
 }
+.facepile-block > a:nth-child(11n+11):focus:after,
+.facepile-block > a:nth-child(11n+11):hover:after,
 .facepile > a:nth-child(11n+11):focus:after,
 .facepile > a:nth-child(11n+11):hover:after {
 	background-position: 90% 80%;

@@ -13,10 +13,13 @@
 </div>
 
 <div class="facepile facepile-supporters">
-{% for supporter in supporters %}{% if supporter.role === "BACKER" and supporter.tier and supporter.tier != "Exclusive Gold Sponsor" -%}
+{% for supporter in supporters | supportersFacepile %}
+{%- if loop.first %}<div class="facepile-block">{% endif %}
 {%- set nameToSlug = supporter.name | slug | lower -%}
 	<a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}">{% avatarlocalcache "opencollective", nameToSlug, supporter.name %}</a>
-{%- endif %}{% endfor %}
+{%- if loop.last or (loop.index0 % 60 == 0 and not loop.first) %}</div>{% endif %}
+{%- if not loop.first and loop.index0 % 60 == 0 and not loop.last %}<div class="facepile-block">{% endif %}
+{% endfor %}
 {%- if config.localDev -%}
 	<a href="https://zachleat.com/" class="elv-externalexempt" data-supporters-slug="zach-leatherman"><img src="/img/avatar-local-cache/opencollective/zach-leatherman.jpg" alt="Zach Leatherman" loading="lazy" class="avatar"></a>
 {%- endif -%}
