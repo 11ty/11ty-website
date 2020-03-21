@@ -56,7 +56,7 @@ Run `eleventy --serve` to start up a hot-reloading web server. Then open `http:/
 {%- if not loop.first and loop.index0 % 60 == 0 and not loop.last %}<div class="facepile">{% endif %}
 {%- endfor %}
 
-This is only a random sample of 60. See [all {{ sites | length }} sites](/docs/sites/).
+View [all {{ sites | length }} sites](/docs/sites/).
 
 ## Don’t take my word for it {% emoji "🌈" %}
 
