@@ -51,8 +51,8 @@ Run `eleventy --serve` to start up a hot-reloading web server. Then open `http:/
 {% for key, site in sites | shuffle -%}
 {%- if loop.first %}<div class="facepile-block">{% endif %}
 {%- if site.twitter and site.disabled != true and site.url and not site.superfeatured and not site.hideOnHomepage -%}<a href="{{ site.url }}" class="elv-externalexempt">{% avatarlocalcache "twitter", site.twitter %}<span class="sr-only">{{ site.name | safe }}</span></a>{% endif -%}
-{%- if loop.last or (loop.index0 % 59 == 0 and not loop.first) %}</div><!-- ./facepile-block -->{% endif %}
-{%- if not loop.first and loop.index0 % 59 == 0 and not loop.last %}<div class="facepile-block">{% endif %}
+{%- if loop.last or (loop.index0 % 40 == 0 and not loop.first) %}</div><!-- ./facepile-block -->{% endif %}
+{%- if not loop.first and loop.index0 % 40 == 0 and not loop.last %}<div class="facepile-block">{% endif %}
 {%- endfor %}
 </div>
 
