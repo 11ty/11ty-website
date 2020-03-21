@@ -1,7 +1,10 @@
 <header class="elv-layout elv-layout-full elv-header{% if headerClass %} {{ headerClass }}{% endif %}">
 	<a href="{% if logoLink %}{{ logoLink | url }}{% else %}/{% endif %}" class="elv-hero elv-externalexempt"><img src="{{ "/img/logo.svg" | url }}" onerror="this.src='{{ "/img/logo.png" | url }}'" alt="11ty" loading="eager"></a>
 	<a href="https://twitter.com/jameswillweb/status/999052022497316865" class="elv-externalexempt elv-possum-anchor" data-investors-avatar>
-		<img src="/img/possum-balloon-original-sm.png" class="elv-possum" alt="The possum is Eleventy’s mascot" srcset="/img/possum-balloon-original-sm.png 200w, /img/possum-balloon-original.png 338w" sizes="{% if bigPossum %}37.5vh{% else %}(max-width: 41.875em) 15vw, 6.25rem{% endif %}" loading="lazy">
+		<picture>
+			<source srcset="/img/possum-balloon-original.webp" type="image/webp">
+			<img src="/img/possum-balloon-original-sm.png" class="elv-possum" alt="The possum is Eleventy’s mascot" loading="lazy">
+		</picture>
 	</a>
 	<h1 class="elv-hed">{{ title | orphanWrap | safe }}</h1>
 	<div class="elv-nav-header">
