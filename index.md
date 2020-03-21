@@ -46,12 +46,17 @@ Run `eleventy --serve` to start up a hot-reloading web server. Then open `http:/
     {% for key, site in sites -%}{% if site.twitter and site.disabled != true and site.url and site.featured and site.superfeatured -%}<li class="inlinelist-item"><a href="{{ site.url }}" class="elv-externalexempt">{% avatarlocalcache "twitter", site.twitter %}{{ site.name | safe }}</a></li>{% endif %}{% endfor -%}
 </ul>
 
-<div class="facepile">
-    {% for key, site in sites | shuffle -%}{% if site.twitter and site.disabled != true and site.url and site.featured and not site.superfeatured -%}<a href="{{ site.url }}" class="elv-externalexempt">{% avatarlocalcache "twitter", site.twitter %}<span class="sr-only">{{ site.name | safe }}</span></a>{% endif -%}{% endfor -%}
-    {% for key, site in sites | shuffle %}{% if site.twitter and site.disabled != true and not site.featured and not site.superfeatured and not site.hideOnHomepage -%}<a href="{{ site.url or site.source_url }}" class="elv-externalexempt">{% avatarlocalcache "twitter", site.twitter %}<span class="sr-only">{{ site.name | safe }}</span></a>{% endif -%}{% endfor %}
-</div>
+---
 
-View the [full list](/docs/sites/).
+{# lighthouse flags if more than 60 nodes, so divide by 60 😅 #}
+{% for key, site in sites | shuffle -%}
+{%- if loop.first %}<div class="facepile">{% endif %}
+{%- if site.twitter and site.disabled != true and site.url and not site.superfeatured and not site.hideOnHomepage -%}<a href="{{ site.url }}" class="elv-externalexempt">{% avatarlocalcache "twitter", site.twitter %}<span class="sr-only">{{ site.name | safe }}</span></a>{% endif -%}
+{%- if loop.last or (loop.index0 % 60 == 0 and not loop.first) %}</div>{% endif %}
+{%- if not loop.first and loop.index0 % 60 == 0 and not loop.last %}<div class="facepile">{% endif %}
+{%- endfor %}
+
+This is only a random sample of 60. See [all {{ sites | length }} sites](/docs/sites/).
 
 ## Don’t take my word for it {% emoji "🌈" %}
 
