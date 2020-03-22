@@ -4,6 +4,8 @@ eleventyNavigation:
   key: Eleventy Contributors
   order: 1
 ignoreSupporters: true
+css:
+  - components/page-supporters.css
 ---
 # Thank You Eleventy Contributors!
 

@@ -4,7 +4,7 @@ eleventyNavigation:
   key: Built With Eleventy
   order: 3
 css:
-  - components/sites.css
+  - components/page-sites.css
 ---
 
 # Built With Eleventy
