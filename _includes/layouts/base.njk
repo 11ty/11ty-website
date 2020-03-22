@@ -40,31 +40,20 @@ social:
 
 {%- set css %}
 {% include 'components/font-titles.css' %}
-{{ googlefonts | safe }}
 {% include 'index.css' %}
-{% include 'components/facepile.css' %}
 {% include 'components/layout.css' %}
-{% include 'components/breadcrumb.css' %}
 {% include 'components/navigation.css' %}
-{% include 'components/quicktips.css' %}
-{% include 'components/community.css' %}
-{% include 'components/prism-theme.css' %}
-{% include 'components/code.css' %}
-{% include 'components/lists.css' %}
-{% include 'components/external-links.css' %}
-{% include 'components/minilink.css' %}
 {% include 'components/toc.css' %}
 {% include 'components/callout.css' %}
-{% include 'components/codetitle.css' %}
-{% include 'components/forms.css' %}
-{% include 'components/supporters.css' %}
-{% include 'components/search.css' %}
-{% include 'components/truncate.css' %}
-{% include 'components/details-oneway.css' %}
-{% include 'components/sites.css' %}
+{% include 'components/breadcrumb.css' %}
+{% for includeLocation in css %}
+{% include includeLocation %}
+{% endfor %}
+{{ googlefonts | safe }}
 {% endset %}
 		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
 		<style>{{ css | cssmin | safe }}</style>
+		<link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'">
 {% if feedTitle and feedUrl %}
 		<link rel="alternate" href="{{ feedUrl }}" title="{{ feedTitle }}" type="application/atom+xml">
 {% endif %}

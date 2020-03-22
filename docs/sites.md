@@ -3,6 +3,8 @@ eleventyNavigation:
   parent: Supporting Eleventy
   key: Built With Eleventy
   order: 3
+css:
+  - components/sites.css
 ---
 
 # Built With Eleventy

@@ -1,6 +1,8 @@
 ---
 searchTitle: Search The Eleventy Documentation
 putTheJsInTheHead: true
+css:
+  - components/search.css
 ---
 # Search the Eleventy Documentation
 
