@@ -19,6 +19,7 @@
 	font-weight: 300;
 }
 .elv-nav-item .icon,
+.elv-nav-item .has-svg-icon > svg,
 .elv-nav-item .avatar {
 	margin-left: 0;
 }
@@ -35,6 +36,7 @@
 }
 .elv-nav-header .elv-nav-item .emoji,
 .elv-nav-header .elv-nav-item .icon,
+.elv-nav-header .elv-nav-item .has-svg-icon > svg,,
 .elv-nav-header .elv-nav-item .avatar {
 	display: inline-block;
 	margin: 0;
@@ -51,6 +53,7 @@
 	}
 	.elv-nav-header .elv-nav-item .emoji,
 	.elv-nav-header .elv-nav-item .icon,
+	.elv-nav-header .elv-nav-item .has-svg-icon > svg,,
 	.elv-nav-header .elv-nav-item .avatar {
 		position: absolute;
 		left: 0;

@@ -60,7 +60,7 @@
     "terser": "^4.4.0"
   },
   "dependencies": {
-    "@11ty/logo": "^2.0.2",
+    "@11ty/logo": "^2.0.4",
     "instant.page": "^1.2.2",
     "prismjs": "^1.16.0"
   }

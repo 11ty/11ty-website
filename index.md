@@ -46,15 +46,8 @@ Run `eleventy --serve` to start up a hot-reloading web server. Then open `http:/
     {% for key, site in sites -%}{% if site.twitter and site.disabled != true and site.url and site.featured and site.superfeatured -%}<li class="inlinelist-item"><a href="{{ site.url }}" class="elv-externalexempt">{% avatarlocalcache "twitter", site.twitter %}{{ site.name | safe }}</a></li>{% endif %}{% endfor -%}
 </ul>
 
-{# lighthouse flags if more than 60 nodes, so divide by 60 😅 #}
-<div class="facepile">
-{% for key, site in sites | shuffle -%}
-{%- if loop.first %}<div class="facepile-block">{% endif %}
-{%- if site.twitter and site.disabled != true and site.url and not site.superfeatured and not site.hideOnHomepage -%}<a href="{{ site.url }}" class="elv-externalexempt">{% avatarlocalcache "twitter", site.twitter %}<span class="sr-only">{{ site.name | safe }}</span></a>{% endif -%}
-{%- if loop.last or (loop.index0 % 40 == 0 and not loop.first) %}</div><!-- ./facepile-block -->{% endif %}
-{%- if not loop.first and loop.index0 % 40 == 0 and not loop.last %}<div class="facepile-block">{% endif %}
-{%- endfor %}
-</div>
+<!-- TODO some kind of aspect ratio? -->
+<div data-import="/imports/facepile.html"></div>
 
 View [all {{ sites | length }} sites](/docs/sites/).
 

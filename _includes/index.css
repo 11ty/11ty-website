@@ -51,6 +51,11 @@ p {
 	line-height: 1.5;
 }
 
+iframe {
+	border: none;
+	width: 100%;
+}
+
 .nowrap {
 	white-space: nowrap;
 }
@@ -76,6 +81,7 @@ blockquote + blockquote {
 }
 
 .icon,
+.has-svg-icon > svg,
 .avatar,
 blockquote img {
 	height: 1.3em;
@@ -91,6 +97,7 @@ blockquote img {
 	background-color: #eee;
 }
 .icon,
+.has-svg-icon > svg,
 .avatar {
 	vertical-align: middle;
 }
@@ -322,7 +329,8 @@ footer.elv-layout {
 	clear: both;
 }
 /* Header Hero */
-.elv-hero img {
+.elv-hero img,
+.elv-hero svg {
 	width: 42.95774646vh;
 	height: 60vh;
 	background-color: #222;
@@ -339,12 +347,14 @@ footer.elv-layout {
 	float: left;
 	margin-right: .5em;
 }
-.elv-header-default .elv-hero img {
+.elv-header-default .elv-hero img,
+.elv-header-default .elv-hero svg {
 	position: relative;
 	background-color: transparent;
 	z-index: 1;
 }
-.elv-header-docs .elv-hero img {
+.elv-header-docs .elv-hero img,
+.elv-header-docs .elv-hero svg {
 	width: auto;
 	height: 3em;
 }
@@ -352,7 +362,8 @@ footer.elv-layout {
 	.elv-header-docs .elv-hero {
 		margin-right: 1em;
 	}
-	.elv-header-docs .elv-hero img {
+	.elv-header-docs .elv-hero img,
+	.elv-header-docs .elv-hero svg {
 		width: 4.303125em; /* 68.85px /16 */
 		height: 6em;
 	}
