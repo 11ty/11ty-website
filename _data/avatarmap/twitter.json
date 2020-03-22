@@ -2111,6 +2111,37 @@
       "size": 2010
     }
   ],
+  "gerwitz": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": true,
+      "name": "gerwitz",
+      "path": "img/avatar-local-cache/twitter/gerwitz.webp",
+      "size": 400
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "name": "gerwitz",
+      "path": "img/avatar-local-cache/twitter/gerwitz.png",
+      "size": 556
+    }
+  ],
   "geteslint": [
     {
       "format": "webp",
