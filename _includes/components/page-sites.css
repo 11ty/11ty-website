@@ -46,6 +46,24 @@
   }
 }
 
+.sites-perf-rank-pos,
+.sites-perf-rank-neg {
+  margin-left: .5em;
+  font-style: normal;
+}
+.sites-perf-rank-pos {
+  color: green;
+}
+.sites-perf-rank-pos:before {
+  content: "⬆";
+}
+.sites-perf-rank-neg {
+  color: darkred;
+}
+.sites-perf-rank-neg:before {
+  content: "⬇";
+}
+
 /* AMP Carousel */
 .ampcarousel > .lo-c {
   margin-top: 1em;

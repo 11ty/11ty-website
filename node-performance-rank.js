@@ -15,8 +15,13 @@ const PerformanceLeaderboard = require("performance-leaderboard");
     }
   }
 
-  let results = await PerformanceLeaderboard(Array.from(urls));
+  let previousResults = require("./_data/fastestSites.json");
+  let results = await PerformanceLeaderboard(Array.from(urls).slice(0, 5));
 
+  for(let result of results) {
+    let previousResult = previousResults.filter(entry => entry.url === result.url);
+    result.previousRank = previousResult.length ? previousResult[0].rank : undefined;
+  }
   fs.writeFile("./_data/fastestSites.json", JSON.stringify(results, null, 2));
   fs.writeFile("./_data/fastestSitesMeta.json", JSON.stringify({
     generated: Date.now()
