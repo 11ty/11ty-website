@@ -47,7 +47,7 @@ Sites with Lighthouse scores greater than or equal to 90 are ordered by performa
 			{%- if site.description %}<em class="list-bare-desc list-bare-desc-avatar">{{ site.description }}</em>{% endif -%}
 			<em class="list-bare-desc list-bare-desc-avatar">
 				<div class="lo lo-inline lo-nocontentwrap lo-separator-h" style="--lo-margin-h: 1.5rem">
-					<div class="lo-c sites-perf-rank">Performance Rank <strong>#{{ perf.rank }}</strong>{% if perf.previousRank and perf.previousRank !== perf.rank %}<strong class="sites-perf-rank-{% if perf.previousRank - perf.rank > 0 %}pos{% else %}neg{% endif %}">{{ (perf.previousRank - perf.rank) | abs }}</strong>{% endif %}</div>
+					<div class="lo-c sites-perf-rank">Performance Rank <strong>#{{ perf.rank }}</strong>{% if not perf.previousRank %}<strong class="sites-perf-rank-new">New site!</strong>{% elseif perf.previousRank !== perf.rank and perf.previousRank - perf.rank > 0 %}<strong class="sites-perf-rank-{% if perf.previousRank - perf.rank > 0 %}pos{% else %}neg{% endif %}">{{ (perf.previousRank - perf.rank) | abs }}</strong>{% endif %}</div>
 					<div class="lo-c sites-perf-lh">Lighthouse <strong>{{ perf.lighthouseScore * 100 }}</strong></div>
 					{%- if perf.rank <= 11 %}<div class="lo-c sites-perf-si">Speed Index <strong>{{ perf.speedIndex | round(1) }}</strong></div>{% endif %}
 				</div>
