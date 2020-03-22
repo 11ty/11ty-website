@@ -10,6 +10,7 @@ if( "forEach" in NodeList.prototype ) {
 		}).then(function (text) {
 			el.innerHTML = text;
 			el.removeAttribute("data-import");
+			el.setAttribute("data-import-complete", "");
 		}).catch((err) => {
 			console.log('Import failed', err);
 		});
