@@ -77,6 +77,22 @@ Alright, you definitely read all of those right? 😇 Here’s some accessible c
 ```
 {% endraw %}
 
+{% codetitle "JavaScript", "Syntax" %}
+
+{% raw %}
+```js
+exports.render = function(data) {
+  return `<nav aria-labelledby="my-pagination">
+    <h2 id="my-pagination">This is my Pagination</h2>
+    <ol>
+    ${data.pagination.pages.map(function (item, index) {
+      return `<li><a href="${data.pagination.hrefs[index]}" ${data.pagination.hrefs[index] ? 'aria-current="page"' : "" }>Page ${index + 1}</a></li>`;
+    }).join("");}
+    </ol>
+  </nav>`;
+};
+```
+{% endraw %}
 * `pagination.pages` is {% addedin "0.10.0" %}. For previous versions, iterate over `pagination.hrefs` (although you won’t have access to the paginated items to show data about the pages).
 
 For our example, this code will output the following markup for our example (on the first page):
@@ -195,6 +211,25 @@ Note that if the current page (`page.url`) is the first or last in the set, we w
 ```
 {% endraw %}
 
+{% codetitle "JavaScript", "Syntax" %}
+
+{% raw %}
+```js
+exports.render = function(data) {
+  return `<nav aria-labelledby="my-pagination">
+    <h2 id="my-pagination">This is my Pagination</h2>
+    <ol>
+      <li>${data.pagination.href.previous ? `<a href="${data.pagination.href.previous}">Previous</a>` : `Previous`}</li>
+      ${data.pagination.pages.map(function (item, index) {
+        return `<li><a href="${data.pagination.hrefs[index]}" ${data.pagination.hrefs[index] ? 'aria-current="page"' : "" }>Page ${index + 1}</a></li>`;
+      }).join("");}
+      <li>${data.pagination.href.next ? `<a href="${data.pagination.href.next}">Next</a>` : `Next`}</li>
+    </ol>
+  </nav>`;
+};
+```
+{% endraw %}
+
 * `pagination.href.previous` and `pagination.href.next` are {% addedin "0.10.0" %}. Use `pagination.previousPageHref` or `pagination.nextPageHref` in previous versions.
 
 ## Add First and Last Links
@@ -215,6 +250,25 @@ For clarity here, we’re omitting the previous and next links from the previous
    <li>{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">Last</a>{% else %}Last{% endif %}</li>
   </ol>
 </nav>
+```
+{% endraw %}
+
+{% codetitle "JavaScript", "Syntax" %}
+
+{% raw %}
+```js
+exports.render = function(data) {
+  return `<nav aria-labelledby="my-pagination">
+    <h2 id="my-pagination">This is my Pagination</h2>
+    <ol>
+      <li>${data.page.url === data.pagination.href.first ? `<a href="${data.pagination.href.first}">First</a>` : `First`}</li>
+      ${data.pagination.pages.map(function (item, index) {
+        return `<li><a href="${data.pagination.hrefs[index]}" ${data.pagination.hrefs[index] ? 'aria-current="page"' : "" }>Page ${index + 1}</a></li>`;
+      }).join("");}
+      <li>${data.page.url === data.pagination.href.last ? `<a href="${data.pagination.href.last}">Last</a>` : `Last`}</li>
+    </ol>
+  </nav>`;
+};
 ```
 {% endraw %}
 
@@ -240,6 +294,27 @@ Here’s the final pagination navigation template code, pieced together:
     <li>{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">Last</a>{% else %}Last{% endif %}</li>
   </ol>
 </nav>
+```
+{% endraw %}
+
+{% codetitle "JavaScript", "Syntax" %}
+
+{% raw %}
+```js
+exports.render = function(data) {
+  return `<nav aria-labelledby="my-pagination">
+    <h2 id="my-pagination">This is my Pagination</h2>
+    <ol>
+      <li>${data.page.url === data.pagination.href.first ? `<a href="${pagination.href.first}">First</a>` : `First`}</li>
+      <li>${data.pagination.href.previous ? `<a href="${data.pagination.href.previous}">Previous</a>` : `Previous`}</li>
+      ${data.pagination.pages.map(function (item, index) {
+        return `<li><a href="${data.pagination.hrefs[index]}" ${data.pagination.hrefs[index] ? 'aria-current="page"' : "" }>Page ${index + 1}</a></li>`;
+      }).join("");}
+      <li>${data.pagination.href.next ? `<a href="${data.pagination.href.next}">Next</a>` : `Next`}</li>
+      <li>${data.page.url === data.pagination.href.last ? `<a href="${data.pagination.href.last}">Last</a>` : `Last`}</li>
+    </ol>
+  </nav>`;
+};
 ```
 {% endraw %}
 
