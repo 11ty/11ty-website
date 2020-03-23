@@ -36,36 +36,6 @@ testdata:
 ```
 {% endraw %}
 
-Or this one in JavaScript, in case you prefer another [templating language](/docs/languages/):
-
-{% codetitle "JavaScript", "Syntax" %}
-
-{% raw %}
-```js
-exports.data = {
-  pagination: {
-    data: "testdata",
-    size: 2
-  },
-  testdata: [
-    "item1",
-    "item2",
-    "item3",
-    "item4"
-  ]
-};
-
-exports.render = function(data) {
-  return `<ol>
-    ${data.pagination.items.map(function(item) {
-        return `<li>${item}</li>`;
-      }).join("");
-    }
-  </ol>`;
-};
-```
-{% endraw %}
-
 We enable pagination and then give it a dataset with the `data` key. We control the number of items in each chunk with `size`. The pagination data variable will be populated with what you need to create each template. Here’s what’s in `pagination`:
 
 {% codetitle "JavaScript Object", "Syntax" %}
