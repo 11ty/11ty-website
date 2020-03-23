@@ -57,12 +57,14 @@
 }
 .sites-perf-rank-pos:before {
   content: "⬆";
+  line-height: 1;
 }
 .sites-perf-rank-neg {
   color: darkred;
 }
 .sites-perf-rank-neg:before {
   content: "⬇";
+  line-height: 1;
 }
 
 .sites-divider {

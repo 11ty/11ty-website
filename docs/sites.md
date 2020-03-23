@@ -46,13 +46,14 @@ Sites with Lighthouse scores greater than or equal to 90 are ordered by performa
 			<a href="{{ site.url }}">{% avatarlocalcache "twitter", site.twitter %}{{ site.name | safe }}</a>
 			{%- if site.description %}<em class="list-bare-desc list-bare-desc-avatar">{{ site.description }}</em>{% endif -%}
 			<em class="list-bare-desc list-bare-desc-avatar">
-				<div class="lo lo-inline lo-nocontentwrap lo-separator-h" style="--lo-margin-h: 1.5rem">
+				<div class="lo lo-inline lo-nocontentwrap lo-separator-h" style="--lo-margin-h: 1.5rem; --lo-margin-v: .25rem">
+					{%- if site.twitter %}<div class="lo-c">By <a href="https://twitter.com/{{ site.twitter }}" class="elv-externalexempt">@{{ site.twitter }}</a></div>{% endif -%}
 					<div class="lo-c sites-perf-rank">Performance Rank <strong>#{{ perf.rank }}</strong>{% if not perf.previousRank %}<strong class="sites-perf-rank-new">New site!</strong>{% elseif perf.previousRank !== perf.rank and perf.previousRank - perf.rank > 0 %}<strong class="sites-perf-rank-{% if perf.previousRank - perf.rank > 0 %}pos{% else %}neg{% endif %}">{{ (perf.previousRank - perf.rank) | abs }}</strong>{% endif %}</div>
 					<div class="lo-c sites-perf-lh">Lighthouse <strong>{{ perf.lighthouseScore * 100 }}</strong></div>
 					<div class="lo-c sites-perf-si">Speed Index <strong>{{ perf.speedIndex | round(1) }}</strong></div>
+					{%- if site.source_url %}<div class="lo-c"><a href="{{ site.source_url }}" class="elv-externalexempt">Source code</a> provided.</div>{% endif -%}
 				</div>
 			</em>
-			{%- if site.source_url %}<em class="list-bare-desc list-bare-desc-avatar">Includes <a href="{{ site.source_url }}">sample source code</a>.</em>{% endif -%}
 		</div>
 		{%- if perf.rank <= 11 %}<div><img src="/img/sites/{{ site.url | screenshotFilenameFromUrl }}" alt="Screenshot of {{ site.url }}" class="sites-screenshot" loading="lazy" width="405" height="304"></div>{% endif %}
 	</div>
@@ -66,7 +67,12 @@ Sites with Lighthouse scores greater than or equal to 90 are ordered by performa
 		<div>
 			<a href="{{ site.url }}">{% avatarlocalcache "twitter", site.twitter %}{{ site.name | safe }}</a>
 			{%- if site.description %}<em class="list-bare-desc list-bare-desc-avatar">{{ site.description }}</em>{% endif -%}
-			{%- if site.source_url %}<em class="list-bare-desc list-bare-desc-avatar">Includes <a href="{{ site.source_url }}">sample source code</a>.</em>{% endif -%}
+			<em class="list-bare-desc list-bare-desc-avatar">
+				<div class="lo lo-inline lo-nocontentwrap lo-separator-h" style="--lo-margin-h: 1.5rem; --lo-margin-v: .25rem">
+					{%- if site.twitter %}<div class="lo-c">By <a href="https://twitter.com/{{ site.twitter }}" class="elv-externalexempt">@{{ site.twitter }}</a></div>{% endif -%}
+					{%- if site.source_url %}<div class="lo-c"><a href="{{ site.source_url }}" class="elv-externalexempt">Source code</a> provided.</div>{% endif -%}
+				</div>
+			</em>
 		</div>
 	</div>
 {% endif -%}
