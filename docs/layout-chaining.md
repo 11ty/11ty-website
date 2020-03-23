@@ -36,7 +36,7 @@ myOtherData: hello
 ```
 {% endraw %}
 
-In case you prefer a [templating language](/languages/) other than Nunjucks, here’s the same markup in JavaScript:
+In case you prefer a [templating language](/docs/languages/) other than Nunjucks, here’s the same markup in JavaScript:
 
 {% codetitle "_includes/mainlayout.11ty.js" %}
 

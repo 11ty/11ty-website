@@ -49,32 +49,6 @@ title: My Rad Blog
 ```
 {% endraw %}
 
-In case you prefer a [templating language](/languages/) other than Nunjucks, here’s the same markup in JavaScript.
-
-{% codetitle "_includes/mylayout.11ty.js" %}
-
-{% raw %}
-```js
-exports.data = {
-  title: "My Rad Blog"
-};
-
-exports.render = function(data) {
-return `<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${data.title}</title>
-  </head>
-  <body>
-    ${data.content}
-  </body>
-</html>`;
-};
-```
-{% endraw %}
-
 Note that the layout template will populate the `content` data with the child template’s content. Also note that we don’t want to double-escape the output, so we’re using the provided Nunjuck’s `safe` filter here (see more language double-escaping syntax below).
 
 {% callout "info" %}Layouts can contain their own front matter data! It’ll be merged with the content’s data on render. Content data takes precedence, if conflicting keys arise. Read more about <a href="/docs/data-cascade/">how Eleventy merges data in what we call the Data Cascade</a>.{% endcallout %}
