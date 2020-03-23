@@ -2,7 +2,7 @@
 .sr-only {
 	position: absolute;
 	height: 1px;
-	width: 1px; 
+	width: 1px;
 	overflow: hidden;
 	clip: rect(1px, 1px, 1px, 1px);
 }
@@ -21,6 +21,12 @@ body {
 	color: #222;
 	margin: 0;
 }
+@media (prefers-color-scheme: dark) {
+  body {
+   background-color: #222;
+   color: #fff;
+  }
+}
 .elv-docs body {
 	max-width: 76em;
 	margin: 0 auto;
@@ -32,6 +38,18 @@ a,
 a:visited,
 a[href] {
 	color: #222;
+}
+@media (prefers-color-scheme: dark) {
+  a,
+  a:visited,
+  a[href] {
+    color: #fff;
+  }
+  .btn-primary,
+  a.btn-primary {
+    border-color: #fff;
+    color: #222;
+  }
 }
 a[href].naked {
 	text-decoration: none;
@@ -76,10 +94,14 @@ blockquote {
 	max-width: 31.57894736842em; /* 600px /19 */
 	border-left: 6px solid #ddd;
 }
+@media (prefers-color-scheme: dark) {
+  blockquote {
+    color: #bbb;
+  }
+}
 blockquote + blockquote {
 	margin-top: 2em;
 }
-
 .icon,
 .has-svg-icon > svg,
 .avatar,
@@ -111,7 +133,11 @@ ul:not(.list-bare):not(.inlinelist) > li > a > .avatar {
 blockquote .bio-source {
 	white-space: nowrap;
 }
-
+@media (prefers-color-scheme: dark) {
+  .has-svg-icon > svg {
+    fill: #fff;
+  }
+}
 /* Main */
 main {
 	font-size: 1.125em; /* 18px /16 */
@@ -260,6 +286,11 @@ li li {
 	color: #555;
 	margin-bottom: 3px;
 }
+@media (prefers-color-scheme: dark) {
+  .list-bare-desc {
+    color: #bbb;
+  }
+}
 .list-bare-desc:last-child {
 	margin-bottom: 6px;
 }
@@ -342,6 +373,11 @@ footer.elv-layout {
 	width: calc(100% + 2rem);
 	margin-left: -1rem;
 	margin-right: -1rem;
+}
+@media (prefers-color-scheme: dark) {
+  .elv-header-default .elv-hero {
+    border-bottom: 1px solid #fff;
+  }
 }
 .elv-header-docs .elv-hero {
 	float: left;
@@ -508,6 +544,11 @@ main .elv-toc + h1 .direct-link {
 	background-color: #f7f7f7;
 	padding: .5rem;
 	margin: 2em 0;
+}
+@media (prefers-color-scheme: dark) {
+  .elv-langlist {
+    background-color: #080808;
+  }
 }
 .elv-langlist-hed {
 	margin: 0;

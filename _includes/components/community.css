@@ -5,6 +5,12 @@
 	margin-left: -1rem;
 	margin-right: -1rem;
 }
+@media (prefers-color-scheme: dark) {
+  .elv-community,
+  .elv-community a {
+    color: #222;
+  }
+}
 .elv-community-hed {
 	margin-top: 0;
 }

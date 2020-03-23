@@ -49,6 +49,11 @@
 	opacity: .4;
 	font-size: 0.875em; /* 14px /16 */
 }
+@media (prefers-color-scheme: dark) {
+  .supporters-hearts-empty {
+    filter: grayscale(0.5) brightness(100%);
+  }
+}
 .supporters-facepile .avatar {
 	margin-bottom: 0;
 }
