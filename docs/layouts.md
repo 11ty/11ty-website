@@ -70,7 +70,7 @@ return `<!doctype html>
   <body>
     ${data.content}
   </body>
-</html>`
+</html>`;
 };
 ```
 {% endraw %}
