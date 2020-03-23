@@ -4,6 +4,7 @@
   text-align: right;
   min-width: 3.5em;
   margin-right: .5em;
+  font-variant-numeric: tabular-nums;
 }
 
 @media (min-width: 37.5em) { /* 600px */
