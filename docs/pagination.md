@@ -36,7 +36,7 @@ testdata:
 ```
 {% endraw %}
 
-Or this one in JavaScript, in case you prefer another [templating language](/languages/):
+Or this one in JavaScript, in case you prefer another [templating language](/docs/languages/):
 
 {% codetitle "JavaScript", "Syntax" %}
 
@@ -59,7 +59,7 @@ exports.render = function(data) {
   return `<ol>
     ${data.pagination.items.map(function(item) {
         return `<li>${item}</li>`;
-      }).join('');
+      }).join("");
     }
   </ol>`;
 };
