@@ -30,10 +30,10 @@ css:
 		<div><strong class="sites-val">{{ meanFmp | round | commaNumber }}</strong> Mean First Meaningful Paint</div> -->
 	</div>
 	<div class="lo-c">
-		<h3 class="authors-hed">Top 11 Authors</h3>
+		<h3 class="authors-hed">Most Sites Created</h3>
 		<ul class="authors-list">
 		{%- for author in sites | topAuthors | head(11) %}
-			<li><code>×{{ author.count }}</code> <a href="https://twitter.com/{{ author.name }}">@{{ author.name }}</a></li>
+			<li><code>×{{ author.count }}</code> <a href="https://twitter.com/{{ author.name }}">{% avatarlocalcache "twitter", author.name %}{{ author.name }}</a></li>
 		{%- endfor %}
 		</ul>
 	</div>
