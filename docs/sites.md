@@ -49,7 +49,7 @@ Sites with Lighthouse scores greater than or equal to 90 are ordered by performa
 				<div class="lo lo-inline lo-nocontentwrap lo-separator-h" style="--lo-margin-h: 1.5rem">
 					<div class="lo-c sites-perf-rank">Performance Rank <strong>#{{ perf.rank }}</strong>{% if not perf.previousRank %}<strong class="sites-perf-rank-new">New site!</strong>{% elseif perf.previousRank !== perf.rank and perf.previousRank - perf.rank > 0 %}<strong class="sites-perf-rank-{% if perf.previousRank - perf.rank > 0 %}pos{% else %}neg{% endif %}">{{ (perf.previousRank - perf.rank) | abs }}</strong>{% endif %}</div>
 					<div class="lo-c sites-perf-lh">Lighthouse <strong>{{ perf.lighthouseScore * 100 }}</strong></div>
-					{%- if perf.rank <= 11 %}<div class="lo-c sites-perf-si">Speed Index <strong>{{ perf.speedIndex | round(1) }}</strong></div>{% endif %}
+					<div class="lo-c sites-perf-si">Speed Index <strong>{{ perf.speedIndex | round(1) }}</strong></div>
 				</div>
 			</em>
 			{%- if site.source_url %}<em class="list-bare-desc list-bare-desc-avatar">Includes <a href="{{ site.source_url }}">sample source code</a>.</em>{% endif -%}
@@ -58,6 +58,7 @@ Sites with Lighthouse scores greater than or equal to 90 are ordered by performa
 	</div>
 {% endif -%}
 {% endfor -%}
+	<div class="lo-c lo-fullwidth sites-divider"><strong>Remaining items are in random order</strong></div>
 {% for perf in fastestSites | shuffle -%}
 {%- set site = perf.url | findSiteDataByUrl(sites) %}
 {% if site.disabled != true and site.url and perf.lighthouseScore < 0.9 -%}
