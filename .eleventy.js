@@ -343,7 +343,7 @@ ${text.trim()}
 		let counts = {};
 		for(let key in sites) {
 			let site = sites[key];
-			if(site.twitter) {
+			if(site.twitter && !site.disabled) {
 				if(!counts[site.twitter]) {
 					counts[site.twitter] = 0;
 				}
