@@ -339,6 +339,36 @@ ${text.trim()}
 		}
 	});
 
+	eleventyConfig.addFilter("topAuthors", (sites) => {
+		let counts = {};
+		for(let key in sites) {
+			let site = sites[key];
+			if(site.twitter) {
+				if(!counts[site.twitter]) {
+					counts[site.twitter] = 0;
+				}
+				counts[site.twitter]++;
+			}
+		}
+		let top = [];
+		for(let author in counts) {
+			if(counts[author] > 1) {
+				top.push({
+					name: author,
+					count: counts[author]
+				});
+			}
+		}
+		top.sort((a, b) => {
+			return b.count - a.count;
+		});
+		return top;
+	});
+
+	eleventyConfig.addFilter("head", (arr, num) => {
+		return num ? arr.slice(0, num) : arr;
+	});
+
 	eleventyConfig.addFilter("supportersFacepile", (supporters) => {
 		return supporters.filter(supporter => supporter.role === "BACKER" && supporter.tier && supporter.tier != "Exclusive Gold Sponsor");
 	});

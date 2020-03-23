@@ -123,3 +123,13 @@
 .ampcarousel a[href]:hover:before {
   background-color: #f3f3f3;
 }
+
+/* Authors */
+.authors-hed {
+  margin-top: 0;
+}
+.authors-list {
+  list-style: none;
+  padding-left: 0;
+  padding-right: 0;
+}
