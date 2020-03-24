@@ -11,7 +11,7 @@ css:
 
 <div class="lo" style="--lo-stackpoint: 30em; --lo-margin-v: 2em">
 	<div class="lo-c" style="flex-grow: 2" id="statistics"><!-- backwards compt for previous id link -->
-		<div><strong class="sites-val">{{ sites | length }}</strong> Sites Tested</div>
+		<div><strong class="sites-val">{{ sites | length }}</strong> Sites</div>
 		{%- set medianLhScore = fastestSites | calc("median", "lighthouseScore") * 100 %}
 		{%- set meanLhScore = fastestSites | calc("mean", "lighthouseScore") * 100 %}
 		<div><strong class="sites-val">{{ medianLhScore | round }}</strong> Median Lighthouse Score</div>
