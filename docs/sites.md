@@ -52,6 +52,7 @@ Sites with Lighthouse scores greater than or equal to 90 are ordered by performa
 {%- set site = perf.url | findSiteDataByUrl(sites) %}
 {%- if site.disabled !== true and site.url and perf.lighthouseScore >= 0.9 %}
 	{%- set showMetadata = true %}
+	{%- set showPerformanceMetadata = true %}
 	{% include "site.njk" %}
 {%- endif %}
 {%- endfor %}
@@ -60,6 +61,7 @@ Sites with Lighthouse scores greater than or equal to 90 are ordered by performa
 {%- set site = perf.url | findSiteDataByUrl(sites) %}
 {%- if site.disabled !== true and site.url and perf.lighthouseScore < 0.9 %}
 	{%- set showMetadata = true %}
+	{%- set showPerformanceMetadata = false %}
 	{% include "site.njk" %}
 {%- endif %}
 {%- endfor %}
@@ -67,6 +69,8 @@ Sites with Lighthouse scores greater than or equal to 90 are ordered by performa
 {%- for key, site in sites -%}
 {%- set missingEntry = site.url | hasPerformanceEntryByUrl(fastestSites) %}
 {%- if not missingEntry and site.disabled !== true and site.url %}
+	{%- set showMetadata = true %}
+	{%- set showPerformanceMetadata = false %}
 	{% include "site.njk" %}
 {%- endif -%}
 {% endfor -%}
