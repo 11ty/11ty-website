@@ -3,5 +3,7 @@
 	"name": "WebComponents.dev",
 	"description": "The Modern IDE for Web Platform Developers",
 	"twitter": "webcomp_dev",
-	"source_url": "https://github.com/zachleat/zachleat.com"
+	"authoredBy": [
+		"georges_gomes", "Gluckies", "GQuinio"
+	]
 }
