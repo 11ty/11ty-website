@@ -1,9 +1,11 @@
 ---
-subtitle: Nunjucks
+eleventyNavigation:
+  parent: Template Languages
+  key: Nunjucks
+  order: 5
 relatedKey: nunjucks
 relatedTitle: Template Language—Nunjucks
 tags:
-  - docs-languages
   - related-filters
   - related-shortcodes
   - related-custom-tags
@@ -111,7 +113,7 @@ Shortcodes are basically reusable bits of content. You can add Nunjucks specific
 
 ### Single Shortcode
 
-```
+```js
 module.exports = function(eleventyConfig) {
   // Nunjucks Shortcode
   eleventyConfig.addNunjucksShortcode("user", function(name, twitterUsername) { … });
@@ -145,7 +147,7 @@ module.exports = function(eleventyConfig) {
 
 ### Paired Shortcode
 
-```
+```js
 module.exports = function(eleventyConfig) {
   // Nunjucks Shortcode
   eleventyConfig.addPairedNunjucksShortcode("user", function(bioContent, name, twitterUsername) { … });
@@ -187,7 +189,7 @@ Note that you can put any Nunjucks tags or content inside the `{% raw %}{% user 
 
 Creates a single argument object to pass to the shortcode.
 
-```
+```js
 module.exports = function(eleventyConfig) {
   // Nunjucks Shortcode
   eleventyConfig.addNunjucksShortcode("user", function(user) {
@@ -237,7 +239,7 @@ Importantly, this syntax means that any of the arguments can be optional (withou
 </div>
 ```
 
-### Asynchronous Shortcodes {% addedin "0.9.1" %}
+### Asynchronous Shortcodes {% addedin "0.10.0" %}
 
 Note that the configuration methods here to add asynchronous shortcodes are different than their synchronous counterparts.
 

@@ -1,14 +1,17 @@
-const chalk = require("chalk");
-const htmlmin = require("html-minifier");
-const CleanCSS = require("clean-css");
+const { DateTime } = require("luxon");
 const HumanReadable = require("human-readable-numbers");
+const commaNumber = require("comma-number");
 const markdownIt = require("markdown-it");
-const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const loadLanguages = require("prismjs/components/");
 
+const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
+const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
-const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language");
+const addedInLocalPlugin = require("./config/addedin");
+const minificationLocalPlugin = require("./config/minification");
+
 const cfg = require("./_data/config.js");
+const slugify = require('slugify');
 
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);
@@ -43,9 +46,17 @@ const shortcodes = {
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.setDataDeepMerge(true);
+	if(!process.env.ELEVENTY_PRODUCTION) {
+		eleventyConfig.setQuietMode(true);
+	}
+
+	eleventyConfig.setBrowserSyncConfig({
+		ui: false,
+		ghostMode: false
+	});
 
 	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
-		templateFormats: "md",
+		templateFormats: ["md", "njk"],
 		init: function({ Prism }) {
 			Prism.languages.markdown = Prism.languages.extend('markup', {
 				'frontmatter': {
@@ -57,7 +68,15 @@ module.exports = function(eleventyConfig) {
 		}
 	});
 	eleventyConfig.addPlugin(rssPlugin);
-	// eleventyConfig.addPlugin(inclusiveLanguagePlugin);
+	eleventyConfig.addPlugin(navigationPlugin);
+	eleventyConfig.addPlugin(addedInLocalPlugin);
+	eleventyConfig.addPlugin(minificationLocalPlugin);
+
+	eleventyConfig.addCollection("sidebarNav", function(collection) {
+		// filter out excludeFromSidebar options
+		return collection.getAll()
+			.filter(item => (item.data || {}).excludeFromSidebar !== true);
+	});
 
 	let md = new markdownIt();
 	eleventyConfig.addPairedShortcode("callout", function(content, level = "warn", format = "html") {
@@ -82,50 +101,44 @@ module.exports = function(eleventyConfig) {
 		return `<a href="${href}" class="minilink minilink-lower">${text}</a>`;
 	});
 
-	eleventyConfig.addShortcode("addedin", function(version, tag, extraClass) {
-		if( typeof version !== "string" ) {
-			tag = version.tag;
-			version = version.version;
-		}
+	eleventyConfig.addPairedShortcode("codewithprompt", function(text, prePrefixCode, when) {
+		return `<div data-preprefix-${prePrefixCode}="${when}">
 
-		tag = tag || "span";
+\`\`\`bash/-
+${text.trim()}
+\`\`\`
 
-		return `<${tag} class="minilink minilink-addedin${extraClass ? ` ${extraClass}`: ""}">New in v${version}</${tag}>`;
+</div>`;
 	});
 
-	eleventyConfig.addPassthroughCopy("js/instant.page.js");
+	eleventyConfig.addPassthroughCopy({
+		"node_modules/instant.page/instantpage.js": "js/instant.page.js",
+		"node_modules/@11ty/logo/img/logo.svg": "img/logo.svg",
+		"node_modules/@11ty/logo/img/logo-784x1093.png": "img/logo.png",
+		"node_modules/@11ty/logo/img/logo-300x418.png": "img/logo-github.png",
+		"node_modules/@11ty/logo/img/logo-96x96.png": "img/favicon.png"
+	});
+
+	eleventyConfig.addPassthroughCopy("netlify-email");
 	eleventyConfig.addPassthroughCopy("css/fonts");
 	eleventyConfig.addPassthroughCopy("img");
 	eleventyConfig.addPassthroughCopy("favicon.ico");
 
-	eleventyConfig.addFilter("cssmin", function(code) {
-		if(process.env.ELEVENTY_PRODUCTION) {
-			return new CleanCSS({}).minify(code).styles;
-		}
+	eleventyConfig.addFilter("toJSON", function(obj) {
+		return JSON.stringify(obj);
+	});
 
-		return code;
+	eleventyConfig.addFilter("toSearchEntry", function(str) {
+		// <a class="direct-link" href="#eleventy-is-supported-financially-by-the-following-lovely-people" title="Direct link to this heading">#</a>
+		return str.replace(/<a class="direct-link"[^>]*>#<\/a\>/g, "");
 	});
 
 	eleventyConfig.addFilter("humanReadableNum", function(num) {
 		return HumanReadable.toHumanString(num);
 	});
 
-	eleventyConfig.addFilter("sortMenu", function(collection, sortOrder) {
-		if(!sortOrder) {
-			return collection;
-		}
-
-		let order = sortOrder.map(path => `./docs/${path}.md`);
-
-		return collection.sort(function(a, b) {
-			let firstIndex = order.indexOf(a.inputPath);
-			let secondIndex = order.indexOf(b.inputPath);
-
-			if( firstIndex === -1 ) return 1;
-			if( secondIndex === -1 ) return -1;
-
-			return firstIndex - secondIndex;
-		});
+	eleventyConfig.addFilter("commaNumber", function(num) {
+		return commaNumber(num);
 	});
 
 	eleventyConfig.addShortcode("templatelangs", function(languages, page, whitelist, anchor, isinline) {
@@ -206,7 +219,7 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addShortcode("addToSampleSites", function() {
-		return `<a href="https://github.com/11ty/11ty.io/issues/new/choose"><strong>Want to add your site to this list?</strong></a>`;
+		return `<a href="https://github.com/11ty/11ty-website/issues/new/choose"><strong>Want to add your site to this list?</strong></a>`;
 	});
 
 	eleventyConfig.addCollection("quicktipssorted", function(collection) {
@@ -216,18 +229,27 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addShortcode("testimonial", function(testimonial) {
-		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, shortcodes.avatarlocalcache("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`) + testimonial.name)}` : ``}</span></p></blockquote>`;
+		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, shortcodes.avatarlocalcache("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`) + testimonial.name)}</span>` : ``}</p></blockquote>`;
 	});
 
-	eleventyConfig.addShortcode("supporterAmount", function(amount) {
-		let result = [];
-		for( let j = 0, k = amount; j<=k; j+= 50) {
-			result.push("❤️");
+	eleventyConfig.addShortcode("supporterAmount", function(amount, maxAmount = 1000) {
+		// let increments = [1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987];
+		// mostly fibonacci
+		let increments = [5,8,13,21,34,55,89,144,233,377,610,987,1597];
+		let incrementCounter = 0;
+		let fullHearts = [];
+		let emptyHearts = [];
+		let j = 0;
+		for( let k = amount; j <= k; j+= increments[incrementCounter]) {
+			fullHearts.push("🎈");
+			incrementCounter++;
 		}
-		return result.join("");
+		for(; j <= maxAmount; j+= increments[incrementCounter]) {
+			emptyHearts.push("🎈");
+			incrementCounter++;
+		}
+		return `${fullHearts.join("")}<span class="supporters-hearts-empty">${emptyHearts.join("")}</span>`;
 	});
-
-
 
 	/* Markdown */
 	let markdownItAnchor = require("markdown-it-anchor");
@@ -242,60 +264,144 @@ module.exports = function(eleventyConfig) {
 	}
 
 	function markdownItSlugify(s) {
-		return encodeURIComponent(removeExtraText(s).trim().toLowerCase().replace(/\s+/g, '-'));
+		return slugify(removeExtraText(s), { lower: true, remove: /[:’'`,]/g });
 	}
 
-	eleventyConfig.setLibrary("md", markdownIt({
-			html: true,
-			breaks: true,
-			linkify: true
-		})
-		.use(markdownItAnchor, {
-			permalink: true,
-			slugify: markdownItSlugify,
-			permalinkBefore: false,
-			permalinkClass: "direct-link",
-			permalinkSymbol: "#",
-			level: [1,2,3,4]
-		})
-		.use(markdownItToc, {
-			includeLevel: [2, 3],
-			slugify: markdownItSlugify,
-			format: function(heading) {
-				return removeExtraText(heading);
-			}
-		})
-	);
+	let mdIt = markdownIt({
+		html: true,
+		breaks: true,
+		linkify: true
+	})
+	.use(markdownItAnchor, {
+		permalink: true,
+		slugify: markdownItSlugify,
+		permalinkBefore: false,
+		permalinkClass: "direct-link",
+		permalinkSymbol: "#",
+		level: [1,2,3,4]
+	})
+	.use(markdownItToc, {
+		includeLevel: [2, 3],
+		slugify: markdownItSlugify,
+		format: function(heading) {
+			return removeExtraText(heading);
+		},
+		transformLink: function(link) {
+			// remove backticks from markdown code
+			return link.replace(/\%60/g, "");
+		}
+	});
+
+	mdIt.linkify.tlds('.io', false);
+	eleventyConfig.setLibrary("md", mdIt);
+
+	eleventyConfig.addFilter("newsDate", dateObj => {
+		if(typeof dateObj === "number") {
+			dateObj = new Date(dateObj);
+		}
+		return DateTime.fromJSDate(dateObj).toFormat("yyyy LLLL dd");
+	});
 
 	// Until https://github.com/valeriangalliat/markdown-it-anchor/issues/58 is fixed
 	eleventyConfig.addTransform("remove-aria-hidden-markdown-anchor", function(content, outputPath) {
-		if( outputPath.endsWith(".html") ) {
+		if( outputPath && outputPath.endsWith(".html") ) {
 			return content.replace(/ aria\-hidden\=\"true\"\>\#\<\/a\>/g, ` title="Direct link to this heading">#</a>`);
 		}
 
 		return content;
 	});
 
-	if( cfg.minifyHtml ) {
-		eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-			if( process.env.ELEVENTY_PRODUCTION && outputPath.endsWith(".html") ) {
-				let minified = htmlmin.minify(content, {
-					useShortDoctype: true,
-					removeComments: true,
-					collapseWhitespace: true
-				});
-				return minified;
+	eleventyConfig.addFilter("calc", (sites, type, key) => {
+		let sum = 0;
+		let values = [];
+		for(let site of sites) {
+			if(typeof site[key] === "number") {
+				sum += site[key];
+				values.push(site[key]);
 			}
+		}
+		if(type === "mean") {
+			return sum / values.length;
+		}
+		if(type === "median") {
+			if(values.length > 0) {
+				return values.sort((a, b) => b - a)[Math.floor(values.length / 2)];
+			}
+		}
+	});
 
-			return content;
+	eleventyConfig.addFilter("findSiteDataByUrl", (url, sites) => {
+		for(let key in sites) {
+			let site = sites[key];
+			if(!url || !site.url) {
+				continue;
+			}
+			let lowerUrl = url.toLowerCase();
+			let siteUrl = site.url.toLowerCase();
+			if(lowerUrl === siteUrl || lowerUrl === `${siteUrl}/`) {
+				return site;
+			}
+		}
+	});
+
+	eleventyConfig.addFilter("hasPerformanceEntryByUrl", (url, sites = []) => {
+		// console.log( sites.length, url );
+		for(let site of sites) {
+			if(!url || !site.url) {
+				continue;
+			}
+			let lowerUrl = url.toLowerCase();
+			let siteUrl = site.url.toLowerCase();
+			if(lowerUrl === siteUrl || `${lowerUrl}/` === siteUrl) {
+				return true;
+			}
+		}
+		return false;
+	});
+
+	eleventyConfig.addFilter("topAuthors", (sites) => {
+		let counts = {};
+		for(let key in sites) {
+			let site = sites[key];
+			let authorName = site.authoredBy || site.twitter;
+			if(authorName && !site.disabled) {
+				if(!counts[authorName]) {
+					counts[authorName] = 0;
+				}
+				counts[authorName]++;
+			}
+		}
+		let top = [];
+		for(let author in counts) {
+			if(counts[author] > 1) {
+				top.push({
+					name: author,
+					count: counts[author]
+				});
+			}
+		}
+		top.sort((a, b) => {
+			return b.count - a.count;
 		});
-	}
+		return top;
+	});
 
+	eleventyConfig.addFilter("head", (arr, num) => {
+		return num ? arr.slice(0, num) : arr;
+	});
+
+	eleventyConfig.addFilter("supportersFacepile", (supporters) => {
+		return supporters.filter(supporter => supporter.role === "BACKER" && supporter.tier && supporter.tier != "Exclusive Gold Sponsor");
+	});
+
+	eleventyConfig.addFilter("screenshotFilenameFromUrl", (url) => {
+		let slug = url.replace(/https?\:\//, "");
+		return slugify(slug, { lower: true, remove: /[:\/]/g }) + ".jpg";
+	});
 	return {
 		templateFormats: ["html", "njk", "md", "11ty.js"],
 		markdownTemplateEngine: "njk",
 		htmlTemplateEngine: "njk",
-		dataTemplateEngine: false,
-		passthroughFileCopy: true
+		dataTemplateEngine: false
 	};
 };

@@ -1,9 +1,11 @@
 ---
-subtitle: Handlebars
+eleventyNavigation:
+  parent: Template Languages
+  key: Handlebars
+  order: 7
 relatedKey: handlebars
 relatedTitle: Template Language—Handlebars
 tags:
-  - docs-languages
   - related-filters
   - related-shortcodes
   - related-custom-tags
@@ -45,7 +47,7 @@ module.exports = function(eleventyConfig) {
 
 Helpers are used to transform or modify content. You can add Handlebars specific helpers, but you probably want to add a [Universal shortcode](/docs/filters/) instead.
 
-Read more about [Handlebars Helpers syntax](http://handlebarsjs.com/#helpers)
+Read more about [Handlebars Helpers syntax](https://handlebarsjs.com/#helpers)
 
 ```js
 module.exports = function(eleventyConfig) {

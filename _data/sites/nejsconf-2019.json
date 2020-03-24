@@ -3,5 +3,5 @@
 	"name": "NEJS CONF 2019",
 	"description": "A single day, single track Web Development conference.",
 	"twitter": "nejsconf",
-	"featured": true
+	"authoredBy": ["zachleat"]
 }

@@ -1,5 +1,8 @@
 ---
-subtitle: Haml
+eleventyNavigation:
+  parent: Template Languages
+  key: HAML
+  order: 10
 layout: layouts/langs.njk
 ---
 | Eleventy Short Name | File Extension | NPM Package    |

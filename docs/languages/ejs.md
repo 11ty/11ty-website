@@ -1,5 +1,8 @@
 ---
-subtitle: EJS
+eleventyNavigation:
+  parent: Template Languages
+  key: EJS
+  order: 9
 layout: layouts/langs.njk
 ---
 | Eleventy Short Name | File Extension | NPM Package                                |
@@ -12,7 +15,7 @@ You can override a `.ejs` file’s template engine. Read more at [Changing a Tem
 
 ### Optional: Compile/Render Options {% addedin "0.3.0" %}
 
-See “Options” on the [EJS home page](http://ejs.co/).
+See “Options” on the [EJS home page](https://ejs.co/).
 
 ```
 module.exports = function(eleventyConfig) {

@@ -136,7 +136,7 @@ a.rainbow-active:focus {
 .buzzword-list li:focus:after,
 .buzzword:hover:after,
 .buzzword:focus:after {
-	font-family: system-ui, sans-serif;
+	font-family: system-ui, -apple-system, sans-serif;
 	content: "Buzzword alert!!!";
 	position: absolute;
 	left: 0;
@@ -215,4 +215,31 @@ h2 .numberflag:after {
 	height: 1px;
 	background-color: #fff;
 	width: calc(100% + 0.4em); /* 16px /40 */
+}
+
+/* Super featured list on home page */
+.list-superfeatured .avatar {
+	width: calc(30px + 5vw);
+	height: calc(30px + 5vw);
+	max-width: 60px;
+	max-height: 60px;
+	margin-left: 0;
+}
+@media (max-width: 26.8125em) { /* 429px */
+	.list-superfeatured .inlinelist-item > a {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+@media (min-width: 26.875em) { /* 430px */
+	.list-superfeatured .inlinelist-item {
+		font-size: 110%;
+	}
+}
+
+/* Only top level */
+.inlinelist-no-nest ul,
+.inlinelist-no-nest ol {
+	display: none;
 }

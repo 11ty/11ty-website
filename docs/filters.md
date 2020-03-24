@@ -1,10 +1,11 @@
 ---
-subtitle: Filters
-menuSectionName: docs-filters
+eleventyNavigation:
+  parent: Configuration
+  key: Filters
+  order: 3
 relatedKey: filters
 relatedTitle: Template Filters
 tags:
-  - docs-config
   - related-shortcodes
   - related-nunjucks
   - related-liquid
@@ -75,7 +76,7 @@ Universal filters can be added in a single place and are available to multiple t
 
 ```js
 module.exports = function(eleventyConfig) {
-  // Universal filters adds to:
+  // Universal filters add to:
   // * Liquid
   // * Nunjucks
   // * Handlebars
@@ -91,6 +92,5 @@ module.exports = function(eleventyConfig) {
 
 We also provide a few universal filters, built-in:
 
-* [`url`](/docs/filters/url/): normalize absolute paths in your content, allows easily changing deploy subdirectories for your project. [Read more →](/docs/filters/url/)
-* [`slug`](/docs/filters/slug/): `"My string"` to `"my-string"` for permalinks. [Read more →](/docs/filters/slug/)
+{{ collections.all | eleventyNavigation("Filters") | eleventyNavigationToHtml({ showExcerpt: true }) | safe }}
 

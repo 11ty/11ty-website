@@ -1,10 +1,13 @@
 ---
-subtitle: Permalinks
-excerpt: Remap a template to a new output location
-tags:
-  - docs-templates
+eleventyNavigation:
+  parent: Working with Templates
+  key: Permalinks
+  order: 6
+  excerpt: Remap a template to a new output location (or prevent writing a file)
 ---
 # Permalinks
+
+[[toc]]
 
 ## Cool URIs don’t change
 
@@ -73,7 +76,7 @@ Assuming your `--output` directory is the default, `_site`:
     <tbody>
         <tr>
             <th>Input File</th>
-            <td><code>subdir/template/template.njk</code></td>
+            <td><code>subdir/template/template.njk</code> or <code>subdir/template/index.njk</code></td>
         </tr>
         <tr>
             <th>Output File</th>
@@ -94,11 +97,23 @@ To remap your template’s output to a different path than the default, use the 
 
 ```
 ---
-permalink: this-is-a-new-path/subdirectory/testing/index.html
+permalink: "this-is-a-new-path/subdirectory/testing/index.html"
 ---
 ```
 
-The above will write to `_site/this-is-a-new-path/subdirectory/testing/index.html`.
+The above is functionally equivalent to:
+
+{% codetitle "YAML Front Matter", "Syntax" %}
+
+```
+---
+permalink: "this-is-a-new-path/subdirectory/testing/"
+---
+```
+
+Both of the above examples will write to `_site/this-is-a-new-path/subdirectory/testing/index.html`.
+
+{% callout "warn" %}While <code>index.html</code> is optional, it is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a> to leave off the trailing slash! If you forget it, the browser may attempt to download the file instead of displaying it (unless you’ve done some extra work to set up your <code>Content-Type</code> headers correctly).{% endcallout %}
 
 {% callout "info" %}If multiple input files attempt to write to the same permalink output file, Eleventy will throw an error {% addedin "0.9.0" %}.{% endcallout %}
 
@@ -126,14 +141,29 @@ For example, in a Nunjucks template:
 ```
 ---
 mySlug: this-is-a-new-path
-permalink: subdir/{{ mySlug }}/index.html
+permalink: "subdir/{{ mySlug }}/index.html"
 ---
 ```
 {% endraw %}
 
 Writes to `_site/subdir/this-is-a-new-path/index.html`.
 
-{% callout "info", "md" %}Make sure you read about the special `page` variables useful for permalinks too: [`page.fileSlug`](/docs/data/#fileslug) and [`page.filePathStem`](/docs/data/#filepathstem).{% endcallout %}
+{% callout "info", "md" %}Make sure you read about the special `page` variables useful for permalinks too: [`page.fileSlug`](/docs/data-eleventy-supplied/#fileslug) and [`page.filePathStem`](/docs/data-eleventy-supplied/#filepathstem).{% endcallout %}
+
+#### Warning about YAML Objects
+
+{% callout "warn" %}When you use variables, make sure that you use quotes! Without quotes YAML may try to parse this as an object if the first character is a <code>{</code>, for example <code>permalink: {% raw %}{{ page.filePathStem }}{% endraw %}.html</code>. This is a <a href="/docs/pitfalls/"><strong>common pitfall</strong></a>.{% endcallout %}
+
+{% codetitle "YAML", "Syntax" %}
+
+{% raw %}
+```
+permalink: "{{ page.filePathStem }}.html"
+```
+{% endraw %}
+
+The error message might look like `can not read a block mapping entry; a multiline key may not be an implicit key`.
+
 
 ### Disable templating in permalinks {% addedin "0.7.0" %}
 
@@ -165,7 +195,7 @@ module.exports = function(eleventyConfig) {
 
 ### Use filters!
 
-Use the provided [`slug` filter](/docs/filters/#slug) to modify other data available in the template.
+Use the provided [`slug` filter](/docs/filters/slug/) to modify other data available in the template.
 
 {% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
 
@@ -173,7 +203,7 @@ Use the provided [`slug` filter](/docs/filters/#slug) to modify other data avail
 ```
 ---
 title: My Article Title
-permalink: subdir/{{ title | slug }}/index.html
+permalink: "subdir/{{ title | slug }}/index.html"
 ---
 ```
 {% endraw %}
@@ -203,7 +233,7 @@ To remap your template’s output to a directory independent of the output direc
 
 ```
 ---
-permalink: _includes/index.html
+permalink: "_includes/index.html"
 permalinkBypassOutputDir: true
 ---
 ```
@@ -220,7 +250,7 @@ For example, to generate a JSON search index to be used by popular search librar
 
 ```
 ---
-permalink: index.json
+permalink: "index.json"
 ---
 <%- JSON.stringify(collections.all) -%>
 ```
@@ -228,3 +258,4 @@ permalink: index.json
 ### Pagination
 
 Pagination variables also work here. [Read more about Pagination](/docs/pagination/)
+

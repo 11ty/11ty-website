@@ -1,15 +1,7 @@
 ---
-subtitle: Configuration
-menuSectionName: docs-config
-submenuSortOrder:
-  - copy
-  - ignores
-  - filters
-  - shortcodes
-  - custom-tags
-  - plugins
-tags:
-  - docs
+eleventyNavigation:
+  key: Configuration
+  order: 6
 ---
 # Configuration
 
@@ -90,16 +82,16 @@ Glob support is {% addedin "0.6.0" %}.
 
 ```bash
 # The current directory
-eleventy --input=.
+npx @11ty/eleventy --input=.
 
 # A single file
-eleventy --input=README.md
+npx @11ty/eleventy --input=README.md
 
 # A glob of files (New in v0.6.0)
-eleventy --input=*.md
+npx @11ty/eleventy --input=*.md
 
 # A subdirectory
-eleventy --input=views
+npx @11ty/eleventy --input=views
 ```
 
 ##### Configuration
@@ -130,7 +122,7 @@ The includes directory is meant for [Eleventy layouts](/docs/layouts/), include 
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     dir: {
         // ⚠️ This value is relative to your input directory.
@@ -145,7 +137,7 @@ This configuration option is optional but useful if you want your [Eleventy layo
 
 <div class="elv-callout elv-callout-warn elv-callout-warn-block">
   <p>This setting <strong>only applies</strong> to Eleventy's language-agnostic <a href="/docs/layouts/">layouts</a> (when defined in front matter or data files).</p>
-  <p>When using <code>{% raw %}{% extends %}{% endraw %}</code>, Eleventy will <strong>still search the <code>_includes</code> directory</strong>. See <a href="/docs/layouts/#addendum-about-existing-templating-features">this note about existing templating features</a>.</p>
+  <p>When using <code>{% raw %}{% extends %}{% endraw %}</code>, Eleventy will <strong>still search the <code>_includes</code> directory</strong>. See <a href="/docs/layout-chaining/#addendum-about-existing-templating-features">this note about existing templating features</a>.</p>
 </div>
 
 | Includes Directory |  |
@@ -159,7 +151,7 @@ This configuration option is optional but useful if you want your [Eleventy layo
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     dir: {
         // ⚠️ These values are both relative to your input directory.
@@ -186,7 +178,7 @@ Controls the directory inside which the global data template files, available to
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     dir: {
         // ⚠️ This value is relative to your input directory.
@@ -210,7 +202,7 @@ Controls the directory inside which the finished templates will be written to.
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     dir: {
         output: "dist"
@@ -233,7 +225,7 @@ The `data.dir` global data files run through this template engine before transfo
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     "dataTemplateEngine": "njk"
 };
@@ -254,7 +246,7 @@ Markdown files run through this template engine before transforming to HTML.
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     markdownTemplateEngine: "njk"
 };
@@ -275,7 +267,7 @@ HTML templates run through this template engine before transforming to (better) 
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     htmlTemplateEngine: "njk"
 };
@@ -297,7 +289,7 @@ Specify which types of templates should be transformed.
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     templateFormats: ["html", "liquid", "njk"]
 };
@@ -305,7 +297,7 @@ module.exports = {
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = function(eleventyConfig) {
     eleventyConfig.setTemplateFormats("html,liquid,njk");
 
@@ -315,10 +307,40 @@ module.exports = function(eleventyConfig) {
 ```
 
 ```
-eleventy --formats=html,liquid,njk
+npx @11ty/eleventy --formats=html,liquid,njk
 ```
 
 {% callout "info" %}{% addedin "0.9.0" %} <strong>Case sensitivity</strong>: File extensions should be considered case insensitive, cross-platform. While Mac OS—by default—already behaves this way, other operating systems do not and needed additional Eleventy code to enable this behavior.{% endcallout %}
+
+### Enable Quiet Mode to Reduce Console Noise
+
+In order to maximize user-friendliness to beginners, Eleventy will show each file it processes and the output file. To disable this noisy console output, use quiet mode!
+
+| Path Prefix |  |
+| --- | --- |
+| _Default_ | `false` |
+| _Valid Options_ | `true` or `false` | |
+| _Command Line Override_ | `--quiet` |
+
+{% addedin "0.10.0" %} This configuration API method (`setQuietMode`) was added in v0.10.0 but note that the `--quiet` command line override existed long before that.
+
+{% addedin "0.10.0" %} Added `--quiet=false` to override `setQuietMode(true)` on the command line (for deploys in production). `--quiet=true` was also added (same as `--quiet`).
+
+#### Example
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setQuietMode(true);
+};
+```
+
+The command line will override any setting in configuration:
+
+```
+npx @11ty/eleventy --quiet
+```
 
 ### Deploy to a subdirectory with a Path Prefix
 
@@ -344,29 +366,7 @@ module.exports = {
 Deploy to https://11ty.github.io/eleventy-base-blog/ on GitHub pages without modifying your config. This allows you to use the same code-base to deploy to either GitHub pages or Netlify, like the [`eleventy-base-blog`](https://github.com/11ty/eleventy-base-blog) project does.
 
 ```
-eleventy --pathprefix=eleventy-base-blog
-```
-
-<a id="{{ 'Copy Files to Output using Pass-through File Copy' | slug }}"></a>
-### Copy Files to Output using Passthrough File Copy
-
-Files found (that don’t have a valid template engine) from white-listed file extensions (in `templateFormats`) will passthrough to the output directory. Read more about [Passthrough Copy](/docs/copy/).
-
-| Passthrough Copy |  |
-| --- | --- |
-| _Object Key_ | `passthroughFileCopy` |
-| _Default_ | `true` |
-| _Valid Options_ | `true` or `false` |
-| _Command Line Override_ | _None_ |
-
-#### Example
-
-{% codetitle ".eleventy.js" %}
-
-```
-module.exports = {
-    passthroughFileCopy: false
-};
+npx @11ty/eleventy --pathprefix=eleventy-base-blog
 ```
 
 ### Change exception case suffix for HTML files
@@ -490,49 +490,13 @@ module.exports = function(eleventyConfig) {
       for( let word of words) {
         let regexp = new RegExp("\\b(" + word + ")\\b", "gi");
         if(content.match(regexp)) {
-          console.warn(chalk.yellow(`Inclusive Language Linter (${inputPath}) Found: ${word}`));
+          console.warn(`Inclusive Language Linter (${inputPath}) Found: ${word}`);
         }
       }
     }
   });
 };
 ```
-
-### Data Deep Merge {% addedin "0.6.0" %}
-
-Opts in to a full deep merge when combining the Data Cascade. This will use something like `lodash.mergewith` to combine Arrays and deep merge Objects, rather than a simple top-level merge using `Object.assign`. Read more at [Issue #147](https://github.com/11ty/eleventy/issues/147). This will likely become the default in an upcoming major version.
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setDataDeepMerge(true);
-};
-```
-
-Note that all data stored in the `pagination` variable is exempted from this behavior (we don’t want `pagination.items` to be merged together).
-
-#### Using the `override:` prefix
-
-Use the `override:` prefix on any data key to opt-out of this merge behavior for specific values or nested values.
-
-{% codetitle "posts/posts.json" %}
-
-```json
-{
-  "tags": ["posts"]
-}
-```
-
-{% codetitle "posts/firstpost.md" %}
-
-```
----
-override:tags: []
----
-```
-
-Even though normally the `posts/firstpost.md` file would inherit the `posts` tag from the directory data file (per normal [data cascade rules](/docs/data/)), we can override the `tags` value to be an empty array to opt-out of this behavior.
 
 ### Watch JavaScript Dependencies {% addedin "0.7.0" %}
 
@@ -544,6 +508,18 @@ When in `--watch` mode, Eleventy will spider the dependencies of your [JavaScrip
 module.exports = function(eleventyConfig) {
   // Enabled by default
   eleventyConfig.setWatchJavaScriptDependencies(false);
+};
+```
+
+### Add Your Own Watch Targets {% addedin "0.10.0" %}
+
+The `addWatchTarget` config method allows you to manually add a file or directory for Eleventy to watch. When the file or the files in this directory change Eleventy will trigger a build. This is useful if Eleventy is not directly aware of any external file dependencies.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addWatchTarget("./src/scss/");
 };
 ```
 
@@ -563,9 +539,20 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Customize Front Matter Parsing Options {% addedin "0.9.0" %}
+### Documentation Moved to Dedicated Pages
 
-* Documented at [Front Matter Data](/docs/data-frontmatter/#advanced%3A-customize-front-matter-parsing).
+<a id="{{ 'Copy Files to Output using Pass-through File Copy' | slug }}"></a>
+#### Copy Files to Output using Passthrough File Copy
+
+Files found (that don’t have a valid template engine) from opt-in file extensions in `templateFormats` will passthrough to the output directory. Read more about [Passthrough Copy](/docs/copy/). This feature is enabled by default and [can be disabled](/docs/copy/#disabling-passthrough-file-copy).
+
+#### Data Deep Merge {% addedin "0.6.0" %}
+
+* Documentation for [Data Deep Merging has been moved to its own page](/docs/data-deep-merge/) under the Data Cascade.
+
+#### Customize Front Matter Parsing Options {% addedin "0.9.0" %}
+
+* Documented at [Customize Front Matter Parsing](/docs/data-frontmatter-customize/).
 
 
 <!--

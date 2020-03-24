@@ -31,7 +31,7 @@ Edit your your layout file to add the link. Provide the URL to the base of your 
     …
     <footer>
       © 2019 Eleventy
-      <a href="https://github.com/11ty/11ty.io/tree/master/{{ page.inputPath }}">Edit this page on GitHub</a>
+      <a href="https://github.com/11ty/11ty-website/blob/master/{{ page.inputPath }}">Edit this page on GitHub</a>
     </footer>
   </body>
 </html>

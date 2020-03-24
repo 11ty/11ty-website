@@ -1,9 +1,11 @@
 ---
-subtitle: Custom Tags
+eleventyNavigation:
+  parent: Configuration
+  key: Custom Tags
+  order: 5
 relatedKey: custom-tags
 relatedTitle: Template Custom Tags
 tags:
-  - docs-config
   - related-shortcodes
   - related-nunjucks
   - related-liquid

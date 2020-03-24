@@ -1,0 +1,21 @@
+<div class="lo-c{% if perf.rank <= 11 %} site-top{% endif %}">
+	<div>
+		<a href="{{ site.url }}">{% avatarlocalcache "twitter", site.twitter %}{{ site.name | safe }}</a>
+		{%- if site.description %}<em class="list-bare-desc list-bare-desc-avatar">{{ site.description }}</em>{% endif -%}
+		{%- if showMetadata %}
+		<em class="list-bare-desc list-bare-desc-avatar">
+			<div class="lo lo-inline lo-nocontentwrap lo-separator-h" style="--lo-margin-h: 1.5rem; --lo-margin-v: 2px">
+{%- if showPerformanceMetadata %}
+				<div class="lo-c sites-perf-rank">Performance Rank <strong>#{{ perf.rank }}</strong>{% if not perf.previousRank %}<strong class="sites-perf-rank-new">New!</strong>{% elseif perf.previousRank !== perf.rank and perf.previousRank - perf.rank > 0 %}<strong class="sites-perf-rank-{% if perf.previousRank - perf.rank > 0 %}pos{% else %}neg{% endif %}">{{ (perf.previousRank - perf.rank) | abs }}</strong>{% endif %}</div>
+				<div class="lo-c sites-perf-lh">Lighthouse <strong>{{ perf.lighthouseScore * 100 }}</strong></div>
+				<div class="lo-c sites-perf-si">Speed Index <strong>{{ perf.speedIndex | round(1) }}</strong></div>
+{%- endif %}
+				{%- if site.twitter %}<div class="lo-c"><a href="https://twitter.com/{{ site.twitter }}" class="elv-externalexempt">@{{ site.twitter }}</a></div>{% endif -%}
+				{%- if site.authoredBy %}<div class="lo-c">Created by {% for author in site.authoredBy %}{% if not loop.first %}, {% endif %}<a href="https://twitter.com/{{ author }}" class="elv-externalexempt">@{{ author }}</a>{% endfor %}</div>{% endif -%}
+				{%- if site.source_url %}<div class="lo-c"><a href="{{ site.source_url }}" class="elv-externalexempt">Source Code</a></div>{% endif -%}
+			</div>
+		</em>
+		{%- endif %}
+	</div>
+	{%- if perf.rank <= 11 %}<div><img src="/img/sites/{{ site.url | screenshotFilenameFromUrl }}" alt="Screenshot of {{ site.url }}" class="sites-screenshot" loading="lazy" width="405" height="304"></div>{% endif %}
+</div>

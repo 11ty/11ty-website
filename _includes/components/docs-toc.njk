@@ -2,21 +2,10 @@
 
 <details open>
 	<summary class="btn-primary benchnine rainbow-active rainbow-active-noanim">Menu</summary>
-	<ul class="elv-toc-list">
-	{%- for navpage in collections.docs | sortMenu(menuSortOrder) %}
-		<li{% if page.url == navpage.data.page.url %} class="elv-toc-active"{% endif %}><a href="{{ navpage.data.page.url }}">{{ navpage.data.subtitle }}</a>
-		{%- if navpage.data.menuSectionName %}
-			{%- set navpageActive %}{% for section in collections[navpage.data.menuSectionName] %}{% if page.url == section.data.page.url %}true{% endif %}{% endfor %}{% for section in collections[navpage.data.menuSectionName] %}{% for subsection in collections[section.data.menuSectionName] %}{% if page.url == subsection.data.page.url %}true{% endif %}{% endfor %}{% endfor %}{% endset %}
-			<ul{% if navpageActive != "" %} class="elv-toc-active"{% endif %}>
-			{%- for section in collections[navpage.data.menuSectionName] | sortMenu(navpage.data.submenuSortOrder) -%}
-				{%- set sectionActive %}{% if page.url == section.data.page.url %}true{% endif %}{% for subsection in collections[section.data.menuSectionName] %}{% if page.url == subsection.data.page.url %}true{% endif %}{% endfor %}{% endset %}
-				<li{% if sectionActive != "" %} class="elv-toc-active"{% endif %}><a href="{{ section.data.page.url }}">{{ section.data.subtitle }}</a></li>
-			{%- endfor %}
-			</ul>
-		{%- endif %}
-		</li>
-	{%- endfor %}
-	</ul>
+	{%- if eleventyNavigation -%}
+		{%- set navKey = eleventyNavigation.key -%}
+	{%- endif -%}
+	{{ collections.sidebarNav | eleventyNavigation | eleventyNavigationToHtml({ activeKey: navKey, listClass: 'elv-toc-list', activeListItemClass: 'elv-toc-active' }) | safe }}
 </details>
 
 </div>

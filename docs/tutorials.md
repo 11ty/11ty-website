@@ -1,8 +1,8 @@
 ---
-subtitle: Tutorials
-menuSectionName: docs-tutorials
-tags:
-    - docs-getting-started
+eleventyNavigation:
+  parent: Getting Started
+  key: Tutorials
+  order: 4
 feedTitle: Quick Tips RSS Feed
 feedUrl: /docs/quicktips/feed.xml
 ---
@@ -41,10 +41,12 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 * Sample Project: [Import your **Notist** events to an Eleventy site](https://eleventy-notist-example.netlify.com/) by {% avatarlocalcache "twitter", "philhawksworth" %}Phil Hawksworth
 * Sample Project: [Import your **Medium** posts to an Eleventy site](https://rss-jamstack.netlify.com/) by {% avatarlocalcache "twitter", "philhawksworth" %}Phil Hawksworth
 * [Import your **Disqus Comments** into Eleventy](https://github.com/11ty/eleventy-import-disqus/blob/master/README.md) by {% avatarlocalcache "twitter", "zachleat" %}Zach Leatherman
-* [Static Indieweb pt1: Syndicating Content](https://mxb.at/blog/syndicating-content-to-twitter-with-netlify-functions/) by {% avatarlocalcache "twitter", "mxbck" %}Max Böck
-* [Static Indieweb pt2: Using Webmentions](https://mxb.at/blog/using-webmentions-on-static-sites/) by {% avatarlocalcache "twitter", "mxbck" %}Max Böck
+* [Static Indieweb pt1: Syndicating Content](https://mxb.dev/blog/syndicating-content-to-twitter-with-netlify-functions/) by {% avatarlocalcache "twitter", "mxbck" %}Max Böck
+* [Static Indieweb pt2: Using Webmentions](https://mxb.dev/blog/using-webmentions-on-static-sites/) by {% avatarlocalcache "twitter", "mxbck" %}Max Böck
 * [Using Eleventy to Generate a Ghost Blog](https://david.darn.es/tutorial/2019/06/01/use-eleventy-to-generate-a-ghost-blog/) by {% avatarlocalcache "twitter", "DavidDarnes" %}David Darnes
 * [Consuming a headless CMS GraphQL API with Eleventy](https://www.webstoemp.com/blog/headless-cms-graphql-api-eleventy/) by {% avatarlocalcache "twitter", "jeromecoupe" %}Jérôme Coupé
+* [Import Tweets from Twitter API](https://www.d-hagemeier.com/en/articles/embed-twitter/) by {% avatarlocalcache "twitter", "DennisView" %}Dennis Hagemeier
+* [Convert a WordPress blog to Eleventy](https://www.joshcanhelp.com/taking-wordpress-to-eleventy/) by {% avatarlocalcache "twitter", "joshcanhelp" %}Josh Cunningham
 
 ### Tooling Integration
 

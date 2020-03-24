@@ -1,30 +1,61 @@
+---
+social:
+  imgsrc: https://www.11ty.dev/img/open-graph.jpg
+  imgalt: The 11ty logo text with a small floating possum on a balloon
+  description: Eleventy is a simpler static site generator.
+---
 <!doctype html>
 <html lang="en"{% if templateClass %} class="{{ templateClass }}"{% endif %}>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="{% if subtitle %}{{ subtitle }} for Eleventy,{% else %}Eleventy is{% endif %} a simpler static site generator.">
-		<title>{{ subtitle + '—' if subtitle}}Eleventy</title>
+		{%- set subtitle %}{{ newstitle or searchTitle or relatedTitle or tiptitle or eleventyNavigation.key or title }}{% endset %}
+		{%- set subtitleText %}{% if subtitle and subtitle != "Eleventy Home" %}{{ subtitle }} | Eleventy,{% else %}Eleventy is{% endif %} a simpler static site generator.{% endset %}
+		<title>{{ subtitleText }}</title>
+		<meta name="title" content="{{ subtitleText }}">
+		<meta name="description" content="{{ subtitleText }}">
 		<meta name="monetization" content="$pay.stronghold.co/1a155e3a09e210742be8c38ba7cab4795c4">
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://www.11ty.dev/">
+		<meta property="og:site_name" content="Eleventy">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" content="{{ subtitle }}">
+		<meta property="og:description" content="{{ social.description }}">
+		<meta property="og:image" content="{{ social.imgsrc }}">
+		<meta property="og:image:width" content="1280">
+		<meta property="og:image:height" content="640">
+		<meta property="og:image:alt" content="{{ social.imgalt }}">
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:site" content="@eleven_ty">
+		<meta property="twitter:creator" content="@zachleat">
+		<meta property="twitter:url" content="https://www.11ty.dev/">
+		<meta property="twitter:title" content="{{ subtitleText }}">
+		<meta property="twitter:description" content="{{ social.description }}">
+		<meta property="twitter:image" content="{{ social.imgsrc }}">
+		<meta property="twitter:image:alt" content="{{ social.imgalt }}">
 
 {%- set css %}
 {% include 'components/font-titles.css' %}
-{{ googlefonts | safe }}
 {% include 'index.css' %}
+{% include 'components/layout.css' %}
 {% include 'components/navigation.css' %}
-{% include 'components/quicktips.css' %}
-{% include 'components/community.css' %}
-{% include 'components/code.css' %}
-{% include 'components/lists.css' %}
-{% include 'components/external-links.css' %}
-{% include 'components/minilink.css' %}
 {% include 'components/toc.css' %}
 {% include 'components/callout.css' %}
-{% include 'components/codetitle.css' %}
-{% include 'components/forms.css' %}
+{% include 'components/breadcrumb.css' %}
+{% include 'components/prism-theme.css' %}
+{% include 'components/code.css' %}
+{% for includeLocation in css %}
+{% include includeLocation %}
+{% endfor %}
+{{ googlefonts | safe }}
 {% endset %}
-		<style>{{ css | cssmin | safe }}</style>
 		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+		<style>{{ css | cssmin | safe }}</style>
+		<link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'">
 {% if feedTitle and feedUrl %}
 		<link rel="alternate" href="{{ feedUrl }}" title="{{ feedTitle }}" type="application/atom+xml">
 {% endif %}
@@ -32,6 +63,13 @@
 		<script>
 		{%- include "components/js-class.js" -%}
 		</script>
+{% if loadNetlifyIdentity %}
+		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+		<script src="/js/eleventy.js" type="module"></script>
+{% elseif putTheJsInTheHead %}
+		<script src="/js/eleventy.js" type="module" async></script>
+{% endif %}
+
 	</head>
 	<body>
 
@@ -42,5 +80,8 @@
 		{%- include "components/details-force-state.js" -%}
 		</script>
 		<script src="/js/instant.page.js" async></script>
+{% if not putTheJsInTheHead %}
+		<script src="/js/eleventy.js" type="module" async></script>
+{% endif %}
 	</body>
 </html>

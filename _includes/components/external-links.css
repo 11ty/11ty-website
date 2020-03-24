@@ -8,7 +8,7 @@ a[href^="http://"]:not(.minilink):not(.elv-externalexempt):after,
 a[href^="https://"]:not(.minilink):not(.elv-externalexempt):after, 
 a[href^="//"]:not(.minilink):not(.elv-externalexempt):after {
   content: "↗";
-	font-family: system-ui, sans-serif;
+	font-family: system-ui, -apple-system, sans-serif;
   font-style: normal;
   font-weight: 900;
 	color: #00bcd4;

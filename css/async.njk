@@ -1,0 +1,18 @@
+---
+permalink: /css/async.css
+---
+{%- set css %}
+{% include '../_includes/components/facepile.css' %}
+{% include '../_includes/components/lists.css' %}
+{% include '../_includes/components/external-links.css' %}
+{% include '../_includes/components/minilink.css' %}
+{% include '../_includes/components/codetitle.css' %}
+{% include '../_includes/components/forms.css' %}
+{% include '../_includes/components/supporters.css' %}
+{% include '../_includes/components/truncate.css' %}
+{% include '../_includes/components/details-oneway.css' %}
+{% include '../_includes/components/community.css' %}
+{% include '../_includes/components/quicktips.css' %}
+{% endset %}
+
+{{ css | cssmin | safe }}

@@ -1,4 +1,5 @@
 .github
 _cache
+netlify-email
+functions
 README.md
-.eleventy.js
