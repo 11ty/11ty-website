@@ -3,6 +3,7 @@
 	"url": "https://conferences.css-tricks.com/",
 	"description": "CSS-TRICKS presents Upcoming Conferences related to Front-End Design & Development.",
 	"twitter": "css",
+	"authoredBy": ["chriscoyier"],
 	"source_url": "https://github.com/CSS-Tricks/conferences",
 	"featured": true,
 	"superfeatured": true

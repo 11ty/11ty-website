@@ -4,6 +4,7 @@
 	"description": "The COVID Tracking Project collects the most comprehensive testing data for the novel coronavirus, SARS-CoV-2.",
 	"source_url": "https://github.com/COVID19Tracking/website",
 	"twitter": "COVID19Tracking",
+	"authoredBy": ["wilto"],
 	"featured": true,
 	"superfeatured": true
 }

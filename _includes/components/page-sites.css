@@ -53,6 +53,10 @@
   margin-left: .5em;
   font-style: normal;
 }
+.sites-perf-rank-new {
+  font-style: italic;
+  color: #e60074;
+}
 .sites-perf-rank-pos {
   color: green;
 }

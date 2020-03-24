@@ -16,12 +16,14 @@ To do this, create a new file in `_data/sites/*.json` with this format: (the `so
 	"name": "Zach Leatherman’s Blog",
 	"description": "A 10+ years-running blog about web development.",
 	"twitter": "zachleat",
+	"authoredBy": [""],
 	"source_url": "https://github.com/zachleat/zachleat.com"
 }
 ```
 
-* `url`: URL of the live site
+* `url`: The site’s production URL
 * `name`: Name of the site
 * `description`: A short text description of the site
-* `twitter`: Twitter avatar of either the site or the author (optional but recommended)
-* `source_url`: URL to the source code (optional)
+* `twitter`: Twitter username for the site or the site’s author.
+* `authoredBy`: An array of Twitter usernames of the site’s authors. Supplements the `twitter` entry. (Optional)
+* `source_url`: URL to the source code (Optional)

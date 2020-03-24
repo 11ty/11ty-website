@@ -333,21 +333,42 @@ ${text.trim()}
 	eleventyConfig.addFilter("findSiteDataByUrl", (url, sites) => {
 		for(let key in sites) {
 			let site = sites[key];
-			if(url === site.url || url === `${site.url}/`) {
+			if(!url || !site.url) {
+				continue;
+			}
+			let lowerUrl = url.toLowerCase();
+			let siteUrl = site.url.toLowerCase();
+			if(lowerUrl === siteUrl || lowerUrl === `${siteUrl}/`) {
 				return site;
 			}
 		}
+	});
+
+	eleventyConfig.addFilter("hasPerformanceEntryByUrl", (url, sites = []) => {
+		// console.log( sites.length, url );
+		for(let site of sites) {
+			if(!url || !site.url) {
+				continue;
+			}
+			let lowerUrl = url.toLowerCase();
+			let siteUrl = site.url.toLowerCase();
+			if(lowerUrl === siteUrl || `${lowerUrl}/` === siteUrl) {
+				return true;
+			}
+		}
+		return false;
 	});
 
 	eleventyConfig.addFilter("topAuthors", (sites) => {
 		let counts = {};
 		for(let key in sites) {
 			let site = sites[key];
-			if(site.twitter && !site.disabled) {
-				if(!counts[site.twitter]) {
-					counts[site.twitter] = 0;
+			let authorName = site.authoredBy || site.twitter;
+			if(authorName && !site.disabled) {
+				if(!counts[authorName]) {
+					counts[authorName] = 0;
 				}
-				counts[site.twitter]++;
+				counts[authorName]++;
 			}
 		}
 		let top = [];
