@@ -56,3 +56,9 @@ Capture the JavaScript into a variable and run it through the filter (this sampl
 </script>
 ```
 {% endraw %}
+
+### Warning about Content Security Policy
+
+{% callout "warn" %}
+If you are using a Content Security Policy on your website, make sure the <code>script-src</code> directive allows <code>'unsafe-inline'</code>. Otherwise, your inline Javascript will not load.
+{% endcallout %}
