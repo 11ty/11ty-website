@@ -392,8 +392,8 @@ footer.elv-layout {
 	top: 36%;
 	left: 1vw;
 	right: auto;
-	/*animation-duration: 180s;
-	animation-name: balloonFloat;*/
+	animation-duration: 180s;
+	animation-name: balloonFloat;
 }
 @media (prefers-reduced-motion: reduce) {
 	.elv-header-default .elv-possum {
