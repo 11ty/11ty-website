@@ -13,7 +13,7 @@ Add a `date` key to your front matter to override the default date (file creatio
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
-```
+```markdown
 ---
 date: 2016-01-01
 ---
@@ -21,7 +21,7 @@ date: 2016-01-01
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
-```
+```markdown
 ---
 date: Last Modified
 ---
@@ -53,7 +53,7 @@ Many date formats in Eleventy (when set in your content‘s filename as `YYYY-MM
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
-```
+```markdown
 ---
 date: 2018-01-01
 ---

@@ -92,7 +92,7 @@ function myFunction() {
 ```
 ````
 
-````
+````markdown
 <!--
   Line highlighting classes (single highlight)
   Wraps each line in `<span class="highlight-line">`
@@ -108,7 +108,7 @@ function myFunction() {
 ```
 ````
 
-````
+````markdown
 <!--
   Line highlighting classes (add and remove mode)
   Wraps each line in `<span class="highlight-line">`
@@ -129,7 +129,7 @@ function myFunction() {
 
 Use `text` to use the line highlighting features without PrismJS.
 
-````
+````markdown
 ``` text/1-2
 function myFunction() {
   let highlighted = true;
@@ -143,7 +143,7 @@ function myFunction() {
 * [List of supported PrismJS languages](http://prismjs.com/#languages-list)
 
 {% raw %}
-```
+```markdown
 <!-- Liquid Template -->
 {% highlight js %}
 function myFunction() {
@@ -154,7 +154,7 @@ function myFunction() {
 {% endraw %}
 
 {% raw %}
-```
+```markdown
 <!--
   Line highlighting classes (single highlight)
   Wraps each line in `<span class="highlight-line">`
@@ -172,7 +172,7 @@ function myFunction() {
 {% endraw %}
 
 {% raw %}
-```
+```markdown
 <!--
   Line highlighting classes (add and remove)
   Wraps each line in `<span class="highlight-line">`
@@ -195,7 +195,7 @@ function myFunction() {
 Use `text` to use the line highlighting features without PrismJS.
 
 {% raw %}
-```
+```markdown
 <!-- Liquid Template -->
 {% highlight text 1-2 %}
 function myFunction() {
@@ -211,7 +211,7 @@ function myFunction() {
 * [List of supported PrismJS languages](http://prismjs.com/#languages-list)
 
 {% raw %}
-```
+```markdown
 <!-- Nunjucks Template -->
 {% highlight "js" %}
 function myFunction() {
@@ -222,7 +222,7 @@ function myFunction() {
 {% endraw %}
 
 {% raw %}
-```
+```markdown
 <!--
   Line highlighting classes (single highlight)
   Wraps each line in `<span class="highlight-line">`
@@ -240,7 +240,7 @@ function myFunction() {
 {% endraw %}
 
 {% raw %}
-```
+```markdown
 <!--
   Line highlighting classes (add and remove)
   Wraps each line in `<span class="highlight-line">`
@@ -263,7 +263,7 @@ function myFunction() {
 Use `text` to use the line highlighting features without PrismJS.
 
 {% raw %}
-```
+```markdown
 <!-- Nunjucks Template -->
 {% highlight "text 1-2" %}
 function myFunction() {

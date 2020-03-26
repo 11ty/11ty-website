@@ -75,7 +75,7 @@ If you absolutely need a file extension on your output, you might use it like th
 {% codetitle "YAML Front Matter", "Syntax" %}
 
 {% raw %}
-```
+```markdown
 ---
 permalink: "{{ page.filePathStem }}.html"
 ---

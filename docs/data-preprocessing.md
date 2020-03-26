@@ -11,7 +11,7 @@ All [global JSON data files](/docs/data-global/) (*not template/directory data f
 For example, if your `dataTemplateEngine` is using the default `liquid` engine you can do this:
 
 {% raw %}
-```
+```json
 {
   "version": "{{ pkg.version }}"
 }

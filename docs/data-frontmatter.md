@@ -38,7 +38,7 @@ Eleventy uses the [`gray-matter` package](https://github.com/jonschlinkert/gray-
 
 ### JSON Front Matter
 
-```
+```html
 ---json
 {
   "title": "My page title"
@@ -56,7 +56,7 @@ Note that Liquid templates do not allow executing a function in output `{% raw %
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
-```
+```html
 ---js
 {
   title: "My page title",

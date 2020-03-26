@@ -24,7 +24,7 @@ This works the same as any other template. You can include front matter and ever
 
 {% codetitle "name-sample.jstl" %}
 
-```js
+```markdown
 ---
 name: zach
 ---
@@ -35,7 +35,7 @@ While backticks around your template content are considered optional, you can in
 
 {% codetitle "name-sample-with-backticks.jstl" %}
 
-```js
+```markdown
 ---
 name: zach
 ---

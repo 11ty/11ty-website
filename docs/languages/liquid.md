@@ -134,7 +134,7 @@ Shortcodes are basically reusable bits of content. You can add Liquid specific s
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = function(eleventyConfig) {
   // Liquid Shortcode
   // These can be async functions too
@@ -174,7 +174,7 @@ module.exports = function(eleventyConfig) {
 
 ### Paired Shortcode
 
-```
+```js
 module.exports = function(eleventyConfig) {
   // Liquid Shortcode
   // These can be async functions too

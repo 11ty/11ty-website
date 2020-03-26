@@ -116,7 +116,7 @@ ELEVENTY_ENV=production npx @11ty/eleventy
 Working from our [Inline CSS Quick Tip](/docs/quicktips/inline-css/), we can modify the output to only minify our CSS if we’re building for production:
 
 {% raw %}
-```
+```html
 {% if myProject.environment == "production" %}
 <style>{{ css | cssmin | safe }}</style>
 {% else %}

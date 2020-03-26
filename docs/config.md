@@ -357,7 +357,7 @@ If your site lives in a different subdirectory (particularly useful with GitHub 
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     pathPrefix: "/eleventy-base-blog/"
 };
@@ -384,7 +384,7 @@ If an HTML template has matching input and output directories, index.html files 
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     htmlOutputSuffix: "-o"
 };
@@ -404,7 +404,7 @@ When using [Template and Directory Specific Data Files](/docs/data-template-dir/
 
 {% codetitle ".eleventy.js" %}
 
-```
+```js
 module.exports = {
     jsDataFileSuffix: ".11tydata"
 };

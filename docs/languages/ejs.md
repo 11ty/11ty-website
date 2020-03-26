@@ -17,7 +17,7 @@ You can override a `.ejs` file’s template engine. Read more at [Changing a Tem
 
 See “Options” on the [EJS home page](https://ejs.co/).
 
-```
+```js
 module.exports = function(eleventyConfig) {
   eleventyConfig.setEjsOptions({
     // use <? ?> instead of <% %>
