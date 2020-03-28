@@ -112,7 +112,6 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addPassthroughCopy({
-		"node_modules/instant.page/instantpage.js": "js/instant.page.js",
 		"node_modules/@11ty/logo/img/logo.svg": "img/logo.svg",
 		"node_modules/@11ty/logo/img/logo-784x1093.png": "img/logo.png",
 		"node_modules/@11ty/logo/img/logo-300x418.png": "img/logo-github.png",

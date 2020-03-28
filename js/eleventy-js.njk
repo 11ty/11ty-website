@@ -7,5 +7,6 @@ eleventyExcludeFromCollections: true
 {% include "components/auth/gotrue.js" %}
 {% include "components/auth/auth.js" %}
 {% include "components/search.js" %}
+{% include "../node_modules/instant.page/instantpage.js" %}
 {% endset %}
 {{ js | jsmin | safe }}
