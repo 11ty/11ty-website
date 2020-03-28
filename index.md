@@ -3,6 +3,7 @@ layout: layouts/main.njk
 logoLink: /docs/
 ignoreGitHubButtons: true
 ignoreSupporters: true
+ignoreFastestSite: true
 searchTitle: Eleventy Home
 bigPossum: true
 ---

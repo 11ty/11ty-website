@@ -3,6 +3,7 @@ eleventyNavigation:
   parent: Supporting Eleventy
   key: Built With Eleventy
   order: 3
+ignoreFastestSite: true
 css:
   - components/page-sites.css
 ---
@@ -53,6 +54,7 @@ Sites with Lighthouse scores greater than or equal to 90 are ordered by performa
 {%- if site.disabled !== true and site.url and perf.lighthouseScore >= 0.9 %}
 	{%- set showMetadata = true %}
 	{%- set showPerformanceMetadata = true %}
+	{%- set showScreenshot = perf.rank <= 11 %}
 	{% include "site.njk" %}
 {%- endif %}
 {%- endfor %}

@@ -1,5 +1,5 @@
 <div class="lo-c{% if perf.rank <= 11 %} site-top{% endif %}">
-	<div>
+	<div{% if showScreenshot %} class="sites-data-container"{% endif %}>
 		<a href="{{ site.url }}">{% avatarlocalcache "twitter", site.twitter %}{{ site.name | safe }}</a>
 		{%- if site.description %}<em class="list-bare-desc list-bare-desc-avatar">{{ site.description }}</em>{% endif -%}
 		{%- if showMetadata %}
@@ -17,5 +17,5 @@
 		</em>
 		{%- endif %}
 	</div>
-	{%- if perf.rank <= 11 %}<div><img src="/img/sites/{{ site.url | screenshotFilenameFromUrl }}" alt="Screenshot of {{ site.url }}" class="sites-screenshot" loading="lazy" width="405" height="304"></div>{% endif %}
+	{%- if showScreenshot %}<div class="sites-screenshot-container"><img src="/img/sites/{{ site.url | screenshotFilenameFromUrl }}" alt="Screenshot of {{ site.url }}" class="sites-screenshot" loading="lazy" width="405" height="304"></div>{% endif %}
 </div>
