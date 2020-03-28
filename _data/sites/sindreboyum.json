@@ -1,0 +1,8 @@
+{
+	"url": "https://sindre.is/",
+	"name": "Sindre Bøyum’s website",
+	"description": "A personal website and mini blog about web development.",
+	"twitter": "sindreboyum",
+	"authoredBy": ["boyum"],
+	"source_url": "https://github.com/boyum/sindre-is"
+}
