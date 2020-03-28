@@ -363,12 +363,17 @@ ${text.trim()}
 		let counts = {};
 		for(let key in sites) {
 			let site = sites[key];
-			let authorName = site.authoredBy || site.twitter;
-			if(authorName && !site.disabled) {
-				if(!counts[authorName]) {
-					counts[authorName] = 0;
+			let authorsNames = site.authoredBy || site.twitter;
+			if(authorsNames && !site.disabled) {
+				if(!Array.isArray(authorsNames)) {
+					authorsNames = [authorsNames];
 				}
-				counts[authorName]++;
+				for(let name of authorsNames) {
+					if(!counts[name]) {
+						counts[name] = 0;
+					}
+					counts[name]++;
+				}
 			}
 		}
 		let top = [];
