@@ -29,6 +29,10 @@ css:
 		{%- set meanFmp = fastestSites | calc("mean", "firstMeaningfulPaint") %}
 		<div><strong class="sites-val">{{ medianFmp | round | commaNumber }}</strong> Median First Meaningful Paint</div>
 		<div><strong class="sites-val">{{ meanFmp | round | commaNumber }}</strong> Mean First Meaningful Paint</div> -->
+		{%- set medianA11yScore = fastestSites | calc("median", "accessibilityScore") * 100 %}
+		{%- set meanA11yScore = fastestSites | calc("mean", "accessibilityScore") * 100 %}
+		<div><strong class="sites-val">{{ medianA11yScore | round }}</strong> Median Accessibility Score</div>
+		<div><strong class="sites-val">{{ meanA11yScore | round(1) }}</strong> Mean Accessibility Score</div>
 	</div>
 	<div class="lo-c">
 		<h3 class="authors-hed">Most Sites Created</h3>
