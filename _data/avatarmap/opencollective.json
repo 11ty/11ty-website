@@ -579,7 +579,7 @@
     {
       "format": "jpeg",
       "width": 73,
-      "height": 95,
+      "height": 69,
       "space": "srgb",
       "channels": 3,
       "depth": "uchar",
@@ -590,7 +590,7 @@
       "extension": "jpg",
       "name": "glenn-dixon",
       "path": "img/avatar-local-cache/opencollective/glenn-dixon.jpg",
-      "size": 2068
+      "size": 1451
     }
   ],
   "hans-gerwitz": [
@@ -1043,6 +1043,24 @@
       "size": 1627
     }
   ],
+  "miriam-suzanne": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "miriam-suzanne",
+      "path": "img/avatar-local-cache/opencollective/miriam-suzanne.jpg",
+      "size": 1861
+    }
+  ],
   "nate-steiner": [
     {
       "format": "jpeg",
@@ -1401,6 +1419,24 @@
       "name": "soren-birkemeyer",
       "path": "img/avatar-local-cache/opencollective/soren-birkemeyer.jpg",
       "size": 1916
+    }
+  ],
+  "suominettikasinot24.com": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 40,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "suominettikasinot24.com",
+      "path": "img/avatar-local-cache/opencollective/suominettikasinot24.com.jpg",
+      "size": 1206
     }
   ],
   "takuya-fukuju": [
