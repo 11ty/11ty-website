@@ -224,7 +224,7 @@ And in Liquid it’d look like this:
   <p>You should <em><strong>not</strong></em> use Array <code>reverse()</code> on collection arrays in your templates, like so:</p>
   <p><code>{%raw %}{%- for post in collections.post.reverse() -%}{% endraw %}</code></p>
   <p>This will <a href="https://doesitmutate.xyz/reverse/">mutate the array</a> and re-order it <em>in-place</em> and will have side effects for any use of that collection in other templates.</p>
-  <p>Instead, use one of the many template engine utilities provided for you to do this, such as <a href="http://shopify.github.io/liquid/filters/reverse/">Liquid’s <code>reverse</code></a> or <a href="https://mozilla.github.io/nunjucks/templating.html#reverse">Nunjucks’ <code>reverse</code></a></p>
+  <p>Instead, use one of the many template engine utilities provided for you to do this, such as <a href="https://liquidjs.com/filters/reverse.html">Liquid’s <code>reverse</code></a> or <a href="https://mozilla.github.io/nunjucks/templating.html#reverse">Nunjucks’ <code>reverse</code></a></p>
   <p>This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</p>
 </div>
 

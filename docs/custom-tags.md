@@ -23,7 +23,7 @@ But, after all that, you can still add a Custom Tag using the [Configuration API
 
 ## LiquidJS example
 
-* [LiquidJS: Tags](https://github.com/harttle/liquidjs#register-tags)
+* [LiquidJS: Tags](https://liquidjs.com/tutorials/register-filters-tags.html)
 
 {% codetitle ".eleventy.js" %}
 
@@ -37,12 +37,12 @@ module.exports = function(eleventyConfig) {
       parse: function(tagToken, remainingTokens) {
         this.str = tagToken.args; // myVar or "alice"
       },
-      render: function(scope, hash) {
+      render: async function(scope, hash) {
         // Resolve variables
-        var str = liquidEngine.evalValue(this.str, scope); // "alice"
+        var str = await this.liquid.evalValue(this.str, scope); // "alice"
 
         // Do the uppercasing
-        return Promise.resolve(str.toUpperCase()); // "ALICE"
+        return str.toUpperCase(); // "ALICE"
       }
     };
   });
@@ -50,7 +50,7 @@ module.exports = function(eleventyConfig) {
 ```
 {% endraw %}
 
-See all of the [built-in tag implementations for LiquidJS](https://github.com/harttle/liquidjs/wiki/Builtin-Tags).
+See all of the [built-in tag implementations for LiquidJS](https://liquidjs.com/tags/overview.html).
 
 ## Nunjucks example {% addedin "0.5.0" %}
 

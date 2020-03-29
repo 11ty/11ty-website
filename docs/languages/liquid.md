@@ -21,7 +21,7 @@ You can override a `.liquid` file’s template engine. Read more at [Changing a 
 
 ### Default Options
 
-Rather than constantly fixing outdated documentation, [find `getLiquidOptions` in `Liquid.js`](https://github.com/11ty/eleventy/blob/master/src/Engines/Liquid.js). These options are different than the [default `liquidjs` options](https://github.com/harttle/liquidjs#options).
+Rather than constantly fixing outdated documentation, [find `getLiquidOptions` in `Liquid.js`](https://github.com/11ty/eleventy/blob/master/src/Engines/Liquid.js). These options are different than the [default `liquidjs` options](https://liquidjs.com/tutorials/options.html).
 
 ### Optional: Use your own options {% addedin "0.2.15" %}
 
@@ -31,28 +31,28 @@ It’s recommended to use the Configuration API to set override the default opti
 module.exports = function(eleventyConfig) {
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true,
-    strict_filters: true
+    strictFilters: true
   });
 };
 ```
 
 ### Optional: Set your own Library instance {% addedin "0.3.0" %}
 
-As an escape mechanism for advanced usage, pass in your own instance of the Liquid library using the Configuration API. See [all `liquidjs` options](https://github.com/harttle/liquidjs#options).
+As an escape mechanism for advanced usage, pass in your own instance of the Liquid library using the Configuration API. See [all `liquidjs` options](https://liquidjs.com/tutorials/options.html).
 
 <div class="elv-callout elv-callout-warn">Not compatible with <code>setLiquidOptions</code> above—this method will override any configuration set there.</div>
 
 ```js
 module.exports = function(eleventyConfig) {
-  let liquidJs = require("liquidjs");
-  let options = {
+  const { Liquid } = require("liquidjs");
+  const  options = {
     extname: ".liquid",
     dynamicPartials: true,
-    strict_filters: true,
+    strictFilters: true,
     root: ["_includes"]
   };
 
-  eleventyConfig.setLibrary("liquid", liquidJs(options));
+  eleventyConfig.setLibrary("liquid", new Liquid(options));
 };
 ```
 
@@ -89,7 +89,7 @@ If you’d like to use quoted include paths, you must enable `dynamicPartials: t
 
 Filters are used to transform or modify content. You can add Liquid specific filters, but you probably want to add a [Universal filter](/docs/filters/) instead.
 
-Read more about [LiquidJS Filter syntax](https://github.com/harttle/liquidjs#register-filters)
+Read more about [LiquidJS Filter syntax](https://liquidjs.com/tutorials/register-filters-tags.html)
 
 ```js
 module.exports = function(eleventyConfig) {
