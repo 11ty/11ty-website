@@ -88,7 +88,7 @@ Copy and paste this template and modify the YAML metadata to match your feed’s
 ```
 {% endraw %}
 
-Place the file anywhere in your project and it will be transformed into a `feed.xml` file at the root of your website when Eleventy builds it. It can then be useful to check the file against a feed validator, such as the [W3C Feed Validation Service](https://validator.w3.org/feed/) to make sure that the output was good.
+Place the file anywhere in your project (give it a `.njk` extension) and it will be transformed into a `feed.xml` file at the root of your website when Eleventy builds it. It can then be useful to check the file against a feed validator, such as the [W3C Feed Validation Service](https://validator.w3.org/feed/) to make sure that the output was good.
 
 Ultimately your feed will be available at `https://yourwebsite.com/feed.xml`.
 
