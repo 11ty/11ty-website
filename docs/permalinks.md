@@ -95,7 +95,7 @@ To remap your template’s output to a different path than the default, use the 
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
-```
+```markdown
 ---
 permalink: "this-is-a-new-path/subdirectory/testing/index.html"
 ---
@@ -105,7 +105,7 @@ The above is functionally equivalent to:
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
-```
+```markdown
 ---
 permalink: "this-is-a-new-path/subdirectory/testing/"
 ---
@@ -123,7 +123,7 @@ If you set the `permalink` value to be `false`, this will disable writing the fi
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
-```
+```markdown
 ---
 permalink: false
 ---
@@ -138,7 +138,7 @@ For example, in a Nunjucks template:
 {% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
-```
+```markdown
 ---
 mySlug: this-is-a-new-path
 permalink: "subdir/{{ mySlug }}/index.html"
@@ -157,7 +157,7 @@ Writes to `_site/subdir/this-is-a-new-path/index.html`.
 {% codetitle "YAML", "Syntax" %}
 
 {% raw %}
-```
+```yaml
 permalink: "{{ page.filePathStem }}.html"
 ```
 {% endraw %}
@@ -173,7 +173,7 @@ Some template syntaxes are nicer than others and you may want to opt-out of the 
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
-```
+```markdown
 ---
 permalink: "/this-will-be-a-string-without-templating/"
 dynamicPermalink: false
@@ -200,7 +200,7 @@ Use the provided [`slug` filter](/docs/filters/slug/) to modify other data avail
 {% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
-```
+```markdown
 ---
 title: My Article Title
 permalink: "subdir/{{ title | slug }}/index.html"
@@ -215,7 +215,7 @@ Writes to `_site/subdir/my-article-title/index.html`.
 {% codetitle "YAML Front Matter using Liquid", "Syntax" %}
 
 {% raw %}
-```
+```markdown
 ---
 date: "2016-01-01T06:00-06:00"
 permalink: "/{{ page.date | date: '%Y/%m/%d' }}/index.html"
@@ -231,7 +231,7 @@ To remap your template’s output to a directory independent of the output direc
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
-```
+```markdown
 ---
 permalink: "_includes/index.html"
 permalinkBypassOutputDir: true
@@ -248,7 +248,7 @@ For example, to generate a JSON search index to be used by popular search librar
 
 {% codetitle "EJS", "Syntax" %}
 
-```
+```markdown
 ---
 permalink: "index.json"
 ---

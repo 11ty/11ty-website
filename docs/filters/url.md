@@ -14,7 +14,7 @@ Works with the `pathPrefix` configuration option to properly normalize absolute 
 _If you don’t need `pathPrefix` (or don’t ever plan on moving your site’s top-level directory structure), you probably don’t need to use the `url` filter._
 
 {% raw %}
-```
+```html
 <a href="{{ post.url | url }}">Liquid or Nunjucks Link</a>
 ```
 {% endraw %}

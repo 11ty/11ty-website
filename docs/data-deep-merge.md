@@ -103,7 +103,7 @@ Use the `override:` prefix on any data key to opt-out of this merge behavior for
 
 {% codetitle "posts/firstpost.md" %}
 
-```
+```markdown
 ---
 override:tags: []
 ---

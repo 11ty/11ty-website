@@ -25,7 +25,7 @@ If your file is called `example.liquid`—instead of `liquid`, this will be pars
 
 {% codetitle "example.liquid" %}
 
-```
+```markdown
 ---
 templateEngineOverride: njk
 ---
@@ -39,7 +39,7 @@ For example, you may want to process `njk` Nunjucks first and then `md` markdown
 
 ##### Markdown and nothing else
 
-```
+```markdown
 ---
 templateEngineOverride: md
 ---
@@ -47,7 +47,7 @@ templateEngineOverride: md
 
 ##### Nunjucks and then Markdown
 
-```
+```markdown
 ---
 templateEngineOverride: njk,md
 ---
@@ -57,7 +57,7 @@ templateEngineOverride: njk,md
 
 Any falsy value here will just copy the template content without transformation.
 
-```
+```markdown
 ---
 templateEngineOverride: false
 ---

@@ -266,7 +266,7 @@ module.exports = function(eleventyConfig) {
 {% codetitle "js-fn-example.11ty.js" %}
 
 {% raw %}
-```
+```js
 module.exports = function(data) {
   return `<h1>${this.myFunction(data.a, data.b)}</h1>`;
 };

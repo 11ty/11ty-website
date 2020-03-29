@@ -15,7 +15,7 @@ For a blog site, your individual post files may use a tag called `post`, but it 
 
 {% codetitle "Markdown", "Syntax" %}
 
-```
+```markdown
 ---
 tags: post
 title: Hot Take—Social Media is Considered Harmful
