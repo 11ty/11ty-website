@@ -491,7 +491,7 @@ Consider the following pagination template:
 
 {% codetitle "my-page.md" %}
 
-```
+```yaml
 tags:
   - myCollection
 pagination:
@@ -508,7 +508,7 @@ This means that `collections.myCollection` will have only the first page added t
 
 {% codetitle "my-page.md" %}
 
-```
+```yaml
 tags:
   - myCollection
 pagination:

@@ -57,7 +57,7 @@ All of this will output the following HTML content:
 
 {% codetitle "_site/content-using-layout/index.html" %}
 
-```
+```html
 <!doctype html>
 <html lang="en">
   <head>

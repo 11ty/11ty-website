@@ -41,7 +41,7 @@ This layout would then be itself wrapped in the same `mylayout.njk` we used in o
 {% codetitle "_includes/mylayout.njk" %}
 
 {% raw %}
-```
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -60,7 +60,7 @@ Used together, this would output:
 
 {% codetitle "_site/layout-chain-example/index.html" %}
 
-```
+```html
 <!doctype html>
 <html lang="en">
   <head>
