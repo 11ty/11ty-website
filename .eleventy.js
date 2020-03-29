@@ -301,15 +301,6 @@ ${text.trim()}
 		return DateTime.fromJSDate(dateObj).toFormat("yyyy LLLL dd");
 	});
 
-	// Until https://github.com/valeriangalliat/markdown-it-anchor/issues/58 is fixed
-	eleventyConfig.addTransform("remove-aria-hidden-markdown-anchor", function(content, outputPath) {
-		if( outputPath && outputPath.endsWith(".html") ) {
-			return content.replace(/ aria\-hidden\=\"true\"\>\#\<\/a\>/g, ` title="Direct link to this heading">#</a>`);
-		}
-
-		return content;
-	});
-
 	eleventyConfig.addFilter("calc", (sites, type, key) => {
 		let sum = 0;
 		let values = [];
