@@ -1,0 +1,7 @@
+{
+	"url": "https://eleventy-netlify-boilerplate.netlify.com/",
+	"name": "Eleventy Netlify Boilerplate",
+	"description": "A template for building a simple blog website with Eleventy and Netlify CMS.",
+	"source_url": "https://github.com/danurbanowicz/eleventy-netlify-boilerplate",
+	"twitter": "danurbanowicz"
+}
