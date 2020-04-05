@@ -10,7 +10,7 @@ const PerformanceLeaderboard = require("performance-leaderboard");
 
   for(let site of sites) {
     let siteData = require(site);
-    if(!siteData.disabled && siteData.url && !siteData.excludedFromPerformanceLeaderboard) {
+    if(!siteData.disabled && siteData.url) {
       urls.add(siteData.url);
     }
   }

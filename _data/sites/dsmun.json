@@ -4,5 +4,5 @@
     "description": "The official website for The Doon School Model United Nations (DSMUN) 2019.",
     "twitter": "shreyasminocha",
     "source_url": "https://github.com/shreyasminocha/dsmun19",
-    "excludedFromPerformanceLeaderboard": true
+    "disabled": true
 }
