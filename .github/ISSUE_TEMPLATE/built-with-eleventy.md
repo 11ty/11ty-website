@@ -16,7 +16,7 @@ To do this, create a new file in `_data/sites/*.json` with this format: (the `so
 	"name": "Zach Leatherman’s Blog",
 	"description": "A 10+ years-running blog about web development.",
 	"twitter": "zachleat",
-	"authoredBy": [""],
+	"authoredBy": [],
 	"source_url": "https://github.com/zachleat/zachleat.com"
 }
 ```

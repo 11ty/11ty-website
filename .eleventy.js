@@ -353,7 +353,7 @@ ${text.trim()}
 		let counts = {};
 		for(let key in sites) {
 			let site = sites[key];
-			let authorsNames = site.authoredBy || site.twitter;
+			let authorsNames = site.authoredBy && site.authoredBy.length ? site.authoredBy : site.twitter;
 			if(authorsNames && !site.disabled) {
 				if(!Array.isArray(authorsNames)) {
 					authorsNames = [authorsNames];
