@@ -10,7 +10,7 @@
     "assets": "cp node_modules/@11ty/logo/logo.png .",
     "links-external": "hyperlink -r --root _site --canonicalroot https://11ty.dev/ --skip '/.netlify/functions' _site/*.html | tap-spot",
     "links-internal": "hyperlink -ri --root _site --canonicalroot https://11ty.dev/ --skip '/.netlify/functions' _site/*.html | tap-spot",
-    "deploy": "eleventy && node node-avatars && node node-screenshots",
+    "deploy": "eleventy && node node-avatars && node node-screenshots && ./deploy.sh",
     "build": "eleventy",
     "build-production": "node node-avatars.js && ELEVENTY_PRODUCTION=true eleventy",
     "postbuild-production": "npm run links-internal"
