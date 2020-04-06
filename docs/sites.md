@@ -13,6 +13,10 @@ css:
 <div class="lo" style="--lo-stackpoint: 30em; --lo-margin-v: 2em">
 	<div class="lo-c" style="flex-grow: 2" id="statistics"><!-- backwards compt for previous id link -->
 		<div><strong class="sites-val">{{ sites | length }}</strong> Sites</div>
+		{%- set totalPerfectLhPerfScore = fastestSites | calc("count", "lighthouseScore", 1) %}
+		{%- set totalPerfectLhA11yScore = fastestSites | calc("count", "accessibilityScore", 1) %}
+		<div><strong class="sites-val">{{ totalPerfectLhPerfScore | round }}</strong> Perfect {% emoji "💯", "100" %}’s on Performance</div>
+		<div><strong class="sites-val">{{ totalPerfectLhA11yScore | round }}</strong> Perfect {% emoji "💯", "100" %}’s on Accessibility</div>
 		{%- set medianLhScore = fastestSites | calc("median", "lighthouseScore") * 100 %}
 		{%- set meanLhScore = fastestSites | calc("mean", "lighthouseScore") * 100 %}
 		<div><strong class="sites-val">{{ medianLhScore | round }}</strong> Median Lighthouse Score</div>
@@ -21,10 +25,10 @@ css:
 		{%- set meanSi = fastestSites | calc("mean", "speedIndex") %}
 		<div><strong class="sites-val">{{ medianSi | round | commaNumber }}</strong> Median Speed Index</div>
 		<div><strong class="sites-val">{{ meanSi | round | commaNumber }}</strong> Mean Speed Index</div>
-		{%- set medianFcp = fastestSites | calc("median", "firstContentfulPaint") %}
+		<!-- {%- set medianFcp = fastestSites | calc("median", "firstContentfulPaint") %}
 		{%- set meanFcp = fastestSites | calc("mean", "firstContentfulPaint") %}
 		<div><strong class="sites-val">{{ medianFcp | round | commaNumber }}</strong> Median First Contentful Paint</div>
-		<div><strong class="sites-val">{{ meanFcp | round | commaNumber }}</strong> Mean First Contentful Paint</div>
+		<div><strong class="sites-val">{{ meanFcp | round | commaNumber }}</strong> Mean First Contentful Paint</div> -->
 		<!-- {%- set medianFmp = fastestSites | calc("median", "firstMeaningfulPaint") %}
 		{%- set meanFmp = fastestSites | calc("mean", "firstMeaningfulPaint") %}
 		<div><strong class="sites-val">{{ medianFmp | round | commaNumber }}</strong> Median First Meaningful Paint</div>

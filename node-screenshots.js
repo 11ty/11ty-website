@@ -6,7 +6,9 @@ const fastestSites = require("./_data/fastestSites.json");
 async function screenshot(url, fileSlug) {
 	const browser = await puppeteer.launch();
 	const page = await browser.newPage();
-	await page.goto(url);
+	await page.goto(url, {
+    waitUntil: ["load", "networkidle0"]
+  });
 	await page.setViewport({
 		width: 1024,
 		height: 768,

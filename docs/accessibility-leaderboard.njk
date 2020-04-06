@@ -9,13 +9,11 @@ css:
 ---
 <h1>Eleventy Accessibility Leaderboard</h1>
 
-{% callout "warn" %}<strong>Under construction</strong>{% endcallout %}
-
 <div><strong class="sites-val">{{ sites | length }}</strong> Sites</div>
 {%- set medianA11yScore = fastestSites | calc("median", "accessibilityScore") * 100 %}
 {%- set meanA11yScore = fastestSites | calc("mean", "accessibilityScore") * 100 %}
 {%- set totalPerfectLhScore = fastestSites | calc("count", "accessibilityScore", 1) %}
-<div><strong class="sites-val">{{ totalPerfectLhScore | round }}</strong> Perfect Lighthouse Scores</div>
+<div><strong class="sites-val">{{ totalPerfectLhScore | round }}</strong> Perfect {% emoji "💯", "100" %}’s</div>
 <div><strong class="sites-val">{{ medianA11yScore | round }}</strong> Median Accessibility Score</div>
 <div><strong class="sites-val">{{ meanA11yScore | round(1) }}</strong> Mean Accessibility Score</div>
 
@@ -23,7 +21,7 @@ css:
 
 {% addToSampleSites %}
 
-<p>Top 11 highest ranked sites shown here, ordered by Lighthouse accessibility scores with ties broken by fewest reported violations from a full axe accessibility scan. See the full <a href="/docs/accessibility-leaderboard/">Accessibility Leaderboard (all {{ sites | length }} sites)</a>. Rankings are updated approximately once per week on Sunday. <em>Last generated {{ fastestSitesMeta.generated | newsDate }}</em>.</p>
+<p>Top 11 highest ranked sites shown here, ordered by Lighthouse accessibility scores with ties broken by fewest reported violations (and then most reported passes) from a full axe accessibility scan. See the full <a href="/docs/accessibility-leaderboard/">Accessibility Leaderboard (all {{ sites | length }} sites)</a>. Rankings are updated approximately once per week on Sunday. <em>Last generated {{ fastestSitesMeta.generated | newsDate }}</em>.</p>
 
 
 <br>
