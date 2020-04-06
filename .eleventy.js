@@ -301,14 +301,27 @@ ${text.trim()}
 		return DateTime.fromJSDate(dateObj).toFormat("yyyy LLLL dd");
 	});
 
-	eleventyConfig.addFilter("calc", (sites, type, key) => {
+	eleventyConfig.addFilter("rankSortByNumericKey", (arr, key) => {
+		return arr.filter(entry => true).sort((a, b) => {
+			return a[key] - b[key];
+		});
+	});
+
+	eleventyConfig.addFilter("calc", (sites, type, key, greaterThanOrEqualTo) => {
 		let sum = 0;
 		let values = [];
+		let count = 0;
 		for(let site of sites) {
+			if(site[key] >= greaterThanOrEqualTo) {
+				count++;
+			}
 			if(typeof site[key] === "number") {
 				sum += site[key];
 				values.push(site[key]);
 			}
+		}
+		if(type === "count") {
+			return count;
 		}
 		if(type === "mean") {
 			return sum / values.length;

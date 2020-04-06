@@ -26,7 +26,7 @@ async function screenshot(url, fileSlug) {
 
 (async () => {
 	for(let site of fastestSites) {
-		if(site.rank <= 11) {
+		if(site.rank <= 11 || site.accessibilityRank <= 11) {
 			console.log( "Fetching", site.url );
 			let slug = site.url.replace(/https?\:\//, "");
 			let filename = slugify(slug, { lower: true, remove: /[:\/]/g });

@@ -46,49 +46,45 @@ css:
 
 <br>
 
-{% addToSampleSites %}
+## Performance Leaderboard Top 11
 
-Sites with Lighthouse scores greater than or equal to 90 are ordered by performance. The remainder are ordered randomly. Performance rankings are updated approximately once per week on Sunday. _Last generated {{ fastestSitesMeta.generated | newsDate }}_.
+Top 11 fastest sites shown here. See the full <a href="/docs/performance-leaderboard/">Performance Leaderboard (all {{ sites | length }} sites)</a>. Rankings are updated approximately once per week on Sunday. _Last generated {{ fastestSitesMeta.generated | newsDate }}_. {% addToSampleSites %}
 
 <br>
 
 <div class="lo sites-lo" style="--lo-margin-h: 2rem; --lo-margin-v: 1rem; --lo-stackpoint: 31.25em;">
 {%- for perf in fastestSites %}
 {%- set site = perf.url | findSiteDataByUrl(sites) %}
-{%- if site.disabled !== true and site.url and perf.lighthouseScore >= 0.9 %}
+{%- if site.disabled !== true and site.excludedFromLeaderboards !== true and site.url and perf.rank <= 11 %}
+	{%- set topKey = "performance" %}
 	{%- set showMetadata = true %}
 	{%- set showPerformanceMetadata = true %}
-	{%- set showScreenshot = perf.rank <= 11 %}
+	{%- set showScreenshot = true %}
 	{% include "site.njk" %}
 {%- endif %}
 {%- endfor %}
-	<div class="lo-c lo-fullwidth sites-divider"><strong>Remaining items are in random order</strong></div>
-{%- for perf in fastestSites | shuffle %}
+</div>
+
+See the full <a href="/docs/performance-leaderboard/">Performance Leaderboard</a>.
+
+## Accessibility Leaderboard Top 11
+
+Top 11 highest ranked sites shown here, ordered by Lighthouse accessibility scores with ties broken by fewest reported violations from a full axe accessibility scan. See the full <a href="/docs/accessibility-leaderboard/">Accessibility Leaderboard (all {{ sites | length }} sites)</a>. Rankings are updated approximately once per week on Sunday. _Last generated {{ fastestSitesMeta.generated | newsDate }}_. {% addToSampleSites %}
+
+<br>
+
+<div class="lo sites-lo" style="--lo-margin-h: 2rem; --lo-margin-v: 1rem; --lo-stackpoint: 31.25em;">
+{%- set accessibilityRanked = fastestSites | rankSortByNumericKey("accessibilityRank") %}
+{%- for perf in accessibilityRanked %}
 {%- set site = perf.url | findSiteDataByUrl(sites) %}
-{%- if site.disabled !== true and site.url and perf.lighthouseScore < 0.9 %}
+{%- if site.disabled !== true and site.excludedFromLeaderboards !== true and site.url and perf.accessibilityRank <= 11 %}
+	{%- set topKey = "accessibility" %}
 	{%- set showMetadata = true %}
-	{%- set showPerformanceMetadata = false %}
+	{%- set showAccessibilityMetadata = true %}
+	{%- set showScreenshot = true %}
 	{% include "site.njk" %}
 {%- endif %}
 {%- endfor %}
-	<div class="lo-c lo-fullwidth sites-divider"><strong>Pending</strong></div>
-{%- for key, site in sites -%}
-{%- set missingEntry = site.url | hasPerformanceEntryByUrl(fastestSites) %}
-{%- if not missingEntry and site.disabled !== true and site.url %}
-	{%- set showMetadata = true %}
-	{%- set showPerformanceMetadata = false %}
-	{% include "site.njk" %}
-{%- endif -%}
-{% endfor -%}
-	<div class="lo-c">{% addToSampleSites %}</div>
 </div>
 
-<div style="margin-top: 50vh"></div>
-
-#### Any site using AMP
-
-<div class="lo lo-carousel ampcarousel" style="--lo-c-minwidth: 13.125em">
-{%- for j in [1,2,3,4,5,6,7,8] %}
-	<div class="lo-c"><a>{% avatarlocalcache "twitter", "AMPhtml" %}A site using AMP</a></div>
-{%- endfor %}
-</div>
+See the full <a href="/docs/accessibility-leaderboard/">Accessibility Leaderboard</a>.

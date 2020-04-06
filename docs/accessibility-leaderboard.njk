@@ -1,0 +1,63 @@
+---
+eleventyNavigation:
+  parent: Built With Eleventy
+  key: Accessibility Leaderboard
+  order: 2
+ignoreFastestSite: true
+css:
+  - components/page-sites.css
+---
+<h1>Eleventy Accessibility Leaderboard</h1>
+
+{% callout "warn" %}<strong>Under construction</strong>{% endcallout %}
+
+<div><strong class="sites-val">{{ sites | length }}</strong> Sites</div>
+{%- set medianA11yScore = fastestSites | calc("median", "accessibilityScore") * 100 %}
+{%- set meanA11yScore = fastestSites | calc("mean", "accessibilityScore") * 100 %}
+{%- set totalPerfectLhScore = fastestSites | calc("count", "accessibilityScore", 1) %}
+<div><strong class="sites-val">{{ totalPerfectLhScore | round }}</strong> Perfect Lighthouse Scores</div>
+<div><strong class="sites-val">{{ medianA11yScore | round }}</strong> Median Accessibility Score</div>
+<div><strong class="sites-val">{{ meanA11yScore | round(1) }}</strong> Mean Accessibility Score</div>
+
+<br><br>
+
+{% addToSampleSites %}
+
+<p>Top 11 highest ranked sites shown here, ordered by Lighthouse accessibility scores with ties broken by fewest reported violations from a full axe accessibility scan. See the full <a href="/docs/accessibility-leaderboard/">Accessibility Leaderboard (all {{ sites | length }} sites)</a>. Rankings are updated approximately once per week on Sunday. <em>Last generated {{ fastestSitesMeta.generated | newsDate }}</em>.</p>
+
+
+<br>
+
+<div class="lo sites-lo" style="--lo-margin-h: 2rem; --lo-margin-v: 1rem; --lo-stackpoint: 31.25em;">
+{%- set accessibilityRanked = fastestSites | rankSortByNumericKey("accessibilityRank") %}
+{%- for perf in accessibilityRanked %}
+{%- set site = perf.url | findSiteDataByUrl(sites) %}
+{%- if site.disabled !== true and site.excludedFromLeaderboards !== true and site.url %}
+	{%- set topKey = "accessibility" %}
+	{%- set showMetadata = true %}
+	{%- set showAccessibilityMetadata = true %}
+	{%- set showScreenshot = perf.accessibilityRank <= 11 %}
+	{% include "site.njk" %}
+{%- endif %}
+{%- endfor %}
+	<div class="lo-c lo-fullwidth sites-divider"><strong>Pending</strong></div>
+{%- for key, site in sites -%}
+{%- set missingEntry = site.url | hasPerformanceEntryByUrl(fastestSites) %}
+{%- if not missingEntry and site.disabled !== true and site.excludedFromLeaderboards !== true and site.url %}
+	{%- set showMetadata = true %}
+	{%- set showAccessibilityMetadata = false %}
+	{% include "site.njk" %}
+{%- endif -%}
+{% endfor -%}
+	<div class="lo-c">{% addToSampleSites %}</div>
+</div>
+
+<div style="margin-top: 50vh"></div>
+
+<h4>Any site using AMP</h4>
+
+<div class="lo lo-carousel ampcarousel" style="--lo-c-minwidth: 13.125em">
+{%- for j in [1,2,3,4,5,6,7,8] %}
+	<div class="lo-c"><a>{% avatarlocalcache "twitter", "AMPhtml" %}A site using AMP</a></div>
+{%- endfor %}
+</div>

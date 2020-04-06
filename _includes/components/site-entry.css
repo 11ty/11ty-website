@@ -30,11 +30,20 @@
   }
 }
 
+.sites-perf-rank-same,
 .sites-perf-rank-new,
 .sites-perf-rank-pos,
 .sites-perf-rank-neg {
   margin-left: .5em;
   font-style: normal;
+}
+.sites-perf-rank-same {
+  color: #d23ed2;
+  font-weight: 900;
+}
+.sites-perf-rank-same:before {
+  content: "↔";
+  line-height: 1;
 }
 .sites-perf-rank-new {
   font-style: italic;
