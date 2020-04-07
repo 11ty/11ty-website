@@ -301,6 +301,16 @@ ${text.trim()}
 		return DateTime.fromJSDate(dateObj).toFormat("yyyy LLLL dd");
 	});
 
+	eleventyConfig.addFilter("objectFilterNot", (obj, compareKey) => {
+		let newObj = {};
+		for(let j in obj) {
+			if(!obj[j][compareKey]) {
+				newObj[j] = obj[j];
+			}
+		}
+		return newObj;
+	});
+
 	eleventyConfig.addFilter("rankSortByNumericKey", (arr, key) => {
 		return arr.filter(entry => true).sort((a, b) => {
 			return a[key] - b[key];

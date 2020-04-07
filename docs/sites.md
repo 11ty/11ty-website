@@ -12,31 +12,18 @@ css:
 
 <div class="lo" style="--lo-stackpoint: 30em; --lo-margin-v: 2em">
 	<div class="lo-c" style="flex-grow: 2" id="statistics"><!-- backwards compt for previous id link -->
-		<div><strong class="sites-val">{{ sites | length }}</strong> Sites</div>
+		<div><strong class="sites-val">{{ sites | objectFilterNot("disabled") | length }}</strong> Sites</div>
 		{%- set totalPerfectLhPerfScore = fastestSites | calc("count", "lighthouseScore", 1) %}
 		{%- set totalPerfectLhA11yScore = fastestSites | calc("count", "accessibilityScore", 1) %}
-		<div><strong class="sites-val">{{ totalPerfectLhPerfScore | round }}</strong> {% emoji "💯", "100" %}’s on Performance</div>
-		<div><strong class="sites-val">{{ totalPerfectLhA11yScore | round }}</strong> {% emoji "💯", "100" %}’s on Accessibility</div>
+		<div><strong class="sites-val">{{ totalPerfectLhPerfScore | round }}</strong> {% emoji "💯", "100" %}’s on <a href="/docs/performance-leaderboard/">Performance</a></div>
+		<div><strong class="sites-val">{{ totalPerfectLhA11yScore | round }}</strong> {% emoji "💯", "100" %}’s on <a href="/docs/accessibility-leaderboard/">Accessibility</a></div>
 		{%- set medianLhScore = fastestSites | calc("median", "lighthouseScore") * 100 %}
-		{%- set meanLhScore = fastestSites | calc("mean", "lighthouseScore") * 100 %}
 		<div><strong class="sites-val">{{ medianLhScore | round }}</strong> Median Lighthouse Score</div>
-		<div><strong class="sites-val">{{ meanLhScore | round(1) }}</strong> Mean Lighthouse Score</div>
 		{%- set medianSi = fastestSites | calc("median", "speedIndex") %}
-		{%- set meanSi = fastestSites | calc("mean", "speedIndex") %}
 		<div><strong class="sites-val">{{ medianSi | round | commaNumber }}</strong> Median Speed Index</div>
-		<div><strong class="sites-val">{{ meanSi | round | commaNumber }}</strong> Mean Speed Index</div>
-		<!-- {%- set medianFcp = fastestSites | calc("median", "firstContentfulPaint") %}
-		{%- set meanFcp = fastestSites | calc("mean", "firstContentfulPaint") %}
-		<div><strong class="sites-val">{{ medianFcp | round | commaNumber }}</strong> Median First Contentful Paint</div>
-		<div><strong class="sites-val">{{ meanFcp | round | commaNumber }}</strong> Mean First Contentful Paint</div> -->
-		<!-- {%- set medianFmp = fastestSites | calc("median", "firstMeaningfulPaint") %}
-		{%- set meanFmp = fastestSites | calc("mean", "firstMeaningfulPaint") %}
-		<div><strong class="sites-val">{{ medianFmp | round | commaNumber }}</strong> Median First Meaningful Paint</div>
-		<div><strong class="sites-val">{{ meanFmp | round | commaNumber }}</strong> Mean First Meaningful Paint</div> -->
 		{%- set medianA11yScore = fastestSites | calc("median", "accessibilityScore") * 100 %}
 		{%- set meanA11yScore = fastestSites | calc("mean", "accessibilityScore") * 100 %}
 		<div><strong class="sites-val">{{ medianA11yScore | round }}</strong> Median Accessibility Score</div>
-		<div><strong class="sites-val">{{ meanA11yScore | round(1) }}</strong> Mean Accessibility Score</div>
 	</div>
 	<div class="lo-c">
 		<h3 class="authors-hed"><a href="/docs/authors/">Most Sites Created</a></h3>

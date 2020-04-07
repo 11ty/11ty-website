@@ -50,7 +50,7 @@ Run `eleventy --serve` to start up a hot-reloading web server. Then open `http:/
 <!-- TODO some kind of aspect ratio? -->
 <div data-import="/imports/facepile.html"></div>
 
-View [all {{ sites | length }} sites](/docs/sites/).
+View [all {{ sites | objectFilterNot("disabled") | length }} sites](/docs/sites/).
 
 ## Don’t take my word for it {% emoji "🌈" %}
 

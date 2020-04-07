@@ -9,7 +9,7 @@ css:
 ---
 <h1>Eleventy Accessibility Leaderboard</h1>
 
-<div><strong class="sites-val">{{ sites | length }}</strong> Sites</div>
+<div><strong class="sites-val">{{ sites | objectFilterNot("disabled") | length }}</strong> Sites</div>
 {%- set medianA11yScore = fastestSites | calc("median", "accessibilityScore") * 100 %}
 {%- set meanA11yScore = fastestSites | calc("mean", "accessibilityScore") * 100 %}
 {%- set totalPerfectLhScore = fastestSites | calc("count", "accessibilityScore", 1) %}
@@ -21,10 +21,14 @@ css:
 
 {% addToSampleSites %}
 
-<p>Top 11 highest ranked sites shown here, ordered by lowest Lighthouse accessibility score (of 5 runs) with ties broken by fewest reported violations (and then most reported passes) from a full axe accessibility scan. Rankings are updated approximately once per week on Sunday. <em>Last generated {{ fastestSitesMeta.generated | newsDate }}</em>.</p>
+<p>Top 11 highest ranked sites shown here, ordered by lowest Lighthouse accessibility score (of 5 runs) with ties broken by fewest reported violations (and then most reported passes) from a full <a href="https://www.deque.com/axe/">axe accessibility scan</a>. Rankings are updated approximately once per week on Sunday. <em>Last generated {{ fastestSitesMeta.generated | newsDate }}</em>.</p>
 
+<blockquote>Please note that only 20% to 50% of all accessibility issues can automatically be detected.
+Manual testing is always required. For more information see <a href="https://dequeuniversity.com/curriculum/courses/testingmethods">Deque University</a>.</blockquote>
 
 <br>
+
+<hr>
 
 <div class="lo sites-lo" style="--lo-margin-h: 2rem; --lo-margin-v: 1rem; --lo-stackpoint: 31.25em;">
 {%- set accessibilityRanked = fastestSites | rankSortByNumericKey("accessibilityRank") %}
