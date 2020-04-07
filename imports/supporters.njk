@@ -5,7 +5,7 @@ permalink: /imports/supporters.html
 {% for supporter in supporters | supportersFacepile %}
 {%- if loop.first %}<div class="facepile-block">{% endif %}
 {%- set nameToSlug = supporter.name | slug | lower -%}
-	<a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}">{% avatarlocalcache "opencollective", nameToSlug, supporter.name %}</a>
+	<a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}" rel="nofollow">{% avatarlocalcache "opencollective", nameToSlug, supporter.name %}</a>
 {%- if loop.last or (loop.index0 % 40 == 0 and not loop.first) %}</div>{% endif %}
 {%- if not loop.first and loop.index0 % 40 == 0 and not loop.last %}<div class="facepile-block">{% endif %}
 {% endfor %}
