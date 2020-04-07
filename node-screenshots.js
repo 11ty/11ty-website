@@ -3,12 +3,24 @@ const slugify = require("slugify");
 const sharp = require("sharp");
 const fastestSites = require("./_data/fastestSites.json");
 
+async function pause(time) {
+  let p = new Promise(resolve => {
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });
+
+  await p;
+}
+
 async function screenshot(url, fileSlug) {
 	const browser = await puppeteer.launch();
 	const page = await browser.newPage();
 	await page.goto(url, {
     waitUntil: ["load", "networkidle0"]
   });
+  await pause(1000);
+
 	await page.setViewport({
 		width: 1024,
 		height: 768,

@@ -381,7 +381,7 @@ ${text.trim()}
 		}
 		let top = [];
 		for(let author in counts) {
-			if(counts[author] > 1) {
+			if(counts[author]) {
 				top.push({
 					name: author,
 					count: counts[author]

@@ -15,8 +15,8 @@ css:
 		<div><strong class="sites-val">{{ sites | length }}</strong> Sites</div>
 		{%- set totalPerfectLhPerfScore = fastestSites | calc("count", "lighthouseScore", 1) %}
 		{%- set totalPerfectLhA11yScore = fastestSites | calc("count", "accessibilityScore", 1) %}
-		<div><strong class="sites-val">{{ totalPerfectLhPerfScore | round }}</strong> Perfect {% emoji "💯", "100" %}’s on Performance</div>
-		<div><strong class="sites-val">{{ totalPerfectLhA11yScore | round }}</strong> Perfect {% emoji "💯", "100" %}’s on Accessibility</div>
+		<div><strong class="sites-val">{{ totalPerfectLhPerfScore | round }}</strong> {% emoji "💯", "100" %}’s on Performance</div>
+		<div><strong class="sites-val">{{ totalPerfectLhA11yScore | round }}</strong> {% emoji "💯", "100" %}’s on Accessibility</div>
 		{%- set medianLhScore = fastestSites | calc("median", "lighthouseScore") * 100 %}
 		{%- set meanLhScore = fastestSites | calc("mean", "lighthouseScore") * 100 %}
 		<div><strong class="sites-val">{{ medianLhScore | round }}</strong> Median Lighthouse Score</div>
@@ -39,7 +39,7 @@ css:
 		<div><strong class="sites-val">{{ meanA11yScore | round(1) }}</strong> Mean Accessibility Score</div>
 	</div>
 	<div class="lo-c">
-		<h3 class="authors-hed">Most Sites Created</h3>
+		<h3 class="authors-hed"><a href="/docs/authors/">Most Sites Created</a></h3>
 		<ul class="authors-list">
 		{%- for author in sites | topAuthors | head(11) %}
 			<li><code>×{{ author.count }}</code> <a href="https://twitter.com/{{ author.name }}">{% avatarlocalcache "twitter", author.name %}{{ author.name }}</a></li>
@@ -52,7 +52,7 @@ css:
 
 ## Performance Leaderboard Top 11
 
-Top 11 fastest sites shown here. See the full <a href="/docs/performance-leaderboard/">Performance Leaderboard (all {{ sites | length }} sites)</a>. Rankings are updated approximately once per week on Sunday. _Last generated {{ fastestSitesMeta.generated | newsDate }}_. {% addToSampleSites %}
+See the full [Performance Leaderboard](/docs/performance-leaderboard/). {% addToSampleSites %}
 
 <br>
 
@@ -69,11 +69,9 @@ Top 11 fastest sites shown here. See the full <a href="/docs/performance-leaderb
 {%- endfor %}
 </div>
 
-See the full <a href="/docs/performance-leaderboard/">Performance Leaderboard</a>.
-
 ## Accessibility Leaderboard Top 11
 
-Top 11 highest ranked sites shown here, ordered by Lighthouse accessibility scores with ties broken by fewest reported violations from a full axe accessibility scan. See the full <a href="/docs/accessibility-leaderboard/">Accessibility Leaderboard (all {{ sites | length }} sites)</a>. Rankings are updated approximately once per week on Sunday. _Last generated {{ fastestSitesMeta.generated | newsDate }}_. {% addToSampleSites %}
+See the full [Accessibility Leaderboard](/docs/accessibility-leaderboard/). {% addToSampleSites %}
 
 <br>
 
@@ -90,5 +88,3 @@ Top 11 highest ranked sites shown here, ordered by Lighthouse accessibility scor
 {%- endif %}
 {%- endfor %}
 </div>
-
-See the full <a href="/docs/accessibility-leaderboard/">Accessibility Leaderboard</a>.
