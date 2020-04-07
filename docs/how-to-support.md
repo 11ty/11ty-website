@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: Supporting Eleventy
-  order: 2
+  order: 3
 ignoreGitHubButtons: true
 ignoreSupporters: true
 ---
