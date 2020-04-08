@@ -1,9 +1,9 @@
 ---
 eleventyNavigation:
   key: Performance
-  parent: Advanced
+  parent: Debugging
   excerpt: How to analyze your Eleventy build to find bottlenecks.
-  order: 2
+  order: 1
 excludeFromSidebar: true
 layout: "layouts/docs.njk"
 ---
@@ -17,6 +17,8 @@ Eleventy by default will warn you if certain pieces of your build take longer th
 * [Shortcodes](/docs/shortcodes/)
 * [Data Files](/docs/data/)
 * Resolving `--watch` Dependencies (not subject to the 8% rule—these only show if longer than `500ms` as watch tasks are not counted as part of the traditional build time)
+
+This list is not considered to be exhaustive. It’s just what has been implemented thus far!
 
 ## Show All Performance Measurements
 
