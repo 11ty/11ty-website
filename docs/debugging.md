@@ -56,3 +56,6 @@ Read more at the [`debug` package documentation](https://www.npmjs.com/package/d
 
 The commands above limit the messages from `debug` to Eleventy specific things with `DEBUG=Eleventy*` but you can view all of the messages from any dependency with `DEBUG=*`.
 
+### Analyze Performance
+
+{% addedin "0.11.0" %} Read more about how to [use `debug` to analyze the performance of your Eleventy build](/docs/advanced-performance/).
