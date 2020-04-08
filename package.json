@@ -47,7 +47,6 @@
     "html-minifier": "4.0.0",
     "human-readable-numbers": "0.9.5",
     "hyperlink": "4.4.3",
-    "lighthouse": "5.6.0",
     "lodash.defer": "4.1.0",
     "luxon": "1.22.2",
     "markdown-it": "8.4.2",
