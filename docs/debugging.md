@@ -58,4 +58,4 @@ The commands above limit the messages from `debug` to Eleventy specific things w
 
 ### Analyze Performance
 
-{% addedin "0.11.0" %} Read more about how to [use `debug` to analyze the performance of your Eleventy build](/docs/advanced-performance/).
+{% addedin "0.11.0" %} Read more about how to [use `debug` to analyze the performance of your Eleventy build](/docs/debug-performance/).
