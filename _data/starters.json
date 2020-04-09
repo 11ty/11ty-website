@@ -119,4 +119,10 @@
 		"description": "11ty using webpack encore",
 		"author": "disjfa"
 	}
+	{
+		"url": "https://github.com/vktrwlt/pugsum",
+		"name": "Pugsum",
+		"description": "11ty starter kit using TailwindCSS, Pug, and Webpack",
+		"author": "vktrwlt"
+	}
 ]
