@@ -118,5 +118,11 @@
 		"name": "11ty-encore",
 		"description": "11ty using webpack encore",
 		"author": "disjfa"
+	},
+	{
+		"url": "https://github.com/nhoizey/pack11ty",
+		"name": "pack11ty",
+		"description": "An opinionated template for Eleventy projects, with auto collections, assets bundling (with Rollup and postcss), responsive images, Service Worker, etc.",
+		"author": "nhoizey"
 	}
 ]
