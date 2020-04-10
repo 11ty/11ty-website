@@ -53,6 +53,7 @@ The `fileSlug` variable is mapped from inputPath and is useful for creating your
 
 | `inputPath` | `page.fileSlug` Result |
 | --- | --- |
+| `"2018-01-01.md"` | `"2018-01-01"` |
 | `"2018-01-01-myFile.md"` | `"myFile"` |
 | `"myDir/myFile.md"` | `"myFile"` |
 
