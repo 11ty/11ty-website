@@ -1,7 +1,7 @@
 {
 	"name": "Webstoemp",
 	"url": "https://www.webstoemp.com/",
-	"description": "Jérôme Coupé is a web developer with a couple of blogposts detailing the move from Jekyll and how I use 11ty to build multilingual sites.",
+	"description": "Webstoemp is the online home of Jérôme Coupé, a Belgian front-end developer and teacher.",
 	"twitter": "jeromecoupe",
 	"source_url": "https://github.com/jeromecoupe/webstoemp"
 }
