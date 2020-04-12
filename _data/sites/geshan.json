@@ -3,6 +3,5 @@
 	"name": "Geshan’s Blog",
 	"description": "A blog about software engineering, devops and web development.",
 	"twitter": "geshan",
-	"authoredBy": ["geshan"],
 	"source_url": "https://github.com/geshan/geshan.github.com"
 }
