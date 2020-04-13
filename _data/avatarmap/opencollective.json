@@ -1421,6 +1421,24 @@
       "size": 2471
     }
   ],
+  "scott-mccracken": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "scott-mccracken",
+      "path": "img/avatar-local-cache/opencollective/scott-mccracken.jpg",
+      "size": 2028
+    }
+  ],
   "sebastian-murphy": [
     {
       "format": "jpeg",
