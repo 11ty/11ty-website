@@ -14,7 +14,7 @@ Eleventy is made possible by financial contributions from these lovely people:
 <div class="facepile supporters-facepile lo">
 {% for supporter in supporters %}{% if supporter.role === "BACKER" -%}
 {%- set nameToSlug = supporter.name | slug | lower -%}
-	<div class="lo-c">
+  <div class="lo-c">
     <a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt supporters-link" rel="nofollow">{% avatarlocalcache "opencollective", nameToSlug, supporter.name %}{{ supporter.name }}</a>
     <span class="lo lo-inline">
         <span class="lo-c lo-nocontentwrap supporters-hearts">{% supporterAmount supporter.totalAmountDonated %}</span>

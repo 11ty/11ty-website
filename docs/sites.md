@@ -29,7 +29,7 @@ css:
 		<h3 class="authors-hed"><a href="/docs/authors/">Most Sites Created</a></h3>
 		<ul class="authors-list">
 		{%- for author in sites | topAuthors | head(11) %}
-			<li><code>×{{ author.count }}</code> <a href="https://twitter.com/{{ author.name }}">{% avatarlocalcache "twitter", author.name %}{{ author.name }}</a></li>
+			<li><code>×{{ author.count }}</code> <a href="/authors/{{ author.name | slug }}/">{% avatarlocalcache "twitter", author.name %}{{ author.name }}</a></li>
 		{%- endfor %}
 		</ul>
 	</div>

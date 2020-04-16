@@ -3,6 +3,7 @@ eleventyNavigation:
   parent: Built With Eleventy
   key: Eleventy Authors
   order: 3
+layout: layouts/docs.njk
 css:
   - components/page-sites.css
 ---
@@ -10,6 +11,6 @@ css:
 
 <ul class="authors-list">
 {%- for author in sites | topAuthors %}
-	<li><code>×{{ author.count }}</code> <a href="https://twitter.com/{{ author.name }}">{% avatarlocalcache "twitter", author.name %}{{ author.name }}</a></li>
+	<li><code>×{{ author.count }}</code> <a href="/authors/{{ author.name | slug }}/">{% avatarlocalcache "twitter", author.name %}{{ author.name }}</a></li>
 {%- endfor %}
 </ul>

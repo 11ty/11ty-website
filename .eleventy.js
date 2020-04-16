@@ -9,6 +9,7 @@ const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const addedInLocalPlugin = require("./config/addedin");
 const minificationLocalPlugin = require("./config/minification");
+const getAuthors = require("./config/getAuthorsFromSites");
 
 const cfg = require("./_data/config.js");
 const slugify = require('slugify');
@@ -343,15 +344,34 @@ ${text.trim()}
 		}
 	});
 
+	eleventyConfig.addFilter("findBy", (data, key, value) => {
+		return data.filter(entry => {
+			if(!key || !value || !entry[key]) {
+				return false;
+			}
+
+			let valueLower = value.toLowerCase();
+			let dataLower = entry[key].toLowerCase();
+			if(valueLower === dataLower) {
+				return true;
+			}
+			return false;
+		});
+	});
+
 	eleventyConfig.addFilter("findSiteDataByUrl", (url, sites) => {
-		for(let key in sites) {
-			let site = sites[key];
+		let sitesArr = sites;
+		if(!Array.isArray(sitesArr)) {
+			sitesArr = Object.values(sites);
+		}
+
+		for(let site of sitesArr) {
 			if(!url || !site.url) {
 				continue;
 			}
 			let lowerUrl = url.toLowerCase();
 			let siteUrl = site.url.toLowerCase();
-			if(lowerUrl === siteUrl || lowerUrl === `${siteUrl}/`) {
+			if(lowerUrl === siteUrl || lowerUrl === `${siteUrl}/` || `${lowerUrl}/` === siteUrl) {
 				return site;
 			}
 		}
@@ -372,23 +392,17 @@ ${text.trim()}
 		return false;
 	});
 
+	eleventyConfig.addFilter("authors", getAuthors);
+
 	eleventyConfig.addFilter("topAuthors", (sites) => {
 		let counts = {};
-		for(let key in sites) {
-			let site = sites[key];
-			let authorsNames = site.authoredBy && site.authoredBy.length ? site.authoredBy : site.twitter;
-			if(authorsNames && !site.disabled) {
-				if(!Array.isArray(authorsNames)) {
-					authorsNames = [authorsNames];
-				}
-				for(let name of authorsNames) {
-					if(!counts[name]) {
-						counts[name] = 0;
-					}
-					counts[name]++;
-				}
+		getAuthors(sites, name => {
+			if(!counts[name]) {
+				counts[name] = 0;
 			}
-		}
+			counts[name]++;
+		});
+
 		let top = [];
 		for(let author in counts) {
 			if(counts[author]) {

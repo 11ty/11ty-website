@@ -118,6 +118,11 @@ async function fetchAvatarsForDataSource(sourceName, entries, fetchCallbacks) {
 		if(siteData.twitter) {
 			twitters.add(siteData.twitter.toLowerCase());
 		}
+		if(siteData.authoredBy) {
+			for(let author of siteData.authoredBy) {
+				twitters.add(author.toLowerCase());
+			}
+		}
 	}
 
 	promises.push(fetchAvatarsForDataSource("twitter", twitters, {
