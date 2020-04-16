@@ -311,9 +311,15 @@ ${text.trim()}
 		return newObj;
 	});
 
-	eleventyConfig.addFilter("rankSortByNumericKey", (arr, key) => {
+	eleventyConfig.addFilter("rankSortByNumericKey", (arr, ...keys) => {
 		return arr.filter(entry => true).sort((a, b) => {
-			return a[key] - b[key];
+			let aSum = 0;
+			let bSum = 0;
+			for(let key of keys) {
+				aSum += a[key];
+				bSum += b[key];
+			}
+			return aSum - bSum;
 		});
 	});
 
