@@ -18,7 +18,7 @@ html{
 }
 body {
 	font-family: system-ui, -apple-system, sans-serif;
-	color: #222;
+	color: #383838;
 	margin: 0;
 }
 .elv-docs body {
@@ -192,7 +192,7 @@ main .elv-toc + h1 {
 h2 {
 	font-size: 2.222222222222em; /* 40px /18 */
 	border-bottom: 1px solid #ddd;
-	margin: 1em 0 .25em;
+	margin: 2em 0 .25em;
 	line-height: 1.1;
 }
 h3 {
@@ -238,7 +238,7 @@ ul {
 	padding: 0 1em;
 }
 li {
-	padding: .25em 0;
+	padding: .5em 0;
 	line-height: 1.4;
 }
 li ul {
@@ -285,7 +285,7 @@ li li {
 
 /* Layout */
 .elv-layout {
-	padding: 1rem;
+	padding: 3rem;
 	margin: 0 auto;
 	max-width: 42rem;
 	clear: both;
