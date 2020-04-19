@@ -24,7 +24,7 @@ css:
 		<div><strong class="sites-val">{{ medianA11yScore | round }}</strong> Median Accessibility Score</div>
 	</div>
 	<div class="lo-c">
-		<h3 class="authors-hed"><a href="/docs/authors/">Most Sites Created</a></h3>
+		<h3 class="authors-hed"><a href="/authors/">Most Sites Created</a></h3>
 		<ul class="authors-list">
 		{%- for author in sites | topAuthors | head(11) %}
 			<li><code>×{{ author.count }}</code> <a href="/authors/{{ author.name | slug }}/">{% avatarlocalcache "twitter", author.name %}{{ author.name }}</a></li>
