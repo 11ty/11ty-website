@@ -15,15 +15,16 @@ css:
 ---
 {%- set twitterUrl = "https://twitter.com/" + author.name %}
 {%- set supporter = supporters | findBy("twitter", twitterUrl) | last -%}
+{%- set displayName = supporter.name or author.name %}
 
-# {{ supporter.name or author.name }}
+# {{ displayName }}
 
 * <a href="{{ twitterUrl }}">{% avatarlocalcache "twitter", author.name %}{{ author.name }}</a> on Twitter
 {%- if supporter %}
 * <a href="{{ supporter.profile }}" class="elv-externalexempt supporters-link" rel="nofollow"><strong>{% if supporter.tier and supporter.isActive %} {% emoji "📅" %} Monthly{% endif %} Eleventy Contributor</strong> on Open Collective</a> 🎈
 {%- endif %}
 
-## Eleventy Sites
+### {{ displayName }} Built These Eleventy Sites:
 
 <div class="lo sites-lo" style="--lo-margin-h: 2rem; --lo-margin-v: 1rem; --lo-stackpoint: 31.25em;">
 {%- for site in author.sites %}
