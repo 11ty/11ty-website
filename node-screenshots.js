@@ -40,8 +40,8 @@ async function screenshot(url, fileSlug) {
 
 (async () => {
 	for(let site of fastestSites) {
-		if(site.rank <= 11 || site.accessibilityRank <= 11) {
-			console.log( "Fetching", site.url );
+		if(site.rank <= 11 || site.accessibilityRank <= 11 || (site.rank + site.accessibilityRank <= 100)) {
+			console.log( "Fetching", site.url, `Performance #${site.rank} Accessibility #${site.accessibilityRank}` );
 			let slug = site.url.replace(/https?\:\//, "");
 			let filename = slugify(slug, { lower: true, remove: /[:\/]/g });
 			await screenshot(site.url, filename);

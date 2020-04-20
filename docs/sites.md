@@ -46,8 +46,8 @@ The combined Eleventy Leaderboard finds the sites that scored the best across bo
 {%- set combinedRanked = fastestSites | rankSortByNumericKey("rank", "accessibilityRank") %}
 {%- for perf in combinedRanked %}
 {%- set site = perf.url | findSiteDataByUrl(sites) %}
-{%- if site.disabled !== true and site.excludedFromLeaderboards !== true and site.url and perf.accessibilityRank <= 11 %}
-	{%- set topKey = "accessibility" %}
+{%- if site.disabled !== true and site.excludedFromLeaderboards !== true and site.url and loop.index0 < 11 %}
+	{%- set topKey = true %}
 	{%- set showMetadata = true %}
 	{%- set showPerformanceMetadata = true %}
 	{%- set showAccessibilityMetadata = true %}
