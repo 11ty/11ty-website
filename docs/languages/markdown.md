@@ -105,7 +105,18 @@ This will not be a code block in a markdown file.
 });
 ```
 
-If you do need to disable indented code blocks, you can do so by configuring your `markdown-it` instance to disable the `code` rule.
+If you still wish to indent your template literals, you can use [outdent](https://www.npmjs.com/package/outdent) to strip each line of indentation before handing it off to the renderer.
+
+```js
+// ✅ This is also acceptable
+eleventyConfig.addShortcode("alsoGoodShortcode", function() {
+    return outdent`
+    This will not be a code block in a markdown file.
+`;
+});
+```
+
+If your content indentation is still irregular and you do need to disable indented code blocks, you can do so by configuring your `markdown-it` instance to disable the `code` rule (following the "Set your own library instance" procedure above).
 
 ```js
 let markdownLib = markdownIt(options).disable('code');
