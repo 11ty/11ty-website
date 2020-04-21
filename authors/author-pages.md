@@ -22,6 +22,9 @@ css:
 * <a href="{{ twitterUrl }}">{% avatarlocalcache "twitter", author.name %}{{ author.name }}</a> on Twitter
 {%- if supporter %}
 * <a href="{{ supporter.profile }}" class="elv-externalexempt supporters-link" rel="nofollow"><strong>{% if supporter.tier and supporter.isActive %} {% emoji "📅" %} Monthly{% endif %} Eleventy Contributor</strong> on Open Collective</a> 🎈
+{%- else %}
+* <a href="https://opencollective.com/11ty">Not yet <strong>Supporting Eleventy</strong> on Open Collective.</a>
+* <em>Already a supporter but it’s not showing here? Make sure your Twitter account is listed on your Open Collective Profile.</em>
 {%- endif %}
 
 ### {{ displayName }} Built These Eleventy Sites:
@@ -32,6 +35,7 @@ css:
   {%- set showMetadata = true %}
   {%- set showPerformanceMetadata = true %}
   {%- set showAccessibilityMetadata = true %}
+  {%- set showRankOnly = true %}
   {% include "site.njk" %}
 {%- endfor %}
 </div>

@@ -22,24 +22,15 @@ headerClass: elv-header-default
 	<h2 id="eleventy-is-supported-by">Eleventy is <a href="/docs/supporters/">supported</a> by… <a class="direct-link" href="#eleventy-is-supported-by">#</a></h2>
 	{% include "supporters.njk" %}
 {% endif %}
+{% if ignoreFastestSite %}{% else %}
+	<h3 id="featured-sites"><a href="/docs/sites/">Eleventy Leaderboards</a> <a class="direct-link" href="#featured-sites">#</a></h3>
+	{% include "top-on-leaderboard.njk" %}
+{% endif %}
 {%- if ignoreGitHubButtons %}{% else %}
 	<div class="elv-callout">
 		{% include "star-on-github.njk" %}
 	</div>
 {%- endif %}
-{% if ignoreFastestSite %}{% else %}
-	<h2 id="top-fastest-sites">Eleventy’s <a href="/docs/sites/">Performance Leaderboard</a> <a class="direct-link" href="#top-fastest-sites">#</a></h2>
-	<div class="lo sites-lo sites-lo-footer" style="--lo-stackpoint: 30em; --lo-margin-v: 2em">
-	{%- for perf in fastestSites | head(2) %}
-		{%- set site = perf.url | findSiteDataByUrl(sites) %}
-		{%- if site.disabled !== true and site.url %}
-			{%- set showMetadata = true %}
-			{%- set showPerformanceMetadata = true %}
-			{% include "site.njk" %}
-		{%- endif %}
-	{%- endfor %}
-	</div>
-{% endif %}
 {#
 {%- if ignoreFooterTestimonial -%}
 {%- elseif page.url and page.url != "/" and not page.url.endsWith("/docs/") and not page.url.endsWith("/docs/testimonials/")  %}
