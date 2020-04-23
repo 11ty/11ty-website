@@ -1,10 +1,9 @@
 ---
-subtitle: Quick Tips
-menuSectionName: docs-quicktips
-tags:
-    - docs-getting-started
+eleventyNavigation:
+  parent: Getting Started
+  key: Quick Tips
+  order: 5
 ---
-
 ## Quick Tips
 
 {% for tip in collections.quicktipssorted %}
