@@ -359,6 +359,24 @@
       "size": 1852
     }
   ],
+  "daily-dev-tips": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "daily-dev-tips",
+      "path": "img/avatar-local-cache/opencollective/daily-dev-tips.jpg",
+      "size": 1542
+    }
+  ],
   "dan-urbanowicz": [
     {
       "format": "jpeg",
@@ -519,6 +537,24 @@
       "name": "dimitrios-grammatikogiannis",
       "path": "img/avatar-local-cache/opencollective/dimitrios-grammatikogiannis.jpg",
       "size": 1854
+    }
+  ],
+  "djame-goldston": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 80,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "djame-goldston",
+      "path": "img/avatar-local-cache/opencollective/djame-goldston.jpg",
+      "size": 2689
     }
   ],
   "doxford": [
@@ -849,7 +885,7 @@
     {
       "format": "jpeg",
       "width": 73,
-      "height": 73,
+      "height": 83,
       "space": "srgb",
       "channels": 3,
       "depth": "uchar",
@@ -860,7 +896,7 @@
       "extension": "jpg",
       "name": "joel-krause",
       "path": "img/avatar-local-cache/opencollective/joel-krause.jpg",
-      "size": 1911
+      "size": 2087
     }
   ],
   "john-sj-anderson": [
@@ -1515,7 +1551,7 @@
     {
       "format": "jpeg",
       "width": 73,
-      "height": 40,
+      "height": 73,
       "space": "srgb",
       "channels": 3,
       "depth": "uchar",
@@ -1526,7 +1562,7 @@
       "extension": "jpg",
       "name": "suominettikasinot24.com",
       "path": "img/avatar-local-cache/opencollective/suominettikasinot24.com.jpg",
-      "size": 1206
+      "size": 627
     }
   ],
   "takuya-fukuju": [
