@@ -2972,6 +2972,39 @@
       "size": 1435
     }
   ],
+  "fontspeed": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "fontspeed",
+      "path": "img/avatar-local-cache/twitter/fontspeed.webp",
+      "size": 640
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "fontspeed",
+      "path": "img/avatar-local-cache/twitter/fontspeed.jpg",
+      "size": 1144
+    }
+  ],
   "frontend_weekly": [
     {
       "format": "webp",
