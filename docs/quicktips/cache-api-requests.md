@@ -21,7 +21,7 @@ npm install @11ty/eleventy-cache-assets
 
 ## Example
 
-This code is currently in use on the Eleventy web site to display GitHub stars in the footer. Check out the [full source code](https://github.com/11ty/11ty-website/blob/bbf133489b09b2a99857228aa11b7578fdbae44e/_data/github.js).
+This code is currently in use on the Eleventy web site to display GitHub stars in the footer. Check out the [full source code](https://github.com/11ty/11ty-website/blob/768b97fb27543e3139fe53dfb19cdeafb12e3d1c/_data/github.js).
 
 {% codetitle "_data/github.js" %}
 
