@@ -1,13 +1,6 @@
 // https://opencollective.com/11ty/members/all.json
-const fetch = require("node-fetch");
 const fs = require("fs-extra");
-const flatcache = require("flat-cache");
-const path = require("path");
-
-function getCacheKey() {
-	let date = new Date();
-	return `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()}-${date.getHours()}`;
-}
+const Cache = require("@11ty/eleventy-cache-assets");
 
 function isMonthlyBacker(backer) {
 	return backer.role === "BACKER" && backer.tier && backer.isActive;
@@ -33,45 +26,38 @@ function getUniqueNonMonthlyEntries(backers) {
 }
 
 module.exports = async function() {
-	let cache = flatcache.load("opencollective-backers", path.resolve("./_datacache"));
-	let key = getCacheKey();
-	let cachedData = cache.getKey(key);
-	if(!cachedData || process.env.ELEVENTY_AVATARS) {
-		console.log( "Fetching new opencollective backers…" );
-		try {
-			let newDataJson = await fetch("https://opencollective.com/11ty/members/all.json").then(res => res.json());
+	try {
+		let url = `https://opencollective.com/11ty/members/all.json`;
+		let json = await Cache(url, {
+			duration: process.env.ELEVENTY_AVATARS ? "0s" : "1d",
+			type: "json"
+		});
 
-			newDataJson = getUniqueNonMonthlyEntries(newDataJson);
+		json = getUniqueNonMonthlyEntries(json);
 
-			newDataJson.sort(function(a, b) {
-				// Sort by total amount donated (desc)
-				return b.totalAmountDonated - a.totalAmountDonated;
-			});
+		json.sort(function(a, b) {
+			// Sort by total amount donated (desc)
+			return b.totalAmountDonated - a.totalAmountDonated;
+		});
 
-			// is monthly backer or has no other monthly backer profile
-			let allBackers = newDataJson.filter(() => true);
-			newDataJson = newDataJson.filter(backer => isMonthlyBacker(backer) || !hasMonthlyBackerProfile(allBackers, backer));
+		// is monthly backer or has no other monthly backer profile
+		let allBackers = json.filter(() => true);
+		json = json.filter(backer => isMonthlyBacker(backer) || !hasMonthlyBackerProfile(allBackers, backer));
 
-			await fs.writeFile("./_data/supporters.json", JSON.stringify(newDataJson, null, 2));
+		await fs.writeFile("./_data/supporters.json", JSON.stringify(json, null, 2));
 
-			let backers = newDataJson.filter(function(entry) {
-				return entry.role.toLowerCase() === "backer";
-			}).length;
+		let backers = json.filter(function(entry) {
+			return entry.role.toLowerCase() === "backer";
+		}).length;
 
-			let newData = {
-				backers: backers
-			};
+		return {
+			backers: backers
+		};
+	} catch(e) {
+		console.log( "Failed, returning 0 opencollective backers.", e );
+		return {
+			backers: 0
+		};
 
-			cache.setKey(key, newData);
-			cache.save();
-			return newData;
-		} catch(e) {
-			console.log( "Failed, returning 0 opencollective backers.", e );
-			return {
-				backers: 0
-			};
-		}
 	}
-
-	return cachedData;
 };

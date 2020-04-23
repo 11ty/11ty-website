@@ -1,41 +1,22 @@
-const fetch = require("node-fetch");
-const flatcache = require("flat-cache");
-const path = require("path");
-
-function getCacheKey() {
-	let date = new Date();
-	return `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()}`;
-}
+const Cache = require("@11ty/eleventy-cache-assets");
 
 module.exports = async function() {
-	let cache = flatcache.load("github-stargazers", path.resolve("./_datacache"));
-	let key = getCacheKey();
-	let cachedData = cache.getKey(key);
-	if(!cachedData) {
-		console.log( "Fetching new github stargazers count…" );
+	try {
 		// https://developer.github.com/v3/repos/#get
-		try {
-			let newData = await fetch("https://api.github.com/repos/11ty/eleventy")
-				.then(res => res.json())
-				.then(json => {
-					return {
-						stargazers: json.stargazers_count
-					};
-				});
+		let json = await Cache("https://api.github.com/repos/11ty/eleventy", {
+			duration: "1d",
+			type: "json"
+		});
 
-			cache.setKey(key, newData);
-			cache.save();
-			return newData;
-		} catch(e) {
-			console.log( "Failed, returning 0" );
-			return {
-				stargazers: 0
-			};
-		}
+		return {
+			stargazers: json.stargazers_count
+		};
+	} catch(e) {
+		console.log( "Failed getting GitHub stargazers count, returning 0" );
+		return {
+			stargazers: 0
+		};
 	}
-	// console.log( `Using cached github stargazers count (${key})` );
-
-	return cachedData;
 };
 
 /* {
