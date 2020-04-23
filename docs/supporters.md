@@ -12,7 +12,7 @@ css:
 Eleventy is made possible by financial contributions from these lovely people:
 
 <div class="facepile supporters-facepile lo">
-{% for supporter in supporters %}{% if supporter.role === "BACKER" -%}
+{% for supporter in opencollective.supporters %}{% if supporter.role === "BACKER" -%}
 {%- set nameToSlug = supporter.name | slug | lower -%}
   <div class="lo-c">
     <a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt supporters-link" rel="nofollow">{% avatarlocalcache "opencollective", nameToSlug, supporter.name %}{{ supporter.name }}</a>

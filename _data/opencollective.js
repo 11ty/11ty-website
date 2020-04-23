@@ -44,20 +44,19 @@ module.exports = async function() {
 		let allBackers = json.filter(() => true);
 		json = json.filter(backer => isMonthlyBacker(backer) || !hasMonthlyBackerProfile(allBackers, backer));
 
-		await fs.writeFile("./_data/supporters.json", JSON.stringify(json, null, 2));
-
 		let backers = json.filter(function(entry) {
 			return entry.role.toLowerCase() === "backer";
 		}).length;
 
 		return {
+			supporters: json,
 			backers: backers
 		};
 	} catch(e) {
 		console.log( "Failed, returning 0 opencollective backers.", e );
 		return {
+			supporters: [],
 			backers: 0
 		};
-
 	}
 };
