@@ -40,9 +40,11 @@ css:
 
 ## [Combined Leaderboard](/leaderboard/combined/)
 
+Rankings are updated approximately once per week on Sunday. <em>Last generated {{ fastestSitesMeta.generated | newsDate }}</em>. See the full [Combined Leaderboard](/leaderboard/combined/).
+
 <div class="lo sites-lo" style="--lo-stackpoint: 30em; --lo-margin-v: 2em">
 {%- set combinedRanked = fastestSites | rankSortByNumericKey("rank", "accessibilityRank") %}
-{%- for perf in combinedRanked | head(1) %}
+{%- for perf in combinedRanked | head(2) %}
 {%- set site = perf.url | findSiteDataByUrl(sites) %}
 	{%- set topKey = true %}
 	{%- set showMetadata = true %}
@@ -53,13 +55,14 @@ css:
 {%- endfor %}
 </div>
 
-* See the full [Combined Leaderboard](/leaderboard/combined/)
 
 ## [Performance Leaderboard](/leaderboard/perf/)
 
+Rankings are updated approximately once per week on Sunday. <em>Last generated {{ fastestSitesMeta.generated | newsDate }}</em>. See the full [Performance Leaderboard](/leaderboard/perf/).
+
 <div class="lo sites-lo" style="--lo-stackpoint: 30em; --lo-margin-v: 2em">
 {%- set perfRanked = fastestSites | rankSortByNumericKey("rank") %}
-{%- for perf in perfRanked | head(1) %}
+{%- for perf in perfRanked | head(2) %}
 {%- set site = perf.url | findSiteDataByUrl(sites) %}
 	{%- set topKey = "performance" %}
 	{%- set showMetadata = true %}
@@ -69,13 +72,14 @@ css:
 {%- endfor %}
 </div>
 
-* See the full [Performance Leaderboard](/leaderboard/perf/)
 
 ## [Accessibility Leaderboard](/leaderboard/a11y/)
 
+Rankings are updated approximately once per week on Sunday. <em>Last generated {{ fastestSitesMeta.generated | newsDate }}</em>. See the full [Accessibility Leaderboard](/leaderboard/a11y/).
+
 <div class="lo sites-lo" style="--lo-stackpoint: 30em; --lo-margin-v: 2em">
 {%- set a11yRanked = fastestSites | rankSortByNumericKey("accessibilityRank") %}
-{%- for perf in a11yRanked | head(1) %}
+{%- for perf in a11yRanked | head(2) %}
 {%- set site = perf.url | findSiteDataByUrl(sites) %}
 	{%- set topKey = "accessibility" %}
 	{%- set showMetadata = true %}
@@ -84,5 +88,3 @@ css:
 	{% include "site.njk" %}
 {%- endfor %}
 </div>
-
-* See the full [Accessibility Leaderboard](/leaderboard/a11y/)
