@@ -88,3 +88,7 @@ Rankings are updated approximately once per week on Sunday. <em>Last generated {
 	{% include "site.njk" %}
 {%- endfor %}
 </div>
+
+## [Random Leaderboard](/leaderboard/random/)
+
+The random Eleventy Leaderboard shows the sites that exist that were built with Eleventy in at-most as random an order as JavaScript’s capability for randomness allows. Rankings are updated whenever this site is built. <em>Last generated {{ config.now | newsDate }}</em>. See the full [Random Leaderboard](/leaderboard/random/).

@@ -1,0 +1,24 @@
+---
+eleventyNavigation:
+  parent: Built With Eleventy
+  key: Random Leaderboard
+  order: 4
+ignoreFastestSite: true
+excludeFromSidebar: true
+css:
+  - components/page-sites.css
+---
+<h1>Eleventy Random Leaderboard Top {{ sites | objectFilterNot("disabled") | length }} Sites</h1>
+
+<p>The random Eleventy Leaderboard shows the sites that exist that were built with Eleventy in at-most as random an order as JavaScript’s capability for randomness allows. There are {{ sites | objectFilterNot("disabled") | length }} sites shown here. Rankings are updated whenever this site is built. <em>Last generated {{ config.now | newsDate }}</em>. {% addToSampleSites %}</p>
+
+<br>
+
+<div class="lo sites-lo" style="--lo-margin-h: 2rem; --lo-margin-v: 1rem; --lo-stackpoint: 31.25em;">
+{%- for key, site in sites %}
+{%- if site.disabled !== true and site.url %}
+	{%- set topKey = true %}
+	{% include "site.njk" %}
+{%- endif %}
+{%- endfor %}
+</div>
