@@ -118,5 +118,11 @@
 		"name": "11ty-encore",
 		"description": "11ty using webpack encore",
 		"author": "disjfa"
-	}
+	},
+	{
+		"url": "https://github.com/mattwaler/static-starter",
+		"name": "static-starter",
+		"description": "A static site starting template built with 11ty, Svelte, TailwindCSS, and Rollup for pragmatic and simple FED.",
+		"author": "mattwaler"
+	},
 ]
