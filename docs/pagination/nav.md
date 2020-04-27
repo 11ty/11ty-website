@@ -62,37 +62,26 @@ To create an accessible navigation structure, we want to do our research first!
 
 Alright, you definitely read all of those right? 😇 Here’s some accessible code you definitely would have written yourself after reading those wonderful resources:
 
-{% codetitle "Nunjucks", "Syntax" %}
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    Template language:
+    <a href="#paged-nav-starter-njk" id="paged-nav-starter-njk-btn" role="tab" aria-controls="paged-nav-starter-njk" aria-selected="true">Nunjucks</a>
+    <a href="#paged-nav-starter-11tyjs" id="paged-nav-starter-11tyjs-btn" role="tab" aria-controls="paged-nav-starter-11tyjs" aria-selected="false">11ty.js</a>
+  </div>
+  <div id="paged-nav-starter-njk" role="tabpanel" aria-labelledby="paged-nav-starter-njk-btn">
+    {%- codetitle "starter.njk" %}
+    {%- highlight "html" %}
+    {%- include "examples/pagination/nav/starter.njk" %}
+    {%- endhighlight %}
+  </div>
+  <div id="paged-nav-starter-11tyjs" role="tabpanel" aria-labelledby="paged-nav-starter-11tyjs-btn">
+    {%- codetitle "starter.11ty.js" %}
+    {%- highlight "js" %}
+    {%- include "examples/pagination/nav/starter.11ty.js" %}
+    {%- endhighlight %}
+  </div>
+</seven-minute-tabs>
 
-{% raw %}
-```html
-<nav aria-labelledby="my-pagination">
-  <h2 id="my-pagination">This is my Pagination</h2>
-  <ol>
-{%- for pageEntry in pagination.pages %}
-    <li><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>Page {{ loop.index }}</a></li>
-{%- endfor %}
-  </ol>
-</nav>
-```
-{% endraw %}
-
-{% codetitle "JavaScript", "Syntax" %}
-
-{% raw %}
-```js
-exports.render = function(data) {
-  return `<nav aria-labelledby="my-pagination">
-    <h2 id="my-pagination">This is my Pagination</h2>
-    <ol>
-    ${data.pagination.pages.map(function (item, index) {
-      return `<li><a href="${data.pagination.hrefs[index]}" ${data.pagination.hrefs[index] ? 'aria-current="page"' : "" }>Page ${index + 1}</a></li>`;
-    }).join("");}
-    </ol>
-  </nav>`;
-};
-```
-{% endraw %}
 * `pagination.pages` is {% addedin "0.10.0" %}. For previous versions, iterate over `pagination.hrefs` (although you won’t have access to the paginated items to show data about the pages).
 
 For our example, this code will output the following markup for our example (on the first page):
@@ -194,41 +183,25 @@ You’ll probably also want to add some kind of visual styling to indicate that 
 
 Note that if the current page (`page.url`) is the first or last in the set, we won’t output links.
 
-{% codetitle "Nunjucks", "Syntax" %}
-
-{% raw %}
-```html/3,7
-<nav aria-labelledby="my-pagination">
-  <h2 id="my-pagination">This is my Pagination</h2>
-  <ol>
-    <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
-{%- for pageEntry in pagination.pages %}
-    <li><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>Page {{ loop.index }}</a></li>
-{%- endfor %}
-    <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
-  </ol>
-</nav>
-```
-{% endraw %}
-
-{% codetitle "JavaScript", "Syntax" %}
-
-{% raw %}
-```js
-exports.render = function(data) {
-  return `<nav aria-labelledby="my-pagination">
-    <h2 id="my-pagination">This is my Pagination</h2>
-    <ol>
-      <li>${data.pagination.href.previous ? `<a href="${data.pagination.href.previous}">Previous</a>` : `Previous`}</li>
-      ${data.pagination.pages.map(function (item, index) {
-        return `<li><a href="${data.pagination.hrefs[index]}" ${data.pagination.hrefs[index] ? 'aria-current="page"' : "" }>Page ${index + 1}</a></li>`;
-      }).join("");}
-      <li>${data.pagination.href.next ? `<a href="${data.pagination.href.next}">Next</a>` : `Next`}</li>
-    </ol>
-  </nav>`;
-};
-```
-{% endraw %}
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    Template language:
+    <a href="#paged-nav-nextprev-njk" id="paged-nav-nextprev-njk-btn" role="tab" aria-controls="paged-nav-nextprev-njk" aria-selected="true">Nunjucks</a>
+    <a href="#paged-nav-nextprev-11tyjs" id="paged-nav-nextprev-11tyjs-btn" role="tab" aria-controls="paged-nav-nextprev-11tyjs" aria-selected="false">11ty.js</a>
+  </div>
+  <div id="paged-nav-nextprev-njk" role="tabpanel" aria-labelledby="paged-nav-nextprev-njk-btn">
+    {%- codetitle "nextprev.njk" %}
+    {%- highlight "html 3,7" %}
+    {%- include "examples/pagination/nav/nextprev.njk" %}
+    {%- endhighlight %}
+  </div>
+  <div id="paged-nav-nextprev-11tyjs" role="tabpanel" aria-labelledby="paged-nav-nextprev-11tyjs-btn">
+    {%- codetitle "nextprev.11ty.js" %}
+    {%- highlight "js" %}
+    {%- include "examples/pagination/nav/nextprev.11ty.js" %}
+    {%- endhighlight %}
+  </div>
+</seven-minute-tabs>
 
 * `pagination.href.previous` and `pagination.href.next` are {% addedin "0.10.0" %}. Use `pagination.previousPageHref` or `pagination.nextPageHref` in previous versions.
 
@@ -236,41 +209,25 @@ exports.render = function(data) {
 
 For clarity here, we’re omitting the previous and next links from the previous section. Note the code below to show the links only if `pagination.href.first` and `pagination.href.last` don’t match the current `page.url`.
 
-{% codetitle "Nunjucks", "Syntax" %}
-
-{% raw %}
-```html/3,7
-<nav aria-labelledby="my-pagination">
-  <h2 id="my-pagination">This is my Pagination</h2>
-  <ol>
-    <li>{% if page.url != pagination.href.first %}<a href="{{ pagination.href.first }}">First</a>{% else %}First{% endif %}</li>
-{%- for pageEntry in pagination.pages %}
-    <li><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>Page {{ loop.index }}</a></li>
-{%- endfor %}
-   <li>{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">Last</a>{% else %}Last{% endif %}</li>
-  </ol>
-</nav>
-```
-{% endraw %}
-
-{% codetitle "JavaScript", "Syntax" %}
-
-{% raw %}
-```js
-exports.render = function(data) {
-  return `<nav aria-labelledby="my-pagination">
-    <h2 id="my-pagination">This is my Pagination</h2>
-    <ol>
-      <li>${data.page.url === data.pagination.href.first ? `<a href="${data.pagination.href.first}">First</a>` : `First`}</li>
-      ${data.pagination.pages.map(function (item, index) {
-        return `<li><a href="${data.pagination.hrefs[index]}" ${data.pagination.hrefs[index] ? 'aria-current="page"' : "" }>Page ${index + 1}</a></li>`;
-      }).join("");}
-      <li>${data.page.url === data.pagination.href.last ? `<a href="${data.pagination.href.last}">Last</a>` : `Last`}</li>
-    </ol>
-  </nav>`;
-};
-```
-{% endraw %}
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    Template language:
+    <a href="#paged-nav-firstlast-njk" id="paged-nav-firstlast-njk-btn" role="tab" aria-controls="paged-nav-firstlast-njk" aria-selected="true">Nunjucks</a>
+    <a href="#paged-nav-firstlast-11tyjs" id="paged-nav-firstlast-11tyjs-btn" role="tab" aria-controls="paged-nav-firstlast-11tyjs" aria-selected="false">11ty.js</a>
+  </div>
+  <div id="paged-nav-firstlast-njk" role="tabpanel" aria-labelledby="paged-nav-firstlast-njk-btn">
+    {%- codetitle "firstlast.njk" %}
+    {%- highlight "html 3,7" %}
+    {%- include "examples/pagination/nav/firstlast.njk" %}
+    {%- endhighlight %}
+  </div>
+  <div id="paged-nav-firstlast-11tyjs" role="tabpanel" aria-labelledby="paged-nav-firstlast-11tyjs-btn">
+    {%- codetitle "firstlast.11ty.js" %}
+    {%- highlight "js" %}
+    {%- include "examples/pagination/nav/firstlast.11ty.js" %}
+    {%- endhighlight %}
+  </div>
+</seven-minute-tabs>
 
 * `pagination.href.first` and `pagination.href.last` are {% addedin "0.10.0" %}. Use `pagination.firstPageHref` or `pagination.lastPageHref` in previous versions.
 
@@ -278,45 +235,25 @@ exports.render = function(data) {
 
 Here’s the final pagination navigation template code, pieced together:
 
-{% codetitle "Nunjucks", "Syntax" %}
-
-{% raw %}
-```html
-<nav aria-labelledby="my-pagination">
-  <h2 id="my-pagination">This is my Pagination</h2>
-  <ol>
-    <li>{% if page.url != pagination.href.first %}<a href="{{ pagination.href.first }}">First</a>{% else %}First{% endif %}</li>
-    <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
-{%- for pageEntry in pagination.pages %}
-    <li><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>Page {{ loop.index }}</a></li>
-{%- endfor %}
-    <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
-    <li>{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">Last</a>{% else %}Last{% endif %}</li>
-  </ol>
-</nav>
-```
-{% endraw %}
-
-{% codetitle "JavaScript", "Syntax" %}
-
-{% raw %}
-```js
-exports.render = function(data) {
-  return `<nav aria-labelledby="my-pagination">
-    <h2 id="my-pagination">This is my Pagination</h2>
-    <ol>
-      <li>${data.page.url === data.pagination.href.first ? `<a href="${pagination.href.first}">First</a>` : `First`}</li>
-      <li>${data.pagination.href.previous ? `<a href="${data.pagination.href.previous}">Previous</a>` : `Previous`}</li>
-      ${data.pagination.pages.map(function (item, index) {
-        return `<li><a href="${data.pagination.hrefs[index]}" ${data.pagination.hrefs[index] ? 'aria-current="page"' : "" }>Page ${index + 1}</a></li>`;
-      }).join("");}
-      <li>${data.pagination.href.next ? `<a href="${data.pagination.href.next}">Next</a>` : `Next`}</li>
-      <li>${data.page.url === data.pagination.href.last ? `<a href="${data.pagination.href.last}">Last</a>` : `Last`}</li>
-    </ol>
-  </nav>`;
-};
-```
-{% endraw %}
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    Template language:
+    <a href="#paged-nav-combined-njk" id="paged-nav-combined-njk-btn" role="tab" aria-controls="paged-nav-combined-njk" aria-selected="true">Nunjucks</a>
+    <a href="#paged-nav-combined-11tyjs" id="paged-nav-combined-11tyjs-btn" role="tab" aria-controls="paged-nav-combined-11tyjs" aria-selected="false">11ty.js</a>
+  </div>
+  <div id="paged-nav-combined-njk" role="tabpanel" aria-labelledby="paged-nav-combined-njk-btn">
+    {%- codetitle "combined.njk" %}
+    {%- highlight "html" %}
+    {%- include "examples/pagination/nav/combined.njk" %}
+    {%- endhighlight %}
+  </div>
+  <div id="paged-nav-combined-11tyjs" role="tabpanel" aria-labelledby="paged-nav-combined-11tyjs-btn">
+    {%- codetitle "combined.11ty.js" %}
+    {%- highlight "js" %}
+    {%- include "examples/pagination/nav/combined.11ty.js" %}
+    {%- endhighlight %}
+  </div>
+</seven-minute-tabs>
 
 Alright, you’ve copied the above—but don’t leave yet—*your work is not done (sorry)!* You still need to:
 
