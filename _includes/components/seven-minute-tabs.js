@@ -44,6 +44,9 @@ class SevenMinuteTabs extends HTMLElement {
   initButtons() {
     let count = 0;
     for(let button of this.buttons) {
+      let isSelected = button.getAttribute("aria-selected") === "true";
+      button.setAttribute("tabindex", isSelected ? "0" : "-1");
+
       button.addEventListener('click', this.clickEventListener.bind(this));
       button.addEventListener('keydown', this.keydownEventListener.bind(this));
       button.addEventListener('keyup', this.keyupEventListener.bind(this));
@@ -58,6 +61,7 @@ class SevenMinuteTabs extends HTMLElement {
       if(panel.getAttribute("id") !== selectedPanelId) {
         panel.setAttribute("hidden", "");
       }
+      panel.setAttribute("tabindex", "0");
     }
   }
 
