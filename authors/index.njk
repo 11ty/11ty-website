@@ -1,0 +1,19 @@
+---
+eleventyNavigation:
+  parent: Built With Eleventy
+  key: Eleventy Authors
+  order: 3
+excludeFromSidebar: true
+layout: layouts/docs.njk
+css:
+  - components/page-sites.css
+---
+<h1>Eleventy Authors</h1>
+
+<p>×{{ authors | length }} unique authors.</p>
+
+<ul class="authors-list">
+{%- for author in sites | topAuthors %}
+	<li><code>×{{ author.count }}</code> <a href="/authors/{{ author.name | slug }}/">{% avatarlocalcache "twitter", author.name %}{{ author.name }}</a></li>
+{%- endfor %}
+</ul>

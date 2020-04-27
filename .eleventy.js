@@ -9,6 +9,7 @@ const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const addedInLocalPlugin = require("./config/addedin");
 const minificationLocalPlugin = require("./config/minification");
+const getAuthors = require("./config/getAuthorsFromSites");
 
 const cfg = require("./_data/config.js");
 const slugify = require('slugify');
@@ -118,6 +119,7 @@ ${text.trim()}
 		"node_modules/@11ty/logo/img/logo-96x96.png": "img/favicon.png"
 	});
 
+	eleventyConfig.addPassthroughCopy("_redirects");
 	eleventyConfig.addPassthroughCopy("netlify-email");
 	eleventyConfig.addPassthroughCopy("css/fonts");
 	eleventyConfig.addPassthroughCopy("img");
@@ -311,18 +313,36 @@ ${text.trim()}
 		return newObj;
 	});
 
-	eleventyConfig.addFilter("rankSortByNumericKey", (arr, key) => {
+	eleventyConfig.addFilter("rankSortByNumericKey", (arr, ...keys) => {
 		return arr.filter(entry => true).sort((a, b) => {
-			return a[key] - b[key];
+			let aSum = 0;
+			let bSum = 0;
+			for(let key of keys) {
+				aSum += a[key];
+				bSum += b[key];
+			}
+			return aSum - bSum;
 		});
 	});
 
-	eleventyConfig.addFilter("calc", (sites, type, key, greaterThanOrEqualTo) => {
+	eleventyConfig.addFilter("calc", (sites, type, key, greaterThanOrEqualTo = 1) => {
 		let sum = 0;
 		let values = [];
+		let keys;
+		if(Array.isArray(key)) {
+			keys = key;
+		} else {
+			keys = [key];
+		}
 		let count = 0;
 		for(let site of sites) {
-			if(site[key] >= greaterThanOrEqualTo) {
+			let test = true;
+			for(let key of keys) {
+				if(isNaN(site[key]) || site[key] < greaterThanOrEqualTo) {
+					test = false;
+				}
+			}
+			if(test) {
 				count++;
 			}
 			if(typeof site[key] === "number") {
@@ -343,15 +363,34 @@ ${text.trim()}
 		}
 	});
 
+	eleventyConfig.addFilter("findBy", (data, key, value) => {
+		return data.filter(entry => {
+			if(!key || !value || !entry[key]) {
+				return false;
+			}
+
+			let valueLower = value.toLowerCase();
+			let dataLower = entry[key].toLowerCase();
+			if(valueLower === dataLower) {
+				return true;
+			}
+			return false;
+		});
+	});
+
 	eleventyConfig.addFilter("findSiteDataByUrl", (url, sites) => {
-		for(let key in sites) {
-			let site = sites[key];
+		let sitesArr = sites;
+		if(!Array.isArray(sitesArr)) {
+			sitesArr = Object.values(sites);
+		}
+
+		for(let site of sitesArr) {
 			if(!url || !site.url) {
 				continue;
 			}
 			let lowerUrl = url.toLowerCase();
 			let siteUrl = site.url.toLowerCase();
-			if(lowerUrl === siteUrl || lowerUrl === `${siteUrl}/`) {
+			if(lowerUrl === siteUrl || lowerUrl === `${siteUrl}/` || `${lowerUrl}/` === siteUrl) {
 				return site;
 			}
 		}
@@ -374,21 +413,13 @@ ${text.trim()}
 
 	eleventyConfig.addFilter("topAuthors", (sites) => {
 		let counts = {};
-		for(let key in sites) {
-			let site = sites[key];
-			let authorsNames = site.authoredBy && site.authoredBy.length ? site.authoredBy : site.twitter;
-			if(authorsNames && !site.disabled) {
-				if(!Array.isArray(authorsNames)) {
-					authorsNames = [authorsNames];
-				}
-				for(let name of authorsNames) {
-					if(!counts[name]) {
-						counts[name] = 0;
-					}
-					counts[name]++;
-				}
+		getAuthors(sites, name => {
+			if(!counts[name]) {
+				counts[name] = 0;
 			}
-		}
+			counts[name]++;
+		});
+
 		let top = [];
 		for(let author in counts) {
 			if(counts[author]) {

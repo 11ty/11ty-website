@@ -341,6 +341,42 @@
       "size": 1666
     }
   ],
+  "curt-hasselschwert": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "curt-hasselschwert",
+      "path": "img/avatar-local-cache/opencollective/curt-hasselschwert.jpg",
+      "size": 1852
+    }
+  ],
+  "daily-dev-tips": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "daily-dev-tips",
+      "path": "img/avatar-local-cache/opencollective/daily-dev-tips.jpg",
+      "size": 1542
+    }
+  ],
   "dan-urbanowicz": [
     {
       "format": "jpeg",
@@ -357,6 +393,24 @@
       "name": "dan-urbanowicz",
       "path": "img/avatar-local-cache/opencollective/dan-urbanowicz.jpg",
       "size": 1368
+    }
+  ],
+  "daniel-primo": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "daniel-primo",
+      "path": "img/avatar-local-cache/opencollective/daniel-primo.jpg",
+      "size": 1666
     }
   ],
   "daniel-rafaj": [
@@ -483,6 +537,24 @@
       "name": "dimitrios-grammatikogiannis",
       "path": "img/avatar-local-cache/opencollective/dimitrios-grammatikogiannis.jpg",
       "size": 1854
+    }
+  ],
+  "djame-goldston": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 80,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "djame-goldston",
+      "path": "img/avatar-local-cache/opencollective/djame-goldston.jpg",
+      "size": 2689
     }
   ],
   "doxford": [
@@ -813,7 +885,7 @@
     {
       "format": "jpeg",
       "width": 73,
-      "height": 73,
+      "height": 83,
       "space": "srgb",
       "channels": 3,
       "depth": "uchar",
@@ -824,7 +896,7 @@
       "extension": "jpg",
       "name": "joel-krause",
       "path": "img/avatar-local-cache/opencollective/joel-krause.jpg",
-      "size": 1911
+      "size": 2087
     }
   ],
   "john-sj-anderson": [
@@ -1421,6 +1493,24 @@
       "size": 2471
     }
   ],
+  "scott-mccracken": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "scott-mccracken",
+      "path": "img/avatar-local-cache/opencollective/scott-mccracken.jpg",
+      "size": 2028
+    }
+  ],
   "sebastian-murphy": [
     {
       "format": "jpeg",
@@ -1461,7 +1551,7 @@
     {
       "format": "jpeg",
       "width": 73,
-      "height": 40,
+      "height": 73,
       "space": "srgb",
       "channels": 3,
       "depth": "uchar",
@@ -1472,7 +1562,7 @@
       "extension": "jpg",
       "name": "suominettikasinot24.com",
       "path": "img/avatar-local-cache/opencollective/suominettikasinot24.com.jpg",
-      "size": 1206
+      "size": 627
     }
   ],
   "takuya-fukuju": [

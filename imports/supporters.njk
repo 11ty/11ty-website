@@ -2,7 +2,7 @@
 permalink: /imports/supporters.html
 ---
 <div class="facepile facepile-supporters">
-{% for supporter in supporters | supportersFacepile %}
+{% for supporter in opencollective.supporters | supportersFacepile %}
 {%- if loop.first %}<div class="facepile-block">{% endif %}
 {%- set nameToSlug = supporter.name | slug | lower -%}
 	<a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}" rel="nofollow">{% avatarlocalcache "opencollective", nameToSlug, supporter.name %}</a>

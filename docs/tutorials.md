@@ -52,10 +52,3 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 
 * [Using pHTML with Eleventy](https://github.com/phtmlorg/phtml-11ty) by {% avatarlocalcache "twitter", "jon_neal" %}Jon Neal
 
-## Quick Tips
-
-{% for tip in collections.quicktipssorted %}
-* Quick Tip <a href="{{ tip.url }}"><code>#{{ tip.data.tipindex }}</code>—{{ tip.data.tiptitle }}</a>
-{%- endfor %}
-
-📢 [Subscribe to the **Eleventy Quick Tips RSS Feed**](/docs/quicktips/feed.xml)

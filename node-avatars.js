@@ -88,9 +88,9 @@ async function fetchAvatarsForDataSource(sourceName, entries, fetchCallbacks) {
 	let promises = [];
 
 	// Open Collective
-	// let supporters = require("./_data/supporters.json").filter(entry => entry.role.toLowerCase() === "backer");
-	let supporters = require("./_data/supporters.json");
-	promises.push(fetchAvatarsForDataSource("opencollective", supporters, {
+	let getOpenCollectiveData = require("./_data/opencollective");
+	let opencollective = await getOpenCollectiveData();
+	promises.push(fetchAvatarsForDataSource("opencollective", opencollective.supporters, {
 		name: supporter => supporter && supporter.name,
 		image: supporter => supporter && supporter.image
 	}));
@@ -117,6 +117,11 @@ async function fetchAvatarsForDataSource(sourceName, entries, fetchCallbacks) {
 		let siteData = require(site);
 		if(siteData.twitter) {
 			twitters.add(siteData.twitter.toLowerCase());
+		}
+		if(siteData.authoredBy) {
+			for(let author of siteData.authoredBy) {
+				twitters.add(author.toLowerCase());
+			}
 		}
 	}
 
