@@ -28,10 +28,14 @@ You can use any template language in your layout—it doesn’t need to match th
 
 Next, we need to create a `mylayout.njk` file. It can contain any type of text, but here we’re using HTML:
 
-{% codetitle "_includes/mylayout.njk" %}
-
-{% raw %}
-```html
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    Template language: <a href="#njk-a" id="njk-a-btn" role="tab" aria-controls="njk-a" aria-selected="true" tabindex="0">Nunjucks</a>
+    <a href="#11tyjs-a" id="11tyjs-a-btn" role="tab" aria-controls="11tyjs-a" aria-selected="false" tabindex="-1">11ty.js</a>
+  </div>
+  <div id="njk-a" role="tabpanel" tabindex="0" aria-labelledby="njk-a-btn">
+{%- codetitle "_includes/mylayout.njk" %}
+{%- highlight "html" %}
 ---
 title: My Rad Blog
 ---
@@ -46,15 +50,12 @@ title: My Rad Blog
     {{ content | safe }}
   </body>
 </html>
-```
-{% endraw %}
-
-In case you prefer a [templating language](/docs/languages/) other than Nunjucks, here’s the same markup in JavaScript.
-
-{% codetitle "_includes/mylayout.11ty.js" %}
-
-{% raw %}
-```js
+{%- endhighlight %}
+    <p>Note that the layout template will populate the <code>content</code> data with the child template’s content. Also note that we don’t want to double-escape the output, so we’re using the provided Nunjuck’s <code>safe</code> filter here (see more language double-escaping syntax below).</p>
+  </div>
+  <div id="11tyjs-a" role="tabpanel" tabindex="0" aria-labelledby="11tyjs-a-btn" hidden>
+{%- codetitle "_includes/mylayout.11ty.js" %}
+{%- highlight "js" %}
 exports.data = {
   title: "My Rad Blog"
 };
@@ -72,10 +73,12 @@ return `<!doctype html>
   </body>
 </html>`;
 };
-```
-{% endraw %}
+{%- endhighlight %}
+    <p>Note that the layout template will populate the <code>data.content</code> variable with the child template’s content.
+  </div>
+</seven-minute-tabs>
 
-Note that the layout template will populate the `content` data with the child template’s content. Also note that we don’t want to double-escape the output, so we’re using the provided Nunjuck’s `safe` filter here (see more language double-escaping syntax below).
+
 
 {% callout "info" %}Layouts can contain their own front matter data! It’ll be merged with the content’s data on render. Content data takes precedence, if conflicting keys arise. Read more about <a href="/docs/data-cascade/">how Eleventy merges data in what we call the Data Cascade</a>.{% endcallout %}
 
