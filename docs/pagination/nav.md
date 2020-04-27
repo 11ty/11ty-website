@@ -64,7 +64,7 @@ Alright, you definitely read all of those right? 😇 Here’s some accessible c
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
-    Template language:
+    Language:
     <a href="#paged-nav-starter-njk" id="paged-nav-starter-njk-btn" role="tab" aria-controls="paged-nav-starter-njk" aria-selected="true">Nunjucks</a>
     <a href="#paged-nav-starter-11tyjs" id="paged-nav-starter-11tyjs-btn" role="tab" aria-controls="paged-nav-starter-11tyjs" aria-selected="false">11ty.js</a>
   </div>
@@ -185,7 +185,7 @@ Note that if the current page (`page.url`) is the first or last in the set, we w
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
-    Template language:
+    Language:
     <a href="#paged-nav-nextprev-njk" id="paged-nav-nextprev-njk-btn" role="tab" aria-controls="paged-nav-nextprev-njk" aria-selected="true">Nunjucks</a>
     <a href="#paged-nav-nextprev-11tyjs" id="paged-nav-nextprev-11tyjs-btn" role="tab" aria-controls="paged-nav-nextprev-11tyjs" aria-selected="false">11ty.js</a>
   </div>
@@ -211,7 +211,7 @@ For clarity here, we’re omitting the previous and next links from the previous
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
-    Template language:
+    Language:
     <a href="#paged-nav-firstlast-njk" id="paged-nav-firstlast-njk-btn" role="tab" aria-controls="paged-nav-firstlast-njk" aria-selected="true">Nunjucks</a>
     <a href="#paged-nav-firstlast-11tyjs" id="paged-nav-firstlast-11tyjs-btn" role="tab" aria-controls="paged-nav-firstlast-11tyjs" aria-selected="false">11ty.js</a>
   </div>
@@ -237,7 +237,7 @@ Here’s the final pagination navigation template code, pieced together:
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
-    Template language:
+    Language:
     <a href="#paged-nav-combined-njk" id="paged-nav-combined-njk-btn" role="tab" aria-controls="paged-nav-combined-njk" aria-selected="true">Nunjucks</a>
     <a href="#paged-nav-combined-11tyjs" id="paged-nav-combined-11tyjs-btn" role="tab" aria-controls="paged-nav-combined-11tyjs" aria-selected="false">11ty.js</a>
   </div>

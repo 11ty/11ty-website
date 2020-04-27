@@ -30,7 +30,7 @@ Next, we need to create a `mylayout.njk` file. It can contain any type of text, 
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
-    Template language:
+    Language:
     <a href="#mylayout-njk" id="mylayout-njk-btn" role="tab" aria-controls="mylayout-njk" aria-selected="true">Nunjucks</a>
     <a href="#mylayout-11tyjs" id="mylayout-11tyjs-btn" role="tab" aria-controls="mylayout-11tyjs" aria-selected="false">11ty.js</a>
   </div>
@@ -49,8 +49,6 @@ Next, we need to create a `mylayout.njk` file. It can contain any type of text, 
     <p>Note that the layout template will populate the <code>data.content</code> variable with the child template’s content.
   </div>
 </seven-minute-tabs>
-
-
 
 {% callout "info" %}Layouts can contain their own front matter data! It’ll be merged with the content’s data on render. Content data takes precedence, if conflicting keys arise. Read more about <a href="/docs/data-cascade/">how Eleventy merges data in what we call the Data Cascade</a>.{% endcallout %}
 

@@ -7,11 +7,18 @@ seven-minute-tabs {
 	overflow: hidden;
 }
 seven-minute-tabs [role="tablist"] {
-	padding: .5rem 1rem 0;
-	margin: 0 -1rem .5rem;
+	padding: .25rem 1rem 0;
+	margin: 0 -1rem;
 	background-color: #eee;
-	font-size: 0.8125em; /* 13px /16 */
+	font-size: 0.75em; /* 12px /16 */
 	line-height: 1.8;
+	text-transform: uppercase;
+}
+seven-minute-tabs [role="tablist"]:first-child {
+	margin-bottom: .5rem;
+}
+seven-minute-tabs [role="tablist"]:last-child {
+	margin-top: .5rem;
 }
 seven-minute-tabs [role="tab"] {
 	display: inline-block;
@@ -19,6 +26,7 @@ seven-minute-tabs [role="tab"] {
 	margin: 0 .5em;
 	text-decoration: none;
 	border-bottom: 6px solid transparent;
+	text-transform: none;
 }
 seven-minute-tabs [role="tab"][aria-selected="true"] {
 	border-color: #222;

@@ -16,7 +16,7 @@ To iterate over a data set and create pages for individual chunks of data, use p
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
-    Template language:
+    Language:
     <a href="#paged-array-njk" id="paged-array-njk-btn" role="tab" aria-controls="paged-array-njk" aria-selected="true">Nunjucks/Liquid</a>
     <a href="#paged-array-11tyjs" id="paged-array-11tyjs-btn" role="tab" aria-controls="paged-array-11tyjs" aria-selected="false">11ty.js</a>
   </div>
