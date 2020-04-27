@@ -36,6 +36,25 @@ myOtherData: hello
 ```
 {% endraw %}
 
+In case you prefer a [templating language](/docs/languages/) other than Nunjucks, here’s the same markup in JavaScript:
+
+{% codetitle "_includes/mainlayout.11ty.js" %}
+
+{% raw %}
+```js
+exports.data = {
+  layout: "mylayout.njk",
+  myOtherData: "hello"
+};
+
+exports.render = function(data) {
+  return `<main>
+    ${data.content}
+  </main>`;
+};
+```
+{% endraw %}
+
 This layout would then be itself wrapped in the same `mylayout.njk` we used in our previous example:
 
 {% codetitle "_includes/mylayout.njk" %}
