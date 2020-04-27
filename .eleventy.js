@@ -296,11 +296,11 @@ ${text.trim()}
 	mdIt.linkify.tlds('.io', false);
 	eleventyConfig.setLibrary("md", mdIt);
 
-	eleventyConfig.addFilter("newsDate", dateObj => {
+	eleventyConfig.addFilter("newsDate", (dateObj, format = "yyyy LLLL dd") => {
 		if(typeof dateObj === "number") {
 			dateObj = new Date(dateObj);
 		}
-		return DateTime.fromJSDate(dateObj).toFormat("yyyy LLLL dd");
+		return DateTime.fromJSDate(dateObj).toFormat(format);
 	});
 
 	eleventyConfig.addFilter("objectFilterNot", (obj, compareKey) => {
