@@ -61,6 +61,17 @@ The resulting data for each `posts/*.md` file when processed by Eleventy has the
 }
 ```
 
+If I wanted this data to be computed for all files, I could instead create the following `eleventyComputed.js` <a href="docs/data-global">global data file</a>.
+
+```js
+module.exports = {
+  eleventyNavigation: {
+    key: data => data.title,
+    parent: data => data.parent
+  }
+};
+```
+
 ## Just Use JavaScript
 
 Use any arbitrary JavaScript for an `eleventyComputed` property. Note that JavaScript functions require either JavaScript front matter or a JavaScript data file (template, directory, or global). YAML and JSON do not support JavaScript functions.
