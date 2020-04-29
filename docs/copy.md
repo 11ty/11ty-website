@@ -141,7 +141,7 @@ module.exports = function(eleventyConfig) {
 
 #### Using Globs and Output Directories
 
-Note that this method is slower than manual passthrough file copy without globs, as it searching the entire directory structure and copies each file in Eleventy individually.
+Note that this method is slower than manual passthrough file copy without globs, as it is searching the entire directory structure and copies each file in Eleventy individually.
 
 {% codetitle ".eleventy.js" %}{% codetitle "_site", "Output Dir" %}
 
