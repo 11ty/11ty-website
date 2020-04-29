@@ -10,6 +10,8 @@ At the end of the Data Cascade you may want to inject Data properties into your 
 
 [[toc]]
 
+{% callout "info" %}It is important to note that Computed Data is computed right before templates are rendered. Therefore Computed Data cannot be used to modify the <a href="/docs/data-configuration/">special data properties used to configure templates</a> (e.g. <code>layout</code>, <code>pagination</code>, <code>tags</code> etc.).<!--  One notable exception here is <code>permalink</code>, which can be set in computed data. --> These restrictions may be relaxed over time.{% endcallout %}
+
 ## Real World Example
 
 Say you want to use Eleventy’s [Navigation Plugin](/docs/plugins/navigation/) to create a navigation menu for your site. This plugin relies on the `eleventyNavigation` object to be set. You don’t necessarily want to set this object manually in front matter in each individual source file. This is where Computed Data comes in!
@@ -42,7 +44,7 @@ module.exports = {
 };
 ```
 
-{% callout "info" %}If you want to use a JavaScript function for your <code>eleventyComputed</code> properties, you must use either JavaScript front matter or a JavaScript data file (template, directory, or global). YAML and JSON do not support JavaScript functions.{% endcallout %}
+{% callout "info" %}If you want to use a JavaScript function for your <code>eleventyComputed</code> properties, you must use either <a href="/docs/data-frontmatter/">JavaScript front matter</a> or a <a href="/docs/data-js">JavaScript data file</a> (template, directory, or global). YAML and JSON do not support JavaScript functions.{% endcallout %}
 
 The resulting data for each `posts/*.md` file when processed by Eleventy has the following structure:
 
@@ -118,7 +120,7 @@ The above would also resolve to the same Data Cascade:
 }
 ```
 
-{% callout "warn" %}Note that template syntax is definitely slower than the “Just Use JavaScript” methods above.{% endcallout %}
+{% callout "warn" %}Template syntax is definitely slower than the “Just Use JavaScript” methods above.{% endcallout %}
 
 {% callout "info" %}This would also work in JSON data files or any other data file type in the cascade, just keep in mind that the template syntax <strong>must</strong> match the template syntax that it eventually winds up with in the Data Cascade.{% endcallout %}
 
@@ -126,12 +128,13 @@ The above would also resolve to the same Data Cascade:
 
 We put a lot of work into making this feature as easy to use as possible. Most of these details shouldn’t matter to you as it should Just Work™. But here’s a few things we thought of already and handle in a good way:
 
-* You can put `eleventyComputed` anywhere in the Data Cascade: Front Matter, any Data Files (you could even make an `eleventyComputed.js` global data file if you wanted to set this for your entire site).
-* Reference any of the existing data properties (including [ones created by Eleventy like `page`](/docs/data-eleventy-supplied/)).
-  * You can use *or* set `permalink` in `eleventyComputed` and it will work (`permalink` is a top-level special case computed property anyway).
+* You can put your `eleventyComputed` values anywhere in the Data Cascade: Front Matter, any Data Files (you could even make an `eleventyComputed.js` global data file if you wanted to set this for your entire site).
+* You can read and use any of the existing data properties (including [ones created by Eleventy like `page`](/docs/data-eleventy-supplied/)).
+  * You can use *or* set `permalink` in `eleventyComputed` and it will work (`permalink` is a top-level special case computed property anyway). Setting other [special Eleventy data keys](/docs/data-configuration/) are not yet supported.
 * You can use a computed property that depends on other computed properties (just reference them like they were any other property `data.propName` and ⚠️ **not** `data.eleventyComputed.propName`)
   * The order of the keys in the object doesn’t matter—we smartly figure out what order these should be computed in.
   * We will let you know if you have circular references (`key1` uses on `key2` which uses `key1` again)
+  * When we calculate the dependency graph for your variable references, we may get it wrong if your references to other computed properties are nested inside of conditional logic. Read more at [Declaring your Dependencies](#declaring-your-dependencies).
 * You can use a nested object of any depth. It can mix, match, and merge with the standard (non-computed) data. This will always do deep merging (independent of your [Data Deep Merge configuration](/docs/data-deep-merge/)).
 * You can reuse _and_ override properties at the same time. In the following example `key` will have `This Is My Key` as its value.
 {% raw %}
@@ -143,3 +146,28 @@ eleventyComputed:
 ---
 ```
 {% endraw %}
+
+### Declaring Your Dependencies
+
+We do try our best to automatically detect dependencies between `eleventyComputed` keys, but it isn’t always 100% accurate—especially if you include conditional logic that only uses another Computed Data key inside of a conditional block. To workaround this issue, you can always declare your dependencies inside of your callback so that it resolves correctly. To do so, just access the variables that your callback uses in the callback function.
+
+```js
+module.exports = {
+  eleventyComputed: {
+    myValue: () => "Hi",
+    myOtherValue: () => "Bye",
+    usesAllTheThings: data => {
+      // We detect this as a declared dependency
+      data.myValue;
+      // You can use as many as you want.
+      data.myOtherValue;
+      // You could use any valid JS syntax to access them.
+      [data.myValue, data.myOtherValue];
+
+      return `How are you?`;
+    }
+  }
+};
+```
+
+If you suspect Eleventy has the Computed Data order wrong—you can double check what variables Eleventy detects inside of a Computed Data function in the [debug output](/docs/debugging/).
