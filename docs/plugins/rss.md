@@ -42,7 +42,7 @@ module.exports = function(eleventyConfig) {
 
 ## Sample Atom Feed template
 
-Copy and paste this template and modify the YAML metadata to match your feed’s needs. Make sure `collections.posts` matches the template collection you want to provide a feed for.
+Copy and paste this template and modify the JSON metadata to match your feed’s needs. Make sure `collections.posts` matches the template collection you want to provide a feed for.
 
 {% raw %}
 ```html
