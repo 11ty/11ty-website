@@ -89,6 +89,24 @@
       "size": 2058
     }
   ],
+  "arnaud-ligny": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "arnaud-ligny",
+      "path": "img/avatar-local-cache/opencollective/arnaud-ligny.jpg",
+      "size": 1481
+    }
+  ],
   "ben-brignell": [
     {
       "format": "jpeg",
@@ -629,6 +647,24 @@
       "size": 2029
     }
   ],
+  "evan-harrison": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "evan-harrison",
+      "path": "img/avatar-local-cache/opencollective/evan-harrison.jpg",
+      "size": 1884
+    }
+  ],
   "flaki": [
     {
       "format": "jpeg",
@@ -1151,6 +1187,24 @@
       "size": 1627
     }
   ],
+  "melanie-sumner": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "melanie-sumner",
+      "path": "img/avatar-local-cache/opencollective/melanie-sumner.jpg",
+      "size": 2080
+    }
+  ],
   "miriam-suzanne": [
     {
       "format": "jpeg",
@@ -1527,6 +1581,24 @@
       "name": "sebastian-murphy",
       "path": "img/avatar-local-cache/opencollective/sebastian-murphy.jpg",
       "size": 1922
+    }
+  ],
+  "softiron": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 79,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "softiron",
+      "path": "img/avatar-local-cache/opencollective/softiron.jpg",
+      "size": 1478
     }
   ],
   "soren-birkemeyer": [

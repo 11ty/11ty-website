@@ -3,6 +3,6 @@
 	"name": "HamsterSquare",
 	"description": "German website for keeping hamsters as pets.",
 	"twitter": "",
-	"authoredBy": "dennisview",
+	"authoredBy": ["dennisview"],
 	"source_url": ""
 }
