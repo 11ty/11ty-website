@@ -1,0 +1,146 @@
+{
+  "weeks": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    [
+      {
+        "url": "https://www.frontendbookmarks.com/",
+        "combinedRank": 1,
+        "perfRank": 8,
+        "a11yRank": 10
+      },
+      {
+        "url": "https://edjohnsonwilliams.co.uk/",
+        "combinedRank": 2,
+        "perfRank": 11,
+        "a11yRank": 17
+      },
+      {
+        "url": "https://glenn.thedixons.net/",
+        "combinedRank": 3,
+        "perfRank": 20,
+        "a11yRank": 14
+      },
+      {
+        "url": "https://piccalil.li/",
+        "combinedRank": 4,
+        "perfRank": 28,
+        "a11yRank": 12
+      },
+      {
+        "url": "https://books.thedixons.net/",
+        "combinedRank": 5,
+        "perfRank": 36,
+        "a11yRank": 7
+      },
+      {
+        "url": "https://paulrobertlloyd.com/",
+        "combinedRank": 6,
+        "perfRank": 7,
+        "a11yRank": 37
+      },
+      {
+        "url": "https://educationlinks.fyi/",
+        "combinedRank": 7,
+        "perfRank": 46,
+        "a11yRank": 2
+      },
+      {
+        "url": "https://tatianamac.com/",
+        "combinedRank": 8,
+        "perfRank": 16,
+        "a11yRank": 32
+      },
+      {
+        "url": "https://devreldiaries.commons.host/",
+        "combinedRank": 9,
+        "perfRank": 13,
+        "a11yRank": 40
+      },
+      {
+        "url": "https://kula.blog/",
+        "combinedRank": 10,
+        "perfRank": 29,
+        "a11yRank": 30
+      },
+      {
+        "url": "https://leedsjs.com/",
+        "combinedRank": 11,
+        "perfRank": 17,
+        "a11yRank": 48
+      }
+    ],
+    [
+      {
+        "url": "https://glenn.thedixons.net/",
+        "combinedRank": 1,
+        "perfRank": 18,
+        "a11yRank": 14
+      },
+      {
+        "url": "https://books.thedixons.net/",
+        "combinedRank": 2,
+        "perfRank": 36,
+        "a11yRank": 8
+      },
+      {
+        "url": "https://paulrobertlloyd.com/",
+        "combinedRank": 3,
+        "perfRank": 20,
+        "a11yRank": 36
+      },
+      {
+        "url": "https://www.doesitflip.com/",
+        "combinedRank": 4,
+        "perfRank": 57,
+        "a11yRank": 3
+      },
+      {
+        "url": "https://pdx.ashur.cab/",
+        "combinedRank": 5,
+        "perfRank": 40,
+        "a11yRank": 24
+      },
+      {
+        "url": "https://every-layout.dev/",
+        "combinedRank": 6,
+        "perfRank": 50,
+        "a11yRank": 21
+      },
+      {
+        "url": "https://www.zachleat.com/",
+        "combinedRank": 7,
+        "perfRank": 59,
+        "a11yRank": 13
+      },
+      {
+        "url": "https://educationlinks.fyi/",
+        "combinedRank": 8,
+        "perfRank": 72,
+        "a11yRank": 2
+      },
+      {
+        "url": "https://kula.blog/",
+        "combinedRank": 9,
+        "perfRank": 42,
+        "a11yRank": 33
+      },
+      {
+        "url": "https://lea-tortay.com/",
+        "combinedRank": 10,
+        "perfRank": 14,
+        "a11yRank": 61
+      },
+      {
+        "url": "https://fotis.xyz/",
+        "combinedRank": 11,
+        "perfRank": 9,
+        "a11yRank": 68
+      }
+    ]
+  ]
+}

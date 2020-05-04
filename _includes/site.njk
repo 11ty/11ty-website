@@ -1,6 +1,7 @@
 <div class="lo-c{% if topKey === "performance" and perf.rank <= 11 or topKey === "accessibility" and perf.accessibilityRank <= 11 or topKey === true %} site-top{% endif %}">
 	<div{% if showScreenshot %} class="sites-data-container"{% endif %}>
 		<a href="{{ site.url }}">{% avatarlocalcache "twitter", site.twitter %}{{ site.name | safe }}</a>
+		<span title="Top 11 on the Combined Leaderboard">{{ site.url | numberOfTrophies | repeat("🏆") }}</span>
 		{%- if site.description %}<em class="list-bare-desc list-bare-desc-avatar">{{ site.description }}</em>{% endif -%}
 		{%- if showMetadata %}
 		<em class="list-bare-desc list-bare-desc-avatar">
@@ -21,8 +22,8 @@
 				<div class="lo-c sites-perf-si">Speed Index <strong>{{ perf.speedIndex | round(1) }}</strong></div>
 {%- endif %}
 {%- endif %}
-				{%- if site.twitter %}<div class="lo-c"><a href="https://twitter.com/{{ site.twitter }}/" class="elv-externalexempt">@{{ site.twitter }}</a></div>{% endif -%}
-				{%- if site.authoredBy %}<div class="lo-c">Created by {% for author in site.authoredBy %}{% if not loop.first %}, {% endif %}<a href="https://twitter.com/{{ author }}/" class="elv-externalexempt">@{{ author }}</a>{% endfor %}</div>{% endif -%}
+				{%- if site.twitter %}<div class="lo-c"><a href="/authors/{{ site.twitter }}/" class="elv-externalexempt">@{{ site.twitter }}</a></div>{% endif -%}
+				{%- if site.authoredBy %}<div class="lo-c">Created by {% for author in site.authoredBy %}{% if not loop.first %}, {% endif %}<a href="/authors/{{ author }}/" class="elv-externalexempt">@{{ author }}</a>{% endfor %}</div>{% endif -%}
 				{%- if site.source_url %}<div class="lo-c"><a href="{{ site.source_url }}" class="elv-externalexempt">Source Code</a></div>{% endif -%}
 			</div>
 		</em>

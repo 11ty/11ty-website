@@ -27,10 +27,10 @@ css:
 		<div><strong class="sites-val">{{ totalPerfectLhPerfAndA11yScore | round }}</strong> {% emoji "💯", "100" %}’s on both <a href="/leaderboard/combined/">Performance and Accessibility</a></div>
 	</div>
 	<div class="lo-c">
-		<h3 class="authors-hed"><a href="/authors/">Most Sites Created</a></h3>
+		<h3 class="authors-hed"><a href="/authors/">Most Trophies Won</a></h3>
 		<ul class="authors-list">
 		{%- for author in sites | topAuthors | head(11) %}
-			<li><code>×{{ author.count }}</code> <a href="/authors/{{ author.name }}/">{% avatarlocalcache "twitter", author.name %}{{ author.name }}</a></li>
+			<li><code>🏆×{{ author.trophies }}</code> <a href="/authors/{{ author.name }}/">{% avatarlocalcache "twitter", author.name %}{{ author.name }}</a></li>
 		{%- endfor %}
 		</ul>
 	</div>

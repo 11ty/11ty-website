@@ -236,7 +236,7 @@ ${text.trim()}
 	eleventyConfig.addShortcode("supporterAmount", function(amount, maxAmount = 1000) {
 		// let increments = [1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987];
 		// mostly fibonacci
-		let increments = [5,8,13,21,34,55,89,144,233,377,610,987,1597];
+		let increments = [5,8,13,21,34,55,89,144,233,377,610,987,1597,2584];
 		let incrementCounter = 0;
 		let fullHearts = [];
 		let emptyHearts = [];
@@ -411,13 +411,40 @@ ${text.trim()}
 		return false;
 	});
 
-	eleventyConfig.addFilter("topAuthors", (sites) => {
+	let top11Sites = require("./_data/allTopSites.json");
+
+	function getTrophyCountForUrl(url) {
+		let site = top11Sites.filter(entry => entry.url === url || `${entry.url}/` === url || entry.url === `${url}/`);
+		if(site.length) {
+			return site[0].combinedRank.filter(entry => entry && entry <= 11).length;
+		}
+
+		return 0;
+	}
+
+	eleventyConfig.addFilter("numberOfTrophies", getTrophyCountForUrl);
+
+	eleventyConfig.addFilter("repeat", (number, str) => {
+		if(number > 0) {
+			return str + (new Array(number)).join(str);
+		}
+		return "";
+	});
+
+
+	eleventyConfig.addFilter("topAuthors", (sites, sortBy = "trophies") => {
 		let counts = {};
-		getAuthors(sites, name => {
+		let trophies = {};
+		getAuthors(sites, (name, site) => {
 			if(!counts[name]) {
 				counts[name] = 0;
 			}
 			counts[name]++;
+
+			if(!trophies[name]) {
+				trophies[name] = 0;
+			}
+			trophies[name] += getTrophyCountForUrl(site.url);
 		});
 
 		let top = [];
@@ -425,12 +452,13 @@ ${text.trim()}
 			if(counts[author]) {
 				top.push({
 					name: author,
-					count: counts[author]
+					count: counts[author],
+					trophies: trophies[author],
 				});
 			}
 		}
 		top.sort((a, b) => {
-			return b.count - a.count;
+			return b[sortBy] - a[sortBy];
 		});
 		return top;
 	});
@@ -447,6 +475,7 @@ ${text.trim()}
 		let slug = url.replace(/https?\:\//, "");
 		return slugify(slug, { lower: true, remove: /[:\/]/g }) + ".jpg";
 	});
+
 	return {
 		templateFormats: ["html", "njk", "md", "11ty.js"],
 		markdownTemplateEngine: "njk",

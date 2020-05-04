@@ -26,6 +26,11 @@ css:
 * <a href="https://opencollective.com/11ty">Not yet <strong>Supporting Eleventy</strong> on Open Collective.</a>
 * <em>Already a supporter but it’s not showing here? Make sure your Twitter account is listed on your Open Collective Profile.</em>
 {%- endif %}
+{%- set trophyCount = 0 %}
+{%- for site in author.sites %}{% set inc = site.url | numberOfTrophies %}{% set trophyCount = trophyCount + inc %}{% endfor %}
+{%- if trophyCount > 0 %}
+* **Trophy Count** ×{{ trophyCount }} {{ trophyCount | repeat("🏆") }} _(Top 11 Finishes on the [Combined Leaderboard](/leaderboard/combined/))_
+{%- endif %}
 
 ### {{ displayName }} Built These Eleventy Sites:
 

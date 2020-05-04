@@ -21,7 +21,7 @@ module.exports = function getAuthors(sites, callback) {
 				if(name) {
 					names.add(name);
 					if(callback && typeof callback === "function") {
-						callback(name);
+						callback(name, site);
 					}
 				}
 			}
