@@ -1,5 +1,4 @@
 // https://opencollective.com/11ty/members/all.json
-const fs = require("fs-extra");
 const Cache = require("@11ty/eleventy-cache-assets");
 
 function isMonthlyBacker(backer) {
