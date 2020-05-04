@@ -432,7 +432,7 @@ ${text.trim()}
 	});
 
 
-	eleventyConfig.addFilter("topAuthors", (sites, sortBy = "trophies") => {
+	eleventyConfig.addFilter("topAuthors", sites => {
 		let counts = {};
 		let trophies = {};
 		getAuthors(sites, (name, site) => {
@@ -458,8 +458,12 @@ ${text.trim()}
 			}
 		}
 		top.sort((a, b) => {
-			return b[sortBy] - a[sortBy];
+			if(a.trophies === b.trophies) {
+				return b.count - a.count;
+			}
+			return b.trophies - a.trophies;
 		});
+
 		return top;
 	});
 

@@ -22,8 +22,7 @@
 				<div class="lo-c sites-perf-si">Speed Index <strong>{{ perf.speedIndex | round(1) }}</strong></div>
 {%- endif %}
 {%- endif %}
-				{%- if site.twitter %}<div class="lo-c"><a href="/authors/{{ site.twitter }}/" class="elv-externalexempt">@{{ site.twitter }}</a></div>{% endif -%}
-				{%- if site.authoredBy %}<div class="lo-c">Created by {% for author in site.authoredBy %}{% if not loop.first %}, {% endif %}<a href="/authors/{{ author }}/" class="elv-externalexempt">@{{ author }}</a>{% endfor %}</div>{% endif -%}
+				{%- if site.twitter or site.authoredBy %}<div class="lo-c"><a href="/authors/{{ site.twitter }}/" class="elv-externalexempt">{{ site.twitter }}</a>{% if site.authoredBy %} by {% endif %}{% for author in site.authoredBy %} <a href="/authors/{{ author }}/" class="elv-externalexempt">{% avatarlocalcache "twitter", author %}{{ author }}</a>{% endfor %}</div>{% endif -%}
 				{%- if site.source_url %}<div class="lo-c"><a href="{{ site.source_url }}" class="elv-externalexempt">Source Code</a></div>{% endif -%}
 			</div>
 		</em>
