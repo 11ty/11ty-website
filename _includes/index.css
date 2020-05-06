@@ -402,12 +402,10 @@ footer.elv-layout {
 }
 @keyframes balloonFloat {
 	from {
-		top: 50%;
-		left: -5%;
+		transform: translate(-7vw, 30%);
 	}
 	to {
-		top: 5%;
-		left: 120%;
+		transform: translate(100vw, -52%);
 	}
 }
 
