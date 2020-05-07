@@ -2,7 +2,7 @@
 .sr-only {
 	position: absolute;
 	height: 1px;
-	width: 1px; 
+	width: 1px;
 	overflow: hidden;
 	clip: rect(1px, 1px, 1px, 1px);
 }
@@ -398,17 +398,14 @@ footer.elv-layout {
 @media (prefers-reduced-motion: reduce) {
 	.elv-header-default .elv-possum {
 		display: none;
-		animation: none;
 	}
 }
 @keyframes balloonFloat {
 	from {
-		top: 50%;
-		left: -5%;
+		transform: translate(-7vw, 30%);
 	}
 	to {
-		top: 5%;
-		left: 120%;
+		transform: translate(100vw, -52%);
 	}
 }
 
