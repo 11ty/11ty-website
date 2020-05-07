@@ -11,7 +11,6 @@ const addedInLocalPlugin = require("./config/addedin");
 const minificationLocalPlugin = require("./config/minification");
 const getAuthors = require("./config/getAuthorsFromSites");
 
-const cfg = require("./_data/config.js");
 const slugify = require('slugify');
 
 // Load yaml from Prism to highlight frontmatter
