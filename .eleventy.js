@@ -10,6 +10,7 @@ const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const addedInLocalPlugin = require("./config/addedin");
 const minificationLocalPlugin = require("./config/minification");
 const getAuthors = require("./config/getAuthorsFromSites");
+const cleanName = require("./config/cleanAuthorName");
 
 const slugify = require('slugify');
 
@@ -20,6 +21,7 @@ const shortcodes = {
 	avatarlocalcache: function(datasource, slug, alt = "") {
 		const avatarMap = require(`./_data/avatarmap/${datasource}.json`);
 		if( slug ) {
+			slug = cleanName(slug);
 			let mapEntry = avatarMap[slug.toLowerCase()];
 			if(mapEntry && mapEntry.length) {
 				let ret = [];
@@ -430,7 +432,6 @@ ${text.trim()}
 		return "";
 	});
 
-
 	eleventyConfig.addFilter("topAuthors", sites => {
 		let counts = {};
 		let trophies = {};
@@ -465,6 +466,8 @@ ${text.trim()}
 
 		return top;
 	});
+
+	eleventyConfig.addFilter("cleanAuthorName", cleanName);
 
 	eleventyConfig.addFilter("head", (arr, num) => {
 		return num ? arr.slice(0, num) : arr;

@@ -4,6 +4,7 @@ const sortObject = require("sorted-object");
 const fs = require("fs-extra");
 const fastglob = require("fast-glob");
 const AvatarLocalCache = require("avatar-local-cache");
+const cleanName = require("./config/cleanAuthorName");
 
 // const skipUrls = ["https://www.gravatar.com/avatar/36386473ee7de091db26bd82f8d18ca8?default=404"];
 const skipUrls = [];
@@ -99,15 +100,15 @@ async function fetchAvatarsForDataSource(sourceName, entries, fetchCallbacks) {
 	let twitters = new Set();
 	let testimonials = require("./_data/testimonials.json").map(entry => entry.twitter);
 	for(let twitter of testimonials) {
-		twitters.add(twitter.toLowerCase());
+		twitters.add(cleanName(twitter).toLowerCase());
 	}
 	let starters = require("./_data/starters.json").map(entry => entry.author);
 	for(let twitter of starters) {
-		twitters.add(twitter.toLowerCase());
+		twitters.add(cleanName(twitter).toLowerCase());
 	}
 	let extras = require("./_data/extraAvatars.json").map(entry => entry.twitter);
 	for(let twitter of extras) {
-		twitters.add(twitter.toLowerCase());
+		twitters.add(cleanName(twitter).toLowerCase());
 	}
 
 	let sites = await fastglob("./_data/sites/*.json", {
@@ -116,11 +117,11 @@ async function fetchAvatarsForDataSource(sourceName, entries, fetchCallbacks) {
 	for(let site of sites) {
 		let siteData = require(site);
 		if(siteData.twitter) {
-			twitters.add(siteData.twitter.toLowerCase());
+			twitters.add(cleanName(siteData.twitter).toLowerCase());
 		}
 		if(siteData.authoredBy) {
 			for(let author of siteData.authoredBy) {
-				twitters.add(author.toLowerCase());
+				twitters.add(cleanName(author).toLowerCase());
 			}
 		}
 	}
