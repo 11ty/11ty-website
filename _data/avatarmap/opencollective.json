@@ -143,6 +143,24 @@
       "size": 2114
     }
   ],
+  "bentley-davis": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "bentley-davis",
+      "path": "img/avatar-local-cache/opencollective/bentley-davis.jpg",
+      "size": 1603
+    }
+  ],
   "brett-nelson": [
     {
       "format": "jpeg",
@@ -950,7 +968,7 @@
       "extension": "jpg",
       "name": "john-sj-anderson",
       "path": "img/avatar-local-cache/opencollective/john-sj-anderson.jpg",
-      "size": 2161
+      "size": 1839
     }
   ],
   "joshua-vaage": [
@@ -1041,6 +1059,24 @@
       "name": "kyosuke-nakamura",
       "path": "img/avatar-local-cache/opencollective/kyosuke-nakamura.jpg",
       "size": 1573
+    }
+  ],
+  "luke-bonaccorsi": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "luke-bonaccorsi",
+      "path": "img/avatar-local-cache/opencollective/luke-bonaccorsi.jpg",
+      "size": 1545
     }
   ],
   "makoto-kawasaki": [
@@ -1329,6 +1365,24 @@
       "name": "noel-forte",
       "path": "img/avatar-local-cache/opencollective/noel-forte.jpg",
       "size": 1946
+    }
+  ],
+  "panagiotis-kontogiannis": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "panagiotis-kontogiannis",
+      "path": "img/avatar-local-cache/opencollective/panagiotis-kontogiannis.jpg",
+      "size": 1870
     }
   ],
   "pelle-wessman": [
