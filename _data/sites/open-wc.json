@@ -1,0 +1,8 @@
+{
+	"url": "https://www.open-wc.org/",
+	"name": "Open Web Component Recommendations",
+	"description": "Open Web Components provides a set of defaults, recommendations and tools to help facilitate your web component project. Our recommendations include: developing, linting, testing, building, tooling, demoing, publishing and automating.",
+	"twitter": "openwc",
+	"authoredBy": [],
+	"source_url": "https://github.com/open-wc/open-wc"
+}
