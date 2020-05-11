@@ -9,7 +9,8 @@
       null,
       null,
       131,
-      138
+      138,
+      144
     ],
     "perfRank": [
       null,
@@ -19,7 +20,8 @@
       null,
       null,
       9,
-      7
+      7,
+      6
     ],
     "a11yRank": [
       null,
@@ -29,7 +31,8 @@
       null,
       null,
       266,
-      273
+      273,
+      282
     ]
   },
   {
@@ -42,7 +45,8 @@
       null,
       null,
       5,
-      2
+      2,
+      7
     ],
     "perfRank": [
       null,
@@ -52,7 +56,8 @@
       null,
       null,
       36,
-      36
+      36,
+      48
     ],
     "a11yRank": [
       null,
@@ -62,6 +67,7 @@
       null,
       null,
       7,
+      8,
       8
     ]
   },
@@ -75,7 +81,8 @@
       null,
       null,
       9,
-      20
+      21,
+      25
     ],
     "perfRank": [
       null,
@@ -85,7 +92,8 @@
       null,
       null,
       13,
-      46
+      46,
+      50
     ],
     "a11yRank": [
       null,
@@ -95,7 +103,8 @@
       null,
       null,
       40,
-      41
+      41,
+      45
     ]
   },
   {
@@ -108,6 +117,7 @@
       null,
       null,
       19,
+      16,
       15
     ],
     "perfRank": [
@@ -118,7 +128,8 @@
       null,
       null,
       5,
-      4
+      4,
+      3
     ],
     "a11yRank": [
       null,
@@ -128,7 +139,8 @@
       null,
       null,
       78,
-      79
+      79,
+      83
     ]
   },
   {
@@ -141,7 +153,8 @@
       null,
       null,
       44,
-      4
+      4,
+      36
     ],
     "perfRank": [
       null,
@@ -151,7 +164,8 @@
       null,
       null,
       129,
-      57
+      57,
+      113
     ],
     "a11yRank": [
       null,
@@ -160,6 +174,7 @@
       null,
       null,
       null,
+      3,
       3,
       3
     ]
@@ -174,7 +189,8 @@
       null,
       null,
       2,
-      14
+      14,
+      32
     ],
     "perfRank": [
       null,
@@ -184,7 +200,8 @@
       null,
       null,
       11,
-      65
+      65,
+      89
     ],
     "a11yRank": [
       null,
@@ -194,7 +211,8 @@
       null,
       null,
       17,
-      17
+      17,
+      18
     ]
   },
   {
@@ -207,7 +225,8 @@
       null,
       null,
       7,
-      8
+      8,
+      6
     ],
     "perfRank": [
       null,
@@ -217,7 +236,8 @@
       null,
       null,
       46,
-      72
+      72,
+      54
     ],
     "a11yRank": [
       null,
@@ -226,6 +246,7 @@
       null,
       null,
       null,
+      2,
       2,
       2
     ]
@@ -240,7 +261,8 @@
       null,
       null,
       13,
-      6
+      6,
+      20
     ],
     "perfRank": [
       null,
@@ -250,7 +272,8 @@
       null,
       null,
       49,
-      50
+      50,
+      68
     ],
     "a11yRank": [
       null,
@@ -260,7 +283,8 @@
       null,
       null,
       22,
-      21
+      21,
+      22
     ]
   },
   {
@@ -273,7 +297,8 @@
       null,
       null,
       18,
-      11
+      11,
+      10
     ],
     "perfRank": [
       null,
@@ -283,7 +308,8 @@
       null,
       null,
       15,
-      9
+      9,
+      5
     ],
     "a11yRank": [
       null,
@@ -293,7 +319,8 @@
       null,
       null,
       68,
-      68
+      68,
+      70
     ]
   },
   {
@@ -306,7 +333,8 @@
       null,
       null,
       1,
-      59
+      59,
+      1
     ],
     "perfRank": [
       null,
@@ -316,7 +344,8 @@
       null,
       null,
       8,
-      1
+      1,
+      17
     ],
     "a11yRank": [
       null,
@@ -326,7 +355,8 @@
       null,
       null,
       10,
-      162
+      162,
+      11
     ]
   },
   {
@@ -339,7 +369,8 @@
       null,
       null,
       3,
-      1
+      1,
+      2
     ],
     "perfRank": [
       null,
@@ -349,7 +380,8 @@
       null,
       null,
       20,
-      18
+      18,
+      14
     ],
     "a11yRank": [
       null,
@@ -359,7 +391,8 @@
       null,
       null,
       14,
-      14
+      14,
+      15
     ]
   },
   {
@@ -372,7 +405,8 @@
       null,
       null,
       53,
-      53
+      54,
+      56
     ],
     "perfRank": [
       null,
@@ -382,7 +416,8 @@
       null,
       null,
       1,
-      2
+      2,
+      8
     ],
     "a11yRank": [
       null,
@@ -392,7 +427,8 @@
       null,
       null,
       143,
-      146
+      146,
+      148
     ]
   },
   {
@@ -404,8 +440,9 @@
       null,
       null,
       null,
-      28,
-      13
+      30,
+      13,
+      11
     ],
     "perfRank": [
       null,
@@ -415,7 +452,8 @@
       null,
       null,
       6,
-      6
+      6,
+      4
     ],
     "a11yRank": [
       null,
@@ -425,7 +463,8 @@
       null,
       null,
       99,
-      75
+      75,
+      77
     ]
   },
   {
@@ -438,7 +477,8 @@
       null,
       null,
       10,
-      9
+      10,
+      35
     ],
     "perfRank": [
       null,
@@ -448,7 +488,8 @@
       null,
       null,
       29,
-      42
+      42,
+      77
     ],
     "a11yRank": [
       null,
@@ -458,7 +499,8 @@
       null,
       null,
       30,
-      33
+      33,
+      34
     ]
   },
   {
@@ -471,7 +513,8 @@
       null,
       null,
       22,
-      10
+      9,
+      14
     ],
     "perfRank": [
       null,
@@ -481,7 +524,8 @@
       null,
       null,
       23,
-      14
+      14,
+      21
     ],
     "a11yRank": [
       null,
@@ -491,6 +535,7 @@
       null,
       null,
       63,
+      61,
       61
     ]
   },
@@ -504,7 +549,8 @@
       null,
       null,
       11,
-      21
+      20,
+      46
     ],
     "perfRank": [
       null,
@@ -514,7 +560,8 @@
       null,
       null,
       17,
-      24
+      24,
+      73
     ],
     "a11yRank": [
       null,
@@ -524,7 +571,44 @@
       null,
       null,
       48,
+      63,
       63
+    ]
+  },
+  {
+    "url": "https://mangoweb.net/",
+    "combinedRank": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      110,
+      123,
+      116
+    ],
+    "perfRank": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      159,
+      172,
+      166
+    ],
+    "a11yRank": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      76,
+      77,
+      81
     ]
   },
   {
@@ -537,7 +621,8 @@
       null,
       null,
       52,
-      108
+      108,
+      102
     ],
     "perfRank": [
       null,
@@ -547,7 +632,8 @@
       null,
       null,
       4,
-      94
+      94,
+      78
     ],
     "a11yRank": [
       null,
@@ -557,7 +643,44 @@
       null,
       null,
       137,
-      139
+      139,
+      142
+    ]
+  },
+  {
+    "url": "https://nicolas-hoizey.com/",
+    "combinedRank": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      88,
+      95,
+      4
+    ],
+    "perfRank": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      44,
+      52,
+      44
+    ],
+    "a11yRank": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      160,
+      164,
+      6
     ]
   },
   {
@@ -570,7 +693,8 @@
       null,
       null,
       6,
-      3
+      3,
+      12
     ],
     "perfRank": [
       null,
@@ -580,7 +704,8 @@
       null,
       null,
       7,
-      20
+      20,
+      40
     ],
     "a11yRank": [
       null,
@@ -590,7 +715,8 @@
       null,
       null,
       37,
-      36
+      36,
+      41
     ]
   },
   {
@@ -603,7 +729,8 @@
       null,
       null,
       15,
-      5
+      5,
+      38
     ],
     "perfRank": [
       null,
@@ -613,7 +740,8 @@
       null,
       null,
       52,
-      40
+      40,
+      93
     ],
     "a11yRank": [
       null,
@@ -623,7 +751,8 @@
       null,
       null,
       25,
-      24
+      24,
+      26
     ]
   },
   {
@@ -636,7 +765,8 @@
       null,
       null,
       4,
-      18
+      17,
+      3
     ],
     "perfRank": [
       null,
@@ -646,7 +776,8 @@
       null,
       null,
       28,
-      73
+      73,
+      29
     ],
     "a11yRank": [
       null,
@@ -656,7 +787,8 @@
       null,
       null,
       12,
-      12
+      12,
+      13
     ]
   },
   {
@@ -669,7 +801,8 @@
       null,
       null,
       14,
-      16
+      15,
+      13
     ],
     "perfRank": [
       null,
@@ -679,7 +812,8 @@
       null,
       null,
       3,
-      11
+      11,
+      7
     ],
     "a11yRank": [
       null,
@@ -689,7 +823,8 @@
       null,
       null,
       72,
-      72
+      72,
+      75
     ]
   },
   {
@@ -702,7 +837,8 @@
       null,
       null,
       21,
-      22
+      23,
+      26
     ],
     "perfRank": [
       null,
@@ -712,7 +848,8 @@
       null,
       null,
       10,
-      12
+      12,
+      18
     ],
     "a11yRank": [
       null,
@@ -722,40 +859,8 @@
       null,
       null,
       75,
-      76
-    ]
-  },
-  {
-    "url": "https://smth.uk/",
-    "combinedRank": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      122,
-      99
-    ],
-    "perfRank": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      154,
-      121
-    ],
-    "a11yRank": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      100,
-      101
+      76,
+      79
     ]
   },
   {
@@ -768,7 +873,8 @@
       null,
       null,
       8,
-      12
+      12,
+      8
     ],
     "perfRank": [
       null,
@@ -778,7 +884,8 @@
       null,
       null,
       16,
-      44
+      44,
+      19
     ],
     "a11yRank": [
       null,
@@ -788,7 +895,44 @@
       null,
       null,
       32,
-      34
+      34,
+      38
+    ]
+  },
+  {
+    "url": "https://webcomponents.club/",
+    "combinedRank": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      16,
+      26,
+      5
+    ],
+    "perfRank": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      69,
+      81,
+      41
+    ],
+    "a11yRank": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      9,
+      10,
+      10
     ]
   },
   {
@@ -801,7 +945,8 @@
       null,
       null,
       12,
-      7
+      7,
+      9
     ],
     "perfRank": [
       null,
@@ -811,7 +956,8 @@
       null,
       null,
       57,
-      59
+      59,
+      49
     ],
     "a11yRank": [
       null,
@@ -821,7 +967,8 @@
       null,
       null,
       13,
-      13
+      13,
+      14
     ]
   }
 ]

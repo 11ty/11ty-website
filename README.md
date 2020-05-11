@@ -21,7 +21,7 @@ _TODO: make this better_
 1. Run `node node-performance-rank`
 2. Run `node node-screenshots`
 3. Run `node node-avatars`
-4. Copy `_data/fastestSites.json` to `leaderboard/history/____-weekX.json`
+4. Copy `_data/fastestSites.json` to `leaderboard/history/fastestSites-weekX.json`
 5. Update `leaderboard/history/node-history` to have a new maximumWeekNumber
 6. Run `leaderboard/history/node node-history`
 7. Run npx @11ty/eleventy

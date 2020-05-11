@@ -124,7 +124,7 @@ class RankHistory {
 }
 
 let minimumWeekNumber = 6;
-let maximumWeekNumber = 8;
+let maximumWeekNumber = 9;
 let rank = new RankHistory();
 
 for(let weekNumber = minimumWeekNumber; weekNumber < maximumWeekNumber; weekNumber++) {

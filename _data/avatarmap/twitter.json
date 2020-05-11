@@ -1817,6 +1817,39 @@
       "size": 1551
     }
   ],
+  "cjamcl": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "cjamcl",
+      "path": "img/avatar-local-cache/twitter/cjamcl.webp",
+      "size": 1034
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "cjamcl",
+      "path": "img/avatar-local-cache/twitter/cjamcl.jpg",
+      "size": 1709
+    }
+  ],
   "cjtype": [
     {
       "format": "webp",
@@ -1850,6 +1883,39 @@
       "size": 2042
     }
   ],
+  "ckirknielsen": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "ckirknielsen",
+      "path": "img/avatar-local-cache/twitter/ckirknielsen.webp",
+      "size": 1134
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "ckirknielsen",
+      "path": "img/avatar-local-cache/twitter/ckirknielsen.jpg",
+      "size": 1761
+    }
+  ],
   "codefoodpixels": [
     {
       "format": "webp",
@@ -1864,7 +1930,7 @@
       "extension": "webp",
       "name": "codefoodpixels",
       "path": "img/avatar-local-cache/twitter/codefoodpixels.webp",
-      "size": 1066
+      "size": 1606
     },
     {
       "format": "jpeg",
@@ -1880,7 +1946,7 @@
       "extension": "jpg",
       "name": "codefoodpixels",
       "path": "img/avatar-local-cache/twitter/codefoodpixels.jpg",
-      "size": 1637
+      "size": 2143
     }
   ],
   "codingchaos": [
@@ -2557,7 +2623,7 @@
       "extension": "webp",
       "name": "dennisview",
       "path": "img/avatar-local-cache/twitter/dennisview.webp",
-      "size": 1010
+      "size": 480
     },
     {
       "format": "jpeg",
@@ -2573,7 +2639,7 @@
       "extension": "jpg",
       "name": "dennisview",
       "path": "img/avatar-local-cache/twitter/dennisview.jpg",
-      "size": 1555
+      "size": 1029
     }
   ],
   "derekhoman": [
@@ -3993,6 +4059,39 @@
       "name": "hj_chen",
       "path": "img/avatar-local-cache/twitter/hj_chen.png",
       "size": 1724
+    }
+  ],
+  "hmillerdev": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "hmillerdev",
+      "path": "img/avatar-local-cache/twitter/hmillerdev.webp",
+      "size": 1752
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "hmillerdev",
+      "path": "img/avatar-local-cache/twitter/hmillerdev.jpg",
+      "size": 2266
     }
   ],
   "hybrid_alex": [
@@ -5692,7 +5791,7 @@
       "extension": "webp",
       "name": "lyndsay_lucero",
       "path": "img/avatar-local-cache/twitter/lyndsay_lucero.webp",
-      "size": 2216
+      "size": 1342
     },
     {
       "format": "jpeg",
@@ -5708,7 +5807,7 @@
       "extension": "jpg",
       "name": "lyndsay_lucero",
       "path": "img/avatar-local-cache/twitter/lyndsay_lucero.jpg",
-      "size": 2667
+      "size": 1936
     }
   ],
   "maelb": [
@@ -6831,6 +6930,39 @@
       "name": "oliverturner",
       "path": "img/avatar-local-cache/twitter/oliverturner.jpg",
       "size": 1770
+    }
+  ],
+  "openwc": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "openwc",
+      "path": "img/avatar-local-cache/twitter/openwc.webp",
+      "size": 1484
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "png",
+      "name": "openwc",
+      "path": "img/avatar-local-cache/twitter/openwc.png",
+      "size": 2066
     }
   ],
   "originalzedders": [
@@ -8926,7 +9058,7 @@
       "extension": "webp",
       "name": "toddlibby",
       "path": "img/avatar-local-cache/twitter/toddlibby.webp",
-      "size": 1854
+      "size": 672
     },
     {
       "format": "jpeg",
@@ -8939,10 +9071,10 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
-      "extension": "jpg",
+      "extension": "png",
       "name": "toddlibby",
-      "path": "img/avatar-local-cache/twitter/toddlibby.jpg",
-      "size": 2309
+      "path": "img/avatar-local-cache/twitter/toddlibby.png",
+      "size": 1226
     }
   ],
   "tomayac": [

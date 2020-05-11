@@ -14,7 +14,7 @@ eleventyNavigation:
 
 ## Source Code Samples
 
-This list shows all of the sample sites that have provided a link to their source code. A [comprehensive list of all sample sites is available](/docs/sites/). {% addToSampleSites %}
+This list shows all of the sample sites that have provided a link to their source code. A [comprehensive list of all sample sites is available](/leaderboard/). {% addToSampleSites %}
 
 <table>
   <thead>
