@@ -20,12 +20,6 @@ is the same as:
 ```js
 console.log("My Title");
 ```
-
-You can log anything:
-
-```
-{{ collections.posts | log }}
-```
 {% endraw %}
 
 * [← Back to Filters documentation.](/docs/filters/)
