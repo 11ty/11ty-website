@@ -48,7 +48,7 @@ Run `eleventy --serve` to start up a hot-reloading web server. Then open `http:/
 </ul>
 
 <!-- TODO some kind of aspect ratio? -->
-<div data-import="/imports/facepile.html"></div>
+<!-- <div data-import="/imports/facepile.html"></div> -->
 
 View [all {{ sites | objectFilterNot("disabled") | length }} sites](/leaderboard/).
 
