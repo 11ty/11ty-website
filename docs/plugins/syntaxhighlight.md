@@ -40,7 +40,18 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-You are responsible for including [your favorite PrismJS theme CSS](https://github.com/PrismJS/prism-themes)!
+You are responsible for including your favorite PrismJS theme CSS and there are many ways to do that. The default themes are provided by [several CDNs](https://prismjs.com/#basic-usage-cdn) and could be easly included in a base layout, like in the example bellow;
+
+```html
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="https://unpkg.com/browse/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  </head>
+````
+
+You could also download the css file or paste its content inside a style tag. This aprroach opens the opportunity to use other themes like [these ones](https://github.com/PrismJS/prism-themes) from a Prism extension repository.
 
 ### Options
 
