@@ -128,3 +128,17 @@
 .facepile > a:nth-child(11n+11):hover:after {
 	background-position: 90% 80%;
 }
+
+
+@media (min-width: 62.5em) { /* 1000px */
+	.facepile-fullwidth {
+		width: 146%;
+		margin-left: -22%;
+	}
+}
+@media (min-width: 84em) { /* 1344px */
+	.facepile-fullwidth {
+		width: 200%;
+		margin-left: -50%;
+	}
+}

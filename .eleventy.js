@@ -434,12 +434,20 @@ ${text.trim()}
 
 	eleventyConfig.addFilter("topAuthors", sites => {
 		let counts = {};
+		let eligibleCounts = {};
 		let trophies = {};
 		getAuthors(sites, (name, site) => {
 			if(!counts[name]) {
 				counts[name] = 0;
 			}
 			counts[name]++;
+
+			if(site.url && !site.disabled && !site.superfeatured && !site.hideOnHomepage) {
+				if(!eligibleCounts[name]) {
+					eligibleCounts[name] = 0;
+				}
+				eligibleCounts[name]++;
+			}
 
 			if(!trophies[name]) {
 				trophies[name] = 0;
@@ -453,6 +461,7 @@ ${text.trim()}
 				top.push({
 					name: author,
 					count: counts[author],
+					eligibleCount: eligibleCounts[author],
 					trophies: trophies[author],
 				});
 			}
