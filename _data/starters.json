@@ -124,5 +124,11 @@
 		"name": "static-starter",
 		"description": "A static site starting template built with 11ty, Svelte, TailwindCSS, and Rollup for pragmatic and simple FED.",
 		"author": "mattwaler"
+  },
+  {
+		"url": "https://github.com/clenemt/eleventy-webpack",
+		"name": "eleventy-webpack",
+		"description": "A barebone Eleventy and Webpack boilerplate 🎈",
+		"author": "clenemt"
 	}
 ]
