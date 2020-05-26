@@ -124,5 +124,11 @@
 		"name": "static-starter",
 		"description": "A static site starting template built with 11ty, Svelte, TailwindCSS, and Rollup for pragmatic and simple FED.",
 		"author": "mattwaler"
+	},
+	{
+		"url": "https://github.com/stefanfrede/11st-starter-kit",
+		"name": "11st-Starter-Kit",
+		"description": "11ty + Snowpack + tailwindcss",
+		"author": "stefanfrede"
 	}
 ]
