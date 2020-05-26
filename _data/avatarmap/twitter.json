@@ -395,6 +395,39 @@
       "size": 2174
     }
   ],
+  "alejandroplesch": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "alejandroplesch",
+      "path": "img/avatar-local-cache/twitter/alejandroplesch.webp",
+      "size": 1348
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "alejandroplesch",
+      "path": "img/avatar-local-cache/twitter/alejandroplesch.jpg",
+      "size": 1923
+    }
+  ],
   "alex_kaul": [
     {
       "format": "webp",
@@ -644,6 +677,39 @@
       "size": 1862
     }
   ],
+  "ansimorph": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "ansimorph",
+      "path": "img/avatar-local-cache/twitter/ansimorph.webp",
+      "size": 520
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "ansimorph",
+      "path": "img/avatar-local-cache/twitter/ansimorph.jpg",
+      "size": 1127
+    }
+  ],
   "argyleink": [
     {
       "format": "webp",
@@ -776,6 +842,39 @@
       "size": 1467
     }
   ],
+  "austinjs": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": true,
+      "extension": "webp",
+      "name": "austinjs",
+      "path": "img/avatar-local-cache/twitter/austinjs.webp",
+      "size": 1666
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "png",
+      "name": "austinjs",
+      "path": "img/avatar-local-cache/twitter/austinjs.png",
+      "size": 2030
+    }
+  ],
   "b0neskull": [
     {
       "format": "webp",
@@ -840,6 +939,39 @@
       "name": "bartzia",
       "path": "img/avatar-local-cache/twitter/bartzia.jpg",
       "size": 1350
+    }
+  ],
+  "bauhouse": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "bauhouse",
+      "path": "img/avatar-local-cache/twitter/bauhouse.webp",
+      "size": 990
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "bauhouse",
+      "path": "img/avatar-local-cache/twitter/bauhouse.jpg",
+      "size": 1639
     }
   ],
   "bearponderings": [
@@ -1634,6 +1766,39 @@
       "size": 1595
     }
   ],
+  "chadonihi": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "chadonihi",
+      "path": "img/avatar-local-cache/twitter/chadonihi.webp",
+      "size": 1962
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "chadonihi",
+      "path": "img/avatar-local-cache/twitter/chadonihi.jpg",
+      "size": 2431
+    }
+  ],
   "chinchang457": [
     {
       "format": "webp",
@@ -2425,7 +2590,7 @@
       "extension": "webp",
       "name": "daslaf",
       "path": "img/avatar-local-cache/twitter/daslaf.webp",
-      "size": 1278
+      "size": 1044
     },
     {
       "format": "jpeg",
@@ -2441,7 +2606,7 @@
       "extension": "jpg",
       "name": "daslaf",
       "path": "img/avatar-local-cache/twitter/daslaf.jpg",
-      "size": 1899
+      "size": 1784
     }
   ],
   "dassurma": [
@@ -2541,6 +2706,39 @@
       "name": "daviddarnes",
       "path": "img/avatar-local-cache/twitter/daviddarnes.jpg",
       "size": 2799
+    }
+  ],
+  "davidrhoden": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "davidrhoden",
+      "path": "img/avatar-local-cache/twitter/davidrhoden.webp",
+      "size": 1392
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "png",
+      "name": "davidrhoden",
+      "path": "img/avatar-local-cache/twitter/davidrhoden.png",
+      "size": 1881
     }
   ],
   "defaced": [
@@ -2906,6 +3104,39 @@
       "size": 1860
     }
   ],
+  "dtroode": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "dtroode",
+      "path": "img/avatar-local-cache/twitter/dtroode.webp",
+      "size": 458
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "dtroode",
+      "path": "img/avatar-local-cache/twitter/dtroode.jpg",
+      "size": 968
+    }
+  ],
   "duncan": [
     {
       "format": "webp",
@@ -3168,6 +3399,39 @@
       "name": "emilyknowshtml",
       "path": "img/avatar-local-cache/twitter/emilyknowshtml.jpg",
       "size": 2257
+    }
+  ],
+  "equilibrario": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "equilibrario",
+      "path": "img/avatar-local-cache/twitter/equilibrario.webp",
+      "size": 696
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "equilibrario",
+      "path": "img/avatar-local-cache/twitter/equilibrario.jpg",
+      "size": 1229
     }
   ],
   "equinusocio": [
@@ -3498,6 +3762,39 @@
       "name": "frontendnorth",
       "path": "img/avatar-local-cache/twitter/frontendnorth.png",
       "size": 1407
+    }
+  ],
+  "fumesvoice": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "fumesvoice",
+      "path": "img/avatar-local-cache/twitter/fumesvoice.webp",
+      "size": 1396
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "fumesvoice",
+      "path": "img/avatar-local-cache/twitter/fumesvoice.jpg",
+      "size": 1778
     }
   ],
   "genehack": [
@@ -4193,6 +4490,39 @@
       "size": 2116
     }
   ],
+  "ilithya_net": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "ilithya_net",
+      "path": "img/avatar-local-cache/twitter/ilithya_net.webp",
+      "size": 1172
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "ilithya_net",
+      "path": "img/avatar-local-cache/twitter/ilithya_net.jpg",
+      "size": 1778
+    }
+  ],
   "isfotis": [
     {
       "format": "webp",
@@ -4240,7 +4570,7 @@
       "extension": "webp",
       "name": "itsleeohgee",
       "path": "img/avatar-local-cache/twitter/itsleeohgee.webp",
-      "size": 1130
+      "size": 1358
     },
     {
       "format": "jpeg",
@@ -4256,7 +4586,7 @@
       "extension": "jpg",
       "name": "itsleeohgee",
       "path": "img/avatar-local-cache/twitter/itsleeohgee.jpg",
-      "size": 1772
+      "size": 2020
     }
   ],
   "ivoputzer": [
@@ -5414,6 +5744,39 @@
       "size": 1831
     }
   ],
+  "lance_slabbert": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "lance_slabbert",
+      "path": "img/avatar-local-cache/twitter/lance_slabbert.webp",
+      "size": 722
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "lance_slabbert",
+      "path": "img/avatar-local-cache/twitter/lance_slabbert.jpg",
+      "size": 1410
+    }
+  ],
   "layoutplusplus": [
     {
       "format": "webp",
@@ -5610,6 +5973,39 @@
       "name": "lewisnyman",
       "path": "img/avatar-local-cache/twitter/lewisnyman.jpg",
       "size": 2416
+    }
+  ],
+  "liatrisbian": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "liatrisbian",
+      "path": "img/avatar-local-cache/twitter/liatrisbian.webp",
+      "size": 1568
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "liatrisbian",
+      "path": "img/avatar-local-cache/twitter/liatrisbian.jpg",
+      "size": 2080
     }
   ],
   "londoncss": [
@@ -6206,6 +6602,39 @@
       "size": 1508
     }
   ],
+  "memememelinda": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "memememelinda",
+      "path": "img/avatar-local-cache/twitter/memememelinda.webp",
+      "size": 1450
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "memememelinda",
+      "path": "img/avatar-local-cache/twitter/memememelinda.jpg",
+      "size": 2076
+    }
+  ],
   "micahmills": [
     {
       "format": "webp",
@@ -6517,7 +6946,7 @@
       "extension": "webp",
       "name": "mrmowji",
       "path": "img/avatar-local-cache/twitter/mrmowji.webp",
-      "size": 1328
+      "size": 480
     },
     {
       "format": "jpeg",
@@ -6533,7 +6962,7 @@
       "extension": "jpg",
       "name": "mrmowji",
       "path": "img/avatar-local-cache/twitter/mrmowji.jpg",
-      "size": 1941
+      "size": 1051
     }
   ],
   "mxbck": [
@@ -6767,6 +7196,39 @@
       "size": 1864
     }
   ],
+  "ninjabachelor": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "ninjabachelor",
+      "path": "img/avatar-local-cache/twitter/ninjabachelor.webp",
+      "size": 1756
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "ninjabachelor",
+      "path": "img/avatar-local-cache/twitter/ninjabachelor.jpg",
+      "size": 2372
+    }
+  ],
   "ninjasoards": [
     {
       "format": "webp",
@@ -6996,6 +7458,39 @@
       "name": "originalzedders",
       "path": "img/avatar-local-cache/twitter/originalzedders.jpg",
       "size": 2212
+    }
+  ],
+  "oscarcampos": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "oscarcampos",
+      "path": "img/avatar-local-cache/twitter/oscarcampos.webp",
+      "size": 1946
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "oscarcampos",
+      "path": "img/avatar-local-cache/twitter/oscarcampos.jpg",
+      "size": 2475
     }
   ],
   "paulrobertlloyd": [
@@ -7462,21 +7957,6 @@
   ],
   "psylok": [
     {
-      "format": "webp",
-      "width": 73,
-      "height": 73,
-      "space": "srgb",
-      "channels": 3,
-      "depth": "uchar",
-      "isProgressive": false,
-      "hasProfile": false,
-      "hasAlpha": false,
-      "extension": "webp",
-      "name": "psylok",
-      "path": "img/avatar-local-cache/twitter/psylok.webp",
-      "size": 736
-    },
-    {
       "format": "jpeg",
       "width": 73,
       "height": 73,
@@ -7487,10 +7967,10 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
-      "extension": "jpg",
+      "extension": "png",
       "name": "psylok",
-      "path": "img/avatar-local-cache/twitter/psylok.jpg",
-      "size": 1337
+      "path": "img/avatar-local-cache/twitter/psylok.png",
+      "size": 1123
     }
   ],
   "publishingnuria": [
@@ -7889,6 +8369,39 @@
       "size": 1706
     }
   ],
+  "rokmatwit": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "rokmatwit",
+      "path": "img/avatar-local-cache/twitter/rokmatwit.webp",
+      "size": 842
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "rokmatwit",
+      "path": "img/avatar-local-cache/twitter/rokmatwit.jpg",
+      "size": 1479
+    }
+  ],
   "rowdyrabouw": [
     {
       "format": "webp",
@@ -8101,7 +8614,7 @@
       "extension": "webp",
       "name": "scottishstoater",
       "path": "img/avatar-local-cache/twitter/scottishstoater.webp",
-      "size": 848
+      "size": 1460
     },
     {
       "format": "jpeg",
@@ -8117,7 +8630,7 @@
       "extension": "jpg",
       "name": "scottishstoater",
       "path": "img/avatar-local-cache/twitter/scottishstoater.jpg",
-      "size": 1454
+      "size": 2110
     }
   ],
   "scottjehl": [
@@ -8497,7 +9010,7 @@
       "extension": "webp",
       "name": "sindreboyum",
       "path": "img/avatar-local-cache/twitter/sindreboyum.webp",
-      "size": 1296
+      "size": 970
     },
     {
       "format": "jpeg",
@@ -8513,7 +9026,7 @@
       "extension": "jpg",
       "name": "sindreboyum",
       "path": "img/avatar-local-cache/twitter/sindreboyum.jpg",
-      "size": 1911
+      "size": 1563
     }
   ],
   "sm0kedev": [
@@ -8615,6 +9128,39 @@
       "size": 1867
     }
   ],
+  "spaghetti_emoji": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "spaghetti_emoji",
+      "path": "img/avatar-local-cache/twitter/spaghetti_emoji.webp",
+      "size": 1200
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "spaghetti_emoji",
+      "path": "img/avatar-local-cache/twitter/spaghetti_emoji.jpg",
+      "size": 1923
+    }
+  ],
   "spekulatius1984": [
     {
       "format": "webp",
@@ -8646,6 +9192,39 @@
       "name": "spekulatius1984",
       "path": "img/avatar-local-cache/twitter/spekulatius1984.jpg",
       "size": 2148
+    }
+  ],
+  "spiral11_": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "spiral11_",
+      "path": "img/avatar-local-cache/twitter/spiral11_.webp",
+      "size": 1298
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "spiral11_",
+      "path": "img/avatar-local-cache/twitter/spiral11_.jpg",
+      "size": 1804
     }
   ],
   "splitinfinities": [
@@ -8780,6 +9359,39 @@
       "size": 2259
     }
   ],
+  "stedman": [
+    {
+      "format": "webp",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "webp",
+      "name": "stedman",
+      "path": "img/avatar-local-cache/twitter/stedman.webp",
+      "size": 1182
+    },
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "png",
+      "name": "stedman",
+      "path": "img/avatar-local-cache/twitter/stedman.png",
+      "size": 1681
+    }
+  ],
   "surajsjdhv": [
     {
       "format": "webp",
@@ -8794,7 +9406,7 @@
       "extension": "webp",
       "name": "surajsjdhv",
       "path": "img/avatar-local-cache/twitter/surajsjdhv.webp",
-      "size": 1410
+      "size": 1006
     },
     {
       "format": "jpeg",
@@ -8810,7 +9422,7 @@
       "extension": "jpg",
       "name": "surajsjdhv",
       "path": "img/avatar-local-cache/twitter/surajsjdhv.jpg",
-      "size": 1923
+      "size": 1572
     }
   ],
   "tatianatmac": [
@@ -8827,7 +9439,7 @@
       "extension": "webp",
       "name": "tatianatmac",
       "path": "img/avatar-local-cache/twitter/tatianatmac.webp",
-      "size": 1086
+      "size": 1010
     },
     {
       "format": "jpeg",
@@ -8843,7 +9455,7 @@
       "extension": "jpg",
       "name": "tatianatmac",
       "path": "img/avatar-local-cache/twitter/tatianatmac.jpg",
-      "size": 1659
+      "size": 1564
     }
   ],
   "tempertemper": [
@@ -8860,7 +9472,7 @@
       "extension": "webp",
       "name": "tempertemper",
       "path": "img/avatar-local-cache/twitter/tempertemper.webp",
-      "size": 400
+      "size": 418
     },
     {
       "format": "jpeg",
@@ -8876,7 +9488,7 @@
       "extension": "jpg",
       "name": "tempertemper",
       "path": "img/avatar-local-cache/twitter/tempertemper.jpg",
-      "size": 888
+      "size": 916
     }
   ],
   "thatianrose": [
@@ -8992,7 +9604,7 @@
       "extension": "webp",
       "name": "thetalesofimmo",
       "path": "img/avatar-local-cache/twitter/thetalesofimmo.webp",
-      "size": 414
+      "size": 1808
     },
     {
       "format": "jpeg",
@@ -9005,10 +9617,10 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
-      "extension": "png",
+      "extension": "jpg",
       "name": "thetalesofimmo",
-      "path": "img/avatar-local-cache/twitter/thetalesofimmo.png",
-      "size": 888
+      "path": "img/avatar-local-cache/twitter/thetalesofimmo.jpg",
+      "size": 2365
     }
   ],
   "timseverien": [
