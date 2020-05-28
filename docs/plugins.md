@@ -35,6 +35,7 @@ All official plugins live under the `@11ty` npm organization and plugin names wi
 * [eleventy-plugin-youtube-embed](https://www.npmjs.com/package/eleventy-plugin-youtube-embed) by [Graham F. Scott](https://twitter.com/gfscott) automatically embeds YouTube videos based on just their URLs.
 * [@infinity-interactive/eleventy-plugin-injector](https://www.npmjs.com/package/@infinity-interactive/eleventy-plugin-injector) by [John Anderson](https://twitter.com/genehack) allows you to run an arbitrary callback at build time or when using `--serve` or `--watch`
 * [eleventy-plugin-cloudinary](https://www.npmjs.com/package/eleventy-plugin-cloudinary) by [Juan Fernandes](https://www.juanfernandes.uk/) adds a universal shortcode so you to add images from your cloudinary account.
+* [eleventy-plugin-i18n](https://www.npmjs.com/package/eleventy-plugin-i18n) by [Adam Duncan](https://www.adamduncandesigns.com) will add a clever `i18n` universal filter to assist with internationalization and dictionary translations.
 * [**Search for `eleventy-plugin` on `npm`**](https://www.npmjs.com/search?q=eleventy-plugin)
 
 
