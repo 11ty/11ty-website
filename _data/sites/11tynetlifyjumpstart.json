@@ -1,0 +1,8 @@
+{
+  "url": "https://11ty-netlify-jumpstart.netlify.app/",
+  "name": "11ty Netlify Jumpstart",
+  "description": "Quickly launch an 11ty-generated static site. Includes a minimal Sass framework, and generated sitemap, RSS feed, and social share preview images.",
+  "twitter": "5t3ph",
+  "authoredBy": ["5t3ph"],
+  "source_url": "https://github.com/5t3ph/11ty-netlify-jumpstart"
+}
