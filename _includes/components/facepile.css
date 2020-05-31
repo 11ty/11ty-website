@@ -35,6 +35,11 @@
 	transition: border .3s;
 	object-fit: cover;
 }
+@media (prefers-color-scheme: dark) {
+	.facepile .avatar {
+		color: #222;
+	}
+}
 .elv-docs .facepile-supporters .avatar {
 	width: calc(30px + 2vw);
 	height: calc(30px + 2vw);

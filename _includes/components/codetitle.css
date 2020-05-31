@@ -8,9 +8,10 @@
 	background-color: #fff;
 }
 @media (prefers-color-scheme: dark) {
-  .codetitle {
-    color: #222;
-  }
+	.codetitle {
+		background-color: #222;
+		color: #fff;
+	}
 }
 .codetitle-left {
 	float: left;

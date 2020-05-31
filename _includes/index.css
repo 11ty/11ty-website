@@ -22,10 +22,10 @@ body {
 	margin: 0;
 }
 @media (prefers-color-scheme: dark) {
-  body {
-   background-color: #222;
-   color: #fff;
-  }
+	body {
+	 background-color: #222;
+	 color: #fff;
+	}
 }
 .elv-docs body {
 	max-width: 76em;
@@ -40,16 +40,17 @@ a[href] {
 	color: #222;
 }
 @media (prefers-color-scheme: dark) {
-  a,
-  a:visited,
-  a[href] {
-    color: #fff;
-  }
-  .btn-primary,
-  a.btn-primary {
-    border-color: #fff;
-    color: #222;
-  }
+	a,
+	a:visited,
+	a[href] {
+		color: #fff;
+	}
+	.btn-primary,
+	a.btn-primary {
+		border-color: #fff;
+		color: #fff;
+		background-color: #222;
+	}
 }
 a[href].naked {
 	text-decoration: none;
@@ -95,9 +96,10 @@ blockquote {
 	border-left: 6px solid #ddd;
 }
 @media (prefers-color-scheme: dark) {
-  blockquote {
-    color: #bbb;
-  }
+	blockquote {
+		color: #ccc;
+		border-color: #444;
+	}
 }
 blockquote + blockquote {
 	margin-top: 2em;
@@ -134,9 +136,9 @@ blockquote .bio-source {
 	white-space: nowrap;
 }
 @media (prefers-color-scheme: dark) {
-  .has-svg-icon > svg {
-    fill: #fff;
-  }
+	.has-svg-icon > svg {
+		fill: #fff;
+	}
 }
 /* Main */
 main {
@@ -287,9 +289,9 @@ li li {
 	margin-bottom: 4px;
 }
 @media (prefers-color-scheme: dark) {
-  .list-bare-desc {
-    color: #bbb;
-  }
+	.list-bare-desc {
+		color: #bbb;
+	}
 }
 .list-bare-desc:last-child {
 	margin-bottom: 6px;
@@ -312,6 +314,13 @@ li li {
 #quick-start ~ .language-text code {
 	background-color: #fafafa;
 	color: #222;
+}
+@media (prefers-color-scheme: dark) {
+	#quick-start ~ .language-text,
+	#quick-start ~ .language-text code {
+		background-color: #222;
+		color: #fafafa;
+	}
 }
 
 /* Layout */
@@ -341,7 +350,6 @@ footer.elv-layout {
 
 /* Header */
 .elv-header {
-	color: #222;
 	position: relative;
 }
 .elv-header-default {
@@ -375,9 +383,12 @@ footer.elv-layout {
 	margin-right: -1rem;
 }
 @media (prefers-color-scheme: dark) {
-  .elv-header-default .elv-hero {
-    border-bottom: 1px solid #fff;
-  }
+	.elv-header-default .elv-hero {
+		background-color: #222;
+	}
+	.elv-header-default .elv-hero:hover {
+		background-color: #333;
+	}
 }
 .elv-header-docs .elv-hero {
 	float: left;
@@ -522,6 +533,11 @@ main .elv-toc + h1 .direct-link {
 	border-bottom: 1px dotted #ddd;
 	margin: 2rem 0;
 }
+@media (prefers-color-scheme: dark) {
+	.elv-sg-component {
+		background-color: #222;
+	}
+}
 .elv-sg-component:before,
 .elv-sg-component:after {
 	content: " "; /* 1 */
@@ -543,9 +559,9 @@ main .elv-toc + h1 .direct-link {
 	margin: 2em 0;
 }
 @media (prefers-color-scheme: dark) {
-  .elv-langlist {
-    background-color: #080808;
-  }
+	.elv-langlist {
+		background-color: #080808;
+	}
 }
 .elv-langlist-hed {
 	margin: 0;

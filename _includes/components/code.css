@@ -63,11 +63,9 @@ pre + .note {
 	text-align: right;
 }
 @media (prefers-color-scheme: dark) {
-  pre {
-    border: 2px solid #bbb;
-  }
   code {
-    color: #222;
+    background-color: #000;
+    color: #fff;
   }
   pre code {
     color: unset;

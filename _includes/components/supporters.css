@@ -64,6 +64,11 @@
 	padding: 0;
 	margin-bottom: 4rem;
 }
+@media (prefers-color-scheme: dark) {
+	.investors-btn {
+		background-color: #222;
+	}
+}
 .investors-btn .netlify-identity-button {
 	padding: .5em 1em .4em;
 	display: block;
