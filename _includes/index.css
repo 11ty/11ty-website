@@ -381,28 +381,34 @@ footer.elv-layout {
 	clear: both;
 }
 /* Header Hero */
+.elv-hero {
+	background-color: #222;
+}
+@media (prefers-color-scheme: dark) {
+	.elv-hero {
+		background-color: #292929;
+	}
+}
 .elv-hero img,
 .elv-hero svg {
 	width: 42.95774646vh;
 	height: 60vh;
-	background-color: #222;
+}
+.elv-hero:hover img,
+.elv-hero:hover svg {
+	background-color: inherit;
 }
 .elv-header-default .elv-hero {
 	display: flex;
 	justify-content: center;
-	background: #222;
 	width: calc(100% + 2rem);
 	margin-left: -1rem;
 	margin-right: -1rem;
 }
-@media (prefers-color-scheme: dark) {
-	.elv-header-default .elv-hero {
-		background-color: #222;
-	}
-	.elv-header-default .elv-hero:hover {
-		background-color: #333;
-	}
+.elv-hero:hover {
+	background-color: #333;
 }
+
 .elv-header-docs .elv-hero {
 	float: left;
 	margin-right: .5em;
