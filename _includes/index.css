@@ -45,12 +45,6 @@ a[href] {
 	a[href] {
 		color: #fff;
 	}
-	.btn-primary,
-	a.btn-primary {
-		border-color: #fff;
-		color: #fff;
-		background-color: #222;
-	}
 }
 a[href].naked {
 	text-decoration: none;
@@ -644,7 +638,7 @@ main .elv-toc + h1 .direct-link {
 	font-weight: 700;
 	text-transform: uppercase;
 	text-decoration: none;
-	background-color: #fff;
+	color: inherit;
 }
 .btn-form {
 	border-radius: 1em;
