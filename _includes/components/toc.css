@@ -81,6 +81,7 @@
 @media (prefers-color-scheme: dark) {
   .elv-toc-list > li > a {
     color: #fff;
+    border-color: #444;
   }
 }
 
@@ -90,8 +91,7 @@
 }
 @media (prefers-color-scheme: dark) {
   .elv-toc-list li.elv-toc-active > a {
-    background-color: #00bcd4;
-    color: #222;
+    background-color: #353535;
   }
 }
 .elv-toc-list ul .elv-toc-active > a:after {

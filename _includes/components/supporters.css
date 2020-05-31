@@ -42,7 +42,12 @@
 	max-height: 75px;
 }
 .supporters-gold .subhed strong {
-	color: #867202;
+	color: hsl(51, 97%, 27%);
+}
+@media (prefers-color-scheme: dark) {
+	.supporters-gold .subhed strong {
+		color: hsl(51, 97%, 54%);
+	}
 }
 .supporters-gold + .facepile-supporters {
 	margin-top: 0;
