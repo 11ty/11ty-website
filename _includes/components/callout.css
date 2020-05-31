@@ -7,6 +7,11 @@
 	margin-bottom: 2em;
 	background-color: #dff7ff;
 }
+@media (min-width: 44.375em) { /* 710px */
+	.elv-callout {
+		border-radius: 0.3em;
+	}
+}
 @media (prefers-color-scheme: dark) {
 	.elv-callout {
 		background-color: hsl(195, 100%, 12%);

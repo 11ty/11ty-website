@@ -243,8 +243,7 @@ ${text.trim()}
 		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, shortcodes.avatarlocalcache("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`) + testimonial.name)}</span>` : ``}</p></blockquote>`;
 	});
 
-	eleventyConfig.addShortcode("supporterAmount", function(amount, maxAmount = 1000) {
-		// let increments = [1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987];
+	eleventyConfig.addShortcode("supporterAmount", function(amount, maxAmount = 2000) {
 		// mostly fibonacci
 		let increments = [5,8,13,21,34,55,89,144,233,377,610,987,1597,2584];
 		let incrementCounter = 0;
