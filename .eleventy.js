@@ -96,7 +96,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPairedShortcode("minilink", function(text, href) {
 		return `<a href="${href}" class="minilink minilink-lower">${text}</a>`;
 	});
-// DEBS TO SELF: remove this if approved in principle AND edit all the other files (so far only done usage)
+
 	eleventyConfig.addPairedShortcode("codewithprompt", function(text, prePrefixCode, when) {
 		return `<div data-preprefix-${prePrefixCode}="${when}">
 
