@@ -62,6 +62,17 @@ pre + .note {
 	margin-bottom: 2.5em; /* 40px /16 */
 	text-align: right;
 }
+@media (prefers-color-scheme: dark) {
+  pre {
+    border: 2px solid #bbb;
+  }
+  code {
+    color: #222;
+  }
+  pre code {
+    color: unset;
+  }
+}
 @media (min-width: 37.5em) { /* 600px */
 	pre {
 		font-size: 1em; /* 16px /16 */
