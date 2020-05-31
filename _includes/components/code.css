@@ -123,12 +123,6 @@ pre + .note {
 	color: #aaa;
 	content: "~/eleventy-sample $ ";
 }
-[data-preprefix-npxeleventy="all"] .highlight-line:before,
-[data-preprefix-npxeleventy="last"] .highlight-line:last-child:before,
-[data-preprefix-npxeleventy="first"] .highlight-line:first-child:before {
-	color: #bbb;
-	content: "npx @11ty/eleventy ";
-}
 
 /*#localinstall:checked ~ .globalinstall {
 	display: none;

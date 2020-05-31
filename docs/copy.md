@@ -167,10 +167,10 @@ Given that global copy of all content in the directory may be a security risk, w
 
 <div class="elv-callout elv-callout-warn"><strong>Warning:</strong> This may be a security risk—this is intended only for demos and other non-production use.</div>
 
-{% codewithprompt "npxeleventy", "last" %}
+```bash
 # Copies ALL files in the input directory to the output directory
---passthroughall
-{% endcodewithprompt %}
+npx @11ty/eleventy --passthroughall
+```
 
 ## Disabling Passthrough File Copy
 

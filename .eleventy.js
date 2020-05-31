@@ -104,13 +104,22 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addPairedShortcode("codewithprompt", function(text, prePrefixCode, when) {
-		return `<div data-preprefix-${prePrefixCode}="${when}">
+		let ret = [];
+		if(prePrefixCode && when) {
+			ret.push(`<div data-preprefix-${prePrefixCode}="${when}">
+`);
+		}
 
-\`\`\`bash/-
+		ret.push(`\`\`\`bash/-
 ${text.trim()}
-\`\`\`
+\`\`\``);
 
-</div>`;
+		if(prePrefixCode && when) {
+			ret.push(`
+</div>`);
+		}
+
+		return ret.join("\n");
 	});
 
 	eleventyConfig.addPassthroughCopy({
