@@ -16,11 +16,14 @@ eleventyNavigation:
 
 ### Community Contributed
 
-{% for site in starters | sortObjectByOrder -%}
+In random order. [Add your own](https://github.com/11ty/11ty-website/tree/master/_data/starters)!
+
+{% for name, site in starters | shuffle -%}
 {% if site.disabled != true and not site.official -%}
 * [{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %} {% authorLink authors, site.author %}
 {% endif -%}
 {% endfor -%}
+* [Add your own](https://github.com/11ty/11ty-website/tree/master/_data/starters)!
 
 ## Lists
 

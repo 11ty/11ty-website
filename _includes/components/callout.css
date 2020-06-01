@@ -27,8 +27,8 @@ table .elv-callout {
 	margin-bottom: 1em;
 }
 
-/* info */
-.elv-callout:before {
+/* The icon is only shown when `info` is explicitly defined */
+.elv-callout-info:before {
 	content: "ℹ️ ";
 }
 .elv-callout code {
