@@ -115,10 +115,10 @@ async function fetchAvatarsForDataSource(sourceName, entries, fetchCallbacks) {
 	}
 
 	// Plugins
-	let starters = await fastglob("./_data/plugins/*.json", {
+	let plugins = await fastglob("./_data/plugins/*.json", {
 		caseSensitiveMatch: false
 	});
-	for(let plugin of starters) {
+	for(let plugin of plugins) {
 		let pluginData = require(plugin);
 		if(pluginData.author) {
 			twitters.add(cleanName(pluginData.author).toLowerCase());
