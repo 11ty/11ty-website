@@ -499,6 +499,16 @@ ${text.trim()}
 		return slugify(slug, { lower: true, remove: /[:\/]/g }) + ".jpg";
 	});
 
+	eleventyConfig.addFilter("sortObjectByOrder", (obj) => {
+		let arr = [];
+		for(let key in obj) {
+			arr.push(obj[key]);
+		}
+		return arr.sort((a, b) => {
+			return (b.order || 0) - (a.order || 0);
+		});
+	});
+
 	return {
 		templateFormats: ["html", "njk", "md", "11ty.js"],
 		markdownTemplateEngine: "njk",
