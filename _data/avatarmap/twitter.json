@@ -9670,7 +9670,7 @@
       "extension": "webp",
       "name": "toddlibby",
       "path": "img/avatar-local-cache/twitter/toddlibby.webp",
-      "size": 672
+      "size": 1708
     },
     {
       "format": "jpeg",
@@ -9683,10 +9683,10 @@
       "isProgressive": false,
       "hasProfile": false,
       "hasAlpha": false,
-      "extension": "png",
+      "extension": "jpg",
       "name": "toddlibby",
-      "path": "img/avatar-local-cache/twitter/toddlibby.png",
-      "size": 1226
+      "path": "img/avatar-local-cache/twitter/toddlibby.jpg",
+      "size": 2580
     }
   ],
   "tomayac": [
