@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-images-responsiver",
+	"author": "nhoizey",
+	"description": "allows authors to use the simple and standard Markdown syntax for images and yet get responsive images in the generated HTML, with srcset and sizes attributes."
+}
