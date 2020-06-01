@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-xml-plugin",
+	"author": "jeremenichelli",
+	"description": "adds Liquid filters used for sitemap and RSS/feed file generation."
+}

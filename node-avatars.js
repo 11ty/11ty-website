@@ -114,6 +114,17 @@ async function fetchAvatarsForDataSource(sourceName, entries, fetchCallbacks) {
 		}
 	}
 
+	// Plugins
+	let starters = await fastglob("./_data/plugins/*.json", {
+		caseSensitiveMatch: false
+	});
+	for(let plugin of starters) {
+		let pluginData = require(plugin);
+		if(pluginData.author) {
+			twitters.add(cleanName(pluginData.author).toLowerCase());
+		}
+	}
+
 	// Extras
 	let extras = require("./_data/extraAvatars.json").map(entry => entry.twitter);
 	for(let twitter of extras) {

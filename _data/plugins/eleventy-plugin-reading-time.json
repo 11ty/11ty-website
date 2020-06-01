@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-reading-time",
+	"author": "johanbrook",
+	"description": "will generate a tag for the estimated reading time."
+}

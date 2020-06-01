@@ -11,6 +11,8 @@ const addedInLocalPlugin = require("./config/addedin");
 const minificationLocalPlugin = require("./config/minification");
 const getAuthors = require("./config/getAuthorsFromSites");
 const cleanName = require("./config/cleanAuthorName");
+const objectHas = require("./config/object-has");
+
 
 const slugify = require('slugify');
 
@@ -499,6 +501,7 @@ ${text.trim()}
 		return slugify(slug, { lower: true, remove: /[:\/]/g }) + ".jpg";
 	});
 
+	// Sort an object that has `order` props in values. Return an array
 	eleventyConfig.addFilter("sortObjectByOrder", (obj) => {
 		let arr = [];
 		for(let key in obj) {
@@ -507,6 +510,32 @@ ${text.trim()}
 		return arr.sort((a, b) => {
 			return (b.order || 0) - (a.order || 0);
 		});
+	});
+
+	// Case insensitive check an object for a key
+	eleventyConfig.addFilter("has", objectHas);
+
+	// Case insensitive check an object for a key
+	eleventyConfig.addShortcode("authorLink", (authors, name) => {
+		let html = [];
+
+		if(name) {
+			let isAuthor = objectHas(authors, name);
+			if(isAuthor) {
+				html.push(`<a href="/authors/${name.toLowerCase()}/" class="nowrap">`);
+			} else {
+				html.push(`<span class="nowrap">`);
+			}
+			html.push(shortcodes.avatarlocalcache("twitter", name, name));
+			html.push(name);
+			if(isAuthor) {
+				html.push("</a>");
+			} else {
+				html.push("</span>");
+			}
+		}
+
+		return html.join("");
 	});
 
 	return {

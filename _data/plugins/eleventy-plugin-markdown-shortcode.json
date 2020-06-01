@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-markdown-shortcode",
+	"author": "tylerwilliamsct",
+	"description": "adds a universal shortcode to render markdown."
+}

@@ -14,17 +14,17 @@ eleventyNavigation:
 {% endif -%}
 {% endfor -%}
 
-## Lists
-
-* [{% avatarlocalcache "twitter", "stackbithq", "stackbithq" %}Jamstack Themes](https://jamstackthemes.dev/ssg/eleventy/) A list of starter themes filterable by supported static site generator and CMS.
-
-## Community Contributed
+### Community Contributed
 
 {% for site in starters | sortObjectByOrder -%}
 {% if site.disabled != true and not site.official -%}
-* [{% avatarlocalcache "twitter", site.author, site.author %}{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}
+* [{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %} {% authorLink authors, site.author %}
 {% endif -%}
 {% endfor -%}
+
+## Lists
+
+* [{% avatarlocalcache "twitter", "stackbithq", "stackbithq" %}Jamstack Themes](https://jamstackthemes.dev/ssg/eleventy/) A list of starter themes filterable by supported static site generator and CMS.
 
 ## Source Code Samples
 

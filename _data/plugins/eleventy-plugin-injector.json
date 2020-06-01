@@ -1,0 +1,5 @@
+{
+	"npm": "@infinity-interactive/eleventy-plugin-injector",
+	"author": "genehack",
+	"description": "allows you to run an arbitrary callback at build time or when using `--serve` or `--watch`"
+}

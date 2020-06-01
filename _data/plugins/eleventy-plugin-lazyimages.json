@@ -1,0 +1,4 @@
+{
+	"npm": "eleventy-plugin-lazyimages",
+	"description": "will add progressive lazy loading to your images."
+}
