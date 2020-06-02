@@ -102,10 +102,30 @@ async function fetchAvatarsForDataSource(sourceName, entries, fetchCallbacks) {
 	for(let twitter of testimonials) {
 		twitters.add(cleanName(twitter).toLowerCase());
 	}
-	let starters = require("./_data/starters.json").map(entry => entry.author);
-	for(let twitter of starters) {
-		twitters.add(cleanName(twitter).toLowerCase());
+
+	// Starters
+	let starters = await fastglob("./_data/starters/*.json", {
+		caseSensitiveMatch: false
+	});
+	for(let site of starters) {
+		let siteData = require(site);
+		if(siteData.author) {
+			twitters.add(cleanName(siteData.author).toLowerCase());
+		}
 	}
+
+	// Plugins
+	let plugins = await fastglob("./_data/plugins/*.json", {
+		caseSensitiveMatch: false
+	});
+	for(let plugin of plugins) {
+		let pluginData = require(plugin);
+		if(pluginData.author) {
+			twitters.add(cleanName(pluginData.author).toLowerCase());
+		}
+	}
+
+	// Extras
 	let extras = require("./_data/extraAvatars.json").map(entry => entry.twitter);
 	for(let twitter of extras) {
 		twitters.add(cleanName(twitter).toLowerCase());

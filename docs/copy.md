@@ -8,7 +8,7 @@ eleventyNavigation:
 
 Eleventy, by default, searches for any file in the input directory with a file extension listed in your [`templateFormats` configuration](/docs/config/#template-formats). That means if you’ve listed `njk` in your `templateFormats`, we’ll look for any Nunjucks templates (files with the `.njk` file extension).
 
-If a file format is not recognized by Eleventy as a valid template file extension, Eleventy will simply copy this file directly to your output.
+If a file format is not recognized by Eleventy as a valid template file extension, Eleventy will ignore the file and not copy it to your output. You can modify this behavior by adding supported template formats:
 
 {% codetitle ".eleventy.js" %}
 
@@ -21,7 +21,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-For example, in the above code sample `css` is not currently a recognized Eleventy template, but Eleventy will search for any `*.css` files inside of the input directory and copy them to output (keeping directory structure).
+In the above code sample `css` is not currently a recognized Eleventy template, but Eleventy will search for any `*.css` files inside of the input directory and copy them to output (keeping directory structure).
 
 You might want to use this for images by adding `"jpg"`, `"png"`, or maybe even `"webp"`.
 
@@ -167,10 +167,10 @@ Given that global copy of all content in the directory may be a security risk, w
 
 <div class="elv-callout elv-callout-warn"><strong>Warning:</strong> This may be a security risk—this is intended only for demos and other non-production use.</div>
 
-{% codewithprompt "npxeleventy", "last" %}
+```bash
 # Copies ALL files in the input directory to the output directory
---passthroughall
-{% endcodewithprompt %}
+npx @11ty/eleventy --passthroughall
+```
 
 ## Disabling Passthrough File Copy
 

@@ -32,7 +32,26 @@ css:
 * **Trophy Count** ×{{ trophyCount }} {{ trophyCount | repeat("🏆") }} _(Top 11 Finishes on the [Combined Leaderboard](/leaderboard/combined/))_
 {%- endif %}
 
-### {{ displayName }} Built These Eleventy Sites:
+{%- set authorStarters = starters | sortObjectByOrder | findBy("author", author.name) %}
+{%- if authorStarters.length %}
+### {{ displayName }}’s Starter Projects:
+
+{%- for site in authorStarters %}
+* [{% avatarlocalcache "twitter", site.author, site.author %}{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}
+{%- endfor %}
+{%- endif %}
+
+{%- set authorPlugins = plugins | sortObjectByOrder | findBy("author", author.name) %}
+{%- if authorPlugins.length %}
+### {{ displayName }}’s Plugins:
+
+{%- for plugin in authorPlugins %}
+* [{% avatarlocalcache "twitter", plugin.author, plugin.author %}{% if plugin.deprecated %}~~{% endif %}{{ plugin.npm }}{% if plugin.deprecated %}~~{% endif %}]({{ url }}){% if plugin.description %} {% if plugin.deprecated %}~~{% endif %}{{ plugin.description | safe }}{% if plugin.deprecated %}~~{% endif %}{% endif %} {{ plugin.deprecated }}
+{%- endfor %}
+{%- endif %}
+
+
+### {{ displayName }}’s Sites:
 
 <div class="lo sites-lo" style="--lo-margin-h: 2rem; --lo-margin-v: 1rem; --lo-stackpoint: 31.25em;">
 {%- for site in author.sites %}

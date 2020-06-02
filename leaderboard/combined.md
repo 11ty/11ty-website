@@ -10,7 +10,7 @@ css:
 ---
 # Eleventy Leaderboard Top 11
 
-The combined Eleventy Leaderboard finds the sites that scored the best across both the [Performance](/leaderboard/perf/) and [Accessibility Leaderboards](/leaderboard/a11y/). Rankings are updated approximately once per week on Sunday. <em>Last generated {{ fastestSitesMeta.generated | newsDate }}</em>. {% addToSampleSites %}
+The combined Eleventy Leaderboard finds the sites that scored the best across both the [Performance](/leaderboard/perf/) and [Accessibility Leaderboards](/leaderboard/a11y/). Rankings are updated approximately every other Sunday. <em>Last generated {{ fastestSitesMeta.generated | newsDate }}</em>. {% addToSampleSites %}
 
 <br>
 

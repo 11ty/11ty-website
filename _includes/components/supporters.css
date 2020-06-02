@@ -42,7 +42,12 @@
 	max-height: 75px;
 }
 .supporters-gold .subhed strong {
-	color: #867202;
+	color: hsl(51, 97%, 27%);
+}
+@media (prefers-color-scheme: dark) {
+	.supporters-gold .subhed strong {
+		color: hsl(51, 97%, 54%);
+	}
 }
 .supporters-gold + .facepile-supporters {
 	margin-top: 0;
@@ -63,6 +68,11 @@
 .investors-btn {
 	padding: 0;
 	margin-bottom: 4rem;
+}
+@media (prefers-color-scheme: dark) {
+	.investors-btn {
+		background-color: #222;
+	}
 }
 .investors-btn .netlify-identity-button {
 	padding: .5em 1em .4em;

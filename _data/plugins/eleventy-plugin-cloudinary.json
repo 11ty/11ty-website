@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-cloudinary",
+	"author": "juanfernandes",
+	"description": "adds a universal shortcode so you to add images from your cloudinary account."
+}

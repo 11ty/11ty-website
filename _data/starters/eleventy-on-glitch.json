@@ -1,0 +1,8 @@
+{
+	"url": "https://glitch.com/~11ty",
+	"name": "eleventy-on-glitch",
+	"description": "A playground site for Eleventy on Glitch with live rendered views right on the web!",
+	"author": "eleven_ty",
+	"demo": "https://11ty.glitch.me/",
+	"official": true
+}

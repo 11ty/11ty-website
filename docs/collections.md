@@ -453,8 +453,10 @@ module.exports = function(eleventyConfig) {
 ```
 
 <div class="elv-community" id="community-resources">
+  {% callout "info" %}
   <h3 class="elv-community-hed">Community Resources</h3>
   <ul>
     <li><a href="https://www.pborenstein.com/posts/collections/">Working with Collections</a> by {% avatarlocalcache "twitter", "pborenstein" %}Philip Borenstein</li>
   </ul>
+  {% endcallout %}
 </div>

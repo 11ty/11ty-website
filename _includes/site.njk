@@ -6,6 +6,7 @@
 		{%- if showMetadata %}
 		<em class="list-bare-desc list-bare-desc-avatar">
 			<div class="lo lo-inline lo-nocontentwrap lo-separator-h" style="--lo-margin-h: 1.5rem; --lo-margin-v: 2px">
+{%- if perf.accessibilityRank %}
 {%- if showAccessibilityMetadata %}
 				<div class="lo-c sites-perf-rank">Accessibility Rank <strong>#{{ perf.accessibilityRank }}</strong>{#{% if not perf.previousAccessibilityRank %}<strong class="sites-perf-rank-new">New!</strong>{% elseif perf.previousAccessibilityRank === perf.accessibilityRank %}<strong class="sites-perf-rank-same"></strong>{% elseif perf.previousAccessibilityRank - perf.accessibilityRank > 0 %}<strong class="sites-perf-rank-{% if perf.previousAccessibilityRank - perf.accessibilityRank > 0 %}pos{% else %}neg{% endif %}">{{ (perf.previousAccessibilityRank - perf.accessibilityRank) | abs }}</strong>{% endif %}#}</div>
 {%- if not showRankOnly %}
@@ -15,11 +16,14 @@
 {%- endif %}
 {%- endif %}
 {%- endif %}
+{%- endif %}
+{%- if perf.rank %}
 {%- if showPerformanceMetadata %}
 				<div class="lo-c sites-perf-rank">Performance Rank <strong>#{{ perf.rank }}</strong>{% if not perf.previousRank %}<strong class="sites-perf-rank-new">New!</strong>{% elseif perf.previousRank === perf.rank %}<strong class="sites-perf-rank-same"></strong>{% elseif perf.previousRank - perf.rank > 0 %}<strong class="sites-perf-rank-{% if perf.previousRank - perf.rank > 0 %}pos{% else %}neg{% endif %}">{{ (perf.previousRank - perf.rank) | abs }}</strong>{% endif %}</div>
 {%- if not showRankOnly %}
 				<div class="lo-c sites-perf-lh">Lighthouse {% if perf.lighthouseScore === 1 %}{% emoji "💯", "100" %}{% else %}<strong>{{ (perf.lighthouseScore * 100) | round }}</strong>{% endif %}</div>
 				<div class="lo-c sites-perf-si">Speed Index <strong>{{ perf.speedIndex | round(1) }}</strong></div>
+{%- endif %}
 {%- endif %}
 {%- endif %}
 				{%- if site.twitter or site.authoredBy %}<div class="lo-c"><a href="/authors/{{ site.twitter | cleanAuthorName }}/" class="elv-externalexempt">{{ site.twitter | cleanAuthorName }}</a>{% if site.authoredBy %} by {% endif %}{% for author in site.authoredBy %} <a href="/authors/{{ author | cleanAuthorName }}/" class="elv-externalexempt">{% avatarlocalcache "twitter", author %}{{ author | cleanAuthorName }}</a>{% endfor %}</div>{% endif -%}

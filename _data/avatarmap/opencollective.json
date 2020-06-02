@@ -1,4 +1,22 @@
 {
+  "alex-russell": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "alex-russell",
+      "path": "img/avatar-local-cache/opencollective/alex-russell.jpg",
+      "size": 1640
+    }
+  ],
   "alex-ward": [
     {
       "format": "jpeg",
@@ -251,6 +269,24 @@
       "size": 1962
     }
   ],
+  "bruce": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "bruce",
+      "path": "img/avatar-local-cache/opencollective/bruce.jpg",
+      "size": 1079
+    }
+  ],
   "bryce-wray": [
     {
       "format": "jpeg",
@@ -357,6 +393,24 @@
       "name": "cody-peterson",
       "path": "img/avatar-local-cache/opencollective/cody-peterson.jpg",
       "size": 1812
+    }
+  ],
+  "colin-nederkoorn": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "colin-nederkoorn",
+      "path": "img/avatar-local-cache/opencollective/colin-nederkoorn.jpg",
+      "size": 1327
     }
   ],
   "corina-rudel": [
@@ -719,6 +773,24 @@
       "size": 1748
     }
   ],
+  "frontend-weekly-tokyo": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "frontend-weekly-tokyo",
+      "path": "img/avatar-local-cache/opencollective/frontend-weekly-tokyo.jpg",
+      "size": 1190
+    }
+  ],
   "glenn-dixon": [
     {
       "format": "jpeg",
@@ -735,6 +807,24 @@
       "name": "glenn-dixon",
       "path": "img/avatar-local-cache/opencollective/glenn-dixon.jpg",
       "size": 1451
+    }
+  ],
+  "hampton-moore": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "hampton-moore",
+      "path": "img/avatar-local-cache/opencollective/hampton-moore.jpg",
+      "size": 1110
     }
   ],
   "hans-gerwitz": [
@@ -951,6 +1041,24 @@
       "name": "joel-krause",
       "path": "img/avatar-local-cache/opencollective/joel-krause.jpg",
       "size": 2087
+    }
+  ],
+  "john-nichols": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "john-nichols",
+      "path": "img/avatar-local-cache/opencollective/john-nichols.jpg",
+      "size": 2119
     }
   ],
   "john-sj-anderson": [
@@ -1241,6 +1349,24 @@
       "size": 2080
     }
   ],
+  "mike-aparicio": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "mike-aparicio",
+      "path": "img/avatar-local-cache/opencollective/mike-aparicio.jpg",
+      "size": 1644
+    }
+  ],
   "miriam-suzanne": [
     {
       "format": "jpeg",
@@ -1472,7 +1598,7 @@
       "extension": "jpg",
       "name": "quentin-delcourt",
       "path": "img/avatar-local-cache/opencollective/quentin-delcourt.jpg",
-      "size": 2071
+      "size": 1639
     }
   ],
   "ray-villalobos": [
@@ -1619,6 +1745,24 @@
       "size": 2028
     }
   ],
+  "scott-wild": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "scott-wild",
+      "path": "img/avatar-local-cache/opencollective/scott-wild.jpg",
+      "size": 1835
+    }
+  ],
   "sebastian-murphy": [
     {
       "format": "jpeg",
@@ -1671,6 +1815,24 @@
       "name": "soren-birkemeyer",
       "path": "img/avatar-local-cache/opencollective/soren-birkemeyer.jpg",
       "size": 1916
+    }
+  ],
+  "stephanie-eckles": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "stephanie-eckles",
+      "path": "img/avatar-local-cache/opencollective/stephanie-eckles.jpg",
+      "size": 2183
     }
   ],
   "suominettikasinot24.com": [

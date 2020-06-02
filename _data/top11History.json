@@ -44,16 +44,16 @@
         "a11yRank": 37
       },
       {
-        "url": "https://educationlinks.fyi/",
-        "combinedRank": 7,
-        "perfRank": 46,
-        "a11yRank": 2
-      },
-      {
         "url": "https://tatianamac.com/",
-        "combinedRank": 8,
+        "combinedRank": 7,
         "perfRank": 16,
         "a11yRank": 32
+      },
+      {
+        "url": "https://educationlinks.fyi/",
+        "combinedRank": 8,
+        "perfRank": 46,
+        "a11yRank": 2
       },
       {
         "url": "https://devreldiaries.commons.host/",
@@ -174,16 +174,16 @@
         "a11yRank": 10
       },
       {
-        "url": "https://educationlinks.fyi/",
-        "combinedRank": 6,
-        "perfRank": 54,
-        "a11yRank": 2
-      },
-      {
         "url": "https://books.thedixons.net/",
-        "combinedRank": 7,
+        "combinedRank": 6,
         "perfRank": 48,
         "a11yRank": 8
+      },
+      {
+        "url": "https://educationlinks.fyi/",
+        "combinedRank": 7,
+        "perfRank": 54,
+        "a11yRank": 2
       },
       {
         "url": "https://tatianamac.com/",
@@ -204,10 +204,78 @@
         "a11yRank": 70
       },
       {
-        "url": "https://jaredgorski.org/",
+        "url": "https://paulrobertlloyd.com/",
         "combinedRank": 11,
-        "perfRank": 4,
-        "a11yRank": 77
+        "perfRank": 40,
+        "a11yRank": 41
+      }
+    ],
+    [
+      {
+        "url": "https://www.frontendbookmarks.com/",
+        "combinedRank": 1,
+        "perfRank": 12,
+        "a11yRank": 15
+      },
+      {
+        "url": "https://glenn.thedixons.net/",
+        "combinedRank": 2,
+        "perfRank": 19,
+        "a11yRank": 21
+      },
+      {
+        "url": "https://piccalil.li/",
+        "combinedRank": 3,
+        "perfRank": 32,
+        "a11yRank": 17
+      },
+      {
+        "url": "https://nicolas-hoizey.com/",
+        "combinedRank": 4,
+        "perfRank": 42,
+        "a11yRank": 8
+      },
+      {
+        "url": "https://www.zachleat.com/",
+        "combinedRank": 5,
+        "perfRank": 51,
+        "a11yRank": 19
+      },
+      {
+        "url": "https://tatianamac.com/",
+        "combinedRank": 6,
+        "perfRank": 35,
+        "a11yRank": 41
+      },
+      {
+        "url": "https://pdx.ashur.cab/",
+        "combinedRank": 7,
+        "perfRank": 41,
+        "a11yRank": 35
+      },
+      {
+        "url": "https://educationlinks.fyi/",
+        "combinedRank": 8,
+        "perfRank": 74,
+        "a11yRank": 3
+      },
+      {
+        "url": "https://paulrobertlloyd.com/",
+        "combinedRank": 9,
+        "perfRank": 26,
+        "a11yRank": 51
+      },
+      {
+        "url": "https://pack11ty.dev/",
+        "combinedRank": 10,
+        "perfRank": 28,
+        "a11yRank": 54
+      },
+      {
+        "url": "https://webcomponents.club/",
+        "combinedRank": 11,
+        "perfRank": 71,
+        "a11yRank": 14
       }
     ]
   ]

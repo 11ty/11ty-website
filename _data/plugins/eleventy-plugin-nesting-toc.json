@@ -1,0 +1,4 @@
+{
+	"npm": "eleventy-plugin-nesting-toc",
+	"description": "will generate a nested table of contents from your site's headings."
+}

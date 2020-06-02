@@ -36,7 +36,7 @@
 }
 .elv-nav-header .elv-nav-item .emoji,
 .elv-nav-header .elv-nav-item .icon,
-.elv-nav-header .elv-nav-item .has-svg-icon > svg,,
+.elv-nav-header .elv-nav-item .has-svg-icon > svg,
 .elv-nav-header .elv-nav-item .avatar {
 	display: inline-block;
 	margin: 0;
