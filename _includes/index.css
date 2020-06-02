@@ -23,8 +23,8 @@ body {
 }
 @media (prefers-color-scheme: dark) {
 	body {
-	 background-color: #222;
-	 color: #fff;
+		background-color: #222;
+		color: #fff;
 	}
 }
 .elv-docs body {
