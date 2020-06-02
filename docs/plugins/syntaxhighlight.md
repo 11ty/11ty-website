@@ -45,8 +45,7 @@ You are responsible for including your favorite PrismJS theme CSS and there are 
 ```html
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- Some html boilerplate omitted -->
     <link href="https://unpkg.com/browse/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
   </head>
 ````
