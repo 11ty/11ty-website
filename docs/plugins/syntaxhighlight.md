@@ -51,7 +51,7 @@ You are responsible for including your favorite PrismJS theme CSS and there are 
   </head>
 ````
 
-You could also download the css file or paste its content inside a style tag. This aprroach opens the opportunity to use other themes like [these ones](https://github.com/PrismJS/prism-themes) from a Prism extension repository.
+You could also download the css file or paste its content inside a style tag. This approach allows the use of [other themes](https://github.com/PrismJS/prism-themes) from a Prism extension repository.
 
 ### Options
 
