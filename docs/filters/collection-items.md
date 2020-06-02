@@ -46,6 +46,8 @@ Useful when you’d like to link to the previous or next template in your collec
 ```
 {% endraw %}
 
+The [Collections documentation](/docs/collections/#sorting) outlines the default sorting algorithm and how to override it.
+
 ## Also `getCollectionItem`
 
 For completeness, a `getCollectionItem` filter is also included that fetches the current page from a collection.

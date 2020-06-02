@@ -28,28 +28,27 @@ You can use any template language in your layout—it doesn’t need to match th
 
 Next, we need to create a `mylayout.njk` file. It can contain any type of text, but here we’re using HTML:
 
-{% codetitle "_includes/mylayout.njk" %}
-
-{% raw %}
-```html
----
-title: My Rad Blog
----
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-  </head>
-  <body>
-    {{ content | safe }}
-  </body>
-</html>
-```
-{% endraw %}
-
-Note that the layout template will populate the `content` data with the child template’s content. Also note that we don’t want to double-escape the output, so we’re using the provided Nunjuck’s `safe` filter here (see more language double-escaping syntax below).
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    Language:
+    <a href="#mylayout-njk" id="mylayout-njk-btn" role="tab" aria-controls="mylayout-njk" aria-selected="true">Nunjucks</a>
+    <a href="#mylayout-11tyjs" id="mylayout-11tyjs-btn" role="tab" aria-controls="mylayout-11tyjs" aria-selected="false">11ty.js</a>
+  </div>
+  <div id="mylayout-njk" role="tabpanel" aria-labelledby="mylayout-njk-btn">
+    {%- codetitle "_includes/mylayout.njk" %}
+    {%- highlight "html" %}
+    {% include "examples/layouts/mylayout.njk" %}
+    {%- endhighlight %}
+    <p>Note that the layout template will populate the <code>content</code> data with the child template’s content. Also note that we don’t want to double-escape the output, so we’re using the provided Nunjuck’s <code>safe</code> filter here (see more language double-escaping syntax below).</p>
+  </div>
+  <div id="mylayout-11tyjs" role="tabpanel" aria-labelledby="mylayout-11tyjs-btn">
+    {%- codetitle "_includes/mylayout.11ty.js" %}
+    {%- highlight "js" %}
+    {% include "examples/layouts/mylayout.11ty.js" %}
+    {%- endhighlight %}
+    <p>Note that the layout template will populate the <code>data.content</code> variable with the child template’s content.
+  </div>
+</seven-minute-tabs>
 
 {% callout "info" %}Layouts can contain their own front matter data! It’ll be merged with the content’s data on render. Content data takes precedence, if conflicting keys arise. Read more about <a href="/docs/data-cascade/">how Eleventy merges data in what we call the Data Cascade</a>.{% endcallout %}
 

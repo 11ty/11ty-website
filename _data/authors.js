@@ -1,3 +1,4 @@
+"use strict";
 const fastglob = require("fast-glob");
 const getAuthors = require("../config/getAuthorsFromSites");
 
@@ -13,7 +14,7 @@ module.exports = async () => {
 
     let names = getAuthors([siteData]);
     for(let name of names) {
-      key = name.toLowerCase();
+      let key = name.toLowerCase();
       if(!authors[key]) {
         authors[key] = {
           name: name,

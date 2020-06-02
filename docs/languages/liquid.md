@@ -201,7 +201,7 @@ Note that you can put any Liquid tags or content inside the `{% raw %}{% user %}
 ```html
 {% user2 "Zach Leatherman" "zachleat" %}
   Zach likes to take long walks on Nebraska beaches.
-{% enduser %}
+{% enduser2 %}
 ```
 {% endraw %}
 

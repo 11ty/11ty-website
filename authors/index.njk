@@ -3,14 +3,23 @@ eleventyNavigation:
   parent: Built With Eleventy
   key: Eleventy Authors
   order: 3
+excludeFromSidebar: true
 layout: layouts/docs.njk
 css:
   - components/page-sites.css
 ---
 <h1>Eleventy Authors</h1>
 
-<ul class="authors-list">
+<p>×{{ authors | length }} unique authors.</p>
+
+<table class="authors-list">
+	<tbody>
 {%- for author in sites | topAuthors %}
-	<li><code>×{{ author.count }}</code> <a href="/authors/{{ author.name | slug }}/">{% avatarlocalcache "twitter", author.name %}{{ author.name }}</a></li>
+		<tr>
+			<td><a href="/authors/{{ author.name | slug }}/">{% avatarlocalcache "twitter", author.name %}{{ author.name }}</a></td>
+			<td><span title="Top 11 on the Combined Leaderboard">{{ author.trophies | repeat("🏆") }}</span></td>
+			<td>×{{ author.count }} site{% if author.count !== 1 %}s{% endif %}</td>
+		</tr>
 {%- endfor %}
-</ul>
+	</tbody>
+</table>

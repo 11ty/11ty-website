@@ -20,21 +20,29 @@ title: My Rad Blog
 # My Rad Markdown Blog Post
 ```
 
-We want to add a main element around our post’s content because we like accessibility. Here’s what `mainlayout.njk` would look like:
+We want to add a main element around our post’s content because we like accessibility.
 
-{% codetitle "_includes/mainlayout.njk" %}
-
-{% raw %}
-```markdown
----
-layout: mylayout.njk
-myOtherData: hello
----
-<main>
-  {{ content | safe }}
-</main>
-```
-{% endraw %}
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    Language:
+    <a href="#mainlayout-njk" id="mainlayout-njk-btn" role="tab" aria-controls="mainlayout-njk" aria-selected="true">Nunjucks</a>
+    <a href="#mainlayout-11tyjs" id="mainlayout-11tyjs-btn" role="tab" aria-controls="mainlayout-11tyjs" aria-selected="false">11ty.js</a>
+  </div>
+  <div id="mainlayout-njk" role="tabpanel" aria-labelledby="mainlayout-njk-btn">
+    <p>Here’s what <code>mainlayout.njk</code> would look like:</p>
+    {%- codetitle "_includes/mainlayout.njk" %}
+    {%- highlight "html" %}
+    {%- include "examples/layout-chaining/mainlayout.njk" %}
+    {%- endhighlight %}
+  </div>
+  <div id="mainlayout-11tyjs" role="tabpanel" aria-labelledby="mainlayout-11tyjs-btn">
+    <p>Here’s what <code>mainlayout.11ty.js</code> would look like:</p>
+    {%- codetitle "_includes/mainlayout.11ty.js" %}
+    {%- highlight "js" %}
+    {%- include "examples/layout-chaining/mainlayout.11ty.js" %}
+    {%- endhighlight %}
+  </div>
+</seven-minute-tabs>
 
 This layout would then be itself wrapped in the same `mylayout.njk` we used in our previous example:
 

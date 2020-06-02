@@ -1,13 +1,20 @@
 /* Supporters Page */
 .supporters-facepile {
-	padding: 0;
 	--lo-margin-h: 1rem;
-	--lo-margin-v: 1.5rem;
+	--lo-margin-v: 1rem;
+}
+.supporters-facepile.supporters-facepile {
+	padding: 0;
 }
 .supporters-facepile > .lo-c {
 	flex-basis: 15rem;
-	padding-bottom: 2rem;
+	padding-bottom: 1rem;
 	border-bottom: 1px solid #ddd;
+}
+@media (prefers-color-scheme: dark) {
+	.supporters-facepile > .lo-c {
+		border-bottom: 1px solid #444;
+	}
 }
 .supporters-link {
 	display: inline-block;
@@ -48,6 +55,11 @@
 	filter: grayscale(1) brightness(100%);
 	opacity: .4;
 	font-size: 0.875em; /* 14px /16 */
+}
+@media (prefers-color-scheme: dark) {
+	.supporters-hearts-empty {
+		filter: grayscale(0.5) brightness(100%);
+	}
 }
 .supporters-facepile .avatar {
 	margin-bottom: 0;

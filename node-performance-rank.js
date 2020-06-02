@@ -17,6 +17,7 @@ const PerformanceLeaderboard = require("performance-leaderboard");
 
   let previousResults = require("./_data/fastestSites.json");
   let leaderboardUrls = Array.from(urls);
+  // let results = await PerformanceLeaderboard(leaderboardUrls, 5, {readFromLogDirectory: true});
   let results = await PerformanceLeaderboard(leaderboardUrls, 5);
 
   for(let result of results) {

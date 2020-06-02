@@ -14,27 +14,26 @@ relatedKey: pagination
 
 To iterate over a data set and create pages for individual chunks of data, use pagination. Enable in your template’s front matter by adding the `pagination` key. Consider the following template:
 
-{% codetitle "Liquid, Nunjucks", "Syntax" %}
-
-{% raw %}
-```markdown
----
-pagination:
-  data: testdata
-  size: 2
-testdata:
- - item1
- - item2
- - item3
- - item4
----
-<ol>
-{%- for item in pagination.items %}
-  <li>{{ item }}</li>
-{% endfor -%}
-</ol>
-```
-{% endraw %}
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    Language:
+    <a href="#paged-array-njk" id="paged-array-njk-btn" role="tab" aria-controls="paged-array-njk" aria-selected="true">Nunjucks/Liquid</a>
+    <a href="#paged-array-11tyjs" id="paged-array-11tyjs-btn" role="tab" aria-controls="paged-array-11tyjs" aria-selected="false">11ty.js</a>
+  </div>
+  <div id="paged-array-njk" role="tabpanel" aria-labelledby="paged-array-njk-btn">
+    <p>Interestingly, the Nunjucks and Liquid template languages in this example have the same syntax.</p>
+    {%- codetitle "paged-array.njk or paged-array.liquid" %}
+    {%- highlight "markdown" %}
+    {%- include "examples/pagination/paged-array.njk" %}
+    {%- endhighlight %}
+  </div>
+  <div id="paged-array-11tyjs" role="tabpanel" aria-labelledby="paged-array-11tyjs-btn">
+    {%- codetitle "paged-array.11ty.js" %}
+    {%- highlight "js" %}
+    {%- include "examples/pagination/paged-array.11ty.js" %}
+    {%- endhighlight %}
+  </div>
+</seven-minute-tabs>
 
 We enable pagination and then give it a dataset with the `data` key. We control the number of items in each chunk with `size`. The pagination data variable will be populated with what you need to create each template. Here’s what’s in `pagination`:
 
@@ -383,7 +382,7 @@ _(More discussion at [Issue #194](https://github.com/11ty/eleventy/issues/194))_
 
 As an aside, this could also be achieved in a more verbose way using the [Collection API](/docs/collections/#advanced-custom-filtering-and-sorting). This could also be done using the new `before` callback {% addedin "0.10.0" %}.
 
-### Blacklisting or Filtering Values {% addedin "0.4.0" %}
+### Filtering Values {% addedin "0.4.0" %}
 
 Use the `filter` pagination property to remove values from paginated data.
 

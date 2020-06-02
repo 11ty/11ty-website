@@ -2,7 +2,7 @@
 .sr-only {
 	position: absolute;
 	height: 1px;
-	width: 1px; 
+	width: 1px;
 	overflow: hidden;
 	clip: rect(1px, 1px, 1px, 1px);
 }
@@ -21,6 +21,12 @@ body {
 	color: #383838;
 	margin: 0;
 }
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #222;
+		color: #fff;
+	}
+}
 .elv-docs body {
 	max-width: 76em;
 	margin: 0 auto;
@@ -32,6 +38,13 @@ a,
 a:visited,
 a[href] {
 	color: #222;
+}
+@media (prefers-color-scheme: dark) {
+	a,
+	a:visited,
+	a[href] {
+		color: #fff;
+	}
 }
 a[href].naked {
 	text-decoration: none;
@@ -76,10 +89,15 @@ blockquote {
 	max-width: 31.57894736842em; /* 600px /19 */
 	border-left: 6px solid #ddd;
 }
+@media (prefers-color-scheme: dark) {
+	blockquote {
+		color: #ccc;
+		border-color: #444;
+	}
+}
 blockquote + blockquote {
 	margin-top: 2em;
 }
-
 .icon,
 .has-svg-icon > svg,
 .avatar,
@@ -111,7 +129,11 @@ ul:not(.list-bare):not(.inlinelist) > li > a > .avatar {
 blockquote .bio-source {
 	white-space: nowrap;
 }
-
+@media (prefers-color-scheme: dark) {
+	.has-svg-icon > svg {
+		fill: #fff;
+	}
+}
 /* Main */
 main {
 	font-size: 1.125em; /* 18px /16 */
@@ -147,6 +169,14 @@ table td:first-child {
 }
 table th {
 	border-color: #ddd;
+}
+@media (prefers-color-scheme: dark) {
+	table th {
+		border-color: #555;
+	}
+	table td {
+		border-color: #333;
+	}
 }
 h2 + table {
 	margin-top: -0.625em; /* -10px /16 */
@@ -194,6 +224,11 @@ h2 {
 	border-bottom: 1px solid #ddd;
 	margin: 2em 0 .25em;
 	line-height: 1.1;
+}
+@media (prefers-color-scheme: dark) {
+	h2 {
+		border-color: #555;
+	}
 }
 h3 {
 	font-size: 1.666666666667em; /* 30px /18 */
@@ -260,6 +295,11 @@ li li {
 	color: #555;
 	margin-bottom: 4px;
 }
+@media (prefers-color-scheme: dark) {
+	.list-bare-desc {
+		color: #bbb;
+	}
+}
 .list-bare-desc:last-child {
 	margin-bottom: 6px;
 }
@@ -281,6 +321,13 @@ li li {
 #quick-start ~ .language-text code {
 	background-color: #fafafa;
 	color: #222;
+}
+@media (prefers-color-scheme: dark) {
+	#quick-start ~ .language-text,
+	#quick-start ~ .language-text code {
+		background-color: #222;
+		color: #fafafa;
+	}
 }
 
 /* Layout */
@@ -310,7 +357,6 @@ footer.elv-layout {
 
 /* Header */
 .elv-header {
-	color: #222;
 	position: relative;
 }
 .elv-header-default {
@@ -329,20 +375,34 @@ footer.elv-layout {
 	clear: both;
 }
 /* Header Hero */
+.elv-hero {
+	background-color: #222;
+}
+@media (prefers-color-scheme: dark) {
+	.elv-hero {
+		background-color: #292929;
+	}
+}
 .elv-hero img,
 .elv-hero svg {
 	width: 42.95774646vh;
 	height: 60vh;
-	background-color: #222;
+}
+.elv-hero:hover img,
+.elv-hero:hover svg {
+	background-color: inherit;
 }
 .elv-header-default .elv-hero {
 	display: flex;
 	justify-content: center;
-	background: #222;
 	width: calc(100% + 2rem);
 	margin-left: -1rem;
 	margin-right: -1rem;
 }
+.elv-hero:hover {
+	background-color: #333;
+}
+
 .elv-header-docs .elv-hero {
 	float: left;
 	margin-right: .5em;
@@ -398,17 +458,14 @@ footer.elv-layout {
 @media (prefers-reduced-motion: reduce) {
 	.elv-header-default .elv-possum {
 		display: none;
-		animation: none;
 	}
 }
 @keyframes balloonFloat {
 	from {
-		top: 50%;
-		left: -5%;
+		transform: translate(-7vw, 30%);
 	}
 	to {
-		top: 5%;
-		left: 120%;
+		transform: translate(100vw, -52%);
 	}
 }
 
@@ -489,6 +546,11 @@ main .elv-toc + h1 .direct-link {
 	border-bottom: 1px dotted #ddd;
 	margin: 2rem 0;
 }
+@media (prefers-color-scheme: dark) {
+	.elv-sg-component {
+		background-color: #222;
+	}
+}
 .elv-sg-component:before,
 .elv-sg-component:after {
 	content: " "; /* 1 */
@@ -508,6 +570,11 @@ main .elv-toc + h1 .direct-link {
 	background-color: #f7f7f7;
 	padding: .5rem;
 	margin: 2em 0;
+}
+@media (prefers-color-scheme: dark) {
+	.elv-langlist {
+		background-color: #080808;
+	}
 }
 .elv-langlist-hed {
 	margin: 0;
@@ -571,7 +638,7 @@ main .elv-toc + h1 .direct-link {
 	font-weight: 700;
 	text-transform: uppercase;
 	text-decoration: none;
-	background-color: #fff;
+	color: inherit;
 }
 .btn-form {
 	border-radius: 1em;

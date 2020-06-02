@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-pwa",
+	"author": "okitavera",
+	"description": "will generate a Service Worker for you."
+}

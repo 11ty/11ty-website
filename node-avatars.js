@@ -4,6 +4,7 @@ const sortObject = require("sorted-object");
 const fs = require("fs-extra");
 const fastglob = require("fast-glob");
 const AvatarLocalCache = require("avatar-local-cache");
+const cleanName = require("./config/cleanAuthorName");
 
 // const skipUrls = ["https://www.gravatar.com/avatar/36386473ee7de091db26bd82f8d18ca8?default=404"];
 const skipUrls = [];
@@ -88,9 +89,9 @@ async function fetchAvatarsForDataSource(sourceName, entries, fetchCallbacks) {
 	let promises = [];
 
 	// Open Collective
-	// let supporters = require("./_data/supporters.json").filter(entry => entry.role.toLowerCase() === "backer");
-	let supporters = require("./_data/supporters.json");
-	promises.push(fetchAvatarsForDataSource("opencollective", supporters, {
+	let getOpenCollectiveData = require("./_data/opencollective");
+	let opencollective = await getOpenCollectiveData();
+	promises.push(fetchAvatarsForDataSource("opencollective", opencollective.supporters, {
 		name: supporter => supporter && supporter.name,
 		image: supporter => supporter && supporter.image
 	}));
@@ -99,15 +100,35 @@ async function fetchAvatarsForDataSource(sourceName, entries, fetchCallbacks) {
 	let twitters = new Set();
 	let testimonials = require("./_data/testimonials.json").map(entry => entry.twitter);
 	for(let twitter of testimonials) {
-		twitters.add(twitter.toLowerCase());
+		twitters.add(cleanName(twitter).toLowerCase());
 	}
-	let starters = require("./_data/starters.json").map(entry => entry.author);
-	for(let twitter of starters) {
-		twitters.add(twitter.toLowerCase());
+
+	// Starters
+	let starters = await fastglob("./_data/starters/*.json", {
+		caseSensitiveMatch: false
+	});
+	for(let site of starters) {
+		let siteData = require(site);
+		if(siteData.author) {
+			twitters.add(cleanName(siteData.author).toLowerCase());
+		}
 	}
+
+	// Plugins
+	let plugins = await fastglob("./_data/plugins/*.json", {
+		caseSensitiveMatch: false
+	});
+	for(let plugin of plugins) {
+		let pluginData = require(plugin);
+		if(pluginData.author) {
+			twitters.add(cleanName(pluginData.author).toLowerCase());
+		}
+	}
+
+	// Extras
 	let extras = require("./_data/extraAvatars.json").map(entry => entry.twitter);
 	for(let twitter of extras) {
-		twitters.add(twitter.toLowerCase());
+		twitters.add(cleanName(twitter).toLowerCase());
 	}
 
 	let sites = await fastglob("./_data/sites/*.json", {
@@ -116,11 +137,11 @@ async function fetchAvatarsForDataSource(sourceName, entries, fetchCallbacks) {
 	for(let site of sites) {
 		let siteData = require(site);
 		if(siteData.twitter) {
-			twitters.add(siteData.twitter.toLowerCase());
+			twitters.add(cleanName(siteData.twitter).toLowerCase());
 		}
 		if(siteData.authoredBy) {
 			for(let author of siteData.authoredBy) {
-				twitters.add(author.toLowerCase());
+				twitters.add(cleanName(author).toLowerCase());
 			}
 		}
 	}

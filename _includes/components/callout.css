@@ -7,20 +7,46 @@
 	margin-bottom: 2em;
 	background-color: #dff7ff;
 }
+@media (min-width: 44.375em) { /* 710px */
+	.elv-callout {
+		border-radius: 0.3em;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	.elv-callout {
+		background-color: hsl(195, 100%, 12%);
+	}
+	.elv-callout,
+	.elv-callout a {
+		color: #fff;
+	}
+}
 table .elv-callout {
 	margin-left: 0;
 	margin-right: 0;
 	margin-bottom: 1em;
 }
 
+/* The icon is only shown when `info` is explicitly defined */
 .elv-callout-info:before {
 	content: "ℹ️ ";
 }
-.elv-callout-info code {
-	background-color: #99e6ff;
+.elv-callout code {
+	background-color: hsl(195, 100%, 80%);
 }
+@media (prefers-color-scheme: dark) {
+	.elv-callout code {
+		background-color: hsl(195, 100%, 22%);
+	}
+}
+/* Warning */
 .elv-callout-warn {
-	background-color: #ffa;
+	background-color: hsl(60, 100%, 83%);
+}
+@media (prefers-color-scheme: dark) {
+	.elv-callout-warn {
+		background-color: hsl(31, 100%, 17%);
+	}
 }
 .elv-callout-warn:before {
 	content: "⚠️ ";
@@ -38,7 +64,12 @@ table .elv-callout {
 	content: "⚠️ ";
 }
 .elv-callout-warn code {
-	background-color: #ffff24;
+	background-color: hsl(60, 100%, 57%);
+}
+@media (prefers-color-scheme: dark) {
+	.elv-callout-warn code {
+		background-color: hsl(31, 100%, 33%)
+	}
 }
 .elv-callout:first-child {
 	margin-top: 0;

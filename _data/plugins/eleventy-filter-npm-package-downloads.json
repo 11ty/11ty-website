@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-filter-npm-package-downloads",
+	"author": "AndreJaenisch",
+	"description": "will show you the number of downloads for the given npm package."
+}

@@ -28,6 +28,7 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 
 * [Create a new site from git on Netlify](https://app.netlify.com/start)
 * [Deploying an 11ty Site to GitHub Pages](https://snook.ca/archives/servers/deploying-11ty-to-gh-pages) by {% avatarlocalcache "twitter", "snookca" %}Jonathan Snook
+* [Make the Jump from Jekyll to JavaScript](https://stedman.dev/2020/04/29/make-the-jump-from-jekyll-to-javascript/) by {% avatarlocalcache "twitter", "stedman" %} Steve Stedman
 
 ### Adding Features
 
@@ -47,15 +48,9 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 * [Consuming a headless CMS GraphQL API with Eleventy](https://www.webstoemp.com/blog/headless-cms-graphql-api-eleventy/) by {% avatarlocalcache "twitter", "jeromecoupe" %}Jérôme Coupé
 * [Import Tweets from Twitter API](https://www.d-hagemeier.com/en/articles/embed-twitter/) by {% avatarlocalcache "twitter", "DennisView" %}Dennis Hagemeier
 * [Convert a WordPress blog to Eleventy](https://www.joshcanhelp.com/taking-wordpress-to-eleventy/) by {% avatarlocalcache "twitter", "joshcanhelp" %}Josh Cunningham
+* [Creating an 11ty Photo Gallery with Contentful and GitHub actions](https://github.com/contentful/11ty-contentful-gallery) by {% avatarlocalcache "twitter", "shyruparel" %}Shy Ruparel
 
 ### Tooling Integration
 
 * [Using pHTML with Eleventy](https://github.com/phtmlorg/phtml-11ty) by {% avatarlocalcache "twitter", "jon_neal" %}Jon Neal
 
-## Quick Tips
-
-{% for tip in collections.quicktipssorted %}
-* Quick Tip <a href="{{ tip.url }}"><code>#{{ tip.data.tipindex }}</code>—{{ tip.data.tiptitle }}</a>
-{%- endfor %}
-
-📢 [Subscribe to the **Eleventy Quick Tips RSS Feed**](/docs/quicktips/feed.xml)

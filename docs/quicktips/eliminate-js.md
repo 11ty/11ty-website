@@ -69,68 +69,7 @@ These all use the recommended caching mechanism described in the next section.
 
 ## Recommended: Cache the Data to the File System
 
-If I’m working on my site locally, I probably don’t want every Eleventy run to hit this external API call. I’d hit my rate limit pretty quickly (on GitHub, 60 per hour). Instead, let’s use an npm package called [`flat-cache`](https://www.npmjs.com/package/flat-cache) to save our results locally to the file system and only run it once per day.
-
-* Install dependencies: `npm install node-fetch flat-cache --save-dev`
-* Read more about [`node-fetch`](https://www.npmjs.com/package/node-fetch) and [`flat-cache`](https://www.npmjs.com/package/flat-cache).
-
-### Highlights:
-
-* A `_datacache/github-stargazers` file is created that saves the results of the service call.
-* The data is keyed off the current UTC date.
-* If the data already exists in the cache (for the current UTC date), it uses the cached value instead of fetching new data.
-
-{% codetitle "_data/github.js" %}
-
-```js
-const fetch = require("node-fetch");
-const flatcache = require("flat-cache");
-const path = require("path");
-
-function getCacheKey() {
-  let date = new Date();
-  return `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()}`;
-}
-
-module.exports = async function() {
-  let cache = flatcache.load("github-stargazers", path.resolve("./_datacache"));
-  let key = getCacheKey();
-  let cachedData = cache.getKey(key);
-  if(!cachedData) {
-    console.log( "Fetching new github stargazers count…" );
-
-    // GitHub API: https://developer.github.com/v3/repos/#get
-    let newData = await fetch("https://api.github.com/repos/11ty/eleventy")
-      .then(res => res.json())
-      .then(json => {
-        return {
-          stargazers: json.stargazers_count
-        };
-      });
-
-    cache.setKey(key, newData);
-    cache.save();
-    return newData;
-  }
-
-  return cachedData;
-};
-```
-
-If you want to fetch data more frequently than once per day, modify `getCacheKey` to return more a specific date. Add an hour to the key to run every hour, for example:
-
-```js
-function getCacheKey() {
-  let date = new Date();
-  return `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()} ${date.getUTCHours()}`;
-}
-```
-
-{% callout "info" %}Take note that if you’re using this on a Netlify build, it will not maintain updates to the cache (as it resets the cache to the files that are checked into git) and will likely re-run every time.
-<ul>
-  <li>Current <a href="https://developer.github.com/v3/#rate-limiting">GitHub rate limits</a> are limited to 60 requests per hour, so this will only be a problem if you do more than 60 Netlify builds in an hour.</li>
-  <li>The <a href="https://blog.npmjs.org/post/164799520460/api-rate-limiting-rolling-out">npm API doesn’t seem to have a hard limit</a>.</li>
-</ul>{% endcallout %}
+{% callout "info" %}It is highly <strong>recommended</strong> to cache your API call data to the file system so that you aren’t making a ton of requests to an API with every build. Luckily, we have a <a href="/docs/quicktips/cache-api-requests/">Quick Tip on how to Cache your Data Requests</a>!{% endcallout %}
 
 ## Update Counts Daily
 
