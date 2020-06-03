@@ -1,7 +1,6 @@
 .announcement {
 	display: block;
 	background-color: #111;
-	color: #eee;
 	font-weight: bold;
 	padding: .5em 1em;
 	text-align: center;
@@ -9,6 +8,11 @@
 }
 .announcement > a {
 	white-space: nowrap;
+}
+.announcement,
+.announcement > a,
+.announcement > a:visited {
+	color: #eee;
 }
 .announcement > a:not(:first-child) {
 	margin-left: 1em;
