@@ -48,6 +48,7 @@ social:
 {% include 'components/breadcrumb.css' %}
 {% include 'components/prism-theme.css' %}
 {% include 'components/code.css' %}
+{% include 'components/announcement.css' %}
 {% include 'components/seven-minute-tabs.css' %}
 {% for includeLocation in css %}
 {% include includeLocation %}
@@ -73,6 +74,12 @@ social:
 
 	</head>
 	<body>
+		<div class="announcement">
+			<a href="https://blacklivesmatter.com/">#BlackLivesMatter</a>
+			<a href="https://eji.org/">The Equal Justice Initiative</a>
+			<a href="http://www.wetheprotesters.org/">We The Protesters</a>
+			<a href="https://deletefacebook.com/">Delete Facebook</a>
+		</div>
 
 		{{ content | safe }}
 

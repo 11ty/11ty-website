@@ -1,0 +1,16 @@
+.announcement {
+	display: block;
+	background-color: #111;
+	color: #eee;
+	font-weight: bold;
+	padding: .5em 1em;
+	text-align: center;
+	line-height: 1.4;
+}
+.announcement > a {
+	white-space: nowrap;
+}
+.announcement > a:not(:first-child) {
+	margin-left: 1em;
+}
+
