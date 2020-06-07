@@ -1,6 +1,6 @@
 <div class="lo-c{% if topKey === "performance" and perf.rank <= 11 or topKey === "accessibility" and perf.accessibilityRank <= 11 or topKey === true %} site-top{% endif %}">
 	<div{% if showScreenshot %} class="sites-data-container"{% endif %}>
-		<a href="{{ site.url }}">{% avatarlocalcache "twitter", site.twitter %}{{ site.name | safe }}</a>
+		<a href="{{ site.url }}">{% avatarlocalcache "twitter", site.twitter %}{{ site.name }}</a>
 		<span title="Top 11 on the Combined Leaderboard">{{ site.url | numberOfTrophies | repeat("🏆") }}</span>
 		{%- if site.description %}<em class="list-bare-desc list-bare-desc-avatar">{{ site.description }}</em>{% endif -%}
 		{%- if showMetadata %}
