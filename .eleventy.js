@@ -269,6 +269,7 @@ ${text.trim()}
 
 	function removeExtraText(s) {
 		let newStr = String(s).replace(/New\ in\ v\d+\.\d+\.\d+/, "");
+		newStr = newStr.replace(/Coming\ soon\ in\ v\d+\.\d+\.\d+/, "");
 		newStr = newStr.replace(/⚠️/g, "");
 		newStr = newStr.replace(/[?!]/g, "");
 		newStr = newStr.replace(/<[^>]*>/g, "");
