@@ -27,8 +27,10 @@ body {
 		color: #fff;
 	}
 }
-.elv-docs body {
-	max-width: 76em;
+.elv-docs header,
+.elv-docs main,
+.elv-docs footer {
+	max-width: 76rem;
 	margin: 0 auto;
 }
 img {
@@ -345,7 +347,7 @@ footer.elv-layout {
 }
 @media (min-width: 64em) { /* 1024px */
 	.elv-layout-toc {
-		margin-left: 15rem;
+		padding-left: 15rem;
 		max-width: 60rem;
 		margin-right: 1rem;
 		position: relative;

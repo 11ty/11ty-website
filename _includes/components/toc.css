@@ -11,7 +11,7 @@
 @media (min-width: 64em) { /* 1024px */
 	.elv-toc {
 		position: absolute;
-		left: -14rem;
+		left: 1rem;
 		width: 13rem;
 	}
 	.elv-toc details > summary {
