@@ -658,6 +658,17 @@ main .elv-toc + h1 .direct-link {
 .btn-primary-why-are-you-doing-this {
 	margin-top: 1.5em;
 }
+.btn-primary-why-are-you-doing-this + span {
+	display: none;
+}
+@media (min-width: 50em) { /* 800px */
+	.btn-primary-why-are-you-doing-this + span {
+		display: block;
+		text-align: center;
+		margin-top: .25em;
+		font-size: .75em;
+	}
+}
 .btn-form:hover,
 .btn-primary:hover {
 	border-color: transparent;
@@ -669,12 +680,6 @@ main .elv-toc + h1 .direct-link {
 }
 .btn-primary span {
 	text-transform: none;
-}
-.btn-primary + span {
-	display: block;
-	text-align: center;
-	margin-top: .25em;
-	font-size: .75em;
 }
 .btn-c {
 	margin-left: auto;
