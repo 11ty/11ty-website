@@ -1259,6 +1259,24 @@
       "size": 1226
     }
   ],
+  "martin-schneider": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "martin-schneider",
+      "path": "img/avatar-local-cache/opencollective/martin-schneider.jpg",
+      "size": 1799
+    }
+  ],
   "mat-marquis": [
     {
       "format": "jpeg",
@@ -1335,7 +1353,7 @@
     {
       "format": "jpeg",
       "width": 73,
-      "height": 73,
+      "height": 74,
       "space": "srgb",
       "channels": 3,
       "depth": "uchar",
@@ -1346,7 +1364,7 @@
       "extension": "jpg",
       "name": "melanie-sumner",
       "path": "img/avatar-local-cache/opencollective/melanie-sumner.jpg",
-      "size": 2080
+      "size": 1818
     }
   ],
   "mike-aparicio": [
@@ -1527,6 +1545,24 @@
       "name": "pelle-wessman",
       "path": "img/avatar-local-cache/opencollective/pelle-wessman.jpg",
       "size": 1959
+    }
+  ],
+  "peter-antonius": [
+    {
+      "format": "jpeg",
+      "width": 73,
+      "height": 73,
+      "space": "srgb",
+      "channels": 3,
+      "depth": "uchar",
+      "chromaSubsampling": "4:2:0",
+      "isProgressive": false,
+      "hasProfile": false,
+      "hasAlpha": false,
+      "extension": "jpg",
+      "name": "peter-antonius",
+      "path": "img/avatar-local-cache/opencollective/peter-antonius.jpg",
+      "size": 2506
     }
   ],
   "peter-dehaan": [
