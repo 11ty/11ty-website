@@ -641,6 +641,13 @@ main .elv-toc + h1 .direct-link {
 	text-transform: uppercase;
 	text-decoration: none;
 	color: inherit;
+	background-color: inherit;
+}
+@media (prefers-color-scheme: dark) {
+	.btn-form {
+		background-color: #000;
+		border-color: transparent;
+	}
 }
 .btn-form {
 	border-radius: 1em;
@@ -670,10 +677,19 @@ main .elv-toc + h1 .direct-link {
 	}
 }
 .btn-form:hover,
+.btn-form:focus,
 .btn-primary:hover {
 	border-color: transparent;
 	background-color: #222;
 	color: #fff;
+}
+@media (prefers-color-scheme: dark) {
+	.btn-form:focus,
+	.btn-form:hover {
+		border-color: transparent;
+		background-color: #fff;
+		color: #222;
+	}
 }
 .btn-primary:hover {
 	border-color: rgba(255,255,255,.3);
