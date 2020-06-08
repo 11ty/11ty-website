@@ -15,41 +15,37 @@ tags:
 ---
 # Shortcodes {% addedin "0.5.0" %}
 
-Various template engines can be extended with shortcodes for easy reusable content. This is sugar around Template Language [Custom Tags](/docs/custom-tags/). Here’s a few examples:
+Various template engines can be extended with shortcodes for easy reusable content. This is sugar around Template Language [Custom Tags](/docs/custom-tags/). Shortcodes are supported in JavaScript, Liquid, Nunjucks, Handlebars templates. Here are a few examples:
 
-{% codetitle "Liquid, Nunjucks", "Syntax" %}
-
-{% raw %}
-```html
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    Language:
+    <a href="#mainlayout-njk" id="mainlayout-njk-btn" role="tab" aria-controls="mainlayout-njk" aria-selected="true">Nunjucks or Liquid</a>
+    <a href="#mainlayout-hbs" id="mainlayout-hbs-btn" role="tab" aria-controls="mainlayout-hbs" aria-selected="false">Handlebars</a>
+    <a href="#mainlayout-11tyjs" id="mainlayout-11tyjs-btn" role="tab" aria-controls="mainlayout-11tyjs" aria-selected="false">11ty.js</a>
+  </div>
+  <div id="mainlayout-njk" role="tabpanel" aria-labelledby="mainlayout-njk-btn">
+{%- highlight "html" %}{% raw %}
 {% user firstName, lastName %}
-```
-{% endraw %}
-
-The comma between arguments is **required** in Nunjucks but is **optional** in Liquid templates.
-
-{% codetitle "Handlebars", "Syntax" %}
-
-{% raw %}
-```html
+{% endraw %}{% endhighlight %}
+    <p>The comma between arguments is <strong>required</strong> in Nunjucks but is <strong>optional</strong> in Liquid templates.</p>
+  </div>
+  <div id="mainlayout-hbs" role="tabpanel" aria-labelledby="mainlayout-hbs-btn">
+{%- highlight "html" %}{% raw %}
 <!-- Note the three opening and closing curly brackets (the triple-stash) -->
 {{{ user firstName lastName }}}
-```
-{% endraw %}
-
-{% callout "info" %}Note that if you return HTML in your Handlebars shortcode, you need to use the Handlebars triple-stash syntax (three opening and three closing curly brackets, e.g. <code>{% raw %}{{{ shortcodeName }}}{% endraw %}</code>) to avoid double-escaped HTML. If it’s double-escaped a paragraph tag may render as <code>&amp;lt;p&amp;gt;</code>{% endcallout %}
-
-{% codetitle "JavaScript", "Syntax" %}
-{% addedin "0.7.0" %}
-
-```js
+{% endraw %}{%- endhighlight %}
+    {% callout "info" %}Note that if you return HTML in your Handlebars shortcode, you need to use the Handlebars triple-stash syntax (three opening and three closing curly brackets, e.g. <code>{% raw %}{{{ shortcodeName }}}{% endraw %}</code>) to avoid double-escaped HTML. If it’s double-escaped a paragraph tag may render as <code>&amp;lt;p&amp;gt;</code>{% endcallout %}
+  </div>
+  <div id="mainlayout-11tyjs" role="tabpanel" aria-labelledby="mainlayout-11tyjs-btn">
+{%- highlight "js" %}{% raw %}
 module.exports = function({ firstName, lastName }) {
   return `<h1>${this.user(firstName, lastName)}</h1>`;
 };
-```
-
-
-
-Supported in JavaScript, Liquid, Nunjucks, Handlebars templates.
+{% endraw %}{% endhighlight %}
+    <p>This feature was {% addedin "0.7.0" %}.</p>
+  </div>
+</seven-minute-tabs>
 
 {% codetitle ".eleventy.js" %}
 
