@@ -20,24 +20,39 @@ Various template engines can be extended with shortcodes for easy reusable conte
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     Language:
-    <a href="#mainlayout-njk" id="mainlayout-njk-btn" role="tab" aria-controls="mainlayout-njk" aria-selected="true">Nunjucks or Liquid</a>
-    <a href="#mainlayout-hbs" id="mainlayout-hbs-btn" role="tab" aria-controls="mainlayout-hbs" aria-selected="false">Handlebars</a>
-    <a href="#mainlayout-11tyjs" id="mainlayout-11tyjs-btn" role="tab" aria-controls="mainlayout-11tyjs" aria-selected="false">11ty.js</a>
+    <a href="#shortcode-njk" id="shortcode-njk-btn" role="tab" aria-controls="shortcode-njk" aria-selected="true">Nunjucks</a>
+    <a href="#shortcode-liquid" id="shortcode-liquid-btn" role="tab" aria-controls="shortcode-liquid" aria-selected="false">Liquid</a>
+    <a href="#shortcode-hbs" id="shortcode-hbs-btn" role="tab" aria-controls="shortcode-hbs" aria-selected="false">Handlebars</a>
+    <a href="#shortcode-11tyjs" id="shortcode-11tyjs-btn" role="tab" aria-controls="shortcode-11tyjs" aria-selected="false">11ty.js</a>
   </div>
-  <div id="mainlayout-njk" role="tabpanel" aria-labelledby="mainlayout-njk-btn">
+  <div id="shortcode-njk" role="tabpanel" aria-labelledby="shortcode-njk-btn">
+    {% codetitle "sample.njk" %}
 {%- highlight "html" %}{% raw %}
 {% user firstName, lastName %}
 {% endraw %}{% endhighlight %}
-    <p>The comma between arguments is <strong>required</strong> in Nunjucks but is <strong>optional</strong> in Liquid templates.</p>
+    <p>The comma between arguments is <strong>required</strong> in Nunjucks templates.</p>
   </div>
-  <div id="mainlayout-hbs" role="tabpanel" aria-labelledby="mainlayout-hbs-btn">
+  <div id="shortcode-liquid" role="tabpanel" aria-labelledby="shortcode-liquid-btn">
+    {% codetitle "sample.liquid" %}
+{%- highlight "html" %}{% raw %}
+{% user firstName, lastName %}
+{% endraw %}{% endhighlight %}
+    <p>The comma between arguments is <strong>optional</strong> in Liquid templates.</p>
+    {% codetitle "sample.liquid" %}
+{%- highlight "html" %}{% raw %}
+{% user firstName lastName %}
+{% endraw %}{% endhighlight %}
+  </div>
+  <div id="shortcode-hbs" role="tabpanel" aria-labelledby="shortcode-hbs-btn">
+    {% codetitle "sample.hbs" %}
 {%- highlight "html" %}{% raw %}
 <!-- Note the three opening and closing curly brackets (the triple-stash) -->
 {{{ user firstName lastName }}}
 {% endraw %}{%- endhighlight %}
     {% callout "info" %}Note that if you return HTML in your Handlebars shortcode, you need to use the Handlebars triple-stash syntax (three opening and three closing curly brackets, e.g. <code>{% raw %}{{{ shortcodeName }}}{% endraw %}</code>) to avoid double-escaped HTML. If it’s double-escaped a paragraph tag may render as <code>&amp;lt;p&amp;gt;</code>{% endcallout %}
   </div>
-  <div id="mainlayout-11tyjs" role="tabpanel" aria-labelledby="mainlayout-11tyjs-btn">
+  <div id="shortcode-11tyjs" role="tabpanel" aria-labelledby="shortcode-11tyjs-btn">
+    {% codetitle "sample.11ty.js" %}
 {%- highlight "js" %}{% raw %}
 module.exports = function({ firstName, lastName }) {
   return `<h1>${this.user(firstName, lastName)}</h1>`;
