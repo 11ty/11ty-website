@@ -44,16 +44,16 @@
         "a11yRank": 37
       },
       {
-        "url": "https://tatianamac.com/",
-        "combinedRank": 7,
-        "perfRank": 16,
-        "a11yRank": 32
-      },
-      {
         "url": "https://educationlinks.fyi/",
-        "combinedRank": 8,
+        "combinedRank": 7,
         "perfRank": 46,
         "a11yRank": 2
+      },
+      {
+        "url": "https://tatianamac.com/",
+        "combinedRank": 8,
+        "perfRank": 16,
+        "a11yRank": 32
       },
       {
         "url": "https://devreldiaries.commons.host/",
@@ -124,16 +124,16 @@
         "a11yRank": 2
       },
       {
-        "url": "https://lea-tortay.com/",
-        "combinedRank": 9,
-        "perfRank": 14,
-        "a11yRank": 61
-      },
-      {
         "url": "https://kula.blog/",
-        "combinedRank": 10,
+        "combinedRank": 9,
         "perfRank": 42,
         "a11yRank": 33
+      },
+      {
+        "url": "https://lea-tortay.com/",
+        "combinedRank": 10,
+        "perfRank": 14,
+        "a11yRank": 61
       },
       {
         "url": "https://fotis.xyz/",
@@ -276,6 +276,74 @@
         "combinedRank": 11,
         "perfRank": 71,
         "a11yRank": 14
+      }
+    ],
+    [
+      {
+        "url": "https://www.frontendbookmarks.com/",
+        "combinedRank": 1,
+        "perfRank": 9,
+        "a11yRank": 16
+      },
+      {
+        "url": "https://glenn.thedixons.net/",
+        "combinedRank": 2,
+        "perfRank": 6,
+        "a11yRank": 21
+      },
+      {
+        "url": "https://davidkistauri.ru/",
+        "combinedRank": 3,
+        "perfRank": 34,
+        "a11yRank": 14
+      },
+      {
+        "url": "https://www.doesitflip.com/",
+        "combinedRank": 4,
+        "perfRank": 59,
+        "a11yRank": 5
+      },
+      {
+        "url": "https://books.thedixons.net/",
+        "combinedRank": 5,
+        "perfRank": 56,
+        "a11yRank": 12
+      },
+      {
+        "url": "https://tatianamac.com/",
+        "combinedRank": 6,
+        "perfRank": 29,
+        "a11yRank": 41
+      },
+      {
+        "url": "https://www.zachleat.com/",
+        "combinedRank": 7,
+        "perfRank": 55,
+        "a11yRank": 19
+      },
+      {
+        "url": "https://pack11ty.dev/",
+        "combinedRank": 8,
+        "perfRank": 28,
+        "a11yRank": 54
+      },
+      {
+        "url": "https://www.star-shaped.org/",
+        "combinedRank": 9,
+        "perfRank": 18,
+        "a11yRank": 71
+      },
+      {
+        "url": "https://educationlinks.fyi/",
+        "combinedRank": 10,
+        "perfRank": 86,
+        "a11yRank": 3
+      },
+      {
+        "url": "https://frontendweekly.tokyo/",
+        "combinedRank": 11,
+        "perfRank": 46,
+        "a11yRank": 44
       }
     ]
   ]
