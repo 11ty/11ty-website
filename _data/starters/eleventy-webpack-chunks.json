@@ -1,0 +1,6 @@
+{
+	"url": "https://github.com/kjugi/eleventy-webpack-chunks",
+	"name": "11ty with webpack multiple bundles",
+	"description": "11ty + webpack + nunjucks - Simple static website, well fits as about me page with blog.",
+	"author": "kjugi"
+}
