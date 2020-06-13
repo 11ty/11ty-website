@@ -521,7 +521,7 @@ testdata:
   - item4
 ```
 
-Now `collections.myCollection` will have both output pages in the collection array (`_site/my-page/index.html` and `_site/-my-page/1/index.html`).
+Now `collections.myCollection` will have both output pages in the collection array (`_site/my-page/index.html` and `_site/my-page/1/index.html`).
 
 ## Full Pagination Option List
 
