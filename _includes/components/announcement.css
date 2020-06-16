@@ -5,6 +5,9 @@
 	padding: .5em 1em;
 	text-align: center;
 	line-height: 1.4;
+	width: calc(100% + 2rem);
+	margin-left: -1rem;
+	margin-right: -1rem;
 }
 .announcement > a {
 	white-space: nowrap;
