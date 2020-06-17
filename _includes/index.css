@@ -342,6 +342,9 @@ li li {
 	max-width: 42rem;
 	clear: both;
 }
+header.elv-layout {
+	padding: 0 1rem;
+}
 footer.elv-layout {
 	margin-bottom: 5em;
 }
