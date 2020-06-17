@@ -4,6 +4,9 @@
 	list-style: none;
 	font-size: 1rem; /* 16px /16 */
 }
+.elv-header-default .elv-nav.lo {
+	justify-content: center;
+}
 .elv-nav-item {
 	white-space: nowrap;
 	flex-grow: 0;

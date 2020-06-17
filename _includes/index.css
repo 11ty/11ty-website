@@ -27,10 +27,13 @@ body {
 		color: #fff;
 	}
 }
-.elv-docs header,
 .elv-docs main,
 .elv-docs footer {
 	max-width: 76rem;
+	margin: 0 auto;
+}
+.elv-docs .elv-header-c {
+	max-width: 74rem;
 	margin: 0 auto;
 }
 img {
@@ -367,6 +370,12 @@ footer.elv-layout {
 	justify-content: center;
 	align-items: center;
 	padding-top: 0;
+}
+.elv-header-c {
+	width: 100%;
+}
+.elv-header-docs .elv-header-c {
+	padding: 1rem 0;
 }
 .elv-header-docs:before,
 .elv-header-docs:after {

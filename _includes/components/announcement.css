@@ -11,6 +11,7 @@
 }
 @media (min-width: 25em) { /* 400px */
 	.announcement {
+		font-size: 1em;
 		font-size: clamp(1em, 2vw, 1.25em);
 	}
 }
