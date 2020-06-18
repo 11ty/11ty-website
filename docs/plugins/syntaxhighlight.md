@@ -40,13 +40,13 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-You are responsible for including your favorite PrismJS theme CSS and there are many ways to do that. The default themes are provided by [several CDNs](https://prismjs.com/#basic-usage-cdn) and could be easly included in a base layout, like in the example bellow;
+You are responsible for including your favorite PrismJS theme CSS and there are many ways to do that. The default themes are provided by [several CDNs](https://prismjs.com/#basic-usage-cdn) and could be easily included in a base layout, like in the example bellow;
 
 ```html
 <html lang="en">
   <head>
     <!-- Some html boilerplate omitted -->
-    <link href="https://unpkg.com/browse/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
   </head>
 ````
 
