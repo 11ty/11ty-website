@@ -13,6 +13,7 @@
 		position: absolute;
 		left: 1rem;
 		width: 13rem;
+		z-index: 1;
 	}
 	.elv-toc details > summary {
 		margin-top: 0;
