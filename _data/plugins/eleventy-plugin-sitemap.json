@@ -1,5 +1,5 @@
 {
-	"npm": "eleventy-plugin-sitemap",
+	"npm": "@quasibit/eleventy-plugin-sitemap",
 	"author": "nunof07",
 	"description": "adds a shortcode for generating a sitemap."
 }
