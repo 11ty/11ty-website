@@ -212,7 +212,7 @@ module.exports = {
 
 ### Default template engine for global data files
 
-The `data.dir` global data files run through this template engine before transforming to JSON. Read more about [Global Data Files](/docs/data-global/).
+The `dir.data` global data files run through this template engine before transforming to JSON. Read more about [Global Data Files](/docs/data-global/).
 
 | Data Template Engine |  |
 | --- | --- |
