@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/c117814c.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/c117814c.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/c117814c.jpeg",
+      "size": 2041
+    }
+  ],
+  "slug": "john-sj-anderson"
+}

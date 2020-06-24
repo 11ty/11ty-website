@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/74c9afbf.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/74c9afbf.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/74c9afbf.jpeg",
+      "size": 2322
+    }
+  ],
+  "slug": "dave-powers"
+}

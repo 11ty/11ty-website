@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/c1911926.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/c1911926.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/c1911926.jpeg",
+      "size": 1249
+    }
+  ],
+  "slug": "viljami-salminen"
+}

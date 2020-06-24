@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/71ed8f0c.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/71ed8f0c.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/71ed8f0c.jpeg",
+      "size": 2857
+    }
+  ],
+  "slug": "peter-antonius"
+}

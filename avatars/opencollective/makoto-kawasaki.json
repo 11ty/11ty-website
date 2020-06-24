@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/a401ab3f.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/a401ab3f.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/a401ab3f.jpeg",
+      "size": 1392
+    }
+  ],
+  "slug": "makoto-kawasaki"
+}

@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/8c2b3f4f-90.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/8c2b3f4f-90.jpeg 90w",
+      "outputPath": "img/avatars/opencollective/8c2b3f4f-90.jpeg",
+      "size": 2571
+    }
+  ],
+  "slug": "andrew-pucci"
+}

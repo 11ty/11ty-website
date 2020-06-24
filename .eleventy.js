@@ -19,27 +19,33 @@ const slugify = require('slugify');
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);
 
+let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" class="avatar">`;
 const shortcodes = {
 	avatarlocalcache: function(datasource, slug, alt = "") {
-		const avatarMap = require(`./_data/avatarmap/${datasource}.json`);
-		if( slug ) {
-			slug = cleanName(slug);
-			let mapEntry = avatarMap[slug.toLowerCase()];
-			if(mapEntry && mapEntry.length) {
-				let ret = [];
-				if( mapEntry.length >= 2 ) {
-					ret.push("<picture>");
-					ret.push(`<source srcset="/${mapEntry[0].path}" type="image/${mapEntry[0].path.split(".").pop()}">`);
-				}
-				ret.push(`<img src="${ "/" + mapEntry[mapEntry.length - 1].path }" alt="${alt || `${slug}’s ${datasource} avatar`}" loading="lazy" class="avatar">`);
-				if( mapEntry.length >= 2 ) {
-					ret.push("</picture>");
-				}
-				return ret.join("");
-			}
+		if(!slug) {
+			return defaultAvatarHtml;
 		}
 
-		return `<img src="/img/default-avatar.png" alt="${alt}" loading="lazy" class="avatar">`;
+		slug = cleanName(slug).toLowerCase();
+		let mapEntry;
+		try {
+			mapEntry = require(`./avatars/${datasource}/${slug}.json`);
+		} catch(e) {
+			return defaultAvatarHtml;
+		}
+
+		let ret = [];
+		if(mapEntry.webp) {
+			ret.push("<picture>");
+			ret.push(`<source srcset="${mapEntry.webp[0].srcset}" type="${mapEntry.webp[0].sourceType}">`);
+		}
+		let otherSrc = mapEntry.jpeg || mapEntry.png;
+
+		ret.push(`<img src="${otherSrc[0].url}" alt="${alt || `${slug}’s ${datasource} avatar`}" loading="lazy" class="avatar">`);
+		if(mapEntry.webp) {
+			ret.push("</picture>");
+		}
+		return ret.join("");
 	},
 	link: function(linkUrl, content) {
 		return (linkUrl ? `<a href="${linkUrl}">` : "") +

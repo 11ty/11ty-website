@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/987d095c.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/987d095c.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/987d095c.jpeg",
+      "size": 2406
+    }
+  ],
+  "slug": "kyle-mitofsky"
+}

@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/f00e660.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/f00e660.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/f00e660.jpeg",
+      "size": 2295
+    }
+  ],
+  "slug": "heydon-pickering"
+}

@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/b3821423.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/b3821423.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/b3821423.jpeg",
+      "size": 1590
+    }
+  ],
+  "slug": "brian-zerangue"
+}

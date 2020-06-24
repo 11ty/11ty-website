@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/8d2f335e.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/8d2f335e.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/8d2f335e.jpeg",
+      "size": 2091
+    }
+  ],
+  "slug": "miriam-suzanne"
+}

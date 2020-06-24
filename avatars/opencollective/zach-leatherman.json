@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/9a93578a.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/9a93578a.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/9a93578a.jpeg",
+      "size": 1420
+    }
+  ],
+  "slug": "zach-leatherman"
+}

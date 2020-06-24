@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/bbe3cd8b-90.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/bbe3cd8b-90.jpeg 90w",
+      "outputPath": "img/avatars/opencollective/bbe3cd8b-90.jpeg",
+      "size": 2402
+    }
+  ],
+  "slug": "evan-harrison"
+}

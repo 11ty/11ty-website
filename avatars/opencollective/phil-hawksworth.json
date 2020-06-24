@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/c82439a8.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/c82439a8.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/c82439a8.jpeg",
+      "size": 1512
+    }
+  ],
+  "slug": "phil-hawksworth"
+}

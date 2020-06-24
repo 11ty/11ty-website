@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/a085ca29.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/a085ca29.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/a085ca29.jpeg",
+      "size": 2228
+    }
+  ],
+  "slug": "nicolas-friedli"
+}

@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/4a6023e8-90.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/4a6023e8-90.jpeg 90w",
+      "outputPath": "img/avatars/opencollective/4a6023e8-90.jpeg",
+      "size": 1942
+    }
+  ],
+  "slug": "daily-dev-tips"
+}

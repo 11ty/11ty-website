@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/dc33ca58.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/dc33ca58.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/dc33ca58.jpeg",
+      "size": 2187
+    }
+  ],
+  "slug": "kayce-basques"
+}

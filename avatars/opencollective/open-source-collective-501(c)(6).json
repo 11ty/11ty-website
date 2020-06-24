@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/df6c3bac-90.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/df6c3bac-90.jpeg 90w",
+      "outputPath": "img/avatars/opencollective/df6c3bac-90.jpeg",
+      "size": 1219
+    }
+  ],
+  "slug": "open-source-collective-501(c)(6)"
+}

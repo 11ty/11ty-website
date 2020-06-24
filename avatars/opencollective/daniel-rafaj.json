@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 65,
+      "url": "/img/avatars/opencollective/b13dcf82-90.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/b13dcf82-90.jpeg 90w",
+      "outputPath": "img/avatars/opencollective/b13dcf82-90.jpeg",
+      "size": 2163
+    }
+  ],
+  "slug": "daniel-rafaj"
+}

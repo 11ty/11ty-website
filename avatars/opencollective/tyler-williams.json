@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/9c9fd9e1.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/9c9fd9e1.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/9c9fd9e1.jpeg",
+      "size": 1788
+    }
+  ],
+  "slug": "tyler-williams"
+}

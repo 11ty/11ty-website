@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 98,
+      "url": "/img/avatars/opencollective/504406af-90.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/504406af-90.jpeg 90w",
+      "outputPath": "img/avatars/opencollective/504406af-90.jpeg",
+      "size": 3729
+    }
+  ],
+  "slug": "djame-goldston"
+}

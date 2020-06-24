@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/634aa3f2.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/634aa3f2.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/634aa3f2.jpeg",
+      "size": 2084
+    }
+  ],
+  "slug": "dimitrios-grammatikogiannis"
+}

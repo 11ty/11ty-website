@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/6fcd87b7.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/6fcd87b7.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/6fcd87b7.jpeg",
+      "size": 1799
+    }
+  ],
+  "slug": "kyosuke-nakamura"
+}

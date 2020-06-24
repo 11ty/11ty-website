@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/4a820fcf.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/4a820fcf.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/4a820fcf.jpeg",
+      "size": 2348
+    }
+  ],
+  "slug": "benjamin-randall"
+}
