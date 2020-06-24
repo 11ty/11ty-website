@@ -14,7 +14,7 @@ async function fetch(name) {
 	}
 
 	let slug = slugify(name).toLowerCase();
-	let path = `./_data/avatars/twitter/${slug}.json`;
+	let path = `./avatars/twitter/${slug}.json`;
 
 	try {
 		// TODO make this better, avatars won’t be refetched!
