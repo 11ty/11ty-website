@@ -14,12 +14,13 @@ async function fetch(name) {
 	}
 
 	let slug = slugify(name).toLowerCase();
-	let path = `./avatars/twitter/${slug}.json`;
+	let dir = `./avatars/twitter/`;
+	await fs.ensureDir(dir);
 
-	try {
-		// TODO make this better, avatars won’t be refetched!
-		require(path);
-	} catch(e) {
+	let path = `${dir}${slug}.json`;
+
+	if(!fs.pathExistsSync(path)) {
+		console.log( "Getting image url for", name );
 		let result = await getTwitterAvatarUrl(name);
 		if(result && result.url.large) {
 			let stats = await eleventyImg(result.url.large, {
@@ -89,7 +90,9 @@ async function fetch(name) {
 		}
 	}
 
-	for(let name of twitterUsernames) {
+	console.log( "Found", twitterUsernames.size, "usernames" );
+	let sorted = Array.from(twitterUsernames).sort();
+	for(let name of sorted) {
 		await fetch(name);
 	}
 })();

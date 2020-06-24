@@ -60,7 +60,7 @@
     "sorted-object": "2.0.1",
     "tap-spot": "1.1.1",
     "terser": "4.6.7",
-    "twitter-avatar-url": "^1.0.1"
+    "twitter-avatar-url": "1.0.2"
   },
   "dependencies": {
     "@11ty/logo": "2.0.4",

@@ -9,6 +9,9 @@ async function fetch(name, imageUrl) {
 		return;
 	}
 
+	let dir = `./avatars/opencollective/`;
+	await fs.ensureDir(dir);
+
 	let stats = await eleventyImg(imageUrl, {
 		// formats: ["webp", "jpeg"],
 		formats: ["jpeg"],
@@ -18,7 +21,7 @@ async function fetch(name, imageUrl) {
 	})
 
 	let slug = slugify(name).toLowerCase();
-	let path = `./avatars/opencollective/${slug}.json`;
+	let path = `${dir}${slug}.json`;
 	stats.slug = slug;
 	await fs.writeFile(path, JSON.stringify(stats, null, 2));
 	return stats;
