@@ -1,7 +1,7 @@
 .announcement {
 	display: block;
 	background-color: #111;
-	font-weight: bold;
+	font-weight: 500;
 	padding: .25em 1em;
 	text-align: center;
 	line-height: 1.4;
@@ -19,11 +19,15 @@
 	display: inline-block;
 	white-space: nowrap;
 	padding: .25em 0;
+	text-decoration: none;
 }
 .announcement,
 .announcement > a,
 .announcement > a:visited {
 	color: #eee;
+}
+.announcement > a:after {
+	display: none;
 }
 .announcement > a:not(:first-child) {
 	margin-left: 1em;
