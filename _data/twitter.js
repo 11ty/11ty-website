@@ -8,7 +8,6 @@ module.exports = async function() {
 			return asset.getCachedValue();
 		}
 
-		// https://developer.github.com/v3/repos/#get
 		let html = await RemoteCache("https://twitter.com/eleven_ty/", {
 			duration: "1d",
 			type: "text"
