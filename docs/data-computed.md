@@ -61,7 +61,7 @@ The resulting data for each `posts/*.md` file when processed by Eleventy has the
 }
 ```
 
-If I wanted this data to be computed for all files, I could instead create the following `eleventyComputed.js` <a href="docs/data-global">global data file</a>.
+If I wanted this data to be computed for all files, I could instead create the following `eleventyComputed.js` <a href="/docs/data-global/">global data file</a>.
 
 ```js
 module.exports = {
@@ -81,7 +81,8 @@ Here’s a bunch of examples:
 ```js
 module.exports = {
   eleventyComputed: {
-    myString: "this is just a raw string",
+    myTemplateString: "This is assumed to be a template string!",
+    myString: data => "This is a string!",
     myFunction: data => `This is a string using ${data.someValue}.`,
     myAsyncFunction: async data => await someAsyncThing(),
     myPromise: data => {

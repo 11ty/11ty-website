@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/3e0869c-90.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/3e0869c-90.jpeg 90w",
+      "outputPath": "img/avatars/opencollective/3e0869c-90.jpeg",
+      "size": 726
+    }
+  ],
+  "slug": "suominettikasinot24.com"
+}

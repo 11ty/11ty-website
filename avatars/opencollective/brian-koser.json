@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/49b4681a.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/49b4681a.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/49b4681a.jpeg",
+      "size": 2901
+    }
+  ],
+  "slug": "brian-koser"
+}

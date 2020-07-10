@@ -1,0 +1,6 @@
+{
+	"url": "https://github.com/kmelve/eleventy-sanity-blog-boilerplate",
+	"name": "eleventy-sanity-blog-boilerplate",
+	"description": "An eleventy + headless CMS blog boilerplate. Includes Sanity Studio, quick start, config and instructions for deploying on Netlify and `now`.",
+	"author": "kmelve"
+}

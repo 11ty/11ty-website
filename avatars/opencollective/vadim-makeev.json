@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/944198c8.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/944198c8.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/944198c8.jpeg",
+      "size": 2307
+    }
+  ],
+  "slug": "vadim-makeev"
+}

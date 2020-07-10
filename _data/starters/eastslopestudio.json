@@ -1,0 +1,6 @@
+{
+		"url": "https://github.com/eastslopestudio/eleventy-starter",
+		"name": "eastslopestudio eleventy-starter",
+		"description": "A project scaffold for quickly starting a site build with Tailwindcss, PurgeCSS, Parcel JS",
+		"author": "ryanscherler"
+	}

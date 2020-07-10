@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/6c6ddd3b.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/6c6ddd3b.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/6c6ddd3b.jpeg",
+      "size": 2460
+    }
+  ],
+  "slug": "stephanie-eckles"
+}

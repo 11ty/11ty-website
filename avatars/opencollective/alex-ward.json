@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/e1bb0895.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/e1bb0895.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/e1bb0895.jpeg",
+      "size": 2122
+    }
+  ],
+  "slug": "alex-ward"
+}

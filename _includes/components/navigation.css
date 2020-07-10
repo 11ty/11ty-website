@@ -4,6 +4,9 @@
 	list-style: none;
 	font-size: 1rem; /* 16px /16 */
 }
+.elv-header-default .elv-nav.lo {
+	justify-content: center;
+}
 .elv-nav-item {
 	white-space: nowrap;
 	flex-grow: 0;
@@ -36,7 +39,7 @@
 }
 .elv-nav-header .elv-nav-item .emoji,
 .elv-nav-header .elv-nav-item .icon,
-.elv-nav-header .elv-nav-item .has-svg-icon > svg,,
+.elv-nav-header .elv-nav-item .has-svg-icon > svg,
 .elv-nav-header .elv-nav-item .avatar {
 	display: inline-block;
 	margin: 0;

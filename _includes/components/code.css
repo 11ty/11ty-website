@@ -62,6 +62,16 @@ pre + .note {
 	margin-bottom: 2.5em; /* 40px /16 */
 	text-align: right;
 }
+@media (prefers-color-scheme: dark) {
+	pre,
+	code {
+		background-color: #000;
+		color: #fff;
+	}
+	pre code {
+		color: unset;
+	}
+}
 @media (min-width: 37.5em) { /* 600px */
 	pre {
 		font-size: 1em; /* 16px /16 */
@@ -75,16 +85,16 @@ pre + .note {
 
 
 .highlight-line {
-  display: inline-block;
+	display: inline-block;
 
-  /* del, ins, mark default styles */
-  text-decoration: none;
-  color: inherit;
+	/* del, ins, mark default styles */
+	text-decoration: none;
+	color: inherit;
 }
 
 /* allow highlighting empty lines */
 .highlight-line:empty:before {
-  content: " ";
+	content: " ";
 }
 
 .highlight-line {
@@ -95,18 +105,18 @@ pre + .note {
 }
 
 .highlight-line-isdir {
-  color: #b0b0b0;
-  background-color: #222;
+	color: #b0b0b0;
+	background-color: #222;
 }
 .highlight-line-active {
-  background-color: #444;
-  background-color: hsla(0, 0%, 27%, .8);
+	background-color: #444;
+	background-color: hsla(0, 0%, 27%, .8);
 }
 .highlight-line-add {
-  background-color: #45844b;
+	background-color: #45844b;
 }
 .highlight-line-remove {
-  background-color: #902f2f;
+	background-color: #902f2f;
 }
 
 
@@ -122,12 +132,6 @@ pre + .note {
 [data-preprefix-eleventysample="first"] .highlight-line:first-child:before {
 	color: #aaa;
 	content: "~/eleventy-sample $ ";
-}
-[data-preprefix-npxeleventy="all"] .highlight-line:before,
-[data-preprefix-npxeleventy="last"] .highlight-line:last-child:before,
-[data-preprefix-npxeleventy="first"] .highlight-line:first-child:before {
-	color: #bbb;
-	content: "npx @11ty/eleventy ";
 }
 
 /*#localinstall:checked ~ .globalinstall {

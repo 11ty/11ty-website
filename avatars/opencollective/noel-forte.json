@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/c5fe38a4.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/c5fe38a4.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/c5fe38a4.jpeg",
+      "size": 2153
+    }
+  ],
+  "slug": "noel-forte"
+}

@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/bc0bbaa7.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/bc0bbaa7.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/bc0bbaa7.jpeg",
+      "size": 1853
+    }
+  ],
+  "slug": "mark-boulton"
+}

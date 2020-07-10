@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/555715a1.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/555715a1.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/555715a1.jpeg",
+      "size": 1714
+    }
+  ],
+  "slug": "mike-aparicio"
+}

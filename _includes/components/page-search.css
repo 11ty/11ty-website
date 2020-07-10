@@ -45,6 +45,16 @@
 .search-results-item:focus code {
 	background-color: #ddd;
 }
+@media (prefers-color-scheme: dark) {
+	.search-results-item:hover,
+	.search-results-item:focus {
+		background-color: #333;
+	}
+	.search-results-item:hover code,
+	.search-results-item:focus code {
+		background-color: #111;
+	}
+}
 .search-results-item-title {
 	display: block;
 }

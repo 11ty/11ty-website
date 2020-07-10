@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/fd2d745b.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/fd2d745b.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/fd2d745b.jpeg",
+      "size": 2274
+    }
+  ],
+  "slug": "joshua-vaage"
+}

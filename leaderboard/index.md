@@ -27,10 +27,10 @@ css:
 		<div><strong class="sites-val">{{ totalPerfectLhPerfAndA11yScore | round }}</strong> {% emoji "💯", "100" %}’s on both <a href="/leaderboard/combined/">Performance and Accessibility</a></div>
 	</div>
 	<div class="lo-c">
-		<h3 class="authors-hed"><a href="/authors/">Most Sites Created</a></h3>
+		<h3 class="authors-hed"><a href="/authors/">Most Trophies Won</a></h3>
 		<ul class="authors-list">
 		{%- for author in sites | topAuthors | head(11) %}
-			<li><code>×{{ author.count }}</code> <a href="/authors/{{ author.name }}/">{% avatarlocalcache "twitter", author.name %}{{ author.name }}</a></li>
+			<li><code>🏆×{{ author.trophies }}</code> <a href="/authors/{{ author.name }}/">{% avatarlocalcache "twitter", author.name %}{{ author.name }}</a></li>
 		{%- endfor %}
 		</ul>
 	</div>
@@ -40,7 +40,7 @@ css:
 
 ## [Combined Leaderboard](/leaderboard/combined/)
 
-Rankings are updated approximately once per week on Sunday. <em>Last generated {{ fastestSitesMeta.generated | newsDate }}</em>. See the full [Combined Leaderboard](/leaderboard/combined/).
+Rankings are updated approximately every other Sunday. <em>Last generated {{ fastestSitesMeta.generated | newsDate }}</em>. See the full [Combined Leaderboard](/leaderboard/combined/).
 
 <div class="lo sites-lo" style="--lo-stackpoint: 30em; --lo-margin-v: 2em">
 {%- set combinedRanked = fastestSites | rankSortByNumericKey("rank", "accessibilityRank") %}
@@ -58,7 +58,7 @@ Rankings are updated approximately once per week on Sunday. <em>Last generated {
 
 ## [Performance Leaderboard](/leaderboard/perf/)
 
-Rankings are updated approximately once per week on Sunday. <em>Last generated {{ fastestSitesMeta.generated | newsDate }}</em>. See the full [Performance Leaderboard](/leaderboard/perf/).
+Rankings are updated approximately every other Sunday. <em>Last generated {{ fastestSitesMeta.generated | newsDate }}</em>. See the full [Performance Leaderboard](/leaderboard/perf/).
 
 <div class="lo sites-lo" style="--lo-stackpoint: 30em; --lo-margin-v: 2em">
 {%- set perfRanked = fastestSites | rankSortByNumericKey("rank") %}
@@ -75,7 +75,7 @@ Rankings are updated approximately once per week on Sunday. <em>Last generated {
 
 ## [Accessibility Leaderboard](/leaderboard/a11y/)
 
-Rankings are updated approximately once per week on Sunday. <em>Last generated {{ fastestSitesMeta.generated | newsDate }}</em>. See the full [Accessibility Leaderboard](/leaderboard/a11y/).
+Rankings are updated approximately every other Sunday. <em>Last generated {{ fastestSitesMeta.generated | newsDate }}</em>. See the full [Accessibility Leaderboard](/leaderboard/a11y/).
 
 <div class="lo sites-lo" style="--lo-stackpoint: 30em; --lo-margin-v: 2em">
 {%- set a11yRanked = fastestSites | rankSortByNumericKey("accessibilityRank") %}

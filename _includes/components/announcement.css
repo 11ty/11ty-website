@@ -1,0 +1,35 @@
+.announcement {
+	display: block;
+	background-color: #111;
+	font-weight: 500;
+	padding: .25em 1em;
+	text-align: center;
+	line-height: 1.4;
+	width: calc(100% + 2rem);
+	margin-left: -1rem;
+	margin-right: -1rem;
+}
+@media (min-width: 25em) { /* 400px */
+	.announcement {
+		font-size: 1em;
+		font-size: clamp(1em, 2vw, 1.25em);
+	}
+}
+.announcement > a {
+	display: inline-block;
+	white-space: nowrap;
+	padding: .25em 0;
+	text-decoration: none;
+}
+.announcement,
+.announcement > a,
+.announcement > a:visited {
+	color: #eee;
+}
+.announcement > a:after {
+	display: none;
+}
+.announcement > a:not(:first-child) {
+	margin-left: 1em;
+}
+

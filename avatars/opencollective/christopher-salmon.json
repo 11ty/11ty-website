@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/8f63be57.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/8f63be57.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/8f63be57.jpeg",
+      "size": 2148
+    }
+  ],
+  "slug": "christopher-salmon"
+}

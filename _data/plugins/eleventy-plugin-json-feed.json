@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-json-feed",
+	"author": "genehack",
+	"description": "adds a Nunjucks shortcode for outputing a JSON feed."
+}

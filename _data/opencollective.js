@@ -1,5 +1,4 @@
 // https://opencollective.com/11ty/members/all.json
-const fs = require("fs-extra");
 const Cache = require("@11ty/eleventy-cache-assets");
 
 function isMonthlyBacker(backer) {
@@ -53,6 +52,11 @@ module.exports = async function() {
 			backers: backers
 		};
 	} catch(e) {
+		if(process.env.ELEVENTY_PRODUCTION) {
+			// Fail the build in production.
+			return Promise.reject(e);
+		}
+
 		console.log( "Failed, returning 0 opencollective backers.", e );
 		return {
 			supporters: [],

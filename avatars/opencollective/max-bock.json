@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/bcd57598.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/bcd57598.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/bcd57598.jpeg",
+      "size": 1755
+    }
+  ],
+  "slug": "max-bock"
+}

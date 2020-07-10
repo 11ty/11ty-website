@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/d4cfa28b.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/d4cfa28b.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/d4cfa28b.jpeg",
+      "size": 2019
+    }
+  ],
+  "slug": "rhian-van-esch"
+}

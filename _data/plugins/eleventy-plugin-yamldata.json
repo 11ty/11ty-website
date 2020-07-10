@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-yamldata",
+	"description": "will allow you to use a yaml file as local data file.",
+	"deprecated": "This plugin has been superceded by [Eleventy Custom Data Formats](/docs/data-custom/)."
+}

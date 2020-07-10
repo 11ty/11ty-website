@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 91,
+      "url": "/img/avatars/opencollective/d163ec02-90.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/d163ec02-90.jpeg 90w",
+      "outputPath": "img/avatars/opencollective/d163ec02-90.jpeg",
+      "size": 2346
+    }
+  ],
+  "slug": "melanie-sumner"
+}

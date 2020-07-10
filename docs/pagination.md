@@ -382,7 +382,7 @@ _(More discussion at [Issue #194](https://github.com/11ty/eleventy/issues/194))_
 
 As an aside, this could also be achieved in a more verbose way using the [Collection API](/docs/collections/#advanced-custom-filtering-and-sorting). This could also be done using the new `before` callback {% addedin "0.10.0" %}.
 
-### Blacklisting or Filtering Values {% addedin "0.4.0" %}
+### Filtering Values {% addedin "0.4.0" %}
 
 Use the `filter` pagination property to remove values from paginated data.
 
@@ -521,7 +521,7 @@ testdata:
   - item4
 ```
 
-Now `collections.myCollection` will have both output pages in the collection array (`_site/my-page/index.html` and `_site/-my-page/1/index.html`).
+Now `collections.myCollection` will have both output pages in the collection array (`_site/my-page/index.html` and `_site/my-page/1/index.html`).
 
 ## Full Pagination Option List
 

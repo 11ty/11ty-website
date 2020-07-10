@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/1e1f1f6c-90.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/1e1f1f6c-90.jpeg 90w",
+      "outputPath": "img/avatars/opencollective/1e1f1f6c-90.jpeg",
+      "size": 2500
+    }
+  ],
+  "slug": "flaki"
+}
