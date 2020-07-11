@@ -114,7 +114,7 @@ If you’d like to reuse existing filters in a different way, consider using the
 ```js
 module.exports = function(eleventyConfig) {
   eleventyConfig.addShortcode("myCustomImage", function(url, alt) {
-    return `<img src="${eleventyConfig.getFilter("url", url)}"> alt="${alt}">`;
+    return `<img src="${eleventyConfig.getFilter("url")(url)}" alt="${alt}">`;
   });
 };
 ```
