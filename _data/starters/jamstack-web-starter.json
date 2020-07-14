@@ -1,0 +1,6 @@
+{
+	"url": "https://github.com/scottishstoater/jamstack-web-starter",
+	"name": "JAMStack Web Starter",
+	"description": "A modern static website workflow using Eleventy, Tailwind CSS, Webpack and PostCSS.",
+	"author": "scottishstoater"
+}
