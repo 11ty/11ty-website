@@ -77,7 +77,12 @@ Community contributions are in random order. [Lighthouse scores are updated dail
 		padding: 1rem;
 	}
 	.starter-table tr:nth-child(odd) {
-		background-color: #303030;
+		background-color: #f4f4f4;
+	}
+	@media (prefers-color-scheme: dark) {
+		.starter-table tr:nth-child(odd) {
+			background-color: #303030;
+		}
 	}
 	.starter-table td {
 		clear: left;
