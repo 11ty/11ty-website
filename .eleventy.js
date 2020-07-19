@@ -3,6 +3,7 @@ const HumanReadable = require("human-readable-numbers");
 const commaNumber = require("comma-number");
 const markdownIt = require("markdown-it");
 const loadLanguages = require("prismjs/components/");
+const slugify = require("slugify");
 
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
@@ -12,9 +13,6 @@ const minificationLocalPlugin = require("./config/minification");
 const getAuthors = require("./config/getAuthorsFromSites");
 const cleanName = require("./config/cleanAuthorName");
 const objectHas = require("./config/object-has");
-
-
-const slugify = require('slugify');
 
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);

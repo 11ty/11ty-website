@@ -751,3 +751,10 @@ main .elv-toc + h1 .direct-link {
 		min-width: 12em;
 	}
 }
+
+speedlify-score {
+	white-space: nowrap;
+}
+speedlify-score .speedlify-summary {
+	display: none;
+}

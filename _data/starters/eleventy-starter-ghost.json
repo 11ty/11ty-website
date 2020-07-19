@@ -2,5 +2,6 @@
 	"url": "https://github.com/TryGhost/eleventy-starter-ghost",
 	"name": "Eleventy Starter Ghost",
 	"description": "A starter template to build websites with Ghost & Eleventy.",
-	"author": "DavidDarnes"
+	"author": "DavidDarnes",
+	"demo": "https://eleventy.ghost.org/"
 }
