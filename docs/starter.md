@@ -6,7 +6,7 @@ eleventyNavigation:
 ---
 # Starter Projects
 
-Community contributions are in random order. [Lighthouse scores are updated daily](https://www.speedlify.dev/eleventy-starters/)! [Add your own](https://github.com/11ty/11ty-website/tree/master/_data/starters)!
+[Add your own starter project](https://github.com/11ty/11ty-website/tree/master/_data/starters). Community contributions are shown in random order. [Lighthouse scores are updated daily](https://www.speedlify.dev/eleventy-starters/).
 
 <table class="starter-table">
 	<thead>
@@ -14,7 +14,7 @@ Community contributions are in random order. [Lighthouse scores are updated dail
 			<th>Name</th>
 			<th>Author</th>
 			<th>Description</th>
-			<th>Score</th>
+			<th><a href="https://www.speedlify.dev/eleventy-starters/">Lighthouse Score</a></th>
 		</tr>
 	</thead>
 	<tbody>

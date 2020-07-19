@@ -168,6 +168,13 @@ table td {
 	font-size: 0.8125em; /* 13px /16 */
 	vertical-align: top;
 }
+table thead th {
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+	font-size: 0.75em; /* 12px /16 */
+	border-top: none;
+}
 table th:first-child,
 table td:first-child {
 	padding-left: 0;
@@ -175,12 +182,21 @@ table td:first-child {
 table th {
 	border-color: #ddd;
 }
+table thead th {
+	color: #222;
+}
+table thead th a[href] {
+	color: inherit;
+}
 @media (prefers-color-scheme: dark) {
 	table th {
 		border-color: #555;
 	}
 	table td {
 		border-color: #333;
+	}
+	table thead th {
+		color: #ddd;
 	}
 }
 h2 + table {
@@ -192,6 +208,9 @@ h2 + table {
 	table td {
 		padding: .4em .8em;
 		font-size: 1em; /* 16px /16 */
+	}
+	table thead th {
+		font-size: 0.875em; /* 14px /16 */
 	}
 }
 
