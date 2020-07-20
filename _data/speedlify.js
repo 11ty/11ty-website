@@ -29,7 +29,5 @@ module.exports = async function() {
 		}
 	}
 
-	// await Promise.all(Object.values(returnData.data));
-
 	return returnData;
 };
