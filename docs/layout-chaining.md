@@ -6,7 +6,7 @@ eleventyNavigation:
 ---
 # Layout Chaining
 
-Your layouts can also use a layout! Add the same `layout` front matter data to your layout template file and it’ll chain. You do not have to use the same template engine across layouts and content! You can mix and match.
+Your layouts can also use a layout! Add the same `layout` front matter data to your layout template file and it’ll chain. You do not have to use the same template engine across layouts and content, you can mix and match.
 
 To chain a layout, let’s look at an example:
 
