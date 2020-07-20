@@ -8,7 +8,7 @@ module.exports.render = function(data) {
 	let urls = [];
 	for(let key in data.sites) {
 		let site = data.sites[key];
-		if(site.disabled) {
+		if(site.disabled || site.excludedFromLeaderboards) {
 			continue;
 		}
 		if(!site.url) {
