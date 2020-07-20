@@ -7,7 +7,7 @@ eleventyNavigation:
 ---
 # Layouts
 
-Eleventy Layouts are special templates that can be used to wrap other content. To denote that a piece of content should be wrapped in a template, simply use the `layout` key in your front matter, like so:
+Eleventy Layouts are special templates that can be used to wrap other content. To denote that a piece of content should be wrapped in a template, use the `layout` key in your front matter, like so:
 
 {% codetitle "content-using-layout.md" %}
 {% raw %}
@@ -94,7 +94,7 @@ This will look for `_includes/layouts/base.njk`.
 
 ## Layout Aliasing {% addedin "0.2.8" %}
 
-Configuration API: use `eleventyConfig.addLayoutAlias(from, to)` to add layout aliases! Say you have a bunch of existing content using `layout: post`. If you don’t want to rewrite all of those values, just map `post` to a new file like this:
+Configuration API: use `eleventyConfig.addLayoutAlias(from, to)` to add layout aliases. Say you have a bunch of existing content using `layout: post`. If you don’t want to rewrite all of those values, map `post` to a new file like this:
 
 {% codetitle ".eleventy.js" %}
 
