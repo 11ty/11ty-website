@@ -695,6 +695,26 @@ main .elv-toc + h1 .direct-link {
 }
 .btn-primary-why-are-you-doing-this {
 	margin-top: 1.5em;
+	border-width: .3em;
+}
+@media (prefers-color-scheme: dark) {
+	.btn-primary-why-are-you-doing-this,
+	.btn-primary-why-are-you-doing-this[href],
+	.btn-primary-why-are-you-doing-this:visited {
+		background-color: #fff;
+		color: #222;
+		border-color: #ccc;
+	}
+}
+.btn-primary-why-are-you-doing-this:hover {
+	transition: all .3s;
+	transform: scale(1.05);
+}
+@media (prefers-reduced-motion: reduce) {
+	.btn-primary-why-are-you-doing-this:hover {
+		transition: none;
+		transform: none;
+	}
 }
 .btn-primary-why-are-you-doing-this + span {
 	display: none;
