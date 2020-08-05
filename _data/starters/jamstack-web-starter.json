@@ -1,7 +1,7 @@
 {
 	"url": "https://github.com/scottishstoater/jamstack-web-starter",
 	"name": "Jamstack Web Starter",
-	"description": "Eleventy · Tailwind CSS · HTML · CSS · Javascript",
+	"description": "A modern static website workflow using Eleventy, Tailwind CSS, Webpack and PostCSS.",
 	"author": "scottishstoater",
 	"demo": "https://webstarter.chriscollins.me/"
 }
