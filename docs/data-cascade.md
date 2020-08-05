@@ -6,7 +6,7 @@ eleventyNavigation:
 ---
 # The Data Cascade
 
-In Eleventy, data is actually merged from multiple different sources before the template is rendered. The data is merged in what Eleventy calls the Data Cascade.
+In Eleventy, data is merged from multiple different sources before the template is rendered. The data is merged in what Eleventy calls the Data Cascade.
 
 ## Sources of Data
 

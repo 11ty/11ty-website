@@ -72,7 +72,7 @@ module.exports = {
 };
 ```
 
-## Just Use JavaScript
+## Using JavaScript
 
 Use any arbitrary JavaScript for an `eleventyComputed` property. Note that JavaScript functions require either JavaScript front matter or a JavaScript data file (template, directory, or global). YAML and JSON do not support JavaScript functions.
 
@@ -94,7 +94,7 @@ module.exports = {
 };
 ```
 
-## Use a Template String
+## Using a Template String
 
 If you want to use eleventyComputed in YAML front matter, you can use the template syntax string that matches the syntax of the template.
 
@@ -132,7 +132,7 @@ The above would also resolve to the same Data Cascade:
 }
 ```
 
-{% callout "warn" %}Template syntax is definitely slower than the “Just Use JavaScript” methods above.{% endcallout %}
+{% callout "warn" %}Template syntax is definitely slower than the “Using JavaScript” methods above.{% endcallout %}
 
 {% callout "info" %}This would also work in JSON data files or any other data file type in the cascade, just keep in mind that the template syntax <strong>must</strong> match the template syntax that it eventually winds up with in the Data Cascade.{% endcallout %}
 
