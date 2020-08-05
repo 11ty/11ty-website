@@ -15,7 +15,8 @@ _If you don’t need `pathPrefix` (or don’t ever plan on moving your site’s 
 
 {% raw %}
 ```html
-<a href="{{ post.url | url }}">Liquid or Nunjucks Link</a>
+<a href="{{ '/myDir/' | url }}">Liquid or Nunjucks Link (from string)</a>
+<a href="{{ post.url | url }}">Liquid or Nunjucks Link (from variable)</a>
 ```
 {% endraw %}
 
@@ -23,24 +24,24 @@ _If you don’t need `pathPrefix` (or don’t ever plan on moving your site’s 
 
 | Sample URL   | `pathPrefix` | Return value                                                                           |
 | ------------ | ------------ | -------------------------------------------------------------------------------------- |
-| `''`         | `'/'`        | `'.'` ⚠️ This style is probably not what you want—careful!                             |
+| `''`         | `'/'`        | `'.'` ⚠️ This style is probably not what you want—careful!                              |
 | `'/'`        | `'/'`        | `'/'`                                                                                  |
 | `'./'`       | `'/'`        | `'./'`                                                                                 |
 | `'..'`       | `'/'`        | `'..'`                                                                                 |
-| `'myDir'`    | `'/'`        | `'myDir'` ⚠️ This style is not safe for globally linking to other content. Be careful! |
-| `'/myDir'`   | `'/'`        | `'/myDir'`                                                                             |
-| `'./myDir'`  | `'/'`        | `'myDir'` ⚠️ This style is not safe for globally linking to other content. Be careful! |
-| `'../myDir'` | `'/'`        | `'../myDir'`                                                                           |
+| `'myDir'`    | `'/'`        | `'myDir'` ⚠️ This style is not safe for globally linking to other content. Be careful!  |
+| `'/myDir/'`  | `'/'`        | `'/myDir/'`                                                                            |
+| `'./myDir/'` | `'/'`        | `'myDir/'` ⚠️ This style is not safe for globally linking to other content. Be careful! |
+| `'../myDir/'` | `'/'`       | `'../myDir/'`                                                                          |
 
-| Sample URL   | `pathPrefix` | Return value                                                   |
-| ------------ | ------------ | -------------------------------------------------------------- |
-| `''`         | `'/rootDir'` | `'.'` ⚠️ This style is probably not what you want—careful!     |
-| `'/'`        | `'/rootDir'` | `'/rootDir/'`                                                  |
-| `'./'`       | `'/rootDir'` | `'./'`                                                         |
-| `'..'`       | `'/rootDir'` | `'..'`                                                         |
-| `'myDir'`    | `'/rootDir'` | `'myDir'` ⚠️ This style is probably not what you want—careful! |
-| `'/myDir'`   | `'/rootDir'` | `'/rootDir/myDir'`                                             |
-| `'./myDir'`  | `'/rootDir'` | `'myDir'` ⚠️ This style is probably not what you want—careful! |
-| `'../myDir'` | `'/rootDir'` | `'../myDir'`                                                   |
+| Sample URL   | `pathPrefix`  | Return value                                                   |
+| ------------ | ------------- | -------------------------------------------------------------- |
+| `''`         | `'/rootDir/'` | `'.'` ⚠️ This style is probably not what you want—careful!      |
+| `'/'`        | `'/rootDir/'` | `'/rootDir/'`                                                  |
+| `'./'`       | `'/rootDir/'` | `'./'`                                                         |
+| `'..'`       | `'/rootDir/'` | `'..'`                                                         |
+| `'myDir'`    | `'/rootDir/'` | `'myDir'` ⚠️ This style is probably not what you want—careful!  |
+| `'/myDir/'`  | `'/rootDir/'` | `'/rootDir/myDir/'`                                            |
+| `'./myDir/'` | `'/rootDir/'` | `'myDir/'` ⚠️ This style is probably not what you want—careful! |
+| `'../myDir/'` | `'/rootDir/'` | `'../myDir/'`                                                 |
 
 * [← Back to Filters documentation.](/docs/filters/)
