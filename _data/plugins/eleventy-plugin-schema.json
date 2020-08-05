@@ -1,0 +1,5 @@
+{
+	"npm": "@quasibit/eleventy-plugin-schema",
+	"author": "nunof07",
+	"description": "adds a shortcode for generating JSON-LD structured data."
+}

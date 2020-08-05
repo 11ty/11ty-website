@@ -168,6 +168,13 @@ table td {
 	font-size: 0.8125em; /* 13px /16 */
 	vertical-align: top;
 }
+table thead th {
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+	font-size: 0.75em; /* 12px /16 */
+	border-top: none;
+}
 table th:first-child,
 table td:first-child {
 	padding-left: 0;
@@ -175,12 +182,21 @@ table td:first-child {
 table th {
 	border-color: #ddd;
 }
+table thead th {
+	color: #222;
+}
+table thead th a[href] {
+	color: inherit;
+}
 @media (prefers-color-scheme: dark) {
 	table th {
 		border-color: #555;
 	}
 	table td {
 		border-color: #333;
+	}
+	table thead th {
+		color: #ddd;
 	}
 }
 h2 + table {
@@ -192,6 +208,9 @@ h2 + table {
 	table td {
 		padding: .4em .8em;
 		font-size: 1em; /* 16px /16 */
+	}
+	table thead th {
+		font-size: 0.875em; /* 14px /16 */
 	}
 }
 
@@ -676,6 +695,26 @@ main .elv-toc + h1 .direct-link {
 }
 .btn-primary-why-are-you-doing-this {
 	margin-top: 1.5em;
+	border-width: .3em;
+}
+@media (prefers-color-scheme: dark) {
+	.btn-primary-why-are-you-doing-this,
+	.btn-primary-why-are-you-doing-this[href],
+	.btn-primary-why-are-you-doing-this:visited {
+		background-color: #fff;
+		color: #222;
+		border-color: #ccc;
+	}
+}
+.btn-primary-why-are-you-doing-this:hover {
+	transition: all .3s;
+	transform: scale(1.05);
+}
+@media (prefers-reduced-motion: reduce) {
+	.btn-primary-why-are-you-doing-this:hover {
+		transition: none;
+		transform: none;
+	}
 }
 .btn-primary-why-are-you-doing-this + span {
 	display: none;
@@ -750,4 +789,11 @@ main .elv-toc + h1 .direct-link {
 	#supported-features + table td:first-child {
 		min-width: 12em;
 	}
+}
+
+speedlify-score {
+	white-space: nowrap;
+}
+speedlify-score .speedlify-summary {
+	display: none;
 }

@@ -19,3 +19,8 @@
 	to = "/leaderboard/a11y/"
 	status = 301
 	force = true
+
+[[headers]]
+  for = "/api/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"

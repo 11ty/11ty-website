@@ -36,6 +36,7 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 * [Lightweight lazy loading with Netlify Large Media](https://lazy-load-nlm.netlify.com/) by {% avatarlocalcache "twitter", "philhawksworth" %}Phil Hawksworth
 * [Multilingual sites with Eleventy](https://www.webstoemp.com/blog/multilingual-sites-eleventy/) (i18n, Internationalization) by {% avatarlocalcache "twitter", "jeromecoupe" %}Jérôme Coupé
 * [Language switcher for multilingual JAMstack sites](https://www.webstoemp.com/blog/language-switcher-multilingual-jamstack-sites/) (i18n, Internationalization) by {% avatarlocalcache "twitter", "jeromecoupe" %}Jérôme Coupé
+* [Adding Algolia Search to Eleventy and Netlify](https://www.raymondcamden.com/2020/06/24/adding-algolia-search-to-eleventy-and-netlify) by {% avatarlocalcache "twitter", "raymondcamden" %}Raymond Camden. (Also see [part two](https://www.raymondcamden.com/2020/07/01/adding-algolia-search-to-eleventy-and-netlify-part-two))
 
 ### Using Third Party Data
 
@@ -48,7 +49,9 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 * [Consuming a headless CMS GraphQL API with Eleventy](https://www.webstoemp.com/blog/headless-cms-graphql-api-eleventy/) by {% avatarlocalcache "twitter", "jeromecoupe" %}Jérôme Coupé
 * [Import Tweets from Twitter API](https://www.d-hagemeier.com/en/articles/embed-twitter/) by {% avatarlocalcache "twitter", "DennisView" %}Dennis Hagemeier
 * [Convert a WordPress blog to Eleventy](https://www.joshcanhelp.com/taking-wordpress-to-eleventy/) by {% avatarlocalcache "twitter", "joshcanhelp" %}Josh Cunningham
+* [Integrating Contentful with Eleventy to create static sites](https://www.contentful.com/blog/2020/07/28/integrating-contentful-with-eleventy-create-static-sites/) by {% avatarlocalcache "twitter", "shyruparel" %}Shy Ruparel
 * [Creating an 11ty Photo Gallery with Contentful and GitHub actions](https://github.com/contentful/11ty-contentful-gallery) by {% avatarlocalcache "twitter", "shyruparel" %}Shy Ruparel
+* [Adding Google Calendar to your JAMStack](https://www.raymondcamden.com/2019/11/18/adding-google-calendar-to-your-jamstack) by  {% avatarlocalcache "twitter", "raymondcamden" %}Raymond Camden
 
 ### Tooling Integration
 

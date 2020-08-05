@@ -2,5 +2,6 @@
 	"url": "https://github.com/deviousdodo/elevenpack",
 	"name": "Elevenpack",
 	"description": "An Eleventy starter pack with webpack, PostCSS and cache busting for production deployments.",
-	"author": "deviousdodo"
+	"author": "deviousdodo",
+	"demo": "https://elevenpack.netlify.app/"
 }

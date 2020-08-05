@@ -1,0 +1,5 @@
+{
+  "npm": "eleventy-plugin-helmet",
+  "author": "vseventer",
+  "description": "will manage your document head."
+}
