@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/86843ae.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/86843ae.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/86843ae.jpeg",
+      "size": 1639
+    }
+  ],
+  "slug": "marc-filleul"
+}

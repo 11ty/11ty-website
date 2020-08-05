@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/3d24e5f1.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/3d24e5f1.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/3d24e5f1.jpeg",
+      "size": 1607
+    }
+  ],
+  "slug": "chris-burnell"
+}
