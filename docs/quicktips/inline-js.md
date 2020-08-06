@@ -16,18 +16,18 @@ This tip works great if you have small JS utilities that you’d like to have in
 
 ## Configuration
 
-Add the following `jsmin` filter to your Eleventy Config file:
+Add `jsmin` to your Eleventy Config file as an [Asynchronous Nunjucks Filter](/docs/languages/nunjucks/#asynchronous-nunjucks-filters).
 
 ```js
 const Terser = require("terser");
-eleventyConfig.addFilter("jsmin", function(code) {
-    let minified = Terser.minify(code);
-    if( minified.error ) {
-        console.log("Terser error: ", minified.error);
-        return code;
-    }
-
-    return minified.code;
+eleventyConfig.addNunjucksAsyncFilter("jsmin", async (code, callback) => {
+  try {
+    const minified = await Terser.minify(code);
+    return callback(null, minified.code);
+  } catch (err) {
+    console.error("Error during terser minify:", err);
+    return callback(err, code);
+  }
 });
 ```
 
@@ -42,7 +42,7 @@ console.log("Hi");
 
 ## Capture and Minify
 
-Capture the JavaScript into a variable and run it through the filter (this sample is using Nunjucks syntax)
+Capture the JavaScript into a variable and run it through the filter.
 
 {% raw -%}
 ```html
