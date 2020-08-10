@@ -81,9 +81,9 @@ module.exports = function(eleventyConfig) {
 
 ## Usage
 
-This plugin provides the following syntax highlighters using PrismJS:
+This plugin provides the following syntax highlighters using PrismJS, all of which currently support individual line highlighting.
 
-* Markdown Highlighter (triple backtick <code>```</code>) Supports individual line highlighting.
+* Markdown Highlighter (triple backtick <code>```</code>)
 * Liquid Custom Tag {% raw %}`{% highlight %}`{% endraw %}
 * Nunjucks Paired Shortcode {% raw %}`{% highlight %}`{% endraw %}
 
@@ -110,6 +110,7 @@ function myFunction() {
 -->
 
 <!-- Markdown Template -->
+<!-- Line highlighting numbers are zero-indexed. -->
 ``` js/1,3-5
 function myFunction() {
   // …
@@ -127,6 +128,7 @@ function myFunction() {
 -->
 
 <!-- Markdown Template -->
+<!-- Line highlighting numbers are zero-indexed. -->
 ``` js/1,3/5-8
 function myFunction() {
   // …
@@ -140,6 +142,8 @@ function myFunction() {
 Use `text` to use the line highlighting features without PrismJS.
 
 ````markdown
+<!-- Line highlighting numbers are zero-indexed. -->
+
 ``` text/1-2
 function myFunction() {
   let highlighted = true;
@@ -172,6 +176,7 @@ function myFunction() {
 -->
 
 <!-- Liquid Template -->
+<!-- Line highlighting numbers are zero-indexed. -->
 {% highlight js 1,3-5 %}
 function myFunction() {
   // …
@@ -191,6 +196,7 @@ function myFunction() {
 -->
 
 <!-- Liquid Template -->
+<!-- Line highlighting numbers are zero-indexed. -->
 {% highlight js 1,3 5-8 %}
 function myFunction() {
   // …
@@ -207,6 +213,7 @@ Use `text` to use the line highlighting features without PrismJS.
 {% raw %}
 ```markdown
 <!-- Liquid Template -->
+<!-- Line highlighting numbers are zero-indexed. -->
 {% highlight text 1-2 %}
 function myFunction() {
   let highlighted = true;
@@ -240,6 +247,7 @@ function myFunction() {
 -->
 
 <!-- Nunjucks Template -->
+<!-- Line highlighting numbers are zero-indexed. -->
 {% highlight "js 1,3-5" %}
 function myFunction() {
   // …
@@ -259,6 +267,7 @@ function myFunction() {
 -->
 
 <!-- Nunjucks Template -->
+<!-- Line highlighting numbers are zero-indexed. -->
 {% highlight "js 1,3 5-8" %}
 function myFunction() {
   // …
@@ -275,6 +284,7 @@ Use `text` to use the line highlighting features without PrismJS.
 {% raw %}
 ```markdown
 <!-- Nunjucks Template -->
+<!-- Line highlighting numbers are zero-indexed. -->
 {% highlight "text 1-2" %}
 function myFunction() {
   let highlighted = true;
