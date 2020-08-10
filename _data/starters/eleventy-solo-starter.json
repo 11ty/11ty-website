@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/brycewray/eleventy_solo_starter",
+	"name": "Eleventy Solo Starter",
+	"description": "Eleventy starter with PostCSS, Tailwind CSS, Lazyload (“vanilla lazyload”), and build-time creation and processing of responsive images.",
+	"author": "BryceWrayTX",
+	"demo": "https://eleventy-solo-starter.netlify.app/"
+}
