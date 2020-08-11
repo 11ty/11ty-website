@@ -1,13 +1,12 @@
 <ul class="elv-nav elv-nav-footer lo">
 	<li class="elv-nav-item lo-c">{% include "edit-on-github.njk" %}</li>
 	<li class="elv-nav-item lo-c"><a href="/docs/account/" class="elv-externalexempt">Contributor Account</a></li>
-	<li class="elv-nav-item lo-c"><a href="/styleguide/">Style Guide</a></li>
 	<li class="elv-nav-item lo-c">on <a href="https://www.netlify.com/" class="elv-externalexempt">Netlify</a></li>
-	<!-- <li class="elv-nav-item lo-c"><a href="https://www.npmjs.com/org/11ty" class="elv-externalexempt">npm</a> Delivered</li> -->
+	<li class="elv-nav-item lo-c"><a href="/docs/credits/" class="elv-externalexempt">Credits</a></li>
 	<li class="elv-nav-item lo-c">Created by <a href="https://twitter.com/zachleat" class="elv-externalexempt">{% avatarlocalcache "twitter", "zachleat" %}zachleat</a></li>
-	<li class="lo-c"></li>
 </ul>
 <ul class="elv-nav elv-nav-footer lo">
+	<li class="elv-nav-item elv-nav-item-sm lo-c"><a href="/styleguide/" class=" elv-nav-light">Style Guide</a></li>
 {% if github and github.stargazers %}
 	<li class="elv-nav-item elv-nav-item-sm lo-c"><a href="https://github.com/11ty/eleventy/" class="elv-externalexempt elv-nav-light">{{ github.stargazers | humanReadableNum }} GitHub Stars</a></li>
 {% endif %}

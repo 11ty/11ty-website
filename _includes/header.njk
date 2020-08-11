@@ -19,11 +19,12 @@
 		<h1 class="elv-hed">{{ title | orphanWrap | safe }}</h1>
 		<div class="elv-nav-header">
 			<ul class="elv-nav lo">
-				<li class="elv-nav-item lo-c"><a href="{{ "/docs/" | url }}" class="elv-externalexempt nound">{% emoji "📓" %}<span class="und">Docs</span></a></li>
-				<li class="elv-nav-item lo-c"><a href="/docs/how-to-support/" class="elv-externalexempt nound">{% emoji "🎁" %}<span class="und">Contribute</span></a></li>
-				<li class="elv-nav-item lo-c"><a href="{{ "/docs/search/" | url }}" class="elv-nav-light nound">{% emoji "🔎" %}<span class="und">Search</span></a></li>
-				<li class="elv-nav-item lo-c lo-nocontentwrap"><a href="https://github.com/11ty/eleventy/" class="elv-nav-light elv-externalexempt has-svg-icon">{% include "../img/github.svg" %}<b>GitHub</b></a></li>
-				<li class="elv-nav-item lo-c lo-nocontentwrap"><a href="https://twitter.com/eleven_ty" class="elv-nav-light elv-externalexempt has-svg-icon">{% include "../img/twitter.svg" %}<b>Twitter</b></a></li>
+				<li class="elv-nav-item lo-c"><a href="{{ "/docs/" | url }}" class="elv-externalexempt">Docs</a></li>
+				<li class="elv-nav-item lo-c"><a href="/docs/how-to-support/" class="elv-externalexempt has-svg-icon">{% include "../img/gift.svg" %}<strong>Contribute</strong></a></li>
+				<li class="elv-nav-item lo-c"><a href="{{ "/docs/search/" | url }}" class="elv-nav-light">Search</a></li>
+				<li class="elv-nav-item lo-c lo-nocontentwrap"><a href="https://github.com/11ty/eleventy/" class="elv-nav-light elv-externalexempt"><b>GitHub</b></a></li>
+				<li class="elv-nav-item lo-c lo-nocontentwrap"><a href="https://twitter.com/eleven_ty" class="elv-nav-light elv-externalexempt"><b>Twitter</b></a></li>
+				<li class="elv-nav-item lo-c lo-nocontentwrap"><a href="/news/discord/" class="elv-nav-light"><b>Discord</b></a></li>
 				<li class="elv-nav-item lo-c lo-nocontentwrap"><a href="https://twitter.com/zachleat" class="elv-nav-light elv-externalexempt nound">{% avatarlocalcache "twitter", "zachleat" %}<b class="und">zachleat</b></a></li>
 			</ul>
 		</div>
