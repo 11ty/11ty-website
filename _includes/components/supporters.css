@@ -37,10 +37,20 @@
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 }
-.supporters-gold .logo {
-	max-height: 3.5em;
+.supporters-gold .lo-c {
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	flex-direction: column;
+}
+.supporters-gold-sanity {
+	flex-grow: 2;
+}
+.supporters-gold .logo,
+.supporters-gold svg {
+	display: block;
 	width: auto;
-	margin: 1em auto .5em;
+	margin: 1em auto .75em;
 }
 .supporters-gold .avatar {
 	max-width: 75px;

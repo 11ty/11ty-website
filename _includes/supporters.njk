@@ -1,8 +1,10 @@
-<div class="supporters-gold" style="--lo-margin-h: 2em">
-	{%- for supporter in opencollective.supporters %}{% if supporter.tier == "Exclusive Gold Sponsor" -%}
+<div class="supporters-gold lo" style="--lo-margin-h: 2em; --lo-stackpoint: 28.125em">
+	{%- for supporter in opencollective.supporters %}{% if supporter.tier == "Gold Sponsor" -%}
 	{%- set nameToSlug = supporter.name | slug | lower -%}
+	<div class="lo-c{% if opencollectiveExtra[nameToSlug].containerClass %} {{ opencollectiveExtra[nameToSlug].containerClass }}{% endif %}">
 		<a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}" rel="nofollow">{% if opencollectiveExtra[nameToSlug].icon %}{{ opencollectiveExtra[nameToSlug].icon | safe }}{% else %}{% avatarlocalcache "opencollective", nameToSlug %}{{ supporter.name }}{% endif %}</a>
-		<h3 class="subhed">{% if opencollectiveExtra[nameToSlug].tierPrefix %}{{ opencollectiveExtra[nameToSlug].tierPrefix | safe }} {% endif %}<strong>Gold</strong> Sponsor for {{ supporter.createdAt | monthDiff }}</h3>
+		<h3 class="subhed">{% if opencollectiveExtra[nameToSlug].tierPrefix %}{{ opencollectiveExtra[nameToSlug].tierPrefix | safe }} {% endif %}<strong>Gold</strong> Sponsor {{ supporter.createdAt | monthDiff }}</h3>
+	</div>
 	{%- endif %}{% endfor %}
 </div>
 

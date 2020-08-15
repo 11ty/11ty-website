@@ -6,6 +6,9 @@ module.exports = function(eleventyConfig) {
 		let duration = d.diffNow("months").toObject();
 		let months = Math.round(Math.abs(duration.months));
 
-		return `${months} ${months > 1 ? "consecutive " : ""}month${months != 1 ? "s" : ""}`;
+		if(months > 0) {
+			return `for ${months} ${months > 1 ? "consecutive " : ""}month${months != 1 ? "s" : ""}`;
+		}
+		return "";
 	});
 }

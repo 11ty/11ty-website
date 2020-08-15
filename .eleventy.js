@@ -500,7 +500,7 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addFilter("supportersFacepile", (supporters) => {
-		return supporters.filter(supporter => supporter.role === "BACKER" && supporter.tier && supporter.tier != "Exclusive Gold Sponsor");
+		return supporters.filter(supporter => supporter.role === "BACKER" && supporter.tier && supporter.tier != "Gold Sponsor");
 	});
 
 	eleventyConfig.addFilter("screenshotFilenameFromUrl", (url) => {
