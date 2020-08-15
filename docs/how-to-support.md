@@ -40,8 +40,3 @@ As a thank you to our Supporters, Eleventy will:
 All Eleventy contributors on Open Collective will be given a <a href="/docs/account/">Contributor Account</a> with access to Contributor-only features. To sign up, donate to <a href="https://opencollective.com/11ty"><strong>Support Eleventy</strong> on Open Collective {% emoji "🎁" %}</a>!
 
 {% include "supporters.njk" %}
-
-{% set count = count + 1 %}
-## <span class="numberflag"><span class="sr-only">Step</span> {{ count }}</span> Web Monetization Using Coil
-
-We’re participating in what we hope will be the future of standards-based Web Monetization. We’re using a `<meta>` tag on our site (_importantly, this means no hefty third party runtime overhead_). If you have the [Coil web browser extension installed and an active Coil subscription](https://coil.com/), we get a few cents when you visit the site. Read more about it on [CSS Tricks](https://css-tricks.com/site-monetization-with-coil-and-removing-ads-for-supporters/).
