@@ -37,9 +37,17 @@
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 }
+.supporters-gold .logo {
+	max-height: 3.5em;
+	width: auto;
+	margin: 1em auto .5em;
+}
 .supporters-gold .avatar {
 	max-width: 75px;
 	max-height: 75px;
+}
+.supporters-gold .subhed {
+	text-align: center;
 }
 .supporters-gold .subhed strong {
 	color: hsl(51, 97%, 27%);

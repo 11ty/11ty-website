@@ -1,15 +1,9 @@
-<div class="lo lo-separator-h supporters-gold" style="--lo-margin-h: 2em">
-	<div class="lo-c">
-		<ul class="inlinelist list-superfeatured">
-		{%- for supporter in opencollective.supporters %}{% if supporter.tier == "Exclusive Gold Sponsor" -%}
-		{%- set nameToSlug = supporter.name | slug | lower -%}
-			<li class="inlinelist-item"><a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}" rel="nofollow">{% avatarlocalcache "opencollective", nameToSlug %}{{ supporter.name }}</a></li>
-		{%- endif %}{% endfor %}
-		</ul>
-	</div>
-	<div class="lo-c lo-maxgrow lo-nocontentwrap lo-c-center">
-		<h3 class="subhed">Exclusive <strong>Gold</strong> Sponsor</h3>
-	</div>
+<div class="supporters-gold" style="--lo-margin-h: 2em">
+	{%- for supporter in opencollective.supporters %}{% if supporter.tier == "Exclusive Gold Sponsor" -%}
+	{%- set nameToSlug = supporter.name | slug | lower -%}
+		<a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}" rel="nofollow">{% if opencollectiveExtra[nameToSlug].icon %}{{ opencollectiveExtra[nameToSlug].icon | safe }}{% else %}{% avatarlocalcache "opencollective", nameToSlug %}{{ supporter.name }}{% endif %}</a>
+		<h3 class="subhed">{% if opencollectiveExtra[nameToSlug].tierPrefix %}{{ opencollectiveExtra[nameToSlug].tierPrefix | safe }} {% endif %}<strong>Gold</strong> Sponsor for {{ supporter.createdAt | monthDiff }}</h3>
+	{%- endif %}{% endfor %}
 </div>
 
 <!-- TODO some kind of aspect ratio? -->
