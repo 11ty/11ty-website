@@ -47,9 +47,14 @@ module.exports = async function() {
 			return entry.role.toLowerCase() === "backer";
 		}).length;
 
+		let monthlyBackers = json.filter(function(entry) {
+			return isMonthlyBacker(entry);
+		}).length;
+
 		return {
 			supporters: json,
-			backers: backers
+			backers: backers,
+			monthlyBackers: monthlyBackers
 		};
 	} catch(e) {
 		if(process.env.ELEVENTY_PRODUCTION) {
@@ -60,7 +65,8 @@ module.exports = async function() {
 		console.log( "Failed, returning 0 opencollective backers.", e );
 		return {
 			supporters: [],
-			backers: 0
+			backers: 0,
+			monthlyBackers: 0
 		};
 	}
 };
