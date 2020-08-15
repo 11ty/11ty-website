@@ -23,7 +23,7 @@ module.exports = async function() {
 		let urlLookup = urlsJson[siteData.demo] || urlsJson[siteData.url];
 		if(urlLookup && urlLookup.hash) {
 			returnData.data[siteData.demo || siteData.url] = await CacheAsset(`https://www.speedlify.dev/api/${urlLookup.hash}.json`, {
-				duration: "1d",
+				duration: process.env.ELEVENTY_PRODUCTION ? "1d" : "*",
 				type: "json",
 			});
 		}
