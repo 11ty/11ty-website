@@ -1,4 +1,4 @@
-<div class="supporters-gold lo" style="--lo-margin-h: 2em; --lo-stackpoint: 28.125em">
+<div class="supporters-gold lo">
 	{%- for supporter in opencollective.supporters %}{% if supporter.tier == "Gold Sponsor" -%}
 	{%- set nameToSlug = supporter.name | slug | lower -%}
 	<div class="lo-c{% if opencollectiveExtra[nameToSlug].containerClass %} {{ opencollectiveExtra[nameToSlug].containerClass }}{% endif %}">

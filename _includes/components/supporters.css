@@ -34,6 +34,8 @@
 }
 /* Gold supporters */
 .supporters-gold {
+	--lo-margin-h: 2em;
+	--lo-stackpoint: 34.375em;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 }
@@ -43,14 +45,22 @@
 	justify-content: center;
 	flex-direction: column;
 }
+.supporters-gold .lo-c a[href] {
+	display: flex;
+	justify-content: center;
+}
 .supporters-gold-sanity {
-	flex-grow: 2;
+	flex-grow: 1.5;
+}
+@media (min-width: 64em) { /* 1024px */
+	.elv-docs .supporters-gold-sanity {
+		flex-grow: 1;
+	}
 }
 .supporters-gold .logo,
 .supporters-gold svg {
-	display: block;
-	width: auto;
-	margin: 1em auto .75em;
+	width: 100%;
+	margin: .5em 1em;
 }
 .supporters-gold .avatar {
 	max-width: 75px;
@@ -58,6 +68,7 @@
 }
 .supporters-gold .subhed {
 	text-align: center;
+	margin-bottom: 1em;
 }
 .supporters-gold .subhed strong {
 	color: hsl(51, 97%, 27%);
