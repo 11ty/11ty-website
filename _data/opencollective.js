@@ -32,6 +32,13 @@ module.exports = async function() {
 			type: "json"
 		});
 
+		if(process.env.ELEVENTY_PRODUCTION) {
+			console.log( "Pre-filtered supporters list:" );
+			for(let supporter of json) {
+				console.log( ` * ${supporter.name} (${supporter.role} ${supporter.tier} ${supporter.isActive})` );
+			}
+		}
+
 		json = getUniqueNonMonthlyEntries(json);
 
 		json.sort(function(a, b) {
@@ -52,7 +59,7 @@ module.exports = async function() {
 		}).length;
 
 		if(process.env.ELEVENTY_PRODUCTION) {
-			console.log( "Supporters:" );
+			console.log( "Final supporters list:" );
 			for(let supporter of json) {
 				console.log( ` * ${supporter.name} (${supporter.role} ${supporter.tier} ${supporter.isActive})` );
 			}
