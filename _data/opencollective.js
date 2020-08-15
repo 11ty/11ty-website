@@ -51,6 +51,13 @@ module.exports = async function() {
 			return isMonthlyBacker(entry);
 		}).length;
 
+		if(process.env.ELEVENTY_PRODUCTION) {
+			console.log( "Supporters:" );
+			for(let supporter of json) {
+				console.log( ` * ${supporter.name} (${supporter.role} ${supporter.tier} ${supporter.isActive})` );
+			}
+		}
+
 		return {
 			supporters: json,
 			backers: backers,
