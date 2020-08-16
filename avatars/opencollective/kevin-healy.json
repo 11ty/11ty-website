@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/c4779a63-90.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/c4779a63-90.jpeg 90w",
+      "outputPath": "img/avatars/opencollective/c4779a63-90.jpeg",
+      "size": 1755
+    }
+  ],
+  "slug": "kevin-healy"
+}

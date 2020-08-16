@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/60179317.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/60179317.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/60179317.jpeg",
+      "size": 2680
+    }
+  ],
+  "slug": "mark-hernandez"
+}

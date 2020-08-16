@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/b38ef325.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/b38ef325.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/b38ef325.jpeg",
+      "size": 1997
+    }
+  ],
+  "slug": "pavel-fomchenkov"
+}

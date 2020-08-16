@@ -1,5 +1,8 @@
 // https://opencollective.com/11ty/members/all.json
 const Cache = require("@11ty/eleventy-cache-assets");
+const FilteredProfiles = [
+	"https://opencollective.com/bca-account1"
+]
 
 function isMonthlyBacker(backer) {
 	return backer.role === "BACKER" && backer.tier && backer.isActive;
@@ -32,12 +35,16 @@ module.exports = async function() {
 			type: "json"
 		});
 
-		if(process.env.ELEVENTY_PRODUCTION) {
-			console.log( "Pre-filtered supporters list:" );
-			for(let supporter of json) {
-				console.log( ` * ${supporter.name} (${supporter.role} ${supporter.tier} ${supporter.isActive})` );
-			}
-		}
+		// if(process.env.ELEVENTY_PRODUCTION) {
+		// 	console.log( "Pre-filtered supporters list:" );
+		// 	for(let supporter of json) {
+		// 		console.log( ` * ${supporter.name} (${supporter.role} ${supporter.tier} ${supporter.isActive})` );
+		// 	}
+		// }
+
+		json = json.filter(backer => {
+			return FilteredProfiles.indexOf(backer.profile) === -1;
+		});
 
 		json = getUniqueNonMonthlyEntries(json);
 
@@ -58,12 +65,12 @@ module.exports = async function() {
 			return isMonthlyBacker(entry);
 		}).length;
 
-		if(process.env.ELEVENTY_PRODUCTION) {
-			console.log( "Final supporters list:" );
-			for(let supporter of json) {
-				console.log( ` * ${supporter.name} (${supporter.role} ${supporter.tier} ${supporter.isActive})` );
-			}
-		}
+		// if(process.env.ELEVENTY_PRODUCTION) {
+		// 	console.log( "Final supporters list:" );
+		// 	for(let supporter of json) {
+		// 		console.log( ` * ${supporter.name} (${supporter.role} ${supporter.tier} ${supporter.isActive})` );
+		// 	}
+		// }
 
 		return {
 			supporters: json,

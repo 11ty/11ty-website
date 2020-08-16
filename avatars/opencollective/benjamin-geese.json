@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/eb1b80e.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/eb1b80e.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/eb1b80e.jpeg",
+      "size": 1782
+    }
+  ],
+  "slug": "benjamin-geese"
+}

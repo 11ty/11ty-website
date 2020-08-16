@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/b080d70d.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/b080d70d.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/b080d70d.jpeg",
+      "size": 1658
+    }
+  ],
+  "slug": "tyler-gaw"
+}

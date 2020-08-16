@@ -1,12 +1,10 @@
 const slugify = require("slugify");
 const fs = require("fs-extra");
 const fastglob = require("fast-glob");
-const getTwitterAvatarUrl = require("twitter-avatar-url");
 const eleventyImg = require("@11ty/eleventy-img");
 const cleanName = require("./config/cleanAuthorName");
 
 eleventyImg.concurrency = 5;
-getTwitterAvatarUrl.concurrency = 1;
 
 async function fetch(name) {
 	if(!name) {
@@ -20,20 +18,15 @@ async function fetch(name) {
 	let path = `${dir}${slug}.json`;
 
 	if(!fs.pathExistsSync(path)) {
-		console.log( "Getting image url for", name );
-		let result = await getTwitterAvatarUrl(name);
-		if(result && result.url.large) {
-			let stats = await eleventyImg(result.url.large, {
-				formats: ["webp", "jpeg"],
-				widths: [90],
-				urlPath: "/img/avatars/twitter/",
-				outputDir: "img/avatars/twitter/",
-			});
+		// ?fallback=false
+		let stats = await eleventyImg(`https://unavatar.now.sh/twitter/${name}`, {
+			formats: ["webp", "jpeg"],
+			widths: [90],
+			urlPath: "/img/avatars/twitter/",
+			outputDir: "img/avatars/twitter/",
+		});
 
-			return fs.writeFile(path, JSON.stringify(stats, null, 2));
-		}
-
-		console.log(`Could not retrieve twitter avatar url for ${name}`, result);
+		return fs.writeFile(path, JSON.stringify(stats, null, 2));
 	}
 }
 
