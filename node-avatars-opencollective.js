@@ -4,13 +4,23 @@ const eleventyImg = require("@11ty/eleventy-img");
 
 eleventyImg.concurrency = 5;
 
-async function fetch(name, imageUrl) {
-	if(!name || !imageUrl) {
+async function fetch(name, imageUrl, website) {
+	if(!name) {
 		return;
 	}
+	if(!imageUrl && !website) {
+		return;
+	}
+	// TODO bail if the website pathname is a deep path?
 
 	let dir = `./avatars/opencollective/`;
 	await fs.ensureDir(dir);
+
+	// if website exists but no avatar image exists, try to find based on website hostname
+	if(!imageUrl && website) {
+		let websiteUrl = new URL(website);
+		imageUrl = `https://unavatar.now.sh/${websiteUrl.hostname}`;
+	}
 
 	let stats = await eleventyImg(imageUrl, {
 		// formats: ["webp", "jpeg"],
@@ -40,7 +50,7 @@ async function fetch(name, imageUrl) {
 	let opencollective = await getOpenCollectiveData();
 	for(let supporter of opencollective.supporters) {
 		// / https://levelup-styleguide.netlify.com/ 200!
-		promises.push(fetch(supporter.name, supporter.image));
+		promises.push(fetch(supporter.name, supporter.image, supporter.website));
 	}
 
 	let all = await Promise.all(promises);
