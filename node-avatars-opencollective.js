@@ -19,7 +19,7 @@ async function fetch(name, imageUrl, website) {
 	// if website exists but no avatar image exists, try to find based on website hostname
 	if(!imageUrl && website) {
 		let websiteUrl = new URL(website);
-		imageUrl = `https://unavatar.now.sh/${websiteUrl.hostname}`;
+		imageUrl = `https://unavatar.now.sh/${websiteUrl.hostname}?fallback=false`;
 	}
 
 	let stats = await eleventyImg(imageUrl, {
