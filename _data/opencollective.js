@@ -1,7 +1,8 @@
 // https://opencollective.com/11ty/members/all.json
 const Cache = require("@11ty/eleventy-cache-assets");
 const FilteredProfiles = [
-	"https://opencollective.com/bca-account1"
+	"https://opencollective.com/bca-account1",
+	"https://opencollective.com/baocasino"
 ]
 
 function isMonthlyBacker(backer) {
