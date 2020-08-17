@@ -18,7 +18,10 @@ async function fetch(name, imageUrl) {
 		widths: [90],
 		urlPath: "/img/avatars/opencollective/",
 		outputDir: "img/avatars/opencollective/",
-	})
+		cacheOptions: {
+			duration: "7d",
+		}
+	});
 
 	let slug = slugify(name).toLowerCase();
 	let path = `${dir}${slug}.json`;

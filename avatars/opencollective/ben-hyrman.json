@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/1ddfa90d.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/1ddfa90d.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/1ddfa90d.jpeg",
+      "size": 2049
+    }
+  ],
+  "slug": "ben-hyrman"
+}

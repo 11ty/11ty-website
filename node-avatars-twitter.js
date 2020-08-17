@@ -16,18 +16,17 @@ async function fetch(name) {
 	await fs.ensureDir(dir);
 
 	let path = `${dir}${slug}.json`;
+	let stats = await eleventyImg(`https://unavatar.now.sh/twitter/${name}`, { // ?fallback=false
+		formats: ["webp", "jpeg"],
+		widths: [90],
+		urlPath: "/img/avatars/twitter/",
+		outputDir: "img/avatars/twitter/",
+		cacheOptions: {
+			duration: "7d",
+		}
+	});
 
-	if(!fs.pathExistsSync(path)) {
-		// ?fallback=false
-		let stats = await eleventyImg(`https://unavatar.now.sh/twitter/${name}`, {
-			formats: ["webp", "jpeg"],
-			widths: [90],
-			urlPath: "/img/avatars/twitter/",
-			outputDir: "img/avatars/twitter/",
-		});
-
-		return fs.writeFile(path, JSON.stringify(stats, null, 2));
-	}
+	return fs.writeFile(path, JSON.stringify(stats, null, 2));
 }
 
 (async function() {
