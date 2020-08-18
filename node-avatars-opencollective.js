@@ -29,7 +29,7 @@ async function fetch(name, imageUrl, website) {
 		urlPath: "/img/avatars/opencollective/",
 		outputDir: "img/avatars/opencollective/",
 		cacheOptions: {
-			duration: "7d",
+			duration: "1d",
 		}
 	});
 

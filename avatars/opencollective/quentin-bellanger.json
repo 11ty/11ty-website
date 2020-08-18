@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/cf524462.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/cf524462.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/cf524462.jpeg",
+      "size": 2299
+    }
+  ],
+  "slug": "quentin-bellanger"
+}

@@ -23,14 +23,14 @@ async function fetch(name) {
 			urlPath: "/img/avatars/twitter/",
 			outputDir: "img/avatars/twitter/",
 			cacheOptions: {
-				duration: "0s",
+				duration: "14d",
 			}
 		});
 
 		return fs.writeFile(path, JSON.stringify(stats, null, 2));
 	} catch(e) {
 		console.log( "Error: ", e );
-		return fs.unlink(path);
+		// return fs.unlink(path);
 	}
 }
 

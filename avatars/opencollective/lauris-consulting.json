@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 88,
+      "height": 106,
+      "url": "/img/avatars/opencollective/a3f784e8.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/a3f784e8.jpeg 88w",
+      "outputPath": "img/avatars/opencollective/a3f784e8.jpeg",
+      "size": 2102
+    }
+  ],
+  "slug": "lauris-consulting"
+}
