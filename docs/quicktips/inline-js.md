@@ -20,14 +20,18 @@ Add the following `jsmin` filter to your Eleventy Config file:
 
 ```js
 const { minify } = require("terser");
-  eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
-  const minified = await minify(code);
-  if (minified.error) {
-    console.error("Terser error: ", minified.error);
+eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (
+  code,
+  callback
+) {
+  try {
+    const minified = await minify(code);
+    callback(null, minified.code);
+  } catch (err) {
+    console.error('Terser error: ', err);
     // Fail gracefully.
-    return callback(null, code);
+    callback(null, code);
   }
-  return callback(null, minified.code);
 });
 ```
 
