@@ -19,15 +19,15 @@ This tip works great if you have small JS utilities that you’d like to have in
 Add the following `jsmin` filter to your Eleventy Config file:
 
 ```js
-const Terser = require("terser");
-eleventyConfig.addFilter("jsmin", function(code) {
-    let minified = Terser.minify(code);
-    if( minified.error ) {
-        console.log("Terser error: ", minified.error);
-        return code;
-    }
-
-    return minified.code;
+const { minify } = require("terser");
+  eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
+  const minified = await minify(code);
+  if (minified.error) {
+    console.error("Terser error: ", minified.error);
+    // Fail gracefully.
+    return callback(null, code);
+  }
+  return callback(null, minified.code);
 });
 ```
 
