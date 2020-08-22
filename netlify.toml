@@ -3,6 +3,12 @@
 	command = "npm run build-production"
 
 [[redirects]]
+	from = "/speedlify/*"
+	to = "https://built-with-eleventy.netlify.app/speedlify/:splat"
+	status = 200
+	force = true
+
+[[redirects]]
 	from = "/docs/sites/"
 	to = "/leaderboard/"
 	status = 301
