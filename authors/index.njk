@@ -1,12 +1,9 @@
 ---
 eleventyNavigation:
-  parent: Built With Eleventy
+  parent: Supporting Eleventy
   key: Eleventy Authors
-  order: 3
-excludeFromSidebar: true
+  order: 4
 layout: layouts/docs.njk
-css:
-  - components/page-sites.css
 ---
 <h1>Eleventy Authors</h1>
 
@@ -17,7 +14,6 @@ css:
 {%- for author in sites | topAuthors %}
 		<tr>
 			<td><a href="/authors/{{ author.name | slug }}/">{% avatarlocalcache "twitter", author.name %}{{ author.name }}</a></td>
-			<td><span title="Top 11 on the Combined Leaderboard">{{ author.trophies | repeat("🏆") }}</span></td>
 			<td>×{{ author.count }} site{% if author.count !== 1 %}s{% endif %}</td>
 		</tr>
 {%- endfor %}

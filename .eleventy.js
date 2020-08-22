@@ -4,6 +4,7 @@ const commaNumber = require("comma-number");
 const markdownIt = require("markdown-it");
 const loadLanguages = require("prismjs/components/");
 const slugify = require("slugify");
+const fs = require("fs-extra");
 
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
@@ -142,6 +143,10 @@ ${text.trim()}
 	eleventyConfig.addPassthroughCopy("css/fonts");
 	eleventyConfig.addPassthroughCopy("img");
 	eleventyConfig.addPassthroughCopy("favicon.ico");
+
+	eleventyConfig.addFilter("fileExists", function(url) {
+		return fs.pathExistsSync(`.${url}`);
+	});
 
 	eleventyConfig.addFilter("toJSON", function(obj) {
 		return JSON.stringify(obj);
@@ -414,34 +419,6 @@ ${text.trim()}
 		}
 	});
 
-	eleventyConfig.addFilter("hasPerformanceEntryByUrl", (url, sites = []) => {
-		// console.log( sites.length, url );
-		for(let site of sites) {
-			if(!url || !site.url) {
-				continue;
-			}
-			let lowerUrl = url.toLowerCase();
-			let siteUrl = site.url.toLowerCase();
-			if(lowerUrl === siteUrl || `${lowerUrl}/` === siteUrl) {
-				return true;
-			}
-		}
-		return false;
-	});
-
-	let top11Sites = require("./_data/allTopSites.json");
-
-	function getTrophyCountForUrl(url) {
-		let site = top11Sites.filter(entry => entry.url === url || `${entry.url}/` === url || entry.url === `${url}/`);
-		if(site.length) {
-			return site[0].combinedRank.filter(entry => entry && entry <= 11).length;
-		}
-
-		return 0;
-	}
-
-	eleventyConfig.addFilter("numberOfTrophies", getTrophyCountForUrl);
-
 	eleventyConfig.addFilter("repeat", (number, str) => {
 		if(number > 0) {
 			return str + (new Array(number)).join(str);
@@ -452,7 +429,6 @@ ${text.trim()}
 	eleventyConfig.addFilter("topAuthors", sites => {
 		let counts = {};
 		let eligibleCounts = {};
-		let trophies = {};
 		getAuthors(sites, (name, site) => {
 			if(!counts[name]) {
 				counts[name] = 0;
@@ -465,11 +441,6 @@ ${text.trim()}
 				}
 				eligibleCounts[name]++;
 			}
-
-			if(!trophies[name]) {
-				trophies[name] = 0;
-			}
-			trophies[name] += getTrophyCountForUrl(site.url);
 		});
 
 		let top = [];
@@ -479,15 +450,11 @@ ${text.trim()}
 					name: author,
 					count: counts[author],
 					eligibleCount: eligibleCounts[author],
-					trophies: trophies[author],
 				});
 			}
 		}
 		top.sort((a, b) => {
-			if(a.trophies === b.trophies) {
-				return b.count - a.count;
-			}
-			return b.trophies - a.trophies;
+			return b.count - a.count;
 		});
 
 		return top;
@@ -501,11 +468,6 @@ ${text.trim()}
 
 	eleventyConfig.addFilter("supportersFacepile", (supporters) => {
 		return supporters.filter(supporter => supporter.role === "BACKER" && supporter.tier && supporter.isActive && supporter.tier != "Gold Sponsor");
-	});
-
-	eleventyConfig.addFilter("screenshotFilenameFromUrl", (url) => {
-		let slug = url.replace(/https?\:\//, "");
-		return slugify(slug, { lower: true, remove: /[:\/]/g }) + ".jpg";
 	});
 
 	// Sort an object that has `order` props in values. Return an array

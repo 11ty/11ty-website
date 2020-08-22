@@ -26,11 +26,6 @@ css:
 * <a href="https://opencollective.com/11ty">Not yet <strong>Supporting Eleventy</strong> on Open Collective.</a>
 * <em>Already a supporter but it’s not showing here? Make sure your Twitter account is listed on your Open Collective Profile.</em>
 {%- endif %}
-{%- set trophyCount = 0 %}
-{%- for site in author.sites %}{% set inc = site.url | numberOfTrophies %}{% set trophyCount = trophyCount + inc %}{% endfor %}
-{%- if trophyCount > 0 %}
-* **Trophy Count** ×{{ trophyCount }} {{ trophyCount | repeat("🏆") }} _(Top 11 Finishes on the [Combined Leaderboard](/leaderboard/combined/))_
-{%- endif %}
 
 {%- set authorStarters = starters | sortObjectByOrder | findBy("author", author.name) %}
 {%- if authorStarters.length %}
@@ -55,11 +50,7 @@ css:
 
 <div class="lo sites-lo" style="--lo-margin-h: 2rem; --lo-margin-v: 1rem; --lo-stackpoint: 31.25em;">
 {%- for site in author.sites %}
-  {%- set perf = site.url | findSiteDataByUrl(fastestSites) %}
   {%- set showMetadata = true %}
-  {%- set showPerformanceMetadata = true %}
-  {%- set showAccessibilityMetadata = true %}
-  {%- set showRankOnly = true %}
   {% include "site.njk" %}
 {%- endfor %}
 </div>
