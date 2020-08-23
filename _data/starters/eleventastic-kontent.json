@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/makma/eleventastic-kontent",
+	"name": "eleventastic-kontent",
+	"description": "A simple Eleventy Starter Kit based on Eleventastic with content powered by Kontent CMS.",
+	"author": "makma",
+	"demo": "https://eleventastic-kontent.netlify.app/"
+}
