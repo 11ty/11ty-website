@@ -1,6 +1,6 @@
 {
 	"name": "Set Your Watch By",
-	"url": "https://setyourwatchby.netlify.com/",
+	"url": "https://setyourwatchby.netlify.app/",
 	"description": "A static site generated clock! Runs a Netlify build every minute.",
 	"source_url": "https://github.com/philhawksworth/html-time",
 	"twitter": "philhawksworth",
