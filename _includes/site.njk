@@ -11,6 +11,12 @@
 				{%- if site.source_url %}<div class="lo-c"><a href="{{ site.source_url }}" class="elv-externalexempt">Source Code</a></div>{% endif -%}
 			</div>
 		</em>
+		<div class="list-bare-desc list-bare-desc-avatar site-score">
+			{%- set hash = speedlifyLeaderboards.urls | findHash(site.demo, site.url) %}
+			{%- if hash -%}
+				<speedlify-score speedlify-url="https://www.11ty.dev/speedlify/" hash="{{ hash }}"></speedlify-score>
+			{%- endif -%}
+		</div>
 		{%- endif %}
 	</div>
 {%- if imgExists %}
