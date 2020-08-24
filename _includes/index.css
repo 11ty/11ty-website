@@ -793,6 +793,17 @@ main .elv-toc + h1 .direct-link {
 speedlify-score {
 	white-space: nowrap;
 }
-speedlify-score .speedlify-summary {
+speedlify-score .speedlify-score:first-child {
+	margin-left: 0;
+}
+.site-score speedlify-score {
+	margin-top: .5em;
+}
+.site-score speedlify-score .speedlify-summary {
+	order: 2;
+	margin-left: 1em;
+	margin-right: 0;
+}
+.starter-score speedlify-score .speedlify-summary {
 	display: none;
 }

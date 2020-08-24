@@ -144,6 +144,21 @@ ${text.trim()}
 	eleventyConfig.addPassthroughCopy("img");
 	eleventyConfig.addPassthroughCopy("favicon.ico");
 
+	eleventyConfig.addFilter("findHash", function(speedlifyUrls, ...urls) {
+		for(let url of urls) {
+			if(!url) {
+				continue;
+			}
+
+			// keys in speedlifyUrls are requestedUrl not final URLs
+			if(speedlifyUrls[url]) {
+				return speedlifyUrls[url].hash;
+			} else if(!url.endsWith("/") && speedlifyUrls[`${url}/`]) {
+				return speedlifyUrls[`${url}/`].hash;
+			}
+		}
+	});
+
 	eleventyConfig.addFilter("fileExists", function(url) {
 		return fs.pathExistsSync(`.${url}`);
 	});
