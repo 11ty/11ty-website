@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/80024610.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/80024610.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/80024610.jpeg",
+      "size": 2059
+    }
+  ],
+  "slug": "boris-schapira"
+}

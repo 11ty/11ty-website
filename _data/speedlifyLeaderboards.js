@@ -1,0 +1,16 @@
+const CacheAsset = require("@11ty/eleventy-cache-assets");
+const fastglob = require("fast-glob");
+
+module.exports = async function() {
+	let url = "https://www.11ty.dev/speedlify/api/urls.json";
+	let urlsJson = await CacheAsset(url, {
+		duration: "1m",
+		type: "json",
+	});
+
+	let returnData = {
+		urls: urlsJson
+	};
+
+	return returnData;
+};

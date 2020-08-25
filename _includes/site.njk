@@ -1,36 +1,25 @@
-<div class="lo-c{% if topKey === "performance" and perf.rank <= 11 or topKey === "accessibility" and perf.accessibilityRank <= 11 or topKey === true %} site-top{% endif %}">
-	<div{% if showScreenshot %} class="sites-data-container"{% endif %}>
+{%- set imgUrl = "/img/sites/" + site.fileSlug + ".jpg" %}
+{%- set imgExists = imgUrl | fileExists %}
+<div class="lo-c site-top">
+	<div{% if imgExists %} class="sites-data-container"{% endif %}>
 		<a href="{{ site.url }}">{% avatarlocalcache "twitter", site.twitter %}{{ site.name }}</a>
-		<span title="Top 11 on the Combined Leaderboard">{{ site.url | numberOfTrophies | repeat("🏆") }}</span>
 		{%- if site.description %}<em class="list-bare-desc list-bare-desc-avatar">{{ site.description }}</em>{% endif -%}
 		{%- if showMetadata %}
 		<em class="list-bare-desc list-bare-desc-avatar">
 			<div class="lo lo-inline lo-nocontentwrap lo-separator-h" style="--lo-margin-h: 1.5rem; --lo-margin-v: 2px">
-{%- if perf.accessibilityRank %}
-{%- if showAccessibilityMetadata %}
-				<div class="lo-c sites-perf-rank">Accessibility Rank <strong>#{{ perf.accessibilityRank }}</strong>{#{% if not perf.previousAccessibilityRank %}<strong class="sites-perf-rank-new">New!</strong>{% elseif perf.previousAccessibilityRank === perf.accessibilityRank %}<strong class="sites-perf-rank-same"></strong>{% elseif perf.previousAccessibilityRank - perf.accessibilityRank > 0 %}<strong class="sites-perf-rank-{% if perf.previousAccessibilityRank - perf.accessibilityRank > 0 %}pos{% else %}neg{% endif %}">{{ (perf.previousAccessibilityRank - perf.accessibilityRank) | abs }}</strong>{% endif %}#}</div>
-{%- if not showRankOnly %}
-				<div class="lo-c sites-perf-lh">Lighthouse {% if perf.accessibilityScore === 1 %}{% emoji "💯", "100" %}{% else %}<strong>{{ (perf.accessibilityScore * 100) | round }}</strong>{% endif %}</div>
-{%- if perf.accessibilityScore === 1 and (perf.axe.violations or perf.axe.passes) %}
-				<div class="lo-c">axe <strong>{% if perf.axe.violations > 0 %}{% emoji "❌", "fail" %}{{ perf.axe.violations }}{% else %}{% emoji "✅", "pass" %}{{ perf.axe.passes }}{% endif %}</strong></div>
-{%- endif %}
-{%- endif %}
-{%- endif %}
-{%- endif %}
-{%- if perf.rank %}
-{%- if showPerformanceMetadata %}
-				<div class="lo-c sites-perf-rank">Performance Rank <strong>#{{ perf.rank }}</strong>{% if not perf.previousRank %}<strong class="sites-perf-rank-new">New!</strong>{% elseif perf.previousRank === perf.rank %}<strong class="sites-perf-rank-same"></strong>{% elseif perf.previousRank - perf.rank > 0 %}<strong class="sites-perf-rank-{% if perf.previousRank - perf.rank > 0 %}pos{% else %}neg{% endif %}">{{ (perf.previousRank - perf.rank) | abs }}</strong>{% endif %}</div>
-{%- if not showRankOnly %}
-				<div class="lo-c sites-perf-lh">Lighthouse {% if perf.lighthouseScore === 1 %}{% emoji "💯", "100" %}{% else %}<strong>{{ (perf.lighthouseScore * 100) | round }}</strong>{% endif %}</div>
-				<div class="lo-c sites-perf-si">Speed Index <strong>{{ perf.speedIndex | round(1) }}</strong></div>
-{%- endif %}
-{%- endif %}
-{%- endif %}
 				{%- if site.twitter or site.authoredBy %}<div class="lo-c"><a href="/authors/{{ site.twitter | cleanAuthorName }}/" class="elv-externalexempt">{{ site.twitter | cleanAuthorName }}</a>{% if site.authoredBy %} by {% endif %}{% for author in site.authoredBy %} <a href="/authors/{{ author | cleanAuthorName }}/" class="elv-externalexempt">{% avatarlocalcache "twitter", author %}{{ author | cleanAuthorName }}</a>{% endfor %}</div>{% endif -%}
 				{%- if site.source_url %}<div class="lo-c"><a href="{{ site.source_url }}" class="elv-externalexempt">Source Code</a></div>{% endif -%}
 			</div>
 		</em>
+		<div class="list-bare-desc list-bare-desc-avatar site-score">
+			{%- set hash = speedlifyLeaderboards.urls | findHash(site.demo, site.url) %}
+			{%- if hash -%}
+				<speedlify-score speedlify-url="https://www.11ty.dev/speedlify/" hash="{{ hash }}"></speedlify-score>
+			{%- endif -%}
+		</div>
 		{%- endif %}
 	</div>
-	{%- if showScreenshot %}<div class="sites-screenshot-container"><img src="/img/sites/{{ site.url | screenshotFilenameFromUrl }}" alt="Screenshot of {{ site.url }}" class="sites-screenshot" loading="lazy" width="405" height="304"></div>{% endif %}
+{%- if imgExists %}
+	<div class="sites-screenshot-container"><img src="{{ imgUrl }}" alt="Screenshot of {{ site.url }}" class="sites-screenshot" loading="lazy" width="405" height="304"></div>
+{%- endif %}
 </div>

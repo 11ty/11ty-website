@@ -48,7 +48,7 @@ ${collections.post.map((post) => `<li>${ post.data.title }</li>`).join("\n")}
 ```
 {% endraw %}
 
-### Example: Navigation Links with an `active` class added for on the current page
+### Example: Navigation Links with an `[aria-current]` attribute added for on the current page
 
 Compare the `post.url` and special Eleventy-provided `page.url` variable to find the current page. Building on the previous example:
 
@@ -58,9 +58,11 @@ Compare the `post.url` and special Eleventy-provided `page.url` variable to find
 ```html
 <ul>
 {%- for post in collections.post -%}
-  <li{% if page.url == post.url %} class="active"{% endif %}>{{ post.data.title }}</li>
+  <li{% if page.url == post.url %} aria-current="page"{% endif %}>{{ post.data.title }}</li>
 {%- endfor -%}
 </ul>
+
+Background: `aria-current="page"` tells assistive technology, such as screen readers, which page of a set of pages is the current active one. It also provides a hook for your CSS styling, using its attribute selector: `[aria-current="page"] {}`.
 ```
 {% endraw %}
 

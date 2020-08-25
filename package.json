@@ -14,6 +14,7 @@
     "build": "eleventy",
     "start": "eleventy --serve",
     "build-production": "ELEVENTY_PRODUCTION=true eleventy",
+    "get-new-screenshots": "node node-screenshots",
     "get-new-supporters": "eleventy && node node-supporters",
     "get-new-avatars": "node node-avatars-opencollective && node node-avatars-twitter"
   },
@@ -55,7 +56,6 @@
     "markdown-it-anchor": "5.2.5",
     "markdown-it-table-of-contents": "0.4.4",
     "node-fetch": "2.6.0",
-    "performance-leaderboard": "2.0.6",
     "puppeteer": "2.1.1",
     "semver": "7.1.3",
     "sharp": "0.25.2",

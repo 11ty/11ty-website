@@ -16,7 +16,14 @@ layout: layouts/main.njk
 
 <p style="font-size: 3em"><code>${{ opencollectiveMonthly.recurringAmount }}</code></p>
 
-_Average monthly donation:_ `${{ opencollectiveMonthly.recurringAmount / opencollectiveMonthly.contributorCount }}`
+_Monthly donations:_
+
+{%- for donation,count in opencollectiveMonthly.buckets %}
+* `${{ donation }}` ×{{ count }}
+{%- endfor %}
+
+_Median monthly donation:_ `${{ opencollectiveMonthly.stats.median }}`
+_Mean monthly donation:_ `${{ opencollectiveMonthly.stats.mean }}`
 
 ## Yearly estimate
 

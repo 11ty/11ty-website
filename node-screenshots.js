@@ -1,7 +1,7 @@
 const puppeteer = require("puppeteer");
 const slugify = require("slugify");
 const sharp = require("sharp");
-const fastestSites = require("./_data/fastestSites.json");
+const fastglob = require("fast-glob");
 
 async function pause(time) {
   let p = new Promise(resolve => {
@@ -39,12 +39,24 @@ async function screenshot(url, fileSlug) {
 }
 
 (async () => {
-	for(let site of fastestSites) {
-		if(site.rank <= 11 || site.accessibilityRank <= 11 || (site.rank + site.accessibilityRank <= 100)) {
-			console.log( "Fetching", site.url, `Performance #${site.rank} Accessibility #${site.accessibilityRank}` );
-			let slug = site.url.replace(/https?\:\//, "");
-			let filename = slugify(slug, { lower: true, remove: /[:\/]/g });
-			await screenshot(site.url, filename);
+	let sites = await fastglob("./_data/sites/*.json", {
+		caseSensitiveMatch: false
+	});
+
+	let i = 0;
+	for(let site of sites) {
+		i++;
+		let siteData = require(site);
+		if(siteData.url && !siteData.disabled) {
+			let filename = site.split("/").pop().replace(/\.json/, "");
+			console.log( `${i} of ${sites.length}`, "Fetching", siteData.url, "to", filename );
+			try {
+				await screenshot(siteData.url, filename);
+			} catch(e) {
+				console.log( ">>> Error:", e );
+			}
+		} else {
+			console.log( `${i} of ${sites.length}`, "Skipping", siteData.url );
 		}
 	}
 })();

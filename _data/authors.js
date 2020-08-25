@@ -12,6 +12,8 @@ module.exports = async () => {
     let filename = site.split("/").pop();
     let siteData = require(`./sites/${filename}`);
 
+    siteData.fileSlug = filename.replace(/\.json/, "");
+
     let names = getAuthors([siteData]);
     for(let name of names) {
       let key = name.toLowerCase();

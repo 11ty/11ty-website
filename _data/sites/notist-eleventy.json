@@ -1,6 +1,6 @@
 {
 	"name": "Event listing from Notist",
-	"url": "https://eleventy-notist-example.netlify.com/",
+	"url": "https://eleventy-notist-example.netlify.app/",
 	"source_url": "https://github.com/philhawksworth/eleventy-notist-example",
 	"description": "An example of Notist's JSON feed driving event listings on your own, pre-rendered site.",
 	"twitter": "philhawksworth"
