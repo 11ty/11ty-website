@@ -109,7 +109,12 @@ class EleventySupporter {
   addAvatars(user) {
     let avatar = document.createElement("img");
     avatar.classList.add("supporters-avatar", "avatar");
-    avatar.setAttribute("src", user.avatar);
+    if(user.avatar) {
+      avatar.setAttribute("src", user.avatar);
+    } else {
+      // Deprecated, requires _redirects file
+      avatar.setAttribute("src", `/img/avatars/opencollective/${user.slug}.jpg`);
+    }
     avatar.setAttribute("alt", `${user.name}’s Avatar`);
 
     let anchors = Array.from(document.querySelectorAll("[data-investors-avatar]"));
