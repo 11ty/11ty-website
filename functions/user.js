@@ -5,7 +5,7 @@ exports.handler = async (event, context, callback) => {
   let query = `
 query eleventyBackers {
   collective(slug: "11ty") {
-    members {
+    members(limit: 9999) {
       nodes {
         account {
           name
