@@ -1,6 +1,6 @@
 const fetch = require("node-fetch");
 const slugify = require("slugify");
-const avatarmap = require("./util/avatarmap.json");
+const avatarmap = require("./utils/avatarmap.json");
 
 exports.handler = async (event, context, callback) => {
   let query = `
