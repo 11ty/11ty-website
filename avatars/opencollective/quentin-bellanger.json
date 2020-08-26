@@ -2,13 +2,13 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/cf524462.jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/ae7d2da7-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/cf524462.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/cf524462.jpeg",
-      "size": 2299
+      "srcset": "/img/avatars/opencollective/ae7d2da7-90.jpeg 90w",
+      "outputPath": "img/avatars/opencollective/ae7d2da7-90.jpeg",
+      "size": 2281
     }
   ],
   "slug": "quentin-bellanger"
