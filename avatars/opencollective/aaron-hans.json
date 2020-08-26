@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/d6509594.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/d6509594.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/d6509594.jpeg",
+      "size": 2425
+    }
+  ],
+  "slug": "aaron-hans"
+}

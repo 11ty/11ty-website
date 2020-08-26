@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/5d7d5d32.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/5d7d5d32.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/5d7d5d32.jpeg",
+      "size": 2306
+    }
+  ],
+  "slug": "andrea-vaghi"
+}
