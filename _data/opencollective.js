@@ -1,10 +1,10 @@
 // https://opencollective.com/11ty/members/all.json
 const Cache = require("@11ty/eleventy-cache-assets");
 const FilteredProfiles = [
-	"https://opencollective.com/bca-account1",
-	"https://opencollective.com/baocasino",
-	"https://opencollective.com/woorke",
-	"https://opencollective.com/suominettikasinot24"
+	"https://opencollective.com/bca-account1", // website is buycheapaccounts.com
+	"https://opencollective.com/baocasino", // gambling
+	"https://opencollective.com/woorke", // sells social media accounts
+	"https://opencollective.com/suominettikasinot24", // gambling
 ]
 
 function isMonthlyBacker(backer) {
