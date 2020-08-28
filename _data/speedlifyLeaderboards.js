@@ -4,7 +4,7 @@ const fastglob = require("fast-glob");
 module.exports = async function() {
 	let url = "https://www.11ty.dev/speedlify/api/urls.json";
 	let urlsJson = await CacheAsset(url, {
-		duration: "1m",
+		duration: "1d",
 		type: "json",
 	});
 
