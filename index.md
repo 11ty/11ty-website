@@ -10,17 +10,19 @@ bigPossum: true
 
 ## Quick Start
 
+Eleventy {% latestVersion versions, config %} requires Node 8 or newer. Use `node --version` on the command line to find your local Node version.
+
 ``` bash
 npm install -g @11ty/eleventy
 echo '# Page header' > README.md
 eleventy
 ```
 
-This will compile any files matching valid template file extensions in the current directory into the output folder (defaults to `_site`).
+This will compile any files matching valid input [template file extensions](/docs/languages/) (`.md` is one of them) in the current directory into the output folder (defaults to `_site`).
 
 ``` text
-Writing _site/README/index.html from ./README.md
-Wrote 1 file in 0.10 seconds
+Writing _site/README/index.html from ./README.md.
+Wrote 1 file in 0.11 seconds (v0.11.0)
 ```
 
 Run `eleventy --serve` to start up a web server. Then open `http://localhost:8080/README/` in your web browser of choice to see your Eleventy output.
