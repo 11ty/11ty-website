@@ -5,18 +5,18 @@ module.exports = function getAuthors(sites, callback) {
 	for(let key in sites) {
 		let site = sites[key];
 		if(!site.disabled) {
-			let authorsNames = [];
+			let authorsNames = new Set();
 			if(site.twitter) {
-				authorsNames.push(cleanName(site.twitter));
+				authorsNames.add(cleanName(site.twitter));
 			}
 			if(Array.isArray(site.authoredBy)) {
 				for(let name of site.authoredBy) {
 					if(name) {
-						authorsNames.push(cleanName(name));
+						authorsNames.add(cleanName(name));
 					}
 				}
 			} else if(site.authoredBy) {
-				authorsNames.push(cleanName(site.authoredBy));
+				authorsNames.add(cleanName(site.authoredBy));
 			}
 
 			for(let name of authorsNames) {
