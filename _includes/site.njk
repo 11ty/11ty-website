@@ -14,7 +14,7 @@
 		<div class="list-bare-desc list-bare-desc-avatar site-score">
 			{%- set hash = speedlifyLeaderboards.urls | findHash(site.demo, site.url) %}
 			{%- if hash -%}
-				<speedlify-score speedlify-url="https://www.11ty.dev/speedlify/" hash="{{ hash }}"></speedlify-score>
+				<speedlify-score speedlify-url="https://www.11ty.dev/speedlify/" hash="{{ hash }}" score weight rank rank-change></speedlify-score>
 			{%- endif -%}
 		</div>
 		{%- endif %}

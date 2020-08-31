@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 79,
+      "url": "/img/avatars/opencollective/29f1db70-90.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/29f1db70-90.jpeg 90w",
+      "outputPath": "img/avatars/opencollective/29f1db70-90.jpeg",
+      "size": 2164
+    }
+  ],
+  "slug": "eslint"
+}

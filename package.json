@@ -69,6 +69,6 @@
     "@11ty/logo": "2.0.4",
     "instant.page": "3.0.0",
     "prismjs": "1.21.0",
-    "speedlify-score": "^1.0.1"
+    "speedlify-score": "^2.0.1"
   }
 }
