@@ -798,20 +798,19 @@ main .elv-toc + h1 .direct-link {
 	}
 }
 
-speedlify-score {
-	white-space: nowrap;
-}
-speedlify-score .speedlify-score:first-child {
-	margin-left: 0;
+.site-score speedlify-score,
+.starter-score speedlify-score {
+	flex-wrap: nowrap;
 }
 .site-score speedlify-score {
 	margin-top: .5em;
 }
-.site-score speedlify-score .speedlify-summary {
-	order: 2;
-	margin-left: 1em;
-	margin-right: 0;
+.site-score .speedlify-rank {
+	font-weight: 700;
 }
-.starter-score speedlify-score .speedlify-summary {
+.site-score .speedlify-rank:before {
+	font-weight: 400;
+}
+.site-score .speedlify-rank-change.down {
 	display: none;
 }
