@@ -25,8 +25,11 @@ eleventyNavigation:
 			<td class="starter-author"><strong>{% avatarlocalcache "twitter", site.author, site.author %} Official</strong></td>
 			<td class="starter-description">{% if site.description %} {{ site.description}}{% endif %}</td>
 			<td class="starter-score">
-				{%- if speedlifyStarters.data[site.demo] or speedlifyStarters.data[site.url] -%}
-					<speedlify-score raw-data='{{ (speedlifyStarters.data[site.demo] or speedlifyStarters.data[site.url]) | toJSON | safe }}'></speedlify-score>
+				{%- set siteData = speedlifyStarters.data[site.demo] or speedlifyStarters.data[site.url] %}
+				{%- if siteData -%}
+					<a href="https://www.speedlify.dev/eleventy-starters/#site-{{ siteData.hash }}" class="elv-externalexempt nound">
+						<speedlify-score raw-data='{{ siteData | toJSON | safe }}'></speedlify-score>
+					</a>
 				{%- endif -%}
 			</td>
 		</tr>
@@ -39,8 +42,11 @@ eleventyNavigation:
 			<td class="starter-author">{% authorLink authors, site.author %}</td>
 			<td class="starter-description">{% if site.description %} {{ site.description }}{% endif %}</td>
 			<td class="starter-score">
-				{%- if speedlifyStarters.data[site.demo] or speedlifyStarters.data[site.url] -%}
-					<speedlify-score raw-data='{{ (speedlifyStarters.data[site.demo] or speedlifyStarters.data[site.url]) | toJSON | safe }}'></speedlify-score>
+				{%- set siteData = speedlifyStarters.data[site.demo] or speedlifyStarters.data[site.url] %}
+				{%- if siteData -%}
+					<a href="https://www.speedlify.dev/eleventy-starters/#site-{{ siteData.hash }}" class="elv-externalexempt nound">
+						<speedlify-score raw-data='{{ siteData | toJSON | safe }}'></speedlify-score>
+					</a>
 				{%- endif -%}
 			</td>
 		</tr>
