@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/mjgs/eleventy-agile-blog",
+	"name": "eleventy-agile-blog",
+	"description": "A minimal blog template using Eleventy, this one implements a simple agile development workflow so you can get stuff done",
+	"author": "mjgs",
+	"demo": "https://festive-haibt-b7ead0.netlify.app"
+}
