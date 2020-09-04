@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Filters
   key: url Filter
-  title: '<code>url</code> Filter'
+  title: '<code>url</code>'
   order: 1
   excerpt: Normalize absolute paths in your content, allows easily changing deploy subdirectories for your project.
 ---
