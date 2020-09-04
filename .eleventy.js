@@ -168,7 +168,6 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addFilter("toSearchEntry", function(str) {
-		// <a class="direct-link" href="#eleventy-is-supported-financially-by-the-following-lovely-people" title="Direct link to this heading">#</a>
 		return str.replace(/<a class="direct-link"[^>]*>#<\/a\>/g, "");
 	});
 
