@@ -14,8 +14,6 @@ It’s very important that we take responsibility for the code we publish and de
 
 ## Accessibility Resources
 
-One of the best ways to immerse yourself in the accessibility development community is to stand on the shoulders of the giants that have gone before.
-
 * [The A11Y Project](https://www.a11yproject.com/) (their website is Built with Eleventy!), including their incredible [Accessibility Checklist](https://www.a11yproject.com/checklist/)
 * [GOV.UK Service Manual: Understanding WCAG 2.1](https://www.gov.uk/service-manual/helping-people-to-use-your-service/understanding-wcag)
 * [WebAIM’s WCAG 2 Checklist](https://webaim.org/standards/wcag/checklist)
@@ -41,7 +39,7 @@ One of the best ways to immerse yourself in the accessibility development commun
 
 ### People to Follow
 
-Many of these folks are [participants in the Eleventy community](/authors/) too!
+One of the best ways to immerse yourself in the accessibility development community is to follow the experts. Many of these folks are [participants in the Eleventy community](/authors/) too!
 
 * [Marcy Sutton](https://marcysutton.com/writing/)
 * [Scott O’Hara](https://www.scottohara.me/writing/)
