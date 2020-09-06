@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/gregives/twelvety",
+	"name": "Twelvety",
+	"description": "Twelvety is an Eleventy starter project built to be fast, with component architecture, CSS & JS pipelines, a responsive picture shortcode with WebP support and more",
+	"author": "gregives",
+	"demo": "https://twelvety.netlify.app/"
+}
