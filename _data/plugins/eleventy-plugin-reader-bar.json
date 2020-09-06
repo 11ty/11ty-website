@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-reader-bar",
+	"author": "thigoap",
+	"description": "adds a reader bar as you scroll through the page."
+}

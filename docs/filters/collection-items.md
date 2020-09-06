@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Filters
   key: Next or Previous Collection Item Filters
-  title: '<code>get*CollectionItem</code> Filters'
+  title: '<code>get*CollectionItem</code>'
   order: 4
   excerpt: 'Get next or previous collection items for easy linking.'
 ---
