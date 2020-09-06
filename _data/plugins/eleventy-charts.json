@@ -1,4 +1,0 @@
-{
-	"npm": "eleventy-charts",
-	"description": "allows you to create charts using `csv`, `vegalite` and `vega`."
-}
