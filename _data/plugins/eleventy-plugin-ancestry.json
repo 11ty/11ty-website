@@ -1,0 +1,5 @@
+{
+  "npm": "eleventy-plugin-ancestry",
+  "author": "TigersWay",
+  "description": "Real hierarchical navigation, following folders and documents."
+}
