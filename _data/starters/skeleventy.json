@@ -1,6 +1,7 @@
 {
-	"url": "https://skeleventy.netlify.app/",
+	"url": "https://github.com/josephdyer/skeleventy",
 	"name": "Skeleventy",
 	"description": "A skeleton boilerplate built with Eleventy and Tailwind CSS.",
-	"author": "joe_dyer1"
+	"author": "joe_dyer1",
+	"demo": "https://skeleventy.netlify.app/"
 }

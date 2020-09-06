@@ -2,5 +2,6 @@
 	"url": "https://github.com/scottishstoater/simple-journal",
 	"name": "Simple Journal",
 	"description": "A simple journal/photo log website built on top of 11ty.",
-	"author": "scottishstoater"
+	"author": "scottishstoater",
+	"demo": "https://simplejournal.chriscollins.me/"
 }

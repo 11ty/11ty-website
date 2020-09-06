@@ -2,5 +2,6 @@
 	"url": "https://github.com/contentful/11ty-contentful-gallery",
 	"name": "11ty-Contentful-Photo-Gallery",
 	"description": "A Photo Gallery made using Contentful and 11ty, deployed via GitHub Actions and hosted on GitHub Pages.",
-	"author": "shyruparel"
+	"author": "shyruparel",
+	"demo": "https://gallery.contentful.com/"
 }

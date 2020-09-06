@@ -1,7 +1,7 @@
 {
-	"url": "https://books.trey.cc",
+	"url": "https://github.com/trey/books",
 	"name": "Books!",
 	"description": "A little, personal search engine homepage based on Blank2.",
 	"twitter": "trey",
-	"source_url": "https://github.com/trey/books"
+	"demo": "https://books.trey.cc"
 }
