@@ -444,16 +444,17 @@ ${text.trim()}
 		let counts = {};
 		let eligibleCounts = {};
 		getAuthors(sites, (name, site) => {
-			if(!counts[name]) {
-				counts[name] = 0;
+			let key = name.toLowerCase();
+			if(!counts[key]) {
+				counts[key] = 0;
 			}
-			counts[name]++;
+			counts[key]++;
 
 			if(site.url && !site.disabled && !site.superfeatured && !site.hideOnHomepage) {
-				if(!eligibleCounts[name]) {
-					eligibleCounts[name] = 0;
+				if(!eligibleCounts[key]) {
+					eligibleCounts[key] = 0;
 				}
-				eligibleCounts[name]++;
+				eligibleCounts[key]++;
 			}
 		});
 
