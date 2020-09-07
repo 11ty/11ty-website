@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 87,
+      "url": "/img/avatars/opencollective/b4a44c10-90.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/b4a44c10-90.jpeg 90w",
+      "outputPath": "img/avatars/opencollective/b4a44c10-90.jpeg",
+      "size": 2766
+    }
+  ],
+  "slug": "hunter-miller"
+}

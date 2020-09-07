@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/d97400d0.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/d97400d0.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/d97400d0.jpeg",
+      "size": 2233
+    }
+  ],
+  "slug": "jeremy-caldwell"
+}
