@@ -179,6 +179,10 @@ ${text.trim()}
 		return commaNumber(num);
 	});
 
+	eleventyConfig.addFilter("displayPrice", function(num) {
+		return parseFloat(num).toFixed(2);
+	});
+
 	eleventyConfig.addShortcode("templatelangs", function(languages, page, whitelist, anchor, isinline) {
 		let parentTag = isinline ? "span" : "ul";
 		let childTag = isinline ? "span" : "li";
