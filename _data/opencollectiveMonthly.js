@@ -34,7 +34,7 @@ module.exports = async function() {
 		recurringAmount: monthlyDonations,
 		stats: {
 			median: sorted[Math.floor(sorted.length / 2)],
-			mean: (monthlyDonations / count).toFixed(2),
+			mean: monthlyDonations / count,
 		},
 		list: sorted,
 		buckets: buckets,
