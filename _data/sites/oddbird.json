@@ -2,5 +2,6 @@
 	"url": "https://www.oddbird.net/",
 	"name": "OddBird",
 	"description": "Custom web application design, development, & training.",
-	"twitter": "oddbird"
+	"twitter": "oddbird",
+	"authoredBy": ["OddBird", "MiriSuzanne", "DuggieMitchell", "JGerigMeyer", "SondraE", "StacyK", "Wlonk"],
 }
