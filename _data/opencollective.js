@@ -8,6 +8,10 @@ const FilteredProfiles = [
 ]
 
 function isMonthlyBacker(backer) {
+	// Hardcoded to workaround https://github.com/opencollective/opencollective-api/issues/4585
+	if(backer.name === "Piccalilli" && backer.tier === "Gold Sponsor") {
+		return true;
+	}
 	return backer.role === "BACKER" && backer.tier && backer.isActive;
 }
 
