@@ -6,6 +6,8 @@ eleventyNavigation:
 ---
 # Global Data File Preprocessing
 
+{% callout "warn" %}<strong>Deprecation Warning</strong>: This feature is deprecated and will be removed in a future version of Eleventy. You can use <a href="/docs/data-js/">JavaScript Data Files</a> or <a href="/docs/data-computed/">Computed Data</a> instead.{% endcallout %}
+
 * Starting in Eleventy 1.0, this feature is disabled by default: `dataTemplateEngine: false`
 * Prior versions of Eleventy used Liquid preprocessing by default: `dataTemplateEngine: "liquid"`
 
