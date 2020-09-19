@@ -48,3 +48,14 @@ module.exports = function (eleventyConfig) {
   });
 };
 ```
+
+### Changed Files {% addedin "1.0.0" %}
+
+```js
+module.exports = function (eleventyConfig) {
+  eleventyConfig.on('beforeWatch', (changedFiles) => {
+    // changedFiles is an array of files that changed
+    // to trigger the watch/serve build
+  });
+};
+```
