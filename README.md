@@ -22,3 +22,7 @@ Browse to http://localhost:8080/ (8080 is the default but it’ll bump to a new 
 
 * [IFTTT](https://ifttt.com/) daily web hook to build the site once a day to update stats and counts in footer.
 * [Zapier](https://zapier.com/) (Open Collective + Netlify integration) to run a new production build when a new contributor joins Open Collective. _Warning: while avatar will show on the site, there is still a manual step to send the Netlify Identity invitation for the Eleventy Contributor Account._
+
+## Contributed Data
+
+* `cd _data/sites` and `find . -iregex "./[a-z]*\.[a-z]*.json"` Find global data files with a `.` in the name.
