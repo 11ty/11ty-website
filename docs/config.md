@@ -217,7 +217,8 @@ The `dir.data` global data files run through this template engine before transfo
 | Data Template Engine |  |
 | --- | --- |
 | _Object Key_ | `dataTemplateEngine` |
-| _Default_ | `liquid` |
+| _Default_ | `"liquid"` (before 1.0) |
+| _Default_ | `false` (1.0 and above) |
 | _Valid Options_ | A valid [template engine short name](/docs/languages/) or `false` |
 | _Command Line Override_ | _None_ |
 
@@ -227,7 +228,7 @@ The `dir.data` global data files run through this template engine before transfo
 
 ```js
 module.exports = {
-    "dataTemplateEngine": "njk"
+  "dataTemplateEngine": "njk"
 };
 ```
 
