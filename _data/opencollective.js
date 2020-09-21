@@ -1,42 +1,27 @@
 // https://opencollective.com/11ty/members/all.json
 const Cache = require("@11ty/eleventy-cache-assets");
 const FilteredProfiles = [
-	"https://opencollective.com/bca-account1", // website is buycheapaccounts.com
-	"https://opencollective.com/baocasino", // gambling
-	"https://opencollective.com/woorke", // sells social media accounts
-	"https://opencollective.com/suominettikasinot24", // gambling
+	"bca-account1", // website is buycheapaccounts.com
+	"baocasino", // gambling
+	"woorke", // sells social media accounts
+	"suominettikasinot24", // gambling
 ]
 
-function isMonthlyBacker(backer) {
-	// Hardcoded to workaround https://github.com/opencollective/opencollective-api/issues/4585
-	if(backer.name === "Piccalilli" && backer.tier === "Gold Sponsor") {
-		return true;
-	}
-	return backer.role === "BACKER" && backer.tier && backer.isActive;
+function isMonthlyOrder(order) {
+	return order.frequency === 'MONTHLY' && order.status === 'ACTIVE';
 }
 
-function hasMonthlyBackerProfile(backers, compareBacker) {
-	for(let backer of backers) {
-		if(isMonthlyBacker(backer) && backer.profile === compareBacker.profile) {
-			return true;
-		}
+function getUniqueContributors(orders) {
+	let uniqueContributors = {};
+	for(let order of orders) {
+		uniqueContributors[order.slug] = order;
 	}
-	return false;
-}
-
-function getUniqueNonMonthlyEntries(backers) {
-	let nonMonthlyBackers = {};
-	for(let backer of backers) {
-		if(!isMonthlyBacker(backer)) {
-			nonMonthlyBackers[backer.profile] = backer;
-		}
-	}
-	return backers.filter(backer => isMonthlyBacker(backer)).concat(Object.values(nonMonthlyBackers));
+	return Object.values(uniqueContributors);
 }
 
 module.exports = async function() {
 	try {
-		let url = `https://opencollective.com/11ty/members/all.json`;
+		let url = `https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000&status=paid,active`;
 		let json = await Cache(url, {
 			duration: process.env.ELEVENTY_AVATARS ? "0s" : "1d",
 			type: "json"
@@ -49,27 +34,28 @@ module.exports = async function() {
 		// 	}
 		// }
 
-		json = json.filter(backer => {
-			return FilteredProfiles.indexOf(backer.profile) === -1;
+		let orders = json.nodes.map(order => {
+			order.name = order.fromAccount.name;
+			order.slug = order.fromAccount.slug;
+			order.image = order.fromAccount.imageUrl;
+			order.website = order.fromAccount.website;
+			order.profile = `https://opencollective.com/${order.slug}`;
+			return order;
+		}).filter(order => {
+			return FilteredProfiles.indexOf(order.slug) === -1;
 		});
 
-		json = getUniqueNonMonthlyEntries(json);
+		orders = getUniqueContributors(orders);
 
-		json.sort(function(a, b) {
+		orders.sort(function(a, b) {
 			// Sort by total amount donated (desc)
-			return b.totalAmountDonated - a.totalAmountDonated;
+			return b.totalDonations.value - a.totalDonations.value;
 		});
 
-		// is monthly backer or has no other monthly backer profile
-		let allBackers = json.filter(() => true);
-		json = json.filter(backer => isMonthlyBacker(backer) || !hasMonthlyBackerProfile(allBackers, backer));
+		let backers = orders.length;
 
-		let backers = json.filter(function(entry) {
-			return entry.role.toLowerCase() === "backer";
-		}).length;
-
-		let monthlyBackers = json.filter(function(entry) {
-			return isMonthlyBacker(entry);
+		let monthlyBackers = orders.filter(function(order) {
+			return isMonthlyOrder(order);
 		}).length;
 
 		// if(process.env.ELEVENTY_PRODUCTION) {
@@ -80,7 +66,7 @@ module.exports = async function() {
 		// }
 
 		return {
-			supporters: json,
+			supporters: orders,
 			backers: backers,
 			monthlyBackers: monthlyBackers
 		};
