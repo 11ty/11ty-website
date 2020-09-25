@@ -1,0 +1,6 @@
+{
+	"url": "https://github.com/jhukdev/11ty-setup",
+	"name": "11ty-setup",
+	"description": "11ty setup with TypeScript, SASS, Webpack, Preact with partial hydration, and other useful things",
+	"author": "jhukdev"
+}
