@@ -516,15 +516,15 @@ Files found (that don’t have a valid template engine) from opt-in file extensi
 
 #### Watch JavaScript Dependencies {% addedin "0.7.0" %}
 
-* Documented at [Watch and Serve Configuruation](/docs/watch-serve/).
+* Documented at [Watch and Serve Configuration](/docs/watch-serve/).
 
 #### Add Your Own Watch Targets {% addedin "0.10.0" %}
 
-* Documented at [Watch and Serve Configuruation](/docs/watch-serve/).
+* Documented at [Watch and Serve Configuration](/docs/watch-serve/).
 
 #### Override Browsersync Server Options {% addedin "0.7.0" %}
 
-* Documented at [Watch and Serve Configuruation](/docs/watch-serve/).
+* Documented at [Watch and Serve Configuration](/docs/watch-serve/).
 
 <!--
 ### Experiments
