@@ -40,7 +40,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-You are responsible for including your favorite PrismJS theme CSS and there are many ways to do that. The default themes are provided by [several CDNs](https://prismjs.com/#basic-usage-cdn) and could be easily included in a base layout, like in the example bellow;
+You are responsible for including your favorite PrismJS theme CSS and there are many ways to do that. The default themes are provided by [several CDNs](https://prismjs.com/#basic-usage-cdn) and could be easily included in a base layout, like in the example below;
 
 ```html
 <html lang="en">
@@ -74,7 +74,11 @@ module.exports = function(eleventyConfig) {
 
     // Added in 3.0, set to true to always wrap lines in `<span class="highlight-line">`
     // The default (false) only wraps when line numbers are passed in.
-    alwaysWrapLineHighlights: false
+    alwaysWrapLineHighlights: false,
+
+    // Added in 3.0.2, set to false to opt-out of pre-highlight removal of leading
+    // and trailing whitespace
+    trim: true
   });
 };
 ```
