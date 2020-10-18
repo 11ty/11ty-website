@@ -78,7 +78,10 @@ module.exports = function(eleventyConfig) {
 
     // Added in 3.0.2, set to false to opt-out of pre-highlight removal of leading
     // and trailing whitespace
-    trim: true
+    trim: true,
+    
+    // Added in 3.0.4, change the separator between lines (you may want "\n")
+    lineSeparator: "<br>",
   });
 };
 ```

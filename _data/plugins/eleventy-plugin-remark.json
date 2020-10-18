@@ -1,0 +1,5 @@
+{
+  "npm": "@fec/eleventy-plugin-remark",
+  "author": "florianeckerstorfer",
+  "description": "Process Markdown files with Remark and use Remark plugins to add new features to your Markdown."
+}
