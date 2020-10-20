@@ -1,0 +1,5 @@
+{
+  "npm": "eleventy-plugin-babel",
+  "author": "ssmith-wombatweb",
+  "description": "Compiles JS with gulp-babel."
+}
