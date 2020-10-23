@@ -199,9 +199,9 @@ To sort descending in your template, you can use a filter to reverse the sort or
 {% raw %}
 ```html
 <ul>
-{%- for post in collections.post | reverse -%}
+{% for post in collections.post | reverse %}
   <li>{{ post.data.title }}</li>
-{%- endfor -%}
+{% endfor %}
 </ul>
 ```
 {% endraw %}
