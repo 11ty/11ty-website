@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-recent-changes",
+	"author": "defaced",
+	"description": "will generate a collection containing your recent commit history."
+}
