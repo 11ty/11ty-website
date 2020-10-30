@@ -64,8 +64,8 @@ module.exports = function(eleventyConfig) {
     // Change which syntax highlighters are installed
     templateFormats: ["*"], // default
 
-    // Or, just njk and md syntax highlighters (do not install liquid)
-    // templateFormats: ["njk", "md"],
+    // Or, just liquid and md syntax highlighters
+    // templateFormats: ["liquid", "md"],
 
     // init callback lets you customize Prism
     init: function({ Prism }) {
