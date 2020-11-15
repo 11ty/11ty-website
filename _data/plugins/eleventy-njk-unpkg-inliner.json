@@ -1,0 +1,5 @@
+{
+  "npm": "eleventy-njk-unpkg-inliner",
+  "author": "jaredgorski",
+  "description": "Inline npm modules from unpkg in Eleventy Nunjucks templates."
+}
