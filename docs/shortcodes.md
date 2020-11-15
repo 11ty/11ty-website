@@ -62,16 +62,20 @@ module.exports = function({ firstName, lastName }) {
   </div>
 </seven-minute-tabs>
 
+{% callout "info" %}
+Markdown files are pre-processed as Liquid templates by default. This means that shortcodes available in Liquid templates are also available in Markdown files. Likewise, if you <a href="/docs/config/#default-template-engine-for-markdown-files">change the template engine for Markdown files</a>, the shortcodes available for that templating language will also be available in Markdown files.
+{% endcallout %}
+
 {% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
   // Liquid Shortcode
   eleventyConfig.addLiquidShortcode("user", function(firstName, lastName) { … });
-  
+
   // Nunjucks Shortcode
   eleventyConfig.addNunjucksShortcode("user", function(firstName, lastName) { … });
-  
+
   // Handlebars Shortcode
   eleventyConfig.addHandlebarsShortcode("user", function(firstName, lastName) { … });
 
@@ -106,7 +110,7 @@ The shortcodes we saw above were nice, I suppose. But really, they are not all t
 ```html
 {% user firstName, lastName %}
   Hello {{ someOtherVariable }}.
-  
+
   Hello {% anotherShortcode %}.
 {% enduser %}
 ```
@@ -120,7 +124,7 @@ The comma between arguments is **required** in Nunjucks but is **optional** in L
 ```html
 {{# user firstName lastName }}
   Hello {{ someOtherVariable }}.
-  
+
   Hello {{ anotherShortcode }}.
 {{/ user }}
 ```
@@ -188,7 +192,7 @@ module.exports = function(eleventyConfig) {
   // * Nunjucks
   // * Handlebars
   // * JavaScript (New in 0.7.0)
-  
+
   // Single Universal Shortcode
   eleventyConfig.addShortcode("myShortcode", function(firstName, lastName) { … });
 
