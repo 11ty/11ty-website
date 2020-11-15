@@ -23,6 +23,7 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 * [A Site for Front-End Development Conferences (Built with 11ty on Netlify) ](https://css-tricks.com/a-site-for-front-end-development-conferences-built-with-11ty-on-netlify/) on {% avatarlocalcache "twitter", "css" %}CSS-Tricks
 * [Video Series: Create an 11ty Theme from a free set of HTML templates](https://www.youtube.com/playlist?list=PLOSLUtJ_J3rrJ1R1qEf8CCEpV3GgbJGNr) by {% avatarlocalcache "twitter", "brob" %} Bryan Robinson
 * [Creating A Blog With Eleventy](https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/) by {% avatarlocalcache "twitter", "jon_keeping" %} Jon Keeping
+* [Getting Started with Eleventy](https://www.sitepoint.com/getting-started-with-eleventy/) by {% avatarlocalcache "twitter", "craigbuckler" %} Craig Buckler
 
 ### Put it on the web
 
@@ -56,4 +57,3 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 ### Tooling Integration
 
 * [Using pHTML with Eleventy](https://github.com/phtmlorg/phtml-11ty) by {% avatarlocalcache "twitter", "jon_neal" %}Jon Neal
-

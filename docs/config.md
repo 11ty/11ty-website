@@ -419,7 +419,7 @@ Transforms can modify a template’s output. For example, use a transform to for
 
 | Transforms |  |
 | --- | --- |
-| _Object Key_ | `filters` _(Deprecated and renamed, use the Configuration API instead)_ |
+| _Object Key_ | `filters` _(Removed in 1.0, use `addTransform` instead)_ |
 | _Default_ | `{}` |
 | _Valid Options_ | Object literal |
 | _Command Line Override_ | _None_ |
@@ -431,6 +431,12 @@ module.exports = function(eleventyConfig) {
 
   // Support for async transforms was added in 0.7.0
   eleventyConfig.addTransform("async-transform-name", async function(content, outputPath) {});
+
+  // Eleventy 1.0+
+  eleventyConfig.addTransform("transform-name", function(content) {
+    console.log( this.inputPath );
+    console.log( this.outputPath );
+  });
 };
 ```
 
@@ -443,6 +449,7 @@ const htmlmin = require("html-minifier");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+    // Eleventy 1.0+: use this.inputPath and this.outputPath instead
     if( outputPath.endsWith(".html") ) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
@@ -472,6 +479,12 @@ Similar to Transforms, Linters are provided to analyze a template’s output wit
 module.exports = function(eleventyConfig) {
   eleventyConfig.addLinter("linter-name", function(content, inputPath, outputPath) {});
   eleventyConfig.addLinter("async-linter-name", async function(content, inputPath, outputPath) {});
+
+  // Eleventy 1.0+
+  eleventyConfig.addLinter("linter-name", function(content) {
+    console.log( this.inputPath );
+    console.log( this.outputPath );
+  });
 };
 ```
 
@@ -487,6 +500,8 @@ This example has been packaged as a plugin in [`eleventy-plugin-inclusive-langua
 module.exports = function(eleventyConfig) {
   eleventyConfig.addLinter("inclusive-language", function(content, inputPath, outputPath) {
     let words = "simply,obviously,basically,of course,clearly,just,everyone knows,however,easy".split(",");
+
+    // Eleventy 1.0+: use this.inputPath and this.outputPath instead
     if( inputPath.endsWith(".md") ) {
       for( let word of words) {
         let regexp = new RegExp("\\b(" + word + ")\\b", "gi");
