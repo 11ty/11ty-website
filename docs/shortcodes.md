@@ -62,6 +62,10 @@ module.exports = function({ firstName, lastName }) {
   </div>
 </seven-minute-tabs>
 
+{% callout "info" %}
+Markdown files are pre-processed as Liquid templates by default. This means that shortcodes available in Liquid templates are also available in Markdown files. Likewise, if you <a href="/docs/config/#default-template-engine-for-markdown-files">change the template engine for Markdown files</a>, the shortcodes available for that templating language will also be available in Markdown files.
+{% endcallout %}
+
 {% codetitle ".eleventy.js" %}
 
 ```js
