@@ -171,17 +171,3 @@ Given that global copy of all content in the directory may be a security risk, w
 # Copies ALL files in the input directory to the output directory
 npx @11ty/eleventy --passthroughall
 ```
-
-## Disabling Passthrough File Copy
-
-If you’d like to disable passthrough file copy, use `passthroughFileCopy: false`.
-
-{% callout "info" %}Note that this will disable both automatic and manual passthrough copy (the <code>addPassthroughCopy</code> configuration API method).{% endcallout %}
-
-```js
-module.exports = function(eleventyConfig) {
-  return {
-    passthroughFileCopy: false
-  };
-};
-```

@@ -61,10 +61,10 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight, {
 
-    // Change which syntax highlighters are installed
+    // Change which Eleventy template formats use syntax highlighters
     templateFormats: ["*"], // default
 
-    // Or, just njk and md syntax highlighters (do not install liquid)
+    // e.g. Use syntax highlighters in njk and md Eleventy templates (not liquid)
     // templateFormats: ["njk", "md"],
 
     // init callback lets you customize Prism
