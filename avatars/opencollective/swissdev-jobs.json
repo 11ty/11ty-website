@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/a1d8113c-90.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/a1d8113c-90.jpeg 90w",
+      "outputPath": "img/avatars/opencollective/a1d8113c-90.jpeg",
+      "size": 1147
+    }
+  ],
+  "slug": "swissdev-jobs"
+}

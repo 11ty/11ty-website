@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/15150b0e.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/15150b0e.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/15150b0e.jpeg",
+      "size": 1504
+    }
+  ],
+  "slug": "ingo-steinke"
+}

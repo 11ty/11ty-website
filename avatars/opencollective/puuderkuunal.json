@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 70,
+      "url": "/img/avatars/opencollective/bcc4cd2e-90.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/bcc4cd2e-90.jpeg 90w",
+      "outputPath": "img/avatars/opencollective/bcc4cd2e-90.jpeg",
+      "size": 311
+    }
+  ],
+  "slug": "puuderkuunal"
+}

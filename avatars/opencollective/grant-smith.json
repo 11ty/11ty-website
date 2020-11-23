@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/2b9f8ad3.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/2b9f8ad3.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/2b9f8ad3.jpeg",
+      "size": 2486
+    }
+  ],
+  "slug": "grant-smith"
+}
