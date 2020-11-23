@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/38c19676.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/38c19676.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/38c19676.jpeg",
+      "size": 1787
+    }
+  ],
+  "slug": "angelique-weger"
+}

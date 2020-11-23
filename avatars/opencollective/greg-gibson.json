@@ -1,0 +1,15 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 80,
+      "height": 80,
+      "url": "/img/avatars/opencollective/ac92e209.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/ac92e209.jpeg 80w",
+      "outputPath": "img/avatars/opencollective/ac92e209.jpeg",
+      "size": 1969
+    }
+  ],
+  "slug": "greg-gibson"
+}

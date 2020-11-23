@@ -8,7 +8,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/twitter/e56b5d2e-90.webp 90w",
       "outputPath": "img/avatars/twitter/e56b5d2e-90.webp",
-      "size": 1580
+      "size": 1516
     }
   ],
   "jpeg": [
@@ -20,7 +20,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/twitter/e56b5d2e-90.jpeg 90w",
       "outputPath": "img/avatars/twitter/e56b5d2e-90.jpeg",
-      "size": 2233
+      "size": 2207
     }
   ]
 }

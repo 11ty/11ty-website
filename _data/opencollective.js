@@ -5,6 +5,9 @@ const FilteredProfiles = [
 	"https://opencollective.com/baocasino", // gambling
 	"https://opencollective.com/woorke", // sells social media accounts
 	"https://opencollective.com/suominettikasinot24", // gambling
+	"https://opencollective.com/masonslots", //gambling
+	"https://opencollective.com/trust-my-paper", // selling term papers
+	"https://opencollective.com/kiirlaenud", // some quick loans site
 ]
 
 function isMonthlyBacker(backer) {

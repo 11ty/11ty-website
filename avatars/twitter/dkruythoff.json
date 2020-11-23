@@ -1,0 +1,26 @@
+{
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/twitter/d224681f-90.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/twitter/d224681f-90.webp 90w",
+      "outputPath": "img/avatars/twitter/d224681f-90.webp",
+      "size": 1624
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/twitter/d224681f-90.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/twitter/d224681f-90.jpeg 90w",
+      "outputPath": "img/avatars/twitter/d224681f-90.jpeg",
+      "size": 2331
+    }
+  ]
+}
