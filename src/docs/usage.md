@@ -27,7 +27,7 @@ eleventy
 npx @11ty/eleventy --input=. --output=_site
 ```
 
-Read more about [`--input`](/docs/config/#input-directory) and [`--output`](/docs/config/#output-directory).
+Read more about [`--input`](/docs/config/#input-directory) and [`--output`](/docs/config/#output-directory). Note that setting the input and output directories via a [config](https://www.11ty.dev/docs/config/) file is more reliable, especially when using tools like [`netlify dev`](https://docs.netlify.com/cli/get-started/#run-a-local-development-environment).
 
 A hypothetical `template.md` in the current directory would be rendered to `_site/template/index.html`. Read more at [Permalinks](/docs/permalinks/).
 
