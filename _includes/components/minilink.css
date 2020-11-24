@@ -86,6 +86,11 @@ h4 .minilink {
 	margin: 0 4px;
 	background-color: #fff;
 }
+@media (prefers-color-scheme: dark) {
+  .minilink-addedin.minilink-inline {
+		background-color: #000;
+	}
+}
 
 .minilink-lower {
 	text-transform: none;
