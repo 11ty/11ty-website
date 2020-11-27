@@ -2,7 +2,6 @@
 	display: block;
 	width: 100%;
 	background-color: #111;
-	font-size: 0.75em; /* 12px /16 */
 	font-weight: 500;
 	padding: .25em 1em;
 	text-align: center;
@@ -12,8 +11,8 @@
 }
 @media (min-width: 48em) { /* 768px */
 	.announcement {
-		font-size: 0.875em; /* 14px /16 */
-		font-size: clamp(0.875em, 1.8vw, 1.25em);
+		font-size: 1em;
+		font-size: clamp(1em, 2vw, 1.25em);
 	}
 }
 .announcement-lo {
@@ -43,12 +42,11 @@
 	background-color: rgba(255,255,255,.04);
 	border: none;
 	color: inherit;
-	font-size: 0.75em; /* 12px /16 */
+	font-size: inherit;
 	font-weight: 100;
 	flex-grow: 999;
 	padding-top: .5em;
 	padding-bottom: .5em;
-	text-transform: uppercase;
 	letter-spacing: .5px;
 }
 .announcement-close:hover,
