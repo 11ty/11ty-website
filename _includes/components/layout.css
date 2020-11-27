@@ -81,6 +81,10 @@
 .lo-c-center > .lo {
   flex-grow: 1;
 }
+.lo-c-stretch {
+  display: flex;
+  align-items: stretch;
+}
 
 .lo-carousel {
   flex-wrap: nowrap;
