@@ -23,7 +23,7 @@ But, after all that, you can still add a Custom Tag using the [Configuration API
 
 ## LiquidJS example
 
-* [LiquidJS: Tags](https://github.com/harttle/liquidjs#register-tags)
+* [LiquidJS: Tags](https://liquidjs.com/tutorials/register-filters-tags.html)
 
 {% codetitle ".eleventy.js" %}
 
@@ -50,7 +50,7 @@ module.exports = function(eleventyConfig) {
 ```
 {% endraw %}
 
-See all of the [built-in tag implementations for LiquidJS](https://github.com/harttle/liquidjs/wiki/Builtin-Tags).
+See all of the [built-in tag implementations for LiquidJS](https://liquidjs.com/tags/overview.html).
 
 ## Nunjucks example {% addedin "0.5.0" %}
 
