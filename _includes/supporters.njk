@@ -1,5 +1,5 @@
 <div class="supporters-gold lo">
-	{%- for supporter in opencollective.supporters %}{% if supporter.tier == "Gold Sponsor" -%}
+	{%- for supporter in opencollective.supporters %}{% if supporter.tier.slug == "gold-sponsor" -%}
 	{%- set nameToSlug = supporter.name | slug | lower -%}
 	<div class="lo-c{% if opencollectiveExtra[nameToSlug].containerClass %} {{ opencollectiveExtra[nameToSlug].containerClass }}{% endif %}">
 		<a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}" rel="sponsored">{% if opencollectiveExtra[nameToSlug].icon %}{{ opencollectiveExtra[nameToSlug].icon | safe }}<span class="sr-only">{{ supporter.name }}</span>{% else %}{% avatarlocalcache "opencollective", nameToSlug %}{{ supporter.name }}{% endif %}</a>
