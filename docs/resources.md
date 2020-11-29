@@ -26,6 +26,10 @@ Eleventy facilitates JAMstack sites—but you maintain full control over the Jav
 
 <!-- You’re safe here. But a static site generator that is Progressive Enhancement friendly is only the beginning. -->
 
+The idea that _content_ should be the priority for a website's development. In other words, start with only essential content and functionality that works with as many users as possible, and then progressively enhance from there. 
+
+As stated in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement): "Special notice should be taken of accessibility. Acceptable alternatives should be provided where possible."
+
 ## Data-Driven
 
 Make components and markup data-driven so that you don’t have a bunch of one-off copy-pasted HTML instances littered throughout your project.
