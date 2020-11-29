@@ -10,6 +10,7 @@ const FilteredProfiles = [
 	"kiirlaenud", // some quick loans site
 ]
 
+// TODO account for yearly
 function isMonthlyOrder(order) {
 	return order.frequency === 'MONTHLY' && order.status === 'ACTIVE';
 }
@@ -17,7 +18,14 @@ function isMonthlyOrder(order) {
 function getUniqueContributors(orders) {
 	let uniqueContributors = {};
 	for(let order of orders) {
-		uniqueContributors[order.slug] = order;
+    if(uniqueContributors[order.slug]) {
+      // if order already exists, overwrite only if existing is not an active monthly contribution
+      if(!isMonthlyOrder(uniqueContributors[order.slug])) {
+        uniqueContributors[order.slug] = order;
+      }
+    } else {
+      uniqueContributors[order.slug] = order;
+    }
 	}
 	return Object.values(uniqueContributors);
 }
@@ -42,16 +50,17 @@ module.exports = async function() {
 			order.slug = order.fromAccount.slug;
 			order.image = order.fromAccount.imageUrl;
 			order.website = order.fromAccount.website;
-			order.profile = `https://opencollective.com/${order.slug}`;
+      order.profile = `https://opencollective.com/${order.slug}`;
+      order.totalAmountDonated = order.totalDonations.value;
+      order.isMonthly = isMonthlyOrder(order);
 			return order;
 		}).filter(order => {
 			return FilteredProfiles.indexOf(order.slug) === -1;
 		});
-
 		orders = getUniqueContributors(orders);
 
 		orders.sort(function(a, b) {
-			// Sort by total amount donated (desc)
+      // Sort by total amount donated (desc)
 			return b.totalDonations.value - a.totalDonations.value;
 		});
 
