@@ -71,5 +71,9 @@ title: Data from Google Sheets
 </main>
 ```
 This example renders the Google Sheet data on the page as follows:
+```
+* location: USA, name: TECI blog, description: Description1, link: Link
+* location: USA, name: Name2, description: Description2, link: Link2
+* location: Japan, name: Name3, description: Description3, link: Link3
 
-![image](https://user-images.githubusercontent.com/11214905/93403076-1d3d9700-f84c-11ea-8f1e-a122e0be4267.png)
+```
