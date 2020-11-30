@@ -486,7 +486,7 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addFilter("supportersFacepile", (supporters) => {
-		return supporters.filter(supporter => supporter.role === "BACKER" && supporter.tier && supporter.isActive && supporter.tier != "Gold Sponsor");
+		return supporters.filter(supporter => supporter.status === 'ACTIVE' && supporter.tier && supporter.tier.slug !== "gold-sponsor");
 	});
 
 	// Sort an object that has `order` props in values. Return an array

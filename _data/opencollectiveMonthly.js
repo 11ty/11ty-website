@@ -4,27 +4,28 @@ module.exports = async function() {
 	const opencollective = await getOpenCollectiveData();
 
 	let backers = opencollective.supporters.filter(supporter => {
-		return supporter.role === "BACKER" && supporter.tier && supporter.isActive;
+		return (supporter.frequency === 'MONTHLY' || supporter.frequency === 'YEARLY') &&
+			supporter.status === 'ACTIVE';
 	});
 
 	let count = 0;
 	let sorted = [];
 	let buckets = {};
 	let monthlyDonations = 0;
+	let yearlyDonations = 0;
 	for(let backer of backers) {
-	// hardcoded incorrect API for https://opencollective.com/piccalilli_ silver sponsor still active
-		if(backer.profile === "https://opencollective.com/piccalilli_" && backer.lastTransactionAmount === 100) {
-			continue;
+		let amount = backer.amount.value;
+		if(backer.frequency === "YEARLY") {
+			amount = amount / 12;
 		}
-
-		sorted.push(backer.lastTransactionAmount);
-		monthlyDonations += backer.lastTransactionAmount;
+		sorted.push(amount);
+		monthlyDonations += amount;
 		count++;
 
-		if(!buckets[backer.lastTransactionAmount]) {
-			buckets[backer.lastTransactionAmount] = 0;
+		if(!buckets[amount]) {
+			buckets[amount] = 0;
 		}
-		buckets[backer.lastTransactionAmount]++;
+		buckets[amount]++;
 	}
 
 	sorted.sort((a, b) => a - b);
