@@ -59,7 +59,7 @@ query eleventyBackers {
             let slug = slugify(supporter.account.name).toLowerCase();
             console.log( `Match found for ${supporter.account.email}!` );
             if(!avatarmap[slug]) {
-              console.log(`Could not find avatar in avatarmap.json for ${slug}: ${avatarmap}`);
+              console.log(`Could not find avatar in avatarmap.json for ${slug}: ${JSON.stringify(avatarmap)}`);
             }
             return callback(null, {
               statusCode: 200,
