@@ -8,11 +8,10 @@ const FilteredProfiles = [
 	"masonslots", //gambling
 	"trust-my-paper", // selling term papers
 	"kiirlaenud", // some quick loans site
-]
+];
 
-// TODO account for yearly
-function isMonthlyOrder(order) {
-	return order.frequency === 'MONTHLY' && order.status === 'ACTIVE';
+function isMonthlyOrYearlyOrder(order) {
+	return (order.frequency === 'MONTHLY' || order.frequency === 'YEARLY') && order.status === 'ACTIVE';
 }
 
 function getUniqueContributors(orders) {
@@ -20,7 +19,7 @@ function getUniqueContributors(orders) {
 	for(let order of orders) {
     if(uniqueContributors[order.slug]) {
       // if order already exists, overwrite only if existing is not an active monthly contribution
-      if(!isMonthlyOrder(uniqueContributors[order.slug])) {
+      if(!isMonthlyOrYearlyOrder(uniqueContributors[order.slug])) {
         uniqueContributors[order.slug] = order;
       }
     } else {
@@ -52,7 +51,7 @@ module.exports = async function() {
 			order.website = order.fromAccount.website;
       order.profile = `https://opencollective.com/${order.slug}`;
       order.totalAmountDonated = order.totalDonations.value;
-      order.isMonthly = isMonthlyOrder(order);
+      order.isMonthly = isMonthlyOrYearlyOrder(order);
 			return order;
 		}).filter(order => {
 			return FilteredProfiles.indexOf(order.slug) === -1;
@@ -67,7 +66,7 @@ module.exports = async function() {
 		let backers = orders.length;
 
 		let monthlyBackers = orders.filter(function(order) {
-			return isMonthlyOrder(order);
+			return isMonthlyOrYearlyOrder(order);
 		}).length;
 
 		// if(process.env.ELEVENTY_PRODUCTION) {

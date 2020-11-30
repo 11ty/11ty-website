@@ -4,22 +4,28 @@ module.exports = async function() {
 	const opencollective = await getOpenCollectiveData();
 
 	let backers = opencollective.supporters.filter(supporter => {
-		return supporter.frequency === 'MONTHLY' && supporter.status === 'ACTIVE';
+		return (supporter.frequency === 'MONTHLY' || supporter.frequency === 'YEARLY') &&
+			supporter.status === 'ACTIVE';
 	});
 
 	let count = 0;
 	let sorted = [];
 	let buckets = {};
 	let monthlyDonations = 0;
+	let yearlyDonations = 0;
 	for(let backer of backers) {
-		sorted.push(backer.amount.value);
-		monthlyDonations += backer.amount.value;
+		let amount = backer.amount.value;
+		if(backer.frequency === "YEARLY") {
+			amount = amount / 12;
+		}
+		sorted.push(amount);
+		monthlyDonations += amount;
 		count++;
 
-		if(!buckets[backer.amount.value]) {
-			buckets[backer.amount.value] = 0;
+		if(!buckets[amount]) {
+			buckets[amount] = 0;
 		}
-		buckets[backer.amount.value]++;
+		buckets[amount]++;
 	}
 
 	sorted.sort((a, b) => a - b);
