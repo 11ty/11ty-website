@@ -109,7 +109,7 @@ class EleventySupporter {
   addAvatars(user) {
     let avatar = document.createElement("img");
     avatar.classList.add("supporters-avatar", "avatar");
-    if(user.avatar) {
+    if(user.avatar && user.avatar !== "undefined") {
       avatar.setAttribute("src", user.avatar);
     } else {
       // Deprecated, requires _redirects file
