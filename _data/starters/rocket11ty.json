@@ -3,5 +3,6 @@
 	"name": "Rocket11ty",
 	"description": "A simple 11ty blog with Halfmoon CSS based on 11ty/eleventy-base-blog",
 	"author": "aboutDavid",
-	"demo": "https://rocket11ty.netlify.app"
+	"demo": "https://rocket11ty.netlify.app",
+	"excludedFromLeaderboards": true
 }

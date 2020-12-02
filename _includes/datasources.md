@@ -6,3 +6,4 @@ When the data is merged in the {% if page.url != "/docs/data-cascade/" %}[Eleven
 1. [Template Data Files](/docs/data-template-dir/){% if page.url == "/docs/data-template-dir/" %} ⬅{% endif %}
 1. [Directory Data Files (and ascending Parent Directories)](/docs/data-template-dir/){% if page.url == "/docs/data-template-dir/" %} ⬅{% endif %}
 1. [Global Data Files](/docs/data-global/){% if page.url == "/docs/data-global/" %} ⬅{% endif %}
+1. [Custom Global Data](/docs/data-global-custom/){% if page.url == "/docs/data-global-custom/" %} ⬅{% endif %}
