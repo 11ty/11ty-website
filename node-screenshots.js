@@ -1,5 +1,4 @@
 const puppeteer = require("puppeteer");
-const slugify = require("slugify");
 const sharp = require("sharp");
 const fastglob = require("fast-glob");
 
@@ -15,7 +14,8 @@ async function pause(time) {
 
 async function screenshot(url, fileSlug) {
 	const browser = await puppeteer.launch();
-	const page = await browser.newPage();
+  const page = await browser.newPage();
+  page.setJavaScriptEnabled(false);
 	await page.goto(url, {
     waitUntil: ["load", "networkidle0"]
   });
