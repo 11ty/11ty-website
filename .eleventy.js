@@ -15,6 +15,7 @@ const minificationLocalPlugin = require("./config/minification");
 const getAuthors = require("./config/getAuthorsFromSites");
 const cleanName = require("./config/cleanAuthorName");
 const objectHas = require("./config/object-has");
+const lodashGet = require("lodash/get");
 
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);
@@ -404,14 +405,19 @@ ${text.trim()}
 		}
 	});
 
-	eleventyConfig.addFilter("findBy", (data, key, value) => {
+	eleventyConfig.addFilter("findBy", (data, path, value) => {
 		return data.filter(entry => {
-			if(!key || !value || !entry[key]) {
+			if(!path || !value) {
+				return false;
+			}
+
+			let gotten = lodashGet(entry, path);
+			if(!gotten) {
 				return false;
 			}
 
 			let valueLower = value.toLowerCase();
-			let dataLower = entry[key].toLowerCase();
+			let dataLower = gotten.toLowerCase();
 			if(valueLower === dataLower) {
 				return true;
 			}

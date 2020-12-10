@@ -17,14 +17,14 @@ function isMonthlyOrYearlyOrder(order) {
 function getUniqueContributors(orders) {
 	let uniqueContributors = {};
 	for(let order of orders) {
-    if(uniqueContributors[order.slug]) {
-      // if order already exists, overwrite only if existing is not an active monthly contribution
-      if(!isMonthlyOrYearlyOrder(uniqueContributors[order.slug])) {
-        uniqueContributors[order.slug] = order;
-      }
-    } else {
-      uniqueContributors[order.slug] = order;
-    }
+		if(uniqueContributors[order.slug]) {
+			// if order already exists, overwrite only if existing is not an active monthly contribution
+			if(!isMonthlyOrYearlyOrder(uniqueContributors[order.slug])) {
+				uniqueContributors[order.slug] = order;
+			}
+		} else {
+			uniqueContributors[order.slug] = order;
+		}
 	}
 	return Object.values(uniqueContributors);
 }
@@ -47,11 +47,12 @@ module.exports = async function() {
 		let orders = json.nodes.map(order => {
 			order.name = order.fromAccount.name;
 			order.slug = order.fromAccount.slug;
+			order.twitter = order.fromAccount.twitterHandle;
 			order.image = order.fromAccount.imageUrl;
 			order.website = order.fromAccount.website;
-      order.profile = `https://opencollective.com/${order.slug}`;
-      order.totalAmountDonated = order.totalDonations.value;
-      order.isMonthly = isMonthlyOrYearlyOrder(order);
+			order.profile = `https://opencollective.com/${order.slug}`;
+			order.totalAmountDonated = order.totalDonations.value;
+			order.isMonthly = isMonthlyOrYearlyOrder(order);
 			return order;
 		}).filter(order => {
 			return FilteredProfiles.indexOf(order.slug) === -1;
@@ -59,7 +60,7 @@ module.exports = async function() {
 		orders = getUniqueContributors(orders);
 
 		orders.sort(function(a, b) {
-      // Sort by total amount donated (desc)
+			// Sort by total amount donated (desc)
 			return b.totalDonations.value - a.totalDonations.value;
 		});
 

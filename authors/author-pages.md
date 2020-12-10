@@ -14,7 +14,7 @@ css:
   - components/page-sites.css
 ---
 {%- set twitterUrl = "https://twitter.com/" + author.name %}
-{%- set supporter = opencollective.supporters | findBy("twitter", twitterUrl) | last -%}
+{%- set supporter = opencollective.supporters | findBy("twitter", author.name) | last -%}
 {%- set displayName = supporter.name or author.name %}
 
 # {{ displayName }}
