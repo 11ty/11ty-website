@@ -77,6 +77,7 @@
     "@11ty/logo": "2.0.4",
     "herald-of-the-dog": "^1.0.2",
     "instant.page": "3.0.0",
+    "lodash": "^4.17.20",
     "prismjs": "1.21.0",
     "speedlify-score": "^2.0.1"
   }
