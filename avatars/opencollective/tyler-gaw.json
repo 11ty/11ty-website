@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/b080d70d.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "702755ce-90.jpeg",
+      "outputPath": "img/avatars/opencollective/702755ce-90.jpeg",
+      "url": "/img/avatars/opencollective/702755ce-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/b080d70d.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/b080d70d.jpeg",
-      "size": 1658
+      "srcset": "/img/avatars/opencollective/702755ce-90.jpeg 90w",
+      "size": 1948
     }
   ],
   "slug": "tyler-gaw"

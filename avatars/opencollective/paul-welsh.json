@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 120,
-      "url": "/img/avatars/opencollective/976d4388-90.jpeg",
+      "filename": "1751c7a6-90.jpeg",
+      "outputPath": "img/avatars/opencollective/1751c7a6-90.jpeg",
+      "url": "/img/avatars/opencollective/1751c7a6-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/976d4388-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/976d4388-90.jpeg",
-      "size": 3928
+      "srcset": "/img/avatars/opencollective/1751c7a6-90.jpeg 90w",
+      "size": 3973
     }
   ],
   "slug": "paul-welsh"

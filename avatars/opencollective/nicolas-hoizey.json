@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/2f08bfc1-90.jpeg",
+      "filename": "5174bc0b-90.jpeg",
+      "outputPath": "img/avatars/opencollective/5174bc0b-90.jpeg",
+      "url": "/img/avatars/opencollective/5174bc0b-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/2f08bfc1-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/2f08bfc1-90.jpeg",
-      "size": 2491
+      "srcset": "/img/avatars/opencollective/5174bc0b-90.jpeg 90w",
+      "size": 2479
     }
   ],
   "slug": "nicolas-hoizey"

@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/49b4681a.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "18321e58-90.jpeg",
+      "outputPath": "img/avatars/opencollective/18321e58-90.jpeg",
+      "url": "/img/avatars/opencollective/18321e58-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/49b4681a.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/49b4681a.jpeg",
-      "size": 2901
+      "srcset": "/img/avatars/opencollective/18321e58-90.jpeg 90w",
+      "size": 3084
     }
   ],
   "slug": "brian-koser"

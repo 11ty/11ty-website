@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/1e1f1f6c-90.jpeg",
+      "filename": "cfb2495e-90.jpeg",
+      "outputPath": "img/avatars/opencollective/cfb2495e-90.jpeg",
+      "url": "/img/avatars/opencollective/cfb2495e-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/1e1f1f6c-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/1e1f1f6c-90.jpeg",
-      "size": 2500
+      "srcset": "/img/avatars/opencollective/cfb2495e-90.jpeg 90w",
+      "size": 2587
     }
   ],
   "slug": "flaki"

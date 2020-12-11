@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/4a24579a-90.jpeg",
+      "filename": "869e6849-90.jpeg",
+      "outputPath": "img/avatars/opencollective/869e6849-90.jpeg",
+      "url": "/img/avatars/opencollective/869e6849-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/4a24579a-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/4a24579a-90.jpeg",
-      "size": 2527
+      "srcset": "/img/avatars/opencollective/869e6849-90.jpeg 90w",
+      "size": 2629
     }
   ],
   "slug": "ahmad-ajmi"

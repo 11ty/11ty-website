@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/e7ba9f1b-90.jpeg",
+      "filename": "2f65598-90.jpeg",
+      "outputPath": "img/avatars/opencollective/2f65598-90.jpeg",
+      "url": "/img/avatars/opencollective/2f65598-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/e7ba9f1b-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/e7ba9f1b-90.jpeg",
-      "size": 2023
+      "srcset": "/img/avatars/opencollective/2f65598-90.jpeg 90w",
+      "size": 2031
     }
   ],
   "slug": "william-riley"

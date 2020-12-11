@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/b38ef325.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "f5780c74-90.jpeg",
+      "outputPath": "img/avatars/opencollective/f5780c74-90.jpeg",
+      "url": "/img/avatars/opencollective/f5780c74-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/b38ef325.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/b38ef325.jpeg",
-      "size": 1997
+      "srcset": "/img/avatars/opencollective/f5780c74-90.jpeg 90w",
+      "size": 2194
     }
   ],
   "slug": "pavel-fomchenkov"

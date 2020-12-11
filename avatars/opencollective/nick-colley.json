@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/f4ab45bb-90.jpeg",
+      "filename": "f35fc5ca-90.jpeg",
+      "outputPath": "img/avatars/opencollective/f35fc5ca-90.jpeg",
+      "url": "/img/avatars/opencollective/f35fc5ca-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/f4ab45bb-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/f4ab45bb-90.jpeg",
-      "size": 3343
+      "srcset": "/img/avatars/opencollective/f35fc5ca-90.jpeg 90w",
+      "size": 3314
     }
   ],
   "slug": "nick-colley"

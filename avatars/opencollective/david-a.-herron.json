@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/ddee8214-90.jpeg",
+      "filename": "3863e3b3-90.jpeg",
+      "outputPath": "img/avatars/opencollective/3863e3b3-90.jpeg",
+      "url": "/img/avatars/opencollective/3863e3b3-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/ddee8214-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/ddee8214-90.jpeg",
-      "size": 2378
+      "srcset": "/img/avatars/opencollective/3863e3b3-90.jpeg 90w",
+      "size": 2473
     }
   ],
   "slug": "david-a.-herron"

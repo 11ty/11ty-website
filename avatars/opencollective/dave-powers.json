@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/74c9afbf.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "3e4ea65b-90.jpeg",
+      "outputPath": "img/avatars/opencollective/3e4ea65b-90.jpeg",
+      "url": "/img/avatars/opencollective/3e4ea65b-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/74c9afbf.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/74c9afbf.jpeg",
-      "size": 2322
+      "srcset": "/img/avatars/opencollective/3e4ea65b-90.jpeg 90w",
+      "size": 2602
     }
   ],
   "slug": "dave-powers"

@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/40e8d3d5-90.jpeg",
+      "filename": "cafb38c-90.jpeg",
+      "outputPath": "img/avatars/opencollective/cafb38c-90.jpeg",
+      "url": "/img/avatars/opencollective/cafb38c-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/40e8d3d5-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/40e8d3d5-90.jpeg",
-      "size": 2110
+      "srcset": "/img/avatars/opencollective/cafb38c-90.jpeg 90w",
+      "size": 2157
     }
   ],
   "slug": "corina-rudel"

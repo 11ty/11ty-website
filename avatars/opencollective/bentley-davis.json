@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/7f7e98e9-90.jpeg",
+      "filename": "b73cd27b-90.jpeg",
+      "outputPath": "img/avatars/opencollective/b73cd27b-90.jpeg",
+      "url": "/img/avatars/opencollective/b73cd27b-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/7f7e98e9-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/7f7e98e9-90.jpeg",
-      "size": 2043
+      "srcset": "/img/avatars/opencollective/b73cd27b-90.jpeg 90w",
+      "size": 2039
     }
   ],
   "slug": "bentley-davis"

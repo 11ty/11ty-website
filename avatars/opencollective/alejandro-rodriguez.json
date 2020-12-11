@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/88126cb0-90.jpeg",
+      "filename": "667af8f1-90.jpeg",
+      "outputPath": "img/avatars/opencollective/667af8f1-90.jpeg",
+      "url": "/img/avatars/opencollective/667af8f1-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/88126cb0-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/88126cb0-90.jpeg",
-      "size": 2594
+      "srcset": "/img/avatars/opencollective/667af8f1-90.jpeg 90w",
+      "size": 2603
     }
   ],
   "slug": "alejandro-rodriguez"

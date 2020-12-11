@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/38c19676.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "48f6582b-90.jpeg",
+      "outputPath": "img/avatars/opencollective/48f6582b-90.jpeg",
+      "url": "/img/avatars/opencollective/48f6582b-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/38c19676.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/38c19676.jpeg",
-      "size": 1787
+      "srcset": "/img/avatars/opencollective/48f6582b-90.jpeg 90w",
+      "size": 2030
     }
   ],
   "slug": "angelique-weger"

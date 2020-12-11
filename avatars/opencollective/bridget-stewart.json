@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/a9f9863a-90.jpeg",
+      "filename": "1c71f8ef-90.jpeg",
+      "outputPath": "img/avatars/opencollective/1c71f8ef-90.jpeg",
+      "url": "/img/avatars/opencollective/1c71f8ef-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/a9f9863a-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/a9f9863a-90.jpeg",
-      "size": 2569
+      "srcset": "/img/avatars/opencollective/1c71f8ef-90.jpeg 90w",
+      "size": 2563
     }
   ],
   "slug": "bridget-stewart"

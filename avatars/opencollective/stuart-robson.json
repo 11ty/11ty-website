@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/86d1d6f0.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "11543027-90.jpeg",
+      "outputPath": "img/avatars/opencollective/11543027-90.jpeg",
+      "url": "/img/avatars/opencollective/11543027-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/86d1d6f0.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/86d1d6f0.jpeg",
-      "size": 2401
+      "srcset": "/img/avatars/opencollective/11543027-90.jpeg 90w",
+      "size": 2601
     }
   ],
   "slug": "stuart-robson"

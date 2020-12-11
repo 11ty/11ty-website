@@ -1,0 +1,16 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "8bf7b18f-90.jpeg",
+      "outputPath": "img/avatars/opencollective/8bf7b18f-90.jpeg",
+      "url": "/img/avatars/opencollective/8bf7b18f-90.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/8bf7b18f-90.jpeg 90w",
+      "size": 870
+    }
+  ],
+  "slug": "kasper-storgaard"
+}

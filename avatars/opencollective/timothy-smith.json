@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/f8f40e7d.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "42015954-90.jpeg",
+      "outputPath": "img/avatars/opencollective/42015954-90.jpeg",
+      "url": "/img/avatars/opencollective/42015954-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/f8f40e7d.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/f8f40e7d.jpeg",
-      "size": 1772
+      "srcset": "/img/avatars/opencollective/42015954-90.jpeg 90w",
+      "size": 2054
     }
   ],
   "slug": "timothy-smith"

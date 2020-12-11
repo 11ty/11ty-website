@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/ab3758e6-90.jpeg",
+      "filename": "f1038d01-90.jpeg",
+      "outputPath": "img/avatars/opencollective/f1038d01-90.jpeg",
+      "url": "/img/avatars/opencollective/f1038d01-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/ab3758e6-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/ab3758e6-90.jpeg",
-      "size": 1494
+      "srcset": "/img/avatars/opencollective/f1038d01-90.jpeg 90w",
+      "size": 1480
     }
   ],
   "slug": "hiddedevries.nl"

@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/baddaff7-90.jpeg",
+      "filename": "6e6159fa-90.jpeg",
+      "outputPath": "img/avatars/opencollective/6e6159fa-90.jpeg",
+      "url": "/img/avatars/opencollective/6e6159fa-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/baddaff7-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/baddaff7-90.jpeg",
-      "size": 2074
+      "srcset": "/img/avatars/opencollective/6e6159fa-90.jpeg 90w",
+      "size": 2147
     }
   ],
   "slug": "ana-rodrigues"

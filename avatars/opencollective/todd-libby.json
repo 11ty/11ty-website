@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/653a3094.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "15e83902-90.jpeg",
+      "outputPath": "img/avatars/opencollective/15e83902-90.jpeg",
+      "url": "/img/avatars/opencollective/15e83902-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/653a3094.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/653a3094.jpeg",
-      "size": 1254
+      "srcset": "/img/avatars/opencollective/15e83902-90.jpeg 90w",
+      "size": 1491
     }
   ],
   "slug": "todd-libby"

@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/83089a30-90.jpeg",
+      "filename": "eda0860b-90.jpeg",
+      "outputPath": "img/avatars/opencollective/eda0860b-90.jpeg",
+      "url": "/img/avatars/opencollective/eda0860b-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/83089a30-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/83089a30-90.jpeg",
-      "size": 2902
+      "srcset": "/img/avatars/opencollective/eda0860b-90.jpeg 90w",
+      "size": 2915
     }
   ],
   "slug": "double-r-webdevelopment"

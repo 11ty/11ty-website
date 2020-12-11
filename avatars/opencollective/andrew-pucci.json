@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/8c2b3f4f-90.jpeg",
+      "filename": "8015e88b-90.jpeg",
+      "outputPath": "img/avatars/opencollective/8015e88b-90.jpeg",
+      "url": "/img/avatars/opencollective/8015e88b-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/8c2b3f4f-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/8c2b3f4f-90.jpeg",
-      "size": 2571
+      "srcset": "/img/avatars/opencollective/8015e88b-90.jpeg 90w",
+      "size": 2585
     }
   ],
   "slug": "andrew-pucci"

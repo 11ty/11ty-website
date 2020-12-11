@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/83de8382.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "43234ebc-90.jpeg",
+      "outputPath": "img/avatars/opencollective/43234ebc-90.jpeg",
+      "url": "/img/avatars/opencollective/43234ebc-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/83de8382.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/83de8382.jpeg",
-      "size": 2141
+      "srcset": "/img/avatars/opencollective/43234ebc-90.jpeg 90w",
+      "size": 2425
     }
   ],
   "slug": "bryan-robinson"

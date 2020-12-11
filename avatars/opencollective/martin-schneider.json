@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/c3092680-90.jpeg",
+      "filename": "26ed6fe2-90.jpeg",
+      "outputPath": "img/avatars/opencollective/26ed6fe2-90.jpeg",
+      "url": "/img/avatars/opencollective/26ed6fe2-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/c3092680-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/c3092680-90.jpeg",
-      "size": 2420
+      "srcset": "/img/avatars/opencollective/26ed6fe2-90.jpeg 90w",
+      "size": 2425
     }
   ],
   "slug": "martin-schneider"

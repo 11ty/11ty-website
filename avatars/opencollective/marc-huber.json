@@ -1,0 +1,16 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "db7a602f-90.jpeg",
+      "outputPath": "img/avatars/opencollective/db7a602f-90.jpeg",
+      "url": "/img/avatars/opencollective/db7a602f-90.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/db7a602f-90.jpeg 90w",
+      "size": 968
+    }
+  ],
+  "slug": "marc-huber"
+}

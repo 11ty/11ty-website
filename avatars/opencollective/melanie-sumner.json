@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/d0d8d7a2-90.jpeg",
+      "filename": "ecab1d4a-90.jpeg",
+      "outputPath": "img/avatars/opencollective/ecab1d4a-90.jpeg",
+      "url": "/img/avatars/opencollective/ecab1d4a-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/d0d8d7a2-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/d0d8d7a2-90.jpeg",
-      "size": 2428
+      "srcset": "/img/avatars/opencollective/ecab1d4a-90.jpeg 90w",
+      "size": 2434
     }
   ],
   "slug": "melanie-sumner"

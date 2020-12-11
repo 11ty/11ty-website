@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/e592f85e.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "428c6f81-90.jpeg",
+      "outputPath": "img/avatars/opencollective/428c6f81-90.jpeg",
+      "url": "/img/avatars/opencollective/428c6f81-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/e592f85e.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/e592f85e.jpeg",
-      "size": 1814
+      "srcset": "/img/avatars/opencollective/428c6f81-90.jpeg 90w",
+      "size": 1926
     }
   ],
   "slug": "alex-russell"

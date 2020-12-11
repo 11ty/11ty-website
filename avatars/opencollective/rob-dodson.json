@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/6fec2cb.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "dc6faad7-90.jpeg",
+      "outputPath": "img/avatars/opencollective/dc6faad7-90.jpeg",
+      "url": "/img/avatars/opencollective/dc6faad7-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/6fec2cb.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/6fec2cb.jpeg",
-      "size": 1791
+      "srcset": "/img/avatars/opencollective/dc6faad7-90.jpeg 90w",
+      "size": 2014
     }
   ],
   "slug": "rob-dodson"

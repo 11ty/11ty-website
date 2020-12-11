@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/bf96234a.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "3cfe05b9-90.jpeg",
+      "outputPath": "img/avatars/opencollective/3cfe05b9-90.jpeg",
+      "url": "/img/avatars/opencollective/3cfe05b9-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/bf96234a.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/bf96234a.jpeg",
-      "size": 1875
+      "srcset": "/img/avatars/opencollective/3cfe05b9-90.jpeg 90w",
+      "size": 2199
     }
   ],
   "slug": "james-steinbach"

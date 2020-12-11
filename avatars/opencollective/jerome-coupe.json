@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/f81b7ebd-90.jpeg",
+      "filename": "f12280a0-90.jpeg",
+      "outputPath": "img/avatars/opencollective/f12280a0-90.jpeg",
+      "url": "/img/avatars/opencollective/f12280a0-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/f81b7ebd-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/f81b7ebd-90.jpeg",
-      "size": 3177
+      "srcset": "/img/avatars/opencollective/f12280a0-90.jpeg 90w",
+      "size": 3293
     }
   ],
   "slug": "jerome-coupe"

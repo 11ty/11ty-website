@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/8f63be57.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "8585d5da-90.jpeg",
+      "outputPath": "img/avatars/opencollective/8585d5da-90.jpeg",
+      "url": "/img/avatars/opencollective/8585d5da-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/8f63be57.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/8f63be57.jpeg",
-      "size": 2148
+      "srcset": "/img/avatars/opencollective/8585d5da-90.jpeg 90w",
+      "size": 2398
     }
   ],
   "slug": "christopher-salmon"

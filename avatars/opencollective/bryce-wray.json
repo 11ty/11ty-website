@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/c71eb823-90.jpeg",
+      "filename": "d868180c-90.jpeg",
+      "outputPath": "img/avatars/opencollective/d868180c-90.jpeg",
+      "url": "/img/avatars/opencollective/d868180c-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/c71eb823-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/c71eb823-90.jpeg",
-      "size": 2912
+      "srcset": "/img/avatars/opencollective/d868180c-90.jpeg 90w",
+      "size": 2864
     }
   ],
   "slug": "bryce-wray"

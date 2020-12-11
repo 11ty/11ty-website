@@ -3,12 +3,13 @@
     {
       "format": "jpeg",
       "width": 90,
-      "height": 86,
-      "url": "/img/avatars/opencollective/c7ecb0af-90.jpeg",
+      "height": 85,
+      "filename": "3b58c1bd-90.jpeg",
+      "outputPath": "img/avatars/opencollective/3b58c1bd-90.jpeg",
+      "url": "/img/avatars/opencollective/3b58c1bd-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/c7ecb0af-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/c7ecb0af-90.jpeg",
-      "size": 1901
+      "srcset": "/img/avatars/opencollective/3b58c1bd-90.jpeg 90w",
+      "size": 1828
     }
   ],
   "slug": "glenn-dixon"

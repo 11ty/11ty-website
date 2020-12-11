@@ -3,12 +3,13 @@
     {
       "format": "jpeg",
       "width": 90,
-      "height": 90,
-      "url": "/img/avatars/opencollective/8c00273a-90.jpeg",
+      "height": 89,
+      "filename": "971b51b8-90.jpeg",
+      "outputPath": "img/avatars/opencollective/971b51b8-90.jpeg",
+      "url": "/img/avatars/opencollective/971b51b8-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/8c00273a-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/8c00273a-90.jpeg",
-      "size": 1409
+      "srcset": "/img/avatars/opencollective/971b51b8-90.jpeg 90w",
+      "size": 1378
     }
   ],
   "slug": "mat-marquis"

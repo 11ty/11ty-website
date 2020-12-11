@@ -3,12 +3,13 @@
     {
       "format": "jpeg",
       "width": 90,
-      "height": 106,
-      "url": "/img/avatars/opencollective/cbca9b5c-90.jpeg",
+      "height": 105,
+      "filename": "b9876970-90.jpeg",
+      "outputPath": "img/avatars/opencollective/b9876970-90.jpeg",
+      "url": "/img/avatars/opencollective/b9876970-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/cbca9b5c-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/cbca9b5c-90.jpeg",
-      "size": 2387
+      "srcset": "/img/avatars/opencollective/b9876970-90.jpeg 90w",
+      "size": 2409
     }
   ],
   "slug": "tanner-dolby"

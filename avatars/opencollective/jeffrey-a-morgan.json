@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/d4153378.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "5824fb3f-90.jpeg",
+      "outputPath": "img/avatars/opencollective/5824fb3f-90.jpeg",
+      "url": "/img/avatars/opencollective/5824fb3f-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/d4153378.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/d4153378.jpeg",
-      "size": 2072
+      "srcset": "/img/avatars/opencollective/5824fb3f-90.jpeg 90w",
+      "size": 2244
     }
   ],
   "slug": "jeffrey-a-morgan"

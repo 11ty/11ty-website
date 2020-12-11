@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/ac92e209.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "d1cc23f4-90.jpeg",
+      "outputPath": "img/avatars/opencollective/d1cc23f4-90.jpeg",
+      "url": "/img/avatars/opencollective/d1cc23f4-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/ac92e209.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/ac92e209.jpeg",
-      "size": 1969
+      "srcset": "/img/avatars/opencollective/d1cc23f4-90.jpeg 90w",
+      "size": 2908
     }
   ],
   "slug": "greg-gibson"

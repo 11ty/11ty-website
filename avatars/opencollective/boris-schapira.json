@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/80024610.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "dcead07c-90.jpeg",
+      "outputPath": "img/avatars/opencollective/dcead07c-90.jpeg",
+      "url": "/img/avatars/opencollective/dcead07c-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/80024610.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/80024610.jpeg",
-      "size": 2059
+      "srcset": "/img/avatars/opencollective/dcead07c-90.jpeg 90w",
+      "size": 2409
     }
   ],
   "slug": "boris-schapira"

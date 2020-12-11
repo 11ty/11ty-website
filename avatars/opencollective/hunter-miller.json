@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 87,
-      "url": "/img/avatars/opencollective/b4a44c10-90.jpeg",
+      "filename": "c363756c-90.jpeg",
+      "outputPath": "img/avatars/opencollective/c363756c-90.jpeg",
+      "url": "/img/avatars/opencollective/c363756c-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/b4a44c10-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/b4a44c10-90.jpeg",
-      "size": 2766
+      "srcset": "/img/avatars/opencollective/c363756c-90.jpeg 90w",
+      "size": 2844
     }
   ],
   "slug": "hunter-miller"

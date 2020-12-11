@@ -10,7 +10,18 @@ An Eleventy linter plugin to check for inclusive language in markdown files. Ins
 
 * [GitHub](https://github.com/11ty/eleventy-plugin-inclusive-language).
 
-<img src="/img/plugins/inclusive-language-sample.png" alt="Sample screenshot of eleventy-plugin-inclusive-language in action">
+<style>
+.demo-linter-first {
+  color: yellow;
+}
+</style>
+
+<pre><code><span class="demo-linter-first">Inclusive Language Linter (./docs/quicktips/concatenate.md):</span>
+    be modified, <u>of course</u>, to capture multiple
+    <u>Of course</u>, Eleventy has no desire to re
+    This is <u>just</u> a super simple example if you
+    build pipeline. That’s an <u>easy</u> way to concatenate
+</code></pre>
 
 ## Template Compatibility
 

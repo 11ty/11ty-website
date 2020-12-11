@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/6fcd87b7.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "7505c7f7-90.jpeg",
+      "outputPath": "img/avatars/opencollective/7505c7f7-90.jpeg",
+      "url": "/img/avatars/opencollective/7505c7f7-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/6fcd87b7.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/6fcd87b7.jpeg",
-      "size": 1799
+      "srcset": "/img/avatars/opencollective/7505c7f7-90.jpeg 90w",
+      "size": 1934
     }
   ],
   "slug": "kyosuke-nakamura"

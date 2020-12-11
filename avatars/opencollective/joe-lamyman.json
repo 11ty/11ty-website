@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/b0290cc9-90.jpeg",
+      "filename": "7480f1f7-90.jpeg",
+      "outputPath": "img/avatars/opencollective/7480f1f7-90.jpeg",
+      "url": "/img/avatars/opencollective/7480f1f7-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/b0290cc9-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/b0290cc9-90.jpeg",
-      "size": 1806
+      "srcset": "/img/avatars/opencollective/7480f1f7-90.jpeg 90w",
+      "size": 1846
     }
   ],
   "slug": "joe-lamyman"
