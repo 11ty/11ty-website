@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/64df06e5-90.jpeg",
+      "filename": "4d9cb2d5-90.jpeg",
+      "outputPath": "img/avatars/opencollective/4d9cb2d5-90.jpeg",
+      "url": "/img/avatars/opencollective/4d9cb2d5-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/64df06e5-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/64df06e5-90.jpeg",
-      "size": 2350
+      "srcset": "/img/avatars/opencollective/4d9cb2d5-90.jpeg 90w",
+      "size": 2374
     }
   ],
   "slug": "piotr-swiderek"

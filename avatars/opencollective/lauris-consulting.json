@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 88,
-      "height": 106,
-      "url": "/img/avatars/opencollective/a3f784e8.jpeg",
+      "width": 90,
+      "height": 108,
+      "filename": "1b5d2c94-90.jpeg",
+      "outputPath": "img/avatars/opencollective/1b5d2c94-90.jpeg",
+      "url": "/img/avatars/opencollective/1b5d2c94-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/a3f784e8.jpeg 88w",
-      "outputPath": "img/avatars/opencollective/a3f784e8.jpeg",
-      "size": 2102
+      "srcset": "/img/avatars/opencollective/1b5d2c94-90.jpeg 90w",
+      "size": 2120
     }
   ],
   "slug": "lauris-consulting"

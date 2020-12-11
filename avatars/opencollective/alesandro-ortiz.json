@@ -4,10 +4,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/db221144-90.jpeg",
+      "filename": "170ce2df-90.jpeg",
+      "outputPath": "img/avatars/opencollective/170ce2df-90.jpeg",
+      "url": "/img/avatars/opencollective/170ce2df-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/db221144-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/db221144-90.jpeg",
+      "srcset": "/img/avatars/opencollective/170ce2df-90.jpeg 90w",
       "size": 1819
     }
   ],

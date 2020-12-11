@@ -3,12 +3,13 @@
     {
       "format": "jpeg",
       "width": 90,
-      "height": 113,
-      "url": "/img/avatars/opencollective/aec8933-90.jpeg",
+      "height": 112,
+      "filename": "4fde7082-90.jpeg",
+      "outputPath": "img/avatars/opencollective/4fde7082-90.jpeg",
+      "url": "/img/avatars/opencollective/4fde7082-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/aec8933-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/aec8933-90.jpeg",
-      "size": 3862
+      "srcset": "/img/avatars/opencollective/4fde7082-90.jpeg 90w",
+      "size": 3754
     }
   ],
   "slug": "joshua-ray"

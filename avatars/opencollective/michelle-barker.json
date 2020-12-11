@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/2cbb0035.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "d48d5e60-90.jpeg",
+      "outputPath": "img/avatars/opencollective/d48d5e60-90.jpeg",
+      "url": "/img/avatars/opencollective/d48d5e60-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/2cbb0035.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/2cbb0035.jpeg",
-      "size": 2189
+      "srcset": "/img/avatars/opencollective/d48d5e60-90.jpeg 90w",
+      "size": 2417
     }
   ],
   "slug": "michelle-barker"

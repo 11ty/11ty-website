@@ -3,12 +3,13 @@
     {
       "format": "jpeg",
       "width": 90,
-      "height": 97,
-      "url": "/img/avatars/opencollective/61db031b-90.jpeg",
+      "height": 96,
+      "filename": "4ffd93ec-90.jpeg",
+      "outputPath": "img/avatars/opencollective/4ffd93ec-90.jpeg",
+      "url": "/img/avatars/opencollective/4ffd93ec-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/61db031b-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/61db031b-90.jpeg",
-      "size": 1902
+      "srcset": "/img/avatars/opencollective/4ffd93ec-90.jpeg 90w",
+      "size": 1855
     }
   ],
   "slug": "softiron"

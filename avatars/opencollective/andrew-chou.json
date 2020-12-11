@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/1c2432a3.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "fe416e50-90.jpeg",
+      "outputPath": "img/avatars/opencollective/fe416e50-90.jpeg",
+      "url": "/img/avatars/opencollective/fe416e50-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/1c2432a3.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/1c2432a3.jpeg",
-      "size": 2647
+      "srcset": "/img/avatars/opencollective/fe416e50-90.jpeg 90w",
+      "size": 2861
     }
   ],
   "slug": "andrew-chou"

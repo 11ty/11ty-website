@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/7a605628.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "c45faec2-90.jpeg",
+      "outputPath": "img/avatars/opencollective/c45faec2-90.jpeg",
+      "url": "/img/avatars/opencollective/c45faec2-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/7a605628.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/7a605628.jpeg",
-      "size": 1711
+      "srcset": "/img/avatars/opencollective/c45faec2-90.jpeg 90w",
+      "size": 1861
     }
   ],
   "slug": "john-meyerhofer"

@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/ac7c6f34-90.jpeg",
+      "filename": "61a3bcce-90.jpeg",
+      "outputPath": "img/avatars/opencollective/61a3bcce-90.jpeg",
+      "url": "/img/avatars/opencollective/61a3bcce-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/ac7c6f34-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/ac7c6f34-90.jpeg",
-      "size": 2654
+      "srcset": "/img/avatars/opencollective/61a3bcce-90.jpeg 90w",
+      "size": 2649
     }
   ],
   "slug": "darby-dixon-iii"

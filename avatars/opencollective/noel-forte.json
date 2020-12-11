@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/c5fe38a4.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "916c582e-90.jpeg",
+      "outputPath": "img/avatars/opencollective/916c582e-90.jpeg",
+      "url": "/img/avatars/opencollective/916c582e-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/c5fe38a4.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/c5fe38a4.jpeg",
-      "size": 2153
+      "srcset": "/img/avatars/opencollective/916c582e-90.jpeg 90w",
+      "size": 2390
     }
   ],
   "slug": "noel-forte"

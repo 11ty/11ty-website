@@ -3,6 +3,7 @@ const fs = require("fs-extra");
 const fastglob = require("fast-glob");
 const eleventyImg = require("@11ty/eleventy-img");
 const cleanName = require("./config/cleanAuthorName");
+const getTwitterAvatarUrl = require("twitter-avatar-url");
 
 eleventyImg.concurrency = 5;
 
@@ -17,13 +18,17 @@ async function fetch(name) {
 
 	let path = `${dir}${slug}.json`;
 	try {
-		let stats = await eleventyImg(`https://unavatar.now.sh/twitter/${name}?fallback=false`, { // ?fallback=false
+    let urlObj = await getTwitterAvatarUrl(name);
+    let url = urlObj.url.large;
+    console.log( "Fetching", name, url );
+    // let url = `https://unavatar.now.sh/twitter/${name}?fallback=false`;
+		let stats = await eleventyImg(url, {
 			formats: ["webp", "jpeg"],
 			widths: [90],
 			urlPath: "/img/avatars/twitter/",
 			outputDir: "img/avatars/twitter/",
 			cacheOptions: {
-				duration: "14d",
+				duration: "30d",
 			}
 		});
 

@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/86525b11-90.jpeg",
+      "filename": "4b946974-90.jpeg",
+      "outputPath": "img/avatars/opencollective/4b946974-90.jpeg",
+      "url": "/img/avatars/opencollective/4b946974-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/86525b11-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/86525b11-90.jpeg",
-      "size": 2534
+      "srcset": "/img/avatars/opencollective/4b946974-90.jpeg 90w",
+      "size": 2509
     }
   ],
   "slug": "soren-birkemeyer"

@@ -1,0 +1,16 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "4cf6fd7e-90.jpeg",
+      "outputPath": "img/avatars/opencollective/4cf6fd7e-90.jpeg",
+      "url": "/img/avatars/opencollective/4cf6fd7e-90.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/4cf6fd7e-90.jpeg 90w",
+      "size": 897
+    }
+  ],
+  "slug": "daniel-bateyko"
+}

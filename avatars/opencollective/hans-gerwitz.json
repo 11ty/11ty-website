@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/d025c460.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "a3b75ce-90.jpeg",
+      "outputPath": "img/avatars/opencollective/a3b75ce-90.jpeg",
+      "url": "/img/avatars/opencollective/a3b75ce-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/d025c460.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/d025c460.jpeg",
-      "size": 2129
+      "srcset": "/img/avatars/opencollective/a3b75ce-90.jpeg 90w",
+      "size": 2352
     }
   ],
   "slug": "hans-gerwitz"

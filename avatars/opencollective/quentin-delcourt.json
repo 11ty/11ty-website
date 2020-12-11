@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/593267cb-90.jpeg",
+      "filename": "c93dd1d8-90.jpeg",
+      "outputPath": "img/avatars/opencollective/c93dd1d8-90.jpeg",
+      "url": "/img/avatars/opencollective/c93dd1d8-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/593267cb-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/593267cb-90.jpeg",
-      "size": 2181
+      "srcset": "/img/avatars/opencollective/c93dd1d8-90.jpeg 90w",
+      "size": 2191
     }
   ],
   "slug": "quentin-delcourt"

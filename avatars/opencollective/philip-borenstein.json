@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/9d6446a1.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "422f5334-90.jpeg",
+      "outputPath": "img/avatars/opencollective/422f5334-90.jpeg",
+      "url": "/img/avatars/opencollective/422f5334-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/9d6446a1.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/9d6446a1.jpeg",
-      "size": 2404
+      "srcset": "/img/avatars/opencollective/422f5334-90.jpeg 90w",
+      "size": 2662
     }
   ],
   "slug": "philip-borenstein"

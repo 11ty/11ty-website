@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/bc0bbaa7.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "4c3232f9-90.jpeg",
+      "outputPath": "img/avatars/opencollective/4c3232f9-90.jpeg",
+      "url": "/img/avatars/opencollective/4c3232f9-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/bc0bbaa7.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/bc0bbaa7.jpeg",
-      "size": 1853
+      "srcset": "/img/avatars/opencollective/4c3232f9-90.jpeg 90w",
+      "size": 2187
     }
   ],
   "slug": "mark-boulton"

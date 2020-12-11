@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/e659c4ff.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "11b22ec1-90.jpeg",
+      "outputPath": "img/avatars/opencollective/11b22ec1-90.jpeg",
+      "url": "/img/avatars/opencollective/11b22ec1-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/e659c4ff.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/e659c4ff.jpeg",
-      "size": 2168
+      "srcset": "/img/avatars/opencollective/11b22ec1-90.jpeg 90w",
+      "size": 2350
     }
   ],
   "slug": "nick-nisi"

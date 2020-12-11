@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 71,
-      "url": "/img/avatars/opencollective/e15697ef-90.jpeg",
+      "filename": "c6755896-90.jpeg",
+      "outputPath": "img/avatars/opencollective/c6755896-90.jpeg",
+      "url": "/img/avatars/opencollective/c6755896-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/e15697ef-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/e15697ef-90.jpeg",
-      "size": 2155
+      "srcset": "/img/avatars/opencollective/c6755896-90.jpeg 90w",
+      "size": 2176
     }
   ],
   "slug": "jonathan-weckerle"

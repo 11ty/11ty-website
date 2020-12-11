@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/5940477e-90.jpeg",
+      "filename": "e8cf086a-90.jpeg",
+      "outputPath": "img/avatars/opencollective/e8cf086a-90.jpeg",
+      "url": "/img/avatars/opencollective/e8cf086a-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/5940477e-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/5940477e-90.jpeg",
-      "size": 1371
+      "srcset": "/img/avatars/opencollective/e8cf086a-90.jpeg 90w",
+      "size": 1409
     }
   ],
   "slug": "markus-schork"

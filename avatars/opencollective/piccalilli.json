@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/f6625ed-90.jpeg",
+      "filename": "de892a7a-90.jpeg",
+      "outputPath": "img/avatars/opencollective/de892a7a-90.jpeg",
+      "url": "/img/avatars/opencollective/de892a7a-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/f6625ed-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/f6625ed-90.jpeg",
-      "size": 3291
+      "srcset": "/img/avatars/opencollective/de892a7a-90.jpeg 90w",
+      "size": 3308
     }
   ],
   "slug": "piccalilli"

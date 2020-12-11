@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/1f6adf4c-90.jpeg",
+      "filename": "9299210d-90.jpeg",
+      "outputPath": "img/avatars/opencollective/9299210d-90.jpeg",
+      "url": "/img/avatars/opencollective/9299210d-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/1f6adf4c-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/1f6adf4c-90.jpeg",
-      "size": 2376
+      "srcset": "/img/avatars/opencollective/9299210d-90.jpeg 90w",
+      "size": 2398
     }
   ],
   "slug": "takuya-fukuju"

@@ -3,12 +3,13 @@
     {
       "format": "jpeg",
       "width": 90,
-      "height": 79,
-      "url": "/img/avatars/opencollective/29f1db70-90.jpeg",
+      "height": 78,
+      "filename": "b2e2a408-90.jpeg",
+      "outputPath": "img/avatars/opencollective/b2e2a408-90.jpeg",
+      "url": "/img/avatars/opencollective/b2e2a408-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/29f1db70-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/29f1db70-90.jpeg",
-      "size": 2164
+      "srcset": "/img/avatars/opencollective/b2e2a408-90.jpeg 90w",
+      "size": 2174
     }
   ],
   "slug": "eslint"

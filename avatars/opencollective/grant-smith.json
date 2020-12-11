@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/2b9f8ad3.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "4f9f4247-90.jpeg",
+      "outputPath": "img/avatars/opencollective/4f9f4247-90.jpeg",
+      "url": "/img/avatars/opencollective/4f9f4247-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/2b9f8ad3.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/2b9f8ad3.jpeg",
-      "size": 2486
+      "srcset": "/img/avatars/opencollective/4f9f4247-90.jpeg 90w",
+      "size": 2738
     }
   ],
   "slug": "grant-smith"

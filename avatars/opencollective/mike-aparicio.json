@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/555715a1.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "9814a600-90.jpeg",
+      "outputPath": "img/avatars/opencollective/9814a600-90.jpeg",
+      "url": "/img/avatars/opencollective/9814a600-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/555715a1.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/555715a1.jpeg",
-      "size": 1714
+      "srcset": "/img/avatars/opencollective/9814a600-90.jpeg 90w",
+      "size": 1976
     }
   ],
   "slug": "mike-aparicio"

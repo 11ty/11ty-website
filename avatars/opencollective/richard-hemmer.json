@@ -1,0 +1,16 @@
+{
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "a6a7f0a7-90.jpeg",
+      "outputPath": "img/avatars/opencollective/a6a7f0a7-90.jpeg",
+      "url": "/img/avatars/opencollective/a6a7f0a7-90.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/a6a7f0a7-90.jpeg 90w",
+      "size": 867
+    }
+  ],
+  "slug": "richard-hemmer"
+}

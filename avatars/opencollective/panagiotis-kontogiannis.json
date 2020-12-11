@@ -4,11 +4,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/14e9fd4b-90.jpeg",
+      "filename": "60f8975b-90.jpeg",
+      "outputPath": "img/avatars/opencollective/60f8975b-90.jpeg",
+      "url": "/img/avatars/opencollective/60f8975b-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/14e9fd4b-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/14e9fd4b-90.jpeg",
-      "size": 2455
+      "srcset": "/img/avatars/opencollective/60f8975b-90.jpeg 90w",
+      "size": 2448
     }
   ],
   "slug": "panagiotis-kontogiannis"

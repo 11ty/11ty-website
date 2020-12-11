@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/39f9e258.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "a6c8eeff-90.jpeg",
+      "outputPath": "img/avatars/opencollective/a6c8eeff-90.jpeg",
+      "url": "/img/avatars/opencollective/a6c8eeff-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/39f9e258.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/39f9e258.jpeg",
-      "size": 1903
+      "srcset": "/img/avatars/opencollective/a6c8eeff-90.jpeg 90w",
+      "size": 3059
     }
   ],
   "slug": "keenan-payne"

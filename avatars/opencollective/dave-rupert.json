@@ -2,13 +2,14 @@
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/6212a6be.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "6781ee2e-90.jpeg",
+      "outputPath": "img/avatars/opencollective/6781ee2e-90.jpeg",
+      "url": "/img/avatars/opencollective/6781ee2e-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/6212a6be.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/6212a6be.jpeg",
-      "size": 2231
+      "srcset": "/img/avatars/opencollective/6781ee2e-90.jpeg 90w",
+      "size": 2473
     }
   ],
   "slug": "dave-rupert"

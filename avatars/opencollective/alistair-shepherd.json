@@ -3,12 +3,13 @@
     {
       "format": "jpeg",
       "width": 90,
-      "height": 89,
-      "url": "/img/avatars/opencollective/e5c3e7d7-90.jpeg",
+      "height": 88,
+      "filename": "ab73c6c-90.jpeg",
+      "outputPath": "img/avatars/opencollective/ab73c6c-90.jpeg",
+      "url": "/img/avatars/opencollective/ab73c6c-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/e5c3e7d7-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/e5c3e7d7-90.jpeg",
-      "size": 2237
+      "srcset": "/img/avatars/opencollective/ab73c6c-90.jpeg 90w",
+      "size": 2218
     }
   ],
   "slug": "alistair-shepherd"
