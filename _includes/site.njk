@@ -1,4 +1,6 @@
-{%- set imgUrl = "/img/sites/" + site.fileSlug + ".jpg" %}
+{%- set imgPrefix = "/img/sites/" + site.fileSlug %}
+{%- set imgUrl = imgPrefix + "-300.jpeg" %}
+
 {%- set imgExists = imgUrl | fileExists %}
 <div class="lo-c site-top">
 	<div{% if imgExists %} class="sites-data-container"{% endif %}>
@@ -22,6 +24,12 @@
 		{%- endif %}
 	</div>
 {%- if imgExists %}
-	<div class="sites-screenshot-container"><img src="{{ imgUrl }}" alt="Screenshot of {{ site.url }}" class="sites-screenshot" loading="lazy" width="405" height="304"></div>
+	<div class="sites-screenshot-container">
+    <picture>
+      <source srcset="{{ imgPrefix }}-300.webp 300w, {{ imgPrefix }}-600.webp 600w" type="image/webp" sizes="(min-width: 22em) 30vw, 100vw">
+      <source srcset="{{ imgPrefix }}-300.jpeg 300w, {{ imgPrefix }}-600.jpeg 600w" type="image/jpeg" sizes="(min-width: 22em) 30vw, 100vw">
+      <img src="{{ imgPrefix }}-300.jpeg" alt="Screenshot of {{ site.url }}" class="sites-screenshot" loading="lazy" width="300" height="225">
+    </picture>
+  </div>
 {%- endif %}
 </div>
