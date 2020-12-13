@@ -17,6 +17,8 @@ This plugin can save *any* kind of asset—JSON, HTML, images, videos, etc.
 * If cache expires and the network connection fails, will continue to use the cached request and make a new request when the network connectivity is restored.
 * Control concurrency so we don’t make too many network requests at the same time.
 * Requires **Node 10+**
+* [`eleventy-cache-assets` on GitHub](https://github.com/11ty/eleventy-cache-assets)
+* [`eleventy-cache-assets` on npm](https://www.npmjs.com/package/@11ty/eleventy-cache-assets)
 
 ---
 
