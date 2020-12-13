@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-page-assets",
+	"author": "victornpb",
+	"description": "Automatically copy images and assets relative to a template to /dist folder and rewrite paths to hashes (Similar to webpack html-loader, or Hexo Post Asset)"
+}
