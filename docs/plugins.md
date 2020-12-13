@@ -1,8 +1,7 @@
 ---
 eleventyNavigation:
-  parent: Configuration
   key: Plugins
-  order: 6
+  order: 7.5
 ---
 # Plugins {% addedin "0.2.13" %}
 
