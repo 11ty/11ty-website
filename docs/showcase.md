@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   parent: Starter Projects
-  key: Source Code Samples
+  key: Showcase and Source Codes
   order: 1
 excludeFromSidebar: true
 ---
