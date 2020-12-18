@@ -161,7 +161,7 @@ While we do prevent raster images from upscaling (and filter upscaling `widths` 
 
 ### Creating an &lt;img&gt; shortcode
 
-{% callout "info" %}The examples below use <a href="/languages/nunjucks/#asynchronous-shortcodes">Nunjucks</a> <code>async</code> shortcodes. The <a href="/docs/languages/javascript/#asynchronous-javascript-template-functions">JavaScript</a> and <a href="/docs/languages/liquid/#asynchronous-shortcodes">Liquid</a> template engines are asynchronous by default.{% endcallout %}
+{% callout "info" %}The example below uses a <a href="/languages/nunjucks/#asynchronous-shortcodes">Nunjucks</a> <code>async</code> shortcode. As noted, the <a href="/docs/languages/javascript/#asynchronous-javascript-template-functions">JavaScript</a> and <a href="/docs/languages/liquid/#asynchronous-shortcodes">Liquid</a> template engines also work here and are asynchronous by default.{% endcallout %}
 
 {% codetitle ".eleventy.js" %}
 
@@ -208,6 +208,8 @@ And outputs the following in `src/index.html`:
 ```
 
 ### Creating a &lt;picture&gt; shortcode
+
+{% callout "info" %}The example below uses a <a href="/languages/nunjucks/#asynchronous-shortcodes">Nunjucks</a> <code>async</code> shortcode. As noted, the <a href="/docs/languages/javascript/#asynchronous-javascript-template-functions">JavaScript</a> and <a href="/docs/languages/liquid/#asynchronous-shortcodes">Liquid</a> template engines also work here and are asynchronous by default.{% endcallout %}
 
 {% codetitle ".eleventy.js" %}
 
