@@ -2,7 +2,7 @@
 eleventyNavigation:
   key: Cache Assets
   order: 0.5
-  excerpt: A plugin to cache network requests.
+  excerpt: A utility to fetch and cache network requests.
 ---
 # Cache Assets
 
@@ -18,13 +18,14 @@ This plugin can save *any* kind of asset—JSON, HTML, images, videos, etc.
 * Control concurrency so we don’t make too many network requests at the same time.
 * Requires **Node 10+**
 * [`eleventy-cache-assets` on GitHub](https://github.com/11ty/eleventy-cache-assets)
-* [`eleventy-cache-assets` on npm](https://www.npmjs.com/package/@11ty/eleventy-cache-assets)
 
 ---
 
 [[toc]]
 
 ## Installation
+
+* [`eleventy-cache-assets` on npm](https://www.npmjs.com/package/@11ty/eleventy-cache-assets)
 
 ```
 npm install @11ty/eleventy-cache-assets
