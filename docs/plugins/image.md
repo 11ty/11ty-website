@@ -159,7 +159,7 @@ While we do prevent raster images from upscaling (and filter upscaling `widths` 
 * `svgAllowUpscale: true` (default)
 * `svgAllowUpscale: false`
 
-### Creating an &lt;img&gt; shortcode
+### Creating an `<img>` shortcode
 
 {% callout "info" %}The example below uses a <a href="/languages/nunjucks/#asynchronous-shortcodes">Nunjucks</a> <code>async</code> shortcode. As noted, the <a href="/docs/languages/javascript/#asynchronous-javascript-template-functions">JavaScript</a> and <a href="/docs/languages/liquid/#asynchronous-shortcodes">Liquid</a> template engines also work here and are asynchronous by default.{% endcallout %}
 
@@ -207,7 +207,7 @@ And outputs the following in `src/index.html`:
 <img src="/images/43155df7-300.jpeg" width="300" height="300" alt="photo of my cat">
 ```
 
-### Creating a &lt;picture&gt; shortcode
+### Creating a `<picture>` shortcode
 
 {% callout "info" %}The example below uses a <a href="/languages/nunjucks/#asynchronous-shortcodes">Nunjucks</a> <code>async</code> shortcode. As noted, the <a href="/docs/languages/javascript/#asynchronous-javascript-template-functions">JavaScript</a> and <a href="/docs/languages/liquid/#asynchronous-shortcodes">Liquid</a> template engines also work here and are asynchronous by default.{% endcallout %}
 
