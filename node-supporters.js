@@ -36,7 +36,7 @@ const fetch = require("node-fetch");
 const query = `
 query eleventyMembers {
   collective(slug: "11ty") {
-    members(limit: 200) {
+    members(limit: 300) {
       nodes {
         account {
           name
