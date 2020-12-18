@@ -85,7 +85,9 @@ The `directory` option let’s you change where the cache is stored. It is stron
 {% callout %}Read the <a href="#installation">Important Security and Privacy Notice</a>.{% endcallout %}
 
 ```js
-CacheAsset("https://…", {
+const Cache = require("@11ty/eleventy-cache-assets");
+
+Cache("https://…", {
 	directory: ".cache"
 });
 ```
@@ -98,6 +100,7 @@ CacheAsset("https://…", {
 
 ```js
 const Cache = require("@11ty/eleventy-cache-assets");
+
 Cache("https://www.zachleat.com/img/avatar-2017-big.png?Get=rid&of=these", {
 	removeUrlQueryParams: true
 });
@@ -160,6 +163,7 @@ Also a good example of using `fetchOptions` to pass in a custom user agent. Full
 
 ```js
 const Cache = require("@11ty/eleventy-cache-assets");
+
 let url = "https://fonts.googleapis.com/css?family=Roboto+Mono:400&display=swap";
 let fontCss = await Cache(url, {
 	duration: "1d",
