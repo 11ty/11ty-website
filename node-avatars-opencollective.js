@@ -24,8 +24,7 @@ async function fetch(name, imageUrl, website) {
 
 	try {
 		let stats = await eleventyImg(imageUrl, {
-			// formats: ["webp", "jpeg"],
-			formats: ["jpeg"],
+			formats: ["avif", "webp", "jpeg"],
 			widths: [90],
 			urlPath: "/img/avatars/opencollective/",
 			outputDir: "img/avatars/opencollective/",

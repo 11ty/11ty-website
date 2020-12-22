@@ -3,6 +3,7 @@
   <a href="{{ site.url }}" class="elv-externalexempt">{% avatarlocalcache "twitter", site.twitter %}{{ site.name }}</a>
   <div class="sites-screenshot-container">
     <picture>
+      <source srcset="{{ imgPrefix }}-300-js.avif 300w, {{ imgPrefix }}-600-js.avif 600w" type="image/avif" sizes="(min-width: 62.5em) 25vw, (min-width: 30.625em) 50vw, 100vw">
       <source srcset="{{ imgPrefix }}-300-js.webp 300w, {{ imgPrefix }}-600-js.webp 600w" type="image/webp" sizes="(min-width: 62.5em) 25vw, (min-width: 30.625em) 50vw, 100vw">
       <source srcset="{{ imgPrefix }}-300-js.jpeg 300w, {{ imgPrefix }}-600-js.jpeg 600w" type="image/jpeg" sizes="(min-width: 62.5em) 25vw, (min-width: 30.625em) 50vw, 100vw">
       <img src="{{ imgPrefix }}-300-js.jpeg" alt="Screenshot of {{ site.url }}" class="sites-screenshot" loading="lazy" width="300" height="225">

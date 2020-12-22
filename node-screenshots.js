@@ -10,7 +10,7 @@ const deviceName = 'iPad landscape';
 const waitAfterLoad = 1000;
 
 const eleventyImageOptions = {
-  formats: ["webp", "jpeg"], // "avif",
+  formats: ["avif", "webp", "jpeg"],
   widths: [300, 600], // 260-440 in layout
   outputDir: "./img/sites/"
 };

@@ -1,4 +1,17 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "e0ba6bb0-90.avif",
+      "outputPath": "img/avatars/twitter/e0ba6bb0-90.avif",
+      "url": "/img/avatars/twitter/e0ba6bb0-90.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/twitter/e0ba6bb0-90.avif 90w",
+      "size": 924
+    }
+  ],
   "webp": [
     {
       "format": "webp",
@@ -9,7 +22,7 @@
       "url": "/img/avatars/twitter/e0ba6bb0-90.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/twitter/e0ba6bb0-90.webp 90w",
-      "size": 1230
+      "size": 1232
     }
   ],
   "jpeg": [

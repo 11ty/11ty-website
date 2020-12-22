@@ -1,4 +1,30 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "b1a728a6-90.avif",
+      "outputPath": "img/avatars/opencollective/b1a728a6-90.avif",
+      "url": "/img/avatars/opencollective/b1a728a6-90.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/b1a728a6-90.avif 90w",
+      "size": 596
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "b1a728a6-90.webp",
+      "outputPath": "img/avatars/opencollective/b1a728a6-90.webp",
+      "url": "/img/avatars/opencollective/b1a728a6-90.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/b1a728a6-90.webp 90w",
+      "size": 298
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",

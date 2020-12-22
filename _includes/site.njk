@@ -26,6 +26,7 @@
 {%- if imgExists %}
 	<div class="sites-screenshot-container">
     <picture>
+      <source srcset="{{ imgPrefix }}-300.avif 300w, {{ imgPrefix }}-600.avif 600w" type="image/avif" sizes="(min-width: 22em) 30vw, 100vw">
       <source srcset="{{ imgPrefix }}-300.webp 300w, {{ imgPrefix }}-600.webp 600w" type="image/webp" sizes="(min-width: 22em) 30vw, 100vw">
       <source srcset="{{ imgPrefix }}-300.jpeg 300w, {{ imgPrefix }}-600.jpeg 600w" type="image/jpeg" sizes="(min-width: 22em) 30vw, 100vw">
       <img src="{{ imgPrefix }}-300.jpeg" alt="Screenshot of {{ site.url }}" class="sites-screenshot" loading="lazy" width="300" height="225">

@@ -1,4 +1,30 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "35c77b82-90.avif",
+      "outputPath": "img/avatars/opencollective/35c77b82-90.avif",
+      "url": "/img/avatars/opencollective/35c77b82-90.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/35c77b82-90.avif 90w",
+      "size": 1454
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "35c77b82-90.webp",
+      "outputPath": "img/avatars/opencollective/35c77b82-90.webp",
+      "url": "/img/avatars/opencollective/35c77b82-90.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/35c77b82-90.webp 90w",
+      "size": 2098
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
@@ -9,7 +35,7 @@
       "url": "/img/avatars/opencollective/35c77b82-90.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/35c77b82-90.jpeg 90w",
-      "size": 2696
+      "size": 2691
     }
   ],
   "slug": "cory-birdsong"

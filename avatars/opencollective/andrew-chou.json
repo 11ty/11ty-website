@@ -1,4 +1,30 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "fe416e50-90.avif",
+      "outputPath": "img/avatars/opencollective/fe416e50-90.avif",
+      "url": "/img/avatars/opencollective/fe416e50-90.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/fe416e50-90.avif 90w",
+      "size": 1526
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "fe416e50-90.webp",
+      "outputPath": "img/avatars/opencollective/fe416e50-90.webp",
+      "url": "/img/avatars/opencollective/fe416e50-90.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/fe416e50-90.webp 90w",
+      "size": 2280
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",

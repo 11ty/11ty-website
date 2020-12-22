@@ -1,4 +1,17 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "a4d66d83-90.avif",
+      "outputPath": "img/avatars/twitter/a4d66d83-90.avif",
+      "url": "/img/avatars/twitter/a4d66d83-90.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/twitter/a4d66d83-90.avif 90w",
+      "size": 760
+    }
+  ],
   "webp": [
     {
       "format": "webp",
