@@ -10,9 +10,9 @@ Low level utility to perform build-time image transformations for both vector an
 
 You maintain full control of your HTML—this plugin does not generate any markup. Use with `<picture>` or `<img>` or CSS `background-image`, or others! Works great to add `width` and `height` to your images! Does not require or rely on file extensions (like `.png` or `.jpg`) in URLs or local files, which may be missing or inaccurate.
 
-* Accepts: `jpeg`, `png`, `webp`, `gif`, `tiff`, `svg`.
+* Accepts: `jpeg`, `png`, `webp`, `gif`, `tiff`, `avif` (0.6.0+), and `svg`.
 * Output multiple sizes, keeps original aspect ratio. Never upscales raster images larger than original size (unless using SVG input).
-* Output multiple formats, supports: `jpeg`, `png`, `webp`, `svg` (requires SVG input), and `avif` (experimental)
+* Output multiple formats, supports: `jpeg`, `png`, `webp`, `avif` (0.6.0+), and `svg` (requires SVG input)
 * Retreive metadata about your new images (see [sample return object](#sample-return-object)).
   * Use this to add `width` and `height` attributes on `<img>` elements for [proper aspect ratio mapping](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping).
 * Save remote images locally using [`eleventy-cache-assets`](/docs/plugins/cache/).
@@ -113,7 +113,7 @@ Use almost any combination of these:
 * `formats: ["png"]`
 * `formats: [null]` (keep original format) {% addedin "0.4.0" %}
 * `formats: ["svg"]` (requires SVG input) {% addedin "0.4.0" %}
-* `formats: ["avif"]` (experimental!) {% addedin "0.4.2" %}
+* `formats: ["avif"]` {% addedin "0.6.0" %}
 
 ### URL Path
 
