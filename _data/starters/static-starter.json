@@ -1,6 +1,0 @@
-{
-		"url": "https://github.com/mattwaler/static-starter",
-		"name": "static-starter",
-		"description": "A static site starting template built with 11ty, Svelte, TailwindCSS, and Rollup for pragmatic and simple FED.",
-		"author": "mattwaler"
-	}
