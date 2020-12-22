@@ -267,7 +267,7 @@ Now you can use it in your templates:
 
 ### Advanced control of Sharp image processor
 
-[Extra options to pass to the Sharp constructor](https://sharp.pixelplumbing.com/api-constructor#parameters) or the [Sharp image format converter for webp](https://sharp.pixelplumbing.com/api-output#webp), [png](https://sharp.pixelplumbing.com/api-output#png), or [jpeg](https://sharp.pixelplumbing.com/api-output#png).
+[Extra options to pass to the Sharp constructor](https://sharp.pixelplumbing.com/api-constructor#parameters) or the [Sharp image format converter for webp](https://sharp.pixelplumbing.com/api-output#webp), [png](https://sharp.pixelplumbing.com/api-output#png), [jpeg](https://sharp.pixelplumbing.com/api-output#jpeg), or [avif](https://sharp.pixelplumbing.com/api-output#avif).
 
 * `sharpOptions: {}` {% addedin "0.4.0" %}
 * `sharpWebpOptions: {}` {% addedin "0.4.2" %}
