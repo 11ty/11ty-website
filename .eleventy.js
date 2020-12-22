@@ -36,14 +36,19 @@ const shortcodes = {
 		}
 
 		let ret = [];
-		if(mapEntry.webp) {
-			ret.push("<picture>");
-			ret.push(`<source srcset="${mapEntry.webp[0].srcset}" type="${mapEntry.webp[0].sourceType}">`);
+		if(mapEntry.webp || mapEntry.avif) {
+      ret.push("<picture>");
+      if(mapEntry.avif) {
+        ret.push(`<source srcset="${mapEntry.avif[0].srcset}" type="${mapEntry.avif[0].sourceType}">`);
+      }
+      if(mapEntry.webp) {
+        ret.push(`<source srcset="${mapEntry.webp[0].srcset}" type="${mapEntry.webp[0].sourceType}">`);
+      }
 		}
 		let otherSrc = mapEntry.jpeg || mapEntry.png;
 
 		ret.push(`<img src="${otherSrc[0].url}" alt="${alt || `${slug}’s ${datasource} avatar`}" loading="lazy" class="avatar" width="${otherSrc[0].width}" height="${otherSrc[0].height}">`);
-		if(mapEntry.webp) {
+		if(mapEntry.webp || mapEntry.avif) {
 			ret.push("</picture>");
 		}
 		return ret.join("");

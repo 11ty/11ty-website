@@ -1,4 +1,30 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 120,
+      "filename": "1751c7a6-90.avif",
+      "outputPath": "img/avatars/opencollective/1751c7a6-90.avif",
+      "url": "/img/avatars/opencollective/1751c7a6-90.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/1751c7a6-90.avif 90w",
+      "size": 2365
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 120,
+      "filename": "1751c7a6-90.webp",
+      "outputPath": "img/avatars/opencollective/1751c7a6-90.webp",
+      "url": "/img/avatars/opencollective/1751c7a6-90.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/1751c7a6-90.webp 90w",
+      "size": 3642
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
@@ -9,7 +35,7 @@
       "url": "/img/avatars/opencollective/1751c7a6-90.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/1751c7a6-90.jpeg 90w",
-      "size": 3973
+      "size": 3978
     }
   ],
   "slug": "paul-welsh"

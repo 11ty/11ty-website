@@ -1,4 +1,30 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "4bccfda3-90.avif",
+      "outputPath": "img/avatars/opencollective/4bccfda3-90.avif",
+      "url": "/img/avatars/opencollective/4bccfda3-90.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/4bccfda3-90.avif 90w",
+      "size": 982
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "4bccfda3-90.webp",
+      "outputPath": "img/avatars/opencollective/4bccfda3-90.webp",
+      "url": "/img/avatars/opencollective/4bccfda3-90.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/4bccfda3-90.webp 90w",
+      "size": 1118
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
@@ -9,7 +35,7 @@
       "url": "/img/avatars/opencollective/4bccfda3-90.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/4bccfda3-90.jpeg 90w",
-      "size": 1783
+      "size": 1785
     }
   ],
   "slug": "yuhei-yasuda"
