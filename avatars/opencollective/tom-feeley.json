@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "16833fa-90.avif",
-      "outputPath": "img/avatars/opencollective/16833fa-90.avif",
-      "url": "/img/avatars/opencollective/16833fa-90.avif",
+      "filename": "tom-feeley.avif",
+      "outputPath": "img/avatars/opencollective/tom-feeley.avif",
+      "url": "/img/avatars/opencollective/tom-feeley.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/16833fa-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/tom-feeley.avif 90w",
       "size": 540
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "16833fa-90.webp",
-      "outputPath": "img/avatars/opencollective/16833fa-90.webp",
-      "url": "/img/avatars/opencollective/16833fa-90.webp",
+      "filename": "tom-feeley.webp",
+      "outputPath": "img/avatars/opencollective/tom-feeley.webp",
+      "url": "/img/avatars/opencollective/tom-feeley.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/16833fa-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/tom-feeley.webp 90w",
       "size": 210
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "16833fa-90.jpeg",
-      "outputPath": "img/avatars/opencollective/16833fa-90.jpeg",
-      "url": "/img/avatars/opencollective/16833fa-90.jpeg",
+      "filename": "tom-feeley.jpeg",
+      "outputPath": "img/avatars/opencollective/tom-feeley.jpeg",
+      "url": "/img/avatars/opencollective/tom-feeley.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/16833fa-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/tom-feeley.jpeg 90w",
       "size": 718
     }
   ],

@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "88c14394-90.avif",
-      "outputPath": "img/avatars/opencollective/88c14394-90.avif",
-      "url": "/img/avatars/opencollective/88c14394-90.avif",
+      "filename": "devin-clark.avif",
+      "outputPath": "img/avatars/opencollective/devin-clark.avif",
+      "url": "/img/avatars/opencollective/devin-clark.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/88c14394-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/devin-clark.avif 90w",
       "size": 974
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "88c14394-90.webp",
-      "outputPath": "img/avatars/opencollective/88c14394-90.webp",
-      "url": "/img/avatars/opencollective/88c14394-90.webp",
+      "filename": "devin-clark.webp",
+      "outputPath": "img/avatars/opencollective/devin-clark.webp",
+      "url": "/img/avatars/opencollective/devin-clark.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/88c14394-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/devin-clark.webp 90w",
       "size": 1446
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "88c14394-90.jpeg",
-      "outputPath": "img/avatars/opencollective/88c14394-90.jpeg",
-      "url": "/img/avatars/opencollective/88c14394-90.jpeg",
+      "filename": "devin-clark.jpeg",
+      "outputPath": "img/avatars/opencollective/devin-clark.jpeg",
+      "url": "/img/avatars/opencollective/devin-clark.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/88c14394-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/devin-clark.jpeg 90w",
       "size": 2166
     }
   ],

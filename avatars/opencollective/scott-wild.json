@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "1d02128c-90.avif",
-      "outputPath": "img/avatars/opencollective/1d02128c-90.avif",
-      "url": "/img/avatars/opencollective/1d02128c-90.avif",
+      "filename": "scott-wild.avif",
+      "outputPath": "img/avatars/opencollective/scott-wild.avif",
+      "url": "/img/avatars/opencollective/scott-wild.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/1d02128c-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/scott-wild.avif 90w",
       "size": 1299
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "1d02128c-90.webp",
-      "outputPath": "img/avatars/opencollective/1d02128c-90.webp",
-      "url": "/img/avatars/opencollective/1d02128c-90.webp",
+      "filename": "scott-wild.webp",
+      "outputPath": "img/avatars/opencollective/scott-wild.webp",
+      "url": "/img/avatars/opencollective/scott-wild.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/1d02128c-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/scott-wild.webp 90w",
       "size": 1700
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "1d02128c-90.jpeg",
-      "outputPath": "img/avatars/opencollective/1d02128c-90.jpeg",
-      "url": "/img/avatars/opencollective/1d02128c-90.jpeg",
+      "filename": "scott-wild.jpeg",
+      "outputPath": "img/avatars/opencollective/scott-wild.jpeg",
+      "url": "/img/avatars/opencollective/scott-wild.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/1d02128c-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/scott-wild.jpeg 90w",
       "size": 2240
     }
   ],

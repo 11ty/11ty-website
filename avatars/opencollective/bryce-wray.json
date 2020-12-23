@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "d868180c-90.avif",
-      "outputPath": "img/avatars/opencollective/d868180c-90.avif",
-      "url": "/img/avatars/opencollective/d868180c-90.avif",
+      "filename": "bryce-wray.avif",
+      "outputPath": "img/avatars/opencollective/bryce-wray.avif",
+      "url": "/img/avatars/opencollective/bryce-wray.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/d868180c-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/bryce-wray.avif 90w",
       "size": 1617
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "d868180c-90.webp",
-      "outputPath": "img/avatars/opencollective/d868180c-90.webp",
-      "url": "/img/avatars/opencollective/d868180c-90.webp",
+      "filename": "bryce-wray.webp",
+      "outputPath": "img/avatars/opencollective/bryce-wray.webp",
+      "url": "/img/avatars/opencollective/bryce-wray.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/d868180c-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/bryce-wray.webp 90w",
       "size": 3164
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "d868180c-90.jpeg",
-      "outputPath": "img/avatars/opencollective/d868180c-90.jpeg",
-      "url": "/img/avatars/opencollective/d868180c-90.jpeg",
+      "filename": "bryce-wray.jpeg",
+      "outputPath": "img/avatars/opencollective/bryce-wray.jpeg",
+      "url": "/img/avatars/opencollective/bryce-wray.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/d868180c-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/bryce-wray.jpeg 90w",
       "size": 2893
     }
   ],

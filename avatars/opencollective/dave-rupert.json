@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "6781ee2e-90.avif",
-      "outputPath": "img/avatars/opencollective/6781ee2e-90.avif",
-      "url": "/img/avatars/opencollective/6781ee2e-90.avif",
+      "filename": "dave-rupert.avif",
+      "outputPath": "img/avatars/opencollective/dave-rupert.avif",
+      "url": "/img/avatars/opencollective/dave-rupert.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/6781ee2e-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/dave-rupert.avif 90w",
       "size": 1203
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "6781ee2e-90.webp",
-      "outputPath": "img/avatars/opencollective/6781ee2e-90.webp",
-      "url": "/img/avatars/opencollective/6781ee2e-90.webp",
+      "filename": "dave-rupert.webp",
+      "outputPath": "img/avatars/opencollective/dave-rupert.webp",
+      "url": "/img/avatars/opencollective/dave-rupert.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/6781ee2e-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/dave-rupert.webp 90w",
       "size": 1740
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "6781ee2e-90.jpeg",
-      "outputPath": "img/avatars/opencollective/6781ee2e-90.jpeg",
-      "url": "/img/avatars/opencollective/6781ee2e-90.jpeg",
+      "filename": "dave-rupert.jpeg",
+      "outputPath": "img/avatars/opencollective/dave-rupert.jpeg",
+      "url": "/img/avatars/opencollective/dave-rupert.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/6781ee2e-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/dave-rupert.jpeg 90w",
       "size": 2477
     }
   ],

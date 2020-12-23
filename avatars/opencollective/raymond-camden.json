@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "cff8ac18-90.avif",
-      "outputPath": "img/avatars/opencollective/cff8ac18-90.avif",
-      "url": "/img/avatars/opencollective/cff8ac18-90.avif",
+      "filename": "raymond-camden.avif",
+      "outputPath": "img/avatars/opencollective/raymond-camden.avif",
+      "url": "/img/avatars/opencollective/raymond-camden.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/cff8ac18-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/raymond-camden.avif 90w",
       "size": 1347
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "cff8ac18-90.webp",
-      "outputPath": "img/avatars/opencollective/cff8ac18-90.webp",
-      "url": "/img/avatars/opencollective/cff8ac18-90.webp",
+      "filename": "raymond-camden.webp",
+      "outputPath": "img/avatars/opencollective/raymond-camden.webp",
+      "url": "/img/avatars/opencollective/raymond-camden.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/cff8ac18-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/raymond-camden.webp 90w",
       "size": 1612
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "cff8ac18-90.jpeg",
-      "outputPath": "img/avatars/opencollective/cff8ac18-90.jpeg",
-      "url": "/img/avatars/opencollective/cff8ac18-90.jpeg",
+      "filename": "raymond-camden.jpeg",
+      "outputPath": "img/avatars/opencollective/raymond-camden.jpeg",
+      "url": "/img/avatars/opencollective/raymond-camden.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/cff8ac18-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/raymond-camden.jpeg 90w",
       "size": 2328
     }
   ],

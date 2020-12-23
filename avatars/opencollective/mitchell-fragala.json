@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "dffb1b12-90.avif",
-      "outputPath": "img/avatars/opencollective/dffb1b12-90.avif",
-      "url": "/img/avatars/opencollective/dffb1b12-90.avif",
+      "filename": "mitchell-fragala.avif",
+      "outputPath": "img/avatars/opencollective/mitchell-fragala.avif",
+      "url": "/img/avatars/opencollective/mitchell-fragala.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/dffb1b12-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/mitchell-fragala.avif 90w",
       "size": 438
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "dffb1b12-90.webp",
-      "outputPath": "img/avatars/opencollective/dffb1b12-90.webp",
-      "url": "/img/avatars/opencollective/dffb1b12-90.webp",
+      "filename": "mitchell-fragala.webp",
+      "outputPath": "img/avatars/opencollective/mitchell-fragala.webp",
+      "url": "/img/avatars/opencollective/mitchell-fragala.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/dffb1b12-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/mitchell-fragala.webp 90w",
       "size": 374
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "dffb1b12-90.jpeg",
-      "outputPath": "img/avatars/opencollective/dffb1b12-90.jpeg",
-      "url": "/img/avatars/opencollective/dffb1b12-90.jpeg",
+      "filename": "mitchell-fragala.jpeg",
+      "outputPath": "img/avatars/opencollective/mitchell-fragala.jpeg",
+      "url": "/img/avatars/opencollective/mitchell-fragala.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/dffb1b12-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/mitchell-fragala.jpeg 90w",
       "size": 1076
     }
   ],

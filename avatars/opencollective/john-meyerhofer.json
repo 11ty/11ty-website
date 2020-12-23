@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "c45faec2-90.avif",
-      "outputPath": "img/avatars/opencollective/c45faec2-90.avif",
-      "url": "/img/avatars/opencollective/c45faec2-90.avif",
+      "filename": "john-meyerhofer.avif",
+      "outputPath": "img/avatars/opencollective/john-meyerhofer.avif",
+      "url": "/img/avatars/opencollective/john-meyerhofer.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/c45faec2-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/john-meyerhofer.avif 90w",
       "size": 844
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "c45faec2-90.webp",
-      "outputPath": "img/avatars/opencollective/c45faec2-90.webp",
-      "url": "/img/avatars/opencollective/c45faec2-90.webp",
+      "filename": "john-meyerhofer.webp",
+      "outputPath": "img/avatars/opencollective/john-meyerhofer.webp",
+      "url": "/img/avatars/opencollective/john-meyerhofer.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/c45faec2-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/john-meyerhofer.webp 90w",
       "size": 1208
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "c45faec2-90.jpeg",
-      "outputPath": "img/avatars/opencollective/c45faec2-90.jpeg",
-      "url": "/img/avatars/opencollective/c45faec2-90.jpeg",
+      "filename": "john-meyerhofer.jpeg",
+      "outputPath": "img/avatars/opencollective/john-meyerhofer.jpeg",
+      "url": "/img/avatars/opencollective/john-meyerhofer.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/c45faec2-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/john-meyerhofer.jpeg 90w",
       "size": 1861
     }
   ],

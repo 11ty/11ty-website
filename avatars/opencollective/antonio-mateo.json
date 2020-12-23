@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "90fd81f4-90.avif",
-      "outputPath": "img/avatars/opencollective/90fd81f4-90.avif",
-      "url": "/img/avatars/opencollective/90fd81f4-90.avif",
+      "filename": "antonio-mateo.avif",
+      "outputPath": "img/avatars/opencollective/antonio-mateo.avif",
+      "url": "/img/avatars/opencollective/antonio-mateo.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/90fd81f4-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/antonio-mateo.avif 90w",
       "size": 631
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "90fd81f4-90.webp",
-      "outputPath": "img/avatars/opencollective/90fd81f4-90.webp",
-      "url": "/img/avatars/opencollective/90fd81f4-90.webp",
+      "filename": "antonio-mateo.webp",
+      "outputPath": "img/avatars/opencollective/antonio-mateo.webp",
+      "url": "/img/avatars/opencollective/antonio-mateo.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/90fd81f4-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/antonio-mateo.webp 90w",
       "size": 394
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "90fd81f4-90.jpeg",
-      "outputPath": "img/avatars/opencollective/90fd81f4-90.jpeg",
-      "url": "/img/avatars/opencollective/90fd81f4-90.jpeg",
+      "filename": "antonio-mateo.jpeg",
+      "outputPath": "img/avatars/opencollective/antonio-mateo.jpeg",
+      "url": "/img/avatars/opencollective/antonio-mateo.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/90fd81f4-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/antonio-mateo.jpeg 90w",
       "size": 964
     }
   ],

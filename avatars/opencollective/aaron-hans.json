@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "4d3d27e4-90.avif",
-      "outputPath": "img/avatars/opencollective/4d3d27e4-90.avif",
-      "url": "/img/avatars/opencollective/4d3d27e4-90.avif",
+      "filename": "aaron-hans.avif",
+      "outputPath": "img/avatars/opencollective/aaron-hans.avif",
+      "url": "/img/avatars/opencollective/aaron-hans.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/4d3d27e4-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/aaron-hans.avif 90w",
       "size": 1561
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "4d3d27e4-90.webp",
-      "outputPath": "img/avatars/opencollective/4d3d27e4-90.webp",
-      "url": "/img/avatars/opencollective/4d3d27e4-90.webp",
+      "filename": "aaron-hans.webp",
+      "outputPath": "img/avatars/opencollective/aaron-hans.webp",
+      "url": "/img/avatars/opencollective/aaron-hans.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/4d3d27e4-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/aaron-hans.webp 90w",
       "size": 2312
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "4d3d27e4-90.jpeg",
-      "outputPath": "img/avatars/opencollective/4d3d27e4-90.jpeg",
-      "url": "/img/avatars/opencollective/4d3d27e4-90.jpeg",
+      "filename": "aaron-hans.jpeg",
+      "outputPath": "img/avatars/opencollective/aaron-hans.jpeg",
+      "url": "/img/avatars/opencollective/aaron-hans.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/4d3d27e4-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/aaron-hans.jpeg 90w",
       "size": 2875
     }
   ],

@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "170ce2df-90.avif",
-      "outputPath": "img/avatars/opencollective/170ce2df-90.avif",
-      "url": "/img/avatars/opencollective/170ce2df-90.avif",
+      "filename": "alesandro-ortiz.avif",
+      "outputPath": "img/avatars/opencollective/alesandro-ortiz.avif",
+      "url": "/img/avatars/opencollective/alesandro-ortiz.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/170ce2df-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/alesandro-ortiz.avif 90w",
       "size": 963
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "170ce2df-90.webp",
-      "outputPath": "img/avatars/opencollective/170ce2df-90.webp",
-      "url": "/img/avatars/opencollective/170ce2df-90.webp",
+      "filename": "alesandro-ortiz.webp",
+      "outputPath": "img/avatars/opencollective/alesandro-ortiz.webp",
+      "url": "/img/avatars/opencollective/alesandro-ortiz.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/170ce2df-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/alesandro-ortiz.webp 90w",
       "size": 1232
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "170ce2df-90.jpeg",
-      "outputPath": "img/avatars/opencollective/170ce2df-90.jpeg",
-      "url": "/img/avatars/opencollective/170ce2df-90.jpeg",
+      "filename": "alesandro-ortiz.jpeg",
+      "outputPath": "img/avatars/opencollective/alesandro-ortiz.jpeg",
+      "url": "/img/avatars/opencollective/alesandro-ortiz.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/170ce2df-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/alesandro-ortiz.jpeg 90w",
       "size": 1817
     }
   ],

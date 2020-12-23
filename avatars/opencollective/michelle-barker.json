@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "d48d5e60-90.avif",
-      "outputPath": "img/avatars/opencollective/d48d5e60-90.avif",
-      "url": "/img/avatars/opencollective/d48d5e60-90.avif",
+      "filename": "michelle-barker.avif",
+      "outputPath": "img/avatars/opencollective/michelle-barker.avif",
+      "url": "/img/avatars/opencollective/michelle-barker.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/d48d5e60-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/michelle-barker.avif 90w",
       "size": 1186
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "d48d5e60-90.webp",
-      "outputPath": "img/avatars/opencollective/d48d5e60-90.webp",
-      "url": "/img/avatars/opencollective/d48d5e60-90.webp",
+      "filename": "michelle-barker.webp",
+      "outputPath": "img/avatars/opencollective/michelle-barker.webp",
+      "url": "/img/avatars/opencollective/michelle-barker.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/d48d5e60-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/michelle-barker.webp 90w",
       "size": 1746
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "d48d5e60-90.jpeg",
-      "outputPath": "img/avatars/opencollective/d48d5e60-90.jpeg",
-      "url": "/img/avatars/opencollective/d48d5e60-90.jpeg",
+      "filename": "michelle-barker.jpeg",
+      "outputPath": "img/avatars/opencollective/michelle-barker.jpeg",
+      "url": "/img/avatars/opencollective/michelle-barker.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/d48d5e60-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/michelle-barker.jpeg 90w",
       "size": 2427
     }
   ],

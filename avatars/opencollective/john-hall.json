@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "c2b2caf0-90.avif",
-      "outputPath": "img/avatars/opencollective/c2b2caf0-90.avif",
-      "url": "/img/avatars/opencollective/c2b2caf0-90.avif",
+      "filename": "john-hall.avif",
+      "outputPath": "img/avatars/opencollective/john-hall.avif",
+      "url": "/img/avatars/opencollective/john-hall.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/c2b2caf0-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/john-hall.avif 90w",
       "size": 568
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "c2b2caf0-90.webp",
-      "outputPath": "img/avatars/opencollective/c2b2caf0-90.webp",
-      "url": "/img/avatars/opencollective/c2b2caf0-90.webp",
+      "filename": "john-hall.webp",
+      "outputPath": "img/avatars/opencollective/john-hall.webp",
+      "url": "/img/avatars/opencollective/john-hall.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/c2b2caf0-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/john-hall.webp 90w",
       "size": 230
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "c2b2caf0-90.jpeg",
-      "outputPath": "img/avatars/opencollective/c2b2caf0-90.jpeg",
-      "url": "/img/avatars/opencollective/c2b2caf0-90.jpeg",
+      "filename": "john-hall.jpeg",
+      "outputPath": "img/avatars/opencollective/john-hall.jpeg",
+      "url": "/img/avatars/opencollective/john-hall.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/c2b2caf0-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/john-hall.jpeg 90w",
       "size": 714
     }
   ],

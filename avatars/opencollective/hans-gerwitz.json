@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "a3b75ce-90.avif",
-      "outputPath": "img/avatars/opencollective/a3b75ce-90.avif",
-      "url": "/img/avatars/opencollective/a3b75ce-90.avif",
+      "filename": "hans-gerwitz.avif",
+      "outputPath": "img/avatars/opencollective/hans-gerwitz.avif",
+      "url": "/img/avatars/opencollective/hans-gerwitz.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/a3b75ce-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/hans-gerwitz.avif 90w",
       "size": 1087
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "a3b75ce-90.webp",
-      "outputPath": "img/avatars/opencollective/a3b75ce-90.webp",
-      "url": "/img/avatars/opencollective/a3b75ce-90.webp",
+      "filename": "hans-gerwitz.webp",
+      "outputPath": "img/avatars/opencollective/hans-gerwitz.webp",
+      "url": "/img/avatars/opencollective/hans-gerwitz.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/a3b75ce-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/hans-gerwitz.webp 90w",
       "size": 1504
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "a3b75ce-90.jpeg",
-      "outputPath": "img/avatars/opencollective/a3b75ce-90.jpeg",
-      "url": "/img/avatars/opencollective/a3b75ce-90.jpeg",
+      "filename": "hans-gerwitz.jpeg",
+      "outputPath": "img/avatars/opencollective/hans-gerwitz.jpeg",
+      "url": "/img/avatars/opencollective/hans-gerwitz.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/a3b75ce-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/hans-gerwitz.jpeg 90w",
       "size": 2355
     }
   ],

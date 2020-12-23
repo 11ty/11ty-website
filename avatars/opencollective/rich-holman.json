@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "a30fceeb-90.avif",
-      "outputPath": "img/avatars/opencollective/a30fceeb-90.avif",
-      "url": "/img/avatars/opencollective/a30fceeb-90.avif",
+      "filename": "rich-holman.avif",
+      "outputPath": "img/avatars/opencollective/rich-holman.avif",
+      "url": "/img/avatars/opencollective/rich-holman.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/a30fceeb-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/rich-holman.avif 90w",
       "size": 1510
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "a30fceeb-90.webp",
-      "outputPath": "img/avatars/opencollective/a30fceeb-90.webp",
-      "url": "/img/avatars/opencollective/a30fceeb-90.webp",
+      "filename": "rich-holman.webp",
+      "outputPath": "img/avatars/opencollective/rich-holman.webp",
+      "url": "/img/avatars/opencollective/rich-holman.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/a30fceeb-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/rich-holman.webp 90w",
       "size": 2316
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "a30fceeb-90.jpeg",
-      "outputPath": "img/avatars/opencollective/a30fceeb-90.jpeg",
-      "url": "/img/avatars/opencollective/a30fceeb-90.jpeg",
+      "filename": "rich-holman.jpeg",
+      "outputPath": "img/avatars/opencollective/rich-holman.jpeg",
+      "url": "/img/avatars/opencollective/rich-holman.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/a30fceeb-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/rich-holman.jpeg 90w",
       "size": 2890
     }
   ],

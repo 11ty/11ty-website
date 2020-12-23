@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "b9be8378-90.avif",
-      "outputPath": "img/avatars/opencollective/b9be8378-90.avif",
-      "url": "/img/avatars/opencollective/b9be8378-90.avif",
+      "filename": "sachin-sancheti.avif",
+      "outputPath": "img/avatars/opencollective/sachin-sancheti.avif",
+      "url": "/img/avatars/opencollective/sachin-sancheti.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/b9be8378-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/sachin-sancheti.avif 90w",
       "size": 1014
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "b9be8378-90.webp",
-      "outputPath": "img/avatars/opencollective/b9be8378-90.webp",
-      "url": "/img/avatars/opencollective/b9be8378-90.webp",
+      "filename": "sachin-sancheti.webp",
+      "outputPath": "img/avatars/opencollective/sachin-sancheti.webp",
+      "url": "/img/avatars/opencollective/sachin-sancheti.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/b9be8378-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/sachin-sancheti.webp 90w",
       "size": 1438
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "b9be8378-90.jpeg",
-      "outputPath": "img/avatars/opencollective/b9be8378-90.jpeg",
-      "url": "/img/avatars/opencollective/b9be8378-90.jpeg",
+      "filename": "sachin-sancheti.jpeg",
+      "outputPath": "img/avatars/opencollective/sachin-sancheti.jpeg",
+      "url": "/img/avatars/opencollective/sachin-sancheti.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/b9be8378-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/sachin-sancheti.jpeg 90w",
       "size": 2161
     }
   ],

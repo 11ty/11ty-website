@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "fbf6a538-90.avif",
-      "outputPath": "img/avatars/opencollective/fbf6a538-90.avif",
-      "url": "/img/avatars/opencollective/fbf6a538-90.avif",
+      "filename": "kristof-michiels.avif",
+      "outputPath": "img/avatars/opencollective/kristof-michiels.avif",
+      "url": "/img/avatars/opencollective/kristof-michiels.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/fbf6a538-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/kristof-michiels.avif 90w",
       "size": 610
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "fbf6a538-90.webp",
-      "outputPath": "img/avatars/opencollective/fbf6a538-90.webp",
-      "url": "/img/avatars/opencollective/fbf6a538-90.webp",
+      "filename": "kristof-michiels.webp",
+      "outputPath": "img/avatars/opencollective/kristof-michiels.webp",
+      "url": "/img/avatars/opencollective/kristof-michiels.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/fbf6a538-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/kristof-michiels.webp 90w",
       "size": 378
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "fbf6a538-90.jpeg",
-      "outputPath": "img/avatars/opencollective/fbf6a538-90.jpeg",
-      "url": "/img/avatars/opencollective/fbf6a538-90.jpeg",
+      "filename": "kristof-michiels.jpeg",
+      "outputPath": "img/avatars/opencollective/kristof-michiels.jpeg",
+      "url": "/img/avatars/opencollective/kristof-michiels.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/fbf6a538-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/kristof-michiels.jpeg 90w",
       "size": 955
     }
   ],

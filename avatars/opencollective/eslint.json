@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 78,
-      "filename": "b2e2a408-90.avif",
-      "outputPath": "img/avatars/opencollective/b2e2a408-90.avif",
-      "url": "/img/avatars/opencollective/b2e2a408-90.avif",
+      "filename": "eslint.avif",
+      "outputPath": "img/avatars/opencollective/eslint.avif",
+      "url": "/img/avatars/opencollective/eslint.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/b2e2a408-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/eslint.avif 90w",
       "size": 988
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 78,
-      "filename": "b2e2a408-90.webp",
-      "outputPath": "img/avatars/opencollective/b2e2a408-90.webp",
-      "url": "/img/avatars/opencollective/b2e2a408-90.webp",
+      "filename": "eslint.webp",
+      "outputPath": "img/avatars/opencollective/eslint.webp",
+      "url": "/img/avatars/opencollective/eslint.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/b2e2a408-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/eslint.webp 90w",
       "size": 1168
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 78,
-      "filename": "b2e2a408-90.jpeg",
-      "outputPath": "img/avatars/opencollective/b2e2a408-90.jpeg",
-      "url": "/img/avatars/opencollective/b2e2a408-90.jpeg",
+      "filename": "eslint.jpeg",
+      "outputPath": "img/avatars/opencollective/eslint.jpeg",
+      "url": "/img/avatars/opencollective/eslint.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/b2e2a408-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/eslint.jpeg 90w",
       "size": 2170
     }
   ],

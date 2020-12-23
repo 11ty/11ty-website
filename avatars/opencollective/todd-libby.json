@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "15e83902-90.avif",
-      "outputPath": "img/avatars/opencollective/15e83902-90.avif",
-      "url": "/img/avatars/opencollective/15e83902-90.avif",
+      "filename": "todd-libby.avif",
+      "outputPath": "img/avatars/opencollective/todd-libby.avif",
+      "url": "/img/avatars/opencollective/todd-libby.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/15e83902-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/todd-libby.avif 90w",
       "size": 791
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "15e83902-90.webp",
-      "outputPath": "img/avatars/opencollective/15e83902-90.webp",
-      "url": "/img/avatars/opencollective/15e83902-90.webp",
+      "filename": "todd-libby.webp",
+      "outputPath": "img/avatars/opencollective/todd-libby.webp",
+      "url": "/img/avatars/opencollective/todd-libby.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/15e83902-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/todd-libby.webp 90w",
       "size": 726
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "15e83902-90.jpeg",
-      "outputPath": "img/avatars/opencollective/15e83902-90.jpeg",
-      "url": "/img/avatars/opencollective/15e83902-90.jpeg",
+      "filename": "todd-libby.jpeg",
+      "outputPath": "img/avatars/opencollective/todd-libby.jpeg",
+      "url": "/img/avatars/opencollective/todd-libby.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/15e83902-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/todd-libby.jpeg 90w",
       "size": 1493
     }
   ],

@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "b1a728a6-90.avif",
-      "outputPath": "img/avatars/opencollective/b1a728a6-90.avif",
-      "url": "/img/avatars/opencollective/b1a728a6-90.avif",
+      "filename": "tianyu-ge.avif",
+      "outputPath": "img/avatars/opencollective/tianyu-ge.avif",
+      "url": "/img/avatars/opencollective/tianyu-ge.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/b1a728a6-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/tianyu-ge.avif 90w",
       "size": 596
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "b1a728a6-90.webp",
-      "outputPath": "img/avatars/opencollective/b1a728a6-90.webp",
-      "url": "/img/avatars/opencollective/b1a728a6-90.webp",
+      "filename": "tianyu-ge.webp",
+      "outputPath": "img/avatars/opencollective/tianyu-ge.webp",
+      "url": "/img/avatars/opencollective/tianyu-ge.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/b1a728a6-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/tianyu-ge.webp 90w",
       "size": 298
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "b1a728a6-90.jpeg",
-      "outputPath": "img/avatars/opencollective/b1a728a6-90.jpeg",
-      "url": "/img/avatars/opencollective/b1a728a6-90.jpeg",
+      "filename": "tianyu-ge.jpeg",
+      "outputPath": "img/avatars/opencollective/tianyu-ge.jpeg",
+      "url": "/img/avatars/opencollective/tianyu-ge.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/b1a728a6-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/tianyu-ge.jpeg 90w",
       "size": 863
     }
   ],
