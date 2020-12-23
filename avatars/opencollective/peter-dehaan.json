@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "e0ec679-90.avif",
-      "outputPath": "img/avatars/opencollective/e0ec679-90.avif",
-      "url": "/img/avatars/opencollective/e0ec679-90.avif",
+      "filename": "peter-dehaan.avif",
+      "outputPath": "img/avatars/opencollective/peter-dehaan.avif",
+      "url": "/img/avatars/opencollective/peter-dehaan.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/e0ec679-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/peter-dehaan.avif 90w",
       "size": 1078
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "e0ec679-90.webp",
-      "outputPath": "img/avatars/opencollective/e0ec679-90.webp",
-      "url": "/img/avatars/opencollective/e0ec679-90.webp",
+      "filename": "peter-dehaan.webp",
+      "outputPath": "img/avatars/opencollective/peter-dehaan.webp",
+      "url": "/img/avatars/opencollective/peter-dehaan.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/e0ec679-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/peter-dehaan.webp 90w",
       "size": 1560
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "e0ec679-90.jpeg",
-      "outputPath": "img/avatars/opencollective/e0ec679-90.jpeg",
-      "url": "/img/avatars/opencollective/e0ec679-90.jpeg",
+      "filename": "peter-dehaan.jpeg",
+      "outputPath": "img/avatars/opencollective/peter-dehaan.jpeg",
+      "url": "/img/avatars/opencollective/peter-dehaan.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/e0ec679-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/peter-dehaan.jpeg 90w",
       "size": 2319
     }
   ],

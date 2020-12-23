@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "9e9e8162-90.avif",
-      "outputPath": "img/avatars/opencollective/9e9e8162-90.avif",
-      "url": "/img/avatars/opencollective/9e9e8162-90.avif",
+      "filename": "max-bock.avif",
+      "outputPath": "img/avatars/opencollective/max-bock.avif",
+      "url": "/img/avatars/opencollective/max-bock.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/9e9e8162-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/max-bock.avif 90w",
       "size": 857
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "9e9e8162-90.webp",
-      "outputPath": "img/avatars/opencollective/9e9e8162-90.webp",
-      "url": "/img/avatars/opencollective/9e9e8162-90.webp",
+      "filename": "max-bock.webp",
+      "outputPath": "img/avatars/opencollective/max-bock.webp",
+      "url": "/img/avatars/opencollective/max-bock.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/9e9e8162-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/max-bock.webp 90w",
       "size": 1160
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "9e9e8162-90.jpeg",
-      "outputPath": "img/avatars/opencollective/9e9e8162-90.jpeg",
-      "url": "/img/avatars/opencollective/9e9e8162-90.jpeg",
+      "filename": "max-bock.jpeg",
+      "outputPath": "img/avatars/opencollective/max-bock.jpeg",
+      "url": "/img/avatars/opencollective/max-bock.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/9e9e8162-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/max-bock.jpeg 90w",
       "size": 1908
     }
   ],

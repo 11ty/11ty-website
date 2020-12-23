@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "760f3620-90.avif",
-      "outputPath": "img/avatars/opencollective/760f3620-90.avif",
-      "url": "/img/avatars/opencollective/760f3620-90.avif",
+      "filename": "rhian-van-esch.avif",
+      "outputPath": "img/avatars/opencollective/rhian-van-esch.avif",
+      "url": "/img/avatars/opencollective/rhian-van-esch.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/760f3620-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/rhian-van-esch.avif 90w",
       "size": 1295
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "760f3620-90.webp",
-      "outputPath": "img/avatars/opencollective/760f3620-90.webp",
-      "url": "/img/avatars/opencollective/760f3620-90.webp",
+      "filename": "rhian-van-esch.webp",
+      "outputPath": "img/avatars/opencollective/rhian-van-esch.webp",
+      "url": "/img/avatars/opencollective/rhian-van-esch.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/760f3620-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/rhian-van-esch.webp 90w",
       "size": 1656
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "760f3620-90.jpeg",
-      "outputPath": "img/avatars/opencollective/760f3620-90.jpeg",
-      "url": "/img/avatars/opencollective/760f3620-90.jpeg",
+      "filename": "rhian-van-esch.jpeg",
+      "outputPath": "img/avatars/opencollective/rhian-van-esch.jpeg",
+      "url": "/img/avatars/opencollective/rhian-van-esch.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/760f3620-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/rhian-van-esch.jpeg 90w",
       "size": 2325
     }
   ],

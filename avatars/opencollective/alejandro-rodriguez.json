@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "667af8f1-90.avif",
-      "outputPath": "img/avatars/opencollective/667af8f1-90.avif",
-      "url": "/img/avatars/opencollective/667af8f1-90.avif",
+      "filename": "alejandro-rodriguez.avif",
+      "outputPath": "img/avatars/opencollective/alejandro-rodriguez.avif",
+      "url": "/img/avatars/opencollective/alejandro-rodriguez.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/667af8f1-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/alejandro-rodriguez.avif 90w",
       "size": 1508
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "667af8f1-90.webp",
-      "outputPath": "img/avatars/opencollective/667af8f1-90.webp",
-      "url": "/img/avatars/opencollective/667af8f1-90.webp",
+      "filename": "alejandro-rodriguez.webp",
+      "outputPath": "img/avatars/opencollective/alejandro-rodriguez.webp",
+      "url": "/img/avatars/opencollective/alejandro-rodriguez.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/667af8f1-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/alejandro-rodriguez.webp 90w",
       "size": 2178
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "667af8f1-90.jpeg",
-      "outputPath": "img/avatars/opencollective/667af8f1-90.jpeg",
-      "url": "/img/avatars/opencollective/667af8f1-90.jpeg",
+      "filename": "alejandro-rodriguez.jpeg",
+      "outputPath": "img/avatars/opencollective/alejandro-rodriguez.jpeg",
+      "url": "/img/avatars/opencollective/alejandro-rodriguez.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/667af8f1-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/alejandro-rodriguez.jpeg 90w",
       "size": 2621
     }
   ],

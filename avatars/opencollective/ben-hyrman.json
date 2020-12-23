@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "8ad07a7b-90.avif",
-      "outputPath": "img/avatars/opencollective/8ad07a7b-90.avif",
-      "url": "/img/avatars/opencollective/8ad07a7b-90.avif",
+      "filename": "ben-hyrman.avif",
+      "outputPath": "img/avatars/opencollective/ben-hyrman.avif",
+      "url": "/img/avatars/opencollective/ben-hyrman.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/8ad07a7b-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/ben-hyrman.avif 90w",
       "size": 1055
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "8ad07a7b-90.webp",
-      "outputPath": "img/avatars/opencollective/8ad07a7b-90.webp",
-      "url": "/img/avatars/opencollective/8ad07a7b-90.webp",
+      "filename": "ben-hyrman.webp",
+      "outputPath": "img/avatars/opencollective/ben-hyrman.webp",
+      "url": "/img/avatars/opencollective/ben-hyrman.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/8ad07a7b-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/ben-hyrman.webp 90w",
       "size": 1576
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "8ad07a7b-90.jpeg",
-      "outputPath": "img/avatars/opencollective/8ad07a7b-90.jpeg",
-      "url": "/img/avatars/opencollective/8ad07a7b-90.jpeg",
+      "filename": "ben-hyrman.jpeg",
+      "outputPath": "img/avatars/opencollective/ben-hyrman.jpeg",
+      "url": "/img/avatars/opencollective/ben-hyrman.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/8ad07a7b-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/ben-hyrman.jpeg 90w",
       "size": 2308
     }
   ],

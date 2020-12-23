@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "e8cf086a-90.avif",
-      "outputPath": "img/avatars/opencollective/e8cf086a-90.avif",
-      "url": "/img/avatars/opencollective/e8cf086a-90.avif",
+      "filename": "markus-schork.avif",
+      "outputPath": "img/avatars/opencollective/markus-schork.avif",
+      "url": "/img/avatars/opencollective/markus-schork.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/e8cf086a-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/markus-schork.avif 90w",
       "size": 716
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "e8cf086a-90.webp",
-      "outputPath": "img/avatars/opencollective/e8cf086a-90.webp",
-      "url": "/img/avatars/opencollective/e8cf086a-90.webp",
+      "filename": "markus-schork.webp",
+      "outputPath": "img/avatars/opencollective/markus-schork.webp",
+      "url": "/img/avatars/opencollective/markus-schork.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/e8cf086a-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/markus-schork.webp 90w",
       "size": 766
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "e8cf086a-90.jpeg",
-      "outputPath": "img/avatars/opencollective/e8cf086a-90.jpeg",
-      "url": "/img/avatars/opencollective/e8cf086a-90.jpeg",
+      "filename": "markus-schork.jpeg",
+      "outputPath": "img/avatars/opencollective/markus-schork.jpeg",
+      "url": "/img/avatars/opencollective/markus-schork.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/e8cf086a-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/markus-schork.jpeg 90w",
       "size": 1410
     }
   ],

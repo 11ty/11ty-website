@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "b41f1557-90.avif",
-      "outputPath": "img/avatars/opencollective/b41f1557-90.avif",
-      "url": "/img/avatars/opencollective/b41f1557-90.avif",
+      "filename": "andrew-harvard.avif",
+      "outputPath": "img/avatars/opencollective/andrew-harvard.avif",
+      "url": "/img/avatars/opencollective/andrew-harvard.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/b41f1557-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/andrew-harvard.avif 90w",
       "size": 924
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "b41f1557-90.webp",
-      "outputPath": "img/avatars/opencollective/b41f1557-90.webp",
-      "url": "/img/avatars/opencollective/b41f1557-90.webp",
+      "filename": "andrew-harvard.webp",
+      "outputPath": "img/avatars/opencollective/andrew-harvard.webp",
+      "url": "/img/avatars/opencollective/andrew-harvard.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/b41f1557-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/andrew-harvard.webp 90w",
       "size": 1276
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "b41f1557-90.jpeg",
-      "outputPath": "img/avatars/opencollective/b41f1557-90.jpeg",
-      "url": "/img/avatars/opencollective/b41f1557-90.jpeg",
+      "filename": "andrew-harvard.jpeg",
+      "outputPath": "img/avatars/opencollective/andrew-harvard.jpeg",
+      "url": "/img/avatars/opencollective/andrew-harvard.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/b41f1557-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/andrew-harvard.jpeg 90w",
       "size": 1943
     }
   ],

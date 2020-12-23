@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "f1038d01-90.avif",
-      "outputPath": "img/avatars/opencollective/f1038d01-90.avif",
-      "url": "/img/avatars/opencollective/f1038d01-90.avif",
+      "filename": "hiddedevries.nl.avif",
+      "outputPath": "img/avatars/opencollective/hiddedevries.nl.avif",
+      "url": "/img/avatars/opencollective/hiddedevries.nl.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/f1038d01-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/hiddedevries.nl.avif 90w",
       "size": 734
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "f1038d01-90.webp",
-      "outputPath": "img/avatars/opencollective/f1038d01-90.webp",
-      "url": "/img/avatars/opencollective/f1038d01-90.webp",
+      "filename": "hiddedevries.nl.webp",
+      "outputPath": "img/avatars/opencollective/hiddedevries.nl.webp",
+      "url": "/img/avatars/opencollective/hiddedevries.nl.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/f1038d01-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/hiddedevries.nl.webp 90w",
       "size": 820
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "f1038d01-90.jpeg",
-      "outputPath": "img/avatars/opencollective/f1038d01-90.jpeg",
-      "url": "/img/avatars/opencollective/f1038d01-90.jpeg",
+      "filename": "hiddedevries.nl.jpeg",
+      "outputPath": "img/avatars/opencollective/hiddedevries.nl.jpeg",
+      "url": "/img/avatars/opencollective/hiddedevries.nl.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/f1038d01-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/hiddedevries.nl.jpeg 90w",
       "size": 1485
     }
   ],

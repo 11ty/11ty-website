@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "8aad1d39-90.avif",
-      "outputPath": "img/avatars/opencollective/8aad1d39-90.avif",
-      "url": "/img/avatars/opencollective/8aad1d39-90.avif",
+      "filename": "benjamin-randall.avif",
+      "outputPath": "img/avatars/opencollective/benjamin-randall.avif",
+      "url": "/img/avatars/opencollective/benjamin-randall.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/8aad1d39-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/benjamin-randall.avif 90w",
       "size": 1310
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "8aad1d39-90.webp",
-      "outputPath": "img/avatars/opencollective/8aad1d39-90.webp",
-      "url": "/img/avatars/opencollective/8aad1d39-90.webp",
+      "filename": "benjamin-randall.webp",
+      "outputPath": "img/avatars/opencollective/benjamin-randall.webp",
+      "url": "/img/avatars/opencollective/benjamin-randall.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/8aad1d39-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/benjamin-randall.webp 90w",
       "size": 1902
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "8aad1d39-90.jpeg",
-      "outputPath": "img/avatars/opencollective/8aad1d39-90.jpeg",
-      "url": "/img/avatars/opencollective/8aad1d39-90.jpeg",
+      "filename": "benjamin-randall.jpeg",
+      "outputPath": "img/avatars/opencollective/benjamin-randall.jpeg",
+      "url": "/img/avatars/opencollective/benjamin-randall.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/8aad1d39-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/benjamin-randall.jpeg 90w",
       "size": 2621
     }
   ],

@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "fe416e50-90.avif",
-      "outputPath": "img/avatars/opencollective/fe416e50-90.avif",
-      "url": "/img/avatars/opencollective/fe416e50-90.avif",
+      "filename": "andrew-chou.avif",
+      "outputPath": "img/avatars/opencollective/andrew-chou.avif",
+      "url": "/img/avatars/opencollective/andrew-chou.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/fe416e50-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/andrew-chou.avif 90w",
       "size": 1526
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "fe416e50-90.webp",
-      "outputPath": "img/avatars/opencollective/fe416e50-90.webp",
-      "url": "/img/avatars/opencollective/fe416e50-90.webp",
+      "filename": "andrew-chou.webp",
+      "outputPath": "img/avatars/opencollective/andrew-chou.webp",
+      "url": "/img/avatars/opencollective/andrew-chou.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/fe416e50-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/andrew-chou.webp 90w",
       "size": 2280
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "fe416e50-90.jpeg",
-      "outputPath": "img/avatars/opencollective/fe416e50-90.jpeg",
-      "url": "/img/avatars/opencollective/fe416e50-90.jpeg",
+      "filename": "andrew-chou.jpeg",
+      "outputPath": "img/avatars/opencollective/andrew-chou.jpeg",
+      "url": "/img/avatars/opencollective/andrew-chou.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/fe416e50-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/andrew-chou.jpeg 90w",
       "size": 2861
     }
   ],

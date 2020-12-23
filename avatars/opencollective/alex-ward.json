@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "688c9ee5-90.avif",
-      "outputPath": "img/avatars/opencollective/688c9ee5-90.avif",
-      "url": "/img/avatars/opencollective/688c9ee5-90.avif",
+      "filename": "alex-ward.avif",
+      "outputPath": "img/avatars/opencollective/alex-ward.avif",
+      "url": "/img/avatars/opencollective/alex-ward.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/688c9ee5-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/alex-ward.avif 90w",
       "size": 1166
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "688c9ee5-90.webp",
-      "outputPath": "img/avatars/opencollective/688c9ee5-90.webp",
-      "url": "/img/avatars/opencollective/688c9ee5-90.webp",
+      "filename": "alex-ward.webp",
+      "outputPath": "img/avatars/opencollective/alex-ward.webp",
+      "url": "/img/avatars/opencollective/alex-ward.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/688c9ee5-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/alex-ward.webp 90w",
       "size": 1660
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "688c9ee5-90.jpeg",
-      "outputPath": "img/avatars/opencollective/688c9ee5-90.jpeg",
-      "url": "/img/avatars/opencollective/688c9ee5-90.jpeg",
+      "filename": "alex-ward.jpeg",
+      "outputPath": "img/avatars/opencollective/alex-ward.jpeg",
+      "url": "/img/avatars/opencollective/alex-ward.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/688c9ee5-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/alex-ward.jpeg 90w",
       "size": 2363
     }
   ],

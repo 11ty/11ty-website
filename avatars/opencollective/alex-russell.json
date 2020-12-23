@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "428c6f81-90.avif",
-      "outputPath": "img/avatars/opencollective/428c6f81-90.avif",
-      "url": "/img/avatars/opencollective/428c6f81-90.avif",
+      "filename": "alex-russell.avif",
+      "outputPath": "img/avatars/opencollective/alex-russell.avif",
+      "url": "/img/avatars/opencollective/alex-russell.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/428c6f81-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/alex-russell.avif 90w",
       "size": 912
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "428c6f81-90.webp",
-      "outputPath": "img/avatars/opencollective/428c6f81-90.webp",
-      "url": "/img/avatars/opencollective/428c6f81-90.webp",
+      "filename": "alex-russell.webp",
+      "outputPath": "img/avatars/opencollective/alex-russell.webp",
+      "url": "/img/avatars/opencollective/alex-russell.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/428c6f81-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/alex-russell.webp 90w",
       "size": 1282
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "428c6f81-90.jpeg",
-      "outputPath": "img/avatars/opencollective/428c6f81-90.jpeg",
-      "url": "/img/avatars/opencollective/428c6f81-90.jpeg",
+      "filename": "alex-russell.jpeg",
+      "outputPath": "img/avatars/opencollective/alex-russell.jpeg",
+      "url": "/img/avatars/opencollective/alex-russell.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/428c6f81-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/alex-russell.jpeg 90w",
       "size": 1929
     }
   ],

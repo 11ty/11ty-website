@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "362515b5-90.avif",
-      "outputPath": "img/avatars/opencollective/362515b5-90.avif",
-      "url": "/img/avatars/opencollective/362515b5-90.avif",
+      "filename": "quentin-bellanger.avif",
+      "outputPath": "img/avatars/opencollective/quentin-bellanger.avif",
+      "url": "/img/avatars/opencollective/quentin-bellanger.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/362515b5-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/quentin-bellanger.avif 90w",
       "size": 1137
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "362515b5-90.webp",
-      "outputPath": "img/avatars/opencollective/362515b5-90.webp",
-      "url": "/img/avatars/opencollective/362515b5-90.webp",
+      "filename": "quentin-bellanger.webp",
+      "outputPath": "img/avatars/opencollective/quentin-bellanger.webp",
+      "url": "/img/avatars/opencollective/quentin-bellanger.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/362515b5-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/quentin-bellanger.webp 90w",
       "size": 1672
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "362515b5-90.jpeg",
-      "outputPath": "img/avatars/opencollective/362515b5-90.jpeg",
-      "url": "/img/avatars/opencollective/362515b5-90.jpeg",
+      "filename": "quentin-bellanger.jpeg",
+      "outputPath": "img/avatars/opencollective/quentin-bellanger.jpeg",
+      "url": "/img/avatars/opencollective/quentin-bellanger.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/362515b5-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/quentin-bellanger.jpeg 90w",
       "size": 2313
     }
   ],

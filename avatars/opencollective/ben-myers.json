@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "786f9889-90.avif",
-      "outputPath": "img/avatars/opencollective/786f9889-90.avif",
-      "url": "/img/avatars/opencollective/786f9889-90.avif",
+      "filename": "ben-myers.avif",
+      "outputPath": "img/avatars/opencollective/ben-myers.avif",
+      "url": "/img/avatars/opencollective/ben-myers.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/786f9889-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/ben-myers.avif 90w",
       "size": 1480
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "786f9889-90.webp",
-      "outputPath": "img/avatars/opencollective/786f9889-90.webp",
-      "url": "/img/avatars/opencollective/786f9889-90.webp",
+      "filename": "ben-myers.webp",
+      "outputPath": "img/avatars/opencollective/ben-myers.webp",
+      "url": "/img/avatars/opencollective/ben-myers.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/786f9889-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/ben-myers.webp 90w",
       "size": 2244
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "786f9889-90.jpeg",
-      "outputPath": "img/avatars/opencollective/786f9889-90.jpeg",
-      "url": "/img/avatars/opencollective/786f9889-90.jpeg",
+      "filename": "ben-myers.jpeg",
+      "outputPath": "img/avatars/opencollective/ben-myers.jpeg",
+      "url": "/img/avatars/opencollective/ben-myers.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/786f9889-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/ben-myers.jpeg 90w",
       "size": 2781
     }
   ],

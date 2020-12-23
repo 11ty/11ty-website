@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "488ea014-90.avif",
-      "outputPath": "img/avatars/opencollective/488ea014-90.avif",
-      "url": "/img/avatars/opencollective/488ea014-90.avif",
+      "filename": "buskers-bern.avif",
+      "outputPath": "img/avatars/opencollective/buskers-bern.avif",
+      "url": "/img/avatars/opencollective/buskers-bern.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/488ea014-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/buskers-bern.avif 90w",
       "size": 794
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "488ea014-90.webp",
-      "outputPath": "img/avatars/opencollective/488ea014-90.webp",
-      "url": "/img/avatars/opencollective/488ea014-90.webp",
+      "filename": "buskers-bern.webp",
+      "outputPath": "img/avatars/opencollective/buskers-bern.webp",
+      "url": "/img/avatars/opencollective/buskers-bern.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/488ea014-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/buskers-bern.webp 90w",
       "size": 1176
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "488ea014-90.jpeg",
-      "outputPath": "img/avatars/opencollective/488ea014-90.jpeg",
-      "url": "/img/avatars/opencollective/488ea014-90.jpeg",
+      "filename": "buskers-bern.jpeg",
+      "outputPath": "img/avatars/opencollective/buskers-bern.jpeg",
+      "url": "/img/avatars/opencollective/buskers-bern.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/488ea014-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/buskers-bern.jpeg 90w",
       "size": 2004
     }
   ],

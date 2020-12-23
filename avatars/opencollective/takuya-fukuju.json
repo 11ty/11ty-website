@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "9299210d-90.avif",
-      "outputPath": "img/avatars/opencollective/9299210d-90.avif",
-      "url": "/img/avatars/opencollective/9299210d-90.avif",
+      "filename": "takuya-fukuju.avif",
+      "outputPath": "img/avatars/opencollective/takuya-fukuju.avif",
+      "url": "/img/avatars/opencollective/takuya-fukuju.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/9299210d-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/takuya-fukuju.avif 90w",
       "size": 1500
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "9299210d-90.webp",
-      "outputPath": "img/avatars/opencollective/9299210d-90.webp",
-      "url": "/img/avatars/opencollective/9299210d-90.webp",
+      "filename": "takuya-fukuju.webp",
+      "outputPath": "img/avatars/opencollective/takuya-fukuju.webp",
+      "url": "/img/avatars/opencollective/takuya-fukuju.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/9299210d-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/takuya-fukuju.webp 90w",
       "size": 1754
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "9299210d-90.jpeg",
-      "outputPath": "img/avatars/opencollective/9299210d-90.jpeg",
-      "url": "/img/avatars/opencollective/9299210d-90.jpeg",
+      "filename": "takuya-fukuju.jpeg",
+      "outputPath": "img/avatars/opencollective/takuya-fukuju.jpeg",
+      "url": "/img/avatars/opencollective/takuya-fukuju.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/9299210d-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/takuya-fukuju.jpeg 90w",
       "size": 2399
     }
   ],

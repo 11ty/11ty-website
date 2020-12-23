@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "db7a602f-90.avif",
-      "outputPath": "img/avatars/opencollective/db7a602f-90.avif",
-      "url": "/img/avatars/opencollective/db7a602f-90.avif",
+      "filename": "marc-huber.avif",
+      "outputPath": "img/avatars/opencollective/marc-huber.avif",
+      "url": "/img/avatars/opencollective/marc-huber.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/db7a602f-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/marc-huber.avif 90w",
       "size": 622
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "db7a602f-90.webp",
-      "outputPath": "img/avatars/opencollective/db7a602f-90.webp",
-      "url": "/img/avatars/opencollective/db7a602f-90.webp",
+      "filename": "marc-huber.webp",
+      "outputPath": "img/avatars/opencollective/marc-huber.webp",
+      "url": "/img/avatars/opencollective/marc-huber.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/db7a602f-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/marc-huber.webp 90w",
       "size": 358
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "db7a602f-90.jpeg",
-      "outputPath": "img/avatars/opencollective/db7a602f-90.jpeg",
-      "url": "/img/avatars/opencollective/db7a602f-90.jpeg",
+      "filename": "marc-huber.jpeg",
+      "outputPath": "img/avatars/opencollective/marc-huber.jpeg",
+      "url": "/img/avatars/opencollective/marc-huber.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/db7a602f-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/marc-huber.jpeg 90w",
       "size": 964
     }
   ],

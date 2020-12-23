@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "18321e58-90.avif",
-      "outputPath": "img/avatars/opencollective/18321e58-90.avif",
-      "url": "/img/avatars/opencollective/18321e58-90.avif",
+      "filename": "brian-koser.avif",
+      "outputPath": "img/avatars/opencollective/brian-koser.avif",
+      "url": "/img/avatars/opencollective/brian-koser.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/18321e58-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/brian-koser.avif 90w",
       "size": 1633
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "18321e58-90.webp",
-      "outputPath": "img/avatars/opencollective/18321e58-90.webp",
-      "url": "/img/avatars/opencollective/18321e58-90.webp",
+      "filename": "brian-koser.webp",
+      "outputPath": "img/avatars/opencollective/brian-koser.webp",
+      "url": "/img/avatars/opencollective/brian-koser.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/18321e58-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/brian-koser.webp 90w",
       "size": 2474
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "18321e58-90.jpeg",
-      "outputPath": "img/avatars/opencollective/18321e58-90.jpeg",
-      "url": "/img/avatars/opencollective/18321e58-90.jpeg",
+      "filename": "brian-koser.jpeg",
+      "outputPath": "img/avatars/opencollective/brian-koser.jpeg",
+      "url": "/img/avatars/opencollective/brian-koser.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/18321e58-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/brian-koser.jpeg 90w",
       "size": 3084
     }
   ],

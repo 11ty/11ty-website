@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "dc6faad7-90.avif",
-      "outputPath": "img/avatars/opencollective/dc6faad7-90.avif",
-      "url": "/img/avatars/opencollective/dc6faad7-90.avif",
+      "filename": "rob-dodson.avif",
+      "outputPath": "img/avatars/opencollective/rob-dodson.avif",
+      "url": "/img/avatars/opencollective/rob-dodson.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/dc6faad7-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/rob-dodson.avif 90w",
       "size": 888
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "dc6faad7-90.webp",
-      "outputPath": "img/avatars/opencollective/dc6faad7-90.webp",
-      "url": "/img/avatars/opencollective/dc6faad7-90.webp",
+      "filename": "rob-dodson.webp",
+      "outputPath": "img/avatars/opencollective/rob-dodson.webp",
+      "url": "/img/avatars/opencollective/rob-dodson.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/dc6faad7-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/rob-dodson.webp 90w",
       "size": 1272
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "dc6faad7-90.jpeg",
-      "outputPath": "img/avatars/opencollective/dc6faad7-90.jpeg",
-      "url": "/img/avatars/opencollective/dc6faad7-90.jpeg",
+      "filename": "rob-dodson.jpeg",
+      "outputPath": "img/avatars/opencollective/rob-dodson.jpeg",
+      "url": "/img/avatars/opencollective/rob-dodson.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/dc6faad7-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/rob-dodson.jpeg 90w",
       "size": 2014
     }
   ],

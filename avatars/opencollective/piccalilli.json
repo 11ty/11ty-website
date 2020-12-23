@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "de892a7a-90.avif",
-      "outputPath": "img/avatars/opencollective/de892a7a-90.avif",
-      "url": "/img/avatars/opencollective/de892a7a-90.avif",
+      "filename": "piccalilli.avif",
+      "outputPath": "img/avatars/opencollective/piccalilli.avif",
+      "url": "/img/avatars/opencollective/piccalilli.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/de892a7a-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/piccalilli.avif 90w",
       "size": 2857
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "de892a7a-90.webp",
-      "outputPath": "img/avatars/opencollective/de892a7a-90.webp",
-      "url": "/img/avatars/opencollective/de892a7a-90.webp",
+      "filename": "piccalilli.webp",
+      "outputPath": "img/avatars/opencollective/piccalilli.webp",
+      "url": "/img/avatars/opencollective/piccalilli.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/de892a7a-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/piccalilli.webp 90w",
       "size": 4518
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "de892a7a-90.jpeg",
-      "outputPath": "img/avatars/opencollective/de892a7a-90.jpeg",
-      "url": "/img/avatars/opencollective/de892a7a-90.jpeg",
+      "filename": "piccalilli.jpeg",
+      "outputPath": "img/avatars/opencollective/piccalilli.jpeg",
+      "url": "/img/avatars/opencollective/piccalilli.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/de892a7a-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/piccalilli.jpeg 90w",
       "size": 3305
     }
   ],

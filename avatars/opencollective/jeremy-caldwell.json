@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "52cef111-90.avif",
-      "outputPath": "img/avatars/opencollective/52cef111-90.avif",
-      "url": "/img/avatars/opencollective/52cef111-90.avif",
+      "filename": "jeremy-caldwell.avif",
+      "outputPath": "img/avatars/opencollective/jeremy-caldwell.avif",
+      "url": "/img/avatars/opencollective/jeremy-caldwell.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/52cef111-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/jeremy-caldwell.avif 90w",
       "size": 1201
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "52cef111-90.webp",
-      "outputPath": "img/avatars/opencollective/52cef111-90.webp",
-      "url": "/img/avatars/opencollective/52cef111-90.webp",
+      "filename": "jeremy-caldwell.webp",
+      "outputPath": "img/avatars/opencollective/jeremy-caldwell.webp",
+      "url": "/img/avatars/opencollective/jeremy-caldwell.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/52cef111-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/jeremy-caldwell.webp 90w",
       "size": 1856
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "52cef111-90.jpeg",
-      "outputPath": "img/avatars/opencollective/52cef111-90.jpeg",
-      "url": "/img/avatars/opencollective/52cef111-90.jpeg",
+      "filename": "jeremy-caldwell.jpeg",
+      "outputPath": "img/avatars/opencollective/jeremy-caldwell.jpeg",
+      "url": "/img/avatars/opencollective/jeremy-caldwell.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/52cef111-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/jeremy-caldwell.jpeg 90w",
       "size": 2548
     }
   ],

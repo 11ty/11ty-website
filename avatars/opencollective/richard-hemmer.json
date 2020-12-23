@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "a6a7f0a7-90.avif",
-      "outputPath": "img/avatars/opencollective/a6a7f0a7-90.avif",
-      "url": "/img/avatars/opencollective/a6a7f0a7-90.avif",
+      "filename": "richard-hemmer.avif",
+      "outputPath": "img/avatars/opencollective/richard-hemmer.avif",
+      "url": "/img/avatars/opencollective/richard-hemmer.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/a6a7f0a7-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/richard-hemmer.avif 90w",
       "size": 603
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "a6a7f0a7-90.webp",
-      "outputPath": "img/avatars/opencollective/a6a7f0a7-90.webp",
-      "url": "/img/avatars/opencollective/a6a7f0a7-90.webp",
+      "filename": "richard-hemmer.webp",
+      "outputPath": "img/avatars/opencollective/richard-hemmer.webp",
+      "url": "/img/avatars/opencollective/richard-hemmer.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/a6a7f0a7-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/richard-hemmer.webp 90w",
       "size": 290
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "a6a7f0a7-90.jpeg",
-      "outputPath": "img/avatars/opencollective/a6a7f0a7-90.jpeg",
-      "url": "/img/avatars/opencollective/a6a7f0a7-90.jpeg",
+      "filename": "richard-hemmer.jpeg",
+      "outputPath": "img/avatars/opencollective/richard-hemmer.jpeg",
+      "url": "/img/avatars/opencollective/richard-hemmer.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/a6a7f0a7-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/richard-hemmer.jpeg 90w",
       "size": 866
     }
   ],

@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "3ce73e6a-90.avif",
-      "outputPath": "img/avatars/opencollective/3ce73e6a-90.avif",
-      "url": "/img/avatars/opencollective/3ce73e6a-90.avif",
+      "filename": "benjamin-rancourt.avif",
+      "outputPath": "img/avatars/opencollective/benjamin-rancourt.avif",
+      "url": "/img/avatars/opencollective/benjamin-rancourt.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/3ce73e6a-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/benjamin-rancourt.avif 90w",
       "size": 831
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "3ce73e6a-90.webp",
-      "outputPath": "img/avatars/opencollective/3ce73e6a-90.webp",
-      "url": "/img/avatars/opencollective/3ce73e6a-90.webp",
+      "filename": "benjamin-rancourt.webp",
+      "outputPath": "img/avatars/opencollective/benjamin-rancourt.webp",
+      "url": "/img/avatars/opencollective/benjamin-rancourt.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/3ce73e6a-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/benjamin-rancourt.webp 90w",
       "size": 1190
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "3ce73e6a-90.jpeg",
-      "outputPath": "img/avatars/opencollective/3ce73e6a-90.jpeg",
-      "url": "/img/avatars/opencollective/3ce73e6a-90.jpeg",
+      "filename": "benjamin-rancourt.jpeg",
+      "outputPath": "img/avatars/opencollective/benjamin-rancourt.jpeg",
+      "url": "/img/avatars/opencollective/benjamin-rancourt.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/3ce73e6a-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/benjamin-rancourt.jpeg 90w",
       "size": 1906
     }
   ],

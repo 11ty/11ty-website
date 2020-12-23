@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "80e5fb0d-90.avif",
-      "outputPath": "img/avatars/opencollective/80e5fb0d-90.avif",
-      "url": "/img/avatars/opencollective/80e5fb0d-90.avif",
+      "filename": "ryan-swaney.avif",
+      "outputPath": "img/avatars/opencollective/ryan-swaney.avif",
+      "url": "/img/avatars/opencollective/ryan-swaney.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/80e5fb0d-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/ryan-swaney.avif 90w",
       "size": 1051
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "80e5fb0d-90.webp",
-      "outputPath": "img/avatars/opencollective/80e5fb0d-90.webp",
-      "url": "/img/avatars/opencollective/80e5fb0d-90.webp",
+      "filename": "ryan-swaney.webp",
+      "outputPath": "img/avatars/opencollective/ryan-swaney.webp",
+      "url": "/img/avatars/opencollective/ryan-swaney.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/80e5fb0d-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/ryan-swaney.webp 90w",
       "size": 1140
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "80e5fb0d-90.jpeg",
-      "outputPath": "img/avatars/opencollective/80e5fb0d-90.jpeg",
-      "url": "/img/avatars/opencollective/80e5fb0d-90.jpeg",
+      "filename": "ryan-swaney.jpeg",
+      "outputPath": "img/avatars/opencollective/ryan-swaney.jpeg",
+      "url": "/img/avatars/opencollective/ryan-swaney.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/80e5fb0d-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/ryan-swaney.jpeg 90w",
       "size": 1759
     }
   ],

@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "c4e15bdb-90.avif",
-      "outputPath": "img/avatars/opencollective/c4e15bdb-90.avif",
-      "url": "/img/avatars/opencollective/c4e15bdb-90.avif",
+      "filename": "jen-downs.avif",
+      "outputPath": "img/avatars/opencollective/jen-downs.avif",
+      "url": "/img/avatars/opencollective/jen-downs.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/c4e15bdb-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/jen-downs.avif 90w",
       "size": 1313
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "c4e15bdb-90.webp",
-      "outputPath": "img/avatars/opencollective/c4e15bdb-90.webp",
-      "url": "/img/avatars/opencollective/c4e15bdb-90.webp",
+      "filename": "jen-downs.webp",
+      "outputPath": "img/avatars/opencollective/jen-downs.webp",
+      "url": "/img/avatars/opencollective/jen-downs.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/c4e15bdb-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/jen-downs.webp 90w",
       "size": 1726
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "c4e15bdb-90.jpeg",
-      "outputPath": "img/avatars/opencollective/c4e15bdb-90.jpeg",
-      "url": "/img/avatars/opencollective/c4e15bdb-90.jpeg",
+      "filename": "jen-downs.jpeg",
+      "outputPath": "img/avatars/opencollective/jen-downs.jpeg",
+      "url": "/img/avatars/opencollective/jen-downs.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/c4e15bdb-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/jen-downs.jpeg 90w",
       "size": 2475
     }
   ],

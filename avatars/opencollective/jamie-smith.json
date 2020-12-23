@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "ac0232e8-90.avif",
-      "outputPath": "img/avatars/opencollective/ac0232e8-90.avif",
-      "url": "/img/avatars/opencollective/ac0232e8-90.avif",
+      "filename": "jamie-smith.avif",
+      "outputPath": "img/avatars/opencollective/jamie-smith.avif",
+      "url": "/img/avatars/opencollective/jamie-smith.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/ac0232e8-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/jamie-smith.avif 90w",
       "size": 602
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "ac0232e8-90.webp",
-      "outputPath": "img/avatars/opencollective/ac0232e8-90.webp",
-      "url": "/img/avatars/opencollective/ac0232e8-90.webp",
+      "filename": "jamie-smith.webp",
+      "outputPath": "img/avatars/opencollective/jamie-smith.webp",
+      "url": "/img/avatars/opencollective/jamie-smith.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/ac0232e8-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/jamie-smith.webp 90w",
       "size": 626
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "ac0232e8-90.jpeg",
-      "outputPath": "img/avatars/opencollective/ac0232e8-90.jpeg",
-      "url": "/img/avatars/opencollective/ac0232e8-90.jpeg",
+      "filename": "jamie-smith.jpeg",
+      "outputPath": "img/avatars/opencollective/jamie-smith.jpeg",
+      "url": "/img/avatars/opencollective/jamie-smith.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/ac0232e8-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/jamie-smith.jpeg 90w",
       "size": 1255
     }
   ],

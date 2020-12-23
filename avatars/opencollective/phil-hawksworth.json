@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "54b3bf7b-90.avif",
-      "outputPath": "img/avatars/opencollective/54b3bf7b-90.avif",
-      "url": "/img/avatars/opencollective/54b3bf7b-90.avif",
+      "filename": "phil-hawksworth.avif",
+      "outputPath": "img/avatars/opencollective/phil-hawksworth.avif",
+      "url": "/img/avatars/opencollective/phil-hawksworth.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/54b3bf7b-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/phil-hawksworth.avif 90w",
       "size": 714
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "54b3bf7b-90.webp",
-      "outputPath": "img/avatars/opencollective/54b3bf7b-90.webp",
-      "url": "/img/avatars/opencollective/54b3bf7b-90.webp",
+      "filename": "phil-hawksworth.webp",
+      "outputPath": "img/avatars/opencollective/phil-hawksworth.webp",
+      "url": "/img/avatars/opencollective/phil-hawksworth.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/54b3bf7b-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/phil-hawksworth.webp 90w",
       "size": 904
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "54b3bf7b-90.jpeg",
-      "outputPath": "img/avatars/opencollective/54b3bf7b-90.jpeg",
-      "url": "/img/avatars/opencollective/54b3bf7b-90.jpeg",
+      "filename": "phil-hawksworth.jpeg",
+      "outputPath": "img/avatars/opencollective/phil-hawksworth.jpeg",
+      "url": "/img/avatars/opencollective/phil-hawksworth.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/54b3bf7b-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/phil-hawksworth.jpeg 90w",
       "size": 1631
     }
   ],

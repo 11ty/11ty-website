@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "ac291ba5-90.avif",
-      "outputPath": "img/avatars/opencollective/ac291ba5-90.avif",
-      "url": "/img/avatars/opencollective/ac291ba5-90.avif",
+      "filename": "ed-spencer.avif",
+      "outputPath": "img/avatars/opencollective/ed-spencer.avif",
+      "url": "/img/avatars/opencollective/ed-spencer.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/ac291ba5-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/ed-spencer.avif 90w",
       "size": 1592
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "ac291ba5-90.webp",
-      "outputPath": "img/avatars/opencollective/ac291ba5-90.webp",
-      "url": "/img/avatars/opencollective/ac291ba5-90.webp",
+      "filename": "ed-spencer.webp",
+      "outputPath": "img/avatars/opencollective/ed-spencer.webp",
+      "url": "/img/avatars/opencollective/ed-spencer.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/ac291ba5-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/ed-spencer.webp 90w",
       "size": 2402
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "ac291ba5-90.jpeg",
-      "outputPath": "img/avatars/opencollective/ac291ba5-90.jpeg",
-      "url": "/img/avatars/opencollective/ac291ba5-90.jpeg",
+      "filename": "ed-spencer.jpeg",
+      "outputPath": "img/avatars/opencollective/ed-spencer.jpeg",
+      "url": "/img/avatars/opencollective/ed-spencer.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/ac291ba5-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/ed-spencer.jpeg 90w",
       "size": 2849
     }
   ],

@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "7cedf64-90.avif",
-      "outputPath": "img/avatars/opencollective/7cedf64-90.avif",
-      "url": "/img/avatars/opencollective/7cedf64-90.avif",
+      "filename": "colin-nederkoorn.avif",
+      "outputPath": "img/avatars/opencollective/colin-nederkoorn.avif",
+      "url": "/img/avatars/opencollective/colin-nederkoorn.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/7cedf64-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/colin-nederkoorn.avif 90w",
       "size": 870
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "7cedf64-90.webp",
-      "outputPath": "img/avatars/opencollective/7cedf64-90.webp",
-      "url": "/img/avatars/opencollective/7cedf64-90.webp",
+      "filename": "colin-nederkoorn.webp",
+      "outputPath": "img/avatars/opencollective/colin-nederkoorn.webp",
+      "url": "/img/avatars/opencollective/colin-nederkoorn.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/7cedf64-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/colin-nederkoorn.webp 90w",
       "size": 842
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "7cedf64-90.jpeg",
-      "outputPath": "img/avatars/opencollective/7cedf64-90.jpeg",
-      "url": "/img/avatars/opencollective/7cedf64-90.jpeg",
+      "filename": "colin-nederkoorn.jpeg",
+      "outputPath": "img/avatars/opencollective/colin-nederkoorn.jpeg",
+      "url": "/img/avatars/opencollective/colin-nederkoorn.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/7cedf64-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/colin-nederkoorn.jpeg 90w",
       "size": 1571
     }
   ],

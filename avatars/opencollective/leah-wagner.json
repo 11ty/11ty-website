@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "a618e612-90.avif",
-      "outputPath": "img/avatars/opencollective/a618e612-90.avif",
-      "url": "/img/avatars/opencollective/a618e612-90.avif",
+      "filename": "leah-wagner.avif",
+      "outputPath": "img/avatars/opencollective/leah-wagner.avif",
+      "url": "/img/avatars/opencollective/leah-wagner.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/a618e612-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/leah-wagner.avif 90w",
       "size": 612
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "a618e612-90.webp",
-      "outputPath": "img/avatars/opencollective/a618e612-90.webp",
-      "url": "/img/avatars/opencollective/a618e612-90.webp",
+      "filename": "leah-wagner.webp",
+      "outputPath": "img/avatars/opencollective/leah-wagner.webp",
+      "url": "/img/avatars/opencollective/leah-wagner.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/a618e612-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/leah-wagner.webp 90w",
       "size": 376
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "a618e612-90.jpeg",
-      "outputPath": "img/avatars/opencollective/a618e612-90.jpeg",
-      "url": "/img/avatars/opencollective/a618e612-90.jpeg",
+      "filename": "leah-wagner.jpeg",
+      "outputPath": "img/avatars/opencollective/leah-wagner.jpeg",
+      "url": "/img/avatars/opencollective/leah-wagner.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/a618e612-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/leah-wagner.jpeg 90w",
       "size": 853
     }
   ],

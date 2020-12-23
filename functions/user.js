@@ -1,6 +1,5 @@
 const fetch = require("node-fetch");
 const slugify = require("slugify");
-const avatarmap = require("./utils/avatarmap.json");
 
 exports.handler = async (event, context, callback) => {
   let query = `
@@ -58,15 +57,12 @@ query eleventyBackers {
           if(supporter.account.email === user.email) {
             let slug = slugify(supporter.account.name).toLowerCase();
             console.log( `Match found for ${supporter.account.email}!` );
-            if(!avatarmap[slug]) {
-              console.log(`Could not find avatar in avatarmap.json for ${slug}: ${JSON.stringify(avatarmap)}`);
-            }
+
             return callback(null, {
               statusCode: 200,
               body: `{
   "name": "${supporter.account.name}",
-  "slug": "${slug}",
-  "avatar": "${avatarmap[slug]}"
+  "slug": "${slug}"
 }`
             });
           }

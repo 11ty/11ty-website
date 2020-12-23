@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 105,
-      "filename": "b9876970-90.avif",
-      "outputPath": "img/avatars/opencollective/b9876970-90.avif",
-      "url": "/img/avatars/opencollective/b9876970-90.avif",
+      "filename": "tanner-dolby.avif",
+      "outputPath": "img/avatars/opencollective/tanner-dolby.avif",
+      "url": "/img/avatars/opencollective/tanner-dolby.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/b9876970-90.avif 90w",
+      "srcset": "/img/avatars/opencollective/tanner-dolby.avif 90w",
       "size": 1269
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 105,
-      "filename": "b9876970-90.webp",
-      "outputPath": "img/avatars/opencollective/b9876970-90.webp",
-      "url": "/img/avatars/opencollective/b9876970-90.webp",
+      "filename": "tanner-dolby.webp",
+      "outputPath": "img/avatars/opencollective/tanner-dolby.webp",
+      "url": "/img/avatars/opencollective/tanner-dolby.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/b9876970-90.webp 90w",
+      "srcset": "/img/avatars/opencollective/tanner-dolby.webp 90w",
       "size": 1566
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 105,
-      "filename": "b9876970-90.jpeg",
-      "outputPath": "img/avatars/opencollective/b9876970-90.jpeg",
-      "url": "/img/avatars/opencollective/b9876970-90.jpeg",
+      "filename": "tanner-dolby.jpeg",
+      "outputPath": "img/avatars/opencollective/tanner-dolby.jpeg",
+      "url": "/img/avatars/opencollective/tanner-dolby.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/b9876970-90.jpeg 90w",
+      "srcset": "/img/avatars/opencollective/tanner-dolby.jpeg 90w",
       "size": 2400
     }
   ],
