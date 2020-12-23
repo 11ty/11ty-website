@@ -57,11 +57,24 @@ module.exports = async function() {
 		}).filter(order => {
 			return FilteredProfiles.indexOf(order.slug) === -1;
 		});
+
+		// lol hardcoded
+		orders.push({
+			name: "Zach Leatherman",
+			slug: "zachleat",
+			twitter: "zachleat",
+			image: "https://images.opencollective.com/zachleat/70606f4/avatar/256.png",
+			website: "https://www.zachleat.com/",
+			profile: "https://opencollective.com/zachleat",
+			totalAmountDonated: 0,
+			isMonthly: true,
+		});
+
 		orders = getUniqueContributors(orders);
 
 		orders.sort(function(a, b) {
 			// Sort by total amount donated (desc)
-			return b.totalDonations.value - a.totalDonations.value;
+			return b.totalAmountDonated - a.totalAmountDonated;
 		});
 
 		let backers = orders.length;
