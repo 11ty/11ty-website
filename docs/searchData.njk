@@ -6,7 +6,7 @@ eleventyExcludeFromCollections: true
 {
 	"pages": [
 	{%- for entry in collections.all %}
-	{%- if entry.data.excludeFromSearch %}{% else %}
+	{%- if not entry.data.excludeFromSearch %}
 		{
 			"url": "{{ entry.data.page.url }}",
 			"title": "{{ entry.data.searchTitle or entry.data.relatedTitle or entry.data.tiptitle or entry.data.eleventyNavigation.key or entry.data.title }}",
