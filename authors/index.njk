@@ -12,9 +12,11 @@ layout: layouts/docs.njk
 <table class="authors-list">
 	<tbody>
 {%- for author in sites | topAuthors %}
+{%- set supporter = opencollective.supporters | findBy("twitter", author.name) | last -%}
 		<tr>
 			<td><a href="/authors/{{ author.name | slug }}/">{% avatarlocalcache "twitter", author.name %}{{ author.name }}</a></td>
 			<td>×{{ author.count }} site{% if author.count !== 1 %}s{% endif %}</td>
+			<td>{% if supporter or author.name === "zachleat" %}🎈{% endif %}</td>
 		</tr>
 {%- endfor %}
 	</tbody>
