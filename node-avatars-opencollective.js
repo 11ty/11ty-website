@@ -52,12 +52,11 @@ async function fetch(name, imageUrl, website) {
   let avatarPaths = {};
 
   let getOpenCollectiveData = require("./_data/opencollective");
+  // warning: Zach Leatherman doesn’t exist in this data set 😅
   let opencollective = await getOpenCollectiveData();
   for(let supporter of opencollective.supporters) {
     promises.push(fetch(supporter.name, supporter.image, supporter.website));
   }
-  // hardcode me
-  // promises.push(fetch("Zach Leatherman", "https://unavatar.now.sh/twitter/zachleat", "https://www.zachleat.com/"));
 
   await Promise.all(promises);
 })();
