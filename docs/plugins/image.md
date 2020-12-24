@@ -13,7 +13,7 @@ You maintain full control of your HTML—this plugin does not generate any marku
 * Accepts: `jpeg`, `png`, `webp`, `gif`, `tiff`, `avif` (0.6.0+), and `svg`.
 * Output multiple sizes, keeps original aspect ratio. Never upscales raster images larger than original size (unless using SVG input).
 * Output multiple formats, supports: `jpeg`, `png`, `webp`, `avif` (0.6.0+), and `svg` (requires SVG input)
-* Retreive metadata about your new images (see [sample return object](#sample-return-object)).
+* Retrieve metadata about your new images (see [sample return object](#sample-return-object)).
   * Use this to add `width` and `height` attributes on `<img>` elements for [proper aspect ratio mapping](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping).
 * Save remote images locally using [`eleventy-cache-assets`](/docs/plugins/cache/).
   * Use local images in your HTML to prevent broken image URLs.
