@@ -209,7 +209,7 @@ And outputs the following in `src/index.html`:
 
 ### Creating a picture shortcode
 
-{% callout "info" %}The example below uses a <a href="/languages/nunjucks/#asynchronous-shortcodes">Nunjucks</a> <code>async</code> shortcode. As noted, the <a href="/docs/languages/javascript/#asynchronous-javascript-template-functions">JavaScript</a> and <a href="/docs/languages/liquid/#asynchronous-shortcodes">Liquid</a> template engines also work here and are asynchronous by default.{% endcallout %}
+{% callout "info" %}The example below uses a <a href="/docs/languages/nunjucks/#asynchronous-shortcodes">Nunjucks</a> <code>async</code> shortcode. As noted, the <a href="/docs/languages/javascript/#asynchronous-javascript-template-functions">JavaScript</a> and <a href="/docs/languages/liquid/#asynchronous-shortcodes">Liquid</a> template engines also work here and are asynchronous by default.{% endcallout %}
 
 {% codetitle ".eleventy.js" %}
 
