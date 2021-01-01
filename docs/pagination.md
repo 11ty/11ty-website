@@ -98,7 +98,7 @@ In addition to the `pagination` object entries documented above, it also has:
 
 </details>
 
-If the above file were named `paged.njk`, it would create two pages: `_site/paged/0/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
+If the above file were named `paged.njk`, it would create two pages: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
 
 ## Creating Navigation Links to your Pages
 
@@ -503,7 +503,7 @@ testdata:
   - item4
 ```
 
-This means that `collections.myCollection` will have only the first page added to the collection array (`_site/my-page/index.html`). However, if you’d like all the pagination pages to the collections, use `addAllPagesToCollections: true` to the pagination front matter options like so:
+This means that `collections.myCollection` will have only the first page added to the collection array (`_site/my-page/index.html`). However, if you’d like to add all the pagination pages to the collections, use `addAllPagesToCollections: true` to the pagination front matter options like so:
 
 {% codetitle "my-page.md" %}
 

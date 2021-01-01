@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "nick-colley.avif",
+      "outputPath": "img/avatars/opencollective/nick-colley.avif",
+      "url": "/img/avatars/opencollective/nick-colley.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/nick-colley.avif 90w",
+      "size": 2062
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "nick-colley.webp",
+      "outputPath": "img/avatars/opencollective/nick-colley.webp",
+      "url": "/img/avatars/opencollective/nick-colley.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/nick-colley.webp 90w",
+      "size": 2956
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/42a4db75-90.jpeg",
+      "filename": "nick-colley.jpeg",
+      "outputPath": "img/avatars/opencollective/nick-colley.jpeg",
+      "url": "/img/avatars/opencollective/nick-colley.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/42a4db75-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/42a4db75-90.jpeg",
-      "size": 3577
+      "srcset": "/img/avatars/opencollective/nick-colley.jpeg 90w",
+      "size": 3325
     }
   ],
   "slug": "nick-colley"

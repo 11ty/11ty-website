@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "richard-hemmer.avif",
+      "outputPath": "img/avatars/opencollective/richard-hemmer.avif",
+      "url": "/img/avatars/opencollective/richard-hemmer.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/richard-hemmer.avif 90w",
+      "size": 603
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "richard-hemmer.webp",
+      "outputPath": "img/avatars/opencollective/richard-hemmer.webp",
+      "url": "/img/avatars/opencollective/richard-hemmer.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/richard-hemmer.webp 90w",
+      "size": 290
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "richard-hemmer.jpeg",
+      "outputPath": "img/avatars/opencollective/richard-hemmer.jpeg",
+      "url": "/img/avatars/opencollective/richard-hemmer.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/richard-hemmer.jpeg 90w",
+      "size": 866
+    }
+  ],
+  "slug": "richard-hemmer"
+}

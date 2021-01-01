@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "ed-johnson-williams.avif",
+      "outputPath": "img/avatars/opencollective/ed-johnson-williams.avif",
+      "url": "/img/avatars/opencollective/ed-johnson-williams.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/ed-johnson-williams.avif 90w",
+      "size": 626
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "ed-johnson-williams.webp",
+      "outputPath": "img/avatars/opencollective/ed-johnson-williams.webp",
+      "url": "/img/avatars/opencollective/ed-johnson-williams.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/ed-johnson-williams.webp 90w",
+      "size": 400
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "ed-johnson-williams.jpeg",
+      "outputPath": "img/avatars/opencollective/ed-johnson-williams.jpeg",
+      "url": "/img/avatars/opencollective/ed-johnson-williams.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/ed-johnson-williams.jpeg 90w",
+      "size": 936
+    }
+  ],
+  "slug": "ed-johnson-williams"
+}

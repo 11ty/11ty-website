@@ -13,7 +13,7 @@ You may want to run some code at certain times during the compiling process. To 
 
 All events are configured in your `.eleventy.js` configuration file, with the code run every time the event triggers.
 
-## beforeBuild {% addedin "1.0.0" %}
+## beforeBuild {% addedin "0.11.1" %}
 
 The `beforeBuild` event runs every time Eleventy starts building, so it will run before the start of each stand-alone build, as well as each time building starts as either part of `--watch` or `--serve`. To use it, attach the event handler to your Eleventy config:
 
@@ -25,7 +25,7 @@ module.exports = function (eleventyConfig) {
 };
 ```
 
-## afterBuild {% addedin "1.0.0" %}
+## afterBuild {% addedin "0.11.1" %}
 
 The `afterBuild` event runs every time Eleventy finishes building, so it will run after the end of each stand-alone build, as well as each time building ends as either part of `--watch` or `--serve`. To use it, attach the event handler to your Eleventy config:
 
@@ -45,6 +45,17 @@ The `beforeWatch` event runs before a build is run _only_ if it's a re-run durin
 module.exports = function (eleventyConfig) {
   eleventyConfig.on('beforeWatch', () => {
     // Run me before --watch or --serve re-runs
+  });
+};
+```
+
+### Changed Files {% addedin "0.11.1" %}
+
+```js
+module.exports = function (eleventyConfig) {
+  eleventyConfig.on('beforeWatch', (changedFiles) => {
+    // changedFiles is an array of files that changed
+    // to trigger the watch/serve build
   });
 };
 ```

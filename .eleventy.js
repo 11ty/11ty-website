@@ -3,23 +3,24 @@ const HumanReadable = require("human-readable-numbers");
 const commaNumber = require("comma-number");
 const markdownIt = require("markdown-it");
 const loadLanguages = require("prismjs/components/");
+const slugify = require("slugify");
+const fs = require("fs-extra");
 
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
+const monthDiffPlugin = require("./config/monthDiff");
 const addedInLocalPlugin = require("./config/addedin");
 const minificationLocalPlugin = require("./config/minification");
 const getAuthors = require("./config/getAuthorsFromSites");
 const cleanName = require("./config/cleanAuthorName");
 const objectHas = require("./config/object-has");
-
-
-const slugify = require('slugify');
+const lodashGet = require("lodash/get");
 
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);
 
-let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" class="avatar">`;
+let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" class="avatar" width="200" height="200">`;
 const shortcodes = {
 	avatarlocalcache: function(datasource, slug, alt = "") {
 		if(!slug) {
@@ -35,14 +36,19 @@ const shortcodes = {
 		}
 
 		let ret = [];
-		if(mapEntry.webp) {
-			ret.push("<picture>");
-			ret.push(`<source srcset="${mapEntry.webp[0].srcset}" type="${mapEntry.webp[0].sourceType}">`);
+		if(mapEntry.webp || mapEntry.avif) {
+      ret.push("<picture>");
+      if(mapEntry.avif) {
+        ret.push(`<source srcset="${mapEntry.avif[0].srcset}" type="${mapEntry.avif[0].sourceType}">`);
+      }
+      if(mapEntry.webp) {
+        ret.push(`<source srcset="${mapEntry.webp[0].srcset}" type="${mapEntry.webp[0].sourceType}">`);
+      }
 		}
 		let otherSrc = mapEntry.jpeg || mapEntry.png;
 
-		ret.push(`<img src="${otherSrc[0].url}" alt="${alt || `${slug}’s ${datasource} avatar`}" loading="lazy" class="avatar">`);
-		if(mapEntry.webp) {
+		ret.push(`<img src="${otherSrc[0].url}" alt="${alt || `${slug}’s ${datasource} avatar`}" loading="lazy" class="avatar" width="${otherSrc[0].width}" height="${otherSrc[0].height}">`);
+		if(mapEntry.webp || mapEntry.avif) {
 			ret.push("</picture>");
 		}
 		return ret.join("");
@@ -80,6 +86,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(rssPlugin);
 	eleventyConfig.addPlugin(navigationPlugin);
 	eleventyConfig.addPlugin(addedInLocalPlugin);
+	eleventyConfig.addPlugin(monthDiffPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
 
 	eleventyConfig.addCollection("sidebarNav", function(collection) {
@@ -143,12 +150,30 @@ ${text.trim()}
 	eleventyConfig.addPassthroughCopy("img");
 	eleventyConfig.addPassthroughCopy("favicon.ico");
 
+	eleventyConfig.addFilter("findHash", function(speedlifyUrls, ...urls) {
+		for(let url of urls) {
+			if(!url) {
+				continue;
+			}
+
+			// keys in speedlifyUrls are requestedUrl not final URLs
+			if(speedlifyUrls[url]) {
+				return speedlifyUrls[url].hash;
+			} else if(!url.endsWith("/") && speedlifyUrls[`${url}/`]) {
+				return speedlifyUrls[`${url}/`].hash;
+			}
+		}
+	});
+
+	eleventyConfig.addFilter("fileExists", function(url) {
+		return fs.pathExistsSync(`.${url}`);
+	});
+
 	eleventyConfig.addFilter("toJSON", function(obj) {
 		return JSON.stringify(obj);
 	});
 
 	eleventyConfig.addFilter("toSearchEntry", function(str) {
-		// <a class="direct-link" href="#eleventy-is-supported-financially-by-the-following-lovely-people" title="Direct link to this heading">#</a>
 		return str.replace(/<a class="direct-link"[^>]*>#<\/a\>/g, "");
 	});
 
@@ -158,6 +183,10 @@ ${text.trim()}
 
 	eleventyConfig.addFilter("commaNumber", function(num) {
 		return commaNumber(num);
+	});
+
+	eleventyConfig.addFilter("displayPrice", function(num) {
+		return parseFloat(num).toFixed(2);
 	});
 
 	eleventyConfig.addShortcode("templatelangs", function(languages, page, whitelist, anchor, isinline) {
@@ -381,14 +410,19 @@ ${text.trim()}
 		}
 	});
 
-	eleventyConfig.addFilter("findBy", (data, key, value) => {
+	eleventyConfig.addFilter("findBy", (data, path, value) => {
 		return data.filter(entry => {
-			if(!key || !value || !entry[key]) {
+			if(!path || !value) {
+				return false;
+			}
+
+			let gotten = lodashGet(entry, path);
+			if(!gotten) {
 				return false;
 			}
 
 			let valueLower = value.toLowerCase();
-			let dataLower = entry[key].toLowerCase();
+			let dataLower = gotten.toLowerCase();
 			if(valueLower === dataLower) {
 				return true;
 			}
@@ -414,34 +448,6 @@ ${text.trim()}
 		}
 	});
 
-	eleventyConfig.addFilter("hasPerformanceEntryByUrl", (url, sites = []) => {
-		// console.log( sites.length, url );
-		for(let site of sites) {
-			if(!url || !site.url) {
-				continue;
-			}
-			let lowerUrl = url.toLowerCase();
-			let siteUrl = site.url.toLowerCase();
-			if(lowerUrl === siteUrl || `${lowerUrl}/` === siteUrl) {
-				return true;
-			}
-		}
-		return false;
-	});
-
-	let top11Sites = require("./_data/allTopSites.json");
-
-	function getTrophyCountForUrl(url) {
-		let site = top11Sites.filter(entry => entry.url === url || `${entry.url}/` === url || entry.url === `${url}/`);
-		if(site.length) {
-			return site[0].combinedRank.filter(entry => entry && entry <= 11).length;
-		}
-
-		return 0;
-	}
-
-	eleventyConfig.addFilter("numberOfTrophies", getTrophyCountForUrl);
-
 	eleventyConfig.addFilter("repeat", (number, str) => {
 		if(number > 0) {
 			return str + (new Array(number)).join(str);
@@ -452,24 +458,19 @@ ${text.trim()}
 	eleventyConfig.addFilter("topAuthors", sites => {
 		let counts = {};
 		let eligibleCounts = {};
-		let trophies = {};
 		getAuthors(sites, (name, site) => {
-			if(!counts[name]) {
-				counts[name] = 0;
+			let key = name.toLowerCase();
+			if(!counts[key]) {
+				counts[key] = 0;
 			}
-			counts[name]++;
+			counts[key]++;
 
 			if(site.url && !site.disabled && !site.superfeatured && !site.hideOnHomepage) {
-				if(!eligibleCounts[name]) {
-					eligibleCounts[name] = 0;
+				if(!eligibleCounts[key]) {
+					eligibleCounts[key] = 0;
 				}
-				eligibleCounts[name]++;
+				eligibleCounts[key]++;
 			}
-
-			if(!trophies[name]) {
-				trophies[name] = 0;
-			}
-			trophies[name] += getTrophyCountForUrl(site.url);
 		});
 
 		let top = [];
@@ -479,15 +480,11 @@ ${text.trim()}
 					name: author,
 					count: counts[author],
 					eligibleCount: eligibleCounts[author],
-					trophies: trophies[author],
 				});
 			}
 		}
 		top.sort((a, b) => {
-			if(a.trophies === b.trophies) {
-				return b.count - a.count;
-			}
-			return b.trophies - a.trophies;
+			return b.count - a.count;
 		});
 
 		return top;
@@ -500,12 +497,7 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addFilter("supportersFacepile", (supporters) => {
-		return supporters.filter(supporter => supporter.role === "BACKER" && supporter.tier && supporter.tier != "Exclusive Gold Sponsor");
-	});
-
-	eleventyConfig.addFilter("screenshotFilenameFromUrl", (url) => {
-		let slug = url.replace(/https?\:\//, "");
-		return slugify(slug, { lower: true, remove: /[:\/]/g }) + ".jpg";
+		return supporters.filter(supporter => supporter.status === 'ACTIVE' && supporter.tier && supporter.tier.slug !== "gold-sponsor");
 	});
 
 	// Sort an object that has `order` props in values. Return an array

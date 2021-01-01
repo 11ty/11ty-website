@@ -5,3 +5,6 @@ node-supporters/
 .env
 .log
 .cache
+yarn.lock
+.vscode
+**/.DS_Store

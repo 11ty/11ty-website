@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "quentin-delcourt.avif",
+      "outputPath": "img/avatars/opencollective/quentin-delcourt.avif",
+      "url": "/img/avatars/opencollective/quentin-delcourt.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/quentin-delcourt.avif 90w",
+      "size": 1051
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "quentin-delcourt.webp",
+      "outputPath": "img/avatars/opencollective/quentin-delcourt.webp",
+      "url": "/img/avatars/opencollective/quentin-delcourt.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/quentin-delcourt.webp 90w",
+      "size": 1454
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/593267cb-90.jpeg",
+      "filename": "quentin-delcourt.jpeg",
+      "outputPath": "img/avatars/opencollective/quentin-delcourt.jpeg",
+      "url": "/img/avatars/opencollective/quentin-delcourt.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/593267cb-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/593267cb-90.jpeg",
-      "size": 2181
+      "srcset": "/img/avatars/opencollective/quentin-delcourt.jpeg 90w",
+      "size": 2188
     }
   ],
   "slug": "quentin-delcourt"

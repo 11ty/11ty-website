@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "justus-grunow.avif",
+      "outputPath": "img/avatars/opencollective/justus-grunow.avif",
+      "url": "/img/avatars/opencollective/justus-grunow.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/justus-grunow.avif 90w",
+      "size": 603
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "justus-grunow.webp",
+      "outputPath": "img/avatars/opencollective/justus-grunow.webp",
+      "url": "/img/avatars/opencollective/justus-grunow.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/justus-grunow.webp 90w",
+      "size": 286
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "justus-grunow.jpeg",
+      "outputPath": "img/avatars/opencollective/justus-grunow.jpeg",
+      "url": "/img/avatars/opencollective/justus-grunow.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/justus-grunow.jpeg 90w",
+      "size": 765
+    }
+  ],
+  "slug": "justus-grunow"
+}

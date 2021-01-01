@@ -26,7 +26,7 @@ Locally assigned front matter values override things further up the layout chain
 ## Template Configuration
 <span id="user-defined-front-matter-customizations"></span>
 
-Eleventy allows you a bunch of different options to control how your template works. The most popular is [`permalink`](/docs/permalinks/), which allows you to change where the file goes on the file system. You can set these options in your front matter, or anywhere else in the [Data Cascade](/docs/data-cascade/). [Read more about Template Configuration](/docs/data-configuration/).
+Eleventy allows many options to control how your template works. The most popular is [`permalink`](/docs/permalinks/), which allows you to change where the file goes on the file system. You can set these options in your front matter, or anywhere else in the [Data Cascade](/docs/data-cascade/). [Read more about Template Configuration](/docs/data-configuration/).
 
 ## Sources of Data
 

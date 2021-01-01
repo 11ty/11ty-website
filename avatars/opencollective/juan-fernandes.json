@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "juan-fernandes.avif",
+      "outputPath": "img/avatars/opencollective/juan-fernandes.avif",
+      "url": "/img/avatars/opencollective/juan-fernandes.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/juan-fernandes.avif 90w",
+      "size": 1537
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "juan-fernandes.webp",
+      "outputPath": "img/avatars/opencollective/juan-fernandes.webp",
+      "url": "/img/avatars/opencollective/juan-fernandes.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/juan-fernandes.webp 90w",
+      "size": 2320
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "juan-fernandes.jpeg",
+      "outputPath": "img/avatars/opencollective/juan-fernandes.jpeg",
+      "url": "/img/avatars/opencollective/juan-fernandes.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/juan-fernandes.jpeg 90w",
+      "size": 2854
+    }
+  ],
+  "slug": "juan-fernandes"
+}

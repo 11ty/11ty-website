@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-responsive-images",
+	"author": "adamculpepper",
+	"description": "adds a shortcode to take care of the `srcset` attribute for responsive images via Cloudinary and all other `img` attributes."
+}

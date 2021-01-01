@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "nick-huntington.avif",
+      "outputPath": "img/avatars/opencollective/nick-huntington.avif",
+      "url": "/img/avatars/opencollective/nick-huntington.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/nick-huntington.avif 90w",
+      "size": 586
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "nick-huntington.webp",
+      "outputPath": "img/avatars/opencollective/nick-huntington.webp",
+      "url": "/img/avatars/opencollective/nick-huntington.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/nick-huntington.webp 90w",
+      "size": 310
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "nick-huntington.jpeg",
+      "outputPath": "img/avatars/opencollective/nick-huntington.jpeg",
+      "url": "/img/avatars/opencollective/nick-huntington.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/nick-huntington.jpeg 90w",
+      "size": 840
+    }
+  ],
+  "slug": "nick-huntington"
+}

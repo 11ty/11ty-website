@@ -38,8 +38,4 @@
 	"name": "Pug",
 	"ext": "pug",
 	"url": "/docs/languages/pug/"
-},{
-	"name": "JavaScript Template Literals",
-	"ext": "jstl",
-	"url": "/docs/languages/jstl/"
 }]

@@ -1,15 +1,17 @@
 const slugify = require("slugify");
 const fs = require("fs-extra");
 const fastglob = require("fast-glob");
-const getTwitterAvatarUrl = require("twitter-avatar-url");
 const eleventyImg = require("@11ty/eleventy-img");
 const cleanName = require("./config/cleanAuthorName");
+const getTwitterAvatarUrl = require("twitter-avatar-url");
 
 eleventyImg.concurrency = 5;
-getTwitterAvatarUrl.concurrency = 1;
 
-async function fetch(name) {
-	if(!name) {
+async function fetch(entry) {
+  let name = entry.username;
+  let url = entry.url.large;
+
+	if(!name || !url) {
 		return;
 	}
 
@@ -18,22 +20,23 @@ async function fetch(name) {
 	await fs.ensureDir(dir);
 
 	let path = `${dir}${slug}.json`;
+	try {
+    console.log( "Fetching", name, url );
+    // let url = `https://unavatar.now.sh/twitter/${name}?fallback=false`;
+		let stats = await eleventyImg(url, {
+			formats: ["avif", "webp", "jpeg"],
+			widths: [90],
+			urlPath: "/img/avatars/twitter/",
+			outputDir: "img/avatars/twitter/",
+			cacheOptions: {
+				duration: "30d",
+			}
+		});
 
-	if(!fs.pathExistsSync(path)) {
-		console.log( "Getting image url for", name );
-		let result = await getTwitterAvatarUrl(name);
-		if(result && result.url.large) {
-			let stats = await eleventyImg(result.url.large, {
-				formats: ["webp", "jpeg"],
-				widths: [90],
-				urlPath: "/img/avatars/twitter/",
-				outputDir: "img/avatars/twitter/",
-			});
-
-			return fs.writeFile(path, JSON.stringify(stats, null, 2));
-		}
-
-		console.log(`Could not retrieve twitter avatar url for ${name}`, result);
+		return fs.writeFile(path, JSON.stringify(stats, null, 2));
+	} catch(e) {
+		console.log( "Error: ", e );
+		// return fs.unlink(path);
 	}
 }
 
@@ -90,9 +93,10 @@ async function fetch(name) {
 		}
 	}
 
-	console.log( "Found", twitterUsernames.size, "usernames" );
-	let sorted = Array.from(twitterUsernames).sort();
-	for(let name of sorted) {
-		await fetch(name);
+  console.log( "Found", twitterUsernames.size, "usernames" );
+
+  let allTwitterUrls = await getTwitterAvatarUrl(Array.from(twitterUsernames));
+	for(let entry of allTwitterUrls) {
+		await fetch(entry);
 	}
 })();

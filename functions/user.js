@@ -5,7 +5,7 @@ exports.handler = async (event, context, callback) => {
   let query = `
 query eleventyBackers {
   collective(slug: "11ty") {
-    members {
+    members(limit: 9999) {
       nodes {
         account {
           name
@@ -55,12 +55,14 @@ query eleventyBackers {
         console.log( `Log in from ${user.email}` );
         for(let supporter of result.data.collective.members.nodes) {
           if(supporter.account.email === user.email) {
+            let slug = slugify(supporter.account.name).toLowerCase();
             console.log( `Match found for ${supporter.account.email}!` );
+
             return callback(null, {
               statusCode: 200,
               body: `{
   "name": "${supporter.account.name}",
-  "slug": "${slugify(supporter.account.name).toLowerCase()}"
+  "slug": "${slug}"
 }`
             });
           }

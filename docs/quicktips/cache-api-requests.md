@@ -3,11 +3,15 @@ tipindex: "009"
 tiptitle: "Cache Data Requests"
 date: 2020-04-23
 ---
+{% callout "info" %}
+Read the full <a href="/docs/plugins/cache/">documentation at the <code>eleventy-cache-assets</code> plugin page</a>.
+{% endcallout %}
+
 In [Quick Tip #007](/docs/quicktips/eliminate-js/), we described a method to fetch data from an API at build time (in this example it was GitHub Stargazers) to display on your site.
 
 However, if you’re working on your site locally, you probably don’t want every Eleventy build to make a request to an external API call. You’d hit the rate limit pretty quickly (on GitHub, 60 per hour) and each request would slow down your build times!
 
-Now there is an easier way. You can use the [`eleventy-cache-assets`](https://github.com/11ty/eleventy-cache-assets) utility to cache these requests to save on both API limits and build performance!
+Now there is an easier way. You can use the [`eleventy-cache-assets`](/docs/plugins/cache/) utility to cache these requests to save on both API limits and build performance!
 
 ```
 npm install @11ty/eleventy-cache-assets
@@ -74,7 +78,3 @@ module.exports = async function() {
   }
 };
 ```
-
-## Read More
-
-[Read more at the `eleventy-cache-assets` Documentation](https://github.com/11ty/eleventy-cache-assets)

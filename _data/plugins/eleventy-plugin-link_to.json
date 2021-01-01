@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-link_to",
+	"author": "nhoizey",
+	"description": "a nunjucks tag to link to another internal content in Eleventy"
+}

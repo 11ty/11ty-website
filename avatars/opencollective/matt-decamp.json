@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "matt-decamp.avif",
+      "outputPath": "img/avatars/opencollective/matt-decamp.avif",
+      "url": "/img/avatars/opencollective/matt-decamp.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/matt-decamp.avif 90w",
+      "size": 1240
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "matt-decamp.webp",
+      "outputPath": "img/avatars/opencollective/matt-decamp.webp",
+      "url": "/img/avatars/opencollective/matt-decamp.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/matt-decamp.webp 90w",
+      "size": 1668
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "matt-decamp.jpeg",
+      "outputPath": "img/avatars/opencollective/matt-decamp.jpeg",
+      "url": "/img/avatars/opencollective/matt-decamp.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/matt-decamp.jpeg 90w",
+      "size": 2325
+    }
+  ],
+  "slug": "matt-decamp"
+}

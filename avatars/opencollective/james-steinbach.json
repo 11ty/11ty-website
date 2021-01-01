@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "james-steinbach.avif",
+      "outputPath": "img/avatars/opencollective/james-steinbach.avif",
+      "url": "/img/avatars/opencollective/james-steinbach.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/james-steinbach.avif 90w",
+      "size": 1160
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "james-steinbach.webp",
+      "outputPath": "img/avatars/opencollective/james-steinbach.webp",
+      "url": "/img/avatars/opencollective/james-steinbach.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/james-steinbach.webp 90w",
+      "size": 1394
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/bf96234a.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "james-steinbach.jpeg",
+      "outputPath": "img/avatars/opencollective/james-steinbach.jpeg",
+      "url": "/img/avatars/opencollective/james-steinbach.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/bf96234a.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/bf96234a.jpeg",
-      "size": 1875
+      "srcset": "/img/avatars/opencollective/james-steinbach.jpeg 90w",
+      "size": 2204
     }
   ],
   "slug": "james-steinbach"

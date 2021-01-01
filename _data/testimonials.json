@@ -23,9 +23,9 @@
 	},
 	{
 		"text": "Jekyll is dead to me",
-		"twitter": "hankchizljaw",
+		"twitter": "piccalilli_",
 		"name": "Andy Bell",
-		"source": "https://twitter.com/hankchizljaw/",
+		"source": "https://twitter.com/piccalilli_/",
 		"featured": true
 	},
 	{
@@ -54,7 +54,6 @@
 	},
 	{
 		"text": "I've been digging into Eleventy, a new static site generator. Really like the way it handles pagination!",
-		"twitter": "jameswillweb",
 		"name": "James Williamson",
 		"source": "https://twitter.com/jameswillweb/status/951488360543121408"
 	},

@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "colin-nederkoorn.avif",
+      "outputPath": "img/avatars/opencollective/colin-nederkoorn.avif",
+      "url": "/img/avatars/opencollective/colin-nederkoorn.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/colin-nederkoorn.avif 90w",
+      "size": 870
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "colin-nederkoorn.webp",
+      "outputPath": "img/avatars/opencollective/colin-nederkoorn.webp",
+      "url": "/img/avatars/opencollective/colin-nederkoorn.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/colin-nederkoorn.webp 90w",
+      "size": 842
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/25eaabd6.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "colin-nederkoorn.jpeg",
+      "outputPath": "img/avatars/opencollective/colin-nederkoorn.jpeg",
+      "url": "/img/avatars/opencollective/colin-nederkoorn.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/25eaabd6.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/25eaabd6.jpeg",
-      "size": 1375
+      "srcset": "/img/avatars/opencollective/colin-nederkoorn.jpeg 90w",
+      "size": 1571
     }
   ],
   "slug": "colin-nederkoorn"

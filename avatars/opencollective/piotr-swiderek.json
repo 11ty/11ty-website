@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "piotr-swiderek.avif",
+      "outputPath": "img/avatars/opencollective/piotr-swiderek.avif",
+      "url": "/img/avatars/opencollective/piotr-swiderek.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/piotr-swiderek.avif 90w",
+      "size": 1086
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "piotr-swiderek.webp",
+      "outputPath": "img/avatars/opencollective/piotr-swiderek.webp",
+      "url": "/img/avatars/opencollective/piotr-swiderek.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/piotr-swiderek.webp 90w",
+      "size": 1678
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/64df06e5-90.jpeg",
+      "filename": "piotr-swiderek.jpeg",
+      "outputPath": "img/avatars/opencollective/piotr-swiderek.jpeg",
+      "url": "/img/avatars/opencollective/piotr-swiderek.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/64df06e5-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/64df06e5-90.jpeg",
-      "size": 2350
+      "srcset": "/img/avatars/opencollective/piotr-swiderek.jpeg 90w",
+      "size": 2384
     }
   ],
   "slug": "piotr-swiderek"

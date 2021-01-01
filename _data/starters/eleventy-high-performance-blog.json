@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/google/eleventy-high-performance-blog",
+	"name": "Eleventy High Performance Blog",
+	"description": "A high performance blog template for the 11ty static site generator.",
+	"author": "cramforce",
+	"demo": "https://eleventy-high-performance-blog-sample.industrialempathy.com/"
+}

@@ -12,9 +12,12 @@
     "links-internal": "hyperlink -ri --root _site --canonicalroot https://11ty.dev/ --skip '/.netlify/functions' _site/*.html | tap-spot",
     "deploy": "eleventy && node node-screenshots && ./deploy.sh",
     "build": "eleventy",
-    "build-production": "ELEVENTY_PRODUCTION=true eleventy",
+    "start": "eleventy --serve",
+    "build-production": "node node-avatars-opencollective && ELEVENTY_PRODUCTION=true eleventy",
+    "get-new-screenshots": "node node-screenshots",
     "get-new-supporters": "eleventy && node node-supporters",
-    "get-new-avatars": "node node-avatars-opencollective && node node-avatars-twitter"
+    "get-new-avatars": "node node-avatars-opencollective && node node-avatars-twitter",
+    "format": "prettier --write '**/*.{js,css,html,md}'"
   },
   "repository": {
     "type": "git",
@@ -34,10 +37,16 @@
     "url": "https://opencollective.com/11ty"
   },
   "homepage": "https://github.com/11ty/11ty-website#readme",
+  "lint-staged": {
+    "*.{js,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy": "^0.11.1",
     "@11ty/eleventy-cache-assets": "^2.0.2",
-    "@11ty/eleventy-img": "^0.2.5",
+    "@11ty/eleventy-img": "^0.6.0",
     "@11ty/eleventy-navigation": "0.1.5",
     "@11ty/eleventy-plugin-rss": "1.0.7",
     "@11ty/eleventy-plugin-syntaxhighlight": "3.0.1",
@@ -53,8 +62,8 @@
     "markdown-it": "8.4.2",
     "markdown-it-anchor": "5.2.5",
     "markdown-it-table-of-contents": "0.4.4",
-    "node-fetch": "2.6.0",
-    "performance-leaderboard": "2.0.6",
+    "node-fetch": "2.6.1",
+    "prettier": "^1.18.2",
     "puppeteer": "2.1.1",
     "semver": "7.1.3",
     "sharp": "0.25.2",
@@ -62,11 +71,14 @@
     "sorted-object": "2.0.1",
     "tap-spot": "1.1.1",
     "terser": "4.6.7",
-    "twitter-avatar-url": "1.0.2"
+    "twitter-avatar-url": "^2.0.3"
   },
   "dependencies": {
     "@11ty/logo": "2.0.4",
+    "herald-of-the-dog": "^1.0.2",
     "instant.page": "3.0.0",
-    "prismjs": "1.19.0"
+    "lodash": "^4.17.20",
+    "prismjs": "1.21.0",
+    "speedlify-score": "^2.0.1"
   }
 }

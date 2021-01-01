@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "makoto-kawasaki.avif",
+      "outputPath": "img/avatars/opencollective/makoto-kawasaki.avif",
+      "url": "/img/avatars/opencollective/makoto-kawasaki.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/makoto-kawasaki.avif 90w",
+      "size": 598
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "makoto-kawasaki.webp",
+      "outputPath": "img/avatars/opencollective/makoto-kawasaki.webp",
+      "url": "/img/avatars/opencollective/makoto-kawasaki.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/makoto-kawasaki.webp 90w",
+      "size": 762
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/a401ab3f.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "makoto-kawasaki.jpeg",
+      "outputPath": "img/avatars/opencollective/makoto-kawasaki.jpeg",
+      "url": "/img/avatars/opencollective/makoto-kawasaki.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/a401ab3f.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/a401ab3f.jpeg",
-      "size": 1392
+      "srcset": "/img/avatars/opencollective/makoto-kawasaki.jpeg 90w",
+      "size": 1506
     }
   ],
   "slug": "makoto-kawasaki"

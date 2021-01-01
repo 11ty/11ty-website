@@ -3,19 +3,37 @@
 	command = "npm run build-production"
 
 [[redirects]]
+	from = "/speedlify/*"
+	to = "https://built-with-eleventy.netlify.app/speedlify/:splat"
+	status = 200
+	force = true
+
+[[redirects]]
 	from = "/docs/sites/"
-	to = "/leaderboard/"
+	to = "/speedlify/"
 	status = 301
 	force = true
 
 [[redirects]]
 	from = "/docs/performance-leaderboard/"
-	to = "/leaderboard/perf/"
+	to = "/speedlify/"
 	status = 301
 	force = true
 
 [[redirects]]
 	from = "/docs/accessibility-leaderboard/"
-	to = "/leaderboard/a11y/"
+	to = "/speedlify/"
 	status = 301
 	force = true
+
+[[redirects]]
+	from = "/leaderboard/*"
+	to = "/speedlify/"
+	status = 301
+	force = true
+
+
+[[headers]]
+	for = "/api/*"
+		[headers.values]
+		Access-Control-Allow-Origin = "*"

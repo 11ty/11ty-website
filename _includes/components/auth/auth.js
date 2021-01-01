@@ -111,6 +111,7 @@ class EleventySupporter {
     avatar.classList.add("supporters-avatar", "avatar");
     avatar.setAttribute("src", `/img/avatars/opencollective/${user.slug}.jpg`);
     avatar.setAttribute("alt", `${user.name}’s Avatar`);
+    avatar.setAttribute("onerror", "this.remove()");
 
     let anchors = Array.from(document.querySelectorAll("[data-investors-avatar]"));
     for(let anchor of anchors) {

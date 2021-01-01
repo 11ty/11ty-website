@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-tailwindcss",
+	"author": "dafiulh",
+	"description": "will add Tailwind CSS support for your website."
+}

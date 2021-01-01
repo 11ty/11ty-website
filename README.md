@@ -14,15 +14,15 @@ npx @11ty/eleventy --serve
 
 Browse to http://localhost:8080/ (8080 is the default but it’ll bump to a new port if that one is taken, so use whatever port shows up when you run the `--serve` command).
 
-### Performance Rankings
+* Refresh Screenshots: `npm run get-new-screenshots`
+* Refresh Avatars: `npm run get-new-avatars`
+* Refresh Supporters: `npm run get-new-supporters`
 
-_TODO: make this better_
+## Third-party Integrations
 
-1. Run `node node-performance-rank`
-2. Run `node node-screenshots`
-3. Run `node node-avatars-twitter`
-3. Run `node node-avatars-opencollective`
-4. Copy `_data/fastestSites.json` to `leaderboard/history/fastestSites-weekX.json`
-5. Update `leaderboard/history/node-history` to have a new maximumWeekNumber
-6. Run `leaderboard/history/node node-history`
-7. Run npx @11ty/eleventy
+* [IFTTT](https://ifttt.com/) daily web hook to build the site once a day to update stats and counts in footer.
+* [Zapier](https://zapier.com/) (Open Collective + Netlify integration) to run a new production build when a new contributor joins Open Collective. _Warning: while avatar will show on the site, there is still a manual step to send the Netlify Identity invitation for the Eleventy Contributor Account._
+
+## Contributed Data
+
+* `cd _data/sites` and `find . -iregex "./[a-z]*\.[a-z]*.json"` Find global data files with a `.` in the name.

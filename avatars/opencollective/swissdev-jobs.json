@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "swissdev-jobs.avif",
+      "outputPath": "img/avatars/opencollective/swissdev-jobs.avif",
+      "url": "/img/avatars/opencollective/swissdev-jobs.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/swissdev-jobs.avif 90w",
+      "size": 396
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "swissdev-jobs.webp",
+      "outputPath": "img/avatars/opencollective/swissdev-jobs.webp",
+      "url": "/img/avatars/opencollective/swissdev-jobs.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/swissdev-jobs.webp 90w",
+      "size": 572
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "swissdev-jobs.jpeg",
+      "outputPath": "img/avatars/opencollective/swissdev-jobs.jpeg",
+      "url": "/img/avatars/opencollective/swissdev-jobs.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/swissdev-jobs.jpeg 90w",
+      "size": 1179
+    }
+  ],
+  "slug": "swissdev-jobs"
+}

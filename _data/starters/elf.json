@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/stowball/elf",
+	"name": "Elf",
+	"description": "Elf is a simple, magical starter kit using webpack, Babel and Sass.",
+	"author": "stowball",
+	"demo": "https://elf-eleventy.netlify.app/"
+}

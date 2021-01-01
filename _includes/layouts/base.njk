@@ -14,7 +14,7 @@ social:
 		<title>{{ subtitleText }}</title>
 		<meta name="title" content="{{ subtitleText }}">
 		<meta name="description" content="{{ subtitleText }}">
-		<meta name="monetization" content="$pay.stronghold.co/1a155e3a09e210742be8c38ba7cab4795c4">
+		<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon.png">
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website">
@@ -50,6 +50,8 @@ social:
 {% include 'components/code.css' %}
 {% include 'components/announcement.css' %}
 {% include 'components/seven-minute-tabs.css' %}
+{% include '../../node_modules/speedlify-score/speedlify-score.css' %}
+{% include '../../node_modules/herald-of-the-dog/herald.css' %}
 {% for includeLocation in css %}
 {% include includeLocation %}
 {% endfor %}
@@ -61,9 +63,15 @@ social:
 {% if feedTitle and feedUrl %}
 		<link rel="alternate" href="{{ feedUrl }}" title="{{ feedTitle }}" type="application/atom+xml">
 {% endif %}
-		<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon.png">
 		<script>
 		{%- include "components/js-class.js" -%}
+
+		// herald helper
+		let ctaUrl = "https://blacklivesmatter.com/";
+		let savedCtaUrl = localStorage.getItem("banner--cta-url");
+		if(savedCtaUrl === ctaUrl) {
+			document.documentElement.classList.add("banner--hide");
+		}
 		</script>
 {% if loadNetlifyIdentity %}
 		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>

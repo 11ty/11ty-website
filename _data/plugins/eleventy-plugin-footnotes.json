@@ -1,0 +1,6 @@
+  
+{
+	"npm": "eleventy-plugin-footnotes",
+	"author": "HugoGiraudel",
+	"description": "will help rendering accessible footnotes with Liquid."
+}

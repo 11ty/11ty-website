@@ -217,7 +217,8 @@ The `dir.data` global data files run through this template engine before transfo
 | Data Template Engine |  |
 | --- | --- |
 | _Object Key_ | `dataTemplateEngine` |
-| _Default_ | `liquid` |
+| _Default_ | `"liquid"` (before 1.0) |
+| _Default_ | `false` (1.0 and above) |
 | _Valid Options_ | A valid [template engine short name](/docs/languages/) or `false` |
 | _Command Line Override_ | _None_ |
 
@@ -227,7 +228,7 @@ The `dir.data` global data files run through this template engine before transfo
 
 ```js
 module.exports = {
-    "dataTemplateEngine": "njk"
+  "dataTemplateEngine": "njk"
 };
 ```
 
@@ -418,7 +419,7 @@ Transforms can modify a template’s output. For example, use a transform to for
 
 | Transforms |  |
 | --- | --- |
-| _Object Key_ | `filters` _(Deprecated and renamed, use the Configuration API instead)_ |
+| _Object Key_ | `filters` _(Removed in 1.0, use `addTransform` instead)_ |
 | _Default_ | `{}` |
 | _Valid Options_ | Object literal |
 | _Command Line Override_ | _None_ |
@@ -430,6 +431,12 @@ module.exports = function(eleventyConfig) {
 
   // Support for async transforms was added in 0.7.0
   eleventyConfig.addTransform("async-transform-name", async function(content, outputPath) {});
+
+  // Eleventy 1.0+
+  eleventyConfig.addTransform("transform-name", function(content) {
+    console.log( this.inputPath );
+    console.log( this.outputPath );
+  });
 };
 ```
 
@@ -442,6 +449,7 @@ const htmlmin = require("html-minifier");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+    // Eleventy 1.0+: use this.inputPath and this.outputPath instead
     if( outputPath.endsWith(".html") ) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
@@ -471,6 +479,12 @@ Similar to Transforms, Linters are provided to analyze a template’s output wit
 module.exports = function(eleventyConfig) {
   eleventyConfig.addLinter("linter-name", function(content, inputPath, outputPath) {});
   eleventyConfig.addLinter("async-linter-name", async function(content, inputPath, outputPath) {});
+
+  // Eleventy 1.0+
+  eleventyConfig.addLinter("linter-name", function(content) {
+    console.log( this.inputPath );
+    console.log( this.outputPath );
+  });
 };
 ```
 
@@ -486,6 +500,8 @@ This example has been packaged as a plugin in [`eleventy-plugin-inclusive-langua
 module.exports = function(eleventyConfig) {
   eleventyConfig.addLinter("inclusive-language", function(content, inputPath, outputPath) {
     let words = "simply,obviously,basically,of course,clearly,just,everyone knows,however,easy".split(",");
+
+    // Eleventy 1.0+: use this.inputPath and this.outputPath instead
     if( inputPath.endsWith(".md") ) {
       for( let word of words) {
         let regexp = new RegExp("\\b(" + word + ")\\b", "gi");
@@ -494,49 +510,6 @@ module.exports = function(eleventyConfig) {
         }
       }
     }
-  });
-};
-```
-
-### Watch JavaScript Dependencies {% addedin "0.7.0" %}
-
-When in `--watch` mode, Eleventy will spider the dependencies of your [JavaScript Templates](/docs/languages/javascript/) (`.11ty.js`), [JavaScript Data Files](/docs/data-js/) (`.11tydata.js` or `_data/**/*.js`), or Configuration File (usually `.eleventy.js`) to watch those files too. Files in `node_modules` directories are ignored. This feature is _enabled by default_.
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  // Enabled by default
-  eleventyConfig.setWatchJavaScriptDependencies(false);
-};
-```
-
-### Add Your Own Watch Targets {% addedin "0.10.0" %}
-
-The `addWatchTarget` config method allows you to manually add a file or directory for Eleventy to watch. When the file or the files in this directory change Eleventy will trigger a build. This is useful if Eleventy is not directly aware of any external file dependencies.
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addWatchTarget("./src/scss/");
-};
-```
-
-Eleventy will not add a watch for files or folders that are in `.gitignore`, unless `setUseGitIgnore` is turned off. See the chapter on [ignore files](/docs/ignores/#opt-out-of-using-.gitignore).
-
-### Override Browsersync Server Options {% addedin "0.7.0" %}
-
-Useful if you want to change or override the default Browsersync configuration. Find the Eleventy defaults in [`EleventyServe.js`](https://github.com/11ty/eleventy/blob/master/src/EleventyServe.js). Take special note that Eleventy does not use Browsersync’s watch options and trigger reloads manually after our own internal watch methods are complete. See full options list on the [Browsersync documentation](https://browsersync.io/docs/options).
-
-_(Read more at [Issue #123](https://github.com/11ty/eleventy/issues/123))_
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setBrowserSyncConfig({
-    notify: true
   });
 };
 ```
@@ -556,6 +529,17 @@ Files found (that don’t have a valid template engine) from opt-in file extensi
 
 * Documented at [Customize Front Matter Parsing](/docs/data-frontmatter-customize/).
 
+#### Watch JavaScript Dependencies {% addedin "0.7.0" %}
+
+* Documented at [Watch and Serve Configuration](/docs/watch-serve/).
+
+#### Add Your Own Watch Targets {% addedin "0.10.0" %}
+
+* Documented at [Watch and Serve Configuration](/docs/watch-serve/).
+
+#### Override Browsersync Server Options {% addedin "0.7.0" %}
+
+* Documented at [Watch and Serve Configuration](/docs/watch-serve/).
 
 <!--
 ### Experiments

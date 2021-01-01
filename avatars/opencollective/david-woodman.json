@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "david-woodman.avif",
+      "outputPath": "img/avatars/opencollective/david-woodman.avif",
+      "url": "/img/avatars/opencollective/david-woodman.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/david-woodman.avif 90w",
+      "size": 663
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "david-woodman.webp",
+      "outputPath": "img/avatars/opencollective/david-woodman.webp",
+      "url": "/img/avatars/opencollective/david-woodman.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/david-woodman.webp 90w",
+      "size": 450
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "david-woodman.jpeg",
+      "outputPath": "img/avatars/opencollective/david-woodman.jpeg",
+      "url": "/img/avatars/opencollective/david-woodman.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/david-woodman.jpeg 90w",
+      "size": 1073
+    }
+  ],
+  "slug": "david-woodman"
+}

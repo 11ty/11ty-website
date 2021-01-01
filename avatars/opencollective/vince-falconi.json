@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "vince-falconi.avif",
+      "outputPath": "img/avatars/opencollective/vince-falconi.avif",
+      "url": "/img/avatars/opencollective/vince-falconi.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/vince-falconi.avif 90w",
+      "size": 581
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "vince-falconi.webp",
+      "outputPath": "img/avatars/opencollective/vince-falconi.webp",
+      "url": "/img/avatars/opencollective/vince-falconi.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/vince-falconi.webp 90w",
+      "size": 294
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "vince-falconi.jpeg",
+      "outputPath": "img/avatars/opencollective/vince-falconi.jpeg",
+      "url": "/img/avatars/opencollective/vince-falconi.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/vince-falconi.jpeg 90w",
+      "size": 803
+    }
+  ],
+  "slug": "vince-falconi"
+}

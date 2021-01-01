@@ -10,20 +10,22 @@ bigPossum: true
 
 ## Quick Start
 
+Eleventy {% latestVersion versions, config %} requires Node 8 or newer. Use `node --version` on the command line to find your local Node version.
+
 ``` bash
 npm install -g @11ty/eleventy
 echo '# Page header' > README.md
 eleventy
 ```
 
-This will compile any files matching valid template file extensions in the current directory into the output folder (defaults to `_site`).
+This will compile any files matching valid input [template file extensions](/docs/languages/) (`.md` is one of them) in the current directory into the output folder (defaults to `_site`).
 
 ``` text
-Writing _site/README/index.html from ./README.md
-Wrote 1 file in 0.10 seconds
+Writing _site/README/index.html from ./README.md.
+Wrote 1 file in 0.11 seconds (v0.11.0)
 ```
 
-Run `eleventy --serve` to start up a hot-reloading web server. Then open `http://localhost:8080/README/` in your web browser of choice to see your Eleventy output.
+Run `eleventy --serve` to start up a web server. Then open `http://localhost:8080/README/` in your web browser of choice to see your Eleventy output.
 
 ➡ Keep going! Read a longer [Getting Started guide](/docs/getting-started/) or check out the full [**Documentation for {% latestVersion versions, config %}**]({{ "/docs/" | url }}).
 
@@ -43,9 +45,13 @@ Run `eleventy --serve` to start up a hot-reloading web server. Then open `http:/
 
 ## Built With Eleventy
 
-<ul class="inlinelist list-superfeatured">
-    {% for key, site in sites -%}{% if site.twitter and site.disabled != true and site.url and site.featured and site.superfeatured -%}<li class="inlinelist-item"><a href="{{ site.url }}" class="elv-externalexempt">{% avatarlocalcache "twitter", site.twitter %}{{ site.name | safe }}</a></li>{% endif %}{% endfor -%}
-</ul>
+<div class="sites-vert">
+  <div class="lo-grid">
+{% for key, site in sites -%}{% if site.twitter and site.disabled != true and site.url and site.featured and site.superfeatured -%}
+  {% include "site-card.njk" %}
+{% endif %}{%- endfor %}
+  </div>
+</div>
 
 <!-- TODO some kind of aspect ratio? -->
 <div data-import="/imports/facepile.html" class="facepile-fullwidth"></div>
