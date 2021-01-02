@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "b2d6f0e2-90.avif",
-      "outputPath": "img/avatars/opencollective/b2d6f0e2-90.avif",
-      "url": "/img/avatars/opencollective/b2d6f0e2-90.avif",
+      "filename": "zach-leatherman.avif",
+      "outputPath": "img/avatars/opencollective/zach-leatherman.avif",
+      "url": "/img/avatars/opencollective/zach-leatherman.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/opencollective/b2d6f0e2-90.avif 90w",
-      "size": 636
+      "srcset": "/img/avatars/opencollective/zach-leatherman.avif 90w",
+      "size": 937
     }
   ],
   "webp": [
@@ -17,12 +17,12 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "b2d6f0e2-90.webp",
-      "outputPath": "img/avatars/opencollective/b2d6f0e2-90.webp",
-      "url": "/img/avatars/opencollective/b2d6f0e2-90.webp",
+      "filename": "zach-leatherman.webp",
+      "outputPath": "img/avatars/opencollective/zach-leatherman.webp",
+      "url": "/img/avatars/opencollective/zach-leatherman.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/opencollective/b2d6f0e2-90.webp 90w",
-      "size": 436
+      "srcset": "/img/avatars/opencollective/zach-leatherman.webp 90w",
+      "size": 928
     }
   ],
   "jpeg": [
@@ -30,12 +30,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "b2d6f0e2-90.jpeg",
-      "outputPath": "img/avatars/opencollective/b2d6f0e2-90.jpeg",
-      "url": "/img/avatars/opencollective/b2d6f0e2-90.jpeg",
+      "filename": "zach-leatherman.jpeg",
+      "outputPath": "img/avatars/opencollective/zach-leatherman.jpeg",
+      "url": "/img/avatars/opencollective/zach-leatherman.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/b2d6f0e2-90.jpeg 90w",
-      "size": 1339
+      "srcset": "/img/avatars/opencollective/zach-leatherman.jpeg 90w",
+      "size": 1633
     }
   ],
   "slug": "zach-leatherman"
