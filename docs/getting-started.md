@@ -51,7 +51,10 @@ Processed 0 files in 0.03 seconds ({% latestVersion versions, config %})
 
 Make sure that you see `({% latestVersion versions, config %})` in your output. This lets you know you’re using the newest version. However, Eleventy didn’t process any files! This is expected—we have an empty folder with no templates inside.
 
-## <span class="numberflag"><span class="sr-only">Step</span> 4</span> Create some templates
+## <span class="numberflag"><span class="sr-only">Step</span> 4</span> Create some content
+
+In 11ty we use the term "template" a bit differently from what you may be used to. To add content to a site we create template files. These
+template files are not templates in the usual sense. In 11ty templates _are_ content.
 
 Let’s run two commands to create two new template files.
 
