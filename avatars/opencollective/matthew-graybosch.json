@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "matthew-graybosch.avif",
+      "outputPath": "img/avatars/opencollective/matthew-graybosch.avif",
+      "url": "/img/avatars/opencollective/matthew-graybosch.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/matthew-graybosch.avif 90w",
+      "size": 2273
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "matthew-graybosch.webp",
+      "outputPath": "img/avatars/opencollective/matthew-graybosch.webp",
+      "url": "/img/avatars/opencollective/matthew-graybosch.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/matthew-graybosch.webp 90w",
+      "size": 3328
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/65b7d64f-90.jpeg",
+      "filename": "matthew-graybosch.jpeg",
+      "outputPath": "img/avatars/opencollective/matthew-graybosch.jpeg",
+      "url": "/img/avatars/opencollective/matthew-graybosch.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/65b7d64f-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/65b7d64f-90.jpeg",
-      "size": 3436
+      "srcset": "/img/avatars/opencollective/matthew-graybosch.jpeg 90w",
+      "size": 3585
     }
   ],
   "slug": "matthew-graybosch"
