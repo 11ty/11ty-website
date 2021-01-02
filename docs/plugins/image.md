@@ -10,14 +10,15 @@ Low level utility to perform build-time image transformations for both vector an
 
 You maintain full control of your HTML—this plugin does not generate any markup. Use with `<picture>` or `<img>` or CSS `background-image`, or others! Works great to add `width` and `height` to your images! Does not require or rely on file extensions (like `.png` or `.jpg`) in URLs or local files, which may be missing or inaccurate.
 
-* Accepts: `jpeg`, `png`, `webp`, `gif`, `tiff`, `avif` (0.6.0+), and `svg`.
+* Accepts: `jpeg`, `png`, `webp`, `gif`, `tiff`, `avif` {% addedin "Image 0.6.0" %}, and `svg`.
 * Output multiple sizes, keeps original aspect ratio. Never upscales raster images larger than original size (unless using SVG input).
-* Output multiple formats, supports: `jpeg`, `png`, `webp`, `avif` (0.6.0+), and `svg` (requires SVG input)
+* Output multiple formats, supports: `jpeg`, `png`, `webp`, `avif` {% addedin "Image 0.6.0" %}, and `svg` (requires SVG input)
 * Retrieve metadata about your new images (see [sample return object](#sample-return-object)).
   * Use this to add `width` and `height` attributes on `<img>` elements for [proper aspect ratio mapping](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping).
 * Save remote images locally using [`eleventy-cache-assets`](/docs/plugins/cache/).
   * Use local images in your HTML to prevent broken image URLs.
   * Manage the [cache duration](/docs/plugins/cache/#change-the-cache-duration).
+* De-duplicates and caches repeat calls using the same source image and the same output options. {% addedin "Image 0.7.0" %}
 * Manage plugin concurrency.
 * [`eleventy-img` on GitHub](https://github.com/11ty/eleventy-img)
 
@@ -35,10 +36,11 @@ npm install @11ty/eleventy-img
 
 ## Usage
 
-This utility returns a Promise and works best in `async` friendly functions, filters, shortcodes. It _can_ also work in synchronous environments but requires a bit more setup!
+This utility returns a Promise and works best in `async` friendly functions, filters, shortcodes. It _can_ also work in synchronous environments but requires a bit more (undocumented as of yet) setup.
+
+{% codetitle ".eleventy.js" %}
 
 ```js
-/* .eleventy.js */
 const Image = require("@11ty/eleventy-img");
 
 (async () => {
@@ -111,9 +113,9 @@ Use almost any combination of these:
 
 * `formats: ["webp", "jpeg"]` (default)
 * `formats: ["png"]`
-* `formats: [null]` (keep original format) {% addedin "0.4.0" %}
-* `formats: ["svg"]` (requires SVG input) {% addedin "0.4.0" %}
-* `formats: ["avif"]` {% addedin "0.6.0" %}
+* `formats: [null]` (keep original format) {% addedin "Image 0.4.0" %}
+* `formats: ["svg"]` (requires SVG input) {% addedin "Image 0.4.0" %}
+* `formats: ["avif"]` {% addedin "Image 0.6.0" %}
 
 ### URL Path
 
@@ -127,7 +129,7 @@ Where to write the new images to disk. Project-relative path to the output image
 
 * `outputDir: "./img/"` (default)
 
-### Caching Remote Images Locally {% addedin "0.3.0" %}
+### Caching Remote Images Locally {% addedin "Image 0.3.0" %}
 
 For any full URL first argument to this plugin, the full-size remote image will be downloaded and cached locally. See all [relevant `eleventy-cache-assets` options](/docs/plugins/cache/#options).
 
@@ -145,14 +147,14 @@ For any full URL first argument to this plugin, the full-size remote image will 
 }
 ```
 
-### Skip raster formats for SVG {% addedin "0.4.0" %}
+### Skip raster formats for SVG {% addedin "Image 0.4.0" %}
 
 If using SVG output (the input format is SVG and `svg` is added to your `formats` array), we will skip all of the raster formats even if they’re in `formats`. This may be useful in a CMS-driven workflow when the input could be vector or raster.
 
 * `svgShortCircuit: false` (default)
 * `svgShortCircuit: true`
 
-### Allow SVG to upscale {% addedin "0.4.0" %}
+### Allow SVG to upscale {% addedin "Image 0.4.0" %}
 
 While we do prevent raster images from upscaling (and filter upscaling `widths` from the output), you can optionally enable SVG input to upscale to larger sizes when converting to raster format.
 
@@ -269,13 +271,13 @@ Now you can use it in your templates:
 
 [Extra options to pass to the Sharp constructor](https://sharp.pixelplumbing.com/api-constructor#parameters) or the [Sharp image format converter for webp](https://sharp.pixelplumbing.com/api-output#webp), [png](https://sharp.pixelplumbing.com/api-output#png), [jpeg](https://sharp.pixelplumbing.com/api-output#jpeg), or [avif](https://sharp.pixelplumbing.com/api-output#avif).
 
-* `sharpOptions: {}` {% addedin "0.4.0" %}
-* `sharpWebpOptions: {}` {% addedin "0.4.2" %}
-* `sharpPngOptions: {}` {% addedin "0.4.2" %}
-* `sharpJpegOptions: {}` {% addedin "0.4.2" %}
-* `sharpAvifOptions: {}` {% addedin "0.6.0" %}
+* `sharpOptions: {}` {% addedin "Image 0.4.0" %}
+* `sharpWebpOptions: {}` {% addedin "Image 0.4.2" %}
+* `sharpPngOptions: {}` {% addedin "Image 0.4.2" %}
+* `sharpJpegOptions: {}` {% addedin "Image 0.4.2" %}
+* `sharpAvifOptions: {}` {% addedin "Image 0.6.0" %}
 
-### Custom Filenames
+### Custom Filenames {% addedin "Image 0.4.0" %}
 
 Don’t like those hash ids? Make your own!
 
@@ -316,6 +318,57 @@ await Image("./test/bio-2017.jpg", {
 ```
 
 </details>
+
+### In-Memory Cache {% addedin "Image 0.7.0" %}
+
+To prevent duplicate work and improve build performance, repeated calls to the same source image (remote or local) with the same options will return a cached results object. If a request in-progress, the pending promise will be returned. This in-memory cache will be maintained across builds in watch/serve mode.
+
+Images will be regenerated (and the cache ignored) if:
+
+* The source image file size changes (on local image files)
+* The [cache asset](/docs/plugins/cache/) duration expires (for remote images).
+
+<details>
+<summary>Example of in-memory cache reuse (returns the same promise)</summary>
+
+{% codetitle ".eleventy.js" %}
+
+```js
+const Image = require("@11ty/eleventy-img");
+
+(async () => {
+  let stats1 = Image("./test/bio-2017.jpg");
+  let stats2 = Image("./test/bio-2017.jpg");
+
+  console.assert(stats1 === stats2, "The same promise");
+})();
+```
+
+</details>
+<details>
+<summary>Example of in-memory cache (returns a new promise with different options)</summary>
+
+{% codetitle ".eleventy.js" %}
+
+```js
+const Image = require("@11ty/eleventy-img");
+
+(async () => {
+  let stats1 = Image("./test/bio-2017.jpg");
+  let stats2 = Image("./test/bio-2017.jpg", { widths: [300] });
+
+  console.assert(stats1 !== stats2, "A different promise");
+})();
+```
+
+</details>
+
+### Dry-Run {% addedin "Image 0.7.0" %}
+
+If you want to try it out and not write any files (useful for testing), use the `dryRun` option.
+
+* `dryRun: false` (default)
+* `dryRun: true`
 
 ### Change Global Plugin Concurrency
 

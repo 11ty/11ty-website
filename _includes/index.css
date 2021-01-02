@@ -152,6 +152,13 @@ main:not(:empty) {
 	padding-bottom: 3em;
 	margin-bottom: 3em;
 }
+main details {
+  margin: 1em 0;
+}
+main summary {
+  display: block;
+  margin: 0 0 1em;
+}
 
 /* Tables */
 table {
