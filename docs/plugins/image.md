@@ -328,6 +328,11 @@ Images will be regenerated (and the cache ignored) if:
 * The source image file size changes (on local image files)
 * The [cache asset](/docs/plugins/cache/) duration expires (for remote images).
 
+You can disable this behavior by using the `useCache` boolean option:
+
+* `useCache: true` (default)
+* `useCache: false` to bypass the cache and generate a new image every time.
+
 <details>
 <summary>Example of in-memory cache reuse (returns the same promise)</summary>
 
