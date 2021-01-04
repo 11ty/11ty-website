@@ -9,7 +9,7 @@
       "url": "/img/avatars/opencollective/mark-reeves.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/mark-reeves.avif 90w",
-      "size": 1104
+      "size": 983
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "url": "/img/avatars/opencollective/mark-reeves.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/mark-reeves.webp 90w",
-      "size": 1170
+      "size": 1246
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "url": "/img/avatars/opencollective/mark-reeves.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/mark-reeves.jpeg 90w",
-      "size": 1952
+      "size": 1951
     }
   ],
   "slug": "mark-reeves"
