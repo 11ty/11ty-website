@@ -39,6 +39,8 @@ const shortcodes = {
         loading: "lazy",
         decoding: "async",
         class: "avatar",
+      }, {
+        whitespaceMode: "inline"
       });
 		} catch(e) {
 			return defaultAvatarHtml;

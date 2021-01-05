@@ -161,7 +161,7 @@ While we do prevent raster images from upscaling (and filter upscaling `widths` 
 * `svgAllowUpscale: true` (default)
 * `svgAllowUpscale: false`
 
-### Use this in your templates:
+### Use this in your templates
 
 {% callout "info" %}The examples below use a <a href="/languages/nunjucks/#asynchronous-shortcodes">Nunjucks</a> <code>async</code> shortcode (different from the traditional shortcode configuration method). The <a href="/docs/languages/javascript/#asynchronous-javascript-template-functions">JavaScript</a> and <a href="/docs/languages/liquid/#asynchronous-shortcodes">Liquid</a> template engines also work here and are asynchronous without additional changes.{% endcallout %}
 
@@ -174,7 +174,7 @@ While we do prevent raster images from upscaling (and filter upscaling `widths` 
   </div>
   <div id="filter-easy" role="tabpanel" aria-labelledby="filter-easy-btn">
 
-The `generateHTML` function is available in Eleventy Image v0.7.2 or higher.
+{% addedin "Image 0.7.2" %}The `generateHTML` function is available in Eleventy Image v0.7.2 or higher.
 
 {% codetitle ".eleventy.js" %}
 
