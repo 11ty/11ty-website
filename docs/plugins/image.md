@@ -205,6 +205,20 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+{% addedin "Image 0.7.3" %}You can use the `whitespaceMode` option to strip the whitespace from the output of the `<picture>` element (a must-have for use in markdown files).
+
+```js
+async function imageShortcode(src, alt, sizes) {
+  // […]
+  return Image.generateHTML(metadata, imageAttributes, {
+    whitespaceMode: "inline"
+  });
+}
+
+// Don’t copy and paste this code block!
+// Some code from the above example was removed for brevity.
+```
+
   </div>
   <div id="filter-diy-img" role="tabpanel" aria-labelledby="filter-diy-img-btn">
 
