@@ -161,111 +161,161 @@ While we do prevent raster images from upscaling (and filter upscaling `widths` 
 * `svgAllowUpscale: true` (default)
 * `svgAllowUpscale: false`
 
-### Creating an img shortcode
+### Use this in your templates:
 
-{% callout "info" %}The example below uses a <a href="/languages/nunjucks/#asynchronous-shortcodes">Nunjucks</a> <code>async</code> shortcode. As noted, the <a href="/docs/languages/javascript/#asynchronous-javascript-template-functions">JavaScript</a> and <a href="/docs/languages/liquid/#asynchronous-shortcodes">Liquid</a> template engines also work here and are asynchronous by default.{% endcallout %}
+{% callout "info" %}The examples below use a <a href="/languages/nunjucks/#asynchronous-shortcodes">Nunjucks</a> <code>async</code> shortcode (different from the traditional shortcode configuration method). The <a href="/docs/languages/javascript/#asynchronous-javascript-template-functions">JavaScript</a> and <a href="/docs/languages/liquid/#asynchronous-shortcodes">Liquid</a> template engines also work here and are asynchronous without additional changes.{% endcallout %}
+
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Easy or DIY mode chooser">
+    Choose one:
+    <a href="#filter-easy" id="filter-easy-btn" role="tab" aria-controls="filter-easy" aria-selected="true">We generate the HTML</a>
+    <a href="#filter-diy-img" id="filter-diy-img-btn" role="tab" aria-controls="filter-diy-img" aria-selected="false">Do it yourself: &lt;img&gt;</a>
+    <a href="#filter-diy-picture" id="filter-diy-picture-btn" role="tab" aria-controls="filter-diy-picture" aria-selected="false">Do it yourself: &lt;picture&gt;</a>
+  </div>
+  <div id="filter-easy" role="tabpanel" aria-labelledby="filter-easy-btn">
+
+The `generateHTML` function is available in Eleventy Image v0.7.2 or higher.
 
 {% codetitle ".eleventy.js" %}
 
 ```js
 const Image = require("@11ty/eleventy-img");
 
-module.exports = function(eleventyConfig) {
-  // works also with addLiquidShortcode or addJavaScriptFunction
-  eleventyConfig.addNunjucksAsyncShortcode("image", async function(src, alt) {
-    if(alt === undefined) {
-      // You bet we throw an error on missing alt (alt="" works okay)
-      throw new Error(`Missing \`alt\` on myImage from: ${src}`);
-    }
-
-    let metadata = await Image(src, {
-      widths: [null],
-      formats: ["jpeg"],
-      urlPath: "/images/",
-      outputDir: "./_site/images/"
-    });
-
-    let data = metadata.jpeg.pop();
-    return `<img src="${data.url}" width="${data.width}" height="${data.height}" alt="${alt}">`;
+async function imageShortcode(src, alt, sizes) {
+  let metadata = await Image(src, {
+    widths: [300, 600],
+    formats: ["avif", "jpeg"]
   });
+
+  let imageAttributes = {
+    alt,
+    sizes,
+  };
+
+  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+  return Image.generateHTML(metadata, imageAttributes);
+}
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addLiquidShortcode("image", imageShortcode);
+  eleventyConfig.addJavaScriptFunction("image", imageShortcode);
 };
 ```
 
+  </div>
+  <div id="filter-diy-img" role="tabpanel" aria-labelledby="filter-diy-img-btn">
+
+{% codetitle ".eleventy.js" %}
+
+```js
+const Image = require("@11ty/eleventy-img");
+
+async function imageShortcode(src, alt) {
+  if(alt === undefined) {
+    // You bet we throw an error on missing alt (alt="" works okay)
+    throw new Error(`Missing \`alt\` on myImage from: ${src}`);
+  }
+
+  let metadata = await Image(src, {
+    widths: [600],
+    formats: ["jpeg"]
+  });
+
+  let data = metadata.jpeg.pop();
+  return `<img src="${data.url}" width="${data.width}" height="${data.height}" alt="${alt}" loading="lazy" decoding="async">`;
+}
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addLiquidShortcode("image", imageShortcode);
+  eleventyConfig.addJavaScriptFunction("image", imageShortcode);
+};
+```
+
+  </div>
+  <div id="filter-diy-picture" role="tabpanel" aria-labelledby="filter-diy-picture-btn">
+
+{% codetitle ".eleventy.js" %}
+
+```js
+const Image = require("@11ty/eleventy-img");
+
+async function imageShortcode(src, alt, sizes = "100vw") {
+  if(alt === undefined) {
+    // You bet we throw an error on missing alt (alt="" works okay)
+    throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
+  }
+
+  let metadata = await Image(src, {
+    widths: [300, 600],
+    formats: ['webp', 'jpeg']
+  });
+
+  let lowsrc = metadata.jpeg[0];
+
+  return `<picture>
+    ${Object.values(metadata).map(imageFormat => {
+      return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`;
+    }).join("\n")}
+      <img
+        src="${lowsrc.url}"
+        width="${lowsrc.width}"
+        height="${lowsrc.height}"
+        alt="${alt}"
+        loading="lazy"
+        decoding="async">
+    </picture>`;
+}
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addLiquidShortcode("image", imageShortcode);
+  eleventyConfig.addJavaScriptFunction("image", imageShortcode);
+};
+```
+
+  </div>
+</seven-minute-tabs>
+
+{% callout "info", "md" %}Read more about the [`loading`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading) and [`decoding`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-decoding) HTML attributes.{% endcallout %}
+
 Now you can use it in your templates:
 
-{% codetitle "src/index.njk" %}
-
-{% raw %}
-```html
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    Language:
+    <a href="#shortcode-njk" id="shortcode-njk-btn" role="tab" aria-controls="shortcode-njk" aria-selected="true">Nunjucks</a>
+    <a href="#shortcode-liquid" id="shortcode-liquid-btn" role="tab" aria-controls="shortcode-liquid" aria-selected="false">Liquid</a>
+    <a href="#shortcode-11tyjs" id="shortcode-11tyjs-btn" role="tab" aria-controls="shortcode-11tyjs" aria-selected="false">11ty.js</a>
+  </div>
+  <div id="shortcode-njk" role="tabpanel" aria-labelledby="shortcode-njk-btn">
+    {% codetitle "sample.njk" %}
+{%- highlight "html" %}{% raw %}
 {% image "./src/images/cat.jpg", "photo of my cat" %}
-```
-{% endraw %}
-
-And outputs the following in `src/index.html`:
-
-{% codetitle "_site/src/index.html" %}
-
-```html
-<img src="/images/43155df7-300.jpeg" width="300" height="300" alt="photo of my cat">
-```
-
-### Creating a picture shortcode
-
-{% callout "info" %}The example below uses a <a href="/docs/languages/nunjucks/#asynchronous-shortcodes">Nunjucks</a> <code>async</code> shortcode. As noted, the <a href="/docs/languages/javascript/#asynchronous-javascript-template-functions">JavaScript</a> and <a href="/docs/languages/liquid/#asynchronous-shortcodes">Liquid</a> template engines also work here and are asynchronous by default.{% endcallout %}
-
-{% codetitle ".eleventy.js" %}
-
-```js
-const Image = require("@11ty/eleventy-img");
-
-module.exports = function(eleventyConfig) {
-  // works also with addLiquidShortcode or addJavaScriptFunction
-  eleventyConfig.addNunjucksAsyncShortcode("responsiveimage", async function(src, alt, sizes = "100vw") {
-    if(alt === undefined) {
-      // You bet we throw an error on missing alt (alt="" works okay)
-      throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
-    }
-
-    let metadata = await Image(src, {
-      widths: [300, 600],
-      formats: ['webp', 'jpeg']
-    });
-
-    let lowsrc = metadata.jpeg[0];
-
-    return `<picture>
-      ${Object.values(metadata).map(imageFormat => {
-        return `  <source type="image/${imageFormat[0].format}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`;
-      }).join("\n")}
-        <img
-          src="${lowsrc.url}"
-          width="${lowsrc.width}"
-          height="${lowsrc.height}"
-          alt="${alt}">
-      </picture>`;
-  });
+{% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
+{% endraw %}{% endhighlight %}
+    <p>The comma between arguments is <strong>required</strong> in Nunjucks templates.</p>
+  </div>
+  <div id="shortcode-liquid" role="tabpanel" aria-labelledby="shortcode-liquid-btn">
+    {% codetitle "sample.liquid" %}
+{%- highlight "html" %}{% raw %}
+{% image "./src/images/cat.jpg", "photo of my cat" %}
+{% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
+{% endraw %}{% endhighlight %}
+    <p>The comma between arguments is <strong>optional</strong> in Liquid templates.</p>
+  </div>
+  <div id="shortcode-11tyjs" role="tabpanel" aria-labelledby="shortcode-11tyjs-btn">
+    {% codetitle "sample.11ty.js" %}
+{%- highlight "js" %}{% raw %}
+module.exports = function() {
+  return `<h1>${await this.image("./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw")}</h1>`;
 };
-```
+{% endraw %}{% endhighlight %}
+  </div>
+</seven-minute-tabs>
 
-Now you can use it in your templates:
-
-{% codetitle "src/index.njk" %}
-
-{% raw %}
-```html
-{% responsiveimage "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
-```
-{% endraw %}
-
-{% codetitle "_site/src/index.html" %}
-
-```html
-<picture>
-  <source type="image/webp" srcset="/img/43155df7-300.webp 300w, /img/43155df7.webp 600w" sizes="(min-width: 30em) 50vw, 100vw">
-  <source type="image/jpeg" srcset="/img/43155df7-300.jpeg 300w, /img/43155df7.jpeg 600w" sizes="(min-width: 30em) 50vw, 100vw">
-  <img src="/img/43155df7-300.jpeg" width="300" height="300" alt="photo of my cat">
-</picture>
-```
+And you’ll have the appropriate HTML generated for you (based on your specified Image options).
 
 ### Advanced control of Sharp image processor
 
@@ -332,6 +382,8 @@ You can disable this behavior by using the `useCache` boolean option:
 
 * `useCache: true` (default)
 * `useCache: false` to bypass the cache and generate a new image every time.
+
+#### Examples
 
 <details>
 <summary>Example of in-memory cache reuse (returns the same promise)</summary>

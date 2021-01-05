@@ -53,6 +53,7 @@ module.exports = async function() {
 			order.profile = `https://opencollective.com/${order.slug}`;
 			order.totalAmountDonated = order.totalDonations.value;
 			order.isMonthly = isMonthlyOrYearlyOrder(order);
+			order.hasDefaultAvatar = order.image === `https://images.opencollective.com/${order.slug}/avatar.png`;
 			return order;
 		}).filter(order => {
 			return FilteredProfiles.indexOf(order.slug) === -1;
@@ -68,6 +69,7 @@ module.exports = async function() {
 			profile: "https://opencollective.com/zachleat",
 			totalAmountDonated: 0,
 			isMonthly: true,
+			hasDefaultAvatar: false,
 		});
 
 		orders = getUniqueContributors(orders);
