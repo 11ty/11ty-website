@@ -4,7 +4,7 @@ const eleventyImg = require("@11ty/eleventy-img");
 
 eleventyImg.concurrency = 5;
 
-async function fetch(name, imageUrl, website) {
+async function fetch(name, opencollectUsername, imageUrl, website) {
   if(!name) {
     return;
   }
@@ -25,6 +25,11 @@ async function fetch(name, imageUrl, website) {
 
   try {
     let slug = slugify(name).toLowerCase();
+    if(imageUrl === `https://images.opencollective.com/${opencollectUsername}/avatar.png`) {
+      // bail, it’s the default generated avatar from opencollective with generic initials.
+      return;
+    }
+
     let stats = await eleventyImg(imageUrl, {
       formats: ["avif", "webp", "jpeg"],
       widths: [90],
@@ -55,7 +60,9 @@ async function fetch(name, imageUrl, website) {
   // warning: Zach Leatherman doesn’t exist in this data set 😅
   let opencollective = await getOpenCollectiveData();
   for(let supporter of opencollective.supporters) {
-    promises.push(fetch(supporter.name, supporter.image, supporter.website));
+    if(!supporter.hasDefaultAvatar) {
+      promises.push(fetch(supporter.name, supporter.slug, supporter.image, supporter.website));
+    }
   }
 
   await Promise.all(promises);

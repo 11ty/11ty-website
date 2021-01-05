@@ -9,6 +9,7 @@ const fs = require("fs-extra");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
+const eleventyImage = require("@11ty/eleventy-img");
 const monthDiffPlugin = require("./config/monthDiff");
 const addedInLocalPlugin = require("./config/addedin");
 const minificationLocalPlugin = require("./config/minification");
@@ -20,38 +21,28 @@ const lodashGet = require("lodash/get");
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);
 
-let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" class="avatar" width="200" height="200">`;
+let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" decoding="async" class="avatar" width="200" height="200">`;
 const shortcodes = {
-	avatarlocalcache: function(datasource, slug, alt = "") {
+	avatar: function(datasource, slug, alt = "") {
 		if(!slug) {
 			return defaultAvatarHtml;
 		}
 
-		slug = cleanName(slug).toLowerCase();
-		let mapEntry;
+    slug = cleanName(slug).toLowerCase();
+
 		try {
-			mapEntry = require(`./avatars/${datasource}/${slug}.json`);
+      let mapEntry = Object.assign({}, require(`./avatars/${datasource}/${slug}.json`));
+      delete mapEntry.slug; // dunno why the slug is saved here ok bye
+
+      return eleventyImage.generateHTML(mapEntry, {
+        alt: `${alt || `${slug}’s ${datasource} avatar`}`,
+        loading: "lazy",
+        decoding: "async",
+        class: "avatar",
+      });
 		} catch(e) {
 			return defaultAvatarHtml;
 		}
-
-		let ret = [];
-		if(mapEntry.webp || mapEntry.avif) {
-      ret.push("<picture>");
-      if(mapEntry.avif) {
-        ret.push(`<source srcset="${mapEntry.avif[0].srcset}" type="${mapEntry.avif[0].sourceType}">`);
-      }
-      if(mapEntry.webp) {
-        ret.push(`<source srcset="${mapEntry.webp[0].srcset}" type="${mapEntry.webp[0].sourceType}">`);
-      }
-		}
-		let otherSrc = mapEntry.jpeg || mapEntry.png;
-
-		ret.push(`<img src="${otherSrc[0].url}" alt="${alt || `${slug}’s ${datasource} avatar`}" loading="lazy" class="avatar" width="${otherSrc[0].width}" height="${otherSrc[0].height}">`);
-		if(mapEntry.webp || mapEntry.avif) {
-			ret.push("</picture>");
-		}
-		return ret.join("");
 	},
 	link: function(linkUrl, content) {
 		return (linkUrl ? `<a href="${linkUrl}">` : "") +
@@ -108,7 +99,7 @@ module.exports = function(eleventyConfig) {
 			(alt ? `<span class="sr-only">${alt}</span>` : "");
 	});
 
-	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatarlocalcache);
+	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatar);
 
 	eleventyConfig.addShortcode("codetitle", function(title, heading = "Filename") {
 		return `<div class="codetitle codetitle-left"><b>${heading} </b>${title}</div>`;
@@ -277,7 +268,7 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addShortcode("testimonial", function(testimonial) {
-		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, shortcodes.avatarlocalcache("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`) + testimonial.name)}</span>` : ``}</p></blockquote>`;
+		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, shortcodes.avatar("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`) + testimonial.name)}</span>` : ``}</p></blockquote>`;
 	});
 
 	eleventyConfig.addShortcode("supporterAmount", function(amount, maxAmount = 2000) {
@@ -497,7 +488,7 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addFilter("supportersFacepile", (supporters) => {
-		return supporters.filter(supporter => supporter.status === 'ACTIVE' && supporter.tier && supporter.tier.slug !== "gold-sponsor");
+		return supporters.filter(supporter => supporter.status === 'ACTIVE' && !supporter.hasDefaultAvatar && supporter.tier && supporter.tier.slug !== "gold-sponsor");
 	});
 
 	// Sort an object that has `order` props in values. Return an array
@@ -525,7 +516,7 @@ ${text.trim()}
 			} else {
 				html.push(`<span class="nowrap">`);
 			}
-			html.push(shortcodes.avatarlocalcache("twitter", name, name));
+			html.push(shortcodes.avatar("twitter", name, name));
 			html.push(name);
 			if(isAuthor) {
 				html.push("</a>");
