@@ -9,6 +9,8 @@ communityLinksKey: collections
 ---
 While [pagination](/docs/pagination/) allows you to iterate over a data set to create multiple templates, a collection allows you to group content in interesting ways. A piece of content can be a part of multiple collections, if you assign the same string value to the `tags` key in the front matter.
 
+{% callout "warn" %}Terminology : in eleventy, `tags` are used to construct collections of content. It is different from `tags` referring to a hierarchy of labels as you can find in blogging platforms.{% endcallout %}
+
 ## A Blog Example
 
 For a blog site, your individual post files may use a tag called `post`, but it can be whatever you want. In this example, `mypost.md` has a single tag `post`:
