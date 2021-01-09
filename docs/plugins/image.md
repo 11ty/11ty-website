@@ -205,6 +205,8 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+{% callout "info", "md" %}You’re only allowed one `module.exports` in your configuration file! If one already exists, copy the content of the above into your existing `module.exports` function.{% endcallout %}
+
 {% addedin "Image 0.7.3" %}You can use the `whitespaceMode` option to strip the whitespace from the output of the `<picture>` element (a must-have for use in markdown files).
 
 ```js
@@ -249,6 +251,8 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+{% callout "info", "md" %}You’re only allowed one `module.exports` in your configuration file! If one already exists, copy the content of the above into your existing `module.exports` function.{% endcallout %}
+
   </div>
   <div id="filter-diy-picture" role="tabpanel" aria-labelledby="filter-diy-picture-btn">
 
@@ -290,6 +294,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
 };
 ```
+
+{% callout "info", "md" %}You’re only allowed one `module.exports` in your configuration file! If one already exists, copy the content of the above into your existing `module.exports` function.{% endcallout %}
 
   </div>
 </seven-minute-tabs>
