@@ -35,10 +35,13 @@ Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
 
 ```js
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
 };
 ```
+
+{% callout "info", "md" %}You’re only allowed one `module.exports` in your configuration file, so make sure you only copy the `require` and the `addPlugin` lines above!{% endcallout %}
 
 You are responsible for including your favorite PrismJS theme CSS and there are many ways to do that. The default themes are provided by [several CDNs](https://prismjs.com/#basic-usage-cdn) and could be easily included in a base layout, like in the example below;
 
@@ -58,6 +61,7 @@ Optionally pass in an options object as the second argument to `addPlugin` to fu
 
 ```js
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight, {
 
@@ -79,7 +83,7 @@ module.exports = function(eleventyConfig) {
     // Added in 3.0.2, set to false to opt-out of pre-highlight removal of leading
     // and trailing whitespace
     trim: true,
-    
+
     // Added in 3.0.4, change the separator between lines (you may want "\n")
     lineSeparator: "<br>",
   });
