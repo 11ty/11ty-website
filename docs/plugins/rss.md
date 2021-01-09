@@ -33,6 +33,22 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+### Options {% addedin "RSS 1.1.0" %}
+
+Advanced control of [PostHTML rendering options](https://github.com/posthtml/posthtml-render#options) via `posthtmlRenderOptions`.
+
+```js
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(rssPlugin, {
+    posthtmlRenderOptions: {
+      closingSingleTag: "default" // opt-out of <img/>-style XHTML single tags
+    }
+  });
+};
+```
+
 ## Supplies the following Nunjucks Filters
 
 * `rssLastUpdatedDate`: Gets the most recently updated content in the collection and retrieves the properly formatted Date for the top-level `<updated>` element.
