@@ -58,7 +58,7 @@
     "html-minifier": "4.0.0",
     "human-readable-numbers": "0.9.5",
     "hyperlink": "4.6.0",
-    "luxon": "1.22.2",
+    "luxon": "1.25.0",
     "markdown-it": "8.4.2",
     "markdown-it-anchor": "5.2.5",
     "markdown-it-table-of-contents": "0.4.4",
