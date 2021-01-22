@@ -1,5 +1,4 @@
 const puppeteer = require("puppeteer");
-const sharp = require("sharp");
 const fastglob = require("fast-glob");
 const eleventyImage = require("@11ty/eleventy-img");
 
