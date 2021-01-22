@@ -347,11 +347,10 @@ And you’ll have the appropriate HTML generated for you (based on your specifie
 const Image = require("@11ty/eleventy-img");
 function imageShortcode(src, klass, alt, sizes, widths) {
     let options = {
-      widths: widths, //[1068, 900, 800, 600, 400, 250, null],
+      widths: widths,
       formats: ['jpeg',],
       outputDir: "./_site/static/img",
       urlPath: "static/img/",
-      useCache: true,
       sharpJpegOptions: {
         quality: 99,
         progressive: true
