@@ -519,7 +519,7 @@ module.exports = function(eleventyConfig) {
 <a id="{{ 'Copy Files to Output using Pass-through File Copy' | slug }}"></a>
 #### Copy Files to Output using Passthrough File Copy
 
-Files found (that don’t have a valid template engine) from opt-in file extensions in `templateFormats` will passthrough to the output directory. Read more about [Passthrough Copy](/docs/copy/). This feature is enabled by default and [can be disabled](/docs/copy/#disabling-passthrough-file-copy).
+Files found (that don’t have a valid template engine) from opt-in file extensions in `templateFormats` will passthrough to the output directory. Read more about [Passthrough Copy](/docs/copy/).
 
 #### Data Deep Merge {% addedin "0.6.0" %}
 

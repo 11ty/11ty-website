@@ -15,7 +15,7 @@ From a very high level, Eleventy’s internal order of operations is such:
 1. Iterate over the files.
 	1. If it doesn’t match a template file extension, treat it as a [passthrough copy](/docs/copy/).
 	1. If it does match a template file extension, continue processing as an Eleventy template.
-1. Start the asynchronous copy of [passthrough copy](/docs/copy). Both configuration specified passthrough copy and non-template-matching file extension files. This will continue while templates are being processed.
+1. Start the asynchronous copy of [passthrough copy](/docs/copy/). Both configuration specified passthrough copy and non-template-matching file extension files. This will continue while templates are being processed.
 1. Initial [Data Cascade](/docs/data-cascade/) is generated for each template file. This includes all values from front matter, layouts, directory and file data files, global data.
 	* The data cascade does **not** yet include populated `collections`, `templateContent`, or computed `page` values like `page.url` and `page.outputPath`. <!-- Template.js -> getTemplateMapEntries -->
 1. Dependency graph is created of the templates to process them in the correct order. <!-- TemplateMap.js -->
