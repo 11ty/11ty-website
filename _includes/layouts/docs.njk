@@ -15,6 +15,8 @@ isDocs: true
   {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | eleventyNavigationToHtml({ listClass: 'lo lo-inline', listItemClass: 'lo-c', activeListItemClass: 'breadcrumb-active' }) | safe }}
 </nav>
 {% endif %}
+{% if pageTitle %}<h1>{{ pageTitle | safe }}</h1>{% endif %}
+{% include "community-contributed.njk" %}
 
 {{ content | safe }}
 
