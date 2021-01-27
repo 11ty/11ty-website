@@ -339,6 +339,45 @@ module.exports = function() {
 
 And you’ll have the appropriate HTML generated for you (based on your specified Image options).
 
+### Synchronous Usage
+
+{% codetitle ".eleventy.js" %}
+
+```js
+const Image = require("@11ty/eleventy-img");
+function imageShortcode(src, klass, alt, sizes, widths) {
+    let options = {
+      widths: widths,
+      formats: ['jpeg',],
+      outputDir: "./_site/static/img",
+      urlPath: "static/img/",
+      sharpJpegOptions: {
+        quality: 99,
+        progressive: true
+      }
+    };
+    let source = path.join(__dirname, "_includes/" , src);
+    // genrate images, ! dont wait
+    Image(source, options);
+
+    let imageAttributes = {
+      class: klass,
+      alt,
+      sizes,
+      loading: "lazy",
+      decoding: "async",
+      whitespaceMode: "inline"
+    };
+    // get metadata even the images are not fully generated
+    metadata = Image.statsSync(source, options);
+    return Image.generateHTML(metadata, imageAttributes);
+}
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addNunjucksShortcode("myImage", imageShortcode);
+}
+```
+
 ### Advanced control of Sharp image processor
 
 [Extra options to pass to the Sharp constructor](https://sharp.pixelplumbing.com/api-constructor#parameters) or the [Sharp image format converter for webp](https://sharp.pixelplumbing.com/api-output#webp), [png](https://sharp.pixelplumbing.com/api-output#png), [jpeg](https://sharp.pixelplumbing.com/api-output#jpeg), or [avif](https://sharp.pixelplumbing.com/api-output#avif).
