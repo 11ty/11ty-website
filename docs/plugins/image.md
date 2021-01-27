@@ -36,7 +36,7 @@ npm install @11ty/eleventy-img
 
 ## Usage
 
-This utility returns a Promise and works best in `async` friendly functions, filters, shortcodes. It _can_ also work in synchronous environments but requires a bit more (undocumented as of yet) setup.
+This utility returns a Promise and works best in `async` friendly functions, filters, shortcodes. It _can_ also work in synchronous environments ([Synchronous Usage](#synchronous-usage)).
 
 {% codetitle ".eleventy.js" %}
 
@@ -341,6 +341,9 @@ And you’ll have the appropriate HTML generated for you (based on your specifie
 
 ### Synchronous Usage
 
+Use `Image.statsSync` to get the metadata of a source even if the image
+generation is not finished yet:
+ 
 {% codetitle ".eleventy.js" %}
 
 ```js
