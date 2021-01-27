@@ -16,7 +16,7 @@ exports.render = function(data) {
   return `<ol>
     ${data.pagination.items.map(function(item) {
         return `<li>${item}</li>`;
-      }).join("");
+      }).join("")
     }
   </ol>`;
 };
