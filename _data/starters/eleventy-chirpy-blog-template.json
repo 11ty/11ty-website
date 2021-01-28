@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/muenzpraeger/eleventy-chirpy-blog-template",
+	"name": "Eleventy Chirpy Blog Template",
+	"description": "11ty version of the popular Chirpy Jekyll blog template.",
+	"author": "muenzpraeger",
+	"demo": "https://eleventy-chirpy-blog-template.netlify.app/"
+}
