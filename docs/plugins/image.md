@@ -357,7 +357,7 @@ function imageShortcode(src, klass, alt, sizes, widths) {
       }
     };
     let source = path.join(__dirname, "_includes/" , src);
-    // genrate images, ! dont wait
+    // generate images, while this is async we don’t wait
     Image(source, options);
 
     let imageAttributes = {
