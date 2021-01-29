@@ -9,7 +9,7 @@
 }
 @media (min-width: 41.875em) { /* 670px */
 	.elv-possum-pic + .supporters-avatar {
-		top: 1.25rem; /* 20px /16 */
+		top: 2.25rem; /* 20px /16 */
 		right: 0.9375rem; /* 15px /16 */
 		width: 3.75rem; /* 60px /16 */
 	}
