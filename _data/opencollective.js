@@ -62,7 +62,7 @@ module.exports = async function() {
 		// lol hardcoded
 		orders.push({
 			name: "Zach Leatherman",
-			slug: "zachleat",
+			slug: "zach-leatherman",
 			twitter: "zachleat",
 			image: "https://images.opencollective.com/zachleat/70606f4/avatar/256.png",
 			website: "https://www.zachleat.com/",
