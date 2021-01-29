@@ -57,8 +57,8 @@ async function fetch(name, opencollectUsername, imageUrl, website) {
   let avatarPaths = {};
 
   let getOpenCollectiveData = require("./_data/opencollective");
-  // warning: Zach Leatherman doesn’t exist in this data set 😅
   let opencollective = await getOpenCollectiveData();
+
   for(let supporter of opencollective.supporters) {
     if(!supporter.hasDefaultAvatar) {
       promises.push(fetch(supporter.name, supporter.slug, supporter.image, supporter.website));
