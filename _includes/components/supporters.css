@@ -15,9 +15,7 @@
 	}
 }
 .elv-header-default .elv-possum-pic + .supporters-avatar {
-	top: .5rem;
-	right: .5rem;
-	pointer-events: none;
+	display: none;
 }
 
 /* Inline list of support avatars */
