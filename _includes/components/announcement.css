@@ -1,5 +1,7 @@
 .announcement {
-	display: block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 	width: 100%;
 	background-color: #111;
 	font-weight: 500;
@@ -15,15 +17,8 @@
 		font-size: clamp(1em, 2vw, 1.25em);
 	}
 }
-.announcement-lo {
-	--lo-margin-h: 2em;
-	--lo-margin-v: .5em;
-	--lo-stackpoint: 25em; /* 400px /16 */
-	display: inline-flex;
-}
 .announcement a {
 	display: inline-block;
-	white-space: nowrap;
 	padding: .35em 0;
 	text-decoration: none;
 }
@@ -42,12 +37,12 @@
 	background-color: rgba(255,255,255,.04);
 	border: none;
 	color: inherit;
-	font-size: inherit;
+	font-size: 0.6875em; /* 11px /16 */
 	font-weight: 100;
-	flex-grow: 999;
 	padding-top: .5em;
 	padding-bottom: .5em;
-	letter-spacing: .5px;
+  letter-spacing: .5px;
+  flex-basis: 7em;
 }
 .announcement-close:hover,
 .announcement-close:focus {

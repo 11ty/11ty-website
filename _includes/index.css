@@ -473,7 +473,7 @@ footer.elv-layout {
 .elv-possum {
 	position: absolute;
 	right: .5rem;
-	top: 1rem;
+	top: 2rem;
 	transition: .3s opacity ease-out;
 }
 .elv-header-docs .elv-possum {

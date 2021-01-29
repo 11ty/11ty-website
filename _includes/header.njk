@@ -1,14 +1,8 @@
 <header class="elv-layout elv-layout-full elv-header{% if headerClass %} {{ headerClass }}{% endif %}">
-	<announcement-banner class="announcement">
-		<div class="lo announcement-lo">
-			<a href="https://blacklivesmatter.com/" class="lo-c">Black Lives Matter</a>
-			<a href="https://eji.org/" class="lo-c">The Equal Justice Initiative</a>
-			<a href="http://www.wetheprotesters.org/" class="lo-c">We The Protesters</a>
-			<a href="https://deletefacebook.com/" class="lo-c">Delete Facebook</a>
-			<div class="lo-c lo-c-stretch">
-				<button type="button" data-banner-close class="announcement-close">Hide<span class="sr-only"> this banner</span></button>
-			</div>
-		</div>
+	<announcement-banner class="announcement" data-banner-key="2021-01-29">
+		{% set bannerLink = bannerlinks | randompick %}
+		<a href="{{ bannerLink.url }}" class="lo-c">{{ bannerLink.label }}</a>
+    <button type="button" data-banner-close class="announcement-close">Close<span class="sr-only"> this banner</span></button>
 	</announcement-banner>
 
 	<div class="elv-header-c">

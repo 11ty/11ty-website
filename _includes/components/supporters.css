@@ -1,6 +1,6 @@
 .elv-possum-pic + .supporters-avatar {
 	position: absolute;
-	top: calc(1.0625rem + .3vw);
+	top: calc(2.0625rem + .3vw);
 	right: calc(.5625rem + .75vw);
 	opacity: .9;
 	width: 9vw;
