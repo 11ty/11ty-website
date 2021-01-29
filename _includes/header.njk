@@ -1,5 +1,5 @@
 <header class="elv-layout elv-layout-full elv-header{% if headerClass %} {{ headerClass }}{% endif %}">
-	<announcement-banner class="announcement" data-banner-key="2021-01-29">
+	<announcement-banner class="announcement" data-banner-key="{{ bannerkey }}">
 		{% set bannerLink = bannerlinks | randompick %}
 		<a href="{{ bannerLink.url }}" class="lo-c">{{ bannerLink.label }}</a>
     <button type="button" data-banner-close class="announcement-close">Close<span class="sr-only"> this banner</span></button>

@@ -67,7 +67,7 @@ social:
 		{%- include "components/js-class.js" -%}
 
 		// herald helper
-		let ctaUrl = "https://blacklivesmatter.com/";
+		let ctaUrl = "{{ bannerkey }}";
 		let savedCtaUrl = localStorage.getItem("banner--cta-url");
 		if(savedCtaUrl === ctaUrl) {
 			document.documentElement.classList.add("banner--hide");
