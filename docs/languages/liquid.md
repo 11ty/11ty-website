@@ -25,7 +25,7 @@ Rather than constantly fixing outdated documentation, [find `getLiquidOptions` i
 
 ### Optional: Use your own options {% addedin "0.2.15" %}
 
-It’s recommended to use the Configuration API to set override the default options above.
+It’s recommended to use the Configuration API to override the default options above.
 
 ```js
 module.exports = function(eleventyConfig) {
