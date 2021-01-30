@@ -33,18 +33,10 @@
 .announcement a:after {
 	display: none;
 }
-.announcement-close {
-	background-color: rgba(255,255,255,.04);
-	border: none;
-	color: inherit;
-	font-size: 0.6875em; /* 11px /16 */
-	font-weight: 100;
-	padding-top: .5em;
-	padding-bottom: .5em;
-  letter-spacing: .5px;
-  flex-basis: 7em;
+/* Hide the banner on the home page */
+.elv-header-default .announcement {
+  background-color: #222;
 }
-.announcement-close:hover,
-.announcement-close:focus {
-	background-color: rgba(255,255,255,.1);
+.elv-header-default .announcement a {
+  visibility: hidden;
 }
