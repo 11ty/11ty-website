@@ -16,7 +16,6 @@
 	flex-grow: 0;
 }
 .elv-nav-item a {
-  display: block;
 	font-weight: 600;
 }
 .elv-header-default .elv-nav-item a {
