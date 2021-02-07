@@ -243,7 +243,7 @@ async function imageShortcode(src, alt) {
     formats: ["jpeg"]
   });
 
-  let data = metadata.jpeg.pop();
+  let data = metadata.jpeg[metadata.jpeg.length - 1];
   return `<img src="${data.url}" width="${data.width}" height="${data.height}" alt="${alt}" loading="lazy" decoding="async">`;
 }
 
@@ -346,7 +346,7 @@ And you’ll have the appropriate HTML generated for you (based on your specifie
 
 Use `Image.statsSync` to get the metadata of a source even if the image
 generation is not finished yet:
- 
+
 {% codetitle ".eleventy.js" %}
 
 ```js
