@@ -1,6 +1,0 @@
-{
-	"url": "https://github.com/jhukdev/11tyboo",
-	"name": "11tyboo",
-	"description": "11tyboo tries to emulate the great DX of Gatsby, but with 11ty! It's setup with TypeScript, SASS, CSS Modules, Webpack, Preact and more. All optimised for performance.",
-	"author": "jhukdev"
-}

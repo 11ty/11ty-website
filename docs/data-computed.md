@@ -44,7 +44,7 @@ module.exports = {
 };
 ```
 
-{% callout "info" %}If you want to use a JavaScript function for your <code>eleventyComputed</code> properties, you must use either <a href="/docs/data-frontmatter/">JavaScript front matter</a> or a <a href="/docs/data-js">JavaScript data file</a> (template, directory, or global). YAML and JSON do not support JavaScript functions.{% endcallout %}
+{% callout "info" %}If you want to use a JavaScript function for your <code>eleventyComputed</code> properties, you must use either <a href="/docs/data-frontmatter/#javascript-front-matter">JavaScript front matter</a> or a <a href="/docs/data-js/">JavaScript data file</a> (template, directory, or global). YAML and JSON do not support JavaScript functions.{% endcallout %}
 
 The resulting data for each `posts/*.md` file when processed by Eleventy has the following structure:
 

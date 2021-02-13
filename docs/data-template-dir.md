@@ -16,15 +16,15 @@ For example, consider a template located at `posts/subdir/my-first-blog-post.md`
 1. [Content Template Front Matter Data](/docs/data-frontmatter/)
     * merged with any [Layout Front Matter Data](/docs/layouts/#front-matter-data-in-layouts)
 1. Template Data File (data is only applied to `posts/subdir/my-first-blog-post.md`)
-    * `posts/subdir/my-first-blog-post.11tydata.js` {% minilink "/docs/data-js" %}{% addedin "0.5.3" %}JavaScript Data Files{% endminilink %}
+    * `posts/subdir/my-first-blog-post.11tydata.js` {% minilink "/docs/data-js/" %}{% addedin "0.5.3" %}JavaScript Data Files{% endminilink %}
     * `posts/subdir/my-first-blog-post.11tydata.json` {% addedin "0.5.3" %}
     * `posts/subdir/my-first-blog-post.json`
 1. Directory Data File (data applies to all templates in `posts/subdir/*`)
-    * `posts/subdir/subdir.11tydata.js` {% minilink "/docs/data-js" %}{% addedin "0.5.3" %}JavaScript Data Files{% endminilink %}
+    * `posts/subdir/subdir.11tydata.js` {% minilink "/docs/data-js/" %}{% addedin "0.5.3" %}JavaScript Data Files{% endminilink %}
     * `posts/subdir/subdir.11tydata.json` {% addedin "0.5.3" %}
     * `posts/subdir/subdir.json`
 1. Parent Directory Data File (data applies to all templates in `posts/**/*`, including subdirectories) {% addedin "0.2.15" %}
-    * `posts/posts.11tydata.js` {% minilink "/docs/data-js" %}{% addedin "0.5.3" %}JavaScript Data Files{% endminilink %}
+    * `posts/posts.11tydata.js` {% minilink "/docs/data-js/" %}{% addedin "0.5.3" %}JavaScript Data Files{% endminilink %}
     * `posts/posts.11tydata.json` {% addedin "0.5.3" %}
     * `posts/posts.json`
 1. [Global Data Files](/docs/data-global/) in `_data/*` (`.js` or `.json` files) available to all templates.

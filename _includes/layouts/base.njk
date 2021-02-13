@@ -51,7 +51,6 @@ social:
 {% include 'components/announcement.css' %}
 {% include 'components/seven-minute-tabs.css' %}
 {% include '../../node_modules/speedlify-score/speedlify-score.css' %}
-{% include '../../node_modules/herald-of-the-dog/herald.css' %}
 {% for includeLocation in css %}
 {% include includeLocation %}
 {% endfor %}
@@ -65,13 +64,6 @@ social:
 {% endif %}
 		<script>
 		{%- include "components/js-class.js" -%}
-
-		// herald helper
-		let ctaUrl = "https://blacklivesmatter.com/";
-		let savedCtaUrl = localStorage.getItem("banner--cta-url");
-		if(savedCtaUrl === ctaUrl) {
-			document.documentElement.classList.add("banner--hide");
-		}
 		</script>
 {% if loadNetlifyIdentity %}
 		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>

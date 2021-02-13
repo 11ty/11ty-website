@@ -1,12 +1,18 @@
 ---
+pageTitle: Collections (Using Tags)
 eleventyNavigation:
   parent: Working with Templates
   key: Collections
   order: 2
   excerpt: Group, reuse, and sort content in interesting ways.
+communityLinks:
+- url: https://www.pborenstein.com/posts/collections/
+  author: pborenstein
+  title: Working with Collections
+- url: https://darekkay.com/blog/eleventy-group-posts-by-year/
+  author: darek_kay
+  title: Group posts by year
 ---
-# Collections (using Tags)
-
 While [pagination](/docs/pagination/) allows you to iterate over a data set to create multiple templates, a collection allows you to group content in interesting ways. A piece of content can be a part of multiple collections, if you assign the same string value to the `tags` key in the front matter.
 
 ## A Blog Example
@@ -250,7 +256,7 @@ Inside of your `.eleventy.js` config file, use the first argument to the config 
 ```js
 module.exports = function(eleventyConfig) {
   // API is available in `eleventyConfig` argument
-  
+
   return {
     // your normal config options
     markdownTemplateEngine: "njk"
@@ -453,12 +459,3 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
-
-<div class="elv-community" id="community-resources">
-  {% callout "info" %}
-  <h3 class="elv-community-hed">Community Resources</h3>
-  <ul>
-    <li><a href="https://www.pborenstein.com/posts/collections/">Working with Collections</a> by {% avatarlocalcache "twitter", "pborenstein" %}Philip Borenstein</li>
-  </ul>
-  {% endcallout %}
-</div>

@@ -11,6 +11,8 @@ override:tags:
 
 📢 [Subscribe to the **Eleventy News Feed**](/news/feed.xml)
 
+You can find a bunch of other [blog posts about Eleventy on Zach’s blog](https://www.zachleat.com/web/eleventy/).
+
 {%- for news in collections.news | reverse %}
 * {{ news.date | newsDate }}—[{{ news.data.newstitle }}]({{ news.data.page.url }})
 {%- endfor %}

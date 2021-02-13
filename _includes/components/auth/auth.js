@@ -109,7 +109,7 @@ class EleventySupporter {
   addAvatars(user) {
     let avatar = document.createElement("img");
     avatar.classList.add("supporters-avatar", "avatar");
-    avatar.setAttribute("src", `/img/avatars/opencollective/${user.slug}.jpg`);
+    avatar.setAttribute("src", `/img/avatars/opencollective/${user.slug}.jpeg`);
     avatar.setAttribute("alt", `${user.name}’s Avatar`);
     avatar.setAttribute("onerror", "this.remove()");
 

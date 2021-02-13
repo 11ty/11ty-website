@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/distantcam/windty",
+	"name": "windty 🌬️",
+	"description": "Windty is a basic template using 11ty and Tailwind, and deploys to github pages.",
+	"author": "distantcam",
+	"demo": "https://distantcam.github.io/windty/"
+}

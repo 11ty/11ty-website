@@ -56,7 +56,7 @@ Run `eleventy --serve` to start up a web server. Then open `http://localhost:808
 <!-- TODO some kind of aspect ratio? -->
 <div data-import="/imports/facepile.html" class="facepile-fullwidth"></div>
 
-View [all {{ sites | objectFilterNot("disabled") | length }} sites](/leaderboard/).
+View [all {{ sites | objectFilterNot("disabled") | length }} sites](/speedlify/).
 
 ## Don’t take my word for it {% emoji "🌈" %}
 

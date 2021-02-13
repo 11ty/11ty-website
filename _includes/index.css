@@ -152,6 +152,12 @@ main:not(:empty) {
 	padding-bottom: 3em;
 	margin-bottom: 3em;
 }
+main details {
+  margin: 1em 0;
+}
+main summary {
+  margin: 0 0 1em;
+}
 
 /* Tables */
 table {
@@ -467,7 +473,7 @@ footer.elv-layout {
 .elv-possum {
 	position: absolute;
 	right: .5rem;
-	top: 1rem;
+	top: 2rem;
 	transition: .3s opacity ease-out;
 }
 .elv-header-docs .elv-possum {

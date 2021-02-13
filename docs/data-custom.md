@@ -59,7 +59,7 @@ module.exports = eleventyConfig => {
 
 ## Ordering in the Data Cascade
 
-Note that in the [data cascade](/docs/data-cascade) there is a specific conflict resolution order when the same keys are used in data files. For example, [JavaScript files take priority over JSON](/docs/data-template-dir/). These new custom data file formats are treated as lower priority than both JavaScript and JSON.
+Note that in the [data cascade](/docs/data-cascade/) there is a specific conflict resolution order when the same keys are used in data files. For example, [JavaScript files take priority over JSON](/docs/data-template-dir/). These new custom data file formats are treated as lower priority than both JavaScript and JSON.
 
 If you add multiple file extensions, the latter ones take priority over the earlier ones. In the following example, if there is ever conflicting data between `*.toml` and `*.yaml` files, the `yaml` file will take precedence.
 
