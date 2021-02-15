@@ -39,8 +39,6 @@ const shortcodes = {
         loading: "lazy",
         decoding: "async",
         class: "avatar",
-      }, {
-        whitespaceMode: "inline"
       });
 		} catch(e) {
 			return defaultAvatarHtml;
@@ -50,7 +48,26 @@ const shortcodes = {
 		return (linkUrl ? `<a href="${linkUrl}">` : "") +
 			content +
 			(linkUrl ? `</a>` : "");
-	}
+	},
+  getScreenshotHtml: function(siteSlug, url, withJs) {
+    let options = {
+      formats: ["avif", "webp", "jpeg"],
+      widths: [300, 600], // 260-440 in layout
+      sourceUrl: url,
+      urlPath: "/img/sites/",
+      filenameFormat: function(id, src, width, format) {
+        return `${siteSlug}-${width}${withJs ? "-js" : ""}.${format}`;
+      }
+    };
+
+    let stats = eleventyImage.statsSync(`./img/sites/${siteSlug}-600.jpeg`, options);
+
+    return eleventyImage.generateHTML(stats, {
+      alt: `Screenshot of ${url}`,
+      sizes: "(min-width: 22em) 30vw, 100vw",
+      class: "sites-screenshot",
+    });
+  }
 };
 
 module.exports = function(eleventyConfig) {
@@ -102,6 +119,7 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatar);
+	eleventyConfig.addShortcode("getScreenshotHtml", shortcodes.getScreenshotHtml);
 
 	eleventyConfig.addShortcode("codetitle", function(title, heading = "Filename") {
 		return `<div class="codetitle codetitle-left"><b>${heading} </b>${title}</div>`;

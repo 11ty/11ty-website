@@ -1,8 +1,4 @@
-{%- set imgPrefix = "/img/sites/" + site.fileSlug %}
-{%- set jpegImgUrl = imgPrefix + "-300.jpeg" %}
-{%- set webpImgUrl = imgPrefix + "-300.webp" %}
-{%- set avifImgUrl = imgPrefix + "-300.avif" %}
-
+{%- set jpegImgUrl = "/img/sites/" + site.fileSlug + "-300.jpeg" %}
 {%- set jpegImgExists = jpegImgUrl | fileExists %}
 <div class="lo-c site-top">
 	<div{% if jpegImgExists %} class="sites-data-container"{% endif %}>
@@ -27,16 +23,7 @@
 	</div>
 {%- if jpegImgExists %}
 	<div class="sites-screenshot-container">
-    <picture>
-{%- if avifImgUrl | fileExists %}
-      <source srcset="{{ imgPrefix }}-300.avif 300w, {{ imgPrefix }}-600.avif 600w" type="image/avif" sizes="(min-width: 22em) 30vw, 100vw">
-{%- endif %}
-{%- if webpImgUrl | fileExists %}
-      <source srcset="{{ imgPrefix }}-300.webp 300w, {{ imgPrefix }}-600.webp 600w" type="image/webp" sizes="(min-width: 22em) 30vw, 100vw">
-{%- endif %}
-      <source srcset="{{ imgPrefix }}-300.jpeg 300w, {{ imgPrefix }}-600.jpeg 600w" type="image/jpeg" sizes="(min-width: 22em) 30vw, 100vw">
-      <img src="{{ imgPrefix }}-300.jpeg" alt="Screenshot of {{ site.url }}" class="sites-screenshot" loading="lazy" width="300" height="225">
-    </picture>
+    {% getScreenshotHtml site.fileSlug, site.url %}
   </div>
 {%- endif %}
 </div>
