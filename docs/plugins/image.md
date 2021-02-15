@@ -351,32 +351,25 @@ generation is not finished yet:
 
 ```js
 const Image = require("@11ty/eleventy-img");
-function imageShortcode(src, klass, alt, sizes, widths) {
-    let options = {
-      widths: widths,
-      formats: ['jpeg',],
-      outputDir: "./_site/static/img",
-      urlPath: "static/img/",
-      sharpJpegOptions: {
-        quality: 99,
-        progressive: true
-      }
-    };
-    let source = path.join(__dirname, "_includes/" , src);
-    // generate images, while this is async we don’t wait
-    Image(source, options);
+function imageShortcode(src, cls, alt, sizes, widths) {
+  let options = {
+    widths: widths,
+    formats: ['jpeg'],
+  };
 
-    let imageAttributes = {
-      class: klass,
-      alt,
-      sizes,
-      loading: "lazy",
-      decoding: "async",
-      whitespaceMode: "inline"
-    };
-    // get metadata even the images are not fully generated
-    metadata = Image.statsSync(source, options);
-    return Image.generateHTML(metadata, imageAttributes);
+  // generate images, while this is async we don’t wait
+  Image(src, options);
+
+  let imageAttributes = {
+    class: cls,
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async",
+  };
+  // get metadata even the images are not fully generated
+  metadata = Image.statsSync(source, options);
+  return Image.generateHTML(metadata, imageAttributes);
 }
 
 module.exports = function(eleventyConfig) {
