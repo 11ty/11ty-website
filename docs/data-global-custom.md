@@ -16,16 +16,24 @@ The first value of `addGlobalData` is the key that will be available to your tem
 ```js
 module.exports = function (eleventyConfig) {
   // Values can be static:
-  eleventyConfig.addGlobalData("static", "static");
+  eleventyConfig.addGlobalData("myStatic", "static");
   // functions:
-  eleventyConfig.addGlobalData("function", () => new Date());
-  // or async :
+  eleventyConfig.addGlobalData("myFunction", () => new Date());
+  // or a promise:
   eleventyConfig.addGlobalData(
-    "async",
-    () =>
-      new Promise((resolve) => {
+    "myFunctionPromise",
+    () => {
+      return new Promise((resolve) => {
         setTimeout(resolve, 100, "foo");
       })
+    }
+  );
+  // or async:
+  eleventyConfig.addGlobalData(
+    "myAsyncFunction",
+    async () => {
+      return Promise.resolve("hi");
+    }
   );
 };
 ```
