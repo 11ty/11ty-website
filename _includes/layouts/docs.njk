@@ -16,7 +16,9 @@ isDocs: true
 </nav>
 {% endif %}
 {% if pageTitle %}<h1>{{ pageTitle | safe }}</h1>{% endif %}
+{% if not overrideCommunityLinks %}
 {% include "community-contributed.njk" %}
+{% endif %}
 
 {{ content | safe }}
 

@@ -11,6 +11,10 @@ tags:
   - related-shortcodes
 relatedLinks:
   /docs/config/#watch-javascript-dependencies: Watch JavaScript Dependencies
+communityLinks:
+- url: https://willmartin.dev/posts/conditional-rendering-eleventy/
+  author: willmartindev
+  title: Conditionally Rendering JavaScript Templates
 layout: layouts/langs.njk
 ---
 | Eleventy Short Name | File Extension | NPM Package |
