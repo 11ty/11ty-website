@@ -294,7 +294,7 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addFilter("isBusinessPerson", function(supporter) {
-		return supporter && supporter.isMonthly && supporter.amount && supporter.amount.value > 5;
+		return supporter && supporter.isMonthly && supporter.amount && supporter.amount.value >= 5;
 	});
 
 	eleventyConfig.addShortcode("supporterAmount", function(amount, maxAmount = 2000) {
