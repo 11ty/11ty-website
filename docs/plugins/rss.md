@@ -44,7 +44,7 @@ Advanced control of [PostHTML rendering options](https://github.com/posthtml/pos
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(rssPlugin, {
+  eleventyConfig.addPlugin(pluginRss, {
     posthtmlRenderOptions: {
       closingSingleTag: "default" // opt-out of <img/>-style XHTML single tags
     }
