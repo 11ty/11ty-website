@@ -1,4 +1,3 @@
-"use strict";
 const fastglob = require("fast-glob");
 const getAuthors = require("../config/getAuthorsFromSites");
 
@@ -24,6 +23,20 @@ module.exports = async () => {
         };
       }
       authors[key].sites.push(siteData);
+    }
+  }
+
+  // Add BUSINESS info
+  for(let key in authors) {
+    for(let site of authors[key].sites) {
+      if(site.business) {
+        authors[key].business = site.business;
+
+        // Allow `business.name` but fallback to `site.name`
+        if(!authors[key].business.name) {
+          authors[key].business.name = site.name;
+        }
+      }
     }
   }
 

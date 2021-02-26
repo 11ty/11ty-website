@@ -85,7 +85,9 @@
   display: flex;
   align-items: stretch;
 }
-
+.lo-nowrap {
+  flex-wrap: nowrap;
+}
 .lo-carousel {
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -96,11 +98,15 @@
 
 /* Grid alternative */
 .lo-grid {
+  --lo-grid-repeat: auto-fit;
   display: grid;
   margin: 0;
-  grid-template-columns: repeat( auto-fit, minmax(var(--lo-c-minwidth), 1fr) );
+  grid-template-columns: repeat( var(--lo-grid-repeat), minmax(var(--lo-c-minwidth), 1fr) );
   grid-row-gap: var(--lo-margin-v, 0);
   grid-column-gap: var(--lo-margin-h, 0);
+}
+.lo-grid-fill {
+  --lo-grid-repeat: auto-fill;
 }
 .lo-grid > .lo-c {
   margin: 0;

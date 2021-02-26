@@ -83,6 +83,9 @@ iframe {
 .nound {
 	text-decoration: none;
 }
+.ta-c {
+  text-align: center;
+}
 
 /* Blockquotes */
 blockquote {
@@ -153,10 +156,10 @@ main:not(:empty) {
 	margin-bottom: 3em;
 }
 main details {
-  margin: 1em 0;
+	margin: 1em 0;
 }
 main summary {
-  margin: 0 0 1em;
+	margin: 0 0 1em;
 }
 
 /* Tables */
@@ -771,7 +774,8 @@ main .elv-toc + h1 .direct-link {
 	.btn-primary {
 		font-size: 6vw;
 	}
-	.btn-primary-sm {
+	.btn-primary-sm,
+	.btn-primary-standard {
 		font-size: 1.4em;
 	}
 }
@@ -779,10 +783,16 @@ main .elv-toc + h1 .direct-link {
 	.btn-primary-sm {
 		font-size: 5.6vw;
 	}
+	.btn-primary-standard {
+		font-size: 4vw;
+	}
 }
 @media (min-width: 53.125em) { /* 850px */
 	.btn-primary-sm {
 		font-size: 2.666666666667em; /* 48px /18 */
+	}
+	.btn-primary-standard {
+		font-size: 1.666666666667em; /* 30px /18 */
 	}
 }
 @media (min-width: 46.875em) { /* 750px */
@@ -795,7 +805,6 @@ main .elv-toc + h1 .direct-link {
 /* Emoji */
 .emoji {
 	line-height: 1;
-	vertical-align: middle;
 }
 
 /* Supported Features Tables */
@@ -821,4 +830,32 @@ main .elv-toc + h1 .direct-link {
 }
 .site-score .speedlify-rank-change.down {
 	display: none;
+}
+
+/* Business Network */
+.business-network-primary.business-network-primary {
+  --lo-stackpoint: 37.5em; /* 600px /16 */
+  --lo-margin-h: 1em;
+  --lo-margin-v: 1em;
+}
+.business-network-sites {
+  padding-top: 1em;
+  padding-bottom: 3em;
+}
+.business-network-sites:not(:last-child) {
+  margin-bottom: 3em;
+  border-bottom: 1px solid #666;
+}
+.business-network-name {
+  font-size: 1.5em;
+}
+.business-network-available {
+  padding-left: 3.230769230769em; /* 42px /13 */
+  font-size: 0.7222222222222em; /* 13px /18 */
+}
+.business-network-hire {
+  text-align: center;
+}
+.business-network-hire a[href] {
+  padding: 0.5rem 2em 0.4rem;
 }

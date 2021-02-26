@@ -10,6 +10,13 @@ layout: layouts/docs.njk
 <p>×{{ authors | length }} unique authors.</p>
 
 <table class="authors-list">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Site Count</th>
+      <th>Supporter</th>
+    </tr>
+  </thead>
 	<tbody>
 {%- for author in sites | topAuthors %}
 {%- set supporter = opencollective.supporters | findBy("twitter", author.name) | last -%}

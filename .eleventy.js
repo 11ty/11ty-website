@@ -28,18 +28,18 @@ const shortcodes = {
 			return defaultAvatarHtml;
 		}
 
-    slug = cleanName(slug).toLowerCase();
+		slug = cleanName(slug).toLowerCase();
 
 		try {
-      let mapEntry = Object.assign({}, require(`./avatars/${datasource}/${slug}.json`));
-      delete mapEntry.slug; // dunno why the slug is saved here ok bye
+			let mapEntry = Object.assign({}, require(`./avatars/${datasource}/${slug}.json`));
+			delete mapEntry.slug; // dunno why the slug is saved here ok bye
 
-      return eleventyImage.generateHTML(mapEntry, {
-        alt: `${alt || `${slug}’s ${datasource} avatar`}`,
-        loading: "lazy",
-        decoding: "async",
-        class: "avatar",
-      });
+			return eleventyImage.generateHTML(mapEntry, {
+				alt: `${alt || `${slug}’s ${datasource} avatar`}`,
+				loading: "lazy",
+				decoding: "async",
+				class: "avatar",
+			});
 		} catch(e) {
 			return defaultAvatarHtml;
 		}
@@ -49,25 +49,25 @@ const shortcodes = {
 			content +
 			(linkUrl ? `</a>` : "");
 	},
-  getScreenshotHtml: function(siteSlug, url, withJs) {
-    let options = {
-      formats: ["avif", "webp", "jpeg"],
-      widths: [300, 600], // 260-440 in layout
-      sourceUrl: url,
-      urlPath: "/img/sites/",
-      filenameFormat: function(id, src, width, format) {
-        return `${siteSlug}-${width}${withJs ? "-js" : ""}.${format}`;
-      }
-    };
+	getScreenshotHtml: function(siteSlug, url, withJs, cls, sizes) {
+		let options = {
+			formats: ["avif", "webp", "jpeg"],
+			widths: [300, 600], // 260-440 in layout
+			sourceUrl: url,
+			urlPath: "/img/sites/",
+			filenameFormat: function(id, src, width, format) {
+				return `${siteSlug}-${width}${withJs ? "-js" : ""}.${format}`;
+			}
+		};
 
-    let stats = eleventyImage.statsSync(`./img/sites/${siteSlug}-600.jpeg`, options);
+		let stats = eleventyImage.statsSync(`./img/sites/${siteSlug}-600.jpeg`, options);
 
-    return eleventyImage.generateHTML(stats, {
-      alt: `Screenshot of ${url}`,
-      sizes: "(min-width: 22em) 30vw, 100vw",
-      class: "sites-screenshot",
-    });
-  }
+		return eleventyImage.generateHTML(stats, {
+			alt: `Screenshot of ${url}`,
+			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
+			class: cls !== undefined ? cls : "sites-screenshot",
+		});
+	}
 };
 
 module.exports = function(eleventyConfig) {
@@ -93,6 +93,7 @@ module.exports = function(eleventyConfig) {
 			});
 		}
 	});
+
 	eleventyConfig.addPlugin(rssPlugin);
 	eleventyConfig.addPlugin(navigationPlugin);
 	eleventyConfig.addPlugin(addedInLocalPlugin);
@@ -159,6 +160,7 @@ ${text.trim()}
 	eleventyConfig.addPassthroughCopy("netlify-email");
 	eleventyConfig.addPassthroughCopy("css/fonts");
 	eleventyConfig.addPassthroughCopy("img");
+	eleventyConfig.addPassthroughCopy("news/*.png");
 	eleventyConfig.addPassthroughCopy("favicon.ico");
 
 	eleventyConfig.addFilter("findHash", function(speedlifyUrls, ...urls) {
@@ -291,6 +293,10 @@ ${text.trim()}
 		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, shortcodes.avatar("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`) + testimonial.name)}</span>` : ``}</p></blockquote>`;
 	});
 
+	eleventyConfig.addFilter("isBusinessPerson", function(supporter) {
+		return supporter && supporter.isMonthly && supporter.amount && supporter.amount.value > 5;
+	});
+
 	eleventyConfig.addShortcode("supporterAmount", function(amount, maxAmount = 2000) {
 		// mostly fibonacci
 		let increments = [5,8,13,21,34,55,89,144,233,377,610,987,1597,2584];
@@ -355,7 +361,9 @@ ${text.trim()}
 	eleventyConfig.setLibrary("md", mdIt);
 
 	eleventyConfig.addFilter("newsDate", (dateObj, format = "yyyy LLLL dd") => {
-		if(typeof dateObj === "number") {
+		if(typeof dateObj === "string") {
+			return DateTime.fromISO(dateObj).toFormat(format);
+		} else if(typeof dateObj === "number") {
 			dateObj = new Date(dateObj);
 		}
 		return DateTime.fromJSDate(dateObj).toFormat(format);
