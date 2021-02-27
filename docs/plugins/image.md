@@ -193,6 +193,7 @@ async function imageShortcode(src, alt, sizes) {
   let imageAttributes = {
     alt,
     sizes,
+    src,
     loading: "lazy",
     decoding: "async",
   };
@@ -364,6 +365,7 @@ function imageShortcode(src, cls, alt, sizes, widths) {
     class: cls,
     alt,
     sizes,
+    src,
     loading: "lazy",
     decoding: "async",
   };
