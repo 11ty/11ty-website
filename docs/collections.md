@@ -219,7 +219,7 @@ And in Liquid it’d look like this:
 {% raw %}
 ```html
 <ul>
-{%- for post in collections.post reversed -%}
+{%- for post in collections.post reverse -%}
   <li>{{ post.data.title }}</li>
 {%- endfor -%}
 </ul>
