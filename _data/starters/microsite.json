@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/voightco/micro-site/",
+	"name": "microsite",
+	"description": "Opinionated micro front-end that sets common 11ty defaults. Great for creating landing pages.",
+	"author": "dandevri",
+	"demo": "https://voight-microsite.netlify.app"
+}
