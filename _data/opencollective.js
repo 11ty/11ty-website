@@ -8,6 +8,7 @@ const FilteredProfiles = [
 	"masonslots", //gambling
 	"trust-my-paper", // selling term papers
 	"kiirlaenud", // some quick loans site
+	"kajino-bitcoin", //bitcoin
 ];
 const OpenCollectiveTwitterMap = require("./opencollectiveMap.js");
 
@@ -35,7 +36,7 @@ module.exports = async function() {
 		let url = `https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000&status=paid,active`;
 		let json = await Cache(url, {
 			duration: process.env.ELEVENTY_AVATARS ? "0s" : "1d",
-      // duration: "0s",
+			// duration: "0s",
 			type: "json"
 		});
 
