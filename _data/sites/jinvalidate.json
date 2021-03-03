@@ -1,0 +1,7 @@
+{
+  "url": "https://jinvalidate.netlify.app/",
+  "name": "A module for properly invalidating browser's cache",
+  "description": "A simple site that delivers a piece of PHP code. Obviously requires the PHP part...",
+  "source_url": "https://github.com/dgrammatiko/invalidate-cache",
+  "twitter": "dgrammatiko"
+}
