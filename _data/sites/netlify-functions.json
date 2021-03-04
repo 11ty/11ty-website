@@ -4,6 +4,5 @@
 	"description": "A site for explaining Netlify Functions, including example functions for people to use.",
 	"source_url": "https://github.com/netlify/functions",
 	"twitter": "netlify",
-	"authoredBy": ["daviddarnes","philhawksworth"],
-	"featured": true
+	"authoredBy": ["daviddarnes","philhawksworth"]
 }
