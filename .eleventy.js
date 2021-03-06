@@ -289,6 +289,10 @@ ${text.trim()}
 		});
 	});
 
+	eleventyConfig.addCollection("docs", function(collection) {
+		return collection.getFilteredByGlob("docs/*.md");
+	});
+
 	eleventyConfig.addShortcode("testimonial", function(testimonial) {
 		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, shortcodes.avatar("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`) + testimonial.name)}</span>` : ``}</p></blockquote>`;
 	});
