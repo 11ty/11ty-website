@@ -80,6 +80,9 @@ social:
 		<!-- Built on {{ config.now }} by Eleventy -->
 		<script>
 		{%- include "components/details-force-state.js" -%}
+{%- if '/docs' in page.url %}
+		{% include "components/skip-content.js" %}
+{% endif %}
 		</script>
 {% if not putTheJsInTheHead %}
 		<script src="/js/eleventy.js" type="module" async></script>

@@ -415,6 +415,24 @@ footer.elv-layout {
 .elv-header-docs:after {
 	clear: both;
 }
+.elv-header-skip-content {
+	position: absolute;
+	top: 0.25em;
+	left: 1em;
+	background-color: #353535;
+	z-index: 1001;
+	text-align: center;
+}
+.elv-header-skip-content a:focus {
+	display: inline-block;
+	cursor: pointer;
+	padding: 0.5em;
+}
+.elv-header-skip-content a:not(:focus) {
+	clip: rect(0 0 0 0);
+	position: absolute;
+	overflow: hidden;
+}
 /* Header Hero */
 .elv-hero {
 	background-color: #222;
@@ -567,7 +585,7 @@ footer.elv-layout {
 a[href].direct-link,
 a[href].direct-link:visited {
 	color: #949494;
-	visibility: hidden;
+	opacity: 0;
 }
 a[href].direct-link:focus,
 a[href].direct-link:focus:visited,
@@ -575,7 +593,7 @@ a[href].direct-link:focus:visited,
 :hover > a[href].direct-link:visited,
 :focus > a[href].direct-link,
 :focus > a[href].direct-link:visited {
-	visibility: visible;
+	opacity: 1;
 }
 /* don’t use a direct link, should be a link to the page */
 main .elv-toc + h1 .direct-link {

@@ -1,4 +1,11 @@
 <header class="elv-layout elv-layout-full elv-header{% if headerClass %} {{ headerClass }}{% endif %}">
+	{%- if '/docs' in page.url %}
+	<div class="elv-header-skip-content">
+		<a href="#nav">Skip to navigation</a>
+		<a href="#content">Skip to main content</a>
+	</div>
+	{%- endif %}
+
 	{%- set bannerLink = bannerlinks | randompick %}
 	{%- if bannerLink %}
 	<div class="announcement">
