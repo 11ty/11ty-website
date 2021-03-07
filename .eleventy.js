@@ -360,6 +360,17 @@ ${text.trim()}
 	mdIt.linkify.tlds('.io', false);
 	eleventyConfig.setLibrary("md", mdIt);
 
+	eleventyConfig.addTransform('labelledAnchor', (content, outputPath) => {
+		const posts = /index\.html/i;
+		const anchors = /<a class="direct-link" href="#(.*?)">#<\/a>/ig;
+		if (outputPath && outputPath.match(posts)) {
+			content = content.replace(anchors, (_, p1) => (
+				`<a class="direct-link" href="#${p1}" aria-labelledby="${p1}">#</a>`
+			));
+		}
+		return content;
+	})
+
 	eleventyConfig.addFilter("newsDate", (dateObj, format = "yyyy LLLL dd") => {
 		if(typeof dateObj === "string") {
 			return DateTime.fromISO(dateObj).toFormat(format);

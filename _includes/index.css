@@ -567,7 +567,7 @@ footer.elv-layout {
 a[href].direct-link,
 a[href].direct-link:visited {
 	color: #949494;
-	visibility: hidden;
+	opacity: 0;
 }
 a[href].direct-link:focus,
 a[href].direct-link:focus:visited,
@@ -575,7 +575,7 @@ a[href].direct-link:focus:visited,
 :hover > a[href].direct-link:visited,
 :focus > a[href].direct-link,
 :focus > a[href].direct-link:visited {
-	visibility: visible;
+	opacity: 1;
 }
 /* don’t use a direct link, should be a link to the page */
 main .elv-toc + h1 .direct-link {
