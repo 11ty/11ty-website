@@ -93,6 +93,8 @@ Cache("https://…", {
 });
 ```
 
+{% callout "info" %}Eleventy Cache Assets can work inside of a Netlify Function (or AWS Lambda) by using <code>directory: "/tmp/.cache/"</code>.{% endcallout %}
+
 #### Remove URL query params from Cache Identifier
 
 (Version 2.0.3 and newer) If your fetched URL contains some query parameters that aren’t relevant to the identifier used in the cache, remove them using the `removeUrlQueryParams` option. This is useful if an API adds extra junk to your request URLs.
