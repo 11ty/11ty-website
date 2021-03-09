@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 105,
+      "filename": "tanner-dolby.avif",
+      "outputPath": "img/avatars/opencollective/tanner-dolby.avif",
+      "url": "/img/avatars/opencollective/tanner-dolby.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/tanner-dolby.avif 90w",
+      "size": 1269
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 105,
+      "filename": "tanner-dolby.webp",
+      "outputPath": "img/avatars/opencollective/tanner-dolby.webp",
+      "url": "/img/avatars/opencollective/tanner-dolby.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/tanner-dolby.webp 90w",
+      "size": 1566
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
       "width": 90,
-      "height": 106,
-      "url": "/img/avatars/opencollective/cbca9b5c-90.jpeg",
+      "height": 105,
+      "filename": "tanner-dolby.jpeg",
+      "outputPath": "img/avatars/opencollective/tanner-dolby.jpeg",
+      "url": "/img/avatars/opencollective/tanner-dolby.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/cbca9b5c-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/cbca9b5c-90.jpeg",
-      "size": 2387
+      "srcset": "/img/avatars/opencollective/tanner-dolby.jpeg 90w",
+      "size": 2400
     }
   ],
   "slug": "tanner-dolby"

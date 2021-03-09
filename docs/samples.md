@@ -7,7 +7,7 @@ excludeFromSidebar: true
 ---
 ## Source Code Samples
 
-This list shows all of the sample sites that have provided a link to their source code in random order. A [comprehensive list of all sample sites is available](/leaderboard/). {% addToSampleSites %}
+This list shows all of the sample sites that have provided a link to their source code in random order. A [comprehensive list of all sample sites is available](/speedlify/). {% addToSampleSites %}
 
 <table>
   <thead>

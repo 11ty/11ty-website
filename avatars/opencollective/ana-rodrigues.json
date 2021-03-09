@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "ana-rodrigues.avif",
+      "outputPath": "img/avatars/opencollective/ana-rodrigues.avif",
+      "url": "/img/avatars/opencollective/ana-rodrigues.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/ana-rodrigues.avif 90w",
+      "size": 963
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "ana-rodrigues.webp",
+      "outputPath": "img/avatars/opencollective/ana-rodrigues.webp",
+      "url": "/img/avatars/opencollective/ana-rodrigues.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/ana-rodrigues.webp 90w",
+      "size": 1428
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/baddaff7-90.jpeg",
+      "filename": "ana-rodrigues.jpeg",
+      "outputPath": "img/avatars/opencollective/ana-rodrigues.jpeg",
+      "url": "/img/avatars/opencollective/ana-rodrigues.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/baddaff7-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/baddaff7-90.jpeg",
-      "size": 2074
+      "srcset": "/img/avatars/opencollective/ana-rodrigues.jpeg 90w",
+      "size": 2161
     }
   ],
   "slug": "ana-rodrigues"

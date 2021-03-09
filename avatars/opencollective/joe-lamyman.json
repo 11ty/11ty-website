@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "joe-lamyman.avif",
+      "outputPath": "img/avatars/opencollective/joe-lamyman.avif",
+      "url": "/img/avatars/opencollective/joe-lamyman.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/joe-lamyman.avif 90w",
+      "size": 800
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "joe-lamyman.webp",
+      "outputPath": "img/avatars/opencollective/joe-lamyman.webp",
+      "url": "/img/avatars/opencollective/joe-lamyman.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/joe-lamyman.webp 90w",
+      "size": 1224
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/b0290cc9-90.jpeg",
+      "filename": "joe-lamyman.jpeg",
+      "outputPath": "img/avatars/opencollective/joe-lamyman.jpeg",
+      "url": "/img/avatars/opencollective/joe-lamyman.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/b0290cc9-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/b0290cc9-90.jpeg",
-      "size": 1806
+      "srcset": "/img/avatars/opencollective/joe-lamyman.jpeg 90w",
+      "size": 1861
     }
   ],
   "slug": "joe-lamyman"

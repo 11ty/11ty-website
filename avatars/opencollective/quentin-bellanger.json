@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "quentin-bellanger.avif",
+      "outputPath": "img/avatars/opencollective/quentin-bellanger.avif",
+      "url": "/img/avatars/opencollective/quentin-bellanger.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/quentin-bellanger.avif 90w",
+      "size": 1137
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "quentin-bellanger.webp",
+      "outputPath": "img/avatars/opencollective/quentin-bellanger.webp",
+      "url": "/img/avatars/opencollective/quentin-bellanger.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/quentin-bellanger.webp 90w",
+      "size": 1672
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/ae7d2da7-90.jpeg",
+      "filename": "quentin-bellanger.jpeg",
+      "outputPath": "img/avatars/opencollective/quentin-bellanger.jpeg",
+      "url": "/img/avatars/opencollective/quentin-bellanger.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/ae7d2da7-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/ae7d2da7-90.jpeg",
-      "size": 2281
+      "srcset": "/img/avatars/opencollective/quentin-bellanger.jpeg 90w",
+      "size": 2313
     }
   ],
   "slug": "quentin-bellanger"

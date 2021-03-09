@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "mark-hernandez.avif",
+      "outputPath": "img/avatars/opencollective/mark-hernandez.avif",
+      "url": "/img/avatars/opencollective/mark-hernandez.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/mark-hernandez.avif 90w",
+      "size": 1883
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "mark-hernandez.webp",
+      "outputPath": "img/avatars/opencollective/mark-hernandez.webp",
+      "url": "/img/avatars/opencollective/mark-hernandez.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/mark-hernandez.webp 90w",
+      "size": 2404
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/60179317.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "mark-hernandez.jpeg",
+      "outputPath": "img/avatars/opencollective/mark-hernandez.jpeg",
+      "url": "/img/avatars/opencollective/mark-hernandez.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/60179317.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/60179317.jpeg",
-      "size": 2680
+      "srcset": "/img/avatars/opencollective/mark-hernandez.jpeg 90w",
+      "size": 3041
     }
   ],
   "slug": "mark-hernandez"

@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "luke-bonaccorsi.avif",
+      "outputPath": "img/avatars/opencollective/luke-bonaccorsi.avif",
+      "url": "/img/avatars/opencollective/luke-bonaccorsi.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/luke-bonaccorsi.avif 90w",
+      "size": 842
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "luke-bonaccorsi.webp",
+      "outputPath": "img/avatars/opencollective/luke-bonaccorsi.webp",
+      "url": "/img/avatars/opencollective/luke-bonaccorsi.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/luke-bonaccorsi.webp 90w",
+      "size": 1154
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/58996599.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "luke-bonaccorsi.jpeg",
+      "outputPath": "img/avatars/opencollective/luke-bonaccorsi.jpeg",
+      "url": "/img/avatars/opencollective/luke-bonaccorsi.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/58996599.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/58996599.jpeg",
-      "size": 1660
+      "srcset": "/img/avatars/opencollective/luke-bonaccorsi.jpeg 90w",
+      "size": 1844
     }
   ],
   "slug": "luke-bonaccorsi"

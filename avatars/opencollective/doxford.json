@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "doxford.avif",
+      "outputPath": "img/avatars/opencollective/doxford.avif",
+      "url": "/img/avatars/opencollective/doxford.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/doxford.avif 90w",
+      "size": 1354
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "doxford.webp",
+      "outputPath": "img/avatars/opencollective/doxford.webp",
+      "url": "/img/avatars/opencollective/doxford.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/doxford.webp 90w",
+      "size": 1688
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/babda30a-90.jpeg",
+      "filename": "doxford.jpeg",
+      "outputPath": "img/avatars/opencollective/doxford.jpeg",
+      "url": "/img/avatars/opencollective/doxford.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/babda30a-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/babda30a-90.jpeg",
-      "size": 2493
+      "srcset": "/img/avatars/opencollective/doxford.jpeg 90w",
+      "size": 2497
     }
   ],
   "slug": "doxford"

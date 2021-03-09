@@ -503,7 +503,7 @@ testdata:
   - item4
 ```
 
-This means that `collections.myCollection` will have only the first page added to the collection array (`_site/my-page/index.html`). However, if you’d like all the pagination pages to the collections, use `addAllPagesToCollections: true` to the pagination front matter options like so:
+This means that `collections.myCollection` will have only the first page added to the collection array (`_site/my-page/index.html`). However, if you’d like to add all the pagination pages to the collections, use `addAllPagesToCollections: true` to the pagination front matter options like so:
 
 {% codetitle "my-page.md" %}
 

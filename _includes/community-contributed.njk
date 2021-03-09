@@ -1,0 +1,13 @@
+{%- if communityLinks %}
+<div class="elv-community" id="community-resources">
+  {% callout "info" %}
+  <strong class="elv-community-hed">Community Resources:</strong>
+  <ul>
+{%- for entry in communityLinks %}
+    <li><a href="{{ entry.url }}">{% avatarlocalcache "twitter", entry.author %}{{ entry.title }}</a></li>
+{%- endfor %}
+    <li><a href="{{ config.githubEdit }}{{ page.inputPath }}" class="elv-externalexempt"><strong>Add yours!</strong></a></li>
+  </ul>
+  {% endcallout %}
+</div>
+{%- endif %}

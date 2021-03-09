@@ -9,6 +9,7 @@ const fs = require("fs-extra");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
+const eleventyImage = require("@11ty/eleventy-img");
 const monthDiffPlugin = require("./config/monthDiff");
 const addedInLocalPlugin = require("./config/addedin");
 const minificationLocalPlugin = require("./config/minification");
@@ -20,38 +21,52 @@ const lodashGet = require("lodash/get");
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);
 
-let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" class="avatar" width="200" height="200">`;
+let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" decoding="async" class="avatar" width="200" height="200">`;
 const shortcodes = {
-	avatarlocalcache: function(datasource, slug, alt = "") {
+	avatar: function(datasource, slug, alt = "") {
 		if(!slug) {
 			return defaultAvatarHtml;
 		}
 
 		slug = cleanName(slug).toLowerCase();
-		let mapEntry;
+
 		try {
-			mapEntry = require(`./avatars/${datasource}/${slug}.json`);
+			let mapEntry = Object.assign({}, require(`./avatars/${datasource}/${slug}.json`));
+			delete mapEntry.slug; // dunno why the slug is saved here ok bye
+
+			return eleventyImage.generateHTML(mapEntry, {
+				alt: `${alt || `${slug}’s ${datasource} avatar`}`,
+				loading: "lazy",
+				decoding: "async",
+				class: "avatar",
+			});
 		} catch(e) {
 			return defaultAvatarHtml;
 		}
-
-		let ret = [];
-		if(mapEntry.webp) {
-			ret.push("<picture>");
-			ret.push(`<source srcset="${mapEntry.webp[0].srcset}" type="${mapEntry.webp[0].sourceType}">`);
-		}
-		let otherSrc = mapEntry.jpeg || mapEntry.png;
-
-		ret.push(`<img src="${otherSrc[0].url}" alt="${alt || `${slug}’s ${datasource} avatar`}" loading="lazy" class="avatar" width="${otherSrc[0].width}" height="${otherSrc[0].height}">`);
-		if(mapEntry.webp) {
-			ret.push("</picture>");
-		}
-		return ret.join("");
 	},
 	link: function(linkUrl, content) {
 		return (linkUrl ? `<a href="${linkUrl}">` : "") +
 			content +
 			(linkUrl ? `</a>` : "");
+	},
+	getScreenshotHtml: function(siteSlug, url, withJs, cls, sizes) {
+		let options = {
+			formats: ["avif", "webp", "jpeg"],
+			widths: [300, 600], // 260-440 in layout
+			sourceUrl: url,
+			urlPath: "/img/sites/",
+			filenameFormat: function(id, src, width, format) {
+				return `${siteSlug}-${width}${withJs ? "-js" : ""}.${format}`;
+			}
+		};
+
+		let stats = eleventyImage.statsSync(`./img/sites/${siteSlug}-600.jpeg`, options);
+
+		return eleventyImage.generateHTML(stats, {
+			alt: `Screenshot of ${url}`,
+			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
+			class: cls !== undefined ? cls : "sites-screenshot",
+		});
 	}
 };
 
@@ -78,6 +93,7 @@ module.exports = function(eleventyConfig) {
 			});
 		}
 	});
+
 	eleventyConfig.addPlugin(rssPlugin);
 	eleventyConfig.addPlugin(navigationPlugin);
 	eleventyConfig.addPlugin(addedInLocalPlugin);
@@ -103,7 +119,8 @@ module.exports = function(eleventyConfig) {
 			(alt ? `<span class="sr-only">${alt}</span>` : "");
 	});
 
-	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatarlocalcache);
+	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatar);
+	eleventyConfig.addShortcode("getScreenshotHtml", shortcodes.getScreenshotHtml);
 
 	eleventyConfig.addShortcode("codetitle", function(title, heading = "Filename") {
 		return `<div class="codetitle codetitle-left"><b>${heading} </b>${title}</div>`;
@@ -143,6 +160,7 @@ ${text.trim()}
 	eleventyConfig.addPassthroughCopy("netlify-email");
 	eleventyConfig.addPassthroughCopy("css/fonts");
 	eleventyConfig.addPassthroughCopy("img");
+	eleventyConfig.addPassthroughCopy("news/*.png");
 	eleventyConfig.addPassthroughCopy("favicon.ico");
 
 	eleventyConfig.addFilter("findHash", function(speedlifyUrls, ...urls) {
@@ -272,7 +290,11 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addShortcode("testimonial", function(testimonial) {
-		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, shortcodes.avatarlocalcache("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`) + testimonial.name)}</span>` : ``}</p></blockquote>`;
+		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, shortcodes.avatar("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`) + testimonial.name)}</span>` : ``}</p></blockquote>`;
+	});
+
+	eleventyConfig.addFilter("isBusinessPerson", function(supporter) {
+		return supporter && supporter.isMonthly && supporter.amount && supporter.amount.value >= 5;
 	});
 
 	eleventyConfig.addShortcode("supporterAmount", function(amount, maxAmount = 2000) {
@@ -339,7 +361,9 @@ ${text.trim()}
 	eleventyConfig.setLibrary("md", mdIt);
 
 	eleventyConfig.addFilter("newsDate", (dateObj, format = "yyyy LLLL dd") => {
-		if(typeof dateObj === "number") {
+		if(typeof dateObj === "string") {
+			return DateTime.fromISO(dateObj).toFormat(format);
+		} else if(typeof dateObj === "number") {
 			dateObj = new Date(dateObj);
 		}
 		return DateTime.fromJSDate(dateObj).toFormat(format);
@@ -492,7 +516,7 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addFilter("supportersFacepile", (supporters) => {
-		return supporters.filter(supporter => supporter.status === 'ACTIVE' && supporter.tier && supporter.tier.slug !== "gold-sponsor");
+		return supporters.filter(supporter => supporter.status === 'ACTIVE' && !supporter.hasDefaultAvatar && supporter.tier && supporter.tier.slug !== "gold-sponsor");
 	});
 
 	// Sort an object that has `order` props in values. Return an array
@@ -520,7 +544,7 @@ ${text.trim()}
 			} else {
 				html.push(`<span class="nowrap">`);
 			}
-			html.push(shortcodes.avatarlocalcache("twitter", name, name));
+			html.push(shortcodes.avatar("twitter", name, name));
 			html.push(name);
 			if(isAuthor) {
 				html.push("</a>");

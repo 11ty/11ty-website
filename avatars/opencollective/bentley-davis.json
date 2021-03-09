@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "bentley-davis.avif",
+      "outputPath": "img/avatars/opencollective/bentley-davis.avif",
+      "url": "/img/avatars/opencollective/bentley-davis.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/bentley-davis.avif 90w",
+      "size": 926
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "bentley-davis.webp",
+      "outputPath": "img/avatars/opencollective/bentley-davis.webp",
+      "url": "/img/avatars/opencollective/bentley-davis.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/bentley-davis.webp 90w",
+      "size": 1362
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/7f7e98e9-90.jpeg",
+      "filename": "bentley-davis.jpeg",
+      "outputPath": "img/avatars/opencollective/bentley-davis.jpeg",
+      "url": "/img/avatars/opencollective/bentley-davis.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/7f7e98e9-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/7f7e98e9-90.jpeg",
-      "size": 2043
+      "srcset": "/img/avatars/opencollective/bentley-davis.jpeg 90w",
+      "size": 2041
     }
   ],
   "slug": "bentley-davis"

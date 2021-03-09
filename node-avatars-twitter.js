@@ -3,11 +3,15 @@ const fs = require("fs-extra");
 const fastglob = require("fast-glob");
 const eleventyImg = require("@11ty/eleventy-img");
 const cleanName = require("./config/cleanAuthorName");
+const getTwitterAvatarUrl = require("twitter-avatar-url");
 
 eleventyImg.concurrency = 5;
 
-async function fetch(name) {
-	if(!name) {
+async function fetch(entry) {
+  let name = entry.username;
+  let url = entry.url.large;
+
+	if(!name || !url) {
 		return;
 	}
 
@@ -17,13 +21,15 @@ async function fetch(name) {
 
 	let path = `${dir}${slug}.json`;
 	try {
-		let stats = await eleventyImg(`https://unavatar.now.sh/twitter/${name}?fallback=false`, { // ?fallback=false
-			formats: ["webp", "jpeg"],
+    console.log( "Fetching", name, url );
+    // let url = `https://unavatar.now.sh/twitter/${name}?fallback=false`;
+		let stats = await eleventyImg(url, {
+			formats: ["avif", "webp", "jpeg"],
 			widths: [90],
 			urlPath: "/img/avatars/twitter/",
 			outputDir: "img/avatars/twitter/",
 			cacheOptions: {
-				duration: "14d",
+				duration: "30d",
 			}
 		});
 
@@ -87,9 +93,10 @@ async function fetch(name) {
 		}
 	}
 
-	console.log( "Found", twitterUsernames.size, "usernames" );
-	let sorted = Array.from(twitterUsernames).sort();
-	for(let name of sorted) {
-		await fetch(name);
+  console.log( "Found", twitterUsernames.size, "usernames" );
+
+  let allTwitterUrls = await getTwitterAvatarUrl(Array.from(twitterUsernames));
+	for(let entry of allTwitterUrls) {
+		await fetch(entry);
 	}
 })();

@@ -14,6 +14,7 @@ Eleventy is made possible by financial contributions from these lovely people:
 <div class="facepile supporters-facepile lo">
 {% for supporter in opencollective.supporters %}
 {%- set nameToSlug = supporter.name | slug | lower -%}
+{%- if nameToSlug != "zach-leatherman" %}
   <div class="lo-c">
     <a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt supporters-link" rel="nofollow">{% avatarlocalcache "opencollective", nameToSlug, supporter.name %}{{ supporter.name }}</a>
     <span class="lo lo-inline">
@@ -23,6 +24,7 @@ Eleventy is made possible by financial contributions from these lovely people:
         {%- endif %}
     </span>
   </div>
+{%- endif %}
 {% endfor %}
   <div class="lo-c"><a href="https://opencollective.com/11ty"><img src="/img/default-avatar.png" alt="Default Avatar Image" loading="lazy" class="avatar"><strong>and you?</strong> {% emoji "🎁" %}{% emoji "🎁" %}{% emoji "🎁" %}</a></div>
 </div>

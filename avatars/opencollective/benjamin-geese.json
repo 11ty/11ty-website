@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "benjamin-geese.avif",
+      "outputPath": "img/avatars/opencollective/benjamin-geese.avif",
+      "url": "/img/avatars/opencollective/benjamin-geese.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/benjamin-geese.avif 90w",
+      "size": 910
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "benjamin-geese.webp",
+      "outputPath": "img/avatars/opencollective/benjamin-geese.webp",
+      "url": "/img/avatars/opencollective/benjamin-geese.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/benjamin-geese.webp 90w",
+      "size": 1234
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/eb1b80e.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "benjamin-geese.jpeg",
+      "outputPath": "img/avatars/opencollective/benjamin-geese.jpeg",
+      "url": "/img/avatars/opencollective/benjamin-geese.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/eb1b80e.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/eb1b80e.jpeg",
-      "size": 1782
+      "srcset": "/img/avatars/opencollective/benjamin-geese.jpeg 90w",
+      "size": 2015
     }
   ],
   "slug": "benjamin-geese"

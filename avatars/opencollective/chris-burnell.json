@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "chris-burnell.avif",
+      "outputPath": "img/avatars/opencollective/chris-burnell.avif",
+      "url": "/img/avatars/opencollective/chris-burnell.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/chris-burnell.avif 90w",
+      "size": 836
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "chris-burnell.webp",
+      "outputPath": "img/avatars/opencollective/chris-burnell.webp",
+      "url": "/img/avatars/opencollective/chris-burnell.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/chris-burnell.webp 90w",
+      "size": 1134
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/70d00bd6-90.jpeg",
+      "filename": "chris-burnell.jpeg",
+      "outputPath": "img/avatars/opencollective/chris-burnell.jpeg",
+      "url": "/img/avatars/opencollective/chris-burnell.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/70d00bd6-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/70d00bd6-90.jpeg",
-      "size": 1745
+      "srcset": "/img/avatars/opencollective/chris-burnell.jpeg 90w",
+      "size": 1806
     }
   ],
   "slug": "chris-burnell"

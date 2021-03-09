@@ -1,7 +1,7 @@
-{%- set imgUrl = "/img/sites/" + site.fileSlug + ".jpg" %}
-{%- set imgExists = imgUrl | fileExists %}
+{%- set jpegImgUrl = "/img/sites/" + site.fileSlug + "-300.jpeg" %}
+{%- set jpegImgExists = jpegImgUrl | fileExists %}
 <div class="lo-c site-top">
-	<div{% if imgExists %} class="sites-data-container"{% endif %}>
+	<div{% if jpegImgExists %} class="sites-data-container"{% endif %}>
 		<a href="{{ site.url }}">{% avatarlocalcache "twitter", site.twitter %}{{ site.name }}</a>
 		{%- if site.description %}<em class="list-bare-desc list-bare-desc-avatar">{{ site.description }}</em>{% endif -%}
 		{%- if showMetadata %}
@@ -21,7 +21,9 @@
 		</div>
 		{%- endif %}
 	</div>
-{%- if imgExists %}
-	<div class="sites-screenshot-container"><img src="{{ imgUrl }}" alt="Screenshot of {{ site.url }}" class="sites-screenshot" loading="lazy" width="405" height="304"></div>
+{%- if jpegImgExists %}
+	<div class="sites-screenshot-container">
+    {% getScreenshotHtml site.fileSlug, site.url %}
+  </div>
 {%- endif %}
 </div>

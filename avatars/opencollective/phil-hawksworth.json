@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "phil-hawksworth.avif",
+      "outputPath": "img/avatars/opencollective/phil-hawksworth.avif",
+      "url": "/img/avatars/opencollective/phil-hawksworth.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/phil-hawksworth.avif 90w",
+      "size": 714
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "phil-hawksworth.webp",
+      "outputPath": "img/avatars/opencollective/phil-hawksworth.webp",
+      "url": "/img/avatars/opencollective/phil-hawksworth.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/phil-hawksworth.webp 90w",
+      "size": 904
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/c82439a8.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "phil-hawksworth.jpeg",
+      "outputPath": "img/avatars/opencollective/phil-hawksworth.jpeg",
+      "url": "/img/avatars/opencollective/phil-hawksworth.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/c82439a8.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/c82439a8.jpeg",
-      "size": 1512
+      "srcset": "/img/avatars/opencollective/phil-hawksworth.jpeg 90w",
+      "size": 1631
     }
   ],
   "slug": "phil-hawksworth"

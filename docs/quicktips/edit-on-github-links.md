@@ -22,7 +22,7 @@ Here’s a sample:
 </html>
 ```
 
-## Add our link!
+## Add your link!
 
 Edit your layout file to add the link. Provide the URL to the base of your repo and use the Eleventy provided {% raw %}`{{ page.inputPath }}`{% endraw %} variable to point to the correct input file. Yes, this will also work with paginated templates.
 

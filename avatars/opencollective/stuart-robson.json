@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "stuart-robson.avif",
+      "outputPath": "img/avatars/opencollective/stuart-robson.avif",
+      "url": "/img/avatars/opencollective/stuart-robson.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/stuart-robson.avif 90w",
+      "size": 1320
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "stuart-robson.webp",
+      "outputPath": "img/avatars/opencollective/stuart-robson.webp",
+      "url": "/img/avatars/opencollective/stuart-robson.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/stuart-robson.webp 90w",
+      "size": 2040
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/86d1d6f0.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "stuart-robson.jpeg",
+      "outputPath": "img/avatars/opencollective/stuart-robson.jpeg",
+      "url": "/img/avatars/opencollective/stuart-robson.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/86d1d6f0.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/86d1d6f0.jpeg",
-      "size": 2401
+      "srcset": "/img/avatars/opencollective/stuart-robson.jpeg 90w",
+      "size": 2597
     }
   ],
   "slug": "stuart-robson"

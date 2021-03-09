@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "raymond-camden.avif",
+      "outputPath": "img/avatars/opencollective/raymond-camden.avif",
+      "url": "/img/avatars/opencollective/raymond-camden.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/raymond-camden.avif 90w",
+      "size": 1347
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "raymond-camden.webp",
+      "outputPath": "img/avatars/opencollective/raymond-camden.webp",
+      "url": "/img/avatars/opencollective/raymond-camden.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/raymond-camden.webp 90w",
+      "size": 1612
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/f576973d.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "raymond-camden.jpeg",
+      "outputPath": "img/avatars/opencollective/raymond-camden.jpeg",
+      "url": "/img/avatars/opencollective/raymond-camden.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/f576973d.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/f576973d.jpeg",
-      "size": 2043
+      "srcset": "/img/avatars/opencollective/raymond-camden.jpeg 90w",
+      "size": 2328
     }
   ],
   "slug": "raymond-camden"

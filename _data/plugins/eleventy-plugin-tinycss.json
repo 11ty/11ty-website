@@ -1,5 +1,5 @@
 {
 	"npm": "@greyskullrocks/eleventy-plugin-tinycss",
-	"author": "Hugo Nogueira",
+	"author": "marabyte_",
 	"description": "An 11ty plugin to inline and optimise external CSS"
 }

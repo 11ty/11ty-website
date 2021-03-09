@@ -2,6 +2,5 @@
 	"url": "https://github.com/reeseschultz/11r#readme",
 	"name": "11r",
 	"description": "A blog template and theme using 11ty, TailwindCSS, Rollup, Prism syntax highlighting, etc.",
-	"author": "TheReeseSchultz",
 	"demo": "https://reeseschultz.github.io/11r/"
 }

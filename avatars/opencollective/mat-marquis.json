@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 89,
+      "filename": "mat-marquis.avif",
+      "outputPath": "img/avatars/opencollective/mat-marquis.avif",
+      "url": "/img/avatars/opencollective/mat-marquis.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/mat-marquis.avif 90w",
+      "size": 1132
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 89,
+      "filename": "mat-marquis.webp",
+      "outputPath": "img/avatars/opencollective/mat-marquis.webp",
+      "url": "/img/avatars/opencollective/mat-marquis.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/mat-marquis.webp 90w",
+      "size": 1988
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
       "width": 90,
-      "height": 90,
-      "url": "/img/avatars/opencollective/8c00273a-90.jpeg",
+      "height": 89,
+      "filename": "mat-marquis.jpeg",
+      "outputPath": "img/avatars/opencollective/mat-marquis.jpeg",
+      "url": "/img/avatars/opencollective/mat-marquis.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/8c00273a-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/8c00273a-90.jpeg",
-      "size": 1409
+      "srcset": "/img/avatars/opencollective/mat-marquis.jpeg 90w",
+      "size": 1384
     }
   ],
   "slug": "mat-marquis"

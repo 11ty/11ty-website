@@ -1,11 +1,14 @@
 ---
 eleventyNavigation:
-  parent: Configuration
   key: Plugins
-  order: 6
+  order: 7.5
+eleventyComputed:
+  pageTitle: "Plugins {% addedin '0.2.13' %}"
+communityLinks:
+- title: Creating an 11ty Plugin—SVG Embed Tool
+  author: brob
+  url: https://bryanlrobinson.com/blog/creating-11ty-plugin-embed-svg-contents/
 ---
-# Plugins {% addedin "0.2.13" %}
-
 Plugins are custom code that Eleventy can import into a project from an external repository.
 
 ## List of Official Plugins
@@ -84,12 +87,3 @@ module.exports = function(eleventyConfig) {
 {% callout %}
 Plugin namespacing is an application feature and should not be used if you are creating your own plugin (in your plugin configuration code). Follow along at <a href="https://github.com/11ty/eleventy/issues/256">Issue #256</a>.
 {% endcallout %}
-
-<div class="elv-community" id="community-resources">
-  {% callout "info" %}
-  <h3 class="elv-community-hed">Community Resources</h3>
-  <ul>
-    <li><a href="https://bryanlrobinson.com/blog/creating-11ty-plugin-embed-svg-contents/">Creating an 11ty Plugin—SVG Embed Tool</a> by {% avatarlocalcache "twitter", "brob" %}Bryan Robinson</li>
-  </ul>
-  {% endcallout %}
-</div>

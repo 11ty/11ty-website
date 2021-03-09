@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "christopher-salmon.avif",
+      "outputPath": "img/avatars/opencollective/christopher-salmon.avif",
+      "url": "/img/avatars/opencollective/christopher-salmon.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/christopher-salmon.avif 90w",
+      "size": 1159
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "christopher-salmon.webp",
+      "outputPath": "img/avatars/opencollective/christopher-salmon.webp",
+      "url": "/img/avatars/opencollective/christopher-salmon.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/christopher-salmon.webp 90w",
+      "size": 1694
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/8f63be57.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "christopher-salmon.jpeg",
+      "outputPath": "img/avatars/opencollective/christopher-salmon.jpeg",
+      "url": "/img/avatars/opencollective/christopher-salmon.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/8f63be57.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/8f63be57.jpeg",
-      "size": 2148
+      "srcset": "/img/avatars/opencollective/christopher-salmon.jpeg 90w",
+      "size": 2397
     }
   ],
   "slug": "christopher-salmon"

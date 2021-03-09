@@ -109,13 +109,9 @@ class EleventySupporter {
   addAvatars(user) {
     let avatar = document.createElement("img");
     avatar.classList.add("supporters-avatar", "avatar");
-    if(user.avatar && user.avatar !== "undefined") {
-      avatar.setAttribute("src", user.avatar);
-    } else {
-      // Deprecated, requires _redirects file
-      avatar.setAttribute("src", `/img/avatars/opencollective/${user.slug}.jpg`);
-    }
+    avatar.setAttribute("src", `/img/avatars/opencollective/${user.slug}.jpeg`);
     avatar.setAttribute("alt", `${user.name}’s Avatar`);
+    avatar.setAttribute("onerror", "this.remove()");
 
     let anchors = Array.from(document.querySelectorAll("[data-investors-avatar]"));
     for(let anchor of anchors) {

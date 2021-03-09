@@ -45,14 +45,18 @@ Run `eleventy --serve` to start up a web server. Then open `http://localhost:808
 
 ## Built With Eleventy
 
-<ul class="inlinelist list-superfeatured">
-    {% for key, site in sites -%}{% if site.twitter and site.disabled != true and site.url and site.featured and site.superfeatured -%}<li class="inlinelist-item"><a href="{{ site.url }}" class="elv-externalexempt">{% avatarlocalcache "twitter", site.twitter %}{{ site.name | safe }}</a></li>{% endif %}{% endfor -%}
-</ul>
+<div class="sites-vert">
+  <div class="lo-grid">
+{% for key, site in sites -%}{% if site.twitter and site.disabled != true and site.url and site.featured and site.superfeatured -%}
+  {% include "site-card.njk" %}
+{% endif %}{%- endfor %}
+  </div>
+</div>
 
 <!-- TODO some kind of aspect ratio? -->
 <div data-import="/imports/facepile.html" class="facepile-fullwidth"></div>
 
-View [all {{ sites | objectFilterNot("disabled") | length }} sites](/leaderboard/).
+View [all {{ sites | objectFilterNot("disabled") | length }} sites](/speedlify/).
 
 ## Don’t take my word for it {% emoji "🌈" %}
 

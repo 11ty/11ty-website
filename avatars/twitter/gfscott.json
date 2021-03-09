@@ -1,14 +1,28 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "72893dee-90.avif",
+      "outputPath": "img/avatars/twitter/72893dee-90.avif",
+      "url": "/img/avatars/twitter/72893dee-90.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/twitter/72893dee-90.avif 90w",
+      "size": 825
+    }
+  ],
   "webp": [
     {
       "format": "webp",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/twitter/8beb1223-90.webp",
+      "filename": "72893dee-90.webp",
+      "outputPath": "img/avatars/twitter/72893dee-90.webp",
+      "url": "/img/avatars/twitter/72893dee-90.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/twitter/8beb1223-90.webp 90w",
-      "outputPath": "img/avatars/twitter/8beb1223-90.webp",
-      "size": 1156
+      "srcset": "/img/avatars/twitter/72893dee-90.webp 90w",
+      "size": 1154
     }
   ],
   "jpeg": [
@@ -16,11 +30,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/twitter/8beb1223-90.jpeg",
+      "filename": "72893dee-90.jpeg",
+      "outputPath": "img/avatars/twitter/72893dee-90.jpeg",
+      "url": "/img/avatars/twitter/72893dee-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/twitter/8beb1223-90.jpeg 90w",
-      "outputPath": "img/avatars/twitter/8beb1223-90.jpeg",
-      "size": 1865
+      "srcset": "/img/avatars/twitter/72893dee-90.jpeg 90w",
+      "size": 1877
     }
   ]
 }

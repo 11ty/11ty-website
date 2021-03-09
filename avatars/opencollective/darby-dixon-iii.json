@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "darby-dixon-iii.avif",
+      "outputPath": "img/avatars/opencollective/darby-dixon-iii.avif",
+      "url": "/img/avatars/opencollective/darby-dixon-iii.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/darby-dixon-iii.avif 90w",
+      "size": 1587
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "darby-dixon-iii.webp",
+      "outputPath": "img/avatars/opencollective/darby-dixon-iii.webp",
+      "url": "/img/avatars/opencollective/darby-dixon-iii.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/darby-dixon-iii.webp 90w",
+      "size": 2326
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/opencollective/ac7c6f34-90.jpeg",
+      "filename": "darby-dixon-iii.jpeg",
+      "outputPath": "img/avatars/opencollective/darby-dixon-iii.jpeg",
+      "url": "/img/avatars/opencollective/darby-dixon-iii.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/ac7c6f34-90.jpeg 90w",
-      "outputPath": "img/avatars/opencollective/ac7c6f34-90.jpeg",
-      "size": 2654
+      "srcset": "/img/avatars/opencollective/darby-dixon-iii.jpeg 90w",
+      "size": 2664
     }
   ],
   "slug": "darby-dixon-iii"

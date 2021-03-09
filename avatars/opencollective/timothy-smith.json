@@ -1,14 +1,41 @@
 {
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "timothy-smith.avif",
+      "outputPath": "img/avatars/opencollective/timothy-smith.avif",
+      "url": "/img/avatars/opencollective/timothy-smith.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/timothy-smith.avif 90w",
+      "size": 1210
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "timothy-smith.webp",
+      "outputPath": "img/avatars/opencollective/timothy-smith.webp",
+      "url": "/img/avatars/opencollective/timothy-smith.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/timothy-smith.webp 90w",
+      "size": 1878
+    }
+  ],
   "jpeg": [
     {
       "format": "jpeg",
-      "width": 80,
-      "height": 80,
-      "url": "/img/avatars/opencollective/f8f40e7d.jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "timothy-smith.jpeg",
+      "outputPath": "img/avatars/opencollective/timothy-smith.jpeg",
+      "url": "/img/avatars/opencollective/timothy-smith.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/opencollective/f8f40e7d.jpeg 80w",
-      "outputPath": "img/avatars/opencollective/f8f40e7d.jpeg",
-      "size": 1772
+      "srcset": "/img/avatars/opencollective/timothy-smith.jpeg 90w",
+      "size": 2544
     }
   ],
   "slug": "timothy-smith"

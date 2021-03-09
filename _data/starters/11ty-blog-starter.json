@@ -1,0 +1,7 @@
+{
+  "url": "https://github.com/kohrongying/11ty-blog-starter",
+  "name": "11ty-blog-starter",
+  "description": "Minimal blog template. Supports browsing in the internet without Javascript.",
+  "author": "kohrongying",
+  "demo": "https://eleventy.rongying.co/"
+}

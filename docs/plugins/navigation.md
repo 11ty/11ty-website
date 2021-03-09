@@ -34,10 +34,13 @@ Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
 
 ```js
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 };
 ```
+
+{% callout "info", "md" %}You’re only allowed one `module.exports` in your configuration file, so make sure you only copy the `require` and the `addPlugin` lines above!{% endcallout %}
 
 Read more about [Eleventy plugins.](/docs/plugins/)
 

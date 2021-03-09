@@ -1,4 +1,4 @@
-// Speedlify consumes this endpoint
+// Speedlify consumes this endpoint for the Eleventy Leaderboards
 module.exports.data = function() {
 	return {
 		permalink: "/api/urls.json"

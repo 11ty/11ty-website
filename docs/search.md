@@ -10,7 +10,8 @@ css:
 	<div class="search-lo lo">
 		<div class="lo-c lo-maxgrow">
 			<label for="search-term" class="sr-only">Search Terms</label>
-			<input type="search" name="q" id="search-term" value="site:www.11ty.dev " class="search-txt" autocomplete="off">
+			<input type="search" name="q" id="search-term" class="search-txt" autocomplete="off">
+      <input aria-hidden="true" hidden name="sites" value="www.11ty.dev">
 		</div>
 		<div class="lo-c">
 			<button type="submit" class="search-btn btn-form">Search</button>
