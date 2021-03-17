@@ -4,7 +4,7 @@ eleventyNavigation:
   key: Quick Tips
   order: 5
 ---
-## Quick Tips
+# Quick Tips
 
 {% for tip in collections.quicktipssorted %}
 * Quick Tip <a href="{{ tip.url }}"><code>#{{ tip.data.tipindex }}</code>—{{ tip.data.tiptitle }}</a>

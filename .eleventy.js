@@ -158,7 +158,7 @@ ${text.trim()}
 
 	eleventyConfig.addPassthroughCopy("_redirects");
 	eleventyConfig.addPassthroughCopy("netlify-email");
-	eleventyConfig.addPassthroughCopy("css/fonts");
+	// eleventyConfig.addPassthroughCopy("css/fonts"); // these are inline now
 	eleventyConfig.addPassthroughCopy("img");
 	eleventyConfig.addPassthroughCopy("news/*.png");
 	eleventyConfig.addPassthroughCopy("favicon.ico");
