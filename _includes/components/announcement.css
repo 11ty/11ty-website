@@ -17,7 +17,8 @@
 		font-size: clamp(1em, 2vw, 1.25em);
 	}
 }
-.announcement a {
+.announcement > a,
+.announcement > span {
 	display: inline-block;
 	padding: .35em 0;
 	text-decoration: none;

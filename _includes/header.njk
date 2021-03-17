@@ -2,7 +2,11 @@
 	{%- set bannerLink = bannerlinks | randompick %}
 	{%- if bannerLink %}
 	<div class="announcement">
+{% if bannerLink.url %}
 		<a href="{{ bannerLink.url }}" class="lo-c">{{ bannerLink.label }}</a>
+{% else %}
+		<span class="lo-c">{{ bannerLink.label }}</span>
+{% endif %}
 	</div>
 	{%- endif %}
 
