@@ -160,6 +160,36 @@ With an output directory of `_site`:
  * `img/avatar.jpg` would copy to `_site/img/avatar.jpg`
  * `subdir/img/avatar.jpg` would copy to `_site/img/avatar.jpg`
 
+### Options for File Copy {% addedin "0.9.0 TODO version" %}
+
+To change how the files are copied,
+pass an object of [options](https://www.npmjs.com/package/recursive-copy#arguments) as second argument:
+
+<!-- default options are defined in eleventy/src/TemplatePassthrough.js copyOptionsDefault -->
+
+{% codetitle ".eleventy.js" %}{% codetitle "src", "Input Directory" %}
+{% codetitle "_site", "Output Directory" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // Input directory: src
+  // Output directory: _site
+
+  // Copy `img/` to `_site/subfolder/img`
+  eleventyConfig.addPassthroughCopy({ "img": "subfolder/img" }, {
+    // reference: https://www.npmjs.com/package/recursive-copy#arguments
+    // default options:
+    expand: false, // follow symbolic links (symlinks)
+    dot: true, // copy dotfiles (Linux hidden files)
+    junk: false, // copy cache files (like Thumbs.db)
+    filter: null, // what files to copy
+    rename: null, // change file paths
+    transform: null, // change file contents
+    overwrite: true, // overwrite output (fails when input is directory and output is file)
+    debug: false,
+  });
+};
+```
 
 ## Passthrough All Content {% addedin "0.5.4" %}
 
