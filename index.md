@@ -10,7 +10,7 @@ bigPossum: true
 
 ## Quick Start
 
-Eleventy {% latestVersion versions, config %} requires Node 8 or newer. Use `node --version` on the command line to find your local Node version.
+Eleventy {% latestVersion versions, config %} requires Node 10 or newer. Use `node --version` on the command line to find your local Node version.
 
 ``` bash
 npm install -g @11ty/eleventy
