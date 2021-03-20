@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/stefanfrede/11st-starter-kit",
+	"name": "11st-Starter-Kit",
+	"description": "11ty, powered by Snowpack with Tailwind CSS and Alpine.js.",
+	"author": "stefanfrede",
+	"demo": "https://11st-starter-kit.netlify.app/"
+}

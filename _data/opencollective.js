@@ -1,77 +1,115 @@
 // https://opencollective.com/11ty/members/all.json
-const fetch = require("node-fetch");
-const fs = require("fs-extra");
-const flatcache = require("flat-cache");
-const path = require("path");
+const Cache = require("@11ty/eleventy-cache-assets");
+const FilteredProfiles = [
+	"bca-account1", // website is buycheapaccounts.com
+	"baocasino", // gambling
+	"woorke", // sells social media accounts
+	"suominettikasinot24", // gambling
+	"masonslots", //gambling
+	"trust-my-paper", // selling term papers
+	"kiirlaenud", // some quick loans site
+	"kajino-bitcoin", //bitcoin
+];
+const OpenCollectiveTwitterMap = require("./opencollectiveMap.js");
 
-function getCacheKey() {
-	let date = new Date();
-	return `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()}-${date.getHours()}`;
+function isMonthlyOrYearlyOrder(order) {
+	return (order.frequency === 'MONTHLY' || order.frequency === 'YEARLY') && order.status === 'ACTIVE';
 }
 
-function isMonthlyBacker(backer) {
-	return backer.role === "BACKER" && backer.tier && backer.isActive;
-}
-
-function hasMonthlyBackerProfile(backers, compareBacker) {
-	for(let backer of backers) {
-		if(isMonthlyBacker(backer) && backer.profile === compareBacker.profile) {
-			return true;
+function getUniqueContributors(orders) {
+	let uniqueContributors = {};
+	for(let order of orders) {
+		if(uniqueContributors[order.slug]) {
+			// if order already exists, overwrite only if existing is not an active monthly contribution
+			if(!isMonthlyOrYearlyOrder(uniqueContributors[order.slug])) {
+				uniqueContributors[order.slug] = order;
+			}
+		} else {
+			uniqueContributors[order.slug] = order;
 		}
 	}
-	return false;
-}
-
-function getUniqueNonMonthlyEntries(backers) {
-	let nonMonthlyBackers = {};
-	for(let backer of backers) {
-		if(!isMonthlyBacker(backer)) {
-			nonMonthlyBackers[backer.profile] = backer;
-		}
-	}
-	return backers.filter(backer => isMonthlyBacker(backer)).concat(Object.values(nonMonthlyBackers));
+	return Object.values(uniqueContributors);
 }
 
 module.exports = async function() {
-	let cache = flatcache.load("opencollective-backers", path.resolve("./_datacache"));
-	let key = getCacheKey();
-	let cachedData = cache.getKey(key);
-	if(!cachedData || process.env.ELEVENTY_AVATARS) {
-		console.log( "Fetching new opencollective backers…" );
-		try {
-			let newDataJson = await fetch("https://opencollective.com/11ty/members/all.json").then(res => res.json());
+	try {
+		let url = `https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000&status=paid,active`;
+		let json = await Cache(url, {
+			duration: process.env.ELEVENTY_AVATARS ? "0s" : "1d",
+			// duration: "0s",
+			type: "json"
+		});
 
-			newDataJson = getUniqueNonMonthlyEntries(newDataJson);
+		// if(process.env.ELEVENTY_PRODUCTION) {
+		// 	console.log( "Pre-filtered supporters list:" );
+		// 	for(let supporter of json) {
+		// 		console.log( ` * ${supporter.name} (${supporter.role} ${supporter.tier} ${supporter.isActive})` );
+		// 	}
+		// }
 
-			newDataJson.sort(function(a, b) {
-				// Sort by total amount donated (desc)
-				return b.totalAmountDonated - a.totalAmountDonated;
-			});
+		let orders = json.nodes.map(order => {
+			order.name = order.fromAccount.name;
+			order.slug = order.fromAccount.slug;
+			order.twitter = order.fromAccount.twitterHandle || OpenCollectiveTwitterMap[order.fromAccount.slug];
+			order.image = order.fromAccount.imageUrl;
+			order.website = order.fromAccount.website;
+			order.profile = `https://opencollective.com/${order.slug}`;
+			order.totalAmountDonated = order.totalDonations.value;
+			order.isMonthly = isMonthlyOrYearlyOrder(order);
+			order.hasDefaultAvatar = order.image === `https://images.opencollective.com/${order.slug}/avatar.png`;
+			return order;
+		}).filter(order => {
+			return FilteredProfiles.indexOf(order.slug) === -1;
+		});
 
-			// is monthly backer or has no other monthly backer profile
-			let allBackers = newDataJson.filter(() => true);
-			newDataJson = newDataJson.filter(backer => isMonthlyBacker(backer) || !hasMonthlyBackerProfile(allBackers, backer));
+		// lol hardcoded
+		orders.push({
+			name: "Zach Leatherman",
+			slug: "zach-leatherman",
+			twitter: "zachleat",
+			image: "https://images.opencollective.com/zachleat/70606f4/avatar/256.png",
+			website: "https://www.zachleat.com/",
+			profile: "https://opencollective.com/zachleat",
+			totalAmountDonated: 0,
+			isMonthly: true,
+			hasDefaultAvatar: false,
+		});
 
-			await fs.writeFile("./_data/supporters.json", JSON.stringify(newDataJson, null, 2));
+		orders = getUniqueContributors(orders);
 
-			let backers = newDataJson.filter(function(entry) {
-				return entry.role.toLowerCase() === "backer";
-			}).length;
+		orders.sort(function(a, b) {
+			// Sort by total amount donated (desc)
+			return b.totalAmountDonated - a.totalAmountDonated;
+		});
 
-			let newData = {
-				backers: backers
-			};
+		let backers = orders.length;
 
-			cache.setKey(key, newData);
-			cache.save();
-			return newData;
-		} catch(e) {
-			console.log( "Failed, returning 0 opencollective backers.", e );
-			return {
-				backers: 0
-			};
+		let monthlyBackers = orders.filter(function(order) {
+			return isMonthlyOrYearlyOrder(order);
+		}).length;
+
+		// if(process.env.ELEVENTY_PRODUCTION) {
+		// 	console.log( "Final supporters list:" );
+		// 	for(let supporter of json) {
+		// 		console.log( ` * ${supporter.name} (${supporter.role} ${supporter.tier} ${supporter.isActive})` );
+		// 	}
+		// }
+
+		return {
+			supporters: orders,
+			backers: backers,
+			monthlyBackers: monthlyBackers
+		};
+	} catch(e) {
+		if(process.env.ELEVENTY_PRODUCTION) {
+			// Fail the build in production.
+			return Promise.reject(e);
 		}
+		console.log( "Failed, returning 0 opencollective backers.", e );
+		return {
+			supporters: [],
+			backers: 0,
+			monthlyBackers: 0
+		};
 	}
-
-	return cachedData;
 };

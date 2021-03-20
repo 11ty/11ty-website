@@ -5,6 +5,12 @@
 	list-style: none;
 	padding: 0.5em 1em;
 }
+@media (prefers-color-scheme: dark) {
+	.quicktipstoc {
+		background-color: #333;
+	}
+}
+
 .quicktipstoc .active {
 	font-weight: 600;
 }

@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Filters
   key: Next or Previous Collection Item Filters
-  title: '<code>get*CollectionItem</code> Filters'
+  title: '<code>get*CollectionItem</code>'
   order: 4
   excerpt: 'Get next or previous collection items for easy linking.'
 ---
@@ -45,6 +45,8 @@ Useful when you’d like to link to the previous or next template in your collec
 {% if nextPost %}Next Blog Post: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>{% endif %}
 ```
 {% endraw %}
+
+The [Collections documentation](/docs/collections/#sorting) outlines the default sorting algorithm and how to override it.
 
 ## Also `getCollectionItem`
 

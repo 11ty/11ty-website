@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "nicolas-hoizey.avif",
+      "outputPath": "img/avatars/opencollective/nicolas-hoizey.avif",
+      "url": "/img/avatars/opencollective/nicolas-hoizey.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/nicolas-hoizey.avif 90w",
+      "size": 1316
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "nicolas-hoizey.webp",
+      "outputPath": "img/avatars/opencollective/nicolas-hoizey.webp",
+      "url": "/img/avatars/opencollective/nicolas-hoizey.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/nicolas-hoizey.webp 90w",
+      "size": 1966
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "nicolas-hoizey.jpeg",
+      "outputPath": "img/avatars/opencollective/nicolas-hoizey.jpeg",
+      "url": "/img/avatars/opencollective/nicolas-hoizey.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/nicolas-hoizey.jpeg 90w",
+      "size": 2484
+    }
+  ],
+  "slug": "nicolas-hoizey"
+}

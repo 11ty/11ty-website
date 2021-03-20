@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Filters
   key: log Filter
-  title: '<code>log</code> Filter'
+  title: '<code>log</code>'
   order: 3
   excerpt: '<code>console.log</code> inside templates.'
 ---
@@ -19,12 +19,6 @@ is the same as:
 
 ```js
 console.log("My Title");
-```
-
-You can log anything:
-
-```
-{{ collections.posts | log }}
 ```
 {% endraw %}
 

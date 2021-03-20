@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "tyler-gaw.avif",
+      "outputPath": "img/avatars/opencollective/tyler-gaw.avif",
+      "url": "/img/avatars/opencollective/tyler-gaw.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/tyler-gaw.avif 90w",
+      "size": 1037
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "tyler-gaw.webp",
+      "outputPath": "img/avatars/opencollective/tyler-gaw.webp",
+      "url": "/img/avatars/opencollective/tyler-gaw.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/tyler-gaw.webp 90w",
+      "size": 1244
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "tyler-gaw.jpeg",
+      "outputPath": "img/avatars/opencollective/tyler-gaw.jpeg",
+      "url": "/img/avatars/opencollective/tyler-gaw.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/tyler-gaw.jpeg 90w",
+      "size": 1947
+    }
+  ],
+  "slug": "tyler-gaw"
+}

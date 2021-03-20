@@ -46,3 +46,9 @@ In our [Inline CSS Quick Tip](/docs/quicktips/inline-css/), we discussed how to 
 Of course, Eleventy has no desire to replace your existing build pipeline. This is just a super simple example if you want something up and running quickly.
 
 That said, Eleventy wants to work with what you have. As an example, the [`EleventyOne` project scaffold](https://github.com/philhawksworth/eleventyone/) is a fine example of using Eleventy with Gulp and Sass. The [zachleat.com source code](https://github.com/zachleat/zachleat.com) is an older example that works with Grunt and Sass.
+
+### Warning about Content Security Policy
+
+{% callout "warn" %}
+If you are using a Content Security Policy on your website, make sure the <code>style-src</code> directive allows <code>'unsafe-inline'</code>. Otherwise, your inline CSS will not load.
+{% endcallout %}

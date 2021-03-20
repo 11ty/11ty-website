@@ -7,7 +7,7 @@ eleventyNavigation:
 ---
 # Layouts
 
-Eleventy Layouts are special templates that can be used to wrap other content. To denote that a piece of content should be wrapped in a template, simply use the `layout` key in your front matter, like so:
+Eleventy Layouts are special templates that can be used to wrap other content. To denote that a piece of content should be wrapped in a template, use the `layout` key in your front matter, like so:
 
 {% codetitle "content-using-layout.md" %}
 {% raw %}
@@ -28,28 +28,27 @@ You can use any template language in your layout—it doesn’t need to match th
 
 Next, we need to create a `mylayout.njk` file. It can contain any type of text, but here we’re using HTML:
 
-{% codetitle "_includes/mylayout.njk" %}
-
-{% raw %}
-```html
----
-title: My Rad Blog
----
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-  </head>
-  <body>
-    {{ content | safe }}
-  </body>
-</html>
-```
-{% endraw %}
-
-Note that the layout template will populate the `content` data with the child template’s content. Also note that we don’t want to double-escape the output, so we’re using the provided Nunjuck’s `safe` filter here (see more language double-escaping syntax below).
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    Language:
+    <a href="#mylayout-njk" id="mylayout-njk-btn" role="tab" aria-controls="mylayout-njk" aria-selected="true">Nunjucks</a>
+    <a href="#mylayout-11tyjs" id="mylayout-11tyjs-btn" role="tab" aria-controls="mylayout-11tyjs" aria-selected="false">11ty.js</a>
+  </div>
+  <div id="mylayout-njk" role="tabpanel" aria-labelledby="mylayout-njk-btn">
+    {%- codetitle "_includes/mylayout.njk" %}
+    {%- highlight "html" %}
+    {% include "examples/layouts/mylayout.njk" %}
+    {%- endhighlight %}
+    <p>Note that the layout template will populate the <code>content</code> data with the child template’s content. Also note that we don’t want to double-escape the output, so we’re using the provided Nunjuck’s <code>safe</code> filter here (see more language double-escaping syntax below).</p>
+  </div>
+  <div id="mylayout-11tyjs" role="tabpanel" aria-labelledby="mylayout-11tyjs-btn">
+    {%- codetitle "_includes/mylayout.11ty.js" %}
+    {%- highlight "js" %}
+    {% include "examples/layouts/mylayout.11ty.js" %}
+    {%- endhighlight %}
+    <p>Note that the layout template will populate the <code>data.content</code> variable with the child template’s content.
+  </div>
+</seven-minute-tabs>
 
 {% callout "info" %}Layouts can contain their own front matter data! It’ll be merged with the content’s data on render. Content data takes precedence, if conflicting keys arise. Read more about <a href="/docs/data-cascade/">how Eleventy merges data in what we call the Data Cascade</a>.{% endcallout %}
 
@@ -73,9 +72,9 @@ All of this will output the following HTML content:
 
 ## Front Matter Data in Layouts
 
-Take note that in [Eleventy’s Data Cascade](/docs/data/), front matter data in your template is merged with Layout front matter data! All data is merged ahead of time so that you can mix and match variables in your content and layout templates interchangeably.
+In [Eleventy’s Data Cascade](/docs/data/), front matter data in your template is merged with Layout front matter data! All data is merged ahead of time so that you can mix and match variables in your content and layout templates interchangeably.
 
-Note that front matter data set in a content template takes priority over layout front matter! [Chained layouts](/docs/layout-chaining/) have similar merge behavior. The closer to the content, the higher priority the data.
+Front matter data set in a content template takes priority over layout front matter! [Chained layouts](/docs/layout-chaining/) have similar merge behavior. The closer to the content, the higher priority the data.
 
 ### Sources of Data
 
@@ -95,7 +94,7 @@ This will look for `_includes/layouts/base.njk`.
 
 ## Layout Aliasing {% addedin "0.2.8" %}
 
-Configuration API: use `eleventyConfig.addLayoutAlias(from, to)` to add layout aliases! Say you have a bunch of existing content using `layout: post`. If you don’t want to rewrite all of those values, just map `post` to a new file like this:
+Configuration API: use `eleventyConfig.addLayoutAlias(from, to)` to add layout aliases. Say you have a bunch of existing content using `layout: post`. If you don’t want to rewrite all of those values, map `post` to a new file like this:
 
 {% codetitle ".eleventy.js" %}
 

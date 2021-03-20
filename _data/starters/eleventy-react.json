@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/signalkuppe/eleventy-react",
+	"name": "Eleventy React",
+	"description": "Use React, styled components and storybook in Eleventy",
+	"author": "signalkuppe",
+	"demo": "https://eleventy-react.netlify.app/"
+}

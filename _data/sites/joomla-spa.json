@@ -1,0 +1,8 @@
+{
+     "name": "Joomla SPA Creator",
+     "url": "https://joomla-spa.netlify.app",
+     "desc": "A simple site that will create on the fly a Joomla Component for SPA.",
+     "twitter": "dgrammatiko",
+     "authoredBy": ["dgrammatiko"],
+     "source_url": "https://github.com/dgrammatiko/com_frontpage"
+ }

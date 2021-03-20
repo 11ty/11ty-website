@@ -1,12 +1,18 @@
 ---
+pageTitle: Collections (Using Tags)
 eleventyNavigation:
   parent: Working with Templates
   key: Collections
   order: 2
   excerpt: Group, reuse, and sort content in interesting ways.
+communityLinks:
+- url: https://www.pborenstein.com/posts/collections/
+  author: pborenstein
+  title: Working with Collections
+- url: https://darekkay.com/blog/eleventy-group-posts-by-year/
+  author: darek_kay
+  title: Group posts by year
 ---
-# Collections (using Tags)
-
 While [pagination](/docs/pagination/) allows you to iterate over a data set to create multiple templates, a collection allows you to group content in interesting ways. A piece of content can be a part of multiple collections, if you assign the same string value to the `tags` key in the front matter.
 
 ## A Blog Example
@@ -48,7 +54,7 @@ ${collections.post.map((post) => `<li>${ post.data.title }</li>`).join("\n")}
 ```
 {% endraw %}
 
-### Example: Navigation Links with an `active` class added for on the current page
+### Example: Navigation Links with an `[aria-current]` attribute added for on the current page
 
 Compare the `post.url` and special Eleventy-provided `page.url` variable to find the current page. Building on the previous example:
 
@@ -58,9 +64,11 @@ Compare the `post.url` and special Eleventy-provided `page.url` variable to find
 ```html
 <ul>
 {%- for post in collections.post -%}
-  <li{% if page.url == post.url %} class="active"{% endif %}>{{ post.data.title }}</li>
+  <li{% if page.url == post.url %} aria-current="page"{% endif %}>{{ post.data.title }}</li>
 {%- endfor -%}
 </ul>
+
+Background: `aria-current="page"` tells assistive technology, such as screen readers, which page of a set of pages is the current active one. It also provides a hook for your CSS styling, using its attribute selector: `[aria-current="page"] {}`.
 ```
 {% endraw %}
 
@@ -211,8 +219,7 @@ And in Liquid it’d look like this:
 {% raw %}
 ```html
 <ul>
-{%- assign posts = collections.post | reverse -%}
-{%- for post in posts -%}
+{%- for post in collections.post reverse -%}
   <li>{{ post.data.title }}</li>
 {%- endfor -%}
 </ul>
@@ -249,7 +256,7 @@ Inside of your `.eleventy.js` config file, use the first argument to the config 
 ```js
 module.exports = function(eleventyConfig) {
   // API is available in `eleventyConfig` argument
-  
+
   return {
     // your normal config options
     markdownTemplateEngine: "njk"
@@ -264,9 +271,9 @@ You can use `eleventyConfig` like so:
 ```js
 module.exports = function(eleventyConfig) {
 
-  eleventyConfig.addCollection("myCollectionName", function(collection) {
+  eleventyConfig.addCollection("myCollectionName", function(collectionApi) {
     // get unsorted items
-    return collection.getAll();
+    return collectionApi.getAll();
   });
 
 };
@@ -292,8 +299,8 @@ Returns an array.
 ```js
 module.exports = function(eleventyConfig) {
   // Unsorted items (in whatever order they were added)
-  eleventyConfig.addCollection("allMyContent", function(collection) {
-    return collection.getAll();
+  eleventyConfig.addCollection("allMyContent", function(collectionApi) {
+    return collectionApi.getAll();
   });
 };
 ```
@@ -303,8 +310,8 @@ module.exports = function(eleventyConfig) {
 ```js
 module.exports = function(eleventyConfig) {
   // Filter using `Array.filter`
-  eleventyConfig.addCollection("keyMustExistInData", function(collection) {
-    return collection.getAll().filter(function(item) {
+  eleventyConfig.addCollection("keyMustExistInData", function(collectionApi) {
+    return collectionApi.getAll().filter(function(item) {
       // Side-step tags and do your own filtering
       return "myCustomDataKey" in item.data;
     });
@@ -317,8 +324,8 @@ module.exports = function(eleventyConfig) {
 ```js
 module.exports = function(eleventyConfig) {
   // Sort with `Array.sort`
-  eleventyConfig.addCollection("myCustomSort", function(collection) {
-    return collection.getAll().sort(function(a, b) {
+  eleventyConfig.addCollection("myCustomSort", function(collectionApi) {
+    return collectionApi.getAll().sort(function(a, b) {
       return b.date - a.date;
     });
   });
@@ -338,8 +345,8 @@ Returns an array.
 ```js
 module.exports = function(eleventyConfig) {
   // Use the default sorting algorithm (ascending by date, filename tiebreaker)
-  eleventyConfig.addCollection("allMySortedContent", function(collection) {
-    return collection.getAllSorted();
+  eleventyConfig.addCollection("allMySortedContent", function(collectionApi) {
+    return collectionApi.getAllSorted();
   });
 };
 ```
@@ -350,8 +357,8 @@ module.exports = function(eleventyConfig) {
 module.exports = function(eleventyConfig) {
   // Use the default sorting algorithm in reverse (descending dir, date, filename)
   // Note that using a template engine’s `reverse` filter might be easier here
-  eleventyConfig.addCollection("myPostsReverse", function(collection) {
-    return collection.getAllSorted().reverse();
+  eleventyConfig.addCollection("myPostsReverse", function(collectionApi) {
+    return collectionApi.getAllSorted().reverse();
   });
 };
 ```
@@ -363,8 +370,8 @@ Note that while Array `.reverse()` mutates the array _in-place_, all Eleventy Co
 ```js
 module.exports = function(eleventyConfig) {
   // Filter using `Array.filter`
-  eleventyConfig.addCollection("onlyMarkdown", function(collection) {
-    return collection.getAllSorted().filter(function(item) {
+  eleventyConfig.addCollection("onlyMarkdown", function(collectionApi) {
+    return collectionApi.getAllSorted().filter(function(item) {
       // Only return content that was originally a markdown file
       let extension = item.inputPath.split('.').pop();
       return extension === "md";
@@ -382,8 +389,8 @@ Returns an array.
 ```js
 module.exports = function(eleventyConfig) {
   // Get only content that matches a tag
-  eleventyConfig.addCollection("myPosts", function(collection) {
-    return collection.getFilteredByTag("post");
+  eleventyConfig.addCollection("myPosts", function(collectionApi) {
+    return collectionApi.getFilteredByTag("post");
   });
 };
 ```
@@ -397,8 +404,8 @@ Retrieve content that includes *all* of the tags passed in. Returns an array.
 ```js
 module.exports = function(eleventyConfig) {
   // Get only content that matches a tag
-  eleventyConfig.addCollection("myTravelPostsWithPhotos", function(collection) {
-    return collection.getFilteredByTags("post", "travel", "photo");
+  eleventyConfig.addCollection("myTravelPostsWithPhotos", function(collectionApi) {
+    return collectionApi.getFilteredByTags("post", "travel", "photo");
   });
 };
 ```
@@ -422,8 +429,8 @@ Returns an array. Will match an arbitrary glob (or an array of globs) against th
 ```js
 module.exports = function(eleventyConfig) {
   // Filter source file names using a glob
-  eleventyConfig.addCollection("onlyMarkdown", function(collection) {
-    return collection.getFilteredByGlob("**/*.md");
+  eleventyConfig.addCollection("onlyMarkdown", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("**/*.md");
   });
 };
 ```
@@ -434,8 +441,8 @@ module.exports = function(eleventyConfig) {
 ```js
 module.exports = function(eleventyConfig) {
   // Filter source file names using a glob
-  eleventyConfig.addCollection("posts", function(collection) {
-    return collection.getFilteredByGlob("_posts/*.md");
+  eleventyConfig.addCollection("posts", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("_posts/*.md");
   });
 };
 ```
@@ -446,16 +453,9 @@ module.exports = function(eleventyConfig) {
 ```js
 module.exports = function(eleventyConfig) {
   // Filter source file names using a glob
-  eleventyConfig.addCollection("posts", function(collection) {
+  eleventyConfig.addCollection("posts", function(collectionApi) {
     // Also accepts an array of globs!
-    return collection.getFilteredByGlob(["posts/*.md", "notes/*.md"]);
+    return collectionApi.getFilteredByGlob(["posts/*.md", "notes/*.md"]);
   });
 };
 ```
-
-<div class="elv-community" id="community-resources">
-  <h3 class="elv-community-hed">Community Resources</h3>
-  <ul>
-    <li><a href="https://www.pborenstein.com/posts/collections/">Working with Collections</a> by {% avatarlocalcache "twitter", "pborenstein" %}Philip Borenstein</li>
-  </ul>
-</div>

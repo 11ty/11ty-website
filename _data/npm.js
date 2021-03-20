@@ -1,12 +1,5 @@
 // https://blog.npmjs.org/post/78719826768/download-counts-are-back
-const fetch = require("node-fetch");
-const flatcache = require("flat-cache");
-const path = require("path");
-
-function getCacheKey() {
-	let date = new Date();
-	return `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()}`;
-}
+const Cache = require("@11ty/eleventy-cache-assets");
 
 function pad(num) {
 	return `${num < 10 ? "0" : ""}${num}`;
@@ -20,31 +13,21 @@ function getDateRange(daysOffset) {
 }
 
 module.exports = async function() {
-	let cache = flatcache.load("npm-downloads", path.resolve("./_datacache"));
-	let key = getCacheKey();
-	let cachedData = cache.getKey(key);
-	if(!cachedData) {
-		console.log( "Fetching new npm download count…" );
-		try {
-			// let newData = await fetch("https://api.npmjs.org/downloads/point/last-month/@11ty/eleventy")
-			let newData = await fetch(`https://api.npmjs.org/downloads/point/${getDateRange(-365)}:${getDateRange()}/@11ty/eleventy`)
-				.then(res => res.json())
-				.then(json => {
-					return {
-						downloads: json.downloads
-					};
-				});
+	try {
+		// let newData = await fetch("https://api.npmjs.org/downloads/point/last-month/@11ty/eleventy")
+		let url = `https://api.npmjs.org/downloads/point/${getDateRange(-365)}:${getDateRange()}/@11ty/eleventy`;
+		let json = await Cache(url, {
+			duration: "1d",
+			type: "json"
+		});
 
-			cache.setKey(key, newData);
-			cache.save();
-			return newData;
-		} catch(e) {
-			console.log( "Failed, returning 0" );
-			return {
-				downloads: 0
-			};
-		}
+		return {
+			downloads: json.downloads
+		};
+	} catch(e) {
+		console.log( "Failed getting npm downloads count, returning 0" );
+		return {
+			downloads: 0
+		};
 	}
-
-	return cachedData;
 };

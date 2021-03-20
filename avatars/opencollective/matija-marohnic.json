@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "matija-marohnic.avif",
+      "outputPath": "img/avatars/opencollective/matija-marohnic.avif",
+      "url": "/img/avatars/opencollective/matija-marohnic.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/matija-marohnic.avif 90w",
+      "size": 1071
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "matija-marohnic.webp",
+      "outputPath": "img/avatars/opencollective/matija-marohnic.webp",
+      "url": "/img/avatars/opencollective/matija-marohnic.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/matija-marohnic.webp 90w",
+      "size": 1632
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "matija-marohnic.jpeg",
+      "outputPath": "img/avatars/opencollective/matija-marohnic.jpeg",
+      "url": "/img/avatars/opencollective/matija-marohnic.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/matija-marohnic.jpeg 90w",
+      "size": 2258
+    }
+  ],
+  "slug": "matija-marohnic"
+}

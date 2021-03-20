@@ -7,6 +7,7 @@ eleventyExcludeFromCollections: true
 {% include "components/auth/gotrue.js" %}
 {% include "components/auth/auth.js" %}
 {% include "components/search.js" %}
-{% include "../node_modules/instant.page/instantpage.js" %}
+{% include "components/seven-minute-tabs.js" %}
+{% include "../node_modules/speedlify-score/speedlify-score.js" %}
 {% endset %}
 {{ js | jsmin | safe }}

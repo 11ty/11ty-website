@@ -1,0 +1,9 @@
+{
+	"name": "Chrome Developers",
+	"url": "https://developer.chrome.com/",
+	"description": "This is Chrome's official site to help you build Extensions, publish on the Chrome Web Store, optimize your website, and more.",
+	"source_url": "https://github.com/GoogleChrome/developer.chrome.com",
+	"twitter": "ChromiumDev",
+	"featured": true,
+	"superfeatured": true
+}

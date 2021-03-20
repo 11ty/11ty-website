@@ -53,3 +53,9 @@ Capture the CSS into a variable and run it through the filter (this sample is us
 </style>
 ```
 {% endraw %}
+
+### Warning about Content Security Policy
+
+{% callout "warn" %}
+If you are using a Content Security Policy on your website, make sure the <code>style-src</code> directive allows <code>'unsafe-inline'</code>. Otherwise, your inline CSS will not load.
+{% endcallout %}

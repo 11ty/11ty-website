@@ -21,11 +21,11 @@ You can override a `.liquid` file’s template engine. Read more at [Changing a 
 
 ### Default Options
 
-Rather than constantly fixing outdated documentation, [find `getLiquidOptions` in `Liquid.js`](https://github.com/11ty/eleventy/blob/master/src/Engines/Liquid.js). These options are different than the [default `liquidjs` options](https://github.com/harttle/liquidjs#options).
+Rather than constantly fixing outdated documentation, [find `getLiquidOptions` in `Liquid.js`](https://github.com/11ty/eleventy/blob/master/src/Engines/Liquid.js). These options are different than the [default `liquidjs` options](https://liquidjs.com/tutorials/options.html).
 
 ### Optional: Use your own options {% addedin "0.2.15" %}
 
-It’s recommended to use the Configuration API to set override the default options above.
+It’s recommended to use the Configuration API to override the default options above.
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -201,7 +201,7 @@ Note that you can put any Liquid tags or content inside the `{% raw %}{% user %}
 ```html
 {% user2 "Zach Leatherman" "zachleat" %}
   Zach likes to take long walks on Nebraska beaches.
-{% enduser %}
+{% enduser2 %}
 ```
 {% endraw %}
 
@@ -247,3 +247,20 @@ module.exports = function(eleventyConfig) {
 ```
 {% endraw %}
 
+### Access to `page` data values {% addedin "0.11.0" %}
+
+If you aren’t using an arrow function, Liquid Shortcodes (and Nunjucks, Handlebars, and 11ty.js JavaScript Functions) will have access to Eleventy [`page` data values](/docs/data-eleventy-supplied/#page-variable-contents) without needing to pass them in as arguments.
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addLiquidShortcode("myShortcode", function() {
+    // Available in 0.11.0 and above
+    console.log( this.page );
+
+    // For example:
+    console.log( this.page.url );
+    console.log( this.page.inputPath );
+    console.log( this.page.fileSlug );
+  });
+};
+```

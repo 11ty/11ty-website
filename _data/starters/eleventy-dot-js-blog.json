@@ -1,0 +1,7 @@
+{
+	"url": "https://gitlab.com/reubenlillie/eleventy-dot-js-blog#readme",
+	"name": "🍦.11ty.js",
+	"description": "How to build an extensible blog with JavaScript templates (*.11ty.js files).",
+	"author": "reubenlillie",
+	"demo": "https://eleventy-dot-js-blog.netlify.app/"
+}

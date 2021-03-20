@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "unabridged-software.avif",
+      "outputPath": "img/avatars/opencollective/unabridged-software.avif",
+      "url": "/img/avatars/opencollective/unabridged-software.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/unabridged-software.avif 90w",
+      "size": 536
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "unabridged-software.webp",
+      "outputPath": "img/avatars/opencollective/unabridged-software.webp",
+      "url": "/img/avatars/opencollective/unabridged-software.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/unabridged-software.webp 90w",
+      "size": 628
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "unabridged-software.jpeg",
+      "outputPath": "img/avatars/opencollective/unabridged-software.jpeg",
+      "url": "/img/avatars/opencollective/unabridged-software.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/unabridged-software.jpeg 90w",
+      "size": 1730
+    }
+  ],
+  "slug": "unabridged-software"
+}

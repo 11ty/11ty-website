@@ -1,5 +1,6 @@
 {
 	"name": "Tobias Schmidt",
 	"url": "https://tobiasschmidt.me/",
-	"description": "A tech consultant in Munich."
+	"description": "A tech consultant in Munich.",
+	"disabled": true
 }

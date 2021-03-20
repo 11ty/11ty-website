@@ -11,9 +11,11 @@ module.exports = async () => {
     let filename = site.split("/").pop();
     let siteData = require(`./sites/${filename}`);
 
+    siteData.fileSlug = filename.replace(/\.json/, "");
+
     let names = getAuthors([siteData]);
     for(let name of names) {
-      key = name.toLowerCase();
+      let key = name.toLowerCase();
       if(!authors[key]) {
         authors[key] = {
           name: name,
@@ -21,6 +23,20 @@ module.exports = async () => {
         };
       }
       authors[key].sites.push(siteData);
+    }
+  }
+
+  // Add BUSINESS info
+  for(let key in authors) {
+    for(let site of authors[key].sites) {
+      if(site.business) {
+        authors[key].business = site.business;
+
+        // Allow `business.name` but fallback to `site.name`
+        if(!authors[key].business.name) {
+          authors[key].business.name = site.name;
+        }
+      }
     }
   }
 

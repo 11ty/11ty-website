@@ -1,0 +1,9 @@
+{
+	"url": "https://github.com/11ty/eleventy-base-blog",
+	"name": "eleventy-base-blog",
+	"description": "How to build a blog web site with Eleventy.",
+	"author": "eleven_ty",
+	"demo": "https://eleventy-base-blog.netlify.app/",
+	"official": true,
+	"order": 999
+}

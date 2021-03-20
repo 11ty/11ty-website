@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/maxboeck/eleventastic",
+	"name": "eleventastic",
+	"description": "A simple Eleventy Starter Kit, the Max Böck base for all new 11ty projects.",
+	"author": "mxbck",
+	"demo": "https://eleventastic.netlify.app/"
+}

@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 94,
+      "filename": "oof.avif",
+      "outputPath": "img/avatars/opencollective/oof.avif",
+      "url": "/img/avatars/opencollective/oof.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/oof.avif 90w",
+      "size": 2035
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 94,
+      "filename": "oof.webp",
+      "outputPath": "img/avatars/opencollective/oof.webp",
+      "url": "/img/avatars/opencollective/oof.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/oof.webp 90w",
+      "size": 3062
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 94,
+      "filename": "oof.jpeg",
+      "outputPath": "img/avatars/opencollective/oof.jpeg",
+      "url": "/img/avatars/opencollective/oof.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/oof.jpeg 90w",
+      "size": 3297
+    }
+  ],
+  "slug": "oof"
+}

@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "rob-dodson.avif",
+      "outputPath": "img/avatars/opencollective/rob-dodson.avif",
+      "url": "/img/avatars/opencollective/rob-dodson.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/rob-dodson.avif 90w",
+      "size": 888
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "rob-dodson.webp",
+      "outputPath": "img/avatars/opencollective/rob-dodson.webp",
+      "url": "/img/avatars/opencollective/rob-dodson.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/rob-dodson.webp 90w",
+      "size": 1272
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "rob-dodson.jpeg",
+      "outputPath": "img/avatars/opencollective/rob-dodson.jpeg",
+      "url": "/img/avatars/opencollective/rob-dodson.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/rob-dodson.jpeg 90w",
+      "size": 2014
+    }
+  ],
+  "slug": "rob-dodson"
+}

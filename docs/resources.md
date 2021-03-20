@@ -26,6 +26,10 @@ Eleventy facilitates JAMstack sites—but you maintain full control over the Jav
 
 <!-- You’re safe here. But a static site generator that is Progressive Enhancement friendly is only the beginning. -->
 
+The idea that _content_ should be the priority for a website's development. In other words, start with only essential content and functionality that works with as many users as possible, and then progressively enhance from there. 
+
+As stated in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement): "Special notice should be taken of accessibility. Acceptable alternatives should be provided where possible."
+
 ## Data-Driven
 
 Make components and markup data-driven so that you don’t have a bunch of one-off copy-pasted HTML instances littered throughout your project.
@@ -34,7 +38,7 @@ Make components and markup data-driven so that you don’t have a bunch of one-o
 
 > “You can take your front-end skills and do things that typically only a back-end can do. You can write a JavaScript function that you run and receive a response from by hitting a URL.”—[The Power of Serverless](https://serverless.css-tricks.com/) from [Chris Coyier](https://twitter.com/chriscoyier)
 
-Take care to make sure that <span class="buzzword">serverless</span> functions are <span class="buzzword">progressively enhanced</span>. That means they should either run at build time. If you call <span class="buzzword">serverless</span> functions in client-side JavaScript, they should be used for features that are outside the core functionality of the site.
+Take care to make sure that <span class="buzzword">serverless</span> functions are <span class="buzzword">progressively enhanced</span>. That means they should run at build time. If you call <span class="buzzword">serverless</span> functions in client-side JavaScript, they should be used for features that are outside the core functionality of the site.
 
 ## Lean Web
 

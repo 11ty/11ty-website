@@ -2,5 +2,6 @@
 	"url": "https://www.teami.io/",
 	"name": "Teami",
 	"description": "A tool to align OKRs, projects, and tasks.",
-	"twitter": "borjasolerme"
+	"twitter": "borjasolerme",
+	"disabled": true
 }

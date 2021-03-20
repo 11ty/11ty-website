@@ -22,16 +22,16 @@ Here’s a sample:
 </html>
 ```
 
-## Add our link!
+## Add your link!
 
-Edit your your layout file to add the link. Provide the URL to the base of your repo and use the Eleventy provided {% raw %}`{{ page.inputPath }}`{% endraw %} variable to point to the correct input file. Yes, this will also work with paginated templates.
+Edit your layout file to add the link. Provide the URL to the base of your repo and use the Eleventy provided {% raw %}`{{ page.inputPath }}`{% endraw %} variable to point to the correct input file. Yes, this will also work with paginated templates.
 
 {% raw %}
 ```html
     …
     <footer>
       © 2019 Eleventy
-      <a href="https://github.com/11ty/11ty-website/blob/master/{{ page.inputPath }}">Edit this page on GitHub</a>
+      <a href="https://github.com/11ty/11ty-website/blob/main/{{ page.inputPath }}">Edit this page on GitHub</a>
     </footer>
   </body>
 </html>

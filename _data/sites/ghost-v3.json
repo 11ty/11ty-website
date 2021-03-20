@@ -1,0 +1,7 @@
+{
+	"url": "https://ghost-v3.netlify.app/",
+	"name": "Eleventy Starter Ghost v3",
+	"description": "A starter template to build completely static websites with Ghost 3.0 & Eleventy",
+	"twitter": "bauhouse",
+	"source_url": "https://github.com/bauhouse/eleventy-starter-ghost"
+}

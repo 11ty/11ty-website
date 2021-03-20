@@ -1,0 +1,5 @@
+{
+	"npm": "@code-blocks/eleventy-plugin",
+	"author": "idrismaps",
+	"description": "Use markdown code blocks to render: charts, graphviz diagrams, MathML, music sheets, HTML tables and highlight code."
+}

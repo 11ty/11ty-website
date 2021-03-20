@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/dafiulh/vredeburg",
+	"name": "vredeburg",
+	"description": "A simple starter project to create a blog using Eleventy and Tailwind CSS.",
+	"author": "dafiulh",
+	"demo": "https://vredeburg.netlify.app/"
+}

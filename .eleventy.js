@@ -3,45 +3,70 @@ const HumanReadable = require("human-readable-numbers");
 const commaNumber = require("comma-number");
 const markdownIt = require("markdown-it");
 const loadLanguages = require("prismjs/components/");
+const slugify = require("slugify");
+const fs = require("fs-extra");
 
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
+const eleventyImage = require("@11ty/eleventy-img");
+const monthDiffPlugin = require("./config/monthDiff");
 const addedInLocalPlugin = require("./config/addedin");
 const minificationLocalPlugin = require("./config/minification");
 const getAuthors = require("./config/getAuthorsFromSites");
-
-const cfg = require("./_data/config.js");
-const slugify = require('slugify');
+const cleanName = require("./config/cleanAuthorName");
+const objectHas = require("./config/object-has");
+const lodashGet = require("lodash/get");
 
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);
 
+let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" decoding="async" class="avatar" width="200" height="200">`;
 const shortcodes = {
-	avatarlocalcache: function(datasource, slug, alt = "") {
-		const avatarMap = require(`./_data/avatarmap/${datasource}.json`);
-		if( slug ) {
-			let mapEntry = avatarMap[slug.toLowerCase()];
-			if(mapEntry && mapEntry.length) {
-				let ret = [];
-				if( mapEntry.length >= 2 ) {
-					ret.push("<picture>");
-					ret.push(`<source srcset="/${mapEntry[0].path}" type="image/${mapEntry[0].path.split(".").pop()}">`);
-				}
-				ret.push(`<img src="${ "/" + mapEntry[mapEntry.length - 1].path }" alt="${alt || `${slug}’s ${datasource} avatar`}" loading="lazy" class="avatar">`);
-				if( mapEntry.length >= 2 ) {
-					ret.push("</picture>");
-				}
-				return ret.join("");
-			}
+	avatar: function(datasource, slug, alt = "") {
+		if(!slug) {
+			return defaultAvatarHtml;
 		}
 
-		return `<img src="/img/default-avatar.png" alt="${alt}" loading="lazy" class="avatar">`;
+		slug = cleanName(slug).toLowerCase();
+
+		try {
+			let mapEntry = Object.assign({}, require(`./avatars/${datasource}/${slug}.json`));
+			delete mapEntry.slug; // dunno why the slug is saved here ok bye
+
+			return eleventyImage.generateHTML(mapEntry, {
+				alt: `${alt || `${slug}’s ${datasource} avatar`}`,
+				loading: "lazy",
+				decoding: "async",
+				class: "avatar",
+			});
+		} catch(e) {
+			return defaultAvatarHtml;
+		}
 	},
 	link: function(linkUrl, content) {
 		return (linkUrl ? `<a href="${linkUrl}">` : "") +
 			content +
 			(linkUrl ? `</a>` : "");
+	},
+	getScreenshotHtml: function(siteSlug, url, withJs, cls, sizes) {
+		let options = {
+			formats: ["avif", "webp", "jpeg"],
+			widths: [300, 600], // 260-440 in layout
+			sourceUrl: url,
+			urlPath: "/img/sites/",
+			filenameFormat: function(id, src, width, format) {
+				return `${siteSlug}-${width}${withJs ? "-js" : ""}.${format}`;
+			}
+		};
+
+		let stats = eleventyImage.statsSync(`./img/sites/${siteSlug}-600.jpeg`, options);
+
+		return eleventyImage.generateHTML(stats, {
+			alt: `Screenshot of ${url}`,
+			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
+			class: cls !== undefined ? cls : "sites-screenshot",
+		});
 	}
 };
 
@@ -68,9 +93,11 @@ module.exports = function(eleventyConfig) {
 			});
 		}
 	});
+
 	eleventyConfig.addPlugin(rssPlugin);
 	eleventyConfig.addPlugin(navigationPlugin);
 	eleventyConfig.addPlugin(addedInLocalPlugin);
+	eleventyConfig.addPlugin(monthDiffPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
 
 	eleventyConfig.addCollection("sidebarNav", function(collection) {
@@ -92,7 +119,8 @@ module.exports = function(eleventyConfig) {
 			(alt ? `<span class="sr-only">${alt}</span>` : "");
 	});
 
-	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatarlocalcache);
+	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatar);
+	eleventyConfig.addShortcode("getScreenshotHtml", shortcodes.getScreenshotHtml);
 
 	eleventyConfig.addShortcode("codetitle", function(title, heading = "Filename") {
 		return `<div class="codetitle codetitle-left"><b>${heading} </b>${title}</div>`;
@@ -103,13 +131,22 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addPairedShortcode("codewithprompt", function(text, prePrefixCode, when) {
-		return `<div data-preprefix-${prePrefixCode}="${when}">
+		let ret = [];
+		if(prePrefixCode && when) {
+			ret.push(`<div data-preprefix-${prePrefixCode}="${when}">
+`);
+		}
 
-\`\`\`bash/-
+		ret.push(`\`\`\`bash/-
 ${text.trim()}
-\`\`\`
+\`\`\``);
 
-</div>`;
+		if(prePrefixCode && when) {
+			ret.push(`
+</div>`);
+		}
+
+		return ret.join("\n");
 	});
 
 	eleventyConfig.addPassthroughCopy({
@@ -119,17 +156,37 @@ ${text.trim()}
 		"node_modules/@11ty/logo/img/logo-96x96.png": "img/favicon.png"
 	});
 
+	eleventyConfig.addPassthroughCopy("_redirects");
 	eleventyConfig.addPassthroughCopy("netlify-email");
-	eleventyConfig.addPassthroughCopy("css/fonts");
+	// eleventyConfig.addPassthroughCopy("css/fonts"); // these are inline now
 	eleventyConfig.addPassthroughCopy("img");
+	eleventyConfig.addPassthroughCopy("news/*.png");
 	eleventyConfig.addPassthroughCopy("favicon.ico");
+
+	eleventyConfig.addFilter("findHash", function(speedlifyUrls, ...urls) {
+		for(let url of urls) {
+			if(!url) {
+				continue;
+			}
+
+			// keys in speedlifyUrls are requestedUrl not final URLs
+			if(speedlifyUrls[url]) {
+				return speedlifyUrls[url].hash;
+			} else if(!url.endsWith("/") && speedlifyUrls[`${url}/`]) {
+				return speedlifyUrls[`${url}/`].hash;
+			}
+		}
+	});
+
+	eleventyConfig.addFilter("fileExists", function(url) {
+		return fs.pathExistsSync(`.${url}`);
+	});
 
 	eleventyConfig.addFilter("toJSON", function(obj) {
 		return JSON.stringify(obj);
 	});
 
 	eleventyConfig.addFilter("toSearchEntry", function(str) {
-		// <a class="direct-link" href="#eleventy-is-supported-financially-by-the-following-lovely-people" title="Direct link to this heading">#</a>
 		return str.replace(/<a class="direct-link"[^>]*>#<\/a\>/g, "");
 	});
 
@@ -139,6 +196,10 @@ ${text.trim()}
 
 	eleventyConfig.addFilter("commaNumber", function(num) {
 		return commaNumber(num);
+	});
+
+	eleventyConfig.addFilter("displayPrice", function(num) {
+		return parseFloat(num).toFixed(2);
 	});
 
 	eleventyConfig.addShortcode("templatelangs", function(languages, page, whitelist, anchor, isinline) {
@@ -229,13 +290,16 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addShortcode("testimonial", function(testimonial) {
-		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, shortcodes.avatarlocalcache("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`) + testimonial.name)}</span>` : ``}</p></blockquote>`;
+		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, shortcodes.avatar("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`) + testimonial.name)}</span>` : ``}</p></blockquote>`;
 	});
 
-	eleventyConfig.addShortcode("supporterAmount", function(amount, maxAmount = 1000) {
-		// let increments = [1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987];
+	eleventyConfig.addFilter("isBusinessPerson", function(supporter) {
+		return supporter && supporter.isMonthly && supporter.amount && supporter.amount.value >= 5;
+	});
+
+	eleventyConfig.addShortcode("supporterAmount", function(amount, maxAmount = 2000) {
 		// mostly fibonacci
-		let increments = [5,8,13,21,34,55,89,144,233,377,610,987,1597];
+		let increments = [5,8,13,21,34,55,89,144,233,377,610,987,1597,2584];
 		let incrementCounter = 0;
 		let fullHearts = [];
 		let emptyHearts = [];
@@ -257,6 +321,7 @@ ${text.trim()}
 
 	function removeExtraText(s) {
 		let newStr = String(s).replace(/New\ in\ v\d+\.\d+\.\d+/, "");
+		newStr = newStr.replace(/Coming\ soon\ in\ v\d+\.\d+\.\d+/, "");
 		newStr = newStr.replace(/⚠️/g, "");
 		newStr = newStr.replace(/[?!]/g, "");
 		newStr = newStr.replace(/<[^>]*>/g, "");
@@ -295,11 +360,13 @@ ${text.trim()}
 	mdIt.linkify.tlds('.io', false);
 	eleventyConfig.setLibrary("md", mdIt);
 
-	eleventyConfig.addFilter("newsDate", dateObj => {
-		if(typeof dateObj === "number") {
+	eleventyConfig.addFilter("newsDate", (dateObj, format = "yyyy LLLL dd") => {
+		if(typeof dateObj === "string") {
+			return DateTime.fromISO(dateObj).toFormat(format);
+		} else if(typeof dateObj === "number") {
 			dateObj = new Date(dateObj);
 		}
-		return DateTime.fromJSDate(dateObj).toFormat("yyyy LLLL dd");
+		return DateTime.fromJSDate(dateObj).toFormat(format);
 	});
 
 	eleventyConfig.addFilter("objectFilterNot", (obj, compareKey) => {
@@ -312,18 +379,36 @@ ${text.trim()}
 		return newObj;
 	});
 
-	eleventyConfig.addFilter("rankSortByNumericKey", (arr, key) => {
+	eleventyConfig.addFilter("rankSortByNumericKey", (arr, ...keys) => {
 		return arr.filter(entry => true).sort((a, b) => {
-			return a[key] - b[key];
+			let aSum = 0;
+			let bSum = 0;
+			for(let key of keys) {
+				aSum += a[key];
+				bSum += b[key];
+			}
+			return aSum - bSum;
 		});
 	});
 
-	eleventyConfig.addFilter("calc", (sites, type, key, greaterThanOrEqualTo) => {
+	eleventyConfig.addFilter("calc", (sites, type, key, greaterThanOrEqualTo = 1) => {
 		let sum = 0;
 		let values = [];
+		let keys;
+		if(Array.isArray(key)) {
+			keys = key;
+		} else {
+			keys = [key];
+		}
 		let count = 0;
 		for(let site of sites) {
-			if(site[key] >= greaterThanOrEqualTo) {
+			let test = true;
+			for(let key of keys) {
+				if(isNaN(site[key]) || site[key] < greaterThanOrEqualTo) {
+					test = false;
+				}
+			}
+			if(test) {
 				count++;
 			}
 			if(typeof site[key] === "number") {
@@ -344,14 +429,19 @@ ${text.trim()}
 		}
 	});
 
-	eleventyConfig.addFilter("findBy", (data, key, value) => {
+	eleventyConfig.addFilter("findBy", (data, path, value) => {
 		return data.filter(entry => {
-			if(!key || !value || !entry[key]) {
+			if(!path || !value) {
+				return false;
+			}
+
+			let gotten = lodashGet(entry, path);
+			if(!gotten) {
 				return false;
 			}
 
 			let valueLower = value.toLowerCase();
-			let dataLower = entry[key].toLowerCase();
+			let dataLower = gotten.toLowerCase();
 			if(valueLower === dataLower) {
 				return true;
 			}
@@ -377,30 +467,29 @@ ${text.trim()}
 		}
 	});
 
-	eleventyConfig.addFilter("hasPerformanceEntryByUrl", (url, sites = []) => {
-		// console.log( sites.length, url );
-		for(let site of sites) {
-			if(!url || !site.url) {
-				continue;
-			}
-			let lowerUrl = url.toLowerCase();
-			let siteUrl = site.url.toLowerCase();
-			if(lowerUrl === siteUrl || `${lowerUrl}/` === siteUrl) {
-				return true;
-			}
+	eleventyConfig.addFilter("repeat", (number, str) => {
+		if(number > 0) {
+			return str + (new Array(number)).join(str);
 		}
-		return false;
+		return "";
 	});
 
-	eleventyConfig.addFilter("authors", getAuthors);
-
-	eleventyConfig.addFilter("topAuthors", (sites) => {
+	eleventyConfig.addFilter("topAuthors", sites => {
 		let counts = {};
-		getAuthors(sites, name => {
-			if(!counts[name]) {
-				counts[name] = 0;
+		let eligibleCounts = {};
+		getAuthors(sites, (name, site) => {
+			let key = name.toLowerCase();
+			if(!counts[key]) {
+				counts[key] = 0;
 			}
-			counts[name]++;
+			counts[key]++;
+
+			if(site.url && !site.disabled && !site.superfeatured && !site.hideOnHomepage) {
+				if(!eligibleCounts[key]) {
+					eligibleCounts[key] = 0;
+				}
+				eligibleCounts[key]++;
+			}
 		});
 
 		let top = [];
@@ -408,28 +497,65 @@ ${text.trim()}
 			if(counts[author]) {
 				top.push({
 					name: author,
-					count: counts[author]
+					count: counts[author],
+					eligibleCount: eligibleCounts[author],
 				});
 			}
 		}
 		top.sort((a, b) => {
 			return b.count - a.count;
 		});
+
 		return top;
 	});
+
+	eleventyConfig.addFilter("cleanAuthorName", cleanName);
 
 	eleventyConfig.addFilter("head", (arr, num) => {
 		return num ? arr.slice(0, num) : arr;
 	});
 
 	eleventyConfig.addFilter("supportersFacepile", (supporters) => {
-		return supporters.filter(supporter => supporter.role === "BACKER" && supporter.tier && supporter.tier != "Exclusive Gold Sponsor");
+		return supporters.filter(supporter => supporter.status === 'ACTIVE' && !supporter.hasDefaultAvatar && supporter.tier && supporter.tier.slug !== "gold-sponsor");
 	});
 
-	eleventyConfig.addFilter("screenshotFilenameFromUrl", (url) => {
-		let slug = url.replace(/https?\:\//, "");
-		return slugify(slug, { lower: true, remove: /[:\/]/g }) + ".jpg";
+	// Sort an object that has `order` props in values. Return an array
+	eleventyConfig.addFilter("sortObjectByOrder", (obj) => {
+		let arr = [];
+		for(let key in obj) {
+			arr.push(obj[key]);
+		}
+		return arr.sort((a, b) => {
+			return (b.order || 0) - (a.order || 0);
+		});
 	});
+
+	// Case insensitive check an object for a key
+	eleventyConfig.addFilter("has", objectHas);
+
+	// Case insensitive check an object for a key
+	eleventyConfig.addShortcode("authorLink", (authors, name) => {
+		let html = [];
+
+		if(name) {
+			let isAuthor = objectHas(authors, name);
+			if(isAuthor) {
+				html.push(`<a href="/authors/${name.toLowerCase()}/" class="nowrap">`);
+			} else {
+				html.push(`<span class="nowrap">`);
+			}
+			html.push(shortcodes.avatar("twitter", name, name));
+			html.push(name);
+			if(isAuthor) {
+				html.push("</a>");
+			} else {
+				html.push("</span>");
+			}
+		}
+
+		return html.join("");
+	});
+
 	return {
 		templateFormats: ["html", "njk", "md", "11ty.js"],
 		markdownTemplateEngine: "njk",

@@ -8,12 +8,17 @@
   },
   "scripts": {
     "assets": "cp node_modules/@11ty/logo/logo.png .",
+    "check-links": "npx check-html-links _site",
     "links-external": "hyperlink -r --root _site --canonicalroot https://11ty.dev/ --skip '/.netlify/functions' _site/*.html | tap-spot",
     "links-internal": "hyperlink -ri --root _site --canonicalroot https://11ty.dev/ --skip '/.netlify/functions' _site/*.html | tap-spot",
-    "deploy": "eleventy && node node-avatars && node node-screenshots && ./deploy.sh",
+    "deploy": "eleventy && node node-screenshots && ./deploy.sh",
     "build": "eleventy",
-    "build-production": "node node-avatars.js && ELEVENTY_PRODUCTION=true eleventy",
-    "postbuild-production": "npm run links-internal"
+    "start": "eleventy --serve",
+    "build-production": "node node-avatars-opencollective && ELEVENTY_PRODUCTION=true eleventy",
+    "get-new-screenshots": "node node-screenshots",
+    "get-new-supporters": "eleventy && node node-supporters",
+    "get-new-avatars": "node node-avatars-opencollective && node node-avatars-twitter",
+    "format": "prettier --write '**/*.{js,css,html,md}'"
   },
   "repository": {
     "type": "git",
@@ -33,38 +38,47 @@
     "url": "https://opencollective.com/11ty"
   },
   "homepage": "https://github.com/11ty/11ty-website#readme",
+  "lint-staged": {
+    "*.{js,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "devDependencies": {
-    "@11ty/eleventy": "0.11.0-beta.3",
-    "@11ty/eleventy-navigation": "0.1.5",
-    "@11ty/eleventy-plugin-rss": "1.0.7",
-    "@11ty/eleventy-plugin-syntaxhighlight": "3.0.1",
-    "avatar-local-cache": "2.0.6",
+    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-cache-assets": "^2.1.0",
+    "@11ty/eleventy-img": "^0.8.2",
+    "@11ty/eleventy-navigation": "^0.1.6",
+    "@11ty/eleventy-plugin-rss": "^1.1.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
     "clean-css": "4.2.3",
     "comma-number": "2.0.1",
     "dotenv": "8.2.0",
-    "flat-cache": "2.0.1",
-    "fs-extra": "9.0.0",
+    "fast-glob": "^3.2.5",
+    "fs-extra": "9.1.0",
     "html-minifier": "4.0.0",
     "human-readable-numbers": "0.9.5",
-    "hyperlink": "4.4.3",
-    "lodash.defer": "4.1.0",
-    "luxon": "1.22.2",
+    "hyperlink": "4.6.0",
+    "luxon": "1.26.0",
     "markdown-it": "8.4.2",
     "markdown-it-anchor": "5.2.5",
     "markdown-it-table-of-contents": "0.4.4",
-    "node-fetch": "2.6.0",
-    "performance-leaderboard": "2.0.5",
+    "node-fetch": "2.6.1",
+    "prettier": "^1.18.2",
     "puppeteer": "2.1.1",
-    "semver": "7.1.3",
-    "sharp": "0.25.2",
-    "slugify": "1.4.0",
+    "semver": "7.3.4",
+    "sharp": "0.27.0",
+    "slugify": "1.4.7",
     "sorted-object": "2.0.1",
     "tap-spot": "1.1.1",
-    "terser": "4.6.7"
+    "terser": "4.6.7",
+    "twitter-avatar-url": "^2.0.3"
   },
   "dependencies": {
     "@11ty/logo": "2.0.4",
     "instant.page": "3.0.0",
-    "prismjs": "1.19.0"
+    "lodash": "^4.17.21",
+    "prismjs": "1.23.0",
+    "speedlify-score": "^2.0.1"
   }
 }

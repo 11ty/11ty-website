@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/11ta/11ta-template",
+	"name": "11TA",
+	"description": "11TA is a deeply customizable, full-featured, ready-to-publish blog/marketing template system built with 11ty, TailwindCSS, & Alpine.js",
+	"author": "shanerobinson",
+	"demo": "https://11ta.netlify.app/"
+}

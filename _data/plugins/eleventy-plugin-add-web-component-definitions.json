@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-add-web-component-definitions",
+	"author": "jdvivar",
+	"description": "will add Web Component definitions automatically, by reading custom tags from HTML pages."
+}

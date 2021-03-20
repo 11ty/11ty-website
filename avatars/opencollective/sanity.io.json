@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "sanity.io.avif",
+      "outputPath": "img/avatars/opencollective/sanity.io.avif",
+      "url": "/img/avatars/opencollective/sanity.io.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/sanity.io.avif 90w",
+      "size": 792
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "sanity.io.webp",
+      "outputPath": "img/avatars/opencollective/sanity.io.webp",
+      "url": "/img/avatars/opencollective/sanity.io.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/sanity.io.webp 90w",
+      "size": 758
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "sanity.io.jpeg",
+      "outputPath": "img/avatars/opencollective/sanity.io.jpeg",
+      "url": "/img/avatars/opencollective/sanity.io.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/sanity.io.jpeg 90w",
+      "size": 1469
+    }
+  ],
+  "slug": "sanity.io"
+}

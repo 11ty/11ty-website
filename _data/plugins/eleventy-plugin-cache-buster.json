@@ -1,0 +1,5 @@
+{
+	"npm": "@mightyplow/eleventy-plugin-cache-buster",
+	"author": "mightyplow",
+	"description": "will add content hashes to JavaScript and CSS resources."
+}

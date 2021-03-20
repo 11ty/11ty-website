@@ -27,7 +27,7 @@ Read more about [**Eleventy’s project goals**.](https://www.zachleat.com/web/i
 
 ## Don’t just take my word for it 🌈
 
-There are a bunch of [sites built using Eleventy](/docs/sites/). But listen to what these [happy developers](/docs/testimonials/) are saying about Eleventy:
+There are a bunch of [sites built using Eleventy](/speedlify/). But listen to what these [happy developers](/docs/testimonials/) are saying about Eleventy:
 
 {% include "testimonials.md" %}
 
@@ -40,4 +40,4 @@ This project aims to directly compete with all other Static Site Generators. We 
 * [Hexo](https://hexo.io/) (JavaScript)
 * [Gatsby](https://www.gatsbyjs.org/) (JavaScript using React)
 * [Nuxt](https://www.staticgen.com/nuxt) (JavaScript using Vue)
-* _More at [staticgen.com](https://www.staticgen.com/)_
+* _More at [jamstack.org](https://jamstack.org/generators/)_

@@ -1,22 +1,13 @@
 [{
-	"twitter": "pborenstein",
-	"name": "Philip Borenstein"
-}, {
-	"twitter": "brob",
-	"name": "Bryan Robinson"
-}, {
 	"twitter": "jon_keeping",
 	"name": "Jon Keeping"
 }, {
 	"twitter": "jon_neal",
 	"name": "Jon Neal"
 }, {
-	"twitter": "jeromecoupe",
-	"name": "jérôme coupé"
-}, {
-	"twitter": "jameswillweb",
-	"name": "James Williamson"
-}, {
 	"twitter": "AMPhtml",
 	"name": "AMP Project"
+}, {
+	"twitter": "stackbithq",
+	"name": "Stackbit"
 }]

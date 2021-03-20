@@ -1,0 +1,43 @@
+.announcement {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+	width: 100%;
+	background-color: #111;
+	font-weight: 500;
+	padding: .25em 1em;
+	text-align: center;
+	width: calc(100% + 2rem);
+	margin-left: -1rem;
+	margin-right: -1rem;
+}
+@media (min-width: 48em) { /* 768px */
+	.announcement {
+		font-size: 1em;
+		font-size: clamp(1em, 2vw, 1.25em);
+	}
+}
+.announcement > a,
+.announcement > span {
+	display: inline-block;
+	padding: .35em 0;
+	text-decoration: none;
+}
+.announcement a:hover {
+	text-decoration: underline;
+}
+.announcement,
+.announcement a,
+.announcement a:visited {
+	color: #eee;
+}
+.announcement a:after {
+	display: none;
+}
+/* Hide the banner on the home page */
+.elv-header-default .announcement {
+  background-color: #222;
+}
+.elv-header-default .announcement a {
+  visibility: hidden;
+}

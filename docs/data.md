@@ -2,6 +2,10 @@
 eleventyNavigation:
   key: Using Data
   order: 5
+communityLinks:
+- url: https://sia.codes/posts/architecting-data-in-eleventy/
+  author: TheGreenGreek
+  title: Architecting data in Eleventy
 ---
 # Using Data
 

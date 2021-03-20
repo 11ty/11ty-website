@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 85,
+      "filename": "glenn-dixon.avif",
+      "outputPath": "img/avatars/opencollective/glenn-dixon.avif",
+      "url": "/img/avatars/opencollective/glenn-dixon.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/glenn-dixon.avif 90w",
+      "size": 1011
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 85,
+      "filename": "glenn-dixon.webp",
+      "outputPath": "img/avatars/opencollective/glenn-dixon.webp",
+      "url": "/img/avatars/opencollective/glenn-dixon.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/glenn-dixon.webp 90w",
+      "size": 1134
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 85,
+      "filename": "glenn-dixon.jpeg",
+      "outputPath": "img/avatars/opencollective/glenn-dixon.jpeg",
+      "url": "/img/avatars/opencollective/glenn-dixon.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/glenn-dixon.jpeg 90w",
+      "size": 1825
+    }
+  ],
+  "slug": "glenn-dixon"
+}

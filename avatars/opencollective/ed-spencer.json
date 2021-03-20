@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "ed-spencer.avif",
+      "outputPath": "img/avatars/opencollective/ed-spencer.avif",
+      "url": "/img/avatars/opencollective/ed-spencer.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/ed-spencer.avif 90w",
+      "size": 1592
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "ed-spencer.webp",
+      "outputPath": "img/avatars/opencollective/ed-spencer.webp",
+      "url": "/img/avatars/opencollective/ed-spencer.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/ed-spencer.webp 90w",
+      "size": 2402
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "ed-spencer.jpeg",
+      "outputPath": "img/avatars/opencollective/ed-spencer.jpeg",
+      "url": "/img/avatars/opencollective/ed-spencer.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/ed-spencer.jpeg 90w",
+      "size": 2849
+    }
+  ],
+  "slug": "ed-spencer"
+}

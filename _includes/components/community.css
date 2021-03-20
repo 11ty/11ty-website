@@ -1,10 +1,14 @@
-.elv-community {
-	font-size: 0.8888888888889em; /* 16px /18 */
-	background-color: #eee;
-	padding: 0.5em 1em;
-	margin-left: -1rem;
-	margin-right: -1rem;
+.elv-community > .elv-callout:before {
+	display: none;
 }
 .elv-community-hed {
 	margin-top: 0;
+}
+@media (min-width: 62.5em) { /* 1000px */
+  .elv-community {
+    float: right;
+    max-width: 40%;
+    margin-left: 2em;
+    margin-bottom: 2em;
+  }
 }

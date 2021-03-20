@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "evan-harrison.avif",
+      "outputPath": "img/avatars/opencollective/evan-harrison.avif",
+      "url": "/img/avatars/opencollective/evan-harrison.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/evan-harrison.avif 90w",
+      "size": 1260
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "evan-harrison.webp",
+      "outputPath": "img/avatars/opencollective/evan-harrison.webp",
+      "url": "/img/avatars/opencollective/evan-harrison.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/evan-harrison.webp 90w",
+      "size": 1882
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "evan-harrison.jpeg",
+      "outputPath": "img/avatars/opencollective/evan-harrison.jpeg",
+      "url": "/img/avatars/opencollective/evan-harrison.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/evan-harrison.jpeg 90w",
+      "size": 2472
+    }
+  ],
+  "slug": "evan-harrison"
+}

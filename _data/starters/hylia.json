@@ -1,0 +1,8 @@
+{
+	"url": "https://hylia.website/",
+	"name": "Hylia",
+	"description": "is a lightweight Eleventy starter kit with Netlify CMS pre-configured, so that you can one-click install a progressive, accessible blog in minutes. ",
+	"author": "piccalilli_",
+	"source_url": "https://github.com/hankchizljaw/hylia",
+	"demo": "https://hylia.website/"
+}

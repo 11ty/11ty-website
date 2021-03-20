@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "andrew-pucci.avif",
+      "outputPath": "img/avatars/opencollective/andrew-pucci.avif",
+      "url": "/img/avatars/opencollective/andrew-pucci.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/andrew-pucci.avif 90w",
+      "size": 1453
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "andrew-pucci.webp",
+      "outputPath": "img/avatars/opencollective/andrew-pucci.webp",
+      "url": "/img/avatars/opencollective/andrew-pucci.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/andrew-pucci.webp 90w",
+      "size": 2030
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "andrew-pucci.jpeg",
+      "outputPath": "img/avatars/opencollective/andrew-pucci.jpeg",
+      "url": "/img/avatars/opencollective/andrew-pucci.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/andrew-pucci.jpeg 90w",
+      "size": 2588
+    }
+  ],
+  "slug": "andrew-pucci"
+}

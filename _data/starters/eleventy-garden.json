@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/b3u/eleventy-garden",
+	"name": "Eleventy Garden",
+	"description": "A starter site for building a digital garden, or personal wiki, in Eleventy.",
+	"author": "binyamingreen",
+	"demo": "https://eleventy-garden.netlify.app/"
+}

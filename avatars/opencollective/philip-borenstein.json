@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "philip-borenstein.avif",
+      "outputPath": "img/avatars/opencollective/philip-borenstein.avif",
+      "url": "/img/avatars/opencollective/philip-borenstein.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/philip-borenstein.avif 90w",
+      "size": 1285
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "philip-borenstein.webp",
+      "outputPath": "img/avatars/opencollective/philip-borenstein.webp",
+      "url": "/img/avatars/opencollective/philip-borenstein.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/philip-borenstein.webp 90w",
+      "size": 1916
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "philip-borenstein.jpeg",
+      "outputPath": "img/avatars/opencollective/philip-borenstein.jpeg",
+      "url": "/img/avatars/opencollective/philip-borenstein.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/philip-borenstein.jpeg 90w",
+      "size": 2660
+    }
+  ],
+  "slug": "philip-borenstein"
+}

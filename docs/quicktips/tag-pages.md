@@ -60,7 +60,7 @@ The great thing here is that we don’t have to manage our tag list in a central
 
 ## Filtering / Excluding
 
-Have a tag you’d like to exclude from this list? Use [pagination filtering](/docs/pagination/#blacklisting-or-filtering-values) like this:
+Have a tag you’d like to exclude from this list? Use [pagination filtering](/docs/pagination/#filtering-values) like this:
 
 {% raw %}
 ```markdown

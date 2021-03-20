@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "hans-gerwitz.avif",
+      "outputPath": "img/avatars/opencollective/hans-gerwitz.avif",
+      "url": "/img/avatars/opencollective/hans-gerwitz.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/hans-gerwitz.avif 90w",
+      "size": 1087
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "hans-gerwitz.webp",
+      "outputPath": "img/avatars/opencollective/hans-gerwitz.webp",
+      "url": "/img/avatars/opencollective/hans-gerwitz.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/hans-gerwitz.webp 90w",
+      "size": 1504
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "hans-gerwitz.jpeg",
+      "outputPath": "img/avatars/opencollective/hans-gerwitz.jpeg",
+      "url": "/img/avatars/opencollective/hans-gerwitz.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/hans-gerwitz.jpeg 90w",
+      "size": 2355
+    }
+  ],
+  "slug": "hans-gerwitz"
+}

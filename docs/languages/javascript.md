@@ -11,6 +11,10 @@ tags:
   - related-shortcodes
 relatedLinks:
   /docs/config/#watch-javascript-dependencies: Watch JavaScript Dependencies
+communityLinks:
+- url: https://willmartin.dev/posts/conditional-rendering-eleventy/
+  author: willmartindev
+  title: Conditionally Rendering JavaScript Templates
 layout: layouts/langs.njk
 ---
 | Eleventy Short Name | File Extension | NPM Package |
@@ -348,3 +352,21 @@ module.exports = function(data) {
 };
 ```
 {% endraw %}
+
+### Access to `page` data values {% addedin "0.11.0" %}
+
+If you aren’t using an arrow function, JavaScript Functions (and Nunjucks, Liquid, and Handlebars Shortcodes) will have access to Eleventy [`page` data values](/docs/data-eleventy-supplied/#page-variable-contents) without needing to pass them in as arguments.
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addJavaScriptFunction("myFunction", function() {
+    // Available in 0.11.0 and above
+    console.log( this.page );
+
+    // For example:
+    console.log( this.page.url );
+    console.log( this.page.inputPath );
+    console.log( this.page.fileSlug );
+  });
+};
+```

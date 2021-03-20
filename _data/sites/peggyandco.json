@@ -2,5 +2,6 @@
 	"url": "https://www.peggyandcowebdesign.com",
 	"name": "Wayne Pegg",
 	"description": "Personal site for my new in the eclectic life of digital crafting.",
-	"twitter": "peggy_web"
+	"twitter": "peggy_web",
+	"disabled": true
 }

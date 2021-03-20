@@ -3,5 +3,5 @@
 	"permalink": "/docs/quicktips/{{ page.fileSlug }}/",
 	"feedTitle": "Quick Tips RSS Feed",
 	"feedUrl": "/docs/quicktips/feed.xml",
-	"tags": ["quicktips", "docs-tutorials"]
+	"tags": ["quicktips", "docs-quicktips"]
 }
