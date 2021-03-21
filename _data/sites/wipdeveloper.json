@@ -2,5 +2,9 @@
 	"url": "https://wipdeveloper.com/",
 	"name": "Brett Nelsons’s Blog",
 	"description": "A blog about Web development with a focus on Salesforce.com and front-end technologies.",
-	"twitter": "brettmn"
+	"twitter": "brettmn",
+	"business": {
+		"cta": "https://nelson.consulting/",
+		"name": "Nelson Consulting"
+	}
 }
