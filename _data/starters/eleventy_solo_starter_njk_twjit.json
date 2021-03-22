@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/brycewray/eleventy_solo_starter_njk_twjit",
+	"name": "Eleventy Solo Starter with Tailwind/JIT (.njk version)",
+	"description": "Eleventy starter with PostCSS, Tailwind CSS (including the experimental JIT compiler), Alpine.js, Lazyload (“vanilla lazyload”), and build-time creation and processing of responsive images; Nunjucks templating, with alternate JavaScript-based (.11ty.js) version.",
+	"author": "BryceWrayTX",
+	"demo": "https://eleventy-solo-starter-njk-twjit.vercel.app/"
+}
