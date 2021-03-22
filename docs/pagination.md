@@ -523,6 +523,53 @@ testdata:
 
 Now `collections.myCollection` will have both output pages in the collection array (`_site/my-page/index.html` and `_site/my-page/1/index.html`).
 
+## Generate page even if there's no data {% addedin "0.12.2" %}
+
+By default, if the data to paginate is empty, then Eleventy simply generates zero pages:
+
+{% codetitle "Liquid, Nunjucks", "Syntax" %}
+
+{% raw %}
+```markdown
+---
+pagination:
+  data: testdata
+  size: 1
+testdata: []
+---
+<ol>
+{%- for item in pagination.items %}
+  <li>{{ item }}</li>
+{% endfor -%}
+</ol>
+```
+{% endraw %}
+
+The above example won't output any pages. If you'd like to generate one page, even if there's no data, then add `pageOnEmptyData: true` to the pagination front matter options:
+
+{% raw %}
+```markdown
+---
+pagination:
+  data: testdata
+  size: 1
+  pageOnEmptyData: true
+testdata: []
+---
+{%- if pagination.items %}
+  <ol>
+  {%- for item in pagination.items %}
+    <li>{{ item }}</li>
+  {% endfor -%}
+  </ol>
+{%- else %}
+  <p>No items found.</p>
+{% endif -%}
+```
+{% endraw %}
+
+Now there will be one output page that shows "No items found".
+
 ## Full Pagination Option List
 
 * `data` (String) [Lodash.get path](https://lodash.com/docs/4.17.15#get) to point to the target data set.
@@ -532,3 +579,4 @@ Now `collections.myCollection` will have both output pages in the collection arr
 * `filter` (Array) {% addedin "0.4.0" %}
 * `reverse: true` (Boolean) {% addedin "0.7.0" %}
 * `addAllPagesToCollections: true` (Boolean) {% addedin "0.8.0" %}
+* `pageOnEmptyData: true` (Boolean) {% addedin "0.12.2" %}
