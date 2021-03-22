@@ -474,6 +474,36 @@ The above will iterate over a data set containing: `["item1 with a suffix", "ite
 
 You can do anything in this `before` callback. Maybe a custom `.sort()`, `.filter()`, `.map()` to remap the entries, `.slice()` to paginate only a subset of the data, etc!
 
+### Accessing `this` in `before` {% addedin "0.12.2" %}
+
+If you need to, you can access all data for the containing page or template, via `this` in your `before` function.
+
+{% raw %}
+```markdown
+---js
+{
+  pagination: {
+    data: "testdata",
+    size: 2,
+    before: function(data) {
+      const containerPageTitle = this.data.title;
+      return data.filter(entry => entry.startsWith(containerPageTitle + ": "));
+    }
+  },
+  testdata: [
+    "Page foo: item foo1",
+    "Page foo: item foo2",
+    "Page moo: item moo1",
+    "Page moo: item moo2"
+  ]
+}
+---
+<!-- the rest of the template -->
+```
+{% endraw %}
+
+In the above example, if the containing page has the title `"Page moo"`, then the data will be filtered to only contain: `["Page moo: item moo1", "Page moo: item moo2"]`.
+
 ### Order of Operations
 
 If you use more than one of these data set modification features, here’s the order in which they operate:
