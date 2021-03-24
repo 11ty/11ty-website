@@ -119,7 +119,7 @@ Both of the above examples will write to `_site/this-is-a-new-path/subdirectory/
 
 ### `permalink: false`
 
-If you set the `permalink` value to be `false`, this will disable writing the file to disk in your output folder. The file will still be processed normally (and present in collections) but will not be available in your output directory as a standalone template.
+If you set the `permalink` value to be `false`, this will disable writing the file to disk in your output folder. The file will still be processed normally (and present in collections, with its [`url` and `outputPath` properties](/docs/data-eleventy-supplied.md) set to `false`) but will not be available in your output directory as a standalone template.
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 

@@ -19,25 +19,27 @@ Here are a few data values we supply to your page that you can use in your templ
 
 ```js
 let page = {
-  
+
   // URL can be used in <a href> to link to other templates
+  // Note: This value will be `false` if `permalink` is set to `false`.
   url: "/current/page/myFile/",
-  
+
   // For permalinks: inputPath filename minus template file extension (New in v0.3.4)
   fileSlug: "myFile",
 
   // For permalinks: inputPath minus template file extension (New in v0.9.0)
   filePathStem: "/current/page/myFile",
-  
+
   // JS Date Object for current page (used to sort collections)
   date: new Date(),
-  
+
   // The path to the original source file for the template
   // Note: this will include your input directory path!
   inputPath: "./current/page/myFile.md",
-  
+
   // Depends on your output directory (the default is _site)
   // You probably won’t use this: `url` is better.
+    // Note: This value will be `false` if `permalink` is set to `false`.
   outputPath: "./_site/current/page/myFile/index.html"
 };
 ```
