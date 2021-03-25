@@ -39,7 +39,7 @@ let page = {
 
   // Depends on your output directory (the default is _site)
   // You probably won’t use this: `url` is better.
-    // Note: This value will be `false` if `permalink` is set to `false`.
+  // Note: This value will be `false` if `permalink` is set to `false`.
   outputPath: "./_site/current/page/myFile/index.html"
 };
 ```
