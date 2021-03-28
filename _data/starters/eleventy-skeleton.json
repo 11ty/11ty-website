@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/geotrev/eleventy-skeleton",
+	"name": "Eleventy Skeleton",
+	"description": "Barebones Eleventy. No dependencies or preprocessors.",
+	"author": "George Treviranus",
+	"demo": "https://11ty-skeleton.netlify.app/"
+}
