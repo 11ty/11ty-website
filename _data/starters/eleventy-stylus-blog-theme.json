@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/ar363/eleventy-stylus-blog-theme",
+	"name": "Purple: Eleventy + Stylus Starter Blog",
+	"description": "A nice looking, simple blog theme built with Eleventy SSG and Stylus Preprocessor",
+	"author": "ar363",
+	"demo": "https://eleventy-stylus-blog-theme.vercel.app/"
+}
