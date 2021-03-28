@@ -2,7 +2,6 @@
 	"url": "https://github.com/trey/books",
 	"name": "Books!",
 	"description": "A little, personal search engine homepage based on Blank2.",
-	"twitter": "trey",
-	"authoredBy": ["trey"],
+	"author": "trey",
 	"demo": "https://books.trey.cc"
 }
