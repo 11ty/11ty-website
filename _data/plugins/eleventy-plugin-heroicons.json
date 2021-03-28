@@ -1,0 +1,6 @@
+
+{
+  "npm": "eleventy-plugin-heroicons",
+  "author": "snmcp",
+  "description": "Shortcodes to add Heroicons to your Eleventy projects"
+}
