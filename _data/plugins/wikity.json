@@ -1,0 +1,5 @@
+{
+	"npm": "wikity",
+	"author": "Nixinova",
+	"description": "Wikitext as a templating language, with built-in Eleventy support."
+}
