@@ -2,6 +2,10 @@
 eleventyNavigation:
   key: Getting Started
   order: 2
+communityLinks:
+- url: https://www.learnwithjason.dev/lets-learn-eleventy
+  author: jlengstorf
+  title: "Learn With Jason"
 ---
 # Getting Started
 
@@ -87,7 +91,7 @@ Watching…
 [Browsersync] Serving files from: _site
 {% endcodewithprompt %}
 
-Go to `http://localhost:8080/` or `http://localhost:8080/README/` to see your Eleventy site live! Make a change to your template files and save them—Eleventy using BrowserSync will refresh the browser with your new changes automatically. 
+Go to `http://localhost:8080/` or `http://localhost:8080/README/` to see your Eleventy site live! Make a change to your template files and save them—Eleventy using BrowserSync will refresh the browser with your new changes automatically.
 
 {% callout "info" %}<strong>Important Note</strong>: Editing README.md won't refresh your browser automatically, because <a href="https://browsersync.io/docs/#requirements">Browsersync requires a <code>&lt;body&gt;</code> tag in your template</a> for live-reload to work properly. Use <a href="/docs/layouts/">Layouts</a> to add a <code>&lt;body&gt;</code> around your Markdown content.{% endcallout %}
 
