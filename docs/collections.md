@@ -67,10 +67,10 @@ Compare the `post.url` and special Eleventy-provided `page.url` variable to find
   <li{% if page.url == post.url %} aria-current="page"{% endif %}>{{ post.data.title }}</li>
 {%- endfor -%}
 </ul>
-
-Background: `aria-current="page"` tells assistive technology, such as screen readers, which page of a set of pages is the current active one. It also provides a hook for your CSS styling, using its attribute selector: `[aria-current="page"] {}`.
 ```
 {% endraw %}
+
+Background: `aria-current="page"` tells assistive technology, such as screen readers, which page of a set of pages is the current active one. It also provides a hook for your CSS styling, using its attribute selector: `[aria-current="page"] {}`.
 
 ## The Special `all` Collection
 
