@@ -9,7 +9,7 @@
       "url": "/img/avatars/opencollective/aaron-hans.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/aaron-hans.avif 90w",
-      "size": 1561
+      "size": 1347
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "url": "/img/avatars/opencollective/aaron-hans.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/aaron-hans.webp 90w",
-      "size": 2312
+      "size": 1990
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "url": "/img/avatars/opencollective/aaron-hans.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/aaron-hans.jpeg 90w",
-      "size": 2875
+      "size": 2590
     }
   ],
   "slug": "aaron-hans"

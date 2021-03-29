@@ -9,7 +9,7 @@
       "url": "/img/avatars/opencollective/kelson-vibber.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/kelson-vibber.avif 90w",
-      "size": 2359
+      "size": 2205
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "url": "/img/avatars/opencollective/kelson-vibber.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/kelson-vibber.webp 90w",
-      "size": 3462
+      "size": 3708
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "url": "/img/avatars/opencollective/kelson-vibber.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/kelson-vibber.jpeg 90w",
-      "size": 2199
+      "size": 2073
     }
   ],
   "slug": "kelson-vibber"
