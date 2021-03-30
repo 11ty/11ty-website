@@ -48,7 +48,7 @@ async function handler(event, context) {
       throw new Error(`Invalid \`url\`: ${url}`);
     }
 
-    let buffer = await screenshot(url, js);
+    let buffer = await screenshot(url, js !== "false");
 
     return {
       statusCode: 200,
