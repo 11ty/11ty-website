@@ -21,7 +21,7 @@ async function screenshot(url, withJs = true) {
   });
 
   const page = await browser.newPage();
-  await page.emulate(puppeteer.devices[DEVICE_NAME]);
+  // await page.emulate(chromium.puppeteer.devices[DEVICE_NAME]);
 
   if(!withJs) {
     page.setJavaScriptEnabled(false);
