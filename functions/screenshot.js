@@ -1,6 +1,5 @@
+const { builderFunction } = require("@netlify/functions");
 const chromium = require('chrome-aws-lambda');
-
-const DEVICE_NAME = 'iPad landscape';
 
 function isFullUrl(url) {
   try {
@@ -21,7 +20,6 @@ async function screenshot(url, withJs = true) {
   });
 
   const page = await browser.newPage();
-  // await page.emulate(chromium.puppeteer.devices[DEVICE_NAME]);
 
   if(!withJs) {
     page.setJavaScriptEnabled(false);
@@ -42,15 +40,15 @@ async function screenshot(url, withJs = true) {
 }
 
 // Based on https://github.com/DavidWells/netlify-functions-workshop/blob/master/lessons-code-complete/use-cases/13-returning-dynamic-images/functions/return-image.js
-exports.handler = async (event, context) => {
-  let { url } = event.queryStringParameters;
+async function handler(event, context) {
+  let { url, js } = event.queryStringParameters;
 
   try {
     if(!isFullUrl(url)) {
       throw new Error(`Invalid \`url\`: ${url}`);
     }
 
-    let buffer = await screenshot(url);
+    let buffer = await screenshot(url, js);
 
     return {
       statusCode: 200,
@@ -71,3 +69,5 @@ exports.handler = async (event, context) => {
     }
   }
 }
+
+exports.handler = builderFunction(handler);
