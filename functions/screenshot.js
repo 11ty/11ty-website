@@ -1,5 +1,4 @@
-const puppeteer = require("puppeteer");
-const eleventyImage = require("@11ty/eleventy-img");
+const chromium = require('chrome-aws-lambda');
 
 const DEVICE_NAME = 'iPad landscape';
 
@@ -14,7 +13,13 @@ function isFullUrl(url) {
 }
 
 async function screenshot(url, withJs = true) {
-  const browser = await puppeteer.launch();
+  const browser = await chromium.puppeteer.launch({
+      executablePath: await chromium.executablePath,
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      headless: chromium.headless,
+  });
+
   const page = await browser.newPage();
   await page.emulate(puppeteer.devices[DEVICE_NAME]);
 
@@ -33,34 +38,28 @@ async function screenshot(url, withJs = true) {
 
   await browser.close();
 
-  let metadata = await eleventyImage(buffer, {
-    sourceUrl: url,
-    formats: [format],
-    widths: [width],
-    dryRun: true,
-    cacheOptions: {
-      dryRun: true,
-    }
-  });
-
-  if(!metadata[format]) {
-    throw new Error(`Invalid \`format\`: ${format}`);
-  }
-
-  return metadata[format][0];
+  return buffer;
 }
 
 // Based on https://github.com/DavidWells/netlify-functions-workshop/blob/master/lessons-code-complete/use-cases/13-returning-dynamic-images/functions/return-image.js
 exports.handler = async (event, context) => {
   let { url } = event.queryStringParameters;
-  let source;
 
   try {
     if(!isFullUrl(url)) {
       throw new Error(`Invalid \`url\`: ${url}`);
     }
 
-    source = await screenshot(url);
+    let buffer = await screenshot(url);
+
+    return {
+      statusCode: 200,
+      headers: {
+        "content-type": "image/jpeg"
+      },
+      body: buffer.toString('base64'),
+      isBase64Encoded: true
+    }
   } catch (error) {
     console.log("Error", error);
 
@@ -70,14 +69,5 @@ exports.handler = async (event, context) => {
         error: error.message
       })
     }
-  }
-
-  return {
-    statusCode: 200,
-    headers: {
-      'content-type': source.sourceType
-    },
-    body: source.buffer.toString('base64'),
-    isBase64Encoded: true
   }
 }
