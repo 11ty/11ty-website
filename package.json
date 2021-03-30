@@ -51,6 +51,7 @@
     "@11ty/eleventy-navigation": "^0.1.6",
     "@11ty/eleventy-plugin-rss": "^1.1.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
+    "@netlify/functions": "^0.4.1",
     "clean-css": "4.2.3",
     "comma-number": "2.0.1",
     "dotenv": "8.2.0",
