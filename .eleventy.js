@@ -64,6 +64,8 @@ const shortcodes = {
 
 		return eleventyImage.generateHTML(stats, {
 			alt: `Screenshot of ${url}`,
+			loading: "lazy",
+			decoding: "async",
 			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
 			class: cls !== undefined ? cls : "sites-screenshot",
 		});
