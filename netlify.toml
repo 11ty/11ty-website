@@ -9,6 +9,12 @@
 	force = true
 
 [[redirects]]
+	from = "/screenshot/*"
+	to = "/.netlify/functions/screenshot"
+	status = 200
+	force = true
+
+[[redirects]]
 	from = "/docs/sites/"
 	to = "/speedlify/"
 	status = 301
