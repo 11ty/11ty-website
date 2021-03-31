@@ -56,7 +56,7 @@ const shortcodes = {
 
 		let imageEnv = !process.env.DEPLOY_PRIME_URL ? localhostEnv : "";
 		let options = {
-			formats: ["webp", "jpeg"],
+			formats: ["webp", "jpeg"], // we don’t use AVIF here because it was a little too slow!
 			widths: [600], // 260-440 in layout
 			urlFormat: function({ width, format }) {
 				return `${imageEnv}/api/image/?url=${encodeURIComponent(screenshotUrl)}&width=${width}&format=${format}`;
@@ -67,6 +67,8 @@ const shortcodes = {
 
 		return eleventyImage.generateHTML(stats, {
 			alt: `Screenshot of ${siteUrl}`,
+			loading: "lazy",
+			decoding: "async",
 			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
 			class: cls !== undefined ? cls : "sites-screenshot",
 			onerror: "let p=this.closest('picture');if(p){p.remove();}this.remove();"
