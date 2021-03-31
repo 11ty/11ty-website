@@ -56,8 +56,8 @@ const shortcodes = {
 
 		let imageEnv = !process.env.DEPLOY_PRIME_URL ? localhostEnv : "";
 		let options = {
-			formats: ["avif", "webp", "jpeg"],
-			widths: [300, 600], // 260-440 in layout
+			formats: ["webp", "jpeg"],
+			widths: [600], // 260-440 in layout
 			urlFormat: function({ width, format }) {
 				return `${imageEnv}/api/image/?url=${encodeURIComponent(screenshotUrl)}&width=${width}&format=${format}`;
 			}
