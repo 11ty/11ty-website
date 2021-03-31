@@ -69,6 +69,7 @@ const shortcodes = {
 			alt: `Screenshot of ${siteUrl}`,
 			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
 			class: cls !== undefined ? cls : "sites-screenshot",
+			onerror: "let p=this.closest('picture');if(p){p.remove();}this.remove();"
 		});
 	}
 };
