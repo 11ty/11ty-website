@@ -9,8 +9,14 @@
 	force = true
 
 [[redirects]]
-	from = "/screenshot/*"
+	from = "/api/screenshot/*"
 	to = "/.netlify/functions/screenshot"
+	status = 200
+	force = true
+
+[[redirects]]
+	from = "/api/image/*"
+	to = "/.netlify/functions/image"
 	status = 200
 	force = true
 
