@@ -24,7 +24,7 @@ async function handler(event, context) {
       format = "jpeg"
     }
 
-    let metadata = eleventyImage(url, {
+    let metadata = await eleventyImage(url, {
       formats: [format],
       widths: [parseInt(width, 10) || 600], // 260-440 in layout
       dryRun: true,
