@@ -20,8 +20,12 @@ async function handler(event, context) {
       throw new Error(`Invalid \`url\`: ${url}`);
     }
 
+    if(!format) {
+      format = "jpeg"
+    }
+
     let metadata = eleventyImage(url, {
-      formats: [format || "jpeg"],
+      formats: [format],
       widths: [parseInt(width, 10) || 600], // 260-440 in layout
       dryRun: true,
       cacheOptions: {
