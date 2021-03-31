@@ -55,7 +55,7 @@ async function handler(event, context) {
     let buffer = await screenshot(url, js !== "false");
     let metadata = eleventyImage(buffer, {
       formats: [format || "jpeg"],
-      widths: [width || 600], // 260-440 in layout
+      widths: [parseInt(width, 10) || 600], // 260-440 in layout
       dryRun: true,
       cacheOptions: {
         dryRun: true,
