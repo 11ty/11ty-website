@@ -49,21 +49,23 @@ const shortcodes = {
 			content +
 			(linkUrl ? `</a>` : "");
 	},
-	getScreenshotHtml: function(siteSlug, url, withJs, cls, sizes) {
+	getScreenshotHtml: function(siteSlug, siteUrl, withJs, cls, sizes) {
+		let env = process.env.DEPLOY_PRIME_URL || "https://fns-demo--11ty.netlify.app";
+		let screenshotUrl = `${env}/api/screenshot/?url=${encodeURIComponent(siteUrl)}${withJs ? "" : "&js=false"}`;
+
+
 		let options = {
 			formats: ["avif", "webp", "jpeg"],
 			widths: [300, 600], // 260-440 in layout
-			sourceUrl: url,
-			urlPath: "/img/sites/",
-			filenameFormat: function(id, src, width, format) {
-				return `${siteSlug}-${width}${withJs ? "-js" : ""}.${format}`;
+			urlFormat: function({ width, format }) {
+				return `${env}/api/image/?url=${encodeURIComponent(screenshotUrl)}&width=${width}&format=${format}`;
 			}
 		};
 
-		let stats = eleventyImage.statsSync(`./img/sites/${siteSlug}-600.jpeg`, options);
+		let stats = eleventyImage.statsByDimensionsSync(screenshotUrl, 1440, 900, options);
 
 		return eleventyImage.generateHTML(stats, {
-			alt: `Screenshot of ${url}`,
+			alt: `Screenshot of ${siteUrl}`,
 			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
 			class: cls !== undefined ? cls : "sites-screenshot",
 		});
