@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/ttntm/11ty-landing-page",
+	"name": "11ty landing page starter",
+	"description": "A simple landing page built with 11ty and Tailwind CSS.",
+	"author": "ttntm",
+	"demo": "https://awesome11ty.ttntm.me/"
+}
