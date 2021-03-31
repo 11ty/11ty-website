@@ -50,15 +50,16 @@ const shortcodes = {
 			(linkUrl ? `</a>` : "");
 	},
 	getScreenshotHtml: function(siteSlug, siteUrl, withJs, cls, sizes) {
-		let env = process.env.DEPLOY_PRIME_URL || "https://fns-demo--11ty.netlify.app";
-		let screenshotUrl = `${env}/api/screenshot/?url=${encodeURIComponent(siteUrl)}${withJs ? "" : "&js=false"}`;
+		let localhostEnv = "https://fns-demo--11ty.netlify.app";
+		let screenshotEnv = process.env.DEPLOY_PRIME_URL || localhostEnv;
+		let screenshotUrl = `${screenshotEnv}/api/screenshot/?url=${encodeURIComponent(siteUrl)}${withJs ? "" : "&js=false"}`;
 
-
+		let imageEnv = !process.env.DEPLOY_PRIME_URL ? localhostEnv : "";
 		let options = {
 			formats: ["avif", "webp", "jpeg"],
 			widths: [300, 600], // 260-440 in layout
 			urlFormat: function({ width, format }) {
-				return `${env}/api/image/?url=${encodeURIComponent(screenshotUrl)}&width=${width}&format=${format}`;
+				return `${imageEnv}/api/image/?url=${encodeURIComponent(screenshotUrl)}&width=${width}&format=${format}`;
 			}
 		};
 
