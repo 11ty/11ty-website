@@ -50,13 +50,15 @@ const shortcodes = {
 			(linkUrl ? `</a>` : "");
 	},
 	getScreenshotHtml: function(siteSlug, siteUrl, cls, sizes) {
-		let localhostEnv = "https://fns-demo--11ty.netlify.app";
+		// TODO revert to use the code that routed through /api/image/ postprocessing
+		let withJs = true;
 		let viewport = {
 			width: 420,
 			height: 580,
 		};
-		let withJs = true;
 
+		// TODO change this to master or something
+		let localhostEnv = "https://fns-demo--11ty.netlify.app";
 		let env = !process.env.DEPLOY_PRIME_URL ? localhostEnv : "";
 		let screenshotPath = `/api/screenshot/?w=${viewport.width}&h=${viewport.height}&url=${encodeURIComponent(siteUrl)}${withJs ? "" : "&js=false"}`;
 		let screenshotUrl = `${env}${screenshotPath}`;
