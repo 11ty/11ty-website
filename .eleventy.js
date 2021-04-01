@@ -52,8 +52,8 @@ const shortcodes = {
 	getScreenshotHtml: function(siteSlug, siteUrl, cls, sizes) {
 		let localhostEnv = "https://fns-demo--11ty.netlify.app";
 		let viewport = {
-			width: 360,
-			height: 520,
+			width: 420,
+			height: 580,
 		};
 		let withJs = true;
 
