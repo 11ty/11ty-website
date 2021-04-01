@@ -49,12 +49,13 @@ const shortcodes = {
 			content +
 			(linkUrl ? `</a>` : "");
 	},
-	getScreenshotHtml: function(siteSlug, siteUrl, withJs, cls, sizes) {
+	getScreenshotHtml: function(siteSlug, siteUrl, cls, sizes) {
 		let localhostEnv = "https://fns-demo--11ty.netlify.app";
 		let viewport = {
 			width: 360,
-			height: 640
+			height: 520,
 		};
+		let withJs = true;
 
 		let env = !process.env.DEPLOY_PRIME_URL ? localhostEnv : "";
 		let screenshotPath = `/api/screenshot/?w=${viewport.width}&h=${viewport.height}&url=${encodeURIComponent(siteUrl)}${withJs ? "" : "&js=false"}`;

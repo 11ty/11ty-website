@@ -34,7 +34,7 @@ layout: layouts/docs.njk
   {%- for site in person.sites %}
     {%- set jpegImgExists = ("/img/sites/" + site.fileSlug + "-300.jpeg") | fileExists %}
     {%- if jpegImgExists %}
-    <div class="lo-c"><a href="{{ site.url }}" class="elv-externalexempt">{%- getScreenshotHtml site.fileSlug, site.url, false, "", "80px" -%}</a></div>
+    <div class="lo-c"><a href="{{ site.url }}" class="elv-externalexempt">{%- getScreenshotHtml site.fileSlug, site.url, "", "80px" -%}</a></div>
     {%- endif %}
   {%- endfor %}
   </div>
