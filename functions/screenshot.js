@@ -11,14 +11,11 @@ function isFullUrl(url) {
   }
 }
 
-async function screenshot(url, withJs = true) {
+async function screenshot(url, viewportDimensions, withJs = true) {
   const browser = await chromium.puppeteer.launch({
       executablePath: await chromium.executablePath,
       args: chromium.args,
-      defaultViewport: { // Macbook 13″
-        width: 1440,
-        height: 900
-      },
+      defaultViewport: viewportDimensions,
       headless: chromium.headless,
   });
 
@@ -44,14 +41,19 @@ async function screenshot(url, withJs = true) {
 
 // Based on https://github.com/DavidWells/netlify-functions-workshop/blob/master/lessons-code-complete/use-cases/13-returning-dynamic-images/functions/return-image.js
 async function handler(event, context) {
-  let { url, js } = event.queryStringParameters;
+  let { url, js, w, h } = event.queryStringParameters;
 
   try {
     if(!isFullUrl(url)) {
       throw new Error(`Invalid \`url\`: ${url}`);
     }
 
-    let buffer = await screenshot(url, js !== "false");
+    let dims = {};
+    // defaults to Macbook 13″
+    dims.width = parseInt(w, 10) || 1440;
+    dims.height = parseInt(h, 10) || 900;
+
+    let buffer = await screenshot(url, dims, js !== "false");
 
     return {
       statusCode: 200,

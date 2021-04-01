@@ -51,19 +51,24 @@ const shortcodes = {
 	},
 	getScreenshotHtml: function(siteSlug, siteUrl, withJs, cls, sizes) {
 		let localhostEnv = "https://fns-demo--11ty.netlify.app";
-		let screenshotEnv = process.env.DEPLOY_PRIME_URL || localhostEnv;
-		let screenshotUrl = `${screenshotEnv}/api/screenshot/?url=${encodeURIComponent(siteUrl)}${withJs ? "" : "&js=false"}`;
+		let viewport = {
+			width: 360,
+			height: 640
+		};
 
-		let imageEnv = !process.env.DEPLOY_PRIME_URL ? localhostEnv : "";
+		let env = !process.env.DEPLOY_PRIME_URL ? localhostEnv : "";
+		let screenshotPath = `/api/screenshot/?w=${viewport.width}&h=${viewport.height}&url=${encodeURIComponent(siteUrl)}${withJs ? "" : "&js=false"}`;
+		let screenshotUrl = `${env}${screenshotPath}`;
+
 		let options = {
-			formats: ["webp", "jpeg"], // we don’t use AVIF here because it was a little too slow!
-			widths: [600], // 260-440 in layout
-			urlFormat: function({ width, format }) {
-				return `${imageEnv}/api/image/?url=${encodeURIComponent(screenshotUrl)}&width=${width}&format=${format}`;
+			formats: ["jpeg"], // we don’t use AVIF here because it was a little too slow!
+			widths: [null], // 260-440 in layout
+			urlFormat: function() {
+				return screenshotUrl;
 			}
 		};
 
-		let stats = eleventyImage.statsByDimensionsSync(screenshotUrl, 1440, 900, options);
+		let stats = eleventyImage.statsByDimensionsSync(screenshotUrl, viewport.width, viewport.height, options);
 
 		return eleventyImage.generateHTML(stats, {
 			alt: `Screenshot of ${siteUrl}`,
