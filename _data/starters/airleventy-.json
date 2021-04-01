@@ -1,0 +1,6 @@
+{
+	"url": "https://github.com/geotrev/airleventy",
+	"name": "airleventy",
+	"description": "Build static websites with 11ty, Sass for CSS, and modern JavaScript.",
+	"demo": "https://airleventy.netlify.app"
+}
