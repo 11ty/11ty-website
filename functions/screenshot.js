@@ -46,6 +46,8 @@ async function handler(event, context) {
   let [,, url, dimensions] = pathSplit;
   let [w, h] = dimensions.split("x");
 
+  url = decodeURIComponent(url);
+
   try {
     if(!isFullUrl(url)) {
       throw new Error(`Invalid \`url\`: ${url}`);
