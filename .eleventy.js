@@ -58,9 +58,9 @@ const shortcodes = {
 		};
 
 		// TODO change this to master or something
-		let localhostEnv = "https://fns-demo--11ty.netlify.app";
+		let localhostEnv = "https://fns-demo-redirect--11ty.netlify.app";
 		let env = !process.env.DEPLOY_PRIME_URL ? localhostEnv : "";
-		let screenshotPath = `/api/screenshot/?w=${viewport.width}&h=${viewport.height}&url=${encodeURIComponent(siteUrl)}${withJs ? "" : "&js=false"}`;
+		let screenshotPath = `/api/screenshot/${encodeURIComponent(siteUrl)}/${viewport.width}x${viewport.height}/`;
 		let screenshotUrl = `${env}${screenshotPath}`;
 
 		let options = {
