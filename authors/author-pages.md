@@ -1,18 +1,12 @@
 ---
-eleventyNavigation:
-  parent: Eleventy Authors
-  key: Eleventy Author
-excludeFromSidebar: true
-pagination:
-  data: authors
-  size: 1
-  resolve: values
-  alias: author
 layout: layouts/docs.njk
-permalink: "/authors/{{ author.name | slug }}/"
+permalink:
+  cloud: "/authors/:slug/"
+eleventyExcludeFromCollections: true
 css:
   - components/page-sites.css
 ---
+{%- set author = authors[params.path.slug] %}
 {%- set twitterUrl = "https://twitter.com/" + author.name %}
 {%- set supporter = opencollective.supporters | findBy("twitter", author.name) | last -%}
 {%- set displayName = supporter.name or author.name %}

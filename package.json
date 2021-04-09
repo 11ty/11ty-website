@@ -14,7 +14,7 @@
     "deploy": "eleventy && ./deploy.sh",
     "build": "eleventy",
     "start": "eleventy --serve",
-    "build-production": "node node-avatars-opencollective && ELEVENTY_PRODUCTION=true eleventy",
+    "build-production": "./bundle.sh && node node-avatars-opencollective && ELEVENTY_PRODUCTION=true eleventy",
     "get-new-supporters": "eleventy && node node-supporters",
     "get-new-avatars": "node node-avatars-opencollective && node node-avatars-twitter",
     "format": "prettier --write '**/*.{js,css,html,md}'"
@@ -44,7 +44,7 @@
     ]
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy": "^1.0.0-canary.12",
     "@11ty/eleventy-cache-assets": "^2.1.0",
     "@11ty/eleventy-img": "^0.8.3",
     "@11ty/eleventy-navigation": "^0.1.6",
@@ -73,7 +73,8 @@
     "sorted-object": "2.0.1",
     "tap-spot": "1.1.1",
     "terser": "4.6.7",
-    "twitter-avatar-url": "^2.0.3"
+    "twitter-avatar-url": "^2.0.3",
+    "url-pattern": "^1.0.3"
   },
   "dependencies": {
     "@11ty/logo": "2.0.4",
