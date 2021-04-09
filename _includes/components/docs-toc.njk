@@ -5,7 +5,7 @@
 	{%- if eleventyNavigation -%}
 		{%- set navKey = eleventyNavigation.key -%}
 	{%- endif -%}
-	{{ collections.sidebarNav | eleventyNavigation | eleventyNavigationToHtml({ activeKey: navKey, listClass: 'elv-toc-list', activeListItemClass: 'elv-toc-active' }) | safe }}
+	{{ cachedNavigation or collections.sidebarNav | eleventyNavigation | eleventyNavigationToHtml({ activeKey: navKey, listClass: 'elv-toc-list', activeListItemClass: 'elv-toc-active' }) | safe }}
 </details>
 
 </div>
