@@ -44,7 +44,7 @@
     ]
   },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0-canary.12",
+    "@11ty/eleventy": "^1.0.0-canary.13",
     "@11ty/eleventy-cache-assets": "^2.1.0",
     "@11ty/eleventy-img": "^0.8.3",
     "@11ty/eleventy-navigation": "^0.1.6",

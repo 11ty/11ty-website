@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const debug = require("debug");
 const walker = require("walker");
-// debug.enable("Eleventy:TemplateConfig");
+debug.enable("Eleventy:TemplateConfig");
 
 const UrlPattern = require("url-pattern");
 const { builderFunction } = require("@netlify/functions");
@@ -63,7 +63,7 @@ function matchUrlPattern(map, path) {
 
 async function getEleventyOutput(projectDir, lambdaPath, queryParams) {
   let inputDir = path.join(projectDir, "src");
-  let configPath = path.join(".", ".eleventy.js");
+  let configPath = path.join(projectDir, "eleventy.config.js");
   console.log( "Current dir:", process.cwd() );
   console.log( "Project dir:", projectDir );
   console.log( "Input dir:", inputDir );
