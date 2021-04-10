@@ -49,7 +49,7 @@ async function getEleventyOutput(rootDir, lambdaPath, queryParams) {
 
   process.env.ELEVENTY_CLOUD = true;
 
-  // debug.enable("Eleventy*");
+  debug.enable("Eleventy*");
   let elev = new Eleventy(inputPath, null, {
     config: function(eleventyConfig) {
       // Add the params to Global Data
