@@ -14,8 +14,6 @@ cp -R ./config ./netlify/functions/cloud/
 # Use -v to see what copies
 # Build files
 cp -R ./src ./netlify/functions/cloud/
-
-mkdir -p ./netlify/functions/cloud/node_modules/@11ty/logo/img/
-cp ./node_modules/@11ty/logo/img/logo.svg ./netlify/functions/cloud/node_modules/@11ty/logo/img/logo.svg
+rm -rf ./netlify/functions/cloud/src/img/avatars/
 
 echo "Finished copying"
