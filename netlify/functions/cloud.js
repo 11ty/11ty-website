@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const debug = require("debug");
-debug.enable("*");
+debug.enable("Eleventy:TemplateConfig");
 
 const UrlPattern = require("url-pattern");
 const { builderFunction } = require("@netlify/functions");
@@ -41,10 +41,12 @@ function matchUrlPattern(map, path) {
 
 async function getEleventyOutput(projectDir, lambdaPath, queryParams) {
   let inputDir = path.join(projectDir, "src");
+  let configPath = path.join(".", ".eleventy.js");
   console.log( "Current dir:", process.cwd() );
   console.log( "Project dir:", projectDir );
   console.log( "Input dir:", inputDir );
   console.log( "Requested URL: ", lambdaPath );
+  console.log( "Config path: ", configPath );
 
   let contentMap = require(path.join(projectDir, "map.json"));
 
@@ -55,6 +57,7 @@ async function getEleventyOutput(projectDir, lambdaPath, queryParams) {
   process.env.ELEVENTY_CLOUD = true;
 
   let elev = new Eleventy(inputPath, null, {
+    configPath,
     config: function(eleventyConfig) {
       // Add the params to Global Data
       eleventyConfig.addGlobalData("params", {
