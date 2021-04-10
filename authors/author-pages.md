@@ -1,4 +1,7 @@
 ---
+#eleventyNavigation:
+#  parent: Eleventy Authors
+#  key: Eleventy Author
 layout: layouts/docs.njk
 permalink:
   cloud: "/authors/:slug/"

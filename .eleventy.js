@@ -6,6 +6,7 @@ const loadLanguages = require("prismjs/components/");
 const slugify = require("slugify");
 const fs = require("fs-extra");
 const lodashGet = require("lodash/get");
+const shortHash = require("short-hash");
 
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
@@ -178,19 +179,9 @@ ${text.trim()}
 	eleventyConfig.addPassthroughCopy("news/*.png");
 	eleventyConfig.addPassthroughCopy("favicon.ico");
 
-	eleventyConfig.addFilter("findHash", function(speedlifyUrls, ...urls) {
-		for(let url of urls) {
-			if(!url) {
-				continue;
-			}
-
-			// keys in speedlifyUrls are requestedUrl not final URLs
-			if(speedlifyUrls[url]) {
-				return speedlifyUrls[url].hash;
-			} else if(!url.endsWith("/") && speedlifyUrls[`${url}/`]) {
-				return speedlifyUrls[`${url}/`].hash;
-			}
-		}
+	eleventyConfig.addFilter("speedlifyHash", function(url) {
+		// note that this will fail _sometimes_ because these are requestedUrl and not final URLs (speedlify uses final URLs for hashing)
+		return shortHash(url);
 	});
 
 	eleventyConfig.addFilter("fileExists", function(url) {

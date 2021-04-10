@@ -2,18 +2,22 @@ const CacheAsset = require("@11ty/eleventy-cache-assets");
 const fastglob = require("fast-glob");
 
 module.exports = async function() {
+	let returnData = {
+		urls: {},
+		data: {}
+	};
+
+	if(process.env.ELEVENTY_CLOUD) {
+		return returnData;
+	}
+
 	let url = "https://www.speedlify.dev/api/urls.json";
 	let urlsJson = await CacheAsset(url, {
 		duration: "1d",
 		type: "json",
-		dryRun: process.env.ELEVENTY_CLOUD ? true : false,
-		directory: process.env.ELEVENTY_CLOUD ? "/tmp/.cache/" : ".cache/",
 	});
 
-	let returnData = {
-		urls: urlsJson,
-		data: {}
-	};
+	returnData.urls = urlsJson;
 
 	let starters = await fastglob("./_data/starters/*.json", {
 		caseSensitiveMatch: false
@@ -27,8 +31,6 @@ module.exports = async function() {
 			let data = await CacheAsset(`https://www.speedlify.dev/api/${urlLookup.hash}.json`, {
 				duration: process.env.ELEVENTY_PRODUCTION ? "1d" : "*",
 				type: "json",
-				dryRun: process.env.ELEVENTY_CLOUD ? true : false,
-				directory: process.env.ELEVENTY_CLOUD ? "/tmp/.cache/" : ".cache/",
 			});
 			data.hash = urlLookup.hash;
 			returnData.data[siteData.demo || siteData.url] = data;

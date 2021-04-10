@@ -31,7 +31,7 @@ function matchUrlPattern(map, path) {
       return {
         pathParams: result,
         inputPath: map[url]
-      }
+      };
     }
   }
   throw new Error(`No matching URL found for ${path} in ${JSON.stringify(map)}`);
@@ -43,9 +43,11 @@ async function getEleventyOutput(rootDir, lambdaPath, queryParams) {
     inputDir = rootDir;
   }
   let contentMap = require(path.join(rootDir, "map.json"));
-  console.log( "path: ", lambdaPath );
 
+  console.log( "path: ", lambdaPath );
   let { pathParams, inputPath } = matchUrlPattern(contentMap, lambdaPath);
+  console.log( "Path params: ", pathParams );
+  console.log( "Input path: ", inputPath );
 
   process.env.ELEVENTY_CLOUD = true;
 

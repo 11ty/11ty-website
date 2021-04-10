@@ -4,7 +4,7 @@
   "description": "The website of 11ty.dev",
   "main": "_site/index.html",
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "scripts": {
     "assets": "cp node_modules/@11ty/logo/logo.png .",
@@ -69,6 +69,7 @@
     "puppeteer-core": "^8.0.0",
     "semver": "7.3.4",
     "sharp": "0.27.0",
+    "short-hash": "^1.0.0",
     "slugify": "1.4.7",
     "sorted-object": "2.0.1",
     "tap-spot": "1.1.1",

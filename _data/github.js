@@ -6,7 +6,6 @@ module.exports = async function() {
 		let json = await Cache("https://api.github.com/repos/11ty/eleventy", {
 			duration: "1d",
 			type: "json",
-			dryRun: process.env.ELEVENTY_CLOUD ? true : false,
 			directory: process.env.ELEVENTY_CLOUD ? "/tmp/.cache/" : ".cache/",
 		});
 

@@ -6,7 +6,6 @@ module.exports = async function() {
 		let css = await Cache("https://fonts.googleapis.com/css?family=Roboto+Mono:400&display=swap", {
 			duration: "1d",
 			type: "text",
-			dryRun: process.env.ELEVENTY_CLOUD ? true : false,
 			directory: process.env.ELEVENTY_CLOUD ? "/tmp/.cache/" : ".cache/",
 			fetchOptions: {
 				headers: {
