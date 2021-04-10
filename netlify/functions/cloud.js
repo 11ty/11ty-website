@@ -1,9 +1,9 @@
 const path = require("path");
 const fs = require("fs");
-const Eleventy = require("@11ty/eleventy");
+const debug = require("debug");
 const UrlPattern = require("url-pattern");
 // const { builderFunction } = require("@netlify/functions");
-const debug = require("debug");
+const Eleventy = require("@11ty/eleventy");
 
 // For the bundler
 const Cache = require("@11ty/eleventy-cache-assets");
@@ -41,9 +41,12 @@ async function getEleventyOutput(rootDir, lambdaPath, queryParams) {
   debug.enable("Eleventy*");
 
   let inputDir = path.join(rootDir, "src");
+  console.log( "Root dir:", rootDir );
+  console.log( "Input dir:", inputDir );
+  console.log( "Requested URL: ", lambdaPath );
+
   let contentMap = require(path.join(rootDir, "map.json"));
 
-  console.log( "path: ", lambdaPath );
   let { pathParams, inputPath } = matchUrlPattern(contentMap, lambdaPath);
   console.log( "Path params: ", pathParams );
   console.log( "Input path: ", inputPath );
@@ -91,7 +94,7 @@ async function handler (event, context) {
       },
       body: await getEleventyOutput(rootDir, event.path, event.queryStringParameters),
       isBase64Encoded: false
-    }
+    };
   } catch (error) {
     console.log("Error", error);
 
@@ -100,7 +103,7 @@ async function handler (event, context) {
       body: JSON.stringify({
         error: error.message
       })
-    }
+    };
   }
 }
 
