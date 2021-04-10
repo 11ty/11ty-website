@@ -7,6 +7,7 @@ module.exports = async function() {
 		duration: "1d",
 		type: "json",
 		dryRun: process.env.ELEVENTY_CLOUD ? true : false,
+		directory: process.env.ELEVENTY_CLOUD ? "/tmp/.cache/" : ".cache/",
 	});
 
 	let returnData = {
@@ -26,6 +27,8 @@ module.exports = async function() {
 			let data = await CacheAsset(`https://www.speedlify.dev/api/${urlLookup.hash}.json`, {
 				duration: process.env.ELEVENTY_PRODUCTION ? "1d" : "*",
 				type: "json",
+				dryRun: process.env.ELEVENTY_CLOUD ? true : false,
+				directory: process.env.ELEVENTY_CLOUD ? "/tmp/.cache/" : ".cache/",
 			});
 			data.hash = urlLookup.hash;
 			returnData.data[siteData.demo || siteData.url] = data;

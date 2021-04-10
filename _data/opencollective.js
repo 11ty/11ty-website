@@ -38,6 +38,7 @@ module.exports = async function() {
 			duration: process.env.ELEVENTY_AVATARS ? "0s" : "1d",
 			type: "json",
 			dryRun: process.env.ELEVENTY_CLOUD ? true : false,
+			directory: process.env.ELEVENTY_CLOUD ? "/tmp/.cache/" : ".cache/",
 		});
 
 		// if(process.env.ELEVENTY_PRODUCTION) {
