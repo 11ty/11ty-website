@@ -38,6 +38,8 @@ function matchUrlPattern(map, path) {
 }
 
 async function getEleventyOutput(rootDir, lambdaPath, queryParams) {
+  debug.enable("Eleventy*");
+
   let inputDir = path.join(rootDir, "src");
   let contentMap = require(path.join(rootDir, "map.json"));
 
@@ -47,8 +49,6 @@ async function getEleventyOutput(rootDir, lambdaPath, queryParams) {
   console.log( "Input path: ", inputPath );
 
   process.env.ELEVENTY_CLOUD = true;
-
-  debug.enable("Eleventy*");
 
   let elev = new Eleventy(inputPath, null, {
     config: function(eleventyConfig) {
