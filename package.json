@@ -75,7 +75,8 @@
     "tap-spot": "1.1.1",
     "terser": "4.6.7",
     "twitter-avatar-url": "^2.0.3",
-    "url-pattern": "^1.0.3"
+    "url-pattern": "^1.0.3",
+    "walker": "^1.0.7"
   },
   "dependencies": {
     "@11ty/logo": "2.0.4",

@@ -1,7 +1,8 @@
 const path = require("path");
 const fs = require("fs");
 const debug = require("debug");
-debug.enable("Eleventy:TemplateConfig");
+const walker = require("walker");
+// debug.enable("Eleventy:TemplateConfig");
 
 const UrlPattern = require("url-pattern");
 const { builderFunction } = require("@netlify/functions");
@@ -9,6 +10,23 @@ const Eleventy = require("@11ty/eleventy");
 
 // For the bundler
 const Cache = require("@11ty/eleventy-cache-assets");
+
+function showFileSystem() {
+  console.log( "Walking the file system" );
+  walker(process.cwd())
+    .on('dir', function(dir, stat) {
+      console.log('Got directory: ' + dir)
+    })
+    .on('file', function(file, stat) {
+      console.log('Got file: ' + file)
+    })
+    .on('error', function(er, entry, stat) {
+      console.log('Got error ' + er + ' on entry ' + entry)
+    })
+    .on('end', function() {
+      console.log('All files traversed.')
+    });
+}
 
 function getProjectDir() {
   let paths = [
@@ -88,6 +106,8 @@ async function getEleventyOutput(projectDir, lambdaPath, queryParams) {
 
 async function handler (event, context) {
   try {
+    showFileSystem();
+
     let projectDir = getProjectDir();
     if(projectDir.startsWith("/var/task/")) {
       process.chdir(projectDir);
