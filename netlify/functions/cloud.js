@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const Eleventy = require("@11ty/eleventy");
 const UrlPattern = require("url-pattern");
-const { builderFunction } = require("@netlify/functions");
+// const { builderFunction } = require("@netlify/functions");
 const debug = require("debug");
 
 // For the bundler
@@ -104,4 +104,5 @@ async function handler (event, context) {
   }
 }
 
-exports.handler = builderFunction(handler);
+// exports.handler = builderFunction(handler);
+exports.handler = handler;
