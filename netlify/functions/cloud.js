@@ -1,16 +1,16 @@
 const path = require("path");
 const fs = require("fs");
 const debug = require("debug");
-debug.enable("*");
+// debug.enable("*");
 
 const UrlPattern = require("url-pattern");
-// const { builderFunction } = require("@netlify/functions");
+const { builderFunction } = require("@netlify/functions");
 const Eleventy = require("@11ty/eleventy");
 
 // For the bundler
 const Cache = require("@11ty/eleventy-cache-assets");
 
-function getRootDir() {
+function getProjectDir() {
   let paths = [
     // /var/task/src/netlify/functions/cloud/src/
     path.join(process.cwd(), `netlify/functions/cloud/`), // on netlify dev
@@ -39,14 +39,14 @@ function matchUrlPattern(map, path) {
   throw new Error(`No matching URL found for ${path} in ${JSON.stringify(map)}`);
 }
 
-async function getEleventyOutput(rootDir, lambdaPath, queryParams) {
-  let inputDir = path.join(rootDir, "src");
+async function getEleventyOutput(projectDir, lambdaPath, queryParams) {
+  let inputDir = path.join(projectDir, "src");
   console.log( "Current dir:", process.cwd() );
-  console.log( "Root dir:", rootDir );
+  console.log( "Project dir:", projectDir );
   console.log( "Input dir:", inputDir );
   console.log( "Requested URL: ", lambdaPath );
 
-  let contentMap = require(path.join(rootDir, "map.json"));
+  let contentMap = require(path.join(projectDir, "map.json"));
 
   let { pathParams, inputPath } = matchUrlPattern(contentMap, lambdaPath);
   console.log( "Path params: ", pathParams );
@@ -85,7 +85,10 @@ async function getEleventyOutput(rootDir, lambdaPath, queryParams) {
 
 async function handler (event, context) {
   try {
-    let rootDir = getRootDir();
+    let projectDir = getProjectDir();
+    if(projectDir.startsWith("/var/task/")) {
+      process.chdir(projectDir);
+    }
     // console.log( event );
 
     return {
@@ -93,7 +96,7 @@ async function handler (event, context) {
       headers: {
         "content-type": "text/html; charset=UTF-8"
       },
-      body: await getEleventyOutput(rootDir, event.path, event.queryStringParameters),
+      body: await getEleventyOutput(projectDir, event.path, event.queryStringParameters),
       isBase64Encoded: false
     };
   } catch (error) {
@@ -108,5 +111,5 @@ async function handler (event, context) {
   }
 }
 
-// exports.handler = builderFunction(handler);
-exports.handler = handler;
+// exports.handler = handler;
+exports.handler = builderFunction(handler);
