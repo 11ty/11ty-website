@@ -5,6 +5,9 @@ const UrlPattern = require("url-pattern");
 const { builderFunction } = require("@netlify/functions");
 const debug = require("debug");
 
+// For the bundler
+const Cache = require("@11ty/eleventy-cache-assets");
+
 function getRootDir() {
   let paths = [
     // /var/task/src/netlify/functions/cloud/src/

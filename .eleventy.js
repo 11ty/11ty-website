@@ -12,9 +12,6 @@ const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const eleventyImage = require("@11ty/eleventy-img");
 
-// For Eleventy Cloud bundler
-const Cache = require("@11ty/eleventy-cache-assets");
-
 const monthDiffPlugin = require("./config/monthDiff");
 const addedInLocalPlugin = require("./config/addedin");
 const minificationLocalPlugin = require("./config/minification");
