@@ -8,8 +8,24 @@ const UrlPattern = require("url-pattern");
 const { builderFunction } = require("@netlify/functions");
 const Eleventy = require("@11ty/eleventy");
 
-// For the bundler
+// For the bundler: Global Data
 const Cache = require("@11ty/eleventy-cache-assets");
+
+// For the bundler: Config file
+const { DateTime } = require("luxon");
+const HumanReadable = require("human-readable-numbers");
+const commaNumber = require("comma-number");
+const markdownIt = require("markdown-it");
+const loadLanguages = require("prismjs/components/");
+const slugify = require("slugify");
+const fs = require("fs-extra");
+const lodashGet = require("lodash/get");
+const shortHash = require("short-hash");
+
+const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
+const navigationPlugin = require("@11ty/eleventy-navigation");
+const rssPlugin = require("@11ty/eleventy-plugin-rss");
+const eleventyImage = require("@11ty/eleventy-img");
 
 function showFileSystem() {
   console.log( "Walking the file system" );
