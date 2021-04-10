@@ -1,6 +1,8 @@
 const path = require("path");
 const fs = require("fs");
 const debug = require("debug");
+debug.enable("*");
+
 const UrlPattern = require("url-pattern");
 // const { builderFunction } = require("@netlify/functions");
 const Eleventy = require("@11ty/eleventy");
@@ -38,8 +40,6 @@ function matchUrlPattern(map, path) {
 }
 
 async function getEleventyOutput(rootDir, lambdaPath, queryParams) {
-  debug.enable("Eleventy*");
-
   let inputDir = path.join(rootDir, "src");
   console.log( "Root dir:", rootDir );
   console.log( "Input dir:", inputDir );
