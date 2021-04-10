@@ -1,8 +1,7 @@
 const path = require("path");
 // const fs = require("fs");
 const debug = require("debug");
-const walker = require("walker");
-debug.enable("Eleventy:TemplateConfig");
+// debug.enable("Eleventy:TemplateConfig");
 
 const UrlPattern = require("url-pattern");
 const { builderFunction } = require("@netlify/functions");
@@ -33,26 +32,6 @@ const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const eleventyImage = require("@11ty/eleventy-img");
 
-function showFileSystem() {
-  console.log( "Walking the file system" );
-  walker(process.cwd())
-    .on('dir', function(dir, stat) {
-      if(dir.endsWith("/node_modules/") || dir.indexOf("/node_modules/") === -1) {
-        console.log('Directory: ' + dir)
-      }
-    })
-    .on('file', function(file, stat) {
-      if(file.indexOf("/node_modules/") === -1) {
-        console.log('File: ' + file)
-      }
-    })
-    .on('error', function(er, entry, stat) {
-      console.log('Error ' + er + ' on entry ' + entry)
-    })
-    .on('end', function() {
-      console.log('Finished walking file system')
-    });
-}
 
 function getProjectDir() {
   let paths = [
@@ -133,8 +112,6 @@ async function getEleventyOutput(projectDir, lambdaPath, queryParams) {
 
 async function handler (event, context) {
   try {
-    showFileSystem();
-
     let projectDir = getProjectDir();
     if(projectDir.startsWith("/var/task/")) {
       process.chdir(projectDir);
@@ -163,3 +140,11 @@ async function handler (event, context) {
 
 // exports.handler = handler;
 exports.handler = builderFunction(handler);
+
+// For local testing
+// (async function() {
+//   let projectDir = path.join(process.cwd(), "netlify/functions/cloud/");
+//   let content = await getEleventyOutput(projectDir, "/authors/smthdotuk/");
+//   console.log( content.length, content.substr(0, 500) );
+//   // console.log( content );
+// })();
