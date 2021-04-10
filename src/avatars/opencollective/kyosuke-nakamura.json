@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "kyosuke-nakamura.avif",
+      "outputPath": "src/img/avatars/opencollective/kyosuke-nakamura.avif",
+      "url": "/img/avatars/opencollective/kyosuke-nakamura.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/kyosuke-nakamura.avif 90w",
+      "size": 860
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "kyosuke-nakamura.webp",
+      "outputPath": "src/img/avatars/opencollective/kyosuke-nakamura.webp",
+      "url": "/img/avatars/opencollective/kyosuke-nakamura.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/kyosuke-nakamura.webp 90w",
+      "size": 1170
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "kyosuke-nakamura.jpeg",
+      "outputPath": "src/img/avatars/opencollective/kyosuke-nakamura.jpeg",
+      "url": "/img/avatars/opencollective/kyosuke-nakamura.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/kyosuke-nakamura.jpeg 90w",
+      "size": 1934
+    }
+  ],
+  "slug": "kyosuke-nakamura"
+}

@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 96,
+      "filename": "softiron.avif",
+      "outputPath": "src/img/avatars/opencollective/softiron.avif",
+      "url": "/img/avatars/opencollective/softiron.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/softiron.avif 90w",
+      "size": 1759
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 96,
+      "filename": "softiron.webp",
+      "outputPath": "src/img/avatars/opencollective/softiron.webp",
+      "url": "/img/avatars/opencollective/softiron.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/softiron.webp 90w",
+      "size": 2922
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 96,
+      "filename": "softiron.jpeg",
+      "outputPath": "src/img/avatars/opencollective/softiron.jpeg",
+      "url": "/img/avatars/opencollective/softiron.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/softiron.jpeg 90w",
+      "size": 1858
+    }
+  ],
+  "slug": "softiron"
+}

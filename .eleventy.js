@@ -33,7 +33,7 @@ const shortcodes = {
 		slug = cleanName(slug).toLowerCase();
 
 		try {
-			let mapEntry = Object.assign({}, require(`./avatars/${datasource}/${slug}.json`));
+			let mapEntry = Object.assign({}, require(`./src/avatars/${datasource}/${slug}.json`));
 			delete mapEntry.slug; // dunno why the slug is saved here ok bye
 
 			return eleventyImage.generateHTML(mapEntry, {
@@ -172,12 +172,11 @@ ${text.trim()}
 		"node_modules/@11ty/logo/img/logo-96x96.png": "img/favicon.png"
 	});
 
-	eleventyConfig.addPassthroughCopy("_redirects");
 	eleventyConfig.addPassthroughCopy("netlify-email");
 	// eleventyConfig.addPassthroughCopy("css/fonts"); // these are inline now
-	eleventyConfig.addPassthroughCopy("img"); // WARN: over 2000 items in here from generated avatars
-	eleventyConfig.addPassthroughCopy("news/*.png");
-	eleventyConfig.addPassthroughCopy("favicon.ico");
+	eleventyConfig.addPassthroughCopy("src/img"); // WARN: over 2000 items in here from generated avatars
+	eleventyConfig.addPassthroughCopy("src/news/*.png");
+	eleventyConfig.addPassthroughCopy("src/favicon.ico");
 
 	eleventyConfig.addFilter("speedlifyHash", function(url) {
 		// note that this will fail _sometimes_ because these are requestedUrl and not final URLs (speedlify uses final URLs for hashing)
@@ -582,6 +581,11 @@ ${text.trim()}
 	} // end of Eleventy Cloud plugin
 
 	return {
+		dir: {
+			input: "src",
+			output: "_site",
+			data: "_data",
+		},
 		templateFormats: ["html", "njk", "md", "11ty.js"],
 		markdownTemplateEngine: "njk",
 		htmlTemplateEngine: "njk",

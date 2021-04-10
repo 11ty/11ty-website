@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "kajino-bitcoin.avif",
+      "outputPath": "src/img/avatars/opencollective/kajino-bitcoin.avif",
+      "url": "/img/avatars/opencollective/kajino-bitcoin.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/kajino-bitcoin.avif 90w",
+      "size": 692
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "kajino-bitcoin.webp",
+      "outputPath": "src/img/avatars/opencollective/kajino-bitcoin.webp",
+      "url": "/img/avatars/opencollective/kajino-bitcoin.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/kajino-bitcoin.webp 90w",
+      "size": 824
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "kajino-bitcoin.jpeg",
+      "outputPath": "src/img/avatars/opencollective/kajino-bitcoin.jpeg",
+      "url": "/img/avatars/opencollective/kajino-bitcoin.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/kajino-bitcoin.jpeg 90w",
+      "size": 1388
+    }
+  ],
+  "slug": "kajino-bitcoin"
+}

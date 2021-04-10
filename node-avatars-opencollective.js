@@ -14,7 +14,7 @@ async function fetch(name, opencollectUsername, imageUrl, website) {
 
   // TODO bail if the website pathname is a deep path?
 
-  let dir = `./avatars/opencollective/`;
+  let dir = `./src/avatars/opencollective/`;
   await fs.ensureDir(dir);
 
   // if website exists but no avatar image exists, try to find based on website hostname
@@ -34,7 +34,7 @@ async function fetch(name, opencollectUsername, imageUrl, website) {
       formats: ["avif", "webp", "jpeg"],
       widths: [90],
       urlPath: "/img/avatars/opencollective/",
-      outputDir: "img/avatars/opencollective/",
+      outputDir: "./src/img/avatars/opencollective/",
       cacheOptions: {
         duration: "1d",
       },
@@ -54,9 +54,8 @@ async function fetch(name, opencollectUsername, imageUrl, website) {
 
 (async function() {
   let promises = [];
-  let avatarPaths = {};
 
-  let getOpenCollectiveData = require("./_data/opencollective");
+  let getOpenCollectiveData = require("./src/_data/opencollective");
   let opencollective = await getOpenCollectiveData();
 
   for(let supporter of opencollective.supporters) {

@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "yuhei-yasuda.avif",
+      "outputPath": "src/img/avatars/opencollective/yuhei-yasuda.avif",
+      "url": "/img/avatars/opencollective/yuhei-yasuda.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/yuhei-yasuda.avif 90w",
+      "size": 982
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "yuhei-yasuda.webp",
+      "outputPath": "src/img/avatars/opencollective/yuhei-yasuda.webp",
+      "url": "/img/avatars/opencollective/yuhei-yasuda.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/yuhei-yasuda.webp 90w",
+      "size": 1118
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "yuhei-yasuda.jpeg",
+      "outputPath": "src/img/avatars/opencollective/yuhei-yasuda.jpeg",
+      "url": "/img/avatars/opencollective/yuhei-yasuda.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/yuhei-yasuda.jpeg 90w",
+      "size": 1785
+    }
+  ],
+  "slug": "yuhei-yasuda"
+}

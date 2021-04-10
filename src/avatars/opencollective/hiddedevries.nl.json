@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "hiddedevries.nl.avif",
+      "outputPath": "src/img/avatars/opencollective/hiddedevries.nl.avif",
+      "url": "/img/avatars/opencollective/hiddedevries.nl.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/hiddedevries.nl.avif 90w",
+      "size": 734
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "hiddedevries.nl.webp",
+      "outputPath": "src/img/avatars/opencollective/hiddedevries.nl.webp",
+      "url": "/img/avatars/opencollective/hiddedevries.nl.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/hiddedevries.nl.webp 90w",
+      "size": 820
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "hiddedevries.nl.jpeg",
+      "outputPath": "src/img/avatars/opencollective/hiddedevries.nl.jpeg",
+      "url": "/img/avatars/opencollective/hiddedevries.nl.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/hiddedevries.nl.jpeg 90w",
+      "size": 1485
+    }
+  ],
+  "slug": "hiddedevries.nl"
+}

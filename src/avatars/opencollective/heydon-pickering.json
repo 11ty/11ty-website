@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "heydon-pickering.avif",
+      "outputPath": "src/img/avatars/opencollective/heydon-pickering.avif",
+      "url": "/img/avatars/opencollective/heydon-pickering.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/heydon-pickering.avif 90w",
+      "size": 1653
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "heydon-pickering.webp",
+      "outputPath": "src/img/avatars/opencollective/heydon-pickering.webp",
+      "url": "/img/avatars/opencollective/heydon-pickering.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/heydon-pickering.webp 90w",
+      "size": 1998
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "heydon-pickering.jpeg",
+      "outputPath": "src/img/avatars/opencollective/heydon-pickering.jpeg",
+      "url": "/img/avatars/opencollective/heydon-pickering.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/heydon-pickering.jpeg 90w",
+      "size": 2663
+    }
+  ],
+  "slug": "heydon-pickering"
+}

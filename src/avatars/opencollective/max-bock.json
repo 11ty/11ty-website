@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "max-bock.avif",
+      "outputPath": "src/img/avatars/opencollective/max-bock.avif",
+      "url": "/img/avatars/opencollective/max-bock.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/max-bock.avif 90w",
+      "size": 857
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "max-bock.webp",
+      "outputPath": "src/img/avatars/opencollective/max-bock.webp",
+      "url": "/img/avatars/opencollective/max-bock.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/max-bock.webp 90w",
+      "size": 1160
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "max-bock.jpeg",
+      "outputPath": "src/img/avatars/opencollective/max-bock.jpeg",
+      "url": "/img/avatars/opencollective/max-bock.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/max-bock.jpeg 90w",
+      "size": 1908
+    }
+  ],
+  "slug": "max-bock"
+}

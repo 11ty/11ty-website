@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "scott-mccracken.avif",
+      "outputPath": "src/img/avatars/opencollective/scott-mccracken.avif",
+      "url": "/img/avatars/opencollective/scott-mccracken.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/scott-mccracken.avif 90w",
+      "size": 1487
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "scott-mccracken.webp",
+      "outputPath": "src/img/avatars/opencollective/scott-mccracken.webp",
+      "url": "/img/avatars/opencollective/scott-mccracken.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/scott-mccracken.webp 90w",
+      "size": 2300
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "scott-mccracken.jpeg",
+      "outputPath": "src/img/avatars/opencollective/scott-mccracken.jpeg",
+      "url": "/img/avatars/opencollective/scott-mccracken.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/scott-mccracken.jpeg 90w",
+      "size": 2773
+    }
+  ],
+  "slug": "scott-mccracken"
+}

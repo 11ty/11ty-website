@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "soren-birkemeyer.avif",
+      "outputPath": "src/img/avatars/opencollective/soren-birkemeyer.avif",
+      "url": "/img/avatars/opencollective/soren-birkemeyer.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/soren-birkemeyer.avif 90w",
+      "size": 2228
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "soren-birkemeyer.webp",
+      "outputPath": "src/img/avatars/opencollective/soren-birkemeyer.webp",
+      "url": "/img/avatars/opencollective/soren-birkemeyer.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/soren-birkemeyer.webp 90w",
+      "size": 3626
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "soren-birkemeyer.jpeg",
+      "outputPath": "src/img/avatars/opencollective/soren-birkemeyer.jpeg",
+      "url": "/img/avatars/opencollective/soren-birkemeyer.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/soren-birkemeyer.jpeg 90w",
+      "size": 2517
+    }
+  ],
+  "slug": "soren-birkemeyer"
+}

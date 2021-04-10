@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "daily-dev-tips.avif",
+      "outputPath": "src/img/avatars/opencollective/daily-dev-tips.avif",
+      "url": "/img/avatars/opencollective/daily-dev-tips.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/daily-dev-tips.avif 90w",
+      "size": 1076
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "daily-dev-tips.webp",
+      "outputPath": "src/img/avatars/opencollective/daily-dev-tips.webp",
+      "url": "/img/avatars/opencollective/daily-dev-tips.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/daily-dev-tips.webp 90w",
+      "size": 1652
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "daily-dev-tips.jpeg",
+      "outputPath": "src/img/avatars/opencollective/daily-dev-tips.jpeg",
+      "url": "/img/avatars/opencollective/daily-dev-tips.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/daily-dev-tips.jpeg 90w",
+      "size": 1944
+    }
+  ],
+  "slug": "daily-dev-tips"
+}

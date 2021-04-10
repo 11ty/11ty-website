@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "nick-nisi.avif",
+      "outputPath": "src/img/avatars/opencollective/nick-nisi.avif",
+      "url": "/img/avatars/opencollective/nick-nisi.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/nick-nisi.avif 90w",
+      "size": 2203
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "nick-nisi.webp",
+      "outputPath": "src/img/avatars/opencollective/nick-nisi.webp",
+      "url": "/img/avatars/opencollective/nick-nisi.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/nick-nisi.webp 90w",
+      "size": 3284
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "nick-nisi.jpeg",
+      "outputPath": "src/img/avatars/opencollective/nick-nisi.jpeg",
+      "url": "/img/avatars/opencollective/nick-nisi.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/nick-nisi.jpeg 90w",
+      "size": 2349
+    }
+  ],
+  "slug": "nick-nisi"
+}

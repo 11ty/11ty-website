@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "william-riley.avif",
+      "outputPath": "src/img/avatars/opencollective/william-riley.avif",
+      "url": "/img/avatars/opencollective/william-riley.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/william-riley.avif 90w",
+      "size": 945
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "william-riley.webp",
+      "outputPath": "src/img/avatars/opencollective/william-riley.webp",
+      "url": "/img/avatars/opencollective/william-riley.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/william-riley.webp 90w",
+      "size": 1300
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "william-riley.jpeg",
+      "outputPath": "src/img/avatars/opencollective/william-riley.jpeg",
+      "url": "/img/avatars/opencollective/william-riley.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/william-riley.jpeg 90w",
+      "size": 2037
+    }
+  ],
+  "slug": "william-riley"
+}

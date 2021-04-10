@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "curt-hasselschwert.avif",
+      "outputPath": "src/img/avatars/opencollective/curt-hasselschwert.avif",
+      "url": "/img/avatars/opencollective/curt-hasselschwert.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/curt-hasselschwert.avif 90w",
+      "size": 1016
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "curt-hasselschwert.webp",
+      "outputPath": "src/img/avatars/opencollective/curt-hasselschwert.webp",
+      "url": "/img/avatars/opencollective/curt-hasselschwert.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/curt-hasselschwert.webp 90w",
+      "size": 1414
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "curt-hasselschwert.jpeg",
+      "outputPath": "src/img/avatars/opencollective/curt-hasselschwert.jpeg",
+      "url": "/img/avatars/opencollective/curt-hasselschwert.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/curt-hasselschwert.jpeg 90w",
+      "size": 2255
+    }
+  ],
+  "slug": "curt-hasselschwert"
+}

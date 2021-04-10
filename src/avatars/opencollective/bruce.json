@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "bruce.avif",
+      "outputPath": "src/img/avatars/opencollective/bruce.avif",
+      "url": "/img/avatars/opencollective/bruce.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/bruce.avif 90w",
+      "size": 560
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "bruce.webp",
+      "outputPath": "src/img/avatars/opencollective/bruce.webp",
+      "url": "/img/avatars/opencollective/bruce.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/bruce.webp 90w",
+      "size": 530
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "bruce.jpeg",
+      "outputPath": "src/img/avatars/opencollective/bruce.jpeg",
+      "url": "/img/avatars/opencollective/bruce.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/bruce.jpeg 90w",
+      "size": 1316
+    }
+  ],
+  "slug": "bruce"
+}

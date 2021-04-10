@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "reach-digital.avif",
+      "outputPath": "src/img/avatars/opencollective/reach-digital.avif",
+      "url": "/img/avatars/opencollective/reach-digital.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/reach-digital.avif 90w",
+      "size": 638
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "reach-digital.webp",
+      "outputPath": "src/img/avatars/opencollective/reach-digital.webp",
+      "url": "/img/avatars/opencollective/reach-digital.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/reach-digital.webp 90w",
+      "size": 586
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "reach-digital.jpeg",
+      "outputPath": "src/img/avatars/opencollective/reach-digital.jpeg",
+      "url": "/img/avatars/opencollective/reach-digital.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/reach-digital.jpeg 90w",
+      "size": 1256
+    }
+  ],
+  "slug": "reach-digital"
+}

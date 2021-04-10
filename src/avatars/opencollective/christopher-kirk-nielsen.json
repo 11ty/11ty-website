@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "christopher-kirk-nielsen.avif",
+      "outputPath": "src/img/avatars/opencollective/christopher-kirk-nielsen.avif",
+      "url": "/img/avatars/opencollective/christopher-kirk-nielsen.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/christopher-kirk-nielsen.avif 90w",
+      "size": 1064
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "christopher-kirk-nielsen.webp",
+      "outputPath": "src/img/avatars/opencollective/christopher-kirk-nielsen.webp",
+      "url": "/img/avatars/opencollective/christopher-kirk-nielsen.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/christopher-kirk-nielsen.webp 90w",
+      "size": 1542
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "christopher-kirk-nielsen.jpeg",
+      "outputPath": "src/img/avatars/opencollective/christopher-kirk-nielsen.jpeg",
+      "url": "/img/avatars/opencollective/christopher-kirk-nielsen.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/christopher-kirk-nielsen.jpeg 90w",
+      "size": 2193
+    }
+  ],
+  "slug": "christopher-kirk-nielsen"
+}

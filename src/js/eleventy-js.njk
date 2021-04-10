@@ -1,0 +1,13 @@
+---
+permalink: js/eleventy.js
+eleventyExcludeFromCollections: true
+---
+{% set js %}
+{% include "components/import.js" %}
+{% include "components/auth/gotrue.js" %}
+{% include "components/auth/auth.js" %}
+{% include "components/search.js" %}
+{% include "components/seven-minute-tabs.js" %}
+{% include "../../node_modules/speedlify-score/speedlify-score.js" %}
+{% endset %}
+{{ js | jsmin | safe }}

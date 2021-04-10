@@ -16,7 +16,7 @@ async function fetch(entry) {
 	}
 
 	let slug = slugify(name).toLowerCase();
-	let dir = `./avatars/twitter/`;
+	let dir = `./src/avatars/twitter/`;
 	await fs.ensureDir(dir);
 
 	let path = `${dir}${slug}.json`;
@@ -27,7 +27,7 @@ async function fetch(entry) {
 			formats: ["avif", "webp", "jpeg"],
 			widths: [90],
 			urlPath: "/img/avatars/twitter/",
-			outputDir: "img/avatars/twitter/",
+			outputDir: "./src/img/avatars/twitter/",
 			cacheOptions: {
 				duration: "30d",
 			}
@@ -44,13 +44,13 @@ async function fetch(entry) {
 	let twitterUsernames = new Set();
 
 	// Twitter
-	let testimonials = require("./_data/testimonials.json").map(entry => entry.twitter);
+	let testimonials = require("./src/_data/testimonials.json").map(entry => entry.twitter);
 	for(let twitter of testimonials) {
 		twitterUsernames.add(cleanName(twitter).toLowerCase());
 	}
 
 	// Starters
-	let starters = await fastglob("./_data/starters/*.json", {
+	let starters = await fastglob("./src/_data/starters/*.json", {
 		caseSensitiveMatch: false
 	});
 	for(let site of starters) {
@@ -61,7 +61,7 @@ async function fetch(entry) {
 	}
 
 	// Plugins
-	let plugins = await fastglob("./_data/plugins/*.json", {
+	let plugins = await fastglob("./src/_data/plugins/*.json", {
 		caseSensitiveMatch: false
 	});
 	for(let plugin of plugins) {
@@ -72,12 +72,12 @@ async function fetch(entry) {
 	}
 
 	// Extras
-	let extras = require("./_data/extraAvatars.json").map(entry => entry.twitter);
+	let extras = require("./src/_data/extraAvatars.json").map(entry => entry.twitter);
 	for(let twitter of extras) {
 		twitterUsernames.add(cleanName(twitter).toLowerCase());
 	}
 
-	let sites = await fastglob("./_data/sites/*.json", {
+	let sites = await fastglob("./src/_data/sites/*.json", {
 		caseSensitiveMatch: false
 	});
 

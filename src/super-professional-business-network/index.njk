@@ -1,0 +1,43 @@
+---
+eleventyNavigation:
+  key: Eleventy Super Professional Business Network
+  title:
+  parent: Supporting Eleventy
+  order: 6
+eleventyComputed:
+  eleventyNavigation:
+    title: "{{ eleventyNavigation.key }} {% emoji '💼' %}"
+layout: layouts/docs.njk
+---
+<h1>Eleventy Super Professional Business Network {% emoji "💼" %}</h1>
+
+<p>Welcome to all people that are willing to spend money in exchange for business services! The <strong>Eleventy Super Professional Business Network</strong> is a very professional network of web developers in the Eleventy community that are available for hire! You can see the Eleventy web sites they have built and click the business button to do very professional business with them. <em>The order below is random.</em></p>
+
+<div class="business-network">
+{%- for person in businesspeople | shuffle %}
+{%- set supporter = opencollective.supporters | findBy("twitter", person.name) | last -%}
+{%- if supporter | isBusinessPerson %}
+  <div class="business-network-primary lo">
+    <div class="lo-c">
+      <a href="/authors/{{ person.name | slug }}/" class="business-network-name nowrap">{% avatarlocalcache "twitter", person.name %}{{ person.business.name }}</a>
+      {%- if person.business.availability %}
+      <div class="business-network-available">{% emoji "🗓" %} Availability {{ person.business.availability | newsDate("LLLL yyyy") }}</div>
+      {%- endif %}
+    </div>
+    <div class="lo-c business-network-hire">
+      <a href="{{ person.business.cta }}" class="btn-primary btn-primary-standard benchnine rainbow-active rainbow-active-noanim elv-externalexempt">Let’s Do Business</a>
+    </div>
+  </div>
+  <div>
+  {%- if person.sites.length %}
+  <div class="business-network-sites lo lo-grid lo-grid-fill" style="--lo-margin-h: .25rem; --lo-margin-v: .25rem; --lo-c-minwidth: 75px;">
+  {%- for site in person.sites %}
+    <div class="lo-c"><a href="{{ site.url }}" class="elv-externalexempt">{%- getScreenshotHtml site.fileSlug, site.url, "", "80px" -%}</a></div>
+  {%- endfor %}
+  </div>
+  {%- endif %}
+{%- endif %}
+{%- endfor %}
+</div>
+
+<p><strong><a href="/news/espbn/">Want to be on this list?</a></strong></p>

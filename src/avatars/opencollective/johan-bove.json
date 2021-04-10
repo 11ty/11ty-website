@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "filename": "johan-bove.avif",
+      "outputPath": "src/img/avatars/opencollective/johan-bove.avif",
+      "url": "/img/avatars/opencollective/johan-bove.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/johan-bove.avif 90w",
+      "size": 1690
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "filename": "johan-bove.webp",
+      "outputPath": "src/img/avatars/opencollective/johan-bove.webp",
+      "url": "/img/avatars/opencollective/johan-bove.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/johan-bove.webp 90w",
+      "size": 2646
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "filename": "johan-bove.jpeg",
+      "outputPath": "src/img/avatars/opencollective/johan-bove.jpeg",
+      "url": "/img/avatars/opencollective/johan-bove.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/johan-bove.jpeg 90w",
+      "size": 3024
+    }
+  ],
+  "slug": "johan-bove"
+}
