@@ -5,18 +5,22 @@ const markdownIt = require("markdown-it");
 const loadLanguages = require("prismjs/components/");
 const slugify = require("slugify");
 const fs = require("fs-extra");
+const lodashGet = require("lodash/get");
 
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const eleventyImage = require("@11ty/eleventy-img");
+
+// For Eleventy Cloud bundler
+const Cache = require("@11ty/eleventy-cache-assets");
+
 const monthDiffPlugin = require("./config/monthDiff");
 const addedInLocalPlugin = require("./config/addedin");
 const minificationLocalPlugin = require("./config/minification");
 const getAuthors = require("./config/getAuthorsFromSites");
 const cleanName = require("./config/cleanAuthorName");
 const objectHas = require("./config/object-has");
-const lodashGet = require("lodash/get");
 
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);

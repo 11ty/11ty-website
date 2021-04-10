@@ -6,6 +6,7 @@ module.exports = async function() {
 	let urlsJson = await CacheAsset(url, {
 		duration: "1d",
 		type: "json",
+		dryRun: process.env.ELEVENTY_CLOUD ? true : false,
 	});
 
 	let returnData = {
