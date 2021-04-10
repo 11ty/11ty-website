@@ -15,16 +15,20 @@ function showFileSystem() {
   console.log( "Walking the file system" );
   walker(process.cwd())
     .on('dir', function(dir, stat) {
-      console.log('Got directory: ' + dir)
+      if(dir.endsWith("/node_modules/") || dir.indexOf("/node_modules/") === -1) {
+        console.log('Directory: ' + dir)
+      }
     })
     .on('file', function(file, stat) {
-      console.log('Got file: ' + file)
+      if(file.indexOf("/node_modules/") === -1) {
+        console.log('File: ' + file)
+      }
     })
     .on('error', function(er, entry, stat) {
-      console.log('Got error ' + er + ' on entry ' + entry)
+      console.log('Error ' + er + ' on entry ' + entry)
     })
     .on('end', function() {
-      console.log('All files traversed.')
+      console.log('Finished walking file system')
     });
 }
 

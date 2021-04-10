@@ -14,7 +14,7 @@
     "deploy": "eleventy && ./deploy.sh",
     "build": "eleventy",
     "start": "eleventy --serve",
-    "build-production": "./bundle.sh && node node-avatars-opencollective && ELEVENTY_PRODUCTION=true eleventy",
+    "build-production": "./bundle.sh && ELEVENTY_PRODUCTION=true eleventy",
     "get-new-supporters": "eleventy && node node-supporters",
     "get-new-avatars": "node node-avatars-opencollective && node node-avatars-twitter",
     "format": "prettier --write '**/*.{js,css,html,md}'"
