@@ -59,7 +59,7 @@ function getProjectDir() {
     // /var/task/src/netlify/functions/cloud/src/
     path.join(process.cwd(), "netlify/functions/cloud/"), // on netlify dev
     path.join(process.cwd(), "src/netlify/functions/cloud/"), // netlify function, relative to current dir
-    "/var/task/src/netlify/functions/cloud/src/", // netlify function absolute
+    "/var/task/src/netlify/functions/cloud/", // netlify function absolute
   ];
   for(let path of paths) {
     if(fs.existsSync(path)) {
