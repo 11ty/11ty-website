@@ -1,6 +1,6 @@
 exports.data = function() {
   return {
-    permalink: "./netlify/functions/cloud/_data/cachedNavigation.json",
+    permalink: "./netlify/functions/cloud/src/_data/cachedNavigation.json",
     permalinkBypassOutputDir: true,
     layout: false,
   };

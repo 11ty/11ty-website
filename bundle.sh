@@ -9,6 +9,7 @@ cp ./netlify/functions/cloud.js ./netlify/functions/cloud/index.js
 
 # Config
 cp .eleventy.js ./netlify/functions/cloud/
+cp -R ./config ./netlify/functions/cloud/
 
 # Use -v to see what copies
 # Build files
