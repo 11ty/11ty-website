@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const debug = require("debug");
-// debug.enable("*");
+debug.enable("*");
 
 const UrlPattern = require("url-pattern");
 const { builderFunction } = require("@netlify/functions");
@@ -13,8 +13,8 @@ const Cache = require("@11ty/eleventy-cache-assets");
 function getProjectDir() {
   let paths = [
     // /var/task/src/netlify/functions/cloud/src/
-    path.join(process.cwd(), `netlify/functions/cloud/`), // on netlify dev
-    path.join(process.cwd(), `src/netlify/functions/cloud/`), // netlify function
+    path.join(process.cwd(), "netlify/functions/cloud/"), // on netlify dev
+    path.join(process.cwd(), "src/netlify/functions/cloud/"), // netlify function
   ];
   for(let path of paths) {
     if(fs.existsSync(path)) {
