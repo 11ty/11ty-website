@@ -1,5 +1,5 @@
 const path = require("path");
-const fs = require("fs");
+// const fs = require("fs");
 const debug = require("debug");
 const walker = require("walker");
 debug.enable("Eleventy:TemplateConfig");
