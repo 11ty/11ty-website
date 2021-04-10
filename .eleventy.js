@@ -7,6 +7,8 @@ const slugify = require("slugify");
 const fs = require("fs-extra");
 const lodashGet = require("lodash/get");
 const shortHash = require("short-hash");
+const markdownItAnchor = require("markdown-it-anchor");
+const markdownItToc = require("markdown-it-table-of-contents");
 
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
@@ -319,10 +321,6 @@ ${text.trim()}
 		}
 		return `${fullHearts.join("")}<span class="supporters-hearts-empty">${emptyHearts.join("")}</span>`;
 	});
-
-	/* Markdown */
-	let markdownItAnchor = require("markdown-it-anchor");
-	let markdownItToc = require("markdown-it-table-of-contents");
 
 	function removeExtraText(s) {
 		let newStr = String(s).replace(/New\ in\ v\d+\.\d+\.\d+/, "");
