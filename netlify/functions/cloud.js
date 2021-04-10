@@ -41,6 +41,7 @@ function matchUrlPattern(map, path) {
 
 async function getEleventyOutput(rootDir, lambdaPath, queryParams) {
   let inputDir = path.join(rootDir, "src");
+  console.log( "Current dir:", process.cwd() );
   console.log( "Root dir:", rootDir );
   console.log( "Input dir:", inputDir );
   console.log( "Requested URL: ", lambdaPath );
