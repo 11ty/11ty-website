@@ -21,6 +21,11 @@ const slugify = require("slugify");
 const fs = require("fs-extra");
 const lodashGet = require("lodash/get");
 const shortHash = require("short-hash");
+const semver = require("semver");
+const htmlmin = require("html-minifier");
+const CleanCSS = require("clean-css");
+const Terser = require("terser");
+
 
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
