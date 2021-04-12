@@ -9,7 +9,7 @@ communityLinks:
 ---
 # Getting Started
 
-Eleventy is [available on npm](https://www.npmjs.com/package/@11ty/eleventy) and **requires version 8 of [Node.js](https://nodejs.org/) or higher.**
+Eleventy is [available on npm](https://www.npmjs.com/package/@11ty/eleventy) and **requires version 10 of [Node.js](https://nodejs.org/) or higher.**
 
 _Don’t include `~ $` or `~/eleventy-sample $` when you run these commands (you can’t copy and paste that text anyway)._
 
