@@ -2,7 +2,8 @@ node_modules/
 _site/
 package-lock.json
 node-supporters/
-netlify/functions/cloud/
+netlify/functions/cloud/*
+!netlify/functions/cloud/index.js
 .env
 .log
 .cache

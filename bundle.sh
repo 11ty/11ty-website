@@ -4,9 +4,6 @@ echo "Bundling the Eleventy Cloud Netlify Function"
 mkdir -p ./_site/
 mkdir -p ./netlify/functions/cloud/src/
 
-# Move Netlify Function definition
-cp ./netlify/functions/cloud.js ./netlify/functions/cloud/index.js
-
 # Config
 cp .eleventy.js ./netlify/functions/cloud/eleventy.config.js
 cp -R ./config ./netlify/functions/cloud/

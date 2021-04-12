@@ -1,5 +1,5 @@
 const path = require("path");
-// const fs = require("fs");
+const fs = require("fs");
 const debug = require("debug");
 // debug.enable("Eleventy:TemplateConfig");
 
@@ -7,46 +7,22 @@ const UrlPattern = require("url-pattern");
 const { builderFunction } = require("@netlify/functions");
 const Eleventy = require("@11ty/eleventy");
 
-// For the bundler: Global Data
-const Cache = require("@11ty/eleventy-cache-assets");
-
-// For the bundler: Config file
-const { DateTime } = require("luxon");
-const HumanReadable = require("human-readable-numbers");
-const commaNumber = require("comma-number");
-const markdownIt = require("markdown-it");
-const loadLanguages = require("prismjs/components/");
-const slugify = require("slugify");
-const fs = require("fs-extra");
-const lodashGet = require("lodash/get");
-const shortHash = require("short-hash");
-const markdownItAnchor = require("markdown-it-anchor");
-const markdownItToc = require("markdown-it-table-of-contents");
-const semver = require("semver");
-const htmlmin = require("html-minifier");
-const CleanCSS = require("clean-css");
-const Terser = require("terser");
-
-const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
-const navigationPlugin = require("@11ty/eleventy-navigation");
-const rssPlugin = require("@11ty/eleventy-plugin-rss");
-const eleventyImage = require("@11ty/eleventy-img");
-
+// Bundler extras
+const extraModules = require("./serverless-required-modules");
 
 function getProjectDir() {
   let paths = [
-    // /var/task/src/netlify/functions/cloud/src/
-    path.join(process.cwd(), "netlify/functions/cloud/"), // on netlify dev
-    path.join(process.cwd(), "src/netlify/functions/cloud/"), // netlify function, relative to current dir
-    "/var/task/src/netlify/functions/cloud/", // netlify function absolute
+    path.join(process.cwd(), "netlify/functions/cloud/"), // netlify dev
+    "/var/task/src/netlify/functions/cloud/", // netlify function absolute path
   ];
+
   for(let path of paths) {
     if(fs.existsSync(path)) {
       return path;
     }
   }
 
-  throw new Error(`No path found in ${paths}`);
+  throw new Error(`Couldn’t find the "netlify/functions/cloud" directory. Searched: ${paths}`);
 }
 
 function matchUrlPattern(map, path) {
@@ -113,10 +89,11 @@ async function getEleventyOutput(projectDir, lambdaPath, queryParams) {
 async function handler (event, context) {
   try {
     let projectDir = getProjectDir();
+
+    // TODO is this necessary?
     if(projectDir.startsWith("/var/task/")) {
       process.chdir(projectDir);
     }
-    // console.log( event );
 
     return {
       statusCode: 200,
