@@ -8,3 +8,4 @@ node-supporters/
 yarn.lock
 .vscode
 **/.DS_Store
+netlify/functions/cloud/*
