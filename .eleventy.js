@@ -64,7 +64,7 @@ const shortcodes = {
 		};
 
 		// TODO change this to master or something
-		let localhostEnv = "https://fns-demo-redirect--11ty.netlify.app";
+		let localhostEnv = "https://fns-demo-cloud--11ty.netlify.app";
 		let env = !process.env.DEPLOY_PRIME_URL ? localhostEnv : "";
 		let screenshotPath = `/api/screenshot/${encodeURIComponent(siteUrl)}/${viewport.width}x${viewport.height}/`;
 		let screenshotUrl = `${env}${screenshotPath}`;
@@ -581,6 +581,18 @@ ${text.trim()}
 	}
 
 	if(process.env.ELEVENTY_PRODUCTION && !process.env.ELEVENTY_CLOUD) {
+		eleventyConfig.on("collections", (collections) => {
+			console.log( "Saving build-time `collections` for serverless reuse." );
+			let names = ["sidebarNav", "all"];
+			let saved = {};
+			for(let name of names) {
+				saved[name] = collections[name];
+			}
+			let filename = `./netlify/functions/cloud/serverless-collections.json`;
+			fs.writeFileSync(filename, JSON.stringify(saved, null, 2));
+			console.log( `Writing ${filename}.` );
+		});
+
 		eleventyConfig.on("globalDataFiles", (fileList) => {
 			let modules = getNodeModulesList([__filename, ...fileList]).map(name => `require("${name}");`);
 			fs.writeFileSync("./netlify/functions/cloud/serverless-required-modules.js", modules.join("\n"));

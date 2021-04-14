@@ -9,10 +9,10 @@ isDocs: true
 
 {% include "components/docs-toc.njk" %}
 
-{% if eleventyNavigation and eleventyNavigation.key and eleventyNavigation.parent %}
+{% if eleventyNavigation and eleventyNavigation.parent %}
 <nav class="breadcrumb" aria-labelledby="breadcrumb">
   <h2 class="sr-only" id="breadcrumb">Breadcrumbs: </h2>
-  {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) | eleventyNavigationToHtml({ listClass: 'lo lo-inline', listItemClass: 'lo-c', activeListItemClass: 'breadcrumb-active' }) | safe }}
+  {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.parent, {includeSelf: true}) | eleventyNavigationToHtml({ listClass: 'lo lo-inline', listItemClass: 'lo-c', activeListItemClass: 'breadcrumb-active' }) | safe }}
 </nav>
 {% endif %}
 {% if pageTitle %}<h1>{{ pageTitle | safe }}</h1>{% endif %}
