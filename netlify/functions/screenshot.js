@@ -54,7 +54,6 @@ async function handler(event, context) {
     }
 
     let dims = {};
-    // defaults to Macbook 13″
     dims.width = parseInt(w, 10) || 420;
     dims.height = parseInt(h, 10) || 580;
 
@@ -67,7 +66,7 @@ async function handler(event, context) {
       },
       body: buffer.toString("base64"),
       isBase64Encoded: true
-    }
+    };
   } catch (error) {
     console.log("Error", error);
 
@@ -76,7 +75,7 @@ async function handler(event, context) {
       body: JSON.stringify({
         error: error.message
       })
-    }
+    };
   }
 }
 
