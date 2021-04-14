@@ -41,7 +41,9 @@ async function screenshot(url, viewportSize, withJs = true) {
 
 // Based on https://github.com/DavidWells/netlify-functions-workshop/blob/master/lessons-code-complete/use-cases/13-returning-dynamic-images/functions/return-image.js
 async function handler(event, context) {
-  // /api/screenshot/:url/:dimensions/
+  // Links have the format /api/screenshot/:url/:dimensions/
+  // Where :dimensions are the viewport dimensions of the browser doing the screenshot
+  // e.g. /api/screenshot/https%3A%2F%2Fwww.11ty.dev%2F/420x580/
   let pathSplit = event.path.split("/").filter(entry => !!entry);
   let [,, url, dimensions] = pathSplit;
   let [w, h] = dimensions.split("x");
