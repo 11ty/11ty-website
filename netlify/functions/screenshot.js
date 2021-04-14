@@ -1,4 +1,4 @@
-const { builderFunction } = require("@netlify/functions");
+const { builder } = require("@netlify/functions");
 const chromium = require("chrome-aws-lambda");
 
 function isFullUrl(url) {
@@ -80,4 +80,4 @@ async function handler(event, context) {
   }
 }
 
-exports.handler = builderFunction(handler);
+exports.handler = builder(handler);

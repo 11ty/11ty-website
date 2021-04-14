@@ -1,4 +1,4 @@
-const { builderFunction } = require("@netlify/functions");
+const { builder } = require("@netlify/functions");
 const eleventyImage = require("@11ty/eleventy-img")
 
 function isFullUrl(url) {
@@ -61,4 +61,4 @@ async function handler(event, context) {
   }
 }
 
-exports.handler = builderFunction(handler);
+exports.handler = builder(handler);
