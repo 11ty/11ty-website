@@ -581,21 +581,23 @@ ${text.trim()}
 	}
 
 	if(process.env.ELEVENTY_PRODUCTION && !process.env.ELEVENTY_CLOUD) {
-		eleventyConfig.on("collections", (collections) => {
-			console.log( "Saving build-time `collections` for serverless reuse." );
-			let names = ["sidebarNav", "all"];
-			let saved = {};
-			for(let name of names) {
-				saved[name] = collections[name];
-			}
-			let filename = `./netlify/functions/cloud/serverless-collections.json`;
-			fs.writeFileSync(filename, JSON.stringify(saved, null, 2));
-			console.log( `Writing ${filename}.` );
-		});
+		// eleventyConfig.on("collections", (collections) => {
+		// 	console.log( "Saving build-time `collections` for serverless reuse." );
+		// 	let names = ["sidebarNav", "all"];
+		// 	let saved = {};
+		// 	for(let name of names) {
+		// 		saved[name] = collections[name];
+		// 	}
+		// 	let filename = `./netlify/functions/cloud/serverless-collections.json`;
+		// 	fs.writeFileSync(filename, JSON.stringify(saved, null, 2));
+		// 	console.log( `Writing ${filename}.` );
+		// });
 
 		eleventyConfig.on("globalDataFiles", (fileList) => {
 			let modules = getNodeModulesList([__filename, ...fileList]).map(name => `require("${name}");`);
-			fs.writeFileSync("./netlify/functions/cloud/serverless-required-modules.js", modules.join("\n"));
+			let filename = "./netlify/functions/cloud/serverless-required-modules.js";
+			fs.writeFileSync(filename, modules.join("\n"));
+			console.log( `Writing ${filename}.` );
 		});
 
 		eleventyConfig.on("dependencyMap", (templateMap) => {
