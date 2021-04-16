@@ -3,5 +3,6 @@
 	"name": "Eleventy Starter Ghost",
 	"description": "A starter template to build websites with Ghost & Eleventy.",
 	"author": "DavidDarnes",
-	"demo": "https://eleventy.ghost.org/"
+	"demo": "https://eleventy.ghost.org/",
+  "excludedFromLeaderboards": true
 }
