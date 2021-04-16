@@ -261,7 +261,7 @@ And in Liquid it’d look like this:
 {% raw %}
 ```html
 <ul>
-{%- for post in collections.post reverse -%}
+{%- for post in collections.post reversed -%}
   <li>{{ post.data.title }}</li>
 {%- endfor -%}
 </ul>
