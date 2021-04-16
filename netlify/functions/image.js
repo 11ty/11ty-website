@@ -44,7 +44,7 @@ async function handler(event, context) {
     return {
       statusCode: 200,
       headers: {
-        "content-type": source.soucceType
+        "content-type": source.sourceType
       },
       body: source.buffer.toString('base64'),
       isBase64Encoded: true
