@@ -76,7 +76,6 @@
   },
   "dependencies": {
     "@11ty/logo": "2.0.4",
-    "instant.page": "5.1.0",
     "lodash": "^4.17.21",
     "prismjs": "1.23.0",
     "speedlify-score": "^2.0.2"
