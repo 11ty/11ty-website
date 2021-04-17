@@ -3,3 +3,4 @@ _cache
 netlify-email
 functions
 README.md
+netlify/functions/cloud/
