@@ -56,7 +56,7 @@ async function fetch(name, opencollectUsername, imageUrl, website) {
   let promises = [];
   let avatarPaths = {};
 
-  let getOpenCollectiveData = require("./_data/opencollective");
+  let getOpenCollectiveData = require("./src/_data/opencollective");
   let opencollective = await getOpenCollectiveData();
 
   for(let supporter of opencollective.supporters) {
