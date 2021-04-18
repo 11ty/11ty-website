@@ -63,7 +63,7 @@ async function screenshot(url, fileSlug) {
 }
 
 (async () => {
-  let sites = await fastglob("./_data/sites/*.json", {
+  let sites = await fastglob("./src/_data/sites/*.json", {
     caseSensitiveMatch: false
   });
 

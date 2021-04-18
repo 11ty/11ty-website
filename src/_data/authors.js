@@ -1,8 +1,8 @@
 const fastglob = require("fast-glob");
-const getAuthors = require("../config/getAuthorsFromSites");
+const getAuthors = require("../../config/getAuthorsFromSites");
 
 module.exports = async () => {
-  let sites = await fastglob("./_data/sites/*.json", {
+  let sites = await fastglob("./src/_data/sites/*.json", {
     caseSensitiveMatch: false
   });
 

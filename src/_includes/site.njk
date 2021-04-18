@@ -1,4 +1,4 @@
-{%- set jpegImgUrl = "/img/sites/" + site.fileSlug + "-300.jpeg" %}
+{%- set jpegImgUrl = "/src/img/sites/" + site.fileSlug + "-300.jpeg" %}
 {%- set jpegImgExists = jpegImgUrl | fileExists %}
 <div class="lo-c site-top">
 	<div{% if jpegImgExists %} class="sites-data-container"{% endif %}>

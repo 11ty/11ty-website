@@ -60,7 +60,7 @@ const shortcodes = {
 			}
 		};
 
-		let stats = eleventyImage.statsSync(`./img/sites/${siteSlug}-600.jpeg`, options);
+		let stats = eleventyImage.statsSync(`./src/img/sites/${siteSlug}-600.jpeg`, options);
 
 		return eleventyImage.generateHTML(stats, {
 			alt: `Screenshot of ${url}`,
@@ -161,9 +161,9 @@ ${text.trim()}
 	eleventyConfig.addPassthroughCopy("_redirects");
 	eleventyConfig.addPassthroughCopy("netlify-email");
 	// eleventyConfig.addPassthroughCopy("css/fonts"); // these are inline now
-	eleventyConfig.addPassthroughCopy("img");
-	eleventyConfig.addPassthroughCopy("news/*.png");
-	eleventyConfig.addPassthroughCopy("favicon.ico");
+	eleventyConfig.addPassthroughCopy("src/img");
+	eleventyConfig.addPassthroughCopy("src/news/*.png");
+	eleventyConfig.addPassthroughCopy("src/favicon.ico");
 
 	eleventyConfig.addFilter("findHash", function(speedlifyUrls, ...urls) {
 		for(let url of urls) {
@@ -559,6 +559,9 @@ ${text.trim()}
 	});
 
 	return {
+		dir: {
+			input: "src",
+		},
 		templateFormats: ["html", "njk", "md", "11ty.js"],
 		markdownTemplateEngine: "njk",
 		htmlTemplateEngine: "njk",

@@ -2,6 +2,10 @@
 	publish = "_site"
 	command = "npm run build-production"
 
+[functions]
+	directory = "netlify/functions/"
+#	node_bundler = "esbuild"
+
 [[redirects]]
 	from = "/speedlify/*"
 	to = "https://built-with-eleventy.netlify.app/speedlify/:splat"

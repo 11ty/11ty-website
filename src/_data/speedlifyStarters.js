@@ -13,13 +13,14 @@ module.exports = async function() {
 		data: {}
 	};
 
-	let starters = await fastglob("./_data/starters/*.json", {
+	let starters = await fastglob("./src/_data/starters/*.json", {
 		caseSensitiveMatch: false
 	});
 
 	for(let site of starters) {
+    let filename = site.split("/").pop();
 		// TODO clear require cache
-		let siteData = require(`.${site}`);
+		let siteData = require(`./starters/${filename}`);
 		let urlLookup = urlsJson[siteData.demo] || urlsJson[siteData.url];
 		if(urlLookup && urlLookup.hash) {
 			let data = await CacheAsset(`https://www.speedlify.dev/api/${urlLookup.hash}.json`, {

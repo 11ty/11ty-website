@@ -1,5 +1,5 @@
 const semver = require("semver");
-const versions = require("../_data/versions");
+const versions = require("../src/_data/versions");
 
 module.exports = eleventyConfig => {
 	eleventyConfig.addShortcode("addedin", function(version, tag, extraClass) {
