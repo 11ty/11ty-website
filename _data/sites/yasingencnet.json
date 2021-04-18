@@ -4,5 +4,8 @@
 	"description": "I design & develop modern, responsive and accessible web interfaces.",
 	"twitter": "yasingencnet",
 	"authoredBy": [],
-	"source_url": "https://github.com/yasingencnet/yasingencnet"
+	"source_url": "https://github.com/yasingencnet/yasingencnet",
+  "business": {
+		"cta": "https://yasingenc.net/contact/"
+	}
 }
