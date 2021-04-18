@@ -20,6 +20,8 @@ If you’re using a global install of Eleventy, remove `npx @11ty/` from the beg
 eleventy
 ```
 
+<div class="elv-callout elv-callout-warn"><strong>Warning:</strong> Using just <code>npx eleventy</code> may seem to work, but could result in downloading and executing the wrong package if you don't have Eleventy installed locally or globally already. Be sure to prefix your <code>npx</code> calls with <code>@11ty/</code>.</div>
+
 ```bash
 # `npx @11ty/eleventy` is the same as:
 npx @11ty/eleventy --input=. --output=_site
