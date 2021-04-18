@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 98,
-      "filename": "djame-goldston.avif",
-      "outputPath": "img/avatars/opencollective/djame-goldston.avif",
       "url": "/img/avatars/opencollective/djame-goldston.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/djame-goldston.avif 90w",
-      "size": 2237
+      "filename": "djame-goldston.avif",
+      "outputPath": "img/avatars/opencollective/djame-goldston.avif",
+      "size": 2247
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 98,
-      "filename": "djame-goldston.webp",
-      "outputPath": "img/avatars/opencollective/djame-goldston.webp",
       "url": "/img/avatars/opencollective/djame-goldston.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/djame-goldston.webp 90w",
+      "filename": "djame-goldston.webp",
+      "outputPath": "img/avatars/opencollective/djame-goldston.webp",
       "size": 3284
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 98,
-      "filename": "djame-goldston.jpeg",
-      "outputPath": "img/avatars/opencollective/djame-goldston.jpeg",
       "url": "/img/avatars/opencollective/djame-goldston.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/djame-goldston.jpeg 90w",
+      "filename": "djame-goldston.jpeg",
+      "outputPath": "img/avatars/opencollective/djame-goldston.jpeg",
       "size": 3723
     }
   ],

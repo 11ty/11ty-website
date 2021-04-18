@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "angelique-weger.avif",
-      "outputPath": "img/avatars/opencollective/angelique-weger.avif",
       "url": "/img/avatars/opencollective/angelique-weger.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/angelique-weger.avif 90w",
-      "size": 873
+      "filename": "angelique-weger.avif",
+      "outputPath": "img/avatars/opencollective/angelique-weger.avif",
+      "size": 871
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "angelique-weger.webp",
-      "outputPath": "img/avatars/opencollective/angelique-weger.webp",
       "url": "/img/avatars/opencollective/angelique-weger.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/angelique-weger.webp 90w",
+      "filename": "angelique-weger.webp",
+      "outputPath": "img/avatars/opencollective/angelique-weger.webp",
       "size": 1222
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "angelique-weger.jpeg",
-      "outputPath": "img/avatars/opencollective/angelique-weger.jpeg",
       "url": "/img/avatars/opencollective/angelique-weger.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/angelique-weger.jpeg 90w",
+      "filename": "angelique-weger.jpeg",
+      "outputPath": "img/avatars/opencollective/angelique-weger.jpeg",
       "size": 2036
     }
   ],

@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "dorin-vancea.avif",
-      "outputPath": "img/avatars/opencollective/dorin-vancea.avif",
       "url": "/img/avatars/opencollective/dorin-vancea.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/dorin-vancea.avif 90w",
-      "size": 1014
+      "filename": "dorin-vancea.avif",
+      "outputPath": "img/avatars/opencollective/dorin-vancea.avif",
+      "size": 1032
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "dorin-vancea.webp",
-      "outputPath": "img/avatars/opencollective/dorin-vancea.webp",
       "url": "/img/avatars/opencollective/dorin-vancea.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/dorin-vancea.webp 90w",
+      "filename": "dorin-vancea.webp",
+      "outputPath": "img/avatars/opencollective/dorin-vancea.webp",
       "size": 1296
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "dorin-vancea.jpeg",
-      "outputPath": "img/avatars/opencollective/dorin-vancea.jpeg",
       "url": "/img/avatars/opencollective/dorin-vancea.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/dorin-vancea.jpeg 90w",
+      "filename": "dorin-vancea.jpeg",
+      "outputPath": "img/avatars/opencollective/dorin-vancea.jpeg",
       "size": 1943
     }
   ],

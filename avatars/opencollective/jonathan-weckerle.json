@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 71,
-      "filename": "jonathan-weckerle.avif",
-      "outputPath": "img/avatars/opencollective/jonathan-weckerle.avif",
       "url": "/img/avatars/opencollective/jonathan-weckerle.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/jonathan-weckerle.avif 90w",
-      "size": 1139
+      "filename": "jonathan-weckerle.avif",
+      "outputPath": "img/avatars/opencollective/jonathan-weckerle.avif",
+      "size": 1145
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 71,
-      "filename": "jonathan-weckerle.webp",
-      "outputPath": "img/avatars/opencollective/jonathan-weckerle.webp",
       "url": "/img/avatars/opencollective/jonathan-weckerle.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/jonathan-weckerle.webp 90w",
+      "filename": "jonathan-weckerle.webp",
+      "outputPath": "img/avatars/opencollective/jonathan-weckerle.webp",
       "size": 1772
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 71,
-      "filename": "jonathan-weckerle.jpeg",
-      "outputPath": "img/avatars/opencollective/jonathan-weckerle.jpeg",
       "url": "/img/avatars/opencollective/jonathan-weckerle.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/jonathan-weckerle.jpeg 90w",
+      "filename": "jonathan-weckerle.jpeg",
+      "outputPath": "img/avatars/opencollective/jonathan-weckerle.jpeg",
       "size": 2182
     }
   ],

@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "horacio-gonzalez.avif",
-      "outputPath": "img/avatars/opencollective/horacio-gonzalez.avif",
       "url": "/img/avatars/opencollective/horacio-gonzalez.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/horacio-gonzalez.avif 90w",
-      "size": 845
+      "filename": "horacio-gonzalez.avif",
+      "outputPath": "img/avatars/opencollective/horacio-gonzalez.avif",
+      "size": 862
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "horacio-gonzalez.webp",
-      "outputPath": "img/avatars/opencollective/horacio-gonzalez.webp",
       "url": "/img/avatars/opencollective/horacio-gonzalez.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/horacio-gonzalez.webp 90w",
+      "filename": "horacio-gonzalez.webp",
+      "outputPath": "img/avatars/opencollective/horacio-gonzalez.webp",
       "size": 1190
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "horacio-gonzalez.jpeg",
-      "outputPath": "img/avatars/opencollective/horacio-gonzalez.jpeg",
       "url": "/img/avatars/opencollective/horacio-gonzalez.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/horacio-gonzalez.jpeg 90w",
+      "filename": "horacio-gonzalez.jpeg",
+      "outputPath": "img/avatars/opencollective/horacio-gonzalez.jpeg",
       "size": 1973
     }
   ],

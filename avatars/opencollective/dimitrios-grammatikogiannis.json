@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "dimitrios-grammatikogiannis.avif",
-      "outputPath": "img/avatars/opencollective/dimitrios-grammatikogiannis.avif",
       "url": "/img/avatars/opencollective/dimitrios-grammatikogiannis.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/dimitrios-grammatikogiannis.avif 90w",
-      "size": 1308
+      "filename": "dimitrios-grammatikogiannis.avif",
+      "outputPath": "img/avatars/opencollective/dimitrios-grammatikogiannis.avif",
+      "size": 1319
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "dimitrios-grammatikogiannis.webp",
-      "outputPath": "img/avatars/opencollective/dimitrios-grammatikogiannis.webp",
       "url": "/img/avatars/opencollective/dimitrios-grammatikogiannis.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/dimitrios-grammatikogiannis.webp 90w",
+      "filename": "dimitrios-grammatikogiannis.webp",
+      "outputPath": "img/avatars/opencollective/dimitrios-grammatikogiannis.webp",
       "size": 1424
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "dimitrios-grammatikogiannis.jpeg",
-      "outputPath": "img/avatars/opencollective/dimitrios-grammatikogiannis.jpeg",
       "url": "/img/avatars/opencollective/dimitrios-grammatikogiannis.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/dimitrios-grammatikogiannis.jpeg 90w",
+      "filename": "dimitrios-grammatikogiannis.jpeg",
+      "outputPath": "img/avatars/opencollective/dimitrios-grammatikogiannis.jpeg",
       "size": 2199
     }
   ],

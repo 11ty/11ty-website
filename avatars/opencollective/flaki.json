@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "flaki.avif",
-      "outputPath": "img/avatars/opencollective/flaki.avif",
       "url": "/img/avatars/opencollective/flaki.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/flaki.avif 90w",
-      "size": 1331
+      "filename": "flaki.avif",
+      "outputPath": "img/avatars/opencollective/flaki.avif",
+      "size": 1327
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "flaki.webp",
-      "outputPath": "img/avatars/opencollective/flaki.webp",
       "url": "/img/avatars/opencollective/flaki.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/flaki.webp 90w",
+      "filename": "flaki.webp",
+      "outputPath": "img/avatars/opencollective/flaki.webp",
       "size": 1926
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "flaki.jpeg",
-      "outputPath": "img/avatars/opencollective/flaki.jpeg",
       "url": "/img/avatars/opencollective/flaki.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/flaki.jpeg 90w",
+      "filename": "flaki.jpeg",
+      "outputPath": "img/avatars/opencollective/flaki.jpeg",
       "size": 2586
     }
   ],

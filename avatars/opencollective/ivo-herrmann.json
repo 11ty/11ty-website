@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "ivo-herrmann.avif",
-      "outputPath": "img/avatars/opencollective/ivo-herrmann.avif",
       "url": "/img/avatars/opencollective/ivo-herrmann.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/ivo-herrmann.avif 90w",
-      "size": 1789
+      "filename": "ivo-herrmann.avif",
+      "outputPath": "img/avatars/opencollective/ivo-herrmann.avif",
+      "size": 1793
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "ivo-herrmann.webp",
-      "outputPath": "img/avatars/opencollective/ivo-herrmann.webp",
       "url": "/img/avatars/opencollective/ivo-herrmann.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/ivo-herrmann.webp 90w",
+      "filename": "ivo-herrmann.webp",
+      "outputPath": "img/avatars/opencollective/ivo-herrmann.webp",
       "size": 2654
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "ivo-herrmann.jpeg",
-      "outputPath": "img/avatars/opencollective/ivo-herrmann.jpeg",
       "url": "/img/avatars/opencollective/ivo-herrmann.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/ivo-herrmann.jpeg 90w",
+      "filename": "ivo-herrmann.jpeg",
+      "outputPath": "img/avatars/opencollective/ivo-herrmann.jpeg",
       "size": 3165
     }
   ],

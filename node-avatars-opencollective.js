@@ -34,7 +34,7 @@ async function fetch(name, opencollectUsername, imageUrl, website) {
       formats: ["avif", "webp", "jpeg"],
       widths: [90],
       urlPath: "/img/avatars/opencollective/",
-      outputDir: "img/avatars/opencollective/",
+      outputDir: "src/img/avatars/opencollective/",
       cacheOptions: {
         duration: "1d",
       },

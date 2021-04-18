@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "manuel-matuzovic.avif",
-      "outputPath": "img/avatars/opencollective/manuel-matuzovic.avif",
       "url": "/img/avatars/opencollective/manuel-matuzovic.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/manuel-matuzovic.avif 90w",
-      "size": 1595
+      "filename": "manuel-matuzovic.avif",
+      "outputPath": "img/avatars/opencollective/manuel-matuzovic.avif",
+      "size": 1589
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "manuel-matuzovic.webp",
-      "outputPath": "img/avatars/opencollective/manuel-matuzovic.webp",
       "url": "/img/avatars/opencollective/manuel-matuzovic.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/manuel-matuzovic.webp 90w",
+      "filename": "manuel-matuzovic.webp",
+      "outputPath": "img/avatars/opencollective/manuel-matuzovic.webp",
       "size": 2448
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "manuel-matuzovic.jpeg",
-      "outputPath": "img/avatars/opencollective/manuel-matuzovic.jpeg",
       "url": "/img/avatars/opencollective/manuel-matuzovic.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/manuel-matuzovic.jpeg 90w",
+      "filename": "manuel-matuzovic.jpeg",
+      "outputPath": "img/avatars/opencollective/manuel-matuzovic.jpeg",
       "size": 2930
     }
   ],

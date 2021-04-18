@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "melanie-sumner.avif",
-      "outputPath": "img/avatars/opencollective/melanie-sumner.avif",
       "url": "/img/avatars/opencollective/melanie-sumner.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/melanie-sumner.avif 90w",
-      "size": 1167
+      "filename": "melanie-sumner.avif",
+      "outputPath": "img/avatars/opencollective/melanie-sumner.avif",
+      "size": 1175
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "melanie-sumner.webp",
-      "outputPath": "img/avatars/opencollective/melanie-sumner.webp",
       "url": "/img/avatars/opencollective/melanie-sumner.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/melanie-sumner.webp 90w",
+      "filename": "melanie-sumner.webp",
+      "outputPath": "img/avatars/opencollective/melanie-sumner.webp",
       "size": 1748
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "melanie-sumner.jpeg",
-      "outputPath": "img/avatars/opencollective/melanie-sumner.jpeg",
       "url": "/img/avatars/opencollective/melanie-sumner.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/melanie-sumner.jpeg 90w",
+      "filename": "melanie-sumner.jpeg",
+      "outputPath": "img/avatars/opencollective/melanie-sumner.jpeg",
       "size": 2448
     }
   ],

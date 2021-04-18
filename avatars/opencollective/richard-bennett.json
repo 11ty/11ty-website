@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "richard-bennett.avif",
-      "outputPath": "img/avatars/opencollective/richard-bennett.avif",
       "url": "/img/avatars/opencollective/richard-bennett.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/richard-bennett.avif 90w",
-      "size": 770
+      "filename": "richard-bennett.avif",
+      "outputPath": "img/avatars/opencollective/richard-bennett.avif",
+      "size": 778
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "richard-bennett.webp",
-      "outputPath": "img/avatars/opencollective/richard-bennett.webp",
       "url": "/img/avatars/opencollective/richard-bennett.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/richard-bennett.webp 90w",
+      "filename": "richard-bennett.webp",
+      "outputPath": "img/avatars/opencollective/richard-bennett.webp",
       "size": 690
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "richard-bennett.jpeg",
-      "outputPath": "img/avatars/opencollective/richard-bennett.jpeg",
       "url": "/img/avatars/opencollective/richard-bennett.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/richard-bennett.jpeg 90w",
+      "filename": "richard-bennett.jpeg",
+      "outputPath": "img/avatars/opencollective/richard-bennett.jpeg",
       "size": 1358
     }
   ],

@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "kelson-vibber.avif",
-      "outputPath": "img/avatars/opencollective/kelson-vibber.avif",
       "url": "/img/avatars/opencollective/kelson-vibber.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/kelson-vibber.avif 90w",
-      "size": 2205
+      "filename": "kelson-vibber.avif",
+      "outputPath": "img/avatars/opencollective/kelson-vibber.avif",
+      "size": 2237
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "kelson-vibber.webp",
-      "outputPath": "img/avatars/opencollective/kelson-vibber.webp",
       "url": "/img/avatars/opencollective/kelson-vibber.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/kelson-vibber.webp 90w",
+      "filename": "kelson-vibber.webp",
+      "outputPath": "img/avatars/opencollective/kelson-vibber.webp",
       "size": 3708
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "kelson-vibber.jpeg",
-      "outputPath": "img/avatars/opencollective/kelson-vibber.jpeg",
       "url": "/img/avatars/opencollective/kelson-vibber.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/kelson-vibber.jpeg 90w",
+      "filename": "kelson-vibber.jpeg",
+      "outputPath": "img/avatars/opencollective/kelson-vibber.jpeg",
       "size": 2073
     }
   ],

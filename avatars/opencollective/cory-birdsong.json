@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "cory-birdsong.avif",
-      "outputPath": "img/avatars/opencollective/cory-birdsong.avif",
       "url": "/img/avatars/opencollective/cory-birdsong.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/cory-birdsong.avif 90w",
-      "size": 1454
+      "filename": "cory-birdsong.avif",
+      "outputPath": "img/avatars/opencollective/cory-birdsong.avif",
+      "size": 1478
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "cory-birdsong.webp",
-      "outputPath": "img/avatars/opencollective/cory-birdsong.webp",
       "url": "/img/avatars/opencollective/cory-birdsong.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/cory-birdsong.webp 90w",
+      "filename": "cory-birdsong.webp",
+      "outputPath": "img/avatars/opencollective/cory-birdsong.webp",
       "size": 2098
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "cory-birdsong.jpeg",
-      "outputPath": "img/avatars/opencollective/cory-birdsong.jpeg",
       "url": "/img/avatars/opencollective/cory-birdsong.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/cory-birdsong.jpeg 90w",
+      "filename": "cory-birdsong.jpeg",
+      "outputPath": "img/avatars/opencollective/cory-birdsong.jpeg",
       "size": 2691
     }
   ],

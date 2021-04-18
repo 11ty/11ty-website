@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "stephanie-eckles.avif",
-      "outputPath": "img/avatars/opencollective/stephanie-eckles.avif",
       "url": "/img/avatars/opencollective/stephanie-eckles.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/stephanie-eckles.avif 90w",
-      "size": 1215
+      "filename": "stephanie-eckles.avif",
+      "outputPath": "img/avatars/opencollective/stephanie-eckles.avif",
+      "size": 1213
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "stephanie-eckles.webp",
-      "outputPath": "img/avatars/opencollective/stephanie-eckles.webp",
       "url": "/img/avatars/opencollective/stephanie-eckles.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/stephanie-eckles.webp 90w",
+      "filename": "stephanie-eckles.webp",
+      "outputPath": "img/avatars/opencollective/stephanie-eckles.webp",
       "size": 1514
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "stephanie-eckles.jpeg",
-      "outputPath": "img/avatars/opencollective/stephanie-eckles.jpeg",
       "url": "/img/avatars/opencollective/stephanie-eckles.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/stephanie-eckles.jpeg 90w",
+      "filename": "stephanie-eckles.jpeg",
+      "outputPath": "img/avatars/opencollective/stephanie-eckles.jpeg",
       "size": 2231
     }
   ],

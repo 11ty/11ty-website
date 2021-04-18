@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "julien-brionne.avif",
-      "outputPath": "img/avatars/opencollective/julien-brionne.avif",
       "url": "/img/avatars/opencollective/julien-brionne.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/julien-brionne.avif 90w",
-      "size": 955
+      "filename": "julien-brionne.avif",
+      "outputPath": "img/avatars/opencollective/julien-brionne.avif",
+      "size": 982
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "julien-brionne.webp",
-      "outputPath": "img/avatars/opencollective/julien-brionne.webp",
       "url": "/img/avatars/opencollective/julien-brionne.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/julien-brionne.webp 90w",
+      "filename": "julien-brionne.webp",
+      "outputPath": "img/avatars/opencollective/julien-brionne.webp",
       "size": 1246
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "julien-brionne.jpeg",
-      "outputPath": "img/avatars/opencollective/julien-brionne.jpeg",
       "url": "/img/avatars/opencollective/julien-brionne.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/julien-brionne.jpeg 90w",
+      "filename": "julien-brionne.jpeg",
+      "outputPath": "img/avatars/opencollective/julien-brionne.jpeg",
       "size": 2008
     }
   ],

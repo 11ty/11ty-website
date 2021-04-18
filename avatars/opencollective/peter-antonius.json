@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "peter-antonius.avif",
-      "outputPath": "img/avatars/opencollective/peter-antonius.avif",
       "url": "/img/avatars/opencollective/peter-antonius.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/peter-antonius.avif 90w",
-      "size": 1820
+      "filename": "peter-antonius.avif",
+      "outputPath": "img/avatars/opencollective/peter-antonius.avif",
+      "size": 1829
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "peter-antonius.webp",
-      "outputPath": "img/avatars/opencollective/peter-antonius.webp",
       "url": "/img/avatars/opencollective/peter-antonius.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/peter-antonius.webp 90w",
+      "filename": "peter-antonius.webp",
+      "outputPath": "img/avatars/opencollective/peter-antonius.webp",
       "size": 2652
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "peter-antonius.jpeg",
-      "outputPath": "img/avatars/opencollective/peter-antonius.jpeg",
       "url": "/img/avatars/opencollective/peter-antonius.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/peter-antonius.jpeg 90w",
+      "filename": "peter-antonius.jpeg",
+      "outputPath": "img/avatars/opencollective/peter-antonius.jpeg",
       "size": 3176
     }
   ],
