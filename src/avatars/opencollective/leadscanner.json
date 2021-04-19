@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 81,
-      "filename": "leadscanner.avif",
-      "outputPath": "src/img/avatars/opencollective/leadscanner.avif",
       "url": "/img/avatars/opencollective/leadscanner.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/leadscanner.avif 90w",
+      "filename": "leadscanner.avif",
+      "outputPath": "src/img/avatars/opencollective/leadscanner.avif",
       "size": 753
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 81,
-      "filename": "leadscanner.webp",
-      "outputPath": "src/img/avatars/opencollective/leadscanner.webp",
       "url": "/img/avatars/opencollective/leadscanner.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/leadscanner.webp 90w",
+      "filename": "leadscanner.webp",
+      "outputPath": "src/img/avatars/opencollective/leadscanner.webp",
       "size": 604
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 81,
-      "filename": "leadscanner.jpeg",
-      "outputPath": "src/img/avatars/opencollective/leadscanner.jpeg",
       "url": "/img/avatars/opencollective/leadscanner.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/leadscanner.jpeg 90w",
+      "filename": "leadscanner.jpeg",
+      "outputPath": "src/img/avatars/opencollective/leadscanner.jpeg",
       "size": 1179
     }
   ],

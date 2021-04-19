@@ -178,7 +178,7 @@ ${text.trim()}
 
 	eleventyConfig.addPassthroughCopy("netlify-email");
 	// eleventyConfig.addPassthroughCopy("css/fonts"); // these are inline now
-	eleventyConfig.addPassthroughCopy("src/img"); // WARN: over 2000 items in here from generated avatars
+	eleventyConfig.addPassthroughCopy("src/img");
 	eleventyConfig.addPassthroughCopy("src/news/*.png");
 	eleventyConfig.addPassthroughCopy("src/favicon.ico");
 

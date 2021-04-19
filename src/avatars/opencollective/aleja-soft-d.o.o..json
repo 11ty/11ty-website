@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "aleja-soft-d.o.o..avif",
-      "outputPath": "src/img/avatars/opencollective/aleja-soft-d.o.o..avif",
       "url": "/img/avatars/opencollective/aleja-soft-d.o.o..avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/aleja-soft-d.o.o..avif 90w",
-      "size": 639
+      "filename": "aleja-soft-d.o.o..avif",
+      "outputPath": "src/img/avatars/opencollective/aleja-soft-d.o.o..avif",
+      "size": 642
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "aleja-soft-d.o.o..webp",
-      "outputPath": "src/img/avatars/opencollective/aleja-soft-d.o.o..webp",
       "url": "/img/avatars/opencollective/aleja-soft-d.o.o..webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/aleja-soft-d.o.o..webp 90w",
+      "filename": "aleja-soft-d.o.o..webp",
+      "outputPath": "src/img/avatars/opencollective/aleja-soft-d.o.o..webp",
       "size": 572
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "aleja-soft-d.o.o..jpeg",
-      "outputPath": "src/img/avatars/opencollective/aleja-soft-d.o.o..jpeg",
       "url": "/img/avatars/opencollective/aleja-soft-d.o.o..jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/aleja-soft-d.o.o..jpeg 90w",
+      "filename": "aleja-soft-d.o.o..jpeg",
+      "outputPath": "src/img/avatars/opencollective/aleja-soft-d.o.o..jpeg",
       "size": 1153
     }
   ],

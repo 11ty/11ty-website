@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/buskers-bern.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/buskers-bern.avif 90w",
+      "filename": "buskers-bern.avif",
+      "outputPath": "img/avatars/opencollective/buskers-bern.avif",
+      "size": 790
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/buskers-bern.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/buskers-bern.webp 90w",
+      "filename": "buskers-bern.webp",
+      "outputPath": "img/avatars/opencollective/buskers-bern.webp",
+      "size": 1176
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/buskers-bern.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/buskers-bern.jpeg 90w",
+      "filename": "buskers-bern.jpeg",
+      "outputPath": "img/avatars/opencollective/buskers-bern.jpeg",
+      "size": 2004
+    }
+  ],
+  "slug": "buskers-bern"
+}

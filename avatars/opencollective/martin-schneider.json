@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/martin-schneider.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/martin-schneider.avif 90w",
+      "filename": "martin-schneider.avif",
+      "outputPath": "img/avatars/opencollective/martin-schneider.avif",
+      "size": 1175
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/martin-schneider.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/martin-schneider.webp 90w",
+      "filename": "martin-schneider.webp",
+      "outputPath": "img/avatars/opencollective/martin-schneider.webp",
+      "size": 1692
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/martin-schneider.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/martin-schneider.jpeg 90w",
+      "filename": "martin-schneider.jpeg",
+      "outputPath": "img/avatars/opencollective/martin-schneider.jpeg",
+      "size": 2424
+    }
+  ],
+  "slug": "martin-schneider"
+}

@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "security-gladiators.avif",
-      "outputPath": "src/img/avatars/opencollective/security-gladiators.avif",
       "url": "/img/avatars/opencollective/security-gladiators.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/security-gladiators.avif 90w",
-      "size": 762
+      "filename": "security-gladiators.avif",
+      "outputPath": "src/img/avatars/opencollective/security-gladiators.avif",
+      "size": 764
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "security-gladiators.webp",
-      "outputPath": "src/img/avatars/opencollective/security-gladiators.webp",
       "url": "/img/avatars/opencollective/security-gladiators.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/security-gladiators.webp 90w",
+      "filename": "security-gladiators.webp",
+      "outputPath": "src/img/avatars/opencollective/security-gladiators.webp",
       "size": 1070
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "security-gladiators.jpeg",
-      "outputPath": "src/img/avatars/opencollective/security-gladiators.jpeg",
       "url": "/img/avatars/opencollective/security-gladiators.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/security-gladiators.jpeg 90w",
+      "filename": "security-gladiators.jpeg",
+      "outputPath": "src/img/avatars/opencollective/security-gladiators.jpeg",
       "size": 1579
     }
   ],

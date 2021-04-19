@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 77,
-      "filename": "eben-gilkenson.avif",
-      "outputPath": "src/img/avatars/opencollective/eben-gilkenson.avif",
       "url": "/img/avatars/opencollective/eben-gilkenson.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/eben-gilkenson.avif 90w",
-      "size": 1042
+      "filename": "eben-gilkenson.avif",
+      "outputPath": "src/img/avatars/opencollective/eben-gilkenson.avif",
+      "size": 1025
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 77,
-      "filename": "eben-gilkenson.webp",
-      "outputPath": "src/img/avatars/opencollective/eben-gilkenson.webp",
       "url": "/img/avatars/opencollective/eben-gilkenson.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/eben-gilkenson.webp 90w",
+      "filename": "eben-gilkenson.webp",
+      "outputPath": "src/img/avatars/opencollective/eben-gilkenson.webp",
       "size": 1400
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 77,
-      "filename": "eben-gilkenson.jpeg",
-      "outputPath": "src/img/avatars/opencollective/eben-gilkenson.jpeg",
       "url": "/img/avatars/opencollective/eben-gilkenson.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/eben-gilkenson.jpeg 90w",
+      "filename": "eben-gilkenson.jpeg",
+      "outputPath": "src/img/avatars/opencollective/eben-gilkenson.jpeg",
       "size": 1982
     }
   ],

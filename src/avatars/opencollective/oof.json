@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 94,
-      "filename": "oof.avif",
-      "outputPath": "src/img/avatars/opencollective/oof.avif",
       "url": "/img/avatars/opencollective/oof.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/oof.avif 90w",
+      "filename": "oof.avif",
+      "outputPath": "src/img/avatars/opencollective/oof.avif",
       "size": 2035
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 94,
-      "filename": "oof.webp",
-      "outputPath": "src/img/avatars/opencollective/oof.webp",
       "url": "/img/avatars/opencollective/oof.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/oof.webp 90w",
+      "filename": "oof.webp",
+      "outputPath": "src/img/avatars/opencollective/oof.webp",
       "size": 3062
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 94,
-      "filename": "oof.jpeg",
-      "outputPath": "src/img/avatars/opencollective/oof.jpeg",
       "url": "/img/avatars/opencollective/oof.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/oof.jpeg 90w",
+      "filename": "oof.jpeg",
+      "outputPath": "src/img/avatars/opencollective/oof.jpeg",
       "size": 3297
     }
   ],

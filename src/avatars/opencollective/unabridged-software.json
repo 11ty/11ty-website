@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "unabridged-software.avif",
-      "outputPath": "src/img/avatars/opencollective/unabridged-software.avif",
       "url": "/img/avatars/opencollective/unabridged-software.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/unabridged-software.avif 90w",
-      "size": 536
+      "filename": "unabridged-software.avif",
+      "outputPath": "src/img/avatars/opencollective/unabridged-software.avif",
+      "size": 540
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "unabridged-software.webp",
-      "outputPath": "src/img/avatars/opencollective/unabridged-software.webp",
       "url": "/img/avatars/opencollective/unabridged-software.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/unabridged-software.webp 90w",
+      "filename": "unabridged-software.webp",
+      "outputPath": "src/img/avatars/opencollective/unabridged-software.webp",
       "size": 628
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "unabridged-software.jpeg",
-      "outputPath": "src/img/avatars/opencollective/unabridged-software.jpeg",
       "url": "/img/avatars/opencollective/unabridged-software.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/unabridged-software.jpeg 90w",
+      "filename": "unabridged-software.jpeg",
+      "outputPath": "src/img/avatars/opencollective/unabridged-software.jpeg",
       "size": 1730
     }
   ],

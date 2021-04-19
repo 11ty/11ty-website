@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/scott-wild.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/scott-wild.avif 90w",
+      "filename": "scott-wild.avif",
+      "outputPath": "img/avatars/opencollective/scott-wild.avif",
+      "size": 1308
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/scott-wild.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/scott-wild.webp 90w",
+      "filename": "scott-wild.webp",
+      "outputPath": "img/avatars/opencollective/scott-wild.webp",
+      "size": 1700
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/scott-wild.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/scott-wild.jpeg 90w",
+      "filename": "scott-wild.jpeg",
+      "outputPath": "img/avatars/opencollective/scott-wild.jpeg",
+      "size": 2240
+    }
+  ],
+  "slug": "scott-wild"
+}

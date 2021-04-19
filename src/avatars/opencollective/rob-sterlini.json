@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "rob-sterlini.avif",
-      "outputPath": "src/img/avatars/opencollective/rob-sterlini.avif",
       "url": "/img/avatars/opencollective/rob-sterlini.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/rob-sterlini.avif 90w",
-      "size": 1746
+      "filename": "rob-sterlini.avif",
+      "outputPath": "src/img/avatars/opencollective/rob-sterlini.avif",
+      "size": 1759
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "rob-sterlini.webp",
-      "outputPath": "src/img/avatars/opencollective/rob-sterlini.webp",
       "url": "/img/avatars/opencollective/rob-sterlini.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/rob-sterlini.webp 90w",
+      "filename": "rob-sterlini.webp",
+      "outputPath": "src/img/avatars/opencollective/rob-sterlini.webp",
       "size": 2692
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "rob-sterlini.jpeg",
-      "outputPath": "src/img/avatars/opencollective/rob-sterlini.jpeg",
       "url": "/img/avatars/opencollective/rob-sterlini.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/rob-sterlini.jpeg 90w",
+      "filename": "rob-sterlini.jpeg",
+      "outputPath": "src/img/avatars/opencollective/rob-sterlini.jpeg",
       "size": 3111
     }
   ],

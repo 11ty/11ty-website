@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/alesandro-ortiz.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/alesandro-ortiz.avif 90w",
+      "filename": "alesandro-ortiz.avif",
+      "outputPath": "img/avatars/opencollective/alesandro-ortiz.avif",
+      "size": 977
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/alesandro-ortiz.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/alesandro-ortiz.webp 90w",
+      "filename": "alesandro-ortiz.webp",
+      "outputPath": "img/avatars/opencollective/alesandro-ortiz.webp",
+      "size": 1232
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/alesandro-ortiz.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/alesandro-ortiz.jpeg 90w",
+      "filename": "alesandro-ortiz.jpeg",
+      "outputPath": "img/avatars/opencollective/alesandro-ortiz.jpeg",
+      "size": 1817
+    }
+  ],
+  "slug": "alesandro-ortiz"
+}

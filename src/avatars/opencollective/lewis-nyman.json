@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "lewis-nyman.avif",
-      "outputPath": "src/img/avatars/opencollective/lewis-nyman.avif",
       "url": "/img/avatars/opencollective/lewis-nyman.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/lewis-nyman.avif 90w",
-      "size": 1517
+      "filename": "lewis-nyman.avif",
+      "outputPath": "src/img/avatars/opencollective/lewis-nyman.avif",
+      "size": 1509
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "lewis-nyman.webp",
-      "outputPath": "src/img/avatars/opencollective/lewis-nyman.webp",
       "url": "/img/avatars/opencollective/lewis-nyman.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/lewis-nyman.webp 90w",
+      "filename": "lewis-nyman.webp",
+      "outputPath": "src/img/avatars/opencollective/lewis-nyman.webp",
       "size": 2362
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "lewis-nyman.jpeg",
-      "outputPath": "src/img/avatars/opencollective/lewis-nyman.jpeg",
       "url": "/img/avatars/opencollective/lewis-nyman.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/lewis-nyman.jpeg 90w",
+      "filename": "lewis-nyman.jpeg",
+      "outputPath": "src/img/avatars/opencollective/lewis-nyman.jpeg",
       "size": 2890
     }
   ],

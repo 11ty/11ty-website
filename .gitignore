@@ -10,3 +10,4 @@ netlify/functions/cloud/*
 yarn.lock
 .vscode
 **/.DS_Store
+netlify/functions/cloud/*

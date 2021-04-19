@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "piotr-swiderek.avif",
-      "outputPath": "src/img/avatars/opencollective/piotr-swiderek.avif",
       "url": "/img/avatars/opencollective/piotr-swiderek.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/piotr-swiderek.avif 90w",
-      "size": 1086
+      "filename": "piotr-swiderek.avif",
+      "outputPath": "src/img/avatars/opencollective/piotr-swiderek.avif",
+      "size": 1078
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "piotr-swiderek.webp",
-      "outputPath": "src/img/avatars/opencollective/piotr-swiderek.webp",
       "url": "/img/avatars/opencollective/piotr-swiderek.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/piotr-swiderek.webp 90w",
+      "filename": "piotr-swiderek.webp",
+      "outputPath": "src/img/avatars/opencollective/piotr-swiderek.webp",
       "size": 1678
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "piotr-swiderek.jpeg",
-      "outputPath": "src/img/avatars/opencollective/piotr-swiderek.jpeg",
       "url": "/img/avatars/opencollective/piotr-swiderek.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/piotr-swiderek.jpeg 90w",
+      "filename": "piotr-swiderek.jpeg",
+      "outputPath": "src/img/avatars/opencollective/piotr-swiderek.jpeg",
       "size": 2384
     }
   ],

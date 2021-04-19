@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "john-meguerian.avif",
-      "outputPath": "src/img/avatars/opencollective/john-meguerian.avif",
       "url": "/img/avatars/opencollective/john-meguerian.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/john-meguerian.avif 90w",
-      "size": 793
+      "filename": "john-meguerian.avif",
+      "outputPath": "src/img/avatars/opencollective/john-meguerian.avif",
+      "size": 799
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "john-meguerian.webp",
-      "outputPath": "src/img/avatars/opencollective/john-meguerian.webp",
       "url": "/img/avatars/opencollective/john-meguerian.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/john-meguerian.webp 90w",
+      "filename": "john-meguerian.webp",
+      "outputPath": "src/img/avatars/opencollective/john-meguerian.webp",
       "size": 1002
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "john-meguerian.jpeg",
-      "outputPath": "src/img/avatars/opencollective/john-meguerian.jpeg",
       "url": "/img/avatars/opencollective/john-meguerian.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/john-meguerian.jpeg 90w",
+      "filename": "john-meguerian.jpeg",
+      "outputPath": "src/img/avatars/opencollective/john-meguerian.jpeg",
       "size": 1745
     }
   ],

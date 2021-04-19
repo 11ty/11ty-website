@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "nate-steiner.avif",
-      "outputPath": "src/img/avatars/opencollective/nate-steiner.avif",
       "url": "/img/avatars/opencollective/nate-steiner.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/nate-steiner.avif 90w",
-      "size": 958
+      "filename": "nate-steiner.avif",
+      "outputPath": "src/img/avatars/opencollective/nate-steiner.avif",
+      "size": 956
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "nate-steiner.webp",
-      "outputPath": "src/img/avatars/opencollective/nate-steiner.webp",
       "url": "/img/avatars/opencollective/nate-steiner.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/nate-steiner.webp 90w",
+      "filename": "nate-steiner.webp",
+      "outputPath": "src/img/avatars/opencollective/nate-steiner.webp",
       "size": 1340
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "nate-steiner.jpeg",
-      "outputPath": "src/img/avatars/opencollective/nate-steiner.jpeg",
       "url": "/img/avatars/opencollective/nate-steiner.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/nate-steiner.jpeg 90w",
+      "filename": "nate-steiner.jpeg",
+      "outputPath": "src/img/avatars/opencollective/nate-steiner.jpeg",
       "size": 2015
     }
   ],

@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/paul-robert-lloyd.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/paul-robert-lloyd.avif 90w",
+      "filename": "paul-robert-lloyd.avif",
+      "outputPath": "img/avatars/opencollective/paul-robert-lloyd.avif",
+      "size": 1737
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/paul-robert-lloyd.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/paul-robert-lloyd.webp 90w",
+      "filename": "paul-robert-lloyd.webp",
+      "outputPath": "img/avatars/opencollective/paul-robert-lloyd.webp",
+      "size": 2690
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/paul-robert-lloyd.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/paul-robert-lloyd.jpeg 90w",
+      "filename": "paul-robert-lloyd.jpeg",
+      "outputPath": "img/avatars/opencollective/paul-robert-lloyd.jpeg",
+      "size": 3012
+    }
+  ],
+  "slug": "paul-robert-lloyd"
+}

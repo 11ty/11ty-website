@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/takuya-fukuju.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/takuya-fukuju.avif 90w",
+      "filename": "takuya-fukuju.avif",
+      "outputPath": "img/avatars/opencollective/takuya-fukuju.avif",
+      "size": 1493
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/takuya-fukuju.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/takuya-fukuju.webp 90w",
+      "filename": "takuya-fukuju.webp",
+      "outputPath": "img/avatars/opencollective/takuya-fukuju.webp",
+      "size": 1754
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/takuya-fukuju.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/takuya-fukuju.jpeg 90w",
+      "filename": "takuya-fukuju.jpeg",
+      "outputPath": "img/avatars/opencollective/takuya-fukuju.jpeg",
+      "size": 2399
+    }
+  ],
+  "slug": "takuya-fukuju"
+}

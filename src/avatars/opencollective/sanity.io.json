@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "sanity.io.avif",
-      "outputPath": "src/img/avatars/opencollective/sanity.io.avif",
       "url": "/img/avatars/opencollective/sanity.io.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/sanity.io.avif 90w",
-      "size": 792
+      "filename": "sanity.io.avif",
+      "outputPath": "src/img/avatars/opencollective/sanity.io.avif",
+      "size": 788
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "sanity.io.webp",
-      "outputPath": "src/img/avatars/opencollective/sanity.io.webp",
       "url": "/img/avatars/opencollective/sanity.io.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/sanity.io.webp 90w",
+      "filename": "sanity.io.webp",
+      "outputPath": "src/img/avatars/opencollective/sanity.io.webp",
       "size": 758
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "sanity.io.jpeg",
-      "outputPath": "src/img/avatars/opencollective/sanity.io.jpeg",
       "url": "/img/avatars/opencollective/sanity.io.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/sanity.io.jpeg 90w",
+      "filename": "sanity.io.jpeg",
+      "outputPath": "src/img/avatars/opencollective/sanity.io.jpeg",
       "size": 1469
     }
   ],

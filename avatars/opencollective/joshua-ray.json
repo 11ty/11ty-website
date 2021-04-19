@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 112,
+      "url": "/img/avatars/opencollective/joshua-ray.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/joshua-ray.avif 90w",
+      "filename": "joshua-ray.avif",
+      "outputPath": "img/avatars/opencollective/joshua-ray.avif",
+      "size": 2118
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 112,
+      "url": "/img/avatars/opencollective/joshua-ray.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/joshua-ray.webp 90w",
+      "filename": "joshua-ray.webp",
+      "outputPath": "img/avatars/opencollective/joshua-ray.webp",
+      "size": 3214
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 112,
+      "url": "/img/avatars/opencollective/joshua-ray.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/joshua-ray.jpeg 90w",
+      "filename": "joshua-ray.jpeg",
+      "outputPath": "img/avatars/opencollective/joshua-ray.jpeg",
+      "size": 3768
+    }
+  ],
+  "slug": "joshua-ray"
+}

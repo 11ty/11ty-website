@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "john-sj-anderson.avif",
-      "outputPath": "src/img/avatars/opencollective/john-sj-anderson.avif",
       "url": "/img/avatars/opencollective/john-sj-anderson.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/john-sj-anderson.avif 90w",
-      "size": 1100
+      "filename": "john-sj-anderson.avif",
+      "outputPath": "src/img/avatars/opencollective/john-sj-anderson.avif",
+      "size": 1109
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "john-sj-anderson.webp",
-      "outputPath": "src/img/avatars/opencollective/john-sj-anderson.webp",
       "url": "/img/avatars/opencollective/john-sj-anderson.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/john-sj-anderson.webp 90w",
+      "filename": "john-sj-anderson.webp",
+      "outputPath": "src/img/avatars/opencollective/john-sj-anderson.webp",
       "size": 1584
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "john-sj-anderson.jpeg",
-      "outputPath": "src/img/avatars/opencollective/john-sj-anderson.jpeg",
       "url": "/img/avatars/opencollective/john-sj-anderson.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/john-sj-anderson.jpeg 90w",
+      "filename": "john-sj-anderson.jpeg",
+      "outputPath": "src/img/avatars/opencollective/john-sj-anderson.jpeg",
       "size": 2245
     }
   ],

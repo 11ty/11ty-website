@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "keenan-payne.avif",
-      "outputPath": "src/img/avatars/opencollective/keenan-payne.avif",
       "url": "/img/avatars/opencollective/keenan-payne.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/keenan-payne.avif 90w",
-      "size": 1763
+      "filename": "keenan-payne.avif",
+      "outputPath": "src/img/avatars/opencollective/keenan-payne.avif",
+      "size": 1760
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "keenan-payne.webp",
-      "outputPath": "src/img/avatars/opencollective/keenan-payne.webp",
       "url": "/img/avatars/opencollective/keenan-payne.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/keenan-payne.webp 90w",
+      "filename": "keenan-payne.webp",
+      "outputPath": "src/img/avatars/opencollective/keenan-payne.webp",
       "size": 2610
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "keenan-payne.jpeg",
-      "outputPath": "src/img/avatars/opencollective/keenan-payne.jpeg",
       "url": "/img/avatars/opencollective/keenan-payne.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/keenan-payne.jpeg 90w",
+      "filename": "keenan-payne.jpeg",
+      "outputPath": "src/img/avatars/opencollective/keenan-payne.jpeg",
       "size": 3059
     }
   ],

@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/todd-libby.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/todd-libby.avif 90w",
+      "filename": "todd-libby.avif",
+      "outputPath": "img/avatars/opencollective/todd-libby.avif",
+      "size": 791
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/todd-libby.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/todd-libby.webp 90w",
+      "filename": "todd-libby.webp",
+      "outputPath": "img/avatars/opencollective/todd-libby.webp",
+      "size": 726
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/todd-libby.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/todd-libby.jpeg 90w",
+      "filename": "todd-libby.jpeg",
+      "outputPath": "img/avatars/opencollective/todd-libby.jpeg",
+      "size": 1493
+    }
+  ],
+  "slug": "todd-libby"
+}

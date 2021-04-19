@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "greg-gibson.avif",
-      "outputPath": "src/img/avatars/opencollective/greg-gibson.avif",
       "url": "/img/avatars/opencollective/greg-gibson.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/greg-gibson.avif 90w",
-      "size": 1712
+      "filename": "greg-gibson.avif",
+      "outputPath": "src/img/avatars/opencollective/greg-gibson.avif",
+      "size": 1744
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "greg-gibson.webp",
-      "outputPath": "src/img/avatars/opencollective/greg-gibson.webp",
       "url": "/img/avatars/opencollective/greg-gibson.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/greg-gibson.webp 90w",
+      "filename": "greg-gibson.webp",
+      "outputPath": "src/img/avatars/opencollective/greg-gibson.webp",
       "size": 2332
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "greg-gibson.jpeg",
-      "outputPath": "src/img/avatars/opencollective/greg-gibson.jpeg",
       "url": "/img/avatars/opencollective/greg-gibson.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/greg-gibson.jpeg 90w",
+      "filename": "greg-gibson.jpeg",
+      "outputPath": "src/img/avatars/opencollective/greg-gibson.jpeg",
       "size": 2907
     }
   ],

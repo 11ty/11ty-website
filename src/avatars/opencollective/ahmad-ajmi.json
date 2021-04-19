@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "ahmad-ajmi.avif",
-      "outputPath": "src/img/avatars/opencollective/ahmad-ajmi.avif",
       "url": "/img/avatars/opencollective/ahmad-ajmi.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/ahmad-ajmi.avif 90w",
-      "size": 1363
+      "filename": "ahmad-ajmi.avif",
+      "outputPath": "src/img/avatars/opencollective/ahmad-ajmi.avif",
+      "size": 1379
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "ahmad-ajmi.webp",
-      "outputPath": "src/img/avatars/opencollective/ahmad-ajmi.webp",
       "url": "/img/avatars/opencollective/ahmad-ajmi.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/ahmad-ajmi.webp 90w",
+      "filename": "ahmad-ajmi.webp",
+      "outputPath": "src/img/avatars/opencollective/ahmad-ajmi.webp",
       "size": 1960
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "ahmad-ajmi.jpeg",
-      "outputPath": "src/img/avatars/opencollective/ahmad-ajmi.jpeg",
       "url": "/img/avatars/opencollective/ahmad-ajmi.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/ahmad-ajmi.jpeg 90w",
+      "filename": "ahmad-ajmi.jpeg",
+      "outputPath": "src/img/avatars/opencollective/ahmad-ajmi.jpeg",
       "size": 2629
     }
   ],

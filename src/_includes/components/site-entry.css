@@ -73,7 +73,7 @@
   --lo-margin-h: 1rem;
   --lo-margin-v: 2rem;
   --lo-stackpoint: 31.25em;
-  --lo-c-minwidth: 8em; /* 144px /18 */
+  --lo-c-minwidth: 11.94444444444em; /* 215px /18 */
 }
 .sites-site-vert a {
   display: block;

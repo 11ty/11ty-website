@@ -4,11 +4,11 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "david-a.-herron.avif",
-      "outputPath": "src/img/avatars/opencollective/david-a.-herron.avif",
       "url": "/img/avatars/opencollective/david-a.-herron.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/david-a.-herron.avif 90w",
+      "filename": "david-a.-herron.avif",
+      "outputPath": "src/img/avatars/opencollective/david-a.-herron.avif",
       "size": 1369
     }
   ],
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "david-a.-herron.webp",
-      "outputPath": "src/img/avatars/opencollective/david-a.-herron.webp",
       "url": "/img/avatars/opencollective/david-a.-herron.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/david-a.-herron.webp 90w",
+      "filename": "david-a.-herron.webp",
+      "outputPath": "src/img/avatars/opencollective/david-a.-herron.webp",
       "size": 1796
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "david-a.-herron.jpeg",
-      "outputPath": "src/img/avatars/opencollective/david-a.-herron.jpeg",
       "url": "/img/avatars/opencollective/david-a.-herron.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/david-a.-herron.jpeg 90w",
+      "filename": "david-a.-herron.jpeg",
+      "outputPath": "src/img/avatars/opencollective/david-a.-herron.jpeg",
       "size": 2485
     }
   ],

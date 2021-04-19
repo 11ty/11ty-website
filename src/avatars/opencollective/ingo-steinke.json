@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "ingo-steinke.avif",
-      "outputPath": "src/img/avatars/opencollective/ingo-steinke.avif",
       "url": "/img/avatars/opencollective/ingo-steinke.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/ingo-steinke.avif 90w",
-      "size": 769
+      "filename": "ingo-steinke.avif",
+      "outputPath": "src/img/avatars/opencollective/ingo-steinke.avif",
+      "size": 777
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "ingo-steinke.webp",
-      "outputPath": "src/img/avatars/opencollective/ingo-steinke.webp",
       "url": "/img/avatars/opencollective/ingo-steinke.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/ingo-steinke.webp 90w",
+      "filename": "ingo-steinke.webp",
+      "outputPath": "src/img/avatars/opencollective/ingo-steinke.webp",
       "size": 872
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "ingo-steinke.jpeg",
-      "outputPath": "src/img/avatars/opencollective/ingo-steinke.jpeg",
       "url": "/img/avatars/opencollective/ingo-steinke.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/ingo-steinke.jpeg 90w",
+      "filename": "ingo-steinke.jpeg",
+      "outputPath": "src/img/avatars/opencollective/ingo-steinke.jpeg",
       "size": 1614
     }
   ],

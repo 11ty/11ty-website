@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "hampton-moore.avif",
-      "outputPath": "src/img/avatars/opencollective/hampton-moore.avif",
       "url": "/img/avatars/opencollective/hampton-moore.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/hampton-moore.avif 90w",
-      "size": 2386
+      "filename": "hampton-moore.avif",
+      "outputPath": "src/img/avatars/opencollective/hampton-moore.avif",
+      "size": 2429
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "hampton-moore.webp",
-      "outputPath": "src/img/avatars/opencollective/hampton-moore.webp",
       "url": "/img/avatars/opencollective/hampton-moore.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/hampton-moore.webp 90w",
+      "filename": "hampton-moore.webp",
+      "outputPath": "src/img/avatars/opencollective/hampton-moore.webp",
       "size": 3266
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "hampton-moore.jpeg",
-      "outputPath": "src/img/avatars/opencollective/hampton-moore.jpeg",
       "url": "/img/avatars/opencollective/hampton-moore.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/hampton-moore.jpeg 90w",
+      "filename": "hampton-moore.jpeg",
+      "outputPath": "src/img/avatars/opencollective/hampton-moore.jpeg",
       "size": 1316
     }
   ],

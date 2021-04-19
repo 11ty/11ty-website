@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "jen-downs.avif",
-      "outputPath": "src/img/avatars/opencollective/jen-downs.avif",
       "url": "/img/avatars/opencollective/jen-downs.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/jen-downs.avif 90w",
-      "size": 1313
+      "filename": "jen-downs.avif",
+      "outputPath": "src/img/avatars/opencollective/jen-downs.avif",
+      "size": 1314
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "jen-downs.webp",
-      "outputPath": "src/img/avatars/opencollective/jen-downs.webp",
       "url": "/img/avatars/opencollective/jen-downs.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/jen-downs.webp 90w",
+      "filename": "jen-downs.webp",
+      "outputPath": "src/img/avatars/opencollective/jen-downs.webp",
       "size": 1726
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "jen-downs.jpeg",
-      "outputPath": "src/img/avatars/opencollective/jen-downs.jpeg",
       "url": "/img/avatars/opencollective/jen-downs.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/jen-downs.jpeg 90w",
+      "filename": "jen-downs.jpeg",
+      "outputPath": "src/img/avatars/opencollective/jen-downs.jpeg",
       "size": 2475
     }
   ],

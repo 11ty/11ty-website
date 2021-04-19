@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "filename": "christopher-salmon.avif",
-      "outputPath": "src/img/avatars/opencollective/christopher-salmon.avif",
       "url": "/img/avatars/opencollective/christopher-salmon.avif",
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/christopher-salmon.avif 90w",
-      "size": 1159
+      "filename": "christopher-salmon.avif",
+      "outputPath": "src/img/avatars/opencollective/christopher-salmon.avif",
+      "size": 1174
     }
   ],
   "webp": [
@@ -17,11 +17,11 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "filename": "christopher-salmon.webp",
-      "outputPath": "src/img/avatars/opencollective/christopher-salmon.webp",
       "url": "/img/avatars/opencollective/christopher-salmon.webp",
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/christopher-salmon.webp 90w",
+      "filename": "christopher-salmon.webp",
+      "outputPath": "src/img/avatars/opencollective/christopher-salmon.webp",
       "size": 1694
     }
   ],
@@ -30,11 +30,11 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "filename": "christopher-salmon.jpeg",
-      "outputPath": "src/img/avatars/opencollective/christopher-salmon.jpeg",
       "url": "/img/avatars/opencollective/christopher-salmon.jpeg",
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/christopher-salmon.jpeg 90w",
+      "filename": "christopher-salmon.jpeg",
+      "outputPath": "src/img/avatars/opencollective/christopher-salmon.jpeg",
       "size": 2397
     }
   ],
