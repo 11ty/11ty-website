@@ -14,7 +14,7 @@ async function fetch(name, opencollectUsername, imageUrl, website) {
 
   // TODO bail if the website pathname is a deep path?
 
-  let dir = `./src/avatars/opencollective/`;
+  let dir = `./avatars/opencollective/`;
   await fs.ensureDir(dir);
 
   // if website exists but no avatar image exists, try to find based on website hostname

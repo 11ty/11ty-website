@@ -16,7 +16,7 @@ async function fetch(entry) {
 	}
 
 	let slug = slugify(name).toLowerCase();
-	let dir = `./src/avatars/twitter/`;
+	let dir = `./avatars/twitter/`;
 	await fs.ensureDir(dir);
 
 	let path = `${dir}${slug}.json`;

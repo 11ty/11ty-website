@@ -3,5 +3,8 @@
 	"url": "https://www.dandevri.es/",
 	"description": "This is the personal site of Danny de Vries, Indie Maker building digital products for the web and lecturer at the Amsterdam University of Applied Sciences.",
 	"twitter": "dandevri",
-	"source_url": "https://github.com/systemdes/personal-website"
+	"source_url": "https://github.com/systemdes/personal-website",
+	"business": {
+		"cta": "https://www.dandevri.es/contact"
+	}
 }

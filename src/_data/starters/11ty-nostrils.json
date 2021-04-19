@@ -2,5 +2,6 @@
   "url": "https://github.com/cbergen/11ty-nostrils",
   "name": "11ty-nostrils",
   "description": "A starter config for Eleventy with pipelines for Typescript and PostCSS.",
-  "author": "cbergen"
+  "author": "cbergen",
+  "demo": "https://11ty-nostrils.netlify.app/"
 }

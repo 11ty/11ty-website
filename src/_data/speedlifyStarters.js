@@ -26,7 +26,7 @@ module.exports = async function() {
 	for(let site of starters) {
 		let filename = site.split("/").pop();
 		// TODO clear require cache
-    let siteData = require(`./starters/${filename}`);
+		let siteData = require(`./starters/${filename}`);
 
 		let urlLookup = urlsJson[siteData.demo] || urlsJson[siteData.url];
 		if(urlLookup && urlLookup.hash) {
