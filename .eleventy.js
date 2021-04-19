@@ -580,7 +580,7 @@ ${text.trim()}
 		return Array.from(pkgs).sort();
 	}
 
-	if(process.env.ELEVENTY_PRODUCTION && !process.env.ELEVENTY_CLOUD) {
+	if(!process.env.ELEVENTY_CLOUD) {
 		// eleventyConfig.on("collections", (collections) => {
 		// 	console.log( "Saving build-time `collections` for serverless reuse." );
 		// 	let names = ["sidebarNav", "all"];

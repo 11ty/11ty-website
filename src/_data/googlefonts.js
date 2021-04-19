@@ -1,6 +1,10 @@
 const Cache = require("@11ty/eleventy-cache-assets");
 
 module.exports = async function() {
+	if(process.env.ELEVENTY_CLOUD) {
+		return "";
+	}
+
 	try {
 		// https://developer.github.com/v3/repos/#get
 		let css = await Cache("https://fonts.googleapis.com/css?family=Roboto+Mono:400&display=swap", {
