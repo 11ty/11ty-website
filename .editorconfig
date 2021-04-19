@@ -14,3 +14,7 @@ indent_style = tab
 
 [*.json]
 indent_style = tab
+
+[*.css]
+insert_final_newline = true
+indent_style = tab
