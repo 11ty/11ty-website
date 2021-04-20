@@ -7,6 +7,7 @@ mkdir -p ./netlify/functions/cloud/src/
 # Config
 cp .eleventy.js ./netlify/functions/cloud/eleventy.config.js
 cp -R ./config ./netlify/functions/cloud/
+cp -R ./avatars ./netlify/functions/cloud/
 
 # Use -v to see what copies
 # Build files
