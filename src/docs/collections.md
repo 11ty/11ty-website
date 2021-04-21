@@ -78,7 +78,7 @@ exports.render = function(data) {
   return `<ul>
     ${data.collections.post.map(post =>
       `<li${data.page.url === post.url ? `class="active"` : ""}>${post.data.title}</li>`
-    ).join("\n");}
+    ).join("\n")}
   </ul>`;
 };
 ```
