@@ -8,7 +8,7 @@ assignees: ''
 ---
 If you want to list your site on 11ty.dev you must create a Pull Request. Unfortunately we can no longer keep up with the scale of creating these files manually from GitHub issues.
 
-To do this, create a new file in `_data/sites/*.json` with this format: (the `source_url` field is optional)
+To do this, create a new file in `src/_data/sites/*.json` with this format: (the `source_url` field is optional)
 
 ```json
 {
