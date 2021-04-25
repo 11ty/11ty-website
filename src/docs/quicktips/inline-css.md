@@ -54,6 +54,22 @@ Capture the CSS into a variable and run it through the filter (this sample is us
 ```
 {% endraw %}
 
+## Using JavaScript templates
+
+You can also inline minified CSS in a [JavaScript template](/docs/languages/javascript/). This technique does not use filters, and instead uses `async` functions:
+
+```js
+const fs = require("fs/promises");
+const path = require("path");
+const CleanCSS = require("clean-css");
+
+module.exports = async () => `<style>
+  ${await fs
+    .readFile(path.resolve(__dirname, "./sample.css"))
+    .then((data) => new CleanCSS().minify(data).styles)}
+</style>`
+```
+
 ### Warning about Content Security Policy
 
 {% callout "warn" %}
