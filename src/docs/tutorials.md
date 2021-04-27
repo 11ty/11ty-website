@@ -29,6 +29,7 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 
 * [Create a new site from git on Netlify](https://app.netlify.com/start)
 * [Deploying an 11ty Site to GitHub Pages](https://snook.ca/archives/servers/deploying-11ty-to-gh-pages) by {% avatarlocalcache "twitter", "snookca" %}Jonathan Snook
+* [Deploying an 11ty Site to GitLab Pages](https://gitlab.com/bkmgit/11ty)
 * [Make the Jump from Jekyll to JavaScript](https://stedman.dev/2020/04/29/make-the-jump-from-jekyll-to-javascript/) by {% avatarlocalcache "twitter", "stedman" %} Steve Stedman
 
 ### Adding Features

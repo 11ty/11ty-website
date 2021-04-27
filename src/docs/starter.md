@@ -6,7 +6,7 @@ eleventyNavigation:
 ---
 # Starter Projects
 
-[Add your own starter project](https://github.com/11ty/11ty-website/tree/master/_data/starters). Community contributions are shown in random order. [Lighthouse scores are updated daily](https://www.speedlify.dev/eleventy-starters/).
+[Add your own starter project](https://github.com/11ty/11ty-website/tree/master/src/_data/starters). Community contributions are shown in random order. [Lighthouse scores are updated daily](https://www.speedlify.dev/eleventy-starters/).
 
 <table class="starter-table">
 	<thead>
@@ -53,7 +53,7 @@ eleventyNavigation:
 {%- endif %}
 {%- endfor %}
 		<tr>
-			<td colspan="4"><a href="https://github.com/11ty/11ty-website/tree/master/_data/starters">Add your own!</a></td>
+			<td colspan="4"><a href="https://github.com/11ty/11ty-website/tree/master/src/_data/starters">Add your own!</a></td>
 		</tr>
 	</tbody>
 </table>
