@@ -12,7 +12,7 @@
     "links-external": "hyperlink -r --root _site --canonicalroot https://11ty.dev/ --skip '/.netlify/functions' _site/*.html | tap-spot",
     "links-internal": "hyperlink -ri --root _site --canonicalroot https://11ty.dev/ --skip '/.netlify/functions' _site/*.html | tap-spot",
     "deploy": "npm run build && ./deploy.sh",
-    "build": "./bundle.sh && npx @11ty/eleventy",
+    "build": "npx @11ty/eleventy",
     "start": "./bundle.sh && BROWSER=none netlify dev",
     "build-production": "./bundle.sh && node node-avatars-opencollective && ELEVENTY_PRODUCTION=true eleventy",
     "get-new-supporters": "eleventy && node node-supporters",

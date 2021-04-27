@@ -7,7 +7,6 @@ pagination:
   cloud: eleventy.cloud.path.name
 permalink:
   cloud: "/authors/:name/"
-  # build: "/authors/{{ author.name | slug }}/"
 
 eleventyNavigation:
   parent: Eleventy Authors

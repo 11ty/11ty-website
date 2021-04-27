@@ -184,7 +184,7 @@ ${text.trim()}
 
 	eleventyConfig.addFilter("speedlifyHash", function(site) {
 		if(!site || !site.url) {
-			console.log( "speedlifyHash: Missing url for", site );
+			// console.log( "speedlifyHash: Missing url for", site.name );
 			return;
 		}
 		// note that this will fail _sometimes_ because these are requestedUrl and not final URLs (speedlify uses final URLs for hashing)
@@ -599,9 +599,11 @@ ${text.trim()}
 
 		eleventyConfig.on("globalDataFiles", (fileList) => {
 			let modules = getNodeModulesList([__filename, ...fileList]).map(name => `require("${name}");`);
-			let filename = "./netlify/functions/cloud/serverless-required-modules.js";
-			fs.writeFileSync(filename, modules.join("\n"));
-			console.log( `Writing ${filename}.` );
+			if(modules.length) {
+				let filename = "./netlify/functions/cloud/serverless-required-modules.js";
+				fs.writeFileSync(filename, modules.join("\n"));
+				console.log( `Eleventy Cloud, writing (×${modules.length}): ${filename}` );
+			}
 		});
 
 		eleventyConfig.on("dependencyMap", (templateMap) => {
@@ -616,8 +618,18 @@ ${text.trim()}
 				}
 			}
 
-			fs.writeFileSync("./netlify/functions/cloud/map.json", JSON.stringify(outputMap, null, 2));
-			fs.writeFileSync("./_site/_redirects", redirects.join("\n"));
+			let mapEntryCount = Object.keys(outputMap).length;
+			if(mapEntryCount > 0) {
+				let mapFilename = "./netlify/functions/cloud/map.json";
+				fs.writeFileSync(mapFilename, JSON.stringify(outputMap, null, 2));
+				console.log( `Eleventy Cloud, writing (×${mapEntryCount}): ${mapFilename}` );
+			}
+
+			if(redirects.length > 1) {
+				let redirectsFilename = "./_site/_redirects";
+				fs.writeFileSync(redirectsFilename, redirects.join("\n"));
+				console.log( `Eleventy Cloud, writing (×${redirects.length}): ${redirectsFilename}` );
+			}
 		});
 	} // end of Eleventy Cloud plugin
 
