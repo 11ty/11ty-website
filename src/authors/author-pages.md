@@ -1,15 +1,15 @@
 ---
-eleventyNavigation:
-  parent: Eleventy Authors
-  key: Eleventy Author
-excludeFromSidebar: true
 pagination:
   data: authors
   size: 1
   resolve: values
   alias: author
-layout: layouts/docs.njk
 permalink: "/authors/{{ author.name | slug }}/"
+
+eleventyNavigation:
+  parent: Eleventy Authors
+excludeFromSidebar: true
+layout: layouts/docs.njk
 css:
   - components/page-sites.css
 ---
