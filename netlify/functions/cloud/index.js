@@ -63,7 +63,7 @@ async function getEleventyOutput(projectDir, lambdaPath, queryParams) {
       eleventyConfig.setPrecompiledCollections(precompiledCollections);
 
       // Add the params to Global Data
-      eleventyConfig.addGlobalData("params", {
+      eleventyConfig.addGlobalData("eleventy.cloud", {
         query: queryParams,
         path: pathParams
       });
