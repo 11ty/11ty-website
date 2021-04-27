@@ -182,9 +182,13 @@ ${text.trim()}
 	eleventyConfig.addPassthroughCopy("src/news/*.png");
 	eleventyConfig.addPassthroughCopy("src/favicon.ico");
 
-	eleventyConfig.addFilter("speedlifyHash", function(url) {
+	eleventyConfig.addFilter("speedlifyHash", function(site) {
+		if(!site || !site.url) {
+			console.log( "speedlifyHash: Missing url for", site );
+			return;
+		}
 		// note that this will fail _sometimes_ because these are requestedUrl and not final URLs (speedlify uses final URLs for hashing)
-		return shortHash(url);
+		return shortHash(site.url);
 	});
 
 	eleventyConfig.addFilter("fileExists", function(url) {

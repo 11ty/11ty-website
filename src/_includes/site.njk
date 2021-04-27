@@ -10,7 +10,7 @@
 			</div>
 		</em>
 		<div class="list-bare-desc list-bare-desc-avatar site-score">
-			{%- set hash = site.url | speedlifyHash %}
+			{%- set hash = site | speedlifyHash %}
 			{%- if hash -%}
 				<a href="https://www.11ty.dev/speedlify/#site-{{ hash }}" class="elv-externalexempt nound">
 					<speedlify-score speedlify-url="https://www.11ty.dev/speedlify/" hash="{{ hash }}" score weight rank rank-change></speedlify-score>
