@@ -275,7 +275,7 @@ And in JavaScript it’d look like this:
 {% raw %}
 ```js
 exports.render = function(data) {
-  let posts = data.collections.post.reverse();
+  const posts = data.collections.post.reverse();
   return `<ul>
     ${posts.map(post => `<li>${post.data.title}</li>`).join("\n");}
   </ul>`;
@@ -432,7 +432,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("onlyMarkdown", function(collectionApi) {
     return collectionApi.getAllSorted().filter(function(item) {
       // Only return content that was originally a markdown file
-      let extension = item.inputPath.split('.').pop();
+      const extension = item.inputPath.split('.').pop();
       return extension === "md";
     });
   });
