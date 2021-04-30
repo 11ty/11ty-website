@@ -6,12 +6,18 @@ eleventyNavigation:
 ---
 # Data Deep Merge {% addedin "0.6.0" %}
 
-Opts in to a full deep merge when combining the Data Cascade. This will use something like `lodash.mergewith` to combine Arrays and deep merge Objects, rather than a simple top-level merge using `Object.assign`. Read more at [Issue #147](https://github.com/11ty/eleventy/issues/147). This will likely become the default in an upcoming major version.
+Use a full deep merge when combining the Data Cascade. This will use something similar to [`lodash.mergewith`](https://docs-lodash.com/v4/merge-with/) to combine Arrays and deep merge Objects, rather than a simple top-level merge using `Object.assign`.
+
+Read more at [Issue #147](https://github.com/11ty/eleventy/issues/147). As of Eleventy 1.0 this defaults to enabled (but API still exists for opt-out).
 
 {% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
+  // defaults to true in 1.0, use false to opt-out
+  eleventyConfig.setDataDeepMerge(false);
+
+  // requires opt-in for 0.x
   eleventyConfig.setDataDeepMerge(true);
 };
 ```
