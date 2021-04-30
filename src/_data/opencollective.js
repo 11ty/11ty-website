@@ -37,7 +37,7 @@ module.exports = async function() {
 		let json = await Cache(url, {
 			duration: process.env.ELEVENTY_CLOUD ? "*" : (process.env.ELEVENTY_AVATARS ? "0s" : "1d"),
 			type: "json",
-			directory: (process.env.ELEVENTY_CLOUD ? "/var/task/src/netlify/functions/cloud/" : "") + ".cache/eleventy-cache-assets/",
+			directory: ".cache/eleventy-cache-assets/",
 		});
 
 		// if(process.env.ELEVENTY_PRODUCTION) {

@@ -7,7 +7,7 @@ mkdir -p ./netlify/functions/cloud/.cache/eleventy-cache-assets/
 
 # Config
 cp .eleventy.js ./netlify/functions/cloud/eleventy.config.js
-cp -R .cache/eleventy-cache-assets ./netlify/functions/cloud/.cache/
+cp -R -v .cache/eleventy-cache-assets ./netlify/functions/cloud/.cache/
 cp -R ./config ./netlify/functions/cloud/
 cp -R ./avatars ./netlify/functions/cloud/
 
