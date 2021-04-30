@@ -14,7 +14,7 @@
     "deploy": "npm run build && ./deploy.sh",
     "build": "npx @11ty/eleventy",
     "start": "./bundle.sh && BROWSER=none netlify dev",
-    "build-production": "./bundle.sh && node node-avatars-opencollective && ELEVENTY_PRODUCTION=true eleventy",
+    "build-production": "node node-avatars-opencollective && ELEVENTY_PRODUCTION=true eleventy && ./bundle.sh",
     "get-new-supporters": "eleventy && node node-supporters",
     "get-new-avatars": "node node-avatars-opencollective && node node-avatars-twitter",
     "format": "prettier --write '**/*.{js,css,html,md}'"

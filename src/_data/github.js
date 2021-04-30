@@ -4,9 +4,9 @@ module.exports = async function() {
 	try {
 		// https://developer.github.com/v3/repos/#get
 		let json = await Cache("https://api.github.com/repos/11ty/eleventy", {
-			duration: "1d",
+			duration: process.env.ELEVENTY_CLOUD ? "*" : "1d",
 			type: "json",
-			directory: process.env.ELEVENTY_CLOUD ? "/tmp/.cache/" : ".cache/",
+			directory: ".cache/eleventy-cache-assets/",
 		});
 
 		return {
@@ -20,4 +20,3 @@ module.exports = async function() {
 	}
 };
 
-	
