@@ -3,11 +3,11 @@ echo "Bundling the Eleventy Cloud Netlify Function"
 # Recursively make directories
 mkdir -p ./_site/
 mkdir -p ./netlify/functions/cloud/src/
-mkdir -p ./netlify/functions/cloud/.cache/eleventy-cache-assets/
+mkdir -p ./netlify/functions/cloud/cache/
 
 # Config
 cp .eleventy.js ./netlify/functions/cloud/eleventy.config.js
-cp -R -v .cache/eleventy-cache-assets ./netlify/functions/cloud/.cache/
+cp .cache/eleventy-cache-assets/* ./netlify/functions/cloud/cache/
 cp -R ./config ./netlify/functions/cloud/
 cp -R ./avatars ./netlify/functions/cloud/
 

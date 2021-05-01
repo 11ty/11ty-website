@@ -19,7 +19,7 @@ module.exports = async function() {
 		let json = await Cache(url, {
 			duration: process.env.ELEVENTY_CLOUD ? "*" : "1d",
 			type: "json",
-			directory: ".cache/eleventy-cache-assets/",
+			directory: process.env.ELEVENTY_CLOUD ? "cache/" : ".cache/eleventy-cache-assets/",
 		});
 
 		return {
