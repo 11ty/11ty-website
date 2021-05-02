@@ -35,9 +35,9 @@ module.exports = async function() {
 	try {
 		let url = `https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000&status=paid,active`;
 		let json = await Cache(url, {
-			duration: process.env.ELEVENTY_CLOUD ? "*" : (process.env.ELEVENTY_AVATARS ? "0s" : "1d"),
+			duration: process.env.ELEVENTY_SERVERLESS ? "*" : (process.env.ELEVENTY_AVATARS ? "0s" : "1d"),
 			type: "json",
-			directory: process.env.ELEVENTY_CLOUD ? "cache/" : ".cache/eleventy-cache-assets/",
+			directory: process.env.ELEVENTY_SERVERLESS ? "cache/" : ".cache/eleventy-cache-assets/",
 		});
 
 		// if(process.env.ELEVENTY_PRODUCTION) {

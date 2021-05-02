@@ -1,6 +1,6 @@
 exports.data = function() {
   return {
-    permalink: "./netlify/functions/cloud/serverless-collections.json",
+    permalink: "./netlify/functions/serverless/serverless-collections.json",
     permalinkBypassOutputDir: true,
     layout: false,
   };

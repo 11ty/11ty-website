@@ -7,7 +7,7 @@ module.exports = async function() {
 		data: {}
 	};
 
-	if(process.env.ELEVENTY_CLOUD) {
+	if(process.env.ELEVENTY_SERVERLESS) {
 		return returnData;
 	}
 
