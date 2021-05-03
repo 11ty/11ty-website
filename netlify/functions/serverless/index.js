@@ -14,8 +14,8 @@ const precompiledCollections = require("./serverless-collections.json");
 function getProjectDir() {
   // TODO improve with process.env.LAMBDA_TASK_ROOT? was `/var/task/` on lambda (not local)
   let paths = [
-    path.join(process.cwd(), "netlify/functions/cloud/"), // netlify dev
-    "/var/task/src/netlify/functions/cloud/", // netlify function absolute path
+    path.join(process.cwd(), "netlify/functions/serverless/"), // netlify dev
+    "/var/task/src/netlify/functions/serverless/", // netlify function absolute path
   ];
 
   for(let path of paths) {
@@ -24,7 +24,7 @@ function getProjectDir() {
     }
   }
 
-  throw new Error(`Couldn’t find the "netlify/functions/cloud" directory. Searched: ${paths}`);
+  throw new Error(`Couldn’t find the "netlify/functions/serverless" directory. Searched: ${paths}`);
 }
 
 function matchUrlPattern(map, path) {
