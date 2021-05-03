@@ -11,21 +11,6 @@ const Eleventy = require("@11ty/eleventy");
 const extraModules = require("./serverless-required-modules.js");
 const precompiledCollections = require("./serverless-collections.json");
 
-function getProjectDir() {
-  let paths = [
-    path.join(process.cwd(), "netlify/functions/cloud/"), // netlify dev
-    "/var/task/src/netlify/functions/cloud/", // netlify function absolute path
-  ];
-
-  for(let path of paths) {
-    if(fs.existsSync(path)) {
-      return path;
-    }
-  }
-
-  throw new Error(`Couldn’t find the "netlify/functions/cloud" directory. Searched: ${paths}`);
-}
-
 function matchUrlPattern(map, path) {
   for(let url in map) {
     let pattern = new UrlPattern(url);
@@ -91,7 +76,7 @@ async function getEleventyOutput(projectDir, lambdaPath, queryParams) {
 
 async function handler (event, context) {
   try {
-    let projectDir = getProjectDir();
+    let projectDir = process.env.LAMBDA_TASK_ROOT;
 
     // TODO is this necessary?
     if(projectDir.startsWith("/var/task/")) {
