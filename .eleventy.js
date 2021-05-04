@@ -37,7 +37,8 @@ const shortcodes = {
 		slug = cleanName(slug).toLowerCase();
 
 		try {
-			let mapEntry = Object.assign({}, require(`./avatars/${datasource}/${slug}.json`));
+			let dynamicRequire = require;
+			let mapEntry = Object.assign({}, dynamicRequire(`./avatars/${datasource}/${slug}.json`));
 			delete mapEntry.slug; // dunno why the slug is saved here ok bye
 
 			return eleventyImage.generateHTML(mapEntry, {
