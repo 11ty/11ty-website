@@ -598,7 +598,7 @@ ${text.trim()}
 		// });
 
 		eleventyConfig.on("globalDataFiles", (fileList) => {
-			let modules = getNodeModulesList([__filename, ...fileList]).map(name => `require("${name}");`);
+			let modules = getNodeModulesList(fileList).map(name => `require("${name}");`);
 			if(modules.length) {
 				let filename = "./netlify/functions/serverless/serverless-required-modules.js";
 				fs.writeFileSync(filename, modules.join("\n"));
