@@ -70,7 +70,6 @@ async function getEleventyOutput(projectDir, lambdaPath, queryParams) {
   });
   elev.setInputDir(inputDir);
   await elev.init();
-  console.log( "Environment variables", process.env );
 
   let json = await elev.toJSON();
   if(!json.length) {
