@@ -36,25 +36,20 @@ async function handler(event, context) {
       url = `https://www.11ty.dev${url}`;
     }
 
-    if(!format) {
-      format = false
-    }
-
-    if(!width) {
-      width = false;
-    }
-
     let metadata = await eleventyImage(url, {
-      formats: [format],
-      widths: [width],
+      formats: [format || "auto"],
+      widths: [width || "auto"],
       dryRun: true,
       cacheOptions: {
         dryRun: true,
       }
     });
 
-    let sources = metadata[format];
+    if(!format) {
+      format = Object.keys(metadata).pop();
+    }
 
+    let sources = metadata[format];
     if(!Array.isArray(sources) || sources.length === 0) {
       throw new Error(`Invalid \`format\`: ${format}`);
     }
