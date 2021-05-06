@@ -19,7 +19,19 @@
 	force = true
 
 [[redirects]]
-	from = "/api/image/*"
+	from = "/api/image/:url/"
+	to = "/.netlify/functions/image"
+	status = 200
+	force = true
+
+[[redirects]]
+	from = "/api/image/:url/:width/"
+	to = "/.netlify/functions/image"
+	status = 200
+	force = true
+
+[[redirects]]
+	from = "/api/image/:url/:width/:format/"
 	to = "/.netlify/functions/image"
 	status = 200
 	force = true

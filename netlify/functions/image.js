@@ -13,20 +13,27 @@ function isFullUrl(url) {
 
 // Based on https://github.com/DavidWells/netlify-functions-workshop/blob/master/lessons-code-complete/use-cases/13-returning-dynamic-images/functions/return-image.js
 async function handler(event, context) {
-  let { url, width, format } = event.queryStringParameters;
+  // Links have the format /api/image/:url/:width/:format/
+  // Where :dimensions are the viewport dimensions of the browser doing the screenshot
+  // e.g. /api/image/https%3A%2F%2Fwww.11ty.dev%2F/420x580/
+  let pathSplit = event.path.split("/").filter(entry => !!entry);
+  let [,, url, width, format] = pathSplit;
+
+  url = decodeURIComponent(url);
 
   try {
     if(!isFullUrl(url)) {
-      throw new Error(`Invalid \`url\`: ${url}`);
+      // it’s a path instead
+      url = `https://www.11ty.dev${url}`;
     }
 
     if(!format) {
-      format = "jpeg"
+      format = "jpeg";
     }
 
     let metadata = await eleventyImage(url, {
-      formats: [format],
-      widths: [parseInt(width, 10) || 600], // 260-440 in layout
+      formats: [format || false],
+      widths: [parseInt(width, 10) || false], // 260-440 in layout
       dryRun: true,
       cacheOptions: {
         dryRun: true,
@@ -39,14 +46,12 @@ async function handler(event, context) {
       throw new Error(`Invalid \`format\`: ${format}`);
     }
 
-    let source = sources[0];
-
     return {
       statusCode: 200,
       headers: {
-        "content-type": source.sourceType
+        "content-type": sources[0].sourceType
       },
-      body: source.buffer.toString('base64'),
+      body: sources[0].buffer.toString('base64'),
       isBase64Encoded: true
     }
   } catch (error) {
