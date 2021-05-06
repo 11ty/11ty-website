@@ -28,6 +28,7 @@ async function handler(event, context) {
   let [,, url, width, format] = pathSplit;
 
   url = decodeURIComponent(url);
+  width = parseInt(width, 10);
 
   try {
     if(!isFullUrl(url)) {
@@ -35,9 +36,17 @@ async function handler(event, context) {
       url = `https://www.11ty.dev${url}`;
     }
 
+    if(!format) {
+      format = false
+    }
+
+    if(!width) {
+      width = false;
+    }
+
     let metadata = await eleventyImage(url, {
-      formats: [format || false],
-      widths: [parseInt(width, 10) || false], // 260-440 in layout
+      formats: [format],
+      widths: [width],
       dryRun: true,
       cacheOptions: {
         dryRun: true,
