@@ -35,10 +35,6 @@ async function handler(event, context) {
       url = `https://www.11ty.dev${url}`;
     }
 
-    if(!format) {
-      format = "jpeg";
-    }
-
     let metadata = await eleventyImage(url, {
       formats: [format || false],
       widths: [parseInt(width, 10) || false], // 260-440 in layout
