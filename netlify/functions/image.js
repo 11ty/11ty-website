@@ -1,5 +1,13 @@
 const { builder } = require("@netlify/functions");
-const eleventyImage = require("@11ty/eleventy-img")
+const eleventyImage = require("@11ty/eleventy-img");
+
+/* Works with _redirects (:width and :format are optional)
+
+/api/image/:url/ /.netlify/functions/image 200!
+/api/image/:url/:width/ /.netlify/functions/image 200!
+/api/image/:url/:width/:format/ /.netlify/functions/image 200!
+
+*/
 
 function isFullUrl(url) {
   try {
