@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/brycewray/eleventy_solo_starter_njk_scss",
+	"name": "Eleventy Solo Starter SCSS (Nunjucks version)",
+	"description": "Eleventy starter with SCSS and build-time creation and processing of responsive images; Nunjucks templating, with alternate .11ty.js-based version.",
+	"author": "BryceWrayTX",
+	"demo": "https://eleventy-solo-starter-njk-scss.vercel.app/"
+}
