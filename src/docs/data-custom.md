@@ -28,7 +28,7 @@ Here we’re using the [`js-yaml` package](https://www.npmjs.com/package/js-yaml
 const yaml = require("js-yaml");
 
 module.exports = eleventyConfig => {
-  eleventyConfig.addDataExtension("yaml", contents => yaml.safeLoad(contents));
+  eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
 };
 ```
 
@@ -74,7 +74,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addDataExtension("toml", contents => toml.parse(contents));
 
   // Higher priority
-  eleventyConfig.addDataExtension("yaml", contents => yaml.safeLoad(contents));
+  eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
 };
 ```
 
