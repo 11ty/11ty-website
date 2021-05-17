@@ -500,7 +500,7 @@ footer.elv-layout {
 }
 @media (prefers-reduced-motion: reduce) {
 	.elv-header-default .elv-possum {
-		display: none;
+		animation-duration: 0s;
 	}
 }
 @keyframes balloonFloat {
