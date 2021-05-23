@@ -86,6 +86,12 @@ module.exports = function(eleventyConfig) {
 
     // Added in 3.0.4, change the separator between lines (you may want "\n")
     lineSeparator: "<br>",
+
+    // Added in 3.1.1, add HTML attributes to the <pre> or <code> tags
+    preAttributes: {
+      tabindex: 0
+    },
+    codeAttributes: {},
   });
 };
 ```
