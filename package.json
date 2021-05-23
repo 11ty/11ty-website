@@ -13,8 +13,9 @@
     "links-internal": "hyperlink -ri --root _site --canonicalroot https://11ty.dev/ --skip '/.netlify/functions' _site/*.html | tap-spot",
     "deploy": "npm run build && ./deploy.sh",
     "build": "npx @11ty/eleventy",
-    "start": "./bundle.sh && BROWSER=none netlify dev",
-    "build-production": "node node-avatars-opencollective && ELEVENTY_PRODUCTION=true eleventy && ./bundle.sh",
+    "start": "npx @11ty/eleventy --serve",
+		"netlify": "BROWSER=none netlify dev",
+    "build-production": "node node-avatars-opencollective && ELEVENTY_PRODUCTION=true eleventy",
     "get-new-supporters": "eleventy && node node-supporters",
     "get-new-avatars": "node node-avatars-opencollective && node node-avatars-twitter",
     "format": "prettier --write '**/*.{js,css,html,md}'"
@@ -44,15 +45,14 @@
     ]
   },
   "devDependencies": {
-    "@11ty/dependency-tree": "^2.0.0",
-    "@11ty/eleventy": "1.0.0-canary.20",
+    "@11ty/eleventy": "file:../eleventy",
     "@11ty/eleventy-cache-assets": "^2.2.1",
     "@11ty/eleventy-img": "^0.8.3",
     "@11ty/eleventy-navigation": "^0.2.0",
     "@11ty/eleventy-plugin-rss": "^1.1.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
     "@netlify/functions": "^0.7.0",
-    "chrome-aws-lambda": "^8.0.0",
+    "chrome-aws-lambda": "^9.1.0",
     "clean-css": "^5.1.2",
     "comma-number": "2.0.1",
     "dotenv": "8.2.0",
@@ -75,9 +75,7 @@
     "sorted-object": "2.0.1",
     "tap-spot": "1.1.1",
     "terser": "4.6.7",
-    "twitter-avatar-url": "^2.0.3",
-    "url-pattern": "^1.0.3",
-    "walker": "^1.0.7"
+    "twitter-avatar-url": "^2.0.3"
   },
   "dependencies": {
     "@11ty/logo": "2.0.4",

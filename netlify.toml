@@ -1,67 +1,72 @@
 [build]
-	publish = "_site"
-	command = "npm run build-production"
+publish = "_site"
+command = "npm run build-production"
 
 [functions]
-	directory = "netlify/functions/"
-#	node_bundler = "esbuild"
+directory = "netlify/functions/"
 
 [[redirects]]
-	from = "/speedlify/*"
-	to = "https://built-with-eleventy.netlify.app/speedlify/:splat"
-	status = 200
-	force = true
+from = "/speedlify/*"
+to = "https://built-with-eleventy.netlify.app/speedlify/:splat"
+status = 200
+force = true
 
 [[redirects]]
-	from = "/api/screenshot/:url/:dimensions/"
-	to = "/.netlify/functions/screenshot"
-	status = 200
-	force = true
+from = "/api/screenshot/:url/:dimensions/"
+to = "/.netlify/functions/screenshot"
+status = 200
+force = true
 
 [[redirects]]
-	from = "/api/image/:url/"
-	to = "/.netlify/functions/image"
-	status = 200
-	force = true
+from = "/api/image/:url/"
+to = "/.netlify/functions/image"
+status = 200
+force = true
 
 [[redirects]]
-	from = "/api/image/:url/:width/"
-	to = "/.netlify/functions/image"
-	status = 200
-	force = true
+from = "/api/image/:url/:width/"
+to = "/.netlify/functions/image"
+status = 200
+force = true
 
 [[redirects]]
-	from = "/api/image/:url/:width/:format/"
-	to = "/.netlify/functions/image"
-	status = 200
-	force = true
+from = "/api/image/:url/:width/:format/"
+to = "/.netlify/functions/image"
+status = 200
+force = true
 
 [[redirects]]
-	from = "/docs/sites/"
-	to = "/speedlify/"
-	status = 301
-	force = true
+from = "/docs/sites/"
+to = "/speedlify/"
+status = 301
+force = true
 
 [[redirects]]
-	from = "/docs/performance-leaderboard/"
-	to = "/speedlify/"
-	status = 301
-	force = true
+from = "/docs/performance-leaderboard/"
+to = "/speedlify/"
+status = 301
+force = true
 
 [[redirects]]
-	from = "/docs/accessibility-leaderboard/"
-	to = "/speedlify/"
-	status = 301
-	force = true
+from = "/docs/accessibility-leaderboard/"
+to = "/speedlify/"
+status = 301
+force = true
 
 [[redirects]]
-	from = "/leaderboard/*"
-	to = "/speedlify/"
-	status = 301
-	force = true
+from = "/leaderboard/*"
+to = "/speedlify/"
+status = 301
+force = true
 
+[[redirects]]
+from = "/authors/:name/"
+to = "/.netlify/functions/serverless"
+status = 200
+force = true
 
 [[headers]]
-	for = "/api/*"
-		[headers.values]
-		Access-Control-Allow-Origin = "*"
+for = "/api/*"
+
+  [headers.values]
+  Access-Control-Allow-Origin = "*"
