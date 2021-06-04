@@ -376,7 +376,7 @@ If an HTML template has matching input and output directories, index.html files 
 
 | Exception Suffix |  |
 | --- | --- |
-| _Object Key_ | `htmlOutputSuffx` |
+| _Object Key_ | `htmlOutputSuffix` |
 | _Default_ | `-o` |
 | _Valid Options_ | Any valid string |
 | _Command Line Override_ | _None_ |
