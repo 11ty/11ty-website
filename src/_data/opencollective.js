@@ -10,7 +10,7 @@ const FilteredProfiles = [
 	"kiirlaenud", // some quick loans site
 	"kajino-bitcoin", //bitcoin
 ];
-const OpenCollectiveTwitterMap = require("./opencollectiveMap.js");
+const OpenCollectiveTwitterMap = require("./opencollectiveToTwitterUsernameMap.js");
 
 function isMonthlyOrYearlyOrder(order) {
 	return (order.frequency === 'MONTHLY' || order.frequency === 'YEARLY') && order.status === 'ACTIVE';
@@ -35,9 +35,9 @@ module.exports = async function() {
 	try {
 		let url = `https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000&status=paid,active`;
 		let json = await Cache(url, {
-			duration: process.env.ELEVENTY_AVATARS ? "0s" : "1d",
-			// duration: "0s",
-			type: "json"
+			type: "json",
+			duration: process.env.ELEVENTY_SERVERLESS ? "*" : (process.env.ELEVENTY_AVATARS ? "0s" : "1d"),
+			directory: process.env.ELEVENTY_SERVERLESS ? "cache/" : ".cache/eleventy-cache-assets/",
 		});
 
 		// if(process.env.ELEVENTY_PRODUCTION) {

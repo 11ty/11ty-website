@@ -4,8 +4,8 @@
 	"description": "Design, audio, art and too little coffee",
 	"twitter": "httpsterio",
 	"source_url": "https://github.com/httpsterio/httpster.io",
-  "business": {
-    "cta": "https://www.httpster.io/hire-me/",
-    "name": "Sami Singh - Full Stack Creative"
-    }
+	"business": {
+		"cta": "https://www.httpster.io/hire-me/",
+		"name": "Sami Singh - Full Stack Creative"
+	}
 }

@@ -3,6 +3,7 @@
 }
 .elv-toc details {
 	--details-force-closed: (max-width: 63.9375em); /* 1023px */
+	margin-top: 0;
 }
 .elv-toc details > summary {
 	font-size: 1.375rem; /* 22px /16 */
@@ -80,10 +81,10 @@
 	margin-bottom: 0.25em; /* 4px /16 */
 }
 @media (prefers-color-scheme: dark) {
-  .elv-toc-list > li > a {
-    color: #fff;
-    border-color: #444;
-  }
+	.elv-toc-list > li > a {
+		color: #fff;
+		border-color: #444;
+	}
 }
 
 /* Active links */
@@ -91,9 +92,9 @@
 	background-color: #dff7ff;
 }
 @media (prefers-color-scheme: dark) {
-  .elv-toc-list li.elv-toc-active > a {
-    background-color: #353535;
-  }
+	.elv-toc-list li.elv-toc-active > a {
+		background-color: #353535;
+	}
 }
 .elv-toc-list ul .elv-toc-active > a:after {
 	content: "";

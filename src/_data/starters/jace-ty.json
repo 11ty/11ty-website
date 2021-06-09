@@ -3,6 +3,5 @@
 	"name": "jace-ty",
 	"description": "Search, Folders for Posts, Utteranc.es for comments",
 	"author": "jacebenson",
-	"demo": "https://jace-ty.netlify.app/",
-	"excludedFromLeaderboards": true
+	"demo": "https://jace-ty.netlify.app/"
 }

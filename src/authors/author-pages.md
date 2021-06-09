@@ -4,10 +4,14 @@ pagination:
   size: 1
   resolve: values
   alias: author
-permalink: "/authors/{{ author.name | slug }}/"
+  serverless: eleventy.serverless.path.name
+  # addAllPagesToCollections: true
+permalink:
+  serverless: "/authors/:name/"
 
 eleventyNavigation:
   parent: Eleventy Authors
+excludeFromSearch: true
 excludeFromSidebar: true
 layout: layouts/docs.njk
 css:

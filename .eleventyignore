@@ -1,6 +1,5 @@
 .github
 _cache
 netlify-email
-functions
+netlify
 README.md
-netlify/functions/cloud/

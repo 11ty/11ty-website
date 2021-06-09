@@ -1,3 +1,4 @@
+const path = require("path");
 const { DateTime } = require("luxon");
 const HumanReadable = require("human-readable-numbers");
 const commaNumber = require("comma-number");
@@ -5,18 +6,23 @@ const markdownIt = require("markdown-it");
 const loadLanguages = require("prismjs/components/");
 const slugify = require("slugify");
 const fs = require("fs-extra");
+const lodashGet = require("lodash/get");
+const shortHash = require("short-hash");
+const markdownItAnchor = require("markdown-it-anchor");
+const markdownItToc = require("markdown-it-table-of-contents");
 
+const { EleventyServerlessBundlerPlugin } = require("@11ty/eleventy");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const eleventyImage = require("@11ty/eleventy-img");
+
 const monthDiffPlugin = require("./config/monthDiff");
 const addedInLocalPlugin = require("./config/addedin");
 const minificationLocalPlugin = require("./config/minification");
 const getAuthors = require("./config/getAuthorsFromSites");
 const cleanName = require("./config/cleanAuthorName");
 const objectHas = require("./config/object-has");
-const lodashGet = require("lodash/get");
 
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);
@@ -49,25 +55,43 @@ const shortcodes = {
 			content +
 			(linkUrl ? `</a>` : "");
 	},
-	getScreenshotHtml: function(siteSlug, url, withJs, cls, sizes) {
+	getScreenshotHtml: function(siteSlug, siteUrl, sizes) {
+		let withJs = true;
+		let viewport = {
+			width: 420,
+			height: 460,
+		};
+
+		// TODO change this to master or something
+		let localhostEnv = "https://demo-serverless--11ty.netlify.app";
+		let env = !process.env.DEPLOY_PRIME_URL ? localhostEnv : "";
+		let screenshotPath = `/api/screenshot/${encodeURIComponent(siteUrl)}/${viewport.width}x${viewport.height}/`;
+		if(siteSlug === "foursquare") {
+			if(fs.pathExistsSync(`./src/img/screenshot-fallbacks/${siteSlug}.jpg`)) {
+				env = "";
+				screenshotPath = `/img/screenshot-fallbacks/${siteSlug}.jpg`;
+			}
+		}
+
+		let screenshotUrl = `${env}${screenshotPath}`;
+
 		let options = {
-			formats: ["avif", "webp", "jpeg"],
-			widths: [300, 600], // 260-440 in layout
-			sourceUrl: url,
-			urlPath: "/img/sites/",
-			filenameFormat: function(id, src, width, format) {
-				return `${siteSlug}-${width}${withJs ? "-js" : ""}.${format}`;
+			formats: ["jpeg"], // we don’t use AVIF here because it was a little too slow!
+			widths: [null], // 260-440 in layout
+			urlFormat: function() {
+				return screenshotUrl;
 			}
 		};
 
-		let stats = eleventyImage.statsSync(`./src/img/sites/${siteSlug}-600.jpeg`, options);
+		let stats = eleventyImage.statsByDimensionsSync(screenshotUrl, viewport.width, viewport.height, options);
 
 		return eleventyImage.generateHTML(stats, {
-			alt: `Screenshot of ${url}`,
+			alt: `Screenshot of ${siteUrl}`,
 			loading: "lazy",
 			decoding: "async",
 			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
-			class: cls !== undefined ? cls : "sites-screenshot",
+			class: "sites-screenshot",
+			onerror: "let p=this.closest('picture');if(p){p.remove();}this.remove();"
 		});
 	}
 };
@@ -101,6 +125,18 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(addedInLocalPlugin);
 	eleventyConfig.addPlugin(monthDiffPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
+	eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
+		name: "serverless",
+		functionsDir: "./netlify/functions/",
+		copy: [
+			"config/",
+			"avatars/",
+			"src/img/logo.svg",
+			"src/img/gift.svg",
+			"_generated-serverless-collections.json",
+			{ from: ".cache/eleventy-cache-assets/", to: "cache" },
+		]
+	});
 
 	eleventyConfig.addCollection("sidebarNav", function(collection) {
 		// filter out excludeFromSidebar options
@@ -152,32 +188,25 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addPassthroughCopy({
-		"node_modules/@11ty/logo/img/logo.svg": "img/logo.svg",
+		// "node_modules/@11ty/logo/img/logo.svg": "img/logo.svg",
 		"node_modules/@11ty/logo/img/logo-784x1093.png": "img/logo.png",
 		"node_modules/@11ty/logo/img/logo-300x418.png": "img/logo-github.png",
 		"node_modules/@11ty/logo/img/logo-96x96.png": "img/favicon.png"
 	});
 
-	eleventyConfig.addPassthroughCopy("_redirects");
 	eleventyConfig.addPassthroughCopy("netlify-email");
 	// eleventyConfig.addPassthroughCopy("css/fonts"); // these are inline now
 	eleventyConfig.addPassthroughCopy("src/img");
 	eleventyConfig.addPassthroughCopy("src/news/*.png");
 	eleventyConfig.addPassthroughCopy("src/favicon.ico");
 
-	eleventyConfig.addFilter("findHash", function(speedlifyUrls, ...urls) {
-		for(let url of urls) {
-			if(!url) {
-				continue;
-			}
-
-			// keys in speedlifyUrls are requestedUrl not final URLs
-			if(speedlifyUrls[url]) {
-				return speedlifyUrls[url].hash;
-			} else if(!url.endsWith("/") && speedlifyUrls[`${url}/`]) {
-				return speedlifyUrls[`${url}/`].hash;
-			}
+	eleventyConfig.addFilter("speedlifyHash", function(site) {
+		if(!site || !site.url) {
+			// console.log( "speedlifyHash: Missing url for", site.name );
+			return;
 		}
+		// note that this will fail _sometimes_ because these are requestedUrl and not final URLs (speedlify uses final URLs for hashing)
+		return shortHash(site.url);
 	});
 
 	eleventyConfig.addFilter("fileExists", function(url) {
@@ -189,7 +218,9 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addFilter("toSearchEntry", function(str) {
-		return str.replace(/<a class="direct-link"[^>]*>#<\/a\>/g, "");
+		return str.replace(/<a class="direct-link"[^>]*>#<\/a\>/g, "")
+			.replace(/[\t]{2,}/g, "\t") // change \t\t\t\t\t\t to \t
+			.replace(/[\n]{2,}/g, "\n"); // change \n\n\n\n\n to \n
 	});
 
 	eleventyConfig.addFilter("humanReadableNum", function(num) {
@@ -316,10 +347,6 @@ ${text.trim()}
 		}
 		return `${fullHearts.join("")}<span class="supporters-hearts-empty">${emptyHearts.join("")}</span>`;
 	});
-
-	/* Markdown */
-	let markdownItAnchor = require("markdown-it-anchor");
-	let markdownItToc = require("markdown-it-table-of-contents");
 
 	function removeExtraText(s) {
 		let newStr = String(s).replace(/New\ in\ v\d+\.\d+\.\d+/, "");
@@ -561,6 +588,8 @@ ${text.trim()}
 	return {
 		dir: {
 			input: "src",
+			output: "_site",
+			data: "_data",
 		},
 		templateFormats: ["html", "njk", "md", "11ty.js"],
 		markdownTemplateEngine: "njk",

@@ -27,7 +27,7 @@ async function fetch(entry) {
 			formats: ["avif", "webp", "jpeg"],
 			widths: [90],
 			urlPath: "/img/avatars/twitter/",
-			outputDir: "src/img/avatars/twitter/",
+			outputDir: "./src/img/avatars/twitter/",
 			cacheOptions: {
 				duration: "30d",
 			}

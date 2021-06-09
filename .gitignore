@@ -8,5 +8,6 @@ node-supporters/
 yarn.lock
 .vscode
 **/.DS_Store
-netlify/functions/serverless/*
 _generated*
+netlify/functions/serverless/*
+!netlify/functions/serverless/index.js

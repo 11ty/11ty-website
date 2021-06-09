@@ -34,7 +34,7 @@ async function fetch(name, opencollectUsername, imageUrl, website) {
       formats: ["avif", "webp", "jpeg"],
       widths: [90],
       urlPath: "/img/avatars/opencollective/",
-      outputDir: "src/img/avatars/opencollective/",
+      outputDir: "./src/img/avatars/opencollective/",
       cacheOptions: {
         duration: "1d",
       },
@@ -54,7 +54,6 @@ async function fetch(name, opencollectUsername, imageUrl, website) {
 
 (async function() {
   let promises = [];
-  let avatarPaths = {};
 
   let getOpenCollectiveData = require("./src/_data/opencollective");
   let opencollective = await getOpenCollectiveData();
