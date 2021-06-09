@@ -14,7 +14,6 @@
     "deploy": "npm run build && ./deploy.sh",
     "build": "npx @11ty/eleventy",
     "start": "npx @11ty/eleventy --serve",
-    "netlify": "BROWSER=none netlify dev",
     "build-production": "node node-avatars-opencollective && ELEVENTY_PRODUCTION=true eleventy",
     "get-new-supporters": "eleventy && node node-supporters",
     "get-new-avatars": "node node-avatars-opencollective && node node-avatars-twitter",
