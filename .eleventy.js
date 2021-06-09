@@ -55,7 +55,7 @@ const shortcodes = {
 			content +
 			(linkUrl ? `</a>` : "");
 	},
-	getScreenshotHtml: function(siteSlug, siteUrl, cls, sizes) {
+	getScreenshotHtml: function(siteSlug, siteUrl, sizes) {
 		// TODO revert to use the code that routed through /api/image/ postprocessing
 		let withJs = true;
 		let viewport = {
@@ -91,7 +91,7 @@ const shortcodes = {
 			loading: "lazy",
 			decoding: "async",
 			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
-			class: cls !== undefined ? cls : "sites-screenshot",
+			class: "sites-screenshot",
 			onerror: "let p=this.closest('picture');if(p){p.remove();}this.remove();"
 		});
 	}
