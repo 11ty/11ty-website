@@ -56,7 +56,6 @@ const shortcodes = {
 			(linkUrl ? `</a>` : "");
 	},
 	getScreenshotHtml: function(siteSlug, siteUrl, sizes) {
-		// TODO revert to use the code that routed through /api/image/ postprocessing
 		let withJs = true;
 		let viewport = {
 			width: 420,
