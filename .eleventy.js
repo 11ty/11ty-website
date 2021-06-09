@@ -64,9 +64,16 @@ const shortcodes = {
 		};
 
 		// TODO change this to master or something
-		let localhostEnv = "https://fns-demo-cloud--11ty.netlify.app";
+		let localhostEnv = "https://demo-serverless--11ty.netlify.app";
 		let env = !process.env.DEPLOY_PRIME_URL ? localhostEnv : "";
 		let screenshotPath = `/api/screenshot/${encodeURIComponent(siteUrl)}/${viewport.width}x${viewport.height}/`;
+		if(siteSlug === "foursquare") {
+			if(fs.pathExistsSync(`./src/img/screenshot-fallbacks/${siteSlug}.jpg`)) {
+				env = "";
+				screenshotPath = `/img/screenshot-fallbacks/${siteSlug}.jpg`;
+			}
+		}
+
 		let screenshotUrl = `${env}${screenshotPath}`;
 
 		let options = {
