@@ -31,7 +31,7 @@ async function screenshot(url, viewportSize, withJs = true) {
 
   let buffer = await page.screenshot({
     type: "jpeg",
-    quality: 100,
+    quality: 80,
   });
 
   await browser.close();

@@ -60,7 +60,7 @@ const shortcodes = {
 		let withJs = true;
 		let viewport = {
 			width: 420,
-			height: 580,
+			height: 460,
 		};
 
 		// TODO change this to master or something
