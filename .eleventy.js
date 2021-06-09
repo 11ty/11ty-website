@@ -64,16 +64,16 @@ const shortcodes = {
 
 		// TODO change this to master or something
 		let localhostEnv = "https://demo-serverless--11ty.netlify.app";
-		let env = !process.env.DEPLOY_PRIME_URL ? localhostEnv : "";
+		let forcedHost = !process.env.DEPLOY_PRIME_URL && !process.env.AWS_LAMBDA_FUNCTION_NAME ? localhostEnv : "";
 		let screenshotPath = `/api/screenshot/${encodeURIComponent(siteUrl)}/${viewport.width}x${viewport.height}/`;
 		if(siteSlug === "foursquare") {
 			if(fs.pathExistsSync(`./src/img/screenshot-fallbacks/${siteSlug}.jpg`)) {
-				env = "";
+				forcedHost = "";
 				screenshotPath = `/img/screenshot-fallbacks/${siteSlug}.jpg`;
 			}
 		}
 
-		let screenshotUrl = `${env}${screenshotPath}`;
+		let screenshotUrl = `${forcedHost}${screenshotPath}`;
 
 		let options = {
 			formats: ["jpeg"], // we don’t use AVIF here because it was a little too slow!
