@@ -145,7 +145,8 @@ class Search {
 	}
 
 	hydrate() {
-		if("eleventySupporter" in window && window.eleventySupporter.checkOpenCollectiveAuth()) {
+		if(window.location.hostname === "localhost" ||
+			(("eleventySupporter" in window) && window.eleventySupporter.checkOpenCollectiveAuth())) {
 		} else {
 			this.initUnauthenticatedSearchTerm();
 			return;
