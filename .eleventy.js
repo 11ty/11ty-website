@@ -66,7 +66,7 @@ const shortcodes = {
 		let localhostEnv = "https://demo-serverless--11ty.netlify.app";
 		let forcedHost = !process.env.DEPLOY_PRIME_URL && !process.env.AWS_LAMBDA_FUNCTION_NAME ? localhostEnv : "";
 		let screenshotPath = `/api/screenshot/${encodeURIComponent(siteUrl)}/${viewport.width}x${viewport.height}/`;
-		if(siteSlug === "foursquare") {
+		if(siteSlug === "11ty" || siteSlug === "foursquare") {
 			if(fs.pathExistsSync(`./src/img/screenshot-fallbacks/${siteSlug}.jpg`)) {
 				forcedHost = "";
 				screenshotPath = `/img/screenshot-fallbacks/${siteSlug}.jpg`;
