@@ -24,7 +24,7 @@ async function handler (event) {
 		};
 	} catch (error) {
 		// Only console log for matching serverless paths
-		// (otherwise you’ll see a bunch of BrowserSync clutter during --serve)
+		// (otherwise you’ll see a bunch of BrowserSync 404s for non-dynamic URLs during --serve)
 		if(elev.isServerlessUrl(event.path)) {
 			console.log("Dynamic render error:", error);
 		}

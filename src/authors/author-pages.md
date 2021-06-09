@@ -5,11 +5,13 @@ pagination:
   resolve: values
   alias: author
   serverless: eleventy.serverless.path.name
+  # addAllPagesToCollections: true
 permalink:
   serverless: "/authors/:name/"
 
 eleventyNavigation:
   parent: Eleventy Authors
+excludeFromSearch: true
 excludeFromSidebar: true
 layout: layouts/docs.njk
 css:

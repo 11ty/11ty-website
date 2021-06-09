@@ -212,7 +212,9 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addFilter("toSearchEntry", function(str) {
-		return str.replace(/<a class="direct-link"[^>]*>#<\/a\>/g, "");
+		return str.replace(/<a class="direct-link"[^>]*>#<\/a\>/g, "")
+			.replace(/[\t]{2,}/g, "\t") // change \t\t\t\t\t\t to \t
+			.replace(/[\n]{2,}/g, "\n"); // change \n\n\n\n\n to \n
 	});
 
 	eleventyConfig.addFilter("humanReadableNum", function(num) {
