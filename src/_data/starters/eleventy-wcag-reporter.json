@@ -1,0 +1,6 @@
+{
+	"url": "https://github.com/hidde/eleventy-wcag-reporter",
+	"name": "eleventy-wcag-reporter",
+	"description": "A starter pack for creating WCAG conformance reports with Eleventy",
+	"demo": "https://eleventy-wcag-reporter.netlify.app"
+}
