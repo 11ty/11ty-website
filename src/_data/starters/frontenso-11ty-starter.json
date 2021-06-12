@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/frontenso/frontenso-11ty-starter",
+	"name": "frontenso-11ty-starter",
+	"description": "A production-ready starter that features Nunjucks, SASS, TailwindCSS, Webpack and ESNext. 11ty is responsible for building HTML only, the rest is built with Gulp. ",
+	"author": "einomi",
+	"demo": "https://frontenso-11ty-starter.netlify.app/"
+}
