@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-favicon",
+	"author": "atomrc",
+	"description": "Generates your favicon files and declarations from a single image source"
+}
