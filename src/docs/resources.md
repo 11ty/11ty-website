@@ -26,7 +26,7 @@ Eleventy facilitates JAMstack sites—but you maintain full control over the Jav
 
 <!-- You’re safe here. But a static site generator that is Progressive Enhancement friendly is only the beginning. -->
 
-The idea that _content_ should be the priority for a website's development. In other words, start with only essential content and functionality that works with as many users as possible, and then progressively enhance from there. 
+The idea that _content_ should be the priority for a website's development. In other words, start with only essential content and functionality that works with as many users as possible, and then progressively enhance from there.
 
 As stated in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement): "Special notice should be taken of accessibility. Acceptable alternatives should be provided where possible."
 
@@ -38,7 +38,7 @@ Make components and markup data-driven so that you don’t have a bunch of one-o
 
 > “You can take your front-end skills and do things that typically only a back-end can do. You can write a JavaScript function that you run and receive a response from by hitting a URL.”—[The Power of Serverless](https://serverless.css-tricks.com/) from [Chris Coyier](https://twitter.com/chriscoyier)
 
-Take care to make sure that <span class="buzzword">serverless</span> functions are <span class="buzzword">progressively enhanced</span>. That means they should run at build time. If you call <span class="buzzword">serverless</span> functions in client-side JavaScript, they should be used for features that are outside the core functionality of the site.
+Take care to make sure that <span class="buzzword">serverless</span> functions are <span class="buzzword">progressively enhanced</span>. If you call <span class="buzzword">serverless</span> functions in client-side JavaScript, they should be used for features that are outside the core functionality of the site. Use [Eleventy Serverless](/docs/plugins/serverless/) to generate pages on-request without any client-side JavaScript.
 
 ## Lean Web
 
@@ -54,11 +54,13 @@ We’ve taken care to setup Eleventy so that that running the stock  `eleventy` 
 
 Can you believe that some frameworks require a centralized piece of configuration for routing? `eleventy` routes map the file system, unless you override with a `permalink`.
 
-## They’re not Server Side Rendered, they’re Pre-rendered
+## Pre-rendered Templates by Default
 
 With the rise of client side rendering of templates in JavaScript came significant performance problems, especially with users of less-capable (but none-the-less still modern) hardware. Did you know they’re selling new mobile devices that are pretty hardware-limited?
 
-Many frameworks switched to Server Side Rendering, which meant running an application server with middleware that would render the markup on demand for each request. While this is valuable, static sites are different. The templates are all generated (some call this pre-rendering) at build time for maximum performance. This way the web server only needs to fetch the static file and send it back to the user.
+Many frameworks switched to Server Side Rendering, which meant running an application server with middleware that would render the markup on demand for each request. Eleventy templates by default are generated (some call this pre-rendering) at build time for maximum performance. This way the web server only needs to fetch the static file and send it back to the user.
+
+Eleventy can also run in [Serverless mode](/docs/plugins/serverless/) for server side rendering _On Request_ or even _On Request Once and Cached for Subsequent Visitors_.
 
 ## Hydration-less
 
