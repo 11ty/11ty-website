@@ -158,6 +158,16 @@ main:not(:empty) {
 main details {
 	margin: 1em 0;
 }
+main > details[open] {
+	background-color: rgba(0,0,0,.13);
+	outline: .75em solid rgba(0,0,0,.13);
+}
+@media (prefers-color-scheme: dark) {
+	main > details[open] {
+		background-color: rgba(255,255,255,.08);
+		outline: .75em solid rgba(255,255,255,.08);
+	}
+}
 main summary {
 	margin: 0 0 1em;
 }

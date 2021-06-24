@@ -2,7 +2,6 @@
 pagination:
   data: authors
   size: 1
-  resolve: values
   alias: author
   serverless: eleventy.serverless.path.name
   # addAllPagesToCollections: true

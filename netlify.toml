@@ -6,6 +6,13 @@ command = "npm run build-production"
 directory = "netlify/functions/"
 
 [[redirects]]
+from = "/authors/:name/"
+to = "/.netlify/functions/serverless"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "serverless"
+
+[[redirects]]
 from = "/speedlify/*"
 to = "https://built-with-eleventy.netlify.app/speedlify/:splat"
 status = 200
@@ -40,13 +47,6 @@ from = "/leaderboard/*"
 to = "/speedlify/"
 status = 301
 force = true
-
-[[redirects]]
-from = "/authors/:name/"
-to = "/.netlify/functions/serverless"
-status = 200
-force = true
-_generated_by_eleventy_serverless = "serverless"
 
 [[headers]]
 for = "/api/*"

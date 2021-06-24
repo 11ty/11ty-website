@@ -30,7 +30,7 @@ Next, we need to create a `mylayout.njk` file. It can contain any type of text, 
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
-    Language:
+    Syntax:
     <a href="#mylayout-njk" id="mylayout-njk-btn" role="tab" aria-controls="mylayout-njk" aria-selected="true">Nunjucks</a>
     <a href="#mylayout-11tyjs" id="mylayout-11tyjs-btn" role="tab" aria-controls="mylayout-11tyjs" aria-selected="false">11ty.js</a>
   </div>

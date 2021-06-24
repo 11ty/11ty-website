@@ -61,8 +61,7 @@ const shortcodes = {
 			height: 460,
 		};
 
-		// TODO change this to master or something
-		let localhostEnv = "https://demo-serverless--11ty.netlify.app";
+		let localhostEnv = "https://www.11ty.dev";
 		let forcedHost = !process.env.DEPLOY_PRIME_URL && !process.env.AWS_LAMBDA_FUNCTION_NAME ? localhostEnv : "";
 		let screenshotPath = `/api/screenshot/${encodeURIComponent(siteUrl)}/${viewport.width}x${viewport.height}/`;
 		if(siteSlug === "11ty" || siteSlug === "foursquare") {
@@ -144,6 +143,9 @@ module.exports = function(eleventyConfig) {
 	});
 
 	let md = new markdownIt();
+	eleventyConfig.addPairedShortcode("markdown", function(content) {
+		return md.renderInline(content);
+	});
 	eleventyConfig.addPairedShortcode("callout", function(content, level = "warn", format = "html") {
 		if( format === "md" ) {
 			content = md.renderInline(content);

@@ -15,7 +15,7 @@ Plugins are custom code that Eleventy can import into a project from an external
 
 All official plugins live under the `@11ty` npm organization and plugin names will include the `@11ty/` prefix.
 
-{{ collections.all | eleventyNavigation("Plugins") | eleventyNavigationToHtml({ showExcerpt: true }) | safe }}
+{{ collections.all | eleventyNavigation("Plugins") | eleventyNavigationToMarkdown({ showExcerpt: true }) }}
 
 ### Community Contributed Plugins
 
