@@ -147,6 +147,11 @@ module.exports = function(eleventyConfig) {
 		functionsDir: "./netlify/functions/",
 		copy: [
 			"config/",
+			"avatars/",
+			"src/img/logo.svg",
+			"src/img/gift.svg",
+			"_generated-serverless-collections.json",
+			{ from: ".cache/eleventy-cache-assets/", to: "cache" },
 		]
 	});
 
