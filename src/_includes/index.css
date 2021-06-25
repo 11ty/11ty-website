@@ -442,6 +442,8 @@ a[href].elv-hero:visited {
 	font-size: 30vw;
 	height: 60vh;
 	color: #fff;
+	position: relative;
+	z-index: 1;
 }
 @media (prefers-color-scheme: dark) {
 	.elv-hero {
