@@ -408,6 +408,10 @@ ${text.trim()}
 	mdIt.linkify.tlds('.io', false);
 	eleventyConfig.setLibrary("md", mdIt);
 
+	eleventyConfig.addFilter("toISO", (dateObj) => {
+		return dateObj.toISOString();
+	});
+
 	eleventyConfig.addFilter("newsDate", (dateObj, format = "yyyy LLLL dd") => {
 		if(typeof dateObj === "string") {
 			return DateTime.fromISO(dateObj).toFormat(format);
