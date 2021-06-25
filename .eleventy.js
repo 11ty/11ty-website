@@ -25,6 +25,7 @@ const getAuthors = require("./config/getAuthorsFromSites");
 const cleanName = require("./config/cleanAuthorName");
 const objectHas = require("./config/object-has");
 const HitsDb = require("./config/hits-db.js");
+// const HitsDb = require("./config/hits-db.js");
 
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);
@@ -603,17 +604,17 @@ ${text.trim()}
 		return html.join("");
 	});
 
-	eleventyConfig.addNunjucksAsyncFilter("fetchAndIncrementHits", function(slug, callback) {
-		let hitsDb = new HitsDb();
-		hitsDb.fetch(slug).then(hits => {
-			callback(null, hits);
-		});
-	});
+	// eleventyConfig.addNunjucksAsyncFilter("fetchAndIncrementHits", function(slug, callback) {
+	// 	let hitsDb = new HitsDb();
+	// 	hitsDb.fetch(slug).then(hits => {
+	// 		callback(null, hits);
+	// 	});
+	// });
 
-	eleventyConfig.addJavaScriptFunction("fetchAndIncrementHits", async function(slug) {
-		let hitsDb = new HitsDb();
-		return hitsDb.fetch(slug);
-	});
+	// eleventyConfig.addJavaScriptFunction("fetchAndIncrementHits", async function(slug) {
+	// 	let hitsDb = new HitsDb();
+	// 	return hitsDb.fetch(slug);
+	// });
 
 	return {
 		dir: {
