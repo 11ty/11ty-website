@@ -9,9 +9,9 @@ excludeFromSearch: true
 bigPossum: true
 permalink:
   dynamic: /
-eleventyComputed:
-  logoContent: "<div class='elv-hero-hits'>{{ page.url | fetchAndIncrementHits }}ty</div>"
 ---
+{% callout "info" %}<strong>This page was rendered using Eleventy Serverless</strong> <em>{{ config.now }}</em>{% endcallout %}
+
 ## Quick Start
 
 Eleventy {% latestVersion versions, config %} requires Node 10 or newer. Use `node --version` on the command line to find your local Node version.
