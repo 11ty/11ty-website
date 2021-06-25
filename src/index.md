@@ -5,8 +5,14 @@ ignoreGitHubButtons: true
 ignoreSupporters: true
 ignoreFastestSite: true
 searchTitle: Eleventy Home
+excludeFromSearch: true
 bigPossum: true
+permalink:
+  dynamic: /
 ---
+{% if eleventy.serverless %}
+<strong>🏅 Visitor №{{ page.url | fetchAndIncrementHits }}</strong>
+{% endif %}
 
 ## Quick Start
 

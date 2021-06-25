@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const { DateTime } = require("luxon");
 const HumanReadable = require("human-readable-numbers");
 const commaNumber = require("comma-number");
@@ -22,6 +24,7 @@ const minificationLocalPlugin = require("./config/minification");
 const getAuthors = require("./config/getAuthorsFromSites");
 const cleanName = require("./config/cleanAuthorName");
 const objectHas = require("./config/object-has");
+const HitsDb = require("./config/hits-db.js");
 
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);
@@ -123,8 +126,10 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(addedInLocalPlugin);
 	eleventyConfig.addPlugin(monthDiffPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
+
 	eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
 		name: "serverless",
+		inputDir: "src",
 		functionsDir: "./netlify/functions/",
 		copy: [
 			"config/",
@@ -133,6 +138,15 @@ module.exports = function(eleventyConfig) {
 			"src/img/gift.svg",
 			"_generated-serverless-collections.json",
 			{ from: ".cache/eleventy-cache-assets/", to: "cache" },
+		]
+	});
+
+	eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
+		name: "dynamic",
+		inputDir: "src",
+		functionsDir: "./netlify/functions/",
+		copy: [
+			"config/",
 		]
 	});
 
@@ -584,6 +598,18 @@ ${text.trim()}
 		}
 
 		return html.join("");
+	});
+
+	eleventyConfig.addNunjucksAsyncFilter("fetchAndIncrementHits", function(slug, callback) {
+		let hitsDb = new HitsDb();
+		hitsDb.fetch(slug).then(hits => {
+			callback(null, hits);
+		});
+	});
+
+	eleventyConfig.addJavaScriptFunction("fetchAndIncrementHits", async function(slug) {
+		let hitsDb = new HitsDb();
+		return hitsDb.fetch(slug);
 	});
 
 	return {

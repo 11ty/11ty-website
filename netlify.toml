@@ -6,6 +6,13 @@ command = "npm run build-production"
 directory = "netlify/functions/"
 
 [[redirects]]
+from = "/"
+to = "/.netlify/functions/dynamic"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "dynamic"
+
+[[redirects]]
 from = "/authors/:name/"
 to = "/.netlify/functions/serverless"
 status = 200
