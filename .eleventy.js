@@ -68,10 +68,8 @@ const shortcodes = {
 		let forcedHost = !process.env.DEPLOY_PRIME_URL ? localhostEnv : "";
 		let screenshotPath = `/api/screenshot/${encodeURIComponent(siteUrl)}/${viewport.width}x${viewport.height}/`;
 		if(siteSlug === "11ty" || siteSlug === "foursquare") {
-			if(fs.pathExistsSync(`./src/img/screenshot-fallbacks/${siteSlug}.jpg`)) {
-				forcedHost = "";
-				screenshotPath = `/img/screenshot-fallbacks/${siteSlug}.jpg`;
-			}
+			forcedHost = "";
+			screenshotPath = `/img/screenshot-fallbacks/${siteSlug}.jpg`;
 		}
 
 		let screenshotUrl = `${forcedHost}${screenshotPath}`;
