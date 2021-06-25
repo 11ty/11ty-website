@@ -40,13 +40,6 @@ module.exports = async function() {
 			directory: process.env.ELEVENTY_SERVERLESS ? "cache/" : ".cache/eleventy-cache-assets/",
 		});
 
-		// if(process.env.ELEVENTY_PRODUCTION) {
-		// 	console.log( "Pre-filtered supporters list:" );
-		// 	for(let supporter of json) {
-		// 		console.log( ` * ${supporter.name} (${supporter.role} ${supporter.tier} ${supporter.isActive})` );
-		// 	}
-		// }
-
 		let orders = json.nodes.map(order => {
 			order.name = order.fromAccount.name;
 			order.slug = order.fromAccount.slug;
@@ -88,23 +81,17 @@ module.exports = async function() {
 			return isMonthlyOrYearlyOrder(order);
 		}).length;
 
-		// if(process.env.ELEVENTY_PRODUCTION) {
-		// 	console.log( "Final supporters list:" );
-		// 	for(let supporter of json) {
-		// 		console.log( ` * ${supporter.name} (${supporter.role} ${supporter.tier} ${supporter.isActive})` );
-		// 	}
-		// }
-
 		return {
 			supporters: orders,
 			backers: backers,
 			monthlyBackers: monthlyBackers
 		};
 	} catch(e) {
-		if(process.env.ELEVENTY_PRODUCTION) {
+		if(process.env.NODE_ENV === "production") {
 			// Fail the build in production.
 			return Promise.reject(e);
 		}
+
 		console.log( "Failed, returning 0 opencollective backers.", e );
 		return {
 			supporters: [],

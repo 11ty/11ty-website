@@ -18,13 +18,12 @@ const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const eleventyImage = require("@11ty/eleventy-img");
 
-const monthDiffPlugin = require("./config/monthDiff");
-const addedInLocalPlugin = require("./config/addedin");
-const minificationLocalPlugin = require("./config/minification");
-const getAuthors = require("./config/getAuthorsFromSites");
-const cleanName = require("./config/cleanAuthorName");
-const objectHas = require("./config/object-has");
-const HitsDb = require("./config/hits-db.js");
+const monthDiffPlugin = require("./config/monthDiff.js");
+const addedInLocalPlugin = require("./config/addedin.js");
+const minificationLocalPlugin = require("./config/minification.js");
+const getAuthors = require("./config/getAuthorsFromSites.js");
+const cleanName = require("./config/cleanAuthorName.js");
+const objectHas = require("./config/object-has.js");
 // const HitsDb = require("./config/hits-db.js");
 
 // Load yaml from Prism to highlight frontmatter
@@ -98,7 +97,7 @@ const shortcodes = {
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.setDataDeepMerge(true);
-	if(!process.env.ELEVENTY_PRODUCTION) {
+	if(process.env.NODE_ENV !== "production") {
 		eleventyConfig.setQuietMode(true);
 	}
 
@@ -130,6 +129,7 @@ module.exports = function(eleventyConfig) {
 		name: "serverless",
 		inputDir: "src",
 		functionsDir: "./netlify/functions/",
+		// copyEnabled: process.env.NODE_ENV === "production",
 		copy: [
 			"config/",
 			"avatars/",
@@ -144,6 +144,7 @@ module.exports = function(eleventyConfig) {
 		name: "dynamic",
 		inputDir: "src",
 		functionsDir: "./netlify/functions/",
+		// copyEnabled: process.env.NODE_ENV === "production",
 		copy: [
 			"config/",
 			"avatars/",

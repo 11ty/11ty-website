@@ -7,14 +7,11 @@
     "node": ">=12"
   },
   "scripts": {
-    "assets": "cp node_modules/@11ty/logo/logo.png .",
     "check-links": "npx check-html-links _site",
-    "links-external": "hyperlink -r --root _site --canonicalroot https://11ty.dev/ --skip '/.netlify/functions' _site/*.html | tap-spot",
-    "links-internal": "hyperlink -ri --root _site --canonicalroot https://11ty.dev/ --skip '/.netlify/functions' _site/*.html | tap-spot",
     "deploy": "npm run build && ./deploy.sh",
     "build": "npx @11ty/eleventy",
     "start": "npx @11ty/eleventy --serve",
-    "build-production": "node node-avatars-opencollective && ELEVENTY_PRODUCTION=true eleventy",
+    "build-production": "node node-avatars-opencollective && NODE_ENV=production eleventy",
     "get-new-supporters": "eleventy && node node-supporters",
     "get-new-avatars": "node node-avatars-opencollective && node node-avatars-twitter",
     "format": "prettier --write '**/*.{js,css,html,md}'"
