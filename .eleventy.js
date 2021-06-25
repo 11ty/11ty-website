@@ -65,7 +65,7 @@ const shortcodes = {
 		};
 
 		let localhostEnv = "https://www.11ty.dev";
-		let forcedHost = !process.env.DEPLOY_PRIME_URL && !process.env.AWS_LAMBDA_FUNCTION_NAME ? localhostEnv : "";
+		let forcedHost = !process.env.DEPLOY_PRIME_URL ? localhostEnv : "";
 		let screenshotPath = `/api/screenshot/${encodeURIComponent(siteUrl)}/${viewport.width}x${viewport.height}/`;
 		if(siteSlug === "11ty" || siteSlug === "foursquare") {
 			if(fs.pathExistsSync(`./src/img/screenshot-fallbacks/${siteSlug}.jpg`)) {
