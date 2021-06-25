@@ -10,7 +10,7 @@ bigPossum: true
 permalink:
   dynamic: /
 ---
-{% callout "info" %}<strong>This page was rendered using Eleventy Serverless</strong> <em>{{ config.now }}</em>{% endcallout %}
+{% callout "info" %}<strong>This page was rendered using <a href="/docs/plugins/serverless/">Eleventy Serverless</a></strong> <em>{{ config.now }}</em>{% endcallout %}
 
 ## Quick Start
 
