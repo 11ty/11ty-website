@@ -246,6 +246,8 @@ This will match any requested URL that fits the `/dynamic-path/` followed by an 
 }
 ```
 
+### Advanced
+
 #### Dynamic Slugs to Subset Your Pagination
 
 Use the new `serverless` option in `pagination` to slice up your paginated data set using a dynamic slug! Here’s how we use it for the [Eleventy Author Pages](/authors/).
@@ -269,7 +271,8 @@ For example:
 1. An additional `lodash.get(authors, "zachleat")` returns a single chunk of data for one author.
 1. Pagination only operates on that one selected page for rendering.
 
-### Advanced Recipes
+
+#### How do `permalink` Objects work with `page.url`?
 
 #### Re-use build-time cache from the [Cache Assets plugin](/docs/plugins/cache/)
 
