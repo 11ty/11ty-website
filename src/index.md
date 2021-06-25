@@ -40,14 +40,6 @@ Run `eleventy --serve` to start up a web server. Then open `http://localhost:808
 
 {% include "supporters.njk" %}
 
-## Latest [News]({{ '/news/' | url }})
-
-{%- set news = collections.news | reverse | first %}
-{%- if news %}
-[{{ news.data.newstitle }}]({{ news.data.page.url }}) ({{ news.date | newsDate }})
-{%- endif %}
-
-
 <a href="{{ "/docs/" | url }}" class="btn-primary btn-primary-why-are-you-doing-this benchnine rainbow-active rainbow-active-noanim">Documentation for <span>Eleventy {% latestVersion versions, config %}</span></a><span>Todd and [Bruce](https://twitter.com/brucel/status/1107699886584143872) said this button should be bigger and as you can see they were right</span>
 
 ## Built With Eleventy
