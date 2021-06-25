@@ -44,12 +44,13 @@ class HitsDb {
 	async fetch(slug) {
 		await this.createNewDocumentForSlug(slug);
 		const document = await this.fetchDocumentForSlug(slug);
-		let hits = this.getHits(document);
 
 		// kick this off but don’t wait
-		this.increment(document);
+		await this.increment(document);
 
-		return hits + 1;
+		let hits = this.getHits(document);
+
+		return hits;
 	}
 }
 
