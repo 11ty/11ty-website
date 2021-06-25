@@ -428,6 +428,19 @@ footer.elv-layout {
 /* Header Hero */
 .elv-hero {
 	background-color: #222;
+	font-family: BenchNine, system-ui, -apple-system, sans-serif;
+	text-decoration: none;
+}
+.elv-hero,
+.elv-hero:visited {
+	color: #fff;
+}
+.elv-hero-hits {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 30vw;
+	height: 60vh;
 }
 @media (prefers-color-scheme: dark) {
 	.elv-hero {
