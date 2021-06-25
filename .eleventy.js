@@ -165,11 +165,11 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPairedShortcode("markdown", function(content) {
 		return md.renderInline(content);
 	});
-	eleventyConfig.addPairedShortcode("callout", function(content, level = "warn", format = "html") {
+	eleventyConfig.addPairedShortcode("callout", function(content, level = "warn", format = "html", cls = "") {
 		if( format === "md" ) {
 			content = md.renderInline(content);
 		}
-		return `<div class="elv-callout elv-callout-${level}">${content}</div>`;
+		return `<div class="elv-callout elv-callout-${level}${cls ? ` ${cls}`: ""}">${content}</div>`;
 	});
 
 	eleventyConfig.addShortcode("emoji", function(emoji, alt = "") {

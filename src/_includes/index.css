@@ -885,3 +885,12 @@ main .elv-toc + h1 .direct-link {
 .business-network-hire a[href] {
   padding: 0.5rem 2em 0.4rem;
 }
+
+.elv-serverless-banner {
+	text-align: center;
+}
+.elv-serverless-banner code {
+	display: block;
+	font-size: 1.25em; /* 20px /16 */
+	margin-top: .25em;
+}
