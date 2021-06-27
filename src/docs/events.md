@@ -53,7 +53,7 @@ module.exports = function (eleventyConfig) {
 
 ```js
 module.exports = function (eleventyConfig) {
-  eleventyConfig.on('beforeWatch', (changedFiles) => {
+  eleventyConfig.on('changedFiles', (changedFiles) => {
     // changedFiles is an array of files that changed
     // to trigger the watch/serve build
   });
