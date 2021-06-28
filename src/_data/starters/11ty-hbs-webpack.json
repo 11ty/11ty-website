@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/uuki/11ty-hbs-webpack",
+	"name": "11ty-hbs-webpack",
+	"description": "Eleventy with Handlebars(support asynchronous helper) and Webpack boilerplate.",
+	"author": "uuki",
+	"demo": "https://xenodochial-morse-1c8f1c.netlify.app/"
+}
