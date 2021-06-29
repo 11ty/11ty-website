@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/wes-ruvalcaba.avif 90w",
       "filename": "wes-ruvalcaba.avif",
-      "outputPath": "img/avatars/opencollective/wes-ruvalcaba.avif",
+      "outputPath": "src/img/avatars/opencollective/wes-ruvalcaba.avif",
       "size": 1171
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/wes-ruvalcaba.webp 90w",
       "filename": "wes-ruvalcaba.webp",
-      "outputPath": "img/avatars/opencollective/wes-ruvalcaba.webp",
+      "outputPath": "src/img/avatars/opencollective/wes-ruvalcaba.webp",
       "size": 1802
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/wes-ruvalcaba.jpeg 90w",
       "filename": "wes-ruvalcaba.jpeg",
-      "outputPath": "img/avatars/opencollective/wes-ruvalcaba.jpeg",
+      "outputPath": "src/img/avatars/opencollective/wes-ruvalcaba.jpeg",
       "size": 2444
     }
   ],

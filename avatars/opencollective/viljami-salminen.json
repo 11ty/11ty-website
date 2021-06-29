@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/viljami-salminen.avif 90w",
       "filename": "viljami-salminen.avif",
-      "outputPath": "img/avatars/opencollective/viljami-salminen.avif",
+      "outputPath": "src/img/avatars/opencollective/viljami-salminen.avif",
       "size": 1705
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/viljami-salminen.webp 90w",
       "filename": "viljami-salminen.webp",
-      "outputPath": "img/avatars/opencollective/viljami-salminen.webp",
+      "outputPath": "src/img/avatars/opencollective/viljami-salminen.webp",
       "size": 2554
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/viljami-salminen.jpeg 90w",
       "filename": "viljami-salminen.jpeg",
-      "outputPath": "img/avatars/opencollective/viljami-salminen.jpeg",
+      "outputPath": "src/img/avatars/opencollective/viljami-salminen.jpeg",
       "size": 1433
     }
   ],

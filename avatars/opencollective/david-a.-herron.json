@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/david-a.-herron.avif 90w",
       "filename": "david-a.-herron.avif",
-      "outputPath": "img/avatars/opencollective/david-a.-herron.avif",
+      "outputPath": "src/img/avatars/opencollective/david-a.-herron.avif",
       "size": 1369
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/david-a.-herron.webp 90w",
       "filename": "david-a.-herron.webp",
-      "outputPath": "img/avatars/opencollective/david-a.-herron.webp",
+      "outputPath": "src/img/avatars/opencollective/david-a.-herron.webp",
       "size": 1796
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/david-a.-herron.jpeg 90w",
       "filename": "david-a.-herron.jpeg",
-      "outputPath": "img/avatars/opencollective/david-a.-herron.jpeg",
+      "outputPath": "src/img/avatars/opencollective/david-a.-herron.jpeg",
       "size": 2485
     }
   ],

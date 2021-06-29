@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/curt-hasselschwert.avif 90w",
       "filename": "curt-hasselschwert.avif",
-      "outputPath": "img/avatars/opencollective/curt-hasselschwert.avif",
+      "outputPath": "src/img/avatars/opencollective/curt-hasselschwert.avif",
       "size": 1012
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/curt-hasselschwert.webp 90w",
       "filename": "curt-hasselschwert.webp",
-      "outputPath": "img/avatars/opencollective/curt-hasselschwert.webp",
+      "outputPath": "src/img/avatars/opencollective/curt-hasselschwert.webp",
       "size": 1414
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/curt-hasselschwert.jpeg 90w",
       "filename": "curt-hasselschwert.jpeg",
-      "outputPath": "img/avatars/opencollective/curt-hasselschwert.jpeg",
+      "outputPath": "src/img/avatars/opencollective/curt-hasselschwert.jpeg",
       "size": 2255
     }
   ],

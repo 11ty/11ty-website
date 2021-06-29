@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/foones.avif 90w",
       "filename": "foones.avif",
-      "outputPath": "img/avatars/opencollective/foones.avif",
+      "outputPath": "src/img/avatars/opencollective/foones.avif",
       "size": 624
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/foones.webp 90w",
       "filename": "foones.webp",
-      "outputPath": "img/avatars/opencollective/foones.webp",
+      "outputPath": "src/img/avatars/opencollective/foones.webp",
       "size": 372
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/foones.jpeg 90w",
       "filename": "foones.jpeg",
-      "outputPath": "img/avatars/opencollective/foones.jpeg",
+      "outputPath": "src/img/avatars/opencollective/foones.jpeg",
       "size": 965
     }
   ],

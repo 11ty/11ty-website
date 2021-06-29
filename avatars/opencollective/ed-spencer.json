@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/ed-spencer.avif 90w",
       "filename": "ed-spencer.avif",
-      "outputPath": "img/avatars/opencollective/ed-spencer.avif",
+      "outputPath": "src/img/avatars/opencollective/ed-spencer.avif",
       "size": 1579
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/ed-spencer.webp 90w",
       "filename": "ed-spencer.webp",
-      "outputPath": "img/avatars/opencollective/ed-spencer.webp",
+      "outputPath": "src/img/avatars/opencollective/ed-spencer.webp",
       "size": 2402
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/ed-spencer.jpeg 90w",
       "filename": "ed-spencer.jpeg",
-      "outputPath": "img/avatars/opencollective/ed-spencer.jpeg",
+      "outputPath": "src/img/avatars/opencollective/ed-spencer.jpeg",
       "size": 2849
     }
   ],

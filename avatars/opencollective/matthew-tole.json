@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/matthew-tole.avif 90w",
       "filename": "matthew-tole.avif",
-      "outputPath": "img/avatars/opencollective/matthew-tole.avif",
+      "outputPath": "src/img/avatars/opencollective/matthew-tole.avif",
       "size": 926
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/matthew-tole.webp 90w",
       "filename": "matthew-tole.webp",
-      "outputPath": "img/avatars/opencollective/matthew-tole.webp",
+      "outputPath": "src/img/avatars/opencollective/matthew-tole.webp",
       "size": 1266
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/matthew-tole.jpeg 90w",
       "filename": "matthew-tole.jpeg",
-      "outputPath": "img/avatars/opencollective/matthew-tole.jpeg",
+      "outputPath": "src/img/avatars/opencollective/matthew-tole.jpeg",
       "size": 1913
     }
   ],

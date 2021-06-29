@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/miriam-suzanne.avif 90w",
       "filename": "miriam-suzanne.avif",
-      "outputPath": "img/avatars/opencollective/miriam-suzanne.avif",
+      "outputPath": "src/img/avatars/opencollective/miriam-suzanne.avif",
       "size": 1492
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/miriam-suzanne.webp 90w",
       "filename": "miriam-suzanne.webp",
-      "outputPath": "img/avatars/opencollective/miriam-suzanne.webp",
+      "outputPath": "src/img/avatars/opencollective/miriam-suzanne.webp",
       "size": 2266
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/miriam-suzanne.jpeg 90w",
       "filename": "miriam-suzanne.jpeg",
-      "outputPath": "img/avatars/opencollective/miriam-suzanne.jpeg",
+      "outputPath": "src/img/avatars/opencollective/miriam-suzanne.jpeg",
       "size": 2822
     }
   ],

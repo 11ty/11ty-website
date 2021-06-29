@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/doxford.avif 90w",
       "filename": "doxford.avif",
-      "outputPath": "img/avatars/opencollective/doxford.avif",
+      "outputPath": "src/img/avatars/opencollective/doxford.avif",
       "size": 1371
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/doxford.webp 90w",
       "filename": "doxford.webp",
-      "outputPath": "img/avatars/opencollective/doxford.webp",
+      "outputPath": "src/img/avatars/opencollective/doxford.webp",
       "size": 1688
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/doxford.jpeg 90w",
       "filename": "doxford.jpeg",
-      "outputPath": "img/avatars/opencollective/doxford.jpeg",
+      "outputPath": "src/img/avatars/opencollective/doxford.jpeg",
       "size": 2497
     }
   ],

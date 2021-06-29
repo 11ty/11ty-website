@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/alex-russell.avif 90w",
       "filename": "alex-russell.avif",
-      "outputPath": "img/avatars/opencollective/alex-russell.avif",
+      "outputPath": "src/img/avatars/opencollective/alex-russell.avif",
       "size": 910
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/alex-russell.webp 90w",
       "filename": "alex-russell.webp",
-      "outputPath": "img/avatars/opencollective/alex-russell.webp",
+      "outputPath": "src/img/avatars/opencollective/alex-russell.webp",
       "size": 1282
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/alex-russell.jpeg 90w",
       "filename": "alex-russell.jpeg",
-      "outputPath": "img/avatars/opencollective/alex-russell.jpeg",
+      "outputPath": "src/img/avatars/opencollective/alex-russell.jpeg",
       "size": 1929
     }
   ],

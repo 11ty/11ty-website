@@ -8,8 +8,8 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/piccalilli.avif 90w",
       "filename": "piccalilli.avif",
-      "outputPath": "img/avatars/opencollective/piccalilli.avif",
-      "size": 2911
+      "outputPath": "src/img/avatars/opencollective/piccalilli.avif",
+      "size": 1898
     }
   ],
   "webp": [
@@ -21,8 +21,8 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/piccalilli.webp 90w",
       "filename": "piccalilli.webp",
-      "outputPath": "img/avatars/opencollective/piccalilli.webp",
-      "size": 4518
+      "outputPath": "src/img/avatars/opencollective/piccalilli.webp",
+      "size": 2438
     }
   ],
   "jpeg": [
@@ -34,8 +34,8 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/piccalilli.jpeg 90w",
       "filename": "piccalilli.jpeg",
-      "outputPath": "img/avatars/opencollective/piccalilli.jpeg",
-      "size": 3305
+      "outputPath": "src/img/avatars/opencollective/piccalilli.jpeg",
+      "size": 3030
     }
   ],
   "slug": "piccalilli"

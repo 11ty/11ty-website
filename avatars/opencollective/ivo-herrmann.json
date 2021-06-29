@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/ivo-herrmann.avif 90w",
       "filename": "ivo-herrmann.avif",
-      "outputPath": "img/avatars/opencollective/ivo-herrmann.avif",
+      "outputPath": "src/img/avatars/opencollective/ivo-herrmann.avif",
       "size": 1793
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/ivo-herrmann.webp 90w",
       "filename": "ivo-herrmann.webp",
-      "outputPath": "img/avatars/opencollective/ivo-herrmann.webp",
+      "outputPath": "src/img/avatars/opencollective/ivo-herrmann.webp",
       "size": 2654
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/ivo-herrmann.jpeg 90w",
       "filename": "ivo-herrmann.jpeg",
-      "outputPath": "img/avatars/opencollective/ivo-herrmann.jpeg",
+      "outputPath": "src/img/avatars/opencollective/ivo-herrmann.jpeg",
       "size": 3165
     }
   ],

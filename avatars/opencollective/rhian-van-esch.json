@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/rhian-van-esch.avif 90w",
       "filename": "rhian-van-esch.avif",
-      "outputPath": "img/avatars/opencollective/rhian-van-esch.avif",
+      "outputPath": "src/img/avatars/opencollective/rhian-van-esch.avif",
       "size": 1282
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/rhian-van-esch.webp 90w",
       "filename": "rhian-van-esch.webp",
-      "outputPath": "img/avatars/opencollective/rhian-van-esch.webp",
+      "outputPath": "src/img/avatars/opencollective/rhian-van-esch.webp",
       "size": 1656
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/rhian-van-esch.jpeg 90w",
       "filename": "rhian-van-esch.jpeg",
-      "outputPath": "img/avatars/opencollective/rhian-van-esch.jpeg",
+      "outputPath": "src/img/avatars/opencollective/rhian-van-esch.jpeg",
       "size": 2325
     }
   ],

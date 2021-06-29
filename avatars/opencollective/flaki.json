@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/flaki.avif 90w",
       "filename": "flaki.avif",
-      "outputPath": "img/avatars/opencollective/flaki.avif",
+      "outputPath": "src/img/avatars/opencollective/flaki.avif",
       "size": 1327
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/flaki.webp 90w",
       "filename": "flaki.webp",
-      "outputPath": "img/avatars/opencollective/flaki.webp",
+      "outputPath": "src/img/avatars/opencollective/flaki.webp",
       "size": 1926
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/flaki.jpeg 90w",
       "filename": "flaki.jpeg",
-      "outputPath": "img/avatars/opencollective/flaki.jpeg",
+      "outputPath": "src/img/avatars/opencollective/flaki.jpeg",
       "size": 2586
     }
   ],

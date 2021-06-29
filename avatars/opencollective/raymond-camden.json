@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/raymond-camden.avif 90w",
       "filename": "raymond-camden.avif",
-      "outputPath": "img/avatars/opencollective/raymond-camden.avif",
+      "outputPath": "src/img/avatars/opencollective/raymond-camden.avif",
       "size": 1315
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/raymond-camden.webp 90w",
       "filename": "raymond-camden.webp",
-      "outputPath": "img/avatars/opencollective/raymond-camden.webp",
+      "outputPath": "src/img/avatars/opencollective/raymond-camden.webp",
       "size": 1612
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/raymond-camden.jpeg 90w",
       "filename": "raymond-camden.jpeg",
-      "outputPath": "img/avatars/opencollective/raymond-camden.jpeg",
+      "outputPath": "src/img/avatars/opencollective/raymond-camden.jpeg",
       "size": 2328
     }
   ],

@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/grant-smith.avif 90w",
       "filename": "grant-smith.avif",
-      "outputPath": "img/avatars/opencollective/grant-smith.avif",
+      "outputPath": "src/img/avatars/opencollective/grant-smith.avif",
       "size": 1432
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/grant-smith.webp 90w",
       "filename": "grant-smith.webp",
-      "outputPath": "img/avatars/opencollective/grant-smith.webp",
+      "outputPath": "src/img/avatars/opencollective/grant-smith.webp",
       "size": 2106
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/grant-smith.jpeg 90w",
       "filename": "grant-smith.jpeg",
-      "outputPath": "img/avatars/opencollective/grant-smith.jpeg",
+      "outputPath": "src/img/avatars/opencollective/grant-smith.jpeg",
       "size": 2740
     }
   ],

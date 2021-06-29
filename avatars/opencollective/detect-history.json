@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/detect-history.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/detect-history.avif 90w",
+      "filename": "detect-history.avif",
+      "outputPath": "src/img/avatars/opencollective/detect-history.avif",
+      "size": 1025
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/detect-history.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/detect-history.webp 90w",
+      "filename": "detect-history.webp",
+      "outputPath": "src/img/avatars/opencollective/detect-history.webp",
+      "size": 1120
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/detect-history.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/detect-history.jpeg 90w",
+      "filename": "detect-history.jpeg",
+      "outputPath": "src/img/avatars/opencollective/detect-history.jpeg",
+      "size": 1865
+    }
+  ],
+  "slug": "detect-history"
+}

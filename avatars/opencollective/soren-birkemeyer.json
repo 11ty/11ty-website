@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/soren-birkemeyer.avif 90w",
       "filename": "soren-birkemeyer.avif",
-      "outputPath": "img/avatars/opencollective/soren-birkemeyer.avif",
+      "outputPath": "src/img/avatars/opencollective/soren-birkemeyer.avif",
       "size": 2256
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/soren-birkemeyer.webp 90w",
       "filename": "soren-birkemeyer.webp",
-      "outputPath": "img/avatars/opencollective/soren-birkemeyer.webp",
+      "outputPath": "src/img/avatars/opencollective/soren-birkemeyer.webp",
       "size": 3626
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/soren-birkemeyer.jpeg 90w",
       "filename": "soren-birkemeyer.jpeg",
-      "outputPath": "img/avatars/opencollective/soren-birkemeyer.jpeg",
+      "outputPath": "src/img/avatars/opencollective/soren-birkemeyer.jpeg",
       "size": 2517
     }
   ],

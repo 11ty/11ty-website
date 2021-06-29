@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/rich-holman.avif 90w",
       "filename": "rich-holman.avif",
-      "outputPath": "img/avatars/opencollective/rich-holman.avif",
+      "outputPath": "src/img/avatars/opencollective/rich-holman.avif",
       "size": 1511
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/rich-holman.webp 90w",
       "filename": "rich-holman.webp",
-      "outputPath": "img/avatars/opencollective/rich-holman.webp",
+      "outputPath": "src/img/avatars/opencollective/rich-holman.webp",
       "size": 2316
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/rich-holman.jpeg 90w",
       "filename": "rich-holman.jpeg",
-      "outputPath": "img/avatars/opencollective/rich-holman.jpeg",
+      "outputPath": "src/img/avatars/opencollective/rich-holman.jpeg",
       "size": 2890
     }
   ],

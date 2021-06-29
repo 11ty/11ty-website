@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/bryce-wray.avif 90w",
       "filename": "bryce-wray.avif",
-      "outputPath": "img/avatars/opencollective/bryce-wray.avif",
+      "outputPath": "src/img/avatars/opencollective/bryce-wray.avif",
       "size": 1630
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/bryce-wray.webp 90w",
       "filename": "bryce-wray.webp",
-      "outputPath": "img/avatars/opencollective/bryce-wray.webp",
+      "outputPath": "src/img/avatars/opencollective/bryce-wray.webp",
       "size": 3164
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/bryce-wray.jpeg 90w",
       "filename": "bryce-wray.jpeg",
-      "outputPath": "img/avatars/opencollective/bryce-wray.jpeg",
+      "outputPath": "src/img/avatars/opencollective/bryce-wray.jpeg",
       "size": 2893
     }
   ],

@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/paul-welsh.avif 90w",
       "filename": "paul-welsh.avif",
-      "outputPath": "img/avatars/opencollective/paul-welsh.avif",
+      "outputPath": "src/img/avatars/opencollective/paul-welsh.avif",
       "size": 2341
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/paul-welsh.webp 90w",
       "filename": "paul-welsh.webp",
-      "outputPath": "img/avatars/opencollective/paul-welsh.webp",
+      "outputPath": "src/img/avatars/opencollective/paul-welsh.webp",
       "size": 3642
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/paul-welsh.jpeg 90w",
       "filename": "paul-welsh.jpeg",
-      "outputPath": "img/avatars/opencollective/paul-welsh.jpeg",
+      "outputPath": "src/img/avatars/opencollective/paul-welsh.jpeg",
       "size": 3978
     }
   ],

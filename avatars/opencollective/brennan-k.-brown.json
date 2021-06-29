@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/brennan-k.-brown.avif 90w",
       "filename": "brennan-k.-brown.avif",
-      "outputPath": "img/avatars/opencollective/brennan-k.-brown.avif",
+      "outputPath": "src/img/avatars/opencollective/brennan-k.-brown.avif",
       "size": 1240
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/brennan-k.-brown.webp 90w",
       "filename": "brennan-k.-brown.webp",
-      "outputPath": "img/avatars/opencollective/brennan-k.-brown.webp",
+      "outputPath": "src/img/avatars/opencollective/brennan-k.-brown.webp",
       "size": 1578
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/brennan-k.-brown.jpeg 90w",
       "filename": "brennan-k.-brown.jpeg",
-      "outputPath": "img/avatars/opencollective/brennan-k.-brown.jpeg",
+      "outputPath": "src/img/avatars/opencollective/brennan-k.-brown.jpeg",
       "size": 2255
     }
   ],

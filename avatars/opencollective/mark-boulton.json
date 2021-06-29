@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/mark-boulton.avif 90w",
       "filename": "mark-boulton.avif",
-      "outputPath": "img/avatars/opencollective/mark-boulton.avif",
+      "outputPath": "src/img/avatars/opencollective/mark-boulton.avif",
       "size": 1143
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/mark-boulton.webp 90w",
       "filename": "mark-boulton.webp",
-      "outputPath": "img/avatars/opencollective/mark-boulton.webp",
+      "outputPath": "src/img/avatars/opencollective/mark-boulton.webp",
       "size": 1450
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/mark-boulton.jpeg 90w",
       "filename": "mark-boulton.jpeg",
-      "outputPath": "img/avatars/opencollective/mark-boulton.jpeg",
+      "outputPath": "src/img/avatars/opencollective/mark-boulton.jpeg",
       "size": 2189
     }
   ],

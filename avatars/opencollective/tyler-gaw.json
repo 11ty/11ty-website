@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/tyler-gaw.avif 90w",
       "filename": "tyler-gaw.avif",
-      "outputPath": "img/avatars/opencollective/tyler-gaw.avif",
+      "outputPath": "src/img/avatars/opencollective/tyler-gaw.avif",
       "size": 1030
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/tyler-gaw.webp 90w",
       "filename": "tyler-gaw.webp",
-      "outputPath": "img/avatars/opencollective/tyler-gaw.webp",
+      "outputPath": "src/img/avatars/opencollective/tyler-gaw.webp",
       "size": 1244
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/tyler-gaw.jpeg 90w",
       "filename": "tyler-gaw.jpeg",
-      "outputPath": "img/avatars/opencollective/tyler-gaw.jpeg",
+      "outputPath": "src/img/avatars/opencollective/tyler-gaw.jpeg",
       "size": 1947
     }
   ],

@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/sanity.io.avif 90w",
       "filename": "sanity.io.avif",
-      "outputPath": "img/avatars/opencollective/sanity.io.avif",
+      "outputPath": "src/img/avatars/opencollective/sanity.io.avif",
       "size": 788
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/sanity.io.webp 90w",
       "filename": "sanity.io.webp",
-      "outputPath": "img/avatars/opencollective/sanity.io.webp",
+      "outputPath": "src/img/avatars/opencollective/sanity.io.webp",
       "size": 758
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/sanity.io.jpeg 90w",
       "filename": "sanity.io.jpeg",
-      "outputPath": "img/avatars/opencollective/sanity.io.jpeg",
+      "outputPath": "src/img/avatars/opencollective/sanity.io.jpeg",
       "size": 1469
     }
   ],

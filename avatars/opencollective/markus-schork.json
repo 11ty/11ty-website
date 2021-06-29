@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/markus-schork.avif 90w",
       "filename": "markus-schork.avif",
-      "outputPath": "img/avatars/opencollective/markus-schork.avif",
+      "outputPath": "src/img/avatars/opencollective/markus-schork.avif",
       "size": 715
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/markus-schork.webp 90w",
       "filename": "markus-schork.webp",
-      "outputPath": "img/avatars/opencollective/markus-schork.webp",
+      "outputPath": "src/img/avatars/opencollective/markus-schork.webp",
       "size": 766
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/markus-schork.jpeg 90w",
       "filename": "markus-schork.jpeg",
-      "outputPath": "img/avatars/opencollective/markus-schork.jpeg",
+      "outputPath": "src/img/avatars/opencollective/markus-schork.jpeg",
       "size": 1410
     }
   ],

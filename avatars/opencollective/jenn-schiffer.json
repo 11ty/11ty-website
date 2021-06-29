@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/jenn-schiffer.avif 90w",
       "filename": "jenn-schiffer.avif",
-      "outputPath": "img/avatars/opencollective/jenn-schiffer.avif",
+      "outputPath": "src/img/avatars/opencollective/jenn-schiffer.avif",
       "size": 1023
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/jenn-schiffer.webp 90w",
       "filename": "jenn-schiffer.webp",
-      "outputPath": "img/avatars/opencollective/jenn-schiffer.webp",
+      "outputPath": "src/img/avatars/opencollective/jenn-schiffer.webp",
       "size": 1450
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/jenn-schiffer.jpeg 90w",
       "filename": "jenn-schiffer.jpeg",
-      "outputPath": "img/avatars/opencollective/jenn-schiffer.jpeg",
+      "outputPath": "src/img/avatars/opencollective/jenn-schiffer.jpeg",
       "size": 2169
     }
   ],

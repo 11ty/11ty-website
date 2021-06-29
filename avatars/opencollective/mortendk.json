@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/mortendk.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/mortendk.avif 90w",
+      "filename": "mortendk.avif",
+      "outputPath": "src/img/avatars/opencollective/mortendk.avif",
+      "size": 2098
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/mortendk.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/mortendk.webp 90w",
+      "filename": "mortendk.webp",
+      "outputPath": "src/img/avatars/opencollective/mortendk.webp",
+      "size": 3018
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/mortendk.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/mortendk.jpeg 90w",
+      "filename": "mortendk.jpeg",
+      "outputPath": "src/img/avatars/opencollective/mortendk.jpeg",
+      "size": 3484
+    }
+  ],
+  "slug": "mortendk"
+}

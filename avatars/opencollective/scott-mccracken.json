@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/scott-mccracken.avif 90w",
       "filename": "scott-mccracken.avif",
-      "outputPath": "img/avatars/opencollective/scott-mccracken.avif",
+      "outputPath": "src/img/avatars/opencollective/scott-mccracken.avif",
       "size": 1485
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/scott-mccracken.webp 90w",
       "filename": "scott-mccracken.webp",
-      "outputPath": "img/avatars/opencollective/scott-mccracken.webp",
+      "outputPath": "src/img/avatars/opencollective/scott-mccracken.webp",
       "size": 2300
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/scott-mccracken.jpeg 90w",
       "filename": "scott-mccracken.jpeg",
-      "outputPath": "img/avatars/opencollective/scott-mccracken.jpeg",
+      "outputPath": "src/img/avatars/opencollective/scott-mccracken.jpeg",
       "size": 2773
     }
   ],

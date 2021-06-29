@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/marc-filleul.avif 90w",
       "filename": "marc-filleul.avif",
-      "outputPath": "img/avatars/opencollective/marc-filleul.avif",
+      "outputPath": "src/img/avatars/opencollective/marc-filleul.avif",
       "size": 2028
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/marc-filleul.webp 90w",
       "filename": "marc-filleul.webp",
-      "outputPath": "img/avatars/opencollective/marc-filleul.webp",
+      "outputPath": "src/img/avatars/opencollective/marc-filleul.webp",
       "size": 3038
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/marc-filleul.jpeg 90w",
       "filename": "marc-filleul.jpeg",
-      "outputPath": "img/avatars/opencollective/marc-filleul.jpeg",
+      "outputPath": "src/img/avatars/opencollective/marc-filleul.jpeg",
       "size": 2242
     }
   ],

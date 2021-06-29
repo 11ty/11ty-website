@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/zach-leatherman.avif 90w",
       "filename": "zach-leatherman.avif",
-      "outputPath": "img/avatars/opencollective/zach-leatherman.avif",
+      "outputPath": "src/img/avatars/opencollective/zach-leatherman.avif",
       "size": 946
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/zach-leatherman.webp 90w",
       "filename": "zach-leatherman.webp",
-      "outputPath": "img/avatars/opencollective/zach-leatherman.webp",
+      "outputPath": "src/img/avatars/opencollective/zach-leatherman.webp",
       "size": 928
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/zach-leatherman.jpeg 90w",
       "filename": "zach-leatherman.jpeg",
-      "outputPath": "img/avatars/opencollective/zach-leatherman.jpeg",
+      "outputPath": "src/img/avatars/opencollective/zach-leatherman.jpeg",
       "size": 1633
     }
   ],

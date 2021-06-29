@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/nicolas-friedli.avif 90w",
       "filename": "nicolas-friedli.avif",
-      "outputPath": "img/avatars/opencollective/nicolas-friedli.avif",
+      "outputPath": "src/img/avatars/opencollective/nicolas-friedli.avif",
       "size": 1204
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/nicolas-friedli.webp 90w",
       "filename": "nicolas-friedli.webp",
-      "outputPath": "img/avatars/opencollective/nicolas-friedli.webp",
+      "outputPath": "src/img/avatars/opencollective/nicolas-friedli.webp",
       "size": 1792
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/nicolas-friedli.jpeg 90w",
       "filename": "nicolas-friedli.jpeg",
-      "outputPath": "img/avatars/opencollective/nicolas-friedli.jpeg",
+      "outputPath": "src/img/avatars/opencollective/nicolas-friedli.jpeg",
       "size": 2485
     }
   ],

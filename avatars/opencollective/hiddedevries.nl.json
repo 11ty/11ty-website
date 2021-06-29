@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/hiddedevries.nl.avif 90w",
       "filename": "hiddedevries.nl.avif",
-      "outputPath": "img/avatars/opencollective/hiddedevries.nl.avif",
+      "outputPath": "src/img/avatars/opencollective/hiddedevries.nl.avif",
       "size": 727
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/hiddedevries.nl.webp 90w",
       "filename": "hiddedevries.nl.webp",
-      "outputPath": "img/avatars/opencollective/hiddedevries.nl.webp",
+      "outputPath": "src/img/avatars/opencollective/hiddedevries.nl.webp",
       "size": 820
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/hiddedevries.nl.jpeg 90w",
       "filename": "hiddedevries.nl.jpeg",
-      "outputPath": "img/avatars/opencollective/hiddedevries.nl.jpeg",
+      "outputPath": "src/img/avatars/opencollective/hiddedevries.nl.jpeg",
       "size": 1485
     }
   ],

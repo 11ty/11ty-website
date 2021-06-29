@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/ivan-buncic.avif 90w",
       "filename": "ivan-buncic.avif",
-      "outputPath": "img/avatars/opencollective/ivan-buncic.avif",
+      "outputPath": "src/img/avatars/opencollective/ivan-buncic.avif",
       "size": 1023
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/ivan-buncic.webp 90w",
       "filename": "ivan-buncic.webp",
-      "outputPath": "img/avatars/opencollective/ivan-buncic.webp",
+      "outputPath": "src/img/avatars/opencollective/ivan-buncic.webp",
       "size": 1176
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/ivan-buncic.jpeg 90w",
       "filename": "ivan-buncic.jpeg",
-      "outputPath": "img/avatars/opencollective/ivan-buncic.jpeg",
+      "outputPath": "src/img/avatars/opencollective/ivan-buncic.jpeg",
       "size": 2021
     }
   ],

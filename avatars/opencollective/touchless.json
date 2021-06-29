@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/touchless.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/touchless.avif 90w",
+      "filename": "touchless.avif",
+      "outputPath": "src/img/avatars/opencollective/touchless.avif",
+      "size": 1217
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/touchless.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/touchless.webp 90w",
+      "filename": "touchless.webp",
+      "outputPath": "src/img/avatars/opencollective/touchless.webp",
+      "size": 1752
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/touchless.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/touchless.jpeg 90w",
+      "filename": "touchless.jpeg",
+      "outputPath": "src/img/avatars/opencollective/touchless.jpeg",
+      "size": 2272
+    }
+  ],
+  "slug": "touchless"
+}

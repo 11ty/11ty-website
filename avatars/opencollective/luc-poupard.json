@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/luc-poupard.avif 90w",
       "filename": "luc-poupard.avif",
-      "outputPath": "img/avatars/opencollective/luc-poupard.avif",
+      "outputPath": "src/img/avatars/opencollective/luc-poupard.avif",
       "size": 1128
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/luc-poupard.webp 90w",
       "filename": "luc-poupard.webp",
-      "outputPath": "img/avatars/opencollective/luc-poupard.webp",
+      "outputPath": "src/img/avatars/opencollective/luc-poupard.webp",
       "size": 1236
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/luc-poupard.jpeg 90w",
       "filename": "luc-poupard.jpeg",
-      "outputPath": "img/avatars/opencollective/luc-poupard.jpeg",
+      "outputPath": "src/img/avatars/opencollective/luc-poupard.jpeg",
       "size": 1999
     }
   ],

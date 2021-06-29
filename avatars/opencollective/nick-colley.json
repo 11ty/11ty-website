@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/nick-colley.avif 90w",
       "filename": "nick-colley.avif",
-      "outputPath": "img/avatars/opencollective/nick-colley.avif",
+      "outputPath": "src/img/avatars/opencollective/nick-colley.avif",
       "size": 2062
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/nick-colley.webp 90w",
       "filename": "nick-colley.webp",
-      "outputPath": "img/avatars/opencollective/nick-colley.webp",
+      "outputPath": "src/img/avatars/opencollective/nick-colley.webp",
       "size": 2956
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/nick-colley.jpeg 90w",
       "filename": "nick-colley.jpeg",
-      "outputPath": "img/avatars/opencollective/nick-colley.jpeg",
+      "outputPath": "src/img/avatars/opencollective/nick-colley.jpeg",
       "size": 3325
     }
   ],

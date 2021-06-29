@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/inventage-ag.avif 90w",
       "filename": "inventage-ag.avif",
-      "outputPath": "img/avatars/opencollective/inventage-ag.avif",
+      "outputPath": "src/img/avatars/opencollective/inventage-ag.avif",
       "size": 815
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/inventage-ag.webp 90w",
       "filename": "inventage-ag.webp",
-      "outputPath": "img/avatars/opencollective/inventage-ag.webp",
+      "outputPath": "src/img/avatars/opencollective/inventage-ag.webp",
       "size": 1228
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/inventage-ag.jpeg 90w",
       "filename": "inventage-ag.jpeg",
-      "outputPath": "img/avatars/opencollective/inventage-ag.jpeg",
+      "outputPath": "src/img/avatars/opencollective/inventage-ag.jpeg",
       "size": 975
     }
   ],

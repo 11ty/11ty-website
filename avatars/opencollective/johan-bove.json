@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/johan-bove.avif 90w",
       "filename": "johan-bove.avif",
-      "outputPath": "img/avatars/opencollective/johan-bove.avif",
+      "outputPath": "src/img/avatars/opencollective/johan-bove.avif",
       "size": 1698
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/johan-bove.webp 90w",
       "filename": "johan-bove.webp",
-      "outputPath": "img/avatars/opencollective/johan-bove.webp",
+      "outputPath": "src/img/avatars/opencollective/johan-bove.webp",
       "size": 2646
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/johan-bove.jpeg 90w",
       "filename": "johan-bove.jpeg",
-      "outputPath": "img/avatars/opencollective/johan-bove.jpeg",
+      "outputPath": "src/img/avatars/opencollective/johan-bove.jpeg",
       "size": 3024
     }
   ],

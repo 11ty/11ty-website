@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/jens-oliver-meiert.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/jens-oliver-meiert.avif 90w",
+      "filename": "jens-oliver-meiert.avif",
+      "outputPath": "src/img/avatars/opencollective/jens-oliver-meiert.avif",
+      "size": 943
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/jens-oliver-meiert.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/jens-oliver-meiert.webp 90w",
+      "filename": "jens-oliver-meiert.webp",
+      "outputPath": "src/img/avatars/opencollective/jens-oliver-meiert.webp",
+      "size": 1340
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/jens-oliver-meiert.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/jens-oliver-meiert.jpeg 90w",
+      "filename": "jens-oliver-meiert.jpeg",
+      "outputPath": "src/img/avatars/opencollective/jens-oliver-meiert.jpeg",
+      "size": 2056
+    }
+  ],
+  "slug": "jens-oliver-meiert"
+}

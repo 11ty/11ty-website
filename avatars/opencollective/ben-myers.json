@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/ben-myers.avif 90w",
       "filename": "ben-myers.avif",
-      "outputPath": "img/avatars/opencollective/ben-myers.avif",
+      "outputPath": "src/img/avatars/opencollective/ben-myers.avif",
       "size": 1476
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/ben-myers.webp 90w",
       "filename": "ben-myers.webp",
-      "outputPath": "img/avatars/opencollective/ben-myers.webp",
+      "outputPath": "src/img/avatars/opencollective/ben-myers.webp",
       "size": 2244
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/ben-myers.jpeg 90w",
       "filename": "ben-myers.jpeg",
-      "outputPath": "img/avatars/opencollective/ben-myers.jpeg",
+      "outputPath": "src/img/avatars/opencollective/ben-myers.jpeg",
       "size": 2781
     }
   ],

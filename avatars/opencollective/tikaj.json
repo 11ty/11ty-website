@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/tikaj.avif 90w",
       "filename": "tikaj.avif",
-      "outputPath": "img/avatars/opencollective/tikaj.avif",
+      "outputPath": "src/img/avatars/opencollective/tikaj.avif",
       "size": 604
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/tikaj.webp 90w",
       "filename": "tikaj.webp",
-      "outputPath": "img/avatars/opencollective/tikaj.webp",
+      "outputPath": "src/img/avatars/opencollective/tikaj.webp",
       "size": 784
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/tikaj.jpeg 90w",
       "filename": "tikaj.jpeg",
-      "outputPath": "img/avatars/opencollective/tikaj.jpeg",
+      "outputPath": "src/img/avatars/opencollective/tikaj.jpeg",
       "size": 1288
     }
   ],

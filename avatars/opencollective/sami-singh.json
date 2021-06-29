@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/sami-singh.avif 90w",
       "filename": "sami-singh.avif",
-      "outputPath": "img/avatars/opencollective/sami-singh.avif",
+      "outputPath": "src/img/avatars/opencollective/sami-singh.avif",
       "size": 1722
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/sami-singh.webp 90w",
       "filename": "sami-singh.webp",
-      "outputPath": "img/avatars/opencollective/sami-singh.webp",
+      "outputPath": "src/img/avatars/opencollective/sami-singh.webp",
       "size": 2448
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/sami-singh.jpeg 90w",
       "filename": "sami-singh.jpeg",
-      "outputPath": "img/avatars/opencollective/sami-singh.jpeg",
+      "outputPath": "src/img/avatars/opencollective/sami-singh.jpeg",
       "size": 2946
     }
   ],

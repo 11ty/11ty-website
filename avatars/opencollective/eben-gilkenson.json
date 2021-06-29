@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/eben-gilkenson.avif 90w",
       "filename": "eben-gilkenson.avif",
-      "outputPath": "img/avatars/opencollective/eben-gilkenson.avif",
+      "outputPath": "src/img/avatars/opencollective/eben-gilkenson.avif",
       "size": 1025
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/eben-gilkenson.webp 90w",
       "filename": "eben-gilkenson.webp",
-      "outputPath": "img/avatars/opencollective/eben-gilkenson.webp",
+      "outputPath": "src/img/avatars/opencollective/eben-gilkenson.webp",
       "size": 1400
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/eben-gilkenson.jpeg 90w",
       "filename": "eben-gilkenson.jpeg",
-      "outputPath": "img/avatars/opencollective/eben-gilkenson.jpeg",
+      "outputPath": "src/img/avatars/opencollective/eben-gilkenson.jpeg",
       "size": 1982
     }
   ],

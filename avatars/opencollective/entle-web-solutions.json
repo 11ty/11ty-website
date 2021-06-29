@@ -8,8 +8,8 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/entle-web-solutions.avif 90w",
       "filename": "entle-web-solutions.avif",
-      "outputPath": "img/avatars/opencollective/entle-web-solutions.avif",
-      "size": 1413
+      "outputPath": "src/img/avatars/opencollective/entle-web-solutions.avif",
+      "size": 676
     }
   ],
   "webp": [
@@ -21,8 +21,8 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/entle-web-solutions.webp 90w",
       "filename": "entle-web-solutions.webp",
-      "outputPath": "img/avatars/opencollective/entle-web-solutions.webp",
-      "size": 2276
+      "outputPath": "src/img/avatars/opencollective/entle-web-solutions.webp",
+      "size": 756
     }
   ],
   "jpeg": [
@@ -34,8 +34,8 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/entle-web-solutions.jpeg 90w",
       "filename": "entle-web-solutions.jpeg",
-      "outputPath": "img/avatars/opencollective/entle-web-solutions.jpeg",
-      "size": 1612
+      "outputPath": "src/img/avatars/opencollective/entle-web-solutions.jpeg",
+      "size": 1249
     }
   ],
   "slug": "entle-web-solutions"

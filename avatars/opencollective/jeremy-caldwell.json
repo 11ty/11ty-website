@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/jeremy-caldwell.avif 90w",
       "filename": "jeremy-caldwell.avif",
-      "outputPath": "img/avatars/opencollective/jeremy-caldwell.avif",
+      "outputPath": "src/img/avatars/opencollective/jeremy-caldwell.avif",
       "size": 1213
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/jeremy-caldwell.webp 90w",
       "filename": "jeremy-caldwell.webp",
-      "outputPath": "img/avatars/opencollective/jeremy-caldwell.webp",
+      "outputPath": "src/img/avatars/opencollective/jeremy-caldwell.webp",
       "size": 1856
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/jeremy-caldwell.jpeg 90w",
       "filename": "jeremy-caldwell.jpeg",
-      "outputPath": "img/avatars/opencollective/jeremy-caldwell.jpeg",
+      "outputPath": "src/img/avatars/opencollective/jeremy-caldwell.jpeg",
       "size": 2548
     }
   ],

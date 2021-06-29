@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/softiron.avif 90w",
       "filename": "softiron.avif",
-      "outputPath": "img/avatars/opencollective/softiron.avif",
+      "outputPath": "src/img/avatars/opencollective/softiron.avif",
       "size": 1780
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/softiron.webp 90w",
       "filename": "softiron.webp",
-      "outputPath": "img/avatars/opencollective/softiron.webp",
+      "outputPath": "src/img/avatars/opencollective/softiron.webp",
       "size": 2922
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/softiron.jpeg 90w",
       "filename": "softiron.jpeg",
-      "outputPath": "img/avatars/opencollective/softiron.jpeg",
+      "outputPath": "src/img/avatars/opencollective/softiron.jpeg",
       "size": 1858
     }
   ],

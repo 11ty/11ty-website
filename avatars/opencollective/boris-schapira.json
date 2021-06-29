@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/boris-schapira.avif 90w",
       "filename": "boris-schapira.avif",
-      "outputPath": "img/avatars/opencollective/boris-schapira.avif",
+      "outputPath": "src/img/avatars/opencollective/boris-schapira.avif",
       "size": 2471
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/boris-schapira.webp 90w",
       "filename": "boris-schapira.webp",
-      "outputPath": "img/avatars/opencollective/boris-schapira.webp",
+      "outputPath": "src/img/avatars/opencollective/boris-schapira.webp",
       "size": 3736
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/boris-schapira.jpeg 90w",
       "filename": "boris-schapira.jpeg",
-      "outputPath": "img/avatars/opencollective/boris-schapira.jpeg",
+      "outputPath": "src/img/avatars/opencollective/boris-schapira.jpeg",
       "size": 2412
     }
   ],

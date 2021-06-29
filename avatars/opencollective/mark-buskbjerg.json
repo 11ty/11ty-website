@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/mark-buskbjerg.avif 90w",
       "filename": "mark-buskbjerg.avif",
-      "outputPath": "img/avatars/opencollective/mark-buskbjerg.avif",
+      "outputPath": "src/img/avatars/opencollective/mark-buskbjerg.avif",
       "size": 834
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/mark-buskbjerg.webp 90w",
       "filename": "mark-buskbjerg.webp",
-      "outputPath": "img/avatars/opencollective/mark-buskbjerg.webp",
+      "outputPath": "src/img/avatars/opencollective/mark-buskbjerg.webp",
       "size": 762
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/mark-buskbjerg.jpeg 90w",
       "filename": "mark-buskbjerg.jpeg",
-      "outputPath": "img/avatars/opencollective/mark-buskbjerg.jpeg",
+      "outputPath": "src/img/avatars/opencollective/mark-buskbjerg.jpeg",
       "size": 1406
     }
   ],

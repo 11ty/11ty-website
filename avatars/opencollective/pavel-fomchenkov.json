@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/pavel-fomchenkov.avif 90w",
       "filename": "pavel-fomchenkov.avif",
-      "outputPath": "img/avatars/opencollective/pavel-fomchenkov.avif",
+      "outputPath": "src/img/avatars/opencollective/pavel-fomchenkov.avif",
       "size": 1191
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/pavel-fomchenkov.webp 90w",
       "filename": "pavel-fomchenkov.webp",
-      "outputPath": "img/avatars/opencollective/pavel-fomchenkov.webp",
+      "outputPath": "src/img/avatars/opencollective/pavel-fomchenkov.webp",
       "size": 1356
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/pavel-fomchenkov.jpeg 90w",
       "filename": "pavel-fomchenkov.jpeg",
-      "outputPath": "img/avatars/opencollective/pavel-fomchenkov.jpeg",
+      "outputPath": "src/img/avatars/opencollective/pavel-fomchenkov.jpeg",
       "size": 2194
     }
   ],

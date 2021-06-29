@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/darby-dixon-iii.avif 90w",
       "filename": "darby-dixon-iii.avif",
-      "outputPath": "img/avatars/opencollective/darby-dixon-iii.avif",
+      "outputPath": "src/img/avatars/opencollective/darby-dixon-iii.avif",
       "size": 1583
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/darby-dixon-iii.webp 90w",
       "filename": "darby-dixon-iii.webp",
-      "outputPath": "img/avatars/opencollective/darby-dixon-iii.webp",
+      "outputPath": "src/img/avatars/opencollective/darby-dixon-iii.webp",
       "size": 2326
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/darby-dixon-iii.jpeg 90w",
       "filename": "darby-dixon-iii.jpeg",
-      "outputPath": "img/avatars/opencollective/darby-dixon-iii.jpeg",
+      "outputPath": "src/img/avatars/opencollective/darby-dixon-iii.jpeg",
       "size": 2664
     }
   ],

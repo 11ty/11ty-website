@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/lauris-consulting.avif 90w",
       "filename": "lauris-consulting.avif",
-      "outputPath": "img/avatars/opencollective/lauris-consulting.avif",
+      "outputPath": "src/img/avatars/opencollective/lauris-consulting.avif",
       "size": 658
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/lauris-consulting.webp 90w",
       "filename": "lauris-consulting.webp",
-      "outputPath": "img/avatars/opencollective/lauris-consulting.webp",
+      "outputPath": "src/img/avatars/opencollective/lauris-consulting.webp",
       "size": 1110
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/lauris-consulting.jpeg 90w",
       "filename": "lauris-consulting.jpeg",
-      "outputPath": "img/avatars/opencollective/lauris-consulting.jpeg",
+      "outputPath": "src/img/avatars/opencollective/lauris-consulting.jpeg",
       "size": 2120
     }
   ],

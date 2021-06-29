@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/brian-zerangue.avif 90w",
       "filename": "brian-zerangue.avif",
-      "outputPath": "img/avatars/opencollective/brian-zerangue.avif",
+      "outputPath": "src/img/avatars/opencollective/brian-zerangue.avif",
       "size": 995
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/brian-zerangue.webp 90w",
       "filename": "brian-zerangue.webp",
-      "outputPath": "img/avatars/opencollective/brian-zerangue.webp",
+      "outputPath": "src/img/avatars/opencollective/brian-zerangue.webp",
       "size": 1018
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/brian-zerangue.jpeg 90w",
       "filename": "brian-zerangue.jpeg",
-      "outputPath": "img/avatars/opencollective/brian-zerangue.jpeg",
+      "outputPath": "src/img/avatars/opencollective/brian-zerangue.jpeg",
       "size": 1843
     }
   ],

@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/marco-zehe.avif 90w",
       "filename": "marco-zehe.avif",
-      "outputPath": "img/avatars/opencollective/marco-zehe.avif",
+      "outputPath": "src/img/avatars/opencollective/marco-zehe.avif",
       "size": 1134
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/marco-zehe.webp 90w",
       "filename": "marco-zehe.webp",
-      "outputPath": "img/avatars/opencollective/marco-zehe.webp",
+      "outputPath": "src/img/avatars/opencollective/marco-zehe.webp",
       "size": 1300
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/marco-zehe.jpeg 90w",
       "filename": "marco-zehe.jpeg",
-      "outputPath": "img/avatars/opencollective/marco-zehe.jpeg",
+      "outputPath": "src/img/avatars/opencollective/marco-zehe.jpeg",
       "size": 2143
     }
   ],

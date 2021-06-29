@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/hunter-miller.avif 90w",
       "filename": "hunter-miller.avif",
-      "outputPath": "img/avatars/opencollective/hunter-miller.avif",
+      "outputPath": "src/img/avatars/opencollective/hunter-miller.avif",
       "size": 1595
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/hunter-miller.webp 90w",
       "filename": "hunter-miller.webp",
-      "outputPath": "img/avatars/opencollective/hunter-miller.webp",
+      "outputPath": "src/img/avatars/opencollective/hunter-miller.webp",
       "size": 2394
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/hunter-miller.jpeg 90w",
       "filename": "hunter-miller.jpeg",
-      "outputPath": "img/avatars/opencollective/hunter-miller.jpeg",
+      "outputPath": "src/img/avatars/opencollective/hunter-miller.jpeg",
       "size": 2849
     }
   ],

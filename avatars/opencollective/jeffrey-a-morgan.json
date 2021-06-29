@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/jeffrey-a-morgan.avif 90w",
       "filename": "jeffrey-a-morgan.avif",
-      "outputPath": "img/avatars/opencollective/jeffrey-a-morgan.avif",
+      "outputPath": "src/img/avatars/opencollective/jeffrey-a-morgan.avif",
       "size": 1011
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/jeffrey-a-morgan.webp 90w",
       "filename": "jeffrey-a-morgan.webp",
-      "outputPath": "img/avatars/opencollective/jeffrey-a-morgan.webp",
+      "outputPath": "src/img/avatars/opencollective/jeffrey-a-morgan.webp",
       "size": 1458
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/jeffrey-a-morgan.jpeg 90w",
       "filename": "jeffrey-a-morgan.jpeg",
-      "outputPath": "img/avatars/opencollective/jeffrey-a-morgan.jpeg",
+      "outputPath": "src/img/avatars/opencollective/jeffrey-a-morgan.jpeg",
       "size": 2246
     }
   ],

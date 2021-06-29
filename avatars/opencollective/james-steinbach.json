@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/james-steinbach.avif 90w",
       "filename": "james-steinbach.avif",
-      "outputPath": "img/avatars/opencollective/james-steinbach.avif",
+      "outputPath": "src/img/avatars/opencollective/james-steinbach.avif",
       "size": 1166
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/james-steinbach.webp 90w",
       "filename": "james-steinbach.webp",
-      "outputPath": "img/avatars/opencollective/james-steinbach.webp",
+      "outputPath": "src/img/avatars/opencollective/james-steinbach.webp",
       "size": 1394
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/james-steinbach.jpeg 90w",
       "filename": "james-steinbach.jpeg",
-      "outputPath": "img/avatars/opencollective/james-steinbach.jpeg",
+      "outputPath": "src/img/avatars/opencollective/james-steinbach.jpeg",
       "size": 2204
     }
   ],

@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/christopher-kirk-nielsen.avif 90w",
       "filename": "christopher-kirk-nielsen.avif",
-      "outputPath": "img/avatars/opencollective/christopher-kirk-nielsen.avif",
+      "outputPath": "src/img/avatars/opencollective/christopher-kirk-nielsen.avif",
       "size": 1075
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/christopher-kirk-nielsen.webp 90w",
       "filename": "christopher-kirk-nielsen.webp",
-      "outputPath": "img/avatars/opencollective/christopher-kirk-nielsen.webp",
+      "outputPath": "src/img/avatars/opencollective/christopher-kirk-nielsen.webp",
       "size": 1542
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/christopher-kirk-nielsen.jpeg 90w",
       "filename": "christopher-kirk-nielsen.jpeg",
-      "outputPath": "img/avatars/opencollective/christopher-kirk-nielsen.jpeg",
+      "outputPath": "src/img/avatars/opencollective/christopher-kirk-nielsen.jpeg",
       "size": 2193
     }
   ],

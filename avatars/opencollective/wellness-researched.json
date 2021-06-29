@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/wellness-researched.avif 90w",
       "filename": "wellness-researched.avif",
-      "outputPath": "img/avatars/opencollective/wellness-researched.avif",
+      "outputPath": "src/img/avatars/opencollective/wellness-researched.avif",
       "size": 1409
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/wellness-researched.webp 90w",
       "filename": "wellness-researched.webp",
-      "outputPath": "img/avatars/opencollective/wellness-researched.webp",
+      "outputPath": "src/img/avatars/opencollective/wellness-researched.webp",
       "size": 1976
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/wellness-researched.jpeg 90w",
       "filename": "wellness-researched.jpeg",
-      "outputPath": "img/avatars/opencollective/wellness-researched.jpeg",
+      "outputPath": "src/img/avatars/opencollective/wellness-researched.jpeg",
       "size": 2795
     }
   ],

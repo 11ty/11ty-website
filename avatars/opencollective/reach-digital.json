@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/reach-digital.avif 90w",
       "filename": "reach-digital.avif",
-      "outputPath": "img/avatars/opencollective/reach-digital.avif",
+      "outputPath": "src/img/avatars/opencollective/reach-digital.avif",
       "size": 646
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/reach-digital.webp 90w",
       "filename": "reach-digital.webp",
-      "outputPath": "img/avatars/opencollective/reach-digital.webp",
+      "outputPath": "src/img/avatars/opencollective/reach-digital.webp",
       "size": 586
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/reach-digital.jpeg 90w",
       "filename": "reach-digital.jpeg",
-      "outputPath": "img/avatars/opencollective/reach-digital.jpeg",
+      "outputPath": "src/img/avatars/opencollective/reach-digital.jpeg",
       "size": 1256
     }
   ],

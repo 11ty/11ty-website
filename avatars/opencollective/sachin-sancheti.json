@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/sachin-sancheti.avif 90w",
       "filename": "sachin-sancheti.avif",
-      "outputPath": "img/avatars/opencollective/sachin-sancheti.avif",
+      "outputPath": "src/img/avatars/opencollective/sachin-sancheti.avif",
       "size": 1018
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/sachin-sancheti.webp 90w",
       "filename": "sachin-sancheti.webp",
-      "outputPath": "img/avatars/opencollective/sachin-sancheti.webp",
+      "outputPath": "src/img/avatars/opencollective/sachin-sancheti.webp",
       "size": 1438
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/sachin-sancheti.jpeg 90w",
       "filename": "sachin-sancheti.jpeg",
-      "outputPath": "img/avatars/opencollective/sachin-sancheti.jpeg",
+      "outputPath": "src/img/avatars/opencollective/sachin-sancheti.jpeg",
       "size": 2161
     }
   ],

@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/juan-miguel.avif 90w",
       "filename": "juan-miguel.avif",
-      "outputPath": "img/avatars/opencollective/juan-miguel.avif",
+      "outputPath": "src/img/avatars/opencollective/juan-miguel.avif",
       "size": 1019
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/juan-miguel.webp 90w",
       "filename": "juan-miguel.webp",
-      "outputPath": "img/avatars/opencollective/juan-miguel.webp",
+      "outputPath": "src/img/avatars/opencollective/juan-miguel.webp",
       "size": 1326
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/juan-miguel.jpeg 90w",
       "filename": "juan-miguel.jpeg",
-      "outputPath": "img/avatars/opencollective/juan-miguel.jpeg",
+      "outputPath": "src/img/avatars/opencollective/juan-miguel.jpeg",
       "size": 1899
     }
   ],

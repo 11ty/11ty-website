@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/noel-forte.avif 90w",
       "filename": "noel-forte.avif",
-      "outputPath": "img/avatars/opencollective/noel-forte.avif",
+      "outputPath": "src/img/avatars/opencollective/noel-forte.avif",
       "size": 1189
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/noel-forte.webp 90w",
       "filename": "noel-forte.webp",
-      "outputPath": "img/avatars/opencollective/noel-forte.webp",
+      "outputPath": "src/img/avatars/opencollective/noel-forte.webp",
       "size": 1720
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/noel-forte.jpeg 90w",
       "filename": "noel-forte.jpeg",
-      "outputPath": "img/avatars/opencollective/noel-forte.jpeg",
+      "outputPath": "src/img/avatars/opencollective/noel-forte.jpeg",
       "size": 2400
     }
   ],

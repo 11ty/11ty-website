@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/andrea-vaghi.avif 90w",
       "filename": "andrea-vaghi.avif",
-      "outputPath": "img/avatars/opencollective/andrea-vaghi.avif",
+      "outputPath": "src/img/avatars/opencollective/andrea-vaghi.avif",
       "size": 1272
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/andrea-vaghi.webp 90w",
       "filename": "andrea-vaghi.webp",
-      "outputPath": "img/avatars/opencollective/andrea-vaghi.webp",
+      "outputPath": "src/img/avatars/opencollective/andrea-vaghi.webp",
       "size": 1610
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/andrea-vaghi.jpeg 90w",
       "filename": "andrea-vaghi.jpeg",
-      "outputPath": "img/avatars/opencollective/andrea-vaghi.jpeg",
+      "outputPath": "src/img/avatars/opencollective/andrea-vaghi.jpeg",
       "size": 2441
     }
   ],

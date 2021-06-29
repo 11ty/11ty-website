@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/corina-rudel.avif 90w",
       "filename": "corina-rudel.avif",
-      "outputPath": "img/avatars/opencollective/corina-rudel.avif",
+      "outputPath": "src/img/avatars/opencollective/corina-rudel.avif",
       "size": 1010
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/corina-rudel.webp 90w",
       "filename": "corina-rudel.webp",
-      "outputPath": "img/avatars/opencollective/corina-rudel.webp",
+      "outputPath": "src/img/avatars/opencollective/corina-rudel.webp",
       "size": 1432
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/corina-rudel.jpeg 90w",
       "filename": "corina-rudel.jpeg",
-      "outputPath": "img/avatars/opencollective/corina-rudel.jpeg",
+      "outputPath": "src/img/avatars/opencollective/corina-rudel.jpeg",
       "size": 2164
     }
   ],

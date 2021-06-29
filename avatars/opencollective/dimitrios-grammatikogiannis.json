@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/dimitrios-grammatikogiannis.avif 90w",
       "filename": "dimitrios-grammatikogiannis.avif",
-      "outputPath": "img/avatars/opencollective/dimitrios-grammatikogiannis.avif",
+      "outputPath": "src/img/avatars/opencollective/dimitrios-grammatikogiannis.avif",
       "size": 1319
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/dimitrios-grammatikogiannis.webp 90w",
       "filename": "dimitrios-grammatikogiannis.webp",
-      "outputPath": "img/avatars/opencollective/dimitrios-grammatikogiannis.webp",
+      "outputPath": "src/img/avatars/opencollective/dimitrios-grammatikogiannis.webp",
       "size": 1424
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/dimitrios-grammatikogiannis.jpeg 90w",
       "filename": "dimitrios-grammatikogiannis.jpeg",
-      "outputPath": "img/avatars/opencollective/dimitrios-grammatikogiannis.jpeg",
+      "outputPath": "src/img/avatars/opencollective/dimitrios-grammatikogiannis.jpeg",
       "size": 2199
     }
   ],

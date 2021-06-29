@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/yuhei-yasuda.avif 90w",
       "filename": "yuhei-yasuda.avif",
-      "outputPath": "img/avatars/opencollective/yuhei-yasuda.avif",
+      "outputPath": "src/img/avatars/opencollective/yuhei-yasuda.avif",
       "size": 990
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/yuhei-yasuda.webp 90w",
       "filename": "yuhei-yasuda.webp",
-      "outputPath": "img/avatars/opencollective/yuhei-yasuda.webp",
+      "outputPath": "src/img/avatars/opencollective/yuhei-yasuda.webp",
       "size": 1118
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/yuhei-yasuda.jpeg 90w",
       "filename": "yuhei-yasuda.jpeg",
-      "outputPath": "img/avatars/opencollective/yuhei-yasuda.jpeg",
+      "outputPath": "src/img/avatars/opencollective/yuhei-yasuda.jpeg",
       "size": 1785
     }
   ],

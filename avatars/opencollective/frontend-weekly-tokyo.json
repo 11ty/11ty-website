@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/frontend-weekly-tokyo.avif 90w",
       "filename": "frontend-weekly-tokyo.avif",
-      "outputPath": "img/avatars/opencollective/frontend-weekly-tokyo.avif",
+      "outputPath": "src/img/avatars/opencollective/frontend-weekly-tokyo.avif",
       "size": 763
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/frontend-weekly-tokyo.webp 90w",
       "filename": "frontend-weekly-tokyo.webp",
-      "outputPath": "img/avatars/opencollective/frontend-weekly-tokyo.webp",
+      "outputPath": "src/img/avatars/opencollective/frontend-weekly-tokyo.webp",
       "size": 848
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/frontend-weekly-tokyo.jpeg 90w",
       "filename": "frontend-weekly-tokyo.jpeg",
-      "outputPath": "img/avatars/opencollective/frontend-weekly-tokyo.jpeg",
+      "outputPath": "src/img/avatars/opencollective/frontend-weekly-tokyo.jpeg",
       "size": 1425
     }
   ],

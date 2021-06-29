@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/mat-marquis.avif 90w",
       "filename": "mat-marquis.avif",
-      "outputPath": "img/avatars/opencollective/mat-marquis.avif",
+      "outputPath": "src/img/avatars/opencollective/mat-marquis.avif",
       "size": 1116
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/mat-marquis.webp 90w",
       "filename": "mat-marquis.webp",
-      "outputPath": "img/avatars/opencollective/mat-marquis.webp",
+      "outputPath": "src/img/avatars/opencollective/mat-marquis.webp",
       "size": 1988
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/mat-marquis.jpeg 90w",
       "filename": "mat-marquis.jpeg",
-      "outputPath": "img/avatars/opencollective/mat-marquis.jpeg",
+      "outputPath": "src/img/avatars/opencollective/mat-marquis.jpeg",
       "size": 1384
     }
   ],

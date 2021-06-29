@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/panagiotis-kontogiannis.avif 90w",
       "filename": "panagiotis-kontogiannis.avif",
-      "outputPath": "img/avatars/opencollective/panagiotis-kontogiannis.avif",
+      "outputPath": "src/img/avatars/opencollective/panagiotis-kontogiannis.avif",
       "size": 1152
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/panagiotis-kontogiannis.webp 90w",
       "filename": "panagiotis-kontogiannis.webp",
-      "outputPath": "img/avatars/opencollective/panagiotis-kontogiannis.webp",
+      "outputPath": "src/img/avatars/opencollective/panagiotis-kontogiannis.webp",
       "size": 1694
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/panagiotis-kontogiannis.jpeg 90w",
       "filename": "panagiotis-kontogiannis.jpeg",
-      "outputPath": "img/avatars/opencollective/panagiotis-kontogiannis.jpeg",
+      "outputPath": "src/img/avatars/opencollective/panagiotis-kontogiannis.jpeg",
       "size": 2456
     }
   ],

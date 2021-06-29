@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/benjamin-rancourt.avif 90w",
       "filename": "benjamin-rancourt.avif",
-      "outputPath": "img/avatars/opencollective/benjamin-rancourt.avif",
+      "outputPath": "src/img/avatars/opencollective/benjamin-rancourt.avif",
       "size": 834
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/benjamin-rancourt.webp 90w",
       "filename": "benjamin-rancourt.webp",
-      "outputPath": "img/avatars/opencollective/benjamin-rancourt.webp",
+      "outputPath": "src/img/avatars/opencollective/benjamin-rancourt.webp",
       "size": 1190
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/benjamin-rancourt.jpeg 90w",
       "filename": "benjamin-rancourt.jpeg",
-      "outputPath": "img/avatars/opencollective/benjamin-rancourt.jpeg",
+      "outputPath": "src/img/avatars/opencollective/benjamin-rancourt.jpeg",
       "size": 1906
     }
   ],

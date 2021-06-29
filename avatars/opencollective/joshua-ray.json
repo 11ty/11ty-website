@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/joshua-ray.avif 90w",
       "filename": "joshua-ray.avif",
-      "outputPath": "img/avatars/opencollective/joshua-ray.avif",
+      "outputPath": "src/img/avatars/opencollective/joshua-ray.avif",
       "size": 2118
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/joshua-ray.webp 90w",
       "filename": "joshua-ray.webp",
-      "outputPath": "img/avatars/opencollective/joshua-ray.webp",
+      "outputPath": "src/img/avatars/opencollective/joshua-ray.webp",
       "size": 3214
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/joshua-ray.jpeg 90w",
       "filename": "joshua-ray.jpeg",
-      "outputPath": "img/avatars/opencollective/joshua-ray.jpeg",
+      "outputPath": "src/img/avatars/opencollective/joshua-ray.jpeg",
       "size": 3768
     }
   ],

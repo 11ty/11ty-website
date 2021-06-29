@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/benjamin-randall.avif 90w",
       "filename": "benjamin-randall.avif",
-      "outputPath": "img/avatars/opencollective/benjamin-randall.avif",
+      "outputPath": "src/img/avatars/opencollective/benjamin-randall.avif",
       "size": 1331
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/benjamin-randall.webp 90w",
       "filename": "benjamin-randall.webp",
-      "outputPath": "img/avatars/opencollective/benjamin-randall.webp",
+      "outputPath": "src/img/avatars/opencollective/benjamin-randall.webp",
       "size": 1902
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/benjamin-randall.jpeg 90w",
       "filename": "benjamin-randall.jpeg",
-      "outputPath": "img/avatars/opencollective/benjamin-randall.jpeg",
+      "outputPath": "src/img/avatars/opencollective/benjamin-randall.jpeg",
       "size": 2621
     }
   ],

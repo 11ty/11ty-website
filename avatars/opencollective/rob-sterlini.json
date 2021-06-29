@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/rob-sterlini.avif 90w",
       "filename": "rob-sterlini.avif",
-      "outputPath": "img/avatars/opencollective/rob-sterlini.avif",
+      "outputPath": "src/img/avatars/opencollective/rob-sterlini.avif",
       "size": 1759
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/rob-sterlini.webp 90w",
       "filename": "rob-sterlini.webp",
-      "outputPath": "img/avatars/opencollective/rob-sterlini.webp",
+      "outputPath": "src/img/avatars/opencollective/rob-sterlini.webp",
       "size": 2692
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/rob-sterlini.jpeg 90w",
       "filename": "rob-sterlini.jpeg",
-      "outputPath": "img/avatars/opencollective/rob-sterlini.jpeg",
+      "outputPath": "src/img/avatars/opencollective/rob-sterlini.jpeg",
       "size": 3111
     }
   ],

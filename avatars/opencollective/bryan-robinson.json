@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/bryan-robinson.avif 90w",
       "filename": "bryan-robinson.avif",
-      "outputPath": "img/avatars/opencollective/bryan-robinson.avif",
+      "outputPath": "src/img/avatars/opencollective/bryan-robinson.avif",
       "size": 1220
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/bryan-robinson.webp 90w",
       "filename": "bryan-robinson.webp",
-      "outputPath": "img/avatars/opencollective/bryan-robinson.webp",
+      "outputPath": "src/img/avatars/opencollective/bryan-robinson.webp",
       "size": 1808
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/bryan-robinson.jpeg 90w",
       "filename": "bryan-robinson.jpeg",
-      "outputPath": "img/avatars/opencollective/bryan-robinson.jpeg",
+      "outputPath": "src/img/avatars/opencollective/bryan-robinson.jpeg",
       "size": 2416
     }
   ],

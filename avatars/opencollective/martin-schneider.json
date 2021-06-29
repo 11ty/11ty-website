@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/martin-schneider.avif 90w",
       "filename": "martin-schneider.avif",
-      "outputPath": "img/avatars/opencollective/martin-schneider.avif",
+      "outputPath": "src/img/avatars/opencollective/martin-schneider.avif",
       "size": 1175
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/martin-schneider.webp 90w",
       "filename": "martin-schneider.webp",
-      "outputPath": "img/avatars/opencollective/martin-schneider.webp",
+      "outputPath": "src/img/avatars/opencollective/martin-schneider.webp",
       "size": 1692
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/martin-schneider.jpeg 90w",
       "filename": "martin-schneider.jpeg",
-      "outputPath": "img/avatars/opencollective/martin-schneider.jpeg",
+      "outputPath": "src/img/avatars/opencollective/martin-schneider.jpeg",
       "size": 2424
     }
   ],

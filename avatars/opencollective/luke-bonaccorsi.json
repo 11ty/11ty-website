@@ -8,7 +8,7 @@
       "sourceType": "image/avif",
       "srcset": "/img/avatars/opencollective/luke-bonaccorsi.avif 90w",
       "filename": "luke-bonaccorsi.avif",
-      "outputPath": "img/avatars/opencollective/luke-bonaccorsi.avif",
+      "outputPath": "src/img/avatars/opencollective/luke-bonaccorsi.avif",
       "size": 848
     }
   ],
@@ -21,7 +21,7 @@
       "sourceType": "image/webp",
       "srcset": "/img/avatars/opencollective/luke-bonaccorsi.webp 90w",
       "filename": "luke-bonaccorsi.webp",
-      "outputPath": "img/avatars/opencollective/luke-bonaccorsi.webp",
+      "outputPath": "src/img/avatars/opencollective/luke-bonaccorsi.webp",
       "size": 1154
     }
   ],
@@ -34,7 +34,7 @@
       "sourceType": "image/jpeg",
       "srcset": "/img/avatars/opencollective/luke-bonaccorsi.jpeg 90w",
       "filename": "luke-bonaccorsi.jpeg",
-      "outputPath": "img/avatars/opencollective/luke-bonaccorsi.jpeg",
+      "outputPath": "src/img/avatars/opencollective/luke-bonaccorsi.jpeg",
       "size": 1844
     }
   ],

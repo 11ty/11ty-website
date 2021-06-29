@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/movavi-software-inc.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/movavi-software-inc.avif 90w",
+      "filename": "movavi-software-inc.avif",
+      "outputPath": "src/img/avatars/opencollective/movavi-software-inc.avif",
+      "size": 1042
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/movavi-software-inc.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/movavi-software-inc.webp 90w",
+      "filename": "movavi-software-inc.webp",
+      "outputPath": "src/img/avatars/opencollective/movavi-software-inc.webp",
+      "size": 1316
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/movavi-software-inc.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/movavi-software-inc.jpeg 90w",
+      "filename": "movavi-software-inc.jpeg",
+      "outputPath": "src/img/avatars/opencollective/movavi-software-inc.jpeg",
+      "size": 1870
+    }
+  ],
+  "slug": "movavi-software-inc"
+}
