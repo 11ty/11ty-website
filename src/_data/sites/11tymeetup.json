@@ -1,0 +1,8 @@
+{
+	"url": "https://11tymeetup.dev/",
+	"name": "THE Eleventy Meetup",
+	"description": "Join the Possum Posse to learn more about Eleventy!",
+	"twitter": "TheGreenGreek",
+  "authoredBy": ["TheGreenGreek", "5t3ph", "vincefalconi"],
+	"source_url": "https://github.com/Eleventy-Meetup/website"
+}
