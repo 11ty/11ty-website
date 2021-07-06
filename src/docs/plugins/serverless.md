@@ -19,6 +19,18 @@ Eleventy Serverless complements your existing statically generated site by runni
 * Server side rendering for fully dynamic pages, e.g. content preview in your Content Management System.
 * Rendering of individual templates using On-demand Builders, useful to improve large site build times both locally and in production.
 
+### Rendering Modes
+
+These different use cases and rendering modes are important to understand and have different trade-offs and risks associated with them. In a Jamstack world, the order of preference should be:
+
+* Build template: render in the build (preferred, start here)
+* On-demand Builder template: render on first request (use when your build gets beefy)
+* Dynamic template: render on every request (unlocks some new app-like use cases, can accept user input)
+
+Build-time (non-serverless) templates should be the preferred rendering mode. They are the most reliable and stable. A failure in a build generated template will fail your deployment and prevent user-facing errors in production.
+
+For On-demand Builders and Dynamic templates, rendering failures will not fail your deployment and as such incur more risk. Dynamic templates must also be closely performance monitored—unlike build templates, a slow render in a dynamic template means a slow web site to your users.
+
 ## Usage
 
 ### Step 1: Add the Bundler Plugin
@@ -37,6 +49,15 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+You can add the Bundler plugin more than once to accommodate multiple Eleventy Serverless rendering modes simultaneously. Your templates can render in multiple modes!
+
+{% callout "info", "md" -%}
+You won’t need to set up bundler plugins for every individual template, but instead you’ll want to use one plugin for each rendering mode.
+
+* Dynamic pages via server side rendering will need one plugin, perhaps named `onrequest` or `dynamic`.
+* Delayed rendering using On-demand Builders will need another plugin, perhaps named `onfirstrequest` or `odb`.
+{% endcallout %}
 
 #### Bundler Options
 
@@ -71,7 +92,7 @@ module.exports = function(eleventyConfig) {
     <td><code>redirects: "netlify-toml"</code></td>
     <td>How we manage your serverless redirects. The only currently bundled option is <code>"netlify-toml"</code>. This will add serverless redirects to your <code>netlify.toml</code> file and remove stale routes for you.<ul>
       <li>Use <code>redirects: false</code> to skip this entirely.</li>
-      <li>If you’re not using Netlify or want to manage these in a <code>_redirects</code> file, you will need to pass a custom Function instead of a String: <code>function(name, outputMap)</code>. Don’t forget to handle removal of stale routes too!</li>
+      <li>Write your own: Use a custom Function instead of a String: <code>function(name, outputMap)</code>. Don’t forget to handle removal of stale routes too!</li>
     </ul></td>
   </tr>
   <tr>
@@ -79,8 +100,8 @@ module.exports = function(eleventyConfig) {
   </tr>
   <tr>
     <td><code>copyEnabled: true</code></td>
-    <td>Useful for local development, this is a Boolean to enable or disable copying project files into your serverless bundle. File copying is pretty cheap so will likely want to leave this as-is.<ul>
-      <li>Try <code>copyEnabled: process.env.NODE_ENV !== "development"</code> (and use <code>NODE_ENV=development npx @11ty/eleventy</code> to run Eleventy locally)</li>
+    <td>Useful for local development, this is a Boolean to enable or disable copying project files into your serverless bundle. File copying is pretty cheap so you will likely want to leave this as-is.<ul>
+      <li>Try <code>copyEnabled: process.env.NODE_ENV !== "development"</code> (and set environment variables when running Eleventy locally e.g. <code>NODE_ENV=development npx @11ty/eleventy</code>)</li>
     </ul></td>
   </tr>
   <tr>
@@ -231,7 +252,11 @@ permalink:
 ---
 ```
 
-This will match any requested URL that fits the `/dynamic-path/` followed by an open-ended folder name (e.g. `/dynamic-path/hello/` or `/dynamic-path/goodbye/`). The above uses `:id` for the key name. When the templates are rendered, the key name puts the matched path String value for `id` into your Serverless Global Data in the Data Cascade at: `eleventy.serverless.path.id` (`id` here matches `:id` above). Here’s what your Serverless Global Data might look like:
+This will match any requested URL that fits the `/dynamic-path/` followed by an open-ended folder name (e.g. `/dynamic-path/hello/` or `/dynamic-path/goodbye/`). The above uses `:id` for the key name. When the templates are rendered, the key name puts the matched path String value for `id` into your Serverless Global Data in the Data Cascade at: `eleventy.serverless.path.id` (`id` here matches `:id` above).
+
+{% callout "warn", "md" %}These should be treated as potentially malicious user input and you _must_ escape these if you use them in templates. Read more about [Escaping User Input](#escaping-user-input).{% endcallout %}
+
+Here’s what your Serverless Global Data might look like:
 
 ```js
 {
@@ -245,6 +270,16 @@ This will match any requested URL that fits the `/dynamic-path/` followed by an 
   }
 }
 ```
+
+#### Escaping User Input
+
+When using dynamic slugs or query parameters, the values here should be treated as potentially malicious user input and you _must_ escape these if you use them in templates. The way to do this is template language specific.
+
+* Liquid has both an `escape` and `escape_once` filter.
+* Nunjucks has autoescape turned on by default. If you’ve disabled it, you can use the `escape` filter.
+* Read more [at the Layouts documentation](/docs/layouts/#prevent-double-escaping-in-layouts), which lists both methods for escaped and unescaped output in template languages.
+
+
 
 ### Advanced
 
@@ -272,7 +307,30 @@ For example:
 1. Pagination only operates on that one selected page for rendering.
 
 
+#### Input via Query Parameters
+
+In Dynamic Templates (_not On-demand Builders_), you can use query parameters as user input. Query parameters are available in the `eleventy.serverless.query` object.
+
+{% callout "warn", "md" %}These should be treated as potentially malicious user input and you _must_ escape these if you use them in templates. Read more about [Escaping User Input](#escaping-user-input).{% endcallout %}
+
+`/my-url/?id=hello` might look like this in the Data Cascade of a dynamic template:
+
+```js
+{
+  eleventy: {
+    serverless: {
+      query: {
+        id: "hello" // from /my-url/?id=hello
+        //id: "goodbye" // from /my-url/?id=goodbye
+      }
+    }
+  }
+}
+```
+
 #### How do `permalink` Objects work with `page.url`?
+
+_Documentation in progress_ (The new `serverlessURL` filter)
 
 #### Re-use build-time cache from the [Cache Assets plugin](/docs/plugins/cache/)
 
