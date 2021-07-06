@@ -452,6 +452,7 @@ a[href].elv-hero:visited {
 }
 .elv-hero img,
 .elv-hero svg {
+	display: block;
 	width: 42.95774646vh;
 	height: 60vh;
 }
