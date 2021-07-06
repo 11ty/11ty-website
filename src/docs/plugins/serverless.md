@@ -8,6 +8,8 @@ eleventyNavigation:
 
 {{ eleventyNavigation.excerpt }}
 
+[[toc]]
+
 ## What is Serverless?
 
 You can read more about serverless on the [eponymous Serverless microsite from CSS-Tricks](https://serverless.css-tricks.com/about/).
@@ -29,7 +31,7 @@ These different use cases and rendering modes are important to understand and ha
 
 Build-time (non-serverless) templates should be the preferred rendering mode. They are the most reliable and stable. A failure in a build generated template will fail your deployment and prevent user-facing errors in production.
 
-For On-demand Builders and Dynamic templates, rendering failures will not fail your deployment and as such incur more risk. Dynamic templates must also be closely performance monitored—unlike build templates, a slow render in a dynamic template means a slow web site to your users.
+For On-demand Builders and Dynamic templates, rendering failures will not fail your deployment and as such incur more risk. Dynamic templates must also be closely performance monitored—unlike build templates, a slow render in a dynamic template means a slow web site for end-users.
 
 ## Usage
 
@@ -230,7 +232,7 @@ permalink:
 
 #### Multiple URLs per Serverless Function
 
-If you want to drive multiple URLs for a single serverless function, pass in an Array of URLs.
+If you want to drive multiple URLs with one serverless template, pass in an Array of URLs.
 
 ```yaml
 ---
@@ -281,9 +283,9 @@ When using dynamic slugs or query parameters, the values here should be treated 
 
 
 
-### Advanced
+## Advanced
 
-#### Dynamic Slugs to Subset Your Pagination
+### Dynamic Slugs to Subset Your Pagination
 
 Use the new `serverless` option in `pagination` to slice up your paginated data set using a dynamic slug! Here’s how we use it for the [Eleventy Author Pages](/authors/).
 
@@ -307,7 +309,7 @@ For example:
 1. Pagination only operates on that one selected page for rendering.
 
 
-#### Input via Query Parameters
+### Input via Query Parameters
 
 In Dynamic Templates (_not On-demand Builders_), you can use query parameters as user input. Query parameters are available in the `eleventy.serverless.query` object.
 
@@ -328,11 +330,11 @@ In Dynamic Templates (_not On-demand Builders_), you can use query parameters as
 }
 ```
 
-#### How do `permalink` Objects work with `page.url`?
+<!-- ### How do `permalink` Objects work with `page.url`?
 
-_Documentation in progress_ (The new `serverlessURL` filter)
+_Documentation in progress_ (The new `serverlessURL` filter) -->
 
-#### Re-use build-time cache from the [Cache Assets plugin](/docs/plugins/cache/)
+### Re-use build-time cache from the [Cache Assets plugin](/docs/plugins/cache/)
 
 To speed up serverless rendering and avoid requests to external sources, you can re-use the cache folder from your build! First we’ll need to copy the cache folder into our bundle and rename it without the leading dot.
 
@@ -376,14 +378,14 @@ module.exports = async function() {
 };
 ```
 
-#### Re-use build-time Collections
+### Re-use build-time Collections
 
 _Documentation in progress_
 
-#### Swap to Dynamic using the Data Cascade and `eleventyComputed`
+### Swap to Dynamic using the Data Cascade and `eleventyComputed`
 
 _Documentation in progress_
 
-#### How do Dynamic Templates and `tags` work together?
+### How do Dynamic Templates and `tags` work together?
 
 _Documentation in progress_
