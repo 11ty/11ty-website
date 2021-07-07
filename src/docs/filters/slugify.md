@@ -19,5 +19,7 @@ Uses the [`@sindresorhus/slugify` npm package](https://www.npmjs.com/package/@si
 ```
 {% endraw %}
 
+If you’re trying to migrate a legacy project from the `slug` to the `slugify` filter, you must take extra care to make sure that any existing filters don’t break. Peter deHaan created [a small compatibility configuration script to compare old and new URLs](https://gist.github.com/zachleat/a58bc9e7273fc182a3c9c1234fee82c8) to ensure that they match.
+
 * [`slug` Universal Filter](/docs/filters/slug/)
 * [← Back to Filters documentation.](/docs/filters/)
