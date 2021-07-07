@@ -275,7 +275,7 @@ Here’s what your Serverless Global Data might look like:
 }
 ```
 
-#### Escaping User Input
+### Escaping User Input
 
 When using dynamic slugs or query parameters, the values here should be treated as potentially malicious user input and you _must_ escape these if you use them in templates. The way to do this is template language specific.
 
