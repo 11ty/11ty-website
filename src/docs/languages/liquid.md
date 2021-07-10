@@ -31,7 +31,7 @@ It’s recommended to use the Configuration API to override the default options 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true,
-    strict_filters: true
+    strictFilters: false, // renamed from `strict_filters` in Eleventy 1.0
   });
 };
 ```
@@ -48,7 +48,7 @@ module.exports = function(eleventyConfig) {
   let options = {
     extname: ".liquid",
     dynamicPartials: true,
-    strict_filters: true,
+    strictFilters: false, // renamed from `strict_filters` in Eleventy 1.0
     root: ["_includes"]
   };
 
@@ -95,7 +95,7 @@ Read more about [LiquidJS Filter syntax](https://github.com/harttle/liquidjs#reg
 module.exports = function(eleventyConfig) {
   // Liquid Filter
   eleventyConfig.addLiquidFilter("myLiquidFilter", function(myVariable) { … });
-  
+
   // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
   eleventyConfig.addFilter("myFilter", function(myVariable) { … });
 };
@@ -179,7 +179,7 @@ module.exports = function(eleventyConfig) {
   // Liquid Shortcode
   // These can be async functions too
   eleventyConfig.addPairedLiquidShortcode("user2", function(bioContent, name, twitterUsername) { … });
-  
+
   // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
   eleventyConfig.addPairedShortcode("user2", function(bioContent, name, twitterUsername) {
     return `<div class="user">
