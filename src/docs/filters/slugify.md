@@ -30,4 +30,4 @@ Outputs to `/my-title/`.
 
 ### Upgrade from `slug` to `slugify`
 
-If you’re trying to migrate the content in a pre-1.0 project from using the `slug` filter to the new `slugify` filter (note: this is optional—you can leave them as-is!), you must take extra care to make sure that any existing URLs don’t change. Peter deHaan created [a small compatibility configuration script to compare old and new URLs](https://gist.github.com/zachleat/a58bc9e7273fc182a3c9c1234fee82c8) to ensure that they match.
+If you’re trying to migrate the content in a pre-1.0 project from using the `slug` filter to the new `slugify` filter (note: this is optional—you can leave them as-is!), you must take extra care to make sure that any existing URLs don’t change. The [`@11ty/eleventy-upgrade-help` plugin will compare the `slug` and `slugify` versions of your URLs to see if there are any that require extra attention](https://github.com/11ty/eleventy-upgrade-help) (thank you to Peter deHaan for the assist here!).
