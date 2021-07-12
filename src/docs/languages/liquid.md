@@ -30,7 +30,7 @@ It’s recommended to use the Configuration API to override the default options 
 ```js
 module.exports = function(eleventyConfig) {
   eleventyConfig.setLiquidOptions({
-    dynamicPartials: true,
+    dynamicPartials: false,
     strictFilters: false, // renamed from `strict_filters` in Eleventy 1.0
   });
 };
@@ -47,7 +47,7 @@ module.exports = function(eleventyConfig) {
   let liquidJs = require("liquidjs");
   let options = {
     extname: ".liquid",
-    dynamicPartials: true,
+    dynamicPartials: false,
     strictFilters: false, // renamed from `strict_filters` in Eleventy 1.0
     root: ["_includes"]
   };
@@ -62,8 +62,8 @@ module.exports = function(eleventyConfig) {
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | ✅ Include                                                                   | `{% raw %}{% include user %}{% endraw %}` looks for `_includes/user.liquid`. Does not process front matter in the include file.                                                                             |
 | ✅ Includes (Relative Path) {% addedin "0.9.0" %}                                                                   | Relative paths use `./` (template’s directory) or `../` (template’s parent directory): `{% raw %}{% include ./included %}{% endraw %}` looks for `included.liquid` in the template’s current directory. Does not process front matter.<br><br>{% callout "warn" %}If `_includes/included.liquid` also exists, Liquid will use this file instead.{% endcallout %}        |
-| ✅ Include (Quoted)                                                                   |{% callout "info" %}Liquid includes that use quotation marks require `dynamicPartials: true`—Read more at [Quoted Include Paths](#quoted-include-paths).{% endcallout %}`{% raw %}{% include 'user' %}{% endraw %}` looks for `_includes/user.liquid`. Does not process front matter in the include file. |
-| ✅ Include (Relative Path, Quoted) {% addedin "0.9.0" %}                                                                   |{% callout "info" %}Liquid includes that use quotation marks require `dynamicPartials: true`—Read more at [Quoted Include Paths](#quoted-include-paths).{% endcallout %}Relative paths use `./` (template’s directory) or `../` (template’s parent directory): `{% raw %}{% include './dir/user' %}{% endraw %}` looks for `./dir/user.liquid` from the template’s current directory. Does not process front matter in the include file.<br><br>{% callout "warn" %}If `_includes/dir/user.liquid` also exists, Liquid will use this file instead.{% endcallout %} |
+| ✅ Include (Quoted)                                                                   |{% callout "info" %}Starting in Eleventy 1.0, Liquid includes without quotation marks require `dynamicPartials: false`—Read more at [Quoted Include Paths](#quoted-include-paths).{% endcallout %}`{% raw %}{% include 'user' %}{% endraw %}` looks for `_includes/user.liquid`. Does not process front matter in the include file. |
+| ✅ Include (Relative Path, Quoted) {% addedin "0.9.0" %}                                                                   |{% callout "info" %}Starting in Eleventy 1.0, Liquid includes without quotation marks require `dynamicPartials: false`—Read more at [Quoted Include Paths](#quoted-include-paths).{% endcallout %}Relative paths use `./` (template’s directory) or `../` (template’s parent directory): `{% raw %}{% include './dir/user' %}{% endraw %}` looks for `./dir/user.liquid` from the template’s current directory. Does not process front matter in the include file.<br><br>{% callout "warn" %}If `_includes/dir/user.liquid` also exists, Liquid will use this file instead.{% endcallout %} |
 | ✅ Include (pass in Data)                                                    | `{% raw %}{% include 'user' with 'Ava' %}{% endraw %}`. Does not process front matter in the include file.                                                                                                  |
 | ✅ Include (pass in Data)                                                    | `{% raw %}{% include 'user', user1: 'Ava', user2: 'Bill' %}{% endraw %}`. Does not process front matter in the include file.                                                                                |
 | ✅ Custom Filters                                                            | `{% raw %}{{ name | upper }}{% endraw %}`  Read more about [Filters](/docs/filters/)                                                         |
@@ -75,15 +75,15 @@ module.exports = function(eleventyConfig) {
 
 <div class="elv-callout elv-callout-warn">This is a common pitfall if you’re using Liquid templates.</div>
 
-If you’d like to use quoted include paths, you must enable `dynamicPartials: true` in your Liquid options. This [default may change in a future major version](https://github.com/11ty/eleventy/issues/240). Read more about this limitation at [Issue #72](https://github.com/11ty/eleventy/issues/72).
+If you’d like to use include paths without quotation marks, you must enable `dynamicPartials: false` in your Liquid options. The [default in Eleventy 1.0 (and `liquidjs`) swapped from `false` to `true`](https://github.com/11ty/eleventy/issues/240). Read more about this limitation at [Issue #72](https://github.com/11ty/eleventy/issues/72).
 
-#### Default behavior, `dynamicPartials: false`
-
-`{% raw %}{% include user %}{% endraw %}` looks for `_includes/user.liquid`
-
-#### Quoted includes with `dynamicPartials: true`
+#### Default behavior, `dynamicPartials: true`
 
 `{% raw %}{% include 'user' %}{% endraw %}` looks for `_includes/user.liquid`
+
+#### Non-quoted includes with `dynamicPartials: false`
+
+`{% raw %}{% include user %}{% endraw %}` looks for `_includes/user.liquid`
 
 ## Filters
 
