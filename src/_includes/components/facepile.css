@@ -117,3 +117,8 @@
 		margin-left: -50%;
 	}
 }
+
+.elv-default .sites-vert + .facepile-fullwidth .avatar {
+	width: calc(20px + 1.5vw);
+	height: calc(20px + 1.5vw);
+}
