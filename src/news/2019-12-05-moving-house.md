@@ -1,7 +1,7 @@
 ---
 newstitle: Eleventy Docs Moved from 11ty.io to 11ty.dev
 eleventyNavigation:
-  parent: News
+  parent: Blog
   key: Docs Moved to 11ty.dev
 ---
 The Eleventy project is deprecating the 11ty.io domain and moving to 11ty.dev. 11ty.dev now has feature parity and the 11ty.io DNS will begin redirecting to 11ty.dev as soon as your DNS updates.

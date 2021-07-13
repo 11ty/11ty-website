@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: News
+  parent: Blog
   key: Credits
 excludeFromSidebar: true
 ---

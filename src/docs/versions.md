@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: News
+  parent: Blog
   key: Release History
 ---
 # Release History
