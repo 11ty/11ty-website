@@ -55,6 +55,12 @@ to = "/speedlify/"
 status = 301
 force = true
 
+[[redirects]]
+from = "/news/*"
+to = "/blog/:splat"
+status = 301
+force = true
+
 [[headers]]
 for = "/api/*"
 

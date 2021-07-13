@@ -1,13 +1,13 @@
 ---
 eleventyNavigation:
-  key: News
+  key: Blog
   order: 9
 excludeFromSidebar: false
 layout: "layouts/docs.njk"
-permalink: "/news/"
+permalink: "/blog/"
 override:tags:
 ---
-# News
+# Blog
 
 📢 [Subscribe to the **Eleventy News Feed**](/news/feed.xml)
 
