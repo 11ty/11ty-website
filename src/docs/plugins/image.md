@@ -279,6 +279,7 @@ async function imageShortcode(src, alt, sizes = "100vw") {
   });
 
   let lowsrc = metadata.jpeg[0];
+  let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
 
   return `<picture>
     ${Object.values(metadata).map(imageFormat => {
@@ -286,8 +287,8 @@ async function imageShortcode(src, alt, sizes = "100vw") {
     }).join("\n")}
       <img
         src="${lowsrc.url}"
-        width="${lowsrc.width}"
-        height="${lowsrc.height}"
+        width="${highsrc.width}"
+        height="${highsrc.height}"
         alt="${alt}"
         loading="lazy"
         decoding="async">
