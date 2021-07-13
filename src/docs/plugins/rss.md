@@ -67,7 +67,7 @@ This plugin exports `dateToRfc3339`, `getNewestCollectionItemDate`, `absoluteUrl
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addLiquidFilter("dateToRfc3339", pluginRss.dateRfc3339);
+  eleventyConfig.addLiquidFilter("dateToRfc3339", pluginRss.dateToRfc3339);
 };
 ```
 
