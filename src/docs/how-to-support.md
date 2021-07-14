@@ -13,7 +13,7 @@ ignoreSupporters: true
 * **Build something**—join the [{{ sites | getsize }} sites Built With Eleventy](/docs/sites/). Hopefully you’re doing this already, if you’re here reading the documentation.
 * **Help answer questions**: We welcome questions from people of all experience levels on our [GitHub issue tracker](https://github.com/11ty/eleventy/issues). We also welcome help answering those questions too!
 * **Tell a friend!** Our project doesn’t have a big venture-capital backed marketing budget so we rely on word of mouth recommendations.
-* [Join the chat on Discord](/news/discord/)!
+* [Join the chat on Discord](/blog/discord/)!
 
 {% set count = count + 1 %}
 ## <span class="numberflag"><span class="sr-only">Step</span> {{ count }}</span> Give us a star on GitHub

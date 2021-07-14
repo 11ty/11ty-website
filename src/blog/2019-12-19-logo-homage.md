@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: Blog
   key: Logo homage
 ---
-As many of you may know, [James Williamson](/news/james-williamson/) first came up with _animal suspended from the floating red balloon_ logo for the Eleventy project in May of 2018.
+As many of you may know, [James Williamson](/blog/james-williamson/) first came up with _animal suspended from the floating red balloon_ logo for the Eleventy project in May of 2018.
 
 It was [originally a cat](https://twitter.com/jameswillweb/status/999052022497316865)!
 

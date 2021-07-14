@@ -12,7 +12,7 @@
 
 	<div class="elv-header-c">
 		<a href="{% if logoLink %}{{ logoLink | url }}{% else %}/{% endif %}" class="elv-hero elv-externalexempt">{% if logoContent %}{{ logoContent | safe }}{% else %}{% include "../img/logo.svg" %}{% endif %}<span class="sr-only">Eleventy</span></a>
-		<a href="https://www.11ty.dev/news/logo-homage/" class="elv-externalexempt elv-possum-anchor" data-investors-avatar>
+		<a href="/blog/logo-homage/" class="elv-externalexempt elv-possum-anchor" data-investors-avatar>
 			<picture class="elv-possum-pic">
 				<source srcset="/img/possum-balloon-original.webp" type="image/webp">
 				<img src="/img/possum-balloon-original-sm.png" class="elv-possum" alt="The possum is Eleventy’s mascot" loading="lazy" width="200" height="363">
@@ -23,11 +23,11 @@
 			<ul class="elv-nav lo">
 				<li class="elv-nav-item lo-c"><a href="{{ "/docs/" | url }}" class="elv-externalexempt">Docs</a></li>
 				<li class="elv-nav-item lo-c"><a href="/docs/how-to-support/" class="elv-externalexempt has-svg-icon">{% include "../img/gift.svg" %}<strong>Contribute</strong></a></li>
-				<li class="elv-nav-item lo-c"><a href="{{ "/news/" | url }}" class="elv-nav-light">Blog</a></li>
+				<li class="elv-nav-item lo-c"><a href="{{ "/blog/" | url }}" class="elv-nav-light">Blog</a></li>
 				<li class="elv-nav-item lo-c"><a href="{{ "/docs/search/" | url }}" class="elv-nav-light">Search</a></li>
 				<li class="elv-nav-item lo-c lo-nocontentwrap"><a href="https://github.com/11ty/eleventy/" class="elv-nav-light elv-externalexempt"><b>GitHub</b></a></li>
 				<li class="elv-nav-item lo-c lo-nocontentwrap"><a href="https://twitter.com/eleven_ty" class="elv-nav-light elv-externalexempt"><b>Twitter</b></a></li>
-				<li class="elv-nav-item lo-c lo-nocontentwrap"><a href="/news/discord/" class="elv-nav-light"><b>Discord</b></a></li>
+				<li class="elv-nav-item lo-c lo-nocontentwrap"><a href="/blog/discord/" class="elv-nav-light"><b>Discord</b></a></li>
 				<li class="elv-nav-item lo-c lo-nocontentwrap"><a href="https://twitter.com/zachleat" class="elv-nav-light elv-externalexempt nound">{% avatarlocalcache "twitter", "zachleat" %}<b class="und">zachleat</b></a></li>
 			</ul>
 		</div>

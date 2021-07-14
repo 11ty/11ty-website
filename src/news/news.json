@@ -1,8 +1,0 @@
-{
-	"tags": ["news"],
-	"excludeFromSidebar": true,
-	"layout": "layouts/news.md",
-	"permalink": "/news/{{ page.fileSlug }}/",
-	"feedTitle": "Eleventy News Feed",
-	"feedUrl": "/news/feed.xml"
-}

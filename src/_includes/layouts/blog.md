@@ -8,7 +8,7 @@ layout: layouts/docs.njk
     <em>{{ page.date | newsDate }}</em>
   </div>
   <div class="lo-c lo-nocontentwrap">
-    {% emoji "📢" %} <a href="/news/feed.xml">Subscribe to the Eleventy News Feed</a>
+    {% emoji "📢" %} <a href="/blog/feed.xml">Subscribe to the Eleventy News Feed</a>
   </div>
 </div>
 

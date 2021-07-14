@@ -1,14 +1,14 @@
 ---json
 {
-  "permalink": "/news/feed.xml",
+  "permalink": "/blog/feed.xml",
   "eleventyExcludeFromCollections": true,
   "layout": false,
   "override:tags": [],
   "metadata": {
-    "title": "Eleventy News",
+    "title": "Eleventy Blog",
     "subtitle": "News and updates about the Eleventy project, a simpler static site generator.",
     "url": "https://www.11ty.dev/",
-    "feedUrl": "https://www.11ty.dev/news/feed.xml",
+    "feedUrl": "https://www.11ty.dev/blog/feed.xml",
     "author": {
       "name": "Zach Leatherman",
       "email": "zach@zachleat.com"
@@ -22,13 +22,13 @@
   <subtitle>{{ metadata.subtitle }}</subtitle>
   <link href="{{ metadata.feedUrl }}" rel="self"/>
   <link href="{{ metadata.url }}"/>
-  <updated>{{ collections.news | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <updated>{{ collections.blog | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ metadata.url }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
   </author>
-  {%- for post in collections.news | reverse %}
+  {%- for post in collections.blog | reverse %}
   {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
   <entry>
     <title>{{ post.data.newstitle }}</title>
