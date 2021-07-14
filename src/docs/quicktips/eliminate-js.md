@@ -14,7 +14,7 @@ Let’s change up our architecture to ruthlessly eliminate this client-side Java
 
 Read more at the [GitHub API documentation](https://developer.github.com/v3/repos/#get).
 
-This is a bit different from our client-side implementation because this data is only as updated as often as your build runs. This is implemented using a global [JavaScript data file](/docs/data-js/) at `_data/github.js`.
+This is a bit different from our client-side implementation because this data is only updated as often as your build runs. This is implemented using a global [JavaScript data file](/docs/data-js/) at `_data/github.js`.
 
 * Install new dependencies: `npm install node-fetch --save-dev`
 * Read more about [`node-fetch`](https://www.npmjs.com/package/node-fetch)
