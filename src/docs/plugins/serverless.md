@@ -171,7 +171,7 @@ Don’t forget to `npm install @netlify/functions`.
 Add the following rules to your `.gitignore` file (where `possum` is the name of your serverless function name):
 
 ```
-netlify/functions/possum/*
+netlify/functions/possum/**
 !netlify/functions/possum/index.js
 ```
 
