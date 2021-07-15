@@ -609,17 +609,31 @@ ${text.trim()}
 		return html.join("");
 	});
 
-	// eleventyConfig.addNunjucksAsyncFilter("fetchAndIncrementHits", function(slug, callback) {
-	// 	let hitsDb = new HitsDb();
-	// 	hitsDb.fetch(slug).then(hits => {
-	// 		callback(null, hits);
-	// 	});
-	// });
+	eleventyConfig.addFilter("convertCommunityLinkToSiteCard", function({ url, author, title }) {
+/*
+communityLinks:
+- url: https://www.pborenstein.com/posts/collections/
+  author: pborenstein
+  title: Working with Collections
 
-	// eleventyConfig.addJavaScriptFunction("fetchAndIncrementHits", async function(slug) {
-	// 	let hitsDb = new HitsDb();
-	// 	return hitsDb.fetch(slug);
-	// });
+to:
+
+<div class="lo-c sites-site-vert">
+  <a href="{{ site.url }}" class="elv-externalexempt">
+    {% avatarlocalcache "twitter", site.twitter %}{{ site.name }}
+    <div class="sites-screenshot-container">
+      {% getScreenshotHtml site.fileSlug, site.url %}
+    </div>
+  </a>
+</div> */
+
+		return {
+			url,
+			twitter: author,
+			name: title,
+			fileSlug: slugify(url)
+		}
+	});
 
 	return {
 		dir: {

@@ -391,3 +391,13 @@ _Documentation in progress_
 ### How do Dynamic Templates and `tags` work together?
 
 _Documentation in progress_
+
+## Demos and Examples
+
+<div class="sites-vert">
+  <div class="lo-grid">
+{% for key, site in demos -%}{% if site.category.includes("serverless") -%}
+  {% include "site-card.njk" %}
+{% endif %}{%- endfor %}
+  </div>
+</div>

@@ -67,3 +67,13 @@ css:
   {% include "site.njk" %}
 {%- endfor %}
 </div>
+
+### {{ displayName }}’s Demos and Examples
+
+<div class="sites-vert">
+  <div class="lo-grid">
+{% for key, site in demos -%}{% if site.twitter == author.name or (site.authoredBy and site.authoredBy.includes(author.name)) -%}
+  {% include "site-card.njk" %}
+{%- endif %}{%- endfor %}
+  </div>
+</div>

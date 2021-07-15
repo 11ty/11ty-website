@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
-  parent: Blog
   key: Release History
+  order: 9.2
 ---
 # Release History
 

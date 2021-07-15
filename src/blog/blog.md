@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: Blog
-  order: 9
+  order: 9.1
 excludeFromSidebar: false
 layout: "layouts/docs.njk"
 permalink: "/blog/"

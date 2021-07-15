@@ -119,6 +119,6 @@
 }
 
 .elv-default .sites-vert + .facepile-fullwidth .avatar {
-	width: calc(20px + 1.5vw);
-	height: calc(20px + 1.5vw);
+	width: calc(20px + 2vw);
+	height: calc(20px + 2vw);
 }

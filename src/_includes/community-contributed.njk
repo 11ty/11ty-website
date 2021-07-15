@@ -2,12 +2,17 @@
 <div class="elv-community" id="community-resources">
   {% callout "info" %}
   <strong class="elv-community-hed">Community Resources:</strong>
-  <ul>
-{%- for entry in communityLinks %}
-    <li><a href="{{ entry.url }}">{% avatarlocalcache "twitter", entry.author %}{{ entry.title }}</a></li>
+  <div class="sites-vert">
+    <div class="lo-grid">
+{% for entry in communityLinks -%}
+    {%- set site = entry | convertCommunityLinkToSiteCard %}
+    {% include "site-card.njk" %}
 {%- endfor %}
-    <li><a href="{{ config.githubEdit }}{{ page.inputPath }}" class="elv-externalexempt"><strong>Add yours!</strong></a></li>
-  </ul>
+      <div class="lo-c lo-c-center">
+        +&#160;<a href="{{ config.githubEdit }}{{ page.inputPath }}" class="elv-externalexempt">Add yours!</a>
+      </div>
+    </div>
+  </div>
   {% endcallout %}
 </div>
 {%- endif %}
