@@ -33,6 +33,17 @@ Build-time (non-serverless) templates should be the preferred rendering mode. Th
 
 For On-demand Builders and Dynamic templates, rendering failures will not fail your deployment and as such incur more risk. Dynamic templates must also be closely performance monitored—unlike build templates, a slow render in a dynamic template means a slow web site for end-users.
 
+## Demos and Examples
+
+<div class="sites-vert">
+  <div class="lo-grid">
+{% for key, site in demos -%}{% if site.category.includes("serverless") -%}
+  {% include "site-card.njk" %}
+{% endif %}{%- endfor %}
+  </div>
+</div>
+
+
 ## Usage
 
 ### Step 1: Add the Bundler Plugin
@@ -391,13 +402,3 @@ _Documentation in progress_
 ### How do Dynamic Templates and `tags` work together?
 
 _Documentation in progress_
-
-## Demos and Examples
-
-<div class="sites-vert">
-  <div class="lo-grid">
-{% for key, site in demos -%}{% if site.category.includes("serverless") -%}
-  {% include "site-card.njk" %}
-{% endif %}{%- endfor %}
-  </div>
-</div>
