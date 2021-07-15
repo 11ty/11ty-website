@@ -1,6 +1,6 @@
 <div class="lo-c sites-site-vert">
-  <a href="{{ site.url }}" class="elv-externalexempt">
-    {% avatarlocalcache "twitter", site.twitter %}{{ site.name }}
+  <a href="{{ site.url }}" class="elv-externalexempt" title="{{ site.name }}">
+    <span class="sites-site-name">{% avatarlocalcache "twitter", site.twitter %}{{ site.name }}</span>
     <div class="sites-screenshot-container">
       {% getScreenshotHtml site.fileSlug, site.url %}
     </div>
