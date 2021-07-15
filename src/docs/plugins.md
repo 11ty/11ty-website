@@ -4,10 +4,7 @@ eleventyNavigation:
   order: 7.5
 eleventyComputed:
   pageTitle: "Plugins {% addedin '0.2.13' %}"
-communityLinks:
-- title: Creating an 11ty Plugin—SVG Embed Tool
-  author: brob
-  url: https://bryanlrobinson.com/blog/creating-11ty-plugin-embed-svg-contents/
+communityLinksKey: plugins
 ---
 Plugins are custom code that Eleventy can import into a project from an external repository.
 

@@ -2,13 +2,7 @@
 eleventyNavigation:
   key: Getting Started
   order: 2
-communityLinks:
-- url: https://www.learnwithjason.dev/lets-learn-eleventy
-  author: jlengstorf
-  title: "Learn With Jason"
-- url: https://tatianamac.com/posts/beginner-eleventy-tutorial-parti/
-  author: tatianatmac
-  title: Beginner’s Guide to Eleventy
+communityLinksKey: getting-started
 ---
 # Getting Started
 

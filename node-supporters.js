@@ -33,6 +33,8 @@ const fetch = require("node-fetch");
 //   }
 // }
 // `;
+
+// TODO I think there is bug with Organizations, e.g. Entle Web Solutions
 const query = `
 query eleventyMembers {
   collective(slug: "11ty") {

@@ -68,12 +68,18 @@ css:
 {%- endfor %}
 </div>
 
-### {{ displayName }}’s Demos and Examples
+### Demos, Examples, and Community Links
 
 <div class="sites-vert">
   <div class="lo-grid">
-{% for key, site in demos -%}{% if site.twitter == author.name or (site.authoredBy and site.authoredBy.includes(author.name)) -%}
+{% for key, site in demos -%}{% if site.twitter.toLowerCase() == author.name.toLowerCase() or (site.authoredBy and site.authoredBy.includes(author.name)) -%}
   {% include "site-card.njk" %}
 {%- endif %}{%- endfor %}
+{%- for key, entry in community %}
+{%- if entry.author == author.name.toLowerCase()  -%}
+  {%- set site = entry | convertCommunityLinkToSiteCard -%}
+  {% include "site-card.njk" %}
+{%- endif %}
+{%- endfor %}
   </div>
 </div>

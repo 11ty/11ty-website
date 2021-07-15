@@ -4,13 +4,7 @@ eleventyNavigation:
   key: Image
   order: 0
   excerpt: A utility to resize and generate images.
-communityLinks:
-- url: https://www.zachleat.com/web/eleventy-image/
-  author: zachleat
-  title: Don’t Shut Down Your Business! Instead Use Eleventy Image
-- url: https://brycewray.com/posts/2021/04/using-eleventys-official-image-plugin/
-  author: BryceWrayTX
-  title: Using Eleventy’s official image plugin
+communityLinksKey: image
 ---
 Low level utility to perform build-time image transformations for both vector and raster images. Output multiple sizes, save multiple formats, cache remote images locally. Uses the [sharp](https://sharp.pixelplumbing.com/) image processor.
 

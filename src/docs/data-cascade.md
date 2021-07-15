@@ -3,10 +3,7 @@ eleventyNavigation:
   parent: Using Data
   key: Data Cascade
   order: 1
-communityLinks:
-- url: https://benmyers.dev/blog/eleventy-data-cascade/
-  title: I Finally Understand Eleventy’s Data Cascade
-  author: BenDMyers
+communityLinksKey: "data-cascade"
 ---
 # The Data Cascade
 
