@@ -24,6 +24,7 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 * [Video Series: Create an 11ty Theme from a free set of HTML templates](https://www.youtube.com/playlist?list=PLOSLUtJ_J3rrJ1R1qEf8CCEpV3GgbJGNr) by {% avatarlocalcache "twitter", "brob" %} Bryan Robinson
 * [Creating A Blog With Eleventy](https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/) by {% avatarlocalcache "twitter", "jon_keeping" %} Jon Keeping
 * [Getting Started with Eleventy](https://www.sitepoint.com/getting-started-with-eleventy/) by {% avatarlocalcache "twitter", "craigbuckler" %} Craig Buckler
+* [Itsiest, Bitsiest Eleventy Tutorial](https://sia.codes/posts/itsiest-bitsiest-eleventy-tutorial/) by {% avatarlocalcache "twitter", "TheGreenGreek" %} Sia Karamalegos
 
 ### Put it on the web
 
@@ -40,6 +41,7 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 * [Multilingual sites with Eleventy](https://www.webstoemp.com/blog/multilingual-sites-eleventy/) (i18n, Internationalization) by {% avatarlocalcache "twitter", "jeromecoupe" %}Jérôme Coupé
 * [Language switcher for multilingual JAMstack sites](https://www.webstoemp.com/blog/language-switcher-multilingual-jamstack-sites/) (i18n, Internationalization) by {% avatarlocalcache "twitter", "jeromecoupe" %}Jérôme Coupé
 * [Adding Algolia Search to Eleventy and Netlify](https://www.raymondcamden.com/2020/06/24/adding-algolia-search-to-eleventy-and-netlify) by {% avatarlocalcache "twitter", "raymondcamden" %}Raymond Camden. (Also see [part two](https://www.raymondcamden.com/2020/07/01/adding-algolia-search-to-eleventy-and-netlify-part-two))
+* [Eleventy and Cloudinary images](https://sia.codes/posts/eleventy-and-cloudinary-images/) (Setting up responsive images in Eleventy using Cloudinary) by {% avatarlocalcache "twitter", "TheGreenGreek" %} Sia Karamalegos
 
 ### Using Third Party Data
 
@@ -48,6 +50,7 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 * [Import your **Disqus Comments** into Eleventy](https://github.com/11ty/eleventy-import-disqus/blob/master/README.md) by {% avatarlocalcache "twitter", "zachleat" %}Zach Leatherman
 * [Static Indieweb pt1: Syndicating Content](https://mxb.dev/blog/syndicating-content-to-twitter-with-netlify-functions/) by {% avatarlocalcache "twitter", "mxbck" %}Max Böck
 * [Static Indieweb pt2: Using Webmentions](https://mxb.dev/blog/using-webmentions-on-static-sites/) by {% avatarlocalcache "twitter", "mxbck" %}Max Böck
+* [An In-Depth Tutorial of Webmentions + Eleventy](https://sia.codes/posts/webmentions-eleventy-in-depth/) by {% avatarlocalcache "twitter", "TheGreenGreek" %} Sia Karamalegos
 * [Using Eleventy to Generate a Ghost Blog](https://david.darn.es/tutorial/2019/06/01/use-eleventy-to-generate-a-ghost-blog/) by {% avatarlocalcache "twitter", "DavidDarnes" %}David Darnes
 * [Consuming a headless CMS GraphQL API with Eleventy](https://www.webstoemp.com/blog/headless-cms-graphql-api-eleventy/) by {% avatarlocalcache "twitter", "jeromecoupe" %}Jérôme Coupé
 * [Import Tweets from Twitter API](https://www.d-hagemeier.com/en/articles/embed-twitter/) by {% avatarlocalcache "twitter", "DennisView" %}Dennis Hagemeier
