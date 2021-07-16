@@ -1,7 +1,7 @@
 module.exports = {
 	name: "Rainglow",
 	category: ["serverless"],
-	url: "https://rainglow.netlify.app/",
+	url: "https://rainglow.zachleat.dev/",
 	source_url: "https://github.com/zachleat/rainglow",
 	twitter: "zachleat",
 }
