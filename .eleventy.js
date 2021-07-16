@@ -129,7 +129,7 @@ module.exports = function(eleventyConfig) {
 		name: "serverless",
 		inputDir: "src",
 		functionsDir: "./netlify/functions/",
-		// copyEnabled: process.env.NODE_ENV === "production",
+		copyEnabled: process.env.NODE_ENV === "production",
 		copy: [
 			"config/",
 			"avatars/",
@@ -144,7 +144,7 @@ module.exports = function(eleventyConfig) {
 		name: "dynamic",
 		inputDir: "src",
 		functionsDir: "./netlify/functions/",
-		// copyEnabled: process.env.NODE_ENV === "production",
+		copyEnabled: process.env.NODE_ENV === "production",
 		copy: [
 			"config/",
 			"avatars/",
