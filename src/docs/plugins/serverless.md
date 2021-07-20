@@ -35,7 +35,7 @@ For On-demand Builders and Dynamic templates, rendering failures will not fail y
 
 ## Demos and Examples
 
-<div class="sites-vert">
+<div class="sites-vert sites-vert--md">
   <div class="lo-grid">
 {% for key, site in demos -%}{% if site.category.includes("serverless") -%}
   {% include "site-card.njk" %}

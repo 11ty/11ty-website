@@ -11,20 +11,51 @@ feedUrl: /docs/quicktips/feed.xml
 
 _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/eleventy/)._
 
-### Making a Simple Web Site with the Simplest Static Site Generator
+### Series: Making a Simple Web Site with the Simplest Static Site Generator
 
-* [Level 1—Making Content with Data](https://www.zachleat.com/web/eleventy-tutorial-level-1/)
-* [Level 2—Adding Filters](https://www.zachleat.com/web/eleventy-tutorial-level-2/)
+<div class="sites-vert sites-vert--lg">
+  <div class="lo-grid">
+{%- for key, entry in community %}{%- if entry.key == "tutorial-simplewebsite" -%}
+  {%- set site = entry | convertCommunityLinkToSiteCard %}
+  {% include "site-card.njk" %}
+{%- endif %}{%- endfor %}
+{% for key, site in demos -%}{% if site.category.includes("tutorial-simplewebsite") -%}
+  {% include "site-card.njk" %}
+{% endif %}{%- endfor %}
+  </div>
+</div>
+
 
 ### Introduction
 
-* [**Turn Jekyll up to Eleventy**, a guide to converting a Jekyll site to use Eleventy](https://24ways.org/2018/turn-jekyll-up-to-eleventy/) by {% avatarlocalcache "twitter", "paulrobertlloyd" %}Paul Robert Lloyd
-* [Build your own Blog from Scratch using Eleventy](https://www.filamentgroup.com/lab/build-a-blog/) on the {% avatarlocalcache "twitter", "filamentgroup" %}Filament Group blog
-* [A Site for Front-End Development Conferences (Built with 11ty on Netlify) ](https://css-tricks.com/a-site-for-front-end-development-conferences-built-with-11ty-on-netlify/) on {% avatarlocalcache "twitter", "css" %}CSS-Tricks
-* [Video Series: Create an 11ty Theme from a free set of HTML templates](https://www.youtube.com/playlist?list=PLOSLUtJ_J3rrJ1R1qEf8CCEpV3GgbJGNr) by {% avatarlocalcache "twitter", "brob" %} Bryan Robinson
-* [Creating A Blog With Eleventy](https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/) by {% avatarlocalcache "twitter", "jon_keeping" %} Jon Keeping
-* [Getting Started with Eleventy](https://www.sitepoint.com/getting-started-with-eleventy/) by {% avatarlocalcache "twitter", "craigbuckler" %} Craig Buckler
-* [Itsiest, Bitsiest Eleventy Tutorial](https://sia.codes/posts/itsiest-bitsiest-eleventy-tutorial/) by {% avatarlocalcache "twitter", "TheGreenGreek" %} Sia Karamalegos
+<div class="sites-vert sites-vert--lg">
+  <div class="lo-grid">
+{%- for key, entry in community %}{%- if entry.key == "getting-started" or entry.key == "tutorial-intro" -%}
+  {%- set site = entry | convertCommunityLinkToSiteCard %}
+  {% include "site-card.njk" %}
+{%- endif %}{%- endfor %}
+{% for key, site in demos -%}{% if site.category.includes("getting-started") or site.category.includes("tutorial-intro") -%}
+  {% include "site-card.njk" %}
+{% endif %}{%- endfor %}
+  </div>
+</div>
+
+### Build a Blog
+
+<div class="sites-vert sites-vert--lg">
+  <div class="lo-grid">
+{% for key, site in starters -%}{% if site.name === "eleventy-base-blog" -%}
+  {% include "site-card.njk" %}
+{% endif %}{%- endfor %}
+{%- for key, entry in community %}{%- if entry.key == "tutorial-blog" -%}
+  {%- set site = entry | convertCommunityLinkToSiteCard %}
+  {% include "site-card.njk" %}
+{%- endif %}{%- endfor %}
+{% for key, site in demos -%}{% if site.category.includes("tutorial-blog") -%}
+  {% include "site-card.njk" %}
+{% endif %}{%- endfor %}
+  </div>
+</div>
 
 ### Put it on the web
 

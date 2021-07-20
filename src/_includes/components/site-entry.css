@@ -84,8 +84,14 @@
 .sites-vert > .lo-grid {
   --lo-margin-h: 1rem;
   --lo-margin-v: 1rem;
-  --lo-c-minwidth: 6.666666666667em; /* 120px /18 */
+  --lo-c-minwidth: 5.555555555556em; /* 100px /18 */
 	--lo-grid-repeat: auto-fill;
+}
+.sites-vert--md > .lo-grid {
+  --lo-c-minwidth: 7.5em; /* 120px /16 */
+}
+.sites-vert--lg > .lo-grid {
+  --lo-c-minwidth: 10em; /* 160px /16 */
 }
 .sites-site-name {
 	display: block;
