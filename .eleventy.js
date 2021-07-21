@@ -63,7 +63,7 @@ const shortcodes = {
 			height: 420,
 		};
 
-		let screenshotUrl = `https://screenshot.11ty.dev/screenshot/1.0/${encodeURIComponent(siteUrl)}/small/`;
+		let screenshotUrl = `https://screenshot.11ty.dev/1.0/${encodeURIComponent(siteUrl)}/small/`;
 
 		if(siteSlug === "11ty" || siteSlug === "foursquare") {
 			screenshotUrl = `/img/screenshot-fallbacks/${siteSlug}.jpg`;
