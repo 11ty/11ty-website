@@ -58,21 +58,33 @@ const shortcodes = {
 			(linkUrl ? `</a>` : "");
 	},
 	getScreenshotHtml: function(siteSlug, siteUrl, sizes) {
-		let withJs = true;
-		let viewport = {
-			width: 420,
-			height: 460,
-		};
+		let viewport;
+		let screenshotUrl;
 
-		let localhostEnv = "https://www.11ty.dev";
-		let forcedHost = !process.env.DEPLOY_PRIME_URL ? localhostEnv : "";
-		let screenshotPath = `/api/screenshot/${encodeURIComponent(siteUrl)}/${viewport.width}x${viewport.height}/`;
-		if(siteSlug === "11ty" || siteSlug === "foursquare") {
-			forcedHost = "";
-			screenshotPath = `/img/screenshot-fallbacks/${siteSlug}.jpg`;
+		if(siteUrl.startsWith("https://www.youtube.com/watch?")) {
+			let videoId = (new URLSearchParams(siteUrl.split("?")[1])).get("v");
+			screenshotUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+
+			viewport = {
+				width: 480,
+				width: 360,
+			};
+		} else {
+			viewport = {
+				width: 420,
+				height: 460,
+			};
+
+			let localhostEnv = "https://www.11ty.dev";
+			let forcedHost = !process.env.DEPLOY_PRIME_URL ? localhostEnv : "";
+			let screenshotPath = `/api/screenshot/${encodeURIComponent(siteUrl)}/${viewport.width}x${viewport.height}/`;
+			if(siteSlug === "11ty" || siteSlug === "foursquare") {
+				forcedHost = "";
+				screenshotPath = `/img/screenshot-fallbacks/${siteSlug}.jpg`;
+			}
+
+			screenshotUrl = `${forcedHost}${screenshotPath}`;
 		}
-
-		let screenshotUrl = `${forcedHost}${screenshotPath}`;
 
 		let options = {
 			formats: ["jpeg"], // we don’t use AVIF here because it was a little too slow!

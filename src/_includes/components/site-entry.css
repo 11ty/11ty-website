@@ -118,3 +118,17 @@
 		margin-left: -35%;
 	}
 }
+
+.sites-site-vert > a {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.sites-site-vert .sites-screenshot-container {
+	flex-grow: 999;
+}
+.sites-screenshot[src^="https://img.youtube.com/vi/"] {
+	height: 100%;
+	object-fit: contain;
+	background-color: #000;
+}
