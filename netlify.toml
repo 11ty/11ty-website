@@ -26,12 +26,6 @@ status = 200
 force = true
 
 [[redirects]]
-from = "/api/screenshot/:url/:dimensions/"
-to = "/.netlify/functions/screenshot"
-status = 200
-force = true
-
-[[redirects]]
 from = "/docs/sites/"
 to = "/speedlify/"
 status = 301

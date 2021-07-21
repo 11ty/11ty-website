@@ -58,32 +58,15 @@ const shortcodes = {
 			(linkUrl ? `</a>` : "");
 	},
 	getScreenshotHtml: function(siteSlug, siteUrl, sizes) {
-		let viewport;
-		let screenshotUrl;
+		let viewport = {
+			width: 420,
+			height: 420,
+		};
 
-		if(siteUrl.startsWith("https://www.youtube.com/watch?")) {
-			let videoId = (new URLSearchParams(siteUrl.split("?")[1])).get("v");
-			screenshotUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+		let screenshotUrl = `https://api.11ty.dev/screenshot/1.0/${encodeURIComponent(siteUrl)}/small/`;
 
-			viewport = {
-				width: 480,
-				width: 360,
-			};
-		} else {
-			viewport = {
-				width: 420,
-				height: 460,
-			};
-
-			let localhostEnv = "https://www.11ty.dev";
-			let forcedHost = !process.env.DEPLOY_PRIME_URL ? localhostEnv : "";
-			let screenshotPath = `/api/screenshot/${encodeURIComponent(siteUrl)}/${viewport.width}x${viewport.height}/`;
-			if(siteSlug === "11ty" || siteSlug === "foursquare") {
-				forcedHost = "";
-				screenshotPath = `/img/screenshot-fallbacks/${siteSlug}.jpg`;
-			}
-
-			screenshotUrl = `${forcedHost}${screenshotPath}`;
+		if(siteSlug === "11ty" || siteSlug === "foursquare") {
+			screenshotUrl = `/img/screenshot-fallbacks/${siteSlug}.jpg`;
 		}
 
 		let options = {

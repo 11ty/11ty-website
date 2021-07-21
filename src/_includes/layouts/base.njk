@@ -56,6 +56,7 @@ social:
 {% endfor %}
 {{ googlefonts | safe }}
 {% endset %}
+		<link href="https://api.11ty.dev" rel="preconnect" crossorigin>
 		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
 		<style>{{ css | cssmin | safe }}</style>
 		<link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'">
