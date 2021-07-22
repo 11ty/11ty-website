@@ -1,8 +1,12 @@
 <div class="lo-c sites-site-vert">
   <a href="{{ site.url }}" class="elv-externalexempt" title="{{ site.name }}">
-    <span class="sites-site-name">{% avatarlocalcache "twitter", site.author or site.twitter %}{{ site.name }}</span>
+    <span class="sites-site-name">{% avatarlocalcache "twitter", site.author or site.twitter %}{{ site.name }}{% if site.official %} 🎈{% endif %}</span>
     <div class="sites-screenshot-container">
-      {% getScreenshotHtml site.fileSlug, site.url %}
+      {% getScreenshotHtml site.fileSlug, site.demo or site.url %}
     </div>
+    <speedlify-score{% if siteData %} raw-data='{{ siteData | toJSON | safe }}'{% endif %}></speedlify-score>
+{%- if site.description %}
+    <div class="sites-site-description">{% if site.official %}<strong>Official Starter</strong>: {% endif %}{{ site.description }}</div>
+{%- endif %}
   </a>
 </div>
