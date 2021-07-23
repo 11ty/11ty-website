@@ -7,8 +7,12 @@
 {%- if siteData | lighthouseGoodDataCheck %}
     <div class="sites-site-lighthouse"><speedlify-score raw-data='{{ siteData | toJSON | safe }}'></speedlify-score></div>
 {%- endif %}
-{%- if site.description %}
-    <div class="sites-site-description">{% if site.official %}<strong>Official Starter</strong>: {% endif %}{{ site.description }}</div>
-{%- endif %}
   </a>
+{%- if site.description %}
+  <div class="sites-site-description">
+    {%- if site.demo and site.url != site.demo %}<a href="{{ site.demo }}">Demo</a> · {% endif -%}
+    {%- if site.official %}<strong>Official Starter</strong>: {% endif -%}
+    {{ site.description }}
+  </div>
+{%- endif %}
 </div>
