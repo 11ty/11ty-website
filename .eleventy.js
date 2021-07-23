@@ -219,6 +219,10 @@ ${text.trim()}
 		return !!data && !("error" in data);
 	});
 
+	eleventyConfig.addFilter("lighthousePerfectScore", function(data) {
+		return !!data && !("error" in data) && data.lighthouse.total === 400;
+	});
+
 	eleventyConfig.addFilter("speedlifyHash", function(site) {
 		if(!site || !site.url) {
 			// console.log( "speedlifyHash: Missing url for", site.name );

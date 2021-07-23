@@ -75,6 +75,7 @@
   },
   "dependencies": {
     "@11ty/logo": "2.0.4",
+    "@zachleat/filter-container": "^1.0.3",
     "lodash": "^4.17.21",
     "prismjs": "1.23.0",
     "speedlify-score": "^2.0.2"

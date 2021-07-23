@@ -51,6 +51,15 @@ social:
 {% include 'components/announcement.css' %}
 {% include 'components/seven-minute-tabs.css' %}
 
+/* Filters */
+.filter-tags--hide {
+  display: none;
+}
+.select-filter {
+  font-size: 16px;
+  padding: .3em .5em;
+}
+
 {% for includeLocation in css %}
 {% include includeLocation %}
 {% endfor %}
@@ -60,6 +69,9 @@ social:
 		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
 		<style>{{ css | cssmin | safe }}</style>
 		<link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'">
+		<noscript>
+			<link rel="stylesheet" href="/css/async.css">
+		</noscript>
 {% if feedTitle and feedUrl %}
 		<link rel="alternate" href="{{ feedUrl }}" title="{{ feedTitle }}" type="application/atom+xml">
 {% endif %}

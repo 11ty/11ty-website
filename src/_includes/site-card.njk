@@ -1,4 +1,4 @@
-<div class="lo-c sites-site-vert">
+<div class="lo-c sites-site-vert" data-filter-tags="{% if siteData | lighthousePerfectScore %}perfectlh{% endif %}">
   <a href="{{ site.url }}" class="elv-externalexempt" title="{{ site.name }}">
     <span class="sites-site-name">{% avatarlocalcache "twitter", site.author or site.twitter %}{{ site.name }}{% if site.official %} 🎈{% endif %}</span>
     <div class="sites-screenshot-container">
