@@ -9,11 +9,14 @@
 }
 .sites-screenshot {
   display: block;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: .4em;
   margin: .5em 0;
   width: 100%;
   height: auto;
+}
+.sites-site-official .sites-screenshot {
+	border-color: #666;
 }
 @media (min-width: 30em) { /* 480px */
   .site-top {
@@ -108,7 +111,11 @@
 }
 .sites-vert--md .sites-site-description,
 .sites-vert--lg .sites-site-description {
-	display: block;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+	width: 100%;
 }
 .sites-site-vert a:focus .sites-screenshot,
 .sites-site-vert a:hover .sites-screenshot {
@@ -135,21 +142,21 @@
 	justify-content: center;
 }
 
+.sites-site-vert {
+	position: relative;
+}
 .sites-site-vert .sites-site-lighthouse {
 	font-size: 0.6666666666667em; /* 12px /18 */
 	transform: translateY(-100%);
-	position: relative;
+	position: absolute;
+	right: 1px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	border-radius: 1.4em 0 .4em 0;
 	background: rgba(0,0,0,.04);
 	font-weight: 600;
-	border: 1px solid #ccc;
-	border-left: 0;
-	border-top: 0;
 	padding: 4px;
-	float: right;
 }
 
 .sites-site-vert .sites-site-lighthouse .speedlify-score {
