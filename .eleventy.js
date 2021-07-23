@@ -215,6 +215,10 @@ ${text.trim()}
 	eleventyConfig.addPassthroughCopy("src/blog/*.png");
 	eleventyConfig.addPassthroughCopy("src/favicon.ico");
 
+	eleventyConfig.addFilter("lighthouseGoodDataCheck", function(data) {
+		return !!data && !("error" in data);
+	});
+
 	eleventyConfig.addFilter("speedlifyHash", function(site) {
 		if(!site || !site.url) {
 			// console.log( "speedlifyHash: Missing url for", site.name );

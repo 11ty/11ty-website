@@ -4,7 +4,9 @@
     <div class="sites-screenshot-container">
       {% getScreenshotHtml site.fileSlug, site.demo or site.url %}
     </div>
-    <speedlify-score{% if siteData %} raw-data='{{ siteData | toJSON | safe }}'{% endif %}></speedlify-score>
+{%- if siteData | lighthouseGoodDataCheck %}
+    <div class="sites-site-lighthouse"><speedlify-score raw-data='{{ siteData | toJSON | safe }}'></speedlify-score></div>
+{%- endif %}
 {%- if site.description %}
     <div class="sites-site-description">{% if site.official %}<strong>Official Starter</strong>: {% endif %}{{ site.description }}</div>
 {%- endif %}
