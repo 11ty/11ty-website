@@ -102,8 +102,13 @@
 	font-size: 0.7777777777778em; /* 14px /18 */
 }
 .sites-site-description {
+	display: none;
 	margin: 0.6428571428571em 0; /* 9px /14 */
 	font-size: 0.7777777777778em; /* 14px /18 */
+}
+.sites-vert--md .sites-site-description,
+.sites-vert--lg .sites-site-description {
+	display: block;
 }
 .sites-site-vert a:focus .sites-screenshot,
 .sites-site-vert a:hover .sites-screenshot {
