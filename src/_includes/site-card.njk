@@ -1,5 +1,5 @@
 <div class="lo-c sites-site-vert{% if site.official %} sites-site-official{% endif %}" data-filter-tags="{% if siteData | lighthousePerfectScore %}perfectlh{% endif %}">
-  <a href="{{ site.url }}" class="elv-externalexempt" title="{{ site.name }}">
+  <a href="{{ site.demo or site.url }}" class="elv-externalexempt" title="{{ site.name }}">
     <span class="sites-site-name">{% avatarlocalcache "twitter", site.author or site.twitter %}{{ site.name }}</span>
     <div class="sites-screenshot-container">
       {% getScreenshotHtml site.fileSlug, site.demo or site.url %}
@@ -10,8 +10,8 @@
   </a>
 {%- if site.description %}
   <div class="sites-site-description">
-    {%- if site.demo and site.url != site.demo %}<a href="{{ site.demo }}">Demo</a> · {% endif -%}
-    {%- if site.official %}<strong>Official Starter</strong>: {% endif -%}
+    {%- if site.official %}<strong>Official Starter</strong> · {% endif -%}
+    {%- if site.url and site.url != site.demo %}<a href="{{ site.url }}">Source code</a> · {% endif -%}
     {{ site.description }}
   </div>
 {%- endif %}
