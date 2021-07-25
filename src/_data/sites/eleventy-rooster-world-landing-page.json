@@ -2,6 +2,6 @@
 	"source_url": "https://github.com/camphan12993/rooster-world-landing-11ty",
 	"name": "Rooster World Landing Page",
 	"description": "Postcss, Tailwind css, Netlify Cms, Netlify Deployment.",
-	"author": "Cam Phan",
+	"authoredBy": ["Cam Phan"],
 	"url": "https://rooster-world.com"
 }
