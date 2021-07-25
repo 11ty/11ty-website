@@ -1,6 +1,6 @@
 {
     "name": "FixA11y",
     "url": "https://fixa11y.com/",
-    "desc": "FixA11y makes browser extensions that improve accessibility automatically.",
+    "description": "FixA11y makes browser extensions that improve accessibility automatically.",
     "twitter": "fixa11y"
 }
