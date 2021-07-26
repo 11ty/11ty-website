@@ -30,9 +30,12 @@ What is the difference between Local and [Global installation](/docs/global-inst
 
 ### Windows
 
+Read more about [Windows environment variables](https://www.npmjs.com/package/debug#windows-command-prompt-notes).
+
+#### cmd.exe
+
 What is the difference between Local and [Global installation](/docs/global-installation/)?
 
-<div><em>For the cmd.exe Shell:</em></div>
 <div class="lo" style="--lo-stackpoint: 30em; --lo-margin-h: 1em; --lo-margin-v: .5em">
 	<div class="lo-c">Installed Locally</div>
 	<div class="lo-c lo-maxgrow">{% highlight "bash" %}set DEBUG=Eleventy* & npx @11ty/eleventy{% endhighlight %}</div>
@@ -43,7 +46,10 @@ What is the difference between Local and [Global installation](/docs/global-inst
 	<div class="lo-c lo-maxgrow">{% highlight "bash" %}set DEBUG=Eleventy* & eleventy{% endhighlight %}</div>
 </div>
 
-<div><em>For the Powershell:</em></div>
+#### Powershell (VS Code default)
+
+What is the difference between Local and [Global installation](/docs/global-installation/)?
+
 <div class="lo" style="--lo-stackpoint: 30em; --lo-margin-h: 1em; --lo-margin-v: .5em">
 	<div class="lo-c">Installed Locally</div>
 	<div class="lo-c lo-maxgrow">{% highlight "bash" %}$env:DEBUG="Eleventy*"; npx @11ty/eleventy{% endhighlight %}</div>
@@ -54,8 +60,6 @@ What is the difference between Local and [Global installation](/docs/global-inst
 	<div class="lo-c lo-maxgrow">{% highlight "bash" %}$env:DEBUG="Eleventy*"; eleventy{% endhighlight %}</div>
 </div>
 `
-
-Read more about [Windows environment variables](https://www.npmjs.com/package/debug#windows-command-prompt-notes).
 
 ## Learn More
 
