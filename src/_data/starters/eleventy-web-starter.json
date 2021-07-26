@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/scottishstoater/eleventy-web-starter",
+	"name": "Eleventy Web Starter",
+	"description": "A lightweight Eleventy boilerplate utilising, esbuild Tailwind CSS and Post CSS.",
+	"author": "scottishstoater",
+	"demo": "https://eleventywebstarter.netlify.app"
+}
