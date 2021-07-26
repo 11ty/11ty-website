@@ -1,0 +1,5 @@
+{
+	"npm": "@orchidjs/eleventy-plugin-ids",
+	"author": "oyejorge",
+	"description": "Add ids to html headings and other elements"
+}
