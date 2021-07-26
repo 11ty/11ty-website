@@ -10,10 +10,12 @@ Configuration is an optional feature. Add an `.eleventy.js` file to root directo
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = {
-  dir: {
-    input: "views",
-    output: "dist"
+module.exports = function(eleventyConfig) {
+  return {
+    dir: {
+      input: "views",
+      output: "dist"
+    }
   }
 };
 ```
@@ -99,10 +101,12 @@ npx @11ty/eleventy --input=views
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = {
+module.exports = function(eleventyConfig) {
+  return {
     dir: {
-        input: "views"
+      input: "views"
     }
+  }
 };
 ```
 
@@ -123,11 +127,13 @@ The includes directory is meant for [Eleventy layouts](/docs/layouts/), include 
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = {
+module.exports = function(eleventyConfig) {
+  return {
     dir: {
-        // ⚠️ This value is relative to your input directory.
-        includes: "my_includes"
+      // ⚠️ This value is relative to your input directory.
+      includes: "my_includes"
     }
+  }
 };
 ```
 
@@ -152,12 +158,14 @@ This configuration option is optional but useful if you want your [Eleventy layo
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = {
+module.exports = function(eleventyConfig) {
+  return {
     dir: {
-        // ⚠️ These values are both relative to your input directory.
-        includes: "_includes",
-        layouts: "_layouts"
+      // ⚠️ These values are both relative to your input directory.
+      includes: "_includes",
+      layouts: "_layouts"
     }
+  }
 };
 ```
 
@@ -179,11 +187,13 @@ Controls the directory inside which the global data template files, available to
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = {
+module.exports = function(eleventyConfig) {
+  return {
     dir: {
-        // ⚠️ This value is relative to your input directory.
-        data: "lore"
+      // ⚠️ This value is relative to your input directory.
+      data: "lore"
     }
+  }
 };
 ```
 
@@ -203,10 +213,12 @@ Controls the directory inside which the finished templates will be written to.
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = {
+module.exports = function(eleventyConfig) {
+  return {
     dir: {
-        output: "dist"
+      output: "dist"
     }
+  }
 };
 ```
 
@@ -227,8 +239,10 @@ The `dir.data` global data files run through this template engine before transfo
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = {
-  "dataTemplateEngine": "njk"
+module.exports = function(eleventyConfig) {
+  return {
+    "dataTemplateEngine": "njk"
+  }
 };
 ```
 
@@ -248,8 +262,10 @@ Markdown files run through this template engine before transforming to HTML.
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = {
+module.exports = function(eleventyConfig) {
+  return {
     markdownTemplateEngine: "njk"
+  }
 };
 ```
 
@@ -269,8 +285,10 @@ HTML templates run through this template engine before transforming to (better) 
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = {
+module.exports = function(eleventyConfig) {
+  return {
     htmlTemplateEngine: "njk"
+  }
 };
 ```
 
@@ -291,8 +309,10 @@ Specify which types of templates should be transformed.
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = {
+module.exports = function(eleventyConfig) {
+  return {
     templateFormats: ["html", "liquid", "njk"]
+  }
 };
 ```
 
@@ -359,8 +379,10 @@ If your site lives in a different subdirectory (particularly useful with GitHub 
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = {
+module.exports = function(eleventyConfig) {
+  return {
     pathPrefix: "/eleventy-base-blog/"
+  }
 };
 ```
 
@@ -386,8 +408,10 @@ If an HTML template has matching input and output directories, index.html files 
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = {
+module.exports = function(eleventyConfig) {
+  return {
     htmlOutputSuffix: "-o"
+  }
 };
 ```
 
@@ -406,8 +430,10 @@ When using [Template and Directory Specific Data Files](/docs/data-template-dir/
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = {
+module.exports = function(eleventyConfig) {
+  return {
     jsDataFileSuffix: ".11tydata"
+  }
 };
 ```
 
