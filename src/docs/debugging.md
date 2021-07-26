@@ -59,3 +59,7 @@ The commands above limit the messages from `debug` to Eleventy specific things w
 ### Analyze Performance
 
 {% addedin "0.11.0" %} Read more about how to [use `debug` to analyze the performance of your Eleventy build](/docs/debug-performance/).
+
+## Debug individual variables
+
+{% addedin "0.11.0" %} In addition to using `debug`, you can use the global filter [`log`](/docs/filters/log) to `console.log` anything from inside a template file.
