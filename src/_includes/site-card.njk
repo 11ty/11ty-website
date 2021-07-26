@@ -8,10 +8,33 @@
     <div class="sites-site-lighthouse"><speedlify-score raw-data='{{ siteData | toJSON | safe }}'></speedlify-score></div>
 {%- endif %}
   </a>
+
+{%- set sourceUrl = site.source_url %}
+{%- if not sourceUrl and site.url and (site.url.startsWith("https://github.com/") or site.url.startsWith("https://gitlab.com/")) %}
+  {%- set sourceUrl = site.url %}
+{%- endif %}
+
+{%- if site.url.startsWith("https://glitch.com/") %}
+  {%- set glitchUrl = site.url %}
+{%- endif %}
+
+<ul class="inlinelist inlinelist-sm">
+  {%- if sourceUrl %}
+  {%- set stackblitzUrl = sourceUrl | getStackblitzUrl(site.npmStartScript) %}
+  <li class="inlinelist-item"><a href="{{ sourceUrl }}" class="elv-externalexempt">Source code</a></li>
+  <li class="inlinelist-item"><a href="https://app.netlify.com/start/deploy?repository={{ sourceUrl }}" class="elv-externalexempt">Deploy to Netlify</a></li>
+  {%- if stackblitzUrl %}
+  <li class="inlinelist-item"><a href="{{ stackblitzUrl }}" class="elv-externalexempt">Try on StackBlitz</a></li>
+  {%- endif %}
+  {%- endif %}
+  {%- if glitchUrl -%}
+  <li class="inlinelist-item"><a href="https://glitch.com/edit/#!/remix/{{ glitchUrl }}" class="elv-externalexempt">Remix on Glitch</a></li>
+  {%- endif %}
+</ul>
+
 {%- if site.description %}
   <div class="sites-site-description">
-    {%- if site.official %}<strong>Official Starter</strong> · {% endif -%}
-    {%- if site.url and site.url != site.demo %}<a href="{{ site.url }}">Source code</a> · {% endif -%}
+    {%- if site.official %}<strong>🎈 Official Starter</strong> · {% endif -%}
     {{ site.description }}
   </div>
 {%- endif %}

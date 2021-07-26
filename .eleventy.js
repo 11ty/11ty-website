@@ -638,6 +638,13 @@ to:
 		}
 	});
 
+	eleventyConfig.addFilter("getStackblitzUrl", function(url, cmd) {
+		if(url.startsWith("https://github.com/")) {
+			let s = url.split("/");
+			return `https://stackblitz.com/github/${s[3]}/${s[4]}${cmd ? `?terminal=${encodeURIComponent(cmd)}` : ""}`;
+		}
+	})
+
 	return {
 		dir: {
 			input: "src",

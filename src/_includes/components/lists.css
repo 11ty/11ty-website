@@ -276,3 +276,12 @@ h2 .numberflag:after {
 .inlinelist-no-nest ol {
 	display: none;
 }
+
+/* Small list */
+.inlinelist-sm {
+	font-size: 0.6666666666667em; /* 12px /18 */
+}
+.inlinelist-sm .inlinelist-item {
+	font-family: system-ui, -apple-system, sans-serif;
+	font-weight: 600;
+}
