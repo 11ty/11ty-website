@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/loctran016/eleventy-kickstart-blog",
+	"name": "Eleventy Kickstart Blog",
+	"description": "Kickstart your website with this production-ready template using 11ty, the new vite, tailwindcss and daisyui.",
+	"author": "LocTran016",
+	"demo": "https://eleventy-kickstart-blog.vercel.app/"
+}
