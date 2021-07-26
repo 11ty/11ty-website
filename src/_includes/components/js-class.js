@@ -5,4 +5,8 @@ if("classList" in document.documentElement) {
 	if ("open" in document.createElement("details")) {
 		docEl.classList.add("supports-detailssummary");
 	}
+
+	if ("chrome" in window) {
+		docEl.classList.add("stackblitz");
+	}
 }

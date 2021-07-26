@@ -162,3 +162,10 @@
 .sites-site-vert .sites-site-lighthouse .speedlify-score {
 	background-color: #fff;
 }
+
+.stackblitz-link.stackblitz-link.stackblitz-link {
+	display: none;
+}
+.stackblitz .stackblitz-link.stackblitz-link {
+	display: inline;
+}
