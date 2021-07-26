@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-plantuml",
+	"author": "awaragi",
+	"description": "allows processing of Plantuml markdown code blocks into beautiful diagrams"
+}
