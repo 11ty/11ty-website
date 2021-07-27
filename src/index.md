@@ -47,6 +47,7 @@ Run `eleventy --serve` to start up a web server. Then open `http://localhost:808
 <div class="sites-vert">
   <div class="lo-grid">
 {% for key, site in sites -%}{% if site.twitter and site.disabled != true and site.url and site.featured and site.superfeatured -%}
+  {%- set hideRelatedLinks = true %}
   {% include "site-card.njk" %}
 {% endif %}{%- endfor %}
   </div>

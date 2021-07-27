@@ -18,6 +18,7 @@
   {%- set glitchUrl = site.url %}
 {%- endif %}
 
+{%- if not hideRelatedLinks %}
 <ul class="inlinelist inlinelist-sm">
   {%- if sourceUrl %}
   {%- set stackblitzUrl = sourceUrl | getStackblitzUrl(site.npmStartScript) %}
@@ -31,6 +32,7 @@
   <li class="inlinelist-item"><a href="https://glitch.com/edit/#!/remix/{{ glitchUrl }}" class="elv-externalexempt">Remix on Glitch</a></li>
   {%- endif %}
 </ul>
+{%- endif %}
 
 {%- if site.description %}
   <div class="sites-site-description">
