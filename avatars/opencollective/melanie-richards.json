@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/melanie-richards.avif 90w",
       "filename": "melanie-richards.avif",
       "outputPath": "src/img/avatars/opencollective/melanie-richards.avif",
-      "size": 976
+      "size": 991
     }
   ],
   "webp": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/melanie-richards.jpeg 90w",
       "filename": "melanie-richards.jpeg",
       "outputPath": "src/img/avatars/opencollective/melanie-richards.jpeg",
-      "size": 2213
+      "size": 2212
     }
   ],
   "slug": "melanie-richards"

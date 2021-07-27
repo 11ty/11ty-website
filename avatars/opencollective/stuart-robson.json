@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/stuart-robson.avif 90w",
       "filename": "stuart-robson.avif",
       "outputPath": "src/img/avatars/opencollective/stuart-robson.avif",
-      "size": 1318
+      "size": 1335
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/stuart-robson.webp 90w",
       "filename": "stuart-robson.webp",
       "outputPath": "src/img/avatars/opencollective/stuart-robson.webp",
-      "size": 2040
+      "size": 1986
     }
   ],
   "jpeg": [

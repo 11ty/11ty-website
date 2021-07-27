@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/buskers-bern.avif 90w",
       "filename": "buskers-bern.avif",
       "outputPath": "src/img/avatars/opencollective/buskers-bern.avif",
-      "size": 790
+      "size": 831
     }
   ],
   "webp": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/buskers-bern.jpeg 90w",
       "filename": "buskers-bern.jpeg",
       "outputPath": "src/img/avatars/opencollective/buskers-bern.jpeg",
-      "size": 2004
+      "size": 1998
     }
   ],
   "slug": "buskers-bern"

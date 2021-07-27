@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/mike-aparicio.avif 90w",
       "filename": "mike-aparicio.avif",
       "outputPath": "src/img/avatars/opencollective/mike-aparicio.avif",
-      "size": 1353
+      "size": 1383
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/mike-aparicio.webp 90w",
       "filename": "mike-aparicio.webp",
       "outputPath": "src/img/avatars/opencollective/mike-aparicio.webp",
-      "size": 2074
+      "size": 2056
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/mike-aparicio.jpeg 90w",
       "filename": "mike-aparicio.jpeg",
       "outputPath": "src/img/avatars/opencollective/mike-aparicio.jpeg",
-      "size": 2706
+      "size": 2703
     }
   ],
   "slug": "mike-aparicio"

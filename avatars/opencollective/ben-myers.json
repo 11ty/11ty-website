@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/ben-myers.avif 90w",
       "filename": "ben-myers.avif",
       "outputPath": "src/img/avatars/opencollective/ben-myers.avif",
-      "size": 1476
+      "size": 1509
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/ben-myers.webp 90w",
       "filename": "ben-myers.webp",
       "outputPath": "src/img/avatars/opencollective/ben-myers.webp",
-      "size": 2244
+      "size": 2256
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/ben-myers.jpeg 90w",
       "filename": "ben-myers.jpeg",
       "outputPath": "src/img/avatars/opencollective/ben-myers.jpeg",
-      "size": 2781
+      "size": 2780
     }
   ],
   "slug": "ben-myers"

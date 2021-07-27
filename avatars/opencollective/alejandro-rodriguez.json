@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/alejandro-rodriguez.avif 90w",
       "filename": "alejandro-rodriguez.avif",
       "outputPath": "src/img/avatars/opencollective/alejandro-rodriguez.avif",
-      "size": 1512
+      "size": 1528
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/alejandro-rodriguez.webp 90w",
       "filename": "alejandro-rodriguez.webp",
       "outputPath": "src/img/avatars/opencollective/alejandro-rodriguez.webp",
-      "size": 2178
+      "size": 2146
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/alejandro-rodriguez.jpeg 90w",
       "filename": "alejandro-rodriguez.jpeg",
       "outputPath": "src/img/avatars/opencollective/alejandro-rodriguez.jpeg",
-      "size": 2621
+      "size": 2616
     }
   ],
   "slug": "alejandro-rodriguez"

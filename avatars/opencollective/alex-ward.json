@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/alex-ward.avif 90w",
       "filename": "alex-ward.avif",
       "outputPath": "src/img/avatars/opencollective/alex-ward.avif",
-      "size": 1141
+      "size": 1164
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/alex-ward.webp 90w",
       "filename": "alex-ward.webp",
       "outputPath": "src/img/avatars/opencollective/alex-ward.webp",
-      "size": 1660
+      "size": 1696
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/alex-ward.jpeg 90w",
       "filename": "alex-ward.jpeg",
       "outputPath": "src/img/avatars/opencollective/alex-ward.jpeg",
-      "size": 2363
+      "size": 2368
     }
   ],
   "slug": "alex-ward"

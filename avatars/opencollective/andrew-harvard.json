@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/andrew-harvard.avif 90w",
       "filename": "andrew-harvard.avif",
       "outputPath": "src/img/avatars/opencollective/andrew-harvard.avif",
-      "size": 923
+      "size": 935
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/andrew-harvard.webp 90w",
       "filename": "andrew-harvard.webp",
       "outputPath": "src/img/avatars/opencollective/andrew-harvard.webp",
-      "size": 1276
+      "size": 1274
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/andrew-harvard.jpeg 90w",
       "filename": "andrew-harvard.jpeg",
       "outputPath": "src/img/avatars/opencollective/andrew-harvard.jpeg",
-      "size": 1943
+      "size": 1937
     }
   ],
   "slug": "andrew-harvard"

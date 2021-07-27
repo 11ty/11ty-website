@@ -95,7 +95,9 @@ async function fetch(entry) {
 
   console.log( "Found", twitterUsernames.size, "usernames" );
 
-  let allTwitterUrls = await getTwitterAvatarUrl(Array.from(twitterUsernames));
+  let allTwitterUrls = await getTwitterAvatarUrl(Array.from(twitterUsernames), {
+		twitterApiVersion: 1
+	});
 	for(let entry of allTwitterUrls) {
 		await fetch(entry);
 	}

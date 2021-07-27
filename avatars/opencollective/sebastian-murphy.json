@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/sebastian-murphy.avif 90w",
       "filename": "sebastian-murphy.avif",
       "outputPath": "src/img/avatars/opencollective/sebastian-murphy.avif",
-      "size": 1143
+      "size": 1169
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/sebastian-murphy.webp 90w",
       "filename": "sebastian-murphy.webp",
       "outputPath": "src/img/avatars/opencollective/sebastian-murphy.webp",
-      "size": 1700
+      "size": 1692
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/sebastian-murphy.jpeg 90w",
       "filename": "sebastian-murphy.jpeg",
       "outputPath": "src/img/avatars/opencollective/sebastian-murphy.jpeg",
-      "size": 2415
+      "size": 2414
     }
   ],
   "slug": "sebastian-murphy"

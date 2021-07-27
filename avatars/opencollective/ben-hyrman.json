@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/ben-hyrman.avif 90w",
       "filename": "ben-hyrman.avif",
       "outputPath": "src/img/avatars/opencollective/ben-hyrman.avif",
-      "size": 1054
+      "size": 1076
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/ben-hyrman.webp 90w",
       "filename": "ben-hyrman.webp",
       "outputPath": "src/img/avatars/opencollective/ben-hyrman.webp",
-      "size": 1576
+      "size": 1566
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/ben-hyrman.jpeg 90w",
       "filename": "ben-hyrman.jpeg",
       "outputPath": "src/img/avatars/opencollective/ben-hyrman.jpeg",
-      "size": 2308
+      "size": 2296
     }
   ],
   "slug": "ben-hyrman"

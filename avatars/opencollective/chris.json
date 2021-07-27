@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/chris.avif 90w",
       "filename": "chris.avif",
       "outputPath": "src/img/avatars/opencollective/chris.avif",
-      "size": 2329
+      "size": 2336
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/chris.webp 90w",
       "filename": "chris.webp",
       "outputPath": "src/img/avatars/opencollective/chris.webp",
-      "size": 3424
+      "size": 3440
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/chris.jpeg 90w",
       "filename": "chris.jpeg",
       "outputPath": "src/img/avatars/opencollective/chris.jpeg",
-      "size": 3794
+      "size": 3797
     }
   ],
   "slug": "chris"

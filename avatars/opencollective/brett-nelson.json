@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/brett-nelson.avif 90w",
       "filename": "brett-nelson.avif",
       "outputPath": "src/img/avatars/opencollective/brett-nelson.avif",
-      "size": 922
+      "size": 904
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/brett-nelson.webp 90w",
       "filename": "brett-nelson.webp",
       "outputPath": "src/img/avatars/opencollective/brett-nelson.webp",
-      "size": 1380
+      "size": 1378
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/brett-nelson.jpeg 90w",
       "filename": "brett-nelson.jpeg",
       "outputPath": "src/img/avatars/opencollective/brett-nelson.jpeg",
-      "size": 2036
+      "size": 2033
     }
   ],
   "slug": "brett-nelson"

@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/devin-clark.avif 90w",
       "filename": "devin-clark.avif",
       "outputPath": "src/img/avatars/opencollective/devin-clark.avif",
-      "size": 981
+      "size": 999
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/devin-clark.webp 90w",
       "filename": "devin-clark.webp",
       "outputPath": "src/img/avatars/opencollective/devin-clark.webp",
-      "size": 1446
+      "size": 1432
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/devin-clark.jpeg 90w",
       "filename": "devin-clark.jpeg",
       "outputPath": "src/img/avatars/opencollective/devin-clark.jpeg",
-      "size": 2166
+      "size": 2165
     }
   ],
   "slug": "devin-clark"

@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/curt-hasselschwert.avif 90w",
       "filename": "curt-hasselschwert.avif",
       "outputPath": "src/img/avatars/opencollective/curt-hasselschwert.avif",
-      "size": 1012
+      "size": 1036
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/curt-hasselschwert.webp 90w",
       "filename": "curt-hasselschwert.webp",
       "outputPath": "src/img/avatars/opencollective/curt-hasselschwert.webp",
-      "size": 1414
+      "size": 1404
     }
   ],
   "jpeg": [

@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/nikita-dubko.avif 90w",
       "filename": "nikita-dubko.avif",
       "outputPath": "src/img/avatars/opencollective/nikita-dubko.avif",
-      "size": 1383
+      "size": 1413
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/nikita-dubko.webp 90w",
       "filename": "nikita-dubko.webp",
       "outputPath": "src/img/avatars/opencollective/nikita-dubko.webp",
-      "size": 1968
+      "size": 1954
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/nikita-dubko.jpeg 90w",
       "filename": "nikita-dubko.jpeg",
       "outputPath": "src/img/avatars/opencollective/nikita-dubko.jpeg",
-      "size": 2562
+      "size": 2556
     }
   ],
   "slug": "nikita-dubko"

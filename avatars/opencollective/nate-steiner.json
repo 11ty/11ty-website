@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/nate-steiner.avif 90w",
       "filename": "nate-steiner.avif",
       "outputPath": "src/img/avatars/opencollective/nate-steiner.avif",
-      "size": 956
+      "size": 972
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/nate-steiner.webp 90w",
       "filename": "nate-steiner.webp",
       "outputPath": "src/img/avatars/opencollective/nate-steiner.webp",
-      "size": 1340
+      "size": 1326
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/nate-steiner.jpeg 90w",
       "filename": "nate-steiner.jpeg",
       "outputPath": "src/img/avatars/opencollective/nate-steiner.jpeg",
-      "size": 2015
+      "size": 2017
     }
   ],
   "slug": "nate-steiner"

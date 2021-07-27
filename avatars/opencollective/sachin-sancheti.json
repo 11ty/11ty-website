@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/sachin-sancheti.avif 90w",
       "filename": "sachin-sancheti.avif",
       "outputPath": "src/img/avatars/opencollective/sachin-sancheti.avif",
-      "size": 1018
+      "size": 1038
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/sachin-sancheti.webp 90w",
       "filename": "sachin-sancheti.webp",
       "outputPath": "src/img/avatars/opencollective/sachin-sancheti.webp",
-      "size": 1438
+      "size": 1430
     }
   ],
   "jpeg": [

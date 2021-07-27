@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/makoto-kawasaki.avif 90w",
       "filename": "makoto-kawasaki.avif",
       "outputPath": "src/img/avatars/opencollective/makoto-kawasaki.avif",
-      "size": 649
+      "size": 676
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/makoto-kawasaki.webp 90w",
       "filename": "makoto-kawasaki.webp",
       "outputPath": "src/img/avatars/opencollective/makoto-kawasaki.webp",
-      "size": 908
+      "size": 916
     }
   ],
   "jpeg": [

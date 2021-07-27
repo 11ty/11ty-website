@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/jerome-coupe.avif 90w",
       "filename": "jerome-coupe.avif",
       "outputPath": "src/img/avatars/opencollective/jerome-coupe.avif",
-      "size": 1838
+      "size": 1856
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/jerome-coupe.webp 90w",
       "filename": "jerome-coupe.webp",
       "outputPath": "src/img/avatars/opencollective/jerome-coupe.webp",
-      "size": 2536
+      "size": 2526
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/jerome-coupe.jpeg 90w",
       "filename": "jerome-coupe.jpeg",
       "outputPath": "src/img/avatars/opencollective/jerome-coupe.jpeg",
-      "size": 3296
+      "size": 3287
     }
   ],
   "slug": "jerome-coupe"

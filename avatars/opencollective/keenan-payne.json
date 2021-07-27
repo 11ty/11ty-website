@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/keenan-payne.avif 90w",
       "filename": "keenan-payne.avif",
       "outputPath": "src/img/avatars/opencollective/keenan-payne.avif",
-      "size": 1760
+      "size": 1765
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/keenan-payne.webp 90w",
       "filename": "keenan-payne.webp",
       "outputPath": "src/img/avatars/opencollective/keenan-payne.webp",
-      "size": 2610
+      "size": 2604
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/keenan-payne.jpeg 90w",
       "filename": "keenan-payne.jpeg",
       "outputPath": "src/img/avatars/opencollective/keenan-payne.jpeg",
-      "size": 3059
+      "size": 3048
     }
   ],
   "slug": "keenan-payne"

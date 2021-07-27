@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/michelle-barker.avif 90w",
       "filename": "michelle-barker.avif",
       "outputPath": "src/img/avatars/opencollective/michelle-barker.avif",
-      "size": 1166
+      "size": 1178
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/michelle-barker.webp 90w",
       "filename": "michelle-barker.webp",
       "outputPath": "src/img/avatars/opencollective/michelle-barker.webp",
-      "size": 1746
+      "size": 1732
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/michelle-barker.jpeg 90w",
       "filename": "michelle-barker.jpeg",
       "outputPath": "src/img/avatars/opencollective/michelle-barker.jpeg",
-      "size": 2427
+      "size": 2420
     }
   ],
   "slug": "michelle-barker"

@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/dave-powers.avif 90w",
       "filename": "dave-powers.avif",
       "outputPath": "src/img/avatars/opencollective/dave-powers.avif",
-      "size": 1273
+      "size": 1285
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/dave-powers.webp 90w",
       "filename": "dave-powers.webp",
       "outputPath": "src/img/avatars/opencollective/dave-powers.webp",
-      "size": 1966
+      "size": 1984
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/dave-powers.jpeg 90w",
       "filename": "dave-powers.jpeg",
       "outputPath": "src/img/avatars/opencollective/dave-powers.jpeg",
-      "size": 2605
+      "size": 2587
     }
   ],
   "slug": "dave-powers"

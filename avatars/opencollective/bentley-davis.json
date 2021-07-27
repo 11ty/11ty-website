@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/bentley-davis.avif 90w",
       "filename": "bentley-davis.avif",
       "outputPath": "src/img/avatars/opencollective/bentley-davis.avif",
-      "size": 946
+      "size": 939
     }
   ],
   "webp": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/bentley-davis.jpeg 90w",
       "filename": "bentley-davis.jpeg",
       "outputPath": "src/img/avatars/opencollective/bentley-davis.jpeg",
-      "size": 2041
+      "size": 2038
     }
   ],
   "slug": "bentley-davis"

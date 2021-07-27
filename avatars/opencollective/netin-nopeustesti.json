@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/netin-nopeustesti.avif 90w",
       "filename": "netin-nopeustesti.avif",
       "outputPath": "src/img/avatars/opencollective/netin-nopeustesti.avif",
-      "size": 894
+      "size": 939
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/netin-nopeustesti.webp 90w",
       "filename": "netin-nopeustesti.webp",
       "outputPath": "src/img/avatars/opencollective/netin-nopeustesti.webp",
-      "size": 1278
+      "size": 1268
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/netin-nopeustesti.jpeg 90w",
       "filename": "netin-nopeustesti.jpeg",
       "outputPath": "src/img/avatars/opencollective/netin-nopeustesti.jpeg",
-      "size": 1937
+      "size": 1932
     }
   ],
   "slug": "netin-nopeustesti"

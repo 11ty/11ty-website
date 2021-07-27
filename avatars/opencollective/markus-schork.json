@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/markus-schork.avif 90w",
       "filename": "markus-schork.avif",
       "outputPath": "src/img/avatars/opencollective/markus-schork.avif",
-      "size": 715
+      "size": 749
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/markus-schork.webp 90w",
       "filename": "markus-schork.webp",
       "outputPath": "src/img/avatars/opencollective/markus-schork.webp",
-      "size": 766
+      "size": 762
     }
   ],
   "jpeg": [

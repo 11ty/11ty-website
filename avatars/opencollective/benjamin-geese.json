@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/benjamin-geese.avif 90w",
       "filename": "benjamin-geese.avif",
       "outputPath": "src/img/avatars/opencollective/benjamin-geese.avif",
-      "size": 904
+      "size": 936
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/benjamin-geese.webp 90w",
       "filename": "benjamin-geese.webp",
       "outputPath": "src/img/avatars/opencollective/benjamin-geese.webp",
-      "size": 1234
+      "size": 1228
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/benjamin-geese.jpeg 90w",
       "filename": "benjamin-geese.jpeg",
       "outputPath": "src/img/avatars/opencollective/benjamin-geese.jpeg",
-      "size": 2015
+      "size": 2014
     }
   ],
   "slug": "benjamin-geese"

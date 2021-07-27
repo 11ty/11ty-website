@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/kevin-healy.avif 90w",
       "filename": "kevin-healy.avif",
       "outputPath": "src/img/avatars/opencollective/kevin-healy.avif",
-      "size": 814
+      "size": 825
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/kevin-healy.webp 90w",
       "filename": "kevin-healy.webp",
       "outputPath": "src/img/avatars/opencollective/kevin-healy.webp",
-      "size": 1084
+      "size": 1096
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/kevin-healy.jpeg 90w",
       "filename": "kevin-healy.jpeg",
       "outputPath": "src/img/avatars/opencollective/kevin-healy.jpeg",
-      "size": 1765
+      "size": 1767
     }
   ],
   "slug": "kevin-healy"

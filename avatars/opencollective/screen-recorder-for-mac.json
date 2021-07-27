@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/screen-recorder-for-mac.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/screen-recorder-for-mac.avif 90w",
+      "filename": "screen-recorder-for-mac.avif",
+      "outputPath": "src/img/avatars/opencollective/screen-recorder-for-mac.avif",
+      "size": 1125
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/screen-recorder-for-mac.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/screen-recorder-for-mac.webp 90w",
+      "filename": "screen-recorder-for-mac.webp",
+      "outputPath": "src/img/avatars/opencollective/screen-recorder-for-mac.webp",
+      "size": 1316
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/screen-recorder-for-mac.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/screen-recorder-for-mac.jpeg 90w",
+      "filename": "screen-recorder-for-mac.jpeg",
+      "outputPath": "src/img/avatars/opencollective/screen-recorder-for-mac.jpeg",
+      "size": 1870
+    }
+  ],
+  "slug": "screen-recorder-for-mac"
+}

@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/horacio-gonzalez.avif 90w",
       "filename": "horacio-gonzalez.avif",
       "outputPath": "src/img/avatars/opencollective/horacio-gonzalez.avif",
-      "size": 862
+      "size": 897
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/horacio-gonzalez.webp 90w",
       "filename": "horacio-gonzalez.webp",
       "outputPath": "src/img/avatars/opencollective/horacio-gonzalez.webp",
-      "size": 1190
+      "size": 1184
     }
   ],
   "jpeg": [

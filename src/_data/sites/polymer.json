@@ -3,6 +3,5 @@
 	"name": "Polymer Lit Element Starter",
 	"description": "Sample component project using LitElement with TypeScript",
 	"source_url": "https://github.com/PolymerLabs/lit-element-starter-ts",
-	"twitter": "polymer",
 	"excludedFromLeaderboards": true
 }

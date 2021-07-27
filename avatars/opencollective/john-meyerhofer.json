@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/john-meyerhofer.avif 90w",
       "filename": "john-meyerhofer.avif",
       "outputPath": "src/img/avatars/opencollective/john-meyerhofer.avif",
-      "size": 841
+      "size": 873
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/john-meyerhofer.webp 90w",
       "filename": "john-meyerhofer.webp",
       "outputPath": "src/img/avatars/opencollective/john-meyerhofer.webp",
-      "size": 1208
+      "size": 1190
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/john-meyerhofer.jpeg 90w",
       "filename": "john-meyerhofer.jpeg",
       "outputPath": "src/img/avatars/opencollective/john-meyerhofer.jpeg",
-      "size": 1861
+      "size": 1854
     }
   ],
   "slug": "john-meyerhofer"

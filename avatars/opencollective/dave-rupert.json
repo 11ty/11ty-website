@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/dave-rupert.avif 90w",
       "filename": "dave-rupert.avif",
       "outputPath": "src/img/avatars/opencollective/dave-rupert.avif",
-      "size": 1211
+      "size": 1230
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/dave-rupert.webp 90w",
       "filename": "dave-rupert.webp",
       "outputPath": "src/img/avatars/opencollective/dave-rupert.webp",
-      "size": 1740
+      "size": 1738
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/dave-rupert.jpeg 90w",
       "filename": "dave-rupert.jpeg",
       "outputPath": "src/img/avatars/opencollective/dave-rupert.jpeg",
-      "size": 2477
+      "size": 2470
     }
   ],
   "slug": "dave-rupert"

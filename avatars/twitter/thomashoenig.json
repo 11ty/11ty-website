@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/twitter/dee160ee-90.avif 90w",
       "filename": "dee160ee-90.avif",
       "outputPath": "src/img/avatars/twitter/dee160ee-90.avif",
-      "size": 467
+      "size": 476
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/twitter/dee160ee-90.webp 90w",
       "filename": "dee160ee-90.webp",
       "outputPath": "src/img/avatars/twitter/dee160ee-90.webp",
-      "size": 374
+      "size": 380
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/twitter/dee160ee-90.jpeg 90w",
       "filename": "dee160ee-90.jpeg",
       "outputPath": "src/img/avatars/twitter/dee160ee-90.jpeg",
-      "size": 956
+      "size": 950
     }
   ]
 }

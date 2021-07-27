@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/swissdev-jobs.webp 90w",
       "filename": "swissdev-jobs.webp",
       "outputPath": "src/img/avatars/opencollective/swissdev-jobs.webp",
-      "size": 1802
+      "size": 1804
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/swissdev-jobs.jpeg 90w",
       "filename": "swissdev-jobs.jpeg",
       "outputPath": "src/img/avatars/opencollective/swissdev-jobs.jpeg",
-      "size": 2715
+      "size": 2712
     }
   ],
   "slug": "swissdev-jobs"

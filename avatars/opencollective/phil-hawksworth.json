@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/phil-hawksworth.avif 90w",
       "filename": "phil-hawksworth.avif",
       "outputPath": "src/img/avatars/opencollective/phil-hawksworth.avif",
-      "size": 712
+      "size": 721
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/phil-hawksworth.webp 90w",
       "filename": "phil-hawksworth.webp",
       "outputPath": "src/img/avatars/opencollective/phil-hawksworth.webp",
-      "size": 904
+      "size": 910
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/phil-hawksworth.jpeg 90w",
       "filename": "phil-hawksworth.jpeg",
       "outputPath": "src/img/avatars/opencollective/phil-hawksworth.jpeg",
-      "size": 1631
+      "size": 1612
     }
   ],
   "slug": "phil-hawksworth"

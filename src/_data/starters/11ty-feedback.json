@@ -2,6 +2,6 @@
 	"url": "https://github.com/tmns/11ty-feedback",
 	"name": "11ty Feedback",
 	"description": "An 11ty starter project for carrying out better feedback exchanges with coworkers, clients, and so on.",
-	"author": "tmns",
+	"author": "__tmns",
 	"demo": "https://11ty-feedback.netlify.app/"
 }

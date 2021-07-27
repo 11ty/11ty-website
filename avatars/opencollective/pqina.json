@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/pqina.avif 90w",
       "filename": "pqina.avif",
       "outputPath": "src/img/avatars/opencollective/pqina.avif",
-      "size": 882
+      "size": 912
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/pqina.webp 90w",
       "filename": "pqina.webp",
       "outputPath": "src/img/avatars/opencollective/pqina.webp",
-      "size": 1256
+      "size": 1250
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/pqina.jpeg 90w",
       "filename": "pqina.jpeg",
       "outputPath": "src/img/avatars/opencollective/pqina.jpeg",
-      "size": 1728
+      "size": 1735
     }
   ],
   "slug": "pqina"

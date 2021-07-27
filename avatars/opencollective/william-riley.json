@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/william-riley.avif 90w",
       "filename": "william-riley.avif",
       "outputPath": "src/img/avatars/opencollective/william-riley.avif",
-      "size": 945
+      "size": 975
     }
   ],
   "webp": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/william-riley.jpeg 90w",
       "filename": "william-riley.jpeg",
       "outputPath": "src/img/avatars/opencollective/william-riley.jpeg",
-      "size": 2037
+      "size": 2027
     }
   ],
   "slug": "william-riley"

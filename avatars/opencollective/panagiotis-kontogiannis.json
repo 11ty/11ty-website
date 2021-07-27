@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/panagiotis-kontogiannis.avif 90w",
       "filename": "panagiotis-kontogiannis.avif",
       "outputPath": "src/img/avatars/opencollective/panagiotis-kontogiannis.avif",
-      "size": 1152
+      "size": 1182
     }
   ],
   "webp": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/panagiotis-kontogiannis.jpeg 90w",
       "filename": "panagiotis-kontogiannis.jpeg",
       "outputPath": "src/img/avatars/opencollective/panagiotis-kontogiannis.jpeg",
-      "size": 2456
+      "size": 2449
     }
   ],
   "slug": "panagiotis-kontogiannis"

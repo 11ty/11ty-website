@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/bridget-stewart.avif 90w",
       "filename": "bridget-stewart.avif",
       "outputPath": "src/img/avatars/opencollective/bridget-stewart.avif",
-      "size": 1246
+      "size": 1259
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/bridget-stewart.webp 90w",
       "filename": "bridget-stewart.webp",
       "outputPath": "src/img/avatars/opencollective/bridget-stewart.webp",
-      "size": 1830
+      "size": 1828
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/bridget-stewart.jpeg 90w",
       "filename": "bridget-stewart.jpeg",
       "outputPath": "src/img/avatars/opencollective/bridget-stewart.jpeg",
-      "size": 2565
+      "size": 2563
     }
   ],
   "slug": "bridget-stewart"

@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/ana-rodrigues.avif 90w",
       "filename": "ana-rodrigues.avif",
       "outputPath": "src/img/avatars/opencollective/ana-rodrigues.avif",
-      "size": 984
+      "size": 986
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/ana-rodrigues.webp 90w",
       "filename": "ana-rodrigues.webp",
       "outputPath": "src/img/avatars/opencollective/ana-rodrigues.webp",
-      "size": 1428
+      "size": 1418
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/ana-rodrigues.jpeg 90w",
       "filename": "ana-rodrigues.jpeg",
       "outputPath": "src/img/avatars/opencollective/ana-rodrigues.jpeg",
-      "size": 2161
+      "size": 2163
     }
   ],
   "slug": "ana-rodrigues"

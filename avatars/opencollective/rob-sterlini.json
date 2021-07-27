@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/rob-sterlini.webp 90w",
       "filename": "rob-sterlini.webp",
       "outputPath": "src/img/avatars/opencollective/rob-sterlini.webp",
-      "size": 2692
+      "size": 2650
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/rob-sterlini.jpeg 90w",
       "filename": "rob-sterlini.jpeg",
       "outputPath": "src/img/avatars/opencollective/rob-sterlini.jpeg",
-      "size": 3111
+      "size": 3098
     }
   ],
   "slug": "rob-sterlini"

@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/marcus-relacion.avif 90w",
       "filename": "marcus-relacion.avif",
       "outputPath": "src/img/avatars/opencollective/marcus-relacion.avif",
-      "size": 961
+      "size": 980
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/marcus-relacion.webp 90w",
       "filename": "marcus-relacion.webp",
       "outputPath": "src/img/avatars/opencollective/marcus-relacion.webp",
-      "size": 1354
+      "size": 1342
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/marcus-relacion.jpeg 90w",
       "filename": "marcus-relacion.jpeg",
       "outputPath": "src/img/avatars/opencollective/marcus-relacion.jpeg",
-      "size": 1979
+      "size": 1970
     }
   ],
   "slug": "marcus-relacion"

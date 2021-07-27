@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/david-robertson.avif 90w",
       "filename": "david-robertson.avif",
       "outputPath": "src/img/avatars/opencollective/david-robertson.avif",
-      "size": 1088
+      "size": 1123
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/david-robertson.webp 90w",
       "filename": "david-robertson.webp",
       "outputPath": "src/img/avatars/opencollective/david-robertson.webp",
-      "size": 1650
+      "size": 1654
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/david-robertson.jpeg 90w",
       "filename": "david-robertson.jpeg",
       "outputPath": "src/img/avatars/opencollective/david-robertson.jpeg",
-      "size": 2305
+      "size": 2300
     }
   ],
   "slug": "david-robertson"

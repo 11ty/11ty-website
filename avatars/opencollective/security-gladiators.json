@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/security-gladiators.avif 90w",
       "filename": "security-gladiators.avif",
       "outputPath": "src/img/avatars/opencollective/security-gladiators.avif",
-      "size": 764
+      "size": 775
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/security-gladiators.webp 90w",
       "filename": "security-gladiators.webp",
       "outputPath": "src/img/avatars/opencollective/security-gladiators.webp",
-      "size": 1070
+      "size": 1078
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/security-gladiators.jpeg 90w",
       "filename": "security-gladiators.jpeg",
       "outputPath": "src/img/avatars/opencollective/security-gladiators.jpeg",
-      "size": 1579
+      "size": 1573
     }
   ],
   "slug": "security-gladiators"

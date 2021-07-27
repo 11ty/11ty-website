@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/tianyu-ge.avif 90w",
       "filename": "tianyu-ge.avif",
       "outputPath": "src/img/avatars/opencollective/tianyu-ge.avif",
-      "size": 1167
+      "size": 1196
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/tianyu-ge.webp 90w",
       "filename": "tianyu-ge.webp",
       "outputPath": "src/img/avatars/opencollective/tianyu-ge.webp",
-      "size": 1624
+      "size": 1602
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/tianyu-ge.jpeg 90w",
       "filename": "tianyu-ge.jpeg",
       "outputPath": "src/img/avatars/opencollective/tianyu-ge.jpeg",
-      "size": 2352
+      "size": 2351
     }
   ],
   "slug": "tianyu-ge"

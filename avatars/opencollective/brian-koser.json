@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/brian-koser.avif 90w",
       "filename": "brian-koser.avif",
       "outputPath": "src/img/avatars/opencollective/brian-koser.avif",
-      "size": 1634
+      "size": 1629
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/brian-koser.webp 90w",
       "filename": "brian-koser.webp",
       "outputPath": "src/img/avatars/opencollective/brian-koser.webp",
-      "size": 2474
+      "size": 2508
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/brian-koser.jpeg 90w",
       "filename": "brian-koser.jpeg",
       "outputPath": "src/img/avatars/opencollective/brian-koser.jpeg",
-      "size": 3084
+      "size": 3071
     }
   ],
   "slug": "brian-koser"

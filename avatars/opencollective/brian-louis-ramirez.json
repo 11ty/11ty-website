@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/brian-louis-ramirez.avif 90w",
       "filename": "brian-louis-ramirez.avif",
       "outputPath": "src/img/avatars/opencollective/brian-louis-ramirez.avif",
-      "size": 1409
+      "size": 1417
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/brian-louis-ramirez.webp 90w",
       "filename": "brian-louis-ramirez.webp",
       "outputPath": "src/img/avatars/opencollective/brian-louis-ramirez.webp",
-      "size": 2024
+      "size": 2014
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/brian-louis-ramirez.jpeg 90w",
       "filename": "brian-louis-ramirez.jpeg",
       "outputPath": "src/img/avatars/opencollective/brian-louis-ramirez.jpeg",
-      "size": 2661
+      "size": 2652
     }
   ],
   "slug": "brian-louis-ramirez"

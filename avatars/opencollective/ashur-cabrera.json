@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/ashur-cabrera.avif 90w",
       "filename": "ashur-cabrera.avif",
       "outputPath": "src/img/avatars/opencollective/ashur-cabrera.avif",
-      "size": 937
+      "size": 962
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/ashur-cabrera.webp 90w",
       "filename": "ashur-cabrera.webp",
       "outputPath": "src/img/avatars/opencollective/ashur-cabrera.webp",
-      "size": 1384
+      "size": 1372
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/ashur-cabrera.jpeg 90w",
       "filename": "ashur-cabrera.jpeg",
       "outputPath": "src/img/avatars/opencollective/ashur-cabrera.jpeg",
-      "size": 2043
+      "size": 2046
     }
   ],
   "slug": "ashur-cabrera"

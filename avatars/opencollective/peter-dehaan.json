@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/peter-dehaan.avif 90w",
       "filename": "peter-dehaan.avif",
       "outputPath": "src/img/avatars/opencollective/peter-dehaan.avif",
-      "size": 1090
+      "size": 1118
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/peter-dehaan.webp 90w",
       "filename": "peter-dehaan.webp",
       "outputPath": "src/img/avatars/opencollective/peter-dehaan.webp",
-      "size": 1560
+      "size": 1544
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/peter-dehaan.jpeg 90w",
       "filename": "peter-dehaan.jpeg",
       "outputPath": "src/img/avatars/opencollective/peter-dehaan.jpeg",
-      "size": 2319
+      "size": 2314
     }
   ],
   "slug": "peter-dehaan"

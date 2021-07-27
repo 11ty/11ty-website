@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/john-meguerian.avif 90w",
       "filename": "john-meguerian.avif",
       "outputPath": "src/img/avatars/opencollective/john-meguerian.avif",
-      "size": 799
+      "size": 836
     }
   ],
   "webp": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/john-meguerian.jpeg 90w",
       "filename": "john-meguerian.jpeg",
       "outputPath": "src/img/avatars/opencollective/john-meguerian.jpeg",
-      "size": 1745
+      "size": 1733
     }
   ],
   "slug": "john-meguerian"

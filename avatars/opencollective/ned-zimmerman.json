@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/ned-zimmerman.avif 90w",
       "filename": "ned-zimmerman.avif",
       "outputPath": "src/img/avatars/opencollective/ned-zimmerman.avif",
-      "size": 1944
+      "size": 1934
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/ned-zimmerman.webp 90w",
       "filename": "ned-zimmerman.webp",
       "outputPath": "src/img/avatars/opencollective/ned-zimmerman.webp",
-      "size": 2774
+      "size": 2758
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/ned-zimmerman.jpeg 90w",
       "filename": "ned-zimmerman.jpeg",
       "outputPath": "src/img/avatars/opencollective/ned-zimmerman.jpeg",
-      "size": 3168
+      "size": 3164
     }
   ],
   "slug": "ned-zimmerman"

@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/scott-mccracken.avif 90w",
       "filename": "scott-mccracken.avif",
       "outputPath": "src/img/avatars/opencollective/scott-mccracken.avif",
-      "size": 1485
+      "size": 1510
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/scott-mccracken.webp 90w",
       "filename": "scott-mccracken.webp",
       "outputPath": "src/img/avatars/opencollective/scott-mccracken.webp",
-      "size": 2300
+      "size": 2296
     }
   ],
   "jpeg": [

@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/max-bock.avif 90w",
       "filename": "max-bock.avif",
       "outputPath": "src/img/avatars/opencollective/max-bock.avif",
-      "size": 865
+      "size": 890
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/max-bock.webp 90w",
       "filename": "max-bock.webp",
       "outputPath": "src/img/avatars/opencollective/max-bock.webp",
-      "size": 1160
+      "size": 1156
     }
   ],
   "jpeg": [
@@ -35,7 +35,7 @@
       "srcset": "/img/avatars/opencollective/max-bock.jpeg 90w",
       "filename": "max-bock.jpeg",
       "outputPath": "src/img/avatars/opencollective/max-bock.jpeg",
-      "size": 1908
+      "size": 1901
     }
   ],
   "slug": "max-bock"

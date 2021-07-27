@@ -9,7 +9,7 @@
       "srcset": "/img/avatars/opencollective/silvestar-bistrovic.avif 90w",
       "filename": "silvestar-bistrovic.avif",
       "outputPath": "src/img/avatars/opencollective/silvestar-bistrovic.avif",
-      "size": 922
+      "size": 948
     }
   ],
   "webp": [
@@ -22,7 +22,7 @@
       "srcset": "/img/avatars/opencollective/silvestar-bistrovic.webp 90w",
       "filename": "silvestar-bistrovic.webp",
       "outputPath": "src/img/avatars/opencollective/silvestar-bistrovic.webp",
-      "size": 1218
+      "size": 1226
     }
   ],
   "jpeg": [
