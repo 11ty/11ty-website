@@ -34,10 +34,9 @@ Valid `date` values:
 * `2016-01-01` or any other valid [YAML date value](https://yaml.org/type/timestamp.html) (leaving off the time assumes midnight in UTC, or `00:00:00Z`)
 * `"2016-01-01"` or any other valid UTC **string** that [Luxon’s `DateTime.fromISO`](https://moment.github.io/luxon/docs/manual/parsing.html#parsing-technical-formats) can parse (see also the [Luxon API docs](https://moment.github.io/luxon/docs/class/src/datetime.js~DateTime.html#static-method-fromISO)).
 
-If a `date` key is omitted from the file, the date is assumed to be:
+If a `date` key is omitted from the file, we then look for a `YYYY-MM-DD` format anywhere in the file name. ℹ️ [Note that starting in 1.0 for consistency with front matter formats file name date formats are now assumed to be UTC.](https://github.com/11ty/eleventy/pull/1752)
 
-1. If the file name has a `YYYY-MM-DD` format (anywhere), this date is used.
-1. File creation date.
+As a last resort, the file creation date is used. [Careful when relying on file creation dates on a deployment server](#collections-out-of-order-when-you-run-eleventy-on-your-server).
 
 {% callout "info" %}<strong>Trying to use <code>date</code> in your templates?</strong> The <code>date</code> value will likely not be of much use, since Eleventy performs no transformation on this front matter value. You probably want <code>page.date</code> instead. Check out <a href="/docs/data-eleventy-supplied/#page-variable-contents">the values available in the <code>page</code> variable</a>.{% endcallout %}
 
@@ -64,8 +63,7 @@ If you output the Date object in a template, it will convert it to a string for 
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 ```
-Using {% raw %}{{ page.date }}{% endraw %} will display a
-date using a local time zone like:
+Using {% raw %}{{ page.date }}{% endraw %} will display a date using a local time zone like:
 
 Sun Dec 31 2017 18:00:00 GMT-0600 (Central Standard Time)
 ```
@@ -83,7 +81,7 @@ display a date with a UTC time zone like:
 Mon, 01 Jan 2018 00:00:00 GMT
 ```
 
-You could very easily just add a `toUTCString` [filter in Liquid](/docs/filters/) to perform the same task.
+You could add your own `toUTCString` [filter in Liquid](/docs/filters/) to perform the same task.
 
 ## Collections out of order when you run Eleventy on your Server?
 
