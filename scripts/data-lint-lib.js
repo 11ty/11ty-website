@@ -107,9 +107,7 @@ module.exports.demosSchema = {
 		description: { type: "string" },
 		twitter: { type: "string", minLength: 1 },
 		source_url: { type: "string", format: "uri", minLength: 1 },
-		// TODO: This is generating the following warning:
-		//   strict mode: "items" is 1-tuple, but minItems or maxItems/additionalItems are not specified or different at path "#/properties/authoredBy"
-		authoredBy: { type: "array", minItems: 1, items: [{ type: "string" }] }
+		authoredBy: { type: "array", minItems: 1, items: { type: "string" } }
 	},
 	required: ["category", "name", "url"],
 	additionalProperties: false
