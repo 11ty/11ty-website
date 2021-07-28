@@ -127,8 +127,8 @@ testdata:
 ---
 <ol>
 {%- for item in pagination.items %}
-  <p>{{ item }}={{testdata[item] }}</p>
-{%- endfor %}
+  <li>{{ item }}={{testdata[item] }}</li>
+{% endfor -%}
 </ol>
 ```
 {% endraw %}
