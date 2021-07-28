@@ -95,12 +95,10 @@ module.exports.demosSchema = {
 	type: "object",
 	properties: {
 		// Required properties.
-		// TODO: This is generating the following warning:
-		//   strict mode: "items" is 1-tuple, but minItems or maxItems/additionalItems are not specified or different at path "#/properties/category"
 		category: {
 			type: "array",
 			minItems: 1,
-			items: [{ type: "string", enum: ["serverless"] }],
+			items: { type: "string", enum: ["serverless"] },
 			uniqueItems: true
 		},
 		name: { type: "string" },
