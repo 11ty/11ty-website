@@ -5,12 +5,13 @@ eleventyNavigation:
 ---
 # Configuration
 
-Configuration is an optional feature. Add an `.eleventy.js` file to root directory of your project to override these configuration options with your own preferences.
+Configuration files are optional. Add an `.eleventy.js` file to root directory of your project to configure Eleventy to your own project’s needs. It might look like this:
 
 {% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
+  // Return your Object options:
   return {
     dir: {
       input: "views",
@@ -20,27 +21,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-## Using the Configuration API
-
-If you expose your config as a function instead of an object literal, we’ll pass in a `config` argument that you can use!
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  // Add a filter using the Config API
-  eleventyConfig.addFilter( "myFilter", function() {});
-
-  // You can return your Config object (optional).
-  return {
-    dir: {
-      input: "views"
-    }
-  };
-};
-```
-
-This allows you further customization options using Eleventy’s provided helper methods.
+We support returning both a callback function (shown above) or an object literal (`module.exports = {}`). Callback functions are preferred and allow you further customization options using Eleventy’s provided helper methods.
 
 * Add [Filters](/docs/filters/).
 * Add [Shortcodes](/docs/shortcodes/).
@@ -53,12 +34,14 @@ This allows you further customization options using Eleventy’s provided helper
 
 <style>
 /* Hide the irrelevant stuff above this TOC in the document */
-.table-of-contents > ul > li:first-child,
-.table-of-contents > ul > li:first-child + li > a {
+.table-of-contents > ul {
+  list-style: none;
+  padding-left: 0;
+}
+.table-of-contents > ul > li:first-child > a {
   display: none;
 }
-.table-of-contents > ul > li:first-child + li > ul {
-  padding-left: 0;
+.table-of-contents > ul > li:first-child > ul {
   list-style: disc;
 }
 </style>
