@@ -12,7 +12,9 @@ relatedKey: pagination
 
 ## Paging an Array
 
-To iterate over a data set and create pages for individual chunks of data, use pagination. Enable in your template’s front matter by adding the `pagination` key. Consider the following template:
+To iterate over a data set and create pages for individual chunks of data, use pagination. Enable in your template’s front matter by adding the `pagination` key. 
+
+Consider the following template, which will result in two pages being created, each of which will display two items from `testdata`:
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
@@ -123,13 +125,13 @@ testdata:
 ---
 <ol>
 {%- for item in pagination.items %}
-  <li>{{ item }}</li>
-{% endfor -%}
+  <p>{{ item }}={{testdata[item] }}</p>
+{%- endfor %}
 </ol>
 ```
 {% endraw %}
 
-In this example, we would get 3 pages, with the paged items holding the object keys:
+In this example, we would get 3 pages that each print a key/value pair from `testdata`. The paged items hold the object keys:
 
 {% codetitle "JavaScript Object", "Syntax" %}
 
