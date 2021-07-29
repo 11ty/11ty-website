@@ -50,9 +50,8 @@ async function schemaLint(dir = "", ext = "*.json", schema = {}) {
 	if (errors.length) {
 		const err = new Error(`Schema check failed for ${validFilesGlob}`);
 		err.errors = errors;
-		return Promise.reject(err);
+		throw err;
 	}
-	return;
 }
 
 /// SCHEMAS
