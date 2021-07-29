@@ -1,32 +1,36 @@
 const inspect = require("util").inspect;
+const { join, resolve } = require("path");
 
-const lib = require("./data-lint-lib");
+const {
+	communitySchema,
+	demosSchema,
+	pluginsSchema,
+	schemaLint,
+	sitesSchema,
+	startersSchema
+} = require("./data-lint-lib");
 
+const dataDir = resolve(join(__dirname, "..", "src", "_data"));
 let errors = [];
 
 main();
 
 async function main() {
-	const {
-		communitySchema,
-		demosSchema,
-		pluginsSchema,
-		sitesSchema,
-		startersSchema
-	} = lib;
-
 	await Promise.all([
-		dataLint("../src/_data/community/", "*.js", communitySchema),
-		dataLint("../src/_data/demos/", "*.js", demosSchema),
-		dataLint("../src/_data/plugins/", "*.json", pluginsSchema),
-		dataLint("../src/_data/sites/", "*.json", sitesSchema),
-		dataLint("../src/_data/starters/", "*.json", startersSchema)
+		dataLint(join(dataDir, "community"), "*.js", communitySchema),
+		dataLint(join(dataDir, "demos"), "*.js", demosSchema),
+		dataLint(join(dataDir, "plugins"), "*.json", pluginsSchema),
+		dataLint(join(dataDir, "sites"), "*.json", sitesSchema),
+		dataLint(join(dataDir, "starters"), "*.json", startersSchema)
 	]);
 
 	if (errors.length) {
 		console.error(inspect(errors, { depth: 4 }));
 		process.exitCode = 1;
 	}
+
+	console.info("All data files are clean!");
+	process.exitCode = 0;
 }
 
 /**
@@ -38,7 +42,7 @@ async function main() {
  */
 async function dataLint(dir = "", ext = "", schema = {}) {
 	try {
-		await lib.schemaLint(dir, ext, schema);
+		await schemaLint(dir, ext, schema);
 	} catch (err) {
 		errors = errors.concat(err.errors);
 	}

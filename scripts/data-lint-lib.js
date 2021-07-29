@@ -1,6 +1,6 @@
 const path = require("path");
 
-const Ajv = require("ajv");
+const Ajv = require("ajv").default;
 const addFormats = require("ajv-formats");
 const fastglob = require("fast-glob");
 
