@@ -7,7 +7,13 @@ let errors = [];
 main();
 
 async function main() {
-	const { communitySchema, demosSchema, pluginsSchema, sitesSchema, startersSchema } = lib;
+	const {
+		communitySchema,
+		demosSchema,
+		pluginsSchema,
+		sitesSchema,
+		startersSchema
+	} = lib;
 
 	await Promise.all([
 		dataLint("../src/_data/community/", "*.js", communitySchema),
