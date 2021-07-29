@@ -1,4 +1,4 @@
-t path = require("path");
+const path = require("path");
 
 const Ajv = require("ajv");
 const addFormats = require("ajv-formats");
