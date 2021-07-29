@@ -32,7 +32,7 @@ Valid `date` values:
 * `Last Modified`: automatically resolves to the file’s last modified date
 * `Created`: automatically resolves to the file’s created date (default, this is what is used when `date` is omitted).
 * `2016-01-01` or any other valid [YAML date value](https://yaml.org/type/timestamp.html) (leaving off the time assumes midnight in UTC, or `00:00:00Z`)
-* `"2016-01-01"` or any other valid UTC **string** that [Luxon’s `DateTime.fromISO`](https://moment.github.io/luxon/docs/manual/parsing.html#parsing-technical-formats) can parse (see also the [Luxon API docs](https://moment.github.io/luxon/docs/class/src/datetime.js~DateTime.html#static-method-fromISO)).
+* `"2016-01-01"` or any other valid UTC **string** that [Luxon’s `DateTime.fromISO`](https://moment.github.io/luxon/#/parsing?id=iso-8601) can parse (see also the [Luxon API docs](https://moment.github.io/luxon/api-docs/index.html#datetimefromiso)).
 
 If a `date` key is omitted from the file, we then look for a `YYYY-MM-DD` format anywhere in the file name. ℹ️ [Note that starting in 1.0 for consistency with front matter formats file name date formats are now assumed to be UTC.](https://github.com/11ty/eleventy/pull/1752)
 
