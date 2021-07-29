@@ -5,10 +5,11 @@ const {
 	communitySchema,
 	demosSchema,
 	pluginsSchema,
-	schemaLint,
 	sitesSchema,
 	startersSchema
-} = require("./data-lint-lib");
+} = require("./schemas");
+
+const { schemaLint } = require("./data-lint-lib");
 
 const dataDir = resolve(join(__dirname, "..", "src", "_data"));
 let errors = [];
