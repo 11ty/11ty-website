@@ -102,7 +102,7 @@ Read more about using shortcodes on the individual Template Language documentati
 
 ## Paired Shortcodes
 
-The shortcodes we saw above were nice, I suppose. But really, they are not all that different from a filter. The real ultimate power of Shortcodes comes when they are Paired. Paired Shortcodes have a start and end tag—and allow you to nest other template content inside!
+The shortcodes we saw above were nice, I suppose. But really, they are not all that different from a filter. The real ultimate power of Shortcodes comes when they are paired. Paired Shortcodes have a start and end tag—and allow you to nest other template content inside!
 
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
