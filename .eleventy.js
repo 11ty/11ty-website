@@ -85,7 +85,8 @@ const shortcodes = {
 			decoding: "async",
 			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
 			class: "sites-screenshot",
-			onerror: "let p=this.closest('picture');if(p){p.remove();}this.remove();"
+			// No longer necessary because we have a default fallback image when timeouts happen.
+			// onerror: "let p=this.closest('picture');if(p){p.remove();}this.remove();"
 		});
 	}
 };
