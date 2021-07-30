@@ -14,7 +14,7 @@ eleventyComputed:
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		{%- set subtitle %}{{ newstitle or searchTitle or relatedTitle or tiptitle or eleventyNavigation.key or title }}{% endset %}
-		{%- set subtitleText %}{% if subtitle and subtitle != "Eleventy Home" %}{{ subtitle }} | Eleventy,{% else %}Eleventy is{% endif %} a simpler static site generator.{% endset %}
+		{%- set subtitleText %}{% if subtitle and subtitle != "Eleventy Home" %}{{ subtitle }}—Eleventy,{% else %}Eleventy is{% endif %} a simpler static site generator.{% endset %}
 		<title>{{ subtitleText }}</title>
 		<meta name="title" content="{{ subtitleText }}">
 		<meta name="description" content="{{ subtitleText }}">
