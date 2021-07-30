@@ -2,11 +2,11 @@
 social:
   imgsrc: https://www.11ty.dev/img/open-graph.jpg
   imgalt: The 11ty logo text with a small floating possum on a balloon
-  description: Eleventy is a simpler static site generator.
 eleventyComputed:
   domain: "{{ process.env.DEPLOY_PRIME_URL or 'https://www.11ty.dev'}}"
   social:
     imgsrc: "https://v1.screenshot.11ty.dev/{{ (domain + page.url) | urlencode }}/opengraph/"
+    description: "A docs page for Eleventy {% latestVersion versions, config %}, a simpler static site generator."
 ---
 <!doctype html>
 <html lang="en"{% if templateClass %} class="{{ templateClass }}"{% endif %}>
