@@ -59,8 +59,8 @@ const shortcodes = {
 	},
 	getScreenshotHtml: function(siteSlug, siteUrl, sizes) {
 		let viewport = {
-			width: 420,
-			height: 420,
+			width: 375,
+			height: 375,
 		};
 
 		let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(siteUrl)}/small/`;
