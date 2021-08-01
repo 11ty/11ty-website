@@ -319,7 +319,7 @@ module.exports = (data) => {
 
 ### Relationship to Filters and Shortcodes
 
-Any universal filters or shortcodes will also be available as as JavaScript Template Functions.
+Any universal filters or shortcodes will also be available as JavaScript Template Functions.
 
 {% codetitle ".eleventy.js" %}
 
