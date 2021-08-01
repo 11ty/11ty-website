@@ -77,6 +77,23 @@ module.exports = function(eleventyConfig) {
 ```
 {% endraw %}
 
+### Multiple Filter Arguments
+
+```js
+module.exports = function(eleventyConfig) {
+  // Nunjucks Filter
+  eleventyConfig.addNunjucksFilter("concatThreeStrings", function(arg1, arg2, arg3) {
+    return arg1 + arg2 + arg3;
+  });
+};
+```
+
+{% raw %}
+```html
+<h1>{{ "first" | concatThreeThings("second", "third") }}</h1>
+```
+{% endraw %}
+
 ### Asynchronous Nunjucks Filters {% addedin "0.2.13" %}
 
 By default, almost all templating engines are synchronous. Nunjucks supports some asynchronous behavior, like filters. Here’s how that works:
