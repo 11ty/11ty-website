@@ -1,7 +1,8 @@
 {
-	"url": "https://glitch.com/edit/#!/glitch-hello-eleventy",
-	"name": "~glitch-hello-eleventy",
+	"url": "https://glitch.new/eleventy",
+	"name": "glitch.new/eleventy",
 	"description": "Build a new Eleventy generated static site with this official Glitch starter app.",
-	"author": "Glitch.com",
-	"demo": "https://glitch-hello-eleventy.glitch.me/"
+	"author": "glitch",
+	"demo": "https://glitch-hello-eleventy.glitch.me/",
+	"featured": true
 }

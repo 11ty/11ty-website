@@ -22,8 +22,13 @@ eleventyNavigation:
 {%- set siteData = speedlifyStarters.data[site.demo] or speedlifyStarters.data[site.url] %}
   {% include "site-card.njk" %}
 {%- endif %}{%- endfor %}
+{%- for site in starters | sortObjectByOrder %}
+{%- if site.disabled != true and site.featured %}
+{%- set siteData = speedlifyStarters.data[site.demo] or speedlifyStarters.data[site.url] %}
+  {% include "site-card.njk" %}
+{%- endif %}{%- endfor %}
 {%- for name, site in starters | shuffle %}
-{%- if site.disabled != true and not site.official %}
+{%- if site.disabled != true and not site.official and not site.featured %}
 {%- set siteData = speedlifyStarters.data[site.demo] or speedlifyStarters.data[site.url] %}
   {% include "site-card.njk" %}
 {%- endif %}{%- endfor %}
