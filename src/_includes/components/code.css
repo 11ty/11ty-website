@@ -21,6 +21,10 @@ pre {
 	background-color: #272822;
 	color: #fff;
 }
+details[open] pre {
+	margin-left: 0;
+	margin-right: 0;
+}
 pre,
 code {
 	font-family: Roboto Mono, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
