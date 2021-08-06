@@ -31,7 +31,7 @@ You maintain full control of your HTML—this plugin does not generate any marku
 * [`eleventy-img` on npm](https://www.npmjs.com/package/@11ty/eleventy-img)
 
 ```
-npm install @11ty/eleventy-img
+npm install --save-dev @11ty/eleventy-img
 ```
 
 ## Usage
