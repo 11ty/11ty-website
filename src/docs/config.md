@@ -445,6 +445,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addTransform("transform-name", function(content) {
     console.log( this.inputPath );
     console.log( this.outputPath );
+
+    // note that this.outputPath is `false` for serverless templates
   });
 };
 ```
