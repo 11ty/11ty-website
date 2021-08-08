@@ -1,6 +1,9 @@
 {
 	"url": "https://www.andrewrico.com/",
 	"name": "Andrew Rico",
-	"description": "A Homepage",
-	"source_url": "https://github.com/Andrewrico/andrewrico.com-2020"
+	"description": "Web Developer - Freelance",
+	"source_url": "https://github.com/Andrewrico/andrewrico.com",
+	"business": {
+		"cta": "https://www.andrewrico.com/"
+	}
 }
