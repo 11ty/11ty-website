@@ -1,3 +1,6 @@
+.elv-community > .elv-callout {
+	padding-top: 0.75em; /* 12px /16 */
+}
 .elv-community > .elv-callout:before {
 	display: none;
 }

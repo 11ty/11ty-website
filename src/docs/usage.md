@@ -13,7 +13,7 @@ These examples assume [local project installation](/docs/getting-started/) inste
 npx @11ty/eleventy
 ```
 
-{% callout "warn" %}<strong>Warning:</strong> Using <code>npx eleventy</code> instead of <code>npx @11ty/eleventy</code> <em>may</em> work if you already have Eleventy installed globally or in your local project but it is not recommended! If Eleventy is not already installed this will download and execute the <a href="https://www.npmjs.com/package/eleventy">wrong package</a>. So make sure you run <code>npx @11ty/eleventy</code> (including the <code>@11ty/</code> prefix!).{% endcallout %}
+{% callout "warn" %}Using <code>npx eleventy</code> instead of <code>npx @11ty/eleventy</code> <em>may</em> work if you already have Eleventy installed globally or in your local project but it is not recommended! If Eleventy is not already installed this will download and execute the <a href="https://www.npmjs.com/package/eleventy">wrong package</a>. So make sure you run <code>npx @11ty/eleventy</code> (including the <code>@11ty/</code> prefix!).{% endcallout %}
 
 If you’re using a global install of Eleventy, remove `npx @11ty/` from the beginning of each command, like so:
 
