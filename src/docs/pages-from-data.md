@@ -53,7 +53,7 @@ permalink: "possums/{{ possum.name | slug }}/"
 
 This template will generate four files, one for each possum, where the filename is based on the possum's name passed through the `slug` function. As possums are added and edited the resultant possum details page will be updated automatically.
 
-{% callout "info" %}Note that {% raw %}<code>page</code>{% endraw %} is a reserved word so you cannot use {% raw %}<code>alias: page</code>{% endraw %}.{% endcallout %}
+{% callout "info" %}Note that <code>page</code> is a reserved word so you cannot use <code>alias: page</code>. Read about Eleventy’s reserved data names in <a href="/docs/data-eleventy-supplied">Eleventy Supplied Data</a>.{% endcallout %}
 
 ## Related Pagination Topics:
 
