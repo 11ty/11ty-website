@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-pdfembed",
+	"author": "raymondcamden",
+	"description": "A shortcode to simplify usage of Adobe's PDF Embed API"
+}
