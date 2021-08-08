@@ -140,6 +140,16 @@ tags: cat
 
 This content would show up in the template data inside of `collections.cat`.
 
+### Using multiple words in a single tag
+
+```markdown
+---
+tags: cat and dog
+---
+```
+
+If you use multiple words for one tag you can access the content by the following syntax `collections['cat and dog']`.
+
 ### Multiple tags, single line
 
 ```markdown
