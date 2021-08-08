@@ -146,7 +146,7 @@ tags: cat
 
 This content would show up in the template data inside of `collections.cat`.
 
-### A multiple words tag: cat and dog
+### Using multiple words in a single tag
 
 ```markdown
 ---
