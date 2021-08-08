@@ -303,6 +303,8 @@ You can use the alias in your content too {{ wonder }}.
 
 This writes to `_site/different/item1/index.html` and `_site/different/item2/index.html`.
 
+{% callout "info" %}Note that <code>page</code> is a reserved word so you cannot use <code>alias: page</code>. Read about Eleventy’s reserved data names in <a href="/docs/data-eleventy-supplied">Eleventy Supplied Data</a>.{% endcallout %}
+
 If your chunk `size` is greater than 1, the alias will be an array instead of a single value.
 
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
