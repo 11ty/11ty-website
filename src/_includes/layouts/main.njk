@@ -17,15 +17,15 @@ headerClass: elv-header-default
 	{{ content | safe }}
 </main>
 
-<footer class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">
+<footer class="elv-footer elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">
 {% if ignoreSupporters %}{% else %}
 	<h2 id="eleventy-is-supported-by">Eleventy is <a href="/docs/supporters/">supported</a> by… <a class="direct-link" href="#eleventy-is-supported-by">#</a></h2>
 	{% include "supporters.njk" %}
 {% endif %}
 {%- if ignoreGitHubButtons %}{% else %}
-	<div class="elv-callout">
+	{% callout "info" %}
 		{% include "star-on-github.njk" %}
-	</div>
+	{% endcallout %}
 {%- endif %}
 {#
 {%- if ignoreFooterTestimonial -%}
