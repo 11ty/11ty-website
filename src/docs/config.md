@@ -124,10 +124,10 @@ module.exports = function(eleventyConfig) {
 
 This configuration option is optional but useful if you want your [Eleventy layouts](/docs/layouts/) to live outside of the [Includes directory](#directory-for-includes). Just like the [Includes directory](#directory-for-includes), these files will not be processed as full template files, but can be consumed by other templates.
 
-<div class="elv-callout elv-callout-warn elv-callout-warn-block">
+{% callout "warn" %}
   <p>This setting <strong>only applies</strong> to Eleventy's language-agnostic <a href="/docs/layouts/">layouts</a> (when defined in front matter or data files).</p>
   <p>When using <code>{% raw %}{% extends %}{% endraw %}</code>, Eleventy will <strong>still search the <code>_includes</code> directory</strong>. See <a href="/docs/layout-chaining/#addendum-about-existing-templating-features">this note about existing templating features</a>.</p>
-</div>
+{% endcallout %}
 
 | Includes Directory |  |
 | --- | --- |

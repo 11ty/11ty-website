@@ -81,6 +81,6 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-{% callout %}
+{% callout "warn" %}
 Plugin namespacing is an application feature and should not be used if you are creating your own plugin (in your plugin configuration code). Follow along at <a href="https://github.com/11ty/eleventy/issues/256">Issue #256</a>.
 {% endcallout %}

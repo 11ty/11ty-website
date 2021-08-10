@@ -1,14 +1,21 @@
 /* Warning */
 .elv-callout {
+	--callout-primary: hsl(195, 100%, 75%);
+	--callout-primarytext: #000;
+	--callout-secondary: #dff7ff;
 	position: relative;
 	line-height: 1.5;
-	padding: 1.75em 1em 0.75em; /* 28px 16px 12px /16 */
+	padding: 0.75em 1em; /* 12px 16px /16 */
 	margin-left: -1rem;
 	margin-right: -1rem;
 	margin-bottom: 2em;
-	background-color: #dff7ff;
-	border: 1px dashed rgba(0,0,0,.3);
-	box-shadow: 0 0 0 5px rgba(0,0,0,.14);
+	background-color: var(--callout-secondary);
+	border: 5px solid var(--callout-primary);
+}
+.elv-callout-info,
+.elv-callout-warn,
+.elv-callout-error {
+	padding-top: 1.75em;
 }
 @media (min-width: 44.375em) { /* 710px */
 	.elv-callout {
@@ -17,7 +24,9 @@
 }
 @media (prefers-color-scheme: dark) {
 	.elv-callout {
-		background-color: hsl(195, 100%, 12%);
+		--callout-primary: hsl(195, 100%, 22%);
+		--callout-secondary: hsl(195, 100%, 12%);
+		--callout-primarytext: #fff;
 	}
 	.elv-callout,
 	.elv-callout a {
@@ -30,7 +39,6 @@ table .elv-callout {
 	margin-bottom: 1em;
 }
 
-.elv-callout-warn-block > :first-child:before,
 .elv-callout:before {
 	position: absolute;
 	left: 0;
@@ -38,83 +46,58 @@ table .elv-callout {
 	font-size: 0.8125em; /* 13px /16 */
 	margin-right: .5em;
 	font-weight: 800;
-	border-radius: .3em 0 .3em 0;
+	border-radius: 0 0 .3em 0;
 	display: inline-flex;
 	align-items: center;
 	padding: 0em 0.55em;
-	border: 1px dashed rgba(0,0,0,.3);
-	border-top: none;
-	border-left: none;
 }
-/* The icon is only shown when `info` is explicitly defined */
+.elv-callout-info:before,
+.elv-callout-warn:before,
+.elv-callout-error:before,
+.elv-callout code {
+	background-color: var(--callout-primary);
+	color: var(--callout-primarytext);
+}
+.elv-callout a,
+.elv-callout :visited {
+	color: var(--callout-primarytext);
+}
+
+/* Info */
 .elv-callout-info:before {
 	content: "INFO:";
 }
-.elv-callout-info:before,
-.elv-callout code {
-	background-color: hsl(195, 100%, 80%);
-}
-@media (prefers-color-scheme: dark) {
-	.elv-callout-info:before,
-	.elv-callout code {
-		background-color: hsl(195, 100%, 22%);
-	}
-}
+
 /* Error */
 .elv-callout-error {
-	background-color: hsl(0, 100%, 80%);
+	--callout-primary: hsl(0, 100%, 77%);
+	--callout-secondary: hsl(0, 100%, 90%);
 }
 .elv-callout-error:before {
 	content: "ERROR:";
 }
-.elv-callout-error:before,
-.elv-callout-error code {
-	background-color: hsl(0, 100%, 70%);
-}
 @media (prefers-color-scheme: dark) {
 	.elv-callout-error {
-		background-color: hsl(0, 100%, 12%);
-	}
-	.elv-callout-error:before,
-	.elv-callout-error code {
-		background-color: hsl(0, 100%, 22%);
+		--callout-primary: hsl(0, 100%, 22%);
+		--callout-secondary: hsl(0, 100%, 12%);
 	}
 }
 /* Warning */
 .elv-callout-warn {
-	background-color: hsl(60, 100%, 83%);
+	--callout-primary: hsl(60, 100%, 62%);
+	--callout-secondary: hsl(60, 100%, 85%);
+}
+.elv-callout-warn:before {
+	content: "WARNING:";
 }
 @media (prefers-color-scheme: dark) {
 	.elv-callout-warn {
-		background-color: hsl(31, 100%, 17%);
+		--callout-primary: hsl(53, 100%, 29%);
+		--callout-secondary: hsl(53, 100%, 17%);
 	}
-}
-.elv-callout-warn:before,
-.elv-callout-warn-block > :first-child:before {
-	content: "WARNING:";
-}
-.elv-callout-warn-block:before {
-	display: none;
-}
-.elv-callout-warn-block > :first-child {
-	margin-top: 0;
-}
-.elv-callout-warn-block > :last-child {
-	margin-bottom: 0;
 }
 
-.elv-callout-warn:before,
-.elv-callout-warn-block > :first-child:before,
-.elv-callout-warn code {
-	background-color: hsl(60, 100%, 57%);
-}
-@media (prefers-color-scheme: dark) {
-	.elv-callout-warn:before,
-	.elv-callout-warn-block > :first-child:before,
-	.elv-callout-warn code {
-		background-color: hsl(31, 100%, 33%)
-	}
-}
+/* Style the content inside of the callout */
 .elv-callout:first-child {
 	margin-top: 0;
 }
@@ -122,6 +105,8 @@ table .elv-callout {
 .elv-callout > ol:last-child {
 	margin-bottom: 0;
 }
+
+/* Sticky callout is for legacy docs versions */
 body > .elv-callout {
 	margin-left: 0;
 	margin-right: 0;
@@ -139,10 +124,11 @@ body > .elv-callout-sticky:before {
 	}
 }
 
+/* Callout in footer to beg for stars */
 .elv-footer .elv-callout {
 	padding-top: .75em;
-	margin-left: 6px;
-	margin-right: 6px;
+	margin-left: 0;
+	margin-right: 0;
 }
 .elv-footer .elv-callout:before {
 	display: none;
