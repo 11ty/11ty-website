@@ -12,7 +12,7 @@ permalink:
 ---
 {% callout "", "html", "elv-serverless-banner" %}
 <strong>This page was rendered <em>just-in-time</em> for you using <a href="/docs/plugins/serverless/">Eleventy Serverless</a></strong>
-<code><time datetime="{{ config.now | toISO }}">{{ config.now | newsDate("yyyy LLL dd HH:mm:ss.SSS") }}</time></code>
+<code class="elv-serverless-banner-time"><time datetime="{{ config.now | toISO }}">{{ config.now | newsDate("yyyy LLL dd HH:mm:ss.SSS") }}</time></code>
 {% endcallout %}
 
 ## Quick Start

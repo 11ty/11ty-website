@@ -890,8 +890,8 @@ main .elv-toc + h1 .direct-link {
 .elv-serverless-banner {
 	text-align: center;
 }
-.elv-serverless-banner code {
-	display: block;
+.elv-serverless-banner-time {
+	display: inline-flex;
 	font-size: 1.25em; /* 20px /16 */
 	margin-top: .25em;
 }

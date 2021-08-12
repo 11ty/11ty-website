@@ -10,7 +10,7 @@
 	margin-right: -1rem;
 	margin-bottom: 2em;
 	background-color: var(--callout-secondary);
-	border: 5px solid var(--callout-primary);
+	border: 3px solid var(--callout-primary);
 }
 .elv-callout-info,
 .elv-callout-warn,
