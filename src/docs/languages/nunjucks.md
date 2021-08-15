@@ -17,11 +17,28 @@ layout: layouts/langs.njk
 
 You can override a `.njk` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
 
-## Nunjucks Options
+## Nunjucks Environment Options
 
-### Optional: Use your Nunjucks Environment {% addedin "0.3.0" %}
+We use [Nunjucks defaults for all environment options](https://mozilla.github.io/nunjucks/api.html#configure) (shown in the `configure` section of the Nunjucks docs).
 
-As an escape mechanism for advanced usage, pass in your own instance of a [Nunjucks Environment](https://mozilla.github.io/nunjucks/api.html#environment) using the Configuration API.
+### Optional: Use your Nunjucks Environment Options {% addedin "1.0.0" %}
+
+It’s recommended to use the Configuration API to override the default Nunjucks options.
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setNunjucksEnvironmentOptions({
+    throwOnUndefined: true,
+    autoescape: false, // warning: don’t do this!
+  });
+};
+```
+
+### Advanced: Use your Nunjucks Environment {% addedin "0.3.0" %}
+
+While it is preferred and simpler to use the Options-specific API method above (new in Eleventy 1.0!)—as an escape mechanism for advanced usage you may pass in your own instance of a [Nunjucks Environment](https://mozilla.github.io/nunjucks/api.html#environment) using the Configuration API.
+
+{% callout "warn" %}Not compatible with <code>setNunjucksEnvironmentOptions</code> above—this method will <em>override</em> any configuration set there.{% endcallout %}
 
 ```js
 let Nunjucks = require("nunjucks");
