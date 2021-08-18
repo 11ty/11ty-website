@@ -106,7 +106,7 @@ exports.render = function(data) {
   return `<ul>
     ${data.collections.post.map(post =>
       `<li><a href="${post.url}">${post.url}</a></li>`
-    ).join("\n");}
+    ).join("\n")}
   </ul>`;
 };
 ```
@@ -192,7 +192,7 @@ This content would show up in the template data inside of `collections.cat` and 
 ```js
 exports.render = function(data) {
   return `<ul>
-    ${data.collections.post.map(post => `<li>${post.data.title}</li>`).join("\n");}
+    ${data.collections.post.map(post => `<li>${post.data.title}</li>`).join("\n")}
   </ul>`;
 };
 ```
@@ -281,7 +281,7 @@ And in JavaScript it’d look like this:
 exports.render = function(data) {
   let posts = data.collections.post.reverse();
   return `<ul>
-    ${posts.map(post => `<li>${post.data.title}</li>`).join("\n");}
+    ${posts.map(post => `<li>${post.data.title}</li>`).join("\n")}
   </ul>`;
 };
 ```
