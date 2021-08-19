@@ -182,6 +182,8 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
 
 ### To Markdown
 
+{% addedin "Navigation 0.3.1" %}
+
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
@@ -337,6 +339,8 @@ There are a couple of methods for rendering. Using the `eleventyNavigationToHtml
 
 With the Navigation structure returned from `eleventyNavigation` or `eleventyNavigationBreadcrumb`, we can render the navigation. Pass the object to the  `eleventyNavigationToHtml` or `eleventyNavigationToMarkdown` filter to automatically output the full menu (as HTML or Markdown):
 
+The `eleventyNavigationToMarkdown` filter is {% addedin "Navigation 0.3.1" %}.
+
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
@@ -384,6 +388,8 @@ When you render a navigation list, pass `showExcerpt: true` to the `eleventyNavi
 {% endraw %}
 
 #### Advanced: All Rendering Options for `eleventyNavigationToMarkdown`
+
+{% addedin "Navigation 0.3.1" %}
 
 {% codetitle "Nunjucks", "Syntax" %}
 
@@ -434,6 +440,8 @@ If you find yourself using a lot of these `class` options, maybe you should use 
 ### Bring your own HTML: Render the menu items manually
 
 This template will render a single tier of items (no children) _without_ using the `eleventyNavigationToHtml` or `eleventyNavigationToMarkdown` filters. This method gives you full control of the markup but is more complex with deeply nested menu structures.
+
+Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
 
 {% codetitle "Nunjucks", "Syntax" %}
 
