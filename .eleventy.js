@@ -164,6 +164,8 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPairedShortcode("callout", function(content, level = "", format = "html", cls = "") {
 		if( format === "md" ) {
 			content = md.renderInline(content);
+		} else if( format === "md-block" ) {
+			content = md.render(content);
 		}
 		return `<div class="elv-callout${level ? ` elv-callout-${level}` : ""}${cls ? ` ${cls}`: ""}">${content}</div>`;
 	});
