@@ -6,9 +6,9 @@ eleventyNavigation:
 ---
 # Navigation Plugin
 
-A plugin for creating hierarchical navigation in Eleventy projects. Supports breadcrumbs too! Used in production on this very website!
+A plugin for creating infinite-depth hierarchical navigation in Eleventy projects. Supports breadcrumbs too! Used in production on this very website!
 
-* This documentation is for `eleventy-navigation` `v0.1.4`.
+* This documentation is for `eleventy-navigation` `v0.3.x`.
 * [GitHub](https://github.com/11ty/eleventy-navigation).
 
 ## Contents
@@ -18,7 +18,7 @@ A plugin for creating hierarchical navigation in Eleventy projects. Supports bre
 ## Template Compatibility
 
 * Any template language can add to navigation.
-* Nunjucks is required for rendering the navigation menu.
+* Nunjucks or Liquid are required for rendering the navigation menu.
 
 ## Installation
 
@@ -61,7 +61,9 @@ eleventyNavigation:
 
 This gives us:
 
+{% callout "demo", "md-block" %}
 * Mammals
+{% endcallout %}
 
 #### humans.md
 
@@ -79,8 +81,10 @@ Any templates that do not have `parent` will be assumed to be at the top level.
 
 Now our navigation structure looks like:
 
+{% callout "demo", "md-block" %}
 * Mammals
     - Humans
+{% endcallout %}
 
 #### bats.md
 
@@ -94,9 +98,12 @@ eleventyNavigation:
 
 Now our navigation structure looks like:
 
+
+{% callout "demo", "md-block" %}
 * Mammals
     - Humans
     - Bats
+{% endcallout %}
 
 You can nest these as deep as you want! Want to put something under Humans or Bats? Use `parent: Humans` or `parent: Bats`. If you want to add another root template, leave out `parent`.
 
@@ -136,7 +143,7 @@ eleventyNavigation:
 
 ### Overriding the URL
 
-{% addedin "Navigation v0.1.4" %} If you’d like to add a link to an external URL that is not on your local page, create a new template for it and add a `url` key.
+{% addedin "Navigation v0.1.4" %} If you’d like to add a link to an external URL that is not on your local page, create a new file for it and add a `url` key.
 
 ```yaml
 ---
@@ -150,13 +157,13 @@ permalink: false
 Use [`permalink: false`](/docs/permalinks/#permalink-false) to ensure that this meta-template doesn’t create a file in your Eleventy site output.
 
 
-## Rendering the Navigation Bar (Nunjucks-only)
+## Rendering the Navigation Bar (Easy Mode)
 
-Currently only Nunjucks support is available for this plugin. More to come!
+Nunjucks and Liquid engines are supported. If you’re tired of reading, just use one of the following. These are using [the filters documented below](#render-with-a-filter). If you want more control or need additional customization, keep reading!
 
-### Just Give Me Some Code
+### To HTML
 
-If you’re tired of reading, just use the following:
+{% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
 ```
@@ -164,15 +171,44 @@ If you’re tired of reading, just use the following:
 ```
 {% endraw %}
 
-This is using [the Nunjucks filters documented below](#render-with-a-filter). If you want more control or need additional customization, keep reading!
+{% codetitle "Liquid", "Syntax" %}
 
-### Fetch the Structure
+{% raw %}
+```
+{{ collections.all | eleventyNavigation | eleventyNavigationToHtml }}
+```
+{% endraw %}
+
+
+### To Markdown
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```
+{{ collections.all | eleventyNavigation | eleventyNavigationToMarkdown | safe }}
+```
+{% endraw %}
+
+{% codetitle "Liquid", "Syntax" %}
+
+{% raw %}
+```
+{{ collections.all | eleventyNavigation | eleventyNavigationToMarkdown }}
+```
+{% endraw %}
+
+## Rendering the Navigation Bar (Deep Dive)
+
+### Fetch the menu items using the `eleventyNavigation` Filter
 
 The `eleventyNavigation` filter returns a _sorted_ array of objects with `url` and `title` properties (sorted using `order`, as noted above). If an entry has nested children, it will also include a `children` property with an array of similar objects (and those may contain `children` too, and so on).
 
-#### Example
+#### Example: Fetch all pages
 
 For our documented templates above with the following Nunjucks template:
+
+{% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
 ```
@@ -209,14 +245,25 @@ Shows that `navPages` has the following structure:
 ]
 ```
 
-#### Get just one Branch
+#### Example: Get just one Branch
 
 Just show the children of a specific key, pass a key to `eleventyNavigation`:
+
+{% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
 ```
 {% set navPages = collections.all | eleventyNavigation("Mammals") %}
 {{ navPages | dump | safe }}
+```
+{% endraw %}
+
+{% codetitle "Liquid", "Syntax" %}
+
+{% raw %}
+```
+{% assign navPages = collections.all | eleventyNavigation: "Mammals" %}
+{{ navPages | dump }}
 ```
 {% endraw %}
 
@@ -237,14 +284,25 @@ Just show the children of a specific key, pass a key to `eleventyNavigation`:
 ]
 ```
 
-#### Breadcrumbs
+#### Example: Breadcrumbs
 
 You can also render only the parents of a specific key too, to make breadcrumb navigation. Pass a key to `eleventyNavigationBreadcrumb` like this:
+
+{% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
 ```
 {% set navPages = collections.all | eleventyNavigationBreadcrumb("Bats") %}
 {{ navPages | dump | safe }}
+```
+{% endraw %}
+
+{% codetitle "Liquid", "Syntax" %}
+
+{% raw %}
+```
+{% assign navPages = collections.all | eleventyNavigationBreadcrumb: "Bats" %}
+{{ navPages | dump }}
 ```
 {% endraw %}
 
@@ -260,60 +318,15 @@ And an array of all the parents of the Bats entry will be returned (top-most par
 ]
 ```
 
-### Render the Structure
+### Render the menu items using the `eleventyNavigationToHtml` or `eleventyNavigationToMarkdown` Filters
 
-There are a couple of methods for rendering:
+There are a couple of methods for rendering. Using the `eleventyNavigationToHtml` and `eleventyNavigationToMarkdown` filters will render the full navigation tree. Use this if you want to easily scale to an unlimited number of tiers/levels in your navigation. If you want full control of the markup, [render the structure manually using the Copy and Paste templates example below](#bring-your-own-html-render-the-menu-items-manually). Use this if your navigation will have one level/tier of items.
 
-1. Copy and Paste templates give you full control of the markup. Use this if your navigation will have one level/tier of items.
-2. A `eleventyNavigationToHtml` filter that will render the full navigation tree. Use this if you want to easily scale to an unlimited number of tiers/levels in your navigation.
+<div id="render-with-a-filter"></div>
 
-#### Copy and Paste Templates
+With the Navigation structure returned from `eleventyNavigation` or `eleventyNavigationBreadcrumb`, we can render the navigation. Pass the object to the  `eleventyNavigationToHtml` or `eleventyNavigationToMarkdown` filter to automatically output the full menu (as HTML or Markdown):
 
-This template will render a single tier of items (no children).
-
-{% raw %}
-```html
-{% set navPages = collections.all | eleventyNavigation %}
-<ul>
-{%- for entry in navPages %}
-  <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
-    <a href="{{ entry.url | url }}">{{ entry.title }}</a>
-  </li>
-{%- endfor %}
-</ul>
-```
-{% endraw %}
-
-You _can_ use a Nunjucks macro to recursively render list items of any depth but the code isn’t quite as clean:
-
-<details>
-  <summary><strong>Nunjucks Macro Code for Rendering Unlimited Child Levels:</strong></summary>
-
-{% raw %}
-```html
-{% set navPages = collections.all | eleventyNavigation %}
-{% macro renderNavListItem(entry) -%}
-<li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
-  <a href="{{ entry.url | url }}">{{ entry.title }}</a>
-{%- if entry.children.length -%}
-  <ul>
-    {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
-  </ul>
-{%- endif -%}
-</li>
-{%- endmacro %}
-
-<ul>
-{%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
-</ul>
-```
-{% endraw %}
-
-</details>
-
-#### Render with a Filter
-
-With the Navigation structure returned from `eleventyNavigation` or `eleventyNavigationBreadcrumb`, we can render the navigation HTML. Pass the object to the  `eleventyNavigationToHtml` filter to automatically output the full HTML menu:
+{% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
 ```
@@ -325,7 +338,19 @@ With the Navigation structure returned from `eleventyNavigation` or `eleventyNav
 ```
 {% endraw %}
 
-##### Showing excerpts
+{% codetitle "Liquid", "Syntax" %}
+
+{% raw %}
+```
+{{ collections.all | eleventyNavigation | eleventyNavigationToHtml }}
+```
+
+```
+{{ collections.all | eleventyNavigationBreadcrumb: "Bats" | eleventyNavigationToHtml }}
+```
+{% endraw %}
+
+#### Showing excerpts
 
 You can also use this to display a longer list of navigation items with description text. This is useful for category/index pages. Add `excerpt` to the `eleventyNavigation` object.
 
@@ -339,15 +364,32 @@ eleventyNavigation:
 
 When you render a navigation list, pass `showExcerpt: true` to the `eleventyNavigationToHtml` filter, like so:
 
+{% codetitle "Nunjucks", "Syntax" %}
+
 {% raw %}
 ```
 {{ collections.all | eleventyNavigation("Humans") | eleventyNavigationToHtml({ showExcerpt: true }) | safe }}
 ```
 {% endraw %}
 
-##### Advanced: All Rendering Options for `eleventyNavigationToHtml`
+#### Advanced: All Rendering Options for `eleventyNavigationToMarkdown`
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```
+{{ collections.all | eleventyNavigation | eleventyNavigationToMarkdown({
+    // Show excerpts (if they exist in data, read more above)
+    showExcerpt: false
+}) | safe }}
+```
+{% endraw %}
+
+#### Advanced: All Rendering Options for `eleventyNavigationToHtml`
 
 You can change the HTML elements, classes on the list and list items, and add an additional class for the current page’s navigation entry!
+
+{% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
 ```
@@ -376,5 +418,53 @@ You can change the HTML elements, classes on the list and list items, and add an
 
 These work with `eleventyNavigationBreadcrumb | eleventyNavigationToHtml` too.
 
-If you find yourself using a lot of these `class` options, maybe you should use the _Advanced: Unlimited Child Levels_ example above and have full control of your HTML!
+If you find yourself using a lot of these `class` options, maybe you should use the _Advanced: Unlimited Child Levels_ example below and have full control of your HTML!
+
+### Bring your own HTML: Render the menu items manually
+
+This template will render a single tier of items (no children) _without_ using the `eleventyNavigationToHtml` or `eleventyNavigationToMarkdown` filters. This method gives you full control of the markup but is more complex with deeply nested menu structures.
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```html
+{% set navPages = collections.all | eleventyNavigation %}
+<ul>
+{%- for entry in navPages %}
+  <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
+    <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+  </li>
+{%- endfor %}
+</ul>
+```
+{% endraw %}
+
+You _can_ use a Nunjucks macro to recursively render list items of any depth but the code isn’t quite as clean:
+
+<details>
+  <summary><strong>Nunjucks Macro Code for Rendering Unlimited Child Levels:</strong></summary>
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```html
+{% set navPages = collections.all | eleventyNavigation %}
+{% macro renderNavListItem(entry) -%}
+<li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
+  <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+{%- if entry.children.length -%}
+  <ul>
+    {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
+  </ul>
+{%- endif -%}
+</li>
+{%- endmacro %}
+
+<ul>
+{%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
+</ul>
+```
+{% endraw %}
+
+</details>
 
