@@ -318,6 +318,17 @@ And an array of all the parents of the Bats entry will be returned (top-most par
 ]
 ```
 
+##### Include the current page in breadcrumb results
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```
+{% set navPages = collections.all | eleventyNavigationBreadcrumb("Bats", { includeSelf: true }) %}
+{{ navPages | dump | safe }}
+```
+{% endraw %}
+
 ### Render the menu items using the `eleventyNavigationToHtml` or `eleventyNavigationToMarkdown` Filters
 
 There are a couple of methods for rendering. Using the `eleventyNavigationToHtml` and `eleventyNavigationToMarkdown` filters will render the full navigation tree. Use this if you want to easily scale to an unlimited number of tiers/levels in your navigation. If you want full control of the markup, [render the structure manually using the Copy and Paste templates example below](#bring-your-own-html-render-the-menu-items-manually). Use this if your navigation will have one level/tier of items.
