@@ -31,6 +31,11 @@ table .elv-callout {
 .elv-callout-info:before {
 	content: "ℹ️ ";
 }
+.elv-callout pre {
+	background-color: transparent;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
 .elv-callout code {
 	background-color: hsl(195, 100%, 80%);
 }
