@@ -17,7 +17,7 @@
 .elv-callout-error {
 	padding-top: 1.75em;
 }
-@media (min-width: 44.375em) { /* 710px */
+@media (min-width: 64em) { /* 1024px */
 	.elv-callout {
 		border-radius: 0.3em;
 	}
@@ -106,7 +106,17 @@ table .elv-callout {
 	--callout-border: rebeccapurple;
 	overflow: hidden;
 	padding-left: 3.888888888889em; /* 70px /18 */
-	padding-right: 3.888888888889em; /* 70px /18 */
+}
+.elv-callout-demo:after {
+	display: none;
+}
+@media (min-width: 37.5em) { /* 600px */
+	.elv-callout-demo {
+		padding-right: 3.888888888889em; /* 70px /18 */
+	}
+	.elv-callout-demo:after {
+		display: block;
+	}
 }
 .elv-callout-demo:before,
 .elv-callout-demo:after {
