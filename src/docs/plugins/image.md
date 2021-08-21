@@ -94,9 +94,13 @@ Three things happen here:
 
 Here’s the output images, one webp and one jpeg:
 
+{% callout "demo" %}
+
 <img src="/img/plugins/image/6dfd7ac6-300.webp" alt="the webp output created by this Image plugin (it’s a nebula)" width="300" height="300">
 
 <img src="/img/plugins/image/6dfd7ac6-300.jpeg" alt="the jpeg output created by this Image plugin (it’s a nebula)" width="300" height="300">
+
+{% endcallout %}
 
 
 ### Output Widths

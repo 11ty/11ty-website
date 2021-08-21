@@ -12,7 +12,6 @@
 	background-color: var(--callout-secondary);
 	border: 3px solid var(--callout-border, var(--callout-primary));
 }
-.elv-callout-demo,
 .elv-callout-info,
 .elv-callout-warn,
 .elv-callout-error {
@@ -101,28 +100,39 @@ table .elv-callout {
 /* Demo */
 .elv-callout-demo {
 	--callout-primary: transparent;
-	--callout-secondary: transparent;
-	--callout-tag: hsl(195, 100%, 75%);
-	--callout-border: hsl(195, 100%, 75%);
+	--callout-secondary: hsl(270deg 50% 90%);
+	--callout-tag: rebeccapurple;
+	--callout-border: rebeccapurple;
+	padding-left: 4.888888888889em; /* 88px /18 */
+	padding-right: 1.666666666667em; /* 30px /18 */
 }
 .elv-callout-demo:before {
-	content: "DEMO:";
+	content: "DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO";
+	width: min-content;
+	overflow: hidden;
+	bottom: 0;
+	border-radius: 0;
+	color: #fff;
 }
-@media (prefers-color-scheme: dark) {
-	.elv-callout-demo {
-		--callout-primary: transparent;
-		--callout-secondary: transparent;
-		--callout-tag: hsl(195, 100%, 22%);
-		--callout-border: hsl(195, 100%, 22%);
+@media (prefers-reduced-motion: no-preference) {
+	.elv-callout-demo:before {
+		transition: line-height 150ms;
 	}
 }
+.elv-callout-demo:hover:before {
+	line-height: 3;
+}
+/* @media (prefers-color-scheme: dark) {
+	.elv-callout-demo {
+
+	}
+} */
 
 /* Style the content inside of the callout */
 .elv-callout > :first-child {
 	margin-top: 0;
 }
-.elv-callout > ul:last-child,
-.elv-callout > ol:last-child {
+.elv-callout > :last-child {
 	margin-bottom: 0;
 }
 
