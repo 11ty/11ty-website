@@ -112,7 +112,9 @@ table .elv-callout {
 	overflow: hidden;
 	bottom: 0;
 	border-radius: 0;
-	color: #fff;
+	background-color: var(--callout-primary);
+	color: var(--callout-tag);
+	font-weight: 700;
 }
 @media (prefers-reduced-motion: no-preference) {
 	.elv-callout-demo:before {
