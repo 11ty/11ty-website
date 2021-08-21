@@ -107,6 +107,18 @@ table .elv-callout {
 	overflow: hidden;
 	padding-left: 3.888888888889em; /* 70px /18 */
 }
+@media (prefers-color-scheme: dark) {
+	.elv-callout-demo {
+		--callout-primary: hsl(270deg 50% 30%);
+		--callout-secondary: hsl(270deg 50% 30%);
+		--callout-tag: hsl(270deg 50% 85%);
+		--callout-primarytext: #fff;
+		--callout-border: rebeccapurple;
+	}
+	.elv-callout-demo code {
+		background-color: hsl(270deg 50% 15%);
+	}
+}
 .elv-callout-demo:after {
 	display: none;
 }
