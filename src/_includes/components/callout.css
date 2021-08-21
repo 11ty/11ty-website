@@ -39,7 +39,8 @@ table .elv-callout {
 	margin-bottom: 1em;
 }
 
-.elv-callout:before {
+.elv-callout:before,
+.elv-callout-demo:after {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -103,32 +104,32 @@ table .elv-callout {
 	--callout-secondary: hsl(270deg 50% 90%);
 	--callout-tag: rebeccapurple;
 	--callout-border: rebeccapurple;
-	padding-left: 4.888888888889em; /* 88px /18 */
-	padding-right: 1.666666666667em; /* 30px /18 */
+	overflow: hidden;
+	padding-left: 3.888888888889em; /* 70px /18 */
+	padding-right: 3.888888888889em; /* 70px /18 */
 }
-.elv-callout-demo:before {
+.elv-callout-demo:before,
+.elv-callout-demo:after {
 	content: "DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO";
 	width: min-content;
 	overflow: hidden;
-	bottom: 0;
+	top: -2em;
+	bottom: -1em;
 	border-radius: 0;
 	background-color: var(--callout-primary);
 	color: var(--callout-tag);
 	font-weight: 700;
+	transform: skewY(-13deg);
+	padding: 0 0.2857142857143em; /* 4px /14 */
+	margin: 0;
 }
-@media (prefers-reduced-motion: no-preference) {
-	.elv-callout-demo:before {
-		transition: line-height 150ms;
-	}
+.elv-callout-demo:after {
+	right: 0;
+	left: auto;
+	margin-right: 0;
+	margin-left: .5em;
+	transform: skewY(13deg);
 }
-.elv-callout-demo:hover:before {
-	line-height: 3;
-}
-/* @media (prefers-color-scheme: dark) {
-	.elv-callout-demo {
-
-	}
-} */
 
 /* Style the content inside of the callout */
 .elv-callout > :first-child {
