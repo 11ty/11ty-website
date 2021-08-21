@@ -56,7 +56,7 @@ table .elv-callout {
 .elv-callout-info:before,
 .elv-callout-warn:before,
 .elv-callout-error:before,
-.elv-callout code {
+.elv-callout:not(.elv-callout-demo) code {
 	background-color: var(--callout-tag, var(--callout-primary));
 	color: var(--callout-primarytext);
 }
@@ -95,7 +95,7 @@ table .elv-callout {
 @media (prefers-color-scheme: dark) {
 	.elv-callout-warn {
 		--callout-primary: hsl(53, 100%, 29%);
-		--callout-secondary: hsl(53, 100%, 17%);
+		--callout-secondary: hsl(53, 100%, 13%);
 	}
 }
 /* Demo */
