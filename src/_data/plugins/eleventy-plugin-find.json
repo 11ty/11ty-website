@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-find",
+	"author": "ashur",
+	"description": "A utility filter to find array members that match a set of rules, helpful for hoisting data from one template to another."
+}

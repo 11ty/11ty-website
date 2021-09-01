@@ -350,7 +350,7 @@ _Documentation in progress_ (The new `serverlessURL` filter) -->
 
 ### Re-use build-time cache from the [Cache Assets plugin](/docs/plugins/cache/)
 
-To speed up serverless rendering and avoid requests to external sources, you can re-use the cache folder from your build! First we’ll need to copy the cache folder into our bundle and rename it without the leading dot.
+To speed up serverless rendering and avoid requests to external sources, you can re-use the cache folder from your build! First we’ll need to copy the cache folder into our bundle and rename it without the leading dot (the bundler ignores dot prefixed files and folders).
 
 {% codetitle ".eleventy.js" %}
 

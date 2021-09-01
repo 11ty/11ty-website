@@ -16,12 +16,14 @@ An Eleventy linter plugin to check for inclusive language in markdown files. Ins
 }
 </style>
 
+{% callout "demo" %}
 <pre><code><span class="demo-linter-first">Inclusive Language Linter (./docs/quicktips/concatenate.md):</span>
     be modified, <u>of course</u>, to capture multiple
     <u>Of course</u>, Eleventy has no desire to re
     This is <u>just</u> a super simple example if you
     build pipeline. That’s an <u>easy</u> way to concatenate
 </code></pre>
+{% endcallout %}
 
 ## Template Compatibility
 

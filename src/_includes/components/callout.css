@@ -10,14 +10,14 @@
 	margin-right: -1rem;
 	margin-bottom: 2em;
 	background-color: var(--callout-secondary);
-	border: 3px solid var(--callout-primary);
+	border: 3px solid var(--callout-border, var(--callout-primary));
 }
 .elv-callout-info,
 .elv-callout-warn,
 .elv-callout-error {
 	padding-top: 1.75em;
 }
-@media (min-width: 44.375em) { /* 710px */
+@media (min-width: 64em) { /* 1024px */
 	.elv-callout {
 		border-radius: 0.3em;
 	}
@@ -39,7 +39,8 @@ table .elv-callout {
 	margin-bottom: 1em;
 }
 
-.elv-callout:before {
+.elv-callout:before,
+.elv-callout-demo:after {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -51,11 +52,12 @@ table .elv-callout {
 	align-items: center;
 	padding: 0em 0.55em;
 }
+.elv-callout-demo:before,
 .elv-callout-info:before,
 .elv-callout-warn:before,
 .elv-callout-error:before,
-.elv-callout code {
-	background-color: var(--callout-primary);
+.elv-callout:not(.elv-callout-demo) code {
+	background-color: var(--callout-tag, var(--callout-primary));
 	color: var(--callout-primarytext);
 }
 .elv-callout a,
@@ -93,16 +95,69 @@ table .elv-callout {
 @media (prefers-color-scheme: dark) {
 	.elv-callout-warn {
 		--callout-primary: hsl(53, 100%, 29%);
-		--callout-secondary: hsl(53, 100%, 17%);
+		--callout-secondary: hsl(53, 100%, 13%);
 	}
+}
+/* Demo */
+.elv-callout-demo {
+	--callout-primary: transparent;
+	--callout-secondary: hsl(270deg 50% 90%);
+	--callout-tag: rebeccapurple;
+	--callout-border: rebeccapurple;
+	overflow: hidden;
+	padding-left: 3.888888888889em; /* 70px /18 */
+}
+@media (prefers-color-scheme: dark) {
+	.elv-callout-demo {
+		--callout-primary: hsl(270deg 50% 30%);
+		--callout-secondary: hsl(270deg 50% 30%);
+		--callout-tag: hsl(270deg 50% 85%);
+		--callout-primarytext: #fff;
+		--callout-border: rebeccapurple;
+	}
+	.elv-callout-demo code {
+		background-color: hsl(270deg 50% 15%);
+	}
+}
+.elv-callout-demo:after {
+	display: none;
+}
+@media (min-width: 37.5em) { /* 600px */
+	.elv-callout-demo {
+		padding-right: 3.888888888889em; /* 70px /18 */
+	}
+	.elv-callout-demo:after {
+		display: block;
+	}
+}
+.elv-callout-demo:before,
+.elv-callout-demo:after {
+	content: "DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO ";
+	width: min-content;
+	overflow: hidden;
+	top: -2em;
+	bottom: -1em;
+	border-radius: 0;
+	background-color: var(--callout-primary);
+	color: var(--callout-tag);
+	font-weight: 700;
+	transform: skewY(-13deg);
+	padding: 0 0.2857142857143em; /* 4px /14 */
+	margin: 0;
+}
+.elv-callout-demo:after {
+	right: 0;
+	left: auto;
+	margin-right: 0;
+	margin-left: .5em;
+	transform: skewY(13deg);
 }
 
 /* Style the content inside of the callout */
-.elv-callout:first-child {
+.elv-callout > :first-child {
 	margin-top: 0;
 }
-.elv-callout > ul:last-child,
-.elv-callout > ol:last-child {
+.elv-callout > :last-child {
 	margin-bottom: 0;
 }
 
@@ -122,14 +177,4 @@ body > .elv-callout-sticky:before {
 		z-index: 2;
 		box-shadow: 0 3px 0 0 rgba(0,0,0,.08);
 	}
-}
-
-/* Callout in footer to beg for stars */
-.elv-footer .elv-callout {
-	padding-top: .75em;
-	margin-left: 0;
-	margin-right: 0;
-}
-.elv-footer .elv-callout:before {
-	display: none;
 }

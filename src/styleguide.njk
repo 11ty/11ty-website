@@ -95,24 +95,13 @@ layout: layouts/docs.njk
 </ul>
 </div>
 
-<h2>Info Block</h2>
+<h2>Callout</h2>
 
-<div class="elv-sg-component">
-    {% callout %}Default message with an inline <code>Code block</code>{% endcallout %}
-</div>
-
-<div class="elv-sg-component">
-    {% callout "info" %}Default info message with an inline <code>Code block</code>{% endcallout %}
-</div>
-
-<div class="elv-sg-component">
-    {% callout "warn" %}Default warning message with an inline <code>Code block</code>{% endcallout %}
-</div>
-
-<div class="elv-sg-component">
-    {% callout "error" %}Default error message with an inline <code>Code block</code>{% endcallout %}
-</div>
-
+{% callout %}Default message with an inline <code>Code block</code>{% endcallout %}
+{% callout "info" %}Default info message with an inline <code>Code block</code>{% endcallout %}
+{% callout "warn" %}Default warning message with an inline <code>Code block</code>{% endcallout %}
+{% callout "error" %}Default error message with an inline <code>Code block</code>{% endcallout %}
+{% callout "demo" %}Default demo with an inline <code>Code block</code>. Default demo with an inline <code>Code block</code>. Default demo with an inline <code>Code block</code>.{% endcallout %}
 
 <h3>Sticky info block</h3>
 
