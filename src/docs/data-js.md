@@ -89,27 +89,33 @@ module.exports = function() {
 
 ### Example: Exposing Environment Variables
 
-You can expose environment variables (e.g. `ELEVENTY_ENV`) to your templates by using [Node.js’ `process.env` property](https://nodejs.org/api/process.html#process_process_env).
+You can expose Eleventy supplied environment variables (e.g. `ELEVENTY_ENV`) to your templates by utilizing [Node.js’ `process.env` property](https://nodejs.org/api/process.html#process_process_env). Start by creating a [Global Data file](https://www.11ty.dev/docs/data-global/) (*.js inside of your _data directory) and export the environment variables for use in a template:
 
 {% codetitle "_data/myProject.js" %}
 
+{% raw %}
 ```js
 module.exports = {
   environment: process.env.ELEVENTY_ENV
 };
 ```
+{% endraw %}
 
-Saving this as `myProject.js` in your global data directory (by default, this is `_data/`) gives you access to the `myProject.environment` variable in your templates.
+Saving this as `myProject.js` in your global data directory (by default, this is `_data/`) gives you access to the `myProject.environment` variable in your templates. If you want to return a `function`, we'll use the return value from that function:
 
-#### Sample commands
-
+{% raw %}
+```js
+module.exports = function() {
+  return {
+    environment: process.env.ELEVENTY_ENV
+  };
+};
 ```
-# Serve for Development
-ELEVENTY_ENV=development npx @11ty/eleventy --serve
+{% endraw %}
 
-# Build for Production
-ELEVENTY_ENV=production npx @11ty/eleventy
-```
+When `ELEVENTY_ENV` is set, the value from `myProject.environment` will be globally available to be used in your templates. If the variable hasn't been set, you can provide a fallback e.g. `process.env.ELEVENTY_ENV || "development"`.
+
+You can set values for your environment variables using the command line or inside a `.env` file with [`dotenv`](https://www.npmjs.com/package/dotenv).
 
 #### Template Usage
 
@@ -124,3 +130,26 @@ Working from our [Inline CSS Quick Tip](/docs/quicktips/inline-css/), we can mod
 {% endif %}
 ```
 {% endraw %}
+
+#### Sample commands
+
+The supplied environment variables can be set via the command line:
+
+```shell
+# Serve for Development
+ELEVENTY_ENV=development npx @11ty/eleventy --serve
+
+# Build for Production
+ELEVENTY_ENV=production npx @11ty/eleventy
+```
+
+A quicktip for setting the `ELEVENTY_ENV` environment variable is by providing the values inside your `package.json`:
+
+```js
+{
+  "scripts": {
+    "serve:dev": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
+    "build:prod": "ELEVENTY_ENV=production npx @11ty/eleventy"
+  }
+}
+```
