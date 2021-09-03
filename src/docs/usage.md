@@ -85,14 +85,17 @@ npx @11ty/eleventy --dryrun
 npx @11ty/eleventy --config=myeleventyconfig.js
 ```
 
-### `--json` and `--ndjson` to output JSON
+### `--to` can output JSON
 
 ```bash
 # Output a JSON structure (does not write to the file system)
-npx @11ty/eleventy --json
+npx @11ty/eleventy --to=json
 
 # Output an Newline Deliminated JSON structure (does not write to the file system)
-npx @11ty/eleventy --ndjson
+npx @11ty/eleventy --to=ndjson
+
+# Default behavior (Output to file system)
+npx @11ty/eleventy --to=fs
 ```
 
 Read more about [ndjson](http://ndjson.org/).
