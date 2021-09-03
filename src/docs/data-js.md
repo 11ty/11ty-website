@@ -60,6 +60,20 @@ module.exports = async function() {
 };
 ```
 
+### Arguments to Global Data Files
+
+{% addedin "1.0.0" %} When using a callback function in your JavaScript Data Files, Eleventy will now supply any global data already processed [via the Configuration API (`eleventyConfig.addGlobalData`)](/docs/data-global-custom/) as well as the [`eleventy` global variable](/docs/data-eleventy-supplied/#eleventy-variable).
+
+```js
+module.exports = function(configData) {
+  if(configData.eleventy.env.source === "cli") {
+    return "I am on the command line";
+  }
+
+  return "I am running programmatically via a script";
+};
+```
+
 ## Examples
 
 - [Example: Using GraphQL](#example-using-graphql)
@@ -89,7 +103,7 @@ module.exports = function() {
 
 ### Example: Exposing Environment Variables
 
-You can expose environment variables to your templates by utilizing [Node.js’ `process.env` property](https://nodejs.org/api/process.html#process_process_env). _(Starting in version 1.0, Eleventy supplies a few of its [own Environment Variables](/docs/data-eleventy-supplied/#environment-variables))_
+You can expose environment variables to your templates by utilizing [Node.js’ `process.env` property](https://nodejs.org/api/process.html#process_process_env). _(Related: starting in version 1.0, Eleventy supplies a few of its [own Environment Variables](/docs/data-eleventy-supplied/#environment-variables))_
 
 Start by creating a [Global Data file](https://www.11ty.dev/docs/data-global/) (*.js inside of your _data directory) and export the environment variables for use in a template:
 
