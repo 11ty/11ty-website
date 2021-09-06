@@ -74,7 +74,7 @@ module.exports = function(eleventyConfig) {
     // init callback lets you customize Prism
     init: function({ Prism }) {
       Prism.languages.myCustomLanguage = /* */;
-    }
+    },
 
     // Added in 3.0, set to true to always wrap lines in `<span class="highlight-line">`
     // The default (false) only wraps when line numbers are passed in.
