@@ -104,7 +104,7 @@ By default Eleventy puts all of your content (independent of whether or not it h
 ```js
 exports.render = function(data) {
   return `<ul>
-    ${data.collections.post.map(post =>
+    ${data.collections.all.map(post =>
       `<li><a href="${post.url}">${post.url}</a></li>`
     ).join("\n")}
   </ul>`;
