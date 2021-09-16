@@ -1,0 +1,11 @@
+{
+	"name": "David Darnes",
+	"url": "https://darn.es/",
+	"description": "The personal portfolio and blog of David Darnes",
+	"twitter": "daviddarnes",
+	"authoredBy": ["daviddarnes"],
+  "business": {
+		"cta": "https://darn.es/#contact",
+    "availability": "2021-12-01"
+	}
+}
