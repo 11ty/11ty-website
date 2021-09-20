@@ -53,6 +53,9 @@
 .supporters-gold-nordhealth {
   flex-grow: 1.8;
 }
+.supporters-gold-cloudcannon {
+  flex-grow: 1.7;
+}
 @media (min-width: 64em) { /* 1024px */
 	.elv-docs .supporters-gold-sanity {
 		flex-grow: 1;
