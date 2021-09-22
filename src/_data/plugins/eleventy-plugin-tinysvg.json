@@ -1,0 +1,5 @@
+{
+	"npm": "@sardine/eleventy-plugin-tinysvg",
+	"author": "marabyte_",
+	"description": "An 11ty plugin to minify and optimise SVG"
+}
