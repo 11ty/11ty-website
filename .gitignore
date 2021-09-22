@@ -5,3 +5,4 @@ node-supporters/
 .env
 .log
 .cache
+.netlify
