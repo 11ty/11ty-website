@@ -1,0 +1,5 @@
+{
+	"npm": "@sardine/eleventy-plugin-code-highlighter",
+	"author": "marabyte_",
+	"description": "An 11ty plugin to style your <code> with Prism.js"
+}

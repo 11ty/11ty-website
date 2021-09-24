@@ -1,0 +1,5 @@
+{
+	"npm": "@sardine/eleventy-plugin-external-links",
+	"author": "marabyte_",
+	"description": "An 11ty plugin to protect you external links."
+}
