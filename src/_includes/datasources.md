@@ -2,8 +2,9 @@ When the data is merged in the {% if page.url != "/docs/data-cascade/" %}[Eleven
 
 1. [Computed Data](/docs/data-computed/){% if page.url == "/docs/data-computed/" %} ⬅{% endif %}
 1. [Front Matter Data in a Template](/docs/data-frontmatter/){% if page.url == "/docs/data-frontmatter/" %} ⬅{% endif %}
-1. [Front Matter Data in Layouts](/docs/layouts/#front-matter-data-in-layouts){% if page.url == "/docs/layouts/" %} ⬅{% endif %}
+1. [~~Front Matter Data in Layouts~~](/docs/layouts/#front-matter-data-in-layouts) _(only in 0.x)_{% if page.url == "/docs/layouts/" %} ⬅{% endif %}
 1. [Template Data Files](/docs/data-template-dir/){% if page.url == "/docs/data-template-dir/" %} ⬅{% endif %}
 1. [Directory Data Files (and ascending Parent Directories)](/docs/data-template-dir/){% if page.url == "/docs/data-template-dir/" %} ⬅{% endif %}
+1. [Front Matter Data in Layouts](/docs/layouts/#front-matter-data-in-layouts) _(moved in 1.0)_{% if page.url == "/docs/layouts/" %} ⬅{% endif %}
 1. [Global Data Files](/docs/data-global/){% if page.url == "/docs/data-global/" %} ⬅{% endif %}
 1. [Custom Global Data](/docs/data-global-custom/){% if page.url == "/docs/data-global-custom/" %} ⬅{% endif %}
