@@ -204,7 +204,7 @@ Note in the above example that we output the `post.data.title` value? Similarly,
 * `fileSlug`: {% addedin "0.5.3" %} Mapped from the input file name, useful for permalinks. Read more about [`fileSlug`](/docs/data-eleventy-supplied/#fileslug).
 * `outputPath`: the full path to the output file to be written for this content
 * `url`: url used to link to this piece of content.
-* `date`: the resolved date used for sorting. Read more about [Content Dates](/docs/dates/).
+* `date`: the resolved JS Date Object used for sorting. Read more about [Content Dates](/docs/dates/).
 * `data`: all data for this piece of content (includes any data inherited from layouts)
 * `templateContent`: the rendered content of this template. This does _not_ include layout wrappers.
 
@@ -213,7 +213,7 @@ Note in the above example that we output the `post.data.title` value? Similarly,
   fileSlug: 'test1', // fileSlug was added in 0.5.3
   outputPath: './_site/test1/index.html',
   url: '/test1/',
-  date: 2018-01-09T04:10:17.000Z,
+  date: new Date(),
   data: { title: 'Test Title', tags: ['tag1', 'tag2'], date: 'Last Modified' },
   templateContent: '<h1>This is my title</h1>\n\n<p>This is content…' }
 ```
