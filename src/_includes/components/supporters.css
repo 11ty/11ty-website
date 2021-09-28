@@ -54,7 +54,15 @@
   flex-grow: 1.8;
 }
 .supporters-gold-cloudcannon {
-  flex-grow: 1.7;
+	flex-grow: 1.7;
+}
+.supporters-gold-cloudcannon svg {
+	color: #034AD8;
+}
+@media (prefers-color-scheme: dark) {
+	.supporters-gold-cloudcannon svg {
+		color: #fff;
+	}
 }
 @media (min-width: 64em) { /* 1024px */
 	.elv-docs .supporters-gold-sanity {
