@@ -218,15 +218,6 @@ ${text.trim()}
 	eleventyConfig.addPassthroughCopy("src/blog/*.png");
 	eleventyConfig.addPassthroughCopy("src/favicon.ico");
 
-	eleventyConfig.addFilter("resolveUrl", function(path, data) {
-		try {
-			let serverlessUrl = eleventyConfig.getFilter("serverlessUrl");
-			return serverlessUrl(path, data);
-		} catch(e) {
-			return path;
-		}
-	});
-
 	eleventyConfig.addFilter("lighthouseGoodDataCheck", function(data) {
 		return !!data && !("error" in data);
 	});

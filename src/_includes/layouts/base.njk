@@ -4,9 +4,8 @@ social:
   imgalt: The 11ty logo text with a small floating possum on a balloon
 eleventyComputed:
   domain: "{{ process.env.DEPLOY_PRIME_URL or 'https://www.11ty.dev'}}"
-  urlpath: "{{ page.url | resolveUrl(eleventy.serverless.path) }}"
   social:
-    imgsrc: "https://v1.screenshot.11ty.dev/{{ (domain + urlpath) | urlencode }}/opengraph/{% if extraOgKey %}_{{ extraOgKey }}/{% endif %}"
+    imgsrc: "https://v1.screenshot.11ty.dev/{{ (domain + page.url) | urlencode }}/opengraph/{% if extraOgKey %}_{{ extraOgKey }}/{% endif %}"
     description: "A docs page for Eleventy {% latestVersion versions, config %}, a simpler static site generator."
 ---
 <!doctype html>
