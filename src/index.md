@@ -1,8 +1,8 @@
 ---
 layout: layouts/main.njk
 logoLink: /docs/
-logoContent: "<span class='elv-hero-content'>5</span>"
-extraOgKey: 5
+logoContent: "<span class='elv-hero-content'>4</span>"
+extraOgKey: 4
 ignoreGitHubButtons: true
 ignoreSupporters: true
 ignoreFastestSite: true
