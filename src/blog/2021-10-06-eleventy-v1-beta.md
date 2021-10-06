@@ -2,6 +2,9 @@
 newstitle: "The very first Eleventy 1.0 Beta Release"
 eleventyNavigation:
   parent: Blog
+eleventyComputed:
+  social:
+    imgsrc: "https://v1.screenshot.11ty.dev/https%3A%2F%2Fwww.11ty.dev%2F/opengraph/_1/"
 ---
 It is my absolute honor to announce that the very first Eleventy 1.0 Beta release is now available on the beta channel. You can try it out now:
 
