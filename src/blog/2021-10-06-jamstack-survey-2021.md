@@ -10,11 +10,13 @@ Skip to the [Technology choices section](https://jamstack.org/survey/2021/#choic
 
 Of note:
 
-> Major frameworks, where the cut-off is at least 10% usage, and then minor frameworks
+> Major frameworks, where the cut-off is at least 10% usage
 
-Eleventy is classified as a “major framework” here, which is huge news. Our usage has bypassed Vite, Svelte, Hugo, Preact, and Jekyll in the Jamstack world!
+Eleventy is classified as a “major framework” here with ~17% usage, which is huge news. Our usage is beyond that of Vite, Svelte, Hugo, Preact, and Jekyll in the Jamstack world!
 
 > Relative newcomers Svelte and 11ty are doing very well, with 11ty continuing a strong showing despite relatively low awareness. Early-ish adopters, check these out.
+
+Astute readers might remember that [last year’s 2020 survey](/blog/jamstack-survey/) had some lovely things to say too.
 
 Really appreciate the support, everyone!
 
