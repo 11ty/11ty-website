@@ -261,7 +261,7 @@ permalink:
 
 Perhaps most interestingly, this works with dynamic URLs too. This will work with any syntax supported by the [`path-to-regexp` package](https://www.npmjs.com/package/path-to-regexp).
 
-{% callout "info", "md" %}Astute users of the 1.0 canary prereleases will note that starting in canary 45, this package changed from [`url-pattern`](https://www.npmjs.com/package/url-pattern) to `path-to-regexp`. [Read more at Issue 1988](https://github.com/11ty/eleventy/issues/1988).{% endcallout %}
+{% callout "info", "md" %}Astute users of the 1.0 canary prereleases will note that starting in Beta 1, this package changed from [`url-pattern`](https://www.npmjs.com/package/url-pattern) to `path-to-regexp`. [Read more at Issue 1988](https://github.com/11ty/eleventy/issues/1988).{% endcallout %}
 
 ```yaml
 ---
