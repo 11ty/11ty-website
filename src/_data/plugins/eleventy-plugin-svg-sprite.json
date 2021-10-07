@@ -1,5 +1,5 @@
 {
 	"npm": "eleventy-plugin-svg-sprite",
-	"author": "patrickxchong",
+	"author": "Patrick153",
 	"description": "will compile a directory of SVG files into a single SVG sprite and install shortcodes to embed SVG sprite and SVG content"
 }
