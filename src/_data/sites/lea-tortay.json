@@ -2,5 +2,9 @@
 	"url": "https://lea-tortay.com/",
 	"name": "Léa Tortay website",
 	"description": "My personnal website as frontend dev",
-	"twitter": "lea_tortay"
+	"twitter": "lea_tortay",
+	"business": {
+		"cta": "https://lea-tortay.com/",
+		"availability": "2021-11-01"
+	}
 }
