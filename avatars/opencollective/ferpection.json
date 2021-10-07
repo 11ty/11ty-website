@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/ferpection.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/ferpection.avif 90w",
+      "filename": "ferpection.avif",
+      "outputPath": "src/img/avatars/opencollective/ferpection.avif",
+      "size": 572
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/ferpection.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/ferpection.webp 90w",
+      "filename": "ferpection.webp",
+      "outputPath": "src/img/avatars/opencollective/ferpection.webp",
+      "size": 160
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/ferpection.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/ferpection.jpeg 90w",
+      "filename": "ferpection.jpeg",
+      "outputPath": "src/img/avatars/opencollective/ferpection.jpeg",
+      "size": 613
+    }
+  ],
+  "slug": "ferpection"
+}

@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 91,
+      "url": "/img/avatars/opencollective/gaston-rampersad.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/gaston-rampersad.avif 90w",
+      "filename": "gaston-rampersad.avif",
+      "outputPath": "src/img/avatars/opencollective/gaston-rampersad.avif",
+      "size": 1851
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 91,
+      "url": "/img/avatars/opencollective/gaston-rampersad.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/gaston-rampersad.webp 90w",
+      "filename": "gaston-rampersad.webp",
+      "outputPath": "src/img/avatars/opencollective/gaston-rampersad.webp",
+      "size": 2432
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 91,
+      "url": "/img/avatars/opencollective/gaston-rampersad.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/gaston-rampersad.jpeg 90w",
+      "filename": "gaston-rampersad.jpeg",
+      "outputPath": "src/img/avatars/opencollective/gaston-rampersad.jpeg",
+      "size": 2668
+    }
+  ],
+  "slug": "gaston-rampersad"
+}

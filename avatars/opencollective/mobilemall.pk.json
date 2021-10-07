@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 49,
+      "url": "/img/avatars/opencollective/mobilemall.pk.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/mobilemall.pk.avif 90w",
+      "filename": "mobilemall.pk.avif",
+      "outputPath": "src/img/avatars/opencollective/mobilemall.pk.avif",
+      "size": 731
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 49,
+      "url": "/img/avatars/opencollective/mobilemall.pk.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/mobilemall.pk.webp 90w",
+      "filename": "mobilemall.pk.webp",
+      "outputPath": "src/img/avatars/opencollective/mobilemall.pk.webp",
+      "size": 428
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 49,
+      "url": "/img/avatars/opencollective/mobilemall.pk.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/mobilemall.pk.jpeg 90w",
+      "filename": "mobilemall.pk.jpeg",
+      "outputPath": "src/img/avatars/opencollective/mobilemall.pk.jpeg",
+      "size": 753
+    }
+  ],
+  "slug": "mobilemall.pk"
+}

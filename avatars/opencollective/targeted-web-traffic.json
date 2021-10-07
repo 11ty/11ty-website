@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/targeted-web-traffic.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/targeted-web-traffic.avif 90w",
+      "filename": "targeted-web-traffic.avif",
+      "outputPath": "src/img/avatars/opencollective/targeted-web-traffic.avif",
+      "size": 1205
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/targeted-web-traffic.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/targeted-web-traffic.webp 90w",
+      "filename": "targeted-web-traffic.webp",
+      "outputPath": "src/img/avatars/opencollective/targeted-web-traffic.webp",
+      "size": 1510
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/targeted-web-traffic.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/targeted-web-traffic.jpeg 90w",
+      "filename": "targeted-web-traffic.jpeg",
+      "outputPath": "src/img/avatars/opencollective/targeted-web-traffic.jpeg",
+      "size": 2032
+    }
+  ],
+  "slug": "targeted-web-traffic"
+}
