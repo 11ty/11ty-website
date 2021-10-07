@@ -117,6 +117,10 @@ blockquote img {
 	margin-left: 2px;
 	margin-right: 6px;
 }
+.avatar-large {
+	height: 1.5em;
+	width: 1.5em;
+}
 .avatar,
 blockquote img {
 	border-radius: 50%;
@@ -132,6 +136,9 @@ ul:not(.list-bare):not(.inlinelist) > li > a > .avatar {
 	vertical-align: top;
 	margin-left: 4px;
 	margin-right: 4px;
+}
+ul:not(.list-bare):not(.inlinelist) > li > a > .avatar-large {
+	height: 1.444444444444em; /* 26px /18 */
 }
 blockquote .bio-source {
 	white-space: nowrap;

@@ -170,6 +170,14 @@ module.exports = function(eleventyConfig) {
 		return `<div class="elv-callout${level ? ` elv-callout-${level}` : ""}${cls ? ` ${cls}`: ""}">${content}</div>`;
 	});
 
+	eleventyConfig.addShortcode("indieweblink", function(content, url) {
+		let imgHtml = "";
+		if(!url.startsWith("/")) {
+			imgHtml = `<img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(url)}/" width="150" height="150" alt="IndieWeb Avatar for ${url}" class="avatar avatar-large" loading="lazy" decoding="async">`;
+		}
+		return `<a href="${url}">${imgHtml}${content}</a>`;
+	});
+
 	eleventyConfig.addShortcode("emoji", function(emoji, alt = "") {
 		return `<span aria-hidden="true" class="emoji">${emoji}</span>` +
 			(alt ? `<span class="sr-only">${alt}</span>` : "");
