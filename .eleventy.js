@@ -173,7 +173,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addShortcode("indieweblink", function(content, url) {
 		let imgHtml = "";
 		if(!url.startsWith("/")) {
-			imgHtml = `<img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(url)}/" width="150" height="150" alt="IndieWeb Avatar for ${url}" class="avatar avatar-large" loading="lazy" decoding="async">`;
+			imgHtml = `<img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(url)}/" width="150" height="150" alt="IndieWeb Avatar for ${url}" class="avatar avatar-large avatar-indieweb" loading="lazy" decoding="async">`;
 		}
 		return `<a href="${url}">${imgHtml}${content}</a>`;
 	});
