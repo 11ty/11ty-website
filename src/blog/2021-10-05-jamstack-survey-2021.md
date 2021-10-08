@@ -1,5 +1,5 @@
 ---
-newstitle: "State of the Jamstack Survey 2021 Results"
+newstitle: "Jamstack Community Survey 2021 Results"
 eleventyNavigation:
   parent: Eleventy Blog
 ---
