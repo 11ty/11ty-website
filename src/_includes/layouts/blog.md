@@ -1,7 +1,7 @@
 ---
+title: Eleventy Blog
 layout: layouts/docs.njk
 eleventyComputed:
-  title: "{{ newstitle }}"
   social:
     description: "An Eleventy blog post published on {{ page.date | newsDate('LLLL yyyy') }}."
 ---
@@ -17,3 +17,14 @@ eleventyComputed:
 </div>
 
 {{ content | safe }}
+
+
+---
+
+### Read more blog posts:
+
+{% set previousPost = collections.blog | getPreviousCollectionItem(page) %}
+{% set nextPost = collections.blog | getNextCollectionItem(page) %}
+
+{% if nextPost %}* <a href="{{ nextPost.url }}">Next: {{ nextPost.data.newstitle }}</a>{% endif %}
+{% if previousPost %}* <a href="{{ previousPost.url }}">Previous: {{ previousPost.data.newstitle }}</a>{% endif %}

@@ -1,6 +1,7 @@
 ---
+title: Eleventy Blog
 eleventyNavigation:
-  key: Blog
+  key: Eleventy Blog
   order: 9.1
 excludeFromSidebar: false
 layout: "layouts/docs.njk"

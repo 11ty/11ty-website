@@ -1,7 +1,7 @@
 ---
 newstitle: "State of the Jamstack Survey 2021 Results"
 eleventyNavigation:
-  parent: Blog
+  parent: Eleventy Blog
 ---
 
 ### Check out the [Jamstack Community Survey 2021](https://jamstack.org/survey/2021/)

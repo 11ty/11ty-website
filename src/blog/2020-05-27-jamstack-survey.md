@@ -1,7 +1,7 @@
 ---
 newstitle: "State of the Jamstack Survey 2020 Results"
 eleventyNavigation:
-  parent: Blog
+  parent: Eleventy Blog
 ---
 Yes, it took me a long while to add this to the blog but I did want to include it in the archives. Netlify does a Jamstack Community Survey every year to gauge trends in the Jamstack world and [the results post had a glowing mention of Eleventy](https://www.netlify.com/blog/2020/05/27/state-of-the-jamstack-survey-2020-first-results/#best-practices):
 
