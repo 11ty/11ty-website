@@ -1,5 +1,9 @@
 ---
 layout: layouts/docs.njk
+eleventyComputed:
+  title: "{{ newstitle }}"
+  social:
+    description: "An Eleventy blog post published on {{ page.date | newsDate('LLLL yyyy') }}."
 ---
 # {{ newstitle }}
 
