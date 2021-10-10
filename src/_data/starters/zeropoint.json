@@ -2,6 +2,5 @@
 	"url": "https://getzeropoint.com",
 	"name": "ZeroPoint",
 	"description": "A modern, opinionated, bare-bones Jamstack starter using Eleventy to get 'up to zero' on a project quickly and easily.",
-	"author": "MWDelaney",
-	"demo": ""
+	"author": "michaelwdelaney"
 }
