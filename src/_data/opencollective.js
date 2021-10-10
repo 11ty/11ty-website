@@ -9,6 +9,9 @@ const FilteredProfiles = [
 	"trust-my-paper", // selling term papers
 	"kiirlaenud", // some quick loans site
 	"kajino-bitcoin", //bitcoin
+	"seo25-com", // selling website traffic
+	"relief-factor", // profile link was some weird PDF
+	"targetedwebtraffic", // selling website traffic
 ];
 const OpenCollectiveTwitterMap = require("./opencollectiveToTwitterUsernameMap.js");
 
