@@ -23,6 +23,8 @@ The above is using [YAML syntax](https://learnxinyminutes.com/docs/yaml/). You c
 
 Locally assigned front matter values override things further up the layout chain. Note also that layouts can contain front matter variables that you can use in your local template. Leaf template front matter takes precedence over layout front matter. Read more about [Layouts](/docs/layouts/).
 
+Note that only the [`permalink`](/docs/permalinks/) and [`eleventyComputed`](/docs/data-computed) front matter values can contain variables and shortcodes like you would use in the body of your templates. If you need to use variables or shortcodes in other front matter values, use `eleventyComputed` to set them. 
+
 ## Template Configuration
 <span id="user-defined-front-matter-customizations"></span>
 
