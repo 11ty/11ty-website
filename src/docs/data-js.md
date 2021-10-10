@@ -51,12 +51,26 @@ async function fetchUserData(username) {
   // do some async things
   return username;
 }
- 
+
 module.exports = async function() {
   let user1 = await fetchUserData("user1");
   let user2 = await fetchUserData("user2");
 
   return [user1, user2];
+};
+```
+
+### Arguments to Global Data Files
+
+{% addedin "1.0.0" %} When using a callback function in your JavaScript Data Files, Eleventy will now supply any global data already processed [via the Configuration API (`eleventyConfig.addGlobalData`)](/docs/data-global-custom/) as well as the [`eleventy` global variable](/docs/data-eleventy-supplied/#eleventy-variable).
+
+```js
+module.exports = function(configData) {
+  if(configData.eleventy.env.source === "cli") {
+    return "I am on the command line";
+  }
+
+  return "I am running programmatically via a script";
 };
 ```
 
@@ -89,27 +103,26 @@ module.exports = function() {
 
 ### Example: Exposing Environment Variables
 
-You can expose environment variables (e.g. `ELEVENTY_ENV`) to your templates by using [Node.js’ `process.env` property](https://nodejs.org/api/process.html#process_process_env).
+You can expose environment variables to your templates by utilizing [Node.js’ `process.env` property](https://nodejs.org/api/process.html#process_process_env). _(Related: starting in version 1.0, Eleventy supplies a few of its [own Environment Variables](/docs/data-eleventy-supplied/#environment-variables))_
+
+Start by creating a [Global Data file](https://www.11ty.dev/docs/data-global/) (*.js inside of your _data directory) and export the environment variables for use in a template:
 
 {% codetitle "_data/myProject.js" %}
-
+{% raw %}
 ```js
-module.exports = {
-  environment: process.env.ELEVENTY_ENV
+module.exports = function() {
+  return {
+    environment: process.env.ELEVENTY_ENV
+  };
 };
 ```
+{% endraw %}
 
 Saving this as `myProject.js` in your global data directory (by default, this is `_data/`) gives you access to the `myProject.environment` variable in your templates.
 
-#### Sample commands
+You can set values for your environment variables using the command line or inside a `.env` file with [`dotenv`](https://www.npmjs.com/package/dotenv).
 
-```
-# Serve for Development
-ELEVENTY_ENV=development npx @11ty/eleventy --serve
-
-# Build for Production
-ELEVENTY_ENV=production npx @11ty/eleventy
-```
+When `ELEVENTY_ENV` is set, the value from `myProject.environment` will be globally available to be used in your templates. If the variable hasn't been set, you can provide a fallback e.g. `process.env.ELEVENTY_ENV || "development"`.
 
 #### Template Usage
 
@@ -124,3 +137,26 @@ Working from our [Inline CSS Quick Tip](/docs/quicktips/inline-css/), we can mod
 {% endif %}
 ```
 {% endraw %}
+
+#### Sample commands
+
+The supplied environment variables can be set via the command line:
+
+```shell
+# Serve for Development
+ELEVENTY_ENV=development npx @11ty/eleventy --serve
+
+# Build for Production
+ELEVENTY_ENV=production npx @11ty/eleventy
+```
+
+Note that the commands to set environment variables are different for Windows [(see examples using the `DEBUG` environment variable)](/docs/debugging/#commands). You can also use these commands in an npm script in your `package.json`:
+
+```js
+{
+  "scripts": {
+    "serve:dev": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
+    "build:prod": "ELEVENTY_ENV=production npx @11ty/eleventy"
+  }
+}
+```

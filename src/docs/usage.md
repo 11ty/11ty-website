@@ -13,7 +13,7 @@ These examples assume [local project installation](/docs/getting-started/) inste
 npx @11ty/eleventy
 ```
 
-{% callout "warn" %}<strong>Warning:</strong> Using <code>npx eleventy</code> instead of <code>npx @11ty/eleventy</code> <em>may</em> work if you already have Eleventy installed globally or in your local project but it is not recommended! If Eleventy is not already installed this will download and execute the <a href="https://www.npmjs.com/package/eleventy">wrong package</a>. So make sure you run <code>npx @11ty/eleventy</code> (including the <code>@11ty/</code> prefix!).{% endcallout %}
+{% callout "warn" %}Make sure you always use <code>npx @11ty/eleventy</code> (including the <code>@11ty/</code> prefix!). If you do not include the <code>@11ty/</code> prefix and you don’t already have Eleventy installed (locally or globally), it will execute the <strong><a href="https://www.npmjs.com/package/eleventy">wrong package</a></strong>. For consistency and accuracy always use <code>npx @11ty/eleventy</code>.{% endcallout %}
 
 If you’re using a global install of Eleventy, remove `npx @11ty/` from the beginning of each command, like so:
 
@@ -27,7 +27,7 @@ eleventy
 npx @11ty/eleventy --input=. --output=_site
 ```
 
-Read more about [`--input`](/docs/config/#input-directory) and [`--output`](/docs/config/#output-directory).
+Read more about [`--input`](/docs/config/#input-directory) and [`--output`](/docs/config/#output-directory). Note that setting the input and output directories via a [config](/docs/config/) file is more reliable, especially when using tools like [`netlify dev`](https://docs.netlify.com/cli/get-started/#run-a-local-development-environment).
 
 A hypothetical `template.md` in the current directory would be rendered to `_site/template/index.html`. Read more at [Permalinks](/docs/permalinks/).
 
@@ -85,7 +85,21 @@ npx @11ty/eleventy --dryrun
 npx @11ty/eleventy --config=myeleventyconfig.js
 ```
 
-## Examples
+### `--to` can output JSON
+
+```bash
+# Output a JSON structure (does not write to the file system)
+npx @11ty/eleventy --to=json
+
+# Output a Newline Deliminated JSON structure (does not write to the file system)
+npx @11ty/eleventy --to=ndjson
+
+# Default behavior (Output to file system)
+npx @11ty/eleventy --to=fs
+```
+
+Read more about [ndjson](http://ndjson.org/).
+
 
 ### Using the Same Input and Output
 

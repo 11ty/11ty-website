@@ -117,9 +117,16 @@ blockquote img {
 	margin-left: 2px;
 	margin-right: 6px;
 }
+.avatar-large {
+	height: 1.5em;
+	width: 1.5em;
+}
 .avatar,
 blockquote img {
 	border-radius: 50%;
+}
+.avatar-indieweb {
+	border-radius: .25em;
 }
 .icon,
 .has-svg-icon > svg,
@@ -132,6 +139,9 @@ ul:not(.list-bare):not(.inlinelist) > li > a > .avatar {
 	vertical-align: top;
 	margin-left: 4px;
 	margin-right: 4px;
+}
+ul:not(.list-bare):not(.inlinelist) > li > a > .avatar-large {
+	height: 1.444444444444em; /* 26px /18 */
 }
 blockquote .bio-source {
 	white-space: nowrap;
@@ -435,11 +445,12 @@ a[href].elv-hero,
 a[href].elv-hero:visited {
 	color: #fff;
 }
-.elv-hero-hits {
+.elv-hero-content {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-size: 30vw;
+	font-size: 40vh;
 	height: 60vh;
 	color: #fff;
 	position: relative;
@@ -890,8 +901,8 @@ main .elv-toc + h1 .direct-link {
 .elv-serverless-banner {
 	text-align: center;
 }
-.elv-serverless-banner code {
-	display: block;
+.elv-serverless-banner-time {
+	display: inline-flex;
 	font-size: 1.25em; /* 20px /16 */
 	margin-top: .25em;
 }

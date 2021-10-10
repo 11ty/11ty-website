@@ -31,7 +31,7 @@ This plugin can save *any* kind of asset—JSON, HTML, images, videos, etc.
 npm install @11ty/eleventy-cache-assets
 ```
 
-{% callout %}<strong>Important Security and Privacy Notice</strong>
+{% callout "warn" %}<strong>Important Security and Privacy Notice</strong>
 <p>
   This plugin caches complete network responses. Unless you’re willing to perform a full review of everything this plugin caches to disk for privacy and security exposure, it is <em>strongly</em> recommended that you add the <code>.cache</code> folder to your <code>.gitignore</code> file so that network responses aren’t checked in to your git repository.
 </p>
@@ -83,7 +83,7 @@ After this amount of time has passed, we’ll make a new network request to the 
 
 The `directory` option let’s you change where the cache is stored. It is strongly recommended that you add this folder to your `.gitignore` file.
 
-{% callout %}Read the <a href="#installation">Important Security and Privacy Notice</a>.{% endcallout %}
+{% callout "warn" %}Read the <a href="#installation">Important Security and Privacy Notice</a>.{% endcallout %}
 
 ```js
 const Cache = require("@11ty/eleventy-cache-assets");

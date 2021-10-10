@@ -22,7 +22,7 @@ eleventyNavigation:
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
-```liquid
+```
 {% assign previousPost = collections.posts | getPreviousCollectionItem: page %}
 {% assign nextPost = collections.posts | getNextCollectionItem: page %}
 ```

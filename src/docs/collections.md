@@ -71,7 +71,7 @@ Compare the `post.url` and special Eleventy-provided `page.url` variable to find
 exports.render = function(data) {
   return `<ul>
     ${data.collections.post.map(post =>
-      `<li${data.page.url === post.url ? `class="active"` : ""}>${post.data.title}</li>`
+      `<li${data.page.url === post.url ? ` aria-current="page"` : ""}>${post.data.title}</li>`
     ).join("\n")}
   </ul>`;
 };
@@ -104,9 +104,9 @@ By default Eleventy puts all of your content (independent of whether or not it h
 ```js
 exports.render = function(data) {
   return `<ul>
-    ${data.collections.post.map(post =>
+    ${data.collections.all.map(post =>
       `<li><a href="${post.url}">${post.url}</a></li>`
-    ).join("\n");}
+    ).join("\n")}
   </ul>`;
 };
 ```
@@ -139,6 +139,16 @@ tags: cat
 ```
 
 This content would show up in the template data inside of `collections.cat`.
+
+### Using multiple words in a single tag
+
+```markdown
+---
+tags: cat and dog
+---
+```
+
+If you use multiple words for one tag you can access the content by the following syntax `collections['cat and dog']`.
 
 ### Multiple tags, single line
 
@@ -182,7 +192,7 @@ This content would show up in the template data inside of `collections.cat` and 
 ```js
 exports.render = function(data) {
   return `<ul>
-    ${data.collections.post.map(post => `<li>${post.data.title}</li>`).join("\n");}
+    ${data.collections.post.map(post => `<li>${post.data.title}</li>`).join("\n")}
   </ul>`;
 };
 ```
@@ -194,7 +204,7 @@ Note in the above example that we output the `post.data.title` value? Similarly,
 * `fileSlug`: {% addedin "0.5.3" %} Mapped from the input file name, useful for permalinks. Read more about [`fileSlug`](/docs/data-eleventy-supplied/#fileslug).
 * `outputPath`: the full path to the output file to be written for this content
 * `url`: url used to link to this piece of content.
-* `date`: the resolved date used for sorting. Read more about [Content Dates](/docs/dates/).
+* `date`: the resolved JS Date Object used for sorting. Read more about [Content Dates](/docs/dates/).
 * `data`: all data for this piece of content (includes any data inherited from layouts)
 * `templateContent`: the rendered content of this template. This does _not_ include layout wrappers.
 
@@ -203,7 +213,7 @@ Note in the above example that we output the `post.data.title` value? Similarly,
   fileSlug: 'test1', // fileSlug was added in 0.5.3
   outputPath: './_site/test1/index.html',
   url: '/test1/',
-  date: 2018-01-09T04:10:17.000Z,
+  date: new Date(),
   data: { title: 'Test Title', tags: ['tag1', 'tag2'], date: 'Last Modified' },
   templateContent: '<h1>This is my title</h1>\n\n<p>This is content…' }
 ```
@@ -271,19 +281,19 @@ And in JavaScript it’d look like this:
 exports.render = function(data) {
   let posts = data.collections.post.reverse();
   return `<ul>
-    ${posts.map(post => `<li>${post.data.title}</li>`).join("\n");}
+    ${posts.map(post => `<li>${post.data.title}</li>`).join("\n")}
   </ul>`;
 };
 ```
 {% endraw %}
 
-<div class="elv-callout elv-callout-warn elv-callout-warn-block" id="array-reverse">
-  <p>You should <em><strong>not</strong></em> use Array <code>reverse()</code> on collection arrays in your templates, like so:</p>
+{% callout "warn" %}
+  <p id="array-reverse">You should <em><strong>not</strong></em> use Array <code>reverse()</code> on collection arrays in your templates, like so:</p>
   <p><code>{%raw %}{%- for post in collections.post.reverse() -%}{% endraw %}</code></p>
   <p>This will <a href="https://doesitmutate.xyz/reverse/">mutate the array</a> and re-order it <em>in-place</em> and will have side effects for any use of that collection in other templates.</p>
   <p>Instead, use one of the many template engine utilities provided for you to do this, such as <a href="http://shopify.github.io/liquid/filters/reverse/">Liquid’s <code>reverse</code></a> or <a href="https://mozilla.github.io/nunjucks/templating.html#reverse">Nunjucks’ <code>reverse</code></a></p>
   <p>This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</p>
-</div>
+{% endcallout %}
 
 ### Overriding Content Dates
 

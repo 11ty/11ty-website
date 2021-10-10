@@ -1,8 +1,14 @@
 ---
+title: Eleventy, a simpler static site generator.
 social:
   imgsrc: https://www.11ty.dev/img/open-graph.jpg
   imgalt: The 11ty logo text with a small floating possum on a balloon
-  description: Eleventy is a simpler static site generator.
+eleventyComputed:
+  domain: "{{ process.env.DEPLOY_PRIME_URL or 'https://www.11ty.dev'}}"
+  social:
+    imgsrc: "https://v1.screenshot.11ty.dev/{{ (domain + page.url) | urlencode }}/opengraph/{% if extraOgKey %}_{{ extraOgKey }}/{% endif %}"
+    imgalt: "A screenshot of the web page at {{ (domain + page.url) }}"
+    description: "A docs page for Eleventy {% latestVersion versions, config %}, a simpler static site generator."
 ---
 <!doctype html>
 <html lang="en"{% if templateClass %} class="{{ templateClass }}"{% endif %}>
@@ -10,9 +16,8 @@ social:
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		{%- set subtitle %}{{ newstitle or searchTitle or relatedTitle or tiptitle or eleventyNavigation.key or title }}{% endset %}
-		{%- set subtitleText %}{% if subtitle and subtitle != "Eleventy Home" %}{{ subtitle }} | Eleventy,{% else %}Eleventy is{% endif %} a simpler static site generator.{% endset %}
+		{%- set subtitleText %}{% if subtitle and subtitle != "Eleventy Home" %}{{ subtitle }}—{% endif %}Eleventy, a simpler static site generator.{% endset %}
 		<title>{{ subtitleText }}</title>
-		<meta name="title" content="{{ subtitleText }}">
 		<meta name="description" content="{{ subtitleText }}">
 		<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon.png">
 
@@ -33,7 +38,7 @@ social:
 		<meta property="twitter:site" content="@eleven_ty">
 		<meta property="twitter:creator" content="@zachleat">
 		<meta property="twitter:url" content="https://www.11ty.dev/">
-		<meta property="twitter:title" content="{{ subtitleText }}">
+		<meta property="twitter:title" content="{{ subtitle }}">
 		<meta property="twitter:description" content="{{ social.description }}">
 		<meta property="twitter:image" content="{{ social.imgsrc }}">
 		<meta property="twitter:image:alt" content="{{ social.imgalt }}">
@@ -50,6 +55,7 @@ social:
 {% include 'components/code.css' %}
 {% include 'components/announcement.css' %}
 {% include 'components/seven-minute-tabs.css' %}
+{% include 'components/community.css' %}
 
 /* Filters */
 .filter-tags--hide {
@@ -65,7 +71,7 @@ social:
 {% endfor %}
 {{ googlefonts | safe }}
 {% endset %}
-		<link href="https://screenshot.11ty.dev" rel="preconnect" crossorigin>
+		<link href="https://v1.screenshot.11ty.dev" rel="preconnect" crossorigin>
 		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
 		<style>{{ css | cssmin | safe }}</style>
 		<link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'">

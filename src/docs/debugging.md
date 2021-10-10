@@ -59,7 +59,6 @@ What is the difference between Local and [Global installation](/docs/global-inst
 	<div class="lo-c">Installed Globally</div>
 	<div class="lo-c lo-maxgrow">{% highlight "bash" %}$env:DEBUG="Eleventy*"; eleventy{% endhighlight %}</div>
 </div>
-`
 
 ## Learn More
 

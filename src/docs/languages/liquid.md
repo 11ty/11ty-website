@@ -40,7 +40,7 @@ module.exports = function(eleventyConfig) {
 
 As an escape mechanism for advanced usage, pass in your own instance of the Liquid library using the Configuration API. See [all `liquidjs` options](https://github.com/harttle/liquidjs#options).
 
-<div class="elv-callout elv-callout-warn">Not compatible with <code>setLiquidOptions</code> above—this method will override any configuration set there.</div>
+{% callout "warn" %}Not compatible with <code>setLiquidOptions</code> above—this method will <em>override</em> any configuration set there.{% endcallout %}
 
 ```js
 module.exports = function(eleventyConfig) {

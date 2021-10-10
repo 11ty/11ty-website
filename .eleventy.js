@@ -59,11 +59,11 @@ const shortcodes = {
 	},
 	getScreenshotHtml: function(siteSlug, siteUrl, sizes) {
 		let viewport = {
-			width: 420,
-			height: 420,
+			width: 375,
+			height: 375,
 		};
 
-		let screenshotUrl = `https://screenshot.11ty.dev/1.0/${encodeURIComponent(siteUrl)}/small/`;
+		let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(siteUrl)}/small/`;
 
 		if(siteSlug === "11ty" || siteSlug === "foursquare") {
 			screenshotUrl = `/img/screenshot-fallbacks/${siteSlug}.jpg`;
@@ -85,7 +85,8 @@ const shortcodes = {
 			decoding: "async",
 			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
 			class: "sites-screenshot",
-			onerror: "let p=this.closest('picture');if(p){p.remove();}this.remove();"
+			// No longer necessary because we have a default fallback image when timeouts happen.
+			// onerror: "let p=this.closest('picture');if(p){p.remove();}this.remove();"
 		});
 	}
 };
@@ -160,11 +161,25 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPairedShortcode("markdown", function(content) {
 		return md.renderInline(content);
 	});
-	eleventyConfig.addPairedShortcode("callout", function(content, level = "warn", format = "html", cls = "") {
+	eleventyConfig.addPairedShortcode("callout", function(content, level = "", format = "html", cls = "") {
 		if( format === "md" ) {
 			content = md.renderInline(content);
+		} else if( format === "md-block" ) {
+			content = md.render(content);
 		}
-		return `<div class="elv-callout elv-callout-${level}${cls ? ` ${cls}`: ""}">${content}</div>`;
+		return `<div class="elv-callout${level ? ` elv-callout-${level}` : ""}${cls ? ` ${cls}`: ""}">${content}</div>`;
+	});
+
+	eleventyConfig.addShortcode("indieweblink", function(content, url) {
+		if(!url) {
+			return content;
+		}
+
+		let imgHtml = "";
+		if(!url.startsWith("/")) {
+			imgHtml = `<img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(url)}/" width="150" height="150" alt="IndieWeb Avatar for ${url}" class="avatar avatar-large avatar-indieweb" loading="lazy" decoding="async">`;
+		}
+		return `<a href="${url}">${imgHtml}${content}</a>`;
 	});
 
 	eleventyConfig.addShortcode("emoji", function(emoji, alt = "") {

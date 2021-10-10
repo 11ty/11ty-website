@@ -47,7 +47,7 @@ We can use npx to run our local project version’s version of Eleventy. Let’s
 
 {% codewithprompt "eleventysample", "first" %}
 npx @11ty/eleventy
-Processed 0 files in 0.03 seconds ({% latestVersion versions, config %})
+Wrote 0 files in 0.03 seconds ({% latestVersion versions, config %})
 {% endcodewithprompt %}
 
 Make sure that you see `({% latestVersion versions, config %})` in your output. This lets you know you’re using the newest version. However, Eleventy didn’t process any files! This is expected—we have an empty folder with no templates inside.

@@ -76,6 +76,8 @@ In [Eleventy’s Data Cascade](/docs/data/), front matter data in your template 
 
 Front matter data set in a content template takes priority over layout front matter! [Chained layouts](/docs/layout-chaining/) have similar merge behavior. The closer to the content, the higher priority the data.
 
+{% callout "info" %}The placement in the data cascade for frontmatter data in layouts changed in 1.0! Take note of the new order below.{% endcallout %}
+
 ### Sources of Data
 
 {% include "datasources.md" %}

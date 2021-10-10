@@ -17,11 +17,28 @@ layout: layouts/langs.njk
 
 You can override a `.njk` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
 
-## Nunjucks Options
+## Nunjucks Environment Options
 
-### Optional: Use your Nunjucks Environment {% addedin "0.3.0" %}
+We use [Nunjucks defaults for all environment options](https://mozilla.github.io/nunjucks/api.html#configure) (shown in the `configure` section of the Nunjucks docs).
 
-As an escape mechanism for advanced usage, pass in your own instance of a [Nunjucks Environment](https://mozilla.github.io/nunjucks/api.html#environment) using the Configuration API.
+### Optional: Use your Nunjucks Environment Options {% addedin "1.0.0" %}
+
+It’s recommended to use the Configuration API to override the default Nunjucks options.
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setNunjucksEnvironmentOptions({
+    throwOnUndefined: true,
+    autoescape: false, // warning: don’t do this!
+  });
+};
+```
+
+### Advanced: Use your Nunjucks Environment {% addedin "0.3.0" %}
+
+While it is preferred and simpler to use the Options-specific API method above (new in Eleventy 1.0!)—as an escape mechanism for advanced usage you may pass in your own instance of a [Nunjucks Environment](https://mozilla.github.io/nunjucks/api.html#environment) using the Configuration API.
+
+{% callout "warn" %}Not compatible with <code>setNunjucksEnvironmentOptions</code> above—this method will <em>override</em> any configuration set there.{% endcallout %}
 
 ```js
 let Nunjucks = require("nunjucks");
@@ -60,10 +77,10 @@ Read more about [Nunjucks Filter syntax](https://mozilla.github.io/nunjucks/temp
 module.exports = function(eleventyConfig) {
   // Nunjucks Filter
   eleventyConfig.addNunjucksFilter("myNjkFilter", function(value) { … });
-  
+
   // Nunjucks Asynchronous Filter (read on below)
   eleventyConfig.addNunjucksAsyncFilter("myAsyncNjkFilter", function(value, callback) { … });
-  
+
   // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
   eleventyConfig.addFilter("myFilter", function(value) { … });
 };
@@ -74,6 +91,23 @@ module.exports = function(eleventyConfig) {
 {% raw %}
 ```html
 <h1>{{ myVariable | myFilter }}</h1>
+```
+{% endraw %}
+
+### Multiple Filter Arguments
+
+```js
+module.exports = function(eleventyConfig) {
+  // Nunjucks Filter
+  eleventyConfig.addNunjucksFilter("concatThreeStrings", function(arg1, arg2, arg3) {
+    return arg1 + arg2 + arg3;
+  });
+};
+```
+
+{% raw %}
+```html
+<h1>{{ "first" | concatThreeThings("second", "third") }}</h1>
 ```
 {% endraw %}
 
@@ -117,7 +151,7 @@ Shortcodes are basically reusable bits of content. You can add Nunjucks specific
 module.exports = function(eleventyConfig) {
   // Nunjucks Shortcode
   eleventyConfig.addNunjucksShortcode("user", function(name, twitterUsername) { … });
-  
+
   // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
   eleventyConfig.addShortcode("user", function(name, twitterUsername) {
     return `<div class="user">
@@ -151,7 +185,7 @@ module.exports = function(eleventyConfig) {
 module.exports = function(eleventyConfig) {
   // Nunjucks Shortcode
   eleventyConfig.addPairedNunjucksShortcode("user", function(bioContent, name, twitterUsername) { … });
-  
+
   // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
   eleventyConfig.addPairedShortcode("user", function(bioContent, name, twitterUsername) {
     return `<div class="user">
@@ -288,3 +322,35 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+### Generic Global {% addedin "1.0.0" %}
+
+Nunjucks provides a custom way to [add globals](https://mozilla.github.io/nunjucks/api.html#addglobal) to templates. These can be any arbitrary JavaScript: functions, variables, etc. Note that this is not async-friendly (Nunjucks does not support `await` inside of templates).
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addNunjucksGlobal("fortythree", 43);
+};
+```
+
+{% raw %}
+```
+{{ fortythree }}
+```
+{% endraw %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addNunjucksGlobal("fortytwo", function() {
+    return 42;
+  });
+};
+```
+
+{% raw %}
+```
+{{ fortytwo() }}
+```
+{% endraw %}
+
+Read more on the [Nunjucks documentation](https://mozilla.github.io/nunjucks/api.html#addglobal) or [relevant discussion on Eleventy Issue #1060](https://github.com/11ty/eleventy/pull/1060).

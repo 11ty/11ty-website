@@ -1,6 +1,8 @@
 ---
 layout: layouts/main.njk
-logoLink: /docs/
+logoLink: /blog/eleventy-v1-beta/
+logoContent: "<span class='elv-hero-content'>1.0</span>"
+extraOgKey: 1
 ignoreGitHubButtons: true
 ignoreSupporters: true
 ignoreFastestSite: true
@@ -9,10 +11,13 @@ excludeFromSearch: true
 bigPossum: true
 permalink:
   dynamic: /
+eleventyComputed:
+  social:
+    description: "Eleventy, a simpler static site generator."
 ---
-{% callout "info", "html", "elv-serverless-banner" %}
+{% callout "", "html", "elv-serverless-banner" %}
 <strong>This page was rendered <em>just-in-time</em> for you using <a href="/docs/plugins/serverless/">Eleventy Serverless</a></strong>
-<code><time datetime="{{ config.now | toISO }}">{{ config.now | newsDate("yyyy LLL dd HH:mm:ss.SSS") }}</time></code>
+<code class="elv-serverless-banner-time"><time datetime="{{ config.now | toISO }}">{{ config.now | newsDate("yyyy LLL dd HH:mm:ss.SSS") }}</time></code>
 {% endcallout %}
 
 ## Quick Start

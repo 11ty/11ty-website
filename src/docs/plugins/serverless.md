@@ -3,6 +3,7 @@ eleventyNavigation:
   key: Serverless
   order: -1
   excerpt: A plugin to run Eleventy in a serverless function for server side rendering (e.g. Previews in your CMS) and/or in very large sites with [On-demand Builders](https://www.netlify.com/blog/2021/04/14/faster-builds-for-large-sites-on-netlify-with-on-demand-builders-now-in-early-access/).
+communityLinksKey: serverless
 ---
 # Serverless {% addedin "1.0.0" %}
 
@@ -258,7 +259,9 @@ permalink:
 
 #### Dynamic Slugs and Serverless Global Data
 
-Perhaps most interestingly, this works with dynamic URLs too. This will work with any syntax supported by the [`url-pattern` package](https://www.npmjs.com/package/url-pattern).
+Perhaps most interestingly, this works with dynamic URLs too. This will work with any syntax supported by the [`path-to-regexp` package](https://www.npmjs.com/package/path-to-regexp).
+
+{% callout "info", "md" %}Astute users of the 1.0 canary prereleases will note that starting in Beta 1, this package changed from [`url-pattern`](https://www.npmjs.com/package/url-pattern) to `path-to-regexp`. [Read more at Issue 1988](https://github.com/11ty/eleventy/issues/1988).{% endcallout %}
 
 ```yaml
 ---
@@ -349,7 +352,7 @@ _Documentation in progress_ (The new `serverlessURL` filter) -->
 
 ### Re-use build-time cache from the [Cache Assets plugin](/docs/plugins/cache/)
 
-To speed up serverless rendering and avoid requests to external sources, you can re-use the cache folder from your build! First we’ll need to copy the cache folder into our bundle and rename it without the leading dot.
+To speed up serverless rendering and avoid requests to external sources, you can re-use the cache folder from your build! First we’ll need to copy the cache folder into our bundle and rename it without the leading dot (the bundler ignores dot prefixed files and folders).
 
 {% codetitle ".eleventy.js" %}
 
