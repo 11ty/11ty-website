@@ -71,7 +71,7 @@ Compare the `post.url` and special Eleventy-provided `page.url` variable to find
 exports.render = function(data) {
   return `<ul>
     ${data.collections.post.map(post =>
-      `<li${data.page.url === post.url ? `class="active"` : ""}>${post.data.title}</li>`
+      `<li${data.page.url === post.url ? ` aria-current="page"` : ""}>${post.data.title}</li>`
     ).join("\n")}
   </ul>`;
 };
