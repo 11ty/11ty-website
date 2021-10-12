@@ -3,6 +3,7 @@ eleventyNavigation:
   parent: JavaScript
   key: JavaScript Template Literals
 layout: layouts/langs.njk
+excludeFromSidebar: true
 ---
 | Eleventy Short Name | File Extension | NPM Package |
 | ------------------- | -------------- | ----------- |
