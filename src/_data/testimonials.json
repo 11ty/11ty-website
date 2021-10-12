@@ -187,5 +187,17 @@
 		"twitter": "steeevg",
 		"name": "Steve Gardner",
 		"source": "https://twitter.com/steeevg/status/1409965870647025664"
+	},
+	{
+		"text": "Easily one of my favorite open source projects ever!",
+		"twitter": "tylersticka",
+		"name": "Tyler Sticka",
+		"source": "https://twitter.com/tylersticka/status/1446138920480043008"
+	},
+	{
+		"text": "[Eleventy is] a platform that legitimately built things in the way that I thought and worked more than anything else out there, and with every new feature it's like my mind gets read.",
+		"twitter": "brob",
+		"name": "Bryan Robinson",
+		"source": "https://twitter.com/brob/status/1446128951647035393"
 	}
 ]
