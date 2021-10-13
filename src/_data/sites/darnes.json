@@ -5,7 +5,6 @@
 	"twitter": "daviddarnes",
 	"authoredBy": ["daviddarnes"],
   "business": {
-		"cta": "https://darn.es/#contact",
-    "availability": "2021-12-01"
+		"cta": "https://darn.es/#contact"
 	}
 }
