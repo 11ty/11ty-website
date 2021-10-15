@@ -45,7 +45,9 @@ css:
 ### {{ displayName }}’s Starter Projects:
 
 {%- for site in authorStarters %}
+{%- if not site.disabled %}
 * [{% avatarlocalcache "twitter", site.author, site.author %}{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}
+{%- endif %}
 {%- endfor %}
 {%- endif %}
 
