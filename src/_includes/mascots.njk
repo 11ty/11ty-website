@@ -1,0 +1,18 @@
+<div class="sites-vert sites-vert--lg">
+  <div class="lo-grid" style="--lo-margin-v: 5em;">
+{%- for mascot in mascots %}
+<div class="lo-c sites-site-vert">
+  <a href="{{ mascot.url }}" class="elv-externalexempt">
+    <div class="img-gallery">
+      {% image mascot.image, mascot.name, [250], "sites-screenshot" %}
+    </div>
+    <strong class="sites-site-name">{{ mascot.name }}</strong>
+  </a>
+  <div class="sites-site-description">
+    <em>{% if mascot.author_url %}<a href="{{ mascot.author_url }}" class="elv-externalexempt">{% endif %}{{ mascot.author }}{% if mascot.author_url %}</a>{% endif %}.</em>
+    {{ mascot.description }}
+  </div>
+</div>
+{%- endfor %}
+  </div>
+</div>

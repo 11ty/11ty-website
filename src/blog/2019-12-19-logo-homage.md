@@ -6,7 +6,7 @@ eleventyNavigation:
 ---
 As many of you may know, [James Williamson](/blog/james-williamson/) first came up with _animal suspended from the floating red balloon_ logo for the Eleventy project in May of 2018.
 
-It was [originally a cat](https://twitter.com/jameswillweb/status/999052022497316865)!
+It was [originally a cat](https://web.archive.org/web/20200307013845/https://twitter.com/jameswillweb/status/999052022497316865)!
 
 James’ [quickly iterated to the now-iconic Eleventy possum](https://twitter.com/jameswillweb/status/999059541798072320).
 

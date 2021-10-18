@@ -514,14 +514,15 @@ a[href].elv-hero:visited {
 .elv-possum {
 	position: absolute;
 	right: .5rem;
-	top: 2rem;
+	top: .5rem;
 	transition: .3s opacity ease-out;
 }
 .elv-header-docs .elv-possum {
+	/* aspect ratio 0.51094891 */
 	width: 15vw;
-	height: 27.225vw;
+	height: 29.35714258vw;
 	max-width: 6.25rem; /* 100px /16 */
-	max-height: 11.3125rem; /* 181px /16 */
+	max-height: 12.23214274rem;
 }
 .elv-header-default {
 	overflow: hidden;

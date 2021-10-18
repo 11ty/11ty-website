@@ -22,7 +22,7 @@ You can find a bunch of other [blog posts about Eleventy on Zach’s blog](https
 * [Turn Jekyll up to Eleventy—a lovely tutorial by {% avatarlocalcache "twitter", "paulrobertlloyd" %}Paul Robert Lloyd](https://24ways.org/2018/turn-jekyll-up-to-eleventy/) <small><em> on 2018 December 11</em></small>
 * [Happy First Birthday, Eleventy! 🎉](https://www.zachleat.com/web/eleventy-birthday/) <small><em> on 2018 November 26</em></small>
 * [Google’s {% avatarlocalcache "twitter", "v8js" %}V8 web site launches using Eleventy](https://twitter.com/v8js/status/1044202940494475265) <small><em> on 2018 September</em></small>
-* James Williamson delivers [Eleventy’s mascot](https://twitter.com/jameswillweb/status/999052022497316865), named [Edison the Static-Generating Possum](https://twitter.com/jameswillweb/status/1131956888332058624). <small><em>on 2018 May 23</em></small>
+* James Williamson delivers [Eleventy’s mascot](https://web.archive.org/web/20200307013845/https://twitter.com/jameswillweb/status/999052022497316865), named Edison the Static-Generating Possum. <small><em>on 2018 May 23</em></small>
 * [Eleventy wins Google Open Source Award](https://www.zachleat.com/web/google-award/) <small><em> on 2018 March</em></small>
 * [Introducing Eleventy, a new Static Site Generator](https://www.zachleat.com/web/introducing-eleventy/) <small><em> on 2018 February 12</em></small>
 * [Eleventy’s very first (and second and third) release](https://github.com/11ty/eleventy/releases?after=v0.1.3) <small><em> on 2017 December 20</em></small>

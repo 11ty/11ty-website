@@ -1,17 +1,17 @@
 .elv-possum-pic + .supporters-avatar {
+	display: none;
 	position: absolute;
-	top: calc(2.0625rem + .3vw);
-	right: calc(.5625rem + .75vw);
 	opacity: .9;
-	width: 9vw;
+	width: 5vw;
 	height: auto;
 	margin: 0;
 }
 @media (min-width: 41.875em) { /* 670px */
 	.elv-possum-pic + .supporters-avatar {
-		top: 2.25rem; /* 20px /16 */
-		right: 0.9375rem; /* 15px /16 */
-		width: 3.75rem; /* 60px /16 */
+		display: block;
+		top: 1.0625rem; /* 17px /16 */
+		right: 2.1875rem; /* 35px /16 */
+		width: 2rem; /* 32px /16 */
 	}
 }
 .elv-header-default .elv-possum-pic + .supporters-avatar {

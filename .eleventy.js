@@ -57,6 +57,22 @@ const shortcodes = {
 			content +
 			(linkUrl ? `</a>` : "");
 	},
+	image: async function(filepath, alt, widths, classes, sizes) {
+		let stats = await eleventyImage(filepath, {
+			formats: ["avif", "webp", "png"],
+			widths: widths || [null],
+			urlPath: "/img/built/",
+			outputDir: "_site/img/built/",
+		});
+
+		return eleventyImage.generateHTML(stats, {
+			alt,
+			loading: "lazy",
+			decoding: "async",
+			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
+			class: classes,
+		});
+	},
 	getScreenshotHtml: function(siteSlug, siteUrl, sizes) {
 		let viewport = {
 			width: 375,
@@ -187,6 +203,7 @@ module.exports = function(eleventyConfig) {
 			(alt ? `<span class="sr-only">${alt}</span>` : "");
 	});
 
+	eleventyConfig.addNunjucksAsyncShortcode("image", shortcodes.image);
 	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatar);
 	eleventyConfig.addShortcode("getScreenshotHtml", shortcodes.getScreenshotHtml);
 

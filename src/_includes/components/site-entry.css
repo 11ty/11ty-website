@@ -169,3 +169,30 @@
 .stackblitz .stackblitz-link.stackblitz-link {
 	display: inline;
 }
+
+@supports (aspect-ratio: 1 / 1) {
+	.img-gallery {
+		--shadow-color: rgba(234, 0, 255, 0.747);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		aspect-ratio: 1 / 2;
+		border-radius: .4em;
+		border: 2px solid #ccc;
+		margin-bottom: .3em;
+		padding: .5em;
+	}
+	.img-gallery .sites-screenshot {
+		border: none;
+	}
+	.sites-site-vert a:hover .img-gallery {
+		box-shadow: 0 0 0 4px var(--shadow-color);
+	}
+	.sites-site-vert a:hover .img-gallery .sites-screenshot {
+		box-shadow: none;
+	}
+
+	/* .gallery-55 img {
+		object-fit: cover;
+	} */
+}
