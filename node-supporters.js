@@ -38,7 +38,7 @@ const fetch = require("node-fetch");
 const query = `
 query eleventyMembers {
   collective(slug: "11ty") {
-    members(limit: 300) {
+    members(limit: 999) {
       nodes {
         account {
           name
@@ -75,7 +75,7 @@ async function findMissingUsers(names) {
   let missing = new Set([...fullList].filter(name => !names.has(name)));
   for(let member of json) {
     if(missing.has(member.name)) {
-      console.log( "MISSING:", member.name );
+      console.log( "MISSING:", member.name, member.email );
     }
   }
   console.log( `${missing.size} missing names from GraphQL data source.` );

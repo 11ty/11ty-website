@@ -60,7 +60,7 @@
     "markdown-it": "8.4.2",
     "markdown-it-anchor": "5.2.5",
     "markdown-it-table-of-contents": "0.5.2",
-    "node-fetch": "3.0.0",
+    "node-fetch": "^2.6.5",
     "prettier": "^2.4.1",
     "puppeteer-core": "^9.0.0",
     "semver": "7.3.5",
