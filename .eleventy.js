@@ -153,7 +153,8 @@ module.exports = function(eleventyConfig) {
 			"config/",
 			"avatars/",
 			"src/img/logo.svg",
-			"src/img/gift.svg",
+			"src/img/logo.svg",
+			"src/img/possum-geri.png",
 			"_generated-serverless-collections.json",
 			{ from: ".cache/eleventy-cache-assets/", to: "cache" },
 		]
