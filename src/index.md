@@ -9,15 +9,22 @@ ignoreFastestSite: true
 searchTitle: Eleventy Home
 excludeFromSearch: true
 bigPossum: true
+permalink:
+  dynamic: /
 eleventyComputed:
   social:
     description: "Eleventy, a simpler static site generator."
 ---
+{% callout "", "html", "elv-serverless-banner" %}
+<strong>This page was rendered <em>just-in-time</em> for you using <a href="/docs/plugins/serverless/">Eleventy Serverless</a></strong>
+<code class="elv-serverless-banner-time"><time datetime="{{ config.now | toISO }}">{{ config.now | newsDate("yyyy LLL dd HH:mm:ss.SSS") }}</time></code>
+{% endcallout %}
+
 ## Quick Start
 
 Eleventy {% latestVersion versions, config %} requires Node 10 or newer. Use `node --version` on the command line to find your local Node version.
 
-```shell
+```
 npm install -g @11ty/eleventy
 echo '# Page header' > README.md
 eleventy
@@ -25,7 +32,7 @@ eleventy
 
 This will compile any files matching valid input [template file extensions](/docs/languages/) (`.md` is one of them) in the current directory into the output folder (defaults to `_site`).
 
-```shell
+```
 Writing _site/README/index.html from ./README.md.
 Wrote 1 file in 0.11 seconds ({% latestVersion versions, config %})
 ```

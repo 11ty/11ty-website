@@ -58,12 +58,19 @@ const shortcodes = {
 			(linkUrl ? `</a>` : "");
 	},
 	image: async function(filepath, alt, widths, classes, sizes) {
-		let stats = await eleventyImage(filepath, {
+		let options = {
 			formats: ["avif", "webp", "png"],
 			widths: widths || [null],
 			urlPath: "/img/built/",
 			outputDir: "_site/img/built/",
-		});
+		};
+
+		let stats;
+		if(process.env.ELEVENTY_SERVERLESS) {
+			stats = eleventyImage.statsSync(filepath, options);
+		} else {
+			stats = await eleventyImage(filepath, options);
+		}
 
 		return eleventyImage.generateHTML(stats, {
 			alt,
