@@ -101,6 +101,15 @@ npx @11ty/eleventy --to=fs
 Read more about [ndjson](http://ndjson.org/).
 
 
+### `--incremental` for partial [incremental builds](/docs/usage/incremental/)
+
+```bash
+# Repeat builds only operate on files that have changed
+npx @11ty/eleventy --incremental
+```
+
+Read more about [incremental builds](/docs/usage/incremental/).
+
 ### Using the Same Input and Output
 
 Yes, you can use the same `input` and `output` directories, like so:

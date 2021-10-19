@@ -40,6 +40,8 @@ module.exports = function(eleventyConfig) {
 
 If you do not want to maintain the same directory structure, [change the output directory.](#change-the-output-directory)
 
+{% addedin "0.11.0" %}Pass-through copy is now friendly to [incremental builds](/docs/usage/incremental/#passthrough-copy). Changes to copied files will not trigger a full build and changes to template files will not trigger passthrough file copy.
+
 ### How Input Directories are Handled
 
 As stated above, passthrough file copy paths are relative to the project root and not the input directory. Because of this, if the passthrough file copy path is inside of your input directory, the input directory will be stripped from the output path.

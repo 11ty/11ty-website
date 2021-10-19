@@ -38,4 +38,8 @@
 	"name": "Pug",
 	"ext": "pug",
 	"url": "/docs/languages/pug/"
+},{
+	"name": "Custom",
+	"ext": "*",
+	"url": "/docs/languages/custom/"
 }]

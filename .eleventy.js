@@ -303,7 +303,7 @@ ${text.trim()}
 		let parentTag = isinline ? "span" : "ul";
 		let childTag = isinline ? "span" : "li";
 
-		return `<${parentTag} class="inlinelist">${languages.filter(lang => !whitelist ? true : whitelist.indexOf(lang.ext) > -1).map(lang => `<${childTag} class="inlinelist-item${page.url == lang.url ? ' active' : ''}"><a href="${lang.url}${anchor || ''}">${lang.name} <code>*.${lang.ext}</code></a></${childTag}>`).join(" ")}</${parentTag}>`;
+		return `<${parentTag} class="inlinelist">${languages.filter(lang => !whitelist ? true : whitelist.indexOf(lang.ext) > -1).map(lang => `<${childTag} class="inlinelist-item${page.url == lang.url ? ' active' : ''}"><a href="${lang.url}${anchor || ''}">${lang.name}${lang.ext ? ` <code>*.${lang.ext}</code>` : ""}</a></${childTag}>`).join(" ")}</${parentTag}>`;
 	});
 
 	eleventyConfig.addShortcode("latestVersion", function(versions, config, prefix = "v") {
