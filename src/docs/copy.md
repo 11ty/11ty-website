@@ -6,6 +6,8 @@ eleventyNavigation:
 ---
 # Passthrough File Copy {% addedin "0.2.14" %}
 
+If we want to copy additional files that are not Eleventy templates, we use a feature called Passthrough Fily Copy to  tell Eleventy to copy things to our output folder for us.
+
 [[toc]]
 
 <a id="{{ 'Manual Pass-through Copy (Faster)' | slug }}"></a>
@@ -13,7 +15,7 @@ eleventyNavigation:
 
 ## Configuration API Method
 
-If we want to copy additional files that are not Eleventy templates, we can opt-in to specify _files_ or _directories_ for Eleventy to copy.
+Use a configuration API method to specify _files_ or _directories_ for Eleventy to copy.
 
 {% codetitle ".eleventy.js" %}{% codetitle "_site", "Output Directory" %}
 
