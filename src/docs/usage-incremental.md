@@ -21,7 +21,7 @@ Incremental builds via the command line flag `--incremental` have been available
 
 ## Configuration File
 
-If you create/update your configuration file, a full build will run.
+If you create/update your Eleventy configuration file, a full build will run.
 
 ## Templates
 
