@@ -25,7 +25,6 @@ module.exports = [
 		image: "./src/img/mascots/geri.png",
 		name: "(Not yet named)",
 		author: "Geri Coady",
-		author_url: "https://dribbble.com/hellogeri",
 		description: "July 2021. Our second commission! The community has grown."
 	}
 ]
