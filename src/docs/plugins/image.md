@@ -431,9 +431,11 @@ await Image("./test/bio-2017.jpg", {
 
 </details>
 
-### In-Memory Cache {% addedin "Image 0.7.0" %}
+### Caching
 
-To prevent duplicate work and improve build performance, repeated calls to the same source image (remote or local) with the same options will return a cached results object. If a request in-progress, the pending promise will be returned. This in-memory cache will be maintained across builds in watch/serve mode.
+#### In-Memory Cache {% addedin "Image 0.7.0" %}
+
+To prevent duplicate work and improve build performance, repeated calls to the same source image (remote or local) with the same options will return a cached results object. If a request in-progress, the pending promise will be returned. This in-memory cache is maintained across builds in watch/serve mode.
 
 Images will be regenerated (and the cache ignored) if:
 
@@ -445,7 +447,7 @@ You can disable this behavior by using the `useCache` boolean option:
 * `useCache: true` (default)
 * `useCache: false` to bypass the cache and generate a new image every time.
 
-#### Examples
+##### Examples
 
 <details>
 <summary>Example of in-memory cache reuse (returns the same promise)</summary>
@@ -481,6 +483,10 @@ const Image = require("@11ty/eleventy-img");
 ```
 
 </details>
+
+#### Disk Cache {% addedin "Image 1.0.0" %}
+
+Starting in Eleventy Image 1.0 (when using the built-in hashing algorithm and not custom filenames), Eleventy will skip processing files that are unchanged and already exist in the output directory. While the previously available in-memory cache avoided processing across repeat builds during `--watch` and `--serve`, this will avoid processing unchanged files for all builds. <a href="https://github.com/11ty/eleventy-img/issues/51">Read more at Issue #51</a>.
 
 ### Dry-Run {% addedin "Image 0.7.0" %}
 
