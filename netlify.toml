@@ -14,7 +14,7 @@ _generated_by_eleventy_serverless = "dynamic"
 
 [[redirects]]
 from = "/authors/:name/"
-to = "/.netlify/functions/serverless"
+to = "/.netlify/builders/serverless"
 status = 200
 force = true
 _generated_by_eleventy_serverless = "serverless"

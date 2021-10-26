@@ -148,6 +148,7 @@ module.exports = function(eleventyConfig) {
 		name: "serverless",
 		inputDir: "src",
 		functionsDir: "./netlify/functions/",
+		redirects: "netlify-toml-builders",
 		// copyEnabled: process.env.NODE_ENV === "production",
 		copy: [
 			"config/",
@@ -164,6 +165,7 @@ module.exports = function(eleventyConfig) {
 		name: "dynamic",
 		inputDir: "src",
 		functionsDir: "./netlify/functions/",
+		redirects: "netlify-toml-functions",
 		// copyEnabled: process.env.NODE_ENV === "production",
 		copy: [
 			"config/",
