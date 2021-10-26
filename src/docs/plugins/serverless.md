@@ -103,9 +103,14 @@ You won’t need to set up bundler plugins for every individual template, but in
     </ul></td>
   </tr>
   <tr>
-    <td><code>redirects: "netlify-toml"</code></td>
-    <td>How we manage your serverless redirects. The only currently bundled option is <code>"netlify-toml"</code>. This will add serverless redirects to your <code>netlify.toml</code> file and remove stale routes for you.<ul>
-      <li>Use <code>redirects: false</code> to skip this entirely.</li>
+    <td>
+      <code>redirects: "netlify-toml"</code>
+    </td>
+    <td>How we manage your serverless redirects. This will add serverless redirects to your <code>netlify.toml</code> file and remove stale routes for you.<ul>
+      <li><code>redirects: false</code> will skip this entirely.</li>
+      <li><code>redirects: "netlify-toml"</code> (default) to use Netlify Functions.</li>
+      <li><code>redirects: "netlify-toml-functions"</code> (alias for <code>netlify-toml</code>) {% addedin "1.0.0-beta.3" %}</li>
+      <li><code>redirects: "netlify-toml-builders"</code> to use <a href="#use-with-on-demand-builders">Netlify On-demand Builders</a> {% addedin "1.0.0-beta.3" %}</li>
       <li>Write your own: Use a custom Function instead of a String: <code>function(name, outputMap)</code>. Don’t forget to handle removal of stale routes too!</li>
     </ul></td>
   </tr>
@@ -167,7 +172,9 @@ exports.handler = handler;
 
 _Note: As of right now, On-demand Builders are a Netlify specific feature._
 
-If, instead, you want to use an [On-demand Builder](https://docs.netlify.com/configure-builds/on-demand-builders/) to render the content on first-request and cache at the CDN for later requests, swap the export in your template:
+If, instead, you want to use an [On-demand Builder](https://docs.netlify.com/configure-builds/on-demand-builders/) to render the content on first-request and cache at the CDN for later requests, you will need to do two things:
+
+**Thing 1:** Swap the export in your template (and `npm install @netlify/functions`):
 
 ```js
 exports.handler = handler; // turns into:
@@ -176,7 +183,9 @@ const { builder } = require("@netlify/functions");
 exports.handler = builder(handler);
 ```
 
-Don’t forget to `npm install @netlify/functions`.
+**Thing 2:** Use `redirects: "netlify-toml-builders"` in your <a href="#bundler-options">bundler config</a>.
+
+The redirects need to point to `/.netlify/builders/` instead of `/.netlify/functions` so if you have written your own redirects handler, you’ll need to update that.
 
 ### Step 2: Add to .gitignore
 
