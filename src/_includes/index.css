@@ -907,3 +907,27 @@ main .elv-toc + h1 .direct-link {
 	font-size: 1.25em; /* 20px /16 */
 	margin-top: .25em;
 }
+
+/* Opengraph card */
+.opengraph-card {
+	display: inline-flex;
+	flex-direction: column;
+	border: 2px solid #ddd;
+	border-radius: 1em;
+	overflow: hidden;
+	text-align: center;
+	font-size: 1.25em; /* 20px /16 */
+	font-weight: bold;
+}
+a[href].opengraph-card:focus,
+a[href].opengraph-card:hover {
+	border-color: #000;
+	box-shadow: 0 8px 6px -6px #000;
+}
+.opengraph-card span {
+	display: block;
+	margin: .5em;
+}
+.opengraph-card img {
+	display: block;
+}
