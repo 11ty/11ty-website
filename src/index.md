@@ -5,7 +5,7 @@ logoContent: "<span class='elv-hero-content'>1.0</span>"
 ignoreGitHubButtons: true
 ignoreSupporters: true
 ignoreFastestSite: true
-searchTitle: Eleventy Home
+searchTitle: Eleventy, a simpler static site generator
 excludeFromSearch: true
 bigPossum: true
 permalink:
