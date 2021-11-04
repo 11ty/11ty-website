@@ -88,10 +88,6 @@ You won’t need to set up bundler plugins for every individual template, but in
     <td>Above we used <code>"possum"</code> but you should use <code>serverless</code> if you’re not sure what to call it.</td>
   </tr>
   <tr>
-    <td><code>inputDir: "."</code></td>
-    <td>The Eleventy input directory (containing your Eleventy templates).</td>
-  </tr>
-  <tr>
     <td><code>functionsDir: "./functions/"</code></td>
     <td>The directory that holds your serverless functions. Netlify supports <code>./netlify/functions/</code> without configuration.</td>
   </tr>
@@ -113,6 +109,14 @@ You won’t need to set up bundler plugins for every individual template, but in
       <li><code>redirects: "netlify-toml-builders"</code> to use <a href="#use-with-on-demand-builders">Netlify On-demand Builders</a> {% addedin "1.0.0-beta.3" %}</li>
       <li>Write your own: Use a custom Function instead of a String: <code>function(name, outputMap)</code>. Don’t forget to handle removal of stale routes too!</li>
     </ul></td>
+  </tr>
+  <tr>
+    <td><del><code>inputDir: "."</code></del></td>
+    <td>The Eleventy input directory (containing your Eleventy templates). This is no longer necessary. Eleventy injects this for you automatically.</td>
+  </tr>
+  <tr>
+    <td><code>config: function(eleventyConfig) {}</code></td>
+    <td>Run your own custom Eleventy Configuration API code inside of the serverless function. Useful for a wide variety of things, but was added to facilitate developers wiring up additional serverless information from the <code>event</code> object to templates using <code>eleventyConfig.addGlobalData</code>. For example, wire up cookies using <code>event.headers.cookie</code> or form post data using <code>event.body</code>. {% addedin "1.0.0-beta.4" %}</td>
   </tr>
   <tr>
     <td colspan="2"><strong><em>Advanced Options:</em></strong></td>
