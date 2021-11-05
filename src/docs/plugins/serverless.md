@@ -155,7 +155,12 @@ async function handler (event) {
 
   try {
     // returns the HTML for the Eleventy template that matches to the URL
-    let html = await elev.render();
+    // let html = await elev.render();
+
+    // Or (more flexibly) in 1.0.0-beta.4
+    // Can use with `eleventyConfig.dataFilterSelectors` to put data cascade data into `page.data` here.
+    let [page] = await elev.getOutput();
+    let html = page.content;
 
     return {
       statusCode: 200,
@@ -171,6 +176,8 @@ async function handler (event) {
 
 exports.handler = handler;
 ```
+
+Read more about [`dataFilterSelectors`](/docs/config/#data-filter-selectors).
 
 #### Use with On-demand Builders
 

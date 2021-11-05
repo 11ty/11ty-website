@@ -525,6 +525,21 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+### Data Filter Selectors
+
+{% addedin "1.0.0-beta.4" %}
+
+A `Set` of [`lodash` selectors](https://lodash.com/docs/4.17.15#get) that allow you to include data from the data cascade in the output from `--to=json`, `--to=ndjson`, or the `EleventyServerless.prototype.getOutput` method.
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.dataFilterSelectors.add("page");
+  eleventyConfig.dataFilterSelectors.delete("page");
+};
+```
+
+This will now include a `data` property in your JSON output that includes the `page` variable for each matching template.
+
 ### Documentation Moved to Dedicated Pages
 
 <a id="{{ 'Copy Files to Output using Pass-through File Copy' | slug }}"></a>
