@@ -203,6 +203,9 @@ table thead th {
 	font-size: 0.75em; /* 12px /16 */
 	border-top: none;
 }
+table thead th code {
+	text-transform: none;
+}
 table th:first-child,
 table td:first-child {
 	padding-left: 0;
