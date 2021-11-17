@@ -77,6 +77,8 @@ To add Vue support, don’t forget to install [`@11ty/eleventy-plugin-vue` (v0.6
 
 #### Pass in data
 
+The [`page` variable](/docs/data-eleventy-supplied/#page-variable) is available inside of these templates without any additional configuration. If you want to pass in additional data, you can do so like this:
+
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
@@ -118,6 +120,8 @@ Note that you can use files supported by any [custom file extensions](/docs/lang
 To add Vue support, don’t forget to install [`@11ty/eleventy-plugin-vue` (v0.6.0 or newer)](https://github.com/11ty/eleventy-plugin-vue) and add the Vue plugin in your config file.
 
 #### Pass in data
+
+The [`page` variable](/docs/data-eleventy-supplied/#page-variable) is available inside of these templates without any additional configuration. If you want to pass in additional data, you can do so like this:
 
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
