@@ -59,3 +59,16 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setWatchThrottleWaitTime(100); // in milliseconds
 };
 ```
+
+## Opt-out of the BrowserSync JavaScript snippet {% addedin "1.0.0" %}
+
+New in [`browser-sync@2.27.1`](https://github.com/BrowserSync/browser-sync/issues/1882#issuecomment-867767056) (available on Eleventy 1.0+). This opts-out of the JavaScript snippet normally injected by BrowserSync. Notably, this will disable BrowserSync live-reloading.
+
+```js
+module.exports = function(eleventyConfig) {
+  // default is 0
+  eleventyConfig.setBrowserSyncConfig({
+    snippet: false,
+  });
+};
+```
