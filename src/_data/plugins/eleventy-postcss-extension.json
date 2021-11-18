@@ -1,0 +1,5 @@
+{
+  "npm": "eleventy-postcss-extension",
+  "author": "bart-jaskulski",
+  "description": "Add CSS processing with PostCSS to your Eleventy build."
+}
