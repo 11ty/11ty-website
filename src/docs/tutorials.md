@@ -88,7 +88,7 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 * [An In-Depth Tutorial of Webmentions + Eleventy](https://sia.codes/posts/webmentions-eleventy-in-depth/) by {% avatarlocalcache "twitter", "TheGreenGreek" %} Sia Karamalegos
 * [Using Eleventy to Generate a Ghost Blog](https://david.darn.es/tutorial/2019/06/01/use-eleventy-to-generate-a-ghost-blog/) by {% avatarlocalcache "twitter", "DavidDarnes" %}David Darnes
 * [Consuming a headless CMS GraphQL API with Eleventy](https://www.webstoemp.com/blog/headless-cms-graphql-api-eleventy/) by {% avatarlocalcache "twitter", "jeromecoupe" %}Jérôme Coupé
-* [Import Tweets from Twitter API](https://www.d-hagemeier.com/en/articles/embed-twitter/) by {% avatarlocalcache "twitter", "DennisView" %}Dennis Hagemeier
+* [Import Tweets from Twitter API](https://www.d-hagemeier.com/en/import-tweets-from-twitter-api-in-11ty/) by {% avatarlocalcache "twitter", "DennisView" %}Dennis Hagemeier
 * [Convert a WordPress blog to Eleventy](https://www.joshcanhelp.com/taking-wordpress-to-eleventy/) by {% avatarlocalcache "twitter", "joshcanhelp" %}Josh Cunningham
 * [Integrating Contentful with Eleventy to create static sites](https://www.contentful.com/blog/2020/07/28/integrating-contentful-with-eleventy-create-static-sites/) by {% avatarlocalcache "twitter", "shyruparel" %}Shy Ruparel
 * [Creating an 11ty Photo Gallery with Contentful and GitHub actions](https://github.com/contentful/11ty-contentful-gallery) by {% avatarlocalcache "twitter", "shyruparel" %}Shy Ruparel
