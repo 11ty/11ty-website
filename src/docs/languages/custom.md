@@ -56,3 +56,5 @@ eleventyConfig.addExtension("mdx", {
   read: false
 })
 ```
+
+For more details on how all of this works, consider exploring the source code ([`Engines/Custom.js`](https://github.com/11ty/eleventy/blob/d4a7d67b6b82ccf0e5a77c1a3530f09a9b5fef65/src/Engines/Custom.js) is a good starting point)
