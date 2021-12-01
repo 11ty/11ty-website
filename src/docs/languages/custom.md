@@ -9,7 +9,11 @@ layout: layouts/langs.njk
 ---
 {% addedin "1.0.0" %}
 
-{% callout %}This documentation is incomplete! See [the issue proposing this feature](https://github.com/11ty/eleventy/issues/117) and [the issue for complete documentation.](https://github.com/11ty/eleventy/issues/2036){% endcallout %}
+{% callout %}
+
+This documentation is incomplete! See [the issue proposing this feature](https://github.com/11ty/eleventy/issues/117) and [the issue for complete documentation.](https://github.com/11ty/eleventy/issues/2036)
+
+{% endcallout %}
 
 To create a custom template language, call `eleventyConfig.addExtension`:
 
