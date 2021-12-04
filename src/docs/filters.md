@@ -55,20 +55,12 @@ module.exports = function({name}) {
   </div>
 </seven-minute-tabs>
 
-## Universal Filters
-
-Universal filters can be added using the [Configuration API](/docs/config/#using-the-configuration-api) and are available to multiple template engines, simultaneously. They is currently supported in JavaScript {% addedin "0.7.0" %}, Nunjucks, Liquid, and Handlebars.
+Filters can be added using the [Configuration API](/docs/config/#using-the-configuration-api) and are available to multiple template engines, simultaneously. They is currently supported in JavaScript {% addedin "0.7.0" %}, Nunjucks, Liquid, and Handlebars.
 
 {% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
-  // Universal filters add to:
-  // * Liquid
-  // * Nunjucks
-  // * Handlebars
-  // * JavaScript (New in 0.7.0)
-
   eleventyConfig.addFilter("myFilter", function(value) {
     return value;
   });
@@ -101,7 +93,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-## Eleventy Provided Universal Filters
+### Eleventy Provided Universal Filters
 
 We also provide a few universal filters, built-in:
 
