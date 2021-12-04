@@ -55,7 +55,7 @@ module.exports = function({name}) {
   </div>
 </seven-minute-tabs>
 
-Filters can be added using the [Configuration API](/docs/config/#using-the-configuration-api) and are available to multiple template engines, simultaneously. They is currently supported in JavaScript {% addedin "0.7.0" %}, Nunjucks, Liquid, and Handlebars.
+Filters can be added using the [Configuration API](/docs/config/#using-the-configuration-api) and are available to multiple template engines, simultaneously. They are currently supported in JavaScript {% addedin "0.7.0" %}, Nunjucks, Liquid, and Handlebars.
 
 {% codetitle ".eleventy.js" %}
 
@@ -101,7 +101,7 @@ We also provide a few universal filters, built-in:
 
 #### Access existing filters {% addedin "0.11.0" %}
 
-If you’d like to reuse existing filters in a different way, consider using the new Configuration API `getFilter` method. You can use this to alias a filter to a different name. You can use this to use a filter inside of your own filter, or to use a filter inside of a shortcode.
+If you’d like to reuse existing filters, you can use the Configuration API’s `getFilter` method. When called with a valid filter name, it will return that filter’s callback function. It can be helpful when aliasing a filter to a different name, using a filter inside of your own filter, or using a filter inside of a shortcode.
 
 ```js
 module.exports = function(eleventyConfig) {
