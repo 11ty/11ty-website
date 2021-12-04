@@ -55,36 +55,9 @@ module.exports = function({name}) {
   </div>
 </seven-minute-tabs>
 
-These can be added using the [Configuration API](/docs/config/#using-the-configuration-api). Here are a few examples:
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  // Liquid Filter
-  eleventyConfig.addLiquidFilter("makeUppercase", function(value) { … });
-
-  // Nunjucks Filter
-  eleventyConfig.addNunjucksFilter("makeUppercase", function(value) { … });
-
-  // Handlebars Filter
-  eleventyConfig.addHandlebarsHelper("makeUppercase", function(value) { … });
-
-  // JavaScript Template Function (New in 0.7.0)
-  eleventyConfig.addJavaScriptFunction("makeUppercase", function(value) { … });
-
-  // or, use a Universal filter (an alias for all of the above)
-  eleventyConfig.addFilter("makeUppercase", function(value) { … });
-};
-```
-
-Read more about filters on the individual Template Language documentation pages:
-
-{% templatelangs templatetypes, page, ["njk", "liquid", "hbs", "11ty.js"], "#filters" %}
-
 ## Universal Filters
 
-Universal filters can be added in a single place and are available to multiple template engines, simultaneously. This is currently supported in JavaScript (New in 0.7.0), Nunjucks, Liquid, and Handlebars.
+Universal filters can be added using the [Configuration API](/docs/config/#using-the-configuration-api) and are available to multiple template engines, simultaneously. They is currently supported in JavaScript {% addedin "0.7.0" %}, Nunjucks, Liquid, and Handlebars.
 
 {% codetitle ".eleventy.js" %}
 
@@ -102,7 +75,33 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Eleventy Provided Universal Filters
+Read more about filters on the individual Template Language documentation pages:
+
+{% templatelangs templatetypes, page, ["njk", "liquid", "hbs", "11ty.js"], "#filters" %}
+
+### Per-Engine filters
+
+Filters can also be specified individually for one or more template engines. (The `addFilter` function is actually an alias for calling all of these functions.)
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // Liquid Filter
+  eleventyConfig.addLiquidFilter("makeUppercase", function(value) { … });
+
+  // Nunjucks Filter
+  eleventyConfig.addNunjucksFilter("makeUppercase", function(value) { … });
+
+  // Handlebars Filter
+  eleventyConfig.addHandlebarsHelper("makeUppercase", function(value) { … });
+
+  // JavaScript Template Function (New in 0.7.0)
+  eleventyConfig.addJavaScriptFunction("makeUppercase", function(value) { … });
+};
+```
+
+## Eleventy Provided Universal Filters
 
 We also provide a few universal filters, built-in:
 
@@ -110,7 +109,7 @@ We also provide a few universal filters, built-in:
 
 #### Access existing filters {% addedin "0.11.0" %}
 
-If you’d like to reuse existing filters in a different way, consider using the new Configuration API `getFilter` method. You can use this to alias a filter to a different name. You can use this to use a filter inside of your own filter. You can use this to use a filter inside of a shortcode.
+If you’d like to reuse existing filters in a different way, consider using the new Configuration API `getFilter` method. You can use this to alias a filter to a different name. You can use this to use a filter inside of your own filter, or to use a filter inside of a shortcode.
 
 ```js
 module.exports = function(eleventyConfig) {
