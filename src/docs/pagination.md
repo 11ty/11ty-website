@@ -355,6 +355,28 @@ pagination:
 
 The above generates a list of links but you could do a lot more. See what’s available in the [Collection documentation](/docs/collections/#collection-item-data-structure) (specifically `templateContent`). If you’d like to use this to automatically generate Tag pages for your content, please read [Quick Tip #004—Create Tag Pages for your Blog](/docs/quicktips/tag-pages/).
 
+## Making `data` a function {% addedin "1.0.0" %}
+
+Instead of `data` being a string, it can be a function that returns the data key. The function gets passed a single parameter containing all template data for the current page. In this way, the pagination data key can be determined dynamically.
+
+{% raw %}
+```markdown
+---js
+{
+  pagination: {
+    data: function(data) {
+      return "collections." + data.pageTopic;
+    },
+    size: 2
+  }
+}
+---
+<!-- the rest of the template -->
+```
+{% endraw %}
+
+In the above example, if the containing page has the key-value `pageTopic: ponies` in its front matter, then the pagination data key will end up being `collections.ponies`.
+
 ## Modifying the Data Set prior to Pagination
 
 ### Reverse the Data {% addedin "0.7.0" %}
