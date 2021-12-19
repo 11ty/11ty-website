@@ -8,16 +8,14 @@ ignoreFastestSite: true
 searchTitle: Eleventy Home
 excludeFromSearch: true
 bigPossum: true
-permalink:
-  dynamic: /
 eleventyComputed:
   social:
     description: "Eleventy, a simpler static site generator."
 ---
-{% callout "", "html", "elv-serverless-banner" %}
+{# {% callout "", "html", "elv-serverless-banner" %}
 <strong>This page was rendered <em>just-in-time</em> for you using <a href="/docs/plugins/serverless/">Eleventy Serverless</a></strong>
 <code class="elv-serverless-banner-time"><time datetime="{{ config.now | toISO }}">{{ config.now | newsDate("yyyy LLL dd HH:mm:ss.SSS") }}</time></code>
-{% endcallout %}
+{% endcallout %} #}
 
 ## Quick Start
 
@@ -52,7 +50,7 @@ Run `eleventy --serve` to start up a web server. Then open `http://localhost:808
   <div class="lo-grid">
 {% for key, site in sites -%}{% if site.twitter and site.disabled != true and site.url and site.featured and site.superfeatured -%}
   {%- set hideRelatedLinks = true %}
-  {% include "site-card.njk" %}
+  {%- include "site-card.njk" %}
 {% endif %}{%- endfor %}
   </div>
 </div>
