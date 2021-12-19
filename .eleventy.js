@@ -184,19 +184,6 @@ module.exports = function(eleventyConfig) {
 			.filter(item => (item.data || {}).excludeFromSidebar !== true);
 	});
 
-	let md = new markdownIt();
-	eleventyConfig.addPairedShortcode("markdown", function(content) {
-		return md.renderInline(content);
-	});
-	eleventyConfig.addPairedShortcode("callout", function(content, level = "", format = "html", cls = "") {
-		if( format === "md" ) {
-			content = md.renderInline(content);
-		} else if( format === "md-block" ) {
-			content = md.render(content);
-		}
-		return `<div class="elv-callout${level ? ` elv-callout-${level}` : ""}${cls ? ` ${cls}`: ""}">${content}</div>`;
-	});
-
 	eleventyConfig.addShortcode("indieweblink", function(content, url) {
 		if(!url) {
 			return content;
@@ -432,6 +419,7 @@ ${text.trim()}
 		breaks: true,
 		linkify: true
 	})
+	.disable('code') // disable indent -> code block
 	.use(markdownItAnchor, {
 		permalink: true,
 		slugify: markdownItSlugify,
@@ -454,6 +442,18 @@ ${text.trim()}
 
 	mdIt.linkify.tlds('.io', false);
 	eleventyConfig.setLibrary("md", mdIt);
+
+	eleventyConfig.addPairedShortcode("markdown", function(content) {
+		return mdIt.renderInline(content);
+	});
+	eleventyConfig.addPairedShortcode("callout", function(content, level = "", format = "html", cls = "") {
+		if( format === "md" ) {
+			content = mdIt.renderInline(content);
+		} else if( format === "md-block" ) {
+			content = mdIt.render(content);
+		}
+		return `<div class="elv-callout${level ? ` elv-callout-${level}` : ""}${cls ? ` ${cls}`: ""}">${content}</div>`;
+	});
 
 	eleventyConfig.addFilter("toISO", (dateObj) => {
 		return dateObj.toISOString();
