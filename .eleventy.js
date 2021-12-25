@@ -243,6 +243,7 @@ ${text.trim()}
 	// eleventyConfig.addPassthroughCopy("css/fonts"); // these are inline now
 	eleventyConfig.addPassthroughCopy("src/img");
 	eleventyConfig.addPassthroughCopy("src/blog/*.png");
+	eleventyConfig.addPassthroughCopy("src/blog/pretty-atom-feed-v3.xsl");
 	eleventyConfig.addPassthroughCopy("src/favicon.ico");
 
 	eleventyConfig.addFilter("lighthouseGoodDataCheck", function(data) {

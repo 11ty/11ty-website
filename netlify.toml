@@ -53,3 +53,10 @@ for = "/api/*"
 
   [headers.values]
   Access-Control-Allow-Origin = "*"
+
+[[headers]]
+for = "/blog/feed.xml"
+
+  [headers.values]
+  Content-Type = "application/xml; charset=utf-8"
+  x-content-type-options = "nosniff"
