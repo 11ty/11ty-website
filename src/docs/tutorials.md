@@ -64,6 +64,7 @@ _See all [Eleventy blog posts on zachleat.com](https://www.zachleat.com/web/elev
 * [Deploying an 11ty Site to GitLab Pages](https://gitlab.com/bkmgit/11ty)
 * [Make the Jump from Jekyll to JavaScript](https://stedman.dev/2020/04/29/make-the-jump-from-jekyll-to-javascript/) by {% avatarlocalcache "twitter", "stedman" %} Steve Stedman
 * [Deploying an 11ty Site to Azure Static Web Apps](https://squalr.us/2021/05/deploying-an-11ty-site-to-azure-static-web-apps/) by {% avatarlocalcache "twitter", "chadschulz" %} Chad Schulz
+* [Deploying an 11ty Site to Layer0](https://docs.layer0.co/guides/eleventy)
 
 ### Adding Features
 
