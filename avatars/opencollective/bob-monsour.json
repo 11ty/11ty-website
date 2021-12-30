@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/bob-monsour.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/bob-monsour.avif 90w",
+      "filename": "bob-monsour.avif",
+      "outputPath": "src/img/avatars/opencollective/bob-monsour.avif",
+      "size": 1230
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/bob-monsour.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/bob-monsour.webp 90w",
+      "filename": "bob-monsour.webp",
+      "outputPath": "src/img/avatars/opencollective/bob-monsour.webp",
+      "size": 1576
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/bob-monsour.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/bob-monsour.jpeg 90w",
+      "filename": "bob-monsour.jpeg",
+      "outputPath": "src/img/avatars/opencollective/bob-monsour.jpeg",
+      "size": 2281
+    }
+  ],
+  "slug": "bob-monsour"
+}
