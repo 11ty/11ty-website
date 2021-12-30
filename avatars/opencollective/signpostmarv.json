@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/signpostmarv.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/signpostmarv.avif 90w",
+      "filename": "signpostmarv.avif",
+      "outputPath": "src/img/avatars/opencollective/signpostmarv.avif",
+      "size": 1285
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/signpostmarv.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/signpostmarv.webp 90w",
+      "filename": "signpostmarv.webp",
+      "outputPath": "src/img/avatars/opencollective/signpostmarv.webp",
+      "size": 1602
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/signpostmarv.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/signpostmarv.jpeg 90w",
+      "filename": "signpostmarv.jpeg",
+      "outputPath": "src/img/avatars/opencollective/signpostmarv.jpeg",
+      "size": 2381
+    }
+  ],
+  "slug": "signpostmarv"
+}
