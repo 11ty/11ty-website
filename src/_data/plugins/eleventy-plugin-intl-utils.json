@@ -1,0 +1,5 @@
+{
+	"npm": "@pcdevil/eleventy-plugin-intl-utils",
+	"author": "pcdevil",
+	"description": "a set of internationalization utils"
+}
