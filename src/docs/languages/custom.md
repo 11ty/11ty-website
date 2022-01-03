@@ -26,12 +26,12 @@ module.exports = function(eleventyConfig) {
 
   // Creates the extension for use
   eleventyConfig.addExtension("clowd", {
-    compile: (inputContent) => {
+    compile: async (inputContent) => {
       // Replace any instances of cloud with butt
       let output = inputContent.replace(/cloud/gi, "butt");
 
-      // This is the render function, `data` is the data cascade
-      return (data) => {
+      // This is the render function, `data` is the full data cascade
+      return async (data) => {
         return output;
       };
     }
@@ -43,7 +43,7 @@ module.exports = function(eleventyConfig) {
 Situations where you might want to use `addExtension` but probably shouldn’t:
 
 1. If you want to post-process the content of an existing template language (a file extension already processed by Eleventy), use a [Configuration API Transform](/docs/config/#transforms) instead.
-2. If you want to pre-process `md` or `html` files using another template language, change the _Default Template Engine for [Markdown Files](/docs/config/#default-template-engine-for-global-data-files)_ or _[HTML Files](/docs/config/#default-template-engine-for-html-files)_, respectively. This can also be done on [a per-template basis](/docs/languages/#overriding-the-template-language). We may add additional hooks for preprocessing in the future.
+2. If you want to pre-process `md` or `html` files using another template language, change the _Default Template Engine for [Markdown Files](/docs/config/#default-template-engine-for-markdown-files)_ or _[HTML Files](/docs/config/#default-template-engine-for-html-files)_, respectively. This can also be done on [a per-template basis](/docs/languages/#overriding-the-template-language). We will likely add additional hooks for preprocessing in the future.
 {%- endcallout %}
 
 ## Add Sass support to Eleventy
@@ -63,11 +63,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addExtension("scss", {
     outputFileExtension: "css", // optional, default: "html"
 
-    compile: function(inputContent) {
+    compile: async function(inputContent) {
       let result = sass.compileString(inputContent);
 
-      // This is the render function, `data` is the data cascade
-      return (data) => {
+      // This is the render function, `data` is the full data cascade
+      return async (data) => {
         return result.css;
       };
     }
@@ -97,6 +97,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addExtension("scss", {
     outputFileExtension: "css", // optional, default: "html"
 
+    // can be an async function
     compile: function (inputContent, inputPath) {
       let parsed = path.parse(inputPath);
 
@@ -121,7 +122,7 @@ To add support for Sass’ underscore convention (file names that start with an 
 
 ```js/3-5
     // some configuration truncated …
-    compile: function (inputContent, inputPath) {
+    compile: async function (inputContent, inputPath) {
       let parsed = path.parse(inputPath);
       if(parsed.name.startsWith("_")) {
         return;
@@ -129,24 +130,158 @@ To add support for Sass’ underscore convention (file names that start with an 
 
       let result = sass.compileString(inputContent);
 
-      return (data) => {
+      return async (data) => {
         return result.css;
       };
     }
 ```
 
-## Advanced Compile Options
+## Overriding an Existing Template Language
 
-### Override Permalink Compilation
+You can override existing template languages too! (Thank you to [Ben Holmes of Slinkity for this contribution](https://github.com/11ty/eleventy/pull/1871)).
+
+In these example, we switch from the Eleventy default `markdown-it` to `marked` for markdown processing.
+
+```js
+const { marked } = require("marked");
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addExtension("md", {
+    compile: async function (inputContent, inputPath) {
+      let html = marked.parse(inputContent);
+
+      return async (data) => {
+        return html;
+      };
+    }
+  }
+};
+```
+
+Note that overriding `md` opts-out of the default pre-processing by another template language [Markdown Files](/docs/config/#default-template-engine-for-markdown-files)_. As mentioned elsewhere, improvements to add additional hooks for preprocessing will likely come later.
+
+## Full Options List
+
+### `compile`
+
+Covered in full in the above two examples! You wouldn’t skip ahead in the docs would you? 😅
+
+### `outputFileExtension`
+
+When the output file is written to the file system, what file extension should be used? If missing, defaults to `html`.
+
+### `init`
+
+A function that runs once per template language, for any additional setup at the beginning before any compilation or rendering.
+
+```js
+{
+  init: async function() {
+    // has access to current configuration settings in `this.config`
+  },
+}
+```
+
+### `read`
+
+Set to `false` to opt out of reading the contents of files from the file system. This is useful if you’re using an external bundler to read the files (e.g. the Vue plugin uses rollup to read and compile `.vue` files).
+
+```js
+{
+  read: false, // default: true
+}
+```
+
+Use with `compileOptions.setCacheKey` to get more fine-grained control over how the template is cached.
+
+<!-- ## `extension`
+
+You probably won’t need this but it’s useful if your extension doesn’t match the template language key. -->
+
+### `getData` and `getInstanceFromInputPath`
+
+Controls if and how additional data should be retrieved from a JavaScript object to populate the Data Cascade. If your templates aren’t compiling JavaScript objects, you probably won’t need this.
+
+Notably, this is separate from (in addition to) front matter parsing (which requires `read: true`). As an example, this is used by the Vue plugin to retrieve the return from the Vue `data()` function in the Vue component to feed back into the Data Cascade.
+
+```js
+{
+  // this is the default
+  getData: false // no additional data is used
+}
+```
+
+```js
+{
+  getData: async function(inputPath) {
+    // completely DIY, this object will be merged into data cascade
+    return {};
+  },
+}
+```
+
+```js
+{
+  // get the `data` property from the instance.
+  getData: ["data"],
+  // * `getData: true` is aliased to ["data"]
+  // * You can use more than one property name! ["data", "otherPropName"]
+
+  getInstanceFromInputPath: function(inputPath) {
+    // Return the JavaScript object from which the `data` property will be retrieved.
+    let instance = doSomethingMyselfToFetchAJavaScriptObject(inputPath);
+    return instance;
+  }
+}
+```
+
+<details>
+  <summary><strong><em>Advanced Use Case:</em></strong> overriding <code>getData</code> keys for one instance</summary>
+
+If the JavaScript object returned from `getInstanceFromInputPath` has an `eleventyDataKey` property, this is used to override the keys returned from the `getData` Array for this specific instance only. Anything you can pass into a [`new Set()` constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/Set) works here (Array, Map, another Set).
+
+```js
+{
+  // if getData is `false`, `eleventyDataKey` will not be used.
+  getData: true,
+
+  getInstanceFromInputPath: function(inputPath) {
+    return {
+      // Overrides `getData` for this instance
+      eleventyDataKey: ["myOverrideData"],
+
+      // Will not be used
+      data: {
+        notAvailableOnGlobalData: 456
+      },
+
+      // Will be used.
+      myOverrideData: {
+        availableOnGlobalData: 123
+      }
+    }
+  }
+}
+```
+
+In the above example, the data cascade will include a top-level variable `availableOnGlobalData` with a value of `123`. Using `eleventyDataKey` overrides any keys set in `getData`, which means (for this instance) `data` will be ignored and `notAvailableOnGlobalData` will not be present.
+
+</details>
+
+### `compileOptions`
+
+#### `compileOptions.permalink` to Override Permalink Compilation
 
 This has the same signature as the `compile` function and expects a reusable `render` function to be returned.
 
 ```js
-compileOptions: {
-  permalink: function(contents, inputPath) {
-    return (data) => {
-      // Return a string to override: you’ll want to use `data.page`
-      // Or `return;` (return undefined) to fallback to default behavior
+{
+  compileOptions: {
+    permalink: function(contents, inputPath) {
+      return (data) => {
+        // Return a string to override: you’ll want to use `data.page`
+        // Or `return;` (return undefined) to fallback to default behavior
+      }
     }
   }
 }
@@ -170,12 +305,39 @@ This provides another way to implement Sass’ underscore convention to skip wri
 ```js
 // … some configuration truncated
 
-compileOptions: {
-  permalink: function(contents, inputPath) {
-    let parsed = path.parse(inputPath);
-    if(parsed.name.startsWith("_")) {
-      return false;
+{
+  compileOptions: {
+    permalink: function(contents, inputPath) {
+      let parsed = path.parse(inputPath);
+      if(parsed.name.startsWith("_")) {
+        return false;
+      }
     }
   }
-},
+}
+```
+
+#### `compileOptions.spiderJavaScriptDependencies`
+
+Default is `false`. Enable to use Eleventy to spider and watch files `require`’d in these templates. This allows you to control the [Watch JavaScript Dependencies](/docs/watch-serve/#watch-javascript-dependencies) feature on a per-template language basis. Most template languages will want the default here and keep this feature disabled.
+
+#### `compileOptions.cache` for advanced control of caching
+
+This controls caching for the compilation step, which saves the compiled template function for reuse if another template attempts to compile with the same key (usually a file’s contents).
+
+By default, whether or not `cache` is enabled is tied to boolean value of `read`. If `read: true`, then `cache` will also be `true`. It’s unlikely you will need this, but you can override this to mismatch `read`.
+
+You can also control the caching key using `getCacheKey`. It might be useful to change this when using `read: false` and `contents` are unavailable.
+
+```js
+{
+  read: false,
+  compileOptions: {
+    cache: true,
+    getCacheKey: function(contents, inputPath) {
+      // return contents; // this is the default
+      return inputPath; // override to cache by inputPath
+    }
+  }
+}
 ```
