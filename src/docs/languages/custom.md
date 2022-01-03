@@ -16,7 +16,7 @@ Eleventy now allows the addition of custom template extensions, meaning that you
 
 [[toc]]
 
-## Process `.clowd` files to HTML
+## Introductory Example: Process `.clowd` files to HTML
 
 `clowd` is a new templating language that uses the `.clowd` file extension and translates any instances of the world `cloud` inside of the files to be the word `butt` instead.
 
@@ -24,17 +24,17 @@ Eleventy now allows the addition of custom template extensions, meaning that you
 
 ```js
 module.exports = function(eleventyConfig) {
-   // Add as a valid extension to process, a.k.a. add to --formats
+  // Add as a valid extension to process
+  // Alternatively, add this to the list of formats you pass to the `--formats` CLI argument
   eleventyConfig.addTemplateFormats("clowd");
 
-  // Creates the extension for use
+  // "clowd" here means that the extension will apply to any .clowd file
   eleventyConfig.addExtension("clowd", {
     compile: async (inputContent) => {
       // Replace any instances of cloud with butt
       let output = inputContent.replace(/cloud/gi, "butt");
 
-      // This is the render function, `data` is the full data cascade
-      return async (data) => {
+      return async () => {
         return output;
       };
     }
@@ -49,23 +49,24 @@ Situations where you might want to use `addExtension` but probably shouldn’t:
 2. If you want to pre-process `md` or `html` files using another template language, change the _Default Template Engine for [Markdown Files](/docs/config/#default-template-engine-for-markdown-files)_ or _[HTML Files](/docs/config/#default-template-engine-for-html-files)_, respectively. This can also be done on [a per-template basis](/docs/languages/#overriding-the-template-language). We will likely add additional hooks for preprocessing in the future.
 {%- endcallout %}
 
-## Add Sass support to Eleventy
+## Example: Add Sass support to Eleventy
 
-For a more realistic sample, here’s an example of Eleventy looking for all `.sass` files in a project’s input directory to process them to your output directory. Don’t forget to `npm install sass`.
+For a more realistic sample, here’s an example of Eleventy looking for all `.sass` files in a project’s input directory to process them to your output directory.
 
 {% codetitle ".eleventy.js" %}
 
 ```js
+// Don’t forget to `npm install sass`!
 const sass = require("sass");
 
 module.exports = function(eleventyConfig) {
-   // Add as a valid extension to process, a.k.a. add to --formats
   eleventyConfig.addTemplateFormats("scss");
 
   // Creates the extension for use
   eleventyConfig.addExtension("scss", {
     outputFileExtension: "css", // optional, default: "html"
 
+    // `compile` is called once per .scss file in the input directory
     compile: async function(inputContent) {
       let result = sass.compileString(inputContent);
 
@@ -80,7 +81,7 @@ module.exports = function(eleventyConfig) {
 
 We’re using `compileString` from the Sass library above for speed benefits over their asynchronous counterparts (reported by [the Sass documentation](https://sass-lang.com/documentation/js-api#usage)).
 
-<!-- Note also that the `data` is not used in the above example. This is the full Eleventy data cascade and may be more useful in other templating languages. -->
+Note also that the `data` is not used in the above example. This is the full Eleventy data cascade and may be more useful in other templating languages.
 
 The above extension would process a file located at `subdir/test.scss` to the output directory at `_site/subdir/test.css`.
 
@@ -90,8 +91,9 @@ You can pass in both the file’s `inputPath` and the Eleventy includes folder t
 
 {% codetitle ".eleventy.js" %}
 
-```js/9,10,14
+```js/10,11,15-18
 const sass = require("sass");
+const path = require("node:path");
 
 module.exports = function(eleventyConfig) {
    // add as a valid template language to process, e.g. this adds to --formats
@@ -167,7 +169,14 @@ Note that overriding `md` opts-out of the default pre-processing by another temp
 
 ### `compile`
 
-Covered in full in the above two examples! You wouldn’t skip ahead in the docs would you? 😅
+A function that takes two parameters:
+
+- `content`: the full content of the file to parse (as a string)
+- `inputPath`: the path to the file (as a string, useful for looking up relative imports)
+
+`compile` can either return nothing (to indicate that the file should be ignored and not used as a page), or return a render function.
+
+The render function is passed the merged data object (i.e. the top level value available inside templates)
 
 ### `outputFileExtension`
 
@@ -339,7 +348,7 @@ You can also control the caching key using `getCacheKey`. It might be useful to 
     cache: true,
     getCacheKey: function(contents, inputPath) {
       // return contents; // this is the default
-      return inputPath; // override to cache by inputPath
+      return inputPath; // override to cache by inputPath (this means the compile function will not get called when the file contents change)
     }
   }
 }
