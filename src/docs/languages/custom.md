@@ -7,6 +7,9 @@ relatedKey: customlang
 relatedTitle: Template Language—Custom
 layout: layouts/langs.njk
 ---
+
+{% callout "info", "md" %}If you’re already experimenting with this feature on Eleventy pre-releases, this documentation is specific to `1.0.0-beta.10` or `1.0.0-canary.50` or newer. This info-box will self destruct upon final `1.0.0` stable release.{% endcallout %}
+
 {% addedin "1.0.0" %}
 
 Eleventy now allows the addition of custom template extensions, meaning that you can use Eleventy to process any arbitrary file extension and compile it to your site’s output folder.
