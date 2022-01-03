@@ -16,9 +16,9 @@ Eleventy now allows the addition of custom template extensions, meaning that you
 
 [[toc]]
 
-## Introductory Example: Process `.clowd` files to HTML
+## Introductory Example: `*.clowd`
 
-`clowd` is a new templating language that uses the `.clowd` file extension and translates any instances of the world `cloud` inside of the files to be the word `butt` instead.
+`clowd` is a pretend templating language that we’ve just created. It uses the `.clowd` file extension. The purpose of the language is to translate any occurrences of the word `cloud` to the word `butt` instead.
 
 {% codetitle ".eleventy.js" %}
 
@@ -42,7 +42,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-{% callout "info", "md" -%}
+{% callout "info", "md-block" -%}
 Situations where you might want to use `addExtension` but probably shouldn’t:
 
 1. If you want to post-process the content of an existing template language (a file extension already processed by Eleventy), use a [Configuration API Transform](/docs/config/#transforms) instead.
@@ -141,6 +141,8 @@ To add support for Sass’ underscore convention (file names that start with an 
     }
 ```
 
+This functionality is more-or-less identical to the [`compileOptions` `permalink: false` overrides](#compileoptions.permalink-to-override-permalink-compilation), documented later on this page.
+
 ## Overriding an Existing Template Language
 
 You can override existing template languages too! (Thank you to [Ben Holmes of Slinkity for this contribution](https://github.com/11ty/eleventy/pull/1871)).
@@ -169,7 +171,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-Note that overriding `md` opts-out of the default pre-processing by another template language [Markdown Files](/docs/config/#default-template-engine-for-markdown-files)_. As mentioned elsewhere, improvements to add additional hooks for preprocessing will likely come later.
+Note that overriding `md` opts-out of the default pre-processing by another template language [Markdown Files](/docs/config/#default-template-engine-for-markdown-files). As mentioned elsewhere, improvements to add additional hooks for preprocessing will likely come later.
 
 ## Full Options List
 
@@ -177,12 +179,14 @@ Note that overriding `md` opts-out of the default pre-processing by another temp
 
 A function that takes two parameters:
 
-- `content`: the full content of the file to parse (as a string)
+- `inputContent`: the full content of the file to parse (as a string).
 - `inputPath`: the path to the file (as a string, useful for looking up relative imports)
 
-`compile` can either return nothing (to indicate that the file should be ignored and not used as a page), or return a render function.
+`compile` can either return nothing (`undefined`) to indicate that the file should be ignored and not used as a page or return a render function.
 
-The render function is passed the merged data object (i.e. the top level value available inside templates)
+The render function is passed the merged data object (i.e. the full Data Cascade available inside templates). The render function returned from `compile` is called once per output file generated (one for basic templates and more for [paginated templates](/docs/pagination/)).
+
+{% callout "info", "md" %}`inputContent` will not include any front matter. This will have been parsed, removed, and inserted into the Data Cascade. Also note that if `read: false` (as documented below), `inputContent` will be `undefined`.{% endcallout %}
 
 ### `outputFileExtension`
 
