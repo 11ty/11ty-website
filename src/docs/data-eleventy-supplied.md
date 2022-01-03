@@ -41,7 +41,11 @@ let page = {
   // Depends on your output directory (the default is _site)
   // You probably won’t use this: `url` is better.
   // Note: This value will be `false` if `permalink` is set to `false`.
-  outputPath: "./_site/current/page/myFile/index.html"
+  outputPath: "./_site/current/page/myFile/index.html",
+
+  // Added in 1.0
+  // Useful with `page.filePathStem` when using custom file extensions.
+  outputFileExtension: "html"
 };
 ```
 

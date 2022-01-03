@@ -66,7 +66,6 @@ New in [`browser-sync@2.27.1`](https://github.com/BrowserSync/browser-sync/issue
 
 ```js
 module.exports = function(eleventyConfig) {
-  // default is 0
   eleventyConfig.setBrowserSyncConfig({
     snippet: false,
   });
