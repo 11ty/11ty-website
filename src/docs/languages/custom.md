@@ -177,12 +177,25 @@ Note that overriding `md` opts-out of the default pre-processing by another temp
 
 ### `compile`
 
-A function that takes two parameters:
+* _Required_ for new file extensions. _Optional_ for [extension overrides](#overriding-an-existing-template-language).
+
+`compile` is an async-friendly function that takes two parameters:
 
 - `inputContent`: the full content of the file to parse (as a string).
 - `inputPath`: the path to the file (as a string, useful for looking up relative imports)
 
-`compile` can either return nothing (`undefined`) to indicate that the file should be ignored and not used as a page or return a render function.
+`compile` can return:
+
+* nothing (`undefined`) to indicate that the file should be ignored and not used as a page
+* a render function (also async-friendly)
+
+```js
+  compile: async (inputContent, inputPath) => {
+    return async () => {
+      return inputContent;
+    };
+  }
+```
 
 The render function is passed the merged data object (i.e. the full Data Cascade available inside templates). The render function returned from `compile` is called once per output file generated (one for basic templates and more for [paginated templates](/docs/pagination/)).
 
@@ -190,11 +203,15 @@ The render function is passed the merged data object (i.e. the full Data Cascade
 
 ### `outputFileExtension`
 
-When the output file is written to the file system, what file extension should be used? If missing, defaults to `html`.
+* _Optional_: Defaults to `html`
+
+When the output file is written to the file system, what file extension should be used?
 
 ### `init`
 
-A function that runs once per template language, for any additional setup at the beginning before any compilation or rendering.
+* _Optional_
+
+An async-friendly function that runs _once_ (no matter how many files use the extension) for any additional setup at the beginning before any compilation or rendering.
 
 ```js
 {
@@ -206,11 +223,13 @@ A function that runs once per template language, for any additional setup at the
 
 ### `read`
 
+* _Optional_: Defaults to `true`
+
 Set to `false` to opt out of reading the contents of files from the file system. This is useful if you’re using an external bundler to read the files (e.g. the Vue plugin uses rollup to read and compile `.vue` files).
 
 ```js
 {
-  read: false, // default: true
+  read: false,
 }
 ```
 
@@ -221,6 +240,8 @@ Use with `compileOptions.setCacheKey` to get more fine-grained control over how 
 You probably won’t need this but it’s useful if your extension doesn’t match the template language key. -->
 
 ### `getData` and `getInstanceFromInputPath`
+
+* _Optional_
 
 Controls if and how additional data should be retrieved from a JavaScript object to populate the Data Cascade. If your templates aren’t compiling JavaScript objects, you probably won’t need this.
 
@@ -236,7 +257,7 @@ Notably, this is separate from (in addition to) front matter parsing (which requ
 ```js
 {
   getData: async function(inputPath) {
-    // completely DIY, this object will be merged into data cascade
+    // DIY, this object will be merged into data cascade
     return {};
   },
 }
@@ -294,6 +315,8 @@ In the above example, the data cascade will include a top-level variable `availa
 
 #### `compileOptions.permalink` to Override Permalink Compilation
 
+* _Optional_
+
 This has the same signature as the `compile` function and expects a reusable `render` function to be returned.
 
 ```js
@@ -341,9 +364,13 @@ This provides another way to implement Sass’ underscore convention to skip wri
 
 #### `compileOptions.spiderJavaScriptDependencies`
 
-Default is `false`. Enable to use Eleventy to spider and watch files `require`’d in these templates. This allows you to control the [Watch JavaScript Dependencies](/docs/watch-serve/#watch-javascript-dependencies) feature on a per-template language basis. Most template languages will want the default here and keep this feature disabled.
+* _Optional_: Defaults to `false`
+
+Enable to use Eleventy to spider and watch files `require`’d in these templates. This allows you to control the [Watch JavaScript Dependencies](/docs/watch-serve/#watch-javascript-dependencies) feature on a per-template language basis. Most template languages will want the default here and keep this feature disabled.
 
 #### `compileOptions.cache` for advanced control of caching
+
+* _Optional_: Defaults to the value of `read`
 
 This controls caching for the compilation step, which saves the compiled template function for reuse if another template attempts to compile with the same key (usually a file’s contents).
 
