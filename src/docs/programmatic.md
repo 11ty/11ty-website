@@ -2,9 +2,11 @@
 eleventyNavigation:
   parent: Getting Started
   key: Programmatic API
-  order: 1.5
+  order: 6
 ---
 # Programmatic API {% addedin "1.0.0" %}
+
+{% callout "info", "md" %}If you’re already experimenting with this feature on Eleventy pre-releases, this documentation is specific to `1.0.0-beta.10` or `1.0.0-canary.50` or newer. This info-box will self destruct upon final `1.0.0` stable release.{% endcallout %}
 
 Starting in Eleventy 1.0, you can run Eleventy in your own Node script. _(This is how the [Eleventy Serverless](/docs/plugins/serverless/) plugin works, behind the scenes)_
 
@@ -31,13 +33,11 @@ const Eleventy = require("@11ty/eleventy");
 })();
 ```
 
-Then run your new script from the command line.
+Then run your new script from the command line. _Don’t include `~ $` when you run this command._
 
 {% codewithprompt "cmdhomedir", "all" %}
 node my-node-script.js
 {% endcodewithprompt %}
-
-_Don’t include `~ $` when you run these commands (you can’t copy and paste that text anyway)._
 
 ### Don’t write to the file system
 
