@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-asciidoc",
+	"author": "saneef",
+	"description": "to add support for AsciiDoc files."
+}
