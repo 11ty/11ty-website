@@ -1,6 +1,6 @@
 ---
 layout: layouts/main.njk
-logoLink: /blog/eleventy-v1-beta/
+logoLink: /docs/
 logoContent: "<span class='elv-hero-content'>1.0</span>"
 ignoreGitHubButtons: true
 ignoreSupporters: true
