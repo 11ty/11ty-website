@@ -41,7 +41,7 @@
     ]
   },
   "devDependencies": {
-    "@11ty/eleventy": "1.0.0-beta.10",
+    "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-cache-assets": "^2.3.0",
     "@11ty/eleventy-img": "^1.0.0",
     "@11ty/eleventy-navigation": "^0.3.2",
@@ -52,20 +52,20 @@
     "clean-css": "^5.2.2",
     "comma-number": "2.1.0",
     "dotenv": "10.0.0",
-    "fast-glob": "^3.2.7",
+    "fast-glob": "^3.2.9",
     "fs-extra": "10.0.0",
     "html-minifier": "4.0.0",
     "human-readable-numbers": "0.9.5",
-    "luxon": "2.2.0",
-    "markdown-it": "12.3.0",
+    "luxon": "2.3.0",
+    "markdown-it": "12.3.2",
     "markdown-it-anchor": "5.2.5",
     "markdown-it-table-of-contents": "0.5.2",
     "node-fetch": "^2.6.5",
-    "prettier": "^2.4.1",
+    "prettier": "^2.5.1",
     "puppeteer-core": "^9.0.0",
     "semver": "7.3.5",
     "short-hash": "^1.0.0",
-    "slugify": "1.6.4",
+    "slugify": "1.6.5",
     "sorted-object": "2.0.1",
     "tap-spot": "1.1.1",
     "terser": "^4.8.0",
@@ -75,7 +75,7 @@
     "@11ty/logo": "2.0.4",
     "@zachleat/filter-container": "^2.0.3",
     "lodash": "^4.17.21",
-    "prismjs": "1.25.0",
+    "prismjs": "1.26.0",
     "speedlify-score": "^2.0.2"
   }
 }

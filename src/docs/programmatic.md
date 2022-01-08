@@ -4,9 +4,7 @@ eleventyNavigation:
   key: Programmatic API
   order: 6
 ---
-# Programmatic API {% addedin "1.0.0" %}
-
-{% callout "info", "md" %}If you’re already experimenting with this feature on Eleventy pre-releases, this documentation is specific to `1.0.0-beta.10` or `1.0.0-canary.50` or newer. This info-box will self destruct upon final `1.0.0` stable release.{% endcallout %}
+# Programmatic API {% addedin "1.0.0" %}<!-- Beta 10 or Canary 50 -->
 
 Starting in Eleventy 1.0, you can run Eleventy in your own Node script. _(This is how the [Eleventy Serverless](/docs/plugins/serverless/) plugin works, behind the scenes)_
 

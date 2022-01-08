@@ -527,7 +527,7 @@ module.exports = function(eleventyConfig) {
 
 ### Data Filter Selectors
 
-{% addedin "1.0.0-beta.4" %}
+{% addedin "1.0.0" %}<!-- Beta 4 -->
 
 A `Set` of [`lodash` selectors](https://lodash.com/docs/4.17.15#get) that allow you to include data from the data cascade in the output from `--to=json`, `--to=ndjson`, or the `EleventyServerless.prototype.getOutput` method.
 

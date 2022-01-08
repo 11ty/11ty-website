@@ -5,9 +5,7 @@ eleventyNavigation:
   excerpt: A plugin to add shortcodes to render an Eleventy template string (or file) inside of another template.
 communityLinksKey: syntaxrender
 ---
-# Render {% addedin "1.0.0" %}
-
-_(If you’re already using the 1.0 beta channel, this plugin is available starting in 1.0.0-beta.7)_
+# Render {% addedin "1.0.0" %}<!-- Beta 7 -->
 
 {{ eleventyNavigation.excerpt }}
 

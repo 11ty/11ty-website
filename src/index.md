@@ -19,9 +19,9 @@ eleventyComputed:
 
 ## Quick Start
 
-Eleventy {% latestVersion versions, config %} requires Node 10 or newer. Use `node --version` on the command line to find your local Node version.
+Eleventy {% latestVersion versions, config %} requires Node 12 or newer. Use `node --version` on the command line to find your local Node version.
 
-```
+```bash
 npm install -g @11ty/eleventy
 echo '# Page header' > README.md
 eleventy
@@ -29,9 +29,9 @@ eleventy
 
 This will compile any files matching valid input [template file extensions](/docs/languages/) (`.md` is one of them) in the current directory into the output folder (defaults to `_site`).
 
-```
-Writing _site/README/index.html from ./README.md.
-Wrote 1 file in 0.11 seconds ({% latestVersion versions, config %})
+```bash
+Writing _site/README/index.html from ./README.md (liquid)
+Wrote 1 file in 0.03 seconds ({% latestVersion versions, config %})
 ```
 
 Run `eleventy --serve` to start up a web server. Then open `http://localhost:8080/README/` in your web browser of choice to see your Eleventy output.

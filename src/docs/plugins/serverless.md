@@ -105,8 +105,8 @@ You won’t need to set up bundler plugins for every individual template, but in
     <td>How we manage your serverless redirects. This will add serverless redirects to your <code>netlify.toml</code> file and remove stale routes for you.<ul>
       <li><code>redirects: false</code> will skip this entirely.</li>
       <li><code>redirects: "netlify-toml"</code> (default) to use Netlify Functions.</li>
-      <li><code>redirects: "netlify-toml-functions"</code> (alias for <code>netlify-toml</code>) {% addedin "1.0.0-beta.3" %}</li>
-      <li><code>redirects: "netlify-toml-builders"</code> to use <a href="#use-with-on-demand-builders">Netlify On-demand Builders</a> {% addedin "1.0.0-beta.3" %}</li>
+      <li><code>redirects: "netlify-toml-functions"</code> (alias for <code>netlify-toml</code>)<!-- {% addedin "1.0.0-beta.3" %} --></li>
+      <li><code>redirects: "netlify-toml-builders"</code> to use <a href="#use-with-on-demand-builders">Netlify On-demand Builders</a><!-- {% addedin "1.0.0-beta.3" %}--></li>
       <li>Write your own: Use a custom Function instead of a String: <code>function(name, outputMap)</code>. Don’t forget to handle removal of stale routes too!</li>
     </ul></td>
   </tr>
@@ -114,9 +114,10 @@ You won’t need to set up bundler plugins for every individual template, but in
     <td><del><code>inputDir: "."</code></del></td>
     <td>The Eleventy input directory (containing your Eleventy templates). This is no longer necessary. Eleventy injects this for you automatically.</td>
   </tr>
+  <!-- I don’t think this belongs here !!! It belongs in the default serverless function -->
   <tr>
     <td><code>config: function(eleventyConfig) {}</code></td>
-    <td>Run your own custom Eleventy Configuration API code inside of the serverless function. Useful for a wide variety of things, but was added to facilitate developers wiring up additional serverless information from the <code>event</code> object to templates using <code>eleventyConfig.addGlobalData</code>. For example, wire up cookies using <code>event.headers.cookie</code> or form post data using <code>event.body</code>. {% addedin "1.0.0-beta.4" %}</td>
+    <td>Run your own custom Eleventy Configuration API code inside of the serverless function. Useful for a wide variety of things, but was added to facilitate developers wiring up additional serverless information from the <code>event</code> object to templates using <code>eleventyConfig.addGlobalData</code>. For example, wire up cookies using <code>event.headers.cookie</code> or form post data using <code>event.body</code>.<!-- {% addedin "1.0.0-beta.4" %} --></td>
   </tr>
   <tr>
     <td colspan="2"><strong><em>Advanced Options:</em></strong></td>
@@ -155,9 +156,6 @@ async function handler (event) {
 
   try {
     // returns the HTML for the Eleventy template that matches to the URL
-    // let html = await elev.render();
-
-    // Or (more flexibly) in 1.0.0-beta.4
     // Can use with `eleventyConfig.dataFilterSelectors` to put data cascade data into `page.data` here.
     let [page] = await elev.getOutput();
     let html = page.content;
