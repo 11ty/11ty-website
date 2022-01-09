@@ -30,7 +30,7 @@ module.exports = function (eleventyConfig) {
 };
 ```
 
-## `elevnety.after` {% addedin "1.0.0" %}
+## `eleventy.after` {% addedin "1.0.0" %}
 
 * Previously known as the now deprecated (but not removed) `afterBuild` {% addedin "0.11.1" %} event.
 
