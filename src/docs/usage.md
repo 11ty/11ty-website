@@ -85,7 +85,7 @@ npx @11ty/eleventy --dryrun
 npx @11ty/eleventy --config=myeleventyconfig.js
 ```
 
-### `--to` can output JSON
+### `--to` can output JSON {% addedin "1.0.0" %}
 
 ```bash
 # Output a JSON structure (does not write to the file system)
