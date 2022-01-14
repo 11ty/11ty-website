@@ -2,7 +2,6 @@
     "url": "https://cambopedia.com/",
     "name": "Cambopedia",
     "description": "Local insights into living in Cambodia",
-    "twitter": "https://twitter.com/cambopedia",
-    "authoredBy": ["cambopedia"],
+    "twitter": "cambopedia",
     "source_url": "https://cambopedia.com/"
 }
