@@ -63,6 +63,7 @@ module.exports = async function() {
 			name: "Zach Leatherman",
 			slug: "zach-leatherman",
 			twitter: "zachleat",
+			github: "zachleat",
 			image: "https://images.opencollective.com/zachleat/70606f4/avatar/256.png",
 			website: "https://www.zachleat.com/",
 			profile: "https://opencollective.com/zachleat",
