@@ -50,10 +50,11 @@ The data cascade results in the following data when `my-template.md` is rendered
   "author": "Zach",
   "tags": [
     "CSS",
-    "HTML"
+    "HTML",
+    "JavaScript"
   ],
   "layout": "my-layout.njk"
 }
 ```
 
-By default, Eleventy does a simple top level merge (`Object.assign`) from the different data sources. It doesn’t dive any deeper to merge Object literals or Arrays in the data. If you’d like Eleventy to perform deeper data merging, you need to enable the [Data Deep Merge](/docs/data-deep-merge/) option.
+By default in v1.0, Eleventy does a deep data merge to combine Object literals and Arrays. If you want to opt-out of this behavior and revert to a simple top level merge (`Object.assign`) from the different data sources, you can turn off [Data Deep Merge](/docs/data-deep-merge/). You can override this on a per-property basis too—read more at the [Data Deep Merge documentation](/docs/data-deep-merge/).
