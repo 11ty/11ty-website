@@ -118,7 +118,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-## Skipping a template from inside of the `compile` function.
+## Skipping a template from inside of the `compile` function
 
 To add support for Sass’ underscore convention (file names that start with an underscore aren’t written to the output directory), just return early in the `compile` function (don’t return a `render` function).
 

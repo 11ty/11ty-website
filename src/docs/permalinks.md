@@ -195,7 +195,7 @@ module.exports = function(eleventyConfig) {
 
 ### Use filters!
 
-Use the provided [`slug` filter](/docs/filters/slug/) to modify other data available in the template.
+Use the provided [`slugify` filter](/docs/filters/slugify/) to modify other data available in the template.
 
 {% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
 
@@ -203,7 +203,7 @@ Use the provided [`slug` filter](/docs/filters/slug/) to modify other data avail
 ```markdown
 ---
 title: My Article Title
-permalink: "subdir/{{ title | slug }}/index.html"
+permalink: "subdir/{{ title | slugify }}/index.html"
 ---
 ```
 {% endraw %}
