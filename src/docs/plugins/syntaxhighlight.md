@@ -6,7 +6,7 @@ eleventyNavigation:
 ---
 # Syntax Highlighting Plugin
 
-A pack of Eleventy plugins for syntax highlighting. No browser/client JavaScript here, these highlight transformations are all done at build-time. Supports individual line highlighting.
+A pack of Eleventy plugins for PrismJS syntax highlighting. No browser/client JavaScript here, these highlight transformations are all done at build-time. Supports individual line highlighting.
 
 * This is the documentation for `eleventy-plugin-syntaxhighlight` `v3.2` and newer.
 * [GitHub](https://github.com/11ty/eleventy-plugin-syntaxhighlight).
@@ -14,12 +14,6 @@ A pack of Eleventy plugins for syntax highlighting. No browser/client JavaScript
 ## Contents
 
 [[toc]]
-
-## Template Compatibility
-
-* Nunjucks
-* Liquid
-* Markdown
 
 ## Installation
 
@@ -54,38 +48,6 @@ You are responsible for including your favorite PrismJS theme CSS and there are 
 ````
 
 You could also download the css file or paste its content inside a style tag. This approach allows the use of [other themes](https://github.com/PrismJS/prism-themes) from a Prism extension repository.
-
-### Options
-
-Optionally pass in an options object as the second argument to `addPlugin` to further customize this plugin pack.
-
-```js
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(syntaxHighlight, {
-
-    // Change which Eleventy template formats use syntax highlighters
-    templateFormats: ["*"], // default
-
-    // e.g. Use syntax highlighters in njk and md Eleventy templates (not liquid)
-    // templateFormats: ["njk", "md"],
-
-    // init callback lets you customize Prism
-    init: function({ Prism }) {
-      Prism.languages.myCustomLanguage = /* */;
-    },
-
-    // Added in 3.1.1, add HTML attributes to the <pre> or <code> tags
-    preAttributes: {
-      tabindex: 0
-    },
-    codeAttributes: {},
-  });
-};
-```
-
-{% callout "info", "md" %}Starting with `v3.2` of this plugin, this plugin now bundles the official [Prism `diff-highlight` plugin](https://prismjs.com/plugins/diff-highlight/). The previous line highlighting feature is considered deprecated but still available. Check out [the old documentation if you want to learn how to use the deprecated line-highlighting feature](https://v0-12-1.11ty.dev/docs/plugins/syntaxhighlight/).{% endcallout %}
 
 ## Usage
 
@@ -137,7 +99,7 @@ Use a `+` or `-` at the beginning of the line to denote the addition or removal 
  }
 {% endhighlight %}
 
-### Liquid Tag: Prism Syntax Highlighter
+### Liquid Shortcode
 
 * [List of supported PrismJS languages](http://prismjs.com/#languages-list)
 
@@ -181,7 +143,7 @@ Use a `+` or `-` at the beginning of the line to denote the addition or removal 
  }
 {% endhighlight %}
 
-### Nunjucks Paired Shortcode: Prism Syntax Highlighter
+### Nunjucks Shortcode
 
 * [List of supported PrismJS languages](http://prismjs.com/#languages-list)
 
@@ -249,3 +211,35 @@ Use a `+` or `-` at the beginning of the line to denote the addition or removal 
 	display: block;
 }
 ```
+
+## Advanced Options
+
+Optionally pass in an options object as the second argument to `addPlugin` to further customize this plugin pack.
+
+```js
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(syntaxHighlight, {
+
+    // Change which Eleventy template formats use syntax highlighters
+    templateFormats: ["*"], // default
+
+    // e.g. Use syntax highlighters in njk and md Eleventy templates (not liquid)
+    // templateFormats: ["njk", "md"],
+
+    // init callback lets you customize Prism
+    init: function({ Prism }) {
+      Prism.languages.myCustomLanguage = /* */;
+    },
+
+    // Added in 3.1.1, add HTML attributes to the <pre> or <code> tags
+    preAttributes: {
+      tabindex: 0
+    },
+    codeAttributes: {},
+  });
+};
+```
+
+{% callout "info", "md" %}Starting with `v3.2` of this plugin, this plugin now bundles the official [Prism `diff-highlight` plugin](https://prismjs.com/plugins/diff-highlight/). The previous line highlighting feature is considered deprecated but still available. Check out [the old documentation if you want to learn how to use the deprecated line-highlighting feature](https://v0-12-1.11ty.dev/docs/plugins/syntaxhighlight/).{% endcallout %}
