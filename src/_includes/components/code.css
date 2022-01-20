@@ -144,3 +144,26 @@ pre + .note {
 #globalinstall:checked ~ .localinstall {
 	display: none;
 }*/
+
+pre[class*="language-diff-"] {
+	padding-left: 0;
+	padding-right: 0;
+}
+.token.deleted {
+	background-color: hsl(350deg 100% 88% / 20%);
+}
+.token.inserted {
+	background-color: hsl(120deg 73% 75% / 20%);
+}
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	/* display: block; */
+}
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	margin-right: .5em;
+	padding: 0 .2em;
+}

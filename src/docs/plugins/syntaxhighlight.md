@@ -8,7 +8,7 @@ eleventyNavigation:
 
 A pack of Eleventy plugins for syntax highlighting. No browser/client JavaScript here, these highlight transformations are all done at build-time. Supports individual line highlighting.
 
-* This is the documentation for `eleventy-plugin-syntaxhighlight` `v3.x`.
+* This is the documentation for `eleventy-plugin-syntaxhighlight` `v3.2` and newer.
 * [GitHub](https://github.com/11ty/eleventy-plugin-syntaxhighlight).
 
 ## Contents
@@ -76,17 +76,6 @@ module.exports = function(eleventyConfig) {
       Prism.languages.myCustomLanguage = /* */;
     },
 
-    // Added in 3.0, set to true to always wrap lines in `<span class="highlight-line">`
-    // The default (false) only wraps when line numbers are passed in.
-    alwaysWrapLineHighlights: false,
-
-    // Added in 3.0.2, set to false to opt-out of pre-highlight removal of leading
-    // and trailing whitespace
-    trim: true,
-
-    // Added in 3.0.4, change the separator between lines (you may want "\n")
-    lineSeparator: "<br>",
-
     // Added in 3.1.1, add HTML attributes to the <pre> or <code> tags
     preAttributes: {
       tabindex: 0
@@ -95,6 +84,8 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+{% callout "info", "md" %}Starting with `v3.2` of this plugin, this plugin now bundles the official [Prism `diff-highlight` plugin](https://prismjs.com/plugins/diff-highlight/). The previous line highlighting feature is considered deprecated but still available. Check out [the old documentation if you want to learn how to use the deprecated line-highlighting feature](https://v0-12-1.11ty.dev/docs/plugins/syntaxhighlight/).{% endcallout %}
 
 ## Usage
 
@@ -110,72 +101,50 @@ Optionally specify a language after the start of the markdown fenced code block.
 
 * [List of supported PrismJS languages](http://prismjs.com/#languages-list)
 
+{% codetitle "Markdown", "Syntax" %}
+
 ````markdown
-<!-- Markdown Template -->
-``` js
+```js
 function myFunction() {
   return true;
 }
 ```
 ````
 
-````markdown
-<!--
-  Line highlighting classes (single highlight)
-  Wraps each line in `<span class="highlight-line">`
-  Adds `highlight-line-active` class to lines 1,3,4,5 (for line highlighting)
--->
+#### `diff-` syntax
 
-<!-- Markdown Template -->
-<!-- Line highlighting numbers are zero-indexed. -->
-``` js/1,3-5
-function myFunction() {
-  // …
-  return true;
-}
+{% addedin "Syntax Highlighter v3.2.2" %}
+
+Use a `+` or `-` at the beginning of the line to denote the addition or removal of that line. Alternatively, you can use `diff` without another syntax for plaintext line highlighting.
+
+{% codetitle "Markdown", "Syntax" %}
+
+````markdown
+```diff-js
++function myFunction() {
+   // …
+-  return true;
+ }
 ```
 ````
 
-````markdown
-<!--
-  Line highlighting classes (add and remove mode)
-  Wraps each line in `<span class="highlight-line">`
-  Adds `highlight-line-add` class to lines 1,3
-  Adds `highlight-line-remove` class to lines 5,6,7,8
--->
+{% codetitle "Markdown Output", "Rendered" %}
 
-<!-- Markdown Template -->
-<!-- Line highlighting numbers are zero-indexed. -->
-``` js/1,3/5-8
-function myFunction() {
-  // …
-  return true;
-}
-```
-````
-
-#### Plain text
-
-Use `text` to use the line highlighting features without PrismJS.
-
-````markdown
-<!-- Line highlighting numbers are zero-indexed. -->
-
-``` text/1-2
-function myFunction() {
-  let highlighted = true;
-  return highlighted;
-}
-```
-````
+{% highlight "diff-js" %}
++function myFunction() {
+   // …
+-  return true;
+ }
+{% endhighlight %}
 
 ### Liquid Tag: Prism Syntax Highlighter
 
 * [List of supported PrismJS languages](http://prismjs.com/#languages-list)
 
+{% codetitle "Liquid", "Syntax" %}
+
 {% raw %}
 ```markdown
-<!-- Liquid Template -->
 {% highlight js %}
 function myFunction() {
   return true;
@@ -184,69 +153,42 @@ function myFunction() {
 ```
 {% endraw %}
 
+#### `diff-` syntax
+
+{% addedin "Syntax Highlighter v3.2.2" %}
+
+Use a `+` or `-` at the beginning of the line to denote the addition or removal of that line. Alternatively, you can use `diff` without another syntax for plaintext line highlighting.
+
+{% codetitle "Liquid", "Syntax" %}
+
 {% raw %}
 ```markdown
-<!--
-  Line highlighting classes (single highlight)
-  Wraps each line in `<span class="highlight-line">`
-  Adds `highlight-line-active` class to lines 1,3,4,5 (for line highlighting)
--->
-
-<!-- Liquid Template -->
-<!-- Line highlighting numbers are zero-indexed. -->
-{% highlight js 1,3-5 %}
-function myFunction() {
-  // …
-  return true;
-}
+{% highlight diff-js %}
++function myFunction() {
+   // …
+-  return true;
+ }
 {% endhighlight %}
 ```
 {% endraw %}
 
-{% raw %}
-```markdown
-<!--
-  Line highlighting classes (add and remove)
-  Wraps each line in `<span class="highlight-line">`
-  Adds `highlight-line-add` class to lines 1,3
-  Adds `highlight-line-remove` class to lines 5,6,7,8
--->
+{% codetitle "Liquid Output", "Rendered" %}
 
-<!-- Liquid Template -->
-<!-- Line highlighting numbers are zero-indexed. -->
-{% highlight js 1,3 5-8 %}
-function myFunction() {
-  // …
-  return true;
-}
+{% highlight "diff-js" %}
++function myFunction() {
+   // …
+-  return true;
+ }
 {% endhighlight %}
-```
-{% endraw %}
-
-#### Plain text
-
-Use `text` to use the line highlighting features without PrismJS.
-
-{% raw %}
-```markdown
-<!-- Liquid Template -->
-<!-- Line highlighting numbers are zero-indexed. -->
-{% highlight text 1-2 %}
-function myFunction() {
-  let highlighted = true;
-  return highlighted;
-}
-{% endhighlight %}
-```
-{% endraw %}
 
 ### Nunjucks Paired Shortcode: Prism Syntax Highlighter
 
 * [List of supported PrismJS languages](http://prismjs.com/#languages-list)
 
+{% codetitle "Nunjucks", "Syntax" %}
+
 {% raw %}
 ```markdown
-<!-- Nunjucks Template -->
 {% highlight "js" %}
 function myFunction() {
   return true;
@@ -255,102 +197,55 @@ function myFunction() {
 ```
 {% endraw %}
 
+#### `diff-` syntax
+
+{% addedin "Syntax Highlighter v3.2.2" %}
+
+Use a `+` or `-` at the beginning of the line to denote the addition or removal of that line. Alternatively, you can use `diff` without another syntax for plaintext line highlighting.
+
+{% codetitle "Nunjucks", "Syntax" %}
+
 {% raw %}
 ```markdown
-<!--
-  Line highlighting classes (single highlight)
-  Wraps each line in `<span class="highlight-line">`
-  Adds `highlight-line-active` class to lines 1,3,4,5 (for line highlighting)
--->
-
-<!-- Nunjucks Template -->
-<!-- Line highlighting numbers are zero-indexed. -->
-{% highlight "js 1,3-5" %}
-function myFunction() {
-  // …
-  return true;
+{% highlight "diff-js" %}
++function myFunction() {
+   // …
+-  return true;
 }
 {% endhighlight %}
 ```
 {% endraw %}
 
-{% raw %}
-```markdown
-<!--
-  Line highlighting classes (add and remove)
-  Wraps each line in `<span class="highlight-line">`
-  Adds `highlight-line-add` class to lines 1,3
-  Adds `highlight-line-remove` class to lines 5,6,7,8
--->
+{% codetitle "Nunjucks Output", "Rendered" %}
 
-<!-- Nunjucks Template -->
-<!-- Line highlighting numbers are zero-indexed. -->
-{% highlight "js 1,3 5-8" %}
-function myFunction() {
-  // …
-  return true;
-}
+{% highlight "diff-js" %}
++function myFunction() {
+   // …
+-  return true;
+ }
 {% endhighlight %}
-```
-{% endraw %}
 
-#### Plain text
-
-Use `text` to use the line highlighting features without PrismJS.
-
-{% raw %}
-```markdown
-<!-- Nunjucks Template -->
-<!-- Line highlighting numbers are zero-indexed. -->
-{% highlight "text 1-2" %}
-function myFunction() {
-  let highlighted = true;
-  return highlighted;
-}
-{% endhighlight %}
-```
-{% endraw %}
-
-### Sample Line Highlighting CSS
+### Sample Diff CSS
 
 ```css
-.highlight-line {
-  display: inline-block;
-
-  /* del, ins, mark default styles */
-  text-decoration: none;
-  color: inherit;
+.token.deleted {
+  background-color: hsl(350deg 100% 88% / 47%);
+}
+.token.inserted {
+  background-color: hsl(120deg 73% 75% / 35%);
 }
 
-/* allow highlighting empty lines */
-.highlight-line:empty:before {
-  content: " ";
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
 }
 
-.highlight-line:not(:last-child) {
-  min-width: 100%;
-}
-.highlight-line .highlight-line:not(:last-child) {
-  min-width: 0;
-}
-
-
-/*
- * Dark theme
- */
-
-.highlight-line-isdir {
-  color: #b0b0b0;
-  background-color: #222;
-}
-.highlight-line-active {
-  background-color: #444;
-  background-color: hsla(0, 0%, 27%, .8);
-}
-.highlight-line-add {
-  background-color: #45844b;
-}
-.highlight-line-remove {
-  background-color: #902f2f;
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
 }
 ```
