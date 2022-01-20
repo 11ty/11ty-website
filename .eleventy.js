@@ -24,7 +24,6 @@ const minificationLocalPlugin = require("./config/minification.js");
 const getAuthors = require("./config/getAuthorsFromSites.js");
 const cleanName = require("./config/cleanAuthorName.js");
 const objectHas = require("./config/object-has.js");
-// const HitsDb = require("./config/hits-db.js");
 
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);
