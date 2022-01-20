@@ -157,7 +157,7 @@ pre[class*="language-diff-"] {
 }
 .token.inserted:not(.prefix),
 .token.deleted:not(.prefix) {
-	/* display: block; */
+	display: block;
 }
 .token.prefix.unchanged,
 .token.prefix.inserted,
