@@ -14,6 +14,8 @@ tags:
 ---
 # Filters
 
+A filter is a function which can be used within templating syntax to transform data into a more presentable format. Filters are typically designed to be chained, so that the value returned from one filter is piped into the next filter.
+
 Various template engines can be extended with custom filters to modify content. Here are a few examples:
 
 
