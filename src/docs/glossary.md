@@ -50,6 +50,12 @@ A portable, installable Eleventy configuration which can add [data](#data), [fil
 
 [Read more about plugins.](/docs/plugins/)
 
+### Eleventy Serverless
+
+An opt-in build mode for Eleventy in which specified pages are built when a user requests them, rather than ahead of time during a build step. Optionally, pages that are built on request can be cached by the content delivery network to be used for future visits to that page.
+
+[Read more about Eleventy Serverless.](/docs/plugin/serverless/)
+
 ## Industry Terms and Buzzwords
 
 Bask in the warm glow of this _“Nobody ever got fired for buying IBM”_-style feel-good industry jargon.
