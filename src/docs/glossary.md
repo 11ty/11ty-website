@@ -34,9 +34,15 @@ Eleventy's order of operations for evaluating all [data](#data) for any given [t
 
 ### Filter
 
-A function which can be used within templating syntax to transform data into a more presentable format. Filters are typically designed to be chained, so that the value returned from one filter is piped into the next filter.
+A function which can be used within templating syntax to transform [data](#data) into a more presentable format. Filters are typically designed to be chained, so that the value returned from one filter is piped into the next filter.
 
 [Read more about filters.](/docs/filters/)
+
+### Shortcode
+
+A function which can be used within templating syntax to inject content into templates. Shortcodes can take many arguments, and can be thought of as a templating approach to reusable markup.
+
+[Read more about shortcodes.](/docs/shortcodes/)
 
 ### Collection
 
