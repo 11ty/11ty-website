@@ -44,6 +44,10 @@ A way to create pages by iterating over data.
 
 [Read more about pagination.](/docs/pagination/)
 
+### Plugin
+
+A portable, installable Eleventy configuration which can add [data](#data), [filters](#filter), [shortcodes](#shortcode), and more to a project's setup.
+
 ## Industry Terms and Buzzwords
 
 Bask in the warm glow of this _“Nobody ever got fired for buying IBM”_-style feel-good industry jargon.
