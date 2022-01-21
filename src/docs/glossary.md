@@ -32,6 +32,12 @@ Eleventy's order of operations for evaluating all [data](#data) for any given [t
 
 [Read more about the data cascade.](/docs/data-cascade/)
 
+### Filter
+
+A function which can be used within templating syntax to transform data into a more presentable format. Filters are typically designed to be chained, so that the value returned from one filter is piped into the next filter.
+
+[Read more about filters.](/docs/filters/)
+
 ### Collection
 
 An array of [templates](#template), used to group similar content. Collections can be created by using [tags](/docs/collections/#tag-syntax) or by calling the [collections API in the Eleventy configuration](/docs/collections/#advanced-custom-filtering-and-sorting).
