@@ -24,7 +24,7 @@ A template which wraps around another template, typically to provide the scaffol
 
 ### Data
 
-Variables that can be used inside [templates](#template) and [layouts](#layout) using templating syntax. The data for a given template is aggregated through a process called the [data cascade](#data-cascade).
+Exposed via variables that can be used inside [templates](#template) and [layouts](#layout) using templating syntax. The data for a given template is aggregated through a process called the [data cascade](#data-cascade).
 
 ### Data Cascade
 
