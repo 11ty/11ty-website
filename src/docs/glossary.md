@@ -38,6 +38,12 @@ An array of [templates](#template), used to group similar content.
 
 [Read more about collections.](/docs/collections/)
 
+### Pagination
+
+A way to create pages by iterating over data.
+
+[Read more about pagination.](/docs/pagination/)
+
 ## Industry Terms and Buzzwords
 
 Bask in the warm glow of this _“Nobody ever got fired for buying IBM”_-style feel-good industry jargon.
