@@ -32,6 +32,12 @@ Eleventy's order of operations for evaluating all [data](#data) for any given [t
 
 [Read more about the data cascade.](/docs/data-cascade/)
 
+### Collection
+
+An array of [templates](#template), used to group similar content.
+
+[Read more about collections.](/docs/collections/)
+
 ## Industry Terms and Buzzwords
 
 Bask in the warm glow of this _“Nobody ever got fired for buying IBM”_-style feel-good industry jargon.
