@@ -34,19 +34,21 @@ Eleventy's order of operations for evaluating all [data](#data) for any given [t
 
 ### Collection
 
-An array of [templates](#template), used to group similar content.
+An array of [templates](#template), used to group similar content. Collections can be created by using [tags](/docs/collections/#tag-syntax) or by calling the [collections API in the Eleventy configuration](/docs/collections/#advanced-custom-filtering-and-sorting).
 
 [Read more about collections.](/docs/collections/)
 
 ### Pagination
 
-A way to create pages by iterating over data.
+A way to create pages by iterating over data. The same template is applied to each chunk of the paginated data.
 
 [Read more about pagination.](/docs/pagination/)
 
 ### Plugin
 
 A portable, installable Eleventy configuration which can add [data](#data), [filters](#filter), [shortcodes](#shortcode), and more to a project's setup.
+
+[Read more about plugins.](/docs/plugins/)
 
 ## Industry Terms and Buzzwords
 
