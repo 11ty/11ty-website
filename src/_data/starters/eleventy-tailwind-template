@@ -1,0 +1,6 @@
+{
+	"url": "https://github.com/jeremydaly/eleventy-tailwind-template",
+	"name": "Eleventy Tailwind Template",
+	"description": "Starter template for building Eleventy static sites with Tailwind CSS automatically generating the corresponding styles and writing them to a static CSS file.",
+	"author": "jeremydaly"
+}
