@@ -3,6 +3,5 @@
     "name": "Dan Leatherman",
     "description": "Personal blog",
     "twitter": "danleatherman",
-    "authoredBy": ["danleatherman"],
     "source_url": "https://github.com/dleatherman/danleatherman-eleventy"
 }
