@@ -56,6 +56,7 @@ This plugin provides the following syntax highlighters using PrismJS, all of whi
 * Markdown Highlighter (triple backtick <code>```</code>)
 * Liquid Custom Tag {% raw %}`{% highlight %}`{% endraw %}
 * Nunjucks Paired Shortcode {% raw %}`{% highlight %}`{% endraw %}
+* JavaScript Function {% raw %}`this.highlight()`{% endraw %} {% addedin "Syntax Highlighter v4.0.0" %}
 
 ### Markdown Highlighter
 
@@ -187,7 +188,50 @@ Use a `+` or `-` at the beginning of the line to denote the addition or removal 
  }
 {% endhighlight %}
 
+### JavaScript Function (for 11ty.js)
+
+{% addedin "Syntax Highlighter v4.0.0" %}
+
+* [List of supported PrismJS languages](http://prismjs.com/#languages-list)
+
+{% codetitle "11ty.js", "Syntax" %}
+
+{% raw %}
+```js
+module.exports = function(data) {
+  let code = `
+function myFunction() {
+  return true;
+}`;
+
+  return this.highlight("js", code);
+}
+```
+{% endraw %}
+
+#### `diff-` syntax
+
+{% addedin "Syntax Highlighter v4.0.0" %}
+
+{% codetitle "11ty.js", "Syntax" %}
+
+{% raw %}
+```js
+module.exports = function(data) {
+  let code = `
++function myFunction() {
+  // …
+-  return true;
+}`;
+
+  return this.highlight("diff-js", code);
+}
+```
+{% endraw %}
+
 ### Sample Diff CSS
+
+{% codetitle "CSS", "Syntax" %}
 
 ```css
 .token.deleted {
@@ -225,8 +269,8 @@ module.exports = function(eleventyConfig) {
     // Change which Eleventy template formats use syntax highlighters
     templateFormats: ["*"], // default
 
-    // e.g. Use syntax highlighters in njk and md Eleventy templates (not liquid)
-    // templateFormats: ["njk", "md"],
+    // Use only a subset of template types (11ty.js added in v4.0.0)
+    // templateFormats: ["liquid", "njk", "md", "11ty.js"],
 
     // init callback lets you customize Prism
     init: function({ Prism }) {
