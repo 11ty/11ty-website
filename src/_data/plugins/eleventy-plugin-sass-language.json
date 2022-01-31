@@ -1,0 +1,5 @@
+{
+	"npm": "@grimlink/eleventy-plugin-sass",
+	"author": "grimlink",
+	"description": "Simple 11ty config wrapper, for running Sass directly as custom template"
+}
