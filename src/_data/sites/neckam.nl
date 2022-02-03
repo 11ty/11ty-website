@@ -1,0 +1,6 @@
+{
+    "url": "https://neckam.nl/",
+    "name": "Neckam",
+    "description": "A website for my own company for freelanch work in SEO and Webdevelopment (in Dutch).",
+    "twitter": "MichelKroef"
+}
