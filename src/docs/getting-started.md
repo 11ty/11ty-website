@@ -43,7 +43,7 @@ Installing locally is preferred to [global installation](/docs/global-installati
 
 ## <span class="numberflag"><span class="sr-only">Step</span> 3</span> Run Eleventy
 
-We can use npx to run our local project version’s version of Eleventy. Let’s make sure our installation went okay and try to run Eleventy:
+We can use npx to run our local project version’s of Eleventy. Let’s make sure our installation went okay and try to run Eleventy:
 
 {% codewithprompt "eleventysample", "first" %}
 npx @11ty/eleventy
