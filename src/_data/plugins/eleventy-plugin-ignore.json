@@ -1,0 +1,5 @@
+{
+  "npm": "eleventy-plugin-ignore",
+  "author": "TheDocTrier",
+  "description": "Ignore templates based on their front matter."
+}
