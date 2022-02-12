@@ -164,7 +164,7 @@ module.exports = function(eleventyConfig) {
         return this.defaultRenderer(data);
       };
     }
-  }
+  });
 };
 ```
 
