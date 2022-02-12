@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/jean-ducrot.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/jean-ducrot.avif 90w",
+      "filename": "jean-ducrot.avif",
+      "outputPath": "img/avatars/opencollective/jean-ducrot.avif",
+      "size": 1396
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/jean-ducrot.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/jean-ducrot.webp 90w",
+      "filename": "jean-ducrot.webp",
+      "outputPath": "img/avatars/opencollective/jean-ducrot.webp",
+      "size": 2184
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/jean-ducrot.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/jean-ducrot.jpeg 90w",
+      "filename": "jean-ducrot.jpeg",
+      "outputPath": "img/avatars/opencollective/jean-ducrot.jpeg",
+      "size": 2709
+    }
+  ],
+  "slug": "jean-ducrot"
+}

@@ -1,0 +1,5 @@
+{
+	"npm": "@resoc/eleventy-plugin-social-image",
+	"author": "ph_bernard",
+	"description": "adds automated social images based on HTML & CSS templates and generated at access time by a Netlify on-demand builder"
+}

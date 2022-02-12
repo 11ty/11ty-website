@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/broeker/spacebook",
+	"name": "Spacebook",
+	"description": "Create fast and simple documentation to explain almost anything. Using Eleventy, Tailwind 2.0, Alpine.js, and Netlify CMS (optional).",
+	"author": "broeker",
+	"demo": "https://spacebook.app/"
+}

@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-toc",
+	"author": "jdsteinbach",
+	"description": "will generate a table of contents from your headings."
+}

@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/frank-taillandier.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/frank-taillandier.avif 90w",
+      "filename": "frank-taillandier.avif",
+      "outputPath": "src/img/avatars/opencollective/frank-taillandier.avif",
+      "size": 1319
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/frank-taillandier.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/frank-taillandier.webp 90w",
+      "filename": "frank-taillandier.webp",
+      "outputPath": "src/img/avatars/opencollective/frank-taillandier.webp",
+      "size": 1804
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/frank-taillandier.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/frank-taillandier.jpeg 90w",
+      "filename": "frank-taillandier.jpeg",
+      "outputPath": "src/img/avatars/opencollective/frank-taillandier.jpeg",
+      "size": 2374
+    }
+  ],
+  "slug": "frank-taillandier"
+}

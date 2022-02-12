@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-respimg",
+	"author": "etportis",
+	"description": "will take care of the `srcset` attribute for responsive images for you."
+}

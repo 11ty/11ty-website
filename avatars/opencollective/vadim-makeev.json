@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/vadim-makeev.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/vadim-makeev.avif 90w",
+      "filename": "vadim-makeev.avif",
+      "outputPath": "src/img/avatars/opencollective/vadim-makeev.avif",
+      "size": 1986
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/vadim-makeev.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/vadim-makeev.webp 90w",
+      "filename": "vadim-makeev.webp",
+      "outputPath": "src/img/avatars/opencollective/vadim-makeev.webp",
+      "size": 3134
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/vadim-makeev.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/vadim-makeev.jpeg 90w",
+      "filename": "vadim-makeev.jpeg",
+      "outputPath": "src/img/avatars/opencollective/vadim-makeev.jpeg",
+      "size": 2615
+    }
+  ],
+  "slug": "vadim-makeev"
+}

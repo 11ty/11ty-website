@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-sharp",
+	"author": "luwes",
+	"description": "will add the full power of Sharp's image processing to your templates."
+}

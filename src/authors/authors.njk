@@ -1,0 +1,30 @@
+---
+eleventyNavigation:
+  parent: Supporting Eleventy
+  key: Eleventy Authors
+  order: 4
+layout: layouts/docs.njk
+---
+<h1>Eleventy Authors</h1>
+
+<p>×{{ authors | length }} unique authors.</p>
+
+<table class="authors-list">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Site Count</th>
+      <th>Supporter</th>
+    </tr>
+  </thead>
+	<tbody>
+{%- for author in sites | topAuthors %}
+{%- set supporter = opencollective.supporters | findBy("twitter", author.name) | last -%}
+		<tr>
+			<td><a href="/authors/{{ author.name | slug }}/">{% avatarlocalcache "twitter", author.name %}{{ supporter.name or author.name }}</a></td>
+			<td>×{{ author.count }} site{% if author.count !== 1 %}s{% endif %}</td>
+			<td>{% if supporter %}🎈{% endif %}</td>
+		</tr>
+{%- endfor %}
+	</tbody>
+</table>

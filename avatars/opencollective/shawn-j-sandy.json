@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/shawn-j-sandy.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/shawn-j-sandy.avif 90w",
+      "filename": "shawn-j-sandy.avif",
+      "outputPath": "src/img/avatars/opencollective/shawn-j-sandy.avif",
+      "size": 1984
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/shawn-j-sandy.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/shawn-j-sandy.webp 90w",
+      "filename": "shawn-j-sandy.webp",
+      "outputPath": "src/img/avatars/opencollective/shawn-j-sandy.webp",
+      "size": 3010
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/shawn-j-sandy.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/shawn-j-sandy.jpeg 90w",
+      "filename": "shawn-j-sandy.jpeg",
+      "outputPath": "src/img/avatars/opencollective/shawn-j-sandy.jpeg",
+      "size": 3337
+    }
+  ],
+  "slug": "shawn-j-sandy"
+}

@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/ken-hawkins.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/ken-hawkins.avif 90w",
+      "filename": "ken-hawkins.avif",
+      "outputPath": "src/img/avatars/opencollective/ken-hawkins.avif",
+      "size": 1194
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/ken-hawkins.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/ken-hawkins.webp 90w",
+      "filename": "ken-hawkins.webp",
+      "outputPath": "src/img/avatars/opencollective/ken-hawkins.webp",
+      "size": 1766
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/ken-hawkins.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/ken-hawkins.jpeg 90w",
+      "filename": "ken-hawkins.jpeg",
+      "outputPath": "src/img/avatars/opencollective/ken-hawkins.jpeg",
+      "size": 2456
+    }
+  ],
+  "slug": "ken-hawkins"
+}

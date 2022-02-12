@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/kayce-basques.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/kayce-basques.avif 90w",
+      "filename": "kayce-basques.avif",
+      "outputPath": "img/avatars/opencollective/kayce-basques.avif",
+      "size": 1453
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/kayce-basques.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/kayce-basques.webp 90w",
+      "filename": "kayce-basques.webp",
+      "outputPath": "img/avatars/opencollective/kayce-basques.webp",
+      "size": 2018
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/kayce-basques.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/kayce-basques.jpeg 90w",
+      "filename": "kayce-basques.jpeg",
+      "outputPath": "img/avatars/opencollective/kayce-basques.jpeg",
+      "size": 2569
+    }
+  ],
+  "slug": "kayce-basques"
+}

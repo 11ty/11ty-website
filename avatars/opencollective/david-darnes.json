@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/david-darnes.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/david-darnes.avif 90w",
+      "filename": "david-darnes.avif",
+      "outputPath": "src/img/avatars/opencollective/david-darnes.avif",
+      "size": 2005
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/david-darnes.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/david-darnes.webp 90w",
+      "filename": "david-darnes.webp",
+      "outputPath": "src/img/avatars/opencollective/david-darnes.webp",
+      "size": 2872
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/david-darnes.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/david-darnes.jpeg 90w",
+      "filename": "david-darnes.jpeg",
+      "outputPath": "src/img/avatars/opencollective/david-darnes.jpeg",
+      "size": 3292
+    }
+  ],
+  "slug": "david-darnes"
+}

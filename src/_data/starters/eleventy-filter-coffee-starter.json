@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/Yeshwanthyk/eleventy-filter-coffee-starter",
+	"name": "Eleventy Filter Coffee Starter",
+	"description": "A simple Eleventy starter kit with css compiled with Gulp, image optimization with imagemin and asset hashing.",
+	"author": "yesh",
+	"demo": "https://filtercoffee.netlify.app/"
+}

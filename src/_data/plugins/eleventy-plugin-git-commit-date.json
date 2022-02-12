@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-git-commit-date",
+	"author": "saneef",
+	"description": "to get recent Git commit time of a file, or an Eleventy collection."
+}

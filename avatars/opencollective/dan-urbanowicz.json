@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/dan-urbanowicz.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/dan-urbanowicz.avif 90w",
+      "filename": "dan-urbanowicz.avif",
+      "outputPath": "src/img/avatars/opencollective/dan-urbanowicz.avif",
+      "size": 790
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/dan-urbanowicz.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/dan-urbanowicz.webp 90w",
+      "filename": "dan-urbanowicz.webp",
+      "outputPath": "src/img/avatars/opencollective/dan-urbanowicz.webp",
+      "size": 1172
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/dan-urbanowicz.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/dan-urbanowicz.jpeg 90w",
+      "filename": "dan-urbanowicz.jpeg",
+      "outputPath": "src/img/avatars/opencollective/dan-urbanowicz.jpeg",
+      "size": 1793
+    }
+  ],
+  "slug": "dan-urbanowicz"
+}

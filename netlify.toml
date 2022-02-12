@@ -1,3 +1,55 @@
 [build]
-	publish = "_site"
-	command = "npm run build-production"
+publish = "_site"
+command = "npm run build-production"
+
+[functions]
+directory = "netlify/functions/"
+
+[[redirects]]
+from = "/authors/:name/"
+to = "/.netlify/builders/serverless"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "serverless"
+
+[[redirects]]
+from = "/speedlify/*"
+to = "https://built-with-eleventy.netlify.app/speedlify/:splat"
+status = 200
+force = true
+
+[[redirects]]
+from = "/docs/sites/"
+to = "/speedlify/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/docs/performance-leaderboard/"
+to = "/speedlify/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/docs/accessibility-leaderboard/"
+to = "/speedlify/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/leaderboard/*"
+to = "/speedlify/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/news/*"
+to = "/blog/:splat"
+status = 301
+force = true
+
+[[headers]]
+for = "/api/*"
+
+  [headers.values]
+  Access-Control-Allow-Origin = "*"

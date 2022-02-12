@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/disjfa/eleventy-encore",
+	"name": "11ty-encore",
+	"description": "11ty using webpack encore",
+	"author": "disjfa",
+	"demo": "https://disjfa.github.io/eleventy-encore/"
+}

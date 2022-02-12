@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/zach-leatherman.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/zach-leatherman.avif 90w",
+      "filename": "zach-leatherman.avif",
+      "outputPath": "src/img/avatars/opencollective/zach-leatherman.avif",
+      "size": 982
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/zach-leatherman.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/zach-leatherman.webp 90w",
+      "filename": "zach-leatherman.webp",
+      "outputPath": "src/img/avatars/opencollective/zach-leatherman.webp",
+      "size": 928
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/zach-leatherman.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/zach-leatherman.jpeg 90w",
+      "filename": "zach-leatherman.jpeg",
+      "outputPath": "src/img/avatars/opencollective/zach-leatherman.jpeg",
+      "size": 1633
+    }
+  ],
+  "slug": "zach-leatherman"
+}

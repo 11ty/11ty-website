@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/mitchell-fragala.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/mitchell-fragala.avif 90w",
+      "filename": "mitchell-fragala.avif",
+      "outputPath": "src/img/avatars/opencollective/mitchell-fragala.avif",
+      "size": 455
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/mitchell-fragala.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/mitchell-fragala.webp 90w",
+      "filename": "mitchell-fragala.webp",
+      "outputPath": "src/img/avatars/opencollective/mitchell-fragala.webp",
+      "size": 380
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/mitchell-fragala.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/mitchell-fragala.jpeg 90w",
+      "filename": "mitchell-fragala.jpeg",
+      "outputPath": "src/img/avatars/opencollective/mitchell-fragala.jpeg",
+      "size": 1075
+    }
+  ],
+  "slug": "mitchell-fragala"
+}

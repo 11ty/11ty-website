@@ -1,0 +1,107 @@
+---
+title: Eleventy, a simpler static site generator.
+social:
+  imgsrc: https://www.11ty.dev/img/open-graph.jpg
+  imgalt: The 11ty logo text with a small floating possum on a balloon
+eleventyComputed:
+  domain: "{{ process.env.DEPLOY_PRIME_URL or 'https://www.11ty.dev'}}"
+  social:
+    imgsrc: "https://v1.screenshot.11ty.dev/{{ (domain + page.url) | urlencode }}/opengraph/"
+    imgalt: "A screenshot of the web page at {{ (domain + page.url) }}"
+    description: "A docs page for Eleventy {% latestVersion versions, config %}, a simpler static site generator."
+---
+<!doctype html>
+<html lang="en"{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		{%- set subtitle %}{{ newstitle or searchTitle or relatedTitle or tiptitle or eleventyNavigation.key or title }}{% endset %}
+		{%- set subtitleText %}{% if subtitle and subtitle != "Eleventy Home" %}{{ subtitle }}—{% endif %}Eleventy, a simpler static site generator.{% endset %}
+		<title>{{ subtitleText }}</title>
+		<meta name="description" content="{{ subtitleText }}">
+		<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon.png">
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://www.11ty.dev/">
+		<meta property="og:site_name" content="Eleventy">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" content="{{ subtitle }}">
+		<meta property="og:description" content="{{ social.description }}">
+		<meta property="og:image" content="{{ social.imgsrc }}">
+		<meta property="og:image:width" content="1280">
+		<meta property="og:image:height" content="640">
+		<meta property="og:image:alt" content="{{ social.imgalt }}">
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:site" content="@eleven_ty">
+		<meta property="twitter:creator" content="@zachleat">
+		<meta property="twitter:url" content="https://www.11ty.dev/">
+		<meta property="twitter:title" content="{{ subtitle }}">
+		<meta property="twitter:description" content="{{ social.description }}">
+		<meta property="twitter:image" content="{{ social.imgsrc }}">
+		<meta property="twitter:image:alt" content="{{ social.imgalt }}">
+
+{%- set css %}
+{% include 'components/font-titles.css' %}
+{% include 'index.css' %}
+{% include 'components/layout.css' %}
+{% include 'components/navigation.css' %}
+{% include 'components/toc.css' %}
+{% include 'components/callout.css' %}
+{% include 'components/breadcrumb.css' %}
+{% include 'components/prism-theme.css' %}
+{% include 'components/code.css' %}
+{% include 'components/announcement.css' %}
+{% include 'components/seven-minute-tabs.css' %}
+{% include 'components/community.css' %}
+
+/* Filters */
+.filter-tags--hide {
+	display: none;
+}
+.select-filter {
+	font-size: 16px;
+	padding: .3em .5em;
+}
+
+{% for includeLocation in css %}
+{% include includeLocation %}
+{% endfor %}
+{{ googlefonts | safe }}
+{% endset %}
+		<link href="https://v1.screenshot.11ty.dev" rel="preconnect" crossorigin>
+		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+		<style>{{ css | cssmin | safe }}</style>
+		<link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'">
+		<noscript>
+			<link rel="stylesheet" href="/css/async.css">
+		</noscript>
+{% if feedTitle and feedUrl %}
+		<link rel="alternate" href="{{ feedUrl }}" title="{{ feedTitle }}" type="application/atom+xml">
+{% endif %}
+		<script>
+		{%- include "components/js-class.js" -%}
+		</script>
+{% if loadNetlifyIdentity %}
+		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+		<script src="/js/eleventy.js" type="module"></script>
+{% elseif putTheJsInTheHead %}
+		<script src="/js/eleventy.js" type="module" async></script>
+{% endif %}
+
+	</head>
+	<body>
+
+		{{ content | safe }}
+
+		<!-- Built on {{ config.now }} by Eleventy -->
+		<script>
+		{%- include "components/details-force-state.js" -%}
+		</script>
+{% if not putTheJsInTheHead %}
+		<script src="/js/eleventy.js" type="module" async></script>
+{% endif %}
+	</body>
+</html>

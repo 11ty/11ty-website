@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/septic-richmond-va.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/septic-richmond-va.avif 90w",
+      "filename": "septic-richmond-va.avif",
+      "outputPath": "src/img/avatars/opencollective/septic-richmond-va.avif",
+      "size": 795
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/septic-richmond-va.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/septic-richmond-va.webp 90w",
+      "filename": "septic-richmond-va.webp",
+      "outputPath": "src/img/avatars/opencollective/septic-richmond-va.webp",
+      "size": 706
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/septic-richmond-va.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/septic-richmond-va.jpeg 90w",
+      "filename": "septic-richmond-va.jpeg",
+      "outputPath": "src/img/avatars/opencollective/septic-richmond-va.jpeg",
+      "size": 1214
+    }
+  ],
+  "slug": "septic-richmond-va"
+}

@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 78,
+      "url": "/img/avatars/opencollective/eslint.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/eslint.avif 90w",
+      "filename": "eslint.avif",
+      "outputPath": "src/img/avatars/opencollective/eslint.avif",
+      "size": 1038
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 78,
+      "url": "/img/avatars/opencollective/eslint.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/eslint.webp 90w",
+      "filename": "eslint.webp",
+      "outputPath": "src/img/avatars/opencollective/eslint.webp",
+      "size": 1168
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 78,
+      "url": "/img/avatars/opencollective/eslint.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/eslint.jpeg 90w",
+      "filename": "eslint.jpeg",
+      "outputPath": "src/img/avatars/opencollective/eslint.jpeg",
+      "size": 2170
+    }
+  ],
+  "slug": "eslint"
+}

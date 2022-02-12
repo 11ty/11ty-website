@@ -1,0 +1,11 @@
+.elv-community-hed {
+	margin-top: 0;
+}
+@media (min-width: 62.5em) { /* 1000px */
+  .elv-community {
+    float: right;
+    width: 40%;
+    margin-left: 2em;
+    margin-bottom: 2em;
+  }
+}

@@ -1,0 +1,47 @@
+---
+layout: layouts/main.njk
+title: Eleventy Documentation
+templateClass: elv-docs
+headerClass: elv-header-docs
+layoutClass: elv-layout-toc
+isDocs: true
+---
+
+{% include "components/docs-toc.njk" %}
+
+{% if eleventyNavigation and eleventyNavigation.parent %}
+<nav class="breadcrumb" aria-labelledby="breadcrumb">
+  <h2 class="sr-only" id="breadcrumb">Breadcrumbs: </h2>
+  {{ collections.sidebarNav | eleventyNavigationBreadcrumb(eleventyNavigation.parent, {includeSelf: true}) | eleventyNavigationToHtml({ listClass: 'lo lo-inline', listItemClass: 'lo-c', activeListItemClass: 'breadcrumb-active' }) | safe }}
+</nav>
+{% endif %}
+{% if pageTitle %}<h1>{{ pageTitle | safe }}</h1>{% endif %}
+{% if not overrideCommunityLinks %}
+{% include "community-contributed.njk" %}
+{% endif %}
+
+{{ content | safe }}
+
+{% if eleventyNavigation and eleventyNavigation.key %}
+{%- set navKey = eleventyNavigation.parent or eleventyNavigation.key -%}
+{%- set otherPages = collections.sidebarNav | eleventyNavigation(navKey) -%}
+{% if otherPages.length > 1 %}
+<hr>
+<h3>{% if eleventyNavigation.parent %}Other pages in {% endif %}{{ navKey }}:</h3>
+{{ otherPages | eleventyNavigationToHtml({ activeKey: eleventyNavigation.key, listClass: 'inlinelist inlinelist-no-nest', listItemClass: 'inlinelist-item', activeListItemClass: 'elv-cat-list-active' }) | safe }}
+{% endif %}
+
+{% endif %}
+
+{% if relatedLinks or (relatedKey and collections[ "related-" + relatedKey ].length) %}
+<hr>
+<h3>Related Docs</h3>
+<ul>
+{% for related in collections[ "related-" + relatedKey ] %}
+	<li><a href="{{ related.url }}">{{ related.data.relatedTitle }}</a></li>
+{%- endfor %}
+{% for url,title in relatedLinks %}
+	<li><a href="{{ url }}">{{ title }}</a></li>
+{% endfor %}
+</ul>
+{% endif %}

@@ -3,3 +3,14 @@ _site/
 package-lock.json
 node-supporters/
 .env
+.log
+.cache
+cache
+yarn.lock
+.vscode
+**/.DS_Store
+_generated*
+netlify/functions/serverless/*
+!netlify/functions/serverless/index.js
+netlify/functions/dynamic/*
+!netlify/functions/dynamic/index.js

@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-youtube-embed",
+	"author": "gfscott",
+	"description": "automatically embeds YouTube videos based on just their URLs."
+}

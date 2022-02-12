@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-i18n",
+	"author": "duncanadam",
+	"description": "will add a clever `i18n` universal filter to assist with internationalization and dictionary translations."
+}

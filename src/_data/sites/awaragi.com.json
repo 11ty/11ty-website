@@ -1,0 +1,8 @@
+{
+	"url": "https://pierre.awaragi.com/",
+	"name": "Pierre Awaragi’s Blog",
+	"description": "A 10+ years personal/technical running blog recently converted from wordpress to 11ty.",
+	"twitter": "awaragi",
+	"authoredBy": ["awaragi"],
+	"source_url": "https://github.com/awaragi/pierre.awaragi.com"
+}

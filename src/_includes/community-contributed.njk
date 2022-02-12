@@ -1,0 +1,26 @@
+{%- if communityLinks or communityLinksKey %}
+<div class="elv-community" id="community-resources">
+  {% callout %}
+  <strong class="elv-community-hed">Community Resources:</strong>
+  <div class="sites-vert">
+    <div class="lo-grid">
+{% for entry in communityLinks -%}
+    {%- set site = entry | convertCommunityLinkToSiteCard %}
+    {% include "site-card.njk" %}
+{%- endfor %}
+{%- if communityLinksKey %}
+{%- for key, entry in community %}
+{%- if entry.key == communityLinksKey -%}
+    {%- set site = entry | convertCommunityLinkToSiteCard %}
+    {% include "site-card.njk" %}
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+      <div class="lo-c lo-c-center">
+        +&#160;<a href="{{ config.githubEdit }}src/_data/community/" class="elv-externalexempt">Add yours!</a>
+      </div>
+    </div>
+  </div>
+  {% endcallout %}
+</div>
+{%- endif %}

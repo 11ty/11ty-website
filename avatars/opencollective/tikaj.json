@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/tikaj.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/tikaj.avif 90w",
+      "filename": "tikaj.avif",
+      "outputPath": "src/img/avatars/opencollective/tikaj.avif",
+      "size": 628
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/tikaj.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/tikaj.webp 90w",
+      "filename": "tikaj.webp",
+      "outputPath": "src/img/avatars/opencollective/tikaj.webp",
+      "size": 782
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/tikaj.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/tikaj.jpeg 90w",
+      "filename": "tikaj.jpeg",
+      "outputPath": "src/img/avatars/opencollective/tikaj.jpeg",
+      "size": 1289
+    }
+  ],
+  "slug": "tikaj"
+}

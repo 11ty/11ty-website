@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 88,
+      "url": "/img/avatars/opencollective/alistair-shepherd.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/alistair-shepherd.avif 90w",
+      "filename": "alistair-shepherd.avif",
+      "outputPath": "src/img/avatars/opencollective/alistair-shepherd.avif",
+      "size": 1193
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 88,
+      "url": "/img/avatars/opencollective/alistair-shepherd.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/alistair-shepherd.webp 90w",
+      "filename": "alistair-shepherd.webp",
+      "outputPath": "src/img/avatars/opencollective/alistair-shepherd.webp",
+      "size": 1700
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 88,
+      "url": "/img/avatars/opencollective/alistair-shepherd.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/alistair-shepherd.jpeg 90w",
+      "filename": "alistair-shepherd.jpeg",
+      "outputPath": "src/img/avatars/opencollective/alistair-shepherd.jpeg",
+      "size": 2214
+    }
+  ],
+  "slug": "alistair-shepherd"
+}

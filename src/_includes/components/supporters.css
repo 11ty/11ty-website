@@ -1,0 +1,127 @@
+.elv-possum-pic + .supporters-avatar {
+	display: none;
+	position: absolute;
+	opacity: .9;
+	width: 5vw;
+	height: auto;
+	margin: 0;
+}
+@media (min-width: 41.875em) { /* 670px */
+	.elv-possum-pic + .supporters-avatar {
+		display: block;
+		top: 1.0625rem; /* 17px /16 */
+		right: 2.1875rem; /* 35px /16 */
+		width: 2rem; /* 32px /16 */
+	}
+}
+.elv-header-default .elv-possum-pic + .supporters-avatar {
+	display: none;
+}
+
+/* Inline list of support avatars */
+.is-eleventy-supporter .facepile-supporters img {
+	filter: grayscale(1);
+}
+.is-eleventy-supporter .facepile-supporters .supporters-active {
+	opacity: 1;
+	position: relative;
+	z-index: 2;
+}
+.is-eleventy-supporter .facepile-supporters .supporters-active img {
+	filter: grayscale(0);
+}
+/* Gold supporters */
+.supporters-gold {
+	--lo-margin-h: 2em;
+	--lo-stackpoint: 34.375em;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+.supporters-gold .lo-c {
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	flex-direction: column;
+}
+.supporters-gold .lo-c a[href] {
+	display: flex;
+	justify-content: center;
+}
+.supporters-gold-sanity {
+	flex-grow: 1.5;
+}
+.supporters-gold-nordhealth {
+  flex-grow: 1.8;
+}
+.supporters-gold-cloudcannon {
+	flex-grow: 1.7;
+}
+.supporters-gold-cloudcannon svg {
+	color: #034AD8;
+}
+@media (prefers-color-scheme: dark) {
+	.supporters-gold-cloudcannon svg {
+		color: #fff;
+	}
+}
+@media (min-width: 64em) { /* 1024px */
+	.elv-docs .supporters-gold-sanity {
+		flex-grow: 1;
+	}
+  .elv-docs .supporters-gold-nordhealth {
+		flex-grow: 1.3;
+	}
+}
+
+.supporters-gold .logo,
+.supporters-gold svg {
+	width: 100%;
+	margin: .5em 1em;
+}
+.supporters-gold .avatar {
+	max-width: 75px;
+	max-height: 75px;
+}
+.supporters-gold .subhed {
+	text-align: center;
+	margin-bottom: 1em;
+}
+.supporters-gold .subhed strong {
+	color: hsl(51, 97%, 27%);
+}
+@media (prefers-color-scheme: dark) {
+	.supporters-gold .subhed strong {
+		color: hsl(51, 97%, 54%);
+	}
+}
+.supporters-gold + .facepile-supporters {
+	margin-top: 0;
+}
+
+/* Modify content */
+.investors-auth {
+	display: none;
+}
+.is-eleventy-supporter .investors-noauth {
+	display: none;
+}
+.is-eleventy-supporter .investors-auth {
+	display: initial;
+}
+
+/* Buttons */
+.investors-btn {
+	padding: 0;
+	margin-bottom: 4rem;
+}
+@media (prefers-color-scheme: dark) {
+	.investors-btn {
+		background-color: #222;
+	}
+}
+.investors-btn .netlify-identity-button {
+	padding: .5em 1em .4em;
+	display: block;
+	text-decoration: none;
+	color: inherit;
+}

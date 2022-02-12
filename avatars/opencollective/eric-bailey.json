@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/eric-bailey.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/eric-bailey.avif 90w",
+      "filename": "eric-bailey.avif",
+      "outputPath": "src/img/avatars/opencollective/eric-bailey.avif",
+      "size": 1516
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/eric-bailey.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/eric-bailey.webp 90w",
+      "filename": "eric-bailey.webp",
+      "outputPath": "src/img/avatars/opencollective/eric-bailey.webp",
+      "size": 1838
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/eric-bailey.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/eric-bailey.jpeg 90w",
+      "filename": "eric-bailey.jpeg",
+      "outputPath": "src/img/avatars/opencollective/eric-bailey.jpeg",
+      "size": 2511
+    }
+  ],
+  "slug": "eric-bailey"
+}

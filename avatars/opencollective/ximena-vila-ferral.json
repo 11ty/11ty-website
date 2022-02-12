@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/ximena-vila-ferral.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/ximena-vila-ferral.avif 90w",
+      "filename": "ximena-vila-ferral.avif",
+      "outputPath": "src/img/avatars/opencollective/ximena-vila-ferral.avif",
+      "size": 1892
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/ximena-vila-ferral.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/ximena-vila-ferral.webp 90w",
+      "filename": "ximena-vila-ferral.webp",
+      "outputPath": "src/img/avatars/opencollective/ximena-vila-ferral.webp",
+      "size": 2734
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/ximena-vila-ferral.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/ximena-vila-ferral.jpeg 90w",
+      "filename": "ximena-vila-ferral.jpeg",
+      "outputPath": "src/img/avatars/opencollective/ximena-vila-ferral.jpeg",
+      "size": 3265
+    }
+  ],
+  "slug": "ximena-vila-ferral"
+}

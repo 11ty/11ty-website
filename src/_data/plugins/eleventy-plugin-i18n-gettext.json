@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-i18n-gettext",
+	"author": "sgissinger",
+	"description": "adds i18n support with Gettext string translation and moment.js date and times localization."
+}

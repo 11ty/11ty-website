@@ -1,0 +1,34 @@
+<header class="elv-layout elv-layout-full elv-header{% if headerClass %} {{ headerClass }}{% endif %}">
+	{%- set bannerLink = bannerlinks | randompick %}
+	{%- if bannerLink %}
+	<div class="announcement">
+{% if bannerLink.url %}
+		<a href="{{ bannerLink.url }}" class="lo-c">{{ bannerLink.label }}</a>
+{% else %}
+		<span class="lo-c">{{ bannerLink.label }}</span>
+{% endif %}
+	</div>
+	{%- endif %}
+
+	<div class="elv-header-c">
+		<a href="{% if logoLink %}{{ logoLink | url }}{% else %}/{% endif %}" class="elv-hero elv-externalexempt">{% if logoContent %}{{ logoContent | safe }}{% else %}{% include "../img/logo.svg" %}{% endif %}<span class="sr-only">Eleventy</span></a>
+		<a href="/blog/new-mascot-from-geri-coady/" class="elv-externalexempt elv-possum-anchor" data-investors-avatar>
+			<div class="elv-possum-pic">
+				{% image "./src/img/possum-geri.png", "The possum is Eleventy’s mascot", [350], "elv-possum" %}
+			</div>
+		</a>
+		<h1 class="elv-hed">{{ title | orphanWrap | safe }}</h1>
+		<div class="elv-nav-header">
+			<ul class="elv-nav lo">
+				<li class="elv-nav-item lo-c"><a href="{{ "/docs/" | url }}" class="elv-externalexempt">Docs</a></li>
+				<li class="elv-nav-item lo-c"><a href="/docs/how-to-support/" class="elv-externalexempt has-svg-icon">{% include "../img/gift.svg" %}<strong>Contribute</strong></a></li>
+				<li class="elv-nav-item lo-c"><a href="{{ "/blog/" | url }}" class="elv-nav-light">Blog</a></li>
+				<li class="elv-nav-item lo-c"><a href="{{ "/docs/search/" | url }}" class="elv-nav-light">Search</a></li>
+				<li class="elv-nav-item lo-c lo-nocontentwrap"><a href="https://github.com/11ty/eleventy/" class="elv-nav-light elv-externalexempt"><b>GitHub</b></a></li>
+				<li class="elv-nav-item lo-c lo-nocontentwrap"><a href="https://twitter.com/eleven_ty" class="elv-nav-light elv-externalexempt"><b>Twitter</b></a></li>
+				<li class="elv-nav-item lo-c lo-nocontentwrap"><a href="/blog/discord/" class="elv-nav-light"><b>Discord</b></a></li>
+				<li class="elv-nav-item lo-c lo-nocontentwrap"><a href="https://twitter.com/zachleat" class="elv-nav-light elv-externalexempt nound">{% avatarlocalcache "twitter", "zachleat" %}<b class="und">zachleat</b></a></li>
+			</ul>
+		</div>
+	</div><!-- /elv-nav-header -->
+</header>

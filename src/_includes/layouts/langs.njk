@@ -1,0 +1,14 @@
+---
+layout: layouts/docs.njk
+overrideCommunityLinks: true
+---
+<h1>{{ eleventyNavigation.key }}{% if addedInVersion %}{% addedin addedInVersion%}{% endif %}</h1>
+
+<div class="elv-langlist">
+<h2 class="elv-langlist-hed">Template Languages:</h2>
+{% templatelangs templatetypes, page %}
+</div>
+
+{% include "community-contributed.njk" %}
+
+{{ content | safe }}

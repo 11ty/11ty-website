@@ -1,0 +1,180 @@
+/* Warning */
+.elv-callout {
+	--callout-primary: hsl(195, 100%, 75%);
+	--callout-primarytext: #000;
+	--callout-secondary: #dff7ff;
+	position: relative;
+	line-height: 1.5;
+	padding: 0.75em 1em; /* 12px 16px /16 */
+	margin-left: -1rem;
+	margin-right: -1rem;
+	margin-bottom: 2em;
+	background-color: var(--callout-secondary);
+	border: 3px solid var(--callout-border, var(--callout-primary));
+}
+.elv-callout-info,
+.elv-callout-warn,
+.elv-callout-error {
+	padding-top: 1.75em;
+}
+@media (min-width: 64em) { /* 1024px */
+	.elv-callout {
+		border-radius: 0.3em;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	.elv-callout {
+		--callout-primary: hsl(195, 100%, 22%);
+		--callout-secondary: hsl(195, 100%, 12%);
+		--callout-primarytext: #fff;
+	}
+	.elv-callout,
+	.elv-callout a {
+		color: #fff;
+	}
+}
+table .elv-callout {
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 1em;
+}
+
+.elv-callout:before,
+.elv-callout-demo:after {
+	position: absolute;
+	left: 0;
+	top: 0;
+	font-size: 0.8125em; /* 13px /16 */
+	margin-right: .5em;
+	font-weight: 800;
+	border-radius: 0 0 .3em 0;
+	display: inline-flex;
+	align-items: center;
+	padding: 0em 0.55em;
+}
+.elv-callout-demo:before,
+.elv-callout-info:before,
+.elv-callout-warn:before,
+.elv-callout-error:before,
+.elv-callout:not(.elv-callout-demo) code {
+	background-color: var(--callout-tag, var(--callout-primary));
+	color: var(--callout-primarytext);
+}
+.elv-callout a,
+.elv-callout :visited {
+	color: var(--callout-primarytext);
+}
+
+/* Info */
+.elv-callout-info:before {
+	content: "INFO:";
+}
+
+/* Error */
+.elv-callout-error {
+	--callout-primary: hsl(0, 100%, 77%);
+	--callout-secondary: hsl(0, 100%, 90%);
+}
+.elv-callout-error:before {
+	content: "ERROR:";
+}
+@media (prefers-color-scheme: dark) {
+	.elv-callout-error {
+		--callout-primary: hsl(0, 100%, 22%);
+		--callout-secondary: hsl(0, 100%, 12%);
+	}
+}
+/* Warning */
+.elv-callout-warn {
+	--callout-primary: hsl(60, 100%, 62%);
+	--callout-secondary: hsl(60, 100%, 85%);
+}
+.elv-callout-warn:before {
+	content: "WARNING:";
+}
+@media (prefers-color-scheme: dark) {
+	.elv-callout-warn {
+		--callout-primary: hsl(53, 100%, 29%);
+		--callout-secondary: hsl(53, 100%, 13%);
+	}
+}
+/* Demo */
+.elv-callout-demo {
+	--callout-primary: transparent;
+	--callout-secondary: hsl(270deg 50% 90%);
+	--callout-tag: rebeccapurple;
+	--callout-border: rebeccapurple;
+	overflow: hidden;
+	padding-left: 3.888888888889em; /* 70px /18 */
+}
+@media (prefers-color-scheme: dark) {
+	.elv-callout-demo {
+		--callout-primary: hsl(270deg 50% 30%);
+		--callout-secondary: hsl(270deg 50% 30%);
+		--callout-tag: hsl(270deg 50% 85%);
+		--callout-primarytext: #fff;
+		--callout-border: rebeccapurple;
+	}
+	.elv-callout-demo code {
+		background-color: hsl(270deg 50% 15%);
+	}
+}
+.elv-callout-demo:after {
+	display: none;
+}
+@media (min-width: 37.5em) { /* 600px */
+	.elv-callout-demo {
+		padding-right: 3.888888888889em; /* 70px /18 */
+	}
+	.elv-callout-demo:after {
+		display: block;
+	}
+}
+.elv-callout-demo:before,
+.elv-callout-demo:after {
+	content: "DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO ";
+	width: min-content;
+	overflow: hidden;
+	top: -2em;
+	bottom: -1em;
+	border-radius: 0;
+	background-color: var(--callout-primary);
+	color: var(--callout-tag);
+	font-weight: 700;
+	transform: skewY(-13deg);
+	padding: 0 0.2857142857143em; /* 4px /14 */
+	margin: 0;
+}
+.elv-callout-demo:after {
+	right: 0;
+	left: auto;
+	margin-right: 0;
+	margin-left: .5em;
+	transform: skewY(13deg);
+}
+
+/* Style the content inside of the callout */
+.elv-callout > :first-child {
+	margin-top: 0;
+}
+.elv-callout > :last-child {
+	margin-bottom: 0;
+}
+
+/* Sticky callout is for legacy docs versions */
+body > .elv-callout {
+	margin-left: 0;
+	margin-right: 0;
+	padding: .5rem 1rem;
+}
+body > .elv-callout-sticky:before {
+	display: none;
+}
+@media (min-width: 37.5em) and (min-height: 25em) { /* 600px / 400px */
+	body > .elv-callout-sticky {
+		position: sticky;
+		top: 0;
+		z-index: 2;
+		box-shadow: 0 3px 0 0 rgba(0,0,0,.08);
+	}
+}

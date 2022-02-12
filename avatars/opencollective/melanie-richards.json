@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/melanie-richards.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/melanie-richards.avif 90w",
+      "filename": "melanie-richards.avif",
+      "outputPath": "src/img/avatars/opencollective/melanie-richards.avif",
+      "size": 991
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/melanie-richards.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/melanie-richards.webp 90w",
+      "filename": "melanie-richards.webp",
+      "outputPath": "src/img/avatars/opencollective/melanie-richards.webp",
+      "size": 1506
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/melanie-richards.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/melanie-richards.jpeg 90w",
+      "filename": "melanie-richards.jpeg",
+      "outputPath": "src/img/avatars/opencollective/melanie-richards.jpeg",
+      "size": 2212
+    }
+  ],
+  "slug": "melanie-richards"
+}

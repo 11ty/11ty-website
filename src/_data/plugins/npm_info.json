@@ -1,0 +1,4 @@
+{
+	"npm": "@shawnsandy/npm_info",
+	"description": "will provide you with package detail for an npm package or GitHub info."
+}

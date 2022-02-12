@@ -1,0 +1,10 @@
+{
+	"url": "https://www.11ty.dev/",
+	"name": "11ty.dev",
+	"description": "Spoiler alert: it’s this web site.",
+	"source_url": "https://github.com/11ty/11ty-website",
+	"twitter": "eleven_ty",
+	"authoredBy": ["zachleat"],
+	"featured": true,
+	"superfeatured": true
+}

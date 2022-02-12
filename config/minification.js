@@ -4,7 +4,7 @@ const Terser = require("terser");
 
 module.exports = eleventyConfig => {
 	eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-		if( process.env.ELEVENTY_PRODUCTION && outputPath && outputPath.endsWith(".html") ) {
+		if( process.env.NODE_ENV === "production" && outputPath && outputPath.endsWith(".html") ) {
 			let minified = htmlmin.minify(content, {
 				useShortDoctype: true,
 				removeComments: true,
@@ -17,7 +17,7 @@ module.exports = eleventyConfig => {
 	});
 
 	eleventyConfig.addFilter("jsmin", function(code) {
-		if(process.env.ELEVENTY_PRODUCTION) {
+		if(process.env.NODE_ENV === "production") {
 			let minified = Terser.minify(code);
 			if( minified.error ) {
 				console.log("Terser error: ", minified.error);
@@ -31,7 +31,7 @@ module.exports = eleventyConfig => {
 	});
 
 	eleventyConfig.addFilter("cssmin", function(code) {
-		if(process.env.ELEVENTY_PRODUCTION) {
+		if(process.env.NODE_ENV === "production") {
 			return new CleanCSS({}).minify(code).styles;
 		}
 

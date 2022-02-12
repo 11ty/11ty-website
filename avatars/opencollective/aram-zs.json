@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/aram-zs.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/aram-zs.avif 90w",
+      "filename": "aram-zs.avif",
+      "outputPath": "src/img/avatars/opencollective/aram-zs.avif",
+      "size": 1146
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/aram-zs.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/aram-zs.webp 90w",
+      "filename": "aram-zs.webp",
+      "outputPath": "src/img/avatars/opencollective/aram-zs.webp",
+      "size": 1466
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/aram-zs.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/aram-zs.jpeg 90w",
+      "filename": "aram-zs.jpeg",
+      "outputPath": "src/img/avatars/opencollective/aram-zs.jpeg",
+      "size": 2298
+    }
+  ],
+  "slug": "aram-zs"
+}

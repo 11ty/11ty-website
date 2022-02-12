@@ -1,0 +1,5 @@
+{
+	"npm": "@sardine/eleventy-plugin-tinycss",
+	"author": "marabyte_",
+	"description": "An 11ty plugin to inline and optimise CSS"
+}

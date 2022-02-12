@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/fershad-irani.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/fershad-irani.avif 90w",
+      "filename": "fershad-irani.avif",
+      "outputPath": "src/img/avatars/opencollective/fershad-irani.avif",
+      "size": 1872
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/fershad-irani.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/fershad-irani.webp 90w",
+      "filename": "fershad-irani.webp",
+      "outputPath": "src/img/avatars/opencollective/fershad-irani.webp",
+      "size": 2470
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/fershad-irani.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/fershad-irani.jpeg 90w",
+      "filename": "fershad-irani.jpeg",
+      "outputPath": "src/img/avatars/opencollective/fershad-irani.jpeg",
+      "size": 3009
+    }
+  ],
+  "slug": "fershad-irani"
+}

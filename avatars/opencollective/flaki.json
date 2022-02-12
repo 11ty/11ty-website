@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/flaki.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/flaki.avif 90w",
+      "filename": "flaki.avif",
+      "outputPath": "src/img/avatars/opencollective/flaki.avif",
+      "size": 1358
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/flaki.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/flaki.webp 90w",
+      "filename": "flaki.webp",
+      "outputPath": "src/img/avatars/opencollective/flaki.webp",
+      "size": 1958
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/flaki.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/flaki.jpeg 90w",
+      "filename": "flaki.jpeg",
+      "outputPath": "src/img/avatars/opencollective/flaki.jpeg",
+      "size": 2578
+    }
+  ],
+  "slug": "flaki"
+}

@@ -1,0 +1,40 @@
+---
+layout: layouts/docs.njk
+---
+<h1>Supporters for Release Notes</h1>
+
+{#
+{%- set avatar %}<img src="https://v1.indieweb-avatar.11ty.dev/{{ supporter.website | urlencode }}/" alt="Favicon for {{ supporter.website }}" width="26" height="26">{% endset %}
+{{ avatar | escape }}
+#}
+
+
+<h2>Gold</h2>
+<pre>
+{%- for supporter in opencollective.supporters %}
+{%- if supporter.isMonthly and supporter.status == "ACTIVE" and supporter.tier.slug === "gold-sponsor" -%}
+{%- if supporter.website -%}[**{{ supporter.name }}**]({{ supporter.website }}), {% else %}{{ supporter.name }}, {% endif %}
+{%- endif -%}
+{%- endfor %}
+</pre>
+
+<h2>Silver</h2>
+
+<pre>
+{%- for supporter in opencollective.supporters %}
+{%- if supporter.isMonthly and supporter.status == "ACTIVE" and supporter.tier.slug === "silver-sponsor" -%}
+{%- if supporter.website -%}[**{{ supporter.name }}**]({{ supporter.website }}), {% else %}{{ supporter.name }}, {% endif %}
+{%- endif -%}
+{%- endfor %}
+</pre>
+
+<h2>Backers</h2>
+
+<pre>
+{%- for supporter in opencollective.supporters %}
+{%- if supporter.isMonthly and supporter.status == "ACTIVE" and supporter.tier.slug === "backer" -%}
+{%- if supporter.website -%}[{{ supporter.name }}]({{ supporter.website }}), {% else %}{{ supporter.name }}, {% endif %}
+{%- endif -%}
+{%- endfor %}
+</pre>
+

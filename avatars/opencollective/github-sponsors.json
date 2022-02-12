@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 78,
+      "url": "/img/avatars/opencollective/github-sponsors.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/github-sponsors.avif 90w",
+      "filename": "github-sponsors.avif",
+      "outputPath": "src/img/avatars/opencollective/github-sponsors.avif",
+      "size": 1484
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 78,
+      "url": "/img/avatars/opencollective/github-sponsors.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/github-sponsors.webp 90w",
+      "filename": "github-sponsors.webp",
+      "outputPath": "src/img/avatars/opencollective/github-sponsors.webp",
+      "size": 1554
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 78,
+      "url": "/img/avatars/opencollective/github-sponsors.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/github-sponsors.jpeg 90w",
+      "filename": "github-sponsors.jpeg",
+      "outputPath": "src/img/avatars/opencollective/github-sponsors.jpeg",
+      "size": 2281
+    }
+  ],
+  "slug": "github-sponsors"
+}

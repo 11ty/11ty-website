@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/ross-kinney.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/ross-kinney.avif 90w",
+      "filename": "ross-kinney.avif",
+      "outputPath": "src/img/avatars/opencollective/ross-kinney.avif",
+      "size": 1262
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/ross-kinney.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/ross-kinney.webp 90w",
+      "filename": "ross-kinney.webp",
+      "outputPath": "src/img/avatars/opencollective/ross-kinney.webp",
+      "size": 1972
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/ross-kinney.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/ross-kinney.jpeg 90w",
+      "filename": "ross-kinney.jpeg",
+      "outputPath": "src/img/avatars/opencollective/ross-kinney.jpeg",
+      "size": 2633
+    }
+  ],
+  "slug": "ross-kinney"
+}

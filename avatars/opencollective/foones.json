@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/foones.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/foones.avif 90w",
+      "filename": "foones.avif",
+      "outputPath": "src/img/avatars/opencollective/foones.avif",
+      "size": 624
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/foones.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/foones.webp 90w",
+      "filename": "foones.webp",
+      "outputPath": "src/img/avatars/opencollective/foones.webp",
+      "size": 372
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/foones.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/foones.jpeg 90w",
+      "filename": "foones.jpeg",
+      "outputPath": "src/img/avatars/opencollective/foones.jpeg",
+      "size": 965
+    }
+  ],
+  "slug": "foones"
+}

@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/kyle-mitofsky.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/kyle-mitofsky.avif 90w",
+      "filename": "kyle-mitofsky.avif",
+      "outputPath": "src/img/avatars/opencollective/kyle-mitofsky.avif",
+      "size": 1360
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/kyle-mitofsky.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/kyle-mitofsky.webp 90w",
+      "filename": "kyle-mitofsky.webp",
+      "outputPath": "src/img/avatars/opencollective/kyle-mitofsky.webp",
+      "size": 2066
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/kyle-mitofsky.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/kyle-mitofsky.jpeg 90w",
+      "filename": "kyle-mitofsky.jpeg",
+      "outputPath": "src/img/avatars/opencollective/kyle-mitofsky.jpeg",
+      "size": 2677
+    }
+  ],
+  "slug": "kyle-mitofsky"
+}

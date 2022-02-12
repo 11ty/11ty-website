@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/trey-piepmeier.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/trey-piepmeier.avif 90w",
+      "filename": "trey-piepmeier.avif",
+      "outputPath": "src/img/avatars/opencollective/trey-piepmeier.avif",
+      "size": 1541
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/trey-piepmeier.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/trey-piepmeier.webp 90w",
+      "filename": "trey-piepmeier.webp",
+      "outputPath": "src/img/avatars/opencollective/trey-piepmeier.webp",
+      "size": 1858
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/trey-piepmeier.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/trey-piepmeier.jpeg 90w",
+      "filename": "trey-piepmeier.jpeg",
+      "outputPath": "src/img/avatars/opencollective/trey-piepmeier.jpeg",
+      "size": 2435
+    }
+  ],
+  "slug": "trey-piepmeier"
+}

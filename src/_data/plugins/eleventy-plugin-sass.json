@@ -1,0 +1,4 @@
+{
+	"npm": "eleventy-plugin-sass",
+	"description": "will add the ability to use Sass for your stylesheets."
+}

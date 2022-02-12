@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/tim-giles.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/tim-giles.avif 90w",
+      "filename": "tim-giles.avif",
+      "outputPath": "src/img/avatars/opencollective/tim-giles.avif",
+      "size": 1763
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/tim-giles.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/tim-giles.webp 90w",
+      "filename": "tim-giles.webp",
+      "outputPath": "src/img/avatars/opencollective/tim-giles.webp",
+      "size": 2572
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/tim-giles.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/tim-giles.jpeg 90w",
+      "filename": "tim-giles.jpeg",
+      "outputPath": "src/img/avatars/opencollective/tim-giles.jpeg",
+      "size": 3120
+    }
+  ],
+  "slug": "tim-giles"
+}
