@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-hast-jsx",
+	"author": "jed_fox1",
+	"description": "use JSX as a template language"
+}
