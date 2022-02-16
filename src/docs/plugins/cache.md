@@ -64,7 +64,7 @@ module.exports = async function() {
 
 #### Change the Cache Duration
 
-After this amount of time has passed, we’ll make a new network request to the URL to fetch fresh data. The `duration` option currently supports the following shorthand values:
+After this amount of time has passed, we’ll make a new network request to the URL to fetch fresh data. Use `duration: "*"` to never fetch new data. The `duration` option also currently supports the following shorthand values:
 
 * `s` is seconds (e.g. `duration: "43s"`)
 * `m` is minutes (e.g. `duration: "2m"`)
