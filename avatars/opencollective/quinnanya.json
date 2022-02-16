@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/quinnanya.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/quinnanya.avif 90w",
+      "filename": "quinnanya.avif",
+      "outputPath": "src/img/avatars/opencollective/quinnanya.avif",
+      "size": 2069
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/quinnanya.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/quinnanya.webp 90w",
+      "filename": "quinnanya.webp",
+      "outputPath": "src/img/avatars/opencollective/quinnanya.webp",
+      "size": 2562
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/quinnanya.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/quinnanya.jpeg 90w",
+      "filename": "quinnanya.jpeg",
+      "outputPath": "src/img/avatars/opencollective/quinnanya.jpeg",
+      "size": 3144
+    }
+  ],
+  "slug": "quinnanya"
+}

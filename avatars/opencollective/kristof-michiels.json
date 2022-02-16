@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/kristof-michiels.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/kristof-michiels.avif 90w",
+      "filename": "kristof-michiels.avif",
+      "outputPath": "src/img/avatars/opencollective/kristof-michiels.avif",
+      "size": 610
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/kristof-michiels.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/kristof-michiels.webp 90w",
+      "filename": "kristof-michiels.webp",
+      "outputPath": "src/img/avatars/opencollective/kristof-michiels.webp",
+      "size": 378
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/kristof-michiels.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/kristof-michiels.jpeg 90w",
+      "filename": "kristof-michiels.jpeg",
+      "outputPath": "src/img/avatars/opencollective/kristof-michiels.jpeg",
+      "size": 955
+    }
+  ],
+  "slug": "kristof-michiels"
+}

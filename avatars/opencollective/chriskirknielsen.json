@@ -1,0 +1,42 @@
+{
+  "avif": [
+    {
+      "format": "avif",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/chriskirknielsen.avif",
+      "sourceType": "image/avif",
+      "srcset": "/img/avatars/opencollective/chriskirknielsen.avif 90w",
+      "filename": "chriskirknielsen.avif",
+      "outputPath": "src/img/avatars/opencollective/chriskirknielsen.avif",
+      "size": 1231
+    }
+  ],
+  "webp": [
+    {
+      "format": "webp",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/chriskirknielsen.webp",
+      "sourceType": "image/webp",
+      "srcset": "/img/avatars/opencollective/chriskirknielsen.webp 90w",
+      "filename": "chriskirknielsen.webp",
+      "outputPath": "src/img/avatars/opencollective/chriskirknielsen.webp",
+      "size": 1528
+    }
+  ],
+  "jpeg": [
+    {
+      "format": "jpeg",
+      "width": 90,
+      "height": 90,
+      "url": "/img/avatars/opencollective/chriskirknielsen.jpeg",
+      "sourceType": "image/jpeg",
+      "srcset": "/img/avatars/opencollective/chriskirknielsen.jpeg 90w",
+      "filename": "chriskirknielsen.jpeg",
+      "outputPath": "src/img/avatars/opencollective/chriskirknielsen.jpeg",
+      "size": 2196
+    }
+  ],
+  "slug": "chriskirknielsen"
+}
