@@ -29,6 +29,7 @@ date: Last Modified
 
 Valid `date` values:
 
+* `git Last Modified`: {% addedin "1.0.1" %} automatically resolves to the file’s latest git commit. If a file is not yet checked in to git, it assigns `Date.now()` to `page.date` instead.
 * `Last Modified`: automatically resolves to the file’s last modified date
 * `Created`: automatically resolves to the file’s created date (default, this is what is used when `date` is omitted).
 * `2016-01-01` or any other valid [YAML date value](https://yaml.org/type/timestamp.html) (leaving off the time assumes midnight in UTC, or `00:00:00Z`)
@@ -85,6 +86,12 @@ You could add your own `toUTCString` [filter in Liquid](/docs/filters/) to perfo
 
 ## Collections out of order when you run Eleventy on your Server?
 
-<div class="elv-callout elv-callout-warn">This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</div>
+{% callout "warn", "md" -%}
+  This is a [**Common Pitfall**](/docs/pitfalls/).
+{%- endcallout %}
 
 Be careful relying on the default `date` associated with a piece of content. By default Eleventy uses file creation dates, which works fine if you run Eleventy locally but may reset in some conditions if you run Eleventy on a Continuous Integration server. Work around this by using explicit date assignments, either in your front matter or your content’s file name. [Read more at Content Dates](/docs/dates/).
+
+{% callout "info", "md" -%}
+  {% addedin "1.0.1" %} The new `date: "git Last Modified"` feature will resolve this issue! Source control dates are available and will be consistent on most Continuous Integration servers.
+{%- endcallout %}
