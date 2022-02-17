@@ -1,0 +1,42 @@
+---
+layout: false
+permalink: /docs/feed.xml
+metadata:
+  title: Eleventy Documentation
+  url: https://www.11ty.dev/
+  author:
+    name: Zach Leatherman
+    email: zach@zachleat.com
+  feed:
+    subtitle: The Full Eleventy Documentation, sorted by recent git commits.
+    filename: feed.xml
+    path: docs/feed.xml
+    url: https://www.11ty.dev/docs/feed.xml
+    id: https://www.11ty.dev/
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ metadata.title }}</title>
+  <subtitle>{{ metadata.feed.subtitle }}</subtitle>
+  <link href="{{ metadata.feed.url }}" rel="self"/>
+  <link href="{{ metadata.url }}"/>
+  <updated>{{ collections.docs | rssLastUpdatedDate }}</updated>
+  <id>{{ metadata.feed.id }}</id>
+  <author>
+    <name>{{ metadata.author.name }}</name>
+    <email>{{ metadata.author.email }}</email>
+  </author>
+  {%- for post in collections.docsFeed %}
+  {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+  {# pageTitle #}
+  {%- set entryTitle %}{{ post.data.newstitle or post.data.searchTitle or post.data.relatedTitle or post.data.tiptitle or post.data.eleventyNavigation.key or post.data.title }}{% endset %}
+  <entry>
+    <title>{{ entryTitle }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ post.gitLastUpdatedDate | rssDate }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

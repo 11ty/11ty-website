@@ -18,12 +18,13 @@ const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const eleventyImage = require("@11ty/eleventy-img");
 
-const monthDiffPlugin = require("./config/monthDiff.js");
-const addedInLocalPlugin = require("./config/addedin.js");
-const minificationLocalPlugin = require("./config/minification.js");
-const getAuthors = require("./config/getAuthorsFromSites.js");
-const cleanName = require("./config/cleanAuthorName.js");
-const objectHas = require("./config/object-has.js");
+const monthDiffPlugin = require("./config/monthDiff");
+const addedInLocalPlugin = require("./config/addedin");
+const minificationLocalPlugin = require("./config/minification");
+const getAuthors = require("./config/getAuthorsFromSites");
+const cleanName = require("./config/cleanAuthorName");
+const objectHas = require("./config/object-has");
+const fetchGitLastUpdated = require("./config/git-last-updated");
 
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);
@@ -371,6 +372,15 @@ ${text.trim()}
 	eleventyConfig.addCollection("quicktipssorted", function(collection) {
 		return collection.getFilteredByTag("quicktips").sort(function(a, b) {
 			return parseInt(a.data.tipindex, 10) - parseInt(b.data.tipindex, 10);
+		});
+	});
+
+	eleventyConfig.addCollection("docsFeed", function(collection) {
+		return collection.getFilteredByGlob("src/docs/**/*.md").map(entry => {
+			entry.gitLastUpdatedDate = fetchGitLastUpdated(entry.inputPath);
+			return entry;
+		}).sort((a, b) => {
+      return b.gitLastUpdatedDate - a.gitLastUpdatedDate; // sort by date - descending
 		});
 	});
 

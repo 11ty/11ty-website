@@ -51,11 +51,13 @@
     "chrome-aws-lambda": "^9.1.0",
     "clean-css": "^5.2.2",
     "comma-number": "2.1.0",
+    "cross-spawn": "^7.0.3",
     "dotenv": "10.0.0",
     "fast-glob": "^3.2.9",
     "fs-extra": "10.0.0",
     "html-minifier": "4.0.0",
     "human-readable-numbers": "0.9.5",
+    "lodash": "^4.17.21",
     "luxon": "2.3.0",
     "markdown-it": "12.3.2",
     "markdown-it-anchor": "5.2.5",
@@ -74,7 +76,6 @@
   "dependencies": {
     "@11ty/logo": "2.0.4",
     "@zachleat/filter-container": "^2.0.3",
-    "lodash": "^4.17.21",
     "prismjs": "1.26.0",
     "speedlify-score": "^2.0.2"
   }
