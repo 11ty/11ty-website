@@ -8,6 +8,10 @@
 	font-size: 0.8333333333333em; /* 15px /18 */
 	white-space: nowrap;
 }
+.breadcrumb.breadcrumb li {
+	padding-top: 0;
+	padding-bottom: 0;
+}
 /* Restore list semantics for voiceover:
  * https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/
  */
@@ -19,8 +23,8 @@
 	display: inline-block;
 	margin-left: var(--lo-margin-h);
 	content: "";
-	width: 0; 
-  height: 0; 
+	width: 0;
+  height: 0;
   border-top: var(--breadcrumb-arrow-size) solid transparent;
   border-bottom: var(--breadcrumb-arrow-size) solid transparent;
   border-left: var(--breadcrumb-arrow-size) solid #bbb;
