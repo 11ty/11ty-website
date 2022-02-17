@@ -18,7 +18,7 @@ html{
 }
 body {
 	font-family: system-ui, -apple-system, sans-serif;
-	color: #222;
+	color: #383838;
 	margin: 0;
 }
 @media (prefers-color-scheme: dark) {
@@ -84,7 +84,7 @@ iframe {
 	text-decoration: none;
 }
 .ta-c {
-  text-align: center;
+	text-align: center;
 }
 
 /* Blockquotes */
@@ -277,7 +277,7 @@ main .elv-toc + h1 {
 h2 {
 	font-size: 2.222222222222em; /* 40px /18 */
 	border-bottom: 1px solid #ddd;
-	margin: 1em 0 .25em;
+	margin: 2em 0 .25em;
 	line-height: 1.1;
 }
 @media (prefers-color-scheme: dark) {
@@ -328,16 +328,18 @@ ul {
 	padding: 0 1em;
 }
 li {
-	padding: .25em 0;
+	padding: .5em 0;
 	line-height: 1.4;
 }
-li ul {
-	margin: .5em 0;
-	padding-left: 1em;
+li:first-child:not(.elv-nav-item) {
+	padding-top: 0;
 }
-li li {
-	padding-top: .1em;
-	padding-bottom: .1em;
+li:last-child:not(.elv-nav-item) {
+	padding-bottom: 0;
+}
+li ul,
+li ol {
+	margin-top: 1em;
 }
 
 .list-bare {
@@ -392,6 +394,11 @@ li li {
 	max-width: 42rem;
 	clear: both;
 }
+@media (min-width: 64em) { /* 1024px */
+	.elv-layout {
+		padding: 2.5rem;
+	}
+}
 header.elv-layout {
 	padding: 0 1rem;
 }
@@ -403,15 +410,12 @@ footer.elv-layout {
 }
 @media (min-width: 64em) { /* 1024px */
 	.elv-layout-toc {
-		padding-left: 15rem;
+		padding-left: 16rem;
 		max-width: 60rem;
 		margin-right: 1rem;
 		position: relative;
 	}
 }
-/*.elv-layout-wider {
-	max-width: 60rem;
-}*/
 
 /* Header */
 .elv-header {
@@ -876,30 +880,30 @@ main .elv-toc + h1 .direct-link {
 
 /* Business Network */
 .business-network-primary.business-network-primary {
-  --lo-stackpoint: 37.5em; /* 600px /16 */
-  --lo-margin-h: 1em;
-  --lo-margin-v: 1em;
+	--lo-stackpoint: 37.5em; /* 600px /16 */
+	--lo-margin-h: 1em;
+	--lo-margin-v: 1em;
 }
 .business-network-sites {
-  padding-top: 1em;
-  padding-bottom: 3em;
+	padding-top: 1em;
+	padding-bottom: 3em;
 }
 .business-network-sites:not(:last-child) {
-  margin-bottom: 3em;
-  border-bottom: 1px solid #666;
+	margin-bottom: 3em;
+	border-bottom: 1px solid #666;
 }
 .business-network-name {
-  font-size: 1.5em;
+	font-size: 1.5em;
 }
 .business-network-available {
-  padding-left: 3.230769230769em; /* 42px /13 */
-  font-size: 0.7222222222222em; /* 13px /18 */
+	padding-left: 3.230769230769em; /* 42px /13 */
+	font-size: 0.7222222222222em; /* 13px /18 */
 }
 .business-network-hire {
-  text-align: center;
+	text-align: center;
 }
 .business-network-hire a[href] {
-  padding: 0.5rem 2em 0.4rem;
+	padding: 0.5rem 2em 0.4rem;
 }
 
 .elv-serverless-banner {

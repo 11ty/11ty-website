@@ -58,6 +58,13 @@
 .elv-toc summary,
 .elv-toc-list a {
 	padding: .15em .25em;
+	color: #1873a9;
+}
+@media (prefers-color-scheme: dark) {
+	.elv-toc summary,
+	.elv-toc-list a {
+		color: #86d0fb;
+	}
 }
 .elv-toc-list a {
 	display: block;
