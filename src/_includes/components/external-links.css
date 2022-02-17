@@ -1,28 +1,64 @@
 /* External links */
 a[href^="http://"]:not(.minilink):not(.elv-externalexempt),
-a[href^="https://"]:not(.minilink):not(.elv-externalexempt), 
+a[href^="https://"]:not(.minilink):not(.elv-externalexempt),
 a[href^="//"]:not(.minilink):not(.elv-externalexempt) {
 	text-decoration-color: #00bcd4;
 }
 a[href^="http://"]:not(.minilink):not(.elv-externalexempt):after,
-a[href^="https://"]:not(.minilink):not(.elv-externalexempt):after, 
+a[href^="https://"]:not(.minilink):not(.elv-externalexempt):after,
 a[href^="//"]:not(.minilink):not(.elv-externalexempt):after {
-  content: "↗";
+	content: "↗";
 	font-family: system-ui, -apple-system, sans-serif;
-  font-style: normal;
-  font-weight: 900;
+	font-style: normal;
+	font-weight: 900;
 	color: #00bcd4;
 	padding-left: 2px;
 	line-height: .75;
 }
 /* External link hovers */
 a[href^="http://"]:not(.minilink):not(.elv-externalexempt):hover,
-a[href^="https://"]:not(.minilink):not(.elv-externalexempt):hover, 
+a[href^="https://"]:not(.minilink):not(.elv-externalexempt):hover,
 a[href^="//"]:not(.minilink):not(.elv-externalexempt):hover {
 	text-decoration-color: inherit;
 }
 a[href^="http://"]:not(.minilink):not(.elv-externalexempt):hover:after,
-a[href^="https://"]:not(.minilink):not(.elv-externalexempt):hover:after, 
+a[href^="https://"]:not(.minilink):not(.elv-externalexempt):hover:after,
 a[href^="//"]:not(.minilink):not(.elv-externalexempt):hover:after {
 	color: inherit;
+}
+
+/* CSS-only favicons https://www.zachleat.com/web/external-link-favicons/ */
+a[href^="https://twitter.com"]:before,
+a[href^="https://wikipedia.org"]:before,
+a[href^="https://en.wikipedia.org"]:before {
+	content: "";
+	display: inline-block;
+	vertical-align: text-bottom;
+	width: 1em;
+	height: 1em;
+	margin: 0 .2em;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+a[href^="https://twitter.com"]:after,
+a[href^="https://wikipedia.org"]:after,
+a[href^="https://en.wikipedia.org"]:after {
+	display: none;
+}
+
+a[href^="https://twitter.com"]:before {
+	border-radius: 0.3125em; /* 5px /16 */
+	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.twitter.com%2F/");
+}
+a[href^="https://wikipedia.org"]:before,
+a[href^="https://en.wikipedia.org"]:before {
+	border: 0.0625em solid rgba(0,0,0,.3); /* 1px /16 */
+	border-radius: 0.125em; /* 2px /16 */
+	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.wikipedia.org%2F/");
+}
+.facepile a[href^="https://twitter.com"]:before {
+	position: absolute;
+	z-index: 1;
+	transform: translate(100%, 244%);
+	pointer-events: none;
 }
