@@ -11,7 +11,7 @@
     "deploy": "./deploy.sh",
     "build": "npx @11ty/eleventy",
     "start": "npx @11ty/eleventy --serve",
-    "build-production": "node node-avatars-opencollective && NODE_ENV=production eleventy",
+    "build-production": "node node-avatars-opencollective && NODE_ENV=production npx @11ty/eleventy",
     "get-new-supporters": "eleventy && node node-supporters",
     "get-new-avatars": "node node-avatars-opencollective && node node-avatars-twitter",
     "format": "prettier --write '**/*.{js,css,html,md}'"
@@ -41,7 +41,7 @@
     ]
   },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy": "^1.0.1-canary.3",
     "@11ty/eleventy-cache-assets": "^2.3.0",
     "@11ty/eleventy-img": "^1.0.0",
     "@11ty/eleventy-navigation": "^0.3.2",

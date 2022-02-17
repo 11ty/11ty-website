@@ -24,7 +24,6 @@ const minificationLocalPlugin = require("./config/minification");
 const getAuthors = require("./config/getAuthorsFromSites");
 const cleanName = require("./config/cleanAuthorName");
 const objectHas = require("./config/object-has");
-const fetchGitLastUpdated = require("./config/git-last-updated");
 
 // Load yaml from Prism to highlight frontmatter
 loadLanguages(['yaml']);
@@ -376,11 +375,8 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addCollection("docsFeed", function(collection) {
-		return collection.getFilteredByGlob("src/docs/**/*.md").map(entry => {
-			entry.gitLastUpdatedDate = fetchGitLastUpdated(entry.inputPath);
-			return entry;
-		}).sort((a, b) => {
-      return b.gitLastUpdatedDate - a.gitLastUpdatedDate; // sort by date - descending
+		return collection.getFilteredByGlob("src/docs/**/*.md").sort((a, b) => {
+			return b.date - a.date; // sort by date - descending
 		});
 	});
 

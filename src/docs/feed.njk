@@ -29,12 +29,11 @@ eleventyExcludeFromCollections: true
   </author>
   {%- for post in collections.docsFeed %}
   {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
-  {# pageTitle #}
   {%- set entryTitle %}{{ post.data.newstitle or post.data.searchTitle or post.data.relatedTitle or post.data.tiptitle or post.data.eleventyNavigation.key or post.data.title }}{% endset %}
   <entry>
     <title>{{ entryTitle }}</title>
     <link href="{{ absolutePostUrl }}"/>
-    <updated>{{ post.gitLastUpdatedDate | rssDate }}</updated>
+    <updated>{{ post.date | rssDate }}</updated>
     <id>{{ absolutePostUrl }}</id>
     <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
   </entry>
