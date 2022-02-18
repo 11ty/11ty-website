@@ -23,6 +23,7 @@ ignoreGitHubButtons: true
 
 * [**Follow @eleven_ty on Twitter**](https://twitter.com/intent/follow?screen_name=eleven_ty)
 * Read the [**Eleventy Blog**](/blog/)
+* Subscribe/unsubscribe to the [Eleventy YouTube Channel](/youtube/)
 * We publish RSS feeds for: [**Blog Posts**](/blog/feed.xml) and [**Documentation Updates**](/docs/feed.xml)
 * View the full [Eleventy Release History](/docs/versions/) (with documentation for previous versions)
 
