@@ -19,6 +19,12 @@ status = 200
 force = true
 
 [[redirects]]
+from = "/youtube"
+to = "https://www.youtube.com/channel/UCskGTioqrMBcw8pd14_334A"
+status = 301
+force = true
+
+[[redirects]]
 from = "/docs/sites/"
 to = "/speedlify/"
 status = 301
