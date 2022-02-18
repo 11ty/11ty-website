@@ -5,7 +5,7 @@ logoLink: /docs/
 ignoreGitHubButtons: true
 ignoreSupporters: true
 ignoreFastestSite: true
-searchTitle: Eleventy Home
+searchTitle: Eleventy, a simpler static site generator
 excludeFromSearch: true
 bigPossum: true
 eleventyComputed:
