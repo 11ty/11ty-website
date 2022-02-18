@@ -14,7 +14,7 @@ Pagination allows you to iterate over a data set and create multiple files from 
 
 ## Paging an Array
 
-To iterate over a data set and create pages for individual chunks of data, use pagination. Enable in your template’s front matter by adding the `pagination` key. 
+To iterate over a data set and create pages for individual chunks of data, use pagination. Enable in your template’s front matter by adding the `pagination` key.
 
 Consider the following template, which will result in two pages being created, each of which will display two items from `testdata`:
 
@@ -460,8 +460,10 @@ The most powerful tool to change the data. Use this callback to modify, filter, 
   pagination: {
     data: "testdata",
     size: 2,
-    before: function(data) {
-      return data.map(entry => `${entry} with a suffix`);
+    before: function(paginationData, fullData) {
+      // `fullData` is new in v1.0.1 and contains the full Data Cascade thus far
+
+      return paginationData.map(entry => `${entry} with a suffix`);
     }
   },
   testdata: [
