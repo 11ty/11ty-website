@@ -394,11 +394,6 @@ li ol {
 	max-width: 42rem;
 	clear: both;
 }
-@media (min-width: 64em) { /* 1024px */
-	.elv-layout {
-		padding: 2.5rem;
-	}
-}
 header.elv-layout {
 	padding: 0 1rem;
 }
@@ -410,7 +405,7 @@ footer.elv-layout {
 }
 @media (min-width: 64em) { /* 1024px */
 	.elv-layout-toc {
-		padding-left: 16rem;
+		padding: 2.5rem 2.5rem 2.5rem 16rem;
 		max-width: 60rem;
 		margin-right: 1rem;
 		position: relative;
