@@ -22,8 +22,8 @@ ignoreGitHubButtons: true
 ## <span class="numberflag"><span class="sr-only">Step</span> {{ count }}</span> Stay up-to-date
 
 * [**Follow @eleven_ty on Twitter**](https://twitter.com/intent/follow?screen_name=eleven_ty)
-* Subscribe to the [**Eleventy Blog**](/blog/)
-* Use your feed reader to subscribe to [Documentation Updates](/docs/feed.xml)
+* Read the [**Eleventy Blog**](/blog/)
+* We publish RSS feeds for: [**Blog Posts**](/blog/feed.xml) and [**Documentation Updates**](/docs/feed.xml)
 * View the full [Eleventy Release History](/docs/versions/) (with documentation for previous versions)
 
 {% set count = count + 1 %}
