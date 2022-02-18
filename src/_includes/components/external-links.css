@@ -28,7 +28,7 @@ a[href^="//"]:not(.minilink):not(.elv-externalexempt):hover:after {
 }
 
 /* CSS-only favicons https://www.zachleat.com/web/external-link-favicons/ */
-a[href^="https://twitter.com"]:before,
+a[href^="https://www.youtube.com"]:before,
 a[href^="https://wikipedia.org"]:before,
 a[href^="https://github.com"]:before,
 a[href^="https://en.wikipedia.org"]:before {
@@ -41,6 +41,7 @@ a[href^="https://en.wikipedia.org"]:before {
 	background-size: contain;
 	background-repeat: no-repeat;
 }
+a[href^="https://www.youtube.com"]:after,
 a[href^="https://github.com"]:after,
 a[href^="https://twitter.com"]:after,
 a[href^="https://wikipedia.org"]:after,
@@ -48,6 +49,9 @@ a[href^="https://en.wikipedia.org"]:after {
 	display: none;
 }
 
+a[href^="https://www.youtube.com"]:before {
+	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.youtube.com%2F/");
+}
 a[href^="https://twitter.com"]:before {
 	border-radius: 0.3125em; /* 5px /16 */
 	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.twitter.com%2F/");
