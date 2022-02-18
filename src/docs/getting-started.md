@@ -54,6 +54,8 @@ Make sure that you see `({% latestVersion versions, config %})` in your output. 
 
 ## <span class="numberflag"><span class="sr-only">Step</span> 4</span> Create some templates
 
+A <dfn>template</dfn> is a content file written in a [format such as Markdown, HTML, Liquid, Nunjucks, and more](/docs/languages/), which Eleventy transforms into a page (or pages) when building our site.
+
 Let’s run two commands to create two new template files.
 
 {% codewithprompt "eleventysample", "all" %}
