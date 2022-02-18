@@ -1,7 +1,7 @@
 ---
 newstitle: A new Eleventy mascot from Geri Coady
 eleventyNavigation:
-  parent: Eleventy Blog
+  parent: Blog
   key: New mascot
 ---
 The Eleventy Mascot is becoming a series! Our project has continued with its pseudo-regular refresh of the famed possum on a balloon and the latest in the series is from acclaimed designer, illustrator, and author Geri Coady!

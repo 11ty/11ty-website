@@ -9,7 +9,7 @@ permalink:
   serverless: "/authors/:name/"
 
 eleventyNavigation:
-  parent: Eleventy Authors
+  parent: Authors
 excludeFromSearch: true
 excludeFromSidebar: true
 layout: layouts/docs.njk

@@ -48,6 +48,12 @@ to = "/blog/:splat"
 status = 301
 force = true
 
+[[redirects]]
+from = "/docs/how-to-support/"
+to = "/docs/community/"
+status = 301
+force = true
+
 [[headers]]
 for = "/api/*"
 

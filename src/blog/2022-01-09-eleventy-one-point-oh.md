@@ -1,7 +1,7 @@
 ---
 newstitle: Eleventy v1.0.0, the stable release.
 eleventyNavigation:
-  parent: Eleventy Blog
+  parent: Blog
   key: Eleventy v1.0.0
 ---
 * [Full docs for v1.0.0 on our web site](https://v1-0-0.11ty.dev/docs/)

@@ -1,7 +1,7 @@
 ---
 newstitle: "The State of Eleventy (2021) in Two Minutes"
 eleventyNavigation:
-  parent: Eleventy Blog
+  parent: Blog
 ---
 
 * [Watch on YouTube](https://www.youtube.com/watch?v=kcRtANKWCLQ)

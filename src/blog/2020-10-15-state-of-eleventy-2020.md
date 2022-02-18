@@ -1,7 +1,7 @@
 ---
 newstitle: "The State of Eleventy (2020) in Two Minutes"
 eleventyNavigation:
-  parent: Eleventy Blog
+  parent: Blog
 ---
 
 * [Watch on YouTube](https://www.youtube-nocookie.com/embed/ix5mPa6D7ZA)

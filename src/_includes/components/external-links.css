@@ -30,6 +30,7 @@ a[href^="//"]:not(.minilink):not(.elv-externalexempt):hover:after {
 /* CSS-only favicons https://www.zachleat.com/web/external-link-favicons/ */
 a[href^="https://twitter.com"]:before,
 a[href^="https://wikipedia.org"]:before,
+a[href^="https://github.com"]:before,
 a[href^="https://en.wikipedia.org"]:before {
 	content: "";
 	display: inline-block;
@@ -40,6 +41,7 @@ a[href^="https://en.wikipedia.org"]:before {
 	background-size: contain;
 	background-repeat: no-repeat;
 }
+a[href^="https://github.com"]:after,
 a[href^="https://twitter.com"]:after,
 a[href^="https://wikipedia.org"]:after,
 a[href^="https://en.wikipedia.org"]:after {
@@ -50,15 +52,19 @@ a[href^="https://twitter.com"]:before {
 	border-radius: 0.3125em; /* 5px /16 */
 	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.twitter.com%2F/");
 }
+a[href^="https://github.com"]:before {
+	border-radius: 0.3125em; /* 5px /16 */
+	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fgithub.com%2F/");
+}
 a[href^="https://wikipedia.org"]:before,
 a[href^="https://en.wikipedia.org"]:before {
 	border: 0.0625em solid rgba(0,0,0,.3); /* 1px /16 */
 	border-radius: 0.125em; /* 2px /16 */
 	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.wikipedia.org%2F/");
 }
+
+/* Not in the facepile */
+.facepile a[href^="https://github.com"]:before,
 .facepile a[href^="https://twitter.com"]:before {
-	position: absolute;
-	z-index: 1;
-	transform: translate(100%, 244%);
-	pointer-events: none;
+	display: none;
 }

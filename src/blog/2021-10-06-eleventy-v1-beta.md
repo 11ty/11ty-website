@@ -1,7 +1,7 @@
 ---
 newstitle: "The very first Eleventy 1.0 Beta Release"
 eleventyNavigation:
-  parent: Eleventy Blog
+  parent: Blog
 ignoreSupporters: true
 eleventyComputed:
   social:

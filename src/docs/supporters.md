@@ -1,8 +1,5 @@
 ---
-eleventyNavigation:
-  parent: Supporting Eleventy
-  key: Eleventy Contributors
-  order: 1
+subtitle: Open Collective Contributors
 ignoreSupporters: true
 css:
   - components/page-supporters.css

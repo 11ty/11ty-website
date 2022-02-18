@@ -1,8 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Supporting Eleventy
+  parent: Community
   key: Contributor Account
-  order: 2
+excludeFromSidebar: true
 loadNetlifyIdentity: true
 ---
 # Contributor Account

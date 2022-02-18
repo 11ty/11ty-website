@@ -1,7 +1,8 @@
 ---
 eleventyNavigation:
   key: Code of Conduct
-  order: 9.4
+  parent: Community
+  order: -1
 ---
 # Eleventy Community Code of Conduct
 
