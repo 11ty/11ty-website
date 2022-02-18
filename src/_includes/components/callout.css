@@ -56,13 +56,17 @@ table .elv-callout {
 .elv-callout-info:before,
 .elv-callout-warn:before,
 .elv-callout-error:before,
-.elv-callout:not(.elv-callout-demo) code {
+.elv-callout:not(.elv-callout-demo) :not(pre) > code {
 	background-color: var(--callout-tag, var(--callout-primary));
 	color: var(--callout-primarytext);
 }
 .elv-callout a,
 .elv-callout :visited {
 	color: var(--callout-primarytext);
+}
+.elv-callout pre {
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 /* Info */
