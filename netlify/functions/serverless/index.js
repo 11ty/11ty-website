@@ -8,7 +8,7 @@ const precompiledCollections = require("./_generated-serverless-collections.json
 
 async function handler (event) {
 	let elev = new EleventyServerless("serverless", {
-		path: new URL(event.rawUrl).pathname,
+		path: event.rawUrl ? new URL(event.rawUrl).pathname : event.path,
 		query: event.queryStringParameters,
 		inputDir: "src",
 		functionsDir: "netlify/functions/",
