@@ -544,12 +544,16 @@ ${text.trim()}
 				return false;
 			}
 
-			let valueLower = value.toLowerCase();
-			let dataLower = gotten.toLowerCase();
-			if(valueLower === dataLower) {
-				return true;
+			if(typeof value === "string") {
+				let valueLower = value.toLowerCase();
+				let dataLower = gotten.toLowerCase();
+				if(valueLower === dataLower) {
+					return true;
+				}
+				return false;
 			}
-			return false;
+
+			return value === gotten;
 		});
 	});
 

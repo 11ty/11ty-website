@@ -16,10 +16,10 @@ eleventyComputed:
 <strong>This page was rendered <em>just-in-time</em> for you using <a href="/docs/plugins/serverless/">Eleventy Serverless</a></strong>
 <code class="elv-serverless-banner-time"><time datetime="{{ config.now | toISO }}">{{ config.now | newsDate("yyyy LLL dd HH:mm:ss.SSS") }}</time></code>
 {% endcallout %} #}
-{%- set firstBlogPost = collections.blog | reverse | first %}
-{%- if firstBlogPost %}
+{%- set highlightedBlogPost = collections.blog | findBy("data.homePageHighlight", true) | first %}
+{%- if highlightedBlogPost %}
 <div class="elv-callout">
-  <strong>Newest blog post</strong>: <a href="{{ firstBlogPost.data.page.url }}">{{ firstBlogPost.data.newstitle }}</a>
+  <strong>Featured Blog Post</strong>: <a href="{{ highlightedBlogPost.data.page.url }}">{{ highlightedBlogPost.data.newstitle }}</a>
 </div>
 {%- endif %}
 
