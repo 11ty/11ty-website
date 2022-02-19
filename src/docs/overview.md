@@ -39,5 +39,6 @@ This project aims to directly compete with all other Static Site Generators. We 
 * [Hugo](https://gohugo.io/) (Go)
 * [Hexo](https://hexo.io/) (JavaScript)
 * [Gatsby](https://www.gatsbyjs.org/) (JavaScript using React)
-* [Nuxt](https://www.staticgen.com/nuxt) (JavaScript using Vue)
+* [Nuxt](https://nuxtjs.org/) (JavaScript using Vue)
+* [Next.js](https://nextjs.org/) (JavaScript using React)
 * _More at [jamstack.org](https://jamstack.org/generators/)_
