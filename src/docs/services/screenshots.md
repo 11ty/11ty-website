@@ -58,7 +58,7 @@ Try it out on the [Eleventy API Explorer](https://api-explorer.11ty.dev/).
 
 If the screenshots aren’t updating at a high enough frequency you can pass in your own cache busting key using an underscore prefix `_` after your URL.
 
-This can be any arbitrary string tied to your unique build, here’s an example that uses today’s date:
+This can be any arbitrary string tied to your unique build, here’s some examples that use today’s date:
 
 ```
 /:url/_20210802/
@@ -73,8 +73,8 @@ You can customize the conditions with which the headless browser will wait to ta
 
 * DOMContentLoaded `wait:0`
 * Load event `wait:1` (default)
-* Load event and there have been no network connections for 500ms: `wait:2`
-* Load event and there are fewer than two network connections for 500ms: `wait:3`
+* Load event; there have been no network connections for 500ms: `wait:2`
+* Load event; there are fewer than two network connections for 500ms: `wait:3`
 
 ```
 /:url/_wait:0/
