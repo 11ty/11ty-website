@@ -68,3 +68,41 @@ module.exports = function (eleventyConfig) {
 {% callout "warn" %}
 Plugin namespacing is an application feature and should not be used if you are creating your own plugin (in your plugin configuration code). Follow along at <a href="https://github.com/11ty/eleventy/issues/256">Issue #256</a>.
 {% endcallout %}
+
+
+## Creating a Plugin
+
+A plugin primarily provides a “configuration function.” This function is called when Eleventy is first initialized, and takes the same `eleventyConfig` object as the user’s `.eleventy.js` file gets, in addition to any config passed by the user:
+
+{% codetitle "plugin.js" %}
+
+```js
+module.exports = function(eleventyConfig, pluginOptions) {
+  // Your plugin code goes here
+};
+```
+
+If you want to run some user code before your plugin’s configuration function is run, you can instead export an object. Prefer using the above syntax unless you need this behavior.
+
+{% codetitle "fancy-plugin.js" %}
+
+```js
+module.exports = {
+  initArguments: myInitArguments,
+  configFunction: function(eleventyConfig, pluginOptions) {
+    // Your plugin code goes here
+  }
+};
+```
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(require("./fancy-plugin"), {
+    init: function(initArguments) {
+      // `this` is the eleventyConfig object
+      // initArguments will be the `myInitArguments` object from above
+    },
+  });
+};
