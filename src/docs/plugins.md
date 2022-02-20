@@ -106,3 +106,13 @@ module.exports = function(eleventyConfig) {
     },
   });
 };
+```
+
+### Distributing a Plugin
+
+If you’re distributing your plugin as a package, consider following these conventions. (Feel free to break them, though! These are not hard requirements, or enforced at all by Eleventy at runtime.)
+
+- Add `"eleventy-plugin"` to your package.json’s `keywords` field.
+- Prefix your package name with `eleventy-plugin-`
+- Write your plugin code in a `.eleventy.js` file in the root of your repository, and set the `"main"` field of your package.json to `".eleventy.js"`
+- Open a PR to add your plugin to our [list of community plugins](https://github.com/11ty/11ty-website/tree/master/src/_data/plugins) <3
