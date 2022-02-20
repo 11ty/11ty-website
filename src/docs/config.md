@@ -30,6 +30,8 @@ We support returning both a callback function (shown above) or an object literal
 * Add custom [Collections](/docs/collections/) and use [Advanced Collection Filtering and Sorting](/docs/collections/#advanced-custom-filtering-and-sorting).
 * Add some [Plugins](/docs/plugins/).
 
+{% callout %}Is your config file getting big and hard to understand? You can <a href="/docs/quicktips/local-plugin/">create your own plugin</a> to move some code out.{% endcallout %}
+
 ## Configuration Options
 
 <style>
