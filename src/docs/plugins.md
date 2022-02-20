@@ -82,7 +82,7 @@ module.exports = function(eleventyConfig, pluginOptions) {
 };
 ```
 
-If you want to run some user code before your plugin’s configuration function is run, you can instead export an object. Prefer using the above syntax unless you need this behavior.
+If you want to run some user code before your plugin’s configuration function is run, you can instead export an object. Prefer using the above syntax unless you need this behavior. For an example of how this is used, see the [syntax highlighting plugin](https://github.com/11ty/eleventy-plugin-syntaxhighlight/blob/23761d7fd54de0312040520175959327b1a0ab9b/.eleventy.js#L10)
 
 {% codetitle "fancy-plugin.js" %}
 
