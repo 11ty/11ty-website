@@ -12,7 +12,7 @@ ignoreGitHubButtons: true
 {% set count = count + 1 %}
 ## <span class="numberflag"><span class="sr-only">Step</span> {{ count }}</span> Participate
 
-* **Build something**—join the [{{ authors | length }} developers building with Eleventy](/docs/authors/).
+* **Build something**—join the [{{ authors | length }} developers building with Eleventy](/authors/).
 * **Ask a question, answer a question**: We welcome questions from people of all experience levels on [Discord](/blog/discord/), [GitHub Discussions](https://github.com/11ty/eleventy/discussions), and the [issue tracker](https://github.com/11ty/eleventy/issues). We _really_ appreciate help answering those questions too!
 * [**Tell a friend!**](https://twitter.com/intent/tweet?text={{ "I heard @eleven_ty was good" | urlencode }}) Our project doesn’t have a big marketing budget so we rely on word of mouth!
 * {% include "star-on-github.njk" %}
