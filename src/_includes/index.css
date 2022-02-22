@@ -331,10 +331,10 @@ li {
 	padding: .5em 0;
 	line-height: 1.4;
 }
-li:first-child:not(.elv-nav-item) {
+li:first-child:not([class]) {
 	padding-top: 0;
 }
-li:last-child:not(.elv-nav-item) {
+li:last-child:not([class]) {
 	padding-bottom: 0;
 }
 li ul,

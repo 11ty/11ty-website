@@ -16,9 +16,11 @@ isDocs: true
 </nav>
 {% endif %}
 {% if pageTitle %}<h1>{{ pageTitle | safe }}</h1>{% endif %}
-{% if not overrideCommunityLinks %}
-{% include "community-contributed.njk" %}
-{% endif %}
+{%- if not overrideCommunityLinks and (communityLinks or communityLinksKey) %}
+<div class="elv-community" id="community-resources">
+  {%- include "community-contributed.njk" -%}
+</div>
+{%- endif %}
 
 {{ content | safe }}
 

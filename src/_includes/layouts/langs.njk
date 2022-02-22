@@ -9,6 +9,10 @@ overrideCommunityLinks: true
 {% templatelangs templatetypes, page %}
 </div>
 
-{% include "community-contributed.njk" %}
+{%- if communityLinks or communityLinksKey %}
+<div class="elv-community" id="community-resources">
+  {%- include "community-contributed.njk" -%}
+</div>
+{%- endif %}
 
 {{ content | safe }}

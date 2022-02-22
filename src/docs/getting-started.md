@@ -3,6 +3,7 @@ eleventyNavigation:
   key: Getting Started
   order: 2
 communityLinksKey: getting-started
+overrideCommunityLinks: true
 ---
 # Getting Started
 
@@ -96,5 +97,10 @@ Go to `http://localhost:8080/` or `http://localhost:8080/README/` to see your El
 
 Congratulations—you made something with Eleventy! Now put it to work with templating syntax, front matter, and data files.
 
-**➡ Continue: [Command Line Usage](/docs/usage/)**
+## Continue learning:
 
+* [Learn more about the different Eleventy commands](/docs/usage/)
+* [Try another Tutorial](/docs/tutorials/)
+* [Try a Starter Project](/docs/starter/)
+
+{% include "community-contributed.njk" %}

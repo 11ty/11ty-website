@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Getting Started
   key: Tutorials
-  order: 4
+  order: 1.5
 feedTitle: Quick Tips RSS Feed
 feedUrl: /docs/quicktips/feed.xml
 ---

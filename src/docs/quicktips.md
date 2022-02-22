@@ -1,8 +1,7 @@
 ---
 eleventyNavigation:
-  parent: Getting Started
+  parent: Tutorials
   key: Quick Tips
-  order: 5
 communityLinksKey: quicktips
 ---
 # Quick Tips

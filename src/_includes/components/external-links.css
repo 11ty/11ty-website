@@ -68,7 +68,8 @@ a[href^="https://en.wikipedia.org"]:before {
 	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.wikipedia.org%2F/");
 }
 
-/* Not in the facepile */
+/* Not in the facepile or in the community links cards */
+.sites-site-vert a[href^="https://www.youtube.com"]:before,
 .facepile a[href^="https://github.com"]:before,
 .facepile a[href^="https://twitter.com"]:before {
 	display: none;
