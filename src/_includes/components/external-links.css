@@ -69,6 +69,7 @@ a[href^="https://en.wikipedia.org"]:before {
 }
 
 /* Not in the facepile or in the community links cards */
+.sites-site-vert a[href^="https://github.com"]:before,
 .sites-site-vert a[href^="https://www.youtube.com"]:before,
 .facepile a[href^="https://github.com"]:before,
 .facepile a[href^="https://twitter.com"]:before {
