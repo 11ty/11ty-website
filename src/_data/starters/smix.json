@@ -1,7 +1,7 @@
 {
-	"url": "https://github.com/hirusi/smix-eleventy-starter",
+	"url": "https://github.com/MaybeThisIsRu/smix-eleventy-starter",
 	"name": "Smix",
-	"description": "A starter with: modular gulp asset pipeline, PostCSS, ES2015 JS, blog-ready, set-up for Forestry CMS, production-ready TailwindCSS, easy dark mode theming",
+	"description": "A standards-respecting starter kit for Eleventy. Go Indie. Uses PostCSS and esbuild.",
 	"author": "hirusi",
 	"demo": "https://smix.netlify.app/"
 }
