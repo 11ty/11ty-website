@@ -297,7 +297,7 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addFilter("displayPrice", function(num) {
-		return parseFloat(num).toFixed(2);
+		return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }).format(num);
 	});
 
 	eleventyConfig.addShortcode("templatelangs", function(languages, page, whitelist, anchor, isinline) {
