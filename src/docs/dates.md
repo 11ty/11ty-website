@@ -31,7 +31,8 @@ Valid `date` values:
 
 * `Last Modified`: automatically resolves to the file’s last modified date
 * `Created`: automatically resolves to the file’s created date (default, this is what is used when `date` is omitted).
-* `git Last Modified`: {% addedin "1.0.1" %} automatically resolves to the file’s latest git commit. If a file is not yet checked in to git, it assigns `Date.now()` to `page.date` instead. This one is a bit resource intensive, so you may want to limit this to your CI server environment only using JavaScript data files and environment variables. Read more about [Environment Variables](/docs/data-js/#example-exposing-environment-variables) and check out [this example code](https://github.com/11ty/11ty-website/blob/5403f2b853e09165bec8bc6f7466a6a041487bcc/src/docs/docs.11tydata.js#L5-L7).
+* `git Last Modified`: {% addedin "1.0.1" %} automatically resolves to the file’s latest git commit. If a file is not yet checked in to git, it assigns `Date.now()` to `page.date` instead.
+  * This one is a bit resource intensive, so you may want to limit this to your CI server environment only using JavaScript data files and [Environment Variables](/docs/environment-vars/). Check out [this real-world directory data file](https://github.com/11ty/11ty-website/blob/5403f2b853e09165bec8bc6f7466a6a041487bcc/src/docs/docs.11tydata.js#L5-L7).
 * `2016-01-01` or any other valid [YAML date value](https://yaml.org/type/timestamp.html) (leaving off the time assumes midnight in UTC, or `00:00:00Z`)
 * `"2016-01-01"` or any other valid UTC **string** that [Luxon’s `DateTime.fromISO`](https://moment.github.io/luxon/#/parsing?id=iso-8601) can parse (see also the [Luxon API docs](https://moment.github.io/luxon/api-docs/index.html#datetimefromiso)).
 

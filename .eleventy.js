@@ -30,7 +30,7 @@ loadLanguages(['yaml']);
 
 let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" decoding="async" class="avatar" width="200" height="200">`;
 const shortcodes = {
-	avatar: function(datasource, slug, alt = "") {
+	avatar(datasource, slug, alt = "") {
 		if(!slug) {
 			return defaultAvatarHtml;
 		}
@@ -51,7 +51,7 @@ const shortcodes = {
 			return defaultAvatarHtml;
 		}
 	},
-	link: function(linkUrl, content) {
+	link(linkUrl, content) {
 		return (linkUrl ? `<a href="${linkUrl}">` : "") +
 			content +
 			(linkUrl ? `</a>` : "");
@@ -79,13 +79,20 @@ const shortcodes = {
 			class: classes,
 		});
 	},
-	getScreenshotHtml: function(siteSlug, siteUrl, sizes) {
+	getScreenshotHtml(siteSlug, siteUrl, sizes, preset = "small") {
+		let zoom;
 		let viewport = {
 			width: 375,
 			height: 375,
 		};
 
-		let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(siteUrl)}/small/`;
+		if(preset === "medium") {
+			viewport.width = 464;
+			viewport.height = 464;
+			zoom = "smaller";
+		}
+
+		let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(siteUrl)}/${preset}/1:1/${zoom ? `${zoom}/` : ""}`;
 
 		if(siteSlug === "11ty" || siteSlug === "foursquare") {
 			screenshotUrl = `/img/screenshot-fallbacks/${siteSlug}.jpg`;
@@ -110,6 +117,13 @@ const shortcodes = {
 			// No longer necessary because we have a default fallback image when timeouts happen.
 			// onerror: "let p=this.closest('picture');if(p){p.remove();}this.remove();"
 		});
+	},
+	getIndieAvatarUrl(iconUrl) {
+		let imgHtml = "";
+		if(!iconUrl.startsWith("/")) {
+			imgHtml = `<img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(iconUrl)}/" width="150" height="150" alt="IndieWeb Avatar for ${iconUrl}" class="avatar avatar-large avatar-indieweb" loading="lazy" decoding="async">`;
+		}
+		return imgHtml;
 	}
 };
 
@@ -183,15 +197,14 @@ module.exports = function(eleventyConfig) {
 			.filter(item => (item.data || {}).excludeFromSidebar !== true);
 	});
 
-	eleventyConfig.addShortcode("indieweblink", function(content, url) {
+	eleventyConfig.addShortcode("indieavatar", shortcodes.getIndieAvatarUrl);
+
+	eleventyConfig.addShortcode("indieweblink", function(content, url, iconUrl) {
 		if(!url) {
 			return content;
 		}
 
-		let imgHtml = "";
-		if(!url.startsWith("/")) {
-			imgHtml = `<img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(url)}/" width="150" height="150" alt="IndieWeb Avatar for ${url}" class="avatar avatar-large avatar-indieweb" loading="lazy" decoding="async">`;
-		}
+		let imgHtml = shortcodes.getIndieAvatarUrl(iconUrl || url);
 		return `<a href="${url}">${imgHtml}${content}</a>`;
 	});
 

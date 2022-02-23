@@ -134,17 +134,11 @@ let eleventy = {
 ```
 
 Learn more about:
-* [Eleventy Environment Variables](#environment-variables)
+* [Eleventy-supplied Environment Variables](/docs/environment-vars/#eleventy-supplied)
 * Serverless:
   * [Dynamic Slugs and Serverless Global Data](/docs/plugins/serverless/#dynamic-slugs-and-serverless-global-data).
   * `event.queryStringParameters`, which are very similar to [URL.searchParams](https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams). It’s an object representing the name/value pairs for things after the `?` in a URL.
 
 ### Environment Variables
 
-[Node.js exposes environment variables under `process.env`](https://nodejs.org/api/process.html#process_process_env). Learn how to [expose Environment Variables to your templates using JavaScript Data Files](/docs/data-js/#example-exposing-environment-variables).
-
-{% addedin "1.0.0" %} Eleventy also supplies its own Eleventy-specific environment variables, usually intended for more advanced use cases. You can use these in your configuration or in data files as needed.
-
-* `process.env.ELEVENTY_ROOT` the absolute path to the directory in which you’ve run the Eleventy command.
-* `process.env.ELEVENTY_SOURCE` is the method in which Eleventy has run, current either `cli` or `script`.
-* `process.env.ELEVENTY_SERVERLESS` is set to `true` (String) if Eleventy is running in [serverless mode](/docs/plugins/serverless/). If Eleventy is _not_ running in serverless mode—due to Node forcing environment variables to be strings—this variable will not exist.
+* Read more about [Eleventy-supplied environment variables](/docs/environment-vars/#eleventy-supplied).

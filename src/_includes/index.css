@@ -141,7 +141,10 @@ ul:not(.list-bare):not(.inlinelist) > li > a > .avatar {
 	margin-right: 4px;
 }
 ul:not(.list-bare):not(.inlinelist) > li > a > .avatar-large {
+	width: 1.444444444444em; /* 26px /18 */
 	height: 1.444444444444em; /* 26px /18 */
+	object-fit: contain;
+	margin-right: 0.3888888888889em; /* 7px /18 */
 }
 blockquote .bio-source {
 	white-space: nowrap;
