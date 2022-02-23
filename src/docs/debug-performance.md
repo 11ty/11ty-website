@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: Performance
-  parent: Debugging
+  parent: Debug Mode
   excerpt: How to analyze your Eleventy build to find bottlenecks.
   order: 1
 excludeFromSidebar: true

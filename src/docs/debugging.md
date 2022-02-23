@@ -1,10 +1,10 @@
 ---
 eleventyNavigation:
   parent: Getting Started
-  key: Debugging
+  key: Debug Mode
   order: 3
 ---
-# Debugging
+# Debug Mode
 
 Having trouble? Want to see what Eleventy is doing behind the scenes? Use `DEBUG` mode. We’re taking advantage of the [excellent `debug` package](https://www.npmjs.com/package/debug) for this.
 
