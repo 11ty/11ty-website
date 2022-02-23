@@ -44,12 +44,13 @@ ErrorDocument 404 /404.html
 
 ## With `--serve`
 
-If you're using `eleventy --serve`, you can configure Browsersync to do the 404 routing by passing a callback in your config. Read more on [the BrowserSyncConfig option](/docs/config/#override-browsersync-server-options), the [Browsersync callbacks option](https://browsersync.io/docs/options#option-callbacks), and [how to provide a 404 using a Browsersync callback](https://github.com/browsersync/browser-sync/issues/1398). 
+If you're using `eleventy --serve`, you can configure Browsersync to do the 404 routing by passing a callback in your config. Read more on [the BrowserSyncConfig option](/docs/config/#override-browsersync-server-options), the [Browsersync callbacks option](https://browsersync.io/docs/options#option-callbacks), and [how to provide a 404 using a Browsersync callback](https://github.com/browsersync/browser-sync/issues/1398).
 
 {% codetitle ".eleventy.js" %}
 
 ```js
 const fs = require("fs");
+const NOT_FOUND_PATH = "_site/404.html";
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setBrowserSyncConfig({
@@ -57,7 +58,11 @@ module.exports = function(eleventyConfig) {
       ready: function(err, bs) {
 
         bs.addMiddleware("*", (req, res) => {
-          const content_404 = fs.readFileSync('_site/404.html');
+          if (!fs.existsSync(NOT_FOUND_PATH)) {
+            throw new Error(`Expected a \`${NOT_FOUND_PATH}\` file but could not find one. Did you create a 404.html template?`);
+          }
+
+          const content_404 = fs.readFileSync(NOT_FOUND_PATH);
           // Add 404 http status code in request header.
           res.writeHead(404, { "Content-Type": "text/html; charset=UTF-8" });
           // Provides the 404 content without redirect.
