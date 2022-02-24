@@ -121,21 +121,23 @@ Use almost any combination of these:
 * `formats: ["svg"]` (requires SVG input) {% addedin "Image 0.4.0" %}
 * `formats: ["avif"]` {% addedin "Image 0.6.0" %}
 
-### URL Path
+### Output Locations
+
+#### URL Path
 
 A path-prefix-esque directory for the `<img src>` attribute. e.g. `/img/` for `<img src="/img/MY_IMAGE.jpeg">`:
 
 * `urlPath: "/img/"` (default)
 
-### Output Directory
+#### Output Directory
 
 Where to write the new images to disk. Project-relative path to the output image directory. Maybe you want to write these to your output directory directly (e.g. `./_site/img/`)?
 
 * `outputDir: "./img/"` (default)
 
-### Caching Remote Images Locally {% addedin "Image 0.3.0" %}
+### Caching Remote Images Locally
 
-For any full URL first argument to this plugin, the full-size remote image will be downloaded and cached locally. See all [relevant `eleventy-cache-assets` options](/docs/plugins/cache/#options).
+{% addedin "Image 0.3.0" %} For any full URL first argument to this plugin, the full-size remote image will be downloaded and cached locally. See all [relevant `eleventy-cache-assets` options](/docs/plugins/cache/#options).
 
 ```js
 {
@@ -151,21 +153,79 @@ For any full URL first argument to this plugin, the full-size remote image will 
 }
 ```
 
-### Skip raster formats for SVG {% addedin "Image 0.4.0" %}
+### Options for SVG
 
-If using SVG output (the input format is SVG and `svg` is added to your `formats` array), we will skip all of the raster formats even if they’re in `formats`. This may be useful in a CMS-driven workflow when the input could be vector or raster.
+#### Skip raster formats for SVG
+
+{% addedin "Image 0.4.0" %} If using SVG output (the input format is SVG and `svg` is added to your `formats` array), we will skip all of the raster formats even if they’re in `formats`. This may be useful in a CMS-driven workflow when the input could be vector or raster.
 
 * `svgShortCircuit: false` (default)
 * `svgShortCircuit: true`
 
-### Allow SVG to upscale {% addedin "Image 0.4.0" %}
+#### Allow SVG to upscale
 
-While we do prevent raster images from upscaling (and filter upscaling `widths` from the output), you can optionally enable SVG input to upscale to larger sizes when converting to raster format.
+{% addedin "Image 0.4.0" %} While we do prevent raster images from upscaling (and filter upscaling `widths` from the output), you can optionally enable SVG input to upscale to larger sizes when converting to raster format.
 
 * `svgAllowUpscale: true` (default)
 * `svgAllowUpscale: false`
 
-### Use this in your templates
+### Custom Filenames
+
+{% addedin "Image 0.4.0" %} Don’t like those hash ids? Make your own!
+
+```js
+{
+  // Define custom filenames for generated images
+  filenameFormat: function (id, src, width, format, options) {
+    // id: hash of the original image
+    // src: original image path
+    // width: current width in px
+    // format: current file format
+    // options: set of options passed to the Image call
+
+    return `${id}-${width}.${format}`;
+  }
+}
+```
+
+<details>
+<summary>Custom Filename Example: Use the original file slug</summary>
+
+```js
+const path = require("path");
+const Image = require("@11ty/eleventy-img");
+
+await Image("./test/bio-2017.jpg", {
+  widths: [300],
+  formats: [null],
+  filenameFormat: function (id, src, width, format, options) {
+    const extension = path.extname(src);
+    const name = path.basename(src, extension);
+
+    return `${name}-${width}w.${format}`;
+  }
+});
+
+// Writes: "test/img/bio-2017-300w.jpeg"
+```
+
+</details>
+
+### Change the default Hash length
+
+{% addedin "1.0.0" %} You can customize the length of the default filename format hash by using the `hashLength` property.
+
+```js
+const Image = require("@11ty/eleventy-img");
+
+await Image("./test/bio-2017.jpg", {
+  hashLength: 8 // careful, don’t make it _too_ short!
+});
+```
+
+## Use this in your templates
+
+### Asynchronous Usage
 
 {% callout "info" %}The examples below use a <a href="/docs/languages/nunjucks/#asynchronous-shortcodes">Nunjucks</a> <code>async</code> shortcode (different from the traditional shortcode configuration method). The <a href="/docs/languages/javascript/#asynchronous-javascript-template-functions">JavaScript</a> and <a href="/docs/languages/liquid/#asynchronous-shortcodes">Liquid</a> template engines also work here and are asynchronous without additional changes. Note that <a href="https://mozilla.github.io/nunjucks/templating.html#macro">Nunjucks macros cannot use asynchronous shortcodes</a>. If you use macros, use Synchronous shortcodes described below.{% endcallout %}
 
@@ -346,8 +406,7 @@ And you’ll have the appropriate HTML generated for you (based on your specifie
 
 ### Synchronous Usage
 
-Use `Image.statsSync` to get the metadata of a source even if the image
-generation is not finished yet:
+Use `Image.statsSync` to get the metadata of a source even if the image generation is not finished yet:
 
 {% codetitle ".eleventy.js" %}
 
@@ -379,57 +438,7 @@ module.exports = function(eleventyConfig) {
 }
 ```
 
-### Advanced control of Sharp image processor
-
-[Extra options to pass to the Sharp constructor](https://sharp.pixelplumbing.com/api-constructor#parameters) or the [Sharp image format converter for webp](https://sharp.pixelplumbing.com/api-output#webp), [png](https://sharp.pixelplumbing.com/api-output#png), [jpeg](https://sharp.pixelplumbing.com/api-output#jpeg), or [avif](https://sharp.pixelplumbing.com/api-output#avif).
-
-* `sharpOptions: {}` {% addedin "Image 0.4.0" %}
-* `sharpWebpOptions: {}` {% addedin "Image 0.4.2" %}
-* `sharpPngOptions: {}` {% addedin "Image 0.4.2" %}
-* `sharpJpegOptions: {}` {% addedin "Image 0.4.2" %}
-* `sharpAvifOptions: {}` {% addedin "Image 0.6.0" %}
-
-### Custom Filenames {% addedin "Image 0.4.0" %}
-
-Don’t like those hash ids? Make your own!
-
-```js
-{
-  // Define custom filenames for generated images
-  filenameFormat: function (id, src, width, format, options) {
-    // id: hash of the original image
-    // src: original image path
-    // width: current width in px
-    // format: current file format
-    // options: set of options passed to the Image call
-
-    return `${id}-${width}.${format}`;
-  }
-}
-```
-
-<details>
-<summary>Custom Filename Example: Use the original file slug</summary>
-
-```js
-const path = require("path");
-const Image = require("@11ty/eleventy-img");
-
-await Image("./test/bio-2017.jpg", {
-  widths: [300],
-  formats: [null],
-  filenameFormat: function (id, src, width, format, options) {
-    const extension = path.extname(src);
-    const name = path.basename(src, extension);
-
-    return `${name}-${width}w.${format}`;
-  }
-});
-
-// Writes: "test/img/bio-2017-300w.jpeg"
-```
-
-</details>
+## Advanced Usage
 
 ### Caching
 
@@ -488,9 +497,9 @@ const Image = require("@11ty/eleventy-img");
 
 Starting in Eleventy Image 1.0 (when using the built-in hashing algorithm and not custom filenames), Eleventy will skip processing files that are unchanged and already exist in the output directory. While the previously available in-memory cache avoided processing across repeat builds during `--watch` and `--serve`, this will avoid processing unchanged files for all builds. <a href="https://github.com/11ty/eleventy-img/issues/51">Read more at Issue #51</a>.
 
-### Dry-Run {% addedin "Image 0.7.0" %}
+### Dry-Run
 
-If you want to try it out and not write any files (useful for testing), use the `dryRun` option.
+{% addedin "Image 0.7.0" %} If you want to try it out and not write any files (useful for testing), use the `dryRun` option.
 
 * `dryRun: false` (default)
 * `dryRun: true`
@@ -501,3 +510,13 @@ If you want to try it out and not write any files (useful for testing), use the 
 const Image = require("@11ty/eleventy-img");
 Image.concurrency = 4; // default is 10
 ```
+
+### Advanced control of Sharp image processor
+
+[Extra options to pass to the Sharp constructor](https://sharp.pixelplumbing.com/api-constructor#parameters) or the [Sharp image format converter for webp](https://sharp.pixelplumbing.com/api-output#webp), [png](https://sharp.pixelplumbing.com/api-output#png), [jpeg](https://sharp.pixelplumbing.com/api-output#jpeg), or [avif](https://sharp.pixelplumbing.com/api-output#avif).
+
+* `sharpOptions: {}` {% addedin "Image 0.4.0" %}
+* `sharpWebpOptions: {}` {% addedin "Image 0.4.2" %}
+* `sharpPngOptions: {}` {% addedin "Image 0.4.2" %}
+* `sharpJpegOptions: {}` {% addedin "Image 0.4.2" %}
+* `sharpAvifOptions: {}` {% addedin "Image 0.6.0" %}
