@@ -8,19 +8,20 @@ communityLinksKey: image
 ---
 Low level utility to perform build-time image transformations for both vector and raster images. Output multiple sizes, save multiple formats, cache remote images locally. Uses the [sharp](https://sharp.pixelplumbing.com/) image processor.
 
-You maintain full control of your HTML—this plugin does not generate any markup. Use with `<picture>` or `<img>` or CSS `background-image`, or others! Works great to add `width` and `height` to your images! Does not require or rely on file extensions (like `.png` or `.jpg`) in URLs or local files, which may be missing or inaccurate.
+* [`eleventy-img` on GitHub](https://github.com/11ty/eleventy-img)
+
+You maintain full control of your HTML—this plugin does not generate any markup. Use with `<picture>` or `<img>` or CSS `background-image`, or others! Works great to add `width` and `height` to your images!
 
 * Accepts: `jpeg`, `png`, `webp`, `gif`, `tiff`, `avif` {% addedin "Image 0.6.0" %}, and `svg`.
-* Output multiple sizes, keeps original aspect ratio. Never upscales raster images larger than original size (unless using SVG input).
+* Output multiple sizes, keeps original aspect ratio. Never upscales raster images larger than original size (exception for SVG input).
 * Output multiple formats, supports: `jpeg`, `png`, `webp`, `avif` {% addedin "Image 0.6.0" %}, and `svg` (requires SVG input)
 * Retrieve metadata about your new images (see [sample return object](#sample-return-object)).
   * Use this to add `width` and `height` attributes on `<img>` elements for [proper aspect ratio mapping](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping).
+* Does not require or rely on file extensions (like `.png` or `.jpg`) in URLs or local files, which may be missing or inaccurate.
 * Save remote images locally using [`eleventy-cache-assets`](/docs/plugins/cache/).
   * Use local images in your HTML to prevent broken image URLs.
   * Manage the [cache duration](/docs/plugins/cache/#change-the-cache-duration).
-* De-duplicates and caches repeat calls using the same source image and the same output options. {% addedin "Image 0.7.0" %}
-* Manage plugin concurrency.
-* [`eleventy-img` on GitHub](https://github.com/11ty/eleventy-img)
+* Fast: de-duplicates image requests and use both an in-memory and disk cache.
 
 ---
 
