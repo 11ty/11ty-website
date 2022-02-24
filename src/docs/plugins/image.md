@@ -443,9 +443,9 @@ module.exports = function(eleventyConfig) {
 
 ### Caching
 
-#### In-Memory Cache {% addedin "Image 0.7.0" %}
+#### In-Memory Cache
 
-To prevent duplicate work and improve build performance, repeated calls to the same source image (remote or local) with the same options will return a cached results object. If a request in-progress, the pending promise will be returned. This in-memory cache is maintained across builds in watch/serve mode.
+{% addedin "Image 0.7.0" %} To prevent duplicate work and improve build performance, repeated calls to the same source image (remote or local) with the same options will return a cached results object. If a request in-progress, the pending promise will be returned. This in-memory cache is maintained across builds in watch/serve mode. If you quit Eleventy, the in-memory cache will be lost.
 
 Images will be regenerated (and the cache ignored) if:
 
@@ -494,9 +494,11 @@ const Image = require("@11ty/eleventy-img");
 
 </details>
 
-#### Disk Cache {% addedin "Image 1.0.0" %}
+#### Disk Cache
 
-Starting in Eleventy Image 1.0 (when using the built-in hashing algorithm and not custom filenames), Eleventy will skip processing files that are unchanged and already exist in the output directory. While the previously available in-memory cache avoided processing across repeat builds during `--watch` and `--serve`, this will avoid processing unchanged files for all builds. <a href="https://github.com/11ty/eleventy-img/issues/51">Read more at Issue #51</a>.
+{% addedin "Image 1.0.0" %} Eleventy will skip processing files that are unchanged and already exist in the output directory. This requires the built-in hashing algorithm and is not yet supported with custom filenames. More background at <a href="https://github.com/11ty/eleventy-img/issues/51">Issue #51</a>.
+
+New tip: [**Re-use and persist the disk cache across Netlify builds**](https://github.com/11ty/demo-eleventy-img-netlify-cache)
 
 ### Dry-Run
 
