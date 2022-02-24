@@ -34,10 +34,7 @@
 .announcement a:after {
 	display: none;
 }
-/* Hide the banner on the home page */
+/* Blend the banner on the home page */
 .elv-header-default .announcement {
   background-color: #222;
-}
-.elv-header-default .announcement a {
-  visibility: hidden;
 }
