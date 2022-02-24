@@ -24,7 +24,7 @@ module.exports = [
   //   url: "https://www.standagainsthatred.org/"
   // },
   {
-    label: "Stand With Ukraine 🇺🇦",
+    label: "Peace in Ukraine 🇺🇦",
     url: "https://twitter.com/Ukraine"
   }
 ];
