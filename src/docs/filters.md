@@ -52,7 +52,6 @@ module.exports = function({name}) {
   return `<h1>${this.makeUppercase(name)}</h1>`;
 };
 {% endraw %}{% endhighlight %}
-    <p>This feature was {% addedin "0.7.0" %}.</p>
   </div>
 </seven-minute-tabs>
 
@@ -64,16 +63,16 @@ These can be added using the [Configuration API](/docs/config/#using-the-configu
 module.exports = function(eleventyConfig) {
   // Liquid Filter
   eleventyConfig.addLiquidFilter("makeUppercase", function(value) { … });
-  
+
   // Nunjucks Filter
   eleventyConfig.addNunjucksFilter("makeUppercase", function(value) { … });
-  
+
   // Handlebars Filter
   eleventyConfig.addHandlebarsHelper("makeUppercase", function(value) { … });
 
   // JavaScript Template Function (New in 0.7.0)
   eleventyConfig.addJavaScriptFunction("makeUppercase", function(value) { … });
-  
+
   // or, use a Universal filter (an alias for all of the above)
   eleventyConfig.addFilter("makeUppercase", function(value) { … });
 };

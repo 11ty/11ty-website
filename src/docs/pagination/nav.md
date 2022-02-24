@@ -82,7 +82,7 @@ Alright, you definitely read all of those right? 😇 Here’s some accessible c
   </div>
 </seven-minute-tabs>
 
-* `pagination.pages` is {% addedin "0.10.0" %}. For previous versions, iterate over `pagination.hrefs` (although you won’t have access to the paginated items to show data about the pages).
+* `pagination.pages` was added in `0.10.0`. For previous versions, iterate over `pagination.hrefs` (although you won’t have access to the paginated items to show data about the pages).
 
 For our example, this code will output the following markup for our example (on the first page):
 
@@ -203,7 +203,7 @@ Note that if the current page (`page.url`) is the first or last in the set, we w
   </div>
 </seven-minute-tabs>
 
-* `pagination.href.previous` and `pagination.href.next` are {% addedin "0.10.0" %}. Use `pagination.previousPageHref` or `pagination.nextPageHref` in previous versions.
+* `pagination.href.previous` and `pagination.href.next` are added in `0.10.0`. Use `pagination.previousPageHref` or `pagination.nextPageHref` in previous versions.
 
 ## Add First and Last Links
 
@@ -229,7 +229,7 @@ For clarity here, we’re omitting the previous and next links from the previous
   </div>
 </seven-minute-tabs>
 
-* `pagination.href.first` and `pagination.href.last` are {% addedin "0.10.0" %}. Use `pagination.firstPageHref` or `pagination.lastPageHref` in previous versions.
+* `pagination.href.first` and `pagination.href.last` are added in `0.10.0`. Use `pagination.firstPageHref` or `pagination.lastPageHref` in previous versions.
 
 ## Put It All Together
 

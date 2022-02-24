@@ -58,7 +58,6 @@ module.exports = function({ firstName, lastName }) {
   return `<h1>${this.user(firstName, lastName)}</h1>`;
 };
 {% endraw %}{% endhighlight %}
-    <p>This feature was {% addedin "0.7.0" %}.</p>
   </div>
 </seven-minute-tabs>
 
@@ -72,10 +71,10 @@ Markdown files are pre-processed as Liquid templates by default. This means that
 module.exports = function(eleventyConfig) {
   // Liquid Shortcode
   eleventyConfig.addLiquidShortcode("user", function(firstName, lastName) { … });
-  
+
   // Nunjucks Shortcode
   eleventyConfig.addNunjucksShortcode("user", function(firstName, lastName) { … });
-  
+
   // Handlebars Shortcode
   eleventyConfig.addHandlebarsShortcode("user", function(firstName, lastName) { … });
 
@@ -110,7 +109,7 @@ The shortcodes we saw above were nice, I suppose. But really, they are not all t
 ```html
 {% user firstName, lastName %}
   Hello {{ someOtherVariable }}.
-  
+
   Hello {% anotherShortcode %}.
 {% enduser %}
 ```
@@ -124,7 +123,7 @@ The comma between arguments is **required** in Nunjucks but is **optional** in L
 ```html
 {{# user firstName lastName }}
   Hello {{ someOtherVariable }}.
-  
+
   Hello {{ anotherShortcode }}.
 {{/ user }}
 ```
@@ -192,7 +191,7 @@ module.exports = function(eleventyConfig) {
   // * Nunjucks
   // * Handlebars
   // * JavaScript (New in 0.7.0)
-  
+
   // Single Universal Shortcode
   eleventyConfig.addShortcode("myShortcode", function(firstName, lastName) { … });
 

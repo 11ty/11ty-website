@@ -52,8 +52,6 @@ We support returning both a callback function (shown above) or an object literal
 
 Controls the top level directory/file/glob that we’ll use to look for templates.
 
-Glob support is {% addedin "0.6.0" %}.
-
 | Input Directory |  |
 | --- | --- |
 | _Object Key_ | `dir.input` |
