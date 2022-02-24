@@ -212,6 +212,50 @@ await Image("./test/bio-2017.jpg", {
 
 </details>
 
+### Using a Hosted Image Service
+
+#### Custom URLs
+
+{% addedin "Image 0.8.3" %} Want to use a hosted image service instead? You can override the entire URL. Takes precedence over `filenameFormat` option. Useful with `statsSync` or `statsByDimensionsSync`.
+
+When you use this, returned data will not include `filename` or `outputPath`.
+
+```js
+{
+  urlFormat: function ({
+    hash, // not included for `statsOnly` images
+    src,
+    width,
+    format,
+  }) {
+    return `https://sample-image-service.11ty.dev/${encodeURIComponent(src)}/${width}/${format}/`;
+  }
+}
+```
+
+* [_Example on `11ty-website`_](https://github.com/11ty/11ty-website/blob/516faa397a98f8990f3d02eb41e1c99bedfab9cf/.eleventy.js#L105)
+
+#### Stats Only
+
+{% addedin "Image 1.1.0" %} Skips all image processing to return metadata. Doesn’t read files, doesn’t write files. Use this as an alternative to the separate `statsSync*` functions—this will use in-memory cache and de-duplicate requests.
+
+* `statsOnly: false` (default)
+* `statsOnly: true`
+
+With remotely hosted images, you may also need to supply the dimensions when using `statsOnly`:
+
+```js
+{
+  statsOnly: true,
+  remoteImageMetadata: {
+    width,
+    height,
+    format, // optional
+  }
+}
+```
+
+
 ### Change the default Hash length
 
 {% addedin "1.0.0" %} You can customize the length of the default filename format hash by using the `hashLength` property.
