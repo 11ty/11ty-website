@@ -8,6 +8,8 @@ eleventyNavigation:
 
 Fetch network resources and cache them so you don’t bombard your API (or other resources). Do this at configurable intervals—not with every build! Once per minute, or once per hour, once per day, or however often you like!
 
+* [`eleventy-cache-assets` on GitHub](https://github.com/11ty/eleventy-cache-assets)
+
 With the added benefit that if one successful request completes, you can now work offline!
 
 This plugin can save *any* kind of asset—JSON, HTML, images, videos, etc.
@@ -16,8 +18,7 @@ This plugin can save *any* kind of asset—JSON, HTML, images, videos, etc.
 * If the remote server goes down or linkrots away—we keep and continue to use the local asset (save remote images!)
 * If cache expires and the network connection fails, will continue to use the cached request and make a new request when the network connectivity is restored.
 * Control concurrency so we don’t make too many network requests at the same time.
-* Requires **Node 10+**
-* [`eleventy-cache-assets` on GitHub](https://github.com/11ty/eleventy-cache-assets)
+* Requires **Node 12+**
 
 ---
 
@@ -93,7 +94,7 @@ Cache("https://…", {
 });
 ```
 
-{% callout "info" %}Eleventy Cache Assets can work inside of a Netlify Function (or AWS Lambda) by using <code>directory: "/tmp/.cache/"</code>.{% endcallout %}
+If you want to use this utility inside of a Netlify Function (or AWS Lambda), use a writeable location (`/tmp/`) like <code>directory: "/tmp/.cache/"</code>. You can also use `dryRun: true` to skip writing to the file system.
 
 #### Remove URL query params from Cache Identifier
 
@@ -137,7 +138,20 @@ module.exports = async function() {
 
 ## Running this on your Build Server
 
-If you’re attempting to use this plugin on a service like Netlify and you are definitely not checking in your `.cache` folder to `git`, note that the cache will be empty with every build and new requests will go out. It’s important to be aware of this, even if it’s what you want for your production build!
+If you’re attempting to use this plugin on a service like Netlify and you are _definitely not checking in your `.cache` folder to `git`_, the `.cache` folder will be empty with every build and you’ll always get fresh data from new requests.
+
+However, if you’d like to persist your `.cache` folder between Netlify builds you can use the [`netlify-plugin-cache` package](https://www.npmjs.com/package/netlify-plugin-cache).
+
+1. `npm install netlify-plugin-cache`
+2. Add the following to your `netlify.toml` configuration file:
+
+```toml
+[[plugins]]
+package = "netlify-plugin-cache"
+
+  [plugins.inputs]
+  paths = [ ".cache" ]
+```
 
 ## More Examples
 
@@ -184,6 +198,8 @@ let fontCss = await Cache(url, {
 
 * This specific example has been previously described in our quick tips section: head over to read [Quick Tip #009—Cache Data Requests](/docs/quicktips/cache-api-requests/).
 
+## Advanced Usage
+
 ### Manually store your own data in the cache
 
 **You probably won’t need to do this.** If you’d like to store data of your own choosing in the cache (some expensive thing, but perhaps not related to a network request), you may do so! Consider the following [Global Data File](/docs/data-global/):
@@ -211,14 +227,14 @@ module.exports = async function() {
 };
 ```
 
-### Change Global Plugin Concurrency
+### Change Global Concurrency
 
 ```js
 const Cache = require("@11ty/eleventy-cache-assets");
 Cache.concurrency = 4; // default is 10
 ```
 
-### Command line debug output
+### DEBUG mode
 
 ```js
 DEBUG=EleventyCacheAssets* node your-node-script.js
