@@ -10,7 +10,7 @@ Low level utility to perform build-time image transformations for both vector an
 
 * [`eleventy-img` on GitHub](https://github.com/11ty/eleventy-img)
 
-You maintain full control of your HTML—this plugin does not generate any markup. Use with `<picture>` or `<img>` or CSS `background-image`, or others! Works great to add `width` and `height` to your images!
+You maintain full control of the HTML. Use with `<picture>` or `<img>` or CSS `background-image`, or others! Works great to add `width` and `height` to your images!
 
 * Accepts: `jpeg`, `png`, `webp`, `gif`, `tiff`, `avif` {% addedin "Image 0.6.0" %}, and `svg`.
 * Output multiple sizes, keeps original aspect ratio. Never upscales raster images larger than original size (exception for SVG input).
