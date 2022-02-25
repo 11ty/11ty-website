@@ -70,7 +70,7 @@ module.exports = async function() {
 
 #### Verbose Output
 
-{% added in "Fetch 3.0" %} Option to log requested remote URLs to the console.
+{% addedin "Fetch 3.0" %} Option to log requested remote URLs to the console.
 
 * `verbose: true` (The default is `false` starting in Fetch 3.0)
 
