@@ -68,6 +68,12 @@ module.exports = async function() {
 
 ### Options
 
+#### Verbose Output
+
+{% added in "Fetch 3.0" %} Option to log requested remote URLs to the console.
+
+* `verbose: true` (The default is `false` starting in Fetch 3.0)
+
 #### Change the Cache Duration
 
 After this amount of time has passed, we’ll make a new network request to the URL to fetch fresh data. Use `duration: "*"` to never fetch new data. The `duration` option also currently supports the following shorthand values:
@@ -105,16 +111,18 @@ If you want to use this utility inside of a Netlify Function (or AWS Lambda), us
 
 (Version 2.0.3 and newer) If your fetched URL contains some query parameters that aren’t relevant to the identifier used in the cache, remove them using the `removeUrlQueryParams` option. This is useful if an API adds extra junk to your request URLs.
 
+
 * `removeUrlQueryParams: true` (`false` is default)
 
 ```js
 const Cache = require("@11ty/eleventy-fetch");
 
 Cache("https://www.zachleat.com/img/avatar-2017-big.png?Get=rid&of=these", {
-	removeUrlQueryParams: true
+  removeUrlQueryParams: true
 });
 ```
 
+Note that query params are removed before—and are relevant to how—the hash key is calculated.
 
 ## What happens with a request fails?
 
