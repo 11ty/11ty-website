@@ -53,13 +53,13 @@ Formerly known as [`@11ty/eleventy-cache-assets`](https://www.npmjs.com/package/
 Consider the following example, perhaps in an Eleventy [Global Data File](/docs/data-global/).
 
 ```js
-const Cache = require("@11ty/eleventy-fetch");
+const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
   let url = "https://api.github.com/repos/11ty/eleventy";
 
   /* This returns a promise */
-  return Cache(url, {
+  return EleventyFetch(url, {
     duration: "1d", // save for 1 day
     type: "json"    // we’ll parse JSON for you
   });
@@ -98,9 +98,9 @@ The `directory` option let’s you change where the cache is stored. It is stron
 {% callout "warn" %}Read the <a href="#installation">Important Security and Privacy Notice</a>.{% endcallout %}
 
 ```js
-const Cache = require("@11ty/eleventy-fetch");
+const EleventyFetch = require("@11ty/eleventy-fetch");
 
-Cache("https://…", {
+EleventyFetch("https://…", {
 	directory: ".cache"
 });
 ```
@@ -115,9 +115,9 @@ If you want to use this utility inside of a Netlify Function (or AWS Lambda), us
 * `removeUrlQueryParams: true` (`false` is default)
 
 ```js
-const Cache = require("@11ty/eleventy-fetch");
+const EleventyFetch = require("@11ty/eleventy-fetch");
 
-Cache("https://www.zachleat.com/img/avatar-2017-big.png?Get=rid&of=these", {
+EleventyFetch("https://www.zachleat.com/img/avatar-2017-big.png?Get=rid&of=these", {
   removeUrlQueryParams: true
 });
 ```
@@ -130,14 +130,14 @@ Note that query params are removed before—and are relevant to how—the hash k
 2. If a failure happens and a cache entry already exists (*even if it’s expired*), it will use the cached entry.
 
 ```js
-const Cache = require("@11ty/eleventy-fetch");
+const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
 	try {
     let url = "https://api.github.com/repos/11ty/eleventy";
 
 		/* This returns a promise */
-		return Cache(url, {
+		return EleventyFetch(url, {
 			duration: "1d",
 			type: "json"
 		});
@@ -173,11 +173,11 @@ package = "netlify-plugin-cache"
 This is what [`eleventy-img`](/docs/plugins/image/) uses internally.
 
 ```js
-const Cache = require("@11ty/eleventy-fetch");
+const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
   let url = "https://www.zachleat.com/img/avatar-2017-big.png";
-  let imageBuffer = await Cache(url, {
+  let imageBuffer = await EleventyFetch(url, {
     duration: "1d",
     type: "buffer"
   });
@@ -192,10 +192,10 @@ module.exports = async function() {
 Also a good example of using `fetchOptions` to pass in a custom user agent. Full option list is available on the [`node-fetch` documentation](https://www.npmjs.com/package/node-fetch#options).
 
 ```js
-const Cache = require("@11ty/eleventy-fetch");
+const EleventyFetch = require("@11ty/eleventy-fetch");
 
 let url = "https://fonts.googleapis.com/css?family=Roboto+Mono:400&display=swap";
-let fontCss = await Cache(url, {
+let fontCss = await EleventyFetch(url, {
 	duration: "1d",
 	type: "text",
 	fetchOptions: {
@@ -218,7 +218,7 @@ let fontCss = await Cache(url, {
 **You probably won’t need to do this.** If you’d like to store data of your own choosing in the cache (some expensive thing, but perhaps not related to a network request), you may do so! Consider the following [Global Data File](/docs/data-global/):
 
 ```js
-const {AssetCache} = require("@11ty/eleventy-fetch");
+const { AssetCache } = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
   // Pass in your unique custom cache key
@@ -243,8 +243,8 @@ module.exports = async function() {
 ### Change Global Concurrency
 
 ```js
-const Cache = require("@11ty/eleventy-fetch");
-Cache.concurrency = 4; // default is 10
+const EleventyFetch = require("@11ty/eleventy-fetch");
+EleventyFetch.concurrency = 4; // default is 10
 ```
 
 ### DEBUG mode
