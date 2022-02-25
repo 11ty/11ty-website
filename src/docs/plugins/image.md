@@ -18,7 +18,7 @@ You maintain full control of the HTML. Use with `<picture>` or `<img>` or CSS `b
 * Retrieve metadata about your new images (see [sample return object](#sample-return-object)).
   * Use this to add `width` and `height` attributes on `<img>` elements for [proper aspect ratio mapping](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping).
 * Does not require or rely on file extensions (like `.png` or `.jpg`) in URLs or local files, which may be missing or inaccurate.
-* Save remote images locally using [`eleventy-cache-assets`](/docs/plugins/fetch/).
+* Save remote images locally using [`eleventy-cache-assets`](/docs/plugins/cache/).
   * Use local images in your HTML to prevent broken image URLs.
   * Manage the [cache duration](/docs/plugins/fetch/#change-the-cache-duration).
 * Fast: de-duplicates image requests and use both an in-memory and disk cache.

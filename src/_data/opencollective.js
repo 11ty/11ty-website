@@ -1,5 +1,5 @@
 // https://opencollective.com/11ty/members/all.json
-const Cache = require("@11ty/eleventy-cache-assets");
+const EleventyFetch = require("@11ty/eleventy-fetch");
 const FilteredProfiles = [
 	"bca-account1", // website is buycheapaccounts.com
 	"baocasino", // gambling
@@ -37,10 +37,10 @@ function getUniqueContributors(orders) {
 module.exports = async function() {
 	try {
 		let url = `https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000&status=paid,active`;
-		let json = await Cache(url, {
+		let json = await EleventyFetch(url, {
 			type: "json",
 			duration: process.env.ELEVENTY_SERVERLESS ? "*" : (process.env.ELEVENTY_AVATARS ? "0s" : "1d"),
-			directory: process.env.ELEVENTY_SERVERLESS ? "cache/" : ".cache/eleventy-cache-assets/",
+			directory: process.env.ELEVENTY_SERVERLESS ? "cache/" : ".cache/eleventy-fetch/",
 		});
 
 		let orders = json.nodes.map(order => {

@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const Cache = require("@11ty/eleventy-cache-assets");
+const EleventyFetch = require("@11ty/eleventy-fetch");
 const fs = require("fs-extra");
 const fetch = require("node-fetch");
 // const query = `
@@ -56,7 +56,7 @@ query eleventyMembers {
 
 async function getOpenCollectiveList() {
   let url = `https://opencollective.com/11ty/members/all.json`;
-  let json = await Cache(url, {
+  let json = await EleventyFetch(url, {
     duration: "0s",
     type: "json"
   });

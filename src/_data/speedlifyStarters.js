@@ -1,4 +1,4 @@
-const CacheAsset = require("@11ty/eleventy-cache-assets");
+const EleventyFetch = require("@11ty/eleventy-fetch");
 const fastglob = require("fast-glob");
 
 module.exports = async function() {
@@ -12,7 +12,7 @@ module.exports = async function() {
 	}
 
 	let url = "https://www.speedlify.dev/api/urls.json";
-	let urlsJson = await CacheAsset(url, {
+	let urlsJson = await EleventyFetch(url, {
 		duration: "1d",
 		type: "json",
 	});
@@ -30,7 +30,7 @@ module.exports = async function() {
 
 		let urlLookup = urlsJson[siteData.demo] || urlsJson[siteData.url];
 		if(urlLookup && urlLookup.hash) {
-			let data = await CacheAsset(`https://www.speedlify.dev/api/${urlLookup.hash}.json`, {
+			let data = await EleventyFetch(`https://www.speedlify.dev/api/${urlLookup.hash}.json`, {
 				duration: process.env.NODE_ENV === "production" ? "1d" : "*",
 				type: "json",
 			});

@@ -394,7 +394,7 @@ And then in your data file, overwrite the `duration` and `directory` to point to
 {% codetitle "_data/github.js" %}
 
 ```js
-const Cache = require("@11ty/eleventy-cache-assets");
+const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
   let options = {};
@@ -407,7 +407,7 @@ module.exports = async function() {
     options.directory = "cache";
   }
 
-  let result = await Cache("https://example.com/", options);
+  let result = await EleventyFetch("https://example.com/", options);
   // …
 };
 ```

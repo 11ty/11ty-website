@@ -14,7 +14,7 @@ However, if you’re working on your site locally, you probably don’t want eve
 Now there is an easier way. You can use the [`eleventy-fetch`](/docs/plugins/fetch/) utility to cache these requests to save on both API limits and build performance!
 
 ```
-npm install @11ty/eleventy-cache-assets
+npm install @11ty/eleventy-fetch
 ```
 
 ## Features
@@ -30,11 +30,11 @@ This code is currently in use on the Eleventy web site to display GitHub stars i
 {% codetitle "_data/github.js" %}
 
 ```js
-const Cache = require("@11ty/eleventy-cache-assets");
+const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
   // https://developer.github.com/v3/repos/#get
-  let json = await Cache("https://api.github.com/repos/11ty/eleventy", {
+  let json = await EleventyFetch("https://api.github.com/repos/11ty/eleventy", {
     duration: "1d", // 1 day
     type: "json" // also supports "text" or "buffer"
   });
@@ -57,12 +57,12 @@ module.exports = async function() {
 Wrap the above code in a nice `try catch` allows you to return a fake data set if the very first request fails (no expired cache entry is available). <strong>Note that if there is already an expired cache entry available, we use that instead.</strong>
 
 ```js
-const Cache = require("@11ty/eleventy-cache-assets");
+const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
   try {
     // https://developer.github.com/v3/repos/#get
-    let json = await Cache("https://api.github.com/repos/11ty/eleventy", {
+    let json = await EleventyFetch("https://api.github.com/repos/11ty/eleventy", {
       duration: "1d", // 1 day
       type: "json" // also supports "text" or "buffer"
     });
