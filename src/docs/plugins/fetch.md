@@ -1,14 +1,15 @@
 ---
 eleventyNavigation:
-  key: Cache Assets
+  key: Fetch
   order: 0.5
   excerpt: A utility to fetch and cache network requests.
 ---
-# Cache Assets
+# Fetch
+
 
 Fetch network resources and cache them so you don’t bombard your API (or other resources). Do this at configurable intervals—not with every build! Once per minute, or once per hour, once per day, or however often you like!
 
-* [`eleventy-cache-assets` on GitHub](https://github.com/11ty/eleventy-cache-assets)
+* [`eleventy-fetch` on GitHub](https://github.com/11ty/eleventy-fetch)
 
 With the added benefit that if one successful request completes, you can now work offline!
 
@@ -20,17 +21,21 @@ This plugin can save *any* kind of asset—JSON, HTML, images, videos, etc.
 * Control concurrency so we don’t make too many network requests at the same time.
 * Requires **Node 12+**
 
+{% callout "info", "md" %}This plugin was formerly known as [`@11ty/eleventy-cache-assets`](https://www.npmjs.com/package/@11ty/eleventy-cache-assets).{% endcallout %}
+
 ---
 
 [[toc]]
 
 ## Installation
 
-* [`eleventy-cache-assets` on npm](https://www.npmjs.com/package/@11ty/eleventy-cache-assets)
+* [`@11ty/eleventy-fetch` on npm](https://www.npmjs.com/package/@11ty/eleventy-fetch)
 
 ```
-npm install @11ty/eleventy-cache-assets
+npm install @11ty/eleventy-fetch
 ```
+
+Formerly known as [`@11ty/eleventy-cache-assets`](https://www.npmjs.com/package/@11ty/eleventy-cache-assets).
 
 {% callout "warn" %}<strong>Important Security and Privacy Notice</strong>
 <p>
@@ -48,7 +53,7 @@ npm install @11ty/eleventy-cache-assets
 Consider the following example, perhaps in an Eleventy [Global Data File](/docs/data-global/).
 
 ```js
-const Cache = require("@11ty/eleventy-cache-assets");
+const Cache = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
   let url = "https://api.github.com/repos/11ty/eleventy";
@@ -87,7 +92,7 @@ The `directory` option let’s you change where the cache is stored. It is stron
 {% callout "warn" %}Read the <a href="#installation">Important Security and Privacy Notice</a>.{% endcallout %}
 
 ```js
-const Cache = require("@11ty/eleventy-cache-assets");
+const Cache = require("@11ty/eleventy-fetch");
 
 Cache("https://…", {
 	directory: ".cache"
@@ -103,7 +108,7 @@ If you want to use this utility inside of a Netlify Function (or AWS Lambda), us
 * `removeUrlQueryParams: true` (`false` is default)
 
 ```js
-const Cache = require("@11ty/eleventy-cache-assets");
+const Cache = require("@11ty/eleventy-fetch");
 
 Cache("https://www.zachleat.com/img/avatar-2017-big.png?Get=rid&of=these", {
 	removeUrlQueryParams: true
@@ -117,7 +122,7 @@ Cache("https://www.zachleat.com/img/avatar-2017-big.png?Get=rid&of=these", {
 2. If a failure happens and a cache entry already exists (*even if it’s expired*), it will use the cached entry.
 
 ```js
-const Cache = require("@11ty/eleventy-cache-assets");
+const Cache = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
 	try {
@@ -160,7 +165,7 @@ package = "netlify-plugin-cache"
 This is what [`eleventy-img`](/docs/plugins/image/) uses internally.
 
 ```js
-const Cache = require("@11ty/eleventy-cache-assets");
+const Cache = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
   let url = "https://www.zachleat.com/img/avatar-2017-big.png";
@@ -179,7 +184,7 @@ module.exports = async function() {
 Also a good example of using `fetchOptions` to pass in a custom user agent. Full option list is available on the [`node-fetch` documentation](https://www.npmjs.com/package/node-fetch#options).
 
 ```js
-const Cache = require("@11ty/eleventy-cache-assets");
+const Cache = require("@11ty/eleventy-fetch");
 
 let url = "https://fonts.googleapis.com/css?family=Roboto+Mono:400&display=swap";
 let fontCss = await Cache(url, {
@@ -205,7 +210,7 @@ let fontCss = await Cache(url, {
 **You probably won’t need to do this.** If you’d like to store data of your own choosing in the cache (some expensive thing, but perhaps not related to a network request), you may do so! Consider the following [Global Data File](/docs/data-global/):
 
 ```js
-const {AssetCache} = require("@11ty/eleventy-cache-assets");
+const {AssetCache} = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
   // Pass in your unique custom cache key
@@ -230,7 +235,7 @@ module.exports = async function() {
 ### Change Global Concurrency
 
 ```js
-const Cache = require("@11ty/eleventy-cache-assets");
+const Cache = require("@11ty/eleventy-fetch");
 Cache.concurrency = 4; // default is 10
 ```
 

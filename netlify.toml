@@ -60,6 +60,12 @@ to = "/docs/community/"
 status = 301
 force = true
 
+[[redirects]]
+from = "/plugins/cache/"
+to = "/plugins/fetch/"
+status = 301
+force = true
+
 [[headers]]
 for = "/api/*"
 

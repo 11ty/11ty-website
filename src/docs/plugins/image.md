@@ -18,9 +18,9 @@ You maintain full control of the HTML. Use with `<picture>` or `<img>` or CSS `b
 * Retrieve metadata about your new images (see [sample return object](#sample-return-object)).
   * Use this to add `width` and `height` attributes on `<img>` elements for [proper aspect ratio mapping](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping).
 * Does not require or rely on file extensions (like `.png` or `.jpg`) in URLs or local files, which may be missing or inaccurate.
-* Save remote images locally using [`eleventy-cache-assets`](/docs/plugins/cache/).
+* Save remote images locally using [`eleventy-cache-assets`](/docs/plugins/fetch/).
   * Use local images in your HTML to prevent broken image URLs.
-  * Manage the [cache duration](/docs/plugins/cache/#change-the-cache-duration).
+  * Manage the [cache duration](/docs/plugins/fetch/#change-the-cache-duration).
 * Fast: de-duplicates image requests and use both an in-memory and disk cache.
 
 ---
@@ -56,7 +56,7 @@ const Image = require("@11ty/eleventy-img");
 
 Three things happen here:
 
-1. If the first argument is a full URL (not a local file path), we download [the remote image](https://unsplash.com/photos/uXchDIKs4qI) and cache it locally using the [Cache plugin](/docs/plugins/cache/). This cached original is then used for the cache duration to avoid a bunch of network requests.
+1. If the first argument is a full URL (not a local file path), we download [the remote image](https://unsplash.com/photos/uXchDIKs4qI) and cache it locally using the [Cache plugin](/docs/plugins/fetch/). This cached original is then used for the cache duration to avoid a bunch of network requests.
 2. From that cached full-size original, images are created for each format and width, in this case: `./img/6dfd7ac6-300.webp` and `./img/6dfd7ac6-300.jpeg`.
 3. The metadata object is populated and returned, describing those new images:
 
@@ -138,7 +138,7 @@ Where to write the new images to disk. Project-relative path to the output image
 
 ### Caching Remote Images Locally
 
-{% addedin "Image 0.3.0" %} For any full URL first argument to this plugin, the full-size remote image will be downloaded and cached locally. See all [relevant `eleventy-cache-assets` options](/docs/plugins/cache/#options).
+{% addedin "Image 0.3.0" %} For any full URL first argument to this plugin, the full-size remote image will be downloaded and cached locally. See all [relevant `eleventy-cache-assets` options](/docs/plugins/fetch/#options).
 
 ```js
 {
@@ -494,7 +494,7 @@ module.exports = function(eleventyConfig) {
 Images will be regenerated (and the cache ignored) if:
 
 * The source image file size changes (on local image files)
-* The [cache asset](/docs/plugins/cache/) duration expires (for remote images).
+* The [cache asset](/docs/plugins/fetch/) duration expires (for remote images).
 
 You can disable this behavior by using the `useCache` boolean option:
 
