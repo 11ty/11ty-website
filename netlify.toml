@@ -61,8 +61,8 @@ status = 301
 force = true
 
 [[redirects]]
-from = "/plugins/cache/"
-to = "/plugins/fetch/"
+from = "/docs/plugins/cache/"
+to = "/docs/plugins/fetch/"
 status = 301
 force = true
 
