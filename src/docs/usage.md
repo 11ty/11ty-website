@@ -98,7 +98,7 @@ npx @11ty/eleventy --to=ndjson
 npx @11ty/eleventy --to=fs
 ```
 
-Read more about [ndjson](http://ndjson.org/).
+Read more about [ndjson](https://github.com/ndjson/ndjson-spec).
 
 
 ### `--incremental` for partial [incremental builds](/docs/usage/incremental/)
