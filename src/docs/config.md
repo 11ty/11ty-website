@@ -424,6 +424,8 @@ _These used to be called Filters but were renamed to Transforms to avoid confusi
 
 Transforms can modify a template’s output. For example, use a transform to format/prettify an HTML file with proper whitespace.
 
+The provided transform function must return the original or transformed content.
+
 | Transforms |  |
 | --- | --- |
 | _Object Key_ | `filters` _(Removed in 1.0, use `addTransform` instead)_ |
@@ -434,17 +436,22 @@ Transforms can modify a template’s output. For example, use a transform to for
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addTransform("transform-name", function(content, outputPath) {});
+  eleventyConfig.addTransform("transform-name", function(content, outputPath) {
+    return content; // no change done.
+  });
 
   // Support for async transforms was added in 0.7.0
-  eleventyConfig.addTransform("async-transform-name", async function(content, outputPath) {});
+  eleventyConfig.addTransform("async-transform-name", async function(content, outputPath) {
+    return content; // no change done.
+  });
 
   // Eleventy 1.0+
   eleventyConfig.addTransform("transform-name", function(content) {
     console.log( this.inputPath );
     console.log( this.outputPath );
-
     // note that this.outputPath is `false` for serverless templates
+    
+    return content; // no change done.
   });
 };
 ```
