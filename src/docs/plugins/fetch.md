@@ -124,7 +124,7 @@ EleventyFetch("https://www.zachleat.com/img/avatar-2017-big.png?Get=rid&of=these
 
 Note that query params are removed before—and are relevant to how—the hash key is calculated.
 
-## What happens with a request fails?
+## What happens when a request fails?
 
 1. If this is the first ever request to this URL (no entry exists in your cache folder), it will fail. Use a `try`/`catch` if you’d like to handle this gracefully.
 2. If a failure happens and a cache entry already exists (*even if it’s expired*), it will use the cached entry.
