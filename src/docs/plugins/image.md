@@ -567,3 +567,19 @@ Image.concurrency = 4; // default is 10
 * `sharpPngOptions: {}` {% addedin "Image 0.4.2" %}
 * `sharpJpegOptions: {}` {% addedin "Image 0.4.2" %}
 * `sharpAvifOptions: {}` {% addedin "Image 0.6.0" %}
+
+### Output animated GIF or WebP with Sharp
+
+{% addedin "Image 1.1.0" %} To process and output animated `gif` or `webp` images, use the `animated` option for the Sharp constructor.
+
+```js
+const Image = require("@11ty/eleventy-img");
+const options = {
+  // Your other options ...
+  formats: ['webp', 'gif']
+  sharpOptions: {
+    animated: true
+  }
+}
+const metadata = await Image(src, options)
+```
