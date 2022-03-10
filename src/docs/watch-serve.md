@@ -93,7 +93,7 @@ module.exports = function(eleventyConfig) {
 Try out the [`devcert-cli`](https://github.com/davewasmer/devcert-cli) package to generate a localhost key and certificate for `https` and HTTP/2.
 {%- endcallout %}
 
-### Using Browsersync with Eleventy 2.0 {% addedin "2.0.0" %}
+### Swap back to Browsersync {% addedin "2.0.0" %}
 
 You _may_ swap back to Eleventy Dev Server using the `setServerOptions` configuration API and the [`@11ty/eleventy-server-browsersync` package](https://github.com/11ty/eleventy-server-browsersync).
 
