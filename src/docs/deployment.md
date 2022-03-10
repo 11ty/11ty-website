@@ -36,7 +36,7 @@ hosts:
     url: https://begin.com/
     screenshotSize: medium
 clis:
-  - name: Netlify Command Line
+  - name: Netlify CLI
     url: https://www.netlify.com/products/cli/
     screenshotSize: medium
   - name: Vercel CLI
