@@ -246,7 +246,7 @@ ${text.trim()}
 	eleventyConfig.addPassthroughCopy({
 		// "node_modules/@11ty/logo/img/logo.svg": "img/logo.svg",
 		"node_modules/@11ty/logo/img/logo-784x1093.png": "img/logo.png",
-		"node_modules/@11ty/logo/img/logo-300x418.png": "img/logo-github.png",
+		"node_modules/@11ty/logo/img/logo-200x200.png": "img/logo-github.png",
 		"node_modules/@11ty/logo/img/logo-96x96.png": "img/favicon.png"
 	});
 

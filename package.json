@@ -74,7 +74,7 @@
     "twitter-avatar-url": "^2.1.0"
   },
   "dependencies": {
-    "@11ty/logo": "2.0.4",
+    "@11ty/logo": "^2.0.5",
     "@zachleat/filter-container": "^2.0.3",
     "prismjs": "1.26.0",
     "speedlify-score": "^2.0.2"
