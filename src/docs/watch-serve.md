@@ -60,6 +60,10 @@ module.exports = function(eleventyConfig) {
     // Opt-out of the live reload snippet
     enabled: true,
 
+    // Opt-out of DOM diffing updates and use page reloads
+    // Added in v2.0.0-canary.3
+    domdiff: true,
+
     // The starting port number to attempt to use
     port: 8080,
 
@@ -77,6 +81,10 @@ module.exports = function(eleventyConfig) {
 
     // Change the name of the special folder name used for injected scripts
     folder: ".11ty",
+
+    // Show the server version number on the command line
+    // Added in v2.0.0-canary.3
+    showVersion: false,
   });
 };
 ```
