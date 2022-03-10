@@ -133,9 +133,8 @@ module.exports = function(eleventyConfig) {
 		eleventyConfig.setQuietMode(true);
 	}
 
-	eleventyConfig.setBrowserSyncConfig({
-		ui: false,
-		ghostMode: false
+	eleventyConfig.setServerOptions({
+		showVersion: true,
 	});
 
 	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
