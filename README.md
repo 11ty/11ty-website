@@ -1,7 +1,8 @@
-# 11ty.dev
+<p align="center"><img src="https://www.11ty.dev/img/logo-github.png" alt="eleventy Logo"></p>
+
+# 11ty.dev 🕚⚡️🎈🐀
 
 * https://www.11ty.dev/
-* https://www.11ty.dev/docs/
 
 The website and documentation for the [Eleventy static site generator](https://github.com/11ty/eleventy/).
 
