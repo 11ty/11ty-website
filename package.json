@@ -10,7 +10,7 @@
     "check-links": "npx check-html-links _site",
     "deploy": "./deploy.sh",
     "build": "npx @11ty/eleventy",
-    "start": "npx @11ty/eleventy --serve",
+    "start": "npx @11ty/eleventy --serve --incremental",
     "build-production": "node node-avatars-opencollective && NODE_ENV=production npx @11ty/eleventy",
     "get-new-supporters": "eleventy && node node-supporters",
     "get-new-avatars": "node node-avatars-opencollective && node node-avatars-twitter",
@@ -41,7 +41,7 @@
     ]
   },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.1-canary.3",
+    "@11ty/eleventy": "^2.0.0-canary.2",
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-img": "^1.1.0",
     "@11ty/eleventy-navigation": "^0.3.2",

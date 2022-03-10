@@ -76,10 +76,14 @@ eleventyComputed:
 		<link href="https://v1.screenshot.11ty.dev" rel="preconnect" crossorigin>
 		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
 		<style>{{ css | cssmin | safe }}</style>
+{% if config.env === "production" %}
 		<link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'">
 		<noscript>
 			<link rel="stylesheet" href="/css/async.css">
 		</noscript>
+{% else %}
+		<link rel="stylesheet" href="/css/async.css" media="all">
+{% endif %}
 {% if feedTitle and feedUrl %}
 		<link rel="alternate" href="{{ feedUrl }}" title="{{ feedTitle }}" type="application/atom+xml">
 {% endif %}

@@ -3,5 +3,6 @@ module.exports = {
 	prerelease: false,
 	eleventyMinimumNodeVersion: 12,
 	githubEdit: "https://github.com/11ty/11ty-website/blob/master/",
-	now: new Date()
+	now: new Date(),
+	env: process.env.NODE_ENV
 };
