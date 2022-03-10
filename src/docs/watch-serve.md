@@ -95,7 +95,7 @@ Try out the [`devcert-cli`](https://github.com/davewasmer/devcert-cli) package t
 
 ### Using Browsersync with Eleventy 2.0 {% addedin "2.0.0" %}
 
-You _may_ swap back to Eleventy Dev Server using the `setServerOptions` configuration API and the `@11ty/eleventy-server-browsersync` package.
+You _may_ swap back to Eleventy Dev Server using the `setServerOptions` configuration API and the [`@11ty/eleventy-server-browsersync` package](https://github.com/11ty/eleventy-server-browsersync).
 
 First, install it:
 
