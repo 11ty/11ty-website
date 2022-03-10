@@ -135,6 +135,7 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.setServerOptions({
 		showVersion: true,
+		domdiff: false,
 	});
 
 	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
