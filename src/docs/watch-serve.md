@@ -54,7 +54,7 @@ Eleventy 2.0 bundles a brand new default development server. You can configure t
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.setServerConfig({
+  eleventyConfig.setServerOptions({
     // Default values are shown:
 
     // Opt-out of the live reload snippet
