@@ -354,7 +354,6 @@ module.exports = function(eleventyConfig) {
 
 ### Return values
 
-<!-- * These `addCollection` callbacks should return an array of [template objects](#collection-item-data-structure) (in Eleventy 0.5.2 and prior). -->
 * {% addedin "0.5.3" %} `addCollection` callbacks can return any arbitrary object type and it’ll be available as data in the template. Arrays, strings, objects—have fun with it.
 
 ### Collection API Methods
