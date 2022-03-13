@@ -78,14 +78,14 @@ module.exports = function(eleventyConfig) {
   // Handlebars Shortcode
   eleventyConfig.addHandlebarsShortcode("user", function(firstName, lastName) { … });
 
-  // JavaScript Template Function (New in 0.7.0)
+  // JavaScript Template Function
   eleventyConfig.addJavaScriptFunction("user", function(firstName, lastName) { … });
 
   // Universal Shortcodes are added to:
   // * Liquid
   // * Nunjucks
   // * Handlebars
-  // * JavaScript (New in 0.7.0)
+  // * JavaScript
   eleventyConfig.addShortcode("user", function(firstName, lastName) { … });
 };
 ```
@@ -159,14 +159,14 @@ module.exports = function(eleventyConfig) {
   // Handlebars Shortcode
   eleventyConfig.addPairedHandlebarsShortcode("user", function(content, firstName, lastName) { … });
 
-  // JavaScript Template Function (New in 0.7.0)
+  // JavaScript Template Function
   eleventyConfig.addJavaScriptFunction("user", function(content, firstName, lastName) { … });
 
   // Universal Shortcodes are added to:
   // * Liquid
   // * Nunjucks
   // * Handlebars
-  // * JavaScript (New in 0.7.0)
+  // * JavaScript
   eleventyConfig.addPairedShortcode("user", function(content, firstName, lastName) { … });
 };
 ```
@@ -180,7 +180,7 @@ Read more about using paired shortcodes on the individual Template Language docu
 
 ## Universal Shortcodes
 
-Universal shortcodes are added in a single place and subsequently available to multiple template engines, simultaneously. This is currently supported in JavaScript (New in 0.7.0), Nunjucks, Liquid, and Handlebars template types.
+Universal shortcodes are added in a single place and subsequently available to multiple template engines, simultaneously. This is currently supported in JavaScript, Nunjucks, Liquid, and Handlebars template types.
 
 {% codetitle ".eleventy.js" %}
 
@@ -190,7 +190,7 @@ module.exports = function(eleventyConfig) {
   // * Liquid
   // * Nunjucks
   // * Handlebars
-  // * JavaScript (New in 0.7.0)
+  // * JavaScript
 
   // Single Universal Shortcode
   eleventyConfig.addShortcode("myShortcode", function(firstName, lastName) { … });

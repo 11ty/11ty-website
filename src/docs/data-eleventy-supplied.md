@@ -25,10 +25,10 @@ let page = {
   // Note: This value will be `false` if `permalink` is set to `false`.
   url: "/current/page/myFile/",
 
-  // For permalinks: inputPath filename minus template file extension (New in v0.3.4)
+  // For permalinks: inputPath filename minus template file extension
   fileSlug: "myFile",
 
-  // For permalinks: inputPath minus template file extension (New in v0.9.0)
+  // For permalinks: inputPath minus template file extension
   filePathStem: "/current/page/myFile",
 
   // JS Date Object for current page (used to sort collections)

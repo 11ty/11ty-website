@@ -70,7 +70,7 @@ npx @11ty/eleventy --input=.
 # A single file
 npx @11ty/eleventy --input=README.md
 
-# A glob of files (New in v0.6.0)
+# A glob of files
 npx @11ty/eleventy --input=*.md
 
 # A subdirectory
@@ -450,7 +450,7 @@ module.exports = function(eleventyConfig) {
     console.log( this.inputPath );
     console.log( this.outputPath );
     // note that this.outputPath is `false` for serverless templates
-    
+
     return content; // no change done.
   });
 };
