@@ -212,7 +212,7 @@ Note in the above example that we output the `post.data.title` value? Similarly,
 
 ```js
 { inputPath: './test1.md',
-  fileSlug: 'test1', // fileSlug was added in 0.5.3
+  fileSlug: 'test1',
   outputPath: './_site/test1/index.html',
   url: '/test1/',
   date: new Date(),
@@ -354,8 +354,8 @@ module.exports = function(eleventyConfig) {
 
 ### Return values
 
-* These `addCollection` callbacks should return an array of [template objects](#collection-item-data-structure) (in Eleventy 0.5.2 and prior).
-* {% addedin "0.5.3" %} `addCollection` callbacks can now return any arbitrary object type and it’ll be available as data in the template. Arrays, strings, objects—have fun with it.
+<!-- * These `addCollection` callbacks should return an array of [template objects](#collection-item-data-structure) (in Eleventy 0.5.2 and prior). -->
+* {% addedin "0.5.3" %} `addCollection` callbacks can return any arbitrary object type and it’ll be available as data in the template. Arrays, strings, objects—have fun with it.
 
 ### Collection API Methods
 

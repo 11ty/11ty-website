@@ -53,7 +53,7 @@ Read more about [Handlebars Helpers syntax](https://handlebarsjs.com/#helpers)
 module.exports = function(eleventyConfig) {
   // Handlebars Helper
   eleventyConfig.addHandlebarsHelper("myHandlebarsHelper", function(value) { … });
-  
+
   // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
   // Read the note about Universal Filters below: Use a shortcode instead!
   eleventyConfig.addFilter("myFilter", function(value) { … });
@@ -77,10 +77,10 @@ These are not supported by Handlebars. Read more at [this Handlebars issue](http
 
 ### A note about Universal Filters
 
-Universal filters have always been funneled into Handlebars helpers. In v0.5.0, Shortcode support was added to Eleventy. Shortcodes (Paired/Single) match better with the semantic footprint of Handlebars Helpers.
+Universal filters have always been funneled into Handlebars helpers. However, shortcodes (Paired/Single) match better with the semantic footprint of Handlebars Helpers.
 
 ```js
-module.exports = function(eleventyConfig) {  
+module.exports = function(eleventyConfig) {
   // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
   eleventyConfig.addFilter("myFilter", function(value) { … });
 };
@@ -98,7 +98,7 @@ Shortcodes are basically reusable bits of content. You can add Handlebars specif
 module.exports = function(eleventyConfig) {
   // Handlebars Shortcode
   eleventyConfig.addHandlebarsShortcode("user", function(name, twitterUsername) { … });
-  
+
   // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
   eleventyConfig.addShortcode("user", function(name, twitterUsername) {
     return `<div class="user">
@@ -134,7 +134,7 @@ module.exports = function(eleventyConfig) {
 module.exports = function(eleventyConfig) {
   // Handlebars Shortcode
   eleventyConfig.addPairedHandlebarsShortcode("user", function(bioContent, name, twitterUsername) { … });
-  
+
   // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
   eleventyConfig.addPairedShortcode("user", function(bioContent, name, twitterUsername) {
     return `<div class="user">

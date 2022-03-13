@@ -324,9 +324,9 @@ In order to maximize user-friendliness to beginners, Eleventy will show each fil
 | _Valid Options_ | `true` or `false` | |
 | _Command Line Override_ | `--quiet` |
 
-{% addedin "0.10.0" %} This configuration API method (`setQuietMode`) was added in v0.10.0 but note that the `--quiet` command line override existed long before that.
+<!-- {% addedin "0.10.0" %} This configuration API method (`setQuietMode`) was added in v0.10.0 but note that the `--quiet` command line override existed long before that. -->
 
-{% addedin "0.10.0" %} Added `--quiet=false` to override `setQuietMode(true)` on the command line (for deploys in production). `--quiet=true` was also added (same as `--quiet`).
+<!-- {% addedin "0.10.0" %} Added `--quiet=false` to override `setQuietMode(true)` on the command line (for deploys in production). `--quiet=true` was also added (same as `--quiet`). -->
 
 #### Example
 
@@ -440,7 +440,6 @@ module.exports = function(eleventyConfig) {
     return content; // no change done.
   });
 
-  // Support for async transforms was added in 0.7.0
   eleventyConfig.addTransform("async-transform-name", async function(content, outputPath) {
     return content; // no change done.
   });

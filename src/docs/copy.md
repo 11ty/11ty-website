@@ -30,7 +30,7 @@ module.exports = function(eleventyConfig) {
   // Keeps the same directory structure.
   eleventyConfig.addPassthroughCopy("css/fonts");
 
-  // Copy any .jpg file to `_site`, via Glob pattern (in 0.9.0+)
+  // Copy any .jpg file to `_site`, via Glob pattern
   // Keeps the same directory structure.
   eleventyConfig.addPassthroughCopy("**/*.jpg");
 };
