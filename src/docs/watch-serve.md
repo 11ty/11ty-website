@@ -97,6 +97,8 @@ module.exports = function(eleventyConfig) {
 Try out the [`devcert-cli`](https://github.com/davewasmer/devcert-cli) package to generate a localhost key and certificate for `https` and HTTP/2.
 {%- endcallout %}
 
+{% addedin "2.0.0-canary.5" %}The `404.html` convention supported by Netlify, GitHub Pages, Vercel, and others is now supported and we use the content from a `404.html` in your output folder when serving the error page for missing content.
+
 ### Swap back to Browsersync {% addedin "2.0.0" %}
 
 You _may_ swap back to Eleventy Dev Server using the `setServerOptions` configuration API and the [`@11ty/eleventy-server-browsersync` package](https://github.com/11ty/eleventy-server-browsersync).
