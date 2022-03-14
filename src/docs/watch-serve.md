@@ -97,11 +97,12 @@ module.exports = function(eleventyConfig) {
 Try out the [`devcert-cli`](https://github.com/davewasmer/devcert-cli) package to generate a localhost key and certificate for `https` and HTTP/2.
 {%- endcallout %}
 
-{% addedin "2.0.0-canary.5" %}The `404.html` convention supported by Netlify, GitHub Pages, Vercel, and others is now supported and we use the content from a `404.html` in your output folder when serving the error page for missing content.
+* {% addedin "2.0.0-canary.4" %}For a full list of `encoding` values supported by Node (also used in the `Content-Type` HTTP Header), check out [Node’s Buffer documentation](https://nodejs.org/api/buffer.html#buffers-and-character-encodings).
+* {% addedin "2.0.0-canary.5" %}The `404.html` convention supported by Netlify, GitHub Pages, Vercel, and others is now supported and we use the content from a `404.html` in your output folder when serving the error page for missing content.
 
 ### Swap back to Browsersync {% addedin "2.0.0" %}
 
-You _may_ swap back to Eleventy Dev Server using the `setServerOptions` configuration API and the [`@11ty/eleventy-server-browsersync` package](https://github.com/11ty/eleventy-server-browsersync).
+You can swap back to Eleventy Dev Server using the `setServerOptions` configuration API and the [`@11ty/eleventy-server-browsersync` package](https://github.com/11ty/eleventy-server-browsersync).
 
 First, install it:
 
@@ -124,36 +125,18 @@ module.exports = function(eleventyConfig) {
     notify: false,
     ui: false,
     ghostMode: false,
+
+    // Opt-out of the Browsersync snippet
+    // snippet: false,
   })
 };
 ```
 
 View the [full list of Browsersync options](https://browsersync.io/docs/options).
 
-## Browsersync
+#### `setBrowserSyncConfig`
 
-### Override Browsersync Server Options {% addedin "0.7.0" %}
+`eleventyConfig.setBrowserSyncConfig` was the previous Configuration API method used in versions of Eleventy prior to v2. It was changed to be a no-op in Eleventy v2 (it has no functional purpose). Check out the previous version docs to learn how to:
 
-Useful if you want to change or override the default Browsersync configuration. Find the Eleventy defaults in [`EleventyServe.js`](https://github.com/11ty/eleventy/blob/master/src/EleventyServe.js). Take special note that Eleventy does not use Browsersync’s watch options and trigger reloads manually after our own internal watch methods are complete. See full options list on the [Browsersync documentation](https://browsersync.io/docs/options).
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setBrowserSyncConfig({
-    notify: true
-  });
-};
-```
-
-### Opt-out of the BrowserSync JavaScript snippet {% addedin "1.0.0" %}
-
-New in [`browser-sync@2.27.1`](https://github.com/BrowserSync/browser-sync/issues/1882#issuecomment-867767056) {% addedin "1.0.0" %}. Opt-out of the JavaScript snippet normally injected by BrowserSync. This disables BrowserSync live-reloading.
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setBrowserSyncConfig({
-    snippet: false,
-  });
-};
-```
+* [Override Browsersync server options](https://v1-0-0.11ty.dev/docs/watch-serve/#override-browsersync-server-options)
+* [Opt-out of the Browsersync JavaScript snippet](https://v1-0-0.11ty.dev/docs/watch-serve/#opt-out-of-the-browsersync-javascript-snippet)
