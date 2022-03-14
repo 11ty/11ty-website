@@ -61,7 +61,7 @@ module.exports = function(eleventyConfig) {
     enabled: true,
 
     // Opt-out of DOM diffing updates and use page reloads
-    // Added in v2.0.0-canary.3
+    // Added in Eleventy v2.0.0-canary.3
     domdiff: true,
 
     // The starting port number to attempt to use
@@ -83,8 +83,12 @@ module.exports = function(eleventyConfig) {
     folder: ".11ty",
 
     // Show the server version number on the command line
-    // Added in v2.0.0-canary.3
+    // Added in Eleventy v2.0.0-canary.3
     showVersion: false,
+
+    // Change the default file encoding for reading/serving files
+    // Added in Eleventy v2.0.0-canary.4
+    encoding: "utf-8",
   });
 };
 ```
