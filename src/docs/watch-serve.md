@@ -48,13 +48,13 @@ module.exports = function(eleventyConfig) {
 
 ## Eleventy Dev Server {% addedin "2.0.0" %}
 
-Eleventy 2.0 bundles a brand new default development server. You can configure this with the new `setServerConfig` Configuration API method.
+Eleventy 2.0 bundles a brand new default development server. You can configure this with the new `setServerOptions` Configuration API method.
 
 {% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.setServerConfig({
+  eleventyConfig.setServerOptions({
     // Default values are shown:
 
     // Opt-out of the live reload snippet
