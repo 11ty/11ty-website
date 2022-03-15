@@ -61,7 +61,6 @@ module.exports = function(eleventyConfig) {
     enabled: true,
 
     // Opt-out of DOM diffing updates and use page reloads
-    // Added in Eleventy v2.0.0-canary.3
     domdiff: true,
 
     // The starting port number to attempt to use
@@ -83,22 +82,30 @@ module.exports = function(eleventyConfig) {
     folder: ".11ty",
 
     // Show the server version number on the command line
-    // Added in Eleventy v2.0.0-canary.3
     showVersion: false,
 
     // Change the default file encoding for reading/serving files
-    // Added in Eleventy v2.0.0-canary.4
     encoding: "utf-8",
   });
 };
 ```
 
+<details>
+<summary>Want to know if your Canary version includes one of these properties?</summary>
+
+* `domdiff` was added in `v2.0.0-canary.3`
+* `showVersion` was added in `v2.0.0-canary.3`
+* `encoding` was added in `v2.0.0-canary.4`
+* `404.html` support added in `v2.0.0-canary.4`
+
+</details>
+
+* For a full list of `encoding` values supported by Node (also used in the `Content-Type` HTTP Header), check out [Node’s Buffer documentation](https://nodejs.org/api/buffer.html#buffers-and-character-encodings).
+* The `404.html` convention supported by Netlify, GitHub Pages, Vercel, and others is now supported and we use the content from a `404.html` in your output folder when serving the error page for missing content.
+
 {% callout "info", "md" -%}
 Try out the [`devcert-cli`](https://github.com/davewasmer/devcert-cli) package to generate a localhost key and certificate for `https` and HTTP/2.
 {%- endcallout %}
-
-* {% addedin "2.0.0-canary.4" %}For a full list of `encoding` values supported by Node (also used in the `Content-Type` HTTP Header), check out [Node’s Buffer documentation](https://nodejs.org/api/buffer.html#buffers-and-character-encodings).
-* {% addedin "2.0.0-canary.5" %}The `404.html` convention supported by Netlify, GitHub Pages, Vercel, and others is now supported and we use the content from a `404.html` in your output folder when serving the error page for missing content.
 
 ### Swap back to Browsersync {% addedin "2.0.0" %}
 
