@@ -1,0 +1,6 @@
+{
+    "npm": "eleventy-plugin-postcss",
+    "author": "pewstiepoll",
+    "description": "Easy to use modern Eleventy plugin for PostCSS prepreprocessor"
+  }
+  
