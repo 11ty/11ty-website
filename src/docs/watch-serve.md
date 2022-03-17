@@ -101,7 +101,7 @@ module.exports = function(eleventyConfig) {
 </details>
 
 * For a full list of `encoding` values supported by Node (also used in the `Content-Type` HTTP Header), check out [Node’s Buffer documentation](https://nodejs.org/api/buffer.html#buffers-and-character-encodings).
-* The `404.html` convention supported by Netlify, GitHub Pages, Vercel, and others is now supported and we use the content from a `404.html` in your output folder when serving the error page for missing content.
+* Using a root `404.html` file (a popular convention supported by Netlify, GitHub Pages, Vercel, and others) supported! We use the content from a `404.html` in your output folder when serving the error page for missing content.
 
 {% callout "info", "md" -%}
 Try out the [`devcert-cli`](https://github.com/davewasmer/devcert-cli) package to generate a localhost key and certificate for `https` and HTTP/2.
