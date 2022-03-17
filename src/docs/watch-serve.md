@@ -143,7 +143,41 @@ View the [full list of Browsersync options](https://browsersync.io/docs/options)
 
 #### `setBrowserSyncConfig`
 
-`eleventyConfig.setBrowserSyncConfig` was the previous Configuration API method used in versions of Eleventy prior to v2. It was changed to be a no-op in Eleventy v2 (it has no functional purpose). Check out the previous version docs to learn how to:
+`eleventyConfig.setBrowserSyncConfig` was the previous Configuration API method used in versions of Eleventy prior to v2. It was changed to be a no-op in Eleventy v2 (it has no functional purpose).
+
+<!--Check out the previous version docs to learn how to:
 
 * [Override Browsersync server options](https://v1-0-0.11ty.dev/docs/watch-serve/#override-browsersync-server-options)
-* [Opt-out of the Browsersync JavaScript snippet](https://v1-0-0.11ty.dev/docs/watch-serve/#opt-out-of-the-browsersync-javascript-snippet)
+* [Opt-out of the Browsersync JavaScript snippet](https://v1-0-0.11ty.dev/docs/watch-serve/#opt-out-of-the-browsersync-javascript-snippet)-->
+
+## Browsersync
+
+{% callout "info", "md" -%}
+This section of documentation only applies to Eleventy 1.x and 0.x and will be removed when Eleventy 2.0 is stable. If you want to use Browsersync with Eleventy 2.0, learn how to swap [back to Browsersync](#swap-back-to-browsersync).
+{%- endcallout %}
+
+### Override Browsersync Server Options {% addedin "0.7.0" %}
+
+Useful if you want to change or override the default Browsersync configuration. Find the Eleventy defaults in [`EleventyServe.js`](https://github.com/11ty/eleventy/blob/master/src/EleventyServe.js). Take special note that Eleventy does not use Browsersync’s watch options and trigger reloads manually after our own internal watch methods are complete. See full options list on the [Browsersync documentation](https://browsersync.io/docs/options).
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setBrowserSyncConfig({
+    notify: true
+  });
+};
+```
+
+### Opt-out of the BrowserSync JavaScript snippet {% addedin "1.0.0" %}
+
+New in [`browser-sync@2.27.1`](https://github.com/BrowserSync/browser-sync/issues/1882#issuecomment-867767056) {% addedin "1.0.0" %}. Opt-out of the JavaScript snippet normally injected by BrowserSync. This disables BrowserSync live-reloading.
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setBrowserSyncConfig({
+    snippet: false,
+  });
+};
+```
