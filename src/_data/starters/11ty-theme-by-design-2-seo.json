@@ -4,7 +4,4 @@
 	"description": "11ty blog theme with gid CSS, sub categories and bread crumbs.",
 	"author": "Design 2 SEO",
 	"demo": "https://11ty-theme-by-design-2-seo.netlify.app/",
-	"official": true,
-	"order": 999,
-	"npmStartScript": "start"
 }
