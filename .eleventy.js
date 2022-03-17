@@ -245,10 +245,11 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addPassthroughCopy({
+		"node_modules/@11ty/logo/assets/logo-bg.svg": "img/logo-github.svg",
+		"node_modules/@11ty/logo/assets/open-graph.jpg": "img/open-graph.jpg",
 		// "node_modules/@11ty/logo/img/logo.svg": "img/logo.svg",
 		"node_modules/@11ty/logo/img/logo-784x1093.png": "img/logo.png",
 		"node_modules/@11ty/logo/img/logo-200x200.png": "img/logo-github.png",
-		"node_modules/@11ty/logo/img/logo-400x400.png": "img/logo-github@2x.png",
 		"node_modules/@11ty/logo/img/logo-96x96.png": "img/favicon.png"
 	});
 
