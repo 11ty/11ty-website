@@ -45,6 +45,38 @@ module.exports = function (eleventyConfig) {
 };
 ```
 
+## Event arguments {% addedin "2.0.0" %}
+
+Eleventy now provides an object with metadata on the build as an argument to the `eleventy.before` and `eleventy.after` event callbacks.
+
+```js
+module.exports = function (eleventyConfig) {
+  eleventyConfig.on('eleventy.before', async ({ dir, runMode, outputMode }) => {
+    // Read more below
+  });
+
+  eleventyConfig.on('eleventy.after', async ({ dir, results, runMode, outputMode }) => {
+    // Read more below
+  });
+};
+```
+* `dir`: an object with current project directories, set in [your configuration file](https://www.11ty.dev/docs/config/#input-directory) (or populated with Eleventy defaults).
+  * `dir.input` (default `"."`)
+  * `dir.output` (default `"_site"`)
+  * `dir.includes` (default `"_includes`)
+  * `dir.data` (default `"_data"`)
+  * `dir.layouts` (no default value)
+* `outputMode`: a string representing the value of [`--to` on the command line](/docs/usage/#to-can-output-json)
+  * `fs` (default)
+  * `json`
+  * `ndjson`
+* `runMode`: a string representing [`--serve` or `--watch` usage on the command line](/docs/usage/#re-run-eleventy-when-you-save). One of:
+  * `build` (default)
+  * `watch`
+  * `serve`
+* `results`: _only available on `eleventy.after`_. An array with the processed Eleventy output (similar to `--to=json` output)
+  * Individual entries will have: `{ inputPath, outputPath, url, content }`
+
 ## `eleventy.beforeWatch` {% addedin "1.0.0" %}
 
 * Previously known as the now deprecated (but not removed) `beforeWatch` {% addedin "0.11.0" %} event.
