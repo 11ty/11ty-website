@@ -63,7 +63,7 @@ module.exports = function (eleventyConfig) {
 * `dir`: an object with current project directories, set in [your configuration file](https://www.11ty.dev/docs/config/#input-directory) (or populated with Eleventy defaults).
   * `dir.input` (default `"."`)
   * `dir.output` (default `"_site"`)
-  * `dir.includes` (default `"_includes`)
+  * `dir.includes` (default `"_includes"`)
   * `dir.data` (default `"_data"`)
   * `dir.layouts` (no default value)
 * `outputMode`: a string representing the value of [`--to` on the command line](/docs/usage/#to-can-output-json)
