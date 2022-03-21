@@ -1,6 +1,9 @@
 {
 	"url": "https://cafeiso.com/",
 	"name": "Café Iso",
-	"authoredBy": ["greatislander"],
-	"description": "Café/dinette du quartier, Montréal, Québec."
+	"authoredBy": [
+		"greatislander"
+	],
+	"description": "Café/dinette du quartier, Montréal, Québec.",
+	"github": "greatislander"
 }

@@ -3,6 +3,9 @@
 	"name": "Oil Sludge",
 	"description": "Oil Sludge is a toxic hellstew that coats and destroys your engine.",
 	"twitter": "carcomplaints",
-	"authoredBy": ["scottmccracken"],
-	"disabled": true
+	"authoredBy": [
+		"scottmccracken"
+	],
+	"disabled": true,
+	"github": "smccracken"
 }

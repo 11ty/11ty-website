@@ -1,7 +1,10 @@
 {
-  "name": "Nordhealth",
-  "url": "https://nordhealth.com/",
-  "description": "Nordhealth is on a mission to redefine digital healthcare.",
-  "twitter": "nordhealthhq",
-  "authoredBy": ["viljamis"]
+	"name": "Nordhealth",
+	"url": "https://nordhealth.com/",
+	"description": "Nordhealth is on a mission to redefine digital healthcare.",
+	"twitter": "nordhealthhq",
+	"authoredBy": [
+		"viljamis"
+	],
+	"github": "viljamis"
 }

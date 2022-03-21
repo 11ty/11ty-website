@@ -2,7 +2,8 @@
 	"url": "https://hmiller.dev",
 	"name": "Hunter Miller’s Blog",
 	"description": "A web developer blog all about performance, UX, and my philosophy for building software on the web.",
-  "twitter": "hmillerdev",
- 	"authoredBy": [],
-	"source_url": "https://github.com/arthyn/hmillerdev"
+	"twitter": "hmillerdev",
+	"authoredBy": [],
+	"source_url": "https://github.com/arthyn/hmillerdev",
+	"github": "arthyn"
 }

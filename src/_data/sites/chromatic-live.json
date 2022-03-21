@@ -1,10 +1,11 @@
 {
 	"url": "https://chromatic.live/",
 	"name": "Chromatic Live",
-  "description": "Live chats about web technology from inside Chromatic, a digital web agency.",
-  "twitter": "ChromaticHQ",
+	"description": "Live chats about web technology from inside Chromatic, a digital web agency.",
+	"twitter": "ChromaticHQ",
 	"authoredBy": [
-    "markdorison",
-    "agarzola"
-  ]
+		"markdorison",
+		"agarzola"
+	],
+	"github": "markdorison"
 }

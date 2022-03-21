@@ -1,7 +1,10 @@
 {
-    "url": "https://solucionet.com/",
-    "name": "Solucionet",
-    "description": "Solucionet is a web design studio in Lanzarote(Canary Island)",
-    "twitter": "solucionet",
-    "authoredBy": ["jameos"]
+	"url": "https://solucionet.com/",
+	"name": "Solucionet",
+	"description": "Solucionet is a web design studio in Lanzarote(Canary Island)",
+	"twitter": "solucionet",
+	"authoredBy": [
+		"jameos"
+	],
+	"github": "jameos"
 }

@@ -3,7 +3,8 @@
 	"url": "https://www.unabridgedsoftware.com/",
 	"description": "Unabridged Software specializes in creating robust products that remain easy to change over time.",
 	"twitter": "unabridgedsoft",
-  "business": {
+	"business": {
 		"cta": "https://www.unabridgedsoftware.com/contact/"
-	}
+	},
+	"github": "zachleat"
 }

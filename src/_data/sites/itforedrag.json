@@ -1,7 +1,8 @@
 {
-    "url": "https://www.itforedrag.dk/",
-    "name": "Talks about DevOps by Allan Ebdrup (Danish)",
-    "description": "Book a talk about DevOps, Continuous Delivery and modern development processes, given by Allan Ebdrup",
-    "twitter": "allanebdrup",
-    "source_url": "https://github.com/ebdrup/foredrag"
+	"url": "https://www.itforedrag.dk/",
+	"name": "Talks about DevOps by Allan Ebdrup (Danish)",
+	"description": "Book a talk about DevOps, Continuous Delivery and modern development processes, given by Allan Ebdrup",
+	"twitter": "allanebdrup",
+	"source_url": "https://github.com/ebdrup/foredrag",
+	"github": "ebdrup"
 }

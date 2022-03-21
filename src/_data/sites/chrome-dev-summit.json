@@ -4,7 +4,12 @@
 	"description": "Chrome Dev Summit is an annual conference where developers can learn about the latest tools and updates coming to the Google Chrome browser. (Built with Eleventy in 2019 and 2020!)",
 	"source_url": "https://github.com/GoogleChrome/devsummit",
 	"twitter": "ChromiumDev",
-	"authoredBy": ["jaffathecake", "dassurma", "argyleink"],
+	"authoredBy": [
+		"jaffathecake",
+		"dassurma",
+		"argyleink"
+	],
 	"featured": true,
-	"superfeatured": true
+	"superfeatured": true,
+	"github": "zachleat"
 }

@@ -4,5 +4,8 @@
 	"description": "UK meetup group for Christians working in the world of tech.",
 	"source_url": "https://github.com/kingdom-code/kingdom-code",
 	"twitter": "kcodeuk",
-	"authoredBy": ["jamesdoc"]
+	"authoredBy": [
+		"jamesdoc"
+	],
+	"github": "jamesdoc"
 }

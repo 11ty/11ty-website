@@ -3,6 +3,19 @@
 	"name": "The National Leadership Centre website",
 	"description": "A site providing information on the UK government National Leadership Centre",
 	"twitter": "@NLC_HQ",
-	"authoredBy": ["@BillyStreet","@weareconvivio","@SamMedhurst","@lyndsay_lucero","@eldevri","@publishingnuria","@aliceyerichmond","@stamanfar","@peter_trussell","@morettmorett","@lewisnyman"],
-	"source_url": "https://github.com/cabinetoffice/national-leadership-centre-website"
+	"authoredBy": [
+		"@BillyStreet",
+		"@weareconvivio",
+		"@SamMedhurst",
+		"@lyndsay_lucero",
+		"@eldevri",
+		"@publishingnuria",
+		"@aliceyerichmond",
+		"@stamanfar",
+		"@peter_trussell",
+		"@morettmorett",
+		"@lewisnyman"
+	],
+	"source_url": "https://github.com/cabinetoffice/national-leadership-centre-website",
+	"github": "lewisnyman"
 }

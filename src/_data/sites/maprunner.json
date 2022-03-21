@@ -3,5 +3,6 @@
 	"name": "Maprunner",
 	"description": "Orienteering courses and resources",
 	"source_url": "https://github.com/Maprunner/maprunner",
-  "twitter": "MaprunnerGB"
+	"twitter": "MaprunnerGB",
+	"github": "Maprunner"
 }

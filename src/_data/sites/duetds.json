@@ -3,7 +3,10 @@
 	"url": "https://www.duetds.com/",
 	"description": "Duet provides a set of organized tools, patterns and practices that work as the foundation for LocalTapiola and Turva digital products and experiences.",
 	"twitter": "lahi_tapiola",
-	"authoredBy": ["viljamis"],
+	"authoredBy": [
+		"viljamis"
+	],
 	"featured": true,
-	"superfeatured": true
+	"superfeatured": true,
+	"github": "zachleat"
 }

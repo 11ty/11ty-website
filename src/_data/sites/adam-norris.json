@@ -1,6 +1,7 @@
 {
-  "url": "https://acnorris.uk",
-  "name": "Adam Norris - Front-End Developer",
-  "description": "I build web interfaces with a focus on accessibility and inclusive design.",
-  "twitter": "acnorrisuk"
+	"url": "https://acnorris.uk",
+	"name": "Adam Norris - Front-End Developer",
+	"description": "I build web interfaces with a focus on accessibility and inclusive design.",
+	"twitter": "acnorrisuk",
+	"github": "acnorrisuk"
 }

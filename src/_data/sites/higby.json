@@ -3,5 +3,6 @@
 	"name": "higby.io",
 	"description": "A collection of Branden Higby's ramblings.",
 	"twitter": "higby_",
-	"source_url": "https://github.com/higby/higby.io"
+	"source_url": "https://github.com/higby/higby.io",
+	"github": "higby"
 }

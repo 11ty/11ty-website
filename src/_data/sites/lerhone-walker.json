@@ -1,7 +1,10 @@
 {
-    "url": "https://lerhonewalker.com",
-    "name": "Le'Rhone Walker",
-    "description": "Personal website of Le'Rhone Walker. Digital Marketer and Creative Technologist.",
-    "twitter": "lerhonewalker",
-    "authoredBy": ["lerhonewalker"]
+	"url": "https://lerhonewalker.com",
+	"name": "Le'Rhone Walker",
+	"description": "Personal website of Le'Rhone Walker. Digital Marketer and Creative Technologist.",
+	"twitter": "lerhonewalker",
+	"authoredBy": [
+		"lerhonewalker"
+	],
+	"github": "lerhone"
 }

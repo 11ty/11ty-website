@@ -3,5 +3,8 @@
 	"name": "Free Transit Edmonton",
 	"description": "Working for a more connected, resilient, and just Edmonton.",
 	"twitter": "freetransityeg",
-	"authoredBy": ["greatislander"]
+	"authoredBy": [
+		"greatislander"
+	],
+	"github": "greatislander"
 }

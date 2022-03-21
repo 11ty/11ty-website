@@ -3,5 +3,8 @@
 	"name": "Prestanda",
 	"description": "Data, Development and Performance agency proudly built with eleventy.",
 	"twitter": "prestanda",
-	"authoredBy": ["jasondilworth56"]
+	"authoredBy": [
+		"jasondilworth56"
+	],
+	"github": "jasondilworth56"
 }

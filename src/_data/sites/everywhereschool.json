@@ -3,6 +3,10 @@
 	"name": "Everywhere School",
 	"description": "Online live education for kids during the Covid-19 pandemic.",
 	"twitter": "everywhereschl",
-	"authoredBy": ["nealemvf", "greatislander"],
-	"source_url": "https://github.com/everywhereschool/everywhereschool"
+	"authoredBy": [
+		"nealemvf",
+		"greatislander"
+	],
+	"source_url": "https://github.com/everywhereschool/everywhereschool",
+	"github": "greatislander"
 }

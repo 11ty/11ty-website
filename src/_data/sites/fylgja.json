@@ -3,6 +3,10 @@
 	"name": "Fylgja",
 	"description": "A Modular and customizable front-end framework for building UI components for the web.",
 	"twitter": "FylgjaDev",
-	"authoredBy": ["grimlink", "allrude"],
-	"source_url": "https://github.com/fylgja/site"
+	"authoredBy": [
+		"grimlink",
+		"allrude"
+	],
+	"source_url": "https://github.com/fylgja/site",
+	"github": "GrimLink"
 }

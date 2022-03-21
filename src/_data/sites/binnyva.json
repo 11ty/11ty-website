@@ -1,7 +1,8 @@
 {
-    "url": "https://binnyva.com/",
-    "name": "Binny V A",
-    "description": "Personal website of Binny V A - Philosopher programmer who specializes in web development and stoicism.",
-    "twitter": "binnyva",
-    "source_url": "https://github.com/binnyva/Site_binnyva.com"
+	"url": "https://binnyva.com/",
+	"name": "Binny V A",
+	"description": "Personal website of Binny V A - Philosopher programmer who specializes in web development and stoicism.",
+	"twitter": "binnyva",
+	"source_url": "https://github.com/binnyva/Site_binnyva.com",
+	"github": "binnyva"
 }

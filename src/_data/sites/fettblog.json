@@ -3,5 +3,6 @@
 	"name": "fettblog.eu - A web blog",
 	"description": "TypeScript, JavaScript, all things web development",
 	"twitter": "ddprrt",
-	"source_url": "https://github.com/ddprrt/ddprrt.github.io"
+	"source_url": "https://github.com/ddprrt/ddprrt.github.io",
+	"github": "ddprrt"
 }

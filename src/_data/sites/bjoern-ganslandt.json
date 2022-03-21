@@ -4,7 +4,8 @@
 	"description": "Björn Ganslandt is a freelance frontend developer based in Vienna",
 	"twitter": "Ansimorph",
 	"source_url": "https://github.com/Ansimorph/ganslandt.xyz",
-  "business": {
-    "cta": "https://ganslandt.xyz/"
-  }
+	"business": {
+		"cta": "https://ganslandt.xyz/"
+	},
+	"github": "Ansimorph"
 }

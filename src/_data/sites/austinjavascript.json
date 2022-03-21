@@ -3,6 +3,9 @@
 	"name": "Austin JavaScript",
 	"description": "A community-driven group that meets regularly in Austin, Texas, to discuss JavaScript and the open web.",
 	"twitter": "austinjs",
-	"authoredBy": ["stedman"],
-	"source_url": "https://github.com/austinjavascript/austinjavascript.com"
+	"authoredBy": [
+		"stedman"
+	],
+	"source_url": "https://github.com/austinjavascript/austinjavascript.com",
+	"github": "stedman"
 }

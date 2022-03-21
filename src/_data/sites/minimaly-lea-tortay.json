@@ -3,5 +3,6 @@
 	"name": "Léa Tortay starter",
 	"description": "A simple eleventy blog starter with fully controlled ui theme, theme options, rss feed and service worker for offline reading.",
 	"twitter": "lea_tortay",
-	"source_url": "https://github.com/lea37/minimaly"
+	"source_url": "https://github.com/lea37/minimaly",
+	"github": "lea37"
 }

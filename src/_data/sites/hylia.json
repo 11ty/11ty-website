@@ -3,5 +3,6 @@
 	"name": "Hylia",
 	"description": "Hylia is a lightweight Eleventy starter kit with Netlify CMS pre-configured.",
 	"twitter": "piccalilli_",
-	"disabled": true
+	"disabled": true,
+	"github": "hankchizljaw"
 }

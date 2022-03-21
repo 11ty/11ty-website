@@ -4,6 +4,10 @@
 	"description": "We started this project to collect your feedback about the current state of the web and to give you a voice to help shape its future.",
 	"source_url": "https://github.com/WebWeWant/webwewant.fyi",
 	"twitter": "webwewantfyi",
-  "authoredBy": ["AaronGustafson", "seaotta"],
-	"featured": false
+	"authoredBy": [
+		"AaronGustafson",
+		"seaotta"
+	],
+	"featured": false,
+	"github": "aarongustafson"
 }

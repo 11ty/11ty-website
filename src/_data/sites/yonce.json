@@ -4,5 +4,6 @@
 	"description": "Queen Bey-inspired themes for Bash-It, Visual Studio Code, iTerm, Slack & Alfred.",
 	"source_url": "https://github.com/minamarkham/yonce/tree/yoncetheme.com",
 	"twitter": "minamarkham",
-	"featured": true
+	"featured": true,
+	"github": "zachleat"
 }

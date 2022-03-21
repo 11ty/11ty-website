@@ -3,5 +3,8 @@
 	"url": "https://viljamis.com/",
 	"description": "Viljami Salminen is an independent Design Systems Architect from Helsinki, Finland, specialized in helping companies to build design systems.",
 	"twitter": "viljamis",
-	"authoredBy": ["viljamis"]
+	"authoredBy": [
+		"viljamis"
+	],
+	"github": "viljamis"
 }

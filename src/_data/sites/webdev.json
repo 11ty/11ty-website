@@ -5,5 +5,6 @@
 	"source_url": "https://github.com/GoogleChrome/web.dev",
 	"twitter": "ChromiumDev",
 	"featured": true,
-	"superfeatured": true
+	"superfeatured": true,
+	"github": "zachleat"
 }

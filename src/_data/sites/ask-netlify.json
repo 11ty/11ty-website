@@ -3,6 +3,9 @@
 	"url": "https://ask.netlify.com",
 	"description": "Gerald and Phil are collecting your questions and will answer as many as they can in a series of videos, tutorials and blog posts.",
 	"twitter": "netlify",
-	"authoredBy": ["philhawksworth"],
-	"featured": true
+	"authoredBy": [
+		"philhawksworth"
+	],
+	"featured": true,
+	"github": "zachleat"
 }

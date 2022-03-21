@@ -1,7 +1,8 @@
 {
-    "url": "https://peaks.henry.codes",
-    "name": "Peaks",
-    "description": "A simple list project to track the summiting of every 14k-foot peak in Colorado.",
-    "twitter": "xdesro",
-    "source_url": "https://github.com/xdesro/peaks"
+	"url": "https://peaks.henry.codes",
+	"name": "Peaks",
+	"description": "A simple list project to track the summiting of every 14k-foot peak in Colorado.",
+	"twitter": "xdesro",
+	"source_url": "https://github.com/xdesro/peaks",
+	"github": "xdesro"
 }

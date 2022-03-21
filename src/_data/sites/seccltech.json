@@ -3,5 +3,8 @@
 	"url": "https://seccl.tech/",
 	"description": "The marketing website for custodian and investment technology provider Seccl Technology Ltd",
 	"twitter": "SecclTech",
-	"authoredBy": ["daviddarnes"]
+	"authoredBy": [
+		"daviddarnes"
+	],
+	"github": "daviddarnes"
 }

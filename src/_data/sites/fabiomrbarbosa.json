@@ -3,5 +3,8 @@
 	"name": "Fábio M.R. Barbosa",
 	"description": "Personal website of copywriter, web developer and translator Fábio M.R. Barbosa",
 	"twitter": "fabiomrbarbosa",
-	"authoredBy": ["fabiomrbarbosa"]
+	"authoredBy": [
+		"fabiomrbarbosa"
+	],
+	"github": "fabiomrbarbosa"
 }

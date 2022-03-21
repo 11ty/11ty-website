@@ -3,5 +3,6 @@
 	"name": "Teami",
 	"description": "A tool to align OKRs, projects, and tasks.",
 	"twitter": "borjasolerme",
-	"disabled": true
+	"disabled": true,
+	"github": "fusilli"
 }

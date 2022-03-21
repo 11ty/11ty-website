@@ -1,7 +1,8 @@
 {
-  "url": "https://lenny.fyi/",
-  "name": "Lenny Anders",
-  "description": "Lenny Anders is a frontend developer based in Kürten, Germany.",
-  "twitter": "5onderling",
-  "source_url": "https://github.com/lennyanders/lenny.fyi"
+	"url": "https://lenny.fyi/",
+	"name": "Lenny Anders",
+	"description": "Lenny Anders is a frontend developer based in Kürten, Germany.",
+	"twitter": "5onderling",
+	"source_url": "https://github.com/lennyanders/lenny.fyi",
+	"github": "lennyanders"
 }

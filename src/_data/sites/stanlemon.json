@@ -3,6 +3,9 @@
 	"name": "lemonbytes by Stan Lemon",
 	"description": "Stan Lemon's personal website. Husband, dad, steelers fan and software developer.",
 	"twitter": "stanlemon",
-  "authoredBy": ["stanlemon"],
-  "source_url": "https://github.com/stanlemon/stanlemon.github.com"
+	"authoredBy": [
+		"stanlemon"
+	],
+	"source_url": "https://github.com/stanlemon/stanlemon.github.com",
+	"github": "stanlemon"
 }

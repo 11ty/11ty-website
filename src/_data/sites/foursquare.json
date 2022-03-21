@@ -4,5 +4,6 @@
 	"description": "Foursquare is the most trusted, independent location data platform for understanding how people move through the real world.",
 	"twitter": "foursquare",
 	"featured": true,
-	"superfeatured": true
+	"superfeatured": true,
+	"github": "zachleat"
 }

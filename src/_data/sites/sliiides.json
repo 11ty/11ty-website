@@ -3,5 +3,9 @@
 	"url": "https://slides.oddbird.net/",
 	"description": "Slides and demos from OddBird presentations.",
 	"twitter": "OddBird",
-	"authoredBy": ["MiriSuzanne", "OddBird"]
+	"authoredBy": [
+		"MiriSuzanne",
+		"OddBird"
+	],
+	"github": "mirisuzanne"
 }

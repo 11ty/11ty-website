@@ -1,7 +1,8 @@
 {
-  "url": "https://hebra.dev/",
-  "name": "Hebra",
-  "description": "Hebra is a skeletal Eleventy starter kit that gives you nothing but good ol’ HTML and an RSS feed. It serves as the ideal kick-off point for your projects.",
-  "twitter": "piccalilli_",
-  "source_url": "https://github.com/hankchizljaw/hebra"
+	"url": "https://hebra.dev/",
+	"name": "Hebra",
+	"description": "Hebra is a skeletal Eleventy starter kit that gives you nothing but good ol’ HTML and an RSS feed. It serves as the ideal kick-off point for your projects.",
+	"twitter": "piccalilli_",
+	"source_url": "https://github.com/hankchizljaw/hebra",
+	"github": "hankchizljaw"
 }

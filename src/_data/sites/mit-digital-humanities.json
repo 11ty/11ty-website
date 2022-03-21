@@ -5,5 +5,8 @@
 	"twitter": "MIT",
 	"featured": true,
 	"superfeatured": true,
-	"authoredBy": ["mike_wagz"]
+	"authoredBy": [
+		"mike_wagz"
+	],
+	"github": "zachleat"
 }

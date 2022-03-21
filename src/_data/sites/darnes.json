@@ -3,8 +3,11 @@
 	"url": "https://darn.es/",
 	"description": "The personal portfolio and blog of David Darnes",
 	"twitter": "daviddarnes",
-	"authoredBy": ["daviddarnes"],
-  "business": {
+	"authoredBy": [
+		"daviddarnes"
+	],
+	"business": {
 		"cta": "https://darn.es/#contact"
-	}
+	},
+	"github": "daviddarnes"
 }

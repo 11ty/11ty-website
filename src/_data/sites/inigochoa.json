@@ -1,7 +1,8 @@
 {
-  "url": "https://inigochoa.me/",
-  "name": "Iñigo Ochoa",
-  "description": "Personal site of backend developer Iñigo Ochoa",
-  "source_url": "https://github.com/inigochoa/inigochoa.me",
-  "twitter": "inigochoa"
+	"url": "https://inigochoa.me/",
+	"name": "Iñigo Ochoa",
+	"description": "Personal site of backend developer Iñigo Ochoa",
+	"source_url": "https://github.com/inigochoa/inigochoa.me",
+	"twitter": "inigochoa",
+	"github": "inigochoa"
 }

@@ -1,8 +1,8 @@
 {
-    "url": "https://objector.dev",
-    "name": "Objector",
-    "description": "The personal blog and portfolio of Montique Stevens, a freelance Creative Technologist",
-    "twitter": "nycbeardo",
-    "source_url": "https://github.com/nycbeardo/myeleventyblog"
-  
+	"url": "https://objector.dev",
+	"name": "Objector",
+	"description": "The personal blog and portfolio of Montique Stevens, a freelance Creative Technologist",
+	"twitter": "nycbeardo",
+	"source_url": "https://github.com/nycbeardo/myeleventyblog",
+	"github": "nycbeardo"
 }

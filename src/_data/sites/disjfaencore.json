@@ -2,5 +2,6 @@
 	"url": "https://disjfa.github.io/eleventy-encore/",
 	"name": "11ty-encore",
 	"description": "11ty using webpack encore",
-	"source_url": "https://github.com/disjfa/eleventy-encore"
+	"source_url": "https://github.com/disjfa/eleventy-encore",
+	"github": "gabbersepp"
 }

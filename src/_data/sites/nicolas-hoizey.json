@@ -1,7 +1,8 @@
 {
 	"name": "Nicolas Hoizey",
 	"url": "https://nicolas-hoizey.com",
-  "source_url": "https://github.com/nhoizey/nicolas-hoizey.com",
+	"source_url": "https://github.com/nhoizey/nicolas-hoizey.com",
 	"twitter": "nhoizey",
-	"description": "The personnal website of Nicolas Hoizey, passionate about the Web and photography, among many other interests. Using Eleventy, responsive images with Cloudinary, Webmention, search with Algolia, etc."
+	"description": "The personnal website of Nicolas Hoizey, passionate about the Web and photography, among many other interests. Using Eleventy, responsive images with Cloudinary, Webmention, search with Algolia, etc.",
+	"github": "nhoizey"
 }

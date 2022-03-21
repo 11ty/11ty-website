@@ -3,5 +3,6 @@
 	"url": "https://rss-jamstack.netlify.app/",
 	"source_url": "https://github.com/philhawksworth/medium-export",
 	"description": "A demo of generating an JAMstack site from an RSS feed",
-	"twitter": "philhawksworth"
+	"twitter": "philhawksworth",
+	"github": "zachleat"
 }

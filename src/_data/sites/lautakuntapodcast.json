@@ -2,6 +2,9 @@
 	"url": "https://www.lautakuntapodcast.fi/",
 	"name": "Lautakunta-podcast",
 	"description": "A website for a Finnish podcast on board games",
-	"authoredBy": ["msaari"],
-	"source_url": "https://github.com/msaari/lautakunta.fi"
+	"authoredBy": [
+		"msaari"
+	],
+	"source_url": "https://github.com/msaari/lautakunta.fi",
+	"github": "msaari"
 }

@@ -1,8 +1,9 @@
 {
-    "url": "https://wolstenhol.me",
-    "name": "Wolstenhol.me",
-    "description": "A personal site – part content aggregator, part portfolio, part place to try new things.",
-    "twitter": "philw_",
-    "authoredBy": [],
-    "source_url": "https://github.com/philwolstenholme/wolstenhol-11ty"
+	"url": "https://wolstenhol.me",
+	"name": "Wolstenhol.me",
+	"description": "A personal site – part content aggregator, part portfolio, part place to try new things.",
+	"twitter": "philw_",
+	"authoredBy": [],
+	"source_url": "https://github.com/philwolstenholme/wolstenhol-11ty",
+	"github": "philwolstenholme"
 }

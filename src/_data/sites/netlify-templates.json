@@ -4,6 +4,9 @@
 	"description": "This is a board with templates for static site generators and boilerplates.",
 	"source_url": "https://github.com/netlify/templates",
 	"twitter": "netlify",
-	"authoredBy": ["philhawksworth"],
-	"featured": true
+	"authoredBy": [
+		"philhawksworth"
+	],
+	"featured": true,
+	"github": "zachleat"
 }

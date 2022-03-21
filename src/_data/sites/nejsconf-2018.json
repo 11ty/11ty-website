@@ -4,5 +4,8 @@
 	"description": "A single day, single track Web Development conference.",
 	"source_url": "https://github.com/NebraskaJS/2018.nejsconf.com",
 	"twitter": "nejsconf",
-	"authoredBy": ["zachleat"]
+	"authoredBy": [
+		"zachleat"
+	],
+	"github": "zachleat"
 }

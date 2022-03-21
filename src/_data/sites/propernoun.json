@@ -2,5 +2,6 @@
 	"name": "Proper Noun",
 	"url": "https://propernoun.smth.uk/",
 	"description": "A collection of names (and, more importantly, faces).",
-	"twitter": "smthdotuk"
+	"twitter": "smthdotuk",
+	"github": "smth"
 }

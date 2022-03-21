@@ -3,6 +3,9 @@
 	"name": "tactile.co.za - Shaun O’Connell",
 	"description": "Blog and bio for Shaun O’Connell, a front-end developer based in Wellington, New Zealand",
 	"twitter": "ndorfin",
-	"authoredBy": ["ndorfin"],
-	"source_url": "https://github.com/ndorfin/tactile-www"
+	"authoredBy": [
+		"ndorfin"
+	],
+	"source_url": "https://github.com/ndorfin/tactile-www",
+	"github": "ndorfin"
 }

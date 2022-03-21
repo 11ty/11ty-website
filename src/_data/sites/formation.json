@@ -4,5 +4,6 @@
 	"description": "A shell script to set up a macOS machine for design and development.",
 	"source_url": "https://github.com/minamarkham/formation/tree/slay.sh",
 	"twitter": "minamarkham",
-	"featured": true
+	"featured": true,
+	"github": "zachleat"
 }

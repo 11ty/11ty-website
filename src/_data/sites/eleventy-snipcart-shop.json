@@ -3,5 +3,6 @@
 	"name": "Lea Tortay snipcart demo",
 	"description": "A shop create with snipcart and eleventy.",
 	"twitter": "lea_tortay",
-	"source_url": "https://github.com/lea37/eleventy-snipcart-shop"
+	"source_url": "https://github.com/lea37/eleventy-snipcart-shop",
+	"github": "lea37"
 }

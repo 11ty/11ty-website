@@ -1,6 +1,7 @@
 {
-  "name": "Orest Bida",
+	"name": "Orest Bida",
 	"url": "https://orestbida.com",
 	"description": "My personal portfolio && blog built with 11ty",
-	"authoredBy": []
+	"authoredBy": [],
+	"github": "orestbida"
 }

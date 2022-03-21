@@ -4,7 +4,8 @@
 	"description": "Personal site of frontend dev Alistair Shepherd",
 	"twitter": "accudio",
 	"authoredBy": [],
-  "business": {
-    "cta": "https://alistairshepherd.uk/#contact" 
-  }
+	"business": {
+		"cta": "https://alistairshepherd.uk/#contact"
+	},
+	"github": "Accudio"
 }

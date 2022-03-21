@@ -1,7 +1,8 @@
 {
-  "url": "https://desiredpersona.com/",
-  "name": "Desired Persona",
-  "description": "Marketer. Developer.",
-  "twitter": "desiredpersona",
-  "source_url": "https://github.com/desiredpersona/blog"
+	"url": "https://desiredpersona.com/",
+	"name": "Desired Persona",
+	"description": "Marketer. Developer.",
+	"twitter": "desiredpersona",
+	"source_url": "https://github.com/desiredpersona/blog",
+	"github": "desiredpersona"
 }

@@ -4,5 +4,8 @@
 	"description": "Hi there, I'm Emily. A chocolate sculptress from Vermont.",
 	"source_url": "https://github.com/smccracken/chocolatesculptress",
 	"twitter": "chocosculptress",
-  "authoredBy": ["scottmccracken"]
+	"authoredBy": [
+		"scottmccracken"
+	],
+	"github": "smccracken"
 }

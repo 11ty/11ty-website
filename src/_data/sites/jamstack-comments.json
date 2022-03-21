@@ -3,5 +3,6 @@
 	"name": "Jamstack Comments Engine",
 	"description": "An example of a comments engine you could add to any JAMstack site hosted on Netlify.",
 	"source_url": "https://github.com/philhawksworth/jamstack-comments-engine",
-	"twitter": "philhawksworth"
+	"twitter": "philhawksworth",
+	"github": "zachleat"
 }

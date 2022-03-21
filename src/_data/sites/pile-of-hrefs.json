@@ -1,8 +1,11 @@
 {
-    "url": "https://pile-of-hrefs.com/",
-    "name": "Pile of hrefs",
-    "description": "A personal bookmarking site.",
-    "twitter": "superterrific",
-    "authoredBy": ["superterrific"],
-    "source_url": "https://github.com/superterrific/pile-of-hrefs"
+	"url": "https://pile-of-hrefs.com/",
+	"name": "Pile of hrefs",
+	"description": "A personal bookmarking site.",
+	"twitter": "superterrific",
+	"authoredBy": [
+		"superterrific"
+	],
+	"source_url": "https://github.com/superterrific/pile-of-hrefs",
+	"github": "superterrific"
 }

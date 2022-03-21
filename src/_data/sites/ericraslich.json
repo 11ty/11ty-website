@@ -4,7 +4,10 @@
 	"description": "Personal website for Eric.",
 	"source_url": "https://github.com/rasliche/ericraslich",
 	"twitter": "rasliche",
-	"authoredBy": ["rasliche"],
+	"authoredBy": [
+		"rasliche"
+	],
 	"featured": false,
-	"superfeatured": false
+	"superfeatured": false,
+	"github": "rasliche"
 }

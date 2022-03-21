@@ -3,5 +3,8 @@
 	"url": "https://spruce.com.ng/",
 	"description": "Spruce.com.ng is a personal portfolio and blog where I write about the web.",
 	"twitter": "sprucekhalifa",
-	"authoredBy": ["Spruce"]
+	"authoredBy": [
+		"Spruce"
+	],
+	"github": "iamspruce"
 }

@@ -3,5 +3,9 @@
 	"name": "Hello, I'm Stephen Anfield.",
 	"description": "Website for Stephen Anfield",
 	"twitter": "TheGreenGreek",
-  "authoredBy": ["TheGreenGreek", "StephenAnfield"]
+	"authoredBy": [
+		"TheGreenGreek",
+		"StephenAnfield"
+	],
+	"github": "siakaramalegos"
 }

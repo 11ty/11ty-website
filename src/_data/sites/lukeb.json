@@ -2,6 +2,7 @@
 	"url": "https://lukeb.co.uk/",
 	"name": "Luke Bonaccorsi",
 	"description": "The pixel-art styled website of Luke Bonaccorsi, complete with hidden game",
-  "twitter": "CodeFoodPixels",
-	"source_url": "https://github.com/CodeFoodPixels/website-11ty/"
+	"twitter": "CodeFoodPixels",
+	"source_url": "https://github.com/CodeFoodPixels/website-11ty/",
+	"github": "CodeFoodPixels"
 }

@@ -4,6 +4,9 @@
 	"description": "No longer an Eleventy site. The COVID Tracking Project collects the most comprehensive testing data for the novel coronavirus, SARS-CoV-2.",
 	"source_url": "https://github.com/COVID19Tracking/website",
 	"twitter": "COVID19Tracking",
-	"authoredBy": ["wilto"],
-	"disabled": true
+	"authoredBy": [
+		"wilto"
+	],
+	"disabled": true,
+	"github": "zachleat"
 }

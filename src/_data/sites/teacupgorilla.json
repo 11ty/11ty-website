@@ -3,5 +3,8 @@
 	"name": "Teacup Gorilla",
 	"description": "Dark indie-rock soundscapes and evocative poetry from Denver, CO",
 	"twitter": "TeacupGorilla",
-	"authoredBy": ["MiriSuzanne"]
+	"authoredBy": [
+		"MiriSuzanne"
+	],
+	"github": "mirisuzanne"
 }

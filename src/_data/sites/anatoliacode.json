@@ -1,7 +1,8 @@
 {
-    "url": "https://anatoliacode.com/",
-    "name": "AnatoliaCode",
-    "description": "AnatoliaCode Türkçe Yazılım Geliştirme ve Programlama Blogu",
-    "twitter": "fkkarakurt",
-    "source_url": ""
+	"url": "https://anatoliacode.com/",
+	"name": "AnatoliaCode",
+	"description": "AnatoliaCode Türkçe Yazılım Geliştirme ve Programlama Blogu",
+	"twitter": "fkkarakurt",
+	"source_url": "",
+	"github": "fkkarakurt"
 }

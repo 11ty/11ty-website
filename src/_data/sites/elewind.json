@@ -1,8 +1,11 @@
 {
-    "url": "https://elewind-template.netlify.app/",
-    "name": "Elewind",
-    "description": "An Eleventy, TailwindCSS and Netlify CMS based blog",
-    "twitter": "ekansh005",
-    "authoredBy": ["ekansh005"],
-    "source_url": "https://github.com/ekansh005/elewind"
+	"url": "https://elewind-template.netlify.app/",
+	"name": "Elewind",
+	"description": "An Eleventy, TailwindCSS and Netlify CMS based blog",
+	"twitter": "ekansh005",
+	"authoredBy": [
+		"ekansh005"
+	],
+	"source_url": "https://github.com/ekansh005/elewind",
+	"github": "ekansh005"
 }

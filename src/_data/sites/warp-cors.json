@@ -1,6 +1,7 @@
 {
-  "url": "https://warp-co.rs/",
-  "name": "warp-co.rs",
-  "description": "Enable CORS headers on any request.",
-  "twitter": "bassetts"
+	"url": "https://warp-co.rs/",
+	"name": "warp-co.rs",
+	"description": "Enable CORS headers on any request.",
+	"twitter": "bassetts",
+	"github": "Bassetts"
 }

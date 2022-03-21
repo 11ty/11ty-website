@@ -3,5 +3,6 @@
 	"name": "Ivo von Putzer Reibegg",
 	"description": "Blog featuring software development, agile, project ideas, events, real-life stories, cryptocurrency and everything else development-related.",
 	"twitter": "ivoputzer",
-	"source_url": "https://github.com/ivoputzer/ivoputzer.blog"
+	"source_url": "https://github.com/ivoputzer/ivoputzer.blog",
+	"github": "ivoputzer"
 }

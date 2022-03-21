@@ -3,5 +3,6 @@
 	"name": "Ten to One Podcast",
 	"description": "The Ten to One podcast makes top ten lists about everything",
 	"twitter": "bmkoser",
-	"source_url": "https://github.com/briankoser/tto/"
+	"source_url": "https://github.com/briankoser/tto/",
+	"github": "briankoser"
 }

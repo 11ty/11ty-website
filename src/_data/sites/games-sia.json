@@ -3,5 +3,6 @@
 	"name": "Sia's Game Shelf",
 	"description": "Sia's boardgames via the BoardGameGeek API and a webscraper",
 	"twitter": "TheGreenGreek",
-	"source_url": "https://github.com/siakaramalegos/games"
+	"source_url": "https://github.com/siakaramalegos/games",
+	"github": "siakaramalegos"
 }

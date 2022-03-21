@@ -3,5 +3,6 @@
 	"url": "https://checkthisout.today",
 	"description": "A browser bookmarklet to quickly search Libby for books in your local library",
 	"source_url": "https://github.com/ashur/check-this-out",
-	"twitter": "ashur"
+	"twitter": "ashur",
+	"github": "ashur"
 }

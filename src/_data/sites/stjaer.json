@@ -2,5 +2,6 @@
 	"url": "https://www.stjaer.net/",
 	"name": "Stjær By-Portal",
 	"description": "Website of Danish village Stjær, local news and community content since 2003. Updated to 11ty, Tailwind CSS, Netlify in 2020.",
-	"twitter": "herr_rise"
+	"twitter": "herr_rise",
+	"github": "rise05"
 }

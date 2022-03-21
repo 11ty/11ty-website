@@ -3,6 +3,9 @@
 	"name": "achteintel—LitfassMuseum",
 	"description": "Website for an art intervention on advertising columns in Karlsruhe (Europe).",
 	"twitter": "achteintel",
-	"authoredBy": ["depone"],
-	"source_url": "https://github.com/achteintel/website"
+	"authoredBy": [
+		"depone"
+	],
+	"source_url": "https://github.com/achteintel/website",
+	"github": "deponeWD"
 }

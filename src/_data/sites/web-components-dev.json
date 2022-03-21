@@ -4,6 +4,9 @@
 	"description": "The Modern IDE for Web Platform Developers",
 	"twitter": "webcomp_dev",
 	"authoredBy": [
-		"georges_gomes", "Gluckies", "GQuinio"
-	]
+		"georges_gomes",
+		"Gluckies",
+		"GQuinio"
+	],
+	"github": "georges-gomes"
 }

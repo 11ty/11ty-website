@@ -1,7 +1,10 @@
 {
-  "url": "https://www.frede.io/",
-  "name": "Stefan Frede’s Website",
-  "description": "A minimalistic portfolio site",
-  "source_url": "https://gitlab.com/stefanfrede/website",
-  "authoredBy": ["stefanfrede"]
+	"url": "https://www.frede.io/",
+	"name": "Stefan Frede’s Website",
+	"description": "A minimalistic portfolio site",
+	"source_url": "https://gitlab.com/stefanfrede/website",
+	"authoredBy": [
+		"stefanfrede"
+	],
+	"github": "stefanfrede"
 }

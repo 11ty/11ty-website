@@ -1,7 +1,8 @@
 {
-  "url": "https://angeliqueweger.com/",
-  "name": "Angelique Weger",
-  "description": "Personal blog of front-end tech lead and web dev instructor",
-  "source_url": "https://github.com/angeliquejw/dev-blog",
-  "twitter": "messypixels"
+	"url": "https://angeliqueweger.com/",
+	"name": "Angelique Weger",
+	"description": "Personal blog of front-end tech lead and web dev instructor",
+	"source_url": "https://github.com/angeliquejw/dev-blog",
+	"twitter": "messypixels",
+	"github": "angeliquejw"
 }

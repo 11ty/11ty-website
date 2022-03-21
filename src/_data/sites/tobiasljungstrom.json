@@ -1,6 +1,7 @@
 {
-  "url": "https://tobiasljungstrom.net/",
-  "name": "Tobias Ljungström",
-  "description": "Blog posts and demos about all things web development",
-  "twitter": "midvintr"
+	"url": "https://tobiasljungstrom.net/",
+	"name": "Tobias Ljungström",
+	"description": "Blog posts and demos about all things web development",
+	"twitter": "midvintr",
+	"github": "tobiasljungstrom"
 }

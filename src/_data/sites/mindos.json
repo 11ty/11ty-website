@@ -1,8 +1,11 @@
 {
-    "url": "https://mindos.in/",
-    "name": "MindOS",
-    "description": "A 10 year project to create an Operating System for the mind",
-    "twitter": "inmindos",
-    "authoredBy": ["binnyva"],
-    "source_url": "https://github.com/inmindos/Site-mindos.in"
+	"url": "https://mindos.in/",
+	"name": "MindOS",
+	"description": "A 10 year project to create an Operating System for the mind",
+	"twitter": "inmindos",
+	"authoredBy": [
+		"binnyva"
+	],
+	"source_url": "https://github.com/inmindos/Site-mindos.in",
+	"github": "binnyva"
 }

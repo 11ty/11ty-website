@@ -1,7 +1,8 @@
 {
-    "name": "The UI Development Mentoring Program",
-    "url": "https://mentor.silvestar.codes/",
-    "description": "Become a better UI Developer today.",
-    "twitter": "malimirkeccita",
-    "source_url": "https://github.com/maliMirkec/mentoring"
+	"name": "The UI Development Mentoring Program",
+	"url": "https://mentor.silvestar.codes/",
+	"description": "Become a better UI Developer today.",
+	"twitter": "malimirkeccita",
+	"source_url": "https://github.com/maliMirkec/mentoring",
+	"github": "maliMirkec"
 }

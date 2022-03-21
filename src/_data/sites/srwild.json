@@ -1,6 +1,7 @@
 {
-  "name": "S.R. Wild",
-  "url": "https://www.srwild.com/",
-  "description": "The personal website of S.R. Wild (aka Scott Wild), a web designeloper or whatever and maker of stuff. Adopt, don’t shop.",
-  "twitter": "srwild"
+	"name": "S.R. Wild",
+	"url": "https://www.srwild.com/",
+	"description": "The personal website of S.R. Wild (aka Scott Wild), a web designeloper or whatever and maker of stuff. Adopt, don’t shop.",
+	"twitter": "srwild",
+	"github": "srwild"
 }

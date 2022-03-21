@@ -3,5 +3,6 @@
 	"name": "Benjamin Hollway's personal site",
 	"description": "The personal blog of Benjamin Hollway, with recipies, blog posts, search, and projects generated from GitHub.",
 	"twitter": "nothingrandom",
-	"source_url": "https://github.com/nothingrandom/website"
+	"source_url": "https://github.com/nothingrandom/website",
+	"github": "nothingrandom"
 }

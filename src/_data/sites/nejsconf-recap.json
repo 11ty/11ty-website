@@ -4,6 +4,9 @@
 	"description": "The history of all five NEJS CONF Web Development conferences.",
 	"source_url": "https://github.com/NebraskaJS/nejsconf-recap",
 	"twitter": "nejsconf",
-	"authoredBy": ["zachleat"],
-	"featured": true
+	"authoredBy": [
+		"zachleat"
+	],
+	"featured": true,
+	"github": "zachleat"
 }

@@ -1,8 +1,11 @@
 {
-    "url": "https://www.flyweb.at/",
-    "name": "flyweb productions",
-    "description": "Please step closer and see mindbending Front/Backend development since 1999",
-    "twitter": "brachycera",
-    "authoredBy": ["superfly"],
-    "source_url": "https://github.com/brachycera/fly-11ty"
+	"url": "https://www.flyweb.at/",
+	"name": "flyweb productions",
+	"description": "Please step closer and see mindbending Front/Backend development since 1999",
+	"twitter": "brachycera",
+	"authoredBy": [
+		"superfly"
+	],
+	"source_url": "https://github.com/brachycera/fly-11ty",
+	"github": "brachycera"
 }

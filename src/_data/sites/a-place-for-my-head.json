@@ -1,6 +1,7 @@
 {
-    "url": "https://shivjm.blog",
-    "name": "A Place For My Head",
-    "description": "Shiv Jha-Mathur’s blog",
-    "authoredBy": []
+	"url": "https://shivjm.blog",
+	"name": "A Place For My Head",
+	"description": "Shiv Jha-Mathur’s blog",
+	"authoredBy": [],
+	"github": "shivjm"
 }
