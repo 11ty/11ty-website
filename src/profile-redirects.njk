@@ -6,6 +6,7 @@ permalink: _redirects
 # instances of `twitter:USERNAME` in the 11ty/11ty-community repo and replace them with the
 # GitHub username for that user.
 {# #}
+/authors/georges_gomes/ /authors/georges-gomes/ 301!
 {%- for github, twitters in githubTwitterMap %}
   {%- for twitter in twitters %}
     {%- if twitter.toLowerCase() != github.toLowerCase() and not githubTwitterMap[twitter] %}
