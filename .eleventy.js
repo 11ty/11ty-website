@@ -147,6 +147,13 @@ const shortcodes = {
 		let url = `https://avatars.githubusercontent.com/${username}?s=66`;
 		return `<img src="https://v1.image.11ty.dev/${encodeURIComponent(url)}/jpeg/66/" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
 	},
+	getOpenCollectiveAvatarHtml(url, alt = "") {
+		if(!alt) {
+			alt = `Open Collective Avatar for ${slug}`;
+		}
+
+		return `<img src="https://v1.image.11ty.dev/${encodeURIComponent(url)}/jpeg/66/" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
+	},
 };
 
 function findBy(data, path, value) {
@@ -262,6 +269,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addNunjucksAsyncShortcode("image", shortcodes.image);
 	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatar);
 	eleventyConfig.addShortcode("communityavatar", shortcodes.communityAvatar);
+	eleventyConfig.addShortcode("opencollectavatar", shortcodes.getOpenCollectiveAvatarHtml);
 	eleventyConfig.addShortcode("getScreenshotHtml", shortcodes.getScreenshotHtml);
 
 	eleventyConfig.addShortcode("codetitle", function(title, heading = "Filename") {
