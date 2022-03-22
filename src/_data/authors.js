@@ -26,12 +26,17 @@ module.exports = async () => {
     }
   }
 
-  // Add BUSINESS info
   for(let key in authors) {
     for(let site of authors[key].sites) {
+      // Add BUSINESS info
       if(site.business_url) {
         authors[key].business_url = site.business_url;
         authors[key].business_name = site.business_name;
+      }
+
+      // Add opencollective username
+      if(site.opencollective) {
+        authors[key].opencollective = site.opencollective;
       }
     }
   }

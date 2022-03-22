@@ -26,7 +26,9 @@ module.exports = async () => {
 			if(!map[github]) {
 				map[github] = [];
 			}
-			map[github].push(twitter);
+			if(!map[github].includes(twitter)) {
+				map[github].push(twitter);
+			}
 		}
 	}
 

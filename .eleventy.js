@@ -479,7 +479,7 @@ ${text.trim()}
 		return supporter && supporter.isMonthly && supporter.amount && supporter.amount.value >= 5;
 	});
 
-	eleventyConfig.addFilter("isSupporter", function(supporters, githubUsername, twitterUsernames = []) {
+	eleventyConfig.addFilter("isSupporter", function(supporters, githubUsername, twitterUsernames = [], hardcodedOpencollectiveUsername) {
 		let supporter;
 		for(let twitter of twitterUsernames) {
 			supporter = findBy(supporters, "twitter", twitter);
@@ -487,13 +487,14 @@ ${text.trim()}
 				return supporter.pop();
 			}
 		}
+
 		let slug = {
 			// hardcoded map for opencollective slugs
 			"twitter:unabridgedsoft": "unabridged-software",
 			"philhawksworth": "phil-hawksworth",
 			"matuzo": "manuel-matuzovic",
 			"zachleat": "zach-leatherman",
-		}[githubUsername] || githubUsername;
+		}[githubUsername] || hardcodedOpencollectiveUsername || githubUsername;
 
 		supporter = findBy(supporters, "slug", slug);
 		if(supporter && supporter.length) {

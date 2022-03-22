@@ -20,7 +20,7 @@ css:
 {%- set twitterUrl = "https://twitter.com/" + author.name.substring("twitter:".length) %}
 {%- set githubUrl = "https://github.com/" + author.name %}
 
-{%- set supporter = opencollective.supporters | isSupporter(author.name, githubTwitterMap[author.name]) -%}
+{%- set supporter = opencollective.supporters | isSupporter(author.name, githubTwitterMap[author.name], author.opencollective) -%}
 {%- set displayName = supporter.name or author.name %}
 
 # {{ displayName }}
