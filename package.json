@@ -8,7 +8,6 @@
   },
   "scripts": {
     "check-links": "npx check-html-links _site",
-    "deploy": "./deploy.sh",
     "build": "npx @11ty/eleventy",
     "start": "npx @11ty/eleventy --serve --incremental",
     "build-production": "npm run get-new-data && NODE_ENV=production npx @11ty/eleventy",
