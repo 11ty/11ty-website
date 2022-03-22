@@ -8,7 +8,7 @@ permalink: _redirects
 {# #}
 {%- for github, twitters in githubTwitterMap %}
   {%- for twitter in twitters %}
-    {%- if twitter != github and not githubTwitterMap[twitter] %}
+    {%- if twitter.toLowerCase() != github.toLowerCase() and not githubTwitterMap[twitter] %}
 /authors/{{ twitter | lower }}/ /authors/{{ github | lower }}/ 301!
     {%- endif %}
   {%- endfor %}
