@@ -1,8 +1,0 @@
-{
-	"url": "https://dockerwebdev.com/",
-	"name": "Docker for Web Developers",
-	"description": "Book and video course showing how to quickly set up robust web development environments on any OS using Docker.",
-	"source_url": "https://github.com/craigbuckler/dockerwebdev",
-	"twitter": "craigbuckler",
-	"github": "craigbuckler"
-}

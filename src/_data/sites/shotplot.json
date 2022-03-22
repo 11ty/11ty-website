@@ -1,8 +1,0 @@
-{
-	"name": "shotplot",
-	"url": "https://shotplot.app/",
-	"description": "A tool used to obtain spacial coordinates based on an ice hockey rink. Useful for hockey analytics geeks.",
-	"source_url": "https://github.com/andrewpucci/shotplot",
-	"twitter": "shotplot",
-	"github": "gabbersepp"
-}

@@ -1,6 +1,0 @@
-{
-	"name": "Statebox",
-	"url": "https://statebox.org",
-	"description": "Statebox is building a formally verified process language using robust mathematical principles to prevent errors, allow compositionality and ensure termination.",
-	"github": "csakiistvan"
-}
