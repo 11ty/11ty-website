@@ -4,7 +4,6 @@ const { DateTime } = require("luxon");
 const HumanReadable = require("human-readable-numbers");
 const commaNumber = require("comma-number");
 const markdownIt = require("markdown-it");
-const loadLanguages = require("prismjs/components/");
 const slugify = require("slugify");
 const fs = require("fs-extra");
 const lodashGet = require("lodash/get");
@@ -24,9 +23,6 @@ const minificationLocalPlugin = require("./config/minification");
 const getAuthors = require("./config/getAuthorsFromSites");
 const cleanName = require("./config/cleanAuthorName");
 const objectHas = require("./config/object-has");
-
-// Load yaml from Prism to highlight frontmatter
-loadLanguages(['yaml']);
 
 let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" decoding="async" class="avatar" width="200" height="200">`;
 const shortcodes = {
