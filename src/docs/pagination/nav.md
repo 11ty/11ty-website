@@ -82,8 +82,6 @@ Alright, you definitely read all of those right? 😇 Here’s some accessible c
   </div>
 </seven-minute-tabs>
 
-* `pagination.pages` was added in `0.10.0`. For previous versions, iterate over `pagination.hrefs` (although you won’t have access to the paginated items to show data about the pages).
-
 For our example, this code will output the following markup for our example (on the first page):
 
 {% codetitle "HTML", "Syntax" %}
@@ -228,8 +226,6 @@ For clarity here, we’re omitting the previous and next links from the previous
     {%- endhighlight %}
   </div>
 </seven-minute-tabs>
-
-* `pagination.href.first` and `pagination.href.last` are added in `0.10.0`. Use `pagination.firstPageHref` or `pagination.lastPageHref` in previous versions.
 
 ## Put It All Together
 

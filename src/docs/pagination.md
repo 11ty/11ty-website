@@ -48,7 +48,7 @@ We enable pagination and then give it a dataset with the `data` key. We control 
   items: [], // Array of current page’s chunk of data
   pageNumber: 0, // current page number, 0 indexed
 
-  // Cool URLs, new in v0.10.0
+  // Cool URLs
   hrefs: [], // Array of all page hrefs (in order)
   href: {
     next: "…", // put inside <a href="{{ pagination.href.next }}">Next Page</a>
@@ -57,13 +57,12 @@ We enable pagination and then give it a dataset with the `data` key. We control 
     last: "…",
   },
 
-  // New in v0.10.0
   pages: [], // Array of all chunks of paginated data (in order)
   page: {
-    next: "…", // Next page’s chunk of data
-    previous: "…", // Previous page’s chunk of data
-    first: "…",
-    last: "…",
+    next: {}, // Next page’s chunk of data
+    previous: {}, // Previous page’s chunk of data
+    first: {},
+    last: {}},
   }
 }
 ```
@@ -80,7 +79,7 @@ In addition to the `pagination` object entries documented above, it also has:
   data: …, // the original string key to the dataset
   size: 1, // page chunk sizes
 
-  // Cool URLs, new in v0.6.0
+  // Cool URLs
   // Use pagination.href.next, pagination.href.previous, et al instead.
   nextPageHref: "…", // put inside <a href="{{ pagination.nextPageHref }}">Next Page</a>
   previousPageHref: "…", // put inside <a href="{{ pagination.previousPageHref }}">Previous Page</a>
@@ -94,8 +93,8 @@ In addition to the `pagination` object entries documented above, it also has:
   // Deprecated things:
   // nextPageLink
   // previousPageLink
-  // firstPageLink (new in v0.6.0)
-  // lastPageLink (new in v0.6.0)
+  // firstPageLink
+  // lastPageLink
   // pageLinks (alias to `links`)
 }
 ```
