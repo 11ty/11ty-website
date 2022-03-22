@@ -364,17 +364,19 @@ ${text.trim()}
 		return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }).format(num);
 	});
 
-	eleventyConfig.addFilter("displayUrl", function(url, keepWww = false) {
-		if(!keepWww) {
-			url = url.replace("https://www.", "");
-		}
+	eleventyConfig.addFilter("displayUrl", function(url) {
 		url = url.replace("https://", "");
+		url = url.replace("http://", "");
+
 		if(url.endsWith("/index.html")) {
 			url = url.replace("/index.html", "/");
 		}
+
+		// remove trailing slash
 		if(url.endsWith("/")) {
 			url = url.substring(0, url.length - 1);
 		}
+
 		return url;
 	});
 
