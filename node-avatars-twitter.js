@@ -77,18 +77,22 @@ async function fetch(entry) {
 		twitterUsernames.add(cleanName(twitter).toLowerCase());
 	}
 
-	let sites = await fastglob("./src/_data/sites/*.json", {
+	let sites = await fastglob("./src/_data/builtwith/*.json", {
 		caseSensitiveMatch: false
 	});
 
 	for(let site of sites) {
 		let siteData = require(site);
-		if(siteData.twitter) {
-			twitterUsernames.add(cleanName(siteData.twitter).toLowerCase());
+		if(siteData.opened_by) {
+			let name = cleanName(siteData.opened_by).toLowerCase();
+			if(name.startsWith("twitter:")) {
+				twitterUsernames.add(name.substr("twitter:".length));
+			}
 		}
-		if(siteData.authoredBy) {
-			for(let author of siteData.authoredBy) {
-				twitterUsernames.add(cleanName(author).toLowerCase());
+		for(let author of siteData.authors) {
+			let name = cleanName(author).toLowerCase();
+			if(name.startsWith("twitter:")) {
+				twitterUsernames.add(name.substr("twitter:".length));
 			}
 		}
 	}

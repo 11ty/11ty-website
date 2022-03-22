@@ -2,14 +2,14 @@ const fastglob = require("fast-glob");
 const getAuthors = require("../../config/getAuthorsFromSites");
 
 module.exports = async () => {
-  let sites = await fastglob("./src/_data/sites/*.json", {
+  let sites = await fastglob("./src/_data/builtwith/*.json", {
     caseSensitiveMatch: false
   });
 
   let authors = {};
   for(let site of sites) {
     let filename = site.split("/").pop();
-    let siteData = require(`./sites/${filename}`);
+    let siteData = require(`./builtwith/${filename}`);
 
     siteData.fileSlug = filename.replace(/\.json/, "");
 
@@ -29,13 +29,9 @@ module.exports = async () => {
   // Add BUSINESS info
   for(let key in authors) {
     for(let site of authors[key].sites) {
-      if(site.business) {
-        authors[key].business = site.business;
-
-        // Allow `business.name` but fallback to `site.name`
-        if(!authors[key].business.name) {
-          authors[key].business.name = site.name;
-        }
+      if(site.business_url) {
+        authors[key].business_url = site.business_url;
+        authors[key].business_name = site.business_name;
       }
     }
   }

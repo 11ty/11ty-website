@@ -20,7 +20,7 @@ You can find a bunch of other [blog posts about Eleventy on Zach’s blog](https
 {%- endfor %}
 * [Eleventy wins second Google Open Source Award](https://opensource.googleblog.com/2019/04/google-open-source-peer-bonus-winners.html) <small><em> on 2019 April 26</em></small>
 * [CERN 2019 WorldWideWeb Rebuild](https://twitter.com/eleven_ty/status/1106589569238085637) site rebuilt using Eleventy! <small><em> on 2019 March</em></small>
-* [Turn Jekyll up to Eleventy—a lovely tutorial by {% avatarlocalcache "twitter", "paulrobertlloyd" %}Paul Robert Lloyd](https://24ways.org/2018/turn-jekyll-up-to-eleventy/) <small><em> on 2018 December 11</em></small>
+* [Turn Jekyll up to Eleventy—a lovely tutorial by {% communityavatar "paulrobertlloyd" %}Paul Robert Lloyd](https://24ways.org/2018/turn-jekyll-up-to-eleventy/) <small><em> on 2018 December 11</em></small>
 * [Happy First Birthday, Eleventy! 🎉](https://www.zachleat.com/web/eleventy-birthday/) <small><em> on 2018 November 26</em></small>
 * [Google’s {% avatarlocalcache "twitter", "v8js" %}V8 web site launches using Eleventy](https://twitter.com/v8js/status/1044202940494475265) <small><em> on 2018 September</em></small>
 * James Williamson delivers [Eleventy’s mascot](https://web.archive.org/web/20200307013845/https://twitter.com/jameswillweb/status/999052022497316865), named Edison the Static-Generating Possum. <small><em>on 2018 May 23</em></small>

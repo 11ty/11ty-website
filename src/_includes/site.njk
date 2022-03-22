@@ -1,6 +1,13 @@
 <div class="lo-c site-top">
 	<div class="sites-data-container">
-		<a href="{{ site.url }}">{% avatarlocalcache "twitter", site.twitter %}{{ site.name }}</a>
+		<a href="{{ site.url }}">
+			{%- indieavatar site.url %}
+			{%- if site.name -%}
+				{{ site.name }}
+			{%- else -%}
+				{{ site.url | displayUrl }}
+			{%- endif -%}
+		</a>
 		{%- if site.description %}<em class="list-bare-desc list-bare-desc-avatar">{{ site.description }}</em>{% endif -%}
 		{%- if showMetadata %}
 		<em class="list-bare-desc list-bare-desc-avatar">
@@ -20,6 +27,6 @@
 		{%- endif %}
 	</div>
 	<div class="sites-screenshot-container">
-    {% getScreenshotHtml site.fileSlug, site.url %}
-  </div>
+		{% getScreenshotHtml site.fileSlug, site.url %}
+	</div>
 </div>

@@ -9,7 +9,7 @@ layout: layouts/docs.njk
 
 <ul>
   <li>×{{ authors | length }} unique authors.</li>
-  <li>Want to add your name below? Head over to the <a href="https://github.com/11ty/11ty-website/issues/new/choose"><code>11ty-website</code> issue tracker</a>.</li>
+  <li>Want to add your name below? Head over to the <a href="https://github.com/11ty/11ty-community/issues/new/choose"><code>11ty-community</code> issue tracker</a>.</li>
 </ul>
 
 <table class="authors-list">
@@ -21,10 +21,10 @@ layout: layouts/docs.njk
     </tr>
   </thead>
 	<tbody>
-{%- for author in sites | topAuthors %}
-{%- set supporter = opencollective.supporters | findBy("twitter", author.name) | last -%}
+{%- for author in builtwith | topAuthors %}
+{%- set supporter = opencollective.supporters | isSupporter(author.name, githubTwitterMap[author.name]) -%}
 		<tr>
-			<td><a href="/authors/{{ author.name | slug }}/">{% avatarlocalcache "twitter", author.name %}{{ supporter.name or author.name }}</a></td>
+			<td><a href="/authors/{{ author.name | slug }}/">{% communityavatar author.name %}{{ supporter.name or author.name | friendlyAuthorName | safe }}</a></td>
 			<td>×{{ author.count }} site{% if author.count !== 1 %}s{% endif %}</td>
 			<td>{% if supporter %}🎈{% endif %}</td>
 		</tr>

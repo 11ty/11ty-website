@@ -1,30 +1,29 @@
-const cleanName = require("./cleanAuthorName");
-
 module.exports = function getAuthors(sites, callback) {
 	let names = new Set();
 	for(let key in sites) {
 		let site = sites[key];
-		if(!site.disabled) {
-			let authorsNames = new Set();
-			if(site.twitter) {
-				authorsNames.add(cleanName(site.twitter));
-			}
-			if(Array.isArray(site.authoredBy)) {
-				for(let name of site.authoredBy) {
-					if(name) {
-						authorsNames.add(cleanName(name));
-					}
-				}
-			} else if(site.authoredBy) {
-				authorsNames.add(cleanName(site.authoredBy));
-			}
+		if(site.disabled) {
+			continue;
+		}
 
-			for(let name of authorsNames) {
+		let authorsNames = new Set();
+		if(site.opened_by) {
+			authorsNames.add(site.opened_by);
+		}
+
+		if(Array.isArray(site.authors)) {
+			for(let name of site.authors) {
 				if(name) {
-					names.add(name);
-					if(callback && typeof callback === "function") {
-						callback(name, site);
-					}
+					authorsNames.add(name);
+				}
+			}
+		}
+
+		for(let name of authorsNames) {
+			if(name) {
+				names.add(name);
+				if(callback && typeof callback === "function") {
+					callback(name, site);
 				}
 			}
 		}
