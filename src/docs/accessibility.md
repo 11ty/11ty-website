@@ -6,7 +6,7 @@ The Eleventy project recognizes that Accessibility is an incredibly important ba
 
 If you’ve encountered an issue with our web site—accessibility or otherwise—please let us know! The best way to do this is filing a [new GitHub issue on the `11ty-website` repository](https://github.com/11ty/11ty-website/issues).
 
-We are also available on Twitter at [{% avatarlocalcache "twitter", "eleven_ty" %}@eleven_ty](https://twitter.com/eleven_ty) or feel free to contact [{% avatarlocalcache "twitter", "zachleat" %}@zachleat directly](https://twitter.com/zachleat).
+We are also available on Twitter at [{% avatarlocalcache "twitter", "eleven_ty" %}@eleven_ty](https://twitter.com/eleven_ty) or feel free to contact [{% communityavatar "zachleat" %}@zachleat directly](https://twitter.com/zachleat).
 
 Our [Eleventy Leaderboards](/speedlify/) encourage best practices on sites that were Built with Eleventy through performance and accessibility auditing (via Lighthouse and axe) but automated auditing systems are only a starting point.
 

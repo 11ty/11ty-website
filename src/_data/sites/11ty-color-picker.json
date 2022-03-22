@@ -1,8 +1,0 @@
-{
-    "name": "11ty Color Picker",
-    "url": "https://11tycolorpicker.netlify.app",
-    "description": "A color picker website built with Eleventy.",
-    "twitter": "tannerdolby",
-    "authoredBy": ["tannerdolby"],
-    "source_url": "https://github.com/tannerdolby/eleventy-color-picker"
-}

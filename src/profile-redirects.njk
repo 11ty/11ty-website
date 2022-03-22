@@ -1,0 +1,15 @@
+---
+permalink: _redirects
+---
+# This file is for redirects from Twitter usernames to the new GitHub username slugs
+# If you think a Twitter username should have its own page (instead of a redirect), find
+# instances of `twitter:USERNAME` in the 11ty/11ty-community repo and replace them with the
+# GitHub username for that user.
+{# #}
+{%- for github, twitters in githubTwitterMap %}
+  {%- for twitter in twitters %}
+    {%- if twitter != github and not githubTwitterMap[twitter] %}
+/authors/{{ twitter | lower }}/ /authors/{{ github | lower }}/ 301!
+    {%- endif %}
+  {%- endfor %}
+{%- endfor %}

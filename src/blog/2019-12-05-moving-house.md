@@ -19,7 +19,7 @@ This was no small thing! (But it wasn’t too terrible either). We migrated:
 
 ## Why?
 
-This has been on the agenda for about six months. [{% avatarlocalcache "twitter", "TatianaTMac" %}Tatiana Mac](https://twitter.com/TatianaTMac/) said it better:
+This has been on the agenda for about six months. [{% communityavatar "TatianaMac" %}Tatiana Mac](https://twitter.com/TatianaTMac/) said it better:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">ICYMI: .io domains benefit the British government and not the Chagossian and Ilois people that they should, whom the Brits expelled from their island home.<br><br>So, migrating off of .io domains is one way to exhibit solidarity. <br><br>Read more: <a href="https://gigaom.com/2014/06/30/the-dark-side-of-io-how-the-u-k-is-making-web-domain-profits-from-a-shady-cold-war-land-deal/">https://gigaom.com/2014/06/30/the-dark-side-of-io-how-the-u-k-is-making-web-domain-profits-from-a-shady-cold-war-land-deal/</a> <a href="https://twitter.com/eleven_ty/status/1202457672756404224">twitter.com/eleven_ty/status/…4224</a></p>&mdash; Tatiana Mac (@TatianaTMac) <a href="https://twitter.com/TatianaTMac/status/1202467104722571264?ref_src=twsrc%5Etfw">December 5, 2019</a></blockquote>
 

@@ -12,13 +12,10 @@ layout: layouts/docs.njk
 {%- if supporter | isBusinessPerson %}
   <div class="business-network-primary lo">
     <div class="lo-c">
-      <a href="/authors/{{ person.name | slug }}/" class="business-network-name nowrap">{% avatarlocalcache "twitter", person.name %}{{ person.business.name }}</a>
-      {%- if person.business.availability %}
-      <div class="business-network-available">{% emoji "🗓" %} Availability {{ person.business.availability | newsDate("LLLL yyyy") }}</div>
-      {%- endif %}
+      <a href="/authors/{{ person.name | slug }}/" class="business-network-name nowrap">{% communityavatar person.name %}{{ person.business_name or person.name }}</a>
     </div>
     <div class="lo-c business-network-hire">
-      <a href="{{ person.business.cta }}" class="btn-primary btn-primary-standard benchnine rainbow-active rainbow-active-noanim elv-externalexempt">Let’s Do Business</a>
+      <a href="{{ person.business_url }}" class="btn-primary btn-primary-standard benchnine rainbow-active rainbow-active-noanim elv-externalexempt">Let’s Do Business</a>
     </div>
   </div>
   <div>

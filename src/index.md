@@ -53,7 +53,7 @@ Run `npx @11ty/eleventy --serve` to start up a web server. Then open `http://loc
 
 <div class="sites-vert">
   <div class="lo-grid">
-{% for key, site in sites -%}{% if site.twitter and site.disabled != true and site.url and site.featured and site.superfeatured -%}
+{% for key, site in builtwith -%}{% if site.url and site.disabled != true and site.featured and site.superfeatured -%}
   {%- set hideRelatedLinks = true %}
   {%- include "site-card.njk" %}
 {% endif %}{%- endfor %}
@@ -63,7 +63,7 @@ Run `npx @11ty/eleventy --serve` to start up a web server. Then open `http://loc
 <!-- TODO some kind of aspect ratio? -->
 <div data-import="/imports/facepile.html" class="facepile-fullwidth"></div>
 
-View [all {{ sites | objectFilterNot("disabled") | length }} sites](/speedlify/).
+View [all {{ builtwith | objectFilterNot("disabled") | length }} sites](/speedlify/).
 
 ## Don’t take my word for it {% emoji "🌈" %}
 

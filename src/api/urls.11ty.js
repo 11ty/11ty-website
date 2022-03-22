@@ -6,9 +6,9 @@ module.exports.data = function() {
 }
 module.exports.render = function(data) {
 	let urls = [];
-	for(let key in data.sites) {
-		let site = data.sites[key];
-		if(site.disabled || site.excludedFromLeaderboards) {
+	for(let key in data.builtwith) {
+		let site = data.builtwith[key];
+		if(site.disabled || site.leaderboard_excluded) {
 			continue;
 		}
 		if(!site.url) {

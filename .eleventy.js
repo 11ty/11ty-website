@@ -30,6 +30,15 @@ loadLanguages(['yaml']);
 
 let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" decoding="async" class="avatar" width="200" height="200">`;
 const shortcodes = {
+	communityAvatar(slug, alt = "") {
+		if(!slug) {
+			return defaultAvatarHtml;
+		}
+		if((slug || "").startsWith("twitter:")) {
+			return shortcodes.avatar("twitter", slug.substring("twitter:".length), alt);
+		}
+		return shortcodes.getGitHubAvatarHtml(slug, alt);
+	},
 	avatar(datasource, slug, alt = "") {
 		if(!slug) {
 			return defaultAvatarHtml;
@@ -94,8 +103,13 @@ const shortcodes = {
 
 		let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(siteUrl)}/${preset}/1:1/${zoom ? `${zoom}/` : ""}`;
 
-		if(siteSlug === "11ty" || siteSlug === "foursquare") {
-			screenshotUrl = `/img/screenshot-fallbacks/${siteSlug}.jpg`;
+		// 11ty.dev or foursquare.com
+		let overrides = {
+			"7KrgLExJd-": "foursquare",
+			"dLN_2kDPpB": "11ty",
+		}
+		if(overrides[siteSlug]) {
+			screenshotUrl = `/img/screenshot-fallbacks/${overrides[siteSlug]}.jpg`;
 		}
 
 		let options = {
@@ -124,8 +138,47 @@ const shortcodes = {
 			imgHtml = `<img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(iconUrl)}/" width="150" height="150" alt="IndieWeb Avatar for ${iconUrl}" class="avatar avatar-large avatar-indieweb" loading="lazy" decoding="async">`;
 		}
 		return imgHtml;
-	}
+	},
+	getGitHubAvatarHtml(username, alt = "") {
+		if(!alt) {
+			alt = `GitHub Avatar for ${username}`;
+		}
+
+		let url = `https://avatars.githubusercontent.com/${username}?s=66`;
+		return `<img src="https://v1.image.11ty.dev/${encodeURIComponent(url)}/jpeg/66/" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
+	},
+	getOpenCollectiveAvatarHtml(url, alt = "") {
+		if(!alt) {
+			alt = `Open Collective Avatar for ${slug}`;
+		}
+
+		return `<img src="https://v1.image.11ty.dev/${encodeURIComponent(url)}/jpeg/66/" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
+	},
 };
+
+function findBy(data, path, value) {
+	return data.filter(entry => {
+		if(!path || !value) {
+			return false;
+		}
+
+		let gotten = lodashGet(entry, path);
+		if(!gotten) {
+			return false;
+		}
+
+		if(typeof value === "string") {
+			let valueLower = value.toLowerCase();
+			let dataLower = gotten.toLowerCase();
+			if(valueLower === dataLower) {
+				return true;
+			}
+			return false;
+		}
+
+		return value === gotten;
+	});
+}
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.setDataDeepMerge(true);
@@ -215,6 +268,8 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.addNunjucksAsyncShortcode("image", shortcodes.image);
 	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatar);
+	eleventyConfig.addShortcode("communityavatar", shortcodes.communityAvatar);
+	eleventyConfig.addShortcode("opencollectiveavatar", shortcodes.getOpenCollectiveAvatarHtml);
 	eleventyConfig.addShortcode("getScreenshotHtml", shortcodes.getScreenshotHtml);
 
 	eleventyConfig.addShortcode("codetitle", function(title, heading = "Filename") {
@@ -298,8 +353,31 @@ ${text.trim()}
 		return commaNumber(num);
 	});
 
+	eleventyConfig.addFilter("friendlyAuthorName", function(name) {
+		if(name && name.startsWith("twitter:")) {
+			return `<em>${name.substring("twitter:".length)}</em>`;
+		}
+		return name;
+	});
+
 	eleventyConfig.addFilter("displayPrice", function(num) {
 		return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }).format(num);
+	});
+
+	eleventyConfig.addFilter("displayUrl", function(url) {
+		url = url.replace("https://", "");
+		url = url.replace("http://", "");
+
+		if(url.endsWith("/index.html")) {
+			url = url.replace("/index.html", "/");
+		}
+
+		// remove trailing slash
+		if(url.endsWith("/")) {
+			url = url.substring(0, url.length - 1);
+		}
+
+		return url;
 	});
 
 	eleventyConfig.addShortcode("templatelangs", function(languages, page, whitelist, anchor, isinline) {
@@ -401,6 +479,30 @@ ${text.trim()}
 
 	eleventyConfig.addFilter("isBusinessPerson", function(supporter) {
 		return supporter && supporter.isMonthly && supporter.amount && supporter.amount.value >= 5;
+	});
+
+	eleventyConfig.addFilter("isSupporter", function(supporters, githubUsername, twitterUsernames = [], hardcodedOpencollectiveUsername) {
+		let supporter;
+		for(let twitter of twitterUsernames) {
+			supporter = findBy(supporters, "twitter", twitter);
+			if(supporter && supporter.length) {
+				return supporter.pop();
+			}
+		}
+
+		let slug = {
+			// hardcoded map for opencollective slugs
+			"twitter:unabridgedsoft": "unabridged-software",
+			"philhawksworth": "phil-hawksworth",
+			"matuzo": "manuel-matuzovic",
+			"zachleat": "zach-leatherman",
+		}[githubUsername] || hardcodedOpencollectiveUsername || githubUsername;
+
+		supporter = findBy(supporters, "slug", slug);
+		if(supporter && supporter.length) {
+			return supporter.pop();
+		}
+		return false;
 	});
 
 	eleventyConfig.addShortcode("supporterAmount", function(amount, maxAmount = 2000) {
@@ -548,29 +650,7 @@ ${text.trim()}
 		}
 	});
 
-	eleventyConfig.addFilter("findBy", (data, path, value) => {
-		return data.filter(entry => {
-			if(!path || !value) {
-				return false;
-			}
-
-			let gotten = lodashGet(entry, path);
-			if(!gotten) {
-				return false;
-			}
-
-			if(typeof value === "string") {
-				let valueLower = value.toLowerCase();
-				let dataLower = gotten.toLowerCase();
-				if(valueLower === dataLower) {
-					return true;
-				}
-				return false;
-			}
-
-			return value === gotten;
-		});
-	});
+	eleventyConfig.addFilter("findBy", findBy);
 
 	eleventyConfig.addFilter("findSiteDataByUrl", (url, sites) => {
 		let sitesArr = sites;
@@ -600,6 +680,7 @@ ${text.trim()}
 	eleventyConfig.addFilter("topAuthors", sites => {
 		let counts = {};
 		let eligibleCounts = {};
+		let sitesByAuthor = {};
 		getAuthors(sites, (name, site) => {
 			let key = name.toLowerCase();
 			if(!counts[key]) {
@@ -607,11 +688,16 @@ ${text.trim()}
 			}
 			counts[key]++;
 
-			if(site.url && !site.disabled && !site.superfeatured && !site.hideOnHomepage) {
+			if(site.url && !site.disabled) {
 				if(!eligibleCounts[key]) {
 					eligibleCounts[key] = 0;
 				}
 				eligibleCounts[key]++;
+
+				if(!sitesByAuthor[key]) {
+					sitesByAuthor[key] = [];
+				}
+				sitesByAuthor[key].push(site);
 			}
 		});
 
@@ -622,6 +708,7 @@ ${text.trim()}
 					name: author,
 					count: counts[author],
 					eligibleCount: eligibleCounts[author],
+					sites: sitesByAuthor[author],
 				});
 			}
 		}
@@ -667,7 +754,7 @@ ${text.trim()}
 			} else {
 				html.push(`<span class="nowrap">`);
 			}
-			html.push(shortcodes.avatar("twitter", name, name));
+			html.push(shortcodes.communityAvatar(name));
 			html.push(name);
 			if(isAuthor) {
 				html.push("</a>");

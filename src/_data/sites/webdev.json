@@ -1,9 +1,0 @@
-{
-	"name": "web.dev",
-	"url": "https://web.dev/",
-	"description": "Get the web's modern capabilities on your own sites and apps with useful guidance and analysis from web.dev.",
-	"source_url": "https://github.com/GoogleChrome/web.dev",
-	"twitter": "ChromiumDev",
-	"featured": true,
-	"superfeatured": true
-}
