@@ -8,7 +8,8 @@ query eleventyBackers {
     members(limit: 9999) {
       nodes {
         account {
-          name
+          name,
+          imageUrl,
           ... on Individual {
             email
           }
@@ -62,6 +63,7 @@ query eleventyBackers {
               statusCode: 200,
               body: `{
   "name": "${supporter.account.name}",
+  "image": "${supporter.account.imageUrl}",
   "slug": "${slug}"
 }`
             });
