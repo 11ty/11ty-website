@@ -487,11 +487,12 @@ ${text.trim()}
 		}
 
 		let slug = {
-			// hardcoded map for opencollective slugs
+			// hardcoded map for github => opencollective slugs
 			"twitter:unabridgedsoft": "unabridged-software",
 			"philhawksworth": "phil-hawksworth",
 			"matuzo": "manuel-matuzovic",
 			"zachleat": "zach-leatherman",
+			"joshcrain": "guest-ceed59a4",
 		}[githubUsername] || hardcodedOpencollectiveUsername || githubUsername;
 
 		supporter = findBy(supporters, "slug", slug);
