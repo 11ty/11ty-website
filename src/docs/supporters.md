@@ -13,7 +13,7 @@ Eleventy is made possible by financial contributions from these lovely people:
 {%- set nameToSlug = supporter.name | slug | lower -%}
 {%- if nameToSlug != "zach-leatherman" %}
   <div class="lo-c">
-    <a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt supporters-link" rel="sponsored">{% opencollectavatar supporter.image, supporter.name %}{{ supporter.name }}</a>
+    <a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt supporters-link" rel="sponsored">{% opencollectiveavatar supporter.image, supporter.name %}{{ supporter.name }}</a>
     <span class="lo lo-inline">
         <span class="lo-c lo-nocontentwrap supporters-hearts">{% supporterAmount supporter.totalAmountDonated %}</span>
         {%- if supporter.isMonthly %}

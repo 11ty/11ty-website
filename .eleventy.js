@@ -269,7 +269,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addNunjucksAsyncShortcode("image", shortcodes.image);
 	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatar);
 	eleventyConfig.addShortcode("communityavatar", shortcodes.communityAvatar);
-	eleventyConfig.addShortcode("opencollectavatar", shortcodes.getOpenCollectiveAvatarHtml);
+	eleventyConfig.addShortcode("opencollectiveavatar", shortcodes.getOpenCollectiveAvatarHtml);
 	eleventyConfig.addShortcode("getScreenshotHtml", shortcodes.getScreenshotHtml);
 
 	eleventyConfig.addShortcode("codetitle", function(title, heading = "Filename") {
