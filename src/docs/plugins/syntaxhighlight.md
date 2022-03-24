@@ -82,7 +82,7 @@ Use a `+` or `-` at the beginning of the line to denote the addition or removal 
 
 {% codetitle "Markdown", "Syntax" %}
 
-````markdown
+````
 ```diff-js
 +function myFunction() {
    // …
