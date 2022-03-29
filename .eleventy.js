@@ -20,7 +20,6 @@ const eleventyImage = require("@11ty/eleventy-img");
 const monthDiffPlugin = require("./config/monthDiff");
 const addedInLocalPlugin = require("./config/addedin");
 const minificationLocalPlugin = require("./config/minification");
-const getAuthors = require("./config/getAuthorsFromSites");
 const cleanName = require("./config/cleanAuthorName");
 const objectHas = require("./config/object-has");
 
