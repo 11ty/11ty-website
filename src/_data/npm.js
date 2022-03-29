@@ -19,7 +19,7 @@ module.exports = async function() {
 		let json = await EleventyFetch(url, {
 			type: "json",
 			duration: process.env.ELEVENTY_SERVERLESS ? "*" : "1d",
-			directory: ".cache/eleventy-fetch/",
+			directory: process.env.ELEVENTY_SERVERLESS ? "cache/" : ".cache/eleventy-fetch/",
 		});
 
 		return {

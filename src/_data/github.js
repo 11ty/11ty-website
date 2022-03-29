@@ -6,7 +6,7 @@ module.exports = async function() {
 		let json = await EleventyFetch("https://api.github.com/repos/11ty/eleventy", {
 			type: "json",
 			duration: process.env.ELEVENTY_SERVERLESS ? "*" : "1d",
-			directory: ".cache/eleventy-fetch/",
+			directory: process.env.ELEVENTY_SERVERLESS ? "cache/" : ".cache/eleventy-fetch/",
 		});
 
 		return {
