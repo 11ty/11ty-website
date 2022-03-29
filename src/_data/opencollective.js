@@ -39,7 +39,7 @@ module.exports = async function() {
 		let json = await EleventyFetch(url, {
 			type: "json",
 			duration: process.env.ELEVENTY_SERVERLESS ? "*" : (process.env.ELEVENTY_AVATARS ? "0s" : "1d"),
-			directory: process.env.ELEVENTY_SERVERLESS ? "cache/" : ".cache/eleventy-fetch/",
+			directory: ".cache/eleventy-fetch/",
 		});
 
 		let orders = json.nodes.map(order => {
