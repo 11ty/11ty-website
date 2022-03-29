@@ -219,7 +219,7 @@ module.exports = function(eleventyConfig) {
 			"src/img/gift.svg",
 			"src/img/possum-geri.png",
 			"_generated-serverless-collections.json",
-			{ from: ".cache/eleventy-fetch/", to: "cache" },
+			".cache/eleventy-fetch/",
 		]
 	});
 
@@ -236,7 +236,7 @@ module.exports = function(eleventyConfig) {
 			"src/img/gift.svg",
 			"src/img/possum-geri.png",
 			"_generated-serverless-collections.json",
-			{ from: ".cache/eleventy-fetch/", to: "cache" },
+			".cache/eleventy-fetch/",
 		]
 	});
 
@@ -493,7 +493,11 @@ ${text.trim()}
 			"matuzo": "manuel-matuzovic",
 			"zachleat": "zach-leatherman",
 			"joshcrain": "guest-ceed59a4",
-		}[githubUsername] || hardcodedOpencollectiveUsername || githubUsername;
+		}[githubUsername];
+
+		if(!slug) {
+			slug = hardcodedOpencollectiveUsername || githubUsername;
+		}
 
 		supporter = findBy(supporters, "slug", slug);
 		if(supporter && supporter.length) {
@@ -674,46 +678,10 @@ ${text.trim()}
 		return "";
 	});
 
-	eleventyConfig.addFilter("topAuthors", sites => {
-		let counts = {};
-		let eligibleCounts = {};
-		let sitesByAuthor = {};
-		getAuthors(sites, (name, site) => {
-			let key = name.toLowerCase();
-			if(!counts[key]) {
-				counts[key] = 0;
-			}
-			counts[key]++;
-
-			if(site.url && !site.disabled) {
-				if(!eligibleCounts[key]) {
-					eligibleCounts[key] = 0;
-				}
-				eligibleCounts[key]++;
-
-				if(!sitesByAuthor[key]) {
-					sitesByAuthor[key] = [];
-				}
-				sitesByAuthor[key].push(site);
-			}
+	eleventyConfig.addFilter("sortAuthors", authors => {
+		return Object.values(authors).sort((a, b) => {
+			return b.sites.length - a.sites.length;
 		});
-
-		let top = [];
-		for(let author in counts) {
-			if(counts[author]) {
-				top.push({
-					name: author,
-					count: counts[author],
-					eligibleCount: eligibleCounts[author],
-					sites: sitesByAuthor[author],
-				});
-			}
-		}
-		top.sort((a, b) => {
-			return b.count - a.count;
-		});
-
-		return top;
 	});
 
 	eleventyConfig.addFilter("cleanAuthorName", cleanName);

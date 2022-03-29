@@ -35,7 +35,7 @@ module.exports = async () => {
       }
 
       // Add opencollective username
-      if(site.opencollective) {
+      if(site.opencollective && !authors[key].opencollective) {
         authors[key].opencollective = site.opencollective;
       }
     }

@@ -2,8 +2,8 @@
 permalink: /imports/facepile.html
 ---
 <div class="facepile">
-{%- for author in builtwith | topAuthors | shuffle %}
-{%- if author.eligibleCount > 0 -%}
+{%- for author in authors | sortAuthors %}
+{%- if author.sites.length > 0 -%}
 	<a href="/authors/{{ author.name | slug }}/">{% communityavatar author.name %}<span class="sr-only">{{ author.name }}</span></a>
 {%- endif -%}
 {%- endfor %}

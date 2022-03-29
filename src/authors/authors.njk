@@ -21,11 +21,11 @@ layout: layouts/docs.njk
     </tr>
   </thead>
 	<tbody>
-{%- for author in builtwith | topAuthors %}
+{%- for author in authors | sortAuthors %}
 {%- set supporter = opencollective.supporters | isSupporter(author.name, githubTwitterMap[author.name], author.opencollective) -%}
 		<tr>
 			<td><a href="/authors/{{ author.name | slug }}/">{% communityavatar author.name %}{{ supporter.name or author.name | friendlyAuthorName | safe }}</a></td>
-			<td>×{{ author.count }} site{% if author.count !== 1 %}s{% endif %}</td>
+			<td>×{{ author.sites.length }} site{% if author.sites.length !== 1 %}s{% endif %}</td>
 			<td>{% if supporter %}🎈{% endif %}</td>
 		</tr>
 {%- endfor %}
