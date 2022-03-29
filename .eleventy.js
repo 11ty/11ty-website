@@ -127,7 +127,7 @@ const shortcodes = {
 			// onerror: "let p=this.closest('picture');if(p){p.remove();}this.remove();"
 		});
 	},
-	getIndieAvatarUrl(iconUrl) {
+	getIndieAvatarHtml(iconUrl) {
 		let imgHtml = "";
 		if(!iconUrl.startsWith("/")) {
 			imgHtml = `<img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(iconUrl)}/" width="150" height="150" alt="IndieWeb Avatar for ${iconUrl}" class="avatar avatar-large avatar-indieweb" loading="lazy" decoding="async">`;
@@ -245,14 +245,14 @@ module.exports = function(eleventyConfig) {
 			.filter(item => (item.data || {}).excludeFromSidebar !== true);
 	});
 
-	eleventyConfig.addShortcode("indieavatar", shortcodes.getIndieAvatarUrl);
+	eleventyConfig.addShortcode("indieavatar", shortcodes.getIndieAvatarHtml);
 
 	eleventyConfig.addShortcode("indieweblink", function(content, url, iconUrl) {
 		if(!url) {
 			return content;
 		}
 
-		let imgHtml = shortcodes.getIndieAvatarUrl(iconUrl || url);
+		let imgHtml = shortcodes.getIndieAvatarHtml(iconUrl || url);
 		return `<a href="${url}">${imgHtml}${content}</a>`;
 	});
 
@@ -470,6 +470,10 @@ ${text.trim()}
 
 	eleventyConfig.addShortcode("testimonial", function(testimonial) {
 		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, shortcodes.avatar("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`) + testimonial.name)}</span>` : ``}</p></blockquote>`;
+	});
+
+	eleventyConfig.addFilter("filterBusinessPeople", function(authors) {
+		return Object.values(authors).filter(entry => !!entry.business_url);
 	});
 
 	eleventyConfig.addFilter("isBusinessPerson", function(supporter) {
