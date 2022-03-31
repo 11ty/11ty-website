@@ -1,5 +1,5 @@
 {
   "npm": "eleventy-plugin-html-validate",
-  "author": "matt-auckland",
+  "author": "mattatt4ck",
   "description": "Validate your site's HTML on build."
 }
