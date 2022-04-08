@@ -6,7 +6,7 @@ eleventyNavigation:
 communityLinksKey: api-services-screenshot
 ---
 
-Feed this runtime service a URL and it return a fully rendered screenshot image from that page (using Puppeteer)
+Feed this runtime service a URL and it returns a fully rendered screenshot image from that page (using Puppeteer)
 
 [[toc]]
 
