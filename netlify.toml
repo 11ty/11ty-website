@@ -4,6 +4,12 @@ command = "npm run build-production"
 
 [functions]
 directory = "netlify/functions/"
+node_bundler = "esbuild"
+
+[functions.serverless]
+included_files = [
+  "./netlify/functions/serverless/**/*",
+]
 
 [[redirects]]
 from = "/authors/:name/"
