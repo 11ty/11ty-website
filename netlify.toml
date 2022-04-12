@@ -7,20 +7,6 @@ command = "npm start"
 
 [functions]
 directory = "netlify/functions/"
-node_bundler = "esbuild"
-external_node_modules = [
-  "uglify-js",
-  "@11ty/eleventy",
-  "@11ty/dependency-tree",
-  "@11ty/eleventy-fetch",
-  "prismjs",
-  "pug-filters",
-  "any-promise",
-  "dotenv"
-]
-
-  [functions.serverless]
-  included_files = [ "./netlify/functions/serverless/**/*" ]
 
 [[redirects]]
 from = "/authors/:name/"
