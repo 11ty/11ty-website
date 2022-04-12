@@ -5,6 +5,7 @@ command = "npm run build-production"
 [functions]
 directory = "netlify/functions/"
 node_bundler = "esbuild"
+external_node_modules = ["uglify-js", "@11ty/eleventy", "@11ty/dependency-tree", "@11ty/eleventy-fetch", "prismjs", "pug-filters", "any-promise"]
 
 [functions.serverless]
 included_files = [
