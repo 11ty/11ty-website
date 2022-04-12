@@ -8,7 +8,7 @@ eleventyNavigation:
 
 [Add your own starter project](https://github.com/11ty/11ty-website/tree/master/src/_data/starters). Community contributions are shown in random order. [Lighthouse scores are updated daily](https://www.speedlify.dev/eleventy-starters/).
 
-<filter-container oninit>
+<filter-container data-oninit>
 <form>
   <select data-filter-bind="tags" class="select-filter">
     <option value="">Show All</option>

@@ -16,14 +16,15 @@ module.exports = eleventyConfig => {
 		return content;
 	});
 
-	eleventyConfig.addNunjucksAsyncFilter("jsmin", function(code, callback) {
+	eleventyConfig.addFilter("jsmin", function(code) {
 		if(process.env.NODE_ENV === "production") {
-			Terser.minify(code).then(minified => {
-				callback(null, minified.code);
-			}, e => {
-				console.log("Terser error: ", e);
-				callback(null, code);
-			});
+			let minified = Terser.minify(code);
+			if( minified.error ) {
+				console.log("Terser error: ", minified.error);
+				return code;
+			}
+
+			return minified.code;
 		}
 
 		return code;
