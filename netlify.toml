@@ -2,6 +2,9 @@
 publish = "_site"
 command = "npm run build-production"
 
+[dev]
+command = "npm start"
+
 [functions]
 directory = "netlify/functions/"
 node_bundler = "esbuild"
@@ -12,7 +15,8 @@ external_node_modules = [
   "@11ty/eleventy-fetch",
   "prismjs",
   "pug-filters",
-  "any-promise"
+  "any-promise",
+  "dotenv"
 ]
 
   [functions.serverless]

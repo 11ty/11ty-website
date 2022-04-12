@@ -11,6 +11,7 @@ yarn.lock
 **/.DS_Store
 _generated*
 src/_data/builtwith/
+.netlify/
 netlify/functions/serverless/*
 !netlify/functions/serverless/index.js
 netlify/functions/dynamic/*
