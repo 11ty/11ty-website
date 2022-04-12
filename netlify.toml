@@ -6,6 +6,11 @@ command = "npm run build-production"
 directory = "netlify/functions/"
 node_bundler = "esbuild"
 
+[functions.serverless]
+included_files = [
+  "./netlify/functions/serverless/**/*",
+]
+
 [[redirects]]
 from = "/"
 to = "/.netlify/functions/dynamic"
