@@ -97,11 +97,16 @@ Example Output below is using the above permalink value.
 | `"2018-01-01-myFile.md"` | `"myFile"` | `myFile.html` |
 | `"myDir/myFile.md"` | `"myDir/myFile"` | `myDir/myFile.html` |
 
-## `eleventy` Variable
-
+## `eleventy` Variable {% addedin "1.0.0" %}
 
 ```js
 let eleventy = {
+
+  // Eleventy version
+  version: "1.0.1", // New in Eleventy v1.0.1
+
+  // For use with `<meta name="generator">`
+  generator: "Eleventy v1.0.1", // New in Eleventy v1.0.1
 
   // Read more about their `process.env` counterparts below
   env: {
@@ -134,11 +139,16 @@ let eleventy = {
 ```
 
 Learn more about:
-* [Eleventy-supplied Environment Variables](/docs/environment-vars/#eleventy-supplied)
-* Serverless:
+
+* [Eleventy-supplied Environment Variables on `process.env`](/docs/environment-vars/#eleventy-supplied)
+* [Serverless](/docs/plugins/serverless/)
   * [Dynamic Slugs and Serverless Global Data](/docs/plugins/serverless/#dynamic-slugs-and-serverless-global-data).
   * `event.queryStringParameters`, which are very similar to [URL.searchParams](https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams). It’s an object representing the name/value pairs for things after the `?` in a URL.
 
-### Environment Variables
+Eleventy Leaderboards:
+
+* Upcoming versions of the [Eleventy Leaderboards](/speedlify/) will require that {% raw %}`<meta name="generator" content="{{ eleventy.generator }}">`{% endraw %} {% addedin "1.0.1" %} exist on the page’s markup to be valid for placement and ranking.
+
+## Environment Variables on `process.env`
 
 * Read more about [Eleventy-supplied environment variables](/docs/environment-vars/#eleventy-supplied).
