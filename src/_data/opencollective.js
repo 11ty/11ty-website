@@ -8,10 +8,11 @@ const FilteredProfiles = [
 	"masonslots", //gambling
 	"trust-my-paper", // selling term papers
 	"kiirlaenud", // some quick loans site
-	"kajino-bitcoin", //bitcoin
+	"kajino-bitcoin", // crypto
 	"seo25-com", // selling website traffic
 	"relief-factor", // profile link was some weird PDF
 	"targetedwebtraffic", // selling website traffic
+	"forexbrokerz", // crypto
 ];
 
 function isMonthlyOrYearlyOrder(order) {
