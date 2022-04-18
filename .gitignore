@@ -10,6 +10,7 @@ yarn.lock
 .vscode
 **/.DS_Store
 _generated*
+.netlify/
 netlify/functions/serverless/*
 !netlify/functions/serverless/index.js
 netlify/functions/dynamic/*
