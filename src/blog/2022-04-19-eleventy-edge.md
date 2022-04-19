@@ -12,17 +12,24 @@ Eleventy Edge is an exciting new way to add dynamic content to your Eleventy tem
 * **[Eleventy Edge Plugin documentation](/docs/plugins/edge/)**
 * **[Eleventy Edge Demos](https://demo-eleventy-edge.netlify.app/)**
 
+## A few ideas
+
 Here are a few ideas of things you could do with the new Eleventy Edge plugin:
 
 * Any user personalized content (User accounts, premium-only content, AB testing)
 * Accessing/setting HTTP Headers (e.g. Cookies, Save-Data, Client Hints, etc)
-* Handling Forms
+* [Handling Forms](https://demo-eleventy-edge.netlify.app/forms/)
 * Using Geolocation information to localize content
+* A zero-clientside JavaScript [Dark mode/Light mode toggle](https://demo-eleventy-edge.netlify.app/appearance/)
+
+## Supplement your build
 
 You can use Eleventy Edge with your existing projects and templates—render just a portion of your build template on the Edge:
 
+{% codetitle "Nunjucks, Liquid", "Syntax" %}
+
 {% raw %}
-```html
+```liquid
 The content outside of the `edge` shortcode is generated with the Build.
 
 {% edge %}
@@ -36,5 +43,3 @@ The content inside of the `edge` shortcode is generated on the Edge.
 {% endraw %}
 
 This feature makes heavy use of [Netlify’s new Edge Functions feature](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/) to run Eleventy in Deno on Edge servers. It continues Eleventy’s architectural dedication to markup-first zero-clientside JavaScript solutions to deliver the fast and scalable dynamic web sites. Check out our [introductory demos](https://demo-eleventy-edge.netlify.app/) and watch for more content to come discussing this exciting new feature.
-
-Check out this [more advanced example showing Eleventy Edge rendering a Dark mode/Light mode toggle](https://demo-eleventy-edge.netlify.app/appearance/), deferring to a system preference, without any clientside JavaScript
