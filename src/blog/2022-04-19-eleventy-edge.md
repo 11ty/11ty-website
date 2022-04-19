@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: Blog
   key: Eleventy Edge
 ---
-I am very proud to introducing a brand new addition to Eleventy: Eleventy Edge.
+I am very proud to introduce a brand new addition to Eleventy: Eleventy Edge.
 
 Eleventy Edge is an exciting new way to add dynamic content to your Eleventy templates. With a simple Eleventy shortcode you can opt-in a part of your Eleventy template to run on an Edge server, allowing your site to use dynamic, user-specific content!
 
@@ -32,6 +32,6 @@ All without clientside JS.
 {% endedge %}{% endraw %}
 ```
 
-This feature makes heavy use of Netlify’s new Edge Functions feature to run Eleventy in Deno on Edge servers. It continues Eleventy’s architectural dedication to markup-first zero-clientside JavaScript solutions to deliver the fast and scalable dynamic web sites. Check out our [introductory demos](https://demo-eleventy-edge.netlify.app/) and watch for more content to come discussing this exciting new feature.
+This feature makes heavy use of [Netlify’s new Edge Functions feature](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/) to run Eleventy in Deno on Edge servers. It continues Eleventy’s architectural dedication to markup-first zero-clientside JavaScript solutions to deliver the fast and scalable dynamic web sites. Check out our [introductory demos](https://demo-eleventy-edge.netlify.app/) and watch for more content to come discussing this exciting new feature.
 
 Check out this [more advanced example showing Eleventy Edge rendering a Dark mode/Light mode toggle](https://demo-eleventy-edge.netlify.app/appearance/), deferring to a system preference, without any clientside JavaScript

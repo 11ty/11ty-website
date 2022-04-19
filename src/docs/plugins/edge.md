@@ -10,7 +10,7 @@ overrideCommunityLinks: true
 
 {{ eleventyNavigation.excerpt }}
 
-{% callout "info" %}This feature is considered <strong>experimental</strong> and requires Eleventy <code>v2.0.0-canary.6</code> or higher. Our first release is limited to Netlify Edge Functions support only.{% endcallout %}
+{% callout "info" %}This feature is considered <strong>experimental</strong> and requires Eleventy <code>v2.0.0-canary.6</code> or higher. Our first release is limited to <a href="https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/">Netlify Edge Functions</a> support only.{% endcallout %}
 
 Eleventy Edge is an exciting new way to add dynamic content to your Eleventy templates. With a simple Eleventy shortcode you can opt-in a part of your Eleventy template to run on an Edge server, allowing your site to use dynamic, user-specific content!
 
@@ -74,7 +74,7 @@ module.exports = function(eleventyConfig) {
 
 ### 3. Create your Edge Function
 
-Save this file to `./netlify/edge-functions/eleventy-edge.js`. Note that Edge Functions run in Deno so they require ESM (`import` not `require`).
+Save this file to `./netlify/edge-functions/eleventy-edge.js`. Note that [Edge Functions](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/) run in Deno so they require ESM (`import` not `require`).
 
 ```js
 import { EleventyEdge } from "./_generated/eleventy-edge.js";
