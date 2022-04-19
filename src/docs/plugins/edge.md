@@ -18,23 +18,25 @@ Here are a few ideas:
 
 * Any user personalized content (User accounts, premium-only content, AB testing)
 * Accessing/setting HTTP Headers (e.g. Cookies, Save-Data, Client Hints, etc)
-* Handling Forms
+* [Handling Forms](https://demo-eleventy-edge.netlify.app/forms/)
 * Using Geolocation information to localize content
+* A zero-clientside JavaScript [Dark mode/Light mode toggle](https://demo-eleventy-edge.netlify.app/appearance/)
 
+## Try out the demos
 
-## Check out our demos
+Try out the [Eleventy Edge demos using Netlify’s Edge Functions](https://demo-eleventy-edge.netlify.app/).
 
-Try out the [working demo site of Eleventy Edge using Netlify’s Edge Functions](https://demo-eleventy-edge.netlify.app/).
+Read the [`demo-eleventy-edge` Source Code on GitHub](https://github.com/11ty/demo-eleventy-edge)
 
 ## How does it work?
 
-### 1. Installation
+Don’t already have an Eleventy project? Let’s go through the [Getting Started Guide first](/docs/getting-started/) and come back here when you’re done!
 
-If you don’t have an existing project, you can create a sample `package.json` file using `npm init -y`. [Read more about package.json and local package installation.](/docs/getting-started/#step-2-install-eleventy)
+### 1. Installation
 
 The Eleventy Edge plugin is bundled with Eleventy, but do note that the plugin requires version `2.0.0-canary.6` or newer.
 
-At launch (to run Eleventy Edge locally), you will need to use Netlify CLI (version `10.0.0` or higher).
+At time of initial launch, you will need to use Netlify CLI to run Eleventy Edge locally (`netlify-cli` version `10.0.0` or higher).
 
 ```
 npm install netlify-cli
@@ -51,7 +53,7 @@ module.exports = function(eleventyConfig) {
 ```
 
 <details>
-<summary>See the advanced options (you probably don’t need these)</summary>
+<summary>Expand to read about the advanced options (you probably don’t need these)</summary>
 
 ```js
 const { EleventyEdgePlugin } = require("@11ty/eleventy");
@@ -103,7 +105,16 @@ export default async (request, context) => {
 };
 ```
 
-### 4. Create/add to your `netlify.toml`
+#### Read more about Netlify’s Edge Functions
+
+* {% indieweblink "Netlify Docs: Edge Functions overview", "https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/" %}
+* {% indieweblink "Netlify Edge Functions on Deno Deploy", "https://deno.com/blog/netlify-edge-functions-on-deno-deploy" %}
+* {% indieweblink "Netlify Edge Functions: A new serverless runtime powered by Deno", "https://www.netlify.com/blog/announcing-serverless-compute-with-edge-functions" %}
+
+
+### 4. `netlify.toml`
+
+<details><summary>If you don’t already have a <code>netlify.toml</code>, expand this to view a sample starter.</summary>
 
 ```toml
 [dev]
@@ -113,9 +124,13 @@ command = "npx @11ty/eleventy --quiet --watch"
 [build]
 command = "npx @11ty/eleventy"
 publish = "_site"
+```
 
-# eleventy-edge points to the file you created above
-# at `./netlify/edge-functions/eleventy-edge.js`
+</details>
+
+Add this to your `netlify.toml` file. `eleventy-edge` points to the file you created above at `./netlify/edge-functions/eleventy-edge.js`.
+
+```toml
 [[edge_functions]]
 function = "eleventy-edge"
 path = "/*"
@@ -127,17 +142,19 @@ Feel free to change `path = "/*"` to something more granular!
 
 Here we are making a simple `index.liquid` file. We can use the `{% raw %}{% edge %}{% endraw %}` shortcode to run the Liquid template syntax inside on the Edge server.
 
-```html
-The content outside of the <code>edge</code> shortcode is generated with the Build.
+{% raw %}
+```liquid
+The content outside of the `edge` shortcode is generated with the Build.
 
-{% raw %}{% edge %}
-The content inside of the <code>edge</code> shortcode is generated on the Edge.
+{% edge %}
+The content inside of the `edge` shortcode is generated on the Edge.
 
 <pre>
 {{ eleventy | json }}
 </pre>
-{% endedge %}{% endraw %}
+{% endedge %}
 ```
+{% endraw %}
 
 ### 6. Run your local server
 

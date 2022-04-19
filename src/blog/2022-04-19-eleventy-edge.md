@@ -11,6 +11,7 @@ Eleventy Edge is an exciting new way to add dynamic content to your Eleventy tem
 
 * **[Eleventy Edge Plugin documentation](/docs/plugins/edge/)**
 * **[Eleventy Edge Demos](https://demo-eleventy-edge.netlify.app/)**
+* **[`demo-eleventy-edge` Source Code on GitHub](https://github.com/11ty/demo-eleventy-edge)**
 
 ## A few ideas
 
@@ -43,3 +44,9 @@ The content inside of the `edge` shortcode is generated on the Edge.
 {% endraw %}
 
 This feature makes heavy use of [Netlify’s new Edge Functions feature](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/) to run Eleventy in Deno on Edge servers. It continues Eleventy’s architectural dedication to markup-first zero-clientside JavaScript solutions to deliver the fast and scalable dynamic web sites. Check out our [introductory demos](https://demo-eleventy-edge.netlify.app/) and watch for more content to come discussing this exciting new feature.
+
+## More around the web
+
+* {% indieweblink "Netlify Docs: Edge Functions overview", "https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/" %}
+* {% indieweblink "Netlify Edge Functions on Deno Deploy", "https://deno.com/blog/netlify-edge-functions-on-deno-deploy" %}
+* {% indieweblink "Netlify Edge Functions: A new serverless runtime powered by Deno", "https://www.netlify.com/blog/announcing-serverless-compute-with-edge-functions" %}
