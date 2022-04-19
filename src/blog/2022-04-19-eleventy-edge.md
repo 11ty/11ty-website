@@ -21,17 +21,19 @@ Here are a few ideas of things you could do with the new Eleventy Edge plugin:
 
 You can use Eleventy Edge with your existing projects and templates—render just a portion of your build template on the Edge:
 
+{% raw %}
 ```html
-The content outside of the <code>edge</code> shortcode is generated with the Build.
+The content outside of the `edge` shortcode is generated with the Build.
 
-{% raw %}{% edge %}
-The content inside of the <code>edge</code> shortcode is generated on the Edge.
+{% edge %}
+The content inside of the `edge` shortcode is generated on the Edge.
 
-Use a query param value here.
-Use a cookie value here.
-All without clientside JS.
-{% endedge %}{% endraw %}
+* Use a query param value here.
+* Use a cookie value here.
+* All without clientside JS.
+{% endedge %}
 ```
+{% endraw %}
 
 This feature makes heavy use of [Netlify’s new Edge Functions feature](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/) to run Eleventy in Deno on Edge servers. It continues Eleventy’s architectural dedication to markup-first zero-clientside JavaScript solutions to deliver the fast and scalable dynamic web sites. Check out our [introductory demos](https://demo-eleventy-edge.netlify.app/) and watch for more content to come discussing this exciting new feature.
 
