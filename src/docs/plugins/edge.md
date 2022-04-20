@@ -44,6 +44,8 @@ npm install netlify-cli
 
 ### 2. Add to your configuration file
 
+{% codetitle ".eleventy.js" %}
+
 ```js
 const { EleventyEdgePlugin } = require("@11ty/eleventy");
 
@@ -136,6 +138,8 @@ export default async (request, context) => {
 
 <details><summary>If you don’t already have a <code>netlify.toml</code>, expand this to view a sample starter.</summary>
 
+{% codetitle "netlify.toml" %}
+
 ```toml
 [dev]
 framework = "#static"
@@ -149,6 +153,8 @@ publish = "_site"
 </details>
 
 Add this to your `netlify.toml` file.
+
+{% codetitle "netlify.toml" %}
 
 ```toml
 [[edge_functions]]
@@ -184,11 +190,20 @@ npx netlify dev
 
 Navigation to `index.liquid` by going to `http://localhost:8888/` in your browser. (Double check your console output to make sure the port is `8888`).
 
+### Always Escape Input
+
+When using any dynamic user input (via query parameters or cookies), the values here should be treated as potentially malicious user input and you must escape these if you use them in templates. The way to do this is template language specific.
+
+* Liquid has both an `escape` and `escape_once` filter.
+* Nunjucks has autoescape turned on by default. If you’ve disabled it, you can use the `escape` filter.
+* Read more at [the Layouts documentation](https://www.11ty.dev/docs/layouts/#prevent-double-escaping-in-layouts), which lists both methods for escaped and unescaped output in template languages.
+
 ## Frequently Asked Questions
 
 ### Limitations
 
-_In progress._
+* The `edge` shortcode is only available in async-friendly template languages. Right now that includes: `11ty.js`, `njk`, `liquid`, and `markdown` (requires another [pre-processing language, and the default is Liquid](https://www.11ty.dev/docs/languages/markdown/)). You can find a bunch of different test cases and examples on [`demo-eleventy-edge`](https://demo-eleventy-edge.netlify.app/tests/)
+* Content _inside_ of the `edge` shortcode (rendered on the Edge) is further limited to `liquid`, `njk`, or `markdown`.
 
 ### How does it compare to Serverless?
 
