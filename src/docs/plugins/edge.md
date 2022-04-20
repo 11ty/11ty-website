@@ -10,7 +10,7 @@ overrideCommunityLinks: true
 
 {{ eleventyNavigation.excerpt }}
 
-{% callout "info" %}This feature is considered <strong>experimental</strong> and requires Eleventy <code>v2.0.0-canary.6</code> or higher. Our first release is limited to <a href="https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/">Netlify Edge Functions</a> support only.{% endcallout %}
+{% callout "info" %}This feature is considered <strong>experimental</strong> and requires Eleventy <code>v2.0.0-canary.7</code> or higher. Our first release is limited to <a href="https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/">Netlify Edge Functions</a> support only.{% endcallout %}
 
 Eleventy Edge is an exciting new way to add dynamic content to your Eleventy templates. With a simple Eleventy shortcode you can opt-in a part of your Eleventy template to run on an Edge server, allowing your site to use dynamic, user-specific content!
 
@@ -34,7 +34,7 @@ Don’t already have an Eleventy project? Let’s go through the [Getting Starte
 
 ### 1. Installation
 
-The Eleventy Edge plugin is bundled with Eleventy, but do note that the plugin requires version `2.0.0-canary.6` or newer.
+The Eleventy Edge plugin is bundled with Eleventy, but do note that the plugin requires version `2.0.0-canary.7` or newer.
 
 At time of initial launch, you will need to use Netlify CLI to run Eleventy Edge locally (`netlify-cli` version `10.0.0` or higher).
 
@@ -63,29 +63,43 @@ module.exports = function(eleventyConfig) {
     // controls the shortcode name
     name: "edge",
 
-    // controls where the Edge Function bundles go
-    functionsDir: "./netlify/edge-functions/",
+    // Used for the default deno import URL
+    // Added in 2.0.0-canary.7
+    eleventyEdgeVersion: "1.0.0",
 
     // Version check for the Edge runtime
     compatibility: ">=2",
+
+    // controls where the Edge Function bundles go
+    functionsDir: "./netlify/edge-functions/",
+
+    // Directory to write the import_map.json to
+    // Also supported: `false`
+    // Added in 2.0.0-canary.7
+    importMap: "./.netlify/edge-functions/",
   });
 };
 ```
 
 </details>
 
-### 3. Create your Edge Function
+Starting with Eleventy `2.0.0-canary.7` the above plugin will automatically generate an Eleventy Edge Function file for you at: `./netlify/edge-functions/eleventy-edge.js`.
 
-Save this file to `./netlify/edge-functions/eleventy-edge.js`. Note that [Edge Functions](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/) run in Deno so they require ESM (`import` not `require`).
+<details>
+<summary>Expand to see a sample Eleventy Edge Function</summary>
+
+Note that [Edge Functions](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/) run in Deno so they require ESM (`import` not `require`).
 
 ```js
-import { EleventyEdge } from "./_generated/eleventy-edge.js";
+import { EleventyEdge } from "eleventy:edge";
+import precompiledAppData from "./_generated/eleventy-edge-app-data.js";
 
 export default async (request, context) => {
   try {
     let edge = new EleventyEdge("edge", {
       request,
       context,
+      precompiled: precompiledAppData,
 
       // default is [], add more keys to opt-in e.g. ["appearance", "username"]
       cookies: [],
@@ -105,6 +119,12 @@ export default async (request, context) => {
 };
 ```
 
+</details>
+
+{% callout "warn", "md" %}If you tried Eleventy Edge on `2.0.0-canary.6`, unfortunately [we had to restructure some deps](https://github.com/11ty/eleventy/issues/2335#issuecomment-1104470515) and the Edge Function `import` URLs are different starting with `2.0.0-canary.7`. The good news is that Eleventy will generate a working file for you! Sorry folks!
+{% endcallout %}
+
+
 #### Read more about Netlify’s Edge Functions
 
 * {% indieweblink "Netlify Docs: Edge Functions overview", "https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/" %}
@@ -112,7 +132,7 @@ export default async (request, context) => {
 * {% indieweblink "Netlify Edge Functions: A new serverless runtime powered by Deno", "https://www.netlify.com/blog/announcing-serverless-compute-with-edge-functions" %}
 
 
-### 4. `netlify.toml`
+### 3. `netlify.toml`
 
 <details><summary>If you don’t already have a <code>netlify.toml</code>, expand this to view a sample starter.</summary>
 
@@ -128,7 +148,7 @@ publish = "_site"
 
 </details>
 
-Add this to your `netlify.toml` file. `eleventy-edge` points to the file you created above at `./netlify/edge-functions/eleventy-edge.js`.
+Add this to your `netlify.toml` file.
 
 ```toml
 [[edge_functions]]
@@ -136,9 +156,9 @@ function = "eleventy-edge"
 path = "/*"
 ```
 
-Feel free to change `path = "/*"` to something more granular!
+ `eleventy-edge` points to the file that was created above at `./netlify/edge-functions/eleventy-edge.js`. Using `path= "/*"` will run Eleventy Edge on all of the pages on your site. You can change this setting to something more granular (e.g. `path = "/"` for just the home page).
 
-### 5. Make your content template
+### 4. Make your content template
 
 Here we are making a simple `index.liquid` file. We can use the `{% raw %}{% edge %}{% endraw %}` shortcode to run the Liquid template syntax inside on the Edge server.
 
@@ -156,7 +176,7 @@ The content inside of the `edge` shortcode is generated on the Edge.
 ```
 {% endraw %}
 
-### 6. Run your local server
+### 5. Run your local server
 
 ```
 npx netlify dev
