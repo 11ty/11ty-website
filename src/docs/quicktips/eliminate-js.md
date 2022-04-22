@@ -16,7 +16,7 @@ Read more at the [GitHub API documentation](https://developer.github.com/v3/repo
 
 This is a bit different from our client-side implementation because this data is only updated as often as your build runs. This is implemented using a global [JavaScript data file](/docs/data-js/) at `_data/github.js`.
 
-* Install new dependencies: `npm install node-fetch --save-dev`
+* Install new dependencies: `npm install node-fetch@cjs --save-dev`
 * Read more about [`node-fetch`](https://www.npmjs.com/package/node-fetch)
 
 {% codetitle "_data/github.js" %}
