@@ -48,7 +48,7 @@ Situations where you might want to use `addExtension` but probably shouldn’t:
 
 ## Example: Add Sass support to Eleventy
 
-For a more realistic sample, here’s an example of Eleventy looking for all `.sass` files in a project’s input directory to process them to your output directory.
+For a more realistic sample, here’s an example of Eleventy looking for all `.scss` files in a project’s input directory to process them to your output directory.
 
 {% codetitle ".eleventy.js" %}
 
