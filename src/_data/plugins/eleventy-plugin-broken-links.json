@@ -1,5 +1,5 @@
 {
   "npm": "eleventy-plugin-broken-links",
-  "author": "bburgess_keys",
-  "descrption": "A plugin to check your build for broken external links and redirects"
+  "author": "bradleyburgess",
+  "description": "A plugin to check your build for broken external links and redirects"
 }
