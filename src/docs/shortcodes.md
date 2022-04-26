@@ -20,19 +20,19 @@ Various template engines can be extended with shortcodes for easy reusable conte
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     Language:
-    <a href="#shortcode-njk" id="shortcode-njk-btn" role="tab" aria-controls="shortcode-njk" aria-selected="true">Nunjucks</a>
-    <a href="#shortcode-liquid" id="shortcode-liquid-btn" role="tab" aria-controls="shortcode-liquid" aria-selected="false">Liquid</a>
-    <a href="#shortcode-hbs" id="shortcode-hbs-btn" role="tab" aria-controls="shortcode-hbs" aria-selected="false">Handlebars</a>
-    <a href="#shortcode-11tyjs" id="shortcode-11tyjs-btn" role="tab" aria-controls="shortcode-11tyjs" aria-selected="false">11ty.js</a>
+    <a href="#shortcode-njk" role="tab">Nunjucks</a>
+    <a href="#shortcode-liquid" role="tab">Liquid</a>
+    <a href="#shortcode-hbs" role="tab">Handlebars</a>
+    <a href="#shortcode-11tyjs" role="tab">11ty.js</a>
   </div>
-  <div id="shortcode-njk" role="tabpanel" aria-labelledby="shortcode-njk-btn">
+  <div id="shortcode-njk" role="tabpanel">
     {% codetitle "sample.njk" %}
 {%- highlight "html" %}{% raw %}
 {% user firstName, lastName %}
 {% endraw %}{% endhighlight %}
     <p>The comma between arguments is <strong>required</strong> in Nunjucks templates.</p>
   </div>
-  <div id="shortcode-liquid" role="tabpanel" aria-labelledby="shortcode-liquid-btn">
+  <div id="shortcode-liquid" role="tabpanel">
     {% codetitle "sample.liquid" %}
 {%- highlight "html" %}{% raw %}
 {% user firstName, lastName %}
@@ -43,7 +43,7 @@ Various template engines can be extended with shortcodes for easy reusable conte
 {% user firstName lastName %}
 {% endraw %}{% endhighlight %}
   </div>
-  <div id="shortcode-hbs" role="tabpanel" aria-labelledby="shortcode-hbs-btn">
+  <div id="shortcode-hbs" role="tabpanel">
     {% codetitle "sample.hbs" %}
 {%- highlight "html" %}{% raw %}
 <!-- Note the three opening and closing curly brackets (the triple-stash) -->
@@ -51,7 +51,7 @@ Various template engines can be extended with shortcodes for easy reusable conte
 {% endraw %}{%- endhighlight %}
     {% callout "info" %}Note that if you return HTML in your Handlebars shortcode, you need to use the Handlebars triple-stash syntax (three opening and three closing curly brackets, e.g. <code>{% raw %}{{{ shortcodeName }}}{% endraw %}</code>) to avoid double-escaped HTML. If it’s double-escaped a paragraph tag may render as <code>&amp;lt;p&amp;gt;</code>{% endcallout %}
   </div>
-  <div id="shortcode-11tyjs" role="tabpanel" aria-labelledby="shortcode-11tyjs-btn">
+  <div id="shortcode-11tyjs" role="tabpanel">
     {% codetitle "sample.11ty.js" %}
 {%- highlight "js" %}{% raw %}
 module.exports = function({ firstName, lastName }) {

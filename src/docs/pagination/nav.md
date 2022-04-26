@@ -65,16 +65,16 @@ Alright, you definitely read all of those right? 😇 Here’s some accessible c
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     Language:
-    <a href="#paged-nav-starter-njk" id="paged-nav-starter-njk-btn" role="tab" aria-controls="paged-nav-starter-njk" aria-selected="true">Nunjucks</a>
-    <a href="#paged-nav-starter-11tyjs" id="paged-nav-starter-11tyjs-btn" role="tab" aria-controls="paged-nav-starter-11tyjs" aria-selected="false">11ty.js</a>
+    <a href="#paged-nav-starter-njk" role="tab">Nunjucks</a>
+    <a href="#paged-nav-starter-11tyjs" role="tab">11ty.js</a>
   </div>
-  <div id="paged-nav-starter-njk" role="tabpanel" aria-labelledby="paged-nav-starter-njk-btn">
+  <div id="paged-nav-starter-njk" role="tabpanel">
     {%- codetitle "starter.njk" %}
     {%- highlight "html" %}
     {%- include "examples/pagination/nav/starter.njk" %}
     {%- endhighlight %}
   </div>
-  <div id="paged-nav-starter-11tyjs" role="tabpanel" aria-labelledby="paged-nav-starter-11tyjs-btn">
+  <div id="paged-nav-starter-11tyjs" role="tabpanel">
     {%- codetitle "starter.11ty.js" %}
     {%- highlight "js" %}
     {%- include "examples/pagination/nav/starter.11ty.js" %}
@@ -184,16 +184,16 @@ Note that if the current page (`page.url`) is the first or last in the set, we w
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     Language:
-    <a href="#paged-nav-nextprev-njk" id="paged-nav-nextprev-njk-btn" role="tab" aria-controls="paged-nav-nextprev-njk" aria-selected="true">Nunjucks</a>
-    <a href="#paged-nav-nextprev-11tyjs" id="paged-nav-nextprev-11tyjs-btn" role="tab" aria-controls="paged-nav-nextprev-11tyjs" aria-selected="false">11ty.js</a>
+    <a href="#paged-nav-nextprev-njk" role="tab">Nunjucks</a>
+    <a href="#paged-nav-nextprev-11tyjs" role="tab">11ty.js</a>
   </div>
-  <div id="paged-nav-nextprev-njk" role="tabpanel" aria-labelledby="paged-nav-nextprev-njk-btn">
+  <div id="paged-nav-nextprev-njk" role="tabpanel">
     {%- codetitle "nextprev.njk" %}
     {%- highlight "html 3,7" %}
     {%- include "examples/pagination/nav/nextprev.njk" %}
     {%- endhighlight %}
   </div>
-  <div id="paged-nav-nextprev-11tyjs" role="tabpanel" aria-labelledby="paged-nav-nextprev-11tyjs-btn">
+  <div id="paged-nav-nextprev-11tyjs" role="tabpanel">
     {%- codetitle "nextprev.11ty.js" %}
     {%- highlight "js" %}
     {%- include "examples/pagination/nav/nextprev.11ty.js" %}
@@ -210,16 +210,16 @@ For clarity here, we’re omitting the previous and next links from the previous
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     Language:
-    <a href="#paged-nav-firstlast-njk" id="paged-nav-firstlast-njk-btn" role="tab" aria-controls="paged-nav-firstlast-njk" aria-selected="true">Nunjucks</a>
-    <a href="#paged-nav-firstlast-11tyjs" id="paged-nav-firstlast-11tyjs-btn" role="tab" aria-controls="paged-nav-firstlast-11tyjs" aria-selected="false">11ty.js</a>
+    <a href="#paged-nav-firstlast-njk" role="tab">Nunjucks</a>
+    <a href="#paged-nav-firstlast-11tyjs" role="tab">11ty.js</a>
   </div>
-  <div id="paged-nav-firstlast-njk" role="tabpanel" aria-labelledby="paged-nav-firstlast-njk-btn">
+  <div id="paged-nav-firstlast-njk" role="tabpanel">
     {%- codetitle "firstlast.njk" %}
     {%- highlight "html 3,7" %}
     {%- include "examples/pagination/nav/firstlast.njk" %}
     {%- endhighlight %}
   </div>
-  <div id="paged-nav-firstlast-11tyjs" role="tabpanel" aria-labelledby="paged-nav-firstlast-11tyjs-btn">
+  <div id="paged-nav-firstlast-11tyjs" role="tabpanel">
     {%- codetitle "firstlast.11ty.js" %}
     {%- highlight "js" %}
     {%- include "examples/pagination/nav/firstlast.11ty.js" %}
@@ -234,16 +234,16 @@ Here’s the final pagination navigation template code, pieced together:
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     Language:
-    <a href="#paged-nav-combined-njk" id="paged-nav-combined-njk-btn" role="tab" aria-controls="paged-nav-combined-njk" aria-selected="true">Nunjucks</a>
-    <a href="#paged-nav-combined-11tyjs" id="paged-nav-combined-11tyjs-btn" role="tab" aria-controls="paged-nav-combined-11tyjs" aria-selected="false">11ty.js</a>
+    <a href="#paged-nav-combined-njk" role="tab">Nunjucks</a>
+    <a href="#paged-nav-combined-11tyjs" role="tab">11ty.js</a>
   </div>
-  <div id="paged-nav-combined-njk" role="tabpanel" aria-labelledby="paged-nav-combined-njk-btn">
+  <div id="paged-nav-combined-njk" role="tabpanel">
     {%- codetitle "combined.njk" %}
     {%- highlight "html" %}
     {%- include "examples/pagination/nav/combined.njk" %}
     {%- endhighlight %}
   </div>
-  <div id="paged-nav-combined-11tyjs" role="tabpanel" aria-labelledby="paged-nav-combined-11tyjs-btn">
+  <div id="paged-nav-combined-11tyjs" role="tabpanel">
     {%- codetitle "combined.11ty.js" %}
     {%- highlight "js" %}
     {%- include "examples/pagination/nav/combined.11ty.js" %}

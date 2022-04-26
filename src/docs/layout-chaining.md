@@ -25,17 +25,17 @@ We want to add a main element around our post’s content because we like access
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     Language:
-    <a href="#mainlayout-njk" id="mainlayout-njk-btn" role="tab" aria-controls="mainlayout-njk" aria-selected="true">Nunjucks</a>
-    <a href="#mainlayout-11tyjs" id="mainlayout-11tyjs-btn" role="tab" aria-controls="mainlayout-11tyjs" aria-selected="false">11ty.js</a>
+    <a href="#mainlayout-njk" role="tab">Nunjucks</a>
+    <a href="#mainlayout-11tyjs" role="tab">11ty.js</a>
   </div>
-  <div id="mainlayout-njk" role="tabpanel" aria-labelledby="mainlayout-njk-btn">
+  <div id="mainlayout-njk" role="tabpanel">
     <p>Here’s what <code>mainlayout.njk</code> would look like:</p>
     {%- codetitle "_includes/mainlayout.njk" %}
     {%- highlight "html" %}
     {%- include "examples/layout-chaining/mainlayout.njk" %}
     {%- endhighlight %}
   </div>
-  <div id="mainlayout-11tyjs" role="tabpanel" aria-labelledby="mainlayout-11tyjs-btn">
+  <div id="mainlayout-11tyjs" role="tabpanel">
     <p>Here’s what <code>mainlayout.11ty.js</code> would look like:</p>
     {%- codetitle "_includes/mainlayout.11ty.js" %}
     {%- highlight "js" %}

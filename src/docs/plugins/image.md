@@ -277,11 +277,11 @@ await Image("./test/bio-2017.jpg", {
 <seven-minute-tabs>
   <div role="tablist" aria-label="Easy or DIY mode chooser">
     Choose one:
-    <a href="#filter-easy" id="filter-easy-btn" role="tab" aria-controls="filter-easy" aria-selected="true">We generate the HTML</a>
-    <a href="#filter-diy-img" id="filter-diy-img-btn" role="tab" aria-controls="filter-diy-img" aria-selected="false">Do it yourself: &lt;img&gt;</a>
-    <a href="#filter-diy-picture" id="filter-diy-picture-btn" role="tab" aria-controls="filter-diy-picture" aria-selected="false">Do it yourself: &lt;picture&gt;</a>
+    <a href="#filter-easy" role="tab">We generate the HTML</a>
+    <a href="#filter-diy-img" role="tab">Do it yourself: &lt;img&gt;</a>
+    <a href="#filter-diy-picture" role="tab">Do it yourself: &lt;picture&gt;</a>
   </div>
-  <div id="filter-easy" role="tabpanel" aria-labelledby="filter-easy-btn">
+  <div id="filter-easy" role="tabpanel">
 
 {% addedin "Image 0.7.2" %}The `generateHTML` function is available in Eleventy Image v0.7.2 or higher.
 
@@ -331,7 +331,7 @@ async function imageShortcode(src, alt, sizes) {
 ```
 
   </div>
-  <div id="filter-diy-img" role="tabpanel" aria-labelledby="filter-diy-img-btn">
+  <div id="filter-diy-img" role="tabpanel">
 
 {% codetitle ".eleventy.js" %}
 
@@ -363,7 +363,7 @@ module.exports = function(eleventyConfig) {
 {% callout "info", "md" %}You’re only allowed one `module.exports` in your configuration file! If one already exists, copy the content of the above into your existing `module.exports` function.{% endcallout %}
 
   </div>
-  <div id="filter-diy-picture" role="tabpanel" aria-labelledby="filter-diy-picture-btn">
+  <div id="filter-diy-picture" role="tabpanel">
 
 {% codetitle ".eleventy.js" %}
 
@@ -417,11 +417,11 @@ Now you can use it in your templates:
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     Language:
-    <a href="#shortcode-njk" id="shortcode-njk-btn" role="tab" aria-controls="shortcode-njk" aria-selected="true">Nunjucks</a>
-    <a href="#shortcode-liquid" id="shortcode-liquid-btn" role="tab" aria-controls="shortcode-liquid" aria-selected="false">Liquid</a>
-    <a href="#shortcode-11tyjs" id="shortcode-11tyjs-btn" role="tab" aria-controls="shortcode-11tyjs" aria-selected="false">11ty.js</a>
+    <a href="#shortcode-njk" role="tab">Nunjucks</a>
+    <a href="#shortcode-liquid" role="tab">Liquid</a>
+    <a href="#shortcode-11tyjs" role="tab">11ty.js</a>
   </div>
-  <div id="shortcode-njk" role="tabpanel" aria-labelledby="shortcode-njk-btn">
+  <div id="shortcode-njk" role="tabpanel">
     {% codetitle "sample.njk" %}
 {%- highlight "html" %}{% raw %}
 {% image "./src/images/cat.jpg", "photo of my cat" %}
@@ -429,7 +429,7 @@ Now you can use it in your templates:
 {% endraw %}{% endhighlight %}
     <p>The comma between arguments is <strong>required</strong> in Nunjucks templates.</p>
   </div>
-  <div id="shortcode-liquid" role="tabpanel" aria-labelledby="shortcode-liquid-btn">
+  <div id="shortcode-liquid" role="tabpanel">
     {% codetitle "sample.liquid" %}
 {%- highlight "html" %}{% raw %}
 {% image "./src/images/cat.jpg", "photo of my cat" %}
@@ -437,7 +437,7 @@ Now you can use it in your templates:
 {% endraw %}{% endhighlight %}
     <p>The comma between arguments is <strong>optional</strong> in Liquid templates.</p>
   </div>
-  <div id="shortcode-11tyjs" role="tabpanel" aria-labelledby="shortcode-11tyjs-btn">
+  <div id="shortcode-11tyjs" role="tabpanel">
     {% codetitle "sample.11ty.js" %}
 {%- highlight "js" %}{% raw %}
 module.exports = function() {

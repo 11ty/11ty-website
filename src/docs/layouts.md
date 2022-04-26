@@ -29,19 +29,19 @@ You can use any template language in your layout—it doesn’t need to match th
 Next, we need to create a `mylayout.njk` file. It can contain any type of text, but here we’re using HTML:
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
+  <div role="tablist" aria-label="Choose a template language">
     Syntax:
-    <a href="#mylayout-njk" id="mylayout-njk-btn" role="tab" aria-controls="mylayout-njk" aria-selected="true">Nunjucks</a>
-    <a href="#mylayout-11tyjs" id="mylayout-11tyjs-btn" role="tab" aria-controls="mylayout-11tyjs" aria-selected="false">11ty.js</a>
+    <a href="#mylayout-njk" role="tab">Nunjucks</a>
+    <a href="#mylayout-11tyjs" role="tab">11ty.js</a>
   </div>
-  <div id="mylayout-njk" role="tabpanel" aria-labelledby="mylayout-njk-btn">
+  <div id="mylayout-njk" role="tabpanel">
     {%- codetitle "_includes/mylayout.njk" %}
     {%- highlight "html" %}
     {% include "examples/layouts/mylayout.njk" %}
     {%- endhighlight %}
     <p>Note that the layout template will populate the <code>content</code> data with the child template’s content. Also note that we don’t want to double-escape the output, so we’re using the provided Nunjuck’s <code>safe</code> filter here (see more language double-escaping syntax below).</p>
   </div>
-  <div id="mylayout-11tyjs" role="tabpanel" aria-labelledby="mylayout-11tyjs-btn">
+  <div id="mylayout-11tyjs" role="tabpanel">
     {%- codetitle "_includes/mylayout.11ty.js" %}
     {%- highlight "js" %}
     {% include "examples/layouts/mylayout.11ty.js" %}

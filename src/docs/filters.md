@@ -22,30 +22,30 @@ Various template engines can be extended with custom filters to modify content. 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     Language:
-    <a href="#filter-njk" id="filter-njk-btn" role="tab" aria-controls="filter-njk" aria-selected="true">Nunjucks</a>
-    <a href="#filter-liquid" id="filter-liquid-btn" role="tab" aria-controls="filter-liquid" aria-selected="false">Liquid</a>
-    <a href="#filter-hbs" id="filter-hbs-btn" role="tab" aria-controls="filter-hbs" aria-selected="false">Handlebars</a>
-    <a href="#filter-11tyjs" id="filter-11tyjs-btn" role="tab" aria-controls="filter-11tyjs" aria-selected="false">11ty.js</a>
+    <a href="#filter-njk" role="tab">Nunjucks</a>
+    <a href="#filter-liquid" role="tab">Liquid</a>
+    <a href="#filter-hbs" role="tab">Handlebars</a>
+    <a href="#filter-11tyjs" role="tab">11ty.js</a>
   </div>
-  <div id="filter-njk" role="tabpanel" aria-labelledby="filter-njk-btn">
+  <div id="filter-njk" role="tabpanel">
     {% codetitle "sample.njk" %}
 {%- highlight "html" %}{% raw %}
 <h1>{{ name | makeUppercase }}</h1>
 {% endraw %}{% endhighlight %}
   </div>
-  <div id="filter-liquid" role="tabpanel" aria-labelledby="filter-liquid-btn">
+  <div id="filter-liquid" role="tabpanel">
     {% codetitle "sample.liquid" %}
 {%- highlight "html" %}{% raw %}
 <h1>{{ name | makeUppercase }}</h1>
 {% endraw %}{% endhighlight %}
   </div>
-  <div id="filter-hbs" role="tabpanel" aria-labelledby="filter-hbs-btn">
+  <div id="filter-hbs" role="tabpanel">
     {% codetitle "sample.hbs" %}
 {%- highlight "html" %}{% raw %}
 <h1>{{ makeUppercase name }}</h1>
 {% endraw %}{%- endhighlight %}
   </div>
-  <div id="filter-11tyjs" role="tabpanel" aria-labelledby="filter-11tyjs-btn">
+  <div id="filter-11tyjs" role="tabpanel">
     {% codetitle "sample.11ty.js" %}
 {%- highlight "js" %}{% raw %}
 module.exports = function({name}) {

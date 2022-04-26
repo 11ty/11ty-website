@@ -21,17 +21,17 @@ Consider the following template, which will result in two pages being created, e
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     Language:
-    <a href="#paged-array-njk" id="paged-array-njk-btn" role="tab" aria-controls="paged-array-njk" aria-selected="true">Nunjucks/Liquid</a>
-    <a href="#paged-array-11tyjs" id="paged-array-11tyjs-btn" role="tab" aria-controls="paged-array-11tyjs" aria-selected="false">11ty.js</a>
+    <a href="#paged-array-njk" role="tab">Nunjucks/Liquid</a>
+    <a href="#paged-array-11tyjs" role="tab">11ty.js</a>
   </div>
-  <div id="paged-array-njk" role="tabpanel" aria-labelledby="paged-array-njk-btn">
+  <div id="paged-array-njk" role="tabpanel">
     <p>Interestingly, the Nunjucks and Liquid template languages in this example have the same syntax.</p>
     {%- codetitle "paged-array.njk or paged-array.liquid" %}
     {%- highlight "markdown" %}
     {%- include "examples/pagination/paged-array.njk" %}
     {%- endhighlight %}
   </div>
-  <div id="paged-array-11tyjs" role="tabpanel" aria-labelledby="paged-array-11tyjs-btn">
+  <div id="paged-array-11tyjs" role="tabpanel">
     {%- codetitle "paged-array.11ty.js" %}
     {%- highlight "js" %}
     {%- include "examples/pagination/paged-array.11ty.js" %}

@@ -76,6 +76,7 @@
   "dependencies": {
     "@11ty/logo": "^2.0.6",
     "@zachleat/filter-container": "^3.0.4",
+    "@zachleat/seven-minute-tabs": "^2.0.0",
     "speedlify-score": "^2.0.2"
   }
 }
