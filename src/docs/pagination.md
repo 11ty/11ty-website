@@ -10,6 +10,15 @@ relatedKey: pagination
 
 Pagination allows you to iterate over a data set and create multiple files from a single template. The input data can be in the form of an array or object defined in your frontmatter or in [global data](/docs/data-global/), or you can paginate a collection to make an easily digestible list of your posts.
 
+## Contents
+
+<style>
+/* Hide link to Contents */
+.table-of-contents > ul > li:first-child {
+  display: none;
+}
+</style>
+
 [[toc]]
 
 ## Paging an Array
@@ -21,21 +30,36 @@ Consider the following template, which will result in two pages being created, e
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     Language:
-    <a href="#paged-array-njk" role="tab">Nunjucks/Liquid</a>
+    <a href="#paged-array-liquid" role="tab">Liquid</a>
+    <a href="#paged-array-njk" role="tab">Nunjucks</a>
     <a href="#paged-array-11tyjs" role="tab">11ty.js</a>
   </div>
-  <div id="paged-array-njk" role="tabpanel">
-    <p>Interestingly, the Nunjucks and Liquid template languages in this example have the same syntax.</p>
-    {%- codetitle "paged-array.njk or paged-array.liquid" %}
-    {%- highlight "markdown" %}
+  <div id="paged-array-liquid" role="tabpanel">
+    {%- codetitle "paged.liquid" %}
+    {%- highlight "liquid" %}
     {%- include "examples/pagination/paged-array.njk" %}
     {%- endhighlight %}
+
+If the above file were named `paged.liquid`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
+
+  </div>
+  <div id="paged-array-njk" role="tabpanel">
+    {%- codetitle "paged.njk" %}
+    {%- highlight "jinja2" %}
+    {%- include "examples/pagination/paged-array.njk" %}
+    {%- endhighlight %}
+
+If the above file were named `paged.njk`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
+
   </div>
   <div id="paged-array-11tyjs" role="tabpanel">
-    {%- codetitle "paged-array.11ty.js" %}
+    {%- codetitle "paged.11ty.js" %}
     {%- highlight "js" %}
     {%- include "examples/pagination/paged-array.11ty.js" %}
     {%- endhighlight %}
+
+If the above file were named `paged.11ty.js`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
+
   </div>
 </seven-minute-tabs>
 
@@ -67,8 +91,8 @@ We enable pagination and then give it a dataset with the `data` key. We control 
 }
 ```
 
-<details data-details-oneway>
-  <summary>Here’s some extra stuff in the <code>pagination</code> object that you probably don’t need. ℹ️</summary>
+<details>
+  <summary>Expand to see all of the extra stuff in the <code>pagination</code> object that you probably don’t need any more but it’s still in there for backwards compatibility.</summary>
 
 In addition to the `pagination` object entries documented above, it also has:
 
@@ -101,20 +125,27 @@ In addition to the `pagination` object entries documented above, it also has:
 
 </details>
 
-If the above file were named `paged.njk`, it would create two pages: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
-
 ## Creating Navigation Links to your Pages
 
 Learn how to create a list of links to every paginated page on a pagination template with a full [Pagination Navigation](/docs/pagination/nav/) tutorial.
 
-## Paging an Object {% addedin "0.4.0" %}
+## Paging an Object
 
-All of the examples thus far have paged Array data. Eleventy does allow paging objects too. Objects are resolved to pagination arrays using either the `Object.keys` or `Object.values` JavaScript functions. Consider the following Nunjucks template:
+All of the examples thus far have paged Array data. Eleventy does allow paging objects too. Objects are resolved to pagination arrays using either the `Object.keys` or `Object.values` JavaScript functions. Consider the following templates:
 
-{% codetitle "Liquid, Nunjucks", "Syntax" %}
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    Language:
+    <a href="#pagedobj-liquid" role="tab">Liquid</a>
+    <a href="#pagedobj-njk" role="tab">Nunjucks</a>
+    <!-- <a href="#pagedobj-11tyjs" role="tab">11ty.js</a> -->
+  </div>
+  <div id="pagedobj-liquid" role="tabpanel">
+
+{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
-```markdown
+```liquid
 ---
 pagination:
   data: testdata
@@ -131,6 +162,33 @@ testdata:
 </ol>
 ```
 {% endraw %}
+
+  </div>
+  <div id="pagedobj-njk" role="tabpanel">
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```jinja2
+---
+pagination:
+  data: testdata
+  size: 1
+testdata:
+  itemkey1: itemvalue1
+  itemkey2: itemvalue2
+  itemkey3: itemvalue3
+---
+<ol>
+{%- for item in pagination.items %}
+  <li>{{ item }}={{testdata[item] }}</li>
+{% endfor -%}
+</ol>
+```
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
 
 In this example, we would get 3 pages that each print a key/value pair from `testdata`. The paged items hold the object keys:
 
@@ -196,10 +254,19 @@ This resolves to:
 
 Your front matter would look like this:
 
-{% codetitle "Liquid, Nunjucks", "Syntax" %}
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    Language:
+    <a href="#pagedatafile-liquid" role="tab">Liquid</a>
+    <a href="#pagedatafile-njk" role="tab">Nunjucks</a>
+    <!-- <a href="#pagedatafile-11tyjs" role="tab">11ty.js</a> -->
+  </div>
+  <div id="pagedatafile-liquid" role="tabpanel">
+
+{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
-```markdown
+```liquid
 ---
 pagination:
   data: globalDataSet.myData
@@ -212,6 +279,29 @@ pagination:
 </ol>
 ```
 {% endraw %}
+
+  </div>
+  <div id="pagedatafile-njk" role="tabpanel">
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```jinja2
+---
+pagination:
+  data: globalDataSet.myData
+  size: 1
+---
+<ol>
+{%- for item in pagination.items %}
+  <li>{{ item }}</li>
+{% endfor -%}
+</ol>
+```
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
 
 ## Remapping with permalinks
 
@@ -282,10 +372,19 @@ Using a universal `slug` filter (transforms `My Item` to `my-item`), this output
 
 Ok, so `pagination.items[0]` is ugly. We provide an option to alias this to something different.
 
-{% codetitle "Liquid, Nunjucks", "Syntax" %}
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    Language:
+    <a href="#pagedalias-liquid" role="tab">Liquid</a>
+    <a href="#pagedalias-njk" role="tab">Nunjucks</a>
+    <!-- <a href="#pagedalias-11tyjs" role="tab">11ty.js</a> -->
+  </div>
+  <div id="pagedalias-liquid" role="tabpanel">
+
+{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
-```markdown
+```liquid
 ---
 pagination:
   data: testdata
@@ -300,16 +399,50 @@ You can use the alias in your content too {{ wonder }}.
 ```
 {% endraw %}
 
+  </div>
+  <div id="pagedalias-njk" role="tabpanel">
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```jinja2
+---
+pagination:
+  data: testdata
+  size: 1
+  alias: wonder
+testdata:
+  - Item1
+  - Item2
+permalink: "different/{{ wonder | slug }}/index.html"
+---
+You can use the alias in your content too {{ wonder }}.
+```
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+
 This writes to `_site/different/item1/index.html` and `_site/different/item2/index.html`.
 
 {% callout "info" %}Note that <code>page</code> is a reserved word so you cannot use <code>alias: page</code>. Read about Eleventy’s reserved data names in <a href="/docs/data-eleventy-supplied">Eleventy Supplied Data</a>.{% endcallout %}
 
 If your chunk `size` is greater than 1, the alias will be an array instead of a single value.
 
-{% codetitle "Liquid, Nunjucks", "Syntax" %}
+
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    View this example in:
+    <a href="#pagedchunk-liquid" role="tab">Liquid</a>
+    <a href="#pagedchunk-njk" role="tab">Nunjucks</a>
+    <!-- <a href="#pagedchunk-11tyjs" role="tab">11ty.js</a> -->
+  </div>
+  <div id="pagedchunk-liquid" role="tabpanel">
+
+{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
-```markdown
+```liquid
 ---
 pagination:
   data: testdata
@@ -326,16 +459,52 @@ You can use the alias in your content too {{ wonder[0] }}.
 ```
 {% endraw %}
 
+  </div>
+  <div id="pagedchunk-njk" role="tabpanel">
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```jinja2
+---
+pagination:
+  data: testdata
+  size: 2
+  alias: wonder
+testdata:
+  - Item1
+  - Item2
+  - Item3
+  - Item4
+permalink: "different/{{ wonder[0] | slug }}/index.html"
+---
+You can use the alias in your content too {{ wonder[0] }}.
+```
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+
 This writes to `_site/different/item1/index.html` and `_site/different/item3/index.html`.
 
 ## Paging a Collection
 
 If you’d like to make a paginated list of all of your blog posts (any content with the tag `post` on it), use something like the following template to iterate over a specific collection:
 
-{% codetitle "Liquid, Nunjucks", "Syntax" %}
+
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    View this example in:
+    <a href="#pagedcollection-liquid" role="tab">Liquid</a>
+    <a href="#pagedcollection-njk" role="tab">Nunjucks</a>
+    <!-- <a href="#pagedcollection-11tyjs" role="tab">11ty.js</a> -->
+  </div>
+  <div id="pagedcollection-liquid" role="tabpanel">
+
+{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
-```markdown
+```liquid
 ---
 title: My Posts
 pagination:
@@ -351,6 +520,32 @@ pagination:
 </ol>
 ```
 {% endraw %}
+
+  </div>
+  <div id="pagedcollection-njk" role="tabpanel">
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```jinja2
+---
+title: My Posts
+pagination:
+  data: collections.post
+  size: 6
+  alias: posts
+---
+
+<ol>
+{% for post in posts %}
+  <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+{% endfor %}
+</ol>
+```
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
 
 The above generates a list of links but you could do a lot more. See what’s available in the [Collection documentation](/docs/collections/#collection-item-data-structure) (specifically `templateContent`). If you’d like to use this to automatically generate Tag pages for your content, please read [Quick Tip #004—Create Tag Pages for your Blog](/docs/quicktips/tag-pages/).
 
@@ -498,6 +693,7 @@ Consider the following pagination template:
 {% codetitle "my-page.md" %}
 
 ```yaml
+---
 tags:
   - myCollection
 pagination:
@@ -508,6 +704,7 @@ testdata:
   - item2
   - item3
   - item4
+---
 ```
 
 This means that `collections.myCollection` will have only the first page added to the collection array (`_site/my-page/index.html`). However, if you’d like to add all the pagination pages to the collections, use `addAllPagesToCollections: true` to the pagination front matter options like so:
@@ -515,6 +712,7 @@ This means that `collections.myCollection` will have only the first page added t
 {% codetitle "my-page.md" %}
 
 ```yaml
+---
 tags:
   - myCollection
 pagination:
@@ -526,6 +724,7 @@ testdata:
   - item2
   - item3
   - item4
+---
 ```
 
 Now `collections.myCollection` will have both output pages in the collection array (`_site/my-page/index.html` and `_site/my-page/1/index.html`).
