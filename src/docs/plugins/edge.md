@@ -22,6 +22,17 @@ Here are a few ideas:
 * Using Geolocation information to localize content
 * A zero-clientside JavaScript [Dark mode/Light mode toggle](https://demo-eleventy-edge.netlify.app/appearance/)
 
+## Contents
+
+<style>
+/* Hide link to Contents */
+.table-of-contents > ul > li:first-child {
+  display: none;
+}
+</style>
+
+[[toc]]
+
 ## Try out the demos
 
 Try out the [Eleventy Edge demos using Netlify’s Edge Functions](https://demo-eleventy-edge.netlify.app/).
@@ -134,7 +145,17 @@ export default async (request, context) => {
 * {% indieweblink "Netlify Edge Functions: A new serverless runtime powered by Deno", "https://www.netlify.com/blog/announcing-serverless-compute-with-edge-functions" %}
 
 
-### 3. `netlify.toml`
+### 3. Additions to `.gitignore`
+
+```gitignore
+# Netlify generated stuff
+.netlify/
+
+# Eleventy Edge Build Data files
+netlify/edge-functions/_generated
+```
+
+### 4. `netlify.toml`
 
 <details><summary>If you don’t already have a <code>netlify.toml</code>, expand this to view a sample starter.</summary>
 
@@ -164,9 +185,20 @@ path = "/*"
 
  `eleventy-edge` points to the file that was created above at `./netlify/edge-functions/eleventy-edge.js`. Using `path= "/*"` will run Eleventy Edge on all of the pages on your site. You can change this setting to something more granular (e.g. `path = "/"` for just the home page).
 
-### 4. Make your content template
+### 5. Make your content template
 
-Here we are making a simple `index.liquid` file. We can use the `{% raw %}{% edge %}{% endraw %}` shortcode to run the Liquid template syntax inside on the Edge server.
+Here we are making a simple template file. We can use the `{% raw %}{% edge %}{% endraw %}` shortcode to run the Liquid template syntax inside on the Edge server.
+
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Choose a template language">
+    View this example in:
+    <a href="#edgetmpl-liquid" role="tab">Liquid</a>
+    <a href="#edgetmpl-njk" role="tab">Nunjucks</a>
+    <a href="#edgetmpl-js" role="tab">11ty.js</a>
+  </div>
+  <div id="edgetmpl-liquid" role="tabpanel">
+
+{% codetitle "index.liquid" %}
 
 {% raw %}
 ```liquid
@@ -182,13 +214,58 @@ The content inside of the `edge` shortcode is generated on the Edge.
 ```
 {% endraw %}
 
-### 5. Run your local server
+  </div>
+  <div id="edgetmpl-njk" role="tabpanel">
+{% codetitle "index.njk" %}
+
+{% raw %}
+```jinja2
+The content outside of the `edge` shortcode is generated with the Build.
+
+{% edge %}
+The content inside of the `edge` shortcode is generated on the Edge.
+
+<pre>
+{{ eleventy | dump(2) }}
+</pre>
+{% endedge %}
+```
+{% endraw %}
+  </div>
+
+  <div id="edgetmpl-js" role="tabpanel">
+{% codetitle "index.11ty.js" %}
+
+{% raw %}
+```js
+module.exports = function(data) {
+  return `The content outside of the \`edge\` shortcode is generated with the Build.
+
+${await this.edge(`The content inside of the \`edge\` shortcode is generated on the Edge.
+
+<pre>
+{{ eleventy | json }}
+</pre>
+{% endedge %}`, "liquid")}`;
+};
+```
+{% endraw %}
+  As documented in [Limitations](#limitations), we are using `liquid` here because `11ty.js` is not _yet_ supported as an Edge content target.
+  </div>
+</seven-minute-tabs>
+
+Learn more about [the `edge` shortcode](#edge-shortcode-examples).
+
+
+### 6. Run your local server
 
 ```
 npx netlify dev
 ```
 
 Navigation to `index.liquid` by going to `http://localhost:8888/` in your browser. (Double check your console output to make sure the port is `8888`).
+
+## Learn More
 
 ### Always Escape Input
 
@@ -197,6 +274,182 @@ When using any dynamic user input (via query parameters or cookies), the values 
 * Liquid has both an `escape` and `escape_once` filter.
 * Nunjucks has autoescape turned on by default. If you’ve disabled it, you can use the `escape` filter.
 * Read more at [the Layouts documentation](https://www.11ty.dev/docs/layouts/#prevent-double-escaping-in-layouts), which lists both methods for escaped and unescaped output in template languages.
+
+### `edge` shortcode examples
+
+#### Changing the Template Language of the `edge` Content
+
+In what might feel familiar to folks that have used the [Render plugin](/docs/plugins/render/), adding an additional argument to the `edge` shortcode allows you to change the content’s template language. If no argument is specified, it uses the template syntax of the parent template.
+
+{% callout "info", "md" %}If you use the `edge` shortcode inside of a [layout file](/docs/layouts/), it’s best to explicitly specify the template language!{% endcallout %}
+
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Choose a template language">
+    View this example in:
+    <a href="#edgelang-liquid" role="tab">Liquid</a>
+    <a href="#edgelang-njk" role="tab">Nunjucks</a>
+    <a href="#edgelang-js" role="tab">11ty.js</a>
+  </div>
+  <div id="edgelang-liquid" role="tabpanel">
+{% codetitle "index.liquid" %}
+
+{% raw %}
+```liquid
+{% edge "md" %}
+# Markdown Heading
+{% endedge %}
+```
+{% endraw %}
+  </div>
+  <div id="edgelang-njk" role="tabpanel">
+{% codetitle "index.njk" %}
+
+{% raw %}
+```jinja2
+{% edge "md" %}
+# Markdown Heading
+{% endedge %}
+```
+{% endraw %}
+  </div>
+  <div id="edgelang-js" role="tabpanel">
+{% codetitle "index.11ty.js" %}
+
+{% raw %}
+```js
+module.exports = async function(data) {
+  return `
+${await this.edge("# Markdown heading", "md")}
+`;
+};
+```
+{% endraw %}
+  </div>
+</seven-minute-tabs>
+
+#### Passing Build-time Data to your Edge Function
+
+Edge content is a separate template, processed and built on the Edge. As such it has no access to your build’s data cascade. However, you can pass data in to be re-used!
+
+When the build data argument is a literal (a string or number), it is mapped to `_` in the template.
+
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Choose a template language">
+    View this example in:
+    <a href="#edgedata-liquid" role="tab">Liquid</a>
+    <a href="#edgedata-njk" role="tab">Nunjucks</a>
+    <a href="#edgedata-js" role="tab">11ty.js</a>
+  </div>
+  <div id="edgedata-liquid" role="tabpanel">
+
+{% codetitle "index.liquid" %}
+
+{% raw %}
+```liquid
+---
+name: Zach
+---
+{% edge "liquid,md" name %}
+# Markdown heading for {{ _ }}
+{% endedge %}
+```
+{% endraw %}
+  </div>
+  <div id="edgedata-njk" role="tabpanel">
+
+{% codetitle "index.njk" %}
+
+{% raw %}
+```jinja2
+---
+name: Zach
+---
+{% edge "liquid,md", name %}
+# Markdown heading for {{ _ }}
+{% endedge %}
+```
+{% endraw %}
+  </div>
+
+  <div id="edgedata-js" role="tabpanel">
+{% codetitle "index.11ty.js" %}
+
+{% raw %}
+```js
+module.exports.data = {
+  name: "Zach",
+};
+
+module.exports.render = async function(data) {
+  return `
+${await this.edge("# Markdown heading for {{ _ }}", "liquid,md", data.name)}
+`;
+};
+```
+{% endraw %}
+  </div>
+
+</seven-minute-tabs>
+
+When the build data argument is an object, the object properties are available as top-level globals in the template.
+
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Choose a template language">
+    View this example in:
+    <a href="#edgedataobj-liquid" role="tab">Liquid</a>
+    <a href="#edgedataobj-njk" role="tab">Nunjucks</a>
+    <a href="#edgedataobj-js" role="tab">11ty.js</a>
+  </div>
+  <div id="edgedataobj-liquid" role="tabpanel">
+{% codetitle "index.liquid" %}
+
+{% raw %}
+```liquid
+---
+buildData:
+  name: Zach
+---
+{% edge "liquid,md" buildData %}
+# Markdown heading for {{ name }}
+{% endedge %}
+```
+{% endraw %}
+  </div>
+  <div id="edgedataobj-njk" role="tabpanel">
+{% codetitle "index.njk" %}
+
+{% raw %}
+```jinja2
+---
+buildData:
+  name: Zach
+---
+{% edge "liquid,md", buildData %}
+# Markdown heading for {{ name }}
+{% endedge %}
+```
+{% endraw %}
+  </div>
+  <div id="edgedataobj-js" role="tabpanel">
+{% codetitle "index.11ty.js" %}
+
+{% raw %}
+```js
+module.exports.data = {
+  buildData: {
+    name: "Zach"
+  }
+};
+
+module.exports.render = async function(data) {
+  return `
+${await this.edge("# Markdown heading for {{ name }}", "liquid,md", data.buildData)}
+`;
+};
+```
+{% endraw %}
+  </div>
+</seven-minute-tabs>
 
 ## Frequently Asked Questions
 
@@ -207,4 +460,6 @@ When using any dynamic user input (via query parameters or cookies), the values 
 
 ### How does it compare to Serverless?
 
-They can be used together! _In progress._
+They can be used together! Eleventy Edge can be used to process both serverless and build templates. Keep in mind that Edge functions are _not_ cached so if you want to use them with Serverless, you’ll likely get the most value out pairing with On-demand Builders.
+
+* Relevant talk video (21 minutes): {% indieweblink "Eleventy: Build vs. Serverless vs. Edge", "https://www.zachleat.com/web/eleventy-rendering-modes/" %}
