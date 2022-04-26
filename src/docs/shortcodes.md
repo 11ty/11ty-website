@@ -103,10 +103,21 @@ Read more about using shortcodes on the individual Template Language documentati
 
 The shortcodes we saw above were nice, I suppose. But really, they are not all that different from a filter. The real ultimate power of Shortcodes comes when they are paired. Paired Shortcodes have a start and end tag—and allow you to nest other template content inside!
 
-{% codetitle "Liquid, Nunjucks", "Syntax" %}
+
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    View this example in:
+    <a href="#pairedshortcodes-liquid" role="tab">Liquid</a>
+    <a href="#pairedshortcodes-njk" role="tab">Nunjucks</a>
+    <a href="#pairedshortcodes-hbs" role="tab">Handlebars</a>
+    <a href="#pairedshortcodes-js" role="tab">11ty.js</a>
+  </div>
+  <div id="pairedshortcodes-liquid" role="tabpanel">
+
+{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
-```html
+```liquid
 {% user firstName, lastName %}
   Hello {{ someOtherVariable }}.
 
@@ -115,7 +126,27 @@ The shortcodes we saw above were nice, I suppose. But really, they are not all t
 ```
 {% endraw %}
 
-The comma between arguments is **required** in Nunjucks but is **optional** in Liquid templates.
+The comma between arguments is **optional** in Liquid templates.
+
+  </div>
+  <div id="pairedshortcodes-njk" role="tabpanel">
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```jinja2
+{% user firstName, lastName %}
+  Hello {{ someOtherVariable }}.
+
+  Hello {% anotherShortcode %}.
+{% enduser %}
+```
+{% endraw %}
+
+The comma between arguments is **required** in Nunjucks.
+
+  </div>
+  <div id="pairedshortcodes-hbs" role="tabpanel">
 
 {% codetitle "Handlebars", "Syntax" %}
 
@@ -129,9 +160,8 @@ The comma between arguments is **required** in Nunjucks but is **optional** in L
 ```
 {% endraw %}
 
-
-{% codetitle "JavaScript", "Syntax" %}
-{% addedin "0.7.0" %}
+  </div>
+  <div id="pairedshortcodes-js" role="tabpanel">
 
 ```js
 module.exports = function(data) {
@@ -142,6 +172,9 @@ Hello ${this.anotherShortCode()}`;
   return `<h1>${this.user(userContent, data.firstName, data.lastName)}</h1>`;
 };
 ```
+
+  </div>
+</seven-minute-tabs>
 
 
 When adding paired shortcodes using the Configuration API, the first argument to your shortcode callback is the nested content.

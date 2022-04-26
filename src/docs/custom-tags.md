@@ -19,9 +19,18 @@ Various template engines can be extended with custom tags.
 
 Custom Tags are unrelated to Eleventy’s [Collections using Tags](/docs/collections/) feature. Unfortunately we’ve inherited this name from various upstream template languages.
 
-But, after all that, you can still add a Custom Tag using the [Configuration API](/docs/config/#using-the-configuration-api). 
+But, after all that, you can still add a Custom Tag using the [Configuration API](/docs/config/#using-the-configuration-api).
 
-## LiquidJS example
+
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    View this example in:
+    <a href="#customtag-liquid" role="tab">Liquid</a>
+    <a href="#customtag-njk" role="tab">Nunjucks</a>
+    <a href="#customtag-hbs" role="tab">Handlebars</a>
+  </div>
+  <div id="customtag-liquid" role="tabpanel">
+
 
 * [LiquidJS: Tags](https://liquidjs.com/tutorials/register-filters-tags.html)
 
@@ -52,7 +61,8 @@ module.exports = function(eleventyConfig) {
 
 See all of the [built-in tag implementations for LiquidJS](https://liquidjs.com/tags/overview.html).
 
-## Nunjucks example {% addedin "0.5.0" %}
+  </div>
+  <div id="customtag-njk" role="tabpanel">
 
 * [Nunjucks: Custom Tags](https://mozilla.github.io/nunjucks/api.html#custom-tags)
 
@@ -89,7 +99,8 @@ module.exports = function(eleventyConfig) {
 ```
 {% endraw %}
 
-## Handlebars example
+  </div>
+  <div id="customtag-hbs" role="tabpanel">
 
 Surprise—these are helpers!
 
@@ -106,3 +117,6 @@ module.exports = function(eleventyConfig) {
 };
 ```
 {% endraw %}
+
+  </div>
+</seven-minute-tabs>
