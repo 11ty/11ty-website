@@ -29,10 +29,10 @@ Consider the following template, which will result in two pages being created, e
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
-    Language:
+    View this example in:
     <a href="#paged-array-liquid" role="tab">Liquid</a>
     <a href="#paged-array-njk" role="tab">Nunjucks</a>
-    <a href="#paged-array-11tyjs" role="tab">11ty.js</a>
+    <a href="#paged-array-js" role="tab">11ty.js</a>
   </div>
   <div id="paged-array-liquid" role="tabpanel">
     {%- codetitle "paged.liquid" %}
@@ -52,7 +52,7 @@ If the above file were named `paged.liquid`, it would create two pages in your o
 If the above file were named `paged.njk`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
 
   </div>
-  <div id="paged-array-11tyjs" role="tabpanel">
+  <div id="paged-array-js" role="tabpanel">
     {%- codetitle "paged.11ty.js" %}
     {%- highlight "js" %}
     {%- include "examples/pagination/paged-array.11ty.js" %}
@@ -135,10 +135,10 @@ All of the examples thus far have paged Array data. Eleventy does allow paging o
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
-    Language:
+    View this example in:
     <a href="#pagedobj-liquid" role="tab">Liquid</a>
     <a href="#pagedobj-njk" role="tab">Nunjucks</a>
-    <!-- <a href="#pagedobj-11tyjs" role="tab">11ty.js</a> -->
+    <a href="#pagedobj-js" role="tab">11ty.js</a>
   </div>
   <div id="pagedobj-liquid" role="tabpanel">
 
@@ -187,6 +187,9 @@ testdata:
 ```
 {% endraw %}
 
+  </div>
+  <div id="pagedobj-js" role="tabpanel">
+    <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 
@@ -256,10 +259,10 @@ Your front matter would look like this:
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
-    Language:
+    View this example in:
     <a href="#pagedatafile-liquid" role="tab">Liquid</a>
     <a href="#pagedatafile-njk" role="tab">Nunjucks</a>
-    <!-- <a href="#pagedatafile-11tyjs" role="tab">11ty.js</a> -->
+    <a href="#pagedatafile-js" role="tab">11ty.js</a>
   </div>
   <div id="pagedatafile-liquid" role="tabpanel">
 
@@ -300,6 +303,9 @@ pagination:
 ```
 {% endraw %}
 
+  </div>
+  <div id="pagedatafile-js" role="tabpanel">
+    <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 
@@ -374,10 +380,10 @@ Ok, so `pagination.items[0]` is ugly. We provide an option to alias this to some
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
-    Language:
+    View this example in:
     <a href="#pagedalias-liquid" role="tab">Liquid</a>
     <a href="#pagedalias-njk" role="tab">Nunjucks</a>
-    <!-- <a href="#pagedalias-11tyjs" role="tab">11ty.js</a> -->
+    <a href="#pagedalias-js" role="tab">11ty.js</a>
   </div>
   <div id="pagedalias-liquid" role="tabpanel">
 
@@ -421,6 +427,9 @@ You can use the alias in your content too {{ wonder }}.
 {% endraw %}
 
   </div>
+  <div id="pagedalias-js" role="tabpanel">
+    <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
 </seven-minute-tabs>
 
 This writes to `_site/different/item1/index.html` and `_site/different/item2/index.html`.
@@ -435,7 +444,7 @@ If your chunk `size` is greater than 1, the alias will be an array instead of a 
     View this example in:
     <a href="#pagedchunk-liquid" role="tab">Liquid</a>
     <a href="#pagedchunk-njk" role="tab">Nunjucks</a>
-    <!-- <a href="#pagedchunk-11tyjs" role="tab">11ty.js</a> -->
+    <a href="#pagedchunk-js" role="tab">11ty.js</a>
   </div>
   <div id="pagedchunk-liquid" role="tabpanel">
 
@@ -483,6 +492,9 @@ You can use the alias in your content too {{ wonder[0] }}.
 {% endraw %}
 
   </div>
+  <div id="pagedchunk-js" role="tabpanel">
+    <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
 </seven-minute-tabs>
 
 This writes to `_site/different/item1/index.html` and `_site/different/item3/index.html`.
@@ -497,7 +509,7 @@ If you’d like to make a paginated list of all of your blog posts (any content 
     View this example in:
     <a href="#pagedcollection-liquid" role="tab">Liquid</a>
     <a href="#pagedcollection-njk" role="tab">Nunjucks</a>
-    <!-- <a href="#pagedcollection-11tyjs" role="tab">11ty.js</a> -->
+    <a href="#pagedcollection-js" role="tab">11ty.js</a>
   </div>
   <div id="pagedcollection-liquid" role="tabpanel">
 
@@ -544,6 +556,9 @@ pagination:
 ```
 {% endraw %}
 
+  </div>
+  <div id="pagedcollection-js" role="tabpanel">
+    <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 

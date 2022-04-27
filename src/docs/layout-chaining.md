@@ -24,7 +24,7 @@ We want to add a main element around our post’s content because we like access
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
-    Language:
+    View this example in:
     <a href="#mainlayout-njk" role="tab">Nunjucks</a>
     <a href="#mainlayout-11tyjs" role="tab">11ty.js</a>
   </div>

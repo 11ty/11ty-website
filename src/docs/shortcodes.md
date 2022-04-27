@@ -19,7 +19,7 @@ Various template engines can be extended with shortcodes for easy reusable conte
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
-    Language:
+    View this example in:
     <a href="#shortcode-njk" role="tab">Nunjucks</a>
     <a href="#shortcode-liquid" role="tab">Liquid</a>
     <a href="#shortcode-hbs" role="tab">Handlebars</a>

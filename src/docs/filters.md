@@ -21,7 +21,7 @@ Various template engines can be extended with custom filters to modify content. 
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
-    Language:
+    View this example in:
     <a href="#filter-njk" role="tab">Nunjucks</a>
     <a href="#filter-liquid" role="tab">Liquid</a>
     <a href="#filter-hbs" role="tab">Handlebars</a>

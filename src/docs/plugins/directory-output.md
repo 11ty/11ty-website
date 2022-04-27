@@ -61,7 +61,9 @@ module.exports = function(eleventyConfig) {
 
 ## Sample Output
 
-```
+{% callout "demo" %}
+
+```bash
 > eleventy-base-blog@6.0.0 build
 > eleventy
 
@@ -89,3 +91,5 @@ module.exports = function(eleventyConfig) {
   • sitemap.xml                        sitemap.xml.njk           1.4kB    1.3ms
 [11ty] Copied 3 files / Wrote 18 files in 0.16 seconds (8.9ms each, v1.0.1)
 ```
+
+{% endcallout %}

@@ -25,10 +25,6 @@ An Eleventy linter plugin to check for inclusive language in markdown files. Ins
 </code></pre>
 {% endcallout %}
 
-## Template Compatibility
-
-* All
-
 ## Installation
 
 Available on [npm](https://www.npmjs.com/package/@11ty/eleventy-plugin-inclusive-language).

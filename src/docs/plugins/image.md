@@ -416,7 +416,7 @@ Now you can use it in your templates:
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
-    Language:
+    View this example in:
     <a href="#shortcode-njk" role="tab">Nunjucks</a>
     <a href="#shortcode-liquid" role="tab">Liquid</a>
     <a href="#shortcode-11tyjs" role="tab">11ty.js</a>

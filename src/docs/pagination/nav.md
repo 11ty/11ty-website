@@ -64,7 +64,7 @@ Alright, you definitely read all of those right? 😇 Here’s some accessible c
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
-    Language:
+    View this example in:
     <a href="#paged-nav-starter-njk" role="tab">Nunjucks</a>
     <a href="#paged-nav-starter-11tyjs" role="tab">11ty.js</a>
   </div>
@@ -183,7 +183,7 @@ Note that if the current page (`page.url`) is the first or last in the set, we w
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
-    Language:
+    View this example in:
     <a href="#paged-nav-nextprev-njk" role="tab">Nunjucks</a>
     <a href="#paged-nav-nextprev-11tyjs" role="tab">11ty.js</a>
   </div>
@@ -209,7 +209,7 @@ For clarity here, we’re omitting the previous and next links from the previous
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
-    Language:
+    View this example in:
     <a href="#paged-nav-firstlast-njk" role="tab">Nunjucks</a>
     <a href="#paged-nav-firstlast-11tyjs" role="tab">11ty.js</a>
   </div>
@@ -233,7 +233,7 @@ Here’s the final pagination navigation template code, pieced together:
 
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
-    Language:
+    View this example in:
     <a href="#paged-nav-combined-njk" role="tab">Nunjucks</a>
     <a href="#paged-nav-combined-11tyjs" role="tab">11ty.js</a>
   </div>
