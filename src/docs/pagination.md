@@ -58,6 +58,9 @@ If the above file were named `paged.njk`, it would create two pages in your outp
 If the above file were named `paged.11ty.js`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
 
   </div>
+  <div id="paged-array-hbs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
 </seven-minute-tabs>
 
 We enable pagination and then give it a dataset with the `data` key. We control the number of items in each chunk with `size`. The pagination data variable will be populated with what you need to create each template. Here’s what’s in `pagination`:
@@ -183,6 +186,9 @@ testdata:
   <div id="pagedobj-js" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
+  <div id="pagedobj-hbs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
 </seven-minute-tabs>
 
 In this example, we would get 3 pages that each print a key/value pair from `testdata`. The paged items hold the object keys:
@@ -292,6 +298,9 @@ pagination:
 
   </div>
   <div id="pagedatafile-js" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
+  <div id="pagedatafile-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
@@ -412,6 +421,9 @@ You can use the alias in your content too {{ wonder }}.
   <div id="pagedalias-js" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
+  <div id="pagedalias-hbs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
 </seven-minute-tabs>
 
 This writes to `_site/different/item1/index.html` and `_site/different/item2/index.html`.
@@ -472,6 +484,9 @@ You can use the alias in your content too {{ wonder[0] }}.
   <div id="pagedchunk-js" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
+  <div id="pagedchunk-hbs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
 </seven-minute-tabs>
 
 This writes to `_site/different/item1/index.html` and `_site/different/item3/index.html`.
@@ -530,6 +545,9 @@ pagination:
 
   </div>
   <div id="pagedcollection-js" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
+  <div id="pagedcollection-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
