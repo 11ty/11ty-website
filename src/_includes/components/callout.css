@@ -12,6 +12,10 @@
 	background-color: var(--callout-secondary);
 	border: 3px solid var(--callout-border, var(--callout-primary));
 }
+[role="tabpanel"] > .elv-callout:last-child {
+	margin-bottom: 0;
+}
+
 .elv-callout-info,
 .elv-callout-warn,
 .elv-callout-error {

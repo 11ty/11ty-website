@@ -1,17 +1,24 @@
-node_modules/
-_site/
+# Generic
 package-lock.json
-node-supporters/
+node_modules/
 .env
 .log
 .cache
-cache
 yarn.lock
 .vscode
 **/.DS_Store
+
+# App-specific
+cache
+_site/
 _generated*
+node-supporters/
 src/_data/builtwith/
+
+# Netlify generated stuff
 .netlify/
+
+# Serverless
 netlify/functions/serverless/*
 !netlify/functions/serverless/index.js
 netlify/functions/dynamic/*

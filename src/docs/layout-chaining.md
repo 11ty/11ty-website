@@ -22,27 +22,12 @@ title: My Rad Blog
 
 We want to add a main element around our post’s content because we like accessibility.
 
-<seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#mainlayout-njk" role="tab">Nunjucks</a>
-    <a href="#mainlayout-11tyjs" role="tab">11ty.js</a>
-  </div>
-  <div id="mainlayout-njk" role="tabpanel">
-    <p>Here’s what <code>mainlayout.njk</code> would look like:</p>
-    {%- codetitle "_includes/mainlayout.njk" %}
-    {%- highlight "html" %}
-    {%- include "examples/layout-chaining/mainlayout.njk" %}
-    {%- endhighlight %}
-  </div>
-  <div id="mainlayout-11tyjs" role="tabpanel">
-    <p>Here’s what <code>mainlayout.11ty.js</code> would look like:</p>
-    {%- codetitle "_includes/mainlayout.11ty.js" %}
-    {%- highlight "js" %}
-    {%- include "examples/layout-chaining/mainlayout.11ty.js" %}
-    {%- endhighlight %}
-  </div>
-</seven-minute-tabs>
+Here’s what `mainlayout.njk` would look like:
+
+{% codetitle "_includes/mainlayout.njk" %}
+{% highlight "html" %}
+{% include "examples/layout-chaining/mainlayout.njk" %}
+{% endhighlight %}
 
 This layout would then be itself wrapped in the same `mylayout.njk` we used in our previous example:
 
@@ -66,7 +51,9 @@ This layout would then be itself wrapped in the same `mylayout.njk` we used in o
 
 Used together, this would output:
 
-{% codetitle "_site/layout-chain-example/index.html" %}
+{% callout "demo" %}
+
+{% codetitle "_site/layout-chain-example/index.html", "Output Filename" %}
 
 ```html
 <!doctype html>
@@ -83,6 +70,8 @@ Used together, this would output:
   </body>
 </html>
 ```
+
+{% endcallout %}
 
 ## Addendum about existing Templating features
 
