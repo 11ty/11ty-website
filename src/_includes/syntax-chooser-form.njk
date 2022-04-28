@@ -5,7 +5,7 @@
     <fieldset>
       <legend>Preferred Example Syntax</legend>
       {% assign syntax = eleventy.edge.cookies.syntax | default: "" | escape %}
-      <label><input type="radio" name="syntax" value=""{% if syntax == "" %} checked{% endif %}>None</label>
+      <label><input type="radio" name="syntax" value=""{% if syntax == "" %} checked{% endif %}>No preference</label>
       <label><input type="radio" name="syntax" value="liquid"{% if syntax == "liquid" %} checked{% endif %}>Liquid</label>
       <label><input type="radio" name="syntax" value="njk"{% if syntax == "njk" %} checked{% endif %}>Nunjucks</label>
       <label><input type="radio" name="syntax" value="js"{% if syntax == "js" %} checked{% endif %}>11ty.js</label>

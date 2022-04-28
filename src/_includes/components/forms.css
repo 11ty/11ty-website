@@ -6,12 +6,14 @@ input[type=radio] + label {
 .formprefs {
 	display: flex;
 	gap: 1em;
+	padding: 0.5em;
 	font-size: 0.9375em; /* 15px /16 */
-	padding: 0.5em 1em;
 	border-radius: 0.25em;
 }
 footer .formprefs {
 	background-color: #eee;
+	padding-left: 1rem;
+	padding-right: 1rem;
 	margin-left: -1rem;
 	margin-right: -1rem;
 	margin-bottom: .5em;
