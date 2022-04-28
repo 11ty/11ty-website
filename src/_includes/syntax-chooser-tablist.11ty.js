@@ -1,4 +1,4 @@
-exports.render = function({id, valid, additions}) {
+exports.render = function({id, valid, additions, label}) {
 	let syntaxes = {};
 
 	let extraSyntaxes = {
@@ -41,7 +41,7 @@ exports.render = function({id, valid, additions}) {
 	let liquidTemplate = `
 {% assign syntax = eleventy.edge.cookies.syntax %}
 <div role="tablist" aria-label="Template Language Chooser">
-	View this example in:
+	${label || "View this example in"}:
 	${str.join("\n")}
 </div>`;
 

@@ -15,7 +15,7 @@ path = "/account/preferences/"
 
 [[edge_functions]]
 function = "eleventy-edge"
-path = "/*"
+path = "/docs/*"
 
 [[redirects]]
 from = "/authors/:name/"

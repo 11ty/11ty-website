@@ -74,7 +74,18 @@ module.exports = {
 
   </div>
   <div id="layouts-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+
+{% codetitle "Handlebars", "Syntax" %}
+{% raw %}
+```handlebars
+---
+layout: mylayout.njk
+title: My Rad Handlebars Blog Post
+---
+<h1>{{title}}</h1>
+```
+{% endraw %}
+
   </div>
 </seven-minute-tabs>
 
@@ -101,7 +112,7 @@ All of this will output the following HTML content to `_site/content-using-layou
 
 
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layoutoutput", additions: "md"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layoutoutput", additions: "md", label: "View the output from"} %}
   <div id="layoutoutput-md" role="tabpanel">
 {% callout "demo" %}
 
@@ -179,7 +190,23 @@ All of this will output the following HTML content to `_site/content-using-layou
 {% endcallout %}
   </div>
   <div id="layoutoutput-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+{% callout "demo" %}
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Rad Handlebars Blog Post</title>
+  </head>
+  <body>
+    <h1>My Rad Handlebars Blog Post</h1>
+  </body>
+</html>
+```
+
+{% endcallout %}
   </div>
 </seven-minute-tabs>
 
