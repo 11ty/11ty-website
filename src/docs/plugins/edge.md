@@ -10,6 +10,8 @@ overrideCommunityLinks: true
 
 {{ eleventyNavigation.excerpt }}
 
+{% include "syntax-chooser.njk" %}
+
 {% callout "info" %}This feature is considered <strong>experimental</strong> and requires Eleventy <code>v2.0.0-canary.7</code> or higher. Our first release is limited to <a href="https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/">Netlify Edge Functions</a> support only.{% endcallout %}
 
 Eleventy Edge is an exciting new way to add dynamic content to your Eleventy templates. With a simple Eleventy shortcode you can opt-in a part of your Eleventy template to run on an Edge server, allowing your site to use dynamic, user-specific content!
@@ -190,12 +192,7 @@ path = "/*"
 Here we are making a simple template file. We can use the `{% raw %}{% edge %}{% endraw %}` shortcode to run the Liquid template syntax inside on the Edge server.
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#edgetmpl-liquid" role="tab">Liquid</a>
-    <a href="#edgetmpl-njk" role="tab">Nunjucks</a>
-    <a href="#edgetmpl-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "edgetmpl"} %}
   <div id="edgetmpl-liquid" role="tabpanel">
 
 {% codetitle "index.liquid" %}
@@ -252,6 +249,11 @@ ${await this.edge(`The content inside of the \`edge\` shortcode is generated on 
 {% endraw %}
   As documented in [Limitations](#limitations), we are using `liquid` here because `11ty.js` is not _yet_ supported as an Edge content target.
   </div>
+  <div id="edgetmpl-hbs" role="tabpanel">
+
+The `edge` shortcode [requires an async-friendly template language](#limitations) and is not available in Handlebars.
+
+  </div>
 </seven-minute-tabs>
 
 Learn more about [the `edge` shortcode](#edge-shortcode-examples).
@@ -284,12 +286,7 @@ In what might feel familiar to folks that have used the [Render plugin](/docs/pl
 {% callout "info", "md" %}If you use the `edge` shortcode inside of a [layout file](/docs/layouts/), it’s best to explicitly specify the template language!{% endcallout %}
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#edgelang-liquid" role="tab">Liquid</a>
-    <a href="#edgelang-njk" role="tab">Nunjucks</a>
-    <a href="#edgelang-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "edgelang"} %}
   <div id="edgelang-liquid" role="tabpanel">
 {% codetitle "index.liquid" %}
 
@@ -325,6 +322,11 @@ ${await this.edge("# Markdown heading", "md")}
 ```
 {% endraw %}
   </div>
+  <div id="edgelang-hbs" role="tabpanel">
+
+The `edge` shortcode [requires an async-friendly template language](#limitations) and is not available in Handlebars.
+
+  </div>
 </seven-minute-tabs>
 
 #### Passing Build-time Data to your Edge Function
@@ -334,12 +336,7 @@ Edge content is a separate template, processed and built on the Edge. As such it
 When the build data argument is a literal (a string or number), it is mapped to `_` in the template.
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#edgedata-liquid" role="tab">Liquid</a>
-    <a href="#edgedata-njk" role="tab">Nunjucks</a>
-    <a href="#edgedata-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "edgedata"} %}
   <div id="edgedata-liquid" role="tabpanel">
 
 {% codetitle "index.liquid" %}
@@ -388,18 +385,17 @@ ${await this.edge("# Markdown heading for {{ _ }}", "liquid,md", data.name)}
 ```
 {% endraw %}
   </div>
+  <div id="edgedata-hbs" role="tabpanel">
 
+The `edge` shortcode [requires an async-friendly template language](#limitations) and is not available in Handlebars.
+
+  </div>
 </seven-minute-tabs>
 
 When the build data argument is an object, the object properties are available as top-level globals in the template.
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#edgedataobj-liquid" role="tab">Liquid</a>
-    <a href="#edgedataobj-njk" role="tab">Nunjucks</a>
-    <a href="#edgedataobj-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "edgedataobj"} %}
   <div id="edgedataobj-liquid" role="tabpanel">
 {% codetitle "index.liquid" %}
 
@@ -448,6 +444,11 @@ ${await this.edge("# Markdown heading for {{ name }}", "liquid,md", data.buildDa
 };
 ```
 {% endraw %}
+  </div>
+  <div id="edgedataobj-hbs" role="tabpanel">
+
+The `edge` shortcode [requires an async-friendly template language](#limitations) and is not available in Handlebars.
+
   </div>
 </seven-minute-tabs>
 

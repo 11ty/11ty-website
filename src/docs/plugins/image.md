@@ -8,6 +8,8 @@ communityLinksKey: image
 ---
 Low level utility to perform build-time image transformations for both vector and raster images. Output multiple sizes, save multiple formats, cache remote images locally. Uses the [sharp](https://sharp.pixelplumbing.com/) image processor.
 
+{% include "syntax-chooser.njk" %}
+
 * [`eleventy-img` on GitHub](https://github.com/11ty/eleventy-img)
 
 You maintain full control of the HTML. Use with `<picture>` or `<img>` or CSS `background-image`, or others! Works great to add `width` and `height` to your images!
@@ -415,35 +417,35 @@ module.exports = function(eleventyConfig) {
 Now you can use it in your templates:
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#shortcode-njk" role="tab">Nunjucks</a>
-    <a href="#shortcode-liquid" role="tab">Liquid</a>
-    <a href="#shortcode-11tyjs" role="tab">11ty.js</a>
-  </div>
-  <div id="shortcode-njk" role="tabpanel">
-    {% codetitle "sample.njk" %}
-{%- highlight "html" %}{% raw %}
-{% image "./src/images/cat.jpg", "photo of my cat" %}
-{% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
-{% endraw %}{% endhighlight %}
-    <p>The comma between arguments is <strong>required</strong> in Nunjucks templates.</p>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "shortcode"} %}
   <div id="shortcode-liquid" role="tabpanel">
-    {% codetitle "sample.liquid" %}
-{%- highlight "html" %}{% raw %}
+    {% codetitle "Liquid", "Syntax" %}
+{%- highlight "liquid" %}{% raw %}
 {% image "./src/images/cat.jpg", "photo of my cat" %}
 {% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
 {% endraw %}{% endhighlight %}
     <p>The comma between arguments is <strong>optional</strong> in Liquid templates.</p>
   </div>
-  <div id="shortcode-11tyjs" role="tabpanel">
-    {% codetitle "sample.11ty.js" %}
+  <div id="shortcode-njk" role="tabpanel">
+    {% codetitle "Nunjucks", "Syntax" %}
+{%- highlight "jinja2" %}{% raw %}
+{% image "./src/images/cat.jpg", "photo of my cat" %}
+{% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
+{% endraw %}{% endhighlight %}
+    <p>The comma between arguments is <strong>required</strong> in Nunjucks templates.</p>
+  </div>
+  <div id="shortcode-js" role="tabpanel">
+    {% codetitle "JavaScript", "Syntax" %}
 {%- highlight "js" %}{% raw %}
 module.exports = function() {
   return `<h1>${await this.image("./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw")}</h1>`;
 };
 {% endraw %}{% endhighlight %}
+  </div>
+  <div id="shortcode-hbs" role="tabpanel">
+
+This `image` shortcode example [requires an async-friendly template language](#asynchronous-usage) and is not available in Handlebars.
+
   </div>
 </seven-minute-tabs>
 

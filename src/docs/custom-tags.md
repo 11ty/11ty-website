@@ -23,12 +23,7 @@ But, after all that, you can still add a Custom Tag using the [Configuration API
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#customtag-liquid" role="tab">Liquid</a>
-    <a href="#customtag-njk" role="tab">Nunjucks</a>
-    <a href="#customtag-hbs" role="tab">Handlebars</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "customtag"} %}
   <div id="customtag-liquid" role="tabpanel">
 
 

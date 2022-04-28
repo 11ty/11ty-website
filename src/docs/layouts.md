@@ -7,17 +7,14 @@ eleventyNavigation:
 ---
 # Layouts
 
-Eleventy Layouts are special templates that can be used to wrap other content. To denote that a piece of content should be wrapped in a template, use the `layout` key in your front matter, like so:
+Eleventy Layouts are special templates that can be used to wrap other content.
 
+{% include "syntax-chooser.njk" %}
+
+To denote that a piece of content should be wrapped in a template, use the `layout` key in your front matter, like so:
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#layouts-md" role="tab">Markdown</a>
-    <a href="#layouts-liquid" role="tab">Liquid</a>
-    <a href="#layouts-njk" role="tab">Nunjucks</a>
-    <a href="#layouts-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layouts", additions: "md"} %}
   <div id="layouts-md" role="tabpanel">
 
 {% codetitle "Markdown", "Syntax" %}
@@ -78,6 +75,9 @@ module.exports = {
 {% endraw %}
 
   </div>
+  <div id="layouts-hbs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
 </seven-minute-tabs>
 
 This will look for a `mylayout.njk` Nunjucks file in your _includes_ folder at `_includes/mylayout.njk`.
@@ -103,13 +103,7 @@ All of this will output the following HTML content to `_site/content-using-layou
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View the output from:
-    <a href="#layoutoutput-md" role="tab">Markdown</a>
-    <a href="#layoutoutput-liquid" role="tab">Liquid</a>
-    <a href="#layoutoutput-njk" role="tab">Nunjucks</a>
-    <a href="#layoutoutput-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "filter", additions: "md"} %}
   <div id="layoutoutput-md" role="tabpanel">
 {% callout "demo" %}
 
@@ -185,6 +179,9 @@ All of this will output the following HTML content to `_site/content-using-layou
 ```
 
 {% endcallout %}
+  </div>
+  <div id="layoutoutput-hbs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 

@@ -18,6 +18,9 @@ src/_data/builtwith/
 # Netlify generated stuff
 .netlify/
 
+# Eleventy Edge Build Data files
+netlify/edge-functions/_generated
+
 # Serverless
 netlify/functions/serverless/*
 !netlify/functions/serverless/index.js

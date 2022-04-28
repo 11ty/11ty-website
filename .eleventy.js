@@ -11,7 +11,7 @@ const shortHash = require("short-hash");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItToc = require("markdown-it-table-of-contents");
 
-const { EleventyServerlessBundlerPlugin } = require("@11ty/eleventy");
+const { EleventyServerlessBundlerPlugin, EleventyEdgePlugin, EleventyRenderPlugin } = require("@11ty/eleventy");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
@@ -204,6 +204,9 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(addedInLocalPlugin);
 	eleventyConfig.addPlugin(monthDiffPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
+	eleventyConfig.addPlugin(EleventyRenderPlugin);
+
+	eleventyConfig.addPlugin(EleventyEdgePlugin);
 
 	eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
 		name: "serverless",

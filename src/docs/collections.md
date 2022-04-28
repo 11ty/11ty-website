@@ -11,6 +11,8 @@ While [pagination](/docs/pagination/) allows you to iterate over a data set to c
 
 Take care to note that `tags` have a singular purpose in Eleventy: to construct collections of content. Some blogging platforms use Tags to refer to a hierarchy of labels for the content (e.g. a [tag cloud](https://en.wikipedia.org/wiki/Tag_cloud)).
 
+{% include "syntax-chooser.njk" %}
+
 ## Contents
 
 <style>
@@ -38,12 +40,7 @@ title: Hot Take—Social Media is Considered Harmful
 This will place this `mypost.md` into the `post` collection with all other pieces of content sharing the `post` tag. To reference this collection and make a list of all posts, use the `collections` object in any template:
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#collections-liquid" role="tab">Liquid</a>
-    <a href="#collections-njk" role="tab">Nunjucks</a>
-    <a href="#collections-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collections"} %}
   <div id="collections-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -96,12 +93,7 @@ exports.render = function(data) {
 Compare the `post.url` and special Eleventy-provided `page.url` variable to find the current page. Building on the previous example:
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#collectionsnav-liquid" role="tab">Liquid</a>
-    <a href="#collectionsnav-njk" role="tab">Nunjucks</a>
-    <a href="#collectionsnav-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsnav"} %}
   <div id="collectionsnav-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -161,12 +153,7 @@ By default Eleventy puts all of your content (independent of whether or not it h
 ### Link to all Eleventy generated content
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#collectionsall-liquid" role="tab">Liquid</a>
-    <a href="#collectionsall-njk" role="tab">Nunjucks</a>
-    <a href="#collectionsall-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsall"} %}
   <div id="collectionsall-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -280,12 +267,7 @@ This content would show up in the template data inside of `collections.cat` and 
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#collectionsitem-liquid" role="tab">Liquid</a>
-    <a href="#collectionsitem-njk" role="tab">Nunjucks</a>
-    <a href="#collectionsitem-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsitem"} %}
   <div id="collectionsitem-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -382,12 +364,7 @@ This collection would be sorted like this:
 To sort descending in your template, you can use a filter to reverse the sort order. For example, it might look like this:
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#collectionssort-liquid" role="tab">Liquid</a>
-    <a href="#collectionssort-njk" role="tab">Nunjucks</a>
-    <a href="#collectionssort-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionssort"} %}
   <div id="collectionssort-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}

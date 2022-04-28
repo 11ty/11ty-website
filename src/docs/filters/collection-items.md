@@ -10,14 +10,10 @@ eleventyNavigation:
 
 {% addedin "0.11.0" %} Fetch the previous and next items in a collection when you pass in the current `page` object.
 
+{% include "syntax-chooser.njk" %}
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#nextprev-liquid" role="tab">Liquid</a>
-    <a href="#nextprev-njk" role="tab">Nunjucks</a>
-    <a href="#nextprev-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "nextprev"} %}
   <div id="nextprev-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -43,7 +39,7 @@ eleventyNavigation:
 
   </div>
   <div id="nextprev-js" role="tabpanel">
-    <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 
@@ -51,12 +47,7 @@ Useful when you’d like to link to the previous or next template in your collec
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#nextprevlink-liquid" role="tab">Liquid</a>
-    <a href="#nextprevlink-njk" role="tab">Nunjucks</a>
-    <a href="#nextprevlink-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "nextprevlink"} %}
   <div id="nextprevlink-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -82,7 +73,7 @@ Useful when you’d like to link to the previous or next template in your collec
 
   </div>
   <div id="nextprevlink-js" role="tabpanel">
-    <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 
@@ -94,12 +85,7 @@ For completeness, a `getCollectionItem` filter is also included that fetches the
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#getitem-liquid" role="tab">Liquid</a>
-    <a href="#getitem-njk" role="tab">Nunjucks</a>
-    <a href="#getitem-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "getitem"} %}
   <div id="getitem-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -123,7 +109,7 @@ For completeness, a `getCollectionItem` filter is also included that fetches the
 
   </div>
   <div id="getitem-js" role="tabpanel">
-    <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 

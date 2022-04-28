@@ -8,6 +8,8 @@ eleventyNavigation:
 
 A pack of Eleventy plugins for PrismJS syntax highlighting. No browser/client JavaScript here, these highlight transformations are all done at build-time. Supports individual line highlighting.
 
+{% include "syntax-chooser.njk" %}
+
 * This documentation applies to `eleventy-plugin-syntaxhighlight` `v3.2.0` and newer.
 * [GitHub](https://github.com/11ty/eleventy-plugin-syntaxhighlight).
 
@@ -96,13 +98,7 @@ This plugin provides the following syntax highlighters using PrismJS, all of whi
 * [Review the list of supported PrismJS languages](http://prismjs.com/#languages-list)
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#highlight-md" role="tab">Markdown</a>
-    <a href="#highlight-liquid" role="tab">Liquid</a>
-    <a href="#highlight-njk" role="tab">Nunjucks</a>
-    <a href="#highlight-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlight", additions: "md"} %}
   <div id="highlight-md" role="tabpanel">
 
 {% codetitle "Markdown", "Syntax" %}
@@ -167,7 +163,23 @@ function myFunction() {
 The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %}.
 
   </div>
+  <div id="highlight-hbs" role="tabpanel">
+    <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
+  </div>
 </seven-minute-tabs>
+
+Will render like this in the browser:
+
+{% callout "demo" %}
+
+{% highlight "js" %}
+function myFunction() {
+  return true;
+}
+{% endhighlight %}
+
+{% endcallout %}
+
 
 ### Show changes using `diff-` syntax
 
@@ -176,13 +188,7 @@ The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %
 Add the `diff-` prefix to the language name on the previous examples to show code changes. Use a `+` or `-` at the beginning of the line to denote the addition or removal of that line.
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#highlightdiff-md" role="tab">Markdown</a>
-    <a href="#highlightdiff-liquid" role="tab">Liquid</a>
-    <a href="#highlightdiff-njk" role="tab">Nunjucks</a>
-    <a href="#highlightdiff-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlightdiff", additions: "md"} %}
   <div id="highlightdiff-md" role="tabpanel">
 
 {% codetitle "Markdown", "Syntax" %}
@@ -250,9 +256,14 @@ module.exports = function(data) {
 The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %}.
 
   </div>
+  <div id="highlightdiff-hbs" role="tabpanel">
+    <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
+  </div>
 </seven-minute-tabs>
 
-{% codetitle "Output", "Rendered" %}
+Will render like this in the browser:
+
+{% callout "demo" %}
 
 {% highlight "diff-js" %}
 +function myFunction() {
@@ -260,6 +271,8 @@ The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %
 -  return true;
  }
 {% endhighlight %}
+
+{% endcallout %}
 
 Alternatively, you can use `diff` _without_ another language name to enable plaintext line highlighting.
 

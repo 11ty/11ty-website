@@ -20,13 +20,7 @@ Various template engines can be extended with custom filters to modify content. 
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#filter-njk" role="tab">Nunjucks</a>
-    <a href="#filter-liquid" role="tab">Liquid</a>
-    <a href="#filter-hbs" role="tab">Handlebars</a>
-    <a href="#filter-11tyjs" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "filter"} %}
   <div id="filter-njk" role="tabpanel">
     {% codetitle "sample.njk" %}
 {%- highlight "html" %}{% raw %}
@@ -39,12 +33,6 @@ Various template engines can be extended with custom filters to modify content. 
 <h1>{{ name | makeUppercase }}</h1>
 {% endraw %}{% endhighlight %}
   </div>
-  <div id="filter-hbs" role="tabpanel">
-    {% codetitle "sample.hbs" %}
-{%- highlight "html" %}{% raw %}
-<h1>{{ makeUppercase name }}</h1>
-{% endraw %}{%- endhighlight %}
-  </div>
   <div id="filter-11tyjs" role="tabpanel">
     {% codetitle "sample.11ty.js" %}
 {%- highlight "js" %}{% raw %}
@@ -52,6 +40,12 @@ module.exports = function({name}) {
   return `<h1>${this.makeUppercase(name)}</h1>`;
 };
 {% endraw %}{% endhighlight %}
+  </div>
+  <div id="filter-hbs" role="tabpanel">
+    {% codetitle "sample.hbs" %}
+{%- highlight "html" %}{% raw %}
+<h1>{{ makeUppercase name }}</h1>
+{% endraw %}{%- endhighlight %}
   </div>
 </seven-minute-tabs>
 

@@ -8,6 +8,8 @@ eleventyNavigation:
 
 A plugin for creating infinite-depth hierarchical navigation in Eleventy projects. Supports breadcrumbs too! Used in production on this very website!
 
+{% include "syntax-chooser.njk" %}
+
 * This documentation is for `eleventy-navigation` `v0.3.x`.
 * [GitHub](https://github.com/11ty/eleventy-navigation).
 
@@ -172,12 +174,7 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#navtohtml-liquid" role="tab">Liquid</a>
-    <a href="#navtohtml-njk" role="tab">Nunjucks</a>
-    <a href="#navtohtml-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navtohtml"} %}
   <div id="navtohtml-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -203,6 +200,9 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
   <div id="navtohtml-js" role="tabpanel">
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
+  <div id="navtohtml-hbs" role="tabpanel">
+    <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
+  </div>
 </seven-minute-tabs>
 
 ### To Markdown
@@ -210,12 +210,7 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
 {% addedin "Navigation 0.3.1" %}
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#navtomd-liquid" role="tab">Liquid</a>
-    <a href="#navtomd-njk" role="tab">Nunjucks</a>
-    <a href="#navtomd-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navtomd"} %}
   <div id="navtomd-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -241,9 +236,12 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
   <div id="navtomd-js" role="tabpanel">
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
+  <div id="navtomd-hbs" role="tabpanel">
+    <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
+  </div>
 </seven-minute-tabs>
 
-## Rendering the Navigation Bar (Deep Dive)
+## Advanced: Rendering the Navigation Bar (Deep Dive)
 
 ### Fetch the menu items using the `eleventyNavigation` Filter
 
@@ -255,12 +253,7 @@ For our documented templates above with the following template:
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#navrender-liquid" role="tab">Liquid</a>
-    <a href="#navrender-njk" role="tab">Nunjucks</a>
-    <a href="#navrender-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navrender"} %}
   <div id="navrender-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -287,6 +280,9 @@ For our documented templates above with the following template:
   </div>
   <div id="navrender-js" role="tabpanel">
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
+  </div>
+  <div id="navtohtml-hbs" role="tabpanel">
+    <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
 
@@ -325,12 +321,7 @@ Just show the children of a specific key, pass a key to `eleventyNavigation`:
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#navrenderbranch-liquid" role="tab">Liquid</a>
-    <a href="#navrenderbranch-njk" role="tab">Nunjucks</a>
-    <a href="#navrenderbranch-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navrenderbranch"} %}
   <div id="navrenderbranch-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -358,6 +349,9 @@ Just show the children of a specific key, pass a key to `eleventyNavigation`:
   <div id="navrenderbranch-js" role="tabpanel">
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
+  <div id="navrenderbranch-hbs" role="tabpanel">
+    <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
+  </div>
 </seven-minute-tabs>
 
 ```json
@@ -383,12 +377,7 @@ You can also render only the parents of a specific key too, to make breadcrumb n
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#navbread-liquid" role="tab">Liquid</a>
-    <a href="#navbread-njk" role="tab">Nunjucks</a>
-    <a href="#navbread-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navbread"} %}
   <div id="navbread-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -416,6 +405,9 @@ You can also render only the parents of a specific key too, to make breadcrumb n
   <div id="navbread-js" role="tabpanel">
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
+  <div id="navbread-hbs" role="tabpanel">
+    <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
+  </div>
 </seven-minute-tabs>
 
 And an array of all the parents of the Bats entry will be returned (top-most parent is first):
@@ -434,12 +426,7 @@ And an array of all the parents of the Bats entry will be returned (top-most par
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#navbreadself-liquid" role="tab">Liquid</a>
-    <a href="#navbreadself-njk" role="tab">Nunjucks</a>
-    <a href="#navbreadself-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navbreadself"} %}
   <div id="navbreadself-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -471,6 +458,9 @@ navOptions:
   <div id="navbreadself-js" role="tabpanel">
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
+  <div id="navbreadself-hbs" role="tabpanel">
+    <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
+  </div>
 </seven-minute-tabs>
 
 
@@ -486,12 +476,7 @@ The `eleventyNavigationToMarkdown` filter is {% addedin "Navigation 0.3.1" %}.
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#navrenderfilter-liquid" role="tab">Liquid</a>
-    <a href="#navrenderfilter-njk" role="tab">Nunjucks</a>
-    <a href="#navrenderfilter-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navrenderfilter"} %}
   <div id="navrenderfilter-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -525,6 +510,9 @@ The `eleventyNavigationToMarkdown` filter is {% addedin "Navigation 0.3.1" %}.
   <div id="navrenderfilter-js" role="tabpanel">
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
+  <div id="navrenderfilter-hbs" role="tabpanel">
+    <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
+  </div>
 </seven-minute-tabs>
 
 #### Showing excerpts
@@ -543,12 +531,7 @@ When you render a navigation list, pass `showExcerpt: true` to the `eleventyNavi
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#navexcerpt-liquid" role="tab">Liquid</a>
-    <a href="#navexcerpt-njk" role="tab">Nunjucks</a>
-    <a href="#navexcerpt-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navexcerpt"} %}
   <div id="navexcerpt-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -582,6 +565,9 @@ navToHtmlOptions:
   <div id="navexcerpt-js" role="tabpanel">
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
+  <div id="navexcerpt-hbs" role="tabpanel">
+    <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
+  </div>
 </seven-minute-tabs>
 
 
@@ -591,12 +577,7 @@ navToHtmlOptions:
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#navmdoptions-liquid" role="tab">Liquid</a>
-    <a href="#navmdoptions-njk" role="tab">Nunjucks</a>
-    <a href="#navmdoptions-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navmdoptions"} %}
   <div id="navmdoptions-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -635,6 +616,9 @@ navToMdOptions:
   <div id="navmdoptions-js" role="tabpanel">
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
+  <div id="navmdoptions-hbs" role="tabpanel">
+    <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
+  </div>
 </seven-minute-tabs>
 
 
@@ -644,12 +628,7 @@ You can change the HTML elements, classes on the list and list items, and add an
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#navhtmloptions-liquid" role="tab">Liquid</a>
-    <a href="#navhtmloptions-njk" role="tab">Nunjucks</a>
-    <a href="#navhtmloptions-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navhtmloptions"} %}
   <div id="navhtmloptions-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -724,6 +703,9 @@ You can change the HTML elements, classes on the list and list items, and add an
   <div id="navhtmloptions-js" role="tabpanel">
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
+  <div id="navhtmloptions-hbs" role="tabpanel">
+    <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
+  </div>
 </seven-minute-tabs>
 
 
@@ -739,13 +721,8 @@ Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#navboyh-liquid" role="tab">Liquid</a>
-    <a href="#navboyh-njk" role="tab">Nunjucks</a>
-    <a href="#navboyh-js" role="tab">11ty.js</a>
-  </div>
-  <div id="navboyh-liquid" role="tabpanel">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navbyoh"} %}
+  <div id="navbyoh-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
@@ -763,7 +740,7 @@ Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
 {% endraw %}
 
   </div>
-  <div id="navboyh-njk" role="tabpanel">
+  <div id="navbyoh-njk" role="tabpanel">
 
 {% codetitle "Nunjucks", "Syntax" %}
 
@@ -781,8 +758,11 @@ Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
 {% endraw %}
 
   </div>
-  <div id="navboyh-js" role="tabpanel">
+  <div id="navbyoh-js" role="tabpanel">
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
+  </div>
+  <div id="navbyoh-hbs" role="tabpanel">
+    <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
 

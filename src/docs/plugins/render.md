@@ -9,8 +9,9 @@ communityLinksKey: syntaxrender
 
 {{ eleventyNavigation.excerpt }}
 
-[[toc]]
+{% include "syntax-chooser.njk" %}
 
+[[toc]]
 
 ## Template Compatibility
 
@@ -64,12 +65,7 @@ Use the `renderTemplate` paired shortcode to render a template string.
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#rendertmpl-liquid" role="tab">Liquid</a>
-    <a href="#rendertmpl-njk" role="tab">Nunjucks</a>
-    <a href="#rendertmpl-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "rendertmpl"} %}
   <div id="rendertmpl-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -118,6 +114,11 @@ module.exports = async function() {
 {% endraw %}
 
   </div>
+  <div id="rendertmpl-hbs" role="tabpanel">
+
+The `render` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
+
+  </div>
 </seven-minute-tabs>
 
 The content inside of the shortcode will be rendered using Markdown (`"md"`). Front matter is not yet supported.
@@ -125,12 +126,7 @@ The content inside of the shortcode will be rendered using Markdown (`"md"`). Fr
 The first argument to `renderTemplate` can be any valid [`templateEngineOverride`](/docs/languages/#templateengineoverride-examples) value. You can even use `"liquid,md"` to preprocess markdown with liquid. You can use [custom template types](/docs/languages/custom/) here too, including [the Vue plugin](https://github.com/11ty/eleventy-plugin-vue)!
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#rendertmplvue-liquid" role="tab">Liquid</a>
-    <a href="#rendertmplvue-njk" role="tab">Nunjucks</a>
-    <a href="#rendertmplvue-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "rendertmplvue"} %}
   <div id="rendertmplvue-liquid" role="tabpanel">
 
 {% raw %}
@@ -172,6 +168,11 @@ module.exports = async function() {
 {% endraw %}
 
   </div>
+  <div id="rendertmplvue-hbs" role="tabpanel">
+
+The `render` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
+
+  </div>
 </seven-minute-tabs>
 
 {% callout "info", "md" %}The one exception here is that `{% raw %}{% renderTemplate "11ty.js" %}{% endraw %}` JavaScript string templates are not yet supported—use `renderFile` below instead.{% endcallout %}
@@ -183,12 +184,7 @@ To add Vue support, don’t forget to install [`@11ty/eleventy-plugin-vue` (v0.6
 Both the [`eleventy`](/docs/data-eleventy-supplied/#eleventy-variable) and [`page` variables](/docs/data-eleventy-supplied/#page-variable) are available inside of these templates by default. If you want to pass in additional data, you can do so like this:
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#rendertmpldata-liquid" role="tab">Liquid</a>
-    <a href="#rendertmpldata-njk" role="tab">Nunjucks</a>
-    <a href="#rendertmpldata-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "rendertmpldata"} %}
   <div id="rendertmpldata-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -241,6 +237,11 @@ module.exports.render = async function(data) {
 {% endraw %}
 
   </div>
+  <div id="rendertmpldata-hbs" role="tabpanel">
+
+The `render` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
+
+  </div>
 </seven-minute-tabs>
 
 Outputs `myValue`.
@@ -251,12 +252,7 @@ Use the `renderFile` shortcode to render an include file.
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#renderfile-liquid" role="tab">Liquid</a>
-    <a href="#renderfile-njk" role="tab">Nunjucks</a>
-    <a href="#renderfile-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfile"} %}
   <div id="renderfile-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -292,6 +288,11 @@ module.exports = async function() {
 {% endraw %}
 
   </div>
+  <div id="renderfile-hbs" role="tabpanel">
+
+The `render` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
+
+  </div>
 </seven-minute-tabs>
 
 The first argument to `renderFile` is a project root relative path to any template file. Front matter inside of the target files is not yet supported. The template syntax used is inferred by the file extension.
@@ -300,12 +301,7 @@ Note that you can use files supported by any [custom file extensions](/docs/lang
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#renderfilevue-liquid" role="tab">Liquid</a>
-    <a href="#renderfilevue-njk" role="tab">Nunjucks</a>
-    <a href="#renderfilevue-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfilevue"} %}
   <div id="renderfilevue-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -341,6 +337,11 @@ module.exports = async function() {
 {% endraw %}
 
   </div>
+  <div id="renderfilevue-hbs" role="tabpanel">
+
+The `render` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
+
+  </div>
 </seven-minute-tabs>
 
 To add Vue support, don’t forget to install [`@11ty/eleventy-plugin-vue` (v0.6.0 or newer)](https://github.com/11ty/eleventy-plugin-vue) and add the Vue plugin in your config file.
@@ -350,12 +351,7 @@ To add Vue support, don’t forget to install [`@11ty/eleventy-plugin-vue` (v0.6
 Both the [`eleventy`](/docs/data-eleventy-supplied/#eleventy-variable) and [`page` variables](/docs/data-eleventy-supplied/#page-variable) are available inside of these templates by default. If you want to pass in additional data, you can do so like this:
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#renderfiledata-liquid" role="tab">Liquid</a>
-    <a href="#renderfiledata-njk" role="tab">Nunjucks</a>
-    <a href="#renderfiledata-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfiledata"} %}
   <div id="renderfiledata-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -404,6 +400,11 @@ module.exports.render = async function(data) {
 {% endraw %}
 
   </div>
+  <div id="renderfiledata-hbs" role="tabpanel">
+
+The `render` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
+
+  </div>
 </seven-minute-tabs>
 
 #### Override the target file syntax
@@ -412,12 +413,7 @@ The syntax is normally inferred using the file extension, but it can be overridd
 
 
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#renderfileoverride-liquid" role="tab">Liquid</a>
-    <a href="#renderfileoverride-njk" role="tab">Nunjucks</a>
-    <a href="#renderfileoverride-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfileoverride"} %}
   <div id="renderfileoverride-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -466,6 +462,11 @@ module.exports.render = async function(data) {
 {% endraw %}
 
   </div>
+  <div id="renderfileoverride-hbs" role="tabpanel">
+
+The `render` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
+
+  </div>
 </seven-minute-tabs>
 
-Will render blogpost.md using Nunjucks instead of Markdown!
+Will render `blogpost.md` using Nunjucks instead of Markdown!
