@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/alanmosely/teatime-starter",
+	"name": "TEAtime Starter",
+	"description": "A simple stylish Eleventy starter project using Tailwind CSS and Alpine.js that deploys to Netlify",
+	"author": "alanmosely",
+	"demo": "https://teatime-starter.netlify.app"
+}
