@@ -1,4 +1,4 @@
-exports.render = function({id, valid, additions, label}) {
+exports.render = async function({id, valid, additions, label}) {
 	let syntaxes = {};
 
 	let extraSyntaxes = {
@@ -30,7 +30,7 @@ exports.render = function({id, valid, additions, label}) {
 	for(let syn in syntaxes) {
 		let isPreferenceSelectable = validArray.length === 0 || validArray.includes(syn);
 
-		str.push(`<a href="${id}-${syn}" role="tab"{% if syntax == "${syn}"${isPreferenceSelectable ? defaultOnNoPreference : ""} %} aria-selected="true"{% endif %}>${syntaxes[syn]}</a>`);
+		str.push(`<a href="#${id}-${syn}" role="tab"{% if syntax == "${syn}"${isPreferenceSelectable ? defaultOnNoPreference : ""} %} aria-selected="true"{% endif %}>${syntaxes[syn]}</a>`);
 
 		// only the first one should default
 		if(isPreferenceSelectable) {
@@ -45,11 +45,21 @@ exports.render = function({id, valid, additions, label}) {
 	${str.join("\n")}
 </div>`;
 
+	let content;
 	// Fancy: only use the Edge plugin on NETLIFY or when using Netlify CLI
 	if(process.env.NETLIFY || process.env.NETLIFY_DEV) {
-		return this.edge(liquidTemplate, "liquid");
+		content = await this.edge(liquidTemplate, "liquid");
+	} else {
+		// Fallback to edge-less tabs on Eleventy Dev Server
+		content = await this.renderTemplate(liquidTemplate, "liquid");
 	}
 
-	// Fallback to edge-less tabs on Eleventy Dev Server
-	return this.renderTemplate(liquidTemplate, "liquid");
+	let form = await this.renderFile("./src/_includes/syntax-chooser-form.njk");
+	return `<div class="tmplsyntax">
+	${content}
+	<details class="tmplsyntax-default">
+		<summary>Always prefer…</summary>
+		${form}
+	</details>
+</div>`;
 };

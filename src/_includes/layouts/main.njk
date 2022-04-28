@@ -29,23 +29,7 @@ headerClass: elv-header-default
 
   {# this permalink: false check can go away in 2.0.0-canary.9 #}
   {% if page.url and page.url.startsWith("/docs/") %}
-  {% edge "liquid" %}
-  <form-autosubmit>
-    <form action="/account/preferences/" method="post" class="formprefs">
-      <input type="hidden" name="returnlocation" value="{{ eleventy.edge.path }}">
-      <fieldset>
-        <legend>Preferred Example Syntax</legend>
-        {% assign syntax = eleventy.edge.cookies.syntax | default: "" | escape %}
-        <label><input type="radio" name="syntax" value=""{% if syntax == "" %} checked{% endif %}>Default</label>
-        <label><input type="radio" name="syntax" value="liquid"{% if syntax == "liquid" %} checked{% endif %}>Liquid</label>
-        <label><input type="radio" name="syntax" value="njk"{% if syntax == "njk" %} checked{% endif %}>Nunjucks</label>
-        <label><input type="radio" name="syntax" value="js"{% if syntax == "js" %} checked{% endif %}>11ty.js</label>
-        <label><input type="radio" name="syntax" value="hbs"{% if syntax == "hbs" %} checked{% endif %}>Handlebars</label>
-      </fieldset>
-      <button type="submit">Save</button>
-    </form>
-  </form-autosubmit>
-  {% endedge %}
+  {% renderFile "./src/_includes/syntax-chooser-form.njk" %}
   {% endif %}
 
 	{% include "footer-nav.njk" %}

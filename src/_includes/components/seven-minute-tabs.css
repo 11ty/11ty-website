@@ -16,7 +16,6 @@ seven-minute-tabs [role="tablist"] {
 	margin: 0 -1rem;
 	font-size: 0.8125em; /* 13px /16 */
 	line-height: 1.8;
-	text-align: right;
 }
 seven-minute-tabs [role="tablist"]:first-child {
 	margin-bottom: .5rem;
