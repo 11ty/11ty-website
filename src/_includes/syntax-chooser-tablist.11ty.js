@@ -57,9 +57,11 @@ exports.render = async function({id, valid, additions, label}) {
 	let form = await this.renderFile("./src/_includes/syntax-chooser-form.njk");
 	return `<div class="tmplsyntax">
 	${content}
-	<details class="tmplsyntax-default">
-		<summary>Always prefer…</summary>
-		${form}
+	<details-utils close-esc close-click-outside>
+		<details class="tmplsyntax-default">
+			<summary>Always prefer…</summary>
+			${form}
+		</details>
 	</details>
 </div>`;
 };
