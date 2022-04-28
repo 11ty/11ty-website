@@ -344,7 +344,10 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addFilter("humanReadableNum", function(num) {
-		return HumanReadable.toHumanString(num);
+		if(num || num === 0) {
+			return HumanReadable.toHumanString(num);
+		}
+		return "";
 	});
 
 	eleventyConfig.addFilter("commaNumber", function(num) {
