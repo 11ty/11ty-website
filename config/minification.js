@@ -3,18 +3,18 @@ const CleanCSS = require("clean-css");
 const Terser = require("terser");
 
 module.exports = eleventyConfig => {
-	eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-		if( process.env.NODE_ENV === "production" && outputPath && outputPath.endsWith(".html") ) {
-			let minified = htmlmin.minify(content, {
-				useShortDoctype: true,
-				removeComments: true,
-				collapseWhitespace: true
-			});
-			return minified;
-		}
+	// eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+	// 	if( process.env.NODE_ENV === "production" && outputPath && outputPath.endsWith(".html") ) {
+	// 		let minified = htmlmin.minify(content, {
+	// 			useShortDoctype: true,
+	// 			removeComments: true,
+	// 			collapseWhitespace: true
+	// 		});
+	// 		return minified;
+	// 	}
 
-		return content;
-	});
+	// 	return content;
+	// });
 
 	eleventyConfig.addFilter("jsmin", function(code) {
 		if(process.env.NODE_ENV === "production") {
