@@ -54,7 +54,6 @@ footer .formprefs {
 	line-height: 1.8;
 	padding: 0 1em;
 	border-top: 5px solid transparent;
-	font-weight: 500;
 }
 .tmplsyntax-default[open] summary,
 .tmplsyntax-default[open] .tmplsyntax-dropdown {
