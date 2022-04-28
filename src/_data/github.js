@@ -13,14 +13,14 @@ module.exports = async function() {
 			stargazers: json.stargazers_count
 		};
 	} catch(e) {
-		if(process.env.NODE_ENV === "production") {
-			// Fail the build in production.
-			return Promise.reject(e);
-		}
+		// if(process.env.NODE_ENV === "production") {
+		// 	// Fail the build in production.
+		// 	return Promise.reject(e);
+		// }
 
 		console.log( "Failed getting GitHub stargazers count, returning 0" );
 		return {
-			stargazers: 0
+			stargazers: ""
 		};
 	}
 };
