@@ -25,8 +25,6 @@ Pagination allows you to iterate over a data set and create multiple files from 
 
 To iterate over a data set and create pages for individual chunks of data, use pagination. Enable in your template’s front matter by adding the `pagination` key.
 
-{% include "syntax-chooser.njk" %}
-
 Consider the following template, which will result in two pages being created, each of which will display two items from `testdata`:
 
 <seven-minute-tabs>

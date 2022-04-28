@@ -8,8 +8,6 @@ communityLinksKey: image
 ---
 Low level utility to perform build-time image transformations for both vector and raster images. Output multiple sizes, save multiple formats, cache remote images locally. Uses the [sharp](https://sharp.pixelplumbing.com/) image processor.
 
-{% include "syntax-chooser.njk" %}
-
 * [`eleventy-img` on GitHub](https://github.com/11ty/eleventy-img)
 
 You maintain full control of the HTML. Use with `<picture>` or `<img>` or CSS `background-image`, or others! Works great to add `width` and `height` to your images!

@@ -10,8 +10,6 @@ eleventyNavigation:
 
 {% addedin "0.11.0" %} Fetch the previous and next items in a collection when you pass in the current `page` object.
 
-{% include "syntax-chooser.njk" %}
-
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "nextprev"} %}
   <div id="nextprev-liquid" role="tabpanel">

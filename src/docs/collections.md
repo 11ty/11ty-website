@@ -11,8 +11,6 @@ While [pagination](/docs/pagination/) allows you to iterate over a data set to c
 
 Take care to note that `tags` have a singular purpose in Eleventy: to construct collections of content. Some blogging platforms use Tags to refer to a hierarchy of labels for the content (e.g. a [tag cloud](https://en.wikipedia.org/wiki/Tag_cloud)).
 
-{% include "syntax-chooser.njk" %}
-
 ## Contents
 
 <style>

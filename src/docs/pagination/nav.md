@@ -10,8 +10,6 @@ relatedTitle: "Create a list of Navigation Links for your Pagination."
 
 How to create a list of links to every paginated page on a pagination template.
 
-{% include "syntax-chooser.njk" %}
-
 [[toc]]
 
 ## Paginating over an Array

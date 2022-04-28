@@ -8,8 +8,6 @@ eleventyNavigation:
 
 A pack of Eleventy plugins for PrismJS syntax highlighting. No browser/client JavaScript here, these highlight transformations are all done at build-time. Supports individual line highlighting.
 
-{% include "syntax-chooser.njk" %}
-
 * This documentation applies to `eleventy-plugin-syntaxhighlight` `v3.2.0` and newer.
 * [GitHub](https://github.com/11ty/eleventy-plugin-syntaxhighlight).
 

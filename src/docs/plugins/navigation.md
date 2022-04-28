@@ -8,8 +8,6 @@ eleventyNavigation:
 
 A plugin for creating infinite-depth hierarchical navigation in Eleventy projects. Supports breadcrumbs too! Used in production on this very website!
 
-{% include "syntax-chooser.njk" %}
-
 * This documentation is for `eleventy-navigation` `v0.3.x`.
 * [GitHub](https://github.com/11ty/eleventy-navigation).
 

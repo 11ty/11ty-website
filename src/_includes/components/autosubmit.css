@@ -1,0 +1,4 @@
+form-autosubmit:defined button[type="submit"],
+form-autosubmit:defined input[type="submit"] {
+  display: none;
+}

@@ -2,3 +2,28 @@ label.radio-align,
 input[type=radio] + label {
 	vertical-align: middle;
 }
+
+.formprefs {
+	display: flex;
+	gap: 1em;
+	font-size: 0.9375em; /* 15px /16 */
+	background-color: #eee;
+	padding: 0.5em 1em;
+	border-radius: 0.25em;
+	margin-left: -1rem;
+	margin-right: -1rem;
+	margin-bottom: 1em;
+}
+.formprefs fieldset {
+	border: none;
+	padding-left: 0;
+	padding-right: 0;
+}
+.formprefs legend {
+	float: left;
+	padding: 0;
+}
+.formprefs label {
+	margin-left: .25em;
+	font-weight: bold;
+}

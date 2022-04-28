@@ -9,8 +9,6 @@ communityLinksKey: syntaxrender
 
 {{ eleventyNavigation.excerpt }}
 
-{% include "syntax-chooser.njk" %}
-
 [[toc]]
 
 ## Template Compatibility

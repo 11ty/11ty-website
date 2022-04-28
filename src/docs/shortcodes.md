@@ -17,8 +17,6 @@ tags:
 
 Various template engines can be extended with shortcodes for easy reusable content. This is sugar around Template Language [Custom Tags](/docs/custom-tags/). Shortcodes are supported in JavaScript, Liquid, Nunjucks, Handlebars templates.
 
-{% include "syntax-chooser.njk" %}
-
 Here are a few examples:
 
 <seven-minute-tabs>

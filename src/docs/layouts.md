@@ -9,8 +9,6 @@ eleventyNavigation:
 
 Eleventy Layouts are special templates that can be used to wrap other content.
 
-{% include "syntax-chooser.njk" %}
-
 To denote that a piece of content should be wrapped in a template, use the `layout` key in your front matter, like so:
 
 <seven-minute-tabs>
@@ -103,7 +101,7 @@ All of this will output the following HTML content to `_site/content-using-layou
 
 
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "filter", additions: "md"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layoutoutput", additions: "md"} %}
   <div id="layoutoutput-md" role="tabpanel">
 {% callout "demo" %}
 
