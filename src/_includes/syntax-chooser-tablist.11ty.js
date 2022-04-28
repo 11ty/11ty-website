@@ -60,7 +60,7 @@ exports.render = async function({id, valid, additions, label}) {
 	<details-utils close-esc close-click-outside>
 		<details class="tmplsyntax-default">
 			<summary>Always prefer…</summary>
-			${form}
+			<div class="tmplsyntax-dropdown">${form}</div>
 		</details>
 	</details>
 </div>`;

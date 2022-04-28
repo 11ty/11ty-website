@@ -7,11 +7,11 @@ input[type=radio] + label {
 	display: flex;
 	gap: 1em;
 	font-size: 0.9375em; /* 15px /16 */
-	background-color: #eee;
 	padding: 0.5em 1em;
 	border-radius: 0.25em;
 }
 footer .formprefs {
+	background-color: #eee;
 	margin-left: -1rem;
 	margin-right: -1rem;
 	margin-bottom: .5em;
@@ -53,20 +53,19 @@ footer .formprefs {
 	white-space: nowrap;
 	line-height: 1.8;
 	padding: 0 1em;
-	margin: 0 0.1em;
 	border-top: 5px solid transparent;
 	font-weight: 500;
 }
-.tmplsyntax-default[open] summary {
-	background-color: #000;
+.tmplsyntax-default[open] summary,
+.tmplsyntax-default[open] .tmplsyntax-dropdown {
+	background-color: #222;
 	color: #fff;
 }
-.tmplsyntax-default form-autosubmit {
+.tmplsyntax-dropdown {
 	position: absolute;
+	left: 0;
 	right: 0;
 	z-index: 1;
-	background-color: #fff;
-	border: 2px solid #000;
 	box-shadow: rgba(0, 0, 0, 0.07) 0px 16px 24px 0px, rgba(0, 0, 0, 0.06) 0px 6px 30px 0px, rgba(0, 0, 0, 0.1) 0px 8px 10px 0px;
 }
 .tmplsyntax legend {
