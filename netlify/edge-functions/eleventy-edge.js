@@ -9,7 +9,7 @@ export default async (request, context) => {
       precompiled: precompiledAppData,
 
       // default is [], add more keys to opt-in e.g. ["appearance", "username"]
-      cookies: ["appearance", "syntax"],
+      cookies: ["syntax"],
     });
 
     edge.config((eleventyConfig) => {
