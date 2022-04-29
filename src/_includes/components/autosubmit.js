@@ -32,13 +32,26 @@ class FormAutoSubmit extends HTMLElement {
 
 		this.forms = this.querySelectorAll("form");
 		for(let form of this.forms) {
-			this.addEventListenerToForm(form);
+			this.addEvents(form);
 		}
 	}
 
-	addEventListenerToForm(form) {
-		form.addEventListener("change", async e => {
-			form.submit();
+	addEvents(form) {
+		// Don’t submit the form when using the arrows
+		form.addEventListener("keydown", e => {
+			let code = e.keyCode || e.which;
+			if(code >= 37 && code <= 40) {
+				form.changeViaArrowKeys = true;
+				form.classList.add("form-autosubmit-show-button");
+			}
+		})
+		form.addEventListener("change", e => {
+			// Was changed using the arrows
+			if(form.changeViaArrowKeys) {
+				form.changeViaArrowKeys = false;
+			} else {
+				form.submit();
+			}
 		});
 	}
 }
