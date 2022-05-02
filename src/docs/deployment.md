@@ -51,7 +51,7 @@ Now that you’ve built a web site with Eleventy _(even if it’s one HTML page!
 
 ## Use a Build Script
 
-When deploying your Eleventy site, the goal is to provide your chosen with your project’s **build output** (the `_site` folder by default). The command you run is usually configured via a _build script_ in your `package.json` file. It might look like this:
+When deploying your Eleventy site, the goal is to provide your chosen host with your project’s **build output** (the `_site` folder by default). The command you run is usually configured via a _build script_ in your `package.json` file. It might look like this:
 
 {% codetitle "package.json" %}
 
