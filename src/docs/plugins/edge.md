@@ -134,8 +134,12 @@ export default async (request, context) => {
 
 </details>
 
-{% callout "warn", "md" %}If you tried Eleventy Edge on `2.0.0-canary.6`, unfortunately [we had to restructure some deps](https://github.com/11ty/eleventy/issues/2335#issuecomment-1104470515) and the Edge Function `import` URLs are different starting with `2.0.0-canary.7`. The good news is that Eleventy will generate a working file for you! Sorry folks!
-{% endcallout %}
+<details>
+<summary>Expand to read a warning about Edge on Eleventy <code>2.0.0-canary.6</code></summary>
+
+{% callout "warn", "md" %}If you tried Eleventy Edge on `2.0.0-canary.6`, unfortunately [we had to restructure some deps](https://github.com/11ty/eleventy/issues/2335#issuecomment-1104470515) and the Edge Function `import` URLs are different starting with `2.0.0-canary.7`. The good news is that Eleventy will generate a working file for you! Sorry folks!{% endcallout %}
+
+</details>
 
 
 #### Read more about Netlify’s Edge Functions
