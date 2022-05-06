@@ -473,6 +473,50 @@ navOptions:
   </div>
 </seven-minute-tabs>
 
+##### Allow missing pages (nodes) in breadcrumbs
+
+{% addedin "Navigation 0.3.3" %}
+
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    View this example in:
+    <a href="#navbreadmissing-liquid" role="tab">Liquid</a>
+    <a href="#navbreadmissing-njk" role="tab">Nunjucks</a>
+    <a href="#navbreadmissing-js" role="tab">11ty.js</a>
+  </div>
+  <div id="navbreadmissing-liquid" role="tabpanel">
+
+{% codetitle "Liquid", "Syntax" %}
+
+{% raw %}
+```liquid
+---
+navOptions:
+  allowMissing: true
+---
+{% assign navPages = collections.all | eleventyNavigationBreadcrumb: "Does not exist", navOptions %}
+{{ navPages | json }}
+```
+{% endraw %}
+
+  </div>
+  <div id="navbreadmissing-njk" role="tabpanel">
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```jinja2
+{% set navPages = collections.all | eleventyNavigationBreadcrumb("Bats", { includeSelf: true }) %}
+{{ navPages | dump | safe }}
+```
+{% endraw %}
+
+  </div>
+  <div id="navbreadmissing-js" role="tabpanel">
+    <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
+  </div>
+</seven-minute-tabs>
+
 
 ### Render the menu items using the `eleventyNavigationToHtml` or `eleventyNavigationToMarkdown` Filters
 
