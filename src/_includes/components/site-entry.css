@@ -163,13 +163,6 @@
 	background-color: #fff;
 }
 
-.stackblitz-link.stackblitz-link.stackblitz-link {
-	display: none;
-}
-.stackblitz .stackblitz-link.stackblitz-link {
-	display: inline;
-}
-
 @supports (aspect-ratio: 1 / 1) {
 	.img-gallery {
 		--shadow-color: rgba(234, 0, 255, 0.747);
