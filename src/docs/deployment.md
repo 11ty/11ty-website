@@ -99,3 +99,4 @@ Many hosts provide a command line utility to deploy your project. Here are some 
 - {% indieweblink "GitHub Pages Tutorial", "https://snook.ca/archives/servers/deploying-11ty-to-gh-pages" %} by {% avatarlocalcache "twitter", "snookca" %}Jonathan Snook
 - {% indieweblink "GitLab Pages Sample Project", "https://gitlab.com/bkmgit/11ty" %} by Benson Muite
 - {% indieweblink "Azure Static Web Apps Tutorial", "https://squalr.us/2021/05/deploying-an-11ty-site-to-azure-static-web-apps/" %} by {% avatarlocalcache "twitter", "chadschulz" %} Chad Schulz
+- {% indieweblink "Hosting Eleventy on GitHub Pages", "https://quinndombrowski.com/blog/2022/05/07/hosting-eleventy-on-github-pages/" %} by {% avatarlocalcache "twitter", "quinnanya" %}Quinn Dombrowski
