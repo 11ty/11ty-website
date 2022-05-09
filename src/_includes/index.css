@@ -936,3 +936,13 @@ a[href].opengraph-card:hover {
 .opengraph-card img {
 	display: block;
 }
+
+
+filter-container form {
+	opacity: .3;
+	pointer-events: none;
+}
+filter-container:defined form {
+	opacity: 1;
+	pointer-events: all;
+}

@@ -10,10 +10,14 @@ eleventyNavigation:
 
 <filter-container oninit>
 <form>
-  <select data-filter-key="tags" class="select-filter">
-    <option value="">Show All</option>
-    <option value="perfectlh">Four Hundos Lighthouse Score</option>
-  </select>
+  <label>
+    <input type="radio" name="projectfilter" value="" data-filter-key="tags" checked>
+    Show all projects
+  </label>
+  <label>
+    <input type="radio" name="projectfilter" value="perfectlh" data-filter-key="tags">
+    Only show projects with a Four Hundos Lighthouse score
+  </label>
 </form>
 <div class="sites-vert sites-vert--lg">
   <div class="lo-grid" style="--lo-margin-v: 5em;">
