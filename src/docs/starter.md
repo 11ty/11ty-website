@@ -10,7 +10,7 @@ eleventyNavigation:
 
 <filter-container oninit>
 <form>
-  <select data-filter-bind="tags" class="select-filter">
+  <select data-filter-key="tags" class="select-filter">
     <option value="">Show All</option>
     <option value="perfectlh">Four Hundos Lighthouse Score</option>
   </select>
