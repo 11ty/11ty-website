@@ -506,7 +506,7 @@ navOptions:
 
 {% raw %}
 ```jinja2
-{% set navPages = collections.all | eleventyNavigationBreadcrumb("Does not exist", { includeSelf: true }) %}
+{% set navPages = collections.all | eleventyNavigationBreadcrumb("Does not exist", { allowMissing: true }) %}
 {{ navPages | dump | safe }}
 ```
 {% endraw %}
