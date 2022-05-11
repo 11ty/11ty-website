@@ -23,7 +23,8 @@ Note that you can also add [Custom Front Matter Formats](/docs/data-frontmatter-
 {% codetitle ".eleventy.js" %}
 
 ```js
-eleventyConfig.addDataExtension("extension", contents => {
+// Receives file contents, return parsed data
+eleventyConfig.addDataExtension("fileExtension", contents => {
   return {};
 });
 ```
@@ -36,16 +37,18 @@ eleventyConfig.addDataExtension("extension", contents => {
 
 ```js
 // or with options (new in 2.0)
-eleventyConfig.addDataExtension("extension", {
+eleventyConfig.addDataExtension("fileExtension", {
   parser: contents => ({}),
+
+  // defaults are shown:
   read: true,
-  encoding: "utf8"
+  encoding: "utf8",
 });
 ```
 
 * `parser`: the callback function used to parse the data. The first argument is the data file’s contents.
-* `read: true`: use `read: false` to change the parser function’s argument to be a file path string instead of file contents.
-* `encoding: "utf8"`: use this to change the encoding of [Node’s `readFile`](https://nodejs.org/api/fs.html#fspromisesreadfilepath-options). Use `null` if you want a `Buffer`.
+* `read` (default: `true`): use `read: false` to change the parser function’s argument to be a file path string instead of file contents.
+* `encoding` (default: `"utf8"`): use this to change the encoding of [Node’s `readFile`](https://nodejs.org/api/fs.html#fspromisesreadfilepath-options). Use `null` if you want a `Buffer`.
 
 ## Examples
 
