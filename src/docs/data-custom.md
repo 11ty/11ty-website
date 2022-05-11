@@ -16,11 +16,42 @@ Maybe you want to add support for TOML or YAML too! Any text format will do.
 
 Note that you can also add [Custom Front Matter Formats](/docs/data-frontmatter-customize/) as well.
 
+
+
+## Usage
+
+{% codetitle ".eleventy.js" %}
+
+```js
+eleventyConfig.addDataExtension("extension", contents => {
+  return {};
+});
+```
+
+### Usage with Options
+
+{% addedin "2.0.0-canary.10" %}
+
+{% codetitle ".eleventy.js" %}
+
+```js
+// or with options (new in 2.0)
+eleventyConfig.addDataExtension("extension", {
+  parser: contents => ({}),
+  read: true,
+  encoding: "utf8"
+});
+```
+
+* `parser`: the callback function used to parse the data. The first argument is the data file’s contents.
+* `read: true`: use `read: false` to change the parser function’s argument to be a file path string instead of file contents.
+* `encoding: "utf8"`: use this to change the encoding of [Node’s `readFile`](https://nodejs.org/api/fs.html#fspromisesreadfilepath-options). Use `null` if you want a `Buffer`.
+
 ## Examples
 
 ### YAML
 
-Here we’re using the [`js-yaml` package](https://www.npmjs.com/package/js-yaml). Don’t forget to `npm install js-yaml --save`.
+Here we’re using the [`js-yaml` package](https://www.npmjs.com/package/js-yaml). Don’t forget to `npm install js-yaml`.
 
 {% codetitle ".eleventy.js" %}
 
@@ -32,9 +63,21 @@ module.exports = eleventyConfig => {
 };
 ```
 
+{% addedin "2.0.0-canary.10" %} Pass a comma-separated list of extensions.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+const yaml = require("js-yaml");
+
+module.exports = eleventyConfig => {
+  eleventyConfig.addDataExtension("yml,yaml", contents => yaml.load(contents));
+};
+```
+
 ### TOML
 
-Here we’re using the [`toml` package](https://www.npmjs.com/package/toml). Don’t forget to `npm install toml --save`.
+Here we’re using the [`toml` package](https://www.npmjs.com/package/toml). Don’t forget to `npm install toml`.
 
 {% codetitle ".eleventy.js" %}
 
@@ -47,13 +90,42 @@ module.exports = eleventyConfig => {
 ```
 
 
-### A custom JSON file extension
+### Adding a custom JSON file extension
 
 {% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = eleventyConfig => {
   eleventyConfig.addDataExtension("geojson", contents => JSON.parse(contents));
+};
+```
+
+### Feed EXIF image data into the Data Cascade
+
+{% addedin "2.0.0-canary.10" %} This uses the [`exifr` package](https://www.npmjs.com/package/exifr) to read image EXIF data. Don’t forget to `npm install exifr`.
+
+Note that the second argument is an object with a `parser` function.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+const exifr = require("exifr");
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addDataExtension("png,jpg", {
+    parser: async file => {
+      let exif = await exifr.parse(file);
+
+      return {
+        image: {
+          exif
+        }
+      };
+    },
+    // Using `read: false` changes the parser argument to
+    // a file path instead of file contents.
+    read: false,
+  });
 };
 ```
 
