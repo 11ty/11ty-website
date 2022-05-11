@@ -115,22 +115,26 @@ Note that the second argument is an object with a `parser` function.
 const exifr = require("exifr");
 
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addDataExtension("png,jpg", {
+  eleventyConfig.addDataExtension("png,jpeg", {
     parser: async file => {
       let exif = await exifr.parse(file);
 
       return {
-        image: {
-          exif
-        }
+        exif
       };
     },
+
     // Using `read: false` changes the parser argument to
     // a file path instead of file contents.
     read: false,
   });
 };
 ```
+
+* Example using a _template data file_:
+  * Given `my-blog-post.md` and `my-blog-post.jpeg` then `exif` will be available for use in `my-blog-post.md` (e.g. `{% raw %}{{ exif | log }}{% endraw %}`)
+* Example using a _global data file_:
+  * Given `_data/images/custom.jpeg` then `images.custom.exif` will be available for use on any template (e.g. `{% raw %}{{ images.custom.exif | log }}{% endraw %}`)
 
 ## Ordering in the Data Cascade
 
