@@ -493,7 +493,7 @@ Use Eleventy’s [Custom Template Language](/docs/languages/custom/) feature to 
 
 ### Process images as Data Files
 
-{% addedin "2.0.0-canary.10" %} _Nontraditional use case._ Eleventy’s [Custom Data File Formats](/docs/data-custom/) features an example of [processing Images as data files](/docs/data-custom/#feed-exif-image-data-into-the-data-cascade) to feed into the Data Cascade. You can use the same feature to add the metadata stats returned from the Image utility directly to the Data Cascade for use in your templates.
+{% addedin "2.0.0-canary.10" %} _Nontraditional use case._ Eleventy’s [Custom Data File Formats](/docs/data-custom/) features an example of [processing Images as data files to feed EXIF data into the Data Cascade](/docs/data-custom/#feed-exif-image-data-into-the-data-cascade). You can use the same feature to add the metadata stats returned from the Image utility directly to the Data Cascade for use in your templates.
 
 * Benefits:
   * Processing happens in the data cascade so this works in any template language.
