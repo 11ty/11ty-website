@@ -357,6 +357,8 @@ The above generates a list of links but you could do a lot more. See what’s av
 
 ## Generating an Empty Results Page
 
+{% addedin "2.0.0-canary.10" %}
+
 By default, if the specified data set is empty, Eleventy will not render any pages. Use `generatePageOnEmptyData: true` to generate one  pagination output with an empty chunk `[]` of items.
 
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
