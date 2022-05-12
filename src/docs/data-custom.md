@@ -29,6 +29,14 @@ eleventyConfig.addDataExtension("fileExtension", contents => {
 });
 ```
 
+{% addedin "2.0.0-canary.10" %} Pass a comma-separated list of extensions.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+eleventyConfig.addDataExtension("yml, yaml", contents => { /* do a thing */ });
+```
+
 ### Usage with Options
 
 {% addedin "2.0.0-canary.10" %}
@@ -63,18 +71,6 @@ const yaml = require("js-yaml");
 
 module.exports = eleventyConfig => {
   eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
-};
-```
-
-{% addedin "2.0.0-canary.10" %} Pass a comma-separated list of extensions.
-
-{% codetitle ".eleventy.js" %}
-
-```js
-const yaml = require("js-yaml");
-
-module.exports = eleventyConfig => {
-  eleventyConfig.addDataExtension("yml,yaml", contents => yaml.load(contents));
 };
 ```
 
