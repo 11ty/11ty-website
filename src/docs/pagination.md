@@ -100,7 +100,7 @@ In addition to the `pagination` object entries documented above, it also has:
 
 ```js
 {
-  data: …, // the original string key to the dataset
+  data: "…", // the original string key to the dataset
   size: 1, // page chunk sizes
 
   // Cool URLs

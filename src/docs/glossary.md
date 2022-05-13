@@ -62,6 +62,12 @@ A portable, installable Eleventy configuration which can add [data](#data), [fil
 
 [Read more about plugins.](/docs/plugins/)
 
+### Eleventy Edge
+
+Opt-in shortcodes for Eleventy in which pieces of dynamic functionality can be coupled with build-generated or serverless templates.
+
+[Read more about Eleventy Edge.](/docs/plugin/edge/)
+
 ### Eleventy Serverless
 
 An opt-in build mode for Eleventy in which specified pages are built when a user requests them, rather than ahead of time during a build step. Optionally, pages that are built on request can be cached by the content delivery network to be used for future visits to that page.
@@ -122,7 +128,8 @@ With the rise of client side rendering of templates in JavaScript came significa
 
 Many frameworks switched to Server Side Rendering, which meant running an application server with middleware that would render the markup on demand for each request. Eleventy templates by default are generated (some call this pre-rendering) at build time for maximum performance. This way the web server only needs to fetch the static file and send it back to the user.
 
-Eleventy can also run in [Serverless mode](/docs/plugins/serverless/) for server side rendering _On Request_ or even _On Request Once and Cached for Subsequent Visitors_.
+* If you want to add dynamic server-side functionality to your Eleventy project, use [Eleventy Edge](/docs/plugins/edge/) on top of your build or server generated templates.
+* Eleventy can also run in [Serverless mode](/docs/plugins/serverless/) for server side rendering _On Request_ or even _On Request Once and Cached for Subsequent Visitors_.
 
 ### Hydration-less
 
