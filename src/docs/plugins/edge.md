@@ -455,6 +455,85 @@ ${await this.edge("# Markdown heading for {{ name }}", "liquid,md", data.buildDa
   </div>
 </seven-minute-tabs>
 
+#### Add Global Data to your Edge Function
+
+If you open up your generated `netlify/edge-functions/eleventy-edge.js` file, you’ll notice that you are able to run your own arbitrary configuration code on Edge. This means you can run `eleventyConfig.addGlobalData` to add your own global data to the edge templates {% addedin "2.0.0-canary.11" %}. Any data you add here will automatically be available as a global inside of any `{% raw %}{% edge %}{% endraw %}` shortcodes _without having to pass it as an argument_.
+
+{% codetitle "netlify/edge-functions/eleventy-edge.js" %}
+
+{% raw %}
+```diff-js
+ import { EleventyEdge } from "eleventy:edge";
+ import precompiledAppData from "./_generated/eleventy-edge-app-data.js";
++import searchData from "./_generated/search-data.js";
+
+ export default async (request, context) => {
+  try {
+    let edge = new EleventyEdge("edge", {
+      request,
+      context,
+      precompiled: precompiledAppData,
+    });
+
+    edge.config((eleventyConfig) => {
++      eleventyConfig.addGlobalData("search", searchData);
+    });
+
+    return await edge.handleResponse();
+  } catch (e) {
+    console.log("ERROR", { e });
+    return context.next(e);
+  }
+ };
+```
+{% endraw %}
+
+Notably, the above adds a `search` global from a file we’ve created to populate search data. Now we can reference it in our templates like so:
+
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Choose a template language">
+    View this example in:
+    <a href="#edgeglobaldata-liquid" role="tab">Liquid</a>
+    <a href="#edgeglobaldata-njk" role="tab">Nunjucks</a>
+    <a href="#edgeglobaldata-js" role="tab">11ty.js</a>
+  </div>
+  <div id="edgeglobaldata-liquid" role="tabpanel">
+{% codetitle "index.liquid" %}
+
+{% raw %}
+```liquid
+{% edge "liquid" %}
+{{ search | json }}
+{% endedge %}
+```
+{% endraw %}
+  </div>
+  <div id="edgeglobaldata-njk" role="tabpanel">
+{% codetitle "index.njk" %}
+
+{% raw %}
+```jinja2
+{% edge "liquid" %}
+{{ search | json }}
+{% endedge %}
+```
+{% endraw %}
+  </div>
+  <div id="edgeglobaldata-js" role="tabpanel">
+{% codetitle "index.11ty.js" %}
+
+{% raw %}
+```js
+module.exports.render = async function(data) {
+  return `
+${await this.edge("{{ search | json }}", "liquid")}
+`;
+};
+```
+{% endraw %}
+  </div>
+</seven-minute-tabs>
+
 ## Frequently Asked Questions
 
 ### Limitations
