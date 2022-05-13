@@ -35,9 +35,9 @@ Here are a few ideas:
 
 ## Try out the demos
 
-Try out the [Eleventy Edge demos using Netlify’s Edge Functions](https://demo-eleventy-edge.netlify.app/).
-
-Read the [`demo-eleventy-edge` Source Code on GitHub](https://github.com/11ty/demo-eleventy-edge)
+* [Eleventy Edge demos using Netlify’s Edge Functions](https://demo-eleventy-edge.netlify.app/).
+  * Read the [`demo-eleventy-edge` Source Code on GitHub](https://github.com/11ty/demo-eleventy-edge)
+* [Eleventy Edge search on `eleventy-base-blog`](https://demo-edge-search--eleventy-base-blog.netlify.app/search/?q=first) with [Source code](https://github.com/11ty/eleventy-base-blog/compare/demo-edge-search)
 
 ## How does it work?
 
