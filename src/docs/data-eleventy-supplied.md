@@ -97,6 +97,25 @@ Example Output below is using the above permalink value.
 | `"2018-01-01-myFile.md"` | `"myFile"` | `myFile.html` |
 | `"myDir/myFile.md"` | `"myDir/myFile"` | `myDir/myFile.html` |
 
+#### Changing your project default permalinks
+
+{% addedin "2.0.0-canary.9" %} [Deep-link to `3c49f22`](https://github.com/11ty/eleventy/commit/3c49f22b31b10e5dae0daf661a54750875ae5d0f).
+
+Want to change `resource.md` to write to `/resource.html` instead of `/resource/index.html`? Use this configuration API code sample.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addGlobalData("permalink", () => {
+    return (data) => `${data.page.filePathStem}.${data.page.outputFileExtension}`;
+  });
+};
+```
+
+{% callout "warn", "md" %}A staunch warning that `/resource.html` is less-friendly than `/resource/index.html` on various Jamstack hosting providers. You may encounter unexpected 404 errors. Make [sure you know what you’re doing here](https://www.zachleat.com/web/trailing-slash/#results-table)!{% endcallout %}
+
+
 ## `eleventy` Variable {% addedin "1.0.0" %}
 
 ```js
