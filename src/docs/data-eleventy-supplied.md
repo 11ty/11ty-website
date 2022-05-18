@@ -113,7 +113,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-{% callout "warn", "md" %}A staunch warning that `/resource.html` is less-friendly than `/resource/index.html` on various Jamstack hosting providers. You may encounter unexpected 404 errors. Make [sure you know what you’re doing here](https://www.zachleat.com/web/trailing-slash/#results-table)!{% endcallout %}
+{% callout "warn", "md" %}When using this approach for URLs _without_ trailing slashes (file `/resource.html` -> url `/resource`), please do note that using trailing slashes with `index.html` files (file `/resource/index.html` -> url `/resource/`) is a bit friendlier on various Jamstack hosting providers. You may encounter unexpected 404 errors—make [sure you study up on how this works and test appropriately!](https://www.zachleat.com/web/trailing-slash/#results-table)!{% endcallout %}
 
 
 ## `eleventy` Variable {% addedin "1.0.0" %}
