@@ -1,0 +1,8 @@
+{
+	"url": "https://github.com/fylgja/11ty-starter-template",
+	"name": "Eleventy Fylgja Starter",
+	"description": "11ty starter template build using Fylgja CSS.",
+	"author": "grimlink",
+	"demo": "https://11ty-fylgja.netlify.app/",
+	"npmStartScript": "start"
+}
