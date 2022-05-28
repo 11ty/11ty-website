@@ -295,7 +295,7 @@ class Conditions {
   }
 
   static checkSaveData(expects) {
-    if("connection" in navigator && navigator.connection.saveData === (expects !== "false")) {
+    if(!("connection" in navigator) || navigator.connection.saveData === (expects !== "false")) {
       return Promise.resolve();
     }
 
