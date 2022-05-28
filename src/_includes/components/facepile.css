@@ -122,3 +122,7 @@
 	width: calc(20px + 2vw);
 	height: calc(20px + 2vw);
 }
+
+.facepile-fake .avatar {
+	background-color: #eee;
+}

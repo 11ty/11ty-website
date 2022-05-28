@@ -9,7 +9,7 @@ eleventyNavigation:
 
 Eleventy Layouts are special templates that can be used to wrap other content. To denote that a piece of content should be wrapped in a template, use the `layout` key in your front matter, like so:
 
-
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -79,6 +79,7 @@ module.exports = {
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 This will look for a `mylayout.njk` Nunjucks file in your _includes_ folder at `_includes/mylayout.njk`.
 
@@ -101,7 +102,7 @@ Layouts can contain their own front matter data! It’ll be merged with the cont
 
 All of this will output the following HTML content to `_site/content-using-layout/index.html`:
 
-
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View the output from:
@@ -187,6 +188,7 @@ All of this will output the following HTML content to `_site/content-using-layou
 {% endcallout %}
   </div>
 </seven-minute-tabs>
+</is-land>
 
 ## Front Matter Data in Layouts
 

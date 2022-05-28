@@ -37,6 +37,7 @@ title: Hot Take—Social Media is Considered Harmful
 
 This will place this `mypost.md` into the `post` collection with all other pieces of content sharing the `post` tag. To reference this collection and make a list of all posts, use the `collections` object in any template:
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -90,11 +91,13 @@ exports.render = function(data) {
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 ### Using an `[aria-current]` attribute for on the current page
 
 Compare the `post.url` and special Eleventy-provided `page.url` variable to find the current page. Building on the previous example:
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -151,6 +154,7 @@ exports.render = function(data) {
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 Background: `aria-current="page"` tells assistive technology, such as screen readers, which page of a set of pages is the current active one. It also provides a hook for your CSS styling, using its attribute selector: `[aria-current="page"] {}`.
 
@@ -160,6 +164,7 @@ By default Eleventy puts all of your content (independent of whether or not it h
 
 ### Link to all Eleventy generated content
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -215,6 +220,7 @@ exports.render = function(data) {
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 ## How to Exclude content from Collections
 
@@ -279,6 +285,7 @@ This content would show up in the template data inside of `collections.cat` and 
 ### Collection Item Data Structure
 
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -332,6 +339,7 @@ exports.render = function(data) {
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 Note in the above example that we output the `post.data.title` value? Similarly, each collection item will have the following data:
 
@@ -381,6 +389,7 @@ This collection would be sorted like this:
 
 To sort descending in your template, you can use a filter to reverse the sort order. For example, it might look like this:
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -435,6 +444,7 @@ exports.render = function(data) {
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 {% callout "warn" %}
   <p id="array-reverse">You should <em><strong>not</strong></em> use Array <code>reverse()</code> on collection arrays in your templates, like so:</p>

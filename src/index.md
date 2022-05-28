@@ -60,8 +60,23 @@ Run `npx @11ty/eleventy --serve` to start up a web server. Then open `http://loc
   </div>
 </div>
 
-<!-- TODO some kind of aspect ratio? -->
-<div data-import="/imports/facepile.html" class="facepile-fullwidth"></div>
+<div class="facepile-fullwidth">
+  <is-land on:visible on:save-data="false">
+    <!-- for the aspect ratio -->
+    <div class="facepile facepile-fake">
+    {%- for author in authors | sortAuthors %}
+    {%- if author.sites.length > 0 -%}
+      <a><span class="avatar avatar-large"></span></a>
+    {%- endif -%}
+    {%- endfor %}
+    </div>
+    <template data-island>
+      <html-fetch target="is-land" src="/imports/facepile.html"></html-fetch>
+    </template>
+  </is-land>
+</div>
+
+
 
 View [all {{ builtwith | objectFilterNot("disabled") | length }} sites](/speedlify/).
 

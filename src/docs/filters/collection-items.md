@@ -10,7 +10,7 @@ eleventyNavigation:
 
 {% addedin "0.11.0" %} Fetch the previous and next items in a collection when you pass in the current `page` object.
 
-
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -46,10 +46,11 @@ eleventyNavigation:
     <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 Useful when you’d like to link to the previous or next template in your collection:
 
-
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -85,6 +86,7 @@ Useful when you’d like to link to the previous or next template in your collec
     <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 The [Collections documentation](/docs/collections/#sorting) outlines the default sorting algorithm and how to override it.
 
@@ -92,7 +94,7 @@ The [Collections documentation](/docs/collections/#sorting) outlines the default
 
 For completeness, a `getCollectionItem` filter is also included that fetches the current page from a collection.
 
-
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -126,6 +128,7 @@ For completeness, a `getCollectionItem` filter is also included that fetches the
     <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 
 * [← Back to Filters documentation.](/docs/filters/)

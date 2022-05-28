@@ -18,7 +18,6 @@ A <dfn>filter</dfn> is a function which can be used within templating syntax to 
 
 Various template engines can be extended with custom filters to modify content. Here are a few examples:
 
-
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:

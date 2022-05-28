@@ -3,10 +3,12 @@ permalink: js/eleventy.js
 eleventyExcludeFromCollections: true
 ---
 {% set js %}
-{% include "components/import.js" %}
 {% include "components/auth/gotrue.js" %}
 {% include "components/auth/auth.js" %}
 {% include "components/search.js" %}
+
+{% include "components/html-fetch.js" %}
+{% include "components/islands.js" %}
 {% include "../../node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js" %}
 {% include "../../node_modules/speedlify-score/speedlify-score.js" %}
 {% include "../../node_modules/@zachleat/filter-container/filter-container.js" %}
