@@ -201,15 +201,6 @@ class Island extends HTMLElement {
     this.readyResolve({
       import: mod
     });
-
-    // TODO Testing only
-    this.classList.add("test-finish");
-    if(!window.componentCount) {
-      window.componentCount = 0;
-    }
-    window.componentCount++
-    console.log( `${window.componentCount} island${window.componentCount !== 1 ? "s" : ""}`, this );
-    // End testing
   }
 }
 
