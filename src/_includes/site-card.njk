@@ -18,7 +18,11 @@
       {%- getScreenshotHtml site.fileSlug, site.demo or site.url, null, site.screenshotSize -%}
     </div>
 {%- if siteData | lighthouseGoodDataCheck %}
-    <div class="sites-site-lighthouse"><speedlify-score raw-data='{{ siteData | toJSON | safe }}'></speedlify-score></div>
+    <div class="sites-site-lighthouse">
+      <is-land on:visible>
+        <speedlify-score raw-data='{{ siteData | toJSON | safe }}'></speedlify-score>
+      </is-land>
+    </div>
 {%- endif %}
   </a>
 
