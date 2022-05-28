@@ -61,7 +61,7 @@ Run `npx @11ty/eleventy --serve` to start up a web server. Then open `http://loc
 </div>
 
 <div class="facepile-fullwidth">
-  <is-land on:visible on:idle on:save-data="false">
+  <is-land on:visible on:save-data="false">
     <!-- for the aspect ratio -->
     <div class="facepile facepile-fake">
     {%- for author in authors | sortAuthors %}

@@ -274,6 +274,7 @@ await Image("./test/bio-2017.jpg", {
 
 {% callout "info" %}The examples below use a <a href="/docs/languages/nunjucks/#asynchronous-shortcodes">Nunjucks</a> <code>async</code> shortcode (different from the traditional shortcode configuration method). The <a href="/docs/languages/javascript/#asynchronous-javascript-template-functions">JavaScript</a> and <a href="/docs/languages/liquid/#asynchronous-shortcodes">Liquid</a> template engines also work here and are asynchronous without additional changes. Note that <a href="https://mozilla.github.io/nunjucks/templating.html#macro">Nunjucks macros cannot use asynchronous shortcodes</a>. If you use macros, use Synchronous shortcodes described below.{% endcallout %}
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Easy or DIY mode chooser">
     Choose one:
@@ -409,11 +410,13 @@ module.exports = function(eleventyConfig) {
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 {% callout "info", "md" %}Read more about the [`loading`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading) and [`decoding`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-decoding) HTML attributes.{% endcallout %}
 
 Now you can use it in your templates:
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -450,6 +453,7 @@ ${img2}`;
 {% endraw %}{% endhighlight %}
   </div>
 </seven-minute-tabs>
+</is-land>
 
 And you’ll have the appropriate HTML generated for you (based on your specified Image options).
 

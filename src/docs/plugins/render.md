@@ -63,6 +63,7 @@ module.exports = function(eleventyConfig) {
 Use the `renderTemplate` paired shortcode to render a template string.
 
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -119,11 +120,13 @@ module.exports = async function() {
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 The content inside of the shortcode will be rendered using Markdown (`"md"`). Front matter is not yet supported.
 
 The first argument to `renderTemplate` can be any valid [`templateEngineOverride`](/docs/languages/#templateengineoverride-examples) value. You can even use `"liquid,md"` to preprocess markdown with liquid. You can use [custom template types](/docs/languages/custom/) here too, including [the Vue plugin](https://github.com/11ty/eleventy-plugin-vue)!
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -173,6 +176,7 @@ module.exports = async function() {
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 {% callout "info", "md" %}The one exception here is that `{% raw %}{% renderTemplate "11ty.js" %}{% endraw %}` JavaScript string templates are not yet supported—use `renderFile` below instead.{% endcallout %}
 
@@ -182,6 +186,7 @@ To add Vue support, don’t forget to install [`@11ty/eleventy-plugin-vue` (v0.6
 
 Both the [`eleventy`](/docs/data-eleventy-supplied/#eleventy-variable) and [`page` variables](/docs/data-eleventy-supplied/#page-variable) are available inside of these templates by default. If you want to pass in additional data, you can do so like this:
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -242,6 +247,7 @@ module.exports.render = async function(data) {
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 Outputs `myValue`.
 
@@ -250,6 +256,7 @@ Outputs `myValue`.
 Use the `renderFile` shortcode to render an include file.
 
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -293,12 +300,14 @@ module.exports = async function() {
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 The first argument to `renderFile` is a project root relative path to any template file. Front matter inside of the target files is not yet supported. The template syntax used is inferred by the file extension.
 
 Note that you can use files supported by any [custom file extensions](/docs/languages/custom/) you’ve added too, including a Vue Single File Component from the [Eleventy Vue plugin](https://github.com/11ty/eleventy-plugin-vue)!
 
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -342,6 +351,7 @@ module.exports = async function() {
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 To add Vue support, don’t forget to install [`@11ty/eleventy-plugin-vue` (v0.6.0 or newer)](https://github.com/11ty/eleventy-plugin-vue) and add the Vue plugin in your config file.
 
@@ -349,6 +359,7 @@ To add Vue support, don’t forget to install [`@11ty/eleventy-plugin-vue` (v0.6
 
 Both the [`eleventy`](/docs/data-eleventy-supplied/#eleventy-variable) and [`page` variables](/docs/data-eleventy-supplied/#page-variable) are available inside of these templates by default. If you want to pass in additional data, you can do so like this:
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -405,12 +416,14 @@ module.exports.render = async function(data) {
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 #### Override the target file syntax
 
 The syntax is normally inferred using the file extension, but it can be overridden using a third argument. It can be any valid [`templateEngineOverride`](/docs/languages/#templateengineoverride-examples) value. You can even use `"liquid,md"` to preprocess markdown with liquid.
 
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -467,5 +480,6 @@ module.exports.render = async function(data) {
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 Will render blogpost.md using Nunjucks instead of Markdown!

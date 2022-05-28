@@ -95,6 +95,7 @@ This plugin provides the following syntax highlighters using PrismJS, all of whi
 
 * [Review the list of supported PrismJS languages](http://prismjs.com/#languages-list)
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -168,6 +169,7 @@ The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 ### Show changes using `diff-` syntax
 
@@ -175,6 +177,7 @@ The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %
 
 Add the `diff-` prefix to the language name on the previous examples to show code changes. Use a `+` or `-` at the beginning of the line to denote the addition or removal of that line.
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -251,6 +254,7 @@ The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 {% codetitle "Output", "Rendered" %}
 

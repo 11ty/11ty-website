@@ -193,6 +193,7 @@ path = "/*"
 
 Here we are making a simple template file. We can use the `{% raw %}{% edge %}{% endraw %}` shortcode to run the Liquid template syntax inside on the Edge server.
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -257,6 +258,7 @@ ${await this.edge(`The content inside of the \`edge\` shortcode is generated on 
   As documented in [Limitations](#limitations), we are using `liquid` here because `11ty.js` is not _yet_ supported as an Edge content target.
   </div>
 </seven-minute-tabs>
+</is-land>
 
 Learn more about [the `edge` shortcode](#edge-shortcode-examples).
 
@@ -287,6 +289,7 @@ In what might feel familiar to folks that have used the [Render plugin](/docs/pl
 
 {% callout "info", "md" %}If you use the `edge` shortcode inside of a [layout file](/docs/layouts/), it’s best to explicitly specify the template language!{% endcallout %}
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -330,6 +333,7 @@ ${await this.edge("# Markdown heading", "md")}
 {% endraw %}
   </div>
 </seven-minute-tabs>
+</is-land>
 
 #### Passing Build-time Data to your Edge Function
 
@@ -337,6 +341,7 @@ Edge content is a separate template, processed and built on the Edge. As such it
 
 When the build data argument is a literal (a string or number), it is mapped to `_` in the template.
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -394,9 +399,11 @@ ${await this.edge("# Markdown heading for {{ _ }}", "liquid,md", data.name)}
   </div>
 
 </seven-minute-tabs>
+</is-land>
 
 When the build data argument is an object, the object properties are available as top-level globals in the template.
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -454,6 +461,7 @@ ${await this.edge("# Markdown heading for {{ name }}", "liquid,md", data.buildDa
 {% endraw %}
   </div>
 </seven-minute-tabs>
+</is-land>
 
 #### Add Global Data to your Edge Function
 
@@ -490,6 +498,7 @@ If you open up your generated `netlify/edge-functions/eleventy-edge.js` file, yo
 
 Notably, the above adds a `search` global from a file we’ve created to populate search data. Now we can reference it in our templates like so:
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -533,6 +542,7 @@ ${await this.edge("{{ search | json }}", "liquid")}
 {% endraw %}
   </div>
 </seven-minute-tabs>
+</is-land>
 
 ## Frequently Asked Questions
 

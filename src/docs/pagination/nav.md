@@ -62,6 +62,7 @@ To create an accessible navigation structure, we want to do our research first!
 
 Alright, you definitely read all of those right? 😇 Here’s some accessible code you definitely would have written yourself after reading those wonderful resources:
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -81,6 +82,7 @@ Alright, you definitely read all of those right? 😇 Here’s some accessible c
     {%- endhighlight %}
   </div>
 </seven-minute-tabs>
+</is-land>
 
 For our example, this code will output the following markup for our example (on the first page):
 
@@ -181,6 +183,7 @@ You’ll probably also want to add some kind of visual styling to indicate that 
 
 Note that if the current page (`page.url`) is the first or last in the set, we won’t output links.
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -200,6 +203,7 @@ Note that if the current page (`page.url`) is the first or last in the set, we w
     {%- endhighlight %}
   </div>
 </seven-minute-tabs>
+</is-land>
 
 * `pagination.href.previous` and `pagination.href.next` are added in `0.10.0`. Use `pagination.previousPageHref` or `pagination.nextPageHref` in previous versions.
 
@@ -207,6 +211,7 @@ Note that if the current page (`page.url`) is the first or last in the set, we w
 
 For clarity here, we’re omitting the previous and next links from the previous section. Note the code below to show the links only if `pagination.href.first` and `pagination.href.last` don’t match the current `page.url`.
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -226,11 +231,13 @@ For clarity here, we’re omitting the previous and next links from the previous
     {%- endhighlight %}
   </div>
 </seven-minute-tabs>
+</is-land>
 
 ## Put It All Together
 
 Here’s the final pagination navigation template code, pieced together:
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -250,6 +257,7 @@ Here’s the final pagination navigation template code, pieced together:
     {%- endhighlight %}
   </div>
 </seven-minute-tabs>
+</is-land>
 
 Alright, you’ve copied the above—but don’t leave yet—*your work is not done (sorry)!* You still need to:
 

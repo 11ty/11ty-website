@@ -10,7 +10,6 @@ eleventyNavigation:
 
 {% addedin "0.11.0" %} An easy way to <code>console.log</code> anything from inside of a template file.
 
-
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:

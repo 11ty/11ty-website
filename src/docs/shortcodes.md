@@ -103,7 +103,7 @@ Read more about using shortcodes on the individual Template Language documentati
 
 The shortcodes we saw above were nice, I suppose. But really, they are not all that different from a filter. The real ultimate power of Shortcodes comes when they are paired. Paired Shortcodes have a start and end tag—and allow you to nest other template content inside!
 
-
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -175,6 +175,7 @@ Hello ${this.anotherShortCode()}`;
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 
 When adding paired shortcodes using the Configuration API, the first argument to your shortcode callback is the nested content.

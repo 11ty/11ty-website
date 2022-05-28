@@ -171,6 +171,7 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
 ### Output HTML
 
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -204,11 +205,13 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 ### To Markdown
 
 {% addedin "Navigation 0.3.1" %}
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -242,6 +245,7 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 ## Rendering the Navigation Bar (Deep Dive)
 
@@ -254,6 +258,7 @@ The `eleventyNavigation` filter returns a _sorted_ array of objects with `url` a
 For our documented templates above with the following template:
 
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -289,6 +294,7 @@ For our documented templates above with the following template:
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 
 {% callout "info" %}Note that you can also pass any collection into <code>eleventyNavigation</code>. It doesn’t have to be <code>collections.all</code>!{% endcallout %}
@@ -324,6 +330,7 @@ Shows that `navPages` has the following structure:
 Just show the children of a specific key, pass a key to `eleventyNavigation`:
 
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -359,6 +366,7 @@ Just show the children of a specific key, pass a key to `eleventyNavigation`:
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 ```json
 [
@@ -382,6 +390,7 @@ Just show the children of a specific key, pass a key to `eleventyNavigation`:
 You can also render only the parents of a specific key too, to make breadcrumb navigation. Pass a key to `eleventyNavigationBreadcrumb` like this:
 
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -417,6 +426,7 @@ You can also render only the parents of a specific key too, to make breadcrumb n
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 And an array of all the parents of the Bats entry will be returned (top-most parent is first):
 
@@ -433,6 +443,7 @@ And an array of all the parents of the Bats entry will be returned (top-most par
 ##### Include the current page in breadcrumb results
 
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -472,11 +483,13 @@ navOptions:
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 ##### Allow missing pages (nodes) in breadcrumbs
 
 {% addedin "Navigation 0.3.3" %}
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -516,6 +529,7 @@ navOptions:
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 
 ### Render the menu items using the `eleventyNavigationToHtml` or `eleventyNavigationToMarkdown` Filters
@@ -529,6 +543,7 @@ With the Navigation structure returned from `eleventyNavigation` or `eleventyNav
 The `eleventyNavigationToMarkdown` filter is {% addedin "Navigation 0.3.1" %}.
 
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -570,6 +585,7 @@ The `eleventyNavigationToMarkdown` filter is {% addedin "Navigation 0.3.1" %}.
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 #### Showing excerpts
 
@@ -586,6 +602,7 @@ eleventyNavigation:
 When you render a navigation list, pass `showExcerpt: true` to the `eleventyNavigationToHtml` filter, like so:
 
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -627,6 +644,7 @@ navToHtmlOptions:
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 
 #### Advanced: All Rendering Options for `eleventyNavigationToMarkdown`
@@ -634,6 +652,7 @@ navToHtmlOptions:
 {% addedin "Navigation 0.3.1" %}
 
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -680,6 +699,7 @@ navToMdOptions:
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 
 #### Advanced: All Rendering Options for `eleventyNavigationToHtml`
@@ -687,6 +707,7 @@ navToMdOptions:
 You can change the HTML elements, classes on the list and list items, and add an additional class for the current page’s navigation entry!
 
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -769,6 +790,7 @@ You can change the HTML elements, classes on the list and list items, and add an
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 
 These work with `eleventyNavigationBreadcrumb | eleventyNavigationToHtml` too.
@@ -782,6 +804,7 @@ This template will render a single tier of items (no children) _without_ using t
 Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
 
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -829,6 +852,7 @@ Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
     <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 You _can_ use a Nunjucks macro to recursively render list items of any depth but the code isn’t quite as clean:
 

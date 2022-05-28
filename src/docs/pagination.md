@@ -27,6 +27,7 @@ To iterate over a data set and create pages for individual chunks of data, use p
 
 Consider the following template, which will result in two pages being created, each of which will display two items from `testdata`:
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -62,6 +63,7 @@ If the above file were named `paged.11ty.js`, it would create two pages in your 
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 We enable pagination and then give it a dataset with the `data` key. We control the number of items in each chunk with `size`. The pagination data variable will be populated with what you need to create each template. Here’s what’s in `pagination`:
 
@@ -133,6 +135,7 @@ Learn how to create a list of links to every paginated page on a pagination temp
 
 All of the examples thus far have paged Array data. Eleventy does allow paging objects too. Objects are resolved to pagination arrays using either the `Object.keys` or `Object.values` JavaScript functions. Consider the following templates:
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -192,6 +195,7 @@ testdata:
     <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 In this example, we would get 3 pages that each print a key/value pair from `testdata`. The paged items hold the object keys:
 
@@ -257,6 +261,7 @@ This resolves to:
 
 Your front matter would look like this:
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -308,6 +313,7 @@ pagination:
     <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 ## Remapping with permalinks
 
@@ -378,6 +384,7 @@ Using a universal `slug` filter (transforms `My Item` to `my-item`), this output
 
 Ok, so `pagination.items[0]` is ugly. We provide an option to alias this to something different.
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -431,6 +438,7 @@ You can use the alias in your content too {{ wonder }}.
     <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 This writes to `_site/different/item1/index.html` and `_site/different/item2/index.html`.
 
@@ -439,6 +447,7 @@ This writes to `_site/different/item1/index.html` and `_site/different/item2/ind
 If your chunk `size` is greater than 1, the alias will be an array instead of a single value.
 
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -496,6 +505,7 @@ You can use the alias in your content too {{ wonder[0] }}.
     <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 This writes to `_site/different/item1/index.html` and `_site/different/item3/index.html`.
 
@@ -504,6 +514,7 @@ This writes to `_site/different/item1/index.html` and `_site/different/item3/ind
 If you’d like to make a paginated list of all of your blog posts (any content with the tag `post` on it), use something like the following template to iterate over a specific collection:
 
 
+<is-land on:visible>
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -561,6 +572,7 @@ pagination:
     <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 The above generates a list of links but you could do a lot more. See what’s available in the [Collection documentation](/docs/collections/#collection-item-data-structure) (specifically `templateContent`). If you’d like to use this to automatically generate Tag pages for your content, please read [Quick Tip #004—Create Tag Pages for your Blog](/docs/quicktips/tag-pages/).
 
