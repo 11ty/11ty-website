@@ -10,7 +10,7 @@ eleventyNavigation:
 
 {% addedin "0.11.0" %} Fetch the previous and next items in a collection when you pass in the current `page` object.
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -50,7 +50,7 @@ eleventyNavigation:
 
 Useful when you’d like to link to the previous or next template in your collection:
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -94,7 +94,7 @@ The [Collections documentation](/docs/collections/#sorting) outlines the default
 
 For completeness, a `getCollectionItem` filter is also included that fetches the current page from a collection.
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:

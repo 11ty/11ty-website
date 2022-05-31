@@ -17,6 +17,7 @@ tags:
 
 Various template engines can be extended with shortcodes for easy reusable content. This is sugar around Template Language [Custom Tags](/docs/custom-tags/). Shortcodes are supported in JavaScript, Liquid, Nunjucks, Handlebars templates. Here are a few examples:
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -60,6 +61,7 @@ module.exports = function({ firstName, lastName }) {
 {% endraw %}{% endhighlight %}
   </div>
 </seven-minute-tabs>
+</is-land>
 
 {% callout "info" %}
 Markdown files are pre-processed as Liquid templates by default. This means that shortcodes available in Liquid templates are also available in Markdown files. Likewise, if you <a href="/docs/config/#default-template-engine-for-markdown-files">change the template engine for Markdown files</a>, the shortcodes available for that templating language will also be available in Markdown files.
@@ -103,7 +105,7 @@ Read more about using shortcodes on the individual Template Language documentati
 
 The shortcodes we saw above were nice, I suppose. But really, they are not all that different from a filter. The real ultimate power of Shortcodes comes when they are paired. Paired Shortcodes have a start and end tag—and allow you to nest other template content inside!
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:

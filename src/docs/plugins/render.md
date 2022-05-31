@@ -63,7 +63,7 @@ module.exports = function(eleventyConfig) {
 Use the `renderTemplate` paired shortcode to render a template string.
 
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -126,7 +126,7 @@ The content inside of the shortcode will be rendered using Markdown (`"md"`). Fr
 
 The first argument to `renderTemplate` can be any valid [`templateEngineOverride`](/docs/languages/#templateengineoverride-examples) value. You can even use `"liquid,md"` to preprocess markdown with liquid. You can use [custom template types](/docs/languages/custom/) here too, including [the Vue plugin](https://github.com/11ty/eleventy-plugin-vue)!
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -186,7 +186,7 @@ To add Vue support, don’t forget to install [`@11ty/eleventy-plugin-vue` (v0.6
 
 Both the [`eleventy`](/docs/data-eleventy-supplied/#eleventy-variable) and [`page` variables](/docs/data-eleventy-supplied/#page-variable) are available inside of these templates by default. If you want to pass in additional data, you can do so like this:
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -256,7 +256,7 @@ Outputs `myValue`.
 Use the `renderFile` shortcode to render an include file.
 
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -307,7 +307,7 @@ The first argument to `renderFile` is a project root relative path to any templa
 Note that you can use files supported by any [custom file extensions](/docs/languages/custom/) you’ve added too, including a Vue Single File Component from the [Eleventy Vue plugin](https://github.com/11ty/eleventy-plugin-vue)!
 
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -359,7 +359,7 @@ To add Vue support, don’t forget to install [`@11ty/eleventy-plugin-vue` (v0.6
 
 Both the [`eleventy`](/docs/data-eleventy-supplied/#eleventy-variable) and [`page` variables](/docs/data-eleventy-supplied/#page-variable) are available inside of these templates by default. If you want to pass in additional data, you can do so like this:
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -423,7 +423,7 @@ module.exports.render = async function(data) {
 The syntax is normally inferred using the file extension, but it can be overridden using a third argument. It can be any valid [`templateEngineOverride`](/docs/languages/#templateengineoverride-examples) value. You can even use `"liquid,md"` to preprocess markdown with liquid.
 
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:

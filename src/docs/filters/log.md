@@ -10,6 +10,7 @@ eleventyNavigation:
 
 {% addedin "0.11.0" %} An easy way to <code>console.log</code> anything from inside of a template file.
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -54,6 +55,7 @@ module.exports = function(data) {
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 is functionally the same as running `console.log("My Title")` inside of your template.
 

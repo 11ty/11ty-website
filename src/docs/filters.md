@@ -18,6 +18,7 @@ A <dfn>filter</dfn> is a function which can be used within templating syntax to 
 
 Various template engines can be extended with custom filters to modify content. Here are a few examples:
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -53,6 +54,7 @@ module.exports = function({name}) {
 {% endraw %}{% endhighlight %}
   </div>
 </seven-minute-tabs>
+</is-land>
 
 These can be added using the [Configuration API](/docs/config/#using-the-configuration-api). Here are a few examples:
 

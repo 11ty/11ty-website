@@ -27,7 +27,7 @@ To iterate over a data set and create pages for individual chunks of data, use p
 
 Consider the following template, which will result in two pages being created, each of which will display two items from `testdata`:
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -135,7 +135,7 @@ Learn how to create a list of links to every paginated page on a pagination temp
 
 All of the examples thus far have paged Array data. Eleventy does allow paging objects too. Objects are resolved to pagination arrays using either the `Object.keys` or `Object.values` JavaScript functions. Consider the following templates:
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -261,7 +261,7 @@ This resolves to:
 
 Your front matter would look like this:
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -384,7 +384,7 @@ Using a universal `slug` filter (transforms `My Item` to `my-item`), this output
 
 Ok, so `pagination.items[0]` is ugly. We provide an option to alias this to something different.
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -447,7 +447,7 @@ This writes to `_site/different/item1/index.html` and `_site/different/item2/ind
 If your chunk `size` is greater than 1, the alias will be an array instead of a single value.
 
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -514,7 +514,7 @@ This writes to `_site/different/item1/index.html` and `_site/different/item3/ind
 If you’d like to make a paginated list of all of your blog posts (any content with the tag `post` on it), use something like the following template to iterate over a specific collection:
 
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:

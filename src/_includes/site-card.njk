@@ -19,7 +19,7 @@
     </div>
 {%- if siteData | lighthouseGoodDataCheck %}
     <div class="sites-site-lighthouse">
-      <is-land on:visible>
+      <is-land on:visible import="/js/speedlify-score.js">
         <speedlify-score raw-data='{{ siteData | toJSON | safe }}'></speedlify-score>
       </is-land>
     </div>

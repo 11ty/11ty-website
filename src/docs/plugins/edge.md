@@ -193,7 +193,7 @@ path = "/*"
 
 Here we are making a simple template file. We can use the `{% raw %}{% edge %}{% endraw %}` shortcode to run the Liquid template syntax inside on the Edge server.
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -289,7 +289,7 @@ In what might feel familiar to folks that have used the [Render plugin](/docs/pl
 
 {% callout "info", "md" %}If you use the `edge` shortcode inside of a [layout file](/docs/layouts/), it’s best to explicitly specify the template language!{% endcallout %}
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -341,7 +341,7 @@ Edge content is a separate template, processed and built on the Edge. As such it
 
 When the build data argument is a literal (a string or number), it is mapped to `_` in the template.
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -403,7 +403,7 @@ ${await this.edge("# Markdown heading for {{ _ }}", "liquid,md", data.name)}
 
 When the build data argument is an object, the object properties are available as top-level globals in the template.
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -498,7 +498,7 @@ If you open up your generated `netlify/edge-functions/eleventy-edge.js` file, yo
 
 Notably, the above adds a `search` global from a file we’ve created to populate search data. Now we can reference it in our templates like so:
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:

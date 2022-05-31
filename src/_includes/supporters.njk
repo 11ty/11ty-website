@@ -10,15 +10,6 @@
 
 <div class="facepile-fullwidth">
   <is-land on:visible on:save-data="false">
-    <!-- for the aspect ratio -->
-    <div class="facepile facepile-supporters facepile-fake">
-    {% for supporter in opencollective.supporters | supportersFacepile %}
-    {%- set nameToSlug = supporter.name | slug | lower -%}
-      <a><span class="avatar avatar-large"></span></a>
-    {% endfor %}
-    </div>
-    <template data-island>
-      <html-fetch target="is-land" src="/imports/supporters.html"></html-fetch>
-    </template>
+    <html-fetch target="is-land" src="/imports/supporters.html"></html-fetch>
   </is-land>
 </div>

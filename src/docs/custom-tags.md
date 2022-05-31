@@ -21,7 +21,7 @@ Custom Tags are unrelated to Eleventy’s [Collections using Tags](/docs/collect
 
 But, after all that, you can still add a Custom Tag using the [Configuration API](/docs/config/#using-the-configuration-api).
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:

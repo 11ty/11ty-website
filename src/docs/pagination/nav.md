@@ -62,7 +62,7 @@ To create an accessible navigation structure, we want to do our research first!
 
 Alright, you definitely read all of those right? 😇 Here’s some accessible code you definitely would have written yourself after reading those wonderful resources:
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -183,7 +183,7 @@ You’ll probably also want to add some kind of visual styling to indicate that 
 
 Note that if the current page (`page.url`) is the first or last in the set, we won’t output links.
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -211,7 +211,7 @@ Note that if the current page (`page.url`) is the first or last in the set, we w
 
 For clarity here, we’re omitting the previous and next links from the previous section. Note the code below to show the links only if `pagination.href.first` and `pagination.href.last` don’t match the current `page.url`.
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -237,7 +237,7 @@ For clarity here, we’re omitting the previous and next links from the previous
 
 Here’s the final pagination navigation template code, pieced together:
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:

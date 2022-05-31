@@ -171,7 +171,7 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
 ### Output HTML
 
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -211,7 +211,7 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
 
 {% addedin "Navigation 0.3.1" %}
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -258,7 +258,7 @@ The `eleventyNavigation` filter returns a _sorted_ array of objects with `url` a
 For our documented templates above with the following template:
 
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -330,7 +330,7 @@ Shows that `navPages` has the following structure:
 Just show the children of a specific key, pass a key to `eleventyNavigation`:
 
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -390,7 +390,7 @@ Just show the children of a specific key, pass a key to `eleventyNavigation`:
 You can also render only the parents of a specific key too, to make breadcrumb navigation. Pass a key to `eleventyNavigationBreadcrumb` like this:
 
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -443,7 +443,7 @@ And an array of all the parents of the Bats entry will be returned (top-most par
 ##### Include the current page in breadcrumb results
 
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -489,7 +489,7 @@ navOptions:
 
 {% addedin "Navigation 0.3.3" %}
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -543,7 +543,7 @@ With the Navigation structure returned from `eleventyNavigation` or `eleventyNav
 The `eleventyNavigationToMarkdown` filter is {% addedin "Navigation 0.3.1" %}.
 
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -602,7 +602,7 @@ eleventyNavigation:
 When you render a navigation list, pass `showExcerpt: true` to the `eleventyNavigationToHtml` filter, like so:
 
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -652,7 +652,7 @@ navToHtmlOptions:
 {% addedin "Navigation 0.3.1" %}
 
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -707,7 +707,7 @@ navToMdOptions:
 You can change the HTML elements, classes on the list and list items, and add an additional class for the current page’s navigation entry!
 
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
@@ -804,7 +804,7 @@ This template will render a single tier of items (no children) _without_ using t
 Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
 
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:

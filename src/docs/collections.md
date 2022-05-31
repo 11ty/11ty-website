@@ -37,7 +37,7 @@ title: Hot Take—Social Media is Considered Harmful
 
 This will place this `mypost.md` into the `post` collection with all other pieces of content sharing the `post` tag. To reference this collection and make a list of all posts, use the `collections` object in any template:
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -97,7 +97,7 @@ exports.render = function(data) {
 
 Compare the `post.url` and special Eleventy-provided `page.url` variable to find the current page. Building on the previous example:
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -164,7 +164,7 @@ By default Eleventy puts all of your content (independent of whether or not it h
 
 ### Link to all Eleventy generated content
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -285,7 +285,7 @@ This content would show up in the template data inside of `collections.cat` and 
 ### Collection Item Data Structure
 
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
@@ -389,7 +389,7 @@ This collection would be sorted like this:
 
 To sort descending in your template, you can use a filter to reverse the sort order. For example, it might look like this:
 
-<is-land on:visible>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:

@@ -73,7 +73,8 @@ eleventyComputed:
 {% endfor %}
 {{ googlefonts | safe }}
 {% endset %}
-		<link href="https://v1.screenshot.11ty.dev" rel="preconnect" crossorigin>
+		<link href="https://v1.indieweb-avatar.11ty.dev" rel="preconnect" crossorigin>
+		{# <link href="https://v1.screenshot.11ty.dev" rel="preconnect" crossorigin> #}
 		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
 		<style>{{ css | cssmin | safe }}</style>
 {% if config.env === "production" %}
@@ -93,8 +94,14 @@ eleventyComputed:
 {% if loadNetlifyIdentity %}
 		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 		<script src="/js/eleventy.js" type="module"></script>
+{% if not skipAuth %}
+		<script src="/js/eleventy-auth.js" type="module"></script>
+{% endif %}
 {% elseif putTheJsInTheHead %}
-		<script src="/js/eleventy.js" type="module" async></script>
+		<script src="/js/eleventy.js" type="module"></script>
+{% if not skipAuth %}
+		<script src="/js/eleventy-auth.js" type="module"></script>
+{% endif %}
 {% endif %}
 
 	</head>
@@ -107,7 +114,10 @@ eleventyComputed:
 		{%- include "components/details-force-state.js" -%}
 		</script>
 {% if not putTheJsInTheHead %}
-		<script src="/js/eleventy.js" type="module" async></script>
+		<script src="/js/eleventy.js" type="module"></script>
+{% if not skipAuth %}
+		<script src="/js/eleventy-auth.js" type="module"></script>
+{% endif %}
 {% endif %}
 	</body>
 </html>

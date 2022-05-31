@@ -300,7 +300,9 @@ ${text.trim()}
 		// "node_modules/@11ty/logo/img/logo.svg": "img/logo.svg",
 		"node_modules/@11ty/logo/img/logo-784x1093.png": "img/logo.png",
 		"node_modules/@11ty/logo/img/logo-200x200.png": "img/logo-github.png",
-		"node_modules/@11ty/logo/img/logo-96x96.png": "img/favicon.png"
+		"node_modules/@11ty/logo/img/logo-96x96.png": "img/favicon.png",
+		"node_modules/speedlify-score/speedlify-score.js": "js/speedlify-score.js",
+		"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js": "js/seven-minute-tabs.js",
 	});
 
 	eleventyConfig.addPassthroughCopy("netlify-email");

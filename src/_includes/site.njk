@@ -20,7 +20,7 @@
 			{%- set hash = site | speedlifyHash %}
 			{%- if hash -%}
 				<a href="https://www.11ty.dev/speedlify/#site-{{ hash }}" class="elv-externalexempt nound">
-					<is-land on:visible>
+					<is-land on:visible import="/js/speedlify-score.js">
 						<speedlify-score speedlify-url="https://www.11ty.dev/speedlify/" hash="{{ hash }}" score weight rank rank-change></speedlify-score>
 					</is-land>
 				</a>
