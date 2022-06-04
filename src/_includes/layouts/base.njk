@@ -19,6 +19,8 @@ eleventyComputed:
 		{%- set subtitleText %}{{ subtitle }}{% if subtitle and subtitle != "Eleventy, a simpler static site generator" %} — Eleventy{% endif %}{% endset %}
 		<title>{{ subtitleText }}</title>
 		<meta name="description" content="{{ subtitleText }}">
+		<meta name="generator" content="{{ eleventy.generator }}">
+
 		<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon.png">
 
 		<!-- Open Graph / Facebook -->
