@@ -30,6 +30,7 @@ a[href^="//"]:not(.minilink):not(.elv-externalexempt):hover:after {
 /* CSS-only favicons https://www.zachleat.com/web/external-link-favicons/ */
 a[href^="https://www.youtube.com"]:before,
 a[href^="https://github.com"]:before,
+a[href^="https://gitlab.com"]:before,
 a[href^="https://twitter.com"]:before,
 a[href^="https://wikipedia.org"]:before,
 a[href^="https://en.wikipedia.org"]:before {
@@ -44,6 +45,7 @@ a[href^="https://en.wikipedia.org"]:before {
 }
 a[href^="https://www.youtube.com"]:after,
 a[href^="https://github.com"]:after,
+a[href^="https://gitlab.com"]:after,
 a[href^="https://twitter.com"]:after,
 a[href^="https://wikipedia.org"]:after,
 a[href^="https://en.wikipedia.org"]:after {
