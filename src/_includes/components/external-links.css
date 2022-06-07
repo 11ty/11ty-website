@@ -59,7 +59,12 @@ a[href^="https://twitter.com"]:before {
 }
 a[href^="https://github.com"]:before {
 	border-radius: 0.3125em; /* 5px /16 */
+	border: .5px solid #fff;
+	background-color: #fff;
 	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fgithub.com%2F/");
+}
+a[href^="https://gitlab.com"]:before {
+	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fabout.gitlab.com%2F/");
 }
 a[href^="https://wikipedia.org"]:before,
 a[href^="https://en.wikipedia.org"]:before {
