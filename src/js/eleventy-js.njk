@@ -4,7 +4,7 @@ eleventyExcludeFromCollections: true
 ---
 {% set js %}
 {# Islands must come first #}
-{% include "components/islands.js" %}
+{% include "../../node_modules/@11ty/is-land/is-land.js" %}
 
 {% include "components/html-fetch.js" %}
 {% include "../../node_modules/@zachleat/filter-container/filter-container.js" %}
