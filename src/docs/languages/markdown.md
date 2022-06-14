@@ -28,14 +28,15 @@ The only listed options here are the ones that differ from the default `markdown
 Pass in your own instance of the Markdown library using the Configuration API. See [all `markdown-it` options](https://github.com/markdown-it/markdown-it#init-with-presets-and-options).
 
 ```js
+const markdownIt = require("markdown-it");
+
 module.exports = function(eleventyConfig) {
-  let markdownIt = require("markdown-it");
   let options = {
     html: true,
     breaks: true,
     linkify: true
   };
-  
+
   eleventyConfig.setLibrary("md", markdownIt(options));
 };
 ```
@@ -55,7 +56,7 @@ module.exports = function(eleventyConfig) {
     html: true
   };
   let markdownLib = markdownIt(options).use(markdownItEmoji);
-  
+
   eleventyConfig.setLibrary("md", markdownLib);
 };
 ```
@@ -119,7 +120,15 @@ eleventyConfig.addShortcode("alsoGoodShortcode", function() {
 If your content indentation is still irregular and you do need to disable indented code blocks, you can do so by configuring your `markdown-it` instance to disable the `code` rule (following the "Set your own library instance" procedure above).
 
 ```js
-let markdownLib = markdownIt(options).disable('code');
+const markdownIt = require("markdown-it");
+
+module.exports = function(eleventyConfig) {
+  let options = {
+    // … truncated for brevity
+  };
+
+  eleventyConfig.setLibrary("md", markdownIt(options).disable("code"));
+};
 ```
 
 ## Why can’t I return markdown from paired shortcodes to use in a markdown file?
