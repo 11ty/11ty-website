@@ -9,7 +9,11 @@ relatedLinks:
 ---
 # JavaScript Data Files {% addedin "0.5.3" %}
 
-This file applies to both [Global Data Files](/docs/data-global/) (`*.js` inside of your `_data` directory) and [Template and Directory Data Files](/docs/data-template-dir/) (`*.11tydata.js` files that are paired with a template file or directory).
+The following applies to both:
+
+* [Global Data Files](/docs/data-global/) (`*.js` inside of your `_data` directory)
+* [Template and Directory Data Files](/docs/data-template-dir/) (`*.11tydata.js` files that are paired with a template file or directory)
+
 
 ## Using JS Data Files
 
@@ -66,7 +70,7 @@ module.exports = async function() {
 
 ```js
 module.exports = function(configData) {
-  if(configData.eleventy.env.source === "cli") {
+  if (configData.eleventy.env.source === "cli") {
     return "I am on the command line";
   }
 
@@ -84,7 +88,7 @@ module.exports = function(configData) {
 This “Hello World” GraphQL example works out of the box with Eleventy:
 
 ```js
-var { graphql, buildSchema } = require("graphql");
+const { graphql, buildSchema } = require("graphql");
 
 // this could also be `async function`
 module.exports = function() {
@@ -107,7 +111,7 @@ You can expose environment variables to your templates by utilizing [Node.js’ 
 
 * [**Learn how to set your own environment variables**](/docs/environment-vars/#setting-your-own)
 
-Start by creating a [Global Data file](https://www.11ty.dev/docs/data-global/) (*.js inside of your _data directory) and export the environment variables for use in a template:
+Start by creating a [Global Data file](https://www.11ty.dev/docs/data-global/) (`*.js` inside of your `_data` directory) and export the environment variables for use in a template:
 
 {% codetitle "_data/myProject.js" %}
 {% raw %}
@@ -124,7 +128,7 @@ Saving this as `myProject.js` in your global data directory (by default, this is
 
 * [Learn how to set a value for the `MY_ENVIRONMENT` environment variable](/docs/environment-vars/#setting-your-own)
 
-When `MY_ENVIRONMENT` is set, the value from `myProject.environment` will be globally available to be used in your templates. If the variable hasn't been set, the fallback `"development"` will be used.
+When `MY_ENVIRONMENT` is set, the value from `myProject.environment` will be globally available to be used in your templates. If the variable hasn’t been set, the fallback `"development"` will be used.
 
 #### Template Usage
 
