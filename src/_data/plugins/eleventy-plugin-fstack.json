@@ -1,5 +1,5 @@
 {
 	"npm": "@factorial/eleventy-plugin-fstack",
 	"author": "dnnsjrng",
-	"description": "@factorial/stack-core to have proper linting, assets hashing, image optimization and sprites etc out of the box"
+	"description": "Linting, building and watching your assets with as little overhead and configuration as possible by integrating @factorial/stack-core"
 }
