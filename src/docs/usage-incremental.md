@@ -34,7 +34,7 @@ If you create/update your Eleventy configuration file, a full build will run.
 
 ### Templates
 
-* Smarter dependency map between templates:
+* [Smarter dependency map between templates](https://github.com/11ty/eleventy/issues/108):
   * Eleventy layouts
   * Publishing into Collections and consuming from Collections
   * `11ty.js` JavaScript dependencies
