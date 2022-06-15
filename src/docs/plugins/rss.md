@@ -55,19 +55,23 @@ module.exports = function(eleventyConfig) {
 ## Supplies the following Nunjucks Filters
 
 * `getNewestCollectionItemDate`: Gets the most recently updated content in the collection. Use with `dateToRfc3339` to properly format the Date for the top-level `<updated>` element. {% addedin "RSS 1.1.0" %}
-* `dateToRfc3339`: format a Date to be used for individual `<entry><updated>` elements. {% addedin "RSS 1.1.0" %}
+* `dateToRfc3339`: format a Date for use in a `<entry><updated>` element. (Atom feeds) {% addedin "RSS 1.1.0" %}
+* `dateToRfc822`: format a Date for use in a `<pubDate>` element. (RSS feeds) {% addedin "RSS 1.2.0" %}
 * `absoluteUrl`: converts a single URL (relative or absolute path) to a full absolute URL including protocol, domain, full path.
 * `htmlToAbsoluteUrls`: (async) transforms all of the URLs in a block of HTML with `absoluteUrl` above. Uses [posthtml-urls](https://github.com/posthtml/posthtml-urls) with `a[href]`, `video[src]`, `audio[src]`, `source`, `img[src]`, `[srcset]` and [a whole bunch more](https://github.com/posthtml/posthtml-urls/blob/307c91342a211b3f9fb22bc57264bbb31f235fbb/lib/defaultOptions.js).
 
 ### Use with other template languages {% addedin "RSS 1.1.0" %}
 
-This plugin exports `dateToRfc3339`, `getNewestCollectionItemDate`, `absoluteUrl`, and `convertHtmlToAbsoluteUrls` functions so you can use with your own filters. For example:
+This plugin exports `dateToRfc3339`, `dateToRfc822` ({% addedin "RSS 1.2.0" %}), `getNewestCollectionItemDate`, `absoluteUrl`, and `convertHtmlToAbsoluteUrls` functions so you can use with your own filters. For example:
 
 ```js
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addLiquidFilter("dateToRfc3339", pluginRss.dateToRfc3339);
+
+  // New in RSS 1.2.0
+  eleventyConfig.addLiquidFilter("dateToRfc822", pluginRss.dateToRfc822);
 };
 ```
 
@@ -78,9 +82,20 @@ module.exports = function(eleventyConfig) {
 * `rssLastUpdatedDate`, poorly named (works with Atom and JSON feeds, not RSS). Use `getNewestCollectionItemDate | dateToRfc3339` instead.
 * `rssDate`, poorly named (works with Atom and JSON feeds, not RSS). Use `dateToRfc3339` instead.
 
-## Sample Atom Feed template
+## Sample Feed templates
 
 Copy and paste this template and modify the JSON metadata to match your feed’s needs. Make sure `collections.posts` matches the template collection you want to provide a feed for.
+
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Choose a template language">
+    View this example in:
+    <a href="#rss-atom" role="tab">Atom</a>
+    <a href="#rss-rss" role="tab">RSS</a>
+    <a href="#rss-json" role="tab">JSON</a>
+  </div>
+  <div id="rss-atom" role="tabpanel">
+
 
 {% raw %}
 ```html
@@ -126,10 +141,104 @@ Copy and paste this template and modify the JSON metadata to match your feed’s
 ```
 {% endraw %}
 
-Place the file anywhere in your project (give it a `.njk` extension) and it will be transformed into a `feed.xml` file at the root of your website when Eleventy builds it. It can then be useful to check the file against a feed validator, such as the [W3C Feed Validation Service](https://validator.w3.org/feed/) to make sure that the output was good.
+</div>
+<div id="rss-rss" role="tabpanel">
 
-Ultimately your feed will be available at `https://yourwebsite.com/feed.xml`.
+{% raw %}
+```html
+---json
+{
+  "permalink": "feed.xml",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "My Blog about Boats",
+    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "url": "https://example.com/",
+    "feedUrl": "https://example.com/feed.xml",
+    "author": {
+      "name": "Boaty McBoatFace",
+      "email": "me@example.com"
+    }
+  }
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="{{ metadata.url }}">
+  <channel>
+    <title>{{ metadata.title }}</title>
+    <link>{{ metadata.url }}</link>
+    <description>{{ metadata.subtitle }}</description>
+    <language>en</language>
+    {%- for post in collections.posts | reverse %}
+        {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+        <item>
+            <title>{{ post.data.title }}</title>
+            <link>{{ absolutePostUrl }}</link>
+            <description>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</description>
+            <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
+            <dc:creator>{{ metadata.author.name }}</dc:creator>
+            <guid>{{ absolutePostUrl }}</guid>
+        </item>
+    {%- endfor %}
+  </channel>
+</rss>
+```
+{% endraw %}
 
+</div>
+<div id="rss-json" role="tabpanel">
+
+{% raw %}
+```json
+---json
+{
+  "permalink": "feed.json",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "My Blog about Boats",
+    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "url": "https://example.com/",
+    "feedUrl": "https://example.com/feed.json",
+    "author": {
+      "name": "Boaty McBoatFace",
+      "url": "https://example.com/about-boaty/"
+    }
+  }
+}
+---
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "{{ metadata.title }}",
+  "home_page_url": "{{ metadata.url }}",
+  "feed_url": "{{ metadata.feedUrl }}",
+  "description": "{{ metadata.subtitle }}",
+  "author": {
+    "name": "{{ metadata.author.name }}",
+    "url": "{{ metadata.author.url }}"
+  },
+  "items": [
+    {%- for post in collections.posts | reverse %}
+    {%- set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset -%}
+    {
+      "id": "{{ absolutePostUrl }}",
+      "url": "{{ absolutePostUrl }}",
+      "title": "{{ post.data.title }}",
+      "content_html": {% if post.templateContent %}{{ post.templateContent | dump | safe }}{% else %}""{% endif %},
+      "date_published": "{{ post.date | dateToRfc3339 }}"
+    }
+    {% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
+```
+{% endraw %}
+
+</div>
+</seven-minute-tabs>
+
+Place the file anywhere in your project (give it a `.njk` extension) and it will be transformed into a `feed.xml` (or `feed.json` if you’re using the JSON variant) file at the root of your website when Eleventy builds it. It can then be useful to check the file against a feed validator, such as the [W3C Feed Validation Service](https://validator.w3.org/feed/) to make sure that the output was good.
+
+Ultimately your feed will be available at `https://yourwebsite.com/feed.xml` (or `https://yourwebsite.com/feed.json`)
 
 ## Related Plugins:
 
