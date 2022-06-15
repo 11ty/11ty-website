@@ -71,6 +71,8 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+{% callout "info", "md" %}Do keep in mind that _escaping_ HTML content is a feature provided as [part of Nunjucks](https://mozilla.github.io/nunjucks/templating.html#autoescaping). Moving to another template language may require a different option for escaping (for example, [`html-entities`](https://www.npmjs.com/package/html-entities)).{% endcallout %}
+
 ### Deprecated Filters
 
 * `rssLastUpdatedDate`, poorly named (works with Atom and JSON feeds, not RSS). Use `getNewestCollectionItemDate | dateToRfc3339` instead.
