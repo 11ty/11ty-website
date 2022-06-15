@@ -83,6 +83,9 @@
 .sites-vert .avatar {
 	margin-right: 3px;
 	margin-left: 0;
+	width: 1em;
+	height: 1em;
+	object-fit: contain;
 }
 .sites-vert > .lo-grid {
   --lo-margin-h: 1rem;
