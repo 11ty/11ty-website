@@ -49,15 +49,16 @@ Pass in your own `markdown-it` plugins using the `setLibrary` Configuration API 
 2. `npm install` the plugin.
 
 ```js
+const markdownIt = require("markdown-it");
+const markdownItEmoji = require("markdown-it-emoji");
+
 module.exports = function(eleventyConfig) {
-  let markdownIt = require("markdown-it");
-  let markdownItEmoji = require("markdown-it-emoji");
   let options = {
     html: true
   };
-  let markdownLib = markdownIt(options).use(markdownItEmoji);
+  let markdownLibrary = markdownIt(options).use(markdownItEmoji);
 
-  eleventyConfig.setLibrary("md", markdownLib);
+  eleventyConfig.setLibrary("md", markdownLibrary);
 };
 ```
 
