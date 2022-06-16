@@ -23,6 +23,8 @@ Markdown files are by default pre-processed as Liquid templates. <a href="/docs/
 
 The only listed options here are the ones that differ from the default `markdown-it` options. See [all `markdown-it` options and defaults](https://github.com/markdown-it/markdown-it#init-with-presets-and-options).
 
+Starting in Eleventy 2.0, we’ve disabled the [Indented Code Blocks](#indented-code-blocks) feature by default.
+
 ### Optional: Set your own library instance {% addedin "0.3.0" %}
 
 Pass in your own instance of the Markdown library using the Configuration API. See [all `markdown-it` options](https://github.com/markdown-it/markdown-it#init-with-presets-and-options).
@@ -41,12 +43,43 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+### Optional: Amend the Library instance {% addedin "2.0.0" %}
+
+Run your own callback on the provided Library instance (the default _or_ any provided by `setLibrary` above).
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.amendLibrary("md", mdLib => mdLib.enable("code"));
+};
+```
+
 ## Add your own plugins {% addedin "0.3.0" %}
 
-Pass in your own `markdown-it` plugins using the `setLibrary` Configuration API method (building on the method described in “Using your own options”).
+Pass in your own `markdown-it` plugins using the `amendLibrary` (Eleventy &gt;= 2.0) or `setLibrary` (Eleventy &lt;= 1.0) Configuration API methods (building on the method described in “Options” above).
 
 1. Find your [own `markdown-it` plugin on NPM](https://www.npmjs.com/search?q=keywords:markdown-it-plugin)
 2. `npm install` the plugin.
+
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Choose a template language">
+    Eleventy version:
+    <a href="#plugins-two" role="tab">&gt;= 2.0</a>
+    <a href="#plugins-one" role="tab">&lt;= 1.0</a>
+  </div>
+  <div id="plugins-two" role="tabpanel">
+
+```js
+const markdownItEmoji = require("markdown-it-emoji");
+
+module.exports = function(eleventyConfig) {
+  // New in 2.0
+  eleventyConfig.amendLibrary("md", mdLib => mdLib.use(markdownItEmoji);
+};
+```
+
+  </div>
+  <div id="plugins-one" role="tabpanel">
 
 ```js
 const markdownIt = require("markdown-it");
@@ -62,9 +95,13 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-## There are extra `<pre>` and `<code>` in my output
+  </div>
+</seven-minute-tabs>
+</is-land>
 
-<div class="elv-callout elv-callout-warn">This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</div>
+## Indented Code Blocks
+
+{% callout "info", "md" %}This section changed significantly in Eleventy 2.0. You may want to backtrack to [Eleventy 1.0’s markdown documentation](https://v1-0-1.11ty.dev/docs/languages/markdown/).{% endcallout %}
 
 Markdown has a lesser known feature called [Indented Code Blocks](https://spec.commonmark.org/0.28/#indented-code-blocks), which means any content that is indented by four or more spaces (and has a preceding line break) will be transformed into a code block.
 
@@ -83,7 +120,16 @@ is transformed into:
 
 _(Example borrowed from the [CommonMark Specification](https://spec.commonmark.org/0.28/#indented-code-blocks))_
 
-That means any content that follows this four (or more) space indent may be subject to transformation. If you pre-process your markdown using Nunjucks or Liquid or another templating engine, that means the content retrieved from an `include` or a shortcode may also fit this formatting. Careful when you include extra whitespace in your includes or shortcodes!
+Starting with Eleventy 2.0 and newer, this feature is [disabled](https://github.com/11ty/eleventy/issues/2438) for both the default Markdown library instance _and_ any set via `setLibrary`. To renable this feature in Eleventy 2.0, use the [`amendLibrary` approach](#optional-amend-the-library-instance).
+
+<details>
+  <summary>Want to re-enable Indented Code Blocks? <strong>Read this lengthy Common Pitfall.</strong></summary>
+
+### There are extra `<pre>` and `<code>` in my output
+
+<div class="elv-callout elv-callout-warn">This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</div>
+
+When using [Indented Code Blocks](#indented-code-blocks), any content that follows this four (or more) space indent may be subject to transformation. If you pre-process your markdown using Nunjucks or Liquid or another templating engine, that means the content retrieved from an `include` or a shortcode may also fit this formatting. Careful when you include extra whitespace in your includes or shortcodes!
 
 {% codetitle ".eleventy.js" %}
 
@@ -118,7 +164,16 @@ eleventyConfig.addShortcode("alsoGoodShortcode", function() {
 });
 ```
 
-If your content indentation is still irregular and you do need to disable indented code blocks, you can do so by configuring your `markdown-it` instance to disable the `code` rule (following the "Set your own library instance" procedure above).
+</details>
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.amendLibrary("md", mdLib => mdLib.enable("code"));
+};
+```
+
+<details>
+  <summary>For Eleventy 1.x and older: Want to disable Indented Code Blocks?</summary>
 
 ```js
 const markdownIt = require("markdown-it");
@@ -131,6 +186,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setLibrary("md", markdownIt(options).disable("code"));
 };
 ```
+
+</details>
 
 ## Why can’t I return markdown from paired shortcodes to use in a markdown file?
 
