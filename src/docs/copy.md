@@ -177,7 +177,37 @@ module.exports = function(eleventyConfig) {
 
 * [Issue #2456](https://github.com/11ty/eleventy/issues/2456)
 
-## Passthrough all Content {% addedin "0.5.4" %}
+## Advanced Options {% addedin "2.0.0" %}
+
+New in `2.0.0-canary.12`, you can pass additional configuration options to the `recursive-copy` package. This unlocks the use passthrough file copy with symlinks, transforming or renaming copied files. Here are just a few examples:
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("img", {
+    expand: true, // expand symbolic links
+  });
+};
+```
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  let copyOptions = {
+    debug: true, // log debug information
+  };
+
+  eleventyConfig.addPassthroughCopy({ "img": "subfolder/img" }, copyOptions);
+};
+```
+
+Review the [full list of options on the `recursive-copy` GitHub repository](https://github.com/timkendrick/recursive-copy#usage).
+
+## Passthrough Everything {% addedin "0.5.4" %}
+
+<div id="passthrough-all-content"></div><!-- backwards compat link -->
 
 Given that global copy of all content in the directory may be a security risk, we do not copy anything that doesn’t match the file extensions listed in `templateFormats`. Note that we do provide a command line flag to bypass this behavior: `--passthroughall`. Intentionally, there is no configuration option to do this.
 
