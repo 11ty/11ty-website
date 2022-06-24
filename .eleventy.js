@@ -306,7 +306,6 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addPassthroughCopy("netlify-email");
-	// eleventyConfig.addPassthroughCopy("css/fonts"); // these are inline now
 	eleventyConfig.addPassthroughCopy("src/img");
 	eleventyConfig.addPassthroughCopy("src/blog/*.png");
 	eleventyConfig.addPassthroughCopy("src/favicon.ico");

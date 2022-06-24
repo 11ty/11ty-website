@@ -153,6 +153,26 @@ You might want to use this for images by adding `"jpg"`, `"png"`, or maybe even 
 
 {% callout "info", "md" %}Note that this method is typically slower than the `addPassthroughCopy` configuration API method above, especially if your project is large and has lots of files.{% endcallout %}
 
+## Passthrough during `--serve`{% addedin "2.0.0" %}
+
+New in Eleventy `2.0.0-canary.12`: passthrough file copy is _emulated_ when using the [Eleventy Dev Server](/docs/watch-serve/#eleventy-dev-server). Practically speaking, this means that passthrough copy files will not be copied to your output folder and will not impact local development build times. Changes made to passthrough copy files _will_ still hot reload your web browser as expected.
+
+This behavior will revert if:
+
+1. You use a different development server (e.g. [swap back to Browsersync](/docs/watch-serve/#swap-back-to-browsersync))
+2. If you are running Eleventy without `--serve` (a normal build or via `--watch`)
+
+You can also opt-out using this configuration API method:
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // the default is "passthrough"
+  eleventyConfig.setServerPassthroughCopyBehavior("copy");
+};
+```
+
 ## Passthrough all Content {% addedin "0.5.4" %}
 
 Given that global copy of all content in the directory may be a security risk, we do not copy anything that doesn’t match the file extensions listed in `templateFormats`. Note that we do provide a command line flag to bypass this behavior: `--passthroughall`. Intentionally, there is no configuration option to do this.
