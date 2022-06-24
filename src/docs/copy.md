@@ -40,7 +40,7 @@ module.exports = function(eleventyConfig) {
 
 If you do not want to maintain the same directory structure, [change the output directory.](#change-the-output-directory)
 
-{% addedin "0.11.0" %}Pass-through copy is now friendly to [incremental builds](/docs/usage/incremental/#passthrough-copy). Changes to copied files will not trigger a full build and changes to template files will not trigger passthrough file copy.
+{% addedin "2.0.0" %}Passthrough file copy is [emulated when using `--serve`](#passthrough-during-serve).
 
 ### How Input Directories are Handled
 
@@ -155,7 +155,9 @@ You might want to use this for images by adding `"jpg"`, `"png"`, or maybe even 
 
 ## Passthrough during `--serve`{% addedin "2.0.0" %}
 
-New in Eleventy `2.0.0-canary.12`: passthrough file copy is _emulated_ when using the [Eleventy Dev Server](/docs/watch-serve/#eleventy-dev-server). Practically speaking, this means that passthrough copy files will not be copied to your output folder and will not impact local development build times. Changes made to passthrough copy files _will_ still hot reload your web browser as expected.
+New in Eleventy `2.0.0-canary.12`: passthrough file copy is _emulated_ when using the [Eleventy Dev Server](/docs/watch-serve/#eleventy-dev-server).
+
+Practically speaking, this means that passthrough copy files _**will not**_ be copied to your output folder and will not impact local development build times. Changes made to passthrough copy files _will_ still hot reload your web browser as expected.
 
 This behavior will revert if:
 
@@ -172,6 +174,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setServerPassthroughCopyBehavior("copy");
 };
 ```
+
+* [Issue #2456](https://github.com/11ty/eleventy/issues/2456)
 
 ## Passthrough all Content {% addedin "0.5.4" %}
 
