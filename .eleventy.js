@@ -5,7 +5,6 @@ const HumanReadable = require("human-readable-numbers");
 const commaNumber = require("comma-number");
 const markdownIt = require("markdown-it");
 const slugify = require("slugify");
-const fs = require("fs-extra");
 const lodashGet = require("lodash/get");
 const shortHash = require("short-hash");
 const markdownItAnchor = require("markdown-it-anchor");
@@ -327,10 +326,6 @@ ${text.trim()}
 		return shortHash(site.url);
 	});
 
-	eleventyConfig.addFilter("fileExists", function(url) {
-		return fs.pathExistsSync(`.${url}`);
-	});
-
 	eleventyConfig.addFilter("toJSON", function(obj) {
 		return JSON.stringify(obj);
 	});
@@ -548,12 +543,16 @@ ${text.trim()}
 	})
 	.disable('code') // disable indent -> code block
 	.use(markdownItAnchor, {
-		permalink: true,
 		slugify: markdownItSlugify,
-		permalinkBefore: false,
-		permalinkClass: "direct-link",
-		permalinkSymbol: "#",
-		level: [1,2,3,4]
+		level: [1,2,3,4],
+		permalink: markdownItAnchor.permalink.linkInsideHeader({
+			symbol: `
+				<span class="sr-only">Jump to heading</span>
+				<span aria-hidden="true">#</span>
+			`,
+			class: "direct-link",
+			placement: 'after'
+		})
 	})
 	.use(markdownItToc, {
 		includeLevel: [2, 3],
