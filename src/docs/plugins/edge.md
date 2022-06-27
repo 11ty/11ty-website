@@ -246,12 +246,10 @@ The content inside of the `edge` shortcode is generated on the Edge.
 module.exports = async function(data) {
   return `The content outside of the \`edge\` shortcode is generated with the Build.
 
-${await this.edge(`{% edge %} The content inside of the \`edge\` shortcode is generated on the Edge.
-
+${await this.edge(`The content inside of this.edge() is generated on the Edge.
 <pre>
 {{ eleventy | json }}
-</pre>
-{% endedge %}`, "liquid")}`;
+</pre>, "liquid")}`;
 };
 ```
 {% endraw %}
