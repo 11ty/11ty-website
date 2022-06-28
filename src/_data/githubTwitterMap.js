@@ -9,7 +9,7 @@ module.exports = async () => {
 
 	for(let site of sites) {
 		let filename = site.split("/").pop();
-    let siteData = require(`./builtwith/${filename}`);
+		let siteData = require(`./builtwith/${filename}`);
 
 		let twitter;
 		let github;
