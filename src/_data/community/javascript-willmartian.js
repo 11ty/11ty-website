@@ -1,6 +1,6 @@
 module.exports = {
-  url: "https://willmartin.dev/posts/conditional-rendering-eleventy/",
-  author: "willmartindev",
+  url: "https://willmartian.com/posts/conditional-rendering-eleventy/",
+  author: "willmartian",
   title: "Conditionally Rendering JavaScript Templates",
   key: "javascript",
 };
