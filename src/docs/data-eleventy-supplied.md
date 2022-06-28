@@ -56,7 +56,7 @@ The date associated with the page. Defaults to the content’s file created date
 
 ### `fileSlug` {% addedin "0.3.4" %}
 
-The `fileSlug` variable is mapped from inputPath and is useful for creating your own clean [permalinks](/docs/permalinks/).
+The `fileSlug` variable is mapped from `inputPath`, and is useful for creating your own clean [permalinks](/docs/permalinks/).
 
 | `inputPath` | `page.fileSlug` Result |
 | --- | --- |
@@ -74,9 +74,9 @@ The `fileSlug` variable is mapped from inputPath and is useful for creating your
 
 ### `filePathStem` {% addedin "0.9.0" %}
 
-The `filePathStem` variable is mapped from inputPath and is useful if you’ve inherited a project that doesn’t use clean [permalinks](/docs/permalinks/).
+The `filePathStem` variable is mapped from `inputPath`, and is useful if you’ve inherited a project that doesn’t use clean [permalinks](/docs/permalinks/).
 
-{% callout "info" %}<strong>Careful with this one</strong> and remember that <a href="/docs/permalinks/#cool-uris-dont-change">Cool URI’s don’t change</a>.{% endcallout %}
+{% callout "info" %}<strong>Careful with this one!</strong> Remember that <a href="/docs/permalinks/#cool-uris-dont-change">Cool URI’s don’t change</a>.{% endcallout %}
 
 If you absolutely need a file extension on your output, you might use it like this:
 
@@ -90,7 +90,7 @@ permalink: "{{ page.filePathStem }}.html"
 ```
 {% endraw %}
 
-Example Output below is using the above permalink value.
+This example output uses the above permalink value.
 
 | `inputPath` | `page.filePathStem` Result | Example Output |
 | --- | --- | --- |
