@@ -79,6 +79,11 @@ You can drop log in between any filter chain you already have and it will log th
 {% raw %}
 ```liquid
 {{ "My Title" | log | upcase }}
+
+This is the same as:
+{% assign temp = "My Title" %}
+{{ temp | log }}
+{{ temp | upcase }}
 ```
 {% endraw %}
 
@@ -90,41 +95,8 @@ You can drop log in between any filter chain you already have and it will log th
 {% raw %}
 ```jinja2
 {{ "My Title" | log | upper }}
-```
-{% endraw %}
 
-  </div>
-</seven-minute-tabs>
-</is-land>
-
-This is functionally the same as
-
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#log-chain-liquid" role="tab">Liquid</a>
-    <a href="#log-chain-njk" role="tab">Nunjucks</a>
-  </div>
-  <div id="log-chain-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
-
-{% raw %}
-```liquid
-{% assign temp = "My Title" %}
-{{ temp | log }}
-{{ temp | upcase }}
-```
-{% endraw %}
-
-  </div>
-  <div id="log-chain-njk" role="tabpanel">
-
-{% codetitle "Nunjucks", "Syntax" %}
-
-{% raw %}
-```jinja2
+This is the same as:
 {% set temp = "My Title" %}
 {{ temp | log }}
 {{ temp | upper }}
