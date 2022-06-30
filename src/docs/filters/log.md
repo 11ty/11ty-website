@@ -59,4 +59,52 @@ module.exports = function(data) {
 
 is functionally the same as running `console.log("My Title")` inside of your template.
 
+### Using `log` in filter chains
+
+{% addedin "2.0.0-canary.13"%}
+
+You can drop log in between any filter chain you already have and it will log the incoming data and pass it through to the next filter.
+
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    View this example in:
+    <a href="#log-chain-demo-liquid" role="tab">Liquid</a>
+    <a href="#log-chain-demo-njk" role="tab">Nunjucks</a>
+  </div>
+  <div id="log-chain-demo-liquid" role="tabpanel">
+
+{% codetitle "Liquid", "Syntax" %}
+
+{% raw %}
+```liquid
+{{ "My Title" | log | upcase }}
+
+This is the same as:
+{% assign temp = "My Title" %}
+{{ temp | log }}
+{{ temp | upcase }}
+```
+{% endraw %}
+
+  </div>
+  <div id="log-chain-demo-njk" role="tabpanel">
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```jinja2
+{{ "My Title" | log | upper }}
+
+This is the same as:
+{% set temp = "My Title" %}
+{{ temp | log }}
+{{ temp | upper }}
+```
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>
+
 * [← Back to Filters documentation.](/docs/filters/)
