@@ -213,6 +213,34 @@ permalink: "index.json"
 
 ## Advanced Usage
 
+### Mapping one URL to Multiple Files for Internationalization {% addedin "2.0.0" %}
+
+As an example, say you have two content files: `about.en.html` and `about.es.html`. You’ve already set up the [`addGlobalData` feature to remap their respective output](/docs/data-eleventy-supplied/#changing-your-project-default-permalinks) to `_site/about.en.html` and `_site/about.es.html`.
+
+But you want to use redirects [server-side redirects](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language) to control which of these files is shown to the end user.
+
+* [Netlify Redirects](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language)
+* [Apache Content Negotiation](https://fantasai.inkedblade.net/web-design/l10n) related to [Issue #761](https://github.com/11ty/eleventy/issues/761)
+
+This will work as expected, except for the [`page.url`](/docs/data-eleventy-supplied/#page-variable) variable and the URL reported in [collection objects](/docs/collections/#collection-item-data-structure) and other places.
+
+We want the URL reported by both `about.en.html` and `about.es.html` to map to `/about/` and not ~~`/about.en.html`~~ or ~~`/about.es.html`~~. This is now possible using a new URL Transforms feature.
+
+URL transforms let you modify the `page.url` for a content document based on its outputPath. This example matches any `.xx.html` output file:
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addUrlTransform(({outputPath}) => {
+    // Match any .xx.html output path
+    if((outputPath || "").match(new RegExp("\.[a-z]{2}\.html$", "i"))) {
+      return outputPath.slice(0, -1 * ".en.html".length) + "/"; // trailing slash here is optional
+    }
+
+    // Not returning (returning undefined) skips the url transform
+  });
+};
+```
+
 ### Disable templating in permalinks {% addedin "0.7.0" %}
 
 Some template syntaxes are nicer than others and you may want to opt-out of the templating engine here. Use the `dynamicPermalink` option in your front matter to disable this on a per-template basis.
