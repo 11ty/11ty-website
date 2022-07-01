@@ -128,6 +128,7 @@ Note that query params are removed before—and are relevant to how—the hash k
 
 1. If this is the first ever request to this URL (no entry exists in your cache folder), it will fail. Use a `try`/`catch` if you’d like to handle this gracefully.
 2. If a failure happens and a cache entry already exists (*even if it’s expired*), it will use the cached entry.
+3. If you prefer the build to _fail_ when your API requests fail, leave out the `try` `catch` and let the error throw without handling it!
 
 ```js
 const EleventyFetch = require("@11ty/eleventy-fetch");
