@@ -215,6 +215,8 @@ permalink: "index.json"
 
 ### Mapping one URL to Multiple Files for Internationalization {% addedin "2.0.0" %}
 
+Or, decouple a page’s primary URL from its permalink (output path on the file system).
+
 As an example, say you have two content files: `about.en.html` and `about.es.html`. You’ve already set up the [`addGlobalData` feature to remap their respective output](/docs/data-eleventy-supplied/#changing-your-project-default-permalinks) to `_site/about.en.html` and `_site/about.es.html`.
 
 But you want to use redirects [server-side redirects](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language) to control which of these files is shown to the end user.
