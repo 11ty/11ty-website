@@ -215,20 +215,18 @@ permalink: "index.json"
 
 ### Mapping one URL to Multiple Files for Internationalization {% addedin "2.0.0" %}
 
-Or, decouple a page’s primary URL from its permalink (output path on the file system).
+_Decouple a page’s primary URL from its permalink._
 
 As an example, say you have two content files: `about.en.html` and `about.es.html`. You’ve already set up the [`addGlobalData` feature to remap their respective output](/docs/data-eleventy-supplied/#changing-your-project-default-permalinks) to `_site/about.en.html` and `_site/about.es.html`.
 
-But you want to use redirects [server-side redirects](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language) to control which of these files is shown to the end user.
+Use [server-side redirects](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language) to control which of these files is shown.
 
 * [Netlify Redirects](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language)
 * [Apache Content Negotiation](https://fantasai.inkedblade.net/web-design/l10n) related to [Issue #761](https://github.com/11ty/eleventy/issues/761)
 
-This will work as expected, except for the [`page.url`](/docs/data-eleventy-supplied/#page-variable) variable and the URL reported in [collection objects](/docs/collections/#collection-item-data-structure) and other places.
+These will work as expected out of the box, except for the [`page.url`](/docs/data-eleventy-supplied/#page-variable) variable and the URL reported in [collection objects](/docs/collections/#collection-item-data-structure) (et al). We want two or more files on the file system (e.g. `about.en.html` and `about.es.html`) to map to a single page URL (`/about/`—not ~~`/about.en.html`~~ or ~~`/about.es.html`~~).
 
-We want the URL reported by both `about.en.html` and `about.es.html` to map to `/about/` and not ~~`/about.en.html`~~ or ~~`/about.es.html`~~. This is now possible using a new URL Transforms feature.
-
-URL transforms let you modify the `page.url` for a content document based on its outputPath. This example matches any `.xx.html` output file:
+This is now possible using a new URL Transforms feature. URL transforms let you modify the `page.url` for a content document based on its output path. This example matches any `.xx.html` output file:
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -242,6 +240,8 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+This approach unlocks functionality for the default build mode of Eleventy but you could also achieve some of the same functionality using the [Edge](/docs/plugins/edge/) or [Serverless plugins](/docs/plugins/serverless/).
 
 ### Disable templating in permalinks {% addedin "0.7.0" %}
 
