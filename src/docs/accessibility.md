@@ -46,7 +46,6 @@ One of the best ways to immerse yourself in the accessibility development commun
 * [Adrian Roselli](http://adrianroselli.com/tag/accessibility)
 * [Sara Soueidan](https://www.sarasoueidan.com/tags/accessibility/)
 * [Eric Bailey](https://ericwbailey.design/)
-* [Marco Zehe](https://marcozehe.de/web-accessibility-resources/)
 * [Dave Rupert](https://davatron5000.github.io/a11y-nutrition-cards/)
 * [Karl Groves](https://karlgroves.com/)
 * [Heydon Pickering](https://heydonworks.com/)
