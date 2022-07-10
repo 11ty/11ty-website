@@ -2,7 +2,7 @@
 eleventyNavigation:
   key: Serverless
   order: -1
-  excerpt: A plugin to run Eleventy in a serverless function for server side rendering (e.g. Previews in your CMS) and/or in very large sites with [On-demand Builders](https://www.netlify.com/blog/2021/04/14/faster-builds-for-large-sites-on-netlify-with-on-demand-builders-now-in-early-access/).
+  excerpt: A plugin to run Eleventy in a serverless function for server side rendering (e.g., Previews in your CMS) and/or in very large sites with [On-demand Builders](https://www.netlify.com/blog/2021/04/14/faster-builds-for-large-sites-on-netlify-with-on-demand-builders-now-in-early-access/).
 communityLinksKey: serverless
 ---
 # Serverless {% addedin "1.0.0" %}
@@ -13,26 +13,26 @@ communityLinksKey: serverless
 
 ## What is Serverless?
 
-You can read more about serverless on the [eponymous Serverless microsite from CSS-Tricks](https://serverless.css-tricks.com/about/).
-
-> “You can write a JavaScript function that you run and receive a response from by hitting a URL.”—[The Power of Serverless](https://serverless.css-tricks.com/) from [Chris Coyier](https://twitter.com/chriscoyier)
-
 Eleventy Serverless complements your existing statically generated site by running one or more template files _at request time_ to generate dynamic pages. It can unlock many new use cases to move beyond static files into dynamically generated content.
 
 * Server side rendering for fully dynamic pages, e.g. content preview in your Content Management System.
 * Rendering of individual templates using On-demand Builders, useful to improve large site build times both locally and in production.
 
+You can read more about serverless on the [eponymous Serverless microsite from CSS-Tricks](https://serverless.css-tricks.com/about/).
+
+> “You can write a JavaScript function that you run and receive a response from by hitting a URL.”—[The Power of Serverless](https://serverless.css-tricks.com/) from [Chris Coyier](https://twitter.com/chriscoyier)
+
 ### Rendering Modes
 
 These different use cases and rendering modes are important to understand and have different trade-offs and risks associated with them. In a Jamstack world, the order of preference should be:
 
-* Build template: render in the build (preferred, start here)
-* On-demand Builder template: render on first request (use when your build gets beefy)
-* Dynamic template: render on every request (unlocks some new app-like use cases, can accept user input)
+1. **Build template:** Render in the build (preferred, start here)
+1. **On-demand Builder template:** Render on first request (use when your build gets beefy)
+1. **Dynamic template:** Render on every request (unlocks some new app-like use cases; can accept user input)
 
-Build-time (non-serverless) templates should be the preferred rendering mode. They are the most reliable and stable. A failure in a build generated template will fail your deployment and prevent user-facing errors in production.
+**Build-time (non-serverless) templates** should be the preferred rendering mode. They are the most reliable and stable. A failure in a build generated template will fail your deployment and prevent user-facing errors in production.
 
-For On-demand Builders and Dynamic templates, rendering failures will not fail your deployment and as such incur more risk. Dynamic templates must also be closely performance monitored—unlike build templates, a slow render in a dynamic template means a slow web site for end-users.
+For **On-demand Builders and Dynamic templates**, rendering failures will not fail your deployment&mdash;and as such, incur more risk. Dynamic templates must also be closely performance monitored—unlike build templates, a slow render in a dynamic template means a slow web site for end-users.
 
 ## Demos and Examples
 
@@ -49,7 +49,7 @@ For On-demand Builders and Dynamic templates, rendering failures will not fail y
 
 ### Step 1: Add the Bundler Plugin
 
-This plugin is bundled with Eleventy core and doesn’t require you to `npm install` anything. Use the `addPlugin` configuration API to add it to your Eleventy config file (probably `.eleventy.js`):
+This plugin is bundled with Eleventy core and doesn’t require you to `npm install` anything. Use the `addPlugin()` configuration API to add it to your Eleventy config file (probably `.eleventy.js`):
 
 {% codetitle ".eleventy.js" %}
 
@@ -69,8 +69,8 @@ You can add the Bundler plugin more than once to accommodate multiple Eleventy S
 {% callout "info", "md" -%}
 You won’t need to set up bundler plugins for every individual template, but instead you’ll want to use one plugin for each rendering mode.
 
-* Dynamic pages via server side rendering will need one plugin, perhaps named `onrequest` or `dynamic`.
-* Delayed rendering using On-demand Builders will need another plugin, perhaps named `onfirstrequest` or `odb`.
+* Dynamic pages via server side rendering will need one plugin (perhaps named `onrequest` or `dynamic`).
+* Delayed rendering using On-demand Builders will need another plugin (perhaps named `onfirstrequest` or `odb`).
 {% endcallout %}
 
 #### Bundler Options
@@ -85,7 +85,7 @@ You won’t need to set up bundler plugins for every individual template, but in
 <tbody>
   <tr>
     <td><code>name</code> <em>(Required)</em></td>
-    <td>Above we used <code>"possum"</code> but you should use <code>serverless</code> if you’re not sure what to call it.</td>
+    <td>Above we used <code>"possum"</code>, but you should use <code>serverless</code> if you’re not sure what to call it.</td>
   </tr>
   <tr>
     <td><code>functionsDir: "./functions/"</code></td>
@@ -93,10 +93,12 @@ You won’t need to set up bundler plugins for every individual template, but in
   </tr>
   <tr>
     <td><code>copy: []</code></td>
-    <td>an Array of extra files to bundle with your serverless function. We copy your templates files for you but this is useful for additional files that may be used at build-time. Array entries can be:<ul>
-      <li>a String for a single file or a directory. e.g. <code>"logo.svg"</code> or <code>"folder/"</code></li>
-      <li>an Object with <code>from</code> and <code>to</code> keys to change the output directory inside your bundle. e.g. <code>{ from: ".cache", to: "cache" }</code></li>
-    </ul></td>
+    <td>An Array of extra files to bundle with your serverless function. We copy your templates files for you but this is useful for additional files that may be used at build-time. Array entries can be:
+      <ul>
+        <li>a String for a single file or a directory (e.g., <code>"logo.svg"</code> or <code>"folder/"</code>).</li>
+        <li>an Object with <code>from</code> and <code>to</code> keys to change the output directory inside your bundle (e.g., <code>{ from: ".cache", to: "cache" }</code>).</li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td>
@@ -107,30 +109,32 @@ You won’t need to set up bundler plugins for every individual template, but in
       <li><code>redirects: "netlify-toml"</code> (default) to use Netlify Functions.</li>
       <li><code>redirects: "netlify-toml-functions"</code> (alias for <code>netlify-toml</code>)<!-- {% addedin "1.0.0-beta.3" %} --></li>
       <li><code>redirects: "netlify-toml-builders"</code> to use <a href="#use-with-on-demand-builders">Netlify On-demand Builders</a><!-- {% addedin "1.0.0-beta.3" %}--></li>
-      <li>Write your own: Use a custom Function instead of a String: <code>function(name, outputMap)</code>. Don’t forget to handle removal of stale routes too!</li>
+      <li>Write your own: Use a custom Function instead of a String: <code>function(<var>name</var>, <var>outputMap</var>)</code>. Don’t forget to handle removal of stale routes too!</li>
     </ul></td>
   </tr>
   <tr>
     <td><del><code>inputDir: "."</code></del></td>
-    <td>The Eleventy input directory (containing your Eleventy templates). This is no longer necessary. Eleventy injects this for you automatically.</td>
+    <td>The Eleventy input directory (containing your Eleventy templates). <strong>This is no longer necessary.</strong> Eleventy injects this for you automatically.</td>
   </tr>
   <!-- I don’t think this belongs here !!! It belongs in the default serverless function -->
   <tr>
-    <td><code>config: function(eleventyConfig) {}</code></td>
-    <td>Run your own custom Eleventy Configuration API code inside of the serverless function. Useful for a wide variety of things, but was added to facilitate developers wiring up additional serverless information from the <code>event</code> object to templates using <code>eleventyConfig.addGlobalData</code>. For example, wire up cookies using <code>event.headers.cookie</code> or form post data using <code>event.body</code>.<!-- {% addedin "1.0.0-beta.4" %} --></td>
+    <td><code>config: function(<var>eleventyConfig</var>) {}</code></td>
+    <td>Run your own custom Eleventy Configuration API code inside of the serverless function. Useful for a wide variety of things, but was added to facilitate developers wiring up additional serverless information from the <code>event</code> object to templates using <code>eleventyConfig.addGlobalData()</code>. For example, wire up cookies using <code>event.headers.cookie</code> or form post data using <code>event.body</code>.<!-- {% addedin "1.0.0-beta.4" %} --></td>
   </tr>
   <tr>
     <td colspan="2"><strong><em>Advanced Options:</em></strong></td>
   </tr>
   <tr>
     <td><code>copyEnabled: true</code></td>
-    <td>Useful for local development, this is a Boolean to enable or disable copying project files into your serverless bundle. File copying is pretty cheap so you will likely want to leave this as-is.<ul>
-      <li>Try <code>copyEnabled: process.env.NODE_ENV !== "development"</code> (and set environment variables when running Eleventy locally e.g. <code>NODE_ENV=development npx @11ty/eleventy</code>)</li>
-    </ul></td>
+    <td>Useful for local development. This Boolean enables or disables the copying of project files into your serverless bundle. (File copying is pretty cheap so you will likely want to leave this as-is.)
+      <ul>
+        <li>Try <code>copyEnabled: process.env.NODE_ENV !== "development"</code> (and set environment variables when running Eleventy locally e.g. <code>NODE_ENV=development npx @11ty/eleventy</code>)</li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td><code>copyOptions: {}</code></td>
-    <td>Advanced configuration of copy behavior, consult the <a href="https://www.npmjs.com/package/recursive-copy#usage"><code>recursive-copy</code> docs on NPM</a>. You probably won’t need this.</td>
+    <td>Advanced configuration of copy behavior. Consult the <a href="https://www.npmjs.com/package/recursive-copy#usage"><code>recursive-copy</code> docs on NPM</a>. You probably won’t need this.</td>
   </tr>
   <tr>
     <td><code>excludeDependencies: []</code></td>
@@ -141,7 +145,9 @@ You won’t need to set up bundler plugins for every individual template, but in
 
 ### Your Generated Serverless Function
 
-Based on your plugin configuration, we will create your initial boilerplate serverless function for you. After initial creation, this serverless function code is managed by you. Here is an over-simplified version for educational purposes only:
+Based on your plugin configuration, Eleventy will create your initial boilerplate serverless function for you. After initial creation, this serverless function code is managed by you. 
+
+Here is an over-simplified version for educational purposes only:
 
 {% codetitle "⚠️ This snippet is for educational purposes only—don’t copy and paste it!", "Limitation" %}
 
@@ -150,8 +156,8 @@ const { EleventyServerless } = require("@11ty/eleventy");
 
 async function handler (event) {
   let elev = new EleventyServerless("possum", {
-    path: event.path, // required, the URL path
-    query: event.queryStringParameters, // optional
+    path: event.path, // (required) the URL path
+    query: event.queryStringParameters, // (optional)
   });
 
   try {
@@ -179,9 +185,11 @@ Read more about [`dataFilterSelectors`](/docs/config/#data-filter-selectors).
 
 #### Use with On-demand Builders
 
-_Note: As of right now, On-demand Builders are a Netlify specific feature._
+{% callout "info", "md" -%}
+**Note:** As of right now, **On-demand Builders** are a Netlify-specific feature.
+{% endcallout %}
 
-If, instead, you want to use an [On-demand Builder](https://docs.netlify.com/configure-builds/on-demand-builders/) to render the content on first-request and cache at the CDN for later requests, you will need to do two things:
+If, instead, you want to use an [**On-demand Builder**](https://docs.netlify.com/configure-builds/on-demand-builders/) to render the content on first-request and cache at the CDN for later requests, you will need to do two things:
 
 **Thing 1:** Swap the export in your template (and `npm install @netlify/functions`):
 
@@ -196,7 +204,7 @@ exports.handler = builder(handler);
 
 The redirects need to point to `/.netlify/builders/` instead of `/.netlify/functions` so if you have written your own redirects handler, you’ll need to update that.
 
-### Step 2: Add to .gitignore
+### Step 2: Add to `.gitignore`
 
 Add the following rules to your `.gitignore` file (where `possum` is the name of your serverless function name):
 
@@ -207,7 +215,6 @@ netlify/functions/possum/**
 
 ### Step 3: Use a `permalink` Object
 
-
 Making a template file dynamic is as easy as changing your [`permalink`](/docs/permalinks/). You might be familiar with this well-worn `permalink` syntax:
 
 ```yaml
@@ -216,7 +223,7 @@ permalink: /build-generated-path/
 ---
 ```
 
-Serverless templates introduce a slight change and use a `permalink` Object, so a `possum` serverless function `permalink` looks like this:
+Serverless templates introduce a slight change: they use a `permalink` _Object_. So a `possum` serverless function `permalink` looks like this:
 
 ```yaml
 ---
@@ -225,9 +232,15 @@ permalink:
 ---
 ```
 
-These objects can be set anywhere in the data cascade (even inside of [Computed Data](/docs/data-computed/)). Here’s an example of a serverless URL for our `possum` serverless function. Any requests to `/dynamic-path/` will now be generated at request-time.
+These objects can be set anywhere in the data cascade (even inside of [Computed Data](/docs/data-computed/)). 
 
-`build` is the only reserved key in a `permalink` Object. If you want your template to continue to be built at build-time, use the `build` key. The following is functionally equivalent to `permalink: /build-generated-path/`:
+Here’s an example of a serverless URL for our `possum` serverless function. Any requests to `/dynamic-path/` will now be generated at request-time.
+
+{% callout "info", "md" -%}
+**NOTE:** `build` is the only reserved key in a `permalink` Object. If you want your template to continue to be built at build-time, use the `build` key. 
+{% endcallout %}
+
+The following is functionally equivalent to `permalink: /build-generated-path/`:
 
 ```yaml
 ---
@@ -236,11 +249,13 @@ permalink:
 ---
 ```
 
-Anything other than `build` is assumed to map to a serverless function. We used the name `possum`, but you can use any string and it should map to the `name` you passed to the Bundler Plugin above.
+Anything other than `build` is assumed to map to a serverless function. We used the name `possum`, but you can use any string. (Just make sure it maps to the `name` you passed to the Bundler Plugin above.)
 
 #### Build-time and Serverless
 
-You _can_ mix both `build` and `possum` in the same permalink object! This will make the same input file render both at build-time and in a serverless function. This might be useful when you want a specific URL for a CMS preview but still want the production build to use full build-time templates.
+You _can_ mix both `build` and `possum` in the same permalink object! This will make the same input file render both at build-time _and_ in a serverless function. 
+
+This might be useful when you want a specific URL for a CMS preview, but still want the production build to use full build-time templates.
 
 ```yaml
 ---
@@ -277,9 +292,11 @@ permalink:
 
 #### Dynamic Slugs and Serverless Global Data
 
-Perhaps most interestingly, this works with dynamic URLs too. This will work with any syntax supported by the [`path-to-regexp` package](https://www.npmjs.com/package/path-to-regexp).
+Perhaps most interestingly, this works with dynamic URLs, too! This will work with any syntax supported by the [`path-to-regexp` package](https://www.npmjs.com/package/path-to-regexp).
 
-{% callout "info", "md" %}Astute users of the 1.0 canary prereleases will note that starting in Beta 1, this package changed from [`url-pattern`](https://www.npmjs.com/package/url-pattern) to `path-to-regexp`. [Read more at Issue 1988](https://github.com/11ty/eleventy/issues/1988).{% endcallout %}
+{% callout "info", "md" -%}
+Astute users of the 1.0 canary prereleases will note that starting in Beta 1, this package changed from [`url-pattern`](https://www.npmjs.com/package/url-pattern) to `path-to-regexp`. [Read more at Issue 1988](https://github.com/11ty/eleventy/issues/1988).
+{% endcallout %}
 
 ```yaml
 ---
@@ -288,9 +305,15 @@ permalink:
 ---
 ```
 
-This will match any requested URL that fits the `/dynamic-path/` followed by an open-ended folder name (e.g. `/dynamic-path/hello/` or `/dynamic-path/goodbye/`). The above uses `:id` for the key name. When the templates are rendered, the key name puts the matched path String value for `id` into your Serverless Global Data in the Data Cascade at: `eleventy.serverless.path.id` (`id` here matches `:id` above).
+This will match any requested URL that fits the `/dynamic-path/` followed by an open-ended folder name (e.g., `/dynamic-path/hello/` or `/dynamic-path/goodbye/`). 
 
-{% callout "warn", "md" %}These should be treated as potentially malicious user input and you _must_ escape these if you use them in templates. Read more about [Escaping User Input](#escaping-user-input).{% endcallout %}
+The above uses `:id` for the key name. When the templates are rendered, the key name puts the matched path String value for `id` into your Serverless Global Data in the Data Cascade at: `eleventy.serverless.path.id`. (Here, `id` matches `:id` above).
+
+{% callout "warn", "md" -%}
+These should be treated as _potentially malicious user input_, and _you **must** escape these_ if you use them in templates! 
+
+Read more about [Escaping User Input](#escaping-user-input).
+{% endcallout %}
 
 Here’s what your Serverless Global Data might look like:
 
@@ -309,11 +332,12 @@ Here’s what your Serverless Global Data might look like:
 
 ### Escaping User Input
 
-When using dynamic slugs or query parameters, the values here should be treated as potentially malicious user input and you _must_ escape these if you use them in templates. The way to do this is template language specific.
+These should be treated as _potentially malicious user input_, and _you **must** escape these_ if you use them in templates! 
+The way to do this is specific to each template language.
 
-* Liquid has both an `escape` and `escape_once` filter.
-* Nunjucks has autoescape turned on by default. If you’ve disabled it, you can use the `escape` filter.
-* Read more [at the Layouts documentation](/docs/layouts/#prevent-double-escaping-in-layouts), which lists both methods for escaped and unescaped output in template languages.
+* **Liquid** has both an `escape` and `escape_once` filter.
+* **Nunjucks** has autoescape turned on by default. (If you’ve disabled it, you can use the `escape` filter.)
+* **Other template languages:** Read more [in the Layouts documentation](/docs/layouts/#prevent-double-escaping-in-layouts), which has other template languages’ methods for both escaped and unescaped output.
 
 
 
@@ -321,7 +345,9 @@ When using dynamic slugs or query parameters, the values here should be treated 
 
 ### Dynamic Slugs to Subset Your Pagination
 
-Use the new `serverless` option in `pagination` to slice up your paginated data set using a dynamic slug! Here’s how we use it for the [Eleventy Author Pages](/authors/).
+Use the new `serverless` option in `pagination` to slice up your paginated data set using a dynamic slug! 
+
+Here’s how we use it for the [Eleventy Author Pages](/authors/).
 
 ```yaml
 pagination:
@@ -332,7 +358,7 @@ permalink:
   possum: "/authors/:id/"
 ```
 
-Eleventy fetches the value stored at `eleventy.serverless.path.id` (using [lodash get](https://lodash.com/docs/4.17.15#get)) and does an additional get on the pagination data in `authors`.
+Eleventy fetches the value stored at `eleventy.serverless.path.id` (using [lodash `get`](https://lodash.com/docs/4.17.15#get)) and does an additional get on the pagination data in `authors`.
 
 For example:
 
@@ -345,9 +371,13 @@ For example:
 
 ### Input via Query Parameters
 
-In Dynamic Templates (_not On-demand Builders_), you can use query parameters as user input. Query parameters are available in the `eleventy.serverless.query` object.
+In **Dynamic _Templates_** (_not **On-demand Builders**_), you can use query parameters as user input. Query parameters are available in the `eleventy.serverless.query` object.
 
-{% callout "warn", "md" %}These should be treated as potentially malicious user input and you _must_ escape these if you use them in templates. Read more about [Escaping User Input](#escaping-user-input).{% endcallout %}
+{% callout "warn", "md" -%}
+These should be treated as _potentially malicious user input_, and _you **must** escape these_ if you use them in templates! 
+
+Read more about [Escaping User Input](#escaping-user-input).
+{% endcallout %}
 
 `/my-url/?id=hello` might look like this in the Data Cascade of a dynamic template:
 
@@ -370,7 +400,9 @@ _Documentation in progress_ (The new `serverlessURL` filter) -->
 
 ### Re-use build-time cache from the [Fetch plugin](/docs/plugins/fetch/)
 
-To speed up serverless rendering and avoid requests to external sources, you can re-use the cache folder from your build! First we’ll need to copy the cache folder into our bundle and rename it without the leading dot (the bundler ignores dot prefixed files and folders).
+To speed up serverless rendering and avoid requests to external sources, you can re-use the `cache` folder from your build! 
+
+First, we’ll need to copy the cache folder into our bundle and rename it without the leading dot. (The bundler ignores dot prefixed files and folders.)
 
 {% codetitle ".eleventy.js" %}
 
