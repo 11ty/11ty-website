@@ -224,19 +224,21 @@ Use [server-side redirects](https://docs.netlify.com/routing/redirects/redirect-
 * [Netlify Redirects](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language)
 * [Apache Content Negotiation](https://fantasai.inkedblade.net/web-design/l10n) related to [Issue #761](https://github.com/11ty/eleventy/issues/761)
 
-These will work as expected out of the box, except for the [`page.url`](/docs/data-eleventy-supplied/#page-variable) variable and the URL reported in [collection objects](/docs/collections/#collection-item-data-structure) (et al). We want two or more files on the file system (e.g. `about.en.html` and `about.es.html`) to map to a single page URL (`/about/`—not ~~`/about.en.html`~~ or ~~`/about.es.html`~~).
+These will work as expected out of the box, except for the [`page.url`](/docs/data-eleventy-supplied/#page-variable) variable and the URL reported in [collection objects](/docs/collections/#collection-item-data-structure) (et al).
 
-This is now possible using a new URL Transforms feature. URL transforms let you modify the `page.url` for a content document based on its output path. This example matches any `.xx.html` output file:
+Say We want two or more files on the file system (e.g. `about.en.html` and `about.es.html`) to map to a single page URL (`/about/`—not ~~`/about.en.html`~~ or ~~`/about.es.html`~~). This is now possible using a new URL Transforms feature. URL transforms let you modify the `page.url` for a content document based.
+
+This example matches any `.xx.html` URL:
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addUrlTransform(({outputPath}) => {
-    // Match any .xx.html output path
-    if((outputPath || "").match(new RegExp("\.[a-z]{2}\.html$", "i"))) {
-      return outputPath.slice(0, -1 * ".en.html".length) + "/"; // trailing slash here is optional
+  eleventyConfig.addUrlTransform(({url}) => {
+    // `url` is guaranteed to be a string here even if you’re using `permalink: false`
+    if (url.match(/\.[a-z]{2}\.html$/i)) {
+        return url.slice(0, -1 * ".en.html".length) + "/";
     }
 
-    // Not returning (returning undefined) skips the url transform
+    // Returning undefined skips the url transform.
   });
 };
 ```
