@@ -144,9 +144,9 @@ export default async (request, context) => {
 
 #### Read more about Netlify’s Edge Functions
 
-* {% indieweblink "Netlify Docs: Edge Functions overview", "https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/" %}
+* [Netlify Docs: Edge Functions overview](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/)
 * {% indieweblink "Netlify Edge Functions on Deno Deploy", "https://deno.com/blog/netlify-edge-functions-on-deno-deploy" %}
-* {% indieweblink "Netlify Edge Functions: A new serverless runtime powered by Deno", "https://www.netlify.com/blog/announcing-serverless-compute-with-edge-functions" %}
+* [Netlify Edge Functions: A new serverless runtime powered by Deno](https://www.netlify.com/blog/announcing-serverless-compute-with-edge-functions)
 
 
 ### 3. Additions to `.gitignore`
