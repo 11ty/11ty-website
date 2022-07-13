@@ -217,7 +217,7 @@ permalink: "index.json"
 
 _Decouple a page’s primary URL from its permalink._
 
-As an example, say you have two content files: `about.en.html` and `about.es.html`. You’ve already set up the [`addGlobalData` feature to remap their respective output](/docs/data-eleventy-supplied/#changing-your-project-default-permalinks) to `_site/about.en.html` and `_site/about.es.html`.
+_New in 2.0.0-canary.13:_ As an example, say you have two content files: `about.en.html` and `about.es.html`. You’ve already set up the [`addGlobalData` feature to remap their respective output](/docs/data-eleventy-supplied/#changing-your-project-default-permalinks) to `_site/about.en.html` and `_site/about.es.html`.
 
 Use [server-side redirects](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language) to control which of these files is shown.
 
@@ -226,7 +226,7 @@ Use [server-side redirects](https://docs.netlify.com/routing/redirects/redirect-
 
 These will work as expected out of the box, except for the [`page.url`](/docs/data-eleventy-supplied/#page-variable) variable and the URL reported in [collection objects](/docs/collections/#collection-item-data-structure) (et al).
 
-Say We want two or more files on the file system (e.g. `about.en.html` and `about.es.html`) to map to a single page URL (`/about/`—not ~~`/about.en.html`~~ or ~~`/about.es.html`~~). This is now possible using a new URL Transforms feature. URL transforms let you modify the `page.url` for a content document based.
+Say we want two or more files on the file system (e.g. `about.en.html` and `about.es.html`) to map to a single page URL (`/about/`—not ~~`/about.en.html`~~ or ~~`/about.es.html`~~). This is now possible using a new URL Transforms feature. URL transforms let you modify the `page.url` for a content document based.
 
 This example matches any `.xx.html` URL:
 
