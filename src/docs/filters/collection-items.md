@@ -26,6 +26,10 @@ eleventyNavigation:
 ```liquid
 {% assign previousPost = collections.posts | getPreviousCollectionItem: page %}
 {% assign nextPost = collections.posts | getNextCollectionItem: page %}
+
+<!-- in 2.0 the page argument is optional -->
+{% assign previousPost = collections.posts | getPreviousCollectionItem %}
+{% assign nextPost = collections.posts | getNextCollectionItem %}
 ```
 {% endraw %}
 
@@ -38,6 +42,10 @@ eleventyNavigation:
 ```jinja2
 {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
 {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+
+<!-- in 2.0 the page argument is optional -->
+{% set previousPost = collections.posts | getPreviousCollectionItem %}
+{% set nextPost = collections.posts | getNextCollectionItem %}
 ```
 {% endraw %}
 
@@ -109,6 +117,9 @@ For completeness, a `getCollectionItem` filter is also included that fetches the
 {% raw %}
 ```liquid
 {% assign currentPost = collections.posts | getCollectionItem: page %}
+
+<!-- in 2.0 the page argument is optional -->
+{% assign currentPost = collections.posts | getCollectionItem %}
 ```
 {% endraw %}
 
@@ -120,6 +131,9 @@ For completeness, a `getCollectionItem` filter is also included that fetches the
 {% raw %}
 ```jinja2
 {% set currentPost = collections.posts | getCollectionItem(page) %}
+
+<!-- in 2.0 the page argument is optional -->
+{% set currentPost = collections.posts | getCollectionItem %}
 ```
 {% endraw %}
 
