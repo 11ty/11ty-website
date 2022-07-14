@@ -15,7 +15,7 @@ module.exports = async function() {
 	} catch(e) {
 		console.log( "Failed getting GitHub stargazers count, returning 0" );
 		return {
-			stargazers: 0
+			stargazers: ""
 		};
 	}
 };
