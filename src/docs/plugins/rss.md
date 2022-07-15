@@ -119,7 +119,7 @@ Copy and paste this template and modify the JSON metadata to match your feed’s
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ metadata.language }}">
   <title>{{ metadata.title }}</title>
   <subtitle>{{ metadata.subtitle }}</subtitle>
-  <link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self"/>
+  <link href="{{ permalink | url | absoluteUrl(metadata.url) }}" rel="self"/>
   <link href="{{ metadata.url }}"/>
   <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ metadata.url }}</id>
@@ -167,7 +167,7 @@ Copy and paste this template and modify the JSON metadata to match your feed’s
   <channel>
     <title>{{ metadata.title }}</title>
     <link>{{ metadata.url }}</link>
-    <atom:link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" type="application/rss+xml" />
+    <atom:link href="{{ permalink | url | absoluteUrl(metadata.url) }}" rel="self" type="application/rss+xml" />
     <description>{{ metadata.subtitle }}</description>
     <language>{{ metadata.language }}</language>
     {%- for post in collections.posts | reverse %}
@@ -212,7 +212,7 @@ Copy and paste this template and modify the JSON metadata to match your feed’s
   "title": "{{ metadata.title }}",
   "language": "{{ metadata.language }}",
   "home_page_url": "{{ metadata.url }}",
-  "feed_url": "{{ permalink | absoluteUrl(metadata.url) }}",
+  "feed_url": "{{ permalink | url | absoluteUrl(metadata.url) }}",
   "description": "{{ metadata.subtitle }}",
   "author": {
     "name": "{{ metadata.author.name }}",
