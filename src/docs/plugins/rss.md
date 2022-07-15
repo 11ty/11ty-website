@@ -208,7 +208,7 @@ Copy and paste this template and modify the JSON metadata to match your feed’s
 }
 ---
 {
-  "version": "https://jsonfeed.org/version/1",
+  "version": "https://jsonfeed.org/version/1.1",
   "title": "{{ metadata.title }}",
   "language": "{{ metadata.language }}",
   "home_page_url": "{{ metadata.url }}",
