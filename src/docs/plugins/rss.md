@@ -148,7 +148,7 @@ Copy and paste this template and modify the JSON metadata to match your feed’s
 ```html
 ---json
 {
-  "permalink": "feed-rss.xml",
+  "permalink": "feed.xml",
   "eleventyExcludeFromCollections": true,
   "metadata": {
     "title": "My Blog about Boats",
