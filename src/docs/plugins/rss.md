@@ -128,7 +128,7 @@ Copy and paste this template and modify the JSON metadata to match your feed’s
     <email>{{ metadata.author.email }}</email>
   </author>
   {%- for post in collections.posts | reverse %}
-  {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+  {%- set absolutePostUrl = post.url | url | absoluteUrl(metadata.url) %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
