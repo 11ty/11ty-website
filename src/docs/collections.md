@@ -465,7 +465,7 @@ exports.render = function(data) {
 
 ### Overriding Content Dates
 
-You can modify how a piece of content is sorted in a collection by changing it’s default `date`. [Read more at Content Dates](/docs/dates/).
+You can modify how a piece of content is sorted in a collection by changing its default `date`. [Read more at Content Dates](/docs/dates/).
 
 ```markdown
 ---
