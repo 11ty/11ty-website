@@ -10,7 +10,7 @@ relatedLinks:
 
 Global data is [data](/docs/data/) that is exposed to every template in an Eleventy project.
 
-One way to create global data is through <dfn>global data files</dfn>: JSON and JavaScript files placed inside of the <dfn>global data folder</dfn>. The global data folder is placed inside the project's input directory (set by the [`dir.input` configuration option](https://www.11ty.dev/docs/config/#input-directory)), and the name of the global data folder is set by the [`dir.data` configuration option](/docs/config/#directory-for-global-data-files) (`_data` by default). All `*.json` and `module.exports` values from [`*.js` files](/docs/data-js/) in this directory will be added into a global data object available to all templates.
+One way to create global data is through <dfn>global data files</dfn>: JSON and JavaScript files placed inside of the <dfn>global data folder</dfn>. The global data folder is placed inside the project's input directory (set by the [`dir.input` configuration option](/docs/config/#input-directory)), and the name of the global data folder is set by the [`dir.data` configuration option](/docs/config/#directory-for-global-data-files) (`_data` by default). All `*.json` and `module.exports` values from [`*.js` files](/docs/data-js/) in this directory will be added into a global data object available to all templates.
 
 You may also be interested in [config global data](/docs/data-global-custom/){% addedin "1.0.0" %}, which is another way to add global data to every template in an Eleventy project.
 
