@@ -45,9 +45,15 @@ let page = {
 
   // Added in 1.0
   // Useful with `page.filePathStem` when using custom file extensions.
-  outputFileExtension: "html"
+  outputFileExtension: "html",
+
+  // Available in 2.0 with the i18n plugin
+  // The default is the value of `defaultLanguage` passed to the i18n plugin
+  lang: "",
 };
 ```
+
+Note that `page.lang` is _only_ available when the [i18n plugin has been added to your configuration file](http://localhost:8091/docs/plugins/i18n/#add-to-your-configuration-file).
 
 ### `date`
 
