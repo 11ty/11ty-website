@@ -81,7 +81,7 @@ Here we’re using the [`toml` package](https://www.npmjs.com/package/toml). Don
 {% codetitle ".eleventy.js" %}
 
 ```js
-const toml = require("toml");
+const toml = require("@iarna/toml");
 
 module.exports = eleventyConfig => {
   eleventyConfig.addDataExtension("toml", contents => toml.parse(contents));
@@ -141,7 +141,7 @@ If you add multiple file extensions, the latter ones take priority over the earl
 {% codetitle ".eleventy.js" %}
 
 ```js
-const toml = require("toml");
+const toml = require("@iarna/toml");
 const yaml = require("js-yaml");
 
 module.exports = eleventyConfig => {
