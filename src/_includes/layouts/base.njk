@@ -90,8 +90,7 @@ eleventyComputed:
 		<link rel="alternate" href="{{ feedUrl }}" title="{{ feedTitle }}" type="application/atom+xml">
 {% endif %}
 		<script>
-		{%- include "components/js-class.js" -%}
-    {%- include "components/details-force-state.js" -%}
+		{%- include "components/details-force-state.js" -%}
 		</script>
 {% if loadNetlifyIdentity %}
 		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>

@@ -19,7 +19,7 @@
 	.elv-toc details > summary {
 		margin-top: 0;
 	}
-	.js .elv-toc details > summary {
+	details-force-state:defined > details > summary {
 		display: none;
 	}
 }
