@@ -76,7 +76,6 @@ eleventyComputed:
 {{ googlefonts | safe }}
 {% endset %}
 		<link href="https://v1.indieweb-avatar.11ty.dev" rel="preconnect" crossorigin>
-		{# <link href="https://v1.screenshot.11ty.dev" rel="preconnect" crossorigin> #}
 		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
 		<style>{{ css | cssmin | safe }}</style>
 {% if config.env === "production" %}
@@ -92,6 +91,7 @@ eleventyComputed:
 {% endif %}
 		<script>
 		{%- include "components/js-class.js" -%}
+    {%- include "components/details-force-state.js" -%}
 		</script>
 {% if loadNetlifyIdentity %}
 		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -112,9 +112,6 @@ eleventyComputed:
 		{{ content | safe }}
 
 		<!-- Built on {{ config.now }} by Eleventy -->
-		<script>
-		{%- include "components/details-force-state.js" -%}
-		</script>
 {% if not putTheJsInTheHead %}
 		<script src="/js/eleventy.js" type="module"></script>
 {% if not skipAuth %}

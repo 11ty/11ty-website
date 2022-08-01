@@ -1,7 +1,23 @@
-if( "querySelector" in document ) {
-	var details = document.querySelector("details");
-	if( details ) {
-		var forceOpen = window.getComputedStyle(details).getPropertyValue("--details-force-closed");
+class DetailsForceState extends HTMLElement {
+	constructor() {
+    super();
+    this._observer = new MutationObserver(this._init.bind(this));
+  }
+
+	connectedCallback() {
+    if (this.children.length) {
+      this._init();
+    }
+    this._observer.observe(this, { childList: true });
+  }
+
+	_init() {
+		let details = this.querySelector(":scope details");
+		if(!details) {
+			return;
+		}
+
+		let forceOpen = window.getComputedStyle(details).getPropertyValue("--details-force-closed");
 
 		function forceState(isOpen) {
 			if( isOpen ) {
@@ -12,7 +28,7 @@ if( "querySelector" in document ) {
 		}
 
 		if(forceOpen && "matchMedia" in window) {
-			var mm1 = window.matchMedia(forceOpen);
+			let mm1 = window.matchMedia(forceOpen);
 			forceState(!mm1.matches);
 			mm1.addListener(function(e) {
 				forceState(!e.matches);
@@ -20,3 +36,8 @@ if( "querySelector" in document ) {
 		}
 	}
 }
+
+if("customElements" in window) {
+	customElements.define("details-force-state", DetailsForceState);
+}
+
