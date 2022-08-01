@@ -126,10 +126,10 @@ const shortcodes = {
 			// onerror: "let p=this.closest('picture');if(p){p.remove();}this.remove();"
 		});
 	},
-	getIndieAvatarHtml(iconUrl) {
+	getIndieAvatarHtml(iconUrl, size = "large") {
 		let imgHtml = "";
 		if(!iconUrl.startsWith("/")) {
-			imgHtml = `<img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(iconUrl)}/" width="150" height="150" alt="IndieWeb Avatar for ${iconUrl}" class="avatar avatar-large avatar-indieweb" loading="lazy" decoding="async">`;
+			imgHtml = `<img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(iconUrl)}/" width="150" height="150" alt="IndieWeb Avatar for ${iconUrl}" class="avatar avatar-indieweb${size ? ` avatar-${size}` : ""}" loading="lazy" decoding="async">`;
 		}
 		return imgHtml;
 	},
@@ -572,6 +572,10 @@ ${text.trim()}
 	eleventyConfig.addPairedShortcode("markdown", function(content) {
 		return mdIt.renderInline(content);
 	});
+	eleventyConfig.addFilter("markdown", function(content) {
+		return mdIt.renderInline(content);
+	});
+
 	eleventyConfig.addPairedShortcode("callout", function(content, level = "", format = "html", cls = "") {
 		if( format === "md" ) {
 			content = mdIt.renderInline(content);
@@ -770,6 +774,20 @@ to:
 	eleventyConfig.addShortcode("youtubeEmbed", function(slug, startTime) {
 		return `<div class="fluid-width-video-wrapper"><iframe class="youtube-player" src="https://www.youtube.com/embed/${slug}${startTime ? `?start=${startTime}` : ''}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
 	});
+
+	eleventyConfig.addFilter("injectAvatars", function(content) {
+		return content
+			.split("Eleventy")
+			.join(shortcodes.getIndieAvatarHtml("https://www.11ty.dev/", "") + "Eleventy")
+			// .split("Astro")
+			// .join(shortcodes.getIndieAvatarHtml("https://astro.build/", "") + "Astro")
+			// .split("Gatsby")
+			// .join(shortcodes.getIndieAvatarHtml("https://www.gatsbyjs.com/", "") + "Gatsby")
+			// .split("Next.js")
+			// .join(shortcodes.getIndieAvatarHtml("https://nextjs.org/", "") + "Next.js")
+			// .split("Remix")
+			// .join(shortcodes.getIndieAvatarHtml("https://remix.run/", "") + "Remix")
+		})
 
 	return {
 		dir: {
