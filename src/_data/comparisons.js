@@ -17,10 +17,10 @@ module.exports = [
 	},
 	{
 		text: "Eleventy runs `npm install` **352% faster than Gatsby**.",
-		url: "https://www.zachleat.com/web/build-benchmark/",
+		url: "https://www.zachleat.com/web/build-benchmark/#bonus:-npm-install-benchmarks",
 	},
 	{
 		text: "Eleventy runs `npm install` **89% faster than Remix**.",
-		url: "https://www.zachleat.com/web/build-benchmark/",
+		url: "https://www.zachleat.com/web/build-benchmark/#bonus:-npm-install-benchmarks",
 	},
 ];
