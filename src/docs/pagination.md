@@ -538,7 +538,7 @@ pagination:
 
 <ol>
 {% for post in posts %}
-  <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
 {% endfor %}
 </ol>
 ```
@@ -561,7 +561,7 @@ pagination:
 
 <ol>
 {% for post in posts %}
-  <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
 {% endfor %}
 </ol>
 ```

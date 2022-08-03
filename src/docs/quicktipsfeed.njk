@@ -28,7 +28,7 @@ eleventyExcludeFromCollections: true
     <email>{{ metadata.author.email }}</email>
   </author>
   {%- for post in collections.quicktipssorted | reverse %}
-  {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+  {% set absolutePostUrl %}{{ post.url | absoluteUrl(metadata.url) }}{% endset %}
   <entry>
     <title>Quick Tip #{{ post.data.tipindex }}—{{ post.data.tiptitle }}</title>
     <link href="{{ absolutePostUrl }}"/>

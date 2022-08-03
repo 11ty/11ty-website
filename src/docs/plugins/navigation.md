@@ -822,7 +822,7 @@ Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
 <ul>
 {%- for entry in navPages %}
   <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
-    <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+    <a href="{{ entry.url }}">{{ entry.title }}</a>
   </li>
 {%- endfor %}
 </ul>
@@ -840,7 +840,7 @@ Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
 <ul>
 {%- for entry in navPages %}
   <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
-    <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+    <a href="{{ entry.url }}">{{ entry.title }}</a>
   </li>
 {%- endfor %}
 </ul>
@@ -866,7 +866,7 @@ You _can_ use a Nunjucks macro to recursively render list items of any depth but
 {% set navPages = collections.all | eleventyNavigation %}
 {% macro renderNavListItem(entry) -%}
 <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
-  <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+  <a href="{{ entry.url }}">{{ entry.title }}</a>
 {%- if entry.children.length -%}
   <ul>
     {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
