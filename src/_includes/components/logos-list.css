@@ -1,0 +1,58 @@
+.logos-list {
+	display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+	margin: .5em 0 1em;
+}
+.elv-default .logos-list {
+	justify-content: center;
+	gap: .25em 1em;
+	font-size: 0.875em; /* 14px /16 */
+	padding: 1em;
+	font-weight: bold;
+	color: #666;
+}
+.elv-docs .logos-list {
+	padding: .75em;
+	border: 1px solid #ddd;
+	border-radius: .5em;
+	gap: 1em;
+}
+
+.logos-list li {
+	padding: 0;
+  white-space: nowrap;
+}
+.logos-list-more {
+	font-style: italic;
+	font-weight: normal;
+}
+@media (max-width: 47.9375em) { /* 767px */
+	.logos-list li:nth-child(n+11):not(.logos-list-more) {
+		display: none;
+	}
+}
+.logos-list-hed {
+	text-align: center;
+	color: #666;
+	font-family: system-ui, -apple-system, sans-serif;
+	font-weight: normal;
+	letter-spacing: 1px;
+	flex-basis: 100%;
+	text-transform: uppercase;
+	margin-bottom: 1em;
+}
+.elv-docs .logos-list-hed {
+	display: none;
+}
+.logos-list .logos-list-hed {
+	line-height: 1;
+}
+
+.logos-list .avatar {
+	width: 1.6em;
+	height: 1.6em;
+	margin-right: .5em;
+	opacity: .9;
+}

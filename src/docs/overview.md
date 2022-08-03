@@ -1,25 +1,25 @@
 ---
 eleventyNavigation:
   key: Overview
+  title: Why Eleventy?
   order: 1
 permalink: /docs/
 ---
 
 # {{ "Eleventy is a simpler static site generator." | orphanWrap | safe }}
 
-Eleventy was created to be a JavaScript alternative to Jekyll. It’s <a href="/docs/glossary/#zero-config" class="buzzword">zero-config</a> by default but has flexible configuration options. Eleventy **works with your project’s existing directory structure.**
+Eleventy quickly builds speedy web sites. Originally pitched as the JavaScript alternative to Jekyll, Eleventy has matured into a [popular](/blog/2million/) modern web site generator.
 
-Eleventy uses **independent template engines**. We don’t want to hold your content hostage. If you decide to use something else later, having your content decoupled in this way will make migration easier.
-
-Eleventy **works with multiple template languages**. You can pick one or use them all together in a single project:
+* Eleventy is **production ready** and trusted by: {% include "logos.njk" %}
+* Eleventy is **<a href="/docs/glossary/#zero-config" class="buzzword">zero-config</a>** (by default) with flexible configuration options.
+* Eleventy uses **independent template languages**. We don’t want to hold your content hostage with a custom format. If you decide to use a different syntax later, having your content decoupled in this way will make migration easier.
+* Eleventy **works with multiple template languages**. You can pick one or use them all together in a single project:
 
 {% templatelangs templatetypes, page %}
 
-Eleventy is **not a JavaScript framework**—that means *zero boilerplate client-side JavaScript*. We’re thinking long term and opting out of the framework rat race. The tool chain, code conventions, and modules you use in your front end stack are decoupled from this tool. Work from a solid foundation of <a href="/docs/glossary/#pre-rendered-templates-by-default" class="buzzword">pre-rendered templates</a> that suit your project’s <a href="/docs/glossary/#progressive-enhancement" class="buzzword">progressive enhancement</a> baseline requirements.
-
-Eleventy is **incremental**. You don’t need to start an Eleventy project from scratch. Eleventy is flexible enough to allow conversion of only a few templates at a time. Migrate as fast or as slow as you’d like.
-
-Eleventy **works great with data**—use both front matter and external data files to inject content into templates.
+* Eleventy is **not a JavaScript framework**—that means *zero boilerplate client-side JavaScript*. We’re **thinking long-term** to opt-out of the framework rat race. The tool chain, modules, and components you use in your front end stack are decoupled from this tool. Work from a solid foundation of <a href="/docs/glossary/#pre-rendered-templates-by-default" class="buzzword">pre-rendered templates</a> that suit your project’s <a href="/docs/glossary/#progressive-enhancement" class="buzzword">progressive enhancement</a> baseline requirements.
+* Eleventy **works with your project’s existing directory structure** and allows **incremental adoption**. You don’t need to start an Eleventy project from scratch. Eleventy is flexible enough to allow conversion of only a few templates at a time. Migrate as fast or as slow as you’d like.
+* Eleventy **works great with data**—use front matter and/or load from an API using data files to inject into your templates.
 
 Read more about [**Eleventy’s project goals**.](https://www.zachleat.com/web/introducing-eleventy/)
 
@@ -41,4 +41,8 @@ This project aims to directly compete with all other Static Site Generators. We 
 * [Gatsby](https://www.gatsbyjs.org/) (JavaScript using React)
 * [Nuxt](https://nuxtjs.org/) (JavaScript using Vue)
 * [Next.js](https://nextjs.org/) (JavaScript using React)
+* [Bridgetown](https://www.bridgetownrb.com/) (Ruby)
+* [Astro](https://astro.build/) (JavaScript)
+* [Remix](https://remix.run/) (JavaScript using React)
+* [SvelteKit](https://kit.svelte.dev/) (JavaScript using Svelte)
 * _More at [jamstack.org](https://jamstack.org/generators/)_

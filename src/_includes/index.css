@@ -66,7 +66,10 @@ hr {
 }
 p {
 	max-width: 42em;
-	line-height: 1.5;
+	line-height: 1.6;
+}
+abbr {
+	text-decoration: none;
 }
 
 iframe {
@@ -332,7 +335,7 @@ ul {
 }
 li {
 	padding: .5em 0;
-	line-height: 1.4;
+	line-height: 1.6;
 }
 li:first-child:not([class]) {
 	padding-top: 0;
@@ -945,4 +948,18 @@ filter-container form {
 filter-container:defined form {
 	opacity: 1;
 	pointer-events: all;
+}
+
+/* Full width modules on the home page */
+@media (min-width: 62.5em) { /* 1000px */
+	.elv-default .fullwidth-module {
+		width: 146%;
+		margin-left: -22%;
+	}
+}
+@media (min-width: 84em) { /* 1344px */
+	.elv-default .fullwidth-module {
+		width: 200%;
+		margin-left: -50%;
+	}
 }

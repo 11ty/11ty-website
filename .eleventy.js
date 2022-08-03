@@ -126,7 +126,8 @@ const shortcodes = {
 			// onerror: "let p=this.closest('picture');if(p){p.remove();}this.remove();"
 		});
 	},
-	getIndieAvatarHtml(iconUrl, size = "large") {
+	// size = "large"
+	getIndieAvatarHtml(iconUrl, size = "") {
 		let imgHtml = "";
 		if(!iconUrl.startsWith("/")) {
 			imgHtml = `<img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(iconUrl)}/" width="150" height="150" alt="IndieWeb Avatar for ${iconUrl}" class="avatar avatar-indieweb${size ? ` avatar-${size}` : ""}" loading="lazy" decoding="async">`;

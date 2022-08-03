@@ -16,10 +16,8 @@
 	display: inline;
 	-webkit-box-decoration-break: clone;
 	box-decoration-break: clone;
-	font-family: Georgia, serif;
 	font-size: 116%;
 	white-space: normal;
-	line-height: 1.85;
 	padding: .2em .5em;
 	margin: 4px 4px 4px 0;
 	transition: .15s linear outline;
@@ -71,6 +69,7 @@
 }
 a.buzzword {
 	text-decoration: underline;
+	font-size: inherit;
 }
 .buzzword-list a,
 .inlinelist a {
@@ -175,11 +174,9 @@ a.rainbow-active:focus {
 main h2 .buzzword,
 main h3 .buzzword,
 main p .buzzword {
-	padding: 0px 7px;
-	font-size: 1em; /* 18px /18 */
+	font-size: inherit;
 	margin: 0;
 	line-height: 1.444444444444; /* 26px /18 */
-	font-family: inherit;
 }
 main h2 a.buzzword,
 main h3 a.buzzword,

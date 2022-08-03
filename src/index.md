@@ -24,6 +24,8 @@ eleventyComputed:
 </div>
 {%- endif %}
 
+<div class="fullwidth-module">{% include "logos.njk" %}</div>
+
 ## Quick Start
 
 Eleventy {% latestVersion versions, config %} requires Node {{ config.eleventyMinimumNodeVersion }} or newer. Use `node --version` on the command line to find your local Node version.
@@ -61,7 +63,7 @@ Run `npx @11ty/eleventy --serve` to start up a web server. Then open `http://loc
   </div>
 </div>
 
-<div class="facepile-fullwidth">
+<div class="fullwidth-module">
   <is-land on:visible on:save-data="false">
     <html-fetch target="is-land" src="/imports/facepile.html"></html-fetch>
   </is-land>

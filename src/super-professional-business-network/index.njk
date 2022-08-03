@@ -12,7 +12,7 @@ layout: layouts/docs.njk
 {%- if supporter | isBusinessPerson %}
   <div class="business-network-primary lo">
     <div class="lo-c">
-      <a href="{{ author.business_url }}" class="business-network-name nowrap">{% indieavatar author.business_url %}{{ author.business_name or author.name }}</a>
+      <a href="{{ author.business_url }}" class="business-network-name nowrap">{% indieavatar author.business_url, "large" %}{{ author.business_name or author.name }}</a>
     </div>
     <div class="lo-c business-network-hire">
       <a href="{{ author.business_url }}" class="btn-primary btn-primary-standard benchnine rainbow-active rainbow-active-noanim elv-externalexempt">Let’s Do Business</a>
