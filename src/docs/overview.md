@@ -8,7 +8,7 @@ permalink: /docs/
 
 # {{ "Eleventy is a simpler static site generator." | orphanWrap | safe }}
 
-Eleventy quickly builds speedy web sites. Originally pitched as the JavaScript alternative to Jekyll, Eleventy has matured into a [popular](/blog/2million/) modern web site generator.
+Eleventy quickly builds speedy web sites. Originally pitched as the JavaScript alternative to Jekyll, Eleventy has matured into a [popular](/blog/three-million/) modern web site generator.
 
 * Eleventy is **production ready** and trusted by: {% include "logos.njk" %}
 * Eleventy is **<a href="/docs/glossary/#zero-config" class="buzzword">zero-config</a>** (by default) with flexible configuration options.
