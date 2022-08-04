@@ -34,7 +34,7 @@
 	font-weight: normal;
 }
 @media (max-width: 62.4375em) { /* 999px */
-	.logos-list li:nth-child(n+11):not(.logos-list-more) {
+	.logos-list li:nth-child(n+14):not(.logos-list-more) {
 		display: none;
 	}
 }
