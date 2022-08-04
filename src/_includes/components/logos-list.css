@@ -13,6 +13,11 @@
 	font-weight: bold;
 	color: #666;
 }
+@media (prefers-color-scheme: dark) {
+	.elv-default .logos-list {
+		color: #adadad;
+	}
+}
 .elv-docs .logos-list {
 	padding: .75em;
 	border: 1px solid #ddd;
@@ -28,7 +33,7 @@
 	font-style: italic;
 	font-weight: normal;
 }
-@media (max-width: 47.9375em) { /* 767px */
+@media (max-width: 62.4375em) { /* 999px */
 	.logos-list li:nth-child(n+11):not(.logos-list-more) {
 		display: none;
 	}
@@ -42,6 +47,11 @@
 	flex-basis: 100%;
 	text-transform: uppercase;
 	margin-bottom: 1em;
+}
+@media (prefers-color-scheme: dark) {
+	.logos-list-hed {
+		color: #adadad;
+	}
 }
 .elv-docs .logos-list-hed {
 	display: none;
