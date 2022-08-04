@@ -10,7 +10,6 @@
 	gap: .25em 1em;
 	font-size: 0.875em; /* 14px /16 */
 	padding: 1em;
-	font-weight: bold;
 	color: #666;
 }
 @media (prefers-color-scheme: dark) {
@@ -31,7 +30,6 @@
 }
 .logos-list-more {
 	font-style: italic;
-	font-weight: normal;
 }
 @media (max-width: 62.4375em) { /* 999px */
 	.logos-list li:nth-child(n+16):not(.logos-list-more) {
@@ -44,7 +42,6 @@
 	text-align: center;
 	color: #666;
 	font-family: system-ui, -apple-system, sans-serif;
-	font-weight: normal;
 	letter-spacing: 1px;
 	flex-basis: 100%;
 	text-transform: uppercase;
