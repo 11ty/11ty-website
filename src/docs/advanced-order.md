@@ -11,30 +11,31 @@ layout: "layouts/docs.njk"
 
 From a very high level, Eleventy’s internal order of operations is such:
 
-1. Find any file matching a valid Eleventy file extension in the Input directory. (e.g. `./src/**.njk` or `./docs/**.md`)
+1. Find any file matching a valid Eleventy file extension in the Input directory (e.g., `./src/**.njk` or `./docs/**.md`).
 1. Iterate over the files.
-	1. If it doesn’t match a template file extension, treat it as a [passthrough copy](/docs/copy/).
-	1. If it does match a template file extension, continue processing as an Eleventy template.
-1. Start the asynchronous copy of [passthrough copy](/docs/copy/). Both configuration specified passthrough copy and non-template-matching file extension files. This will continue while templates are being processed.
-1. Initial [Data Cascade](/docs/data-cascade/) is generated for each template file. This includes all values from front matter, layouts, directory and file data files, global data.
-	* The data cascade does **not** yet include populated `collections`, `templateContent`, or computed `page` values like `page.url` and `page.outputPath`. <!-- Template.js -> getTemplateMapEntries -->
-1. Dependency graph is created of the templates to process them in the correct order. <!-- TemplateMap.js -->
-	* This is a bit oversimplified (and some may mix and match if they aren’t dependent on each other) but from a high level the templates are processed like this (listed here in _reverse order_—`1` is processed first):
+	- If it doesn’t match a template file extension, treat it as a [passthrough copy](/docs/copy/).
+	- If it does match a template file extension, continue processing as an Eleventy template.
+1. Start the asynchronous copy of [passthrough copy](/docs/copy/). This includes files specified passthrough copy in Eleventy’s configuration and files with non-template-matching file extensions. This will continue while templates are being processed.
+1. Initial [Data Cascade](/docs/data-cascade/) is generated for each template file. This includes all values from front matter, layouts, directory and file data files, and global data.
+	- The data cascade does **not** yet include populated `collections`, `templateContent`, or computed `page` values (like `page.url` and `page.outputPath`). <!-- Template.js ▶︎ getTemplateMapEntries -->
+1. A dependency graph of the templates is created to process them in the correct order. <!-- TemplateMap.js -->
+	- This is a bit oversimplified&mdash;and some may mix-and-match, if they aren’t dependent on each other&mdash;but from a high level, the templates are processed like this (listed here in _reverse order_—`1` is processed first):
 		<ol reversed>
 			<li>Templates that use Pagination and target <code>collections.all</code></li>
 			<li>Templates that use Pagination and target <code>collections</code></li>
-			<li>Templates that use Pagination and target a Configuration API added collection</li>
-			<li>Templates that use Pagination and target any other Collection (those supplied via <code>tags</code>)</li>
+      <li>Templates that use Pagination and target a <a href="/docs/collections/#advanced-custom-filtering-and-sorting">Configuration API-added collection</a></li>
+			<li>Templates that use Pagination and target any other Collection (those <a href="/docs/collections/#add-to-a-collection-using-tags">supplied via <code>tags</code></a>)</li>
 			<li>Templates that have <code>tags</code> specified</li>
-			<li>Templates that have no dependencies or are <code>eleventyExcludeFromCollections</code></li>
+			<li>Templates that have no dependencies or who are excluded via <a href="/docs/collections/#how-to-exclude-content-from-collections"><code>eleventyExcludeFromCollections</code></a></li>
 		</ol>
-	* _Note_: Eleventy does not automatically know what data is used inside of the template content at this stage. We use the specified front matter to know which templates supply collections and which templates consume collections. For a safety net we may [add a front matter option to declare dependencies manually](https://github.com/11ty/eleventy/issues/975).
+	- **Note:** Eleventy does not automatically know what data is used inside of template content at this stage. Eleventy uses front matter to determine which templates supply collections, and which templates consume collections. (For a safety net, we may [add a front matter option to declare dependencies manually](https://github.com/11ty/eleventy/issues/975).)
 1. [Collections](/docs/collections/) are generated in the correct order, per the dependency graph.
-1. Additional [Data Cascade](/docs/data-cascade/) operations are applied: <!-- Template.js -> getTemplates -->
-	* A separate dependency graph is generated to populate [Computed Data](/docs/data-computed/), [`permalink`](/docs/permalinks/), [`page.url`](/docs/data-eleventy-supplied/), and [`page.outputPath`](/docs/data-eleventy-supplied/) in the correct order.
-	* ~~`renderData` (An undocumented and deprecated feature—use [Computed Data](/docs/data-computed/) instead!) is generated.~~ _Removed in 2.0._
-1. Templates are rendered in the order generated by the dependency graph (`templateContent` is generated) **without layouts** applied.
-	1. Per the above _Note_ if a template uses another template’s `templateContent` before it has been generated, we defer this template to render in a second pass.
-	1. After all `templateContent`’s have been rendered, they are copied into the appropriate collections’ objects. Remember that `templateContent` in collections does not have layouts included.
-1. Eleventy checks for duplicate [permalinks](/docs/permalinks/) and throws an error if multiple templates are attempting to write to the same output file.
-1. Templates are then rendered **with layouts** applied. The previously generated `templateContent` values (without layouts) are re-used here. This content is then written to files on disk.
+1. Additional [Data Cascade](/docs/data-cascade/) operations are applied: <!-- Template.js ▶︎ getTemplates -->
+	- A separate dependency graph is generated to populate [Computed Data](/docs/data-computed/), [`permalink`](/docs/permalinks/), [`page.url`](/docs/data-eleventy-supplied/), and [`page.outputPath`](/docs/data-eleventy-supplied/) in the correct order.
+	- ~~`renderData` (An undocumented and deprecated feature—use [Computed Data](/docs/data-computed/) instead!) is generated.~~ <ins>Removed in 2.0.</ins>
+1. Templates are rendered (`templateContent` is generated) in the order generated by the dependency graph **without layouts** applied.
+	- Per the above _Note_, if one template uses another template’s `templateContent` before it has been generated, we defer the first template to render in a second pass.
+	- After all `templateContent`s have been rendered, they are copied into the appropriate collections’ objects. (Remember: at this point `templateContent` in `collections` still do not include layouts.)
+1. Eleventy checks for duplicate [permalinks](/docs/permalinks/) and throws an error if more than one template attempts to write to the same output file.
+1. **Layouts are applied to templates.** The previously generated `templateContent` values (without layouts) are re-used here. 
+1. The content is written to files on disk.
