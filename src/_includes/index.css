@@ -59,6 +59,11 @@ strong,
 b {
 	font-weight: 600;
 }
+s,
+del {
+    text-decoration-color: red;
+    opacity: 0.67;
+}
 hr {
 	margin: 3em 0;
 	border: none;
