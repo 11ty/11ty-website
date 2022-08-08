@@ -3,12 +3,10 @@ require("dotenv").config();
 const { DateTime } = require("luxon");
 const HumanReadable = require("human-readable-numbers");
 const commaNumber = require("comma-number");
-const markdownIt = require("markdown-it");
 const slugify = require("slugify");
 const lodashGet = require("lodash/get");
 const shortHash = require("short-hash");
-const markdownItAnchor = require("markdown-it-anchor");
-const markdownItToc = require("markdown-it-table-of-contents");
+const markdownPlugin = require("./config/MarkdownPlugin.js");
 
 const { EleventyServerlessBundlerPlugin } = require("@11ty/eleventy");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -199,6 +197,7 @@ module.exports = function(eleventyConfig) {
 		}
 	});
 
+	eleventyConfig.addPlugin(markdownPlugin);
 	eleventyConfig.addPlugin(rssPlugin);
 	eleventyConfig.addPlugin(navigationPlugin);
 	eleventyConfig.addPlugin(addedInLocalPlugin);
@@ -303,6 +302,7 @@ ${text.trim()}
 		"node_modules/@11ty/logo/img/logo-96x96.png": "img/favicon.png",
 		"node_modules/speedlify-score/speedlify-score.js": "js/speedlify-score.js",
 		"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js": "js/seven-minute-tabs.js",
+		"node_modules/lite-youtube-embed/src/lite-yt-embed.js": `js/lite-yt-embed.js`,
 	});
 
 	eleventyConfig.addPassthroughCopy("netlify-email");
@@ -524,68 +524,6 @@ ${text.trim()}
 		return `${fullHearts.join("")}<span class="supporters-hearts-empty">${emptyHearts.join("")}</span>`;
 	});
 
-	function removeExtraText(s) {
-		let newStr = String(s).replace(/New\ in\ v\d+\.\d+\.\d+/, "");
-		newStr = newStr.replace(/Coming\ soon\ in\ v\d+\.\d+\.\d+/, "");
-		newStr = newStr.replace(/⚠️/g, "");
-		newStr = newStr.replace(/[?!]/g, "");
-		newStr = newStr.replace(/<[^>]*>/g, "");
-		return newStr;
-	}
-
-	function markdownItSlugify(s) {
-		return slugify(removeExtraText(s), { lower: true, remove: /[:’'`,]/g });
-	}
-
-	let mdIt = markdownIt({
-		html: true,
-		breaks: true,
-		linkify: true
-	})
-	.disable('code') // disable indent -> code block
-	.use(markdownItAnchor, {
-		slugify: markdownItSlugify,
-		level: [1,2,3,4],
-		permalink: markdownItAnchor.permalink.linkInsideHeader({
-			symbol: `
-				<span class="sr-only">Jump to heading</span>
-				<span aria-hidden="true">#</span>
-			`,
-			class: "direct-link",
-			placement: 'after'
-		})
-	})
-	.use(markdownItToc, {
-		includeLevel: [2, 3],
-		slugify: markdownItSlugify,
-		format: function(heading) {
-			return removeExtraText(heading);
-		},
-		transformLink: function(link) {
-			// remove backticks from markdown code
-			return link.replace(/\%60/g, "");
-		}
-	});
-
-	mdIt.linkify.tlds('.io', false);
-	eleventyConfig.setLibrary("md", mdIt);
-
-	eleventyConfig.addPairedShortcode("markdown", function(content) {
-		return mdIt.renderInline(content);
-	});
-	eleventyConfig.addFilter("markdown", function(content) {
-		return mdIt.renderInline(content);
-	});
-
-	eleventyConfig.addPairedShortcode("callout", function(content, level = "", format = "html", cls = "") {
-		if( format === "md" ) {
-			content = mdIt.renderInline(content);
-		} else if( format === "md-block" ) {
-			content = mdIt.render(content);
-		}
-		return `<div class="elv-callout${level ? ` elv-callout-${level}` : ""}${cls ? ` ${cls}`: ""}">${content}</div>`;
-	});
-
 	eleventyConfig.addFilter("toISO", (dateObj) => {
 		return dateObj.toISOString();
 	});
@@ -772,8 +710,17 @@ to:
 		}
 	})
 
-	eleventyConfig.addShortcode("youtubeEmbed", function(slug, startTime) {
-		return `<div class="fluid-width-video-wrapper"><iframe class="youtube-player" src="https://www.youtube.com/embed/${slug}${startTime ? `?start=${startTime}` : ''}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+	eleventyConfig.addShortcode("youtubeEmbed", function(slug, startTime, label) {
+		let fallback = `https://i.ytimg.com/vi/${slug}/maxresdefault.jpg`;
+
+		// hard-coded fallback
+		if(slug === "pPkWxn0TF9w") {
+			fallback = `https://img.youtube.com/vi/${slug}/hqdefault.jpg`;
+		}
+
+		return `<div><is-land on:visible import="/js/lite-yt-embed.js" class="fluid-width-video-wrapper"><lite-youtube videoid="${slug}"${startTime ? ` params="start=${startTime}"` : ""} playlabel="Play${label ? `: ${label}` : ""}" style="background-image:url('${fallback}')">
+	<a href="https://youtube.com/watch?v=${slug}" class="elv-externalexempt lty-playbtn" title="Play Video"><span class="lyt-visually-hidden">Play Video${label ? `: ${label}` : ""}</span></a>
+</lite-youtube></is-land></div>`;
 	});
 
 	eleventyConfig.addFilter("injectAvatars", function(content) {

@@ -1,0 +1,7 @@
+lite-youtube {
+	max-width: 100%;
+}
+/* Plugin bug: clicking the red youtube play icon in the center would navigate to youtube.com */
+.enhanced-js lite-youtube > .lty-playbtn {
+	pointer-events: none;
+}

@@ -48,7 +48,7 @@
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "@netlify/functions": "^1.0.0",
-    "clean-css": "^5.3.0",
+    "clean-css": "^5.3.1",
     "comma-number": "^2.1.0",
     "cross-spawn": "^7.0.3",
     "dotenv": "^16.0.1",
@@ -67,7 +67,7 @@
     "short-hash": "^1.0.0",
     "slugify": "^1.6.5",
     "sorted-object": "^2.0.1",
-    "terser": "^5.14.1",
+    "terser": "^5.14.2",
     "twitter-avatar-url": "^2.2.0"
   },
   "dependencies": {
@@ -75,6 +75,7 @@
     "@11ty/logo": "^2.0.6",
     "@zachleat/filter-container": "^3.0.4",
     "@zachleat/seven-minute-tabs": "^2.0.0",
+    "lite-youtube-embed": "^0.2.0",
     "speedlify-score": "^2.0.2"
   }
 }
