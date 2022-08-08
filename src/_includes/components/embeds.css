@@ -1,7 +1,22 @@
 lite-youtube {
 	max-width: 100%;
+	border-radius: .5em;
+	overflow: hidden;
 }
 /* Plugin bug: clicking the red youtube play icon in the center would navigate to youtube.com */
-.enhanced-js lite-youtube > .lty-playbtn {
+lite-youtube:defined > .lty-playbtn {
 	pointer-events: none;
+}
+
+/* Related video list */
+.youtube-related > * {
+	max-width: 20em; /* 320px /16 */
+}
+
+/* Watch on YouTube link */
+lite-youtube + a[href] {
+	display: block;
+	text-align: center;
+	font-size: 0.875em; /* 14px /16 */
+	margin-top: 0.2857142857143em; /* 4px /14 */
 }

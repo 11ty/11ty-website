@@ -720,7 +720,7 @@ to:
 
 		return `<div><is-land on:visible import="/js/lite-yt-embed.js" class="fluid-width-video-wrapper"><lite-youtube videoid="${slug}"${startTime ? ` params="start=${startTime}"` : ""} playlabel="Play${label ? `: ${label}` : ""}" style="background-image:url('${fallback}')">
 	<a href="https://youtube.com/watch?v=${slug}" class="elv-externalexempt lty-playbtn" title="Play Video"><span class="lyt-visually-hidden">Play Video${label ? `: ${label}` : ""}</span></a>
-</lite-youtube></is-land></div>`;
+</lite-youtube><a href="https://youtube.com/watch?v=${slug}">Watch on YouTube</a></is-land></div>`;
 	});
 
 	eleventyConfig.addFilter("injectAvatars", function(content) {

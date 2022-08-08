@@ -9,7 +9,16 @@ communityLinksKey: serverless
 
 {{ eleventyNavigation.excerpt }}
 
+<details class="toc">
+<summary>Expand for contents</summary>
+
 [[toc]]
+
+</details>
+
+<div class="youtube-related">
+  {% youtubeEmbed "JNFooPfzV9g" %}
+</div>
 
 ## What is Serverless?
 

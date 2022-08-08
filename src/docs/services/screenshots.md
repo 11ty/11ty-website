@@ -8,9 +8,18 @@ communityLinksKey: api-services-screenshot
 
 Feed this runtime service a URL and it returns a fully rendered screenshot image from that page (using Puppeteer)
 
+<details class="toc">
+<summary>Expand for Contents</summary>
+
 [[toc]]
 
-## Open Source
+</details>
+
+<div class="youtube-related">
+  {% youtubeEmbed "BcZUSZcE8uQ" %}
+</div>
+
+## Source Code
 
 * [`11ty/api-screenshot` on GitHub](https://github.com/11ty/api-screenshot)
 
