@@ -10,16 +10,12 @@ relatedKey: pagination
 
 Pagination allows you to iterate over a data set and create multiple files from a single template. The input data can be in the form of an array or object defined in your frontmatter or in [global data](/docs/data-global/), or you can paginate a collection to make an easily digestible list of your posts.
 
-## Contents
-
-<style>
-/* Hide link to Contents */
-.table-of-contents > ul > li:first-child {
-  display: none;
-}
-</style>
+<details>
+<summary>Expand for Contents</summary>
 
 [[toc]]
+
+</details>
 
 ## Paging an Array
 
@@ -596,6 +592,11 @@ pagination:
 ```
 {% endraw %}
 
+<div class="youtube-related">
+  {%- youtubeEmbed "oCTAZumAGNc", "Empty-results Pagination (Weekly №11)", "207" -%}
+</div>
+
+
 ## Modifying the Data Set prior to Pagination
 
 ### Reverse the Data {% addedin "0.7.0" %}
@@ -786,3 +787,9 @@ Now `collections.myCollection` will have both output pages in the collection arr
 * `filter` (Array) {% addedin "0.4.0" %}
 * `reverse: true` (Boolean) {% addedin "0.7.0" %}
 * `addAllPagesToCollections: true` (Boolean) {% addedin "0.8.0" %}
+
+## Related
+
+<div class="youtube-related">
+  {%- youtubeEmbed "kUC87Zr0dKg", "Eleventy Build went from 54s to 17s—Pagination Memory/Performance Wins 🏆 (Weekly №10)", "344" -%}
+</div>

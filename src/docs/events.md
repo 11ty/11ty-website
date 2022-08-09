@@ -47,6 +47,10 @@ module.exports = function (eleventyConfig) {
 
 ## Event arguments {% addedin "2.0.0" %}
 
+<div class="youtube-related -small">
+  {%- youtubeEmbed "f0LsgyPV7j0", "New Event Arguments (Weekly №5)", "491" -%}
+</div>
+
 Eleventy now provides an object with metadata on the build as an argument to the `eleventy.before` and `eleventy.after` event callbacks.
 
 ```js

@@ -189,6 +189,11 @@ module.exports = function(eleventyConfig) {
 
 </details>
 
+<div class="youtube-related">
+  {%- youtubeEmbed "ZE5Np95-PeU", "The Dreaded Markdown Indented Code Blocks (Weekly №14)", "42" -%}
+</div>
+
+
 ## Why can’t I return markdown from paired shortcodes to use in a markdown file?
 
 <div class="elv-callout elv-callout-warn">This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</div>

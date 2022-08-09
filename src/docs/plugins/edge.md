@@ -10,6 +10,13 @@ overrideCommunityLinks: true
 
 {{ eleventyNavigation.excerpt }}
 
+<details>
+<summary>Expand for contents</summary>
+
+[[toc]]
+
+</details>
+
 {% callout "info" %}This feature is considered <strong>experimental</strong> and requires Eleventy <code>v2.0.0-canary.7</code> or higher. Our first release is limited to <a href="https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/">Netlify Edge Functions</a> support only.{% endcallout %}
 
 Eleventy Edge is an exciting new way to add dynamic content to your Eleventy templates. With a simple Eleventy shortcode you can opt-in a part of your Eleventy template to run on an Edge server, allowing your site to use dynamic, user-specific content!
@@ -22,16 +29,11 @@ Here are a few ideas:
 * Using Geolocation information to localize content
 * A zero-clientside JavaScript [Dark mode/Light mode toggle](https://demo-eleventy-edge.netlify.app/appearance/)
 
-## Contents
-
-<style>
-/* Hide link to Contents */
-.table-of-contents > ul > li:first-child {
-  display: none;
-}
-</style>
-
-[[toc]]
+<div class="youtube-related">
+  {%- youtubeEmbed "e8cx7NYlxX0", "Eleventy Edge (Weekly №8)", "151" -%}
+  {%- youtubeEmbed "rW_SqnvRDww", "Using Edge to save a Template Syntax preference (Weekly №9)", "269" -%}
+  {%- youtubeEmbed "oCTAZumAGNc", "Edge-powered Search (Weekly №11)", "405" -%}
+</div>
 
 ## Try out the demos
 

@@ -170,9 +170,9 @@ Learn more about:
   * [Dynamic Slugs and Serverless Global Data](/docs/plugins/serverless/#dynamic-slugs-and-serverless-global-data).
   * `event.queryStringParameters`, which are very similar to [URL.searchParams](https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams). It’s an object representing the name/value pairs for things after the `?` in a URL.
 
-Eleventy Leaderboards:
-
-* Upcoming versions of the [Eleventy Leaderboards](/speedlify/) will require that {% raw %}`<meta name="generator" content="{{ eleventy.generator }}">`{% endraw %} {% addedin "1.0.1" %} exist on the page’s markup to be valid for placement and ranking.
+<div class="youtube-related">
+  {%- youtubeEmbed "_YvwTHeqBZY", "eleventy.version and eleventy.generator Data (Weekly №7)", "235" -%}
+</div>
 
 ## Environment Variables on `process.env`
 

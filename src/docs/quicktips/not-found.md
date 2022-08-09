@@ -47,7 +47,7 @@ ErrorDocument 404 /404.html
 {% callout "info", "md" -%}
 If you’re using the new [Eleventy Dev Server](/docs/watch-serve/#eleventy-dev-server) {% addedin "2.0.0" %}, the `404.html` convention is now provided to you for free! You can skip this section!
 
-If you’d like to backport this functionality to Browsersync, keep reading. (Note also that you can [use Browsersync with Eleventy 2.0!](/docs/watch-serve/#swap-back-to-browsersync))
+If you’d like to backport this functionality to Browsersync, keep reading. (Note also that you can [use Browsersync with Eleventy 2.0!](/docs/dev-server/#swap-back-to-browsersync))
 {% endcallout %}
 
 If you're using Browsersync with Eleventy (with `eleventy --serve`), you can configure it to do the 404 routing by passing a callback in your config. Read more on [the BrowserSyncConfig option](/docs/config/#override-browsersync-server-options), the [Browsersync callbacks option](https://browsersync.io/docs/options#option-callbacks), and [how to provide a 404 using a Browsersync callback](https://github.com/browsersync/browser-sync/issues/1398).

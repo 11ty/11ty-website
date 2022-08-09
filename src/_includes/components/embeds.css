@@ -1,7 +1,11 @@
-lite-youtube {
+lite-youtube,
+is-land--lite-youtube {
 	max-width: 100%;
 	border-radius: .5em;
 	overflow: hidden;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 0 0;
 }
 /* Plugin bug: clicking the red youtube play icon in the center would navigate to youtube.com */
 lite-youtube:defined > .lty-playbtn {
@@ -9,14 +13,33 @@ lite-youtube:defined > .lty-playbtn {
 }
 
 /* Related video list */
+.youtube-related {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1em;
+	margin: 2em 0;
+}
 .youtube-related > * {
+	flex-grow: 1;
 	max-width: 20em; /* 320px /16 */
+}
+.youtube-related.-small > * {
+	max-width: 13em;
 }
 
 /* Watch on YouTube link */
-lite-youtube + a[href] {
+lite-youtube + a[href],
+is-land--lite-youtube + a[href] {
 	display: block;
 	text-align: center;
 	font-size: 0.875em; /* 14px /16 */
 	margin-top: 0.2857142857143em; /* 4px /14 */
+}
+
+/* Fluid is-land videos */
+is-land.fluid,
+is-land.fluid is-land--lite-youtube,
+is-land.fluid lite-youtube {
+	display: block;
+	aspect-ratio: 16 / 9;
 }

@@ -181,7 +181,7 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.setServerOptions({
 		showVersion: true,
-		domdiff: false,
+		// domdiff: false,
 	});
 
 	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
@@ -710,7 +710,14 @@ to:
 		}
 	})
 
-	eleventyConfig.addShortcode("youtubeEmbed", function(slug, startTime, label) {
+	eleventyConfig.addShortcode("youtubeEmbed", function(slug, label, startTime) {
+		let readableStartTime = "";
+		if(startTime) {
+			let t = parseInt(startTime, 10);
+			let minutes = Math.floor(t / 60);
+			let seconds = t % 60;
+			readableStartTime = `${minutes}m${seconds}s`;
+		}
 		let fallback = `https://i.ytimg.com/vi/${slug}/maxresdefault.jpg`;
 
 		// hard-coded fallback
@@ -718,9 +725,9 @@ to:
 			fallback = `https://img.youtube.com/vi/${slug}/hqdefault.jpg`;
 		}
 
-		return `<div><is-land on:visible import="/js/lite-yt-embed.js" class="fluid-width-video-wrapper"><lite-youtube videoid="${slug}"${startTime ? ` params="start=${startTime}"` : ""} playlabel="Play${label ? `: ${label}` : ""}" style="background-image:url('${fallback}')">
+		return `<div><is-land on:visible import="/js/lite-yt-embed.js" class="fluid"><lite-youtube videoid="${slug}"${startTime ? ` params="start=${startTime}"` : ""} playlabel="Play${label ? `: ${label}` : ""}" style="background-image:url('${fallback}')">
 	<a href="https://youtube.com/watch?v=${slug}" class="elv-externalexempt lty-playbtn" title="Play Video"><span class="lyt-visually-hidden">Play Video${label ? `: ${label}` : ""}</span></a>
-</lite-youtube><a href="https://youtube.com/watch?v=${slug}">Watch on YouTube</a></is-land></div>`;
+</lite-youtube><a href="https://youtube.com/watch?v=${slug}${startTime ? `&t=${startTime}` : ""}">${label || "Watch on YouTube"}${readableStartTime ? ` <code>▶${readableStartTime}</code>` : ""}</a></is-land></div>`;
 	});
 
 	eleventyConfig.addFilter("injectAvatars", function(content) {

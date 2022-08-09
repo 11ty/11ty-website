@@ -2,10 +2,17 @@
 pageTitle: Image
 eleventyNavigation:
   key: Image
-  order: 0
+  order: -.2
   excerpt: A utility to resize and generate images.
 communityLinksKey: image
 ---
+<details>
+<summary>Expand for contents</summary>
+
+[[toc]]
+
+</details>
+
 Low level utility to perform build-time image transformations for both vector and raster images. Output multiple sizes, save multiple formats, cache remote images locally. Uses the [sharp](https://sharp.pixelplumbing.com/) image processor.
 
 * [`eleventy-img` on GitHub](https://github.com/11ty/eleventy-img)
@@ -23,9 +30,6 @@ You maintain full control of the HTML. Use with `<picture>` or `<img>` or CSS `b
   * Manage the [cache duration](/docs/plugins/fetch/#change-the-cache-duration).
 * Fast: de-duplicates image requests and use both an in-memory and disk cache.
 
----
-
-[[toc]]
 
 ## Installation
 
@@ -560,6 +564,10 @@ With a template `my-blog-post.md` and an image file `my-blog-post.jpeg`, you cou
 Note this also means that `folder/folder.jpeg` would be processed for all templates in `folder/*` and any images stored in your global `_data` would also be populated into the data cascade based on their folder structure.
 
 </details>
+
+<div class="youtube-related">
+  {%- youtubeEmbed "oCTAZumAGNc", "Use images as data files (Weekly №11)", "244" -%}
+</div>
 
 ## Advanced Usage
 
