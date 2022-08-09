@@ -1,9 +1,9 @@
 ---
 eleventyNavigation:
   key: Performance
-  parent: Getting Started
+  parent: Overview
   excerpt: The build and site performance of Eleventy projects
-  order: 8
+  order: 3
 ---
 # Eleventy Performance
 
@@ -16,6 +16,10 @@ Eleventy is known for both its lightweight core in the form of speedy installs/b
 ## Site Performance
 
 Eleventy allows you full control over the output. That also means that by-default we do not include any costly runtime JavaScript bundles that often hamper site performance!
+
+{% callout "info", "md-block" %}
+* Have a look at our new [Partial Hydration `<is-land>` component](/docs/plugins/partial-hydration/)!
+{% endcallout %}
 
 Sites listed on the [Eleventy Leaderboards](/speedlify/) are tested and ranked (approximately) monthly as a fun community way to maintain speedy site performance for Eleventy sites.
 
