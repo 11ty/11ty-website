@@ -21,10 +21,16 @@ lite-youtube:defined > .lty-playbtn {
 }
 .youtube-related > * {
 	flex-grow: 1;
-	max-width: 20em; /* 320px /16 */
+	flex-basis: 12em;
 }
-.youtube-related.-small > * {
-	max-width: 13em;
+.youtube-related > :first-child:last-child {
+	max-width: 22em;
+}
+.elv-callout .youtube-related {
+	margin: .5em 0;
+}
+.elv-callout .youtube-related > :first-child:last-child {
+	max-width: 14em;
 }
 
 /* Watch on YouTube link */

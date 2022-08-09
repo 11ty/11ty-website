@@ -64,7 +64,7 @@ module.exports = function(eleventyConfig) {
 Try out the [`devcert-cli`](https://github.com/davewasmer/devcert-cli) package to generate a localhost key and certificate for `https` and HTTP/2.
 {%- endcallout %}
 
-<div class="youtube-related -small">
+<div class="youtube-related">
   {%- youtubeEmbed "wWs38M38vr8", "New Dev Server Preview (Weekly №3)" -%}
   {%- youtubeEmbed "7hER8HddlhQ", "Shipping the New Dev Server (Weekly №4)" -%}
   {%- youtubeEmbed "ZE5Np95-PeU", "Dev Server CLI (Weekly №14)", "463" -%}
@@ -105,7 +105,7 @@ module.exports = function(eleventyConfig) {
 
 View the [full list of Browsersync options](https://browsersync.io/docs/options).
 
-<div class="youtube-related -small">
+<div class="youtube-related">
   {%- youtubeEmbed "7hER8HddlhQ", "Fallback to browsersync (Weekly №4)", "235" -%}
 </div>
 
