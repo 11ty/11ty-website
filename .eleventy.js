@@ -6,7 +6,7 @@ const commaNumber = require("comma-number");
 const slugify = require("slugify");
 const lodashGet = require("lodash/get");
 const shortHash = require("short-hash");
-const markdownPlugin = require("./config/MarkdownPlugin.js");
+const markdownPlugin = require("./config/markdownPlugin.js");
 
 const { EleventyServerlessBundlerPlugin } = require("@11ty/eleventy");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
