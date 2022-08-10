@@ -125,10 +125,14 @@ const shortcodes = {
 		});
 	},
 	// size = "large"
-	getIndieAvatarHtml(iconUrl, size = "") {
+	getIndieAvatarHtml(iconUrl, cls = "") {
 		let imgHtml = "";
+		let dims = [150, 150];
+		if(cls === "avatar-tall") {
+			dims = [120, 150];
+		}
 		if(!iconUrl.startsWith("/")) {
-			imgHtml = `<img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(iconUrl)}/" width="150" height="150" alt="IndieWeb Avatar for ${iconUrl}" class="avatar avatar-indieweb${size ? ` avatar-${size}` : ""}" loading="lazy" decoding="async">`;
+			imgHtml = `<img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(iconUrl)}/" width="${dims[0]}" height="${dims[1]}" alt="IndieWeb Avatar for ${iconUrl}" class="avatar avatar-indieweb${cls ? ` ${cls}` : ""}" loading="lazy" decoding="async">`;
 		}
 		return imgHtml;
 	},
@@ -733,15 +737,15 @@ to:
 	eleventyConfig.addFilter("injectAvatars", function(content) {
 		return content
 			.split("Eleventy")
-			.join(shortcodes.getIndieAvatarHtml("https://www.11ty.dev/", "") + "Eleventy")
+			.join(shortcodes.getIndieAvatarHtml("https://www.11ty.dev/") + "Eleventy")
 			// .split("Astro")
-			// .join(shortcodes.getIndieAvatarHtml("https://astro.build/", "") + "Astro")
+			// .join(shortcodes.getIndieAvatarHtml("https://astro.build/") + "Astro")
 			// .split("Gatsby")
-			// .join(shortcodes.getIndieAvatarHtml("https://www.gatsbyjs.com/", "") + "Gatsby")
+			// .join(shortcodes.getIndieAvatarHtml("https://www.gatsbyjs.com/") + "Gatsby")
 			// .split("Next.js")
-			// .join(shortcodes.getIndieAvatarHtml("https://nextjs.org/", "") + "Next.js")
+			// .join(shortcodes.getIndieAvatarHtml("https://nextjs.org/") + "Next.js")
 			// .split("Remix")
-			// .join(shortcodes.getIndieAvatarHtml("https://remix.run/", "") + "Remix")
+			// .join(shortcodes.getIndieAvatarHtml("https://remix.run/") + "Remix")
 		})
 
 	return {
