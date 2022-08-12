@@ -10,6 +10,7 @@
     "check-links": "npx check-html-links _site",
     "build": "npx @11ty/eleventy",
     "start": "npx @11ty/eleventy --serve --port=8091",
+    "netlifystart": "npx netlify dev",
     "build-production": "npm run get-new-data && NODE_ENV=production npx @11ty/eleventy",
     "get-new-data": "rm -rf ./src/_data/builtwith/ && npx degit github:11ty/11ty-community/built-with-eleventy src/_data/builtwith/",
     "get-new-supporters": "eleventy && node node-supporters",
@@ -61,6 +62,7 @@
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.4",
     "markdown-it-table-of-contents": "^0.6.0",
+    "netlify-cli": "^10.17.2",
     "node-fetch": "^2.6.5",
     "prettier": "^2.7.1",
     "semver": "^7.3.7",
@@ -73,6 +75,7 @@
   "dependencies": {
     "@11ty/is-land": "^1.0.0",
     "@11ty/logo": "^2.0.6",
+    "@zachleat/details-utils": "^2.0.2",
     "@zachleat/filter-container": "^3.0.4",
     "@zachleat/seven-minute-tabs": "^2.0.0",
     "lite-youtube-embed": "^0.2.0",

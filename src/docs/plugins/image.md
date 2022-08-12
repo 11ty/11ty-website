@@ -422,30 +422,25 @@ Now you can use it in your templates:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#shortcode-njk" role="tab">Nunjucks</a>
-    <a href="#shortcode-liquid" role="tab">Liquid</a>
-    <a href="#shortcode-11tyjs" role="tab">11ty.js</a>
-  </div>
-  <div id="shortcode-njk" role="tabpanel">
-    {% codetitle "sample.njk" %}
-{%- highlight "jinja2" %}{% raw %}
-{% image "./src/images/cat.jpg", "photo of my cat" %}
-{% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
-{% endraw %}{% endhighlight %}
-    <p>The comma between arguments is <strong>required</strong> in Nunjucks templates.</p>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "shortcode"} %}
   <div id="shortcode-liquid" role="tabpanel">
-    {% codetitle "sample.liquid" %}
+    {% codetitle "Liquid", "Syntax" %}
 {%- highlight "liquid" %}{% raw %}
 {% image "./src/images/cat.jpg", "photo of my cat" %}
 {% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
 {% endraw %}{% endhighlight %}
     <p>The comma between arguments is <strong>optional</strong> in Liquid templates.</p>
   </div>
-  <div id="shortcode-11tyjs" role="tabpanel">
-    {% codetitle "sample.11ty.js" %}
+  <div id="shortcode-njk" role="tabpanel">
+    {% codetitle "Nunjucks", "Syntax" %}
+{%- highlight "jinja2" %}{% raw %}
+{% image "./src/images/cat.jpg", "photo of my cat" %}
+{% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
+{% endraw %}{% endhighlight %}
+    <p>The comma between arguments is <strong>required</strong> in Nunjucks templates.</p>
+  </div>
+  <div id="shortcode-js" role="tabpanel">
+    {% codetitle "JavaScript", "Syntax" %}
 {%- highlight "js" %}{% raw %}
 module.exports = function() {
   let img1 = await this.image("./src/images/cat.jpg", "photo of my cat");
@@ -455,6 +450,11 @@ module.exports = function() {
 ${img2}`;
 };
 {% endraw %}{% endhighlight %}
+  </div>
+  <div id="shortcode-hbs" role="tabpanel">
+
+This `image` shortcode example [requires an async-friendly template language](#asynchronous-usage) and is not available in Handlebars.
+
   </div>
 </seven-minute-tabs>
 </is-land>

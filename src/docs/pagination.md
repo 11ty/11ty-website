@@ -25,12 +25,7 @@ Consider the following template, which will result in two pages being created, e
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#paged-array-liquid" role="tab">Liquid</a>
-    <a href="#paged-array-njk" role="tab">Nunjucks</a>
-    <a href="#paged-array-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-array"} %}
   <div id="paged-array-liquid" role="tabpanel">
     {%- codetitle "paged.liquid" %}
     {%- highlight "liquid" %}
@@ -57,6 +52,9 @@ If the above file were named `paged.njk`, it would create two pages in your outp
 
 If the above file were named `paged.11ty.js`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
 
+  </div>
+  <div id="paged-array-hbs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -133,12 +131,7 @@ All of the examples thus far have paged Array data. Eleventy does allow paging o
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#pagedobj-liquid" role="tab">Liquid</a>
-    <a href="#pagedobj-njk" role="tab">Nunjucks</a>
-    <a href="#pagedobj-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedobj"} %}
   <div id="pagedobj-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -188,7 +181,10 @@ testdata:
 
   </div>
   <div id="pagedobj-js" role="tabpanel">
-    <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
+  <div id="pagedobj-hbs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -259,12 +255,7 @@ Your front matter would look like this:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#pagedatafile-liquid" role="tab">Liquid</a>
-    <a href="#pagedatafile-njk" role="tab">Nunjucks</a>
-    <a href="#pagedatafile-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedatafile"} %}
   <div id="pagedatafile-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -306,7 +297,10 @@ pagination:
 
   </div>
   <div id="pagedatafile-js" role="tabpanel">
-    <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
+  <div id="pagedatafile-hbs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -382,12 +376,7 @@ Ok, so `pagination.items[0]` is ugly. We provide an option to alias this to some
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#pagedalias-liquid" role="tab">Liquid</a>
-    <a href="#pagedalias-njk" role="tab">Nunjucks</a>
-    <a href="#pagedalias-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedalias"} %}
   <div id="pagedalias-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -431,7 +420,10 @@ You can use the alias in your content too {{ wonder }}.
 
   </div>
   <div id="pagedalias-js" role="tabpanel">
-    <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
+  <div id="pagedalias-hbs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -445,12 +437,7 @@ If your chunk `size` is greater than 1, the alias will be an array instead of a 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#pagedchunk-liquid" role="tab">Liquid</a>
-    <a href="#pagedchunk-njk" role="tab">Nunjucks</a>
-    <a href="#pagedchunk-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedchunk"} %}
   <div id="pagedchunk-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -498,7 +485,10 @@ You can use the alias in your content too {{ wonder[0] }}.
 
   </div>
   <div id="pagedchunk-js" role="tabpanel">
-    <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
+  <div id="pagedchunk-hbs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -512,12 +502,7 @@ If you’d like to make a paginated list of all of your blog posts (any content 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#pagedcollection-liquid" role="tab">Liquid</a>
-    <a href="#pagedcollection-njk" role="tab">Nunjucks</a>
-    <a href="#pagedcollection-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedcollection"} %}
   <div id="pagedcollection-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -565,7 +550,10 @@ pagination:
 
   </div>
   <div id="pagedcollection-js" role="tabpanel">
-    <p><em>This example has not yet been added. Do you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
+  <div id="pagedcollection-hbs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 </is-land>

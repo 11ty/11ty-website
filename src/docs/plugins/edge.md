@@ -197,12 +197,7 @@ Here we are making a simple template file. We can use the `{% raw %}{% edge %}{%
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#edgetmpl-liquid" role="tab">Liquid</a>
-    <a href="#edgetmpl-njk" role="tab">Nunjucks</a>
-    <a href="#edgetmpl-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "edgetmpl"} %}
   <div id="edgetmpl-liquid" role="tabpanel">
 
 {% codetitle "index.liquid" %}
@@ -257,6 +252,11 @@ ${await this.edge(`The content inside of this.edge() is generated on the Edge.
 {% endraw %}
   As documented in [Limitations](#limitations), we are using `liquid` here because `11ty.js` is not _yet_ supported as an Edge content target.
   </div>
+  <div id="edgetmpl-hbs" role="tabpanel">
+
+The `edge` shortcode [requires an async-friendly template language](#limitations) and is not available in Handlebars.
+
+  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -291,12 +291,7 @@ In what might feel familiar to folks that have used the [Render plugin](/docs/pl
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#edgelang-liquid" role="tab">Liquid</a>
-    <a href="#edgelang-njk" role="tab">Nunjucks</a>
-    <a href="#edgelang-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "edgelang"} %}
   <div id="edgelang-liquid" role="tabpanel">
 {% codetitle "index.liquid" %}
 
@@ -332,6 +327,11 @@ ${await this.edge("# Markdown heading", "md")}
 ```
 {% endraw %}
   </div>
+  <div id="edgelang-hbs" role="tabpanel">
+
+The `edge` shortcode [requires an async-friendly template language](#limitations) and is not available in Handlebars.
+
+  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -343,12 +343,7 @@ When the build data argument is a literal (a string or number), it is mapped to 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#edgedata-liquid" role="tab">Liquid</a>
-    <a href="#edgedata-njk" role="tab">Nunjucks</a>
-    <a href="#edgedata-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "edgedata"} %}
   <div id="edgedata-liquid" role="tabpanel">
 
 {% codetitle "index.liquid" %}
@@ -397,7 +392,11 @@ ${await this.edge("# Markdown heading for {{ _ }}", "liquid,md", data.name)}
 ```
 {% endraw %}
   </div>
+  <div id="edgedata-hbs" role="tabpanel">
 
+The `edge` shortcode [requires an async-friendly template language](#limitations) and is not available in Handlebars.
+
+  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -405,12 +404,7 @@ When the build data argument is an object, the object properties are available a
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#edgedataobj-liquid" role="tab">Liquid</a>
-    <a href="#edgedataobj-njk" role="tab">Nunjucks</a>
-    <a href="#edgedataobj-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "edgedataobj"} %}
   <div id="edgedataobj-liquid" role="tabpanel">
 {% codetitle "index.liquid" %}
 
@@ -459,6 +453,11 @@ ${await this.edge("# Markdown heading for {{ name }}", "liquid,md", data.buildDa
 };
 ```
 {% endraw %}
+  </div>
+  <div id="edgedataobj-hbs" role="tabpanel">
+
+The `edge` shortcode [requires an async-friendly template language](#limitations) and is not available in Handlebars.
+
   </div>
 </seven-minute-tabs>
 </is-land>

@@ -8,7 +8,7 @@ const lodashGet = require("lodash/get");
 const shortHash = require("short-hash");
 const markdownPlugin = require("./config/markdownPlugin.js");
 
-const { EleventyServerlessBundlerPlugin } = require("@11ty/eleventy");
+const { EleventyServerlessBundlerPlugin, EleventyEdgePlugin, EleventyRenderPlugin } = require("@11ty/eleventy");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
@@ -207,6 +207,9 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(addedInLocalPlugin);
 	eleventyConfig.addPlugin(monthDiffPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
+	eleventyConfig.addPlugin(EleventyRenderPlugin);
+
+	eleventyConfig.addPlugin(EleventyEdgePlugin);
 
 	eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
 		name: "serverless",
@@ -342,7 +345,10 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addFilter("humanReadableNum", function(num) {
-		return HumanReadable.toHumanString(num);
+		if(num || num === 0) {
+			return HumanReadable.toHumanString(num);
+		}
+		return "";
 	});
 
 	eleventyConfig.addFilter("commaNumber", function(num) {

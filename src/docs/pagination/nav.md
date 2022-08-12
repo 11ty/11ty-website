@@ -16,10 +16,37 @@ How to create a list of links to every paginated page on a pagination template.
 
 Consider the following example paginating our `testdata` array:
 
+<seven-minute-tabs>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paginationnavarray"} %}
+  <div id="paginationnavarray-liquid" role="tabpanel">
+
+{% codetitle "Liquid", "Syntax" %}
+
+{% raw %}
+```liquid
+---
+pagination:
+  data: testdata
+  size: 2
+testdata:
+ - item1
+ - item2
+ - item3
+ - item4
+ - item5
+ - item6
+---
+{% comment %}pagination.items has the data for the current page{% endcomment %}
+```
+{% endraw %}
+
+  </div>
+  <div id="paginationnavarray-njk" role="tabpanel">
+
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
-```markdown
+```jinja2
 ---
 pagination:
   data: testdata
@@ -35,6 +62,16 @@ testdata:
 {# pagination.items has the data for the current page #}
 ```
 {% endraw %}
+
+  </div>
+  <div id="paginationnavarray-js" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
+  <div id="paginationnavarray-hbs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
+</seven-minute-tabs>
+
 
 The above example would make three different output files from the template.
 
@@ -64,10 +101,9 @@ Alright, you definitely read all of those right? 😇 Here’s some accessible c
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#paged-nav-starter-njk" role="tab">Nunjucks</a>
-    <a href="#paged-nav-starter-11tyjs" role="tab">11ty.js</a>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-nav-starter", valid: "njk,js" } %}
+  <div id="paged-nav-starter-liquid" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
   <div id="paged-nav-starter-njk" role="tabpanel">
     {%- codetitle "starter.njk" %}
@@ -75,11 +111,14 @@ Alright, you definitely read all of those right? 😇 Here’s some accessible c
     {%- include "examples/pagination/nav/starter.njk" %}
     {%- endhighlight %}
   </div>
-  <div id="paged-nav-starter-11tyjs" role="tabpanel">
+  <div id="paged-nav-starter-js" role="tabpanel">
     {%- codetitle "starter.11ty.js" %}
     {%- highlight "js" %}
     {%- include "examples/pagination/nav/starter.11ty.js" %}
     {%- endhighlight %}
+  </div>
+  <div id="paged-nav-starter-hbs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -119,16 +158,32 @@ testdata:
   - item6
 ```
 
+
+<seven-minute-tabs>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagenavorig", valid: "njk"} %}
+  <div id="pagenavorig-liquid" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
+  <div id="pagenavorig-njk" role="tabpanel">
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
-```html
+```jinja2
 <!-- Don’t copy this code, it’s been simplified for clarity -->
 {% for pageEntry in pagination.pages %}
 <a href="{{ pagination.hrefs[ loop.index0 ] }}">Page {{ loop.index }}</a>
 {% endfor %}
 ```
 {% endraw %}
+  </div>
+  <div id="pagenavorig-js" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
+  <div id="pagenavorig-hbs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
+</seven-minute-tabs>
+
 
 * When `size` is set to 2, `pagination.pages` will look like: `[['item1', 'item2'], ['item3', 'item4'], ['item5', 'item6']]`
   - Use `pageEntry[0]` and `pageEntry[1]` to access the original content.
@@ -149,16 +204,31 @@ testdata:
   key6: item6
 ```
 
+
+<seven-minute-tabs>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagenavobjectlit", valid: "njk"} %}
+  <div id="pagenavobjectlit-liquid" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
+  <div id="pagenavobjectlit-njk" role="tabpanel">
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
-```html
+```jinja2
 <!-- Don’t copy this code, it’s been simplified for clarity -->
 {% for pageKey in pagination.pages %}
 <a href="{{ pagination.hrefs[ loop.index0 ] }}">Page {{ loop.index }}</a>
 {% endfor %}
 ```
 {% endraw %}
+  </div>
+  <div id="pagenavobjectlit-js" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
+  <div id="pagenavobjectlit-hbs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
+</seven-minute-tabs>
 
 * When `size` is set to 2, `pagination.pages` will look like: `[['key1', 'key2'], ['key3', 'key4'], ['key5', 'key6']]`
   - Use `testdata[ pageKey[0] ]` and `testdata[ pageKey[1] ]` to access the original content.
@@ -185,22 +255,24 @@ Note that if the current page (`page.url`) is the first or last in the set, we w
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#paged-nav-nextprev-njk" role="tab">Nunjucks</a>
-    <a href="#paged-nav-nextprev-11tyjs" role="tab">11ty.js</a>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-nav-nextprev", valid: "njk,js"} %}
+  <div id="paged-nav-nextprev-liquid" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
   <div id="paged-nav-nextprev-njk" role="tabpanel">
     {%- codetitle "nextprev.njk" %}
-    {%- highlight "html 3,7" %}
+    {%- highlight "jinja2 3,7" %}
     {%- include "examples/pagination/nav/nextprev.njk" %}
     {%- endhighlight %}
   </div>
-  <div id="paged-nav-nextprev-11tyjs" role="tabpanel">
+  <div id="paged-nav-nextprev-js" role="tabpanel">
     {%- codetitle "nextprev.11ty.js" %}
     {%- highlight "js" %}
     {%- include "examples/pagination/nav/nextprev.11ty.js" %}
     {%- endhighlight %}
+  </div>
+  <div id="paged-nav-nextprev-hbs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -213,22 +285,24 @@ For clarity here, we’re omitting the previous and next links from the previous
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#paged-nav-firstlast-njk" role="tab">Nunjucks</a>
-    <a href="#paged-nav-firstlast-11tyjs" role="tab">11ty.js</a>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-nav-firstlast", valid: "njk,js"} %}
+  <div id="paged-nav-firstlast-liquid" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
   <div id="paged-nav-firstlast-njk" role="tabpanel">
     {%- codetitle "firstlast.njk" %}
-    {%- highlight "html 3,7" %}
+    {%- highlight "jinja2 3,7" %}
     {%- include "examples/pagination/nav/firstlast.njk" %}
     {%- endhighlight %}
   </div>
-  <div id="paged-nav-firstlast-11tyjs" role="tabpanel">
+  <div id="paged-nav-firstlast-js" role="tabpanel">
     {%- codetitle "firstlast.11ty.js" %}
     {%- highlight "js" %}
     {%- include "examples/pagination/nav/firstlast.11ty.js" %}
     {%- endhighlight %}
+  </div>
+  <div id="paged-nav-firstlast-hbs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -239,23 +313,26 @@ Here’s the final pagination navigation template code, pieced together:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#paged-nav-combined-njk" role="tab">Nunjucks</a>
-    <a href="#paged-nav-combined-11tyjs" role="tab">11ty.js</a>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-nav-combined", valid: "njk,js"} %}
+  <div id="paged-nav-combined-liquid" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
   <div id="paged-nav-combined-njk" role="tabpanel">
     {%- codetitle "combined.njk" %}
-    {%- highlight "html" %}
+    {%- highlight "jinja2" %}
     {%- include "examples/pagination/nav/combined.njk" %}
     {%- endhighlight %}
   </div>
-  <div id="paged-nav-combined-11tyjs" role="tabpanel">
+  <div id="paged-nav-combined-js" role="tabpanel">
     {%- codetitle "combined.11ty.js" %}
     {%- highlight "js" %}
     {%- include "examples/pagination/nav/combined.11ty.js" %}
     {%- endhighlight %}
   </div>
+  <div id="paged-nav-combined-hbs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
+
 </seven-minute-tabs>
 </is-land>
 
@@ -271,6 +348,8 @@ Alright, you’ve copied the above—but don’t leave yet—*your work is not d
 {% callout "info" %}<strong>Accessibility tip</strong>: if you style this list with <code>list-style-type: none</code>, read <a href="https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/">this article about VoiceOver</a>{% endcallout %}
 
 All of the above will output the following HTML for our example (on the first page of the set):
+
+{% callout "demo" %}
 
 {% codetitle "HTML", "Syntax" %}
 
@@ -288,3 +367,5 @@ All of the above will output the following HTML for our example (on the first pa
   </ol>
 </nav>
 ```
+
+{% endcallout %}
