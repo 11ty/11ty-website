@@ -74,7 +74,7 @@ const markdownItEmoji = require("markdown-it-emoji");
 
 module.exports = function(eleventyConfig) {
   // New in 2.0
-  eleventyConfig.amendLibrary("md", mdLib => mdLib.use(markdownItEmoji);
+  eleventyConfig.amendLibrary("md", mdLib => mdLib.use(markdownItEmoji));
 };
 ```
 
