@@ -40,6 +40,7 @@ Here are a few ideas:
 * [Eleventy Edge demos using Netlify’s Edge Functions](https://demo-eleventy-edge.netlify.app/).
   * Read the [`demo-eleventy-edge` Source Code on GitHub](https://github.com/11ty/demo-eleventy-edge)
 * [Eleventy Edge search on `eleventy-base-blog`](https://demo-edge-search--eleventy-base-blog.netlify.app/search/?q=first) with [Source code](https://github.com/11ty/eleventy-base-blog/compare/demo-edge-search)
+* The template language syntax tabs on this very web site are rendered using the Edge plugin (here’s [one small example on this very page](#5.-make-your-content-template)). Try saving your template language syntax preference to persist in examples throughout the site. Learn more at [`11ty-website/#1462` on GitHub](https://github.com/11ty/11ty-website/pull/1462).
 
 ## How does it work?
 
