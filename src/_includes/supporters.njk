@@ -1,4 +1,4 @@
-<div class="facepile-fullwidth supporters-gold lo">
+<div class="fullwidth-module supporters-gold lo">
 	{%- for supporter in opencollective.supporters %}{% if supporter.tier.slug == "gold-sponsor" and supporter.isMonthly -%}
 	{%- set nameToSlug = supporter.name | slug | lower -%}
 	<div class="lo-c{% if opencollectiveExtra[nameToSlug].containerClass %} {{ opencollectiveExtra[nameToSlug].containerClass }}{% endif %}">
@@ -8,5 +8,8 @@
 	{%- endif %}{% endfor %}
 </div>
 
-<!-- TODO some kind of aspect ratio? -->
-<div data-import="/imports/supporters.html" class="facepile-fullwidth"></div>
+<div class="fullwidth-module">
+  <is-land on:visible on:save-data="false">
+    <html-fetch target="is-land" src="/imports/supporters.html"></html-fetch>
+  </is-land>
+</div>

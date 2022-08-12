@@ -20,6 +20,10 @@ eleventyNavigation:
 ```liquid
 {% assign previousPost = collections.posts | getPreviousCollectionItem: page %}
 {% assign nextPost = collections.posts | getNextCollectionItem: page %}
+
+<!-- in 2.0 the page argument is optional -->
+{% assign previousPost = collections.posts | getPreviousCollectionItem %}
+{% assign nextPost = collections.posts | getNextCollectionItem %}
 ```
 {% endraw %}
 
@@ -32,6 +36,10 @@ eleventyNavigation:
 ```jinja2
 {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
 {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+
+<!-- in 2.0 the page argument is optional -->
+{% set previousPost = collections.posts | getPreviousCollectionItem %}
+{% set nextPost = collections.posts | getNextCollectionItem %}
 ```
 {% endraw %}
 
@@ -43,7 +51,7 @@ eleventyNavigation:
 
 Useful when you’d like to link to the previous or next template in your collection:
 
-
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "nextprevlink"} %}
   <div id="nextprevlink-liquid" role="tabpanel">
@@ -74,6 +82,7 @@ Useful when you’d like to link to the previous or next template in your collec
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 The [Collections documentation](/docs/collections/#sorting) outlines the default sorting algorithm and how to override it.
 
@@ -81,7 +90,7 @@ The [Collections documentation](/docs/collections/#sorting) outlines the default
 
 For completeness, a `getCollectionItem` filter is also included that fetches the current page from a collection.
 
-
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "getitem"} %}
   <div id="getitem-liquid" role="tabpanel">
@@ -91,6 +100,9 @@ For completeness, a `getCollectionItem` filter is also included that fetches the
 {% raw %}
 ```liquid
 {% assign currentPost = collections.posts | getCollectionItem: page %}
+
+<!-- in 2.0 the page argument is optional -->
+{% assign currentPost = collections.posts | getCollectionItem %}
 ```
 {% endraw %}
 
@@ -102,6 +114,9 @@ For completeness, a `getCollectionItem` filter is also included that fetches the
 {% raw %}
 ```jinja2
 {% set currentPost = collections.posts | getCollectionItem(page) %}
+
+<!-- in 2.0 the page argument is optional -->
+{% set currentPost = collections.posts | getCollectionItem %}
 ```
 {% endraw %}
 
@@ -110,6 +125,7 @@ For completeness, a `getCollectionItem` filter is also included that fetches the
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 
 * [← Back to Filters documentation.](/docs/filters/)

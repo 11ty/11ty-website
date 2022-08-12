@@ -10,6 +10,13 @@ overrideCommunityLinks: true
 
 {{ eleventyNavigation.excerpt }}
 
+<details>
+<summary>Expand for contents</summary>
+
+[[toc]]
+
+</details>
+
 {% callout "info" %}This feature is considered <strong>experimental</strong> and requires Eleventy <code>v2.0.0-canary.7</code> or higher. Our first release is limited to <a href="https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/">Netlify Edge Functions</a> support only.{% endcallout %}
 
 Eleventy Edge is an exciting new way to add dynamic content to your Eleventy templates. With a simple Eleventy shortcode you can opt-in a part of your Eleventy template to run on an Edge server, allowing your site to use dynamic, user-specific content!
@@ -22,26 +29,21 @@ Here are a few ideas:
 * Using Geolocation information to localize content
 * A zero-clientside JavaScript [Dark mode/Light mode toggle](https://demo-eleventy-edge.netlify.app/appearance/)
 
-## Contents
-
-<style>
-/* Hide link to Contents */
-.table-of-contents > ul > li:first-child {
-  display: none;
-}
-</style>
-
-[[toc]]
+<div class="youtube-related">
+  {%- youtubeEmbed "e8cx7NYlxX0", "Eleventy Edge (Weekly №8)", "151" -%}
+  {%- youtubeEmbed "rW_SqnvRDww", "Using Edge to save a Template Syntax preference (Weekly №9)", "269" -%}
+  {%- youtubeEmbed "oCTAZumAGNc", "Edge-powered Search (Weekly №11)", "405" -%}
+</div>
 
 ## Try out the demos
 
-Try out the [Eleventy Edge demos using Netlify’s Edge Functions](https://demo-eleventy-edge.netlify.app/).
-
-Read the [`demo-eleventy-edge` Source Code on GitHub](https://github.com/11ty/demo-eleventy-edge)
+* [Eleventy Edge demos using Netlify’s Edge Functions](https://demo-eleventy-edge.netlify.app/).
+  * Read the [`demo-eleventy-edge` Source Code on GitHub](https://github.com/11ty/demo-eleventy-edge)
+* [Eleventy Edge search on `eleventy-base-blog`](https://demo-edge-search--eleventy-base-blog.netlify.app/search/?q=first) with [Source code](https://github.com/11ty/eleventy-base-blog/compare/demo-edge-search)
 
 ## How does it work?
 
-Don’t already have an Eleventy project? Let’s go through the [Getting Started Guide first](/docs/getting-started/) and come back here when you’re done!
+If you don’t yet have an Eleventy project, go through the [Getting Started Guide first](/docs/getting-started/) and come back here when you’re done!
 
 ### 1. Installation
 
@@ -134,15 +136,19 @@ export default async (request, context) => {
 
 </details>
 
-{% callout "warn", "md" %}If you tried Eleventy Edge on `2.0.0-canary.6`, unfortunately [we had to restructure some deps](https://github.com/11ty/eleventy/issues/2335#issuecomment-1104470515) and the Edge Function `import` URLs are different starting with `2.0.0-canary.7`. The good news is that Eleventy will generate a working file for you! Sorry folks!
-{% endcallout %}
+<details>
+<summary>Expand to read a warning about Edge on Eleventy <code>2.0.0-canary.6</code></summary>
+
+{% callout "warn", "md" %}If you tried Eleventy Edge on `2.0.0-canary.6`, unfortunately [we had to restructure some deps](https://github.com/11ty/eleventy/issues/2335#issuecomment-1104470515) and the Edge Function `import` URLs are different starting with `2.0.0-canary.7`. The good news is that Eleventy will generate a working file for you! Sorry folks!{% endcallout %}
+
+</details>
 
 
 #### Read more about Netlify’s Edge Functions
 
-* {% indieweblink "Netlify Docs: Edge Functions overview", "https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/" %}
+* [Netlify Docs: Edge Functions overview](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/)
 * {% indieweblink "Netlify Edge Functions on Deno Deploy", "https://deno.com/blog/netlify-edge-functions-on-deno-deploy" %}
-* {% indieweblink "Netlify Edge Functions: A new serverless runtime powered by Deno", "https://www.netlify.com/blog/announcing-serverless-compute-with-edge-functions" %}
+* [Netlify Edge Functions: A new serverless runtime powered by Deno](https://www.netlify.com/blog/announcing-serverless-compute-with-edge-functions)
 
 
 ### 3. Additions to `.gitignore`
@@ -189,6 +195,7 @@ path = "/*"
 
 Here we are making a simple template file. We can use the `{% raw %}{% edge %}{% endraw %}` shortcode to run the Liquid template syntax inside on the Edge server.
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "edgetmpl"} %}
   <div id="edgetmpl-liquid" role="tabpanel">
@@ -233,15 +240,13 @@ The content inside of the `edge` shortcode is generated on the Edge.
 
 {% raw %}
 ```js
-module.exports = function(data) {
+module.exports = async function(data) {
   return `The content outside of the \`edge\` shortcode is generated with the Build.
 
-${await this.edge(`The content inside of the \`edge\` shortcode is generated on the Edge.
-
+${await this.edge(`The content inside of this.edge() is generated on the Edge.
 <pre>
 {{ eleventy | json }}
-</pre>
-{% endedge %}`, "liquid")}`;
+</pre>, "liquid")}`;
 };
 ```
 {% endraw %}
@@ -253,6 +258,7 @@ The `edge` shortcode [requires an async-friendly template language](#limitations
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 Learn more about [the `edge` shortcode](#edge-shortcode-examples).
 
@@ -283,6 +289,7 @@ In what might feel familiar to folks that have used the [Render plugin](/docs/pl
 
 {% callout "info", "md" %}If you use the `edge` shortcode inside of a [layout file](/docs/layouts/), it’s best to explicitly specify the template language!{% endcallout %}
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "edgelang"} %}
   <div id="edgelang-liquid" role="tabpanel">
@@ -326,6 +333,7 @@ The `edge` shortcode [requires an async-friendly template language](#limitations
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 #### Passing Build-time Data to your Edge Function
 
@@ -333,6 +341,7 @@ Edge content is a separate template, processed and built on the Edge. As such it
 
 When the build data argument is a literal (a string or number), it is mapped to `_` in the template.
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "edgedata"} %}
   <div id="edgedata-liquid" role="tabpanel">
@@ -389,9 +398,11 @@ The `edge` shortcode [requires an async-friendly template language](#limitations
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 When the build data argument is an object, the object properties are available as top-level globals in the template.
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "edgedataobj"} %}
   <div id="edgedataobj-liquid" role="tabpanel">
@@ -449,6 +460,88 @@ The `edge` shortcode [requires an async-friendly template language](#limitations
 
   </div>
 </seven-minute-tabs>
+</is-land>
+
+#### Add Global Data to your Edge Function
+
+If you open up your generated `netlify/edge-functions/eleventy-edge.js` file, you’ll notice that you are able to run your own arbitrary configuration code on Edge. This means you can run `eleventyConfig.addGlobalData` to add your own global data to the edge templates {% addedin "2.0.0-canary.11" %}. Any data you add here will automatically be available as a global inside of any `{% raw %}{% edge %}{% endraw %}` shortcodes _without having to pass it as an argument_.
+
+{% codetitle "netlify/edge-functions/eleventy-edge.js" %}
+
+{% raw %}
+```diff-js
+ import { EleventyEdge } from "eleventy:edge";
+ import precompiledAppData from "./_generated/eleventy-edge-app-data.js";
++import searchData from "./_generated/search-data.js";
+
+ export default async (request, context) => {
+  try {
+    let edge = new EleventyEdge("edge", {
+      request,
+      context,
+      precompiled: precompiledAppData,
+    });
+
+    edge.config((eleventyConfig) => {
++      eleventyConfig.addGlobalData("search", searchData);
+    });
+
+    return await edge.handleResponse();
+  } catch (e) {
+    console.log("ERROR", { e });
+    return context.next(e);
+  }
+ };
+```
+{% endraw %}
+
+Notably, the above adds a `search` global from a file we’ve created to populate search data. Now we can reference it in our templates like so:
+
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Choose a template language">
+    View this example in:
+    <a href="#edgeglobaldata-liquid" role="tab">Liquid</a>
+    <a href="#edgeglobaldata-njk" role="tab">Nunjucks</a>
+    <a href="#edgeglobaldata-js" role="tab">11ty.js</a>
+  </div>
+  <div id="edgeglobaldata-liquid" role="tabpanel">
+{% codetitle "index.liquid" %}
+
+{% raw %}
+```liquid
+{% edge "liquid" %}
+{{ search | json }}
+{% endedge %}
+```
+{% endraw %}
+  </div>
+  <div id="edgeglobaldata-njk" role="tabpanel">
+{% codetitle "index.njk" %}
+
+{% raw %}
+```jinja2
+{% edge "liquid" %}
+{{ search | json }}
+{% endedge %}
+```
+{% endraw %}
+  </div>
+  <div id="edgeglobaldata-js" role="tabpanel">
+{% codetitle "index.11ty.js" %}
+
+{% raw %}
+```js
+module.exports.render = async function(data) {
+  return `
+${await this.edge("{{ search | json }}", "liquid")}
+`;
+};
+```
+{% endraw %}
+  </div>
+</seven-minute-tabs>
+</is-land>
 
 ## Frequently Asked Questions
 

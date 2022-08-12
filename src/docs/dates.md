@@ -33,8 +33,10 @@ Valid `date` values:
 * `Created`: automatically resolves to the file’s created date (default, this is what is used when `date` is omitted).
 * `git Last Modified`: {% addedin "1.0.1" %} automatically resolves to the file’s latest git commit. If a file is not yet checked in to git, it assigns `Date.now()` to `page.date` instead.
   * This one is a bit resource intensive, so you may want to limit this to your CI server environment only using JavaScript data files and [Environment Variables](/docs/environment-vars/). Check out [this real-world directory data file](https://github.com/11ty/11ty-website/blob/5403f2b853e09165bec8bc6f7466a6a041487bcc/src/docs/docs.11tydata.js#L5-L7).
+* `git Created`: {% addedin "2.0.0" %} automatically resolves to the file’s first git commit. It uses git's `--follow` flag to make a "best effort" renaming tracking. If a file is not yet checked in to git, it assigns `Date.now()` to `page.date` instead.
+  * This one is a bit resource intensive, so you may want to limit this to your CI server environment only using JavaScript data files and [Environment Variables](/docs/environment-vars/). Check out [this real-world directory data file](https://github.com/11ty/11ty-website/blob/5403f2b853e09165bec8bc6f7466a6a041487bcc/src/docs/docs.11tydata.js#L5-L7).
 * `2016-01-01` or any other valid [YAML date value](https://yaml.org/type/timestamp.html) (leaving off the time assumes midnight in UTC, or `00:00:00Z`)
-* `"2016-01-01"` or any other valid UTC **string** that [Luxon’s `DateTime.fromISO`](https://moment.github.io/luxon/#/parsing?id=iso-8601) can parse (see also the [Luxon API docs](https://moment.github.io/luxon/api-docs/index.html#datetimefromiso)).
+* `"2016-01-01"` or any other valid ISO 8601 **string** that [Luxon’s `DateTime.fromISO`](https://moment.github.io/luxon/#/parsing?id=iso-8601) can parse (see also the [Luxon API docs](https://moment.github.io/luxon/api-docs/index.html#datetimefromiso)).
 
 If a `date` key is omitted from the file, we then look for a `YYYY-MM-DD` format anywhere in the file path (even folders). If there are multiple dates found, the first is used. ℹ️ [Note that starting in 1.0 for consistency with front matter formats file name date formats are now assumed to be UTC.](https://github.com/11ty/eleventy/pull/1752)
 

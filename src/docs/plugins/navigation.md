@@ -171,6 +171,7 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
 ### Output HTML
 
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navtohtml"} %}
   <div id="navtohtml-liquid" role="tabpanel">
@@ -202,11 +203,13 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
     <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 ### To Markdown
 
 {% addedin "Navigation 0.3.1" %}
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navtomd"} %}
   <div id="navtomd-liquid" role="tabpanel">
@@ -238,6 +241,7 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
     <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 ## Advanced: Rendering the Navigation Bar (Deep Dive)
 
@@ -250,6 +254,7 @@ The `eleventyNavigation` filter returns a _sorted_ array of objects with `url` a
 For our documented templates above with the following template:
 
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navrender"} %}
   <div id="navrender-liquid" role="tabpanel">
@@ -283,6 +288,7 @@ For our documented templates above with the following template:
     <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 
 {% callout "info" %}Note that you can also pass any collection into <code>eleventyNavigation</code>. It doesn’t have to be <code>collections.all</code>!{% endcallout %}
@@ -318,6 +324,7 @@ Shows that `navPages` has the following structure:
 Just show the children of a specific key, pass a key to `eleventyNavigation`:
 
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navrenderbranch"} %}
   <div id="navrenderbranch-liquid" role="tabpanel">
@@ -351,6 +358,7 @@ Just show the children of a specific key, pass a key to `eleventyNavigation`:
     <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 ```json
 [
@@ -374,6 +382,7 @@ Just show the children of a specific key, pass a key to `eleventyNavigation`:
 You can also render only the parents of a specific key too, to make breadcrumb navigation. Pass a key to `eleventyNavigationBreadcrumb` like this:
 
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navbread"} %}
   <div id="navbread-liquid" role="tabpanel">
@@ -407,6 +416,7 @@ You can also render only the parents of a specific key too, to make breadcrumb n
     <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 And an array of all the parents of the Bats entry will be returned (top-most parent is first):
 
@@ -423,6 +433,7 @@ And an array of all the parents of the Bats entry will be returned (top-most par
 ##### Include the current page in breadcrumb results
 
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navbreadself"} %}
   <div id="navbreadself-liquid" role="tabpanel">
@@ -460,6 +471,53 @@ navOptions:
     <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
+
+##### Allow missing pages (nodes) in breadcrumbs
+
+{% addedin "Navigation 0.3.3" %}
+
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs>
+  <div role="tablist" aria-label="Template Language Chooser">
+    View this example in:
+    <a href="#navbreadmissing-liquid" role="tab">Liquid</a>
+    <a href="#navbreadmissing-njk" role="tab">Nunjucks</a>
+    <a href="#navbreadmissing-js" role="tab">11ty.js</a>
+  </div>
+  <div id="navbreadmissing-liquid" role="tabpanel">
+
+{% codetitle "Liquid", "Syntax" %}
+
+{% raw %}
+```liquid
+---
+navOptions:
+  allowMissing: true
+---
+{% assign navPages = collections.all | eleventyNavigationBreadcrumb: "Does not exist", navOptions %}
+{{ navPages | json }}
+```
+{% endraw %}
+
+  </div>
+  <div id="navbreadmissing-njk" role="tabpanel">
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```jinja2
+{% set navPages = collections.all | eleventyNavigationBreadcrumb("Does not exist", { allowMissing: true }) %}
+{{ navPages | dump | safe }}
+```
+{% endraw %}
+
+  </div>
+  <div id="navbreadmissing-js" role="tabpanel">
+    <p>This plugin does not yet include <code>11ty.js</code> compatibility!</p>
+  </div>
+</seven-minute-tabs>
+</is-land>
 
 
 ### Render the menu items using the `eleventyNavigationToHtml` or `eleventyNavigationToMarkdown` Filters
@@ -473,6 +531,7 @@ With the Navigation structure returned from `eleventyNavigation` or `eleventyNav
 The `eleventyNavigationToMarkdown` filter is {% addedin "Navigation 0.3.1" %}.
 
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navrenderfilter"} %}
   <div id="navrenderfilter-liquid" role="tabpanel">
@@ -512,6 +571,7 @@ The `eleventyNavigationToMarkdown` filter is {% addedin "Navigation 0.3.1" %}.
     <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 #### Showing excerpts
 
@@ -528,6 +588,7 @@ eleventyNavigation:
 When you render a navigation list, pass `showExcerpt: true` to the `eleventyNavigationToHtml` filter, like so:
 
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navexcerpt"} %}
   <div id="navexcerpt-liquid" role="tabpanel">
@@ -567,6 +628,7 @@ navToHtmlOptions:
     <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 
 #### Advanced: All Rendering Options for `eleventyNavigationToMarkdown`
@@ -574,6 +636,7 @@ navToHtmlOptions:
 {% addedin "Navigation 0.3.1" %}
 
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navmdoptions"} %}
   <div id="navmdoptions-liquid" role="tabpanel">
@@ -618,6 +681,7 @@ navToMdOptions:
     <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 
 #### Advanced: All Rendering Options for `eleventyNavigationToHtml`
@@ -625,6 +689,7 @@ navToMdOptions:
 You can change the HTML elements, classes on the list and list items, and add an additional class for the current page’s navigation entry!
 
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navhtmloptions"} %}
   <div id="navhtmloptions-liquid" role="tabpanel">
@@ -705,6 +770,7 @@ You can change the HTML elements, classes on the list and list items, and add an
     <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 
 These work with `eleventyNavigationBreadcrumb | eleventyNavigationToHtml` too.
@@ -718,6 +784,7 @@ This template will render a single tier of items (no children) _without_ using t
 Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
 
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navbyoh"} %}
   <div id="navbyoh-liquid" role="tabpanel">
@@ -730,7 +797,7 @@ Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
 <ul>
 {%- for entry in navPages %}
   <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
-    <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+    <a href="{{ entry.url }}">{{ entry.title }}</a>
   </li>
 {%- endfor %}
 </ul>
@@ -748,7 +815,7 @@ Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
 <ul>
 {%- for entry in navPages %}
   <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
-    <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+    <a href="{{ entry.url }}">{{ entry.title }}</a>
   </li>
 {%- endfor %}
 </ul>
@@ -763,6 +830,7 @@ Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
     <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 You _can_ use a Nunjucks macro to recursively render list items of any depth but the code isn’t quite as clean:
 
@@ -776,7 +844,7 @@ You _can_ use a Nunjucks macro to recursively render list items of any depth but
 {% set navPages = collections.all | eleventyNavigation %}
 {% macro renderNavListItem(entry) -%}
 <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
-  <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+  <a href="{{ entry.url }}">{{ entry.title }}</a>
 {%- if entry.children.length -%}
   <ul>
     {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}

@@ -25,7 +25,7 @@ permalink: /tags/{{ tag }}/
 <ol>
 {% set taglist = collections[ tag ] %}
 {% for post in taglist | reverse %}
-  <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
 {% endfor %}
 </ol>
 ```

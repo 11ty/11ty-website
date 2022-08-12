@@ -45,9 +45,15 @@ let page = {
 
   // Added in 1.0
   // Useful with `page.filePathStem` when using custom file extensions.
-  outputFileExtension: "html"
+  outputFileExtension: "html",
+
+  // Available in 2.0 with the i18n plugin
+  // The default is the value of `defaultLanguage` passed to the i18n plugin
+  lang: "",
 };
 ```
+
+Note that `page.lang` is _only_ available when the [i18n plugin has been added to your configuration file](http://localhost:8091/docs/plugins/i18n/#add-to-your-configuration-file).
 
 ### `date`
 
@@ -56,7 +62,7 @@ The date associated with the page. Defaults to the content’s file created date
 
 ### `fileSlug` {% addedin "0.3.4" %}
 
-The `fileSlug` variable is mapped from inputPath and is useful for creating your own clean [permalinks](/docs/permalinks/).
+The `fileSlug` variable is mapped from `inputPath`, and is useful for creating your own clean [permalinks](/docs/permalinks/).
 
 | `inputPath` | `page.fileSlug` Result |
 | --- | --- |
@@ -74,9 +80,9 @@ The `fileSlug` variable is mapped from inputPath and is useful for creating your
 
 ### `filePathStem` {% addedin "0.9.0" %}
 
-The `filePathStem` variable is mapped from inputPath and is useful if you’ve inherited a project that doesn’t use clean [permalinks](/docs/permalinks/).
+The `filePathStem` variable is mapped from `inputPath`, and is useful if you’ve inherited a project that doesn’t use clean [permalinks](/docs/permalinks/).
 
-{% callout "info" %}<strong>Careful with this one</strong> and remember that <a href="/docs/permalinks/#cool-uris-dont-change">Cool URI’s don’t change</a>.{% endcallout %}
+{% callout "info" %}<strong>Careful with this one!</strong> Remember that <a href="/docs/permalinks/#cool-uris-dont-change">Cool URI’s don’t change</a>.{% endcallout %}
 
 If you absolutely need a file extension on your output, you might use it like this:
 
@@ -90,12 +96,31 @@ permalink: "{{ page.filePathStem }}.html"
 ```
 {% endraw %}
 
-Example Output below is using the above permalink value.
+This example output uses the above permalink value.
 
 | `inputPath` | `page.filePathStem` Result | Example Output |
 | --- | --- | --- |
 | `"2018-01-01-myFile.md"` | `"myFile"` | `myFile.html` |
 | `"myDir/myFile.md"` | `"myDir/myFile"` | `myDir/myFile.html` |
+
+#### Changing your project default permalinks
+
+{% addedin "2.0.0-canary.9" %} [Deep-link to `3c49f22`](https://github.com/11ty/eleventy/commit/3c49f22b31b10e5dae0daf661a54750875ae5d0f).
+
+Want to change `resource.md` to write to `/resource.html` instead of `/resource/index.html`? Use this configuration API code sample.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addGlobalData("permalink", () => {
+    return (data) => `${data.page.filePathStem}.${data.page.outputFileExtension}`;
+  });
+};
+```
+
+{% callout "warn", "md" %}When using this approach for URLs _without_ trailing slashes (file `/resource.html` -> url `/resource`), please do note that using trailing slashes with `index.html` files (file `/resource/index.html` -> url `/resource/`) is a bit friendlier on various Jamstack hosting providers. You may encounter unexpected 404 errors—make [sure you study up on how this works and test appropriately!](https://www.zachleat.com/web/trailing-slash/#results-table)!{% endcallout %}
+
 
 ## `eleventy` Variable {% addedin "1.0.0" %}
 
@@ -145,9 +170,9 @@ Learn more about:
   * [Dynamic Slugs and Serverless Global Data](/docs/plugins/serverless/#dynamic-slugs-and-serverless-global-data).
   * `event.queryStringParameters`, which are very similar to [URL.searchParams](https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams). It’s an object representing the name/value pairs for things after the `?` in a URL.
 
-Eleventy Leaderboards:
-
-* Upcoming versions of the [Eleventy Leaderboards](/speedlify/) will require that {% raw %}`<meta name="generator" content="{{ eleventy.generator }}">`{% endraw %} {% addedin "1.0.1" %} exist on the page’s markup to be valid for placement and ranking.
+<div class="youtube-related">
+  {%- youtubeEmbed "_YvwTHeqBZY", "eleventy.version and eleventy.generator Data (Weekly №7)", "235" -%}
+</div>
 
 ## Environment Variables on `process.env`
 

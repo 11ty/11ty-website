@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Working with Templates
   key: Pagination
-  order: 3
+  order: 4
   excerpt: Iterate over a data set and create multiple files from a single template.
 relatedKey: pagination
 ---
@@ -10,16 +10,12 @@ relatedKey: pagination
 
 Pagination allows you to iterate over a data set and create multiple files from a single template. The input data can be in the form of an array or object defined in your frontmatter or in [global data](/docs/data-global/), or you can paginate a collection to make an easily digestible list of your posts.
 
-## Contents
-
-<style>
-/* Hide link to Contents */
-.table-of-contents > ul > li:first-child {
-  display: none;
-}
-</style>
+<details>
+<summary>Expand for Contents</summary>
 
 [[toc]]
+
+</details>
 
 ## Paging an Array
 
@@ -27,6 +23,7 @@ To iterate over a data set and create pages for individual chunks of data, use p
 
 Consider the following template, which will result in two pages being created, each of which will display two items from `testdata`:
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-array"} %}
   <div id="paged-array-liquid" role="tabpanel">
@@ -60,6 +57,7 @@ If the above file were named `paged.11ty.js`, it would create two pages in your 
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 We enable pagination and then give it a dataset with the `data` key. We control the number of items in each chunk with `size`. The pagination data variable will be populated with what you need to create each template. Here’s what’s in `pagination`:
 
@@ -98,7 +96,7 @@ In addition to the `pagination` object entries documented above, it also has:
 
 ```js
 {
-  data: …, // the original string key to the dataset
+  data: "…", // the original string key to the dataset
   size: 1, // page chunk sizes
 
   // Cool URLs
@@ -131,6 +129,7 @@ Learn how to create a list of links to every paginated page on a pagination temp
 
 All of the examples thus far have paged Array data. Eleventy does allow paging objects too. Objects are resolved to pagination arrays using either the `Object.keys` or `Object.values` JavaScript functions. Consider the following templates:
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedobj"} %}
   <div id="pagedobj-liquid" role="tabpanel">
@@ -188,6 +187,7 @@ testdata:
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 In this example, we would get 3 pages that each print a key/value pair from `testdata`. The paged items hold the object keys:
 
@@ -253,6 +253,7 @@ This resolves to:
 
 Your front matter would look like this:
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedatafile"} %}
   <div id="pagedatafile-liquid" role="tabpanel">
@@ -302,6 +303,7 @@ pagination:
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 ## Remapping with permalinks
 
@@ -372,6 +374,7 @@ Using a universal `slug` filter (transforms `My Item` to `my-item`), this output
 
 Ok, so `pagination.items[0]` is ugly. We provide an option to alias this to something different.
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedalias"} %}
   <div id="pagedalias-liquid" role="tabpanel">
@@ -423,6 +426,7 @@ You can use the alias in your content too {{ wonder }}.
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 This writes to `_site/different/item1/index.html` and `_site/different/item2/index.html`.
 
@@ -431,6 +435,7 @@ This writes to `_site/different/item1/index.html` and `_site/different/item2/ind
 If your chunk `size` is greater than 1, the alias will be an array instead of a single value.
 
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedchunk"} %}
   <div id="pagedchunk-liquid" role="tabpanel">
@@ -486,6 +491,7 @@ You can use the alias in your content too {{ wonder[0] }}.
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 This writes to `_site/different/item1/index.html` and `_site/different/item3/index.html`.
 
@@ -494,6 +500,7 @@ This writes to `_site/different/item1/index.html` and `_site/different/item3/ind
 If you’d like to make a paginated list of all of your blog posts (any content with the tag `post` on it), use something like the following template to iterate over a specific collection:
 
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedcollection"} %}
   <div id="pagedcollection-liquid" role="tabpanel">
@@ -512,7 +519,7 @@ pagination:
 
 <ol>
 {% for post in posts %}
-  <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
 {% endfor %}
 </ol>
 ```
@@ -535,7 +542,7 @@ pagination:
 
 <ol>
 {% for post in posts %}
-  <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
 {% endfor %}
 </ol>
 ```
@@ -549,8 +556,34 @@ pagination:
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 The above generates a list of links but you could do a lot more. See what’s available in the [Collection documentation](/docs/collections/#collection-item-data-structure) (specifically `templateContent`). If you’d like to use this to automatically generate Tag pages for your content, please read [Quick Tip #004—Create Tag Pages for your Blog](/docs/quicktips/tag-pages/).
+
+## Generating an Empty Results Page
+
+{% addedin "2.0.0-canary.10" %}
+
+By default, if the specified data set is empty, Eleventy will not render any pages. Use `generatePageOnEmptyData: true` to generate one  pagination output with an empty chunk `[]` of items.
+
+{% codetitle "Liquid, Nunjucks", "Syntax" %}
+
+{% raw %}
+```markdown
+---
+title: Available Products
+pagination:
+  data: collections.available
+  size: 6
+  generatePageOnEmptyData: true
+---
+```
+{% endraw %}
+
+<div class="youtube-related">
+  {%- youtubeEmbed "oCTAZumAGNc", "Empty-results Pagination (Weekly №11)", "207" -%}
+</div>
+
 
 ## Modifying the Data Set prior to Pagination
 
@@ -737,7 +770,14 @@ Now `collections.myCollection` will have both output pages in the collection arr
 * `data` (String) [Lodash.get path](https://lodash.com/docs/4.17.15#get) to point to the target data set.
 * `size` (Number, required)
 * `alias` (String) [Lodash.set path](https://lodash.com/docs/4.17.15#set) to point to the property to set.
+* `generatePageOnEmptyData` (Boolean) if target data set is empty, render first page with empty chunk `[]`.
 * `resolve: values` {% addedin "0.4.0" %}
 * `filter` (Array) {% addedin "0.4.0" %}
 * `reverse: true` (Boolean) {% addedin "0.7.0" %}
 * `addAllPagesToCollections: true` (Boolean) {% addedin "0.8.0" %}
+
+## Related
+
+<div class="youtube-related">
+  {%- youtubeEmbed "kUC87Zr0dKg", "Eleventy Build went from 54s to 17s—Pagination Memory/Performance Wins 🏆 (Weekly №10)", "344" -%}
+</div>

@@ -14,10 +14,11 @@ Incremental builds via the command line flag `--incremental` have been available
 
 ## [Passthrough Copy](/docs/copy/)
 
-* Incremental passthrough copy (✅  available in 0.11.0+) uses the following rules:
+* {% addedin "0.11.0" %} Incremental passthrough copy uses the following rules:
   * Only copy a passthrough copy file when it actively changed. Don’t run a template build if only a passthrough copy file has changed.
   * If a template has changed, don’t copy the passthrough copy files.
-  * Some discussion about making this behavior default at [Issue #1109](https://github.com/11ty/eleventy/issues/1109). Personally, I’m still on the fence here.
+  * There was some discussion about making this behavior default at [Issue #1109](https://github.com/11ty/eleventy/issues/1109).
+* {% addedin "2.0.0" %} Passthrough copy is now emulated during `--serve` for incremental and non-incremental builds. [Issue #2456](https://github.com/11ty/eleventy/issues/2456)
 
 ## Configuration File
 
@@ -27,14 +28,14 @@ If you create/update your Eleventy configuration file, a full build will run.
 
 * If you create/update a template file, Eleventy will run the build for that file and only that file.
 * If the created/updated file is in your [Includes](/docs/config/#directory-for-includes) or [Layouts](/docs/config/#directory-for-layouts-(optional)) directories, a full build will run.
-* This feature is also exposed as part of the API for [Custom template extensions](/docs/languages/custom/) via the `isIncrementalMatch` function (✅  available in 1.0.0+).
+* {% addedin "1.0.0" %} This feature is also exposed as part of the API for [Custom template extensions](/docs/languages/custom/) via the `isIncrementalMatch` function.
 <!-- * Implemented as part of the Eleventy Vue plugin -->
 
 ## 🗓 To Do
 
 ### Templates
 
-* Smarter dependency map between templates:
+* [Smarter dependency map between templates](https://github.com/11ty/eleventy/issues/108):
   * Eleventy layouts
   * Publishing into Collections and consuming from Collections
   * `11ty.js` JavaScript dependencies

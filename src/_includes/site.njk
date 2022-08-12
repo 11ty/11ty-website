@@ -1,7 +1,7 @@
 <div class="lo-c site-top">
 	<div class="sites-data-container">
 		<a href="{{ site.url }}">
-			{%- indieavatar site.url %}
+			{%- indieavatar site.url, "avatar-large" %}
 			{%- if site.name -%}
 				{{ site.name }}
 			{%- else -%}
@@ -20,7 +20,9 @@
 			{%- set hash = site | speedlifyHash %}
 			{%- if hash -%}
 				<a href="https://www.11ty.dev/speedlify/#site-{{ hash }}" class="elv-externalexempt nound">
-					<speedlify-score speedlify-url="https://www.11ty.dev/speedlify/" hash="{{ hash }}" score weight rank rank-change></speedlify-score>
+					<is-land on:visible import="/js/speedlify-score.js">
+						<speedlify-score speedlify-url="https://www.11ty.dev/speedlify/" hash="{{ hash }}" score weight rank rank-change></speedlify-score>
+					</is-land>
 				</a>
 			{%- endif -%}
 		</div>

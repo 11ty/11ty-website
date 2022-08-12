@@ -9,8 +9,6 @@ eleventyNavigation:
 
 While you can provide [global data files](/docs/data-global/) to supply data to all of your templates, you may want some of your data to be available locally only to one specific template or to a directory of templates. For that use, we also search for JSON and [JavaScript Data Files](/docs/data-js/) in specific places in your directory structure.
 
-{% callout "info" %}<em>Important exception:</em> Template and Directory Specific Data Files are <strong>not</strong> <a href="/docs/data-preprocessing/">preprocessed through a templating engine</a>. <a href="/docs/data-global/">Global Data files</a> are.{% endcallout %}
-
 For example, consider a template located at `posts/subdir/my-first-blog-post.md`. Eleventy will look for data in the following places (starting with highest priority, local data keys override global data):
 
 1. [Content Template Front Matter Data](/docs/data-frontmatter/)

@@ -1,6 +1,6 @@
 module.exports = {
-	url: "https://www.aleksandrhovhannisyan.com/blog/eleventy-image-lazy-loading/",
+	url: "https://www.aleksandrhovhannisyan.com/blog/eleventy-image-plugin/",
 	author: "hovhaDovah",
-	title: "Lazily Loading Images with the 11ty Image Plugin",
+	title: "Optimizing Images with the 11ty Image Plugin",
 	key: "image"
 };

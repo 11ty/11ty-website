@@ -9,7 +9,11 @@ relatedLinks:
 ---
 # JavaScript Data Files {% addedin "0.5.3" %}
 
-This file applies to both [Global Data Files](/docs/data-global/) (`*.js` inside of your `_data` directory) and [Template and Directory Data Files](/docs/data-template-dir/) (`*.11tydata.js` files that are paired with a template file or directory).
+The following applies to both:
+
+* [Global Data Files](/docs/data-global/) (`*.js` inside of your `_data` directory)
+* [Template and Directory Data Files](/docs/data-template-dir/) (`*.11tydata.js` files that are paired with a template file or directory)
+
 
 ## Using JS Data Files
 
@@ -60,13 +64,17 @@ module.exports = async function() {
 };
 ```
 
+### Fetching data from a remote API
+
+You’ll want to use [Eleventy’s Fetch plugin](/docs/plugins/fetch/) to request and cache data from remote APIs. There is another example on [Quick Tip #009—Cache Data Requests](/docs/quicktips/cache-api-requests/).
+
 ### Arguments to Global Data Files
 
 {% addedin "1.0.0" %} When using a callback function in your JavaScript Data Files, Eleventy will now supply any global data already processed [via the Configuration API (`eleventyConfig.addGlobalData`)](/docs/data-global-custom/) as well as the [`eleventy` global variable](/docs/data-eleventy-supplied/#eleventy-variable).
 
 ```js
 module.exports = function(configData) {
-  if(configData.eleventy.env.source === "cli") {
+  if (configData.eleventy.env.source === "cli") {
     return "I am on the command line";
   }
 
@@ -78,13 +86,15 @@ module.exports = function(configData) {
 
 - [Example: Using GraphQL](#example-using-graphql)
 - [Example: Exposing Environment Variables](#example-exposing-environment-variables)
+- [Fetch GitHub star counts](/docs/quicktips/cache-api-requests/)
+- [Caching remote images, Google Fonts CSS, and more on the Eleventy Fetch plugin docs](/docs/plugins/fetch/#more-examples)
 
 ### Example: Using GraphQL
 
 This “Hello World” GraphQL example works out of the box with Eleventy:
 
 ```js
-var { graphql, buildSchema } = require("graphql");
+const { graphql, buildSchema } = require("graphql");
 
 // this could also be `async function`
 module.exports = function() {
@@ -107,7 +117,7 @@ You can expose environment variables to your templates by utilizing [Node.js’ 
 
 * [**Learn how to set your own environment variables**](/docs/environment-vars/#setting-your-own)
 
-Start by creating a [Global Data file](https://www.11ty.dev/docs/data-global/) (*.js inside of your _data directory) and export the environment variables for use in a template:
+Start by creating a [Global Data file](https://www.11ty.dev/docs/data-global/) (`*.js` inside of your `_data` directory) and export the environment variables for use in a template:
 
 {% codetitle "_data/myProject.js" %}
 {% raw %}
@@ -124,7 +134,7 @@ Saving this as `myProject.js` in your global data directory (by default, this is
 
 * [Learn how to set a value for the `MY_ENVIRONMENT` environment variable](/docs/environment-vars/#setting-your-own)
 
-When `MY_ENVIRONMENT` is set, the value from `myProject.environment` will be globally available to be used in your templates. If the variable hasn't been set, the fallback `"development"` will be used.
+When `MY_ENVIRONMENT` is set, the value from `myProject.environment` will be globally available to be used in your templates. If the variable hasn’t been set, the fallback `"development"` will be used.
 
 #### Template Usage
 

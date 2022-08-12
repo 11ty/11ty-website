@@ -4,12 +4,23 @@ eleventyNavigation:
   order: -1
   excerpt: A plugin to run Eleventy in a serverless function for server side rendering (e.g. Previews in your CMS) and/or in very large sites with [On-demand Builders](https://www.netlify.com/blog/2021/04/14/faster-builds-for-large-sites-on-netlify-with-on-demand-builders-now-in-early-access/).
 communityLinksKey: serverless
+overrideCommunityLinks: true
 ---
 # Serverless {% addedin "1.0.0" %}
 
 {{ eleventyNavigation.excerpt }}
 
+<details class="toc">
+<summary>Expand for contents</summary>
+
 [[toc]]
+
+</details>
+
+<div class="youtube-related">
+  {%- youtubeEmbed "JNFooPfzV9g", "Defer generating 400+ pages using Eleventy Serverless" -%}
+  {%- youtubeEmbed "EiwIe8lduGs", "Add authentication with Eleventy Serverless and OAuth" -%}
+</div>
 
 ## What is Serverless?
 
@@ -34,13 +45,23 @@ Build-time (non-serverless) templates should be the preferred rendering mode. Th
 
 For On-demand Builders and Dynamic templates, rendering failures will not fail your deployment and as such incur more risk. Dynamic templates must also be closely performance monitored—unlike build templates, a slow render in a dynamic template means a slow web site for end-users.
 
-## Demos and Examples
+## Demos and Community Resources
 
 <div class="sites-vert sites-vert--md">
   <div class="lo-grid">
 {% for key, site in demos -%}{% if site.category.includes("serverless") -%}
   {% include "site-card.njk" %}
 {% endif %}{%- endfor %}
+{% for entry in communityLinks -%}
+  {%- set site = entry | convertCommunityLinkToSiteCard %}
+  {% include "site-card.njk" %}
+{%- endfor %}
+{%- for key, entry in community %}
+{%- if entry.key == communityLinksKey -%}
+  {%- set site = entry | convertCommunityLinkToSiteCard %}
+  {% include "site-card.njk" %}
+{%- endif %}
+{%- endfor %}
   </div>
 </div>
 
@@ -423,3 +444,21 @@ _Documentation in progress_
 ### How do Dynamic Templates and `tags` work together?
 
 _Documentation in progress_
+
+### For internal use
+
+<details>
+<summary>Expand to view Dependency Bundle Sizes</summary>
+
+| Bundle size | Package name |
+| --- | --- |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy" alt="Bundle size for @11ty/eleventy" loading="lazy"> | `@11ty/eleventy` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy@canary" alt="Bundle size for @11ty/eleventy" loading="lazy"> | `@11ty/eleventy@canary` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-img" alt="Bundle size for @11ty/eleventy-img" loading="lazy"> | `@11ty/eleventy-img` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-fetch" alt="Bundle size for @11ty/eleventy-fetch" loading="lazy"> | `@11ty/eleventy-fetch` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-plugin-syntaxhighlight" alt="Bundle size for @11ty/eleventy-plugin-syntaxhighlight" loading="lazy"> | `@11ty/eleventy-plugin-syntaxhighlight` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-navigation" alt="Bundle size for @11ty/eleventy-navigation" loading="lazy"> | `@11ty/eleventy-navigation` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-plugin-vue" alt="Bundle size for @11ty/eleventy-plugin-vue" loading="lazy"> | `@11ty/eleventy-plugin-vue` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-plugin-rss" alt="Bundle size for @11ty/eleventy-plugin-rss" loading="lazy"> | `@11ty/eleventy-plugin-rss` |
+
+</details>

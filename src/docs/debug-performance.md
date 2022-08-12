@@ -5,11 +5,10 @@ eleventyNavigation:
   excerpt: How to analyze your Eleventy build to find bottlenecks.
   order: 1
 excludeFromSidebar: true
-layout: "layouts/docs.njk"
 ---
 # Performance
 
-{% callout "info" %}You’ll probably want to read the <a href="/docs/debugging/">Debugging documentation</a> before continuing here.{% endcallout %}
+{% callout "info" %}You’ll probably want to read the <a href="/docs/debugging/">Debug mode documentation</a> before continuing here.{% endcallout %}
 
 Eleventy by default will warn you if certain pieces of your build take longer than 8% of your total build time. This list includes:
 

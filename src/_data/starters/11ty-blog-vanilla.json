@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/dylnbk/11ty-blog",
+	"name": "11ty-vanilla-blog",
+	"description": "A very vanilla 11ty starter for a static blog site with paginated posts and integration with Netlify CMS",
+	"author": "dylnbk",
+	"demo": "https://11ty-blog-vanilla.netlify.app/"
+}

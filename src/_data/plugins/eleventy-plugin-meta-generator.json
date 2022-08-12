@@ -1,5 +1,0 @@
-{
-	"npm": "eleventy-plugin-meta-generator",
-	"author": "AndreJaenisch",
-	"description": "will render a generator <meta> tag for you."
-}

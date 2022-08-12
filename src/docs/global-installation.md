@@ -18,7 +18,7 @@ eleventy --version
 {% latestVersion versions, config, "" %}
 {% endcodewithprompt %}
 
-{% callout "info" %}If you’re planning on deploying your site using a service like Netlify (that will run your build on their servers), you <strong>must use the local installation method</strong> and not global installation.{% endcallout %}
+{% callout "info" %}If you’re planning on deploying your site using a [service like Netlify](/docs/deployment/) (that will run your build on their servers), you <strong>must use the local installation method</strong> and not global installation.{% endcallout %}
 
 ## Old, outdated `eleventy-cli`
 

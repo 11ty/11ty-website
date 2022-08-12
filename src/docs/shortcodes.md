@@ -19,6 +19,7 @@ Various template engines can be extended with shortcodes for easy reusable conte
 
 Here are a few examples:
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "shortcode"} %}
   <div id="shortcode-liquid" role="tabpanel">
@@ -56,6 +57,7 @@ module.exports = function({ firstName, lastName }) {
     {% callout "info" %}Note that if you return HTML in your Handlebars shortcode, you need to use the Handlebars triple-stash syntax (three opening and three closing curly brackets, e.g. <code>{% raw %}{{{ shortcodeName }}}{% endraw %}</code>) to avoid double-escaped HTML. If it’s double-escaped a paragraph tag may render as <code>&amp;lt;p&amp;gt;</code>{% endcallout %}
   </div>
 </seven-minute-tabs>
+</is-land>
 
 {% callout "info" %}
 Markdown files are pre-processed as Liquid templates by default. This means that shortcodes available in Liquid templates are also available in Markdown files. Likewise, if you <a href="/docs/config/#default-template-engine-for-markdown-files">change the template engine for Markdown files</a>, the shortcodes available for that templating language will also be available in Markdown files.
@@ -99,7 +101,7 @@ Read more about using shortcodes on the individual Template Language documentati
 
 The shortcodes we saw above were nice, I suppose. But really, they are not all that different from a filter. The real ultimate power of Shortcodes comes when they are paired. Paired Shortcodes have a start and end tag—and allow you to nest other template content inside!
 
-
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pairedshortcodes"} %}
   <div id="pairedshortcodes-liquid" role="tabpanel">
@@ -165,6 +167,7 @@ Hello ${this.anotherShortCode()}`;
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 
 When adding paired shortcodes using the Configuration API, the first argument to your shortcode callback is the nested content.

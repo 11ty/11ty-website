@@ -61,7 +61,12 @@ module.exports = function(eleventyConfig) {
 
     // Added in 3.1.1, add HTML attributes to the <pre> or <code> tags
     preAttributes: {
-      tabindex: 0
+      tabindex: 0,
+
+      // Added in 4.1.0 you can use callback functions too
+      "data-language": function({ language, content, options }) {
+        return language;
+      }
     },
     codeAttributes: {},
   });
@@ -95,6 +100,7 @@ This plugin provides the following syntax highlighters using PrismJS, all of whi
 
 * [Review the list of supported PrismJS languages](http://prismjs.com/#languages-list)
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlight", additions: "md"} %}
   <div id="highlight-md" role="tabpanel">
@@ -165,6 +171,7 @@ The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %
     <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 Will render like this in the browser:
 
@@ -185,6 +192,7 @@ function myFunction() {
 
 Add the `diff-` prefix to the language name on the previous examples to show code changes. Use a `+` or `-` at the beginning of the line to denote the addition or removal of that line.
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlightdiff", additions: "md"} %}
   <div id="highlightdiff-md" role="tabpanel">
@@ -258,6 +266,7 @@ The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %
     <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
   </div>
 </seven-minute-tabs>
+</is-land>
 
 Will render like this in the browser:
 

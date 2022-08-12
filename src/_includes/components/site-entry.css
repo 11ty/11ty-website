@@ -83,6 +83,9 @@
 .sites-vert .avatar {
 	margin-right: 3px;
 	margin-left: 0;
+	width: 1em;
+	height: 1em;
+	object-fit: contain;
 }
 .sites-vert > .lo-grid {
   --lo-margin-h: 1rem;
@@ -161,13 +164,6 @@
 
 .sites-site-vert .sites-site-lighthouse .speedlify-score {
 	background-color: #fff;
-}
-
-.stackblitz-link.stackblitz-link.stackblitz-link {
-	display: none;
-}
-.stackblitz .stackblitz-link.stackblitz-link {
-	display: inline;
 }
 
 @supports (aspect-ratio: 1 / 1) {

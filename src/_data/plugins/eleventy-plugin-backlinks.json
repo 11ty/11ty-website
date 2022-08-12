@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-backlinks",
+	"author": "binyamin",
+	"description": "Collect and display backlinks from your notes."
+}

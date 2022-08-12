@@ -16,13 +16,13 @@ All official plugins live under the `@11ty` npm organization and plugin names wi
 
 ### Community Contributed Plugins
 
-[**See all `eleventy-plugin` packages on `npm`**](https://www.npmjs.com/search?q=eleventy-plugin). The rest have been added to this site by our community (and are listed in random order). [Add your own](https://github.com/11ty/11ty-website/tree/master/src/_data/plugins)!
+[**See all `eleventy-plugin` packages on `npm`**](https://www.npmjs.com/search?q=eleventy-plugin). The rest have been added to this site by our community (and are listed in random order). [Add your own](https://github.com/11ty/11ty-website/tree/master/src/_data/plugins#readme)!
 
 {%- for name, plugin in plugins | shuffle %}
 {%- set url = plugin.url or "https://www.npmjs.com/package/" + plugin.npm %}
 * [{% if plugin.deprecated %}~~{% endif %}{{ plugin.npm }}{% if plugin.deprecated %}~~{% endif %}]({{ url }}){% if plugin.description %} {% if plugin.deprecated %}~~{% endif %}{{ plugin.description }}{% if plugin.deprecated %}~~{% endif %}{% endif %} {{ plugin.deprecated }} {% authorLink authors, plugin.author %}
 {%- endfor %}
-* [Add your own](https://github.com/11ty/11ty-website/tree/master/src/_data/plugins)!
+* [Add your own](https://github.com/11ty/11ty-website/tree/master/src/_data/plugins#readme)!
 
 ## Adding a Plugin
 

@@ -19,7 +19,7 @@
 	.elv-toc details > summary {
 		margin-top: 0;
 	}
-	.js .elv-toc details > summary {
+	details-force-state:defined > details > summary {
 		display: none;
 	}
 }
@@ -58,7 +58,7 @@
 .elv-toc summary,
 .elv-toc-list a {
 	padding: .15em .25em;
-	color: #1873a9;
+	color: #1873a5;
 }
 @media (prefers-color-scheme: dark) {
 	.elv-toc summary,
@@ -116,4 +116,9 @@
 /* Footer catgory navigation */
 .elv-cat-list-active {
 	font-weight: 600;
+}
+
+/* Add margin to toc details */
+details.toc[open] {
+	margin-bottom: 4em;
 }

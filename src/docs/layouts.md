@@ -110,7 +110,7 @@ Layouts can contain their own front matter data! It’ll be merged with the cont
 
 All of this will output the following HTML content to `_site/content-using-layout/index.html`:
 
-
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layoutoutput", additions: "md", label: "View the output from"} %}
   <div id="layoutoutput-md" role="tabpanel">
@@ -209,6 +209,7 @@ All of this will output the following HTML content to `_site/content-using-layou
 {% endcallout %}
   </div>
 </seven-minute-tabs>
+</is-land>
 
 ## Front Matter Data in Layouts
 
