@@ -444,3 +444,21 @@ _Documentation in progress_
 ### How do Dynamic Templates and `tags` work together?
 
 _Documentation in progress_
+
+### For internal use
+
+<details>
+<summary>Expand to view Dependency Bundle Sizes</summary>
+
+| Bundle size | Package name |
+| --- | --- |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy" alt="Bundle size for @11ty/eleventy" loading="lazy"> | `@11ty/eleventy` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy@canary" alt="Bundle size for @11ty/eleventy" loading="lazy"> | `@11ty/eleventy@canary` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-img" alt="Bundle size for @11ty/eleventy-img" loading="lazy"> | `@11ty/eleventy-img` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-fetch" alt="Bundle size for @11ty/eleventy-fetch" loading="lazy"> | `@11ty/eleventy-fetch` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-plugin-syntaxhighlight" alt="Bundle size for @11ty/eleventy-plugin-syntaxhighlight" loading="lazy"> | `@11ty/eleventy-plugin-syntaxhighlight` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-navigation" alt="Bundle size for @11ty/eleventy-navigation" loading="lazy"> | `@11ty/eleventy-navigation` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-plugin-vue" alt="Bundle size for @11ty/eleventy-plugin-vue" loading="lazy"> | `@11ty/eleventy-plugin-vue` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-plugin-rss" alt="Bundle size for @11ty/eleventy-plugin-rss" loading="lazy"> | `@11ty/eleventy-plugin-rss` |
+
+</details>
