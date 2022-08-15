@@ -33,7 +33,7 @@ There are a bunch of [sites built using Eleventy](/speedlify/). But listen to wh
 
 ## Competitors
 
-This project aims to directly compete with all other Static Site Generators. We encourage you to try out our competition:
+This project aims to directly compete with all other Site Generators. We encourage you to try out our competition:
 
 * [Jekyll](https://jekyllrb.com/) (Ruby)
 * [Hugo](https://gohugo.io/) (Go)
