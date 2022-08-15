@@ -37,9 +37,9 @@ Paths listed in your project’s `.gitignore` file are automatically ignored.
 
 ### `node_modules` {% addedin "1.0.0" %}
 
-{% callout "info", "md" %}The `node_modules` behavior changed in Eleventy `1.0`. If you’re still using [Eleventy `0.x`, read the `0.x` documentation](https://v0-12-1.11ty.dev/docs/ignores/#node_modules-exemption).{% endcallout %}
+`node_modules` folders are always ignored by Eleventy. This makes new Eleventy projects easier and helps developers new to Eleventy get ramped up easier too.
 
-The project root `node_modules` folder is always ignored by Eleventy. This makes new Eleventy projects easier and helps developers new to Eleventy get ramped up easier too.
+{% callout "info", "md" %}The `node_modules` behavior in Eleventy `1.0` only ignores the project root `node_modules/**`. Eleventy `2.0.0-canary.15` and newer ignores all `node_modules` folders using `**/node_modules/**`.{% endcallout %}
 
 If you want to opt-out and search for templates inside of your `node_modules` folder, delete the entry using the Configuration API:
 
@@ -47,9 +47,16 @@ If you want to opt-out and search for templates inside of your `node_modules` fo
 
 ```js
 module.exports = function(eleventyConfig) {
-    eleventyConfig.ignores.delete("node_modules/**");
+  // in Eleventy 2.0
+  eleventyConfig.ignores.delete("**/node_modules/**");
+
+  // in Eleventy 1.0
+  eleventyConfig.ignores.delete("node_modules/**");
 };
 ```
+
+{% callout "info", "md" %}The `node_modules` behavior changed in Eleventy `1.0`. If you’re still using [Eleventy `0.x`, read the `0.x` documentation](https://v0-12-1.11ty.dev/docs/ignores/#node_modules-exemption).{% endcallout %}
+
 
 ## File Locations
 
