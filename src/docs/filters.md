@@ -70,6 +70,9 @@ module.exports = function(eleventyConfig) {
 
   // or, use a Universal filter (an alias for all of the above)
   eleventyConfig.addFilter("makeUppercase", function(value) { … });
+
+  // New in 2.0.0-canary.15
+  eleventyConfig.addAsyncFilter("makeUppercase", async function(value) { … });
 };
 ```
 
@@ -92,6 +95,33 @@ module.exports = function(eleventyConfig) {
   // * JavaScript
 
   eleventyConfig.addFilter("myFilter", function(value) {
+    return value;
+  });
+};
+```
+
+### Asynchronous Universal Filters {% addedin "2.0.0-canary.15" %}
+
+Eleventy has added a new universal filter API for asynchronous filters and extended the currently available `addFilter` method to be async-friendly. _Note that even though Handlebars is used for synchronous filters in `addFilter`, it is excluded from asynchronous filters because Handlebars is not async-friendly._
+
+If you are not yet on Eleventy 2.0, you can still add asynchronous filters to each async-friendly template language individually: [Liquid `addLiquidFilter`](/docs/languages/liquid/#filters), [Nunjucks `addNunjucksAsyncFilter`](/docs/languages/nunjucks/#asynchronous-nunjucks-filters), and [JavaScript `addJavaScriptFunction`](/docs/languages/javascript/#asynchronous-javascript-template-functions).
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // Async universal filters add to:
+  // * Liquid
+  // * Nunjucks
+  // * JavaScript
+
+  eleventyConfig.addFilter("myFilter", async function(value) {
+    // do some Async work
+    return value;
+  });
+
+  eleventyConfig.addAsyncFilter("myFilter", async function(value) {
+    // do some Async work
     return value;
   });
 };
