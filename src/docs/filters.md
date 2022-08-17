@@ -33,7 +33,7 @@ Various template engines can be extended with custom filters to modify content. 
 <h1>{{ name | makeUppercase }}</h1>
 {% endraw %}{% endhighlight %}
   </div>
-  <div id="filter-11tyjs" role="tabpanel">
+  <div id="filter-js" role="tabpanel">
     {% codetitle "sample.11ty.js" %}
 {%- highlight "js" %}{% raw %}
 module.exports = function({name}) {
