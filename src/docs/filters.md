@@ -100,7 +100,25 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Asynchronous Universal Filters {% addedin "2.0.0-canary.15" %}
+### Eleventy Provided Universal Filters
+
+We also provide a few universal filters, built-in:
+
+{{ collections.all | eleventyNavigation("Filters") | eleventyNavigationToHtml({ showExcerpt: true }) | safe }}
+
+#### Access existing filters {% addedin "0.11.0" %}
+
+If you’d like to reuse existing filters in a different way, consider using the new Configuration API `getFilter` method. You can use this to alias a filter to a different name. You can use this to use a filter inside of your own filter. You can use this to use a filter inside of a shortcode.
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addShortcode("myCustomImage", function(url, alt) {
+    return `<img src="${eleventyConfig.getFilter("url")(url)}" alt="${alt}">`;
+  });
+};
+```
+
+### Asynchronous Universal Filters {% addedin "2.0.0" %}
 
 Eleventy has added a new universal filter API for asynchronous filters and extended the currently available `addFilter` method to be async-friendly. _Note that even though Handlebars is used for synchronous filters in `addFilter`, it is excluded from asynchronous filters because Handlebars is not async-friendly._
 
@@ -123,24 +141,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addAsyncFilter("myFilter", async function(value) {
     // do some Async work
     return value;
-  });
-};
-```
-
-### Eleventy Provided Universal Filters
-
-We also provide a few universal filters, built-in:
-
-{{ collections.all | eleventyNavigation("Filters") | eleventyNavigationToHtml({ showExcerpt: true }) | safe }}
-
-#### Access existing filters {% addedin "0.11.0" %}
-
-If you’d like to reuse existing filters in a different way, consider using the new Configuration API `getFilter` method. You can use this to alias a filter to a different name. You can use this to use a filter inside of your own filter. You can use this to use a filter inside of a shortcode.
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addShortcode("myCustomImage", function(url, alt) {
-    return `<img src="${eleventyConfig.getFilter("url")(url)}" alt="${alt}">`;
   });
 };
 ```
