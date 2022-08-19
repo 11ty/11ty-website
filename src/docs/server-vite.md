@@ -35,7 +35,8 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Options
+<details>
+<summary>Expand for full list of options</summary>
 
 View the [full list of Vite Configuration options](https://vitejs.dev/config/).
 
@@ -45,6 +46,11 @@ const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite");
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(EleventyVitePlugin, {
     tempFolderName: ".11ty-vite", // Default name of the temp folder
+
+    // Options passed to the Eleventy Dev Server
+    // e.g. domdiff, enabled, etc.
+    // Added in Vite plugin v2.0.0-canary.2
+    serverOptions: {},
 
     // Defaults are shown:
     viteOptions: {
@@ -60,3 +66,7 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+See the full list of [`serverOptions` on the Dev Server documentation](/docs/dev-server/).
+
+</details>
