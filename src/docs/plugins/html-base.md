@@ -7,7 +7,7 @@ eleventyNavigation:
 ---
 # HTML `<base>`
 
-A build-time application of `<base>` to HTML (without relying on `<base>`) by modifying `a[href]`, `video[src]`, `audio[src]`, `source`, `img[src]`, `[srcset]`, and more.
+{% addedin "2.0.0-canary.15" %} A build-time application of `<base>` to HTML (without relying on `<base>`) by modifying `a[href]`, `video[src]`, `audio[src]`, `source`, `img[src]`, `[srcset]`, and more.
 
 * Read about [HTML’s `<base>` element on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base)
 
@@ -30,7 +30,7 @@ You can, if you’d like! Some folks have found it to be a bit [unreliable](http
 
 ### Installation
 
-This plugin is bundled with Eleventy (no installation required). It supports all async-friendly template languages (Nunjucks, Liquid, and JavaScript).
+{% addedin "2.0.0-canary.15" %} This plugin is bundled with Eleventy 2.0 (no extra installation is required). It supports all async-friendly template languages (Nunjucks, Liquid, and JavaScript).
 
 Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
 
