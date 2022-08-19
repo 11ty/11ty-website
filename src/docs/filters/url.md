@@ -6,8 +6,9 @@ eleventyNavigation:
   order: 1
   excerpt: Normalize absolute paths in your content, allows easily changing deploy subdirectories for your project.
 ---
-
 # `url` Universal Filter
+
+{% callout "info", "md" %}It’s recommended to use the simpler [HTML `<base>` plugin](/docs/plugins/html-base/) (new in Eleventy 2.0) instead of the `url` filter moving forward.{% endcallout %}
 
 Works with the `pathPrefix` configuration option to properly normalize absolute paths in your content with the `pathPrefix` added. Useful if you host your site on GitHub Pages, which normally live in a subdirectory, e.g. `https://11ty.github.io/eleventy-base-blog/`. We set `pathPrefix: "/eleventy-base-blog/"` and our absolute links all have this prepended to the beginning.
 
