@@ -42,13 +42,13 @@
     ]
   },
   "devDependencies": {
-    "@11ty/eleventy": "2.0.0-canary.14",
+    "@11ty/eleventy": "^2.0.0-canary.15",
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-img": "^2.0.1",
-    "@11ty/eleventy-navigation": "^0.3.4",
+    "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
-    "@netlify/functions": "^1.0.0",
+    "@netlify/functions": "^1.2.0",
     "clean-css": "^5.3.1",
     "comma-number": "^2.1.0",
     "cross-spawn": "^7.0.3",
