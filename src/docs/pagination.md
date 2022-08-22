@@ -684,7 +684,7 @@ Paginates to:
 The most powerful tool to change the data. Use this callback to modify, filter, or otherwise change the pagination data however you see fit *before* pagination occurs.
 
 {% raw %}
-```markdown
+```js
 ---js
 {
   pagination: {
@@ -711,6 +711,19 @@ The most powerful tool to change the data. Use this callback to modify, filter, 
 The above will iterate over a data set containing: `["item1 with a suffix", "item2 with a suffix", "item3 with a suffix", "item4 with a suffix"]`.
 
 You can do anything in this `before` callback. Maybe a custom `.sort()`, `.filter()`, `.map()` to remap the entries, `.slice()` to paginate only a subset of the data, etc!
+
+#### Use JavaScript Template Functions here
+
+{% addedin "2.0.0-canary.16" %}[JavaScript Template Functions](/docs/languages/javascript/#javascript-template-functions) (which are also populated by universal filters and shortcodes) are available in the `before` callback.
+
+```js
+// …
+before: function() {
+  let slug = this.slugify("My title.");
+  // use Universal filters or shortcodes too…
+},
+// …
+```
 
 ### Order of Operations
 
