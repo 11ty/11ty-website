@@ -27,7 +27,7 @@ Outputs to `/my-title/`.
 
 {% callout "info", "md" %}In versions prior to 1.0.0, [the `slug` Universal Filter was used](/docs/filters/slug/). To maintain backwards compatibility moving forward, `slug` is still included and supported but `slugify` is now recommended as best practice—it has better default behavior for URLs with special characters.{% endcallout %}
 
-{% callout "warn", "md" %}`slugify` currently [ignores characters for Japanese, Chinese, and others](https://github.com/sindresorhus/transliterate/issues/1). If you need to slugify these characters, alternatives like [`limax`](https://github.com/lovell/limax) or [`transliteration`](https://github.com/dzcpy/transliteration) may work better. (More context at [Issue #2537](https://github.com/11ty/eleventy/issues/2537)){% endcallout %}
+{% callout "warn", "md" %}`slugify` currently [ignores characters for Japanese, Chinese, and others](https://github.com/sindresorhus/transliterate/issues/1). If you need to slugify these characters, [add your own universal filter](/docs/filters/) with an alternative library like [`limax`](https://github.com/lovell/limax) or [`transliteration`](https://github.com/dzcpy/transliteration). (More context at [Issue #2537](https://github.com/11ty/eleventy/issues/2537)){% endcallout %}
 
 ### Upgrade from `slug` to `slugify`
 
