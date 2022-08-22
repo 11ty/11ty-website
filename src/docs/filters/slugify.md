@@ -9,10 +9,7 @@ eleventyNavigation:
 
 # `slugify` Universal Filter {% addedin "1.0.0" %}
 
-{% callout "info", "md" %}In versions prior to 1.0.0, [the `slug` Universal Filter was used](/docs/filters/slug/). To maintain backwards compatibility moving forward, `slug` is still included and supported but `slugify` is now recommended as best practice—it has better default behavior for URLs with special characters.{% endcallout %}
-
 Uses the [`@sindresorhus/slugify` npm package](https://www.npmjs.com/package/@sindresorhus/slugify) to convert a string into a URL slug. Typically used with permalinks.
-
 
 {% codetitle "slugify.md" %}
 {% raw %}
@@ -27,6 +24,10 @@ Outputs to `/my-title/`.
 
 * [`slug` Universal Filter](/docs/filters/slug/)
 * [← Back to Filters documentation.](/docs/filters/)
+
+{% callout "info", "md" %}In versions prior to 1.0.0, [the `slug` Universal Filter was used](/docs/filters/slug/). To maintain backwards compatibility moving forward, `slug` is still included and supported but `slugify` is now recommended as best practice—it has better default behavior for URLs with special characters.{% endcallout %}
+
+{% callout "warn", "md" %}`slugify` currently [ignores characters for Japanese, Chinese, and others](https://github.com/sindresorhus/transliterate/issues/1). If you need to slugify these characters, alternatives like [`limax`](https://github.com/lovell/limax) or [`transliteration`](https://github.com/dzcpy/transliteration) may work better. (More context at [Issue #2537](https://github.com/11ty/eleventy/issues/2537)){% endcallout %}
 
 ### Upgrade from `slug` to `slugify`
 
