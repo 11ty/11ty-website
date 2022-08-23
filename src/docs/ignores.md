@@ -57,6 +57,9 @@ module.exports = function(eleventyConfig) {
 
 {% callout "info", "md" %}The `node_modules` behavior changed in Eleventy `1.0`. If you’re still using [Eleventy `0.x`, read the `0.x` documentation](https://v0-12-1.11ty.dev/docs/ignores/#node_modules-exemption).{% endcallout %}
 
+<div class="youtube-related">
+  {%- youtubeEmbed "hJAtWQ9nmKU", "New <code>node_modules</code> ignores default (Changelog №17)", "724" -%}
+</div>
 
 ## File Locations
 

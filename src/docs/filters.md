@@ -144,3 +144,7 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+<div class="youtube-related">
+  {%- youtubeEmbed "hJAtWQ9nmKU", "Universal Asynchronous Filters (Nunjucks improvement) (Changelog №17)", "774" -%}
+</div>

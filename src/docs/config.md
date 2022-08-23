@@ -30,6 +30,21 @@ We support returning both a callback function (shown above) or an object literal
 * Add custom [Collections](/docs/collections/) and use [Advanced Collection Filtering and Sorting](/docs/collections/#advanced-custom-filtering-and-sorting).
 * Add some [Plugins](/docs/plugins/).
 
+## Default configuration filenames
+
+We look for the following configuration files:
+
+1. `.eleventy.js`
+1. `eleventy.config.js` {% addedin "2.0.0-canary.15" %}
+1. `eleventy.config.cjs` {% addedin "2.0.0-canary.15" %}
+
+The first configuration file found is used. The others are ignored.
+
+<div class="youtube-related">
+  {%- youtubeEmbed "hJAtWQ9nmKU", "Additions to the default config filename list (Changelog №17)", "431" -%}
+</div>
+
+
 ## Configuration Options
 
 <style>

@@ -31,6 +31,10 @@ With this new plugin, you no longer need to use the `url` filter in your HTML co
 
 * Behind the scenes, this plugin uses [posthtml-urls](https://github.com/posthtml/posthtml-urls) and transforms `a[href]`, `video[src]`, `audio[src]`, `source`, `img[src]`, `[srcset]` and [a whole bunch more](https://github.com/posthtml/posthtml-urls/blob/307c91342a211b3f9fb22bc57264bbb31f235fbb/lib/defaultOptions.js).
 
+<div class="youtube-related">
+  {%- youtubeEmbed "hJAtWQ9nmKU", "New HTML Base Plugin (Changelog №17)", "512" -%}
+</div>
+
 ### Why not use the `<base>` HTML element?
 
 You can, if you’d like! Some folks have found it to be a bit [unreliable](https://twitter.com/Rich_Harris/status/1526937421505609728) and edge-casey. This offers a build-time alternative.
