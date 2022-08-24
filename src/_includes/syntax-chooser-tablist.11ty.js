@@ -46,7 +46,7 @@ exports.render = async function({id, valid, additions, label}) {
 </div>`;
 
 	// Fancy: only use the Edge plugin on NETLIFY or when using Netlify CLI
-	if(process.env.NETLIFY || process.env.NETLIFY_DEV) {
+	if(false && (process.env.NETLIFY || process.env.NETLIFY_DEV)) {
 		return `<div class="tmplsyntax">
 	${await this.edge(liquidTemplate, "liquid")}
 	<details-utils close-esc close-click-outside>

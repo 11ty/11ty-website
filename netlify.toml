@@ -13,9 +13,9 @@ directory = "netlify/functions/"
 function = "user-preferences"
 path = "/account/preferences/"
 
-[[edge_functions]]
-function = "eleventy-edge"
-path = "/docs/*"
+# [[edge_functions]]
+# function = "eleventy-edge"
+# path = "/docs/*"
 
 [[redirects]]
 from = "/authors/:name/"

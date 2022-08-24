@@ -28,7 +28,7 @@ headerClass: elv-header-default
 {%- endif %}
 
   {# this permalink: false check can go away in 2.0.0-canary.9 #}
-  {% if page.url and page.url.startsWith("/docs/") %}
+  {% if false and page.url and page.url.startsWith("/docs/") %}
   {% renderFile "./src/_includes/syntax-chooser-form.njk" %}
   {% endif %}
 
