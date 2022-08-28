@@ -2,10 +2,17 @@
 pageTitle: Image
 eleventyNavigation:
   key: Image
-  order: 0
+  order: -.2
   excerpt: A utility to resize and generate images.
 communityLinksKey: image
 ---
+<details>
+<summary>Expand for contents</summary>
+
+[[toc]]
+
+</details>
+
 Low level utility to perform build-time image transformations for both vector and raster images. Output multiple sizes, save multiple formats, cache remote images locally. Uses the [sharp](https://sharp.pixelplumbing.com/) image processor.
 
 * [`eleventy-img` on GitHub](https://github.com/11ty/eleventy-img)
@@ -23,9 +30,6 @@ You maintain full control of the HTML. Use with `<picture>` or `<img>` or CSS `b
   * Manage the [cache duration](/docs/plugins/fetch/#change-the-cache-duration).
 * Fast: de-duplicates image requests and use both an in-memory and disk cache.
 
----
-
-[[toc]]
 
 ## Installation
 
@@ -418,30 +422,25 @@ Now you can use it in your templates:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#shortcode-njk" role="tab">Nunjucks</a>
-    <a href="#shortcode-liquid" role="tab">Liquid</a>
-    <a href="#shortcode-11tyjs" role="tab">11ty.js</a>
-  </div>
-  <div id="shortcode-njk" role="tabpanel">
-    {% codetitle "sample.njk" %}
-{%- highlight "jinja2" %}{% raw %}
-{% image "./src/images/cat.jpg", "photo of my cat" %}
-{% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
-{% endraw %}{% endhighlight %}
-    <p>The comma between arguments is <strong>required</strong> in Nunjucks templates.</p>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "shortcode"} %}
   <div id="shortcode-liquid" role="tabpanel">
-    {% codetitle "sample.liquid" %}
+    {% codetitle "Liquid", "Syntax" %}
 {%- highlight "liquid" %}{% raw %}
 {% image "./src/images/cat.jpg", "photo of my cat" %}
 {% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
 {% endraw %}{% endhighlight %}
     <p>The comma between arguments is <strong>optional</strong> in Liquid templates.</p>
   </div>
-  <div id="shortcode-11tyjs" role="tabpanel">
-    {% codetitle "sample.11ty.js" %}
+  <div id="shortcode-njk" role="tabpanel">
+    {% codetitle "Nunjucks", "Syntax" %}
+{%- highlight "jinja2" %}{% raw %}
+{% image "./src/images/cat.jpg", "photo of my cat" %}
+{% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
+{% endraw %}{% endhighlight %}
+    <p>The comma between arguments is <strong>required</strong> in Nunjucks templates.</p>
+  </div>
+  <div id="shortcode-js" role="tabpanel">
+    {% codetitle "JavaScript", "Syntax" %}
 {%- highlight "js" %}{% raw %}
 module.exports = function() {
   let img1 = await this.image("./src/images/cat.jpg", "photo of my cat");
@@ -451,6 +450,11 @@ module.exports = function() {
 ${img2}`;
 };
 {% endraw %}{% endhighlight %}
+  </div>
+  <div id="shortcode-hbs" role="tabpanel">
+
+This `image` shortcode example [requires an async-friendly template language](#asynchronous-usage) and is not available in Handlebars.
+
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -560,6 +564,10 @@ With a template `my-blog-post.md` and an image file `my-blog-post.jpeg`, you cou
 Note this also means that `folder/folder.jpeg` would be processed for all templates in `folder/*` and any images stored in your global `_data` would also be populated into the data cascade based on their folder structure.
 
 </details>
+
+<div class="youtube-related">
+  {%- youtubeEmbed "oCTAZumAGNc", "Use images as data files (Weekly №11)", "244" -%}
+</div>
 
 ## Advanced Usage
 

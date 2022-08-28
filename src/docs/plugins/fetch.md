@@ -1,11 +1,17 @@
 ---
 eleventyNavigation:
   key: Fetch
-  order: 0.5
+  order: -0.15
   excerpt: A utility to fetch and cache network requests.
 ---
 # Fetch
 
+<details>
+<summary>Expand for contents</summary>
+
+[[toc]]
+
+</details>
 
 Fetch network resources and cache them so you don’t bombard your API (or other resources). Do this at configurable intervals—not with every build! Once per minute, or once per hour, once per day, or however often you like!
 
@@ -21,11 +27,8 @@ This plugin can save *any* kind of asset—JSON, HTML, images, videos, etc.
 * Control concurrency so we don’t make too many network requests at the same time.
 * Requires **Node 12+**
 
-{% callout "info", "md" %}This plugin was formerly known as [`@11ty/eleventy-cache-assets`](https://www.npmjs.com/package/@11ty/eleventy-cache-assets).{% endcallout %}
-
----
-
-[[toc]]
+{% callout "info", "md" %}This plugin was renamed from [`@11ty/eleventy-cache-assets`](https://www.npmjs.com/package/@11ty/eleventy-cache-assets). <div class="youtube-related">{% youtubeEmbed "JCQQgtOcjH4", "Cache Assets renamed to Fetch (Weekly №2)", "246" %}</div>
+{%- endcallout %}
 
 ## Installation
 
@@ -166,6 +169,10 @@ package = "netlify-plugin-cache"
   [plugins.inputs]
   paths = [ ".cache" ]
 ```
+
+<div class="youtube-related">
+  {%- youtubeEmbed "JCQQgtOcjH4", "Reusing Fetch cache between builds (Weekly №2)", "322" -%}
+</div>
 
 ## More Examples
 

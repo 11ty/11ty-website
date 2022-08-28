@@ -39,12 +39,7 @@ This will place this `mypost.md` into the `post` collection with all other piece
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#collections-liquid" role="tab">Liquid</a>
-    <a href="#collections-njk" role="tab">Nunjucks</a>
-    <a href="#collections-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collections"} %}
   <div id="collections-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -99,12 +94,7 @@ Compare the `post.url` and special Eleventy-provided `page.url` variable to find
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#collectionsnav-liquid" role="tab">Liquid</a>
-    <a href="#collectionsnav-njk" role="tab">Nunjucks</a>
-    <a href="#collectionsnav-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsnav"} %}
   <div id="collectionsnav-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -166,12 +156,7 @@ By default Eleventy puts all of your content (independent of whether or not it h
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#collectionsall-liquid" role="tab">Liquid</a>
-    <a href="#collectionsall-njk" role="tab">Nunjucks</a>
-    <a href="#collectionsall-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsall"} %}
   <div id="collectionsall-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -287,12 +272,7 @@ This content would show up in the template data inside of `collections.cat` and 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#collectionsitem-liquid" role="tab">Liquid</a>
-    <a href="#collectionsitem-njk" role="tab">Nunjucks</a>
-    <a href="#collectionsitem-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsitem"} %}
   <div id="collectionsitem-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -391,12 +371,7 @@ To sort descending in your template, you can use a filter to reverse the sort or
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#collectionssort-liquid" role="tab">Liquid</a>
-    <a href="#collectionssort-njk" role="tab">Nunjucks</a>
-    <a href="#collectionssort-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionssort"} %}
   <div id="collectionssort-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}

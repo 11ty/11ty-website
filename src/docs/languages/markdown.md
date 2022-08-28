@@ -74,7 +74,7 @@ const markdownItEmoji = require("markdown-it-emoji");
 
 module.exports = function(eleventyConfig) {
   // New in 2.0
-  eleventyConfig.amendLibrary("md", mdLib => mdLib.use(markdownItEmoji);
+  eleventyConfig.amendLibrary("md", mdLib => mdLib.use(markdownItEmoji));
 };
 ```
 
@@ -188,6 +188,11 @@ module.exports = function(eleventyConfig) {
 ```
 
 </details>
+
+<div class="youtube-related">
+  {%- youtubeEmbed "ZE5Np95-PeU", "The Dreaded Markdown Indented Code Blocks (Weekly №14)", "42" -%}
+</div>
+
 
 ## Why can’t I return markdown from paired shortcodes to use in a markdown file?
 

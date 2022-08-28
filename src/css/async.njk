@@ -3,16 +3,20 @@ permalink: /css/async.css
 eleventyExcludeFromCollections: true
 ---
 {%- set css %}
-{% include '../_includes/components/facepile.css' %}
-{% include '../_includes/components/lists.css' %}
-{% include '../_includes/components/minilink.css' %}
-{% include '../_includes/components/codetitle.css' %}
-{% include '../_includes/components/forms.css' %}
-{% include '../_includes/components/supporters.css' %}
-{% include '../_includes/components/truncate.css' %}
-{% include '../_includes/components/quicktips.css' %}
-{% include '../_includes/components/site-entry.css' %}
+{% include "../_includes/components/facepile.css" %}
+{% include "../_includes/components/lists.css" %}
+{% include "../_includes/components/minilink.css" %}
+{% include "../_includes/components/codetitle.css" %}
+{% include "../_includes/components/forms.css" %}
+{% include "../_includes/components/supporters.css" %}
+{% include "../_includes/components/truncate.css" %}
+{% include "../_includes/components/quicktips.css" %}
+{% include "../_includes/components/site-entry.css" %}
+{% include "../_includes/components/autosubmit.css" %}
 {% include "../../node_modules/speedlify-score/speedlify-score.css" %}
+{% include "../../node_modules/lite-youtube-embed/src/lite-yt-embed.css" %}
+{# should come last, has some overrides #}
+{% include "../_includes/components/embeds.css" %}
 {% endset %}
 
 {{ css | cssmin | safe }}

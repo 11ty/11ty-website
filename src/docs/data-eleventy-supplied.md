@@ -163,16 +163,21 @@ let eleventy = {
 };
 ```
 
+### Environment Variables on `process.env`
+
+* Read more about [Eleventy-supplied environment variables](/docs/environment-vars/#eleventy-supplied).
+=======
+<div class="youtube-related">
+  {%- youtubeEmbed "_YvwTHeqBZY", "eleventy.version and eleventy.generator Data (Weekly №7)", "235" -%}
+</div>
+
+
 ## Learn more...
 
-* [Eleventy-supplied Environment Variables on `process.env`](/docs/environment-vars/#eleventy-supplied)
 * [Serverless plugin](/docs/plugins/serverless/)
   * [Dynamic Slugs and Serverless Global Data](/docs/plugins/serverless/#dynamic-slugs-and-serverless-global-data)
   * `event.queryStringParameters`, which are very similar to [`URL.searchParams()`](https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams). It’s an object representing the name/value pairs for things after the `?` in a URL.
 
-### Environment Variables on `process.env`
-
-* Read more about [Eleventy-supplied environment variables](/docs/environment-vars/#eleventy-supplied).
 
 ## Eleventy Leaderboards
 

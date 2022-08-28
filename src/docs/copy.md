@@ -6,14 +6,18 @@ eleventyNavigation:
 ---
 # Passthrough File Copy {% addedin "0.2.14" %}
 
-If we want to copy additional files that are not Eleventy templates, we use a feature called Passthrough File Copy to  tell Eleventy to copy things to our output folder for us.
+<details>
+<summary>Expand for contents</summary>
 
 [[toc]]
 
-<a id="{{ 'Manual Pass-through Copy (Faster)' | slug }}"></a>
-<a id="{{ 'Manual Passthrough Copy (Faster)' | slug }}"></a>
+</details>
+
+If we want to copy additional files that are not Eleventy templates, we use a feature called Passthrough File Copy to  tell Eleventy to copy things to our output folder for us.
 
 ## Configuration API Method
+
+<a id="{{ 'Manual Pass-through Copy (Faster)' | slug }}"></a><a id="{{ 'Manual Passthrough Copy (Faster)' | slug }}"></a>
 
 Use a configuration API method to specify _files_ or _directories_ for Eleventy to copy.
 
@@ -161,7 +165,7 @@ Practically speaking, this means that passthrough copy files _**will not**_ be c
 
 This behavior will revert if:
 
-1. You use a different development server (e.g. [swap back to Browsersync](/docs/watch-serve/#swap-back-to-browsersync))
+1. You use a different development server (e.g. [swap back to Browsersync](/docs/dev-server/#swap-back-to-browsersync))
 2. If you are running Eleventy without `--serve` (a normal build or via `--watch`)
 
 You can also opt-out using this configuration API method:
@@ -176,6 +180,11 @@ module.exports = function(eleventyConfig) {
 ```
 
 * [Issue #2456](https://github.com/11ty/eleventy/issues/2456)
+
+
+<div class="youtube-related">
+  {%- youtubeEmbed "EcId2RVdUFE", "Emulated Passthrough File Copy (Weekly №15)", "443" -%}
+</div>
 
 ## Advanced Options {% addedin "2.0.0" %}
 
@@ -204,6 +213,10 @@ module.exports = function(eleventyConfig) {
 ```
 
 Review the [full list of options on the `recursive-copy` GitHub repository](https://github.com/timkendrick/recursive-copy#usage).
+
+<div class="youtube-related">
+  {%- youtubeEmbed "EcId2RVdUFE", "Passthrough File Copy Advanced Options (Weekly №15)", "337" -%}
+</div>
 
 ## Passthrough Everything {% addedin "0.5.4" %}
 

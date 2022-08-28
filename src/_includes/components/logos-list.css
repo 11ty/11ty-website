@@ -67,3 +67,7 @@
 	margin-right: .5em;
 	opacity: .9;
 }
+.logos-list .avatar-tall {
+	aspect-ratio: 8 / 10;
+	width: auto;
+}

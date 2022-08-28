@@ -2,7 +2,7 @@
   <a href="{{ site.demo or site.url }}" class="elv-externalexempt" title="{{ site.name }}">
     <span class="sites-site-name">
       {%- if site.iconUrl or site.url %}
-        {%- indieavatar site.iconUrl or site.url, "large" %}
+        {%- indieavatar site.iconUrl or site.url, "avatar-large" %}
       {%- elseif site.opened_by %}
         {%- communityavatar site.opened_by %}
       {%- elseif site.author or site.twitter %}

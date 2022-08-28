@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: Directory Output
-  order: 3.1
+  order: 3.2
   excerpt: A plugin to group and sort console output by directory, with file size and benchmarks.
 ---
 # Directory Output

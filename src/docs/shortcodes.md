@@ -15,50 +15,46 @@ tags:
 ---
 # Shortcodes {% addedin "0.5.0" %}
 
-Various template engines can be extended with shortcodes for easy reusable content. This is sugar around Template Language [Custom Tags](/docs/custom-tags/). Shortcodes are supported in JavaScript, Liquid, Nunjucks, Handlebars templates. Here are a few examples:
+Various template engines can be extended with shortcodes for easy reusable content. This is sugar around Template Language [Custom Tags](/docs/custom-tags/). Shortcodes are supported in JavaScript, Liquid, Nunjucks, Handlebars templates.
+
+Here are a few examples:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#shortcode-njk" role="tab">Nunjucks</a>
-    <a href="#shortcode-liquid" role="tab">Liquid</a>
-    <a href="#shortcode-hbs" role="tab">Handlebars</a>
-    <a href="#shortcode-11tyjs" role="tab">11ty.js</a>
-  </div>
-  <div id="shortcode-njk" role="tabpanel">
-    {% codetitle "sample.njk" %}
-{%- highlight "html" %}{% raw %}
-{% user firstName, lastName %}
-{% endraw %}{% endhighlight %}
-    <p>The comma between arguments is <strong>required</strong> in Nunjucks templates.</p>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "shortcode"} %}
   <div id="shortcode-liquid" role="tabpanel">
     {% codetitle "sample.liquid" %}
-{%- highlight "html" %}{% raw %}
+{%- highlight "liquid" %}{% raw %}
 {% user firstName, lastName %}
 {% endraw %}{% endhighlight %}
     <p>The comma between arguments is <strong>optional</strong> in Liquid templates.</p>
     {% codetitle "sample.liquid" %}
-{%- highlight "html" %}{% raw %}
+{%- highlight "liquid" %}{% raw %}
 {% user firstName lastName %}
 {% endraw %}{% endhighlight %}
   </div>
-  <div id="shortcode-hbs" role="tabpanel">
-    {% codetitle "sample.hbs" %}
-{%- highlight "html" %}{% raw %}
-<!-- Note the three opening and closing curly brackets (the triple-stash) -->
-{{{ user firstName lastName }}}
-{% endraw %}{%- endhighlight %}
-    {% callout "info" %}Note that if you return HTML in your Handlebars shortcode, you need to use the Handlebars triple-stash syntax (three opening and three closing curly brackets, e.g. <code>{% raw %}{{{ shortcodeName }}}{% endraw %}</code>) to avoid double-escaped HTML. If it’s double-escaped a paragraph tag may render as <code>&amp;lt;p&amp;gt;</code>{% endcallout %}
+  <div id="shortcode-njk" role="tabpanel">
+    {% codetitle "sample.njk" %}
+{%- highlight "jinja2" %}{% raw %}
+{% user firstName, lastName %}
+{% endraw %}{% endhighlight %}
+    <p>The comma between arguments is <strong>required</strong> in Nunjucks templates.</p>
   </div>
-  <div id="shortcode-11tyjs" role="tabpanel">
+  <div id="shortcode-js" role="tabpanel">
     {% codetitle "sample.11ty.js" %}
 {%- highlight "js" %}{% raw %}
 module.exports = function({ firstName, lastName }) {
   return `<h1>${this.user(firstName, lastName)}</h1>`;
 };
 {% endraw %}{% endhighlight %}
+  </div>
+  <div id="shortcode-hbs" role="tabpanel">
+    {% codetitle "sample.hbs" %}
+{%- highlight "handlebars" %}{% raw %}
+<!-- Note the three opening and closing curly brackets (the triple-stash) -->
+{{{ user firstName lastName }}}
+{% endraw %}{%- endhighlight %}
+    {% callout "info" %}Note that if you return HTML in your Handlebars shortcode, you need to use the Handlebars triple-stash syntax (three opening and three closing curly brackets, e.g. <code>{% raw %}{{{ shortcodeName }}}{% endraw %}</code>) to avoid double-escaped HTML. If it’s double-escaped a paragraph tag may render as <code>&amp;lt;p&amp;gt;</code>{% endcallout %}
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -107,13 +103,7 @@ The shortcodes we saw above were nice, I suppose. But really, they are not all t
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#pairedshortcodes-liquid" role="tab">Liquid</a>
-    <a href="#pairedshortcodes-njk" role="tab">Nunjucks</a>
-    <a href="#pairedshortcodes-hbs" role="tab">Handlebars</a>
-    <a href="#pairedshortcodes-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pairedshortcodes"} %}
   <div id="pairedshortcodes-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -153,7 +143,7 @@ The comma between arguments is **required** in Nunjucks.
 {% codetitle "Handlebars", "Syntax" %}
 
 {% raw %}
-```html
+```handlebars
 {{# user firstName lastName }}
   Hello {{ someOtherVariable }}.
 

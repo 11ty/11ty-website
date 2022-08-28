@@ -20,13 +20,7 @@ Various template engines can be extended with custom filters to modify content. 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#filter-njk" role="tab">Nunjucks</a>
-    <a href="#filter-liquid" role="tab">Liquid</a>
-    <a href="#filter-hbs" role="tab">Handlebars</a>
-    <a href="#filter-11tyjs" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "filter"} %}
   <div id="filter-njk" role="tabpanel">
     {% codetitle "sample.njk" %}
 {%- highlight "html" %}{% raw %}
@@ -39,19 +33,19 @@ Various template engines can be extended with custom filters to modify content. 
 <h1>{{ name | makeUppercase }}</h1>
 {% endraw %}{% endhighlight %}
   </div>
-  <div id="filter-hbs" role="tabpanel">
-    {% codetitle "sample.hbs" %}
-{%- highlight "html" %}{% raw %}
-<h1>{{ makeUppercase name }}</h1>
-{% endraw %}{%- endhighlight %}
-  </div>
-  <div id="filter-11tyjs" role="tabpanel">
+  <div id="filter-js" role="tabpanel">
     {% codetitle "sample.11ty.js" %}
 {%- highlight "js" %}{% raw %}
 module.exports = function({name}) {
   return `<h1>${this.makeUppercase(name)}</h1>`;
 };
 {% endraw %}{% endhighlight %}
+  </div>
+  <div id="filter-hbs" role="tabpanel">
+    {% codetitle "sample.hbs" %}
+{%- highlight "html" %}{% raw %}
+<h1>{{ makeUppercase name }}</h1>
+{% endraw %}{%- endhighlight %}
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -76,6 +70,9 @@ module.exports = function(eleventyConfig) {
 
   // or, use a Universal filter (an alias for all of the above)
   eleventyConfig.addFilter("makeUppercase", function(value) { … });
+
+  // New in 2.0.0-canary.15
+  eleventyConfig.addAsyncFilter("makeUppercase", async function(value) { … });
 };
 ```
 
@@ -120,3 +117,34 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+### Asynchronous Universal Filters {% addedin "2.0.0" %}
+
+Eleventy has added a new universal filter API for asynchronous filters and extended the currently available `addFilter` method to be async-friendly. _Note that even though Handlebars is used for synchronous filters in `addFilter`, it is excluded from asynchronous filters because Handlebars is not async-friendly._
+
+If you are not yet on Eleventy 2.0, you can still add asynchronous filters to each async-friendly template language individually: [Liquid `addLiquidFilter`](/docs/languages/liquid/#filters), [Nunjucks `addNunjucksAsyncFilter`](/docs/languages/nunjucks/#asynchronous-nunjucks-filters), and [JavaScript `addJavaScriptFunction`](/docs/languages/javascript/#asynchronous-javascript-template-functions).
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // Async universal filters add to:
+  // * Liquid
+  // * Nunjucks
+  // * JavaScript
+
+  eleventyConfig.addFilter("myFilter", async function(value) {
+    // do some Async work
+    return value;
+  });
+
+  eleventyConfig.addAsyncFilter("myFilter", async function(value) {
+    // do some Async work
+    return value;
+  });
+};
+```
+
+<div class="youtube-related">
+  {%- youtubeEmbed "hJAtWQ9nmKU", "Universal Asynchronous Filters (Nunjucks improvement) (Changelog №17)", "774" -%}
+</div>

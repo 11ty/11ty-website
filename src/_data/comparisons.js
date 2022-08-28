@@ -1,6 +1,6 @@
 module.exports = [
 	{
-		text: "Eleventy builds markdown **1461% faster than Astro**.",
+		text: "Eleventy builds markdown **1081% faster than Astro**.",
 		url: "https://www.zachleat.com/web/build-benchmark/",
 	},
 	{

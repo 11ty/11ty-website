@@ -157,6 +157,13 @@ blockquote .bio-source {
 		fill: #fff;
 	}
 }
+
+h1 .avatar {
+	height: .7em;
+	width: .7em;
+	vertical-align: baseline;
+}
+
 /* Main */
 main {
 	font-size: 1.125em; /* 18px /16 */
