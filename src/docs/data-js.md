@@ -64,6 +64,10 @@ module.exports = async function() {
 };
 ```
 
+### Fetching data from a remote API
+
+You’ll want to use [Eleventy’s Fetch plugin](/docs/plugins/fetch/) to request and cache data from remote APIs. There is another example on [Quick Tip #009—Cache Data Requests](/docs/quicktips/cache-api-requests/).
+
 ### Arguments to Global Data Files
 
 {% addedin "1.0.0" %} When using a callback function in your JavaScript Data Files, Eleventy will now supply any global data already processed [via the Configuration API (`eleventyConfig.addGlobalData`)](/docs/data-global-custom/) as well as the [`eleventy` global variable](/docs/data-eleventy-supplied/#eleventy-variable).
@@ -82,6 +86,8 @@ module.exports = function(configData) {
 
 - [Example: Using GraphQL](#example-using-graphql)
 - [Example: Exposing Environment Variables](#example-exposing-environment-variables)
+- [Fetch GitHub star counts](/docs/quicktips/cache-api-requests/)
+- [Caching remote images, Google Fonts CSS, and more on the Eleventy Fetch plugin docs](/docs/plugins/fetch/#more-examples)
 
 ### Example: Using GraphQL
 

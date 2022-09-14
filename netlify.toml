@@ -3,10 +3,19 @@ publish = "_site"
 command = "npm run build-production"
 
 [dev]
+framework = "#static"
 command = "npm start"
 
 [functions]
 directory = "netlify/functions/"
+
+[[edge_functions]]
+function = "user-preferences"
+path = "/account/preferences/"
+
+# [[edge_functions]]
+# function = "eleventy-edge"
+# path = "/docs/*"
 
 [[redirects]]
 from = "/authors/:name/"

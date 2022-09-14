@@ -45,9 +45,15 @@ let page = {
 
   // Added in 1.0
   // Useful with `page.filePathStem` when using custom file extensions.
-  outputFileExtension: "html"
+  outputFileExtension: "html",
+
+  // Available in 2.0 with the i18n plugin
+  // The default is the value of `defaultLanguage` passed to the i18n plugin
+  lang: "",
 };
 ```
+
+Note that `page.lang` is _only_ available when the [i18n plugin has been added to your configuration file](http://localhost:8091/docs/plugins/i18n/#add-to-your-configuration-file).
 
 ### `date`
 
@@ -164,9 +170,9 @@ Learn more about:
   * [Dynamic Slugs and Serverless Global Data](/docs/plugins/serverless/#dynamic-slugs-and-serverless-global-data).
   * `event.queryStringParameters`, which are very similar to [URL.searchParams](https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams). It’s an object representing the name/value pairs for things after the `?` in a URL.
 
-Eleventy Leaderboards:
-
-* Upcoming versions of the [Eleventy Leaderboards](/speedlify/) will require that {% raw %}`<meta name="generator" content="{{ eleventy.generator }}">`{% endraw %} {% addedin "1.0.1" %} exist on the page’s markup to be valid for placement and ranking.
+<div class="youtube-related">
+  {%- youtubeEmbed "_YvwTHeqBZY", "eleventy.version and eleventy.generator Data (Weekly №7)", "235" -%}
+</div>
 
 ## Environment Variables on `process.env`
 

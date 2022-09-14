@@ -1,11 +1,16 @@
 <div class="elv-toc">
+<details-force-state>
+	<details open>
+		<summary class="btn-primary benchnine rainbow-active rainbow-active-noanim">Menu</summary>
+		{%- if eleventyNavigation -%}
+			{%- set navKey = eleventyNavigation.key -%}
+		{%- endif -%}
+		{{ collections.sidebarNav | eleventyNavigation | eleventyNavigationToHtml({ activeKey: navKey, listClass: 'elv-toc-list', activeListItemClass: 'elv-toc-active' }) | safe }}
 
-<details open>
-	<summary class="btn-primary benchnine rainbow-active rainbow-active-noanim">Menu</summary>
-	{%- if eleventyNavigation -%}
-		{%- set navKey = eleventyNavigation.key -%}
-	{%- endif -%}
-	{{ collections.sidebarNav | eleventyNavigation | eleventyNavigationToHtml({ activeKey: navKey, listClass: 'elv-toc-list', activeListItemClass: 'elv-toc-active' }) | safe }}
-</details>
-
+		{%- callout %}
+		{%- set comparison = comparisons | randompick %}
+		<p><a href="{{ comparison.url }}" class="elv-externalexempt">{{ comparison.text | injectAvatars | markdown | safe }}</a></p>
+		{%- endcallout %}
+	</details>
+</details-force-state>
 </div>

@@ -7,28 +7,27 @@ eleventyNavigation:
 ---
 # Permalinks
 
+<details>
+  <summary>Expand for Table of Contents</summary>
+
 [[toc]]
 
-## Cool URIs don’t change
+</details>
 
-Eleventy automatically helps you make sure that [Cool URIs don’t change](https://www.w3.org/Provider/Style/URI.html).
+You can customize the default location of templates to the output directory using Eleventy’s permalinks feature.
 
-> What to leave out…
-> File name extension. This is a very common one. "cgi", even ".html" is something which will change. You may not be using HTML for that page in 20 years time, but you might want today's links to it to still be valid. The canonical way of making links to the W3C site doesn't use the extension.
+<div id="default-input/output-examples"></div>
 
-## Default Input/Output Examples
-
-Assuming your `--output` directory is the default, `_site`:
-
+Here’s a few examples of how it works by default (assuming your output directory is the default, `_site`):
 
 <table>
     <tbody>
         <tr>
-            <th>Input File</th>
+            <th>Input</th>
             <td><code>index.njk</code></td>
         </tr>
         <tr>
-            <th>Output File</th>
+            <th>Output</th>
             <td><code>_site/index.html</code></td>
         </tr>
         <tr>
@@ -41,11 +40,11 @@ Assuming your `--output` directory is the default, `_site`:
 <table>
     <tbody>
         <tr>
-            <th>Input File</th>
+            <th>Input</th>
             <td><code>template.njk</code></td>
         </tr>
         <tr>
-            <th>Output File</th>
+            <th>Output</th>
             <td><code>_site/template/index.html</code></td>
         </tr>
         <tr>
@@ -58,11 +57,11 @@ Assuming your `--output` directory is the default, `_site`:
 <table>
     <tbody>
         <tr>
-            <th>Input File</th>
+            <th>Input</th>
             <td><code>subdir/template.njk</code></td>
         </tr>
         <tr>
-            <th>Output File</th>
+            <th>Output</th>
             <td><code>_site/subdir/template/index.html</code></td>
         </tr>
         <tr>
@@ -75,11 +74,11 @@ Assuming your `--output` directory is the default, `_site`:
 <table>
     <tbody>
         <tr>
-            <th>Input File</th>
+            <th>Input</th>
             <td><code>subdir/template/template.njk</code> or <code>subdir/template/index.njk</code></td>
         </tr>
         <tr>
-            <th>Output File</th>
+            <th>Output</th>
             <td><code>_site/subdir/template/index.html</code></td>
         </tr>
         <tr>
@@ -89,7 +88,16 @@ Assuming your `--output` directory is the default, `_site`:
     </tbody>
 </table>
 
-## Remapping Output (Permalink)
+## Cool URIs don’t change
+
+Eleventy automatically helps you make sure that [Cool URIs don’t change](https://www.w3.org/Provider/Style/URI.html).
+
+> What to leave out…
+> File name extension. This is a very common one. "cgi", even ".html" is something which will change. You may not be using HTML for that page in 20 years time, but you might want today's links to it to still be valid. The canonical way of making links to the W3C site doesn't use the extension.
+
+## Changing the output location
+
+<div id="remapping-output-(permalink)"></div>
 
 To remap your template’s output to a different path than the default, use the `permalink` key in the template’s front matter. If a subdirectory does not exist, it will be created.
 
@@ -113,11 +121,13 @@ permalink: "this-is-a-new-path/subdirectory/testing/"
 
 Both of the above examples will write to `_site/this-is-a-new-path/subdirectory/testing/index.html`.
 
-{% callout "warn" %}While <code>index.html</code> is optional, it is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a> to leave off the trailing slash! If you forget it, the browser may attempt to download the file instead of displaying it (unless you’ve done some extra work to set up your <code>Content-Type</code> headers correctly).{% endcallout %}
+Fear not: if multiple input files _attempt to write to the same output location_, Eleventy will throw an error for you!
 
-{% callout "info" %}If multiple input files attempt to write to the same permalink output file, Eleventy will throw an error {% addedin "0.9.0" %}.{% endcallout %}
+{% callout "warn", "md" %}While `index.html` is optional, it is a [**Common Pitfall**](/docs/pitfalls/) to leave off the trailing slash! If you forget it, the browser may attempt to download the file instead of displaying it (unless you’ve done some extra work to set up your `Content-Type` headers correctly).{% endcallout %}
 
-### `permalink: false`
+### Skip writing to the file system
+
+<div id="permalink-false"></div>
 
 If you set the `permalink` value to be `false`, this will disable writing the file to disk in your output folder. The file will still be processed normally (and present in collections, with its [`url` and `outputPath` properties](/docs/data-eleventy-supplied/) set to `false`) but will not be available in your output directory as a standalone template.
 
@@ -129,30 +139,54 @@ permalink: false
 ---
 ```
 
-### Use data variables in Permalink
+### Use template syntax in Permalink
 
-You may use data variables here (and template syntax, too). These will be parsed with the current template’s rendering engine.
+You may use data variables here (and template syntax, too). These will be parsed with the current template’s rendering engine. It’s recommended to use the provided [`slugify` filter](/docs/filters/slugify/) to create URL-safe strings from data.
 
-For example, in a Nunjucks template:
+<div id="use-filters"></div>
+
+For example:
 
 {% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
 ```markdown
 ---
-mySlug: this-is-a-new-path
-permalink: "subdir/{{ mySlug }}/index.html"
+title: This is a New Path
+permalink: "subdir/{{ title | slugify }}/index.html"
 ---
 ```
 {% endraw %}
 
+* Pagination variables also work here! [Read more about Pagination](/docs/pagination/)
+
 Writes to `_site/subdir/this-is-a-new-path/index.html`.
 
-{% callout "info", "md" %}Make sure you read about the special `page` variables useful for permalinks too: [`page.fileSlug`](/docs/data-eleventy-supplied/#fileslug) and [`page.filePathStem`](/docs/data-eleventy-supplied/#filepathstem).{% endcallout %}
+{% callout "info", "md" %}Using the data cascade you have the power to change the default behavior for permalinks for all content in your project. Learn more about the special `page` variables useful for permalinks to see examples of this behavior: [`page.fileSlug`](/docs/data-eleventy-supplied/#fileslug) and [`page.filePathStem`](/docs/data-eleventy-supplied/#filepathstem).{% endcallout %}
 
-#### Warning about YAML Objects
+<details>
+  <summary>Expand to see another example using Liquid’s <code>date</code> filter.</summary>
 
-{% callout "warn" %}When you use variables, make sure that you use quotes! Without quotes YAML may try to parse this as an object if the first character is a <code>{</code>, for example <code>permalink: {% raw %}{{ page.filePathStem }}{% endraw %}.html</code>. This is a <a href="/docs/pitfalls/"><strong>common pitfall</strong></a>.{% endcallout %}
+{% codetitle "YAML Front Matter using Liquid", "Syntax" %}
+
+{% raw %}
+```markdown
+---
+date: "2016-01-01T06:00-06:00"
+permalink: "/{{ page.date | date: '%Y/%m/%d' }}/index.html"
+---
+```
+{% endraw %}
+
+Writes to `_site/2016/01/01/index.html`. There are a variety of ways that the page.date variable can be set (using `date` in your front matter is just one of them). Read more about [Content dates](/docs/dates/).
+
+</details>
+
+#### Put quotes around template syntax in YAML
+
+<div id="warning-about-yaml-objects"></div>
+
+{% callout "warn", "md" %}**YAML Pitall:** If your permalink uses template syntax, make sure that you use quotes! Without quotes YAML may try to parse this as an object if the first character is a `{`, for example `permalink: {% raw %}{{ page.filePathStem }}{% endraw %}.html`. This is a [**common pitfall**](/docs/pitfalls/).{% endcallout %}
 
 {% codetitle "YAML", "Syntax" %}
 
@@ -164,6 +198,52 @@ permalink: "{{ page.filePathStem }}.html"
 
 The error message might look like `can not read a block mapping entry; a multiline key may not be an implicit key`.
 
+### Custom File Formats
+
+You can change the file extension in the permalink to output to any file type. For example, to generate a JSON search index to be used by popular search libraries:
+
+{% codetitle "EJS", "Syntax" %}
+
+```markdown
+---
+permalink: "index.json"
+---
+<%- JSON.stringify(collections.all) -%>
+```
+
+## Advanced Usage
+
+### Mapping one URL to Multiple Files for Internationalization {% addedin "2.0.0" %}
+
+_Decouple a page’s primary URL from its permalink._
+
+_New in 2.0.0-canary.13:_ As an example, say you have two content files: `about.en.html` and `about.es.html`. You’ve already set up the [`addGlobalData` feature to remap their respective output](/docs/data-eleventy-supplied/#changing-your-project-default-permalinks) to `_site/about.en.html` and `_site/about.es.html`.
+
+Use [server-side redirects](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language) to control which of these files is shown.
+
+* [Netlify Redirects](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language)
+* [Apache Content Negotiation](https://fantasai.inkedblade.net/web-design/l10n) related to [Issue #761](https://github.com/11ty/eleventy/issues/761)
+
+These will work as expected out of the box, except for the [`page.url`](/docs/data-eleventy-supplied/#page-variable) variable and the URL reported in [collection objects](/docs/collections/#collection-item-data-structure) (et al).
+
+Say we want two or more files on the file system (e.g. `about.en.html` and `about.es.html`) to map to a single page URL (`/about/`—not ~~`/about.en.html`~~ or ~~`/about.es.html`~~). This is now possible using a new URL Transforms feature. URL transforms let you modify the `page.url` for a content document based.
+
+This example matches any `.xx.html` URL:
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addUrlTransform(({url}) => {
+    // `url` is guaranteed to be a string here even if you’re using `permalink: false`
+    if (url.match(/\.[a-z]{2}\.html$/i)) {
+        return url.slice(0, -1 * ".en.html".length) + "/";
+    }
+
+    // Returning undefined skips the url transform.
+  });
+};
+```
+
+This approach unlocks functionality for the default build mode of Eleventy but you could also achieve some of the same functionality using the [Edge](/docs/plugins/edge/) or [Serverless plugins](/docs/plugins/serverless/).
 
 ### Disable templating in permalinks {% addedin "0.7.0" %}
 
@@ -193,38 +273,6 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Use filters!
-
-Use the provided [`slugify` filter](/docs/filters/slugify/) to modify other data available in the template.
-
-{% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
-
-{% raw %}
-```markdown
----
-title: My Article Title
-permalink: "subdir/{{ title | slugify }}/index.html"
----
-```
-{% endraw %}
-
-_(the above is using syntax that works in at least Liquid and Nunjucks)_
-
-Writes to `_site/subdir/my-article-title/index.html`.
-
-{% codetitle "YAML Front Matter using Liquid", "Syntax" %}
-
-{% raw %}
-```markdown
----
-date: "2016-01-01T06:00-06:00"
-permalink: "/{{ page.date | date: '%Y/%m/%d' }}/index.html"
----
-```
-{% endraw %}
-
-Writes to `_site/2016/01/01/index.html`. There are a variety of ways that the page.date variable can be set (using `date` in your front matter is just one of them). Read more about [Content dates](/docs/dates/).
-
 ### Ignore the output directory {% addedin "0.1.4" %}
 
 To remap your template’s output to a directory independent of the output directory (`--output`), use `permalinkBypassOutputDir: true` in your front matter.
@@ -239,23 +287,3 @@ permalinkBypassOutputDir: true
 ```
 
 Writes to `_includes/index.html` even though the output directory is `_site`. This is useful for writing child templates to the `_includes` directory for re-use in your other templates.
-
-### Custom File Formats
-
-To generate different file formats for your built site, you can use a different extension in the `permalink` option of your front matter.
-
-For example, to generate a JSON search index to be used by popular search libraries:
-
-{% codetitle "EJS", "Syntax" %}
-
-```markdown
----
-permalink: "index.json"
----
-<%- JSON.stringify(collections.all) -%>
-```
-
-### Pagination
-
-Pagination variables also work here. [Read more about Pagination](/docs/pagination/)
-

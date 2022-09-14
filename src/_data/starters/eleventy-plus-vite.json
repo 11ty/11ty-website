@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/matthiasott/eleventy-plus-vite",
+	"name": "Eleventy Plus Vite",
+	"description": "A clean and fast Eleventy Starter Project with Vite.",
+	"author": "matthiasott",
+	"demo": "https://eleventyplusvite.netlify.app/"
+}

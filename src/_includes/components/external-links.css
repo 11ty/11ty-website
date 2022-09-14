@@ -28,7 +28,10 @@ a[href^="//"]:not(.minilink):not(.elv-externalexempt):hover:after {
 }
 
 /* CSS-only favicons https://www.zachleat.com/web/external-link-favicons/ */
+a[href^="https://www.netlify.com"]:before,
+a[href^="https://docs.netlify.com"]:before,
 a[href^="https://www.youtube.com"]:before,
+a[href^="https://youtube.com"]:before,
 a[href^="https://github.com"]:before,
 a[href^="https://gitlab.com"]:before,
 a[href^="https://twitter.com"]:before,
@@ -43,6 +46,9 @@ a[href^="https://en.wikipedia.org"]:before {
 	background-size: contain;
 	background-repeat: no-repeat;
 }
+a[href^="https://www.netlify.com"]:after,
+a[href^="https://docs.netlify.com"]:after,
+a[href^="https://youtube.com"]:after,
 a[href^="https://www.youtube.com"]:after,
 a[href^="https://github.com"]:after,
 a[href^="https://gitlab.com"]:after,
@@ -52,6 +58,11 @@ a[href^="https://en.wikipedia.org"]:after {
 	display: none;
 }
 
+a[href^="https://www.netlify.com"]:before,
+a[href^="https://docs.netlify.com"]:before {
+	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.netlify.com%2F/");
+}
+a[href^="https://youtube.com"]:before,
 a[href^="https://www.youtube.com"]:before {
 	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.youtube.com%2F/");
 }
@@ -76,8 +87,11 @@ a[href^="https://en.wikipedia.org"]:before {
 }
 
 /* Not in the facepile or in the community links cards */
+.sites-site-vert a[href^="https://www.netlify.com"]:before,
 .sites-site-vert a[href^="https://github.com"]:before,
+.sites-site-vert a[href^="https://youtube.com"]:before,
 .sites-site-vert a[href^="https://www.youtube.com"]:before,
+a[href^="https://youtube.com"].lty-playbtn:before,
 .facepile a[href^="https://github.com"]:before,
 .facepile a[href^="https://twitter.com"]:before {
 	display: none;

@@ -1,0 +1,73 @@
+.logos-list {
+	display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+	margin: .5em 0 1em;
+}
+
+/* Home page */
+.elv-default .logos-list {
+	justify-content: center;
+	gap: .75em 1em;
+	font-size: 0.875em; /* 14px /16 */
+	padding: 1em;
+	color: #666;
+}
+@media (prefers-color-scheme: dark) {
+	.elv-default .logos-list {
+		color: #adadad;
+	}
+}
+
+/* Docs page */
+.elv-docs .logos-list {
+	padding: .75em;
+	border: 1px solid #ddd;
+	border-radius: .5em;
+	gap: 1em;
+}
+
+/* List items */
+.logos-list li {
+	padding: 0;
+  white-space: nowrap;
+}
+.logos-list-more {
+	font-style: italic;
+}
+@media (max-width: 62.4375em) { /* 999px */
+	.logos-list li:nth-child(n+16):not(.logos-list-more) {
+		display: none;
+	}
+}
+
+/* Header */
+.logos-list-hed {
+	text-align: center;
+	color: #666;
+	font-family: system-ui, -apple-system, sans-serif;
+	letter-spacing: 1px;
+	flex-basis: 100%;
+	text-transform: uppercase;
+	margin-bottom: 1em;
+}
+@media (prefers-color-scheme: dark) {
+	.logos-list-hed {
+		color: #adadad;
+	}
+}
+.elv-docs .logos-list-hed {
+	display: none;
+}
+
+.logos-list .avatar {
+	width: 1.6em;
+	height: 1.6em;
+	margin-right: .5em;
+	opacity: .9;
+}
+.logos-list .avatar-tall {
+	aspect-ratio: 8 / 10;
+	width: auto;
+}

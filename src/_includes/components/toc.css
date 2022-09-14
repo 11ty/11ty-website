@@ -19,7 +19,7 @@
 	.elv-toc details > summary {
 		margin-top: 0;
 	}
-	.js .elv-toc details > summary {
+	details-force-state:defined > details > summary {
 		display: none;
 	}
 }
@@ -116,4 +116,9 @@
 /* Footer catgory navigation */
 .elv-cat-list-active {
 	font-weight: 600;
+}
+
+/* Add margin to toc details */
+details.toc[open] {
+	margin-bottom: 4em;
 }
