@@ -8,7 +8,7 @@ overrideCommunityLinks: true
 ---
 # Serverless {% addedin "1.0.0" %}
 
-{{ eleventyNavigation.excerpt }}
+{{ eleventyNavigation.excerpt | safe }}
 
 <details class="toc">
 <summary>Expand for contents</summary>
