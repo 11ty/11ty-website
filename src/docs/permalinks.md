@@ -90,7 +90,7 @@ Here’s a few examples of how it works by default (assuming your output directo
 
 ## Cool URIs don’t change
 
-Eleventy automatically helps you make sure that [Cool URIs don’t change](https://www.w3.org/Provider/Style/URI.html).
+Eleventy automatically helps you make sure that [Cool URIs don’t change](https://www.w3.org/Provider/Style/URI).
 
 > What to leave out…
 > File name extension. This is a very common one. "cgi", even ".html" is something which will change. You may not be using HTML for that page in 20 years time, but you might want today's links to it to still be valid. The canonical way of making links to the W3C site doesn't use the extension.
