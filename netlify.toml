@@ -13,10 +13,6 @@ directory = "netlify/functions/"
 function = "user-preferences"
 path = "/account/preferences/"
 
-# [[edge_functions]]
-# function = "eleventy-edge"
-# path = "/docs/*"
-
 [[redirects]]
 from = "/authors/:name/"
 to = "/.netlify/builders/serverless"
@@ -32,7 +28,7 @@ force = true
 
 [[redirects]]
 from = "/youtube"
-to = "https://www.youtube.com/channel/UCskGTioqrMBcw8pd14_334A"
+to = "https://www.youtube.com/c/EleventyVideo"
 status = 301
 force = true
 
