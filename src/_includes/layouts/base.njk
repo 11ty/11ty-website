@@ -19,6 +19,8 @@ eleventyComputed:
 		{%- set subtitleText %}{{ subtitle }}{% if subtitle and subtitle != "Eleventy, a simpler static site generator" %} — Eleventy{% endif %}{% endset %}
 		<title>{{ subtitleText }}</title>
 		<meta name="description" content="{{ subtitleText }}">
+		<meta name="generator" content="{{ eleventy.generator }}">
+
 		<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon.png">
 
 		<!-- Open Graph / Facebook -->
@@ -58,6 +60,7 @@ eleventyComputed:
 {% include 'components/community.css' %}
 {% include 'components/fitvids.css' %}
 {% include 'components/external-links.css' %}
+{% include 'components/logos-list.css' %}
 
 /* Filters */
 .filter-tags--hide {
@@ -73,7 +76,7 @@ eleventyComputed:
 {% endfor %}
 {{ googlefonts | safe }}
 {% endset %}
-		<link href="https://v1.screenshot.11ty.dev" rel="preconnect" crossorigin>
+		<link href="https://v1.indieweb-avatar.11ty.dev" rel="preconnect" crossorigin>
 		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
 		<style>{{ css | cssmin | safe }}</style>
 {% if config.env === "production" %}
@@ -88,13 +91,19 @@ eleventyComputed:
 		<link rel="alternate" href="{{ feedUrl }}" title="{{ feedTitle }}" type="application/atom+xml">
 {% endif %}
 		<script>
-		{%- include "components/js-class.js" -%}
+		{%- include "components/details-force-state.js" -%}
 		</script>
 {% if loadNetlifyIdentity %}
 		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 		<script src="/js/eleventy.js" type="module"></script>
+{% if not skipAuth %}
+		<script src="/js/eleventy-auth.js" type="module"></script>
+{% endif %}
 {% elseif putTheJsInTheHead %}
-		<script src="/js/eleventy.js" type="module" async></script>
+		<script src="/js/eleventy.js" type="module"></script>
+{% if not skipAuth %}
+		<script src="/js/eleventy-auth.js" type="module"></script>
+{% endif %}
 {% endif %}
 
 	</head>
@@ -103,11 +112,11 @@ eleventyComputed:
 		{{ content | safe }}
 
 		<!-- Built on {{ config.now }} by Eleventy -->
-		<script>
-		{%- include "components/details-force-state.js" -%}
-		</script>
 {% if not putTheJsInTheHead %}
-		<script src="/js/eleventy.js" type="module" async></script>
+		<script src="/js/eleventy.js" type="module"></script>
+{% if not skipAuth %}
+		<script src="/js/eleventy-auth.js" type="module"></script>
+{% endif %}
 {% endif %}
 	</body>
 </html>

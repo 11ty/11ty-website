@@ -26,13 +26,11 @@ headerClass: elv-header-default
 		{% include "star-on-github.njk" %}
 	{% endcallout %}
 {%- endif %}
-{#
-{%- if ignoreFooterTestimonial -%}
-{%- elseif page.url and page.url != "/" and not page.url.endsWith("/docs/") and not page.url.endsWith("/docs/testimonials/")  %}
-	{%- set randomTestimonial = testimonials | randompick %}
-	{%- testimonial randomTestimonial %}
-{%- endif %}
-#}
+
+  {# this permalink: false check can go away in 2.0.0-canary.9 #}
+  {% if false and page.url and page.url.startsWith("/docs/") %}
+  {% renderFile "./src/_includes/syntax-chooser-form.njk" %}
+  {% endif %}
 
 	{% include "footer-nav.njk" %}
 </footer>

@@ -1,8 +1,0 @@
-{
-	"url": "https://stable.visual-framework.dev/",
-	"name": "Visual Framework for life science websites",
-	"description": "Good defaults for life science websites, plus compatibility with existing CSS and JS. Bring your Bootsrap, Angular or vanilla CSS code base.",
-	"twitter": "embl",
-	"authoredBy": ["khawkins98", "StuRobson"],
-	"source_url": "https://github.com/visual-framework/vf-core"
-}

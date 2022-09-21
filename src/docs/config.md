@@ -32,6 +32,21 @@ We support returning both a callback function (shown above) or an object literal
 
 {% callout %}Is your config file getting big and hard to understand? You can <a href="/docs/quicktips/local-plugin/">create your own plugin</a> to move some code out.{% endcallout %}
 
+## Default configuration filenames
+
+We look for the following configuration files:
+
+1. `.eleventy.js`
+1. `eleventy.config.js` {% addedin "2.0.0-canary.15" %}
+1. `eleventy.config.cjs` {% addedin "2.0.0-canary.15" %}
+
+The first configuration file found is used. The others are ignored.
+
+<div class="youtube-related">
+  {%- youtubeEmbed "hJAtWQ9nmKU", "Additions to the default config filename list (Changelog №17)", "431" -%}
+</div>
+
+
 ## Configuration Options
 
 <style>
@@ -72,7 +87,7 @@ npx @11ty/eleventy --input=.
 # A single file
 npx @11ty/eleventy --input=README.md
 
-# A glob of files (New in v0.6.0)
+# A glob of files
 npx @11ty/eleventy --input=*.md
 
 # A subdirectory
@@ -326,10 +341,6 @@ In order to maximize user-friendliness to beginners, Eleventy will show each fil
 | _Valid Options_ | `true` or `false` | |
 | _Command Line Override_ | `--quiet` |
 
-{% addedin "0.10.0" %} This configuration API method (`setQuietMode`) was added in v0.10.0 but note that the `--quiet` command line override existed long before that.
-
-{% addedin "0.10.0" %} Added `--quiet=false` to override `setQuietMode(true)` on the command line (for deploys in production). `--quiet=true` was also added (same as `--quiet`).
-
 #### Example
 
 {% codetitle ".eleventy.js" %}
@@ -442,7 +453,6 @@ module.exports = function(eleventyConfig) {
     return content; // no change done.
   });
 
-  // Support for async transforms was added in 0.7.0
   eleventyConfig.addTransform("async-transform-name", async function(content, outputPath) {
     return content; // no change done.
   });
@@ -452,7 +462,7 @@ module.exports = function(eleventyConfig) {
     console.log( this.inputPath );
     console.log( this.outputPath );
     // note that this.outputPath is `false` for serverless templates
-    
+
     return content; // no change done.
   });
 };

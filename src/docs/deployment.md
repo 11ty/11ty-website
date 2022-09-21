@@ -51,7 +51,7 @@ Now that you’ve built a web site with Eleventy _(even if it’s one HTML page!
 
 ## Use a Build Script
 
-When deploying your Eleventy site, the goal is to provide your chosen with your project’s **build output** (the `_site` folder by default). The command you run is usually configured via a _build script_ in your `package.json` file. It might look like this:
+When deploying your Eleventy site, the goal is to provide your chosen host with your project’s **build output** (the `_site` folder by default). The command you run is usually configured via a _build script_ in your `package.json` file. It might look like this:
 
 {% codetitle "package.json" %}
 
@@ -93,9 +93,17 @@ Many hosts provide a command line utility to deploy your project. Here are some 
   </div>
 </div>
 
+## Related
 
-## Community Tutorials
+<div class="youtube-related">
+  {%- youtubeEmbed "JCQQgtOcjH4", "New deployment docs (Weekly №2)", "72" -%}
+</div>
+
+### Community Tutorials
 
 - {% indieweblink "GitHub Pages Tutorial", "https://snook.ca/archives/servers/deploying-11ty-to-gh-pages" %} by {% avatarlocalcache "twitter", "snookca" %}Jonathan Snook
 - {% indieweblink "GitLab Pages Sample Project", "https://gitlab.com/bkmgit/11ty" %} by Benson Muite
 - {% indieweblink "Azure Static Web Apps Tutorial", "https://squalr.us/2021/05/deploying-an-11ty-site-to-azure-static-web-apps/" %} by {% avatarlocalcache "twitter", "chadschulz" %} Chad Schulz
+- {% indieweblink "Hosting Eleventy on GitHub Pages", "https://quinndombrowski.com/blog/2022/05/07/hosting-eleventy-on-github-pages/" %} by {% avatarlocalcache "twitter", "quinnanya" %}Quinn Dombrowski
+- {% indieweblink "Deploying Eleventy using Buddy CI/CD", "https://buddy.works/guides/buddy-eleventy" %} by {% avatarlocalcache "twitter", "palmiak_fp" %}Maciek Palmowski
+- [GitHub Action for Eleventy](https://github.com/marketplace/actions/eleventy-action) by {% communityavatar "TartanLlama", "Sy Brand" %}@TartanLlama

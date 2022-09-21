@@ -8,7 +8,7 @@ eleventyNavigation:
 
 A pack of Eleventy plugins for PrismJS syntax highlighting. No browser/client JavaScript here, these highlight transformations are all done at build-time. Supports individual line highlighting.
 
-* This is the documentation for `eleventy-plugin-syntaxhighlight` `v3.2` and newer.
+* This documentation applies to `eleventy-plugin-syntaxhighlight` `v3.2.0` and newer.
 * [GitHub](https://github.com/11ty/eleventy-plugin-syntaxhighlight).
 
 ## Contents
@@ -37,7 +37,45 @@ module.exports = function(eleventyConfig) {
 
 {% callout "info", "md" %}You’re only allowed one `module.exports` in your configuration file, so make sure you only copy the `require` and the `addPlugin` lines above!{% endcallout %}
 
-You are responsible for including your favorite PrismJS theme CSS and there are many ways to do that. The default themes are provided by [several CDNs](https://prismjs.com/#basic-usage-cdn) and could be easily included in a base layout, like in the example below;
+Optionally pass in an options object as the second argument to `addPlugin` to further customize this plugin pack.
+
+<details>
+  <summary>Expand to see Advanced Options</summary>
+
+```js
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(syntaxHighlight, {
+
+    // Change which Eleventy template formats use syntax highlighters
+    templateFormats: ["*"], // default
+
+    // Use only a subset of template types (11ty.js added in v4.0.0)
+    // templateFormats: ["liquid", "njk", "md", "11ty.js"],
+
+    // init callback lets you customize Prism
+    init: function({ Prism }) {
+      Prism.languages.myCustomLanguage = /* */;
+    },
+
+    // Added in 3.1.1, add HTML attributes to the <pre> or <code> tags
+    preAttributes: {
+      tabindex: 0,
+
+      // Added in 4.1.0 you can use callback functions too
+      "data-language": function({ language, content, options }) {
+        return language;
+      }
+    },
+    codeAttributes: {},
+  });
+};
+```
+
+</details>
+
+You are responsible for including your favorite PrismJS theme CSS and there are many ways to do that. The default themes are provided by [several CDNs](https://prismjs.com/#basic-usage-cdn) and could be easily included in a base layout, like in the example below:
 
 ```html
 <html lang="en">
@@ -58,11 +96,14 @@ This plugin provides the following syntax highlighters using PrismJS, all of whi
 * Nunjucks Paired Shortcode {% raw %}`{% highlight %}`{% endraw %}
 * JavaScript Function {% raw %}`this.highlight()`{% endraw %} {% addedin "Syntax Highlighter v4.0.0" %}
 
-### Markdown Highlighter
+### Syntax Highlight Source Code
 
-Optionally specify a language after the start of the markdown fenced code block.
+* [Review the list of supported PrismJS languages](http://prismjs.com/#languages-list)
 
-* [List of supported PrismJS languages](http://prismjs.com/#languages-list)
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlight", additions: "md"} %}
+  <div id="highlight-md" role="tabpanel">
 
 {% codetitle "Markdown", "Syntax" %}
 
@@ -74,40 +115,14 @@ function myFunction() {
 ```
 ````
 
-#### `diff-` syntax
-
-{% addedin "Syntax Highlighter v3.2.2" %}
-
-Use a `+` or `-` at the beginning of the line to denote the addition or removal of that line. Alternatively, you can use `diff` without another syntax for plaintext line highlighting.
-
-{% codetitle "Markdown", "Syntax" %}
-
-````markdown
-```diff-js
-+function myFunction() {
-   // …
--  return true;
- }
-```
-````
-
-{% codetitle "Markdown Output", "Rendered" %}
-
-{% highlight "diff-js" %}
-+function myFunction() {
-   // …
--  return true;
- }
-{% endhighlight %}
-
-### Liquid Shortcode
-
-* [List of supported PrismJS languages](http://prismjs.com/#languages-list)
+    Optionally specify a language after the start of the markdown fenced code block.
+  </div>
+  <div id="highlight-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
-```markdown
+```liquid
 {% highlight js %}
 function myFunction() {
   return true;
@@ -116,42 +131,13 @@ function myFunction() {
 ```
 {% endraw %}
 
-#### `diff-` syntax
-
-{% addedin "Syntax Highlighter v3.2.2" %}
-
-Use a `+` or `-` at the beginning of the line to denote the addition or removal of that line. Alternatively, you can use `diff` without another syntax for plaintext line highlighting.
-
-{% codetitle "Liquid", "Syntax" %}
-
-{% raw %}
-```markdown
-{% highlight diff-js %}
-+function myFunction() {
-   // …
--  return true;
- }
-{% endhighlight %}
-```
-{% endraw %}
-
-{% codetitle "Liquid Output", "Rendered" %}
-
-{% highlight "diff-js" %}
-+function myFunction() {
-   // …
--  return true;
- }
-{% endhighlight %}
-
-### Nunjucks Shortcode
-
-* [List of supported PrismJS languages](http://prismjs.com/#languages-list)
+  </div>
+  <div id="highlight-njk" role="tabpanel">
 
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
-```markdown
+```jinja2
 {% highlight "js" %}
 function myFunction() {
   return true;
@@ -160,39 +146,8 @@ function myFunction() {
 ```
 {% endraw %}
 
-#### `diff-` syntax
-
-{% addedin "Syntax Highlighter v3.2.2" %}
-
-Use a `+` or `-` at the beginning of the line to denote the addition or removal of that line. Alternatively, you can use `diff` without another syntax for plaintext line highlighting.
-
-{% codetitle "Nunjucks", "Syntax" %}
-
-{% raw %}
-```markdown
-{% highlight "diff-js" %}
-+function myFunction() {
-   // …
--  return true;
-}
-{% endhighlight %}
-```
-{% endraw %}
-
-{% codetitle "Nunjucks Output", "Rendered" %}
-
-{% highlight "diff-js" %}
-+function myFunction() {
-   // …
--  return true;
- }
-{% endhighlight %}
-
-### JavaScript Function (for 11ty.js)
-
-{% addedin "Syntax Highlighter v4.0.0" %}
-
-* [List of supported PrismJS languages](http://prismjs.com/#languages-list)
+  </div>
+  <div id="highlight-js" role="tabpanel">
 
 {% codetitle "11ty.js", "Syntax" %}
 
@@ -209,9 +164,84 @@ function myFunction() {
 ```
 {% endraw %}
 
-#### `diff-` syntax
+The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %}.
 
-{% addedin "Syntax Highlighter v4.0.0" %}
+  </div>
+  <div id="highlight-hbs" role="tabpanel">
+    <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
+  </div>
+</seven-minute-tabs>
+</is-land>
+
+Will render like this in the browser:
+
+{% callout "demo" %}
+
+{% highlight "js" %}
+function myFunction() {
+  return true;
+}
+{% endhighlight %}
+
+{% endcallout %}
+
+
+### Show changes using `diff-` syntax
+
+{% addedin "Syntax Highlighter v3.2.2" %}
+
+Add the `diff-` prefix to the language name on the previous examples to show code changes. Use a `+` or `-` at the beginning of the line to denote the addition or removal of that line.
+
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlightdiff", additions: "md"} %}
+  <div id="highlightdiff-md" role="tabpanel">
+
+{% codetitle "Markdown", "Syntax" %}
+
+````
+```diff-js
++function myFunction() {
+   // …
+-  return true;
+ }
+```
+````
+
+  </div>
+  <div id="highlightdiff-liquid" role="tabpanel">
+
+{% codetitle "Liquid", "Syntax" %}
+
+{% raw %}
+```markdown
+{% highlight diff-js %}
++function myFunction() {
+   // …
+-  return true;
+ }
+{% endhighlight %}
+```
+{% endraw %}
+
+  </div>
+  <div id="highlightdiff-njk" role="tabpanel">
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```markdown
+{% highlight "diff-js" %}
++function myFunction() {
+   // …
+-  return true;
+}
+{% endhighlight %}
+```
+{% endraw %}
+
+  </div>
+  <div id="highlightdiff-js" role="tabpanel">
 
 {% codetitle "11ty.js", "Syntax" %}
 
@@ -229,7 +259,32 @@ module.exports = function(data) {
 ```
 {% endraw %}
 
-### Sample Diff CSS
+The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %}.
+
+  </div>
+  <div id="highlightdiff-hbs" role="tabpanel">
+    <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
+  </div>
+</seven-minute-tabs>
+</is-land>
+
+Will render like this in the browser:
+
+{% callout "demo" %}
+
+{% highlight "diff-js" %}
++function myFunction() {
+   // …
+-  return true;
+ }
+{% endhighlight %}
+
+{% endcallout %}
+
+Alternatively, you can use `diff` _without_ another language name to enable plaintext line highlighting.
+
+<details>
+  <summary>Don’t forget to add styles too! Here’s a sample <code>diff-</code> CSS</summary>
 
 {% codetitle "CSS", "Syntax" %}
 
@@ -256,34 +311,6 @@ module.exports = function(data) {
 }
 ```
 
-## Advanced Options
-
-Optionally pass in an options object as the second argument to `addPlugin` to further customize this plugin pack.
-
-```js
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(syntaxHighlight, {
-
-    // Change which Eleventy template formats use syntax highlighters
-    templateFormats: ["*"], // default
-
-    // Use only a subset of template types (11ty.js added in v4.0.0)
-    // templateFormats: ["liquid", "njk", "md", "11ty.js"],
-
-    // init callback lets you customize Prism
-    init: function({ Prism }) {
-      Prism.languages.myCustomLanguage = /* */;
-    },
-
-    // Added in 3.1.1, add HTML attributes to the <pre> or <code> tags
-    preAttributes: {
-      tabindex: 0
-    },
-    codeAttributes: {},
-  });
-};
-```
+</details>
 
 {% callout "info", "md" %}Starting with `v3.2` of this plugin, this plugin now bundles the official [Prism `diff-highlight` plugin](https://prismjs.com/plugins/diff-highlight/). The previous line highlighting feature is considered deprecated but still available. Check out [the old documentation if you want to learn how to use the deprecated line-highlighting feature](https://v0-12-1.11ty.dev/docs/plugins/syntaxhighlight/).{% endcallout %}

@@ -1,0 +1,5 @@
+{
+	"npm": "@factorial/eleventy-plugin-twig",
+	"author": "dnnsjrng",
+	"description": "Add Twig templating engine to Eleventy with the help of twig.js"
+}

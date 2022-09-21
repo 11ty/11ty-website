@@ -86,7 +86,8 @@ While Eleventy does include support for [JSON, YAML, and JS front matter out of 
 {% codetitle ".eleventy.js" %}
 
 ```js
-const toml = require("toml");
+// Don’t forget to `npm install @iarna/toml`
+const toml = require("@iarna/toml");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setFrontMatterParsingOptions({
@@ -98,8 +99,6 @@ module.exports = function(eleventyConfig) {
 ```
 
 For more information, read [this example on the `gray-matter` documentation](https://www.npmjs.com/package/gray-matter#optionsengines).
-
-{% callout "warn" %}<strong>Windows users</strong>: There is an upstream issue with the TOML dependency used here: <code>Expected "\n" but end of input found.</code>, logged at <a href="https://github.com/11ty/eleventy/issues/586">Eleventy #586</a>.{% endcallout %}
 
 Now you can use TOML in your front matter like this:
 

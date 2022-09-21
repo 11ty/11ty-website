@@ -16,13 +16,20 @@ layout: layouts/docs.njk
 css:
   - components/page-sites.css
 ---
-{%- set twitterUrl = "https://twitter.com/" + author.name %}
-{%- set supporter = opencollective.supporters | findBy("twitter", author.name) | last -%}
+{# @TODO add support for githubTwitterMap.js data #}
+{%- set twitterUrl = "https://twitter.com/" + author.name.substring("twitter:".length) %}
+{%- set githubUrl = "https://github.com/" + author.name %}
+
+{%- set supporter = opencollective.supporters | isSupporter(author.name, githubTwitterMap[author.name], author.opencollective) -%}
 {%- set displayName = supporter.name or author.name %}
 
 # {{ displayName }}
 
-* <a href="{{ twitterUrl }}">{% avatarlocalcache "twitter", author.name %}{{ author.name }}</a> on Twitter
+{%- if author.name.startsWith("twitter:") %}
+* <a href="{{ twitterUrl }}">{% communityavatar author.name %}{{ author.name | friendlyAuthorName | safe }}</a> on Twitter
+{%- else %}
+* <a href="{{ githubUrl }}">{% communityavatar author.name %}{{ author.name }}</a> on GitHub
+{%- endif %}
 {%- if supporter %}
 * <a href="{{ supporter.profile }}" class="elv-externalexempt supporters-link"><strong>{% if supporter.tier and supporter.isActive %} {% emoji "📅" %} Monthly{% endif %} Eleventy Contributor</strong> on Open Collective</a> 🎈
 {%- else %}
@@ -30,14 +37,10 @@ css:
 * <em>Already a supporter but it’s not showing here? Make sure your Twitter account is listed on your Open Collective Profile.</em>
 {%- endif %}
 
-{%- if author.business and supporter | isBusinessPerson %}
+{%- if author.business_url and supporter | isBusinessPerson %}
 ### Member of the [Eleventy Super Professional Business Network {% emoji "💼" %}](/super-professional-business-network/)
 
-{%- if author.business.availability %}
-* {% emoji "🗓" %} Availability starting {{ author.business.availability | newsDate("LLLL yyyy") }}
-{%- endif %}
-
-<a href="{{ author.business.cta }}" class="btn-primary benchnine rainbow-active rainbow-active-noanim elv-externalexempt">Let’s Do Business</a>
+<a href="{{ author.business_url }}" class="btn-primary benchnine rainbow-active rainbow-active-noanim elv-externalexempt">Let’s Do Business</a>
 {%- endif %}
 
 {%- set authorStarters = starters | sortObjectByOrder | findBy("author", author.name) %}

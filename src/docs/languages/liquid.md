@@ -92,10 +92,15 @@ Filters are used to transform or modify content. You can add Liquid specific fil
 
 Read more about [LiquidJS Filter syntax](https://liquidjs.com/tutorials/register-filters-tags.html)
 
+Note that Liquid supports asynchronous filters out of the box (without any additional code or API method changes).
+
 ```js
 module.exports = function(eleventyConfig) {
   // Liquid Filter
   eleventyConfig.addLiquidFilter("myLiquidFilter", function(myVariable) { … });
+
+  // Async-friendly too
+  eleventyConfig.addLiquidFilter("myAsyncLiquidFilter", async function(myVariable) { … });
 
   // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
   eleventyConfig.addFilter("myFilter", function(myVariable) { … });

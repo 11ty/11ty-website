@@ -2,8 +2,16 @@
 publish = "_site"
 command = "npm run build-production"
 
+[dev]
+framework = "#static"
+command = "npm start"
+
 [functions]
 directory = "netlify/functions/"
+
+[[edge_functions]]
+function = "user-preferences"
+path = "/account/preferences/"
 
 [[redirects]]
 from = "/authors/:name/"
@@ -20,7 +28,7 @@ force = true
 
 [[redirects]]
 from = "/youtube"
-to = "https://www.youtube.com/channel/UCskGTioqrMBcw8pd14_334A"
+to = "https://www.youtube.com/c/EleventyVideo"
 status = 301
 force = true
 

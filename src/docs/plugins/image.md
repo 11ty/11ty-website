@@ -2,10 +2,17 @@
 pageTitle: Image
 eleventyNavigation:
   key: Image
-  order: 0
+  order: -.2
   excerpt: A utility to resize and generate images.
 communityLinksKey: image
 ---
+<details>
+<summary>Expand for contents</summary>
+
+[[toc]]
+
+</details>
+
 Low level utility to perform build-time image transformations for both vector and raster images. Output multiple sizes, save multiple formats, cache remote images locally. Uses the [sharp](https://sharp.pixelplumbing.com/) image processor.
 
 * [`eleventy-img` on GitHub](https://github.com/11ty/eleventy-img)
@@ -23,16 +30,13 @@ You maintain full control of the HTML. Use with `<picture>` or `<img>` or CSS `b
   * Manage the [cache duration](/docs/plugins/fetch/#change-the-cache-duration).
 * Fast: de-duplicates image requests and use both an in-memory and disk cache.
 
----
-
-[[toc]]
 
 ## Installation
 
 * [`eleventy-img` on npm](https://www.npmjs.com/package/@11ty/eleventy-img)
 
 ```
-npm install --save-dev @11ty/eleventy-img
+npm install @11ty/eleventy-img
 ```
 
 ## Usage
@@ -270,18 +274,19 @@ await Image("./test/bio-2017.jpg", {
 
 ## Use this in your templates
 
-### Asynchronous Usage
+### Asynchronous Shortcode
 
 {% callout "info" %}The examples below use a <a href="/docs/languages/nunjucks/#asynchronous-shortcodes">Nunjucks</a> <code>async</code> shortcode (different from the traditional shortcode configuration method). The <a href="/docs/languages/javascript/#asynchronous-javascript-template-functions">JavaScript</a> and <a href="/docs/languages/liquid/#asynchronous-shortcodes">Liquid</a> template engines also work here and are asynchronous without additional changes. Note that <a href="https://mozilla.github.io/nunjucks/templating.html#macro">Nunjucks macros cannot use asynchronous shortcodes</a>. If you use macros, use Synchronous shortcodes described below.{% endcallout %}
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Easy or DIY mode chooser">
     Choose one:
-    <a href="#filter-easy" id="filter-easy-btn" role="tab" aria-controls="filter-easy" aria-selected="true">We generate the HTML</a>
-    <a href="#filter-diy-img" id="filter-diy-img-btn" role="tab" aria-controls="filter-diy-img" aria-selected="false">Do it yourself: &lt;img&gt;</a>
-    <a href="#filter-diy-picture" id="filter-diy-picture-btn" role="tab" aria-controls="filter-diy-picture" aria-selected="false">Do it yourself: &lt;picture&gt;</a>
+    <a href="#filter-easy" role="tab">We generate the HTML</a>
+    <a href="#filter-diy-img" role="tab">Do it yourself: &lt;img&gt;</a>
+    <a href="#filter-diy-picture" role="tab">Do it yourself: &lt;picture&gt;</a>
   </div>
-  <div id="filter-easy" role="tabpanel" aria-labelledby="filter-easy-btn">
+  <div id="filter-easy" role="tabpanel">
 
 {% addedin "Image 0.7.2" %}The `generateHTML` function is available in Eleventy Image v0.7.2 or higher.
 
@@ -331,7 +336,7 @@ async function imageShortcode(src, alt, sizes) {
 ```
 
   </div>
-  <div id="filter-diy-img" role="tabpanel" aria-labelledby="filter-diy-img-btn">
+  <div id="filter-diy-img" role="tabpanel">
 
 {% codetitle ".eleventy.js" %}
 
@@ -363,7 +368,7 @@ module.exports = function(eleventyConfig) {
 {% callout "info", "md" %}You’re only allowed one `module.exports` in your configuration file! If one already exists, copy the content of the above into your existing `module.exports` function.{% endcallout %}
 
   </div>
-  <div id="filter-diy-picture" role="tabpanel" aria-labelledby="filter-diy-picture-btn">
+  <div id="filter-diy-picture" role="tabpanel">
 
 {% codetitle ".eleventy.js" %}
 
@@ -409,47 +414,54 @@ module.exports = function(eleventyConfig) {
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 {% callout "info", "md" %}Read more about the [`loading`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading) and [`decoding`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-decoding) HTML attributes.{% endcallout %}
 
 Now you can use it in your templates:
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    Language:
-    <a href="#shortcode-njk" id="shortcode-njk-btn" role="tab" aria-controls="shortcode-njk" aria-selected="true">Nunjucks</a>
-    <a href="#shortcode-liquid" id="shortcode-liquid-btn" role="tab" aria-controls="shortcode-liquid" aria-selected="false">Liquid</a>
-    <a href="#shortcode-11tyjs" id="shortcode-11tyjs-btn" role="tab" aria-controls="shortcode-11tyjs" aria-selected="false">11ty.js</a>
-  </div>
-  <div id="shortcode-njk" role="tabpanel" aria-labelledby="shortcode-njk-btn">
-    {% codetitle "sample.njk" %}
-{%- highlight "html" %}{% raw %}
-{% image "./src/images/cat.jpg", "photo of my cat" %}
-{% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
-{% endraw %}{% endhighlight %}
-    <p>The comma between arguments is <strong>required</strong> in Nunjucks templates.</p>
-  </div>
-  <div id="shortcode-liquid" role="tabpanel" aria-labelledby="shortcode-liquid-btn">
-    {% codetitle "sample.liquid" %}
-{%- highlight "html" %}{% raw %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "shortcode"} %}
+  <div id="shortcode-liquid" role="tabpanel">
+    {% codetitle "Liquid", "Syntax" %}
+{%- highlight "liquid" %}{% raw %}
 {% image "./src/images/cat.jpg", "photo of my cat" %}
 {% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
 {% endraw %}{% endhighlight %}
     <p>The comma between arguments is <strong>optional</strong> in Liquid templates.</p>
   </div>
-  <div id="shortcode-11tyjs" role="tabpanel" aria-labelledby="shortcode-11tyjs-btn">
-    {% codetitle "sample.11ty.js" %}
+  <div id="shortcode-njk" role="tabpanel">
+    {% codetitle "Nunjucks", "Syntax" %}
+{%- highlight "jinja2" %}{% raw %}
+{% image "./src/images/cat.jpg", "photo of my cat" %}
+{% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
+{% endraw %}{% endhighlight %}
+    <p>The comma between arguments is <strong>required</strong> in Nunjucks templates.</p>
+  </div>
+  <div id="shortcode-js" role="tabpanel">
+    {% codetitle "JavaScript", "Syntax" %}
 {%- highlight "js" %}{% raw %}
 module.exports = function() {
-  return `<h1>${await this.image("./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw")}</h1>`;
+  let img1 = await this.image("./src/images/cat.jpg", "photo of my cat");
+  let img2 = await this.image("./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw");
+
+  return `${img1}
+${img2}`;
 };
 {% endraw %}{% endhighlight %}
   </div>
+  <div id="shortcode-hbs" role="tabpanel">
+
+This `image` shortcode example [requires an async-friendly template language](#asynchronous-usage) and is not available in Handlebars.
+
+  </div>
 </seven-minute-tabs>
+</is-land>
 
 And you’ll have the appropriate HTML generated for you (based on your specified Image options).
 
-### Synchronous Usage
+### Synchronous Shortcode
 
 Use `Image.statsSync` to get the metadata of a source even if the image generation is not finished yet:
 
@@ -482,6 +494,80 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksShortcode("myImage", imageShortcode);
 }
 ```
+
+### Process images as a Custom Template
+
+Use Eleventy’s [Custom Template Language](/docs/languages/custom/) feature to process images. _This one is not yet available on the docs: do you want to contribute it?_
+
+### Process images as Data Files
+
+{% addedin "2.0.0-canary.10" %} _Nontraditional use case._ Eleventy’s [Custom Data File Formats](/docs/data-custom/) features an example of [processing Images as data files to feed EXIF data into the Data Cascade](/docs/data-custom/#feed-exif-image-data-into-the-data-cascade). You can use the same feature to add the metadata stats returned from the Image utility directly to the Data Cascade for use in your templates.
+
+* Benefits:
+  * Processing happens in the data cascade so this works in any template language.
+  * Images stored in the [global data folder](/docs/data-global/) will be processed and available to all templates
+* Drawbacks:
+  * You can’t customize the Image options (e.g. `widths` or `formats`) from the template code. It is set globally in the config.
+* Both a benefit and a drawback:
+  * Beholden to Eleventy’s Data Cascade file name conventions when using with [template/directory data files](/docs/data-template-dir/).
+
+<details>
+  <summary><strong>Show the code</strong></summary>
+
+{% codetitle ".eleventy.js" %}
+
+```js
+const Image = require("@11ty/eleventy-img");
+const path = require("path");
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addDataExtension("png,jpeg", {
+    read: false, // Don’t read the input file, argument is now a file path
+    parser: async imagePath => {
+      let stats = await Image(imagePath, {
+        widths: ["auto"],
+        formats: ["avif", "webp", "jpeg"],
+        outputDir: path.join(eleventyConfig.dir.output, "img", "built")
+      });
+
+      return {
+        image: {
+          stats
+        }
+      };
+    },
+  });
+
+  // This works sync or async: images were processed ahead of time in the data cascade
+  eleventyConfig.addShortcode("dataCascadeImage", (stats, alt, sizes) => {
+    let imageAttributes = {
+      alt,
+      sizes,
+      loading: "lazy",
+      decoding: "async",
+    };
+    return Image.generateHTML(stats, imageAttributes);
+  });
+};
+```
+
+With a template `my-blog-post.md` and an image file `my-blog-post.jpeg`, you could use the above configuration code in your template like this:
+
+{% codetitle "my-blog-post.md" %}
+
+{% raw %}
+```liquid
+{% dataCascadeImage image.stats, "My alt text" %}
+```
+{% endraw %}
+
+Note this also means that `folder/folder.jpeg` would be processed for all templates in `folder/*` and any images stored in your global `_data` would also be populated into the data cascade based on their folder structure.
+
+</details>
+
+<div class="youtube-related">
+  {%- youtubeEmbed "oCTAZumAGNc", "Use images as data files (Weekly №11)", "244" -%}
+</div>
 
 ## Advanced Usage
 

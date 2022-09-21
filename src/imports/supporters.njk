@@ -4,6 +4,6 @@ permalink: /imports/supporters.html
 <div class="facepile facepile-supporters">
 {% for supporter in opencollective.supporters | supportersFacepile %}
 {%- set nameToSlug = supporter.name | slug | lower -%}
-	<a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}" rel="sponsored">{% avatarlocalcache "opencollective", nameToSlug, supporter.name %}</a>
+	<a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}" rel="sponsored">{% opencollectiveavatar supporter.image, supporter.name %}</a>
 {% endfor %}
 </div>

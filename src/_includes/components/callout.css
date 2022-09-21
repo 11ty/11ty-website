@@ -12,6 +12,10 @@
 	background-color: var(--callout-secondary);
 	border: 3px solid var(--callout-border, var(--callout-primary));
 }
+[role="tabpanel"] > .elv-callout:last-child {
+	margin-bottom: 0;
+}
+
 .elv-callout-info,
 .elv-callout-warn,
 .elv-callout-error {
@@ -180,5 +184,28 @@ body > .elv-callout-sticky:before {
 		top: 0;
 		z-index: 2;
 		box-shadow: 0 3px 0 0 rgba(0,0,0,.08);
+	}
+}
+
+/* in left nav */
+@media (max-width: 63.9375em) { /* 1023px */
+	.elv-toc .elv-callout {
+		border-left: 0;
+		border-right: 0;
+	}
+}
+@media (min-width: 64em) { /* 1024px */
+	.elv-toc .elv-callout {
+		margin-right: 0;
+		font-size: 0.9375em; /* 15px /16 */
+		line-height: 2;
+		font-style: italic;
+	}
+}
+@media (min-width: 64em) and (max-width: 76.875em) { /* 1024px–1230px */
+	.elv-toc .elv-callout {
+		border-left: 0;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
 	}
 }

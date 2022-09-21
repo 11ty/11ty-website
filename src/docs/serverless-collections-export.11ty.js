@@ -1,6 +1,7 @@
 exports.data = function() {
   return {
     permalink: "./_generated-serverless-collections.json",
+		eleventyExcludeFromCollections: true,
     permalinkBypassOutputDir: true,
     layout: false,
   };

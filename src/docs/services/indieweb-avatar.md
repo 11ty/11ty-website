@@ -36,9 +36,13 @@ https://v1.indieweb-avatar.11ty.dev/:url/
 
 ## Samples
 
+{% callout "demo" %}
+
 <img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.11ty.dev%2F/" alt="IndieWeb Avatar for 11ty.dev/" loading="lazy" decoding="async" width="50" height="50">
 <img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.a11yproject.com%2F/" alt="IndieWeb Avatar for a11yproject.com/" loading="lazy" decoding="async" width="50" height="50">
 <img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.netlify.com%2F/" alt="IndieWeb Avatar for netlify.com/" loading="lazy" decoding="async" width="50" height="50">
+
+{% endcallout %}
 
 ```html
 <img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.11ty.dev%2F/" alt="IndieWeb Avatar for 11ty.dev/" loading="lazy" decoding="async" width="50" height="50">

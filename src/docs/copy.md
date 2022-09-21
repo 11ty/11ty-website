@@ -6,14 +6,18 @@ eleventyNavigation:
 ---
 # Passthrough File Copy {% addedin "0.2.14" %}
 
-If we want to copy additional files that are not Eleventy templates, we use a feature called Passthrough File Copy to  tell Eleventy to copy things to our output folder for us.
+<details>
+<summary>Expand for contents</summary>
 
 [[toc]]
 
-<a id="{{ 'Manual Pass-through Copy (Faster)' | slug }}"></a>
-<a id="{{ 'Manual Passthrough Copy (Faster)' | slug }}"></a>
+</details>
+
+If we want to copy additional files that are not Eleventy templates, we use a feature called Passthrough File Copy to  tell Eleventy to copy things to our output folder for us.
 
 ## Configuration API Method
+
+<a id="{{ 'Manual Pass-through Copy (Faster)' | slug }}"></a><a id="{{ 'Manual Passthrough Copy (Faster)' | slug }}"></a>
 
 Use a configuration API method to specify _files_ or _directories_ for Eleventy to copy.
 
@@ -30,7 +34,7 @@ module.exports = function(eleventyConfig) {
   // Keeps the same directory structure.
   eleventyConfig.addPassthroughCopy("css/fonts");
 
-  // Copy any .jpg file to `_site`, via Glob pattern (in 0.9.0+)
+  // Copy any .jpg file to `_site`, via Glob pattern
   // Keeps the same directory structure.
   eleventyConfig.addPassthroughCopy("**/*.jpg");
 };
@@ -40,7 +44,7 @@ module.exports = function(eleventyConfig) {
 
 If you do not want to maintain the same directory structure, [change the output directory.](#change-the-output-directory)
 
-{% addedin "0.11.0" %}Pass-through copy is now friendly to [incremental builds](/docs/usage/incremental/#passthrough-copy). Changes to copied files will not trigger a full build and changes to template files will not trigger passthrough file copy.
+{% addedin "2.0.0" %}Passthrough file copy is [emulated when using `--serve`](#passthrough-during-serve).
 
 ### How Input Directories are Handled
 
@@ -153,7 +157,70 @@ You might want to use this for images by adding `"jpg"`, `"png"`, or maybe even 
 
 {% callout "info", "md" %}Note that this method is typically slower than the `addPassthroughCopy` configuration API method above, especially if your project is large and has lots of files.{% endcallout %}
 
-## Passthrough all Content {% addedin "0.5.4" %}
+## Passthrough during `--serve`{% addedin "2.0.0" %}
+
+New in Eleventy `2.0.0-canary.12`: passthrough file copy is _emulated_ when using the [Eleventy Dev Server](/docs/watch-serve/#eleventy-dev-server).
+
+Practically speaking, this means that passthrough copy files _**will not**_ be copied to your output folder and will not impact local development build times. Changes made to passthrough copy files _will_ still hot reload your web browser as expected.
+
+This behavior will revert if:
+
+1. You use a different development server (e.g. [swap back to Browsersync](/docs/dev-server/#swap-back-to-browsersync))
+2. If you are running Eleventy without `--serve` (a normal build or via `--watch`)
+
+You can also opt-out using this configuration API method:
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // the default is "passthrough"
+  eleventyConfig.setServerPassthroughCopyBehavior("copy");
+};
+```
+
+* [Issue #2456](https://github.com/11ty/eleventy/issues/2456)
+
+
+<div class="youtube-related">
+  {%- youtubeEmbed "EcId2RVdUFE", "Emulated Passthrough File Copy (Weekly №15)", "443" -%}
+</div>
+
+## Advanced Options {% addedin "2.0.0" %}
+
+New in `2.0.0-canary.12`, you can pass additional configuration options to the `recursive-copy` package. This unlocks the use passthrough file copy with symlinks, transforming or renaming copied files. Here are just a few examples:
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("img", {
+    expand: true, // expand symbolic links
+  });
+};
+```
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  let copyOptions = {
+    debug: true, // log debug information
+  };
+
+  eleventyConfig.addPassthroughCopy({ "img": "subfolder/img" }, copyOptions);
+};
+```
+
+Review the [full list of options on the `recursive-copy` GitHub repository](https://github.com/timkendrick/recursive-copy#usage).
+
+<div class="youtube-related">
+  {%- youtubeEmbed "EcId2RVdUFE", "Passthrough File Copy Advanced Options (Weekly №15)", "337" -%}
+</div>
+
+## Passthrough Everything {% addedin "0.5.4" %}
+
+<div id="passthrough-all-content"></div><!-- backwards compat link -->
 
 Given that global copy of all content in the directory may be a security risk, we do not copy anything that doesn’t match the file extensions listed in `templateFormats`. Note that we do provide a command line flag to bypass this behavior: `--passthroughall`. Intentionally, there is no configuration option to do this.
 

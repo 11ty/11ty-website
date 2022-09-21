@@ -19,9 +19,10 @@
 }
 
 .token.punctuation {
-	color: #fefefe;
+	color: #ccc;
 }
 
+.token.liquid,
 .token.property,
 .token.tag,
 .token.constant,

@@ -11,13 +11,24 @@ While [pagination](/docs/pagination/) allows you to iterate over a data set to c
 
 Take care to note that `tags` have a singular purpose in Eleventy: to construct collections of content. Some blogging platforms use Tags to refer to a hierarchy of labels for the content (e.g. a [tag cloud](https://en.wikipedia.org/wiki/Tag_cloud)).
 
+## Contents
+
+<style>
+/* Hide link to Contents */
+.table-of-contents > ul > li:first-child {
+  display: none;
+}
+</style>
+
+[[toc]]
+
 ## A Blog Example
 
 For a blog site, your individual post files may use a tag called `post`, but it can be whatever you want. In this example, `mypost.md` has a single tag `post`:
 
 {% codetitle "Markdown", "Syntax" %}
 
-```markdown
+```yaml
 ---
 tags: post
 title: Hot Take—Social Media is Considered Harmful
@@ -26,10 +37,15 @@ title: Hot Take—Social Media is Considered Harmful
 
 This will place this `mypost.md` into the `post` collection with all other pieces of content sharing the `post` tag. To reference this collection and make a list of all posts, use the `collections` object in any template:
 
-{% codetitle "Liquid, Nunjucks", "Syntax" %}
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collections"} %}
+  <div id="collections-liquid" role="tabpanel">
+
+{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
-```html
+```liquid
 <ul>
 {%- for post in collections.post -%}
   <li>{{ post.data.title }}</li>
@@ -38,7 +54,25 @@ This will place this `mypost.md` into the `post` collection with all other piece
 ```
 {% endraw %}
 
-{% codetitle "JavaScript .11ty.js", "Syntax" %}
+  </div>
+  <div id="collections-njk" role="tabpanel">
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```jinja2
+<ul>
+{%- for post in collections.post -%}
+  <li>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+```
+{% endraw %}
+
+  </div>
+  <div id="collections-js" role="tabpanel">
+
+{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 ```js
@@ -50,14 +84,23 @@ exports.render = function(data) {
 ```
 {% endraw %}
 
-### Example: Navigation Links with an `[aria-current]` attribute added for on the current page
+  </div>
+</seven-minute-tabs>
+</is-land>
+
+### Using an `[aria-current]` attribute for on the current page
 
 Compare the `post.url` and special Eleventy-provided `page.url` variable to find the current page. Building on the previous example:
 
-{% codetitle "Liquid, Nunjucks", "Syntax" %}
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsnav"} %}
+  <div id="collectionsnav-liquid" role="tabpanel">
+
+{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
-```html
+```liquid
 <ul>
 {%- for post in collections.post -%}
   <li{% if page.url == post.url %} aria-current="page"{% endif %}>{{ post.data.title }}</li>
@@ -65,6 +108,25 @@ Compare the `post.url` and special Eleventy-provided `page.url` variable to find
 </ul>
 ```
 {% endraw %}
+
+  </div>
+  <div id="collectionsnav-njk" role="tabpanel">
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```jinja2
+<ul>
+{%- for post in collections.post -%}
+  <li{% if page.url == post.url %} aria-current="page"{% endif %}>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+```
+{% endraw %}
+
+
+  </div>
+  <div id="collectionsnav-js" role="tabpanel">
 
 {% codetitle "JavaScript .11ty.js", "Syntax" %}
 
@@ -80,18 +142,27 @@ exports.render = function(data) {
 ```
 {% endraw %}
 
+  </div>
+</seven-minute-tabs>
+</is-land>
+
 Background: `aria-current="page"` tells assistive technology, such as screen readers, which page of a set of pages is the current active one. It also provides a hook for your CSS styling, using its attribute selector: `[aria-current="page"] {}`.
 
 ## The Special `all` Collection
 
 By default Eleventy puts all of your content (independent of whether or not it has any assigned tags) into the `collections.all` Collection. This allows you to iterate over all of your content inside of a template.
 
-### Example: A list of links to all Eleventy generated content
+### Link to all Eleventy generated content
 
-{% codetitle "Liquid, Nunjucks", "Syntax" %}
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsall"} %}
+  <div id="collectionsall-liquid" role="tabpanel">
+
+{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
-```html
+```liquid
 <ul>
 {%- for post in collections.all -%}
   <li><a href="{{ post.url }}">{{ post.url }}</a></li>
@@ -100,7 +171,25 @@ By default Eleventy puts all of your content (independent of whether or not it h
 ```
 {% endraw %}
 
-{% codetitle "JavaScript .11ty.js", "Syntax" %}
+  </div>
+  <div id="collectionsall-njk" role="tabpanel">
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```jinja2
+<ul>
+{%- for post in collections.all -%}
+  <li><a href="{{ post.url }}">{{ post.url }}</a></li>
+{%- endfor -%}
+</ul>
+```
+{% endraw %}
+
+  </div>
+  <div id="collectionsall-js" role="tabpanel">
+
+{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 ```js
@@ -114,7 +203,11 @@ exports.render = function(data) {
 ```
 {% endraw %}
 
-## Option: Exclude content from Collections {% addedin "0.8.0" %}
+  </div>
+</seven-minute-tabs>
+</is-land>
+
+## How to Exclude content from Collections
 
 In front matter (or further upstream in the data cascade), set the `eleventyExcludeFromCollections` option to true to opt out of specific pieces of content added to all collections (including `collections.all`, collections set using tags, or collections added from the Configuration API in your config file). Useful for your RSS feed, `sitemap.xml`, custom templated `.htaccess` files, et cetera.
 
@@ -128,7 +221,7 @@ tags: post
 This will not be available in `collections.all` or `collections.post`.
 ```
 
-## Tag Syntax
+## Add to a Collection using Tags
 
 You can use a single tag, as in the above example OR you can use any number of tags for the content, using YAML syntax for a list.
 
@@ -176,10 +269,16 @@ This content would show up in the template data inside of `collections.cat` and 
 
 ### Collection Item Data Structure
 
-{% codetitle "Liquid, Nunjucks", "Syntax" %}
+
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsitem"} %}
+  <div id="collectionsitem-liquid" role="tabpanel">
+
+{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
-```html
+```liquid
 <ul>
 {%- for post in collections.post -%}
   <li>{{ post.data.title }}</li>
@@ -188,7 +287,25 @@ This content would show up in the template data inside of `collections.cat` and 
 ```
 {% endraw %}
 
-{% codetitle "JavaScript .11ty.js", "Syntax" %}
+  </div>
+  <div id="collectionsitem-njk" role="tabpanel">
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```jinja2
+<ul>
+{%- for post in collections.post -%}
+  <li>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+```
+{% endraw %}
+
+  </div>
+  <div id="collectionsitem-js" role="tabpanel">
+
+{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 ```js
@@ -199,6 +316,10 @@ exports.render = function(data) {
 };
 ```
 {% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>
 
 Note in the above example that we output the `post.data.title` value? Similarly, each collection item will have the following data:
 
@@ -212,7 +333,7 @@ Note in the above example that we output the `post.data.title` value? Similarly,
 
 ```js
 { inputPath: './test1.md',
-  fileSlug: 'test1', // fileSlug was added in 0.5.3
+  fileSlug: 'test1',
   outputPath: './_site/test1/index.html',
   url: '/test1/',
   date: new Date(),
@@ -246,26 +367,17 @@ This collection would be sorted like this:
 
 ### Sort descending
 
-To sort descending in your template, you can use a filter to reverse the sort order. For example, in Nunjucks it’d look like this:
+To sort descending in your template, you can use a filter to reverse the sort order. For example, it might look like this:
 
-{% codetitle "Nunjucks", "Syntax" %}
-
-{% raw %}
-```html
-<ul>
-{%- for post in collections.post | reverse -%}
-  <li>{{ post.data.title }}</li>
-{%- endfor -%}
-</ul>
-```
-{% endraw %}
-
-And in Liquid it’d look like this:
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionssort"} %}
+  <div id="collectionssort-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
-```html
+```liquid
 <ul>
 {%- for post in collections.post reversed -%}
   <li>{{ post.data.title }}</li>
@@ -274,9 +386,25 @@ And in Liquid it’d look like this:
 ```
 {% endraw %}
 
-And in JavaScript it’d look like this:
+  </div>
+  <div id="collectionssort-njk" role="tabpanel">
 
-{% codetitle "JavaScript .11ty.js", "Syntax" %}
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```jinja2
+<ul>
+{%- for post in collections.post | reverse -%}
+  <li>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+```
+{% endraw %}
+
+  </div>
+  <div id="collectionssort-js" role="tabpanel">
+
+{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 ```js
@@ -288,6 +416,10 @@ exports.render = function(data) {
 };
 ```
 {% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>
 
 {% callout "warn" %}
   <p id="array-reverse">You should <em><strong>not</strong></em> use Array <code>reverse()</code> on collection arrays in your templates, like so:</p>
@@ -308,7 +440,7 @@ exports.render = function(data) {
 
 ### Overriding Content Dates
 
-You can modify how a piece of content is sorted in a collection by changing it’s default `date`. [Read more at Content Dates](/docs/dates/).
+You can modify how a piece of content is sorted in a collection by changing its default `date`. [Read more at Content Dates](/docs/dates/).
 
 ```markdown
 ---
@@ -320,22 +452,7 @@ date: 2016-01-01
 
 To get fancier with your collections (and even do a bit of your own custom filtering, if you’d like), you can use our Configuration API.
 
-Inside of your `.eleventy.js` config file, use the first argument to the config function (`eleventyConfig` below) to call the API (note that module exports is a function and not an object literal):
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  // API is available in `eleventyConfig` argument
-
-  return {
-    // your normal config options
-    markdownTemplateEngine: "njk"
-  };
-};
-```
-
-You can use `eleventyConfig` like so:
+Inside of your `.eleventy.js` config file, use the first argument to the config function (`eleventyConfig` below) to call the API:
 
 {% codetitle ".eleventy.js" %}
 
@@ -354,8 +471,7 @@ module.exports = function(eleventyConfig) {
 
 ### Return values
 
-* These `addCollection` callbacks should return an array of [template objects](#collection-item-data-structure) (in Eleventy 0.5.2 and prior).
-* {% addedin "0.5.3" %} `addCollection` callbacks can now return any arbitrary object type and it’ll be available as data in the template. Arrays, strings, objects—have fun with it.
+* {% addedin "0.5.3" %} `addCollection` callbacks can return any arbitrary object type and it’ll be available as data in the template. Arrays, strings, objects—have fun with it.
 
 ### Collection API Methods
 

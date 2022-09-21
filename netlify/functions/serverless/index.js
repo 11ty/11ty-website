@@ -16,12 +16,14 @@ async function handler (event) {
 	});
 
 	try {
+		let [json] = await elev.getOutput();
+
 		return {
 			statusCode: 200,
 			headers: {
 				"Content-Type": "text/html; charset=UTF-8"
 			},
-			body: await elev.render()
+			body: json.content
 		};
 	} catch (error) {
 		// Only console log for matching serverless paths

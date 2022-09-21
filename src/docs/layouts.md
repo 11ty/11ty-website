@@ -7,9 +7,15 @@ eleventyNavigation:
 ---
 # Layouts
 
-Eleventy Layouts are special templates that can be used to wrap other content. To denote that a piece of content should be wrapped in a template, use the `layout` key in your front matter, like so:
+Eleventy Layouts are special templates that can be used to wrap other content.
 
-{% codetitle "content-using-layout.md" %}
+To denote that a piece of content should be wrapped in a template, use the `layout` key in your front matter, like so:
+
+<seven-minute-tabs>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layouts", additions: "md"} %}
+  <div id="layouts-md" role="tabpanel">
+
+{% codetitle "Markdown", "Syntax" %}
 {% raw %}
 ```markdown
 ---
@@ -20,41 +26,95 @@ title: My Rad Markdown Blog Post
 ```
 {% endraw %}
 
-This will look for a `mylayout.njk` Nunjucks file in your _includes folder_ (`_includes/mylayout.njk`). Note that you can have a [separate folder for Eleventy layouts](/docs/config/#directory-for-layouts-(optional)) if you’d prefer that to having them live in your _includes folder._
-
-You can use any template language in your layout—it doesn’t need to match the template language of the content. An `ejs` template can use a `njk` layout, for example.
-
-{% callout "info" %}If you omit the file extension (for example <code>layout: mylayout</code>), Eleventy will cycle through all of the supported template formats (<code>mylayout.*</code>) to look for a matching layout file.{% endcallout %}
-
-Next, we need to create a `mylayout.njk` file. It can contain any type of text, but here we’re using HTML:
-
-<seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    Syntax:
-    <a href="#mylayout-njk" id="mylayout-njk-btn" role="tab" aria-controls="mylayout-njk" aria-selected="true">Nunjucks</a>
-    <a href="#mylayout-11tyjs" id="mylayout-11tyjs-btn" role="tab" aria-controls="mylayout-11tyjs" aria-selected="false">11ty.js</a>
   </div>
-  <div id="mylayout-njk" role="tabpanel" aria-labelledby="mylayout-njk-btn">
-    {%- codetitle "_includes/mylayout.njk" %}
-    {%- highlight "html" %}
-    {% include "examples/layouts/mylayout.njk" %}
-    {%- endhighlight %}
-    <p>Note that the layout template will populate the <code>content</code> data with the child template’s content. Also note that we don’t want to double-escape the output, so we’re using the provided Nunjuck’s <code>safe</code> filter here (see more language double-escaping syntax below).</p>
+  <div id="layouts-liquid" role="tabpanel">
+
+{% codetitle "Liquid", "Syntax" %}
+{% raw %}
+```liquid
+---
+layout: mylayout.njk
+title: My Rad Liquid Blog Post
+---
+<h1>{{ title }}</h1>
+```
+{% endraw %}
+
   </div>
-  <div id="mylayout-11tyjs" role="tabpanel" aria-labelledby="mylayout-11tyjs-btn">
-    {%- codetitle "_includes/mylayout.11ty.js" %}
-    {%- highlight "js" %}
-    {% include "examples/layouts/mylayout.11ty.js" %}
-    {%- endhighlight %}
-    <p>Note that the layout template will populate the <code>data.content</code> variable with the child template’s content.
+  <div id="layouts-njk" role="tabpanel">
+
+{% codetitle "Nunjucks", "Syntax" %}
+{% raw %}
+```jinja2
+---
+layout: mylayout.njk
+title: My Rad Nunjucks Blog Post
+---
+<h1>{{ title }}</h1>
+```
+{% endraw %}
+
+  </div>
+  <div id="layouts-js" role="tabpanel">
+
+{% codetitle "JavaScript", "Syntax" %}
+{% raw %}
+```js
+module.exports = {
+  data: {
+    layout: "mylayout.njk",
+    title: "My Rad JavaScript Blog Post"
+  },
+  render(data) {
+    return `<h1>${data.title}</h1>`;
+  }
+}
+```
+{% endraw %}
+
+  </div>
+  <div id="layouts-hbs" role="tabpanel">
+
+{% codetitle "Handlebars", "Syntax" %}
+{% raw %}
+```handlebars
+---
+layout: mylayout.njk
+title: My Rad Handlebars Blog Post
+---
+<h1>{{title}}</h1>
+```
+{% endraw %}
+
   </div>
 </seven-minute-tabs>
 
-{% callout "info" %}Layouts can contain their own front matter data! It’ll be merged with the content’s data on render. Content data takes precedence, if conflicting keys arise. Read more about <a href="/docs/data-cascade/">how Eleventy merges data in what we call the Data Cascade</a>.{% endcallout %}
+This will look for a `mylayout.njk` Nunjucks file in your _includes_ folder at `_includes/mylayout.njk`.
 
-All of this will output the following HTML content:
+* You can use any template language in your layout file—it doesn’t need to match the template language of the content: an `ejs` template can use a `njk` layout.
+* Layouts can include subdirectories: `layout: "layouts/base.njk"` maps to `_includes/layouts/base.njk`.
+* You can have a [separate folder for Eleventy layouts](/docs/config/#directory-for-layouts-(optional)) if you’d prefer to have them separate from your _includes_ folder.
+* If you omit the file extension (for example `layout: mylayout`), Eleventy will cycle through all of the supported template formats (`mylayout.*`) to look for a matching layout file. (This is slower, though)
 
-{% codetitle "_site/content-using-layout/index.html" %}
+Next, we need to create a `mylayout.njk` file. It can contain any type of text, but here we’re using HTML:
+
+{% codetitle "_includes/mylayout.njk" %}
+
+{%- highlight "html" %}
+{% include "examples/layouts/mylayout.njk" %}
+{%- endhighlight %}
+
+Note that the layout template will populate the `content` data with the child template’s content. Also note that we don’t want to double-escape the output, so we’re using the provided Nunjucks `safe` filter here (see more language double-escaping syntax below).
+
+Layouts can contain their own front matter data! It’ll be merged with the content’s data on render. Content data takes precedence, if conflicting keys arise. Read more about <a href="/docs/data-cascade/">how Eleventy merges data in what we call the Data Cascade</a>.
+
+All of this will output the following HTML content to `_site/content-using-layout/index.html`:
+
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layoutoutput", additions: "md", label: "View the output from"} %}
+  <div id="layoutoutput-md" role="tabpanel">
+{% callout "demo" %}
 
 ```html
 <!doctype html>
@@ -70,6 +130,87 @@ All of this will output the following HTML content:
 </html>
 ```
 
+{% endcallout %}
+  </div>
+  <div id="layoutoutput-liquid" role="tabpanel">
+{% callout "demo" %}
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Rad Liquid Blog Post</title>
+  </head>
+  <body>
+    <h1>My Rad Liquid Blog Post</h1>
+  </body>
+</html>
+```
+
+{% endcallout %}
+  </div>
+  <div id="layoutoutput-njk" role="tabpanel">
+{% callout "demo" %}
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Rad Nunjucks Blog Post</title>
+  </head>
+  <body>
+    <h1>My Rad Nunjucks Blog Post</h1>
+  </body>
+</html>
+```
+
+{% endcallout %}
+  </div>
+  <div id="layoutoutput-js" role="tabpanel">
+{% callout "demo" %}
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Rad JavaScript Blog Post</title>
+  </head>
+  <body>
+    <h1>My Rad JavaScript Blog Post</h1>
+  </body>
+</html>
+```
+
+{% endcallout %}
+  </div>
+  <div id="layoutoutput-hbs" role="tabpanel">
+{% callout "demo" %}
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Rad Handlebars Blog Post</title>
+  </head>
+  <body>
+    <h1>My Rad Handlebars Blog Post</h1>
+  </body>
+</html>
+```
+
+{% endcallout %}
+  </div>
+</seven-minute-tabs>
+</is-land>
+
 ## Front Matter Data in Layouts
 
 In [Eleventy’s Data Cascade](/docs/data/), front matter data in your template is merged with Layout front matter data! All data is merged ahead of time so that you can mix and match variables in your content and layout templates interchangeably.
@@ -81,18 +222,6 @@ Front matter data set in a content template takes priority over layout front mat
 ### Sources of Data
 
 {% include "datasources.md" %}
-
-## Layouts in a Subdirectory {% addedin "0.2.7" %}
-
-Layouts can be a full path inside of the _includes folder_, like so:
-
-```markdown
----
-layout: layouts/base.njk
----
-```
-
-This will look for `_includes/layouts/base.njk`.
 
 ## Layout Aliasing {% addedin "0.2.8" %}
 

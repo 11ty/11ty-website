@@ -3,7 +3,6 @@ newstitle: Full Time Open Source Development for Eleventy, sponsored by Netlify
 eleventyNavigation:
   parent: Blog
   key: Eleventy Open Source
-homePageHighlight: true
 ---
 And now a special message via [YouTube](https://www.youtube.com/watch?v=pPkWxn0TF9w) and [Twitter](https://twitter.com/eleven_ty/status/1493284209925967872).
 
