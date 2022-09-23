@@ -107,8 +107,7 @@ Starting with Eleventy `2.0.0-canary.7` the above plugin will automatically gene
 Note that [Edge Functions](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/) run in Deno so they require ESM (`import` not `require`).
 
 ```js
-import { EleventyEdge } from "eleventy:edge";
-import precompiledAppData from "./_generated/eleventy-edge-app-data.js";
+import { EleventyEdge, precompiledAppData } from "./_generated/eleventy-edge-app.js";
 
 export default async (request, context) => {
   try {
@@ -471,8 +470,7 @@ If you open up your generated `netlify/edge-functions/eleventy-edge.js` file, yo
 
 {% raw %}
 ```diff-js
- import { EleventyEdge } from "eleventy:edge";
- import precompiledAppData from "./_generated/eleventy-edge-app-data.js";
+ import { EleventyEdge, precompiledAppData } from "./_generated/eleventy-edge-app.js";
 +import searchData from "./_generated/search-data.js";
 
  export default async (request, context) => {
