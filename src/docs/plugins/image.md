@@ -41,7 +41,7 @@ npm install @11ty/eleventy-img
 
 ## Usage
 
-This utility returns a Promise and works best in `async` friendly functions, filters, shortcodes. It _can_ also work in synchronous environments ([Synchronous Usage](#synchronous-usage)).
+This utility returns a Promise and works best in `async` friendly functions, filters, shortcodes. It _can_ also work in synchronous environments ([Synchronous Usage](#synchronous-shortcode)).
 
 {% codetitle ".eleventy.js" %}
 
