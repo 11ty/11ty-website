@@ -144,10 +144,8 @@ const shortcodes = {
 		let url = `https://avatars.githubusercontent.com/${username}?s=66`;
 		return `<img src="https://v1.image.11ty.dev/${encodeURIComponent(url)}/jpeg/66/" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
 	},
-	getOpenCollectiveAvatarHtml(url, alt = "") {
-		if(!alt) {
-			alt = `Open Collective Avatar for ${slug}`;
-		}
+	getOpenCollectiveAvatarHtml(url, username = "") {
+		let alt = `Open Collective Avatar for ${username}`;
 
 		return `<img src="https://v1.image.11ty.dev/${encodeURIComponent(url)}/jpeg/66/" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
 	},

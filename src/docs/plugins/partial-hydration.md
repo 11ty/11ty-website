@@ -31,11 +31,10 @@ Or, more technically: a framework independent partial hydration islands architec
 Features:
 
 * Easy to add to existing components
-* Zero dependencies (use this independent of Eleventy!)
-* Small footprint (4.85 kB; 1.56 kB with Brotli compression)
+* Zero dependencies
+* Small footprint (4.56 kB minimized; 1.47 kB with Brotli compression)
 * Not tightly coupled to a server framework or site generator tool.
 * Server-rendered (SSR) component examples available for SSR-friendly frameworks (Lit, Svelte, Vue, Preact are provided)
-
 
 ## Installation
 
@@ -117,9 +116,25 @@ Place any post-JS content inside of one or more `<template data-island>` element
 </is-land>
 ```
 
-#### Styling
+#### Run your own custom JavaScript, load your own CSS
 
-The `ready` attribute is added to the `<is-land>` when the island has been hydrated.
+Embed a script inside the template to run custom JS when the island’s loading conditions have been satisfied!
+
+```html
+<is-land on:visible>
+  <template data-island>
+    <!-- CSS -->
+    <style>/* My custom CSS */</style>
+    <link rel="stylesheet" href="my-css-file.css">
+
+    <!-- JS -->
+    <script type="module">console.log("Hydrating!");</script>
+    <script type="module" src="my-js-file.js"></script>
+  </template>
+</is-land>
+```
+
+You can also use the `ready` attribute for styling, added to the `<is-land>` when the island has been hydrated.
 
 ```html
 <style>
@@ -127,18 +142,6 @@ is-land[ready] {
   background-color: lightgreen;
 }
 </style>
-```
-
-#### Run your own custom JavaScript
-
-This code runs when the island’s loading conditions have been satisfied! Note the `type="module/island"`.
-
-```html
-<is-land on:visible>
-  <script type="module/island">
-  console.log("Hydrating!");
-  </script>
-</is-land>
 ```
 
 ### Framework Support
