@@ -3,7 +3,6 @@ newstitle: Use Eleventy Edge to deliver dynamic web sites on the Edge
 eleventyNavigation:
   parent: Blog
   key: Eleventy Edge
-homePageHighlight: true
 ---
 I am very proud to introduce a brand new addition to Eleventy: Eleventy Edge.
 
