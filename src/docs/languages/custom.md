@@ -7,7 +7,11 @@ relatedKey: customlang
 relatedTitle: Template Language—Custom
 layout: layouts/langs.njk
 ---
-{% addedin "1.0.0" %}<!-- Beta 10 or Canary 50 -->
+This feature is {% addedin "1.0.0" %}<!-- Beta 10 or Canary 50 -->.
+
+| Eleventy Short Name | File Extension | npm Package  |
+| ------------------- | -------------- | ------------ |
+| _(Any)_             | `.*` _(Any)_   | _(Any)_      |
 
 Eleventy now allows the addition of custom template extensions, meaning that you can use Eleventy to process any arbitrary file extension and compile it to your site’s output folder.
 

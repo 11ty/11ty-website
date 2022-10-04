@@ -5,7 +5,7 @@ eleventyNavigation:
 layout: layouts/langs.njk
 excludeFromSidebar: true
 ---
-| Eleventy Short Name | File Extension | NPM Package |
+| Eleventy Short Name | File Extension | npm Package |
 | ------------------- | -------------- | ----------- |
 | `jstl`              | `.jstl`        | N/A         |
 

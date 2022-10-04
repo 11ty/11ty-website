@@ -7,7 +7,7 @@ layout: layouts/langs.njk
 relatedLinks:
   /docs/config/#default-template-engine-for-markdown-files: Default Template Engine for Markdown Files
 ---
-| Eleventy Short Name | File Extension | NPM Package                                                |
+| Eleventy Short Name | File Extension | npm Package                                                |
 | ------------------- | -------------- | ---------------------------------------------------------- |
 | `md`                | `.md`          | [`markdown-it`](https://www.npmjs.com/package/markdown-it) |
 

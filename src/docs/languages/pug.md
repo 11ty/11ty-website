@@ -5,7 +5,7 @@ eleventyNavigation:
   order: 11
 layout: layouts/langs.njk
 ---
-| Eleventy Short Name | File Extension | NPM Package                           |
+| Eleventy Short Name | File Extension | npm Package                           |
 | ------------------- | -------------- | ------------------------------------- |
 | `pug`               | `.pug`         | [`pug`](https://github.com/pugjs/pug) |
 

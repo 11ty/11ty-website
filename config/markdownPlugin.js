@@ -4,7 +4,7 @@ const markdownItAnchor = require("markdown-it-anchor");
 const markdownItToc = require("markdown-it-table-of-contents");
 
 function markdownItSlugify(s) {
-	return slugify(removeExtraText(s), { lower: true, remove: /[:’'`,]/g });
+	return slugify(removeExtraText(s), { lower: true, remove: /[\=\":’'`,]/g });
 }
 
 function removeExtraText(s) {

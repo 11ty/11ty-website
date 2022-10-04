@@ -11,7 +11,7 @@ tags:
   - related-custom-tags
 layout: layouts/langs.njk
 ---
-| Eleventy Short Name | File Extension | NPM Package                                          |
+| Eleventy Short Name | File Extension | npm Package                                          |
 | ------------------- | -------------- | ---------------------------------------------------- |
 | `liquid`            | `.liquid`      | [`liquidjs`](https://www.npmjs.com/package/liquidjs) |
 

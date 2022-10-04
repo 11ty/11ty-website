@@ -5,7 +5,7 @@ eleventyNavigation:
   order: 8
 layout: layouts/langs.njk
 ---
-| Eleventy Short Name | File Extension | NPM Package                                           |
+| Eleventy Short Name | File Extension | npm Package                                           |
 | ------------------- | -------------- | ----------------------------------------------------- |
 | `mustache`          | `.mustache`    | [`mustache.js`](https://github.com/janl/mustache.js/) |
 

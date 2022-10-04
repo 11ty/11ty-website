@@ -970,3 +970,14 @@ filter-container:defined form {
 		margin-left: -50%;
 	}
 }
+
+/* Table of contents */
+.table-of-contents > ul ul {
+	display: flex;
+	flex-wrap: wrap;
+	/* list-style: none; */
+	gap: .5em 2em;
+}
+.table-of-contents > ul ul > li {
+	padding: 0;
+}
