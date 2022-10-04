@@ -28,7 +28,7 @@ relatedLinks:
 * All configuration extensions/hooks into WebC are async-friendly out of the box.
 * Bundler mode: Easily roll up the CSS and JS in-use by WebC components on a page for page-specific bundles. Dirt-simple critical CSS/JS to only load the code you need.
 * For more complex templating needs, render any existing Eleventy template syntax (Liquid, markdown, Nunjucks, etc.) inside of WebC.
-* Works great with [is-land](https://www.11ty.dev/docs/plugins/partial-hydration/) for web component hydration.
+* Works great with [is-land](/docs/plugins/partial-hydration/) for web component hydration.
 
 ## Resources
 
