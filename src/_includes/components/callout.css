@@ -201,6 +201,7 @@ body > .elv-callout-sticky:before {
 @media (min-width: 64em) { /* 1024px */
 	.elv-toc .elv-callout {
 		margin-right: 0;
+		margin-left: -1rem;
 		font-size: 0.9375em; /* 15px /16 */
 		line-height: 2;
 		font-style: italic;
