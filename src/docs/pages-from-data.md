@@ -44,14 +44,14 @@ pagination:
     data: possums
     size: 1
     alias: possum
-permalink: "possums/{{ possum.name | slug }}/"
+permalink: "possums/{{ possum.name | slugify }}/"
 ---
 
 {{ possum.name }} is {{ possum.age }} years old
 ```
 {% endraw %}
 
-This template will generate four files, one for each possum, where the filename is based on the possum's name passed through the `slug` function. As possums are added and edited the resultant possum details page will be updated automatically.
+This template will generate four files, one for each possum, where the filename is based on the possum's name passed through the [`slugify`](https://www.11ty.dev/docs/filters/slugify/) function. As possums are added and edited the resultant possum details page will be updated automatically.
 
 {% callout "info" %}Note that <code>page</code> is a reserved word so you cannot use <code>alias: page</code>. Read about Eleventy’s reserved data names in <a href="/docs/data-eleventy-supplied">Eleventy Supplied Data</a>.{% endcallout %}
 
