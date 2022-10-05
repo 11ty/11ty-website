@@ -115,7 +115,7 @@ module.exports = async function() {
   </div>
   <div id="rendertmpl-hbs" role="tabpanel">
 
-The `render` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
+The `renderTemplate` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
 
   </div>
 </seven-minute-tabs>
@@ -171,7 +171,7 @@ module.exports = async function() {
   </div>
   <div id="rendertmplvue-hbs" role="tabpanel">
 
-The `render` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
+The `renderTemplate` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
 
   </div>
 </seven-minute-tabs>
@@ -242,7 +242,7 @@ module.exports.render = async function(data) {
   </div>
   <div id="rendertmpldata-hbs" role="tabpanel">
 
-The `render` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
+The `renderTemplate` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
 
   </div>
 </seven-minute-tabs>
@@ -295,7 +295,7 @@ module.exports = async function() {
   </div>
   <div id="renderfile-hbs" role="tabpanel">
 
-The `render` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
+The `renderFile` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
 
   </div>
 </seven-minute-tabs>
@@ -346,7 +346,7 @@ module.exports = async function() {
   </div>
   <div id="renderfilevue-hbs" role="tabpanel">
 
-The `render` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
+The `renderFile` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
 
   </div>
 </seven-minute-tabs>
@@ -411,7 +411,7 @@ module.exports.render = async function(data) {
   </div>
   <div id="renderfiledata-hbs" role="tabpanel">
 
-The `render` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
+The `renderFile` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
 
   </div>
 </seven-minute-tabs>
@@ -475,7 +475,7 @@ module.exports.render = async function(data) {
   </div>
   <div id="renderfileoverride-hbs" role="tabpanel">
 
-The `render` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
+The `renderFile` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
 
   </div>
 </seven-minute-tabs>

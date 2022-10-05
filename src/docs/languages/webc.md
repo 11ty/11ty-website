@@ -163,7 +163,7 @@ module.exports = async function() {
   </div>
   <div id="webc-render-hbs" role="tabpanel">
 
-The `render` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
+The `renderTemplate` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
 
   </div>
 </seven-minute-tabs>
