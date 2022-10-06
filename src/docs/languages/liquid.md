@@ -23,7 +23,19 @@ You can override a `.liquid` file’s template engine. Read more at [Changing a 
 
 Rather than constantly fixing outdated documentation, [find `getLiquidOptions` in `Liquid.js`](https://github.com/11ty/eleventy/blob/master/src/Engines/Liquid.js). These options are different than the [default `liquidjs` options](https://liquidjs.com/tutorials/options.html).
 
-### Optional: Use your own options {% addedin "0.2.15" %}
+### JavaScript Truthiness in Liquid
+
+Surprising to JavaScript developers—in [LiquidJS both `""` and `0` are truthy values](https://liquidjs.com/tutorials/truthy-and-falsy.html)! If you’d like to switch to use more JS-familiar conventions, use the Liquid option `jsTruthy: true` in your Eleventy config:
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setLiquidOptions({
+    jsTruthy: true
+  });
+};
+```
+
+### Use your own options {% addedin "0.2.15" %}
 
 It’s recommended to use the Configuration API to override the default options above.
 
