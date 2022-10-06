@@ -33,6 +33,12 @@ status = 301
 force = true
 
 [[redirects]]
+from = "/twitter"
+to = "https://twitter.com/eleven_ty"
+status = 301
+force = true
+
+[[redirects]]
 from = "/docs/sites/"
 to = "/speedlify/"
 status = 301
