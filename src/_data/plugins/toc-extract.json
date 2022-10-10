@@ -1,0 +1,5 @@
+{
+  "npm": "toc-extract",
+  "description": "extracts a table of contents from HTML, with emphasis on separation of concerns and flexibility."
+}
+
