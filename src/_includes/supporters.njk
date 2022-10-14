@@ -1,15 +1,20 @@
-<div class="fullwidth-module supporters-gold lo">
+<div class="fullwidth-module supporters-gold">
+	<h3 class="subhed ta-c"><strong>Gold Sponsors</strong></h3>
+	<div class="lo-grid">
 	{%- for supporter in opencollective.supporters %}{% if supporter.tier.slug == "gold-sponsor" and supporter.isMonthly -%}
 	{%- set nameToSlug = supporter.name | slug | lower -%}
 	<div class="lo-c{% if opencollectiveExtra[nameToSlug].containerClass %} {{ opencollectiveExtra[nameToSlug].containerClass }}{% endif %}">
 		<a href="{{ opencollectiveExtra[nameToSlug].href or supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}" rel="sponsored">{% if opencollectiveExtra[nameToSlug].icon %}{{ opencollectiveExtra[nameToSlug].icon | safe }}<span class="sr-only">{{ supporter.name }}</span>{% else %}{% opencollectiveavatar supporter.image, supporter.name %}{{ supporter.name }}{% endif %}</a>
-		<h3 class="subhed">{% if opencollectiveExtra[nameToSlug].tierPrefix %}{{ opencollectiveExtra[nameToSlug].tierPrefix | safe }} {% endif %}<strong>Gold</strong> Sponsor {{ supporter.createdAt | monthDiff }}</h3>
 	</div>
 	{%- endif %}{% endfor %}
+	</div>
 </div>
 
 <div class="fullwidth-module">
-  <is-land on:visible on:save-data="false">
-    <html-fetch target="is-land" src="/imports/supporters.html"></html-fetch>
-  </is-land>
+	<is-land on:visible on:save-data="false">
+		<template data-island>
+			<h3 class="subhed ta-c"><strong>Supporters</strong></h3>
+			<html-fetch src="/imports/supporters.html"></html-fetch>
+		</template>
+	</is-land>
 </div>

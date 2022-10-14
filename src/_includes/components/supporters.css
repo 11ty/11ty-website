@@ -73,10 +73,15 @@
 	}
 }
 
+.supporters-gold .lo-grid {
+	--lo-c-minwidth: 8em;
+	--lo-margin-v: 2em;
+	--lo-margin-h: 3em;
+}
 .supporters-gold .logo,
 .supporters-gold svg {
 	width: 100%;
-	margin: .5em 1em;
+	margin: 0;
 }
 .supporters-gold .avatar {
 	max-width: 75px;
@@ -84,6 +89,7 @@
 }
 .supporters-gold .subhed {
 	text-align: center;
+	margin-top: 4em;
 	margin-bottom: 1em;
 }
 .supporters-gold .subhed strong {
