@@ -64,6 +64,14 @@
 		color: #fff;
 	}
 }
+.supporters-gold-transloadit svg {
+	color: #0D1419;
+}
+@media (prefers-color-scheme: dark) {
+	.supporters-gold-transloadit svg {
+		color: #fff;
+	}
+}
 @media (min-width: 64em) { /* 1024px */
 	.elv-docs .supporters-gold-sanity {
 		flex-grow: 1;
