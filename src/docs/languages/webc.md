@@ -630,7 +630,7 @@ WebC [Helpers](https://github.com/11ty/webc#helper-functions) are JavaScript fun
 
 ```html
 <!-- Use the  Eleventy provided `url` universal filter -->
-<a :href="url("/local-path/")">My Link</a>
+<a :href="url('/local-path/')">My Link</a>
 ```
 
 #### Supply your own Helper
