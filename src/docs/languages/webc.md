@@ -622,14 +622,14 @@ p { color: rebeccapurple; }
 
 ### Helper Functions
 
-{% addedin "@11ty/eleventy-plugin-webc@0.5.0" %}[JavaScript template functions](/docs/languages/javascript/#javascript-template-functions) are available for free as WebC helpers. As universal filters populate into JavaScript template functions, this means that [universal filters](/docs/languages/javascript/#javascript-template-functions) are also available as WebC helpers.
+WebC [Helpers](https://github.com/11ty/webc#helper-functions) are JavaScript functions available in dynamic attributes, `@html`, and render functions.
+
+{% addedin "@11ty/eleventy-plugin-webc@0.5.0" %}[JavaScript template functions](/docs/languages/javascript/#javascript-template-functions) and [Universal Filters](/docs/languages/javascript/#javascript-template-functions) are available as WebC Helpers.
 
 ```html
 <!-- Use the  Eleventy provided `url` universal filter -->
 <a :href="url("/local-path/")">My Link</a>
 ```
-
-* Read more about [Helper functions](https://github.com/11ty/webc#helper-functions) in WebC.
 
 #### Supply your own Helper
 
