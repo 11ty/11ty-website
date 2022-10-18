@@ -439,7 +439,7 @@ Make any attribute into a dynamic attribute by prefixing it with `:`. You have a
 <img :src="src" :alt="alt" class="avatar-image">
 ```
 
-_WebC versions prior to `0.5.0` required `this.` (e.g. `this.src`/`this.alt`) when referencing data/attributes/property values. This is no longer required in dynamic attributes._
+* WebC versions prior to `0.5.0` required `this.` (e.g. `this.src`/`this.alt`) when referencing data/attributes/property values. This is no longer required in dynamic attributes.
 
 ### `@html`
 
@@ -453,7 +453,8 @@ We surface a special `@html` [prop](#props-(properties)) to override any tag con
 <template @html="'Template HTML'" webc:nokeep></template>
 ```
 
-_WebC versions prior to `0.5.0` required `this.` (e.g. `this.dataProperty`) when referencing data/attributes/property values. This is no longer required when using `@html`._
+* Content returned from render functions will be processed as WebC—return any WebC content here! {% addedin "@11ty/eleventy-plugin-webc@0.5.0" %}
+* WebC versions prior to `0.5.0` required `this.` (e.g. `this.dataProperty`) when referencing data/attributes/property values. This is no longer required when using `@html`.
 
 ### `webc:is`
 
