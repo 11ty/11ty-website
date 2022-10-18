@@ -6,9 +6,12 @@ eleventyNavigation:
 layout: layouts/langs.njk
 relatedLinks:
 ---
-| Eleventy Short Name | File Extension | NPM Package |
-| ------------------- | -------------- | ----------- |
-| `webc`              | `.webc`        | [`@11ty/webc`](https://www.npmjs.com/package/@11ty/webc) |
+| Type | Value |
+| --- | --- |
+| Eleventy Name | `webc` |
+| File Extension | `*.webc` |
+| npm | [`@11ty/webc`](https://www.npmjs.com/package/@11ty/webc) and [`@11ty/eleventy-plugin-webc`](https://www.npmjs.com/package/@11ty/eleventy-plugin-webc) |
+| GitHub | [`11ty/webc`](https://github.com/11ty/webc) and [`11ty/eleventy-plugin-webc`](https://github.com/11ty/eleventy-plugin-webc) |
 
 **Table of Contents**
 
@@ -453,7 +456,7 @@ We surface a special `@html` [prop](#props-(properties)) to override any tag con
 <template @html="'Template HTML'" webc:nokeep></template>
 ```
 
-* Content returned from render functions will be processed as WebC—return any WebC content here! {% addedin "@11ty/eleventy-plugin-webc@0.5.0" %}
+* Content returned from render functions will be processed as WebC—return any WebC content here! {% addedin "@11ty/webc@0.5.0" %}
 * WebC versions prior to `0.5.0` required `this.` (e.g. `this.dataProperty`) when referencing data/attributes/property values. This is no longer required when using `@html`.
 
 ### `webc:is`
@@ -537,7 +540,7 @@ _{{ frontmatterdata }}_
 {% endraw %}
 
 * You have full access to the data cascade here (note `frontmatterdata` is [set in front matter](#front-matter) above).
-* Content returned from custom transforms will be processed as WebC—return any WebC content here! {% addedin "@11ty/eleventy-plugin-webc@0.5.0" %}
+* Content returned from custom transforms will be processed as WebC—return any WebC content here! {% addedin "@11ty/webc@0.5.0" %}
 
 ### `webc:type="render"` (JavaScript Render Functions)
 
@@ -600,7 +603,7 @@ Bonus tips:
 
 * You can pair `webc:type="render"` with [`webc:scoped`](#webcscoped)!
 * You do have access to the component attributes and props in the render function (which is covered in another section!).
-* Content returned from render functions will be processed as WebC—return any WebC content here! {% addedin "@11ty/eleventy-plugin-webc@0.5.0" %}
+* Content returned from render functions will be processed as WebC—return any WebC content here! {% addedin "@11ty/webc@0.5.0" %}
 
 ### `webc:raw`
 
@@ -619,7 +622,42 @@ p { color: rebeccapurple; }
 
 ### Helper Functions
 
-_[Helper functions](https://github.com/11ty/webc#helper-functions) are not yet available in the Eleventy WebC plugin—coming soon though! Likely we’ll [wire up universal filters to this](https://github.com/11ty/eleventy-plugin-webc/issues/3)._
+{% addedin "@11ty/eleventy-plugin-webc@0.5.0" %}[JavaScript template functions](/docs/languages/javascript/#javascript-template-functions) are available for free as WebC helpers. As universal filters populate into JavaScript template functions, this means that [universal filters](/docs/languages/javascript/#javascript-template-functions) are also available as WebC helpers.
+
+```html
+<!-- Use the  Eleventy provided `url` universal filter -->
+<a :href="url("/local-path/")">My Link</a>
+```
+
+* Read more about [Helper functions](https://github.com/11ty/webc#helper-functions) in WebC.
+
+#### Supply your own Helper
+
+{% codetitle ".eleventy.js" %}
+
+```js
+const pluginWebc = require("@11ty/eleventy-plugin-webc");
+
+module.exports = function(eleventyConfig) {
+	// via Universal Filter
+	eleventyConfig.addFilter("alwaysRed", () => "Red");
+
+	// via JavaScript Template Function
+	eleventyConfig.addJavaScriptFunction("alwaysBlue", () => "Blue");
+
+	eleventyConfig.addPlugin(pluginWebc);
+};
+```
+
+```html
+<div @html="alwaysRed()"></div>
+<div @html="alwaysBlue()"></div>
+
+<!-- renders as: -->
+<div>Red</div>
+<div>Blue</div>
+```
+
 
 ### Limitations
 
