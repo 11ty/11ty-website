@@ -753,10 +753,13 @@ const pluginWebc = require("@11ty/eleventy-plugin-webc");
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebc, {
 		// Glob to find no-import global components
+    // This path is relative to the project-root!
 		components: "_includes/components/**/*.webc",
 	});
 };
 ```
+
+Notably, the path for `components` is relative to your project root (**not** your [project’s `input` directory](/docs/config/#input-directory)).
 
 The file names of components found in the glob determine the global tag name used in your project (e.g. `_includes/components/my-component.webc` will give you access to `<my-component>`).
 
