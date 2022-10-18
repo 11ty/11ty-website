@@ -436,8 +436,10 @@ Make any attribute into a dynamic attribute by prefixing it with `:`. You have a
 {% codetitle "components/avatar-image.webc" %}
 
 ```html
-<img :src="this.src" :alt="this.alt" class="avatar-image">
+<img :src="src" :alt="alt" class="avatar-image">
 ```
+
+_WebC versions prior to `0.5.0` required `this.` (e.g. `this.src`/`this.alt`) when referencing data/attributes/property values. This is no longer required in dynamic attributes._
 
 ### `@html`
 
@@ -445,11 +447,13 @@ We surface a special `@html` [prop](#props-(properties)) to override any tag con
 
 ```html
 <template @html="'Template HTML'"></template>
-<template @html="this.dataProperty"></template>
+<template @html="dataProperty"></template>
 
 <!-- webc:nokeep will replace the outer html -->
 <template @html="'Template HTML'" webc:nokeep></template>
 ```
+
+_WebC versions prior to `0.5.0` required `this.` (e.g. `this.dataProperty`) when referencing data/attributes/property values. This is no longer required when using `@html`._
 
 ### `webc:is`
 
@@ -531,7 +535,8 @@ _{{ frontmatterdata }}_
 ```
 {% endraw %}
 
-You have full access to the data cascade here (note `frontmatterdata` is [set in front matter](#front-matter) above).
+* You have full access to the data cascade here (note `frontmatterdata` is [set in front matter](#front-matter) above).
+* {% addedin "webc@0.5.0" %}Content returned from custom transforms will be processed as WebC—return any WebC content here!
 
 ### `webc:type="render"` (JavaScript Render Functions)
 
@@ -594,10 +599,11 @@ Bonus tips:
 
 * You can pair `webc:type="render"` with [`webc:scoped`](#webcscoped)!
 * You do have access to the component attributes and props in the render function (which is covered in another section!).
+* {% addedin "webc@0.5.0" %}Content returned from render functions will be processed as WebC—return any WebC content here!
 
 ### `webc:raw`
 
-Use `webc:raw` to opt-out of WebC template processing for the current node and all child content. This works well with `<template>` content.
+Use `webc:raw` to opt-out of WebC template processing for all child content of the current node. Notably, attributes on the current node will be processed. This works well with `<template>`!
 
 {% codetitle "components/my-component.webc" %}
 
@@ -628,7 +634,7 @@ There are a few wrinkles when using an HTML parser with custom elements. Notably
 <summary>Expand for a few example workarounds</summary>
 
 ```html
-<head web:is="my-custom-head">
+<head webc:is="my-custom-head">
 	<!-- this is slot content, yes you can use named slots here too -->
 </head>
 ```
@@ -636,8 +642,8 @@ There are a few wrinkles when using an HTML parser with custom elements. Notably
 ```html
 <head>
 	<!-- <my-custom-head> is not allowed here -->
-	<meta web:is="my-custom-head">
-	<title web:is="my-custom-title">Default Title</title>
+	<meta webc:is="my-custom-head">
+	<title webc:is="my-custom-title">Default Title</title>
 </head>
 ```
 
@@ -672,11 +678,13 @@ The above example assumes the existence of `_includes/my-layout.webc` (an [Eleve
 		<meta charset="utf-8">
 		<title>WebC Example</title>
 	</head>
-	<body @html="this.content"></body>
+	<body @html="content"></body>
 </html>
 ```
 
 Read more about the [special `@html` WebC property](#@html).
+
+_WebC versions prior to `0.5.0` required `this.` (e.g. `this.content`) when referencing data/attributes/property values. This is no longer required when using `@html`._
 
 </details>
 
@@ -761,14 +769,16 @@ You can opt-out of bundling on a per-element basis [using `webc:keep`](#webckeep
 	<head>
 		<meta charset="utf-8">
 		<title>WebC Example</title>
-		<style @html="this.getCSS(this.page.url)"></style>
-		<script @html="this.getJS(this.page.url)"></script>
+		<style @html="getCss(page.url)"></style>
+		<script @html="getJs(page.url)"></script>
 	</head>
-	<body @html="this.content"></body>
+	<body @html="content"></body>
 </html>
 ```
 
-Make sure you’re using these `getCSS` and `getJS` helpers in an _Eleventy Layout_ file.
+Make sure you’re using these `getCss` and `getJs` helpers in an _Eleventy Layout_ file.
+
+_WebC versions prior to `0.5.0` required `this.` (e.g. `this.getCss`/`this.page.url`) when referencing helpers/data/attributes/property values. This is no longer required when using `@html`._
 
 #### Asset bucketing
 
@@ -792,18 +802,20 @@ Components can use the `webc:bucket` feature to output to any arbitrary bucket n
 		<meta charset="utf-8">
 		<title>WebC Example</title>
 		<!-- Default bucket -->
-		<style @html="this.getCSS(this.page.url)"></style>
-		<script @html="this.getJS(this.page.url)"></script>
+		<style @html="getCss(page.url)"></style>
+		<script @html="getJs(page.url)"></script>
 	</head>
 	<body>
-		<template webc:nokeep @html="this.content"></template>
+		<template webc:nokeep @html="content"></template>
 
 		<!-- `defer` bucket -->
-		<style @html="this.getCSS(this.page.url, 'defer')"></style>
-		<script @html="this.getJS(this.page.url, 'defer')"></script>
+		<style @html="getCss(page.url, 'defer')"></style>
+		<script @html="getJs(page.url, 'defer')"></script>
 	</body>
 </html>
 ```
+
+_WebC versions prior to `0.5.0` required `this.` (e.g. `this.getCss`/`this.page.url`) when referencing helpers/data/attributes/property values. This is no longer required when using `@html`._
 
 ### Use with `is-land`
 
