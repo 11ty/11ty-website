@@ -536,7 +536,7 @@ _{{ frontmatterdata }}_
 {% endraw %}
 
 * You have full access to the data cascade here (note `frontmatterdata` is [set in front matter](#front-matter) above).
-* {% addedin "webc@0.5.0" %}Content returned from custom transforms will be processed as WebC—return any WebC content here!
+* Content returned from custom transforms will be processed as WebC—return any WebC content here! {% addedin "@11ty/eleventy-plugin-webc@0.5.0" %}
 
 ### `webc:type="render"` (JavaScript Render Functions)
 
@@ -599,7 +599,7 @@ Bonus tips:
 
 * You can pair `webc:type="render"` with [`webc:scoped`](#webcscoped)!
 * You do have access to the component attributes and props in the render function (which is covered in another section!).
-* {% addedin "webc@0.5.0" %}Content returned from render functions will be processed as WebC—return any WebC content here!
+* Content returned from render functions will be processed as WebC—return any WebC content here! {% addedin "@11ty/eleventy-plugin-webc@0.5.0" %}
 
 ### `webc:raw`
 
