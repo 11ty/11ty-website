@@ -82,7 +82,7 @@ Read more about filters on the individual Template Language documentation pages:
 
 ## Universal Filters
 
-Universal filters can be added in a single place and are available to multiple template engines, simultaneously. This is currently supported in JavaScript, Nunjucks, Liquid, and Handlebars.
+Universal filters can be added in a single place and are available to multiple template engines, simultaneously. This is currently supported in JavaScript, Nunjucks, Liquid, Handlebars, and WebC.
 
 {% codetitle ".eleventy.js" %}
 
