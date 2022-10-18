@@ -40,7 +40,9 @@ relatedLinks:
   {%- youtubeEmbed "p0wDUK0Z5Nw", "Interactive Progressively-enhanced Web Components with WebC" -%}
 </div>
 
+* [Introduction to WebC (on 11ty.rocks)](https://11ty.rocks/posts/introduction-webc/) by W. Evan Sheehan
 * {% indieavatar "https://zachleat.com/" %}[zachleat.com: Adding Components to Eleventy with WebC](https://www.zachleat.com/web/webc-in-eleventy/): a brief history of the motivation behind WebC including influences from the Svelte and Vue communities.
+* [11ty.webc.fun](https://11ty.webc.fun/): a collection of WebC recipes!
 
 ## Installation
 
