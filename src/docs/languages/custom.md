@@ -214,6 +214,8 @@ When the output file is written to the file system, what file extension should b
 
 An async-friendly function that runs _once_ (no matter how many files use the extension) for any additional setup at the beginning before any compilation or rendering.
 
+Note that `init` will **not** re-run on watch/serve mode. If you’d like something that runs before _every_ build, use the [`eleventy.before` event](/docs/events/#eleventy.before).
+
 ```js
 {
   init: async function() {
@@ -389,7 +391,10 @@ You can also control the caching key using `getCacheKey`. It might be useful to 
   compileOptions: {
     cache: true,
     getCacheKey: function(contents, inputPath) {
-      // return contents; // this is the default
+      // return contents; // this is the default in 1.0
+
+      // return inputPath + contents; // this is the new default in 2.0.0-canary.16
+
       return inputPath; // override to cache by inputPath (this means the compile function will not get called when the file contents change)
     }
   }
