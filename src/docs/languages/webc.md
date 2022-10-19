@@ -824,6 +824,27 @@ Make sure you’re using these `getCss` and `getJs` helpers in an _Eleventy Layo
 
 _WebC versions prior to `0.5.0` required `this.` (e.g. `this.getCss`/`this.page.url`) when referencing helpers/data/attributes/property values. This is no longer required when using `@html`._
 
+{% callout "info", "md-block" %}Outside of `*.webc` files (e.g. in a Nunjucks or Liquid layout file), the Eleventy WebC plugin also publishes two universal filters `webcGetCss` and `webcGetJs`, for use like this:
+
+{% codetitle "_includes/layout.njk" %}
+
+{% raw %}
+```njk
+<style>{{ page.url | webcGetCss | safe }}</style>
+<script>{{ page.url | webcGetJs | safe }}</script>
+```
+{% endraw %}
+
+{% codetitle "_includes/layout.liquid" %}
+
+{% raw %}
+```njk
+<style>{{ page.url | webcGetCss }}</style>
+<script>{{ page.url | webcGetJs }}</script>
+```
+{% endraw %}
+{% endcallout %}
+
 #### Asset bucketing
 
 Components can use the `webc:bucket` feature to output to any arbitrary bucket name for compartmentalization at the component level.
