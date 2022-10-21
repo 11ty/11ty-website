@@ -291,7 +291,7 @@ Outputs:
 
 </details>
 
-When Eleventy WebC finds `<style>`, `<link rel="stylesheet">`, or `<script>` elements in component definitions they are removed from the output markup and _their content_ is aggregated together for re-use in asset bundles on the page. Read more about [CSS and JS in WebC](#css-and-js-(bundler-mode)). _(You can opt-out of this behavior with `webc:keep`.)_
+Eleventy runs WebC in Bundler mode. That means that when it finds `<style>`, `<link rel="stylesheet">`, or `<script>` elements in component definitions they are removed from the output markup and _their content_ is aggregated together for re-use in asset bundles on the page. Read more about [CSS and JS in WebC](#css-and-js-(bundler-mode)). _(You can opt-out of this behavior with `webc:keep`.)_
 
 ### `webc:keep`
 
@@ -523,6 +523,8 @@ _Adding your own [Custom Transform](https://github.com/11ty/webc#custom-transfor
 
 The [Custom Transforms feature](https://github.com/11ty/webc#custom-transforms) (e.g. `webc:type`) in the Eleventy WebC plugin has been wired up to the [Eleventy Render plugin](/docs/plugins/render/) to allow you to use existing Eleventy template syntax inside of WebC.
 
+{% callout "info", "md" %}Note that the `webc:type="11ty"` feature is exclusive to the **Eleventy** WebC plugin and is not available in non-Eleventy independent WebC.{% endcallout %}
+
 Use `webc:type="11ty"` with the `11ty:type` attribute to specify a [valid template syntax](/docs/plugins/render/#rendertemplate).
 
 {% codetitle "my-page.webc" %}
@@ -626,7 +628,11 @@ p { color: rebeccapurple; }
 
 WebC [Helpers](https://github.com/11ty/webc#helper-functions) are JavaScript functions available in dynamic attributes, `@html`, and render functions.
 
-{% addedin "@11ty/eleventy-plugin-webc@0.5.0" %}[JavaScript template functions](/docs/languages/javascript/#javascript-template-functions) and [Universal Filters](/docs/filters/#universal-filters) are available as WebC Helpers.
+#### Eleventy-provided Helpers
+
+{% addedin "@11ty/eleventy-plugin-webc@0.5.0" %}Included with Eleventy WebC, [JavaScript template functions](/docs/languages/javascript/#javascript-template-functions) and [Universal Filters](/docs/filters/#universal-filters) are provided automatically as WebC Helpers.
+
+This includes [`url`, `slugify`, `log` and others](/docs/filters/#eleventy-provided-universal-filters)!
 
 ```html
 <!-- Use the  Eleventy provided `url` universal filter -->
@@ -638,16 +644,14 @@ WebC [Helpers](https://github.com/11ty/webc#helper-functions) are JavaScript fun
 {% codetitle ".eleventy.js" %}
 
 ```js
-const pluginWebc = require("@11ty/eleventy-plugin-webc");
-
 module.exports = function(eleventyConfig) {
 	// via Universal Filter
 	eleventyConfig.addFilter("alwaysRed", () => "Red");
 
-	// via JavaScript Template Function
+	// or via JavaScript Template Function directly
 	eleventyConfig.addJavaScriptFunction("alwaysBlue", () => "Blue");
 
-	eleventyConfig.addPlugin(pluginWebc);
+	// Don’t forget to add the WebC plugin in your config file too!
 };
 ```
 
@@ -729,7 +733,7 @@ _WebC versions prior to `0.5.0` required `this.` (e.g. `this.content`) when refe
 
 </details>
 
-_Notable note_: front matter (per standard Eleventy conventions) is supported in page-level templates only (files in your input directory) and not in components (see below). If this is something folks would like to see added, [please let us know](https://twitter.com/eleven_ty)!
+_Notable note_: front matter (per standard Eleventy conventions) is supported in page-level templates only (`.webc` files in your input directory) and not in components (see below).
 
 ### Defining Components
 
