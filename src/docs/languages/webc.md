@@ -35,14 +35,14 @@ relatedLinks:
 
 ## Resources
 
+* {% indieavatar "https://11ty.rocks/" %}[Introduction to WebC (on 11ty.rocks)](https://11ty.rocks/posts/introduction-webc/) by {% indieavatar "https://darthmall.net/" %}W. Evan Sheehan
+* {% indieavatar "https://zachleat.com/" %}[zachleat.com: Adding Components to Eleventy with WebC](https://www.zachleat.com/web/webc-in-eleventy/): a brief history of the motivation behind WebC including influences from the Svelte and Vue communities.
+* {% indieavatar "https://darthmall.net/" %}[11ty.webc.fun](https://11ty.webc.fun/): a collection of WebC recipes!
+
 <div class="youtube-related">
   {%- youtubeEmbed "X-Bpjrkz-V8", "Crash Course in Eleventy’s new WebC Plugin" -%}
   {%- youtubeEmbed "p0wDUK0Z5Nw", "Interactive Progressively-enhanced Web Components with WebC" -%}
 </div>
-
-* {% indieavatar "https://11ty.rocks/" %}[Introduction to WebC (on 11ty.rocks)](https://11ty.rocks/posts/introduction-webc/) by {% indieavatar "https://darthmall.net/" %}W. Evan Sheehan
-* {% indieavatar "https://zachleat.com/" %}[zachleat.com: Adding Components to Eleventy with WebC](https://www.zachleat.com/web/webc-in-eleventy/): a brief history of the motivation behind WebC including influences from the Svelte and Vue communities.
-* {% indieavatar "https://darthmall.net/" %}[11ty.webc.fun](https://11ty.webc.fun/): a collection of WebC recipes!
 
 ## Installation
 
