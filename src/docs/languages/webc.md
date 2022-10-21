@@ -222,6 +222,7 @@ When a component has only content HTML (no CSS or JavaScript) it will ignore the
 {% codetitle "page.webc" %}
 
 ```html
+<!doctype html>
 <title>WebC Example</title>
 <my-component></my-component>
 ```
@@ -262,6 +263,7 @@ For components that are _not_ HTML-only (they _do_ have CSS or JS), WebC will in
 {% codetitle "page.webc" %}
 
 ```html
+<!doctype html>
 <title>WebC Example</title>
 <my-component></my-component>
 ```
