@@ -66,13 +66,13 @@ A portable, installable Eleventy configuration which can add [data](#data), [fil
 
 Opt-in shortcodes for Eleventy in which pieces of dynamic functionality can be coupled with build-generated or serverless templates.
 
-[Read more about Eleventy Edge.](/docs/plugin/edge/)
+[Read more about Eleventy Edge.](/docs/plugins/edge/)
 
 ### Eleventy Serverless
 
 An opt-in build mode for Eleventy in which specified pages are built when a user requests them, rather than ahead of time during a build step. Optionally, pages that are built on request can be cached by the content delivery network to be used for future visits to that page.
 
-[Read more about Eleventy Serverless.](/docs/plugin/serverless/)
+[Read more about Eleventy Serverless.](/docs/plugins/serverless/)
 
 ## Industry Terms and Buzzwords
 
