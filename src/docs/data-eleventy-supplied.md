@@ -53,7 +53,7 @@ let page = {
 };
 ```
 
-Note that `page.lang` is _only_ available when the [i18n plugin has been added to your configuration file](http://localhost:8091/docs/plugins/i18n/#add-to-your-configuration-file).
+Note that `page.lang` is _only_ available when the [i18n plugin has been added to your configuration file](/docs/plugins/i18n/#add-to-your-configuration-file).
 
 ### `date`
 
