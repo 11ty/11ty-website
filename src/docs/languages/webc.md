@@ -35,9 +35,8 @@ relatedLinks:
 
 ## Resources
 
-* {% indieavatar "https://11ty.rocks/" %}[Introduction to WebC (on 11ty.rocks)](https://11ty.rocks/posts/introduction-webc/) by {% indieavatar "https://darthmall.net/" %}W. Evan Sheehan
-* {% indieavatar "https://zachleat.com/" %}[zachleat.com: Adding Components to Eleventy with WebC](https://www.zachleat.com/web/webc-in-eleventy/): a brief history of the motivation behind WebC including influences from the Svelte and Vue communities.
-* {% indieavatar "https://darthmall.net/" %}[11ty.webc.fun](https://11ty.webc.fun/): a collection of WebC recipes!
+* {% indieavatar "https://11ty.rocks/" %}[Introduction to WebC (11ty.rocks)](https://11ty.rocks/posts/introduction-webc/) by {% indieavatar "https://darthmall.net/" %}W. Evan Sheehan
+* {% indieavatar "https://11ty.rocks/" %}[Understanding WebC Features and Concepts (11ty.rocks)](https://11ty.rocks/posts/understanding-webc-features-and-concepts/) by {% indieavatar "https://thinkdobecreate.com/" %}Stephanie Eckles
 * [WebC Number Counter Example Source Code and Demo](https://github.com/11ty/demo-webc-counter)
 
 <div class="youtube-related">
@@ -45,6 +44,11 @@ relatedLinks:
   {%- youtubeEmbed "p0wDUK0Z5Nw", "Interactive Progressively-enhanced Web Components with WebC" -%}
   {%- youtubeEmbed "iZvhQ484V8s", "Server-rendered Image Comparison Component", 1552 -%}
 </div>
+
+* {% indieavatar "https://zachleat.com/" %}[zachleat.com: Adding Components to Eleventy with WebC](https://www.zachleat.com/web/webc-in-eleventy/): a brief history of the motivation behind WebC including influences from the Svelte and Vue communities.
+* {% indieavatar "https://darthmall.net/" %}[11ty.webc.fun](https://11ty.webc.fun/): a collection of WebC recipes!
+* {% indieavatar "https://www.robincussol.com/" %}[Robin Cussol: Optimize your img tags with Eleventy Image and WebC](https://www.robincussol.com/optimize-your-img-tags-with-eleventy-image-and-webc/)
+
 
 ## Installation
 
