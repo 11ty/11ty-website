@@ -1,4 +1,4 @@
-exports.render = async function({id, valid, additions, label}) {
+exports.render = async function({id, valid, additions, subtractions, label}) {
 	let syntaxes = {};
 
 	let extraSyntaxes = {
@@ -17,8 +17,15 @@ exports.render = async function({id, valid, additions, label}) {
 		liquid: "Liquid",
 		njk: "Nunjucks",
 		js: "11ty.js",
+		webc: "WebC",
 		hbs: "Handlebars",
 	});
+
+	for(let syn of (subtractions || "").split(",")) {
+		if(syn) {
+			delete syntaxes[syn];
+		}
+	}
 
 	let str = [];
 	let validArray = (valid || "").split(",").filter(entry => !!entry);

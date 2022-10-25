@@ -95,6 +95,7 @@ This plugin provides the following syntax highlighters using PrismJS, all of whi
 * Liquid Custom Tag {% raw %}`{% highlight %}`{% endraw %}
 * Nunjucks Paired Shortcode {% raw %}`{% highlight %}`{% endraw %}
 * JavaScript Function {% raw %}`this.highlight()`{% endraw %} {% addedin "Syntax Highlighter v4.0.0" %}
+* WebC Helper {% raw %}`this.helpers.highlight()`{% endraw %} {% addedin "Syntax Highlighter v4.0.0" %}
 
 ### Syntax Highlight Source Code
 
@@ -102,7 +103,7 @@ This plugin provides the following syntax highlighters using PrismJS, all of whi
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlight", additions: "md"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlight", additions: "md,webc", subtractions: "hbs"} %}
   <div id="highlight-md" role="tabpanel">
 
 {% codetitle "Markdown", "Syntax" %}
@@ -167,8 +168,25 @@ function myFunction() {
 The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %}.
 
   </div>
-  <div id="highlight-hbs" role="tabpanel">
-    <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
+  <div id="highlight-webc" role="tabpanel">
+
+{% codetitle "webc", "Syntax" %}
+
+{% raw %}
+```html
+<script webc:type="render" webc:is="template">
+function() {
+  let code = `
+function myFunction() {
+  return true;
+}`;
+
+  return this.helpers.highlight("js", code);
+}
+</script>
+```
+{% endraw %}
+
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -194,7 +212,7 @@ Add the `diff-` prefix to the language name on the previous examples to show cod
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlightdiff", additions: "md"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlightdiff", additions: "md,webc", subtractions: "hbs"} %}
   <div id="highlightdiff-md" role="tabpanel">
 
 {% codetitle "Markdown", "Syntax" %}
@@ -235,7 +253,7 @@ Add the `diff-` prefix to the language name on the previous examples to show cod
 +function myFunction() {
    // …
 -  return true;
-}
+ }
 {% endhighlight %}
 ```
 {% endraw %}
@@ -250,9 +268,9 @@ Add the `diff-` prefix to the language name on the previous examples to show cod
 module.exports = function(data) {
   let code = `
 +function myFunction() {
-  // …
+   // …
 -  return true;
-}`;
+ }`;
 
   return this.highlight("diff-js", code);
 }
@@ -262,8 +280,26 @@ module.exports = function(data) {
 The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %}.
 
   </div>
-  <div id="highlightdiff-hbs" role="tabpanel">
-    <p>This plugin does not yet include <code>hbs</code> compatibility!</p>
+  <div id="highlightdiff-webc" role="tabpanel">
+
+{% codetitle "webc", "Syntax" %}
+
+{% raw %}
+```html
+<script webc:type="render" webc:is="template">
+function() {
+  let code = `
++function myFunction() {
+   // …
+-  return true;
+ }`;
+
+  return this.helpers.highlight("diff-js", code);
+}
+</script>
+```
+{% endraw %}
+
   </div>
 </seven-minute-tabs>
 </is-land>
