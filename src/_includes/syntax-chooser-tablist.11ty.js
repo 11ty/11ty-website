@@ -2,7 +2,8 @@ exports.render = async function({id, valid, additions, subtractions, label}) {
 	let syntaxes = {};
 
 	let extraSyntaxes = {
-		md: "Markdown"
+		md: "Markdown",
+		webc: "WebC",
 	};
 
 	// Extras go first
@@ -17,7 +18,6 @@ exports.render = async function({id, valid, additions, subtractions, label}) {
 		liquid: "Liquid",
 		njk: "Nunjucks",
 		js: "11ty.js",
-		webc: "WebC",
 		hbs: "Handlebars",
 	});
 
