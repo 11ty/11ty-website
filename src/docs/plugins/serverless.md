@@ -347,6 +347,7 @@ Use the new `serverless` option in `pagination` to slice up your paginated data 
 ```yaml
 pagination:
   data: authors
+  alias: author
   size: 1
   serverless: eleventy.serverless.path.id
 permalink:
@@ -355,13 +356,33 @@ permalink:
 
 Eleventy fetches the value stored at `eleventy.serverless.path.id` (using [lodash get](https://lodash.com/docs/4.17.15#get)) and does an additional get on the pagination data in `authors`.
 
-For example:
+For example given this `authors` data :
+
+```json
+{
+  "zachleat": {
+    "name": "Zach Leatherman",
+    "content": "Content for Zach Leatherman"
+  },
+  "brianjon": {
+    "name": "Brian Jones",
+    "content": "Content for Brian Jones"
+  },
+  "janedanc": {
+    "name": "Jane Dance",
+    "content": "Content for Jane Dance"
+  }
+}
+```
 
 1. A request is made to `/authors/zachleat/`
-1. The dynamic URL slug for the `possum` serverless function `/authors/:id/` matches `zachleat` to `:id`. This sets `"zachleat"` in the `eleventy.serverless.path.id` Global Data.
-1. Because `pagination.serverless` has the value `"eleventy.serverless.path.id"`, we use lodash.get to select the key `"zachleat"` from Global Data.
-1. An additional `lodash.get(authors, "zachleat")` returns a single chunk of data for one author.
-1. Pagination only operates on that one selected page for rendering.
+1. The dynamic URL slug for the `possum` serverless function `/authors/:id/` matches `zachleat` to `:id`. 
+1. This in turn sets `eleventy.serverless.path.id` in your Global Data to `"zachleat"`.
+1. As `pagination.serverless` is set to `"eleventy.serverless.path.id"` we can use it as a key via `lodash.get(authors, "zachleat")` to return data a chunk of data from `authors`. 
+1. Via `pagination.alias`, your template now has access to `author.name` and `author.content` for `"zachleat"`
+1. And as `pagination.size` is set to 1, the pagination only operates on that one selected page for rendering.
+
+{% callout "info", "md" %}You have to use an object for your pagination data. If you use an array you will get unexpected results.{% endcallout %}
 
 
 ### Input via Query Parameters
