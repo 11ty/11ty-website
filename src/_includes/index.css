@@ -768,6 +768,19 @@ main .elv-toc + h1 .direct-link {
 	padding: .5em 1em .4em;
 	box-shadow: 0 8px 6px -6px #000;
 }
+
+p:has(.btn-primary-why-are-you-doing-this) {
+	position: sticky;
+	top: 10px;
+	z-index: 10;
+	background-color: #fff;
+}
+@media (prefers-color-scheme: dark){
+	p:has(.btn-primary-why-are-you-doing-this) {
+		background-color: #222;
+	}
+}
+
 .btn-primary-why-are-you-doing-this {
 	margin-top: 1.5em;
 	border-width: .3em;
