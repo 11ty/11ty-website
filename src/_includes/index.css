@@ -769,17 +769,6 @@ main .elv-toc + h1 .direct-link {
 	box-shadow: 0 8px 6px -6px #000;
 }
 
-p:has(.btn-primary-why-are-you-doing-this) {
-	position: sticky;
-	top: 10px;
-	z-index: 10;
-	background-color: #fff;
-}
-@media (prefers-color-scheme: dark){
-	p:has(.btn-primary-why-are-you-doing-this) {
-		background-color: #222;
-	}
-}
 
 .btn-primary-why-are-you-doing-this {
 	margin-top: 1.5em;
@@ -813,6 +802,17 @@ p:has(.btn-primary-why-are-you-doing-this) {
 		text-align: center;
 		margin-top: .25em;
 		font-size: .75em;
+	}
+	p:has(.btn-primary-why-are-you-doing-this) {
+		position: sticky;
+		top: 10px;
+		z-index: 10;
+		background-color: #fff;
+	}
+}
+@media (prefers-color-scheme: dark) and (min-width: 50em){
+	p:has(.btn-primary-why-are-you-doing-this) {
+		background-color: #222;
 	}
 }
 .btn-form:hover,
