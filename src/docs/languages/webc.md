@@ -462,13 +462,35 @@ We surface a special `@html` [prop](#props-(properties)) to override any tag con
 ```html
 <template @html="'Template HTML'"></template>
 <template @html="dataProperty"></template>
+```
 
-<!-- webc:nokeep will replace the outer html -->
+```html
+<!-- webc:nokeep will replace the outer element -->
 <template @html="'Template HTML'" webc:nokeep></template>
 ```
 
-* Content returned from render functions will be processed as WebC—return any WebC content here! {% addedin "@11ty/webc@0.5.0" %}
+* Content returned from the `@html` prop will be processed as WebC—return any WebC content here! {% addedin "@11ty/webc@0.5.0" %}
 * WebC versions prior to `0.5.0` required `this.` (e.g. `this.dataProperty`) when referencing data/attributes/property values. This is no longer required when using `@html`.
+
+### `@text`
+
+{% addedin "@11ty/webc@0.6.0" %}
+
+We provide a special `@text` [prop](#props-(properties)) to override any tag content with custom JavaScript. The entire value returned here will be escaped!
+
+```html
+<p @text="dataProperty"></p>
+
+<!-- When dataProperty contains `<p>This is text</p>`, this renders: -->
+<p>&lt;p&gt;This is text&lt;/p&gt;</p>
+```
+
+```html
+<!-- webc:nokeep will replace the outer element -->
+<p @text="dataProperty" webc:nokeep></p>
+```
+
+* Content returned from the `@text` prop will **not** be processed as WebC.
 
 ### `webc:is`
 
