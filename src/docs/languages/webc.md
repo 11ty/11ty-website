@@ -441,12 +441,19 @@ You can use `webc:root webc:keep` together to override the host component tag na
 
 ### Props (Properties)
 
-Make any attribute into a prop by prefixing it with `@`. Props are “private” attributes that don’t end up in the output HTML (they are private to WebC). They will be filtered from the output HTML but are available to the component’s data.
+Make any attribute into a prop by prefixing it with `@`. Props are “private” attributes that don’t end up in the output HTML (they are private to WebC). They are identical to attributes except that they are filtered from the output HTML.
 
 {% codetitle "page.webc" %}
 
 ```html
 <my-component @propName="Hello"></my-component>
+```
+
+{% codetitle "components/my-component.webc" %}
+
+```html
+<p @text="propName"></p>
+<!-- outputs <p>Hello</p> -->
 ```
 
 ### Dynamic attributes
