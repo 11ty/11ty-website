@@ -95,7 +95,7 @@ This plugin provides the following syntax highlighters using PrismJS, all of whi
 * Liquid Custom Tag {% raw %}`{% highlight %}`{% endraw %}
 * Nunjucks Paired Shortcode {% raw %}`{% highlight %}`{% endraw %}
 * JavaScript Function {% raw %}`this.highlight()`{% endraw %} {% addedin "Syntax Highlighter v4.0.0" %}
-* WebC Helper {% raw %}`this.helpers.highlight()`{% endraw %} {% addedin "Syntax Highlighter v4.0.0" %}
+* WebC component {% raw %}`<syntax-highlight>`{% endraw %} {% addedin "Syntax Highlighter v4.2.0" %}
 
 ### Syntax Highlight Source Code
 
