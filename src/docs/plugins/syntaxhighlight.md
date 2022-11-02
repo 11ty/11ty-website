@@ -174,18 +174,33 @@ The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %
 
 {% raw %}
 ```html
-<script webc:type="render" webc:is="template">
-function() {
-  let code = `
+<!-- Requires WebC v0.6.2+ -->
+<!-- Requires Syntax Highlighter v4.2.0+ -->
+
+<syntax-highlight language="js" webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight">
 function myFunction() {
   return true;
-}`;
-
-  return this.helpers.highlight("js", code);
 }
-</script>
+</syntax-highlight>
+```
+
+<details>
+<summary>Expand to see an example of importing for use anywhere on the page via front matter.</summary>
+
+```html
+---
+webc:
+  components: ./node_modules/@11ty/eleventy-plugin-syntaxhighlight/syntax-highlight.webc
+---
+<syntax-highlight language="js">
+function myFunction() {
+  return true;
+}
+</syntax-highlight>
 ```
 {% endraw %}
+
+</details>
 
   </div>
 </seven-minute-tabs>
@@ -286,19 +301,16 @@ The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %
 
 {% raw %}
 ```html
-<script webc:type="render" webc:is="template">
-function() {
-  let code = `
+<!-- Requires WebC v0.6.2+ -->
+<!-- Requires Syntax Highlighter v4.2.0+ -->
+
+<syntax-highlight language="diff-js" webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight">
 +function myFunction() {
    // …
 -  return true;
- }`;
-
-  return this.helpers.highlight("diff-js", code);
-}
-</script>
+ }
+</syntax-highlight>
 ```
-{% endraw %}
 
   </div>
 </seven-minute-tabs>
