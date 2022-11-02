@@ -737,7 +737,7 @@ There are a few wrinkles when using an HTML parser with custom elements. Notably
 
 </details>
 
-### Rendering Modes
+#### Rendering Modes
 
 There are two different rendering modes in Eleventy: `page` and `component`. We attempt to guess the rendering mode that you’d like based on the markup you supply. The `page` rendering mode is for rendering full HTML pages. The `component` rendering mode is for fragments of HTML. Most of the time you won’t need to worry about this distinction but it is included in the documentation for completeness.
 
