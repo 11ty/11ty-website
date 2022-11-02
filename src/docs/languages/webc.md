@@ -337,6 +337,16 @@ WebC will expand any component it finds using known components. You can also use
 <any-tag-name webc:import="./components/my-component.webc"></any-tag-name>
 ```
 
+{% addedin "@11ty/webc@0.6.2" %}You can import directly from an installed npm package. Eleventy will begin to supply WebC components with existing plugins. The Syntax Highlighter (`4.2.0` or newer) supplies one that you can use today:
+
+```html
+<syntax-highlight language="js" webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight">
+function myFunction() {
+  return true;
+}
+</syntax-highlight>
+```
+
 ### Slots
 
 Child content optionally precompiles using `<slot>` and `[slot]` too. This example is using an [HTML-only component](#html-only-components).
