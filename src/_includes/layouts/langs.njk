@@ -9,6 +9,10 @@ overrideCommunityLinks: true
 {% templatelangs templatetypes, page %}
 </div>
 
+{% if logoImage %}
+<p>{% image logoImage, "Logo for " + eleventyNavigation.key, [200] %}</p>
+{% endif %}
+
 {%- if communityLinks or communityLinksKey %}
 <div class="elv-community" id="community-resources">
   {%- include "community-contributed.njk" -%}

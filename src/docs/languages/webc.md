@@ -3,6 +3,7 @@ eleventyNavigation:
   parent: Template Languages
   key: WebC
   order: 3
+logoImage: "./src/img/logos/webc.png"
 layout: layouts/langs.njk
 relatedLinks:
 ---

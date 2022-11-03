@@ -4,6 +4,7 @@ eleventyNavigation:
   key: Markdown
   order: 2
 layout: layouts/langs.njk
+logoImage: "./src/img/logos/markdown.svg"
 relatedLinks:
   /docs/config/#default-template-engine-for-markdown-files: Default Template Engine for Markdown Files
 ---
