@@ -12,7 +12,7 @@ module.exports = class {
 
 		let feed = new ActivityFeed();
 
-		feed.setCacheDuration("4h");
+		feed.setCacheDuration("1h"); // cache is persisted now, so we’ll update this at maximum once per hour
 
 		// The Eleventy Activity Feed
 		feed.addSource("youtubeUser", "YouTube", "UCskGTioqrMBcw8pd14_334A"); // Eleventy
