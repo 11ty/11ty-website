@@ -89,7 +89,7 @@ async function fetch(entry) {
 				twitterUsernames.add(name.substr("twitter:".length));
 			}
 		}
-		for(let author of siteData.authors) {
+		for(let author of siteData.authors || []) {
 			let name = cleanName(author).toLowerCase();
 			if(name.startsWith("twitter:")) {
 				twitterUsernames.add(name.substr("twitter:".length));
@@ -100,7 +100,7 @@ async function fetch(entry) {
   console.log( "Found", twitterUsernames.size, "usernames" );
 
   let allTwitterUrls = await getTwitterAvatarUrl(Array.from(twitterUsernames), {
-		twitterApiVersion: 1
+		twitterApiVersion: 2
 	});
 	for(let entry of allTwitterUrls) {
 		await fetch(entry);

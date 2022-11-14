@@ -4,12 +4,12 @@
       "format": "avif",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/twitter/RvoJwIR5pZ-90.avif",
+      "url": "/img/avatars/twitter/Q0RFT7Hs7x-90.avif",
       "sourceType": "image/avif",
-      "srcset": "/img/avatars/twitter/RvoJwIR5pZ-90.avif 90w",
-      "filename": "RvoJwIR5pZ-90.avif",
-      "outputPath": "src/img/avatars/twitter/RvoJwIR5pZ-90.avif",
-      "size": 1322
+      "srcset": "/img/avatars/twitter/Q0RFT7Hs7x-90.avif 90w",
+      "filename": "Q0RFT7Hs7x-90.avif",
+      "outputPath": "src/img/avatars/twitter/Q0RFT7Hs7x-90.avif",
+      "size": 1555
     }
   ],
   "webp": [
@@ -17,12 +17,12 @@
       "format": "webp",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/twitter/RvoJwIR5pZ-90.webp",
+      "url": "/img/avatars/twitter/Q0RFT7Hs7x-90.webp",
       "sourceType": "image/webp",
-      "srcset": "/img/avatars/twitter/RvoJwIR5pZ-90.webp 90w",
-      "filename": "RvoJwIR5pZ-90.webp",
-      "outputPath": "src/img/avatars/twitter/RvoJwIR5pZ-90.webp",
-      "size": 1816
+      "srcset": "/img/avatars/twitter/Q0RFT7Hs7x-90.webp 90w",
+      "filename": "Q0RFT7Hs7x-90.webp",
+      "outputPath": "src/img/avatars/twitter/Q0RFT7Hs7x-90.webp",
+      "size": 1930
     }
   ],
   "jpeg": [
@@ -30,12 +30,12 @@
       "format": "jpeg",
       "width": 90,
       "height": 90,
-      "url": "/img/avatars/twitter/RvoJwIR5pZ-90.jpeg",
+      "url": "/img/avatars/twitter/Q0RFT7Hs7x-90.jpeg",
       "sourceType": "image/jpeg",
-      "srcset": "/img/avatars/twitter/RvoJwIR5pZ-90.jpeg 90w",
-      "filename": "RvoJwIR5pZ-90.jpeg",
-      "outputPath": "src/img/avatars/twitter/RvoJwIR5pZ-90.jpeg",
-      "size": 2387
+      "srcset": "/img/avatars/twitter/Q0RFT7Hs7x-90.jpeg 90w",
+      "filename": "Q0RFT7Hs7x-90.jpeg",
+      "outputPath": "src/img/avatars/twitter/Q0RFT7Hs7x-90.jpeg",
+      "size": 2463
     }
   ]
 }
