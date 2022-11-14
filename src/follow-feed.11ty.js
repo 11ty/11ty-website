@@ -1,7 +1,7 @@
 module.exports = class {
 	data() {
 		return {
-			permalink: "activity.rss",
+			permalink: "/follow/follow.rss",
 			layout: false,
 			eleventyExcludeFromCollections: true
 		}
