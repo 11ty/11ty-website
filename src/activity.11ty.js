@@ -23,7 +23,7 @@ module.exports = class {
 		return feed.toRssFeed({
 			title: "Eleventy’s Activity Feed",
 			language: "en",
-			url: "https://www.11ty.dev/activity/",
+			url: "https://www.11ty.dev/activity.rss",
 			subtitle: "One centralized feed of Eleventy activity across the web.",
 		});
 	}
