@@ -222,7 +222,7 @@ module.exports = function(eleventyConfig) {
 			"src/img/gift.svg",
 			"src/img/possum-geri.png",
 			"_generated-serverless-collections.json",
-			{ from: ".cache/eleventy-fetch/", to: "cache" },
+			".cache/eleventy-fetch/",
 		]
 	});
 

@@ -64,6 +64,7 @@
     "markdown-it-anchor": "^8.6.4",
     "markdown-it-table-of-contents": "^0.6.0",
     "netlify-cli": "^10.17.2",
+    "netlify-plugin-cache": "^1.0.3",
     "node-fetch": "^2.6.5",
     "prettier": "^2.7.1",
     "semver": "^7.3.7",
