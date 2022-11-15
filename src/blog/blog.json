@@ -2,7 +2,5 @@
 	"tags": ["blog"],
 	"excludeFromSidebar": true,
 	"layout": "layouts/blog.md",
-	"permalink": "/blog/{{ page.fileSlug }}/",
-	"feedTitle": "Eleventy Blog",
-	"feedUrl": "/blog/feed.xml"
+	"permalink": "/blog/{{ page.fileSlug }}/"
 }
