@@ -24,7 +24,7 @@ eleventyComputed:
 		<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon.png">
 		<link rel="me" href="https://fosstodon.org/@eleventy">
 
-		<!-- Open Graph / Facebook -->
+		<!-- Open Graph -->
 		<meta property="og:type" content="website">
 		<meta property="og:url" content="https://www.11ty.dev/">
 		<meta property="og:site_name" content="Eleventy">
@@ -45,6 +45,15 @@ eleventyComputed:
 		<meta property="twitter:description" content="{{ social.description }}">
 		<meta property="twitter:image" content="{{ social.imgsrc }}">
 		<meta property="twitter:image:alt" content="{{ social.imgalt }}">
+
+		<!-- Feeds -->
+{%- if not feedExclusive %}
+		<link rel="alternate" href="/blog/feed.xml" title="Eleventy Blog" type="application/atom+xml">
+		<link rel="alternate" href="/follow/follow.rss" title="Eleventy’s Activity Feed" type="application/rss+xml">
+{%- endif %}
+{%- if feedTitle and feedUrl %}
+		<link rel="alternate" href="{{ feedUrl }}" title="{{ feedTitle }}" type="application/atom+xml">
+{%- endif %}
 
 {%- set css %}
 {% include 'components/font-titles.css' %}
@@ -77,8 +86,11 @@ eleventyComputed:
 {% endfor %}
 {{ googlefonts | safe }}
 {% endset %}
+
+		<!-- Preconnect -->
 		<link href="https://v1.indieweb-avatar.11ty.dev" rel="preconnect" crossorigin>
 		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+
 		<style>{{ css | cssmin | safe }}</style>
 {% if config.env === "production" %}
 		<link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'">
@@ -87,9 +99,6 @@ eleventyComputed:
 		</noscript>
 {% else %}
 		<link rel="stylesheet" href="/css/async.css" media="all">
-{% endif %}
-{% if feedTitle and feedUrl %}
-		<link rel="alternate" href="{{ feedUrl }}" title="{{ feedTitle }}" type="application/atom+xml">
 {% endif %}
 		<script>
 		{%- include "components/details-force-state.js" -%}

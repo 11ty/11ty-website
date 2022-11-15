@@ -5,6 +5,7 @@ eleventyNavigation:
   order: 1.5
 feedTitle: Quick Tips RSS Feed
 feedUrl: /docs/quicktips/feed.xml
+feedExclusive: true
 ---
 
 # Tutorials
