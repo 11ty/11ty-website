@@ -101,9 +101,12 @@ Alright, you definitely read all of those right? 😇 Here’s some accessible c
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-nav-starter", valid: "njk,js" } %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-nav-starter", valid: "liquid,njk,js" } %}
   <div id="paged-nav-starter-liquid" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+    {%- codetitle "starter.liquid" %}
+    {%- highlight "html" %}
+    {%- include "examples/pagination/nav/starter.liquid" %}
+    {%- endhighlight %}  
   </div>
   <div id="paged-nav-starter-njk" role="tabpanel">
     {%- codetitle "starter.njk" %}
