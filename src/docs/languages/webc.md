@@ -85,7 +85,8 @@ const pluginWebc = require("@11ty/eleventy-plugin-webc");
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebc, {
 		// Glob to find no-import global components
-		components: false,
+		// (The default changed from `false` in Eleventy WebC v0.7.0)
+		components: "_components/**/*.webc",
 
 		// Adds an Eleventy WebC transform to process all HTML output
 		useTransform: false,
@@ -885,7 +886,8 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebc, {
 		// Glob to find no-import global components
     // This path is relative to the project-root!
-		components: "_includes/components/**/*.webc",
+		// (The default changed from `false` in Eleventy WebC v0.7.0)
+		components: "_components/**/*.webc",
 	});
 };
 ```
