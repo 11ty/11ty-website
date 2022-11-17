@@ -951,7 +951,7 @@ You can opt-out of bundling on a per-element basis [using `webc:keep`](#webckeep
 </html>
 ```
 
-_`@raw` was {% addedin "@11ty/webc@0.6.2" %}. Previous versions can use `webc:raw @html`._
+_`@raw` was {% addedin "@11ty/webc@0.7.1" %}. Previous versions can use `webc:raw @html`._
 
 Make sure you’re using these `getCss` and `getJs` helpers in an _Eleventy Layout_ file.
 
