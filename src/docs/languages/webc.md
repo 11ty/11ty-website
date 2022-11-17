@@ -350,6 +350,20 @@ function myFunction() {
 
 This uses the component tag name (`syntax-highlight`) to look for a WebC component at `node_modules/@11ty/eleventy-plugin-syntaxhighlight/syntax-highlight.webc` and imports it for use on this node. This works with a tag name override via `webc:is` too.
 
+### `webc:if`
+
+_(WebC v0.7.1+)_
+
+Use `webc:if` to conditionally render elements. Accepts arbitrary JavaScript (and is async-friendly). Similar to dynamic attributes, this also has access to component attributes and properties.
+
+```html
+<div webc:if="true">This will render</div>
+<div webc:if="false">This will not render</div>
+<div webc:if="myAsyncHelper()">If the helper promise resolves to a truthy value, this will render</div>
+```
+
+For more complex conditionals, `webc:type="js"` _(WebC v0.7.1+)_ is recommended (read more below).
+
 ### Slots
 
 Child content optionally precompiles using `<slot>` and `[slot]` too. This example is using an [HTML-only component](#html-only-components).
@@ -447,15 +461,17 @@ Make any attribute into a prop by prefixing it with `@`. Props are “private”
 {% codetitle "page.webc" %}
 
 ```html
-<my-component @propName="Hello"></my-component>
+<my-component @prop="Hello"></my-component>
 ```
 
 {% codetitle "components/my-component.webc" %}
 
 ```html
-<p @text="propName"></p>
+<p @text="prop"></p>
 <!-- outputs <p>Hello</p> -->
 ```
+
+* In the HTML specification, attribute names are lower-case. When referencing these inside of a dynamic attribute, use the lower-case name (e.g. `<my-component @propName="test">` would be `@text="propname"`). See [issue #71 for more discussion](https://github.com/11ty/webc/issues/71).
 
 ### Dynamic attributes
 
@@ -473,7 +489,9 @@ Make any attribute into a dynamic attribute by prefixing it with `:`. You have a
 <img :src="src" :alt="alt" class="avatar-image">
 ```
 
+* In the HTML specification, attribute names are lower-case. When referencing these inside of a dynamic attribute, use the lower-case name (e.g. `<avatar-image mySrc="test">` would be `:src="mysrc"`). See [issue #71 for more discussion](https://github.com/11ty/webc/issues/71).
 * WebC versions prior to `0.5.0` required `this.` (e.g. `this.src`/`this.alt`) when referencing data/attributes/property values. This is no longer required in dynamic attributes.
+
 
 ### `@html`
 
@@ -491,6 +509,21 @@ We surface a special `@html` [prop](#props-(properties)) to override any tag con
 
 * Content returned from the `@html` prop will be processed as WebC—return any WebC content here! {% addedin "@11ty/webc@0.5.0" %}
 * WebC versions prior to `0.5.0` required `this.` (e.g. `this.dataProperty`) when referencing data/attributes/property values. This is no longer required when using `@html`.
+
+```html
+<!-- No reprocessing as WebC (useful in Eleventy layouts) -->
+<!-- Where `myHtmlContent` is a variable holding an arbitrary HTML string -->
+<template @raw="myHtmlContent" webc:nokeep></template>
+```
+
+* Using `webc:raw` will prevent processing the result as WebC {% addedin "@11ty/webc@0.6.0" %}
+* Use `@raw` as an alias for `webc:raw @html` {% addedin "@11ty/webc@0.7.1" %}
+
+### `@raw`
+
+{% addedin "@11ty/webc@0.7.1" %}
+
+As noted in [`@html`](#@html), you can use `@raw` as an alias for `webc:raw @html`.
 
 ### `@text`
 
@@ -597,12 +630,18 @@ _{{ frontmatterdata }}_
 * You have full access to the data cascade here (note `frontmatterdata` is [set in front matter](#front-matter) above).
 * Content returned from custom transforms will be processed as WebC—return any WebC content here! {% addedin "@11ty/webc@0.5.0" %}
 
-### `webc:type="render"` (JavaScript Render Functions)
+### `webc:type` (JavaScript Render Functions)
 
-You can also transform individual element content using your own arbitrary JavaScript with `webc:type="render"`. Render functions are async friendly (e.g. `async function()`).
+You can also transform individual element content using `webc:type`. There are three built-in types:
 
-<details>
-<summary>Expand for image component example</summary>
+* `webc:type="js"` _(WebC v0.7.1+)_ which supercedes `webc:type="render"`
+* `webc:type="css:scoped"` (internal for `webc:scoped`—overridable!)
+
+JavaScript Render Functions are async friendly (e.g. `async function()`):
+
+#### `webc:type="js"` _(WebC v0.7.1+)_
+
+Run any arbitrary server JavaScript in WebC. Outputs the result of the very last statement executed in the script. Async-friendly (return a promise and we’ll resolve it).
 
 {% codetitle "page.webc" %}
 
@@ -612,11 +651,24 @@ You can also transform individual element content using your own arbitrary JavaS
 
 {% codetitle "components/img.webc" %}
 
+
 ```html
-<script webc:type="render" webc:is="template">
-function() {
-	if(!this.alt) {
-		throw new Error("oh no you didn’t");
+<script webc:type="js">
+if(!alt) {
+	throw new Error("oh no you didn’t");
+}
+`<img src="${src}" alt="${alt}">`;
+</script>
+```
+
+<details>
+<summary>Expand to see this example with <code>webc:type="render"</code></summary>
+
+```html
+<script webc:type="render">
+	function() {
+		if(!this.alt) {
+			throw new Error("oh no you didn’t");
 	}
 	// Free idea: use the Eleventy Image plugin to return optimized markup
 	return `<img src="${this.src}" alt="${this.alt}">`;
@@ -625,9 +677,6 @@ function() {
 ```
 
 </details>
-
-<details>
-<summary>Expand for style component example</summary>
 
 Or use a JavaScript render function to generate some CSS:
 
@@ -642,14 +691,20 @@ p { color: rebeccapurple; }
 {% codetitle "components/add-banner-to-css.webc" %}
 
 ```html
+<script webc:type="js" webc:is="style">`/* ${license} */`</script>
+<slot></slot>
+```
+
+<details>
+<summary>Expand to see this example with <code>webc:type="render"</code></summary>
+
+```html
 <script webc:type="render" webc:is="style">
 function() {
 	return `/* ${this.license} */`;
 }
 </script>
-<style>
-  <slot></slot>
-</style>
+<slot></slot>
 ```
 
 </details>
@@ -659,6 +714,18 @@ Bonus tips:
 * You can pair `webc:type="render"` with [`webc:scoped`](#webcscoped)!
 * You do have access to the component attributes and props in the render function (which is covered in another section!).
 * Content returned from render functions will be processed as WebC—return any WebC content here! {% addedin "@11ty/webc@0.5.0" %}
+
+Here’s another example of a conditional:
+
+```html
+<script webc:type="js">
+if(alt) {
+	`<img src="${src}" alt="${alt}">`
+} else {
+	`<a href="${src}">Your image didn’t have an alt so you get this link instead.</a>`
+}
+</script>
+```
 
 ### `webc:raw`
 
@@ -675,9 +742,11 @@ p { color: rebeccapurple; }
 </template>
 ```
 
+* Related: [`@raw` property](#@raw)
+
 ### Helper Functions
 
-WebC [Helpers](https://github.com/11ty/webc#helper-functions) are JavaScript functions available in dynamic attributes, `@html`, and render functions.
+WebC [Helpers](https://github.com/11ty/webc#helper-functions) are JavaScript functions available in dynamic attributes, `@html`, `@raw`, and render functions.
 
 #### Eleventy-provided Helpers
 
@@ -781,11 +850,11 @@ The above example assumes the existence of `_includes/my-layout.webc` (an [Eleve
 		<meta charset="utf-8">
 		<title>WebC Example</title>
 	</head>
-	<body @html="content"></body>
+	<body @raw="content"></body>
 </html>
 ```
 
-Read more about the [special `@html` WebC property](#@html).
+* Read more about the WebC properties: [`@raw`](#@raw) {% addedin "@11ty/webc@0.7.1" %} and [`@html`](#@html).
 
 _WebC versions prior to `0.5.0` required `this.` (e.g. `this.content`) when referencing data/attributes/property values. This is no longer required when using `@html`._
 
@@ -875,12 +944,14 @@ You can opt-out of bundling on a per-element basis [using `webc:keep`](#webckeep
 	<head>
 		<meta charset="utf-8">
 		<title>WebC Example</title>
-		<style @html="getCss(page.url)"></style>
-		<script @html="getJs(page.url)"></script>
+		<style @raw="getCss(page.url)"></style>
+		<script @raw="getJs(page.url)"></script>
 	</head>
-	<body @html="content"></body>
+	<body @raw="content"></body>
 </html>
 ```
+
+_`@raw` was {% addedin "@11ty/webc@0.6.2" %}. Previous versions can use `webc:raw @html`._
 
 Make sure you’re using these `getCss` and `getJs` helpers in an _Eleventy Layout_ file.
 
@@ -929,15 +1000,15 @@ Components can use the `webc:bucket` feature to output to any arbitrary bucket n
 		<meta charset="utf-8">
 		<title>WebC Example</title>
 		<!-- Default bucket -->
-		<style @html="getCss(page.url)"></style>
-		<script @html="getJs(page.url)"></script>
+		<style @raw="getCss(page.url)"></style>
+		<script @raw="getJs(page.url)"></script>
 	</head>
 	<body>
-		<template webc:nokeep @html="content"></template>
+		<template webc:nokeep @raw="content"></template>
 
 		<!-- `defer` bucket -->
-		<style @html="getCss(page.url, 'defer')"></style>
-		<script @html="getJs(page.url, 'defer')"></script>
+		<style @raw="getCss(page.url, 'defer')"></style>
+		<script @raw="getJs(page.url, 'defer')"></script>
 	</body>
 </html>
 ```
