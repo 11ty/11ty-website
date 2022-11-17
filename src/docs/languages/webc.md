@@ -40,6 +40,7 @@ relatedLinks:
 * {% indieavatar "https://11ty.rocks/" %}[Understanding WebC Features and Concepts (11ty.rocks)](https://11ty.rocks/posts/understanding-webc-features-and-concepts/) by {% indieavatar "https://thinkdobecreate.com/" %}Stephanie Eckles
 * [WebC Number Counter Example Source Code and Demo](https://github.com/11ty/demo-webc-counter)
 * [Seven Demos of Progressive Enhancement using Image Comparison Components](https://demo-webc-image-compare.netlify.app/) and [Source Code](https://github.com/11ty/demo-webc-image-compare)
+* [First Experience Building with Eleventy's WebC Plugin](https://www.raymondcamden.com/2022/10/16/first-experience-building-with-eleventys-webc-plugin)
 
 <div class="youtube-related">
   {%- youtubeEmbed "X-Bpjrkz-V8", "Crash Course in Eleventy’s new WebC Plugin" -%}
