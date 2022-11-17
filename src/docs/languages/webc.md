@@ -634,14 +634,14 @@ _{{ frontmatterdata }}_
 
 You can also transform individual element content using `webc:type`. There are three built-in types:
 
-* `webc:type="js"` _(WebC v0.7.1+)_ which supercedes `webc:type="render"`
+* `webc:type="js"` {% addedin "@11ty/webc@0.7.1" %} which supercedes `webc:type="render"`
 * `webc:type="css:scoped"` (internal for `webc:scoped`—overridable!)
 
 JavaScript Render Functions are async friendly (e.g. `async function()`):
 
-#### `webc:type="js"` _(WebC v0.7.1+)_
+#### `webc:type="js"`
 
-Run any arbitrary server JavaScript in WebC. Outputs the result of the very last statement executed in the script. Async-friendly (return a promise and we’ll resolve it).
+{% addedin "@11ty/webc@0.7.1" %} Run any arbitrary server JavaScript in WebC. Outputs the result of the very last statement executed in the script. Async-friendly (return a promise and we’ll resolve it).
 
 {% codetitle "page.webc" %}
 
@@ -715,7 +715,7 @@ Bonus tips:
 * You do have access to the component attributes and props in the render function (which is covered in another section!).
 * Content returned from render functions will be processed as WebC—return any WebC content here! {% addedin "@11ty/webc@0.5.0" %}
 
-Here’s another example of a conditional:
+Here’s another example of a more complex conditional (you can also use `webc:if`!):
 
 ```html
 <script webc:type="js">
