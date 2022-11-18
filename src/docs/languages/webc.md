@@ -633,10 +633,10 @@ _{{ frontmatterdata }}_
 
 ### `webc:type` (JavaScript Render Functions)
 
-You can also transform individual element content using `webc:type`. There are three built-in types:
+You can also transform individual element content using `webc:type`. In addition to `webc:type="11ty"` above, there are three more bundled types:
 
 * `webc:type="js"` {% addedin "@11ty/webc@0.7.1" %} which supercedes `webc:type="render"`
-* `webc:type="css:scoped"` (internal for `webc:scoped`—overridable!)
+* `webc:type="css:scoped"` (internal for `webc:scoped`—but overridable!)
 
 JavaScript Render Functions are async friendly (e.g. `async function()`):
 
