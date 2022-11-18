@@ -33,7 +33,31 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-Eleventy will not add a watch for files or folders that are in `.gitignore`, unless `setUseGitIgnore` is turned off. See the chapter on [ignore files](/docs/ignores/#opt-out-of-using-.gitignore).
+## Ignore Watching Files
+
+### `.gitignore`
+
+Eleventy will ignore files or folders listed in your `.gitignore` file by default, [unless `setUseGitIgnore` is turned off](/docs/ignores/#opt-out-of-using-.gitignore).
+
+### Configuration API
+
+{% addedin "v2.0.0-canary.18" %}
+
+Previously, [the configuration API ignores for template processing](/docs/ignores/#configuration-api) were also used as ignores for watching (e.g. `eleventyConfig.ignores.add("README.md")`).
+
+New in v2.0.0-canary.18, watch target ignores now have their own dedicated API:
+
+```js
+module.exports = function(eleventyConfig) {
+  // Do not rebuild when README.md changes (You can use a glob here too)
+  eleventyConfig.watchIgnores.add("README.md");
+
+  // Or delete entries too
+  eleventyConfig.watchIgnores.delete("README.md");
+};
+```
+
+The `watchIgnores` Set starts with a default `**/node_modules/**` entry.
 
 ## Add delay before re-running {% addedin "0.11.0" %}
 

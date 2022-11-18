@@ -20,7 +20,9 @@ secretNunjucksTemplates/anotherFolder/**/*.njk
 
 ## Configuration API {% addedin "1.0.0" %}
 
-You can programmatically add and delete ignores in your configuration file. `eleventyConfig.ignores` is a JavaScript [`Set`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set#instance_methods). It starts with a default `node_modules/**` entry.
+You can programmatically add and delete ignores in your configuration file. `eleventyConfig.ignores` is a JavaScript [`Set`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set#instance_methods).
+
+The `ignores` Set starts with a default `**/node_modules/**` entry in Eleventy v2.0 (it was `node_modules/**` in v1.0).
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -29,11 +31,13 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+{% addedin "v2.0.0-canary.18" %}These were decoupled from the [ignores used for the file watcher](/docs/watch-serve/#ignore-watching-files).
+
 ## Defaults
 
 ### `.gitignore` entries
 
-Paths listed in your project’s `.gitignore` file are automatically ignored.
+Paths listed in your project’s `.gitignore` file are automatically ignored. You can [opt-out of this behavior](#opt-out-of-using-.gitignore).
 
 ### `node_modules` {% addedin "1.0.0" %}
 
