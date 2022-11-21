@@ -34,7 +34,8 @@ a[href^="https://www.youtube.com"]:before,
 a[href^="https://youtube.com"]:before,
 a[href^="https://github.com"]:before,
 a[href^="https://gitlab.com"]:before,
-a[href^="https://twitter.com"]:before,
+a[href^="https://fediverse.zachleat.com"]:before,
+a[href^="https://fosstodon.org"]:before,
 a[href^="https://wikipedia.org"]:before,
 a[href^="https://en.wikipedia.org"]:before {
 	content: "";
@@ -52,7 +53,8 @@ a[href^="https://youtube.com"]:after,
 a[href^="https://www.youtube.com"]:after,
 a[href^="https://github.com"]:after,
 a[href^="https://gitlab.com"]:after,
-a[href^="https://twitter.com"]:after,
+a[href^="https://fediverse.zachleat.com"]:after,
+a[href^="https://fosstodon.org"]:after,
 a[href^="https://wikipedia.org"]:after,
 a[href^="https://en.wikipedia.org"]:after {
 	display: none;
@@ -66,9 +68,10 @@ a[href^="https://youtube.com"]:before,
 a[href^="https://www.youtube.com"]:before {
 	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.youtube.com%2F/");
 }
-a[href^="https://twitter.com"]:before {
+a[href^="https://fediverse.zachleat.com"]:before,
+a[href^="https://fosstodon.org"]:before {
 	border-radius: 0.3125em; /* 5px /16 */
-	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.twitter.com%2F/");
+	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fjoinmastodon.org%2F/");
 }
 a[href^="https://github.com"]:before {
 	border-radius: 0.3125em; /* 5px /16 */
@@ -93,6 +96,7 @@ a[href^="https://en.wikipedia.org"]:before {
 .sites-site-vert a[href^="https://www.youtube.com"]:before,
 a[href^="https://youtube.com"].lty-playbtn:before,
 .facepile a[href^="https://github.com"]:before,
-.facepile a[href^="https://twitter.com"]:before {
+.facepile a[href^="https://fosstodon.org"]:before,
+.facepile a[href^="https://fediverse.zachleat.com"]:before {
 	display: none;
 }
