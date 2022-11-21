@@ -87,6 +87,12 @@ Mon, 01 Jan 2018 00:00:00 GMT
 
 You could add your own `toUTCString` [filter in Liquid](/docs/filters/) to perform the same task.
 
+### Also on YouTube
+
+<div class="youtube-related">
+  {%- youtubeEmbed "VddJxNKKlE8", "11ty Second 11ty: Setting a date string in eleventyComputed to fix 11ty's Off by 1" -%}
+</div>
+
 ## Collections out of order when you run Eleventy on your Server?
 
 {% callout "warn", "md" -%}
