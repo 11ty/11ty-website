@@ -2,7 +2,6 @@
 newstitle: Four Million npm Downloads!
 eleventyNavigation:
   parent: Blog
-homePageHighlight: true
 ---
 On September 16, 2022 **Eleventy passed [four million lifetime downloads](https://npm-stat.com/charts.html?package=@11ty/eleventy&from=2018-01-01&to=2022-09-16)**!
 
