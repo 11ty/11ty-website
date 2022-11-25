@@ -84,7 +84,7 @@ After this amount of time has passed, we’ll make a new network request to the 
 * `s` is seconds (e.g. `duration: "43s"`)
 * `m` is minutes (e.g. `duration: "2m"`)
 * `h` is hours (e.g. `duration: "99h"`)
-* `d` is days
+* `d` is days (The default is `duration: "1d"`)
 * `w` is weeks, or shorthand for 7 days (e.g. `duration: 2w` is 14 days)
 * `y` is years, or shorthand for 365 days (not _exactly_ one year) (e.g. `duration: 2y` is 730 days)
 
