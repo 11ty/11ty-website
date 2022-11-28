@@ -17,7 +17,7 @@ css:
   - components/page-sites.css
 ---
 {# @TODO add support for githubTwitterMap.js data #}
-{%- set twitterUrl = "https://twitter.com/" + author.name.substring("twitter:".length) %}
+{%- set twitterUrl = "https://twitter.com/" + author.name.substring("twitter:".length) | canonicalTwitterUrl %}
 {%- set githubUrl = "https://github.com/" + author.name %}
 
 {%- set supporter = opencollective.supporters | isSupporter(author.name, githubTwitterMap[author.name], author.opencollective) -%}

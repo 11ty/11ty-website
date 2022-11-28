@@ -602,7 +602,7 @@ and aggregates the following CSS to [the bundle](#asset-bundling):
 
 ### `webc:type`
 
-_Adding your own [Custom Transform](https://github.com/11ty/webc#custom-transforms) **directly** to WebC is not yet available in the Eleventy WebC plugin! If this is something folks would like to see added, [please let us know](https://twitter.com/eleven_ty)! Do note that you **can** [add your own custom template engine](/docs/languages/custom/) to the render plugin!_
+_Adding your own [Custom Transform](https://github.com/11ty/webc#custom-transforms) **directly** to WebC is not yet available in the Eleventy WebC plugin! If this is something folks would like to see added, [please let us know](https://fosstodon.org/@eleventy)! Do note that you **can** [add your own custom template engine](/docs/languages/custom/) to the render plugin!_
 
 ### `webc:type="11ty"`
 

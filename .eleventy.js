@@ -265,6 +265,11 @@ module.exports = function(eleventyConfig) {
 			(alt ? `<span class="sr-only">${alt}</span>` : "");
 	});
 
+	eleventyConfig.addAsyncFilter("canonicalTwitterUrl", async url => {
+		const {transform} = await import("@tweetback/canonical");
+		return transform(url);
+	});
+
 	eleventyConfig.addNunjucksAsyncShortcode("image", shortcodes.image);
 	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatar);
 	eleventyConfig.addShortcode("communityavatar", shortcodes.communityAvatar);

@@ -37,7 +37,7 @@ With this new plugin, you no longer need to use the `url` filter in your HTML co
 
 ### Why not use the `<base>` HTML element?
 
-You can, if you’d like! Some folks have found it to be a bit [unreliable](https://twitter.com/Rich_Harris/status/1526937421505609728) and edge-casey. This offers a build-time alternative.
+You can, if you’d like! Some folks have found it to be a bit [unreliable]({{ "https://twitter.com/Rich_Harris/status/1526937421505609728" | canonicalTwitterUrl }}) and edge-casey. This offers a build-time alternative.
 
 ### Installation
 

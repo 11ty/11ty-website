@@ -4,13 +4,13 @@ eleventyNavigation:
   parent: Blog
   key: Eleventy Open Source
 ---
-And now a special message via [YouTube](https://www.youtube.com/watch?v=pPkWxn0TF9w) and [Twitter](https://twitter.com/eleven_ty/status/1493284209925967872).
+And now a special message via [YouTube](https://www.youtube.com/watch?v=pPkWxn0TF9w) and [Twitter]({{ "https://twitter.com/eleven_ty/status/1493284209925967872" | canonicalTwitterUrl }}).
 
 {% youtubeEmbed "pPkWxn0TF9w" %}
 
 * [Read more on the Netlify Blog: _Doubling down on the ecosystem: open source and integrations_](https://www.netlify.com/blog/growing-our-open-source-contributions)
 * [Watch on YouTube](https://www.youtube.com/watch?v=pPkWxn0TF9w)
-* [More discussion on Twitter](https://twitter.com/eleven_ty/status/1493284209925967872)
+* [More discussion on Twitter]({{ "https://twitter.com/eleven_ty/status/1493284209925967872" | canonicalTwitterUrl }})
 
 ## Transcript:
 

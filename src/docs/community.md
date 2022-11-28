@@ -14,14 +14,14 @@ ignoreGitHubButtons: true
 
 * **Build something**—join the [{{ authors | length }} developers building with Eleventy](/authors/).
 * **Ask a question, answer a question**: We welcome questions from people of all experience levels on [Discord](/blog/discord/), [GitHub Discussions](https://github.com/11ty/eleventy/discussions), and the [issue tracker](https://github.com/11ty/eleventy/issues). We _really_ appreciate help answering those questions too!
-* [**Tell a friend!**](https://twitter.com/intent/tweet?text={{ "I heard @eleven_ty was good" | urlencode }}) Our project doesn’t have a big marketing budget so we rely on word of mouth!
+* **Tell a friend!** Our project doesn’t have a big marketing budget so we rely on word of mouth!
 * {% include "star-on-github.njk" %}
 * Looking to **Hire an Eleventy developer**? Browse the [Eleventy Super Professional Business Network 💼](/super-professional-business-network/)
 
 {% set count = count + 1 %}
 ## <span class="numberflag"><span class="sr-only">Step</span> {{ count }}</span> Stay up-to-date
 
-* [**Follow @eleven_ty on Twitter**](https://twitter.com/intent/follow?screen_name=eleven_ty)
+* [**Follow @eleventy@fosstodon.org on Mastodon**](https://fosstodon.org/@eleventy)
 * Read the [**Eleventy Blog**](/blog/)
 * Subscribe/unsubscribe to the [Eleventy YouTube Channel](https://www.youtube.com/channel/UCskGTioqrMBcw8pd14_334A)
 * We publish RSS feeds for: [**Blog Posts**](/blog/feed.xml) and [**Documentation Updates**](/docs/feed.xml)

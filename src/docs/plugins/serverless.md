@@ -26,7 +26,7 @@ overrideCommunityLinks: true
 
 You can read more about serverless on the [eponymous Serverless microsite from CSS-Tricks](https://serverless.css-tricks.com/about/).
 
-> “You can write a JavaScript function that you run and receive a response from by hitting a URL.”—[The Power of Serverless](https://serverless.css-tricks.com/) from [Chris Coyier](https://twitter.com/chriscoyier)
+> “You can write a JavaScript function that you run and receive a response from by hitting a URL.”—[The Power of Serverless](https://serverless.css-tricks.com/) from [Chris Coyier]({{ "https://twitter.com/chriscoyier" | canonicalTwitterUrl }})
 
 Eleventy Serverless complements your existing statically generated site by running one or more template files _at request time_ to generate dynamic pages. It can unlock many new use cases to move beyond static files into dynamically generated content.
 

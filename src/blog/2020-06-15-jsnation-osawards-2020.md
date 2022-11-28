@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: Blog
   key: JSNation 2020
 ---
-Just want to highlight that Eleventy was nominated for the [JSNation Conference 2020 Open Source Awards category: Breakthrough of the Year](https://twitter.com/thejsnation/status/1272438620889190406) alongside:
+Just want to highlight that Eleventy was nominated for the [JSNation Conference 2020 Open Source Awards category: Breakthrough of the Year]({{ "https://twitter.com/thejsnation/status/1272438620889190406" | canonicalTwitterUrl }}) alongside:
 
 * Deno
 * TailwindCSS
