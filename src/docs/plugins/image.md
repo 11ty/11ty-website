@@ -112,9 +112,9 @@ Here’s the output images, one webp and one jpeg:
 
 Controls how many output images will be created for each image format. Aspect ratio is preserved.
 
-* `widths: [null]` (default, keep original width)
+* `widths: ["auto"]` (default, keep original width) `"auto"` was added ({% addedin "Image 0.8.1" %}) as a clearer alias for the previously recommended `widths: [null]`.
 * `widths: [200]` (output one 200px width)
-* `widths: [200, null]` (output 200px and original width)
+* `widths: [200, "auto"]` (output 200px and original width)
 
 ### Output Formats
 
@@ -122,7 +122,7 @@ Use almost any combination of these:
 
 * `formats: ["webp", "jpeg"]` (default)
 * `formats: ["png"]`
-* `formats: [null]` (keep original format) {% addedin "Image 0.4.0" %}
+* `formats: ["auto"]` (keep original format) `"auto"` was added ({% addedin "Image 0.8.1" %}) as a clearer alias for the previously recommended `formats: [null]` ({% addedin "Image 0.4.0" %}).
 * `formats: ["svg"]` (requires SVG input) {% addedin "Image 0.4.0" %}
 * `formats: ["avif"]` {% addedin "Image 0.6.0" %}
 
@@ -202,7 +202,7 @@ const Image = require("@11ty/eleventy-img");
 
 await Image("./test/bio-2017.jpg", {
   widths: [300],
-  formats: [null],
+  formats: ["auto"],
   filenameFormat: function (id, src, width, format, options) {
     const extension = path.extname(src);
     const name = path.basename(src, extension);
