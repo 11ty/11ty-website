@@ -25,6 +25,8 @@ Feed this runtime service a URL and it returns a fully rendered screenshot image
 
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/11ty/api-screenshot" class="elv-externalexempt"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
 
+* You will _need_ to set an environment variable in the Netlify App UI `AWS_LAMBDA_JS_RUNTIME` with the value `nodejs12.x`. Read more at [Issue #17](https://github.com/11ty/api-screenshot/issues/17).
+
 ## Usage
 
 Image URLs have the format:
