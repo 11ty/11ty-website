@@ -629,7 +629,7 @@ _{{ frontmatterdata }}_
 {% endraw %}
 
 * You have full access to the data cascade here (note `frontmatterdata` is [set in front matter](#front-matter) above).
-* Content returned from custom transforms will be processed as WebC—return any WebC content here! {% addedin "@11ty/webc@0.5.0" %}
+* Content returned from custom transforms on `<template>` (or `webc:is="template"`) nodes will be processed as WebC—return any WebC content here! {% addedin "@11ty/webc@0.5.0" %}
 
 ### `webc:type` (JavaScript Render Functions)
 
@@ -654,7 +654,7 @@ JavaScript Render Functions are async friendly (e.g. `async function()`):
 
 
 ```html
-<script webc:type="js">
+<script webc:type="js" webc:root>
 if(!alt) {
 	throw new Error("oh no you didn’t");
 }
@@ -684,7 +684,7 @@ Or use a JavaScript render function to generate some CSS:
 {% codetitle "page.webc" %}
 
 ```html
-<style webc:is="add-banner-to-css" license="MIT licensed">
+<style webc:is="add-banner-to-css" @license="MIT licensed">
 p { color: rebeccapurple; }
 </style>
 ```
@@ -692,29 +692,33 @@ p { color: rebeccapurple; }
 {% codetitle "components/add-banner-to-css.webc" %}
 
 ```html
-<script webc:type="js" webc:is="style">`/* ${license} */`</script>
-<slot></slot>
+<template webc:is="style" webc:root webc:keep>
+	<script webc:type="js">`/* ${license} */`</script>
+	<slot></slot>
+</template>
 ```
 
 <details>
 <summary>Expand to see this example with <code>webc:type="render"</code></summary>
 
 ```html
-<script webc:type="render" webc:is="style">
-function() {
-	return `/* ${this.license} */`;
-}
-</script>
-<slot></slot>
+<template webc:is="style" webc:root webc:keep>
+	<script webc:type="render">
+	function() {
+		return `/* ${this.license} */`;
+	}
+	</script>
+	<slot></slot>
+</template>
 ```
 
 </details>
 
 Bonus tips:
 
-* You can pair `webc:type="render"` with [`webc:scoped`](#webcscoped)!
+* You can pair `webc:type="js"` (or `webc:type="render"`) with [`webc:scoped`](#webcscoped)!
 * You do have access to the component attributes and props in the render function (which is covered in another section!).
-* Content returned from render functions will be processed as WebC—return any WebC content here! {% addedin "@11ty/webc@0.5.0" %}
+* Content returned from render functions of `<template>` (or `webc:is="template"`) nodes will be processed as WebC—return any WebC content here! {% addedin "@11ty/webc@0.5.0" %}
 
 Here’s another example of a more complex conditional (you can also use `webc:if`!):
 
