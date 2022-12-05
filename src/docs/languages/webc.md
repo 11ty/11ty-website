@@ -493,7 +493,7 @@ Make any attribute into a dynamic attribute by prefixing it with `:`. You have a
 
 * In the HTML specification, attribute names are lower-case. When referencing these inside of a dynamic attribute, use the lower-case name (e.g. `<avatar-image mySrc="test">` would be `:src="mysrc"`). See [issue #71 for more discussion](https://github.com/11ty/webc/issues/71).
 * {% addedin "WebC v0.8.0" %}Attribute or property names with dashes are converted to camelcase for JS (e.g. `<my-component @prop-name="test">` can be used like `@text="propName"`). More at [issue #71](https://github.com/11ty/webc/issues/71).
-* WebC versions prior to `0.5.0` required `this.` (e.g. `this.src`/`this.alt`) when referencing data/attributes/property values. This is no longer required in dynamic attributes.
+* {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in dynamic attributes (e.g. `this.src`/`this.alt`) when referencing helpers/data/attributes/property values.
 
 
 ### `@html`
@@ -511,7 +511,7 @@ We surface a special `@html` [prop](#props-(properties)) to override any tag con
 ```
 
 * Content returned from the `@html` prop will be processed as WebC—return any WebC content here! {% addedin "@11ty/webc@0.5.0" %}
-* WebC versions prior to `0.5.0` required `this.` (e.g. `this.dataProperty`) when referencing data/attributes/property values. This is no longer required when using `@html`.
+* {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in `@html` or `@raw` (e.g. `this.dataProperty`) when referencing helpers/data/attributes/property values.
 
 ```html
 <!-- No reprocessing as WebC (useful in Eleventy layouts) -->
@@ -862,8 +862,7 @@ The above example assumes the existence of `_includes/my-layout.webc` (an [Eleve
 ```
 
 * Read more about the WebC properties: [`@raw`](#@raw) {% addedin "@11ty/webc@0.7.1" %} and [`@html`](#@html).
-
-_WebC versions prior to `0.5.0` required `this.` (e.g. `this.content`) when referencing data/attributes/property values. This is no longer required when using `@html`._
+* {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in `@html` or `@raw` (e.g. `this.content`) when referencing helpers/data/attributes/property values.
 
 </details>
 
@@ -925,9 +924,9 @@ webc:
 
 ### CSS and JS (Bundler mode)
 
-[Eleventy Layouts](/docs/layouts/) can bundle any specific page’s assets (CSS and JS used by components on the page). These are automatically rolled up when a component uses `<script>`, `<style>`, or `<link rel="stylesheet">`. You can use this to implement component-driven Critical CSS.
+Eleventy WebC will bundle any specific page’s assets (CSS and JS used by components on the page). These are automatically rolled up when a component uses `<script>`, `<style>`, or `<link rel="stylesheet">`. You can use this to implement component-driven Critical CSS.
 
-{% callout "info", "md" %}Note that if a `<style>` is nested inside of [declarative shadow root](https://web.dev/declarative-shadow-dom/) template (e.g. `<template shadowroot>`), it is left as is and not aggregated.{% endcallout %}
+{% callout "info", "md" %}**Declarative Shadow DOM** note: if a `<style>` is nested inside of [declarative shadow root](https://web.dev/declarative-shadow-dom/) template (`<template shadowroot>`), it is left as is and not aggregated.{% endcallout %}
 
 {% codetitle "_includes/webc/my-webc-component.webc" %}
 
@@ -952,20 +951,19 @@ You can opt-out of bundling on a per-element basis [using `webc:keep`](#webckeep
 	<head>
 		<meta charset="utf-8">
 		<title>WebC Example</title>
-		<style @raw="getCss(page.url)"></style>
-		<script @raw="getJs(page.url)"></script>
+		<style @raw="getCss(page.url)" webc:keep></style>
+		<script @raw="getJs(page.url)" webc:keep></script>
 	</head>
 	<body @raw="content"></body>
 </html>
 ```
 
-_`@raw` was {% addedin "@11ty/webc@0.7.1" %}. Previous versions can use `webc:raw @html`._
+* {% addedin "@11ty/webc@0.8.0" %}`webc:keep` is required on `<style>` and `<script>` in your layout files to prevent re-bundling the bundles.
+* {% addedin "@11ty/webc@0.8.0" %}The `getCss` and `getJs` helpers are now available to all WebC templates without restriction. Previous versions required them to be used in an _Eleventy Layout_ file.
+* `@raw` was {% addedin "@11ty/webc@0.7.1" %}. Previous versions can use `webc:raw @html`.
+* {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in `@html` or `@raw` (e.g. `this.getCss`/`this.page.url`) when referencing helpers/data/attributes/property values.
 
-Make sure you’re using these `getCss` and `getJs` helpers in an _Eleventy Layout_ file.
-
-_WebC versions prior to `0.5.0` required `this.` (e.g. `this.getCss`/`this.page.url`) when referencing helpers/data/attributes/property values. This is no longer required when using `@html`._
-
-{% callout "info", "md-block" %}Outside of `*.webc` files (e.g. in a Nunjucks or Liquid layout file), the Eleventy WebC plugin also publishes two universal filters `webcGetCss` and `webcGetJs`, for use like this:
+{% callout "info", "md-block" %}Outside of `*.webc` files (e.g. in Nunjucks or Liquid layout files), the Eleventy WebC plugin also publishes two universal filters `webcGetCss` and `webcGetJs`, for use like this:
 
 {% codetitle "_includes/layout.njk" %}
 
@@ -1008,20 +1006,21 @@ Components can use the `webc:bucket` feature to output to any arbitrary bucket n
 		<meta charset="utf-8">
 		<title>WebC Example</title>
 		<!-- Default bucket -->
-		<style @raw="getCss(page.url)"></style>
-		<script @raw="getJs(page.url)"></script>
+		<style @raw="getCss(page.url)" webc:keep></style>
+		<script @raw="getJs(page.url)" webc:keep></script>
 	</head>
 	<body>
-		<template webc:nokeep @raw="content"></template>
+		<template @raw="content" webc:nokeep></template>
 
 		<!-- `defer` bucket -->
-		<style @raw="getCss(page.url, 'defer')"></style>
-		<script @raw="getJs(page.url, 'defer')"></script>
+		<style @raw="getCss(page.url, 'defer')" webc:keep></style>
+		<script @raw="getJs(page.url, 'defer')" webc:keep></script>
 	</body>
 </html>
 ```
 
-_WebC versions prior to `0.5.0` required `this.` (e.g. `this.getCss`/`this.page.url`) when referencing helpers/data/attributes/property values. This is no longer required when using `@html`._
+* {% addedin "@11ty/webc@0.8.0" %}`webc:keep` is required on `<style>` and `<script>` in your layout files to prevent re-bundling the bundles.
+* {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in `@html` or `@raw` (e.g. `this.getCss`/`this.page.url`) when referencing helpers/data/attributes/property values.
 
 ### Use with `is-land`
 
