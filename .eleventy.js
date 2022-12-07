@@ -266,8 +266,13 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addAsyncFilter("canonicalTwitterUrl", async url => {
-		const {transform} = await import("@tweetback/canonical");
-		return transform(url);
+		// no-op in serverless mode
+		try {
+			const {transform} = await import("@tweetback/canonical");
+			return transform(url);
+		} catch(e) {
+			return url;
+		}
 	});
 
 	eleventyConfig.addNunjucksAsyncShortcode("image", shortcodes.image);

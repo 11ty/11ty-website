@@ -1,9 +1,16 @@
 module.exports = async function() {
-	const {transform} = await import("@tweetback/canonical");
+	// no-op in serverless mode
+	let transformUrl = url => url;
+	try {
+		const {transform} = await import("@tweetback/canonical");
+		transformUrl = transform;
+	} catch(e) {
+		// do nothing
+	}
 
 	return [
 		{
-			"text": `Read the replies to: <em><a href="${transform("https://twitter.com/jensimmons/status/1107377359546736641")}">“Fans of Eleventy.... why do you like it better than other static site generators?”</a></em>`,
+			"text": `Read the replies to: <em><a href="${transformUrl("https://twitter.com/jensimmons/status/1107377359546736641")}">“Fans of Eleventy.... why do you like it better than other static site generators?”</a></em>`,
 			"twitter": "jensimmons",
 			"name": "Jen Simmons",
 			"source": "https://twitter.com/jensimmons/status/1107377359546736641",
@@ -206,7 +213,7 @@ module.exports = async function() {
 	].map(entry => {
 		// canonical urls via @tweetback/canonical
 		if(entry.source) {
-			entry.source = transform(entry.source);
+			entry.source = transformUrl(entry.source);
 		}
 		return entry;
 	});
