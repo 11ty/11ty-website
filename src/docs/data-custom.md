@@ -24,17 +24,20 @@ Note that you can also add [Custom Front Matter Formats](/docs/data-frontmatter-
 
 ```js
 // Receives file contents, return parsed data
-eleventyConfig.addDataExtension("fileExtension", contents => {
+eleventyConfig.addDataExtension("fileExtension", (contents, filePath) => {
   return {};
 });
 ```
 
-{% addedin "2.0.0-canary.10" %} Pass a comma-separated list of extensions.
+* {% addedin "2.0.0-canary.10" %} Pass a comma-separated list of extensions.
+* {% addedin "2.0.0-canary.19" %} `filePath` was added as a second argument.
 
 {% codetitle ".eleventy.js" %}
 
 ```js
-eleventyConfig.addDataExtension("yml, yaml", contents => { /* do a thing */ });
+eleventyConfig.addDataExtension("yml, yaml", (contents, filePath) => {
+  // …
+});
 ```
 
 ### Usage with Options
@@ -46,7 +49,7 @@ eleventyConfig.addDataExtension("yml, yaml", contents => { /* do a thing */ });
 ```js
 // or with options (new in 2.0)
 eleventyConfig.addDataExtension("fileExtension", {
-  parser: contents => ({}),
+  parser: (contents, filePath) => ({}),
 
   // defaults are shown:
   read: true,
@@ -54,8 +57,8 @@ eleventyConfig.addDataExtension("fileExtension", {
 });
 ```
 
-* `parser`: the callback function used to parse the data. The first argument is the data file’s contents.
-* `read` (default: `true`): use `read: false` to change the parser function’s argument to be a file path string instead of file contents.
+* `parser`: the callback function used to parse the data. The first argument is the data file’s contents (unless `read: false`). The second argument is the file path {% addedin "2.0.0-canary.19" %}.
+* `read` (default: `true`): use `read: false` to change the parser function’s first argument to be a file path string instead of file contents.
 * `encoding` (default: `"utf8"`): use this to change the encoding of [Node’s `readFile`](https://nodejs.org/api/fs.html#fspromisesreadfilepath-options). Use `null` if you want a `Buffer`.
 
 ## Examples
