@@ -555,6 +555,19 @@ module.exports = function(eleventyConfig) {
 
 This will now include a `data` property in your JSON output that includes the `page` variable for each matching template.
 
+### Type Definitions
+
+This may enable some extra autocomplete features in your IDE (where supported).
+
+```js
+/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
+module.exports = function (eleventyConfig) {
+  // …
+};
+```
+
+More background information at [Issue 2091](https://github.com/11ty/eleventy/pull/2091).
+
 ### Documentation Moved to Dedicated Pages
 
 <a id="{{ 'Copy Files to Output using Pass-through File Copy' | slug }}"></a>
