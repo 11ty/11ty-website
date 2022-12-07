@@ -218,15 +218,8 @@ Review the [full list of options on the `recursive-copy` GitHub repository](http
   {%- youtubeEmbed "EcId2RVdUFE", "Passthrough File Copy Advanced Options (Weekly №15)", "337" -%}
 </div>
 
-## Passthrough Everything {% addedin "0.5.4" %}
+## ~~Passthrough Everything~~
 
 <div id="passthrough-all-content"></div><!-- backwards compat link -->
 
-Given that global copy of all content in the directory may be a security risk, we do not copy anything that doesn’t match the file extensions listed in `templateFormats`. Note that we do provide a command line flag to bypass this behavior: `--passthroughall`. Intentionally, there is no configuration option to do this.
-
-<div class="elv-callout elv-callout-warn"><strong>Warning:</strong> This may be a security risk—this is intended only for demos and other non-production use.</div>
-
-```bash
-# Copies ALL files in the input directory to the output directory
-npx @11ty/eleventy --passthroughall
-```
+{% callout "error", "md" %}The `--passthroughall` flag was removed in Eleventy v2.0.0. You can [jump back to the docs for 1.x](https://v1-0-2.11ty.dev/docs/copy/#passthrough-all-content).{% endcallout %}
