@@ -472,8 +472,7 @@ Make any attribute into a prop by prefixing it with `@`. Props are “private”
 <!-- outputs <p>Hello</p> -->
 ```
 
-* In the HTML specification, attribute names are lower-case. When referencing these inside of a dynamic attribute, use the lower-case name (e.g. `<my-component @propName="test">` would be `@text="propname"`). More at [issue #71](https://github.com/11ty/webc/issues/71).
-* {% addedin "WebC v0.8.0" %}Attribute or property names with dashes are converted to camelcase for JS (e.g. `<my-component @prop-name="test">` can be used like `@text="propName"`). More at [issue #71](https://github.com/11ty/webc/issues/71).
+* In the HTML specification, attribute names are lower-case. {% addedin "WebC v0.8.0" %}Attribute or property names with dashes are converted to camelcase for JS (e.g. `<my-component @prop-name="test">` can be used like `@text="propName"`). More at [issue #71](https://github.com/11ty/webc/issues/71).
 
 ### Dynamic attributes
 
@@ -491,8 +490,7 @@ Make any attribute into a dynamic attribute by prefixing it with `:`. You have a
 <img :src="src" :alt="alt" class="avatar-image">
 ```
 
-* In the HTML specification, attribute names are lower-case. When referencing these inside of a dynamic attribute, use the lower-case name (e.g. `<avatar-image mySrc="test">` would be `:src="mysrc"`). See [issue #71 for more discussion](https://github.com/11ty/webc/issues/71).
-* {% addedin "WebC v0.8.0" %}Attribute or property names with dashes are converted to camelcase for JS (e.g. `<my-component @prop-name="test">` can be used like `@text="propName"`). More at [issue #71](https://github.com/11ty/webc/issues/71).
+* In the HTML specification, attribute names are lower-case. {% addedin "WebC v0.8.0" %}Attribute or property names with dashes are converted to camelcase for JS (e.g. `<my-component @prop-name="test">` can be used like `@text="propName"`). More at [issue #71](https://github.com/11ty/webc/issues/71).
 * {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in dynamic attributes (e.g. `this.src`/`this.alt`) when referencing helpers/data/attributes/property values.
 
 
