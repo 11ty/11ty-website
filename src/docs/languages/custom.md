@@ -144,6 +144,29 @@ To add support for Sass’ underscore convention (file names that start with an 
 
 This functionality is more-or-less identical to the [`compileOptions` `permalink: false` overrides](#compileoptions.permalink-to-override-permalink-compilation), documented later on this page.
 
+## Aliasing an Existing Template Language
+
+{% addedin "2.0.0-canary.19" %} If `key` is the _only_ property in the options object, we treat the extension as an alias and use the existing upstream template syntax.
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addExtension("11ty.jsx", {
+    key: "11ty.js",
+  });
+
+  // Or, you can pass an array of extensions in (2.0.0-canary.19 and newer)
+  eleventyConfig.addExtension([ "11ty.jsx", "11ty.ts", "11ty.tsx" ], {
+    key: "11ty.js",
+  });
+}
+```
+
+You can use aliasing with `esbuild-register` to use first-party JSX, TypeScript, and TSX files in Eleventy (using the same conventions as [`11ty.js` templates](/docs/languages/javascript/), with these templates populating back into the Data Cascade). Check out the [full gist from `@pspeter3` on GitHub](https://gist.github.com/zachleat/b274ee939759b032bc320be1a03704a2).
+
+```bash
+node --require esbuild-register node_modules/.bin/eleventy
+```
+
 ## Overriding an Existing Template Language
 
 You can override existing template languages too! (Thank you to [Ben Holmes of Slinkity for this contribution](https://github.com/11ty/eleventy/pull/1871)).
@@ -173,6 +196,8 @@ module.exports = function(eleventyConfig) {
 ```
 
 Note that overriding `md` opts-out of the default pre-processing by another template language [Markdown Files](/docs/config/#default-template-engine-for-markdown-files). As mentioned elsewhere, improvements to add additional hooks for preprocessing will likely come later.
+
+You can override an existing template language once. Attempts to override an override will throw an error (though this may be relaxed later).
 
 ## Full Options List
 
