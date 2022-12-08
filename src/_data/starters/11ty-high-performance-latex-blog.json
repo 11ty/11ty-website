@@ -1,7 +1,7 @@
 {
   "url": "https://github.com/xiyueuyix/11ty-high-performance-latex-blog",
   "name": "11ty-high-performance-latex-blog",
+	"author": "xiyueuyix",
   "description": "LaTeX style high performance 11ty starter",
-  "demo": "https://11ty-high-performance-latex-blog.euyix.me/",
-	"author": "xiyueuyix"
+  "demo": "https://11ty-high-performance-latex-blog.euyix.me/"
 }
