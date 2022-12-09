@@ -271,36 +271,6 @@ Use with `compileOptions.setCacheKey` to get more fine-grained control over how 
 
 You probably won’t need this but it’s useful if your extension doesn’t match the template language key. -->
 
-### `isIncrementalMatch`
-
-A callback used to determine if a modified file (from a watch/serve rebuild) is relevant to each known full template file. If the callback returns true, the template will be rendered. If the callback returns false, the template will be skipped.
-
-The default implementation is shown below, though you’ll probably want to override it with something better!
-
-```js
-{
-  // Called once for each template (matching this custom template’s file extension) in your project.
-  isIncrementalMatch: function(modifiedFile) {
-    // If `modifiedFile` is not a full template (maybe an include or layout)
-    // we re-render everything
-    if (!this.isFullTemplate) {
-      return true;
-    }
-
-    // `this.inputPath` holds each known template file used for comparison
-    if (this.inputPath === modifiedFile) {
-      // This specific file has been modified, re-render it
-      return true;
-    }
-
-    // Skip it
-    return false;
-  }
-}
-```
-
-You can see more advanced sample implementations in [`@11ty/eleventy-plugin-webc`](https://github.com/11ty/eleventy-plugin-webc/blob/a33dc641dfc7845d179f7bc60f9ab2d9a9177773/src/eleventyWebcTemplate.js) and [`@11ty/eleventy-plugin-vue`](https://github.com/11ty/eleventy-plugin-vue/blob/f705297dea3442b918b0659b5770d7eb069bb886/.eleventy.js).
-
 ### `getData` and `getInstanceFromInputPath`
 
 * _Optional_
@@ -372,6 +342,36 @@ If the JavaScript object returned from `getInstanceFromInputPath` has an `eleven
 In the above example, the data cascade will include a top-level variable `availableOnGlobalData` with a value of `123`. Using `eleventyDataKey` overrides any keys set in `getData`, which means (for this instance) `data` will be ignored and `notAvailableOnGlobalData` will not be present.
 
 </details>
+
+### `isIncrementalMatch`
+
+A callback used to determine if a modified file (from a watch/serve rebuild) is relevant to each known full template file. If the callback returns true, the template will be rendered. If the callback returns false, the template will be skipped.
+
+The default implementation is shown below, though you’ll probably want to override it with something better!
+
+```js
+{
+  // Called once for each template (matching this custom template’s file extension) in your project.
+  isIncrementalMatch: function(modifiedFile) {
+    // If `modifiedFile` is not a full template (maybe an include or layout)
+    // we re-render everything
+    if (!this.isFullTemplate) {
+      return true;
+    }
+
+    // `this.inputPath` holds each known template file used for comparison
+    if (this.inputPath === modifiedFile) {
+      // This specific file has been modified, re-render it
+      return true;
+    }
+
+    // Skip it
+    return false;
+  }
+}
+```
+
+You can see more advanced sample implementations in [`@11ty/eleventy-plugin-webc`](https://github.com/11ty/eleventy-plugin-webc/blob/a33dc641dfc7845d179f7bc60f9ab2d9a9177773/src/eleventyWebcTemplate.js) and [`@11ty/eleventy-plugin-vue`](https://github.com/11ty/eleventy-plugin-vue/blob/f705297dea3442b918b0659b5770d7eb069bb886/.eleventy.js).
 
 ### `compileOptions`
 
