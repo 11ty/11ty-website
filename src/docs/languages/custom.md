@@ -453,6 +453,11 @@ You can also control the caching key using `getCacheKey`. It might be useful to 
       // return inputPath + contents; // this is the new default in 2.0.0-canary.16
 
       return inputPath; // override to cache by inputPath (this means the compile function will not get called when the file contents change)
+
+      // Conditionally opt-out of cache with `return false`
+      // if(someArbitraryCondition) {
+      //   return false;
+      // }
     }
   }
 }
