@@ -122,6 +122,8 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+Make special note of the `this.config.dir.includes` folder above. Declaring your includes folder means that you don’t need to prefix any file paths with the includes folder name (e.g. `_includes/_code.scss` can be consumed with `@use "code"`).
+
 ## Skipping a template from inside of the `compile` function
 
 To add support for Sass’ underscore convention (file names that start with an underscore aren’t written to the output directory), just return early in the `compile` function (don’t return a `render` function).
@@ -141,6 +143,8 @@ To add support for Sass’ underscore convention (file names that start with an 
       };
     }
 ```
+
+Note that files inside of the `_includes` folder are left out of processing by default, so if you store your sass `@use`, `@forward`, and `@import` files in there you’ll get this for free (see the [Using `inputPath` example](#using-inputpath) above)!
 
 This functionality is more-or-less identical to the [`compileOptions` `permalink: false` overrides](#compileoptions.permalink-to-override-permalink-compilation), documented later on this page.
 
@@ -271,7 +275,7 @@ You probably won’t need this but it’s useful if your extension doesn’t mat
 
 A callback used to determine if a modified file (from a watch/serve rebuild) is relevant to each known full template file. If the callback returns true, the template will be rendered. If the callback returns false, the template will be skipped.
 
-The default implementation is shown below (you’ll probably want to override it with something better!):
+The default implementation is shown below, though you’ll probably want to override it with something better!
 
 ```js
 {
