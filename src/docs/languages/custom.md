@@ -345,6 +345,8 @@ In the above example, the data cascade will include a top-level variable `availa
 
 ### `isIncrementalMatch`
 
+* _Optional_
+
 A callback used to determine if a modified file (from a watch/serve rebuild) is relevant to each known full template file. If the callback returns true, the template will be rendered. If the callback returns false, the template will be skipped.
 
 The default implementation is shown below, though you’ll probably want to override it with something better!
