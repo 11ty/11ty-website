@@ -124,6 +124,32 @@ module.exports = function(eleventyConfig) {
 
 Make special note of the `this.config.dir.includes` folder above. Declaring your includes folder means that you don’t need to prefix any file paths with the includes folder name (e.g. `_includes/_code.scss` can be consumed with `@use "code"`).
 
+## Registering Dependencies
+
+{% addedin "2.0.0-canary.19" %}
+
+Eleventy includes two features to improve the performance of custom template compilation:
+
+1. A compilation cache, which you can optionally disable with [`compileOptions.cache`](#compileoptions.cache-for-advanced-control-of-caching)
+2. Hooks for incremental builds (via the `--incremental` command line flag)
+
+To facilitate these features, Eleventy needs to know about the dependencies a template file relies on. This depends heavily on each template compiler. In our Sass example, this is exposed by Sass via the [`loadedUrls` property from the `compileString` function](https://sass-lang.com/documentation/js-api/interfaces/CompileResult).
+
+```js/4
+    // some configuration truncated …
+    compile: function (inputContent, inputPath) {
+      let result = sass.compileString(inputContent);
+
+      this.addDependencies(inputPath, result.loadedUrls);
+
+      return async (data) => {
+        return result.css;
+      };
+    }
+```
+
+`addDependencies`’s first parameter is the parent template file path. The second parameter is an Array of child file paths used by the template.
+
 ## Skipping a template from inside of the `compile` function
 
 To add support for Sass’ underscore convention (file names that start with an underscore aren’t written to the output directory), just return early in the `compile` function (don’t return a `render` function).
@@ -229,7 +255,7 @@ You can override an existing template language once. Attempts to override an ove
 
 The render function is passed the merged data object (i.e. the full Data Cascade available inside templates). The render function returned from `compile` is called once per output file generated (one for basic templates and more for [paginated templates](/docs/pagination/)).
 
-{% callout "info", "md" %}`inputContent` will not include any front matter. This will have been parsed, removed, and inserted into the Data Cascade. Also note that if `read: false` (as documented below), `inputContent` will be `undefined`.{% endcallout %}
+{% callout "info", "md" %}`inputContent` will **not include front matter**. This will have been parsed, removed, and inserted into the Data Cascade. Also note that if `read: false` (as documented below), `inputContent` will be `undefined`.{% endcallout %}
 
 ### `outputFileExtension`
 
@@ -343,38 +369,6 @@ In the above example, the data cascade will include a top-level variable `availa
 
 </details>
 
-### `isIncrementalMatch`
-
-* _Optional_
-
-A callback used to determine if a modified file (from a watch/serve rebuild) is relevant to each known full template file. If the callback returns true, the template will be rendered. If the callback returns false, the template will be skipped.
-
-The default implementation is shown below, though you’ll probably want to override it with something better!
-
-```js
-{
-  // Called once for each template (matching this custom template’s file extension) in your project.
-  isIncrementalMatch: function(modifiedFile) {
-    // If `modifiedFile` is not a full template (maybe an include or layout)
-    // we re-render everything
-    if (!this.isFullTemplate) {
-      return true;
-    }
-
-    // `this.inputPath` holds each known template file used for comparison
-    if (this.inputPath === modifiedFile) {
-      // This specific file has been modified, re-render it
-      return true;
-    }
-
-    // Skip it
-    return false;
-  }
-}
-```
-
-You can see more advanced sample implementations in [`@11ty/eleventy-plugin-webc`](https://github.com/11ty/eleventy-plugin-webc/blob/a33dc641dfc7845d179f7bc60f9ab2d9a9177773/src/eleventyWebcTemplate.js) and [`@11ty/eleventy-plugin-vue`](https://github.com/11ty/eleventy-plugin-vue/blob/f705297dea3442b918b0659b5770d7eb069bb886/.eleventy.js).
-
 ### `compileOptions`
 
 #### `compileOptions.permalink` to Override Permalink Compilation
@@ -436,11 +430,17 @@ Enable to use Eleventy to spider and watch files `require`’d in these template
 
 * _Optional_: Defaults to the value of `read`
 
-This controls caching for the compilation step, which saves the compiled template function for reuse if another template attempts to compile with the same key (usually a file’s contents).
+This controls caching for the compilation step and saves the compiled template function for reuse. For more efficient cleanup (and long term memory use), these caches are now segmented by `inputPath` ({% addedin "2.0.0-canary.19" %}).
 
-By default, whether or not `cache` is enabled is tied to boolean value of `read`. If `read: true`, then `cache` will also be `true`. It’s unlikely you will need this, but you can override this to mismatch `read`.
+By default, whether or not this `cache` is enabled is tied to boolean value of `read`. If `read: true`, then `cache` will also be `true`. It’s unlikely you will need this, but you can override this to mismatch `read`.
 
-You can also control the caching key using `getCacheKey`. It might be useful to change this when using `read: false` and `contents` are unavailable.
+
+You can also granularly control the caching key using a `getCacheKey` callback. It might be useful to change this when using `read: false` and `contents` are unavailable.
+
+{% callout "info", "md" %}If you’re using 2.0.0-canary.19 or newer, you shouldn’t need a `getCacheKey` callback. It is preferred to use the [`addDependencies` method in the `compile` callback](##registering-dependencies) instead!{% endcallout %}
+
+<details>
+<summary><strong>Expand to see the default <code>getCacheKey</code> implementation</strong> (you can override this!)</summary>
 
 ```js
 {
@@ -462,3 +462,43 @@ You can also control the caching key using `getCacheKey`. It might be useful to 
   }
 }
 ```
+
+</details>
+
+### `isIncrementalMatch`
+
+{% callout "info", "md" %}If you’re using 2.0.0-canary.19 or newer, you shouldn’t need an `isIncrementalMatch` callback. It is preferred to use the [`addDependencies` method in the `compile` callback](#registering-dependencies) instead!{% endcallout %}
+
+* _Optional_
+
+A callback used for advanced control of template dependency matching. This determines if a modified file (from a watch/serve rebuild) is relevant to each known full template file. If the callback returns true, the template will be rendered. If the callback returns false, the template will be skipped.
+
+<details>
+<summary><strong>Expand to see the default `isIncrementalMatch` implementation</strong> (you can override this!)</summary>
+
+```js
+{
+  // Called once for each template (matching this custom template’s file extension) in your project.
+  isIncrementalMatch: function(modifiedFile) {
+    // is modifiedFile relevant to this.inputPath?
+    if (this.isFileRelevantToInputPath) {
+      // True if they are the same file
+      // Or if they are related by any `addDependencies` relationships
+      return true;
+    }
+
+    // If `modifiedFile` is not a full template (maybe an include or layout)
+    // and we have no record of any dependencies for this file, we re-render everything
+    if (!this.doesFileHaveDependencies && !this.isFullTemplate) {
+      return true;
+    }
+
+    // Skip it
+    return false;
+  }
+}
+```
+
+</details>
+
+You can see more advanced override implementations in [`@11ty/eleventy-plugin-webc`](https://github.com/11ty/eleventy-plugin-webc/blob/a33dc641dfc7845d179f7bc60f9ab2d9a9177773/src/eleventyWebcTemplate.js) and [`@11ty/eleventy-plugin-vue`](https://github.com/11ty/eleventy-plugin-vue/blob/f705297dea3442b918b0659b5770d7eb069bb886/.eleventy.js).
