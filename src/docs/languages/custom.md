@@ -199,9 +199,9 @@ You can use aliasing with `esbuild-register` to use first-party JSX, TypeScript,
 node --require esbuild-register node_modules/.bin/eleventy
 ```
 
-## Overriding an Existing Template Language
+## Overriding a Built-in Template Language
 
-You can override existing template languages too! (Thank you to [Ben Holmes of Slinkity for this contribution](https://github.com/11ty/eleventy/pull/1871)).
+<span id="#overriding-an-existing-template-language"></span> You can override built-in template languages too! (Thank you to [Ben Holmes of Slinkity for this contribution](https://github.com/11ty/eleventy/pull/1871)).
 
 In these example, we switch from the Eleventy default `markdown-it` to `marked` for markdown processing.
 
