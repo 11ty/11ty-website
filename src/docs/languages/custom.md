@@ -150,7 +150,7 @@ In our Sass example, this is exposed by Sass via the [`loadedUrls` property from
     }
 ```
 
-`addDependencies`’s first parameter is the parent template file path. The second parameter is an Array of child file paths used by the template.
+`addDependencies`’s first parameter is the parent template file path. The second parameter is an Array of child file paths used by the template. The dependencies can be either relative or absolute paths and we will normalize them as needed.
 
 ## Skipping a template from inside of the `compile` function
 
