@@ -133,7 +133,9 @@ Eleventy includes two features to improve the performance of custom template com
 1. A compilation cache, which you can optionally disable with [`compileOptions.cache`](#compileoptions.cache-for-advanced-control-of-caching)
 2. Hooks for incremental builds (via the `--incremental` command line flag)
 
-To facilitate these features, Eleventy needs to know about the dependencies a template file relies on. This depends heavily on each template compiler. In our Sass example, this is exposed by Sass via the [`loadedUrls` property from the `compileString` function](https://sass-lang.com/documentation/js-api/interfaces/CompileResult).
+To facilitate these features, if a template syntax allows use of other templates (think `@use` in Sass or `webc:import` in WebC), Eleventy needs to know about the dependencies a template file relies on. This is heavily dependent on each template compiler.
+
+In our Sass example, this is exposed by Sass via the [`loadedUrls` property from the `compileString` function](https://sass-lang.com/documentation/js-api/interfaces/CompileResult), and you can see an example of how we register our dependencies in the `compile` method below:
 
 ```js/4
     // some configuration truncated …
