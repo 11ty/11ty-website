@@ -94,7 +94,6 @@ This will look for a `mylayout.njk` Nunjucks file in your _includes_ folder at `
 * You can use any template language in your layout file—it doesn’t need to match the template language of the content: an `ejs` template can use a `njk` layout.
 * Layouts can include subdirectories: `layout: "layouts/base.njk"` maps to `_includes/layouts/base.njk`.
 * You can have a [separate folder for Eleventy layouts](/docs/config/#directory-for-layouts-(optional)) if you’d prefer to have them separate from your _includes_ folder.
-* If you omit the file extension (for example `layout: mylayout`), Eleventy will cycle through all of the supported template formats (`mylayout.*`) to look for a matching layout file. (This is slower, though)
 
 Next, we need to create a `mylayout.njk` file. It can contain any type of text, but here we’re using HTML:
 
@@ -252,3 +251,19 @@ module.exports = function(eleventyConfig) {
 ## Layout Chaining
 
 Chaining multiple layouts together. [Read more about Layout Chaining](/docs/layout-chaining/).
+
+## Omitting the Layout’s File Extension
+
+Omitting the layout file extension (for example `layout: mylayout`) will cause Eleventy to cycle through all of the supported template formats (`mylayout.*`) to look for a matching layout file. This behavior is slower than including the file extension.
+
+{% callout "warn" %}This feature was removed in 2.0.0-canary.19{% endcallout %}
+
+You can re-enable this behavior with the Configuration API (though this feature is considered officially deprecated and this functionality will likely may be removed in a future version of Eleventy):
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.enableLayoutResolution();
+};
+```
