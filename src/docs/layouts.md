@@ -258,7 +258,7 @@ Omitting the layout file extension (for example `layout: mylayout`) will cause E
 
 {% callout "warn", "md" %}This feature was removed in `2.0.0-canary.19`{% endcallout %}
 
-You can re-enable this behavior with the Configuration API (though this feature is considered officially deprecated and this functionality will likely may be removed in a future version of Eleventy):
+You can re-enable this behavior with the Configuration API (though this feature is considered officially deprecated and this functionality will likely be removed in a future version of Eleventy):
 
 {% codetitle ".eleventy.js" %}
 
