@@ -169,3 +169,5 @@ Consider the [template data file search](/docs/data-template-dir/) for a `my-fir
 * `my-first-blog-post.toml` (custom)
 
 This same ordering would be used for [template directory data files](/docs/data-template-dir/) as well.
+
+* You can also use the [`setDataFileSuffixes` Configuration API method to **customize the `.11tydata` file suffix**](/docs/config/#change-file-suffix-for-data-files).

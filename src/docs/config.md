@@ -407,17 +407,59 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Change File Suffix for Template and Directory Data Files {% addedin "0.5.3" %}
-When using [Template and Directory Specific Data Files](/docs/data-template-dir/), to prevent file name conflicts with non-Eleventy files in the project directory, we scope these files with a unique-to-Eleventy suffix. This key is customizable using `jsDataFileSuffix`. For example, using `.11tydata` for this value will search for `*.11tydata.js` and `*.11tydata.json` data files. Read more about [Template and Directory Specific Data Files](/docs/data-template-dir/).
+### Change Base File Name for Data Files
+
+{% addedin "2.0.0-canary.19" %} When using [Directory Specific Data Files](/docs/data-template-dir/), looks for data files that match the current folder name. You can override this behavior to a static string with the `setDataFileBaseName` method.
 
 | File Suffix |  |
 | --- | --- |
-| _Object Key_ | `jsDataFileSuffix` |
-| _Default_ | `.11tydata` |
-| _Valid Options_ | Any valid string |
+| _Configuration API_ | `setDataFileBaseName` |
+| _Default_ | _Current folder name_ |
+| _Valid Options_ | String |
 | _Command Line Override_ | _None_ |
 
-#### Example
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // Looks for index.json and index.11tydata.json instead of using folder names
+  eleventyConfig.setDataFileBaseName("index");
+};
+```
+
+### Change File Suffix for Data Files
+
+{% addedin "2.0.0-canary.19" %} When using [Template and Directory Specific Data Files](/docs/data-template-dir/), to prevent file name conflicts with non-Eleventy files in the project directory, we scope these files with a unique-to-Eleventy suffix. This suffix is customizable using the `setDataFileSuffixes` configuration API method.
+
+| File Suffix |  |
+| --- | --- |
+| _Configuration API_ | `setDataFileSuffixes` |
+| _Default_ | `[".11tydata", ""]` |
+| _Valid Options_ | Array |
+| _Command Line Override_ | _None_ |
+
+For example, using `".11tydata"`  will search for `*.11tydata.js` and `*.11tydata.json` data files. The empty string (`""`) here represents a file without a suffix—and this entry only applies to `*.json` data files.
+
+This feature can also be used to disable Template and Directory Data Files altogether with an empty array (`[]`).
+
+Read more about [Template and Directory Specific Data Files](/docs/data-template-dir/).
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setDataFileSuffixes([".11tydata", ""]); // e.g. file.json and file.11tydata.json
+
+  eleventyConfig.setDataFileSuffixes([".11tydata"]); // e.g. file.11tydata.json
+
+  eleventyConfig.setDataFileSuffixes([]); // No data files are used.
+};
+```
+
+<details>
+<summary><em><strong>Backwards Compatibility Note</strong></em> (prior to <code>2.0.0-canary.19</code>)</summary>
+
+Prior to 2.0.0-canary.19 this feature was exposed using a `jsDataFileSuffix` property in your configuration return object. When the `setDataFileSuffixes` method has not been used, Eleventy maintains backwards compatibility for old projects by using this property as a fallback.
 
 {% codetitle ".eleventy.js" %}
 
@@ -429,9 +471,9 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Transforms
+</details>
 
-_These used to be called Filters but were renamed to Transforms to avoid confusion with Template Language Filters._
+### Transforms
 
 Transforms can modify a template’s output. For example, use a transform to format/prettify an HTML file with proper whitespace.
 
@@ -439,11 +481,10 @@ The provided transform function must return the original or transformed content.
 
 | Transforms |  |
 | --- | --- |
-| _Object Key_ | `filters` _(Removed in 1.0, use `addTransform` instead)_ |
+| _Configuration API_ | `addTransform` |
 | _Default_ | `{}` |
 | _Valid Options_ | Object literal |
 | _Command Line Override_ | _None_ |
-| _Configuration API_ | `addTransform` {% addedin "0.3.3" %} |
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -494,10 +535,10 @@ Similar to Transforms, Linters are provided to analyze a template’s output wit
 
 | Linters |  |
 | --- | --- |
+| _Configuration API_ | `addLinter` |
 | _Object Key_ | _N/A_ |
 | _Valid Options_ | Callback function |
 | _Command Line Override_ | _None_ |
-| _Configuration API_ | `addLinter` {% addedin "0.5.4" %} |
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -568,7 +609,7 @@ module.exports = function (eleventyConfig) {
 };
 ```
 
-More background information at [Issue 2091](https://github.com/11ty/eleventy/pull/2091).
+* More background information at [Issue 2091](https://github.com/11ty/eleventy/pull/2091).
 
 ### Documentation Moved to Dedicated Pages
 
