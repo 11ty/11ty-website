@@ -6,6 +6,10 @@ eleventyNavigation:
 ---
 # Eleventy Supplied Data
 
+[[toc]]
+
+---
+
 Here are a few data values we supply to your page that you can use in your templates:
 
 * `pkg`: The local project’s `package.json` values.
@@ -16,7 +20,7 @@ Here are a few data values we supply to your page that you can use in your templ
 
 <div id="page-variable-contents"></div>
 
-## `page` Variable:
+## `page` Variable
 
 ```js
 let page = {
@@ -53,7 +57,15 @@ let page = {
 };
 ```
 
-Note that `page.lang` is _only_ available when the [i18n plugin has been added to your configuration file](/docs/plugins/i18n/#add-to-your-configuration-file).
+* Note that `page.lang` is _only_ available when the [i18n plugin has been added to your configuration file](/docs/plugins/i18n/#add-to-your-configuration-file).
+
+### Feature Availability
+
+The data in `page` is also available as:
+
+* `this.page` on [Shortcodes](/docs/shortcodes/#scoped-data-in-shortcodes) {% addedin "0.11.0" %}
+* `this.page` on [Filters](/docs/filters/#scoped-data-in-filters), [Transforms](/docs/config/#transforms), and [Linters](/docs/config/#linters) {% addedin "2.0.0-canary.19" %}
+* `page` on [Collection entries](/docs/collections/#collection-item-data-structure) {% addedin "2.0.0-canary.19" %}
 
 ### `date`
 
@@ -163,7 +175,14 @@ let eleventy = {
 };
 ```
 
-Learn more about:
+### Feature Availability
+
+The data in `eleventy` is also available as:
+
+* `this.eleventy` on [Shortcodes](/docs/shortcodes/) {% addedin "2.0.0-canary.5" %}
+* `this.eleventy` on [Filters](/docs/filters/) {% addedin "2.0.0-canary.19" %}
+
+### Learn more
 
 * [Eleventy-supplied Environment Variables on `process.env`](/docs/environment-vars/#eleventy-supplied)
 * [Serverless](/docs/plugins/serverless/)

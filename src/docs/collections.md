@@ -323,24 +323,29 @@ exports.render = function(data) {
 
 Note in the above example that we output the `post.data.title` value? Similarly, each collection item will have the following data:
 
-* `inputPath`: the full path to the source input file (including the path to the input directory)
-* `fileSlug`: {% addedin "0.5.3" %} Mapped from the input file name, useful for permalinks. Read more about [`fileSlug`](/docs/data-eleventy-supplied/#fileslug).
-* `outputPath`: the full path to the output file to be written for this content
-* `url`: url used to link to this piece of content.
-* `date`: the resolved JS Date Object used for sorting. Read more about [Content Dates](/docs/dates/).
+* `page`: everything in [Eleventy’s supplied page variable](/docs/data-eleventy-supplied/#page-variable) for this template (including `inputPath`, `url`, `date`, and others). {% addedin "2.0.0-canary.19" %}
 * `data`: all data for this piece of content (includes any data inherited from layouts)
-* `templateContent`: the rendered content of this template. This does _not_ include layout wrappers.
+* `content`: the rendered content of this template. This does _not_ include layout wrappers. {% addedin "2.0.0-canary.19" %}
 
 ```js
-{ inputPath: './test1.md',
-  fileSlug: 'test1',
-  outputPath: './_site/test1/index.html',
-  url: '/test1/',
-  date: new Date(),
-  data: { title: 'Test Title', tags: ['tag1', 'tag2'], date: 'Last Modified' },
-  templateContent: '<h1>This is my title</h1>\n\n<p>This is content…' }
+{
+  page: {
+    inputPath: './test1.md',
+    url: '/test1/',
+    date: new Date(),
+    // … and everything else in Eleventy’s `page`
+  },
+  data: { title: 'Test Title', tags: ['tag1', 'tag2'], date: 'Last Modified', /* … */ },
+  content: '<h1>This is my title</h1>\n\n<p>This is content…'
+}
 ```
 
+_Backwards compatibility notes:_
+
+* Top level properties for `inputPath`, `fileSlug`, `outputPath`, `url`, `date` are still available, though use of `page.*` {% addedin "2.0.0-canary.19" %} for these is encouraged moving forward.
+* `content` {% addedin "2.0.0-canary.19" %} is aliased to the previous property `templateContent`.
+
+You can [view the previous Collection Item Data Structure docs for 1.0](https://v1-0-2.11ty.dev/docs/collections/#collection-item-data-structure).
 
 ## Sorting
 

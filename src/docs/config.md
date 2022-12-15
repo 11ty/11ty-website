@@ -447,26 +447,22 @@ The provided transform function must return the original or transformed content.
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addTransform("transform-name", function(content, outputPath) {
-    return content; // no change done.
-  });
-
-  eleventyConfig.addTransform("async-transform-name", async function(content, outputPath) {
-    return content; // no change done.
-  });
-
-  // Eleventy 1.0+
-  eleventyConfig.addTransform("transform-name", function(content) {
+  // Can be sync or async
+  eleventyConfig.addTransform("transform-name", async function(content) {
     console.log( this.inputPath );
     console.log( this.outputPath );
-    // note that this.outputPath is `false` for serverless templates
+
+    // Eleventy 2.0+ has full access to Eleventy’s `page` variable
+    console.log( this.page.inputPath );
+    console.log( this.page.outputPath );
 
     return content; // no change done.
   });
 };
 ```
 
-#### Transforms Example: Minify HTML Output
+<details>
+<summary><strong>Transforms Example: Minify HTML Output</strong></summary>
 
 {% codetitle ".eleventy.js" %}
 
@@ -474,9 +470,9 @@ module.exports = function(eleventyConfig) {
 const htmlmin = require("html-minifier");
 
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-    // Eleventy 1.0+: use this.inputPath and this.outputPath instead
-    if( outputPath && outputPath.endsWith(".html") ) {
+  eleventyConfig.addTransform("htmlmin", function(content) {
+    // Prior to Eleventy 2.0: use this.outputPath instead
+    if( this.page.outputPath && this.page.outputPath.endsWith(".html") ) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
@@ -489,6 +485,8 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+</details>
 
 ### Linters
 
@@ -503,18 +501,20 @@ Similar to Transforms, Linters are provided to analyze a template’s output wit
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addLinter("linter-name", function(content, inputPath, outputPath) {});
-  eleventyConfig.addLinter("async-linter-name", async function(content, inputPath, outputPath) {});
-
-  // Eleventy 1.0+
-  eleventyConfig.addLinter("linter-name", function(content) {
+  // Can be sync or async
+  eleventyConfig.addLinter("linter-name", async function(content) {
     console.log( this.inputPath );
     console.log( this.outputPath );
+
+    // Eleventy 2.0+ has full access to Eleventy’s `page` variable
+    console.log( this.page.inputPath );
+    console.log( this.page.outputPath );
   });
 };
 ```
 
-#### Linters Example: Use Inclusive Language
+<details>
+<summary><strong>Linters Example: Use Inclusive Language</strong></summary>
 
 Inspired by the [CSS Tricks post _Words to Avoid in Educational Writing_](https://css-tricks.com/words-avoid-educational-writing/), this linter will log a warning to the console when it finds a trigger word in a markdown file.
 
@@ -539,6 +539,8 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+</details>
 
 ### Data Filter Selectors
 

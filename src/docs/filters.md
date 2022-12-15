@@ -148,3 +148,22 @@ module.exports = function(eleventyConfig) {
 <div class="youtube-related">
   {%- youtubeEmbed "hJAtWQ9nmKU", "Universal Asynchronous Filters (Nunjucks improvement) (Changelog №17)", "774" -%}
 </div>
+
+## Scoped Data in Filters
+
+A few Eleventy-specific data properties are available to filter callbacks.
+
+* `this.page` {% addedin "2.0.0-canary.19" %}
+* `this.eleventy` {% addedin "2.0.0-canary.19" %}
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // Make sure you’re not using an arrow function here: () => {}
+  eleventyConfig.addFilter("myFilter", function() {
+    // this.page
+    // this.eleventy
+  });
+};
+```

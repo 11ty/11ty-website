@@ -225,3 +225,22 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPairedShortcode("user", function(content, firstName, lastName) { … });
 };
 ```
+
+## Scoped Data in Shortcodes
+
+A few Eleventy-specific data properties are available to shortcode callbacks.
+
+* `this.page` {% addedin "0.11.0" %}
+* `this.eleventy` {% addedin "2.0.0-canary.5" %}
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // Make sure you’re not using an arrow function here: () => {}
+  eleventyConfig.addShortcode("myShortcode", function() {
+    // this.page
+    // this.eleventy
+  });
+};
+```
