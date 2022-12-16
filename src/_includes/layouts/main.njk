@@ -12,7 +12,7 @@ headerClass: elv-header-default
 <div class="elv-callout elv-callout-info elv-callout-sticky">This documentation is for an upcoming version of Eleventy. Go to the <a href="https://www.11ty.dev/docs/">latest stable version of Eleventy docs</a> or check out the <a href="https://www.11ty.dev/docs/versions/">full release history.</a></div>
 {% endif -%}
 
-<main class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">
+<main class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}" {% if not excludeFromSearch %} data-pagefind-body{% endif %}>
 	{{ content | safe }}
 </main>
 
