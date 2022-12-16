@@ -20,6 +20,12 @@ body {
 	font-family: system-ui, -apple-system, sans-serif;
 	color: #383838;
 	margin: 0;
+
+    --pagefind-ui-primary: #00bcd4;
+    --pagefind-ui-text: #fff;
+    --pagefind-ui-background: #222;
+    --pagefind-ui-border: #eeeeee;
+    --pagefind-ui-tag: #eeeeee;
 }
 @media (prefers-color-scheme: dark) {
 	body {
