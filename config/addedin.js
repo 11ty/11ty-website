@@ -26,6 +26,6 @@ module.exports = eleventyConfig => {
 
 		tag = tag || "span";
 
-		return `<${tag} class="minilink minilink-addedin${extraClass ? ` ${extraClass}`: ""}">${hasBeenReleased ? "New in" : "Coming soon in"} ${versionPrefix}${version}</${tag}>`;
+		return `<${tag} data-pagefind-ignore class="minilink minilink-addedin${extraClass ? ` ${extraClass}`: ""}">${hasBeenReleased ? "New in" : "Coming soon in"} ${versionPrefix}${version}</${tag}>`;
 	});
 }
