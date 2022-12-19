@@ -20,6 +20,6 @@ There are a few special data keys you can assign in your data to control how tem
 
 ## Advanced
 
-* `eleventyImportCollections`: {% addedin "2.0.0-canary.20" %}Used to inform template dependencies for incremental builds and to render templates in the correct order. Read more about [importing collections](https://github.com/11ty/eleventy/issues/975)
+* `eleventyImport.collections`: {% addedin "2.0.0-canary.21" %}An Array of collection names used to inform template dependencies for incremental builds and to render templates in the correct order. Read more about [importing collections](https://github.com/11ty/eleventy/issues/975)
 * `dynamicPermalink`: Option to disable template syntax for the `permalink` key. Read more about [disabling dynamic permalinks](/docs/permalinks/#disable-templating-in-permalinks).
 * `permalinkBypassOutputDir`: Write a file to somewhere other than the output directory. Read more about [bypassing the output directory](/docs/permalinks/#ignore-the-output-directory)
