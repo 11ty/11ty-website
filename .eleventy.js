@@ -179,6 +179,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.setDataDeepMerge(true);
 	if(process.env.NODE_ENV !== "production") {
 		eleventyConfig.setQuietMode(true);
+		eleventyConfig.ignores.add("src/api/*")
 		eleventyConfig.ignores.add("src/follow-feed.11ty.js")
 		eleventyConfig.ignores.add("src/docs/feed.njk")
 		eleventyConfig.ignores.add("src/docs/quicktipsfeed.njk")
@@ -213,7 +214,7 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.addPlugin(EleventyEdgePlugin);
 
-	if(process.env.NODE_ENV !== "production") {
+	if(process.env.NODE_ENV === "production") {
 		eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
 			name: "serverless",
 			inputDir: "src",
