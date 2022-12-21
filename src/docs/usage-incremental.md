@@ -8,9 +8,9 @@ excludeFromSidebar: true
 ---
 # Incremental Builds
 
-Incremental builds perform a partial build operating only on files that have changed to improve build times when doing local development.
+Incremental builds via the command line flag `--incremental` perform a partial build operating only on files that have changed to improve build times when doing local development.
 
-Incremental builds via the command line flag `--incremental` have been available without much fanfare in Eleventy for a few versions now. Let’s check in on what the current capabilities of incremental builds are and the plans to improve:
+Let’s check in on the current capabilities and the roadmap:
 
 * **Templates**
   * If you create/update a template file, Eleventy will run the build for that file and only that file.
