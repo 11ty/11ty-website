@@ -8,6 +8,8 @@ excludeFromSidebar: false
 layout: "layouts/docs.njk"
 permalink: "/blog/"
 override:tags:
+eleventyImport:
+  collections: ["blog"]
 ---
 # Blog
 

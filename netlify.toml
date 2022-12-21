@@ -14,17 +14,17 @@ function = "user-preferences"
 path = "/account/preferences/"
 
 [[redirects]]
-from = "/follow/"
-to = "/follow/follow.rss"
-status = 301
-force = true
-
-[[redirects]]
 from = "/authors/:name/"
 to = "/.netlify/builders/serverless"
 status = 200
 force = true
 _generated_by_eleventy_serverless = "serverless"
+
+[[redirects]]
+from = "/follow/"
+to = "/follow/follow.rss"
+status = 301
+force = true
 
 [[redirects]]
 from = "/speedlify/*"

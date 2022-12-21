@@ -179,6 +179,10 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.setDataDeepMerge(true);
 	if(process.env.NODE_ENV !== "production") {
 		eleventyConfig.setQuietMode(true);
+		eleventyConfig.ignores.add("src/follow-feed.11ty.js")
+		eleventyConfig.ignores.add("src/docs/feed.njk")
+		eleventyConfig.ignores.add("src/docs/quicktipsfeed.njk")
+		eleventyConfig.ignores.add("src/blog/blog-feed.njk")
 	}
 
 	eleventyConfig.setServerOptions({
@@ -209,39 +213,41 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.addPlugin(EleventyEdgePlugin);
 
-	eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
-		name: "serverless",
-		inputDir: "src",
-		functionsDir: "./netlify/functions/",
-		redirects: "netlify-toml-builders",
-		// copyEnabled: process.env.NODE_ENV === "production",
-		copy: [
-			"config/",
-			"avatars/",
-			"src/img/logo.svg",
-			"src/img/gift.svg",
-			"src/img/possum-geri.png",
-			"_generated-serverless-collections.json",
-			".cache/eleventy-fetch/",
-		]
-	});
+	if(process.env.NODE_ENV !== "production") {
+		eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
+			name: "serverless",
+			inputDir: "src",
+			functionsDir: "./netlify/functions/",
+			redirects: "netlify-toml-builders",
+			// copyEnabled: process.env.NODE_ENV === "production",
+			copy: [
+				"config/",
+				"avatars/",
+				"src/img/logo.svg",
+				"src/img/gift.svg",
+				"src/img/possum-geri.png",
+				"_generated-serverless-collections.json",
+				".cache/eleventy-fetch/",
+			]
+		});
 
-	eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
-		name: "dynamic",
-		inputDir: "src",
-		functionsDir: "./netlify/functions/",
-		redirects: "netlify-toml-functions",
-		// copyEnabled: process.env.NODE_ENV === "production",
-		copy: [
-			"config/",
-			"avatars/",
-			"src/img/logo.svg",
-			"src/img/gift.svg",
-			"src/img/possum-geri.png",
-			"_generated-serverless-collections.json",
-			{ from: ".cache/eleventy-fetch/", to: "cache" },
-		]
-	});
+		eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
+			name: "dynamic",
+			inputDir: "src",
+			functionsDir: "./netlify/functions/",
+			redirects: "netlify-toml-functions",
+			// copyEnabled: process.env.NODE_ENV === "production",
+			copy: [
+				"config/",
+				"avatars/",
+				"src/img/logo.svg",
+				"src/img/gift.svg",
+				"src/img/possum-geri.png",
+				"_generated-serverless-collections.json",
+				{ from: ".cache/eleventy-fetch/", to: "cache" },
+			]
+		});
+	}
 
 	eleventyConfig.addCollection("sidebarNav", function(collection) {
 		// filter out excludeFromSidebar options
@@ -469,6 +475,12 @@ ${text.trim()}
 
 	eleventyConfig.addShortcode("addToSampleSites", function() {
 		return `<a href="https://github.com/11ty/11ty-website/issues/new/choose"><strong>Want to add your site to this list?</strong></a>`;
+	});
+
+	eleventyConfig.addFilter("sortByQuickTipsIndex", function(collection) {
+		return collection.sort(function(a, b) {
+			return parseInt(a.data.tipindex, 10) - parseInt(b.data.tipindex, 10);
+		});
 	});
 
 	eleventyConfig.addCollection("quicktipssorted", function(collection) {
