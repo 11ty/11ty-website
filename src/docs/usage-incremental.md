@@ -44,5 +44,6 @@ The previously stated incremental features are implemented in Eleventy core and 
   * `11ty.js`: Map JavaScript dependencies
   * `liquid`: Dependency mapping for Liquid templates (`{% raw %}{% include %}{% endraw %}`, etc)
   * ~~Dependency mapping for Nunjucks templates (`{% raw %}{% include %}{% endraw %}`, etc)~~ Unlikely due to Nunjucks API limitations.
+* Collections dependencies improvements: while we have `eleventyImport.collections` to declaratively log collections dependencies, we may be able to dive deeper into template syntax APIs to find the symbols in use. [Issue #1615](https://github.com/11ty/eleventy/issues/1615) Alternatively we may be able to change the collections API to use Proxies to get smarter about this in an easier way (though previous experiments with this for `eleventyComputed` failed in some languages).
 * [Render plugin](/docs/plugins/render/): `{% raw %}{% renderFile %}{% endraw %}` dependencies
 * _Stretch goal_: Pagination-level incremental that operates on a subset of data
