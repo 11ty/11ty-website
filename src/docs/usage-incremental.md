@@ -14,12 +14,12 @@ Let’s check in on the current capabilities and the roadmap:
 
 * **Templates**
   * If you create/update a template file, Eleventy will run the build for that file and only that file.
-  * **Layouts** {% addedin "2.0.0-canary.20" %}
+  * **Layouts** {% addedin "2.0.0-canary.21" %}
     * When you change a layout file, any templates using that layout file are rebuilt.
   * **Template Dependencies** {% addedin "2.0.0-canary.19" %}Any templates using a dependency mapped via [the `addDependencies` method](/docs/languages/custom/#registering-dependencies) will be rebuilt when those dependencies change.
     * {% addedin "1.0.0" %}This feature was previously exposed as part of the API for [Custom template extensions](/docs/languages/custom/#isincrementalmatch) via the `isIncrementalMatch` function.
     * **Other Includes**: If the created/updated file is in your [Includes](/docs/config/#directory-for-includes) or [Layouts](/docs/config/#directory-for-layouts-(optional)) directories, a full build will run. {% addedin "2.0.0-canary.21" %}Files used as Eleventy Layouts in your build are exempted.
-  * **Collections** {% addedin "2.0.0-canary.20" %}
+  * **Collections** {% addedin "2.0.0-canary.21" %}
     * When you add or delete a tag from a template, any templates using that collection tag (as declared by [`pagination.data`](/docs/pagination/) or [`eleventyImport.collections`](/docs/data-configuration/#advanced)) will be rebuilt.
 * [**Passthrough Copy**](/docs/copy/)
   * {% addedin "0.11.0" %} Incremental passthrough copy uses the following rules:
