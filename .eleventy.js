@@ -187,7 +187,7 @@ module.exports = function(eleventyConfig) {
 	}
 
 	eleventyConfig.setServerOptions({
-		showVersion: true,
+		showVersion: false,
 		domdiff: false,
 	});
 
