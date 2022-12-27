@@ -33,7 +33,7 @@ title: My Rad Markdown Blog Post
 {% raw %}
 ```liquid
 ---
-layout: mylayout.njk
+layout: mylayout.liquid
 title: My Rad Liquid Blog Post
 ---
 <h1>{{ title }}</h1>
