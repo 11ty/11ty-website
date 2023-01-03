@@ -226,6 +226,27 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+### Asynchronous Universal Shortcodes
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // Universal Asynchronous Shortcodes are added to:
+  // * Liquid
+  // * Nunjucks
+  // * JavaScript
+
+  // Async support for `addShortcode` and `addPairedShortcode` is new in Eleventy 2.0.0-canary.24
+  eleventyConfig.addShortcode("single", async function(myName) { /* … */ });
+  eleventyConfig.addPairedShortcode("paired", async function(content, myName) { /* … */ });
+
+  // Async methods available in Eleventy v0.10.0+
+  eleventyConfig.addAsyncShortcode("single", async function(myName) { /* … */ });
+  eleventyConfig.addPairedAsyncShortcode("paired", async function(content, myName) { /* … */ });
+};
+```
+
 ## Scoped Data in Shortcodes
 
 A few Eleventy-specific data properties are available to shortcode callbacks.
