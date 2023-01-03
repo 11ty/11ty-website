@@ -485,7 +485,7 @@ function imageShortcode(src, cls, alt, sizes, widths) {
     loading: "lazy",
     decoding: "async",
   };
-  // get metadata even the images are not fully generated
+  // get metadata even if the images are not fully generated yet
   let metadata = Image.statsSync(src, options);
   return Image.generateHTML(metadata, imageAttributes);
 }
