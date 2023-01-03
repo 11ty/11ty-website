@@ -142,7 +142,7 @@ Where to write the new images to disk. Project-relative path to the output image
 
 ### Caching Remote Images Locally
 
-{% addedin "Image 0.3.0" %} For any full URL first argument to this plugin, the full-size remote image will be downloaded and cached locally. See all [relevant `eleventy-cache-assets` options](/docs/plugins/fetch/#options).
+{% addedin "Image 0.3.0" %} For any full URL first argument to this plugin, the full-size remote image will be downloaded and cached locally. See all [relevant `eleventy-fetch` options](/docs/plugins/fetch/#options).
 
 ```js
 {
