@@ -8,14 +8,9 @@ overrideCommunityLinks: true
 ---
 # Serverless {% addedin "1.0.0" %}
 
+{% tableofcontents %}
+
 {{ eleventyNavigation.excerpt }}
-
-<details class="toc">
-<summary>Expand for contents</summary>
-
-[[toc]]
-
-</details>
 
 <div class="youtube-related">
   {%- youtubeEmbed "JNFooPfzV9g", "Defer generating 400+ pages using Eleventy Serverless" -%}

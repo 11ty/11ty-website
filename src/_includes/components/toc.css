@@ -117,8 +117,3 @@
 .elv-cat-list-active {
 	font-weight: 600;
 }
-
-/* Add margin to toc details */
-details.toc[open] {
-	margin-bottom: 4em;
-}

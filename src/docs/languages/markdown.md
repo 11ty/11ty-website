@@ -8,6 +8,8 @@ logoImage: "./src/img/logos/markdown.svg"
 relatedLinks:
   /docs/config/#default-template-engine-for-markdown-files: Default Template Engine for Markdown Files
 ---
+{% tableofcontents "open" %}
+
 | Eleventy Short Name | File Extension | npm Package                                                |
 | ------------------- | -------------- | ---------------------------------------------------------- |
 | `md`                | `.md`          | [`markdown-it`](https://www.npmjs.com/package/markdown-it) |

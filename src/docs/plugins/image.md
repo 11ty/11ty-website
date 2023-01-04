@@ -6,12 +6,7 @@ eleventyNavigation:
   excerpt: A utility to resize and generate images.
 communityLinksKey: image
 ---
-<details>
-<summary>Expand for contents</summary>
-
-[[toc]]
-
-</details>
+{% tableofcontents %}
 
 Low level utility to perform build-time image transformations for both vector and raster images. Output multiple sizes, save multiple formats, cache remote images locally. Uses the [sharp](https://sharp.pixelplumbing.com/) image processor.
 
@@ -313,9 +308,13 @@ async function imageShortcode(src, alt, sizes) {
 }
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addAsyncShortcode("image", imageShortcode);
+
+  // Or individually
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
+
 };
 ```
 

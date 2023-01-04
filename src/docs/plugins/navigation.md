@@ -6,21 +6,12 @@ eleventyNavigation:
 ---
 # Navigation Plugin
 
+{% tableofcontents %}
+
 A plugin for creating infinite-depth hierarchical navigation in Eleventy projects. Supports breadcrumbs too! Used in production on this very website!
 
 * This documentation is for `eleventy-navigation` `v0.3.x`.
 * [GitHub](https://github.com/11ty/eleventy-navigation).
-
-## Contents
-
-<style>
-/* Hide link to Contents */
-.table-of-contents > ul > li:first-child {
-  display: none;
-}
-</style>
-
-[[toc]]
 
 ## Template Compatibility
 

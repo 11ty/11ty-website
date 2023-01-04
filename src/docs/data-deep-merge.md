@@ -6,6 +6,8 @@ eleventyNavigation:
 ---
 # Data Deep Merge {% addedin "0.6.0" %}
 
+{% tableofcontents %}
+
 Use a full deep merge when combining the Data Cascade. This will use something similar to [`lodash.mergewith`](https://docs-lodash.com/v4/merge-with/) to combine Arrays and deep merge Objects, rather than a simple top-level merge using `Object.assign`.
 
 Read more at [Issue #147](https://github.com/11ty/eleventy/issues/147). As of Eleventy 1.0 this defaults to enabled (but API still exists for opt-out).

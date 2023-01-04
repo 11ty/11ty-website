@@ -5,6 +5,8 @@ eleventyNavigation:
 ---
 # Configuration
 
+{% tableofcontents "open" %}
+
 Configuration files are optional. Add an `.eleventy.js` file to root directory of your project to configure Eleventy to your own project’s needs. It might look like this:
 
 {% codetitle ".eleventy.js" %}
@@ -30,7 +32,7 @@ We support returning both a callback function (shown above) or an object literal
 * Add custom [Collections](/docs/collections/) and use [Advanced Collection Filtering and Sorting](/docs/collections/#advanced-custom-filtering-and-sorting).
 * Add some [Plugins](/docs/plugins/).
 
-## Default configuration filenames
+## Default filenames
 
 We look for the following configuration files:
 
@@ -44,24 +46,7 @@ The first configuration file found is used. The others are ignored.
   {%- youtubeEmbed "hJAtWQ9nmKU", "Additions to the default config filename list (Changelog №17)", "431" -%}
 </div>
 
-
 ## Configuration Options
-
-<style>
-/* Hide the irrelevant stuff above this TOC in the document */
-.table-of-contents > ul {
-  list-style: none;
-  padding-left: 0;
-}
-.table-of-contents > ul > li:first-child > a {
-  display: none;
-}
-.table-of-contents > ul > li:first-child > ul {
-  list-style: disc;
-}
-</style>
-
-[[toc]]
 
 ### Input Directory
 

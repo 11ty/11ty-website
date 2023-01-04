@@ -7,12 +7,7 @@ eleventyNavigation:
 ---
 # Permalinks
 
-<details>
-  <summary>Expand for Table of Contents</summary>
-
-[[toc]]
-
-</details>
+{% tableofcontents %}
 
 You can customize the default location of templates to the output directory using Eleventy’s permalinks feature.
 

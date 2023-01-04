@@ -68,4 +68,16 @@ module.exports = function(eleventyConfig) {
 		}
 		return `<div class="elv-callout${level ? ` elv-callout-${level}` : ""}${cls ? ` ${cls}`: ""}">${content}</div>`;
 	});
+
+	eleventyConfig.addShortcode("tableofcontents", function(isOpen) {
+		// Markdown only.
+		if(this.page.inputPath.endsWith("md")) {
+			return `<details class="toc"${isOpen ? " open" : ""}>
+<summary><strong>${isOpen ? "Contents" : "Expand for Contents"}</strong></summary>
+
+[[toc]]
+
+</details>`;
+		}
+	});
 };

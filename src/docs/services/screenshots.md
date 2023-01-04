@@ -5,15 +5,9 @@ eleventyNavigation:
   excerpt: Returns a screenshot image from a URL.
 communityLinksKey: api-services-screenshot
 ---
+{% tableofcontents %}
 
 Feed this runtime service a URL and it returns a fully rendered screenshot image from that page (using Puppeteer)
-
-<details class="toc">
-<summary>Expand for Contents</summary>
-
-[[toc]]
-
-</details>
 
 <div class="youtube-related">
   {% youtubeEmbed "BcZUSZcE8uQ" %}

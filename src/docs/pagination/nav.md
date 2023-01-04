@@ -10,7 +10,7 @@ relatedTitle: "Create a list of Navigation Links for your Pagination."
 
 How to create a list of links to every paginated page on a pagination template.
 
-[[toc]]
+{% tableofcontents "open" %}
 
 ## Paginating over an Array
 

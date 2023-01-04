@@ -14,6 +14,8 @@ relatedLinks:
 communityLinksKey: javascript
 layout: layouts/langs.njk
 ---
+{% tableofcontents "open" %}
+
 | Eleventy Short Name | File Extension | npm Package |
 | ------------------- | -------------- | ----------- |
 | `11ty.js`           | `.11ty.js`     | N/A         |

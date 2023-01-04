@@ -6,12 +6,7 @@ eleventyNavigation:
 ---
 # Fetch
 
-<details>
-<summary>Expand for contents</summary>
-
-[[toc]]
-
-</details>
+{% tableofcontents %}
 
 Fetch network resources and cache them so you don’t bombard your API (or other resources). Do this at configurable intervals—not with every build! Once per minute, or once per hour, once per day, or however often you like!
 

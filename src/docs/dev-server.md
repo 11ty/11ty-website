@@ -5,6 +5,8 @@ eleventyNavigation:
 ---
 # Eleventy Dev Server {% addedin "2.0.0" %}
 
+{% tableofcontents %}
+
 Eleventy 2.0 bundles a brand new default development server.
 
 At time of release, this new server:

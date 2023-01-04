@@ -11,6 +11,8 @@ tags:
   - related-custom-tags
 layout: layouts/langs.njk
 ---
+{% tableofcontents "open" %}
+
 | Eleventy Short Name | File Extension | npm Package                                          |
 | ------------------- | -------------- | ---------------------------------------------------- |
 | `liquid`            | `.liquid`      | [`liquidjs`](https://www.npmjs.com/package/liquidjs) |

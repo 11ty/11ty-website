@@ -5,6 +5,8 @@ eleventyNavigation:
   order: 11
 layout: layouts/langs.njk
 ---
+{% tableofcontents "open" %}
+
 | Eleventy Short Name | File Extension | npm Package                           |
 | ------------------- | -------------- | ------------------------------------- |
 | `pug`               | `.pug`         | [`pug`](https://github.com/pugjs/pug) |

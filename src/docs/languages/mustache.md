@@ -5,6 +5,8 @@ eleventyNavigation:
   order: 8
 layout: layouts/langs.njk
 ---
+{% tableofcontents "open" %}
+
 | Eleventy Short Name | File Extension | npm Package                                           |
 | ------------------- | -------------- | ----------------------------------------------------- |
 | `mustache`          | `.mustache`    | [`mustache.js`](https://github.com/janl/mustache.js/) |

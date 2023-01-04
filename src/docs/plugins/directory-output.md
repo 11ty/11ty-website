@@ -6,9 +6,9 @@ eleventyNavigation:
 ---
 # Directory Output
 
-Group and sort Eleventy’s verbose output by directory (and show file size with benchmarks). View the [source code on GitHub](https://github.com/11ty/eleventy-plugin-directory-output).
+{% tableofcontents %}
 
-[[toc]]
+Group and sort Eleventy’s verbose output by directory (and show file size with benchmarks). View the [source code on GitHub](https://github.com/11ty/eleventy-plugin-directory-output).
 
 ## Installation
 

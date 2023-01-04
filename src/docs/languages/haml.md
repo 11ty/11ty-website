@@ -5,6 +5,8 @@ eleventyNavigation:
   order: 10
 layout: layouts/langs.njk
 ---
+{% tableofcontents "open" %}
+
 | Eleventy Short Name | File Extension | npm Package    |
 | ------------------- | -------------- | -------------- |
 | `haml`              | `.haml`        | [`haml.js`](https://github.com/tj/haml.js) |

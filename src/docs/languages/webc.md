@@ -7,16 +7,14 @@ logoImage: "./src/img/logos/webc.png"
 layout: layouts/langs.njk
 relatedLinks:
 ---
+{% tableofcontents "open" %}
+
 | Type | Value |
 | --- | --- |
 | Eleventy Name | `webc` |
 | File Extension | `*.webc` |
 | npm | [`@11ty/webc`](https://www.npmjs.com/package/@11ty/webc) and [`@11ty/eleventy-plugin-webc`](https://www.npmjs.com/package/@11ty/eleventy-plugin-webc) |
 | GitHub | [`11ty/webc`](https://github.com/11ty/webc) and [`11ty/eleventy-plugin-webc`](https://github.com/11ty/eleventy-plugin-webc) |
-
-**Table of Contents**
-
-[[toc]]
 
 ## Why use WebC?
 

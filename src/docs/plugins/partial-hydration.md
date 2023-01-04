@@ -8,12 +8,7 @@ overrideCommunityLinks: true
 ---
 # Partial Hydration {% addedin "2.0.0" %}
 
-<details>
-<summary>Expand for contents</summary>
-
-[[toc]]
-
-</details>
+{% tableofcontents %}
 
 {{ eleventyNavigation.excerpt }}
 

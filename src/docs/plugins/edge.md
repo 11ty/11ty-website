@@ -8,14 +8,9 @@ overrideCommunityLinks: true
 ---
 # Eleventy Edge {% addedin "2.0.0" %}
 
+{% tableofcontents %}
+
 {{ eleventyNavigation.excerpt }}
-
-<details>
-<summary>Expand for contents</summary>
-
-[[toc]]
-
-</details>
 
 {% callout "info" %}This feature is considered <strong>experimental</strong> and requires Eleventy <code>v2.0.0-canary.7</code> or higher. Our first release is limited to <a href="https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/">Netlify Edge Functions</a> support only.{% endcallout %}
 

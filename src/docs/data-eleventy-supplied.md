@@ -6,9 +6,7 @@ eleventyNavigation:
 ---
 # Eleventy Supplied Data
 
-[[toc]]
-
----
+{% tableofcontents %}
 
 Here are a few data values we supply to your page that you can use in your templates:
 

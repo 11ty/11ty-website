@@ -7,12 +7,7 @@ eleventyNavigation:
 ---
 # HTML `<base>`
 
-<!-- <details>
-<summary>Expand for contents</summary>
-
-[[toc]]
-
-</details> -->
+{% tableofcontents %}
 
 {% addedin "2.0.0-canary.15" %} A build-time application of `<base>` to HTML (without relying on `<base>`) by modifying `a[href]`, `video[src]`, `audio[src]`, `source`, `img[src]`, `[srcset]`, and more.
 

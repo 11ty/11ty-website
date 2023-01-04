@@ -4,8 +4,9 @@ eleventyNavigation:
   key: Events
   order: 10
 ---
-
 # Events
+
+{% tableofcontents %}
 
 You may want to run some code at certain times during the compiling process. To do that, you can use _configuration events_, which will run at specific times during the compiling process.
 

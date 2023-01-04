@@ -6,6 +6,8 @@ eleventyNavigation:
 ---
 # RSS Plugin
 
+{% tableofcontents %}
+
 A pack of plugins for generating an RSS feed (actually an Atom feed, but who’s counting) using the Nunjucks templating engine.
 
 * [GitHub](https://github.com/11ty/eleventy-plugin-rss).
@@ -36,9 +38,9 @@ module.exports = function(eleventyConfig) {
 
 {% callout "info", "md" %}You’re only allowed one `module.exports` in your configuration file, so make sure you only copy the `require` and the `addPlugin` lines above!{% endcallout %}
 
-### Options {% addedin "RSS 1.1.0" %}
+### Options
 
-Advanced control of [PostHTML rendering options](https://github.com/posthtml/posthtml-render#options) via `posthtmlRenderOptions`.
+{% addedin "RSS 1.1.0" %} Advanced control of [PostHTML rendering options](https://github.com/posthtml/posthtml-render#options) via `posthtmlRenderOptions`.
 
 ```js
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -60,9 +62,9 @@ module.exports = function(eleventyConfig) {
 * `absoluteUrl`: converts a single URL (relative or absolute path) to a full absolute URL including protocol, domain, full path.
 * `htmlToAbsoluteUrls`: (async) transforms all of the URLs in a block of HTML with `absoluteUrl` above. Uses [posthtml-urls](https://github.com/posthtml/posthtml-urls) with `a[href]`, `video[src]`, `audio[src]`, `source`, `img[src]`, `[srcset]` and [a whole bunch more](https://github.com/posthtml/posthtml-urls/blob/307c91342a211b3f9fb22bc57264bbb31f235fbb/lib/defaultOptions.js).
 
-### Use with other template languages {% addedin "RSS 1.1.0" %}
+### Use with other template languages
 
-This plugin exports `dateToRfc3339`, `dateToRfc822` ({% addedin "RSS 1.2.0" %}), `getNewestCollectionItemDate`, `absoluteUrl`, and `convertHtmlToAbsoluteUrls` functions so you can use with your own filters. For example:
+{% addedin "RSS 1.1.0" %} This plugin exports `dateToRfc3339`, `dateToRfc822` ({% addedin "RSS 1.2.0" %}), `getNewestCollectionItemDate`, `absoluteUrl`, and `convertHtmlToAbsoluteUrls` functions so you can use with your own filters. For example:
 
 ```js
 const pluginRss = require("@11ty/eleventy-plugin-rss");

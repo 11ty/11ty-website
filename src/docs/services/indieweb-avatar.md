@@ -6,6 +6,7 @@ eleventyNavigation:
   # order: 0
 communityLinksKey: api-services-avatar
 ---
+{% tableofcontents %}
 
 Feed this runtime service a URL and it will extract an avatar image using these sources:
 

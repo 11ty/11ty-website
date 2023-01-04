@@ -50,7 +50,7 @@ clis:
 
 Now that you’ve built a web site with Eleventy _(even if it’s one HTML page!)_ you might be ready to put it on the web for everyone to see! There are a bunch of different ways to do it!
 
-[[toc]]
+{% tableofcontents "open" %}
 
 ## Use a Build Script
 
@@ -102,7 +102,7 @@ Many hosts provide a command line utility to deploy your project. Here are some 
   {%- youtubeEmbed "JCQQgtOcjH4", "New deployment docs (Weekly №2)", "72" -%}
 </div>
 
-### Community Tutorials
+## Community Resources
 
 - {% indieweblink "GitHub Pages Tutorial", "https://snook.ca/archives/servers/deploying-11ty-to-gh-pages" %} by {% avatarlocalcache "twitter", "snookca" %}Jonathan Snook
 - [GitLab Pages Sample Project](https://gitlab.com/bkmgit/11ty) by Benson Muite
