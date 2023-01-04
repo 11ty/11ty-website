@@ -310,7 +310,7 @@ async function imageShortcode(src, alt, sizes) {
 module.exports = function(eleventyConfig) {
   eleventyConfig.addAsyncShortcode("image", imageShortcode);
 
-  // Or individually
+  // Or add them individually
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
@@ -358,6 +358,9 @@ async function imageShortcode(src, alt) {
 }
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addAsyncShortcode("image", imageShortcode);
+
+  // Or add them individually
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
@@ -403,6 +406,9 @@ async function imageShortcode(src, alt, sizes = "100vw") {
 }
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addAsyncShortcode("image", imageShortcode);
+
+  // Or add them individually
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
