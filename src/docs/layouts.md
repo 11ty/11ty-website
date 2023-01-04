@@ -11,6 +11,7 @@ Eleventy Layouts are special templates that can be used to wrap other content.
 
 To denote that a piece of content should be wrapped in a template, use the `layout` key in your front matter, like so:
 
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layouts", additions: "md"} %}
   <div id="layouts-md" role="tabpanel">
@@ -88,6 +89,7 @@ title: My Rad Handlebars Blog Post
 
   </div>
 </seven-minute-tabs>
+</is-land>
 
 This will look for a `mylayout.njk` Nunjucks file in your _includes_ folder at `_includes/mylayout.njk`.
 
