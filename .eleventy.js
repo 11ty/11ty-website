@@ -231,23 +231,6 @@ module.exports = function(eleventyConfig) {
 				".cache/eleventy-fetch/",
 			]
 		});
-
-		eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
-			name: "dynamic",
-			inputDir: "src",
-			functionsDir: "./netlify/functions/",
-			redirects: "netlify-toml-functions",
-			// copyEnabled: process.env.NODE_ENV === "production",
-			copy: [
-				"config/",
-				"avatars/",
-				"src/img/logo.svg",
-				"src/img/gift.svg",
-				"src/img/possum-geri.png",
-				"_generated-serverless-collections.json",
-				{ from: ".cache/eleventy-fetch/", to: "cache" },
-			]
-		});
 	}
 
 	eleventyConfig.addCollection("sidebarNav", function(collection) {
