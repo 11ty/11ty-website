@@ -3,9 +3,7 @@ eleventyNavigation:
   key: Overview
   title: Why Eleventy?
   order: 1
-permalink: /docs/
 ---
-
 # {{ "Eleventy is a simpler static site generator." | orphanWrap | safe }}
 
 Eleventy quickly builds speedy web sites. Originally pitched as the JavaScript alternative to Jekyll, Eleventy has matured into a [popular](/blog/four-million/) modern web site generator.
