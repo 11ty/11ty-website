@@ -227,7 +227,6 @@ module.exports = function(eleventyConfig) {
 				"src/img/logo.svg",
 				"src/img/gift.svg",
 				"src/img/possum-geri.png",
-				"_generated-serverless-collections.json",
 				".cache/eleventy-fetch/",
 			]
 		});

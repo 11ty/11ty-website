@@ -14,7 +14,6 @@ yarn.lock
 # App-specific
 cache
 _site/
-_generated*
 node-supporters/
 src/_data/builtwith/
 
@@ -27,5 +26,3 @@ netlify/edge-functions/_generated
 # Serverless
 netlify/functions/serverless/*
 !netlify/functions/serverless/index.js
-netlify/functions/dynamic/*
-!netlify/functions/dynamic/index.js
