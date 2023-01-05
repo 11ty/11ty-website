@@ -992,6 +992,11 @@ details.toc[open] {
 details.toc[open] {
 	background-color: #f7f7f7;
 }
+@media (prefers-color-scheme: dark) {
+	details.toc[open] {
+		background-color: #292929;
+	}
+}
 details.toc:not([open]) > summary {
 	margin-bottom: 0;
 }
