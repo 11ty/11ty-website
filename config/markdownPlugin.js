@@ -73,7 +73,7 @@ module.exports = function(eleventyConfig) {
 		// Markdown only.
 		if(this.page.inputPath.endsWith("md")) {
 			return `<details class="toc"${isOpen ? " open" : ""}>
-<summary><strong>${isOpen ? "Contents" : "Expand for Contents"}</strong></summary>
+<summary>Contents</summary>
 
 [[toc]]
 

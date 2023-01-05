@@ -5,7 +5,7 @@ eleventyNavigation:
 ---
 # Configuration
 
-{% tableofcontents "open" %}
+{% tableofcontents %}
 
 Configuration files are optional. Add an `.eleventy.js` file to root directory of your project to configure Eleventy to your own project’s needs. It might look like this:
 

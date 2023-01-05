@@ -48,9 +48,9 @@ clis:
 ---
 # Deployment
 
-Now that you’ve built a web site with Eleventy _(even if it’s one HTML page!)_ you might be ready to put it on the web for everyone to see! There are a bunch of different ways to do it!
+{% tableofcontents %}
 
-{% tableofcontents "open" %}
+Now that you’ve built a web site with Eleventy _(even if it’s one HTML page!)_ you might be ready to put it on the web for everyone to see! There are a bunch of different ways to do it!
 
 ## Use a Build Script
 

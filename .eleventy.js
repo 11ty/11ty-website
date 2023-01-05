@@ -765,15 +765,7 @@ to:
 		return content
 			.split("Eleventy")
 			.join(shortcodes.getIndieAvatarHtml("https://www.11ty.dev/") + "Eleventy")
-			// .split("Astro")
-			// .join(shortcodes.getIndieAvatarHtml("https://astro.build/") + "Astro")
-			// .split("Gatsby")
-			// .join(shortcodes.getIndieAvatarHtml("https://www.gatsbyjs.com/") + "Gatsby")
-			// .split("Next.js")
-			// .join(shortcodes.getIndieAvatarHtml("https://nextjs.org/") + "Next.js")
-			// .split("Remix")
-			// .join(shortcodes.getIndieAvatarHtml("https://remix.run/") + "Remix")
-		})
+	});
 
 	return {
 		dir: {

@@ -6,6 +6,8 @@ eleventyNavigation:
 ---
 # Debug Mode
 
+{% tableofcontents %}
+
 Having trouble? Want to see what Eleventy is doing behind the scenes? Use `DEBUG` mode. We’re taking advantage of the [excellent `debug` package](https://www.npmjs.com/package/debug) for this.
 
 `debug` will tell you exactly what directories Eleventy is using for data, includes, input, and output. It’ll tell you what search globs it uses to find your templates and what templates it finds. If you’re having trouble, enable this.

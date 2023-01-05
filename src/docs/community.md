@@ -7,6 +7,8 @@ ignoreGitHubButtons: true
 ---
 # Community
 
+{% tableofcontents %}
+
 {% set count = 0 %}
 
 {% set count = count + 1 %}

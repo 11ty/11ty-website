@@ -6,7 +6,7 @@ eleventyNavigation:
 ---
 # Watch and Serve Configuration
 
-{% tableofcontents "open" %}
+{% tableofcontents %}
 
 ## Watch JavaScript Dependencies {% addedin "0.7.0" %}
 

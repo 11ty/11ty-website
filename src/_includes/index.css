@@ -282,7 +282,7 @@ main .elv-toc + h1 {
 main .breadcrumb + h1,
 main h1:first-child,
 main .elv-toc + h1 {
-	border-bottom: 2px solid #666;
+	border-bottom: 1px solid #aaa;
 }
 @media (min-width: 64em) { /* 1024px */
 	main .elv-toc + h1,
@@ -975,29 +975,36 @@ filter-container:defined form {
 }
 
 /* Table of contents */
+details.toc {
+	border-radius: .4em;
+	padding: .5rem .5rem 0 .5rem;
+	margin: 0 -.5rem 3em -.5rem;
+}
+h1 + details.toc {
+	margin-top: -1.444444444444em; /* -26px /18 */
+}
+/* Overrides */
 details.toc,
 details.toc[open] {
-	border: 2px solid #666;
-	background-color: #fff;
-	border-radius: .5em;
-	padding: .5em;
+	border: 2px solid #ccc;
 	outline: inherit;
-	margin-left: -1rem;
-	margin-right: -1rem;
-	margin-bottom: 3em;
+}
+details.toc[open] {
+	background-color: #f7f7f7;
 }
 details.toc:not([open]) > summary {
 	margin-bottom: 0;
 }
-h1 + details.toc,
-h1 + details.toc[open] {
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: -1.333333333333em; /* -24px /18 */
-	border-top: none;
-	border-top-left-radius: 0;
-	border-top-right-radius: 0;
+
+details.toc > summary {
+	padding-bottom: .5rem;
+	border-bottom: 2px dotted transparent;
 }
+details.toc[open] > summary {
+	border-color: #ccc;
+	font-weight: bold;
+}
+
 
 .table-of-contents > ul ul {
 	display: flex;
