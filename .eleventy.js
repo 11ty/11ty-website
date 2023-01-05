@@ -783,7 +783,6 @@ to:
 		},
 		templateFormats: ["html", "njk", "md", "11ty.js"],
 		markdownTemplateEngine: "njk",
-		htmlTemplateEngine: "njk",
-		dataTemplateEngine: false
+		htmlTemplateEngine: "njk"
 	};
 };
