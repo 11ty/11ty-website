@@ -7,20 +7,15 @@ exports.data = function() {
   };
 };
 
-exports.render = function(data) {
+exports.render = function({collections}) {
   let entries = [];
-  for(let entry of data.collections.sidebarNav) {
-    if(entry.data && entry.data.eleventyNavigation) {
-      let o = {
-        data: {
-          page: {
-            url: entry.data.page.url,
-          },
-          eleventyNavigation: entry.data.eleventyNavigation,
-        }
-      };
-      entries.push(o);
-    }
+  for(let entry of collections.sidebarNav) {
+    entries.push({
+      data: {
+        page: entry.data.page,
+        eleventyNavigation: entry.data.eleventyNavigation,
+      }
+    });
   }
 
   return JSON.stringify({

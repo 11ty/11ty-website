@@ -235,7 +235,9 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addCollection("sidebarNav", function(collection) {
 		// filter out excludeFromSidebar options
 		return collection.getAll()
-			.filter(item => (item.data || {}).excludeFromSidebar !== true);
+			.filter(item => {
+				return item.data?.eleventyNavigation && item.data?.excludeFromSidebar !== true;
+			});
 	});
 
 	eleventyConfig.addShortcode("indieavatar", shortcodes.getIndieAvatarHtml);
