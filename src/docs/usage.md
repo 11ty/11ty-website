@@ -101,7 +101,7 @@ npx @11ty/eleventy --to=fs
 Read more about [ndjson](https://github.com/ndjson/ndjson-spec).
 
 
-### `--incremental` for partial [incremental builds](/docs/usage/incremental/)
+### `--incremental` for Partial Incremental Builds
 
 ```bash
 # Repeat builds only operate on files that have changed
@@ -109,6 +109,17 @@ npx @11ty/eleventy --incremental
 ```
 
 Read more about [incremental builds](/docs/usage/incremental/).
+
+### `--ignore-initial` to run Eleventy without an Initial Build
+
+{% addedin "2.0.0-canary.25" %}
+
+```bash
+# Don’t build when Eleventy starts, only build on file changes
+npx @11ty/eleventy --watch --ignore-initial
+npx @11ty/eleventy --serve --ignore-initial
+npx @11ty/eleventy --serve --incremental --ignore-initial
+```
 
 ### Using the Same Input and Output
 

@@ -30,6 +30,10 @@ Let’s check in on the current capabilities and the roadmap:
 * **Configuration File**
   * If you create/update your Eleventy configuration file, a full build will run.
 
+## Related
+
+* `--incremental` works great with [`--ignore-initial`](/docs/usage/#ignore-initial-to-run-eleventy-without-an-initial-build) too. {% addedin "2.0.0-canary.25" %}
+
 ## Additional Template Language Features
 
 The previously stated incremental features are implemented in Eleventy core and are available to all template languages. Some template types offer additional `--incremental` build support:
