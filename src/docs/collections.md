@@ -79,6 +79,77 @@ exports.render = function(data) {
 </seven-minute-tabs>
 </is-land>
 
+### Declare your collections for incremental builds
+
+{% addedin "2.0.0-canary.21" %}Use the `eleventyImport` object to declare any collections you use (data cascade friendly) to inform the relationships for smarter incremental builds. This is an Array of collection names. Read more about [importing collections](https://github.com/11ty/eleventy/issues/975).
+
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collections-import"} %}
+  <div id="collections-import-liquid" role="tabpanel">
+
+{% codetitle "Liquid", "Syntax" %}
+
+{% raw %}
+```liquid
+---
+eleventyImport:
+  collections: ["post"]
+---
+<ul>
+{%- for post in collections.post -%}
+  <li>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+```
+{% endraw %}
+
+  </div>
+  <div id="collections-import-njk" role="tabpanel">
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```jinja2
+---
+eleventyImport:
+  collections: ["post"]
+---
+<ul>
+{%- for post in collections.post -%}
+  <li>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+```
+{% endraw %}
+
+  </div>
+  <div id="collections-import-js" role="tabpanel">
+
+{% codetitle "JavaScript", "Syntax" %}
+
+{% raw %}
+```js
+exports.data = function() {
+  return {
+    eleventyImport: {
+      collections: ["post"]
+    }
+  }
+};
+exports.render = function(data) {
+  return `<ul>
+    ${data.collections.post.map(post => `<li>${post.data.title}</li>`).join("\n")}
+  </ul>`;
+};
+```
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>
+
+
 ### Using an `[aria-current]` attribute for on the current page
 
 Compare the `post.url` and special Eleventy-provided `page.url` variable to find the current page. Building on the previous example:

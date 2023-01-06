@@ -16,12 +16,11 @@ There are a few special data keys you can assign in your data to control how tem
 * `templateEngineOverride`: Override the template engine on a per-file basis. [Read more about Changing a Template’s Rendering Engine](/docs/languages/#overriding-the-template-language). [_This option only works in Front Matter ⚠️ (for now), read Issue #445_](https://github.com/11ty/eleventy/issues/445).
 * `eleventyExcludeFromCollections`: {% addedin "0.8.0" %} Set to `true` to exclude this content from any and all [Collections](/docs/collections/) (those tagged in data or setup using the Configuration API).
 * `eleventyComputed`: {% addedin "0.11.0" %} Programmatically set data values based on other values in your data cascade. Read more about [Computed Data](/docs/data-computed/).
-* `eleventyNavigation`: Used on the [Navigation plugin](/docs/plugins/navigation/#adding-templates-to-the-navigation).
+* `eleventyNavigation`: Used by the [Navigation plugin](/docs/plugins/navigation/#adding-templates-to-the-navigation).
 
 ## Advanced
 
-* `eleventyImport.collections`: {% addedin "2.0.0-canary.21" %}An Array of collection names used to inform template dependencies for incremental builds and to render templates in the correct order.
-  * Read more about [importing collections](https://github.com/11ty/eleventy/issues/975).
-  * Example usage: `eleventyImport.collections: ["posts"]`
+* `eleventyImport`
+    * `eleventyImport.collections`: {% addedin "2.0.0-canary.21" %} An Array of collection names used to inform template dependencies for incremental builds and to render templates in the correct order. Read more on the [collections documentation](/docs/collections/#declare-your-collections-for-incremental-builds).
 * `dynamicPermalink`: Option to disable template syntax for the `permalink` key. Read more about [disabling dynamic permalinks](/docs/permalinks/#disable-templating-in-permalinks).
 * `permalinkBypassOutputDir`: Write a file to somewhere other than the output directory. Read more about [bypassing the output directory](/docs/permalinks/#ignore-the-output-directory)
