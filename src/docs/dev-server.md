@@ -7,13 +7,13 @@ eleventyNavigation:
 
 {% tableofcontents %}
 
-Eleventy 2.0 bundles a brand new default development server.
+Eleventy 2.0 bundles a brand new default development server. Check out the [`11ty/eleventy-dev-server` repository on GitHub](https://github.com/11ty/eleventy-dev-server).
 
-At time of release, this new server:
+At time of release, this new server helps Eleventy by:
 
-* Reduced dependencies from 349 to 202
-* Reduced `node_modules` size 🏋️ from 81.7 MB to 36.3 MB
-* Faster `npm install` times, decreased by 85%
+* Reducing dependencies from 349 to 202
+* Reducing `node_modules` size 🏋️ from 81.7 MB to 36.3 MB
+* Faster `npm install` times by 85%
 * No unresolved `npm audit` errors or warnings 👀
 
 ## Options
