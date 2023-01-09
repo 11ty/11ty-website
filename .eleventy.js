@@ -217,15 +217,12 @@ module.exports = function(eleventyConfig) {
 	if(process.env.NODE_ENV === "production") {
 		eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
 			name: "serverless",
-			inputDir: "src",
 			functionsDir: "./netlify/functions/",
 			redirects: "netlify-toml-builders",
-			// copyEnabled: process.env.NODE_ENV === "production",
 			copy: [
 				"config/",
 				"avatars/",
 				"src/img/logo.svg",
-				"src/img/gift.svg",
 				"src/img/possum-geri.png",
 				".cache/eleventy-fetch/",
 			]
