@@ -22,7 +22,7 @@ To denote that a piece of content should be wrapped in a template, use the `layo
 {% raw %}
 ```markdown
 ---
-layout: mylayout.njk
+layout: mylayout.md
 title: My Rad Markdown Blog Post
 ---
 # {{ title }}
@@ -36,7 +36,7 @@ title: My Rad Markdown Blog Post
 {% raw %}
 ```liquid
 ---
-layout: mylayout.njk
+layout: mylayout.liquid
 title: My Rad Liquid Blog Post
 ---
 <h1>{{ title }}</h1>
@@ -65,7 +65,7 @@ title: My Rad Nunjucks Blog Post
 ```js
 module.exports = {
   data: {
-    layout: "mylayout.njk",
+    layout: "mylayout.11ty.js",
     title: "My Rad JavaScript Blog Post"
   },
   render(data) {
@@ -82,7 +82,7 @@ module.exports = {
 {% raw %}
 ```handlebars
 ---
-layout: mylayout.njk
+layout: mylayout.hbs
 title: My Rad Handlebars Blog Post
 ---
 <h1>{{title}}</h1>
