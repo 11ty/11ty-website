@@ -20,6 +20,7 @@ module.exports = async function() {
 			type: "json",
 			duration: process.env.ELEVENTY_SERVERLESS ? "*" : "1d",
 			directory: ".cache/eleventy-fetch/",
+			dryRun: process.env.ELEVENTY_SERVERLESS ? true : false,
 		});
 
 		return {
