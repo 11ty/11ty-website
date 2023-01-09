@@ -545,6 +545,8 @@ async function handler (event) {
 };
 ```
 
+At some point we may enable this feature by default [if performance improves enough](https://github.com/11ty/eleventy/issues/2737)!
+
 
 ### Swap to Dynamic using the Data Cascade and `eleventyComputed`
 
