@@ -225,7 +225,10 @@ module.exports = function(eleventyConfig) {
 				"src/img/logo.svg",
 				"src/img/possum-geri.png",
 				".cache/eleventy-fetch/",
-			]
+			],
+			copyOptions: {
+				dot: true
+			}
 		});
 	}
 
