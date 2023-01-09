@@ -7,7 +7,7 @@ require("./eleventy-bundler-modules.js");
 async function handler(event) {
 	let elev = new EleventyServerless("serverless", {
 		path: new URL(event.rawUrl).pathname,
-		// singleTemplateScope: false,
+		singleTemplateScope: false,
 		query: event.multiValueQueryStringParameters || event.queryStringParameters,
 		functionsDir: "./netlify/functions/",
 	});
