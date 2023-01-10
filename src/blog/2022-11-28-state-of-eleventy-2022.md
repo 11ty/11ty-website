@@ -2,6 +2,7 @@
 newstitle: "The State of Eleventy (2022) in Two Minutes"
 eleventyNavigation:
   parent: Blog
+homePageHighlight: true
 ---
 
 * [Watch on YouTube](https://www.youtube.com/watch?v=EZfNr-YblBE)

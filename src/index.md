@@ -1,6 +1,7 @@
 ---
 layout: layouts/main.njk
 logoLink: /docs/
+# Don’t forget to update the emoji in CSS
 logoContent: "<span class='elv-hero-content'>9</span>"
 ignoreGitHubButtons: true
 ignoreSupporters: true
