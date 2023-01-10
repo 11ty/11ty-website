@@ -123,7 +123,7 @@ is transformed into:
 
 _(Example borrowed from the [CommonMark Specification](https://spec.commonmark.org/0.28/#indented-code-blocks))_
 
-Starting with Eleventy 2.0 and newer, this feature is [disabled](https://github.com/11ty/eleventy/issues/2438) for both the default Markdown library instance _and_ any set via `setLibrary`. To renable this feature in Eleventy 2.0, use the [`amendLibrary` approach](#optional-amend-the-library-instance).
+Starting with Eleventy 2.0 and newer, this feature is [disabled](https://github.com/11ty/eleventy/issues/2438) for both the default Markdown library instance _and_ any set via `setLibrary`. To re-enable this feature in Eleventy 2.0, use the [`amendLibrary` approach](#optional-amend-the-library-instance).
 
 <details>
   <summary>Want to re-enable Indented Code Blocks? <strong>Read this lengthy Common Pitfall.</strong></summary>
