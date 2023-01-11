@@ -3,6 +3,10 @@ const versions = require("../src/_data/versions");
 
 const MINIMUM_VERSION_SHOWN = "0.11.0";
 
+function hasPreRelease(version) {
+	return version.includes("-");
+}
+
 module.exports = eleventyConfig => {
 	eleventyConfig.addShortcode("addedin", function(version, tag, extraClass) {
 		const newestPublishedVersion = versions.filter(v => v.tag !== "LATEST").shift();
@@ -11,13 +15,21 @@ module.exports = eleventyConfig => {
 			tag = version.tag;
 			version = version.version;
 		}
-		let versionPrefix = "";
-		let hasBeenReleased = true;
+
+		let versionText = version;
+		let beforeText = "Added in ";
+
 		if(("" + version).match(/^[0-9]/)) {
-			versionPrefix = "v";
+			versionText = `v${versionText}`;
+
 			// only works for versions starting with a number (plugins don’t do this)
 			// is the latest version less than or equal to the version being passed in here?
-			hasBeenReleased = semver.lte(version, semver.coerce(newestPublishedVersion.tag));
+			if(!semver.lte(version, semver.coerce(newestPublishedVersion.tag))) {
+				beforeText = "Coming soon in ";
+			} else if(hasPreRelease(version) && !hasPreRelease(newestPublishedVersion.tag)) {
+				// Strip -canary.1 or -beta.1
+				versionText = versionText.split("-")[0];
+			}
 
 			if(semver.lt(version, MINIMUM_VERSION_SHOWN)) {
 				return "";
@@ -26,6 +38,6 @@ module.exports = eleventyConfig => {
 
 		tag = tag || "span";
 
-		return `<${tag} class="minilink minilink-addedin${extraClass ? ` ${extraClass}`: ""}">${hasBeenReleased ? "New in" : "Coming soon in"} ${versionPrefix}${version}</${tag}>`;
+		return `<${tag} class="minilink minilink-addedin${extraClass ? ` ${extraClass}`: ""}">${beforeText}${versionText}</${tag}>`;
 	});
 }
