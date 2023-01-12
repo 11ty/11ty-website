@@ -1,14 +1,14 @@
 ---
 tipindex: "001"
-tiptitle: "Inline Minified CSS"
+tiptitle: "Internal Minified CSS"
 date: 2018-06-07
 tags: ["related-filters"]
-relatedTitle: "Quick Tip #001—Inline Minified CSS"
+relatedTitle: "Quick Tip #001—Internal Minified CSS"
 ---
 
 _Originally posted on [The Simplest Web Site That Could Possibly Work Well on zachleat.com](https://www.zachleat.com/web/that-could-possibly-work/)_
 
-This tip works well on small sites that don’t have a lot of CSS. Inlining your CSS removes an external request from your critical path and speeds up page rendering times! If your CSS file is small enough, this is a simplification/end-around for [Critical CSS approaches](https://www.smashingmagazine.com/2015/08/understanding-critical-css/).
+This tip works well on small sites that don’t have a lot of CSS. Internalizing your CSS removes an external request from your critical path and speeds up page rendering times! If your CSS file is small enough, this is a simplification/end-around for [Critical CSS approaches](https://www.smashingmagazine.com/2015/08/understanding-critical-css/).
 
 ## Installation
 
@@ -58,7 +58,7 @@ Capture the CSS into a variable and run it through the filter (this sample is us
 
 _Contributed by [Zach Green](https://github.com/zgreen)_
 
-You can also inline minified CSS in a [JavaScript template](/docs/languages/javascript/). This technique does not use filters, and instead uses `async` functions:
+You can also internal minified CSS in a [JavaScript template](/docs/languages/javascript/). This technique does not use filters, and instead uses `async` functions:
 
 ```js
 const fs = require("fs/promises");
@@ -76,5 +76,5 @@ module.exports = async () => `
 ### Warning about Content Security Policy
 
 {% callout "warn" %}
-If you are using a Content Security Policy on your website, make sure the <code>style-src</code> directive allows <code>'unsafe-inline'</code>. Otherwise, your inline CSS will not load.
+If you are using a Content Security Policy on your website, make sure the <code>style-src</code> directive allows <code>'unsafe-inline'</code>. Otherwise, your internal CSS will not load.
 {% endcallout %}
