@@ -1,4 +1,4 @@
-[context.production]
+[context.main]
 publish = "_site"
 command = "npm run build-production"
 
