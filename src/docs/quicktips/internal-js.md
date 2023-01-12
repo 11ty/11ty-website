@@ -1,9 +1,9 @@
 ---
 tipindex: "002"
-tiptitle: "Inline Minified JavaScript"
+tiptitle: "Internal Minified JavaScript"
 date: 2018-06-08
 tags: ["related-filters"]
-relatedTitle: "Quick Tip #002—Inline Minified JavaScript"
+relatedTitle: "Quick Tip #002—Internal Minified JavaScript"
 ---
 
 _Originally posted on [The Simplest Web Site That Could Possible Work Well on zachleat.com](https://www.zachleat.com/web/that-could-possibly-work/)_
@@ -64,5 +64,5 @@ Capture the JavaScript into a variable and run it through the filter (this sampl
 ### Warning about Content Security Policy
 
 {% callout "warn" %}
-If you are using a Content Security Policy on your website, make sure the <code>script-src</code> directive allows <code>'unsafe-inline'</code>. Otherwise, your inline Javascript will not load.
+If you are using a Content Security Policy on your website, make sure the <code>script-src</code> directive allows <code>'unsafe-inline'</code>. Otherwise, your internal Javascript will not load.
 {% endcallout %}
