@@ -464,7 +464,7 @@ a[href].elv-hero:visited {
 	color: #fff;
 }
 .elv-hero-content:after {
-	content: "🕘";
+	content: "🕗";
 	font-size: 7%;
 }
 .elv-hero-content {
