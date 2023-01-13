@@ -27,17 +27,22 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setServerOptions({
     // Default values are shown:
 
-    // Whether or not the live reload snippet is used
+    // Whether the live reload snippet is used
     liveReload: true,
 
-    // Opt-out of DOM diffing updates and use page reloads
+    // Whether DOM diffing updates are applied where possible instead of page reloads
     domDiff: true,
 
-    // The starting port number to attempt to use
+    // The starting port number
+    // Will increment up to (configurable) 10 times if a port is already in use.
     port: 8080,
 
-    // number of times to increment the port if in use
-    portReassignmentRetryCount: 10,
+    // Additional files to watch that will trigger server updates
+    // Accepts any chokidar.watch compatible: file, dir, glob, or Array.
+    // Works great with a separate bundler writing files to your output folder.
+    // e.g. `watch: ["_site/**/*.css"]`
+    watch: [],
+
 
     // Show local network IP addresses for device testing
     showAllHosts: false,
@@ -47,9 +52,6 @@ module.exports = function(eleventyConfig) {
       // key: "./localhost.key",
       // cert: "./localhost.cert",
     },
-
-    // Show the server version number on the command line
-    showVersion: false,
 
     // Change the default file encoding for reading/serving files
     encoding: "utf-8",
@@ -65,16 +67,22 @@ module.exports = function(eleventyConfig) {
 ```js
 module.exports = function(eleventyConfig) {
   eleventyConfig.setServerOptions({
+    // Show the server version number on the command line
+    showVersion: false,
+
     // Change the name of the folder name used for injected scripts
     injectedScriptsFolder: ".11ty",
 
-    // Backwards compatibility alias, renamed to `injectedScriptsFolder` in Dev Server 1.0+
+    // Number of times to increment a port is already in use
+    portReassignmentRetryCount: 10,
+
+    // Alias for backwards compatibility, renamed to `injectedScriptsFolder` in Dev Server 1.0+
     folder: ".11ty",
 
-    // Backwards compatibility alias, renamed to `liveReload` in Dev Server 1.0+
+    // Alias for backwards compatibility, renamed to `liveReload` in Dev Server 1.0+
     enabled: true,
 
-    // Backwards compatibility alias, renamed to `domDiff` in Dev Server 1.0+
+    // Alias for backwards compatibility, renamed to `domDiff` in Dev Server 1.0+
     domdiff: true,
   });
 };
@@ -83,6 +91,7 @@ module.exports = function(eleventyConfig) {
 
 </details>
 
+* Read more about [`chokidar` compatible paths](https://github.com/paulmillr/chokidar)
 * For a full list of `encoding` values supported by Node (also used in the `Content-Type` HTTP Header), check out [Node’s Buffer documentation](https://nodejs.org/api/buffer.html#buffers-and-character-encodings).
 * Using a root `404.html` file (a popular convention supported by Netlify, GitHub Pages, Vercel, and others) supported! We use the content from a `404.html` in your output folder when serving the error page for missing content.
 
