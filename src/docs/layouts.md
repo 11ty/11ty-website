@@ -258,11 +258,11 @@ Chaining multiple layouts together. [Read more about Layout Chaining](/docs/layo
 
 ## Omitting the Layout’s File Extension
 
-Omitting the layout file extension (for example `layout: mylayout`) will cause Eleventy to cycle through all of the supported template formats (`mylayout.*`) to look for a matching layout file. This behavior is slower than including the file extension.
+Omitting the layout file extension (for example `layout: mylayout`) causes Eleventy to cycle through all of the supported template formats (`mylayout.*`) to look for a matching layout file. There are a few drawbacks to this approach:
+1. It is slower! Including the file extension bypasses the file search.
+2. It is ambiguous if you have multiple layout files with the same name and different extensions (e.g. `mylayout.njk` and `mylayout.liquid`).
 
-{% callout "info", "md" %}This feature (though still enabled by default) is considered deprecated in `v2.0.0`. [Issue #1924](https://github.com/11ty/eleventy/issues/1924){% endcallout %}
-
-You can disable this behavior with the `setLayoutResolution` Configuration API method {% addedin "v2.0.0-canary.21" %} to prepare for the future:
+You can disable extensionless layouts in your project with the `setLayoutResolution` Configuration API method {% addedin "v2.0.0-canary.21" %} (we may swap this to be the default in a future major version of Eleventy):
 
 {% codetitle ".eleventy.js" %}
 
