@@ -27,11 +27,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setServerOptions({
     // Default values are shown:
 
-    // Opt-out of the live reload snippet
-    enabled: true,
+    // Whether or not the live reload snippet is used
+    liveReload: true,
 
     // Opt-out of DOM diffing updates and use page reloads
-    domdiff: true,
+    domDiff: true,
 
     // The starting port number to attempt to use
     port: 8080,
@@ -48,9 +48,6 @@ module.exports = function(eleventyConfig) {
       // cert: "./localhost.cert",
     },
 
-    // Change the name of the special folder name used for injected scripts
-    folder: ".11ty",
-
     // Show the server version number on the command line
     showVersion: false,
 
@@ -61,12 +58,28 @@ module.exports = function(eleventyConfig) {
 ```
 
 <details>
-<summary>Want to know if your Canary version includes one of these properties?</summary>
+<summary><strong>Expand to see the Full options list</strong></summary>
 
-* `domdiff` was added in `v2.0.0-canary.3`
-* `showVersion` was added in `v2.0.0-canary.3`
-* `encoding` was added in `v2.0.0-canary.4`
-* `404.html` support added in `v2.0.0-canary.4`
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setServerOptions({
+    // Change the name of the folder name used for injected scripts
+    injectedScriptsFolder: ".11ty",
+
+    // Backwards compatibility alias, renamed to `injectedScriptsFolder` in Dev Server 1.0+
+    folder: ".11ty",
+
+    // Backwards compatibility alias, renamed to `liveReload` in Dev Server 1.0+
+    enabled: true,
+
+    // Backwards compatibility alias, renamed to `domDiff` in Dev Server 1.0+
+    domdiff: true,
+  });
+};
+```
+
 
 </details>
 
