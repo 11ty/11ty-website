@@ -160,10 +160,10 @@ Practically speaking, this means that passthrough copy files _**will not**_ be c
 
 This behavior will revert if:
 
-1. You use a different development server (e.g. [swap back to Browsersync](/docs/dev-server/#swap-back-to-browsersync))
-2. If you are running Eleventy without `--serve` (a normal build or via `--watch`)
+1. You change from the default development server: [Eleventy Dev Server](/docs/dev-server/) (e.g. [swap back to Browsersync](/docs/dev-server/#swap-back-to-browsersync))
+2. If you are running Eleventy without `--serve` (a standard build or via `--watch`)
 
-You can also opt-out using this configuration API method:
+You can force-revert this behavior in your project using this configuration API method:
 
 {% codetitle ".eleventy.js" %}
 
