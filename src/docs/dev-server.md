@@ -38,7 +38,7 @@ module.exports = function(eleventyConfig) {
     port: 8080,
 
     // Additional files to watch that will trigger server updates
-    // Accepts any chokidar.watch compatible: file, dir, glob, or Array.
+    // Accepts an Array of file paths or globs (passed to `chokidar.watch`).
     // Works great with a separate bundler writing files to your output folder.
     // e.g. `watch: ["_site/**/*.css"]`
     watch: [],
@@ -91,7 +91,7 @@ module.exports = function(eleventyConfig) {
 
 </details>
 
-* Read more about [`chokidar` compatible paths](https://github.com/paulmillr/chokidar)
+* Read more about [`chokidar.watch` compatible paths](https://github.com/paulmillr/chokidar)
 * For a full list of `encoding` values supported by Node (also used in the `Content-Type` HTTP Header), check out [Node’s Buffer documentation](https://nodejs.org/api/buffer.html#buffers-and-character-encodings).
 * Using a root `404.html` file (a popular convention supported by Netlify, GitHub Pages, Vercel, and others) supported! We use the content from a `404.html` in your output folder when serving the error page for missing content.
 
