@@ -16,6 +16,8 @@ At time of release, this new server helps Eleventy by:
 * Faster `npm install` times by 85%
 * No unresolved `npm audit` errors or warnings 👀
 
+Read more on the [Eleventy Dev Server 1.0 release notes](https://github.com/11ty/eleventy-dev-server/releases/tag/v1.0.0).
+
 ## Options
 
 You can configure the server with the new `setServerOptions` Configuration API method.
