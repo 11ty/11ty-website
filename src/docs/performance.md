@@ -34,6 +34,7 @@ Sites listed on the [Eleventy Leaderboards](/speedlify/) are tested and ranked (
 
 * You can analyze your [project’s specific build performance metrics using Debug Mode](/docs/debug-performance/).
 * The [Directory Output plugin](/docs/plugins/directory-output/) will also report per-template performance and file size information.
+* Tip: Take [passthrough copy out of your build-loop with the Eleventy Dev Server](/docs/copy/#emulate-passthrough-copy-during-serve).
 
 <div class="youtube-related">
   {%- youtubeEmbed "KETQ4zS9Yp4", "28% build time performance improvement for Google’s web.dev (Weekly №1)", "30" -%}

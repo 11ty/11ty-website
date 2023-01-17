@@ -15,6 +15,7 @@ At time of release, this new server helps Eleventy by:
 * Reducing `node_modules` size 🏋️ from 81.7 MB to 36.3 MB
 * Faster `npm install` times by 85%
 * No unresolved `npm audit` errors or warnings 👀
+* Supports [emulated passthrough file copy](/docs/copy/#emulate-passthrough-copy-during-serve) for faster builds!
 
 Read more on the [Eleventy Dev Server 1.0 release notes](https://github.com/11ty/eleventy-dev-server/releases/tag/v1.0.0).
 
@@ -106,7 +107,6 @@ Try out the [`devcert-cli`](https://github.com/davewasmer/devcert-cli) package t
   {%- youtubeEmbed "7hER8HddlhQ", "Shipping the New Dev Server (Weekly №4)" -%}
   {%- youtubeEmbed "ZE5Np95-PeU", "Dev Server CLI (Weekly №14)", "463" -%}
 </div>
-
 
 ## Swap back to Browsersync {% addedin "2.0.0" %}
 
