@@ -176,7 +176,8 @@ function findBy(data, path, value) {
 }
 
 module.exports = function(eleventyConfig) {
-	eleventyConfig.setDataDeepMerge(true);
+	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+
 	if(process.env.NODE_ENV !== "production") {
 		eleventyConfig.setQuietMode(true);
 		eleventyConfig.ignores.add("src/api/*")
