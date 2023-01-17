@@ -46,7 +46,6 @@ module.exports = function(eleventyConfig) {
     // e.g. `watch: ["_site/**/*.css"]`
     watch: [],
 
-
     // Show local network IP addresses for device testing
     showAllHosts: false,
 

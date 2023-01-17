@@ -6,7 +6,7 @@ eleventyNavigation:
   excerpt: A plugin to smartly and efficiently add client-side components to your web site.
 overrideCommunityLinks: true
 ---
-# Partial Hydration {% addedin "2.0.0" %}
+# Partial Hydration
 
 {% tableofcontents %}
 
