@@ -176,7 +176,7 @@ This behavior will revert in your project automatically if:
 1. If you are running Eleventy without `--serve` (a standard build or via `--watch`)
 2. You change from the default development server: [Eleventy Dev Server](/docs/dev-server/) (e.g. [swap back to Browsersync](/docs/dev-server/#swap-back-to-browsersync))
 
-(For 2.0 canary users, note that this behavior spent a fair bit of time as the default (and required opt-out)—from `2.0.0-canary.12` through `2.0.0-canary.30`. It was changed to opt-in in `2.0.0-canary.31`.)
+(For 2.0 canary users, note that this behavior spent a fair bit of time as the default and required opt-out from `2.0.0-canary.12` through `2.0.0-canary.30`. It was changed to opt-in in `2.0.0-canary.31`.)
 
 <div class="youtube-related">
   {%- youtubeEmbed "EcId2RVdUFE", "Emulated Passthrough File Copy (Weekly №15)", "443" -%}
