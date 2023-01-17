@@ -460,7 +460,7 @@ module.exports = function(eleventyConfig) {
 
 This might be used in your templates (serverless or build) via {% raw %}`{{ collections.sidebarNav | eleventyNavigation }}`{% endraw %}.
 
-Now, the `sidebarNav` collection would not normally be available in a serverless context, because all of the templates that populate the menu are not in the scope of the serverless build. But we can generate a static copy of that collection for use in serverless mode. In fact, this is how the sidebar works on each (serverless) Author’s page (e.g. the [one for `@zachleat](/authors/zachleat/)).
+Now, the `sidebarNav` collection would not normally be available in a serverless context, because all of the templates that populate the menu are not in the scope of the serverless build. But we can generate a static copy of that collection for use in serverless mode. In fact, this is how the sidebar works on each (serverless) Author’s page (e.g. the [one for `@zachleat`](/authors/zachleat/)).
 
 Consider the following Eleventy template which creates an array of collection-like entries for the sidebar navigation.
 
