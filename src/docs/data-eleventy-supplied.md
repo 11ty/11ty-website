@@ -87,6 +87,7 @@ The `fileSlug` variable is mapped from `inputPath`, and is useful for creating y
 | `"index.md"` | `""` _(empty)_ |
 | `"myDir/index.md"` | `"myDir"` |
 | `"myDir/2018-01-01-index.md"` | `"myDir"` |
+| `"2018-01-01-myDir/index.md"` | `"myDir"` {% addedin "2.0.0-canary.10" %} |
 
 ### `filePathStem` {% addedin "0.9.0" %}
 
