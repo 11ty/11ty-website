@@ -8,7 +8,7 @@ eleventyNavigation:
 
 {% tableofcontents %}
 
-If we want to copy additional files that are not Eleventy templates, we use a feature called Passthrough File Copy to  tell Eleventy to copy things to our output folder for us.
+If we want to copy additional files that are not Eleventy templates, we use a feature called Passthrough File Copy to tell Eleventy to copy things to our output folder for us.
 
 ## Configuration API Method
 
@@ -38,8 +38,6 @@ module.exports = function(eleventyConfig) {
 {% callout "info" %}Passthrough File Copy entries are relative to the root of your project and <em>not</em> your Eleventy input directory.{% endcallout %}
 
 If you do not want to maintain the same directory structure, [change the output directory.](#change-the-output-directory)
-
-{% addedin "2.0.0" %}Passthrough file copy is [emulated when using `--serve`](#passthrough-during-serve).
 
 ### How Input Directories are Handled
 
