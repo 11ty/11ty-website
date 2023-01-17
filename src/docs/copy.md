@@ -152,30 +152,29 @@ You might want to use this for images by adding `"jpg"`, `"png"`, or maybe even 
 
 {% callout "info", "md" %}Note that this method is typically slower than the `addPassthroughCopy` configuration API method above, especially if your project is large and has lots of files.{% endcallout %}
 
-## Passthrough during `--serve`{% addedin "2.0.0" %}
+<span id="passthrough-during-serve"></span>
 
-New in Eleventy `2.0.0-canary.12`: passthrough file copy is _emulated_ when using the [Eleventy Dev Server](/docs/watch-serve/#eleventy-dev-server).
+## Speed up builds during `--serve` using Emulated Passthrough Copy {% addedin "2.0.0" %}
 
-Practically speaking, this means that passthrough copy files _**will not**_ be copied to your output folder and will not impact local development build times. Changes made to passthrough copy files _will_ still hot reload your web browser as expected.
+The [Eleventy Dev Server](/docs/watch-serve/#eleventy-dev-server) includes a feature that will _emulate_ passthrough file copy. Practically speaking, this means that (during `--serve` only!) files are referenced directly and _**will not**_ be copied to your output folder. Changes to passthrough file copies will not trigger an Eleventy build but _will_ live reload appropriately in the dev server.
 
-This behavior will revert if:
-
-1. You change from the default development server: [Eleventy Dev Server](/docs/dev-server/) (e.g. [swap back to Browsersync](/docs/dev-server/#swap-back-to-browsersync))
-2. If you are running Eleventy without `--serve` (a standard build or via `--watch`)
-
-You can force-revert this behavior in your project using this configuration API method:
+You can enable this behavior in your project using this configuration API method:
 
 {% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
-  // the default is "passthrough"
-  eleventyConfig.setServerPassthroughCopyBehavior("copy");
+  // the default is "copy"
+  eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 };
 ```
 
-* [Issue #2456](https://github.com/11ty/eleventy/issues/2456)
+This behavior will revert in your project automatically if:
 
+1. If you are running Eleventy without `--serve` (a standard build or via `--watch`)
+2. You change from the default development server: [Eleventy Dev Server](/docs/dev-server/) (e.g. [swap back to Browsersync](/docs/dev-server/#swap-back-to-browsersync))
+
+(For 2.0 canary users, note that this behavior spent a fair bit of time as the default (and required opt-out)—from `2.0.0-canary.12` through `2.0.0-canary.30`. It was changed to opt-in in `2.0.0-canary.31`.)
 
 <div class="youtube-related">
   {%- youtubeEmbed "EcId2RVdUFE", "Emulated Passthrough File Copy (Weekly №15)", "443" -%}
