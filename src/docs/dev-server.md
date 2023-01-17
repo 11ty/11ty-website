@@ -11,9 +11,9 @@ Eleventy 2.0 bundles a brand new default development server. Check out the [`11t
 
 At time of release, this new server helps Eleventy by:
 
-* Reducing dependencies from 349 to 202
-* Reducing `node_modules` size 🏋️ from 81.7 MB to 36.3 MB
-* Faster `npm install` times by 85%
+* Reduce dependencies by 47.3% to 211 (down from 311)
+* Reducing `node_modules` size 🏋️ by 326.9% to 36.3 MB (down from 155 MB)
+* Faster `npm install` times by 43.8%
 * No unresolved `npm audit` errors or warnings 👀
 * Supports [emulated passthrough file copy](/docs/copy/#emulate-passthrough-copy-during-serve) for faster builds!
 
