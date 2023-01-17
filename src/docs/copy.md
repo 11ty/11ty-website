@@ -154,9 +154,11 @@ You might want to use this for images by adding `"jpg"`, `"png"`, or maybe even 
 
 <span id="passthrough-during-serve"></span>
 
-## Speed up builds during `--serve` using Emulated Passthrough Copy {% addedin "2.0.0" %}
+## Emulate Passthrough Copy During `--serve` {% addedin "2.0.0" %}
 
-The [Eleventy Dev Server](/docs/watch-serve/#eleventy-dev-server) includes a feature that will _emulate_ passthrough file copy. Practically speaking, this means that (during `--serve` only!) files are referenced directly and _**will not**_ be copied to your output folder. Changes to passthrough file copies will not trigger an Eleventy build but _will_ live reload appropriately in the dev server.
+The [Eleventy Dev Server](/docs/watch-serve/#eleventy-dev-server) includes a great build-performance feature that will _emulate_ passthrough file copy.
+
+Practically speaking, this means that (during `--serve` only!) files are referenced directly and _**will not**_ be copied to your output folder. Changes to passthrough file copies will not trigger an Eleventy build but _will_ live reload appropriately in the dev server.
 
 You can enable this behavior in your project using this configuration API method:
 
