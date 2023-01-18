@@ -23,7 +23,7 @@ Read more about [local versus global installation](/docs/global-installation/).
 ### Smaller, More Secure
 
 * ✅ Dependencies decreased by **32.1%**: [211 modules](https://npmgraph.js.org/?q=@11ty/eleventy@2.0.0-beta.1) ([311 in v1.0.2](https://npmgraph.js.org/?q=@11ty/eleventy@1.0.2))
-* ✅ `node_modules` file weight decreased by **77.8%** `node_modules`: 34.3 MB (155 MB in v1.0.2)
+* ✅ `node_modules` file weight decreased by **77.8%**: 34.3 MB (155 MB in v1.0.2)
 * ✅ [**30.5% faster** `npm install`](https://docs.google.com/spreadsheets/d/1lkeWOhEXTNh0yxWaNOl_UFOHQea2YnSHit4QLjqXUb8/edit?usp=sharing)
 
 ### Faster Builds
