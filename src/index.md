@@ -1,8 +1,9 @@
 ---
 layout: layouts/main.njk
-logoLink: /docs/
+# logoLink: /docs/
+logoLink: /blog/eleventy-v2-beta/
 # Don’t forget to update the emoji in CSS
-logoContent: "<span class='elv-hero-content'>3</span>"
+logoContent: "<span class='elv-hero-content'>2.0</span>"
 ignoreGitHubButtons: true
 ignoreSupporters: true
 ignoreFastestSite: true
