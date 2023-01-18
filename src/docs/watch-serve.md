@@ -39,13 +39,11 @@ module.exports = function(eleventyConfig) {
 
 Eleventy will ignore files or folders listed in your `.gitignore` file by default, [unless `setUseGitIgnore` is turned off](/docs/ignores/#opt-out-of-using-.gitignore).
 
-### Configuration API
-
-{% addedin "v2.0.0-canary.18" %}
+### Configuration API {% addedin "2.0.0-canary.18" %}
 
 Previously, [the configuration API ignores for template processing](/docs/ignores/#configuration-api) were also used as ignores for watching (e.g. `eleventyConfig.ignores.add("README.md")`).
 
-New in v2.0.0-canary.18, watch target ignores now have their own dedicated API:
+New in {{ "2.0.0-canary.18" | coerceVersion }}, watch target ignores now have their own dedicated API:
 
 ```js
 module.exports = function(eleventyConfig) {

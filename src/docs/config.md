@@ -422,9 +422,9 @@ module.exports = function(eleventyConfig) {
 ```
 
 <details>
-<summary><em><strong>Backwards Compatibility Note</strong></em> (prior to <code>2.0.0-canary.19</code>)</summary>
+<summary><em><strong>Backwards Compatibility Note</strong></em> (<code>{{ "2.0.0-canary.19" | coerceVersion }}</code>)</summary>
 
-Prior to 2.0.0-canary.19 this feature was exposed using a `jsDataFileSuffix` property in your configuration return object. When the `setDataFileSuffixes` method has not been used, Eleventy maintains backwards compatibility for old projects by using this property as a fallback.
+Prior to {{ "2.0.0-canary.19" | coerceVersion }} this feature was exposed using a `jsDataFileSuffix` property in the configuration return object. When the `setDataFileSuffixes` method has not been used, Eleventy maintains backwards compatibility for old projects by using this property as a fallback.
 
 {% codetitle ".eleventy.js" %}
 

@@ -14,8 +14,8 @@ const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const eleventyImage = require("@11ty/eleventy-img");
 
+const { addedIn, coerceVersion } = require("./config/addedin");
 const monthDiffPlugin = require("./config/monthDiff");
-const addedInLocalPlugin = require("./config/addedin");
 const minificationLocalPlugin = require("./config/minification");
 const cleanName = require("./config/cleanAuthorName");
 const objectHas = require("./config/object-has");
@@ -208,7 +208,6 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(markdownPlugin);
 	eleventyConfig.addPlugin(rssPlugin);
 	eleventyConfig.addPlugin(navigationPlugin);
-	eleventyConfig.addPlugin(addedInLocalPlugin);
 	eleventyConfig.addPlugin(monthDiffPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
@@ -237,6 +236,9 @@ module.exports = function(eleventyConfig) {
 				return item.data?.eleventyNavigation && item.data?.excludeFromSidebar !== true;
 			});
 	});
+
+	eleventyConfig.addFilter("coerceVersion", coerceVersion);
+	eleventyConfig.addShortcode("addedin", addedIn);
 
 	eleventyConfig.addShortcode("indieavatar", shortcodes.getIndieAvatarHtml);
 

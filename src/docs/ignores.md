@@ -33,7 +33,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-{% addedin "v2.0.0-canary.18" %}These were decoupled from the [ignores used for the file watcher](/docs/watch-serve/#ignore-watching-files).
+{% addedin "2.0.0-canary.18" %}These were decoupled from the [ignores used for the file watcher](/docs/watch-serve/#ignore-watching-files).
 
 ## Defaults
 

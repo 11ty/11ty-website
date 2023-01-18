@@ -2,8 +2,6 @@
 eleventyNavigation:
   key: Plugins
   order: 7.5
-eleventyComputed:
-  pageTitle: "Plugins {% addedin '0.2.13' %}"
 communityLinksKey: plugins
 ---
 Plugins are custom code that Eleventy can import into a project from an external repository.

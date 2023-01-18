@@ -262,7 +262,7 @@ Omitting the layout file extension (for example `layout: mylayout`) causes Eleve
 1. It is slower! Including the file extension bypasses the file search.
 2. It is ambiguous if you have multiple layout files with the same name and different extensions (e.g. `mylayout.njk` and `mylayout.liquid`).
 
-You can disable extensionless layouts in your project with the `setLayoutResolution` Configuration API method {% addedin "v2.0.0-canary.21" %} (we may swap this to be the default in a future major version of Eleventy):
+You can disable extensionless layouts in your project with the `setLayoutResolution` Configuration API method {% addedin "2.0.0-canary.21" %} (we may swap this to be the default in a future major version of Eleventy):
 
 {% codetitle ".eleventy.js" %}
 

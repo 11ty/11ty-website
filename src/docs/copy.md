@@ -152,7 +152,7 @@ You might want to use this for images by adding `"jpg"`, `"png"`, or maybe even 
 
 <span id="passthrough-during-serve"></span>
 
-## Emulate Passthrough Copy During `--serve` {% addedin "2.0.0" %}
+## Emulate Passthrough Copy During `--serve` {% addedin "2.0.0-canary.12" %}
 
 The [Eleventy Dev Server](/docs/watch-serve/#eleventy-dev-server) includes a great build-performance feature that will _emulate_ passthrough file copy.
 
@@ -174,15 +174,15 @@ This behavior will revert to `"copy"` in your project automatically if:
 1. If you are running Eleventy without `--serve` (a standard build or via `--watch`)
 2. You change from the default development server: [Eleventy Dev Server](/docs/dev-server/) (e.g. [swap back to Browsersync](/docs/dev-server/#swap-back-to-browsersync))
 
-_For 2.0 canary users, note that this behavior spent a fair bit of time as the default and required opt-out from `2.0.0-canary.12` through `2.0.0-canary.30`. It was changed to opt-in in `2.0.0-canary.31`._
+{% callout "info", "md" %}_For 2.0 canary users, note that this behavior spent a fair bit of time as the default and required opt-out from `2.0.0-canary.12` through `2.0.0-canary.30`. It was changed to opt-in in `2.0.0-canary.31`._{% endcallout %}
 
 <div class="youtube-related">
   {%- youtubeEmbed "EcId2RVdUFE", "Emulated Passthrough File Copy (Weekly №15)", "443" -%}
 </div>
 
-## Advanced Options {% addedin "2.0.0" %}
+## Advanced Options {% addedin "2.0.0-canary.12" %}
 
-New in `2.0.0-canary.12`, you can pass additional configuration options to the `recursive-copy` package. This unlocks the use passthrough file copy with symlinks, transforming or renaming copied files. Here are just a few examples:
+New in `{{ "2.0.0-canary.12" | coerceVersion }}`, you can pass additional configuration options to the `recursive-copy` package. This unlocks the use passthrough file copy with symlinks, transforming or renaming copied files. Here are just a few examples:
 
 {% codetitle ".eleventy.js" %}
 
