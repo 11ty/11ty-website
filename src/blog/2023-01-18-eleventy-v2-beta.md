@@ -16,9 +16,11 @@ npm install @11ty/eleventy@beta -g
 
 Read more about [local versus global installation](/docs/global-installation/).
 
-## New to Eleventy?
+{% youtubeEmbed "TcTR0TLqM3I" %}
 
-**Eleventy is a flexible and production-ready site generator** known for its zero-client JavaScript footprint, [speedy sites, speedy builds](/docs/performance/), and [full control over the output](https://www.youtube.com/watch?v=b4frtsT4Cgo). Watch [The State of Eleventy in Two Minutes](https://www.youtube.com/watch?v=EZfNr-YblBE) or [read more about Eleventy’s project goals.](/docs/)
+### Are you new to Eleventy?
+
+**Eleventy is a flexible and production-ready site generator** known for its zero-client-JavaScript footprint, [speedy sites, speedy builds](/docs/performance/), and [full control over the output](https://www.youtube.com/watch?v=b4frtsT4Cgo). Watch [The State of Eleventy in Two Minutes](https://www.youtube.com/watch?v=EZfNr-YblBE) or [read more about Eleventy’s project goals.](/docs/)
 
 ## The Big Features
 
