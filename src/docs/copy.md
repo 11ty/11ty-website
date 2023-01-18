@@ -182,7 +182,7 @@ This behavior will revert to `"copy"` in your project automatically if:
 
 ## Advanced Options {% addedin "2.0.0-canary.12" %}
 
-New in `{{ "2.0.0-canary.12" | coerceVersion }}`, you can pass additional configuration options to the `recursive-copy` package. This unlocks the use passthrough file copy with symlinks, transforming or renaming copied files. Here are just a few examples:
+Additionally, you can pass additional configuration options to the `recursive-copy` package. This unlocks the use passthrough file copy with symlinks, transforming or renaming copied files. Here are just a few examples:
 
 {% codetitle ".eleventy.js" %}
 
