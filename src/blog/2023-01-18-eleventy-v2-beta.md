@@ -22,17 +22,17 @@ Read more about [local versus global installation](/docs/global-installation/).
 
 ### Smaller, More Secure
 
-* ✅ **47.3% fewer** dependencies: [211 modules](https://npmgraph.js.org/?q=@11ty/eleventy@2.0.0-beta.1) ([311 in v1.0.2](https://npmgraph.js.org/?q=@11ty/eleventy@1.0.2))
-* ✅ **326.9% smaller** `node_modules`: 34.3 MB (155 MB in v1.0.2)
-* ✅ [**43.8% faster** `npm install`](https://docs.google.com/spreadsheets/d/1lkeWOhEXTNh0yxWaNOl_UFOHQea2YnSHit4QLjqXUb8/edit?usp=sharing)
+* ✅ Dependencies decreased by **32.1%**: [211 modules](https://npmgraph.js.org/?q=@11ty/eleventy@2.0.0-beta.1) ([311 in v1.0.2](https://npmgraph.js.org/?q=@11ty/eleventy@1.0.2))
+* ✅ `node_modules` file weight decreased by **77.8%** `node_modules`: 34.3 MB (155 MB in v1.0.2)
+* ✅ [**30.5% faster** `npm install`](https://docs.google.com/spreadsheets/d/1lkeWOhEXTNh0yxWaNOl_UFOHQea2YnSHit4QLjqXUb8/edit?usp=sharing)
 
 ### Faster Builds
 
 * Improved build performance (tested on [a sample 500 page site](https://docs.google.com/spreadsheets/d/1-H3wmT7q7m7G7d5M_dCLxQOiAAX3TP0byQdf0pP1fAQ/edit?usp=sharing) against v1.0.2) using:
-  * Liquid: ✅ **22.2% faster**
-  * Nunjucks: ✅ **21.57% faster**
-  * Markdown (with Liquid): ✅ **21.88% faster**
-  * JavaScript (11ty.js): ✅ **9.09% faster**
+  * Liquid: ✅ **18.18% faster**
+  * Nunjucks: ✅ **17.74% faster**
+  * Markdown (with Liquid): ✅ **17.95% faster**
+  * JavaScript (11ty.js): ✅ **8.33% faster**
 * [`--incremental` for incremental builds](/docs/usage/incremental/) [#108](https://github.com/11ty/eleventy/issues/108#issuecomment-1362030361)
   * Smarter incremental builds with support for layout dependencies, [registered dependencies on custom templates](/docs/languages/custom/#registering-dependencies), dependencies in `pagination` data or [`eleventyImport`](/docs/collections/#declare-your-collections-for-incremental-builds) [#975](https://github.com/11ty/eleventy/issues/975)
 * [`--ignore-initial` command line option](/docs/usage/#ignore-initial-to-run-eleventy-without-an-initial-build) to skip the first build (best paired with `--incremental`)
