@@ -13,6 +13,8 @@ skipAuth: true
 eleventyComputed:
   social:
     description: "Eleventy, a simpler static site generator."
+eleventyImport:
+  collections: ["blog"]
 ---
 {# {% callout "", "html", "elv-serverless-banner" %}
 <strong>This page was rendered <em>just-in-time</em> for you using <a href="/docs/plugins/serverless/">Eleventy Serverless</a></strong>
