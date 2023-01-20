@@ -8,11 +8,11 @@ eleventyNavigation:
 ---
 # `url` Universal Filter
 
-{% callout "info", "md" %}It’s recommended to use the simpler [HTML `<base>` plugin](/docs/plugins/html-base/) (new in Eleventy 2.0) instead of the `url` filter moving forward.{% endcallout %}
+{% callout "info", "md" %}If you need to deploy your site to a subfolder, it’s recommended to use the simpler [HTML `<base>` plugin](/docs/plugins/html-base/) {% addedin "2.0.0-canary.15" %} with `pathPrefix` instead of have to litter the `url` filter throughout your content moving forward!{% endcallout %}
 
 Works with the `pathPrefix` configuration option to properly normalize absolute paths in your content with the `pathPrefix` added. Useful if you host your site on GitHub Pages, which normally live in a subdirectory, e.g. `https://11ty.github.io/eleventy-base-blog/`. We set `pathPrefix: "/eleventy-base-blog/"` and our absolute links all have this prepended to the beginning.
 
-{% callout "info", "md" %}_If you don’t need `pathPrefix` (or don’t ever plan on moving your site’s top-level directory structure), you probably don’t need to use the `url` filter._{% endcallout %}
+_**Note that if you don’t need `pathPrefix` (or don’t ever plan on moving your site’s top-level directory structure), you probably don’t need to use the `url` filter.**_
 
 {% raw %}
 ```html
@@ -44,5 +44,3 @@ Works with the `pathPrefix` configuration option to properly normalize absolute 
 | `'/myDir/'`  | `'/rootDir/'` | `'/rootDir/myDir/'`                                            |
 | `'./myDir/'` | `'/rootDir/'` | `'myDir/'` ⚠️ This style is probably not what you want—careful! |
 | `'../myDir/'` | `'/rootDir/'` | `'../myDir/'`                                                 |
-
-* [← Back to Filters documentation.](/docs/filters/)
