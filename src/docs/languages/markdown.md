@@ -128,7 +128,9 @@ Starting with Eleventy 2.0 and newer, this feature is [disabled](https://github.
 <details>
   <summary>Want to re-enable Indented Code Blocks? <strong>Read this lengthy Common Pitfall.</strong></summary>
 
-### There are extra `<pre>` and `<code>` in my output
+<div id="there-are-extra-and-in-my-output"><!-- Backwards compat --></div>
+
+### There are extra pre and code tags in my output
 
 <div class="elv-callout elv-callout-warn">This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</div>
 
