@@ -393,6 +393,9 @@ ${text.trim()}
 			if( version.tag === "LATEST" ) {
 				continue;
 			}
+			if( version.channel && version.channel !== "latest" ) {
+				continue;
+			}
 			if( !config.prerelease && version.prerelease ) {
 				continue;
 			}
