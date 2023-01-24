@@ -19,6 +19,7 @@ module.exports = class {
 		feed.addSource("atom", "Blog", "https://www.11ty.dev/blog/feed.xml");
 		feed.addSource("rss", "Mastodon", "https://fosstodon.org/users/eleventy.rss");
 		feed.addSource("twitterUser", "Twitter", "eleven_ty", "949639269433380864");
+		feed.addSource("atom", "GitHub Releases", "https://github.com/11ty/eleventy/releases.atom");
 
 		return feed.toRssFeed({
 			title: "Eleventy’s Activity Feed",
