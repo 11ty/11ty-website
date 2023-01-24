@@ -15,17 +15,17 @@ module.exports = [
 	},
 	{
 		url: "/blog/logo-homage/",
-		image: "./src/img/mascots/phineas-ben-facemask--v46-edited_FINAL-1.webp",
-		name: "Masked Grumpy",
-		author: "Remixed by Ben Brignell",
-		description: "7 July 2020"
-	},
-	{
-		url: "/blog/logo-homage/",
 		image: "./src/img/mascots/phineas.png",
 		name: "Grumpy",
 		author: "Phineas X. Jones",
 		description: "18 December 2019. Our first commissioned iteration."
+	},
+	{
+		url: "/blog/logo-homage/",
+		image: "./src/img/mascots/phineas-ben-facemask--v46-edited_FINAL-1.webp",
+		name: "Masked Grumpy",
+		author: "Remixed by Ben Brignell",
+		description: "7 July 2020"
 	},
 	{
 		url: "/blog/new-mascot-from-geri-coady/",
