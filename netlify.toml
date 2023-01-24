@@ -6,19 +6,19 @@ command = "npm run build-production"
 framework = "#static"
 command = "npm start"
 
-# [[plugins]]
-# # https://github.com/netlify/netlify-plugin-lighthouse
-# package = "@netlify/plugin-lighthouse"
+[[plugins]]
+# https://github.com/netlify/netlify-plugin-lighthouse
+package = "@netlify/plugin-lighthouse"
 
-# # Fails build when a category is below a threshold
-# [plugins.inputs.thresholds]
-# performance = 0.9
-# accessibility = 0.9
-# best-practices = 0.9
-# seo = 0.9
+# Fails build when a category is below a threshold
+[plugins.inputs.thresholds]
+performance = 0.9
+accessibility = 0.9
+best-practices = 0.9
+seo = 0.9
 
-# [plugins.inputs]
-# output_path = "reports/lighthouse/index.html"
+[plugins.inputs]
+output_path = "reports/lighthouse/index.html"
 
 [functions]
 directory = "netlify/functions/"
