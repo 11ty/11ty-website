@@ -180,11 +180,13 @@ module.exports = function(eleventyConfig) {
 
 	if(process.env.NODE_ENV !== "production") {
 		eleventyConfig.setQuietMode(true);
-		eleventyConfig.ignores.add("src/api/*")
-		eleventyConfig.ignores.add("src/follow-feed.11ty.js")
-		eleventyConfig.ignores.add("src/docs/feed.njk")
-		eleventyConfig.ignores.add("src/docs/quicktipsfeed.njk")
-		eleventyConfig.ignores.add("src/blog/blog-feed.njk")
+		eleventyConfig.ignores.add("src/api/*");
+		eleventyConfig.ignores.add("src/docs/feed.njk");
+		eleventyConfig.ignores.add("src/docs/quicktipsfeed.njk");
+		eleventyConfig.ignores.add("src/blog/blog-feed.njk");
+	}
+	if(process.env.NODE_ENV !== "production" || !process.env.TWITTER_BEARER_TOKEN) {
+		eleventyConfig.ignores.add("src/follow-feed.11ty.js");
 	}
 
 	eleventyConfig.setServerOptions({
