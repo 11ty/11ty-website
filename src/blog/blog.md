@@ -15,9 +15,9 @@ eleventyImport:
 
 📢 [Subscribe to the **Eleventy News Feed**](/blog/feed.xml)
 
-You can find a bunch of other [blog posts about Eleventy on Zach’s blog](https://www.zachleat.com/web/eleventy/).
+{% callout "info", "md" %}For extended Eleventy coverage, follow [`zachleat.com/web/eleventy`](https://www.zachleat.com/web/eleventy/).{% endcallout %}
 
-{%- for news in collections.blog | reverse %}
+{% for news in collections.blog | reverse %}
 * [{{ news.data.newstitle }}]({{ news.data.page.url }}) <small><em>on {{ news.date | newsDate }}</em></small>
 {%- endfor %}
 * [Eleventy wins second Google Open Source Award](https://opensource.googleblog.com/2019/04/google-open-source-peer-bonus-winners.html) <small><em> on 2019 April 26</em></small>
@@ -30,3 +30,4 @@ You can find a bunch of other [blog posts about Eleventy on Zach’s blog](https
 * [Introducing Eleventy, a new Static Site Generator](https://www.zachleat.com/web/introducing-eleventy/) <small><em> on 2018 February 12</em></small>
 * [Eleventy’s very first (and second and third) release](https://github.com/11ty/eleventy/releases?after=v0.1.3) <small><em> on 2017 December 20</em></small>
 * Eleventy’s [first commit](https://github.com/11ty/eleventy/commit/00ad9192605d5d501de6aae193701c5a2297ef2c) makes the auspicious claim: “It’s doing what it’s supposed to do” <small><em> on 2017 November 26</em></small>
+
