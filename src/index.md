@@ -1,9 +1,9 @@
 ---
 layout: layouts/main.njk
-# logoLink: /docs/
-logoLink: /blog/eleventy-v2-beta/
+logoLink: /docs/
 # Don’t forget to update the emoji in CSS
-logoContent: "<span class='elv-hero-content'>2.0</span>"
+# logoLink: /blog/eleventy-v2-beta/
+# logoContent: "<span class='elv-hero-content'>2.0</span>"
 ignoreGitHubButtons: true
 ignoreSupporters: true
 ignoreFastestSite: true
@@ -24,7 +24,7 @@ eleventyImport:
 {%- set highlightedBlogPost = collections.blog | findBy("data.homePageHighlight", true) | first %}
 {%- if highlightedBlogPost %}
 <div class="elv-callout">
-  <strong>Featured Blog Post</strong>: <a href="{{ highlightedBlogPost.data.page.url }}">{{ highlightedBlogPost.data.newstitle }}</a>
+  <strong><a href="{{ highlightedBlogPost.data.page.url }}">{{ highlightedBlogPost.data.newstitle }}</a></strong> and more on the <a href="/blog/">Eleventy Blog</a>.
 </div>
 {%- endif %}
 
