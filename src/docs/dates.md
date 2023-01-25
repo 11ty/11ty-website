@@ -48,7 +48,7 @@ As a last resort, the file creation date is used. [Careful when relying on file 
 
 ## Dates off by one day?
 
-<div class="elv-callout elv-callout-warn">This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</div>
+{% callout "warn" %}This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.{% endcallout %}
 
 You’re probably displaying UTC dates in a local time zone.
 

@@ -17,15 +17,9 @@ eleventyComputed:
 eleventyImport:
   collections: ["blog"]
 ---
-{# {% callout "", "html", "elv-serverless-banner" %}
-<strong>This page was rendered <em>just-in-time</em> for you using <a href="/docs/plugins/serverless/">Eleventy Serverless</a></strong>
-<code class="elv-serverless-banner-time"><time datetime="{{ config.now | toISO }}">{{ config.now | newsDate("yyyy LLL dd HH:mm:ss.SSS") }}</time></code>
-{% endcallout %} #}
 {%- set highlightedBlogPost = collections.blog | findBy("data.homePageHighlight", true) | first %}
 {%- if highlightedBlogPost %}
-<div class="elv-callout">
-  <strong><a href="{{ highlightedBlogPost.data.page.url }}">{{ highlightedBlogPost.data.newstitle }}</a></strong> and more on the <a href="/blog/">Eleventy Blog</a>.
-</div>
+{% callout %}<strong><a href="{{ highlightedBlogPost.data.page.url }}">{{ highlightedBlogPost.data.newstitle }}</a></strong> and more on the <a href="/blog/">Eleventy Blog</a>.{% endcallout %}
 {%- endif %}
 
 <div class="fullwidth-module">{% include "logos.njk" %}</div>

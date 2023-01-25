@@ -216,6 +216,6 @@ Review the [full list of options on the `recursive-copy` GitHub repository](http
 
 <div id="passthrough-all-content"></div><!-- backwards compat link -->
 
-{% callout "warn", "md" -%}The `--passthroughall` flag was removed in Eleventy v2.0.0.{% endcallout %}
+{% callout "warn", "md" %}The `--passthroughall` flag was removed in Eleventy v2.0.0.{% endcallout %}
 
 You can emulate the same functionality using the [`addPassthroughCopy` API method documented above](#configuration-api-method)! If you’re still wanting to read about it, head [back to the 1.x docs](https://v1-0-2.11ty.dev/docs/copy/#passthrough-all-content).
