@@ -1,3 +1,5 @@
+const activity = require("../config/activity.js");
+
 module.exports = class {
 	data() {
 		return {
@@ -8,19 +10,7 @@ module.exports = class {
 	}
 
 	async render() {
-		const { ActivityFeed } = await import("@11ty/eleventy-activity-feed");
-
-		let feed = new ActivityFeed();
-
-		feed.setCacheDuration("1h"); // cache is persisted now, so we’ll update this at maximum once per hour
-
-		// The Eleventy Activity Feed
-		feed.addSource("youtubeUser", "YouTube", "UCskGTioqrMBcw8pd14_334A"); // Eleventy
-		feed.addSource("atom", "Blog", "https://www.11ty.dev/blog/feed.xml");
-		feed.addSource("atom", "Quick Tips", "https://www.11ty.dev/docs/quicktips/feed.xml");
-		feed.addSource("atom", "GitHub Releases", "https://github.com/11ty/eleventy/releases.atom");
-		feed.addSource("rss", "Mastodon", "https://fosstodon.org/users/eleventy.rss");
-		feed.addSource("twitterUser", "Twitter", "eleven_ty", "949639269433380864");
+		const feed = await activity();
 
 		return feed.toRssFeed({
 			title: "Eleventy’s Activity Feed",
