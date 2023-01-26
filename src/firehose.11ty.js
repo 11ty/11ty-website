@@ -22,11 +22,16 @@ module.exports.data = async function() {
 
 module.exports.render = async function({entries}) {
 	return `
-<h1>Eleventy Activity Firehose</h1>
+<h1>Eleventy Firehose</h1>
 
-<p>This page shows entries from the <a href="/blog/">Eleventy Blog</a>, <a href="/docs/quicktips/">Quick Tips</a>, <a href="https://11ty.dev/youtube">YouTube channel</a>, <a href="https://11ty.dev/mastodon">Mastodon account</a>, <a href="https://11ty.dev/twitter">Twitter feed</a> (currently dormant), and <em>all</em> GitHub releases (all of <a href="https://github.com/11ty/"><code>11ty</code> org</a> repositories).</p>
+<p>This page shows activity from the <a href="/blog/">Eleventy Blog</a>, <a href="/docs/quicktips/">Quick Tips</a>, <a href="https://11ty.dev/youtube">YouTube channel</a>, <a href="https://11ty.dev/mastodon">Mastodon account</a>, <a href="https://11ty.dev/twitter">Twitter feed</a> (currently dormant), and <em>all</em> GitHub releases (all of <a href="https://github.com/11ty/"><code>11ty</code> org</a> repositories).</p>
 
-<p><strong><a href="/follow/follow.rss">Subscribe to the Firehose RSS feed.</a></strong></p>
+<ul>
+	<li><strong><a href="/follow/follow.rss">Subscribe to the Firehose RSS feed.</a></strong></li>
+	<li>Built using <a href="https://github.com/11ty/eleventy-activity-feed"><code>eleventy-activity-feed</code></a>.</li>
+</ul>
+
+<hr>
 
 <style>
 .activity-feed .elv-callout-box { max-width: 35em; }
@@ -46,6 +51,8 @@ module.exports.render = async function({entries}) {
 
 <div class="activity-feed">
 	<filter-container oninit>
+		<p data-filter-results="result/results" aria-live="polite"></p>
+
 		<form>
 			<strong>Filter:</strong>
 			<label>
@@ -72,7 +79,6 @@ module.exports.render = async function({entries}) {
 				<input type="checkbox" value="quick-tips" data-filter-key="type" checked>
 				Quick Tips
 			</label>
-			<p data-filter-results="result/results" aria-live="polite"></p>
 		</form>
 ${entries.map(entry => {
 	let content = entry.type === "tweet" || entry.title.startsWith("Mastodon: ") ? entry.content || "" : "";
