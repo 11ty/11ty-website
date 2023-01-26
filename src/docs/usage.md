@@ -104,9 +104,11 @@ Read more about [ndjson](https://github.com/ndjson/ndjson-spec).
 ### `--incremental` for Partial Incremental Builds
 
 ```bash
-# Repeat builds only operate on files that have changed
+# *Repeat* builds only operate on files that have changed
 npx @11ty/eleventy --watch --incremental
 npx @11ty/eleventy --serve --incremental
+
+# Skip the initial full build with `--ignore-initial`
 npx @11ty/eleventy --serve --incremental --ignore-initial
 ```
 
