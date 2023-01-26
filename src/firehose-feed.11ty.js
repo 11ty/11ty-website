@@ -1,9 +1,11 @@
 const activity = require("../config/activity.js");
 
+const PERMALINK = "/firehose/firehose.rss";
+
 module.exports = class {
 	data() {
 		return {
-			permalink: "/firehose/firehose.rss",
+			permalink: PERMALINK,
 			layout: false,
 			eleventyExcludeFromCollections: true
 		}
@@ -13,9 +15,9 @@ module.exports = class {
 		const feed = await activity();
 
 		return feed.toRssFeed({
-			title: "Eleventy’s Activity Feed",
+			title: "The Eleventy Firehose",
 			language: "en",
-			url: "https://www.11ty.dev/activity.rss",
+			url: `https://www.11ty.dev${PERMALINK}`,
 			subtitle: "One centralized feed of Eleventy activity across the web.",
 		});
 	}
