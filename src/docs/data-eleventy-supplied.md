@@ -139,10 +139,10 @@ module.exports = function(eleventyConfig) {
 let eleventy = {
 
   // Eleventy version
-  version: "1.0.1", // New in Eleventy v1.0.1
+  version: "1.0.1", // New in {{ "1.0.1" | coerceVersion }}
 
   // For use with `<meta name="generator">`
-  generator: "Eleventy v1.0.1", // New in Eleventy v1.0.1
+  generator: "Eleventy v1.0.1", // New in {{ "1.0.1" | coerceVersion }}
 
   // Read more about their `process.env` counterparts below
   env: {
@@ -155,6 +155,9 @@ let eleventy = {
 
     // The method, either `cli` or `script`
     source: "cli",
+
+    // One of `serve`, `watch`, or `build`
+    runMode: "build", // New in {{ "2.0.0-beta.2" | coerceVersion }}
   },
 
   serverless: {
