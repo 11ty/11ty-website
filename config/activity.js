@@ -18,7 +18,7 @@ module.exports = async function() {
 	feed.addSource("twitterUser", "Twitter", "eleven_ty", "949639269433380864");
 
 	if(process.env.NODE_ENV === "production") {
-		// Warning: at time of writing Elevnety has 51 repos, beware if this grows beyond the max of 100
+		// Warning: at time of writing Eleventy has 51 repos, beware if this grows beyond the max of 100
 		const PER_PAGE = 100; // max: 100
 		let githubOrgRepos = await EleventyFetch(`https://api.github.com/orgs/11ty/repos?per_page=${PER_PAGE}`, {
 			type: "json",
