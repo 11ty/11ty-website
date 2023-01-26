@@ -39,7 +39,7 @@ module.exports.render = async function({entries}) {
 		<form>
 			<strong>Filter:</strong>
 			<label>
-				<input type="checkbox" value="mastodon" data-filter-key="type" checked>
+				<input type="checkbox" value="mastodon" data-filter-key="type">
 				Mastodon
 			</label>
 			<label>
