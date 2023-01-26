@@ -42,7 +42,7 @@
     ]
   },
   "devDependencies": {
-    "@11ty/eleventy": "2.0.0-beta.1",
+    "@11ty/eleventy": "2.0.0-beta.2",
     "@11ty/eleventy-activity-feed": "^1.0.9",
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-img": "^2.0.1",
@@ -50,7 +50,7 @@
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
     "@netlify/functions": "^1.4.0",
-    "@netlify/plugin-lighthouse": "^4.0.6",
+    "@netlify/plugin-lighthouse": "^4.0.7",
     "clean-css": "^5.3.2",
     "comma-number": "^2.1.0",
     "cross-spawn": "^7.0.3",
