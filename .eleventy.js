@@ -731,6 +731,10 @@ to:
 	})
 
 	eleventyConfig.addShortcode("youtubeEmbed", function(slug, label, startTime) {
+		if(label) {
+			label = label.replace(/"/g, "");
+		}
+
 		let readableStartTime = "";
 		if(startTime) {
 			let t = parseInt(startTime, 10);

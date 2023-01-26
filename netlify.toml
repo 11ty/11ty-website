@@ -47,6 +47,12 @@ status = 200
 force = true
 
 [[redirects]]
+from = "/mastodon"
+to = "https://fosstodon.org/@eleventy"
+status = 301
+force = true
+
+[[redirects]]
 from = "/youtube"
 to = "https://www.youtube.com/c/EleventyVideo"
 status = 301
