@@ -1,9 +1,11 @@
+require("dotenv").config();
+const EleventyFetch = require("@11ty/eleventy-fetch");
+
 module.exports = async function() {
 	if(process.env.ELEVENTY_SERVERLESS) {
 		return;
 	}
 
-	const EleventyFetch = require("@11ty/eleventy-fetch");
 	const { ActivityFeed } = await import("@11ty/eleventy-activity-feed");
 
 	let feed = new ActivityFeed();
@@ -24,6 +26,9 @@ module.exports = async function() {
 			type: "json",
 			duration: "7d",
 			directory: ".cache/eleventy-fetch/",
+			headers: {
+				"Authorization": `bearer ${process.env.GITHUB_READ_TOKEN}`
+			},
 		});
 
 		for(let repository of githubOrgRepos) {
