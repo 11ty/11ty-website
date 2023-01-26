@@ -29,10 +29,7 @@ Let’s check in on the current capabilities and the roadmap:
   * {% addedin "2.0.0-canary.12" %} [Passthrough copy can be emulated during `--serve`](/docs/copy/#passthrough-during-serve) to speed up both incremental and non-incremental builds.
 * **Configuration File**
   * If you create/update your Eleventy configuration file, a full build will run.
-
-## Related
-
-* `--incremental` works great with [`--ignore-initial`](/docs/usage/#ignore-initial-to-run-eleventy-without-an-initial-build) too. {% addedin "2.0.0-canary.25" %}
+* **Don’t build on startup**: {% addedin "2.0.0-canary.25" %} [`--ignore-initial`](/docs/usage/#ignore-initial-to-run-eleventy-without-an-initial-build) was added and works great with `--incremental`.
 
 ## Additional Template Language Features
 

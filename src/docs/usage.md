@@ -105,14 +105,16 @@ Read more about [ndjson](https://github.com/ndjson/ndjson-spec).
 
 ```bash
 # Repeat builds only operate on files that have changed
-npx @11ty/eleventy --incremental
+npx @11ty/eleventy --watch --incremental
+npx @11ty/eleventy --serve --incremental
+npx @11ty/eleventy --serve --incremental --ignore-initial
 ```
 
 Read more about [incremental builds](/docs/usage/incremental/).
 
-### `--ignore-initial` to run Eleventy without an Initial Build
+### `--ignore-initial` to run Eleventy without an Initial Build {% addedin "2.0.0-canary.25" %}
 
-{% addedin "2.0.0-canary.25" %}
+Be wary of any file changes that happened while Eleventy wasn’t running!
 
 ```bash
 # Don’t build when Eleventy starts, only build on file changes
