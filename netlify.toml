@@ -35,15 +35,24 @@ force = true
 _generated_by_eleventy_serverless = "serverless"
 
 [[redirects]]
+# Web redirect
 from = "/activity/"
 to = "/firehose/"
-status = 301
+status = 302
 force = true
 
 [[redirects]]
+# Feed redirect
 from = "/follow/"
-to = "/follow/follow.rss"
-status = 301
+to = "/firehose/firehose.rss"
+status = 302
+force = true
+
+[[redirects]]
+# Feed redirect
+from = "/follow/follow.rss"
+to = "/firehose/firehose.rss"
+status = 302
 force = true
 
 [[redirects]]

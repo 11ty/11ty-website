@@ -3,7 +3,7 @@ const activity = require("../config/activity.js");
 module.exports = class {
 	data() {
 		return {
-			permalink: "/follow/follow.rss",
+			permalink: "/firehose/firehose.rss",
 			layout: false,
 			eleventyExcludeFromCollections: true
 		}
