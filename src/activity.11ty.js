@@ -32,6 +32,16 @@ module.exports.render = async function({entries}) {
 .activity-feed .elv-callout-box { max-width: 35em; }
 .activity-feed .filter-type--hide { display: none; }
 .activity-feed form { margin: 1em 0; }
+.activity-feed a[href] {
+	-ms-word-break: break-all;
+	word-break: break-all;
+	word-break: break-word;
+
+	/* Disable hyphenation */
+	-webkit-hyphens: manual;
+	-ms-hyphens: manual;
+	hyphens: manual;
+}
 </style>
 
 <div class="activity-feed">
