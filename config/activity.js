@@ -26,9 +26,11 @@ module.exports = async function() {
 			type: "json",
 			duration: "7d",
 			directory: ".cache/eleventy-fetch/",
-			headers: {
-				"Authorization": `bearer ${process.env.GITHUB_READ_TOKEN}`
-			},
+			fetchOptions: {
+				headers: {
+					"Authorization": `bearer ${process.env.GITHUB_READ_TOKEN}`
+				},
+			}
 		});
 
 		for(let repository of githubOrgRepos) {
