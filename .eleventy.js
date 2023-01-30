@@ -95,9 +95,8 @@ const shortcodes = {
 
 		let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(siteUrl)}/${preset}/1:1/${zoom ? `${zoom}/` : ""}`;
 
-		// 11ty.dev or foursquare.com
+		// 11ty.dev
 		let overrides = {
-			"7KrgLExJd-": "foursquare",
 			"dLN_2kDPpB": "11ty",
 		}
 		if(overrides[siteSlug]) {
