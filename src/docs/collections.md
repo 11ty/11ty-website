@@ -331,13 +331,13 @@ This content would show up in the template data inside of `collections.cat` and 
 
 ### Override tags
 
-As of Eleventy 1.0, the Data Cascade is combined using [deep data merge](/docs/data-deep-merge/) by default, which means any tags added in the front matter get added to tags defined higher up in the cascade. To redefine `tags` in the front matter use [the `override:` prefix](/docs/data-deep-merge/#using-the-override-prefix):
+As of Eleventy 1.0, the [Data Cascade](/docs/data-cascade/) is combined using [deep data merge](/docs/data-deep-merge/) by default, which means tags are merged together with tags assigned higher in the data cascade (the Arrays are combined). To redefine `tags` in the front matter use [the `override:` prefix](/docs/data-deep-merge/#using-the-override-prefix):
 
 ```markdown
 ---
 override:tags: []
 ---
-``` 
+```
 
 This content would not show up in any of the collections it was added to with `tags` higher up in the data cascade.
 
