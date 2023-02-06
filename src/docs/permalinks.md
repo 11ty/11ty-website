@@ -85,7 +85,7 @@ Here’s a few examples of how it works by default (assuming your output directo
 
 ## Cool URIs don’t change
 
-Eleventy automatically helps you make sure that [Cool URIs don’t change](https://www.w3.org/Provider/Style/URI.html).
+Eleventy automatically helps you make sure that [Cool URIs don’t change](https://www.w3.org/Provider/Style/URI).
 
 > What to leave out…
 > File name extension. This is a very common one. "cgi", even ".html" is something which will change. You may not be using HTML for that page in 20 years time, but you might want today's links to it to still be valid. The canonical way of making links to the W3C site doesn't use the extension.
@@ -208,11 +208,11 @@ permalink: "index.json"
 
 ## Advanced Usage
 
-### Mapping one URL to Multiple Files for Internationalization {% addedin "2.0.0" %}
+### Mapping one URL to Multiple Files for Internationalization {% addedin "2.0.0-canary.13" %}
 
 _Decouple a page’s primary URL from its permalink._
 
-_New in 2.0.0-canary.13:_ As an example, say you have two content files: `about.en.html` and `about.es.html`. You’ve already set up the [`addGlobalData` feature to remap their respective output](/docs/data-eleventy-supplied/#changing-your-project-default-permalinks) to `_site/about.en.html` and `_site/about.es.html`.
+As an example, say you have two content files: `about.en.html` and `about.es.html`. You’ve already set up the [`addGlobalData` feature to remap their respective output](/docs/data-eleventy-supplied/#changing-your-project-default-permalinks) to `_site/about.en.html` and `_site/about.es.html`.
 
 Use [server-side redirects](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language) to control which of these files is shown.
 

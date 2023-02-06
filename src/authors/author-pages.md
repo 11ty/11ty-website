@@ -4,10 +4,8 @@ pagination:
   size: 1
   alias: author
   serverless: eleventy.serverless.path.name
-  # addAllPagesToCollections: true
 permalink:
   serverless: "/authors/:name/"
-
 eleventyNavigation:
   parent: Authors
 excludeFromSearch: true

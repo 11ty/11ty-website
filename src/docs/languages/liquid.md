@@ -88,7 +88,7 @@ module.exports = function(eleventyConfig) {
 
 ### Quoted Include Paths
 
-<div class="elv-callout elv-callout-warn">This is a common pitfall if you’re using Liquid templates.</div>
+{% callout "warn" %}This is a common pitfall if you’re using Liquid templates.{% endcallout %}
 
 If you’d like to use include paths without quotation marks, you must enable `dynamicPartials: false` in your Liquid options. The [default in Eleventy 1.0 (and `liquidjs`) swapped from `false` to `true`](https://github.com/11ty/eleventy/issues/240). Read more about this limitation at [Issue #72](https://github.com/11ty/eleventy/issues/72).
 

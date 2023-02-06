@@ -11,10 +11,13 @@ Eleventy 2.0 bundles a brand new default development server. Check out the [`11t
 
 At time of release, this new server helps Eleventy by:
 
-* Reducing dependencies from 349 to 202
-* Reducing `node_modules` size 🏋️ from 81.7 MB to 36.3 MB
-* Faster `npm install` times by 85%
+* Reduce dependencies by 47.3% to 211 (down from 311)
+* Reducing `node_modules` size 🏋️ by 326.9% to 36.3 MB (down from 155 MB)
+* Faster `npm install` times by 43.8%
 * No unresolved `npm audit` errors or warnings 👀
+* Supports [emulated passthrough file copy](/docs/copy/#emulate-passthrough-copy-during-serve) for faster builds!
+
+Read more on the [Eleventy Dev Server 1.0 release notes](https://github.com/11ty/eleventy-dev-server/releases/tag/v1.0.0).
 
 ## Options
 
@@ -27,17 +30,21 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setServerOptions({
     // Default values are shown:
 
-    // Opt-out of the live reload snippet
-    enabled: true,
+    // Whether the live reload snippet is used
+    liveReload: true,
 
-    // Opt-out of DOM diffing updates and use page reloads
-    domdiff: true,
+    // Whether DOM diffing updates are applied where possible instead of page reloads
+    domDiff: true,
 
-    // The starting port number to attempt to use
+    // The starting port number
+    // Will increment up to (configurable) 10 times if a port is already in use.
     port: 8080,
 
-    // number of times to increment the port if in use
-    portReassignmentRetryCount: 10,
+    // Additional files to watch that will trigger server updates
+    // Accepts an Array of file paths or globs (passed to `chokidar.watch`).
+    // Works great with a separate bundler writing files to your output folder.
+    // e.g. `watch: ["_site/**/*.css"]`
+    watch: [],
 
     // Show local network IP addresses for device testing
     showAllHosts: false,
@@ -48,12 +55,6 @@ module.exports = function(eleventyConfig) {
       // cert: "./localhost.cert",
     },
 
-    // Change the name of the special folder name used for injected scripts
-    folder: ".11ty",
-
-    // Show the server version number on the command line
-    showVersion: false,
-
     // Change the default file encoding for reading/serving files
     encoding: "utf-8",
   });
@@ -61,15 +62,38 @@ module.exports = function(eleventyConfig) {
 ```
 
 <details>
-<summary>Want to know if your Canary version includes one of these properties?</summary>
+<summary><strong>Expand to see the Full options list</strong></summary>
 
-* `domdiff` was added in `v2.0.0-canary.3`
-* `showVersion` was added in `v2.0.0-canary.3`
-* `encoding` was added in `v2.0.0-canary.4`
-* `404.html` support added in `v2.0.0-canary.4`
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setServerOptions({
+    // Show the server version number on the command line
+    showVersion: false,
+
+    // Change the name of the folder name used for injected scripts
+    injectedScriptsFolder: ".11ty",
+
+    // Number of times to increment a port is already in use
+    portReassignmentRetryCount: 10,
+
+    // Alias for backwards compatibility, renamed to `injectedScriptsFolder` in Dev Server 1.0+
+    folder: ".11ty",
+
+    // Alias for backwards compatibility, renamed to `liveReload` in Dev Server 1.0+
+    enabled: true,
+
+    // Alias for backwards compatibility, renamed to `domDiff` in Dev Server 1.0+
+    domdiff: true,
+  });
+};
+```
+
 
 </details>
 
+* Read more about [`chokidar.watch` compatible paths](https://github.com/paulmillr/chokidar)
 * For a full list of `encoding` values supported by Node (also used in the `Content-Type` HTTP Header), check out [Node’s Buffer documentation](https://nodejs.org/api/buffer.html#buffers-and-character-encodings).
 * Using a root `404.html` file (a popular convention supported by Netlify, GitHub Pages, Vercel, and others) supported! We use the content from a `404.html` in your output folder when serving the error page for missing content.
 
@@ -82,7 +106,6 @@ Try out the [`devcert-cli`](https://github.com/davewasmer/devcert-cli) package t
   {%- youtubeEmbed "7hER8HddlhQ", "Shipping the New Dev Server (Weekly №4)" -%}
   {%- youtubeEmbed "ZE5Np95-PeU", "Dev Server CLI (Weekly №14)", "463" -%}
 </div>
-
 
 ## Swap back to Browsersync {% addedin "2.0.0" %}
 

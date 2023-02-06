@@ -1,7 +1,9 @@
 ---
 layout: layouts/main.njk
 logoLink: /docs/
-logoContent: "<span class='elv-hero-content'>10</span>"
+# Don’t forget to update the emoji in CSS
+# logoLink: /blog/eleventy-v2-beta/
+# logoContent: "<span class='elv-hero-content'>2.0</span>"
 ignoreGitHubButtons: true
 ignoreSupporters: true
 ignoreFastestSite: true
@@ -12,16 +14,12 @@ skipAuth: true
 eleventyComputed:
   social:
     description: "Eleventy, a simpler static site generator."
+eleventyImport:
+  collections: ["blog"]
 ---
-{# {% callout "", "html", "elv-serverless-banner" %}
-<strong>This page was rendered <em>just-in-time</em> for you using <a href="/docs/plugins/serverless/">Eleventy Serverless</a></strong>
-<code class="elv-serverless-banner-time"><time datetime="{{ config.now | toISO }}">{{ config.now | newsDate("yyyy LLL dd HH:mm:ss.SSS") }}</time></code>
-{% endcallout %} #}
 {%- set highlightedBlogPost = collections.blog | findBy("data.homePageHighlight", true) | first %}
 {%- if highlightedBlogPost %}
-<div class="elv-callout">
-  <strong>Featured Blog Post</strong>: <a href="{{ highlightedBlogPost.data.page.url }}">{{ highlightedBlogPost.data.newstitle }}</a>
-</div>
+{% callout %}<strong><a href="{{ highlightedBlogPost.data.page.url }}">{{ highlightedBlogPost.data.newstitle }}</a></strong> and more on the <a href="/blog/">Eleventy Blog</a>.{% endcallout %}
 {%- endif %}
 
 <div class="fullwidth-module">{% include "logos.njk" %}</div>
@@ -46,11 +44,11 @@ Run `npx @11ty/eleventy --serve` to start up a web server. Then open `http://loc
 
 ➡ Keep going! Read a longer [Getting Started guide](/docs/getting-started/) or check out the full [**Documentation for {% latestVersion versions, config %}**](/docs/).
 
+<a href="/docs/" class="btn-primary btn-primary-why-are-you-doing-this benchnine rainbow-active rainbow-active-noanim">Documentation for <span>Eleventy</span></a><span>Todd and [Bruce]({{ "https://twitter.com/brucel/status/1107699886584143872" | canonicalTwitterUrl }}) said this button should be bigger and as you can see they were right</span>
+
 <h2 id="eleventy-is-supported-by">Eleventy is <a href="/docs/supporters/">supported</a> by… <a class="direct-link" href="#eleventy-is-supported-by">#</a></h2>
 
 {% include "supporters.njk" %}
-
-<a href="/docs/" class="btn-primary btn-primary-why-are-you-doing-this benchnine rainbow-active rainbow-active-noanim">Documentation for <span>Eleventy {% latestVersion versions, config %}</span></a><span>Todd and [Bruce]({{ "https://twitter.com/brucel/status/1107699886584143872" | canonicalTwitterUrl }}) said this button should be bigger and as you can see they were right</span>
 
 ## Built With Eleventy
 

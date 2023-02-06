@@ -239,7 +239,7 @@ module.exports = function(eleventyConfig) {
   // * Nunjucks
   // * JavaScript
 
-  // Async support for `addShortcode` and `addPairedShortcode` is new in Eleventy 2.0.0-canary.24
+  // Async support for `addShortcode` and `addPairedShortcode` is new in Eleventy {{ "2.0.0-canary.24" | coerceVersion }}
   eleventyConfig.addShortcode("single", async function(myName) { /* … */ });
   eleventyConfig.addPairedShortcode("paired", async function(content, myName) { /* … */ });
 

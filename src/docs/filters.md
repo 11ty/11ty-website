@@ -73,7 +73,7 @@ module.exports = function(eleventyConfig) {
   // or, use a Universal filter (an alias for all of the above)
   eleventyConfig.addFilter("makeUppercase", function(value) { … });
 
-  // New in 2.0.0-canary.15
+  // New in {{ "2.0.0-canary.15" | coerceVersion }}
   eleventyConfig.addAsyncFilter("makeUppercase", async function(value) { … });
 };
 ```

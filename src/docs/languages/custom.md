@@ -122,9 +122,7 @@ module.exports = function(eleventyConfig) {
 
 Make special note of the `this.config.dir.includes` folder above. Declaring your includes folder means that you don’t need to prefix any file paths with the includes folder name (e.g. `_includes/_code.scss` can be consumed with `@use "code"`).
 
-## Registering Dependencies
-
-{% addedin "2.0.0-canary.19" %}
+## Registering Dependencies {% addedin "2.0.0-canary.19" %}
 
 Eleventy includes two features to improve the performance of custom template compilation:
 
@@ -184,7 +182,7 @@ module.exports = function(eleventyConfig) {
     key: "11ty.js",
   });
 
-  // Or, you can pass an array of extensions in (2.0.0-canary.19 and newer)
+  // Or, you can pass an array of extensions in {{ "2.0.0-canary.19" | coerceVersion }} or newer.
   eleventyConfig.addExtension([ "11ty.jsx", "11ty.ts", "11ty.tsx" ], {
     key: "11ty.js",
   });
@@ -437,7 +435,7 @@ By default, whether or not this `cache` is enabled is tied to boolean value of `
 
 You can also granularly control the caching key using a `getCacheKey` callback. It might be useful to change this when using `read: false` and `contents` are unavailable.
 
-{% callout "info", "md" %}If you’re using 2.0.0-canary.19 or newer, you shouldn’t need a `getCacheKey` callback. It is preferred to use the [`addDependencies` method in the `compile` callback](##registering-dependencies) instead!{% endcallout %}
+{% callout "info", "md" %}If you’re using {{ "2.0.0-canary.19" | coerceVersion }} or newer, you shouldn’t need a `getCacheKey` callback. It is preferred to use the [`addDependencies` method in the `compile` callback](##registering-dependencies) instead!{% endcallout %}
 
 <details>
 <summary><strong>Expand to see the default <code>getCacheKey</code> implementation</strong> (you can override this!)</summary>
@@ -450,7 +448,7 @@ You can also granularly control the caching key using a `getCacheKey` callback. 
     getCacheKey: function(contents, inputPath) {
       // return contents; // this is the default in 1.0
 
-      // return inputPath + contents; // this is the new default in 2.0.0-canary.16
+      // return inputPath + contents; // this is the new default in {{ "2.0.0-canary.16" | coerceVersion }}
 
       return inputPath; // override to cache by inputPath (this means the compile function will not get called when the file contents change)
 
@@ -467,7 +465,7 @@ You can also granularly control the caching key using a `getCacheKey` callback. 
 
 ### `isIncrementalMatch`
 
-{% callout "info", "md" %}If you’re using 2.0.0-canary.19 or newer, you shouldn’t need an `isIncrementalMatch` callback. It is preferred to use the [`addDependencies` method in the `compile` callback](#registering-dependencies) instead!{% endcallout %}
+{% callout "info", "md" %}If you’re using {{ "2.0.0-canary.19" | coerceVersion }} or newer, you shouldn’t need an `isIncrementalMatch` callback. It is preferred to use the [`addDependencies` method in the `compile` callback](#registering-dependencies) instead!{% endcallout %}
 
 * _Optional_
 

@@ -390,7 +390,7 @@ _Documentation in progress_ (The new `serverlessURL` filter) -->
 
 ### Re-use build-time cache from the [Fetch plugin](/docs/plugins/fetch/)
 
-To speed up serverless rendering and avoid requests to external sources, you can re-use the cache folder from your build! First we’ll need to copy the cache folder into our bundle and rename it without the leading dot (the bundler ignores dot prefixed files and folders).
+To speed up serverless rendering and avoid requests to external sources, you can re-use the cache folder from your build! First we’ll need to copy the cache folder into our bundle.
 
 {% codetitle ".eleventy.js" %}
 
@@ -401,15 +401,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
     name: "possum",
     copy: [
-      // files/directories that start with a dot
-      // are not bundled by default
-      { from: ".cache", to: "cache" }
+      ".cache/eleventy-fetch/",
     ]
   });
 };
 ```
 
-And then in your data file, overwrite the `duration` and `directory` to point to this new folder:
+And re-use the `directory` in your data files:
 
 {% codetitle "_data/github.js" %}
 
@@ -417,17 +415,17 @@ And then in your data file, overwrite the `duration` and `directory` to point to
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
-  let options = {};
+  let options = {
+    // Use the same folder declared above
+    directory: ".cache/eleventy-fetch/"
+  };
 
   if(process.env.ELEVENTY_SERVERLESS) {
     // Infinite duration (until the next build)
-    // This will also bypass writing new files to the `cache` folder
-    // (which would error in a serverless environment)
     options.duration = "*";
 
-    // Instead of ".cache" default because files/directories
-    // that start with a dot are not bundled by default
-    options.directory = "cache";
+    // Bypass writing new cache files, which would error in serverless mode
+    options.dryRun = true;
   }
 
   let result = await EleventyFetch("https://example.com/", options);
@@ -435,9 +433,18 @@ module.exports = async function() {
 };
 ```
 
-### Re-use Build-time Collections
+<span id="re-use-build-time-collections"></span>
 
-Eleventy Serverless operates on a subset of templates in your project. As such, collections that are outside the scope of the serverless build are not available in serverless mode. However, you can statically build a representation of those collections and use it at run time!
+### Collections in Serverless
+
+Eleventy Serverless typically operates on a subset of templates in your project. As such, collections that are outside the scope of the serverless build are not available in serverless mode. You have two options to workaround this limitation:
+
+1. Precompile your collections manually at build-time
+1. Build the data cascade for the project (no rendering required)
+
+#### Precompile Collections at Build-Time
+
+In this example we’ll build a static data file with collections data in it at build time and inject it into our serverless build at run time!
 
 Consider a `sidebarNav` collection that populates a navigation menu (via the [`eleventy-navigation` plugin](/docs/plugins/navigation/)).
 
@@ -453,9 +460,12 @@ module.exports = function(eleventyConfig) {
 
 This might be used in your templates (serverless or build) via {% raw %}`{{ collections.sidebarNav | eleventyNavigation }}`{% endraw %}.
 
-Now, the `sidebarNav` collection would not normally be available in a serverless context, because all of the templates that populate the menu are not in the scope of the serverless build. But we can generate a static copy of that collection for use in serverless mode. In fact, this is how the sidebar works on each (serverless) Author’s page (e.g. the [one for `@zachleat](/authors/zachleat/)).
+Now, the `sidebarNav` collection would not normally be available in a serverless context, because all of the templates that populate the menu are not in the scope of the serverless build. But we can generate a static copy of that collection for use in serverless mode. In fact, this is how the sidebar works on each (serverless) Author’s page (e.g. the [one for `@zachleat`](/authors/zachleat/)).
 
 Consider the following Eleventy template which creates an array of collection-like entries for the sidebar navigation.
+
+<details>
+<summary><strong>Expand to see code sample</strong></summary>
 
 {% codetitle "serverless-collections-export.11ty.js" %}
 
@@ -506,6 +516,37 @@ async function handler (event) {
 	// Some content truncated
 };
 ```
+
+</details>
+
+#### Compile the data cascade for the project
+
+As we have just learned, Eleventy Serverless operates on a subset of templates in your project. You can disable this subset scope with the `singleTemplateScope` option on the `EleventyServerless` class (defaults to `true`). {% addedin "2.0.0-canary.27" %}
+
+This uses incremental builds with the new ignore initial build feature to only render one file (while building the larger data cascade for the project). The downside here is that while this is much friendlier to any use of `collections` on your templates, it is slower! Here are the conditions I’d expect folks to want to make this tradeoff:
+
+* If your project is small/fast enough and you don’t want to spend the extra development effort.
+* If your project is larger but you’re using On-demand Builders where the extra rendering cost is only paid once.
+* For larger projects I would _not recommend_ use of `singleTemplateScope: false` in a dynamic template that renders with each request.
+
+Here’s how to enable this feature in your serverless function file:
+
+{% codetitle "./netlify/functions/possum/index.js" %}
+
+```js/4
+async function handler (event) {
+	let elev = new EleventyServerless("possum", {
+		path: event.path,
+		query: event.queryStringParameters,
+		singleTemplateScope: false, // true by default
+	});
+
+	// Some content truncated
+};
+```
+
+At some point we may enable this feature by default [if performance improves enough](https://github.com/11ty/eleventy/issues/2737)!
+
 
 ### Swap to Dynamic using the Data Cascade and `eleventyComputed`
 

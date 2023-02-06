@@ -4,6 +4,14 @@
 		"docs_url": "https://www.11ty.dev/docs/",
 		"ignore_release_notes": true
 	},{
+		"tag": "v2.0.0-beta.2",
+		"docs_url": "https://www.11ty.dev/docs/",
+		"channel": "beta"
+	},{
+		"tag": "v2.0.0-beta.1",
+		"docs_url": "https://www.11ty.dev/docs/",
+		"channel": "beta"
+	},{
 		"tag": "v1.0.2",
 		"docs_url": "https://v1-0-2.11ty.dev/docs/"
 	},{

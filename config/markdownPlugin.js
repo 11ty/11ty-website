@@ -8,7 +8,11 @@ function markdownItSlugify(s) {
 }
 
 function removeExtraText(s) {
-	let newStr = String(s).replace(/New\ in\ v\d+\.\d+\.\d+/, "");
+	let newStr = String(s)
+	newStr = newStr.replace(/\-beta\.\d+/, "");
+	newStr = newStr.replace(/\-canary\.\d+/, "");
+	newStr = newStr.replace(/New\ in\ v\d+\.\d+\.\d+/, "");
+	newStr = newStr.replace(/Added\ in\ v\d+\.\d+\.\d+/, "");
 	newStr = newStr.replace(/Coming\ soon\ in\ v\d+\.\d+\.\d+/, "");
 	newStr = newStr.replace(/⚠️/g, "");
 	newStr = newStr.replace(/[?!]/g, "");
@@ -60,13 +64,24 @@ module.exports = function(eleventyConfig) {
 		return mdIt.renderInline(content);
 	});
 
-	eleventyConfig.addPairedShortcode("callout", function(content, level = "", format = "html", cls = "") {
+	eleventyConfig.addPairedShortcode("callout", function(content, level = "", format = "html", customLabel = "") {
 		if( format === "md" ) {
 			content = mdIt.renderInline(content);
 		} else if( format === "md-block" ) {
 			content = mdIt.render(content);
 		}
-		return `<div class="elv-callout${level ? ` elv-callout-${level}` : ""}${cls ? ` ${cls}`: ""}">${content}</div>`;
+		let label = "";
+		if(customLabel) {
+			label = customLabel;
+		} else if(level === "info" || level === "error") {
+			label = level.toUpperCase() + ":";
+		} else if(level === "warn") {
+			label = "WARNING:";
+		}
+		let labelHtml = label ? `<div class="elv-callout-label">${customLabel || label}</div>` : "";
+		let contentHtml = (content || "").trim().length > 0 ? `<div class="elv-callout-c">${content}</div>` : "";
+
+		return `<div class="elv-callout${level ? ` elv-callout-${level}` : ""}">${labelHtml}${contentHtml}</div>`;
 	});
 
 	eleventyConfig.addShortcode("tableofcontents", function(isOpen) {
