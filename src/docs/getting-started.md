@@ -13,13 +13,13 @@ _Don’t include `~ $` or `~/eleventy-sample $` when you run these commands._
 
 ## <span class="numberflag"><span class="sr-only">Step</span> 1</span> Make a Project Directory
 
-Make a directory for your project using `mkdir`.
+Create a directory for your project using the `mkdir` (make directory) command:
 
 {% codewithprompt "cmdhomedir" %}
 mkdir eleventy-sample
 {% endcodewithprompt %}
 
-Now move into that directory with the `cd` command:
+Now move into that directory with the `cd` (change directory) command:
 
 {% codewithprompt "cmdhomedir" %}
 cd eleventy-sample
@@ -37,7 +37,7 @@ Installing Eleventy into a project requires a `package.json` file. npm (included
 npm init -y
 {% endcodewithprompt %}
 
-### Install Eleventy into the `package.json`
+### Install Eleventy
 
 [`@11ty/eleventy` is published on npm](https://www.npmjs.com/package/@11ty/eleventy) and we can install and save it into our project’s `package.json` by running:
 
