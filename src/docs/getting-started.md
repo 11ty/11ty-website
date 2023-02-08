@@ -114,7 +114,13 @@ npx @11ty/eleventy --serve
 
 Go to `http://localhost:8080/` or `http://localhost:8080/README/` to see your Eleventy site live! When you save your template files—Eleventy will refresh the browser with your new changes automatically!
 
-## <span class="numberflag"><span class="sr-only">Step</span> 6</span> Continue Learning…
+## <span class="numberflag"><span class="sr-only">Step</span> 6</span> Put it online (optional)
+
+The _easiest_ way to put your new site online is to head over to [Netlify Drop](https://app.netlify.com/drop) (no account sign-up required) and drag your new Eleventy-generated `_site` folder to the Netlify Drop web interface. In seconds, your new site will be online for anyone to see!
+
+* Read up on a few [other deployment options](/docs/deployment/).
+
+## <span class="numberflag"><span class="sr-only">Step</span> 7</span> Continue Learning…
 
 Congratulations—you made something with Eleventy! Now put it to work:
 
