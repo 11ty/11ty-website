@@ -282,10 +282,10 @@ module.exports = function(eleventyConfig) {
 		return `<a href="${href}" class="minilink minilink-lower">${text}</a>`;
 	});
 
-	eleventyConfig.addPairedShortcode("codewithprompt", function(text, prePrefixCode, when) {
+	eleventyConfig.addPairedShortcode("codewithprompt", function(text, prePrefixCode, when, id) {
 		let ret = [];
 		if(prePrefixCode && when) {
-			ret.push(`<div data-preprefix-${prePrefixCode}="${when}">
+			ret.push(`<div data-preprefix-${prePrefixCode}="${when}"${id ? ` id="${id}"` : ""}>
 `);
 		}
 
