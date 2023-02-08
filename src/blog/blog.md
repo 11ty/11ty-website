@@ -13,9 +13,10 @@ eleventyImport:
 ---
 # Blog
 
-📢 [Subscribe to the **Eleventy News Feed**](/blog/feed.xml)
+* 📢 [Subscribe to the **Eleventy News Feed**](/blog/feed.xml)
+* _For extended Eleventy coverage, follow [`zachleat.com/web/eleventy`](https://www.zachleat.com/web/eleventy/)._
 
-{% callout "info", "md" %}For extended Eleventy coverage, follow [`zachleat.com/web/eleventy`](https://www.zachleat.com/web/eleventy/).{% endcallout %}
+---
 
 {% for news in collections.blog | reverse %}
 * [{{ news.data.newstitle }}]({{ news.data.page.url }}) <small><em>on {{ news.date | newsDate }}</em></small>
