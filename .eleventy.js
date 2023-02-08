@@ -282,10 +282,10 @@ module.exports = function(eleventyConfig) {
 		return `<a href="${href}" class="minilink minilink-lower">${text}</a>`;
 	});
 
-	eleventyConfig.addPairedShortcode("codewithprompt", function(text, prePrefixCode, when, id) {
+	eleventyConfig.addPairedShortcode("codewithprompt", function(text, prePrefixCode, id) {
 		let ret = [];
-		if(prePrefixCode && when) {
-			ret.push(`<div data-preprefix-${prePrefixCode}="${when}"${id ? ` id="${id}"` : ""}>
+		if(prePrefixCode) {
+			ret.push(`<div data-preprefix-${prePrefixCode}${id ? ` id="${id}"` : ""}>
 `);
 		}
 
@@ -293,7 +293,7 @@ module.exports = function(eleventyConfig) {
 ${text.trim()}
 \`\`\``);
 
-		if(prePrefixCode && when) {
+		if(prePrefixCode) {
 			ret.push(`
 </div>`);
 		}

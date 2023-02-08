@@ -9,19 +9,19 @@ If you’re planning on deploying your site using a [service like Netlify](/docs
 
 _Don’t include `~ $` when you run these commands._
 
-{% codewithprompt "cmdhomedir", "first" %}
+{% codewithprompt "cmdhomedir" %}
 npm install -g @11ty/eleventy
 {% endcodewithprompt %}
 
 The above adds an `eleventy` command that you can use in any directory.
 
-{% codewithprompt "cmdhomedir", "first" %}
+{% codewithprompt "cmdhomedir" %}
 eleventy --version
 {% latestVersion versions, config, "" %}
 {% endcodewithprompt %}
 
 Alternatively, it’s worthwhile to note that installation (global or local) is not required at all to run Eleventy, but suffers the same long-term versioning problems noted above. With that in mind, you can use `npx` to run Eleventy directly (included with `npm`):
 
-{% codewithprompt "cmdhomedir", "first" %}
+{% codewithprompt "cmdhomedir" %}
 npx @11ty/eleventy
 {% endcodewithprompt %}

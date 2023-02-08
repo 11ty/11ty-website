@@ -15,13 +15,13 @@ _Don’t include `~ $` or `~/eleventy-sample $` when you run these commands._
 
 Make a directory for your project using `mkdir`.
 
-{% codewithprompt "cmdhomedir", "all" %}
+{% codewithprompt "cmdhomedir" %}
 mkdir eleventy-sample
 {% endcodewithprompt %}
 
 Now move into that directory with the `cd` command:
 
-{% codewithprompt "cmdhomedir", "all" %}
+{% codewithprompt "cmdhomedir" %}
 cd eleventy-sample
 {% endcodewithprompt %}
 
@@ -33,7 +33,7 @@ _While installation of Eleventy is optional (you could skip to step 3), it is re
 
 Installing Eleventy into a project requires a `package.json` file. npm (included with Node.js) will create one for you with [`npm init -y`](https://docs.npmjs.com/cli/init). `-y` tells npm to use default values and skips the command line questionnaire.
 
-{% codewithprompt "eleventysample", "first" %}
+{% codewithprompt "eleventysample" %}
 npm init -y
 {% endcodewithprompt %}
 
@@ -41,7 +41,7 @@ npm init -y
 
 [`@11ty/eleventy` is published on npm](https://www.npmjs.com/package/@11ty/eleventy) and we can install and save it into our project’s `package.json` by running:
 
-{% codewithprompt "eleventysample", "first" %}
+{% codewithprompt "eleventysample" %}
 npm install @11ty/eleventy --save-dev
 {% endcodewithprompt %}
 
@@ -49,7 +49,7 @@ npm install @11ty/eleventy --save-dev
 
 We can use npx to run our local project's version of Eleventy. Let’s make sure our installation went okay and try to run Eleventy:
 
-{% codewithprompt "eleventysample", "first" %}
+{% codewithprompt "eleventysample" %}
 npx @11ty/eleventy
 Wrote 0 files in 0.03 seconds ({% latestVersion versions, config %})
 {% endcodewithprompt %}
@@ -62,10 +62,11 @@ A <dfn>template</dfn> is a content file written in a [format such as Markdown, H
 
 Let’s run two commands to create two new template files.
 
-{% codewithprompt "eleventysample", "all" %}
+{% codewithprompt "eleventysample" %}
 echo '<!doctype html><title>Page title</title><p>Hi</p>' > index.html
 {% endcodewithprompt %}
-{% codewithprompt "eleventysample", "all" %}
+
+{% codewithprompt "eleventysample" %}
 echo '# Page header' > README.md
 {% endcodewithprompt %}
 
@@ -78,7 +79,7 @@ We’ve now created an HTML template and a markdown template. Let’s run Eleven
 }
 </style>
 
-{% codewithprompt "eleventysample", "first", "getting-started-build" %}
+{% codewithprompt "eleventysample", "getting-started-build" %}
 npx @11ty/eleventy
 [11ty] Writing _site/README/index.html from ./README.md (liquid)
 [11ty] Writing _site/index.html from ./index.html (liquid)
@@ -102,7 +103,7 @@ Use `--serve` to start up a hot-reloading local web server.
 }
 </style>
 
-{% codewithprompt "eleventysample", "first", "getting-started-serve" %}
+{% codewithprompt "eleventysample", "getting-started-serve" %}
 npx @11ty/eleventy --serve
 [11ty] Writing _site/index.html from ./index.html (liquid)
 [11ty] Writing _site/README/index.html from ./README.md (liquid)
