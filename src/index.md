@@ -26,7 +26,7 @@ eleventyImport:
 
 ## Quick Start
 
-Eleventy {% latestVersion versions, config %} requires Node {{ config.eleventyMinimumNodeVersion }} or newer. Use `node --version` on the command line to find your local Node version.
+Eleventy {% latestVersion versions, config %} requires Node {% latestVersionNodeMinimum versions, config %} or newer. Use `node --version` on the command line to find your local Node version.
 
 ```bash
 echo '# Page header' > README.md

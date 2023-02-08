@@ -406,6 +406,22 @@ ${text.trim()}
 		}
 	});
 
+	eleventyConfig.addShortcode("latestVersionNodeMinimum", function(versions, config) {
+		for( let version of versions ) {
+			if( version.tag === "LATEST" ) {
+				continue;
+			}
+			if( version.channel && version.channel !== "latest" ) {
+				continue;
+			}
+			if( !config.prerelease && version.prerelease ) {
+				continue;
+			}
+
+			return version.minimumNodeVersion;
+		}
+	});
+
 	eleventyConfig.addFilter("orphanWrap", str => {
 		let splitSpace = str.split(" ");
 		let after = "";
