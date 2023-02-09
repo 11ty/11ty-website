@@ -10,6 +10,7 @@ The website and documentation for the [Eleventy static site generator](https://g
 
 ```
 npm install
+npm run get-new-data
 npx @11ty/eleventy --serve
 ```
 

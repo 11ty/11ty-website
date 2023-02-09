@@ -4,6 +4,7 @@ pagination:
   size: 1
   alias: author
   serverless: eleventy.serverless.path.name
+  generatePageOnEmptyData: true
 permalink:
   serverless: "/authors/:name/"
 eleventyNavigation:
