@@ -79,6 +79,7 @@
     "@zachleat/filter-container": "^3.0.4",
     "@zachleat/seven-minute-tabs": "^2.0.0",
     "lite-youtube-embed": "^0.2.0",
+    "pagefind": "^0.10.7",
     "speedlify-score": "^2.0.2"
   }
 }

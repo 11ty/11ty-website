@@ -17,7 +17,7 @@
 				{% image "./src/img/possum-geri.png", "The possum is Eleventy’s mascot", [350], "elv-possum" %}
 			</div>
 		</a>
-		<h1 class="elv-hed">{{ title | orphanWrap | safe }}</h1>
+		<{{ headerTag or "h1" }} class="elv-hed">{{ title | orphanWrap | safe }}</{{ headerTag or "h1" }}>
 		<div class="elv-nav-header">
 			<ul class="elv-nav lo">
 				<li class="elv-nav-item lo-c"><a href="/docs/" class="elv-externalexempt">Docs</a></li>
