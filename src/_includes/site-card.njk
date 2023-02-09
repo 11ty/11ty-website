@@ -31,13 +31,13 @@
   {%- set sourceUrl = site.url %}
 {%- endif %}
 
+
+{%- if not hideRelatedLinks %}
 {%- if site.url.startsWith("https://glitch.com/") %}
   {%- set glitchUrl = "https://glitch.com/edit/#!/remix/" + site.url %}
 {%- elseif site.url.startsWith("https://glitch.new/") %}
   {%- set glitchUrl = site.url %}
 {%- endif %}
-
-{%- if not hideRelatedLinks %}
 <ul class="inlinelist inlinelist-sm">
   {%- if sourceUrl %}
   {%- set stackblitzUrl = sourceUrl | getStackblitzUrl(site.npmStartScript) %}
