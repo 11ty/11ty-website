@@ -22,27 +22,43 @@ eleventyImport:
 {% callout %}<strong><a href="{{ highlightedBlogPost.data.page.url }}">{{ highlightedBlogPost.data.newstitle }}</a></strong> and more on the <a href="/blog/">Eleventy Blog</a>.{% endcallout %}
 {%- endif %}
 
-<div class="fullwidth-module">{% include "logos.njk" %}</div>
-
 ## Quick Start
 
-Eleventy {% latestVersion versions, config %} requires Node {% latestVersionNodeMinimum versions, config %} or newer. Use `node --version` on the command line to find your local Node version.
+Create a Markdown file.
 
 ```bash
-echo '# Page header' > README.md
+echo '# Page header' > index.md
+```
+
+<details>
+<summary>Eleventy requires Node.js {% latestVersionNodeMinimum versions, config %} <em>(expand to learn more)</em></summary>
+
+Run `node --version` on the command line to see if it is installed. If the command is not found or it reports a number lower than {% latestVersionNodeMinimum versions, config %}, you will need to [install Node.js](https://nodejs.org/en/).
+
+</details>
+
+Run Eleventy.
+
+```
 npx @11ty/eleventy
 ```
 
-This will compile any files matching valid input [template file extensions](/docs/languages/) (`.md` is one of them) in the current directory into the output folder (defaults to `_site`).
+Eleventy compiles any files in the current directory matching valid [file extensions](/docs/languages/) (`.md` is one of many) to the output folder (`_site` by default).
 
 ```bash
-Writing _site/README/index.html from ./README.md (liquid)
+Writing _site/index.html from ./index.md (liquid)
 Wrote 1 file in 0.03 seconds ({% latestVersion versions, config %})
 ```
 
-Run `npx @11ty/eleventy --serve` to start up a web server. Then open `http://localhost:8080/README/` in your web browser of choice to see your Eleventy output.
+Run `npx @11ty/eleventy --serve` to start up a [local development server](/docs/dev-server/) and open `http://localhost:8080/` in your web browser of choice to see your web site.
 
-➡ Keep going! Read a longer [Getting Started guide](/docs/getting-started/) or check out the full [**Documentation for {% latestVersion versions, config %}**](/docs/).
+➡ Keep going! Read a [more comprehensive Getting Started guide](/docs/getting-started/) or check out the full [**Documentation for {% latestVersion versions, config %}**](/docs/).
+
+---
+
+<div class="fullwidth-module">{% include "logos.njk" %}</div>
+
+---
 
 <a href="/docs/" class="btn-primary btn-primary-why-are-you-doing-this benchnine rainbow-active rainbow-active-noanim">Documentation for <span>Eleventy</span></a><span>Todd and [Bruce]({{ "https://twitter.com/brucel/status/1107699886584143872" | canonicalTwitterUrl }}) said this button should be bigger and as you can see they were right</span>
 
