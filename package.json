@@ -52,6 +52,7 @@
     "clean-css": "^5.3.2",
     "comma-number": "^2.1.0",
     "cross-spawn": "^7.0.3",
+    "degit": "^2.8.4",
     "dotenv": "^16.0.3",
     "fast-glob": "^3.2.12",
     "fs-extra": "^11.1.0",
