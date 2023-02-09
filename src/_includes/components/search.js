@@ -1,5 +1,3 @@
-const pagefind = await import("/_pagefind/pagefind.js");
-
 class Search {
 	clearResults() {
 		this.searchResultsCount.innerHTML = "Results";
@@ -22,7 +20,15 @@ class Search {
 		this.searchResultsList.append(listItem);
 	}
 
+	async getLibrary() {
+		if(!this.pagefind) {
+			this.pagefind = await import("/_pagefind/pagefind.js");
+		}
+		return this.pagefind;
+	}
+
 	async onInput(value) {
+		let pagefind = await this.getLibrary();
 		window.clearTimeout(this.onInputTimeout);
 		this.onInputTimeout = window.setTimeout(async () => {
 			this.clearResults();

@@ -8,7 +8,8 @@ module.exports = eleventyConfig => {
 				let result = await Terser.minify(code);
 				callback(null, result.code);
 			} catch(e) {
-				console.log("Terser error: ", minified.error);
+				console.log("Terser error: ", e);
+				throw e;
 			}
 		}
 
