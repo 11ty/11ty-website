@@ -28,14 +28,13 @@ module.exports = async function() {
 			"text": "Don’t tell Zach I said it but Eleventy is seeming fresh as hell so far",
 			"twitter": "wilto",
 			"name": "Mat Marquis",
-			"source": "https://twitter.com/wilto/",
+			"source": "https://hire.wil.to/",
 			"featured": true
 		},
 		{
 			"text": "Jekyll is dead to me",
-			"twitter": "hankchizljaw",
 			"name": "Andy Bell",
-			"source": "https://twitter.com/hankchizljaw/",
+			"source": "https://andy-bell.co.uk/",
 			"featured": true
 		},
 		{
