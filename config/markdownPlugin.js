@@ -30,7 +30,7 @@ module.exports = function(eleventyConfig) {
 	.disable('code') // disable indent -> code block
 	.use(markdownItAnchor, {
 		slugify: markdownItSlugify,
-		level: [1,2,3,4],
+		level: [2,3,4],
 		permalink: markdownItAnchor.permalink.linkInsideHeader({
 			symbol: `
 				<span class="sr-only">Jump to heading</span>

@@ -4,6 +4,9 @@
 	flex-wrap: nowrap;
 	max-width: 33em;
 }
+.search-overrides p {
+	max-width: none;
+}
 .search-txt {
 	width: 100%;
 	padding-left: .2em;
