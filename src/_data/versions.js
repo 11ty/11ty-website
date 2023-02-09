@@ -7,7 +7,7 @@ module.exports = [
 		tag: "v2.0.0",
 		// tag: "v2.0.0-beta.1",
 		// "channel": "beta"
-		docs_url: "https://www.11ty.dev/docs/",
+		docs_url: "https://v2-0-0.11ty.dev/docs/",
 		minimumNodeVersion: 14,
 	},{
 		tag: "v1.0.2",
