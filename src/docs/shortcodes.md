@@ -208,18 +208,12 @@ Read more about using paired shortcodes on the individual Template Language docu
 
 ## Universal Shortcodes
 
-Universal shortcodes are added in a single place and subsequently available to multiple template engines, simultaneously. This is currently supported in JavaScript, Nunjucks, Liquid, and Handlebars template types.
+Universal shortcodes are added in a single place and subsequently available to multiple template engines, simultaneously. This is supported by JavaScript, Nunjucks, Liquid, and Handlebars template types.
 
 {% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
-  // Universal Shortcodes are added to:
-  // * Liquid
-  // * Nunjucks
-  // * Handlebars
-  // * JavaScript
-
   // Single Universal Shortcode
   eleventyConfig.addShortcode("myShortcode", function(firstName, lastName) { … });
 
@@ -230,15 +224,12 @@ module.exports = function(eleventyConfig) {
 
 ### Asynchronous Universal Shortcodes
 
+This is supported by Liquid, Nunjucks, and JavaScript template types (Handlebars is not async-friendly).
+
 {% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
-  // Universal Asynchronous Shortcodes are added to:
-  // * Liquid
-  // * Nunjucks
-  // * JavaScript
-
   // Async support for `addShortcode` and `addPairedShortcode` is new in Eleventy {{ "2.0.0-canary.24" | coerceVersion }}
   eleventyConfig.addShortcode("single", async function(myName) { /* … */ });
   eleventyConfig.addPairedShortcode("paired", async function(content, myName) { /* … */ });

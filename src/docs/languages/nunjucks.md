@@ -145,7 +145,7 @@ Multi-argument filters in Nunjucks are called like this: `{% raw %}{{ myValue1 |
 
 ## Shortcodes
 
-Shortcodes are basically reusable bits of content. You can add Nunjucks specific shortcodes, but you probably want to add a [Universal shortcode](/docs/shortcodes/) instead.
+Shortcodes are reusable bits of content. You can add Nunjucks specific shortcodes, but it’s probably easier to add a [Universal shortcode](/docs/shortcodes/) instead.
 
 ### Single Shortcode
 
@@ -154,7 +154,7 @@ module.exports = function(eleventyConfig) {
   // Nunjucks Shortcode
   eleventyConfig.addNunjucksShortcode("user", function(name, twitterUsername) { … });
 
-  // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
+  // Universal Shortcodes (Adds to Liquid, Nunjucks, JavaScript, Handlebars)
   eleventyConfig.addShortcode("user", function(name, twitterUsername) {
     return `<div class="user">
 <div class="user_name">${name}</div>
@@ -164,10 +164,10 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-#### Usage
+#### Nunjucks Template Usage
 
 {% raw %}
-```html
+```njk
 {% user "Zach Leatherman", "zachleat" %}
 ```
 {% endraw %}
@@ -199,12 +199,12 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-#### Usage
+#### Nunjucks Usage
 
 Note that you can put any Nunjucks tags or content inside the `{% raw %}{% user %}{% endraw %}` shortcode! Yes, even other shortcodes!
 
 {% raw %}
-```html
+```njk
 {% user "Zach Leatherman", "zachleat" %}
   Zach likes to take long walks on Nebraska beaches.
 {% enduser %}
@@ -237,12 +237,12 @@ ${user.twitter ? `<div class="user_twitter">@${user.twitter}</div>` : ''}
 };
 ```
 
-#### Usage
+#### Nunjucks Usage
 
 The order of the arguments doesn’t matter.
 
 {% raw %}
-```html
+```njk
 {% user name="Zach Leatherman", twitter="zachleat" %}
 {% user twitter="zachleat", name="Zach Leatherman" %}
 ```
@@ -257,7 +257,7 @@ The order of the arguments doesn’t matter.
 </div>
 ```
 
-#### Usage
+#### Nunjucks Usage
 
 Importantly, this syntax means that any of the arguments can be optional (without having to pass in a bunch of `null, null, null` to maintain order).
 
@@ -277,7 +277,7 @@ Importantly, this syntax means that any of the arguments can be optional (withou
 
 ### Asynchronous Shortcodes {% addedin "0.10.0" %}
 
-Note that the configuration methods here to add asynchronous shortcodes are different than their synchronous counterparts.
+Note that the configuration methods here to add asynchronous shortcodes are different than their synchronous counterparts. This is just another gentle reminder here that these API methods are pretty verbose and it’s probably easier to add a [Universal shortcode](/docs/shortcodes/) instead.
 
 {% codetitle ".eleventy.js" %}
 
@@ -293,17 +293,36 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-#### Usage
+#### Nunjucks Usage
 
-(It’s the same.)
+This is identical to the synchronous Nunjucks usage.
 
 {% raw %}
-```html
+```njk
 {% user "Zach Leatherman", "zachleat" %}
 
 {% user2 "Zach Leatherman", "zachleat" %}
   Zach likes to take long walks on Nebraska beaches.
 {% enduser2 %}
+```
+{% endraw %}
+
+### Warning: The `set` Tag Does Not Work With Async Content
+
+{% callout "warn" %}This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.{% endcallout %}
+
+[Nunjucks’ {% raw %}`{% set %}`{% endraw %} tag](https://mozilla.github.io/nunjucks/templating.html#set) does not work to capture asynchronous content (e.g. asynchronous shortcodes).
+
+{% addedin "1.0.0" %}Starting in Eleventy v1.0.0, Eleventy provides a {% raw %}`{% setAsync %}`{% endraw %} tag to work around this limitation. Notably and contrary to `set`, `setAsync`’s first argument is a string.
+
+{% raw %}
+```njk
+{% setAsync "myVariableName" %}
+{% myAsyncShortcode %}
+{% endsetAsync %}
+
+<!-- Now use the variable -->
+{{ myVariableName }}
 ```
 {% endraw %}
 
