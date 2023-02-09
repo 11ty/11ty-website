@@ -84,11 +84,11 @@ Our industry can be particularly bad about inventing words for things that alrea
 
 A static site is a group of generated HTML files. Content is built into the HTML files rather than using a dynamic back end language to generate the content on-the-fly. A dynamic site can appear static when you add caching rules to make the content stickier. A static site can appear dynamic when you run your build quickly and often.
 
-### JAMstack
+### Jamstack
 
 > Modern web development architecture based on client-side JavaScript, reusable APIs, and prebuilt Markup.—[jamstack.org](https://jamstack.org/)
 
-Eleventy facilitates JAMstack sites—but you maintain full control over the JavaScript.
+Eleventy facilitates Jamstack sites—but you maintain full control over the JavaScript.
 
 ### Progressive Enhancement
 
