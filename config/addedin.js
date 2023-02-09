@@ -1,7 +1,7 @@
 const semver = require("semver");
 const versions = require("../src/_data/versions");
 
-const MINIMUM_VERSION_SHOWN = "0.11.0";
+const MINIMUM_VERSION_SHOWN = "1.0.0";
 
 const COERCE = {
 	// should have `v` prefix
