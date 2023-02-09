@@ -11,11 +11,16 @@ Eleventy 2.0 bundles a brand new default development server. Check out the [`11t
 
 At time of release, this new server helps Eleventy by:
 
-* Reduce dependencies by 47.3% to 211 (down from 311)
-* Reducing `node_modules` size 🏋️ by 326.9% to 36.3 MB (down from 155 MB)
-* Faster `npm install` times by 43.8%
-* No unresolved `npm audit` errors or warnings 👀
-* Supports [emulated passthrough file copy](/docs/copy/#emulate-passthrough-copy-during-serve) for faster builds!
+* 🏋🏻‍♀️ Minimal footprint: 1.4 MB node_modules
+  * Eleventy `node_modules` dropped from 155 MB to 34.3 MB
+  * Faster Eleventy `npm install` times (30.5% faster)
+  * Reduced Eleventy dependency count from 311 -> 211
+* 📦 Decoupled from any Bundler
+* 🚄 Fast ~2ms startup times
+* ⚡️ WebSockets-based Live reload
+* 🔬 DOM-diffing HTML updates
+* ⚠️ No unresolved `npm audit` errors or warnings 👀
+* 🚤 Supports [emulated passthrough file copy](/docs/copy/#emulate-passthrough-copy-during-serve) for faster builds!
 
 Read more on the [Eleventy Dev Server 1.0 release notes](https://github.com/11ty/eleventy-dev-server/releases/tag/v1.0.0).
 
