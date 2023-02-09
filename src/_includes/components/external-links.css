@@ -28,8 +28,8 @@ a[href^="//"]:not([href^="//11ty.dev"], [href^="//www.11ty.dev"]):not(.minilink)
 }
 
 /* CSS-only favicons https://www.zachleat.com/web/external-link-favicons/ */
-a[href^="https://www.netlify.com"]:before,
-a[href^="https://docs.netlify.com"]:before,
+a[href^="https://www.netlify.com"]:not(.elv-externalexempt):before,
+a[href^="https://docs.netlify.com"]:not(.elv-externalexempt):before,
 a[href^="https://www.youtube.com"]:before,
 a[href^="https://youtube.com"]:before,
 a[href^="https://github.com"]:before,
@@ -60,8 +60,8 @@ a[href^="https://en.wikipedia.org"]:after {
 	display: none;
 }
 
-a[href^="https://www.netlify.com"]:before,
-a[href^="https://docs.netlify.com"]:before {
+a[href^="https://www.netlify.com"]:not(.elv-externalexempt):before,
+a[href^="https://docs.netlify.com"]:not(.elv-externalexempt):before {
 	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.netlify.com%2F/");
 }
 a[href^="https://youtube.com"]:before,
