@@ -33,7 +33,7 @@ const shortcodes = {
 	},
 	avatar(datasource, slug, alt = "") {
 		if(!slug) {
-			return defaultAvatarHtml;
+			return "";
 		}
 
 		slug = cleanName(slug).toLowerCase();
