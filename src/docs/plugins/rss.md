@@ -6,6 +6,8 @@ eleventyNavigation:
 ---
 # RSS Plugin
 
+{% tableofcontents %}
+
 A pack of plugins for generating an RSS feed (actually an Atom feed, but who’s counting) using the Nunjucks templating engine.
 
 * [GitHub](https://github.com/11ty/eleventy-plugin-rss).
@@ -36,9 +38,9 @@ module.exports = function(eleventyConfig) {
 
 {% callout "info", "md" %}You’re only allowed one `module.exports` in your configuration file, so make sure you only copy the `require` and the `addPlugin` lines above!{% endcallout %}
 
-### Options {% addedin "RSS 1.1.0" %}
+### Options
 
-Advanced control of [PostHTML rendering options](https://github.com/posthtml/posthtml-render#options) via `posthtmlRenderOptions`.
+{% addedin "RSS 1.1.0" %} Advanced control of [PostHTML rendering options](https://github.com/posthtml/posthtml-render#options) via `posthtmlRenderOptions`.
 
 ```js
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -60,9 +62,9 @@ module.exports = function(eleventyConfig) {
 * `absoluteUrl`: converts a single URL (relative or absolute path) to a full absolute URL including protocol, domain, full path.
 * `htmlToAbsoluteUrls`: (async) transforms all of the URLs in a block of HTML with `absoluteUrl` above. Uses [posthtml-urls](https://github.com/posthtml/posthtml-urls) with `a[href]`, `video[src]`, `audio[src]`, `source`, `img[src]`, `[srcset]` and [a whole bunch more](https://github.com/posthtml/posthtml-urls/blob/307c91342a211b3f9fb22bc57264bbb31f235fbb/lib/defaultOptions.js).
 
-### Use with other template languages {% addedin "RSS 1.1.0" %}
+### Use with other template languages
 
-This plugin exports `dateToRfc3339`, `dateToRfc822` ({% addedin "RSS 1.2.0" %}), `getNewestCollectionItemDate`, `absoluteUrl`, and `convertHtmlToAbsoluteUrls` functions so you can use with your own filters. For example:
+{% addedin "RSS 1.1.0" %} This plugin exports `dateToRfc3339`, `dateToRfc822` ({% addedin "RSS 1.2.0" %}), `getNewestCollectionItemDate`, `absoluteUrl`, and `convertHtmlToAbsoluteUrls` functions so you can use with your own filters. For example:
 
 ```js
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -119,7 +121,7 @@ Copy and paste this template and modify the JSON metadata to match your feed’s
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ metadata.url }}">
   <title>{{ metadata.title }}</title>
   <subtitle>{{ metadata.subtitle }}</subtitle>
-  <link href="{{ permalink | url | absoluteUrl(metadata.url) }}" rel="self"/>
+  <link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self"/>
   <link href="{{ metadata.url }}"/>
   <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ metadata.url }}</id>
@@ -128,7 +130,7 @@ Copy and paste this template and modify the JSON metadata to match your feed’s
     <email>{{ metadata.author.email }}</email>
   </author>
   {%- for post in collections.posts | reverse %}
-  {%- set absolutePostUrl = post.url | url | absoluteUrl(metadata.url) %}
+  {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
@@ -167,11 +169,11 @@ Copy and paste this template and modify the JSON metadata to match your feed’s
   <channel>
     <title>{{ metadata.title }}</title>
     <link>{{ metadata.url }}</link>
-    <atom:link href="{{ permalink | url | absoluteUrl(metadata.url) }}" rel="self" type="application/rss+xml" />
+    <atom:link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" type="application/rss+xml" />
     <description>{{ metadata.subtitle }}</description>
     <language>{{ metadata.language }}</language>
     {%- for post in collections.posts | reverse %}
-    {%- set absolutePostUrl = post.url | url | absoluteUrl(metadata.url) %}
+    {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
     <item>
       <title>{{ post.data.title }}</title>
       <link>{{ absolutePostUrl }}</link>
@@ -212,7 +214,7 @@ Copy and paste this template and modify the JSON metadata to match your feed’s
   "title": "{{ metadata.title }}",
   "language": "{{ metadata.language }}",
   "home_page_url": "{{ metadata.url }}",
-  "feed_url": "{{ permalink | url | absoluteUrl(metadata.url) }}",
+  "feed_url": "{{ permalink | absoluteUrl(metadata.url) }}",
   "description": "{{ metadata.subtitle }}",
   "author": {
     "name": "{{ metadata.author.name }}",
@@ -220,7 +222,7 @@ Copy and paste this template and modify the JSON metadata to match your feed’s
   },
   "items": [
     {%- for post in collections.posts | reverse %}
-    {%- set absolutePostUrl = post.url | url | absoluteUrl(metadata.url) %}
+    {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
     {
       "id": "{{ absolutePostUrl }}",
       "url": "{{ absolutePostUrl }}",

@@ -4,8 +4,9 @@ eleventyNavigation:
   key: Events
   order: 10
 ---
-
 # Events
+
+{% tableofcontents %}
 
 You may want to run some code at certain times during the compiling process. To do that, you can use _configuration events_, which will run at specific times during the compiling process.
 
@@ -77,6 +78,10 @@ module.exports = function (eleventyConfig) {
 * `results`: _only available on `eleventy.after`_. An array with the processed Eleventy output (similar to `--to=json` output)
   * Individual entries will have: `{ inputPath, outputPath, url, content }`
 
+<div class="youtube-related">
+  {%- youtubeEmbed "f0LsgyPV7j0", "New Event Arguments (Weekly №5)", "491" -%}
+</div>
+
 ## `eleventy.beforeWatch` {% addedin "1.0.0" %}
 
 * Previously known as the now deprecated (but not removed) `beforeWatch` {% addedin "0.11.0" %} event.
@@ -95,4 +100,4 @@ module.exports = function (eleventyConfig) {
 };
 ```
 
-The `changedFiles` parameter was {% addedin "v0.11.1" %}.
+The `changedFiles` parameter was {% addedin "0.11.1" %}.

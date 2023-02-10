@@ -1,3 +1,6 @@
+# Temporary
+src/docs/server-api.md
+
 # Generic
 package-lock.json
 node_modules/
@@ -11,15 +14,15 @@ yarn.lock
 # App-specific
 cache
 _site/
-_generated*
 node-supporters/
 src/_data/builtwith/
 
 # Netlify generated stuff
 .netlify/
 
+# Eleventy Edge Build Data files
+netlify/edge-functions/_generated
+
 # Serverless
 netlify/functions/serverless/*
 !netlify/functions/serverless/index.js
-netlify/functions/dynamic/*
-!netlify/functions/dynamic/index.js

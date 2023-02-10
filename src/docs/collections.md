@@ -7,20 +7,11 @@ eleventyNavigation:
   excerpt: Group, reuse, and sort content in interesting ways.
 communityLinksKey: collections
 ---
+{% tableofcontents %}
+
 While [pagination](/docs/pagination/) allows you to iterate over a data set to create multiple templates, a collection allows you to group content in interesting ways. A piece of content can be a part of multiple collections, if you assign the same string value to the `tags` key in the front matter.
 
 Take care to note that `tags` have a singular purpose in Eleventy: to construct collections of content. Some blogging platforms use Tags to refer to a hierarchy of labels for the content (e.g. a [tag cloud](https://en.wikipedia.org/wiki/Tag_cloud)).
-
-## Contents
-
-<style>
-/* Hide link to Contents */
-.table-of-contents > ul > li:first-child {
-  display: none;
-}
-</style>
-
-[[toc]]
 
 ## A Blog Example
 
@@ -39,12 +30,7 @@ This will place this `mypost.md` into the `post` collection with all other piece
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#collections-liquid" role="tab">Liquid</a>
-    <a href="#collections-njk" role="tab">Nunjucks</a>
-    <a href="#collections-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collections"} %}
   <div id="collections-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -93,18 +79,84 @@ exports.render = function(data) {
 </seven-minute-tabs>
 </is-land>
 
+### Declare your collections for incremental builds
+
+{% addedin "2.0.0-canary.21" %}Use the `eleventyImport` object to declare any collections you use (data cascade friendly) to inform the relationships for smarter incremental builds. This is an Array of collection names. Read more about [importing collections](https://github.com/11ty/eleventy/issues/975).
+
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collections-import"} %}
+  <div id="collections-import-liquid" role="tabpanel">
+
+{% codetitle "Liquid", "Syntax" %}
+
+{% raw %}
+```liquid
+---
+eleventyImport:
+  collections: ["post"]
+---
+<ul>
+{%- for post in collections.post -%}
+  <li>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+```
+{% endraw %}
+
+  </div>
+  <div id="collections-import-njk" role="tabpanel">
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+```jinja2
+---
+eleventyImport:
+  collections: ["post"]
+---
+<ul>
+{%- for post in collections.post -%}
+  <li>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+```
+{% endraw %}
+
+  </div>
+  <div id="collections-import-js" role="tabpanel">
+
+{% codetitle "JavaScript", "Syntax" %}
+
+{% raw %}
+```js
+exports.data = function() {
+  return {
+    eleventyImport: {
+      collections: ["post"]
+    }
+  }
+};
+exports.render = function(data) {
+  return `<ul>
+    ${data.collections.post.map(post => `<li>${post.data.title}</li>`).join("\n")}
+  </ul>`;
+};
+```
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>
+
+
 ### Using an `[aria-current]` attribute for on the current page
 
 Compare the `post.url` and special Eleventy-provided `page.url` variable to find the current page. Building on the previous example:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#collectionsnav-liquid" role="tab">Liquid</a>
-    <a href="#collectionsnav-njk" role="tab">Nunjucks</a>
-    <a href="#collectionsnav-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsnav"} %}
   <div id="collectionsnav-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -166,12 +218,7 @@ By default Eleventy puts all of your content (independent of whether or not it h
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#collectionsall-liquid" role="tab">Liquid</a>
-    <a href="#collectionsall-njk" role="tab">Nunjucks</a>
-    <a href="#collectionsall-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsall"} %}
   <div id="collectionsall-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -282,17 +329,24 @@ tags:
 
 This content would show up in the template data inside of `collections.cat` and `collections.dog`.
 
-### Collection Item Data Structure
+### Override tags
+
+As of Eleventy 1.0, the [Data Cascade](/docs/data-cascade/) is combined using [deep data merge](/docs/data-deep-merge/) by default, which means tags are merged together with tags assigned higher in the data cascade (the Arrays are combined). To redefine `tags` in the front matter use [the `override:` prefix](/docs/data-deep-merge/#using-the-override-prefix):
+
+```markdown
+---
+override:tags: []
+---
+```
+
+This content would not show up in any of the collections it was added to with `tags` higher up in the data cascade.
+
+## Collection Item Data Structure
 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#collectionsitem-liquid" role="tab">Liquid</a>
-    <a href="#collectionsitem-njk" role="tab">Nunjucks</a>
-    <a href="#collectionsitem-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsitem"} %}
   <div id="collectionsitem-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -343,24 +397,29 @@ exports.render = function(data) {
 
 Note in the above example that we output the `post.data.title` value? Similarly, each collection item will have the following data:
 
-* `inputPath`: the full path to the source input file (including the path to the input directory)
-* `fileSlug`: {% addedin "0.5.3" %} Mapped from the input file name, useful for permalinks. Read more about [`fileSlug`](/docs/data-eleventy-supplied/#fileslug).
-* `outputPath`: the full path to the output file to be written for this content
-* `url`: url used to link to this piece of content.
-* `date`: the resolved JS Date Object used for sorting. Read more about [Content Dates](/docs/dates/).
+* `page`: everything in [Eleventy’s supplied page variable](/docs/data-eleventy-supplied/#page-variable) for this template (including `inputPath`, `url`, `date`, and others). {% addedin "2.0.0-canary.19" %}
 * `data`: all data for this piece of content (includes any data inherited from layouts)
-* `templateContent`: the rendered content of this template. This does _not_ include layout wrappers.
+* `content`: the rendered content of this template. This does _not_ include layout wrappers. {% addedin "2.0.0-canary.19" %}
 
 ```js
-{ inputPath: './test1.md',
-  fileSlug: 'test1',
-  outputPath: './_site/test1/index.html',
-  url: '/test1/',
-  date: new Date(),
-  data: { title: 'Test Title', tags: ['tag1', 'tag2'], date: 'Last Modified' },
-  templateContent: '<h1>This is my title</h1>\n\n<p>This is content…' }
+{
+  page: {
+    inputPath: './test1.md',
+    url: '/test1/',
+    date: new Date(),
+    // … and everything else in Eleventy’s `page`
+  },
+  data: { title: 'Test Title', tags: ['tag1', 'tag2'], date: 'Last Modified', /* … */ },
+  content: '<h1>This is my title</h1>\n\n<p>This is content…'
+}
 ```
 
+_Backwards compatibility notes:_
+
+* Top level properties for `inputPath`, `fileSlug`, `outputPath`, `url`, `date` are still available, though use of `page.*` {% addedin "2.0.0-canary.19" %} for these is encouraged moving forward.
+* `content` {% addedin "2.0.0-canary.19" %} is aliased to the previous property `templateContent`.
+
+You can [view the previous Collection Item Data Structure docs for 1.0](https://v1-0-2.11ty.dev/docs/collections/#collection-item-data-structure).
 
 ## Sorting
 
@@ -391,12 +450,7 @@ To sort descending in your template, you can use a filter to reverse the sort or
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#collectionssort-liquid" role="tab">Liquid</a>
-    <a href="#collectionssort-njk" role="tab">Nunjucks</a>
-    <a href="#collectionssort-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionssort"} %}
   <div id="collectionssort-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}

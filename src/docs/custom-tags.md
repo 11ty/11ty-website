@@ -13,7 +13,7 @@ tags:
 ---
 # Custom Tags
 
-<div class="elv-callout elv-callout-info">It’s unlikely that you want this feature. You probably want <a href="/docs/shortcodes/">shortcodes</a> instead, Eleventy’s custom tags sugar (it’s easier to use).</div>
+{% callout "info" %}It’s unlikely that you want this feature. You probably want <a href="/docs/shortcodes/">shortcodes</a> instead, Eleventy’s custom tags sugar (it’s easier to use).{% endcallout %}
 
 Various template engines can be extended with custom tags.
 
@@ -23,12 +23,7 @@ But, after all that, you can still add a Custom Tag using the [Configuration API
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#customtag-liquid" role="tab">Liquid</a>
-    <a href="#customtag-njk" role="tab">Nunjucks</a>
-    <a href="#customtag-hbs" role="tab">Handlebars</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "customtag"} %}
   <div id="customtag-liquid" role="tabpanel">
 
 

@@ -1,0 +1,5 @@
+{
+  "npm": "eleventy-plugin-plausible",
+  "author": "gingerchew",
+  "description": "Add the Plausible analytics script tag with a shortcode and remove *some* of the worry"
+}

@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/madrilene/eleventy-i18n",
+	"name": "eleventy-i18n",
+	"description": "Minimal starter for localized content, using Eleventy's own Internationalization (I18n) plugin",
+	"author": "lene",
+	"demo": "https://eleventy-i18n.netlify.app"
+}

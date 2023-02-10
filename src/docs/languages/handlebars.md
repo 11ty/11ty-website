@@ -11,7 +11,9 @@ tags:
   - related-custom-tags
 layout: layouts/langs.njk
 ---
-| Eleventy Short Name | File Extension | NPM Package                                                |
+{% tableofcontents "open" %}
+
+| Eleventy Short Name | File Extension | npm Package                                                |
 | ------------------- | -------------- | ---------------------------------------------------------- |
 | `hbs`               | `.hbs`         | [`handlebars.js`](https://github.com/wycats/handlebars.js) |
 

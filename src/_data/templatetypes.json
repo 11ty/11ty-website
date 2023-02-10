@@ -7,6 +7,10 @@
 	"ext": "md",
 	"url": "/docs/languages/markdown/"
 },{
+	"name": "WebC",
+	"ext": "webc",
+	"url": "/docs/languages/webc/"
+},{
 	"name": "JavaScript",
 	"ext": "11ty.js",
 	"url": "/docs/languages/javascript/"

@@ -7,8 +7,9 @@ layout: layouts/docs.njk
 {{ content | safe }}
 
 <ul class="quicktipstoc">
-	<li><h3><strong>All Quick Tips</strong></h3></li>
+	<li><h3><strong>All <a href="/docs/quicktips/">Quick Tips</a></strong></h3></li>
 {% for tip in collections.quicktipssorted %}
 	<li{% if page.url == tip.url %} class="active"{% endif %}><a href="{{ tip.url }}"><code>#{{ tip.data.tipindex }}</code>—{{ tip.data.tiptitle }}</a></li>
 {%- endfor %}
+  <li>View all of the <a href="/docs/quicktips/"><strong>Eleventy Quick Tips</strong></a>.</li>
 </ul>

@@ -5,16 +5,21 @@ eleventyNavigation:
   excerpt: Returns a screenshot image from a URL.
 communityLinksKey: api-services-screenshot
 ---
+{% tableofcontents %}
 
 Feed this runtime service a URL and it returns a fully rendered screenshot image from that page (using Puppeteer)
 
-[[toc]]
+<div class="youtube-related">
+  {% youtubeEmbed "BcZUSZcE8uQ" %}
+</div>
 
-## Open Source
+## Source Code
 
 * [`11ty/api-screenshot` on GitHub](https://github.com/11ty/api-screenshot)
 
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/11ty/api-screenshot" class="elv-externalexempt"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
+
+* You will _need_ to set an environment variable in the Netlify App UI `AWS_LAMBDA_JS_RUNTIME` with the value `nodejs12.x`. Read more at [Issue #17](https://github.com/11ty/api-screenshot/issues/17).
 
 ## Usage
 

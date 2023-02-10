@@ -6,6 +6,8 @@ eleventyNavigation:
 ---
 # Environment Variables
 
+{% tableofcontents %}
+
 You can set and use your own environment variables in your projects. They will be available in your code via [Node.js’ `process.env` property](https://nodejs.org/api/process.html#process_process_env).
 
 These are typically used for setting your deployment context and private API keys. This is also the approach used to [enable `DEBUG` mode](/docs/debugging/).
@@ -70,3 +72,4 @@ Eleventy also supplies its own Eleventy-specific environment variables, usually 
 * `process.env.ELEVENTY_ROOT` the absolute path to the directory in which you’ve run the Eleventy command.
 * `process.env.ELEVENTY_SOURCE` is the method in which Eleventy has run, current either `cli` or `script`.
 * `process.env.ELEVENTY_SERVERLESS` is set to `true` (String) if Eleventy is running in [serverless mode](/docs/plugins/serverless/). If Eleventy is _not_ running in serverless mode—due to Node forcing environment variables to be strings—this variable will not exist.
+* `process.env.ELEVENTY_RUN_MODE` {% addedin "2.0.0-beta.2" %} is one of `build`, `serve`, or `watch`.

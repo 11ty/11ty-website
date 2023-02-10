@@ -5,7 +5,6 @@ eleventyNavigation:
   excerpt: How Eleventy works internally.
   order: 1
 excludeFromSidebar: true
-layout: "layouts/docs.njk"
 ---
 # Order of Operations
 

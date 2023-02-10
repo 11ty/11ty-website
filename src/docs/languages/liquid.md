@@ -11,7 +11,9 @@ tags:
   - related-custom-tags
 layout: layouts/langs.njk
 ---
-| Eleventy Short Name | File Extension | NPM Package                                          |
+{% tableofcontents "open" %}
+
+| Eleventy Short Name | File Extension | npm Package                                          |
 | ------------------- | -------------- | ---------------------------------------------------- |
 | `liquid`            | `.liquid`      | [`liquidjs`](https://www.npmjs.com/package/liquidjs) |
 
@@ -23,7 +25,19 @@ You can override a `.liquid` file’s template engine. Read more at [Changing a 
 
 Rather than constantly fixing outdated documentation, [find `getLiquidOptions` in `Liquid.js`](https://github.com/11ty/eleventy/blob/master/src/Engines/Liquid.js). These options are different than the [default `liquidjs` options](https://liquidjs.com/tutorials/options.html).
 
-### Optional: Use your own options {% addedin "0.2.15" %}
+### JavaScript Truthiness in Liquid
+
+Surprising to JavaScript developers—in [LiquidJS both `""` and `0` are truthy values](https://liquidjs.com/tutorials/truthy-and-falsy.html)! If you’d like to switch to use more JS-familiar conventions, use the Liquid option `jsTruthy: true` in your Eleventy config:
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setLiquidOptions({
+    jsTruthy: true
+  });
+};
+```
+
+### Use your own options {% addedin "0.2.15" %}
 
 It’s recommended to use the Configuration API to override the default options above.
 
@@ -74,7 +88,7 @@ module.exports = function(eleventyConfig) {
 
 ### Quoted Include Paths
 
-<div class="elv-callout elv-callout-warn">This is a common pitfall if you’re using Liquid templates.</div>
+{% callout "warn" %}This is a common pitfall if you’re using Liquid templates.{% endcallout %}
 
 If you’d like to use include paths without quotation marks, you must enable `dynamicPartials: false` in your Liquid options. The [default in Eleventy 1.0 (and `liquidjs`) swapped from `false` to `true`](https://github.com/11ty/eleventy/issues/240). Read more about this limitation at [Issue #72](https://github.com/11ty/eleventy/issues/72).
 
@@ -92,10 +106,15 @@ Filters are used to transform or modify content. You can add Liquid specific fil
 
 Read more about [LiquidJS Filter syntax](https://liquidjs.com/tutorials/register-filters-tags.html)
 
+Note that Liquid supports asynchronous filters out of the box (without any additional code or API method changes).
+
 ```js
 module.exports = function(eleventyConfig) {
   // Liquid Filter
   eleventyConfig.addLiquidFilter("myLiquidFilter", function(myVariable) { … });
+
+  // Async-friendly too
+  eleventyConfig.addLiquidFilter("myAsyncLiquidFilter", async function(myVariable) { … });
 
   // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
   eleventyConfig.addFilter("myFilter", function(myVariable) { … });

@@ -1,3 +1,4 @@
+require("dotenv").config();
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
@@ -6,13 +7,24 @@ module.exports = async function() {
 		let json = await EleventyFetch("https://api.github.com/repos/11ty/eleventy", {
 			type: "json",
 			duration: process.env.ELEVENTY_SERVERLESS ? "*" : "1d",
-			directory: process.env.ELEVENTY_SERVERLESS ? "cache/" : ".cache/eleventy-fetch/",
+			directory: ".cache/eleventy-fetch/",
+			dryRun: process.env.ELEVENTY_SERVERLESS ? true : false,
+			fetchOptions: {
+				headers: {
+					"Authorization": `bearer ${process.env.GITHUB_READ_TOKEN}`
+				}
+			}
 		});
 
 		return {
 			stargazers: json.stargazers_count
 		};
 	} catch(e) {
+		// if(process.env.NODE_ENV === "production") {
+		// 	// Fail the build in production.
+		// 	return Promise.reject(e);
+		// }
+
 		console.log( "Failed getting GitHub stargazers count, returning 0" );
 		return {
 			stargazers: ""

@@ -66,13 +66,13 @@ A portable, installable Eleventy configuration which can add [data](#data), [fil
 
 Opt-in shortcodes for Eleventy in which pieces of dynamic functionality can be coupled with build-generated or serverless templates.
 
-[Read more about Eleventy Edge.](/docs/plugin/edge/)
+[Read more about Eleventy Edge.](/docs/plugins/edge/)
 
 ### Eleventy Serverless
 
 An opt-in build mode for Eleventy in which specified pages are built when a user requests them, rather than ahead of time during a build step. Optionally, pages that are built on request can be cached by the content delivery network to be used for future visits to that page.
 
-[Read more about Eleventy Serverless.](/docs/plugin/serverless/)
+[Read more about Eleventy Serverless.](/docs/plugins/serverless/)
 
 ## Industry Terms and Buzzwords
 
@@ -84,11 +84,11 @@ Our industry can be particularly bad about inventing words for things that alrea
 
 A static site is a group of generated HTML files. Content is built into the HTML files rather than using a dynamic back end language to generate the content on-the-fly. A dynamic site can appear static when you add caching rules to make the content stickier. A static site can appear dynamic when you run your build quickly and often.
 
-### JAMstack
+### Jamstack
 
 > Modern web development architecture based on client-side JavaScript, reusable APIs, and prebuilt Markup.—[jamstack.org](https://jamstack.org/)
 
-Eleventy facilitates JAMstack sites—but you maintain full control over the JavaScript.
+Eleventy facilitates Jamstack sites—but you maintain full control over the JavaScript.
 
 ### Progressive Enhancement
 
@@ -104,7 +104,7 @@ Make components and markup data-driven so that you don’t have a bunch of one-o
 
 ### Serverless Friendly
 
-> “You can take your front-end skills and do things that typically only a back-end can do. You can write a JavaScript function that you run and receive a response from by hitting a URL.”—[The Power of Serverless](https://serverless.css-tricks.com/) from [Chris Coyier](https://twitter.com/chriscoyier)
+> “You can take your front-end skills and do things that typically only a back-end can do. You can write a JavaScript function that you run and receive a response from by hitting a URL.”—[The Power of Serverless](https://serverless.css-tricks.com/) from [Chris Coyier]({{ "https://twitter.com/chriscoyier" | canonicalTwitterUrl }})
 
 Take care to make sure that <span class="buzzword">serverless</span> functions are <span class="buzzword">progressively enhanced</span>. If you call <span class="buzzword">serverless</span> functions in client-side JavaScript, they should be used for features that are outside the core functionality of the site. Use [Eleventy Serverless](/docs/plugins/serverless/) to generate pages on-request without any client-side JavaScript.
 

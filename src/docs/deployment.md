@@ -35,6 +35,9 @@ hosts:
   - name: Begin
     url: https://begin.com/
     screenshotSize: medium
+  - name: Digital Ocean
+    url: https://www.digitalocean.com/community/tutorials/how-to-create-and-deploy-your-first-eleventy-website
+    screenshotSize: medium
 clis:
   - name: Netlify CLI
     url: https://www.netlify.com/products/cli/
@@ -42,12 +45,17 @@ clis:
   - name: Vercel CLI
     url: https://vercel.com/cli
     screenshotSize: medium
+webides:
+  - name: Glitch
+    url: https://glitch.com/
+    screenshotSize: medium
+    hideRelatedLinks: true
 ---
 # Deployment
 
-Now that you’ve built a web site with Eleventy _(even if it’s one HTML page!)_ you might be ready to put it on the web for everyone to see! There are a bunch of different ways to do it!
+{% tableofcontents %}
 
-[[toc]]
+Now that you’ve built a web site with Eleventy _(even if it’s one HTML page!)_ you might be ready to put it on the web for everyone to see! There are a bunch of different ways to do it!
 
 ## Use a Build Script
 
@@ -93,11 +101,30 @@ Many hosts provide a command line utility to deploy your project. Here are some 
   </div>
 </div>
 
+### Edit on the Web
 
-## Community Tutorials
+There are some great Web editors popping up that you can use to run and edit Eleventy projects online! Here are some options:
+
+<div class="sites-vert sites-vert--lg">
+  <div class="lo-grid" style="--lo-margin-v: 5em;">
+{%- for site in webides %}
+{% set hideRelatedLinks = site.hideRelatedLinks %}
+{% include "site-card.njk" %}
+{%- endfor %}
+  </div>
+</div>
+
+
+## Related
+
+<div class="youtube-related">
+  {%- youtubeEmbed "JCQQgtOcjH4", "New deployment docs (Weekly №2)", "72" -%}
+</div>
+
+## Community Resources
 
 - {% indieweblink "GitHub Pages Tutorial", "https://snook.ca/archives/servers/deploying-11ty-to-gh-pages" %} by {% avatarlocalcache "twitter", "snookca" %}Jonathan Snook
-- {% indieweblink "GitLab Pages Sample Project", "https://gitlab.com/bkmgit/11ty" %} by Benson Muite
+- [GitLab Pages Sample Project](https://gitlab.com/bkmgit/11ty) by Benson Muite
 - {% indieweblink "Azure Static Web Apps Tutorial", "https://squalr.us/2021/05/deploying-an-11ty-site-to-azure-static-web-apps/" %} by {% avatarlocalcache "twitter", "chadschulz" %} Chad Schulz
 - {% indieweblink "Hosting Eleventy on GitHub Pages", "https://quinndombrowski.com/blog/2022/05/07/hosting-eleventy-on-github-pages/" %} by {% avatarlocalcache "twitter", "quinnanya" %}Quinn Dombrowski
 - {% indieweblink "Deploying Eleventy using Buddy CI/CD", "https://buddy.works/guides/buddy-eleventy" %} by {% avatarlocalcache "twitter", "palmiak_fp" %}Maciek Palmowski
