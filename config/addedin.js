@@ -67,7 +67,7 @@ function addedIn(version, tag, extraClass) {
 
 	tag = tag || "span";
 
-	return `<${tag} class="minilink minilink-addedin${extraClass ? ` ${extraClass}`: ""}" data-uncoerced-version="${version}">${beforeText}${coerceVersion.call(this, version)}</${tag}>`;
+	return `<${tag} data-pagefind-ignore class="minilink minilink-addedin${extraClass ? ` ${extraClass}`: ""}" data-uncoerced-version="${version}">${beforeText}${coerceVersion.call(this, version)}</${tag}>`;
 }
 
 module.exports = {

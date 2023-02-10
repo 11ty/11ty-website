@@ -6,7 +6,6 @@ const commaNumber = require("comma-number");
 const slugify = require("slugify");
 const lodashGet = require("lodash/get");
 const shortHash = require("short-hash");
-const { execSync } = require('child_process')
 
 const { EleventyServerlessBundlerPlugin, EleventyEdgePlugin, EleventyRenderPlugin } = require("@11ty/eleventy");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -776,12 +775,6 @@ to:
 			.split("Eleventy")
 			.join(shortcodes.getIndieAvatarHtml("https://www.11ty.dev/") + "Eleventy")
 	});
-
-	// pagefind search plugin
-	eleventyConfig.on('eleventy.after', () => {
-		console.log('[pagefind] Creating search index.');
-		execSync(`npx pagefind --source _site --glob \"docs/**/*.html\"`, { encoding: 'utf-8' });
-  });
 
 	return {
 		dir: {

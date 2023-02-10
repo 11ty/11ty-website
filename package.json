@@ -8,9 +8,10 @@
   },
   "scripts": {
     "check-links": "npx check-html-links _site",
-    "build": "npx @11ty/eleventy",
+    "build": "npx @11ty/eleventy && npm run create-search-index",
     "start": "npx @11ty/eleventy --serve --port=8091 --incremental",
-    "build-production": "npm run get-new-data && NODE_ENV=production npx @11ty/eleventy",
+    "build-production": "npm run get-new-data && NODE_ENV=production npx @11ty/eleventy && npm run create-search-index",
+    "create-search-index": "npx pagefind --source _site --glob \"docs/**/*.html\"",
     "get-new-data": "rm -rf ./src/_data/builtwith/ && npx degit github:11ty/11ty-community/built-with-eleventy src/_data/builtwith/",
     "get-new-supporters": "eleventy && node node-supporters",
     "format": "prettier --write '**/*.{js,css,html,md}'"

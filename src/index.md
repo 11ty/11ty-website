@@ -8,7 +8,6 @@ ignoreGitHubButtons: true
 ignoreSupporters: true
 ignoreFastestSite: true
 searchTitle: Eleventy, a simpler static site generator
-excludeFromSearch: true
 bigPossum: true
 skipAuth: true
 eleventyComputed:

@@ -33,8 +33,8 @@ module.exports = function(eleventyConfig) {
 		level: [2,3,4],
 		permalink: markdownItAnchor.permalink.linkInsideHeader({
 			symbol: `
-				<span class="sr-only">Jump to heading</span>
-				<span aria-hidden="true">#</span>
+				<span class="sr-only" data-pagefind-ignore>Jump to heading</span>
+				<span aria-hidden="true" data-pagefind-ignore>#</span>
 			`,
 			class: "direct-link",
 			placement: 'after'
