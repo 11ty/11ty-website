@@ -73,9 +73,6 @@ p {
 	max-width: 42em;
 	line-height: 1.6;
 }
-.mt-0:first-of-type {
-	margin-top: 0;
-}
 
 abbr {
 	text-decoration: none;
@@ -344,9 +341,10 @@ h5 code {
 	font-weight: 400;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	margin: 0 0 .25em;
+	margin: 0;
 	color: #666;
 	text-align: center;
+	border: none;
 }
 @media (prefers-color-scheme: dark) {
 	.subhed {
@@ -1039,4 +1037,12 @@ details.toc[open] > summary {
 }
 .table-of-contents > ul ul > li {
 	padding: 0;
+}
+
+/* Utility classes */
+.mt-0:first-of-type {
+	margin-top: 0;
+}
+.mt-8 {
+	margin-top: 4em;
 }

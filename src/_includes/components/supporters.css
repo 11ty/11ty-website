@@ -125,7 +125,7 @@
 	width: 100%;
 	height: 70px;
 	display: block;
-	margin: 1em auto;
+	margin: 0 auto;
 }
 @media (min-width: 25em) { /* 400px */
 	.supporters-netlify {

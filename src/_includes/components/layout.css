@@ -6,9 +6,8 @@
   --lo-margin-v: 0px;
   display: flex;
   flex-wrap: wrap;
-  margin: 0;
-  margin-top: calc(-1 * var(--lo-margin-v));
-  margin-left: calc(-1 * var(--lo-margin-h));
+	margin: 0;
+	gap: var(--lo-margin-v) var(--lo-margin-h);
 }
 .lo-c {
   /* if a margin is in play, account for this in our stackpoint calculations */
@@ -18,9 +17,6 @@
 
   flex-grow: 1;
   flex-basis: var(--lo-stackpoint-calc);
-  margin: 0;
-  margin-top: var(--lo-margin-v);
-  margin-left: var(--lo-margin-h);
 }
 .lo-debug > .lo-c {
   outline: 1px dotted;
@@ -77,6 +73,7 @@
 .lo-c-center {
   display: flex;
   align-items: center;
+	justify-content: center;
 }
 .lo-c-center > .lo {
   flex-grow: 1;
