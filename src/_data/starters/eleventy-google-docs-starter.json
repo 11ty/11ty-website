@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/jpoehnelt/eleventy-google-docs-starter",
+	"name": "eleventy-google-docs-starter",
+	"description": "A starter template for Eleventy that uses Google Docs as a CMS.",
+	"author": "jpoehnelt",
+	"demo": "https://eleventy-google-docs-starter.netlify.app/"
+}

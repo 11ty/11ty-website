@@ -18,6 +18,7 @@ To denote that a piece of content should be wrapped in a template, use the `layo
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layouts", additions: "md"} %}
   <div id="layouts-md" role="tabpanel">
 
+{% codetitle "index.md" %}
 {% codetitle "Markdown", "Syntax" %}
 {% raw %}
 ```markdown
@@ -32,6 +33,7 @@ title: My Rad Markdown Blog Post
   </div>
   <div id="layouts-liquid" role="tabpanel">
 
+{% codetitle "index.liquid" %}
 {% codetitle "Liquid", "Syntax" %}
 {% raw %}
 ```liquid
@@ -46,6 +48,7 @@ title: My Rad Liquid Blog Post
   </div>
   <div id="layouts-njk" role="tabpanel">
 
+{% codetitle "index.njk" %}
 {% codetitle "Nunjucks", "Syntax" %}
 {% raw %}
 ```jinja2
@@ -60,6 +63,7 @@ title: My Rad Nunjucks Blog Post
   </div>
   <div id="layouts-js" role="tabpanel">
 
+{% codetitle "index.11ty.js" %}
 {% codetitle "JavaScript", "Syntax" %}
 {% raw %}
 ```js
@@ -78,6 +82,7 @@ module.exports = {
   </div>
   <div id="layouts-hbs" role="tabpanel">
 
+{% codetitle "index.hbs" %}
 {% codetitle "Handlebars", "Syntax" %}
 {% raw %}
 ```handlebars
