@@ -33,13 +33,13 @@ For example, consider a template located at `posts/subdir/my-first-blog-post.md`
 
 ### Apply a default layout to multiple templates
 
-{% codetitle "posts/post.json" %}
+{% codetitle "posts/posts.json" %}
 
 ```json
 { "layout": "layouts/post.njk" }
 ```
 
-Using the above in `posts/post.json` will configure a layout for all of the templates inside of `posts/*`.
+Using the above in `posts/posts.json` will configure a layout for all of the templates inside of `posts/*`.
 
 ## Additional Customizations
 

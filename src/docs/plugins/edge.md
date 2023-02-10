@@ -6,13 +6,13 @@ eleventyNavigation:
 # communityLinksKey: edge
 overrideCommunityLinks: true
 ---
-# Eleventy Edge {% addedin "2.0.0" %}
+# Eleventy Edge {% addedin "2.0.0-canary.7" %}
 
 {% tableofcontents %}
 
 {{ eleventyNavigation.excerpt }}
 
-{% callout "info" %}This feature is considered <strong>experimental</strong> and requires Eleventy <code>v2.0.0-canary.7</code> or higher. Our first release is limited to <a href="https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/">Netlify Edge Functions</a> support only.{% endcallout %}
+{% callout "info" %}This feature is considered <strong>experimental</strong> and requires Eleventy <code>{{ "2.0.0-canary.7" | coerceVersion }}</code> or higher. Our first release is limited to <a href="https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/">Netlify Edge Functions</a> support only.{% endcallout %}
 
 Eleventy Edge is an exciting new way to add dynamic content to your Eleventy templates. With a simple Eleventy shortcode you can opt-in a part of your Eleventy template to run on an Edge server, allowing your site to use dynamic, user-specific content!
 
@@ -43,7 +43,7 @@ If you don’t yet have an Eleventy project, go through the [Getting Started Gui
 
 ### 1. Installation
 
-The Eleventy Edge plugin is bundled with Eleventy, but do note that the plugin requires version `2.0.0-canary.7` or newer.
+The Eleventy Edge plugin is bundled with Eleventy, but do note that the plugin requires version `{{ "2.0.0-canary.7" | coerceVersion }}` or newer.
 
 At time of initial launch, you will need to use Netlify CLI to run Eleventy Edge locally (`netlify-cli` version `10.0.0` or higher).
 
@@ -75,7 +75,6 @@ module.exports = function(eleventyConfig) {
     name: "edge",
 
     // Used for the default deno import URL
-    // Added in 2.0.0-canary.7
     eleventyEdgeVersion: "1.0.0",
 
     // Version check for the Edge runtime
@@ -86,7 +85,6 @@ module.exports = function(eleventyConfig) {
 
     // Directory to write the import_map.json to
     // Also supported: `false`
-    // Added in 2.0.0-canary.7
     importMap: "./.netlify/edge-functions/",
   });
 };
@@ -94,7 +92,7 @@ module.exports = function(eleventyConfig) {
 
 </details>
 
-Starting with Eleventy `2.0.0-canary.7` the above plugin will automatically generate an Eleventy Edge Function file for you at: `./netlify/edge-functions/eleventy-edge.js`.
+The above plugin will automatically generate an Eleventy Edge Function file for you at: `./netlify/edge-functions/eleventy-edge.js`.
 
 <details>
 <summary>Expand to see a sample Eleventy Edge Function</summary>
@@ -130,14 +128,6 @@ export default async (request, context) => {
 ```
 
 </details>
-
-<details>
-<summary>Expand to read a warning about Edge on Eleventy <code>2.0.0-canary.6</code></summary>
-
-{% callout "warn", "md" %}If you tried Eleventy Edge on `2.0.0-canary.6`, unfortunately [we had to restructure some deps](https://github.com/11ty/eleventy/issues/2335#issuecomment-1104470515) and the Edge Function `import` URLs are different starting with `2.0.0-canary.7`. The good news is that Eleventy will generate a working file for you! Sorry folks!{% endcallout %}
-
-</details>
-
 
 #### Read more about Netlify’s Edge Functions
 
@@ -459,7 +449,7 @@ The `edge` shortcode [requires an async-friendly template language](#limitations
 
 #### Add Global Data to your Edge Function
 
-If you open up your generated `netlify/edge-functions/eleventy-edge.js` file, you’ll notice that you are able to run your own arbitrary configuration code on Edge. This means you can run `eleventyConfig.addGlobalData` to add your own global data to the edge templates {% addedin "2.0.0-canary.11" %}. Any data you add here will automatically be available as a global inside of any `{% raw %}{% edge %}{% endraw %}` shortcodes _without having to pass it as an argument_.
+If you open up your generated `netlify/edge-functions/eleventy-edge.js` file, you’ll notice that you are able to run your own arbitrary configuration code on Edge. This means you can run `eleventyConfig.addGlobalData` to add your own global data to the edge templates. Any data you add here will automatically be available as a global inside of any `{% raw %}{% edge %}{% endraw %}` shortcodes _without having to pass it as an argument_.
 
 {% codetitle "netlify/edge-functions/eleventy-edge.js" %}
 

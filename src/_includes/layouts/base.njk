@@ -26,7 +26,7 @@ eleventyComputed:
 
 		<!-- Open Graph -->
 		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://www.11ty.dev/">
+		<meta property="og:url" content="https://www.11ty.dev{{ page.url }}">
 		<meta property="og:site_name" content="Eleventy">
 		<meta property="og:locale" content="en_US">
 		<meta property="og:title" content="{{ subtitle }}">
@@ -40,7 +40,7 @@ eleventyComputed:
 		<meta property="twitter:card" content="summary_large_image">
 		<meta property="twitter:site" content="@eleven_ty">
 		<meta property="twitter:creator" content="@zachleat">
-		<meta property="twitter:url" content="https://www.11ty.dev/">
+		<meta property="twitter:url" content="https://www.11ty.dev{{ page.url }}">
 		<meta property="twitter:title" content="{{ subtitle }}">
 		<meta property="twitter:description" content="{{ social.description }}">
 		<meta property="twitter:image" content="{{ social.imgsrc }}">
@@ -49,7 +49,7 @@ eleventyComputed:
 		<!-- Feeds -->
 {%- if not feedExclusive %}
 		<link rel="alternate" href="/blog/feed.xml" title="Eleventy Blog" type="application/atom+xml">
-		<link rel="alternate" href="/follow/follow.rss" title="Eleventy’s Activity Feed" type="application/rss+xml">
+		<link rel="alternate" href="/firehose/firehose.rss" title="Eleventy Firehose" type="application/rss+xml">
 {%- endif %}
 {%- if feedTitle and feedUrl %}
 		<link rel="alternate" href="{{ feedUrl }}" title="{{ feedTitle }}" type="application/atom+xml">

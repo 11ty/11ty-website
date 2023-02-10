@@ -329,7 +329,19 @@ tags:
 
 This content would show up in the template data inside of `collections.cat` and `collections.dog`.
 
-### Collection Item Data Structure
+### Override tags
+
+As of Eleventy 1.0, the [Data Cascade](/docs/data-cascade/) is combined using [deep data merge](/docs/data-deep-merge/) by default, which means tags are merged together with tags assigned higher in the data cascade (the Arrays are combined). To redefine `tags` in the front matter use [the `override:` prefix](/docs/data-deep-merge/#using-the-override-prefix):
+
+```markdown
+---
+override:tags: []
+---
+```
+
+This content would not show up in any of the collections it was added to with `tags` higher up in the data cascade.
+
+## Collection Item Data Structure
 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">

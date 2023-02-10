@@ -51,18 +51,30 @@ module.exports = function(eleventyConfig) {
 
     // Options passed to the Eleventy Dev Server
     // e.g. domdiff, enabled, etc.
-    // Added in Vite plugin v2.0.0-canary.2
+
+    // Added in Vite plugin v2.0.0
     serverOptions: {},
 
     // Defaults are shown:
     viteOptions: {
       clearScreen: false,
+      appType: "mpa", // New in v2.0.0
+
       server: {
         mode: "development",
         middlewareMode: true,
       },
+
       build: {
         mode: "production",
+      },
+
+      // New in v2.0.0
+      resolve: {
+        alias: {
+          // Allow references to `node_modules` folder directly
+          '/node_modules': path.resolve(".", 'node_modules')
+        },
       }
     }
   });

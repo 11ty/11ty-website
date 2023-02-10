@@ -1,3 +1,4 @@
+require("dotenv").config();
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
@@ -8,6 +9,11 @@ module.exports = async function() {
 			duration: process.env.ELEVENTY_SERVERLESS ? "*" : "1d",
 			directory: ".cache/eleventy-fetch/",
 			dryRun: process.env.ELEVENTY_SERVERLESS ? true : false,
+			fetchOptions: {
+				headers: {
+					"Authorization": `bearer ${process.env.GITHUB_READ_TOKEN}`
+				}
+			}
 		});
 
 		return {

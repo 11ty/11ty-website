@@ -20,7 +20,7 @@ You maintain full control of the HTML. Use with `<picture>` or `<img>` or CSS `b
 * Retrieve metadata about your new images (see [sample return object](#sample-return-object)).
   * Use this to add `width` and `height` attributes on `<img>` elements for [proper aspect ratio mapping](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping).
 * Does not require or rely on file extensions (like `.png` or `.jpg`) in URLs or local files, which may be missing or inaccurate.
-* Save remote images locally using [`eleventy-cache-assets`](/docs/plugins/cache/).
+* Save remote images locally using [`eleventy-fetch`](/docs/plugins/fetch/).
   * Use local images in your HTML to prevent broken image URLs.
   * Manage the [cache duration](/docs/plugins/fetch/#change-the-cache-duration).
 * Fast: de-duplicates image requests and use both an in-memory and disk cache.
@@ -55,7 +55,7 @@ const Image = require("@11ty/eleventy-img");
 
 Three things happen here:
 
-1. If the first argument is a full URL (not a local file path), we download [the remote image](https://unsplash.com/photos/uXchDIKs4qI) and cache it locally using the [Cache plugin](/docs/plugins/fetch/). This cached original is then used for the cache duration to avoid a bunch of network requests.
+1. If the first argument is a full URL (not a local file path), we download [the remote image](https://unsplash.com/photos/uXchDIKs4qI) and cache it locally using the [Fetch plugin](/docs/plugins/fetch/). This cached original is then used for the cache duration to avoid a bunch of network requests.
 2. From that cached full-size original, images are created for each format and width, in this case: `./img/6dfd7ac6-300.webp` and `./img/6dfd7ac6-300.jpeg`.
 3. The metadata object is populated and returned, describing those new images:
 
@@ -152,6 +152,8 @@ Where to write the new images to disk. Project-relative path to the output image
   },
 }
 ```
+
+When caching remote images, you may want to check the processed image output into your `git` (et al) repository to avoid refetches in the future. If remote images are _not_ checked in, they may be refetched every time on your CI server unless you [preserve the `.cache` folder between builds](/docs/plugins/fetch/#running-this-on-your-build-server).
 
 ### Options for SVG
 

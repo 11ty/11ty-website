@@ -52,7 +52,7 @@ relatedLinks:
 
 ## Installation
 
-{% callout "info", "md" %}Note that WebC support in Eleventy is **not bundled** with core! You must install the officially supported Eleventy plugin and the plugin **requires Eleventy 2.0.0-canary.16** or newer.{% endcallout %}
+{% callout "info", "md" %}Note that WebC support in Eleventy is **not bundled** with core! You must install the officially supported Eleventy plugin and the plugin **requires Eleventy {{ "2.0.0-canary.16" | coerceVersion }}** or newer.{% endcallout %}
 
 It’s on [npm at `@11ty/eleventy-plugin-webc`](https://www.npmjs.com/package/@11ty/eleventy-plugin-webc)!
 
@@ -470,7 +470,7 @@ Make any attribute into a prop by prefixing it with `@`. Props are “private”
 <!-- outputs <p>Hello</p> -->
 ```
 
-* In the HTML specification, attribute names are lower-case. {% addedin "WebC v0.8.0" %}Attribute or property names with dashes are converted to camelcase for JS (e.g. `<my-component @prop-name="test">` can be used like `@text="propName"`). More at [issue #71](https://github.com/11ty/webc/issues/71).
+* In the HTML specification, attribute names are lower-case. {% addedin "@11ty/webc@0.8.0" %}Attribute or property names with dashes are converted to camelcase for JS (e.g. `<my-component @prop-name="test">` can be used like `@text="propName"`). More at [issue #71](https://github.com/11ty/webc/issues/71).
 
 ### Dynamic attributes
 
@@ -488,7 +488,7 @@ Make any attribute into a dynamic attribute by prefixing it with `:`. You have a
 <img :src="src" :alt="alt" class="avatar-image">
 ```
 
-* In the HTML specification, attribute names are lower-case. {% addedin "WebC v0.8.0" %}Attribute or property names with dashes are converted to camelcase for JS (e.g. `<my-component @prop-name="test">` can be used like `@text="propName"`). More at [issue #71](https://github.com/11ty/webc/issues/71).
+* In the HTML specification, attribute names are lower-case. {% addedin "@11ty/webc@0.8.0" %}Attribute or property names with dashes are converted to camelcase for JS (e.g. `<my-component @prop-name="test">` can be used like `@text="propName"`). More at [issue #71](https://github.com/11ty/webc/issues/71).
 * {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in dynamic attributes (e.g. `this.src`/`this.alt`) when referencing helpers/data/attributes/property values.
 
 

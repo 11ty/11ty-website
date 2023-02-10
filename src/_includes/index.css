@@ -68,6 +68,10 @@ p {
 	max-width: 42em;
 	line-height: 1.6;
 }
+.mt-0:first-of-type {
+	margin-top: 0;
+}
+
 abbr {
 	text-decoration: none;
 }
@@ -177,10 +181,6 @@ main img {
 main img[height] {
 	height: auto;
 }
-main:not(:empty) {
-	padding-bottom: 3em;
-	margin-bottom: 3em;
-}
 main details {
 	margin: 1em 0;
 }
@@ -268,10 +268,12 @@ h2,
 h3,
 h4,
 h5,
+.elv-hed,
 .benchnine {
 	font-family: BenchNine, system-ui, -apple-system, sans-serif;
 }
-h1 {
+h1,
+.elv-hed {
 	font-size: 2.666666666667em; /* 48px /18 */
 	margin: 0 0 .5em;
 }
@@ -330,13 +332,21 @@ h5 code {
 }
 
 .subhed {
+	display: block;
 	font-family: system-ui, -apple-system, sans-serif;
-	font-size: 0.875rem; /* 14px /16 */
+	font-size: 0.9375em; /* 15px /16 */
 	line-height: 1;
 	font-weight: 400;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	margin: 0;
+	margin: 0 0 .25em;
+	color: #666;
+	text-align: center;
+}
+@media (prefers-color-scheme: dark) {
+	.subhed {
+		color: #adadad;
+	}
 }
 
 /* Lists */
@@ -464,7 +474,7 @@ a[href].elv-hero:visited {
 	color: #fff;
 }
 .elv-hero-content:after {
-	content: "🕘";
+	content: "";
 	font-size: 7%;
 }
 .elv-hero-content {

@@ -33,7 +33,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-{% addedin "v2.0.0-canary.18" %}These were decoupled from the [ignores used for the file watcher](/docs/watch-serve/#ignore-watching-files).
+{% addedin "2.0.0-canary.18" %}These were decoupled from the [ignores used for the file watcher](/docs/watch-serve/#ignore-watching-files).
 
 ## Defaults
 
@@ -67,7 +67,7 @@ module.exports = function(eleventyConfig) {
   {%- youtubeEmbed "hJAtWQ9nmKU", "New <code>node_modules</code> ignores default (Changelog №17)", "724" -%}
 </div>
 
-## File Locations
+## Ignore File Locations
 
 We look for ignores in these files. Entries are relative to the ignore file’s location.
 

@@ -3,27 +3,25 @@ searchTitle: Install Eleventy Globally
 ---
 # Install Eleventy Globally
 
-{% callout "warn" %}Installing globally is a quick way to get started but <strong>it is preferred to use <a href="/docs/getting-started/">local project installation</a> instead</strong>. Local installation will cause fewer interoperability issues later if you use Eleventy on multiple projects that may want to use different Eleventy versions.{% endcallout %}
+{% callout "warn" %}Installing globally is a quick way to get started but <strong>it is preferred to use <a href="/docs/getting-started/#step-2-install-eleventy-(optional)"><code>package.json</code> installation</a> instead</strong>. <code>package.json</code> installation will avoid versioning issues if you come back to this project later or decide to use Eleventy on multiple projects.
+
+If you’re planning on deploying your site using a [service like Netlify](/docs/deployment/) (running a build a deployment server), you <strong>must use <code>package.json</code> installation</strong> and **_not_** global installation.{% endcallout %}
 
 _Don’t include `~ $` when you run these commands._
 
-{% codewithprompt "cmdhomedir", "first" %}
+{% codewithprompt "cmdhomedir" %}
 npm install -g @11ty/eleventy
 {% endcodewithprompt %}
 
 The above adds an `eleventy` command that you can use in any directory.
 
-{% codewithprompt "cmdhomedir", "first" %}
+{% codewithprompt "cmdhomedir" %}
 eleventy --version
 {% latestVersion versions, config, "" %}
 {% endcodewithprompt %}
 
-{% callout "info", "md" %}If you’re planning on deploying your site using a [service like Netlify](/docs/deployment/) (that will run your build on their servers), you <strong>must use the local installation method</strong> and not global installation.{% endcallout %}
+Alternatively, it’s worthwhile to note that installation (global or local) is not required at all to run Eleventy, but suffers the same long-term versioning problems noted above. With that in mind, you can use `npx` to run Eleventy directly (included with `npm`):
 
-## Old, outdated `eleventy-cli`
-
-If you see `0.1.9` after you run `eleventy --version` you have installed the deprecated [`eleventy-cli`](https://www.npmjs.com/package/eleventy-cli) instead. We renamed Eleventy to use our `@11ty` npm organization a long time ago. You will need to uninstall `eleventy-cli`:
-
-{% codewithprompt "cmdhomedir", "first" %}
-npm uninstall -g eleventy-cli
+{% codewithprompt "cmdhomedir" %}
+npx @11ty/eleventy
 {% endcodewithprompt %}

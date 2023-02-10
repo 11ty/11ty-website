@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/huphtur/hella-simple-eleventy-tailwind-starter",
+	"name": "Hella Simple 11ty + Tailwind CSS Starter",
+	"description": "Just 2 dependencies, 2 npm scripts, and 1 Tailwind UI freebie to get you started.",
+	"author": "huphtur",
+	"demo": "https://hella-simple-eleventy-tailwindcss.netlify.app/"
+}

@@ -31,7 +31,7 @@ const Eleventy = require("@11ty/eleventy");
 
 Then run your new script from the command line. _Don’t include `~ $` when you run this command._
 
-{% codewithprompt "cmdhomedir", "all" %}
+{% codewithprompt "cmdhomedir" %}
 node my-node-script.js
 {% endcodewithprompt %}
 

@@ -26,13 +26,10 @@ Let’s check in on the current capabilities and the roadmap:
     * Only copy a passthrough copy file when it actively changed. Don’t run a template build if only a passthrough copy file has changed.
     * If a template has changed, don’t copy the passthrough copy files.
     * There was some discussion about making this behavior default at [Issue #1109](https://github.com/11ty/eleventy/issues/1109).
-  * {% addedin "2.0.0-canary.12" %} [Passthrough copy is now emulated during `--serve`](/docs/copy/#passthrough-during-serve) for incremental and non-incremental builds.
+  * {% addedin "2.0.0-canary.12" %} [Passthrough copy can be emulated during `--serve`](/docs/copy/#passthrough-during-serve) to speed up both incremental and non-incremental builds.
 * **Configuration File**
   * If you create/update your Eleventy configuration file, a full build will run.
-
-## Related
-
-* `--incremental` works great with [`--ignore-initial`](/docs/usage/#ignore-initial-to-run-eleventy-without-an-initial-build) too. {% addedin "2.0.0-canary.25" %}
+* **Don’t build on startup**: {% addedin "2.0.0-canary.25" %} [`--ignore-initial`](/docs/usage/#ignore-initial-to-run-eleventy-without-an-initial-build) was added and works great with `--incremental`.
 
 ## Additional Template Language Features
 
@@ -43,6 +40,7 @@ The previously stated incremental features are implemented in Eleventy core and 
 ## 🗓 To Do
 
 * **Cold Start Incremental**: `--incremental` does a full build to start out to provide a fresh starting point to work from. This feature would save the state of the build to the file system for faster cold starts. [Issue #984](https://github.com/11ty/eleventy/issues/984)
+* **Incremental on a Build Server**: Cache the output folder between builds on a CI server like Netlify and only process/write templates that have changed since the last build. [Issue #2775](https://github.com/11ty/eleventy/issues/2775)
 * Global/directory/template Data file usage mapped to templates (would give some improvements to serverless too) [Issue #2706](https://github.com/11ty/eleventy/issues/2706)
 * Template types
   * `11ty.js`: Map JavaScript dependencies

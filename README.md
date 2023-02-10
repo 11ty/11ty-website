@@ -10,12 +10,12 @@ The website and documentation for the [Eleventy static site generator](https://g
 
 ```
 npm install
+npm run get-new-data
 npx @11ty/eleventy --serve
 ```
 
 Browse to http://localhost:8080/ (8080 is the default but it’ll bump to a new port if that one is taken, so use whatever port shows up when you run the `--serve` command).
 
-* Refresh Avatars: `npm run get-new-avatars`
 * Refresh Supporters: `npm run get-new-supporters`
 
 ## Third-party Integrations

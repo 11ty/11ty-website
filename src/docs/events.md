@@ -100,4 +100,4 @@ module.exports = function (eleventyConfig) {
 };
 ```
 
-The `changedFiles` parameter was {% addedin "v0.11.1" %}.
+The `changedFiles` parameter was {% addedin "0.11.1" %}.

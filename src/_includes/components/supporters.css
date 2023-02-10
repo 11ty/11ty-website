@@ -30,6 +30,16 @@
 .is-eleventy-supporter .facepile-supporters .supporters-active img {
 	filter: grayscale(0);
 }
+/* Supporters Header */
+.supporters-hed {
+	border: none;
+	border-top: 1px solid #ddd;
+	text-align: center;
+	flex-basis: 100%;
+	margin-top: 6.666666666667em; /* 100px /15 */
+	padding-top: 2em;
+	margin-bottom: 1em;
+}
 /* Gold supporters */
 .supporters-gold {
 	--lo-margin-h: 2em;
@@ -97,7 +107,7 @@
 }
 .supporters-gold .subhed {
 	text-align: center;
-	margin-top: 4em;
+	margin-top: 2em;
 	margin-bottom: 1em;
 }
 .supporters-gold .subhed strong {
@@ -110,6 +120,17 @@
 }
 .supporters-gold + .facepile-supporters {
 	margin-top: 0;
+}
+.supporters-netlify {
+	width: 100%;
+	height: 70px;
+	display: block;
+	margin: 1em auto;
+}
+@media (min-width: 25em) { /* 400px */
+	.supporters-netlify {
+		max-width: 170px;
+	}
 }
 
 /* Modify content */

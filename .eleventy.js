@@ -6,7 +6,6 @@ const commaNumber = require("comma-number");
 const slugify = require("slugify");
 const lodashGet = require("lodash/get");
 const shortHash = require("short-hash");
-const markdownPlugin = require("./config/markdownPlugin.js");
 
 const { EleventyServerlessBundlerPlugin, EleventyEdgePlugin, EleventyRenderPlugin } = require("@11ty/eleventy");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -14,11 +13,12 @@ const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const eleventyImage = require("@11ty/eleventy-img");
 
+const { addedIn, coerceVersion } = require("./config/addedin");
 const monthDiffPlugin = require("./config/monthDiff");
-const addedInLocalPlugin = require("./config/addedin");
 const minificationLocalPlugin = require("./config/minification");
 const cleanName = require("./config/cleanAuthorName");
 const objectHas = require("./config/object-has");
+const markdownPlugin = require("./config/markdownPlugin.js");
 
 let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" decoding="async" class="avatar" width="200" height="200">`;
 const shortcodes = {
@@ -33,7 +33,7 @@ const shortcodes = {
 	},
 	avatar(datasource, slug, alt = "") {
 		if(!slug) {
-			return defaultAvatarHtml;
+			return "";
 		}
 
 		slug = cleanName(slug).toLowerCase();
@@ -95,9 +95,8 @@ const shortcodes = {
 
 		let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(siteUrl)}/${preset}/1:1/${zoom ? `${zoom}/` : ""}`;
 
-		// 11ty.dev or foursquare.com
+		// 11ty.dev
 		let overrides = {
-			"7KrgLExJd-": "foursquare",
 			"dLN_2kDPpB": "11ty",
 		}
 		if(overrides[siteSlug]) {
@@ -176,19 +175,23 @@ function findBy(data, path, value) {
 }
 
 module.exports = function(eleventyConfig) {
-	eleventyConfig.setDataDeepMerge(true);
+	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+
 	if(process.env.NODE_ENV !== "production") {
 		eleventyConfig.setQuietMode(true);
-		eleventyConfig.ignores.add("src/api/*")
-		eleventyConfig.ignores.add("src/follow-feed.11ty.js")
-		eleventyConfig.ignores.add("src/docs/feed.njk")
-		eleventyConfig.ignores.add("src/docs/quicktipsfeed.njk")
-		eleventyConfig.ignores.add("src/blog/blog-feed.njk")
+		eleventyConfig.ignores.add("src/api/*");
+		eleventyConfig.ignores.add("src/docs/feed.njk");
+		eleventyConfig.ignores.add("src/docs/quicktipsfeed.njk");
+		eleventyConfig.ignores.add("src/blog/blog-feed.njk");
+	}
+	if(process.env.NODE_ENV !== "production" || !process.env.TWITTER_BEARER_TOKEN) {
+		eleventyConfig.ignores.add("src/firehose.11ty.js");
+		eleventyConfig.ignores.add("src/firehose-feed.11ty.js");
 	}
 
 	eleventyConfig.setServerOptions({
 		showVersion: false,
-		domdiff: false,
+		domDiff: false,
 	});
 
 	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
@@ -207,7 +210,6 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(markdownPlugin);
 	eleventyConfig.addPlugin(rssPlugin);
 	eleventyConfig.addPlugin(navigationPlugin);
-	eleventyConfig.addPlugin(addedInLocalPlugin);
 	eleventyConfig.addPlugin(monthDiffPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
@@ -236,6 +238,9 @@ module.exports = function(eleventyConfig) {
 				return item.data?.eleventyNavigation && item.data?.excludeFromSidebar !== true;
 			});
 	});
+
+	eleventyConfig.addFilter("coerceVersion", coerceVersion);
+	eleventyConfig.addShortcode("addedin", addedIn);
 
 	eleventyConfig.addShortcode("indieavatar", shortcodes.getIndieAvatarHtml);
 
@@ -277,10 +282,10 @@ module.exports = function(eleventyConfig) {
 		return `<a href="${href}" class="minilink minilink-lower">${text}</a>`;
 	});
 
-	eleventyConfig.addPairedShortcode("codewithprompt", function(text, prePrefixCode, when) {
+	eleventyConfig.addPairedShortcode("codewithprompt", function(text, prePrefixCode, id) {
 		let ret = [];
-		if(prePrefixCode && when) {
-			ret.push(`<div data-preprefix-${prePrefixCode}="${when}">
+		if(prePrefixCode) {
+			ret.push(`<div data-preprefix-${prePrefixCode}${id ? ` id="${id}"` : ""}>
 `);
 		}
 
@@ -288,7 +293,7 @@ module.exports = function(eleventyConfig) {
 ${text.trim()}
 \`\`\``);
 
-		if(prePrefixCode && when) {
+		if(prePrefixCode) {
 			ret.push(`
 </div>`);
 		}
@@ -390,11 +395,30 @@ ${text.trim()}
 			if( version.tag === "LATEST" ) {
 				continue;
 			}
+			if( version.channel && version.channel !== "latest" ) {
+				continue;
+			}
 			if( !config.prerelease && version.prerelease ) {
 				continue;
 			}
 
 			return prefix + version.tag.substr(1);
+		}
+	});
+
+	eleventyConfig.addShortcode("latestVersionNodeMinimum", function(versions, config) {
+		for( let version of versions ) {
+			if( version.tag === "LATEST" ) {
+				continue;
+			}
+			if( version.channel && version.channel !== "latest" ) {
+				continue;
+			}
+			if( !config.prerelease && version.prerelease ) {
+				continue;
+			}
+
+			return version.minimumNodeVersion;
 		}
 	});
 
@@ -723,6 +747,10 @@ to:
 	})
 
 	eleventyConfig.addShortcode("youtubeEmbed", function(slug, label, startTime) {
+		if(label) {
+			label = label.replace(/"/g, "");
+		}
+
 		let readableStartTime = "";
 		if(startTime) {
 			let t = parseInt(startTime, 10);

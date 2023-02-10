@@ -22,6 +22,12 @@
 	margin: 4px 4px 4px 0;
 	transition: .15s linear outline;
 }
+/* .inlinelist .inlinelist-item:has(> a) {
+	padding: 0;
+}
+.inlinelist .inlinelist-item:has(> a) > a {
+	padding: .2em .5em;
+} */
 
 .inlinelist .inlinelist-item.active {
 	background-color: #222;
@@ -110,6 +116,7 @@ a.buzzword {
 		color: inherit;
 	}
 }
+/* .inlinelist .inlinelist-item:has(> a):hover, */
 .inlinelist .inlinelist-item:hover,
 .inlinelist .inlinelist-item:focus,
 .buzzword-list li:hover,
@@ -126,6 +133,15 @@ a.buzzword {
 	text-shadow: 0 0 2px rgba(0,0,0,.9);
 	animation: rainbow 4s ease-out alternate infinite;
 }
+.inlinelist .inlinelist-item.inert,
+.inlinelist .inlinelist-item.inert:hover,
+.inlinelist .inlinelist-item.inert:focus {
+	background-color: transparent;
+	background-image: none;
+	color: inherit;
+	text-shadow: none;
+}
+
 .rainbow-active-noanim {
 	animation: none !important;
 }

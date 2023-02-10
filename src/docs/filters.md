@@ -52,65 +52,36 @@ module.exports = function({name}) {
 </seven-minute-tabs>
 </is-land>
 
-These can be added using the [Configuration API](/docs/config/#using-the-configuration-api). Here are a few examples:
+Filters can be added using the [Configuration API](/docs/config/#using-the-configuration-api) and are available to multiple template engines, simultaneously. They are currently supported in JavaScript {% addedin "0.7.0" %}, Markdown, Nunjucks, Liquid, Handlebars, and WebC.
 
 {% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
-  // Liquid Filter
-  eleventyConfig.addLiquidFilter("makeUppercase", function(value) { … });
-
-  // Nunjucks Filter
-  eleventyConfig.addNunjucksFilter("makeUppercase", function(value) { … });
-
-  // Handlebars Filter
-  eleventyConfig.addHandlebarsHelper("makeUppercase", function(value) { … });
-
-  // JavaScript Template Function
-  eleventyConfig.addJavaScriptFunction("makeUppercase", function(value) { … });
-
-  // or, use a Universal filter (an alias for all of the above)
   eleventyConfig.addFilter("makeUppercase", function(value) { … });
 
-  // New in 2.0.0-canary.15
+  // New in {{ "2.0.0-canary.15" | coerceVersion }}
   eleventyConfig.addAsyncFilter("makeUppercase", async function(value) { … });
 };
 ```
+
+{% callout "info" %}
+Markdown files are pre-processed as Liquid templates by default—any filters available in Liquid templates are also available in Markdown files. Likewise, if you <a href="/docs/config/#default-template-engine-for-markdown-files">change the template engine for Markdown files</a>, the filters available for that templating language will also be available in Markdown files.
+{% endcallout %}
 
 Read more about filters on the individual Template Language documentation pages:
 
 {% templatelangs templatetypes, page, ["njk", "liquid", "hbs", "11ty.js"], "#filters" %}
 
-## Universal Filters
-
-Universal filters can be added in a single place and are available to multiple template engines, simultaneously. This is currently supported in JavaScript, Nunjucks, Liquid, Handlebars, and WebC.
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  // Universal filters add to:
-  // * Liquid
-  // * Nunjucks
-  // * Handlebars
-  // * JavaScript
-
-  eleventyConfig.addFilter("myFilter", function(value) {
-    return value;
-  });
-};
-```
-
-### Eleventy Provided Universal Filters
+## Eleventy Provided Filters
 
 We also provide a few universal filters, built-in:
 
 {{ collections.all | eleventyNavigation("Filters") | eleventyNavigationToHtml({ showExcerpt: true }) | safe }}
 
-#### Access existing filters {% addedin "0.11.0" %}
+### Access existing filters in your Configuration File {% addedin "0.11.0" %}
 
-If you’d like to reuse existing filters in a different way, consider using the new Configuration API `getFilter` method. You can use this to alias a filter to a different name. You can use this to use a filter inside of your own filter. You can use this to use a filter inside of a shortcode.
+If you’d like to reuse existing filters, you can use the Configuration API’s `getFilter` method. When called with a valid filter name, it will return that filter’s callback function. It can be helpful when aliasing a filter to a different name, using a filter inside of your own filter, or using a filter inside of a shortcode.
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -120,11 +91,9 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Asynchronous Universal Filters {% addedin "2.0.0" %}
+## Asynchronous Filters {% addedin "2.0.0" %}
 
 Eleventy has added a new universal filter API for asynchronous filters and extended the currently available `addFilter` method to be async-friendly. _Note that even though Handlebars is used for synchronous filters in `addFilter`, it is excluded from asynchronous filters because Handlebars is not async-friendly._
-
-If you are not yet on Eleventy 2.0, you can still add asynchronous filters to each async-friendly template language individually: [Liquid `addLiquidFilter`](/docs/languages/liquid/#filters), [Nunjucks `addNunjucksAsyncFilter`](/docs/languages/nunjucks/#asynchronous-nunjucks-filters), and [JavaScript `addJavaScriptFunction`](/docs/languages/javascript/#asynchronous-javascript-template-functions).
 
 {% codetitle ".eleventy.js" %}
 
@@ -169,3 +138,35 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+
+## Per-Engine filters
+
+Filters can also be specified individually for one or more template engines. (The `addFilter` function is actually an alias for calling all of these functions.)
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // Liquid Filter (async-friendly)
+  eleventyConfig.addLiquidFilter("myFilter", async function(value) { … });
+
+  // Nunjucks Filter
+  eleventyConfig.addNunjucksFilter("myFilter", function(value) { … });
+
+  // Nunjucks Async Filter
+  // Read the Nunjucks docs before using this (link below)
+  eleventyConfig.addNunjucksAsyncFilter("myFilter", function() { … });
+
+  // Handlebars Filter (no async support)
+  eleventyConfig.addHandlebarsHelper("myFilter", function(value) { … });
+
+  // JavaScript Template Function (async-friendly)
+  eleventyConfig.addJavaScriptFunction("myFilter", async function(value) { … });
+};
+```
+
+Note that [Nunjucks `addNunjucksAsyncFilter`](/docs/languages/nunjucks/#asynchronous-nunjucks-filters) requires the use of callbacks for async behavior. Make sure you read up on it!
+
+{% callout "info" %}
+Markdown files are pre-processed as Liquid templates by default—any filters available in Liquid templates are also available in Markdown files. Likewise, if you <a href="/docs/config/#default-template-engine-for-markdown-files">change the template engine for Markdown files</a>, the filters available for that templating language will also be available in Markdown files.
+{% endcallout %}

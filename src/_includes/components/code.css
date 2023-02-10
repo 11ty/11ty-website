@@ -124,16 +124,11 @@ pre + .note {
 }
 
 
-[data-preprefix-cmdhomedir="all"] .highlight-line:before,
-[data-preprefix-cmdhomedir="last"] .highlight-line:last-child:before,
-[data-preprefix-cmdhomedir="first"] .highlight-line:first-child:before,
-[data-preprefix-cmdhomedir="odd"] .highlight-line:nth-child(4n+3):before {
+[data-preprefix-cmdhomedir] .highlight-line:last-child:before {
 	color: #aaa;
 	content: "~ $ ";
 }
-[data-preprefix-eleventysample="all"] .highlight-line:before,
-[data-preprefix-eleventysample="last"] .highlight-line:last-child:before,
-[data-preprefix-eleventysample="first"] .highlight-line:first-child:before {
+[data-preprefix-eleventysample] .highlight-line:first-child:before {
 	color: #aaa;
 	content: "~/eleventy-sample $ ";
 }

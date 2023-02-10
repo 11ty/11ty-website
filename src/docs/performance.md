@@ -17,9 +17,7 @@ Eleventy is known for both its lightweight core in the form of speedy installs/b
 
 Eleventy allows you full control over the output. That also means that by-default we do not include any costly runtime JavaScript bundles that often hamper site performance!
 
-{% callout "info", "md-block" %}
-* Have a look at our new [Partial Hydration `<is-land>` component](/docs/plugins/partial-hydration/)!
-{% endcallout %}
+{% callout "", "md" %}Have a look at our new [Partial Hydration `<is-land>` component](/docs/plugins/partial-hydration/)!{% endcallout %}
 
 Sites listed on the [Eleventy Leaderboards](/speedlify/) are tested and ranked (approximately) monthly as a fun community way to maintain speedy site performance for Eleventy sites.
 
@@ -34,6 +32,7 @@ Sites listed on the [Eleventy Leaderboards](/speedlify/) are tested and ranked (
 
 * You can analyze your [project’s specific build performance metrics using Debug Mode](/docs/debug-performance/).
 * The [Directory Output plugin](/docs/plugins/directory-output/) will also report per-template performance and file size information.
+* Tip: Take [passthrough copy out of your build-loop with the Eleventy Dev Server](/docs/copy/#emulate-passthrough-copy-during-serve).
 
 <div class="youtube-related">
   {%- youtubeEmbed "KETQ4zS9Yp4", "28% build time performance improvement for Google’s web.dev (Weekly №1)", "30" -%}

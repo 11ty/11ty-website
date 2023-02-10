@@ -104,8 +104,6 @@ module.exports = function(eleventyConfig) {
 
 ## Indented Code Blocks
 
-{% callout "info", "md" %}This section changed significantly in Eleventy 2.0. You may want to backtrack to [Eleventy 1.0’s markdown documentation](https://v1-0-1.11ty.dev/docs/languages/markdown/).{% endcallout %}
-
 Markdown has a lesser known feature called [Indented Code Blocks](https://spec.commonmark.org/0.28/#indented-code-blocks), which means any content that is indented by four or more spaces (and has a preceding line break) will be transformed into a code block.
 
 ```markdown
@@ -123,14 +121,23 @@ is transformed into:
 
 _(Example borrowed from the [CommonMark Specification](https://spec.commonmark.org/0.28/#indented-code-blocks))_
 
-Starting with Eleventy 2.0 and newer, this feature is [disabled](https://github.com/11ty/eleventy/issues/2438) for both the default Markdown library instance _and_ any set via `setLibrary`. To re-enable this feature in Eleventy 2.0, use the [`amendLibrary` approach](#optional-amend-the-library-instance).
+After [listening to community feedback](https://github.com/11ty/eleventy/issues/2438), starting with Eleventy 2.0.0 <strong>Indented Code Blocks</strong> are disabled for both the default Markdown library instance _and_ any set via `setLibrary`.
 
 <details>
-  <summary>Want to re-enable Indented Code Blocks? <strong>Read this lengthy Common Pitfall.</strong></summary>
+  <summary>Want to <strong>re-enable</strong> Indented Code Blocks?</summary>
 
-### There are extra `<pre>` and `<code>` in my output
+{% callout "warn" %}<strong>Careful!</strong> This feature is <a href="https://github.com/11ty/eleventy/issues/2438">(almost) universally disliked</a>.{% endcallout %}
 
-<div class="elv-callout elv-callout-warn">This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</div>
+To re-enable Indented Code Blocks in Eleventy 2.0 (or newer), use the [`amendLibrary` approach](#optional-amend-the-library-instance). Make sure you read through the warning documented below to understand the ramifications.
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.amendLibrary("md", mdLib => mdLib.enable("code"));
+};
+```
+
+<div id="there-are-extra-and-in-my-output"><!-- Backwards compat --></div>
+<div id="there-are-extra-pre-and-code-tags-in-my-output"><!-- Backwards compat --></div>
 
 When using [Indented Code Blocks](#indented-code-blocks), any content that follows this four (or more) space indent may be subject to transformation. If you pre-process your markdown using Nunjucks or Liquid or another templating engine, that means the content retrieved from an `include` or a shortcode may also fit this formatting. Careful when you include extra whitespace in your includes or shortcodes!
 
@@ -169,14 +176,8 @@ eleventyConfig.addShortcode("alsoGoodShortcode", function() {
 
 </details>
 
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.amendLibrary("md", mdLib => mdLib.enable("code"));
-};
-```
-
 <details>
-  <summary>For Eleventy 1.x and older: Want to disable Indented Code Blocks?</summary>
+  <summary>Want to <strong>disable</strong> Indented Code Blocks on Eleventy v1 or older?</summary>
 
 ```js
 const markdownIt = require("markdown-it");
@@ -199,7 +200,7 @@ module.exports = function(eleventyConfig) {
 
 ## Why can’t I return markdown from paired shortcodes to use in a markdown file?
 
-<div class="elv-callout elv-callout-warn">This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</div>
+{% callout "warn" %}This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.{% endcallout %}
 
 The truth is, **you can** return markdown inside shortcodes (as long as the file is transforming markdown, either as a `.md` file extension or [with `templateEngineOverride`](/docs/languages/#overriding-the-template-language)). However, there is one small wrinkle that might catch you off guard.
 

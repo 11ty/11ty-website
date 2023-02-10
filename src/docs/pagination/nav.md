@@ -16,6 +16,7 @@ How to create a list of links to every paginated page on a pagination template.
 
 Consider the following example paginating our `testdata` array:
 
+<is-land import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paginationnavarray"} %}
   <div id="paginationnavarray-liquid" role="tabpanel">
@@ -71,7 +72,7 @@ testdata:
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
-
+</is-land>
 
 The above example would make three different output files from the template.
 

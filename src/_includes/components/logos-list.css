@@ -45,17 +45,8 @@
 /* Header */
 .logos-list-hed {
 	text-align: center;
-	color: #666;
-	font-family: system-ui, -apple-system, sans-serif;
-	letter-spacing: 1px;
 	flex-basis: 100%;
-	text-transform: uppercase;
 	margin-bottom: 1em;
-}
-@media (prefers-color-scheme: dark) {
-	.logos-list-hed {
-		color: #adadad;
-	}
 }
 .elv-docs .logos-list-hed {
 	display: none;
