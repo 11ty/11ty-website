@@ -4,18 +4,24 @@ eleventyNavigation:
   order: -1
   excerpt: A plugin to run Eleventy in a serverless function for server side rendering (e.g. Previews in your CMS) and/or in very large sites with [On-demand Builders](https://www.netlify.com/blog/2021/04/14/faster-builds-for-large-sites-on-netlify-with-on-demand-builders-now-in-early-access/).
 communityLinksKey: serverless
+overrideCommunityLinks: true
 ---
 # Serverless {% addedin "1.0.0" %}
 
+{% tableofcontents %}
+
 {{ eleventyNavigation.excerpt }}
 
-[[toc]]
+<div class="youtube-related">
+  {%- youtubeEmbed "JNFooPfzV9g", "Defer generating 400+ pages using Eleventy Serverless" -%}
+  {%- youtubeEmbed "EiwIe8lduGs", "Add authentication with Eleventy Serverless and OAuth" -%}
+</div>
 
 ## What is Serverless?
 
 You can read more about serverless on the [eponymous Serverless microsite from CSS-Tricks](https://serverless.css-tricks.com/about/).
 
-> “You can write a JavaScript function that you run and receive a response from by hitting a URL.”—[The Power of Serverless](https://serverless.css-tricks.com/) from [Chris Coyier](https://twitter.com/chriscoyier)
+> “You can write a JavaScript function that you run and receive a response from by hitting a URL.”—[The Power of Serverless](https://serverless.css-tricks.com/) from [Chris Coyier]({{ "https://twitter.com/chriscoyier" | canonicalTwitterUrl }})
 
 Eleventy Serverless complements your existing statically generated site by running one or more template files _at request time_ to generate dynamic pages. It can unlock many new use cases to move beyond static files into dynamically generated content.
 
@@ -34,13 +40,23 @@ Build-time (non-serverless) templates should be the preferred rendering mode. Th
 
 For On-demand Builders and Dynamic templates, rendering failures will not fail your deployment and as such incur more risk. Dynamic templates must also be closely performance monitored—unlike build templates, a slow render in a dynamic template means a slow web site for end-users.
 
-## Demos and Examples
+## Demos and Community Resources
 
 <div class="sites-vert sites-vert--md">
   <div class="lo-grid">
 {% for key, site in demos -%}{% if site.category.includes("serverless") -%}
   {% include "site-card.njk" %}
 {% endif %}{%- endfor %}
+{% for entry in communityLinks -%}
+  {%- set site = entry | convertCommunityLinkToSiteCard %}
+  {% include "site-card.njk" %}
+{%- endfor %}
+{%- for key, entry in community %}
+{%- if entry.key == communityLinksKey -%}
+  {%- set site = entry | convertCommunityLinkToSiteCard %}
+  {% include "site-card.njk" %}
+{%- endif %}
+{%- endfor %}
   </div>
 </div>
 
@@ -66,11 +82,11 @@ module.exports = function(eleventyConfig) {
 
 You can add the Bundler plugin more than once to accommodate multiple Eleventy Serverless rendering modes simultaneously. Your templates can render in multiple modes!
 
-{% callout "info", "md" -%}
+{% callout "info", "md-block" -%}
 You won’t need to set up bundler plugins for every individual template, but instead you’ll want to use one plugin for each rendering mode.
 
-* Dynamic pages via server side rendering will need one plugin, perhaps named `onrequest` or `dynamic`.
-* Delayed rendering using On-demand Builders will need another plugin, perhaps named `onfirstrequest` or `odb`.
+ * Dynamic pages via server side rendering will need one plugin, perhaps named `onrequest` or `dynamic`.
+ * Delayed rendering using On-demand Builders will need another plugin, perhaps named `onfirstrequest` or `odb`.
 {% endcallout %}
 
 #### Bundler Options
@@ -186,8 +202,12 @@ If, instead, you want to use an [On-demand Builder](https://docs.netlify.com/con
 **Thing 1:** Swap the export in your template (and `npm install @netlify/functions`):
 
 ```js
-exports.handler = handler; // turns into:
+exports.handler = handler;
+```
 
+Replace the above with:
+
+```js
 const { builder } = require("@netlify/functions");
 exports.handler = builder(handler);
 ```
@@ -370,7 +390,7 @@ _Documentation in progress_ (The new `serverlessURL` filter) -->
 
 ### Re-use build-time cache from the [Fetch plugin](/docs/plugins/fetch/)
 
-To speed up serverless rendering and avoid requests to external sources, you can re-use the cache folder from your build! First we’ll need to copy the cache folder into our bundle and rename it without the leading dot (the bundler ignores dot prefixed files and folders).
+To speed up serverless rendering and avoid requests to external sources, you can re-use the cache folder from your build! First we’ll need to copy the cache folder into our bundle.
 
 {% codetitle ".eleventy.js" %}
 
@@ -381,15 +401,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
     name: "possum",
     copy: [
-      // files/directories that start with a dot
-      // are not bundled by default
-      { from: ".cache", to: "cache" }
+      ".cache/eleventy-fetch/",
     ]
   });
 };
 ```
 
-And then in your data file, overwrite the `duration` and `directory` to point to this new folder:
+And re-use the `directory` in your data files:
 
 {% codetitle "_data/github.js" %}
 
@@ -397,14 +415,17 @@ And then in your data file, overwrite the `duration` and `directory` to point to
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
-  let options = {};
+  let options = {
+    // Use the same folder declared above
+    directory: ".cache/eleventy-fetch/"
+  };
 
   if(process.env.ELEVENTY_SERVERLESS) {
     // Infinite duration (until the next build)
     options.duration = "*";
-    // Instead of ".cache" default because files/directories
-    // that start with a dot are not bundled by default
-    options.directory = "cache";
+
+    // Bypass writing new cache files, which would error in serverless mode
+    options.dryRun = true;
   }
 
   let result = await EleventyFetch("https://example.com/", options);
@@ -412,14 +433,176 @@ module.exports = async function() {
 };
 ```
 
-### Re-use build-time Collections
+<span id="re-use-build-time-collections"></span>
 
-_Documentation in progress_
+### Collections in Serverless
+
+Eleventy Serverless typically operates on a subset of templates in your project. As such, collections that are outside the scope of the serverless build are not available in serverless mode. You have two options to workaround this limitation:
+
+1. Precompile your collections manually at build-time
+1. Build the data cascade for the project (no rendering required)
+
+#### Precompile Collections at Build-Time
+
+In this example we’ll build a static data file with collections data in it at build time and inject it into our serverless build at run time!
+
+Consider a `sidebarNav` collection that populates a navigation menu (via the [`eleventy-navigation` plugin](/docs/plugins/navigation/)).
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+	eleventyConfig.addCollection("sidebarNav", function(collection) {
+		return collection.getAll().filter(item => item.data?.eleventyNavigation);
+	});
+};
+```
+
+This might be used in your templates (serverless or build) via {% raw %}`{{ collections.sidebarNav | eleventyNavigation }}`{% endraw %}.
+
+Now, the `sidebarNav` collection would not normally be available in a serverless context, because all of the templates that populate the menu are not in the scope of the serverless build. But we can generate a static copy of that collection for use in serverless mode. In fact, this is how the sidebar works on each (serverless) Author’s page (e.g. the [one for `@zachleat`](/authors/zachleat/)).
+
+Consider the following Eleventy template which creates an array of collection-like entries for the sidebar navigation.
+
+<details>
+<summary><strong>Expand to see code sample</strong></summary>
+
+{% codetitle "serverless-collections-export.11ty.js" %}
+
+```js
+exports.data = function() {
+  return {
+    // generate directly to the serverless bundle folder
+    permalink: "./netlify/functions/serverless/_generated-serverless-collections.json",
+    permalinkBypassOutputDir: true,
+		eleventyExcludeFromCollections: true,
+  };
+};
+
+exports.render = function({collections}) {
+  let entries = [];
+  // Iterate over any items with the `sidebarNav` tag
+  for(let entry of collections.sidebarNav) {
+    entries.push({
+      data: {
+        page: entry.data.page,
+        eleventyNavigation: entry.data.eleventyNavigation,
+      }
+    });
+  }
+
+  return JSON.stringify({
+    sidebarNav: entries
+  }, null, 2);
+};
+```
+
+{% callout "info", "md" %}Note that it isn’t currently possible to serialize `entry.data.collections` to JSON as it may contain circular references. We hope to improve this in the future with a new collections API!{% endcallout %}
+
+Inside of your serverless function file, you can import this file and use it directly:
+
+{% codetitle "./netlify/functions/possum/index.js" %}
+
+```js/0,6
+const precompiledCollections = require("./_generated-serverless-collections.json");
+
+async function handler (event) {
+	let elev = new EleventyServerless("possum", {
+		path: event.path,
+		query: event.queryStringParameters,
+		precompiledCollections
+	});
+
+	// Some content truncated
+};
+```
+
+</details>
+
+#### Compile the data cascade for the project
+
+As we have just learned, Eleventy Serverless operates on a subset of templates in your project. You can disable this subset scope with the `singleTemplateScope` option on the `EleventyServerless` class (defaults to `true`). {% addedin "2.0.0-canary.27" %}
+
+This uses incremental builds with the new ignore initial build feature to only render one file (while building the larger data cascade for the project). The downside here is that while this is much friendlier to any use of `collections` on your templates, it is slower! Here are the conditions I’d expect folks to want to make this tradeoff:
+
+* If your project is small/fast enough and you don’t want to spend the extra development effort.
+* If your project is larger but you’re using On-demand Builders where the extra rendering cost is only paid once.
+* For larger projects I would _not recommend_ use of `singleTemplateScope: false` in a dynamic template that renders with each request.
+
+Here’s how to enable this feature in your serverless function file:
+
+{% codetitle "./netlify/functions/possum/index.js" %}
+
+```js/4
+async function handler (event) {
+	let elev = new EleventyServerless("possum", {
+		path: event.path,
+		query: event.queryStringParameters,
+		singleTemplateScope: false, // true by default
+	});
+
+	// Some content truncated
+};
+```
+
+At some point we may enable this feature by default [if performance improves enough](https://github.com/11ty/eleventy/issues/2737)!
+
 
 ### Swap to Dynamic using the Data Cascade and `eleventyComputed`
 
-_Documentation in progress_
+In this example we’re using a global data entry to control whether a downstream temple renders in serverless or build mode (at build time). In some more limited use cases this can solved using your hosting providers Redirects feature (e.g. on [Netlify this means a `netlify.toml` or `_redirects` file](https://docs.netlify.com/routing/redirects/)).
 
-### How do Dynamic Templates and `tags` work together?
+If you want to make a decision at serverless runtime to render a build template, you’ll need to add logic to your [serverless function](#your-generated-serverless-function) to redirect to the build URL from the serverless template.
 
-_Documentation in progress_
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+	// Templates will generate via the Build
+	eleventyConfig.addGlobalData("runInServerlessMode", false);
+
+	// Or render in Serverless mode
+	eleventyConfig.addGlobalData("runInServerlessMode", true);
+};
+```
+
+And then in your template files you can use this global data value with [Computed Data](/docs/data-computed/) to swap rendering modes:
+
+{% codetitle "my-template-file.njk" %}
+
+```yaml
+---js
+{
+	eleventyComputed: {
+		permalink: function({runInServerlessMode}) {
+			return {
+				[runInServerlessMode ? "serverless" : "build"]: "/"
+			}
+		}
+	}
+}
+---
+Template Content goes here
+```
+
+* If you’re here you _may_ also be interested in the [Eleventy Serverless OAuth demo](https://github.com/11ty/demo-eleventy-serverless-oauth)
+
+---
+
+**For internal use**
+
+<details>
+<summary>Dependency Bundle Sizes</summary>
+
+| Bundle size | Package name |
+| --- | --- |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy" alt="Bundle size for @11ty/eleventy" loading="lazy"> | `@11ty/eleventy` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy@canary" alt="Bundle size for @11ty/eleventy" loading="lazy"> | `@11ty/eleventy@canary` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-img" alt="Bundle size for @11ty/eleventy-img" loading="lazy"> | `@11ty/eleventy-img` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-fetch" alt="Bundle size for @11ty/eleventy-fetch" loading="lazy"> | `@11ty/eleventy-fetch` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-plugin-syntaxhighlight" alt="Bundle size for @11ty/eleventy-plugin-syntaxhighlight" loading="lazy"> | `@11ty/eleventy-plugin-syntaxhighlight` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-navigation" alt="Bundle size for @11ty/eleventy-navigation" loading="lazy"> | `@11ty/eleventy-navigation` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-plugin-vue" alt="Bundle size for @11ty/eleventy-plugin-vue" loading="lazy"> | `@11ty/eleventy-plugin-vue` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-plugin-rss" alt="Bundle size for @11ty/eleventy-plugin-rss" loading="lazy"> | `@11ty/eleventy-plugin-rss` |
+
+</details>

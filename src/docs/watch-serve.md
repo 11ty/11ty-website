@@ -6,7 +6,47 @@ eleventyNavigation:
 ---
 # Watch and Serve Configuration
 
-[[toc]]
+{% tableofcontents %}
+
+## Add Your Own Watch Targets {% addedin "0.10.0" %}
+
+The `addWatchTarget` config method allows you to manually add a file or directory for Eleventy to watch. When the file or the files in this directory change Eleventy will trigger a build. This is useful if Eleventy is not directly aware of any external file dependencies.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addWatchTarget("./src/scss/");
+};
+```
+
+**Advanced usage note:** This works with [`chokidar` under the hood](https://github.com/paulmillr/chokidar#api) and chokidar uses [`picomatch` for globbing](https://github.com/micromatch/picomatch):
+
+* Both `**/*.(png|jpeg)` and `**/*.{png,jpeg}` are valid globs to matches any `png` or `jpeg` file in your project.
+
+## Ignore Watching Files
+
+### `.gitignore`
+
+Eleventy will ignore changes to files or folders listed in your `.gitignore` file by default, [unless `setUseGitIgnore` is turned off](/docs/ignores/#opt-out-of-using-.gitignore).
+
+### Configuration API {% addedin "2.0.0-canary.18" %}
+
+Previously, [the configuration API ignores for template processing](/docs/ignores/#configuration-api) were also used as ignores for watching (e.g. `eleventyConfig.ignores.add("README.md")`).
+
+New in {{ "2.0.0-canary.18" | coerceVersion }}, watch target ignores now have their own dedicated API:
+
+```js
+module.exports = function(eleventyConfig) {
+  // Do not rebuild when README.md changes (You can use a glob here too)
+  eleventyConfig.watchIgnores.add("README.md");
+
+  // Or delete entries too
+  eleventyConfig.watchIgnores.delete("README.md");
+};
+```
+
+The `watchIgnores` Set starts with a default `**/node_modules/**` entry.
 
 ## Watch JavaScript Dependencies {% addedin "0.7.0" %}
 
@@ -21,20 +61,6 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-## Add Your Own Watch Targets {% addedin "0.10.0" %}
-
-The `addWatchTarget` config method allows you to manually add a file or directory for Eleventy to watch. When the file or the files in this directory change Eleventy will trigger a build. This is useful if Eleventy is not directly aware of any external file dependencies.
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addWatchTarget("./src/scss/");
-};
-```
-
-Eleventy will not add a watch for files or folders that are in `.gitignore`, unless `setUseGitIgnore` is turned off. See the chapter on [ignore files](/docs/ignores/#opt-out-of-using-.gitignore).
-
 ## Add delay before re-running {% addedin "0.11.0" %}
 
 A hardcoded amount of time Eleventy will wait before triggering a new build when files have changes during `--watch` or `--serve` modes. You probably won’t need this, but is useful in some edge cases with other task runners (Gulp, Grunt, etc).
@@ -48,106 +74,10 @@ module.exports = function(eleventyConfig) {
 
 ## Eleventy Dev Server {% addedin "2.0.0" %}
 
-Eleventy 2.0 bundles a brand new default development server. You can configure this with the new `setServerConfig` Configuration API method.
+<div id="swap-back-to-browsersync"></div>
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setServerConfig({
-    // Default values are shown:
-
-    // Opt-out of the live reload snippet
-    enabled: true,
-
-    // Opt-out of DOM diffing updates and use page reloads
-    // Added in v2.0.0-canary.3
-    domdiff: true,
-
-    // The starting port number to attempt to use
-    port: 8080,
-
-    // number of times to increment the port if in use
-    portReassignmentRetryCount: 10,
-
-    // Show local network IP addresses for device testing
-    showAllHosts: false,
-
-    // Use a local key/certificate to opt-in to local HTTP/2 with https
-    https: {
-      // key: "./localhost.key",
-      // cert: "./localhost.cert",
-    },
-
-    // Change the name of the special folder name used for injected scripts
-    folder: ".11ty",
-
-    // Show the server version number on the command line
-    // Added in v2.0.0-canary.3
-    showVersion: false,
-  });
-};
-```
-
-{% callout "info", "md" -%}
-Try out the [`devcert-cli`](https://github.com/davewasmer/devcert-cli) package to generate a localhost key and certificate for `https` and HTTP/2.
-{%- endcallout %}
-
-### Swap back to Browsersync {% addedin "2.0.0" %}
-
-You _may_ swap back to Eleventy Dev Server using the `setServerOptions` configuration API and the [`@11ty/eleventy-server-browsersync` package](https://github.com/11ty/eleventy-server-browsersync).
-
-First, install it:
-
-```
-npm install @11ty/eleventy-server-browsersync
-```
-
-Then, enable it in your configuration file:
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setServerOptions({
-    module: "@11ty/eleventy-server-browsersync",
-
-    // Default Browsersync options shown:
-    port: 8080,
-    open: false,
-    notify: false,
-    ui: false,
-    ghostMode: false,
-  })
-};
-```
-
-View the [full list of Browsersync options](https://browsersync.io/docs/options).
+* [This content has moved to `/docs/dev-server/`](/docs/dev-server/)
 
 ## Browsersync
 
-### Override Browsersync Server Options {% addedin "0.7.0" %}
-
-Useful if you want to change or override the default Browsersync configuration. Find the Eleventy defaults in [`EleventyServe.js`](https://github.com/11ty/eleventy/blob/master/src/EleventyServe.js). Take special note that Eleventy does not use Browsersync’s watch options and trigger reloads manually after our own internal watch methods are complete. See full options list on the [Browsersync documentation](https://browsersync.io/docs/options).
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setBrowserSyncConfig({
-    notify: true
-  });
-};
-```
-
-### Opt-out of the BrowserSync JavaScript snippet {% addedin "1.0.0" %}
-
-New in [`browser-sync@2.27.1`](https://github.com/BrowserSync/browser-sync/issues/1882#issuecomment-867767056) {% addedin "1.0.0" %}. Opt-out of the JavaScript snippet normally injected by BrowserSync. This disables BrowserSync live-reloading.
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setBrowserSyncConfig({
-    snippet: false,
-  });
-};
-```
+* [This content has moved to `/docs/server-browsersync/`](/docs/server-browsersync/)

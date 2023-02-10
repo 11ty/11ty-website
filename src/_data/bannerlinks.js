@@ -24,7 +24,7 @@ module.exports = [
   //   url: "https://www.standagainsthatred.org/"
   // },
   {
-    label: "Netlify will match up to $10,000 in donations to help Ukrainians 🇺🇦",
-    url: "https://www.netlify.com/donation-matching"
+    label: "Stand with Ukraine 🇺🇦",
+    url: "https://war.ukraine.ua/"
   }
 ];

@@ -14,38 +14,28 @@ tags:
 ---
 # Filters
 
+{% tableofcontents %}
+
 A <dfn>filter</dfn> is a function which can be used within templating syntax to transform data into a more presentable format. Filters are typically designed to be chained, so that the value returned from one filter is piped into the next filter.
 
 Various template engines can be extended with custom filters to modify content. Here are a few examples:
 
-
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    Language:
-    <a href="#filter-njk" id="filter-njk-btn" role="tab" aria-controls="filter-njk" aria-selected="true">Nunjucks</a>
-    <a href="#filter-liquid" id="filter-liquid-btn" role="tab" aria-controls="filter-liquid" aria-selected="false">Liquid</a>
-    <a href="#filter-hbs" id="filter-hbs-btn" role="tab" aria-controls="filter-hbs" aria-selected="false">Handlebars</a>
-    <a href="#filter-11tyjs" id="filter-11tyjs-btn" role="tab" aria-controls="filter-11tyjs" aria-selected="false">11ty.js</a>
-  </div>
-  <div id="filter-njk" role="tabpanel" aria-labelledby="filter-njk-btn">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "filter"} %}
+  <div id="filter-njk" role="tabpanel">
     {% codetitle "sample.njk" %}
 {%- highlight "html" %}{% raw %}
 <h1>{{ name | makeUppercase }}</h1>
 {% endraw %}{% endhighlight %}
   </div>
-  <div id="filter-liquid" role="tabpanel" aria-labelledby="filter-liquid-btn">
+  <div id="filter-liquid" role="tabpanel">
     {% codetitle "sample.liquid" %}
 {%- highlight "html" %}{% raw %}
 <h1>{{ name | makeUppercase }}</h1>
 {% endraw %}{% endhighlight %}
   </div>
-  <div id="filter-hbs" role="tabpanel" aria-labelledby="filter-hbs-btn">
-    {% codetitle "sample.hbs" %}
-{%- highlight "html" %}{% raw %}
-<h1>{{ makeUppercase name }}</h1>
-{% endraw %}{%- endhighlight %}
-  </div>
-  <div id="filter-11tyjs" role="tabpanel" aria-labelledby="filter-11tyjs-btn">
+  <div id="filter-js" role="tabpanel">
     {% codetitle "sample.11ty.js" %}
 {%- highlight "js" %}{% raw %}
 module.exports = function({name}) {
@@ -53,17 +43,25 @@ module.exports = function({name}) {
 };
 {% endraw %}{% endhighlight %}
   </div>
+  <div id="filter-hbs" role="tabpanel">
+    {% codetitle "sample.hbs" %}
+{%- highlight "html" %}{% raw %}
+<h1>{{ makeUppercase name }}</h1>
+{% endraw %}{%- endhighlight %}
+  </div>
 </seven-minute-tabs>
+</is-land>
 
-Filters can be added using the [Configuration API](/docs/config/#using-the-configuration-api) and are available to multiple template engines, simultaneously. They are currently supported in JavaScript {% addedin "0.7.0" %}, Nunjucks, Liquid, and Handlebars.
+Filters can be added using the [Configuration API](/docs/config/#using-the-configuration-api) and are available to multiple template engines, simultaneously. They are currently supported in JavaScript {% addedin "0.7.0" %}, Nunjucks, Liquid, Handlebars, and WebC.
 
 {% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addFilter("myFilter", function(value) {
-    return value;
-  });
+  eleventyConfig.addFilter("makeUppercase", function(value) { … });
+
+  // New in {{ "2.0.0-canary.15" | coerceVersion }}
+  eleventyConfig.addAsyncFilter("makeUppercase", async function(value) { … });
 };
 ```
 
@@ -88,7 +86,7 @@ module.exports = function(eleventyConfig) {
   // Handlebars Filter
   eleventyConfig.addHandlebarsHelper("makeUppercase", function(value) { … });
 
-  // JavaScript Template Function (New in 0.7.0)
+  // JavaScript Template Function
   eleventyConfig.addJavaScriptFunction("makeUppercase", function(value) { … });
 };
 ```
@@ -107,6 +105,56 @@ If you’d like to reuse existing filters, you can use the Configuration API’s
 module.exports = function(eleventyConfig) {
   eleventyConfig.addShortcode("myCustomImage", function(url, alt) {
     return `<img src="${eleventyConfig.getFilter("url")(url)}" alt="${alt}">`;
+  });
+};
+```
+
+### Asynchronous Universal Filters {% addedin "2.0.0" %}
+
+Eleventy has added a new universal filter API for asynchronous filters and extended the currently available `addFilter` method to be async-friendly. _Note that even though Handlebars is used for synchronous filters in `addFilter`, it is excluded from asynchronous filters because Handlebars is not async-friendly._
+
+If you are not yet on Eleventy 2.0, you can still add asynchronous filters to each async-friendly template language individually: [Liquid `addLiquidFilter`](/docs/languages/liquid/#filters), [Nunjucks `addNunjucksAsyncFilter`](/docs/languages/nunjucks/#asynchronous-nunjucks-filters), and [JavaScript `addJavaScriptFunction`](/docs/languages/javascript/#asynchronous-javascript-template-functions).
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // Async universal filters add to:
+  // * Liquid
+  // * Nunjucks
+  // * JavaScript
+
+  eleventyConfig.addFilter("myFilter", async function(value) {
+    // do some Async work
+    return value;
+  });
+
+  eleventyConfig.addAsyncFilter("myFilter", async function(value) {
+    // do some Async work
+    return value;
+  });
+};
+```
+
+<div class="youtube-related">
+  {%- youtubeEmbed "hJAtWQ9nmKU", "Universal Asynchronous Filters (Nunjucks improvement) (Changelog №17)", "774" -%}
+</div>
+
+## Scoped Data in Filters
+
+A few Eleventy-specific data properties are available to filter callbacks.
+
+* `this.page` {% addedin "2.0.0-canary.19" %}
+* `this.eleventy` {% addedin "2.0.0-canary.19" %}
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // Make sure you’re not using an arrow function here: () => {}
+  eleventyConfig.addFilter("myFilter", function() {
+    // this.page
+    // this.eleventy
   });
 };
 ```

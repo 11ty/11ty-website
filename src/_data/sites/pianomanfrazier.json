@@ -1,7 +1,0 @@
-{
-	"name": "Lilypond in Markdown",
-	"url": "https://lilypond-in-markdown.netlify.app/",
-	"description": "Render lilypond (sheet) music from inside a markdown file using 11ty.",
-	"source_url": "https://github.com/pianomanfrazier/lilypond-in-markdown",
-	"twitter": "pianomanfrazier"
-}

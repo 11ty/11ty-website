@@ -1,9 +1,0 @@
-{
-	"name": "Netlify",
-	"url": "https://www.netlify.com/",
-	"description": "The home page for Netlify, the fastest way to build the fastest sites.",
-	"twitter": "netlify",
-	"authoredBy": ["huguestennier", "zachleat"],
-	"featured": true,
-	"superfeatured": true
-}

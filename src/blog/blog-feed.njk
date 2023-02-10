@@ -29,7 +29,7 @@
     <email>{{ metadata.author.email }}</email>
   </author>
   {%- for post in collections.blog | reverse %}
-  {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+  {% set absolutePostUrl %}{{ post.url | absoluteUrl(metadata.url) }}{% endset %}
   <entry>
     <title>{{ post.data.newstitle }}</title>
     <link href="{{ absolutePostUrl }}"/>

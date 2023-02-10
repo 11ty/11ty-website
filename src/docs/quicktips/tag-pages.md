@@ -5,9 +5,6 @@ date: 2018-06-08
 tags: ["related-pagination"]
 relatedTitle: "Quick Tip #004—Zero Maintenance Tag Pages for your Blog"
 ---
-
-_This post uses features available in Eleventy 0.4.0 and newer._
-
 This quick tip will show you how to automatically generate Tag Pages (lists of content tagged into a collection).
 
 We’ll use pagination to automatically generate a template for each tag we want to link to.
@@ -28,7 +25,7 @@ permalink: /tags/{{ tag }}/
 <ol>
 {% set taglist = collections[ tag ] %}
 {% for post in taglist | reverse %}
-  <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
 {% endfor %}
 </ol>
 ```
@@ -80,4 +77,4 @@ Now Eleventy will only generate a `/tags/personal/` template and `tech` will be 
 
 ## In Practice
 
-This is currently in use on the [`eleventy-base-blog` sample project](https://github.com/11ty/eleventy-base-blog). Check out source code in the [`tags.njk` template](https://github.com/11ty/eleventy-base-blog/blob/master/tags.njk) and [see a live demo](https://eleventy-base-blog.netlify.com/tags/another-tag/).
+This is currently in use on the [`eleventy-base-blog` sample project](https://github.com/11ty/eleventy-base-blog). Check out source code in the [`tags.njk` template](https://github.com/11ty/eleventy-base-blog/blob/main/content/tags.njk) and [see a live demo](https://eleventy-base-blog.netlify.com/tags/another-tag/).

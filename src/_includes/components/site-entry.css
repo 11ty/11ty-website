@@ -83,11 +83,14 @@
 .sites-vert .avatar {
 	margin-right: 3px;
 	margin-left: 0;
+	width: 1em;
+	height: 1em;
+	object-fit: contain;
 }
 .sites-vert > .lo-grid {
   --lo-margin-h: 1rem;
   --lo-margin-v: 1rem;
-  --lo-c-minwidth: 5.555555555556em; /* 100px /18 */
+  --lo-c-minwidth: 7.777777777778em; /* 140px /18 */
 	--lo-grid-repeat: auto-fill;
 }
 .sites-vert--md > .lo-grid {
@@ -161,13 +164,6 @@
 
 .sites-site-vert .sites-site-lighthouse .speedlify-score {
 	background-color: #fff;
-}
-
-.stackblitz-link.stackblitz-link.stackblitz-link {
-	display: none;
-}
-.stackblitz .stackblitz-link.stackblitz-link {
-	display: inline;
 }
 
 @supports (aspect-ratio: 1 / 1) {

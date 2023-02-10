@@ -1,3 +1,4 @@
+// Strip out leading @ from usernames
 module.exports = function cleanAuthorName(name) {
   name = name || "";
 

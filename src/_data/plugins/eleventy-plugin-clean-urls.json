@@ -1,0 +1,5 @@
+{
+	"npm": "@inframanufaktur/eleventy-plugin-clean-urls",
+	"author": "_ovlb",
+	"description": "Removes those pesky `utm_bla` or `fbclid` tracking params from all external links in your HTML."
+}

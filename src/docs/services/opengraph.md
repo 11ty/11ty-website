@@ -6,6 +6,7 @@ eleventyNavigation:
   # order: 0
 communityLinksKey: api-services-opengraph
 ---
+{% tableofcontents %}
 
 Feed this runtime service a URL and it will extract an optimized OpenGraph image using these sources:
 
@@ -39,12 +40,32 @@ https://v1.opengraph.11ty.dev/:url/:size/:format/
 
 ## Samples
 
+{% callout "demo" %}
+
 <img src="https://v1.opengraph.11ty.dev/https%3A%2F%2Fwww.11ty.dev%2F/small/" alt="OpenGraph image for 11ty.dev" loading="lazy" decoding="async" width="375" height="197">
-<img src="https://v1.opengraph.11ty.dev/https%3A%2F%2Fwww.a11yproject.com%2F/small/" alt="OpenGraph image for a11yproject.com" loading="lazy" decoding="async" width="375" height="197">
-<img src="https://v1.opengraph.11ty.dev/https%3A%2F%2Fwww.netlify.com%2F/small/" alt="OpenGraph image for netlify.com" loading="lazy" decoding="async" width="375" height="197">
+
+{% endcallout %}
 
 ```html
 <img src="https://v1.opengraph.11ty.dev/https%3A%2F%2Fwww.11ty.dev%2F/small/" alt="OpenGraph image for 11ty.dev" loading="lazy" decoding="async" width="375" height="197">
+```
+
+{% callout "demo" %}
+
 <img src="https://v1.opengraph.11ty.dev/https%3A%2F%2Fwww.a11yproject.com%2F/small/" alt="OpenGraph image for a11yproject.com" loading="lazy" decoding="async" width="375" height="197">
+
+{% endcallout %}
+
+```html
+<img src="https://v1.opengraph.11ty.dev/https%3A%2F%2Fwww.a11yproject.com%2F/small/" alt="OpenGraph image for a11yproject.com" loading="lazy" decoding="async" width="375" height="197">
+```
+
+{% callout "demo" %}
+
+<img src="https://v1.opengraph.11ty.dev/https%3A%2F%2Fwww.netlify.com%2F/small/" alt="OpenGraph image for netlify.com" loading="lazy" decoding="async" width="375" height="197">
+
+{% endcallout %}
+
+```html
 <img src="https://v1.opengraph.11ty.dev/https%3A%2F%2Fwww.netlify.com%2F/small/" alt="OpenGraph image for netlify.com" loading="lazy" decoding="async" width="375" height="197">
 ```

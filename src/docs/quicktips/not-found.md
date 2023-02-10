@@ -22,7 +22,7 @@ permalink: 404.html
   </head>
   <body>
     <h1>{{ title }}</h1>
-    <p>This is where you should tell the user how to find their content. Maybe on the <a href="{{ "/" | url }}">home page?</a></p>
+    <p>This is where you should tell the user how to find their content. Maybe on the <a href="/">home page?</a></p>
   </body>
 </html>
 ```
@@ -44,7 +44,13 @@ ErrorDocument 404 /404.html
 
 ## With `--serve`
 
-If you're using `eleventy --serve`, you can configure Browsersync to do the 404 routing by passing a callback in your config. Read more on [the BrowserSyncConfig option](/docs/config/#override-browsersync-server-options), the [Browsersync callbacks option](https://browsersync.io/docs/options#option-callbacks), and [how to provide a 404 using a Browsersync callback](https://github.com/browsersync/browser-sync/issues/1398).
+{% callout "info", "md" -%}
+If you’re using the new [Eleventy Dev Server](/docs/watch-serve/#eleventy-dev-server) {% addedin "2.0.0" %}, the `404.html` convention is now provided to you for free! You can skip this section!
+
+If you’d like to backport this functionality to Browsersync, keep reading. (Note also that you can [use Browsersync with Eleventy 2.0!](/docs/dev-server/#swap-back-to-browsersync))
+{% endcallout %}
+
+If you're using Browsersync with Eleventy (with `eleventy --serve`), you can configure it to do the 404 routing by passing a callback in your config. Read more on [the BrowserSyncConfig option](/docs/config/#override-browsersync-server-options), the [Browsersync callbacks option](https://browsersync.io/docs/options#option-callbacks), and [how to provide a 404 using a Browsersync callback](https://github.com/browsersync/browser-sync/issues/1398).
 
 {% codetitle ".eleventy.js" %}
 

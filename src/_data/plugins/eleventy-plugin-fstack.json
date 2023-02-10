@@ -1,0 +1,5 @@
+{
+	"npm": "@factorial/eleventy-plugin-fstack",
+	"author": "dnnsjrng",
+	"description": "Linting, building and watching your assets with as little overhead and configuration as possible by integrating @factorial/stack-core"
+}

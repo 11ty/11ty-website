@@ -6,6 +6,8 @@ eleventyNavigation:
 ---
 # Eleventy Supplied Data
 
+{% tableofcontents %}
+
 Here are a few data values we supply to your page that you can use in your templates:
 
 * `pkg`: The local project’s `package.json` values.
@@ -16,7 +18,7 @@ Here are a few data values we supply to your page that you can use in your templ
 
 <div id="page-variable-contents"></div>
 
-## `page` Variable:
+## `page` Variable
 
 ```js
 let page = {
@@ -25,10 +27,10 @@ let page = {
   // Note: This value will be `false` if `permalink` is set to `false`.
   url: "/current/page/myFile/",
 
-  // For permalinks: inputPath filename minus template file extension (New in v0.3.4)
+  // For permalinks: inputPath filename minus template file extension
   fileSlug: "myFile",
 
-  // For permalinks: inputPath minus template file extension (New in v0.9.0)
+  // For permalinks: inputPath minus template file extension
   filePathStem: "/current/page/myFile",
 
   // JS Date Object for current page (used to sort collections)
@@ -45,9 +47,23 @@ let page = {
 
   // Added in 1.0
   // Useful with `page.filePathStem` when using custom file extensions.
-  outputFileExtension: "html"
+  outputFileExtension: "html",
+
+  // Available in 2.0 with the i18n plugin
+  // The default is the value of `defaultLanguage` passed to the i18n plugin
+  lang: "",
 };
 ```
+
+* Note that `page.lang` is _only_ available when the [i18n plugin has been added to your configuration file](/docs/plugins/i18n/#add-to-your-configuration-file).
+
+### Feature Availability
+
+The data in `page` is also available as:
+
+* `this.page` on [Shortcodes](/docs/shortcodes/#scoped-data-in-shortcodes) {% addedin "0.11.0" %}
+* `this.page` on [Filters](/docs/filters/#scoped-data-in-filters), [Transforms](/docs/config/#transforms), and [Linters](/docs/config/#linters) {% addedin "2.0.0-canary.19" %}
+* `page` on [Collection entries](/docs/collections/#collection-item-data-structure) {% addedin "2.0.0-canary.19" %}
 
 ### `date`
 
@@ -56,7 +72,7 @@ The date associated with the page. Defaults to the content’s file created date
 
 ### `fileSlug` {% addedin "0.3.4" %}
 
-The `fileSlug` variable is mapped from inputPath and is useful for creating your own clean [permalinks](/docs/permalinks/).
+The `fileSlug` variable is mapped from `inputPath`, and is useful for creating your own clean [permalinks](/docs/permalinks/).
 
 | `inputPath` | `page.fileSlug` Result |
 | --- | --- |
@@ -71,12 +87,13 @@ The `fileSlug` variable is mapped from inputPath and is useful for creating your
 | `"index.md"` | `""` _(empty)_ |
 | `"myDir/index.md"` | `"myDir"` |
 | `"myDir/2018-01-01-index.md"` | `"myDir"` |
+| `"2018-01-01-myDir/index.md"` | `"myDir"` {% addedin "2.0.0-canary.10" %} |
 
 ### `filePathStem` {% addedin "0.9.0" %}
 
-The `filePathStem` variable is mapped from inputPath and is useful if you’ve inherited a project that doesn’t use clean [permalinks](/docs/permalinks/).
+The `filePathStem` variable is mapped from `inputPath`, and is useful if you’ve inherited a project that doesn’t use clean [permalinks](/docs/permalinks/).
 
-{% callout "info" %}<strong>Careful with this one</strong> and remember that <a href="/docs/permalinks/#cool-uris-dont-change">Cool URI’s don’t change</a>.{% endcallout %}
+{% callout "info" %}<strong>Careful with this one!</strong> Remember that <a href="/docs/permalinks/#cool-uris-dont-change">Cool URI’s don’t change</a>.{% endcallout %}
 
 If you absolutely need a file extension on your output, you might use it like this:
 
@@ -90,18 +107,42 @@ permalink: "{{ page.filePathStem }}.html"
 ```
 {% endraw %}
 
-Example Output below is using the above permalink value.
+This example output uses the above permalink value.
 
 | `inputPath` | `page.filePathStem` Result | Example Output |
 | --- | --- | --- |
 | `"2018-01-01-myFile.md"` | `"myFile"` | `myFile.html` |
 | `"myDir/myFile.md"` | `"myDir/myFile"` | `myDir/myFile.html` |
 
-## `eleventy` Variable
+#### Changing your project default permalinks
 
+{% addedin "2.0.0-canary.9" %} [Deep-link to `3c49f22`](https://github.com/11ty/eleventy/commit/3c49f22b31b10e5dae0daf661a54750875ae5d0f).
+
+Want to change `resource.md` to write to `/resource.html` instead of `/resource/index.html`? Use this configuration API code sample.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addGlobalData("permalink", () => {
+    return (data) => `${data.page.filePathStem}.${data.page.outputFileExtension}`;
+  });
+};
+```
+
+{% callout "warn", "md" %}When using this approach for URLs _without_ trailing slashes (file `/resource.html` -> url `/resource`), please do note that using trailing slashes with `index.html` files (file `/resource/index.html` -> url `/resource/`) is a bit friendlier on various Jamstack hosting providers. You may encounter unexpected 404 errors—make [sure you study up on how this works and test appropriately!](https://www.zachleat.com/web/trailing-slash/#results-table)!{% endcallout %}
+
+
+## `eleventy` Variable {% addedin "1.0.0" %}
 
 ```js
 let eleventy = {
+
+  // Eleventy version
+  version: "1.0.1", // New in {{ "1.0.1" | coerceVersion }}
+
+  // For use with `<meta name="generator">`
+  generator: "Eleventy v1.0.1", // New in {{ "1.0.1" | coerceVersion }}
 
   // Read more about their `process.env` counterparts below
   env: {
@@ -114,6 +155,9 @@ let eleventy = {
 
     // The method, either `cli` or `script`
     source: "cli",
+
+    // One of `serve`, `watch`, or `build`
+    runMode: "build", // New in {{ "2.0.0-beta.2" | coerceVersion }}
   },
 
   serverless: {
@@ -133,12 +177,24 @@ let eleventy = {
 };
 ```
 
-Learn more about:
-* [Eleventy-supplied Environment Variables](/docs/environment-vars/#eleventy-supplied)
-* Serverless:
+### Feature Availability
+
+The data in `eleventy` is also available as:
+
+* `this.eleventy` on [Shortcodes](/docs/shortcodes/) {% addedin "2.0.0-canary.5" %}
+* `this.eleventy` on [Filters](/docs/filters/) {% addedin "2.0.0-canary.19" %}
+
+### Learn more
+
+* [Eleventy-supplied Environment Variables on `process.env`](/docs/environment-vars/#eleventy-supplied)
+* [Serverless](/docs/plugins/serverless/)
   * [Dynamic Slugs and Serverless Global Data](/docs/plugins/serverless/#dynamic-slugs-and-serverless-global-data).
   * `event.queryStringParameters`, which are very similar to [URL.searchParams](https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams). It’s an object representing the name/value pairs for things after the `?` in a URL.
 
-### Environment Variables
+<div class="youtube-related">
+  {%- youtubeEmbed "_YvwTHeqBZY", "eleventy.version and eleventy.generator Data (Weekly №7)", "235" -%}
+</div>
+
+## Environment Variables on `process.env`
 
 * Read more about [Eleventy-supplied environment variables](/docs/environment-vars/#eleventy-supplied).

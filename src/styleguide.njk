@@ -34,7 +34,7 @@ layout: layouts/docs.njk
 <div class="elv-sg-component">
 <ul class="list-bare">
   <li class="list-bare-item"><a href="/docs/glossary/#static-sites">Static Sites</a></li>
-  <li class="list-bare-item"><a href="/docs/glossary/#jamstack">JAMstack</a></li>
+  <li class="list-bare-item"><a href="/docs/glossary/#jamstack">Jamstack</a></li>
 </ul>
 </div>
 
@@ -43,7 +43,7 @@ layout: layouts/docs.njk
 <div class="elv-sg-component">
 <ul class="inlinelist">
   <li class="inlinelist-item"><a href="/docs/glossary/#static-sites">Static Sites</a></li>
-  <li class="inlinelist-item"><a href="/docs/glossary/#jamstack">JAMstack</a></li>
+  <li class="inlinelist-item"><a href="/docs/glossary/#jamstack">Jamstack</a></li>
 </ul>
 </div>
 
@@ -72,7 +72,7 @@ layout: layouts/docs.njk
 <h2>Blockquotes</h2>
 
 <div class="elv-sg-component">
-    <blockquote>“Seriously can't remember enjoying using a Static Site Generator this much. Yes Hugo is rapid, but this is all so logical. It feels like it was designed by someone who has been through lots of pain and success using other SSGs.”—<a href="https://twitter.com/philhawksworth">{% avatarlocalcache "twitter", "philhawksworth" %}Phil Hawksworth</a></blockquote>
+    <blockquote>“Seriously can't remember enjoying using a Static Site Generator this much. Yes Hugo is rapid, but this is all so logical. It feels like it was designed by someone who has been through lots of pain and success using other SSGs.”—<a href="{{ "https://twitter.com/philhawksworth" | canonicalTwitterUrl }}">{% communityavatar "philhawksworth" %}Phil Hawksworth</a></blockquote>
 </div>
 
 <h2>Buzzwords</h2>
@@ -91,12 +91,15 @@ layout: layouts/docs.njk
 <div class="elv-sg-component">
 <ul class="buzzword-list">
   <li><a href="/docs/glossary/#static-sites">Static Sites</a></li>
-  <li><a href="/docs/glossary/#jamstack">JAMstack</a></li>
+  <li><a href="/docs/glossary/#jamstack">Jamstack</a></li>
 </ul>
 </div>
 
 <h2>Callout</h2>
 
+{% callout "box" %}Unstyled box with an inline <code>Code block</code>{% endcallout %}
+{% callout "box", "html", "Custom Label" %}Unstyled box with an inline <code>Code block</code>{% endcallout %}
+{% callout "box", "html", "Super long custom label that we want to wrap nicely—does it?" %}Unstyled box with an inline <code>Code block</code>{% endcallout %}
 {% callout %}Default message with an inline <code>Code block</code>{% endcallout %}
 {% callout "info" %}Default info message with an inline <code>Code block</code>{% endcallout %}
 {% callout "warn" %}Default warning message with an inline <code>Code block</code>{% endcallout %}

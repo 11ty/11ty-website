@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-og-image",
+	"author": "KiwiKilian",
+	"description": "Generate OG images from your templates, data and CSS. Fast and reproducible – no need for a headless browser."
+}

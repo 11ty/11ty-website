@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-multisite",
+	"author": "bnoctis",
+	"description": "Add multi-site building support for Eleventy"
+}

@@ -6,14 +6,35 @@ eleventyNavigation:
 ---
 # Global Data File Preprocessing
 
-{% callout "warn" %}<strong>Deprecation Warning</strong>: This feature is deprecated and will be removed in a future version of Eleventy. You can use <a href="/docs/data-js/">JavaScript Data Files</a> or <a href="/docs/data-computed/">Computed Data</a> instead.{% endcallout %}
+{% callout "error" %}<strong>Feature Removal</strong>: This feature was removed in Eleventy 2.0. You can use <a href="/docs/data-js/">JavaScript Data Files</a> or <a href="/docs/data-computed/">Computed Data</a> instead.{% endcallout %}
 
-* Starting in Eleventy 1.0, this feature is disabled by default: `dataTemplateEngine: false`
-* Prior versions of Eleventy used Liquid preprocessing by default: `dataTemplateEngine: "liquid"`
+The `dir.data` global data files run through this template engine before transforming to JSON. Read more about [Global Data Files](/docs/data-global/).
 
-[Global JSON data files](/docs/data-global/) (*not template/directory data files*) can be optionally preprocessed with a template engine specified under the `dataTemplateEngine` configuration option. `package.json` data is available here under the `pkg` variable.
+| Data Template Engine |  |
+| --- | --- |
+| _Object Key_ | `dataTemplateEngine` |
+| _Default_ | `"liquid"` (before 1.0) |
+| _Default_ | `false` (1.0 and above) |
+| _Valid Options_ | A valid [template engine short name](/docs/languages/) or `false` |
+| _Command Line Override_ | _None_ |
 
-For example, if your `dataTemplateEngine` is using `liquid` you can do this:
+[Global JSON data files](/docs/data-global/) (*not template/directory data files*) can be optionally preprocessed with a template engine specified under the `dataTemplateEngine` configuration option.
+
+## Example
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  return {
+    "dataTemplateEngine": "njk"
+  }
+};
+```
+
+For example, if your `dataTemplateEngine` is using `njk` or `liquid` you can do this in any `*.json` files in your `_data` folder:
+
+{% codetitle "_data/myfile.json" %}
 
 {% raw %}
 ```json
@@ -22,3 +43,5 @@ For example, if your `dataTemplateEngine` is using `liquid` you can do this:
 }
 ```
 {% endraw %}
+
+`package.json` data is available here supplied by Eleventy in the `pkg` variable.

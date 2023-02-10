@@ -8,12 +8,16 @@ eleventyNavigation:
 
 [Add your own starter project](https://github.com/11ty/11ty-website/tree/master/src/_data/starters). Community contributions are shown in random order. [Lighthouse scores are updated daily](https://www.speedlify.dev/eleventy-starters/).
 
-<filter-container data-oninit>
+<filter-container oninit>
 <form>
-  <select data-filter-bind="tags" class="select-filter">
-    <option value="">Show All</option>
-    <option value="perfectlh">Four Hundos Lighthouse Score</option>
-  </select>
+  <label>
+    <input type="radio" name="projectfilter" value="" data-filter-key="tags" checked>
+    Show all projects
+  </label>
+  <label>
+    <input type="radio" name="projectfilter" value="perfectlh" data-filter-key="tags">
+    Only show projects with a Four Hundos Lighthouse score
+  </label>
 </form>
 <div class="sites-vert sites-vert--lg">
   <div class="lo-grid" style="--lo-margin-v: 5em;">
@@ -38,7 +42,7 @@ eleventyNavigation:
 
 ## Lists
 
-* [{% avatarlocalcache "twitter", "stackbithq", "stackbithq" %}Jamstack Themes](https://jamstackthemes.dev/ssg/eleventy/) A list of starter themes filterable by supported static site generator and CMS.
+* [{% avatarlocalcache "twitter", "stackbithq" %}Jamstack Themes](https://jamstackthemes.dev/ssg/eleventy/) A list of starter themes filterable by supported static site generator and CMS.
 
 ## Source Code Samples
 

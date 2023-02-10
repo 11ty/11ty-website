@@ -5,7 +5,9 @@ eleventyNavigation:
   order: 9
 layout: layouts/langs.njk
 ---
-| Eleventy Short Name | File Extension | NPM Package                                |
+{% tableofcontents "open" %}
+
+| Eleventy Short Name | File Extension | npm Package                                |
 | ------------------- | -------------- | ------------------------------------------ |
 | `ejs`               | `.ejs`         | [`ejs`](https://www.npmjs.com/package/ejs) |
 

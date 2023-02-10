@@ -8,12 +8,12 @@ const FilteredProfiles = [
 	"masonslots", //gambling
 	"trust-my-paper", // selling term papers
 	"kiirlaenud", // some quick loans site
-	"kajino-bitcoin", //bitcoin
+	"kajino-bitcoin", // crypto
 	"seo25-com", // selling website traffic
 	"relief-factor", // profile link was some weird PDF
 	"targetedwebtraffic", // selling website traffic
+	"forexbrokerz", // crypto
 ];
-const OpenCollectiveTwitterMap = require("./opencollectiveToTwitterUsernameMap.js");
 
 function isMonthlyOrYearlyOrder(order) {
 	return (order.frequency === 'MONTHLY' || order.frequency === 'YEARLY') && order.status === 'ACTIVE';
@@ -40,13 +40,14 @@ module.exports = async function() {
 		let json = await EleventyFetch(url, {
 			type: "json",
 			duration: process.env.ELEVENTY_SERVERLESS ? "*" : (process.env.ELEVENTY_AVATARS ? "0s" : "1d"),
-			directory: process.env.ELEVENTY_SERVERLESS ? "cache/" : ".cache/eleventy-fetch/",
+			directory: ".cache/eleventy-fetch/",
+			dryRun: process.env.ELEVENTY_SERVERLESS ? true : false,
 		});
 
 		let orders = json.nodes.map(order => {
 			order.name = order.fromAccount.name;
 			order.slug = order.fromAccount.slug;
-			order.twitter = order.fromAccount.twitterHandle || OpenCollectiveTwitterMap[order.fromAccount.slug];
+			order.twitter = order.fromAccount.twitterHandle;
 			order.image = order.fromAccount.imageUrl;
 			order.website = order.fromAccount.website;
 			order.profile = `https://opencollective.com/${order.slug}`;
