@@ -7,17 +7,15 @@ eleventyNavigation:
 ---
 # Layouts
 
-Eleventy Layouts are special templates that can be used to wrap other content. To denote that a piece of content should be wrapped in a template, use the `layout` key in your front matter, like so:
+{% tableofcontents %}
+
+Eleventy Layouts are special templates that can be used to wrap other content.
+
+To denote that a piece of content should be wrapped in a template, use the `layout` key in your front matter, like so:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#layouts-md" role="tab">Markdown</a>
-    <a href="#layouts-liquid" role="tab">Liquid</a>
-    <a href="#layouts-njk" role="tab">Nunjucks</a>
-    <a href="#layouts-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layouts", additions: "md"} %}
   <div id="layouts-md" role="tabpanel">
 
 {% codetitle "Markdown", "Syntax" %}
@@ -78,6 +76,20 @@ module.exports = {
 {% endraw %}
 
   </div>
+  <div id="layouts-hbs" role="tabpanel">
+
+{% codetitle "Handlebars", "Syntax" %}
+{% raw %}
+```handlebars
+---
+layout: mylayout.njk
+title: My Rad Handlebars Blog Post
+---
+<h1>{{title}}</h1>
+```
+{% endraw %}
+
+  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -86,7 +98,6 @@ This will look for a `mylayout.njk` Nunjucks file in your _includes_ folder at `
 * You can use any template language in your layout file—it doesn’t need to match the template language of the content: an `ejs` template can use a `njk` layout.
 * Layouts can include subdirectories: `layout: "layouts/base.njk"` maps to `_includes/layouts/base.njk`.
 * You can have a [separate folder for Eleventy layouts](/docs/config/#directory-for-layouts-(optional)) if you’d prefer to have them separate from your _includes_ folder.
-* If you omit the file extension (for example `layout: mylayout`), Eleventy will cycle through all of the supported template formats (`mylayout.*`) to look for a matching layout file. (This is slower, though)
 
 Next, we need to create a `mylayout.njk` file. It can contain any type of text, but here we’re using HTML:
 
@@ -104,13 +115,7 @@ All of this will output the following HTML content to `_site/content-using-layou
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View the output from:
-    <a href="#layoutoutput-md" role="tab">Markdown</a>
-    <a href="#layoutoutput-liquid" role="tab">Liquid</a>
-    <a href="#layoutoutput-njk" role="tab">Nunjucks</a>
-    <a href="#layoutoutput-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layoutoutput", additions: "md", label: "View the output from"} %}
   <div id="layoutoutput-md" role="tabpanel">
 {% callout "demo" %}
 
@@ -187,6 +192,25 @@ All of this will output the following HTML content to `_site/content-using-layou
 
 {% endcallout %}
   </div>
+  <div id="layoutoutput-hbs" role="tabpanel">
+{% callout "demo" %}
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Rad Handlebars Blog Post</title>
+  </head>
+  <body>
+    <h1>My Rad Handlebars Blog Post</h1>
+  </body>
+</html>
+```
+
+{% endcallout %}
+  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -231,3 +255,19 @@ module.exports = function(eleventyConfig) {
 ## Layout Chaining
 
 Chaining multiple layouts together. [Read more about Layout Chaining](/docs/layout-chaining/).
+
+## Omitting the Layout’s File Extension
+
+Omitting the layout file extension (for example `layout: mylayout`) causes Eleventy to cycle through all of the supported template formats (`mylayout.*`) to look for a matching layout file. There are a few drawbacks to this approach:
+1. It is slower! Including the file extension bypasses the file search.
+2. It is ambiguous if you have multiple layout files with the same name and different extensions (e.g. `mylayout.njk` and `mylayout.liquid`).
+
+You can disable extensionless layouts in your project with the `setLayoutResolution` Configuration API method {% addedin "2.0.0-canary.21" %} (we may swap this to be the default in a future major version of Eleventy):
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setLayoutResolution(false);
+};
+```

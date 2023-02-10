@@ -4,8 +4,9 @@ eleventyNavigation:
   key: Config Global Data
   order: 4
 ---
-
 # Global Data from the Configuration API {% addedin "1.0.0" %}
+
+{% tableofcontents %}
 
 In addition to [Global Data Files](/docs/data-global/) global data can be added to the Eleventy config object using the `addGlobalData` method. This is especially useful for plugins.
 

@@ -9,6 +9,8 @@ relatedLinks:
 ---
 # JavaScript Data Files {% addedin "0.5.3" %}
 
+{% tableofcontents %}
+
 The following applies to both:
 
 * [Global Data Files](/docs/data-global/) (`*.js` inside of your `_data` directory)
@@ -113,7 +115,7 @@ module.exports = function() {
 
 ### Example: Exposing Environment Variables
 
-You can expose environment variables to your templates by utilizing [Node.js’ `process.env` property](https://nodejs.org/api/process.html#process_process_env). _(Related: starting in version 1.0, Eleventy supplies a few of its [own Environment Variables](/docs/data-eleventy-supplied/#environment-variables))_
+You can expose environment variables to your templates by utilizing [Node.js’ `process.env` property](https://nodejs.org/api/process.html#process_process_env). _(Related: starting in version 1.0, Eleventy supplies a few of its [own Environment Variables](/docs/environment-vars/#eleventy-supplied))_
 
 * [**Learn how to set your own environment variables**](/docs/environment-vars/#setting-your-own)
 

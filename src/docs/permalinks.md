@@ -7,12 +7,7 @@ eleventyNavigation:
 ---
 # Permalinks
 
-<details>
-  <summary>Expand for Table of Contents</summary>
-
-[[toc]]
-
-</details>
+{% tableofcontents %}
 
 You can customize the default location of templates to the output directory using Eleventy’s permalinks feature.
 
@@ -90,7 +85,7 @@ Here’s a few examples of how it works by default (assuming your output directo
 
 ## Cool URIs don’t change
 
-Eleventy automatically helps you make sure that [Cool URIs don’t change](https://www.w3.org/Provider/Style/URI.html).
+Eleventy automatically helps you make sure that [Cool URIs don’t change](https://www.w3.org/Provider/Style/URI).
 
 > What to leave out…
 > File name extension. This is a very common one. "cgi", even ".html" is something which will change. You may not be using HTML for that page in 20 years time, but you might want today's links to it to still be valid. The canonical way of making links to the W3C site doesn't use the extension.
@@ -213,7 +208,7 @@ permalink: "index.json"
 
 ## Advanced Usage
 
-### Mapping one URL to Multiple Files for Internationalization {% addedin "2.0.0" %}
+### Mapping one URL to Multiple Files for Internationalization {% addedin "2.0.0-canary.13" %}
 
 _Decouple a page’s primary URL from its permalink._
 
@@ -224,19 +219,21 @@ Use [server-side redirects](https://docs.netlify.com/routing/redirects/redirect-
 * [Netlify Redirects](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language)
 * [Apache Content Negotiation](https://fantasai.inkedblade.net/web-design/l10n) related to [Issue #761](https://github.com/11ty/eleventy/issues/761)
 
-These will work as expected out of the box, except for the [`page.url`](/docs/data-eleventy-supplied/#page-variable) variable and the URL reported in [collection objects](/docs/collections/#collection-item-data-structure) (et al). We want two or more files on the file system (e.g. `about.en.html` and `about.es.html`) to map to a single page URL (`/about/`—not ~~`/about.en.html`~~ or ~~`/about.es.html`~~).
+These will work as expected out of the box, except for the [`page.url`](/docs/data-eleventy-supplied/#page-variable) variable and the URL reported in [collection objects](/docs/collections/#collection-item-data-structure) (et al).
 
-This is now possible using a new URL Transforms feature. URL transforms let you modify the `page.url` for a content document based on its output path. This example matches any `.xx.html` output file:
+Say we want two or more files on the file system (e.g. `about.en.html` and `about.es.html`) to map to a single page URL (`/about/`—not ~~`/about.en.html`~~ or ~~`/about.es.html`~~). This is now possible using a new URL Transforms feature. URL transforms let you modify the `page.url` for a content document based.
+
+This example matches any `.xx.html` URL:
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addUrlTransform(({outputPath}) => {
-    // Match any .xx.html output path
-    if((outputPath || "").match(new RegExp("\.[a-z]{2}\.html$", "i"))) {
-      return outputPath.slice(0, -1 * ".en.html".length) + "/"; // trailing slash here is optional
+  eleventyConfig.addUrlTransform(({url}) => {
+    // `url` is guaranteed to be a string here even if you’re using `permalink: false`
+    if (url.match(/\.[a-z]{2}\.html$/i)) {
+        return url.slice(0, -1 * ".en.html".length) + "/";
     }
 
-    // Not returning (returning undefined) skips the url transform
+    // Returning undefined skips the url transform.
   });
 };
 ```

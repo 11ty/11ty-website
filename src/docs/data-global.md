@@ -8,6 +8,8 @@ relatedLinks:
 ---
 # Global Data Files
 
+{% tableofcontents %}
+
 Your global data folder is controlled by the [`dir.data` configuration option](/docs/config/#directory-for-global-data-files). All `*.json` and `module.exports` values from [`*.js` files](/docs/data-js/) in this directory will be added into a global data object available to all templates.
 
 ## Example

@@ -6,14 +6,12 @@ eleventyNavigation:
 ---
 # Syntax Highlighting Plugin
 
+{% tableofcontents %}
+
 A pack of Eleventy plugins for PrismJS syntax highlighting. No browser/client JavaScript here, these highlight transformations are all done at build-time. Supports individual line highlighting.
 
 * This documentation applies to `eleventy-plugin-syntaxhighlight` `v3.2.0` and newer.
 * [GitHub](https://github.com/11ty/eleventy-plugin-syntaxhighlight).
-
-## Contents
-
-[[toc]]
 
 ## Installation
 
@@ -95,6 +93,7 @@ This plugin provides the following syntax highlighters using PrismJS, all of whi
 * Liquid Custom Tag {% raw %}`{% highlight %}`{% endraw %}
 * Nunjucks Paired Shortcode {% raw %}`{% highlight %}`{% endraw %}
 * JavaScript Function {% raw %}`this.highlight()`{% endraw %} {% addedin "Syntax Highlighter v4.0.0" %}
+* WebC component {% raw %}`<syntax-highlight>`{% endraw %} {% addedin "Syntax Highlighter v4.2.0" %}
 
 ### Syntax Highlight Source Code
 
@@ -102,13 +101,7 @@ This plugin provides the following syntax highlighters using PrismJS, all of whi
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#highlight-md" role="tab">Markdown</a>
-    <a href="#highlight-liquid" role="tab">Liquid</a>
-    <a href="#highlight-njk" role="tab">Nunjucks</a>
-    <a href="#highlight-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlight", additions: "md,webc", subtractions: "hbs"} %}
   <div id="highlight-md" role="tabpanel">
 
 {% codetitle "Markdown", "Syntax" %}
@@ -173,8 +166,56 @@ function myFunction() {
 The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %}.
 
   </div>
+  <div id="highlight-webc" role="tabpanel">
+
+{% codetitle "webc", "Syntax" %}
+
+{% raw %}
+```html
+<!-- Requires WebC v0.6.2+ -->
+<!-- Requires Syntax Highlighter v4.2.0+ -->
+
+<syntax-highlight language="js" webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight">
+function myFunction() {
+  return true;
+}
+</syntax-highlight>
+```
+
+<details>
+<summary>Expand to see an example of importing for use anywhere on the page via front matter.</summary>
+
+```html
+---
+webc:
+  components: ./node_modules/@11ty/eleventy-plugin-syntaxhighlight/syntax-highlight.webc
+---
+<syntax-highlight language="js">
+function myFunction() {
+  return true;
+}
+</syntax-highlight>
+```
+{% endraw %}
+
+</details>
+
+  </div>
 </seven-minute-tabs>
 </is-land>
+
+Will render like this in the browser:
+
+{% callout "demo" %}
+
+{% highlight "js" %}
+function myFunction() {
+  return true;
+}
+{% endhighlight %}
+
+{% endcallout %}
+
 
 ### Show changes using `diff-` syntax
 
@@ -184,13 +225,7 @@ Add the `diff-` prefix to the language name on the previous examples to show cod
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    View this example in:
-    <a href="#highlightdiff-md" role="tab">Markdown</a>
-    <a href="#highlightdiff-liquid" role="tab">Liquid</a>
-    <a href="#highlightdiff-njk" role="tab">Nunjucks</a>
-    <a href="#highlightdiff-js" role="tab">11ty.js</a>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlightdiff", additions: "md,webc", subtractions: "hbs"} %}
   <div id="highlightdiff-md" role="tabpanel">
 
 {% codetitle "Markdown", "Syntax" %}
@@ -231,7 +266,7 @@ Add the `diff-` prefix to the language name on the previous examples to show cod
 +function myFunction() {
    // …
 -  return true;
-}
+ }
 {% endhighlight %}
 ```
 {% endraw %}
@@ -246,9 +281,9 @@ Add the `diff-` prefix to the language name on the previous examples to show cod
 module.exports = function(data) {
   let code = `
 +function myFunction() {
-  // …
+   // …
 -  return true;
-}`;
+ }`;
 
   return this.highlight("diff-js", code);
 }
@@ -258,10 +293,30 @@ module.exports = function(data) {
 The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %}.
 
   </div>
+  <div id="highlightdiff-webc" role="tabpanel">
+
+{% codetitle "webc", "Syntax" %}
+
+{% raw %}
+```html
+<!-- Requires WebC v0.6.2+ -->
+<!-- Requires Syntax Highlighter v4.2.0+ -->
+
+<syntax-highlight language="diff-js" webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight">
++function myFunction() {
+   // …
+-  return true;
+ }
+</syntax-highlight>
+```
+
+  </div>
 </seven-minute-tabs>
 </is-land>
 
-{% codetitle "Output", "Rendered" %}
+Will render like this in the browser:
+
+{% callout "demo" %}
 
 {% highlight "diff-js" %}
 +function myFunction() {
@@ -269,6 +324,8 @@ The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %
 -  return true;
  }
 {% endhighlight %}
+
+{% endcallout %}
 
 Alternatively, you can use `diff` _without_ another language name to enable plaintext line highlighting.
 

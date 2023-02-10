@@ -5,6 +5,8 @@ eleventyNavigation:
 ---
 # Configuration
 
+{% tableofcontents %}
+
 Configuration files are optional. Add an `.eleventy.js` file to root directory of your project to configure Eleventy to your own project’s needs. It might look like this:
 
 {% codetitle ".eleventy.js" %}
@@ -30,23 +32,21 @@ We support returning both a callback function (shown above) or an object literal
 * Add custom [Collections](/docs/collections/) and use [Advanced Collection Filtering and Sorting](/docs/collections/#advanced-custom-filtering-and-sorting).
 * Add some [Plugins](/docs/plugins/).
 
+## Default filenames
+
+We look for the following configuration files:
+
+1. `.eleventy.js`
+1. `eleventy.config.js` {% addedin "2.0.0-canary.15" %}
+1. `eleventy.config.cjs` {% addedin "2.0.0-canary.15" %}
+
+The first configuration file found is used. The others are ignored.
+
+<div class="youtube-related">
+  {%- youtubeEmbed "hJAtWQ9nmKU", "Additions to the default config filename list (Changelog №17)", "431" -%}
+</div>
+
 ## Configuration Options
-
-<style>
-/* Hide the irrelevant stuff above this TOC in the document */
-.table-of-contents > ul {
-  list-style: none;
-  padding-left: 0;
-}
-.table-of-contents > ul > li:first-child > a {
-  display: none;
-}
-.table-of-contents > ul > li:first-child > ul {
-  list-style: disc;
-}
-</style>
-
-[[toc]]
 
 ### Input Directory
 
@@ -205,27 +205,7 @@ module.exports = function(eleventyConfig) {
 
 ### Default template engine for global data files
 
-The `dir.data` global data files run through this template engine before transforming to JSON. Read more about [Global Data Files](/docs/data-global/).
-
-| Data Template Engine |  |
-| --- | --- |
-| _Object Key_ | `dataTemplateEngine` |
-| _Default_ | `"liquid"` (before 1.0) |
-| _Default_ | `false` (1.0 and above) |
-| _Valid Options_ | A valid [template engine short name](/docs/languages/) or `false` |
-| _Command Line Override_ | _None_ |
-
-#### Example
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  return {
-    "dataTemplateEngine": "njk"
-  }
-};
-```
+{% callout "warn" %}<strong>Feature Removal</strong>: <a href="/docs/data-preprocessing/">This feature was removed in Eleventy 2.0.</a>{% endcallout %}
 
 ### Default template engine for Markdown files
 
@@ -392,17 +372,59 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Change File Suffix for Template and Directory Data Files {% addedin "0.5.3" %}
-When using [Template and Directory Specific Data Files](/docs/data-template-dir/), to prevent file name conflicts with non-Eleventy files in the project directory, we scope these files with a unique-to-Eleventy suffix. This key is customizable using `jsDataFileSuffix`. For example, using `.11tydata` for this value will search for `*.11tydata.js` and `*.11tydata.json` data files. Read more about [Template and Directory Specific Data Files](/docs/data-template-dir/).
+### Change Base File Name for Data Files
+
+{% addedin "2.0.0-canary.19" %} When using [Directory Specific Data Files](/docs/data-template-dir/), looks for data files that match the current folder name. You can override this behavior to a static string with the `setDataFileBaseName` method.
 
 | File Suffix |  |
 | --- | --- |
-| _Object Key_ | `jsDataFileSuffix` |
-| _Default_ | `.11tydata` |
-| _Valid Options_ | Any valid string |
+| _Configuration API_ | `setDataFileBaseName` |
+| _Default_ | _Current folder name_ |
+| _Valid Options_ | String |
 | _Command Line Override_ | _None_ |
 
-#### Example
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // Looks for index.json and index.11tydata.json instead of using folder names
+  eleventyConfig.setDataFileBaseName("index");
+};
+```
+
+### Change File Suffix for Data Files
+
+{% addedin "2.0.0-canary.19" %} When using [Template and Directory Specific Data Files](/docs/data-template-dir/), to prevent file name conflicts with non-Eleventy files in the project directory, we scope these files with a unique-to-Eleventy suffix. This suffix is customizable using the `setDataFileSuffixes` configuration API method.
+
+| File Suffix |  |
+| --- | --- |
+| _Configuration API_ | `setDataFileSuffixes` |
+| _Default_ | `[".11tydata", ""]` |
+| _Valid Options_ | Array |
+| _Command Line Override_ | _None_ |
+
+For example, using `".11tydata"`  will search for `*.11tydata.js` and `*.11tydata.json` data files. The empty string (`""`) here represents a file without a suffix—and this entry only applies to `*.json` data files.
+
+This feature can also be used to disable Template and Directory Data Files altogether with an empty array (`[]`).
+
+Read more about [Template and Directory Specific Data Files](/docs/data-template-dir/).
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setDataFileSuffixes([".11tydata", ""]); // e.g. file.json and file.11tydata.json
+
+  eleventyConfig.setDataFileSuffixes([".11tydata"]); // e.g. file.11tydata.json
+
+  eleventyConfig.setDataFileSuffixes([]); // No data files are used.
+};
+```
+
+<details>
+<summary><em><strong>Backwards Compatibility Note</strong></em> (<code>{{ "2.0.0-canary.19" | coerceVersion }}</code>)</summary>
+
+Prior to {{ "2.0.0-canary.19" | coerceVersion }} this feature was exposed using a `jsDataFileSuffix` property in the configuration return object. When the `setDataFileSuffixes` method has not been used, Eleventy maintains backwards compatibility for old projects by using this property as a fallback.
 
 {% codetitle ".eleventy.js" %}
 
@@ -414,9 +436,9 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Transforms
+</details>
 
-_These used to be called Filters but were renamed to Transforms to avoid confusion with Template Language Filters._
+### Transforms
 
 Transforms can modify a template’s output. For example, use a transform to format/prettify an HTML file with proper whitespace.
 
@@ -424,34 +446,29 @@ The provided transform function must return the original or transformed content.
 
 | Transforms |  |
 | --- | --- |
-| _Object Key_ | `filters` _(Removed in 1.0, use `addTransform` instead)_ |
+| _Configuration API_ | `addTransform` |
 | _Default_ | `{}` |
 | _Valid Options_ | Object literal |
 | _Command Line Override_ | _None_ |
-| _Configuration API_ | `addTransform` {% addedin "0.3.3" %} |
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addTransform("transform-name", function(content, outputPath) {
-    return content; // no change done.
-  });
-
-  eleventyConfig.addTransform("async-transform-name", async function(content, outputPath) {
-    return content; // no change done.
-  });
-
-  // Eleventy 1.0+
-  eleventyConfig.addTransform("transform-name", function(content) {
+  // Can be sync or async
+  eleventyConfig.addTransform("transform-name", async function(content) {
     console.log( this.inputPath );
     console.log( this.outputPath );
-    // note that this.outputPath is `false` for serverless templates
+
+    // Eleventy 2.0+ has full access to Eleventy’s `page` variable
+    console.log( this.page.inputPath );
+    console.log( this.page.outputPath );
 
     return content; // no change done.
   });
 };
 ```
 
-#### Transforms Example: Minify HTML Output
+<details>
+<summary><strong>Transforms Example: Minify HTML Output</strong></summary>
 
 {% codetitle ".eleventy.js" %}
 
@@ -459,9 +476,9 @@ module.exports = function(eleventyConfig) {
 const htmlmin = require("html-minifier");
 
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-    // Eleventy 1.0+: use this.inputPath and this.outputPath instead
-    if( outputPath && outputPath.endsWith(".html") ) {
+  eleventyConfig.addTransform("htmlmin", function(content) {
+    // Prior to Eleventy 2.0: use this.outputPath instead
+    if( this.page.outputPath && this.page.outputPath.endsWith(".html") ) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
@@ -475,31 +492,35 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+</details>
+
 ### Linters
 
 Similar to Transforms, Linters are provided to analyze a template’s output without modifying it.
 
 | Linters |  |
 | --- | --- |
+| _Configuration API_ | `addLinter` |
 | _Object Key_ | _N/A_ |
 | _Valid Options_ | Callback function |
 | _Command Line Override_ | _None_ |
-| _Configuration API_ | `addLinter` {% addedin "0.5.4" %} |
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addLinter("linter-name", function(content, inputPath, outputPath) {});
-  eleventyConfig.addLinter("async-linter-name", async function(content, inputPath, outputPath) {});
-
-  // Eleventy 1.0+
-  eleventyConfig.addLinter("linter-name", function(content) {
+  // Can be sync or async
+  eleventyConfig.addLinter("linter-name", async function(content) {
     console.log( this.inputPath );
     console.log( this.outputPath );
+
+    // Eleventy 2.0+ has full access to Eleventy’s `page` variable
+    console.log( this.page.inputPath );
+    console.log( this.page.outputPath );
   });
 };
 ```
 
-#### Linters Example: Use Inclusive Language
+<details>
+<summary><strong>Linters Example: Use Inclusive Language</strong></summary>
 
 Inspired by the [CSS Tricks post _Words to Avoid in Educational Writing_](https://css-tricks.com/words-avoid-educational-writing/), this linter will log a warning to the console when it finds a trigger word in a markdown file.
 
@@ -525,6 +546,8 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+</details>
+
 ### Data Filter Selectors
 
 {% addedin "1.0.0" %}<!-- Beta 4 -->
@@ -539,6 +562,19 @@ module.exports = function(eleventyConfig) {
 ```
 
 This will now include a `data` property in your JSON output that includes the `page` variable for each matching template.
+
+### Type Definitions
+
+This may enable some extra autocomplete features in your IDE (where supported).
+
+```js
+/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
+module.exports = function (eleventyConfig) {
+  // …
+};
+```
+
+* More background information at [Issue 2091](https://github.com/11ty/eleventy/pull/2091).
 
 ### Documentation Moved to Dedicated Pages
 

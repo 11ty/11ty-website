@@ -6,6 +6,8 @@ eleventyNavigation:
 ---
 # Eleventy Supplied Data
 
+{% tableofcontents %}
+
 Here are a few data values we supply to your page that you can use in your templates:
 
 * `pkg`: The local project’s `package.json` values.
@@ -16,7 +18,7 @@ Here are a few data values we supply to your page that you can use in your templ
 
 <div id="page-variable-contents"></div>
 
-## `page` Variable:
+## `page` Variable
 
 ```js
 let page = {
@@ -45,9 +47,23 @@ let page = {
 
   // Added in 1.0
   // Useful with `page.filePathStem` when using custom file extensions.
-  outputFileExtension: "html"
+  outputFileExtension: "html",
+
+  // Available in 2.0 with the i18n plugin
+  // The default is the value of `defaultLanguage` passed to the i18n plugin
+  lang: "",
 };
 ```
+
+* Note that `page.lang` is _only_ available when the [i18n plugin has been added to your configuration file](/docs/plugins/i18n/#add-to-your-configuration-file).
+
+### Feature Availability
+
+The data in `page` is also available as:
+
+* `this.page` on [Shortcodes](/docs/shortcodes/#scoped-data-in-shortcodes) {% addedin "0.11.0" %}
+* `this.page` on [Filters](/docs/filters/#scoped-data-in-filters), [Transforms](/docs/config/#transforms), and [Linters](/docs/config/#linters) {% addedin "2.0.0-canary.19" %}
+* `page` on [Collection entries](/docs/collections/#collection-item-data-structure) {% addedin "2.0.0-canary.19" %}
 
 ### `date`
 
@@ -71,6 +87,7 @@ The `fileSlug` variable is mapped from `inputPath`, and is useful for creating y
 | `"index.md"` | `""` _(empty)_ |
 | `"myDir/index.md"` | `"myDir"` |
 | `"myDir/2018-01-01-index.md"` | `"myDir"` |
+| `"2018-01-01-myDir/index.md"` | `"myDir"` {% addedin "2.0.0-canary.10" %} |
 
 ### `filePathStem` {% addedin "0.9.0" %}
 
@@ -122,10 +139,10 @@ module.exports = function(eleventyConfig) {
 let eleventy = {
 
   // Eleventy version
-  version: "1.0.1", // New in Eleventy v1.0.1
+  version: "1.0.1", // New in {{ "1.0.1" | coerceVersion }}
 
   // For use with `<meta name="generator">`
-  generator: "Eleventy v1.0.1", // New in Eleventy v1.0.1
+  generator: "Eleventy v1.0.1", // New in {{ "1.0.1" | coerceVersion }}
 
   // Read more about their `process.env` counterparts below
   env: {
@@ -138,6 +155,9 @@ let eleventy = {
 
     // The method, either `cli` or `script`
     source: "cli",
+
+    // One of `serve`, `watch`, or `build`
+    runMode: "build", // New in {{ "2.0.0-beta.2" | coerceVersion }}
   },
 
   serverless: {
@@ -157,16 +177,23 @@ let eleventy = {
 };
 ```
 
-Learn more about:
+### Feature Availability
+
+The data in `eleventy` is also available as:
+
+* `this.eleventy` on [Shortcodes](/docs/shortcodes/) {% addedin "2.0.0-canary.5" %}
+* `this.eleventy` on [Filters](/docs/filters/) {% addedin "2.0.0-canary.19" %}
+
+### Learn more
 
 * [Eleventy-supplied Environment Variables on `process.env`](/docs/environment-vars/#eleventy-supplied)
 * [Serverless](/docs/plugins/serverless/)
   * [Dynamic Slugs and Serverless Global Data](/docs/plugins/serverless/#dynamic-slugs-and-serverless-global-data).
   * `event.queryStringParameters`, which are very similar to [URL.searchParams](https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams). It’s an object representing the name/value pairs for things after the `?` in a URL.
 
-Eleventy Leaderboards:
-
-* Upcoming versions of the [Eleventy Leaderboards](/speedlify/) will require that {% raw %}`<meta name="generator" content="{{ eleventy.generator }}">`{% endraw %} {% addedin "1.0.1" %} exist on the page’s markup to be valid for placement and ranking.
+<div class="youtube-related">
+  {%- youtubeEmbed "_YvwTHeqBZY", "eleventy.version and eleventy.generator Data (Weekly №7)", "235" -%}
+</div>
 
 ## Environment Variables on `process.env`
 

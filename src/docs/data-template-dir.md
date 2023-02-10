@@ -7,6 +7,8 @@ eleventyNavigation:
 ---
 # Template and Directory Specific Data Files {% addedin "0.2.14" %}
 
+{% tableofcontents %}
+
 While you can provide [global data files](/docs/data-global/) to supply data to all of your templates, you may want some of your data to be available locally only to one specific template or to a directory of templates. For that use, we also search for JSON and [JavaScript Data Files](/docs/data-js/) in specific places in your directory structure.
 
 For example, consider a template located at `posts/subdir/my-first-blog-post.md`. Eleventy will look for data in the following places (starting with highest priority, local data keys override global data):
@@ -27,17 +29,23 @@ For example, consider a template located at `posts/subdir/my-first-blog-post.md`
     * `posts/posts.json`
 1. [Global Data Files](/docs/data-global/) in `_data/*` (`.js` or `.json` files) available to all templates.
 
-{% callout "info" %}Note that the name of the data file must match either the post or the directory it resides within.{% endcallout %}
+## Examples
 
-Note that any [Custom Formats](/docs/data-custom/#ordering-in-the-data-cascade) {% addedin "0.10.0" %} specified in your configuration will also be taken into account at a lower priority than their JavaScript or JSON counterparts.
+### Apply a default layout to multiple templates
 
-### Change the `.11tydata.js` file suffix {% addedin "0.5.3" %}
+{% codetitle "posts/posts.json" %}
 
-Use the [Configuration API to change the file suffix](/docs/config/#change-file-suffix-for-template-and-directory-data-files) used to search for Eleventy data files.
+```json
+{ "layout": "layouts/post.njk" }
+```
 
-## Example: Apply a default layout to multiple templates
+Using the above in `posts/posts.json` will configure a layout for all of the templates inside of `posts/*`.
 
-Try adding `{ "layout": "layouts/post.njk" }` to `posts/posts.json` to configure a layout for all of the templates inside of `posts/*`.
+## Additional Customizations
+
+* The name of the data file must match either the post or the directory it resides within. You can [change this behavior using the `setDataFileBaseName` method in the Configuration API](/docs/config/#change-base-file-name-for-data-files).
+* You can use the [`setDataFileSuffixes` Configuration API method to **customize the default file suffixes or disable this feature altogether**](/docs/config/#change-file-suffix-for-data-files).
+* Note that any [Custom Formats](/docs/data-custom/#ordering-in-the-data-cascade) {% addedin "0.10.0" %} specified in your configuration will also be taken into account at a lower priority than their JavaScript or JSON counterparts.
 
 ## Sources of Data
 

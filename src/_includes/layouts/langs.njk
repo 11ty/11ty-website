@@ -1,6 +1,5 @@
 ---
 layout: layouts/docs.njk
-overrideCommunityLinks: true
 ---
 <h1>{{ eleventyNavigation.key }}{% if addedInVersion %}{% addedin addedInVersion%}{% endif %}</h1>
 
@@ -9,10 +8,8 @@ overrideCommunityLinks: true
 {% templatelangs templatetypes, page %}
 </div>
 
-{%- if communityLinks or communityLinksKey %}
-<div class="elv-community" id="community-resources">
-  {%- include "community-contributed.njk" -%}
-</div>
-{%- endif %}
+{% if logoImage %}
+<p>{% image logoImage, "Logo for " + eleventyNavigation.key, [200] %}</p>
+{% endif %}
 
 {{ content | safe }}

@@ -2,10 +2,12 @@
 pageTitle: Image
 eleventyNavigation:
   key: Image
-  order: 0
+  order: -.2
   excerpt: A utility to resize and generate images.
 communityLinksKey: image
 ---
+{% tableofcontents %}
+
 Low level utility to perform build-time image transformations for both vector and raster images. Output multiple sizes, save multiple formats, cache remote images locally. Uses the [sharp](https://sharp.pixelplumbing.com/) image processor.
 
 * [`eleventy-img` on GitHub](https://github.com/11ty/eleventy-img)
@@ -18,14 +20,11 @@ You maintain full control of the HTML. Use with `<picture>` or `<img>` or CSS `b
 * Retrieve metadata about your new images (see [sample return object](#sample-return-object)).
   * Use this to add `width` and `height` attributes on `<img>` elements for [proper aspect ratio mapping](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping).
 * Does not require or rely on file extensions (like `.png` or `.jpg`) in URLs or local files, which may be missing or inaccurate.
-* Save remote images locally using [`eleventy-cache-assets`](/docs/plugins/cache/).
+* Save remote images locally using [`eleventy-fetch`](/docs/plugins/fetch/).
   * Use local images in your HTML to prevent broken image URLs.
   * Manage the [cache duration](/docs/plugins/fetch/#change-the-cache-duration).
 * Fast: de-duplicates image requests and use both an in-memory and disk cache.
 
----
-
-[[toc]]
 
 ## Installation
 
@@ -37,7 +36,7 @@ npm install @11ty/eleventy-img
 
 ## Usage
 
-This utility returns a Promise and works best in `async` friendly functions, filters, shortcodes. It _can_ also work in synchronous environments ([Synchronous Usage](#synchronous-usage)).
+This utility returns a Promise and works best in `async` friendly functions, filters, shortcodes. It _can_ also work in synchronous environments ([Synchronous Usage](#synchronous-shortcode)).
 
 {% codetitle ".eleventy.js" %}
 
@@ -56,7 +55,7 @@ const Image = require("@11ty/eleventy-img");
 
 Three things happen here:
 
-1. If the first argument is a full URL (not a local file path), we download [the remote image](https://unsplash.com/photos/uXchDIKs4qI) and cache it locally using the [Cache plugin](/docs/plugins/fetch/). This cached original is then used for the cache duration to avoid a bunch of network requests.
+1. If the first argument is a full URL (not a local file path), we download [the remote image](https://unsplash.com/photos/uXchDIKs4qI) and cache it locally using the [Fetch plugin](/docs/plugins/fetch/). This cached original is then used for the cache duration to avoid a bunch of network requests.
 2. From that cached full-size original, images are created for each format and width, in this case: `./img/6dfd7ac6-300.webp` and `./img/6dfd7ac6-300.jpeg`.
 3. The metadata object is populated and returned, describing those new images:
 
@@ -108,9 +107,9 @@ Here’s the output images, one webp and one jpeg:
 
 Controls how many output images will be created for each image format. Aspect ratio is preserved.
 
-* `widths: [null]` (default, keep original width)
+* `widths: ["auto"]` (default, keep original width) `"auto"` was added ({% addedin "Image 0.8.1" %}) as a clearer alias for the previously recommended `widths: [null]`.
 * `widths: [200]` (output one 200px width)
-* `widths: [200, null]` (output 200px and original width)
+* `widths: [200, "auto"]` (output 200px and original width)
 
 ### Output Formats
 
@@ -118,7 +117,7 @@ Use almost any combination of these:
 
 * `formats: ["webp", "jpeg"]` (default)
 * `formats: ["png"]`
-* `formats: [null]` (keep original format) {% addedin "Image 0.4.0" %}
+* `formats: ["auto"]` (keep original format) `"auto"` was added ({% addedin "Image 0.8.1" %}) as a clearer alias for the previously recommended `formats: [null]` ({% addedin "Image 0.4.0" %}).
 * `formats: ["svg"]` (requires SVG input) {% addedin "Image 0.4.0" %}
 * `formats: ["avif"]` {% addedin "Image 0.6.0" %}
 
@@ -138,7 +137,7 @@ Where to write the new images to disk. Project-relative path to the output image
 
 ### Caching Remote Images Locally
 
-{% addedin "Image 0.3.0" %} For any full URL first argument to this plugin, the full-size remote image will be downloaded and cached locally. See all [relevant `eleventy-cache-assets` options](/docs/plugins/fetch/#options).
+{% addedin "Image 0.3.0" %} For any full URL first argument to this plugin, the full-size remote image will be downloaded and cached locally. See all [relevant `eleventy-fetch` options](/docs/plugins/fetch/#options).
 
 ```js
 {
@@ -153,6 +152,8 @@ Where to write the new images to disk. Project-relative path to the output image
   },
 }
 ```
+
+When caching remote images, you may want to check the processed image output into your `git` (et al) repository to avoid refetches in the future. If remote images are _not_ checked in, they may be refetched every time on your CI server unless you [preserve the `.cache` folder between builds](/docs/plugins/fetch/#running-this-on-your-build-server).
 
 ### Options for SVG
 
@@ -198,7 +199,7 @@ const Image = require("@11ty/eleventy-img");
 
 await Image("./test/bio-2017.jpg", {
   widths: [300],
-  formats: [null],
+  formats: ["auto"],
   filenameFormat: function (id, src, width, format, options) {
     const extension = path.extname(src);
     const name = path.basename(src, extension);
@@ -309,9 +310,13 @@ async function imageShortcode(src, alt, sizes) {
 }
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addAsyncShortcode("image", imageShortcode);
+
+  // Or add them individually
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
+
 };
 ```
 
@@ -355,6 +360,9 @@ async function imageShortcode(src, alt) {
 }
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addAsyncShortcode("image", imageShortcode);
+
+  // Or add them individually
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
@@ -400,6 +408,9 @@ async function imageShortcode(src, alt, sizes = "100vw") {
 }
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addAsyncShortcode("image", imageShortcode);
+
+  // Or add them individually
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
@@ -418,30 +429,25 @@ Now you can use it in your templates:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#shortcode-njk" role="tab">Nunjucks</a>
-    <a href="#shortcode-liquid" role="tab">Liquid</a>
-    <a href="#shortcode-11tyjs" role="tab">11ty.js</a>
-  </div>
-  <div id="shortcode-njk" role="tabpanel">
-    {% codetitle "sample.njk" %}
-{%- highlight "jinja2" %}{% raw %}
-{% image "./src/images/cat.jpg", "photo of my cat" %}
-{% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
-{% endraw %}{% endhighlight %}
-    <p>The comma between arguments is <strong>required</strong> in Nunjucks templates.</p>
-  </div>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "shortcode"} %}
   <div id="shortcode-liquid" role="tabpanel">
-    {% codetitle "sample.liquid" %}
+    {% codetitle "Liquid", "Syntax" %}
 {%- highlight "liquid" %}{% raw %}
 {% image "./src/images/cat.jpg", "photo of my cat" %}
 {% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
 {% endraw %}{% endhighlight %}
     <p>The comma between arguments is <strong>optional</strong> in Liquid templates.</p>
   </div>
-  <div id="shortcode-11tyjs" role="tabpanel">
-    {% codetitle "sample.11ty.js" %}
+  <div id="shortcode-njk" role="tabpanel">
+    {% codetitle "Nunjucks", "Syntax" %}
+{%- highlight "jinja2" %}{% raw %}
+{% image "./src/images/cat.jpg", "photo of my cat" %}
+{% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
+{% endraw %}{% endhighlight %}
+    <p>The comma between arguments is <strong>required</strong> in Nunjucks templates.</p>
+  </div>
+  <div id="shortcode-js" role="tabpanel">
+    {% codetitle "JavaScript", "Syntax" %}
 {%- highlight "js" %}{% raw %}
 module.exports = function() {
   let img1 = await this.image("./src/images/cat.jpg", "photo of my cat");
@@ -451,6 +457,11 @@ module.exports = function() {
 ${img2}`;
 };
 {% endraw %}{% endhighlight %}
+  </div>
+  <div id="shortcode-hbs" role="tabpanel">
+
+This `image` shortcode example [requires an async-friendly template language](#asynchronous-usage) and is not available in Handlebars.
+
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -481,7 +492,7 @@ function imageShortcode(src, cls, alt, sizes, widths) {
     loading: "lazy",
     decoding: "async",
   };
-  // get metadata even the images are not fully generated
+  // get metadata even if the images are not fully generated yet
   let metadata = Image.statsSync(src, options);
   return Image.generateHTML(metadata, imageAttributes);
 }
@@ -560,6 +571,10 @@ With a template `my-blog-post.md` and an image file `my-blog-post.jpeg`, you cou
 Note this also means that `folder/folder.jpeg` would be processed for all templates in `folder/*` and any images stored in your global `_data` would also be populated into the data cascade based on their folder structure.
 
 </details>
+
+<div class="youtube-related">
+  {%- youtubeEmbed "oCTAZumAGNc", "Use images as data files (Weekly №11)", "244" -%}
+</div>
 
 ## Advanced Usage
 

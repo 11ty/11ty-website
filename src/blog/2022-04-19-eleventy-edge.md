@@ -3,7 +3,6 @@ newstitle: Use Eleventy Edge to deliver dynamic web sites on the Edge
 eleventyNavigation:
   parent: Blog
   key: Eleventy Edge
-homePageHighlight: true
 ---
 I am very proud to introduce a brand new addition to Eleventy: Eleventy Edge.
 
@@ -47,6 +46,6 @@ This feature makes heavy use of [Netlify’s new Edge Functions feature](https:/
 
 ## More around the web
 
-* {% indieweblink "Netlify Docs: Edge Functions overview", "https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/" %}
+* [Netlify Docs: Edge Functions overview](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/)
 * {% indieweblink "Netlify Edge Functions on Deno Deploy", "https://deno.com/blog/netlify-edge-functions-on-deno-deploy" %}
-* {% indieweblink "Netlify Edge Functions: A new serverless runtime powered by Deno", "https://www.netlify.com/blog/announcing-serverless-compute-with-edge-functions" %}
+* [Netlify Edge Functions: A new serverless runtime powered by Deno](https://www.netlify.com/blog/announcing-serverless-compute-with-edge-functions)

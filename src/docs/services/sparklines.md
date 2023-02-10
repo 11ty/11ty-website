@@ -6,6 +6,7 @@ eleventyNavigation:
   # order: 0
 communityLinksKey: api-services-sparkline
 ---
+{% tableofcontents %}
 
 Feed this runtime service a comma separated list of numeric values and it will return an SVG sparkline image.
 

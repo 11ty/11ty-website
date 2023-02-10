@@ -8,11 +8,11 @@ relatedLinks:
 ---
 # Custom Data File Formats {% addedin "0.10.0" %}
 
+{% tableofcontents %}
+
 Out of the box, Eleventy supports arbitrary JavaScript and JSON for both [template and directory data files](/docs/data-template-dir/) as well as [global data](/docs/data-global/).
 
 Maybe you want to add support for TOML or YAML too! Any text format will do.
-
-[[toc]]
 
 Note that you can also add [Custom Front Matter Formats](/docs/data-frontmatter-customize/) as well.
 
@@ -24,17 +24,20 @@ Note that you can also add [Custom Front Matter Formats](/docs/data-frontmatter-
 
 ```js
 // Receives file contents, return parsed data
-eleventyConfig.addDataExtension("fileExtension", contents => {
+eleventyConfig.addDataExtension("fileExtension", (contents, filePath) => {
   return {};
 });
 ```
 
-{% addedin "2.0.0-canary.10" %} Pass a comma-separated list of extensions.
+* {% addedin "2.0.0-canary.10" %} Pass a comma-separated list of extensions.
+* {% addedin "2.0.0-canary.19" %} `filePath` was added as a second argument.
 
 {% codetitle ".eleventy.js" %}
 
 ```js
-eleventyConfig.addDataExtension("yml, yaml", contents => { /* do a thing */ });
+eleventyConfig.addDataExtension("yml, yaml", (contents, filePath) => {
+  // …
+});
 ```
 
 ### Usage with Options
@@ -46,7 +49,7 @@ eleventyConfig.addDataExtension("yml, yaml", contents => { /* do a thing */ });
 ```js
 // or with options (new in 2.0)
 eleventyConfig.addDataExtension("fileExtension", {
-  parser: contents => ({}),
+  parser: (contents, filePath) => ({}),
 
   // defaults are shown:
   read: true,
@@ -54,8 +57,8 @@ eleventyConfig.addDataExtension("fileExtension", {
 });
 ```
 
-* `parser`: the callback function used to parse the data. The first argument is the data file’s contents.
-* `read` (default: `true`): use `read: false` to change the parser function’s argument to be a file path string instead of file contents.
+* `parser`: the callback function used to parse the data. The first argument is the data file’s contents (unless `read: false`). The second argument is the file path {% addedin "2.0.0-canary.19" %}.
+* `read` (default: `true`): use `read: false` to change the parser function’s first argument to be a file path string instead of file contents.
 * `encoding` (default: `"utf8"`): use this to change the encoding of [Node’s `readFile`](https://nodejs.org/api/fs.html#fspromisesreadfilepath-options). Use `null` if you want a `Buffer`.
 
 ## Examples
@@ -81,7 +84,7 @@ Here we’re using the [`toml` package](https://www.npmjs.com/package/toml). Don
 {% codetitle ".eleventy.js" %}
 
 ```js
-const toml = require("toml");
+const toml = require("@iarna/toml");
 
 module.exports = eleventyConfig => {
   eleventyConfig.addDataExtension("toml", contents => toml.parse(contents));
@@ -141,7 +144,7 @@ If you add multiple file extensions, the latter ones take priority over the earl
 {% codetitle ".eleventy.js" %}
 
 ```js
-const toml = require("toml");
+const toml = require("@iarna/toml");
 const yaml = require("js-yaml");
 
 module.exports = eleventyConfig => {
@@ -166,3 +169,5 @@ Consider the [template data file search](/docs/data-template-dir/) for a `my-fir
 * `my-first-blog-post.toml` (custom)
 
 This same ordering would be used for [template directory data files](/docs/data-template-dir/) as well.
+
+* You can also use the [`setDataFileSuffixes` Configuration API method to **customize the `.11tydata` file suffix**](/docs/config/#change-file-suffix-for-data-files).
