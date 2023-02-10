@@ -30,7 +30,7 @@ permalink: 404.html
 
 Eleventy will output this template to `404.html`.
 
-If you’re using [GitHub Pages](https://help.github.com/en/github/working-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site) or [Netlify](https://docs.netlify.com/routing/redirects/redirect-options/#custom-404-page-handling), there is no step two! A `404.html` file in your output directory is all you need.
+If you’re using [GitHub Pages](https://help.github.com/en/github/working-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site), [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/introduction.html#custom-error-codes-pages), or [Netlify](https://docs.netlify.com/routing/redirects/redirect-options/#custom-404-page-handling), there is no step two! A `404.html` file in your output directory is all you need.
 
 Netlify even has lovely [multi-language 404 page support too using `Redirects`](https://docs.netlify.com/routing/redirects/redirect-options/#custom-404-page-handling).
 
