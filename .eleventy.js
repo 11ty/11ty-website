@@ -184,7 +184,9 @@ module.exports = function(eleventyConfig) {
 		eleventyConfig.ignores.add("src/docs/quicktipsfeed.njk");
 		eleventyConfig.ignores.add("src/blog/blog-feed.njk");
 	}
-	if(process.env.NODE_ENV !== "production" || !process.env.TWITTER_BEARER_TOKEN) {
+
+	// Skip these without a token (esp. deploy previews)
+	if(!process.env.TWITTER_BEARER_TOKEN) {
 		eleventyConfig.ignores.add("src/firehose.11ty.js");
 		eleventyConfig.ignores.add("src/firehose-feed.11ty.js");
 	}
