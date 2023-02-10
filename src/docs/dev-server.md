@@ -7,7 +7,7 @@ eleventyNavigation:
 
 {% tableofcontents %}
 
-Eleventy 2.0 bundles a brand new default development server. Check out the [`11ty/eleventy-dev-server` repository on GitHub](https://github.com/11ty/eleventy-dev-server).
+The Eleventy 2.0 release bundles a new development server. Check out the [`11ty/eleventy-dev-server` repository on GitHub](https://github.com/11ty/eleventy-dev-server).
 
 At time of release, this new server helps Eleventy by:
 

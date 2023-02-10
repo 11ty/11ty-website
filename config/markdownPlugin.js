@@ -47,8 +47,11 @@ module.exports = function(eleventyConfig) {
 			return removeExtraText(heading);
 		},
 		transformLink: function(link) {
-			// remove backticks from markdown code
-			return link.replace(/\%60/g, "");
+			if(typeof link === "string") {
+				// remove backticks from markdown code
+				return link.replace(/\%60/g, "");
+			}
+			return link;
 		}
 	});
 

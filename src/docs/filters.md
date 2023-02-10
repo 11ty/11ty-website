@@ -69,35 +69,13 @@ Read more about filters on the individual Template Language documentation pages:
 
 {% templatelangs templatetypes, page, ["njk", "liquid", "hbs", "11ty.js"], "#filters" %}
 
-### Per-Engine filters
-
-Filters can also be specified individually for one or more template engines. (The `addFilter` function is actually an alias for calling all of these functions.)
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  // Liquid Filter
-  eleventyConfig.addLiquidFilter("makeUppercase", function(value) { … });
-
-  // Nunjucks Filter
-  eleventyConfig.addNunjucksFilter("makeUppercase", function(value) { … });
-
-  // Handlebars Filter
-  eleventyConfig.addHandlebarsHelper("makeUppercase", function(value) { … });
-
-  // JavaScript Template Function
-  eleventyConfig.addJavaScriptFunction("makeUppercase", function(value) { … });
-};
-```
-
-### Eleventy Provided Universal Filters
+## Eleventy Provided Filters
 
 We also provide a few universal filters, built-in:
 
 {{ collections.all | eleventyNavigation("Filters") | eleventyNavigationToHtml({ showExcerpt: true }) | safe }}
 
-#### Access existing filters {% addedin "0.11.0" %}
+### Access existing filters in your Configuration File {% addedin "0.11.0" %}
 
 If you’d like to reuse existing filters, you can use the Configuration API’s `getFilter` method. When called with a valid filter name, it will return that filter’s callback function. It can be helpful when aliasing a filter to a different name, using a filter inside of your own filter, or using a filter inside of a shortcode.
 
@@ -109,7 +87,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Asynchronous Universal Filters {% addedin "2.0.0" %}
+## Asynchronous Filters {% addedin "2.0.0" %}
 
 Eleventy has added a new universal filter API for asynchronous filters and extended the currently available `addFilter` method to be async-friendly. _Note that even though Handlebars is used for synchronous filters in `addFilter`, it is excluded from asynchronous filters because Handlebars is not async-friendly._
 
@@ -156,5 +134,27 @@ module.exports = function(eleventyConfig) {
     // this.page
     // this.eleventy
   });
+};
+```
+
+## Per-Engine filters
+
+Filters can also be specified individually for one or more template engines. (The `addFilter` function is actually an alias for calling all of these functions.)
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // Liquid Filter
+  eleventyConfig.addLiquidFilter("makeUppercase", function(value) { … });
+
+  // Nunjucks Filter
+  eleventyConfig.addNunjucksFilter("makeUppercase", function(value) { … });
+
+  // Handlebars Filter
+  eleventyConfig.addHandlebarsHelper("makeUppercase", function(value) { … });
+
+  // JavaScript Template Function
+  eleventyConfig.addJavaScriptFunction("makeUppercase", function(value) { … });
 };
 ```
