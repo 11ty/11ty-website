@@ -19,6 +19,10 @@ tags:
 
 Various template engines can be extended with shortcodes for easy reusable content. This is sugar around Template Language [Custom Tags](/docs/custom-tags/). Shortcodes are supported in JavaScript, Liquid, Nunjucks, and Handlebars templates.
 
+{% callout "info" %}
+Markdown files are pre-processed as Liquid templates by default. This means that shortcodes available in Liquid templates are also available in Markdown files. Likewise, if you <a href="/docs/config/#default-template-engine-for-markdown-files">change the template engine for Markdown files</a>, the shortcodes available for that templating language will also be available in Markdown files.
+{% endcallout %}
+
 Here are a few examples:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
@@ -65,13 +69,20 @@ module.exports = function({ firstName, lastName }) {
 
 ```js
 module.exports = function(eleventyConfig) {
-  // A Shortcode added in this way is available in:
+  // Shortcodes added in this way are available in:
+  // * Markdown
   // * Liquid
   // * Nunjucks
-  // * Handlebars
+  // * Handlebars (not async)
   // * JavaScript
 
   eleventyConfig.addShortcode("user", function(firstName, lastName) { … });
+
+  // Async support for `addShortcode` is new in Eleventy {{ "2.0.0-canary.24" | coerceVersion }}
+  eleventyConfig.addShortcode("user", async function(myName) { /* … */ });
+
+  // Async method available
+  eleventyConfig.addAsyncShortcode("user", async function(myName) { /* … */ });
 };
 ```
 
@@ -82,7 +93,7 @@ Read more about using shortcodes on the individual Template Language documentati
 * [JavaScript `*.11ty.js`](/docs/languages/javascript/#javascript-template-functions) (with async support)
 * [Liquid `*.liquid`](/docs/languages/liquid/#shortcodes) (with async support)
 * [Nunjucks `*.njk`](/docs/languages/nunjucks/#shortcodes) (with async support)
-* [Handlebars `*.hbs`](/docs/languages/handlebars/#shortcodes)
+* [Handlebars `*.hbs`](/docs/languages/handlebars/#shortcodes) (no async support)
 
 ## Paired Shortcodes
 
@@ -164,13 +175,20 @@ When adding paired shortcodes using the Configuration API, the first argument to
 
 ```js
 module.exports = function(eleventyConfig) {
-  // Shortcode added in this way are available in:
+  // Shortcodes added in this way are available in:
+  // * Markdown
   // * Liquid
   // * Nunjucks
-  // * Handlebars
+  // * Handlebars (not async)
   // * JavaScript
 
   eleventyConfig.addPairedShortcode("user", function(content, firstName, lastName) { … });
+
+  // Async support for `addPairedShortcode` is new in Eleventy {{ "2.0.0-canary.24" | coerceVersion }}
+  eleventyConfig.addPairedShortcode("user", async function(content, myName) { /* … */ });
+
+  // Async method available
+  eleventyConfig.addPairedAsyncShortcode("user", async function(content, myName) { /* … */ });
 };
 ```
 
@@ -179,39 +197,9 @@ Read more about using paired shortcodes on the individual Template Language docu
 * [JavaScript `*.11ty.js`](/docs/languages/javascript/#javascript-template-functions) (with async support)
 * [Liquid `*.liquid`](/docs/languages/liquid/#shortcodes) (with async support)
 * [Nunjucks `*.njk`](/docs/languages/nunjucks/#shortcodes) (with async support)
-* [Handlebars `*.hbs`](/docs/languages/handlebars/#shortcodes)
+* [Handlebars `*.hbs`](/docs/languages/handlebars/#shortcodes) (no async support)
 
-## Per-Engine Shortcodes
-
-{% callout "info" %}
-Markdown files are pre-processed as Liquid templates by default. This means that shortcodes available in Liquid templates are also available in Markdown files. Likewise, if you <a href="/docs/config/#default-template-engine-for-markdown-files">change the template engine for Markdown files</a>, the shortcodes available for that templating language will also be available in Markdown files.
-{% endcallout %}
-
-You can also specify different functionality for shortcodes in each engine, if you’d like. Using the `addShortcode` or `addPairedShortcode` function is equivalent to adding the shortcode to every supported template engine.
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  // Liquid Shortcode
-  eleventyConfig.addLiquidShortcode("user", function(firstName, lastName) { … });
-  eleventyConfig.addPairedLiquidShortcode("user", function(content, firstName, lastName) { … });
-
-  // Nunjucks Shortcode
-  eleventyConfig.addNunjucksShortcode("user", function(firstName, lastName) { … });
-  eleventyConfig.addPairedNunjucksShortcode("user", function(content, firstName, lastName) { … });
-
-  // Handlebars Shortcode
-  eleventyConfig.addHandlebarsShortcode("user", function(firstName, lastName) { … });
-  eleventyConfig.addPairedHandlebarsShortcode("user", function(content, firstName, lastName) { … });
-
-  // JavaScript Template Function (New in 0.7.0)
-  eleventyConfig.addJavaScriptFunction("user", function(firstName, lastName) { … });
-  eleventyConfig.addJavaScriptFunction("user", function(content, firstName, lastName) { … }); // Faux-paired shortcode
-};
-```
-
-### Asynchronous Universal Shortcodes
+## Asynchronous Shortcodes
 
 This is supported by Liquid, Nunjucks, and JavaScript template types (Handlebars is not async-friendly).
 
@@ -245,5 +233,32 @@ module.exports = function(eleventyConfig) {
     // this.page
     // this.eleventy
   });
+};
+```
+
+
+## Per-Engine Shortcodes
+
+You can also specify different functionality for shortcodes in each engine, if you’d like. Using the `addShortcode` or `addPairedShortcode` function is equivalent to adding the shortcode to every supported template engine.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  // Liquid Shortcode
+  eleventyConfig.addLiquidShortcode("user", function(firstName, lastName) { … });
+  eleventyConfig.addPairedLiquidShortcode("user", function(content, firstName, lastName) { … });
+
+  // Nunjucks Shortcode
+  eleventyConfig.addNunjucksShortcode("user", function(firstName, lastName) { … });
+  eleventyConfig.addPairedNunjucksShortcode("user", function(content, firstName, lastName) { … });
+
+  // Handlebars Shortcode
+  eleventyConfig.addHandlebarsShortcode("user", function(firstName, lastName) { … });
+  eleventyConfig.addPairedHandlebarsShortcode("user", function(content, firstName, lastName) { … });
+
+  // JavaScript Template Function (New in 0.7.0)
+  eleventyConfig.addJavaScriptFunction("user", function(firstName, lastName) { … });
+  eleventyConfig.addJavaScriptFunction("user", function(content, firstName, lastName) { … }); // Faux-paired shortcode
 };
 ```
