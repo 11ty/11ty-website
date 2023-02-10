@@ -161,7 +161,7 @@ You won’t need to set up bundler plugins for every individual template, but in
 
 ### Your Generated Serverless Function
 
-Based on your plugin configuration, Eleventy will create your initial boilerplate serverless function for you. After initial creation, this serverless function code is managed by you. 
+Based on your plugin configuration, Eleventy will create your initial boilerplate serverless function for you. After initial creation, this serverless function code is managed by you.
 
 Here is an over-simplified version for educational purposes only:
 
@@ -252,12 +252,12 @@ permalink:
 ---
 ```
 
-These objects can be set anywhere in the data cascade (even inside of [Computed Data](/docs/data-computed/)). 
+These objects can be set anywhere in the data cascade (even inside of [Computed Data](/docs/data-computed/)).
 
 Here’s an example of a serverless URL for our `possum` serverless function. Any requests to `/dynamic-path/` will now be generated at request-time.
 
 {% callout "info", "md" -%}
-**NOTE:** `build` is the only reserved key in a `permalink` Object. If you want your template to continue to be built at build-time, use the `build` key. 
+**NOTE:** `build` is the only reserved key in a `permalink` Object. If you want your template to continue to be built at build-time, use the `build` key.
 {% endcallout %}
 
 The following is functionally equivalent to `permalink: /build-generated-path/`:
@@ -273,7 +273,7 @@ Anything other than `build` is assumed to map to a serverless function. We used 
 
 #### Build-time and Serverless
 
-You _can_ mix both `build` and `possum` in the same permalink object! This will make the same input file render both at build-time _and_ in a serverless function. 
+You _can_ mix both `build` and `possum` in the same permalink object! This will make the same input file render both at build-time _and_ in a serverless function.
 
 This might be useful when you want a specific URL for a CMS preview, but still want the production build to use full build-time templates.
 
@@ -325,12 +325,12 @@ permalink:
 ---
 ```
 
-This will match any requested URL that fits the `/dynamic-path/` followed by an open-ended folder name (e.g., `/dynamic-path/hello/` or `/dynamic-path/goodbye/`). 
+This will match any requested URL that fits the `/dynamic-path/` followed by an open-ended folder name (e.g., `/dynamic-path/hello/` or `/dynamic-path/goodbye/`).
 
 The above uses `:id` for the key name. When the templates are rendered, the key name puts the matched path String value for `id` into your Serverless Global Data in the Data Cascade at: `eleventy.serverless.path.id`. (Here, `id` matches `:id` above).
 
 {% callout "warn", "md" -%}
-These should be treated as _potentially malicious user input_, and _you **must** escape these_ if you use them in templates! 
+These should be treated as _potentially malicious user input_, and _you **must** escape these_ if you use them in templates!
 
 Read more about [Escaping User Input](#escaping-user-input).
 {% endcallout %}
@@ -352,7 +352,7 @@ Here’s what your Serverless Global Data might look like:
 
 ### Escaping User Input
 
-These should be treated as _potentially malicious user input_, and _you **must** escape these_ if you use them in templates! 
+These should be treated as _potentially malicious user input_, and _you **must** escape these_ if you use them in templates!
 The way to do this is specific to each template language.
 
 * **Liquid** has both an `escape` and `escape_once` filter.
@@ -365,7 +365,7 @@ The way to do this is specific to each template language.
 
 ### Dynamic Slugs to Subset Your Pagination
 
-Use the new `serverless` option in `pagination` to slice up your paginated data set using a dynamic slug! 
+Use the new `serverless` option in `pagination` to slice up your paginated data set using a dynamic slug!
 
 Here’s how we use it for the [Eleventy Author Pages](/authors/).
 
@@ -394,7 +394,7 @@ For example:
 In **Dynamic _Templates_** (_not **On-demand Builders**_), you can use query parameters as user input. Query parameters are available in the `eleventy.serverless.query` object.
 
 {% callout "warn", "md" -%}
-These should be treated as _potentially malicious user input_, and _you **must** escape these_ if you use them in templates! 
+These should be treated as _potentially malicious user input_, and _you **must** escape these_ if you use them in templates!
 
 Read more about [Escaping User Input](#escaping-user-input).
 {% endcallout %}
@@ -420,7 +420,7 @@ _Documentation in progress_ (The new `serverlessURL` filter) -->
 
 ### Re-use build-time cache from the [Fetch plugin](/docs/plugins/fetch/)
 
-To speed up serverless rendering and avoid requests to external sources, you can re-use the `cache` folder from your build! 
+To speed up serverless rendering and avoid requests to external sources, you can re-use the `cache` folder from your build!
 
 First, we’ll need to copy the cache folder into our bundle.
 
