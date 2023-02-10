@@ -812,12 +812,26 @@ main .elv-toc + h1 .direct-link {
 .btn-primary-why-are-you-doing-this + span {
 	display: none;
 }
-@media (min-width: 50em) { /* 800px */
+@media (min-width: 50em) {
+	/* 800px */
 	.btn-primary-why-are-you-doing-this + span {
 		display: block;
 		text-align: center;
 		margin-top: .25em;
 		font-size: .75em;
+	}
+}
+@media (min-height:50em){
+	p:has(.btn-primary-why-are-you-doing-this) {
+		position: sticky;
+		top: 10px;
+		z-index: 10;
+		background-color: #fff;
+	}
+}
+@media (prefers-color-scheme: dark) and (min-height:50em){
+	p:has(.btn-primary-why-are-you-doing-this) {
+		background-color: #222;
 	}
 }
 .btn-form:hover,
