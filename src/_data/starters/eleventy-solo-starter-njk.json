@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/brycewray/eleventy_solo_starter_njk",
+	"name": "Eleventy Solo Starter (.njk version)",
+	"description": "Eleventy starter with PostCSS, Tailwind CSS, Lazyload (“vanilla lazyload”), and build-time creation and processing of responsive images; Nunjucks templating, with alternate JavaScript-based (.11ty.js) version.",
+	"author": "BryceWrayTX",
+	"demo": "https://eleventy-solo-starter-njk.vercel.app/"
+}

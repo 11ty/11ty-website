@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/ashur/eleventy-portway-starter",
+	"name": "Eleventy Portway Starter",
+	"description": "A starter template for building a blog with Eleventy and Portway",
+	"author": "ashur",
+	"demo": "https://eleventy-portway-starter.netlify.app/"
+}
