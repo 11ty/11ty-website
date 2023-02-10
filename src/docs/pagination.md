@@ -358,7 +358,7 @@ pagination:
   size: 1
 testdata:
   - My Item
-permalink: "different/{{ pagination.items[0] | slug }}/index.html"
+permalink: "different/{{ pagination.items[0] | slugify }}/index.html"
 ---
 ```
 {% endraw %}
@@ -386,7 +386,7 @@ pagination:
 testdata:
   - Item1
   - Item2
-permalink: "different/{{ wonder | slug }}/index.html"
+permalink: "different/{{ wonder | slugify }}/index.html"
 ---
 You can use the alias in your content too {{ wonder }}.
 ```
@@ -407,7 +407,7 @@ pagination:
 testdata:
   - Item1
   - Item2
-permalink: "different/{{ wonder | slug }}/index.html"
+permalink: "different/{{ wonder | slugify }}/index.html"
 ---
 You can use the alias in your content too {{ wonder }}.
 ```
@@ -449,7 +449,7 @@ testdata:
   - Item2
   - Item3
   - Item4
-permalink: "different/{{ wonder[0] | slug }}/index.html"
+permalink: "different/{{ wonder[0] | slugify }}/index.html"
 ---
 You can use the alias in your content too {{ wonder[0] }}.
 ```
@@ -472,7 +472,7 @@ testdata:
   - Item2
   - Item3
   - Item4
-permalink: "different/{{ wonder[0] | slug }}/index.html"
+permalink: "different/{{ wonder[0] | slugify }}/index.html"
 ---
 You can use the alias in your content too {{ wonder[0] }}.
 ```
