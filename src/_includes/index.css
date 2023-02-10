@@ -822,7 +822,7 @@ main .elv-toc + h1 .direct-link {
 	}
 }
 @media (min-height:50em){
-	.why-are-you-doing-this {
+	html:not(:has(:focus-visible)) .why-are-you-doing-this {
 		position: sticky;
 		top: 10px;
 		z-index: 10;
