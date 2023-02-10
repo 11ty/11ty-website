@@ -422,7 +422,7 @@ _Documentation in progress_ (The new `serverlessURL` filter) -->
 
 To speed up serverless rendering and avoid requests to external sources, you can re-use the `cache` folder from your build! 
 
-First, we’ll need to copy the cache folder into our bundle and rename it without the leading dot. (The bundler ignores dot prefixed files and folders.)
+First, we’ll need to copy the cache folder into our bundle.
 
 {% codetitle ".eleventy.js" %}
 
