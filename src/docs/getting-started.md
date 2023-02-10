@@ -9,52 +9,58 @@ overrideCommunityLinks: true
 
 Eleventy **requires version {% latestVersionNodeMinimum versions, config %} of [Node.js](https://nodejs.org/) or higher.**
 
-_Don’t include `~ $` or `~/eleventy-sample $` when you run these commands._
-
 ## <span class="numberflag"><span class="sr-only">Step</span> 1</span> Make a Project Directory
 
 Create a directory for your project using the `mkdir` (make directory) command:
 
-{% codewithprompt "cmdhomedir" %}
+```bash
 mkdir eleventy-sample
-{% endcodewithprompt %}
+```
 
 Now move into that directory with the `cd` (change directory) command:
 
-{% codewithprompt "cmdhomedir" %}
+```bash
 cd eleventy-sample
-{% endcodewithprompt %}
+```
 
-## <span class="numberflag"><span class="sr-only">Step</span> 2</span> Install Eleventy (Optional)
-
-_While installation of Eleventy is optional (you could skip to step 3), it is recommended so that your project uses the same version of Eleventy the next time you come back to it. `package.json` installation (shown here) is preferred to [global installation](/docs/global-installation/)._
+## <span class="numberflag"><span class="sr-only">Step</span> 2</span> Install Eleventy
 
 ### Create a `package.json`
 
 Installing Eleventy into a project requires a `package.json` file. npm (included with Node.js) will create one for you with [`npm init -y`](https://docs.npmjs.com/cli/init). `-y` tells npm to use default values and skips the command line questionnaire.
 
-{% codewithprompt "eleventysample" %}
+```bash
 npm init -y
-{% endcodewithprompt %}
+```
 
 ### Install Eleventy
 
 [`@11ty/eleventy` is published on npm](https://www.npmjs.com/package/@11ty/eleventy) and we can install and save it into our project’s `package.json` by running:
 
-{% codewithprompt "eleventysample" %}
+```bash
 npm install @11ty/eleventy --save-dev
-{% endcodewithprompt %}
+```
+
+{% callout "info", "md" -%}
+_While Step 2 is technically optional (you **could** skip right over it and move on to step 3), installation is recommended to ensure that your project uses the same version of Eleventy the next time you come back to it. Note also that [`package.json` installation (shown above) is preferred to global installation](/docs/global-installation/)._
+{% endcallout %}
 
 ## <span class="numberflag"><span class="sr-only">Step</span> 3</span> Run Eleventy
 
 We can use npx to run our local project's version of Eleventy. Let’s make sure our installation went okay and try to run Eleventy:
+
+```bash
+npx @11ty/eleventy
+```
+
+Here’s what your command line might look like after you run Eleventy:
 
 {% codewithprompt "eleventysample" %}
 npx @11ty/eleventy
 Wrote 0 files in 0.03 seconds ({% latestVersion versions, config %})
 {% endcodewithprompt %}
 
-Make sure that you see `({% latestVersion versions, config %})` in your output. This lets you know you’re using the newest version. However, Eleventy didn’t process any files! This is expected—we have an empty folder with no templates inside.
+If you see `({% latestVersion versions, config %})` in your output you know you’re using the newest version. However, Eleventy didn’t process any files! This is expected—we have an empty folder with no templates inside.
 
 ## <span class="numberflag"><span class="sr-only">Step</span> 4</span> Create some templates
 
@@ -62,15 +68,23 @@ A <dfn>template</dfn> is a content file written in a [format such as Markdown, H
 
 Let’s run two commands to create two new template files.
 
-{% codewithprompt "eleventysample" %}
+```bash
 echo '<!doctype html><title>Page title</title><p>Hi</p>' > index.html
-{% endcodewithprompt %}
+```
 
-{% codewithprompt "eleventysample" %}
+```bash
 echo '# Page header' > README.md
-{% endcodewithprompt %}
+```
 
-We’ve now created an HTML template and a markdown template. Let’s run Eleventy again:
+Alternatively, you can create these using any text editor—just make sure you save them into your project folder and they have the correct file extensions.
+
+After you’ve created an HTML template and a Markdown template, let’s run Eleventy again with the following command:
+
+```bash
+npx @11ty/eleventy
+```
+
+The output might look like this:
 
 <style>
 #getting-started-build .highlight-line:first-child + br + .highlight-line + br + .highlight-line + br + .highlight-line,
@@ -86,11 +100,17 @@ npx @11ty/eleventy
 [11ty] Wrote 2 files in 0.04 seconds ({% latestVersion versions, config %})
 {% endcodewithprompt %}
 
-This will compile any content templates in the current directory or subdirectories into the output folder (defaults to `_site`).
+We’ve compiled our two content templates in the current directory into the output folder (`_site` is the default).
 
 ## <span class="numberflag"><span class="sr-only">Step</span> 5</span> Gaze upon your templates
 
 Use `--serve` to start up a hot-reloading local web server.
+
+```bash
+npx @11ty/eleventy --serve
+```
+
+Your command line might look something like:
 
 <style>
 #getting-started-serve .highlight-line:first-child + br + .highlight-line + br + .highlight-line + br + .highlight-line,
@@ -112,7 +132,7 @@ npx @11ty/eleventy --serve
 [11ty] Server at http://localhost:8080/
 {% endcodewithprompt %}
 
-Go to `http://localhost:8080/` or `http://localhost:8080/README/` to see your Eleventy site live! When you save your template files—Eleventy will refresh the browser with your new changes automatically!
+Open `http://localhost:8080/` or `http://localhost:8080/README/` in your favorite web browser to see your Eleventy site live! When you save your template files—Eleventy will refresh the browser with your new changes automatically!
 
 ## <span class="numberflag"><span class="sr-only">Step</span> 6</span> Put it online (optional)
 
