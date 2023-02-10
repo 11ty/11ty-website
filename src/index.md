@@ -57,13 +57,9 @@ Run `npx @11ty/eleventy --serve` to start up a [local development server](/docs/
 
 <div class="fullwidth-module">{% include "logos.njk" %}</div>
 
----
-
 <a href="/docs/" class="btn-primary btn-primary-why-are-you-doing-this benchnine rainbow-active rainbow-active-noanim">Documentation for <span>Eleventy</span></a><span>Todd and [Bruce]({{ "https://twitter.com/brucel/status/1107699886584143872" | canonicalTwitterUrl }}) said this button should be bigger and as you can see they were right</span>
 
----
-
-<h2 id="eleventy-is-supported-by" class="supporters-hed">Eleventy is <a href="/docs/supporters/">supported</a> by…</h2>
+<h2 id="eleventy-is-supported-by" class="subhed supporters-hed">Eleventy is <a href="/docs/supporters/">supported</a> by</h2>
 
 {% include "supporters.njk" %}
 

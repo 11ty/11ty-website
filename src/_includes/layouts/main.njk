@@ -18,7 +18,7 @@ headerClass: elv-header-default
 
 <footer class="elv-footer elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">
 {% if ignoreSupporters %}{% else %}
-	<h2 id="eleventy-is-supported-by">Eleventy is <a href="/docs/supporters/">supported</a> by… <a class="direct-link" href="#eleventy-is-supported-by">#</a></h2>
+	<h2 id="eleventy-is-supported-by" class="subhed supporters-hed">Eleventy is <a href="/docs/supporters/">supported</a> by <a class="direct-link" href="#eleventy-is-supported-by">#</a></h2>
 	{% include "supporters.njk" %}
 {% endif %}
 {%- if ignoreGitHubButtons %}{% else %}
