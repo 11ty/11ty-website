@@ -786,35 +786,35 @@ main .elv-toc + h1 .direct-link {
 	padding: .5em 1em .4em;
 	box-shadow: 0 8px 6px -6px #000;
 }
-.btn-primary-why-are-you-doing-this {
+.why-are-you-doing-this > a {
 	margin-top: 1.5em;
 	border-width: .3em;
 }
 @media (prefers-color-scheme: dark) {
-	.btn-primary-why-are-you-doing-this,
-	.btn-primary-why-are-you-doing-this[href],
-	.btn-primary-why-are-you-doing-this:visited {
+	.why-are-you-doing-this > a,
+	.why-are-you-doing-this > a[href],
+	.why-are-you-doing-this > a:visited {
 		background-color: #fff;
 		color: #222;
 		border-color: #ccc;
 	}
 }
-.btn-primary-why-are-you-doing-this:hover {
+.why-are-you-doing-this > a:hover {
 	transition: all .3s;
 	transform: scale(1.05);
 }
 @media (prefers-reduced-motion: reduce) {
-	.btn-primary-why-are-you-doing-this:hover {
+	.why-are-you-doing-this > a:hover {
 		transition: none;
 		transform: none;
 	}
 }
-.btn-primary-why-are-you-doing-this + span {
+.why-are-you-doing-this + span {
 	display: none;
 }
 @media (min-width: 50em) {
 	/* 800px */
-	.btn-primary-why-are-you-doing-this + span {
+	.why-are-you-doing-this + span {
 		display: block;
 		text-align: center;
 		margin-top: .25em;
@@ -822,16 +822,11 @@ main .elv-toc + h1 .direct-link {
 	}
 }
 @media (min-height:50em){
-	p:has(.btn-primary-why-are-you-doing-this) {
+	.why-are-you-doing-this {
 		position: sticky;
 		top: 10px;
 		z-index: 10;
 		background-color: #fff;
-	}
-}
-@media (prefers-color-scheme: dark) and (min-height:50em){
-	p:has(.btn-primary-why-are-you-doing-this) {
-		background-color: #222;
 	}
 }
 .btn-form:hover,
@@ -885,7 +880,7 @@ main .elv-toc + h1 .direct-link {
 	}
 }
 @media (min-width: 46.875em) { /* 750px */
-	.btn-primary-why-are-you-doing-this {
+	.why-are-you-doing-this > a {
 		margin-left: calc( (90vw - 42rem) / -2 );
 		width: calc(90vw - 2rem);
 	}
