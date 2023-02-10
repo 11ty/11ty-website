@@ -2,14 +2,6 @@
 publish = "_site"
 command = "npm run build-production"
 
-[context.main]
-publish = "_site"
-command = "npm run build-production"
-
-[context.deploy-preview]
-publish = "_site"
-command = "npm run build-preview"
-
 [dev]
 framework = "#static"
 command = "npm start"
