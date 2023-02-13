@@ -177,7 +177,7 @@ function findBy(data, path, value) {
 module.exports = function(eleventyConfig) {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
-	if(process.env.NODE_ENV !== "production") {
+	if(process.env.NODE_ENV !== "production" || process.env.ELEVENTY_SERVERLESS) {
 		eleventyConfig.setQuietMode(true);
 		eleventyConfig.ignores.add("src/api/*");
 		eleventyConfig.ignores.add("src/docs/feed.njk");
@@ -186,7 +186,7 @@ module.exports = function(eleventyConfig) {
 	}
 
 	// Skip these without a token (esp. deploy previews)
-	if(!process.env.TWITTER_BEARER_TOKEN) {
+	if(!process.env.TWITTER_BEARER_TOKEN || process.env.ELEVENTY_SERVERLESS) {
 		eleventyConfig.ignores.add("src/firehose.11ty.js");
 		eleventyConfig.ignores.add("src/firehose-feed.11ty.js");
 	}
