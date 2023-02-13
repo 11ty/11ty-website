@@ -1,6 +1,8 @@
 const EleventyFetch = require("@11ty/eleventy-fetch");
 const fastglob = require("fast-glob");
 
+const URL = "https://eleventy-starters--speedlify.netlify.app/";
+
 module.exports = async function() {
 	let returnData = {
 		urls: {},
@@ -11,7 +13,7 @@ module.exports = async function() {
 		return returnData;
 	}
 
-	let url = "https://www.speedlify.dev/api/urls.json";
+	let url = `${URL}api/urls.json`;
 	let urlsJson = await EleventyFetch(url, {
 		duration: "1d",
 		type: "json",
@@ -30,7 +32,7 @@ module.exports = async function() {
 
 		let urlLookup = urlsJson[siteData.demo] || urlsJson[siteData.url];
 		if(urlLookup && urlLookup.hash) {
-			let data = await EleventyFetch(`https://www.speedlify.dev/api/${urlLookup.hash}.json`, {
+			let data = await EleventyFetch(`${URL}api/${urlLookup.hash}.json`, {
 				duration: process.env.NODE_ENV === "production" ? "1d" : "*",
 				type: "json",
 			});
