@@ -27,7 +27,7 @@ cd eleventy-sample
 
 ### Create a `package.json`
 
-Installing Eleventy into a project requires a `package.json` file. npm (included with Node.js) will create one for you with [`npm init -y`](https://docs.npmjs.com/cli/init). `-y` tells npm to use default values and skips the command line questionnaire.
+Installing Eleventy into a project requires a `package.json` file. The `npm` command (provided by Node.js) will create one for you with [`npm init -y`](https://docs.npmjs.com/cli/init). `-y` tells `npm` to use default values and skips the command line questionnaire.
 
 ```bash
 npm init -y
@@ -41,13 +41,11 @@ npm init -y
 npm install @11ty/eleventy --save-dev
 ```
 
-{% callout "info", "md" -%}
-_While Step 2 is technically optional (you **could** skip right over it and move on to step 3), installation is recommended to ensure that your project uses the same version of Eleventy the next time you come back to it. Note also that [`package.json` installation (shown above) is preferred to global installation](/docs/global-installation/)._
-{% endcallout %}
+_You may also [install Eleventy globally](/docs/global-installation/) but the `package.json` installation method above is recommended._
 
 ## <span class="numberflag"><span class="sr-only">Step</span> 3</span> Run Eleventy
 
-We can use npx to run our local project's version of Eleventy. Let’s make sure our installation went okay and try to run Eleventy:
+We can use the `npx` command (also provided by Node.js) to run our local project's version of Eleventy. Let’s make sure our installation went okay and try to run Eleventy:
 
 ```bash
 npx @11ty/eleventy

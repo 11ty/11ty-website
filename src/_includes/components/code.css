@@ -124,7 +124,7 @@ pre + .note {
 }
 
 
-[data-preprefix-cmdhomedir] .highlight-line:last-child:before {
+[data-preprefix-cmdhomedir] .highlight-line:first-child:before {
 	color: #aaa;
 	content: "~ $ ";
 }
