@@ -7,7 +7,7 @@ overrideCommunityLinks: true
 ---
 # Getting Started
 
-Eleventy **requires version {% latestVersionNodeMinimum versions, config %} of [Node.js](https://nodejs.org/) or higher.**
+Eleventy **requires [Node.js](https://nodejs.org/) version {% latestVersionNodeMinimum versions, config %} or higher.**
 
 ## <span class="numberflag"><span class="sr-only">Step</span> 1</span> Make a Project Directory
 
