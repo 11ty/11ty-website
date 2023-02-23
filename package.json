@@ -62,7 +62,7 @@
     "lodash": "^4.17.21",
     "luxon": "^3.2.1",
     "markdown-it": "^13.0.1",
-    "markdown-it-anchor": "^8.6.6",
+    "markdown-it-anchor": "^8.6.7",
     "markdown-it-table-of-contents": "^0.6.0",
     "netlify-plugin-cache": "^1.0.3",
     "node-fetch": "^2.6.8",
@@ -71,7 +71,7 @@
     "short-hash": "^1.0.0",
     "slugify": "^1.6.5",
     "sorted-object": "^2.0.1",
-    "terser": "^5.16.3"
+    "terser": "^5.16.5"
   },
   "dependencies": {
     "@11ty/is-land": "^3.0.1",
@@ -81,7 +81,7 @@
     "@zachleat/filter-container": "^3.0.4",
     "@zachleat/seven-minute-tabs": "^2.0.0",
     "lite-youtube-embed": "^0.2.0",
-    "pagefind": "^0.10.7",
+    "pagefind": "^0.11.0",
     "speedlify-score": "^2.0.2"
   }
 }
