@@ -9,15 +9,19 @@ overrideCommunityLinks: true
 
 Eleventy **requires [Node.js](https://nodejs.org/) version {% latestVersionNodeMinimum versions, config %} or higher.**
 
+You can check whether or not you have Node installed by running `node --version` in a terminal window. ([_Well, wait—what is a Terminal window?_](/docs/terminal-window/))
+
+If the command is not found or it reports a number lower than {% latestVersionNodeMinimum versions, config %}, you will need to [download and install Node.js](https://nodejs.org/en/download/) before moving on to the next step.
+
 ## <span class="numberflag"><span class="sr-only">Step</span> 1</span> Make a Project Directory
 
-Create a directory for your project using the `mkdir` (make directory) command:
+Create a directory for your project using the `mkdir` command (short for _make directory_):
 
 ```bash
 mkdir eleventy-sample
 ```
 
-Now move into that directory with the `cd` (change directory) command:
+Now move into that directory with the `cd` command (short for _change directory_):
 
 ```bash
 cd eleventy-sample

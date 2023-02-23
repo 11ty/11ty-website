@@ -32,7 +32,9 @@ echo '# Page header' > index.md
 <details>
 <summary>Eleventy requires Node.js {% latestVersionNodeMinimum versions, config %} <em>(expand to learn more)</em></summary>
 
-Run `node --version` on the command line to see if it is installed. If the command is not found or it reports a number lower than {% latestVersionNodeMinimum versions, config %}, you will need to [install Node.js](https://nodejs.org/en/).
+You can check whether or not you have Node installed by running `node --version` in a terminal window. ([_Well, wait—what is a Terminal window?_](/docs/terminal-window/))
+
+If the command is not found or it reports a number lower than {% latestVersionNodeMinimum versions, config %}, you will need to [download and install Node.js](https://nodejs.org/en/download/) before moving on to the next step.
 
 </details>
 
