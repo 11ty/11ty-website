@@ -1,4 +1,5 @@
 const activity = require("../config/activity.js");
+const { escapeText } = require("entities/lib/escape.js");
 
 function getSlugFromTitle(str) {
 	if(str.startsWith("GitHub Releases [")) {
@@ -89,7 +90,7 @@ ${entries.map(entry => {
 		let startTime = 0;
 		content = this.youtubeEmbed(slug, entry.title, startTime);
 	}
-	return `<div data-filter-type="${getSlugFromTitle(entry.title)}">${this.callout(content, "box", "html", `<a href="${entry.url}">${entry.title}</a>`)}</div>`;
+	return `<div data-filter-type="${getSlugFromTitle(entry.title)}">${this.callout(content, "box", "html", `<a href="${entry.url}">${escapeText(entry.title)}</a>`)}</div>`;
 }).join("\n")}
 
 	</filter-container>

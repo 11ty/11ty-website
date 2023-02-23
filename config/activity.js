@@ -10,7 +10,7 @@ module.exports = async function() {
 
 	let feed = new ActivityFeed();
 
-	feed.setCacheDuration("4h"); // note that cache is persisted on CI server
+	feed.setCacheDuration("1d"); // note that cache is persisted on CI server
 
 	// The Eleventy Activity Feed
 	feed.addSource("youtubeUser", "YouTube", "UCskGTioqrMBcw8pd14_334A"); // Eleventy
@@ -24,7 +24,7 @@ module.exports = async function() {
 		const PER_PAGE = 100; // max: 100
 		let githubOrgRepos = await EleventyFetch(`https://api.github.com/orgs/11ty/repos?per_page=${PER_PAGE}`, {
 			type: "json",
-			duration: "7d",
+			duration: "1d",
 			directory: ".cache/eleventy-fetch/",
 			fetchOptions: {
 				headers: {

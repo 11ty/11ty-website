@@ -55,6 +55,7 @@
     "cross-spawn": "^7.0.3",
     "degit": "^2.8.4",
     "dotenv": "^16.0.3",
+    "entities": "^4.4.0",
     "fast-glob": "^3.2.12",
     "fs-extra": "^11.1.0",
     "html-minifier": "4.0.0",
