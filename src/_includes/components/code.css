@@ -54,7 +54,7 @@ pre code {
 	border-radius: 0;
 }
 pre > code {
-	background-color: transparent;
+	background-color: inherit;
 	padding: 0;
 }
 pre + pre[class*="language-"] {
