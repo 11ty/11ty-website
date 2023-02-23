@@ -19,3 +19,8 @@
 	<li class="elv-nav-item elv-nav-item-sm lo-c"><a href="/docs/supporters/" class="elv-externalexempt elv-nav-light">{{ opencollective.monthlyBackers | humanReadableNum }} Monthly Backers</a></li>
 {% endif %}
 </ul>
+{%- if page.url === "/" %}
+<ul class="elv-nav elv-nav-footer lo">
+	<li class="elv-nav-item elv-nav-item-sm lo-c"><a href="/reports/lighthouse/" class="elv-nav-light"><em>View this page’s Lighthouse Score</em></a></li>
+</ul>
+{%- endif %}
