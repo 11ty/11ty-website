@@ -203,7 +203,7 @@ This is a (last-resort?) catch-all option to let WebC process `.html` output fil
 A few drawbacks to the transform method:
 
 1. This is the slowest build-performance method to implement WebC in a project, so try the other methods first!
-2. The WebC Eleventy transform operates with [bundler mode disabled](#css-and-js-(bundler-mode)), which means that processes WebC but _does not_ aggregate component JS or CSS.
+2. The WebC Eleventy transform operates with [bundler mode disabled](#css-and-js-(bundler-mode)), which means that processes WebC but _does not_ aggregate component JS or CSS. ([Upvote this enhancement request](https://github.com/11ty/eleventy-plugin-webc/issues/55))
 
 <details>
 <summary>The transform is disabled by default, you will need to use the <code>useTransform</code> option to enable it.</summary>
