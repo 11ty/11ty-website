@@ -57,9 +57,16 @@ npx @11ty/eleventy
 
 Here’s what your command line might look like after you run Eleventy:
 
-{% codewithprompt "eleventysample" %}
+<style>
+#getting-started-run .highlight-line:last-child,
+#getting-started-run .highlight-line:last-child * {
+  color: #0dbc79 !important;
+}
+</style>
+
+{% codewithprompt "eleventysample", "getting-started-run" %}
 npx @11ty/eleventy
-Wrote 0 files in 0.03 seconds ({% latestVersion versions, config %})
+[11ty] Wrote 0 files in 0.03 seconds ({% latestVersion versions, config %})
 {% endcodewithprompt %}
 
 If you see `({% latestVersion versions, config %})` in your output you know you’re using the newest version. However, Eleventy didn’t process any files! This is expected—we have an empty folder with no templates inside.
@@ -89,8 +96,8 @@ npx @11ty/eleventy
 The output might look like this:
 
 <style>
-#getting-started-build .highlight-line:first-child + br + .highlight-line + br + .highlight-line + br + .highlight-line,
-#getting-started-build .highlight-line:first-child + br + .highlight-line + br + .highlight-line + br + .highlight-line * {
+#getting-started-build .highlight-line:last-child,
+#getting-started-build .highlight-line:last-child * {
   color: #0dbc79 !important;
 }
 </style>

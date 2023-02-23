@@ -44,16 +44,26 @@ Run Eleventy.
 npx @11ty/eleventy
 ```
 
-Eleventy compiles any files in the current directory matching valid [file extensions](/docs/languages/) (`.md` is one of many) to the output folder (`_site` by default).
+Eleventy compiles any files in the current directory matching valid [file extensions](/docs/languages/) (`.md` is one of many) to the output folder (`_site` by default). It might look like this:
 
-```bash
+<style>
+#getting-started-build .highlight-line:last-child,
+#getting-started-build .highlight-line:last-child * {
+  color: #0dbc79 !important;
+}
+</style>
+
+{% codewithprompt "noop", "getting-started-build" %}
 Writing _site/index.html from ./index.md (liquid)
 Wrote 1 file in 0.03 seconds ({% latestVersion versions, config %})
-```
+{% endcodewithprompt %}
 
 Run `npx @11ty/eleventy --serve` to start up a [local development server](/docs/dev-server/) and open `http://localhost:8080/` in your web browser of choice to see your web site.
 
-➡ Keep going! Read a [more comprehensive Getting Started guide](/docs/getting-started/) or check out the full [**Documentation for {% latestVersion versions, config %}**](/docs/).
+Keep going:
+
+1. Read our full [**Getting Started guide**](/docs/getting-started/).
+2. Check out the [Documentation for {% latestVersion versions, config %}](/docs/).
 
 ---
 
