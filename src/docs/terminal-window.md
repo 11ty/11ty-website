@@ -29,6 +29,6 @@ Depending on your version of Windows, it may include the `Terminal` App (aka Win
 
 ### Editors bundled with Terminals
 
-* [Nova](https://nova.app/) also includes
+* [Nova](https://nova.app/) (Mac OS)
 * [Visual Studio Code](https://code.visualstudio.com/) (Mac OS, Windows, Linux)
   * On Windows, Visual Studio Code is bundled with Windows Powershell.
