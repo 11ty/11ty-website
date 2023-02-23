@@ -1129,6 +1129,18 @@ You can access these bundles in other templates types like `*.njk` or `.liquid` 
 {% endraw %}
 </details>
 
+You can [write these bundles to external files too](https://github.com/11ty/eleventy-plugin-bundle/#write-a-bundle-to-a-file), if you’d like. External files are better cached in the browser but can be slower for first time visitors.
+
+{% codetitle "Nunjucks, Liquid", "Syntax" %}
+
+{% raw %}
+```njk
+<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">
+<script src="{% getBundleFileUrl "js" %}"></script>
+```
+{% endraw %}
+
+
 #### Asset bucketing
 
 Components can use the `webc:bucket` feature to output to any arbitrary bucket name for compartmentalization at the component level.
