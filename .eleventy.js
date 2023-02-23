@@ -189,7 +189,7 @@ module.exports = function(eleventyConfig) {
 	}
 
 	// Skip these without a token (esp. deploy previews)
-	if(!process.env.TWITTER_BEARER_TOKEN || process.env.ELEVENTY_SERVERLESS) {
+	if(process.env.NODE_ENV !== "production" || !process.env.TWITTER_BEARER_TOKEN || process.env.ELEVENTY_SERVERLESS) {
 		eleventyConfig.ignores.add("src/firehose.11ty.js");
 		eleventyConfig.ignores.add("src/firehose-feed.11ty.js");
 	}
