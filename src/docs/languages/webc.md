@@ -22,15 +22,26 @@ relatedLinks:
   * Expand any HTML element (including custom elements) to HTML with defined conventions from web standards.
   * This means that Web Components created with WebC are compatible with server-side rendering (without duplicating author-written markup)
   * WebC components are [Progressive Enhancement friendly](https://www.youtube.com/watch?v=p0wDUK0Z5Nw).
+
+### Performance
+
 * Get first-class **incremental builds** (for page templates, components, and Eleventy layouts) when [used with `--incremental`](/docs/usage/#incremental-for-partial-incremental-builds)
 * Streaming friendly (stream on the Edge 👀)
+* Works great with [is-land](/docs/plugins/partial-hydration/) for web component hydration.
+
+### Compatible with Standards
+
+* Uses [`parse5`](https://github.com/inikulin/parse5) to parse WebC HTML as modern browsers do (a nod to [@DasSurma’s](https://twitter.com/DasSurma/status/1559159122964127744) work with [Vite](https://twitter.com/patak_dev/status/1564265006627176449) here)
+* Shadow DOM and Declarative Shadow DOM friendly (works with or without Shadow DOM)
+
+### Authoring
+
+* Encourages no-quirks mode HTML authoring (and a doctype is optional). WebC throws a helpful error if encounters quirks mode markup.
 * Easily scope component CSS (or use your own scoping utility).
 * Tired of importing components? Use global or per-page no-import components.
-* Shadow DOM friendly (works with or without Shadow DOM)
-* All configuration extensions/hooks into WebC are async-friendly out of the box.
+* Async-friendly: All configuration extensions/hooks into WebC are async-friendly out of the box.
 * Bundler mode: Easily roll up the CSS and JS in-use by WebC components on a page for page-specific bundles. Dirt-simple critical CSS/JS to only load the code you need.
 * For more complex templating needs, render any existing Eleventy template syntax (Liquid, markdown, Nunjucks, etc.) inside of WebC.
-* Works great with [is-land](/docs/plugins/partial-hydration/) for web component hydration.
 
 ## Resources
 
@@ -103,11 +114,6 @@ module.exports = function(eleventyConfig) {
 
 There are a few different ways to use WebC in Eleventy:
 
-1. Add a new `.webc` file to your Eleventy input directory
-1. Use the Render plugin in an existing non-WebC template
-1. Pre-process HTML input as WebC
-1. Post-process HTML output as WebC
-
 ### Add a new `.webc` file
 
 Adding the plugin will enable support for `.webc` files in your Eleventy project. Just make a new `.webc` HTML file in your Eleventy input directory and Eleventy will process it for you! Notably, `.webc` files will operate [WebC in bundler mode](https://github.com/11ty/webc#aggregating-css-and-js), aggregating the CSS and JS in use on each individual page to create a bundle of the assets in use on the page.
@@ -129,7 +135,9 @@ WebC uses an HTML parser to process input files: use any HTML here!
 </html>
 ```
 
-### Use the Render plugin
+### Non-traditional WebC usage
+
+#### Use the Render plugin
 
 Using Eleventy’s built-in [Render plugin](/docs/plugins/render/) allows you to render WebC inside of an existing Liquid, Nunjucks, or 11ty.js template.
 
@@ -184,11 +192,11 @@ The `renderTemplate` shortcode [requires an async-friendly template language](#t
 </seven-minute-tabs>
 </is-land>
 
-### Pre-process HTML input as WebC
+#### Pre-process HTML input as WebC
 
 You can use the configuration option to change the default HTML preprocessor (from `liquid`) to `webc`. This might look like `htmlTemplateEngine: "webc"`. Read more on the [Eleventy documentation: Default Template Engine for HTML Files](/docs/config/#default-template-engine-for-html-files).
 
-### Post-process HTML output as WebC
+#### Post-process HTML output as WebC
 
 This is a (last-resort?) catch-all option to let WebC process `.html` output files in your project (skipping any `.webc` input files to avoid double-processing templates). This feature makes use of [Eleventy transforms](/docs/config/#transforms) and is most useful when you want to get up and running with WebC on an existing project quickly.
 
@@ -445,13 +453,31 @@ Inside of your component definition, you can add attributes to the outer host co
 
 #### Override the host component tag
 
-You can use `webc:root webc:keep` together to override the host component tag name! This isn’t very useful for HTML-only components (which leave out the host component tag) but is very useful when your component has style/scripts.
+You can use `webc:root="override"` together to override the host component tag name! This isn’t very useful for HTML-only components (which leave out the host component tag) but is very useful when your component has style/scripts.
 
 {% codetitle "components/my-component.webc" %}
 
 ```html
-<button webc:root webc:keep>Some component content</button>
+<button webc:root="override">Some component content</button>
 <style>/* Hi */</style>
+```
+
+* {% addedin "@11ty/webc@0.9.0" %}This was changed from `webc:root webc:keep` in WebC v0.9.0.
+
+#### Nesting
+
+It’s worth noting also that `webc:root` can be nested inside of other content—it does not need to exist at the top level of the component definition (framework folks love nested things deeply in `div` right).
+
+{% codetitle "components/my-component.webc" %}
+
+```html
+<div>
+  <div>
+    <template webc:root="override" class="another-class">
+  	  Some component content
+    </template>
+  </div>
+</div>
 ```
 
 ### Props (Properties)
@@ -473,14 +499,14 @@ Make any attribute into a prop by prefixing it with `@`. Props are “private”
 
 * In the HTML specification, attribute names are lower-case. {% addedin "@11ty/webc@0.8.0" %}Attribute or property names with dashes are converted to camelcase for JS (e.g. `<my-component @prop-name="test">` can be used like `@text="propName"`). More at [issue #71](https://github.com/11ty/webc/issues/71).
 
-### Dynamic attributes
+### Dynamic attributes and properties
 
-Make any attribute into a dynamic attribute by prefixing it with `:`. You have access to host component attributes, props, and page data here!
+Make any attribute or property dynamic (using JavaScript for the value instead of a string) by prefixing it with a colon (`:`). You have access to host component attributes, props, and page data here!
 
 {% codetitle "page.webc" %}
 
 ```html
-<avatar-image src="my-image.jpeg" alt="Zach is documenting this project"></avatar-image>
+<avatar-image src="my-image.jpeg" alt="Zach is documenting this project" :@dynamic-prop="'hello'"></avatar-image>
 ```
 
 {% codetitle "components/avatar-image.webc" %}
@@ -489,9 +515,26 @@ Make any attribute into a dynamic attribute by prefixing it with `:`. You have a
 <img :src="src" :alt="alt" class="avatar-image">
 ```
 
+* {% addedin "@11ty/webc@0.9.0" %}The `:@` dynamic property prefix was added in WebC v0.9.0.
 * In the HTML specification, attribute names are lower-case. {% addedin "@11ty/webc@0.8.0" %}Attribute or property names with dashes are converted to camelcase for JS (e.g. `<my-component @prop-name="test">` can be used like `@text="propName"`). More at [issue #71](https://github.com/11ty/webc/issues/71).
-* {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in dynamic attributes (e.g. `this.src`/`this.alt`) when referencing helpers/data/attributes/property values.
+<!-- * {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in dynamic attributes (e.g. `this.src`/`this.alt`) when referencing helpers/data/attributes/property values. -->
 
+### `@attributes`
+
+{% addedin "@11ty/webc@0.9.0" %}You can use `@attributes` to render all of the attributes (including on host component) to the current node.
+
+{% codetitle "components/avatar-image.webc" %}
+
+```html
+<!-- will render all attributes including `src` and `alt` from the host component -->
+<img @attributes class="avatar-image">
+```
+
+You can use this to render an arbitrary object as attributes too (note the parentheses to avoid JavaScript parsing as a [`block`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block) + [`label`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label)):
+
+```html
+<img @attributes="({ myattribute: 'myValue'})">
+```
 
 ### `@html`
 
@@ -508,16 +551,15 @@ We surface a special `@html` [prop](#props-(properties)) to override any tag con
 ```
 
 * Content returned from the `@html` prop will be processed as WebC—return any WebC content here! {% addedin "@11ty/webc@0.5.0" %}
-* {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in `@html` or `@raw` (e.g. `this.dataProperty`) when referencing helpers/data/attributes/property values.
+<!-- * {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in `@html` or `@raw` (e.g. `this.dataProperty`) when referencing helpers/data/attributes/property values. -->
+* Using `webc:raw` will prevent processing the result as WebC {% addedin "@11ty/webc@0.6.0" %}
+* Use `@raw` as an alias for `webc:raw @html` {% addedin "@11ty/webc@0.7.1" %}
 
 ```html
 <!-- No reprocessing as WebC (useful in Eleventy layouts) -->
 <!-- Where `myHtmlContent` is a variable holding an arbitrary HTML string -->
 <template @raw="myHtmlContent" webc:nokeep></template>
 ```
-
-* Using `webc:raw` will prevent processing the result as WebC {% addedin "@11ty/webc@0.6.0" %}
-* Use `@raw` as an alias for `webc:raw @html` {% addedin "@11ty/webc@0.7.1" %}
 
 ### `@raw`
 
@@ -599,11 +641,46 @@ and aggregates the following CSS to [the bundle](#asset-bundling):
 
 </details>
 
-### `webc:type`
+{% callout "info", "md" -%}
+_**CSS bundling opinion alert**:_ Some folks recommend using Declarative Shadow DOM for component style encapsulation. This is a great method! It has 2 major drawbacks:
 
-_Adding your own [Custom Transform](https://github.com/11ty/webc#custom-transforms) **directly** to WebC is not yet available in the Eleventy WebC plugin! If this is something folks would like to see added, [please let us know](https://fosstodon.org/@eleventy)! Do note that you **can** [add your own custom template engine](/docs/languages/custom/) to the render plugin!_
+1. The progressive enhancement story requires [ubiquitous browser support](https://caniuse.com/declarative-shadow-dom) before using it for content in the critical rendering path.
+2. It requires `<style>` duplication in each instance of the component.
 
-### `webc:type="11ty"`
+Just be aware of these tradeoffs and note that you can use both methods in WebC!
+{% endcallout %}
+
+#### `webc:scoped="my-prefix"`
+
+You can also specify an attribute value to `webc:scoped` to hard code your own component prefix (e.g. `<style webc:scoped="my-prefix">`). This allows the CSS to look a bit more friendly and readable. We will automatically check for duplicate values in your component tree and throw an error if collisions occur.
+
+### Using JavaScript to Setup your Component
+
+{% addedin "@11ty/webc@0.9.0" %}You can now also use `<script webc:setup>` to run arbitrary JavaScript and provide data and markup to your component. Any top level variables declared here are available in your component as local data.
+
+This is similar to using [JavaScript as a custom Eleventy Front Matter type](/docs/data-frontmatter-customize/#example-use-javascript-in-your-front-matter) although data in `webc:setup` is scoped to the component and _does not_ flow back up in the Data Cascade.
+
+{% codetitle "components/my-component.webc" %}
+
+```html
+<script webc:setup>
+const myHtml = "<my-webc-component></my-webc-component>;
+
+function alwaysBlue() {
+  return "blue";
+}
+</script>
+
+<div @html="myHtml"></div>
+<div @raw="myHtml"></div><!-- @raw does not reprocess as WebC -->
+<div @html="alwaysBlue()"></div>
+```
+
+Works with `var`, `let`, `const`, `function`, `Array` and `Object` [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
+
+* Uses the [`node-retrieve-globals` package](https://github.com/zachleat/node-retrieve-globals/).
+
+### Using Template Syntax to Generate Content
 
 The [Custom Transforms feature](https://github.com/11ty/webc#custom-transforms) (e.g. `webc:type`) in the Eleventy WebC plugin has been wired up to the [Eleventy Render plugin](/docs/plugins/render/) to allow you to use existing Eleventy template syntax inside of WebC.
 
@@ -628,18 +705,17 @@ _{{ frontmatterdata }}_
 {% endraw %}
 
 * You have full access to the data cascade here (note `frontmatterdata` is [set in front matter](#front-matter) above).
-* Content returned from custom transforms on `<template>` (or `webc:is="template"`) nodes will be processed as WebC—return any WebC content here! {% addedin "@11ty/webc@0.5.0" %}
+* {% addedin "@11ty/webc@0.5.0" %}Content returned from custom transforms on `<template>` (or `webc:is="template"`) nodes will be processed as WebC—return any WebC content here!
 
-### `webc:type` (JavaScript Render Functions)
+### Using JavaScript to Generate Content
 
-You can also transform individual element content using `webc:type`. In addition to `webc:type="11ty"` above, there are three more bundled types:
+You can also transform individual element content using `webc:type`. In addition to `webc:type="11ty"`, there are three more bundled types:
 
-* `webc:type="js"` {% addedin "@11ty/webc@0.7.1" %} which supercedes `webc:type="render"`
-* `webc:type="css:scoped"` (internal for `webc:scoped`—but overridable!)
+1. `webc:type="js"` {% addedin "@11ty/webc@0.7.1" %}
+1. `webc:type="render"` (superceded by `webc:type="js"`)
+1. `webc:type="css:scoped"` (internal for `webc:scoped`—but overridable!)
 
-JavaScript Render Functions are async friendly (e.g. `async function()`):
-
-#### `webc:type="js"`
+#### JavaScript Render Functions: `webc:type="js"` and `webc:type="render"`
 
 {% addedin "@11ty/webc@0.7.1" %} Run any arbitrary server JavaScript in WebC. Outputs the result of the very last statement executed in the script. Async-friendly (return a promise and we’ll resolve it).
 
@@ -691,7 +767,7 @@ p { color: rebeccapurple; }
 {% codetitle "components/add-banner-to-css.webc" %}
 
 ```html
-<template webc:is="style" webc:root webc:keep>
+<template webc:is="style" webc:root="override">
 	<script webc:type="js">`/* ${license} */`</script>
 	<slot></slot>
 </template>
@@ -701,7 +777,7 @@ p { color: rebeccapurple; }
 <summary>Expand to see this example with <code>webc:type="render"</code></summary>
 
 ```html
-<template webc:is="style" webc:root webc:keep>
+<template webc:is="style" webc:root="override">
 	<script webc:type="render">
 	function() {
 		return `/* ${this.license} */`;
@@ -713,13 +789,10 @@ p { color: rebeccapurple; }
 
 </details>
 
-Bonus tips:
+<details>
+<summary>Expand to see another example of a more complex conditional using <code>webc:type="js"</code></summary>
 
-* You can pair `webc:type="js"` (or `webc:type="render"`) with [`webc:scoped`](#webcscoped)!
-* You do have access to the component attributes and props in the render function (which is covered in another section!).
-* Content returned from render functions of `<template>` (or `webc:is="template"`) nodes will be processed as WebC—return any WebC content here! {% addedin "@11ty/webc@0.5.0" %}
-
-Here’s another example of a more complex conditional (you can also use `webc:if`!):
+Note that you can also use `webc:if`!
 
 ```html
 <script webc:type="js">
@@ -730,6 +803,41 @@ if(alt) {
 }
 </script>
 ```
+
+</details>
+
+Bonus tips:
+
+* You can use `webc:scoped webc:is="style" webc:type="js"` (or `webc:type="render"`) to generate scoped CSS using JavaScript! Read more at [`webc:scoped`](#webcscoped).
+* You have access to the component attributes and props in the render function (which is covered in another section!).
+* {% addedin "@11ty/webc@0.9.0" %}Using `webc:type="js"` has an implied `webc:is="template"` to return content that will be reprocessed as WebC (HTML). You can override this with your own `webc:is` attribute to generate a different tag (e.g. `webc:is="script"` or `webc:is="style"`).
+* {% addedin "@11ty/webc@0.9.0" %}Using `webc:type="js"` has an implied `webc:nokeep` to skip outputting the outer node. You can add `webc:keep` to override this behavior.
+
+#### Extra data for JavaScript Render Functions
+
+{% addedin "@11ty/webc@0.9.0" %}
+
+* `webc.attributes`: an object literal representing the current element’s attributes.
+* `webc.renderAttributes`: a method to render _public_ attributes to a string.
+
+Read more at [Issue #104](https://github.com/11ty/webc/issues/104).
+
+<details>
+<summary>Expand to see an <code>img</code> component example</summary>
+
+One might imagine an `<img>` component definition that merges and re-uses all host component attributes correctly like this:
+
+{% codetitle "components/img.webc" %}
+
+{% raw %}
+```html
+<script webc:type="js" webc:root="override">
+`<img ${webc.renderAttributes(webc.attributes)}>`
+</script>
+```
+{% endraw %}
+
+</details>
 
 ### `webc:raw`
 
@@ -747,6 +855,26 @@ p { color: rebeccapurple; }
 ```
 
 * Related: [`@raw` property](#@raw)
+
+### `webc:ignore`
+
+{% addedin "@11ty/webc@0.9.0" %}Use `webc:ignore` to completely ignore a node and not process or output anything about it.
+
+{% codetitle "components/my-component.webc" %}
+
+```html
+<template webc:ignore>
+Completely disregard me! Useful for server-only <!-- comments -->.
+</template>
+```
+
+### Custom Transforms
+
+This plugin provides a few transforms out of the box: `webc:type="js"`, `webc:type="render"`, `webc:type="css:scoped"`, and `webc:type="11ty"`.
+
+However, adding your own [`webc:type` Custom Transform](https://github.com/11ty/webc#custom-transforms) **directly** to WebC is not yet available in the Eleventy WebC plugin! If this is something folks would like to see added, [please let us know](https://fosstodon.org/@eleventy)!
+
+Do note that you **can** [add your own custom template engine](/docs/languages/custom/) which would be available via `webc:type="11ty"` (e.g. `<style webc:type="11ty" 11ty:type="sass">`).
 
 ### Helper Functions
 
@@ -793,7 +921,9 @@ module.exports = function(eleventyConfig) {
 
 #### Void elements
 
-Custom elements (per specification) are not supported as void elements: they require both a starting and ending tag. You can workaround this limitation using [`webc:is`](#webcis).
+Custom elements (per specification) are not supported as void elements: they require both a starting and ending tag.
+
+Practically speaking, this means a WebC component can not be self-closing. You can workaround this limitation using [`webc:is`](#webcis) (e.g. `<img webc:is="my-component">`).
 
 #### `<head>` Components
 
@@ -810,7 +940,8 @@ There are a few wrinkles when using an HTML parser with custom elements. Notably
 
 ```html
 <head>
-	<!-- <my-custom-head> is not allowed here -->
+	<!-- <my-custom-head> is not allowed here but
+	     <meta webc:is="my-custom-head> is -->
 	<meta webc:is="my-custom-head">
 	<title webc:is="my-custom-title">Default Title</title>
 </head>
@@ -824,6 +955,10 @@ There are two different rendering modes in Eleventy: `page` and `component`. We 
 
 * `page` is used when the markup starts with `<!doctype` (or `<!DOCTYPE`) or `<html` (WebC forces no-quirks parsing).
 * `component` is used otherwise.
+
+#### Differences from HTML parsing
+
+{% addedin "@11ty/webc@0.9.0" %}WebC processes content inside of both `<template>` and `<noscript>` tags. The HTML parser treats these as plaintext.
 
 ## Eleventy + WebC Features
 
@@ -859,7 +994,7 @@ The above example assumes the existence of `_includes/my-layout.webc` (an [Eleve
 ```
 
 * Read more about the WebC properties: [`@raw`](#@raw) {% addedin "@11ty/webc@0.7.1" %} and [`@html`](#@html).
-* {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in `@html` or `@raw` (e.g. `this.content`) when referencing helpers/data/attributes/property values.
+<!-- * {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in `@html` or `@raw` (e.g. `this.content`) when referencing helpers/data/attributes/property values. -->
 
 </details>
 
@@ -921,9 +1056,9 @@ webc:
 
 ### CSS and JS (Bundler mode)
 
-Eleventy WebC will bundle any specific page’s assets (CSS and JS used by components on the page). These are automatically rolled up when a component uses `<script>`, `<style>`, or `<link rel="stylesheet">`. You can use this to implement component-driven Critical CSS.
+Eleventy WebC will bundle any specific page’s assets (CSS and JS used by components on the page). These are automatically rolled up when a component uses `<script>`, `<script src>`, `<style>`, or `<link rel="stylesheet">`. You can use this to implement component-driven Critical CSS.
 
-{% callout "info", "md" %}**Declarative Shadow DOM** note: if a `<style>` is nested inside of [declarative shadow root](https://web.dev/declarative-shadow-dom/) template (`<template shadowroot>`), it is left as is and not aggregated.{% endcallout %}
+{% callout "info", "md" %}Note on **Declarative Shadow DOM**: elements inside of [declarative shadow root](https://web.dev/declarative-shadow-dom/) template (`<template shadowrootmode>` or the deprecated `<template shadowroot>`) are left as is and **not bundled**.{% endcallout %}
 
 {% codetitle "_includes/webc/my-webc-component.webc" %}
 
@@ -931,7 +1066,7 @@ Eleventy WebC will bundle any specific page’s assets (CSS and JS used by compo
 <style>/* This is component CSS */</style>
 <script>/* This is component JS */</script>
 
-<!-- File references work too -->
+<!-- Local file references work too -->
 <link rel="stylesheet" href="my-file.css">
 <script src="my-file.js"></script>
 ```
@@ -958,28 +1093,41 @@ You can opt-out of bundling on a per-element basis [using `webc:keep`](#webckeep
 * {% addedin "@11ty/webc@0.8.0" %}`webc:keep` is required on `<style>` and `<script>` in your layout files to prevent re-bundling the bundles.
 * {% addedin "@11ty/webc@0.8.0" %}The `getCss` and `getJs` helpers are now available to all WebC templates without restriction. Previous versions required them to be used in an _Eleventy Layout_ file.
 * `@raw` was {% addedin "@11ty/webc@0.7.1" %}. Previous versions can use `webc:raw @html`.
-* {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in `@html` or `@raw` (e.g. `this.getCss`/`this.page.url`) when referencing helpers/data/attributes/property values.
+<!-- * {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in `@html` or `@raw` (e.g. `this.getCss`/`this.page.url`) when referencing helpers/data/attributes/property values. -->
 
-{% callout "info", "md-block" %}Outside of `*.webc` files (e.g. in Nunjucks or Liquid layout files), the Eleventy WebC plugin also publishes two universal filters `webcGetCss` and `webcGetJs`, for use like this:
+#### Access Bundles in other Template Engines
+
+You can access these bundles in other templates types like `*.njk` or `.liquid` too.
+
+{% addedin "@11ty/webc@0.9.0" %}Eleventy WebC now uses [`eleventy-plugin-bundle`](https://github.com/11ty/eleventy-plugin-bundle/#use-with-webc) behind the scenes to implement WebC bundling. This plugin provides a [`getBundle` universal shortcode](https://github.com/11ty/eleventy-plugin-bundle/#render-bundle-code) for use in any template type.
+
+{% codetitle "Nunjucks, Liquid", "Syntax" %}
+
+{% raw %}
+```njk
+<style>{% getBundle "css" %}</style>
+<script>{% getBundle "js" %}</script>
+```
+{% endraw %}
+
+<details>
+<summary>Check out the deprecated (but still in place for backwards compatibility) <code>webcGetCss</code> and <code>webcGetJs</code> universal filters for bundle output in WebC 0.8.0 and older</summary>
 
 {% codetitle "_includes/layout.njk" %}
-
 {% raw %}
 ```njk
 <style>{{ page.url | webcGetCss | safe }}</style>
 <script>{{ page.url | webcGetJs | safe }}</script>
 ```
 {% endraw %}
-
 {% codetitle "_includes/layout.liquid" %}
-
 {% raw %}
 ```njk
 <style>{{ page.url | webcGetCss }}</style>
 <script>{{ page.url | webcGetJs }}</script>
 ```
 {% endraw %}
-{% endcallout %}
+</details>
 
 #### Asset bucketing
 
@@ -1017,7 +1165,7 @@ Components can use the `webc:bucket` feature to output to any arbitrary bucket n
 ```
 
 * {% addedin "@11ty/webc@0.8.0" %}`webc:keep` is required on `<style>` and `<script>` in your layout files to prevent re-bundling the bundles.
-* {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in `@html` or `@raw` (e.g. `this.getCss`/`this.page.url`) when referencing helpers/data/attributes/property values.
+<!-- * {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in `@html` or `@raw` (e.g. `this.getCss`/`this.page.url`) when referencing helpers/data/attributes/property values. -->
 
 ### Use with `is-land`
 
