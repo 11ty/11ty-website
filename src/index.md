@@ -41,6 +41,7 @@ eleventyImport:
 	}
 }
 #buildperf-table {
+  width: 100%;
   margin-bottom: 0;
 }
 #buildperf-table tr:first-child td {
@@ -48,6 +49,9 @@ eleventyImport:
 }
 #buildperf-table tr:last-child td {
   border-bottom: none;
+}
+#buildperf-table td:last-child {
+  width: 100%;
 }
 </style>
 <template data-island="once"><link rel="stylesheet" href="/css/throbber.css"></template>
