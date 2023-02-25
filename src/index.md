@@ -49,9 +49,6 @@ eleventyImport:
 #buildperf-table tr:last-child td {
   border-bottom: none;
 }
-#buildperf-table td:last-child {
-  min-width: 40ch;
-}
 </style>
 <template data-island="once"><link rel="stylesheet" href="/css/throbber.css"></template>
 <table id="buildperf-table">
