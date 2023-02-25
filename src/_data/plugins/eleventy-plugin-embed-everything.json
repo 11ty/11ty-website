@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-embed-everything",
+	"author": "gfscott",
+	"description": "Automatically embed YouTube, Vimeo, Spotify, Twitter, and more, based on just their URLs."
+}
