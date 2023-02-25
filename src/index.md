@@ -21,7 +21,7 @@ eleventyImport:
 {% callout %}<strong><a href="{{ highlightedBlogPost.data.page.url }}">{{ highlightedBlogPost.data.newstitle }}</a></strong> and more on the <a href="/blog/">Eleventy Blog</a>.{% endcallout %}
 {%- endif %}
 
-### Build Performance
+<p class="ta-c"><em>Eleventy has <strong>Fast Builds</strong></em></p>
 
 <is-land id="buildperf-island" on:visible import="/js/throbber.js">
 <style>
@@ -87,7 +87,7 @@ eleventyImport:
 </table>
 </is-land>
 
-From a [build benchmark of ×4000 markdown files](https://www.zachleat.com/web/build-benchmark/#benchmark-results). Learn more about [Eleventy’s site and build performance](/docs/performance/).
+From a [benchmark of ×4000 markdown files](https://www.zachleat.com/web/build-benchmark/#benchmark-results). Learn more about [Eleventy’s site and build performance](/docs/performance/).
 
 ## Quick Start
 
