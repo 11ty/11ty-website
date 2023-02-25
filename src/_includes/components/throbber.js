@@ -8,7 +8,7 @@ window.customElements.define("text-throbber", class extends HTMLElement {
 		const perInterval = parseInt(this.getAttribute("interval")) || 2000;
 		// one character per two seconds
 
-		this.innerText = "&#160;";
+		this.innerHTML = "&#160;";
 		this.setAttribute("aria-hidden", "true");
 
 		let bar = [];
