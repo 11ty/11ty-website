@@ -237,6 +237,11 @@ table thead th {
 table thead th a[href] {
 	color: inherit;
 }
+table .numeric {
+	text-align: right;
+	font-family: Roboto Mono, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+}
+
 @media (prefers-color-scheme: dark) {
 	table th {
 		border-color: #555;

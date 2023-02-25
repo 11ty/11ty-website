@@ -307,6 +307,11 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addPassthroughCopy({
+		"src/_includes/components/throbber.js": "js",
+		"src/_includes/components/throbber.css": "css"
+	});
+
+	eleventyConfig.addPassthroughCopy({
 		"node_modules/@11ty/logo/assets/logo-bg.svg": "img/logo-github.svg",
 		"node_modules/@11ty/logo/assets/open-graph.jpg": "img/open-graph.jpg",
 		// "node_modules/@11ty/logo/img/logo.svg": "img/logo.svg",

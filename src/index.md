@@ -21,6 +21,46 @@ eleventyImport:
 {% callout %}<strong><a href="{{ highlightedBlogPost.data.page.url }}">{{ highlightedBlogPost.data.newstitle }}</a></strong> and more on the <a href="/blog/">Eleventy Blog</a>.{% endcallout %}
 {%- endif %}
 
+### Build Performance
+
+<is-land on:visible import="/js/throbber.js">
+<template data-island="once"><link rel="stylesheet" href="/css/throbber.css"></template>
+<style>#buildperf-table td:last-child { min-width: 40ch; }</style>
+<table id="buildperf-table">
+<thead>
+<tr class="sr-only">
+<th>Tool</th>
+<th class="numeric">×4000 Files</th>
+<th class="numeric"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Eleventy</td>
+<td class="numeric">1.93<abbr title="seconds">s</abbr></td>
+<td><text-throbber duration="1930"></text-throbber></td>
+</tr>
+<tr>
+<td>Astro</td>
+<td class="numeric">22.90<abbr title="seconds">s</abbr></td>
+<td><text-throbber duration="22900"></text-throbber></td>
+</tr>
+<tr>
+<td>Gatsby</td>
+<td class="numeric">29.05<abbr title="seconds">s</abbr></td>
+<td><text-throbber duration="29050"></text-throbber></td>
+</tr>
+<tr>
+<td>Next.js</td>
+<td class="numeric">70.65<abbr title="seconds">s</abbr></td>
+<td><text-throbber duration="70650"></text-throbber></td>
+</tr>
+</tbody>
+</table>
+</is-land>
+
+From a [build benchmark of ×4000 markdown files](https://www.zachleat.com/web/build-benchmark/#benchmark-results). Learn more about [Eleventy’s site and build performance](/docs/performance/).
+
 ## Quick Start
 
 Create a Markdown file.

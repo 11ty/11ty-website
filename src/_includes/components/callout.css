@@ -236,7 +236,6 @@ body > .elv-callout-sticky .elv-callout-label {
 		margin-left: -1rem;
 		font-size: 0.9375em; /* 15px /16 */
 		line-height: 2;
-		font-style: italic;
 	}
 }
 @media (min-width: 64em) and (max-width: 76.875em) { /* 1024px–1230px */
