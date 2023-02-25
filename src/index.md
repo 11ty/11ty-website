@@ -21,7 +21,7 @@ eleventyImport:
 {% callout %}<strong><a href="{{ highlightedBlogPost.data.page.url }}">{{ highlightedBlogPost.data.newstitle }}</a></strong> and more on the <a href="/blog/">Eleventy Blog</a>.{% endcallout %}
 {%- endif %}
 
-<p class="ta-c"><em>Eleventy has <strong>Fast Builds</strong></em></p>
+<p class="ta-c elv-h3"><em>Fast Builds and even Faster Web Sites</em></p>
 
 <is-land id="buildperf-island" on:visible import="/js/throbber.js">
 <style>

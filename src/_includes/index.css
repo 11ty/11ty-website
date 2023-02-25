@@ -276,6 +276,8 @@ h3,
 h4,
 h5,
 .elv-hed,
+.elv-h2,
+.elv-h3,
 .benchnine {
 	font-family: BenchNine, system-ui, -apple-system, sans-serif;
 }
@@ -299,18 +301,21 @@ main .elv-toc + h1 {
 		margin-top: 0;
 	}
 }
-h2 {
+h2,
+.elv-h2 {
 	font-size: 2.222222222222em; /* 40px /18 */
 	border-bottom: 1px solid #ddd;
 	margin: 2em 0 .25em;
 	line-height: 1.1;
 }
 @media (prefers-color-scheme: dark) {
-	h2 {
+	h2,
+	.elv-h2 {
 		border-color: #555;
 	}
 }
-h3 {
+h3,
+.elv-h3 {
 	font-size: 1.666666666667em; /* 30px /18 */
 	margin-bottom: .5em;
 }
