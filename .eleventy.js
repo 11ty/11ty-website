@@ -307,8 +307,8 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addPassthroughCopy({
-		"src/_includes/components/throbber.js": "js",
-		"src/_includes/components/throbber.css": "css"
+		"src/_includes/components/throbber.js": "js/throbber.js",
+		"src/_includes/components/throbber.css": "css/throbber.css"
 	});
 
 	eleventyConfig.addPassthroughCopy({
