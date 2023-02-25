@@ -30,7 +30,11 @@ Sites listed on the [Eleventy Leaderboards](/speedlify/) are tested and ranked (
 
 <is-land on:visible import="/js/throbber.js">
 <template data-island="once"><link rel="stylesheet" href="/css/throbber.css"></template>
-<style>#buildperf-table td:last-child { min-width: 40ch; }</style>
+<style>
+#buildperf-table td:last-child {
+  width: 100%;
+}
+</style>
 <table id="buildperf-table">
 <thead>
 <tr>
@@ -88,7 +92,11 @@ Data taken from [_Which Generator Builds Markdown the Fastest?_ (July 2022)](htt
 
 <is-land on:visible import="/js/throbber.js">
 <template data-island="once"><link rel="stylesheet" href="/css/throbber.css"></template>
-<style>#install-table td:last-child { min-width: 28ch; }</style>
+<style>
+#install-table td:last-child {
+  width: 100%;
+}
+</style>
 <table id="install-table">
 <thead>
   <tr>

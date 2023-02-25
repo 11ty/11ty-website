@@ -44,6 +44,9 @@ eleventyImport:
   width: 100%;
   margin-bottom: 0;
 }
+#buildperf-table td {
+  border-color: #444;
+}
 #buildperf-table tr:first-child td {
   border-top: none;
 }
