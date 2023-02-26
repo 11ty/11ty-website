@@ -77,7 +77,7 @@ We enable pagination and then give it a dataset with the `data` key. We control 
     next: {}, // Next page’s chunk of data
     previous: {}, // Previous page’s chunk of data
     first: {},
-    last: {}},
+    last: {},
   }
 }
 ```
