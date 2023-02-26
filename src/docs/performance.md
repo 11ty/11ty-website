@@ -101,7 +101,7 @@ Data taken from [_Which Generator Builds Markdown the Fastest?_ (July 2022)](htt
 <thead>
   <tr>
     <th>Tool</th>
-    <th class="ta-c"><code>node_modules</code><br>Weight</th>
+    <th class="ta-c"><code>node_<wbr>modules</code><br>Weight</th>
     <th class="ta-c"><code>npm install</code><br>Time</th>
     <th></th>
   </tr>
