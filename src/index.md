@@ -31,14 +31,19 @@ eleventyImport:
   margin-right: -1rem;
   padding: 1rem;
   background-color: #272822;
-	color: #fff;
+  color: #fff;
   border-radius: .3em;
 }
+#buildperf-island thead th {
+  color: #ccc;
+}
+#buildperf-island thead th {
+  border-color: #999;
+}
 @media (prefers-color-scheme: dark) {
-	#buildperf-island {
-		background-color: #000;
-		color: #fff;
-	}
+  #buildperf-island {
+    background-color: #000;
+  }
 }
 #buildperf-table {
   width: 100%;
@@ -60,10 +65,9 @@ eleventyImport:
 <template data-island="once"><link rel="stylesheet" href="/css/throbber.css"></template>
 <table id="buildperf-table">
 <thead>
-<tr class="sr-only">
+<tr>
 <th>Tool</th>
-<th class="numeric">×4000 Files</th>
-<th class="numeric"></th>
+<th colspan="2">×4000 Markdown Files</th>
 </tr>
 </thead>
 <tbody>
