@@ -8,6 +8,3 @@ text-throbber {
 	-moz-hyphens: manual;
 	hyphens: manual;
 }
-text-throbber.finished:after {
-	content: " 🏁";
-}

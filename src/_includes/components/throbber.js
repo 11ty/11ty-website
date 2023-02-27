@@ -1,12 +1,12 @@
 window.customElements.define("text-throbber", class extends HTMLElement {
 	connectedCallback() {
-		const animationSpeed = 150;
+		const animationSpeed = 100;
 
 		// thank you https://www.npmjs.com/package/throbber
 		const characters = ["|","\\","-","/","|","\\","-","/"];
 		const duration = parseInt(this.getAttribute("duration"), 10) || 1000;
-		const perInterval = parseInt(this.getAttribute("interval")) || 2000;
-		// one character per two seconds
+		const perInterval = parseInt(this.getAttribute("interval")) || 1000;
+		const finish = this.getAttribute("finish") || " 🏁";
 
 		this.innerHTML = "&#160;";
 		this.setAttribute("aria-hidden", "true");
@@ -21,14 +21,15 @@ window.customElements.define("text-throbber", class extends HTMLElement {
 				index++;
 				index = index % characters.length;
 
-				let timeDiff = Date.now() - startTime.getTime();
-				if(timeDiff > perInterval * bar.length) {
-					bar.push("=")
+				let timeDiff = Date.now() - startTime.getTime() - perInterval;
+
+				if(timeDiff > perInterval * bar.length && bar.length < duration / 1000) {
+					bar.push("=");
 				}
 
-				if(Date.now() - startTime.getTime() > duration) {
+				if(Date.now() - startTime.getTime() >= duration) {
 					window.clearInterval(interval);
-					this.innerHTML = bar.join("");
+					this.innerHTML = bar.join("") + finish;
 					this.classList.add("finished");
 				}
 			})
