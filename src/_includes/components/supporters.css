@@ -42,18 +42,18 @@
 }
 /* Gold supporters */
 .supporters-gold {
-	--lo-margin-h: 2em;
-	--lo-stackpoint: 34.375em;
+	--fl-gap-h: 2em;
+	--fl-stackpoint: 34.375em;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 }
-.supporters-gold .lo-c {
+.supporters-gold .lo-grid > * {
 	display: flex;
 	align-items: stretch;
 	justify-content: center;
 	flex-direction: column;
 }
-.supporters-gold .lo-c a[href] {
+.supporters-gold a[href] {
 	display: flex;
 	justify-content: center;
 }
@@ -93,8 +93,8 @@
 
 .supporters-gold .lo-grid {
 	--lo-c-minwidth: 8em;
-	--lo-margin-v: 2em;
-	--lo-margin-h: 3em;
+	--fl-gap-v: 2em;
+	--fl-gap-h: 3em;
 }
 .supporters-gold .logo,
 .supporters-gold svg {

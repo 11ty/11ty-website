@@ -7,11 +7,11 @@ eleventyComputed:
 ---
 # {{ newstitle }}
 
-<div class="lo lo-inline lo-separator-h" style="--lo-margin-h: 1.5em; --lo-margin-v: .5em">
-  <div class="lo-c lo-nocontentwrap">
+<div class="fl fl-inline fl-separator-h fl-nowrap" style="--fl-gap-h: 1.5em; --fl-gap-v: .5em">
+  <div>
     <em>{{ page.date | newsDate }}</em>
   </div>
-  <div class="lo-c lo-nocontentwrap">
+  <div>
     {% emoji "📢" %} <a href="/blog/feed.xml">Subscribe to the Eleventy News Feed</a>
   </div>
 </div>

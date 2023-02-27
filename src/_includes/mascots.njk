@@ -1,7 +1,7 @@
 <div class="sites-vert sites-vert--lg">
-  <div class="lo-grid" style="--lo-margin-v: 5em;">
+  <div class="lo-grid" style="--fl-gap-v: 5em;">
 {%- for mascot in mascots %}
-<div class="lo-c sites-site-vert">
+<div class="sites-site-vert">
   <a href="{{ mascot.url }}" class="elv-externalexempt">
     <div class="img-gallery">
       {% image mascot.image, mascot.name, [250], "sites-screenshot" %}

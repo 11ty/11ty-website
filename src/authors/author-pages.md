@@ -65,7 +65,7 @@ css:
 
 ### {{ displayName }}’s Sites:
 
-<div class="lo sites-lo" style="--lo-margin-h: 2rem; --lo-margin-v: 1rem; --lo-stackpoint: 31.25em;">
+<div class="fl sites-lo" style="--fl-gap-h: 2rem; --fl-gap-v: 1rem; --fl-stackpoint: 31.25em;">
 {%- for site in author.sites %}
   {%- set showMetadata = true %}
   {% include "site.njk" %}

@@ -1,5 +1,5 @@
 <div class="fullwidth-module mt-8">
-	<div class="lo lo-c-center" style="--lo-margin-h: 1em">
+	<div class="fl fl-inline fl-nowrap lo-c-center">
 		<h2 class="subhed">Eleventy is <a href="/docs/supporters/">supported</a> by</h2>
 		<a href="https://www.netlify.com/" class="elv-externalexempt" rel="sponsored">
 			<span class="sr-only">Netlify</span>
@@ -28,9 +28,9 @@
 	<div class="lo-grid">
 	{%- for supporter in opencollective.supporters %}{% if supporter.tier.slug == "gold-sponsor" and supporter.isMonthly -%}
 	{%- set nameToSlug = supporter.name | slug | lower -%}
-	<div class="lo-c{% if opencollectiveExtra[nameToSlug].containerClass %} {{ opencollectiveExtra[nameToSlug].containerClass }}{% endif %}">
-		<a href="{{ opencollectiveExtra[nameToSlug].href or supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}" rel="sponsored">{% if opencollectiveExtra[nameToSlug].icon %}{{ opencollectiveExtra[nameToSlug].icon | safe }}<span class="sr-only">{{ supporter.name }}</span>{% else %}{% opencollectiveavatar supporter.image, supporter.name %}{{ supporter.name }}{% endif %}</a>
-	</div>
+  	<div class="{% if opencollectiveExtra[nameToSlug].containerClass %} {{ opencollectiveExtra[nameToSlug].containerClass }}{% endif %}">
+  		<a href="{{ opencollectiveExtra[nameToSlug].href or supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}" rel="sponsored">{% if opencollectiveExtra[nameToSlug].icon %}{{ opencollectiveExtra[nameToSlug].icon | safe }}<span class="sr-only">{{ supporter.name }}</span>{% else %}{% opencollectiveavatar supporter.image, supporter.name %}{{ supporter.name }}{% endif %}</a>
+  	</div>
 	{%- endif %}{% endfor %}
 	</div>
 </div>

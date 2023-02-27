@@ -20,7 +20,7 @@ eleventyNavigation:
   </label>
 </form>
 <div class="sites-vert sites-vert--lg">
-  <div class="lo-grid" style="--lo-margin-v: 5em;">
+  <div class="lo-grid" style="--fl-gap-v: 5em;">
 {%- for site in starters | sortObjectByOrder %}
 {%- if site.disabled != true and site.official %}
 {%- set siteData = speedlifyStarters.data[site.demo] or speedlifyStarters.data[site.url] %}

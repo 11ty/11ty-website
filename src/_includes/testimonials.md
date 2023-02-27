@@ -1,8 +1,8 @@
 <div class="testimonials">
-	<div class="testimonials-lo lo">
+	<div class="testimonials-layout fl">
 {%- for testimonial in testimonials | shuffle %}
 {%- if testimonial.featured %}
-		<div class="lo-c">{% testimonial testimonial %}</div>
+		<div>{% testimonial testimonial %}</div>
 {%- endif %}
 {%- endfor %}
 	</div>

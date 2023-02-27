@@ -34,17 +34,17 @@ ignoreGitHubButtons: true
 
 Eleventy is supported by [folks <strong>like {% emoji "👋" %} <span class="nowrap" data-investors-avatar="prepend">you</span></strong>](/docs/supporters/) that want to invest in better, longer lasting tools to create on the web.
 
-<div class="lo" style="--lo-margin-h: 1em; --lo-margin-v: .5em">
-    <div class="lo-c">
+<div class="fl">
+    <div>
         <a href="https://opencollective.com/11ty" class="btn-primary btn-primary-sm benchnine rainbow-active rainbow-active-noanim elv-externalexempt">Contribute</a>
     </div>
-    <div class="lo-c" style="flex-basis: 30em">
+    <div style="flex-basis: 30em">
 
 As a thank you to our Supporters, Eleventy will:
 
 {% include "supporter-benefits.njk" %}
 
-</div><!-- /lo-c --></div><!-- /lo -->
+</div></div>
 
 All Eleventy contributors on Open Collective will be given a <a href="/docs/account/">Contributor Account</a> with access to Contributor-only features. To sign up, donate to <a href="https://opencollective.com/11ty"><strong>Support Eleventy</strong> on Open Collective {% emoji "🎁" %}</a>!
 

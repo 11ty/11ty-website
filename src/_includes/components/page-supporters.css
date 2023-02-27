@@ -1,18 +1,17 @@
 /* Supporters Page */
 .supporters-facepile {
-	--lo-margin-h: 1rem;
-	--lo-margin-v: 1rem;
+	--fl-gap-v: 1rem;
 }
 .supporters-facepile.supporters-facepile {
 	padding: 0;
 }
-.supporters-facepile > .lo-c {
+.supporters-facepile > * {
 	flex-basis: 15rem;
 	padding-bottom: 1rem;
 	border-bottom: 1px solid #ddd;
 }
 @media (prefers-color-scheme: dark) {
-	.supporters-facepile > .lo-c {
+	.supporters-facepile > * {
 		border-bottom: 1px solid #444;
 	}
 }
@@ -21,18 +20,16 @@
 	white-space: nowrap;
 	font-weight: 600;
 }
-.supporters-facepile .lo {
+.supporters-facepile .fl {
 	/*position: relative;
 	top: -.5em;*/
 	width: 100%;
-	--lo-margin-h: 1rem;
-	--lo-margin-v: .5rem;
-	--lo-stackpoint: 300px;
+	--fl-stackpoint: 300px;
 	align-items: flex-start;
 	padding-left: calc(38px + 5vw);
 }
 @media (min-width: 37.5em) { /* 600px */
-	.supporters-facepile .lo {
+	.supporters-facepile .fl {
 		padding-left: 68px;
 	}
 }

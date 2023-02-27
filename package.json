@@ -80,6 +80,7 @@
     "@tweetback/canonical": "^2.0.29",
     "@zachleat/details-utils": "^2.0.2",
     "@zachleat/filter-container": "^3.0.4",
+    "@zachleat/flex-luthor": "^4.0.2",
     "@zachleat/seven-minute-tabs": "^2.0.0",
     "lite-youtube-embed": "^0.2.0",
     "pagefind": "^0.11.0",

@@ -82,7 +82,7 @@ However, if you want to customize Eleventy to do your own optimizations, you may
 Take a look at the list below for some ideas on where to deploy your Eleventy project. There are many deployment options available and this is not an exhaustive list.
 
 <div class="sites-vert sites-vert--lg">
-  <div class="lo-grid" style="--lo-margin-v: 5em;">
+  <div class="lo-grid" style="--fl-gap-v: 5em;">
 {%- for site in hosts %}
 {% include "site-card.njk" %}
 {%- endfor %}
@@ -94,7 +94,7 @@ Take a look at the list below for some ideas on where to deploy your Eleventy pr
 Many hosts provide a command line utility to deploy your project. Here are some options:
 
 <div class="sites-vert sites-vert--lg">
-  <div class="lo-grid" style="--lo-margin-v: 5em;">
+  <div class="lo-grid" style="--fl-gap-v: 5em;">
 {%- for site in clis %}
 {% include "site-card.njk" %}
 {%- endfor %}
@@ -106,7 +106,7 @@ Many hosts provide a command line utility to deploy your project. Here are some 
 There are some great Web editors popping up that you can use to run and edit Eleventy projects online! Here are some options:
 
 <div class="sites-vert sites-vert--lg">
-  <div class="lo-grid" style="--lo-margin-v: 5em;">
+  <div class="lo-grid" style="--fl-gap-v: 5em;">
 {%- for site in webides %}
 {% set hideRelatedLinks = site.hideRelatedLinks %}
 {% include "site-card.njk" %}

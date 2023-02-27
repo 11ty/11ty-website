@@ -1,6 +1,6 @@
 .search-lo {
-	--lo-margin-h: 0;
-	--lo-margin-v: .5rem;
+	--fl-gap-h: 0;
+	--fl-gap-v: .5rem;
 	flex-wrap: nowrap;
 	max-width: 33em;
 }

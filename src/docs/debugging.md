@@ -20,14 +20,14 @@ This makes use of something called Environment variables to enable, specifically
 
 What is the difference between Local and [Global installation](/docs/global-installation/)?
 
-<div class="lo" style="--lo-stackpoint: 30em; --lo-margin-h: 1em; --lo-margin-v: .5em">
-	<div class="lo-c">Installed Globally</div>
-	<div class="lo-c lo-maxgrow">{% highlight "bash" %}DEBUG=Eleventy* eleventy{% endhighlight %}</div>
+<div class="fl" style="--fl-stackpoint: 30em;">
+	<div>Installed Globally</div>
+	<div class="lo-maxgrow">{% highlight "bash" %}DEBUG=Eleventy* eleventy{% endhighlight %}</div>
 </div>
 
-<div class="lo" style="--lo-stackpoint: 30em; --lo-margin-h: 1em; --lo-margin-v: .5em">
-	<div class="lo-c">Installed Locally</div>
-	<div class="lo-c lo-maxgrow">{% highlight "bash" %}DEBUG=Eleventy* npx @11ty/eleventy{% endhighlight %}</div>
+<div class="fl" style="--fl-stackpoint: 30em;">
+	<div>Installed Locally</div>
+	<div class="lo-maxgrow">{% highlight "bash" %}DEBUG=Eleventy* npx @11ty/eleventy{% endhighlight %}</div>
 </div>
 
 ### Windows
@@ -38,28 +38,28 @@ Read more about [Windows environment variables](https://www.npmjs.com/package/de
 
 What is the difference between Local and [Global installation](/docs/global-installation/)?
 
-<div class="lo" style="--lo-stackpoint: 30em; --lo-margin-h: 1em; --lo-margin-v: .5em">
-	<div class="lo-c">Installed Locally</div>
-	<div class="lo-c lo-maxgrow">{% highlight "bash" %}set DEBUG=Eleventy* & npx @11ty/eleventy{% endhighlight %}</div>
+<div class="fl" style="--fl-stackpoint: 30em;">
+	<div>Installed Locally</div>
+	<div class="lo-maxgrow">{% highlight "bash" %}set DEBUG=Eleventy* & npx @11ty/eleventy{% endhighlight %}</div>
 </div>
 
-<div class="lo" style="--lo-stackpoint: 30em; --lo-margin-h: 1em; --lo-margin-v: .5em">
-	<div class="lo-c">Installed Globally</div>
-	<div class="lo-c lo-maxgrow">{% highlight "bash" %}set DEBUG=Eleventy* & eleventy{% endhighlight %}</div>
+<div class="fl" style="--fl-stackpoint: 30em;">
+	<div>Installed Globally</div>
+	<div class="lo-maxgrow">{% highlight "bash" %}set DEBUG=Eleventy* & eleventy{% endhighlight %}</div>
 </div>
 
 #### Powershell (VS Code default)
 
 What is the difference between Local and [Global installation](/docs/global-installation/)?
 
-<div class="lo" style="--lo-stackpoint: 30em; --lo-margin-h: 1em; --lo-margin-v: .5em">
-	<div class="lo-c">Installed Locally</div>
-	<div class="lo-c lo-maxgrow">{% highlight "bash" %}$env:DEBUG="Eleventy*"; npx @11ty/eleventy{% endhighlight %}</div>
+<div class="fl" style="--fl-stackpoint: 30em;">
+	<div>Installed Locally</div>
+	<div class="lo-maxgrow">{% highlight "bash" %}$env:DEBUG="Eleventy*"; npx @11ty/eleventy{% endhighlight %}</div>
 </div>
 
-<div class="lo" style="--lo-stackpoint: 30em; --lo-margin-h: 1em; --lo-margin-v: .5em">
-	<div class="lo-c">Installed Globally</div>
-	<div class="lo-c lo-maxgrow">{% highlight "bash" %}$env:DEBUG="Eleventy*"; eleventy{% endhighlight %}</div>
+<div class="fl" style="--fl-stackpoint: 30em;">
+	<div>Installed Globally</div>
+	<div class="lo-maxgrow">{% highlight "bash" %}$env:DEBUG="Eleventy*"; eleventy{% endhighlight %}</div>
 </div>
 
 ## Learn More

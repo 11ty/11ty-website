@@ -88,8 +88,8 @@
 	object-fit: contain;
 }
 .sites-vert > .lo-grid {
-  --lo-margin-h: 1rem;
-  --lo-margin-v: 1rem;
+  --fl-gap-h: 1rem;
+  --fl-gap-v: 1rem;
   --lo-c-minwidth: 7.777777777778em; /* 140px /18 */
 	--lo-grid-repeat: auto-fill;
 }

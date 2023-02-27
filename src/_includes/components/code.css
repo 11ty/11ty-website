@@ -43,7 +43,7 @@ table code {
 	-ms-word-break: normal;
 	word-break: normal;
 }
-.lo-c > pre {
+.fl > * > pre {
 	margin-top: 0;
 }
 em code {

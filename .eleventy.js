@@ -733,7 +733,7 @@ communityLinks:
 
 to:
 
-<div class="lo-c sites-site-vert">
+<div class="sites-site-vert">
   <a href="{{ site.url }}" class="elv-externalexempt">
     {% avatarlocalcache "twitter", site.twitter %}{{ site.name }}
     <div class="sites-screenshot-container">

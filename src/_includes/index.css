@@ -384,6 +384,10 @@ li ol {
 .list-bare {
 	list-style: none;
 	padding: 0;
+	margin: 0;
+}
+.list-bare > li {
+	padding: 0;
 }
 .list-bare-desc {
 	display: block;
@@ -730,11 +734,11 @@ main .elv-toc + h1 .direct-link {
 
 
 /* Testimonials */
-.testimonials-lo.lo {
-	--lo-margin-h: 2em;
-	--lo-margin-v: 2em;
+.testimonials-layout.fl {
+	--fl-gap-h: 2em;
+	--fl-gap-v: 2em;
 }
-.testimonials-lo .lo-c {
+.testimonials-layout.fl > * {
 	flex-basis: 25em; /* 400px /16 */
 }
 .testimonials blockquote,
@@ -928,9 +932,8 @@ main .elv-toc + h1 .direct-link {
 
 /* Business Network */
 .business-network-primary.business-network-primary {
-	--lo-stackpoint: 37.5em; /* 600px /16 */
-	--lo-margin-h: 1em;
-	--lo-margin-v: 1em;
+	--fl-stackpoint: 37.5em; /* 600px /16 */
+	--fl-gap-v: 1em;
 }
 .business-network-sites {
 	padding-top: 1em;
@@ -1064,4 +1067,7 @@ details.toc[open] > summary {
 }
 .mt-8 {
 	margin-top: 4em;
+}
+.mb-2 {
+	margin-bottom: 1em;
 }
