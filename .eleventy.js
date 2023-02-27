@@ -513,7 +513,13 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addShortcode("testimonial", function(testimonial) {
-		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, shortcodes.avatar("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`) + testimonial.name)}</span>` : ``}</p></blockquote>`;
+		let avatarHtml = "";
+		if(testimonial.twitter) {
+			avatarHtml = shortcodes.avatar("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`);
+		} else if(testimonial.avatarUrl) {
+			avatarHtml = shortcodes.getIndieAvatarHtml(testimonial.avatarUrl);
+		}
+		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, avatarHtml + testimonial.name)}</span>` : ``}</p></blockquote>`;
 	});
 
 	eleventyConfig.addFilter("filterBusinessPeople", function(authors) {

@@ -226,6 +226,12 @@ module.exports = async function() {
 			"name": "Google",
 			"source": "https://opensource.googleblog.com/2022/03/Announcing-First-Group-of-Google-Open-Source-Peer-Bonus-Winners-in-2022.html",
 			"featured": true
+		},{
+			"text": `I use Eleventy on almost every project at this point and I love it.`,
+			"avatarUrl": "https://lea.verou.me/",
+			"name": "Lea Verou",
+			"source": "https://twitter.com/LeaVerou/status/1629652201168576512",
+			"featured": true
 		},
 	].map(entry => {
 		// canonical urls via @tweetback/canonical
