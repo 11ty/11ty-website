@@ -211,19 +211,23 @@ module.exports = async function() {
 		},{
 			"text": `#1 Product of the Day (May 2022)`,
 			"name": "Product Hunt",
+			"avatarUrl": "https://producthunt.com/",
 			"source": "https://www.producthunt.com/products/eleventy",
 			"featured": true
 		},{
 			"text": `2018 winner of the Google Open Source Peer Bonus Award`,
 			"name": "Google",
+			"avatarUrl": "https://google.com/",
 			"source": "https://opensource.googleblog.com/2018/03/congratulating-open-source-peer-bonus-winners.html"
 		},{
 			"text": `2019 winner of the Google Open Source Peer Bonus Award`,
 			"name": "Google",
+			"avatarUrl": "https://google.com/",
 			"source": "https://opensource.googleblog.com/2019/04/google-open-source-peer-bonus-winners.html"
 		},{
 			"text": `2022 winner of the Google Open Source Peer Bonus Award`,
 			"name": "Google",
+			"avatarUrl": "https://google.com/",
 			"source": "https://opensource.googleblog.com/2022/03/Announcing-First-Group-of-Google-Open-Source-Peer-Bonus-Winners-in-2022.html",
 			"featured": true
 		},{
