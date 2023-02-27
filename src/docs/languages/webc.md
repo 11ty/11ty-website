@@ -664,7 +664,7 @@ This is similar to using [JavaScript as a custom Eleventy Front Matter type](/do
 
 ```html
 <script webc:setup>
-const myHtml = "<my-webc-component></my-webc-component>;
+const myHtml = "<my-webc-component></my-webc-component>";
 
 function alwaysBlue() {
   return "blue";
