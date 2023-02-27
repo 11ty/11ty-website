@@ -1,6 +1,5 @@
 text-throbber {
-	display: flex;
-	gap: 0 .25em;
+	display: block;
 	line-height: 1.2;
 	font-family: Roboto Mono, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
 	-ms-word-break: break-all;

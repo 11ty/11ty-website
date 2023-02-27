@@ -33,12 +33,14 @@ eleventyImport:
   background-color: #272822;
   color: #fff;
   border-radius: .3em;
+  padding-top: .5em;
+  padding-bottom: .5em;
 }
 #buildperf-island thead th {
   color: #ccc;
 }
 #buildperf-island thead th {
-  border-color: #999;
+  border-color: #555;
 }
 @media (prefers-color-scheme: dark) {
   #buildperf-island {
@@ -49,8 +51,11 @@ eleventyImport:
   width: 100%;
   margin-bottom: 0;
 }
+#buildperf-table th {
+  text-transform: none;
+}
 #buildperf-table td {
-  border-color: #444;
+  border-color: transparent;
 }
 #buildperf-table tr:first-child td {
   border-top: none;
@@ -66,8 +71,8 @@ eleventyImport:
 <table id="buildperf-table">
 <thead>
 <tr>
-<th>Tool</th>
-<th colspan="2">×4000 Markdown Files</th>
+<th>Name</th>
+<th colspan="2">Building ×4000 Markdown Files</th>
 </tr>
 </thead>
 <tbody>
