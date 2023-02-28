@@ -32,7 +32,13 @@
 }
 
 /* Spacer */
+.elv-docs .elv-nav-docs-only.spacer {
+	display: none;
+}
 @media (min-width: 53.75em) { /* 860px */
+	.elv-docs .elv-nav-docs-only.spacer {
+		display: inherit;
+	}
 	.elv-docs .elv-nav-header > .fl .spacer {
 		flex-grow: 999;
 	}
