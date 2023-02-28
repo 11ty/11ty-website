@@ -23,13 +23,17 @@
 	}
 }
 
-/* Spacer */
-.elv-nav-header > .fl .spacer {
+/* Docs only links (not home page) */
+.elv-nav-docs-only {
 	display: none;
 }
+.elv-docs .elv-nav-docs-only {
+	display: inherit;
+}
+
+/* Spacer */
 @media (min-width: 53.75em) { /* 860px */
 	.elv-docs .elv-nav-header > .fl .spacer {
-		display: inherit;
 		flex-grow: 999;
 	}
 }
