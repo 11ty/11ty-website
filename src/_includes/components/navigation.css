@@ -2,16 +2,42 @@
 	justify-content: center;
 }
 
+.elv-nav-header > .fl {
+	--fl-gap-h: .75em;
+}
 @media (max-width: 24.9375em) { /* 399px */
 	.elv-nav-header > .fl > * {
 		flex-basis: 45%;
 	}
-	/* Hide separators */
-	.elv-nav-header > .fl > :before {
-		display: none;
+}
+
+/* Make room for the possum */
+@media (min-width: 25em) { /* 400px */
+	.elv-docs .elv-nav-header > .fl {
+		margin-right: 6em;
 	}
 }
-.elv-nav-header b {
+@media (min-width: 85em) { /* 1360px */
+	.elv-docs .elv-nav-header > .fl {
+		margin-right: 2.5rem;
+	}
+}
+
+/* Spacer */
+.elv-nav-header > .fl .spacer {
+	display: none;
+}
+@media (min-width: 53.75em) { /* 860px */
+	.elv-docs .elv-nav-header > .fl .spacer {
+		display: inherit;
+		flex-grow: 999;
+	}
+}
+
+.elv-nav-header a {
+	font-weight: 600;
+}
+.elv-nav-header .elv-nav-light {
 	font-weight: 300;
 }
 
