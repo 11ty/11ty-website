@@ -75,6 +75,7 @@
     "terser": "^5.16.5"
   },
   "dependencies": {
+    "@11ty/eleventy-plugin-webc": "^0.9.1",
     "@11ty/is-land": "^3.0.1",
     "@11ty/logo": "^2.0.6",
     "@tweetback/canonical": "^2.0.29",

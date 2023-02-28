@@ -23,82 +23,9 @@ eleventyImport:
 
 <p class="ta-c elv-h3"><em>Fast Builds and even Faster Web Sites</em></p>
 
-<is-land id="buildperf-island" on:visible import="/js/throbber.js">
-<style>
-#buildperf-island {
-  display: block;
-  margin-left: -1rem;
-  margin-right: -1rem;
-  padding: 1rem;
-  background-color: #272822;
-  color: #fff;
-  border-radius: .3em;
-  padding-top: .5em;
-  padding-bottom: .5em;
-}
-#buildperf-island thead th {
-  color: #ccc;
-}
-#buildperf-island thead th {
-  border-color: #555;
-}
-@media (prefers-color-scheme: dark) {
-  #buildperf-island {
-    background-color: #000;
-  }
-}
-#buildperf-table {
-  width: 100%;
-  margin-bottom: 0;
-}
-#buildperf-table th {
-  text-transform: none;
-}
-#buildperf-table td {
-  border-color: transparent;
-}
-#buildperf-table tr:first-child td {
-  border-top: none;
-}
-#buildperf-table tr:last-child td {
-  border-bottom: none;
-}
-#buildperf-table td:last-child {
-  width: 100%;
-}
-</style>
-<template data-island="once"><link rel="stylesheet" href="/css/throbber.css"></template>
-<table id="buildperf-table">
-<thead>
-<tr>
-<th>Name</th>
-<th colspan="2">Building ×4000 Markdown Files</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Eleventy</td>
-<td class="numeric">1.93<abbr title="seconds">s</abbr></td>
-<td><text-throbber duration="1930"></text-throbber></td>
-</tr>
-<tr>
-<td>Astro</td>
-<td class="numeric">22.90<abbr title="seconds">s</abbr></td>
-<td><text-throbber duration="22900"></text-throbber></td>
-</tr>
-<tr>
-<td>Gatsby</td>
-<td class="numeric">29.05<abbr title="seconds">s</abbr></td>
-<td><text-throbber duration="29050"></text-throbber></td>
-</tr>
-<tr>
-<td>Next.js</td>
-<td class="numeric">70.65<abbr title="seconds">s</abbr></td>
-<td><text-throbber duration="70650"></text-throbber></td>
-</tr>
-</tbody>
-</table>
-</is-land>
+<div class="buildperf-home">
+  {% renderTemplate "webc" %}<build-comparison></build-comparison>{% endrenderTemplate %}
+</div>
 
 From a [benchmark of ×4000 markdown files](https://www.zachleat.com/web/build-benchmark/#benchmark-results). Learn more about [Eleventy’s site and build performance](/docs/performance/).
 

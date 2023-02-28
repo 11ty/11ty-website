@@ -12,6 +12,7 @@ const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const eleventyImage = require("@11ty/eleventy-img");
+const pluginWebc = require("@11ty/eleventy-plugin-webc");
 
 const { addedIn, coerceVersion } = require("./config/addedin");
 const monthDiffPlugin = require("./config/monthDiff");
@@ -218,8 +219,10 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(monthDiffPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
-
 	eleventyConfig.addPlugin(EleventyEdgePlugin);
+	eleventyConfig.addPlugin(pluginWebc, {
+		components: "./src/_includes/components/*.webc"
+	});
 
 	if(process.env.NODE_ENV === "production") {
 		eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
