@@ -48,8 +48,10 @@
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+    "@11ty/eleventy-plugin-webc": "^0.9.3",
     "@netlify/functions": "^1.4.0",
     "@netlify/plugin-lighthouse": "^4.0.7",
+    "@tweetback/canonical": "^2.0.29",
     "clean-css": "^5.3.2",
     "comma-number": "^2.1.0",
     "cross-spawn": "^7.0.3",
@@ -67,6 +69,7 @@
     "markdown-it-table-of-contents": "^0.6.0",
     "netlify-plugin-cache": "^1.0.3",
     "node-fetch": "^2.6.8",
+    "pagefind": "^0.11.0",
     "prettier": "^2.8.4",
     "semver": "^7.3.8",
     "short-hash": "^1.0.0",
@@ -75,16 +78,13 @@
     "terser": "^5.16.5"
   },
   "dependencies": {
-    "@11ty/eleventy-plugin-webc": "^0.9.1",
-    "@11ty/is-land": "^3.0.1",
+    "@11ty/is-land": "^3.0.2",
     "@11ty/logo": "^2.0.6",
-    "@tweetback/canonical": "^2.0.29",
     "@zachleat/details-utils": "^2.0.2",
     "@zachleat/filter-container": "^3.0.4",
     "@zachleat/flex-luthor": "^4.0.2",
     "@zachleat/seven-minute-tabs": "^2.0.0",
     "lite-youtube-embed": "^0.2.0",
-    "pagefind": "^0.11.0",
     "speedlify-score": "^2.0.2"
   }
 }

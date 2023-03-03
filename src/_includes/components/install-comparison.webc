@@ -1,4 +1,4 @@
-<style webc:keep webc:scoped>
+<style webc:scoped>
 :host td:last-child {
   width: 100%;
 }

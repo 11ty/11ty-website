@@ -28,13 +28,15 @@ eleventyImport:
   <em>(and more!)</em> on the <a href="/blog/">Eleventy Blog</a>.
 {%- endcallout %}
 {%- endif %}
+</template>
 
 <p class="ta-c elv-h3"><em>Fast Builds and even Faster Web Sites</em></p>
 
 <div class="buildperf-home">
-  {% renderTemplate "webc" %}<build-comparison></build-comparison>{% endrenderTemplate %}
+  <build-comparison></build-comparison>
 </div>
 
+<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
 From a [benchmark of ×4000 markdown files](https://www.zachleat.com/web/build-benchmark/#benchmark-results). Learn more about [Eleventy’s site and build performance](/docs/performance/).
 
 ## Quick Start
@@ -62,18 +64,14 @@ npx @11ty/eleventy
 
 Eleventy compiles any files in the current directory matching valid [file extensions](/docs/languages/) (`.md` is one of many) to the output folder (`_site` by default). It might look like this:
 
-<style>
-#getting-started-build .highlight-line:last-child,
-#getting-started-build .highlight-line:last-child * {
-  color: #0dbc79 !important;
-}
-</style>
+</template>
 
-{% codewithprompt "noop", "getting-started-build" %}
+<cli-eleventy-output @show-version>
 Writing _site/index.html from ./index.md (liquid)
-Wrote 1 file in 0.03 seconds ({% latestVersion versions, config %})
-{% endcodewithprompt %}
+Wrote 1 file in 0.03 seconds
+</cli-eleventy-output>
 
+<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
 Run `npx @11ty/eleventy --serve` to start up a [local development server](/docs/dev-server/) and open `http://localhost:8080/` in your web browser of choice to see your web site.
 
 Keep going:

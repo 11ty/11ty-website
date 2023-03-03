@@ -98,8 +98,10 @@ let eleventyComputed = {
 	padding: .3em .5em;
 }
 
-/* eleventy-plugin-bundle */
+/* @11ty/eleventy-plugin-bundle */
 {% getBundle "css" %}
+/* end @11ty/eleventy-plugin-bundle */
+
 {% for includeLocation in css %}
 {% include includeLocation %}
 {% endfor %}

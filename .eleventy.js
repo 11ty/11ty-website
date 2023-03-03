@@ -202,7 +202,6 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
-		templateFormats: ["md", "njk"],
 		init: function({ Prism }) {
 			Prism.languages.markdown = Prism.languages.extend('markup', {
 				'frontmatter': {
@@ -223,7 +222,10 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(EleventyEdgePlugin);
 	eleventyConfig.addPlugin(javascriptFrontMatter);
 	eleventyConfig.addPlugin(pluginWebc, {
-		components: "./src/_includes/components/*.webc"
+		components: [
+			"./src/_includes/components/*.webc",
+			"npm:@11ty/eleventy-plugin-syntaxhighlight/*.webc",
+		]
 	});
 
 	if(process.env.NODE_ENV === "production") {
