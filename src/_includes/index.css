@@ -800,49 +800,7 @@ main .elv-toc + h1 .direct-link {
 	padding: .5em 1em .4em;
 	box-shadow: 0 8px 6px -6px #000;
 }
-.why-are-you-doing-this > a {
-	margin-top: 1.5em;
-	border-width: .3em;
-}
-@media (prefers-color-scheme: dark) {
-	.why-are-you-doing-this > a,
-	.why-are-you-doing-this > a[href],
-	.why-are-you-doing-this > a:visited {
-		background-color: #fff;
-		color: #222;
-		border-color: #ccc;
-	}
-}
-.why-are-you-doing-this > a:hover {
-	transition: all .3s;
-	transform: scale(1.05);
-}
-@media (prefers-reduced-motion: reduce) {
-	.why-are-you-doing-this > a:hover {
-		transition: none;
-		transform: none;
-	}
-}
-.why-are-you-doing-this + span {
-	display: none;
-}
-@media (min-width: 50em) {
-	/* 800px */
-	.why-are-you-doing-this + span {
-		display: block;
-		text-align: center;
-		margin-top: .25em;
-		font-size: .75em;
-	}
-}
-@media (min-height:50em){
-	html:not(:has(:focus-visible)) .why-are-you-doing-this {
-		position: sticky;
-		top: 10px;
-		z-index: 10;
-		background-color: #fff;
-	}
-}
+
 .btn-form:hover,
 .btn-form:focus,
 .btn-primary:hover {
@@ -891,12 +849,6 @@ main .elv-toc + h1 .direct-link {
 	}
 	.btn-primary-standard {
 		font-size: 1.666666666667em; /* 30px /18 */
-	}
-}
-@media (min-width: 46.875em) { /* 750px */
-	.why-are-you-doing-this > a {
-		margin-left: calc( (90vw - 42rem) / -2 );
-		width: calc(90vw - 2rem);
 	}
 }
 

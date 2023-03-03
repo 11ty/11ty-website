@@ -82,10 +82,11 @@ Keep going:
 ---
 
 <div class="fullwidth-module">{% include "logos.njk" %}</div>
+</template>
 
-<div class="why-are-you-doing-this"><a href="/docs/" class="btn-primary benchnine rainbow-active rainbow-active-noanim">Documentation for <span>Eleventy</span></a></div>
-<span>Todd and <a href="{{ "https://twitter.com/brucel/status/1107699886584143872" | canonicalTwitterUrl }}">Bruce</a> said this button should be bigger and as you can see they were right</span>
+<giant-docs-button></giant-docs-button>
 
+<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
 {% include "supporters.njk" %}
 
 ## Built With Eleventy
