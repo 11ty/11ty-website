@@ -1,0 +1,36 @@
+/* Layout component code */
+.fl {
+  /* The custom properties should not inherit from parent layouts */
+  --fl-stackpoint: initial;
+  --fl-gap-h: 1em; /* This needs to have a unit for calc() below */
+  --fl-gap-v: .5em; /* This needs to have a unit for calc() below */
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--fl-gap-v, 0px) var(--fl-gap-h, 0px);
+}
+.fl > * {
+  /* if a margin is in play, account for this in our stackpoint calculations */
+  /* notably this will also work if a stackpoint is not used. */
+  --fl-gap-mod: calc( var(--fl-stackpoint, -1 * var(--fl-gap-h, 0px)) - var(--fl-stackpoint, 0px) );
+  --fl-stackpoint-calc: calc( ( var(--fl-stackpoint, 100%) - 100% + var(--fl-gap-mod, 0px) ) * 999);
+
+  flex-grow: 1;
+  /* This will always have a value, due to CSS variable defaults set in .fl above */
+  flex-basis: var(--fl-stackpoint-calc);
+}
+/* Prefer to wrap cells before content */
+.fl-nowrap > *,
+.fl-cell-wrap { /* or for an individual cell */
+  flex-basis: auto;
+}
+
+/* Flex layout inline */
+.fl-inline > * {
+  flex-grow: 0;
+}
+
+/* Debug */
+.fl-debug > * {
+  outline: 1px dotted rgba(0,0,0,.4);
+  outline-offset: -1px;
+}

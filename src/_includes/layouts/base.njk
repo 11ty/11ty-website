@@ -60,9 +60,9 @@ eleventyComputed:
 {% include 'index.css' %}
 {% include 'components/layout.css' %}
 {% include 'components/grid-layout.css' %}
-{# careful with node_modules, these need to be put in the serverless bundle too in the eleventy config file #}
-{% include '../../../node_modules/@zachleat/flex-luthor/flex-luthor.css' %}
-{% include '../../../node_modules/@zachleat/flex-luthor/flex-luthor-separators.css' %}
+{# TODO reference these directly from node_modules at some point, but take care that they need to be put in the serverless bundle too in the eleventy config file too #}
+{% include 'components/flex-luthor/flex-luthor.css' %}
+{% include 'components/flex-luthor/flex-luthor-separators.css' %}
 {% include 'components/navigation.css' %}
 {% include 'components/toc.css' %}
 {% include 'components/callout.css' %}
