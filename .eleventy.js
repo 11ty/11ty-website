@@ -234,6 +234,7 @@ module.exports = function(eleventyConfig) {
 				"avatars/",
 				"src/img/logo.svg",
 				"src/img/possum-geri.png",
+				"node_modules/@zachleat/flex-luthor/*.css",
 				".cache/eleventy-fetch/",
 			]
 		});
