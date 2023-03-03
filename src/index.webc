@@ -18,9 +18,15 @@ eleventyImport:
 ---
 <template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
 {# we use webc:raw webc:nokeep so the template assets are not re-bundled as WebC yet #}
-{%- set highlightedBlogPost = collections.blog | findBy("data.homePageHighlight", true) | first %}
-{%- if highlightedBlogPost %}
-{% callout %}<strong><a href="{{ highlightedBlogPost.data.page.url }}">{{ highlightedBlogPost.data.newstitle }}</a></strong> and more on the <a href="/blog/">Eleventy Blog</a>.{% endcallout %}
+{%- set highlightedBlogPosts = collections.blog | findBy("data.homePageHighlight", true) %}
+{%- if highlightedBlogPosts %}
+{%- callout %}Read
+  {% for post in highlightedBlogPosts %}
+    {%- if loop.index0 > 0 %} and {% endif -%}
+    <strong><a href="{{ post.data.page.url }}">{{ post.data.newstitle }}</a></strong>
+  {%- endfor %}
+  <em>(and more!)</em> on the <a href="/blog/">Eleventy Blog</a>.
+{%- endcallout %}
 {%- endif %}
 
 <p class="ta-c elv-h3"><em>Fast Builds and even Faster Web Sites</em></p>
