@@ -16,6 +16,8 @@ eleventyComputed:
 eleventyImport:
   collections: ["blog"]
 ---
+<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
+{# we use webc:raw webc:nokeep so the template assets are not re-bundled as WebC yet #}
 {%- set highlightedBlogPost = collections.blog | findBy("data.homePageHighlight", true) | first %}
 {%- if highlightedBlogPost %}
 {% callout %}<strong><a href="{{ highlightedBlogPost.data.page.url }}">{{ highlightedBlogPost.data.newstitle }}</a></strong> and more on the <a href="/blog/">Eleventy Blog</a>.{% endcallout %}
@@ -108,4 +110,4 @@ View [all {{ builtwith | objectFilterNot("disabled") | length }} sites](/speedli
 Listen to what these [happy developers](/docs/testimonials/) are saying about Eleventy:
 
 {% include "testimonials.md" %}
-
+</template>
