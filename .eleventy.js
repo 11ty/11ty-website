@@ -20,6 +20,7 @@ const minificationLocalPlugin = require("./config/minification");
 const cleanName = require("./config/cleanAuthorName");
 const objectHas = require("./config/object-has");
 const markdownPlugin = require("./config/markdownPlugin.js");
+const javascriptFrontMatter = require("./config/javascript-front-matter.js");
 
 let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" decoding="async" class="avatar" width="200" height="200">`;
 const shortcodes = {
@@ -220,6 +221,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(minificationLocalPlugin);
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
 	eleventyConfig.addPlugin(EleventyEdgePlugin);
+	eleventyConfig.addPlugin(javascriptFrontMatter);
 	eleventyConfig.addPlugin(pluginWebc, {
 		components: "./src/_includes/components/*.webc"
 	});

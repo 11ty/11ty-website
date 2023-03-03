@@ -1,14 +1,27 @@
----
-title: Eleventy, a simpler static site generator.
-social:
-  imgsrc: https://www.11ty.dev/img/open-graph.jpg
-  imgalt: The 11ty logo text with a small floating possum on a balloon
-eleventyComputed:
-  domain: "{{ process.env.DEPLOY_PRIME_URL or 'https://www.11ty.dev'}}"
-  social:
-    imgsrc: "https://v1.screenshot.11ty.dev/{{ (domain + page.url) | urlencode }}/opengraph/"
-    imgalt: "A screenshot of the web page at {{ (domain + page.url) }}"
-    description: "A docs page for Eleventy {% latestVersion versions, config %}, a simpler static site generator."
+---javascript
+// <script>
+let title = "Eleventy, a simpler static site generator";
+
+let social = {
+  imgsrc: "https://www.11ty.dev/img/open-graph.jpg",
+  imgalt: "The 11ty logo text with a small floating possum on a balloon"
+};
+
+let domain = process.env.DEPLOY_PRIME_URL || "https://www.11ty.dev";
+
+let eleventyComputed = {
+  social: {
+    imgsrc: function({ domain, page }) {
+      return `https://v1.screenshot.11ty.dev/${encodeURIComponent(domain + page.url)}/opengraph/`;
+    },
+    imgalt: function({ domain, page }) {
+      return `A screenshot of the web page at ${domain + page.url}`;
+    },
+    description: function({ versions, config }) {
+      return `A docs page for Eleventy ${this.latestVersion(versions, config)}, a simpler static site generator.`;
+    }
+  }
+};
 ---
 <!doctype html>
 <html lang="en"{% if templateClass %} class="{{ templateClass }}"{% endif %}>
