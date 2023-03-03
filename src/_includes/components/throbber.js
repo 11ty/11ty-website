@@ -30,7 +30,7 @@ window.customElements.define("text-throbber", class extends HTMLElement {
 				if(Date.now() - startTime.getTime() >= duration) {
 					window.clearInterval(interval);
 					this.innerHTML = bar.join("") + finish;
-					this.classList.add("finished");
+					this.setAttribute("ready", "");
 				}
 			})
 		}, animationSpeed);

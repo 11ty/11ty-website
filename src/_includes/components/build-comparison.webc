@@ -1,4 +1,7 @@
 <style webc:keep webc:scoped>
+:host {
+  display: block;
+}
 :host table {
   width: 100%;
   margin-bottom: 0;
@@ -21,7 +24,6 @@
 
 /* Variant for the home page */
 :host-context(.buildperf-home) {
-	display: block;
 	margin-left: -1rem;
 	margin-right: -1rem;
 	padding: 1rem;

@@ -28,7 +28,7 @@ Sites listed on the [Eleventy Leaderboards](/speedlify/) are tested and ranked (
 
 **Eleventy offers best-in-class build performance for JavaScript site generators.**
 
-<div>{% renderTemplate "webc" %}<build-comparison show-all></build-comparison>{% endrenderTemplate %}</div>
+<div>{% renderTemplate "webc" %}<build-comparison @show-all></build-comparison>{% endrenderTemplate %}</div>
 
 Data taken from [_Which Generator Builds Markdown the Fastest?_ (July 2022)](https://www.zachleat.com/web/build-benchmark/#benchmark-results).
 
