@@ -9,6 +9,7 @@ let social = {
 
 let domain = process.env.DEPLOY_PRIME_URL || "https://www.11ty.dev";
 
+// For things that rely on the data cascade
 let eleventyComputed = {
   social: {
     imgsrc: function({ domain, page }) {
@@ -97,6 +98,8 @@ let eleventyComputed = {
 	padding: .3em .5em;
 }
 
+/* eleventy-plugin-bundle */
+{% getBundle "css" %}
 {% for includeLocation in css %}
 {% include includeLocation %}
 {% endfor %}
@@ -109,12 +112,12 @@ let eleventyComputed = {
 
 		<style>{{ css | cssmin | safe }}</style>
 {% if config.env === "production" %}
-		<link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'">
+		<link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'" fetchpriority="low">
 		<noscript>
-			<link rel="stylesheet" href="/css/async.css">
+			<link rel="stylesheet" href="/css/async.css" fetchpriority="low">
 		</noscript>
 {% else %}
-		<link rel="stylesheet" href="/css/async.css" media="all">
+		<link rel="stylesheet" href="/css/async.css" fetchpriority="low">
 {% endif %}
 		<script>
 		{%- include "components/details-force-state.js" -%}
