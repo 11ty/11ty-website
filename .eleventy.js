@@ -125,6 +125,12 @@ const shortcodes = {
 			// onerror: "let p=this.closest('picture');if(p){p.remove();}this.remove();"
 		});
 	},
+	getGeneratorImageHtml(url) {
+		let d = new Date();
+		// Daily
+		let cacheBuster = `_${d.getFullYear()}_${d.getMonth()}_${d.getDate()}`;
+		return `<img src="https://v1.generator.11ty.dev/image/${encodeURIComponent(url)}/${cacheBuster}/" width="66" height="66" alt="Meta Generator tag icon for ${url}" class="avatar avatar-large" loading="lazy" decoding="async">`;
+	},
 	// size = "large"
 	getIndieAvatarHtml(iconUrl, cls = "") {
 		let imgHtml = "";
@@ -179,6 +185,11 @@ function findBy(data, path, value) {
 module.exports = function(eleventyConfig) {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
+	if(process.env.NODE_ENV === "production" || process.env.ELEVENTY_SERVERLESS) {
+		eleventyConfig.ignores.add("src/admin.md");
+	}
+
+	// Skip these on local dev
 	if(process.env.NODE_ENV !== "production" || process.env.ELEVENTY_SERVERLESS) {
 		eleventyConfig.ignores.add("src/api/*");
 		eleventyConfig.ignores.add("src/docs/feed.njk");
@@ -250,6 +261,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addFilter("coerceVersion", coerceVersion);
 	eleventyConfig.addShortcode("addedin", addedIn);
 
+	eleventyConfig.addShortcode("generatoravatar", shortcodes.getGeneratorImageHtml);
 	eleventyConfig.addShortcode("indieavatar", shortcodes.getIndieAvatarHtml);
 
 	eleventyConfig.addShortcode("indieweblink", function(content, url, iconUrl) {
