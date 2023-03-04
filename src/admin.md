@@ -38,5 +38,5 @@ _The monthly amount ×12_ 😇
 ## Sites
 
 {% for key, site in builtwith -%}{% if site.url and site.superfeatured -%}
-{% generatoravatar site.url %} `{{ site.url }}`
+{% generatoravatar site.url %} [`{{ site.url }}`]({{site.url}})
 {% endif %}{%- endfor %}
