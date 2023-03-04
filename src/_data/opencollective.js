@@ -13,6 +13,8 @@ const FilteredProfiles = [
 	"relief-factor", // profile link was some weird PDF
 	"targetedwebtraffic", // selling website traffic
 	"forexbrokerz", // crypto
+	"viewality-media", // broken site on wix?
+	"aviator-game", // gambling
 ];
 
 function isMonthlyOrYearlyOrder(order) {
