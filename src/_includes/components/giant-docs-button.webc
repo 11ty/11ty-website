@@ -30,21 +30,8 @@ a.btn-primary:hover {
 	}
 }
 
-.subtext {
-	display: none;
-}
-@media (min-width: 50em) {
-	/* 800px */
-	.subtext {
-		display: block;
-		text-align: center;
-		margin-top: .25em;
-		font-size: .75em;
-	}
-}
-
-@media (min-height:50em){
-	html:not(:has(:focus-visible)) :host .btn-primary {
+@media (min-height:50em) {
+	:host-context(html:not(:has(:focus-visible))) {
 		position: sticky;
 		top: 10px;
 		z-index: 10;
@@ -54,4 +41,3 @@ a.btn-primary:hover {
 </style>
 
 <a href="/docs/" class="btn-primary benchnine rainbow-active rainbow-active-noanim">Documentation for <span>Eleventy</span></a>
-<span class="subtext">Todd and <a :href="canonicalTwitterUrl('https://twitter.com/brucel/status/1107699886584143872')">Bruce</a> said this button should be bigger and as you can see they were right</span>

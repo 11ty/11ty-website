@@ -85,6 +85,7 @@ Keep going:
 </template>
 
 <giant-docs-button></giant-docs-button>
+<giant-docs-button-subtext></giant-docs-button-subtext>
 
 <template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
 {% include "supporters.njk" %}
