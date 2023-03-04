@@ -179,10 +179,6 @@ function findBy(data, path, value) {
 module.exports = function(eleventyConfig) {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
-	if(process.env.NODE_ENV !== "production") {
-		eleventyConfig.setQuietMode(true);
-	}
-
 	if(process.env.NODE_ENV !== "production" || process.env.ELEVENTY_SERVERLESS) {
 		eleventyConfig.ignores.add("src/api/*");
 		eleventyConfig.ignores.add("src/docs/feed.njk");
