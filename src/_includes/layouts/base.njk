@@ -98,10 +98,6 @@ let eleventyComputed = {
 	padding: .3em .5em;
 }
 
-/* @11ty/eleventy-plugin-bundle */
-{% getBundle "css" %}
-/* end @11ty/eleventy-plugin-bundle */
-
 {% for includeLocation in css %}
 {% include includeLocation %}
 {% endfor %}
@@ -113,6 +109,7 @@ let eleventyComputed = {
 		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
 
 		<style>{{ css | cssmin | safe }}</style>
+    <style>{% getBundle "css" %}</style>
 {% if config.env === "production" %}
 		<link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'" fetchpriority="low">
 		<noscript>
