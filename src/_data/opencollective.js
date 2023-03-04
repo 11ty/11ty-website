@@ -14,7 +14,7 @@ const FilteredProfiles = [
 	"targetedwebtraffic", // selling website traffic
 	"forexbrokerz", // crypto
 	"viewality-media", // broken site on wix?
-	"aviator-game", // gambling
+	"aviator-game1", // gambling
 ];
 
 function isMonthlyOrYearlyOrder(order) {
