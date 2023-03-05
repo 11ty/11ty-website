@@ -11,4 +11,4 @@ excludeFromSidebar: true
 * A huge thank you to anyone that [has helped answer questions on GitHub](https://github.com/11ty/eleventy/issues) or [Discord](/blog/discord/).
 * [How can you contribute?](/docs/how-to-support/)
 * [Eleventy Mascots](/mascot/)
-* Gift box icon in our navigation is via <a href="http://www.freepik.com/">Freepik</a> from <a href="https://www.flaticon.com/">Flaticon</a>
+* Gift box icon in our navigation is via <a href="https://www.freepik.com/">Freepik</a> from <a href="https://www.flaticon.com/">Flaticon</a>

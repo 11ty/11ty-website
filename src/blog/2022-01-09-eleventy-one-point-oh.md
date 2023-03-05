@@ -81,7 +81,7 @@ Please use [`eleventy-upgrade-help`](https://github.com/11ty/eleventy-upgrade-he
 ### Minor
 
 * Passthrough Copy now throws an error if two or more files attempt to copy to the same output location. _Issue #1677_
-* For better URL-safe slugs by default, we now suggest using the new `slugify` global filter instead of the previous `slug`. `slug` is still included for backwards compatiblity. [`slugify` Docs](https://v1-0-0.11ty.dev/docs/filters/slugify/). [`eleventy-upgrade-help`](https://github.com/11ty/eleventy-upgrade-help) includes a permalink checker to compare `slug` and `slugify` output. _Issue #278_
+* For better URL-safe slugs by default, we now suggest using the new `slugify` global filter instead of the previous `slug`. `slug` is still included for backwards compatibility. [`slugify` Docs](https://v1-0-0.11ty.dev/docs/filters/slugify/). [`eleventy-upgrade-help`](https://github.com/11ty/eleventy-upgrade-help) includes a permalink checker to compare `slug` and `slugify` output. _Issue #278_
 * Added support for protocol relative URLs in the `url` global filter (though technically accurate, using this method is discouraged). _Issue #1276_
 * New Eleventy supplied data:
   * `eleventy` Global Data
