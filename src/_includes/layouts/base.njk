@@ -3,25 +3,25 @@
 let title = "Eleventy, a simpler static site generator";
 
 let social = {
-  imgsrc: "https://www.11ty.dev/img/open-graph.jpg",
-  imgalt: "The 11ty logo text with a small floating possum on a balloon"
+	imgsrc: "https://www.11ty.dev/img/open-graph.jpg",
+	imgalt: "The 11ty logo text with a small floating possum on a balloon"
 };
 
 let domain = process.env.DEPLOY_PRIME_URL || "https://www.11ty.dev";
 
 // For things that rely on the data cascade
 let eleventyComputed = {
-  social: {
-    imgsrc: function({ domain, page }) {
-      return `https://v1.screenshot.11ty.dev/${encodeURIComponent(domain + page.url)}/opengraph/`;
-    },
-    imgalt: function({ domain, page }) {
-      return `A screenshot of the web page at ${domain + page.url}`;
-    },
-    description: function({ versions, config }) {
-      return `A docs page for Eleventy ${this.latestVersion(versions, config)}, a simpler static site generator.`;
-    }
-  }
+	social: {
+		imgsrc: function({ domain, page }) {
+			return `https://v1.screenshot.11ty.dev/${encodeURIComponent(domain + page.url)}/opengraph/`;
+		},
+		imgalt: function({ domain, page }) {
+			return `A screenshot of the web page at ${domain + page.url}`;
+		},
+		description: function({ versions, config }) {
+			return `A docs page for Eleventy ${this.latestVersion(versions, config)}, a simpler static site generator.`;
+		}
+	}
 };
 ---
 <!doctype html>
@@ -79,7 +79,7 @@ let eleventyComputed = {
 {% include 'components/flex-luthor/flex-luthor-separators.css' %}
 {% include 'components/navigation.css' %}
 {% include 'components/toc.css' %}
-{% include 'components/callout.css' %}
+{%- if not page.inputPath.endsWith('.webc') %}{% include 'components/callout.css' %}{% endif %}
 {% include 'components/breadcrumb.css' %}
 {% include 'components/prism-theme.css' %}
 {% include 'components/code.css' %}
@@ -87,7 +87,6 @@ let eleventyComputed = {
 {% include 'components/seven-minute-tabs.css' %}
 {% include 'components/fitvids.css' %}
 {% include 'components/external-links.css' %}
-{% include 'components/logos-list.css' %}
 
 /* Filters */
 .filter-tags--hide {
@@ -108,8 +107,9 @@ let eleventyComputed = {
 		<link href="https://v1.indieweb-avatar.11ty.dev" rel="preconnect" crossorigin>
 		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
 
+
 		<style>{{ css | cssmin | safe }}</style>
-    <style>{% getBundle "css" %}</style>
+		<style>{% getBundle "css" %}</style>
 {% if config.env === "production" %}
 		<link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'" fetchpriority="low">
 		<noscript>

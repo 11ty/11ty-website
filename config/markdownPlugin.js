@@ -67,6 +67,7 @@ module.exports = function(eleventyConfig) {
 		return mdIt.renderInline(content);
 	});
 
+	// WebC migration: callout.webc
 	eleventyConfig.addPairedShortcode("callout", function(content, level = "", format = "html", customLabel = "") {
 		if( format === "md" ) {
 			content = mdIt.renderInline(content);

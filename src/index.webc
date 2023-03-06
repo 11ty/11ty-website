@@ -1,88 +1,55 @@
----
-layout: layouts/main.njk
-logoLink: /docs/
-# Don’t forget to update the emoji in CSS
-# logoLink: /blog/eleventy-v2-beta/
-# logoContent: "<span class='elv-hero-content'>2.0</span>"
-ignoreGitHubButtons: true
-ignoreSupporters: true
-ignoreFastestSite: true
-searchTitle: Eleventy, a simpler static site generator
-bigPossum: true
-skipAuth: true
-eleventyComputed:
-  social:
-    description: "Eleventy, a simpler static site generator."
-eleventyImport:
+---javascript
+// <script>
+let layout = "layouts/main.njk";
+let logoLink = "/docs/";
+
+// Don’t forget to update the emoji in CSS
+// let logoLink = "/blog/eleventy-v2-beta/"
+// let logoContent = "<span class='elv-hero-content'>2.0</span>"
+
+let ignoreGitHubButtons = true;
+let ignoreSupporters = true;
+let searchTitle = "Eleventy, a simpler static site generator";
+let skipAuth = true;
+
+let eleventyImport = {
   collections: ["blog"]
+};
+
+let eleventyComputed = {
+  social: {
+    description: "Eleventy, a simpler static site generator."
+  },
+};
+// </script>
 ---
-<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
-{# we use webc:raw webc:nokeep so the template assets are not re-bundled as WebC yet #}
-{%- set highlightedBlogPosts = collections.blog | findBy("data.homePageHighlight", true) %}
-{%- if highlightedBlogPosts %}
-{%- callout %}Read
-  {% for post in highlightedBlogPosts %}
-    {%- if loop.index0 > 0 %} and {% endif -%}
-    <strong><a href="{{ post.data.page.url }}">{{ post.data.newstitle }}</a></strong>
-  {%- endfor %}
-  <em>(and more!)</em> on the <a href="/blog/">Eleventy Blog</a>.
-{%- endcallout %}
-{%- endif %}
-</template>
+<script webc:setup>
+function getHighlightedBlogPostContent(collection) {
+  let posts = findBy(collection, 'data.homePageHighlight', true);
+  if(!posts.length) {
+    return "";
+  }
+  let content = [];
+  for(let post of posts) {
+    content.push(`<strong><a href="${post.data.page.url}">${post.data.newstitle}</a></strong>`);
+  }
+  return `Read ${content.join(" and ")} <em>(and more!)</em> on the <a href="/blog/">Eleventy Blog</a>.`;
+}
+</script>
+
+<callout :content="getHighlightedBlogPostContent(collections.blog)"></callout>
 
 <p class="ta-c elv-h3"><em>Fast Builds and even Faster Web Sites</em></p>
+<build-comparison variant="home"></build-comparison>
+<p>From a <a href="https://www.zachleat.com/web/build-benchmark/#benchmark-results">benchmark of ×4000 markdown files</a>. Learn more about <a href="/docs/performance/">Eleventy’s site and build performance</a>.</p>
 
-<div class="buildperf-home">
-  <build-comparison></build-comparison>
+<quick-start></quick-start>
+
+<hr>
+
+<div class="fullwidth-module">
+  <logo-cloud></logo-cloud>
 </div>
-
-<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
-From a [benchmark of ×4000 markdown files](https://www.zachleat.com/web/build-benchmark/#benchmark-results). Learn more about [Eleventy’s site and build performance](/docs/performance/).
-
-## Quick Start
-
-Create a Markdown file.
-
-```bash
-echo '# Page header' > index.md
-```
-
-<details>
-<summary>Eleventy requires Node.js {% latestVersionNodeMinimum versions, config %} <em>(expand to learn more)</em></summary>
-
-You can check whether or not you have Node installed by running `node --version` in a terminal window. ([_Well, wait—what is a Terminal window?_](/docs/terminal-window/))
-
-If the command is not found or it reports a number lower than {% latestVersionNodeMinimum versions, config %}, you will need to [download and install Node.js](https://nodejs.org/en/download/) before moving on to the next step.
-
-</details>
-
-Run Eleventy.
-
-```
-npx @11ty/eleventy
-```
-
-Eleventy compiles any files in the current directory matching valid [file extensions](/docs/languages/) (`.md` is one of many) to the output folder (`_site` by default). It might look like this:
-
-</template>
-
-<cli-eleventy-output @show-version>
-Writing _site/index.html from ./index.md (liquid)
-Wrote 1 file in 0.03 seconds
-</cli-eleventy-output>
-
-<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
-Run `npx @11ty/eleventy --serve` to start up a [local development server](/docs/dev-server/) and open `http://localhost:8080/` in your web browser of choice to see your web site.
-
-Keep going:
-
-1. Read our full [**Getting Started guide**](/docs/getting-started/).
-2. Check out the [Documentation for {% latestVersion versions, config %}](/docs/).
-
----
-
-<div class="fullwidth-module">{% include "logos.njk" %}</div>
-</template>
 
 <giant-docs-button></giant-docs-button>
 <giant-docs-button-subtext></giant-docs-button-subtext>
@@ -106,8 +73,6 @@ Keep going:
     <html-fetch target="is-land" src="/imports/facepile.html"></html-fetch>
   </is-land>
 </div>
-
-
 
 View [all {{ builtwith | objectFilterNot("disabled") | length }} sites](/speedlify/).
 
