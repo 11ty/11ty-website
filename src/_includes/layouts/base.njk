@@ -120,23 +120,24 @@ let eleventyComputed = {
 
 		<style>{{ css | cssmin | safe }}</style>
 		<style>{% getBundle "css" %}</style>
+{%- if useWebCBundle %}
+		<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'default' %}" fetchpriority="low">
+{%- endif %}
 
+{%- if not skipLegacyBundle %}
 {%- if config.env === "production" %}
-	{%- if not skipLegacyBundle %}
 		<link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'" fetchpriority="low">
 		<noscript>
 			<link rel="stylesheet" href="/css/async.css" fetchpriority="low">
 		</noscript>
-	{%- endif %}
 {%- else %}
-	{%- if not skipLegacyBundle %}
 		<link rel="stylesheet" href="/css/async.css" fetchpriority="low">
-	{%- endif %}
+{%- endif %}
+		<script>{% include "components/details-force-state.js" %}</script>
 {%- endif %}
 
-		<script>{% include "components/details-force-state.js" %}</script>
-{%- if useWebCAsyncBundle %}
-		<script type="module" src="{% getBundleFileUrl 'js' %}"></script>
+{%- if useWebCBundle %}
+		<script type="module" src="{% getBundleFileUrl 'js', 'default' %}"></script>
 {%- endif %}
 	</head>
 	<body>
