@@ -236,12 +236,12 @@ module.exports = function(eleventyConfig) {
 		],
 		bundlePluginOptions: {
 			transforms: [
-				function(bundleContent) {
-					// careful with HTML bundles here in the future
-					return `
-	/* @11ty/eleventy-plugin-bundle: ${bundleContent.length/1000} kB */
-	${bundleContent}`;
-				}
+	// 			function(bundleContent) {
+	// 				// careful with HTML bundles here in the future
+	// 				return `
+	// /* @11ty/eleventy-plugin-bundle: ${bundleContent.length/1000} kB */
+	// ${bundleContent}`;
+	// 			}
 			]
 		}
 	});
