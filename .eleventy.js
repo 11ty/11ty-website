@@ -233,7 +233,17 @@ module.exports = function(eleventyConfig) {
 		components: [
 			"./src/_includes/components/*.webc",
 			"npm:@11ty/is-land/*.webc",
-		]
+		],
+		bundlePluginOptions: {
+			transforms: [
+				function(bundleContent) {
+					// careful with HTML bundles here in the future
+					return `
+	/* @11ty/eleventy-plugin-bundle: ${bundleContent.length/1000} kB */
+	${bundleContent}`;
+				}
+			]
+		}
 	});
 
 	if(process.env.NODE_ENV === "production") {
