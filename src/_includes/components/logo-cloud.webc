@@ -97,6 +97,7 @@
     height: 1.6em;
     margin-right: .5em;
     opacity: .9;
+    object-fit: contain;
   }
   .logos-list .avatar-tall {
     aspect-ratio: 8 / 10;
