@@ -1,0 +1,26 @@
+/* Business Network */
+.business-network-primary.business-network-primary {
+	--fl-stackpoint: 37.5em; /* 600px /16 */
+	--fl-gap-v: 1em;
+}
+.business-network-sites {
+	padding-top: 1em;
+	padding-bottom: 3em;
+}
+.business-network-sites:not(:last-child) {
+	margin-bottom: 3em;
+	border-bottom: 1px solid #666;
+}
+.business-network-name {
+	font-size: 1.5em;
+}
+.business-network-available {
+	padding-left: 3.230769230769em; /* 42px /13 */
+	font-size: 0.7222222222222em; /* 13px /18 */
+}
+.business-network-hire {
+	text-align: center;
+}
+.business-network-hire a[href] {
+	padding: 0.5rem 2em 0.4rem;
+}

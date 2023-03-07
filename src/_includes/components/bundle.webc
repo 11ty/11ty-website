@@ -1,0 +1,10 @@
+<!--  TODO convert this to a WebC component in @11ty/eleventy-plugin-bundle -->
+<link rel="stylesheet" webc:if="name" :href="getBundleFileUrl('css', name)" fetchpriority="low" webc:keep>
+
+<template data-island webc:if="name">
+	<script type="module" :src="getBundleFileUrl('js', name)" webc:keep></script>
+</template>
+
+<div :webc:bucket="name" webc:nokeep>
+	<slot></slot>
+</div>

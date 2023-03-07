@@ -1,0 +1,1 @@
+<span webc:nokeep @text="latestVersion(versions, config, prefix)"></span>

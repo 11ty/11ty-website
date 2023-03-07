@@ -5,13 +5,15 @@ eleventyNavigation:
 communityLinksKey: getting-started
 overrideCommunityLinks: true
 ---
-# Getting Started
+<h1>Getting Started</h1>
 
-Eleventy **requires [Node.js](https://nodejs.org/) version {% latestVersionNodeMinimum versions, config %} or higher.**
+<p>Eleventy <eleventy-version></eleventy-version> requires <strong><a href="https://nodejs.org/">Node.js</a> version <node-minimum></node-minimum></strong> or higher.</p>
 
-You can check whether or not you have Node installed by running `node --version` in a terminal window. ([_Well, wait—what is a Terminal window?_](/docs/terminal-window/))
+<p>You can check whether or not you have Node installed by running <code>node --version</code> in a terminal window. (<a href="/docs/terminal-window/"><em>Well, wait—what is a Terminal window?</em></a>)</p>
 
-If the command is not found or it reports a number lower than {% latestVersionNodeMinimum versions, config %}, you will need to [download and install Node.js](https://nodejs.org/en/download/) before moving on to the next step.
+<p>If the command is not found or it reports a number lower than <node-minimum></node-minimum>, you will need to <a href="https://nodejs.org/en/download/">download and install Node.js</a> before moving on to the next step.</p>
+
+<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
 
 ## <span class="numberflag"><span class="sr-only">Step</span> 1</span> Make a Project Directory
 
@@ -165,3 +167,4 @@ Congratulations—you made something with Eleventy! Now put it to work:
   {%- include "community-contributed.njk" -%}
 </div>
 {%- endif %}
+</template>

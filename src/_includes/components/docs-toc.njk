@@ -8,20 +8,19 @@
 		{%- endif -%}
 		{{ collections.sidebarNav | eleventyNavigation | eleventyNavigationToHtml({ activeKey: navKey, listClass: 'elv-toc-list', activeListItemClass: 'elv-toc-active' }) | safe }}
 
+		{%- if not page.inputPath.endsWith("/docs/performance.webc") %}
 		{%- set comparison = comparisons | randompick %}
 		{%- set comparisonTitle = "<a href='" + comparison.url + "'>Compare " + comparison.title + "</a>" %}
 		{%- callout "box", "html", comparisonTitle %}
 		<is-land on:visible>
-		<template data-island="once">
-			<link rel="stylesheet" href="/css/throbber.css">
-			<script src="/js/throbber.js"></script>
-		</template>
-		<div><strong>Eleventy</strong> <code>{{ comparison.eleventy.readable }}</code></div>
-		<text-throbber interval="1000" duration="{{ comparison.eleventy.ms }}"></text-throbber>
-		<div><strong>{{ comparison.other.label }}</strong> <code>{{ comparison.other.readable }}</code></div>
-		<text-throbber interval="1000" duration="{{ comparison.other.ms }}"></text-throbber>
+			<template data-island="once"><link rel="stylesheet" href="/css/throbber.css" webc:keep><script src="/js/throbber.js" webc:keep></script></template>
+			<div><strong>Eleventy</strong> <code>{{ comparison.eleventy.readable }}</code></div>
+			<text-throbber interval="1000" duration="{{ comparison.eleventy.ms }}"></text-throbber>
+			<div><strong>{{ comparison.other.label }}</strong> <code>{{ comparison.other.readable }}</code></div>
+			<text-throbber interval="1000" duration="{{ comparison.other.ms }}"></text-throbber>
 		</is-land>
 		{%- endcallout %}
+		{%- endif %}
 	</details>
 </details-force-state>
 </div>

@@ -121,42 +121,4 @@
 .supporters-gold + .facepile-supporters {
 	margin-top: 0;
 }
-.supporters-netlify {
-	width: 100%;
-	height: 70px;
-	display: block;
-	margin: 0 auto;
-}
-@media (min-width: 25em) { /* 400px */
-	.supporters-netlify {
-		max-width: 170px;
-	}
-}
 
-/* Modify content */
-.investors-auth {
-	display: none;
-}
-.is-eleventy-supporter .investors-noauth {
-	display: none;
-}
-.is-eleventy-supporter .investors-auth {
-	display: initial;
-}
-
-/* Buttons */
-.investors-btn {
-	padding: 0;
-	margin-bottom: 4rem;
-}
-@media (prefers-color-scheme: dark) {
-	.investors-btn {
-		background-color: #222;
-	}
-}
-.investors-btn .netlify-identity-button {
-	padding: .5em 1em .4em;
-	display: block;
-	text-decoration: none;
-	color: inherit;
-}

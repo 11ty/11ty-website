@@ -131,6 +131,7 @@ const shortcodes = {
 		let cacheBuster = `_${d.getFullYear()}_${d.getMonth()}_${d.getDate()}`;
 		return `<img src="https://v1.generator.11ty.dev/image/${encodeURIComponent(url)}/${cacheBuster}/" width="66" height="66" alt="Meta Generator tag icon for ${url}" class="avatar avatar-large" loading="lazy" decoding="async">`;
 	},
+	// WebC migration: indieweb-avatar.webc
 	// size = "large"
 	getIndieAvatarHtml(iconUrl, cls = "") {
 		let imgHtml = "";
@@ -231,8 +232,18 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebc, {
 		components: [
 			"./src/_includes/components/*.webc",
-			"npm:@11ty/eleventy-plugin-syntaxhighlight/*.webc",
-		]
+			"npm:@11ty/is-land/*.webc",
+		],
+		bundlePluginOptions: {
+			transforms: [
+				function(bundleContent) {
+					// careful with HTML bundles here in the future
+					return `
+	/* @11ty/eleventy-plugin-bundle: ${bundleContent.length/1000} kB */
+	${bundleContent}`;
+				}
+			]
+		}
 	});
 
 	if(process.env.NODE_ENV === "production") {
@@ -321,6 +332,7 @@ ${text.trim()}
 		return ret.join("\n");
 	});
 
+	// WebC migration: TODO remove this after full conversion
 	eleventyConfig.addPassthroughCopy({
 		"src/_includes/components/throbber.js": "js/throbber.js",
 		"src/_includes/components/throbber.css": "css/throbber.css"
@@ -416,6 +428,7 @@ ${text.trim()}
 		return `<${parentTag} class="inlinelist">${languages.filter(lang => !whitelist ? true : whitelist.indexOf(lang.ext) > -1).map(lang => `<${childTag} class="inlinelist-item${page.url == lang.url ? ' active' : ''}"><a href="${lang.url}${anchor || ''}">${lang.name}${lang.ext ? ` <code>*.${lang.ext}</code>` : ""}</a></${childTag}>`).join(" ")}</${parentTag}>`;
 	});
 
+	// WebC migration: eleventy-version.webc
 	eleventyConfig.addShortcode("latestVersion", function(versions, config, prefix = "v") {
 		for( let version of versions ) {
 			if( version.tag === "LATEST" ) {
@@ -429,22 +442,6 @@ ${text.trim()}
 			}
 
 			return prefix + version.tag.substr(1);
-		}
-	});
-
-	eleventyConfig.addShortcode("latestVersionNodeMinimum", function(versions, config) {
-		for( let version of versions ) {
-			if( version.tag === "LATEST" ) {
-				continue;
-			}
-			if( version.channel && version.channel !== "latest" ) {
-				continue;
-			}
-			if( !config.prerelease && version.prerelease ) {
-				continue;
-			}
-
-			return version.minimumNodeVersion;
 		}
 	});
 

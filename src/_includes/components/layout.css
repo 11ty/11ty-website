@@ -8,6 +8,7 @@
   flex-grow: 999;
 }
 
+/* WebC migration: This has moved in to flex-luthor.webc */
 .lo-c-center {
   display: flex;
   align-items: center;

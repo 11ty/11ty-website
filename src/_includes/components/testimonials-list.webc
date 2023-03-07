@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="testimonials.css">
+
+<div class="testimonials">
+  <div class="testimonials-layout fl">
+    <template webc:type="11ty" 11ty:type="njk" webc:raw webc:nokeep>
+{%- for testimonial in testimonials | shuffle %}
+{%- if testimonial.featured %}
+    <div>{% testimonial testimonial %}</div>
+{%- endif %}
+{%- endfor %}
+    </template>
+  </div>
+</div>

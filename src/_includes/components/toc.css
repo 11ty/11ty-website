@@ -117,3 +117,50 @@
 .elv-cat-list-active {
 	font-weight: 600;
 }
+
+
+/* Wrapper around the markdown Table of contents plugin */
+details.toc {
+	border-radius: .4em;
+	padding: .5rem .5rem 0 .5rem;
+	margin: 0 -.5rem 3em -.5rem;
+}
+h1 + details.toc {
+	margin-top: -1.444444444444em; /* -26px /18 */
+}
+/* Overrides */
+details.toc,
+details.toc[open] {
+	border: 2px solid #ccc;
+	outline: inherit;
+}
+details.toc[open] {
+	background-color: #f7f7f7;
+}
+@media (prefers-color-scheme: dark) {
+	details.toc[open] {
+		background-color: #292929;
+	}
+}
+details.toc:not([open]) > summary {
+	margin-bottom: 0;
+}
+
+details.toc > summary {
+	padding-bottom: .5rem;
+	border-bottom: 2px dotted transparent;
+}
+details.toc[open] > summary {
+	border-color: #ccc;
+	font-weight: bold;
+}
+
+/* Markdown table of contents plugin */
+.table-of-contents > ul ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: .5em 2em;
+}
+.table-of-contents > ul ul > li {
+	padding: 0;
+}

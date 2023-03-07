@@ -1,0 +1,35 @@
+<h2>Quick Start</h2>
+
+<p>Create a Markdown file.</p>
+
+<syntax-highlight language="bash">
+echo '# Page header' > index.md
+</syntax-highlight>
+
+<details>
+	<summary>Eleventy requires Node.js <node-minimum></node-minimum> <em>(expand to learn more)</em></summary>
+	<p>You can check whether or not you have Node installed by running `node --version` in a terminal window. (<a href="/docs/terminal-window/"><em>Well, wait—what is a Terminal window?</em></a>)</p>
+	<p>If the command is not found or it reports a number lower than <node-minimum></node-minimum>, you will need to <a href="https://nodejs.org/en/download/">download and install Node.js</a> before moving on to the next step.</p>
+</details>
+
+<p>Run Eleventy.</p>
+
+<syntax-highlight language="bash">
+npx @11ty/eleventy
+</syntax-highlight>
+
+<p>Eleventy compiles any files in the current directory matching valid <a href="/docs/languages/">file extensions</a> (<code>.md</code> is one of many) to the output folder (<code>_site</code> by default). It might look like this:</p>
+
+<cli-eleventy-output @show-version>
+Writing _site/index.html from ./index.md (liquid)
+Wrote 1 file in 0.03 seconds
+</cli-eleventy-output>
+
+<p>Run <code>npx @11ty/eleventy --serve</code> to start up a <a href="/docs/dev-server/">local development server</a> and open <code>http://localhost:8080/</code> in your web browser of choice to see your web site.</p>
+
+Keep going:
+
+<ol>
+	<li>Read our full <a href="/docs/getting-started/"><strong>Getting Started guide</strong></a>.</li>
+	<li>Check out the <a href="/docs/">Documentation for <eleventy-version></eleventy-version></a>.</li>
+</ol>
