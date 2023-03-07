@@ -96,6 +96,7 @@ let eleventyComputed = {
 	{% include 'components/testimonials.css' %}
 	{% include 'components/possum.css' %}
 	{% include 'components/possum-home.css' %}
+
 	/* Filters */
 	.filter-tags--hide {
 		display: none;
@@ -124,7 +125,7 @@ let eleventyComputed = {
 	{%- if useWebCAsyncBundle %}
 		<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'async' %}" media="print" onload="this.media='all'" fetchpriority="low">
 		<noscript>
-			<link rel="stylesheet" href="/css/async.css" fetchpriority="low">
+			<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'async' %}" fetchpriority="low">
 		</noscript>
 	{%- endif %}
 	{%- if not skipLegacyBundle %}
