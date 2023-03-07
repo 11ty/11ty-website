@@ -27,7 +27,17 @@ eleventyNavigation:
 
 There are a bunch of [sites built using Eleventy](/speedlify/). But listen to what these [happy developers](/docs/testimonials/) are saying about Eleventy:
 
-{% include "testimonials.md" %}
+<div class="testimonials">
+	<div class="testimonials-layout fl">
+{%- for testimonial in testimonials | shuffle %}
+{%- if testimonial.featured %}
+		<div>{% testimonial testimonial %}</div>
+{%- endif %}
+{%- endfor %}
+	</div>
+</div>
+
+<a href="/docs/testimonials/">…and many more!</a>
 
 ## Competitors
 

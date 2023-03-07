@@ -9,7 +9,7 @@ loadNetlifyIdentity: true
 
 To receive an Eleventy Contributor Account, you must <a href="https://opencollective.com/11ty">donate to the Eleventy project on Open Collective</a>. You will then receive an email with instructions on how to activate your Eleventy Contributor account.
 
-<div class="fl" style="--fl-stackpoint: 30em">
+<div class="fl fl-nowrap" style="--fl-stackpoint: 30em">
   <div>
     <div data-netlify-identity-button class="investors-btn btn-primary btn-primary-sm benchnine rainbow-active rainbow-active-noanim"></div>
   </div>

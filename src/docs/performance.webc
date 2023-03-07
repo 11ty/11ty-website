@@ -5,6 +5,7 @@ eleventyNavigation:
   excerpt: The build and site performance of Eleventy projects
   order: 3
 ---
+<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
 # Eleventy Performance
 
 Eleventy is known for both its lightweight core in the form of speedy installs/builds and lightweight site output in the form of speedy sites!
@@ -27,9 +28,14 @@ Sites listed on the [Eleventy Leaderboards](/speedlify/) are tested and ranked (
 ## Build Performance
 
 **Eleventy offers best-in-class build performance for JavaScript site generators.**
+</template>
 
-<div>{% renderTemplate "webc" %}<build-comparison @show-all></build-comparison>{% endrenderTemplate %}</div>
+<is-land on:visible>
+	<template data-island="once"><link rel="stylesheet" href="/css/throbber.css" webc:keep><script src="/js/throbber.js" webc:keep></script></template>
+	<build-comparison @show-all></build-comparison>
+</is-land>
 
+<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
 Data taken from [_Which Generator Builds Markdown the Fastest?_ (July 2022)](https://www.zachleat.com/web/build-benchmark/#benchmark-results).
 
 ### Performance Tips
@@ -45,7 +51,13 @@ Data taken from [_Which Generator Builds Markdown the Fastest?_ (July 2022)](htt
 </div>
 
 ## Installation Performance
+</template>
 
-<div>{% renderTemplate "webc" %}<install-comparison></install-comparison>{% endrenderTemplate %}</div>
+<is-land on:visible>
+	<template data-island="once"><link rel="stylesheet" href="/css/throbber.css" webc:keep><script src="/js/throbber.js" webc:keep></script></template>
+	<install-comparison></install-comparison>
+</is-land>
 
+<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
 Data taken from [_The JavaScript Site Generator Review, 2023_ (February 2023)](https://www.zachleat.com/web/site-generator-review/).
+</template>

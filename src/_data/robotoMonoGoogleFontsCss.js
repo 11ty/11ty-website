@@ -6,7 +6,6 @@ module.exports = async function() {
 	}
 
 	try {
-		// https://developer.github.com/v3/repos/#get
 		let css = await EleventyFetch("https://fonts.googleapis.com/css?family=Roboto+Mono:400&display=swap", {
 			duration: "1d",
 			type: "text",

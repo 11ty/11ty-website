@@ -1,6 +1,32 @@
 ---
 layout: layouts/docs.njk
 ---
+{% css %}
+/* Language List */
+.elv-langlist {
+	font-size: 0.8333333333333em; /* 15px /18 */
+	background-color: #f7f7f7;
+	padding: .5rem;
+	margin: 2em 0;
+}
+@media (prefers-color-scheme: dark) {
+	.elv-langlist {
+		background-color: #080808;
+	}
+}
+.elv-langlist-hed {
+	margin: 0;
+	display: inline;
+	vertical-align: middle;
+	border: none;
+	font-size: 1.4em; /* 21px /15 */
+}
+.elv-langlist > .inlinelist {
+	display: inline;
+	margin-left: 1em;
+}
+{% endcss %}
+
 <h1>{{ eleventyNavigation.key }}{% if addedInVersion %}{% addedin addedInVersion%}{% endif %}</h1>
 
 <div class="elv-langlist" data-pagefind-ignore>

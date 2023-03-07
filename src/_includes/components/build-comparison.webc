@@ -1,25 +1,25 @@
 <style webc:scoped>
 :host {
-  display: block;
+	display: block;
 }
 :host table {
-  width: 100%;
-  margin-bottom: 0;
+	width: 100%;
+	margin-bottom: 0;
 }
 :host th {
-  text-transform: none;
+	text-transform: none;
 }
 :host td {
-  border-color: transparent;
+	border-color: transparent;
 }
 :host tr:first-child td {
-  border-top: none;
+	border-top: none;
 }
 :host tr:last-child td {
-  border-bottom: none;
+	border-bottom: none;
 }
 :host td:last-child {
-  width: 100%;
+	width: 100%;
 }
 </style>
 
@@ -47,44 +47,38 @@
 	}
 }
 </style>
-
-<is-land on:visible>
-  <template data-island="once" webc:raw>
-    <link rel="stylesheet" href="/css/throbber.css">
-    <script src="/js/throbber.js"></script>
-  </template>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th colspan="2">Building ×4000 Markdown Files</th>
-      </tr>
-    </thead>
-    <tbody><tr webc:if="showAll === ''">
-        <td>Hugo</td>
-        <td class="numeric">0.68<abbr title="seconds">s</abbr></td>
-        <td><text-throbber duration="684"></text-throbber></td>
-      </tr>
-      <tr>
-        <td>Eleventy</td>
-        <td class="numeric">1.93<abbr title="seconds">s</abbr></td>
-        <td><text-throbber duration="1930"></text-throbber></td>
-      </tr>
-      <tr>
-        <td>Astro</td>
-        <td class="numeric">22.90<abbr title="seconds">s</abbr></td>
-        <td><text-throbber duration="22900"></text-throbber></td>
-      </tr>
-      <tr>
-        <td>Gatsby</td>
-        <td class="numeric">29.05<abbr title="seconds">s</abbr></td>
-        <td><text-throbber duration="29050"></text-throbber></td>
-      </tr>
-      <tr>
-        <td>Next.js</td>
-        <td class="numeric">70.65<abbr title="seconds">s</abbr></td>
-        <td><text-throbber duration="70650"></text-throbber></td>
-      </tr>
-    </tbody>
-  </table>
-</is-land>
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th colspan="2">Building ×4000 Markdown Files</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr webc:if="showAll === ''">
+			<td>Hugo</td>
+			<td class="numeric">0.68<abbr title="seconds">s</abbr></td>
+			<td><text-throbber duration="684"></text-throbber></td>
+		</tr>
+		<tr>
+			<td>Eleventy</td>
+			<td class="numeric">1.93<abbr title="seconds">s</abbr></td>
+			<td><text-throbber duration="1930"></text-throbber></td>
+		</tr>
+		<tr>
+			<td>Astro</td>
+			<td class="numeric">22.90<abbr title="seconds">s</abbr></td>
+			<td><text-throbber duration="22900"></text-throbber></td>
+		</tr>
+		<tr>
+			<td>Gatsby</td>
+			<td class="numeric">29.05<abbr title="seconds">s</abbr></td>
+			<td><text-throbber duration="29050"></text-throbber></td>
+		</tr>
+		<tr>
+			<td>Next.js</td>
+			<td class="numeric">70.65<abbr title="seconds">s</abbr></td>
+			<td><text-throbber duration="70650"></text-throbber></td>
+		</tr>
+	</tbody>
+</table>

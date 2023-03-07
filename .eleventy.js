@@ -232,7 +232,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebc, {
 		components: [
 			"./src/_includes/components/*.webc",
-			"npm:@11ty/eleventy-plugin-syntaxhighlight/*.webc",
+			"npm:@11ty/is-land/*.webc",
 		]
 	});
 
@@ -322,6 +322,7 @@ ${text.trim()}
 		return ret.join("\n");
 	});
 
+	// WebC migration: TODO remove this after full conversion
 	eleventyConfig.addPassthroughCopy({
 		"src/_includes/components/throbber.js": "js/throbber.js",
 		"src/_includes/components/throbber.css": "css/throbber.css"

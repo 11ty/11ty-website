@@ -1,0 +1,7 @@
+<style>
+.emoji {
+	line-height: 1;
+}
+</style>
+<span aria-hidden="true" class="emoji" @text="char"></span>
+<span class="sr-only" webc:if="alt" @text="alt"></span>
