@@ -49,7 +49,7 @@ function getHighlightedBlogPostContent(collection) {
 
 <p class="ta-c elv-h3"><em>Fast Builds and even Faster Web Sites</em></p>
 
-<div>
+<div webc:bucket="async">
 	<is-land on:visible>
 		<build-comparison variant="home"></build-comparison>
 	</is-land>
