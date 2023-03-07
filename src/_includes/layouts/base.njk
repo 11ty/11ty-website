@@ -121,7 +121,7 @@ let eleventyComputed = {
 		<style>{{ css | cssmin | safe }}</style>
 		<style>{% getBundle "css" %}</style>
 {%- if useWebCBundle %}
-		<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'default' %}" fetchpriority="low">
+		<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'async' %}" fetchpriority="low">
 {%- endif %}
 
 {%- if not skipLegacyBundle %}
@@ -135,10 +135,6 @@ let eleventyComputed = {
 {%- endif %}
 		<script>{% include "components/details-force-state.js" %}</script>
 {%- endif %}
-
-{%- if useWebCBundle %}
-		<script type="module" src="{% getBundleFileUrl 'js', 'default' %}"></script>
-{%- endif %}
 	</head>
 	<body>
 		{{ content | safe }}
@@ -147,6 +143,9 @@ let eleventyComputed = {
 {% if loadNetlifyIdentity %}
 		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 {% endif %}
+{%- if useWebCBundle %}
+		<script type="module" src="{% getBundleFileUrl 'js', 'async' %}"></script>
+{%- endif %}
 {%- if not skipLegacyBundle %}
 		<script src="/js/eleventy.js" type="module"></script>
 {%- endif %}

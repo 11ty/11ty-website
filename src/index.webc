@@ -49,55 +49,57 @@ function getHighlightedBlogPostContent(collection) {
 
 <p class="ta-c elv-h3"><em>Fast Builds and even Faster Web Sites</em></p>
 
-<is-land on:visible>
-	<build-comparison variant="home"></build-comparison>
-</is-land>
-
-<p>From a <a href="https://www.zachleat.com/web/build-benchmark/#benchmark-results">benchmark of ×4000 markdown files</a>. Learn more about <a href="/docs/performance/">Eleventy’s site and build performance</a>.</p>
-
-<quick-start></quick-start>
-
-<hr>
-
-<div class="fullwidth-module">
-  <logo-cloud></logo-cloud>
-</div>
-
-<giant-docs-button></giant-docs-button>
-<giant-docs-button-subtext></giant-docs-button-subtext>
-
-<sponsors></sponsors>
-
-<div class="fullwidth-module">
-	<is-land on:visible on:save-data="false">
-		<template data-island>
-			<h3 class="subhed ta-c"><strong>Supporters</strong></h3>
-			<facepile>
-				<html-fetch src="/imports/supporters.html"></html-fetch>
-			</facepile>
-		</template>
+<div webc:bucket="async">
+	<is-land on:visible>
+		<build-comparison variant="home"></build-comparison>
 	</is-land>
+
+	<p>From a <a href="https://www.zachleat.com/web/build-benchmark/#benchmark-results">benchmark of ×4000 markdown files</a>. Learn more about <a href="/docs/performance/">Eleventy’s site and build performance</a>.</p>
+
+	<quick-start></quick-start>
+
+	<hr>
+
+	<div class="fullwidth-module">
+	  <logo-cloud></logo-cloud>
+	</div>
+
+	<giant-docs-button></giant-docs-button>
+	<giant-docs-button-subtext></giant-docs-button-subtext>
+
+	<sponsors></sponsors>
+
+	<div class="fullwidth-module">
+		<is-land on:visible on:save-data="false">
+			<template data-island>
+				<h3 class="subhed ta-c"><strong>Supporters</strong></h3>
+				<facepile>
+					<html-fetch src="/imports/supporters.html"></html-fetch>
+				</facepile>
+			</template>
+		</is-land>
+	</div>
+
+
+	<h2>Built With Eleventy</h2>
+
+	<sites-list></sites-list>
+
+	<div class="fullwidth-module">
+	  <is-land on:visible on:save-data="false">
+	    <facepile>
+	      <html-fetch src="/imports/facepile.html"></html-fetch>
+	    </facepile>
+	  </is-land>
+	</div>
+
+	<p>View <a href="/speedlify/">all <span @text="getsize(objectFilterNot(builtwith, 'disabled'))" webc:nokeep></span> sites</a>.</p>
+
+	<h2>Don’t take my word for it <emoji @char="🌈" @alt="Rainbow"></emoji></h2>
+
+	<p>Listen to what these <a href="/docs/testimonials/">happy developers</a> are saying about Eleventy:</p>
+
+	<testimonials-list></testimonials-list>
+
+	<p><a href="/docs/testimonials/">…and many more!</a></p>
 </div>
-
-
-<h2>Built With Eleventy</h2>
-
-<sites-list></sites-list>
-
-<div class="fullwidth-module">
-  <is-land on:visible on:save-data="false">
-    <facepile>
-      <html-fetch src="/imports/facepile.html"></html-fetch>
-    </facepile>
-  </is-land>
-</div>
-
-<p>View <a href="/speedlify/">all <span @text="getsize(objectFilterNot(builtwith, 'disabled'))" webc:nokeep></span> sites</a>.</p>
-
-<h2>Don’t take my word for it <emoji @char="🌈" @alt="Rainbow"></emoji></h2>
-
-<p>Listen to what these <a href="/docs/testimonials/">happy developers</a> are saying about Eleventy:</p>
-
-<testimonials-list></testimonials-list>
-
-<p><a href="/docs/testimonials/">…and many more!</a></p>
