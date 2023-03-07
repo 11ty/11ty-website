@@ -122,12 +122,6 @@ let eleventyComputed = {
 		<style>{% getBundle "css" %}</style>
 
 {%- if config.env === "production" %}
-	{%- if useWebCAsyncBundle %}
-		<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'async' %}" media="print" onload="this.media='all'" fetchpriority="low">
-		<noscript>
-			<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'async' %}" fetchpriority="low">
-		</noscript>
-	{%- endif %}
 	{%- if not skipLegacyBundle %}
 		<link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'" fetchpriority="low">
 		<noscript>
@@ -135,9 +129,6 @@ let eleventyComputed = {
 		</noscript>
 	{%- endif %}
 {%- else %}
-	{%- if useWebCAsyncBundle %}
-		<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'async' %}">
-	{%- endif %}
 	{%- if not skipLegacyBundle %}
 		<link rel="stylesheet" href="/css/async.css" fetchpriority="low">
 	{%- endif %}
@@ -155,9 +146,6 @@ let eleventyComputed = {
 {% if loadNetlifyIdentity %}
 		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 {% endif %}
-{%- if useWebCAsyncBundle %}
-		<script type="module" src="{% getBundleFileUrl 'js', 'async' %}"></script>
-{%- endif %}
 {%- if not skipLegacyBundle %}
 		<script src="/js/eleventy.js" type="module"></script>
 {%- endif %}

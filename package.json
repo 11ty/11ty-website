@@ -81,7 +81,7 @@
     "terser": "^5.16.5"
   },
   "dependencies": {
-    "@11ty/is-land": "^3.0.2",
+    "@11ty/is-land": "^4.0.0",
     "@11ty/logo": "^2.0.6",
     "@zachleat/details-utils": "^2.0.2",
     "@zachleat/filter-container": "^3.0.4",

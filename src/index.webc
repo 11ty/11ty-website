@@ -49,10 +49,9 @@ function getHighlightedBlogPostContent(collection) {
 
 <p class="ta-c elv-h3"><em>Fast Builds and even Faster Web Sites</em></p>
 
-<div webc:bucket="async">
-	<is-land on:visible>
-		<build-comparison variant="home"></build-comparison>
-	</is-land>
+<is-land on:visible>
+<bundle @name="async">
+	<build-comparison variant="home"></build-comparison>
 
 	<p>From a <a href="https://www.zachleat.com/web/build-benchmark/#benchmark-results">benchmark of ×4000 markdown files</a>. Learn more about <a href="/docs/performance/">Eleventy’s site and build performance</a>.</p>
 
@@ -102,4 +101,5 @@ function getHighlightedBlogPostContent(collection) {
 	<testimonials-list></testimonials-list>
 
 	<p><a href="/docs/testimonials/">…and many more!</a></p>
-</div>
+</bundle>
+</is-land>
