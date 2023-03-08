@@ -50,7 +50,7 @@ function getHighlightedBlogPostContent(collection) {
 <p class="ta-c elv-h3"><em>Fast Builds and even Faster Web Sites</em></p>
 
 <div webc:bucket="async">
-	<is-land on:visible>
+	<is-land on:visible on:media="(prefers-reduced-motion: no-preference)">
 		<build-comparison variant="home"></build-comparison>
 	</is-land>
 

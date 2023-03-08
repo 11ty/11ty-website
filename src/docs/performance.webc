@@ -30,7 +30,7 @@ Sites listed on the [Eleventy Leaderboards](/speedlify/) are tested and ranked (
 **Eleventy offers best-in-class build performance for JavaScript site generators.**
 </template>
 
-<is-land on:visible>
+<is-land on:visible on:media="(prefers-reduced-motion: no-preference)">
 	<template data-island="once"><link rel="stylesheet" href="/css/throbber.css" webc:keep><script src="/js/throbber.js" webc:keep></script></template>
 	<build-comparison @show-all></build-comparison>
 </is-land>
@@ -53,7 +53,7 @@ Data taken from [_Which Generator Builds Markdown the Fastest?_ (July 2022)](htt
 ## Installation Performance
 </template>
 
-<is-land on:visible>
+<is-land on:visible on:media="(prefers-reduced-motion: no-preference)">
 	<template data-island="once"><link rel="stylesheet" href="/css/throbber.css" webc:keep><script src="/js/throbber.js" webc:keep></script></template>
 	<install-comparison></install-comparison>
 </is-land>
