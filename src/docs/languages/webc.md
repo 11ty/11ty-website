@@ -1203,9 +1203,7 @@ Then you can output those bucket bundles anywhere on your page like this (here w
 
 #### Cascading Asset Buckets
 
-[{% addedin "@11ty/webc@0.9.1" %}](https://github.com/11ty/webc/releases/tag/v0.9.1)
-
-Additionally `webc:bucket` can be added to any tag and will cascade to all child content.
+[{% addedin "@11ty/webc@0.9.1" %}](https://github.com/11ty/webc/releases/tag/v0.9.1) Additionally `webc:bucket` can be added to any tag and will cascade to all child content.
 
 Consider this WebC page:
 
