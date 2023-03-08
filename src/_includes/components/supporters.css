@@ -122,3 +122,10 @@
 	margin-top: 0;
 }
 
+.supporters-netlify {
+	min-width: 10em;
+	width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
