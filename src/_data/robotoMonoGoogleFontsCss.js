@@ -16,7 +16,6 @@ module.exports = async function() {
 				}
 			}
 		});
-
 		return css;
 	} catch(e) {
 		console.log( "Failed getting Google Fonts CSS, returning ''" );
