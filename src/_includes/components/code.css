@@ -48,8 +48,7 @@ pre + .note {
 	text-align: right;
 }
 @media (prefers-color-scheme: dark) {
-	pre,
-	code {
+	pre {
 		background-color: #000;
 		color: #fff;
 	}

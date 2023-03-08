@@ -17,3 +17,9 @@ table code {
 em code {
 	font-style: normal;
 }
+@media (prefers-color-scheme: dark) {
+	code {
+		background-color: #000;
+		color: #fff;
+	}
+}
