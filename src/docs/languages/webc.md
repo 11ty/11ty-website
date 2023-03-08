@@ -19,20 +19,22 @@ relatedLinks:
 ## Why use WebC?
 
 * Brings first-class **components** to Eleventy.
-  * Expand any HTML element (including custom elements) to HTML with defined conventions from web standards.
-  * This means that Web Components created with WebC are compatible with server-side rendering (without duplicating author-written markup)
-  * WebC components are [Progressive Enhancement friendly](https://www.youtube.com/watch?v=p0wDUK0Z5Nw).
+	* Expand any HTML element (including custom elements) to HTML with defined conventions from web standards.
+	* This means that Web Components created with WebC are compatible with server-side rendering (without duplicating author-written markup)
+	* WebC components are [Progressive Enhancement friendly](https://www.youtube.com/watch?v=p0wDUK0Z5Nw).
 
 ### Performance
 
+* Create streamlined component-driven, cache-friendly page-specific JavaScript and CSS bundles. Users will only load the code they need to render that page (or that [island](/docs/plugins/partial-hydration/)).
+	* Easily [configurable boundaries](#asset-bucketing) for critical component CSS and JavaScript.
+	* Works great with [is-land](/docs/plugins/partial-hydration/) for web component hydration.
 * Get first-class **incremental builds** (for page templates, components, and Eleventy layouts) when [used with `--incremental`](/docs/usage/#incremental-for-partial-incremental-builds)
 * Streaming friendly (stream on the Edge 👀)
-* Works great with [is-land](/docs/plugins/partial-hydration/) for web component hydration.
 
 ### Compatible with Standards
 
 * Uses [`parse5`](https://github.com/inikulin/parse5) to parse WebC HTML as modern browsers do (a nod to [@DasSurma’s](https://twitter.com/DasSurma/status/1559159122964127744) work with [Vite](https://twitter.com/patak_dev/status/1564265006627176449) here)
-* Shadow DOM and Declarative Shadow DOM friendly (works with or without Shadow DOM)
+* Shadow DOM and Declarative Shadow DOM friendly (easily switch components between Light DOM and Shadow DOM)
 
 ### Authoring
 
@@ -40,7 +42,6 @@ relatedLinks:
 * Easily scope component CSS (or use your own scoping utility).
 * Tired of importing components? Use global or per-page no-import components.
 * Async-friendly: All configuration extensions/hooks into WebC are async-friendly out of the box.
-* Bundler mode: Easily roll up the CSS and JS in-use by WebC components on a page for page-specific bundles. Dirt-simple critical CSS/JS to only load the code you need.
 * For more complex templating needs, render any existing Eleventy template syntax (Liquid, markdown, Nunjucks, etc.) inside of WebC.
 
 ## Resources
@@ -52,9 +53,9 @@ relatedLinks:
 * [First Experience Building with Eleventy's WebC Plugin](https://www.raymondcamden.com/2022/10/16/first-experience-building-with-eleventys-webc-plugin)
 
 <div class="youtube-related">
-  {%- youtubeEmbed "X-Bpjrkz-V8", "Crash Course in Eleventy’s new WebC Plugin" -%}
-  {%- youtubeEmbed "p0wDUK0Z5Nw", "Interactive Progressively-enhanced Web Components with WebC" -%}
-  {%- youtubeEmbed "iZvhQ484V8s", "Server-rendered Image Comparison Component", 1552 -%}
+	{%- youtubeEmbed "X-Bpjrkz-V8", "Crash Course in Eleventy’s new WebC Plugin" -%}
+	{%- youtubeEmbed "p0wDUK0Z5Nw", "Interactive Progressively-enhanced Web Components with WebC" -%}
+	{%- youtubeEmbed "iZvhQ484V8s", "Server-rendered Image Comparison Component", 1552 -%}
 </div>
 
 * {% indieavatar "https://zachleat.com/" %}[zachleat.com: Adding Components to Eleventy with WebC](https://www.zachleat.com/web/webc-in-eleventy/): a brief history of the motivation behind WebC including influences from the Svelte and Vue communities.
@@ -143,8 +144,8 @@ Using Eleventy’s built-in [Render plugin](/docs/plugins/render/) allows you to
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "webc-render"} %}
-  <div id="webc-render-liquid" role="tabpanel">
+	{% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "webc-render"} %}
+	<div id="webc-render-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
@@ -156,8 +157,8 @@ Using Eleventy’s built-in [Render plugin](/docs/plugins/render/) allows you to
 ```
 {% endraw %}
 
-  </div>
-  <div id="webc-render-njk" role="tabpanel">
+	</div>
+	<div id="webc-render-njk" role="tabpanel">
 
 {% codetitle "Nunjucks", "Syntax" %}
 
@@ -169,26 +170,26 @@ Using Eleventy’s built-in [Render plugin](/docs/plugins/render/) allows you to
 ```
 {% endraw %}
 
-  </div>
-  <div id="webc-render-js" role="tabpanel">
+	</div>
+	<div id="webc-render-js" role="tabpanel">
 
 {% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 ```js
 module.exports = async function() {
-  let content = await this.renderTemplate(`<my-custom-component></my-custom-component>`, "webc");
-  return content;
+	let content = await this.renderTemplate(`<my-custom-component></my-custom-component>`, "webc");
+	return content;
 };
 ```
 {% endraw %}
 
-  </div>
-  <div id="webc-render-hbs" role="tabpanel">
+	</div>
+	<div id="webc-render-hbs" role="tabpanel">
 
 The `renderTemplate` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
 
-  </div>
+	</div>
 </seven-minute-tabs>
 </is-land>
 
@@ -259,9 +260,9 @@ Outputs:
 	<head>
 		<title>WebC Example</title>
 	</head>
-  <body>
-  	Components don’t need a root element, y’all.
-  </body>
+	<body>
+		Components don’t need a root element, y’all.
+	</body>
 </html>
 ```
 
@@ -301,9 +302,9 @@ Outputs:
 	<head>
 		<title>WebC Example</title>
 	</head>
-  <body>
-  	<my-component>Components don’t need a root element, y’all.</my-component>
-  </body>
+	<body>
+		<my-component>Components don’t need a root element, y’all.</my-component>
+	</body>
 </html>
 ```
 
@@ -351,7 +352,7 @@ WebC will expand any component it finds using known components. You can also use
 ```html
 <syntax-highlight language="js" webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight">
 function myFunction() {
-  return true;
+	return true;
 }
 </syntax-highlight>
 ```
@@ -472,11 +473,11 @@ It’s worth noting also that `webc:root` can be nested inside of other content�
 
 ```html
 <div>
-  <div>
-    <template webc:root="override" class="another-class">
-  	  Some component content
-    </template>
-  </div>
+	<div>
+		<template webc:root="override" class="another-class">
+			Some component content
+		</template>
+	</div>
 </div>
 ```
 
@@ -667,7 +668,7 @@ This is similar to using [JavaScript as a custom Eleventy Front Matter type](/do
 const myHtml = "<my-webc-component></my-webc-component>";
 
 function alwaysBlue() {
-  return "blue";
+	return "blue";
 }
 </script>
 
@@ -941,7 +942,7 @@ There are a few wrinkles when using an HTML parser with custom elements. Notably
 ```html
 <head>
 	<!-- <my-custom-head> is not allowed here but
-	     <meta webc:is="my-custom-head> is -->
+			 <meta webc:is="my-custom-head> is -->
 	<meta webc:is="my-custom-head">
 	<title webc:is="my-custom-title">Default Title</title>
 </head>
@@ -1016,15 +1017,30 @@ Notably, WebC components can have any valid HTML tag name and are not restricted
 
 Use the `components` property in the options passed to `addPlugin` in your Eleventy configuration file to specify project-wide WebC component files available for use in any page.
 
+We accept:
+
+* String (file path or glob)
+* Array (of file paths or globs) [{% addedin "@11ty/eleventy-plugin-webc@0.9.2" %}](https://github.com/11ty/eleventy-plugin-webc/releases/tag/v0.9.2)
+* [`npm:` prefix aliases](#webcimport) [{% addedin "@11ty/eleventy-plugin-webc@0.9.2" %}](https://github.com/11ty/eleventy-plugin-webc/releases/tag/v0.9.2)
+
+{% codetitle ".eleventy.js" %}
+
 ```js
 const pluginWebc = require("@11ty/eleventy-plugin-webc");
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebc, {
 		// Glob to find no-import global components
-    // This path is relative to the project-root!
-		// (The default changed from `false` in Eleventy WebC v0.7.0)
+		// This path is relative to the project-root!
+		// The default value is shown:
 		components: "_components/**/*.webc",
+
+		// or an Array (Eleventy WebC v0.9.2+)
+		components: [
+			"_components/**/*.webc",
+			"npm:@11ty/is-land/*.webc"
+			"npm:@11ty/eleventy-plugin-syntaxhighlight/*.webc"
+		]
 	});
 };
 ```
@@ -1141,9 +1157,11 @@ You can [write these bundles to external files too](https://github.com/11ty/elev
 {% endraw %}
 
 
-#### Asset bucketing
+### Asset bucketing
 
-Components can use the `webc:bucket` feature to output to any arbitrary bucket name for compartmentalization at the component level.
+There is an additional layer of bundling here that you can use that we call Bucketing. Components can use `webc:bucket` to output to any arbitrary bucket name.
+
+In this component, we have component code that outputs to two separate buckets:
 
 {% codetitle "_includes/webc/my-webc-component.webc" %}
 
@@ -1153,6 +1171,10 @@ Components can use the `webc:bucket` feature to output to any arbitrary bucket n
 <style webc:bucket="defer">/* This CSS is put into the `defer` bucket */</style>
 <script webc:bucket="defer">/* This JS is put into the `defer` bucket */</script>
 ```
+
+When `<my-webc-component>` is used on a page, it will roll the assets to the page-specific bucket bundles for CSS and JavaScript.
+
+Then you can output those bucket bundles anywhere on your page like this (here we’re using an Eleventy layout file):
 
 {% codetitle "_includes/layout.webc" %}
 
@@ -1179,28 +1201,74 @@ Components can use the `webc:bucket` feature to output to any arbitrary bucket n
 * {% addedin "@11ty/webc@0.8.0" %}`webc:keep` is required on `<style>` and `<script>` in your layout files to prevent re-bundling the bundles.
 <!-- * {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in `@html` or `@raw` (e.g. `this.getCss`/`this.page.url`) when referencing helpers/data/attributes/property values. -->
 
+#### Cascading Asset Buckets
+
+[{% addedin "@11ty/webc@0.9.1" %}](https://github.com/11ty/webc/releases/tag/v0.9.1)
+
+Additionally `webc:bucket` can be added to any tag and will cascade to all child content.
+
+Consider this WebC page:
+
+{% codetitle "index.webc" %}
+
+```html
+<!-- has an implied webc:bucket="default" -->
+<my-component></my-component>
+
+<div webc:bucket="defer">
+	<!-- each of these have webc:bucket="defer" -->
+	<!-- (including any nested components inside, too) -->
+	<footnote-references></footnote-references>
+
+	<my-footer></my-footer>
+</div>
+```
+
+Setting `webc:bucket` now cascades to all of the children as if they had `webc:bucket="defer"` assigned to each of them individually. All assets used in those components will now be rolled up into the `defer` bucket.
+
+<div class="youtube-related">
+	{%- youtubeEmbed "fzo_S9UiYYk", "Learn how we used webc:bucket to create Critical CSS and JS bundles for 11ty.dev" -%}
+</div>
+
+##### Conflicts and hoisting
+
+What happens when a component is used in multiple distinct buckets?
+
+{% codetitle "index.webc" %}
+
+```html
+<!-- has an implied webc:bucket="default" -->
+<my-component></my-component>
+
+<div webc:bucket="defer">
+	<my-component></my-component>
+</div>
+```
+
+When duplicates and conflicts occur, WebC will hoist the component code to find the nearest shared bucket for you. In the above example, the CSS and JS for `<my-component>` will be loaded in the `default` bucket and only in the `default` bucket.
+
 ### Use with `is-land`
 
 You can also use this out of the box with Eleventy’s [`is-land` component for web component hydration](/docs/plugins/partial-hydration/).
 
 At the component level, components can declare their own is-land loading conditions.
 
-{% codetitle "_includes/webc/my-webc-component.webc" %}
+{% codetitle "index.webc" %}
 
 ```html
-<is-land on:visible>
+<is-land on:visible webc:import="npm:@11ty/is-land">
 	<template data-island>
 		<!-- CSS -->
 		<style webc:keep>
-		/* This is on-visible CSS */
+		/* This CSS applies on:visible */
 		</style>
-		<link rel="stylesheet" href="some-arbitrary-css.css" webc:keep>
+		<link rel="stylesheet" href="arbitrary.css" webc:keep>
 
 		<!-- JS -->
 		<script type="module" webc:keep>
-		console.log("This is on-visible JavaScript");
+		console.log("This JavaScript runs on:visible");
 		</script>
-		<script type="module" src="some-arbitrary-js.js" webc:keep></script>
+		<script type="module" src="arbitrary.js" webc:keep></script>
 	</template>
 </is-land>
 ```
