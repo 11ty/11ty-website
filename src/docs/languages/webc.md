@@ -1047,7 +1047,7 @@ module.exports = function(eleventyConfig) {
 
 Notably, the path for `components` is relative to your project root (**not** your [project’s `input` directory](/docs/config/#input-directory)).
 
-The file names of components found in the glob determine the global tag name used in your project (e.g. `_includes/components/my-component.webc` will give you access to `<my-component>`).
+The file names of components found in the glob determine the global tag name used in your project (e.g. `_components/my-component.webc` will give you access to `<my-component>`).
 
 #### Declaring Components in Front Matter
 
@@ -1076,7 +1076,7 @@ Eleventy WebC will bundle any specific page’s assets (CSS and JS used by compo
 
 {% callout "info", "md" %}Note on **Declarative Shadow DOM**: elements inside of [declarative shadow root](https://web.dev/declarative-shadow-dom/) template (`<template shadowrootmode>` or the deprecated `<template shadowroot>`) are left as is and **not bundled**.{% endcallout %}
 
-{% codetitle "_includes/webc/my-webc-component.webc" %}
+{% codetitle "_components/my-webc-component.webc" %}
 
 ```html
 <style>/* This is component CSS */</style>
@@ -1118,6 +1118,37 @@ You can opt-out of bundling on a per-element basis [using `webc:keep`](#webckeep
 * `@raw` was {% addedin "@11ty/webc@0.7.1" %}. Previous versions can use `webc:raw @html`.
 <!-- * {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in `@html` or `@raw` (e.g. `this.getCss`/`this.page.url`) when referencing helpers/data/attributes/property values. -->
 
+#### Bundle Code Ordering
+
+The order of the code in these bundles is determined by the dependency order of the components, from most specific to least specific!
+
+<details>
+<summary>Expand to see an example</summary>
+
+Say we have an `index.webc` page that uses a `header.webc` component.
+
+{% codetitle "index.webc" %}
+
+```html
+<style>/* index.webc */</style>
+<header></header>
+```
+
+{% codetitle "_components/header.webc" %}
+
+```html
+<style>/* header.webc */</style>
+```
+
+The CSS bundle will look like:
+
+```css
+/* header.webc */
+/* index.webc */
+```
+
+</details>
+
 #### Access Bundles in other Template Engines
 
 You can access these bundles in other templates types too (`.njk`, `.liquid`, etc.).
@@ -1152,7 +1183,7 @@ There is an additional layer of bundling here that you can use that we call Buck
 
 In this component, we have component code that outputs to two separate buckets:
 
-{% codetitle "_includes/webc/my-webc-component.webc" %}
+{% codetitle "_components/my-webc-component.webc" %}
 
 ```html
 <style>/* This CSS is put into the default bucket */</style>
