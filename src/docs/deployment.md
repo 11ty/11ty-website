@@ -38,6 +38,9 @@ hosts:
   - name: Digital Ocean
     url: https://www.digitalocean.com/community/tutorials/how-to-create-and-deploy-your-first-eleventy-website
     screenshotSize: medium
+  - name: Codeberg Pages
+    url: https://codeberg.page/
+    screenshotSize: medium
 clis:
   - name: Netlify CLI
     url: https://www.netlify.com/products/cli/
