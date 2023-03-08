@@ -144,8 +144,8 @@ Using Eleventy’s built-in [Render plugin](/docs/plugins/render/) allows you to
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-	{% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "webc-render"} %}
-	<div id="webc-render-liquid" role="tabpanel">
+{% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "webc-render"} %}
+<div id="webc-render-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
@@ -157,8 +157,8 @@ Using Eleventy’s built-in [Render plugin](/docs/plugins/render/) allows you to
 ```
 {% endraw %}
 
-	</div>
-	<div id="webc-render-njk" role="tabpanel">
+</div>
+<div id="webc-render-njk" role="tabpanel">
 
 {% codetitle "Nunjucks", "Syntax" %}
 
@@ -170,8 +170,8 @@ Using Eleventy’s built-in [Render plugin](/docs/plugins/render/) allows you to
 ```
 {% endraw %}
 
-	</div>
-	<div id="webc-render-js" role="tabpanel">
+</div>
+<div id="webc-render-js" role="tabpanel">
 
 {% codetitle "JavaScript", "Syntax" %}
 
@@ -184,12 +184,12 @@ module.exports = async function() {
 ```
 {% endraw %}
 
-	</div>
-	<div id="webc-render-hbs" role="tabpanel">
+</div>
+<div id="webc-render-hbs" role="tabpanel">
 
 The `renderTemplate` shortcode [requires an async-friendly template language](#template-compatibility) and is not available in Handlebars.
 
-	</div>
+</div>
 </seven-minute-tabs>
 </is-land>
 
