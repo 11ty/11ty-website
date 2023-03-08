@@ -1099,13 +1099,20 @@ You can opt-out of bundling on a per-element basis [using `webc:keep`](#webckeep
 	<head>
 		<meta charset="utf-8">
 		<title>WebC Example</title>
-		<style @raw="getCss(page.url)" webc:keep></style>
-		<script @raw="getJs(page.url)" webc:keep></script>
+
+		<!-- inline bundles -->
+		<style @raw="getBundle('css')" webc:keep></style>
+		<script @raw="getBundle('js')" webc:keep></script>
+
+		<!-- or write your bundle to a file -->
+		<link rel="stylesheet" :href="getBundleFileUrl('css')">
+		<script :src="getBundleFileUrl('js')"></script>
 	</head>
 	<body @raw="content"></body>
 </html>
 ```
 
+* {% addedin "@11ty/eleventy-plugin-webc@0.9.0" %}Eleventy WebC uses [`eleventy-plugin-bundle`](https://github.com/11ty/eleventy-plugin-bundle/#use-with-webc) behind the scenes to implement bundling. `getBundle('css')` and `getBundle('js')` can now be used instead of `getCss(page.url)` and `getJs(page.url)` respectively.
 * {% addedin "@11ty/webc@0.8.0" %}`webc:keep` is required on `<style>` and `<script>` in your layout files to prevent re-bundling the bundles.
 * {% addedin "@11ty/webc@0.8.0" %}The `getCss` and `getJs` helpers are now available to all WebC templates without restriction. Previous versions required them to be used in an _Eleventy Layout_ file.
 * `@raw` was {% addedin "@11ty/webc@0.7.1" %}. Previous versions can use `webc:raw @html`.
@@ -1113,27 +1120,20 @@ You can opt-out of bundling on a per-element basis [using `webc:keep`](#webckeep
 
 #### Access Bundles in other Template Engines
 
-You can access these bundles in other templates types like `*.njk` or `.liquid` too.
+You can access these bundles in other templates types too (`.njk`, `.liquid`, etc.).
 
-{% addedin "@11ty/webc@0.9.0" %}Eleventy WebC now uses [`eleventy-plugin-bundle`](https://github.com/11ty/eleventy-plugin-bundle/#use-with-webc) behind the scenes to implement WebC bundling. This plugin provides a [`getBundle` universal shortcode](https://github.com/11ty/eleventy-plugin-bundle/#render-bundle-code) for use in any template type.
-
-{% codetitle "Nunjucks, Liquid", "Syntax" %}
-
-{% raw %}
-```njk
-<style>{% getBundle "css" %}</style>
-<script>{% getBundle "js" %}</script>
-```
-{% endraw %}
+{% addedin "@11ty/eleventy-plugin-webc@0.9.0" %}Eleventy WebC uses [`eleventy-plugin-bundle`](https://github.com/11ty/eleventy-plugin-bundle/#use-with-webc) behind the scenes to implement bundling. This plugin provides [`getBundle`](https://github.com/11ty/eleventy-plugin-bundle/#render-bundle-code) and [`getBundleFileUrl`](https://github.com/11ty/eleventy-plugin-bundle/#write-a-bundle-to-a-file) universal shortcodes for use in any template type (including WebC as shown above).
 
 <details>
-<summary>Check out the deprecated (but still in place for backwards compatibility) <code>webcGetCss</code> and <code>webcGetJs</code> universal filters for bundle output in WebC 0.8.0 and older</summary>
+<summary><em>WebC v0.8.0 and older:</em> Check out the deprecated (but still in place for backwards compatibility) <code>webcGetCss</code> and <code>webcGetJs</code> universal filters for bundle output.</summary>
 
 {% codetitle "_includes/layout.njk" %}
 {% raw %}
 ```njk
 <style>{{ page.url | webcGetCss | safe }}</style>
 <script>{{ page.url | webcGetJs | safe }}</script>
+<!-- write to a file -->
+<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">
 ```
 {% endraw %}
 {% codetitle "_includes/layout.liquid" %}
@@ -1144,17 +1144,6 @@ You can access these bundles in other templates types like `*.njk` or `.liquid` 
 ```
 {% endraw %}
 </details>
-
-You can [write these bundles to external files too](https://github.com/11ty/eleventy-plugin-bundle/#write-a-bundle-to-a-file), if you’d like. External files are better cached in the browser but can be slower for first time visitors.
-
-{% codetitle "Nunjucks, Liquid", "Syntax" %}
-
-{% raw %}
-```njk
-<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">
-<script src="{% getBundleFileUrl "js" %}"></script>
-```
-{% endraw %}
 
 
 ### Asset bucketing
@@ -1185,15 +1174,15 @@ Then you can output those bucket bundles anywhere on your page like this (here w
 		<meta charset="utf-8">
 		<title>WebC Example</title>
 		<!-- Default bucket -->
-		<style @raw="getCss(page.url)" webc:keep></style>
-		<script @raw="getJs(page.url)" webc:keep></script>
+		<style @raw="getBundle('css')" webc:keep></style>
+		<script @raw="getBundle('js')" webc:keep></script>
 	</head>
 	<body>
 		<template @raw="content" webc:nokeep></template>
 
 		<!-- `defer` bucket -->
-		<style @raw="getCss(page.url, 'defer')" webc:keep></style>
-		<script @raw="getJs(page.url, 'defer')" webc:keep></script>
+		<style @raw="getBundle('css', 'defer')" webc:keep></style>
+		<script @raw="getBundle('js', 'defer')" webc:keep></script>
 	</body>
 </html>
 ```
