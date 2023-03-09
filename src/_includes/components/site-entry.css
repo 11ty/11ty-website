@@ -15,6 +15,11 @@
   width: 100%;
   height: auto;
 }
+.sites-icon-auto.sites-icon-auto.sites-icon-auto {
+	width: 23.4375em; /* 375px /16 */
+	height: auto;
+	padding: 2.5em;
+}
 .sites-site-official .sites-screenshot {
 	border-color: #666;
 }
