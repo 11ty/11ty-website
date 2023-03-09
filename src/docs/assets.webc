@@ -185,14 +185,16 @@ permalink: bundle.js
 
 <p>Eleventy also provides an optional <a href="https://github.com/11ty/eleventy-plugin-bundle/"><code>@11ty/eleventy-plugin-bundle</code></a> plugin that allows you to populate bundles with code from content pages. This allows you to make the CSS and JavaScript content-driven. The bundle plugin can be used in Nunjucks, Liquid, Handlebars, 11ty.js, and WebC templates and is provided for free with the <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code> Starter Project</a>.</p>
 
-<a href="/languages/webc/"><img webc:nokeep @html="image('./src/img/logos/webc.png', 'WebC Logo', [100], '', '6.25em')"></a>
-
 <p>Furthermore, <em>the bundle plugin is used by <a href="/docs/languages/webc/#css-and-js-(bundler-mode)">WebC to create minimal bundles</a> that are comprised only of CSS and JavaScript from components used on each WebC page</em>.</p>
 
 <p>Using WebC in this way provides the best and least-effort investment in the long-term maintenance of a page. When components on the page change, the JavaScript and CSS bundles are automatically streamlined and will not contain extra code from previous designs.</p>
 
 <p><a href="/languages/webc/"><strong>Get started with WebC!</strong></a></p>
 
+<sites-list>
+	<site-card :image-html="image('./src/img/logos/webc.png', 'WebC Logo', [154], 'sites-screenshot', '6.25em')" url="/languages/webc/" name="WebC"></site-card>
+	<site-card url="https://www.youtube.com/watch?v=fzo_S9UiYYk" name="Rebuilding 11ty.dev using WebC" date="2023-03-08"></site-card>
+</sites-list>
 
 <h2>More from the Community</h2>
 
