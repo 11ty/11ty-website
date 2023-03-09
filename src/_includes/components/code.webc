@@ -1,1 +1,1 @@
-<link rel="stylesheet" href="inline-code.css"><style @html="robotoMonoGoogleFontsCss"></style><code webc:root="override"><slot></slot></code>
+<style @html="robotoMonoGoogleFontsCss"></style><style>/* WebC Issue #128 workaround */</style><link rel="stylesheet" href="inline-code.css">
