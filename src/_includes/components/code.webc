@@ -1,1 +1,1 @@
-<link rel="stylesheet" href="inline-code.css"><style @html="robotoMonoGoogleFontsCss"></style>
+<link rel="stylesheet" href="inline-code.css"><style @html="robotoMonoGoogleFontsCss"></style><slot></slot>
