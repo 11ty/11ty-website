@@ -181,7 +181,7 @@ permalink: bundle.js
 	<site-card url="https://11ty.rocks/posts/process-css-with-lightningcss/" name="Process CSS or Sass with LightningCSS" using="LightningCSS" date="2023-02-25"></site-card>
 </sites-list>
 
-<h2><number-flag>3</number-flag> Component-driven Bundles</h2>
+<h2><number-flag>4</number-flag> Component-driven Bundles</h2>
 
 <p>Eleventy also provides an optional <a href="https://github.com/11ty/eleventy-plugin-bundle/"><code>@11ty/eleventy-plugin-bundle</code></a> plugin that allows you to populate bundles with code from content pages. This allows you to make the CSS and JavaScript content-driven. The bundle plugin can be used in Nunjucks, Liquid, Handlebars, 11ty.js, and WebC templates and is provided for free with the <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code> Starter Project</a>.</p>
 
