@@ -202,6 +202,7 @@ permalink: bundle.js
 	<site-card :image-html="indieavatar('https://vitejs.dev/', 'sites-screenshot sites-icon-auto')" url="https://www.11ty.dev/docs/server-vite/" name="Using Eleventy’s Vite Plugin"></site-card>
 	<site-card url="https://www.webstoemp.com/blog/eleventy-dev-server-external-asset-pipeline/" name="External Asset Pipeline with Eleventy" using="esbuild" date="2023-01-23"></site-card>
 	<site-card url="https://danburzo.ro/eleventy-sass/" name="Sass in Eleventy, with versioning" date="2023-05-01"></site-card>
+	<site-card url="https://helloyes.dev/blog/2021/minimal-sass-and-eleventy-setup/" name="Minimal SASS & Eleventy Setup" date="2021-06-21"></site-card>
 	<site-card url="https://www.vseventer.com/static-site-generators-eleventy-and-webpack-part-2/" name="Static Site Generators: Eleventy and webpack (Part 2)" date="2020-05-09"></site-card>
 	<site-card url="https://darthmall.net/weblog/2020/eleventy-asset-pipeline/" name="Asset Pipelines in Eleventy" date="2020-11-13"></site-card>
 	<site-card url="https://chriskirknielsen.com/blog/eleventy-asset-pipeline-precompiled-assets/" name="Eleventy Asset Pipeline: Precompiled Assets Without Gulp" date="2022-11-27"></site-card>
