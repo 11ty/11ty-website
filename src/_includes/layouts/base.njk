@@ -122,7 +122,9 @@ let eleventyComputed = {
 {%- endif %}
 
 {%- if not skipLegacyBundle %}
-{%- if config.env === "production" %}
+{%- if page.inputPath.endsWith(".webc") %}
+		<link rel="stylesheet" href="/css/async-webc.css" fetchpriority="low">
+{%- elseif config.env === "production" %}
 		<link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'" fetchpriority="low">
 		<noscript>
 			<link rel="stylesheet" href="/css/async.css" fetchpriority="low">

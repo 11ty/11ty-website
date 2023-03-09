@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="site-entry.css">
+
+<div class="sites-site-vert">
+	<a :href="url" class="elv-externalexempt" :title="name || false">
+		<div class="sites-screenshot-container" @html="getScreenshotHtml(undefined, screenshotUrl || url, null, size)"></div>
+		<span class="sites-site-name--nowrap">
+			<span webc:nokeep @html="indieavatar(url, 'avatar-large')"></span>
+			<span webc:nokeep @text="name || url"></span>
+			<em webc:if="using" @text="`(${using})`"></em>
+			<em webc:if="date" @text="`(${date.split('-').shift()})`"></em>
+		</span>
+	</a>
+</div>

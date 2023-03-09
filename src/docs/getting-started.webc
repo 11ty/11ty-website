@@ -155,12 +155,13 @@ The _easiest_ way to put your new site online is to head over to [Netlify Drop](
 
 Congratulations—you made something with Eleventy! Now put it to work:
 
-* Add more content files: [HTML](/docs/languages/html/), [Markdown](/docs/languages/markdown/), [JavaScript](/docs/languages/javascript/), [WebC](/docs/languages/webc/), [Nunjucks](/docs/languages/nunjucks/), [Liquid](/docs/languages/liquid/), [Handlebars](/docs/languages/handlebars/), [Mustache](/docs/languages/mustache/), [EJS](/docs/languages/ejs/), [HAML](/docs/languages/haml/), [Pug](/docs/languages/pug/), or extend Eleventy with your own [custom file extension](/docs/languages/custom/).
-* [Consume data from APIs](/docs/data-js/)
-* Read a few [Quick Tips](/docs/quicktips/) for more ideas!
-* Learn more [Eleventy command line options](/docs/usage/)
-* Try one of our [Starter Projects](/docs/starter/)
-* Try one of these excellent Community-contributed Getting Started [tutorials](/docs/tutorials/):
+1. Use [a layout file so that you don’t have to repeat boilerplate on every template](/docs/layouts/).
+1. Add [CSS, JavaScript, or Web Fonts](/docs/assets/) to your project.
+1. Add more content! In the above tutorial we used [HTML](/docs/languages/html/) and [Markdown](/docs/languages/markdown/). Why not [JavaScript](/docs/languages/javascript/) or [WebC](/docs/languages/webc/) (for components) next? [Nunjucks](/docs/languages/nunjucks/) and [Liquid](/docs/languages/liquid/) are also very popular. Maybe you’re feeling super adventurous and want to [add your own custom type?](/docs/languages/custom/).
+1. Learn more of the [command line options for Eleventy](/docs/usage/).
+1. Perhaps you’d like to [consume data from third party APIs](/docs/data-js/) in your project?
+1. Or jump ahead and use an already built [Starter Project](/docs/starter/)?
+1. We also have a few excellent Community-contributed [tutorials](/docs/tutorials/):
 
 {%- if communityLinksKey %}
 <div class="elv-community" id="community-resources">
@@ -168,3 +169,6 @@ Congratulations—you made something with Eleventy! Now put it to work:
 </div>
 {%- endif %}
 </template>
+
+<!-- Temporary workaround for Nunjucks components that need CSS from WebC components -->
+<sites-list></sites-list>

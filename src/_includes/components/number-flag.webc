@@ -1,0 +1,4 @@
+<span class="numberflag">
+	<span class="sr-only">Step</span>
+	<slot></slot>
+</span>

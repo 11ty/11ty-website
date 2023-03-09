@@ -186,17 +186,19 @@ main img[height] {
 main details {
 	margin: 1em 0;
 }
-main > details[open] {
+main > details[open],
+details[open].expand-background {
 	background-color: rgba(0,0,0,.13);
 	outline: .75em solid rgba(0,0,0,.13);
 }
 @media (prefers-color-scheme: dark) {
-	main > details[open] {
+	main > details[open],
+	details[open].expand-background {
 		background-color: rgba(255,255,255,.08);
 		outline: .75em solid rgba(255,255,255,.08);
 	}
 }
-main summary {
+main details[open] > summary {
 	margin: 0 0 1em;
 }
 

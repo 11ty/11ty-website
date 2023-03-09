@@ -10,6 +10,6 @@
 }
 </style>
 
-<template webc:root class="fl">
+<template webc:root class="fl fl-inline fl-nowrap">
   <slot></slot>
 </template>

@@ -299,7 +299,7 @@ module.exports = function(eleventyConfig) {
 		}
 	});
 
-	eleventyConfig.addNunjucksAsyncShortcode("image", shortcodes.image);
+	eleventyConfig.addShortcode("image", shortcodes.image);
 	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatar);
 	eleventyConfig.addShortcode("communityavatar", shortcodes.communityAvatar);
 	eleventyConfig.addShortcode("opencollectiveavatar", shortcodes.getOpenCollectiveAvatarHtml);

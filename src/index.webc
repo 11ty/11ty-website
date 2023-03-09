@@ -83,7 +83,7 @@ function getHighlightedBlogPostContent(collection) {
 
 	<h2>Built With Eleventy</h2>
 
-	<sites-list></sites-list>
+	<sites-list-njk :sites="builtwith"></sites-list-njk>
 
 	<div class="fullwidth-module">
 	  <is-land on:visible on:save-data="false">
