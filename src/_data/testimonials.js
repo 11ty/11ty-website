@@ -236,6 +236,12 @@ module.exports = async function() {
 			"name": "Lea Verou",
 			"source": "https://twitter.com/LeaVerou/status/1629652201168576512",
 			"featured": true
+		},{
+			"text": "The Eleventy + Netlify combo continues to be 🤌",
+			"avatarUrl": "https://danmall.com/",
+			"name": "Dan Mall",
+			"source": "https://twitter.com/danmall/status/1585364687046123521",
+			"featured": true
 		},
 	].map(entry => {
 		// canonical urls via @tweetback/canonical
