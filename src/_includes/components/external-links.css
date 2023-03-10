@@ -79,8 +79,8 @@ a[href^="https://fosstodon.org"]:before {
 	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fjoinmastodon.org%2F/");
 }
 a[href^="https://github.com"]:before {
-	border-radius: 0.3125em; /* 5px /16 */
-	border: .5px solid #fff;
+	border-radius: 7px;
+	box-shadow: 0px 0px 0px 2px #fff;
 	background-color: #fff;
 	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fgithub.com%2F/");
 }

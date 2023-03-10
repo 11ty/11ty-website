@@ -35,7 +35,7 @@
 .elv-docs .elv-nav-docs-only.spacer {
 	display: none;
 }
-@media (min-width: 53.75em) { /* 860px */
+@media (min-width: 51.25em) { /* 820px */
 	.elv-docs .elv-nav-docs-only.spacer {
 		display: inherit;
 	}
@@ -56,5 +56,17 @@
 		float: left;
 		/* adjust for logo in Safari */
 		width: calc(100% - 4.303125em - 1em);
+	}
+}
+
+/* Social link text hides at mid-viewport */
+@media (min-width: 51.25em) { /* 820px */
+	.elv-docs .elv-nav-sociallink:before {
+		display: block;
+		text-align: center;
+		margin: 0 auto;
+	}
+	.elv-docs .elv-nav-sociallink-text {
+		font-size: 0.875em; /* 14px /16 */
 	}
 }
