@@ -24,7 +24,7 @@ filter-container:defined .filter-code--hide {
 <filter-container oninit leave-url-alone>
 	<h2><number-flag>1</number-flag> Copy <span data-filter-code="css">CSS</span><span data-filter-code="font">Web Font</span><span data-filter-code="js">JavaScript</span> Files</h2>
 
-	<p>This is the simplest approach and is great for beginners and/or with small/short-term projects.</p>
+	<p>This is the simplest approach and is great for beginners and/or with small projects. It’s great because it <em>doesn’t require a bundler or any external dependencies</em>.</p>
 
 	<form>
 		<flex-luthor>
@@ -75,9 +75,7 @@ module.exports = function(eleventyConfig) {
 		<li data-filter-code="js">Reference the JavaScript file in your HTML using <syntax-highlight language="html"><script src="/bundle.js"></script></syntax-highlight></li>
 	</ol>
 
-	<p>This approach is great because it <em>doesn’t require a bundler or any external dependencies</em>.</p>
-
-	<details class="expand-background">
+	<details class="expand-background" data-filter-code="js,css">
 		<summary>Expand for an example using Concatention, pulling in from <span data-filter-code="css">CSS</span><span data-filter-code="js">JavaScript</span> from multiple sources.</summary>
 
 		<p>You can use the Nunjucks and Liquid <code>include</code> tag to do simple concatenation.</p>
