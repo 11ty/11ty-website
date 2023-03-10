@@ -176,7 +176,11 @@ permalink: bundle.js
 <p>Here are a few great guides to get you started:</p>
 
 <sites-list>
-	<site-card url="https://www.11ty.dev/docs/languages/custom/#example-add-sass-support-to-eleventy" screenshot-url="https://www.11ty.dev/docs/languages/custom/" name="Using Eleventy Custom Templates to Add Sass Support to Eleventy" date=""></site-card>
+	<site-card
+		icon-url="https://sass-lang.com/"
+		url="https://www.11ty.dev/docs/languages/custom/#example-add-sass-support-to-eleventy"
+		name="Using Eleventy Custom Templates to Add Sass Support to Eleventy"
+		date=""></site-card>
 	<site-card url="https://pepelsbey.dev/articles/eleventy-css-js/" name="CSS and JavaScript as First-Class Citizens in Eleventy" using="esbuild, PostCSS" date="2022-11-25"></site-card>
 	<site-card url="https://11ty.rocks/posts/process-css-with-lightningcss/" name="Process CSS or Sass with LightningCSS" using="LightningCSS" date="2023-02-25"></site-card>
 </sites-list>
@@ -199,7 +203,7 @@ permalink: bundle.js
 <h2>Learn More</h2>
 
 <sites-list>
-	<site-card :image-html="indieavatar('https://vitejs.dev/', 'sites-screenshot sites-icon-auto')" url="https://www.11ty.dev/docs/server-vite/" name="Using Eleventy’s Vite Plugin" date=""></site-card>
+	<site-card icon-url="https://vitejs.dev/" url="https://www.11ty.dev/docs/server-vite/" name="Using Eleventy’s Vite Plugin" date=""></site-card>
 	<site-card url="https://www.webstoemp.com/blog/eleventy-dev-server-external-asset-pipeline/" name="External Asset Pipeline with Eleventy" using="esbuild" date="2023-01-23"></site-card>
 	<site-card url="https://danburzo.ro/eleventy-sass/" name="Sass in Eleventy, with versioning" date="2023-05-01"></site-card>
 	<site-card url="https://helloyes.dev/blog/2021/minimal-sass-and-eleventy-setup/" name="Minimal SASS & Eleventy Setup" date="2021-06-21"></site-card>

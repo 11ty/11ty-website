@@ -1,8 +1,15 @@
+<script webc:setup>
+function getIconHtml(url) {
+	if(url) {
+		return indieavatar(url, 'sites-screenshot sites-icon-auto');
+	}
+}
+</script>
 <link rel="stylesheet" href="site-entry.css">
 
 <div class="sites-site-vert">
 	<a :href="url" class="elv-externalexempt" :title="name || false">
-		<div class="sites-screenshot-container" @html="imageHtml || getScreenshotHtml(undefined, screenshotUrl || url, null, size)"></div>
+		<div class="sites-screenshot-container" @html="imageHtml || getIconHtml(iconUrl) || getScreenshotHtml(undefined, screenshotUrl || url, null, size)"></div>
 		<span class="sites-site-name--nowrap">
 			<span webc:nokeep @html="indieavatar(url, 'avatar-large')"></span>
 			<span webc:nokeep @text="name || url"></span>
