@@ -13,7 +13,7 @@ excludeFromSearch: true
 excludeFromSidebar: true
 layout: layouts/docs.njk
 ---
-{%- css %}{% include "components/page-sites.css" %}{% endcss %}
+<style>{% include "components/page-sites.css" %}</style>
 {# @TODO add support for githubTwitterMap.js data #}
 {%- set twitterUrl = "https://twitter.com/" + author.name.substring("twitter:".length) | canonicalTwitterUrl %}
 {%- set githubUrl = "https://github.com/" + author.name %}
