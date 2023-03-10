@@ -8,10 +8,11 @@ module.exports = function(eleventyConfig) {
 
         // Do you want to pass in your own data here?
         let data = {};
-        return vm.getGlobalContext(data, {
+				let ret = vm.getGlobalContextSync(data, {
           reuseGlobal: true,
           dynamicImport: true,
         });
+        return ret;
       }
     }
   });
