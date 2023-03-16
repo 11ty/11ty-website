@@ -22,7 +22,7 @@ filter-container:defined .filter-code--hide {
 </style>
 
 <filter-container oninit leave-url-alone>
-	<h2><number-flag>1</number-flag> Copy <span data-filter-code="css">CSS</span><span data-filter-code="font">Web Font</span><span data-filter-code="js">JavaScript</span> Files</h2>
+	<h2 id="copy-files"><number-flag>1</number-flag> Copy <span data-filter-code="css">CSS</span><span data-filter-code="font">Web Font</span><span data-filter-code="js">JavaScript</span> Files</h2>
 
 	<p>This is the simplest approach and is great for beginners and/or with small projects. It’s great because it <em>doesn’t require a bundler or any external dependencies</em>.</p>
 
@@ -109,7 +109,7 @@ module.exports = function(eleventyConfig) {
 </filter-container>
 
 <filter-container oninit leave-url-alone>
-	<h2><number-flag>2</number-flag> Use an Eleventy Template</h2>
+	<h2 id="use-an-eleventy-template"><number-flag>2</number-flag> Use an Eleventy Template</h2>
 
 	<form>
 		<flex-luthor>
@@ -163,7 +163,7 @@ permalink: bundle.js
 
 </filter-container>
 
-<h2><number-flag>3</number-flag> Eleventy Custom Templates</h2>
+<h2 id="eleventy-custom-templates"><number-flag>3</number-flag> Eleventy Custom Templates</h2>
 
 <p>You can add <code>js</code> and <code>css</code> (or even <code>scss</code> for Sass) as <a href="/docs/languages/custom/">custom template types</a> in Eleventy. This means that any <code>js</code> and <code>css</code> files added to your project are processed by Eleventy.</p>
 
@@ -183,7 +183,7 @@ permalink: bundle.js
 	<site-card url="https://11ty.rocks/posts/process-css-with-lightningcss/" name="Process CSS or Sass with LightningCSS" using="LightningCSS" date="2023-02-25"></site-card>
 </sites-list>
 
-<h2><number-flag>4</number-flag> Component-driven Bundles</h2>
+<h2 id="component-driven-bundles"><number-flag>4</number-flag> Component-driven Bundles</h2>
 
 <p>Eleventy also provides an optional <a href="https://github.com/11ty/eleventy-plugin-bundle/"><code>@11ty/eleventy-plugin-bundle</code></a> plugin that allows you to populate bundles with code from content pages. This allows you to make the CSS and JavaScript content-driven. The bundle plugin can be used in Nunjucks, Liquid, Handlebars, 11ty.js, and WebC templates and is provided for free with the <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code> Starter Project</a>.</p>
 
@@ -198,7 +198,7 @@ permalink: bundle.js
 	<site-card url="https://www.youtube.com/watch?v=fzo_S9UiYYk" name="Rebuilding 11ty.dev using WebC" date="2023-03-08"></site-card>
 </sites-list>
 
-<h2>Learn More</h2>
+<h2 id="learn-more">Learn More</h2>
 
 <sites-list>
 	<site-card icon-url="https://vitejs.dev/" url="https://www.11ty.dev/docs/server-vite/" name="Using Eleventy’s Vite Plugin" date=""></site-card>
