@@ -21,7 +21,7 @@ let eleventyImport = {
 
 let eleventyComputed = {
   social: {
-    description: "Eleventy, a simpler static site generator."
+    description: () => "Eleventy, a simpler static site generator."
   },
 };
 // </script>
@@ -32,10 +32,12 @@ function getHighlightedBlogPostContent(collection) {
   if(!posts.length) {
     return "";
   }
+
   let content = [];
   for(let post of posts) {
     content.push(`<strong><a href="${post.data.page.url}">${post.data.newstitle}</a></strong>`);
   }
+
   return `Read ${content.join(" and ")} <em>(and more!)</em> on the <a href="/blog/">Eleventy Blog</a>.`;
 }
 </script>
