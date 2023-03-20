@@ -3,6 +3,7 @@
 	--fl-gap-h: .5em;
 	list-style-type: none;
 	padding: 0;
+	margin: 0;
 }
 .breadcrumb li {
 	font-size: 0.8333333333333em; /* 15px /18 */
