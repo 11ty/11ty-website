@@ -22,7 +22,8 @@ This plugin can save *any* kind of asset—JSON, HTML, images, videos, etc.
 * Control concurrency so we don’t make too many network requests at the same time.
 * Requires **Node 12+**
 
-{% callout "info", "md" %}This plugin was renamed from [`@11ty/eleventy-cache-assets`](https://www.npmjs.com/package/@11ty/eleventy-cache-assets). <div class="youtube-related">{% youtubeEmbed "JCQQgtOcjH4", "Cache Assets renamed to Fetch (Weekly №2)", "246" %}</div>
+{% callout "info", "md" -%}
+This plugin was renamed from [`@11ty/eleventy-cache-assets`](https://www.npmjs.com/package/@11ty/eleventy-cache-assets). <div class="youtube-related">{% youtubeEmbed "JCQQgtOcjH4", "Cache Assets renamed to Fetch (Weekly №2)", "246" %}</div>
 {%- endcallout %}
 
 ## Installation
