@@ -110,6 +110,12 @@ module.exports = function(eleventyConfig) {
 
 </details>
 
+### Syntax highlighting
+
+Because WebC _is_ HTML you can configure your editor to treat `.webc` files as
+HTML, this should correctly syntax highlight your WebC files. Your editor of
+choice should have some documentation on how to get this working.
+
 
 ## Usage
 
