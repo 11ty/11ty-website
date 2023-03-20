@@ -1,6 +1,5 @@
 ---
 newstitle: Five Million npm Downloads!
-homePageHighlight: true
 eleventyNavigation:
   parent: Blog
 ---
