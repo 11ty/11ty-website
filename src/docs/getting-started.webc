@@ -160,15 +160,27 @@ Congratulations—you made something with Eleventy! Now put it to work:
 1. Add more content! In the above tutorial we used [HTML](/docs/languages/html/) and [Markdown](/docs/languages/markdown/). Why not [JavaScript](/docs/languages/javascript/) or [WebC](/docs/languages/webc/) (for components) next? [Nunjucks](/docs/languages/nunjucks/) and [Liquid](/docs/languages/liquid/) are also very popular. Maybe you’re feeling super adventurous and want to [add your own custom type?](/docs/languages/custom/).
 1. Learn more of the [command line options for Eleventy](/docs/usage/).
 1. Perhaps you’d like to [consume data from third party APIs](/docs/data-js/) in your project?
-1. Or jump ahead and use an already built [Starter Project](/docs/starter/)?
-1. We also have a few excellent Community-contributed [tutorials](/docs/tutorials/):
 
-{%- if communityLinksKey %}
-<div class="elv-community" id="community-resources">
-  {%- include "community-contributed.njk" -%}
-</div>
-{%- endif %}
+You can skip ahead an use an already built [Starter Project](/docs/starter/) or read some of our excellent Community-contributed [tutorials](/docs/tutorials/):
 </template>
+
+<sites-list>
+	<site-card url="https://www.youtube.com/watch?v=BKdQEXqfFA0" name="Build an 11ty Site in 3 Minutes" date="2021-02-20"></site-card>
+	<site-card url="https://www.learnwithjason.dev/lets-learn-eleventy" name="Let’s Learn Eleventy! on Learn with Jason" date="2020-01-08"></site-card>
+	<site-card url="https://www.mikeaparicio.com/template-talk/" name="Templating: Eleventy’s Superpower" date="2021-07-17"></site-card>
+	<site-card url="https://learneleventyfromscratch.com/" name="Learn Eleventy from Scratch" date="2020-05"></site-card>
+	<site-card url="https://tatianamac.com/posts/beginner-eleventy-tutorial-parti/" name="Beginner’s Guide to Eleventy" date="2020-04-02"></site-card>
+	<site-card url="https://sia.codes/posts/itsiest-bitsiest-eleventy-tutorial/" name="Itsiest, Bitsiest Eleventy Tutorial" date="2021-05-24"></site-card>
+</sites-list>
+
+<p>Trying to make a blog?</p>
+
+<sites-list>
+	<site-card url="https://github.com/11ty/eleventy-base-blog" name="Official Starter: eleventy-base-blog"></site-card>
+	<site-card url="https://www.youtube.com/watch?v=kzf9A9tkkl4" name="6 Minutes to Build a Blog from Scratch with Eleventy" date="2023-03-20"></site-card>
+	<site-card url="https://www.filamentgroup.com/lab/build-a-blog/" name="Build your own Blog from Scratch using Eleventy" date="2018-12-26"></site-card>
+	<site-card url="https://www.youtube.com/watch?v=4wD00RT6d-g" name="Turn static HTML/CSS into a blog with CMS using the JAMStack" date="2021-06-24"></site-card>
+</sites-list>
 
 <!-- Temporary workaround for Nunjucks components that need CSS from WebC components -->
 <sites-list></sites-list>
