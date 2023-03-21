@@ -14,7 +14,7 @@
   <li><img webc:is="indieweb-avatar" url="https://developer.chrome.com/">Chrome Developers</li>
   <li><img webc:is="indieweb-avatar" url="https://stackoverflow.com/">Stack Overflow</li>
   <li><img webc:is="indieweb-avatar" url="https://lit.dev/" width="120">Lit</li>
-  <li><img webc:is="indieweb-avatar" url="https://jamstack.org/">Jamstack</li>
+  <li><img webc:is="indieweb-avatar" url="https://jamstack.org/">jamstack.org</li>
   <li><img webc:is="indieweb-avatar" url="https://web.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></li>
   <li><img webc:is="indieweb-avatar" url="https://www.csis.org/"><abbr title="Center for Strategic & International Studies">CSIS</abbr></li>
   <li><img webc:is="indieweb-avatar" url="https://www.greenpeace.org/">Greenpeace</li>
