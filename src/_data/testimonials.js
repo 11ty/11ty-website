@@ -15,7 +15,8 @@ module.exports = async function() {
 			"name": "Jen Simmons",
 			"source": "https://twitter.com/jensimmons/status/1107377359546736641",
 			"featured": true,
-			"indirect": true
+			"indirect": true,
+			"filteredFromRandomPick": true,
 		},
 		{
 			"text": "Seriously can't remember enjoying using a Static Site Generator this much. Yes Hugo is rapid, but this is all so logical. It feels like it was designed by someone who has been through lots of pain and success using other SSGs.",
@@ -150,7 +151,8 @@ module.exports = async function() {
 			"twitter": "lachzeat",
 			"name": "Lach Zeatherman",
 			"source": "https://twitter.com/lachzeat/status/1196789524535431168",
-			"featured": true
+			"featured": true,
+			"filteredFromRandomPick": true,
 		},
 		{
 			"text": "Eleventy is a killer static site generator. That’s all.",
@@ -192,7 +194,7 @@ module.exports = async function() {
 			"source": "https://twitter.com/snookca/status/1082278684214657024"
 		},
 		{
-			"text": "I like Eleventy.\n\n(I hope that was enough to get me on the testimonials page.)",
+			"text": "I like Eleventy. (I hope that was enough to get me on the testimonials page.)",
 			"twitter": "steeevg",
 			"name": "Steve Gardner",
 			"source": "https://twitter.com/steeevg/status/1409965870647025664"
@@ -213,7 +215,8 @@ module.exports = async function() {
 			"name": "Product Hunt",
 			"avatarUrl": "https://producthunt.com/",
 			"source": "https://www.producthunt.com/products/eleventy",
-			"featured": true
+			"featured": true,
+			"filteredFromRandomPick": true,
 		},{
 			"text": `2018 winner of the Google Open Source Peer Bonus Award`,
 			"name": "Google",

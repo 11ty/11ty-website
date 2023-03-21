@@ -184,6 +184,25 @@ The data in `eleventy` is also available as:
 * `this.eleventy` on [Shortcodes](/docs/shortcodes/) {% addedin "2.0.0-canary.5" %}
 * `this.eleventy` on [Filters](/docs/filters/) {% addedin "2.0.0-canary.19" %}
 
+### Use with `meta name="generator"` {% addedin "1.0.1" %}
+
+It’s helpful if you add `<meta name="generator">` to your existing Eleventy project as shown below. Learn more [from David Darnes’ blog post: _You should add a generator tag to your Eleventy site_](https://darn.es/you-should-add-a-generator-tag-to-your-eleventy-site/).
+
+{% codetitle "Nunjucks, Liquid", "Syntax" %}
+
+{% raw %}
+```njk
+<meta name="generator" content="{{ eleventy.generator }}">
+```
+{% endraw %}
+
+These videos also provide some additional context as to why this is important:
+
+<div class="youtube-related">
+  {%- youtubeEmbed "b4frtsT4Cgo", "Full control over HTML, a look at requiring opt-in for the meta name=generator in Eleventy" -%}
+  {%- youtubeEmbed "_YvwTHeqBZY", "eleventy.version and eleventy.generator Data (Weekly №7)", "235" -%}
+</div>
+
 ### Learn more
 
 * [Eleventy-supplied Environment Variables on `process.env`](/docs/environment-vars/#eleventy-supplied)
@@ -191,9 +210,6 @@ The data in `eleventy` is also available as:
   * [Dynamic Slugs and Serverless Global Data](/docs/plugins/serverless/#dynamic-slugs-and-serverless-global-data).
   * `event.queryStringParameters`, which are very similar to [URL.searchParams](https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams). It’s an object representing the name/value pairs for things after the `?` in a URL.
 
-<div class="youtube-related">
-  {%- youtubeEmbed "_YvwTHeqBZY", "eleventy.version and eleventy.generator Data (Weekly №7)", "235" -%}
-</div>
 
 ## Environment Variables on `process.env`
 

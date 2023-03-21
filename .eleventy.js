@@ -524,14 +524,21 @@ ${text.trim()}
 		});
 	});
 
-	eleventyConfig.addShortcode("testimonial", function(testimonial) {
+	function testimonialNameHtml(testimonial) {
 		let avatarHtml = "";
 		if(testimonial.twitter) {
 			avatarHtml = shortcodes.avatar("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`);
 		} else if(testimonial.avatarUrl) {
 			avatarHtml = shortcodes.getIndieAvatarHtml(testimonial.avatarUrl);
 		}
-		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, avatarHtml + testimonial.name)}</span>` : ``}</p></blockquote>`;
+		return avatarHtml + testimonial.name;
+	}
+
+	eleventyConfig.addShortcode("testimonialNameHtml", testimonialNameHtml);
+
+	eleventyConfig.addShortcode("testimonial", function(testimonial) {
+		let nameHtml = testimonialNameHtml(testimonial);
+		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, nameHtml)}</span>` : ``}</p></blockquote>`;
 	});
 
 	eleventyConfig.addFilter("filterBusinessPeople", function(authors) {

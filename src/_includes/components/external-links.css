@@ -12,7 +12,8 @@ a[href^="//"]:not([href^="//11ty.dev"], [href^="//www.11ty.dev"]):not(.minilink)
 	font-style: normal;
 	font-weight: 900;
 	color: #00bcd4;
-	padding-left: 2px;
+	padding-left: 0.1875em; /* 3px /16 */
+	font-size: .75em;
 	line-height: .75;
 }
 /* External link hovers */
