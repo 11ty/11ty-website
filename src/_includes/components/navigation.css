@@ -31,19 +31,6 @@
 	display: inherit;
 }
 
-/* Spacer */
-.elv-docs .elv-nav-docs-only.spacer {
-	display: none;
-}
-@media (min-width: 51.25em) { /* 820px */
-	.elv-docs .elv-nav-docs-only.spacer {
-		display: inherit;
-	}
-	.elv-docs .elv-nav-header > .fl .spacer {
-		flex-grow: 999;
-	}
-}
-
 .elv-nav-header a {
 	font-weight: 600;
 }
@@ -59,8 +46,20 @@
 	}
 }
 
-/* Social link text hides at mid-viewport */
-@media (min-width: 51.25em) { /* 820px */
+/* Spacer and social links */
+.elv-docs .elv-nav-docs-only.spacer {
+	display: none;
+}
+
+@media (min-width: 58.75em) { /* 940px */
+	.elv-docs .elv-nav-docs-only.spacer {
+		display: inherit;
+	}
+	.elv-docs .elv-nav-header > .fl .spacer {
+		flex-grow: 999;
+	}
+
+	/* Social links */
 	.elv-docs .elv-nav-sociallink:before {
 		display: block;
 		text-align: center;

@@ -5,6 +5,11 @@ function getIconHtml(url) {
 	}
 }
 </script>
+<style webc:scoped>
+.metadata {
+	white-space: nowrap;
+}
+</style>
 <link rel="stylesheet" href="site-entry.css">
 
 <div class="sites-site-vert">
@@ -14,7 +19,8 @@ function getIconHtml(url) {
 			<span webc:nokeep @html="indieavatar(url, 'avatar-large')"></span>
 			<span webc:nokeep @text="name || url"></span>
 			<em webc:if="using" @text="`(${using})`"></em>
-			<em webc:if="date" @text="`(${date.split('-').shift()})`"></em>
+			<span class="metadata" webc:if="date" @text="`(${date.split('-').shift()})`"></span>
+			<span class="metadata" webc:if="medialength" @text="`⏱ ${medialength}`"></span>
 		</span>
 	</a>
 </div>

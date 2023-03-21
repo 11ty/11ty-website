@@ -99,7 +99,7 @@
 	--lo-grid-repeat: auto-fill;
 }
 .sites-vert--md > .lo-grid {
-  --lo-c-minwidth: 7.5em; /* 120px /16 */
+  --lo-c-minwidth: 8.5em; /* 136px /16 */
 }
 .sites-vert--lg > .lo-grid {
   --lo-c-minwidth: 10em; /* 160px /16 */

@@ -9,50 +9,44 @@ feedExclusive: true
 ---
 <h1>Tutorials</h1>
 
-<style>
-.sites-vert > .lo-grid {
-	--lo-c-minwidth: 10em;
-}
-</style>
-
 <p>For folks just starting out, here are some <strong>introductions to Eleventy</strong>:</p>
 
-<sites-list>
-	<site-card url="https://www.youtube.com/watch?v=BKdQEXqfFA0" name="Build an 11ty Site in 3 Minutes" date="2021-02-20"></site-card>
-	<site-card url="https://www.learnwithjason.dev/lets-learn-eleventy" name="Let’s Learn Eleventy! on Learn with Jason" date="2020-01-08"></site-card>
-	<site-card url="https://www.mikeaparicio.com/template-talk/" name="Templating: Eleventy’s Superpower" date="2021-07-17"></site-card>
-	<site-card url="https://learneleventyfromscratch.com/" name="Learn Eleventy from Scratch" date="2020-05"></site-card>
-	<site-card url="https://tatianamac.com/posts/beginner-eleventy-tutorial-parti/" name="Beginner’s Guide to Eleventy" date="2020-04-02"></site-card>
-	<site-card url="https://sia.codes/posts/itsiest-bitsiest-eleventy-tutorial/" name="Itsiest, Bitsiest Eleventy Tutorial" date="2021-05-24"></site-card>
-	<site-card url="https://www.zachleat.com/web/eleventy-tutorial-level-1/" name="Making a simple web site with the simplest static site generator" date="2018-01-24"></site-card>
+<sites-list @size="lg">
+	<site-card url="https://www.youtube.com/watch?v=BKdQEXqfFA0" @name="Build an 11ty Site in 3 Minutes" @date="2021-02-20" @medialength="3m"></site-card>
+	<site-card url="https://www.learnwithjason.dev/lets-learn-eleventy" @name="Let’s Learn Eleventy! on Learn with Jason" @date="2020-01-08" @medialength="1h32m"></site-card>
+	<site-card url="https://www.mikeaparicio.com/template-talk/" @name="Templating: Eleventy’s Superpower" @date="2021-07-17" @medialength="15m"></site-card>
+	<site-card url="https://learneleventyfromscratch.com/" @name="Learn Eleventy from Scratch" @date="2020-05"></site-card>
+	<site-card url="https://tatianamac.com/posts/beginner-eleventy-tutorial-parti/" @name="Beginner’s Guide to Eleventy" @date="2020-04-02"></site-card>
+	<site-card url="https://sia.codes/posts/itsiest-bitsiest-eleventy-tutorial/" @name="Itsiest, Bitsiest Eleventy Tutorial" @date="2021-05-24"></site-card>
+	<site-card url="https://www.zachleat.com/web/eleventy-tutorial-level-1/" @name="Making a simple web site with the simplest static site generator" @date="2018-01-24"></site-card>
 </sites-list>
 
 <p>And for folks wanting to <strong>start building a blog</strong>:</p>
 
-<sites-list>
-	<site-card url="https://github.com/11ty/eleventy-base-blog" name="Official Starter: eleventy-base-blog"></site-card>
-	<site-card url="https://www.youtube.com/watch?v=kzf9A9tkkl4" name="6 Minutes to Build a Blog from Scratch with Eleventy" date="2023-03-20"></site-card>
-	<site-card url="https://www.filamentgroup.com/lab/build-a-blog/" name="Build your own Blog from Scratch using Eleventy" date="2018-12-26"></site-card>
-	<site-card url="https://www.youtube.com/watch?v=4wD00RT6d-g" name="Turn static HTML/CSS into a blog with CMS using the JAMStack" date="2021-06-24"></site-card>
+<sites-list @size="lg">
+	<site-card url="https://github.com/11ty/eleventy-base-blog" @name="Official Starter: eleventy-base-blog"></site-card>
+	<site-card url="https://www.youtube.com/watch?v=kzf9A9tkkl4" @name="6 Minutes to Build a Blog from Scratch with Eleventy" @date="2023-03-20" @medialength="6m"></site-card>
+	<site-card url="https://www.filamentgroup.com/lab/build-a-blog/" @name="Build your own Blog from Scratch using Eleventy" @date="2018-12-26"></site-card>
+	<site-card url="https://www.youtube.com/watch?v=4wD00RT6d-g" @name="Turn static HTML/CSS into a blog with CMS using the JAMStack" @date="2021-06-24" @medialength="1h23m"></site-card>
 </sites-list>
 
 <p>And a few conversion walkthroughs:</p>
 
 <sites-list>
-	<site-card url="https://24ways.org/2018/turn-jekyll-up-to-eleventy/" name="Turn Jekyll up to Eleventy" date="2018-12-11"></site-card>
-	<site-card url="https://stedman.dev/2020/04/29/make-the-jump-from-jekyll-to-javascript/" name="Making the Jump from Jekyll to JavaScript" date="2020-04-29"></site-card>
+	<site-card url="https://24ways.org/2018/turn-jekyll-up-to-eleventy/" @name="Turn Jekyll up to Eleventy" @date="2018-12-11"></site-card>
+	<site-card url="https://stedman.dev/2020/04/29/make-the-jump-from-jekyll-to-javascript/" @name="Making the Jump from Jekyll to JavaScript" @date="2020-04-29"></site-card>
 </sites-list>
 
 <p>And a grab bag of content:</p>
 
 <sites-list>
-	<site-card url="https://css-tricks.com/a-site-for-front-end-development-conferences-built-with-11ty-on-netlify/" name="A Site for Front-End Development Conferences (Built with 11ty on Netlify)" date="2019-02-13"></site-card>
-	<site-card url="https://www.sitepoint.com/getting-started-with-eleventy/" name="Eleventy Guide: A Framework-Agnostic Static Site Generator" date="2020-09-23"></site-card>
-	<site-card url="https://www.youtube.com/playlist?list=PLOSLUtJ_J3rrJ1R1qEf8CCEpV3GgbJGNr" name="Video Series: Create an 11ty Theme from a free set of HTML templates" date="2019-09-25"></site-card>
-	<site-card url="https://rphunt.github.io/eleventy-walkthrough/" name="Eleventy Walk Through" date="2020-02-01"></site-card>
-	<site-card url="https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/" name="Creating a Blog with Eleventy" date="2019-06-01"></site-card>
-	<site-card url="https://shivjm.blog/colophon/how-i-create-an-article-series-in-eleventy/" name="How I Create an Article Series in Eleventy" date="2021-07-14"></site-card>
-	<site-card url="https://5balloons.info/guide-tailwindcss-eleventy-static-site/" name="Detailed Guide to build an 11ty / eleventy & Tailwind CSS static site" date="2022-08-18"></site-card>
+	<site-card url="https://css-tricks.com/a-site-for-front-end-development-conferences-built-with-11ty-on-netlify/" @name="A Site for Front-End Development Conferences (Built with 11ty on Netlify)" @date="2019-02-13"></site-card>
+	<site-card url="https://www.sitepoint.com/getting-started-with-eleventy/" @name="Eleventy Guide: A Framework-Agnostic Static Site Generator" @date="2020-09-23"></site-card>
+	<site-card url="https://www.youtube.com/playlist?list=PLOSLUtJ_J3rrJ1R1qEf8CCEpV3GgbJGNr" @name="Video Series: Create an 11ty Theme from a free set of HTML templates" @date="2019-09-25"></site-card>
+	<site-card url="https://rphunt.github.io/eleventy-walkthrough/" @name="Eleventy Walk Through" @date="2020-02-01"></site-card>
+	<site-card url="https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/" @name="Creating a Blog with Eleventy" @date="2019-06-01"></site-card>
+	<site-card url="https://shivjm.blog/colophon/how-i-create-an-article-series-in-eleventy/" @name="How I Create an Article Series in Eleventy" @date="2021-07-14"></site-card>
+	<site-card url="https://5balloons.info/guide-tailwindcss-eleventy-static-site/" @name="Detailed Guide to build an 11ty / eleventy & Tailwind CSS static site" @date="2022-08-18"></site-card>
 </sites-list>
 
 <template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
@@ -92,8 +86,4 @@ feedExclusive: true
 * [Hooking Up FaunaDB to Eleventy](https://www.raymondcamden.com/2020/09/15/hooking-up-faunadb-to-eleventy) by {% communityavatar "cfjedimaster" %}Raymond Camden
 * [Building a Database Driven Eleventy Site](https://www.raymondcamden.com/2021/04/15/building-a-database-driven-eleventy-site) by {% communityavatar "cfjedimaster" %}Raymond Camden
 * [Integrating Eleventy with GitHub Flat Data](https://www.raymondcamden.com/2021/07/14/integrating-eleventy-with-github-flat-data) by {% communityavatar "cfjedimaster" %}Raymond Camden
-
-### Tooling Integration
-
-* [Using pHTML with Eleventy](https://github.com/phtmlorg/phtml-11ty) by {% avatarlocalcache "twitter", "jon_neal" %}Jon Neal
 </template>
