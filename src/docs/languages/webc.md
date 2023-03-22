@@ -912,14 +912,28 @@ p { color: rebeccapurple; }
 
 ### `webc:ignore`
 
-{% addedin "@11ty/webc@0.9.0" %}Use `webc:ignore` to completely ignore a node and not process or output anything about it.
+{% addedin "@11ty/webc@0.9.0" %}Use `webc:ignore` to completely ignore a node and not process or output anything to do with it. Useful for server-side comments or documentation on a component.
 
 {% codetitle "components/my-component.webc" %}
 
 ```html
 <template webc:ignore>
-Completely disregard me! Useful for server-only <!-- comments -->.
+Here’s how you might use this component:
+
+<my-component>Nothing in here will be processed</my-component>
 </template>
+```
+
+### Server-only comments
+
+{% addedin "@11ty/webc@0.9.4" %}Instead of an HTML comment that will show up in rendered output, you can add one or more dashes to the beginning/end to tell WebC to strip this from the output. Great for server-side comments.
+
+{% codetitle "components/my-component.webc" %}
+
+```html
+<!--- WebC will remove this --->
+<!-- This will be included -->
+<!------- WebC will remove this, too ------->
 ```
 
 ### Custom Transforms
