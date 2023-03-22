@@ -932,7 +932,7 @@ Here’s how you might use this component:
 
 ```html
 <!--- WebC will remove this --->
-<!-- This will be included -->
+<!-- This will *not* be removed and is rendered to the output -->
 <!------- WebC will remove this, too ------->
 ```
 
