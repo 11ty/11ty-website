@@ -379,6 +379,53 @@ Use `webc:if` to conditionally render elements. Accepts arbitrary JavaScript (an
 
 For more complex conditionals, `webc:type="js"` _(WebC v0.7.1+)_ is recommended (read more below).
 
+### `webc:for` Loops
+
+_(WebC v0.9.4+)_
+
+Use `webc:for` to loop over data with HTML. It works with Objects and any [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#built-in_iterables) (String, Array, Map, Set, etc).
+
+The syntax should feel familiar to folks
+
+#### Arrays (or any other Iterable)
+
+```html
+<!-- renders three div elements -->
+<div webc:for="item of [1, 2, 3]" @text="item"></div>
+
+<!-- access the loop index (zero-indexed) -->
+<div webc:for="(item, index) of [1, 2, 3]" @text="index"></div>
+
+<!-- name these whatever you’d like -->
+<div webc:for="myItem of [1, 2, 3]" @text="myItem"></div>
+<div webc:for="(myItem, myIndex) of [1, 2, 3]" @text="myIndex"></div>
+
+<!-- any iterable -->
+<div webc:for="item of new Set([1, 2, 3])" @text="item"></div>
+```
+
+#### Objects
+
+Note the use of `in` instead of `of`.
+
+```html
+<!-- renders two div elements -->
+<div webc:for="key in { a: 1, b: 2 }" @text="key"></div>
+
+<!-- access the value -->
+<div webc:for="(key, value) in { a: 1, b: 2 }" @text="value"></div>
+
+<!-- access the loop index (zero-indexed) -->
+<div webc:for="(key, value, index) in { a: 1, b: 2 }" @text="index"></div>
+
+<!-- name these whatever you’d like -->
+<div webc:for="(myKey, myValue, myIndex) in { a: 1, b: 2 }" @text="myIndex"></div>
+
+<!-- use `Object.values` or `Object.keys`, sure -->
+<div webc:for="value of Object.values({ a: 1, b: 2 })"></div>
+<div webc:for="key of Object.keys({ a: 1, b: 2 })"></div>
+```
+
 ### Slots
 
 Child content optionally precompiles using `<slot>` and `[slot]` too. This example is using an [HTML-only component](#html-only-components).
