@@ -385,7 +385,7 @@ _(WebC v0.9.4+)_
 
 Use `webc:for` to loop over data with HTML. It works with Objects and any [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#built-in_iterables) (String, Array, Map, Set, etc).
 
-The syntax should feel familiar to folks
+The syntax should feel similar to JavaScript’s `for` statement.
 
 #### Arrays (or any other Iterable)
 
