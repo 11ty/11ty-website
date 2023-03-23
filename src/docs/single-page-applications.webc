@@ -19,7 +19,7 @@ Multi-page architecture has a few benefits:
 * **Better empty-cache performance**: your site can render faster, [“improving user experience and business metrics” (WPO Stats)](https://wpostats.com/). As web browsers become more privacy-focused and users use multiple web-capable devices, empty-caches visits are increasingly common.
 * **Inclusive and robust by default**: You are in full control the minimum requirements necessary to visit your site. You needn’t put any undue burden on the capabilities of the web browser of your visitors. You needn’t place your site behind a “Best Viewed In” browser-compatibility warning. If they can view HTML, they can view an Eleventy site.
 * **Energy-efficiency**: Lighter pages result in safer long sessions that are more energy efficient and won’t drain your visitors’ laptop or mobile device batteries.
-* **Privacy-focused**: working without client-JavaScript allows visitors to full control over their viewing experience. This allows you to create sites that work best in the harsh real world environment of browser extensions, content and ad-blockers, or those rare folks that browse with JavaScript disabled.
+* **Privacy-focused**: working without client-JavaScript allows visitors to full control over their viewing experience. This allows you to create sites that work best in the harsh real world environment of browser extensions, content and ad-blockers; working with those rare folks that browse with JavaScript disabled.
 * **Searchable by default**: A simpler architecture for server rendered content makes it straightforward for search engines to find you.
 * **Better defaults** for accessibility-focused page navigations, preserving scroll position, forward/back button support, etc.
 
