@@ -167,18 +167,18 @@ Congratulations—you made something with Eleventy! Now put it to work:
 <p>For folks wanting to <strong>build a blog</strong>, you can learn how to <a href="https://www.youtube.com/watch?v=kzf9A9tkkl4">start from scratch</a> <em>(learn how it works)</em> or use our <a href="https://github.com/11ty/eleventy-base-blog">official Blog starter project</a> <em>(get up and running faster)</em>:</p>
 
 <sites-list @size="lg">
-	<site-card url="https://www.youtube.com/watch?v=kzf9A9tkkl4" @name="6 Minutes to Build a Blog from Scratch with Eleventy" @date="2023-03-20" @medialength="6m"></site-card>
-	<site-card url="https://github.com/11ty/eleventy-base-blog" @name="eleventy-base-blog (Official Starter Project)"></site-card>
+	<site-card @url="https://www.youtube.com/watch?v=kzf9A9tkkl4" @name="6 Minutes to Build a Blog from Scratch with Eleventy" @date="2023-03-20" @medialength="6m"></site-card>
+	<site-card @url="https://github.com/11ty/eleventy-base-blog" @name="eleventy-base-blog (Official Starter Project)" @date=""></site-card>
 </sites-list>
 
 <p>You can also use one of the many <a href="/docs/starter/"><strong>Starter Projects</strong></a> or read some of our excellent Community-contributed <a href="/docs/tutorials/"><strong>Tutorials</strong></a> (a curated few of which are included below):</p>
 
 <sites-list @size="md">
-	<site-card url="https://www.youtube.com/watch?v=BKdQEXqfFA0" @name="Build an 11ty Site in 3 Minutes" @date="2021-02-20" @medialength="3m"></site-card>
-	<site-card url="https://www.learnwithjason.dev/lets-learn-eleventy" @name="Let’s Learn Eleventy! on Learn with Jason" @date="2020-01-08" @medialength="1h32m"></site-card>
-	<site-card url="https://www.mikeaparicio.com/template-talk/" @name="Templating: Eleventy’s Superpower" @date="2021-07-17" @medialength="15m"></site-card>
-	<site-card url="https://learneleventyfromscratch.com/" @name="Learn Eleventy from Scratch" @date="2020-05"></site-card>
-	<site-card url="https://tatianamac.com/posts/beginner-eleventy-tutorial-parti/" @name="Beginner’s Guide to Eleventy" @date="2020-04-02"></site-card>
-	<site-card url="https://sia.codes/posts/itsiest-bitsiest-eleventy-tutorial/" @name="Itsiest, Bitsiest Eleventy Tutorial" @date="2021-05-24"></site-card>
-	<site-card url="https://www.youtube.com/watch?v=4wD00RT6d-g" @name="Turn static HTML/CSS into a blog with CMS using the JAMStack" @date="2021-06-24" @medialength="1h23m"></site-card>
+	<site-card @url="https://www.youtube.com/watch?v=BKdQEXqfFA0" @name="Build an 11ty Site in 3 Minutes" @date="2021-02-20" @medialength="3m"></site-card>
+	<site-card @url="https://www.learnwithjason.dev/lets-learn-eleventy" @name="Let’s Learn Eleventy! on Learn with Jason" @date="2020-01-08" @medialength="1h32m"></site-card>
+	<site-card @url="https://www.mikeaparicio.com/template-talk/" @name="Templating: Eleventy’s Superpower" @date="2021-07-17" @medialength="15m"></site-card>
+	<site-card @url="https://learneleventyfromscratch.com/" @name="Learn Eleventy from Scratch" @date="2020-05"></site-card>
+	<site-card @url="https://tatianamac.com/posts/beginner-eleventy-tutorial-parti/" @name="Beginner’s Guide to Eleventy" @date="2020-04-02"></site-card>
+	<site-card @url="https://sia.codes/posts/itsiest-bitsiest-eleventy-tutorial/" @name="Itsiest, Bitsiest Eleventy Tutorial" @date="2021-05-24"></site-card>
+	<site-card @url="https://www.youtube.com/watch?v=4wD00RT6d-g" @name="Turn static HTML/CSS into a blog with CMS using the JAMStack" @date="2021-06-24" @medialength="1h23m"></site-card>
 </sites-list>

@@ -157,7 +157,7 @@ permalink: bundle.js
 		<p>In the article below, Max showcases how to use an <code>styles.11ty.js</code> template file to generate a one-off Sass-compiled stylesheet:</p>
 
 		<sites-list>
-			<site-card url="https://mxb.dev/blog/eleventy-asset-pipeline/" name="Asset Pipelines in Eleventy" date="2021-04-26"></site-card>
+			<site-card @url="https://mxb.dev/blog/eleventy-asset-pipeline/" @name="Asset Pipelines in Eleventy" @date="2021-04-26"></site-card>
 		</sites-list>
 	</details>
 
@@ -175,12 +175,12 @@ permalink: bundle.js
 
 <sites-list>
 	<site-card
-		icon-url="https://sass-lang.com/"
-		url="https://www.11ty.dev/docs/languages/custom/#example-add-sass-support-to-eleventy"
-		name="Using Eleventy Custom Templates to Add Sass Support to Eleventy"
-		date=""></site-card>
-	<site-card url="https://pepelsbey.dev/articles/eleventy-css-js/" name="CSS and JavaScript as First-Class Citizens in Eleventy" using="esbuild, PostCSS" date="2022-11-25"></site-card>
-	<site-card url="https://11ty.rocks/posts/process-css-with-lightningcss/" name="Process CSS or Sass with LightningCSS" using="LightningCSS" date="2023-02-25"></site-card>
+		@icon-url="https://sass-lang.com/"
+		@url="https://www.11ty.dev/docs/languages/custom/#example-add-sass-support-to-eleventy"
+		@name="Using Eleventy Custom Templates to Add Sass Support to Eleventy"
+		@date=""></site-card>
+	<site-card @url="https://pepelsbey.dev/articles/eleventy-css-js/" @name="CSS and JavaScript as First-Class Citizens in Eleventy" @using="esbuild, PostCSS" @date="2022-11-25"></site-card>
+	<site-card @url="https://11ty.rocks/posts/process-css-with-lightningcss/" @name="Process CSS or Sass with LightningCSS" @using="LightningCSS" @date="2023-02-25"></site-card>
 </sites-list>
 
 <h2 id="component-driven-bundles"><number-flag>4</number-flag> Component-driven Bundles</h2>
@@ -194,19 +194,19 @@ permalink: bundle.js
 <p><a href="/languages/webc/"><strong>Get started with WebC!</strong></a></p>
 
 <sites-list>
-	<site-card :image-html="image('./src/img/logos/webc.png', 'WebC Logo', [154], 'sites-screenshot', '6.25em')" url="/languages/webc/" name="WebC" date=""></site-card>
-	<site-card url="https://www.youtube.com/watch?v=fzo_S9UiYYk" name="Rebuilding 11ty.dev using WebC" date="2023-03-08"></site-card>
+	<site-card :@image-html="image('./src/img/logos/webc.png', 'WebC Logo', [154], 'sites-screenshot', '6.25em')" @url="/languages/webc/" @name="WebC" @date=""></site-card>
+	<site-card @url="https://www.youtube.com/watch?v=fzo_S9UiYYk" @name="Rebuilding 11ty.dev using WebC" @date="2023-03-08"></site-card>
 </sites-list>
 
 <h2 id="learn-more">Learn More</h2>
 
 <sites-list>
-	<site-card icon-url="https://vitejs.dev/" url="https://www.11ty.dev/docs/server-vite/" name="Using Eleventy’s Vite Plugin" date=""></site-card>
-	<site-card url="https://www.webstoemp.com/blog/eleventy-dev-server-external-asset-pipeline/" name="External Asset Pipeline with Eleventy" using="esbuild" date="2023-01-23"></site-card>
-	<site-card url="https://danburzo.ro/eleventy-sass/" name="Sass in Eleventy, with versioning" date="2023-05-01"></site-card>
-	<site-card url="https://helloyes.dev/blog/2021/minimal-sass-and-eleventy-setup/" name="Minimal SASS & Eleventy Setup" date="2021-06-21"></site-card>
-	<site-card url="https://www.vseventer.com/static-site-generators-eleventy-and-webpack-part-2/" name="Static Site Generators: Eleventy and webpack (Part 2)" date="2020-05-09"></site-card>
-	<site-card url="https://darthmall.net/weblog/2020/eleventy-asset-pipeline/" name="Asset Pipelines in Eleventy" date="2020-11-13"></site-card>
-	<site-card url="https://chriskirknielsen.com/blog/eleventy-asset-pipeline-precompiled-assets/" name="Eleventy Asset Pipeline: Precompiled Assets Without Gulp" date="2022-11-27"></site-card>
-	<site-card url="https://zenzes.me/eleventy-integrate-postcss-and-tailwind-css/" name="Integrate PostCSS and Tailwind CSS" date="2022-11-25"></site-card>
+	<site-card @icon-url="https://vitejs.dev/" @url="https://www.11ty.dev/docs/server-vite/" @name="Using Eleventy’s Vite Plugin" @date=""></site-card>
+	<site-card @url="https://www.webstoemp.com/blog/eleventy-dev-server-external-asset-pipeline/" @name="External Asset Pipeline with Eleventy" using="esbuild" @date="2023-01-23"></site-card>
+	<site-card @url="https://danburzo.ro/eleventy-sass/" @name="Sass in Eleventy, with versioning" @date="2023-05-01"></site-card>
+	<site-card @url="https://helloyes.dev/blog/2021/minimal-sass-and-eleventy-setup/" @name="Minimal SASS & Eleventy Setup" @date="2021-06-21"></site-card>
+	<site-card @url="https://www.vseventer.com/static-site-generators-eleventy-and-webpack-part-2/" @name="Static Site Generators: Eleventy and webpack (Part 2)" @date="2020-05-09"></site-card>
+	<site-card @url="https://darthmall.net/weblog/2020/eleventy-asset-pipeline/" @name="Asset Pipelines in Eleventy" @date="2020-11-13"></site-card>
+	<site-card @url="https://chriskirknielsen.com/blog/eleventy-asset-pipeline-precompiled-assets/" @name="Eleventy Asset Pipeline: Precompiled Assets Without Gulp" @date="2022-11-27"></site-card>
+	<site-card @url="https://zenzes.me/eleventy-integrate-postcss-and-tailwind-css/" @name="Integrate PostCSS and Tailwind CSS" @date="2022-11-25"></site-card>
 </sites-list>
