@@ -39,10 +39,10 @@ With all of that said—it is possible to integrate existing third-party tools w
 <p>Learn more about alternative approaches that can provide some of the same SPA benefits without the drawbacks:</p>
 
 <sites-list>
-	<site-card @url="https://developer.chrome.com/docs/web-platform/view-transitions/" @name="Use the View Transitions API to do smooth cross-page animations on navigation"></site-card>
-	<site-card @url="https://github.com/pepelsbey/pepelsbey.dev/commit/accf0da" @name="Example code using the View Transitions API in an Eleventy project (from Vadim Makeev)"></site-card>
-	<site-card @url="https://addyosmani.com/blog/prefetching/" @name="Predictive Prefetching can speed up navigations"></site-card>
-	<site-card @url="https://getquick.link/" @name="quicklink is a small JavaScript library to implement prefetching"></site-card>
+	<site-card @url="https://developer.chrome.com/docs/web-platform/view-transitions/" @name="Use the View Transitions API to do smooth cross-page animations on navigation" @date=""></site-card>
+	<site-card @url="https://github.com/pepelsbey/pepelsbey.dev/commit/accf0da" @name="Example code using the View Transitions API in an Eleventy project (from Vadim Makeev)" @date=""></site-card>
+	<site-card @url="https://addyosmani.com/blog/prefetching/" @name="Predictive Prefetching can speed up navigations" @date=""></site-card>
+	<site-card @url="https://getquick.link/" @name="quicklink is a small JavaScript library to implement prefetching" @date=""></site-card>
 <!---
 	<site-card @url="https://htmx.org/" @name="htmx for declarative AJAX"></site-card>
 	<site-card @url="https://turbo.hotwired.dev/" @name="Turbo (the successor to Turbolinks)"></site-card>
