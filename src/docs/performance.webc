@@ -25,6 +25,8 @@ Sites listed on the [Eleventy Leaderboards](/speedlify/) are tested and ranked (
   {%- youtubeEmbed "dIa2Y4zesnw", "Add your site to the Leaderboards (Weekly №6)" -%}
 </div>
 
+Looking for guidance on [single page applications (SPA)](/docs/single-page-applications/)?
+
 ## Build Performance
 
 **Eleventy offers best-in-class build performance for JavaScript site generators.**

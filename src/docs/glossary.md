@@ -138,3 +138,9 @@ Well, uh, we don’t inject or use any client-side JavaScript in Eleventy, so th
 ### Apps not App Servers
 
 Application servers can be slow. Instead of PHP, Java, or even Node.js dynamically generating page responses on the fly when the request comes in, have your pre-rendered templates ready to go for delivery! Maximum performance.
+
+### Single Page Applications (SPA) versus Multi-Page Applications (MPA)
+
+Single Page Applications (SPA) use JavaScript to enable navigations between pages on a web site. Multi-Page Applications use the classic navigation model of the web and do a full page refresh to a new page.
+
+Should you [build a Single Page Application with Eleventy](/docs/single-page-applications/)?
