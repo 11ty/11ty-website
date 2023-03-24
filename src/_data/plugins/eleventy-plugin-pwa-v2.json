@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-pwa-v2",
+	"author": "lwojcik",
+	"description": "generates PWA service worker using Google Workbox v6, compatible with Eleventy 2.0 and up"
+}
