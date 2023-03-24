@@ -5,6 +5,7 @@
   <li><img webc:is="indieweb-avatar" url="https://css-tricks.com/">CSS Tricks</li>
   <li><img webc:is="indieweb-avatar" url="https://foursquare.com/">Foursquare</li>
   <li><img webc:is="indieweb-avatar" url="https://web.dev/">web.dev</li>
+  <li><img webc:is="indieweb-avatar" url="https://tc39.es/">TC39</li>
   <li><img webc:is="indieweb-avatar" url="https://www.webpagetest.org/">WebPageTest</li>
   <li><img webc:is="indieweb-avatar" url="https://www.a11yproject.com/">A11Y Project</li>
   <li><img webc:is="indieweb-avatar" url="https://openwebdocs.org/">Open Web Docs</li>
@@ -32,8 +33,10 @@
   <li><img webc:is="indieweb-avatar" url="https://nordhealth.com/">Nordhealth</li>
   <li><img webc:is="indieweb-avatar" url="https://www.orange.com/">Orange</li>
   <li><img webc:is="indieweb-avatar" url="https://www.wisc.edu/">Univ. of Wisconsin-Madison</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.numerique.gouv.fr/">The government of France</li>
+  <li><img webc:is="indieweb-avatar" url="https://www.numerique.gouv.fr/">France (government)</li>
+  <li><img webc:is="indieweb-avatar" url="https://www.ca.gov/">California (government)</li>
   <li><img webc:is="indieweb-avatar" url="https://ux.redhat.com">Red Hat</li>
+  <li><img webc:is="indieweb-avatar" url="https://www.pie.design/">Just Eat Takeaway</li>
   <li class="logos-list-more">…and more</li>
 </ul>
 
