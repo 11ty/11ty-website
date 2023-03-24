@@ -367,7 +367,7 @@ This uses the component tag name (`syntax-highlight`) to look for a WebC compone
 
 ### `webc:if`
 
-_(WebC v0.7.1+)_
+{% addedin "@11ty/webc@0.7.1" %}
 
 Use `webc:if` to conditionally render elements. Accepts arbitrary JavaScript (and is async-friendly). Similar to dynamic attributes, this also has access to component attributes and properties.
 
@@ -377,11 +377,24 @@ Use `webc:if` to conditionally render elements. Accepts arbitrary JavaScript (an
 <div webc:if="myAsyncHelper()">If the helper promise resolves to a truthy value, this will render</div>
 ```
 
-For more complex conditionals, `webc:type="js"` _(WebC v0.7.1+)_ is recommended (read more below).
+You can use `webc:type="js"` _(WebC v0.7.1+)_ to use JavaScript for more complex conditional logic (read more below).
+
+### `webc:elseif` and `webc:else`
+
+{% addedin "@11ty/webc@0.10.0" %} _(not yet released!)_
+
+Adjacent siblings of `webc:if` can use `webc:elseif=""` and `webc:else` for additional conditional logic.
+
+```html
+<div webc:if="false">This will not render</div>
+<!-- interspersing comments works ok -->
+<div webc:elseif="true">This will render</div>
+<div webc:else>This will not render</div>
+```
 
 ### `webc:for` Loops
 
-_(WebC v0.9.4+)_
+{% addedin "@11ty/webc@0.10.0" %} _(not yet released!)_
 
 Use `webc:for` to loop over data with HTML. It works with Objects and any [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#built-in_iterables) (String, Array, Map, Set, etc).
 
@@ -926,7 +939,9 @@ Here’s how you might use this component:
 
 ### Server-only comments
 
-{% addedin "@11ty/webc@0.9.4" %}Instead of an HTML comment that will show up in rendered output, you can add one or more dashes to the beginning/end to tell WebC to strip this from the output. Great for server-side comments.
+{% addedin "@11ty/webc@0.10.0" %} _(not yet released!)_
+
+Instead of an HTML comment that will show up in rendered output, you can add one or more dashes to the beginning/end to tell WebC to strip this from the output. Great for server-side comments.
 
 {% codetitle "components/my-component.webc" %}
 
