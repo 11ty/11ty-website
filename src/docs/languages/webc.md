@@ -381,7 +381,7 @@ You can use `webc:type="js"` _(WebC v0.7.1+)_ to use JavaScript for more complex
 
 ### `webc:elseif` and `webc:else`
 
-{% addedin "@11ty/webc@0.10.0" %} _(not yet released!)_
+{% addedin "@11ty/webc@0.10.0" %}
 
 Adjacent siblings of `webc:if` can use `webc:elseif=""` and `webc:else` for additional conditional logic.
 
@@ -394,7 +394,7 @@ Adjacent siblings of `webc:if` can use `webc:elseif=""` and `webc:else` for addi
 
 ### `webc:for` Loops
 
-{% addedin "@11ty/webc@0.10.0" %} _(not yet released!)_
+{% addedin "@11ty/webc@0.10.0" %}
 
 Use `webc:for` to loop over data with HTML. It works with Objects and any [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#built-in_iterables) (String, Array, Map, Set, etc).
 
@@ -939,7 +939,7 @@ Here’s how you might use this component:
 
 ### Server-only comments
 
-{% addedin "@11ty/webc@0.10.0" %} _(not yet released!)_
+{% addedin "@11ty/webc@0.10.0" %}
 
 Instead of an HTML comment that will show up in rendered output, you can add one or more dashes to the beginning/end to tell WebC to strip this from the output. Great for server-side comments.
 
