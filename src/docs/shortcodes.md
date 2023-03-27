@@ -250,24 +250,45 @@ You can also specify different functionality for shortcodes in each engine, if y
 
 ```js
 module.exports = function(eleventyConfig) {
-  // Liquid Shortcode
-  eleventyConfig.addLiquidShortcode("user", function(firstName, lastName) { … });
-  eleventyConfig.addPairedLiquidShortcode("user", function(content, firstName, lastName) { … });
+  // Liquid
+  eleventyConfig.addLiquidShortcode("user", function(firstName, lastName) {});
+  eleventyConfig.addPairedLiquidShortcode("user", function(content, firstName, lastName) {});
 
-  // Nunjucks Shortcode
-  eleventyConfig.addNunjucksShortcode("user", function(firstName, lastName) { … });
-  eleventyConfig.addPairedNunjucksShortcode("user", function(content, firstName, lastName) { … });
+  // Nunjucks
+  eleventyConfig.addNunjucksShortcode("user", function(firstName, lastName) {});
+  eleventyConfig.addPairedNunjucksShortcode("user", function(content, firstName, lastName) {});
 
-  // Handlebars Shortcode
-  eleventyConfig.addHandlebarsShortcode("user", function(firstName, lastName) { … });
-  eleventyConfig.addPairedHandlebarsShortcode("user", function(content, firstName, lastName) { … });
+  // Handlebars
+  eleventyConfig.addHandlebarsShortcode("user", function(firstName, lastName) {});
+  eleventyConfig.addPairedHandlebarsShortcode("user", function(content, firstName, lastName) {});
 
   // JavaScript Template Function (New in 0.7.0)
-  eleventyConfig.addJavaScriptFunction("user", function(firstName, lastName) { … });
-  eleventyConfig.addJavaScriptFunction("user", function(content, firstName, lastName) { … }); // Faux-paired shortcode
-};
+  eleventyConfig.addJavaScriptFunction("user", function(firstName, lastName) {});
+  eleventyConfig.addJavaScriptFunction("user", function(content, firstName, lastName) {}); // Faux-paired shortcode
 ```
 
 {% callout "info" %}
 Markdown files are pre-processed as Liquid templates by default—any shortcodes available in Liquid templates are also available in Markdown files. Likewise, if you <a href="/docs/config/#default-template-engine-for-markdown-files">change the template engine for Markdown files</a>, the shortcodes available for that templating language will also be available in Markdown files.
 {% endcallout %}
+
+### Async Friendly Per-Engine Shortcodes
+
+Learn more about these on the individual template engine pages for [Nunjucks](/docs/languages/nunjucks/#asynchronous-shortcodes), [Liquid](/docs/languages/liquid/#asynchronous-shortcodes), and [`11ty.js` JavaScript](/docs/languages/javascript/#asynchronous-javascript-template-functions).
+
+{% codetitle ".eleventy.js" %}
+
+```js
+  // Async-friendly
+  // Liquid is already async-friendly
+  eleventyConfig.addLiquidShortcode("user", async function() {});
+	eleventyConfig.addPairedLiquidShortcode("user", async function(content) {});
+
+  // Nunjucks Async
+  eleventyConfig.addNunjucksAsyncShortcode("user", async function() {});
+  eleventyConfig.addPairedNunjucksAsyncShortcode("user", async function(content) {});
+
+	 // JavaScript Template Function (make sure you `await` these!)
+  eleventyConfig.addJavaScriptFunction("user", async function() {});
+  eleventyConfig.addJavaScriptFunction("user", async function(content) {}); // Faux-paired shortcode
+};
+```

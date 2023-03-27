@@ -18,11 +18,11 @@ You maintain full control of the HTML. Use with `<picture>` or `<img>` or CSS `b
 * Output multiple sizes, keeps original aspect ratio. Never upscales raster images larger than original size (exception for SVG input).
 * Output multiple formats, supports: `jpeg`, `png`, `webp`, `avif` {% addedin "Image 0.6.0" %}, and `svg` (requires SVG input)
 * Retrieve metadata about your new images (see [sample return object](#sample-return-object)).
-  * Use this to add `width` and `height` attributes on `<img>` elements for [proper aspect ratio mapping](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping).
+	* Use this to add `width` and `height` attributes on `<img>` elements for [proper aspect ratio mapping](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping).
 * Does not require or rely on file extensions (like `.png` or `.jpg`) in URLs or local files, which may be missing or inaccurate.
 * Save remote images locally using [`eleventy-fetch`](/docs/plugins/fetch/).
-  * Use local images in your HTML to prevent broken image URLs.
-  * Manage the [cache duration](/docs/plugins/fetch/#change-the-cache-duration).
+	* Use local images in your HTML to prevent broken image URLs.
+	* Manage the [cache duration](/docs/plugins/fetch/#change-the-cache-duration).
 * Fast: de-duplicates image requests and use both an in-memory and disk cache.
 
 
@@ -44,12 +44,12 @@ This utility returns a Promise and works best in `async` friendly functions, fil
 const Image = require("@11ty/eleventy-img");
 
 (async () => {
-  let url = "https://images.unsplash.com/photo-1608178398319-48f814d0750c";
-  let stats = await Image(url, {
-    widths: [300]
-  });
+	let url = "https://images.unsplash.com/photo-1608178398319-48f814d0750c";
+	let stats = await Image(url, {
+		widths: [300]
+	});
 
-  console.log( stats );
+	console.log( stats );
 })();
 ```
 
@@ -63,32 +63,32 @@ Three things happen here:
 
 ```js
 {
-  webp: [
-    {
-      format: 'webp',
-      width: 300,
-      height: 300,
-      filename: '6dfd7ac6-300.webp',
-      outputPath: 'img/6dfd7ac6-300.webp',
-      url: '/img/6dfd7ac6-300.webp',
-      sourceType: 'image/webp',
-      srcset: '/img/6dfd7ac6-300.webp 300w',
-      size: 10184
-    }
-  ],
-  jpeg: [
-    {
-      format: 'jpeg',
-      width: 300,
-      height: 300,
-      filename: '6dfd7ac6-300.jpeg',
-      outputPath: 'img/6dfd7ac6-300.jpeg',
-      url: '/img/6dfd7ac6-300.jpeg',
-      sourceType: 'image/jpeg',
-      srcset: '/img/6dfd7ac6-300.jpeg 300w',
-      size: 15616
-    }
-  ]
+	webp: [
+		{
+			format: 'webp',
+			width: 300,
+			height: 300,
+			filename: '6dfd7ac6-300.webp',
+			outputPath: 'img/6dfd7ac6-300.webp',
+			url: '/img/6dfd7ac6-300.webp',
+			sourceType: 'image/webp',
+			srcset: '/img/6dfd7ac6-300.webp 300w',
+			size: 10184
+		}
+	],
+	jpeg: [
+		{
+			format: 'jpeg',
+			width: 300,
+			height: 300,
+			filename: '6dfd7ac6-300.jpeg',
+			outputPath: 'img/6dfd7ac6-300.jpeg',
+			url: '/img/6dfd7ac6-300.jpeg',
+			sourceType: 'image/jpeg',
+			srcset: '/img/6dfd7ac6-300.jpeg 300w',
+			size: 15616
+		}
+	]
 }
 ```
 
@@ -141,15 +141,15 @@ Where to write the new images to disk. Project-relative path to the output image
 
 ```js
 {
-  cacheOptions: {
-    // if a remote image URL, this is the amount of time before it fetches a fresh copy
-    duration: "1d",
+	cacheOptions: {
+		// if a remote image URL, this is the amount of time before it fetches a fresh copy
+		duration: "1d",
 
-    // project-relative path to the cache directory
-    directory: ".cache",
+		// project-relative path to the cache directory
+		directory: ".cache",
 
-    removeUrlQueryParams: false,
-  },
+		removeUrlQueryParams: false,
+	},
 }
 ```
 
@@ -177,16 +177,16 @@ When caching remote images, you may want to check the processed image output int
 
 ```js
 {
-  // Define custom filenames for generated images
-  filenameFormat: function (id, src, width, format, options) {
-    // id: hash of the original image
-    // src: original image path
-    // width: current width in px
-    // format: current file format
-    // options: set of options passed to the Image call
+	// Define custom filenames for generated images
+	filenameFormat: function (id, src, width, format, options) {
+		// id: hash of the original image
+		// src: original image path
+		// width: current width in px
+		// format: current file format
+		// options: set of options passed to the Image call
 
-    return `${id}-${width}.${format}`;
-  }
+		return `${id}-${width}.${format}`;
+	}
 }
 ```
 
@@ -198,14 +198,14 @@ const path = require("path");
 const Image = require("@11ty/eleventy-img");
 
 await Image("./test/bio-2017.jpg", {
-  widths: [300],
-  formats: ["auto"],
-  filenameFormat: function (id, src, width, format, options) {
-    const extension = path.extname(src);
-    const name = path.basename(src, extension);
+	widths: [300],
+	formats: ["auto"],
+	filenameFormat: function (id, src, width, format, options) {
+		const extension = path.extname(src);
+		const name = path.basename(src, extension);
 
-    return `${name}-${width}w.${format}`;
-  }
+		return `${name}-${width}w.${format}`;
+	}
 });
 
 // Writes: "test/img/bio-2017-300w.jpeg"
@@ -223,14 +223,14 @@ When you use this, returned data will not include `filename` or `outputPath`.
 
 ```js
 {
-  urlFormat: function ({
-    hash, // not included for `statsOnly` images
-    src,
-    width,
-    format,
-  }) {
-    return `https://sample-image-service.11ty.dev/${encodeURIComponent(src)}/${width}/${format}/`;
-  }
+	urlFormat: function ({
+		hash, // not included for `statsOnly` images
+		src,
+		width,
+		format,
+	}) {
+		return `https://sample-image-service.11ty.dev/${encodeURIComponent(src)}/${width}/${format}/`;
+	}
 }
 ```
 
@@ -247,12 +247,12 @@ With remotely hosted images, you may also need to supply the dimensions when usi
 
 ```js
 {
-  statsOnly: true,
-  remoteImageMetadata: {
-    width,
-    height,
-    format, // optional
-  }
+	statsOnly: true,
+	remoteImageMetadata: {
+		width,
+		height,
+		format, // optional
+	}
 }
 ```
 
@@ -265,7 +265,7 @@ With remotely hosted images, you may also need to supply the dimensions when usi
 const Image = require("@11ty/eleventy-img");
 
 await Image("./test/bio-2017.jpg", {
-  hashLength: 8 // careful, don’t make it _too_ short!
+	hashLength: 8 // careful, don’t make it _too_ short!
 });
 ```
 
@@ -273,17 +273,17 @@ await Image("./test/bio-2017.jpg", {
 
 ### Asynchronous Shortcode
 
-{% callout "info" %}The examples below use a <a href="/docs/languages/nunjucks/#asynchronous-shortcodes">Nunjucks</a> <code>async</code> shortcode (different from the traditional shortcode configuration method). The <a href="/docs/languages/javascript/#asynchronous-javascript-template-functions">JavaScript</a> and <a href="/docs/languages/liquid/#asynchronous-shortcodes">Liquid</a> template engines also work here and are asynchronous without additional changes. Note that <a href="https://mozilla.github.io/nunjucks/templating.html#macro">Nunjucks macros cannot use asynchronous shortcodes</a>. If you use macros, use Synchronous shortcodes described below.{% endcallout %}
+{% callout "info", "md" %}The examples below require an [async-friendly shortcodes](/docs/shortcodes/#asynchronous-shortcodes) (works in Nunjucks, Liquid, JavaScript, and [WebC](/docs/languages/webc/)). Note that [Nunjucks macros cannot use asynchronous shortcodes](https://mozilla.github.io/nunjucks/templating.html#macro). If you use macros, use [synchronous shortcodes](#synchronous-shortcode) described below.{% endcallout %}
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  <div role="tablist" aria-label="Easy or DIY mode chooser">
-    Choose one:
-    <a href="#filter-easy" role="tab">We generate the HTML</a>
-    <a href="#filter-diy-img" role="tab">Do it yourself: &lt;img&gt;</a>
-    <a href="#filter-diy-picture" role="tab">Do it yourself: &lt;picture&gt;</a>
-  </div>
-  <div id="filter-easy" role="tabpanel">
+	<div role="tablist" aria-label="Easy or DIY mode chooser">
+		Choose one:
+		<a href="#filter-easy" role="tab">We generate the HTML</a>
+		<a href="#filter-diy-img" role="tab">Do it yourself: &lt;img&gt;</a>
+		<a href="#filter-diy-picture" role="tab">Do it yourself: &lt;picture&gt;</a>
+	</div>
+	<div id="filter-easy" role="tabpanel">
 
 {% addedin "Image 0.7.2" %}The `generateHTML` function is available in Eleventy Image v0.7.2 or higher.
 
@@ -292,183 +292,166 @@ await Image("./test/bio-2017.jpg", {
 ```js
 const Image = require("@11ty/eleventy-img");
 
-async function imageShortcode(src, alt, sizes) {
-  let metadata = await Image(src, {
-    widths: [300, 600],
-    formats: ["avif", "jpeg"]
-  });
-
-  let imageAttributes = {
-    alt,
-    sizes,
-    loading: "lazy",
-    decoding: "async",
-  };
-
-  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
-  return Image.generateHTML(metadata, imageAttributes);
-}
-
+// Only one module.exports per configuration file, please!
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addAsyncShortcode("image", imageShortcode);
+	eleventyConfig.addShortcode("image", async function(src, alt, sizes) {
+		let metadata = await Image(src, {
+			widths: [300, 600],
+			formats: ["avif", "jpeg"]
+		});
 
-  // Or add them individually
-  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
-  eleventyConfig.addLiquidShortcode("image", imageShortcode);
-  eleventyConfig.addJavaScriptFunction("image", imageShortcode);
+		let imageAttributes = {
+			alt,
+			sizes,
+			loading: "lazy",
+			decoding: "async",
+		};
 
+		// You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+		return Image.generateHTML(metadata, imageAttributes);
+	});
+};
+```
+</div>
+<div id="filter-diy-img" role="tabpanel">
+
+{% codetitle ".eleventy.js" %}
+
+```js
+const Image = require("@11ty/eleventy-img");
+
+// Only one module.exports per configuration file, please!
+module.exports = function(eleventyConfig) {
+	eleventyConfig.addShortcode("image", async function(src, alt) {
+		if(alt === undefined) {
+			// You bet we throw an error on missing alt (alt="" works okay)
+			throw new Error(`Missing \`alt\` on myImage from: ${src}`);
+		}
+
+		let metadata = await Image(src, {
+			widths: [600],
+			formats: ["jpeg"]
+		});
+
+		let data = metadata.jpeg[metadata.jpeg.length - 1];
+		return `<img src="${data.url}" width="${data.width}" height="${data.height}" alt="${alt}" loading="lazy" decoding="async">`;
+	});
 };
 ```
 
-{% callout "info", "md" %}You’re only allowed one `module.exports` in your configuration file! If one already exists, copy the content of the above into your existing `module.exports` function.{% endcallout %}
+</div>
+<div id="filter-diy-picture" role="tabpanel">
+
+{% codetitle ".eleventy.js" %}
+
+```js
+const Image = require("@11ty/eleventy-img");
+
+// Only one module.exports per configuration file, please!
+module.exports = function(eleventyConfig) {
+	eleventyConfig.addShortcode("image", async function(src, alt, sizes = "100vw") {
+		if(alt === undefined) {
+			// You bet we throw an error on missing alt (alt="" works okay)
+			throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
+		}
+
+		let metadata = await Image(src, {
+			widths: [300, 600],
+			formats: ['webp', 'jpeg']
+		});
+
+		let lowsrc = metadata.jpeg[0];
+		let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
+
+		return `<picture>
+			${Object.values(metadata).map(imageFormat => {
+				return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`;
+			}).join("\n")}
+				<img
+					src="${lowsrc.url}"
+					width="${highsrc.width}"
+					height="${highsrc.height}"
+					alt="${alt}"
+					loading="lazy"
+					decoding="async">
+			</picture>`;
+	});
+};
+```
+
+</div>
+</seven-minute-tabs>
+</is-land>
+
+The [`addShortcode` method is async-friendly in Eleventy 2.0+](/docs/shortcodes/#asynchronous-shortcodes). Use `addAsyncShortcode` in older versions of Eleventy. You can also [add these shortcodes to individual template engines](/docs/shortcodes/#async-friendly-per-engine-shortcodes), if you’d like!
+
+* _HTML Tip:_ Read more about the special (and very useful) [`loading`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading) and [`decoding`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-decoding) HTML attributes.
+
+Now you can use the `image` shortcode in your templates:
+
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs>
+	{% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "shortcode"} %}
+	<div id="shortcode-liquid" role="tabpanel">
+		{% codetitle "Liquid", "Syntax" %}
+{%- highlight "liquid" %}{% raw %}
+{% image "./src/images/cat.jpg", "photo of my cat" %}
+{% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
+{% endraw %}{% endhighlight %}
+		<p>The comma between arguments is <strong>optional</strong> in Liquid templates.</p>
+	</div>
+	<div id="shortcode-njk" role="tabpanel">
+		{% codetitle "Nunjucks", "Syntax" %}
+{%- highlight "jinja2" %}{% raw %}
+{% image "./src/images/cat.jpg", "photo of my cat" %}
+{% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
+{% endraw %}{% endhighlight %}
+		<p>The comma between arguments is <strong>required</strong> in Nunjucks templates.</p>
+	</div>
+	<div id="shortcode-js" role="tabpanel">
+		{% codetitle "JavaScript", "Syntax" %}
+{%- highlight "js" %}{% raw %}
+module.exports = function() {
+	let img1 = await this.image("./src/images/cat.jpg", "photo of my cat");
+	let img2 = await this.image("./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw");
+
+	return `${img1}
+${img2}`;
+};
+{% endraw %}{% endhighlight %}
+	</div>
+	<div id="shortcode-hbs" role="tabpanel">
+
+This `image` shortcode example [requires an async-friendly template language](#asynchronous-usage) and is not available in Handlebars.
+
+	</div>
+</seven-minute-tabs>
+</is-land>
+
+And you’ll have the appropriate HTML generated for you (based on your specified Image options).
+
+#### Whitespace Mode
 
 {% addedin "Image 0.7.3" %}You can use the `whitespaceMode` option to strip the whitespace from the output of the `<picture>` element (a must-have for use in markdown files).
 
 ```js
 async function imageShortcode(src, alt, sizes) {
-  // […]
-  return Image.generateHTML(metadata, imageAttributes, {
-    whitespaceMode: "inline"
-  });
+	// […]
+	return Image.generateHTML(metadata, imageAttributes, {
+		whitespaceMode: "inline"
+	});
 }
 
 // Don’t copy and paste this code block!
 // Some code from the above example was removed for brevity.
 ```
 
-  </div>
-  <div id="filter-diy-img" role="tabpanel">
-
-{% codetitle ".eleventy.js" %}
-
-```js
-const Image = require("@11ty/eleventy-img");
-
-async function imageShortcode(src, alt) {
-  if(alt === undefined) {
-    // You bet we throw an error on missing alt (alt="" works okay)
-    throw new Error(`Missing \`alt\` on myImage from: ${src}`);
-  }
-
-  let metadata = await Image(src, {
-    widths: [600],
-    formats: ["jpeg"]
-  });
-
-  let data = metadata.jpeg[metadata.jpeg.length - 1];
-  return `<img src="${data.url}" width="${data.width}" height="${data.height}" alt="${alt}" loading="lazy" decoding="async">`;
-}
-
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addAsyncShortcode("image", imageShortcode);
-
-  // Or add them individually
-  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
-  eleventyConfig.addLiquidShortcode("image", imageShortcode);
-  eleventyConfig.addJavaScriptFunction("image", imageShortcode);
-};
-```
-
-{% callout "info", "md" %}You’re only allowed one `module.exports` in your configuration file! If one already exists, copy the content of the above into your existing `module.exports` function.{% endcallout %}
-
-  </div>
-  <div id="filter-diy-picture" role="tabpanel">
-
-{% codetitle ".eleventy.js" %}
-
-```js
-const Image = require("@11ty/eleventy-img");
-
-async function imageShortcode(src, alt, sizes = "100vw") {
-  if(alt === undefined) {
-    // You bet we throw an error on missing alt (alt="" works okay)
-    throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
-  }
-
-  let metadata = await Image(src, {
-    widths: [300, 600],
-    formats: ['webp', 'jpeg']
-  });
-
-  let lowsrc = metadata.jpeg[0];
-  let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
-
-  return `<picture>
-    ${Object.values(metadata).map(imageFormat => {
-      return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`;
-    }).join("\n")}
-      <img
-        src="${lowsrc.url}"
-        width="${highsrc.width}"
-        height="${highsrc.height}"
-        alt="${alt}"
-        loading="lazy"
-        decoding="async">
-    </picture>`;
-}
-
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addAsyncShortcode("image", imageShortcode);
-
-  // Or add them individually
-  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
-  eleventyConfig.addLiquidShortcode("image", imageShortcode);
-  eleventyConfig.addJavaScriptFunction("image", imageShortcode);
-};
-```
-
-{% callout "info", "md" %}You’re only allowed one `module.exports` in your configuration file! If one already exists, copy the content of the above into your existing `module.exports` function.{% endcallout %}
-
-  </div>
-</seven-minute-tabs>
-</is-land>
-
-{% callout "info", "md" %}Read more about the [`loading`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading) and [`decoding`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-decoding) HTML attributes.{% endcallout %}
-
-Now you can use it in your templates:
-
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "shortcode"} %}
-  <div id="shortcode-liquid" role="tabpanel">
-    {% codetitle "Liquid", "Syntax" %}
-{%- highlight "liquid" %}{% raw %}
-{% image "./src/images/cat.jpg", "photo of my cat" %}
-{% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
-{% endraw %}{% endhighlight %}
-    <p>The comma between arguments is <strong>optional</strong> in Liquid templates.</p>
-  </div>
-  <div id="shortcode-njk" role="tabpanel">
-    {% codetitle "Nunjucks", "Syntax" %}
-{%- highlight "jinja2" %}{% raw %}
-{% image "./src/images/cat.jpg", "photo of my cat" %}
-{% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
-{% endraw %}{% endhighlight %}
-    <p>The comma between arguments is <strong>required</strong> in Nunjucks templates.</p>
-  </div>
-  <div id="shortcode-js" role="tabpanel">
-    {% codetitle "JavaScript", "Syntax" %}
-{%- highlight "js" %}{% raw %}
-module.exports = function() {
-  let img1 = await this.image("./src/images/cat.jpg", "photo of my cat");
-  let img2 = await this.image("./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw");
-
-  return `${img1}
-${img2}`;
-};
-{% endraw %}{% endhighlight %}
-  </div>
-  <div id="shortcode-hbs" role="tabpanel">
-
-This `image` shortcode example [requires an async-friendly template language](#asynchronous-usage) and is not available in Handlebars.
-
-  </div>
-</seven-minute-tabs>
-</is-land>
-
-And you’ll have the appropriate HTML generated for you (based on your specified Image options).
-
 ### Synchronous Shortcode
+
+{% callout "info", "md" %}The [asynchronous method is preferred](#asynchronous-shortcode)—make sure you start there first! The synchronous method is included for situations that are not async-friendly (Handlebars, macros in Nunjucks, et al).{% endcallout %}
+
+<details>
+<summary>Expand to see an example of Synchronous usage.</summary>
 
 Use `Image.statsSync` to get the metadata of a source even if the image generation is not finished yet:
 
@@ -477,30 +460,32 @@ Use `Image.statsSync` to get the metadata of a source even if the image generati
 ```js
 const Image = require("@11ty/eleventy-img");
 function imageShortcode(src, cls, alt, sizes, widths) {
-  let options = {
-    widths: widths,
-    formats: ['jpeg'],
-  };
+	let options = {
+		widths: widths,
+		formats: ['jpeg'],
+	};
 
-  // generate images, while this is async we don’t wait
-  Image(src, options);
+	// generate images, while this is async we don’t wait
+	Image(src, options);
 
-  let imageAttributes = {
-    class: cls,
-    alt,
-    sizes,
-    loading: "lazy",
-    decoding: "async",
-  };
-  // get metadata even if the images are not fully generated yet
-  let metadata = Image.statsSync(src, options);
-  return Image.generateHTML(metadata, imageAttributes);
+	let imageAttributes = {
+		class: cls,
+		alt,
+		sizes,
+		loading: "lazy",
+		decoding: "async",
+	};
+	// get metadata even if the images are not fully generated yet
+	let metadata = Image.statsSync(src, options);
+	return Image.generateHTML(metadata, imageAttributes);
 }
 
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addNunjucksShortcode("myImage", imageShortcode);
+	eleventyConfig.addNunjucksShortcode("myImage", imageShortcode);
 }
 ```
+
+</details>
 
 ### Process images as a Custom Template
 
@@ -511,15 +496,15 @@ Use Eleventy’s [Custom Template Language](/docs/languages/custom/) feature to 
 {% addedin "2.0.0-canary.10" %} _Nontraditional use case._ Eleventy’s [Custom Data File Formats](/docs/data-custom/) features an example of [processing Images as data files to feed EXIF data into the Data Cascade](/docs/data-custom/#feed-exif-image-data-into-the-data-cascade). You can use the same feature to add the metadata stats returned from the Image utility directly to the Data Cascade for use in your templates.
 
 * Benefits:
-  * Processing happens in the data cascade so this works in any template language.
-  * Images stored in the [global data folder](/docs/data-global/) will be processed and available to all templates
+	* Processing happens in the data cascade so this works in any template language.
+	* Images stored in the [global data folder](/docs/data-global/) will be processed and available to all templates
 * Drawbacks:
-  * You can’t customize the Image options (e.g. `widths` or `formats`) from the template code. It is set globally in the config.
+	* You can’t customize the Image options (e.g. `widths` or `formats`) from the template code. It is set globally in the config.
 * Both a benefit and a drawback:
-  * Beholden to Eleventy’s Data Cascade file name conventions when using with [template/directory data files](/docs/data-template-dir/).
+	* Beholden to Eleventy’s Data Cascade file name conventions when using with [template/directory data files](/docs/data-template-dir/).
 
 <details>
-  <summary><strong>Show the code</strong></summary>
+	<summary><strong>Show the code</strong></summary>
 
 {% codetitle ".eleventy.js" %}
 
@@ -528,33 +513,33 @@ const Image = require("@11ty/eleventy-img");
 const path = require("path");
 
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addDataExtension("png,jpeg", {
-    read: false, // Don’t read the input file, argument is now a file path
-    parser: async imagePath => {
-      let stats = await Image(imagePath, {
-        widths: ["auto"],
-        formats: ["avif", "webp", "jpeg"],
-        outputDir: path.join(eleventyConfig.dir.output, "img", "built")
-      });
+	eleventyConfig.addDataExtension("png,jpeg", {
+		read: false, // Don’t read the input file, argument is now a file path
+		parser: async imagePath => {
+			let stats = await Image(imagePath, {
+				widths: ["auto"],
+				formats: ["avif", "webp", "jpeg"],
+				outputDir: path.join(eleventyConfig.dir.output, "img", "built")
+			});
 
-      return {
-        image: {
-          stats
-        }
-      };
-    },
-  });
+			return {
+				image: {
+					stats
+				}
+			};
+		},
+	});
 
-  // This works sync or async: images were processed ahead of time in the data cascade
-  eleventyConfig.addShortcode("dataCascadeImage", (stats, alt, sizes) => {
-    let imageAttributes = {
-      alt,
-      sizes,
-      loading: "lazy",
-      decoding: "async",
-    };
-    return Image.generateHTML(stats, imageAttributes);
-  });
+	// This works sync or async: images were processed ahead of time in the data cascade
+	eleventyConfig.addShortcode("dataCascadeImage", (stats, alt, sizes) => {
+		let imageAttributes = {
+			alt,
+			sizes,
+			loading: "lazy",
+			decoding: "async",
+		};
+		return Image.generateHTML(stats, imageAttributes);
+	});
 };
 ```
 
@@ -573,7 +558,7 @@ Note this also means that `folder/folder.jpeg` would be processed for all templa
 </details>
 
 <div class="youtube-related">
-  {%- youtubeEmbed "oCTAZumAGNc", "Use images as data files (Weekly №11)", "244" -%}
+	{%- youtubeEmbed "oCTAZumAGNc", "Use images as data files (Weekly №11)", "244" -%}
 </div>
 
 ## Advanced Usage
@@ -605,10 +590,10 @@ You can disable this behavior by using the `useCache` boolean option:
 const Image = require("@11ty/eleventy-img");
 
 (async () => {
-  let stats1 = Image("./test/bio-2017.jpg");
-  let stats2 = Image("./test/bio-2017.jpg");
+	let stats1 = Image("./test/bio-2017.jpg");
+	let stats2 = Image("./test/bio-2017.jpg");
 
-  console.assert(stats1 === stats2, "The same promise");
+	console.assert(stats1 === stats2, "The same promise");
 })();
 ```
 
@@ -622,10 +607,10 @@ const Image = require("@11ty/eleventy-img");
 const Image = require("@11ty/eleventy-img");
 
 (async () => {
-  let stats1 = Image("./test/bio-2017.jpg");
-  let stats2 = Image("./test/bio-2017.jpg", { widths: [300] });
+	let stats1 = Image("./test/bio-2017.jpg");
+	let stats2 = Image("./test/bio-2017.jpg", { widths: [300] });
 
-  console.assert(stats1 !== stats2, "A different promise");
+	console.assert(stats1 !== stats2, "A different promise");
 })();
 ```
 
@@ -668,11 +653,11 @@ Image.concurrency = 4; // default is 10
 ```js
 const Image = require("@11ty/eleventy-img");
 const options = {
-  // Your other options ...
-  formats: ['webp', 'gif']
-  sharpOptions: {
-    animated: true
-  }
+	// Your other options ...
+	formats: ['webp', 'gif']
+	sharpOptions: {
+		animated: true
+	}
 }
 const metadata = await Image(src, options)
 ```
