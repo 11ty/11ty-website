@@ -25,7 +25,8 @@ The `eleventy.before` event runs every time Eleventy starts building, so it will
 ```js
 module.exports = function (eleventyConfig) {
   // Async-friendly in 1.0+
-  eleventyConfig.on('eleventy.before', async () => {
+	// Arguments added in 2.0+
+  eleventyConfig.on('eleventy.before', async ({ dir, runMode, outputMode }) => {
     // Run me before the build starts
   });
 };
@@ -40,7 +41,8 @@ The `eleventy.after` event runs every time Eleventy finishes building, so it wil
 ```js
 module.exports = function (eleventyConfig) {
   // Async-friendly in 1.0+
-  eleventyConfig.on('eleventy.after', async () => {
+	// Arguments added in 2.0+
+  eleventyConfig.on('eleventy.after', async ({ dir, results, runMode, outputMode }) => {
     // Run me after the build ends
   });
 };
