@@ -884,7 +884,7 @@ Bonus tips:
 
 * `webc.attributes`: {% addedin "@11ty/webc@0.9.0" %} an object literal representing the current element’s attributes.
 * `webc.renderAttributes`: {% addedin "@11ty/webc@0.9.0" %} a method to render _public_ attributes to a string.
-* `webc.filterPublicAttributes`: {% addedin "@11ty/webc@0.10.1" %} a method to filter `webc.attributes`, returning an object with only _public_ attributes.
+* `webc.filterPublicAttributes`: {% addedin "@11ty/webc@0.10.1" %} a method to filter `webc.attributes`, returning an object with only _public_ attributes. Usage: `webc.filterPublicAttributes(webc.attributes)`
 * `webc.escapeText`: {% addedin "@11ty/webc@0.10.1" %} encodes all characters that have to be escaped in HTML text (via the [`entities` package](https://github.com/fb55/entities/blob/b6cd547c8088b55a18b2ef449bc9dc8f9c294f0c/src/escape.ts#L126))
 * `webc.escapeAttribute`: {% addedin "@11ty/webc@0.10.1" %} encodes all characters that have to be escaped in HTML attributes (via the [`entities` package](https://github.com/fb55/entities/blob/b6cd547c8088b55a18b2ef449bc9dc8f9c294f0c/src/escape.ts#L111))
 
