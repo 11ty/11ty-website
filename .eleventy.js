@@ -13,7 +13,7 @@ const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const eleventyImage = require("@11ty/eleventy-img");
 const { eleventyImagePlugin } = eleventyImage;
-const pluginWebc = require("@11ty/eleventy-plugin-webc");
+const eleventyWebcPlugin = require("@11ty/eleventy-plugin-webc");
 
 const { addedIn, coerceVersion } = require("./config/addedin");
 const monthDiffPlugin = require("./config/monthDiff");
@@ -242,7 +242,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
 	eleventyConfig.addPlugin(EleventyEdgePlugin);
 	eleventyConfig.addPlugin(javascriptFrontMatter);
-	eleventyConfig.addPlugin(pluginWebc, {
+	eleventyConfig.addPlugin(eleventyWebcPlugin, {
 		components: [
 			"./src/_includes/components/*.webc",
 			"npm:@11ty/is-land/*.webc",
