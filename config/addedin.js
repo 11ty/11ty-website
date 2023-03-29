@@ -5,7 +5,7 @@ const MINIMUM_VERSION_SHOWN = "1.0.0";
 
 const COERCE = {
 	// should have `v` prefix
-	"v2.0.0-canary.": "v2.0.0-beta.1", // 2.0.0-beta.1 => 2.0.0 is handled automatically (see Note 1 below)
+	"v2.0.0-canary.": "v2.0.0", // 2.0.0-beta.1 => 2.0.0 is handled automatically (see Note 1 below)
 }
 
 function isCoreRelease(version) {
