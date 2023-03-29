@@ -12,6 +12,7 @@ const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const eleventyImage = require("@11ty/eleventy-img");
+const { eleventyImagePlugin } = eleventyImage;
 const pluginWebc = require("@11ty/eleventy-plugin-webc");
 
 const { addedIn, coerceVersion } = require("./config/addedin");
@@ -221,6 +222,18 @@ module.exports = function(eleventyConfig) {
 		}
 	});
 
+	eleventyConfig.addPlugin(eleventyImagePlugin, {
+		// options via https://www.11ty.dev/docs/plugins/image/#usage
+		formats: ["avif", "webp", "jpeg"],
+
+		urlPath: "/img/built/",
+
+		defaultAttributes: {
+			loading: "lazy",
+			decoding: "async"
+		}
+	});
+
 	eleventyConfig.addPlugin(markdownPlugin);
 	eleventyConfig.addPlugin(rssPlugin);
 	eleventyConfig.addPlugin(navigationPlugin);
@@ -233,6 +246,7 @@ module.exports = function(eleventyConfig) {
 		components: [
 			"./src/_includes/components/*.webc",
 			"npm:@11ty/is-land/*.webc",
+			"npm:@11ty/eleventy-img/*.webc",
 		],
 		bundlePluginOptions: {
 			transforms: [

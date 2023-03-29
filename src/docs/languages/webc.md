@@ -1153,6 +1153,21 @@ webc:
 1. Use `~/` as a prefix (e.g. `~/my-directory/webc/*.webc`) to alias to the project’s root directory.
 {% endcallout %}
 
+### Official WebC Components
+
+The following plugins offer official WebC components for use in your projects:
+
+* `@11ty/is-land` supplies `<is-land>`
+	* Example: `<is-land webc:import="npm:@11ty/is-land">`
+	* Read more at [Use with `is-land`](#use-with-is-land)
+* `@11ty/eleventy-plugin-syntaxhighlight` supplies `<syntax-highlight>`
+	* Example: `<syntax-highlight language="js" webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight">`
+	* Read more at [`webc:import`](#webcimport)
+* `@11ty/eleventy-img` supplies `<eleventy-image>`
+	*  {% addedin "Image v3.1.0" %}
+	* Example: `<img webc:is="eleventy-image" webc:import="npm:@11ty/eleventy-img">`
+	* Read more at [the Image utility](/docs/plugins/image/#webc).
+
 ### CSS and JS (Bundler mode)
 
 Eleventy WebC will bundle any specific page’s assets (CSS and JS used by components on the page). These are automatically rolled up when a component uses `<script>`, `<script src>`, `<style>`, or `<link rel="stylesheet">`. You can use this to implement component-driven Critical CSS.
@@ -1347,6 +1362,7 @@ What happens when a component is used in multiple distinct buckets?
 ```
 
 When duplicates and conflicts occur, WebC will hoist the component code to find the nearest shared bucket for you. In the above example, the CSS and JS for `<my-component>` will be loaded in the `default` bucket and only in the `default` bucket.
+
 
 ### Use with `is-land`
 
