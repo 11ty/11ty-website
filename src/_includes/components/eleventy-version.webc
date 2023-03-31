@@ -1,1 +1,1 @@
-<span webc:nokeep @text="latestVersion(versions, config, prefix)"></span>
+<span webc:nokeep @text="latestVersion($data.versions, $data.config)"></span>

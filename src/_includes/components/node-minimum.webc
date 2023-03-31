@@ -16,4 +16,4 @@ function latestVersionNodeMinimum(versions, config) {
 }
 </script>
 
-<span webc:nokeep @text="latestVersionNodeMinimum(versions, config)"></span>
+<span webc:nokeep @text="latestVersionNodeMinimum($data.versions, $data.config)"></span>

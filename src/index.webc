@@ -16,29 +16,29 @@ let searchTitle = "Eleventy, a simpler static site generator";
 let skipAuth = true;
 
 let eleventyImport = {
-  collections: ["blog"]
+	collections: ["blog"]
 };
 
 let eleventyComputed = {
-  social: {
-    description: () => "Eleventy, a simpler static site generator."
-  },
+	social: {
+		description: () => "Eleventy, a simpler static site generator."
+	},
 };
 // </script>
 ---
 <script webc:setup>
 function getHighlightedBlogPostContent(collection) {
-  let posts = findBy(collection, 'data.homePageHighlight', true);
-  if(!posts.length) {
-    return "";
-  }
+	let posts = findBy(collection, 'data.homePageHighlight', true);
+	if(!posts.length) {
+		return "";
+	}
 
-  let content = [];
-  for(let post of posts) {
-    content.push(`<strong><a href="${post.data.page.url}">${post.data.newstitle}</a></strong>`);
-  }
+	let content = [];
+	for(let post of posts) {
+		content.push(`<strong><a href="${post.data.page.url}">${post.data.newstitle}</a></strong>`);
+	}
 
-  return `Read ${content.join(" and ")} <em>(and more!)</em> on the <a href="/blog/">Eleventy Blog</a>.`;
+	return `Read ${content.join(" and ")} <em>(and more!)</em> on the <a href="/blog/">Eleventy Blog</a>.`;
 }
 </script>
 
@@ -59,11 +59,10 @@ function getHighlightedBlogPostContent(collection) {
 	<p>From a <a href="https://www.zachleat.com/web/build-benchmark/#benchmark-results">benchmark of ×4000 markdown files</a>. Learn more about <a href="/docs/performance/">Eleventy’s site and build performance</a>.</p>
 
 	<quick-start></quick-start>
-
 	<hr>
 
 	<div class="fullwidth-module">
-	  <logo-cloud></logo-cloud>
+		<logo-cloud></logo-cloud>
 	</div>
 
 	<giant-docs-button></giant-docs-button>
@@ -88,11 +87,11 @@ function getHighlightedBlogPostContent(collection) {
 	<sites-list-njk :sites="builtwith"></sites-list-njk>
 
 	<div class="fullwidth-module">
-	  <is-land on:visible on:save-data="false">
-	    <facepile>
-	      <html-fetch src="/imports/facepile.html"></html-fetch>
-	    </facepile>
-	  </is-land>
+		<is-land on:visible on:save-data="false">
+			<facepile>
+				<html-fetch src="/imports/facepile.html"></html-fetch>
+			</facepile>
+		</is-land>
 	</div>
 
 	<p>View <a href="/speedlify/">all <span @text="getsize(objectFilterNot(builtwith, 'disabled'))" webc:nokeep></span> sites</a>.</p>
@@ -101,7 +100,7 @@ function getHighlightedBlogPostContent(collection) {
 
 	<p>Listen to what these <a href="/docs/testimonials/">happy developers</a> are saying about Eleventy:</p>
 
-	<testimonials-list></testimonials-list>
+	<testimonials-list :testimonials="testimonials"></testimonials-list>
 
 	<p><a href="/docs/testimonials/">…and many more!</a></p>
 </div>

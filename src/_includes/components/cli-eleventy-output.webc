@@ -5,7 +5,7 @@
 }
 </style>
 <script webc:type="js">
-let version = latestVersion(versions, config);
+let version = latestVersion($data.versions, $data.config);
 let versionSuffix = showVersion === "" ? ` (${version})` : "";
 this.helpers.highlight("bash", `${this.slots.text.default.trim()}${versionSuffix}`, "/", "-"); // `"/", "-"` enables line wrapping
 </script>
