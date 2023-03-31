@@ -518,6 +518,8 @@ Inside of your component definition, you can add attributes to the outer host co
 
 `class` and `style` attribute values are _merged_ as expected between the host component and the `webc:root` element.
 
+{% include "webc-attribute-guide.njk" %}
+
 #### Override the host component tag
 
 You can use `webc:root="override"` together to override the host component tag name! This isn’t very useful for HTML-only components (which leave out the host component tag) but is very useful when your component has style/scripts.
@@ -549,7 +551,7 @@ It’s worth noting also that `webc:root` can be nested inside of other content�
 
 ### Props (Properties)
 
-Make any attribute into a prop by prefixing it with `@`. Props are “private” attributes that don’t end up in the output HTML (they are private to WebC). They are identical to attributes except that they are filtered from the output HTML.
+Make any attribute into a prop by prefixing it with `@`. Props are server-only “private” attributes that don’t end up in the output HTML (they are private to WebC). They are identical to attributes except that they are filtered from the output HTML.
 
 {% codetitle "page.webc" %}
 
@@ -565,6 +567,8 @@ Make any attribute into a prop by prefixing it with `@`. Props are “private”
 ```
 
 * In the HTML specification, attribute names are lower-case. {% addedin "@11ty/webc@0.8.0" %}Attribute or property names with dashes are converted to camelcase for JS (e.g. `<my-component @prop-name="test">` can be used like `@text="propName"`). More at [issue #71](https://github.com/11ty/webc/issues/71).
+
+{% include "webc-attribute-guide.njk" %}
 
 ### Dynamic attributes and properties
 
@@ -583,8 +587,11 @@ Make any attribute or property dynamic (using JavaScript for the value instead o
 ```
 
 * {% addedin "@11ty/webc@0.9.0" %}The `:@` dynamic property prefix was added in WebC v0.9.0.
-* In the HTML specification, attribute names are lower-case. {% addedin "@11ty/webc@0.8.0" %}Attribute or property names with dashes are converted to camelcase for JS (e.g. `<my-component @prop-name="test">` can be used like `@text="propName"`). More at [issue #71](https://github.com/11ty/webc/issues/71).
+* In the HTML specification, attribute names are lower-case. {% addedin "@11ty/webc@0.8.0" %}Attribute or property names with dashes are converted to camelcase for JS (e.g. `<my-component @prop-name="test">` can be used like `@text="propName"`). More at [#71](https://github.com/11ty/webc/issues/71).
 <!-- * {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in dynamic attributes (e.g. `this.src`/`this.alt`) when referencing helpers/data/attributes/property values. -->
+* The only currently supported `webc:*` configuration attribute that supports dynamic values is [`webc:bucket`](#asset-bucketing). More to come here: [#143](https://github.com/11ty/webc/issues/143) [#148](https://github.com/11ty/webc/issues/148)
+
+{% include "webc-attribute-guide.njk" %}
 
 ### `@attributes`
 
@@ -809,9 +816,9 @@ if(!alt) {
 
 ```html
 <script webc:type="render">
-	function() {
-		if(!this.alt) {
-			throw new Error("oh no you didn’t");
+function() {
+	if(!this.alt) {
+		throw new Error("oh no you didn’t");
 	}
 	// Free idea: use the Eleventy Image plugin to return optimized markup
 	return `<img src="${this.src}" alt="${this.alt}">`;
@@ -1093,7 +1100,7 @@ Components are the {% emoji "✨" %}magic{% emoji "✨" %} of WebC and there are
 1. You can use [`webc:import`](#webcimport) inside of your components to import another component directly.
 
 {% callout "info" %}
-Notably, WebC components can have any valid HTML tag name and are not restricted to the same naming limitations as custom elements (they do not require a dash in the name).
+Notably, WebC components can have any valid HTML tag name and are not restricted to the same naming limitations as custom elements (which require a dash in the name).
 {% endcallout %}
 
 #### Global no-import Components
@@ -1162,7 +1169,7 @@ The following plugins offer official WebC components for use in your projects:
 	* Read more at [Use with `is-land`](#use-with-is-land)
 * `@11ty/eleventy-plugin-syntaxhighlight` supplies `<syntax-highlight>`
 	* Example: `<syntax-highlight language="js" webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight">`
-	* Read more at [`webc:import`](#webcimport)
+	* Read more at [Syntax Highlighting Plugin](/docs/plugins/syntaxhighlight/#syntax-highlight-source-code)
 * `@11ty/eleventy-img` supplies `<eleventy-image>`
 	*  {% addedin "Image v3.1.0" %}
 	* Example: `<img webc:is="eleventy-image" webc:import="npm:@11ty/eleventy-img">`
@@ -1317,6 +1324,7 @@ Then you can output those bucket bundles anywhere on your page like this (here w
 ```
 
 * {% addedin "@11ty/webc@0.8.0" %}`webc:keep` is required on `<style>` and `<script>` in your layout files to prevent re-bundling the bundles.
+* {% addedin "@11ty/webc@0.9.1" %}`:webc:bucket` (dynamic attribute) is supported to set this value via JavaScript. [#120](https://github.com/11ty/webc/issues/120)
 <!-- * {% addedin "@11ty/webc@0.5.0" %}`this.` is no longer required in `@html` or `@raw` (e.g. `this.getCss`/`this.page.url`) when referencing helpers/data/attributes/property values. -->
 
 #### Cascading Asset Buckets

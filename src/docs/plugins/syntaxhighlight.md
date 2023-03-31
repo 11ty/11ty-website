@@ -182,8 +182,45 @@ function myFunction() {
 </syntax-highlight>
 ```
 
+{% endraw %}
+
+<details>
+<summary>Expand to see an example of importing this as a global component in your configuration file.</summary>
+
+{% codetitle ".eleventy.js" %}
+
+```js
+const pluginWebc = require("@11ty/eleventy-plugin-webc");
+
+module.exports = function(eleventyConfig) {
+	eleventyConfig.addPlugin(pluginWebc, {
+		// Array `components` requires Eleventy WebC v0.9.2+
+		components: [
+			"_components/**/*.webc",
+			"npm:@11ty/eleventy-plugin-syntaxhighlight/*.webc"
+		]
+	});
+};
+```
+
+{% codetitle "page.webc" %}
+
+```html
+---
+<syntax-highlight language="js">
+function myFunction() {
+  return true;
+}
+</syntax-highlight>
+```
+
+</details>
+
+
 <details>
 <summary>Expand to see an example of importing for use anywhere on the page via front matter.</summary>
+
+{% codetitle "page.webc" %}
 
 ```html
 ---
@@ -196,7 +233,6 @@ function myFunction() {
 }
 </syntax-highlight>
 ```
-{% endraw %}
 
 </details>
 

@@ -37,6 +37,10 @@ Features:
 npm install @11ty/is-land
 ```
 
+{% callout "info", "md" -%}
+_You can skip the next steps if you [use `<is-land>` via WebC](/docs/languages/webc/#use-with-is-land)._
+{% endcallout %}
+
 Add `is-land.js` to your primary bundle. It can be deferred and/or loaded asynchronously.
 
 When using with web components it must be the first custom element defined (via `customElements.define`) on the page. Choose your style:
@@ -50,7 +54,6 @@ When using with web components it must be the first custom element defined (via 
 import "/is-land.js";
 </script>
 ```
-
 
 ## Usage
 
