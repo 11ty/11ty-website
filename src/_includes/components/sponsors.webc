@@ -14,10 +14,10 @@
 	<h3 class="subhed ta-c"><strong>Gold Sponsors</strong></h3>
 	<div class="lo-grid">
 		<template webc:type="11ty" 11ty:type="njk">
-		{%- for supporter in opencollective.supporters %}{% if supporter.tier.slug == "gold-sponsor" and supporter.isMonthly -%}
+		{%- for supporter in $data.opencollective.supporters %}{% if supporter.tier.slug == "gold-sponsor" and supporter.isMonthly -%}
 		{%- set nameToSlug = supporter.name | slug | lower -%}
-		<div class="{% if opencollectiveExtra[nameToSlug].containerClass %} {{ opencollectiveExtra[nameToSlug].containerClass }}{% endif %}">
-			<a href="{{ opencollectiveExtra[nameToSlug].href or supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}" rel="sponsored">{% if opencollectiveExtra[nameToSlug].icon %}{{ opencollectiveExtra[nameToSlug].icon | safe }}<span class="sr-only">{{ supporter.name }}</span>{% else %}{% opencollectiveavatar supporter.image, supporter.name %}{{ supporter.name }}{% endif %}</a>
+		<div class="{% if $data.opencollectiveExtra[nameToSlug].containerClass %} {{ $data.opencollectiveExtra[nameToSlug].containerClass }}{% endif %}">
+			<a href="{{ $data.opencollectiveExtra[nameToSlug].href or supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}" rel="sponsored">{% if $data.opencollectiveExtra[nameToSlug].icon %}{{ $data.opencollectiveExtra[nameToSlug].icon | safe }}<span class="sr-only">{{ supporter.name }}</span>{% else %}{% opencollectiveavatar supporter.image, supporter.name %}{{ supporter.name }}{% endif %}</a>
 		</div>
 		{%- endif %}{% endfor %}
 		</template>
