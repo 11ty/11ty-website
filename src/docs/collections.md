@@ -150,7 +150,7 @@ exports.render = function(data) {
 </is-land>
 
 
-### Using an `[aria-current]` attribute for on the current page
+### Use an `[aria-current]` attribute on the current page
 
 Compare the `post.url` and special Eleventy-provided `page.url` variable to find the current page. Building on the previous example:
 
