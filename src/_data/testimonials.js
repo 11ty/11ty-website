@@ -35,6 +35,7 @@ module.exports = async function() {
 		{
 			"text": "Jekyll is dead to me",
 			"name": "Andy Bell",
+			"avatarUrl": "https://andy-bell.co.uk/",
 			"source": "https://andy-bell.co.uk/",
 			"featured": true
 		},
