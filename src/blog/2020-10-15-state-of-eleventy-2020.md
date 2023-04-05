@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: Blog
 ---
 
-* [Watch on YouTube](https://www.youtube-nocookie.com/embed/ix5mPa6D7ZA)
+* [Watch on YouTube](https://www.youtube.com/watch?v=ix5mPa6D7ZA)
 * Also posted on [zachleat.com](https://www.zachleat.com/web/jamsnack/).
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ix5mPa6D7ZA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% youtubeEmbed "ix5mPa6D7ZA" %}
