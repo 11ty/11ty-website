@@ -30,9 +30,10 @@ function randomTestimonialLink(testimonials) {
 		Eleventy has a <a href="/docs/community/">lovely community of folks</a> that really care about what they build. <em @html="randomTestimonialLink(testimonials)"></em>
 	</li>
 	<li>
-		Eleventy is <strong>stable</strong>. We’ve shipped <span @text="getsize(versions) - 1"></span> releases going back to the first version in December 2017 and only two of those releases have had Eleventy-specific breaking changes.
+		<a href="/blog/stability/">Eleventy is <strong>stable</strong></a>. We’ve shipped <span @text="getsize(versions) - 1"></span> releases going back to the first version in December 2017 and only two of those releases have had Eleventy-specific breaking changes.
+
 		<blockquote>
-			<p>a11yproject.com launched with version 1.0.0 of Eleventy. […] It's been a little under three years and I haven't had to make any adjustments to its dependencies, and it can still install and run from a cold start with no complications. When I update the site to use version 2.0.0 I'll actually be removing dependencies, and not adding more. […] That's rare and special.—<a href="https://social.ericwbailey.website/@eric/109914908787346813">Eric Bailey</a></p>
+			<p>a11yproject.com launched with version 1.0.0 of Eleventy. […] It's been a little under three years and I haven't had to make any adjustments to its dependencies, and it can still install and run from a cold start with no complications. When I update the site to use version 2.0.0 I'll actually be removing dependencies, and not adding more. […] That's rare and special.—<a href="https://social.ericwbailey.website/@eric/109914908787346813"><img webc:is="indieweb-avatar" url="https://ericwbailey.design/"> Eric Bailey</a></p>
 		</blockquote>
 	</li>
 	<li>
