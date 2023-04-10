@@ -435,7 +435,7 @@ By default, whether or not this `cache` is enabled is tied to boolean value of `
 
 You can also granularly control the caching key using a `getCacheKey` callback. It might be useful to change this when using `read: false` and `contents` are unavailable.
 
-{% callout "info", "md" %}If you’re using {{ "2.0.0-canary.19" | coerceVersion }} or newer, you shouldn’t need a `getCacheKey` callback. It is preferred to use the [`addDependencies` method in the `compile` callback](##registering-dependencies) instead!{% endcallout %}
+{% callout "info", "md" %}If you’re using {{ "2.0.0-canary.19" | coerceVersion }} or newer, you shouldn’t need a `getCacheKey` callback. It is preferred to use the [`addDependencies` method in the `compile` callback](#registering-dependencies) instead!{% endcallout %}
 
 <details>
 <summary><strong>Expand to see the default <code>getCacheKey</code> implementation</strong> (you can override this!)</summary>
