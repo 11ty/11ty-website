@@ -485,12 +485,19 @@ ${text.trim()}
 	}
 
 	// Thanks to https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
-	eleventyConfig.addFilter("shuffle", arr => {
+	eleventyConfig.addFilter("shuffle", (arr, sliceNum) => {
 		if( Array.isArray(arr) ) {
-			return randomizeArray(arr);
+			if(!sliceNum) {
+				return randomizeArray(arr);;
+			}
+			return randomizeArray(arr).slice(0, sliceNum);
 		}
 
 		let keys = randomizeArray(Object.keys(arr));
+		if(sliceNum) {
+			keys = keys.slice(0, sliceNum);
+		}
+
 		let a = {};
 		for(let key of keys) {
 			a[key] = arr[key];
@@ -708,6 +715,10 @@ ${text.trim()}
 			return str + (new Array(number)).join(str);
 		}
 		return "";
+	});
+
+	eleventyConfig.addFilter("values", obj => {
+		return Object.values(obj);
 	});
 
 	eleventyConfig.addFilter("sortAuthors", authors => {

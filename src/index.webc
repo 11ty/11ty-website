@@ -84,7 +84,7 @@ function getHighlightedBlogPostContent(collection) {
 
 	<h2>Built With Eleventy</h2>
 
-	<sites-list-njk :sites="builtwith"></sites-list-njk>
+	<sites-list-njk :@sites="builtwith"></sites-list-njk>
 
 	<div class="fullwidth-module">
 		<is-land on:visible on:save-data="false">
@@ -94,13 +94,13 @@ function getHighlightedBlogPostContent(collection) {
 		</is-land>
 	</div>
 
-	<p>View <a href="/speedlify/">all <span @text="getsize(objectFilterNot(builtwith, 'disabled'))" webc:nokeep></span> sites</a>.</p>
+	<p>Sample of <em>110</em> authors shown. View <a href="/speedlify/">all <span @text="getsize(objectFilterNot(builtwith, 'disabled'))" webc:nokeep></span> sites</a>.</p>
 
 	<h2>Don’t take my word for it <emoji @char="🌈" @alt="Rainbow"></emoji></h2>
 
 	<p>Listen to what these <a href="/docs/testimonials/">happy developers</a> are saying about Eleventy:</p>
 
-	<testimonials-list :testimonials="testimonials"></testimonials-list>
+	<testimonials-list :@testimonials="testimonials"></testimonials-list>
 
 	<p><a href="/docs/testimonials/">…and many more!</a></p>
 </div>
