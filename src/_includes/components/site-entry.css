@@ -95,7 +95,7 @@
 .sites-vert > .lo-grid {
   --fl-gap-h: 1rem;
   --fl-gap-v: 1rem;
-  --lo-c-minwidth: 7.777777777778em; /* 140px /18 */
+  --lo-c-minwidth: 10em;
 	--lo-grid-repeat: auto-fill;
 }
 .sites-vert--md > .lo-grid {
