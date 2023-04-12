@@ -235,7 +235,11 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addPlugin(markdownPlugin);
-	eleventyConfig.addPlugin(rssPlugin);
+	eleventyConfig.addPlugin(rssPlugin, {
+		posthtmlRenderOptions: {
+			closingSingleTag: "default"
+		}
+	});
 	eleventyConfig.addPlugin(navigationPlugin);
 	eleventyConfig.addPlugin(monthDiffPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
