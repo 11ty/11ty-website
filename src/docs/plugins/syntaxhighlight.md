@@ -46,6 +46,9 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight, {
 
+    // Line separator for line breaks
+    lineSeparator: "\n",
+
     // Change which Eleventy template formats use syntax highlighters
     templateFormats: ["*"], // default
 
@@ -67,6 +70,9 @@ module.exports = function(eleventyConfig) {
       }
     },
     codeAttributes: {},
+
+    // Added in 5.0.0, throw errors on invalid language names
+    errorOnInvalidLanguage: false,
   });
 };
 ```
