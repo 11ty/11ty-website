@@ -41,6 +41,9 @@ hosts:
   - name: Codeberg Pages
     url: https://codeberg.page/
     screenshotSize: medium
+  - name: Kinsta Application Hosting
+    url: https://kinsta.com/application-hosting/
+    screenshotSize: medium
 clis:
   - name: Netlify CLI
     url: https://www.netlify.com/products/cli/
