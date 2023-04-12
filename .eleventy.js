@@ -211,7 +211,6 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
-		lineSeparator: "\n",
 		init: function({ Prism }) {
 			Prism.languages.markdown = Prism.languages.extend('markup', {
 				'frontmatter': {
