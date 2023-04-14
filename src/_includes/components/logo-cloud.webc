@@ -9,6 +9,7 @@
   <li><img webc:is="indieweb-avatar" url="https://www.w3.org/">W3C</li>
   <li><img webc:is="indieweb-avatar" url="https://home.web.cern.ch/">Cern</li>
   <li><img webc:is="indieweb-avatar" url="https://web.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></li>
+  <li><img webc:is="indieweb-avatar" url="https://www.stanford.edu/"><abbr title="Stanford">Stanford</abbr></li>
   <li><img webc:is="indieweb-avatar" url="https://developer.chrome.com/">Chrome Developers</li>
   <li><img webc:is="indieweb-avatar" url="https://css-tricks.com/">CSS Tricks</li>
   <li><img webc:is="indieweb-avatar" url="https://www.webpagetest.org/">WebPageTest</li>
