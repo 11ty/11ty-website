@@ -24,9 +24,8 @@ Eleventy Serverless complements your existing statically generated site by runni
 * Server side rendering for fully dynamic pages, e.g. content preview in your Content Management System.
 * Rendering of individual templates using On-demand Builders, useful to improve large site build times both locally and in production.
 
-You can read more about serverless on the [eponymous Serverless microsite from CSS-Tricks](https://serverless.css-tricks.com/about/).
 
-> “You can write a JavaScript function that you run and receive a response from by hitting a URL.”—[The Power of Serverless](https://serverless.css-tricks.com/) from [Chris Coyier]({{ "https://twitter.com/chriscoyier" | canonicalTwitterUrl }})
+> “You can write a JavaScript function that you run and receive a response from by hitting a URL.”—[The Power of Serverless](https://web.archive.org/web/20220103184003/https://serverless.css-tricks.com/) from [Chris Coyier]({{ "https://twitter.com/chriscoyier" | canonicalTwitterUrl }})
 
 ### Rendering Modes
 
