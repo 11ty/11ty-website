@@ -51,6 +51,9 @@ function coerceVersion(version) {
 	if(isPreReleaseOf(versionText, newestPublishedVersion.tag)) {
 		// Note 1: Strip -canary.1 or -beta.1 suffixes after 2.0.0 is shipped
 		versionText = versionText.split("-")[0];
+	} else if(isPreRelease(versionText) && semver.lt(versionText, newestPublishedVersion.tag)) {
+		// v2.0.0-beta.1 and the newest version is v2.0.1
+		versionText = versionText.split("-")[0];
 	}
 
 	return versionText;

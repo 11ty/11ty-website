@@ -38,8 +38,8 @@ Fetch the previous and next items in a collection when you pass in the current `
 {% raw %}{% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
 {% set nextPost = collections.posts | getNextCollectionItem(page) %}{% endraw %}
 
-<!-- in {{ "2.0.0-beta.1" | coerceVersion }} the page argument is optional -->{% raw %}
-{% set previousPost = collections.posts | getPreviousCollectionItem %}
+<!-- in {{ "2.0.0-beta.1" | coerceVersion }} the page argument is optional -->
+{% raw %}{% set previousPost = collections.posts | getPreviousCollectionItem %}
 {% set nextPost = collections.posts | getNextCollectionItem %}{% endraw %}
 ```
 
@@ -149,28 +149,24 @@ For completeness, a `getCollectionItem` filter is also included that fetches the
 
 {% codetitle "Liquid", "Syntax" %}
 
-{% raw %}
 ```liquid
-{% assign currentPost = collections.posts | getCollectionItem: page %}
+{% raw %}{% assign currentPost = collections.posts | getCollectionItem: page %}{% endraw %}
 
-<!-- in 2.0 the page argument is optional -->
-{% assign currentPost = collections.posts | getCollectionItem %}
+<!-- in {{ "2.0.0-beta.1" | coerceVersion }} the page argument is optional -->
+{% raw %}{% assign currentPost = collections.posts | getCollectionItem %}{% endraw %}
 ```
-{% endraw %}
 
   </div>
   <div id="getitem-njk" role="tabpanel">
 
 {% codetitle "Nunjucks", "Syntax" %}
 
-{% raw %}
 ```jinja2
-{% set currentPost = collections.posts | getCollectionItem(page) %}
+{% raw %}{% set currentPost = collections.posts | getCollectionItem(page) %}{% endraw %}
 
-<!-- in 2.0 the page argument is optional -->
-{% set currentPost = collections.posts | getCollectionItem %}
+<!-- in {{ "2.0.0-beta.1" | coerceVersion }} the page argument is optional -->
+{% raw %}{% set currentPost = collections.posts | getCollectionItem %}{% endraw %}
 ```
-{% endraw %}
 
   </div>
   <div id="getitem-js" role="tabpanel">
