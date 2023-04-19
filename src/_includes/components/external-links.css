@@ -94,6 +94,9 @@ a[href^="https://en.wikipedia.org"]:before {
 	border-radius: 0.125em; /* 2px /16 */
 	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.wikipedia.org%2F/");
 }
+a[href^="https://github.com"].elv-skipicon:before {
+	display: none;
+}
 
 /* Not in the facepile or in the community links cards */
 .sites-site-vert a[href^="https://www.netlify.com"]:before,

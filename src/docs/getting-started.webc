@@ -7,6 +7,12 @@ overrideCommunityLinks: true
 ---
 <h1>Getting Started</h1>
 
+<template webc:type="11ty" 11ty:type="njk" webc:raw webc:nokeep>
+	{% callout %}
+		{% include "star-on-github.njk" %}
+	{% endcallout %}
+</template>
+
 <p>Eleventy <eleventy-version></eleventy-version> requires <strong><a href="https://nodejs.org/">Node.js</a> version <node-minimum></node-minimum></strong> or higher.</p>
 
 <p>You can check whether or not you have Node installed by running <code>node --version</code> in a terminal window. (<a href="/docs/terminal-window/"><em>Well, wait—what is a Terminal window?</em></a>) If the command is not found or it reports a number lower than <node-minimum></node-minimum>, you will need to <a href="https://nodejs.org/en/download/">download and install Node.js</a> before moving on to the next step.</p>
