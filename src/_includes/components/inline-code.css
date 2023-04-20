@@ -10,6 +10,9 @@ code {
 	padding-right: 4px;
 	border-radius: .15em;
 }
+pre[class*="language-"] code {
+	background-color: inherit;
+}
 table code {
 	-ms-word-break: normal;
 	word-break: normal;
