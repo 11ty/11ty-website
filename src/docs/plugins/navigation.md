@@ -16,7 +16,6 @@ A plugin for creating infinite-depth hierarchical navigation in Eleventy project
 ## Template Compatibility
 
 * Any template language can add to navigation.
-* Nunjucks or Liquid are required for rendering the navigation menu.
 
 ## Installation
 
