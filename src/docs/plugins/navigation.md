@@ -192,7 +192,7 @@ Nunjucks, Liquid and WebC engines are supported. If you’re tired of reading, j
 
 {% raw %}
 ```html
-<div @html="eleventyNavigationToHtml(eleventyNavigation($data.collections.all))"></div>
+<nav @html="eleventyNavigationToHtml(eleventyNavigation($data.collections.all))"></nav>
 ```
 {% endraw %}
 
@@ -241,7 +241,7 @@ Nunjucks, Liquid and WebC engines are supported. If you’re tired of reading, j
 
 {% raw %}
 ```html
-<div @html="eleventyNavigationToMarkdown(eleventyNavigation($data.collections.all))"></div>
+<nav @html="eleventyNavigationToMarkdown(eleventyNavigation($data.collections.all))"></nav>
 ```
 {% endraw %}
 
