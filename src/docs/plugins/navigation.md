@@ -156,7 +156,7 @@ Use [`permalink: false`](/docs/permalinks/#permalink-false) to ensure that this 
 
 ## Rendering the Navigation Menu (Easy Mode)
 
-Nunjucks and Liquid engines are supported. If you’re tired of reading, just use one of the following. These are using [the filters documented below](#render-with-a-filter). If you want more control or need additional customization, keep reading!
+Nunjucks, Liquid and WebC engines are supported. If you’re tired of reading, just use one of the following. These are using [the filters documented below](#render-with-a-filter). If you want more control or need additional customization, keep reading!
 
 ### Output HTML
 
@@ -182,6 +182,17 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
 {% raw %}
 ```jinja2
 {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+```
+{% endraw %}
+
+  </div>
+	<div id="navtohtml-webc" role="tabpanel">
+
+{% codetitle "WebC", "Syntax" %}
+
+{% raw %}
+```html
+<div @html="eleventyNavigationToHtml(eleventyNavigation($data.collections.all))"></div>
 ```
 {% endraw %}
 
@@ -220,6 +231,17 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
 {% raw %}
 ```jinja2
 {{ collections.all | eleventyNavigation | eleventyNavigationToMarkdown | safe }}
+```
+{% endraw %}
+
+  </div>
+	<div id="navtohtml-webc" role="tabpanel">
+
+{% codetitle "WebC", "Syntax" %}
+
+{% raw %}
+```html
+<div @html="eleventyNavigationToMarkdown(eleventyNavigation($data.collections.all))"></div>
 ```
 {% endraw %}
 
