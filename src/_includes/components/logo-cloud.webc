@@ -14,6 +14,8 @@
   <li><img webc:is="indieweb-avatar" url="https://css-tricks.com/">CSS Tricks</li>
   <li><img webc:is="indieweb-avatar" url="https://www.webpagetest.org/">WebPageTest</li>
   <li><img webc:is="indieweb-avatar" url="https://www.a11yproject.com/">A11Y Project</li>
+  <li><img webc:is="indieweb-avatar" url="https://www.gov.uk/">United Kingdom (gov)</li>
+  <li><img webc:is="indieweb-avatar" url="https://www.numerique.gouv.fr/">France (gov)</li>
   <li><img webc:is="indieweb-avatar" url="https://stackoverflow.com/">Stack Overflow</li>
   <li><img webc:is="indieweb-avatar" url="https://lit.dev/" width="120">Lit</li>
   <li><img webc:is="indieweb-avatar" url="https://glitch.com/">Glitch</li>
@@ -37,8 +39,7 @@
   <li><img webc:is="indieweb-avatar" url="https://nordhealth.com/">Nordhealth</li>
   <li><img webc:is="indieweb-avatar" url="https://www.orange.com/">Orange</li>
   <li><img webc:is="indieweb-avatar" url="https://www.wisc.edu/">Univ. of Wisconsin-Madison</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.numerique.gouv.fr/">France (government)</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.ca.gov/">California (government)</li>
+  <li><img webc:is="indieweb-avatar" url="https://www.ca.gov/">California (gov)</li>
   <li><img webc:is="indieweb-avatar" url="https://ux.redhat.com">Red Hat</li>
   <li><img webc:is="indieweb-avatar" url="https://www.pie.design/">Just Eat Takeaway</li>
   <li class="logos-list-more">…and more</li>
@@ -84,7 +85,7 @@
     font-style: italic;
   }
   @media (max-width: 62.4375em) { /* 999px */
-    .logos-list li:nth-child(n+16):not(.logos-list-more) {
+    .logos-list li:nth-child(n+18):not(.logos-list-more) {
       display: none;
     }
   }
