@@ -104,9 +104,14 @@ module.exports = function(eleventyConfig) {
 
 		// Additional global data used in the Eleventy WebC transform
 		transformData: {},
+
+		// Options passed to @11ty/eleventy-plugin-bundle
+		bundlePluginOptions: {},
 	});
 };
 ```
+
+View the [full options list for `@11ty/eleventy-plugin-bundle`](https://github.com/11ty/eleventy-plugin-bundle#installation). As an example, you can use the [`transforms` array to modify bundle content with postcss](https://github.com/11ty/eleventy-plugin-bundle#modify-the-bundle-output).
 
 </details>
 
