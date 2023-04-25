@@ -1,4 +1,4 @@
-<ul class="logos-list">
+<ul class="logos-list" id="logos">
   <li class="logos-list-hed subhed">Trusted by</li>
   <li><img webc:is="indieweb-avatar" url="https://about.google/">Google</li>
   <li><img webc:is="indieweb-avatar" url="https://www.netlify.com/">Netlify</li>
