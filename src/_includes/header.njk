@@ -22,7 +22,7 @@
 			<ul class="list-bare fl fl-inline fl-nowrap">
 				<li><a href="/docs/">Docs</a></li>
 				<li><a href="/docs/getting-started/">Get Started</a></li>
-				{%- if github.stargazers and page.inputPath !== "./src/index.webc" %}<li><a href="https://github.com/11ty/eleventy" class="minilink minilink-github elv-skipicon"><span>★</span> <strong>{{ github.stargazers | humanReadableNum }}</strong></a></li>{% endif %}
+				{%- if github.stargazers and page.inputPath !== "./src/index.webc" %}<li><a href="https://github.com/11ty/eleventy" class="minilink minilink-github elv-skipicon"><span>★</span> <strong title="{{ github.stargazers }}">{{ github.stargazers | humanReadableNum }}</strong></a></li>{% endif %}
 				<li class="elv-nav-docs-only"><a href="/docs/search/">Search</a></li>
 				<li><a href="/blog/" class="elv-nav-light">Blog</a></li>
 				<li class="elv-nav-docs-only"><a href="/docs/community/" class="elv-nav-light">Community</a></li>
