@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/codegouvfr/eleventy-dsfr",
+	"name": "Eleventy x French Design System",
+	"description": "eleventy-dsfr is a website starter for official French's public service websites using 11ty and the French Design System.",
+	"author": "codegouvfr",
+	"demo": "https://codegouvfr.github.io/eleventy-dsfr/"
+}
