@@ -208,6 +208,23 @@ permalink: "index.json"
 
 ## Advanced Usage
 
+
+### Dynamic permalinks for a directory of content templates
+
+Let's say you have a directory of content templates like `recipes/cookies.md` and `recipes/soup.md` and 50 more. Each of these content templates has a title in their frontmatter. While you could manually set a permalink in the frontmatter of each recipe you can also dynamically generate the permalink inside a [Directory Data File](/docs/data-template-dir/) like `recipes.11tydata.js`.
+
+Because of the order of the [data cascade](/docs/data-cascade/) the title of a content template is not immediately available to the directory data file. Luckily we can use [Computed Data](docs/data-computed/) to wait for all data to be available. Inside of your directory data file `recipes.11tydata.js` you could write this:
+```javascript
+const slugify = require("slugify");
+
+module.exports = {
+  eleventyComputed: {
+    permalink: ({ title }) => `/recipes/${slugify(title)}`,
+  },
+};
+```
+The title is [slugified](/docs/filters/slugify/) to be URL-friendly.
+
 ### Mapping one URL to Multiple Files for Internationalization {% addedin "2.0.0-canary.13" %}
 
 _Decouple a page’s primary URL from its permalink._
