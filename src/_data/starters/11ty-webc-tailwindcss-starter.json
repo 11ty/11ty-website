@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/dulltackle/11ty-webc-tailwindcss-starter",
+	"name": "11ty-webc-tailwindcss-starter",
+	"description": "A simpler starter for building Eleventy static sites with WebC and Tailwind CSS",
+	"author": "dulltackle",
+	"demo": "https://dulltackle.github.io/11ty-webc-tailwindcss-starter/",
+}
