@@ -19,7 +19,7 @@ overrideCommunityLinks: true
 
 ## What is Serverless?
 
-Eleventy Serverless complements your existing statically generated site by running one or more template files _at request time_ to generate dynamic pages. It can unlock many new use cases to move beyond static files into dynamically generated content.
+Eleventy Serverless compliments your existing statically generated site by running one or more template files _at request time_ to generate dynamic pages. It can unlock many new use cases to move beyond static files into dynamically generated content.
 
 * Server side rendering for fully dynamic pages, e.g. content preview in your Content Management System.
 * Rendering of individual templates using On-demand Builders, useful to improve large site build times both locally and in production.
