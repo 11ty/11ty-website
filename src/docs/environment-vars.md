@@ -12,6 +12,8 @@ You can set and use your own environment variables in your projects. They will b
 
 These are typically used for setting your deployment context and private API keys. This is also the approach used to [enable `DEBUG` mode](/docs/debugging/).
 
+{% callout "info", "md" %}Note that Eleventy exposes environment variables only to JavaScript files that are evaluated during the build time. This includes the config file and all JavaScript files required from there, JavaScript data files, etc. **Environment variables are not available in the templates.** You need to expose them yourself. For example, using a [Global Data file](/docs/data-js/#example-exposing-environment-variables).{% endcallout %}
+
 [[toc]]
 
 ## Setting your own
