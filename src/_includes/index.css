@@ -36,9 +36,11 @@ body {
 	max-width: 74rem;
 	margin: 0 auto;
 }
+
 img {
 	border: 0;
 }
+
 a,
 a:visited,
 a[href] {
@@ -83,6 +85,11 @@ iframe {
 	width: 100%;
 }
 
+is-land {
+  content-visibility: auto;
+}
+
+/* Utility classes */
 .nowrap {
 	white-space: nowrap;
 }
@@ -660,7 +667,6 @@ a[href].elv-hero:visited {
 }
 
 /* Filter container */
-
 filter-container form {
 	opacity: .3;
 	pointer-events: none;
