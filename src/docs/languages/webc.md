@@ -463,6 +463,8 @@ Child content optionally precompiles using `<slot>` and `[slot]` too. This examp
 
 Compiles to:
 
+{% codetitle "_site/page.html" %}
+
 ```html
 <p>Fallback slot content</p>
 <p>This is the default slot</p>
@@ -611,6 +613,8 @@ Make any attribute or property dynamic (using JavaScript for the value instead o
 
 You can use this to render an arbitrary object as attributes too (note the parentheses to avoid JavaScript parsing as a [`block`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block) + [`label`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label)):
 
+{% codetitle "components/avatar-image.webc" %}
+
 ```html
 <img @attributes="({ myattribute: 'myValue'})">
 ```
@@ -652,12 +656,23 @@ As noted in [`@html`](#@html), you can use `@raw` as an alias for `webc:raw @htm
 
 We provide a special `@text` [prop](#props-(properties)) to override any tag content with custom JavaScript. The entire value returned here will be escaped!
 
+{% codetitle "page.webc" %}
+
 ```html
 <p @text="dataProperty"></p>
+```
 
-<!-- When dataProperty contains `<p>This is text</p>`, this renders: -->
+When `dataProperty` contains `<p>This is text</p>`, this renders:
+
+{% codetitle "_site/page.html" %}
+
+```html
 <p>&lt;p&gt;This is text&lt;/p&gt;</p>
 ```
+
+You can combine this with `webc:nokeep` to completely replace the outer element:
+
+{% codetitle "page.webc" %}
 
 ```html
 <!-- webc:nokeep will replace the outer element -->
@@ -690,7 +705,7 @@ We include a lightweight mechanism (`webc:scoped`) to scope component CSS. Selec
 <my-component>Default slot</my-component>
 ```
 
-If you use `:host` it will be replaced with that class selector.
+If you use `:host`, it will be replaced with that class selector.
 
 {% codetitle "components/my-component.webc" %}
 
@@ -755,9 +770,11 @@ function alwaysBlue() {
 <div @html="alwaysBlue()"></div>
 ```
 
-Works with `var`, `let`, `const`, `function`, `Array` and `Object` [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
+Works with `var`, `let`, `const`, `function`, `Array`, and `Object` [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
-* Uses the [`node-retrieve-globals` package](https://github.com/zachleat/node-retrieve-globals/).
+{% callout "info" %}
+Uses the [`node-retrieve-globals` package](https://github.com/zachleat/node-retrieve-globals/).
+{% endcallout %}
 
 ### Using Template Syntax to Generate Content
 
@@ -805,7 +822,6 @@ You can also transform individual element content using `webc:type`. In addition
 ```
 
 {% codetitle "components/img.webc" %}
-
 
 ```html
 <script webc:type="js" webc:root>
@@ -980,7 +996,7 @@ WebC [Helpers](https://github.com/11ty/webc#helper-functions) are JavaScript fun
 
 {% addedin "@11ty/eleventy-plugin-webc@0.5.0" %}Included with Eleventy WebC, [JavaScript template functions](/docs/languages/javascript/#javascript-template-functions) and [Universal Filters](/docs/filters/#universal-filters) are provided automatically as WebC Helpers.
 
-This includes [`url`, `slugify`, `log` and others](/docs/filters/#eleventy-provided-universal-filters)!
+This includes [`url`, `slugify`, `log`, and others](/docs/filters/#eleventy-provided-universal-filters)!
 
 ```html
 <!-- Use the  Eleventy provided `url` universal filter -->
@@ -1003,11 +1019,18 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+{% codetitle "page.webc" %}
+
 ```html
 <div @html="alwaysRed()"></div>
 <div @html="alwaysBlue()"></div>
+```
 
-<!-- renders as: -->
+Renders as:
+
+{% codetitle "_site/page.html" %}
+
+```html
 <div>Red</div>
 <div>Blue</div>
 ```
@@ -1019,7 +1042,7 @@ module.exports = function(eleventyConfig) {
 
 Custom elements (per specification) are not supported as void elements: they require both a starting and ending tag.
 
-Practically speaking, this means a WebC component can not be self-closing. You can workaround this limitation using [`webc:is`](#webcis) (e.g. `<img webc:is="my-component">`).
+Practically speaking, this means a WebC component cannot be self-closing. You can workaround this limitation using [`webc:is`](#webcis) (e.g. `<img webc:is="my-component">`).
 
 #### `<head>` Components
 
@@ -1030,13 +1053,13 @@ There are a few wrinkles when using an HTML parser with custom elements. Notably
 
 ```html
 <head webc:is="my-custom-head">
-	<!-- this is slot content, yes you can use named slots here too -->
+	<!-- this is slot content. yes, you can use named slots here too! -->
 </head>
 ```
 
 ```html
 <head>
-	<!-- <my-custom-head> is not allowed here but
+	<!-- <my-custom-head> is not allowed here, but
 			 <meta webc:is="my-custom-head> is -->
 	<meta webc:is="my-custom-head">
 	<title webc:is="my-custom-title">Default Title</title>
@@ -1094,7 +1117,9 @@ The above example assumes the existence of `_includes/my-layout.webc` (an [Eleve
 
 </details>
 
+{% callout "info", "md" %}
 _Notable note_: front matter (per standard Eleventy conventions) is supported in page-level templates only (`.webc` files in your input directory) and not in components (see below).
+{% endcallout %}
 
 ### Defining Components
 
@@ -1184,7 +1209,7 @@ The following plugins offer official WebC components for use in your projects:
 
 Eleventy WebC will bundle any specific page’s assets (CSS and JS used by components on the page). These are automatically rolled up when a component uses `<script>`, `<script src>`, `<style>`, or `<link rel="stylesheet">`. You can use this to implement component-driven Critical CSS.
 
-{% callout "info", "md" %}Note on **Declarative Shadow DOM**: elements inside of [declarative shadow root](https://web.dev/declarative-shadow-dom/) template (`<template shadowrootmode>` or the deprecated `<template shadowroot>`) are left as is and **not bundled**.{% endcallout %}
+{% callout "info", "md" %}Note on **Declarative Shadow DOM**: elements inside of [declarative shadow root](https://web.dev/declarative-shadow-dom/) template (`<template shadowrootmode>` or the deprecated `<template shadowroot>`) are left as-is, and **not bundled**.{% endcallout %}
 
 {% codetitle "_components/my-webc-component.webc" %}
 
