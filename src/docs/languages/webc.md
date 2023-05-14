@@ -75,7 +75,7 @@ npm install @11ty/eleventy-plugin-webc
 
 To add support for `.webc` files in Eleventy, add the plugin in your Eleventy configuration file:
 
-{% codetitle ".eleventy.js" %}
+{% codetitle "eleventy.config.js" %}
 
 ```js
 const pluginWebc = require("@11ty/eleventy-plugin-webc");
@@ -989,7 +989,7 @@ This includes [`url`, `slugify`, `log` and others](/docs/filters/#eleventy-provi
 
 #### Supply your own Helper
 
-{% codetitle ".eleventy.js" %}
+{% codetitle "eleventy.config.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -1118,7 +1118,7 @@ We accept:
 * Array (of file paths or globs) [{% addedin "@11ty/eleventy-plugin-webc@0.9.2" %}](https://github.com/11ty/eleventy-plugin-webc/releases/tag/v0.9.2)
 * [`npm:` prefix aliases](#webcimport) [{% addedin "@11ty/eleventy-plugin-webc@0.9.2" %}](https://github.com/11ty/eleventy-plugin-webc/releases/tag/v0.9.2)
 
-{% codetitle ".eleventy.js" %}
+{% codetitle "eleventy.config.js" %}
 
 ```js
 const pluginWebc = require("@11ty/eleventy-plugin-webc");
