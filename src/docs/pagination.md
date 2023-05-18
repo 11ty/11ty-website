@@ -564,7 +564,7 @@ By default, if the specified data set is empty, Eleventy will not render any pag
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
-```markdown
+```nunjucks
 ---
 title: Available Products
 pagination:
@@ -572,6 +572,13 @@ pagination:
   size: 6
   generatePageOnEmptyData: true
 ---
+{% if available.length == 0 %}
+  <h1>No posts were found</h1>
+{% else %}
+  {% for post in available %}
+    <!-- Display available post info -->
+  {% endfor %}
+{% endif %}
 ```
 {% endraw %}
 
