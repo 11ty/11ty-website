@@ -68,7 +68,7 @@ function getHighlightedBlogPostContent(collection) {
 	<giant-docs-button></giant-docs-button>
 	<giant-docs-button-subtext></giant-docs-button-subtext>
 
-	<sponsors></sponsors>
+	<sponsors-list></sponsors-list>
 
 	<div class="fullwidth-module">
 		<is-land on:visible on:save-data="false">

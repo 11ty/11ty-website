@@ -1,15 +1,5 @@
 <link rel="stylesheet" href="supporters.css">
 
-<div class="fullwidth-module mt-8">
-	<flex-luthor align="center">
-		<h2 class="subhed">Eleventy is <a href="/docs/supporters/">supported</a> by</h2>
-		<a href="https://www.netlify.com/" class="elv-externalexempt" rel="sponsored">
-			<span class="sr-only">Netlify</span>
-			<logo-netlify></logo-netlify>
-		</a>
-	</flex-luthor>
-</div>
-
 <div class="fullwidth-module supporters-gold">
 	<h3 class="subhed ta-c"><strong>Gold Sponsors</strong></h3>
 	<div class="lo-grid">
