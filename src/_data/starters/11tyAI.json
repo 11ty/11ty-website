@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/dtlevin/11tyAI",
+	"name": "11tyAI",
+	"description": "A simple 11ty starter site. Includes navigation, SASS, Webpack, and more.",
+	"author": "dtlevin",
+	"demo": "https://11tyai.danlevin.xyz/"
+}
