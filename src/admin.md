@@ -23,7 +23,7 @@ layout: layouts/main.njk
 _Monthly donations:_
 
 {%- for donation,count in opencollectiveMonthly.buckets %}
-* `{{ donation | displayPrice }}` ×{{ count }}
+* `{{ donation | displayPrice }}` _(×{{ count }}) {{ opencollectiveMonthly.names[donation] | join(", ") }}_
 {%- endfor %}
 
 _Median monthly donation:_ `{{ opencollectiveMonthly.stats.median | displayPrice }}`
