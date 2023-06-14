@@ -17,7 +17,7 @@ module.exports = async function() {
 	feed.addSource("atom", "Blog", "https://www.11ty.dev/blog/feed.xml");
 	feed.addSource("atom", "Quick Tips", "https://www.11ty.dev/docs/quicktips/feed.xml");
 	feed.addSource("rss", "Mastodon", "https://fosstodon.org/users/eleventy.rss");
-	feed.addSource("twitterUser", "Twitter", "eleven_ty", "949639269433380864");
+	// feed.addSource("twitterUser", "Twitter", "eleven_ty", "949639269433380864");
 
 	if(process.env.NODE_ENV === "production") {
 		// Warning: at time of writing Eleventy has 51 repos, beware if this grows beyond the max of 100
