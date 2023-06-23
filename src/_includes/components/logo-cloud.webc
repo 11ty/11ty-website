@@ -1,6 +1,6 @@
 <ul class="logos-list" id="logos">
   <li class="logos-list-hed subhed">Trusted by</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.nasa.gov/">NASA</li>
+  <li><img webc:is="indieweb-avatar" url="https://www.nasa.gov/"><abbr title="National Aeronautics and Space Administration">NASA</abbr></li>
   <li><img webc:is="indieweb-avatar" url="https://home.web.cern.ch/">Cern</li>
   <li><img webc:is="indieweb-avatar" url="https://tc39.es/">TC39</li>
   <li><img webc:is="indieweb-avatar" url="https://www.w3.org/">W3C</li>
@@ -15,6 +15,7 @@
   <li><img webc:is="indieweb-avatar" url="https://css-tricks.com/">CSS Tricks</li>
   <li><img webc:is="indieweb-avatar" url="https://www.webpagetest.org/">WebPageTest</li>
   <li><img webc:is="indieweb-avatar" url="https://www.a11yproject.com/">A11Y Project</li>
+  <li><img webc:is="indieweb-avatar" url="https://www.noaa.gov/"><abbr title="National Oceanic and Atmospheric Administration">NOAA</abbr></li>
   <li><img webc:is="indieweb-avatar" url="https://www.gov.uk/">United Kingdom (gov)</li>
   <li><img webc:is="indieweb-avatar" url="https://www.numerique.gouv.fr/">France (gov)</li>
   <li><img webc:is="indieweb-avatar" url="https://stackoverflow.com/">Stack Overflow</li>
