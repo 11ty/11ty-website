@@ -1212,11 +1212,13 @@ You can opt-out of bundling on a per-element basis [using `webc:keep`](#webckeep
 
 		<!-- inline bundles -->
 		<style @raw="getBundle('css')" webc:keep></style>
-		<script @raw="getBundle('js')" webc:keep></script>
+		<!-- `type="module" is required for Web Components to work -->
+		<script type="module" @raw="getBundle('js')" webc:keep></script>
 
 		<!-- or write your bundle to a file -->
 		<link rel="stylesheet" :href="getBundleFileUrl('css')">
-		<script :src="getBundleFileUrl('js')"></script>
+		<!-- `type="module" is required for Web Components to work -->
+		<script type="module" :src="getBundleFileUrl('js')"></script>
 	</head>
 	<body @raw="content"></body>
 </html>
@@ -1402,4 +1404,3 @@ At the component level, components can declare their own is-land loading conditi
 	</template>
 </is-land>
 ```
-
