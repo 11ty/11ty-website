@@ -1133,7 +1133,7 @@ module.exports = function(eleventyConfig) {
 		// or an Array (Eleventy WebC v0.9.2+)
 		components: [
 			"_components/**/*.webc",
-			"npm:@11ty/is-land/*.webc"
+			"npm:@11ty/is-land/*.webc",
 			"npm:@11ty/eleventy-plugin-syntaxhighlight/*.webc"
 		]
 	});
