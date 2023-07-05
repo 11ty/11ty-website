@@ -7,7 +7,7 @@ let social = {
 	imgalt: "The 11ty logo text with a small floating possum on a balloon"
 };
 
-let domain = process.env.DEPLOY_PRIME_URL || "https://www.11ty.dev";
+let domain = process.env.URL || "https://www.11ty.dev";
 
 // For things that rely on the data cascade
 let eleventyComputed = {
@@ -49,16 +49,6 @@ let eleventyComputed = {
 		<meta property="og:image:width" content="1280">
 		<meta property="og:image:height" content="640">
 		<meta property="og:image:alt" content="{{ social.imgalt }}">
-
-		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image">
-		<meta property="twitter:site" content="@eleven_ty">
-		<meta property="twitter:creator" content="@zachleat">
-		<meta property="twitter:url" content="https://www.11ty.dev{{ page.url }}">
-		<meta property="twitter:title" content="{{ subtitle }}">
-		<meta property="twitter:description" content="{{ social.description }}">
-		<meta property="twitter:image" content="{{ social.imgsrc }}">
-		<meta property="twitter:image:alt" content="{{ social.imgalt }}">
 
 		<!-- Feeds -->
 {%- if not feedExclusive %}
