@@ -1,6 +1,5 @@
 ---
 newstitle: "The Stability of Eleventy"
-homePageHighlight: true
 eleventyNavigation:
   parent: Blog
 ---
