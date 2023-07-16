@@ -1,6 +1,5 @@
 ---
 newstitle: "The Eleventy Community Survey (2023)"
-homePageHighlight: true
 eleventyNavigation:
   parent: Blog
 ---

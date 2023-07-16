@@ -360,13 +360,13 @@ ${text.trim()}
 	eleventyConfig.addPassthroughCopy({
 		"node_modules/@11ty/logo/assets/logo-bg.svg": "img/logo-github.svg",
 		"node_modules/@11ty/logo/assets/open-graph.jpg": "img/open-graph.jpg",
-		// "node_modules/@11ty/logo/img/logo.svg": "img/logo.svg",
 		"node_modules/@11ty/logo/img/logo-784x1093.png": "img/logo.png",
 		"node_modules/@11ty/logo/img/logo-200x200.png": "img/logo-github.png",
 		"node_modules/@11ty/logo/img/logo-96x96.png": "img/favicon.png",
 		"node_modules/speedlify-score/speedlify-score.js": "js/speedlify-score.js",
 		"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js": "js/seven-minute-tabs.js",
 		"node_modules/lite-youtube-embed/src/lite-yt-embed.js": `js/lite-yt-embed.js`,
+		"node_modules/artificial-chart/artificial-chart.{css,js}": `static/`,
 	});
 
 	eleventyConfig.addPassthroughCopy("netlify-email");
