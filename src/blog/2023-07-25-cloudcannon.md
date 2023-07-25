@@ -9,7 +9,8 @@ And now a special message via [YouTube](https://www.youtube.com/watch?v=nypsmn70
 {% youtubeEmbed "nypsmn70ipI" %}
 
 * [Read more on the CloudCannon Blog: _CloudCannon, the Official CMS Partner of Eleventy_](https://cloudcannon.com/blog/cloudcannon-the-official-cms-partner-of-eleventy/)
-* Let’s talk about it on Mastodon: [`@eleventy@fosstodon.org`](https://fosstodon.org/@eleventy) or [`@cloudcannon@techhub.social`](https://techhub.social/@cloudcannon).
+* See the [post on Mastodon](https://fosstodon.org/@eleventy/110775434718494755)
+* Follow along on Mastodon: [`@eleventy@fosstodon.org`](https://fosstodon.org/@eleventy) and/or [`@cloudcannon@techhub.social`](https://techhub.social/@cloudcannon).
 
 ## Transcript:
 
