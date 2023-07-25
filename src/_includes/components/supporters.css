@@ -65,6 +65,8 @@
 }
 .supporters-gold-cloudcannon {
 	flex-grow: 1.7;
+	margin: 0 auto;
+	max-width: 28em;
 }
 .supporters-gold-cloudcannon svg {
 	color: #034AD8;
@@ -95,6 +97,8 @@
 	--lo-c-minwidth: 8em;
 	--fl-gap-v: 2em;
 	--fl-gap-h: 3em;
+	max-width: 40em;
+	margin: 0 auto;
 }
 .supporters-gold .logo,
 .supporters-gold svg {
@@ -109,14 +113,6 @@
 	text-align: center;
 	margin-top: 2em;
 	margin-bottom: 1em;
-}
-.supporters-gold .subhed strong {
-	color: hsl(51, 97%, 27%);
-}
-@media (prefers-color-scheme: dark) {
-	.supporters-gold .subhed strong {
-		color: hsl(51, 97%, 54%);
-	}
 }
 .supporters-gold + .facepile-supporters {
 	margin-top: 0;
