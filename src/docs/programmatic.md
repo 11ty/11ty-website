@@ -6,11 +6,9 @@ eleventyNavigation:
 ---
 # Programmatic API {% addedin "1.0.0" %}<!-- Beta 10 or Canary 50 -->
 
+{% tableofcontents %}
+
 Starting in Eleventy 1.0, you can run Eleventy in your own Node script. _(This is how the [Eleventy Serverless](/docs/plugins/serverless/) plugin works, behind the scenes)_
-
-## Contents
-
-[[toc]]
 
 ## Examples
 
@@ -18,7 +16,7 @@ Starting in Eleventy 1.0, you can run Eleventy in your own Node script. _(This i
 
 Don’t forget to [install Eleventy into your local project first](/docs/getting-started/#step-2-install-eleventy)!
 
-Next create a file called `my-node-script.js` with the following contents:
+Now create a file called `my-node-script.js` with the following contents:
 
 {% codetitle "my-node-script.js" %}
 
@@ -33,7 +31,7 @@ const Eleventy = require("@11ty/eleventy");
 
 Then run your new script from the command line. _Don’t include `~ $` when you run this command._
 
-{% codewithprompt "cmdhomedir", "all" %}
+{% codewithprompt "cmdhomedir" %}
 node my-node-script.js
 {% endcodewithprompt %}
 

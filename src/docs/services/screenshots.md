@@ -5,16 +5,21 @@ eleventyNavigation:
   excerpt: Returns a screenshot image from a URL.
 communityLinksKey: api-services-screenshot
 ---
+{% tableofcontents %}
 
-Feed this runtime service a URL and it return a fully rendered screenshot image from that page (using Puppeteer)
+Feed this runtime service a URL and it returns a fully rendered screenshot image from that page (using Puppeteer)
 
-[[toc]]
+<div class="youtube-related">
+  {% youtubeEmbed "BcZUSZcE8uQ" %}
+</div>
 
-## Open Source
+## Source Code
 
 * [`11ty/api-screenshot` on GitHub](https://github.com/11ty/api-screenshot)
 
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/11ty/api-screenshot" class="elv-externalexempt"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
+
+* You will _need_ to set an environment variable in the Netlify App UI `AWS_LAMBDA_JS_RUNTIME` with the value `nodejs12.x`. Read more at [Issue #17](https://github.com/11ty/api-screenshot/issues/17).
 
 ## Usage
 
@@ -46,7 +51,11 @@ https://v1.screenshot.11ty.dev/:url/:size/:aspectratio/:zoom/
 
 Try it out on the [Eleventy API Explorer](https://api-explorer.11ty.dev/).
 
+{% callout "demo" %}
+
 <img src="https://v1.screenshot.11ty.dev/https%3A%2F%2Fwww.11ty.dev%2Fdocs%2F/small/9:16/bigger/" class="screenshot screenshot-first-example" width="375" height="667" loading="lazy" decoding="async" alt="Screenshot of 11ty.dev">
+
+{% endcallout %}
 
 ```html
 <img src="https://v1.screenshot.11ty.dev/https%3A%2F%2Fwww.11ty.dev%2Fdocs%2F/small/9:16/bigger/" class="screenshot screenshot-first-example" width="375" height="667" loading="lazy" decoding="async" alt="Screenshot of 11ty.dev">

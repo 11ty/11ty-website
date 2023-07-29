@@ -3,25 +3,25 @@ require("dotenv").config();
 const { DateTime } = require("luxon");
 const HumanReadable = require("human-readable-numbers");
 const commaNumber = require("comma-number");
-const markdownIt = require("markdown-it");
 const slugify = require("slugify");
-const fs = require("fs-extra");
 const lodashGet = require("lodash/get");
 const shortHash = require("short-hash");
-const markdownItAnchor = require("markdown-it-anchor");
-const markdownItToc = require("markdown-it-table-of-contents");
 
-const { EleventyServerlessBundlerPlugin } = require("@11ty/eleventy");
+const { EleventyServerlessBundlerPlugin, EleventyEdgePlugin, EleventyRenderPlugin } = require("@11ty/eleventy");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const eleventyImage = require("@11ty/eleventy-img");
+const { eleventyImagePlugin } = eleventyImage;
+const eleventyWebcPlugin = require("@11ty/eleventy-plugin-webc");
 
+const { addedIn, coerceVersion } = require("./config/addedin");
 const monthDiffPlugin = require("./config/monthDiff");
-const addedInLocalPlugin = require("./config/addedin");
 const minificationLocalPlugin = require("./config/minification");
 const cleanName = require("./config/cleanAuthorName");
 const objectHas = require("./config/object-has");
+const markdownPlugin = require("./config/markdownPlugin.js");
+const javascriptFrontMatter = require("./config/javascript-front-matter.js");
 
 let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" decoding="async" class="avatar" width="200" height="200">`;
 const shortcodes = {
@@ -36,7 +36,7 @@ const shortcodes = {
 	},
 	avatar(datasource, slug, alt = "") {
 		if(!slug) {
-			return defaultAvatarHtml;
+			return "";
 		}
 
 		slug = cleanName(slug).toLowerCase();
@@ -98,9 +98,8 @@ const shortcodes = {
 
 		let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(siteUrl)}/${preset}/1:1/${zoom ? `${zoom}/` : ""}`;
 
-		// 11ty.dev or foursquare.com
+		// 11ty.dev
 		let overrides = {
-			"7KrgLExJd-": "foursquare",
 			"dLN_2kDPpB": "11ty",
 		}
 		if(overrides[siteSlug]) {
@@ -127,10 +126,22 @@ const shortcodes = {
 			// onerror: "let p=this.closest('picture');if(p){p.remove();}this.remove();"
 		});
 	},
-	getIndieAvatarHtml(iconUrl) {
+	getGeneratorImageHtml(url) {
+		let d = new Date();
+		// Daily
+		let cacheBuster = `_${d.getFullYear()}_${d.getMonth()}_${d.getDate()}`;
+		return `<img src="https://v1.generator.11ty.dev/image/${encodeURIComponent(url)}/${cacheBuster}/" width="66" height="66" alt="Meta Generator tag icon for ${url}" class="avatar avatar-large" loading="lazy" decoding="async">`;
+	},
+	// WebC migration: indieweb-avatar.webc
+	// size = "large"
+	getIndieAvatarHtml(iconUrl, cls = "") {
 		let imgHtml = "";
+		let dims = [150, 150];
+		if(cls === "avatar-tall") {
+			dims = [120, 150];
+		}
 		if(!iconUrl.startsWith("/")) {
-			imgHtml = `<img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(iconUrl)}/" width="150" height="150" alt="IndieWeb Avatar for ${iconUrl}" class="avatar avatar-large avatar-indieweb" loading="lazy" decoding="async">`;
+			imgHtml = `<img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(iconUrl)}/" width="${dims[0]}" height="${dims[1]}" alt="IndieWeb Avatar for ${iconUrl}" class="avatar avatar-indieweb${cls ? ` ${cls}` : ""}" loading="lazy" decoding="async">`;
 		}
 		return imgHtml;
 	},
@@ -142,10 +153,8 @@ const shortcodes = {
 		let url = `https://avatars.githubusercontent.com/${username}?s=66`;
 		return `<img src="https://v1.image.11ty.dev/${encodeURIComponent(url)}/jpeg/66/" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
 	},
-	getOpenCollectiveAvatarHtml(url, alt = "") {
-		if(!alt) {
-			alt = `Open Collective Avatar for ${slug}`;
-		}
+	getOpenCollectiveAvatarHtml(url, username = "") {
+		let alt = `Open Collective Avatar for ${username}`;
 
 		return `<img src="https://v1.image.11ty.dev/${encodeURIComponent(url)}/jpeg/66/" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
 	},
@@ -176,18 +185,33 @@ function findBy(data, path, value) {
 }
 
 module.exports = function(eleventyConfig) {
-	eleventyConfig.setDataDeepMerge(true);
-	if(process.env.NODE_ENV !== "production") {
-		eleventyConfig.setQuietMode(true);
+	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+
+	if(process.env.NODE_ENV === "production" || process.env.ELEVENTY_SERVERLESS) {
+		eleventyConfig.ignores.add("src/admin.md");
+	}
+
+	// Skip these on local dev
+	if(process.env.NODE_ENV !== "production" || process.env.ELEVENTY_SERVERLESS) {
+		eleventyConfig.ignores.add("src/api/*");
+		eleventyConfig.ignores.add("src/docs/feed.njk");
+		eleventyConfig.ignores.add("src/docs/quicktipsfeed.njk");
+		eleventyConfig.ignores.add("src/blog/blog-feed.njk");
+	}
+
+	// Skip these without a token (esp. deploy previews)
+	if(process.env.NODE_ENV !== "production" || !process.env.TWITTER_BEARER_TOKEN || process.env.ELEVENTY_SERVERLESS) {
+		eleventyConfig.ignores.add("src/firehose.11ty.js");
+		eleventyConfig.ignores.add("src/firehose-feed.11ty.js");
 	}
 
 	eleventyConfig.setServerOptions({
-		showVersion: true,
-		domdiff: false,
+		showVersion: false,
+		domDiff: false,
 	});
 
 	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
-		templateFormats: ["md", "njk"],
+		lineSeparator: "<br>",
 		init: function({ Prism }) {
 			Prism.languages.markdown = Prism.languages.extend('markup', {
 				'frontmatter': {
@@ -199,52 +223,75 @@ module.exports = function(eleventyConfig) {
 		}
 	});
 
-	eleventyConfig.addPlugin(rssPlugin);
+	eleventyConfig.addPlugin(eleventyImagePlugin, {
+		// options via https://www.11ty.dev/docs/plugins/image/#usage
+		formats: ["avif", "webp", "jpeg"],
+
+		urlPath: "/img/built/",
+
+		defaultAttributes: {
+			loading: "lazy",
+			decoding: "async"
+		}
+	});
+
+	eleventyConfig.addPlugin(markdownPlugin);
+	eleventyConfig.addPlugin(rssPlugin, {
+		posthtmlRenderOptions: {
+			closingSingleTag: "default"
+		}
+	});
 	eleventyConfig.addPlugin(navigationPlugin);
-	eleventyConfig.addPlugin(addedInLocalPlugin);
 	eleventyConfig.addPlugin(monthDiffPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
-
-	eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
-		name: "serverless",
-		inputDir: "src",
-		functionsDir: "./netlify/functions/",
-		redirects: "netlify-toml-builders",
-		// copyEnabled: process.env.NODE_ENV === "production",
-		copy: [
-			"config/",
-			"avatars/",
-			"src/img/logo.svg",
-			"src/img/gift.svg",
-			"src/img/possum-geri.png",
-			"_generated-serverless-collections.json",
-			{ from: ".cache/eleventy-fetch/", to: "cache" },
-		]
+	eleventyConfig.addPlugin(EleventyRenderPlugin);
+	eleventyConfig.addPlugin(EleventyEdgePlugin);
+	eleventyConfig.addPlugin(javascriptFrontMatter);
+	eleventyConfig.addPlugin(eleventyWebcPlugin, {
+		components: [
+			"./src/_includes/components/*.webc",
+			"npm:@11ty/is-land/*.webc",
+			"npm:@11ty/eleventy-img/*.webc",
+		],
+		bundlePluginOptions: {
+			transforms: [
+	// 			function(bundleContent) {
+	// 				// careful with HTML bundles here in the future
+	// 				return `
+	// /* @11ty/eleventy-plugin-bundle: ${bundleContent.length/1000} kB */
+	// ${bundleContent}`;
+	// 			}
+			]
+		}
 	});
 
-	eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
-		name: "dynamic",
-		inputDir: "src",
-		functionsDir: "./netlify/functions/",
-		redirects: "netlify-toml-functions",
-		// copyEnabled: process.env.NODE_ENV === "production",
-		copy: [
-			"config/",
-			"avatars/",
-			"src/img/logo.svg",
-			"src/img/gift.svg",
-			"src/img/possum-geri.png",
-			"_generated-serverless-collections.json",
-			{ from: ".cache/eleventy-fetch/", to: "cache" },
-		]
-	});
+	if(process.env.NODE_ENV === "production") {
+		eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
+			name: "serverless",
+			functionsDir: "./netlify/functions/",
+			redirects: "netlify-toml-builders",
+			copy: [
+				"config/",
+				"avatars/",
+				"src/img/logo.svg",
+				"src/img/possum-geri.png",
+				".cache/eleventy-fetch/",
+			]
+		});
+	}
 
 	eleventyConfig.addCollection("sidebarNav", function(collection) {
 		// filter out excludeFromSidebar options
 		return collection.getAll()
-			.filter(item => (item.data || {}).excludeFromSidebar !== true);
+			.filter(item => {
+				return item.data?.eleventyNavigation && item.data?.excludeFromSidebar !== true;
+			});
 	});
 
+	eleventyConfig.addFilter("coerceVersion", coerceVersion);
+	eleventyConfig.addShortcode("addedin", addedIn);
+
+	eleventyConfig.addShortcode("generatoravatar", shortcodes.getGeneratorImageHtml);
 	eleventyConfig.addShortcode("indieavatar", shortcodes.getIndieAvatarHtml);
 
 	eleventyConfig.addShortcode("indieweblink", function(content, url, iconUrl) {
@@ -261,7 +308,17 @@ module.exports = function(eleventyConfig) {
 			(alt ? `<span class="sr-only">${alt}</span>` : "");
 	});
 
-	eleventyConfig.addNunjucksAsyncShortcode("image", shortcodes.image);
+	eleventyConfig.addAsyncFilter("canonicalTwitterUrl", async url => {
+		// no-op in serverless mode
+		try {
+			const {transform} = await import("@tweetback/canonical");
+			return transform(url);
+		} catch(e) {
+			return url;
+		}
+	});
+
+	eleventyConfig.addShortcode("image", shortcodes.image);
 	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatar);
 	eleventyConfig.addShortcode("communityavatar", shortcodes.communityAvatar);
 	eleventyConfig.addShortcode("opencollectiveavatar", shortcodes.getOpenCollectiveAvatarHtml);
@@ -275,10 +332,10 @@ module.exports = function(eleventyConfig) {
 		return `<a href="${href}" class="minilink minilink-lower">${text}</a>`;
 	});
 
-	eleventyConfig.addPairedShortcode("codewithprompt", function(text, prePrefixCode, when) {
+	eleventyConfig.addPairedShortcode("codewithprompt", function(text, prePrefixCode, id) {
 		let ret = [];
-		if(prePrefixCode && when) {
-			ret.push(`<div data-preprefix-${prePrefixCode}="${when}">
+		if(prePrefixCode) {
+			ret.push(`<div data-preprefix-${prePrefixCode}${id ? ` id="${id}"` : ""}>
 `);
 		}
 
@@ -286,7 +343,7 @@ module.exports = function(eleventyConfig) {
 ${text.trim()}
 \`\`\``);
 
-		if(prePrefixCode && when) {
+		if(prePrefixCode) {
 			ret.push(`
 </div>`);
 		}
@@ -294,19 +351,28 @@ ${text.trim()}
 		return ret.join("\n");
 	});
 
+	// WebC migration: TODO remove this after full conversion
+	eleventyConfig.addPassthroughCopy({
+		"src/_includes/components/throbber.js": "js/throbber.js",
+		"src/_includes/components/throbber.css": "css/throbber.css"
+	});
+
 	eleventyConfig.addPassthroughCopy({
 		"node_modules/@11ty/logo/assets/logo-bg.svg": "img/logo-github.svg",
 		"node_modules/@11ty/logo/assets/open-graph.jpg": "img/open-graph.jpg",
-		// "node_modules/@11ty/logo/img/logo.svg": "img/logo.svg",
 		"node_modules/@11ty/logo/img/logo-784x1093.png": "img/logo.png",
 		"node_modules/@11ty/logo/img/logo-200x200.png": "img/logo-github.png",
-		"node_modules/@11ty/logo/img/logo-96x96.png": "img/favicon.png"
+		"node_modules/@11ty/logo/img/logo-96x96.png": "img/favicon.png",
+		"node_modules/speedlify-score/speedlify-score.js": "js/speedlify-score.js",
+		"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js": "js/seven-minute-tabs.js",
+		"node_modules/lite-youtube-embed/src/lite-yt-embed.js": `js/lite-yt-embed.js`,
+		"node_modules/artificial-chart/artificial-chart.{css,js}": `static/`,
 	});
 
 	eleventyConfig.addPassthroughCopy("netlify-email");
-	// eleventyConfig.addPassthroughCopy("css/fonts"); // these are inline now
 	eleventyConfig.addPassthroughCopy("src/img");
 	eleventyConfig.addPassthroughCopy("src/blog/*.png");
+	eleventyConfig.addPassthroughCopy("src/blog/pretty-atom-feed-v3.xsl");
 	eleventyConfig.addPassthroughCopy("src/favicon.ico");
 
 	eleventyConfig.addFilter("lighthouseGoodDataCheck", function(data) {
@@ -326,10 +392,6 @@ ${text.trim()}
 		return shortHash(site.url);
 	});
 
-	eleventyConfig.addFilter("fileExists", function(url) {
-		return fs.pathExistsSync(`.${url}`);
-	});
-
 	eleventyConfig.addFilter("toJSON", function(obj) {
 		return JSON.stringify(obj);
 	});
@@ -341,7 +403,10 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addFilter("humanReadableNum", function(num) {
-		return HumanReadable.toHumanString(num);
+		if(num || num === 0) {
+			return HumanReadable.toHumanString(num);
+		}
+		return "";
 	});
 
 	eleventyConfig.addFilter("commaNumber", function(num) {
@@ -382,9 +447,13 @@ ${text.trim()}
 		return `<${parentTag} class="inlinelist">${languages.filter(lang => !whitelist ? true : whitelist.indexOf(lang.ext) > -1).map(lang => `<${childTag} class="inlinelist-item${page.url == lang.url ? ' active' : ''}"><a href="${lang.url}${anchor || ''}">${lang.name}${lang.ext ? ` <code>*.${lang.ext}</code>` : ""}</a></${childTag}>`).join(" ")}</${parentTag}>`;
 	});
 
+	// WebC migration: eleventy-version.webc
 	eleventyConfig.addShortcode("latestVersion", function(versions, config, prefix = "v") {
 		for( let version of versions ) {
 			if( version.tag === "LATEST" ) {
+				continue;
+			}
+			if( version.channel && version.channel !== "latest" ) {
 				continue;
 			}
 			if( !config.prerelease && version.prerelease ) {
@@ -421,12 +490,19 @@ ${text.trim()}
 	}
 
 	// Thanks to https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
-	eleventyConfig.addFilter("shuffle", arr => {
+	eleventyConfig.addFilter("shuffle", (arr, sliceNum) => {
 		if( Array.isArray(arr) ) {
-			return randomizeArray(arr);
+			if(!sliceNum) {
+				return randomizeArray(arr);;
+			}
+			return randomizeArray(arr).slice(0, sliceNum);
 		}
 
 		let keys = randomizeArray(Object.keys(arr));
+		if(sliceNum) {
+			keys = keys.slice(0, sliceNum);
+		}
+
 		let a = {};
 		for(let key of keys) {
 			a[key] = arr[key];
@@ -456,6 +532,12 @@ ${text.trim()}
 		return `<a href="https://github.com/11ty/11ty-website/issues/new/choose"><strong>Want to add your site to this list?</strong></a>`;
 	});
 
+	eleventyConfig.addFilter("sortByQuickTipsIndex", function(collection) {
+		return collection.sort(function(a, b) {
+			return parseInt(a.data.tipindex, 10) - parseInt(b.data.tipindex, 10);
+		});
+	});
+
 	eleventyConfig.addCollection("quicktipssorted", function(collection) {
 		return collection.getFilteredByTag("quicktips").sort(function(a, b) {
 			return parseInt(a.data.tipindex, 10) - parseInt(b.data.tipindex, 10);
@@ -468,8 +550,21 @@ ${text.trim()}
 		});
 	});
 
+	function testimonialNameHtml(testimonial) {
+		let avatarHtml = "";
+		if(testimonial.twitter) {
+			avatarHtml = shortcodes.avatar("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`);
+		} else if(testimonial.avatarUrl) {
+			avatarHtml = shortcodes.getIndieAvatarHtml(testimonial.avatarUrl);
+		}
+		return avatarHtml + testimonial.name;
+	}
+
+	eleventyConfig.addShortcode("testimonialNameHtml", testimonialNameHtml);
+
 	eleventyConfig.addShortcode("testimonial", function(testimonial) {
-		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, shortcodes.avatar("twitter", testimonial.twitter, `${testimonial.name}’s Twitter Photo`) + testimonial.name)}</span>` : ``}</p></blockquote>`;
+		let nameHtml = testimonialNameHtml(testimonial);
+		return `<blockquote><p>${!testimonial.indirect ? `“` : ``}${testimonial.text}${!testimonial.indirect ? `” <span class="bio-source">—${shortcodes.link(testimonial.source, nameHtml)}</span>` : ``}</p></blockquote>`;
 	});
 
 	eleventyConfig.addFilter("filterBusinessPeople", function(authors) {
@@ -525,60 +620,6 @@ ${text.trim()}
 			incrementCounter++;
 		}
 		return `${fullHearts.join("")}<span class="supporters-hearts-empty">${emptyHearts.join("")}</span>`;
-	});
-
-	function removeExtraText(s) {
-		let newStr = String(s).replace(/New\ in\ v\d+\.\d+\.\d+/, "");
-		newStr = newStr.replace(/Coming\ soon\ in\ v\d+\.\d+\.\d+/, "");
-		newStr = newStr.replace(/⚠️/g, "");
-		newStr = newStr.replace(/[?!]/g, "");
-		newStr = newStr.replace(/<[^>]*>/g, "");
-		return newStr;
-	}
-
-	function markdownItSlugify(s) {
-		return slugify(removeExtraText(s), { lower: true, remove: /[:’'`,]/g });
-	}
-
-	let mdIt = markdownIt({
-		html: true,
-		breaks: true,
-		linkify: true
-	})
-	.disable('code') // disable indent -> code block
-	.use(markdownItAnchor, {
-		permalink: true,
-		slugify: markdownItSlugify,
-		permalinkBefore: false,
-		permalinkClass: "direct-link",
-		permalinkSymbol: "#",
-		level: [1,2,3,4]
-	})
-	.use(markdownItToc, {
-		includeLevel: [2, 3],
-		slugify: markdownItSlugify,
-		format: function(heading) {
-			return removeExtraText(heading);
-		},
-		transformLink: function(link) {
-			// remove backticks from markdown code
-			return link.replace(/\%60/g, "");
-		}
-	});
-
-	mdIt.linkify.tlds('.io', false);
-	eleventyConfig.setLibrary("md", mdIt);
-
-	eleventyConfig.addPairedShortcode("markdown", function(content) {
-		return mdIt.renderInline(content);
-	});
-	eleventyConfig.addPairedShortcode("callout", function(content, level = "", format = "html", cls = "") {
-		if( format === "md" ) {
-			content = mdIt.renderInline(content);
-		} else if( format === "md-block" ) {
-			content = mdIt.render(content);
-		}
-		return `<div class="elv-callout${level ? ` elv-callout-${level}` : ""}${cls ? ` ${cls}`: ""}">${content}</div>`;
 	});
 
 	eleventyConfig.addFilter("toISO", (dateObj) => {
@@ -681,6 +722,10 @@ ${text.trim()}
 		return "";
 	});
 
+	eleventyConfig.addFilter("values", obj => {
+		return Object.values(obj);
+	});
+
 	eleventyConfig.addFilter("sortAuthors", authors => {
 		return Object.values(authors).sort((a, b) => {
 			return b.sites.length - a.sites.length;
@@ -743,7 +788,7 @@ communityLinks:
 
 to:
 
-<div class="lo-c sites-site-vert">
+<div class="sites-site-vert">
   <a href="{{ site.url }}" class="elv-externalexempt">
     {% avatarlocalcache "twitter", site.twitter %}{{ site.name }}
     <div class="sites-screenshot-container">
@@ -767,8 +812,34 @@ to:
 		}
 	})
 
-	eleventyConfig.addShortcode("youtubeEmbed", function(slug, startTime) {
-		return `<div class="fluid-width-video-wrapper"><iframe class="youtube-player" src="https://www.youtube.com/embed/${slug}${startTime ? `?start=${startTime}` : ''}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+	eleventyConfig.addShortcode("youtubeEmbed", function(slug, label, startTime) {
+		if(label) {
+			label = label.replace(/"/g, "");
+		}
+
+		let readableStartTime = "";
+		if(startTime) {
+			let t = parseInt(startTime, 10);
+			let minutes = Math.floor(t / 60);
+			let seconds = t % 60;
+			readableStartTime = `${minutes}m${seconds}s`;
+		}
+		let fallback = `https://i.ytimg.com/vi/${slug}/maxresdefault.jpg`;
+
+		// hard-coded fallback
+		if(slug === "pPkWxn0TF9w") {
+			fallback = `https://img.youtube.com/vi/${slug}/hqdefault.jpg`;
+		}
+
+		return `<div><is-land on:visible import="/js/lite-yt-embed.js" class="fluid"><lite-youtube videoid="${slug}"${startTime ? ` params="start=${startTime}"` : ""} playlabel="Play${label ? `: ${label}` : ""}" style="background-image:url('${fallback}')">
+	<a href="https://youtube.com/watch?v=${slug}" class="elv-externalexempt lty-playbtn" title="Play Video"><span class="lyt-visually-hidden">Play Video${label ? `: ${label}` : ""}</span></a>
+</lite-youtube><a href="https://youtube.com/watch?v=${slug}${startTime ? `&t=${startTime}` : ""}">${label || "Watch on YouTube"}${readableStartTime ? ` <code>▶${readableStartTime}</code>` : ""}</a></is-land></div>`;
+	});
+
+	eleventyConfig.addFilter("injectAvatars", function(content) {
+		return content
+			.split("Eleventy")
+			.join(shortcodes.getIndieAvatarHtml("https://www.11ty.dev/") + "Eleventy")
 	});
 
 	return {
@@ -779,7 +850,6 @@ to:
 		},
 		templateFormats: ["html", "njk", "md", "11ty.js"],
 		markdownTemplateEngine: "njk",
-		htmlTemplateEngine: "njk",
-		dataTemplateEngine: false
+		htmlTemplateEngine: "njk"
 	};
 };

@@ -1,7 +1,7 @@
-<div class="lo-c site-top">
+<div class="site-top">
 	<div class="sites-data-container">
 		<a href="{{ site.url }}">
-			{%- indieavatar site.url %}
+			{%- indieavatar site.url, "avatar-large" %}
 			{%- if site.name -%}
 				{{ site.name }}
 			{%- else -%}
@@ -11,16 +11,18 @@
 		{%- if site.description %}<em class="list-bare-desc list-bare-desc-avatar">{{ site.description }}</em>{% endif -%}
 		{%- if showMetadata %}
 		<em class="list-bare-desc list-bare-desc-avatar">
-			<div class="lo lo-inline lo-nocontentwrap lo-separator-h" style="--lo-margin-h: 1.5rem; --lo-margin-v: 2px">
-				{%- if site.twitter or site.authoredBy %}<div class="lo-c"><a href="/authors/{{ site.twitter | cleanAuthorName }}/" class="elv-externalexempt">{{ site.twitter | cleanAuthorName }}</a>{% if site.authoredBy %} by {% endif %}{% for author in site.authoredBy %} <a href="/authors/{{ author | cleanAuthorName }}/" class="elv-externalexempt">{% avatarlocalcache "twitter", author %}{{ author | cleanAuthorName }}</a>{% endfor %}</div>{% endif -%}
-				{%- if site.source_url %}<div class="lo-c"><a href="{{ site.source_url }}" class="elv-externalexempt">Source Code</a></div>{% endif -%}
+			<div class="fl fl-inline fl-nowrap fl-separator-h" style="--fl-gap-h: 1.5rem; --fl-gap-v: 2px">
+				{%- if site.twitter or site.authoredBy %}<div><a href="/authors/{{ site.twitter | cleanAuthorName }}/" class="elv-externalexempt">{{ site.twitter | cleanAuthorName }}</a>{% if site.authoredBy %} by {% endif %}{% for author in site.authoredBy %} <a href="/authors/{{ author | cleanAuthorName }}/" class="elv-externalexempt">{% avatarlocalcache "twitter", author %}{{ author | cleanAuthorName }}</a>{% endfor %}</div>{% endif -%}
+				{%- if site.source_url %}<div><a href="{{ site.source_url }}" class="elv-externalexempt">Source Code</a></div>{% endif -%}
 			</div>
 		</em>
 		<div class="list-bare-desc list-bare-desc-avatar site-score">
 			{%- set hash = site | speedlifyHash %}
 			{%- if hash -%}
 				<a href="https://www.11ty.dev/speedlify/#site-{{ hash }}" class="elv-externalexempt nound">
-					<speedlify-score speedlify-url="https://www.11ty.dev/speedlify/" hash="{{ hash }}" score weight rank rank-change></speedlify-score>
+					<is-land on:visible import="/js/speedlify-score.js">
+						<speedlify-score speedlify-url="https://www.11ty.dev/speedlify/" hash="{{ hash }}" score weight rank rank-change></speedlify-score>
+					</is-land>
 				</a>
 			{%- endif -%}
 		</div>

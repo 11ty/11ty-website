@@ -1,0 +1,89 @@
+---
+eleventyNavigation:
+  parent: Getting Started
+  key: Tutorials
+  order: 1.5
+feedTitle: Quick Tips RSS Feed
+feedUrl: /docs/quicktips/feed.xml
+feedExclusive: true
+---
+<h1>Tutorials</h1>
+
+<p>For folks just starting out, here are some <strong>introductions to Eleventy</strong>:</p>
+
+<sites-list @size="lg">
+	<site-card @url="https://www.youtube.com/watch?v=BKdQEXqfFA0" @name="Build an 11ty Site in 3 Minutes" @date="2021-02-20" @medialength="3m"></site-card>
+	<site-card @url="https://www.learnwithjason.dev/lets-learn-eleventy" @name="Let’s Learn Eleventy! on Learn with Jason" @date="2020-01-08" @medialength="1h32m"></site-card>
+	<site-card @url="https://www.mikeaparicio.com/template-talk/" @name="Templating: Eleventy’s Superpower" @date="2021-07-17" @medialength="15m"></site-card>
+	<site-card @url="https://learneleventyfromscratch.com/" @name="Learn Eleventy from Scratch" @date="2020-05"></site-card>
+	<site-card @url="https://tatianamac.com/posts/beginner-eleventy-tutorial-parti/" @name="Beginner’s Guide to Eleventy" @date="2020-04-02"></site-card>
+	<site-card @url="https://sia.codes/posts/itsiest-bitsiest-eleventy-tutorial/" @name="Itsiest, Bitsiest Eleventy Tutorial" @date="2021-05-24"></site-card>
+	<site-card @url="https://www.zachleat.com/web/eleventy-tutorial-level-1/" @name="Making a simple web site with the simplest static site generator" @date="2018-01-24"></site-card>
+</sites-list>
+
+<p>And for folks wanting to <strong>start building a blog</strong>:</p>
+
+<sites-list @size="lg">
+	<site-card @url="https://github.com/11ty/eleventy-base-blog" @name="Official Starter: eleventy-base-blog"></site-card>
+	<site-card @url="https://www.youtube.com/watch?v=kzf9A9tkkl4" @name="6 Minutes to Build a Blog from Scratch with Eleventy" @date="2023-03-20" @medialength="6m"></site-card>
+	<site-card @url="https://www.filamentgroup.com/lab/build-a-blog/" @name="Build your own Blog from Scratch using Eleventy" @date="2018-12-26"></site-card>
+	<site-card @url="https://www.youtube.com/watch?v=4wD00RT6d-g" @name="Turn static HTML/CSS into a blog with CMS using the JAMStack" @date="2021-06-24" @medialength="1h23m"></site-card>
+</sites-list>
+
+<p>And a few conversion walkthroughs:</p>
+
+<sites-list>
+	<site-card @url="https://24ways.org/2018/turn-jekyll-up-to-eleventy/" @name="Turn Jekyll up to Eleventy" @date="2018-12-11"></site-card>
+	<site-card @url="https://stedman.dev/2020/04/29/make-the-jump-from-jekyll-to-javascript/" @name="Making the Jump from Jekyll to JavaScript" @date="2020-04-29"></site-card>
+</sites-list>
+
+<p>And a grab bag of content:</p>
+
+<sites-list>
+	<site-card @url="https://css-tricks.com/a-site-for-front-end-development-conferences-built-with-11ty-on-netlify/" @name="A Site for Front-End Development Conferences (Built with 11ty on Netlify)" @date="2019-02-13"></site-card>
+	<site-card @url="https://www.sitepoint.com/getting-started-with-eleventy/" @name="Eleventy Guide: A Framework-Agnostic Static Site Generator" @date="2020-09-23"></site-card>
+	<site-card @url="https://www.youtube.com/playlist?list=PLOSLUtJ_J3rrJ1R1qEf8CCEpV3GgbJGNr" @name="Video Series: Create an 11ty Theme from a free set of HTML templates" @date="2019-09-25"></site-card>
+	<site-card @url="https://rphunt.github.io/eleventy-walkthrough/" @name="Eleventy Walk Through" @date="2020-02-01"></site-card>
+	<site-card @url="https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/" @name="Creating a Blog with Eleventy" @date="2019-06-01"></site-card>
+	<site-card @url="https://shivjm.blog/colophon/how-i-create-an-article-series-in-eleventy/" @name="How I Create an Article Series in Eleventy" @date="2021-07-14"></site-card>
+	<site-card @url="https://5balloons.info/guide-tailwindcss-eleventy-static-site/" @name="Detailed Guide to build an 11ty / eleventy & Tailwind CSS static site" @date="2022-08-18"></site-card>
+</sites-list>
+
+<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
+### Put it on the web
+
+* Put your new site on the web! [Read more about Deployment](/docs/deployment/)
+
+### Adding Features
+
+* [**Create Your Own Search** without a Third Party Service](https://www.hawksworx.com/blog/adding-search-to-a-jamstack-site/) by {% communityavatar "philhawksworth" %}Phil Hawksworth
+* [Lightweight lazy loading with Netlify Large Media](https://lazy-load-nlm.netlify.com/) by {% communityavatar "philhawksworth" %}Phil Hawksworth
+* [Multilingual sites with Eleventy](https://www.webstoemp.com/blog/multilingual-sites-eleventy/) (i18n, Internationalization) by {% avatarlocalcache "twitter", "jeromecoupe" %}Jérôme Coupé
+* [Language switcher for multilingual Jamstack sites](https://www.webstoemp.com/blog/language-switcher-multilingual-jamstack-sites/) (i18n, Internationalization) by {% avatarlocalcache "twitter", "jeromecoupe" %}Jérôme Coupé
+* [Adding Algolia Search to Eleventy and Netlify](https://www.raymondcamden.com/2020/06/24/adding-algolia-search-to-eleventy-and-netlify) by {% communityavatar "cfjedimaster" %}Raymond Camden. (Also see [part two](https://www.raymondcamden.com/2020/07/01/adding-algolia-search-to-eleventy-and-netlify-part-two))
+* [Eleventy and Cloudinary images](https://sia.codes/posts/eleventy-and-cloudinary-images/) (Setting up responsive images in Eleventy using Cloudinary) by {% avatarlocalcache "twitter", "TheGreenGreek" %} Sia Karamalegos
+* [Supporting Multiple Authors in an Eleventy Blog](https://www.raymondcamden.com/2020/08/24/supporting-multiple-authors-in-an-eleventy-blog) by  {% communityavatar "cfjedimaster" %}Raymond Camden. (Also see [part two](https://www.raymondcamden.com/2021/09/19/supporting-multiple-authors-in-an-eleventy-blog-follow-up))
+* [Accessing Eleventy Data on the Client Side](https://www.raymondcamden.com/2021/01/18/accessing-eleventy-data-on-the-client-side) by  {% communityavatar "cfjedimaster" %}Raymond Camden
+* [Adding an Email Subscription to Your Jamstack Site](https://www.raymondcamden.com/2021/05/01/adding-an-email-subscription-to-your-jamstack-site) by  {% communityavatar "cfjedimaster" %}Raymond Camden
+* [Dynamic Short URLs with Eleventy](https://www.raymondcamden.com/2021/06/22/dynamic-short-urls-with-eleventy) by  {% communityavatar "cfjedimaster" %}Raymond Camden
+
+### Using Third Party Data
+
+* Sample Project: [Import your **Notist** events to an Eleventy site](https://eleventy-notist-example.netlify.app/) by {% communityavatar "philhawksworth" %}Phil Hawksworth
+* Sample Project: [Import your **Medium** posts to an Eleventy site](https://rss-jamstack.netlify.app/) by {% communityavatar "philhawksworth" %}Phil Hawksworth
+* [Import your **Disqus Comments** into Eleventy](https://github.com/11ty/eleventy-import-disqus/blob/master/README.md) by {% communityavatar "zachleat" %}Zach Leatherman
+* [Static Indieweb pt1: Syndicating Content](https://mxb.dev/blog/syndicating-content-to-twitter-with-netlify-functions/) by {% avatarlocalcache "twitter", "mxbck" %}Max Böck
+* [Static Indieweb pt2: Using Webmentions](https://mxb.dev/blog/using-webmentions-on-static-sites/) by {% avatarlocalcache "twitter", "mxbck" %}Max Böck
+* [An In-Depth Tutorial of Webmentions + Eleventy](https://sia.codes/posts/webmentions-eleventy-in-depth/) by {% avatarlocalcache "twitter", "TheGreenGreek" %} Sia Karamalegos
+* [Using Eleventy to Generate a Ghost Blog](https://david.darn.es/tutorial/2019/06/01/use-eleventy-to-generate-a-ghost-blog/) by {% avatarlocalcache "twitter", "DavidDarnes" %}David Darnes
+* [Consuming a headless CMS GraphQL API with Eleventy](https://www.webstoemp.com/blog/headless-cms-graphql-api-eleventy/) by {% avatarlocalcache "twitter", "jeromecoupe" %}Jérôme Coupé
+* [Import Tweets from Twitter API](https://www.d-hagemeier.com/en/import-tweets-from-twitter-api-in-11ty/) by {% avatarlocalcache "twitter", "DennisView" %}Dennis Hagemeier
+* [Convert a WordPress blog to Eleventy](https://www.joshcanhelp.com/taking-wordpress-to-eleventy/) by {% avatarlocalcache "twitter", "joshcanhelp" %}Josh Cunningham
+* [Integrating Contentful with Eleventy to create static sites](https://www.contentful.com/blog/2020/07/28/integrating-contentful-with-eleventy-create-static-sites/) by {% avatarlocalcache "twitter", "shyruparel" %}Shy Ruparel
+* [Creating an 11ty Photo Gallery with Contentful and GitHub actions](https://github.com/contentful/11ty-contentful-gallery) by {% avatarlocalcache "twitter", "shyruparel" %}Shy Ruparel
+* [Adding Google Calendar to your JAMStack](https://www.raymondcamden.com/2019/11/18/adding-google-calendar-to-your-jamstack) by  {% communityavatar "cfjedimaster" %}Raymond Camden
+* [Integrating Google Analytics with Eleventy](https://www.raymondcamden.com/2020/05/21/integrating-google-analytics-with-eleventy) by  {% communityavatar "cfjedimaster" %}Raymond Camden
+* [Hooking Up FaunaDB to Eleventy](https://www.raymondcamden.com/2020/09/15/hooking-up-faunadb-to-eleventy) by {% communityavatar "cfjedimaster" %}Raymond Camden
+* [Building a Database Driven Eleventy Site](https://www.raymondcamden.com/2021/04/15/building-a-database-driven-eleventy-site) by {% communityavatar "cfjedimaster" %}Raymond Camden
+* [Integrating Eleventy with GitHub Flat Data](https://www.raymondcamden.com/2021/07/14/integrating-eleventy-with-github-flat-data) by {% communityavatar "cfjedimaster" %}Raymond Camden
+</template>

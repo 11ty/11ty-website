@@ -4,20 +4,18 @@ pagination:
   size: 1
   alias: author
   serverless: eleventy.serverless.path.name
-  # addAllPagesToCollections: true
+  generatePageOnEmptyData: true
 permalink:
   serverless: "/authors/:name/"
-
 eleventyNavigation:
   parent: Authors
 excludeFromSearch: true
 excludeFromSidebar: true
 layout: layouts/docs.njk
-css:
-  - components/page-sites.css
 ---
+<style>{% include "components/page-sites.css" %}</style>
 {# @TODO add support for githubTwitterMap.js data #}
-{%- set twitterUrl = "https://twitter.com/" + author.name.substring("twitter:".length) %}
+{%- set twitterUrl = "https://twitter.com/" + author.name.substring("twitter:".length) | canonicalTwitterUrl %}
 {%- set githubUrl = "https://github.com/" + author.name %}
 
 {%- set supporter = opencollective.supporters | isSupporter(author.name, githubTwitterMap[author.name], author.opencollective) -%}
@@ -66,7 +64,25 @@ css:
 
 ### {{ displayName }}’s Sites:
 
-<div class="lo sites-lo" style="--lo-margin-h: 2rem; --lo-margin-v: 1rem; --lo-stackpoint: 31.25em;">
+{% css %}
+.site-score speedlify-score {
+	flex-wrap: nowrap;
+}
+.site-score speedlify-score {
+	margin-top: .5em;
+}
+.site-score .speedlify-rank {
+	font-weight: 700;
+}
+.site-score .speedlify-rank:before {
+	font-weight: 400;
+}
+.site-score .speedlify-rank-change.down {
+	display: none;
+}
+{% endcss %}
+
+<div class="fl sites-lo" style="--fl-gap-h: 2rem; --fl-gap-v: 1rem; --fl-stackpoint: 31.25em;">
 {%- for site in author.sites %}
   {%- set showMetadata = true %}
   {% include "site.njk" %}

@@ -22,7 +22,7 @@ permalink: 404.html
   </head>
   <body>
     <h1>{{ title }}</h1>
-    <p>This is where you should tell the user how to find their content. Maybe on the <a href="{{ "/" | url }}">home page?</a></p>
+    <p>This is where you should tell the user how to find their content. Maybe on the <a href="/">home page?</a></p>
   </body>
 </html>
 ```
@@ -30,7 +30,7 @@ permalink: 404.html
 
 Eleventy will output this template to `404.html`.
 
-If you’re using [GitHub Pages](https://help.github.com/en/github/working-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site) or [Netlify](https://docs.netlify.com/routing/redirects/redirect-options/#custom-404-page-handling), there is no step two! A `404.html` file in your output directory is all you need.
+If you’re using [GitHub Pages](https://help.github.com/en/github/working-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site), [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/introduction.html#custom-error-codes-pages), or [Netlify](https://docs.netlify.com/routing/redirects/redirect-options/#custom-404-page-handling), there is no step two! A `404.html` file in your output directory is all you need.
 
 Netlify even has lovely [multi-language 404 page support too using `Redirects`](https://docs.netlify.com/routing/redirects/redirect-options/#custom-404-page-handling).
 
@@ -47,7 +47,7 @@ ErrorDocument 404 /404.html
 {% callout "info", "md" -%}
 If you’re using the new [Eleventy Dev Server](/docs/watch-serve/#eleventy-dev-server) {% addedin "2.0.0" %}, the `404.html` convention is now provided to you for free! You can skip this section!
 
-If you’d like to backport this functionality to Browsersync, keep reading. (Note also that you can [use Browsersync with Eleventy 2.0!](/docs/watch-serve/#swap-back-to-browsersync))
+If you’d like to backport this functionality to Browsersync, keep reading. (Note also that you can [use Browsersync with Eleventy 2.0!](/docs/dev-server/#swap-back-to-browsersync))
 {% endcallout %}
 
 If you're using Browsersync with Eleventy (with `eleventy --serve`), you can configure it to do the 404 routing by passing a callback in your config. Read more on [the BrowserSyncConfig option](/docs/config/#override-browsersync-server-options), the [Browsersync callbacks option](https://browsersync.io/docs/options#option-callbacks), and [how to provide a 404 using a Browsersync callback](https://github.com/browsersync/browser-sync/issues/1398).

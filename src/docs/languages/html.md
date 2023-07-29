@@ -7,17 +7,17 @@ layout: layouts/langs.njk
 relatedLinks:
   /docs/config/#default-template-engine-for-html-files: Default Template Engine for HTML Files
 ---
-| Eleventy Short Name | File Extension | NPM Package |
+| Eleventy Short Name | File Extension | npm Package |
 | ------------------- | -------------- | ----------- |
 | `html`              | `.html`        | N/A         |
 
-HTML files can be optionally pre-processed with an additional template engine. This can be configured on a per-template basis or globally. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
+HTML files are pre-processed by default as [Liquid templates](/docs/languages/liquid/). This is an optional feature and can be changed to a different template engine of your choice or disabled entirely. Furthermore, it can be configured on a per-template basis or globally. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
 
 <div id="same-input-output"></div>
 
 ## Using the Same Input and Output Directories
 
-<div class="elv-callout elv-callout-warn">This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.</div>
+{% callout "warn" %}This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.{% endcallout %}
 
 Careful with the HTML template type when using the same <code>--input</code> and <code>--output</code> directory (this is not the default).
 

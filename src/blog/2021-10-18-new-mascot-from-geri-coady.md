@@ -12,7 +12,7 @@ The Eleventy Mascot is becoming a series! Our project has continued with its pse
 
 I really like this iteration and the unique style Geri brought to the project—especially the addition of two littles, which to me is a lovely nod to how our community has grown!
 
-* [@hellogeri](https://twitter.com/hellogeri) on Twitter
+* [@hellogeri]({{ "https://twitter.com/hellogeri" | canonicalTwitterUrl }}) on Twitter
 * [Geri Draws Japan](https://www.geridrawsjapan.com/)
 * [@hellogeri](https://dribbble.com/hellogeri) on Dribbble
 * [Color Accessibility Workflows](https://abookapart.com/products/color-accessibility-workflows)

@@ -30,20 +30,30 @@
 .is-eleventy-supporter .facepile-supporters .supporters-active img {
 	filter: grayscale(0);
 }
+/* Supporters Header */
+.supporters-hed {
+	border: none;
+	border-top: 1px solid #ddd;
+	text-align: center;
+	flex-basis: 100%;
+	margin-top: 6.666666666667em; /* 100px /15 */
+	padding-top: 2em;
+	margin-bottom: 1em;
+}
 /* Gold supporters */
 .supporters-gold {
-	--lo-margin-h: 2em;
-	--lo-stackpoint: 34.375em;
+	--fl-gap-h: 2em;
+	--fl-stackpoint: 34.375em;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 }
-.supporters-gold .lo-c {
+.supporters-gold .lo-grid > * {
 	display: flex;
 	align-items: stretch;
 	justify-content: center;
 	flex-direction: column;
 }
-.supporters-gold .lo-c a[href] {
+.supporters-gold a[href] {
 	display: flex;
 	justify-content: center;
 }
@@ -55,12 +65,22 @@
 }
 .supporters-gold-cloudcannon {
 	flex-grow: 1.7;
+	margin: 0 auto;
+	max-width: 28em;
 }
 .supporters-gold-cloudcannon svg {
 	color: #034AD8;
 }
 @media (prefers-color-scheme: dark) {
 	.supporters-gold-cloudcannon svg {
+		color: #fff;
+	}
+}
+.supporters-gold-transloadit svg {
+	color: #0D1419;
+}
+@media (prefers-color-scheme: dark) {
+	.supporters-gold-transloadit svg {
 		color: #fff;
 	}
 }
@@ -73,10 +93,17 @@
 	}
 }
 
+.supporters-gold .lo-grid {
+	--lo-c-minwidth: 8em;
+	--fl-gap-v: 2em;
+	--fl-gap-h: 3em;
+	max-width: 40em;
+	margin: 0 auto;
+}
 .supporters-gold .logo,
 .supporters-gold svg {
 	width: 100%;
-	margin: .5em 1em;
+	margin: 0;
 }
 .supporters-gold .avatar {
 	max-width: 75px;
@@ -84,44 +111,17 @@
 }
 .supporters-gold .subhed {
 	text-align: center;
+	margin-top: 2em;
 	margin-bottom: 1em;
-}
-.supporters-gold .subhed strong {
-	color: hsl(51, 97%, 27%);
-}
-@media (prefers-color-scheme: dark) {
-	.supporters-gold .subhed strong {
-		color: hsl(51, 97%, 54%);
-	}
 }
 .supporters-gold + .facepile-supporters {
 	margin-top: 0;
 }
 
-/* Modify content */
-.investors-auth {
-	display: none;
-}
-.is-eleventy-supporter .investors-noauth {
-	display: none;
-}
-.is-eleventy-supporter .investors-auth {
-	display: initial;
-}
-
-/* Buttons */
-.investors-btn {
-	padding: 0;
-	margin-bottom: 4rem;
-}
-@media (prefers-color-scheme: dark) {
-	.investors-btn {
-		background-color: #222;
-	}
-}
-.investors-btn .netlify-identity-button {
-	padding: .5em 1em .4em;
+.supporters-netlify {
+	min-width: 10em;
+	width: 100%;
+	height: auto;
 	display: block;
-	text-decoration: none;
-	color: inherit;
+	margin: 0 auto;
 }

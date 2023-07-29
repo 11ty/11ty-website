@@ -8,10 +8,13 @@ const FilteredProfiles = [
 	"masonslots", //gambling
 	"trust-my-paper", // selling term papers
 	"kiirlaenud", // some quick loans site
-	"kajino-bitcoin", //bitcoin
+	"kajino-bitcoin", // crypto
 	"seo25-com", // selling website traffic
 	"relief-factor", // profile link was some weird PDF
 	"targetedwebtraffic", // selling website traffic
+	"forexbrokerz", // crypto
+	"viewality-media", // broken site on wix?
+	"aviator-game1", // gambling
 ];
 
 function isMonthlyOrYearlyOrder(order) {
@@ -39,7 +42,8 @@ module.exports = async function() {
 		let json = await EleventyFetch(url, {
 			type: "json",
 			duration: process.env.ELEVENTY_SERVERLESS ? "*" : (process.env.ELEVENTY_AVATARS ? "0s" : "1d"),
-			directory: process.env.ELEVENTY_SERVERLESS ? "cache/" : ".cache/eleventy-fetch/",
+			directory: ".cache/eleventy-fetch/",
+			dryRun: process.env.ELEVENTY_SERVERLESS ? true : false,
 		});
 
 		let orders = json.nodes.map(order => {

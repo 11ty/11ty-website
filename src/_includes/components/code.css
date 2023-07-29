@@ -6,7 +6,6 @@ pre {
 	line-height: 1.5;
 
 	overflow-x: auto;
-	background-color: #eee;
 	font-size: 0.875em; /* 14px /16 */
 	-moz-tab-size: 2;
 	-o-tab-size: 2;
@@ -25,37 +24,19 @@ details[open] pre {
 	margin-left: 0;
 	margin-right: 0;
 }
-pre,
-code {
+pre {
 	font-family: Roboto Mono, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
 }
-code {
-	-ms-word-break: break-all;
-	word-break: break-word;
-	-webkit-hyphens: manual;
-	-moz-hyphens: manual;
-	hyphens: manual;
-	background-color: #efefef;
-	padding-left: 4px;
-	padding-right: 4px;
-	border-radius: .15em;
-}
-table code {
-	-ms-word-break: normal;
-	word-break: normal;
-}
-.lo-c > pre {
+.fl > * > pre {
 	margin-top: 0;
-}
-em code {
-	font-style: normal;
 }
 pre code {
 	border-radius: 0;
 }
 pre > code {
-	background-color: transparent;
+	background-color: inherit;
 	padding: 0;
+	font-family: inherit;
 }
 pre + pre[class*="language-"] {
 	margin-top: 1em;
@@ -67,8 +48,7 @@ pre + .note {
 	text-align: right;
 }
 @media (prefers-color-scheme: dark) {
-	pre,
-	code {
+	pre {
 		background-color: #000;
 		color: #fff;
 	}
@@ -124,26 +104,14 @@ pre + .note {
 }
 
 
-[data-preprefix-cmdhomedir="all"] .highlight-line:before,
-[data-preprefix-cmdhomedir="last"] .highlight-line:last-child:before,
-[data-preprefix-cmdhomedir="first"] .highlight-line:first-child:before,
-[data-preprefix-cmdhomedir="odd"] .highlight-line:nth-child(4n+3):before {
+[data-preprefix-cmdhomedir] .highlight-line:first-child:before {
 	color: #aaa;
 	content: "~ $ ";
 }
-[data-preprefix-eleventysample="all"] .highlight-line:before,
-[data-preprefix-eleventysample="last"] .highlight-line:last-child:before,
-[data-preprefix-eleventysample="first"] .highlight-line:first-child:before {
+[data-preprefix-eleventysample] .highlight-line:first-child:before {
 	color: #aaa;
 	content: "~/eleventy-sample $ ";
 }
-
-/*#localinstall:checked ~ .globalinstall {
-	display: none;
-}
-#globalinstall:checked ~ .localinstall {
-	display: none;
-}*/
 
 pre[class*="language-diff-"] {
 	padding-left: 0;

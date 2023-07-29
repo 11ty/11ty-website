@@ -1,0 +1,1 @@
+<img :src="`https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(url)}/`" :width="width || 150" :height="height || 150" :alt="`IndieWeb Avatar for ${url}`" class="avatar avatar-indieweb" loading="lazy" decoding="async">

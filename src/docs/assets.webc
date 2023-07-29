@@ -1,0 +1,212 @@
+---
+eleventyNavigation:
+  parent: Working with Templates
+  key: Add CSS, JS, Fonts
+  order: 0
+  excerpt: Add assets to your Eleventy project.
+---
+<h1>Adding CSS, JavaScript, Fonts</h1>
+
+<p>There are many paths available to you when you decide you want to start adding assets to an Eleventy project. For most projects, it’s wise to let the project’s complexity and long-term maintenance goals guide which approach you choose. Start simple and grow to the next level in complexity when the project’s requirements necessitate it!</p>
+
+<p>Here are a few options in order from least complex to most complex:</p>
+
+<style>
+filter-container:not(:defined) [data-filter-code="js"],
+filter-container:not(:defined) [data-filter-code="font"] {
+	display: none;
+}
+filter-container:defined .filter-code--hide {
+	display: none;
+}
+</style>
+
+<filter-container oninit leave-url-alone>
+	<h2 id="copy-files"><number-flag>1</number-flag> Copy <span data-filter-code="css">CSS</span><span data-filter-code="font">Web Font</span><span data-filter-code="js">JavaScript</span> Files</h2>
+
+	<p>This is the simplest approach and is great for beginners and/or with small projects. It’s great because it <em>doesn’t require a bundler or any external dependencies</em>.</p>
+
+	<form>
+		<flex-luthor>
+			<strong>Customize for:</strong>
+			<label>
+				<input type="radio" name="project-bundle" value="css" data-filter-key="code" checked>
+				CSS
+			</label>
+			<label>
+				<input type="radio" name="project-bundle" value="font" data-filter-key="code">
+				Web Fonts
+			</label>
+			<label>
+				<input type="radio" name="project-bundle" value="js" data-filter-key="code">
+				JavaScript
+			</label>
+		</flex-luthor>
+	</form>
+
+	<p>This copies individual <span data-filter-code="css">CSS</span><span data-filter-code="js">JavaScript</span><span data-filter-code="font">Web Font</span> files that are referenced in your <span data-filter-code="js,css">HTML</span><span data-filter-code="font">CSS</span>.</p>
+
+	<ol>
+		<li data-filter-code="js,css">Create a <code data-filter-code="css">bundle.css</code><code data-filter-code="js">bundle.js</code> file in your root project folder and add some <span data-filter-code="css">CSS</span><span data-filter-code="js">JavaScript</span> code to this file.</li>
+		<li>
+			Use <a href="/docs/copy/">passthrough file copy</a> to copy the file to the build output folder (you could use a <code>glob</code> here, too):
+			<syntax-highlight language="js" hed=".eleventy.js" data-filter-code="css">
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("bundle.css");
+};
+			</syntax-highlight>
+			<syntax-highlight language="js" hed=".eleventy.js" data-filter-code="font">
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("font.woff2");
+};
+			</syntax-highlight>
+			<syntax-highlight language="js" hed=".eleventy.js" data-filter-code="js">
+module.exports = function(eleventyConfig) {
+	eleventyConfig.addPassthroughCopy("bundle.js");
+};
+			</syntax-highlight>
+		</li>
+		<li data-filter-code="font">Reference the Web Font file in your CSS using: <syntax-highlight language="css">@font-face {
+	font-family: My Font Name;
+	src: url('/font.woff2') format('woff2');
+	font-display: swap;
+}</syntax-highlight></li>
+		<li data-filter-code="css">Reference the CSS file in your HTML using: <syntax-highlight language="html"><link rel="stylesheet" href="/bundle.css"></syntax-highlight></li>
+		<li data-filter-code="js">Reference the JavaScript file in your HTML using <syntax-highlight language="html"><script src="/bundle.js"></script></syntax-highlight></li>
+	</ol>
+
+	<details class="expand-background" data-filter-code="js,css">
+		<summary>Expand for an example using Concatention, pulling in from <span data-filter-code="css">CSS</span><span data-filter-code="js">JavaScript</span> from multiple sources.</summary>
+
+		<p>You can use the Nunjucks and Liquid <code>include</code> tag to do simple concatenation.</p>
+
+		<p>Next, you can output this code directly to your page:</p>
+
+		<syntax-highlight @language="html" @hed="page.njk" data-filter-code="css">
+<style>
+{% include "header.css" %}
+{% include "footer.css" %}
+{% include "./node_modules/my-ficticious-package-name/package.css" %}
+</style>
+		</syntax-highlight>
+		<syntax-highlight @language="html" @hed="page.njk" data-filter-code="js">
+<script>
+{% include "header.js" %}
+{% include "footer.js" %}
+{% include "./node_modules/my-ficticious-package-name/package.js" %}
+</script>
+		</syntax-highlight>
+	</details>
+
+	<details>
+		<summary>Expand to see more Quick Tips, showing how to minify these bundles.</summary>
+
+		<ul class="inlinelist">
+			<li class="inlinelist-item"><a href="/docs/quicktips/inline-css/">#001—Inline Minified CSS</a></li>
+			<li class="inlinelist-item"><a href="/docs/quicktips/inline-js/">#002—Inline Minified JavaScript</a></li>
+		</ul>
+	</details>
+</filter-container>
+
+<filter-container oninit leave-url-alone>
+	<h2 id="use-an-eleventy-template"><number-flag>2</number-flag> Use an Eleventy Template</h2>
+
+	<form>
+		<flex-luthor>
+			<strong>Customize for:</strong>
+			<label>
+				<input type="radio" name="project-bundle" value="css" data-filter-key="code" checked>
+				CSS
+			</label>
+			<label>
+				<input type="radio" name="project-bundle" value="js" data-filter-key="code">
+				JavaScript
+			</label>
+		</flex-luthor>
+	</form>
+
+	<p>You can use an Eleventy Template to generate your bundle file and reference that from your template with <code data-filter-code="css">&lt;link rel="stylesheet" href="/bundle.css"&gt;</code><code data-filter-code="js">&lt;script src="/bundle.js"&gt;&lt;/script&gt;</code>:</p>
+
+	<syntax-highlight @language="yaml" @hed="css-bundle.njk" data-filter-code="css">
+---
+permalink: bundle.css
+---
+{% include "header.css" %}
+{% include "footer.css" %}
+{% include "./node_modules/my-ficticious-package-name/package.css" %}
+	</syntax-highlight>
+	<syntax-highlight @language="yaml" @hed="js-bundle.njk" data-filter-code="js">
+---
+permalink: bundle.js
+---
+{% include "header.js" %}
+{% include "footer.js" %}
+{% include "./node_modules/my-ficticious-package-name/package.js" %}
+	</syntax-highlight>
+
+	<details>
+		<summary>Expand to see more Quick Tips, showing how to minify this bundle file.</summary>
+
+		<ul class="inlinelist">
+			<li class="inlinelist-item"><a href="/docs/quicktips/concatenate/">#005—Super Simple CSS Concatenation</a></li>
+		</ul>
+	</details>
+
+	<details class="expand-background">
+		<summary>Expand to see Community Resources using this approach.</summary>
+		<p>In the article below, Max showcases how to use an <code>styles.11ty.js</code> template file to generate a one-off Sass-compiled stylesheet:</p>
+
+		<sites-list>
+			<site-card @url="https://mxb.dev/blog/eleventy-asset-pipeline/" @name="Asset Pipelines in Eleventy" @date="2021-04-26"></site-card>
+		</sites-list>
+	</details>
+
+</filter-container>
+
+<h2 id="eleventy-custom-templates"><number-flag>3</number-flag> Eleventy Custom Templates</h2>
+
+<p>You can add <code>js</code> and <code>css</code> (or even <code>scss</code> for Sass) as <a href="/docs/languages/custom/">custom template types</a> in Eleventy. This means that any <code>js</code> and <code>css</code> files added to your project are processed by Eleventy.</p>
+
+<p>This also (optionally) allows you to post-process the CSS (using Sass, PostCSS, or LightningCSS) or client-JavaScript (using esbuild, rollup, WebPack, etc) and write the processed content to your output folder. This also allows you to use features in your bundle code that aren’t available in web browsers, like nesting CSS, TypeScript, or JSX.</p>
+
+<p><em>Side note: this is strictly for code that runs in a web browser. There is a <a href="https://www.11ty.dev/docs/languages/custom/#aliasing-an-existing-template-language">different approach</a> if you want to use TypeScript or JSX in your Node.js JavaScript files that run as part of your build.</em></p>
+
+<p>Here are a few great guides to get you started:</p>
+
+<sites-list>
+	<site-card
+		@icon-url="https://sass-lang.com/"
+		@url="https://www.11ty.dev/docs/languages/custom/#example-add-sass-support-to-eleventy"
+		@name="Using Eleventy Custom Templates to Add Sass Support to Eleventy"
+		@date=""></site-card>
+	<site-card @url="https://pepelsbey.dev/articles/eleventy-css-js/" @name="CSS and JavaScript as First-Class Citizens in Eleventy" @using="esbuild, PostCSS" @date="2022-11-25"></site-card>
+	<site-card @url="https://11ty.rocks/posts/process-css-with-lightningcss/" @name="Process CSS or Sass with LightningCSS" @using="LightningCSS" @date="2023-02-25"></site-card>
+</sites-list>
+
+<h2 id="component-driven-bundles"><number-flag>4</number-flag> Component-driven Bundles</h2>
+
+<p>Eleventy also provides an optional <a href="https://github.com/11ty/eleventy-plugin-bundle/"><code>@11ty/eleventy-plugin-bundle</code></a> plugin that allows you to populate bundles with code from content pages. This allows you to make the CSS and JavaScript content-driven. The bundle plugin can be used in Nunjucks, Liquid, Handlebars, 11ty.js, and WebC templates and is provided for free with the <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code> Starter Project</a>.</p>
+
+<p>Furthermore, <em>the bundle plugin is used by <a href="/docs/languages/webc/#css-and-js-(bundler-mode)">WebC to create minimal bundles</a> that are comprised only of CSS and JavaScript from components used on each WebC page</em>.</p>
+
+<p>Using WebC in this way provides the best and least-effort investment in the long-term maintenance of a page. When components on the page change, the JavaScript and CSS bundles are automatically streamlined and will not contain extra code from previous designs.</p>
+
+<p><a href="/docs/languages/webc/"><strong>Get started with WebC!</strong></a></p>
+
+<sites-list>
+	<site-card :@image-html="image('./src/img/logos/webc.png', 'WebC Logo', [154], 'sites-screenshot', '6.25em')" @url="/docs/languages/webc/" @name="WebC" @date=""></site-card>
+	<site-card @url="https://www.youtube.com/watch?v=fzo_S9UiYYk" @name="Rebuilding 11ty.dev using WebC" @date="2023-03-08"></site-card>
+</sites-list>
+
+<h2 id="learn-more">Learn More</h2>
+
+<sites-list>
+	<site-card @icon-url="https://vitejs.dev/" @url="https://www.11ty.dev/docs/server-vite/" @name="Using Eleventy’s Vite Plugin" @date=""></site-card>
+	<site-card @url="https://www.webstoemp.com/blog/eleventy-dev-server-external-asset-pipeline/" @name="External Asset Pipeline with Eleventy" using="esbuild" @date="2023-01-23"></site-card>
+	<site-card @url="https://danburzo.ro/eleventy-sass/" @name="Sass in Eleventy, with versioning" @date="2023-05-01"></site-card>
+	<site-card @url="https://helloyes.dev/blog/2021/minimal-sass-and-eleventy-setup/" @name="Minimal SASS & Eleventy Setup" @date="2021-06-21"></site-card>
+	<site-card @url="https://www.vseventer.com/static-site-generators-eleventy-and-webpack-part-2/" @name="Static Site Generators: Eleventy and webpack (Part 2)" @date="2020-05-09"></site-card>
+	<site-card @url="https://darthmall.net/weblog/2020/eleventy-asset-pipeline/" @name="Asset Pipelines in Eleventy" @date="2020-11-13"></site-card>
+	<site-card @url="https://chriskirknielsen.com/blog/eleventy-asset-pipeline-precompiled-assets/" @name="Eleventy Asset Pipeline: Precompiled Assets Without Gulp" @date="2022-11-27"></site-card>
+	<site-card @url="https://zenzes.me/eleventy-integrate-postcss-and-tailwind-css/" @name="Integrate PostCSS and Tailwind CSS" @date="2022-11-25"></site-card>
+</sites-list>

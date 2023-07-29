@@ -21,6 +21,13 @@ module.exports = [
 		description: "18 December 2019. Our first commissioned iteration."
 	},
 	{
+		url: "/blog/logo-homage/",
+		image: "./src/img/mascots/phineas-ben-facemask--v46-edited_FINAL-1.webp",
+		name: "Masked Grumpy",
+		author: "Remixed by Ben Brignell",
+		description: "7 July 2020"
+	},
+	{
 		url: "/blog/new-mascot-from-geri-coady/",
 		image: "./src/img/mascots/geri.png",
 		name: "(Not yet named)",

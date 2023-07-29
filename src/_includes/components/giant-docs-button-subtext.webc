@@ -1,0 +1,17 @@
+<style webc:scoped>
+:host {
+	display: none;
+  max-width: none;
+}
+@media (min-width: 50em) {
+	/* 800px */
+	:host {
+		display: block;
+		text-align: center;
+		margin-top: .25em;
+		font-size: .75em;
+	}
+}
+</style>
+
+<p webc:root="override" class="mb-8">Todd and <a :href="canonicalTwitterUrl('https://twitter.com/brucel/status/1107699886584143872')">Bruce</a> said this button should be bigger and as you can see they were right.</p>

@@ -12,6 +12,13 @@
 	line-height: 1.285714285714; /* 18px /14 */
 	font-family: system-ui, -apple-system, sans-serif;
 }
+.minilink-github {
+	background-color: #f6f8fa;
+}
+.minilink-github > :first-child {
+	color: #eac54f;
+}
+
 @media (prefers-color-scheme: dark) {
 	.minilink {
 		background-color: #222;

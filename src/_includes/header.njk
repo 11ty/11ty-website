@@ -3,31 +3,35 @@
 	{%- if bannerLink %}
 	<div class="announcement">
 {% if bannerLink.url %}
-		<a href="{{ bannerLink.url }}" class="lo-c">{{ bannerLink.label }}</a>
+		<a href="{{ bannerLink.url }}">{{ bannerLink.label }}</a>
 {% else %}
-		<span class="lo-c">{{ bannerLink.label }}</span>
+		<span>{{ bannerLink.label }}</span>
 {% endif %}
 	</div>
 	{%- endif %}
 
 	<div class="elv-header-c">
-		<a href="{% if logoLink %}{{ logoLink | url }}{% else %}/{% endif %}" class="elv-hero elv-externalexempt">{% if logoContent %}{{ logoContent | safe }}{% else %}{% include "../img/logo.svg" %}{% endif %}<span class="sr-only">Eleventy</span></a>
+		<a href="{% if logoLink %}{{ logoLink }}{% else %}/{% endif %}" class="elv-hero elv-externalexempt">{% if logoContent %}{{ logoContent | safe }}{% else %}{% include "../img/logo.svg" %}{% endif %}<span class="sr-only">Eleventy</span></a>
 		<a href="/blog/new-mascot-from-geri-coady/" class="elv-externalexempt elv-possum-anchor" data-investors-avatar>
 			<div class="elv-possum-pic">
-				{% image "./src/img/possum-geri.png", "The possum is Eleventy’s mascot", [350], "elv-possum" %}
+				{% image "./src/img/possum-geri.png", "The possum is Eleventy’s mascot", [222, 350], "elv-possum" %}
 			</div>
 		</a>
-		<h1 class="elv-hed">{{ title | orphanWrap | safe }}</h1>
+		<{{ headerTag or "h1" }} class="elv-hed">{{ title | orphanWrap | safe }}</{{ headerTag or "h1" }}>
 		<div class="elv-nav-header">
-			<ul class="elv-nav lo">
-				<li class="elv-nav-item lo-c"><a href="/docs/" class="elv-externalexempt">Docs</a></li>
-				<li class="elv-nav-item lo-c"><a href="/docs/search/">Search</a></li>
-				<li class="elv-nav-item lo-c lo-nocontentwrap"><a href="https://github.com/11ty/eleventy/" class="elv-nav-light elv-externalexempt"><b>GitHub</b></a></li>
-				<li class="elv-nav-item lo-c lo-nocontentwrap"><a href="https://twitter.com/eleven_ty" class="elv-nav-light elv-externalexempt"><b>Twitter</b></a></li>
-				<li class="elv-nav-item lo-c lo-nocontentwrap"><a href="/blog/discord/" class="elv-nav-light"><b>Discord</b></a></li>
-				<li class="elv-nav-item lo-c"><a href="/docs/community/"><strong>Community</strong></a></li>
-				<li class="elv-nav-item lo-c"><a href="/blog/">Blog</a></li>
-				<li class="elv-nav-item lo-c lo-nocontentwrap"><a href="https://twitter.com/zachleat" class="elv-nav-light elv-externalexempt">{% communityavatar "zachleat" %}<b class="sr-only">zachleat</b></a></li>
+			<ul class="list-bare fl fl-inline fl-nowrap">
+				<li><a href="/docs/">Docs</a></li>
+				<li><a href="/docs/getting-started/">Get Started</a></li>
+				{%- if github.stargazers and page.inputPath !== "./src/index.webc" %}<li><a href="https://github.com/11ty/eleventy" class="minilink minilink-github elv-skipicon"><span>★</span> <strong title="{{ github.stargazers }}">{{ github.stargazers | humanReadableNum }}</strong></a></li>{% endif %}
+				<li class="elv-nav-docs-only"><a href="/docs/search/">Search</a></li>
+				<li><a href="/blog/" class="elv-nav-light">Blog</a></li>
+				<li class="elv-nav-docs-only"><a href="/docs/community/" class="elv-nav-light">Community</a></li>
+				<li class="elv-nav-docs-only"><a href="/firehose/" class="elv-nav-light">Firehose</a></li>
+				<li class="elv-nav-docs-only spacer"></li>
+				<li><a href="https://github.com/11ty/eleventy/" class="naked elv-nav-sociallink elv-nav-light"><span class="elv-nav-sociallink-text">GitHub</span></a></li>
+				<li><a href="https://fosstodon.org/@eleventy" class="naked elv-nav-sociallink elv-nav-light"><span class="elv-nav-sociallink-text">Mastodon</span></a></li>
+				<li><a href="https://www.youtube.com/c/EleventyVideo" class="naked elv-nav-sociallink elv-nav-light"><span class="elv-nav-sociallink-text">YouTube</span></a></li>
+				<li><a href="/blog/discord/" class="naked elv-nav-sociallink elv-nav-light"><span class="elv-nav-sociallink-text">Discord</span></a></li>
 			</ul>
 		</div>
 	</div><!-- /elv-nav-header -->

@@ -10,19 +10,19 @@ layout: layouts/docs.njk
 {%- for author in authors | filterBusinessPeople | shuffle %}
 {%- set supporter = opencollective.supporters | isSupporter(author.name, githubTwitterMap[author.name], author.opencollective) -%}
 {%- if supporter | isBusinessPerson %}
-  <div class="business-network-primary lo">
-    <div class="lo-c">
-      <a href="{{ author.business_url }}" class="business-network-name nowrap">{% indieavatar author.business_url %}{{ author.business_name or author.name }}</a>
+  <div class="business-network-primary fl">
+    <div>
+      <a href="{{ author.business_url }}" class="business-network-name nowrap">{% indieavatar author.business_url, "avatar-large" %}{{ author.business_name or author.name }}</a>
     </div>
-    <div class="lo-c business-network-hire">
+    <div class="business-network-hire">
       <a href="{{ author.business_url }}" class="btn-primary btn-primary-standard benchnine rainbow-active rainbow-active-noanim elv-externalexempt">Let’s Do Business</a>
     </div>
   </div>
   <div>
   {%- if author.sites.length %}
-  <div class="business-network-sites lo lo-grid lo-grid-fill" style="--lo-margin-h: .25rem; --lo-margin-v: .25rem; --lo-c-minwidth: 75px;">
+  <div class="business-network-sites lo-grid lo-grid-fill" style="--fl-gap-h: .25rem; --fl-gap-v: .25rem; --lo-c-minwidth: 75px;">
   {%- for site in author.sites %}
-    <div class="lo-c"><a href="{{ site.url }}" class="elv-externalexempt">{%- getScreenshotHtml site.fileSlug, site.url, "80px" -%}</a></div>
+    <div><a href="{{ site.url }}" class="elv-externalexempt">{%- getScreenshotHtml site.fileSlug, site.url, "80px" -%}</a></div>
   {%- endfor %}
   </div>
   {%- endif %}

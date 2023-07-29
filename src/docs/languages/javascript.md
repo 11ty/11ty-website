@@ -14,9 +14,11 @@ relatedLinks:
 communityLinksKey: javascript
 layout: layouts/langs.njk
 ---
-| Eleventy Short Name | File Extension | NPM Package |
+{% tableofcontents "open" %}
+
+| Eleventy Short Name | File Extension | npm Package |
 | ------------------- | -------------- | ----------- |
-| `11ty.js`              | `.11ty.js`        | N/A         |
+| `11ty.js`           | `.11ty.js`     | N/A         |
 
 Eleventy supports many different types of JavaScript content that will be parsed as Eleventy templates:
 

@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="prism-theme.css">
+<link rel="stylesheet" href="code.css">
+<style @html="robotoMonoGoogleFontsCss"></style>
+<style>
+syntax-highlight > pre {
+	margin-bottom: 0;
+}
+</style>
+<style webc:if="hed">
+.syntax-title {
+	margin-top: 1em;
+	padding: .25em 0 .25em .5em;
+	border-radius: .25em .25em 0 0;
+	font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+	font-size: 0.75em; /* 12px /16 */
+}
+.syntax-title-left {
+	padding-left: 0;
+	padding-right: .5em;
+}
+.syntax-title b {
+	text-transform: uppercase;
+	font-size: 0.6875rem; /* 11px /16 */
+	margin-right: 1.5em;
+	color: #666;
+	font-weight: 100;
+}
+.syntax-title + pre {
+	margin-top: 0;
+}
+@media (prefers-color-scheme: dark) {
+	.syntax-title b {
+		color: #aaa;
+	}
+}
+</style>
+<div webc:if="hed" class="syntax-title"><b @text="hedType || 'Filename'"></b><span @text="hed"></span></div>
+<script webc:type="js">
+this.helpers.highlight(language, this.slots.text.default.trim()); // TODO? line highlighting
+</script>

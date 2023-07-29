@@ -9,11 +9,16 @@
 }
 .sites-screenshot {
   display: block;
-  border: 2px solid #ccc;
+  border: 1px solid #ccc;
   border-radius: .4em;
   margin: .5em 0;
   width: 100%;
   height: auto;
+}
+.sites-icon-auto.sites-icon-auto.sites-icon-auto {
+	width: 23.4375em; /* 375px /16 */
+	height: auto;
+	padding: 2.5em;
 }
 .sites-site-official .sites-screenshot {
 	border-color: #666;
@@ -78,20 +83,23 @@
 }
 .sites-vert .sites-screenshot {
 	margin-top: 4px;
-	margin-bottom: 0;
+	margin-bottom: 4px;
 }
 .sites-vert .avatar {
 	margin-right: 3px;
 	margin-left: 0;
+	width: 1em;
+	height: 1em;
+	object-fit: contain;
 }
 .sites-vert > .lo-grid {
-  --lo-margin-h: 1rem;
-  --lo-margin-v: 1rem;
-  --lo-c-minwidth: 5.555555555556em; /* 100px /18 */
+  --fl-gap-h: 1rem;
+  --fl-gap-v: 1rem;
+  --lo-c-minwidth: 10em;
 	--lo-grid-repeat: auto-fill;
 }
 .sites-vert--md > .lo-grid {
-  --lo-c-minwidth: 7.5em; /* 120px /16 */
+  --lo-c-minwidth: 8.5em; /* 136px /16 */
 }
 .sites-vert--lg > .lo-grid {
   --lo-c-minwidth: 10em; /* 160px /16 */
@@ -102,6 +110,10 @@
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	font-size: 0.7777777777778em; /* 14px /18 */
+}
+.sites-site-name--nowrap {
+	display: block;
 	font-size: 0.7777777777778em; /* 14px /18 */
 }
 .sites-site-description {
@@ -163,13 +175,6 @@
 	background-color: #fff;
 }
 
-.stackblitz-link.stackblitz-link.stackblitz-link {
-	display: none;
-}
-.stackblitz .stackblitz-link.stackblitz-link {
-	display: inline;
-}
-
 @supports (aspect-ratio: 1 / 1) {
 	.img-gallery {
 		--shadow-color: rgba(234, 0, 255, 0.747);
@@ -191,8 +196,4 @@
 	.sites-site-vert a:hover .img-gallery .sites-screenshot {
 		box-shadow: none;
 	}
-
-	/* .gallery-55 img {
-		object-fit: cover;
-	} */
 }

@@ -3,5 +3,5 @@
 	"name": "Simple Journal",
 	"description": "A simple journal/photo log website built on top of 11ty.",
 	"author": "scottishstoater",
-	"demo": "https://simplejournal.chriscollins.me/"
+	"demo": "https://simplejournal.netlify.app/"
 }

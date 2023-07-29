@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/mandrasch/11ty-plain-bootstrap5",
+	"name": "11ty-plain-bootstrap5",
+	"description": "Simple plain starter with 11ty and Bootstrap5 (via npm)",
+	"author": "mandrasch",
+	"demo": "https://mandrasch.github.io/11ty-plain-bootstrap5/"
+}

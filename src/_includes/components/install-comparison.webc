@@ -1,0 +1,59 @@
+<style webc:scoped>
+:host td:last-child {
+	width: 100%;
+}
+</style>
+<table>
+	<thead>
+		<tr>
+			<th>Tool</th>
+			<th class="ta-c"><code>node_<wbr>modules</code><br>Weight</th>
+			<th class="ta-c"><code>npm install</code><br>Time</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>Eleventy</td>
+		<td><div class="numeric">34 MB</div></td>
+		<td><div class="numeric">5.81s</div></td>
+		<td><text-throbber duration="5810"></text-throbber></td>
+	</tr>
+	<tr>
+		<td>SvelteKit</td>
+		<td><div class="numeric">111 MB</div></td>
+		<td><div class="numeric">6.78s</div></td>
+		<td><text-throbber duration="6780"></text-throbber></td>
+	</tr>
+	<tr>
+		<td>Next.js</td>
+		<td><div class="numeric">158 MB</div></td>
+		<td><div class="numeric">3.72s</div></td>
+		<td><text-throbber duration="3720"></text-throbber></td>
+	</tr>
+	<tr>
+		<td>Astro</td>
+		<td><div class="numeric">169 MB</div></td>
+		<td><div class="numeric">12.52s</div></td>
+		<td><text-throbber duration="12520"></text-throbber></td>
+	</tr>
+	<tr>
+		<td>Nuxt</td>
+		<td><div class="numeric">164 MB</div></td>
+		<td><div class="numeric">14.77s</div></td>
+		<td><text-throbber duration="14770"></text-throbber></td>
+	</tr>
+	<tr>
+		<td>Remix</td>
+		<td><div class="numeric">497 MB</div></td>
+		<td><div class="numeric">40.14s</div></td>
+		<td><text-throbber duration="40140"></text-throbber></td>
+	</tr>
+	<tr>
+		<td>Gatsby</td>
+		<td><div class="numeric">583 MB</div></td>
+		<td><div class="numeric">43.36s</div></td>
+		<td><text-throbber duration="43360"></text-throbber></td>
+	</tr>
+	</tbody>
+</table>

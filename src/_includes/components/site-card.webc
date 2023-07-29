@@ -1,0 +1,26 @@
+<script webc:setup>
+function getIconHtml(url) {
+	if(url) {
+		return indieavatar(url, 'sites-screenshot sites-icon-auto');
+	}
+}
+</script>
+<style webc:scoped>
+.metadata {
+	white-space: nowrap;
+}
+</style>
+<link rel="stylesheet" href="site-entry.css">
+
+<div class="sites-site-vert">
+	<a :href="url" class="elv-externalexempt" :title="name || false">
+		<div class="sites-screenshot-container" @html="imageHtml || getIconHtml(iconUrl) || getScreenshotHtml(undefined, screenshotUrl || url, null, size)"></div>
+		<span class="sites-site-name--nowrap">
+			<span webc:nokeep @html="indieavatar(url, 'avatar-large')"></span>
+			<span webc:nokeep @text="name || url"></span>
+			<em webc:if="using" @text="`(${using})`"></em>
+			<span class="metadata" webc:if="date" @text="`(${date.split('-').shift()})`"></span>
+			<span class="metadata" webc:if="medialength" @text="`⏱ ${medialength}`"></span>
+		</span>
+	</a>
+</div>

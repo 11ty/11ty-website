@@ -19,13 +19,19 @@ module.exports = async function() {
 		let json = await EleventyFetch(url, {
 			type: "json",
 			duration: process.env.ELEVENTY_SERVERLESS ? "*" : "1d",
-			directory: process.env.ELEVENTY_SERVERLESS ? "cache/" : ".cache/eleventy-fetch/",
+			directory: ".cache/eleventy-fetch/",
+			dryRun: process.env.ELEVENTY_SERVERLESS ? true : false,
 		});
 
 		return {
 			downloads: json.downloads
 		};
 	} catch(e) {
+		if(process.env.NODE_ENV === "production") {
+			// Fail the build in production.
+			return Promise.reject(e);
+		}
+
 		console.log( "Failed getting npm downloads count, returning 0" );
 		return {
 			downloads: 0

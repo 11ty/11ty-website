@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="./flex-luthor/flex-luthor.css">
+<link webc:if="separators" rel="stylesheet" href="./flex-luthor/flex-luthor-separators.css">
+
+<style webc:if="align === 'center'" webc:scoped>
+/* see also layout.css */
+:host {
+  display: flex;
+  align-items: center;
+	justify-content: center;
+}
+</style>
+
+<template webc:root class="fl fl-inline fl-nowrap">
+  <slot></slot>
+</template>

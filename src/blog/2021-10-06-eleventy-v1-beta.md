@@ -3,9 +3,6 @@ newstitle: "The very first Eleventy 1.0 Beta Release"
 eleventyNavigation:
   parent: Blog
 ignoreSupporters: true
-eleventyComputed:
-  social:
-    imgsrc: "https://v1.screenshot.11ty.dev/https%3A%2F%2Fwww.11ty.dev%2F/opengraph/_1/"
 ---
 It is my absolute honor to announce that the very first Eleventy 1.0 Beta release is now available on the beta channel. You can try it out now:
 
@@ -73,7 +70,7 @@ npm install @11ty/eleventy@beta -g
   * {% indieweblink "Sia Karamalegos", "https://sia.codes/" %}
   * {% indieweblink "Stephanie Eckles", "https://thinkdobecreate.com/" %}
   * {% indieweblink "Thomas M. Semmler", "https://helloyes.dev/" %}
-* [The 11ties](https://twitter.com/JAMstackTORONTO/status/1341815501341790208), organized last year by {% indieweblink "Henri Helvetica" %}
+* [The 11ties]({{ "https://twitter.com/JAMstackTORONTO/status/1341815501341790208" | canonicalTwitterUrl }}), organized last year by {% indieweblink "Henri Helvetica" %}
 * Our Sponsors and {% indieweblink "Open Collective Supporters", "https://opencollective.com/11ty" %}:
 
 {% include "supporters.njk" %}

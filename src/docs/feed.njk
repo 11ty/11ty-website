@@ -28,7 +28,7 @@ eleventyExcludeFromCollections: true
     <email>{{ metadata.author.email }}</email>
   </author>
   {%- for post in collections.docsFeed %}
-  {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+  {% set absolutePostUrl %}{{ post.url | absoluteUrl(metadata.url) }}{% endset %}
   {%- set entryTitle %}{{ post.data.newstitle or post.data.searchTitle or post.data.relatedTitle or post.data.tiptitle or post.data.eleventyNavigation.key or post.data.title }}{% endset %}
   <entry>
     <title>{{ entryTitle }}</title>

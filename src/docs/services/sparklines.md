@@ -6,6 +6,7 @@ eleventyNavigation:
   # order: 0
 communityLinksKey: api-services-sparkline
 ---
+{% tableofcontents %}
 
 Feed this runtime service a comma separated list of numeric values and it will return an SVG sparkline image.
 
@@ -33,8 +34,14 @@ https://v1.sparkline.11ty.dev/:dimensions/:values/:color/
 
 ## Samples
 
-<img src="https://v1.sparkline.11ty.dev/120x30/41,25,9,12,10,6,12,14,19,17,23,30,36,21,40/%2394b388/" width="120" height="30" alt="Sparkline representing frequency of posts written from 2007 to 2021" loading="lazy" decoding="async">
+Using color `#123456`:
+
+{% callout "demo" %}
+
+<img src="https://v1.sparkline.11ty.dev/120x30/41,25,9,12,10,6,12,14,19,17,23,30,36,21,40/%23123456/" width="120" height="30" alt="Sparkline representing frequency of posts written from 2007 to 2021" loading="lazy" decoding="async">
+
+{% endcallout %}
 
 ```html
-<img src="https://v1.sparkline.11ty.dev/120x30/41,25,9,12,10,6,12,14,19,17,23,30,36,21,40/%2394b388/" width="120" height="30" alt="Sparkline representing frequency of posts written from 2007 to 2021" loading="lazy" decoding="async">
+<img src="https://v1.sparkline.11ty.dev/120x30/41,25,9,12,10,6,12,14,19,17,23,30,36,21,40/%23123456/" width="120" height="30" alt="Sparkline representing frequency of posts written from 2007 to 2021" loading="lazy" decoding="async">
 ```
