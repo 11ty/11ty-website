@@ -2,20 +2,6 @@
 publish = "_site"
 command = "npm run build-production"
 
-# [[plugins]]
-# # https://github.com/netlify/netlify-plugin-lighthouse
-# package = "@netlify/plugin-lighthouse"
-
-# # Fails build when a category is below a threshold
-# [plugins.inputs.thresholds]
-# performance = 1.0
-# accessibility = 1.0
-# best-practices = 1.0
-# seo = 1.0
-
-# [plugins.inputs]
-# output_path = "reports/lighthouse/index.html"
-
 [[redirects]]
 # Web redirect
 from = "/activity/"
@@ -115,3 +101,17 @@ for = "/blog/feed.xml"
   [headers.values]
   Content-Type = "application/xml; charset=utf-8"
   x-content-type-options = "nosniff"
+
+[[plugins]]
+# https://github.com/netlify/netlify-plugin-lighthouse
+package = "@netlify/plugin-lighthouse"
+
+# Fails build when a category is below a threshold
+[plugins.inputs.thresholds]
+performance = 1.0
+accessibility = 1.0
+best-practices = 1.0
+seo = 1.0
+
+[plugins.inputs.audits]
+output_path = "reports/lighthouse/index.html"
