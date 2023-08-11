@@ -23,10 +23,6 @@ output_path = "reports/lighthouse/index.html"
 [functions]
 directory = "netlify/functions/"
 
-# [[edge_functions]]
-# function = "user-preferences"
-# path = "/account/preferences/"
-
 [[redirects]]
 from = "/authors/:name/"
 to = "/.netlify/builders/serverless"

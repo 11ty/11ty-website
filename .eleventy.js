@@ -7,7 +7,7 @@ const slugify = require("slugify");
 const lodashGet = require("lodash/get");
 const shortHash = require("short-hash");
 
-const { EleventyServerlessBundlerPlugin, EleventyEdgePlugin, EleventyRenderPlugin } = require("@11ty/eleventy");
+const { EleventyServerlessBundlerPlugin, EleventyRenderPlugin } = require("@11ty/eleventy");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
@@ -245,7 +245,6 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(monthDiffPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
-	eleventyConfig.addPlugin(EleventyEdgePlugin);
 	eleventyConfig.addPlugin(javascriptFrontMatter);
 	eleventyConfig.addPlugin(eleventyWebcPlugin, {
 		components: [
