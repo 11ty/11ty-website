@@ -45,6 +45,12 @@ status = 302
 force = true
 
 [[redirects]]
+from = "/speedlify/"
+to = "https://built-with-eleventy.netlify.app/speedlify/"
+status = 200
+force = true
+
+[[redirects]]
 from = "/speedlify/*"
 to = "https://built-with-eleventy.netlify.app/speedlify/:splat"
 status = 200
