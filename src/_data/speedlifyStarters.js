@@ -9,10 +9,6 @@ module.exports = async function() {
 		data: {}
 	};
 
-	if(process.env.ELEVENTY_SERVERLESS) {
-		return returnData;
-	}
-
 	let url = `${URL}api/urls.json`;
 	let urlsJson = await EleventyFetch(url, {
 		duration: "1d",

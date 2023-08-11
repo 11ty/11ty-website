@@ -18,9 +18,9 @@ module.exports = async function() {
 		let url = `https://api.npmjs.org/downloads/point/${getDateRange(-365)}:${getDateRange()}/@11ty/eleventy`;
 		let json = await EleventyFetch(url, {
 			type: "json",
-			duration: process.env.ELEVENTY_SERVERLESS ? "*" : "1d",
+			duration: "1d",
 			directory: ".cache/eleventy-fetch/",
-			dryRun: process.env.ELEVENTY_SERVERLESS ? true : false,
+			dryRun: false,
 		});
 
 		return {

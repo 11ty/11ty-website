@@ -1,11 +1,11 @@
 module.exports = async function() {
-	// no-op in serverless mode
-	let transformUrl = url => url;
+	let transformUrl;
 	try {
 		const {transform} = await import("@tweetback/canonical");
 		transformUrl = transform;
 	} catch(e) {
 		// do nothing
+		transformUrl = url => url
 	}
 
 	return [

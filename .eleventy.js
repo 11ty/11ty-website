@@ -7,7 +7,7 @@ const slugify = require("slugify");
 const lodashGet = require("lodash/get");
 const shortHash = require("short-hash");
 
-const { EleventyServerlessBundlerPlugin, EleventyRenderPlugin } = require("@11ty/eleventy");
+const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
@@ -68,12 +68,7 @@ const shortcodes = {
 			outputDir: "_site/img/built/",
 		};
 
-		let stats;
-		if(process.env.ELEVENTY_SERVERLESS) {
-			stats = eleventyImage.statsSync(filepath, options);
-		} else {
-			stats = await eleventyImage(filepath, options);
-		}
+		let stats = await eleventyImage(filepath, options);
 
 		return eleventyImage.generateHTML(stats, {
 			alt,
@@ -187,20 +182,16 @@ function findBy(data, path, value) {
 module.exports = function(eleventyConfig) {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
-	if(process.env.NODE_ENV === "production" || process.env.ELEVENTY_SERVERLESS) {
+	if(process.env.NODE_ENV === "production") {
+		// Skip on non-local
 		eleventyConfig.ignores.add("src/admin.md");
-	}
-
-	// Skip these on local dev
-	if(process.env.NODE_ENV !== "production" || process.env.ELEVENTY_SERVERLESS) {
+	} else {
+		// Skip on local dev
 		eleventyConfig.ignores.add("src/api/*");
 		eleventyConfig.ignores.add("src/docs/feed.njk");
 		eleventyConfig.ignores.add("src/docs/quicktipsfeed.njk");
 		eleventyConfig.ignores.add("src/blog/blog-feed.njk");
-	}
-
-	// Skip these without a token (esp. deploy previews)
-	if(process.env.NODE_ENV !== "production" || !process.env.TWITTER_BEARER_TOKEN || process.env.ELEVENTY_SERVERLESS) {
+		eleventyConfig.ignores.add("src/authors/author-pages.md");
 		eleventyConfig.ignores.add("src/firehose.11ty.js");
 		eleventyConfig.ignores.add("src/firehose-feed.11ty.js");
 	}
@@ -264,21 +255,6 @@ module.exports = function(eleventyConfig) {
 		}
 	});
 
-	if(process.env.NODE_ENV === "production") {
-		eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
-			name: "serverless",
-			functionsDir: "./netlify/functions/",
-			redirects: "netlify-toml-builders",
-			copy: [
-				"config/",
-				"avatars/",
-				"src/img/logo.svg",
-				"src/img/possum-geri.png",
-				".cache/eleventy-fetch/",
-			]
-		});
-	}
-
 	eleventyConfig.addCollection("sidebarNav", function(collection) {
 		// filter out excludeFromSidebar options
 		return collection.getAll()
@@ -308,7 +284,6 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addAsyncFilter("canonicalTwitterUrl", async url => {
-		// no-op in serverless mode
 		try {
 			const {transform} = await import("@tweetback/canonical");
 			return transform(url);

@@ -2,10 +2,6 @@ require("dotenv").config();
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
-	if(process.env.ELEVENTY_SERVERLESS) {
-		return;
-	}
-
 	const { ActivityFeed } = await import("@11ty/eleventy-activity-feed");
 
 	let feed = new ActivityFeed();

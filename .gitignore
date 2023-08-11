@@ -19,7 +19,3 @@ src/_data/builtwith/
 
 # Netlify generated stuff
 .netlify/
-
-# Serverless
-netlify/functions/serverless/*
-!netlify/functions/serverless/index.js

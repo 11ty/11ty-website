@@ -41,9 +41,9 @@ module.exports = async function() {
 		let url = `https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000&status=paid,active`;
 		let json = await EleventyFetch(url, {
 			type: "json",
-			duration: process.env.ELEVENTY_SERVERLESS ? "*" : (process.env.ELEVENTY_AVATARS ? "0s" : "1d"),
+			duration: process.env.ELEVENTY_AVATARS ? "0s" : "1d",
 			directory: ".cache/eleventy-fetch/",
-			dryRun: process.env.ELEVENTY_SERVERLESS ? true : false,
+			dryRun: false,
 		});
 
 		let orders = json.nodes.map(order => {

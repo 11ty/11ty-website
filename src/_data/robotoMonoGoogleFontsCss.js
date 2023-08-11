@@ -1,10 +1,6 @@
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
-	if(process.env.ELEVENTY_SERVERLESS) {
-		return "";
-	}
-
 	try {
 		let css = await EleventyFetch("https://fonts.googleapis.com/css?family=Roboto+Mono:400&display=swap", {
 			duration: "1d",

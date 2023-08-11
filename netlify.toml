@@ -24,13 +24,6 @@ output_path = "reports/lighthouse/index.html"
 directory = "netlify/functions/"
 
 [[redirects]]
-from = "/authors/:name/"
-to = "/.netlify/builders/serverless"
-status = 200
-force = true
-_generated_by_eleventy_serverless = "serverless"
-
-[[redirects]]
 # Web redirect
 from = "/activity/"
 to = "/firehose/"
