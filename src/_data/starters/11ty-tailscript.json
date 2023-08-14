@@ -1,6 +1,6 @@
 {
   "url": "https://github.com/4lador/11ty-tailscript",
-	"name": "11st-TailScript",
+	"name": "11ty-TailScript",
 	"description": "Minimalist, ready to use Eleventy starter project that embarks Tailwind, PostCSS (nesting, imports, media queries, minify), Fontawesome, Webpack, Typescript and Vite",
 	"author": "4lador",
 	"demo": "https://vocal-licorice-a3b377.netlify.app"
