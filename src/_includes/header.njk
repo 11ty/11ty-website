@@ -1,5 +1,8 @@
 <header class="elv-layout elv-layout-full elv-header{% if headerClass %} {{ headerClass }}{% endif %}">
+	{%- set bannerLink = bannerlinkOverride %}
+	{%- if not bannerLink %}
 	{%- set bannerLink = bannerlinks | randompick %}
+	{%- endif %}
 	{%- if bannerLink %}
 	<div class="announcement">
 {% if bannerLink.url %}

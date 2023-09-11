@@ -24,6 +24,11 @@ let eleventyComputed = {
 		description: () => "Eleventy, a simpler static site generator."
 	},
 };
+
+let bannerlinkOverride = {
+	label: "🇺🇦🇺🇦🇺🇦🇺🇦 Stand with Ukraine 🇺🇦🇺🇦🇺🇦🇺🇦",
+	url: "https://war.ukraine.ua/"
+};
 // </script>
 ---
 <script webc:setup>
