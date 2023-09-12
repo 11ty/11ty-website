@@ -22,7 +22,8 @@ class Search {
 
 	async getLibrary() {
 		if(!this.pagefind) {
-			this.pagefind = await import("/_pagefind/pagefind.js");
+			this.pagefind = await import("/pagefind/pagefind.js");
+			this.pagefind.init();
 		}
 		return this.pagefind;
 	}

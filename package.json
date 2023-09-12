@@ -12,7 +12,7 @@
     "build-production": "npm run get-new-data && NODE_ENV=production npx @11ty/eleventy && npm run create-search-index",
     "start": "npx @11ty/eleventy --serve --quiet --port=8091 --incremental",
     "start-production": "NODE_ENV=production npx @11ty/eleventy --serve --quiet --port=8091",
-    "create-search-index": "npx pagefind --source _site --glob \"{docs,blog}/**/*.html\"",
+    "create-search-index": "npx pagefind --site \"_site\" --glob \"{docs,blog}/**/*.html\"",
     "get-new-data": "rm -rf ./src/_data/builtwith/ && npx degit github:11ty/11ty-community/built-with-eleventy src/_data/builtwith/",
     "get-new-supporters": "eleventy && node node-supporters",
     "format": "prettier --write '**/*.{js,css,html,md}'"
@@ -70,7 +70,7 @@
     "netlify-plugin-cache": "^1.0.3",
     "node-fetch": "^2.6.8",
     "node-retrieve-globals": "^2.0.6",
-    "pagefind": "^0.12.0",
+    "pagefind": "1.0.0-beta.5",
     "prettier": "^2.8.4",
     "semver": "^7.5.4",
     "short-hash": "^1.0.0",
