@@ -247,7 +247,7 @@ await Image("./test/bio-2017.jpg", {
 
 {% addedin "Image v3.1.0" %} Eleventy Image now provides a built-in `<eleventy-image>` WebC component for use in your Eleventy project.
 
-Using Eleventy Image in [WebC](/docs/languages/webc/) offers all the same great benefits you’re used to from Eleventy Image with an intuitive declarative HTML-only developer experience.
+Using Eleventy Image in [WebC](/docs/languages/webc/) offers all the same great benefits you’re used to from Eleventy Image with an intuitive declarative HTML-only developer experience. (Note, though, that this will only work in a "webc" format template. To use in other template formats, see the shortcodes below.)
 
 First, add the following to your project’s configuration file:
 
