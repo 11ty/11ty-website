@@ -161,9 +161,9 @@ The _easiest_ way to put your new site online is to head over to [Netlify Drop](
 
 Congratulations—you made something with Eleventy! Now put it to work:
 
+1. Add more content! In the above tutorial we used [HTML](/docs/languages/html/) and [Markdown](/docs/languages/markdown/). Why not [JavaScript](/docs/languages/javascript/) or [WebC](/docs/languages/webc/) (for components) next? [Nunjucks](/docs/languages/nunjucks/) and [Liquid](/docs/languages/liquid/) are also very popular. Maybe you’re feeling super adventurous and want to [add your own custom type?](/docs/languages/custom/).
 1. Use [a layout file so that you don’t have to repeat boilerplate on every template](/docs/layouts/).
 1. Add [CSS, JavaScript, or Web Fonts](/docs/assets/) to your project.
-1. Add more content! In the above tutorial we used [HTML](/docs/languages/html/) and [Markdown](/docs/languages/markdown/). Why not [JavaScript](/docs/languages/javascript/) or [WebC](/docs/languages/webc/) (for components) next? [Nunjucks](/docs/languages/nunjucks/) and [Liquid](/docs/languages/liquid/) are also very popular. Maybe you’re feeling super adventurous and want to [add your own custom type?](/docs/languages/custom/).
 1. Learn more of the [command line options for Eleventy](/docs/usage/).
 1. Perhaps you’d like to [consume data from third party APIs](/docs/data-js/) in your project?
 </template>
