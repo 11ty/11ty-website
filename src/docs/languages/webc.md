@@ -59,7 +59,7 @@ relatedLinks:
 </div>
 
 * {% indieavatar "https://zachleat.com/" %}[zachleat.com: Adding Components to Eleventy with WebC](https://www.zachleat.com/web/webc-in-eleventy/): a brief history of the motivation behind WebC including influences from the Svelte and Vue communities.
-* {% indieavatar "https://darthmall.net/" %}[11ty.webc.fun](https://11ty.webc.fun/): a collection of WebC recipes!
+* {% indieavatar "https://darthmall.net/" %}[11ty.webc.fun](https://11tywebcfun.netlify.app/): a collection of WebC recipes!
 * {% indieavatar "https://www.robincussol.com/" %}[Robin Cussol: Optimize your img tags with Eleventy Image and WebC](https://www.robincussol.com/optimize-your-img-tags-with-eleventy-image-and-webc/)
 
 
