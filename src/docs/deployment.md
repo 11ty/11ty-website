@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Getting Started
   key: Deployment
-  order: 2.5
+  order: 7
 hosts:
   - name: Netlify
     url: https://app.netlify.com/
@@ -41,8 +41,8 @@ hosts:
   - name: Codeberg Pages
     url: https://codeberg.page/
     screenshotSize: medium
-  - name: Kinsta Application Hosting
-    url: https://kinsta.com/application-hosting/
+  - name: Kinsta
+    url: https://kinsta.com/
     screenshotSize: medium
 clis:
   - name: Netlify CLI
@@ -85,7 +85,7 @@ However, if you want to customize Eleventy to do your own optimizations, you may
 
 ## Providers
 
-Take a look at the list below for some ideas on where to deploy your Eleventy project. There are many deployment options available and this is not an exhaustive list.
+Take a look at the list below for some ideas on where to deploy your Eleventy project. There are many deployment options available and this is not meant to be an exhaustive list.
 
 <div class="sites-vert sites-vert--lg">
   <div class="lo-grid" style="--fl-gap-v: 5em;">
