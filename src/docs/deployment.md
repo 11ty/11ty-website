@@ -42,7 +42,7 @@ hosts:
     url: https://codeberg.page/
     screenshotSize: medium
   - name: Kinsta
-    url: https://kinsta.com/
+    url: https://kinsta.com/docs/eleventy-static-site-example/
     screenshotSize: medium
 clis:
   - name: Netlify CLI
