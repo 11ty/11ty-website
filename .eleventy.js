@@ -89,9 +89,16 @@ const shortcodes = {
 			viewport.width = 464;
 			viewport.height = 464;
 			zoom = "smaller";
+		} else if(preset === "opengraph") {
+			viewport.width = 1200;
+			viewport.height = 630;
+			zoom = "bigger";
 		}
 
-		let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(siteUrl)}/${preset}/1:1/${zoom ? `${zoom}/` : ""}`;
+		let screenshotUrl;
+		if(siteUrl) {
+			screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(siteUrl)}/${preset}/1:1/${zoom ? `${zoom}/` : ""}`;
+		}
 
 		// 11ty.dev
 		let overrides = {

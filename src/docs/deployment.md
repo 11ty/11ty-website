@@ -3,7 +3,17 @@ eleventyNavigation:
   parent: Getting Started
   key: Deployment
   order: 7
+featuredHosts:
+  - name: "Want your logo here? Contact us!"
+    url: ""
+    tags: [ Hosting Partner ]
+    class: sites-featured
+    screenshotSize: opengraph
 hosts:
+  - name: Cloudflare Pages
+    url: https://pages.cloudflare.com/
+    iconUrl: https://www.cloudflare.com/
+    screenshotSize: medium
   - name: Netlify
     url: https://app.netlify.com/
     screenshotSize: medium
@@ -15,10 +25,6 @@ hosts:
     screenshotSize: medium
   - name: GitHub Pages
     url: https://pages.github.com/
-    screenshotSize: medium
-  - name: Cloudflare Pages
-    url: https://pages.cloudflare.com/
-    iconUrl: https://www.cloudflare.com/
     screenshotSize: medium
   - name: GitLab Pages
     url: https://docs.gitlab.com/ee/user/project/pages/
@@ -87,21 +93,12 @@ However, if you want to customize Eleventy to do your own optimizations, you may
 
 Take a look at the list below for some ideas on where to deploy your Eleventy project. There are many deployment options available and this is not meant to be an exhaustive list.
 
-<div class="sites-vert sites-vert--lg">
+<div class="sites-vert sites-vert--lg sites--reverse sites--center">
   <div class="lo-grid" style="--fl-gap-v: 5em;">
-{%- for site in hosts %}
+{%- for site in featuredHosts %}
 {% include "site-card.njk" %}
 {%- endfor %}
-  </div>
-</div>
-
-### Use the Command Line
-
-Many hosts provide a command line utility to deploy your project. Here are some options:
-
-<div class="sites-vert sites-vert--lg">
-  <div class="lo-grid" style="--fl-gap-v: 5em;">
-{%- for site in clis %}
+{%- for site in hosts | shuffle %}
 {% include "site-card.njk" %}
 {%- endfor %}
   </div>
@@ -111,7 +108,7 @@ Many hosts provide a command line utility to deploy your project. Here are some 
 
 There are some great Web editors popping up that you can use to run and edit Eleventy projects online! Here are some options:
 
-<div class="sites-vert sites-vert--lg">
+<div class="sites-vert sites-vert--lg sites--reverse sites--center">
   <div class="lo-grid" style="--fl-gap-v: 5em;">
 {%- for site in webides %}
 {% set hideRelatedLinks = site.hideRelatedLinks %}

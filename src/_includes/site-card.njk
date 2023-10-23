@@ -1,5 +1,5 @@
-<div class="sites-site-vert{% if site.official %} sites-site-official{% endif %}" data-filter-tags="{% if siteData | lighthousePerfectScore %}perfectlh{% endif %}">
-  <a href="{{ site.demo or site.url }}" class="elv-externalexempt" title="{{ site.name }}">
+<div class="sites-site-vert{% if site.official %} sites-site-official{% endif %}{% if site.class %} {{ site.class }}{% endif %}" data-filter-tags="{% if siteData | lighthousePerfectScore %}perfectlh{% endif %}">
+  <a {% if site.url or site.demo %}href="{{ site.demo or site.url }}"{% endif %} class="elv-externalexempt" title="{{ site.name }}">
     <span class="sites-site-name">
       {%- if site.iconUrl or site.url %}
         {%- indieavatar site.iconUrl or site.url, "avatar-large" %}
@@ -15,7 +15,15 @@
       {%- endif -%}
     </span>
     <div class="sites-screenshot-container">
-      {%- getScreenshotHtml site.fileSlug, site.demo or site.url, null, site.screenshotSize -%}
+{%- if site.url or site.demo %}
+  {%- if site.screenshotOverride %}
+		<img alt="{{ site.screenshotOverride.alt }}" loading="lazy" decoding="async" class="sites-screenshot" src="{{ site.screenshotOverride.src }}" width="{{ site.screenshotOverride.width }}" height="{{ site.screenshotOverride.height }}">
+  {%- else %}
+    {%- getScreenshotHtml site.fileSlug, site.demo or site.url, null, site.screenshotSize, site.screenshotAspectRatio -%}
+  {%- endif %}
+{%- else %}
+    <img class="sites-screenshot">
+{%- endif %}
     </div>
 {%- if siteData | lighthouseGoodDataCheck %}
     <div class="sites-site-lighthouse">
@@ -53,6 +61,12 @@
 </ul>
 {%- endif %}
 
+{%- if site.tags -%}
+  {%- for tag in site.tags %}
+  <span class="sites-tag">{{ tag }}</span>
+  {%- endfor %}
+{%- endif %}
+
 {%- if site.description %}
   <div class="sites-site-description">
     {%- if site.official %}<strong>🎈 Official Starter</strong> · {% endif -%}
@@ -60,4 +74,5 @@
     {{ site.description }}
   </div>
 {%- endif %}
+
 </div>
