@@ -96,7 +96,7 @@ There are two main types of Headless CMS:
 
 ## Headless CMS Providers
 
-<div class="sites-vert sites-vert--lg sites--reverse sites--center">
+<div class="sites-vert sites-vert--md sites--reverse sites--center">
   <div class="lo-grid" style="--fl-gap-v: 5em;">
 {%- for site in featuredCmses %}
 {% include "site-card.njk" %}
