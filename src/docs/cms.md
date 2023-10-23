@@ -74,7 +74,7 @@ cmses:
 
 {% tableofcontents %}
 
-_Content Management Systems_ (CMS) allow you to add a web-based interface to your web site to edit the content, allowing both technical and non-technical folks the ability to update your web site on-the-go.
+_Content Management Systems_ (CMS) add a web-based interface to your site, allowing both technical and non-technical folks the ability to easily update the web site on-the-go.
 
 Eleventy (like most site generators) is not tightly coupled to any CMS and offers the flexibility to work with a wide variety of available industry and community options! Content Management Systems decoupled in this way are known as Headless.
 
