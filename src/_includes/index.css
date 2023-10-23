@@ -709,14 +709,3 @@ filter-container:defined form {
 .mb-8 {
 	margin-bottom: 4em;
 }
-
-/* Ukraine */
-@supports (filter: drop-shadow(0px 0px 0px #000)) {
-	.elv-default .elv-hero {
-		background: rgb(9,91,183);
-		background: linear-gradient(180deg, rgba(9,91,183,1) 0%, rgba(9,91,183,1) 50%, rgba(254,214,64,1) 50%, rgba(254,214,64,1) 100%);
-	}
-	.elv-default .elv-hero svg {
-		filter: drop-shadow(0px 0px 25px #304d75)
-	}
-}

@@ -349,6 +349,10 @@ ${text.trim()}
 	eleventyConfig.addPassthroughCopy("src/blog/pretty-atom-feed-v3.xsl");
 	eleventyConfig.addPassthroughCopy("src/favicon.ico");
 
+	eleventyConfig.addFilter("matchbannerlink", (links, text) => {
+		return links.find(entry => entry.label.indexOf(text) !== -1);
+	});
+
 	eleventyConfig.addFilter("lighthouseGoodDataCheck", function(data) {
 		return !!data && !("error" in data);
 	});

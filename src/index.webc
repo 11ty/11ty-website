@@ -25,10 +25,7 @@ let eleventyComputed = {
 	},
 };
 
-let bannerlinkOverride = {
-	label: "🇺🇦🇺🇦🇺🇦🇺🇦 Stand with Ukraine 🇺🇦🇺🇦🇺🇦🇺🇦",
-	url: "https://war.ukraine.ua/"
-};
+let bannerlinkOverride = "Stand with Ukraine";
 // </script>
 ---
 <script webc:setup>

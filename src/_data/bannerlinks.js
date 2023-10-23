@@ -20,7 +20,7 @@ module.exports = [
     url: "https://www.standagainsthatred.org/"
   },
   {
-    label: "Stand with Ukraine 🇺🇦",
+    label: "🇺🇦🇺🇦🇺🇦 Stand with Ukraine 🇺🇦🇺🇦🇺🇦",
     url: "https://war.ukraine.ua/"
   }
 ];

@@ -1,5 +1,5 @@
 <header class="elv-layout elv-layout-full elv-header{% if headerClass %} {{ headerClass }}{% endif %}">
-	{%- set bannerLink = bannerlinkOverride %}
+	{%- set bannerLink = bannerlinks | matchbannerlink(bannerlinkOverride) %}
 	{%- if not bannerLink %}
 	{%- set bannerLink = bannerlinks | randompick %}
 	{%- endif %}
