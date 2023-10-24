@@ -13,7 +13,7 @@ let domain = process.env.URL || "https://www.11ty.dev";
 let eleventyComputed = {
 	social: {
 		imgsrc: function({ domain, page }) {
-			return `https://v1.screenshot.11ty.dev/${encodeURIComponent(domain + page.url)}/opengraph/`;
+			return `https://v1.screenshot.11ty.dev/${encodeURIComponent(domain + page.url)}/opengraph/_cachebust/`;
 		},
 		imgalt: function({ domain, page }) {
 			return `A screenshot of the web page at ${domain + page.url}`;
