@@ -69,6 +69,10 @@ cmses:
     url: https://getpublii.com/
     screenshotSize: medium
     tags: [ Git-based ]
+  - name: Directus
+    url: https://directus.io/
+    screenshotSize: medium
+    tags: [ API ]
 ---
 # Using a CMS
 
