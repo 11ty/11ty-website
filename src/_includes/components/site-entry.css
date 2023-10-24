@@ -103,14 +103,15 @@
   --lo-c-minwidth: 10em;
   --lo-grid-repeat: auto-fill;
 }
-.sites-vert--md > .lo-grid {
-  --lo-c-minwidth: 8.5em; /* 136px /16 */
-}
+.sites-vert--md > .lo-grid,
 .sites-vert--lg > .lo-grid {
   --lo-c-minwidth: 7em;
 }
 
 @media (min-width: 28.125em) { /* 450px /16 */
+	.sites-vert--md > .lo-grid {
+		--lo-c-minwidth: 8.5em; /* 136px /16 */
+	}
   .sites-vert--lg > .lo-grid {
     --lo-c-minwidth: 10em; /* 160px /16 */
   }
@@ -248,5 +249,8 @@
 }
 .sites-vert:not(:has(.sites-featured)) .sites-site-name {
 	font-weight: 700;
+}
+.sites-vert:has(.sites-featured) .sites-site-vert:not(.sites-featured) .avatar-indieweb {
+	display: none;
 }
 

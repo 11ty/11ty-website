@@ -93,7 +93,7 @@ However, if you want to customize Eleventy to do your own optimizations, you may
 
 Take a look at the list below for some ideas on where to deploy your Eleventy project. There are many deployment options available and this is not meant to be an exhaustive list.
 
-<div class="sites-vert sites-vert--lg sites--reverse sites--center">
+<div class="sites-vert sites-vert--md sites--reverse sites--center">
   <div class="lo-grid" style="--fl-gap-v: 5em;">
 {%- for site in featuredHosts %}
 {% include "site-card.njk" %}
@@ -108,7 +108,7 @@ Take a look at the list below for some ideas on where to deploy your Eleventy pr
 
 There are some great Web editors popping up that you can use to run and edit Eleventy projects online! Here are some options:
 
-<div class="sites-vert sites-vert--lg sites--reverse sites--center">
+<div class="sites-vert sites-vert--md sites--reverse sites--center">
   <div class="lo-grid" style="--fl-gap-v: 5em;">
 {%- for site in webides %}
 {% set hideRelatedLinks = site.hideRelatedLinks %}
