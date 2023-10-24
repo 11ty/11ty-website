@@ -1,11 +1,12 @@
 // https://blog.npmjs.org/post/78719826768/download-counts-are-back
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
+let NPM_PKG_NAME = "@11ty/eleventy";
 let START_YEAR = 2018;
 
 async function getDownloadsForYear(year) {
 	let isCurrentYear = (new Date).getFullYear() === year;
-	let url = `https://api.npmjs.org/downloads/point/${year}-01-01:${year}-12-31/@11ty/eleventy`;
+	let url = `https://api.npmjs.org/downloads/point/${year}-01-01:${year}-12-31/${NPM_PKG_NAME}`;
 	let json = await EleventyFetch(url, {
 		type: "json",
 		duration: isCurrentYear ? "1d" : "*",
