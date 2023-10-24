@@ -12,7 +12,7 @@
 	<li><a href="https://github.com/11ty/eleventy/" class="elv-externalexempt elv-nav-light" title="{{ github.stargazers }}">{{ github.stargazers | humanReadableNum }} Stars</a></li>
 {% endif %}
 {% if npm and npm.downloads %}
-	<li><a href="https://www.npmjs.com/package/@11ty/eleventy" class="elv-externalexempt elv-nav-light">{{ npm.downloads | humanReadableNum }} Downloads (Last Year)</a></li>
+	<li><a href="https://www.npmjs.com/package/@11ty/eleventy" class="elv-externalexempt elv-nav-light">{{ npm.downloads | humanReadableNum }} Downloads</a></li>
 {% endif %}
 {% if opencollective and opencollective.backers %}
 	<li><a href="/docs/supporters/" class="elv-externalexempt elv-nav-light">{{ opencollective.backers | humanReadableNum }} Backers</a></li>
