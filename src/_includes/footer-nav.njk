@@ -12,7 +12,17 @@
 	<li><a href="https://github.com/11ty/eleventy/" class="elv-externalexempt elv-nav-light" title="{{ github.stargazers }}">{{ github.stargazers | humanReadableNum }} Stars</a></li>
 {% endif %}
 {% if npm and npm.downloads %}
-	<li><a href="https://www.npmjs.com/package/@11ty/eleventy" class="elv-externalexempt elv-nav-light">{{ npm.downloads | humanReadableNum }} Downloads</a></li>
+	<li>
+		<is-land on:idle on:visible>
+			<template data-island="once">
+				<script src="/js/intl-number.js"></script>
+			</template>
+			<a href="https://www.npmjs.com/package/@11ty/eleventy" class="elv-externalexempt elv-nav-light">
+				<intl-number>{{ npm.downloads | commaNumber }}</intl-number>
+				Downloads
+			</a>
+		</is-land>
+	</li>
 {% endif %}
 {% if opencollective and opencollective.backers %}
 	<li><a href="/docs/supporters/" class="elv-externalexempt elv-nav-light">{{ opencollective.backers | humanReadableNum }} Backers</a></li>

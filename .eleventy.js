@@ -335,7 +335,8 @@ ${text.trim()}
 	// WebC migration: TODO remove this after full conversion
 	eleventyConfig.addPassthroughCopy({
 		"src/_includes/components/throbber.js": "js/throbber.js",
-		"src/_includes/components/throbber.css": "css/throbber.css"
+		"src/_includes/components/throbber.css": "css/throbber.css",
+		"src/_includes/components/intl-number.js": "js/intl-number.js",
 	});
 
 	eleventyConfig.addPassthroughCopy({

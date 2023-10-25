@@ -69,7 +69,7 @@ a[href^="https://www.youtube.com"]:before {
 a[href^="https://fediverse.zachleat.com"]:before,
 a[href^="https://fosstodon.org"]:before {
 	border-radius: 0.3125em; /* 5px /16 */
-	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fjoinmastodon.org%2F/");
+	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ffosstodon.org%2F/");
 }
 a[href^="https://github.com"]:before {
 	border-radius: 7px;

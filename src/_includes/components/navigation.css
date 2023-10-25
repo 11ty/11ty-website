@@ -50,22 +50,29 @@
 .elv-docs .elv-nav-docs-only.spacer {
 	display: none;
 }
+.elv-docs .elv-nav-sociallink-text {
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+@media (max-width: 24.9375em) { /* 399px */
+	.elv-docs .elv-nav-header > .fl > *:has(.elv-nav-sociallink-text) {
+		flex-basis: auto;
+	}
+}
 
-@media (min-width: 62.5em) { /* 1000px */
+@media (min-width: 75em) { /* 1200px */
 	.elv-docs .elv-nav-docs-only.spacer {
 		display: inherit;
 	}
 	.elv-docs .elv-nav-header > .fl .spacer {
 		flex-grow: 999;
 	}
-
-	/* Social links */
-	.elv-docs .elv-nav-sociallink:before {
-		display: block;
-		text-align: center;
-		margin: 0 auto;
-	}
 	.elv-docs .elv-nav-sociallink-text {
-		font-size: 0.875em; /* 14px /16 */
+		position: static;
+		overflow: visible;
+		clip: auto;
 	}
 }
