@@ -397,6 +397,7 @@ li ol {
 }
 .list-bare > li {
 	padding: 0;
+	line-height: 2;
 }
 .list-bare-desc {
 	display: block;

@@ -100,3 +100,16 @@ a[href^="https://youtube.com"].lty-playbtn:before,
 .facepile a[href^="https://fediverse.zachleat.com"]:before {
 	display: none;
 }
+
+/* Hide duplicate images */
+a[href^="https://www.youtube.com"]:not(.elv-externalexempt) .avatar,
+a[href^="https://youtube.com"]:not(.elv-externalexempt) .avatar,
+a[href^="https://github.com"]:not(.elv-externalexempt) .avatar,
+a[href^="https://gitlab.com"]:not(.elv-externalexempt) .avatar,
+a[href^="https://fediverse.zachleat.com"]:not(.elv-externalexempt) .avatar,
+a[href^="https://fosstodon.org"]:not(.elv-externalexempt) .avatar,
+a[href^="https://wikipedia.org"]:not(.elv-externalexempt) .avatar,
+a[href^="/blog/discord/"]:not(.elv-externalexempt) .avatar,
+a[href^="https://en.wikipedia.org"]:not(.elv-externalexempt) .avatar {
+	display: none;
+}

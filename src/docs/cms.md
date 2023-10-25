@@ -119,6 +119,15 @@ _The list above is not meant to be exhaustive._
 
 ### From the Community
 
-- {% indieweblink "CMS category on 11tybundle.dev", "https://11tybundle.dev/categories/cms/" %} curated by Bob Monsour
-- {% indieweblink "Headless CMS List on Jamstack.org", "https://jamstack.org/headless-cms/" %}
-- {% indieweblink "How to get started with the 11ty (Eleventy) Blog Starter", "https://www.sanity.io/guides/how-to-get-started-with-the-11ty-eleventy-blog-starter" %}
+<ul class="list-bare">
+	<li>{% indieweblink "Headless CMS List on Jamstack.org", "https://jamstack.org/headless-cms/" %}</li>
+	<li>{% indieweblink "How to get started with the 11ty (Eleventy) Blog Starter", "https://www.sanity.io/guides/how-to-get-started-with-the-11ty-eleventy-blog-starter" %}</li>
+</ul>
+
+**Courtesy of [11tybundle.dev](https://11tybundle.dev/categories/cms/)**  curated by {% indieweblink "Bob Monsour", "https://www.bobmonsour.com/" %}
+
+<ul class="list-bare">
+{%- for link in bundle %}
+	<li>{% indieweblink link.Title, link.Link %} — <em>{{ link.Author }} ({{ link.Date | newsDate("yyyy") }})</em></li>
+{%- endfor %}
+</ul>
