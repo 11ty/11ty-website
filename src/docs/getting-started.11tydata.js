@@ -1,7 +1,7 @@
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
 async function getData() {
-	let url = `https://11tybundle.dev/api/cms.json`;
+	let url = `https://11tybundle.dev/api/getting-started.json`;
 	let json = await EleventyFetch(url, {
 		type: "json",
 		duration: "1d",
@@ -33,7 +33,7 @@ module.exports = async function() {
 			return Promise.reject(e);
 		}
 
-		console.log( "Failed getting CMS resources from 11tybundle.dev." );
+		console.log( "Failed getting Getting Started resources from 11tybundle.dev." );
 		return { bundle: [] };
 	}
 };

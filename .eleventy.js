@@ -724,6 +724,10 @@ ${text.trim()}
 		return num ? arr.slice(0, num) : arr;
 	});
 
+	eleventyConfig.addFilter("headafter", (arr, num) => {
+		return num ? arr.slice(num) : arr;
+	});
+
 	eleventyConfig.addFilter("supportersFacepile", (supporters) => {
 		return supporters.filter(supporter => supporter.status === 'ACTIVE' && !supporter.hasDefaultAvatar && supporter.tier && supporter.tier.slug !== "gold-sponsor");
 	});
