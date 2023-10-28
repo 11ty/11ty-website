@@ -39,7 +39,7 @@ Here are a few ideas:
 
 ## How does it work?
 
-If you don’t yet have an Eleventy project, go through the [Getting Started Guide first](/docs/getting-started/) and come back here when you’re done!
+If you don’t yet have an Eleventy project, go through the [Get Started Guide first](/docs/get-started/) and come back here when you’re done!
 
 ### 1. Installation
 

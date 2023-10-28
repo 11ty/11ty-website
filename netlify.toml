@@ -2,26 +2,7 @@
 publish = "_site"
 command = "npm run build-production"
 
-[[redirects]]
-# Web redirect
-from = "/activity/"
-to = "/firehose/"
-status = 302
-force = true
-
-[[redirects]]
-# Feed redirect
-from = "/follow/"
-to = "/firehose/firehose.rss"
-status = 302
-force = true
-
-[[redirects]]
-# Feed redirect
-from = "/follow/follow.rss"
-to = "/firehose/firehose.rss"
-status = 302
-force = true
+## Permanent redirects
 
 [[redirects]]
 from = "/speedlify/*"
@@ -44,6 +25,34 @@ force = true
 [[redirects]]
 from = "/twitter"
 to = "https://twitter.com/eleven_ty"
+status = 301
+force = true
+
+## Feed redirects
+
+[[redirects]]
+from = "/follow/"
+to = "/firehose/firehose.rss"
+status = 301
+force = true
+
+[[redirects]]
+from = "/follow/follow.rss"
+to = "/firehose/firehose.rss"
+status = 301
+force = true
+
+## Stuff has moved Redirects
+
+[[redirects]]
+from = "/docs/getting-started/"
+to = "/docs/get-started/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/activity/"
+to = "/firehose/"
 status = 301
 force = true
 

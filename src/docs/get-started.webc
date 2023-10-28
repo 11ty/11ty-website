@@ -1,11 +1,12 @@
 ---
 eleventyNavigation:
   key: Getting Started
+  title: Get Started
   order: 2
 communityLinksKey: getting-started
 overrideCommunityLinks: true
 ---
-<h1>Getting Started</h1>
+<h1>Get Started</h1>
 
 <template webc:type="11ty" 11ty:type="njk" webc:raw webc:nokeep>
 	{% callout %}
