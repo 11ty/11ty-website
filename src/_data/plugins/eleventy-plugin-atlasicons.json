@@ -1,0 +1,5 @@
+{
+  "npm": "the npm package name of your plugin",
+  "author": "Your Twitter username",
+  "description": "The shortcode enables the embedding of atlas-icons as inline SVG icon into templates."
+}
