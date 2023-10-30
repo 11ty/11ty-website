@@ -88,3 +88,7 @@ _Warning: while Nunjucks and Liquid syntax are similar, the following example wi
 ## Advanced: Customize Front Matter Parsing {% addedin "0.9.0" %}
 
 Configure [front matter for customized excerpts, TOML parsing, and more](/docs/data-frontmatter-customize/).
+
+## Community Resources
+
+{% include "11tybundle.njk" %}

@@ -192,21 +192,6 @@ Congratulations—you made something with Eleventy! Now put it to work:
 
 
 <template webc:type="11ty" 11ty:type="njk" webc:raw webc:nokeep>
-{% if bundle %}
 <h3>More From the Community</h3>
-<p>×{{ bundle | length }} resources courtesy of <strong><a href="https://11tybundle.dev/categories/getting-started/">11tybundle.dev</a></strong> curated by {% indieweblink "Bob Monsour", "https://www.bobmonsour.com/" %}</p>
-<ul class="list-bare">
-	{%- for link in bundle | head(5) %}
-	<li>{% indieweblink link.Title, link.Link %} — <em>{{ link.Author }} ({{ link.Date | newsDate("yyyy") }})</em></li>
-	{%- endfor %}
-</ul>
-<details>
-	<summary>Expand to see {{ (bundle | length) - 5 }} more resources.</summary>
-	<ul class="list-bare">
-		{%- for link in bundle | headafter(5) %}
-		<li>{% indieweblink link.Title, link.Link %} — <em>{{ link.Author }} ({{ link.Date | newsDate("yyyy") }})</em></li>
-		{%- endfor %}
-	</ul>
-</details>
-{% endif %}
+{% include "11tybundle.njk" %}
 </template>
