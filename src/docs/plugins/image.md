@@ -762,7 +762,7 @@ With remotely hosted images, you may also need to supply the dimensions when usi
 }
 ```
 
-## Community Resources
+## From the Community
 
 <div class="elv-community" id="community-resources">
   {%- include "community-contributed.njk" -%}

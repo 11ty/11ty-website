@@ -124,7 +124,7 @@ There are some great Web editors popping up that you can use to run and edit Ele
   {%- youtubeEmbed "JCQQgtOcjH4", "New deployment docs (Weekly №2)", "72" -%}
 </div>
 
-## Community Resources
+## From the Community
 
 <ul class="list-bare">
 	<li>{% indieweblink "GitHub Pages Tutorial", "https://snook.ca/archives/servers/deploying-11ty-to-gh-pages" %} by {% avatarlocalcache "twitter", "snookca" %}Jonathan Snook</li>

@@ -89,6 +89,6 @@ _Warning: while Nunjucks and Liquid syntax are similar, the following example wi
 
 Configure [front matter for customized excerpts, TOML parsing, and more](/docs/data-frontmatter-customize/).
 
-## Community Resources
+## From the Community
 
 {% include "11tybundle.njk" %}

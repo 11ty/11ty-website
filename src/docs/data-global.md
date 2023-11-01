@@ -63,6 +63,6 @@ Read more about using `module.exports` values in arbitrary [JavaScript data file
 
 {% include "datasources.md" %}
 
-## Community Resources
+## From the Community
 
 {% include "11tybundle.njk" %}
