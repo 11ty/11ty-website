@@ -69,13 +69,12 @@
 	max-width: 28em;
 }
 .supporters-gold-cloudcannon svg {
-	color: #034AD8;
+	background-color: #034AD8;
+	color: #fff;
+	padding: 1.25em;
+	border-radius: .5em;
 }
-@media (prefers-color-scheme: dark) {
-	.supporters-gold-cloudcannon svg {
-		color: #fff;
-	}
-}
+
 .supporters-gold-transloadit svg {
 	color: #0D1419;
 }
