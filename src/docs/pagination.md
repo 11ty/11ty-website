@@ -789,3 +789,7 @@ Now `collections.myCollection` will have both output pages in the collection arr
 <div class="youtube-related">
   {%- youtubeEmbed "kUC87Zr0dKg", "Eleventy Build went from 54s to 17s—Pagination Memory/Performance Wins 🏆 (Weekly №10)", "344" -%}
 </div>
+
+## Community Resources
+
+{% include "11tybundle.njk" %}

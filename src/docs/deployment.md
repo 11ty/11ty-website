@@ -126,9 +126,13 @@ There are some great Web editors popping up that you can use to run and edit Ele
 
 ## Community Resources
 
-- {% indieweblink "GitHub Pages Tutorial", "https://snook.ca/archives/servers/deploying-11ty-to-gh-pages" %} by {% avatarlocalcache "twitter", "snookca" %}Jonathan Snook
-- [GitLab Pages Sample Project](https://gitlab.com/bkmgit/11ty) by Benson Muite
-- {% indieweblink "Azure Static Web Apps Tutorial", "https://squalr.us/2021/05/deploying-an-11ty-site-to-azure-static-web-apps/" %} by {% avatarlocalcache "twitter", "chadschulz" %} Chad Schulz
-- {% indieweblink "Hosting Eleventy on GitHub Pages", "https://quinndombrowski.com/blog/2022/05/07/hosting-eleventy-on-github-pages/" %} by {% avatarlocalcache "twitter", "quinnanya" %}Quinn Dombrowski
-- {% indieweblink "Deploying Eleventy using Buddy CI/CD", "https://buddy.works/guides/buddy-eleventy" %} by {% avatarlocalcache "twitter", "palmiak_fp" %}Maciek Palmowski
-- [GitHub Action for Eleventy](https://github.com/marketplace/actions/eleventy-action) by {% communityavatar "TartanLlama", "Sy Brand" %}@TartanLlama
+<ul class="list-bare">
+	<li>{% indieweblink "GitHub Pages Tutorial", "https://snook.ca/archives/servers/deploying-11ty-to-gh-pages" %} by {% avatarlocalcache "twitter", "snookca" %}Jonathan Snook</li>
+	<li>{% indieweblink "GitLab Pages Sample Project", "https://gitlab.com/bkmgit/11ty" %} by Benson Muite</li>
+	<li>{% indieweblink "Azure Static Web Apps Tutorial", "https://squalr.us/2021/05/deploying-an-11ty-site-to-azure-static-web-apps/" %} by Chad Schulz</li>
+	<li>{% indieweblink "Deploying Eleventy using Buddy CI/CD", "https://buddy.works/guides/buddy-eleventy" %} by Maciek Palmowski</li>
+	<li>{%indieweblink "GitHub Action for Eleventy", "https://github.com/marketplace/actions/eleventy-action" %} by {% communityavatar "TartanLlama", "Sy Brand" %}@TartanLlama</li>
+</ul>
+
+
+{% include "11tybundle.njk" %}

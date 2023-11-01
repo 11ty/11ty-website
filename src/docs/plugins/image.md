@@ -5,6 +5,7 @@ eleventyNavigation:
   order: -.2
   excerpt: A utility to resize and generate images.
 communityLinksKey: image
+overrideCommunityLinks: true
 ---
 {% tableofcontents %}
 
@@ -760,3 +761,11 @@ With remotely hosted images, you may also need to supply the dimensions when usi
 	}
 }
 ```
+
+## Community Resources
+
+<div class="elv-community" id="community-resources">
+  {%- include "community-contributed.njk" -%}
+</div>
+
+{% include "11tybundle.njk" %}

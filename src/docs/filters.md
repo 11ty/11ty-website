@@ -170,3 +170,7 @@ Note that [Nunjucks `addNunjucksAsyncFilter`](/docs/languages/nunjucks/#asynchro
 {% callout "info" %}
 Markdown files are pre-processed as Liquid templates by default—any filters available in Liquid templates are also available in Markdown files. Likewise, if you <a href="/docs/config/#default-template-engine-for-markdown-files">change the template engine for Markdown files</a>, the filters available for that templating language will also be available in Markdown files.
 {% endcallout %}
+
+## From the Community
+
+{% include "11tybundle.njk" %}

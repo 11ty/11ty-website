@@ -106,3 +106,7 @@ Be careful relying on the default `date` associated with a piece of content. By 
 {% callout "info", "md" -%}
   {% addedin "1.0.1" %} The new `date: "git Last Modified"` feature will resolve this issue! Source control dates are available and will be consistent on most Continuous Integration servers. Read more at [_Setting a Content Date in Front Matter_](#setting-a-content-date-in-front-matter).
 {%- endcallout %}
+
+## Community Resources
+
+{% include "11tybundle.njk" %}

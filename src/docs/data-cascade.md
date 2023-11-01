@@ -16,10 +16,6 @@ In Eleventy, data is merged from multiple different sources before the template 
 
 {% include "datasources.md" %}
 
-## Community Resources
-
-{% include "community-contributed.njk" %}
-
 ## Example
 
 {% codetitle "my-template.md" %}
@@ -65,3 +61,9 @@ The data cascade results in the following data when `my-template.md` is rendered
 ```
 
 By default in v1.0, Eleventy does a deep data merge to combine Object literals and Arrays. If you want to opt-out of this behavior and revert to a simple top level merge (`Object.assign`) from the different data sources, you can turn off [Data Deep Merge](/docs/data-deep-merge/). You can override this on a per-property basis too—read more at the [Data Deep Merge documentation](/docs/data-deep-merge/).
+
+## Community Resources
+
+{% include "community-contributed.njk" %}
+
+{% include "11tybundle.njk" %}
