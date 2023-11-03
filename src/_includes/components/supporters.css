@@ -1,7 +1,6 @@
 .elv-possum-pic + .supporters-avatar {
 	display: none;
 	position: absolute;
-	opacity: .9;
 	width: 5vw;
 	height: auto;
 	margin: 0;
@@ -9,9 +8,13 @@
 @media (min-width: 41.875em) { /* 670px */
 	.elv-possum-pic + .supporters-avatar {
 		display: block;
-		top: 1.0625rem; /* 17px /16 */
-		right: 2.1875rem; /* 35px /16 */
-		width: 2rem; /* 32px /16 */
+		top: 0.8625rem;
+		right: 1.8875rem;
+		width: 2.9rem;
+		object-fit: cover;
+		height: 3.8em;
+		transform: rotate(5.2deg);
+		border: 2px solid #352a24;
 	}
 }
 .elv-header-default .elv-possum-pic + .supporters-avatar {
@@ -61,7 +64,7 @@
 	flex-grow: 1.5;
 }
 .supporters-gold-nordhealth {
-  flex-grow: 1.8;
+	flex-grow: 1.8;
 }
 .supporters-gold-cloudcannon {
 	flex-grow: 1.7;
@@ -87,7 +90,7 @@
 	.elv-docs .supporters-gold-sanity {
 		flex-grow: 1;
 	}
-  .elv-docs .supporters-gold-nordhealth {
+	.elv-docs .supporters-gold-nordhealth {
 		flex-grow: 1.3;
 	}
 }

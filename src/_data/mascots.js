@@ -33,5 +33,12 @@ module.exports = [
 		name: "(Not yet named)",
 		author: "Geri Coady",
 		description: "July 2021. Our second commission! The community has grown."
+	},
+	{
+		url: "/blog/new-mascot-from-david-neal/",
+		image: "./src/img/mascots/david.svg",
+		name: "(Not yet named)",
+		author: "David Neal",
+		description: "November 2023. Our third commission! We’re getting smarter."
 	}
 ]

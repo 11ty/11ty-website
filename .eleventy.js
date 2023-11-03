@@ -75,7 +75,7 @@ const shortcodes = {
 			loading: "lazy",
 			decoding: "async",
 			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
-			class: classes,
+			class: classes || "",
 		});
 	},
 	getScreenshotHtml(siteSlug, siteUrl, sizes, preset = "small") {
