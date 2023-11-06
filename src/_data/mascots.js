@@ -35,7 +35,7 @@ module.exports = [
 		description: "July 2021. Our second commission! The community has grown."
 	},
 	{
-		url: "/blog/new-mascot-from-david-neal/",
+		url: "/blog/mascot-david/",
 		image: "./src/img/mascots/david.svg",
 		name: "(Not yet named)",
 		author: "David Neal",
