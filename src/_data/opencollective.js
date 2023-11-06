@@ -15,6 +15,7 @@ const FilteredProfiles = [
 	"forexbrokerz", // crypto
 	"viewality-media", // broken site on wix?
 	"aviator-game1", // gambling
+	"igrovye-avtomaty", // gambling
 ];
 
 function isMonthlyOrYearlyOrder(order) {
