@@ -62,7 +62,7 @@ const shortcodes = {
 	},
 	image: async function(filepath, alt, widths, classes, sizes) {
 		let options = {
-			formats: ["avif", "webp", "png"],
+			formats: process.env.NODE_ENV === "production" ? ["avif", "webp"] : ["webp"],
 			widths: widths || [null],
 			urlPath: "/img/built/",
 			outputDir: "_site/img/built/",
@@ -109,7 +109,7 @@ const shortcodes = {
 		}
 
 		let options = {
-			formats: ["jpeg"], // we don’t use AVIF here because it was a little too slow!
+			formats: ["webp"], // format here is irrelevant
 			widths: [null], // 260-440 in layout
 			urlFormat: function() {
 				return screenshotUrl;
@@ -153,12 +153,12 @@ const shortcodes = {
 		}
 
 		let url = `https://avatars.githubusercontent.com/${username}?s=66`;
-		return `<img src="https://v1.image.11ty.dev/${encodeURIComponent(url)}/jpeg/66/" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
+		return `<img src="https://v1.image.11ty.dev/${encodeURIComponent(url)}/webp/66/" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
 	},
 	getOpenCollectiveAvatarHtml(url, username = "") {
 		let alt = `Open Collective Avatar for ${username}`;
 
-		return `<img src="https://v1.image.11ty.dev/${encodeURIComponent(url)}/jpeg/66/" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
+		return `<img src="https://v1.image.11ty.dev/${encodeURIComponent(url)}/webp/66/" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
 	},
 };
 
@@ -223,7 +223,7 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.addPlugin(eleventyImagePlugin, {
 		// options via https://www.11ty.dev/docs/plugins/image/#usage
-		formats: ["avif", "webp", "jpeg"],
+		formats: process.env.NODE_ENV === "production" ? ["avif", "webp"] : ["webp"],
 
 		urlPath: "/img/built/",
 
