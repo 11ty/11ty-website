@@ -124,6 +124,9 @@ const Image = require("@11ty/eleventy-img");
 		// skip raster formats if SVG available
 		svgShortCircuit: false,
 
+		// SVG file sizes can report the compressed size
+		svgCompressionSize: "",
+
 		// allow svg to upscale beyond supplied dimensions?
 		svgAllowUpscale: true,
 
@@ -192,6 +195,11 @@ If using SVG output (the input format is SVG and `svg` is added to your `formats
 
 * `svgShortCircuit: false` (default)
 * `svgShortCircuit: true`
+* `svgShortCircuit: "size"` {% addedin "Image v3.1.8" %}
+
+Using `svgShortCircuit: "size"` means that raster image format entries will only be thrown out if the optimized raster size is larger than the SVG. This helps with large SVG images that compress to smaller raster sizes at smaller widths and will prefer the SVG over raster formats when the SVG file size is smaller.
+
+To use Brotli compressed SVG sizes when making file size comparisons, use the `svgCompressionSize: "br"` option  {% addedin "Image v3.1.8" %}.
 
 #### Allow SVG to upscale
 
