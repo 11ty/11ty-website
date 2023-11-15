@@ -201,6 +201,13 @@ Using `svgShortCircuit: "size"` means that raster image format entries will only
 
 To use Brotli compressed SVG sizes when making file size comparisons, use the `svgCompressionSize: "br"` option  {% addedin "Image v3.1.8" %}.
 
+##### Related:
+
+<ul class="list-bare">
+	<li>{% indieweblink "A New Technique for Image Optimization: SVG Short Circuiting", "https://www.zachleat.com/web/svg-short-circuit/" %} <em>({{ "2023-11-15" | newsDate("yyyy") }})</em></li>
+	<li>{% indieweblink "Automatically optimize your images with Eleventy Image and CloudCannon", "https://cloudcannon.com/blog/automatically-optimize-your-images-with-eleventy-image-and-cloudcannon/" %} <em>({{ "2023-11-14" | newsDate("yyyy") }})</em></li>
+</ul>
+
 #### Allow SVG to upscale
 
 While we do prevent raster images from upscaling (and filter upscaling `widths` from the output), you can optionally enable SVG input to upscale to larger sizes when converting to raster format.
