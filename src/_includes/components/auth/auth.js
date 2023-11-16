@@ -111,7 +111,7 @@ class EleventySupporter {
     let avatar = document.createElement("img");
     avatar.classList.add("supporters-avatar", "avatar");
 
-    let avatarUrl = `https://v1.image.11ty.dev/${encodeURIComponent(user.image)}/webp/66/`;
+    let avatarUrl = `https://v1.image.11ty.dev/${encodeURIComponent(user.image)}/jpeg/66/`;
     avatar.setAttribute("src", avatarUrl);
     avatar.setAttribute("alt", `${user.name}’s Avatar`);
     avatar.setAttribute("onerror", "this.remove()");
