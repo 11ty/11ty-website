@@ -176,6 +176,7 @@ Congratulations—you made something with Eleventy! Now put it to work:
 <sites-list @size="lg">
 	<site-card @url="https://www.youtube.com/watch?v=kzf9A9tkkl4" @name="6 Minutes to Build a Blog from Scratch with Eleventy" @date="2023-03-20" @medialength="6m"></site-card>
 	<site-card @url="https://github.com/11ty/eleventy-base-blog" @name="eleventy-base-blog (Official Starter Project)" @date=""></site-card>
+	<site-card @url="https://www.filamentgroup.com/lab/build-a-blog/" @name="Build your own Blog from Scratch using Eleventy" @date="2018-12-26"></site-card>
 </sites-list>
 
 <p>You can also use one of the many <a href="/docs/starter/"><strong>Starter Projects</strong></a> or read some of our excellent Community-contributed <a href="/docs/tutorials/"><strong>Tutorials</strong></a> (a curated few of which are included below):</p>
