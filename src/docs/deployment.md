@@ -62,13 +62,6 @@ classicHosts:
     url: https://neocities.org/
     screenshotSize: medium
     skipIcon: true
-clis:
-  - name: Netlify CLI
-    url: https://www.netlify.com/products/cli/
-    screenshotSize: medium
-  - name: Vercel CLI
-    url: https://vercel.com/cli
-    screenshotSize: medium
 webides:
   - name: Glitch
     url: https://glitch.com/
@@ -85,11 +78,9 @@ webides:
 
 Now that you’ve built a web site with Eleventy _(even if it’s one HTML page!)_ you might be ready to put it on the web for everyone to see! There are a bunch of different ways to do it!
 
-### Production-Ready by Default
+A standard Eleventy build (e.g. [running `npx @11ty/eleventy`](/docs/usage/)) is a **production-ready build by default**. Eleventy doesn’t change its build behavior internally for development versus production.
 
-A standard Eleventy build (e.g. [running `npx @11ty/eleventy`](/docs/usage/)) is a production-ready build. Eleventy doesn’t change its build behavior internally for development versus production.
-
-If you want to customize Eleventy to do your own optimizations, you may do so with [environment variables](/docs/environment-vars/).
+If you want to customize Eleventy to do your own local development/production optimizations, [environment variables](/docs/environment-vars/) are a common solution to accomplish that goal.
 
 ## Providers
 
