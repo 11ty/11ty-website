@@ -17,9 +17,6 @@ hosts:
   - name: Netlify
     url: https://app.netlify.com/
     screenshotSize: medium
-  - name: Netlify Drop
-    url: https://app.netlify.com/drop
-    screenshotSize: medium
   - name: Vercel
     url: https://vercel.com/signup
     screenshotSize: medium
@@ -35,8 +32,8 @@ hosts:
   - name: Azure Static Web Apps
     url: https://azure.microsoft.com/en-us/services/app-service/static/
     screenshotSize: medium
-  - name: Layer0
-    url: https://docs.layer0.co/guides/eleventy
+  - name: Edgio
+    url: https://docs.edg.io/guides/v7/sites_frameworks/getting_started/eleventy
     screenshotSize: medium
   - name: Begin
     url: https://begin.com/
@@ -50,6 +47,19 @@ hosts:
   - name: Kinsta
     url: https://kinsta.com/
     screenshotSize: medium
+  - name: CloudCannon
+    url: https://cloudcannon.com/hosting/
+    screenshotSize: medium
+classicHosts:
+  - name: NearlyFreeSpeech
+    url: https://www.nearlyfreespeech.net/
+    screenshotSize: medium
+  - name: Netlify Drop
+    url: https://app.netlify.com/drop
+    screenshotSize: medium
+  - name: Neocities
+    url: https://neocities.org/
+    screenshotSize: medium
 clis:
   - name: Netlify CLI
     url: https://www.netlify.com/products/cli/
@@ -60,6 +70,10 @@ clis:
 webides:
   - name: Glitch
     url: https://glitch.com/
+    screenshotSize: medium
+    hideRelatedLinks: true
+  - name: Stackblitz
+    url: https://stackblitz.com/
     screenshotSize: medium
     hideRelatedLinks: true
 ---
@@ -93,6 +107,25 @@ However, if you want to customize Eleventy to do your own optimizations, you may
 
 Take a look at the list below for some ideas on where to deploy your Eleventy project. There are many deployment options available and this is not meant to be an exhaustive list.
 
+### Classic Web Hosts
+
+Eleventy can work with any web host that supports static files! With these hosts deployment is not automatically triggered for you, so you’ll need to upload your [Eleventy output directory](/docs/config/#output-directory) (usually `_site`) to the host manually. This is a great place to start if you’re not familiar with Source Control or Git/GitHub.
+
+<div class="sites-vert sites-vert--md sites--reverse sites--center">
+  <div class="lo-grid" style="--fl-gap-v: 5em;">
+{%- for site in featuredHosts %}
+{% include "site-card.njk" %}
+{%- endfor %}
+{%- for site in classicHosts | shuffle %}
+{% include "site-card.njk" %}
+{%- endfor %}
+  </div>
+</div>
+
+### Jamstack Providers
+
+Jamstack providers can trigger your Eleventy build command automatically when you commit a file to your source control repository (GitHub, GitLab, Codeberg, etc.) and deploy [Eleventy’s build output directory](/docs/config/#output-directory) (usually `_site`) for you.
+
 <div class="sites-vert sites-vert--md sites--reverse sites--center">
   <div class="lo-grid" style="--fl-gap-v: 5em;">
 {%- for site in featuredHosts %}
@@ -103,6 +136,7 @@ Take a look at the list below for some ideas on where to deploy your Eleventy pr
 {%- endfor %}
   </div>
 </div>
+
 
 ### Edit on the Web
 
@@ -127,10 +161,7 @@ There are some great Web editors popping up that you can use to run and edit Ele
 ## From the Community
 
 <ul class="list-bare">
-	<li>{% indieweblink "GitHub Pages Tutorial", "https://snook.ca/archives/servers/deploying-11ty-to-gh-pages" %} by {% avatarlocalcache "twitter", "snookca" %}Jonathan Snook</li>
 	<li>{% indieweblink "GitLab Pages Sample Project", "https://gitlab.com/bkmgit/11ty" %} by Benson Muite</li>
-	<li>{% indieweblink "Azure Static Web Apps Tutorial", "https://squalr.us/2021/05/deploying-an-11ty-site-to-azure-static-web-apps/" %} by Chad Schulz</li>
-	<li>{% indieweblink "Deploying Eleventy using Buddy CI/CD", "https://buddy.works/guides/buddy-eleventy" %} by Maciek Palmowski</li>
 	<li>{%indieweblink "GitHub Action for Eleventy", "https://github.com/marketplace/actions/eleventy-action" %} by {% communityavatar "TartanLlama", "Sy Brand" %}@TartanLlama</li>
 </ul>
 

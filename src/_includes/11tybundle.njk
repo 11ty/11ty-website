@@ -7,7 +7,7 @@
 </ul>
 {% if bundle.length > 5 %}
 <details>
-	<summary>Expand to see {{ (bundle | length) - 5 }} more resources.</summary>
+	<summary><strong><em>Expand to see {{ (bundle | length) - 5 }} more resources.</em></strong></summary>
 	<ul class="list-bare">
 		{%- for link in bundle | headafter(5) %}
 		<li>{% indieweblink link.Title, link.Link %} — <em>{{ link.Author }} ({{ link.Date | newsDate("yyyy") }})</em></li>
