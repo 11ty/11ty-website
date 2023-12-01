@@ -83,9 +83,50 @@ webides:
 
 Now that you’ve built a web site with Eleventy _(even if it’s one HTML page!)_ you might be ready to put it on the web for everyone to see! There are a bunch of different ways to do it!
 
-## Use a Build Script
+### Production-Ready by Default
 
-When deploying your Eleventy site, the goal is to provide your chosen host with your project’s **build output** (the `_site` folder by default). The command you run is usually configured via a _build script_ in your `package.json` file. It might look like this:
+A standard Eleventy build (e.g. [running `npx @11ty/eleventy`](/docs/usage/)) is a production-ready build. Eleventy doesn’t change its build behavior internally for development versus production.
+
+If you want to customize Eleventy to do your own optimizations, you may do so with [environment variables](/docs/environment-vars/).
+
+## Providers
+
+Take a look at the list below for some ideas on where to deploy your Eleventy project. There are many deployment options available and this is not meant to be an exhaustive list.
+
+### Classic Web Hosts
+
+Eleventy can work with any web host that supports static files!
+
+With these hosts deployment is _not_ automatically triggered for you, so after you run the Eleventy build command you’ll need to upload your [Eleventy output directory](/docs/config/#output-directory) (defaults to `_site`) to the host manually.
+
+This is a great place to start if you’re not familiar with source control (e.g. git or GitHub).
+
+<div class="sites-vert sites-vert--md sites--reverse sites--center">
+  <div class="lo-grid" style="--fl-gap-v: 5em;">
+{%- for site in classicHosts | shuffle %}
+{% include "site-card.njk" %}
+{%- endfor %}
+  </div>
+</div>
+
+### Jamstack Providers
+
+Jamstack providers can trigger your Eleventy build command automatically when you commit a file to your source control repository (GitHub, GitLab, Codeberg, etc.) and deploy [Eleventy’s build output directory](/docs/config/#output-directory) for you.
+
+<div class="sites-vert sites-vert--md sites--reverse sites--center">
+  <div class="lo-grid" style="--fl-gap-v: 5em;">
+{# {%- for site in featuredHosts %}
+{% include "site-card.njk" %}
+{%- endfor %} #}
+{%- for site in hosts | shuffle %}
+{% include "site-card.njk" %}
+{%- endfor %}
+  </div>
+</div>
+
+#### Use an npm Script
+
+One common practice when deploying Eleventy via a Jamstack provider is to use an npm script to run your build command. This is configured in your `package.json` file and could look like this:
 
 {% codetitle "package.json" %}
 
@@ -97,46 +138,7 @@ When deploying your Eleventy site, the goal is to provide your chosen host with 
 }
 ```
 
-### Production Builds
-
-A standard Eleventy build is a production-ready build. Eleventy doesn’t change its build behavior internally for development versus production.
-
-However, if you want to customize Eleventy to do your own optimizations, you may do so with [environment variables](/docs/environment-vars/).
-
-## Providers
-
-Take a look at the list below for some ideas on where to deploy your Eleventy project. There are many deployment options available and this is not meant to be an exhaustive list.
-
-### Classic Web Hosts
-
-Eleventy can work with any web host that supports static files! With these hosts deployment is not automatically triggered for you, so you’ll need to upload your [Eleventy output directory](/docs/config/#output-directory) (usually `_site`) to the host manually. This is a great place to start if you’re not familiar with Source Control or Git/GitHub.
-
-<div class="sites-vert sites-vert--md sites--reverse sites--center">
-  <div class="lo-grid" style="--fl-gap-v: 5em;">
-{%- for site in featuredHosts %}
-{% include "site-card.njk" %}
-{%- endfor %}
-{%- for site in classicHosts | shuffle %}
-{% include "site-card.njk" %}
-{%- endfor %}
-  </div>
-</div>
-
-### Jamstack Providers
-
-Jamstack providers can trigger your Eleventy build command automatically when you commit a file to your source control repository (GitHub, GitLab, Codeberg, etc.) and deploy [Eleventy’s build output directory](/docs/config/#output-directory) (usually `_site`) for you.
-
-<div class="sites-vert sites-vert--md sites--reverse sites--center">
-  <div class="lo-grid" style="--fl-gap-v: 5em;">
-{%- for site in featuredHosts %}
-{% include "site-card.njk" %}
-{%- endfor %}
-{%- for site in hosts | shuffle %}
-{% include "site-card.njk" %}
-{%- endfor %}
-  </div>
-</div>
-
+This allows you to configure your host to run `npm run build` and allows you to make future changes to that command in your code and not the host’s configuration.
 
 ### Edit on the Web
 
