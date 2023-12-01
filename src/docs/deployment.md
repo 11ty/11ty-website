@@ -32,6 +32,7 @@ hosts:
   - name: Azure Static Web Apps
     url: https://azure.microsoft.com/en-us/services/app-service/static/
     screenshotSize: medium
+    skipIcon: true
   - name: Edgio
     url: https://docs.edg.io/guides/v7/sites_frameworks/getting_started/eleventy
     screenshotSize: medium
@@ -60,6 +61,7 @@ classicHosts:
   - name: Neocities
     url: https://neocities.org/
     screenshotSize: medium
+    skipIcon: true
 clis:
   - name: Netlify CLI
     url: https://www.netlify.com/products/cli/

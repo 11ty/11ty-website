@@ -1,12 +1,14 @@
 <div class="sites-site-vert{% if site.official %} sites-site-official{% endif %}{% if site.class %} {{ site.class }}{% endif %}" data-filter-tags="{% if siteData | lighthousePerfectScore %}perfectlh{% endif %}">
   <a {% if site.url or site.demo %}href="{{ site.demo or site.url }}"{% endif %} class="elv-externalexempt" title="{{ site.name }}">
     <span class="sites-site-name">
-      {%- if site.iconUrl or site.url %}
-        {%- indieavatar site.iconUrl or site.url, "avatar-large" %}
-      {%- elseif site.opened_by %}
-        {%- communityavatar site.opened_by %}
-      {%- elseif site.author or site.twitter %}
-        {%- avatarlocalcache "twitter", site.author or site.twitter %}
+      {%- if not site.skipIcon %}
+        {%- if site.iconUrl or site.url %}
+          {%- indieavatar site.iconUrl or site.url, "avatar-large" %}
+        {%- elseif site.opened_by %}
+          {%- communityavatar site.opened_by %}
+        {%- elseif site.author or site.twitter %}
+          {%- avatarlocalcache "twitter", site.author or site.twitter %}
+        {%- endif %}
       {%- endif %}
       {%- if site.name -%}
         {{ site.name }}
@@ -17,7 +19,7 @@
     <div class="sites-screenshot-container">
 {%- if site.url or site.demo %}
   {%- if site.screenshotOverride %}
-		<img alt="{{ site.screenshotOverride.alt }}" loading="lazy" decoding="async" class="sites-screenshot" src="{{ site.screenshotOverride.src }}" width="{{ site.screenshotOverride.width }}" height="{{ site.screenshotOverride.height }}">
+    <img alt="{{ site.screenshotOverride.alt }}" loading="lazy" decoding="async" class="sites-screenshot" src="{{ site.screenshotOverride.src }}" width="{{ site.screenshotOverride.width }}" height="{{ site.screenshotOverride.height }}">
   {%- else %}
     {%- getScreenshotHtml site.fileSlug, site.demo or site.url, null, site.screenshotSize, site.screenshotAspectRatio -%}
   {%- endif %}
