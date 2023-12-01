@@ -7,7 +7,7 @@ eleventyComputed:
 ---
 # {{ newstitle }}
 
-<div class="fl fl-inline fl-separator-h fl-nowrap" style="--fl-gap-h: 1.5em; --fl-gap-v: .5em">
+<div class="fl fl-inline fl-separator-h fl-nowrap spc-b2" style="--fl-gap-h: 1.5em; --fl-gap-v: .5em">
   <div>
     <em>{{ page.date | newsDate }}</em>
   </div>

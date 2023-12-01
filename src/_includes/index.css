@@ -105,6 +105,9 @@ is-land {
 .spc-t2 {
 	margin-top: 2em;
 }
+.spc-b2 {
+	margin-bottom: 2em;
+}
 
 /* Blockquotes */
 blockquote {
