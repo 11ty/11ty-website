@@ -6,6 +6,7 @@ eleventyNavigation:
   order: 2
   excerpt: Group, reuse, and sort content in interesting ways.
 communityLinksKey: collections
+overrideCommunityLinks: true
 ---
 {% tableofcontents %}
 
@@ -728,3 +729,8 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+## From the Community
+
+{% include "community-contributed.njk" %}
+
+{% include "11tybundle.njk" %}
