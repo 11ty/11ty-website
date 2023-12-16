@@ -23,7 +23,7 @@ But, after all that, you can still add a Custom Tag using the [Configuration API
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "customtag"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "customtag"} %}
   <div id="customtag-liquid" role="tabpanel">
 
 

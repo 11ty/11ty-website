@@ -2,9 +2,9 @@
   "name": "@11ty/website",
   "version": "1.0.2",
   "description": "The website of 11ty.dev",
-  "main": "_site/index.html",
+	"type": "module",
   "engines": {
-    "node": ">=14"
+    "node": ">=18"
   },
   "scripts": {
     "check-links": "npx check-html-links _site",

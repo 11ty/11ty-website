@@ -1,4 +1,4 @@
-const activity = require("../config/activity.js");
+const activity = require("../config/activity.cjs");
 const { escapeText } = require("entities/lib/escape.js");
 
 function getSlugFromTitle(str) {

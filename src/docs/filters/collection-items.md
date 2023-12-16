@@ -15,7 +15,7 @@ eleventyNavigation:
 Fetch the previous and next items in a collection when you pass in the current `page` object.
 
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "nextprev"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "nextprev"} %}
   <div id="nextprev-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -56,7 +56,7 @@ Useful when you’d like to link to the previous or next template in your collec
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "nextprevlink"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "nextprevlink"} %}
   <div id="nextprevlink-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -99,7 +99,7 @@ The `getCollectionItemIndex` filter returns the 0-based numeric index of the cur
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "getitemindex"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "getitemindex"} %}
   <div id="getitemindex-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -144,7 +144,7 @@ For completeness, a `getCollectionItem` filter is also included that fetches the
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "getitem"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "getitem"} %}
   <div id="getitem-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}

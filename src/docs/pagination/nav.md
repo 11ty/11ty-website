@@ -18,7 +18,7 @@ Consider the following example paginating our `testdata` array:
 
 <is-land import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paginationnavarray"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "paginationnavarray"} %}
   <div id="paginationnavarray-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -102,12 +102,12 @@ Alright, you definitely read all of those right? 😇 Here’s some accessible c
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-nav-starter", valid: "liquid,njk,js" } %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "paged-nav-starter", valid: "liquid,njk,js" } %}
   <div id="paged-nav-starter-liquid" role="tabpanel">
     {%- codetitle "starter.liquid" %}
     {%- highlight "html" %}
     {%- include "examples/pagination/nav/starter.liquid" %}
-    {%- endhighlight %}  
+    {%- endhighlight %}
   </div>
   <div id="paged-nav-starter-njk" role="tabpanel">
     {%- codetitle "starter.njk" %}
@@ -118,7 +118,7 @@ Alright, you definitely read all of those right? 😇 Here’s some accessible c
   <div id="paged-nav-starter-js" role="tabpanel">
     {%- codetitle "starter.11ty.js" %}
     {%- highlight "js" %}
-    {%- include "examples/pagination/nav/starter.11ty.js" %}
+    {%- include "examples/pagination/nav/starter.11ty.cjs" %}
     {%- endhighlight %}
   </div>
   <div id="paged-nav-starter-hbs" role="tabpanel">
@@ -164,7 +164,7 @@ testdata:
 
 
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagenavorig", valid: "njk"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "pagenavorig", valid: "njk"} %}
   <div id="pagenavorig-liquid" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
@@ -210,7 +210,7 @@ testdata:
 
 
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagenavobjectlit", valid: "njk"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "pagenavobjectlit", valid: "njk"} %}
   <div id="pagenavobjectlit-liquid" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
@@ -259,7 +259,7 @@ Note that if the current page (`page.url`) is the first or last in the set, we w
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-nav-nextprev", valid: "njk,js"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "paged-nav-nextprev", valid: "njk,js"} %}
   <div id="paged-nav-nextprev-liquid" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
@@ -272,7 +272,7 @@ Note that if the current page (`page.url`) is the first or last in the set, we w
   <div id="paged-nav-nextprev-js" role="tabpanel">
     {%- codetitle "nextprev.11ty.js" %}
     {%- highlight "js" %}
-    {%- include "examples/pagination/nav/nextprev.11ty.js" %}
+    {%- include "examples/pagination/nav/nextprev.11ty.cjs" %}
     {%- endhighlight %}
   </div>
   <div id="paged-nav-nextprev-hbs" role="tabpanel">
@@ -289,7 +289,7 @@ For clarity here, we’re omitting the previous and next links from the previous
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-nav-firstlast", valid: "njk,js"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "paged-nav-firstlast", valid: "njk,js"} %}
   <div id="paged-nav-firstlast-liquid" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
@@ -302,7 +302,7 @@ For clarity here, we’re omitting the previous and next links from the previous
   <div id="paged-nav-firstlast-js" role="tabpanel">
     {%- codetitle "firstlast.11ty.js" %}
     {%- highlight "js" %}
-    {%- include "examples/pagination/nav/firstlast.11ty.js" %}
+    {%- include "examples/pagination/nav/firstlast.11ty.cjs" %}
     {%- endhighlight %}
   </div>
   <div id="paged-nav-firstlast-hbs" role="tabpanel">
@@ -317,7 +317,7 @@ Here’s the final pagination navigation template code, pieced together:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-nav-combined", valid: "njk,js"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "paged-nav-combined", valid: "njk,js"} %}
   <div id="paged-nav-combined-liquid" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
@@ -330,7 +330,7 @@ Here’s the final pagination navigation template code, pieced together:
   <div id="paged-nav-combined-js" role="tabpanel">
     {%- codetitle "combined.11ty.js" %}
     {%- highlight "js" %}
-    {%- include "examples/pagination/nav/combined.11ty.js" %}
+    {%- include "examples/pagination/nav/combined.11ty.cjs" %}
     {%- endhighlight %}
   </div>
   <div id="paged-nav-combined-hbs" role="tabpanel">

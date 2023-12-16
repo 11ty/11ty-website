@@ -155,7 +155,7 @@ Using Eleventy’s built-in [Render plugin](/docs/plugins/render/) allows you to
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-{% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "webc-render"} %}
+{% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "webc-render"} %}
 <div id="webc-render-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}

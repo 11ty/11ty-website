@@ -12,7 +12,7 @@ eleventyNavigation:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "log"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "log"} %}
   <div id="log-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}

@@ -31,7 +31,7 @@ This will place this `mypost.md` into the `post` collection with all other piece
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collections"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "collections"} %}
   <div id="collections-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -86,7 +86,7 @@ exports.render = function(data) {
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collections-import"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "collections-import"} %}
   <div id="collections-import-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -157,7 +157,7 @@ Compare the `post.url` and special Eleventy-provided `page.url` variable to find
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsnav"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "collectionsnav"} %}
   <div id="collectionsnav-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -219,7 +219,7 @@ By default Eleventy puts all of your content (independent of whether or not it h
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsall"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "collectionsall"} %}
   <div id="collectionsall-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -346,7 +346,7 @@ This content would not show up in any of the collections it was added to with `t
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsitem"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "collectionsitem"} %}
   <div id="collectionsitem-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -455,7 +455,7 @@ To sort descending in your template, you can use a filter to reverse the sort or
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionssort"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "collectionssort"} %}
   <div id="collectionssort-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}

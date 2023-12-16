@@ -1,4 +1,4 @@
-const activity = require("../config/activity.js");
+const activity = require("../config/activity.cjs");
 
 const PERMALINK = "/firehose/firehose.rss";
 

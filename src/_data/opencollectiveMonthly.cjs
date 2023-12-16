@@ -1,4 +1,4 @@
-const getOpenCollectiveData = require("./opencollective.js");
+const getOpenCollectiveData = require("./opencollective.cjs");
 
 module.exports = async function() {
 	const opencollective = await getOpenCollectiveData();

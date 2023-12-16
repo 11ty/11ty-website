@@ -14,13 +14,13 @@ const eleventyImage = require("@11ty/eleventy-img");
 const { eleventyImagePlugin } = eleventyImage;
 const eleventyWebcPlugin = require("@11ty/eleventy-plugin-webc");
 
-const { addedIn, coerceVersion } = require("./config/addedin");
-const monthDiffPlugin = require("./config/monthDiff");
-const minificationLocalPlugin = require("./config/minification");
-const cleanName = require("./config/cleanAuthorName");
-const objectHas = require("./config/object-has");
-const markdownPlugin = require("./config/markdownPlugin.js");
-const javascriptFrontMatter = require("./config/javascript-front-matter.js");
+const { addedIn, coerceVersion } = require("./config/addedin.cjs");
+const monthDiffPlugin = require("./config/monthDiff.cjs");
+const minificationLocalPlugin = require("./config/minification.cjs");
+const cleanName = require("./config/cleanAuthorName.cjs");
+const objectHas = require("./config/object-has.cjs");
+const markdownPlugin = require("./config/markdownPlugin.cjs");
+const javascriptFrontMatter = require("./config/javascript-front-matter.cjs");
 
 let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" decoding="async" class="avatar" width="200" height="200">`;
 const shortcodes = {
@@ -842,7 +842,7 @@ to:
 			output: "_site",
 			data: "_data",
 		},
-		templateFormats: ["html", "njk", "md", "11ty.js"],
+		templateFormats: ["html", "njk", "md", "11ty.js", "11ty.cjs"],
 		markdownTemplateEngine: "njk",
 		htmlTemplateEngine: "njk"
 	};

@@ -1,5 +1,5 @@
 const semver = require("semver");
-const versions = require("../src/_data/versions");
+const versions = require("../src/_data/versions.cjs");
 
 const MINIMUM_VERSION_SHOWN = "1.0.0";
 

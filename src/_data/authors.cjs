@@ -1,5 +1,5 @@
 const fastglob = require("fast-glob");
-const getAuthors = require("../../config/getAuthorsFromSites");
+const getAuthors = require("../../config/getAuthorsFromSites.cjs");
 
 module.exports = async () => {
 	let sites = await fastglob("./src/_data/builtwith/*.json", {

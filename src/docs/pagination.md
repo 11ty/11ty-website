@@ -20,7 +20,7 @@ Consider the following template, which will result in two pages being created, e
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-array"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "paged-array"} %}
   <div id="paged-array-liquid" role="tabpanel">
     {%- codetitle "paged.liquid" %}
     {%- highlight "liquid" %}
@@ -42,7 +42,7 @@ If the above file were named `paged.njk`, it would create two pages in your outp
   <div id="paged-array-js" role="tabpanel">
     {%- codetitle "paged.11ty.js" %}
     {%- highlight "js" %}
-    {%- include "examples/pagination/paged-array.11ty.js" %}
+    {%- include "examples/pagination/paged-array.11ty.cjs" %}
     {%- endhighlight %}
 
 If the above file were named `paged.11ty.js`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
@@ -126,7 +126,7 @@ All of the examples thus far have paged Array data. Eleventy does allow paging o
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedobj"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "pagedobj"} %}
   <div id="pagedobj-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -250,7 +250,7 @@ Your front matter would look like this:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedatafile"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "pagedatafile"} %}
   <div id="pagedatafile-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -371,7 +371,7 @@ Ok, so `pagination.items[0]` is ugly. We provide an option to alias this to some
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedalias"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "pagedalias"} %}
   <div id="pagedalias-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -432,7 +432,7 @@ If your chunk `size` is greater than 1, the alias will be an array instead of a 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedchunk"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "pagedchunk"} %}
   <div id="pagedchunk-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -497,7 +497,7 @@ If you’d like to make a paginated list of all of your blog posts (any content 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedcollection"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "pagedcollection"} %}
   <div id="pagedcollection-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
