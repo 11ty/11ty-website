@@ -7,7 +7,6 @@ const slugify = require("slugify");
 const lodashGet = require("lodash/get");
 const shortHash = require("short-hash");
 
-const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
@@ -186,7 +185,7 @@ function findBy(data, path, value) {
 	});
 }
 
-module.exports = function(eleventyConfig) {
+module.exports = async function(eleventyConfig) {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
 	if(process.env.NODE_ENV === "production") {
@@ -208,6 +207,7 @@ module.exports = function(eleventyConfig) {
 		domDiff: false,
 	});
 
+	/* Plugins */
 	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
 		lineSeparator: "<br>",
 		init: function({ Prism }) {
@@ -242,7 +242,6 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(navigationPlugin);
 	eleventyConfig.addPlugin(monthDiffPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
-	eleventyConfig.addPlugin(EleventyRenderPlugin);
 	eleventyConfig.addPlugin(javascriptFrontMatter);
 	eleventyConfig.addPlugin(eleventyWebcPlugin, {
 		components: [
@@ -261,6 +260,11 @@ module.exports = function(eleventyConfig) {
 			]
 		}
 	});
+
+	const { EleventyRenderPlugin } = await import("@11ty/eleventy");
+	eleventyConfig.addPlugin(EleventyRenderPlugin);
+
+	/* End plugins */
 
 	eleventyConfig.addCollection("sidebarNav", function(collection) {
 		// filter out excludeFromSidebar options
