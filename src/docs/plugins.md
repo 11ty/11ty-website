@@ -12,16 +12,6 @@ All official plugins live under the `@11ty` npm organization and plugin names wi
 
 {{ collections.all | eleventyNavigation("Plugins") | eleventyNavigationToMarkdown({ showExcerpt: true }) | safe }}
 
-### Community Contributed Plugins
-
-[**See all `eleventy-plugin` packages on `npm`**](https://www.npmjs.com/search?q=eleventy-plugin). The rest have been added to this site by our community (and are listed in random order). [Add your own](https://github.com/11ty/11ty-website/tree/master/src/_data/plugins#readme)!
-
-{%- for name, plugin in plugins | shuffle %}
-{%- set url = plugin.url or "https://www.npmjs.com/package/" + plugin.npm %}
-* [{% if plugin.deprecated %}~~{% endif %}{{ plugin.npm }}{% if plugin.deprecated %}~~{% endif %}]({{ url }}){% if plugin.description %} {% if plugin.deprecated %}~~{% endif %}{{ plugin.description }}{% if plugin.deprecated %}~~{% endif %}{% endif %} {{ plugin.deprecated }} {% authorLink authors, plugin.author %}
-{%- endfor %}
-* [Add your own](https://github.com/11ty/11ty-website/tree/master/src/_data/plugins#readme)!
-
 ## Adding a Plugin
 
 ### Install the plugin through npm.
@@ -82,3 +72,14 @@ module.exports = function(eleventyConfig) {
 {% callout "warn" %}
 Plugin namespacing is an application feature and should not be used if you are creating your own plugin (in your plugin configuration code). Follow along at <a href="https://github.com/11ty/eleventy/issues/256">Issue #256</a>.
 {% endcallout %}
+
+
+## Community Contributed Plugins
+
+[**See all `eleventy-plugin` packages on `npm`**](https://www.npmjs.com/search?q=eleventy-plugin). The rest have been added to this site by our community (and are listed in random order). [Add your own](https://github.com/11ty/11ty-website/tree/master/src/_data/plugins#readme)!
+
+{%- for name, plugin in plugins | shuffle %}
+{%- set url = plugin.url or "https://www.npmjs.com/package/" + plugin.npm %}
+* [{% if plugin.deprecated %}~~{% endif %}{{ plugin.npm }}{% if plugin.deprecated %}~~{% endif %}]({{ url }}){% if plugin.description %} {% if plugin.deprecated %}~~{% endif %}{{ plugin.description }}{% if plugin.deprecated %}~~{% endif %}{% endif %} {{ plugin.deprecated }} {% authorLink authors, plugin.author %}
+{%- endfor %}
+* [Add your own](https://github.com/11ty/11ty-website/tree/master/src/_data/plugins#readme)!
