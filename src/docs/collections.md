@@ -344,7 +344,6 @@ This content would not show up in any of the collections it was added to with `t
 
 ## Collection Item Data Structure
 
-
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsitem"} %}
@@ -400,6 +399,7 @@ Note in the above example that we output the `post.data.title` value? Similarly,
 
 * `page`: everything in [Eleventy’s supplied page variable](/docs/data-eleventy-supplied/#page-variable) for this template (including `inputPath`, `url`, `date`, and others). {% addedin "2.0.0-canary.19" %}
 * `data`: all data for this piece of content (includes any data inherited from layouts)
+* `rawInput`: the raw input of the template (before any processing). This does _not_ include front matter. {% addedin "3.0.0-alpha.1" %} _(Related: [#1206](https://github.com/11ty/eleventy/issues/1206))_
 * `content`: the rendered content of this template. This does _not_ include layout wrappers. {% addedin "2.0.0-canary.19" %}
 
 ```js
@@ -411,8 +411,12 @@ Note in the above example that we output the `post.data.title` value? Similarly,
     // … and everything else in Eleventy’s `page`
   },
   data: { title: 'Test Title', tags: ['tag1', 'tag2'], date: 'Last Modified', /* … */ },
-  content: '<h1>This is my title</h1>\n\n<p>This is content…'
+  content: '<h1>Test Title</h1>\n\n<p>This is text content…',
+  // Added in {{ "3.0.0-alpha.1" | coerceVersion }}
+{%- raw %}
+  rawInput: '<h1>{{ title }}</h1>\n\n<p>This is text content…',
 }
+{% endraw %}
 ```
 
 _Backwards compatibility notes:_
