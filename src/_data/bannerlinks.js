@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     label: "Black Lives Matter",
     url: "https://blacklivesmatter.com/",

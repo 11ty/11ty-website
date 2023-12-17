@@ -1,10 +1,10 @@
 // Speedlify consumes this endpoint for the Eleventy Leaderboards
-module.exports.data = function() {
+function data() {
 	return {
 		permalink: "/api/urls.json"
 	}
 }
-module.exports.render = function(data) {
+function render(data) {
 	let urls = [];
 	for(let key in data.builtwith) {
 		let site = data.builtwith[key];
@@ -18,4 +18,6 @@ module.exports.render = function(data) {
 		}
 	}
 	return JSON.stringify(urls, null, 2);
-};
+}
+
+export { data, render };

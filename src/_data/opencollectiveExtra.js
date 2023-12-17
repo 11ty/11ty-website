@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	cloudcannon: {
 		href: "https://cloudcannon.com/eleventy-cms/?utm_campaign=11ty-partner&utm_source=official-sponsor",
 		containerClass: "supporters-gold-cloudcannon",

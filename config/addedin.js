@@ -1,5 +1,5 @@
-const semver = require("semver");
-const versions = require("../src/_data/versions");
+import semver from "semver";
+import versions from "../src/_data/versions.js";
 
 const MINIMUM_VERSION_SHOWN = "1.0.0";
 
@@ -73,7 +73,7 @@ function addedIn(version, tag, extraClass) {
 	return `<${tag} data-pagefind-ignore class="minilink minilink-addedin${extraClass ? ` ${extraClass}`: ""}" data-uncoerced-version="${version}">${beforeText}${coerceVersion.call(this, version)}</${tag}>`;
 }
 
-module.exports = {
+export {
 	addedIn,
 	coerceVersion
 };

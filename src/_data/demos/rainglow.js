@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	name: "Rainglow",
 	category: ["serverless"],
 	url: "https://rainglow.zachleat.dev/",

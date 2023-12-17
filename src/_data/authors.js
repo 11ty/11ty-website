@@ -1,7 +1,11 @@
-const fastglob = require("fast-glob");
-const getAuthors = require("../../config/getAuthorsFromSites");
+import fastglob from "fast-glob";
+import getAuthors from "../../config/getAuthorsFromSites.js";
 
-module.exports = async () => {
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+
+
+export default async function() {
 	let sites = await fastglob("./src/_data/builtwith/*.json", {
 		caseSensitiveMatch: false
 	});

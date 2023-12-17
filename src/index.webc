@@ -1,4 +1,4 @@
----javascript
+---node
 // <script>
 let layout = "layouts/main.njk";
 let logoLink = "/docs/";

@@ -1,5 +1,5 @@
-const activity = require("../config/activity.js");
-const { escapeText } = require("entities/lib/escape.js");
+import { escapeText } from "entities/lib/escape.js";
+import activity from "../config/activity.js";
 
 function getSlugFromTitle(str) {
 	if(str.startsWith("GitHub Releases [")) {
@@ -11,7 +11,7 @@ function getSlugFromTitle(str) {
 	return "";
 }
 
-module.exports.data = async function() {
+export async function data() {
 	const feed = await activity();
 	const entries = await feed.getEntries();
 
@@ -21,7 +21,7 @@ module.exports.data = async function() {
 	}
 };
 
-module.exports.render = async function({entries}) {
+export async function render({entries}) {
 	return `
 <h1>Eleventy Firehose</h1>
 

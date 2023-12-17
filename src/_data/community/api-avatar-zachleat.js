@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	url: "https://www.zachleat.com/web/indieweb-avatar/",
 	author: "zachleat",
 	title: "IndieWeb Avatar, yet another Eleventy Image Service API",

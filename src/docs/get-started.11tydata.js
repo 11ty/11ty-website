@@ -1,4 +1,4 @@
-const EleventyFetch = require("@11ty/eleventy-fetch");
+import EleventyFetch from "@11ty/eleventy-fetch";
 
 async function getData() {
 	let url = `https://11tybundle.dev/api/getting-started.json`;
@@ -22,7 +22,7 @@ async function getData() {
 	return json;
 }
 
-module.exports = async function() {
+export default async function() {
 	try {
 		return {
 			bundle: await getData()

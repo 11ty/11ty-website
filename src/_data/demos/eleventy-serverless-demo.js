@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	name: "Eleventy Serverless Demo",
 	description: "The starter project to learn about Eleventy Serverless",
 	category: ["serverless"],

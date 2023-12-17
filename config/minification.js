@@ -1,11 +1,11 @@
-const CleanCSS = require("clean-css");
-const Terser = require("terser");
+import CleanCSS from "clean-css";
+import { minify } from "terser";
 
-module.exports = eleventyConfig => {
+export default function(eleventyConfig) {
 	eleventyConfig.addNunjucksAsyncFilter("jsmin", async function(code, callback) {
 		if(process.env.NODE_ENV === "production") {
 			try {
-				let result = await Terser.minify(code);
+				let result = await minify(code);
 				callback(null, result.code);
 			} catch(e) {
 				console.log("Terser error: ", e);

@@ -1,13 +1,16 @@
-module.exports = async function() {
-	let transformUrl;
+import {transform} from "@tweetback/canonical";
+
+function transformUrl(url) {
 	try {
-		const {transform} = await import("@tweetback/canonical");
-		transformUrl = transform;
+		let u = transform(url);
+		return u;
 	} catch(e) {
 		// do nothing
-		transformUrl = url => url
+		return url;
 	}
+}
 
+export default function() {
 	return [
 		{
 			"text": `Read the replies to: <em><a href="${transformUrl("https://twitter.com/jensimmons/status/1107377359546736641")}">“Fans of Eleventy.... why do you like it better than other static site generators?”</a></em>`,

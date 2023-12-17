@@ -1,27 +1,28 @@
-require("dotenv").config();
+import "dotenv/config";
 
-const { DateTime } = require("luxon");
-const HumanReadable = require("human-readable-numbers");
-const commaNumber = require("comma-number");
-const slugify = require("slugify");
-const lodashGet = require("lodash/get");
-const shortHash = require("short-hash");
+import { DateTime } from "luxon";
+import HumanReadable from "human-readable-numbers";
+import commaNumber from "comma-number";
+import slugify from "slugify";
+import lodashGet from "lodash/get.js";
+import shortHash from "short-hash";
 
-const { EleventyRenderPlugin } = require("@11ty/eleventy");
-const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
-const navigationPlugin = require("@11ty/eleventy-navigation");
-const rssPlugin = require("@11ty/eleventy-plugin-rss");
-const eleventyImage = require("@11ty/eleventy-img");
-const { eleventyImagePlugin } = eleventyImage;
-const eleventyWebcPlugin = require("@11ty/eleventy-plugin-webc");
+import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
+import navigationPlugin from "@11ty/eleventy-navigation";
+import rssPlugin from "@11ty/eleventy-plugin-rss";
+import eleventyImage, { eleventyImagePlugin } from "@11ty/eleventy-img";
+import eleventyWebcPlugin from "@11ty/eleventy-plugin-webc";
+import { EleventyRenderPlugin } from "@11ty/eleventy";
 
-const { addedIn, coerceVersion } = require("./config/addedin");
-const monthDiffPlugin = require("./config/monthDiff");
-const minificationLocalPlugin = require("./config/minification");
-const cleanName = require("./config/cleanAuthorName");
-const objectHas = require("./config/object-has");
-const markdownPlugin = require("./config/markdownPlugin.js");
-const javascriptFrontMatter = require("./config/javascript-front-matter.js");
+import { addedIn, coerceVersion } from "./config/addedin.js";
+import monthDiffPlugin from "./config/monthDiff.js";
+import minificationLocalPlugin from "./config/minification.js";
+import cleanName from "./config/cleanAuthorName.js";
+import objectHas from "./config/object-has.js";
+import markdownPlugin from "./config/markdownPlugin.js";
+
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 
 let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" decoding="async" class="avatar" width="200" height="200">`;
 const shortcodes = {
@@ -186,7 +187,7 @@ function findBy(data, path, value) {
 	});
 }
 
-module.exports = function(eleventyConfig) {
+export default async function(eleventyConfig) {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
 	if(process.env.NODE_ENV === "production") {
@@ -208,6 +209,7 @@ module.exports = function(eleventyConfig) {
 		domDiff: false,
 	});
 
+	/* Plugins */
 	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
 		lineSeparator: "<br>",
 		init: function({ Prism }) {
@@ -243,7 +245,6 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(monthDiffPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
-	eleventyConfig.addPlugin(javascriptFrontMatter);
 	eleventyConfig.addPlugin(eleventyWebcPlugin, {
 		components: [
 			"./src/_includes/components/*.webc",
@@ -261,6 +262,8 @@ module.exports = function(eleventyConfig) {
 			]
 		}
 	});
+
+	/* End plugins */
 
 	eleventyConfig.addCollection("sidebarNav", function(collection) {
 		// filter out excludeFromSidebar options

@@ -1,5 +1,6 @@
 // https://opencollective.com/11ty/members/all.json
-const EleventyFetch = require("@11ty/eleventy-fetch");
+import EleventyFetch from "@11ty/eleventy-fetch";
+
 const FilteredProfiles = [
 	"bca-account1", // website is buycheapaccounts.com
 	"baocasino", // gambling
@@ -37,7 +38,7 @@ function getUniqueContributors(orders) {
 	return Object.values(uniqueContributors);
 }
 
-module.exports = async function() {
+export default async function() {
 	try {
 		let url = `https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000&status=paid,active`;
 		let json = await EleventyFetch(url, {

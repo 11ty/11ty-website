@@ -1,6 +1,6 @@
-const getOpenCollectiveData = require("./opencollective.js");
+import getOpenCollectiveData from "./opencollective.js";
 
-module.exports = async function() {
+export default async function() {
 	const opencollective = await getOpenCollectiveData();
 
 	let backers = opencollective.supporters.filter(supporter => {

@@ -1,6 +1,6 @@
-const EleventyFetch = require("@11ty/eleventy-fetch");
+import EleventyFetch from "@11ty/eleventy-fetch";
 
-module.exports = async function() {
+export default async function() {
 	try {
 		let css = await EleventyFetch("https://fonts.googleapis.com/css?family=Roboto+Mono:400&display=swap", {
 			duration: "1d",

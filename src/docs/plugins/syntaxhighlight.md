@@ -212,7 +212,6 @@ module.exports = function(eleventyConfig) {
 {% codetitle "page.webc" %}
 
 ```html
----
 <syntax-highlight language="js">
 function myFunction() {
   return true;

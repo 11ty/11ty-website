@@ -1,4 +1,4 @@
-exports.render = async function({id, valid, additions, subtractions, label}) {
+async function render({id, valid, additions, subtractions, label}) {
 	let syntaxes = {};
 
 	let extraSyntaxes = {
@@ -54,3 +54,5 @@ exports.render = async function({id, valid, additions, subtractions, label}) {
 
 	return await this.renderTemplate(liquidTemplate, "liquid");
 };
+
+export { render };

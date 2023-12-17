@@ -1,5 +1,5 @@
 // https://blog.npmjs.org/post/78719826768/download-counts-are-back
-const EleventyFetch = require("@11ty/eleventy-fetch");
+import EleventyFetch from"@11ty/eleventy-fetch";
 
 let NPM_PKG_NAME = "@11ty/eleventy";
 let START_YEAR = 2018;
@@ -16,7 +16,7 @@ async function getDownloadsForYear(year) {
 	return json.downloads;
 }
 
-module.exports = async function() {
+export default async function() {
 	try {
 		let count = 0;
 		for(let year = START_YEAR, k = (new Date).getFullYear(); year<=k; year++) {

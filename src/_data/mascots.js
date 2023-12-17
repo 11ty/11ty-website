@@ -1,4 +1,4 @@
-module.exports = [
+export default [
 	{
 		url: "https://web.archive.org/web/20200307013845/https://twitter.com/jameswillweb/status/999052022497316865",
 		image: "./src/img/mascots/cat.jpg",

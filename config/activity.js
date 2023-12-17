@@ -1,9 +1,8 @@
-require("dotenv").config();
-const EleventyFetch = require("@11ty/eleventy-fetch");
+import "dotenv/config";
+import EleventyFetch from "@11ty/eleventy-fetch";
+import { ActivityFeed } from '@11ty/eleventy-activity-feed';
 
-module.exports = async function() {
-	const { ActivityFeed } = await import("@11ty/eleventy-activity-feed");
-
+export default async function() {
 	let feed = new ActivityFeed();
 
 	feed.setCacheDuration("1d"); // note that cache is persisted on CI server

@@ -42,7 +42,7 @@ If the above file were named `paged.njk`, it would create two pages in your outp
   <div id="paged-array-js" role="tabpanel">
     {%- codetitle "paged.11ty.js" %}
     {%- highlight "js" %}
-    {%- include "examples/pagination/paged-array.11ty.js" %}
+    {%- include "examples/pagination/paged-array.js" %}
     {%- endhighlight %}
 
 If the above file were named `paged.11ty.js`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
