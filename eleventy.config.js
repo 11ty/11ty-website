@@ -841,7 +841,7 @@ to:
 			output: "_site",
 			data: "_data",
 		},
-		templateFormats: ["html", "njk", "md", "11ty.js", "11ty.cjs"],
+		templateFormats: ["html", "njk", "md", "11ty.js"],
 		markdownTemplateEngine: "njk",
 		htmlTemplateEngine: "njk"
 	};

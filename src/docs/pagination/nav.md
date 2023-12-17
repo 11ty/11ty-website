@@ -118,7 +118,7 @@ Alright, you definitely read all of those right? 😇 Here’s some accessible c
   <div id="paged-nav-starter-js" role="tabpanel">
     {%- codetitle "starter.11ty.js" %}
     {%- highlight "js" %}
-    {%- include "examples/pagination/nav/starter.11ty.cjs" %}
+    {%- include "examples/pagination/nav/starter.js" %}
     {%- endhighlight %}
   </div>
   <div id="paged-nav-starter-hbs" role="tabpanel">
@@ -272,7 +272,7 @@ Note that if the current page (`page.url`) is the first or last in the set, we w
   <div id="paged-nav-nextprev-js" role="tabpanel">
     {%- codetitle "nextprev.11ty.js" %}
     {%- highlight "js" %}
-    {%- include "examples/pagination/nav/nextprev.11ty.cjs" %}
+    {%- include "examples/pagination/nav/nextprev.js" %}
     {%- endhighlight %}
   </div>
   <div id="paged-nav-nextprev-hbs" role="tabpanel">
@@ -302,7 +302,7 @@ For clarity here, we’re omitting the previous and next links from the previous
   <div id="paged-nav-firstlast-js" role="tabpanel">
     {%- codetitle "firstlast.11ty.js" %}
     {%- highlight "js" %}
-    {%- include "examples/pagination/nav/firstlast.11ty.cjs" %}
+    {%- include "examples/pagination/nav/firstlast.js" %}
     {%- endhighlight %}
   </div>
   <div id="paged-nav-firstlast-hbs" role="tabpanel">
@@ -330,7 +330,7 @@ Here’s the final pagination navigation template code, pieced together:
   <div id="paged-nav-combined-js" role="tabpanel">
     {%- codetitle "combined.11ty.js" %}
     {%- highlight "js" %}
-    {%- include "examples/pagination/nav/combined.11ty.cjs" %}
+    {%- include "examples/pagination/nav/combined.js" %}
     {%- endhighlight %}
   </div>
   <div id="paged-nav-combined-hbs" role="tabpanel">
