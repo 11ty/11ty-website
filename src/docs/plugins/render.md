@@ -64,7 +64,7 @@ Use the `renderTemplate` paired shortcode to render a template string.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "rendertmpl"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "rendertmpl"} %}
   <div id="rendertmpl-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -127,7 +127,7 @@ The first argument to `renderTemplate` can be any valid [`templateEngineOverride
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "rendertmplvue"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "rendertmplvue"} %}
   <div id="rendertmplvue-liquid" role="tabpanel">
 
 {% raw %}
@@ -187,7 +187,7 @@ Both the [`eleventy`](/docs/data-eleventy-supplied/#eleventy-variable) and [`pag
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "rendertmpldata"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "rendertmpldata"} %}
   <div id="rendertmpldata-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -257,7 +257,7 @@ Use the `renderFile` shortcode to render an include file.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "renderfile"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfile"} %}
   <div id="renderfile-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -308,7 +308,7 @@ Note that you can use files supported by any [custom file extensions](/docs/lang
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "renderfilevue"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfilevue"} %}
   <div id="renderfilevue-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -360,7 +360,7 @@ Both the [`eleventy`](/docs/data-eleventy-supplied/#eleventy-variable) and [`pag
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "renderfiledata"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfiledata"} %}
   <div id="renderfiledata-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -424,7 +424,7 @@ The syntax is normally inferred using the file extension, but it can be overridd
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "renderfileoverride"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfileoverride"} %}
   <div id="renderfileoverride-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}

@@ -107,7 +107,7 @@ This plugin provides the following syntax highlighters using PrismJS, all of whi
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "highlight", additions: "md,webc", subtractions: "hbs"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlight", additions: "md,webc", subtractions: "hbs"} %}
   <div id="highlight-md" role="tabpanel">
 
 {% codetitle "Markdown", "Syntax" %}
@@ -212,7 +212,6 @@ module.exports = function(eleventyConfig) {
 {% codetitle "page.webc" %}
 
 ```html
----
 <syntax-highlight language="js">
 function myFunction() {
   return true;
@@ -267,7 +266,7 @@ Add the `diff-` prefix to the language name on the previous examples to show cod
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "highlightdiff", additions: "md,webc", subtractions: "hbs"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlightdiff", additions: "md,webc", subtractions: "hbs"} %}
   <div id="highlightdiff-md" role="tabpanel">
 
 {% codetitle "Markdown", "Syntax" %}

@@ -164,7 +164,7 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "navtohtml"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navtohtml"} %}
   <div id="navtohtml-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -202,7 +202,7 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "navtomd"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navtomd"} %}
   <div id="navtomd-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -247,7 +247,7 @@ For our documented templates above with the following template:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "navrender"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navrender"} %}
   <div id="navrender-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -317,7 +317,7 @@ Just show the children of a specific key, pass a key to `eleventyNavigation`:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "navrenderbranch"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navrenderbranch"} %}
   <div id="navrenderbranch-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -375,7 +375,7 @@ You can also render only the parents of a specific key too, to make breadcrumb n
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "navbread"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navbread"} %}
   <div id="navbread-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -426,7 +426,7 @@ And an array of all the parents of the Bats entry will be returned (top-most par
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "navbreadself"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navbreadself"} %}
   <div id="navbreadself-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -524,7 +524,7 @@ The `eleventyNavigationToMarkdown` filter is {% addedin "Navigation 0.3.1" %}.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "navrenderfilter"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navrenderfilter"} %}
   <div id="navrenderfilter-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -581,7 +581,7 @@ When you render a navigation list, pass `showExcerpt: true` to the `eleventyNavi
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "navexcerpt"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navexcerpt"} %}
   <div id="navexcerpt-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -629,7 +629,7 @@ navToHtmlOptions:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "navmdoptions"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navmdoptions"} %}
   <div id="navmdoptions-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -682,7 +682,7 @@ You can change the HTML elements, classes on the list and list items, and add an
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "navhtmloptions"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navhtmloptions"} %}
   <div id="navhtmloptions-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
@@ -777,7 +777,7 @@ Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "navbyoh"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navbyoh"} %}
   <div id="navbyoh-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}

@@ -15,7 +15,7 @@ To denote that a piece of content should be wrapped in a template, use the `layo
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "layouts", additions: "md"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layouts", additions: "md"} %}
   <div id="layouts-md" role="tabpanel">
 
 {% codetitle "index.md" %}
@@ -120,7 +120,7 @@ All of this will output the following HTML content to `_site/content-using-layou
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "layoutoutput", additions: "md", label: "View the output from"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layoutoutput", additions: "md", label: "View the output from"} %}
   <div id="layoutoutput-md" role="tabpanel">
 {% callout "demo" %}
 

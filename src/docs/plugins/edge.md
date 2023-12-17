@@ -182,7 +182,7 @@ Here we are making a simple template file. We can use the `{% raw %}{% edge %}{%
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "edgetmpl"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "edgetmpl"} %}
   <div id="edgetmpl-liquid" role="tabpanel">
 
 {% codetitle "index.liquid" %}
@@ -276,7 +276,7 @@ In what might feel familiar to folks that have used the [Render plugin](/docs/pl
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "edgelang"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "edgelang"} %}
   <div id="edgelang-liquid" role="tabpanel">
 {% codetitle "index.liquid" %}
 
@@ -328,7 +328,7 @@ When the build data argument is a literal (a string or number), it is mapped to 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "edgedata"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "edgedata"} %}
   <div id="edgedata-liquid" role="tabpanel">
 
 {% codetitle "index.liquid" %}
@@ -389,7 +389,7 @@ When the build data argument is an object, the object properties are available a
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "edgedataobj"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "edgedataobj"} %}
   <div id="edgedataobj-liquid" role="tabpanel">
 {% codetitle "index.liquid" %}
 

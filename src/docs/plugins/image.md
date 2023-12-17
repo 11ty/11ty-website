@@ -366,7 +366,7 @@ Now you can use the `image` shortcode in your templates and the appropriate HTML
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
-	{% renderFile "./src/_includes/syntax-chooser-tablist.11ty.cjs", {id: "shortcode"} %}
+	{% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "shortcode"} %}
 	<div id="shortcode-liquid" role="tabpanel">
 		{% codetitle "Liquid", "Syntax" %}
 {%- highlight "liquid" %}{% raw %}
