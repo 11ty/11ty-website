@@ -2,6 +2,7 @@
 newstitle: "Calling all courageous canary testers for Eleventy v3.0"
 eleventyNavigation:
   parent: Blog
+homePageHighlight: true
 ---
 Are you feeling adventurous? A few short days ago we released the first alpha release of Eleventy v3.0 on the `canary` channel. If you’d like to try it out, use the following command to install it in your project:
 

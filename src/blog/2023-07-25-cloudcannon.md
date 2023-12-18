@@ -2,7 +2,6 @@
 newstitle: "Big Announcement: Eleventy and CloudCannon!"
 eleventyNavigation:
   parent: Blog
-homePageHighlight: true
 ---
 And now a special message via [YouTube](https://www.youtube.com/watch?v=nypsmn70ipI).
 
