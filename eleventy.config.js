@@ -285,7 +285,7 @@ export default async function(eleventyConfig) {
 		}
 
 		let imgHtml = shortcodes.getIndieAvatarHtml(iconUrl || url);
-		return `<a href="${url}">${imgHtml}${content}</a>`;
+		return `<a href="${url}" class="nowrap">${imgHtml}${content}</a>`;
 	});
 
 	eleventyConfig.addShortcode("emoji", function(emoji, alt = "") {
