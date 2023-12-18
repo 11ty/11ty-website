@@ -28,7 +28,7 @@ I’ve been working with the incredible folks at CloudCannon for a few months no
 
 * _Eleventy v3.0 requires **Node 18** or newer._
 
-The flagship feature for this release is our first-class bundler-free (read: it’s fast) [ESM support](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules). Practically speaking, this means you can add `"type": "module"` to your `package.json` and all of the Node `*.js` files in your project will now expact ESM syntax (e.g. `import` instead of `require`).
+The flagship feature for this release is our first-class bundler-free (read: it’s fast) [ESM support](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules). Practically speaking, this means you can add `"type": "module"` to your `package.json` and all of the Node `*.js` files in your project will now expect ESM syntax (e.g. `import` instead of `require`).
 
 **ESM is _not_ required**. Your existing CommonJS (CJS) projects (known for use of `module.exports` and `require`) will still work great with Eleventy 3.0 and we will continue to support CommonJS in Eleventy moving forward.
 
