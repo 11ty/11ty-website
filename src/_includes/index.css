@@ -354,6 +354,9 @@ h5 code {
 	font-family: inherit;
 	text-transform: none;
 }
+h1, h2, h3 {
+	text-wrap: balance;
+}
 
 .subhed {
 	display: block;
