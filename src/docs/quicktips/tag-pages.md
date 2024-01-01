@@ -77,7 +77,7 @@ Now Eleventy will only generate a `/tags/personal/` template and `tech` will be 
 
 ## Include all Tag Pages in the `all` Collection
 
-By default, only the first page generated with pagination will be added to the `all` collection. Ordinarily, this is not a problem, but with how we are using pagination in this unconventional manner to generate Tag Pages, you will likely want each Tag Page to be added to the `all` collection (very helpful to later generate a sitemap.xml file). Pages must opt-in to this behavior by setting `addAllPagesToCollections` to `true` like this:
+By default, only the first page generated with pagination will be added to the `all` collection. Ordinarily, this is not a problem, but with how we are using pagination in this unconventional manner to generate Tag Pages, you will likely want each Tag Page to be added to the `all` collection (very helpful to later generate a sitemap.xml file). Pages must opt-in to change this behavior by setting `addAllPagesToCollections` to `true` like this:
 
 {% raw %}
 ```markdown
