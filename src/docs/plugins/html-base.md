@@ -36,7 +36,7 @@ You can, if you’d like! Some folks have found it to be a bit [unreliable]({{ "
 
 ### Installation
 
-{% addedin "2.0.0-canary.15" %} This plugin is bundled with Eleventy 2.0 (no extra installation is required). It supports all async-friendly template languages (Nunjucks, Liquid, and JavaScript).
+{% addedin "2.0.0-canary.15" %} This plugin is bundled with Eleventy 2.0 (no extra installation is required). It works with all template languages (via an Eleventy Transform) and some of the advanced usage filters require async-friendly template syntax (Nunjucks, Liquid, and JavaScript).
 
 Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
 
