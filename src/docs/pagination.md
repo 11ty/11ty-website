@@ -720,6 +720,38 @@ before: function() {
 // …
 ```
 
+### Skipping Items {% addedin "2.0.0" %}
+
+Sometimes you might want to skip some of the first items in your data (e.g. because you already show them somewhere else).
+
+{% codetitle "YAML Front Matter", "Syntax" %}
+
+```markdown
+---
+pagination:
+  data: testdata
+  size: 2
+  skip: 1
+testdata:
+  - item1
+  - item2
+  - item3
+  - item4
+  - item5
+---
+```
+
+Paginates to:
+
+{% codetitle "JavaScript Object", "Syntax" %}
+
+```js
+[
+  [ "item2", "item3" ],
+  [ "item4", "item5" ],
+]
+```
+
 ### Order of Operations
 
 If you use more than one of these data set modification features, here’s the order in which they operate:
@@ -727,6 +759,7 @@ If you use more than one of these data set modification features, here’s the o
 * The `before` callback
 * `reverse: true`
 * `filter` entries
+* `skip` entries
 
 ## Add All Pagination Pages to Collections {% addedin "0.8.0" %}
 
