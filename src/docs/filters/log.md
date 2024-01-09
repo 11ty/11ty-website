@@ -102,4 +102,6 @@ This is the same as:
 </seven-minute-tabs>
 </is-land>
 
-* [← Back to Filters documentation.](/docs/filters/)
+---
+
+[← Back to Filters documentation.](/docs/filters/)

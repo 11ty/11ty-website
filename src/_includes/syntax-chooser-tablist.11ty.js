@@ -1,9 +1,18 @@
-async function render({id, valid, additions, subtractions, label}) {
+async function render({id, valid, additions, subtractions, only, label}) {
 	let syntaxes = {};
 
 	let extraSyntaxes = {
 		md: "Markdown",
 		webc: "WebC",
+		jscjs: "CommonJS",
+		jsesm: "ESM",
+	};
+
+	let syntaxMap = {
+		liquid: "Liquid",
+		njk: "Nunjucks",
+		js: "11ty.js",
+		hbs: "Handlebars",
 	};
 
 	// Extras go first
@@ -14,12 +23,13 @@ async function render({id, valid, additions, subtractions, label}) {
 		}
 	}
 
-	Object.assign(syntaxes, {
-		liquid: "Liquid",
-		njk: "Nunjucks",
-		js: "11ty.js",
-		hbs: "Handlebars",
-	});
+	if(only) {
+		for(let syn of (only || "").split(",")) {
+			syntaxes[syn] = extraSyntaxes[syn] || syntaxMap[syn];
+		}
+	} else {
+		Object.assign(syntaxes, syntaxMap);
+	}
 
 	for(let syn of (subtractions || "").split(",")) {
 		if(syn) {
