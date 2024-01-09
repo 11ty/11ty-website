@@ -66,6 +66,10 @@ function addedIn(version, tag, extraClass) {
 		if(semver.lt(version, MINIMUM_VERSION_SHOWN)) {
 			return "";
 		}
+		const newestPublishedVersion = versions.filter(v => v.tag !== "LATEST").shift();
+		if(isPreRelease(version) && semver.gt(version, newestPublishedVersion.tag)) {
+			beforeText = "Pre-release only: "
+		}
 	}
 
 	tag = tag || "span";

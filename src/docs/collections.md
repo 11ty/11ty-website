@@ -412,7 +412,7 @@ Note in the above example that we output the `post.data.title` value? Similarly,
   },
   data: { title: 'Test Title', tags: ['tag1', 'tag2'], date: 'Last Modified', /* … */ },
   content: '<h1>Test Title</h1>\n\n<p>This is text content…',
-  // Added in {{ "3.0.0-alpha.1" | coerceVersion }}
+  // Pre-release only: {{ "3.0.0-alpha.1" | coerceVersion }}
 {%- raw %}
   rawInput: '<h1>{{ title }}</h1>\n\n<p>This is text content…',
 }
