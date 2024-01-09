@@ -14,7 +14,7 @@ This plugin allows you to use file system paths in your HTML and they will be au
 This plugin is an implicit alternative to the [`inputPathToUrl` filter](/docs/filters/inputpath-to-url/). The filter is faster but a bit more verbose.
 {%- endcallout %}
 
-* Inspired by <a href="https://github.com/11ty/eleventy/issues/84">GitHub issue #84</a>
+_Inspired by [GitHub issue #84](https://github.com/11ty/eleventy/issues/84)._
 
 ### Usage
 
@@ -27,7 +27,9 @@ You can link to `inputPath` in any `a[href]`, `video[src]`, `audio[src]`, `sourc
 <a href="/my-template/">Home</a>
 ```
 
-The paths used here should be [relative to the input directory](/docs/config/#input-directory) though they _can_ be relative to the project root (the former is simpler and preferred).
+* The paths used here should be [relative to the input directory](/docs/config/#input-directory) though they _can_ be relative to the project root (the former is simpler and preferred).
+* As this transform is implicit it _does not_ error when an inputPath match is not found—it only returns the original URL string.
+* When pointing to a [**Pagination template**](/docs/pagination/), the first URL in the pagination set is returned.
 
 ### Installation
 

@@ -14,9 +14,7 @@ eleventyNavigation:
 This filter is an alternative to the [InputPath To Url Plugin](/docs/plugins/inputpath-to-url/), which provides an Eleventy transform that is less verbose but a bit slower.
 {%- endcallout %}
 
-The paths used here should be [relative to the input directory](/docs/config/#input-directory) though they _can_ be relative to the project root (the former is simpler and preferred).
-
-* Inspired by <a href="https://github.com/11ty/eleventy/issues/84">GitHub issue #84</a>
+_Inspired by [GitHub issue #84](https://github.com/11ty/eleventy/issues/84)._
 
 ## Usage
 
@@ -83,6 +81,10 @@ export default function(data) {
 </is-land>
 
 Renders as `<a href="/">Home</a>`.
+
+* The paths used here should be [relative to the input directory](/docs/config/#input-directory) though they _can_ be relative to the project root (the former is simpler and preferred).
+* If an `inputPath` match can not be found, this filter will throw an error.
+* When pointing to a [**Pagination template**](/docs/pagination/), the first URL in the pagination set is returned.
 
 ---
 
