@@ -23,6 +23,8 @@ You can link to `inputPath` in any `a[href]`, `video[src]`, `audio[src]`, `sourc
 <a href="/my-template/">Home</a>
 ```
 
+The paths used here should be [relative to the input directory](/docs/config/#input-directory) though they _can_ be relative to the project root (the former is simpler and preferred).
+
 ### Installation
 
 {% addedin "3.0.0-alpha.5" %} This plugin is bundled with Eleventy 3.0 and does not require you to install anything from `npm`. However, the plugin is _opt-in_ (requires you to use `addPlugin`). It is compatible with _all_ template languages via an Eleventy Transform.
