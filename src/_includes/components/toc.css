@@ -132,7 +132,7 @@ h1 + details.toc {
 details.toc,
 details.toc[open] {
 	border: 2px solid #ccc;
-	outline: inherit;
+	box-shadow: none;
 }
 details.toc[open] {
 	background-color: #f7f7f7;

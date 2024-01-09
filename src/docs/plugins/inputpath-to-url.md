@@ -10,7 +10,9 @@ eleventyNavigation:
 
 This plugin allows you to use file system paths in your HTML and they will be automatically transformed to their output URLs. Very useful for robust hyperlinking allowing you to change your output URLs without breaking content links! Works out of the box with [`permalink` remapping](/docs/permalinks/), the [HTML `<base>` plugin](/docs/plugins/html-base/), etc.
 
+{% callout "info", "md" -%}
 This plugin is an implicit alternative to the [`inputPathToUrl` filter](/docs/filters/inputpath-to-url/). The filter is faster but a bit more verbose.
+{%- endcallout %}
 
 ### Usage
 
@@ -49,7 +51,7 @@ export default function(eleventyConfig) {
 ```
 _You’re only allowed one `export default` in your configuration file, so make sure you only copy the `import` and the `addPlugin` lines above!_
 
-<details>
+<details class="details-expand-bg">
 <summary>Expand for full options list</summary>
 
 {% codetitle ".eleventy.js (ESM)" %}
@@ -83,7 +85,7 @@ module.exports = async function(eleventyConfig) {
 ```
 _You’re only allowed one `module.exports` in your configuration file, so make sure you only copy the `import` and the `addPlugin` lines above!_
 
-<details>
+<details class="details-expand-bg">
 <summary>Expand for full options list</summary>
 
 {% codetitle ".eleventy.js (CommonJS)" %}

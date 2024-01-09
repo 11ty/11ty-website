@@ -10,9 +10,13 @@ eleventyNavigation:
 
 {% addedin "3.0.0-alpha.5" %} Map a file’s location and to the template’s output URL. Very useful for robust hyperlinking allowing you to change your output URLs without breaking content links!
 
-This filter is an alternative to the [InputPath To Url plugin](/docs/plugins/inputpath-to-url/), which provides an Eleventy transform that is less verbose but a bit slower.
+{% callout "info", "md" -%}
+This filter is an alternative to the [InputPath To Url Plugin](/docs/plugins/inputpath-to-url/), which provides an Eleventy transform that is less verbose but a bit slower.
+{%- endcallout %}
 
 The paths used here should be [relative to the input directory](/docs/config/#input-directory) though they _can_ be relative to the project root (the former is simpler and preferred).
+
+## Usage
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
@@ -50,9 +54,6 @@ module.exports = function(data) {
 }
 ```
 {% endraw %}
-
-  </div>
-  <div id="inputpathtourl-jsesm" role="tabpanel">
 
 {% codetitle "JavaScript (ESM)", "Syntax" %}
 

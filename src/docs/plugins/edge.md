@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: Edge
-  order: -2
+  order: 99
   excerpt: A plugin to run Eleventy in an Edge Function to add dynamic content to your Eleventy sites.
 # communityLinksKey: edge
 overrideCommunityLinks: true

@@ -194,19 +194,26 @@ main img[height] {
 	height: auto;
 }
 main details {
-	margin: 1em 0;
+	margin: 1rem 0;
 }
 main > details[open],
-details[open].expand-background {
-	background-color: rgba(0,0,0,.13);
-	outline: .75em solid rgba(0,0,0,.13);
+details[open].details-expand-bg {
+	--details-bg: rgba(0,0,0,.08);
+	background-color: var(--details-bg);
+	box-shadow: 0 0 0 1rem var(--details-bg);
+}
+main > details[open] pre,
+details[open].details-expand-bg pre {
+	border-radius: 0;
 }
 @media (prefers-color-scheme: dark) {
 	main > details[open],
-	details[open].expand-background {
-		background-color: rgba(255,255,255,.08);
-		outline: .75em solid rgba(255,255,255,.08);
+	details[open].details-expand-bg {
+		--details-bg: rgba(255,255,255,.08);
 	}
+}
+details[open].details-rounded {
+	border-radius: .1em;
 }
 main details[open] > summary {
 	margin: 0 0 1em;
@@ -378,6 +385,10 @@ h1, h2, h3 {
 }
 
 /* Lists */
+ul:last-child,
+ol:last-child {
+	margin-bottom: 0;
+}
 ul {
 	padding: 0 1em;
 }
