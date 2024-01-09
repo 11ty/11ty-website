@@ -14,6 +14,8 @@ This plugin allows you to use file system paths in your HTML and they will be au
 This plugin is an implicit alternative to the [`inputPathToUrl` filter](/docs/filters/inputpath-to-url/). The filter is faster but a bit more verbose.
 {%- endcallout %}
 
+* Inspired by <a href="https://github.com/11ty/eleventy/issues/84">GitHub issue #84</a>
+
 ### Usage
 
 You can link to `inputPath` in any `a[href]`, `video[src]`, `audio[src]`, `source`, `img[src]`, `[srcset]` and [a whole bunch more](https://github.com/posthtml/posthtml-urls/blob/307c91342a211b3f9fb22bc57264bbb31f235fbb/lib/defaultOptions.js) (via [posthtml-urls](https://github.com/posthtml/posthtml-urls)) and this plugin will render the correct URL for the template in your output directory.

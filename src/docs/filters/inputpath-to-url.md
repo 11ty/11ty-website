@@ -16,6 +16,8 @@ This filter is an alternative to the [InputPath To Url Plugin](/docs/plugins/inp
 
 The paths used here should be [relative to the input directory](/docs/config/#input-directory) though they _can_ be relative to the project root (the former is simpler and preferred).
 
+* Inspired by <a href="https://github.com/11ty/eleventy/issues/84">GitHub issue #84</a>
+
 ## Usage
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
