@@ -82,7 +82,7 @@ export default function(data) {
 
 Renders as `<a href="/">Home</a>`.
 
-* The paths used here should be [relative to the input directory](/docs/config/#input-directory) though they _can_ be relative to the project root (the former is simpler and preferred).
+* The paths used here should be [relative to the input directory](/docs/config/#input-directory) though they _can_ be relative to the project root (the former is simpler and more robust).
 * If an `inputPath` match can not be found, this filter will throw an error.
 * When pointing to a [**Pagination template**](/docs/pagination/), the first URL in the pagination set is returned.
 

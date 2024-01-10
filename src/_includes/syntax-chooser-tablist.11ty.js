@@ -2,10 +2,12 @@ async function render({id, valid, additions, subtractions, only, label}) {
 	let syntaxes = {};
 
 	let extraSyntaxes = {
+		html: "HTML",
 		md: "Markdown",
 		webc: "WebC",
 		jscjs: "CommonJS",
 		jsesm: "ESM",
+		"any": "Any"
 	};
 
 	let syntaxMap = {
