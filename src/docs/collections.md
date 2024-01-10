@@ -30,7 +30,7 @@ title: Hot Take—Social Media is Considered Harmful
 This will place this `mypost.md` into the `post` collection with all other pieces of content sharing the `post` tag. To reference this collection and make a list of all posts, use the `collections` object in any template:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collections"} %}
   <div id="collections-liquid" role="tabpanel">
 
@@ -85,7 +85,7 @@ exports.render = function(data) {
 {% addedin "2.0.0-canary.21" %}Use the `eleventyImport` object to declare any collections you use (data cascade friendly) to inform the relationships for smarter incremental builds. This is an Array of collection names. Read more about [importing collections](https://github.com/11ty/eleventy/issues/975).
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collections-import"} %}
   <div id="collections-import-liquid" role="tabpanel">
 
@@ -156,7 +156,7 @@ exports.render = function(data) {
 Compare the `post.url` and special Eleventy-provided `page.url` variable to find the current page. Building on the previous example:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsnav"} %}
   <div id="collectionsnav-liquid" role="tabpanel">
 
@@ -218,7 +218,7 @@ By default Eleventy puts all of your content (independent of whether or not it h
 ### Link to all Eleventy generated content
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsall"} %}
   <div id="collectionsall-liquid" role="tabpanel">
 
@@ -345,7 +345,7 @@ This content would not show up in any of the collections it was added to with `t
 ## Collection Item Data Structure
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsitem"} %}
   <div id="collectionsitem-liquid" role="tabpanel">
 
@@ -454,7 +454,7 @@ This collection would be sorted like this:
 To sort descending in your template, you can use a filter to reverse the sort order. For example, it might look like this:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionssort"} %}
   <div id="collectionssort-liquid" role="tabpanel">
 

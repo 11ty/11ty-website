@@ -14,7 +14,7 @@ Eleventy Layouts are special templates that can be used to wrap other content.
 To denote that a piece of content should be wrapped in a template, use the `layout` key in your front matter, like so:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layouts", additions: "md"} %}
   <div id="layouts-md" role="tabpanel">
 
@@ -119,7 +119,7 @@ Layouts can contain their own front matter data! It’ll be merged with the cont
 All of this will output the following HTML content to `_site/content-using-layout/index.html`:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layoutoutput", additions: "md", label: "View the output from"} %}
   <div id="layoutoutput-md" role="tabpanel">
 {% callout "demo" %}

@@ -106,7 +106,7 @@ This plugin provides the following syntax highlighters using PrismJS, all of whi
 * [Review the list of supported PrismJS languages](http://prismjs.com/#languages-list)
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlight", additions: "md,webc", subtractions: "hbs"} %}
   <div id="highlight-md" role="tabpanel">
 
@@ -265,7 +265,7 @@ function myFunction() {
 Add the `diff-` prefix to the language name on the previous examples to show code changes. Use a `+` or `-` at the beginning of the line to denote the addition or removal of that line.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlightdiff", additions: "md,webc", subtractions: "hbs"} %}
   <div id="highlightdiff-md" role="tabpanel">
 

@@ -83,7 +83,7 @@
     "@zachleat/details-utils": "^2.0.2",
     "@zachleat/filter-container": "^3.0.4",
     "@zachleat/flex-luthor": "^4.0.2",
-    "@zachleat/seven-minute-tabs": "^2.0.0",
+    "@zachleat/seven-minute-tabs": "^2.0.4",
     "artificial-chart": "^2.0.3",
     "lite-youtube-embed": "^0.2.0",
     "speedlify-score": "^2.0.2"

@@ -163,7 +163,7 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navtohtml"} %}
   <div id="navtohtml-liquid" role="tabpanel">
 
@@ -201,7 +201,7 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
 {% addedin "Navigation 0.3.1" %}
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navtomd"} %}
   <div id="navtomd-liquid" role="tabpanel">
 
@@ -246,7 +246,7 @@ For our documented templates above with the following template:
 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navrender"} %}
   <div id="navrender-liquid" role="tabpanel">
 
@@ -316,7 +316,7 @@ Just show the children of a specific key, pass a key to `eleventyNavigation`:
 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navrenderbranch"} %}
   <div id="navrenderbranch-liquid" role="tabpanel">
 
@@ -374,7 +374,7 @@ You can also render only the parents of a specific key too, to make breadcrumb n
 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navbread"} %}
   <div id="navbread-liquid" role="tabpanel">
 
@@ -425,7 +425,7 @@ And an array of all the parents of the Bats entry will be returned (top-most par
 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navbreadself"} %}
   <div id="navbreadself-liquid" role="tabpanel">
 
@@ -469,7 +469,7 @@ navOptions:
 {% addedin "Navigation 0.3.3" %}
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
     <a href="#navbreadmissing-liquid" role="tab">Liquid</a>
@@ -523,7 +523,7 @@ The `eleventyNavigationToMarkdown` filter is {% addedin "Navigation 0.3.1" %}.
 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navrenderfilter"} %}
   <div id="navrenderfilter-liquid" role="tabpanel">
 
@@ -580,7 +580,7 @@ When you render a navigation list, pass `showExcerpt: true` to the `eleventyNavi
 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navexcerpt"} %}
   <div id="navexcerpt-liquid" role="tabpanel">
 
@@ -628,7 +628,7 @@ navToHtmlOptions:
 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navmdoptions"} %}
   <div id="navmdoptions-liquid" role="tabpanel">
 
@@ -681,7 +681,7 @@ You can change the HTML elements, classes on the list and list items, and add an
 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navhtmloptions"} %}
   <div id="navhtmloptions-liquid" role="tabpanel">
 
@@ -776,7 +776,7 @@ Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navbyoh"} %}
   <div id="navbyoh-liquid" role="tabpanel">
 

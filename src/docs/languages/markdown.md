@@ -64,7 +64,7 @@ Pass in your own `markdown-it` plugins using the `amendLibrary` (Eleventy &gt;= 
 2. `npm install` the plugin.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   <div role="tablist" aria-label="Choose a template language">
     Eleventy version:
     <a href="#plugins-two" role="tab">&gt;= 2.0</a>

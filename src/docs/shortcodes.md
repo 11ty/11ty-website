@@ -22,7 +22,7 @@ Various template engines can be extended with shortcodes for easy reusable conte
 Here are a few examples:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "shortcode"} %}
   <div id="shortcode-liquid" role="tabpanel">
     {% codetitle "sample.liquid" %}
@@ -100,7 +100,7 @@ Read more about using shortcodes on the individual Template Language documentati
 The shortcodes we saw above were nice, I suppose. But really, they are not all that different from a filter. The real ultimate power of Shortcodes comes when they are paired. Paired Shortcodes have a start and end tag—and allow you to nest other template content inside!
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pairedshortcodes"} %}
   <div id="pairedshortcodes-liquid" role="tabpanel">
 

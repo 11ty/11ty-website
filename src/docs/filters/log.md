@@ -11,7 +11,7 @@ eleventyNavigation:
 {% addedin "0.11.0" %} An easy way to <code>console.log</code> anything from inside of a template file.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "log"} %}
   <div id="log-liquid" role="tabpanel">
 
@@ -61,7 +61,7 @@ is functionally the same as running `console.log("My Title")` inside of your tem
 You can drop log in between any filter chain you already have and it will log the incoming data and pass it through to the next filter.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   <div role="tablist" aria-label="Template Language Chooser">
     View this example in:
     <a href="#log-chain-demo-liquid" role="tab">Liquid</a>

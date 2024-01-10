@@ -49,7 +49,7 @@ async function render({id, valid, additions, subtractions, only, label}) {
 	for(let syn in syntaxes) {
 		let isPreferenceSelectable = validArray.length === 0 || validArray.includes(syn);
 
-		str.push(`<a href="#${id}-${syn}" role="tab"{% if syntax == "${syn}"${isPreferenceSelectable ? defaultOnNoPreference : ""} %} aria-selected="true"{% endif %}>${syntaxes[syn]}</a>`);
+		str.push(`<a href="#${id}-${syn}" role="tab" data-tabs-persist="${syn}"{% if syntax == "${syn}"${isPreferenceSelectable ? defaultOnNoPreference : ""} %} aria-selected="true"{% endif %}>${syntaxes[syn]}</a>`);
 
 		// only the first one should default
 		if(isPreferenceSelectable) {

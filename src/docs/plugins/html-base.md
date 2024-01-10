@@ -96,7 +96,7 @@ This plugin also provides new filters for you to use these transformations manua
 Transform a single URL string using the base.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "htmlbase"} %}
   <div id="htmlbase-liquid" role="tabpanel">
 
@@ -216,7 +216,7 @@ Absolute URLs are ignored:
 You can override the `baseHref` option by passing another argument to the filter with your one-off base value. Note that when you use a full URL as your base href, relative paths are no longer ignored—they are modified using the current page’s URL:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "htmlbasefull"} %}
   <div id="htmlbasefull-liquid" role="tabpanel">
 
@@ -331,7 +331,7 @@ Transform a block of HTML with posthtml. Applies the above `htmlBaseUrl` filter 
 We use this in the RSS plugin to change your content to be absolute URLs for broadest compatibility with various RSS feed readers.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "htmlbasehtmlblock"} %}
   <div id="htmlbasehtmlblock-liquid" role="tabpanel">
 
@@ -460,7 +460,7 @@ Note that passing a full external URL (e.g. `http://example.com/`) to `htmlBaseU
 However, if you do want to force addition of pathPrefix to a URL, you can use the `addPathPrefixToFullUrl` filter.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "htmlbase-fullurl"} %}
   <div id="htmlbase-fullurl-liquid" role="tabpanel">
 
