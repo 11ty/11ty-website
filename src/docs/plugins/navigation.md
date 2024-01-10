@@ -470,12 +470,7 @@ navOptions:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs persist>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#navbreadmissing-liquid" role="tab">Liquid</a>
-    <a href="#navbreadmissing-njk" role="tab">Nunjucks</a>
-    <a href="#navbreadmissing-js" role="tab">11ty.js</a>
-  </div>
+	{% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navbreadmissing", subtractions: "hbs"} %}
   <div id="navbreadmissing-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}

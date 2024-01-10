@@ -121,7 +121,7 @@ Note that the [`inputPathToUrl` filter](/docs/filters/inputpath-to-url/) is avai
 Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist>
+<seven-minute-tabs><!-- persist someday but not yet -->
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "configfile", only: "jsesm,jscjs" } %}
   <div id="configfile-jsesm" role="tabpanel">
 

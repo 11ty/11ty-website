@@ -62,11 +62,7 @@ You can drop log in between any filter chain you already have and it will log th
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs persist>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#log-chain-demo-liquid" role="tab">Liquid</a>
-    <a href="#log-chain-demo-njk" role="tab">Nunjucks</a>
-  </div>
+	{% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "log-chain-demo", subtractions: "js,hbs"} %}
   <div id="log-chain-demo-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}

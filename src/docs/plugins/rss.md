@@ -89,7 +89,7 @@ module.exports = function(eleventyConfig) {
 Copy and paste this template and modify the JSON metadata to match your feed’s needs. Make sure `collections.posts` matches the template collection you want to provide a feed for.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist>
+<seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
     View this example in:
     <a href="#rss-atom" role="tab">Atom</a>

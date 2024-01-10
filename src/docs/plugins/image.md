@@ -450,7 +450,7 @@ module.exports = function(eleventyConfig) {
 If you have an advanced use case and don’t want to use our methods to generate the image markup, you can do it yourself!
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist>
+<seven-minute-tabs>
 <div role="tablist" aria-label="DIY mode chooser">
 	Choose one:
 	<a href="#filter-diy-img" role="tab">Do it yourself: &lt;img&gt;</a>
