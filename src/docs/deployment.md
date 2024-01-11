@@ -62,6 +62,9 @@ classicHosts:
     url: https://neocities.org/
     screenshotSize: medium
     skipIcon: true
+  - name: yay.boo
+    url: https://yay.boo/
+    screenshotSize: medium
 webides:
   - name: Glitch
     url: https://glitch.com/
