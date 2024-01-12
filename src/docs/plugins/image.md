@@ -365,7 +365,7 @@ The [`addShortcode` method is async-friendly in Eleventy 2.0+](/docs/shortcodes/
 Now you can use the `image` shortcode in your templates and the appropriate HTML will be generated for you (based on your specified Image options).
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist>
+<seven-minute-tabs persist sync>
 	{% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "shortcode"} %}
 	<div id="shortcode-liquid" role="tabpanel">
 		{% codetitle "Liquid", "Syntax" %}

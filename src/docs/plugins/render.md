@@ -63,7 +63,7 @@ Use the `renderTemplate` paired shortcode to render a template string.
 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "rendertmpl"} %}
   <div id="rendertmpl-liquid" role="tabpanel">
 
@@ -126,7 +126,7 @@ The content inside of the shortcode will be rendered using Markdown (`"md"`). Fr
 The first argument to `renderTemplate` can be any valid [`templateEngineOverride`](/docs/languages/#templateengineoverride-examples) value. You can even use `"liquid,md"` to preprocess markdown with liquid. You can use [custom template types](/docs/languages/custom/) here too, including [the Vue plugin](https://github.com/11ty/eleventy-plugin-vue)!
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "rendertmplvue"} %}
   <div id="rendertmplvue-liquid" role="tabpanel">
 
@@ -186,7 +186,7 @@ To add Vue support, don’t forget to install [`@11ty/eleventy-plugin-vue` (v0.6
 Both the [`eleventy`](/docs/data-eleventy-supplied/#eleventy-variable) and [`page` variables](/docs/data-eleventy-supplied/#page-variable) are available inside of these templates by default. If you want to pass in additional data, you can do so like this:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "rendertmpldata"} %}
   <div id="rendertmpldata-liquid" role="tabpanel">
 
@@ -256,7 +256,7 @@ Use the `renderFile` shortcode to render an include file.
 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfile"} %}
   <div id="renderfile-liquid" role="tabpanel">
 
@@ -307,7 +307,7 @@ Note that you can use files supported by any [custom file extensions](/docs/lang
 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfilevue"} %}
   <div id="renderfilevue-liquid" role="tabpanel">
 
@@ -359,7 +359,7 @@ To add Vue support, don’t forget to install [`@11ty/eleventy-plugin-vue` (v0.6
 Both the [`eleventy`](/docs/data-eleventy-supplied/#eleventy-variable) and [`page` variables](/docs/data-eleventy-supplied/#page-variable) are available inside of these templates by default. If you want to pass in additional data, you can do so like this:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfiledata"} %}
   <div id="renderfiledata-liquid" role="tabpanel">
 
@@ -423,7 +423,7 @@ The syntax is normally inferred using the file extension, but it can be overridd
 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfileoverride"} %}
   <div id="renderfileoverride-liquid" role="tabpanel">
 

@@ -19,7 +19,7 @@ To iterate over a data set and create pages for individual chunks of data, use p
 Consider the following template, which will result in two pages being created, each of which will display two items from `testdata`:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-array"} %}
   <div id="paged-array-liquid" role="tabpanel">
     {%- codetitle "paged.liquid" %}
@@ -125,7 +125,7 @@ Learn how to create a list of links to every paginated page on a pagination temp
 All of the examples thus far have paged Array data. Eleventy does allow paging objects too. Objects are resolved to pagination arrays using either the `Object.keys` or `Object.values` JavaScript functions. Consider the following templates:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedobj"} %}
   <div id="pagedobj-liquid" role="tabpanel">
 
@@ -249,7 +249,7 @@ This resolves to:
 Your front matter would look like this:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedatafile"} %}
   <div id="pagedatafile-liquid" role="tabpanel">
 
@@ -370,7 +370,7 @@ Using a universal `slug` filter (transforms `My Item` to `my-item`), this output
 Ok, so `pagination.items[0]` is ugly. We provide an option to alias this to something different.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedalias"} %}
   <div id="pagedalias-liquid" role="tabpanel">
 
@@ -431,7 +431,7 @@ If your chunk `size` is greater than 1, the alias will be an array instead of a 
 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedchunk"} %}
   <div id="pagedchunk-liquid" role="tabpanel">
 
@@ -496,7 +496,7 @@ If you’d like to make a paginated list of all of your blog posts (any content 
 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedcollection"} %}
   <div id="pagedcollection-liquid" role="tabpanel">
 

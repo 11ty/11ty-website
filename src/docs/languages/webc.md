@@ -154,7 +154,7 @@ WebC uses an HTML parser to process input files: use any HTML here!
 Using Eleventy’s built-in [Render plugin](/docs/plugins/render/) allows you to render WebC inside of an existing Liquid, Nunjucks, or 11ty.js template.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist>
+<seven-minute-tabs persist sync>
 {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "webc-render"} %}
 <div id="webc-render-liquid" role="tabpanel">
 

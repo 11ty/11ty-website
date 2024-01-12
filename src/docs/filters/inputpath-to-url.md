@@ -19,7 +19,7 @@ _Inspired by [GitHub issue #84](https://github.com/11ty/eleventy/issues/84)._
 ## Usage
 
 <is-land import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "inputpathtourl"} %}
   <div id="inputpathtourl-liquid" role="tabpanel">
 
