@@ -15,14 +15,12 @@ Low level utility to perform build-time image transformations for both vector an
 
 ## Features
 
-You maintain full control of the HTML. Use with `<picture>` or `<img>` or CSS `background-image`, or others! Works great to add `width` and `height` to your images!
+You maintain full control of the HTML. Use with `<picture>`, `<img>`, CSS `background-image`, or others! Works great to add `width` and `height` to your images!
 
 * Accepts a variety of image types as input: `jpeg`, `png`, `webp`, `gif`, `tiff`, `avif`, and `svg`.
-* Output multiple sizes, keeping the original aspect ratio. Never upscales raster images larger than original size (with the option to upscale SVG input).
-* Output multiple formats, supports: `jpeg`, `png`, `webp`, `avif`, and `svg` (requires SVG input)
-
-### Even more features
-
+* Output multiple sizes, maintaining the original aspect ratio.
+	* Never upscales raster images larger than original size (with the option to upscale SVG input).
+* Output multiple formats, supports: `jpeg`, `png`, `webp`, `avif`, and `svg` (SVG output requires SVG input)
 * Easily add `width` and `height` attributes on `<img>` elements for [proper aspect ratio mapping](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping).
 * Does not require or rely on file extensions (like `.png` or `.jpg`) in URLs or local files, which may be missing or inaccurate.
 * Save remote images locally to prevent broken image URLs (using [`eleventy-fetch`](/docs/plugins/fetch/)).
@@ -357,6 +355,45 @@ module.exports = function(eleventyConfig) {
 	});
 };
 ```
+
+<details>
+<summary>Expand to see full options list for <code>Image.generateHTML</code></summary>
+
+
+{% codetitle ".eleventy.js" %}
+
+```js
+const Image = require("@11ty/eleventy-img");
+
+// Only one module.exports per configuration file, please!
+module.exports = function(eleventyConfig) {
+	eleventyConfig.addShortcode("image", async function(src, alt, sizes) {
+		let metadata = await Image(src, {
+			// omitted for brevity
+		});
+
+		let imageAttributes = {
+			// omitted for brevity
+		};
+
+		let options = {
+			// HTML attributes added to `<picture>` (left out if <img> is used)
+			// Added in v3.1.9
+			pictureAttributes: {},
+
+			// Condense HTML output to one line (no new lines)
+			// Added in v0.7.3
+			whitespaceMode: "inline", // or: "block"
+		};
+
+		// You bet we throw an error on a missing alt (alt="" works okay)
+		// Note that `options` are *optional*
+		return Image.generateHTML(metadata, imageAttributes, options);
+	});
+};
+```
+
+</details>
 
 The [`addShortcode` method is async-friendly in Eleventy 2.0+](/docs/shortcodes/#asynchronous-shortcodes). Use `addAsyncShortcode` in older versions of Eleventy. You can also [add these shortcodes to individual template engines](/docs/shortcodes/#async-friendly-per-engine-shortcodes), if you’d like!
 
