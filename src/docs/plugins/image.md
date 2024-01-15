@@ -123,10 +123,16 @@ const Image = require("@11ty/eleventy-img");
 		svgShortCircuit: false,
 
 		// SVG file sizes can report the compressed size
+		// Added in v3.1.8
 		svgCompressionSize: "",
 
 		// allow svg to upscale beyond supplied dimensions?
+		// Added in v3.1.8
 		svgAllowUpscale: true,
+
+		// always rotate the image to enforce correct orientation from EXIF metadata
+		// Added in v3.1.9
+		fixOrientation: false,
 
 		// the file name hash length
 		hashLength: 10,
