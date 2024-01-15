@@ -1,0 +1,6 @@
+{
+	"url": "https://github.com/xiyuvi/eleventy-cn-blog",
+	"name": "eleventy-cn-blog",
+	"description": "一个开箱即用的静态博客生成器，基于eleventy的静态博客生成器，灵感来自eleventy-base-blog模版，对中文做了一些优化，尽量使用零js编写",
+	"demo": "https://next.xiyu.pro"
+}
