@@ -1,0 +1,4 @@
+{
+	"npm": "@tybalt/eleventy-plugin",
+	"description": "Write your sites with web components using Tybalt"
+}
