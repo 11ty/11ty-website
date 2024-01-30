@@ -1,0 +1,54 @@
+<style webc:scoped>
+:host {
+	display: block;
+	background-color: #eee;
+	border: 1px solid #222;
+	border-radius: .5em;
+	padding: 1em;
+}
+@media (prefers-color-scheme: dark) {
+	:host {
+		background-color: #555;
+		color: #fff;
+		border-color: #ddd;
+	}
+}
+:host form {
+	display: flex;
+	margin-inline: auto;
+	max-width: 32em;
+	flex-direction: column;
+	gap: .5em;
+}
+:host label {
+	flex-basis: 100%;
+	text-align: left;
+}
+:host input {
+	flex-grow: 1;
+	font-size: 1.111111111111em; /* 20px /18 */
+	padding: .25em;
+	border-radius: .25em;
+}
+:host button {
+	font-weight: 600;
+}
+
+:host .button-wrapper {
+	flex-grow: 1;
+	flex-basis: 100%;
+	margin-block: 1em;
+	margin-inline: 1rem;
+}
+</style>
+<form
+	action="https://buttondown.email/api/emails/embed-subscribe/11ty"
+	method="post"
+	target="popupwindow"
+	onsubmit="window.open('https://buttondown.email/11ty', 'popupwindow')"
+	class="embeddable-buttondown-form"
+>
+	<label :for="`bd-email-${uid}`">Enter your email:</label>
+	<input type="email" name="email" required :id="`bd-email-${uid}`" placeholder="you@example.com">
+	<giant-button class="button-wrapper" @type="submit"></giant-button>
+</form>

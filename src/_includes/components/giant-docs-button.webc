@@ -1,3 +1,4 @@
+<!--- some collisions with giant-button.webc  --->
 <style webc:scoped="why-are-you-doing-this">
 a.btn-primary {
 	margin-top: 1.5em;
