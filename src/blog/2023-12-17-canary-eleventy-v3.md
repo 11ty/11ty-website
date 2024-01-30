@@ -59,7 +59,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-If _you’re contining to use CommonJS_, these will need to be updated to dynamic imports instead (you can’t `require` an ESM package but you can use `await import()` in CommonJS to work around it):
+If _you’re continuing to use CommonJS_, these will need to be updated to dynamic imports instead (you can’t `require` an ESM package but you can use `await import()` in CommonJS to work around it):
 
 ```js
 // Eleventy 3.0 supports async configuration callbacks:
