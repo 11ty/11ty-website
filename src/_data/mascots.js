@@ -37,7 +37,7 @@ export default [
 	{
 		url: "/blog/mascot-david/",
 		image: "./src/img/mascots/david.svg",
-		name: "(Not yet named)",
+		name: "Elle",
 		author: "David Neal",
 		description: "November 2023. Our third commission! We’re getting smarter."
 	}

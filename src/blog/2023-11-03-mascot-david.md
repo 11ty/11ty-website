@@ -4,6 +4,8 @@ eleventyNavigation:
   parent: Blog
   key: Newer mascot
 ---
+_**Update 2024 January 31**—this mascot’s name [has been selected](https://fosstodon.org/@eleventy/111806909499335065) and it is **Elle**!_
+
 The Eleventy Mascot is now officially a series! This time we’ve been lucky enough to snag a commission from David Neal, a very talented artist and long-time Eleventy enthusiast!
 
 David was so excited to deliver this one and we think he absolutely nailed it. Thank you David!!
