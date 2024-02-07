@@ -14,6 +14,6 @@ We’ll publish a full schedule of relevant conference dates (registration, call
 
 ## Wonderfully Wild World Wide Web
 
-Subscribe to the [**11ty Newsletter**](https://buttondown.email/11ty/) to keep up with all things 11ty including news, updates from our community, the Eleventy site generator and open source project, the Conference, and more!
+Subscribe to the [**11ty Newsletter**](https://buttondown.email/11ty?tag=conf2024) to keep up with all things 11ty including news, updates from our community, the Eleventy site generator and open source project, the Conference, and more!
 
-{% renderTemplate "webc" %}<div><newsletter-form></newsletter-form></div>{% endrenderTemplate %}
+{% renderTemplate "webc" %}<div><newsletter-form tag="conf2024"></newsletter-form></div>{% endrenderTemplate %}

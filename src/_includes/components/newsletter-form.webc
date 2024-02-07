@@ -50,5 +50,6 @@
 >
 	<label :for="`bd-email-${uid}`">Enter your email:</label>
 	<input type="email" name="email" required :id="`bd-email-${uid}`" placeholder="you@example.com">
+	<input webc:if="tag" type="hidden" name="tag" :value="tag">
 	<giant-button class="button-wrapper" @type="submit"></giant-button>
 </form>
