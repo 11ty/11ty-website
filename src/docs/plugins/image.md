@@ -131,7 +131,7 @@ const Image = require("@11ty/eleventy-img");
 		svgAllowUpscale: true,
 
 		// always rotate the image to enforce correct orientation from EXIF metadata
-		// Added in v3.1.9
+		// Added in v4.0.0
 		fixOrientation: false,
 
 		// the file name hash length
@@ -384,7 +384,7 @@ module.exports = function(eleventyConfig) {
 
 		let options = {
 			// HTML attributes added to `<picture>` (left out if <img> is used)
-			// Added in v3.1.9
+			// Added in v4.0.0
 			pictureAttributes: {},
 
 			// Condense HTML output to one line (no new lines)
@@ -481,7 +481,7 @@ function imageShortcode(src, cls, alt, sizes, widths) {
 }
 
 module.exports = function(eleventyConfig) {
-	eleventyConfig.addNunjucksShortcode("myImage", imageShortcode);
+	eleventyConfig.addShortcode("myImage", imageShortcode);
 }
 ```
 
