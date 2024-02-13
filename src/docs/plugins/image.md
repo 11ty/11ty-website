@@ -323,8 +323,11 @@ export default function(eleventyConfig) {
 		// which file extensions to process
 		extensions: "html",
 
+		// You can put any other image plugin options here:
+
 		// optional, output image formats
-		formats: ["avif", "webp", "auto"],
+		formats: ["webp", "jpeg"],
+		// formats: ["auto"],
 
 		// optional, output image widths
 		// widths: ["auto"],
