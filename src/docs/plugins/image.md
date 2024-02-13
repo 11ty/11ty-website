@@ -600,7 +600,7 @@ Image optimization is likely one of the costlier pieces of your Eleventy build. 
 1. File size of images being optimized (larger source images are more expensive)
 1. Optimizing a lot of remote images (image content must be fetched from a remote server and is subsequently cached via [`eleventy-fetch`](/docs/plugins/fetch/)).
 
-If you’re using the [Transform method](#eleventy-transform) to optimize images, this incurs an additional cost via the HTML postprocessing step. If you want the easiest thing to configure (or you’re _not_ using an asynchronous friendly template syntax—e.g. Nunjucks, Liquid, WebC, 11ty.js), this might be worth it because it’s so easy to configure—but a build performance trade-off exists there.
+If you’re using the [Transform method](#eleventy-transform) to optimize images, this incurs an additional cost via the HTML postprocessing step. If you want the easiest thing to configure (or you’re _not_ using an asynchronous friendly template syntax—e.g. Nunjucks, Liquid, WebC, 11ty.js), this might be worth it—but be aware that a build performance trade-off exists.
 
 <div id="caching"></div>
 
