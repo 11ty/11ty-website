@@ -21,7 +21,7 @@ You maintain full control of the HTML. Use with `<picture>`, `<img>`, CSS `backg
 * Accepts a variety of image types as input: `jpeg`, `png`, `webp`, `gif`, `tiff`, `avif`, and `svg`.
 * Output multiple sizes, maintaining the original aspect ratio.
 	* Never upscales raster images larger than original size (with the option to upscale SVG input).
-* Output multiple formats, supports: `jpeg`, `png`, `webp`, `avif`, and `svg` (SVG output requires SVG input)
+* Output multiple formats, supports: `jpeg`, `png`, `webp`, `avif` <a href="#build-cost-🧰"><span class="minilink minilink-buildcost"><code>+1</code> Build Cost</span></a>, and `svg` (SVG output requires SVG input)
 * Does _not_ rely on file extensions (like `.png` or `.jpg`) in URLs or local files, which may be missing or inaccurate.
 * Save remote images locally to prevent broken image URLs (using [`eleventy-fetch`](/docs/plugins/fetch/)).
 * Fast: de-duplicates image requests and uses both an in-memory and disk cache.
@@ -175,7 +175,7 @@ Use almost any combination of these:
 * `formats: ["png"]`
 * `formats: ["auto"]` (keep original format) `"auto"`
 * `formats: ["svg"]` (requires SVG input)
-* `formats: ["avif"]`
+* `formats: ["avif"]` <a href="#build-cost-🧰"><span class="minilink minilink-buildcost"><code>+1</code> Build Cost</span></a>
 
 ### Output Locations
 
@@ -596,8 +596,9 @@ Image optimization is likely one of the costlier pieces of your Eleventy build. 
 
 1. Number of unique images optimized (not number of pages)
 1. Number of `widths` you generate for each source image.
-1. Number of `formats` you generate for each source image (note: `avif` is more costly than the others).
-1. File size of images being optimized (larger source images are more expensive)
+1. Number of `formats` you generate for each source image.
+	* `avif` is more costly than the others. <span class="minilink minilink-buildcost"><code>+1</code> Build Cost</span>
+1. File size of images being optimized (larger source images are more expensive).
 1. Optimizing a lot of remote images (image content must be fetched from a remote server and is subsequently cached via [`eleventy-fetch`](/docs/plugins/fetch/)).
 
 If you’re using the [Transform method](#eleventy-transform) to optimize images, this incurs an additional cost via the HTML postprocessing step. If you want the easiest thing to configure (or you’re _not_ using an asynchronous friendly template syntax—e.g. Nunjucks, Liquid, WebC, 11ty.js), this might be worth it—but be aware that a build performance trade-off exists.

@@ -48,10 +48,6 @@
 	font-size: 3.2em;
 	font-family: monospace;
 }
-:host .modifier {
-	font-size: .5em;
-	align-self: flex-start;
-}
 :host .metadata {
 	display: flex;
 	flex-direction: column;
@@ -70,8 +66,8 @@
 	content: "🐢";
 }
 :host .dot.empty:before {
-	content: "🐇";
-	opacity: .4;
+	opacity: .2;
+	filter: grayscale(1);
 }
 
 :host-context(a[href]):hover,
@@ -85,7 +81,6 @@
 </style>
 <span class="cost">
 	<b @text="cost"></b>
-	<sup class="modifier" webc:if="modifier && modifier !== 0" @text="modifier"></sup>
 </span>
 <span class="metadata">
 	<span class="label">Build Cost</span>
