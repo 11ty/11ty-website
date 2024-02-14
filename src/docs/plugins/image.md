@@ -37,7 +37,7 @@ npm install @11ty/eleventy-img
 
 ## Usage
 
-This utility returns a Promise and works best in `async` friendly functions, filters, shortcodes. It _can_ also work in synchronous environments ([Synchronous Usage](#synchronous-shortcode)).
+This utility returns a Promise and works best in `async` friendly functions, filters, shortcodes, and [transforms](#eleventy-transform).
 
 {% codetitle ".eleventy.js" %}
 
@@ -292,7 +292,7 @@ module.exports = function(eleventyConfig) {
 		// which file extensions to process
 		extensions: "html",
 
-		// You can put any other image plugin options here:
+		// Add any other Image utility options here:
 
 		// optional, output image formats
 		formats: ["webp", "jpeg"],
@@ -323,7 +323,7 @@ export default function(eleventyConfig) {
 		// which file extensions to process
 		extensions: "html",
 
-		// You can put any other image plugin options here:
+		// Add any other Image utility options here:
 
 		// optional, output image formats
 		formats: ["webp", "jpeg"],
@@ -345,6 +345,7 @@ export default function(eleventyConfig) {
 </seven-minute-tabs>
 </is-land>
 
+#### Relative paths
 
 If you **do not** specify the `urlPath` option:
 
@@ -359,6 +360,8 @@ You can configure individual `<img>` elements with per-instance overrides:
 * `<img eleventy:formats="webp">` comma separated string to override the default formats.
 * `<img eleventy:widths="200,600">` comma separated string to override the default widths.
 * `<img eleventy:output>` overrides the output directory. Similar to `urlPath` above, absolute paths (e.g. `<img eleventy:output="/mydirectory/">`) are relative to the Eleventy output directory and relative paths are relative to the template’s URL (e.g. `<img eleventy:output="./mydirectory/">`).
+
+{% callout "info", "md" %}If you’re adding the transform method to a project that is already using an Image shortcode or the WebC component, make sure you add `eleventy:ignore` to the `<img>` attributes so the images aren’t optimized twice (e.g. `Image.generateHTML(metadata, { "eleventy:ignore": "" });`).{% endcallout %}
 
 ### Nunjucks, Liquid, JavaScript (Asynchronous Shortcodes)
 
@@ -597,7 +600,7 @@ Image optimization is likely one of the costlier pieces of your Eleventy build. 
 1. Number of unique images optimized (not number of pages)
 1. Number of `widths` you generate for each source image.
 1. Number of `formats` you generate for each source image.
-	* `avif` is more costly than the others. <span class="minilink minilink-buildcost"><code>+1</code> Build Cost</span>
+	* `avif` is more costly than other image formats. <span class="minilink minilink-buildcost"><code>+1</code> Build Cost</span>
 1. File size of images being optimized (larger source images are more expensive).
 1. Optimizing a lot of remote images (image content must be fetched from a remote server and is subsequently cached via [`eleventy-fetch`](/docs/plugins/fetch/)).
 
