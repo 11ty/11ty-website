@@ -274,7 +274,7 @@ There are four different ways to use this utility in your Eleventy project:
 
 {% renderTemplate "webc" %}<div class="build-cost-inline"><a href="#build-cost-🧰"><build-cost cost="4"></build-cost></a></div>{% endrenderTemplate %}
 
-{% addedin "v3.0.0-canary.5" %} {% addedin "Image v4.0.1" %}This is the easiest method to configure. You add a bit of code to your configuration file and we’ll transform _any_ `<img>` tags in HTML files that exist in your output folder (probably `_site/**/*.html`).
+{% addedin "v3.0.0-alpha.5" %} {% addedin "Image v4.0.1" %}This is the easiest method to configure. You add a bit of code to your configuration file and we’ll transform _any_ `<img>` tags in HTML files that exist in your output folder (probably `_site/**/*.html`).
 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
