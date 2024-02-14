@@ -64,20 +64,24 @@ layout: layouts/docs.njk
 			<td>{% addedin "v2.0.0-canary.1" %}</td>
 		</tr>
 		<tr>
+			<td><code>v2.0.0-alpha.1</code></td>
+			<td>{% addedin "v2.0.0-alpha.1" %}</td>
+		</tr>
+		<tr>
 			<td><code>v3.0.0</code></td>
 			<td>{% addedin "v3.0.0" %}</td>
 		</tr>
 		<tr>
-			<td><code>v3.0.0-canary.1</code></td>
-			<td>{% addedin "v3.0.0-canary.1" %}</td>
+			<td><code>v3.0.0-alpha.1</code></td>
+			<td>{% addedin "v3.0.0-alpha.1" %}</td>
 		</tr>
 		<tr>
 			<td><code>v4.0.0</code></td>
 			<td>{% addedin "v4.0.0" %}</td>
 		</tr>
 		<tr>
-			<td><code>v4.0.0-canary.1</code></td>
-			<td>{% addedin "v4.0.0-canary.1" %}</td>
+			<td><code>v4.0.0-alpha.1</code></td>
+			<td>{% addedin "v4.0.0-alpha.1" %}</td>
 		</tr>
 	</tbody>
 </table>
