@@ -4,7 +4,7 @@ eleventyNavigation:
   order: 3
   excerpt: Maps an Eleventy input file path to its output URL.
 ---
-# InputPath to URL {% addedin "3.0.0-alpha.5" %}
+# InputPath to URL {% addedin "v3.0.0-alpha.5" %}
 
 {% tableofcontents %}
 
@@ -114,7 +114,7 @@ The above all render as the following in your output:
 
 ### Installation
 
-{% addedin "3.0.0-alpha.5" %} This plugin is bundled with Eleventy 3.0 and does not require you to install anything from `npm`. However, the plugin is _opt-in_ (requires you to use `addPlugin`). It is compatible with _all_ template languages via an Eleventy Transform.
+{% addedin "v3.0.0-alpha.5" %} This plugin is bundled with Eleventy 3.0 and does not require you to install anything from `npm`. However, the plugin is _opt-in_ (requires you to use `addPlugin`). It is compatible with _all_ template languages via an Eleventy Transform.
 
 Note that the [`inputPathToUrl` filter](/docs/filters/inputpath-to-url/) is available by default and does not require use of `addPlugin`.
 

@@ -399,7 +399,7 @@ Note in the above example that we output the `post.data.title` value? Similarly,
 
 * `page`: everything in [Eleventy’s supplied page variable](/docs/data-eleventy-supplied/#page-variable) for this template (including `inputPath`, `url`, `date`, and others). {% addedin "2.0.0-canary.19" %}
 * `data`: all data for this piece of content (includes any data inherited from layouts)
-* `rawInput`: the raw input of the template (before any processing). This does _not_ include front matter. {% addedin "3.0.0-alpha.1" %} _(Related: [#1206](https://github.com/11ty/eleventy/issues/1206))_
+* `rawInput`: the raw input of the template (before any processing). This does _not_ include front matter. {% addedin "v3.0.0-alpha.1" %} _(Related: [#1206](https://github.com/11ty/eleventy/issues/1206))_
 * `content`: the rendered content of this template. This does _not_ include layout wrappers. {% addedin "2.0.0-canary.19" %}
 
 ```js
