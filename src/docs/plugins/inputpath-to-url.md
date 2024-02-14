@@ -128,10 +128,10 @@ Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
 {% codetitle ".eleventy.js (ESM)" %}
 
 ```js
-import { PathToUrlTransformPlugin } from "@11ty/eleventy";
+import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 
 export default function(eleventyConfig) {
-  eleventyConfig.addPlugin(PathToUrlTransformPlugin);
+  eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 };
 ```
 _You’re only allowed one `export default` in your configuration file, so make sure you only copy the `import` and the `addPlugin` lines above!_
@@ -142,10 +142,10 @@ _You’re only allowed one `export default` in your configuration file, so make 
 {% codetitle ".eleventy.js (ESM)" %}
 
 ```js
-import { PathToUrlTransformPlugin } from "@11ty/eleventy";
+import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 
 export default function(eleventyConfig) {
-  eleventyConfig.addPlugin(PathToUrlTransformPlugin, {
+  eleventyConfig.addPlugin(InputPathToUrlTransformPlugin, {
 		// Comma separated list of outputPath file extensions to apply the transform
 		extensions: "html",
 	});
@@ -163,9 +163,9 @@ export default function(eleventyConfig) {
 
 ```js
 module.exports = async function(eleventyConfig) {
-	const { PathToUrlTransformPlugin } = await import("@11ty/eleventy");
+	const { InputPathToUrlTransformPlugin } = await import("@11ty/eleventy");
 
-  eleventyConfig.addPlugin(PathToUrlTransformPlugin);
+  eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 };
 ```
 _You’re only allowed one `module.exports` in your configuration file, so make sure you only copy the `import` and the `addPlugin` lines above!_
@@ -177,9 +177,9 @@ _You’re only allowed one `module.exports` in your configuration file, so make 
 
 ```js
 module.exports = async function(eleventyConfig) {
-	const { PathToUrlTransformPlugin } = await import("@11ty/eleventy");
+	const { InputPathToUrlTransformPlugin } = await import("@11ty/eleventy");
 
-  eleventyConfig.addPlugin(PathToUrlTransformPlugin, {
+  eleventyConfig.addPlugin(InputPathToUrlTransformPlugin, {
 		// Comma separated list of outputPath file extensions to apply the transform
 		extensions: "html",
 	});
