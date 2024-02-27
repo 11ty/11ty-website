@@ -6,6 +6,7 @@
   <li><img webc:is="indieweb-avatar" url="https://www.w3.org/">W3C</li>
   <li><img webc:is="indieweb-avatar" url="https://about.google/">Google</li>
   <li><img webc:is="indieweb-avatar" url="https://www.mozilla.org/">Mozilla</li>
+  <li><img webc:is="indieweb-avatar" url="https://www.cloudcannon.com/">CloudCannon</li>
   <li><img webc:is="indieweb-avatar" url="https://www.jetbrains.com/">JetBrains</li>
   <li><img webc:is="indieweb-avatar" url="https://www.netlify.com/">Netlify</li>
   <li><img webc:is="indieweb-avatar" url="https://web.dev/">web.dev</li>
@@ -18,7 +19,7 @@
   <li><img webc:is="indieweb-avatar" url="https://css-tricks.com/">CSS Tricks</li>
   <li><img webc:is="indieweb-avatar" url="https://www.webpagetest.org/">WebPageTest</li>
   <li><img webc:is="indieweb-avatar" url="https://www.a11yproject.com/">A11Y Project</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.noaa.gov/"><abbr title="National Oceanic and Atmospheric Administration">NOAA</abbr></li>
+  <!-- <li><img webc:is="indieweb-avatar" url="https://www.noaa.gov/"><abbr title="National Oceanic and Atmospheric Administration">NOAA</abbr></li> -->
   <li><img webc:is="indieweb-avatar" url="https://www.gov.uk/">United Kingdom (gov)</li>
   <li><img webc:is="indieweb-avatar" url="https://www.numerique.gouv.fr/">France (gov)</li>
   <li><img webc:is="indieweb-avatar" url="https://stackoverflow.com/">Stack Overflow</li>
