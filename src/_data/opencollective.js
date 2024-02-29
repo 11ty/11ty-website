@@ -77,6 +77,18 @@ export default async function() {
 			hasDefaultAvatar: false,
 		});
 
+		// Temporary hardcoded
+		orders.push({
+			name: "CloudCannon",
+			slug: "cloudcannon1",
+			twitter: "CloudCannon",
+			github: "CloudCannon",
+			image: "https://logo.clearbit.com/cloudcannon.com",
+			website: "https://cloudcannon.com/",
+			profile: "https://opencollective.com/cloudcannon1",
+			isMonthly: true,
+		});
+
 		orders = getUniqueContributors(orders);
 
 		orders.sort(function(a, b) {
