@@ -149,6 +149,36 @@ There are some great Web editors popping up that you can use to run and edit Ele
   </div>
 </div>
 
+## Persisting Cache
+
+The `.cache` folder is used by the [Eleventy Fetch plugin](/docs/plugins/fetch/) (and [Eleventy Image](/docs/plugins/image/#advanced-caching-options-for-remote-images)) to avoid repeating costly network requests. Typically this folder will be empty when you start a build, because you _definitely are [**not** checking in your `.cache` folder to `git`](/docs/plugins/fetch/#installation) (right?)_.
+
+Some Jamstack providers have additional features to persist this folder between builds to re-use your cache. here are a few of these:
+
+* **CloudCannon**: use [Preserved paths](https://cloudcannon.com/documentation/articles/caching-specific-folders-to-reduce-build-times/#preserved-paths). [Tutorial on YouTube](https://www.youtube.com/watch?v=ULwVlFMth1U).
+* **Vercel**: zero-configuration support when the [11ty framework is detected](https://vercel.com/docs/deployments/configure-a-build#framework-preset) ([Source](https://github.com/vercel/vercel/blob/20237d4f7b55b0697b57db15636c11204cb0dc39/packages/frameworks/src/frameworks.ts#L363)).
+* [**Cloudflare Pages**](https://developers.cloudflare.com/pages/configuration/build-caching/#frameworks): _not yet supported_ but we’ve been working with the team to add it—coming soon!
+* **Netlify**: use [`netlify-plugin-cache`](https://www.npmjs.com/package/netlify-plugin-cache). [Video on YouTube](https://www.youtube.com/watch?v=JCQQgtOcjH4&t=322s).
+
+### Speed up Eleventy Image
+
+Additionally, _if_ you’re writing your [Eleventy Image output](/docs/plugins/image/#output-directory) to your Eleventy output directory (e.g. `./_site/img/`) (and not checking those files into `git`), you can persist this folder as well to [reuse the Eleventy Image disk cache](/docs/plugins/image/#disk-cache) to improve build times.
+
+* [**CloudCannon** Tutorial on YouTube](https://www.youtube.com/watch?v=ULwVlFMth1U) _({{ "2023-10-23" | newsDate("yyyy") }})_
+* [Source example on GitHub for **Netlify**](https://github.com/11ty/demo-eleventy-img-netlify-cache) _({{ "2022-02-24" | newsDate("yyyy") }})_
+
+### Netlify Cache
+
+1. `npm install netlify-plugin-cache`
+2. Add the following to your `netlify.toml` configuration file:
+
+```toml
+[[plugins]]
+package = "netlify-plugin-cache"
+
+  [plugins.inputs]
+  paths = [ ".cache" ]
+```
 
 ## Related
 
