@@ -65,6 +65,9 @@ classicHosts:
   - name: yay.boo
     url: https://yay.boo/
     screenshotSize: medium
+  - name: Cloudflare Direct Upload
+    url: https://developers.cloudflare.com/pages/get-started/direct-upload/#drag-and-drop
+    screenshotSize: medium
 webides:
   - name: Glitch
     url: https://glitch.com/
@@ -156,7 +159,7 @@ The `.cache` folder is used by the [Eleventy Fetch plugin](/docs/plugins/fetch/)
 Some Jamstack providers have additional features to persist this folder between builds, re-useing the cache and speeding up build times. Here are a few of these:
 
 * **CloudCannon**: use [Preserved paths](https://cloudcannon.com/documentation/articles/caching-specific-folders-to-reduce-build-times/#preserved-paths). [Tutorial on YouTube](https://www.youtube.com/watch?v=ULwVlFMth1U).
-* **Vercel**: zero-configuration support when the [11ty framework is detected](https://vercel.com/docs/deployments/configure-a-build#framework-preset) ([Source](https://github.com/vercel/vercel/blob/20237d4f7b55b0697b57db15636c11204cb0dc39/packages/frameworks/src/frameworks.ts#L363)).
+* **Vercel**: zero-configuration support (when the [Eleventy framework is detected](https://vercel.com/docs/deployments/configure-a-build#framework-preset), [source](https://github.com/vercel/vercel/blob/20237d4f7b55b0697b57db15636c11204cb0dc39/packages/frameworks/src/frameworks.ts#L363)).
 * [**Cloudflare Pages**](https://developers.cloudflare.com/pages/configuration/build-caching/#frameworks): _not yet supported_ but we’ve been working with the team to add it—coming soon!
 * **Netlify**: use [`netlify-plugin-cache`](https://www.npmjs.com/package/netlify-plugin-cache). [Video on YouTube](https://www.youtube.com/watch?v=JCQQgtOcjH4&t=322s).
 
