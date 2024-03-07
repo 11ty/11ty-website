@@ -63,38 +63,32 @@ function getHighlightedBlogPostContent(collection) {
 
 	<p>From a <a href="https://www.zachleat.com/web/build-benchmark/#benchmark-results">benchmark of ×4000 markdown files</a>. Learn more about <a href="/docs/performance/">Eleventy’s site and build performance</a>.</p>
 
-	<div class="fullwidth-module">
-		<logo-cloud></logo-cloud>
-	</div>
+	<logo-cloud showtag></logo-cloud>
 
 	<giant-docs-button></giant-docs-button>
 	<giant-docs-button-subtext></giant-docs-button-subtext>
 
 	<sponsors-list></sponsors-list>
 
-	<div class="fullwidth-module">
-		<is-land on:visible on:save-data="false">
-			<template data-island>
-				<h3 class="subhed ta-c"><strong>Supporters</strong></h3>
-				<facepile>
-					<html-fetch src="/imports/supporters.html"></html-fetch>
-				</facepile>
-			</template>
-		</is-land>
-	</div>
+	<is-land on:visible on:save-data="false">
+		<template data-island>
+			<h3 class="subhed ta-c"><strong>Supporters</strong></h3>
+			<facepile>
+				<html-fetch src="/imports/supporters.html"></html-fetch>
+			</facepile>
+		</template>
+	</is-land>
 
 
 	<h2>Built With Eleventy</h2>
 
 	<sites-list-njk :@sites="builtwith"></sites-list-njk>
 
-	<div class="fullwidth-module">
-		<is-land on:visible on:save-data="false">
-			<facepile>
-				<html-fetch src="/imports/facepile.html"></html-fetch>
-			</facepile>
-		</is-land>
-	</div>
+	<is-land on:visible on:save-data="false">
+		<facepile>
+			<html-fetch src="/imports/facepile.html"></html-fetch>
+		</facepile>
+	</is-land>
 
 	<p>Sample of <em>110</em> authors shown. View <a href="/speedlify/">all <span @text="getsize(objectFilterNot(builtwith, 'disabled'))" webc:nokeep></span> sites</a>.</p>
 

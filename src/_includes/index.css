@@ -473,6 +473,9 @@ footer.elv-layout {
 .elv-header-default .elv-nav-header {
 	max-width: none;
 }
+.elv-header-default .elv-nav-menu {
+	max-width: calc(var(--layout-max) - 2rem);
+}
 
 /* Make room for the possum */
 .elv-nav-menu {
@@ -483,15 +486,7 @@ footer.elv-layout {
 		padding-right: 6em;
 	}
 }
-@media (min-width: 85em) { /* 1360px */
-	.elv-nav-menu {
-		padding-right: 1.5rem;
-	}
-	.elv-header-default .elv-nav-menu {
-		padding-left: 1rem;
-		padding-right: 2.5rem;
-	}
-}
+
 
 .elv-nav-menu {
 	padding-top: .5rem;
