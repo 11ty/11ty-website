@@ -24,7 +24,7 @@ a.btn-primary:hover {
 		transform: none;
 	}
 }
-@media (min-height:50em) {
+@media (min-height: 59.375em) { /* 950px */
 	:host-context(html:not(:has(:focus-visible))) {
 		position: sticky;
 		top: 10px;
@@ -34,4 +34,4 @@ a.btn-primary:hover {
 }
 </style>
 
-<a href="/docs/" class="btn-primary benchnine rainbow-active rainbow-active-noanim">Documentation for <span>Eleventy</span></a>
+<a href="/docs/" class="btn-primary benchnine rainbow-active rainbow-active-noanim">Documentation</a>
