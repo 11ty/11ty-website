@@ -1,7 +1,7 @@
 <style webc:scoped>
 .highlight-line:last-child,
 .highlight-line:last-child * {
-	color: #0dbc79 !important;
+	color: #10875a !important;
 }
 :host pre {
 	background: inherit;
