@@ -161,7 +161,8 @@ Some Jamstack providers have additional features to persist this folder between 
 * **CloudCannon**: use [Preserved paths](https://cloudcannon.com/documentation/articles/caching-specific-folders-to-reduce-build-times/#preserved-paths). [Tutorial on YouTube](https://www.youtube.com/watch?v=ULwVlFMth1U).
 * **Vercel**: zero-configuration support (when the [Eleventy framework is detected](https://vercel.com/docs/deployments/configure-a-build#framework-preset), [source](https://github.com/vercel/vercel/blob/20237d4f7b55b0697b57db15636c11204cb0dc39/packages/frameworks/src/frameworks.ts#L363)).
 * [**Cloudflare Pages**](https://developers.cloudflare.com/pages/configuration/build-caching/#frameworks): _not yet supported_ but we’ve been working with the team to add it—coming soon!
-* **Netlify**: use [`netlify-plugin-cache`](https://www.npmjs.com/package/netlify-plugin-cache). [Video on YouTube](https://www.youtube.com/watch?v=JCQQgtOcjH4&t=322s).
+* **GitHub Pages**: use the [`cache` action](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows#using-the-cache-action). [Mini-tutorial included below](#deploy-an-eleventy-project-to-github-pages).
+* **Netlify**: use [`netlify-plugin-cache`](https://www.npmjs.com/package/netlify-plugin-cache). [Mini-tutorial included below](#using-netlify-plugin-cache-to-persist-cache). [Video on YouTube](https://www.youtube.com/watch?v=JCQQgtOcjH4&t=322s).
 
 ### Speed up Eleventy Image
 
@@ -170,14 +171,75 @@ Additionally, _if_ you’re writing your [Eleventy Image output](/docs/plugins/i
 * [**CloudCannon** Tutorial on YouTube](https://www.youtube.com/watch?v=ULwVlFMth1U) _({{ "2023-10-23" | newsDate("yyyy") }})_
 * [Source example on GitHub for **Netlify**](https://github.com/11ty/demo-eleventy-img-netlify-cache) _({{ "2022-02-24" | newsDate("yyyy") }})_
 
-### Mini-tutorials
+## Mini-tutorials
 
-<details><summary>Netlify’s <code>netlify-plugin-cache</code></summary>
+### Deploy an Eleventy project to GitHub pages
 
-Using [`netlify-plugin-cache`](https://www.npmjs.com/package/netlify-plugin-cache) on npm.
+Includes persisted cache across builds. Using [`peaceiris/actions-gh-pages`](https://github.com/peaceiris/actions-gh-pages).
 
-1. `npm install netlify-plugin-cache`
-2. Add the following to your `netlify.toml` configuration file:
+<ol>
+<li>Go to your repository’s Settings on GitHub.</li>
+<li>In the GitHub Pages section change:<ul><li>Source: <code>Deploy from a branch</code></li><li>Branch: <code>gh-pages/(root)</code></li></ul></li>
+<li>Create a new GitHub workflow file in <details><summary><code>.github/workflows/deploy-to-ghpages.yml</code></summary>
+
+{% raw %}
+```yaml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Persist npm cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
+
+      - name: Persist Eleventy .cache
+        uses: actions/cache@v3
+        with:
+          path: ./.cache
+          key: ${{ runner.os }}-eleventy-fetch-cache
+
+
+      - run: npm install
+      - run: npm run build-ghpages
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+```
+{% endraw %}
+</details></li></ol>
+
+### Using `netlify-plugin-cache` to persist cache
+
+Using [`netlify-plugin-cache`](https://www.npmjs.com/package/netlify-plugin-cache).
+
+<ol>
+<li><code>npm install netlify-plugin-cache</code></li>
+<li>Add the following to your  <details><summary><code>netlify.toml</code> configuration file</summary>
 
 ```toml
 [[plugins]]
@@ -187,7 +249,7 @@ package = "netlify-plugin-cache"
   paths = [ ".cache" ]
 ```
 
-</details>
+</details></li></ol>
 
 ## Related
 
