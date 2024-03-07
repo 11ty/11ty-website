@@ -7,9 +7,6 @@
 	font-weight: 500;
 	padding: .25em 1em;
 	text-align: center;
-	width: calc(100% + 2rem);
-	margin-left: -1rem;
-	margin-right: -1rem;
 	line-height: 1;
 }
 @media (min-width: 48em) { /* 768px */

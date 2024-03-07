@@ -1,3 +1,7 @@
+:root {
+	--layout-max: 76rem;
+}
+
 /* Screen readers only */
 .sr-only {
 	position: absolute;
@@ -26,15 +30,6 @@ body {
 		background-color: #222;
 		color: #fff;
 	}
-}
-.elv-docs main,
-.elv-docs footer {
-	max-width: 76rem;
-	margin: 0 auto;
-}
-.elv-docs .elv-header-c {
-	max-width: 74rem;
-	margin: 0 auto;
 }
 
 img {
@@ -438,7 +433,7 @@ li ol {
 .elv-layout {
 	padding: 1rem;
 	margin: 0 auto;
-	max-width: 42rem;
+	max-width: var(--layout-max);
 	clear: both;
 }
 header.elv-layout {
@@ -453,8 +448,6 @@ footer.elv-layout {
 @media (min-width: 64em) { /* 1024px */
 	.elv-layout-toc {
 		padding: 2.5rem 2.5rem 2.5rem 16rem;
-		max-width: 60rem;
-		margin-right: 1rem;
 		position: relative;
 	}
 }
@@ -463,18 +456,48 @@ footer.elv-layout {
 .elv-header {
 	position: relative;
 }
-.elv-header-default {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding-top: 0;
-}
-.elv-header-c {
+.elv-hed,
+.elv-nav-header {
 	width: 100%;
+	margin: 0 auto;
 }
-.elv-header-docs .elv-header-c {
-	padding: 1rem 0;
+.elv-nav-header {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+.elv-hed,
+.elv-nav-header,
+.elv-nav-menu {
+	max-width: calc(var(--layout-max));
+}
+.elv-header-default .elv-nav-header {
+	max-width: none;
+}
+
+/* Make room for the possum */
+.elv-nav-menu {
+	padding-right: 15vw;
+}
+@media (min-width: 25em) { /* 400px */
+	.elv-nav-menu {
+		padding-right: 6em;
+	}
+}
+@media (min-width: 85em) { /* 1360px */
+	.elv-nav-menu {
+		padding-right: 1.5rem;
+	}
+	.elv-header-default .elv-nav-menu {
+		padding-left: 1rem;
+		padding-right: 2.5rem;
+	}
+}
+
+.elv-nav-menu {
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+	margin-left: auto;
+	margin-right: auto;
 }
 .elv-header-docs:before,
 .elv-header-docs:after {
@@ -486,6 +509,7 @@ footer.elv-layout {
 }
 /* Header Hero */
 .elv-hero {
+	display: block;
 	background-color: #222;
 	font-family: BenchNine, system-ui, -apple-system, sans-serif;
 	text-decoration: none;
@@ -548,7 +572,7 @@ a[href].elv-hero:visited {
 }
 .elv-header-docs .elv-hero img,
 .elv-header-docs .elv-hero svg {
-	width: auto;
+	width: 3em;
 	height: 3em;
 }
 @media (min-width: 43.75em) { /* 700px */
@@ -557,8 +581,8 @@ a[href].elv-hero:visited {
 	}
 	.elv-header-docs .elv-hero img,
 	.elv-header-docs .elv-hero svg {
-		width: 4.303125em; /* 68.85px /16 */
-		height: 6em;
+		width: 4em; /* 64px /16 */
+		height: 4em; /* 64px /16 */
 	}
 }
 
@@ -566,7 +590,7 @@ a[href].elv-hero:visited {
 .elv-hed {
 	font-size: 2.625em; /* 42px /16 */
 	line-height: 1.2;
-	margin-top: 1.5em;
+	margin-top: 1em;
 	margin-bottom: .25em;
 	text-align: center;
 	text-transform: none;
@@ -692,20 +716,6 @@ filter-container form {
 filter-container:defined form {
 	opacity: 1;
 	pointer-events: all;
-}
-
-/* Full width modules on the home page */
-@media (min-width: 62.5em) { /* 1000px */
-	.elv-default .fullwidth-module {
-		width: 146%;
-		margin-left: -22%;
-	}
-}
-@media (min-width: 84em) { /* 1344px */
-	.elv-default .fullwidth-module {
-		width: 200%;
-		margin-left: -50%;
-	}
 }
 
 /* Utility classes */

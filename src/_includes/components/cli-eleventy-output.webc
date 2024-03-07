@@ -3,9 +3,19 @@
 .highlight-line:last-child * {
 	color: #0dbc79 !important;
 }
+:host pre {
+	background: inherit;
+	color: inherit;
+	border: 1px solid rgba(0,0,0,.1);
+}
+@media (prefers-color-scheme: dark) {
+	:host pre {
+		border-color: rgba(255,255,255,.1);
+	}
+}
 </style>
 <script webc:type="js">
 let version = latestVersion($data.versions, $data.config);
 let versionSuffix = showVersion === "" ? ` (${version})` : "";
-this.helpers.highlight("bash", `${this.slots.text.default.trim()}${versionSuffix}`, "/", "-"); // `"/", "-"` enables line wrapping
+this.helpers.highlight("", `${this.slots.text.default.trim()}${versionSuffix}`, "/", "-"); // `"/", "-"` enables line wrapping
 </script>

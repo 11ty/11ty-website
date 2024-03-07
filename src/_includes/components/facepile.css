@@ -35,7 +35,7 @@
 		color: #222;
 	}
 }
-.elv-docs .facepile-supporters .avatar {
+.facepile-supporters .avatar {
 	width: calc(30px + 2vw);
 	height: calc(30px + 2vw);
 }
@@ -102,11 +102,6 @@
 .facepile > a:nth-child(11n+11):focus:after,
 .facepile > a:nth-child(11n+11):hover:after {
 	background-position: 90% 80%;
-}
-
-.elv-default .sites-vert + .fullwidth-module .avatar {
-	width: calc(20px + 2vw);
-	height: calc(20px + 2vw);
 }
 
 .facepile-fake .avatar {

@@ -87,10 +87,10 @@
 	}
 }
 @media (min-width: 64em) { /* 1024px */
-	.elv-docs .supporters-gold-sanity {
+	.supporters-gold-sanity {
 		flex-grow: 1;
 	}
-	.elv-docs .supporters-gold-nordhealth {
+	.supporters-gold-nordhealth {
 		flex-grow: 1.3;
 	}
 }

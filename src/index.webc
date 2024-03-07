@@ -1,6 +1,8 @@
 ---node
 // <script>
 let layout = "layouts/main.njk";
+// let headerClass = "elv-header-docs";
+// let headerTag = "div";
 let logoLink = "/docs/";
 
 let useWebCBundle = true;
@@ -12,7 +14,7 @@ let skipLegacyBundle = true;
 
 let ignoreGitHubButtons = true;
 let ignoreSupporters = true;
-let searchTitle = "Eleventy, a simpler static site generator";
+let searchTitle = "Eleventy is a simpler static site generator";
 let skipAuth = true;
 
 let eleventyImport = {
@@ -21,11 +23,9 @@ let eleventyImport = {
 
 let eleventyComputed = {
 	social: {
-		description: () => "Eleventy, a simpler static site generator."
+		description: () => "Eleventy is a simpler static site generator."
 	},
 };
-
-let bannerlinkOverride = "Stand with Ukraine";
 // </script>
 ---
 <script webc:setup>
@@ -49,19 +49,19 @@ function getHighlightedBlogPostContent(collection) {
 <!-- this is a workaround for the layout used in the header -->
 <flex-luthor></flex-luthor>
 
-<callout :content="getHighlightedBlogPostContent(collections.blog)"></callout>
+<callout :@content="getHighlightedBlogPostContent(collections.blog)"></callout>
 
-<p class="ta-c elv-h3"><em>Fast Builds and even Faster Web Sites</em></p>
 
 <div webc:bucket="async">
+	<quick-start></quick-start>
+	<hr>
+
+	<p class="ta-c elv-h3"><em>Fast Builds and even Faster Web Sites</em></p>
 	<is-land on:visible on:media="(prefers-reduced-motion: no-preference)">
 		<build-comparison variant="home"></build-comparison>
 	</is-land>
 
 	<p>From a <a href="https://www.zachleat.com/web/build-benchmark/#benchmark-results">benchmark of ×4000 markdown files</a>. Learn more about <a href="/docs/performance/">Eleventy’s site and build performance</a>.</p>
-
-	<quick-start></quick-start>
-	<hr>
 
 	<div class="fullwidth-module">
 		<logo-cloud></logo-cloud>

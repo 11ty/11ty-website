@@ -58,24 +58,6 @@
     align-items: center;
     list-style: none;
     margin: .5em 0 1em;
-  }
-
-  /* Home page */
-  .elv-default .logos-list {
-    justify-content: center;
-    gap: .75em 1em;
-    font-size: 0.875em; /* 14px /16 */
-    padding: 1em;
-    color: #666;
-  }
-  @media (prefers-color-scheme: dark) {
-    .elv-default .logos-list {
-      color: #adadad;
-    }
-  }
-
-  /* Docs page */
-  .elv-docs .logos-list {
     padding: .75em;
     border: 1px solid #ddd;
     border-radius: .5em;
@@ -98,12 +80,10 @@
 
   /* Header */
   .logos-list-hed {
+		display: none;
     text-align: center;
     flex-basis: 100%;
     margin-bottom: 1em;
-  }
-  .elv-docs .logos-list-hed {
-    display: none;
   }
 
   .logos-list .avatar {

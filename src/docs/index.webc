@@ -24,7 +24,7 @@ function randomTestimonialLink(testimonials) {
 	</li>
 	<li>
 		Eleventy is <strong>production ready</strong> and trusted by: <logo-cloud></logo-cloud>
-		<small>Eleventy has been downloaded <a href="/blog/seven-million/">over 7 million times</a> and is used on <a href="https://github.com/11ty/eleventy/network/dependents">64,000+ repositories on GitHub</a></a>.</small>
+		<small>Eleventy has been downloaded <a href="/blog/seven-million/">over 7 million times</a> and is used on <a href="https://github.com/11ty/eleventy/network/dependents">70,000+ repositories on GitHub</a></a>.</small>
 	</li>
 	<li>
 		Eleventy has a <a href="/docs/community/">lovely community of folks</a> that really care about what they build. <em @html="randomTestimonialLink(testimonials)"></em>
