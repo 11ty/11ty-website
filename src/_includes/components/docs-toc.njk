@@ -1,18 +1,18 @@
 <div class="elv-toc" data-pagefind-ignore>
-{%- set adTitle = "<a href='https://conf.11ty.dev/' class='elv-externalexempt'>11ty Conference</a> — May 2024" %}
+{%- set adTitle = "<a href='https://conf.11ty.dev/' class='elv-externalexempt'>11ty Conference</a> — May 9" %}
 {%- callout "pinned", "html", adTitle %}
 <p>Join the <a href="https://conf.11ty.dev/" class="elv-externalexempt"><strong>11ty International Symposium on Making Web Sites Real Good</strong></a>.</p>
 {%- endcallout %}
 <details-force-state>
 	<details>
-		<summary class="btn-primary benchnine rainbow-active rainbow-active-noanim">Menu</summary>
+		<summary class="btn-primary benchnine rainbow-active rainbow-active-noanim">Toggle Menu</summary>
 
 		{%- if eleventyNavigation -%}
 			{%- set navKey = eleventyNavigation.key -%}
 		{%- endif -%}
 		{{ collections.sidebarNav | eleventyNavigation | eleventyNavigationToHtml({ activeKey: navKey, listClass: 'elv-toc-list', activeListItemClass: 'elv-toc-active' }) | safe }}
 
-		{%- if not page.inputPath.endsWith("/docs/performance.webc") %}
+		{%- if not ignoreSidebarCallout %}
 		{%- set comparison = comparisons | randompick %}
 		{%- set comparisonTitle = "<a href='" + comparison.url + "'>Compare " + comparison.title + "</a>" %}
 		{%- callout "box", "html", comparisonTitle %}

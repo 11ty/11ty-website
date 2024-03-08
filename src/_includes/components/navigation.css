@@ -1,16 +1,17 @@
 .elv-nav-menu {
 	--fl-gap-h: .75em;
 }
+}
 @media (max-width: 24.9375em) { /* 399px */
 	.elv-nav-menu > * {
 		flex-basis: 45%;
 	}
 }
 
-.elv-nav-header a {
+.elv-nav-menu a {
 	font-weight: 600;
 }
-.elv-nav-header .elv-nav-light {
+.elv-nav-menu .elv-nav-light {
 	font-weight: 300;
 }
 
@@ -31,7 +32,10 @@
 	}
 }
 
-@media (min-width: 75em) { /* 1200px */
+@media (min-width: 70em) {
+	.elv-nav-sociallink {
+		font-size: 0.875em; /* 14px /16 */
+	}
 	.spacer {
 		display: inherit;
 	}

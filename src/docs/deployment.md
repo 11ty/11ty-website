@@ -2,7 +2,8 @@
 eleventyNavigation:
   parent: Getting Started
   key: Deployment
-  order: 7
+  title: "Deployment & Hosting"
+  order: 8
 featuredHosts:
   - name: "Want your logo here? Contact us!"
     url: ""

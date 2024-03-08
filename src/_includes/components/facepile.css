@@ -107,3 +107,11 @@
 .facepile-fake .avatar {
 	background-color: #eee;
 }
+
+/* Filter out gold sponsors when the giant logos are adjacent (in the footer, everywhere but the home page) */
+.facepile-supporters [data-supporters-tier="gold-sponsor"] {
+	display: none;
+}
+[show-gold-sponsors] .facepile-supporters [data-supporters-tier="gold-sponsor"] {
+	display: inline-block;
+}

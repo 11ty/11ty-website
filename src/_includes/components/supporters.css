@@ -86,7 +86,7 @@
 		color: #fff;
 	}
 }
-@media (min-width: 64em) { /* 1024px */
+@media (min-width: 55em) { /* 880px */
 	.supporters-gold-sanity {
 		flex-grow: 1;
 	}
