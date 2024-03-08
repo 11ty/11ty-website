@@ -237,7 +237,7 @@ body > .elv-callout-sticky .elv-callout-label {
 		line-height: 2;
 	}
 }
-@media (min-width: 55em) and (max-width: 76.875em) { /* 880px–1230px */
+@media (min-width: 55em) and (max-width: 70.625em) { /* 880px–1130px */
 	.elv-toc .elv-callout {
 		border-left: 0;
 		border-top-left-radius: 0;

@@ -1,7 +1,6 @@
 .elv-nav-menu {
 	--fl-gap-h: .75em;
 }
-}
 @media (max-width: 24.9375em) { /* 399px */
 	.elv-nav-menu > * {
 		flex-basis: 45%;
