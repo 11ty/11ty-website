@@ -40,4 +40,4 @@ a.btn-primary:hover {
 }
 </style>
 
-<a href="/docs/" class="btn-primary benchnine rainbow-active rainbow-active-noanim">Documentation for <span>Eleventy</span></a>
+<a href="/docs/" class="btn-primary benchnine rainbow-active rainbow-active-noanim">Documentation</a>

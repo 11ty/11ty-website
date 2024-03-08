@@ -61,7 +61,7 @@ const shortcodes = {
 			content +
 			(linkUrl ? `</a>` : "");
 	},
-	image: async function(filepath, alt, widths, classes, sizes) {
+	image: async function(filepath, alt, widths, classes, sizes, attributes) {
 		let options = {
 			formats: process.env.NODE_ENV === "production" ? ["avif", "png"] : ["auto"],
 			widths: widths || ["auto"],
@@ -71,13 +71,13 @@ const shortcodes = {
 
 		let stats = await eleventyImage(filepath, options);
 
-		return eleventyImage.generateHTML(stats, {
+		return eleventyImage.generateHTML(stats, Object.assign({
 			alt,
 			loading: "lazy",
 			decoding: "async",
 			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
 			class: classes || "",
-		});
+		}, attributes));
 	},
 	getScreenshotHtml(siteSlug, siteUrl, sizes, preset = "small") {
 		let zoom;
@@ -732,7 +732,9 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addFilter("supportersFacepile", (supporters) => {
-		return supporters.filter(supporter => supporter.status === 'ACTIVE' && !supporter.hasDefaultAvatar && supporter.tier && supporter.tier.slug !== "gold-sponsor");
+		return supporters.filter(supporter => {
+			return supporter.status === 'ACTIVE' && !supporter.hasDefaultAvatar;
+		});
 	});
 
 	// Sort an object that has `order` props in values. Return an array

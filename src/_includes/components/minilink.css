@@ -12,21 +12,10 @@
 	line-height: 1.285714285714; /* 18px /14 */
 	font-family: system-ui, -apple-system, sans-serif;
 }
-.minilink-github {
-	background-color: #f6f8fa;
-}
-.minilink-github > :first-child {
-	color: #eac54f;
-}
-
 @media (prefers-color-scheme: dark) {
-	.minilink {
+	.minilink.minilink {
 		background-color: #222;
-		/*
-			!important to override .elv-callout a
-			see _includes/components/callout.css
-		 */
-		color: #fff !important;
+		color: #fff;
 	}
 }
 table .minilink {
@@ -37,7 +26,7 @@ table .minilink {
 }
 .minilink[href]:hover,
 .minilink[href]:focus {
-	background-color: #bbb;
+	background-color: #eee;
 }
 @media (prefers-color-scheme: dark) {
 	.minilink[href]:hover,
@@ -135,4 +124,28 @@ h4 .minilink {
 a[href]:hover .minilink-buildcost,
 a[href]:focus .minilink-buildcost {
 	outline: 2px solid blue;
+}
+
+/* GitHub star count */
+.minilink-github.minilink-github {
+	background-color: #f6f8fa;
+	color: #222;
+}
+.minilink-github > :first-child {
+	color: #eac54f;
+}
+/* GitHub star count, home page variant (dark theme) */
+.elv-header-default .minilink-github {
+	background-color: #222;
+	color: #fff;
+}
+.elv-header-default .minilink[href]:hover,
+.elv-header-default .minilink[href]:focus {
+	background-color: #444;
+}
+@media (prefers-color-scheme: dark) {
+	.minilink-github.minilink-github{
+		background-color: #222;
+		color: #fff;
+	}
 }

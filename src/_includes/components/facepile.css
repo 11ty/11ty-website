@@ -35,7 +35,7 @@
 		color: #222;
 	}
 }
-.elv-docs .facepile-supporters .avatar {
+.facepile-supporters .avatar {
 	width: calc(30px + 2vw);
 	height: calc(30px + 2vw);
 }
@@ -104,11 +104,14 @@
 	background-position: 90% 80%;
 }
 
-.elv-default .sites-vert + .fullwidth-module .avatar {
-	width: calc(20px + 2vw);
-	height: calc(20px + 2vw);
-}
-
 .facepile-fake .avatar {
 	background-color: #eee;
+}
+
+/* Filter out gold sponsors when the giant logos are adjacent (in the footer, everywhere but the home page) */
+.facepile-supporters [data-supporters-tier="gold-sponsor"] {
+	display: none;
+}
+[show-gold-sponsors] .facepile-supporters [data-supporters-tier="gold-sponsor"] {
+	display: inline-block;
 }
