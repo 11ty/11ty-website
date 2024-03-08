@@ -566,8 +566,9 @@ a[href].elv-hero:visited {
 .elv-hero img,
 .elv-hero svg {
 	display: block;
-	width: 60vh;
-	height: 60vh;
+	width: 66vh;
+	height: 66vh;
+	max-width: 100%;
 }
 .elv-hero:hover img,
 .elv-hero:hover svg {
