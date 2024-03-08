@@ -8,7 +8,6 @@
 	<li><img webc:is="indieweb-avatar" url="https://www.mozilla.org/">Mozilla</li>
 	<li><img webc:is="indieweb-avatar" url="https://www.cloudcannon.com/">CloudCannon</li>
 	<li><img webc:is="indieweb-avatar" url="https://www.jetbrains.com/">JetBrains</li>
-	<li><img webc:is="indieweb-avatar" url="https://www.netlify.com/">Netlify</li>
 	<li>
 		<html-fetch src="/imports/logo-cloud.html" target="li" replace></html-fetch>
 	</li>

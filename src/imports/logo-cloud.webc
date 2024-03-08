@@ -1,6 +1,7 @@
 ---
 permalink: /imports/logo-cloud.html
 ---
+<li><img webc:is="indieweb-avatar" url="https://www.netlify.com/">Netlify</li>
 <li><img webc:is="indieweb-avatar" url="https://web.dev/">web.dev</li>
 <li><img webc:is="indieweb-avatar" url="https://web.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></li>
 <li><img webc:is="indieweb-avatar" url="https://www.stanford.edu/"><abbr title="Stanford">Stanford</abbr></li>
