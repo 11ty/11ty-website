@@ -31,7 +31,7 @@
 	}
 }
 
-@media (min-width: 70em) {
+@media (min-width: 60em) { /* 960px */
 	.elv-nav-sociallink {
 		font-size: 0.875em; /* 14px /16 */
 	}

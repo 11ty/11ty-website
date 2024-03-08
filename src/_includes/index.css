@@ -448,7 +448,7 @@ footer.elv-layout {
 }
 @media (min-width: 55em) { /* 880px */
 	.elv-layout-toc {
-		padding: 2.5rem 2.5rem 2.5rem 16rem;
+		padding: 0 2rem 0 16rem;
 		position: relative;
 	}
 }
@@ -480,9 +480,6 @@ footer.elv-layout {
 		background-color: #292929;
 	}
 }
-.elv-header-docs .elv-menu {
-	margin-bottom: .5rem;
-}
 .elv-header {
 	position: relative;
 }
@@ -494,6 +491,9 @@ footer.elv-layout {
 .elv-nav-header {
 	padding-left: 1rem;
 	padding-right: 1rem;
+}
+.elv-header-docs .elv-nav-header {
+	margin-block: 1rem;
 }
 .elv-nav-menu {
 	padding-left: 1rem;
@@ -614,8 +614,7 @@ a[href].elv-hero:visited {
 .elv-hed {
 	font-size: 3.125em; /* 50px /16 */
 	line-height: 1.2;
-	margin-top: 1em;
-	margin-bottom: .25em;
+	margin-block: 1em;
 	text-align: center;
 	text-transform: none;
 }
