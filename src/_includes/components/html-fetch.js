@@ -5,7 +5,8 @@ class HtmlFetch extends HTMLElement {
 		super();
 
 		this.attrs = {
-			src: "src"
+			src: "src",
+			replace: "replace",
 		};
 	}
 
@@ -25,7 +26,21 @@ class HtmlFetch extends HTMLElement {
 		return this;
 	}
 
-	async fetch(url) {
+	inject(target, html, shouldReplaceTarget) {
+		if(shouldReplaceTarget) {
+			let div = document.createElement("div");
+			div.innerHTML = html;
+
+			for(let child of Array.from(div.children)) {
+				target.insertAdjacentElement("beforebegin", child);
+			}
+			target.remove();
+		} else {
+			target.innerHTML = html;
+		}
+	}
+
+	async fetch() {
 		if (!("fetch" in window)) {
 			return;
 		}
@@ -37,8 +52,7 @@ class HtmlFetch extends HTMLElement {
 
 			// remove attribute so we don’t reprocess it
 			this.removeAttribute(this.attrs.src);
-
-			this.getTarget().innerHTML = text;
+			this.inject(this.getTarget(), text, this.hasAttribute(this.attrs.replace))
 		} catch(e) {
 			console.log("html-fetch failed", e);
 		}
