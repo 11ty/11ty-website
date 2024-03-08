@@ -448,7 +448,7 @@ footer.elv-layout {
 }
 @media (min-width: 55em) { /* 880px */
 	.elv-layout-toc {
-		padding: 0 2rem 0 16rem;
+		padding: 0 2rem 2rem 16rem;
 		position: relative;
 	}
 }
