@@ -24,14 +24,7 @@ a.btn-primary:hover {
 		transform: none;
 	}
 }
-@media (min-width: 46.875em) { /* 750px */
-	a.btn-primary {
-		margin-left: calc( (90vw - 42rem) / -2 );
-		width: calc(90vw - 2rem);
-	}
-}
-
-@media (min-height:50em) {
+@media (min-height: 59.375em) { /* 950px */
 	:host-context(html:not(:has(:focus-visible))) {
 		position: sticky;
 		top: 10px;
@@ -41,4 +34,4 @@ a.btn-primary:hover {
 }
 </style>
 
-<a href="/docs/" class="btn-primary benchnine rainbow-active rainbow-active-noanim">Documentation for <span>Eleventy</span></a>
+<a href="/docs/" class="btn-primary benchnine rainbow-active rainbow-active-noanim">Documentation</a>

@@ -14,7 +14,7 @@ Starting in Eleventy 1.0, you can run Eleventy in your own Node script. _(This i
 
 ### Write to the file system
 
-Don’t forget to [install Eleventy into your local project first](/docs/get-started/#step-2-install-eleventy)!
+Don’t forget to [install Eleventy into your local project first](/docs/#step-2-install-eleventy)!
 
 Now create a file called `my-node-script.js` with the following contents:
 

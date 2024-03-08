@@ -147,18 +147,6 @@
   --shadow-color: rgba(234, 0, 255, 0.747);
   box-shadow: 0 0 0 4px var(--shadow-color);
 }
-@media (min-width: 62.5em) { /* 1000px */
-  .elv-default .sites-vert {
-    width: 144%;
-    margin-left: -22%;
-  }
-}
-@media (min-width: 84em) { /* 1344px */
-  .elv-default .sites-vert {
-    width: 170%;
-    margin-left: -35%;
-  }
-}
 
 .sites-site-vert > a {
   text-decoration: none;

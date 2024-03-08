@@ -10,7 +10,7 @@ Are you feeling adventurous? A few short days ago we released the first alpha re
 npm install @11ty/eleventy@canary --save-exact
 ```
 
-* [_Want to learn more about installation?_](/docs/get-started/)
+* [_Want to learn more about installation?_](/docs/)
 
 We recommend using `--save-exact` with the `canary` channel so you always get the exact same version every time. This will add something like `"@11ty/eleventy": "3.0.0-alpha.2"` to your `package.json` instead of `"^3.0.0-alpha.2"` (the carat is _basically_ shorthand for: “give me the newest 3.0.x release”).
 
