@@ -17,7 +17,6 @@ export default function() {
 			"twitter": "jensimmons",
 			"name": "Jen Simmons",
 			"source": "https://twitter.com/jensimmons/status/1107377359546736641",
-			"featured": true,
 			"indirect": true,
 			"filteredFromRandomPick": true,
 		},
@@ -25,8 +24,7 @@ export default function() {
 			"text": "Seriously can't remember enjoying using a Static Site Generator this much. Yes Hugo is rapid, but this is all so logical. It feels like it was designed by someone who has been through lots of pain and success using other SSGs.",
 			"twitter": "philhawksworth",
 			"name": "Phil Hawksworth",
-			"source": "https://twitter.com/philhawksworth/",
-			"featured": true
+			"source": "https://twitter.com/philhawksworth/"
 		},
 		{
 			"text": "Don’t tell Zach I said it but Eleventy is seeming fresh as hell so far",
@@ -113,8 +111,7 @@ export default function() {
 			"text": "Just the kind of simple / common sense tool I love. The data/folder hierarchy mechanism is super obvious and elegant.",
 			"twitter": "heydonworks",
 			"name": "Heydon Pickering",
-			"source": "https://twitter.com/heydonworks/status/1075691449776267265",
-			"featured": true
+			"source": "https://twitter.com/heydonworks/status/1075691449776267265"
 		},
 		{
 			"text": "Eleventy is almost fascinatingly simple.",
@@ -133,15 +130,13 @@ export default function() {
 			"text": "Eleventy is my fave.",
 			"twitter": "TatianaTMac",
 			"name": "Tatiana Mac",
-			"source": "https://twitter.com/TatianaTMac/status/1117110784830525440",
-			"featured": true
+			"source": "https://twitter.com/TatianaTMac/status/1117110784830525440"
 		},
 		{
 			"text": "I actually used Eleventy for the first time this week. Loved it.",
 			"twitter": "aerotwist",
 			"name": "Paul Lewis",
-			"source": "https://twitter.com/aerotwist/status/1106904383390924801",
-			"featured": true
+			"source": "https://twitter.com/aerotwist/status/1106904383390924801"
 		},
 		{
 			"text": "Eleventy is absolutely wonderful. It’s by far the nicest static site generator I’ve used in what feels like forever.",
@@ -169,15 +164,13 @@ export default function() {
 			"text": "Eleventy and web components go really, really well together.",
 			"twitter": "justinfagnani",
 			"name": "Justin Fagnani",
-			"source": "https://twitter.com/justinfagnani/status/1212847104718061569",
-			"featured": true
+			"source": "https://twitter.com/justinfagnani/status/1212847104718061569"
 		},
 		{
 			"text": "Think the reason everyone is loving [Eleventy] so much (myself included) is that it doesn't come with a prescription about data sources or template rendering.",
 			"twitter": "brianleroux",
 			"name": "Brian Leroux",
-			"source": "https://twitter.com/brianleroux/status/1213129879245295619",
-			"featured": true
+			"source": "https://twitter.com/brianleroux/status/1213129879245295619"
 		},
 		{
 			"text": "I think what's great about Eleventy is how it was able to simplify SSGs to just 2 concepts: data sources and templates.",
@@ -247,8 +240,7 @@ export default function() {
 			"text": "The Eleventy + Netlify combo continues to be 🤌",
 			"avatarUrl": "https://danmall.com/",
 			"name": "Dan Mall",
-			"source": "https://twitter.com/danmall/status/1585364687046123521",
-			"featured": true
+			"source": "https://twitter.com/danmall/status/1585364687046123521"
 		},
 	].map(entry => {
 		// canonical urls via @tweetback/canonical
