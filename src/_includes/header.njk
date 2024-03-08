@@ -32,13 +32,17 @@
 	</div>
 
 	<div class="elv-nav-header">
-		<a href="/blog/mascot-david/" class="elv-externalexempt elv-possum-anchor" data-investors-avatar>
-			<div class="elv-possum-pic">
-				{% set eagerAttributes = {"loading": "eager"} %}
-				{% image "./src/img/mascots/david.svg", "The possum is Eleventy’s mascot", [222, 350], "elv-possum", "", eagerAttributes %}
-			</div>
-		</a>
 		<a href="{% if logoLink %}{{ logoLink }}{% else %}/{% endif %}" class="elv-hero elv-externalexempt">{% if logoContent %}{{ logoContent | safe }}{% else %}{% include "../img/logo.svg" %}{% endif %}<span class="sr-only">Eleventy</span></a>
 		<{{ headerTag or "h1" }} class="elv-hed">{{ title | orphanWrap | safe }}</{{ headerTag or "h1" }}>
+		<is-land on:visible on:idle on:save-data="false" on:media="(prefers-reduced-motion: no-preference)">
+			<template data-island>
+				<a href="/blog/mascot-david/" class="elv-externalexempt elv-possum-anchor" data-investors-avatar>
+					<div class="elv-possum-pic">
+							{% image "./src/img/mascots/david.svg", "The possum is Eleventy’s mascot", [222, 350], "elv-possum" %}
+						</is-land>
+					</div>
+				</a>
+			</template>
+		</is-land>
 	</div>
 </header>
