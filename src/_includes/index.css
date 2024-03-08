@@ -566,8 +566,8 @@ a[href].elv-hero:visited {
 .elv-hero img,
 .elv-hero svg {
 	display: block;
-	width: 66vh;
-	height: 66vh;
+	width: 55vh;
+	height: 55vh;
 	max-width: 100%;
 }
 .elv-hero:hover img,
@@ -613,6 +613,7 @@ a[href].elv-hero:visited {
 
 /* Header Heading */
 .elv-hed {
+	font-family: BenchNineSubset, BenchNine, system-ui, -apple-system, sans-serif;
 	font-size: 3.125em; /* 50px /16 */
 	line-height: 1.2;
 	margin-block: 1em;
