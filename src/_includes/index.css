@@ -678,6 +678,11 @@ a[href].elv-hero:visited {
 		font-size: 1.666666666667em; /* 30px /18 */
 	}
 }
+@media (min-width: 87.5em) { /* 1400px */
+	.btn-primary {
+		font-size: 5.25em; /* 84px /16 */
+	}
+}
 
 /* Emoji */
 .emoji {
