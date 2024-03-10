@@ -1,0 +1,6 @@
+{
+	"url": "https://github.com/MarcoMicale/starting-project",
+	"name": "Starting Project",
+	"description": "A blog template and theme using 11ty, TailwindCSS, Rollup, Prism syntax highlighting, etc.",
+	"demo": "https://starting-project-11y.netlify.app/"
+}
