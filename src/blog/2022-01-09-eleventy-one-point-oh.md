@@ -4,25 +4,26 @@ eleventyNavigation:
   parent: Blog
   key: Eleventy v1.0.0
 ---
-* [Full docs for v1.0.0 on our web site](https://v1-0-0.11ty.dev/docs/)
+
+- [Full docs for v1.0.0 on our web site](https://v1-0-0.11ty.dev/docs/)
 
 This project would not be possible without our lovely community. Thank you to everyone that built something with Eleventy ([×476 authors on our web site!](https://v1-0-0.11ty.dev/authors/)), wrote a blog post about Eleventy, [contributed code to core](https://github.com/11ty/eleventy/graphs/contributors) or plugins, [documentation](https://github.com/11ty/11ty-website/graphs/contributors), asked questions, answered questions, braved [The Leaderboards](https://www.11ty.dev/speedlify/), participated on Discord, filed issues, attended (or organized!) a meetup, said a kind word on Twitter ❤️.
 
 I really wish I had time to list everyone, but I do want to mention a few folks that have made tremendous contributions:
 
-* 🏆 A super special thanks to [Peter DeHaan](https://github.com/pdehaan) and [Binyamin Green](https://github.com/binyamin) for their tireless contributions on the Eleventy Issue tracker.
-* All of our [supporters on Open Collective](https://opencollective.com/11ty) ❤️
-  * Gold Sponsors: [**Sanity.io**](https://www.sanity.io), [**Nordhealth**](https://nordhealth.com), [**Screen recorder for Mac**](https://www.movavi.com/screen-recorder-mac/)
-  * Silver Sponsors: [**Piccalilli**](https://swop.link/open-collective), [**ESLint**](https://eslint.org/), [**Unabridged Software**](https://www.unabridgedsoftware.com/), [**PQINA**](https://pqina.nl/), [**The Coders Guild**](https://thecodersguild.org.uk/), [**Bejamas**](https://bejamas.io)
-  * A full list of Backers can be found below!
-* [Contribute on Open Collective](https://opencollective.com/11ty)
-* [How else can you contribute to Eleventy?](https://v1-0-0.11ty.dev/docs/how-to-support/)
+- 🏆 A super special thanks to [Peter DeHaan](https://github.com/pdehaan) and [Binyamin Green](https://github.com/binyamin) for their tireless contributions on the Eleventy Issue tracker.
+- All of our [supporters on Open Collective](https://opencollective.com/11ty) ❤️
+  - Gold Sponsors: [**Sanity.io**](https://www.sanity.io), [**Nordhealth**](https://nordhealth.com), [**Screen recorder for Mac**](https://www.movavi.com/screen-recorder-mac/)
+  - Silver Sponsors: [**Piccalilli**](https://swop.link/open-collective), [**ESLint**](https://eslint.org/), [**Unabridged Software**](https://www.unabridgedsoftware.com/), [**PQINA**](https://pqina.nl/), [**The Coders Guild**](https://thecodersguild.org.uk/), [**Bejamas**](https://bejamas.io)
+  - A full list of Backers can be found below!
+- [Contribute on Open Collective](https://opencollective.com/11ty)
+- [How else can you contribute to Eleventy?](https://v1-0-0.11ty.dev/docs/how-to-support/)
 
 ## Install or Upgrade
 
-* Install to your local project: `npm install @11ty/eleventy`
-* Already installed in your local project? Upgrade your version: `npm update @11ty/eleventy`
-* _Read more about [local project versus global installation](https://v1-0-0.11ty.dev/docs/global-installation/)_
+- Install to your local project: `npm install @11ty/eleventy`
+- Already installed in your local project? Upgrade your version: `npm update @11ty/eleventy`
+- _Read more about [local project versus global installation](https://v1-0-0.11ty.dev/docs/global-installation/)_
 
 **Upgrading from 0.x? Try out the `eleventy-upgrade-help` plugin.**
 
@@ -30,31 +31,31 @@ This will log breaking changes that apply to your project. https://github.com/11
 
 ## Breaking Changes
 
-* Changes Node requirement to 12+ (previously: 10+)
-* Data Deep Merge is now enabled by default
-  * [Docs: Data Deep Merge](https://v1-0-0.11ty.dev/docs/data-deep-merge/) and _Issue #1753_
-* The ordering in the Data Cascade changed slightly: _Front Matter in Layout_ files moved to be lower precedence, below Template and Data Directory Files (but higher than Global Data).
-  * [Docs: Data Cascade](https://v1-0-0.11ty.dev/docs/data-cascade/) and _Issue #915_
-* `liquidjs` v9 major version upgrade changes:
-  * `setLiquidOptions`: Eleventy default for `dynamicPartials` changed to `true`. _Issue #240_ **Unquoted include paths will need to be updated or revert using `dynamicPartials: false`**
-  * `setLiquidOptions`: Liquid option `strict_filters` renamed to `strictFilters`. _Issue #1390_
-  * `setLiquidOptions`: Eleventy default for `strict_filters`/`strictFilters` changed to `true`. _Issue #222_
-  * Relative path includes (e.g. `{% raw %}{% include "./include.liquid" %}{% endraw %}`) now look relative to the file first, and the includes directory second. _[Issue #2090](https://github.com/11ty/eleventy/issues/2090#issuecomment-970440427)_
-* `ejs` v3 major version upgrade changes: _Issue #1392_
-  * Removes `<% include /included %>` style include, use `<%- include('/included') -%>` instead. **Don’t forget the dash `<%-` and `-%>`!**
-* `.gitignore` files outside of your project root are no longer supported when calculating ignored paths in Eleventy. _Issue #364_
-  * ✅ {ROOT}/.gitignore (supported)
-  * 🚫 {INPUT_DIR}/.gitignore (*not* supported)
-  * ✅ {ROOT}/.eleventyignore (supported)
-  * ✅ {INPUT_DIR}/.eleventyignore (supported)
-* If you rely on the `YYYY-MM-DD` format in your file names for content dates, these are now assumed to be UTC instead of local dates. Take care if you use `liquid`’s built-in `date` format with `page.date`!
-  * [Docs: Content Dates](https://v1-0-0.11ty.dev/docs/dates/), _Issue #1752_, and https://github.com/harttle/liquidjs/issues/375
-* `browser-sync`:
-  * Default to `ui: false` _Issue #843_
-  * Default to `ghostMode: false` _Issue #841_
-  * [Re-enable these features using `eleventyConfig.setBrowserSyncConfig`](https://v1-0-0.11ty.dev/docs/watch-serve/#override-browsersync-server-options)
-* Removes the `jstl` template language. Use `11ty.js` instead. _Issue #1084_
-* Change to `dataTemplateEngine: false` by default. _Issue #174_
+- Changes Node requirement to 12+ (previously: 10+)
+- Data Deep Merge is now enabled by default
+  - [Docs: Data Deep Merge](https://v1-0-0.11ty.dev/docs/data-deep-merge/) and _Issue #1753_
+- The ordering in the Data Cascade changed slightly: _Front Matter in Layout_ files moved to be lower precedence, below Template and Data Directory Files (but higher than Global Data).
+  - [Docs: Data Cascade](https://v1-0-0.11ty.dev/docs/data-cascade/) and _Issue #915_
+- `liquidjs` v9 major version upgrade changes:
+  - `setLiquidOptions`: Eleventy default for `dynamicPartials` changed to `true`. _Issue #240_ **Unquoted include paths will need to be updated or revert using `dynamicPartials: false`**
+  - `setLiquidOptions`: Liquid option `strict_filters` renamed to `strictFilters`. _Issue #1390_
+  - `setLiquidOptions`: Eleventy default for `strict_filters`/`strictFilters` changed to `true`. _Issue #222_
+  - Relative path includes (e.g. `{% raw %}{% include "./include.liquid" %}{% endraw %}`) now look relative to the file first, and the includes directory second. _[Issue #2090](https://github.com/11ty/eleventy/issues/2090#issuecomment-970440427)_
+- `ejs` v3 major version upgrade changes: _Issue #1392_
+  - Removes `<% include /included %>` style include, use `<%- include('/included') -%>` instead. **Don’t forget the dash `<%-` and `-%>`!**
+- `.gitignore` files outside of your project root are no longer supported when calculating ignored paths in Eleventy. _Issue #364_
+  - ✅ {ROOT}/.gitignore (supported)
+  - 🚫 {INPUT_DIR}/.gitignore (_not_ supported)
+  - ✅ {ROOT}/.eleventyignore (supported)
+  - ✅ {INPUT_DIR}/.eleventyignore (supported)
+- If you rely on the `YYYY-MM-DD` format in your file names for content dates, these are now assumed to be UTC instead of local dates. Take care if you use `liquid`’s built-in `date` format with `page.date`!
+  - [Docs: Content Dates](https://v1-0-0.11ty.dev/docs/dates/), _Issue #1752_, and https://github.com/harttle/liquidjs/issues/375
+- `browser-sync`:
+  - Default to `ui: false` _Issue #843_
+  - Default to `ghostMode: false` _Issue #841_
+  - [Re-enable these features using `eleventyConfig.setBrowserSyncConfig`](https://v1-0-0.11ty.dev/docs/watch-serve/#override-browsersync-server-options)
+- Removes the `jstl` template language. Use `11ty.js` instead. _Issue #1084_
+- Change to `dataTemplateEngine: false` by default. _Issue #174_
 
 Please use [`eleventy-upgrade-help`](https://github.com/11ty/eleventy-upgrade-help) to log breaking changes that apply to your project.
 
@@ -62,63 +63,63 @@ Please use [`eleventy-upgrade-help`](https://github.com/11ty/eleventy-upgrade-he
 
 ### Major
 
-* Custom File Extension Handlers: applications and plugins can now add their own template types and tie them to a file extension.
-  * [Docs: Custom Template Languages](https://v1-0-0.11ty.dev/docs/languages/custom/) and _Issue #117_
-* Render Plugin, shortcodes to render other template languages.
-  * [Docs: Render Plugin](https://v1-0-0.11ty.dev/docs/plugins/render/)
-* Serverless Plugin, allow Eleventy templates to run in a serverless function for server side rendering.
-  * Use with [Netlify Functions](https://www.netlify.com/products/functions/) and [On-demand Builders](https://www.netlify.com/blog/2021/10/25/faster-more-reliable-page-loads-with-update-to-on-demand-builders/)
-  * [Docs: Serverless Plugin](https://v1-0-0.11ty.dev/docs/plugins/serverless/)
-* Adds support for `--to=json` and `--to=ndjson`
-  * [Docs: Command Line Usage](https://v1-0-0.11ty.dev/docs/usage/#to-can-output-json)
-  * Use Data Filter Selectors to opt-in data from the Data Cascade. [Docs: Configuration: Data Filter Selectors](https://v1-0-0.11ty.dev/docs/config/#data-filter-selectors)
-* Adds support for programmatic Eleventy (e.g. `new Eleventy()` in your Node.js script)
-  * [Docs: Programmatic API](https://v1-0-0.11ty.dev/docs/programmatic/)
-* Configuration: `addGlobalData` method.
-  * [Docs: Global Data from the Configuration API](https://v1-0-0.11ty.dev/docs/data-global-custom/) and _Issue #1280_
-  * Note also that JavaScript Global Data Files now receive data. [Docs: JavaScript Data Files](https://v1-0-0.11ty.dev/docs/data-js/#arguments-to-global-data-files)
+- Custom File Extension Handlers: applications and plugins can now add their own template types and tie them to a file extension.
+  - [Docs: Custom Template Languages](https://v1-0-0.11ty.dev/docs/languages/custom/) and _Issue #117_
+- Render Plugin, shortcodes to render other template languages.
+  - [Docs: Render Plugin](https://v1-0-0.11ty.dev/docs/plugins/render/)
+- Serverless Plugin, allow Eleventy templates to run in a serverless function for server side rendering.
+  - Use with [Netlify Functions](https://www.netlify.com/products/functions/) and [On-demand Builders](https://www.netlify.com/blog/2021/10/25/faster-more-reliable-page-loads-with-update-to-on-demand-builders/)
+  - [Docs: Serverless Plugin](https://v1-0-0.11ty.dev/docs/plugins/serverless/)
+- Adds support for `--to=json` and `--to=ndjson`
+  - [Docs: Command Line Usage](https://v1-0-0.11ty.dev/docs/usage/#to-can-output-json)
+  - Use Data Filter Selectors to opt-in data from the Data Cascade. [Docs: Configuration: Data Filter Selectors](https://v1-0-0.11ty.dev/docs/config/#data-filter-selectors)
+- Adds support for programmatic Eleventy (e.g. `new Eleventy()` in your Node.js script)
+  - [Docs: Programmatic API](https://v1-0-0.11ty.dev/docs/programmatic/)
+- Configuration: `addGlobalData` method.
+  - [Docs: Global Data from the Configuration API](https://v1-0-0.11ty.dev/docs/data-global-custom/) and _Issue #1280_
+  - Note also that JavaScript Global Data Files now receive data. [Docs: JavaScript Data Files](https://v1-0-0.11ty.dev/docs/data-js/#arguments-to-global-data-files)
 
 ### Minor
 
-* Passthrough Copy now throws an error if two or more files attempt to copy to the same output location. _Issue #1677_
-* For better URL-safe slugs by default, we now suggest using the new `slugify` global filter instead of the previous `slug`. `slug` is still included for backwards compatiblity. [`slugify` Docs](https://v1-0-0.11ty.dev/docs/filters/slugify/). [`eleventy-upgrade-help`](https://github.com/11ty/eleventy-upgrade-help) includes a permalink checker to compare `slug` and `slugify` output. _Issue #278_
-* Added support for protocol relative URLs in the `url` global filter (though technically accurate, using this method is discouraged). _Issue #1276_
-* New Eleventy supplied data:
-  * `eleventy` Global Data
-    * [Docs: Eleventy Supplied Data: `eleventy` Variable](https://v1-0-0.11ty.dev/docs/data-eleventy-supplied/#eleventy-variable)
-  * Environment Variables:
-    * [Docs: Eleventy Supplied Data: Environment Variables](https://v1-0-0.11ty.dev/docs/data-eleventy-supplied/#environment-variables)
-    * `ELEVENTY_ROOT`
-    * `ELEVENTY_SOURCE`
-    * `ELEVENTY_SERVERLESS`
-* `tags` are now de-duped. _Issue #1876_
-* JavaScript functions in `eleventyComputed` now have access to global filters.
-  * [Docs: Computed Data](https://v1-0-0.11ty.dev/docs/data-computed/#using-javascript) and _Issue #1862_
-* Ignores
-  * `node_modules` are now ignored by default. [Docs: Ignores](https://v1-0-0.11ty.dev/docs/ignores/#node_modules) and _Issue #383_
-  * Control ignores programmatically. [Docs: Ignores](https://v1-0-0.11ty.dev/docs/ignores/#configuration-api) and _Issue #894_ _#1405_
-* Configuration: Access to `eleventyConfig.dir` in plugins. _Issue #922_
-* Configuration: Events are now Async-friendly
-  * [Docs: Events](https://v1-0-0.11ty.dev/docs/events/) and _Issue #1363_
-* Replace `chalk` dependency with `kleur` _Issue #2113_
-* Adds template language-agnostic compilation caching for speeeeed _Issue #1529_
-* Fixes bug `--input=file.njk --output=.` would process 0 files. _Issue #1129_
-* Fixes bug where Eleventy would stop processing templates in watch/serve mode after a compilation error. _Issue #1658_
-* Front matter parsing errors will now report the filename of the offending file in the error message. _Issue #1152_
-* [Option to opt-out of the `browser-sync` JavaScript snippet](https://v1-0-0.11ty.dev/docs/watch-serve/#opt-out-of-the-browsersync-javascript-snippet)
-* Warning when Transforms that return empty content. _Issue #1487_
-* Transforms now have access to `inputPath` _Issue #789_
-* Shows the preprocessed template engine name on the console for `html` or `md` files _Issue #1478_
+- Passthrough Copy now throws an error if two or more files attempt to copy to the same output location. _Issue #1677_
+- For better URL-safe slugs by default, we now suggest using the new `slugify` global filter instead of the previous `slug`. `slug` is still included for backwards compatiblity. [`slugify` Docs](https://v1-0-0.11ty.dev/docs/filters/slugify/). [`eleventy-upgrade-help`](https://github.com/11ty/eleventy-upgrade-help) includes a permalink checker to compare `slug` and `slugify` output. _Issue #278_
+- Added support for protocol relative URLs in the `url` global filter (though technically accurate, using this method is discouraged). _Issue #1276_
+- New Eleventy supplied data:
+  - `eleventy` Global Data
+    - [Docs: Eleventy Supplied Data: `eleventy` Variable](https://v1-0-0.11ty.dev/docs/data-eleventy-supplied/#eleventy-variable)
+  - Environment Variables:
+    - [Docs: Eleventy Supplied Data: Environment Variables](https://v1-0-0.11ty.dev/docs/data-eleventy-supplied/#environment-variables)
+    - `ELEVENTY_ROOT`
+    - `ELEVENTY_SOURCE`
+    - `ELEVENTY_SERVERLESS`
+- `tags` are now de-duped. _Issue #1876_
+- JavaScript functions in `eleventyComputed` now have access to global filters.
+  - [Docs: Computed Data](https://v1-0-0.11ty.dev/docs/data-computed/#using-javascript) and _Issue #1862_
+- Ignores
+  - `node_modules` are now ignored by default. [Docs: Ignores](https://v1-0-0.11ty.dev/docs/ignores/#node_modules) and _Issue #383_
+  - Control ignores programmatically. [Docs: Ignores](https://v1-0-0.11ty.dev/docs/ignores/#configuration-api) and _Issue #894_ _#1405_
+- Configuration: Access to `eleventyConfig.dir` in plugins. _Issue #922_
+- Configuration: Events are now Async-friendly
+  - [Docs: Events](https://v1-0-0.11ty.dev/docs/events/) and _Issue #1363_
+- Replace `chalk` dependency with `kleur` _Issue #2113_
+- Adds template language-agnostic compilation caching for speeeeed _Issue #1529_
+- Fixes bug `--input=file.njk --output=.` would process 0 files. _Issue #1129_
+- Fixes bug where Eleventy would stop processing templates in watch/serve mode after a compilation error. _Issue #1658_
+- Front matter parsing errors will now report the filename of the offending file in the error message. _Issue #1152_
+- [Option to opt-out of the `browser-sync` JavaScript snippet](https://v1-0-0.11ty.dev/docs/watch-serve/#opt-out-of-the-browsersync-javascript-snippet)
+- Warning when Transforms that return empty content. _Issue #1487_
+- Transforms now have access to `inputPath` _Issue #789_
+- Shows the preprocessed template engine name on the console for `html` or `md` files _Issue #1478_
 
 ### Nunjucks
 
-* Adds `eleventyConfig.setNunjucksEnvironmentOptions` method. _Issue #895_
-  * [Docs: Nunjucks](https://v1-0-0.11ty.dev/docs/languages/nunjucks/#optional-use-your-nunjucks-environment-options)
-* Adds `eleventyConfig.addNunjucksGlobal` method. _Issue #1060_
+- Adds `eleventyConfig.setNunjucksEnvironmentOptions` method. _Issue #895_
+  - [Docs: Nunjucks](https://v1-0-0.11ty.dev/docs/languages/nunjucks/#optional-use-your-nunjucks-environment-options)
+- Adds `eleventyConfig.addNunjucksGlobal` method. _Issue #1060_
 
 ### Liquid
 
-* Adds support for asynchronous filters. _Issue #831_
+- Adds support for asynchronous filters. _Issue #831_
 
 ## Milestone
 
@@ -126,20 +127,21 @@ All bug fix issues can be perused at the GitHub milestone:
 https://github.com/11ty/eleventy/milestone/32?closed=1
 
 Some internals highlights:
-* Improvements to stability with Nunjucks and shortcodes in `{% raw %}{% for %}{% endraw %}` loops
-* Fix for `EMFILE: too many open files` errors
-* Use a named `browser-sync` instance. _Issue #1125_
-* Switch from `fs-extra` to `graceful-fs`
+
+- Improvements to stability with Nunjucks and shortcodes in `{% raw %}{% for %}{% endraw %}` loops
+- Fix for `EMFILE: too many open files` errors
+- Use a named `browser-sync` instance. _Issue #1125_
+- Switch from `fs-extra` to `graceful-fs`
 
 ## Major Version Dependency Upgrades
 
 These are convenience links provided. Major things of note are summarized in the Breaking Changes section above.
 
-* `liquidjs` from 6 to 9, release notes: [v7](https://github.com/harttle/liquidjs/blob/master/CHANGELOG.md#700-2019-02-14) [v8](https://github.com/harttle/liquidjs/blob/master/CHANGELOG.md#800-2019-03-10) [v9](https://github.com/harttle/liquidjs/blob/master/CHANGELOG.md#900-2019-08-26)
-* `luxon` from 1 to 2: (Node 12+ minimum) [Upgrade Guide](https://moment.github.io/luxon/#/upgrading)
-* `markdown-it` from 10 to 12, release notes: [v11](https://github.com/markdown-it/markdown-it/blob/master/CHANGELOG.md#1100---2020-05-20) [v12](https://github.com/markdown-it/markdown-it/blob/master/CHANGELOG.md#1200---2020-10-14)
-* `ejs` from 2 to 3. Release notes: [v3](https://github.com/mde/ejs/blob/main/CHANGELOG.md#v301-2019-11-23)
-* `mustache` from 2 to 4. Release notes: [v3](https://github.com/janl/mustache.js/blob/master/CHANGELOG.md#300--16-september-2018) [v4](https://github.com/janl/mustache.js/blob/master/CHANGELOG.md#400--16-january-2020)
+- `liquidjs` from 6 to 9, release notes: [v7](https://github.com/harttle/liquidjs/blob/master/CHANGELOG.md#700-2019-02-14) [v8](https://github.com/harttle/liquidjs/blob/master/CHANGELOG.md#800-2019-03-10) [v9](https://github.com/harttle/liquidjs/blob/master/CHANGELOG.md#900-2019-08-26)
+- `luxon` from 1 to 2: (Node 12+ minimum) [Upgrade Guide](https://moment.github.io/luxon/#/upgrading)
+- `markdown-it` from 10 to 12, release notes: [v11](https://github.com/markdown-it/markdown-it/blob/master/CHANGELOG.md#1100---2020-05-20) [v12](https://github.com/markdown-it/markdown-it/blob/master/CHANGELOG.md#1200---2020-10-14)
+- `ejs` from 2 to 3. Release notes: [v3](https://github.com/mde/ejs/blob/main/CHANGELOG.md#v301-2019-11-23)
+- `mustache` from 2 to 4. Release notes: [v3](https://github.com/janl/mustache.js/blob/master/CHANGELOG.md#300--16-september-2018) [v4](https://github.com/janl/mustache.js/blob/master/CHANGELOG.md#400--16-january-2020)
 
 ## THANK YOU NOTES
 

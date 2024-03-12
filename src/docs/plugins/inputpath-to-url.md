@@ -4,6 +4,7 @@ eleventyNavigation:
   order: 3
   excerpt: Maps an Eleventy input file path to its output URL.
 ---
+
 # InputPath to URL {% addedin "v3.0.0-alpha.5" %}
 
 {% tableofcontents %}
@@ -48,9 +49,11 @@ This uses an [Eleventy Transform](/docs/config/#transforms) to modify the output
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 <a href="my-template.md">Home</a>
 ```
+
 {% endraw %}
 
   </div>
@@ -59,9 +62,11 @@ This uses an [Eleventy Transform](/docs/config/#transforms) to modify the output
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 <a href="my-template.md">Home</a>
 ```
+
 {% endraw %}
 
   </div>
@@ -70,21 +75,25 @@ This uses an [Eleventy Transform](/docs/config/#transforms) to modify the output
 {% codetitle "JavaScript (CommonJS)", "Syntax" %}
 
 {% raw %}
+
 ```js
-module.exports = function(data) {
-  return `<a href="my-template.md">Home</a>`;
-}
+module.exports = function (data) {
+	return `<a href="my-template.md">Home</a>`;
+};
 ```
+
 {% endraw %}
 
 {% codetitle "JavaScript (ESM)", "Syntax" %}
 
 {% raw %}
+
 ```js
-export default function(data) {
-  return `<a href="my-template.md">Home</a>`;
+export default function (data) {
+	return `<a href="my-template.md">Home</a>`;
 }
 ```
+
 {% endraw %}
 
   </div>
@@ -93,9 +102,11 @@ export default function(data) {
 {% codetitle "Handlebars", "Syntax" %}
 
 {% raw %}
+
 ```hbs
 <a href="my-template.md">Home</a>
 ```
+
 {% endraw %}
 
   </div>
@@ -108,9 +119,9 @@ The above all render as the following in your output:
 <a href="/my-template/">Home</a>
 ```
 
-* The paths used here should be [relative to the input directory](/docs/config/#input-directory) though they _can_ be relative to the project root (the former is simpler and more robust).
-* As this transform is implicit it _does not_ error when an inputPath match is not found—it only returns the original URL string.
-* When pointing to a [**Pagination template**](/docs/pagination/), the first URL in the pagination set is returned.
+- The paths used here should be [relative to the input directory](/docs/config/#input-directory) though they _can_ be relative to the project root (the former is simpler and more robust).
+- As this transform is implicit it _does not_ error when an inputPath match is not found—it only returns the original URL string.
+- When pointing to a [**Pagination template**](/docs/pagination/), the first URL in the pagination set is returned.
 
 ### Installation
 
@@ -130,10 +141,11 @@ Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
 ```js
 import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 
-export default function(eleventyConfig) {
-  eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
-};
+export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
+}
 ```
+
 _You’re only allowed one `export default` in your configuration file, so make sure you only copy the `import` and the `addPlugin` lines above!_
 
 <details class="details-expand-bg">
@@ -144,15 +156,15 @@ _You’re only allowed one `export default` in your configuration file, so make 
 ```js
 import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 
-export default function(eleventyConfig) {
-  eleventyConfig.addPlugin(InputPathToUrlTransformPlugin, {
+export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin, {
 		// Comma separated list of outputPath file extensions to apply the transform
 		extensions: "html",
 	});
-};
+}
 ```
 
-* Read more about [Transform outputPaths](/docs/config/#transforms).
+- Read more about [Transform outputPaths](/docs/config/#transforms).
 
 </details>
 
@@ -162,12 +174,13 @@ export default function(eleventyConfig) {
 {% codetitle ".eleventy.js (CommonJS)" %}
 
 ```js
-module.exports = async function(eleventyConfig) {
+module.exports = async function (eleventyConfig) {
 	const { InputPathToUrlTransformPlugin } = await import("@11ty/eleventy");
 
-  eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
+	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 };
 ```
+
 _You’re only allowed one `module.exports` in your configuration file, so make sure you only copy the `import` and the `addPlugin` lines above!_
 
 <details class="details-expand-bg">
@@ -176,17 +189,17 @@ _You’re only allowed one `module.exports` in your configuration file, so make 
 {% codetitle ".eleventy.js (CommonJS)" %}
 
 ```js
-module.exports = async function(eleventyConfig) {
+module.exports = async function (eleventyConfig) {
 	const { InputPathToUrlTransformPlugin } = await import("@11ty/eleventy");
 
-  eleventyConfig.addPlugin(InputPathToUrlTransformPlugin, {
+	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin, {
 		// Comma separated list of outputPath file extensions to apply the transform
 		extensions: "html",
 	});
 };
 ```
 
-* Read more about [Transform outputPaths](/docs/config/#transforms).
+- Read more about [Transform outputPaths](/docs/config/#transforms).
 
 </details>
 

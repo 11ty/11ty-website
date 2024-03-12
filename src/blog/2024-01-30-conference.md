@@ -3,6 +3,7 @@ newstitle: "We’re running an 11ty Conference!"
 eleventyNavigation:
   parent: Blog
 ---
+
 In May 2024 (this year!) we’ll gather together our _extremely-online_ community of webcraftspeople to share what we know! Join us at the [**11ty International Symposium on Making Web Sites Real Good**](https://conf.11ty.dev/).
 
 We’ll publish a full schedule of relevant conference dates (call for proposals, et cetera) in the coming weeks!

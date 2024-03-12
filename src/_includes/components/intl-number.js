@@ -5,13 +5,13 @@ class NumberFormat extends HTMLElement {
 		let original = this.textContent;
 		let next = new Intl.NumberFormat().format(original.replace(/[^0-9]/gi, ""));
 
-		if(original !== next) {
+		if (original !== next) {
 			this.setAttribute("value", original);
 			this.textContent = next;
 		}
 	}
 }
 
-if("customElements" in window) {
+if ("customElements" in window) {
 	customElements.define(NumberFormat.tagName, NumberFormat);
 }

@@ -1,11 +1,13 @@
 import getOpenCollectiveData from "./opencollective.js";
 
-export default async function() {
+export default async function () {
 	const opencollective = await getOpenCollectiveData();
 
-	let backers = opencollective.supporters.filter(supporter => {
-		return (supporter.frequency === 'MONTHLY' || supporter.frequency === 'YEARLY') &&
-			supporter.status === 'ACTIVE';
+	let backers = opencollective.supporters.filter((supporter) => {
+		return (
+			(supporter.frequency === "MONTHLY" || supporter.frequency === "YEARLY") &&
+			supporter.status === "ACTIVE"
+		);
 	});
 
 	let count = 0;
@@ -13,21 +15,21 @@ export default async function() {
 	let buckets = {};
 	let bucketNames = {};
 	let monthlyDonations = 0;
-	for(let backer of backers) {
+	for (let backer of backers) {
 		let amount = backer.amount.value;
-		if(backer.frequency === "YEARLY") {
+		if (backer.frequency === "YEARLY") {
 			amount = amount / 12;
 		}
 		sorted.push(amount);
 		monthlyDonations += amount;
 		count++;
 
-		if(!buckets[amount]) {
+		if (!buckets[amount]) {
 			buckets[amount] = 0;
 		}
 		buckets[amount]++;
 
-		if(!bucketNames[amount]) {
+		if (!bucketNames[amount]) {
 			bucketNames[amount] = [];
 		}
 		bucketNames[amount].push(backer.name);

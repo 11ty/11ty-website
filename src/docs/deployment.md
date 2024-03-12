@@ -7,7 +7,7 @@ eleventyNavigation:
 featuredHosts:
   - name: "Want your logo here? Contact us!"
     url: ""
-    tags: [ Hosting Partner ]
+    tags: [Hosting Partner]
     class: sites-featured
     screenshotSize: opengraph
 hosts:
@@ -79,6 +79,7 @@ webides:
     screenshotSize: medium
     hideRelatedLinks: true
 ---
+
 # Deployment
 
 {% tableofcontents %}
@@ -159,18 +160,18 @@ The `.cache` folder is used by the [Eleventy Fetch plugin](/docs/plugins/fetch/)
 
 Some Jamstack providers have additional features to persist this folder between builds, re-useing the cache and speeding up build times. Here are a few of these:
 
-* **CloudCannon**: use [Preserved paths](https://cloudcannon.com/documentation/articles/caching-specific-folders-to-reduce-build-times/#preserved-paths). [Tutorial on YouTube](https://www.youtube.com/watch?v=ULwVlFMth1U).
-* **Vercel**: zero-configuration support (when the [Eleventy framework is detected](https://vercel.com/docs/deployments/configure-a-build#framework-preset), [source](https://github.com/vercel/vercel/blob/20237d4f7b55b0697b57db15636c11204cb0dc39/packages/frameworks/src/frameworks.ts#L363)).
-* [**Cloudflare Pages**](https://developers.cloudflare.com/pages/configuration/build-caching/#frameworks): _not yet supported_ but we’ve been working with the team to add it—coming soon!
-* **GitHub Pages**: use the [`cache` action](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows#using-the-cache-action). [Mini-tutorial included below](#deploy-an-eleventy-project-to-github-pages).
-* **Netlify**: use [`netlify-plugin-cache`](https://www.npmjs.com/package/netlify-plugin-cache). [Mini-tutorial included below](#using-netlify-plugin-cache-to-persist-cache). [Video on YouTube](https://www.youtube.com/watch?v=JCQQgtOcjH4&t=322s).
+- **CloudCannon**: use [Preserved paths](https://cloudcannon.com/documentation/articles/caching-specific-folders-to-reduce-build-times/#preserved-paths). [Tutorial on YouTube](https://www.youtube.com/watch?v=ULwVlFMth1U).
+- **Vercel**: zero-configuration support (when the [Eleventy framework is detected](https://vercel.com/docs/deployments/configure-a-build#framework-preset), [source](https://github.com/vercel/vercel/blob/20237d4f7b55b0697b57db15636c11204cb0dc39/packages/frameworks/src/frameworks.ts#L363)).
+- [**Cloudflare Pages**](https://developers.cloudflare.com/pages/configuration/build-caching/#frameworks): _not yet supported_ but we’ve been working with the team to add it—coming soon!
+- **GitHub Pages**: use the [`cache` action](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows#using-the-cache-action). [Mini-tutorial included below](#deploy-an-eleventy-project-to-github-pages).
+- **Netlify**: use [`netlify-plugin-cache`](https://www.npmjs.com/package/netlify-plugin-cache). [Mini-tutorial included below](#using-netlify-plugin-cache-to-persist-cache). [Video on YouTube](https://www.youtube.com/watch?v=JCQQgtOcjH4&t=322s).
 
 ### Speed up Eleventy Image
 
 Additionally, _if_ you’re writing your [Eleventy Image output](/docs/plugins/image/#output-directory) to your Eleventy output directory (e.g. `./_site/img/`) (and not checking those files into `git`), you can persist this folder as well to [reuse the Eleventy Image disk cache](/docs/plugins/image/#disk-cache) to improve build times.
 
-* [**CloudCannon** Tutorial on YouTube](https://www.youtube.com/watch?v=ULwVlFMth1U) _({{ "2023-10-23" | newsDate("yyyy") }})_
-* [Source example on GitHub for **Netlify**](https://github.com/11ty/demo-eleventy-img-netlify-cache) _({{ "2022-02-24" | newsDate("yyyy") }})_
+- [**CloudCannon** Tutorial on YouTube](https://www.youtube.com/watch?v=ULwVlFMth1U) _({{ "2023-10-23" | newsDate("yyyy") }})_
+- [Source example on GitHub for **Netlify**](https://github.com/11ty/demo-eleventy-img-netlify-cache) _({{ "2022-02-24" | newsDate("yyyy") }})_
 
 ## Mini-tutorials
 
@@ -184,6 +185,7 @@ Includes persisted cache across builds. Using [`peaceiris/actions-gh-pages`](htt
 <li>Create a new GitHub workflow file in <details><summary><code>.github/workflows/deploy-to-ghpages.yml</code></summary>
 
 {% raw %}
+
 ```yaml
 name: Deploy to GitHub Pages
 
@@ -206,7 +208,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: "18"
 
       - name: Persist npm cache
         uses: actions/cache@v3
@@ -220,7 +222,6 @@ jobs:
           path: ./.cache
           key: ${{ runner.os }}-eleventy-fetch-cache
 
-
       - run: npm install
       - run: npm run build-ghpages
 
@@ -231,7 +232,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
 ```
+
 {% endraw %}
+
 </details></li></ol>
 
 ### Using `netlify-plugin-cache` to persist cache
@@ -264,6 +267,5 @@ package = "netlify-plugin-cache"
 	<li>{% indieweblink "GitLab Pages Sample Project", "https://gitlab.com/bkmgit/11ty" %} by Benson Muite</li>
 	<li>{%indieweblink "GitHub Action for Eleventy", "https://github.com/marketplace/actions/eleventy-action" %} by {% communityavatar "TartanLlama", "Sy Brand" %}@TartanLlama</li>
 </ul>
-
 
 {% include "11tybundle.njk" %}

@@ -4,6 +4,7 @@ eleventyNavigation:
   parent: Community
   order: -1
 ---
+
 # Eleventy Community Code of Conduct
 
 {% tableofcontents %}

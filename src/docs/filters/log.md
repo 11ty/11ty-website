@@ -2,10 +2,11 @@
 eleventyNavigation:
   parent: Filters
   key: log Filter
-  title: '<code>log</code>'
+  title: "<code>log</code>"
   order: 3
-  excerpt: '<code>console.log</code> inside templates.'
+  excerpt: "<code>console.log</code> inside templates."
 ---
+
 # `log` Universal Filter
 
 {% addedin "0.11.0" %} An easy way to <code>console.log</code> anything from inside of a template file.
@@ -18,9 +19,11 @@ eleventyNavigation:
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 {{ "My Title" | log }}
 ```
+
 {% endraw %}
 
   </div>
@@ -29,9 +32,11 @@ eleventyNavigation:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 {{ "My Title" | log }}
 ```
+
 {% endraw %}
 
   </div>
@@ -40,12 +45,14 @@ eleventyNavigation:
 {% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
+
 ```js
-module.exports = function(data) {
-  // Caveat: you have access to `console.log` here, so probably use that.
-  return this.log("My Title");
-}
+module.exports = function (data) {
+	// Caveat: you have access to `console.log` here, so probably use that.
+	return this.log("My Title");
+};
 ```
+
 {% endraw %}
 
   </div>
@@ -68,6 +75,7 @@ You can drop log in between any filter chain you already have and it will log th
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 {{ "My Title" | log | upcase }}
 
@@ -76,6 +84,7 @@ This is the same as:
 {{ temp | log }}
 {{ temp | upcase }}
 ```
+
 {% endraw %}
 
   </div>
@@ -84,6 +93,7 @@ This is the same as:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 {{ "My Title" | log | upper }}
 
@@ -92,6 +102,7 @@ This is the same as:
 {{ temp | log }}
 {{ temp | upper }}
 ```
+
 {% endraw %}
 
   </div>

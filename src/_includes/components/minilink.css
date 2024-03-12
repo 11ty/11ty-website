@@ -1,7 +1,7 @@
 /* Mini link */
 .minilink {
 	display: inline-block;
-	padding: .125em .375em;
+	padding: 0.125em 0.375em;
 	text-transform: uppercase;
 	font-size: 0.875rem; /* 14px /16 */
 	text-decoration: none;
@@ -22,7 +22,7 @@ table .minilink {
 	margin-top: 6px;
 }
 .minilink[href] {
-	box-shadow: 0 1px 1px 0 rgba(0,0,0,.5);
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
 }
 .minilink[href]:hover,
 .minilink[href]:focus {
@@ -41,7 +41,7 @@ pre + .minilink {
 	background-color: #444;
 	color: #fff;
 }
-pre[class*=language-] + .minilink {
+pre[class*="language-"] + .minilink {
 	position: relative;
 	top: -0.7142857142857em; /* -10px /14 */
 }
@@ -62,21 +62,21 @@ h3 .minilink,
 h4 .minilink {
 	font-size: 0.8125rem; /* 13px /16 */
 }
-.minilink + pre[class*=language-] {
+.minilink + pre[class*="language-"] {
 	clear: both;
 }
 
 .minilink-addedin {
 	text-transform: none;
-	box-shadow: 0 0 0 1px rgba(0,0,0,0.3);
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
 }
 @media (prefers-color-scheme: dark) {
 	.minilink-addedin {
-		box-shadow: 0 0 0 1px rgba(255,255,255,0.3);
+		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
 	}
 }
 .minilink-addedin:not(:first-child) {
-	margin-left: .5em;
+	margin-left: 0.5em;
 }
 .minilink-addedin.minilink-inline {
 	margin: 0 4px;
@@ -93,7 +93,7 @@ h4 .minilink {
 	background-color: transparent;
 }
 .minilink-lower[href] {
-	box-shadow: 0 0 0 1px rgba(0,0,0,0.5);
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
 }
 .minilink-lower[href]:hover,
 .minilink-lower[href]:focus {
@@ -101,7 +101,7 @@ h4 .minilink {
 }
 
 .minilink > .minilink {
-	margin: -.125em .375em -.125em -.375em;
+	margin: -0.125em 0.375em -0.125em -0.375em;
 	box-shadow: none;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
@@ -112,13 +112,13 @@ h4 .minilink {
 	--internal-shadow-hsl: 0deg 0% 75%;
 	font-weight: 700;
 	text-transform: uppercase;
-		/* via https://www.joshwcomeau.com/shadow-palette/ */
+	/* via https://www.joshwcomeau.com/shadow-palette/ */
 	box-shadow: 0px 0.3px 0.5px hsl(var(--internal-shadow-hsl) / 0),
 		0.1px 4.3px 6.5px hsl(var(--internal-shadow-hsl) / 0.14);
 }
 .minilink-buildcost code:before {
 	content: "🧰";
-	margin-right: .25em;
+	margin-right: 0.25em;
 }
 
 a[href]:hover .minilink-buildcost,
@@ -144,7 +144,7 @@ a[href]:focus .minilink-buildcost {
 	background-color: #444;
 }
 @media (prefers-color-scheme: dark) {
-	.minilink-github.minilink-github{
+	.minilink-github.minilink-github {
 		background-color: #222;
 		color: #fff;
 	}

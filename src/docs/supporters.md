@@ -2,7 +2,9 @@
 subtitle: Open Collective Contributors
 ignoreSupporters: true
 ---
+
 {%- css %}{% include "components/page-supporters.css" %}{% endcss %}
+
 # Thank You Eleventy Contributors!
 
 Eleventy is made possible by financial contributions from these lovely people:

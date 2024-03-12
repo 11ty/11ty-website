@@ -4,6 +4,7 @@ eleventyNavigation:
   order: 7.5
 communityLinksKey: plugins
 ---
+
 Plugins are custom code that Eleventy can import into a project from an external repository.
 
 ## List of Official Plugins
@@ -28,8 +29,8 @@ Your config file is probably named `.eleventy.js`.
 
 ```js
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(pluginRss);
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addPlugin(pluginRss);
 };
 ```
 
@@ -39,19 +40,17 @@ Use an optional second argument to `addPlugin` to customize your plugin’s beha
 
 ```js
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(pluginSyntaxHighlight, {
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
+		// only install the markdown highlighter
+		templateFormats: ["md"],
 
-    // only install the markdown highlighter
-    templateFormats: ["md"],
-
-    init: function({ Prism }) {
-        // Add your own custom language to Prism!
-    }
-  });
+		init: function ({ Prism }) {
+			// Add your own custom language to Prism!
+		},
+	});
 };
 ```
-
 
 ### Namespace the plugin additions
 
@@ -61,11 +60,11 @@ You can namespace parts of your configuration using `eleventyConfig.namespace`. 
 
 ```js
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-module.exports = function(eleventyConfig) {
-  eleventyConfig.namespace("myPrefix_", () => {
-    // the rssLastUpdatedDate filter is now myPrefix_rssLastUpdatedDate
-    eleventyConfig.addPlugin(pluginRss);
-  });
+module.exports = function (eleventyConfig) {
+	eleventyConfig.namespace("myPrefix_", () => {
+		// the rssLastUpdatedDate filter is now myPrefix_rssLastUpdatedDate
+		eleventyConfig.addPlugin(pluginRss);
+	});
 };
 ```
 
@@ -73,13 +72,13 @@ module.exports = function(eleventyConfig) {
 Plugin namespacing is an application feature and should not be used if you are creating your own plugin (in your plugin configuration code). Follow along at <a href="https://github.com/11ty/eleventy/issues/256">Issue #256</a>.
 {% endcallout %}
 
-
 ## Community Contributed Plugins
 
 [**See all `eleventy-plugin` packages on `npm`**](https://www.npmjs.com/search?q=eleventy-plugin). The rest have been added to this site by our community (and are listed in random order). [Add your own](https://github.com/11ty/11ty-website/tree/master/src/_data/plugins#readme)!
 
 {%- for name, plugin in plugins | shuffle %}
 {%- set url = plugin.url or "https://www.npmjs.com/package/" + plugin.npm %}
-* [{% if plugin.deprecated %}~~{% endif %}{{ plugin.npm }}{% if plugin.deprecated %}~~{% endif %}]({{ url }}){% if plugin.description %} {% if plugin.deprecated %}~~{% endif %}{{ plugin.description }}{% if plugin.deprecated %}~~{% endif %}{% endif %} {{ plugin.deprecated }} {% authorLink authors, plugin.author %}
-{%- endfor %}
-* [Add your own](https://github.com/11ty/11ty-website/tree/master/src/_data/plugins#readme)!
+
+- [{% if plugin.deprecated %}~~{% endif %}{{ plugin.npm }}{% if plugin.deprecated %}~~{% endif %}]({{ url }}){% if plugin.description %} {% if plugin.deprecated %}~~{% endif %}{{ plugin.description }}{% if plugin.deprecated %}~~{% endif %}{% endif %} {{ plugin.deprecated }} {% authorLink authors, plugin.author %}
+  {%- endfor %}
+- [Add your own](https://github.com/11ty/11ty-website/tree/master/src/_data/plugins#readme)!

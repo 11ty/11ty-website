@@ -1,6 +1,7 @@
 ---
 searchTitle: Install Eleventy Globally
 ---
+
 # Install Eleventy Globally
 
 {% callout "warn" %}It is <strong>not recommended</strong> to install Eleventy globally (though it does work fine).{% endcallout %}
