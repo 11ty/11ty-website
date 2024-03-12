@@ -197,6 +197,7 @@ Copy and paste this template and modify the JSON metadata to match your feed’s
 {
   "permalink": "feed.json",
   "eleventyExcludeFromCollections": true,
+  "layout": "",
   "metadata": {
     "title": "My Blog about Boats",
     "subtitle": "I am writing about my experiences as a naval navel-gazer.",
