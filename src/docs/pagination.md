@@ -200,16 +200,16 @@ exports.data = {
 }
 
 exports.render = function(data) {
-  return `
-  <a href="/">home</a>
-  <ol>
+  return `<ol>
     ${data.pagination.items.map(function(item) {
       return `<li>${item = data.testdata[item]}</li>`
     }).join("")}
-  </ol>
-  `
+  </ol>`
 };
 ```
+
+{% endraw %}
+
   </div>
   <div id="pagedobj-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
