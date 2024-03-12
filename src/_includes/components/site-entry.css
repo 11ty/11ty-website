@@ -167,13 +167,18 @@
   flex-direction: column;
   justify-content: center;
   border-radius: 1.4em 0 .4em 0;
-  background: rgba(0,0,0,.04);
+  background: rgba(255,255,255,0.9);
   font-weight: 600;
   padding: 4px;
 }
-
 .sites-site-vert .sites-site-lighthouse .speedlify-score {
-  background-color: #fff;
+	background-color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+	.sites-site-vert .sites-site-lighthouse {
+		background: rgba(0,0,0,0.85);
+	}
 }
 
 @supports (aspect-ratio: 1 / 1) {
