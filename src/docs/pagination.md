@@ -325,8 +325,29 @@ pagination:
 {% endraw %}
 
   </div>
+
   <div id="pagedatafile-js" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+{% raw %}
+
+```js
+exports.data = {
+  pagination: {
+    data: "globalDataSet.myData",
+    size: 1
+  }
+}
+
+exports.render = function(data) {
+  return `<ol>
+    ${data.pagination.items.map(function(item) { 
+        return `<li>${item}</li>`;
+      }).join("")
+    }
+  </ol>`;
+};
+```
+
+{% endraw %}
   </div>
   <div id="pagedatafile-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
@@ -461,7 +482,28 @@ You can use the alias in your content too {{ wonder }}.
 
   </div>
   <div id="pagedalias-js" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+
+{% raw %}
+
+```js
+exports.data = {
+  pagination: {
+    data: "testdata",
+    size: 1,
+    alias: "wonder"
+  },
+  testdata: [
+    "Item1",
+    "Item2"
+  ],
+  permalink: function(data) {
+    return `different/${this.slugify(data.wonder)}/index.html`
+  }
+}
+```
+
+{% endraw %}
+
   </div>
   <div id="pagedalias-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
