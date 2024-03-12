@@ -181,7 +181,7 @@ Writes to `_site/2016/01/01/index.html`. There are a variety of ways that the pa
 
 <div id="warning-about-yaml-objects"></div>
 
-{% callout "warn", "md" %}**YAML Pitall:** If your permalink uses template syntax, make sure that you use quotes! Without quotes YAML may try to parse this as an object if the first character is a `{`, for example `permalink: {% raw %}{{ page.filePathStem }}{% endraw %}.html`. This is a [**common pitfall**](/docs/pitfalls/).{% endcallout %}
+{% callout "warn", "md" %}**YAML Pitfall:** If your permalink uses template syntax, make sure that you use quotes! Without quotes YAML may try to parse this as an object if the first character is a `{`, for example `permalink: {% raw %}{{ page.filePathStem }}{% endraw %}.html`. This is a [**common pitfall**](/docs/pitfalls/).{% endcallout %}
 
 {% codetitle "YAML", "Syntax" %}
 
