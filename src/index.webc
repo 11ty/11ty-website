@@ -65,6 +65,9 @@ function randomTestimonialLink(testimonials) {
 <div webc:bucket="async">
 	<sponsors-list></sponsors-list>
 
+	<h2>New on the Blog</h2>
+	<ul @html="getHighlightedBlogPostContent(collections.blog)"></ul>
+
 	<h2>Why should you use Eleventy?</h2>
 	<ul>
 		<li>
@@ -116,9 +119,6 @@ function randomTestimonialLink(testimonials) {
 	</ul>
 
 	<p><a href="/docs/"><strong>Get started with Eleventy today!</strong></a> or read more about <a href="https://www.zachleat.com/web/introducing-eleventy/">Eleventy’s project goals</a>.</p>
-
-	<h2>New on the Blog</h2>
-	<ul @html="getHighlightedBlogPostContent(collections.blog)"></ul>
 
 	<is-land on:visible on:save-data="false">
 		<template data-island>
