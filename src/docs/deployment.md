@@ -52,6 +52,9 @@ hosts:
   - name: CloudCannon
     url: https://cloudcannon.com/hosting/
     screenshotSize: medium
+  - name: Sourcehut Pages
+    url: https://srht.site/
+    screenshotSize: medium
 classicHosts:
   - name: NearlyFreeSpeech
     url: https://www.nearlyfreespeech.net/
