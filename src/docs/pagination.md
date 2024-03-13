@@ -197,14 +197,14 @@ exports.data = {
     "itemkey2": "itemvalue2",
     "itemkey3": "itemvalue3"
   }
-}
+};
 
 exports.render = function(data) {
   return `<ol>
     ${data.pagination.items.map(function(item) {
-      return `<li>${item = data.testdata[item]}</li>`
+      return `<li>${item = data.testdata[item]}</li>`;
     }).join("")}
-  </ol>`
+  </ol>`;
 };
 ```
 
@@ -327,6 +327,9 @@ pagination:
   </div>
 
   <div id="pagedatafile-js" role="tabpanel">
+
+{% codetitle "JavaScript", "Syntax" %}
+
 {% raw %}
 
 ```js
@@ -335,7 +338,7 @@ exports.data = {
     data: "globalDataSet.myData",
     size: 1
   }
-}
+};
 
 exports.render = function(data) {
   return `<ol>
@@ -483,6 +486,8 @@ You can use the alias in your content too {{ wonder }}.
   </div>
   <div id="pagedalias-js" role="tabpanel">
 
+{% codetitle "JavaScript", "Syntax" %}
+
 {% raw %}
 
 ```js
@@ -496,10 +501,14 @@ exports.data = {
     "Item1",
     "Item2"
   ],
-  permalink: function(data) {
-    return `different/${this.slugify(data.wonder)}/index.html`
+  permalink: {
+    function(data) {
+      return `different/${this.slugify(data.wonder)}/index.html`;
+    };
   }
-}
+};
+
+// You can use the alias in your content too ${data.wonder}.
 ```
 
 {% endraw %}
@@ -571,7 +580,35 @@ You can use the alias in your content too {{ wonder[0] }}.
 
   </div>
   <div id="pagedchunk-js" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+
+{% codetitle "JavaScript", "Syntax" %}
+
+{% raw %}
+
+```js
+exports.data = {
+  pagination: {
+    data: "testdata",
+    size: 2,
+    alias: "wonder"
+  },
+  testdata: [
+    "Item1",
+    "Item2",
+    "Item3",
+    "Item4"
+  ],
+  permalink: {
+    function(data) {
+      return `different/${this.slugify(data.wonder[0])}/index.html`
+    };
+  }
+};
+
+// You can use the alias in your content too ${data.wonder[0]}.
+```
+
+{% endraw %}
   </div>
   <div id="pagedchunk-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
