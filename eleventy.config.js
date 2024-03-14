@@ -135,6 +135,9 @@ const shortcodes = {
 		let cacheBuster = `_${d.getFullYear()}_${d.getMonth()}_${d.getDate()}`;
 		return `<img src="https://v1.generator.11ty.dev/image/${encodeURIComponent(url)}/${cacheBuster}/" width="66" height="66" alt="Meta Generator tag icon for ${url}" class="avatar avatar-large" loading="lazy" decoding="async">`;
 	},
+	getHostingImageHtml(url) {
+		return `<img src="https://v1.builtwith.11ty.dev/${encodeURIComponent(url)}/image/host/" width="66" height="66" alt="Hosting provider icon for ${url}" class="avatar avatar-large" loading="lazy" decoding="async">`;
+	},
 	// WebC migration: indieweb-avatar.webc
 	// size = "large"
 	getIndieAvatarHtml(iconUrl, cls = "") {
@@ -277,6 +280,7 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addShortcode("addedin", addedIn);
 
 	eleventyConfig.addShortcode("generatoravatar", shortcodes.getGeneratorImageHtml);
+	eleventyConfig.addShortcode("hostavatar", shortcodes.getHostingImageHtml);
 	eleventyConfig.addShortcode("indieavatar", shortcodes.getIndieAvatarHtml);
 
 	eleventyConfig.addShortcode("indieweblink", function(content, url, iconUrl) {

@@ -247,3 +247,16 @@
 	display: none;
 }
 
+
+/* Host /generator icons on author pages on screenshots */
+.sites-screenshot-container-icons {
+	display: flex;
+	gap: .25em;
+	justify-content: space-between;
+	margin-top: -.5em;
+	padding: .25em;
+}
+.sites-screenshot-container-icons img {
+	margin: 0;
+	max-width: 1em;
+}
