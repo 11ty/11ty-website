@@ -190,7 +190,7 @@ testdata:
 exports.data = {
   pagination: {
     data: "testdata",
-    size: 2
+    size: 1
   },
   testdata: {
     "itemkey1": "itemvalue1",
@@ -202,8 +202,9 @@ exports.data = {
 exports.render = function(data) {
   return `<ol>
     ${data.pagination.items.map(function(item) {
-      return `<li>${item = data.testdata[item]}</li>`;
-    }).join("")}
+        return `<li>${item = data.testdata[item]}</li>`;
+    }).join("")
+  }
   </ol>`;
 };
 ```
@@ -351,6 +352,7 @@ exports.render = function(data) {
 ```
 
 {% endraw %}
+
   </div>
   <div id="pagedatafile-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
@@ -505,7 +507,6 @@ exports.data = {
     return `different/${this.slugify(data.wonder)}/index.html`;
   }
 };
-
 // You can use the alias in your content too ${data.wonder}.
 ```
 
@@ -602,11 +603,11 @@ exports.data = {
     };
   }
 };
-
 // You can use the alias in your content too ${data.wonder[0]}.
 ```
 
 {% endraw %}
+
   </div>
   <div id="pagedchunk-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
@@ -675,12 +676,13 @@ pagination:
   </div>
   <div id="pagedcollection-js" role="tabpanel">
     
-  {% codetitle "JavaScript", "Syntax" %}
+{% codetitle "JavaScript", "Syntax" %}
 
-  {% raw %}
+{% raw %}
 
 ```js
 exports.data = {
+  title: "My Posts",
   pagination: {
     data: "collections.post",
     size: 6,
@@ -697,7 +699,8 @@ exports.render = function(data) {
   </ol>`;
 };
 ```
-  {% endraw %}
+
+{% endraw %}
 
   </div>
   <div id="pagedcollection-hbs" role="tabpanel">
