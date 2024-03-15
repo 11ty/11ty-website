@@ -3,7 +3,7 @@ pageTitle: Generator Image
 eleventyNavigation:
   key: Generator Image
   excerpt: Returns the site generator’s logo that was used to build a site at given URL.
-  # order: 0
+  order: 3
 communityLinksKey: api-generator
 ---
 {% tableofcontents %}

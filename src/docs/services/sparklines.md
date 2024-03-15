@@ -3,7 +3,7 @@ pageTitle: Sparklines
 eleventyNavigation:
   key: Sparklines
   excerpt: Returns a Sparkline image given a set of numbers.
-  # order: 0
+  order: 5
 communityLinksKey: api-services-sparkline
 ---
 {% tableofcontents %}

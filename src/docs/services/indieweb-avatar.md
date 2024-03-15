@@ -3,7 +3,7 @@ pageTitle: IndieWeb Avatar
 eleventyNavigation:
   key: IndieWeb Avatar
   excerpt: Returns an avatar representing a URL.
-  # order: 0
+  order: 2
 communityLinksKey: api-services-avatar
 ---
 {% tableofcontents %}
