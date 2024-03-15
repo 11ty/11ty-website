@@ -501,10 +501,8 @@ exports.data = {
     "Item1",
     "Item2"
   ],
-  permalink: {
-    function(data) {
-      return `different/${this.slugify(data.wonder)}/index.html`;
-    };
+  permalink: function(data) {
+    return `different/${this.slugify(data.wonder)}/index.html`;
   }
 };
 
@@ -676,7 +674,31 @@ pagination:
 
   </div>
   <div id="pagedcollection-js" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+    
+  {% codetitle "JavaScript", "Syntax" %}
+
+  {% raw %}
+
+```js
+exports.data = {
+  pagination: {
+    data: "collections.post",
+    size: 6,
+    alias: "posts"
+  }
+};
+
+exports.render = function(data) {
+  return `<ol>
+    ${data.posts.map(function(post) {
+        return `<li><a href="${post.url}">${post.title}</a></li>`;
+      }).join("")
+    }
+  </ol>`;
+};
+```
+  {% endraw %}
+
   </div>
   <div id="pagedcollection-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
