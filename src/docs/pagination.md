@@ -201,12 +201,12 @@ exports.data = {
 
 exports.render = function (data) {
 	return `<ol>
-    ${data.pagination.items
+		${data.pagination.items
 			.map(function (item) {
 				return `<li>${(item = data.testdata[item])}</li>`;
 			})
 			.join("")}
-  </ol>`;
+	</ol>`;
 };
 ```
 
@@ -506,7 +506,10 @@ exports.data = {
 		return `different/${this.slugify(data.wonder)}/index.html`;
 	},
 };
-// You can use the alias in your content too ${data.wonder}.
+
+exports.render = function (data) {
+	return `You can use the alias in your content too ${data.wonder}.`;
+}
 ```
 
 {% endraw %}
@@ -602,7 +605,10 @@ exports.data = {
     };
   }
 };
-// You can use the alias in your content too ${data.wonder[0]}.
+
+exports.render = function (data) {
+  return `You can use the alias in your content too ${data.wonder[0]}.`;
+}
 ```
 
 {% endraw %}
@@ -691,12 +697,12 @@ exports.data = {
 
 exports.render = function (data) {
 	return `<ol>
-    ${data.posts
+		${data.posts
 			.map(function (post) {
 				return `<li><a href="${post.url}">${post.title}</a></li>`;
 			})
 			.join("")}
-  </ol>`;
+	</ol>`;
 };
 ```
 
