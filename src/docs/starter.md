@@ -4,6 +4,7 @@ eleventyNavigation:
   key: Starter Projects
   order: 2
 ---
+
 # Starter Projects
 
 [Add your own starter project](https://github.com/11ty/11ty-website/tree/master/src/_data/starters). Community contributions are shown in random order. [Lighthouse scores are updated daily](https://eleventy-starters--speedlify.netlify.app/eleventy-starters/).
@@ -42,7 +43,7 @@ eleventyNavigation:
 
 ## Lists
 
-* [{% avatarlocalcache "twitter", "stackbithq" %}Jamstack Themes](https://jamstackthemes.dev/ssg/eleventy/) A list of starter themes filterable by supported static site generator and CMS.
+- [{% avatarlocalcache "twitter", "stackbithq" %}Jamstack Themes](https://jamstackthemes.dev/ssg/eleventy/) A list of starter themes filterable by supported static site generator and CMS.
 
 ## Source Code Samples
 

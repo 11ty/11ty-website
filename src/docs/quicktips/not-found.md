@@ -3,29 +3,36 @@ tipindex: "006"
 tiptitle: "Adding a 404 Not Found Page to your Static Site"
 date: 2018-09-20
 ---
+
 A `404: Not Found` page is a pretty standard thing on the web. It’s particularly useful when someone shares a broken or mistyped link. You don’t need dynamic middleware to do this, it’s pretty easy to add to a statically generated site. There are a few options, depending on your web host:
 
 But first let’s make our `404.html` template:
 
 {% raw %}
+
 ```html
 ---
 title: Oops! Not Found
 permalink: 404.html
 ---
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-  </head>
-  <body>
-    <h1>{{ title }}</h1>
-    <p>This is where you should tell the user how to find their content. Maybe on the <a href="/">home page?</a></p>
-  </body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{{ title }}</title>
+	</head>
+	<body>
+		<h1>{{ title }}</h1>
+		<p>
+			This is where you should tell the user how to find their content. Maybe on
+			the <a href="/">home page?</a>
+		</p>
+	</body>
 </html>
 ```
+
 {% endraw %}
 
 Eleventy will output this template to `404.html`.
@@ -58,26 +65,27 @@ If you're using Browsersync with Eleventy (with `eleventy --serve`), you can con
 const fs = require("fs");
 const NOT_FOUND_PATH = "_site/404.html";
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setBrowserSyncConfig({
-    callbacks: {
-      ready: function(err, bs) {
+module.exports = function (eleventyConfig) {
+	eleventyConfig.setBrowserSyncConfig({
+		callbacks: {
+			ready: function (err, bs) {
+				bs.addMiddleware("*", (req, res) => {
+					if (!fs.existsSync(NOT_FOUND_PATH)) {
+						throw new Error(
+							`Expected a \`${NOT_FOUND_PATH}\` file but could not find one. Did you create a 404.html template?`
+						);
+					}
 
-        bs.addMiddleware("*", (req, res) => {
-          if (!fs.existsSync(NOT_FOUND_PATH)) {
-            throw new Error(`Expected a \`${NOT_FOUND_PATH}\` file but could not find one. Did you create a 404.html template?`);
-          }
-
-          const content_404 = fs.readFileSync(NOT_FOUND_PATH);
-          // Add 404 http status code in request header.
-          res.writeHead(404, { "Content-Type": "text/html; charset=UTF-8" });
-          // Provides the 404 content without redirect.
-          res.write(content_404);
-          res.end();
-        });
-      }
-    }
-  });
+					const content_404 = fs.readFileSync(NOT_FOUND_PATH);
+					// Add 404 http status code in request header.
+					res.writeHead(404, { "Content-Type": "text/html; charset=UTF-8" });
+					// Provides the 404 content without redirect.
+					res.write(content_404);
+					res.end();
+				});
+			},
+		},
+	});
 };
 ```
 

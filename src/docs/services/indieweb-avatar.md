@@ -6,6 +6,7 @@ eleventyNavigation:
   # order: 0
 communityLinksKey: api-services-avatar
 ---
+
 {% tableofcontents %}
 
 Feed this runtime service a URL and it will extract an avatar image using these sources:
@@ -21,7 +22,7 @@ All `rel` lookups match against attribute values that are space separated lists.
 
 ## Open Source
 
-* [`11ty/api-indieweb-avatar` on GitHub](https://github.com/11ty/api-indieweb-avatar)
+- [`11ty/api-indieweb-avatar` on GitHub](https://github.com/11ty/api-indieweb-avatar)
 
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/11ty/api-indieweb-avatar" class="elv-externalexempt"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
 
@@ -35,7 +36,7 @@ Image URLs have the format:
 https://v1.indieweb-avatar.11ty.dev/:url/
 ```
 
-* `url` must be URI encoded.
+- `url` must be URI encoded.
 
 ## Samples
 
@@ -48,7 +49,28 @@ https://v1.indieweb-avatar.11ty.dev/:url/
 {% endcallout %}
 
 ```html
-<img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.11ty.dev%2F/" alt="IndieWeb Avatar for 11ty.dev/" loading="lazy" decoding="async" width="50" height="50">
-<img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.a11yproject.com%2F/" alt="IndieWeb Avatar for a11yproject.com/" loading="lazy" decoding="async" width="50" height="50">
-<img src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.netlify.com%2F/" alt="IndieWeb Avatar for netlify.com/" loading="lazy" decoding="async" width="50" height="50">
+<img
+	src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.11ty.dev%2F/"
+	alt="IndieWeb Avatar for 11ty.dev/"
+	loading="lazy"
+	decoding="async"
+	width="50"
+	height="50"
+/>
+<img
+	src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.a11yproject.com%2F/"
+	alt="IndieWeb Avatar for a11yproject.com/"
+	loading="lazy"
+	decoding="async"
+	width="50"
+	height="50"
+/>
+<img
+	src="https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.netlify.com%2F/"
+	alt="IndieWeb Avatar for netlify.com/"
+	loading="lazy"
+	decoding="async"
+	width="50"
+	height="50"
+/>
 ```

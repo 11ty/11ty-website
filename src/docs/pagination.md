@@ -509,7 +509,7 @@ exports.data = {
 
 exports.render = function (data) {
 	return `You can use the alias in your content too ${data.wonder}.`;
-}
+};
 ```
 
 {% endraw %}

@@ -4,6 +4,7 @@ eleventyNavigation:
   key: Debug Mode
   order: 1
 ---
+
 # Debug Mode
 
 {% tableofcontents %}
@@ -20,7 +21,7 @@ _The commands below assume that Eleventy is installed locally (recommended) but 
 
 ### Mac OS (or Linux, etc)
 
-{% highlight "bash" %}DEBUG=Eleventy* npx @11ty/eleventy{% endhighlight %}
+{% highlight "bash" %}DEBUG=Eleventy\* npx @11ty/eleventy{% endhighlight %}
 
 ### Windows
 
@@ -28,11 +29,11 @@ Read more about [Windows environment variables](https://www.npmjs.com/package/de
 
 #### cmd.exe
 
-{% highlight "bash" %}set DEBUG=Eleventy* & eleventy{% endhighlight %}
+{% highlight "bash" %}set DEBUG=Eleventy\* & eleventy{% endhighlight %}
 
 #### Powershell (VS Code default)
 
-{% highlight "bash" %}$env:DEBUG="Eleventy*"; eleventy{% endhighlight %}
+{% highlight "bash" %}$env:DEBUG="Eleventy\*"; eleventy{% endhighlight %}
 
 ## Learn More
 

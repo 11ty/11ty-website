@@ -7,11 +7,12 @@ relatedKey: customlang
 relatedTitle: Template Language—Custom
 layout: layouts/langs.njk
 ---
+
 {% tableofcontents "open" %}
 
-| Eleventy Short Name | File Extension | npm Package  |
-| ------------------- | -------------- | ------------ |
-| _(Any)_             | `.*` _(Any)_   | _(Any)_      |
+| Eleventy Short Name | File Extension | npm Package |
+| ------------------- | -------------- | ----------- |
+| _(Any)_             | `.*` _(Any)_   | _(Any)_     |
 
 Eleventy now allows the addition of custom template extensions, meaning that you can use Eleventy to process any arbitrary file extension and compile it to your site’s output folder. This feature is {% addedin "1.0.0" %}<!-- Beta 10 or Canary 50 -->.
 
@@ -22,22 +23,22 @@ Eleventy now allows the addition of custom template extensions, meaning that you
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Add as a valid extension to process
-  // Alternatively, add this to the list of formats you pass to the `--formats` CLI argument
-  eleventyConfig.addTemplateFormats("clowd");
+module.exports = function (eleventyConfig) {
+	// Add as a valid extension to process
+	// Alternatively, add this to the list of formats you pass to the `--formats` CLI argument
+	eleventyConfig.addTemplateFormats("clowd");
 
-  // "clowd" here means that the extension will apply to any .clowd file
-  eleventyConfig.addExtension("clowd", {
-    compile: async (inputContent) => {
-      // Replace any instances of cloud with butt
-      let output = inputContent.replace(/cloud/gi, "butt");
+	// "clowd" here means that the extension will apply to any .clowd file
+	eleventyConfig.addExtension("clowd", {
+		compile: async (inputContent) => {
+			// Replace any instances of cloud with butt
+			let output = inputContent.replace(/cloud/gi, "butt");
 
-      return async () => {
-        return output;
-      };
-    }
-  });
+			return async () => {
+				return output;
+			};
+		},
+	});
 };
 ```
 
@@ -46,7 +47,7 @@ Situations where you might want to use `addExtension` but probably shouldn’t:
 
 1. If you want to post-process the content of an existing template language (a file extension already processed by Eleventy), use a [Configuration API Transform](/docs/config/#transforms) instead.
 2. If you want to pre-process `md` or `html` files using another template language, change the _Default Template Engine for [Markdown Files](/docs/config/#default-template-engine-for-markdown-files)_ or _[HTML Files](/docs/config/#default-template-engine-for-html-files)_, respectively. This can also be done on [a per-template basis](/docs/languages/#overriding-the-template-language). We will likely add additional hooks for preprocessing in the future.
-{%- endcallout %}
+   {%- endcallout %}
 
 ## Example: Add Sass support to Eleventy
 
@@ -58,23 +59,23 @@ For a more realistic sample, here’s an example of Eleventy looking for all `.s
 // Don’t forget to `npm install sass`!
 const sass = require("sass");
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addTemplateFormats("scss");
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addTemplateFormats("scss");
 
-  // Creates the extension for use
-  eleventyConfig.addExtension("scss", {
-    outputFileExtension: "css", // optional, default: "html"
+	// Creates the extension for use
+	eleventyConfig.addExtension("scss", {
+		outputFileExtension: "css", // optional, default: "html"
 
-    // `compile` is called once per .scss file in the input directory
-    compile: async function(inputContent) {
-      let result = sass.compileString(inputContent);
+		// `compile` is called once per .scss file in the input directory
+		compile: async function (inputContent) {
+			let result = sass.compileString(inputContent);
 
-      // This is the render function, `data` is the full data cascade
-      return async (data) => {
-        return result.css;
-      };
-    }
-  });
+			// This is the render function, `data` is the full data cascade
+			return async (data) => {
+				return result.css;
+			};
+		},
+	});
 };
 ```
 
@@ -177,16 +178,16 @@ This functionality is more-or-less identical to the [`compileOptions` `permalink
 {% addedin "2.0.0-canary.19" %} If `key` is the _only_ property in the options object, we treat the extension as an alias and use the existing upstream template syntax.
 
 ```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addExtension("11ty.jsx", {
-    key: "11ty.js",
-  });
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addExtension("11ty.jsx", {
+		key: "11ty.js",
+	});
 
-  // Or, you can pass an array of extensions in {{ "2.0.0-canary.19" | coerceVersion }} or newer.
-  eleventyConfig.addExtension([ "11ty.jsx", "11ty.ts", "11ty.tsx" ], {
-    key: "11ty.js",
-  });
-}
+	// Or, you can pass an array of extensions in {{ "2.0.0-canary.19" | coerceVersion }} or newer.
+	eleventyConfig.addExtension(["11ty.jsx", "11ty.ts", "11ty.tsx"], {
+		key: "11ty.js",
+	});
+};
 ```
 
 You can use aliasing with `esbuild-register` to use first-party JSX, TypeScript, and TSX files in Eleventy (using the same conventions as [`11ty.js` templates](/docs/languages/javascript/), with these templates populating back into the Data Cascade). Check out the [full gist from `@pspeter3` on GitHub](https://gist.github.com/zachleat/b274ee939759b032bc320be1a03704a2).
@@ -204,22 +205,22 @@ In these example, we switch from the Eleventy default `markdown-it` to `marked` 
 ```js
 const { marked } = require("marked");
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addExtension("md", {
-    compile: function (inputContent, inputPath) {
-      let html = marked.parse(inputContent);
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addExtension("md", {
+		compile: function (inputContent, inputPath) {
+			let html = marked.parse(inputContent);
 
-      return function (data) {
-        // Example: use `marked` only if useMarked is set in the Data Cascade
-        if(data.useMarked) {
-          return html;
-        }
+			return function (data) {
+				// Example: use `marked` only if useMarked is set in the Data Cascade
+				if (data.useMarked) {
+					return html;
+				}
 
-        // You can also access the default `markdown-it` renderer here:
-        return this.defaultRenderer(data);
-      };
-    }
-  });
+				// You can also access the default `markdown-it` renderer here:
+				return this.defaultRenderer(data);
+			};
+		},
+	});
 };
 ```
 
@@ -231,7 +232,7 @@ You can override an existing template language once. Attempts to override an ove
 
 ### `compile`
 
-* _Required_ for new file extensions. _Optional_ for [extension overrides](#overriding-an-existing-template-language).
+- _Required_ for new file extensions. _Optional_ for [extension overrides](#overriding-an-existing-template-language).
 
 `compile` is an async-friendly function that takes two parameters:
 
@@ -240,15 +241,15 @@ You can override an existing template language once. Attempts to override an ove
 
 `compile` can return:
 
-* nothing (`undefined`) to indicate that the file should be ignored and not used as a page
-* a render function (also async-friendly)
+- nothing (`undefined`) to indicate that the file should be ignored and not used as a page
+- a render function (also async-friendly)
 
 ```js
-  compile: async (inputContent, inputPath) => {
-    return async () => {
-      return inputContent;
-    };
-  }
+compile: async (inputContent, inputPath) => {
+	return async () => {
+		return inputContent;
+	};
+};
 ```
 
 The render function is passed the merged data object (i.e. the full Data Cascade available inside templates). The render function returned from `compile` is called once per output file generated (one for basic templates and more for [paginated templates](/docs/pagination/)).
@@ -257,13 +258,13 @@ The render function is passed the merged data object (i.e. the full Data Cascade
 
 ### `outputFileExtension`
 
-* _Optional_: Defaults to `html`
+- _Optional_: Defaults to `html`
 
 When the output file is written to the file system, what file extension should be used?
 
 ### `init`
 
-* _Optional_
+- _Optional_
 
 An async-friendly function that runs _once_ (no matter how many files use the extension) for any additional setup at the beginning before any compilation or rendering.
 
@@ -279,7 +280,7 @@ Note that `init` will **not** re-run on watch/serve mode. If you’d like someth
 
 ### `read`
 
-* _Optional_: Defaults to `true`
+- _Optional_: Defaults to `true`
 
 Set to `false` to opt out of reading the contents of files from the file system. This is useful if you’re using an external bundler to read the files (e.g. the Vue plugin uses rollup to read and compile `.vue` files).
 
@@ -297,7 +298,7 @@ You probably won’t need this but it’s useful if your extension doesn’t mat
 
 ### `getData` and `getInstanceFromInputPath`
 
-* _Optional_
+- _Optional_
 
 Controls if and how additional data should be retrieved from a JavaScript object to populate the Data Cascade. If your templates aren’t compiling JavaScript objects, you probably won’t need this.
 
@@ -305,8 +306,8 @@ Notably, this is separate from (in addition to) front matter parsing (which requ
 
 ```js
 {
-  // this is the default
-  getData: false // no additional data is used
+	// this is the default
+	getData: false; // no additional data is used
 }
 ```
 
@@ -371,7 +372,7 @@ In the above example, the data cascade will include a top-level variable `availa
 
 #### `compileOptions.permalink` to Override Permalink Compilation
 
-* _Optional_
+- _Optional_
 
 This has the same signature as the `compile` function and expects a reusable `render` function to be returned.
 
@@ -388,16 +389,16 @@ This has the same signature as the `compile` function and expects a reusable `re
 }
 ```
 
-* Don’t compile permalink strings in the parent template language
-  * `permalink: "raw"`
-* Don’t write *any* files to the file system:
-  * `permalink: false`
-  * `permalink: (contents, inputPath) => false`
-  * `permalink: (contents, inputPath) => ((data) => false)`
-* Override the default permalink function (return a string to override)
-  * `permalink: (contents, inputPath) => "…"`
-  * `permalink: (contents, inputPath) => ((data) => "…")` (use the data cascade)
-  * If you return nothing (or `undefined`), this will revert to the default permalink behavior.
+- Don’t compile permalink strings in the parent template language
+  - `permalink: "raw"`
+- Don’t write _any_ files to the file system:
+  - `permalink: false`
+  - `permalink: (contents, inputPath) => false`
+  - `permalink: (contents, inputPath) => ((data) => false)`
+- Override the default permalink function (return a string to override)
+  - `permalink: (contents, inputPath) => "…"`
+  - `permalink: (contents, inputPath) => ((data) => "…")` (use the data cascade)
+  - If you return nothing (or `undefined`), this will revert to the default permalink behavior.
 
 This provides another way to implement Sass’ underscore convention to skip writing the file to the output directory:
 
@@ -420,18 +421,17 @@ This provides another way to implement Sass’ underscore convention to skip wri
 
 #### `compileOptions.spiderJavaScriptDependencies`
 
-* _Optional_: Defaults to `false`
+- _Optional_: Defaults to `false`
 
 Enable to use Eleventy to spider and watch files `require`’d in these templates. This allows you to control the [Watch JavaScript Dependencies](/docs/watch-serve/#watch-javascript-dependencies) feature on a per-template language basis. Most template languages will want the default here and keep this feature disabled.
 
 #### `compileOptions.cache` for advanced control of caching
 
-* _Optional_: Defaults to the value of `read`
+- _Optional_: Defaults to the value of `read`
 
 This controls caching for the compilation step and saves the compiled template function for reuse. For more efficient cleanup (and long term memory use), these caches are now segmented by `inputPath` ({% addedin "2.0.0-canary.19" %}).
 
 By default, whether or not this `cache` is enabled is tied to boolean value of `read`. If `read: true`, then `cache` will also be `true`. It’s unlikely you will need this, but you can override this to mismatch `read`.
-
 
 You can also granularly control the caching key using a `getCacheKey` callback. It might be useful to change this when using `read: false` and `contents` are unavailable.
 
@@ -467,7 +467,7 @@ You can also granularly control the caching key using a `getCacheKey` callback. 
 
 {% callout "info", "md" %}If you’re using {{ "2.0.0-canary.19" | coerceVersion }} or newer, you shouldn’t need an `isIncrementalMatch` callback. It is preferred to use the [`addDependencies` method in the `compile` callback](#registering-dependencies) instead!{% endcallout %}
 
-* _Optional_
+- _Optional_
 
 A callback used for advanced control of template dependency matching. This determines if a modified file (from a watch/serve rebuild) is relevant to each known full template file. If the callback returns true, the template will be rendered. If the callback returns false, the template will be skipped.
 

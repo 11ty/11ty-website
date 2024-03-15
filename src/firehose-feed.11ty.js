@@ -7,8 +7,8 @@ export default class {
 		return {
 			permalink: PERMALINK,
 			layout: false,
-			eleventyExcludeFromCollections: true
-		}
+			eleventyExcludeFromCollections: true,
+		};
 	}
 
 	async render() {
@@ -21,4 +21,4 @@ export default class {
 			subtitle: "One centralized feed of Eleventy activity across the web.",
 		});
 	}
-};
+}

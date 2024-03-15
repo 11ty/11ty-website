@@ -4,6 +4,7 @@ eleventyNavigation:
   key: Command Line Usage
   order: 1
 ---
+
 # Command Line Usage
 
 **Prerequisites:**
@@ -106,7 +107,6 @@ npx @11ty/eleventy --to=fs
 ```
 
 Read more about [ndjson](https://github.com/ndjson/ndjson-spec).
-
 
 ### `--incremental` for Partial Incremental Builds
 
