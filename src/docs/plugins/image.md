@@ -663,13 +663,7 @@ const Image = require("@11ty/eleventy-img");
 
 {% addedin "Image 1.0.0" %} Eleventy will skip processing files that are unchanged and already exist in the output directory. This requires the built-in hashing algorithm and is not yet supported with custom filenames. More background at <a href="https://github.com/11ty/eleventy-img/issues/51">Issue #51</a>.
 
-#### Related:
-
-<ul class="list-bare">
-	<li>{% indieweblink "Speed up your CloudCannon Builds with Preserved Paths", "https://www.youtube.com/watch?v=ULwVlFMth1U" %} <em>({{ "2023-10-23" | newsDate("yyyy") }})</em></li>
-	<li>{% indieweblink "Re-use and persist the disk cache across Netlify builds", "https://github.com/11ty/demo-eleventy-img-netlify-cache" %} <em>({{ "2022-02-24" | newsDate("yyyy") }})</em></li>
-</ul>
-
+You can use this to [speed up builds on your build server](/docs/deployment/#persisting-cache).
 
 ## Advanced Usage
 

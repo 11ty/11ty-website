@@ -61,7 +61,7 @@ const shortcodes = {
 			content +
 			(linkUrl ? `</a>` : "");
 	},
-	image: async function(filepath, alt, widths, classes, sizes) {
+	image: async function(filepath, alt, widths, classes, sizes, attributes) {
 		let options = {
 			formats: process.env.NODE_ENV === "production" ? ["avif", "png"] : ["auto"],
 			widths: widths || ["auto"],
@@ -71,13 +71,13 @@ const shortcodes = {
 
 		let stats = await eleventyImage(filepath, options);
 
-		return eleventyImage.generateHTML(stats, {
+		return eleventyImage.generateHTML(stats, Object.assign({
 			alt,
 			loading: "lazy",
 			decoding: "async",
 			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
 			class: classes || "",
-		});
+		}, attributes));
 	},
 	getScreenshotHtml(siteSlug, siteUrl, sizes, preset = "small") {
 		let zoom;
@@ -134,6 +134,9 @@ const shortcodes = {
 		// Daily
 		let cacheBuster = `_${d.getFullYear()}_${d.getMonth()}_${d.getDate()}`;
 		return `<img src="https://v1.generator.11ty.dev/image/${encodeURIComponent(url)}/${cacheBuster}/" width="66" height="66" alt="Meta Generator tag icon for ${url}" class="avatar avatar-large" loading="lazy" decoding="async">`;
+	},
+	getHostingImageHtml(url) {
+		return `<img src="https://v1.builtwith.11ty.dev/${encodeURIComponent(url)}/image/host/" width="66" height="66" alt="Hosting provider icon for ${url}" class="avatar avatar-large" loading="lazy" decoding="async">`;
 	},
 	// WebC migration: indieweb-avatar.webc
 	// size = "large"
@@ -277,6 +280,7 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addShortcode("addedin", addedIn);
 
 	eleventyConfig.addShortcode("generatoravatar", shortcodes.getGeneratorImageHtml);
+	eleventyConfig.addShortcode("hostavatar", shortcodes.getHostingImageHtml);
 	eleventyConfig.addShortcode("indieavatar", shortcodes.getIndieAvatarHtml);
 
 	eleventyConfig.addShortcode("indieweblink", function(content, url, iconUrl) {
@@ -732,7 +736,9 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addFilter("supportersFacepile", (supporters) => {
-		return supporters.filter(supporter => supporter.status === 'ACTIVE' && !supporter.hasDefaultAvatar && supporter.tier && supporter.tier.slug !== "gold-sponsor");
+		return supporters.filter(supporter => {
+			return supporter.status === 'ACTIVE' && !supporter.hasDefaultAvatar;
+		});
 	});
 
 	// Sort an object that has `order` props in values. Return an array

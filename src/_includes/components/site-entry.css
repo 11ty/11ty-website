@@ -147,18 +147,6 @@
   --shadow-color: rgba(234, 0, 255, 0.747);
   box-shadow: 0 0 0 4px var(--shadow-color);
 }
-@media (min-width: 62.5em) { /* 1000px */
-  .elv-default .sites-vert {
-    width: 144%;
-    margin-left: -22%;
-  }
-}
-@media (min-width: 84em) { /* 1344px */
-  .elv-default .sites-vert {
-    width: 170%;
-    margin-left: -35%;
-  }
-}
 
 .sites-site-vert > a {
   text-decoration: none;
@@ -179,13 +167,18 @@
   flex-direction: column;
   justify-content: center;
   border-radius: 1.4em 0 .4em 0;
-  background: rgba(0,0,0,.04);
+  background: rgba(255,255,255,0.9);
   font-weight: 600;
   padding: 4px;
 }
-
 .sites-site-vert .sites-site-lighthouse .speedlify-score {
-  background-color: #fff;
+	background-color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+	.sites-site-vert .sites-site-lighthouse {
+		background: rgba(0,0,0,0.85);
+	}
 }
 
 @supports (aspect-ratio: 1 / 1) {
@@ -254,3 +247,16 @@
 	display: none;
 }
 
+
+/* Host /generator icons on author pages on screenshots */
+.sites-screenshot-container-icons {
+	display: flex;
+	gap: .25em;
+	justify-content: space-between;
+	margin-top: -.5em;
+	padding: .25em;
+}
+.sites-screenshot-container-icons img {
+	margin: 0;
+	max-width: 1em;
+}

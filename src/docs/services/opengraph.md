@@ -3,7 +3,7 @@ pageTitle: OpenGraph Image
 eleventyNavigation:
   key: OpenGraph Image
   excerpt: Returns the OpenGraph image from a URL.
-  # order: 0
+  order: 1
 communityLinksKey: api-services-opengraph
 ---
 {% tableofcontents %}

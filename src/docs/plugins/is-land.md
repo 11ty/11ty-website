@@ -1,12 +1,12 @@
 ---
 eleventyNavigation:
   key: Partial Hydration
-  title: 'Partial Hydration <code>&lt;is-land&gt;</code>'
+  title: '<code>&lt;is-land&gt;</code>'
   order: -.1
-  excerpt: A plugin to smartly and efficiently add client-side components to your web site.
+  excerpt: A plugin to smartly and efficiently load and initialize client-side components to your web site.
 overrideCommunityLinks: true
 ---
-# Partial Hydration
+# `<is-land>` for Islands Architecture
 
 {% tableofcontents %}
 

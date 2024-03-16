@@ -9,7 +9,7 @@ eleventyNavigation:
 **Prerequisites:**
 
 1. Eleventy runs in a Terminal window. [_Well, wait—what is a Terminal window?_](/docs/terminal-window/)
-2. Have you already [installed Eleventy](/docs/get-started/)?
+2. Have you already [installed Eleventy](/docs/)?
 
 ---
 

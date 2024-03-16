@@ -158,24 +158,7 @@ module.exports = async function() {
 
 ## Running this on your Build Server
 
-If you’re attempting to use this plugin on a service like Netlify and you are _definitely not checking in your `.cache` folder to `git`_, the `.cache` folder will be empty with every build and you’ll always get fresh data from new requests.
-
-However, if you’d like to persist your `.cache` folder between Netlify builds you can use the [`netlify-plugin-cache` package](https://www.npmjs.com/package/netlify-plugin-cache).
-
-1. `npm install netlify-plugin-cache`
-2. Add the following to your `netlify.toml` configuration file:
-
-```toml
-[[plugins]]
-package = "netlify-plugin-cache"
-
-  [plugins.inputs]
-  paths = [ ".cache" ]
-```
-
-<div class="youtube-related">
-  {%- youtubeEmbed "JCQQgtOcjH4", "Reusing Fetch cache between builds (Weekly №2)", "322" -%}
-</div>
+This [documentation has moved to the Deployment page](/docs/deployment/#persisting-cache).
 
 ## More Examples
 

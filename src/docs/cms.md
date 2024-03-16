@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Getting Started
   key: Using a CMS
-  order: 8
+  order: 10
 featuredCmses:
   - name: CloudCannon
     url: https://cloudcannon.com/eleventy-cms/?utm_campaign=11ty-partner&utm_source=official-sponsor

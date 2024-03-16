@@ -27,7 +27,7 @@ details .elv-callout {
 	--callout-primarytext: #000;
 	--callout-secondary: #f2fcff;
 }
-@media (min-width: 64em) { /* 1024px */
+@media (min-width: 55em) { /* 880px */
 	.elv-callout {
 		border-radius: 0.3em;
 	}
@@ -216,7 +216,7 @@ body > .elv-callout-sticky .elv-callout-label {
 .elv-toc .elv-callout-pinned .elv-callout-c {
 	text-wrap: balance;
 }
-@media (max-width: 63.9375em) { /* 1023px */
+@media (max-width: 54.9375em) { /* 880px - 1 */
 	.elv-toc .elv-callout {
 		border-left: 0;
 		border-right: 0;
@@ -225,7 +225,7 @@ body > .elv-callout-sticky .elv-callout-label {
 		display: none;
 	}
 }
-@media (min-width: 64em) { /* 1024px */
+@media (min-width: 55em) { /* 880px */
 	.elv-toc .elv-callout-label,
 	.elv-toc .elv-callout-c {
 		padding-left: 1rem;
@@ -237,7 +237,7 @@ body > .elv-callout-sticky .elv-callout-label {
 		line-height: 2;
 	}
 }
-@media (min-width: 64em) and (max-width: 76.875em) { /* 1024px–1230px */
+@media (min-width: 55em) and (max-width: 70.625em) { /* 880px–1130px */
 	.elv-toc .elv-callout {
 		border-left: 0;
 		border-top-left-radius: 0;
