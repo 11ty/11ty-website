@@ -1,0 +1,6 @@
+{
+	"url": "https://github.com/maliMirkec/11ty-liquid-live-preview#readme",
+	"name": "Eleventy Liquid Live Preview",
+	"description": "A starter project for the simple Eleventy site that pulls the data from Contentful, but also allows the live preview on Contentful.",
+	"demo": "https://11ty-llp.netlify.app/"
+}
