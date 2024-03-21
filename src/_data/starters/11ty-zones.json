@@ -1,0 +1,7 @@
+{
+	"url": "https://codeberg.org/cypressSap/11ty-zones",
+	"name": "Eleventy-Zones",
+	"description": "A newcomer-oriented starter project for making Zonelets-style blogs with Eleventy.",
+	"author": "cypressSap",
+	"demo": "https://cypresssap.codeberg.page/11ty-zones-demo/"
+}
