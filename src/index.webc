@@ -36,8 +36,10 @@ function getHighlightedBlogPostContent(collection) {
 	posts.reverse();
 
 	let content = [];
+	let index = 0;
 	for(let post of posts) {
-		content.push(`<li><a href="${post.url}">${post.data.newstitle}</a> (<em>${newsDate(post.date)}</em>)</li>`);
+		content.push(`<li><a href="${post.url}">${index === 0 ? `<strong>` : ""}${post.data.newstitle}${index === 0 ? `</strong>` : ""}</a> (<em>${newsDate(post.date)}</em>)</li>`);
+		index++;
 	}
 	// 10 hardcoded posts on the blog
 	content.push(`<li>…and <a href="/blog/">${collection.length + 10 - posts.length} more on the <strong>blog archives</strong></a>.</li>`)
@@ -65,7 +67,7 @@ function randomTestimonialLink(testimonials) {
 <div webc:bucket="async">
 	<sponsors-list></sponsors-list>
 
-	<h2>New on the Blog</h2>
+	<h2>News from the Blog</h2>
 	<ul @html="getHighlightedBlogPostContent(collections.blog)"></ul>
 
 	<h2>Why should you use Eleventy?</h2>
