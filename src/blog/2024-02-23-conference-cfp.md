@@ -5,6 +5,7 @@ eleventyNavigation:
 homePageHighlight: true
 external_url: https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform
 ---
+
 The [**11ty International Symposium on Making Web Sites Real Good**](https://conf.11ty.dev/) is happening on May 9, 2024 and we’ve been humbled by the response so far: 881 people already registered!
 
 This week we’ve launched the [open call for talk proposals]({{ external_url }}). If you’re interested in speaking at the conference, you have about a month (until March 22) to add your submission(s):

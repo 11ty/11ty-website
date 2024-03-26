@@ -6,16 +6,17 @@ eleventyNavigation:
   order: 1
 excludeFromSidebar: true
 ---
+
 # Performance
 
 {% callout "info" %}You’ll probably want to read the <a href="/docs/debugging/">Debug mode documentation</a> before continuing here.{% endcallout %}
 
 Eleventy by default will warn you if certain pieces of your build take longer than 8% of your total build time. This list includes:
 
-* [Filters/Helpers/11ty.js JavaScript Functions](/docs/filters/)
-* [Shortcodes](/docs/shortcodes/)
-* [Data Files](/docs/data/)
-* Resolving `--watch` Dependencies (not subject to the 8% rule—these only show if longer than `500ms` as watch tasks are not counted as part of the traditional build time)
+- [Filters/Helpers/11ty.js JavaScript Functions](/docs/filters/)
+- [Shortcodes](/docs/shortcodes/)
+- [Data Files](/docs/data/)
+- Resolving `--watch` Dependencies (not subject to the 8% rule—these only show if longer than `500ms` as watch tasks are not counted as part of the traditional build time)
 
 This list is not considered to be exhaustive. It’s just what has been implemented thus far!
 

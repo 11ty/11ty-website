@@ -3,6 +3,7 @@ newstitle: "The Eleventy Community Survey Results (2023)"
 eleventyNavigation:
   parent: Blog
 ---
+
 _Prerequisite read: [The Next Phase of Eleventy: Return of the Side Project](https://www.zachleat.com/web/eleventy-side-project/)._
 
 As part of this next phase of Eleventy and to best inform our decisions moving forward we asked folks to answer a few short questions as part of our [Eleventy Community Survey](https://forms.gle/zFA4Jno1cfT8nt9J8).
@@ -224,7 +225,6 @@ _489 of 489 participants answered this question._
 </tbody>
 </table>
 </details>
-
 
 ## Which official plugins do you use in your projects?
 

@@ -4,14 +4,15 @@ eleventyNavigation:
   order: 7.5
 communityLinksKey: plugins
 ---
+
 # Plugins
 
 {% tableofcontents %}
 
 Plugins are custom code that Eleventy can import into a project from an external repository.
 
-* [Official Eleventy Plugins](/docs/plugins/official.md) (look for the `@11ty/` prefix on npm)
-* [Community Contributed Plugins](/docs/plugins/community.md)
+- [Official Eleventy Plugins](/docs/plugins/official.md) (look for the `@11ty/` prefix on npm)
+- [Community Contributed Plugins](/docs/plugins/community.md)
 
 ## Adding a Plugin
 
@@ -31,8 +32,8 @@ Your config file is probably named `.eleventy.js`.
 
 ```js
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(pluginRss);
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addPlugin(pluginRss);
 };
 ```
 
@@ -42,15 +43,15 @@ Use an optional second argument to `addPlugin` to customize your plugin’s beha
 
 ```js
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(pluginSyntaxHighlight, {
-    // only install the markdown highlighter
-    templateFormats: ["md"],
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
+		// only install the markdown highlighter
+		templateFormats: ["md"],
 
-    init: function({ Prism }) {
-      // Add your own custom language to Prism!
-    }
-  });
+		init: function ({ Prism }) {
+			// Add your own custom language to Prism!
+		},
+	});
 };
 ```
 
@@ -64,10 +65,10 @@ It’s unlikely you’ll need this feature _but_ you can namespace parts of your
 ```js
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 module.exports = function (eleventyConfig) {
-  eleventyConfig.namespace("myPrefix_", () => {
-    // the rssLastUpdatedDate filter is now myPrefix_rssLastUpdatedDate
-    eleventyConfig.addPlugin(pluginRss);
-  });
+	eleventyConfig.namespace("myPrefix_", () => {
+		// the rssLastUpdatedDate filter is now myPrefix_rssLastUpdatedDate
+		eleventyConfig.addPlugin(pluginRss);
+	});
 };
 ```
 
@@ -84,8 +85,8 @@ A plugin primarily provides a “configuration function.” This function is cal
 {% codetitle "plugin.js" %}
 
 ```js
-module.exports = function(eleventyConfig, pluginOptions) {
-  // Your plugin code goes here
+module.exports = function (eleventyConfig, pluginOptions) {
+	// Your plugin code goes here
 };
 ```
 
@@ -100,23 +101,23 @@ If you want to allow developers to use custom arguments provided by your plugin,
 
 ```js
 module.exports = {
-  initArguments: {},
-  configFunction: function(eleventyConfig, pluginOptions) {
-    // Your plugin code goes here
-  }
+	initArguments: {},
+	configFunction: function (eleventyConfig, pluginOptions) {
+		// Your plugin code goes here
+	},
 };
 ```
 
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(require("./fancy-plugin.js"), {
-    init: function(initArguments) {
-      // `this` is the eleventyConfig object
-      // initArguments will be the `myInitArguments` object from above
-    },
-  });
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addPlugin(require("./fancy-plugin.js"), {
+		init: function (initArguments) {
+			// `this` is the eleventyConfig object
+			// initArguments will be the `myInitArguments` object from above
+		},
+	});
 };
 ```
 

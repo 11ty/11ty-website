@@ -3,6 +3,7 @@ eleventyNavigation:
   key: Browsersync
   parent: Watch and Serve
 ---
+
 # Browsersync
 
 {% tableofcontents %}
@@ -18,10 +19,10 @@ Useful if you want to change or override the default Browsersync configuration. 
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setBrowserSyncConfig({
-    notify: true
-  });
+module.exports = function (eleventyConfig) {
+	eleventyConfig.setBrowserSyncConfig({
+		notify: true,
+	});
 };
 ```
 
@@ -30,9 +31,9 @@ module.exports = function(eleventyConfig) {
 New in [`browser-sync@2.27.1`](https://github.com/BrowserSync/browser-sync/issues/1882#issuecomment-867767056) {% addedin "1.0.0" %}. Opt-out of the JavaScript snippet normally injected by Browsersync. This disables Browsersync live-reloading.
 
 ```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setBrowserSyncConfig({
-    snippet: false,
-  });
+module.exports = function (eleventyConfig) {
+	eleventyConfig.setBrowserSyncConfig({
+		snippet: false,
+	});
 };
 ```

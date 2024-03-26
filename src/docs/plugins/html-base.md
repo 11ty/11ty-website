@@ -1,22 +1,23 @@
 ---
 eleventyNavigation:
   key: HTML Base
-  title: 'HTML <code>&lt;base&gt;</code>'
+  title: "HTML <code>&lt;base&gt;</code>"
   order: 3.1
   excerpt: Emulate the <code>&lt;base&gt;</code> element by adding a prefix to all URLs in <code>.html</code> output files.
 ---
+
 # HTML `<base>` {% addedin "2.0.0-canary.15" %}
 
 {% tableofcontents %}
 
 A build-time application of `<base>` to HTML (without relying on `<base>`) by modifying `a[href]`, `video[src]`, `audio[src]`, `source`, `img[src]`, `[srcset]`, and more.
 
-* Read about [HTML’s `<base>` element on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base)
+- Read about [HTML’s `<base>` element on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base)
 
 If you want to deploy your project in a different directory without changing the content, Eleventy provides a [Path Prefix feature to specify the target directory](https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix).
 
-* via `--pathprefix` on the command line
-* or via `pathPrefix` object key in your configuration file return object
+- via `--pathprefix` on the command line
+- or via `pathPrefix` object key in your configuration file return object
 
 Historically, we then recommended to use the provided [`url` filter](/docs/filters/url/) in your templates to transform any local URL with the path prefix. The downside of this method was that it required you to remember and opt-in every URL transformation in your content!
 
@@ -24,7 +25,7 @@ Historically, we then recommended to use the provided [`url` filter](/docs/filte
 
 With this new plugin, you no longer need to use the `url` filter in your HTML content. This plugin adds an [Eleventy Transform](/docs/config/#transforms) that will modify your HTML output and inject your Path Prefix in your template content.
 
-* Behind the scenes, this plugin uses [posthtml-urls](https://github.com/posthtml/posthtml-urls) and transforms `a[href]`, `video[src]`, `audio[src]`, `source`, `img[src]`, `[srcset]` and [a whole bunch more](https://github.com/posthtml/posthtml-urls/blob/307c91342a211b3f9fb22bc57264bbb31f235fbb/lib/defaultOptions.js).
+- Behind the scenes, this plugin uses [posthtml-urls](https://github.com/posthtml/posthtml-urls) and transforms `a[href]`, `video[src]`, `audio[src]`, `source`, `img[src]`, `[srcset]` and [a whole bunch more](https://github.com/posthtml/posthtml-urls/blob/307c91342a211b3f9fb22bc57264bbb31f235fbb/lib/defaultOptions.js).
 
 <div class="youtube-related">
   {%- youtubeEmbed "hJAtWQ9nmKU", "New HTML Base Plugin (Changelog №17)", "512" -%}
@@ -45,10 +46,11 @@ Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
 ```js
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 };
 ```
+
 _You’re only allowed one `module.exports` in your configuration file, so make sure you only copy the `require` and the `addPlugin` lines above!_
 
 <details>
@@ -59,25 +61,25 @@ _You’re only allowed one `module.exports` in your configuration file, so make 
 ```js
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(EleventyHtmlBasePlugin, {
-    // The base URL: defaults to Path Prefix
-    baseHref: eleventyConfig.pathPrefix,
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addPlugin(EleventyHtmlBasePlugin, {
+		// The base URL: defaults to Path Prefix
+		baseHref: eleventyConfig.pathPrefix,
 
-    // But you could use a full URL here too:
-    // baseHref: "http://example.com/"
+		// But you could use a full URL here too:
+		// baseHref: "http://example.com/"
 
-    // Comma separated list of output file extensions to apply
-    // our transform to. Use `false` to opt-out of the transform.
-    extensions: "html",
+		// Comma separated list of output file extensions to apply
+		// our transform to. Use `false` to opt-out of the transform.
+		extensions: "html",
 
-    // Rename the filters
-    filters: {
-      base: "htmlBaseUrl",
-      html: "transformWithHtmlBase",
-      pathPrefix: "addPathPrefixToUrl",
-    },
-  });
+		// Rename the filters
+		filters: {
+			base: "htmlBaseUrl",
+			html: "transformWithHtmlBase",
+			pathPrefix: "addPathPrefixToUrl",
+		},
+	});
 };
 ```
 
@@ -105,6 +107,7 @@ With path prefix set to `"/pathprefix/"`:
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 {{ "/test/" | htmlBaseUrl }}
 => "/pathprefix/test/"
@@ -122,6 +125,7 @@ Absolute URLs are ignored:
 {{ "http://example.com/" | htmlBaseUrl }}
 => "http://example.com/"
 ```
+
 {% endraw %}
 
   </div>
@@ -132,6 +136,7 @@ With path prefix set to `"/pathprefix/"`:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```njk
 {{ "/test/" | htmlBaseUrl }}
 => "/pathprefix/test/"
@@ -149,6 +154,7 @@ Absolute URLs are ignored:
 {{ "http://example.com/" | htmlBaseUrl }}
 => "http://example.com/"
 ```
+
 {% endraw %}
 
   </div>
@@ -159,9 +165,10 @@ With path prefix set to `"/pathprefix/"`:
 {% codetitle "11ty.js", "Syntax" %}
 
 {% raw %}
+
 ```js
-module.exports = function() {
-  return `
+module.exports = function () {
+	return `
 ${this.htmlBaseUrl("/test/")}
 => "/pathprefix/test/"
 
@@ -178,8 +185,9 @@ Absolute URLs are ignored:
 ${this.htmlBaseUrl("http://example.com/")}
 => "http://example.com/"
 `;
-}
+};
 ```
+
 {% endraw %}
 
   </div>
@@ -190,23 +198,21 @@ With path prefix set to `"/pathprefix/"`:
 {% codetitle "Handlebars", "Syntax" %}
 
 {% raw %}
+
 ```hbs
-{{ htmlBaseUrl "/test/" }}
-=> "/pathprefix/test/"
+{{htmlBaseUrl "/test/"}}
+=> "/pathprefix/test/" Relative paths are ignored:
 
-Relative paths are ignored:
-
-{{ htmlBaseUrl "test/" }}
+{{htmlBaseUrl "test/"}}
 => "test/"
 
-{{ htmlBaseUrl "../test/" }}
-=> "../test/"
+{{htmlBaseUrl "../test/"}}
+=> "../test/" Absolute URLs are ignored:
 
-Absolute URLs are ignored:
-
-{{ htmlBaseUrl "http://example.com/" }}
+{{htmlBaseUrl "http://example.com/"}}
 => "http://example.com/"
 ```
+
 {% endraw %}
 
   </div>
@@ -225,6 +231,7 @@ With path prefix set to `"/pathprefix/"`:
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 {{ "/test/" | htmlBaseUrl: "http://example.com/" }}
 => "http://example.com/pathprefix/test/"
@@ -240,6 +247,7 @@ Absolute URLs are still ignored:
 {{ "http://11ty.dev/" | htmlBaseUrl: "http://example.com/" }}
 => "http://11ty.dev/"
 ```
+
 {% endraw %}
 
   </div>
@@ -250,6 +258,7 @@ With path prefix set to `"/pathprefix/"`:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```njk
 {{ "/test/" | htmlBaseUrl("http://example.com/") }}
 => "http://example.com/pathprefix/test/"
@@ -265,6 +274,7 @@ Absolute URLs are still ignored:
 {{ "http://11ty.dev/" | htmlBaseUrl("http://example.com/") }}
 => "http://11ty.dev/"
 ```
+
 {% endraw %}
 
   </div>
@@ -275,14 +285,19 @@ With path prefix set to `"/pathprefix/"`:
 {% codetitle "11ty.js", "Syntax" %}
 
 {% raw %}
+
 ```js
-module.exports = function() {
-  return `
+module.exports = function () {
+	return (
+		`
 ${this.htmlBaseUrl("/test/", "http://example.com/")}
 => "http://example.com/pathprefix/test/"
 
 Relative urls are resolved using the current page’s url.
-For example, on a page with URL `/my-template/`:
+For example, on a page with URL ` /
+			my -
+		template /
+			`:
 
 ${this.htmlBaseUrl("test/", "http://example.com/")}
 => "http://example.com/pathprefix/my-template/test/"
@@ -290,9 +305,11 @@ ${this.htmlBaseUrl("test/", "http://example.com/")}
 Absolute URLs are still ignored:
 
 ${this.htmlBaseUrl("http://11ty.dev/", "http://example.com/")}
-=> "http://11ty.dev/"`;
-}
+=> "http://11ty.dev/"`
+	);
+};
 ```
+
 {% endraw %}
 
   </div>
@@ -303,21 +320,20 @@ With path prefix set to `"/pathprefix/"`:
 {% codetitle "Handlebars", "Syntax" %}
 
 {% raw %}
+
 ```hbs
-{{ htmlBaseUrl "/test/" "http://example.com/" }}
-=> "http://example.com/pathprefix/test/"
+{{htmlBaseUrl "/test/" "http://example.com/"}}
+=> "http://example.com/pathprefix/test/" Relative urls are resolved using the
+current page’s url. For example, on a page with URL `/my-template/`:
 
-Relative urls are resolved using the current page’s url.
-For example, on a page with URL `/my-template/`:
+{{htmlBaseUrl "test/" "http://example.com/"}}
+=> "http://example.com/pathprefix/my-template/test/" Absolute URLs are still
+ignored:
 
-{{ htmlBaseUrl "test/" "http://example.com/" }}
-=> "http://example.com/pathprefix/my-template/test/"
-
-Absolute URLs are still ignored:
-
-{{ htmlBaseUrl "http://11ty.dev/" "http://example.com/" }}
+{{htmlBaseUrl "http://11ty.dev/" "http://example.com/"}}
 => "http://11ty.dev/"
 ```
+
 {% endraw %}
 
   </div>
@@ -340,6 +356,7 @@ With path prefix set to `"/pathprefix/"`:
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 {{ '<a href="/test/">Link</a>' | transformWithHtmlBase }}
 => '<a href="/pathprefix/test/">Link</a>'
@@ -347,6 +364,7 @@ With path prefix set to `"/pathprefix/"`:
 {{ '<a href="/test/">Link</a>' | transformWithHtmlBase: "http://example.com/" }}
 => '<a href="http://example.com/pathprefix/test/">Link</a>'
 ```
+
 {% endraw %}
 
 Resolving relative URLs (with path prefix still at `"/pathprefix/"`):
@@ -354,6 +372,7 @@ Resolving relative URLs (with path prefix still at `"/pathprefix/"`):
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 On a page with URL `/my-template/`:
 
@@ -365,6 +384,7 @@ Override the page URL:
 {{ '<a href="test/">Link</a>' | transformWithHtmlBase: "http://example.com/", "/my-other-template/" }}
 => '<a href="http://example.com/pathprefix/my-other-template/test/">Link</a>'
 ```
+
 {% endraw %}
 
   </div>
@@ -375,6 +395,7 @@ With path prefix set to `"/pathprefix/"`:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```njk
 {{ '<a href="/test/">Link</a>' | transformWithHtmlBase }}
 => '<a href="/pathprefix/test/">Link</a>'
@@ -382,6 +403,7 @@ With path prefix set to `"/pathprefix/"`:
 {{ '<a href="/test/">Link</a>' | transformWithHtmlBase("http://example.com/") }}
 => '<a href="http://example.com/pathprefix/test/">Link</a>'
 ```
+
 {% endraw %}
 
 Resolving relative URLs (with path prefix still at `"/pathprefix/"`):
@@ -389,6 +411,7 @@ Resolving relative URLs (with path prefix still at `"/pathprefix/"`):
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```njk
 On a page with URL `/my-template/`:
 
@@ -400,6 +423,7 @@ Override the page URL:
 {{ '<a href="test/">Link</a>' | transformWithHtmlBase("http://example.com/", "/my-other-template/") }}
 => '<a href="http://example.com/pathprefix/my-other-template/test/">Link</a>'
 ```
+
 {% endraw %}
 
   </div>
@@ -410,16 +434,21 @@ With path prefix set to `"/pathprefix/"`:
 {% codetitle "11ty.js", "Syntax" %}
 
 {% raw %}
+
 ```js
-module.exports = async function() {
-  return `
+module.exports = async function () {
+	return `
 ${await this.transformWithHtmlBase(`<a href="/test/">Link</a>`)}
 => '<a href="/pathprefix/test/">Link</a>'
 
-${await this.transformWithHtmlBase(`<a href="/test/">Link</a>`, "http://example.com/")}
+${await this.transformWithHtmlBase(
+	`<a href="/test/">Link</a>`,
+	"http://example.com/"
+)}
 => '<a href="http://example.com/pathprefix/test/">Link</a>'`;
-}
+};
 ```
+
 {% endraw %}
 
 Resolving relative URLs (with path prefix still at `"/pathprefix/"`):
@@ -427,20 +456,29 @@ Resolving relative URLs (with path prefix still at `"/pathprefix/"`):
 {% codetitle "11ty.js", "Syntax" %}
 
 {% raw %}
+
 ```js
-module.exports = async function() {
-  return `
+module.exports = async function () {
+	return `
 On a page with URL "/my-template/":
 
-${await this.transformWithHtmlBase('<a href="test/">Link</a>', "http://example.com/")}
+${await this.transformWithHtmlBase(
+	'<a href="test/">Link</a>',
+	"http://example.com/"
+)}
 => '<a href="http://example.com/pathprefix/my-template/test/">Link</a>'
 
 Override the page URL:
 
-${await this.transformWithHtmlBase('<a href="test/">Link</a>', "http://example.com/", "/my-other-template/")}
+${await this.transformWithHtmlBase(
+	'<a href="test/">Link</a>',
+	"http://example.com/",
+	"/my-other-template/"
+)}
 => '<a href="http://example.com/pathprefix/my-other-template/test/">Link</a>''`;
-}
+};
 ```
+
 {% endraw %}
 
   </div>
@@ -451,7 +489,6 @@ This filter requires an async-friendly template language and is not available in
   </div>
 </seven-minute-tabs>
 </is-land>
-
 
 ##### `addPathPrefixToFullUrl`
 
@@ -469,10 +506,12 @@ With path prefix set to `"/pathprefix/"`:
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 {{ "http://example.com/" | addPathPrefixToFullUrl }}
 => "http://example.com/pathprefix/"
 ```
+
 {% endraw %}
 
   </div>
@@ -483,10 +522,12 @@ With path prefix set to `"/pathprefix/"`:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```njk
 {{ "http://example.com/" | addPathPrefixToFullUrl }}
 => "http://example.com/pathprefix/"
 ```
+
 {% endraw %}
 
   </div>
@@ -497,12 +538,14 @@ With path prefix set to `"/pathprefix/"`:
 {% codetitle "11ty.js", "Syntax" %}
 
 {% raw %}
+
 ```js
-module.exports = function() {
-  return this.addPathPrefixToFullUrl("http://example.com/");
-  // "http://example.com/pathprefix/"
-}
+module.exports = function () {
+	return this.addPathPrefixToFullUrl("http://example.com/");
+	// "http://example.com/pathprefix/"
+};
 ```
+
 {% endraw %}
 
   </div>
@@ -513,10 +556,12 @@ With path prefix set to `"/pathprefix/"`:
 {% codetitle "Handlebars", "Syntax" %}
 
 {% raw %}
+
 ```hbs
-{{ addPathPrefixToFullUrl "http://example.com/" }}
+{{addPathPrefixToFullUrl "http://example.com/"}}
 => "http://example.com/pathprefix/"
 ```
+
 {% endraw %}
 
   </div>

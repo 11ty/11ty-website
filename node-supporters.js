@@ -57,85 +57,101 @@ query eleventyMembers {
 `;
 
 async function getOpenCollectiveList() {
-  let url = `https://opencollective.com/11ty/members/all.json`;
-  let json = await EleventyFetch(url, {
-    duration: "0s",
-    type: "json"
-  });
+	let url = `https://opencollective.com/11ty/members/all.json`;
+	let json = await EleventyFetch(url, {
+		duration: "0s",
+		type: "json",
+	});
 
-  return json;
+	return json;
 }
 
 async function findMissingUsers(names) {
-  let json = await getOpenCollectiveList();
-  let fullList = new Set();
-  for(let member of json) {
-    fullList.add(member.name);
-  }
+	let json = await getOpenCollectiveList();
+	let fullList = new Set();
+	for (let member of json) {
+		fullList.add(member.name);
+	}
 
-  // Set difference
-  let missing = new Set([...fullList].filter(name => !names.has(name)));
-  for(let member of json) {
-    if(missing.has(member.name)) {
-      console.log( "MISSING:", member.name, member.email );
-    }
-  }
-  console.log( `${missing.size} missing names from GraphQL data source.` );
+	// Set difference
+	let missing = new Set([...fullList].filter((name) => !names.has(name)));
+	for (let member of json) {
+		if (missing.has(member.name)) {
+			console.log("MISSING:", member.name, member.email);
+		}
+	}
+	console.log(`${missing.size} missing names from GraphQL data source.`);
 }
 
-if(!process.env.OPENCOLLECT_API_KEY) {
-  console.log( "Missing OPENCOLLECT_API_KEY. Do you have a .env file?" );
+if (!process.env.OPENCOLLECT_API_KEY) {
+	console.log("Missing OPENCOLLECT_API_KEY. Do you have a .env file?");
 	process.exit();
 }
 
 let url = "https://api.opencollective.com/graphql/v2";
 let opts = {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-    "Api-Key": process.env.OPENCOLLECT_API_KEY
-  },
-  body: JSON.stringify({ query })
+	method: "POST",
+	headers: {
+		"Content-Type": "application/json",
+		"Api-Key": process.env.OPENCOLLECT_API_KEY,
+	},
+	body: JSON.stringify({ query }),
 };
 
 let result = await fetch(url, opts)
-  .then(res => res.json())
-  .catch(function(error) {
-    console.error( error );
-  });
+	.then((res) => res.json())
+	.catch(function (error) {
+		console.error(error);
+	});
 
-if(result?.errors?.length) {
-	console.error( result.errors );
+if (result?.errors?.length) {
+	console.error(result.errors);
 	process.exit();
 }
 
-let alreadySentFile = await fs.readFile("./node-supporters/invited.csv", "utf-8");
-let alreadySentEmails = alreadySentFile.split("\n").map(entry => entry.trim());
+let alreadySentFile = await fs.readFile(
+	"./node-supporters/invited.csv",
+	"utf-8"
+);
+let alreadySentEmails = alreadySentFile
+	.split("\n")
+	.map((entry) => entry.trim());
 let emailsOnly = new Set();
 let members = result.data.collective.members.nodes;
 
-for(let member of members) {
-  if(!member.account.email) {
-    console.log( "Falsy email for", member );
-  } else if(member.account.email && alreadySentEmails.indexOf(member.account.email) === -1) {
-    console.log( "New supporter:", member );
-    emailsOnly.add(member.account.email);
-  } else {
-    console.log( "Already invited", member.account.email );
-  }
+for (let member of members) {
+	if (!member.account.email) {
+		console.log("Falsy email for", member);
+	} else if (
+		member.account.email &&
+		alreadySentEmails.indexOf(member.account.email) === -1
+	) {
+		console.log("New supporter:", member);
+		emailsOnly.add(member.account.email);
+	} else {
+		console.log("Already invited", member.account.email);
+	}
 }
 
-await fs.writeFile("./node-supporters/node-supporters.json", JSON.stringify(result, null, 2));
-console.log( "Wrote node-supporters.json." );
+await fs.writeFile(
+	"./node-supporters/node-supporters.json",
+	JSON.stringify(result, null, 2)
+);
+console.log("Wrote node-supporters.json.");
 
 let newEmails = Array.from(emailsOnly);
-await fs.writeFile("./node-supporters/need-to-invite.csv", newEmails.join("\n"));
-console.log( "Wrote need-to-invite.csv." );
-console.log( `${newEmails.length} ${newEmails.length != 1 ? "entries" : "entry"}.` );
+await fs.writeFile(
+	"./node-supporters/need-to-invite.csv",
+	newEmails.join("\n")
+);
+console.log("Wrote need-to-invite.csv.");
+console.log(
+	`${newEmails.length} ${newEmails.length != 1 ? "entries" : "entry"}.`
+);
 
 // Find missing
 let memberNames = new Set();
-for(let member of members) {
-  memberNames.add(member.account.name);
+for (let member of members) {
+	memberNames.add(member.account.name);
 }
 await findMissingUsers(memberNames);

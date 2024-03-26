@@ -5,6 +5,7 @@ eleventyNavigation:
   order: 8
 layout: layouts/langs.njk
 ---
+
 {% tableofcontents "open" %}
 
 | Eleventy Short Name | File Extension | npm Package                                           |
@@ -20,16 +21,15 @@ You can override a `.mustache` file’s template engine. Read more at [Changing 
 As an escape mechanism for advanced usage, pass in your own instance of the Mustache library using the Configuration API.
 
 ```js
-module.exports = function(eleventyConfig) {
-  let mustache = require("mustache");
-  eleventyConfig.setLibrary("mustache", mustache);
+module.exports = function (eleventyConfig) {
+	let mustache = require("mustache");
+	eleventyConfig.setLibrary("mustache", mustache);
 };
 ```
 
 ## Supported Features
 
-| Feature     | Syntax                                           |
-| ----------- | ------------------------------------------------ |
-| ✅ Partials | `{% raw %}{{> user}}{% endraw %}` looks for `_includes/user.mustache`. Does not process front matter in the include file. |
-| 🚫 Partials (Relative Path)                                                                  | **Not yet supported**: `{% raw %}{{> ./user}}{% endraw %}` looks for `user.mustache` in the template’s current directory.                                                                                             |
-
+| Feature                     | Syntax                                                                                                                    |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| ✅ Partials                 | `{% raw %}{{> user}}{% endraw %}` looks for `_includes/user.mustache`. Does not process front matter in the include file. |
+| 🚫 Partials (Relative Path) | **Not yet supported**: `{% raw %}{{> ./user}}{% endraw %}` looks for `user.mustache` in the template’s current directory. |

@@ -11,8 +11,8 @@ async function getData() {
 
 	let urls = {};
 	// remove duplicates
-	json = json.filter(entry => {
-		if(!urls[entry.Link]) {
+	json = json.filter((entry) => {
+		if (!urls[entry.Link]) {
 			urls[entry.Link] = true;
 			return true;
 		}
@@ -22,18 +22,18 @@ async function getData() {
 	return json;
 }
 
-export default async function() {
+export default async function () {
 	try {
 		return {
-			bundle: await getData()
-		}
-	} catch(e) {
-		if(process.env.NODE_ENV === "production") {
+			bundle: await getData(),
+		};
+	} catch (e) {
+		if (process.env.NODE_ENV === "production") {
 			// Fail the build in production.
 			return Promise.reject(e);
 		}
 
-		console.log( "Failed getting image plugin resources from 11tybundle.dev." );
+		console.log("Failed getting image plugin resources from 11tybundle.dev.");
 		return { bundle: [] };
 	}
-};
+}

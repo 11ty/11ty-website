@@ -5,7 +5,8 @@
 	height: auto;
 	margin: 0;
 }
-@media (min-width: 41.875em) { /* 670px */
+@media (min-width: 41.875em) {
+	/* 670px */
 	.elv-possum-pic + .supporters-avatar {
 		display: block;
 		top: 0.8625rem;
@@ -69,21 +70,22 @@
 	max-width: 28em;
 }
 .supporters-gold-cloudcannon svg {
-	background-color: #034AD8;
+	background-color: #034ad8;
 	color: #fff;
 	padding: 1.25em;
-	border-radius: .5em;
+	border-radius: 0.5em;
 }
 
 .supporters-gold-transloadit svg {
-	color: #0D1419;
+	color: #0d1419;
 }
 @media (prefers-color-scheme: dark) {
 	.supporters-gold-transloadit svg {
 		color: #fff;
 	}
 }
-@media (min-width: 55em) { /* 880px */
+@media (min-width: 55em) {
+	/* 880px */
 	.supporters-gold-nordhealth {
 		flex-grow: 1.3;
 	}

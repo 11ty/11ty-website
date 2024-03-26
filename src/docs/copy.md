@@ -4,6 +4,7 @@ eleventyNavigation:
   key: Passthrough File Copy
   order: 1
 ---
+
 # Passthrough File Copy {% addedin "0.2.14" %}
 
 {% tableofcontents %}
@@ -19,19 +20,19 @@ Use a configuration API method to specify _files_ or _directories_ for Eleventy 
 {% codetitle ".eleventy.js" %}{% codetitle "_site", "Output Directory" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Output directory: _site
+module.exports = function (eleventyConfig) {
+	// Output directory: _site
 
-  // Copy `img/` to `_site/img`
-  eleventyConfig.addPassthroughCopy("img");
+	// Copy `img/` to `_site/img`
+	eleventyConfig.addPassthroughCopy("img");
 
-  // Copy `css/fonts/` to `_site/css/fonts`
-  // Keeps the same directory structure.
-  eleventyConfig.addPassthroughCopy("css/fonts");
+	// Copy `css/fonts/` to `_site/css/fonts`
+	// Keeps the same directory structure.
+	eleventyConfig.addPassthroughCopy("css/fonts");
 
-  // Copy any .jpg file to `_site`, via Glob pattern
-  // Keeps the same directory structure.
-  eleventyConfig.addPassthroughCopy("**/*.jpg");
+	// Copy any .jpg file to `_site`, via Glob pattern
+	// Keeps the same directory structure.
+	eleventyConfig.addPassthroughCopy("**/*.jpg");
 };
 ```
 
@@ -45,8 +46,8 @@ As stated above, passthrough file copy paths are relative to the project root an
 
 For example:
 
-* `input` directory is `src`
-* `output` directory is `_site`.
+- `input` directory is `src`
+- `output` directory is `_site`.
 
 If we copy `src/img` using passthrough file copy, it will copy to `_site/img`.
 
@@ -54,12 +55,12 @@ If we copy `src/img` using passthrough file copy, it will copy to `_site/img`.
 {% codetitle "_site", "Output Directory" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Input directory: src
-  // Output directory: _site
+module.exports = function (eleventyConfig) {
+	// Input directory: src
+	// Output directory: _site
 
-  // The following copies to `_site/img`
-  eleventyConfig.addPassthroughCopy("src/img");
+	// The following copies to `_site/img`
+	eleventyConfig.addPassthroughCopy("src/img");
 };
 ```
 
@@ -72,16 +73,16 @@ Note that this method is slower than non-glob methods, as it searches the entire
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Find and copy any `jpg` files, maintaining directory structure.
-  eleventyConfig.addPassthroughCopy("**/*.jpg");
+module.exports = function (eleventyConfig) {
+	// Find and copy any `jpg` files, maintaining directory structure.
+	eleventyConfig.addPassthroughCopy("**/*.jpg");
 };
 ```
 
 With an output directory of `_site`:
 
- * `img/avatar.jpg` will copy to `_site/img/avatar.jpg`
- * `subdir/img/avatar.jpg` will copy to `_site/subdir/img/avatar.jpg`
+- `img/avatar.jpg` will copy to `_site/img/avatar.jpg`
+- `subdir/img/avatar.jpg` will copy to `_site/subdir/img/avatar.jpg`
 
 ### Change the Output Directory {% addedin "0.9.0" %}
 
@@ -91,18 +92,18 @@ Instead of a string, pass in an object of the following structure: `{ "input": "
 {% codetitle "_site", "Output Directory" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Input directory: src
-  // Output directory: _site
+module.exports = function (eleventyConfig) {
+	// Input directory: src
+	// Output directory: _site
 
-  // Copy `img/` to `_site/subfolder/img`
-  eleventyConfig.addPassthroughCopy({ "img": "subfolder/img" });
+	// Copy `img/` to `_site/subfolder/img`
+	eleventyConfig.addPassthroughCopy({ img: "subfolder/img" });
 
-  // Copy `src/img/` to `_site/subfolder/img`
-  eleventyConfig.addPassthroughCopy({ "src/img": "subfolder/img" });
+	// Copy `src/img/` to `_site/subfolder/img`
+	eleventyConfig.addPassthroughCopy({ "src/img": "subfolder/img" });
 
-  // Copy `random-folder/img/` to `_site/subfolder/img`
-  eleventyConfig.addPassthroughCopy({ "random-folder/img": "subfolder/img" });
+	// Copy `random-folder/img/` to `_site/subfolder/img`
+	eleventyConfig.addPassthroughCopy({ "random-folder/img": "subfolder/img" });
 };
 ```
 
@@ -113,19 +114,19 @@ Note that this method is slower than non-glob methods, as it is searching the en
 {% codetitle ".eleventy.js" %}{% codetitle "_site", "Output Dir" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Output directory: _site
+module.exports = function (eleventyConfig) {
+	// Output directory: _site
 
-  // Find and copy any `jpg` files in any folder to _site/img
-  // Does not keep the same directory structure.
-  eleventyConfig.addPassthroughCopy({ "**/*.jpg": "img" });
+	// Find and copy any `jpg` files in any folder to _site/img
+	// Does not keep the same directory structure.
+	eleventyConfig.addPassthroughCopy({ "**/*.jpg": "img" });
 };
 ```
 
 With an output directory of `_site`:
 
- * `img/avatar.jpg` would copy to `_site/img/avatar.jpg`
- * `subdir/img/avatar.jpg` would copy to `_site/img/avatar.jpg`
+- `img/avatar.jpg` would copy to `_site/img/avatar.jpg`
+- `subdir/img/avatar.jpg` would copy to `_site/img/avatar.jpg`
 
 ## Passthrough by File Extension {% addedin "0.2.7" %}
 
@@ -136,11 +137,11 @@ If a file format is not recognized by Eleventy as a template file extension, Ele
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setTemplateFormats([
-    "md",
-    "css" // css is not yet a recognized template extension in Eleventy
-  ]);
+module.exports = function (eleventyConfig) {
+	eleventyConfig.setTemplateFormats([
+		"md",
+		"css", // css is not yet a recognized template extension in Eleventy
+	]);
 };
 ```
 
@@ -163,9 +164,9 @@ You can enable this behavior in your project using this configuration API method
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // the default is "copy"
-  eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+module.exports = function (eleventyConfig) {
+	// the default is "copy"
+	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 };
 ```
 
@@ -187,22 +188,22 @@ Additionally, you can pass additional configuration options to the `recursive-co
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("img", {
-    expand: true, // expand symbolic links
-  });
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addPassthroughCopy("img", {
+		expand: true, // expand symbolic links
+	});
 };
 ```
 
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  let copyOptions = {
-    debug: true, // log debug information
-  };
+module.exports = function (eleventyConfig) {
+	let copyOptions = {
+		debug: true, // log debug information
+	};
 
-  eleventyConfig.addPassthroughCopy({ "img": "subfolder/img" }, copyOptions);
+	eleventyConfig.addPassthroughCopy({ img: "subfolder/img" }, copyOptions);
 };
 ```
 

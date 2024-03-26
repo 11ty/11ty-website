@@ -11,11 +11,10 @@ First, create a plugin file. We recommend creating a `config` or `_config` folde
 {% codetitle "config/local-plugin.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Move any code you want from `.eleventy.js` to here
+module.exports = function (eleventyConfig) {
+	// Move any code you want from `.eleventy.js` to here
 };
 ```
-
 
 {% callout "warn" %}Any variables defined in your <code>.eleventy.js</code> file will <em>not</em> be available to your plugin. Consider moving those variables into your plugin file, or <a href="/docs/plugins/#plugin-configuration-options">passing them in as options</a>.{% endcallout %}
 
@@ -24,7 +23,7 @@ Next, use the `eleventyConfig.addPlugin()` method to add your plugin.
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(require("./config/local-plugin"));
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addPlugin(require("./config/local-plugin"));
 };
 ```

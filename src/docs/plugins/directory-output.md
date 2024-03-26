@@ -4,6 +4,7 @@ eleventyNavigation:
   order: 3.2
   excerpt: A plugin to group and sort console output by directory, with file size and benchmarks.
 ---
+
 # Directory Output
 
 {% tableofcontents %}
@@ -12,8 +13,8 @@ Group and sort Eleventy’s verbose output by directory (and show file size with
 
 ## Installation
 
-* Compatible with Eleventy 1.0.0 and newer.
-* [`eleventy-plugin-directory-output` on npm](https://www.npmjs.com/package/@11ty/eleventy-plugin-directory-output)
+- Compatible with Eleventy 1.0.0 and newer.
+- [`eleventy-plugin-directory-output` on npm](https://www.npmjs.com/package/@11ty/eleventy-plugin-directory-output)
 
 ```
 npm install @11ty/eleventy-plugin-directory-output
@@ -26,9 +27,9 @@ Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
 ```js
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setQuietMode(true);
-  eleventyConfig.addPlugin(directoryOutputPlugin);
+module.exports = function (eleventyConfig) {
+	eleventyConfig.setQuietMode(true);
+	eleventyConfig.addPlugin(directoryOutputPlugin);
 };
 ```
 
@@ -36,24 +37,23 @@ module.exports = function(eleventyConfig) {
 
 Read more about [Eleventy plugins.](/docs/plugins/)
 
-
 ## Options
 
 ```js
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setQuietMode(true);
-  eleventyConfig.addPlugin(directoryOutputPlugin, {
-    // Customize columns
-    columns: {
-      filesize: true, // Use `false` to disable
-      benchmark: true, // Use `false` to disable
-    },
+module.exports = function (eleventyConfig) {
+	eleventyConfig.setQuietMode(true);
+	eleventyConfig.addPlugin(directoryOutputPlugin, {
+		// Customize columns
+		columns: {
+			filesize: true, // Use `false` to disable
+			benchmark: true, // Use `false` to disable
+		},
 
-    // Will show in yellow if greater than this number of bytes
-    warningFileSize: 400 * 1000,
-  });
+		// Will show in yellow if greater than this number of bytes
+		warningFileSize: 400 * 1000,
+	});
 };
 ```
 

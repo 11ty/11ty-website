@@ -1,15 +1,16 @@
 .announcement {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	width: 100%;
 	background-color: #111;
 	font-weight: 500;
-	padding: .25em 1em;
+	padding: 0.25em 1em;
 	text-align: center;
 	line-height: 1;
 }
-@media (min-width: 48em) { /* 768px */
+@media (min-width: 48em) {
+	/* 768px */
 	.announcement {
 		font-size: 1em;
 		font-size: clamp(1em, 2vw, 1.25em);
@@ -18,7 +19,7 @@
 .announcement > a,
 .announcement > span {
 	display: inline-block;
-	padding: .35em 0;
+	padding: 0.35em 0;
 	text-decoration: none;
 	white-space: nowrap;
 	overflow: hidden;
@@ -35,4 +36,3 @@
 .announcement a:after {
 	display: none;
 }
-

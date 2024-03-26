@@ -4,6 +4,7 @@ eleventyNavigation:
   parent: Blog
 homePageHighlight: true
 ---
+
 The 11ty Conference is happening on May 9, 2024 and [**registration is now open**](https://conf.11ty.dev/#register)!
 
 Each registrant will receive a uniquely generated ticket image. We’d very much appreciate it if you would share your ticket (or the conference web site) on social media to help spread the word about the conference!

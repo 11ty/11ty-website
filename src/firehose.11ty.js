@@ -2,10 +2,10 @@ import { escapeText } from "entities/lib/escape.js";
 import activity from "../config/activity.js";
 
 function getSlugFromTitle(str) {
-	if(str.startsWith("GitHub Releases [")) {
+	if (str.startsWith("GitHub Releases [")) {
 		return "github";
 	}
-	if(str.includes(": ")) {
+	if (str.includes(": ")) {
 		return str.split(": ")[0].replace(/\s/g, "-").toLowerCase();
 	}
 	return "";
@@ -17,11 +17,11 @@ export async function data() {
 
 	return {
 		entries: entries,
-		layout: "layouts/docs.njk"
-	}
-};
+		layout: "layouts/docs.njk",
+	};
+}
 
-export async function render({entries}) {
+export async function render({ entries }) {
 	return `
 <h1>Eleventy Firehose</h1>
 
@@ -77,18 +77,33 @@ export async function render({entries}) {
 				Quick Tips
 			</label>
 		</form>
-${entries.map(entry => {
-	let content = entry.type === "tweet" || entry.title.startsWith("Mastodon: ") ? entry.content || "" : "";
-	if(entry.title.startsWith("YouTube") && entry.url.startsWith("https://www.youtube.com/watch?v=")) {
-		// TODO support startTime in URL
-		let slug = entry.url.slice("https://www.youtube.com/watch?v=".length);
+${entries
+	.map((entry) => {
+		let content =
+			entry.type === "tweet" || entry.title.startsWith("Mastodon: ")
+				? entry.content || ""
+				: "";
+		if (
+			entry.title.startsWith("YouTube") &&
+			entry.url.startsWith("https://www.youtube.com/watch?v=")
+		) {
+			// TODO support startTime in URL
+			let slug = entry.url.slice("https://www.youtube.com/watch?v=".length);
 
-		let startTime = 0;
-		content = this.youtubeEmbed(slug, entry.title, startTime);
-	}
-	return `<div data-filter-type="${getSlugFromTitle(entry.title)}">${this.callout(content, "box", "html", `<a href="${entry.url}">${escapeText(entry.title)}</a>`)}</div>`;
-}).join("\n")}
+			let startTime = 0;
+			content = this.youtubeEmbed(slug, entry.title, startTime);
+		}
+		return `<div data-filter-type="${getSlugFromTitle(
+			entry.title
+		)}">${this.callout(
+			content,
+			"box",
+			"html",
+			`<a href="${entry.url}">${escapeText(entry.title)}</a>`
+		)}</div>`;
+	})
+	.join("\n")}
 
 	</filter-container>
 </div>`;
-};
+}

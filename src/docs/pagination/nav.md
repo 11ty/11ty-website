@@ -6,6 +6,7 @@ eleventyNavigation:
 tags: ["related-pagination"]
 relatedTitle: "Create a list of Navigation Links for your Pagination."
 ---
+
 # Pagination Navigation
 
 {% tableofcontents %}
@@ -24,6 +25,7 @@ Consider the following example paginating our `testdata` array:
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 ---
 pagination:
@@ -39,6 +41,7 @@ testdata:
 ---
 {% comment %}pagination.items has the data for the current page{% endcomment %}
 ```
+
 {% endraw %}
 
   </div>
@@ -47,6 +50,7 @@ testdata:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 ---
 pagination:
@@ -62,6 +66,7 @@ testdata:
 ---
 {# pagination.items has the data for the current page #}
 ```
+
 {% endraw %}
 
   </div>
@@ -76,16 +81,16 @@ testdata:
 
 The above example would make three different output files from the template.
 
-* Page 1 would have `pagination.items` set to `['item1', 'item2']`.
-* Page 2 would have `pagination.items` set to `['item3', 'item4']`.
-* Page 3 would have `pagination.items` set to `['item5', 'item6']`.
+- Page 1 would have `pagination.items` set to `['item1', 'item2']`.
+- Page 2 would have `pagination.items` set to `['item3', 'item4']`.
+- Page 3 would have `pagination.items` set to `['item5', 'item6']`.
 
 But to create a series of links to each of these paginated output templates, we’ll want to use our `pagination.pages` entries {% addedin "0.10.0" %}, an array of the `pagination.items` for each page.
 
 A good way to think about it:
 
-* `pagination.items` is the chunk of data for the _current_ page.
-* `pagination.pages` is the chunked page data for _all_ of the pages.
+- `pagination.items` is the chunk of data for the _current_ page.
+- `pagination.pages` is the chunked page data for _all_ of the pages.
 
 {% callout "info" %}While the above example pages over an array of data, the code provided here will operate the same for any paginated data (including objects)!{% endcallout %}
 
@@ -93,10 +98,10 @@ A good way to think about it:
 
 To create an accessible navigation structure, we want to do our research first!
 
-* [Web Accessibility Tutorials from the w3c Web Accessibility Initiative: Menu Structure](https://www.w3.org/WAI/tutorials/menus/structure/)
-* [MDN web docs: `<nav>`: The Navigation Section element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav)
-* [Scott O’Hara with an Accessible Breadcrumb Navigation Pattern](https://scottaohara.github.io/a11y_breadcrumbs/)
-* [Léonie Watson on _Using the aria-current attribute_.](https://tink.uk/using-the-aria-current-attribute/)
+- [Web Accessibility Tutorials from the w3c Web Accessibility Initiative: Menu Structure](https://www.w3.org/WAI/tutorials/menus/structure/)
+- [MDN web docs: `<nav>`: The Navigation Section element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav)
+- [Scott O’Hara with an Accessible Breadcrumb Navigation Pattern](https://scottaohara.github.io/a11y_breadcrumbs/)
+- [Léonie Watson on _Using the aria-current attribute_.](https://tink.uk/using-the-aria-current-attribute/)
 
 Alright, you definitely read all of those right? 😇 Here’s some accessible code you definitely would have written yourself after reading those wonderful resources:
 
@@ -133,12 +138,12 @@ For our example, this code will output the following markup for our example (on 
 
 ```html
 <nav aria-labelledby="my-pagination">
-  <h2 id="my-pagination">This is my Pagination</h2>
-  <ol>
-    <li><a href="/test/" aria-current="page">Page 1</a></li>
-    <li><a href="/test/1/">Page 2</a></li>
-    <li><a href="/test/2/">Page 3</a></li>
-  </ol>
+	<h2 id="my-pagination">This is my Pagination</h2>
+	<ol>
+		<li><a href="/test/" aria-current="page">Page 1</a></li>
+		<li><a href="/test/1/">Page 2</a></li>
+		<li><a href="/test/2/">Page 3</a></li>
+	</ol>
 </nav>
 ```
 
@@ -162,7 +167,6 @@ testdata:
   - item6
 ```
 
-
 <seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagenavorig", valid: "njk"} %}
   <div id="pagenavorig-liquid" role="tabpanel">
@@ -172,13 +176,16 @@ testdata:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 <!-- Don’t copy this code, it’s been simplified for clarity -->
 {% for pageEntry in pagination.pages %}
 <a href="{{ pagination.hrefs[ loop.index0 ] }}">Page {{ loop.index }}</a>
 {% endfor %}
 ```
+
 {% endraw %}
+
   </div>
   <div id="pagenavorig-js" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
@@ -188,10 +195,9 @@ testdata:
   </div>
 </seven-minute-tabs>
 
-
-* When `size` is set to 2, `pagination.pages` will look like: `[['item1', 'item2'], ['item3', 'item4'], ['item5', 'item6']]`
+- When `size` is set to 2, `pagination.pages` will look like: `[['item1', 'item2'], ['item3', 'item4'], ['item5', 'item6']]`
   - Use `pageEntry[0]` and `pageEntry[1]` to access the original content.
-* When `size` is set to 1, `pagination.pages` will be the same as the original data: `['item1', 'item2', 'item3', 'item4', 'item5', 'item6']`
+- When `size` is set to 1, `pagination.pages` will be the same as the original data: `['item1', 'item2', 'item3', 'item4', 'item5', 'item6']`
   - Use `pageEntry` to access the original content.
 
 #### When Paginating Object Literals
@@ -208,7 +214,6 @@ testdata:
   key6: item6
 ```
 
-
 <seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagenavobjectlit", valid: "njk"} %}
   <div id="pagenavobjectlit-liquid" role="tabpanel">
@@ -218,13 +223,16 @@ testdata:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 <!-- Don’t copy this code, it’s been simplified for clarity -->
 {% for pageKey in pagination.pages %}
 <a href="{{ pagination.hrefs[ loop.index0 ] }}">Page {{ loop.index }}</a>
 {% endfor %}
 ```
+
 {% endraw %}
+
   </div>
   <div id="pagenavobjectlit-js" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
@@ -234,9 +242,9 @@ testdata:
   </div>
 </seven-minute-tabs>
 
-* When `size` is set to 2, `pagination.pages` will look like: `[['key1', 'key2'], ['key3', 'key4'], ['key5', 'key6']]`
+- When `size` is set to 2, `pagination.pages` will look like: `[['key1', 'key2'], ['key3', 'key4'], ['key5', 'key6']]`
   - Use `testdata[ pageKey[0] ]` and `testdata[ pageKey[1] ]` to access the original content.
-* When `size` is set to 1, `pagination.pages` will be the keys of the object: `['key1', 'key2', 'key3', 'key4', 'key5', 'key6']`
+- When `size` is set to 1, `pagination.pages` will be the keys of the object: `['key1', 'key2', 'key3', 'key4', 'key5', 'key6']`
   - Use `testdata[ pageKey ]` to access the original content.
 
 ### Visually Style the Current Page Link
@@ -247,7 +255,7 @@ You’ll probably also want to add some kind of visual styling to indicate that 
 
 ```css
 [aria-current] {
-  background-color: #eee;
+	background-color: #eee;
 }
 ```
 
@@ -281,7 +289,7 @@ Note that if the current page (`page.url`) is the first or last in the set, we w
 </seven-minute-tabs>
 </is-land>
 
-* `pagination.href.previous` and `pagination.href.next` are added in `0.10.0`. Use `pagination.previousPageHref` or `pagination.nextPageHref` in previous versions.
+- `pagination.href.previous` and `pagination.href.next` are added in `0.10.0`. Use `pagination.previousPageHref` or `pagination.nextPageHref` in previous versions.
 
 ## Add First and Last Links
 
@@ -340,12 +348,12 @@ Here’s the final pagination navigation template code, pieced together:
 </seven-minute-tabs>
 </is-land>
 
-Alright, you’ve copied the above—but don’t leave yet—*your work is not done (sorry)!* You still need to:
+Alright, you’ve copied the above—but don’t leave yet—_your work is not done (sorry)!_ You still need to:
 
-* Change `my-pagination` to a better `id` attribute for your use case and update it in `aria-labelledby` too.
-* Update the `This is my Pagination` text to make more sense for your use case.
-* Think about maybe changing the `<h2>` to better suit your document structure.
-* Add some [CSS to highlight the current page in the navigation, visually](#visually-style-the-current-page-link).
+- Change `my-pagination` to a better `id` attribute for your use case and update it in `aria-labelledby` too.
+- Update the `This is my Pagination` text to make more sense for your use case.
+- Think about maybe changing the `<h2>` to better suit your document structure.
+- Add some [CSS to highlight the current page in the navigation, visually](#visually-style-the-current-page-link).
 
 {% callout "info" %}<strong>HTML tip</strong>: You might be tempted to use <code>role="navigation"</code> here, but it’s superfluous when using <code>&lt;nav&gt;</code>.{% endcallout %}
 
@@ -359,16 +367,16 @@ All of the above will output the following HTML for our example (on the first pa
 
 ```html
 <nav aria-labelledby="my-pagination">
-  <h2 id="my-pagination">This is my Pagination</h2>
-  <ol>
-    <li>First</li>
-    <li>Previous</li>
-    <li><a href="/test-array/" aria-current="page">Page 1</a></li>
-    <li><a href="/test-array/1/">Page 2</a></li>
-    <li><a href="/test-array/2/">Page 3</a></li>
-    <li><a href="/test-array/1/">Next</a></li>
-    <li><a href="/test-array/2/">Last</a></li>
-  </ol>
+	<h2 id="my-pagination">This is my Pagination</h2>
+	<ol>
+		<li>First</li>
+		<li>Previous</li>
+		<li><a href="/test-array/" aria-current="page">Page 1</a></li>
+		<li><a href="/test-array/1/">Page 2</a></li>
+		<li><a href="/test-array/2/">Page 3</a></li>
+		<li><a href="/test-array/1/">Next</a></li>
+		<li><a href="/test-array/2/">Last</a></li>
+	</ol>
 </nav>
 ```
 
