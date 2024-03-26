@@ -1159,7 +1159,7 @@ We accept:
 ```js
 const pluginWebc = require("@11ty/eleventy-plugin-webc");
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebc, {
 		// Glob to find no-import global components
 		// This path is relative to the project-root!
@@ -1170,8 +1170,8 @@ module.exports = function(eleventyConfig) {
 		components: [
 			"_components/**/*.webc",
 			"npm:@11ty/is-land/*.webc",
-			"npm:@11ty/eleventy-plugin-syntaxhighlight/*.webc"
-		]
+			"npm:@11ty/eleventy-plugin-syntaxhighlight/*.webc",
+		],
 	});
 };
 ```

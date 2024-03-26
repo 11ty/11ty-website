@@ -61,10 +61,10 @@ export default function () {
 			source: "https://twitter.com/philhawksworth/status/998891176550977537",
 		},
 		{
-			"text": "I really like the flexibility Eleventy offers in comparison to my previous Jekyll build.",
-			"twitter": "hybrid_alex",
-			"name": "Alex Carpenter",
-			"source": "https://alexcarpenter.me/posts/2018/05/back-to-static"
+			text: "I really like the flexibility Eleventy offers in comparison to my previous Jekyll build.",
+			twitter: "hybrid_alex",
+			name: "Alex Carpenter",
+			source: "https://alexcarpenter.me/posts/2018/05/back-to-static",
 		},
 		{
 			text: "I've been digging into Eleventy, a new static site generator. Really like the way it handles pagination!",

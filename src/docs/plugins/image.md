@@ -472,6 +472,7 @@ module.exports = function() {
 ${img2}`;
 };
 {% endraw %}{% endhighlight %}
+
 </div>
 <div id="shortcode-hbs" role="tabpanel">
 
