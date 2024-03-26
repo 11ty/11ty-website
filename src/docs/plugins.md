@@ -16,7 +16,9 @@ Plugins are custom code that Eleventy can import into a project from an external
 
 ## Adding a Plugin
 
-### Install the plugin through npm.
+### Installation
+
+We use the [`npm` command line tool](https://www.npmjs.com) (included with Node.js) to install plugins.
 
 Looking for a plugin? Check out the [official plugins](/docs/plugins/official/) or [community-contributed plugins](/docs/plugins/community/).
 
