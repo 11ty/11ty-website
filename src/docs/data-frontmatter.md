@@ -81,7 +81,7 @@ You can [customize Front Matter Parsing](/docs/data-frontmatter-customize/) in E
 
 ### JavaScript Object Front Matter <span id="javascript-front-matter"></span>
 
-This method makes use of a JavaScript Object in front matter. You can also easily extend Eleventy to add [arbitary JavaScript in your front matter too](/docs/data-frontmatter-customize/#example-use-javascript-in-your-front-matter)!
+This method makes use of a JavaScript Object in front matter. You can also easily extend Eleventy to add [arbitrary JavaScript in your front matter too](/docs/data-frontmatter-customize/#example-use-javascript-in-your-front-matter)!
 
 _Warning: while Nunjucks and Liquid syntax are similar, the following example will **not** work in Liquid. Liquid does not allow function execution in output (e.g. `{% raw %}{{ currentDate() }}{% endraw %}`)._
 

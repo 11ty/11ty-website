@@ -42,16 +42,16 @@ It’s very important that we take responsibility for the code we publish and de
 
 One of the best ways to immerse yourself in the accessibility development community is to follow the experts. Many of these folks are [participants in the Eleventy community](/authors/) too!
 
-- [Marcy Sutton](https://marcysutton.com/writing/)
-- [Scott O’Hara](https://www.scottohara.me/writing/)
-- [Adrian Roselli](http://adrianroselli.com/tag/accessibility)
-- [Sara Soueidan](https://www.sarasoueidan.com/blog/)
-- [Eric Bailey](https://ericwbailey.design/)
-- [Marco Zehe](https://www.marcozehe.de/)
-- [Dave Rupert](https://davatron5000.github.io/a11y-nutrition-cards/)
-- [Karl Groves](https://karlgroves.com/)
-- [Heydon Pickering](https://heydonworks.com/)
-- [and you?]({{ config.githubEdit }}{{ page.inputPath }}) (Edit this page on GitHub)</a>
+* [Marcy Sutton](https://marcysutton.com/writing/)
+* [Scott O’Hara](https://www.scottohara.me/writing/)
+* [Adrian Roselli](https://adrianroselli.com/tag/accessibility)
+* [Sara Soueidan](https://www.sarasoueidan.com/about/)
+* [Eric Bailey](https://ericwbailey.design/)
+* [Marco Zehe](https://www.marcozehe.de/)
+* [Dave Rupert](https://davatron5000.github.io/a11y-nutrition-cards/)
+* [Karl Groves](https://karlgroves.com/)
+* [Heydon Pickering](https://heydonworks.com/)
+* [and you?]({{ config.githubEdit }}{{ page.inputPath }}) (Edit this page on GitHub)</a>
 
 ### Organizations to Follow
 

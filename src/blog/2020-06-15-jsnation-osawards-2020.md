@@ -13,4 +13,4 @@ Just want to highlight that Eleventy was nominated for the [JSNation Conference 
 - Eleventy
 - Svelte.js
 
-[Winners for the cateogry](https://osawards.com/javascript/2020) were Deno and Svelte.
+[Winners for the category](https://osawards.com/javascript/2020) were Deno and Svelte.

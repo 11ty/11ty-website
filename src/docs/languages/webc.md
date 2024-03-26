@@ -818,7 +818,7 @@ _{{ frontmatterdata }}_
 You can also transform individual element content using `webc:type`. In addition to `webc:type="11ty"`, there are three more bundled types:
 
 1. `webc:type="js"` {% addedin "@11ty/webc@0.7.1" %}
-1. `webc:type="render"` (superceded by `webc:type="js"`)
+1. `webc:type="render"` (superseded by `webc:type="js"`)
 1. `webc:type="css:scoped"` (internal for `webc:scoped`—but overridable!)
 
 #### JavaScript Render Functions: `webc:type="js"` and `webc:type="render"`
@@ -1169,7 +1169,7 @@ module.exports = function(eleventyConfig) {
 		// or an Array (Eleventy WebC v0.9.2+)
 		components: [
 			"_components/**/*.webc",
-			"npm:@11ty/is-land/*.webc"
+			"npm:@11ty/is-land/*.webc",
 			"npm:@11ty/eleventy-plugin-syntaxhighlight/*.webc"
 		]
 	});

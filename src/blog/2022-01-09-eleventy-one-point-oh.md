@@ -81,35 +81,35 @@ Please use [`eleventy-upgrade-help`](https://github.com/11ty/eleventy-upgrade-he
 
 ### Minor
 
-- Passthrough Copy now throws an error if two or more files attempt to copy to the same output location. _Issue #1677_
-- For better URL-safe slugs by default, we now suggest using the new `slugify` global filter instead of the previous `slug`. `slug` is still included for backwards compatiblity. [`slugify` Docs](https://v1-0-0.11ty.dev/docs/filters/slugify/). [`eleventy-upgrade-help`](https://github.com/11ty/eleventy-upgrade-help) includes a permalink checker to compare `slug` and `slugify` output. _Issue #278_
-- Added support for protocol relative URLs in the `url` global filter (though technically accurate, using this method is discouraged). _Issue #1276_
-- New Eleventy supplied data:
-  - `eleventy` Global Data
-    - [Docs: Eleventy Supplied Data: `eleventy` Variable](https://v1-0-0.11ty.dev/docs/data-eleventy-supplied/#eleventy-variable)
-  - Environment Variables:
-    - [Docs: Eleventy Supplied Data: Environment Variables](https://v1-0-0.11ty.dev/docs/data-eleventy-supplied/#environment-variables)
-    - `ELEVENTY_ROOT`
-    - `ELEVENTY_SOURCE`
-    - `ELEVENTY_SERVERLESS`
-- `tags` are now de-duped. _Issue #1876_
-- JavaScript functions in `eleventyComputed` now have access to global filters.
-  - [Docs: Computed Data](https://v1-0-0.11ty.dev/docs/data-computed/#using-javascript) and _Issue #1862_
-- Ignores
-  - `node_modules` are now ignored by default. [Docs: Ignores](https://v1-0-0.11ty.dev/docs/ignores/#node_modules) and _Issue #383_
-  - Control ignores programmatically. [Docs: Ignores](https://v1-0-0.11ty.dev/docs/ignores/#configuration-api) and _Issue #894_ _#1405_
-- Configuration: Access to `eleventyConfig.dir` in plugins. _Issue #922_
-- Configuration: Events are now Async-friendly
-  - [Docs: Events](https://v1-0-0.11ty.dev/docs/events/) and _Issue #1363_
-- Replace `chalk` dependency with `kleur` _Issue #2113_
-- Adds template language-agnostic compilation caching for speeeeed _Issue #1529_
-- Fixes bug `--input=file.njk --output=.` would process 0 files. _Issue #1129_
-- Fixes bug where Eleventy would stop processing templates in watch/serve mode after a compilation error. _Issue #1658_
-- Front matter parsing errors will now report the filename of the offending file in the error message. _Issue #1152_
-- [Option to opt-out of the `browser-sync` JavaScript snippet](https://v1-0-0.11ty.dev/docs/watch-serve/#opt-out-of-the-browsersync-javascript-snippet)
-- Warning when Transforms that return empty content. _Issue #1487_
-- Transforms now have access to `inputPath` _Issue #789_
-- Shows the preprocessed template engine name on the console for `html` or `md` files _Issue #1478_
+* Passthrough Copy now throws an error if two or more files attempt to copy to the same output location. _Issue #1677_
+* For better URL-safe slugs by default, we now suggest using the new `slugify` global filter instead of the previous `slug`. `slug` is still included for backwards compatibility. [`slugify` Docs](https://v1-0-0.11ty.dev/docs/filters/slugify/). [`eleventy-upgrade-help`](https://github.com/11ty/eleventy-upgrade-help) includes a permalink checker to compare `slug` and `slugify` output. _Issue #278_
+* Added support for protocol relative URLs in the `url` global filter (though technically accurate, using this method is discouraged). _Issue #1276_
+* New Eleventy supplied data:
+  * `eleventy` Global Data
+    * [Docs: Eleventy Supplied Data: `eleventy` Variable](https://v1-0-0.11ty.dev/docs/data-eleventy-supplied/#eleventy-variable)
+  * Environment Variables:
+    * [Docs: Eleventy Supplied Data: Environment Variables](https://v1-0-0.11ty.dev/docs/data-eleventy-supplied/#environment-variables)
+    * `ELEVENTY_ROOT`
+    * `ELEVENTY_SOURCE`
+    * `ELEVENTY_SERVERLESS`
+* `tags` are now de-duped. _Issue #1876_
+* JavaScript functions in `eleventyComputed` now have access to global filters.
+  * [Docs: Computed Data](https://v1-0-0.11ty.dev/docs/data-computed/#using-javascript) and _Issue #1862_
+* Ignores
+  * `node_modules` are now ignored by default. [Docs: Ignores](https://v1-0-0.11ty.dev/docs/ignores/#node_modules) and _Issue #383_
+  * Control ignores programmatically. [Docs: Ignores](https://v1-0-0.11ty.dev/docs/ignores/#configuration-api) and _Issue #894_ _#1405_
+* Configuration: Access to `eleventyConfig.dir` in plugins. _Issue #922_
+* Configuration: Events are now Async-friendly
+  * [Docs: Events](https://v1-0-0.11ty.dev/docs/events/) and _Issue #1363_
+* Replace `chalk` dependency with `kleur` _Issue #2113_
+* Adds template language-agnostic compilation caching for speeeeed _Issue #1529_
+* Fixes bug `--input=file.njk --output=.` would process 0 files. _Issue #1129_
+* Fixes bug where Eleventy would stop processing templates in watch/serve mode after a compilation error. _Issue #1658_
+* Front matter parsing errors will now report the filename of the offending file in the error message. _Issue #1152_
+* [Option to opt-out of the `browser-sync` JavaScript snippet](https://v1-0-0.11ty.dev/docs/watch-serve/#opt-out-of-the-browsersync-javascript-snippet)
+* Warning when Transforms that return empty content. _Issue #1487_
+* Transforms now have access to `inputPath` _Issue #789_
+* Shows the preprocessed template engine name on the console for `html` or `md` files _Issue #1478_
 
 ### Nunjucks
 
