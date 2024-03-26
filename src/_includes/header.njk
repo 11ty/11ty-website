@@ -1,4 +1,8 @@
 <header class="elv-header{% if headerClass %} {{ headerClass }}{% endif %}">
+	<div class="elv-header-skip-content">
+		<a href="#skip-nav">Skip to navigation</a>
+		<a href="#skip-content">Skip to main content</a>
+	</div>
 	{%- set bannerLink = bannerlinks | matchbannerlink(bannerlinkOverride) %}
 	{%- if not bannerLink %}
 	{%- set bannerLink = bannerlinks | randompick %}

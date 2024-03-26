@@ -10,7 +10,9 @@
 		{%- if eleventyNavigation -%}
 			{%- set navKey = eleventyNavigation.key -%}
 		{%- endif -%}
-		{{ collections.sidebarNav | eleventyNavigation | eleventyNavigationToHtml({ activeKey: navKey, listClass: 'elv-toc-list', activeListItemClass: 'elv-toc-active' }) | safe }}
+		<div id="skip-nav">
+			{{ collections.sidebarNav | eleventyNavigation | eleventyNavigationToHtml({ activeKey: navKey, listClass: 'elv-toc-list', activeListItemClass: 'elv-toc-active' }) | safe }}
+		</div>
 
 		{%- if not ignoreSidebarCallout %}
 		{%- set comparison = comparisons | randompick %}

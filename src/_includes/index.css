@@ -531,13 +531,19 @@ footer.elv-layout {
 .elv-header-docs:after {
 	clear: both;
 }
+
+/* Skip to links */
 .elv-header-skip-content {
 	position: absolute;
 	top: 0.25em;
 	left: 1em;
+	color: #fff;
 	background-color: #353535;
 	z-index: 1001;
 	text-align: center;
+}
+.elv-header-skip-content a[href] {
+	color: inherit;
 }
 .elv-header-skip-content a:focus {
 	display: inline-block;
@@ -549,6 +555,7 @@ footer.elv-layout {
 	position: absolute;
 	overflow: hidden;
 }
+
 /* Header Hero */
 .elv-hero {
 	display: block;
@@ -647,104 +654,6 @@ a[href].elv-hero:visited {
 	.elv-header-docs .elv-hed {
 		font-size: 2.625em; /* 42px /16 */
 	}
-}
-
-/* Version */
-.latestversion {
-	font-size: 2em;
-	margin-top: 0;
-}
-.latestversion code {
-	font-size: 0.75em; /* 24px /32 */
-}
-.latestversion {
-	font-family: BenchNine, system-ui, -apple-system, sans-serif;
-}
-.tmpl-docs .latestversion {
-	position: absolute;
-	top: 1rem;
-	right: 1rem;
-	margin: 0;
-}
-
-/* News */
-.news {
-	text-align: center;
-}
-
-/* Direct Links / Markdown Headers */
-.direct-link {
-	font-family: sans-serif;
-	text-decoration: none;
-	font-style: normal;
-	margin-left: .1em;
-	font-weight: normal;
-}
-a[href].direct-link,
-a[href].direct-link:visited {
-	color: #949494;
-	opacity: 0;
-}
-a[href].direct-link:focus,
-a[href].direct-link:focus:visited,
-:hover > a[href].direct-link,
-:hover > a[href].direct-link:visited,
-:focus > a[href].direct-link,
-:focus > a[href].direct-link:visited {
-	opacity: 1;
-}
-/* don’t use a direct link, should be a link to the page */
-main .elv-toc + h1 .direct-link {
-	display: none;
-}
-
-/* Style Guide */
-.elv-sg-component {
-	background-color: #f9f9f9;
-	border-top: 1px dotted #ddd;
-	border-bottom: 1px dotted #ddd;
-	margin: 2rem 0;
-}
-@media (prefers-color-scheme: dark) {
-	.elv-sg-component {
-		background-color: #222;
-	}
-}
-.elv-sg-component:before,
-.elv-sg-component:after {
-	content: " "; /* 1 */
-	display: table; /* 2 */
-}
-.elv-sg-component:after {
-	clear: both;
-}
-.elv-layout .elv-sg-component-full {
-	margin-left: -1rem;
-	margin-right: -1rem;
-}
-
-/* Language List */
-.elv-langlist {
-	font-size: 0.8333333333333em; /* 15px /18 */
-	background-color: #f7f7f7;
-	padding: .5rem;
-	margin: 2em 0;
-}
-@media (prefers-color-scheme: dark) {
-	.elv-langlist {
-		background-color: #080808;
-	}
-}
-.elv-langlist-hed {
-	margin: 0;
-	display: inline;
-	vertical-align: middle;
-	border: none;
-	font-size: 1.4em; /* 21px /15 */
-}
-.elv-langlist > .inlinelist {
-	display: inline;
-	margin-left: 1em;
 }
 
 /* Breakpoint Overrides */

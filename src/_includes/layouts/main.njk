@@ -14,7 +14,7 @@ headerClass: elv-header-default
 <main class="elv-layout elv-layout-toc" {% if not excludeFromSearch %} data-pagefind-body{% endif %}>
 	{% include "components/docs-toc.njk" %}
 
-	{{ content | safe }}
+	<div id="skip-content">{{ content | safe }}</div>
 </main>
 
 <footer class="elv-footer elv-layout elv-layout-toc">
