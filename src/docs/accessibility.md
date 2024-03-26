@@ -43,8 +43,8 @@ One of the best ways to immerse yourself in the accessibility development commun
 
 * [Marcy Sutton](https://marcysutton.com/writing/)
 * [Scott O’Hara](https://www.scottohara.me/writing/)
-* [Adrian Roselli](http://adrianroselli.com/tag/accessibility)
-* [Sara Soueidan](https://www.sarasoueidan.com/blog/)
+* [Adrian Roselli](https://adrianroselli.com/tag/accessibility)
+* [Sara Soueidan](https://www.sarasoueidan.com/about/)
 * [Eric Bailey](https://ericwbailey.design/)
 * [Marco Zehe](https://www.marcozehe.de/)
 * [Dave Rupert](https://davatron5000.github.io/a11y-nutrition-cards/)
