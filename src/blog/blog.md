@@ -19,7 +19,7 @@ eleventyImport:
 ---
 
 {% for news in collections.blog | reverse %}
-* [{{ news.data.newstitle }}]({{ news.data.page.url }}) <small><em>on {{ news.date | newsDate }}</em></small>
+* [{{ news.data.newstitle }}]({{ news.url }}) <small><em>on {{ news.date | newsDate }}</em></small>
 {%- endfor %}
 * [Eleventy wins second Google Open Source Award](https://opensource.googleblog.com/2019/04/google-open-source-peer-bonus-winners.html) <small><em> on 2019 April 26</em></small>
 * [CERN 2019 WorldWideWeb Rebuild]({{ "https://twitter.com/eleven_ty/status/1106589569238085637" | canonicalTwitterUrl }}) site rebuilt using Eleventy! <small><em> on 2019 March</em></small>

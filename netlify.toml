@@ -2,58 +2,7 @@
 publish = "_site"
 command = "npm run build-production"
 
-[dev]
-framework = "#static"
-command = "npm start"
-
-[[plugins]]
-# https://github.com/netlify/netlify-plugin-lighthouse
-package = "@netlify/plugin-lighthouse"
-
-# Fails build when a category is below a threshold
-[plugins.inputs.thresholds]
-performance = 1.0
-accessibility = 1.0
-best-practices = 1.0
-seo = 1.0
-
-[plugins.inputs]
-output_path = "reports/lighthouse/index.html"
-
-[functions]
-directory = "netlify/functions/"
-
-# [[edge_functions]]
-# function = "user-preferences"
-# path = "/account/preferences/"
-
-[[redirects]]
-from = "/authors/:name/"
-to = "/.netlify/builders/serverless"
-status = 200
-force = true
-_generated_by_eleventy_serverless = "serverless"
-
-[[redirects]]
-# Web redirect
-from = "/activity/"
-to = "/firehose/"
-status = 302
-force = true
-
-[[redirects]]
-# Feed redirect
-from = "/follow/"
-to = "/firehose/firehose.rss"
-status = 302
-force = true
-
-[[redirects]]
-# Feed redirect
-from = "/follow/follow.rss"
-to = "/firehose/firehose.rss"
-status = 302
-force = true
+## Permanent redirects
 
 [[redirects]]
 from = "/speedlify/*"
@@ -76,6 +25,40 @@ force = true
 [[redirects]]
 from = "/twitter"
 to = "https://twitter.com/eleven_ty"
+status = 301
+force = true
+
+## Feed redirects
+
+[[redirects]]
+from = "/follow/"
+to = "/firehose/firehose.rss"
+status = 301
+force = true
+
+[[redirects]]
+from = "/follow/follow.rss"
+to = "/firehose/firehose.rss"
+status = 301
+force = true
+
+## Stuff has moved Redirects
+
+[[redirects]]
+from = "/docs/getting-started/"
+to = "/docs/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/docs/get-started/"
+to = "/docs/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/activity/"
+to = "/firehose/"
 status = 301
 force = true
 
@@ -133,3 +116,18 @@ for = "/blog/feed.xml"
   [headers.values]
   Content-Type = "application/xml; charset=utf-8"
   x-content-type-options = "nosniff"
+
+[[plugins]]
+# https://github.com/netlify/netlify-plugin-lighthouse
+package = "@netlify/plugin-lighthouse"
+
+  # Fails build when a category is below a threshold
+  [plugins.inputs.thresholds]
+  performance = 1.0
+  accessibility = 1.0
+  best-practices = 1.0
+  seo = 1.0
+
+  # This broke redirects
+  # [plugins.inputs]
+  # output_path = "reports/lighthouse/index.html"

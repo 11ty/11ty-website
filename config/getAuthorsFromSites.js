@@ -1,4 +1,4 @@
-module.exports = function getAuthors(sites) {
+export default function getAuthors(sites) {
 	let names = new Set();
 	for(let key in sites) {
 		let site = sites[key];

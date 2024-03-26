@@ -6,6 +6,7 @@ eleventyNavigation:
   order: 2
   excerpt: Group, reuse, and sort content in interesting ways.
 communityLinksKey: collections
+overrideCommunityLinks: true
 ---
 {% tableofcontents %}
 
@@ -29,7 +30,7 @@ title: Hot Take—Social Media is Considered Harmful
 This will place this `mypost.md` into the `post` collection with all other pieces of content sharing the `post` tag. To reference this collection and make a list of all posts, use the `collections` object in any template:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collections"} %}
   <div id="collections-liquid" role="tabpanel">
 
@@ -84,7 +85,7 @@ exports.render = function(data) {
 {% addedin "2.0.0-canary.21" %}Use the `eleventyImport` object to declare any collections you use (data cascade friendly) to inform the relationships for smarter incremental builds. This is an Array of collection names. Read more about [importing collections](https://github.com/11ty/eleventy/issues/975).
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collections-import"} %}
   <div id="collections-import-liquid" role="tabpanel">
 
@@ -155,7 +156,7 @@ exports.render = function(data) {
 Compare the `post.url` and special Eleventy-provided `page.url` variable to find the current page. Building on the previous example:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsnav"} %}
   <div id="collectionsnav-liquid" role="tabpanel">
 
@@ -217,7 +218,7 @@ By default Eleventy puts all of your content (independent of whether or not it h
 ### Link to all Eleventy generated content
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsall"} %}
   <div id="collectionsall-liquid" role="tabpanel">
 
@@ -343,9 +344,8 @@ This content would not show up in any of the collections it was added to with `t
 
 ## Collection Item Data Structure
 
-
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsitem"} %}
   <div id="collectionsitem-liquid" role="tabpanel">
 
@@ -399,6 +399,7 @@ Note in the above example that we output the `post.data.title` value? Similarly,
 
 * `page`: everything in [Eleventy’s supplied page variable](/docs/data-eleventy-supplied/#page-variable) for this template (including `inputPath`, `url`, `date`, and others). {% addedin "2.0.0-canary.19" %}
 * `data`: all data for this piece of content (includes any data inherited from layouts)
+* `rawInput`: the raw input of the template (before any processing). This does _not_ include front matter. {% addedin "v3.0.0-alpha.1" %} _(Related: [#1206](https://github.com/11ty/eleventy/issues/1206))_
 * `content`: the rendered content of this template. This does _not_ include layout wrappers. {% addedin "2.0.0-canary.19" %}
 
 ```js
@@ -410,8 +411,12 @@ Note in the above example that we output the `post.data.title` value? Similarly,
     // … and everything else in Eleventy’s `page`
   },
   data: { title: 'Test Title', tags: ['tag1', 'tag2'], date: 'Last Modified', /* … */ },
-  content: '<h1>This is my title</h1>\n\n<p>This is content…'
+  content: '<h1>Test Title</h1>\n\n<p>This is text content…',
+  // Pre-release only: {{ "3.0.0-alpha.1" | coerceVersion }}
+{%- raw %}
+  rawInput: '<h1>{{ title }}</h1>\n\n<p>This is text content…',
 }
+{% endraw %}
 ```
 
 _Backwards compatibility notes:_
@@ -449,7 +454,7 @@ This collection would be sorted like this:
 To sort descending in your template, you can use a filter to reverse the sort order. For example, it might look like this:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionssort"} %}
   <div id="collectionssort-liquid" role="tabpanel">
 
@@ -728,3 +733,8 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
+## From the Community
+
+{% include "community-contributed.njk" %}
+
+{% include "11tybundle.njk" %}

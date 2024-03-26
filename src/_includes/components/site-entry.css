@@ -1,3 +1,8 @@
+.sites--reverse a {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .sites-lo-footer {
   margin-bottom: 2em;
 }
@@ -16,12 +21,12 @@
   height: auto;
 }
 .sites-icon-auto.sites-icon-auto.sites-icon-auto {
-	width: 23.4375em; /* 375px /16 */
-	height: auto;
-	padding: 2.5em;
+  width: 23.4375em; /* 375px /16 */
+  height: auto;
+  padding: 2.5em;
 }
 .sites-site-official .sites-screenshot {
-	border-color: #666;
+  border-color: #666;
 }
 @media (min-width: 30em) { /* 480px */
   .site-top {
@@ -74,126 +79,184 @@
 
 
 .sites-vert {
-	margin-top: 2em;
+  margin-top: 2em;
   margin-bottom: 2em;
 }
 .elv-callout .sites-vert {
-	margin-top: 1em;
-	margin-bottom: 0;
+  margin-top: 1em;
+  margin-bottom: 0;
 }
 .sites-vert .sites-screenshot {
-	margin-top: 4px;
-	margin-bottom: 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 .sites-vert .avatar {
-	margin-right: 3px;
-	margin-left: 0;
-	width: 1em;
-	height: 1em;
-	object-fit: contain;
+  margin-right: 3px;
+  margin-left: 0;
+  width: 1em;
+  height: 1em;
+  object-fit: contain;
 }
 .sites-vert > .lo-grid {
   --fl-gap-h: 1rem;
   --fl-gap-v: 1rem;
-  --lo-c-minwidth: 7.777777777778em; /* 140px /18 */
-	--lo-grid-repeat: auto-fill;
+  --lo-c-minwidth: 10em;
+  --lo-grid-repeat: auto-fill;
 }
-.sites-vert--md > .lo-grid {
-  --lo-c-minwidth: 8.5em; /* 136px /16 */
-}
+.sites-vert--md > .lo-grid,
 .sites-vert--lg > .lo-grid {
-  --lo-c-minwidth: 10em; /* 160px /16 */
+  --lo-c-minwidth: 7em;
 }
+
+@media (min-width: 28.125em) { /* 450px /16 */
+	.sites-vert--md > .lo-grid {
+		--lo-c-minwidth: 8.5em; /* 136px /16 */
+	}
+  .sites-vert--lg > .lo-grid {
+    --lo-c-minwidth: 10em; /* 160px /16 */
+  }
+}
+
 .sites-site-name {
-	display: block;
-	text-align: center;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	font-size: 0.7777777777778em; /* 14px /18 */
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.8888888888889em; /* 16px /18 */
 }
 .sites-site-name--nowrap {
-	display: block;
-	font-size: 0.7777777777778em; /* 14px /18 */
+  display: block;
+  font-size: 0.7777777777778em; /* 14px /18 */
 }
 .sites-site-description {
-	display: none;
-	margin: 0.6428571428571em 0; /* 9px /14 */
-	font-size: 0.7777777777778em; /* 14px /18 */
+  display: none;
+  margin: 0.6428571428571em 0; /* 9px /14 */
+  font-size: 0.7777777777778em; /* 14px /18 */
 }
 .sites-vert--md .sites-site-description,
 .sites-vert--lg .sites-site-description {
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 4;
-	overflow: hidden;
-	width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  width: 100%;
 }
 .sites-site-vert a:focus .sites-screenshot,
 .sites-site-vert a:hover .sites-screenshot {
-	--shadow-color: rgba(234, 0, 255, 0.747);
-	box-shadow: 0 0 0 4px var(--shadow-color);
-}
-@media (min-width: 62.5em) { /* 1000px */
-	.elv-default .sites-vert {
-		width: 144%;
-		margin-left: -22%;
-	}
-}
-@media (min-width: 84em) { /* 1344px */
-	.elv-default .sites-vert {
-		width: 170%;
-		margin-left: -35%;
-	}
+  --shadow-color: rgba(234, 0, 255, 0.747);
+  box-shadow: 0 0 0 4px var(--shadow-color);
 }
 
 .sites-site-vert > a {
-	text-decoration: none;
+  text-decoration: none;
 }
 .sites-site-vert speedlify-score {
-	justify-content: center;
+  justify-content: center;
 }
 
 .sites-site-vert {
-	position: relative;
+  position: relative;
 }
 .sites-site-vert .sites-site-lighthouse {
-	font-size: 0.6666666666667em; /* 12px /18 */
-	transform: translateY(-100%);
-	position: absolute;
-	right: 1px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	border-radius: 1.4em 0 .4em 0;
-	background: rgba(0,0,0,.04);
-	font-weight: 600;
-	padding: 4px;
+  font-size: 0.6666666666667em; /* 12px /18 */
+  transform: translateY(-100%);
+  position: absolute;
+  right: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 1.4em 0 .4em 0;
+  background: rgba(255,255,255,0.9);
+  font-weight: 600;
+  padding: 4px;
 }
-
 .sites-site-vert .sites-site-lighthouse .speedlify-score {
 	background-color: #fff;
 }
 
+@media (prefers-color-scheme: dark) {
+	.sites-site-vert .sites-site-lighthouse {
+		background: rgba(0,0,0,0.85);
+	}
+}
+
 @supports (aspect-ratio: 1 / 1) {
-	.img-gallery {
-		--shadow-color: rgba(234, 0, 255, 0.747);
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		aspect-ratio: 1 / 2;
-		border-radius: .4em;
-		border: 2px solid #ccc;
-		margin-bottom: .3em;
-		padding: .5em;
-	}
-	.img-gallery .sites-screenshot {
-		border: none;
-	}
-	.sites-site-vert a:hover .img-gallery {
-		box-shadow: 0 0 0 4px var(--shadow-color);
-	}
-	.sites-site-vert a:hover .img-gallery .sites-screenshot {
-		box-shadow: none;
-	}
+  .img-gallery {
+    --shadow-color: rgba(234, 0, 255, 0.747);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    aspect-ratio: 1 / 2;
+    border-radius: .4em;
+    border: 2px solid #ccc;
+    margin-bottom: .3em;
+    padding: .5em;
+  }
+  .img-gallery .sites-screenshot {
+    border: none;
+  }
+  .sites-site-vert a:hover .img-gallery {
+    box-shadow: 0 0 0 4px var(--shadow-color);
+  }
+  .sites-site-vert a:hover .img-gallery .sites-screenshot {
+    box-shadow: none;
+  }
+}
+
+/* Centered */
+.sites--center {
+	text-align: center;
+}
+
+/* Tags */
+.sites-tag {
+  --tag-text: #000;
+  --tag-bg: #dff7ff;
+  font-size: 0.6666666666667em; /* 12px /18 */
+  line-height: 1.5;
+  display: inline-block;
+  padding: 0 .75em;
+  border-radius: .75em;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+}
+@media (prefers-color-scheme: dark) {
+  .sites-tag {
+    --tag-text: #dff7ff;
+    --tag-bg: #000;
+  }
+}
+
+/* Featured partner */
+.sites-featured {
+  grid-column: 1/3;
+}
+.sites-featured .sites-screenshot {
+  aspect-ratio: 10/4.81;
+  object-fit: cover;
+  object-position: top;
+}
+.sites-featured .sites-site-name {
+  font-weight: 700;
+}
+.sites-vert:not(:has(.sites-featured)) .sites-site-name {
+	font-weight: 700;
+}
+.sites-vert:has(.sites-featured) .sites-site-vert:not(.sites-featured) .avatar-indieweb {
+	display: none;
+}
+
+
+/* Host /generator icons on author pages on screenshots */
+.sites-screenshot-container-icons {
+	display: flex;
+	gap: .25em;
+	justify-content: space-between;
+	margin-top: -.5em;
+	padding: .25em;
+}
+.sites-screenshot-container-icons img {
+	margin: 0;
+	max-width: 1em;
 }

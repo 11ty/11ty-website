@@ -21,7 +21,7 @@ A <dfn>filter</dfn> is a function which can be used within templating syntax to 
 Various template engines can be extended with custom filters to modify content. Here are a few examples:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "filter"} %}
   <div id="filter-njk" role="tabpanel">
     {% codetitle "sample.njk" %}
@@ -170,3 +170,7 @@ Note that [Nunjucks `addNunjucksAsyncFilter`](/docs/languages/nunjucks/#asynchro
 {% callout "info" %}
 Markdown files are pre-processed as Liquid templates by default—any filters available in Liquid templates are also available in Markdown files. Likewise, if you <a href="/docs/config/#default-template-engine-for-markdown-files">change the template engine for Markdown files</a>, the filters available for that templating language will also be available in Markdown files.
 {% endcallout %}
+
+## From the Community
+
+{% include "11tybundle.njk" %}

@@ -14,6 +14,9 @@ Eleventy uses the [`gray-matter` npm package](https://www.npmjs.com/package/gray
 
 Check out the [full list of available `gray-matter` options](https://www.npmjs.com/package/gray-matter#options). By default, Eleventy uses `gray-matter`’s default options.
 
+* [**Related**: Change the default Front Matter syntax project-wide](/docs/data-frontmatter/#change-the-default-format-project-wide)
+
+
 {% codetitle ".eleventy.js" %}
 
 ```js
@@ -23,7 +26,6 @@ module.exports = function(eleventyConfig) {
   });
 };
 ```
-
 
 ### Example: use JavaScript in your front matter {% addedin "0.9.0" %}
 

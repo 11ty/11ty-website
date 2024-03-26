@@ -2,14 +2,14 @@
 	font-size: 1rem; /* Reset */
 }
 .elv-toc details {
-	--details-force-closed: (max-width: 63.9375em); /* 1023px */
+	--details-force-closed: (max-width: 54.9375em); /* 880px - 1 */
 	margin-top: 0;
 }
 .elv-toc details > summary {
 	font-size: 1.375rem; /* 22px /16 */
 	margin-bottom: .5em;
 }
-@media (min-width: 64em) { /* 1024px */
+@media (min-width: 55em) { /* 880px */
 	.elv-toc {
 		position: absolute;
 		left: 1rem;
@@ -85,6 +85,9 @@
 	color: #222;
 	font-weight: 600;
 	border-bottom: 1px solid #ddd;
+	margin-bottom: 1em;
+}
+.elv-toc-list > li.elv-toc-has-children > a {
 	margin-bottom: 0.25em; /* 4px /16 */
 }
 @media (prefers-color-scheme: dark) {
@@ -132,7 +135,7 @@ h1 + details.toc {
 details.toc,
 details.toc[open] {
 	border: 2px solid #ccc;
-	outline: inherit;
+	box-shadow: none;
 }
 details.toc[open] {
 	background-color: #f7f7f7;

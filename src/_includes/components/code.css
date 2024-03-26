@@ -7,6 +7,8 @@ pre {
 
 	overflow-x: auto;
 	font-size: 0.875em; /* 14px /16 */
+	font-family: Roboto Mono, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+
 	-moz-tab-size: 2;
 	-o-tab-size: 2;
 	tab-size: 2;
@@ -20,13 +22,7 @@ pre {
 	background-color: #272822;
 	color: #fff;
 }
-details[open] pre {
-	margin-left: 0;
-	margin-right: 0;
-}
-pre {
-	font-family: Roboto Mono, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
-}
+
 .fl > * > pre {
 	margin-top: 0;
 }
@@ -61,7 +57,7 @@ pre + .note {
 		font-size: 1em; /* 16px /16 */
 	}
 }
-@media (min-width: 64em) { /* 1024px */
+@media (min-width: 55em) { /* 880px */
 	pre {
 		border-radius: 0.3em;
 	}

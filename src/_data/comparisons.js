@@ -1,4 +1,4 @@
-module.exports = [
+export default [
 	{
 		title: "<code>npm install</code>",
 		url: "/docs/performance/#installation-performance",

@@ -62,6 +62,9 @@ module.exports = function(eleventyConfig) {
 
     // Change the default file encoding for reading/serving files
     encoding: "utf-8",
+
+    // Show the dev server version number on the command line
+    showVersion: false,
   });
 };
 ```

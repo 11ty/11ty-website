@@ -1,8 +1,9 @@
-require('dotenv').config();
+import "dotenv/config";
 
-const EleventyFetch = require("@11ty/eleventy-fetch");
-const fs = require("fs-extra");
-const fetch = require("node-fetch");
+import EleventyFetch from "@11ty/eleventy-fetch";
+import fs from "fs-extra";
+import fetch from "node-fetch";
+
 // const query = `
 // query eleventyMembers {
 //   collective(slug: "11ty") {
@@ -42,6 +43,7 @@ query eleventyMembers {
       nodes {
         account {
           name
+          type
           twitterHandle
           githubHandle
           ... on Individual {
@@ -81,55 +83,59 @@ async function findMissingUsers(names) {
   console.log( `${missing.size} missing names from GraphQL data source.` );
 }
 
-(async function() {
-  if(!process.env.OPENCOLLECT_API_KEY) {
-    console.log( "Missing OPENCOLLECT_API_KEY. Do you have a .env file?" );
+if(!process.env.OPENCOLLECT_API_KEY) {
+  console.log( "Missing OPENCOLLECT_API_KEY. Do you have a .env file?" );
+	process.exit();
+}
+
+let url = "https://api.opencollective.com/graphql/v2";
+let opts = {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Api-Key": process.env.OPENCOLLECT_API_KEY
+  },
+  body: JSON.stringify({ query })
+};
+
+let result = await fetch(url, opts)
+  .then(res => res.json())
+  .catch(function(error) {
+    console.error( error );
+  });
+
+if(result?.errors?.length) {
+	console.error( result.errors );
+	process.exit();
+}
+
+let alreadySentFile = await fs.readFile("./node-supporters/invited.csv", "utf-8");
+let alreadySentEmails = alreadySentFile.split("\n").map(entry => entry.trim());
+let emailsOnly = new Set();
+let members = result.data.collective.members.nodes;
+
+for(let member of members) {
+  if(!member.account.email) {
+    console.log( "Falsy email for", member );
+  } else if(member.account.email && alreadySentEmails.indexOf(member.account.email) === -1) {
+    console.log( "New supporter:", member );
+    emailsOnly.add(member.account.email);
   } else {
-    let url = "https://api.opencollective.com/graphql/v2";
-    let opts = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Api-Key": process.env.OPENCOLLECT_API_KEY
-      },
-      body: JSON.stringify({ query })
-    };
-
-    let result = await fetch(url, opts)
-      .then(res => res.json())
-      .catch(function(error) {
-        console.error( error );
-      });
-
-    let alreadySentFile = await fs.readFile("./node-supporters/invited.csv", "utf-8");
-    let alreadySentEmails = alreadySentFile.split("\n").map(entry => entry.trim());
-    let emailsOnly = new Set();
-    let members = result.data.collective.members.nodes;
-
-    for(let member of members) {
-      if(!member.account.email) {
-        console.log( "Falsy email for", member );
-      } else if(member.account.email && alreadySentEmails.indexOf(member.account.email) === -1) {
-        console.log( "New supporter:", member );
-        emailsOnly.add(member.account.email);
-      } else {
-        console.log( "Already invited", member.account.email );
-      }
-    }
-
-    await fs.writeFile("./node-supporters/node-supporters.json", JSON.stringify(result, null, 2));
-    console.log( "Wrote node-supporters.json." );
-
-    let newEmails = Array.from(emailsOnly);
-    await fs.writeFile("./node-supporters/need-to-invite.csv", newEmails.join("\n"));
-    console.log( "Wrote need-to-invite.csv." );
-    console.log( `${newEmails.length} ${newEmails.length != 1 ? "entries" : "entry"}.` );
-
-    // Find missing
-    let memberNames = new Set();
-    for(let member of members) {
-      memberNames.add(member.account.name);
-    }
-    await findMissingUsers(memberNames);
+    console.log( "Already invited", member.account.email );
   }
-})();
+}
+
+await fs.writeFile("./node-supporters/node-supporters.json", JSON.stringify(result, null, 2));
+console.log( "Wrote node-supporters.json." );
+
+let newEmails = Array.from(emailsOnly);
+await fs.writeFile("./node-supporters/need-to-invite.csv", newEmails.join("\n"));
+console.log( "Wrote need-to-invite.csv." );
+console.log( `${newEmails.length} ${newEmails.length != 1 ? "entries" : "entry"}.` );
+
+// Find missing
+let memberNames = new Set();
+for(let member of members) {
+  memberNames.add(member.account.name);
+}
+await findMissingUsers(memberNames);

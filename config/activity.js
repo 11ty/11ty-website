@@ -1,13 +1,8 @@
-require("dotenv").config();
-const EleventyFetch = require("@11ty/eleventy-fetch");
+import "dotenv/config";
+import EleventyFetch from "@11ty/eleventy-fetch";
+import { ActivityFeed } from '@11ty/eleventy-activity-feed';
 
-module.exports = async function() {
-	if(process.env.ELEVENTY_SERVERLESS) {
-		return;
-	}
-
-	const { ActivityFeed } = await import("@11ty/eleventy-activity-feed");
-
+export default async function() {
 	let feed = new ActivityFeed();
 
 	feed.setCacheDuration("1d"); // note that cache is persisted on CI server
@@ -17,7 +12,7 @@ module.exports = async function() {
 	feed.addSource("atom", "Blog", "https://www.11ty.dev/blog/feed.xml");
 	feed.addSource("atom", "Quick Tips", "https://www.11ty.dev/docs/quicktips/feed.xml");
 	feed.addSource("rss", "Mastodon", "https://fosstodon.org/users/eleventy.rss");
-	feed.addSource("twitterUser", "Twitter", "eleven_ty", "949639269433380864");
+	// feed.addSource("twitterUser", "Twitter", "eleven_ty", "949639269433380864");
 
 	if(process.env.NODE_ENV === "production") {
 		// Warning: at time of writing Eleventy has 51 repos, beware if this grows beyond the max of 100

@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-icons",
+	"author": "uncenter",
+	"description": "A highly configurable plugin to use icons from any icon set you want."
+}

@@ -21,7 +21,7 @@
 			{%- if hash -%}
 				<a href="https://www.11ty.dev/speedlify/#site-{{ hash }}" class="elv-externalexempt nound">
 					<is-land on:visible import="/js/speedlify-score.js">
-						<speedlify-score speedlify-url="https://www.11ty.dev/speedlify/" hash="{{ hash }}" score weight rank rank-change></speedlify-score>
+						<speedlify-score speedlify-url="https://www.11ty.dev/speedlify/" hash="{{ hash }}" score weight rank></speedlify-score>
 					</is-land>
 				</a>
 			{%- endif -%}
@@ -30,5 +30,6 @@
 	</div>
 	<div class="sites-screenshot-container">
 		{% getScreenshotHtml site.fileSlug, site.url %}
+		<div class="sites-screenshot-container-icons">{% hostavatar site.url %} {% generatoravatar site.url %}</div>
 	</div>
 </div>

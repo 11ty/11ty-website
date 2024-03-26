@@ -1,7 +1,6 @@
 .elv-possum-pic + .supporters-avatar {
 	display: none;
 	position: absolute;
-	opacity: .9;
 	width: 5vw;
 	height: auto;
 	margin: 0;
@@ -9,9 +8,13 @@
 @media (min-width: 41.875em) { /* 670px */
 	.elv-possum-pic + .supporters-avatar {
 		display: block;
-		top: 1.0625rem; /* 17px /16 */
-		right: 2.1875rem; /* 35px /16 */
-		width: 2rem; /* 32px /16 */
+		top: 0.8625rem;
+		right: 1.8875rem;
+		width: 2.9rem;
+		object-fit: cover;
+		height: 3.8em;
+		transform: rotate(5.2deg);
+		border: 2px solid #352a24;
 	}
 }
 .elv-header-default .elv-possum-pic + .supporters-avatar {
@@ -57,23 +60,21 @@
 	display: flex;
 	justify-content: center;
 }
-.supporters-gold-sanity {
-	flex-grow: 1.5;
-}
 .supporters-gold-nordhealth {
-  flex-grow: 1.8;
+	flex-grow: 1.8;
 }
 .supporters-gold-cloudcannon {
 	flex-grow: 1.7;
+	margin: 0 auto;
+	max-width: 28em;
 }
 .supporters-gold-cloudcannon svg {
-	color: #034AD8;
+	background-color: #034AD8;
+	color: #fff;
+	padding: 1.25em;
+	border-radius: .5em;
 }
-@media (prefers-color-scheme: dark) {
-	.supporters-gold-cloudcannon svg {
-		color: #fff;
-	}
-}
+
 .supporters-gold-transloadit svg {
 	color: #0D1419;
 }
@@ -82,11 +83,8 @@
 		color: #fff;
 	}
 }
-@media (min-width: 64em) { /* 1024px */
-	.elv-docs .supporters-gold-sanity {
-		flex-grow: 1;
-	}
-  .elv-docs .supporters-gold-nordhealth {
+@media (min-width: 55em) { /* 880px */
+	.supporters-gold-nordhealth {
 		flex-grow: 1.3;
 	}
 }
@@ -95,6 +93,8 @@
 	--lo-c-minwidth: 8em;
 	--fl-gap-v: 2em;
 	--fl-gap-h: 3em;
+	max-width: 40em;
+	margin: 0 auto;
 }
 .supporters-gold .logo,
 .supporters-gold svg {
@@ -110,22 +110,6 @@
 	margin-top: 2em;
 	margin-bottom: 1em;
 }
-.supporters-gold .subhed strong {
-	color: hsl(51, 97%, 27%);
-}
-@media (prefers-color-scheme: dark) {
-	.supporters-gold .subhed strong {
-		color: hsl(51, 97%, 54%);
-	}
-}
 .supporters-gold + .facepile-supporters {
 	margin-top: 0;
-}
-
-.supporters-netlify {
-	min-width: 10em;
-	width: 100%;
-	height: auto;
-	display: block;
-	margin: 0 auto;
 }

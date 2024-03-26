@@ -9,19 +9,7 @@ eleventyNavigation:
 
 Configuration files are optional. Add an `.eleventy.js` file to root directory of your project to configure Eleventy to your own project’s needs. It might look like this:
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  // Return your Object options:
-  return {
-    dir: {
-      input: "views",
-      output: "dist"
-    }
-  }
-};
-```
+{% include "config/intro.njk" %}
 
 We support returning both a callback function (shown above) or an object literal (`module.exports = {}`). Callback functions are preferred and allow you further customization options using Eleventy’s provided helper methods.
 
@@ -33,6 +21,8 @@ We support returning both a callback function (shown above) or an object literal
 * Add some [Plugins](/docs/plugins/).
 
 ## Default filenames
+
+{% callout %}Is your config file getting big and hard to understand? You can <a href="/docs/quicktips/local-plugin/">create your own plugin</a> to move some code out.{% endcallout %}
 
 We look for the following configuration files:
 
@@ -79,17 +69,7 @@ npx @11ty/eleventy --input=views
 
 ##### Configuration
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  return {
-    dir: {
-      input: "views"
-    }
-  }
-};
-```
+{% include "config/config.njk" %}
 
 
 ### Directory for Includes

@@ -1,6 +1,6 @@
-const { DateTime } = require("luxon");
+import { DateTime } from "luxon";
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
 	eleventyConfig.addFilter("monthDiff", (dateStr) => {
 		let d = DateTime.fromSQL(dateStr);
 		let duration = d.diffNow("months").toObject();

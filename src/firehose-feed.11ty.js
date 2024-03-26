@@ -1,8 +1,8 @@
-const activity = require("../config/activity.js");
+import activity from "../config/activity.js";
 
 const PERMALINK = "/firehose/firehose.rss";
 
-module.exports = class {
+export default class {
 	data() {
 		return {
 			permalink: PERMALINK,

@@ -1,4 +1,4 @@
-module.exports = function(obj, key, insensitive = true) {
+export default function(obj, key, insensitive = true) {
 	for(let objKey in obj) {
 		if(insensitive) {
 			if(typeof objKey === "string" && objKey.toLowerCase() === key.toLowerCase()) {

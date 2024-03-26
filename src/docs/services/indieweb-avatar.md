@@ -3,7 +3,7 @@ pageTitle: IndieWeb Avatar
 eleventyNavigation:
   key: IndieWeb Avatar
   excerpt: Returns an avatar representing a URL.
-  # order: 0
+  order: 2
 communityLinksKey: api-services-avatar
 ---
 {% tableofcontents %}
@@ -14,6 +14,8 @@ Feed this runtime service a URL and it will extract an avatar image using these 
 1. `<link rel="apple-touch-icon-precomposed">`
 1. `<link rel="icon">`
 1. `favicon.ico`
+1. `favicon.ico` that isn’t an `.ico` file
+1. First `<img>` in `<header>`
 
 All `rel` lookups match against attribute values that are space separated lists.
 

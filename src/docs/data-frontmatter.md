@@ -38,7 +38,21 @@ Eleventy allows many options to control how your template works. The most popula
 
 ## Alternative Front Matter Formats
 
-Eleventy uses the [`gray-matter` package](https://github.com/jonschlinkert/gray-matter) for front matter processing. `gray-matter` (and thus, Eleventy) includes support out of the box for YAML, JSON, and even JavaScript object literals in front matter.
+Eleventy uses the [`gray-matter` package](https://github.com/jonschlinkert/gray-matter) for front matter processing. `gray-matter` (and thus, Eleventy) includes support out of the box for `yaml`, `json`, and `js` for JavaScript object literals in front matter (some [aliases](https://github.com/jonschlinkert/gray-matter/blob/ce67a86dba419381db0dd01cc84e2d30a1d1e6a5/lib/engine.js) are also included).
+
+### Change the default format project-wide {% addedin "0.9.0" %}
+
+By default, `yaml` is used when a front matter syntax is not explicitly specified. You can change this project-wide with:
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setFrontMatterParsingOptions({
+    language: "json", // default is "yaml"
+  });
+};
+```
 
 ### Add your own format {% addedin "0.9.0" %}
 
@@ -88,3 +102,7 @@ _Warning: while Nunjucks and Liquid syntax are similar, the following example wi
 ## Advanced: Customize Front Matter Parsing {% addedin "0.9.0" %}
 
 Configure [front matter for customized excerpts, TOML parsing, and more](/docs/data-frontmatter-customize/).
+
+## From the Community
+
+{% include "11tybundle.njk" %}

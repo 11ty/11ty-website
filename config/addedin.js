@@ -1,5 +1,5 @@
-const semver = require("semver");
-const versions = require("../src/_data/versions");
+import semver from "semver";
+import versions from "../src/_data/versions.js";
 
 const MINIMUM_VERSION_SHOWN = "1.0.0";
 
@@ -51,6 +51,9 @@ function coerceVersion(version) {
 	if(isPreReleaseOf(versionText, newestPublishedVersion.tag)) {
 		// Note 1: Strip -canary.1 or -beta.1 suffixes after 2.0.0 is shipped
 		versionText = versionText.split("-")[0];
+	} else if(isPreRelease(versionText) && semver.lt(versionText, newestPublishedVersion.tag)) {
+		// v2.0.0-beta.1 and the newest version is v2.0.1
+		versionText = versionText.split("-")[0];
 	}
 
 	return versionText;
@@ -63,6 +66,10 @@ function addedIn(version, tag, extraClass) {
 		if(semver.lt(version, MINIMUM_VERSION_SHOWN)) {
 			return "";
 		}
+		const newestPublishedVersion = versions.filter(v => v.tag !== "LATEST").shift();
+		if(isPreRelease(version) && semver.gt(version, newestPublishedVersion.tag)) {
+			beforeText = "Pre-release only: "
+		}
 	}
 
 	tag = tag || "span";
@@ -70,7 +77,7 @@ function addedIn(version, tag, extraClass) {
 	return `<${tag} data-pagefind-ignore class="minilink minilink-addedin${extraClass ? ` ${extraClass}`: ""}" data-uncoerced-version="${version}">${beforeText}${coerceVersion.call(this, version)}</${tag}>`;
 }
 
-module.exports = {
+export {
 	addedIn,
 	coerceVersion
 };

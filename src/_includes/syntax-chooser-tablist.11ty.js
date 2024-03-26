@@ -1,9 +1,20 @@
-exports.render = async function({id, valid, additions, subtractions, label}) {
+async function render({id, valid, additions, subtractions, only, label}) {
 	let syntaxes = {};
 
 	let extraSyntaxes = {
+		html: "HTML",
 		md: "Markdown",
 		webc: "WebC",
+		jscjs: "CommonJS",
+		jsesm: "ESM",
+		"any": "Any"
+	};
+
+	let syntaxMap = {
+		liquid: "Liquid",
+		njk: "Nunjucks",
+		js: "11ty.js",
+		hbs: "Handlebars",
 	};
 
 	// Extras go first
@@ -14,12 +25,13 @@ exports.render = async function({id, valid, additions, subtractions, label}) {
 		}
 	}
 
-	Object.assign(syntaxes, {
-		liquid: "Liquid",
-		njk: "Nunjucks",
-		js: "11ty.js",
-		hbs: "Handlebars",
-	});
+	if(only) {
+		for(let syn of (only || "").split(",")) {
+			syntaxes[syn] = extraSyntaxes[syn] || syntaxMap[syn];
+		}
+	} else {
+		Object.assign(syntaxes, syntaxMap);
+	}
 
 	for(let syn of (subtractions || "").split(",")) {
 		if(syn) {
@@ -37,7 +49,7 @@ exports.render = async function({id, valid, additions, subtractions, label}) {
 	for(let syn in syntaxes) {
 		let isPreferenceSelectable = validArray.length === 0 || validArray.includes(syn);
 
-		str.push(`<a href="#${id}-${syn}" role="tab"{% if syntax == "${syn}"${isPreferenceSelectable ? defaultOnNoPreference : ""} %} aria-selected="true"{% endif %}>${syntaxes[syn]}</a>`);
+		str.push(`<a href="#${id}-${syn}" role="tab" data-tabs-persist="templatelang:${syn}"{% if syntax == "${syn}"${isPreferenceSelectable ? defaultOnNoPreference : ""} %} aria-selected="true"{% endif %}>${syntaxes[syn]}</a>`);
 
 		// only the first one should default
 		if(isPreferenceSelectable) {
@@ -46,24 +58,13 @@ exports.render = async function({id, valid, additions, subtractions, label}) {
 	}
 
 	let liquidTemplate = `
-{% assign syntax = eleventy.edge.cookies.syntax %}
+{% assign syntax = false %}
 <div role="tablist" aria-label="Template Language Chooser">
 	${label || "View this example in"}:
 	${str.join("\n")}
 </div>`;
 
-	// Fancy: only use the Edge plugin on NETLIFY or when using Netlify CLI
-	if(false && (process.env.NETLIFY || process.env.NETLIFY_DEV)) {
-		return `<div class="tmplsyntax">
-	${await this.edge(liquidTemplate, "liquid")}
-	<details-utils close-esc close-click-outside>
-	<details class="tmplsyntax-default">
-		<summary>Always prefer…</summary>
-		<div class="tmplsyntax-dropdown">${await this.renderFile("./src/_includes/syntax-chooser-form.njk")}</div>
-	</details>
-</details-utils></div>`;
-	} else {
-		// Fallback to edge-less tabs on Eleventy Dev Server
-		return await this.renderTemplate(liquidTemplate, "liquid");
-	}
+	return await this.renderTemplate(liquidTemplate, "liquid");
 };
+
+export { render };

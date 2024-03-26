@@ -13,13 +13,9 @@
 	font-family: system-ui, -apple-system, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
-	.minilink {
+	.minilink.minilink {
 		background-color: #222;
-		/*
-			!important to override .elv-callout a
-			see _includes/components/callout.css
-		 */
-		color: #fff !important;
+		color: #fff;
 	}
 }
 table .minilink {
@@ -30,7 +26,7 @@ table .minilink {
 }
 .minilink[href]:hover,
 .minilink[href]:focus {
-	background-color: #bbb;
+	background-color: #eee;
 }
 @media (prefers-color-scheme: dark) {
 	.minilink[href]:hover,
@@ -109,4 +105,47 @@ h4 .minilink {
 	box-shadow: none;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
+}
+
+/* Build cost */
+.minilink-buildcost {
+	--internal-shadow-hsl: 0deg 0% 75%;
+	font-weight: 700;
+	text-transform: uppercase;
+		/* via https://www.joshwcomeau.com/shadow-palette/ */
+	box-shadow: 0px 0.3px 0.5px hsl(var(--internal-shadow-hsl) / 0),
+		0.1px 4.3px 6.5px hsl(var(--internal-shadow-hsl) / 0.14);
+}
+.minilink-buildcost code:before {
+	content: "🧰";
+	margin-right: .25em;
+}
+
+a[href]:hover .minilink-buildcost,
+a[href]:focus .minilink-buildcost {
+	outline: 2px solid blue;
+}
+
+/* GitHub star count */
+.minilink-github.minilink-github {
+	background-color: #f6f8fa;
+	color: #222;
+}
+.minilink-github > :first-child {
+	color: #eac54f;
+}
+/* GitHub star count, home page variant (dark theme) */
+.elv-header-default .minilink-github {
+	background-color: #222;
+	color: #fff;
+}
+.elv-header-default .minilink[href]:hover,
+.elv-header-default .minilink[href]:focus {
+	background-color: #444;
+}
+@media (prefers-color-scheme: dark) {
+	.minilink-github.minilink-github{
+		background-color: #222;
+		color: #fff;
+	}
 }

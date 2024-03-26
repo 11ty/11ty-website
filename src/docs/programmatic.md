@@ -14,7 +14,7 @@ Starting in Eleventy 1.0, you can run Eleventy in your own Node script. _(This i
 
 ### Write to the file system
 
-Don’t forget to [install Eleventy into your local project first](/docs/getting-started/#step-2-install-eleventy)!
+Don’t forget to [install Eleventy into your local project first](/docs/#step-2-install-eleventy)!
 
 Now create a file called `my-node-script.js` with the following contents:
 
@@ -86,6 +86,8 @@ const Eleventy = require("@11ty/eleventy");
 
 The third argument to Eleventy is an options object.
 
+_(This documentation section is a work in progress but [you’re welcome to dig into the `Eleventy` class source code in `{% latestVersion versions, config %}` to learn more](https://github.com/11ty/eleventy/blob/{% latestVersion versions, config %}/src/Eleventy.js))_
+
 ```js
 const Eleventy = require("@11ty/eleventy");
 
@@ -106,8 +108,6 @@ const Eleventy = require("@11ty/eleventy");
   // Use `write` or `toJSON` or `toNDJSON`
 })();
 ```
-
-_(More to come)_
 
 <!--
     // Only useful if the first argument above is a single file (or glob)

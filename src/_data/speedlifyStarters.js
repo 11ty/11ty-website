@@ -1,17 +1,15 @@
-const EleventyFetch = require("@11ty/eleventy-fetch");
-const fastglob = require("fast-glob");
+import EleventyFetch from "@11ty/eleventy-fetch";
+import fastglob from "fast-glob";
+import { createRequire } from "module";
 
+const require = createRequire(import.meta.url);
 const URL = "https://eleventy-starters--speedlify.netlify.app/";
 
-module.exports = async function() {
+export default async function() {
 	let returnData = {
 		urls: {},
 		data: {}
 	};
-
-	if(process.env.ELEVENTY_SERVERLESS) {
-		return returnData;
-	}
 
 	let url = `${URL}api/urls.json`;
 	let urlsJson = await EleventyFetch(url, {

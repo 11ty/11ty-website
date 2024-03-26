@@ -1,7 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Overview
+  parent: Getting Started
   key: Glossary
+  order: 1.4
 ---
 
 # Glossary

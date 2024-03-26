@@ -1,4 +1,4 @@
-module.exports = [
+export default [
 	// tag: "v2.0.0-beta.1",
 	// "channel": "beta"
 	{

@@ -32,3 +32,4 @@ Depending on your version of Windows, it may include the `Terminal` App (aka Win
 * [Nova](https://nova.app/) (Mac OS)
 * [Visual Studio Code](https://code.visualstudio.com/) (Mac OS, Windows, Linux)
   * On Windows, Visual Studio Code is bundled with Windows Powershell.
+* [WebStorm](https://www.jetbrains.com/webstorm/) (Mac OS, Windows, Linux)

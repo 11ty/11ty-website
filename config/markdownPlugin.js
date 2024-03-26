@@ -1,7 +1,7 @@
-const slugify = require("slugify");
-const markdownIt = require("markdown-it");
-const markdownItAnchor = require("markdown-it-anchor");
-const markdownItToc = require("markdown-it-table-of-contents");
+import slugify from "slugify";
+import markdownIt from "markdown-it";
+import markdownItAnchor from "markdown-it-anchor";
+import markdownItToc from "markdown-it-table-of-contents";
 
 function markdownItSlugify(s) {
 	return slugify(removeExtraText(s), { lower: true, remove: /[\=\":’'`,]/g });
@@ -20,7 +20,7 @@ function removeExtraText(s) {
 	return newStr;
 }
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
 
 	let mdIt = markdownIt({
 		html: true,

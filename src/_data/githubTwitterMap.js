@@ -1,6 +1,8 @@
-const fastglob = require("fast-glob");
+import fastglob from "fast-glob";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 
-module.exports = async () => {
+export default async () => {
 	let sites = await fastglob("./src/_data/builtwith/*.json", {
 		caseSensitiveMatch: false
 	});

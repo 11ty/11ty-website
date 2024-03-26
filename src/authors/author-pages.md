@@ -3,10 +3,9 @@ pagination:
   data: authors
   size: 1
   alias: author
-  serverless: eleventy.serverless.path.name
+  resolve: values
   generatePageOnEmptyData: true
-permalink:
-  serverless: "/authors/:name/"
+permalink: "/authors/{{ author.name }}/"
 eleventyNavigation:
   parent: Authors
 excludeFromSearch: true

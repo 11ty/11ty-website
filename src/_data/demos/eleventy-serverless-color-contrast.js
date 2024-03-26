@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	name: "Eleventy Serverless Color Contrast",
 	category: ["serverless"],
 	url: "https://github.com/SomeAnticsDev/eleventy-serverless-color-contrast",

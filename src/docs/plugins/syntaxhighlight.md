@@ -46,6 +46,9 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight, {
 
+    // Line separator for line breaks
+    lineSeparator: "\n",
+
     // Change which Eleventy template formats use syntax highlighters
     templateFormats: ["*"], // default
 
@@ -67,6 +70,9 @@ module.exports = function(eleventyConfig) {
       }
     },
     codeAttributes: {},
+
+    // Added in 5.0.0, throw errors on invalid language names
+    errorOnInvalidLanguage: false,
   });
 };
 ```
@@ -100,7 +106,7 @@ This plugin provides the following syntax highlighters using PrismJS, all of whi
 * [Review the list of supported PrismJS languages](http://prismjs.com/#languages-list)
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlight", additions: "md,webc", subtractions: "hbs"} %}
   <div id="highlight-md" role="tabpanel">
 
@@ -182,8 +188,44 @@ function myFunction() {
 </syntax-highlight>
 ```
 
+{% endraw %}
+
+<details>
+<summary>Expand to see an example of importing this as a global component in your configuration file.</summary>
+
+{% codetitle ".eleventy.js" %}
+
+```js
+const pluginWebc = require("@11ty/eleventy-plugin-webc");
+
+module.exports = function(eleventyConfig) {
+	eleventyConfig.addPlugin(pluginWebc, {
+		// Array `components` requires Eleventy WebC v0.9.2+
+		components: [
+			"_components/**/*.webc",
+			"npm:@11ty/eleventy-plugin-syntaxhighlight/*.webc"
+		]
+	});
+};
+```
+
+{% codetitle "page.webc" %}
+
+```html
+<syntax-highlight language="js">
+function myFunction() {
+  return true;
+}
+</syntax-highlight>
+```
+
+</details>
+
+
 <details>
 <summary>Expand to see an example of importing for use anywhere on the page via front matter.</summary>
+
+{% codetitle "page.webc" %}
 
 ```html
 ---
@@ -196,7 +238,6 @@ function myFunction() {
 }
 </syntax-highlight>
 ```
-{% endraw %}
 
 </details>
 
@@ -224,7 +265,7 @@ function myFunction() {
 Add the `diff-` prefix to the language name on the previous examples to show code changes. Use a `+` or `-` at the beginning of the line to denote the addition or removal of that line.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlightdiff", additions: "md,webc", subtractions: "hbs"} %}
   <div id="highlightdiff-md" role="tabpanel">
 

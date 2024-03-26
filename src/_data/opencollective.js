@@ -1,5 +1,6 @@
 // https://opencollective.com/11ty/members/all.json
-const EleventyFetch = require("@11ty/eleventy-fetch");
+import EleventyFetch from "@11ty/eleventy-fetch";
+
 const FilteredProfiles = [
 	"bca-account1", // website is buycheapaccounts.com
 	"baocasino", // gambling
@@ -15,6 +16,7 @@ const FilteredProfiles = [
 	"forexbrokerz", // crypto
 	"viewality-media", // broken site on wix?
 	"aviator-game1", // gambling
+	"igrovye-avtomaty", // gambling
 ];
 
 function isMonthlyOrYearlyOrder(order) {
@@ -36,14 +38,14 @@ function getUniqueContributors(orders) {
 	return Object.values(uniqueContributors);
 }
 
-module.exports = async function() {
+export default async function() {
 	try {
 		let url = `https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000&status=paid,active`;
 		let json = await EleventyFetch(url, {
 			type: "json",
-			duration: process.env.ELEVENTY_SERVERLESS ? "*" : (process.env.ELEVENTY_AVATARS ? "0s" : "1d"),
+			duration: process.env.ELEVENTY_AVATARS ? "0s" : "1d",
 			directory: ".cache/eleventy-fetch/",
-			dryRun: process.env.ELEVENTY_SERVERLESS ? true : false,
+			dryRun: false,
 		});
 
 		let orders = json.nodes.map(order => {
@@ -73,6 +75,18 @@ module.exports = async function() {
 			totalAmountDonated: 0,
 			isMonthly: true,
 			hasDefaultAvatar: false,
+		});
+
+		// Temporary hardcoded
+		orders.push({
+			name: "CloudCannon",
+			slug: "cloudcannon1",
+			twitter: "CloudCannon",
+			github: "CloudCannon",
+			image: "https://logo.clearbit.com/cloudcannon.com",
+			website: "https://cloudcannon.com/",
+			profile: "https://opencollective.com/cloudcannon1",
+			isMonthly: true,
 		});
 
 		orders = getUniqueContributors(orders);

@@ -22,7 +22,7 @@ Custom Tags are unrelated to Eleventy’s [Collections using Tags](/docs/collect
 But, after all that, you can still add a Custom Tag using the [Configuration API](/docs/config/#using-the-configuration-api).
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "customtag"} %}
   <div id="customtag-liquid" role="tabpanel">
 

@@ -1,6 +1,5 @@
 ---
 layout: layouts/base.njk
-templateClass: elv-default
 headerClass: elv-header-default
 ---
 {% include "header.njk" %}
@@ -12,11 +11,13 @@ headerClass: elv-header-default
 <div class="elv-callout-sticky">{% callout "info" %}This documentation is for an upcoming version of Eleventy. Go to the <a href="https://www.11ty.dev/docs/">latest stable version of Eleventy docs</a> or check out the <a href="https://www.11ty.dev/docs/versions/">full release history.</a>{% endcallout %}</div>
 {% endif -%}
 
-<main class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}" {% if not excludeFromSearch %} data-pagefind-body{% endif %}>
-	{{ content | safe }}
+<main class="elv-layout elv-layout-toc" {% if not excludeFromSearch %} data-pagefind-body{% endif %}>
+	{% include "components/docs-toc.njk" %}
+
+	<div id="skip-content">{{ content | safe }}</div>
 </main>
 
-<footer class="elv-footer elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">
+<footer class="elv-footer elv-layout elv-layout-toc">
 {% if ignoreSupporters %}{% else %}
 	{% include "supporters.njk" %}
 {% endif %}
@@ -25,10 +26,6 @@ headerClass: elv-header-default
 		{% include "star-on-github.njk" %}
 	{% endcallout %}
 {%- endif %}
-
-  {% if page.url and page.url.startsWith("/docs/") %}
-  {% renderFile "./src/_includes/syntax-chooser-form.njk" %}
-  {% endif %}
 
 	{% include "footer-nav.njk" %}
 </footer>
