@@ -43,6 +43,7 @@ query eleventyMembers {
       nodes {
         account {
           name
+          type
           twitterHandle
           githubHandle
           ... on Individual {
@@ -84,7 +85,7 @@ async function findMissingUsers(names) {
 
 if(!process.env.OPENCOLLECT_API_KEY) {
   console.log( "Missing OPENCOLLECT_API_KEY. Do you have a .env file?" );
-	return;
+	process.exit();
 }
 
 let url = "https://api.opencollective.com/graphql/v2";
@@ -102,6 +103,11 @@ let result = await fetch(url, opts)
   .catch(function(error) {
     console.error( error );
   });
+
+if(result?.errors?.length) {
+	console.error( result.errors );
+	process.exit();
+}
 
 let alreadySentFile = await fs.readFile("./node-supporters/invited.csv", "utf-8");
 let alreadySentEmails = alreadySentFile.split("\n").map(entry => entry.trim());
