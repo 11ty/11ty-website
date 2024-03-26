@@ -6,16 +6,18 @@ communityLinksKey: plugins
 ---
 # Plugins
 
+{% tableofcontents %}
+
 Plugins are custom code that Eleventy can import into a project from an external repository.
 
-* [Official Eleventy `@11ty/` Plugins](/docs/plugins/official.md)
+* [Official Eleventy Plugins](/docs/plugins/official.md) (look for the `@11ty/` prefix on npm)
 * [Community Contributed Plugins](/docs/plugins/community.md)
 
 ## Adding a Plugin
 
 ### Install the plugin through npm.
 
-Looking for a plugin? Check out [our list of official plugins](/docs/plugins/official/) or [some community-contributed plugins](/docs/plugins/community/).
+Looking for a plugin? Check out the [official plugins](/docs/plugins/official/) or [community-contributed plugins](/docs/plugins/community/).
 
 ```bash
 npm install @11ty/eleventy-plugin-rss --save
@@ -52,9 +54,9 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-### Namespace the plugin additions
+### Advanced: Namespace the plugin additions
 
-You can namespace parts of your configuration using `eleventyConfig.namespace`. This will add a string prefix to all filters, tags, helpers, shortcodes, collections, and transforms.
+It’s unlikely you’ll need this feature _but_ you can namespace parts of your configuration using `eleventyConfig.namespace`. This will add a string prefix to all filters, tags, helpers, shortcodes, collections, and transforms.
 
 {% codetitle ".eleventy.js" %}
 
@@ -84,6 +86,11 @@ module.exports = function(eleventyConfig, pluginOptions) {
 };
 ```
 
+Note that plugins run as a second stage after the user’s primary configuration file has executed (to have access to the return object values).
+
+<details>
+<summary>Advanced usage</summary>
+
 If you want to run some user code before your plugin’s configuration function is run, you can instead export an object. Prefer using the above syntax unless you need this behavior. For an example of how this is used, see the [syntax highlighting plugin](https://github.com/11ty/eleventy-plugin-syntaxhighlight/blob/23761d7fd54de0312040520175959327b1a0ab9b/.eleventy.js#L10)
 
 {% codetitle "fancy-plugin.js" %}
@@ -110,9 +117,11 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+</details>
+
 ### Distributing a Plugin
 
-If you’re distributing your plugin as a package, consider following these conventions. (Feel free to break them, though! These are not hard requirements, or enforced at all by Eleventy at runtime.)
+If you’re distributing your plugin as a package, consider following these conventions. These are not hard requirements.
 
 - Add `"eleventy-plugin"` to your package.json’s `keywords` field.
 - Prefix your package name with `eleventy-plugin-`

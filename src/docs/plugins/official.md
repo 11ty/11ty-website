@@ -1,10 +1,10 @@
 ---
 eleventyNavigation:
   key: Official Plugins
-  order: 2
+  order: 1
   parent: Plugins
 ---
-# List of Official Plugins
+# Official Eleventy Plugins
 
 All official plugins live under the `@11ty` npm organization and plugin names will include the `@11ty/` prefix.
 

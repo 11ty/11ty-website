@@ -12,7 +12,7 @@ import navigationPlugin from "@11ty/eleventy-navigation";
 import rssPlugin from "@11ty/eleventy-plugin-rss";
 import eleventyImage, { eleventyImagePlugin } from "@11ty/eleventy-img";
 import eleventyWebcPlugin from "@11ty/eleventy-plugin-webc";
-import { EleventyRenderPlugin } from "@11ty/eleventy";
+import { RenderPlugin, InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 
 import { addedIn, coerceVersion } from "./config/addedin.js";
 import monthDiffPlugin from "./config/monthDiff.js";
@@ -247,7 +247,8 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPlugin(navigationPlugin);
 	eleventyConfig.addPlugin(monthDiffPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
-	eleventyConfig.addPlugin(EleventyRenderPlugin);
+	eleventyConfig.addPlugin(RenderPlugin);
+	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 	eleventyConfig.addPlugin(eleventyWebcPlugin, {
 		components: [
 			"./src/_includes/components/*.webc",
