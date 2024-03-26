@@ -4,17 +4,18 @@ eleventyNavigation:
   order: 7.5
 communityLinksKey: plugins
 ---
+# Plugins
+
 Plugins are custom code that Eleventy can import into a project from an external repository.
 
-## List of Official Plugins
-
-All official plugins live under the `@11ty` npm organization and plugin names will include the `@11ty/` prefix.
-
-{{ collections.all | eleventyNavigation("Plugins") | eleventyNavigationToMarkdown({ showExcerpt: true }) | safe }}
+* [Official Eleventy `@11ty/` Plugins](/docs/plugins/official.md)
+* [Community Contributed Plugins](/docs/plugins/community.md)
 
 ## Adding a Plugin
 
 ### Install the plugin through npm.
+
+Looking for a plugin? Check out [our list of official plugins](/docs/plugins/official/) or [some community-contributed plugins](/docs/plugins/community/).
 
 ```bash
 npm install @11ty/eleventy-plugin-rss --save
@@ -41,17 +42,15 @@ Use an optional second argument to `addPlugin` to customize your plugin’s beha
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginSyntaxHighlight, {
-
     // only install the markdown highlighter
     templateFormats: ["md"],
 
     init: function({ Prism }) {
-        // Add your own custom language to Prism!
+      // Add your own custom language to Prism!
     }
   });
 };
 ```
-
 
 ### Namespace the plugin additions
 
@@ -61,7 +60,7 @@ You can namespace parts of your configuration using `eleventyConfig.namespace`. 
 
 ```js
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   eleventyConfig.namespace("myPrefix_", () => {
     // the rssLastUpdatedDate filter is now myPrefix_rssLastUpdatedDate
     eleventyConfig.addPlugin(pluginRss);
@@ -73,13 +72,49 @@ module.exports = function(eleventyConfig) {
 Plugin namespacing is an application feature and should not be used if you are creating your own plugin (in your plugin configuration code). Follow along at <a href="https://github.com/11ty/eleventy/issues/256">Issue #256</a>.
 {% endcallout %}
 
+## Creating a Plugin
 
-## Community Contributed Plugins
+A plugin primarily provides a “configuration function.” This function is called when Eleventy is first initialized, and takes the same `eleventyConfig` object as the user’s `.eleventy.js` file gets, in addition to any config passed by the user:
 
-[**See all `eleventy-plugin` packages on `npm`**](https://www.npmjs.com/search?q=eleventy-plugin). The rest have been added to this site by our community (and are listed in random order). [Add your own](https://github.com/11ty/11ty-website/tree/master/src/_data/plugins#readme)!
+{% codetitle "plugin.js" %}
 
-{%- for name, plugin in plugins | shuffle %}
-{%- set url = plugin.url or "https://www.npmjs.com/package/" + plugin.npm %}
-* [{% if plugin.deprecated %}~~{% endif %}{{ plugin.npm }}{% if plugin.deprecated %}~~{% endif %}]({{ url }}){% if plugin.description %} {% if plugin.deprecated %}~~{% endif %}{{ plugin.description }}{% if plugin.deprecated %}~~{% endif %}{% endif %} {{ plugin.deprecated }} {% authorLink authors, plugin.author %}
-{%- endfor %}
-* [Add your own](https://github.com/11ty/11ty-website/tree/master/src/_data/plugins#readme)!
+```js
+module.exports = function(eleventyConfig, pluginOptions) {
+  // Your plugin code goes here
+};
+```
+
+If you want to run some user code before your plugin’s configuration function is run, you can instead export an object. Prefer using the above syntax unless you need this behavior. For an example of how this is used, see the [syntax highlighting plugin](https://github.com/11ty/eleventy-plugin-syntaxhighlight/blob/23761d7fd54de0312040520175959327b1a0ab9b/.eleventy.js#L10)
+
+{% codetitle "fancy-plugin.js" %}
+
+```js
+module.exports = {
+  initArguments: myInitArguments,
+  configFunction: function(eleventyConfig, pluginOptions) {
+    // Your plugin code goes here
+  }
+};
+```
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(require("./fancy-plugin"), {
+    init: function(initArguments) {
+      // `this` is the eleventyConfig object
+      // initArguments will be the `myInitArguments` object from above
+    },
+  });
+};
+```
+
+### Distributing a Plugin
+
+If you’re distributing your plugin as a package, consider following these conventions. (Feel free to break them, though! These are not hard requirements, or enforced at all by Eleventy at runtime.)
+
+- Add `"eleventy-plugin"` to your package.json’s `keywords` field.
+- Prefix your package name with `eleventy-plugin-`
+- Write your plugin code in a `.eleventy.js` file in the root of your repository, and set the `"main"` field of your package.json to `".eleventy.js"`
+- Open a PR to add your plugin to our [list of community plugins](https://github.com/11ty/11ty-website/tree/main/src/_data/plugins) <3

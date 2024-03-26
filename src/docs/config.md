@@ -22,6 +22,8 @@ We support returning both a callback function (shown above) or an object literal
 
 ## Default filenames
 
+{% callout %}Is your config file getting big and hard to understand? You can <a href="/docs/quicktips/local-plugin/">create your own plugin</a> to move some code out.{% endcallout %}
+
 We look for the following configuration files:
 
 1. `.eleventy.js`

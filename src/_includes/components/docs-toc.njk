@@ -11,9 +11,8 @@
 			{%- set navKey = eleventyNavigation.key -%}
 		{%- endif -%}
 		<div id="skip-nav">
-			{{ collections.sidebarNav | eleventyNavigation | eleventyNavigationToHtml({ activeKey: navKey, listClass: 'elv-toc-list', activeListItemClass: 'elv-toc-active' }) | safe }}
+			{{ collections.sidebarNav | eleventyNavigation | eleventyNavigationToHtml({ activeKey: navKey, listClass: 'elv-toc-list', activeListItemClass: 'elv-toc-active', listItemHasChildrenClass: 'elv-toc-has-children'  }) | safe }}
 		</div>
-
 		{%- if not ignoreSidebarCallout %}
 		{%- set comparison = comparisons | randompick %}
 		{%- set comparisonTitle = "<a href='" + comparison.url + "'>Compare " + comparison.title + "</a>" %}
