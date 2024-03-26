@@ -11,7 +11,7 @@ overrideCommunityLinks: true
 
 {% tableofcontents %}
 
-{{ eleventyNavigation.excerpt }}
+{{ eleventyNavigation.excerpt | safe }}
 
 <div class="youtube-related">
   {%- youtubeEmbed "JNFooPfzV9g", "Defer generating 400+ pages using Eleventy Serverless" -%}
