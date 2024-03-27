@@ -3,6 +3,15 @@
 {%- callout "pinned", "html", adTitle %}
 <p>Join the <a href="https://conf.11ty.dev/" class="elv-externalexempt"><strong>11ty International Symposium on Making Web Sites Real Good</strong></a>.</p>
 {%- endcallout %}
+{%- callout "box", "html", "Versions" -%}
+	<dl>
+		<dt>Stable</dt>
+		<dd>{{ npmVersions.latest }}</dd>
+		<dt>Canary</dt>
+		<dd>{{ npmVersions.canary }}</dd>
+	</dl>
+{%- endcallout %}
+
 <details-force-state>
 	<details>
 		<summary class="btn-primary benchnine rainbow-active rainbow-active-noanim">Toggle Menu</summary>
@@ -11,7 +20,7 @@
 			{%- set navKey = eleventyNavigation.key -%}
 		{%- endif -%}
 		<div id="skip-nav">
-			{{ collections.sidebarNav | eleventyNavigation | eleventyNavigationToHtml({ activeKey: navKey, listClass: 'elv-toc-list', activeListItemClass: 'elv-toc-active', listItemHasChildrenClass: 'elv-toc-has-children'  }) | safe }}
+			{{ collections.sidebarNav | eleventyNavigation | eleventyNavigationToHtml({ activeKey: navKey, listClass: 'elv-toc-list', activeListItemClass: 'elv-toc-active' }) | safe }}
 		</div>
 		{%- if not ignoreSidebarCallout %}
 		{%- set comparison = comparisons | randompick %}

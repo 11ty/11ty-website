@@ -88,7 +88,7 @@
 	border-bottom: 1px solid #ddd;
 	margin-bottom: 1em;
 }
-.elv-toc-list > li.elv-toc-has-children > a {
+.elv-toc-list > li:has(> ul) > a {
 	margin-bottom: 0.25em; /* 4px /16 */
 }
 @media (prefers-color-scheme: dark) {

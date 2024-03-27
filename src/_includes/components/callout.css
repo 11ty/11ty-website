@@ -219,6 +219,9 @@ body > .elv-callout-sticky .elv-callout-label {
 .elv-toc .elv-callout-pinned .elv-callout-c {
 	text-wrap: balance;
 }
+.elv-toc .elv-callout:first-child {
+	margin-bottom: .25em;
+}
 @media (max-width: 54.9375em) {
 	/* 880px - 1 */
 	.elv-toc .elv-callout {
@@ -234,6 +237,7 @@ body > .elv-callout-sticky .elv-callout-label {
 	.elv-toc .elv-callout-label,
 	.elv-toc .elv-callout-c {
 		padding-left: 1rem;
+		padding-right: 1rem;
 	}
 	.elv-toc .elv-callout {
 		margin-right: 0;
