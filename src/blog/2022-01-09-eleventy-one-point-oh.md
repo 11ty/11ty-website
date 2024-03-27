@@ -45,7 +45,7 @@ This will log breaking changes that apply to your project. https://github.com/11
   - Removes `<% include /included %>` style include, use `<%- include('/included') -%>` instead. **Don’t forget the dash `<%-` and `-%>`!**
 - `.gitignore` files outside of your project root are no longer supported when calculating ignored paths in Eleventy. _Issue #364_
   - ✅ {ROOT}/.gitignore (supported)
-  - 🚫 {INPUT*DIR}/.gitignore (\*not\* supported)
+  - 🚫 {INPUT\*DIR}/.gitignore (\*not\* supported)
   - ✅ {ROOT}/.eleventyignore (supported)
   - ✅ {INPUT_DIR}/.eleventyignore (supported)
 - If you rely on the `YYYY-MM-DD` format in your file names for content dates, these are now assumed to be UTC instead of local dates. Take care if you use `liquid`’s built-in `date` format with `page.date`!

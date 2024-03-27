@@ -9,8 +9,8 @@ eleventyNavigation:
 
 {% tableofcontents %}
 
-* [Source code on GitHub](https://github.com/11ty/eleventy-upgrade-help)
-* [Sample project using the Upgrade Helper plugin](https://github.com/11ty/demo-eleventy-upgrade-help)
+- [Source code on GitHub](https://github.com/11ty/eleventy-upgrade-help)
+- [Sample project using the Upgrade Helper plugin](https://github.com/11ty/demo-eleventy-upgrade-help)
 
 ## Usage
 
@@ -47,9 +47,9 @@ Add to your configuration file (probably `.eleventy.js` or `eleventy.config.js`)
 ```js
 const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
-module.exports = function(eleventyConfig) {
-  // If you have other `addPlugin` calls, it’s important that UpgradeHelper is added last.
-  eleventyConfig.addPlugin(UpgradeHelper);
+module.exports = function (eleventyConfig) {
+	// If you have other `addPlugin` calls, it’s important that UpgradeHelper is added last.
+	eleventyConfig.addPlugin(UpgradeHelper);
 };
 ```
 
@@ -61,4 +61,3 @@ Address any violations and warnings.
 ### <span class="numberflag"><span class="sr-only">Step</span> 5</span> Remove the plugin
 
 Once you’ve removed all of the violations/warnings from your output, run `npm uninstall @11ty/eleventy-upgrade-help` to remove the plugin and delete the plugin code from your Eleventy configuration file.
-

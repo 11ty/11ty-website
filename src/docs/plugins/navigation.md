@@ -194,9 +194,13 @@ Template languages that support [universal filters](/docs/filters/) are supporte
 {% codetitle "WebC", "Syntax" %}
 
 {% raw %}
+
 ```html
-<nav @html="eleventyNavigationToHtml(eleventyNavigation($data.collections.all))"></nav>
+<nav
+	@html="eleventyNavigationToHtml(eleventyNavigation($data.collections.all))"
+></nav>
 ```
+
 {% endraw %}
 
   </div>
@@ -248,9 +252,13 @@ Template languages that support [universal filters](/docs/filters/) are supporte
 {% codetitle "WebC", "Syntax" %}
 
 {% raw %}
+
 ```html
-<nav @html="eleventyNavigationToMarkdown(eleventyNavigation($data.collections.all))"></nav>
+<nav
+	@html="eleventyNavigationToMarkdown(eleventyNavigation($data.collections.all))"
+></nav>
 ```
+
 {% endraw %}
 
   </div>

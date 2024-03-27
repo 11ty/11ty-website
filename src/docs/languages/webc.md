@@ -331,7 +331,7 @@ Outputs:
 
 </details>
 
-Eleventy runs WebC in Bundler mode. That means that when it finds `<style>`, `<link rel="stylesheet">`, or `<script>` elements in component definitions, they are removed from the output markup and _their content_ is aggregated together for re-use in asset bundles on the page. Read more about [CSS and JS in WebC](#css-and-js-(bundler-mode)). _(You can opt-out of this behavior with `webc:keep`.)_
+Eleventy runs WebC in Bundler mode. That means that when it finds `<style>`, `<link rel="stylesheet">`, or `<script>` elements in component definitions, they are removed from the output markup and _their content_ is aggregated together for re-use in asset bundles on the page. Read more about [CSS and JS in WebC](<#css-and-js-(bundler-mode)>). _(You can opt-out of this behavior with `webc:keep`.)_
 
 ### `webc:keep`
 
@@ -552,7 +552,7 @@ You can use `webc:root="override"` to override the host component tag name! This
 </style>
 ```
 
-* {% addedin "@11ty/webc@0.9.0" %}Previously, the above used to be accomplished by using `webc:root` and `webc:keep` together on an element.
+- {% addedin "@11ty/webc@0.9.0" %}Previously, the above used to be accomplished by using `webc:root` and `webc:keep` together on an element.
 
 #### Nesting
 
@@ -1256,7 +1256,7 @@ You can opt-out of bundling on a per-element basis [using `webc:keep`](#webckeep
 		<script @raw="getBundle('js')" webc:keep></script>
 
 		<!-- or write your bundle to a file -->
-		<link rel="stylesheet" :href="getBundleFileUrl('css')" webc:keep>
+		<link rel="stylesheet" :href="getBundleFileUrl('css')" webc:keep />
 		<script :src="getBundleFileUrl('js')" webc:keep></script>
 	</head>
 	<body @raw="content"></body>

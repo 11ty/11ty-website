@@ -220,7 +220,7 @@ body > .elv-callout-sticky .elv-callout-label {
 	text-wrap: balance;
 }
 .elv-toc .elv-callout:first-child {
-	margin-bottom: .25em;
+	margin-bottom: 0.25em;
 }
 @media (max-width: 54.9375em) {
 	/* 880px - 1 */
