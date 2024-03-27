@@ -14,6 +14,7 @@ relatedLinks:
 communityLinksKey: javascript
 layout: layouts/langs.njk
 ---
+
 {% tableofcontents "open" %}
 
 | Eleventy Short Name | File Extension | npm Package |
@@ -45,7 +46,6 @@ multiple
 lines!</p>`;
 ```
 
-
 ### Buffer
 
 Some templating libraries return [Buffers](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_string_encoding) (e.g. [viperHTML](https://github.com/WebReflection/viperHTML)).
@@ -62,9 +62,9 @@ module.exports = Buffer.from("<p>Zách</p>");
 
 ```js
 module.exports = new Promise((resolve, reject) => {
-  setTimeout(function() {
-    resolve("<p>Zach</p>");
-  }, 1000);
+	setTimeout(function () {
+		resolve("<p>Zach</p>");
+	}, 1000);
 });
 ```
 
@@ -75,8 +75,8 @@ Can return any [raw value](#raw-values) (e.g. String, Buffer, Promise). Use [tem
 {% codetitle "JavaScript", "Syntax" %}
 
 ```js
-module.exports = function(data) {
-  return `<p>${data.name}</p>`;
+module.exports = function (data) {
+	return `<p>${data.name}</p>`;
 };
 ```
 
@@ -85,8 +85,8 @@ De-structuring syntax is a little bit easier to read:
 {% codetitle "JavaScript", "Syntax" %}
 
 ```js
-module.exports = function({name}) {
-  return `<p>${name}</p>`;
+module.exports = function ({ name }) {
+	return `<p>${name}</p>`;
 };
 ```
 
@@ -95,7 +95,7 @@ Maybe you like arrow functions:
 {% codetitle "JavaScript", "Syntax" %}
 
 ```js
-module.exports = ({name}) => `<p>${name}</p>`;
+module.exports = ({ name }) => `<p>${name}</p>`;
 ```
 
 `async` functions work too:
@@ -105,8 +105,8 @@ module.exports = ({name}) => `<p>${name}</p>`;
 ```js
 const getAnAsyncThing = require("./lib/asyncThing");
 
-module.exports = async function(data) {
-  return `<p>${await getAnAsyncThing()}</p>`;
+module.exports = async function (data) {
+	return `<p>${await getAnAsyncThing()}</p>`;
 };
 ```
 
@@ -120,10 +120,10 @@ Eleventy looks for classes that have a `render` method and uses `render` to retu
 
 ```js
 class Test {
-  // or `async render({name}) {`
-  render({name}) {
-    return `<p>${name}</p>`;
-  }
+	// or `async render({name}) {`
+	render({ name }) {
+		return `<p>${name}</p>`;
+	}
 }
 
 module.exports = Test;
@@ -139,20 +139,20 @@ This data acts as Front Matter for the template and similarly to Front Matter wi
 
 ```js
 class Test {
-  // or `async data() {`
-  // or `get data() {`
-  data() {
-    return {
-      name: "Ted",
-      layout: "teds-rad-layout",
-      // … other front matter keys
-    };
-  }
+	// or `async data() {`
+	// or `get data() {`
+	data() {
+		return {
+			name: "Ted",
+			layout: "teds-rad-layout",
+			// … other front matter keys
+		};
+	}
 
-  render({name}) {
-    // will always be "Ted"
-    return `<p>${name}</p>`;
-  }
+	render({ name }) {
+		// will always be "Ted"
+		return `<p>${name}</p>`;
+	}
 }
 
 module.exports = Test;
@@ -168,14 +168,16 @@ The `permalink` data key will work here. Permalinks can be a [raw value](#raw-va
 
 ```js
 class Test {
-  data() {
-    return {
-      // Writes to "/my-permalink/index.html"
-      permalink: "/my-permalink/"
-    };
-  }
+	data() {
+		return {
+			// Writes to "/my-permalink/index.html"
+			permalink: "/my-permalink/",
+		};
+	}
 
-  render(data) { /* … */ }
+	render(data) {
+		/* … */
+	}
 }
 
 module.exports = Test;
@@ -189,15 +191,17 @@ Permalink Functions can return any [raw value](#raw-values) (e.g. String, Buffer
 
 ```js
 class Test {
-  data() {
-    return {
-      key: "hello",
-      // Writes to "/my-permalink/hello/index.html"
-      permalink: data => `/my-permalink/${data.key}/`
-    };
-  }
+	data() {
+		return {
+			key: "hello",
+			// Writes to "/my-permalink/hello/index.html"
+			permalink: (data) => `/my-permalink/${data.key}/`,
+		};
+	}
 
-  render(data) { /* … */ }
+	render(data) {
+		/* … */
+	}
 }
 
 module.exports = Test;
@@ -211,17 +215,19 @@ Universal filters, shortcodes, and other JavaScript Template Functions work here
 
 ```js
 class Test {
-  data() {
-    return {
-      title: "This is my blog post title",
-      // Writes to "/this-is-my-blog-post-title/index.html"
-      permalink: function(data) {
-        return `/${this.slug(data.title)}/`;
-      }
-    };
-  }
+	data() {
+		return {
+			title: "This is my blog post title",
+			// Writes to "/this-is-my-blog-post-title/index.html"
+			permalink: function (data) {
+				return `/${this.slug(data.title)}/`;
+			},
+		};
+	}
 
-  render(data) { /* … */ }
+	render(data) {
+		/* … */
+	}
 }
 
 module.exports = Test;
@@ -235,16 +241,16 @@ Yes, you can use JavaScript as your preprocessor language for Markdown. Read mor
 
 ```js
 class Test {
-  data() {
-    return {
-      myName: "Zach",
-      templateEngineOverride: "11ty.js,md"
-    };
-  }
+	data() {
+		return {
+			myName: "Zach",
+			templateEngineOverride: "11ty.js,md",
+		};
+	}
 
-  render(data) {
-    return `# This is ${data.myName}`;
-  }
+	render(data) {
+		return `# This is ${data.myName}`;
+	}
 }
 
 module.exports = Test;
@@ -269,11 +275,13 @@ module.exports = function(eleventyConfig) {
 {% codetitle "js-fn-example.11ty.js" %}
 
 {% raw %}
+
 ```js
-module.exports = function(data) {
-  return `<h1>${this.myFunction(data.a, data.b)}</h1>`;
+module.exports = function (data) {
+	return `<h1>${this.myFunction(data.a, data.b)}</h1>`;
 };
 ```
+
 {% endraw %}
 
 ### Asynchronous JavaScript Template Functions
@@ -295,11 +303,13 @@ This is the same as the example above but adds `await` before the function is ca
 {% codetitle "js-async-fn-example.11ty.js" %}
 
 {% raw %}
+
 ```js
-module.exports = async function(data) {
-  return `<h1>${await this.myAsyncFunction(data.a, data.b)}</h1>`;
+module.exports = async function (data) {
+	return `<h1>${await this.myAsyncFunction(data.a, data.b)}</h1>`;
 };
 ```
+
 {% endraw %}
 
 ### Warning about Arrow Functions
@@ -311,12 +321,14 @@ Note that by definition (<a href="https://developer.mozilla.org/en-US/docs/Web/J
 {% codetitle "js-arrow-fn-example.11ty.js" %}
 
 {% raw %}
+
 ```js
 module.exports = (data) => {
-  // Using `this` in an arrow function will throw an error!
-  return `<h1>${this.myFunction(data.a, data.b)}</h1>`;
+	// Using `this` in an arrow function will throw an error!
+	return `<h1>${this.myFunction(data.a, data.b)}</h1>`;
 };
 ```
+
 {% endraw %}
 
 ### Relationship to Filters and Shortcodes
@@ -341,15 +353,21 @@ module.exports = function(eleventyConfig) {
 {% codetitle "universal-examples.11ty.js" %}
 
 {% raw %}
+
 ```js
-module.exports = function(data) {
-  return `
+module.exports = function (data) {
+	return `
 <h1>${this.myFilter(data.myVar)}</h1>
 <p>${this.user(data.firstName, data.lastName)}</p>
-<p>${this.pairedUser(`Here is some more content`, data.firstName, data.lastName)}</p>
+<p>${this.pairedUser(
+		`Here is some more content`,
+		data.firstName,
+		data.lastName
+	)}</p>
 `;
 };
 ```
+
 {% endraw %}
 
 ### Access to `page` data values {% addedin "0.11.0" %}
@@ -357,15 +375,15 @@ module.exports = function(data) {
 If you aren’t using an arrow function, JavaScript Functions (and Nunjucks, Liquid, and Handlebars Shortcodes) will have access to Eleventy [`page` data values](/docs/data-eleventy-supplied/#page-variable-contents) without needing to pass them in as arguments.
 
 ```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addJavaScriptFunction("myFunction", function() {
-    // Available in 0.11.0 and above
-    console.log( this.page );
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addJavaScriptFunction("myFunction", function () {
+		// Available in 0.11.0 and above
+		console.log(this.page);
 
-    // For example:
-    console.log( this.page.url );
-    console.log( this.page.inputPath );
-    console.log( this.page.fileSlug );
-  });
+		// For example:
+		console.log(this.page.url);
+		console.log(this.page.inputPath);
+		console.log(this.page.fileSlug);
+	});
 };
 ```

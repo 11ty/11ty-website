@@ -20,10 +20,10 @@ Add the following `cssmin` filter to your Eleventy Config file:
 
 ```js
 const CleanCSS = require("clean-css");
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addFilter("cssmin", function(code) {
-    return new CleanCSS({}).minify(code).styles;
-  });
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addFilter("cssmin", function (code) {
+		return new CleanCSS({}).minify(code).styles;
+	});
 };
 ```
 
@@ -33,7 +33,7 @@ Add a sample CSS file to your `_includes` directory. Let’s call it `sample.css
 
 ```css
 body {
-    font-family: fantasy;
+	font-family: fantasy;
 }
 ```
 
@@ -42,16 +42,16 @@ body {
 Capture the CSS into a variable and run it through the filter (this sample is using Nunjucks syntax)
 
 {% raw -%}
+
 ```html
 <!-- capture the CSS content as a Nunjucks variable -->
-{% set css %}
-  {% include "sample.css" %}
-{% endset %}
+{% set css %} {% include "sample.css" %} {% endset %}
 <!-- feed it through our cssmin filter to minify -->
 <style>
-  {{ css | cssmin | safe }}
+	{{ css | cssmin | safe }}
 </style>
 ```
+
 {% endraw %}
 
 ## Using JavaScript templates
@@ -68,8 +68,8 @@ const CleanCSS = require("clean-css");
 module.exports = async () => `
 <style>
   ${await fs
-    .readFile(path.resolve(__dirname, "./sample.css"))
-    .then((data) => new CleanCSS().minify(data).styles)}
+		.readFile(path.resolve(__dirname, "./sample.css"))
+		.then((data) => new CleanCSS().minify(data).styles)}
 </style>`;
 ```
 

@@ -1,7 +1,7 @@
 seven-minute-tabs {
 	display: block;
 	padding: 0 1rem;
-	border-radius: .5rem;
+	border-radius: 0.5rem;
 	margin: 0 -1rem 1rem;
 	border: 2px solid #111;
 }
@@ -18,16 +18,16 @@ seven-minute-tabs [role="tablist"] {
 	text-align: right;
 }
 seven-minute-tabs [role="tablist"]:first-child {
-	margin-bottom: .5rem;
+	margin-bottom: 0.5rem;
 }
 seven-minute-tabs [role="tablist"]:last-child {
-	margin-top: .5rem;
+	margin-top: 0.5rem;
 }
 seven-minute-tabs [role="tab"] {
 	display: inline-block;
 	font-weight: 500;
-	padding: 0 .25em;
-	margin: 0 .1em;
+	padding: 0 0.25em;
+	margin: 0 0.1em;
 	text-decoration: none;
 	border-top: 5px solid transparent;
 }

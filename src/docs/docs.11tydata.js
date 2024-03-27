@@ -4,8 +4,8 @@ let data = {
 	feedUrl: "/docs/feed.xml",
 };
 
-if(process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") {
 	data.date = "git Last Modified";
 }
 
-module.exports = data;
+export default data;

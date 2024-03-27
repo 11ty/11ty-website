@@ -8,8 +8,8 @@
 .facepile > a {
 	display: inline-block;
 	margin-left: -25px;
-	transition: opacity .3s;
-	opacity: .9;
+	transition: opacity 0.3s;
+	opacity: 0.9;
 }
 .facepile > a:focus,
 .facepile > a:hover {
@@ -27,7 +27,7 @@
 	margin-bottom: 6px;
 	color: #fff;
 	border: 2px solid;
-	transition: border .3s;
+	transition: border 0.3s;
 	object-fit: cover;
 }
 @media (prefers-color-scheme: dark) {
@@ -35,7 +35,7 @@
 		color: #222;
 	}
 }
-.elv-docs .facepile-supporters .avatar {
+.facepile-supporters .avatar {
 	width: calc(30px + 2vw);
 	height: calc(30px + 2vw);
 }
@@ -53,62 +53,80 @@
 	right: -20px;
 	top: -24px; /* Right - 4px */
 	bottom: -20px;
-	opacity: .6;
+	opacity: 0.6;
 	background-color: currentColor;
-	background-image: linear-gradient(238deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff0080);
+	background-image: linear-gradient(
+		238deg,
+		#ff0000,
+		#ff8000,
+		#ffff00,
+		#80ff00,
+		#00ff00,
+		#00ff80,
+		#00ffff,
+		#0080ff,
+		#0000ff,
+		#8000ff,
+		#ff0080
+	);
 	background-size: 1200% 1200%;
 	background-position: 0 80%;
 }
-.facepile > a:nth-child(11n+1):focus:after,
-.facepile > a:nth-child(11n+1):hover:after {
+.facepile > a:nth-child(11n + 1):focus:after,
+.facepile > a:nth-child(11n + 1):hover:after {
 	background-position: 0% 80%;
 }
-.facepile > a:nth-child(11n+2):focus:after,
-.facepile > a:nth-child(11n+2):hover:after {
+.facepile > a:nth-child(11n + 2):focus:after,
+.facepile > a:nth-child(11n + 2):hover:after {
 	background-position: 9% 80%;
 }
-.facepile > a:nth-child(11n+3):focus:after,
-.facepile > a:nth-child(11n+3):hover:after {
+.facepile > a:nth-child(11n + 3):focus:after,
+.facepile > a:nth-child(11n + 3):hover:after {
 	background-position: 18% 80%;
 }
-.facepile > a:nth-child(11n+4):focus:after,
-.facepile > a:nth-child(11n+4):hover:after {
+.facepile > a:nth-child(11n + 4):focus:after,
+.facepile > a:nth-child(11n + 4):hover:after {
 	background-position: 27% 80%;
 }
-.facepile > a:nth-child(11n+5):focus:after,
-.facepile > a:nth-child(11n+5):hover:after {
+.facepile > a:nth-child(11n + 5):focus:after,
+.facepile > a:nth-child(11n + 5):hover:after {
 	background-position: 36% 80%;
 }
-.facepile > a:nth-child(11n+6):focus:after,
-.facepile > a:nth-child(11n+6):hover:after {
+.facepile > a:nth-child(11n + 6):focus:after,
+.facepile > a:nth-child(11n + 6):hover:after {
 	background-position: 45% 80%;
 }
-.facepile > a:nth-child(11n+7):focus:after,
-.facepile > a:nth-child(11n+7):hover:after {
+.facepile > a:nth-child(11n + 7):focus:after,
+.facepile > a:nth-child(11n + 7):hover:after {
 	background-position: 54% 80%;
 }
-.facepile > a:nth-child(11n+8):focus:after,
-.facepile > a:nth-child(11n+8):hover:after {
+.facepile > a:nth-child(11n + 8):focus:after,
+.facepile > a:nth-child(11n + 8):hover:after {
 	background-position: 63% 80%;
 }
-.facepile > a:nth-child(11n+9):focus:after,
-.facepile > a:nth-child(11n+9):hover:after {
+.facepile > a:nth-child(11n + 9):focus:after,
+.facepile > a:nth-child(11n + 9):hover:after {
 	background-position: 72% 80%;
 }
-.facepile > a:nth-child(11n+10):focus:after,
-.facepile > a:nth-child(11n+10):hover:after {
+.facepile > a:nth-child(11n + 10):focus:after,
+.facepile > a:nth-child(11n + 10):hover:after {
 	background-position: 81% 80%;
 }
-.facepile > a:nth-child(11n+11):focus:after,
-.facepile > a:nth-child(11n+11):hover:after {
+.facepile > a:nth-child(11n + 11):focus:after,
+.facepile > a:nth-child(11n + 11):hover:after {
 	background-position: 90% 80%;
-}
-
-.elv-default .sites-vert + .fullwidth-module .avatar {
-	width: calc(20px + 2vw);
-	height: calc(20px + 2vw);
 }
 
 .facepile-fake .avatar {
 	background-color: #eee;
+}
+
+/* Filter out gold sponsors when the giant logos are adjacent (in the footer, everywhere but the home page) */
+.facepile-supporters [data-supporters-tier="gold-sponsor"] {
+	display: none;
+}
+[show-gold-sponsors]
+	.facepile-supporters
+	[data-supporters-tier="gold-sponsor"] {
+	display: inline-block;
 }

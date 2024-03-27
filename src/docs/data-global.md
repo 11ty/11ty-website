@@ -6,6 +6,7 @@ eleventyNavigation:
 relatedLinks:
   /docs/config/#default-template-engine-for-global-data-files: Default Template Engine for Global Data Files
 ---
+
 # Global Data Files
 
 {% tableofcontents %}
@@ -21,20 +22,14 @@ You may also be interested in [config global data](/docs/data-global-custom/){% 
 Consider a JSON data file located at `_data/userList.json` with the following content:
 
 ```js
-[
-  "user1",
-  "user2"
-]
+["user1", "user2"];
 ```
 
 This data will be available to your templates under the `userList` key like this:
 
 ```js
 {
-  userList: [
-    "user1",
-    "user2"
-  ]
+	userList: ["user1", "user2"];
 }
 ```
 
@@ -46,12 +41,9 @@ Our data will be now available to your templates under a `users` key like so:
 
 ```js
 {
-  users: {
-    userList: [
-      "user1",
-      "user2"
-    ]
-  }
+	users: {
+		userList: ["user1", "user2"];
+	}
 }
 ```
 
@@ -62,3 +54,7 @@ Read more about using `module.exports` values in arbitrary [JavaScript data file
 ## Sources of Data
 
 {% include "datasources.md" %}
+
+## From the Community
+
+{% include "11tybundle.njk" %}

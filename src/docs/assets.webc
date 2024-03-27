@@ -75,7 +75,7 @@ module.exports = function(eleventyConfig) {
 		<li data-filter-code="js">Reference the JavaScript file in your HTML using <syntax-highlight language="html"><script src="/bundle.js"></script></syntax-highlight></li>
 	</ol>
 
-	<details class="expand-background" data-filter-code="js,css">
+	<details class="details-expand-bg" data-filter-code="js,css">
 		<summary>Expand for an example using Concatention, pulling in from <span data-filter-code="css">CSS</span><span data-filter-code="js">JavaScript</span> from multiple sources.</summary>
 
 		<p>You can use the Nunjucks and Liquid <code>include</code> tag to do simple concatenation.</p>
@@ -152,7 +152,7 @@ permalink: bundle.js
 		</ul>
 	</details>
 
-	<details class="expand-background">
+	<details class="details-expand-bg">
 		<summary>Expand to see Community Resources using this approach.</summary>
 		<p>In the article below, Max showcases how to use an <code>styles.11ty.js</code> template file to generate a one-off Sass-compiled stylesheet:</p>
 
@@ -191,10 +191,10 @@ permalink: bundle.js
 
 <p>Using WebC in this way provides the best and least-effort investment in the long-term maintenance of a page. When components on the page change, the JavaScript and CSS bundles are automatically streamlined and will not contain extra code from previous designs.</p>
 
-<p><a href="/languages/webc/"><strong>Get started with WebC!</strong></a></p>
+<p><a href="/docs/languages/webc/"><strong>Get started with WebC!</strong></a></p>
 
 <sites-list>
-	<site-card :@image-html="image('./src/img/logos/webc.png', 'WebC Logo', [154], 'sites-screenshot', '6.25em')" @url="/languages/webc/" @name="WebC" @date=""></site-card>
+	<site-card :@image-html="image('./src/img/logos/webc.png', 'WebC Logo', [154], 'sites-screenshot', '6.25em')" @url="/docs/languages/webc/" @name="WebC" @date=""></site-card>
 	<site-card @url="https://www.youtube.com/watch?v=fzo_S9UiYYk" @name="Rebuilding 11ty.dev using WebC" @date="2023-03-08"></site-card>
 </sites-list>
 

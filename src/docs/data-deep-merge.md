@@ -4,6 +4,7 @@ eleventyNavigation:
   key: Data Deep Merge
   order: 4
 ---
+
 # Data Deep Merge {% addedin "0.6.0" %}
 
 {% tableofcontents %}
@@ -15,12 +16,12 @@ Read more at [Issue #147](https://github.com/11ty/eleventy/issues/147). As of El
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // defaults to true in 1.0, use false to opt-out
-  eleventyConfig.setDataDeepMerge(false);
+module.exports = function (eleventyConfig) {
+	// defaults to true in 1.0, use false to opt-out
+	eleventyConfig.setDataDeepMerge(false);
 
-  // requires opt-in for 0.x
-  eleventyConfig.setDataDeepMerge(true);
+	// requires opt-in for 0.x
+	eleventyConfig.setDataDeepMerge(true);
 };
 ```
 
@@ -63,15 +64,12 @@ Results in the following data available in `my-template.md`:
 
 ```json
 {
-  "title": "This is a Good Blog Post",
-  "author": "Zach",
-  "tags": [
-    "CSS",
-    "HTML"
-  ],
-  "eleventyNavigation": {
-    "key": "my-key"
-  }
+	"title": "This is a Good Blog Post",
+	"author": "Zach",
+	"tags": ["CSS", "HTML"],
+	"eleventyNavigation": {
+		"key": "my-key"
+	}
 }
 ```
 
@@ -83,17 +81,13 @@ With this enabled, your data structure will look like this when `my-template.md`
 
 ```json
 {
-  "title": "This is a Good Blog Post",
-  "author": "Zach",
-  "tags": [
-    "CSS",
-    "HTML",
-    "JavaScript"
-  ],
-  "eleventyNavigation": {
-    "key": "my-key",
-    "parent": "test"
-  }
+	"title": "This is a Good Blog Post",
+	"author": "Zach",
+	"tags": ["CSS", "HTML", "JavaScript"],
+	"eleventyNavigation": {
+		"key": "my-key",
+		"parent": "test"
+	}
 }
 ```
 
@@ -105,7 +99,7 @@ Use the `override:` prefix on any data key to opt-out of this merge behavior for
 
 ```json
 {
-  "tags": ["posts"]
+	"tags": ["posts"]
 }
 ```
 

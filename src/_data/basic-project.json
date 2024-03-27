@@ -1,0 +1,6 @@
+{
+	"url": "https://github.com/MarcoMicale/starting-project",
+	"name": "Basic Project",
+	"description": "A single page template using 11ty and vanilla CSS.",
+	"demo": "https://starting-project-11y.netlify.app/"
+}

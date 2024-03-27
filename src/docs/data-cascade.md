@@ -6,6 +6,7 @@ eleventyNavigation:
 communityLinksKey: "data-cascade"
 overrideCommunityLinks: true
 ---
+
 # The Data Cascade
 
 {% tableofcontents %}
@@ -15,10 +16,6 @@ In Eleventy, data is merged from multiple different sources before the template 
 ## Sources of Data
 
 {% include "datasources.md" %}
-
-## Community Resources
-
-{% include "community-contributed.njk" %}
 
 ## Example
 
@@ -53,15 +50,17 @@ The data cascade results in the following data when `my-template.md` is rendered
 
 ```json
 {
-  "title": "This is a Good Blog Post",
-  "author": "Zach",
-  "tags": [
-    "CSS",
-    "HTML",
-    "JavaScript"
-  ],
-  "layout": "my-layout.njk"
+	"title": "This is a Good Blog Post",
+	"author": "Zach",
+	"tags": ["CSS", "HTML", "JavaScript"],
+	"layout": "my-layout.njk"
 }
 ```
 
 By default in v1.0, Eleventy does a deep data merge to combine Object literals and Arrays. If you want to opt-out of this behavior and revert to a simple top level merge (`Object.assign`) from the different data sources, you can turn off [Data Deep Merge](/docs/data-deep-merge/). You can override this on a per-property basis too—read more at the [Data Deep Merge documentation](/docs/data-deep-merge/).
+
+## From the Community
+
+{% include "community-contributed.njk" %}
+
+{% include "11tybundle.njk" %}
