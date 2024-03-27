@@ -1256,8 +1256,8 @@ You can opt-out of bundling on a per-element basis [using `webc:keep`](#webckeep
 		<script @raw="getBundle('js')" webc:keep></script>
 
 		<!-- or write your bundle to a file -->
-		<link rel="stylesheet" :href="getBundleFileUrl('css')" />
-		<script :src="getBundleFileUrl('js')"></script>
+		<link rel="stylesheet" :href="getBundleFileUrl('css')" webc:keep>
+		<script :src="getBundleFileUrl('js')" webc:keep></script>
 	</head>
 	<body @raw="content"></body>
 </html>
