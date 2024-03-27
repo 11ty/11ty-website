@@ -1,19 +1,19 @@
----javascript
+---node
 // <script>
-let title = "Eleventy, a simpler static site generator";
+let title = "Eleventy is a simpler static site generator";
 
 let social = {
 	imgsrc: "https://www.11ty.dev/img/open-graph.jpg",
 	imgalt: "The 11ty logo text with a small floating possum on a balloon"
 };
 
-let domain = process.env.DEPLOY_PRIME_URL || "https://www.11ty.dev";
+let domain = process.env.URL || "https://www.11ty.dev";
 
 // For things that rely on the data cascade
 let eleventyComputed = {
 	social: {
 		imgsrc: function({ domain, page }) {
-			return `https://v1.screenshot.11ty.dev/${encodeURIComponent(domain + page.url)}/opengraph/`;
+			return `https://v1.screenshot.11ty.dev/${encodeURIComponent(domain + page.url)}/opengraph/_cachebust/`;
 		},
 		imgalt: function({ domain, page }) {
 			return `A screenshot of the web page at ${domain + page.url}`;
@@ -25,12 +25,12 @@ let eleventyComputed = {
 };
 ---
 <!doctype html>
-<html lang="en"{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		{%- set subtitle %}{{ newstitle or searchTitle or relatedTitle or tiptitle or eleventyNavigation.key or title }}{% endset %}
-		{%- set subtitleText %}{{ subtitle }}{% if subtitle and subtitle != "Eleventy, a simpler static site generator" %} — Eleventy{% endif %}{% endset %}
+		{%- set subtitleText %}{{ subtitle }}{% if subtitle and subtitle != "Eleventy is a simpler static site generator" %} — Eleventy{% endif %}{% endset %}
 		<title>{{ subtitleText }}</title>
 		<meta name="description" content="{{ subtitleText }}">
 		<meta name="generator" content="{{ eleventy.generator }}">
@@ -50,16 +50,6 @@ let eleventyComputed = {
 		<meta property="og:image:height" content="640">
 		<meta property="og:image:alt" content="{{ social.imgalt }}">
 
-		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image">
-		<meta property="twitter:site" content="@eleven_ty">
-		<meta property="twitter:creator" content="@zachleat">
-		<meta property="twitter:url" content="https://www.11ty.dev{{ page.url }}">
-		<meta property="twitter:title" content="{{ subtitle }}">
-		<meta property="twitter:description" content="{{ social.description }}">
-		<meta property="twitter:image" content="{{ social.imgsrc }}">
-		<meta property="twitter:image:alt" content="{{ social.imgalt }}">
-
 		<!-- Feeds -->
 {%- if not feedExclusive %}
 		<link rel="alternate" href="/blog/feed.xml" title="Eleventy Blog" type="application/atom+xml">
@@ -75,13 +65,16 @@ let eleventyComputed = {
 {% include 'components/navigation.css' %}
 {% include 'components/announcement.css' %}
 {% include 'components/external-links.css' %}
+{% include 'components/toc.css' %}
+{% include "components/minilink.css" %}
+{# Sidebar ad for 11ty conf #}
+{% include 'components/callout.css' %}
 {# TODO convert to WebC #}
 {% include 'components/grid-layout.css' %}
 
 {% if not skipLegacyBundle %}
 	{# these components are not yet used on WebC pages #}
 	{% include 'components/direct-links.css' %}
-	{% include 'components/toc.css' %}
 	{% include 'components/breadcrumb.css' %}
 	{% include 'components/seven-minute-tabs.css' %}
 
@@ -90,10 +83,9 @@ let eleventyComputed = {
 	{% include 'components/code.css' %}
 	{% include 'components/inline-code.css' %}
 	{% include 'components/layout.css' %}
-	{# TODO reference these directly from node_modules at some point, but take care that they need to be put in the serverless bundle too in the eleventy config file too #}
+	{# TODO reference these directly from node_modules at some point #}
 	{% include 'components/flex-luthor/flex-luthor.css' %}
 	{% include 'components/flex-luthor/flex-luthor-separators.css' %}
-	{% include 'components/callout.css' %}
 	{% include 'components/testimonials.css' %}
 	{% include 'components/possum.css' %}
 	{% include 'components/possum-home.css' %}
@@ -132,8 +124,8 @@ let eleventyComputed = {
 {%- else %}
 		<link rel="stylesheet" href="/css/async.css" fetchpriority="low">
 {%- endif %}
-		<script>{% include "components/details-force-state.js" %}</script>
 {%- endif %}
+		<script>{% include "components/details-force-state.js" %}</script>
 	</head>
 	<body>
 		{{ content | safe }}

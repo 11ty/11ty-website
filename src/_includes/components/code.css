@@ -1,12 +1,15 @@
 /* Syntax highlighting and Code blocks */
 pre {
 	display: block;
-	padding: .75rem 1rem;
+	padding: 0.75rem 1rem;
 	margin: 1em -1rem 2em -1rem;
 	line-height: 1.5;
 
 	overflow-x: auto;
 	font-size: 0.875em; /* 14px /16 */
+	font-family: Roboto Mono, Consolas, Monaco, Andale Mono, Ubuntu Mono,
+		monospace;
+
 	-moz-tab-size: 2;
 	-o-tab-size: 2;
 	tab-size: 2;
@@ -20,13 +23,7 @@ pre {
 	background-color: #272822;
 	color: #fff;
 }
-details[open] pre {
-	margin-left: 0;
-	margin-right: 0;
-}
-pre {
-	font-family: Roboto Mono, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
-}
+
 .fl > * > pre {
 	margin-top: 0;
 }
@@ -56,17 +53,18 @@ pre + .note {
 		color: unset;
 	}
 }
-@media (min-width: 37.5em) { /* 600px */
+@media (min-width: 37.5em) {
+	/* 600px */
 	pre {
 		font-size: 1em; /* 16px /16 */
 	}
 }
-@media (min-width: 64em) { /* 1024px */
+@media (min-width: 55em) {
+	/* 880px */
 	pre {
 		border-radius: 0.3em;
 	}
 }
-
 
 .highlight-line {
 	display: inline-block;
@@ -94,7 +92,7 @@ pre + .note {
 }
 .highlight-line-active {
 	background-color: #444;
-	background-color: hsla(0, 0%, 27%, .8);
+	background-color: hsla(0, 0%, 27%, 0.8);
 }
 .highlight-line-add {
 	background-color: #45844b;
@@ -102,7 +100,6 @@ pre + .note {
 .highlight-line-remove {
 	background-color: #902f2f;
 }
-
 
 [data-preprefix-cmdhomedir] .highlight-line:first-child:before {
 	color: #aaa;
@@ -132,6 +129,6 @@ pre[class*="language-diff-"] {
 .token.prefix.deleted {
 	-webkit-user-select: none;
 	user-select: none;
-	margin-right: .5em;
-	padding: 0 .2em;
+	margin-right: 0.5em;
+	padding: 0 0.2em;
 }

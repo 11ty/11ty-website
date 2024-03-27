@@ -6,6 +6,7 @@ eleventyNavigation:
 relatedLinks:
   /docs/data-custom/: Custom Data File Formats
 ---
+
 # Custom Front Matter Options {% addedin "0.9.0" %}
 
 {% tableofcontents %}
@@ -14,29 +15,31 @@ Eleventy uses the [`gray-matter` npm package](https://www.npmjs.com/package/gray
 
 Check out the [full list of available `gray-matter` options](https://www.npmjs.com/package/gray-matter#options). By default, Eleventy uses `gray-matter`’s default options.
 
+- [**Related**: Change the default Front Matter syntax project-wide](/docs/data-frontmatter/#change-the-default-format-project-wide)
+
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setFrontMatterParsingOptions({
-    /* … */
-  });
+module.exports = function (eleventyConfig) {
+	eleventyConfig.setFrontMatterParsingOptions({
+		/* … */
+	});
 };
 ```
-
 
 ### Example: use JavaScript in your front matter {% addedin "0.9.0" %}
 
 While the existing `js` front matter type uses an object literal, this example makes use of any arbitrary JavaScript and exports all of the top level variables and functions.
 
-* Makes use of the [`node-retrieve-globals` package](https://github.com/zachleat/node-retrieve-globals/).
-* Check out the [`demo-eleventy-js-front-matter`](https://github.com/11ty/demo-eleventy-js-front-matter) repo for a full demo of this in action.
+- Makes use of the [`node-retrieve-globals` package](https://github.com/zachleat/node-retrieve-globals/).
+- Check out the [`demo-eleventy-js-front-matter`](https://github.com/11ty/demo-eleventy-js-front-matter) repo for a full demo of this in action.
 
 Here’s what this might look in a Nunjucks template:
 
 {% codetitle "page.njk" %}
 
 {% raw %}
+
 ```js
 ---javascript
 const myString = "Hi";
@@ -48,12 +51,14 @@ function myFunction() {}
 <div>{{ myString }}</div>
 <div>{{ myFunction() }}</div>
 ```
+
 {% endraw %}
 
 <details>
 <summary>More advanced usage options</summary>
 
 {% raw %}
+
 ```js
 ---javascript
 // async-friendly
@@ -71,10 +76,10 @@ console.log({ noop });
 ---
 <!-- The template content goes here -->
 ```
+
 {% endraw %}
 
 </details>
-
 
 To enable this, use the following configuration:
 
@@ -83,21 +88,21 @@ To enable this, use the following configuration:
 ```js
 const { RetrieveGlobals } = require("node-retrieve-globals");
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setFrontMatterParsingOptions({
-    engines: {
-      "javascript": function(frontMatterCode) {
-        let vm = new RetrieveGlobals(frontMatterCode);
+module.exports = function (eleventyConfig) {
+	eleventyConfig.setFrontMatterParsingOptions({
+		engines: {
+			javascript: function (frontMatterCode) {
+				let vm = new RetrieveGlobals(frontMatterCode);
 
-        // Do you want to pass in your own data here?
-        let data = {};
-        return vm.getGlobalContext(data, {
-          reuseGlobal: true,
-          dynamicImport: true,
-        });
-      }
-    }
-  });
+				// Do you want to pass in your own data here?
+				let data = {};
+				return vm.getGlobalContext(data, {
+					reuseGlobal: true,
+					dynamicImport: true,
+				});
+			},
+		},
+	});
 };
 ```
 
@@ -111,12 +116,12 @@ While Eleventy does include support for [JSON, YAML, and JS front matter out of 
 // Don’t forget to `npm install @iarna/toml`
 const toml = require("@iarna/toml");
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setFrontMatterParsingOptions({
-    engines: {
-      toml: toml.parse.bind(toml)
-    }
-  });
+module.exports = function (eleventyConfig) {
+	eleventyConfig.setFrontMatterParsingOptions({
+		engines: {
+			toml: toml.parse.bind(toml),
+		},
+	});
 };
 ```
 
@@ -130,6 +135,7 @@ Now you can use TOML in your front matter like this:
 ---toml
 title = "My page title using TOML"
 ---
+
 <!doctype html>
 <html>
 …
@@ -140,12 +146,12 @@ title = "My page title using TOML"
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setFrontMatterParsingOptions({
-    excerpt: true,
-    // Optional, default is "---"
-    excerpt_separator: "<!-- excerpt -->"
-  });
+module.exports = function (eleventyConfig) {
+	eleventyConfig.setFrontMatterParsingOptions({
+		excerpt: true,
+		// Optional, default is "---"
+		excerpt_separator: "<!-- excerpt -->",
+	});
 };
 ```
 
@@ -157,8 +163,11 @@ Now you can do things like this:
 ---
 title: My page title
 ---
+
 This is the start of my content and this will be shown as the excerpt.
+
 <!-- excerpt -->
+
 This is a continuation of my content…
 ```
 
@@ -180,13 +189,13 @@ If you don’t want to use `page.excerpt` to store your excerpt value, then use 
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setFrontMatterParsingOptions({
-    excerpt: true,
-    // Eleventy custom option
-    // The variable where the excerpt will be stored.
-    excerpt_alias: 'my_custom_excerpt'
-  });
+module.exports = function (eleventyConfig) {
+	eleventyConfig.setFrontMatterParsingOptions({
+		excerpt: true,
+		// Eleventy custom option
+		// The variable where the excerpt will be stored.
+		excerpt_alias: "my_custom_excerpt",
+	});
 };
 ```
 

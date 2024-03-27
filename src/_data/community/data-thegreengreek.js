@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	url: "https://sia.codes/posts/architecting-data-in-eleventy/",
 	author: "TheGreenGreek",
 	title: "Architecting data in Eleventy",

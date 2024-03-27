@@ -4,19 +4,20 @@ eleventyNavigation:
   order: 3
   excerpt: A plugin for creating hierarchical navigation in Eleventy projects. Supports breadcrumbs too!
 ---
+
 # Navigation Plugin
 
 {% tableofcontents %}
 
 A plugin for creating infinite-depth hierarchical navigation in Eleventy projects. Supports breadcrumbs too! Used in production on this very website!
 
-* This documentation is for `eleventy-navigation` `v0.3.x`.
-* [GitHub](https://github.com/11ty/eleventy-navigation).
+- This documentation is for `eleventy-navigation` `v0.3.x`.
+- [GitHub](https://github.com/11ty/eleventy-navigation).
 
 ## Template Compatibility
 
-* Any template language can add to navigation.
-* Nunjucks or Liquid are required for rendering the navigation menu.
+- Any template language can add to navigation.
+- Nunjucks or Liquid are required for rendering the navigation menu.
 
 ## Installation
 
@@ -33,8 +34,8 @@ Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
 ```js
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(eleventyNavigationPlugin);
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 };
 ```
 
@@ -60,8 +61,9 @@ eleventyNavigation:
 This gives us:
 
 {% callout "demo", "md-block" %}
-* Mammals
-{% endcallout %}
+
+- Mammals
+  {% endcallout %}
 
 #### humans.md
 
@@ -80,9 +82,9 @@ Any templates that do not have `parent` will be assumed to be at the top level.
 Now our navigation structure looks like:
 
 {% callout "demo", "md-block" %}
-* Mammals
-    - Humans
-{% endcallout %}
+
+- Mammals - Humans
+  {% endcallout %}
 
 #### bats.md
 
@@ -96,12 +98,10 @@ eleventyNavigation:
 
 Now our navigation structure looks like:
 
-
 {% callout "demo", "md-block" %}
-* Mammals
-    - Humans
-    - Bats
-{% endcallout %}
+
+- Mammals - Humans - Bats
+  {% endcallout %}
 
 You can nest these as deep as you want! Want to put something under Humans or Bats? Use `parent: Humans` or `parent: Bats`. If you want to add another root template, leave out `parent`.
 
@@ -154,25 +154,25 @@ permalink: false
 
 Use [`permalink: false`](/docs/permalinks/#permalink-false) to ensure that this meta-template doesn’t create a file in your Eleventy site output.
 
-
 ## Rendering the Navigation Menu (Easy Mode)
 
 Nunjucks and Liquid engines are supported. If you’re tired of reading, just use one of the following. These are using [the filters documented below](#render-with-a-filter). If you want more control or need additional customization, keep reading!
 
 ### Output HTML
 
-
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navtohtml"} %}
   <div id="navtohtml-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 {{ collections.all | eleventyNavigation | eleventyNavigationToHtml }}
 ```
+
 {% endraw %}
 
   </div>
@@ -181,9 +181,11 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
 ```
+
 {% endraw %}
 
   </div>
@@ -201,16 +203,18 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
 {% addedin "Navigation 0.3.1" %}
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navtomd"} %}
   <div id="navtomd-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 {{ collections.all | eleventyNavigation | eleventyNavigationToMarkdown }}
 ```
+
 {% endraw %}
 
   </div>
@@ -219,9 +223,11 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 {{ collections.all | eleventyNavigation | eleventyNavigationToMarkdown | safe }}
 ```
+
 {% endraw %}
 
   </div>
@@ -244,19 +250,20 @@ The `eleventyNavigation` filter returns a _sorted_ array of objects with `url` a
 
 For our documented templates above with the following template:
 
-
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navrender"} %}
   <div id="navrender-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 {% assign navPages = collections.all | eleventyNavigation %}
 {{ navPages | json }}
 ```
+
 {% endraw %}
 
   </div>
@@ -265,10 +272,12 @@ For our documented templates above with the following template:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 {% set navPages = collections.all | eleventyNavigation %}
 {{ navPages | dump | safe }}
 ```
+
 {% endraw %}
 
   </div>
@@ -281,32 +290,31 @@ For our documented templates above with the following template:
 </seven-minute-tabs>
 </is-land>
 
-
 {% callout "info" %}Note that you can also pass any collection into <code>eleventyNavigation</code>. It doesn’t have to be <code>collections.all</code>!{% endcallout %}
 
 Shows that `navPages` has the following structure:
 
 ```json
 [
-  {
-    "key": "Mammals",
-    "url": "/mammals/",
-    "title": "Mammals",
-    "children": [
-      {
-        "key": "Humans",
-        "parentKey": "Mammals",
-        "url": "/humans/",
-        "title": "Humans"
-      },
-      {
-        "key": "Bats",
-        "parentKey": "Mammals",
-        "url": "/bats/",
-        "title": "Bats"
-      }
-    ]
-  }
+	{
+		"key": "Mammals",
+		"url": "/mammals/",
+		"title": "Mammals",
+		"children": [
+			{
+				"key": "Humans",
+				"parentKey": "Mammals",
+				"url": "/humans/",
+				"title": "Humans"
+			},
+			{
+				"key": "Bats",
+				"parentKey": "Mammals",
+				"url": "/bats/",
+				"title": "Bats"
+			}
+		]
+	}
 ]
 ```
 
@@ -314,19 +322,20 @@ Shows that `navPages` has the following structure:
 
 Just show the children of a specific key, pass a key to `eleventyNavigation`:
 
-
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navrenderbranch"} %}
   <div id="navrenderbranch-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 {% assign navPages = collections.all | eleventyNavigation: "Mammals" %}
 {{ navPages | json }}
 ```
+
 {% endraw %}
 
   </div>
@@ -335,10 +344,12 @@ Just show the children of a specific key, pass a key to `eleventyNavigation`:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 {% set navPages = collections.all | eleventyNavigation("Mammals") %}
 {{ navPages | dump | safe }}
 ```
+
 {% endraw %}
 
   </div>
@@ -353,18 +364,18 @@ Just show the children of a specific key, pass a key to `eleventyNavigation`:
 
 ```json
 [
-  {
-    "key": "Humans",
-    "parentKey": "Mammals",
-    "url": "/humans/",
-    "title": "Humans"
-  },
-  {
-    "key": "Bats",
-    "parentKey": "Mammals",
-    "url": "/bats/",
-    "title": "Bats"
-  }
+	{
+		"key": "Humans",
+		"parentKey": "Mammals",
+		"url": "/humans/",
+		"title": "Humans"
+	},
+	{
+		"key": "Bats",
+		"parentKey": "Mammals",
+		"url": "/bats/",
+		"title": "Bats"
+	}
 ]
 ```
 
@@ -372,19 +383,20 @@ Just show the children of a specific key, pass a key to `eleventyNavigation`:
 
 You can also render only the parents of a specific key too, to make breadcrumb navigation. Pass a key to `eleventyNavigationBreadcrumb` like this:
 
-
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navbread"} %}
   <div id="navbread-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 {% assign navPages = collections.all | eleventyNavigationBreadcrumb: "Bats" %}
 {{ navPages | json }}
 ```
+
 {% endraw %}
 
   </div>
@@ -393,10 +405,12 @@ You can also render only the parents of a specific key too, to make breadcrumb n
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 {% set navPages = collections.all | eleventyNavigationBreadcrumb("Bats") %}
 {{ navPages | dump | safe }}
 ```
+
 {% endraw %}
 
   </div>
@@ -413,25 +427,25 @@ And an array of all the parents of the Bats entry will be returned (top-most par
 
 ```json
 [
-  {
-    "key": "Mammals",
-    "url": "/mammals/",
-    "title": "Mammals"
-  }
+	{
+		"key": "Mammals",
+		"url": "/mammals/",
+		"title": "Mammals"
+	}
 ]
 ```
 
 ##### Include the current page in breadcrumb results
 
-
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navbreadself"} %}
   <div id="navbreadself-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 ---
 navOptions:
@@ -440,6 +454,7 @@ navOptions:
 {% assign navPages = collections.all | eleventyNavigationBreadcrumb: "Mammals", navOptions %}
 {{ navPages | json }}
 ```
+
 {% endraw %}
 
   </div>
@@ -448,10 +463,12 @@ navOptions:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 {% set navPages = collections.all | eleventyNavigationBreadcrumb("Bats", { includeSelf: true }) %}
 {{ navPages | dump | safe }}
 ```
+
 {% endraw %}
 
   </div>
@@ -469,18 +486,14 @@ navOptions:
 {% addedin "Navigation 0.3.3" %}
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
-  <div role="tablist" aria-label="Template Language Chooser">
-    View this example in:
-    <a href="#navbreadmissing-liquid" role="tab">Liquid</a>
-    <a href="#navbreadmissing-njk" role="tab">Nunjucks</a>
-    <a href="#navbreadmissing-js" role="tab">11ty.js</a>
-  </div>
+<seven-minute-tabs persist sync>
+	{% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navbreadmissing", subtractions: "hbs"} %}
   <div id="navbreadmissing-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 ---
 navOptions:
@@ -489,6 +502,7 @@ navOptions:
 {% assign navPages = collections.all | eleventyNavigationBreadcrumb: "Does not exist", navOptions %}
 {{ navPages | json }}
 ```
+
 {% endraw %}
 
   </div>
@@ -497,10 +511,12 @@ navOptions:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 {% set navPages = collections.all | eleventyNavigationBreadcrumb("Does not exist", { allowMissing: true }) %}
 {{ navPages | dump | safe }}
 ```
+
 {% endraw %}
 
   </div>
@@ -510,26 +526,25 @@ navOptions:
 </seven-minute-tabs>
 </is-land>
 
-
 ### Render the menu items using the `eleventyNavigationToHtml` or `eleventyNavigationToMarkdown` Filters
 
 There are a couple of methods for rendering. Using the `eleventyNavigationToHtml` and `eleventyNavigationToMarkdown` filters will render the full navigation tree. Use this if you want to easily scale to an unlimited number of tiers/levels in your navigation. If you want full control of the markup, [render the structure manually using the Copy and Paste templates example below](#bring-your-own-html-render-the-menu-items-manually). Use this if your navigation will have one level/tier of items.
 
 <div id="render-with-a-filter"></div>
 
-With the Navigation structure returned from `eleventyNavigation` or `eleventyNavigationBreadcrumb`, we can render the navigation. Pass the object to the  `eleventyNavigationToHtml` or `eleventyNavigationToMarkdown` filter to automatically output the full menu (as HTML or Markdown):
+With the Navigation structure returned from `eleventyNavigation` or `eleventyNavigationBreadcrumb`, we can render the navigation. Pass the object to the `eleventyNavigationToHtml` or `eleventyNavigationToMarkdown` filter to automatically output the full menu (as HTML or Markdown):
 
 The `eleventyNavigationToMarkdown` filter is {% addedin "Navigation 0.3.1" %}.
 
-
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navrenderfilter"} %}
   <div id="navrenderfilter-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 {{ collections.all | eleventyNavigation | eleventyNavigationToHtml }}
 ```
@@ -537,6 +552,7 @@ The `eleventyNavigationToMarkdown` filter is {% addedin "Navigation 0.3.1" %}.
 ```liquid
 {{ collections.all | eleventyNavigationBreadcrumb: "Bats" | eleventyNavigationToHtml }}
 ```
+
 {% endraw %}
 
   </div>
@@ -545,6 +561,7 @@ The `eleventyNavigationToMarkdown` filter is {% addedin "Navigation 0.3.1" %}.
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
 ```
@@ -552,6 +569,7 @@ The `eleventyNavigationToMarkdown` filter is {% addedin "Navigation 0.3.1" %}.
 ```jinja2
 {{ collections.all | eleventyNavigationBreadcrumb("Bats") | eleventyNavigationToHtml | safe }}
 ```
+
 {% endraw %}
 
   </div>
@@ -578,15 +596,15 @@ eleventyNavigation:
 
 When you render a navigation list, pass `showExcerpt: true` to the `eleventyNavigationToHtml` filter, like so:
 
-
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navexcerpt"} %}
   <div id="navexcerpt-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 ---
 navToHtmlOptions:
@@ -594,6 +612,7 @@ navToHtmlOptions:
 ---
 {{ collections.all | eleventyNavigation: "Humans", navToHtmlOptions | json }}
 ```
+
 {% endraw %}
 
   </div>
@@ -602,6 +621,7 @@ navToHtmlOptions:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 ---
 navToHtmlOptions:
@@ -609,6 +629,7 @@ navToHtmlOptions:
 ---
 {{ collections.all | eleventyNavigation("Humans") | eleventyNavigationToHtml(navToHtmlOptions) | safe }}
 ```
+
 {% endraw %}
 
   </div>
@@ -621,20 +642,19 @@ navToHtmlOptions:
 </seven-minute-tabs>
 </is-land>
 
-
 #### Advanced: All Rendering Options for `eleventyNavigationToMarkdown`
 
 {% addedin "Navigation 0.3.1" %}
 
-
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navmdoptions"} %}
   <div id="navmdoptions-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 ---
 navToMdOptions:
@@ -643,6 +663,7 @@ navToMdOptions:
 ---
 {{ collections.all | eleventyNavigation | eleventyNavigationToMarkdown: navToMdOptions | json }}
 ```
+
 {% endraw %}
 
   </div>
@@ -651,6 +672,7 @@ navToMdOptions:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 ---js
 {
@@ -662,6 +684,7 @@ navToMdOptions:
 ---
 {{ collections.all | eleventyNavigation | eleventyNavigationToMarkdown(navToMdOptions) | safe }}
 ```
+
 {% endraw %}
 
   </div>
@@ -674,20 +697,19 @@ navToMdOptions:
 </seven-minute-tabs>
 </is-land>
 
-
 #### Advanced: All Rendering Options for `eleventyNavigationToHtml`
 
 You can change the HTML elements, classes on the list and list items, and add an additional class for the current page’s navigation entry!
 
-
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navhtmloptions"} %}
   <div id="navhtmloptions-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 ---js
 {
@@ -715,8 +737,8 @@ You can change the HTML elements, classes on the list and list items, and add an
 ---
 {{ collections.all | eleventyNavigation | eleventyNavigationToHtml: navigationOptions | json }}
 ```
-{% endraw %}
 
+{% endraw %}
 
   </div>
   <div id="navhtmloptions-njk" role="tabpanel">
@@ -724,6 +746,7 @@ You can change the HTML elements, classes on the list and list items, and add an
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 ---js
 {
@@ -751,6 +774,7 @@ You can change the HTML elements, classes on the list and list items, and add an
 ---
 {{ collections.all | eleventyNavigation | eleventyNavigationToHtml(navigationOptions) | safe }}
 ```
+
 {% endraw %}
 
   </div>
@@ -763,7 +787,6 @@ You can change the HTML elements, classes on the list and list items, and add an
 </seven-minute-tabs>
 </is-land>
 
-
 These work with `eleventyNavigationBreadcrumb | eleventyNavigationToHtml` too.
 
 If you find yourself using a lot of these `class` options, maybe you should use the _Advanced: Unlimited Child Levels_ example below and have full control of your HTML!
@@ -774,15 +797,15 @@ This template will render a single tier of items (no children) _without_ using t
 
 Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
 
-
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navbyoh"} %}
   <div id="navbyoh-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 {% assign navPages = collections.all | eleventyNavigation %}
 <ul>
@@ -793,6 +816,7 @@ Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
 {%- endfor %}
 </ul>
 ```
+
 {% endraw %}
 
   </div>
@@ -801,6 +825,7 @@ Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 {% set navPages = collections.all | eleventyNavigation %}
 <ul>
@@ -811,6 +836,7 @@ Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
 {%- endfor %}
 </ul>
 ```
+
 {% endraw %}
 
   </div>
@@ -831,6 +857,7 @@ You _can_ use a Nunjucks macro to recursively render list items of any depth but
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```html
 {% set navPages = collections.all | eleventyNavigation %}
 {% macro renderNavListItem(entry) -%}
@@ -848,7 +875,7 @@ You _can_ use a Nunjucks macro to recursively render list items of any depth but
 {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
 </ul>
 ```
+
 {% endraw %}
 
 </details>
-

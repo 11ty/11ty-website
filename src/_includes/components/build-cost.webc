@@ -1,0 +1,90 @@
+<style>
+@media (min-width: 37.5em) { /* 600px */
+	.build-cost-inline {
+		float: right;
+		margin: 0 0 1em 1em;
+	}
+	.build-cost-inline ~ .codetitle {
+		clear: both;
+	}
+}
+</style>
+<style webc:scoped>
+:host {
+	--internal-border: rgba(0,0,0,.1);
+	--internal-shadow-hsl: 0deg 0% 75%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: .5em 1em;
+	text-align: center;
+	padding: .5em 1em;
+	border: 1px solid var(--internal-border);
+	border-radius: .5em;
+	font-weight: 700;
+	/* via https://www.joshwcomeau.com/shadow-palette/ */
+	box-shadow: 0px 0.3px 0.5px hsl(var(--internal-shadow-hsl) / 0),
+		0.1px 2.4px 3.6px hsl(var(--internal-shadow-hsl) / 0.07),
+		0.1px 4.3px 6.5px hsl(var(--internal-shadow-hsl) / 0.14),
+		0.2px 6.7px 10.1px hsl(var(--internal-shadow-hsl) / 0.22),
+		0.3px 10.6px 15.9px hsl(var(--internal-shadow-hsl) / 0.29),
+		0.5px 16.5px 24.8px hsl(var(--internal-shadow-hsl) / 0.36);
+}
+@media (prefers-color-scheme: dark) {
+	:host {
+		--internal-shadow-hsl: 0deg 0% 25%;
+		--internal-border: rgba(0,0,0,.7);
+	}
+}
+:host .cost:before {
+	content: "🧰";
+	padding-right: .25em;
+	vertical-align: baseline;
+	margin-top: -.15em;
+}
+:host .cost {
+	display: flex;
+	font-size: 3.2em;
+	font-family: monospace;
+}
+:host .metadata {
+	display: flex;
+	flex-direction: column;
+}
+:host .label {
+	letter-spacing: 1px;
+	text-align: left;
+	text-transform: uppercase;
+}
+:host .ranger {
+	display: flex;
+	justify-content: space-between;
+}
+:host .dot:before {
+	font-size: 1.25em;
+	content: "🐢";
+}
+:host .dot.empty:before {
+	opacity: .2;
+	filter: grayscale(1);
+}
+
+:host-context(a[href]):hover,
+:host-context(a[href]):focus {
+	outline: 2px solid blue;
+}
+
+:host p {
+	margin: 0;
+}
+</style>
+<span class="cost">
+	<b @text="cost"></b>
+</span>
+<span class="metadata">
+	<span class="label">Build Cost</span>
+	<span class="ranger" :class="cost > 3 ? 'warn' : (cost <= 2 ? 'ok' : '')" aria-hidden="true">
+		<div class="dot" :class="index > cost ? 'empty' : ''" webc:for="index of [1,2,3,4,5]"></div>
+	</span>
+</span>

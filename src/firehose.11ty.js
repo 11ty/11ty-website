@@ -1,31 +1,31 @@
-const activity = require("../config/activity.js");
-const { escapeText } = require("entities/lib/escape.js");
+import { escapeText } from "entities/lib/escape.js";
+import activity from "../config/activity.js";
 
 function getSlugFromTitle(str) {
-	if(str.startsWith("GitHub Releases [")) {
+	if (str.startsWith("GitHub Releases [")) {
 		return "github";
 	}
-	if(str.includes(": ")) {
+	if (str.includes(": ")) {
 		return str.split(": ")[0].replace(/\s/g, "-").toLowerCase();
 	}
 	return "";
 }
 
-module.exports.data = async function() {
+export async function data() {
 	const feed = await activity();
 	const entries = await feed.getEntries();
 
 	return {
 		entries: entries,
-		layout: "layouts/docs.njk"
-	}
-};
+		layout: "layouts/docs.njk",
+	};
+}
 
-module.exports.render = async function({entries}) {
+export async function render({ entries }) {
 	return `
 <h1>Eleventy Firehose</h1>
 
-<p>This page shows activity from the <a href="/blog/">Eleventy Blog</a>, <a href="/docs/quicktips/">Quick Tips</a>, <a href="https://11ty.dev/youtube">YouTube channel</a>, <a href="https://11ty.dev/mastodon">Mastodon account</a>, <a href="https://11ty.dev/twitter">Twitter feed</a> (currently dormant), and <em>all</em> GitHub releases (all of <a href="https://github.com/11ty/"><code>11ty</code> org</a> repositories).</p>
+<p>This page shows activity from the <a href="/blog/">Eleventy Blog</a>, <a href="/docs/quicktips/">Quick Tips</a>, <a href="https://11ty.dev/youtube">YouTube channel</a>, <a href="https://11ty.dev/mastodon">Mastodon account</a>, and <em>all</em> GitHub releases (all of <a href="https://github.com/11ty/"><code>11ty</code> org</a> repositories).</p>
 
 <ul>
 	<li><strong><a href="/firehose/firehose.rss">Subscribe to the Firehose RSS feed.</a></strong></li>
@@ -61,10 +61,6 @@ module.exports.render = async function({entries}) {
 				Mastodon
 			</label>
 			<label>
-				<input type="checkbox" value="twitter" data-filter-key="type">
-				Twitter
-			</label>
-			<label>
 				<input type="checkbox" value="youtube" data-filter-key="type" checked>
 				YouTube
 			</label>
@@ -81,18 +77,33 @@ module.exports.render = async function({entries}) {
 				Quick Tips
 			</label>
 		</form>
-${entries.map(entry => {
-	let content = entry.type === "tweet" || entry.title.startsWith("Mastodon: ") ? entry.content || "" : "";
-	if(entry.title.startsWith("YouTube") && entry.url.startsWith("https://www.youtube.com/watch?v=")) {
-		// TODO support startTime in URL
-		let slug = entry.url.slice("https://www.youtube.com/watch?v=".length);
+${entries
+	.map((entry) => {
+		let content =
+			entry.type === "tweet" || entry.title.startsWith("Mastodon: ")
+				? entry.content || ""
+				: "";
+		if (
+			entry.title.startsWith("YouTube") &&
+			entry.url.startsWith("https://www.youtube.com/watch?v=")
+		) {
+			// TODO support startTime in URL
+			let slug = entry.url.slice("https://www.youtube.com/watch?v=".length);
 
-		let startTime = 0;
-		content = this.youtubeEmbed(slug, entry.title, startTime);
-	}
-	return `<div data-filter-type="${getSlugFromTitle(entry.title)}">${this.callout(content, "box", "html", `<a href="${entry.url}">${escapeText(entry.title)}</a>`)}</div>`;
-}).join("\n")}
+			let startTime = 0;
+			content = this.youtubeEmbed(slug, entry.title, startTime);
+		}
+		return `<div data-filter-type="${getSlugFromTitle(
+			entry.title
+		)}">${this.callout(
+			content,
+			"box",
+			"html",
+			`<a href="${entry.url}">${escapeText(entry.title)}</a>`
+		)}</div>`;
+	})
+	.join("\n")}
 
 	</filter-container>
 </div>`;
-};
+}
