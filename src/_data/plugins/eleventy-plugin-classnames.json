@@ -1,0 +1,5 @@
+{
+	"npm": "@aaashur/eleventy-plugin-classnames",
+	"author": "ashur",
+	"description": "Conditionally join class names using a filter or shortcode, inspired by the 'classnames' package by JedWatson"
+}

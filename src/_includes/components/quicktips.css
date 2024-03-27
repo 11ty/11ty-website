@@ -18,11 +18,12 @@
 	margin-top: 0;
 }
 
-@media (min-width: 37.5em) { /* 600px */
+@media (min-width: 37.5em) {
+	/* 600px */
 	.quicktipstoc {
 		margin: 3% 0;
 		float: left;
-		border-radius: .25em;
+		border-radius: 0.25em;
 		font-size: 0.8125em; /* 13px /16 */
 	}
 }

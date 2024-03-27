@@ -3,9 +3,9 @@
 }
 .elv-possum {
 	position: absolute;
-	right: .5rem;
-	top: .5rem;
-	transition: .3s opacity ease-out;
+	right: 0.5rem;
+	top: 0.5rem;
+	transition: 0.3s opacity ease-out;
 }
 
 .elv-header-docs .elv-possum {

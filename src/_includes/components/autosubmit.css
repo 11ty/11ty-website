@@ -1,4 +1,0 @@
-form-autosubmit:defined form:not(.form-autosubmit-show-button) button[type="submit"],
-form-autosubmit:defined form:not(.form-autosubmit-show-button) input[type="submit"] {
-  display: none;
-}

@@ -16,7 +16,7 @@ a[href].opengraph-card:hover {
 }
 .opengraph-card span {
 	display: block;
-	margin: .5em;
+	margin: 0.5em;
 }
 .opengraph-card img {
 	display: block;

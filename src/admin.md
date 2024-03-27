@@ -6,11 +6,12 @@ ignoreGitHubButtons: true
 eleventyExcludeFromCollections: true
 layout: layouts/main.njk
 ---
+
 {{ title }}
 
 ## Budget
 
-* See also the [Open Collective Budget page for the current balance](https://opencollective.com/11ty#section-budget).
+- See also the [Open Collective Budget page for the current balance](https://opencollective.com/11ty#section-budget).
 
 ### Monthly Contributor Count
 
@@ -23,8 +24,9 @@ layout: layouts/main.njk
 _Monthly donations:_
 
 {%- for donation,count in opencollectiveMonthly.buckets %}
-* `{{ donation | displayPrice }}` ×{{ count }}
-{%- endfor %}
+
+- `{{ donation | displayPrice }}` _(×{{ count }}) {{ opencollectiveMonthly.names[donation] | join(", ") }}_
+  {%- endfor %}
 
 _Median monthly donation:_ `{{ opencollectiveMonthly.stats.median | displayPrice }}`
 _Mean monthly donation:_ `{{ opencollectiveMonthly.stats.mean | displayPrice }}`
