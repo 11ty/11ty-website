@@ -17,7 +17,7 @@ A plugin for creating infinite-depth hierarchical navigation in Eleventy project
 ## Template Compatibility
 
 - Any template language can add to navigation.
-- Nunjucks or Liquid are required for rendering the navigation menu.
+- Any template language compatible with [Universal Filters](/docs/filters/) can render the navigation menu.
 
 ## Installation
 
@@ -156,7 +156,7 @@ Use [`permalink: false`](/docs/permalinks/#permalink-false) to ensure that this 
 
 ## Rendering the Navigation Menu (Easy Mode)
 
-Nunjucks and Liquid engines are supported. If you’re tired of reading, just use one of the following. These are using [the filters documented below](#render-with-a-filter). If you want more control or need additional customization, keep reading!
+Nunjucks, Liquid and WebC engines are supported. If you’re tired of reading, just use one of the following. These are using [the filters documented below](#render-with-a-filter). If you want more control or need additional customization, keep reading!
 
 ### Output HTML
 
@@ -186,6 +186,17 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
 {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
 ```
 
+{% endraw %}
+
+  </div>
+	<div id="navtohtml-webc" role="tabpanel">
+
+{% codetitle "WebC", "Syntax" %}
+
+{% raw %}
+```html
+<nav @html="eleventyNavigationToHtml(eleventyNavigation($data.collections.all))"></nav>
+```
 {% endraw %}
 
   </div>
@@ -228,6 +239,17 @@ Nunjucks and Liquid engines are supported. If you’re tired of reading, just us
 {{ collections.all | eleventyNavigation | eleventyNavigationToMarkdown | safe }}
 ```
 
+{% endraw %}
+
+  </div>
+	<div id="navtohtml-webc" role="tabpanel">
+
+{% codetitle "WebC", "Syntax" %}
+
+{% raw %}
+```html
+<nav @html="eleventyNavigationToMarkdown(eleventyNavigation($data.collections.all))"></nav>
+```
 {% endraw %}
 
   </div>
