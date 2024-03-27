@@ -3,6 +3,7 @@ eleventyNavigation:
   key: Eleventy Dev Server
   parent: Watch and Serve
 ---
+
 # Eleventy Dev Server {% addedin "2.0.0" %}
 
 {% tableofcontents %}
@@ -11,16 +12,16 @@ The Eleventy 2.0 release bundles a new development server. Check out the [`11ty/
 
 At time of release, this new server helps Eleventy by:
 
-* 🏋🏻‍♀️ Minimal footprint: 1.4 MB node_modules
-  * Eleventy `node_modules` dropped from 155 MB to 34.3 MB
-  * Faster Eleventy `npm install` times (30.5% faster)
-  * Reduced Eleventy dependency count from 311 -> 211
-* 📦 Decoupled from any Bundler
-* 🚄 Fast ~2ms startup times
-* ⚡️ WebSockets-based Live reload
-* 🔬 DOM-diffing HTML updates
-* ⚠️ No unresolved `npm audit` errors or warnings 👀
-* 🚤 Supports [emulated passthrough file copy](/docs/copy/#emulate-passthrough-copy-during-serve) for faster builds!
+- 🏋🏻‍♀️ Minimal footprint: 1.4 MB node_modules
+  - Eleventy `node_modules` dropped from 155 MB to 34.3 MB
+  - Faster Eleventy `npm install` times (30.5% faster)
+  - Reduced Eleventy dependency count from 311 -> 211
+- 📦 Decoupled from any Bundler
+- 🚄 Fast ~2ms startup times
+- ⚡️ WebSockets-based Live reload
+- 🔬 DOM-diffing HTML updates
+- ⚠️ No unresolved `npm audit` errors or warnings 👀
+- 🚤 Supports [emulated passthrough file copy](/docs/copy/#emulate-passthrough-copy-during-serve) for faster builds!
 
 Read more on the [Eleventy Dev Server 1.0 release notes](https://github.com/11ty/eleventy-dev-server/releases/tag/v1.0.0).
 
@@ -31,41 +32,41 @@ You can configure the server with the new `setServerOptions` Configuration API m
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setServerOptions({
-    // Default values are shown:
+module.exports = function (eleventyConfig) {
+	eleventyConfig.setServerOptions({
+		// Default values are shown:
 
-    // Whether the live reload snippet is used
-    liveReload: true,
+		// Whether the live reload snippet is used
+		liveReload: true,
 
-    // Whether DOM diffing updates are applied where possible instead of page reloads
-    domDiff: true,
+		// Whether DOM diffing updates are applied where possible instead of page reloads
+		domDiff: true,
 
-    // The starting port number
-    // Will increment up to (configurable) 10 times if a port is already in use.
-    port: 8080,
+		// The starting port number
+		// Will increment up to (configurable) 10 times if a port is already in use.
+		port: 8080,
 
-    // Additional files to watch that will trigger server updates
-    // Accepts an Array of file paths or globs (passed to `chokidar.watch`).
-    // Works great with a separate bundler writing files to your output folder.
-    // e.g. `watch: ["_site/**/*.css"]`
-    watch: [],
+		// Additional files to watch that will trigger server updates
+		// Accepts an Array of file paths or globs (passed to `chokidar.watch`).
+		// Works great with a separate bundler writing files to your output folder.
+		// e.g. `watch: ["_site/**/*.css"]`
+		watch: [],
 
-    // Show local network IP addresses for device testing
-    showAllHosts: false,
+		// Show local network IP addresses for device testing
+		showAllHosts: false,
 
-    // Use a local key/certificate to opt-in to local HTTP/2 with https
-    https: {
-      // key: "./localhost.key",
-      // cert: "./localhost.cert",
-    },
+		// Use a local key/certificate to opt-in to local HTTP/2 with https
+		https: {
+			// key: "./localhost.key",
+			// cert: "./localhost.cert",
+		},
 
-    // Change the default file encoding for reading/serving files
-    encoding: "utf-8",
+		// Change the default file encoding for reading/serving files
+		encoding: "utf-8",
 
-    // Show the dev server version number on the command line
-    showVersion: false,
-  });
+		// Show the dev server version number on the command line
+		showVersion: false,
+	});
 };
 ```
 
@@ -75,35 +76,34 @@ module.exports = function(eleventyConfig) {
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setServerOptions({
-    // Show the server version number on the command line
-    showVersion: false,
+module.exports = function (eleventyConfig) {
+	eleventyConfig.setServerOptions({
+		// Show the server version number on the command line
+		showVersion: false,
 
-    // Change the name of the folder name used for injected scripts
-    injectedScriptsFolder: ".11ty",
+		// Change the name of the folder name used for injected scripts
+		injectedScriptsFolder: ".11ty",
 
-    // Number of times to increment a port is already in use
-    portReassignmentRetryCount: 10,
+		// Number of times to increment a port is already in use
+		portReassignmentRetryCount: 10,
 
-    // Alias for backwards compatibility, renamed to `injectedScriptsFolder` in Dev Server 1.0+
-    folder: ".11ty",
+		// Alias for backwards compatibility, renamed to `injectedScriptsFolder` in Dev Server 1.0+
+		folder: ".11ty",
 
-    // Alias for backwards compatibility, renamed to `liveReload` in Dev Server 1.0+
-    enabled: true,
+		// Alias for backwards compatibility, renamed to `liveReload` in Dev Server 1.0+
+		enabled: true,
 
-    // Alias for backwards compatibility, renamed to `domDiff` in Dev Server 1.0+
-    domdiff: true,
-  });
+		// Alias for backwards compatibility, renamed to `domDiff` in Dev Server 1.0+
+		domdiff: true,
+	});
 };
 ```
 
-
 </details>
 
-* Read more about [`chokidar.watch` compatible paths](https://github.com/paulmillr/chokidar)
-* For a full list of `encoding` values supported by Node (also used in the `Content-Type` HTTP Header), check out [Node’s Buffer documentation](https://nodejs.org/api/buffer.html#buffers-and-character-encodings).
-* Using a root `404.html` file (a popular convention supported by Netlify, GitHub Pages, Vercel, and others) supported! We use the content from a `404.html` in your output folder when serving the error page for missing content.
+- Read more about [`chokidar.watch` compatible paths](https://github.com/paulmillr/chokidar)
+- For a full list of `encoding` values supported by Node (also used in the `Content-Type` HTTP Header), check out [Node’s Buffer documentation](https://nodejs.org/api/buffer.html#buffers-and-character-encodings).
+- Using a root `404.html` file (a popular convention supported by Netlify, GitHub Pages, Vercel, and others) supported! We use the content from a `404.html` in your output folder when serving the error page for missing content.
 
 {% callout "info", "md" -%}
 Try out the [`devcert-cli`](https://github.com/davewasmer/devcert-cli) package to generate a localhost key and certificate for `https` and HTTP/2.
@@ -130,20 +130,20 @@ Then, enable it in your configuration file:
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setServerOptions({
-    module: "@11ty/eleventy-server-browsersync",
+module.exports = function (eleventyConfig) {
+	eleventyConfig.setServerOptions({
+		module: "@11ty/eleventy-server-browsersync",
 
-    // Default Browsersync options shown:
-    port: 8080,
-    open: false,
-    notify: false,
-    ui: false,
-    ghostMode: false,
+		// Default Browsersync options shown:
+		port: 8080,
+		open: false,
+		notify: false,
+		ui: false,
+		ghostMode: false,
 
-    // Opt-out of the Browsersync snippet
-    // snippet: false,
-  })
+		// Opt-out of the Browsersync snippet
+		// snippet: false,
+	});
 };
 ```
 
@@ -152,7 +152,6 @@ View the [full list of Browsersync options](https://browsersync.io/docs/options)
 <div class="youtube-related">
   {%- youtubeEmbed "7hER8HddlhQ", "Fallback to browsersync (Weekly №4)", "235" -%}
 </div>
-
 
 ### `setBrowserSyncConfig`
 

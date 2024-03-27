@@ -1,4 +1,4 @@
----javascript
+---node
 // <script>
 let layout = "layouts/main.njk";
 let logoLink = "/docs/";
@@ -12,7 +12,8 @@ let skipLegacyBundle = true;
 
 let ignoreGitHubButtons = true;
 let ignoreSupporters = true;
-let searchTitle = "Eleventy, a simpler static site generator";
+let ignoreSidebarCallout = true;
+let searchTitle = "Eleventy is a simpler static site generator";
 let skipAuth = true;
 
 let eleventyImport = {
@@ -21,7 +22,7 @@ let eleventyImport = {
 
 let eleventyComputed = {
 	social: {
-		description: () => "Eleventy, a simpler static site generator."
+		description: () => "Eleventy is a simpler static site generator."
 	},
 };
 // </script>
@@ -32,69 +33,119 @@ function getHighlightedBlogPostContent(collection) {
 	if(!posts.length) {
 		return "";
 	}
+	posts.reverse();
 
 	let content = [];
+	let index = 0;
 	for(let post of posts) {
-		content.push(`<strong><a href="${post.url}">${post.data.newstitle}</a></strong>`);
+		content.push(`<li><a href="${post.url}">${index === 0 ? `<strong>` : ""}${post.data.newstitle}${index === 0 ? `</strong>` : ""}</a> (<em>${newsDate(post.date)}</em>)</li>`);
+		index++;
 	}
+	// 10 hardcoded posts on the blog
+	content.push(`<li>…and <a href="/blog/">${collection.length + 10 - posts.length} more on the <strong>blog archives</strong></a>.</li>`)
 
-	return `Read ${content.join(" and ")} <em>(and more!)</em> on the <a href="/blog/">Eleventy Blog</a>.`;
+	return `${content.join("")}`;
+}
+
+function randomTestimonialLink(testimonials) {
+	let featuredOnly = testimonials.filter(entry => entry.featured && !entry.filteredFromRandomPick);
+	let random = randompick(featuredOnly);
+	let slug = slugify(random.name);
+
+	return `What is <a href="/docs/testimonials/#${slug}">${testimonialNameHtml(random)} saying about Eleventy?</a>`;
 }
 </script>
 
 <!-- css-only components -->
-<possum variant="home"></possum>
+<possum variant="home" webc:nokeep></possum>
+
 <!-- this is a workaround for the layout used in the header -->
-<flex-luthor></flex-luthor>
+<flex-luthor webc:nokeep></flex-luthor>
 
-<callout :content="getHighlightedBlogPostContent(collections.blog)"></callout>
-
-<p class="ta-c elv-h3"><em>Fast Builds and even Faster Web Sites</em></p>
+<quick-start></quick-start>
 
 <div webc:bucket="async">
-	<is-land on:visible on:media="(prefers-reduced-motion: no-preference)">
-		<build-comparison variant="home"></build-comparison>
+	<sponsors-list></sponsors-list>
+
+	<h2>News from the Blog</h2>
+	<ul @html="getHighlightedBlogPostContent(collections.blog)"></ul>
+
+	<h2>Why should you use Eleventy?</h2>
+	<ul>
+		<li>
+			Eleventy has <a href="/docs/performance/"><strong>fast builds and even faster web sites</strong></a>.
+			<is-land on:visible on:media="(prefers-reduced-motion: no-preference)">
+				<build-comparison variant="home"></build-comparison>
+			</is-land>
+		</li>
+		<li>
+			Eleventy is <strong>production ready</strong> and trusted by:
+			<is-land on:visible on:save-data="false">
+				<logo-cloud></logo-cloud>
+			</is-land>
+			<small>Eleventy has been downloaded <a href="/blog/eight-million/">over 8 million times</a> and is used on <a href="https://github.com/11ty/eleventy/network/dependents">70,000+ repositories on GitHub</a></a>.</small>
+		</li>
+		<li>
+			Eleventy offers <strong>full control over your project’s output</strong>. We don’t <a href="https://www.youtube.com/watch?v=b4frtsT4Cgo">inject our own markup into your pages</a>.
+		</li>
+		<li>
+			Eleventy has a <a href="/docs/community/">lovely community of folks</a> that really care about what they build. <em @html="randomTestimonialLink(testimonials)"></em>
+		</li>
+		<li>
+			<a href="/blog/stability/">Eleventy is <strong>stable</strong></a>. We’ve shipped <span @text="getsize(versions) - 1"></span> releases going back to the first version in December 2017 and only two of those releases have had Eleventy-specific changes requiring developer changes.
+			<blockquote>
+				<p>a11yproject.com launched with version 1.0.0 of Eleventy. […] It's been a little under three years and I haven't had to make any adjustments to its dependencies, and it can still install and run from a cold start with no complications. When I update the site to use version 2.0.0 I'll actually be removing dependencies, and not adding more. […] That's rare and special.—<a href="https://social.ericwbailey.website/@eric/109914908787346813"><img webc:is="indieweb-avatar" url="https://ericwbailey.design/"> Eric Bailey</a></p>
+			</blockquote>
+		</li>
+		<li>
+			Eleventy <strong>doesn’t track you</strong>. We <a href="https://www.zachleat.com/web/site-generator-review/#telemetry">don’t have or use telemetry nor require you to opt-out of data collection</a>.
+		</li>
+		<li>
+			Eleventy is <strong><a href="/docs/glossary/#zero-config" class="buzzword">zero-config</a></strong> to start and can be extended with flexible configuration options.
+		</li>
+		<li>
+			Eleventy <strong>works with multiple template languages</strong>. You can pick one or use them all together in a single project: <lists webc:nokeep><template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>{% templatelangs templatetypes, page %}</template></lists>
+		</li>
+		<li>
+			Eleventy uses <strong>independent template languages</strong>. We don’t want to hold your content hostage with a custom format. If you decide to use a different syntax later, having your content decoupled in this way will make migration easier.
+		</li>
+		<li>
+			Eleventy does <strong>not require that you use a JavaScript framework</strong>—that means <em>zero client-side JavaScript by default across the board</em>. We’re <strong>thinking long-term</strong> to opt-out of the framework rat race. The tool chain, modules, and components you use in your front end stack are decoupled from this tool. Work from a solid foundation of <a href="/docs/glossary/#pre-rendered-templates-by-default" class="buzzword">pre-rendered templates</a> that suit your project’s <a href="/docs/glossary/#progressive-enhancement" class="buzzword">progressive enhancement</a> baseline requirements.
+		</li>
+		<li>
+			Eleventy <strong>works with your project’s existing directory structure</strong>. The tool doesn’t require an <code>app</code> directory or a <code>pages</code> directory. Use the structure that you want.
+		</li>
+		<li>
+			Eleventy allows <strong>incremental adoption</strong>. We only <a href="/docs/config/#template-formats">look for the files</a> and <a href="/docs/config/#input-directory">directories</a> you specify. Further, with even more precision you can <a href="/docs/ignores/">opt-out or ignore specific files</a> in your project. You don’t need to start an Eleventy project from scratch. Eleventy is flexible enough to allow conversion of only a few templates at a time. Migrate as fast or as slow as you’d like.
+		</li>
+	</ul>
+
+	<p><a href="/docs/"><strong>Get started with Eleventy today!</strong></a> or read more about <a href="https://www.zachleat.com/web/introducing-eleventy/">Eleventy’s project goals</a>.</p>
+
+	<is-land on:visible on:save-data="false">
+		<template data-island>
+			<h2><a href="https://opencollective.com/11ty">Open Collective</a> Supporters</h2>
+			<facepile webc:nokeep>
+				<html-fetch src="/imports/supporters.html" show-gold-sponsors></html-fetch>
+			</facepile>
+		</template>
 	</is-land>
-
-	<p>From a <a href="https://www.zachleat.com/web/build-benchmark/#benchmark-results">benchmark of ×4000 markdown files</a>. Learn more about <a href="/docs/performance/">Eleventy’s site and build performance</a>.</p>
-
-	<quick-start></quick-start>
-	<hr>
-
-	<div class="fullwidth-module">
-		<logo-cloud></logo-cloud>
-	</div>
 
 	<giant-docs-button></giant-docs-button>
 	<giant-docs-button-subtext></giant-docs-button-subtext>
-
-	<sponsors></sponsors>
-
-	<div class="fullwidth-module">
-		<is-land on:visible on:save-data="false">
-			<template data-island>
-				<h3 class="subhed ta-c"><strong>Supporters</strong></h3>
-				<facepile>
-					<html-fetch src="/imports/supporters.html"></html-fetch>
-				</facepile>
-			</template>
-		</is-land>
-	</div>
 
 
 	<h2>Built With Eleventy</h2>
 
 	<sites-list-njk :@sites="builtwith"></sites-list-njk>
 
-	<div class="fullwidth-module">
-		<is-land on:visible on:save-data="false">
-			<facepile>
-				<html-fetch src="/imports/facepile.html"></html-fetch>
-			</facepile>
-		</is-land>
-	</div>
+	<is-land on:visible on:save-data="false">
+		<facepile>
+			<html-fetch src="/imports/facepile.html"></html-fetch>
+		</facepile>
+	</is-land>
 
-	<p>Sample of <em>110</em> authors shown. View <a href="/speedlify/">all <span @text="getsize(objectFilterNot(builtwith, 'disabled'))" webc:nokeep></span> sites</a>.</p>
+	<p>Sample of <code>110</code> authors shown. View the <a href="/speedlify/">full list of <code><span @text="getsize(objectFilterNot(builtwith, 'disabled'))" webc:nokeep></span></code> web sites</a>.</p>
 
 	<h2>Don’t take my word for it <emoji @char="🌈" @alt="Rainbow"></emoji></h2>
 
@@ -103,4 +154,24 @@ function getHighlightedBlogPostContent(collection) {
 	<testimonials-list :@testimonials="testimonials"></testimonials-list>
 
 	<p><a href="/docs/testimonials/">…and many more!</a></p>
+
+	<h2>Alternatives</h2>
+
+	<p>This project aims to directly compete with all other static site generators. We encourage you to try out a few others:</p>
+
+	<lists webc:nokeep>
+		<ul class="inlinelist">
+			<li class="inlinelist-item"><a href="https://jekyllrb.com/">Jekyll (Ruby)</a></li>
+			<li class="inlinelist-item"><a href="https://gohugo.io/">Hugo (Go)</a></li>
+			<li class="inlinelist-item"><a href="https://hexo.io/">Hexo (JavaScript)</a></li>
+			<li class="inlinelist-item"><a href="https://www.gatsbyjs.org/">Gatsby (JavaScript using React)</a></li>
+			<li class="inlinelist-item"><a href="https://nuxtjs.org/">Nuxt (JavaScript using Vue)</a></li>
+			<li class="inlinelist-item"><a href="https://nextjs.org/">Next.js (JavaScript using React)</a></li>
+			<li class="inlinelist-item"><a href="https://www.bridgetownrb.com/">Bridgetown (Ruby)</a></li>
+			<li class="inlinelist-item"><a href="https://astro.build/">Astro (JavaScript)</a></li>
+			<li class="inlinelist-item"><a href="https://remix.run/">Remix (JavaScript using React)</a></li>
+			<li class="inlinelist-item"><a href="https://kit.svelte.dev/">SvelteKit (JavaScript using Svelte)</a></li>
+			<li class="inlinelist-item"><em>More at <a href="https://jamstack.org/generators/">jamstack.org</a></em></li>
+		</ul>
+	</lists>
 </div>

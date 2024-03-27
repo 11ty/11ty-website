@@ -4,6 +4,7 @@ eleventyNavigation:
   parent: Blog
   key: Logo homage
 ---
+
 As many of you may know, [James Williamson](/blog/james-williamson/) first came up with _animal suspended from the floating red balloon_ logo for the Eleventy project in May of 2018.
 
 It was [originally a cat](https://web.archive.org/web/20200307013845/https://twitter.com/jameswillweb/status/999052022497316865)!
@@ -23,4 +24,5 @@ Literally three days later, I am proud to show you all something that I hope Jam
 You can see more of Phineas’ work on [octophant.us](http://octophant.us/), [Instagram](https://www.instagram.com/pxj_work/), or [Twitter]({{ "https://twitter.com/Phineas/status/1128348644854382592" | canonicalTwitterUrl }}).
 
 ---
+
 We also maintain a [Twitter Moment of community contributed logos](https://twitter.com/i/events/1202470199179563008).

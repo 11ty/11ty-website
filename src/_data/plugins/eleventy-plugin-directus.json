@@ -1,0 +1,5 @@
+{
+  "npm": "@silexlabs/eleventy-plugin-directus",
+  "author": "lexoyo",
+  "description": "Expose Directus collections as global data in 11ty"
+}

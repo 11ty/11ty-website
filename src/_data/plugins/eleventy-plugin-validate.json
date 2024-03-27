@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-validate",
+	"author": "uncenter",
+	"description": "A plugin that enables you to validate the front matter data of collection items with Zod schemas."
+}

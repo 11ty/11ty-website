@@ -1,0 +1,29 @@
+---
+eleventyNavigation:
+  parent: Working with Templates
+  key: Add Images
+  order: .1
+  excerpt: Add images to your Eleventy project.
+---
+<h1>Adding Images</h1>
+
+<!-- <img
+	webc:is="eleventy-image"
+	src="./src/img/possum-geri.png"
+	alt="The possum is Eleventy’s mascot"
+	width="222, 350"
+	class="some-custom-class"
+	sizes="(min-width: 43.75em) 100px, 15vw"> -->
+
+<h2>Content images</h2>
+
+<h2>Optimized images</h2>
+
+<h2>Icons</h2>
+
+Bundle plugin
+
+<sites-list>
+	<site-card @url="https://chriskirknielsen.com/blog/manage-your-svg-files-with-eleventys-render-plugin/" @name="Manage Your Svg Files With Eleventy’s Render Plugin" @date=""></site-card>
+	<site-card @url="https://bennypowers.dev/posts/11ty-svg-sprites/" @name="SVG Icon Sprites in Eleventy" @date=""></site-card>
+</sites-list>

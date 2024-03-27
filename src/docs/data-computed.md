@@ -4,6 +4,7 @@ eleventyNavigation:
   key: Computed Data
   order: 5
 ---
+
 # Computed Data {% addedin "0.11.0" %}
 
 {% tableofcontents %}
@@ -35,12 +36,12 @@ Instead, I created this Data Directory File using `eleventyComputed`:
 
 ```js
 module.exports = {
-  eleventyComputed: {
-    eleventyNavigation: {
-      key: data => data.title,
-      parent: data => data.parent
-    }
-  }
+	eleventyComputed: {
+		eleventyNavigation: {
+			key: (data) => data.title,
+			parent: (data) => data.parent,
+		},
+	},
 };
 ```
 
@@ -52,12 +53,12 @@ The resulting data for each `posts/*.md` file when processed by Eleventy has the
 
 ```json
 {
-  "title": "My Page Title",
-  "parent": "My Parent Key",
-  "eleventyNavigation": {
-    "key": "My Page Title",
-    "parent": "My Parent Key"
-  }
+	"title": "My Page Title",
+	"parent": "My Parent Key",
+	"eleventyNavigation": {
+		"key": "My Page Title",
+		"parent": "My Parent Key"
+	}
 }
 ```
 
@@ -65,10 +66,10 @@ If I wanted this data to be computed for all files, I could instead create the f
 
 ```js
 module.exports = {
-  eleventyNavigation: {
-    key: data => data.title,
-    parent: data => data.parent
-  }
+	eleventyNavigation: {
+		key: (data) => data.title,
+		parent: (data) => data.parent,
+	},
 };
 ```
 
@@ -80,17 +81,17 @@ Here’s a bunch of examples:
 
 ```js
 module.exports = {
-  eleventyComputed: {
-    myTemplateString: "This is assumed to be a template string!",
-    myString: data => "This is a string!",
-    myFunction: data => `This is a string using ${data.someValue}.`,
-    myAsyncFunction: async data => await someAsyncThing(),
-    myPromise: data => {
-      return new Promise(resolve => {
-        setTimeout(() => resolve("100ms DELAYED HELLO"), 100);
-      })
-    }
-  }
+	eleventyComputed: {
+		myTemplateString: "This is assumed to be a template string!",
+		myString: (data) => "This is a string!",
+		myFunction: (data) => `This is a string using ${data.someValue}.`,
+		myAsyncFunction: async (data) => await someAsyncThing(),
+		myPromise: (data) => {
+			return new Promise((resolve) => {
+				setTimeout(() => resolve("100ms DELAYED HELLO"), 100);
+			});
+		},
+	},
 };
 ```
 
@@ -105,6 +106,7 @@ Consider our first example, but using Nunjucks (this example is also valid Liqui
 {% codetitle "posts/my-page-title.njk" %}
 
 {% raw %}
+
 ```markdown
 ---
 title: My Page Title
@@ -115,6 +117,7 @@ eleventyComputed:
     parent: "{{ parent }}"
 ---
 ```
+
 {% endraw %}
 
 The above would also resolve to the same Data Cascade:
@@ -123,12 +126,12 @@ The above would also resolve to the same Data Cascade:
 
 ```json
 {
-  "title": "My Page Title",
-  "parent": "My Parent Key",
-  "eleventyNavigation": {
-    "key": "My Page Title",
-    "parent": "My Parent Key"
-  }
+	"title": "My Page Title",
+	"parent": "My Parent Key",
+	"eleventyNavigation": {
+		"key": "My Page Title",
+		"parent": "My Parent Key"
+	}
 }
 ```
 
@@ -140,23 +143,25 @@ The above would also resolve to the same Data Cascade:
 
 We put a lot of work into making this feature as easy to use as possible. Most of these details shouldn’t matter to you as it should Just Work™. But here’s a few things we thought of already and handle in a good way:
 
-* You can put your `eleventyComputed` values anywhere in the Data Cascade: Front Matter, any Data Files (you could even make an `eleventyComputed.js` global data file if you wanted to set this for your entire site).
-* You can read and use any of the existing data properties (including [ones created by Eleventy like `page`](/docs/data-eleventy-supplied/)).
-  * You can use *or* set `permalink` in `eleventyComputed` and it will work (`permalink` is a top-level special case computed property anyway). Setting other [special Eleventy data keys](/docs/data-configuration/) are not yet supported.
-* You can use a computed property that depends on other computed properties (just reference them like they were any other property `data.propName` and ⚠️ **not** `data.eleventyComputed.propName`)
-  * The order of the keys in the object doesn’t matter—we smartly figure out what order these should be computed in.
-  * We will let you know if you have circular references (`key1` uses on `key2` which uses `key1` again)
-  * When we calculate the dependency graph for your variable references, we may get it wrong if your references to other computed properties are nested inside of conditional logic. Read more at [Declaring your Dependencies](#declaring-your-dependencies).
-* You can use a nested object of any depth. It can mix, match, and merge with the standard (non-computed) data. This will always do deep merging (independent of your [Data Deep Merge configuration](/docs/data-deep-merge/)).
-* You can reuse _and_ override properties at the same time. In the following example `key` will have `This Is My Key` as its value.
-{% raw %}
+- You can put your `eleventyComputed` values anywhere in the Data Cascade: Front Matter, any Data Files (you could even make an `eleventyComputed.js` global data file if you wanted to set this for your entire site).
+- You can read and use any of the existing data properties (including [ones created by Eleventy like `page`](/docs/data-eleventy-supplied/)).
+  - You can use _or_ set `permalink` in `eleventyComputed` and it will work (`permalink` is a top-level special case computed property anyway). Setting other [special Eleventy data keys](/docs/data-configuration/) are not yet supported.
+- You can use a computed property that depends on other computed properties (just reference them like they were any other property `data.propName` and ⚠️ **not** `data.eleventyComputed.propName`)
+  - The order of the keys in the object doesn’t matter—we smartly figure out what order these should be computed in.
+  - We will let you know if you have circular references (`key1` uses on `key2` which uses `key1` again)
+  - When we calculate the dependency graph for your variable references, we may get it wrong if your references to other computed properties are nested inside of conditional logic. Read more at [Declaring your Dependencies](#declaring-your-dependencies).
+- You can use a nested object of any depth. It can mix, match, and merge with the standard (non-computed) data. This will always do deep merging (independent of your [Data Deep Merge configuration](/docs/data-deep-merge/)).
+- You can reuse _and_ override properties at the same time. In the following example `key` will have `This Is My Key` as its value.
+  {% raw %}
+
 ```markdown
 ---
 key: My Key
 eleventyComputed:
-  key: "This Is {{key}}"
+  key: "This Is {{ key }}"
 ---
 ```
+
 {% endraw %}
 
 ### Declaring Your Dependencies
@@ -165,20 +170,20 @@ We do try our best to automatically detect dependencies between `eleventyCompute
 
 ```js
 module.exports = {
-  eleventyComputed: {
-    myValue: () => "Hi",
-    myOtherValue: () => "Bye",
-    usesAllTheThings: data => {
-      // We detect this as a declared dependency
-      data.myValue;
-      // You can use as many as you want.
-      data.myOtherValue;
-      // You could use any valid JS syntax to access them.
-      [data.myValue, data.myOtherValue];
+	eleventyComputed: {
+		myValue: () => "Hi",
+		myOtherValue: () => "Bye",
+		usesAllTheThings: (data) => {
+			// We detect this as a declared dependency
+			data.myValue;
+			// You can use as many as you want.
+			data.myOtherValue;
+			// You could use any valid JS syntax to access them.
+			[data.myValue, data.myOtherValue];
 
-      return `How are you?`;
-    }
-  }
+			return `How are you?`;
+		},
+	},
 };
 ```
 
