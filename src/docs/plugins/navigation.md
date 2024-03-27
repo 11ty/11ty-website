@@ -215,7 +215,7 @@ Template languages that support [universal filters](/docs/filters/) are supporte
 
 ### To Markdown
 
-{% addedin "Navigation 0.3.1" %}
+{% addedin "Navigation 0.3.1" %} This is most useful in `.md` files (preprocessed as Liquid or Nunjucks). It’s highly unlikely you want to output Markdown in a WebC file (but maybe you do, I’m not your parent). You probably want the HTML example above.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs persist sync>
@@ -247,7 +247,6 @@ Template languages that support [universal filters](/docs/filters/) are supporte
 
   </div>
 	<div id="navtomd-webc" role="tabpanel">
-		<p><em>It’s highly unlikely you want to output to Markdown in a WebC file. Use the HTML example above.</em></p>
 
 {% codetitle "WebC", "Syntax" %}
 
