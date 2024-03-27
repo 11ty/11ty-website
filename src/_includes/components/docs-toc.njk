@@ -3,12 +3,13 @@
 {%- callout "pinned", "html", adTitle %}
 <p>Join the <a href="https://conf.11ty.dev/" class="elv-externalexempt"><strong>11ty International Symposium on Making Web Sites Real Good</strong></a>.</p>
 {%- endcallout %}
-{%- callout "box", "html", "Versions" -%}
+{%- set versionsTitle = "<a href='/docs/versions/'>Versions</a>" %}
+{%- callout "box", "html", versionsTitle -%}
 	<dl>
 		<dt>Stable</dt>
-		<dd>{{ npmVersions.latest }}</dd>
+		<dd><code>{{ npmVersions.latest }}</code></dd>
 		<dt>Canary</dt>
-		<dd>{{ npmVersions.canary }}</dd>
+		<dd><code>{{ npmVersions.canary }}</code></dd>
 	</dl>
 {%- endcallout %}
 

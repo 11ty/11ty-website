@@ -468,7 +468,6 @@ dl.elv-list-vertical {
 	grid-template-columns: auto;
 }
 dd {
-	font-weight: 600;
 	margin: 0;
 }
 dl:first-child {
