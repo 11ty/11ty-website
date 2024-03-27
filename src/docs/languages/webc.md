@@ -242,7 +242,7 @@ module.exports = function (eleventyConfig) {
 
 ## WebC Reference
 
-Note that all `webc:` attributes are removed from the rendered output HTML.
+**Note:** All `webc:` attributes are removed from the rendered output HTML.
 
 ### HTML-only components
 
@@ -331,7 +331,7 @@ Outputs:
 
 </details>
 
-Eleventy runs WebC in Bundler mode. That means that when it finds `<style>`, `<link rel="stylesheet">`, or `<script>` elements in component definitions they are removed from the output markup and _their content_ is aggregated together for re-use in asset bundles on the page. Read more about [CSS and JS in WebC](<#css-and-js-(bundler-mode)>). _(You can opt-out of this behavior with `webc:keep`.)_
+Eleventy runs WebC in Bundler mode. That means that when it finds `<style>`, `<link rel="stylesheet">`, or `<script>` elements in component definitions, they are removed from the output markup and _their content_ is aggregated together for re-use in asset bundles on the page. Read more about [CSS and JS in WebC](#css-and-js-(bundler-mode)). _(You can opt-out of this behavior with `webc:keep`.)_
 
 ### `webc:keep`
 
@@ -541,7 +541,7 @@ Inside of your component definition, you can add attributes to the outer host co
 
 #### Override the host component tag
 
-You can use `webc:root="override"` together to override the host component tag name! This isn’t very useful for HTML-only components (which leave out the host component tag) but is very useful when your component has style/scripts.
+You can use `webc:root="override"` to override the host component tag name! This isn’t very useful for HTML-only components (which leave out the host component tag), but is very useful when your component has style/scripts.
 
 {% codetitle "components/my-component.webc" %}
 
@@ -552,11 +552,11 @@ You can use `webc:root="override"` together to override the host component tag n
 </style>
 ```
 
-- {% addedin "@11ty/webc@0.9.0" %}This was changed from `webc:root webc:keep` in WebC v0.9.0.
+* {% addedin "@11ty/webc@0.9.0" %}Previously, the above used to be accomplished by using `webc:root` and `webc:keep` together on an element.
 
 #### Nesting
 
-It’s worth noting also that `webc:root` can be nested inside of other content—it does not need to exist at the top level of the component definition (framework folks love nested things deeply in `div` right).
+It’s worth noting also that `webc:root` can be nested inside of other content—it does not need to exist at the top level of the component definition. (Framework folks love things deeply nested in `div`s, right?)
 
 {% codetitle "components/my-component.webc" %}
 
@@ -750,7 +750,7 @@ _**CSS bundling opinion alert**:_ Some folks recommend using Declarative Shadow 
 1. The progressive enhancement story requires [ubiquitous browser support](https://caniuse.com/declarative-shadow-dom) before using it for content in the critical rendering path.
 2. It requires `<style>` duplication in each instance of the component.
 
-Just be aware of these tradeoffs and note that you can use both methods in WebC!
+Just be aware of these tradeoffs. And remember that you can use both methods in WebC!
 {% endcallout %}
 
 #### `webc:scoped="my-prefix"`
@@ -761,7 +761,7 @@ You can also specify an attribute value to `webc:scoped` to hard code your own c
 
 {% addedin "@11ty/webc@0.9.0" %}You can now also use `<script webc:setup>` to run arbitrary JavaScript and provide data and markup to your component. Any top level variables declared here are available in your component as local data.
 
-This is similar to using [JavaScript as a custom Eleventy Front Matter type](/docs/data-frontmatter-customize/#example-use-javascript-in-your-front-matter) although data in `webc:setup` is scoped to the component and _does not_ flow back up in the Data Cascade.
+This is similar to using [JavaScript as a custom Eleventy Front Matter type](/docs/data-frontmatter-customize/#example-use-javascript-in-your-front-matter), although data in `webc:setup` is scoped to the component and _does not_ flow back up in the Data Cascade.
 
 {% codetitle "components/my-component.webc" %}
 
@@ -780,7 +780,7 @@ This is similar to using [JavaScript as a custom Eleventy Front Matter type](/do
 <div @html="alwaysBlue()"></div>
 ```
 
-Works with `var`, `let`, `const`, `function`, `Array` and `Object` [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
+Works with `var`, `let`, `const`, `function`, `Array`, and `Object` [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
 - Uses the [`node-retrieve-globals` package](https://github.com/zachleat/node-retrieve-globals/).
 
@@ -788,7 +788,7 @@ Works with `var`, `let`, `const`, `function`, `Array` and `Object` [destructurin
 
 The [Custom Transforms feature](https://github.com/11ty/webc#custom-transforms) (e.g. `webc:type`) in the Eleventy WebC plugin has been wired up to the [Eleventy Render plugin](/docs/plugins/render/) to allow you to use existing Eleventy template syntax inside of WebC.
 
-{% callout "info", "md" %}Note that the `webc:type="11ty"` feature is exclusive to the **Eleventy** WebC plugin and is not available in non-Eleventy independent WebC.{% endcallout %}
+{% callout "info", "md" %}**Note:** The `webc:type="11ty"` feature is exclusive to the **Eleventy** WebC plugin and is not available in non-Eleventy independent WebC.{% endcallout %}
 
 Use `webc:type="11ty"` with the `11ty:type` attribute to specify a [valid template syntax](/docs/plugins/render/#rendertemplate).
 
@@ -1017,7 +1017,7 @@ WebC [Helpers](https://github.com/11ty/webc#helper-functions) are JavaScript fun
 
 {% addedin "@11ty/eleventy-plugin-webc@0.5.0" %}Included with Eleventy WebC, [JavaScript template functions](/docs/languages/javascript/#javascript-template-functions) and [Universal Filters](/docs/filters/#universal-filters) are provided automatically as WebC Helpers.
 
-This includes [`url`, `slugify`, `log` and others](/docs/filters/#eleventy-provided-universal-filters)!
+This includes [`url`, `slugify`, `log`, and others](/docs/filters/#eleventy-provided-universal-filters)!
 
 ```html
 <!-- Use the  Eleventy provided `url` universal filter -->
@@ -1055,7 +1055,7 @@ module.exports = function (eleventyConfig) {
 
 Custom elements (per specification) are not supported as void elements: they require both a starting and ending tag.
 
-Practically speaking, this means a WebC component can not be self-closing. You can workaround this limitation using [`webc:is`](#webcis) (e.g. `<img webc:is="my-component">`).
+Practically speaking, this means a WebC component cannot be self-closing. You can workaround this limitation using [`webc:is`](#webcis) (e.g. `<img webc:is="my-component">`).
 
 #### `<head>` Components
 
@@ -1141,7 +1141,7 @@ Components are the {% emoji "✨" %}magic{% emoji "✨" %} of WebC and there are
 1. You can use [`webc:import`](#webcimport) inside of your components to import another component directly.
 
 {% callout "info" %}
-Notably, WebC components can have any valid HTML tag name and are not restricted to the same naming limitations as custom elements (which require a dash in the name).
+Notably, WebC components can have any valid HTML tag name! They are not restricted to the same naming limitations as custom elements (which require a dash in the name).
 {% endcallout %}
 
 #### Global no-import Components
