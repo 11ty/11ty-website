@@ -24,6 +24,6 @@ Next, use the `eleventyConfig.addPlugin()` method to add your plugin.
 
 ```js
 module.exports = function (eleventyConfig) {
-	eleventyConfig.addPlugin(require("./config/local-plugin"));
+	eleventyConfig.addPlugin(require("./config/local-plugin.js"));
 };
 ```

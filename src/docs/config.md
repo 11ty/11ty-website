@@ -301,8 +301,7 @@ npx @11ty/eleventy --quiet
 
 ### Deploy to a subdirectory with a Path Prefix
 
-If your site lives in a different subdirectory (particularly useful with GitHub pages), use pathPrefix to specify this. It’s used by the `url` filter and inserted at the beginning of all absolute url href links. It does not affect your file structure. Leading or trailing slashes are all normalized away, so don’t worry about it.
-When paired with the HTML <base> plugin ([https://www.11ty.dev/docs/plugins/html-base/[(https://www.11ty.dev/docs/plugins/html-base/) it will transform any absolute URLs in your HTML to include this folder name and does **not** affect where things go in the output folder.
+If your site lives in a different subdirectory (particularly useful with GitHub pages), use pathPrefix to specify this. When paired with the [HTML `<base>` plugin](/docs/plugins/html-base.md) it will transform any absolute URLs in your HTML to include this folder name and does **not** affect where things go in the output folder.
 
 | Path Prefix             |                                       |
 | ----------------------- | ------------------------------------- |
