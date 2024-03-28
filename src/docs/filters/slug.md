@@ -10,7 +10,7 @@ Uses the [`slugify` npm package](https://www.npmjs.com/package/slugify) to conve
 ```yaml
 ---
 title: "My Title"
-permalink: "/{{ title | slugify }}/"
+permalink: "/{{ title | slug }}/"
 ---
 Outputs to `/my-title/`.
 ```
