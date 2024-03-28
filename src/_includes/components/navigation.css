@@ -1,71 +1,59 @@
-.elv-header-default .elv-nav-header > .fl {
-	justify-content: center;
+.elv-nav-menu {
+	--fl-gap-h: 0.75em;
 }
-
-.elv-nav-header > .fl {
-	--fl-gap-h: .75em;
-}
-@media (max-width: 24.9375em) { /* 399px */
-	.elv-nav-header > .fl > * {
+@media (max-width: 24.9375em) {
+	/* 399px */
+	.elv-nav-menu > * {
 		flex-basis: 45%;
 	}
 }
 
-/* Make room for the possum */
-@media (min-width: 25em) { /* 400px */
-	.elv-docs .elv-nav-header > .fl {
-		margin-right: 6em;
-	}
-}
-@media (min-width: 85em) { /* 1360px */
-	.elv-docs .elv-nav-header > .fl {
-		margin-right: 2.5rem;
-	}
-}
-
-/* Docs only links (not home page) */
-.elv-nav-docs-only {
-	display: none;
-}
-.elv-docs .elv-nav-docs-only {
-	display: inherit;
-}
-
-.elv-nav-header a {
+.elv-nav-menu a {
 	font-weight: 600;
 }
-.elv-nav-header .elv-nav-light {
+.elv-nav-menu .elv-nav-light {
 	font-weight: 300;
 }
 
-@media (min-width: 43.75em) { /* 700px */
-	.elv-header-docs .elv-nav-header {
-		float: left;
-		/* adjust for logo in Safari */
-		width: calc(100% - 4.303125em - 1em);
-	}
-}
-
 /* Spacer and social links */
-.elv-docs .elv-nav-docs-only.spacer {
+.spacer {
 	display: none;
 }
+.elv-nav-sociallink-text {
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+@media (max-width: 24.9375em) {
+	/* 399px */
+	.elv-nav-menu > *:has(.elv-nav-sociallink-text) {
+		flex-basis: auto;
+	}
+}
 
-@media (min-width: 62.5em) { /* 1000px */
-	.elv-docs .elv-nav-docs-only.spacer {
+@media (min-width: 60.625em) {
+	/* 970px */
+	.elv-nav-sociallink {
+		font-size: 0.875em; /* 14px /16 */
+	}
+	.spacer {
 		display: inherit;
 	}
-	.elv-docs .elv-nav-header > .fl .spacer {
+	.elv-nav-menu .spacer {
 		flex-grow: 999;
 	}
-
-	/* Social links */
-	.elv-docs .elv-nav-sociallink:before {
-		display: block;
-		text-align: center;
-		margin: 0 auto;
+	.elv-nav-sociallink-text {
+		position: static;
+		overflow: visible;
+		clip: auto;
 	}
-	.elv-docs .elv-nav-sociallink-text {
-		font-size: 0.875em; /* 14px /16 */
+}
+
+@media (max-width: 64.9375em) {
+	/* 1039px */
+	.elv-nav-menu-hidesmall {
+		display: none;
 	}
 }

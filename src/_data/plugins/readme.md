@@ -4,8 +4,8 @@ If you would like to add a plugin to [this](https://www.11ty.dev/docs/plugins/#c
 
 ```json
 {
-  "npm": "the npm package name of your plugin",
-  "author": "Your Twitter username",
-  "description": "A description of the plugin"
+	"npm": "the npm package name of your plugin",
+	"author": "Your Twitter username",
+	"description": "A description of the plugin"
 }
 ```

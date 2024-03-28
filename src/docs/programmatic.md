@@ -4,6 +4,7 @@ eleventyNavigation:
   key: Programmatic API
   order: 6
 ---
+
 # Programmatic API {% addedin "1.0.0" %}<!-- Beta 10 or Canary 50 -->
 
 {% tableofcontents %}
@@ -14,7 +15,7 @@ Starting in Eleventy 1.0, you can run Eleventy in your own Node script. _(This i
 
 ### Write to the file system
 
-Don’t forget to [install Eleventy into your local project first](/docs/getting-started/#step-2-install-eleventy)!
+Don’t forget to [install Eleventy into your local project first](/docs/#step-2-install-eleventy)!
 
 Now create a file called `my-node-script.js` with the following contents:
 
@@ -23,9 +24,9 @@ Now create a file called `my-node-script.js` with the following contents:
 ```js
 const Eleventy = require("@11ty/eleventy");
 
-(async function() {
-  let elev = new Eleventy();
-  await elev.write();
+(async function () {
+	let elev = new Eleventy();
+	await elev.write();
 })();
 ```
 
@@ -44,11 +45,11 @@ Using `.write()` will write your output to the file system. If, instead, you wan
 ```js
 const Eleventy = require("@11ty/eleventy");
 
-(async function() {
-  let elev = new Eleventy();
-  let json = await elev.toJSON();
-  // All results
-  console.log( json );
+(async function () {
+	let elev = new Eleventy();
+	let json = await elev.toJSON();
+	// All results
+	console.log(json);
 })();
 ```
 
@@ -57,14 +58,14 @@ const Eleventy = require("@11ty/eleventy");
 ```js
 const Eleventy = require("@11ty/eleventy");
 
-(async function() {
-  let elev = new Eleventy();
-  let stream = await elev.toNDJSON();
-  stream.on("data", (entry) => {
-    // Stream one output result at a time
-    let json = JSON.parse(entry.toString());
-    console.log( json );
-  });
+(async function () {
+	let elev = new Eleventy();
+	let stream = await elev.toNDJSON();
+	stream.on("data", (entry) => {
+		// Stream one output result at a time
+		let json = JSON.parse(entry.toString());
+		console.log(json);
+	});
 })();
 ```
 
@@ -75,10 +76,10 @@ The first argument is the input directory. The second argument is the output dir
 ```js
 const Eleventy = require("@11ty/eleventy");
 
-(async function() {
-  let elev = new Eleventy( ".", "_site" );
+(async function () {
+	let elev = new Eleventy(".", "_site");
 
-  // Use `write` or `toJSON` or `toNDJSON`
+	// Use `write` or `toJSON` or `toNDJSON`
 })();
 ```
 
@@ -86,28 +87,28 @@ const Eleventy = require("@11ty/eleventy");
 
 The third argument to Eleventy is an options object.
 
+_(This documentation section is a work in progress but [you’re welcome to dig into the `Eleventy` class source code in `{% latestVersion versions, config %}` to learn more](https://github.com/11ty/eleventy/blob/{% latestVersion versions, config %}/src/Eleventy.js))_
+
 ```js
 const Eleventy = require("@11ty/eleventy");
 
-(async function() {
-  let elev = new Eleventy( ".", "_site", {
-    // --quiet
-    quietMode: true,
+(async function () {
+	let elev = new Eleventy(".", "_site", {
+		// --quiet
+		quietMode: true,
 
-    // --config
-    configPath: ".eleventy.js",
+		// --config
+		configPath: ".eleventy.js",
 
-    config: function(eleventyConfig) {
-      // Do some custom Configuration API stuff
-      // Works great with eleventyConfig.addGlobalData
-    },
-  });
+		config: function (eleventyConfig) {
+			// Do some custom Configuration API stuff
+			// Works great with eleventyConfig.addGlobalData
+		},
+	});
 
-  // Use `write` or `toJSON` or `toNDJSON`
+	// Use `write` or `toJSON` or `toNDJSON`
 })();
 ```
-
-_(More to come)_
 
 <!--
     // Only useful if the first argument above is a single file (or glob)

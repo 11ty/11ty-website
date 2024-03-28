@@ -5,6 +5,7 @@ date: 2018-06-08
 tags: ["related-pagination"]
 relatedTitle: "Quick Tip #004—Zero Maintenance Tag Pages for your Blog"
 ---
+
 This quick tip will show you how to automatically generate Tag Pages (lists of content tagged into a collection).
 
 We’ll use pagination to automatically generate a template for each tag we want to link to.
@@ -12,6 +13,7 @@ We’ll use pagination to automatically generate a template for each tag we want
 Here’s a sample pagination template using Nunjucks:
 
 {% raw %}
+
 ```markdown
 ---
 pagination:
@@ -20,6 +22,7 @@ pagination:
   alias: tag
 permalink: /tags/{{ tag }}/
 ---
+
 <h1>Tagged “{{ tag }}”</h1>
 
 <ol>
@@ -29,6 +32,7 @@ permalink: /tags/{{ tag }}/
 {% endfor %}
 </ol>
 ```
+
 {% endraw %}
 
 First up notice how we’re pointing our `pagination` to iterate over `collections`, which is an object keyed with tag names pointing to the collection of content containing that tag.
@@ -60,6 +64,7 @@ The great thing here is that we don’t have to manage our tag list in a central
 Have a tag you’d like to exclude from this list? Use [pagination filtering](/docs/pagination/#filtering-values) like this:
 
 {% raw %}
+
 ```markdown
 ---
 pagination:
@@ -71,6 +76,7 @@ pagination:
 permalink: /tags/{{ tag }}/
 ---
 ```
+
 {% endraw %}
 
 Now Eleventy will only generate a `/tags/personal/` template and `tech` will be ignored.

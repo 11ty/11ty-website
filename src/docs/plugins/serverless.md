@@ -1,16 +1,17 @@
 ---
 eleventyNavigation:
   key: Serverless
-  order: -1
-  excerpt: A plugin to run Eleventy in a serverless function for server side rendering (e.g. Previews in your CMS) and/or in very large sites with [On-demand Builders](https://www.netlify.com/blog/2021/04/14/faster-builds-for-large-sites-on-netlify-with-on-demand-builders-now-in-early-access/).
+  order: 99
+  excerpt: A plugin to run Eleventy in a serverless function for server side rendering (e.g. Previews in your CMS) and/or in very large sites with <a href="https://www.netlify.com/blog/2021/04/14/faster-builds-for-large-sites-on-netlify-with-on-demand-builders-now-in-early-access/">On-demand Builders</a>.
 communityLinksKey: serverless
 overrideCommunityLinks: true
 ---
+
 # Serverless {% addedin "1.0.0" %}
 
 {% tableofcontents %}
 
-{{ eleventyNavigation.excerpt }}
+{{ eleventyNavigation.excerpt | safe }}
 
 <div class="youtube-related">
   {%- youtubeEmbed "JNFooPfzV9g", "Defer generating 400+ pages using Eleventy Serverless" -%}
@@ -21,9 +22,8 @@ overrideCommunityLinks: true
 
 Eleventy Serverless complements your existing statically generated site by running one or more template files _at request time_ to generate dynamic pages. It can unlock many new use cases to move beyond static files into dynamically generated content.
 
-* Server side rendering for fully dynamic pages, e.g. content preview in your Content Management System.
-* Rendering of individual templates using On-demand Builders, useful to improve large site build times both locally and in production.
-
+- Server side rendering for fully dynamic pages, e.g. content preview in your Content Management System.
+- Rendering of individual templates using On-demand Builders, useful to improve large site build times both locally and in production.
 
 > “You can write a JavaScript function that you run and receive a response from by hitting a URL.”—[The Power of Serverless](https://web.archive.org/web/20220103184003/https://serverless.css-tricks.com/) from [Chris Coyier]({{ "https://twitter.com/chriscoyier" | canonicalTwitterUrl }})
 
@@ -59,7 +59,6 @@ For **On-demand Builders and Dynamic templates**, rendering failures will not fa
   </div>
 </div>
 
-
 ## Usage
 
 ### Step 1: Add the Bundler Plugin
@@ -71,11 +70,11 @@ This plugin is bundled with Eleventy core and doesn’t require you to `npm inst
 ```js
 const { EleventyServerlessBundlerPlugin } = require("@11ty/eleventy");
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
-    name: "possum", // The serverless function name from your permalink object
-    functionsDir: "./netlify/functions/",
-  });
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
+		name: "possum", // The serverless function name from your permalink object
+		functionsDir: "./netlify/functions/",
+	});
 };
 ```
 
@@ -84,9 +83,9 @@ You can add the Bundler plugin more than once to accommodate multiple Eleventy S
 {% callout "info", "md-block" -%}
 You won’t need to set up bundler plugins for every individual template, but instead you’ll want to use one plugin for each rendering mode.
 
-* Dynamic pages via server side rendering will need one plugin (perhaps named `onrequest` or `dynamic`).
-* Delayed rendering using On-demand Builders will need another plugin (perhaps named `onfirstrequest` or `odb`).
-{% endcallout %}
+- Dynamic pages via server side rendering will need one plugin (perhaps named `onrequest` or `dynamic`).
+- Delayed rendering using On-demand Builders will need another plugin (perhaps named `onfirstrequest` or `odb`).
+  {% endcallout %}
 
 #### Bundler Options
 
@@ -169,29 +168,29 @@ Here is an over-simplified version for educational purposes only:
 ```js
 const { EleventyServerless } = require("@11ty/eleventy");
 
-async function handler (event) {
-  let elev = new EleventyServerless("possum", {
-    path: event.path, // (required) the URL path
-    query: event.queryStringParameters, // (optional)
-  });
+async function handler(event) {
+	let elev = new EleventyServerless("possum", {
+		path: event.path, // (required) the URL path
+		query: event.queryStringParameters, // (optional)
+	});
 
-  try {
-    // returns the HTML for the Eleventy template that matches to the URL
-    // Can use with `eleventyConfig.dataFilterSelectors` to put data cascade data into `page.data` here.
-    let [page] = await elev.getOutput();
-    let html = page.content;
+	try {
+		// returns the HTML for the Eleventy template that matches to the URL
+		// Can use with `eleventyConfig.dataFilterSelectors` to put data cascade data into `page.data` here.
+		let [page] = await elev.getOutput();
+		let html = page.content;
 
-    return {
-      statusCode: 200,
-      body: html
-    };
-  } catch(e) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: e.message })
-    };
-  }
-};
+		return {
+			statusCode: 200,
+			body: html,
+		};
+	} catch (e) {
+		return {
+			statusCode: 500,
+			body: JSON.stringify({ error: e.message }),
+		};
+	}
+}
 
 exports.handler = handler;
 ```
@@ -338,14 +337,14 @@ Here’s what your Serverless Global Data might look like:
 
 ```js
 {
-  eleventy: {
-    serverless: {
-      path: {
-        id: "hello" // from /dynamic-path/hello/
-        //id: "goodbye" // from /dynamic-path/goodbye/
-      }
-    }
-  }
+	eleventy: {
+		serverless: {
+			path: {
+				id: "hello"; // from /dynamic-path/hello/
+				//id: "goodbye" // from /dynamic-path/goodbye/
+			}
+		}
+	}
 }
 ```
 
@@ -354,11 +353,9 @@ Here’s what your Serverless Global Data might look like:
 These should be treated as _potentially malicious user input_, and _you **must** escape these_ if you use them in templates!
 The way to do this is specific to each template language.
 
-* **Liquid** has both an `escape` and `escape_once` filter.
-* **Nunjucks** has autoescape turned on by default. (If you’ve disabled it, you can use the `escape` filter.)
-* **Other template languages:** Read more [in the Layouts documentation](/docs/layouts/#prevent-double-escaping-in-layouts), which has other template languages’ methods for both escaped and unescaped output.
-
-
+- **Liquid** has both an `escape` and `escape_once` filter.
+- **Nunjucks** has autoescape turned on by default. (If you’ve disabled it, you can use the `escape` filter.)
+- **Other template languages:** Read more [in the Layouts documentation](/docs/layouts/#prevent-double-escaping-in-layouts), which has other template languages’ methods for both escaped and unescaped output.
 
 ## Advanced
 
@@ -387,7 +384,6 @@ For example:
 1. An additional `lodash.get(authors, "zachleat")` returns a single chunk of data for one author.
 1. Pagination only operates on that one selected page for rendering.
 
-
 ### Input via Query Parameters
 
 In **Dynamic _Templates_** (_not **On-demand Builders**_), you can use query parameters as user input. Query parameters are available in the `eleventy.serverless.query` object.
@@ -402,14 +398,14 @@ Read more about [Escaping User Input](#escaping-user-input).
 
 ```js
 {
-  eleventy: {
-    serverless: {
-      query: {
-        id: "hello" // from /my-url/?id=hello
-        //id: "goodbye" // from /my-url/?id=goodbye
-      }
-    }
-  }
+	eleventy: {
+		serverless: {
+			query: {
+				id: "hello"; // from /my-url/?id=hello
+				//id: "goodbye" // from /my-url/?id=goodbye
+			}
+		}
+	}
 }
 ```
 
@@ -428,13 +424,11 @@ First, we’ll need to copy the cache folder into our bundle.
 ```js
 const { EleventyServerlessBundlerPlugin } = require("@11ty/eleventy");
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
-    name: "possum",
-    copy: [
-      ".cache/eleventy-fetch/",
-    ]
-  });
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
+		name: "possum",
+		copy: [".cache/eleventy-fetch/"],
+	});
 };
 ```
 
@@ -445,22 +439,22 @@ And re-use the `directory` in your data files:
 ```js
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
-module.exports = async function() {
-  let options = {
-    // Use the same folder declared above
-    directory: ".cache/eleventy-fetch/"
-  };
+module.exports = async function () {
+	let options = {
+		// Use the same folder declared above
+		directory: ".cache/eleventy-fetch/",
+	};
 
-  if(process.env.ELEVENTY_SERVERLESS) {
-    // Infinite duration (until the next build)
-    options.duration = "*";
+	if (process.env.ELEVENTY_SERVERLESS) {
+		// Infinite duration (until the next build)
+		options.duration = "*";
 
-    // Bypass writing new cache files, which would error in serverless mode
-    options.dryRun = true;
-  }
+		// Bypass writing new cache files, which would error in serverless mode
+		options.dryRun = true;
+	}
 
-  let result = await EleventyFetch("https://example.com/", options);
-  // …
+	let result = await EleventyFetch("https://example.com/", options);
+	// …
 };
 ```
 
@@ -482,9 +476,9 @@ Consider a `sidebarNav` collection that populates a navigation menu (via the [`e
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-	eleventyConfig.addCollection("sidebarNav", function(collection) {
-		return collection.getAll().filter(item => item.data?.eleventyNavigation);
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addCollection("sidebarNav", function (collection) {
+		return collection.getAll().filter((item) => item.data?.eleventyNavigation);
 	});
 };
 ```
@@ -501,30 +495,35 @@ Consider the following Eleventy template which creates an array of collection-li
 {% codetitle "serverless-collections-export.11ty.js" %}
 
 ```js
-exports.data = function() {
-  return {
-    // generate directly to the serverless bundle folder
-    permalink: "./netlify/functions/serverless/_generated-serverless-collections.json",
-    permalinkBypassOutputDir: true,
+exports.data = function () {
+	return {
+		// generate directly to the serverless bundle folder
+		permalink:
+			"./netlify/functions/serverless/_generated-serverless-collections.json",
+		permalinkBypassOutputDir: true,
 		eleventyExcludeFromCollections: true,
-  };
+	};
 };
 
-exports.render = function({collections}) {
-  let entries = [];
-  // Iterate over any items with the `sidebarNav` tag
-  for(let entry of collections.sidebarNav) {
-    entries.push({
-      data: {
-        page: entry.data.page,
-        eleventyNavigation: entry.data.eleventyNavigation,
-      }
-    });
-  }
+exports.render = function ({ collections }) {
+	let entries = [];
+	// Iterate over any items with the `sidebarNav` tag
+	for (let entry of collections.sidebarNav) {
+		entries.push({
+			data: {
+				page: entry.data.page,
+				eleventyNavigation: entry.data.eleventyNavigation,
+			},
+		});
+	}
 
-  return JSON.stringify({
-    sidebarNav: entries
-  }, null, 2);
+	return JSON.stringify(
+		{
+			sidebarNav: entries,
+		},
+		null,
+		2
+	);
 };
 ```
 
@@ -556,9 +555,9 @@ As we have just learned, Eleventy Serverless operates on a subset of templates i
 
 This uses incremental builds with the new ignore initial build feature to only render one file (while building the larger data cascade for the project). The downside here is that while this is much friendlier to any use of `collections` on your templates, it is slower! Here are the conditions I’d expect folks to want to make this tradeoff:
 
-* If your project is small/fast enough and you don’t want to spend the extra development effort.
-* If your project is larger but you’re using On-demand Builders where the extra rendering cost is only paid once.
-* For larger projects I would _not recommend_ use of `singleTemplateScope: false` in a dynamic template that renders with each request.
+- If your project is small/fast enough and you don’t want to spend the extra development effort.
+- If your project is larger but you’re using On-demand Builders where the extra rendering cost is only paid once.
+- For larger projects I would _not recommend_ use of `singleTemplateScope: false` in a dynamic template that renders with each request.
 
 Here’s how to enable this feature in your serverless function file:
 
@@ -578,7 +577,6 @@ async function handler (event) {
 
 At some point we may enable this feature by default [if performance improves enough](https://github.com/11ty/eleventy/issues/2737)!
 
-
 ### Swap to Dynamic using the Data Cascade and `eleventyComputed`
 
 In this example we’re using a global data entry to control whether a downstream temple renders in serverless or build mode (at build time). In some more limited use cases this can solved using your hosting providers Redirects feature (e.g. on [Netlify this means a `netlify.toml` or `_redirects` file](https://docs.netlify.com/routing/redirects/)).
@@ -588,7 +586,7 @@ If you want to make a decision at serverless runtime to render a build template,
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
 	// Templates will generate via the Build
 	eleventyConfig.addGlobalData("runInServerlessMode", false);
 
@@ -616,7 +614,7 @@ And then in your template files you can use this global data value with [Compute
 Template Content goes here
 ```
 
-* If you’re here you _may_ also be interested in the [Eleventy Serverless OAuth demo](https://github.com/11ty/demo-eleventy-serverless-oauth)
+- If you’re here you _may_ also be interested in the [Eleventy Serverless OAuth demo](https://github.com/11ty/demo-eleventy-serverless-oauth)
 
 ---
 
@@ -625,15 +623,15 @@ Template Content goes here
 <details>
 <summary>Dependency Bundle Sizes</summary>
 
-| Bundle size | Package name |
-| --- | --- |
-| <img src="https://packagephobia.com/badge?p=@11ty/eleventy" alt="Bundle size for @11ty/eleventy" loading="lazy"> | `@11ty/eleventy` |
-| <img src="https://packagephobia.com/badge?p=@11ty/eleventy@canary" alt="Bundle size for @11ty/eleventy" loading="lazy"> | `@11ty/eleventy@canary` |
-| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-img" alt="Bundle size for @11ty/eleventy-img" loading="lazy"> | `@11ty/eleventy-img` |
-| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-fetch" alt="Bundle size for @11ty/eleventy-fetch" loading="lazy"> | `@11ty/eleventy-fetch` |
+| Bundle size                                                                                                                                                    | Package name                            |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy" alt="Bundle size for @11ty/eleventy" loading="lazy">                                               | `@11ty/eleventy`                        |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy@canary" alt="Bundle size for @11ty/eleventy" loading="lazy">                                        | `@11ty/eleventy@canary`                 |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-img" alt="Bundle size for @11ty/eleventy-img" loading="lazy">                                       | `@11ty/eleventy-img`                    |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-fetch" alt="Bundle size for @11ty/eleventy-fetch" loading="lazy">                                   | `@11ty/eleventy-fetch`                  |
 | <img src="https://packagephobia.com/badge?p=@11ty/eleventy-plugin-syntaxhighlight" alt="Bundle size for @11ty/eleventy-plugin-syntaxhighlight" loading="lazy"> | `@11ty/eleventy-plugin-syntaxhighlight` |
-| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-navigation" alt="Bundle size for @11ty/eleventy-navigation" loading="lazy"> | `@11ty/eleventy-navigation` |
-| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-plugin-vue" alt="Bundle size for @11ty/eleventy-plugin-vue" loading="lazy"> | `@11ty/eleventy-plugin-vue` |
-| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-plugin-rss" alt="Bundle size for @11ty/eleventy-plugin-rss" loading="lazy"> | `@11ty/eleventy-plugin-rss` |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-navigation" alt="Bundle size for @11ty/eleventy-navigation" loading="lazy">                         | `@11ty/eleventy-navigation`             |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-plugin-vue" alt="Bundle size for @11ty/eleventy-plugin-vue" loading="lazy">                         | `@11ty/eleventy-plugin-vue`             |
+| <img src="https://packagephobia.com/badge?p=@11ty/eleventy-plugin-rss" alt="Bundle size for @11ty/eleventy-plugin-rss" loading="lazy">                         | `@11ty/eleventy-plugin-rss`             |
 
 </details>

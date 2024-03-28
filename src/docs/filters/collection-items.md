@@ -2,10 +2,11 @@
 eleventyNavigation:
   parent: Filters
   key: Next or Previous Collection Item Filters
-  title: '<code>get*CollectionItem</code>'
+  title: "<code>get*CollectionItem</code>"
   order: 4
-  excerpt: 'Get next or previous collection items for easy linking.'
+  excerpt: "Get next or previous collection items for easy linking."
 ---
+
 # Get Next or Previous Collection Item Universal Filters
 
 {% tableofcontents %}
@@ -14,7 +15,7 @@ eleventyNavigation:
 
 Fetch the previous and next items in a collection when you pass in the current `page` object.
 
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "nextprev"} %}
   <div id="nextprev-liquid" role="tabpanel">
 
@@ -55,17 +56,19 @@ Fetch the previous and next items in a collection when you pass in the current `
 Useful when you’d like to link to the previous or next template in your collection:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "nextprevlink"} %}
   <div id="nextprevlink-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 {% if previousPost %}Previous Blog Post: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>{% endif %}
 {% if nextPost %}Next Blog Post: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>{% endif %}
 ```
+
 {% endraw %}
 
   </div>
@@ -74,10 +77,12 @@ Useful when you’d like to link to the previous or next template in your collec
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 {% if previousPost %}Previous Blog Post: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>{% endif %}
 {% if nextPost %}Next Blog Post: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>{% endif %}
 ```
+
 {% endraw %}
 
   </div>
@@ -92,25 +97,26 @@ Useful when you’d like to link to the previous or next template in your collec
 
 The [Collections documentation](/docs/collections/#sorting) outlines the default sorting algorithm and how to override it.
 
-
 ## `getCollectionItemIndex` {% addedin "2.0.0-canary.19" %}
 
 The `getCollectionItemIndex` filter returns the 0-based numeric index of the current (or passed) page in the collection.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "getitemindex"} %}
   <div id="getitemindex-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 {% assign index = collections.posts | getCollectionItemIndex %}
 
 Or pass it in:
 {% assign index = collections.posts | getCollectionItemIndex: page %}
 ```
+
 {% endraw %}
 
   </div>
@@ -119,12 +125,14 @@ Or pass it in:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 {% set index = collections.posts | getCollectionItemIndex %}
 
 Or pass it in:
 {% set index = collections.posts | getCollectionItemIndex(page) %}
 ```
+
 {% endraw %}
 
   </div>
@@ -137,13 +145,12 @@ Or pass it in:
 </seven-minute-tabs>
 </is-land>
 
-
 ## `getCollectionItem`
 
 For completeness, a `getCollectionItem` filter is also included that fetches the current page from a collection.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "getitem"} %}
   <div id="getitem-liquid" role="tabpanel">
 
@@ -178,5 +185,4 @@ For completeness, a `getCollectionItem` filter is also included that fetches the
 </seven-minute-tabs>
 </is-land>
 
-
-* [← Back to Filters documentation.](/docs/filters/)
+- [← Back to Filters documentation.](/docs/filters/)

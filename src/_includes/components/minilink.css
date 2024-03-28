@@ -1,7 +1,7 @@
 /* Mini link */
 .minilink {
 	display: inline-block;
-	padding: .125em .375em;
+	padding: 0.125em 0.375em;
 	text-transform: uppercase;
 	font-size: 0.875rem; /* 14px /16 */
 	text-decoration: none;
@@ -12,32 +12,21 @@
 	line-height: 1.285714285714; /* 18px /14 */
 	font-family: system-ui, -apple-system, sans-serif;
 }
-.minilink-github {
-	background-color: #f6f8fa;
-}
-.minilink-github > :first-child {
-	color: #eac54f;
-}
-
 @media (prefers-color-scheme: dark) {
-	.minilink {
+	.minilink.minilink {
 		background-color: #222;
-		/*
-			!important to override .elv-callout a
-			see _includes/components/callout.css
-		 */
-		color: #fff !important;
+		color: #fff;
 	}
 }
 table .minilink {
 	margin-top: 6px;
 }
 .minilink[href] {
-	box-shadow: 0 1px 1px 0 rgba(0,0,0,.5);
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
 }
 .minilink[href]:hover,
 .minilink[href]:focus {
-	background-color: #bbb;
+	background-color: #eee;
 }
 @media (prefers-color-scheme: dark) {
 	.minilink[href]:hover,
@@ -52,7 +41,7 @@ pre + .minilink {
 	background-color: #444;
 	color: #fff;
 }
-pre[class*=language-] + .minilink {
+pre[class*="language-"] + .minilink {
 	position: relative;
 	top: -0.7142857142857em; /* -10px /14 */
 }
@@ -73,21 +62,21 @@ h3 .minilink,
 h4 .minilink {
 	font-size: 0.8125rem; /* 13px /16 */
 }
-.minilink + pre[class*=language-] {
+.minilink + pre[class*="language-"] {
 	clear: both;
 }
 
 .minilink-addedin {
 	text-transform: none;
-	box-shadow: 0 0 0 1px rgba(0,0,0,0.3);
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
 }
 @media (prefers-color-scheme: dark) {
 	.minilink-addedin {
-		box-shadow: 0 0 0 1px rgba(255,255,255,0.3);
+		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
 	}
 }
 .minilink-addedin:not(:first-child) {
-	margin-left: .5em;
+	margin-left: 0.5em;
 }
 .minilink-addedin.minilink-inline {
 	margin: 0 4px;
@@ -104,7 +93,7 @@ h4 .minilink {
 	background-color: transparent;
 }
 .minilink-lower[href] {
-	box-shadow: 0 0 0 1px rgba(0,0,0,0.5);
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
 }
 .minilink-lower[href]:hover,
 .minilink-lower[href]:focus {
@@ -112,8 +101,51 @@ h4 .minilink {
 }
 
 .minilink > .minilink {
-	margin: -.125em .375em -.125em -.375em;
+	margin: -0.125em 0.375em -0.125em -0.375em;
 	box-shadow: none;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
+}
+
+/* Build cost */
+.minilink-buildcost {
+	--internal-shadow-hsl: 0deg 0% 75%;
+	font-weight: 700;
+	text-transform: uppercase;
+	/* via https://www.joshwcomeau.com/shadow-palette/ */
+	box-shadow: 0px 0.3px 0.5px hsl(var(--internal-shadow-hsl) / 0),
+		0.1px 4.3px 6.5px hsl(var(--internal-shadow-hsl) / 0.14);
+}
+.minilink-buildcost code:before {
+	content: "🧰";
+	margin-right: 0.25em;
+}
+
+a[href]:hover .minilink-buildcost,
+a[href]:focus .minilink-buildcost {
+	outline: 2px solid blue;
+}
+
+/* GitHub star count */
+.minilink-github.minilink-github {
+	background-color: #f6f8fa;
+	color: #222;
+}
+.minilink-github > :first-child {
+	color: #eac54f;
+}
+/* GitHub star count, home page variant (dark theme) */
+.elv-header-default .minilink-github {
+	background-color: #222;
+	color: #fff;
+}
+.elv-header-default .minilink[href]:hover,
+.elv-header-default .minilink[href]:focus {
+	background-color: #444;
+}
+@media (prefers-color-scheme: dark) {
+	.minilink-github.minilink-github {
+		background-color: #222;
+		color: #fff;
+	}
 }
