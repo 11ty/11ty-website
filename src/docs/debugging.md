@@ -21,7 +21,9 @@ _The commands below assume that Eleventy is installed locally (recommended) but 
 
 ### Mac OS (or Linux, etc)
 
-{% highlight "bash" %}DEBUG=Eleventy\* npx @11ty/eleventy{% endhighlight %}
+```sh
+DEBUG=Eleventy* npx @11ty/eleventy
+```
 
 ### Windows
 
@@ -29,11 +31,15 @@ Read more about [Windows environment variables](https://www.npmjs.com/package/de
 
 #### cmd.exe
 
-{% highlight "bash" %}set DEBUG=Eleventy\* & eleventy{% endhighlight %}
+```sh
+set DEBUG=Eleventy* & npx @11ty/eleventy
+```
 
 #### Powershell (VS Code default)
 
-{% highlight "bash" %}$env:DEBUG="Eleventy\*"; eleventy{% endhighlight %}
+```sh
+$env:DEBUG="Eleventy*"; npx @11ty/eleventy
+```
 
 ## Learn More
 
