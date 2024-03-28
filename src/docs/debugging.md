@@ -1,9 +1,10 @@
 ---
 eleventyNavigation:
-  parent: Getting Started
+  parent: Command Line Usage
   key: Debug Mode
-  order: 3
+  order: 1
 ---
+
 # Debug Mode
 
 {% tableofcontents %}
@@ -12,23 +13,15 @@ Having trouble? Want to see what Eleventy is doing behind the scenes? Use `DEBUG
 
 `debug` will tell you exactly what directories Eleventy is using for data, includes, input, and output. It’ll tell you what search globs it uses to find your templates and what templates it finds. If you’re having trouble, enable this.
 
-This makes use of something called Environment variables to enable, specifically the `DEBUG` environment variable. In this case we’re just putting some text before the command we use to run Eleventy.
+You can enable this feature by using the `DEBUG` [environment variable](/docs/environment-vars/). To do this we add some text before the command we use to run Eleventy.
 
 ## Commands
 
+_The commands below assume that Eleventy is installed locally (recommended) but you can learn more about the difference between Local and [Global installation](/docs/global-installation/)._
+
 ### Mac OS (or Linux, etc)
 
-What is the difference between Local and [Global installation](/docs/global-installation/)?
-
-<div class="fl" style="--fl-stackpoint: 30em;">
-	<div>Installed Globally</div>
-	<div class="lo-maxgrow">{% highlight "bash" %}DEBUG=Eleventy* eleventy{% endhighlight %}</div>
-</div>
-
-<div class="fl" style="--fl-stackpoint: 30em;">
-	<div>Installed Locally</div>
-	<div class="lo-maxgrow">{% highlight "bash" %}DEBUG=Eleventy* npx @11ty/eleventy{% endhighlight %}</div>
-</div>
+{% highlight "bash" %}DEBUG=Eleventy\* npx @11ty/eleventy{% endhighlight %}
 
 ### Windows
 
@@ -36,31 +29,11 @@ Read more about [Windows environment variables](https://www.npmjs.com/package/de
 
 #### cmd.exe
 
-What is the difference between Local and [Global installation](/docs/global-installation/)?
-
-<div class="fl" style="--fl-stackpoint: 30em;">
-	<div>Installed Locally</div>
-	<div class="lo-maxgrow">{% highlight "bash" %}set DEBUG=Eleventy* & npx @11ty/eleventy{% endhighlight %}</div>
-</div>
-
-<div class="fl" style="--fl-stackpoint: 30em;">
-	<div>Installed Globally</div>
-	<div class="lo-maxgrow">{% highlight "bash" %}set DEBUG=Eleventy* & eleventy{% endhighlight %}</div>
-</div>
+{% highlight "bash" %}set DEBUG=Eleventy\* & eleventy{% endhighlight %}
 
 #### Powershell (VS Code default)
 
-What is the difference between Local and [Global installation](/docs/global-installation/)?
-
-<div class="fl" style="--fl-stackpoint: 30em;">
-	<div>Installed Locally</div>
-	<div class="lo-maxgrow">{% highlight "bash" %}$env:DEBUG="Eleventy*"; npx @11ty/eleventy{% endhighlight %}</div>
-</div>
-
-<div class="fl" style="--fl-stackpoint: 30em;">
-	<div>Installed Globally</div>
-	<div class="lo-maxgrow">{% highlight "bash" %}$env:DEBUG="Eleventy*"; eleventy{% endhighlight %}</div>
-</div>
+{% highlight "bash" %}$env:DEBUG="Eleventy\*"; eleventy{% endhighlight %}
 
 ## Learn More
 

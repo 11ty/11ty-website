@@ -10,10 +10,3 @@
 .testimonials blockquote > p:first-child:last-child {
 	margin: 0;
 }
-
-@media (min-width: 64em) { /* 1024px */
-	.elv-default .testimonials {
-		margin-left: -10em;
-		margin-right: -10em;
-	}
-}

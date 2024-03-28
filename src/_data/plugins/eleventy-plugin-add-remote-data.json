@@ -1,0 +1,5 @@
+{
+	"npm": "@aaashur/eleventy-plugin-add-remote-data",
+	"author": "ashur",
+	"description": "Fetch remote data from one or more URLs and expose each response as an Eleventy global data variable"
+}

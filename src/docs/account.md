@@ -5,6 +5,7 @@ eleventyNavigation:
 excludeFromSidebar: true
 loadNetlifyIdentity: true
 ---
+
 # Contributor Account
 
 To receive an Eleventy Contributor Account, you must <a href="https://opencollective.com/11ty">donate to the Eleventy project on Open Collective</a>. You will then receive an email with instructions on how to activate your Eleventy Contributor account.

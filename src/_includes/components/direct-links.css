@@ -1,10 +1,9 @@
-
 /* Direct Links / Markdown Headers */
 .direct-link {
 	font-family: sans-serif;
 	text-decoration: none;
 	font-style: normal;
-	margin-left: .1em;
+	margin-left: 0.1em;
 	font-weight: normal;
 }
 a[href].direct-link,
@@ -21,6 +20,6 @@ a[href].direct-link:focus:visited,
 	visibility: visible;
 }
 /* don’t use a direct link, should be a link to the page */
-main .elv-toc + h1 .direct-link {
+main .elv-toc + #skip-content > h1:first-child .direct-link {
 	display: none;
 }

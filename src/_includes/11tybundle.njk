@@ -1,0 +1,18 @@
+{% if bundle %}
+<p>×{{ bundle | length }} resources courtesy of <strong><a href="https://11tybundle.dev/">11tybundle.dev</a></strong> curated by {% indieweblink "Bob Monsour", "https://www.bobmonsour.com/" %}</p>
+<ul class="list-bare">
+	{%- for link in bundle | head(5) %}
+	<li>{% indieweblink link.Title, link.Link %} — <em>{{ link.Author }} ({{ link.Date | newsDate("yyyy") }})</em></li>
+	{%- endfor %}
+</ul>
+{% if bundle.length > 5 %}
+<details>
+	<summary><strong><em>Expand to see {{ (bundle | length) - 5 }} more resources.</em></strong></summary>
+	<ul class="list-bare">
+		{%- for link in bundle | headafter(5) %}
+		<li>{% indieweblink link.Title, link.Link %} — <em>{{ link.Author }} ({{ link.Date | newsDate("yyyy") }})</em></li>
+		{%- endfor %}
+	</ul>
+</details>
+{% endif %}
+{% endif %}

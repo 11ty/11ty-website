@@ -4,6 +4,7 @@ eleventyNavigation:
   key: Layout Chaining
   excerpt: Wrap layouts in other layouts.
 ---
+
 # Layout Chaining
 
 Your layouts can also use a layout! Add the same `layout` front matter data to your layout template file and it’ll chain. You do not have to use the same template engine across layouts and content, you can mix and match.
@@ -17,6 +18,7 @@ To chain a layout, let’s look at an example:
 layout: mainlayout.njk
 title: My Rad Blog
 ---
+
 # My Rad Markdown Blog Post
 ```
 
@@ -34,19 +36,21 @@ This layout would then be itself wrapped in the same `mylayout.njk` we used in o
 {% codetitle "_includes/mylayout.njk" %}
 
 {% raw %}
+
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
-  </head>
-  <body>
-    {{ content | safe }}
-  </body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{{title}}</title>
+	</head>
+	<body>
+		{{ content | safe }}
+	</body>
 </html>
 ```
+
 {% endraw %}
 
 Used together, this would output:

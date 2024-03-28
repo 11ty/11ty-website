@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	name: "Uniclode",
 	category: ["serverless"],
 	url: "https://uniclode.zachleat.dev/",

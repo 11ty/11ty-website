@@ -20,18 +20,15 @@ Add the following `jsmin` filter to your Eleventy Config file:
 
 ```js
 const { minify } = require("terser");
-eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (
-  code,
-  callback
-) {
-  try {
-    const minified = await minify(code);
-    callback(null, minified.code);
-  } catch (err) {
-    console.error("Terser error: ", err);
-    // Fail gracefully.
-    callback(null, code);
-  }
+eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
+	try {
+		const minified = await minify(code);
+		callback(null, minified.code);
+	} catch (err) {
+		console.error("Terser error: ", err);
+		// Fail gracefully.
+		callback(null, code);
+	}
 });
 ```
 
@@ -49,16 +46,20 @@ console.log("Hi");
 Capture the JavaScript into a variable and run it through the filter (this sample is using Nunjucks syntax)
 
 {% raw -%}
+
 ```html
 <!-- capture the JS content as a Nunjucks variable -->
-{% set js %}
-  {% include "sample.js" %}
-{% endset %}
+{% set js %} {% include "sample.js" %} {% endset %}
 <!-- feed it through our jsmin filter to minify -->
 <script>
-  {{ js | jsmin | safe }}
+	{
+		{
+			js | jsmin | safe;
+		}
+	}
 </script>
 ```
+
 {% endraw %}
 
 ### Warning about Content Security Policy
