@@ -532,7 +532,7 @@ module.exports = function (eleventyConfig) {
 
 {% addedin "Image v3.1.0" %} Eleventy Image now provides a built-in `<eleventy-image>` WebC component for use in your Eleventy project.
 
-Using Eleventy Image in [WebC](/docs/languages/webc/) offers all the same great benefits you’re used to from Eleventy Image with an intuitive declarative HTML-only developer experience.
+Using Eleventy Image in [WebC](/docs/languages/webc/) offers all the same great benefits you’re used to from Eleventy Image with an intuitive declarative HTML-only developer experience. WebC components work in `*.webc` files. To use in other template formats, use the the shortcodes above (or with the [Render plugin](/docs/plugins/render.md)).
 
 First, add the following to your project’s configuration file:
 
