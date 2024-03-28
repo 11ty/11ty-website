@@ -1,5 +1,5 @@
 {
-  "npm": "eleventy-plugin-calendar",
+  "npm": "@codegouvfr/eleventy-plugin-calendar",
   "author": "hjonin",
   "description": "A plugin for generating an ICS calendar and events directly from your post files."
 }
