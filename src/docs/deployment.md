@@ -185,7 +185,7 @@ Includes persisted cache across builds. Using [`peaceiris/actions-gh-pages`](htt
 <ol>
 <li>Go to your repository’s Settings on GitHub.</li>
 <li>In the GitHub Pages section change:<ul><li>Source: <code>Deploy from a branch</code></li><li>Branch: <code>gh-pages/(root)</code></li></ul></li>
-<li>Create a new GitHub workflow file in <details><summary><code>.github/workflows/deploy-to-ghpages.yml</code></summary>
+<li>Create a new GitHub workflow file in <details><summary><code>.github/workflows/gh-pages.yml</code></summary>
 
 {% raw %}
 
