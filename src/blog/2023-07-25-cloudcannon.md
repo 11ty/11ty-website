@@ -2,15 +2,15 @@
 newstitle: "Big Announcement: Eleventy and CloudCannon!"
 eleventyNavigation:
   parent: Blog
-homePageHighlight: true
 ---
+
 And now a special message via [YouTube](https://www.youtube.com/watch?v=nypsmn70ipI).
 
 {% youtubeEmbed "nypsmn70ipI" %}
 
-* [Read more on the CloudCannon Blog: _CloudCannon, the Official CMS Partner of Eleventy_](https://cloudcannon.com/blog/cloudcannon-the-official-cms-partner-of-eleventy/)
-* See the [post on Mastodon](https://fosstodon.org/@eleventy/110775434718494755)
-* Follow along on Mastodon: [`@eleventy@fosstodon.org`](https://fosstodon.org/@eleventy) and/or [`@cloudcannon@techhub.social`](https://techhub.social/@cloudcannon).
+- [Read more on the CloudCannon Blog: _CloudCannon, the Official CMS Partner of Eleventy_](https://cloudcannon.com/blog/cloudcannon-the-official-cms-partner-of-eleventy/)
+- See the [post on Mastodon](https://fosstodon.org/@eleventy/110775434718494755)
+- Follow along on Mastodon: [`@eleventy@fosstodon.org`](https://fosstodon.org/@eleventy) and/or [`@cloudcannon@techhub.social`](https://techhub.social/@cloudcannon).
 
 ## Transcript:
 

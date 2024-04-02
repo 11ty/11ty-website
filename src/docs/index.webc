@@ -1,96 +1,198 @@
 ---
 eleventyNavigation:
-  key: Overview
-  title: Why Eleventy?
-  order: 1
+  key: Getting Started
+  title: Get Started
+  order: 2
+communityLinksKey: getting-started
+overrideCommunityLinks: true
 ---
-<script webc:setup>
-function randomTestimonialLink(testimonials) {
-	let featuredOnly = testimonials.filter(entry => entry.featured && !entry.filteredFromRandomPick);
-	let random = randompick(featuredOnly);
-	let slug = slugify(random.name);
+<h1>Get Started</h1>
 
-	return `What is <a href="/docs/testimonials/#${slug}">${testimonialNameHtml(random)} saying about Eleventy?</a>`;
-}
-</script>
+<template webc:type="11ty" 11ty:type="njk" webc:raw webc:nokeep>
+	{% callout %}
+		{% include "star-on-github.njk" %}
+	{% endcallout %}
+</template>
 
-<h1 @html="orphanWrap('Eleventy is a simpler static site generator.')"></h1>
+<p>Eleventy <eleventy-version></eleventy-version> requires <strong><a href="https://nodejs.org/">Node.js</a> version <node-minimum></node-minimum></strong> or higher.</p>
 
-<p>Why should you use Eleventy?</p>
+<p>You can check whether or not you have Node installed by running <code>node --version</code> in a terminal window. (<a href="/docs/terminal-window/"><em>Well, wait—what is a Terminal window?</em></a>) If the command is not found or it reports a number lower than <node-minimum></node-minimum>, you will need to <a href="https://nodejs.org/en/download/">download and install Node.js</a> before moving on to the next step.</p>
 
-<ul>
-	<li>
-		Eleventy has <a href="/docs/performance/"><strong>fast builds and even faster web sites</strong></a>.
-	</li>
-	<li>
-		Eleventy is <strong>production ready</strong> and trusted by: <logo-cloud></logo-cloud>
-		<small>Eleventy has been downloaded <a href="/blog/five-million/">over 5 million times</a> and is used on <a href="https://github.com/11ty/eleventy/network/dependents">56 thousand repositories on GitHub</a></a>.</small>
-	</li>
-	<li>
-		Eleventy has a <a href="/docs/community/">lovely community of folks</a> that really care about what they build. <em @html="randomTestimonialLink(testimonials)"></em>
-	</li>
-	<li>
-		<a href="/blog/stability/">Eleventy is <strong>stable</strong></a>. We’ve shipped <span @text="getsize(versions) - 1"></span> releases going back to the first version in December 2017 and only two of those releases have had Eleventy-specific breaking changes.
-
-		<blockquote>
-			<p>a11yproject.com launched with version 1.0.0 of Eleventy. […] It's been a little under three years and I haven't had to make any adjustments to its dependencies, and it can still install and run from a cold start with no complications. When I update the site to use version 2.0.0 I'll actually be removing dependencies, and not adding more. […] That's rare and special.—<a href="https://social.ericwbailey.website/@eric/109914908787346813"><img webc:is="indieweb-avatar" url="https://ericwbailey.design/"> Eric Bailey</a></p>
-		</blockquote>
-	</li>
-	<li>
-		Eleventy <strong>doesn’t track you</strong>. We <a href="https://www.zachleat.com/web/site-generator-review/#telemetry">don’t have or use telemetry nor require you to opt-out of data collection</a>.
-	</li>
-	<li>
-		Eleventy is <strong><a href="/docs/glossary/#zero-config" class="buzzword">zero-config</a></strong> to start and can be extended with flexible configuration options.
-	</li>
-	<li>
-		Eleventy <strong>works with multiple template languages</strong>. You can pick one or use them all together in a single project: <template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>{% templatelangs templatetypes, page %}</template>
-	</li>
-	<li>
-		Eleventy uses <strong>independent template languages</strong>. We don’t want to hold your content hostage with a custom format. If you decide to use a different syntax later, having your content decoupled in this way will make migration easier.
-	</li>
-	<li>
-		Eleventy does <strong>not require that you use a JavaScript framework</strong>—that means <em>zero client-side JavaScript by default across the board</em>. We’re <strong>thinking long-term</strong> to opt-out of the framework rat race. The tool chain, modules, and components you use in your front end stack are decoupled from this tool. Work from a solid foundation of <a href="/docs/glossary/#pre-rendered-templates-by-default" class="buzzword">pre-rendered templates</a> that suit your project’s <a href="/docs/glossary/#progressive-enhancement" class="buzzword">progressive enhancement</a> baseline requirements.
-	</li>
-	<li>
-		Eleventy <strong>works with your project’s existing directory structure</strong>. The tool doesn’t require an <code>app</code> directory or a <code>pages</code> directory. Use the structure that you want.
-	</li>
-	<li>
-		Eleventy allows <strong>incremental adoption</strong>. We only <a href="/docs/config/#template-formats">look for the files</a> and <a href="/docs/config/#input-directory">directories</a> you specify. Further, with even more precision you can <a href="/docs/ignores/">opt-out or ignore specific files</a> in your project. You don’t need to start an Eleventy project from scratch. Eleventy is flexible enough to allow conversion of only a few templates at a time. Migrate as fast or as slow as you’d like.
-	</li>
-</ul>
-
-<p><a href="/docs/getting-started/"><strong>Get started with Eleventy today!</strong></a> or read more about <a href="https://www.zachleat.com/web/introducing-eleventy/">Eleventy’s project goals</a>.</p>
+<p>Prefer to watch videos instead? Check out <a href="https://www.youtube.com/watch?v=kzf9A9tkkl4"><strong>6 minutes to Build a Blog from Scratch</strong></a>.</p>
 
 <template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
-## Don’t just take my word for it 🌈
 
-There are a bunch of [sites built using Eleventy](/speedlify/). But listen to what these [happy developers](/docs/testimonials/) are saying about Eleventy:
+## <span class="numberflag"><span class="sr-only">Step</span> 1</span> Make a Project Directory
 
-<div class="testimonials">
-	<div class="testimonials-layout fl">
-{%- for testimonial in testimonials | shuffle %}
-{%- if testimonial.featured %}
-		<div>{% testimonial testimonial %}</div>
-{%- endif %}
-{%- endfor %}
-	</div>
-</div>
+Create a directory for your project using the `mkdir` command (short for _make directory_):
 
-<a href="/docs/testimonials/">…and many more!</a>
+```bash
+mkdir eleventy-sample
+```
 
-## Competitors
+Now move into that directory with the `cd` command (short for _change directory_):
 
-This project aims to directly compete with all other Site Generators. We encourage you to try out our competition:
+```bash
+cd eleventy-sample
+```
 
-* [Jekyll](https://jekyllrb.com/) (Ruby)
-* [Hugo](https://gohugo.io/) (Go)
-* [Hexo](https://hexo.io/) (JavaScript)
-* [Gatsby](https://www.gatsbyjs.org/) (JavaScript using React)
-* [Nuxt](https://nuxtjs.org/) (JavaScript using Vue)
-* [Next.js](https://nextjs.org/) (JavaScript using React)
-* [Bridgetown](https://www.bridgetownrb.com/) (Ruby)
-* [Astro](https://astro.build/) (JavaScript)
-* [Remix](https://remix.run/) (JavaScript using React)
-* [SvelteKit](https://kit.svelte.dev/) (JavaScript using Svelte)
-* _More at [jamstack.org](https://jamstack.org/generators/)_
+## <span class="numberflag"><span class="sr-only">Step</span> 2</span> Install Eleventy
+
+### Create a `package.json`
+
+Installing Eleventy into a project requires a `package.json` file. The `npm` command (provided by Node.js) will create one for you with [`npm init -y`](https://docs.npmjs.com/cli/init). `-y` tells `npm` to use default values and skips the command line questionnaire.
+
+```bash
+npm init -y
+```
+
+### Install Eleventy
+
+[`@11ty/eleventy` is published on npm](https://www.npmjs.com/package/@11ty/eleventy) and we can install and save it into our project’s `package.json` by running:
+
+```bash
+npm install @11ty/eleventy --save-dev
+```
+
+_You may also [install Eleventy globally](/docs/global-installation/) but the `package.json` installation method above is recommended._
+
+## <span class="numberflag"><span class="sr-only">Step</span> 3</span> Run Eleventy
+
+We can use the `npx` command (also provided by Node.js) to run our local project's version of Eleventy. Let’s make sure our installation went okay and try to run Eleventy:
+
+```bash
+npx @11ty/eleventy
+```
+
+Here’s what your command line might look like after you run Eleventy:
+
+<style>
+#getting-started-run .highlight-line:last-child,
+#getting-started-run .highlight-line:last-child * {
+  color: #0dbc79 !important;
+}
+</style>
+
+{% codewithprompt "eleventysample", "getting-started-run" %}
+npx @11ty/eleventy
+[11ty] Wrote 0 files in 0.03 seconds ({% latestVersion versions, config %})
+{% endcodewithprompt %}
+
+If you see `({% latestVersion versions, config %})` in your output you know you’re using the newest version. However, Eleventy didn’t process any files! This is expected—we have an empty folder with no templates inside.
+
+## <span class="numberflag"><span class="sr-only">Step</span> 4</span> Create some templates
+
+A <dfn>template</dfn> is a content file written in a [format such as Markdown, HTML, Liquid, Nunjucks, and more](/docs/languages/), which Eleventy transforms into a page (or pages) when building our site.
+
+Let’s run two commands to create two new template files.
+
+```bash
+echo '<!doctype html><title>Page title</title><p>Hi</p>' > index.html
+```
+
+```bash
+echo '# Page header' > README.md
+```
+
+Alternatively, you can create these using any text editor—just make sure you save them into your project folder and they have the correct file extensions.
+
+After you’ve created an HTML template and a Markdown template, let’s run Eleventy again with the following command:
+
+```bash
+npx @11ty/eleventy
+```
+
+The output might look like this:
+
+<style>
+#getting-started-build .highlight-line:last-child,
+#getting-started-build .highlight-line:last-child * {
+  color: #0dbc79 !important;
+}
+</style>
+
+{% codewithprompt "eleventysample", "getting-started-build" %}
+npx @11ty/eleventy
+[11ty] Writing _site/README/index.html from ./README.md (liquid)
+[11ty] Writing _site/index.html from ./index.html (liquid)
+[11ty] Wrote 2 files in 0.04 seconds ({% latestVersion versions, config %})
+{% endcodewithprompt %}
+
+We’ve compiled our two content templates in the current directory into the output folder (`_site` is the default).
+
+## <span class="numberflag"><span class="sr-only">Step</span> 5</span> Gaze upon your templates
+
+Use `--serve` to start up a hot-reloading local web server.
+
+```bash
+npx @11ty/eleventy --serve
+```
+
+Your command line might look something like:
+
+<style>
+#getting-started-serve .highlight-line:first-child + br + .highlight-line + br + .highlight-line + br + .highlight-line,
+#getting-started-serve .highlight-line:first-child + br + .highlight-line + br + .highlight-line + br + .highlight-line * {
+  color: #0dbc79 !important;
+}
+#getting-started-serve .highlight-line:first-child + br + .highlight-line + br + .highlight-line + br + .highlight-line + br + .highlight-line + br + .highlight-line,
+#getting-started-serve .highlight-line:first-child + br + .highlight-line + br + .highlight-line + br + .highlight-line + br + .highlight-line + br + .highlight-line * {
+  color: #4c8bcf !important;
+}
+</style>
+
+{% codewithprompt "eleventysample", "getting-started-serve" %}
+npx @11ty/eleventy --serve
+[11ty] Writing _site/index.html from ./index.html (liquid)
+[11ty] Writing _site/README/index.html from ./README.md (liquid)
+[11ty] Wrote 2 files in 0.04 seconds (v2.0.0)
+[11ty] Watching…
+[11ty] Server at http://localhost:8080/
+{% endcodewithprompt %}
+
+Open `http://localhost:8080/` or `http://localhost:8080/README/` in your favorite web browser to see your Eleventy site live! When you save your template files—Eleventy will refresh the browser with your new changes automatically!
+
+## <span class="numberflag"><span class="sr-only">Step</span> 6</span> Put it online (optional)
+
+The _easiest_ way to put your new site online is to head over to [Netlify Drop](https://app.netlify.com/drop) (no account sign-up required) and drag your new Eleventy-generated `_site` folder to the Netlify Drop web interface. In seconds, your new site will be online for anyone to see!
+
+* Read up on a few [other deployment options](/docs/deployment/).
+
+## <span class="numberflag"><span class="sr-only">Step</span> 7</span> Continue Learning…
+
+Congratulations—you made something with Eleventy! Now put it to work:
+
+1. Add more content! In the above tutorial we used [HTML](/docs/languages/html/) and [Markdown](/docs/languages/markdown/). Why not [JavaScript](/docs/languages/javascript/) or [WebC](/docs/languages/webc/) (for components) next? [Nunjucks](/docs/languages/nunjucks/) and [Liquid](/docs/languages/liquid/) are also very popular. Maybe you’re feeling super adventurous and want to [add your own custom type?](/docs/languages/custom/).
+1. Use [a layout file so that you don’t have to repeat boilerplate on every template](/docs/layouts/).
+1. Add [CSS, JavaScript, or Web Fonts](/docs/assets/) to your project.
+1. Learn more of the [command line options for Eleventy](/docs/usage/).
+1. Perhaps you’d like to [consume data from third party APIs](/docs/data-js/) in your project?
+</template>
+
+<h3>Tutorials and Starter Projects</h3>
+
+<p>For folks wanting to <strong>build a blog</strong>, you can learn how to <a href="https://www.youtube.com/watch?v=kzf9A9tkkl4">start from scratch</a> <em>(learn how it works)</em> or use our <a href="https://github.com/11ty/eleventy-base-blog">official Blog starter project</a> <em>(get up and running faster)</em>:</p>
+
+<sites-list @size="lg">
+	<site-card @url="https://www.youtube.com/watch?v=kzf9A9tkkl4" @name="6 Minutes to Build a Blog from Scratch with Eleventy" @date="2023-03-20" @medialength="6m"></site-card>
+	<site-card @url="https://github.com/11ty/eleventy-base-blog" @name="eleventy-base-blog (Official Starter Project)" @date=""></site-card>
+	<site-card @url="https://www.filamentgroup.com/lab/build-a-blog/" @name="Build your own Blog from Scratch using Eleventy" @date="2018-12-26"></site-card>
+</sites-list>
+
+<p>You can also use one of the many <a href="/docs/starter/"><strong>Starter Projects</strong></a> or read some of our excellent Community-contributed <a href="/docs/tutorials/"><strong>Tutorials</strong></a> (a curated few of which are included below):</p>
+
+<sites-list @size="md">
+	<site-card @url="https://www.youtube.com/watch?v=BKdQEXqfFA0" @name="Build an 11ty Site in 3 Minutes" @date="2021-02-20" @medialength="3m"></site-card>
+	<site-card @url="https://www.learnwithjason.dev/lets-learn-eleventy" @name="Let’s Learn Eleventy! on Learn with Jason" @date="2020-01-08" @medialength="1h32m"></site-card>
+	<site-card @url="https://www.mikeaparicio.com/template-talk/" @name="Templating: Eleventy’s Superpower" @date="2021-07-17" @medialength="15m"></site-card>
+	<site-card @url="https://learneleventyfromscratch.com/" @name="Learn Eleventy from Scratch" @date="2020-05"></site-card>
+	<site-card @url="https://tatianamac.com/posts/beginner-eleventy-tutorial-parti/" @name="Beginner’s Guide to Eleventy" @date="2020-04-02"></site-card>
+	<site-card @url="https://sia.codes/posts/itsiest-bitsiest-eleventy-tutorial/" @name="Itsiest, Bitsiest Eleventy Tutorial" @date="2021-05-24"></site-card>
+	<site-card @url="https://www.youtube.com/watch?v=4wD00RT6d-g" @name="Turn static HTML/CSS into a blog with CMS using the JAMStack" @date="2021-06-24" @medialength="1h23m"></site-card>
+</sites-list>
+
+
+<template webc:type="11ty" 11ty:type="njk" webc:raw webc:nokeep>
+<h3>More From the Community</h3>
+{% include "11tybundle.njk" %}
 </template>

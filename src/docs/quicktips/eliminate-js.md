@@ -16,26 +16,26 @@ Read more at the [GitHub API documentation](https://developer.github.com/v3/repo
 
 This is a bit different from our client-side implementation because this data is only updated as often as your build runs. This is implemented using a global [JavaScript data file](/docs/data-js/) at `_data/github.js`.
 
-* Install new dependencies: `npm install node-fetch@cjs --save-dev`
-* Read more about [`node-fetch`](https://www.npmjs.com/package/node-fetch)
+- Install new dependencies: `npm install node-fetch@cjs --save-dev`
+- Read more about [`node-fetch`](https://www.npmjs.com/package/node-fetch)
 
 {% codetitle "_data/github.js" %}
 
 ```js
 const fetch = require("node-fetch");
 
-module.exports = async function() {
-  console.log( "Fetching new github stargazers count…" );
+module.exports = async function () {
+	console.log("Fetching new github stargazers count…");
 
-  // GitHub API: https://developer.github.com/v3/repos/#get
-  return fetch("https://api.github.com/repos/11ty/eleventy")
-    .then(res => res.json()) // node-fetch option to transform to json
-    .then(json => {
-      // prune the data to return only what we want
-      return {
-        stargazers: json.stargazers_count
-      };
-    });
+	// GitHub API: https://developer.github.com/v3/repos/#get
+	return fetch("https://api.github.com/repos/11ty/eleventy")
+		.then((res) => res.json()) // node-fetch option to transform to json
+		.then((json) => {
+			// prune the data to return only what we want
+			return {
+				stargazers: json.stargazers_count,
+			};
+		});
 };
 ```
 
@@ -44,9 +44,11 @@ Now in your templates you can output the stargazers count with:
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```html
 {{ github.stargazers }} GitHub Stars
 ```
+
 {% endraw %}
 
 which outputs
@@ -61,9 +63,9 @@ Bonus: I created a [`humanReadableNum` filter](https://github.com/11ty/11ty-webs
 
 You can look in the footer of this page to see examples of this in use on this very web site. I used it for:
 
-* [NPM Download Count](https://github.com/11ty/11ty-website/blob/ac3579909078f860f4af1185c8f7353d56833c22/_data/npm.js)
-* [GitHub Stargazers Count](https://github.com/11ty/11ty-website/blob/ac3579909078f860f4af1185c8f7353d56833c22/_data/github.js)
-* [Twitter Followers Count](https://github.com/11ty/11ty-website/blob/ac3579909078f860f4af1185c8f7353d56833c22/_data/twitter.js) (careful here, this one is super brittle but Twitter’s API is historically anti-developer so 😇)
+- [NPM Download Count](https://github.com/11ty/11ty-website/blob/ac3579909078f860f4af1185c8f7353d56833c22/_data/npm.js)
+- [GitHub Stargazers Count](https://github.com/11ty/11ty-website/blob/ac3579909078f860f4af1185c8f7353d56833c22/_data/github.js)
+- [Twitter Followers Count](https://github.com/11ty/11ty-website/blob/ac3579909078f860f4af1185c8f7353d56833c22/_data/twitter.js) (careful here, this one is super brittle but Twitter’s API is historically anti-developer so 😇)
 
 These all use the recommended caching mechanism described in the next section.
 

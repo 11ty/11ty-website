@@ -6,14 +6,16 @@ Uses the [`slugify` npm package](https://www.npmjs.com/package/slugify) to conve
 
 {% codetitle "slug.md" %}
 {% raw %}
+
 ```yaml
 ---
 title: "My Title"
-permalink: "/{{ title | slugify }}/"
+permalink: "/{{ title | slug }}/"
 ---
 Outputs to `/my-title/`.
 ```
+
 {% endraw %}
 
-* [`slugify` Universal Filter](/docs/filters/slugify/)
-* [← Back to Filters documentation.](/docs/filters/)
+- [`slugify` Universal Filter](/docs/filters/slugify/)
+- [← Back to Filters documentation.](/docs/filters/)

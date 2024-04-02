@@ -4,12 +4,13 @@ eleventyNavigation:
   key: Command Line Usage
   order: 1
 ---
+
 # Command Line Usage
 
 **Prerequisites:**
 
 1. Eleventy runs in a Terminal window. [_Well, wait—what is a Terminal window?_](/docs/terminal-window/)
-2. Have you already [installed Eleventy](/docs/getting-started/)?
+2. Have you already [installed Eleventy](/docs/)?
 
 ---
 
@@ -106,7 +107,6 @@ npx @11ty/eleventy --to=fs
 ```
 
 Read more about [ndjson](https://github.com/ndjson/ndjson-spec).
-
 
 ### `--incremental` for Partial Incremental Builds
 

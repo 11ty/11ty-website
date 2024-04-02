@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/idogal/tisot-blog-starter",
+	"name": "Tisot",
+	"description": "A blog template and a starter kit, based on Eleventy and TailwindCSS/daisyUI.",
+	"author": "Ido Gal",
+	"demo": "http://ido.g.gitlab.io/idog-blog-daisyui/"
+}

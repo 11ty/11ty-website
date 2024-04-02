@@ -4,17 +4,18 @@ eleventyNavigation:
   order: 1
   excerpt: Generate an Atom feed to allow others to subscribe to your content using a feed reader.
 ---
+
 # RSS Plugin
 
 {% tableofcontents %}
 
 A pack of plugins for generating an RSS feed (actually an Atom feed, but who’s counting) using the Nunjucks templating engine.
 
-* [GitHub](https://github.com/11ty/eleventy-plugin-rss).
+- [GitHub](https://github.com/11ty/eleventy-plugin-rss).
 
 ## Template Compatibility
 
-* Nunjucks
+- Nunjucks
 
 ## Installation
 
@@ -31,8 +32,8 @@ Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
 ```js
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(pluginRss);
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addPlugin(pluginRss);
 };
 ```
 
@@ -45,22 +46,22 @@ module.exports = function(eleventyConfig) {
 ```js
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(pluginRss, {
-    posthtmlRenderOptions: {
-      closingSingleTag: "default" // opt-out of <img/>-style XHTML single tags
-    }
-  });
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addPlugin(pluginRss, {
+		posthtmlRenderOptions: {
+			closingSingleTag: "default", // opt-out of <img/>-style XHTML single tags
+		},
+	});
 };
 ```
 
 ## Supplies the following Nunjucks Filters
 
-* `getNewestCollectionItemDate`: Gets the most recently updated content in the collection. Use with `dateToRfc3339` to properly format the Date for the top-level `<updated>` element. {% addedin "RSS 1.1.0" %}
-* `dateToRfc3339`: format a Date for use in a `<entry><updated>` element. (Atom feeds) {% addedin "RSS 1.1.0" %}
-* `dateToRfc822`: format a Date for use in a `<pubDate>` element. (RSS feeds) {% addedin "RSS 1.2.0" %}
-* `absoluteUrl`: converts a single URL (relative or absolute path) to a full absolute URL including protocol, domain, full path.
-* `htmlToAbsoluteUrls`: (async) transforms all of the URLs in a block of HTML with `absoluteUrl` above. Uses [posthtml-urls](https://github.com/posthtml/posthtml-urls) with `a[href]`, `video[src]`, `audio[src]`, `source`, `img[src]`, `[srcset]` and [a whole bunch more](https://github.com/posthtml/posthtml-urls/blob/307c91342a211b3f9fb22bc57264bbb31f235fbb/lib/defaultOptions.js).
+- `getNewestCollectionItemDate`: Gets the most recently updated content in the collection. Use with `dateToRfc3339` to properly format the Date for the top-level `<updated>` element. {% addedin "RSS 1.1.0" %}
+- `dateToRfc3339`: format a Date for use in a `<entry><updated>` element. (Atom feeds) {% addedin "RSS 1.1.0" %}
+- `dateToRfc822`: format a Date for use in a `<pubDate>` element. (RSS feeds) {% addedin "RSS 1.2.0" %}
+- `absoluteUrl`: converts a single URL (relative or absolute path) to a full absolute URL including protocol, domain, full path.
+- `htmlToAbsoluteUrls`: (async) transforms all of the URLs in a block of HTML with `absoluteUrl` above. Uses [posthtml-urls](https://github.com/posthtml/posthtml-urls) with `a[href]`, `video[src]`, `audio[src]`, `source`, `img[src]`, `[srcset]` and [a whole bunch more](https://github.com/posthtml/posthtml-urls/blob/307c91342a211b3f9fb22bc57264bbb31f235fbb/lib/defaultOptions.js).
 
 ### Use with other template languages
 
@@ -69,11 +70,11 @@ module.exports = function(eleventyConfig) {
 ```js
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addLiquidFilter("dateToRfc3339", pluginRss.dateToRfc3339);
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addLiquidFilter("dateToRfc3339", pluginRss.dateToRfc3339);
 
-  // New in RSS 1.2.0
-  eleventyConfig.addLiquidFilter("dateToRfc822", pluginRss.dateToRfc822);
+	// New in RSS 1.2.0
+	eleventyConfig.addLiquidFilter("dateToRfc822", pluginRss.dateToRfc822);
 };
 ```
 
@@ -81,8 +82,8 @@ module.exports = function(eleventyConfig) {
 
 ### Deprecated Filters
 
-* `rssLastUpdatedDate`, poorly named (works with Atom and JSON feeds, not RSS). Use `getNewestCollectionItemDate | dateToRfc3339` instead.
-* `rssDate`, poorly named (works with Atom and JSON feeds, not RSS). Use `dateToRfc3339` instead.
+- `rssLastUpdatedDate`, poorly named (works with Atom and JSON feeds, not RSS). Use `getNewestCollectionItemDate | dateToRfc3339` instead.
+- `rssDate`, poorly named (works with Atom and JSON feeds, not RSS). Use `dateToRfc3339` instead.
 
 ## Sample Feed templates
 
@@ -98,8 +99,8 @@ Copy and paste this template and modify the JSON metadata to match your feed’s
   </div>
   <div id="rss-atom" role="tabpanel">
 
-
 {% raw %}
+
 ```html
 ---json
 {
@@ -117,36 +118,44 @@ Copy and paste this template and modify the JSON metadata to match your feed’s
   }
 }
 ---
+
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ metadata.url }}">
-  <title>{{ metadata.title }}</title>
-  <subtitle>{{ metadata.subtitle }}</subtitle>
-  <link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self"/>
-  <link href="{{ metadata.url }}"/>
-  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
-  <id>{{ metadata.url }}</id>
-  <author>
-    <name>{{ metadata.author.name }}</name>
-    <email>{{ metadata.author.email }}</email>
-  </author>
-  {%- for post in collections.posts | reverse %}
-  {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
-  <entry>
-    <title>{{ post.data.title }}</title>
-    <link href="{{ absolutePostUrl }}"/>
-    <updated>{{ post.date | dateToRfc3339 }}</updated>
-    <id>{{ absolutePostUrl }}</id>
-    <content xml:lang="{{ metadata.language }}" type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
-  </entry>
-  {%- endfor %}
+	<title>{{ metadata.title }}</title>
+	<subtitle>{{ metadata.subtitle }}</subtitle>
+	<link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" />
+	<link href="{{ metadata.url }}" />
+	<updated
+		>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339
+		}}</updated
+	>
+	<id>{{ metadata.url }}</id>
+	<author>
+		<name>{{ metadata.author.name }}</name>
+		<email>{{ metadata.author.email }}</email>
+	</author>
+	{%- for post in collections.posts | reverse %} {%- set absolutePostUrl =
+	post.url | absoluteUrl(metadata.url) %}
+	<entry>
+		<title>{{ post.data.title }}</title>
+		<link href="{{ absolutePostUrl }}" />
+		<updated>{{ post.date | dateToRfc3339 }}</updated>
+		<id>{{ absolutePostUrl }}</id>
+		<content xml:lang="{{ metadata.language }}" type="html"
+			>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content
+		>
+	</entry>
+	{%- endfor %}
 </feed>
 ```
+
 {% endraw %}
 
 </div>
 <div id="rss-rss" role="tabpanel">
 
 {% raw %}
+
 ```html
 ---json
 {
@@ -186,12 +195,14 @@ Copy and paste this template and modify the JSON metadata to match your feed’s
   </channel>
 </rss>
 ```
+
 {% endraw %}
 
 </div>
 <div id="rss-json" role="tabpanel">
 
 {% raw %}
+
 ```json
 ---json
 {
@@ -235,15 +246,16 @@ Copy and paste this template and modify the JSON metadata to match your feed’s
   ]
 }
 ```
+
 {% endraw %}
 
 </div>
 </seven-minute-tabs>
 
-Place the file anywhere in your project (give it a `.njk` extension) and it will be transformed into a `feed.xml` (or `feed.json` if you’re using the JSON variant) file at the root of your website when Eleventy builds it. It can then be useful to check the file against a feed validator, such as the [W3C Feed Validation Service](https://validator.w3.org/feed/) to make sure that the output was good.
+Place the file in your input directory (and give it a `.njk` extension). For example: src/feed.njk or src/feed.json. If your input directory is `src`, the file will be transformed into a `feed.xml` (or `feed.json` if you’re using the JSON variant) file at the root of your website when Eleventy builds. It can then be useful to check the file against a feed validator, such as the [W3C Feed Validation Service](https://validator.w3.org/feed/) to make sure that the output was good.
 
 Ultimately your feed will be available at `https://yourwebsite.com/feed.xml` (or `https://yourwebsite.com/feed.json`)
 
 ## Related Plugins:
 
-* [`eleventy-xml-plugin`](https://www.npmjs.com/package/eleventy-xml-plugin) for Liquid.
+- [`eleventy-xml-plugin`](https://www.npmjs.com/package/eleventy-xml-plugin) for Liquid.

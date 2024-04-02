@@ -1,0 +1,36 @@
+{%- set tabid = "configexample" %}
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jscjs,jsesm"} %}
+  <div id="{{ tabid }}-jscjs" role="tabpanel">
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  return {
+    dir: {
+      input: "views"
+    }
+  }
+};
+```
+
+  </div>
+  <div id="{{ tabid }}-jsesm" role="tabpanel">
+
+{% codetitle ".eleventy.js" %}
+
+```js
+export default function(eleventyConfig) {
+  return {
+    dir: {
+      input: "views"
+    }
+  }
+};
+```
+
+  </div>
+</seven-minute-tabs>
+</is-land>
