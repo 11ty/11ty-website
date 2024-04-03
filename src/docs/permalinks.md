@@ -224,7 +224,7 @@ Because of the order of the [data cascade](/docs/data-cascade/) the title of a c
 
 ```javascript
 module.exports = {
-  permalink: function({ title }) {
+	permalink: function ({ title }) {
 		return `/recipes/${this.slugify(title)}`;
 	},
 };

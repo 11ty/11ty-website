@@ -317,12 +317,12 @@ If your site lives in a different subdirectory (particularly useful with GitHub 
 ```js
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
-  return {
-    pathPrefix: "/eleventy-base-blog/"
-  }
+	return {
+		pathPrefix: "/eleventy-base-blog/",
+	};
 };
 ```
 
