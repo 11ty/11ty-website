@@ -21,6 +21,9 @@ hosts:
   - name: Vercel
     url: https://vercel.com/signup
     screenshotSize: medium
+  - name: Stormkit
+    url: https://stormkit.io/
+    screenshotSize: medium
   - name: GitHub Pages
     url: https://pages.github.com/
     screenshotSize: medium
