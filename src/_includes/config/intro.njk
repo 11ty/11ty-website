@@ -21,9 +21,12 @@ module.exports = function(eleventyConfig) {
   </div>
   <div id="{{ tabid }}-jsesm" role="tabpanel">
 
+<!-- {% addedin "v3.0.0" %} -->
+
 {% codetitle ".eleventy.js" %}
 
 ```js
+// ESM syntax (e.g. `export default`) is supported in Eleventy v3.0+
 export default function(eleventyConfig) {
   // Return your Object options:
   return {
