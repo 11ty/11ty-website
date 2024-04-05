@@ -278,9 +278,9 @@ npx @11ty/eleventy --formats=html,liquid,njk
 In order to maximize user-friendliness to beginners, Eleventy will show each file it processes and the output file. To disable this noisy console output, use quiet mode!
 
 | Quiet Mode              |                   |
-| ----------------------- | ----------------- | --- |
+| ----------------------- | ----------------- |
 | _Default_               | `false`           |
-| _Valid Options_         | `true` or `false` |     |
+| _Valid Options_         | `true` or `false` |
 | _Command Line Override_ | `--quiet`         |
 
 #### Example
