@@ -2,7 +2,6 @@
 newstitle: "We want you to speak at the 11ty Conference!"
 eleventyNavigation:
   parent: Blog
-homePageHighlight: true
 external_url: https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform
 ---
 
