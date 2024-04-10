@@ -102,6 +102,19 @@ module.exports = function (eleventyConfig) {
 </details>
 
 - Read more about [`chokidar.watch` compatible paths](https://github.com/paulmillr/chokidar)
+* You can also set the config options for `chokidar.watch` using the `setChokidarConfig` method.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setChokidarConfig({
+    usePolling: true,
+    interval: 500,
+  });
+}
+```
+
 - For a full list of `encoding` values supported by Node (also used in the `Content-Type` HTTP Header), check out [Node’s Buffer documentation](https://nodejs.org/api/buffer.html#buffers-and-character-encodings).
 - Using a root `404.html` file (a popular convention supported by Netlify, GitHub Pages, Vercel, and others) supported! We use the content from a `404.html` in your output folder when serving the error page for missing content.
 
