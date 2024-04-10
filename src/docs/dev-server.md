@@ -101,20 +101,7 @@ module.exports = function (eleventyConfig) {
 
 </details>
 
-- Read more about [`chokidar.watch` compatible paths](https://github.com/paulmillr/chokidar)
-* You can also set the config options for `chokidar.watch` using the `setChokidarConfig` method.
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setChokidarConfig({
-    usePolling: true,
-    interval: 500,
-  });
-}
-```
-
+- Read more about [`chokidar.watch` compatible paths](https://github.com/paulmillr/chokidar) for the `watch` option. Advanced [chokidar configuration is available](#advanced-chokidar-options).
 - For a full list of `encoding` values supported by Node (also used in the `Content-Type` HTTP Header), check out [Node’s Buffer documentation](https://nodejs.org/api/buffer.html#buffers-and-character-encodings).
 - Using a root `404.html` file (a popular convention supported by Netlify, GitHub Pages, Vercel, and others) supported! We use the content from a `404.html` in your output folder when serving the error page for missing content.
 
@@ -127,6 +114,21 @@ Try out the [`devcert-cli`](https://github.com/davewasmer/devcert-cli) package t
   {%- youtubeEmbed "7hER8HddlhQ", "Shipping the New Dev Server (Weekly №4)" -%}
   {%- youtubeEmbed "ZE5Np95-PeU", "Dev Server CLI (Weekly №14)", "463" -%}
 </div>
+
+### Advanced `chokidar` options
+
+Advanced [`chokidar` options](https://github.com/paulmillr/chokidar) can be defined using the `setChokidarConfig` configuration API method:
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setChokidarConfig({
+    usePolling: true,
+    interval: 500,
+  });
+}
+```
 
 ## Swap back to Browsersync {% addedin "2.0.0" %}
 
