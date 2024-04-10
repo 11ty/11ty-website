@@ -26,9 +26,9 @@ relatedLinks:
 
 ### Performance
 
-- Create streamlined component-driven, cache-friendly page-specific JavaScript and CSS bundles. Users will only load the code they need to render that page (or that [island](/docs/plugins/partial-hydration/)).
+- Create streamlined component-driven, cache-friendly page-specific JavaScript and CSS bundles. Users will only load the code they need to render that page (or that [island](/docs/plugins/is-land/)).
   - Easily [configurable boundaries](#asset-bucketing) for critical component CSS and JavaScript.
-  - Works great with [is-land](/docs/plugins/partial-hydration/) for web component hydration.
+  - Works great with [is-land](/docs/plugins/is-land/) for web component hydration.
 - Get first-class **incremental builds** (for page templates, components, and Eleventy layouts) when [used with `--incremental`](/docs/usage/#incremental-for-partial-incremental-builds)
 - Streaming friendly (stream on the Edge 👀)
 
