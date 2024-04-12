@@ -82,7 +82,7 @@ Plugin namespacing is an application feature and should not be used if you are c
 
 ## Creating a Plugin
 
-A plugin primarily provides a “configuration function.” This function is called when Eleventy is first initialized, and takes the same `eleventyConfig` object as the user’s `.eleventy.js` file gets, in addition to any config passed by the user:
+A plugin primarily provides a “configuration function.” This function is called when Eleventy is first initialized, and operates similarly to a user’s configuration function (the same `eleventyConfig` argument passed to the user’s `.eleventy.js` file is passed here), in addition to any config passed by the user:
 
 {% codetitle "plugin.js" %}
 
@@ -125,11 +125,42 @@ module.exports = function (eleventyConfig) {
 
 </details>
 
+### Feature Testing
+
+If your plugin requires a specific feature in Eleventy, you should feature test it!
+
+```js
+module.exports = function (eleventyConfig, pluginOptions) {
+	if(!("addTemplate" in eleventyConfig)) {
+		console.log( `[my-test-plugin] WARN Eleventy plugin compatibility: Virtual Templates are required for this plugin, please use Eleventy v3.0 or newer.` );
+	}
+};
+```
+
+### Version Checking
+
+If feature testing is not available for your specific use case, you can add this code to your plugin configuration to show a warning if the plugin consumer does not have a compatible version of Eleventy:
+
+```js
+module.exports = function (eleventyConfig, pluginOptions) {
+	try {
+		// Emit a warning message if the application is not using Eleventy 3.0 or newer (including prereleases).
+		eleventyConfig.versionCheck(">=3.0");
+	} catch(e) {
+		console.log( `[my-test-plugin] WARN Eleventy plugin compatibility: ${e.message}` );
+	}
+};
+```
+
+* This uses the [`semver` package](https://www.npmjs.com/package/semver) and is compatible with advanced range syntax.
+* **Upper bounding your version number is _not recommended_**. Eleventy works very hard to maintain backwards compatibility between major versions. Please ensure your plugin code does the same!
+* The `versionCheck` method has been available in Eleventy core since v0.3.2 (~2018).
+
+
 ### Distributing a Plugin
 
 If you’re distributing your plugin as a package, consider following these conventions. These are not hard requirements.
 
 - Add `"eleventy-plugin"` to your package.json’s `keywords` field.
 - Prefix your package name with `eleventy-plugin-`
-- Write your plugin code in a `.eleventy.js` file in the root of your repository, and set the `"main"` field of your package.json to `".eleventy.js"`
-- Open a PR to add your plugin to our [list of community plugins](https://github.com/11ty/11ty-website/tree/main/src/_data/plugins) <3
+- Open a PR to add your plugin to our [list of community plugins](https://github.com/11ty/11ty-website/tree/main/src/_data/plugins) for publication on [our community plugins directory](/docs/plugins/community.md).
