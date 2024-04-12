@@ -11,7 +11,6 @@ eleventyNavigation:
 
 {%- for name, plugin in plugins | shuffle %}
 {%- set url = plugin.url or "https://www.npmjs.com/package/" + plugin.npm %}
-
 - [{% if plugin.deprecated %}~~{% endif %}{{ plugin.npm }}{% if plugin.deprecated %}~~{% endif %}]({{ url }}){% if plugin.description %} {% if plugin.deprecated %}~~{% endif %}{{ plugin.description }}{% if plugin.deprecated %}~~{% endif %}{% endif %} {{ plugin.deprecated }} {% authorLink authors, plugin.author %}
-  {%- endfor %}
+{%- endfor %}
 - [Add your own](https://github.com/11ty/11ty-website/tree/main/src/_data/plugins#readme)!

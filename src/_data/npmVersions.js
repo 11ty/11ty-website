@@ -6,7 +6,7 @@ async function getLatestVersions() {
 	let url = `https://registry.npmjs.org/${NPM_PKG_NAME}`;
 	let json = await EleventyFetch(url, {
 		type: "json",
-		duration: "1d",
+		duration: "1h",
 		directory: ".cache/eleventy-fetch/",
 		dryRun: false,
 	});

@@ -2,14 +2,14 @@
 eleventyNavigation:
   key: RSS
   order: 1
-  excerpt: Generate an Atom feed to allow others to subscribe to your content using a feed reader.
+  excerpt: Generate an RSS or Atom feed to allow others to subscribe to your content using a feed reader.
 ---
 
 # RSS Plugin
 
 {% tableofcontents %}
 
-A pack of plugins for generating an RSS feed (actually an Atom feed, but who’s counting) using the Nunjucks templating engine.
+A pack of plugins for generating an RSS (or Atom or JSON) feed using the Nunjucks templating engine.
 
 - [GitHub](https://github.com/11ty/eleventy-plugin-rss).
 

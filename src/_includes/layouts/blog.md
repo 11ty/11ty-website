@@ -26,5 +26,5 @@ eleventyComputed:
 {% set previousPost = collections.blog | getPreviousCollectionItem(page) %}
 {% set nextPost = collections.blog | getNextCollectionItem(page) %}
 
-{% if nextPost %}_ <a href="{{ nextPost.url }}">Next: {{ nextPost.data.newstitle }}</a>{% endif %}
-{% if previousPost %}_ <a href="{{ previousPost.url }}">Previous: {{ previousPost.data.newstitle }}</a>{% endif %}
+{% if nextPost %}- Next: <a href="{{ nextPost.url }}">{{ nextPost.data.newstitle }}</a>{% endif %}
+{% if previousPost %}- Previous: <a href="{{ previousPost.url }}">{{ previousPost.data.newstitle }}</a>{% endif %}

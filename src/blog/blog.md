@@ -20,9 +20,8 @@ eleventyImport:
 ---
 
 {% for news in collections.blog | reverse %}
-
 - [{{ news.data.newstitle }}]({{ news.url }}) <small><em>on {{ news.date | newsDate }}</em></small>
-  {%- endfor %}
+{%- endfor %}
 - [Eleventy wins second Google Open Source Award](https://opensource.googleblog.com/2019/04/google-open-source-peer-bonus-winners.html) <small><em> on 2019 April 26</em></small>
 - [CERN 2019 WorldWideWeb Rebuild]({{ "https://twitter.com/eleven_ty/status/1106589569238085637" | canonicalTwitterUrl }}) site rebuilt using Eleventy! <small><em> on 2019 March</em></small>
 - [Turn Jekyll up to Eleventy—a lovely tutorial by {% communityavatar "paulrobertlloyd" %}Paul Robert Lloyd](https://24ways.org/2018/turn-jekyll-up-to-eleventy/) <small><em> on 2018 December 11</em></small>

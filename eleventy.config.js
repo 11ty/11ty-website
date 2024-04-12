@@ -978,15 +978,13 @@ to:
 				shortcodes.getIndieAvatarHtml("https://www.11ty.dev/") + "Eleventy"
 			);
 	});
+};
 
-	return {
-		dir: {
-			input: "src",
-			output: "_site",
-			data: "_data",
-		},
-		templateFormats: ["html", "njk", "md", "11ty.js"],
-		markdownTemplateEngine: "njk",
-		htmlTemplateEngine: "njk",
-	};
-}
+export const config = {
+	dir: {
+		input: "src",
+	},
+	templateFormats: ["html", "njk", "md", "11ty.js"],
+	markdownTemplateEngine: "njk",
+	htmlTemplateEngine: "njk",
+};
