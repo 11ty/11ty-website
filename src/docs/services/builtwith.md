@@ -1,7 +1,7 @@
 ---
 pageTitle: Hosting Image
 eleventyNavigation:
-  key: Host Image
+  key: Hosting Image
   excerpt: Returns the hosting provider’s logo that was used to host a site at given URL.
   order: 4
 communityLinksKey: api-builtwith

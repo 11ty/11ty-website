@@ -51,9 +51,9 @@
 	padding-left: 0.625rem; /* 10px /16 */
 }
 /* Hide inactive menus 3 or more deep */
-.elv-toc-list ul ul > li:not(.elv-toc-active) > ul > li:not(.elv-toc-active) {
+/* .elv-toc-list ul ul > li:not(.elv-toc-active) > ul > li:not(.elv-toc-active) {
 	display: none;
-}
+} */
 
 /* List items */
 .elv-toc summary,
