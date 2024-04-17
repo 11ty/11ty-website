@@ -179,7 +179,7 @@ Additionally, _if_ you’re writing your [Eleventy Image output](/docs/plugins/i
 - [**CloudCannon** Tutorial on YouTube](https://www.youtube.com/watch?v=ULwVlFMth1U) _({{ "2023-10-23" | newsDate("yyyy") }})_
 - [Source example on GitHub for **Netlify**](https://github.com/11ty/demo-eleventy-img-netlify-cache) _({{ "2022-02-24" | newsDate("yyyy") }})_
 
-## Mini-tutorials
+## Mini-Tutorials
 
 ### Deploy an Eleventy project to GitHub pages
 

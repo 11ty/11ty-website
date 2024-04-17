@@ -1,7 +1,9 @@
 ---
 eleventyNavigation:
   key: Quick Tips
-  order: 3
+  parent: Working with Templates
+  order: 0.9
+  excerpt: A selection of common use cases.
 communityLinksKey: quicktips
 eleventyImport:
   collections: ["quicktips"]
@@ -9,9 +11,8 @@ eleventyImport:
 
 # Quick Tips
 
-{% for tip in collections.quicktips | sortByQuickTipsIndex %}
-
+{%- for tip in collections.quicktips | sortByQuickTipsIndex %}
 - Quick Tip <a href="{{ tip.url }}"><code>#{{ tip.data.tipindex }}</code>—{{ tip.data.tiptitle }}</a>
-  {%- endfor %}
+{%- endfor %}
 
 📢 [Subscribe to the **Eleventy Quick Tips RSS Feed**](/docs/quicktips/feed.xml)

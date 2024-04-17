@@ -164,3 +164,27 @@ If you’re distributing your plugin as a package, consider following these conv
 - Add `"eleventy-plugin"` to your package.json’s `keywords` field.
 - Prefix your package name with `eleventy-plugin-`
 - Open a PR to add your plugin to our [list of community plugins](https://github.com/11ty/11ty-website/tree/main/src/_data/plugins) for publication on [our community plugins directory](/docs/plugins/community.md).
+
+### Advanced: Execute a plugin immediately {% addedin "3.0.0-alpha.5" %}
+
+Plugins (by default) execute in a second stage of configuration after the user’s configuration file has finished, in order to have access to [the return object in the configuration callback](/docs/config/).
+
+You are unlikely to need this, but you can execute a plugin’s code immediately using the `immediate` option.
+
+```js
+module.exports = function (eleventyConfig, pluginOptions) {
+	console.log( "first" );
+
+	eleventyConfig.addPlugin(eleventyConfig => {
+		console.log("fourth");
+	});
+
+	eleventyConfig.addPlugin(eleventyConfig => {
+		console.log("second");
+	}, {
+		immediate: true
+	});
+
+	console.log("third");
+};
+```
