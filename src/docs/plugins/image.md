@@ -485,7 +485,7 @@ This `image` shortcode example [requires an async-friendly template language](#a
 
 #### Synchronous Shortcode
 
-{% callout "info", "md" %}The new [Eleventy Transform](#eleventy-transform) is now preferred for situations that are not asynchronous-friendly (Handlebars, macros in Nunjucks, et al). For asynchronous-friendly templates (e.g. Nunjucks, Liquid, WebC, JavaScript), the [Asynchronous Shortcode](#asynchronous-shortcode) is another option.{% endcallout %}
+{% callout "info", "md" %}The new [Eleventy Transform](#eleventy-transform) is now preferred for situations that are not asynchronous-friendly (Handlebars, macros in Nunjucks, et al). For asynchronous-friendly templates (e.g. Nunjucks, Liquid, JavaScript), the [Asynchronous Shortcode](#asynchronous-shortcode) is another option. If you’re using WebC, use the provided [WebC component](#webc).{% endcallout %}
 
 <details>
 <summary>Expand to see an example of Synchronous usage.</summary>
@@ -532,7 +532,7 @@ module.exports = function (eleventyConfig) {
 
 {% addedin "Image v3.1.0" %} Eleventy Image now provides a built-in `<eleventy-image>` WebC component for use in your Eleventy project.
 
-Using Eleventy Image in [WebC](/docs/languages/webc/) offers all the same great benefits you’re used to from Eleventy Image with an intuitive declarative HTML-only developer experience. WebC components work in `*.webc` files. To use in other template formats, use the the shortcodes above (or with the [Render plugin](/docs/plugins/render.md)).
+Using Eleventy Image in [WebC](/docs/languages/webc/) offers all the same great benefits you’re used to from Eleventy Image with an intuitive declarative HTML-only developer experience. WebC components work in `*.webc` files. For similar functionality in other template formats, use the the [Liquid/Nunjucks/JavaScript shortcodes](#nunjucks-liquid-javascript-(asynchronous-shortcodes)) above (or even `<eleventy-image>` with the [Render plugin](/docs/plugins/render.md)).
 
 First, add the following to your project’s configuration file:
 
@@ -944,7 +944,7 @@ When you use this, returned data will not include `filename` or `outputPath`.
 		width,
 		format,
 	}) {
-		return `https://sample-image-service.11ty.dev/${encodeURIComponent(src)}/${width}/${format}/`;
+		return `https://example.com/${encodeURIComponent(src)}/${width}/${format}/`;
 	}
 }
 ```
