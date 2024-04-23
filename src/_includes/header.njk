@@ -43,7 +43,11 @@
 			<template data-island>
 				<a href="/blog/mascot-david/" class="elv-externalexempt elv-possum-anchor" data-investors-avatar>
 					<div class="elv-possum-pic">
-						{% image "./src/img/mascots/david.svg", "The possum is Eleventy’s mascot", [222, 350], "elv-possum", "100px" %}
+						{% if isDocs %}
+						{% image "./src/img/mascots/david.svg", "The possum is Eleventy’s mascot", [222], "elv-possum" %}
+						{% else %}
+						{% image "./src/img/mascots/david.svg", "The possum is Eleventy’s mascot", [222, 350], "elv-possum", "20vh" %}
+						{% endif %}
 						</is-land>
 					</div>
 				</a>
