@@ -7,13 +7,12 @@ eleventyNavigation:
 ---
 <h1>Adding Images</h1>
 
-<!-- <img
+<img
 	webc:is="eleventy-image"
 	src="./src/img/possum-geri.png"
 	alt="The possum is Eleventy’s mascot"
-	width="222, 350"
 	class="some-custom-class"
-	sizes="(min-width: 43.75em) 100px, 15vw"> -->
+	sizes="(min-width: 43.75em) 100px, 15vw">
 
 <h2>Content images</h2>
 

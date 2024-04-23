@@ -72,11 +72,11 @@ const shortcodes = {
 	},
 	image: async function (filepath, alt, widths, classes, sizes, attributes) {
 		let options = {
-			formats:
-				process.env.NODE_ENV === "production" ? ["avif", "png"] : ["auto"],
+			formats: ["avif", "png"],
 			widths: widths || ["auto"],
 			urlPath: "/img/built/",
 			outputDir: "_site/img/built/",
+			transformOnRequest: process.env.ELEVENTY_RUN_MODE === "serve",
 		};
 
 		let stats = await eleventyImage(filepath, options);
@@ -88,7 +88,7 @@ const shortcodes = {
 					alt,
 					loading: "lazy",
 					decoding: "async",
-					sizes: sizes || "(min-width: 22em) 30vw, 100vw",
+					sizes,
 					class: classes || "",
 				},
 				attributes
@@ -265,8 +265,7 @@ export default async function (eleventyConfig) {
 
 	eleventyConfig.addPlugin(eleventyImagePlugin, {
 		// options via https://www.11ty.dev/docs/plugins/image/#usage
-		formats:
-			process.env.NODE_ENV === "production" ? ["avif", "jpeg"] : ["auto"],
+		formats: ["avif", "jpeg"],
 
 		urlPath: "/img/built/",
 
