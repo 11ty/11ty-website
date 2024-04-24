@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/danurbanowicz/halide",
+	"name": "halide",
+	"description": "A fast, responsive image portfolio website starter, built with Eleventy and Tina CMS.",
+	"author": "DanUrbanowicz",
+	"demo": "https://halide.netlify.app/"
+}
