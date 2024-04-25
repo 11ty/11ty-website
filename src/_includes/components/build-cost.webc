@@ -1,4 +1,9 @@
 <style>
+.build-cost-inline {
+	display: flex;
+	flex-direction: column;
+	gap: .5em;
+}
 @media (min-width: 37.5em) { /* 600px */
 	.build-cost-inline {
 		float: right;
@@ -23,13 +28,6 @@
 	border: 1px solid var(--internal-border);
 	border-radius: .5em;
 	font-weight: 700;
-	/* via https://www.joshwcomeau.com/shadow-palette/ */
-	box-shadow: 0px 0.3px 0.5px hsl(var(--internal-shadow-hsl) / 0),
-		0.1px 2.4px 3.6px hsl(var(--internal-shadow-hsl) / 0.07),
-		0.1px 4.3px 6.5px hsl(var(--internal-shadow-hsl) / 0.14),
-		0.2px 6.7px 10.1px hsl(var(--internal-shadow-hsl) / 0.22),
-		0.3px 10.6px 15.9px hsl(var(--internal-shadow-hsl) / 0.29),
-		0.5px 16.5px 24.8px hsl(var(--internal-shadow-hsl) / 0.36);
 }
 @media (prefers-color-scheme: dark) {
 	:host {
@@ -42,6 +40,9 @@
 	padding-right: .25em;
 	vertical-align: baseline;
 	margin-top: -.15em;
+}
+:host .cost[data-icon]:before {
+	content: attr(data-icon);
 }
 :host .cost {
 	display: flex;
@@ -65,6 +66,9 @@
 	font-size: 1.25em;
 	content: "🐢";
 }
+:host .dot[data-rating-icon]:before {
+	content: attr(data-rating-icon);
+}
 :host .dot.empty:before {
 	opacity: .2;
 	filter: grayscale(1);
@@ -79,12 +83,12 @@
 	margin: 0;
 }
 </style>
-<span class="cost">
-	<b @text="cost"></b>
-</span>
 <span class="metadata">
-	<span class="label">Build Cost</span>
+	<span class="label" @text="label || 'Build Cost'"></span>
 	<span class="ranger" :class="cost > 3 ? 'warn' : (cost <= 2 ? 'ok' : '')" aria-hidden="true">
-		<div class="dot" :class="index > cost ? 'empty' : ''" webc:for="index of [1,2,3,4,5]"></div>
+		<div class="dot" :data-rating-icon="ratingIcon" :class="index > cost ? 'empty' : ''" webc:for="index of [1,2,3,4,5]"></div>
 	</span>
+</span>
+<span class="cost" :data-icon="icon">
+	<b @text="cost"></b>
 </span>

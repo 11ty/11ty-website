@@ -27,6 +27,10 @@ layout: layouts/docs.njk
 </div>
 
 <div class="styleguide-layout">
+	<build-cost @cost="1" @icon="🍦" @rating-icon="🍨" label="Serve Cost"></build-cost>
+</div>
+
+<div class="styleguide-layout">
 	<span class="minilink minilink-buildcost"><code>+1</code> Build Cost</span>
 	<span class="minilink minilink-buildcost"><code>-1</code> Build Cost</span>
 </div>
