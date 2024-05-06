@@ -75,6 +75,9 @@ classicHosts:
   - name: Cloudflare Direct Upload
     url: https://developers.cloudflare.com/pages/get-started/direct-upload/#drag-and-drop
     screenshotSize: medium
+  - name: xmit
+    url: https://xmit.co/
+    screenshotSize: medium
 webides:
   - name: Glitch
     url: https://glitch.com/
