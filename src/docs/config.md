@@ -271,7 +271,7 @@ module.exports = function (eleventyConfig) {
 npx @11ty/eleventy --formats=html,liquid,njk
 ```
 
-{% callout "info" %}{% addedin "0.9.0" %} <strong>Case sensitivity</strong>: File extensions should be considered case insensitive, cross-platform. While Mac OS—by default—already behaves this way, other operating systems do not and needed additional Eleventy code to enable this behavior.{% endcallout %}
+{% callout "info" %}{% addedin "0.9.0" %} <strong>Case sensitivity</strong>: File extensions should be considered case insensitive, cross-platform. While Mac OS, by default, already behaves this way, other operating systems require additional Eleventy code to enable this behavior.{% endcallout %}
 
 ### Enable Quiet Mode to Reduce Console Noise
 
