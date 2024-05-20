@@ -1,14 +1,10 @@
 ---
 layout: layouts/main.njk
 title: Eleventy Documentation
-templateClass: elv-docs
 headerClass: elv-header-docs
-layoutClass: elv-layout-toc
 isDocs: true
 headerTag: div
 ---
-{% include "components/docs-toc.njk" %}
-
 {% if eleventyNavigation and eleventyNavigation.parent %}
 <nav class="breadcrumb" aria-labelledby="breadcrumb">
   <h2 class="sr-only" id="breadcrumb">Breadcrumbs: </h2>

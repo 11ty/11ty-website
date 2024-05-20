@@ -6,6 +6,7 @@ eleventyNavigation:
   excerpt: Iterate over a data set and create multiple files from a single template.
 relatedKey: pagination
 ---
+
 # Pagination
 
 {% tableofcontents %}
@@ -19,7 +20,7 @@ To iterate over a data set and create pages for individual chunks of data, use p
 Consider the following template, which will result in two pages being created, each of which will display two items from `testdata`:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-array"} %}
   <div id="paged-array-liquid" role="tabpanel">
     {%- codetitle "paged.liquid" %}
@@ -125,13 +126,14 @@ Learn how to create a list of links to every paginated page on a pagination temp
 All of the examples thus far have paged Array data. Eleventy does allow paging objects too. Objects are resolved to pagination arrays using either the `Object.keys` or `Object.values` JavaScript functions. Consider the following templates:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedobj"} %}
   <div id="pagedobj-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 ---
 pagination:
@@ -148,6 +150,7 @@ testdata:
 {% endfor -%}
 </ol>
 ```
+
 {% endraw %}
 
   </div>
@@ -156,6 +159,7 @@ testdata:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 ---
 pagination:
@@ -172,11 +176,42 @@ testdata:
 {% endfor -%}
 </ol>
 ```
+
 {% endraw %}
 
   </div>
   <div id="pagedobj-js" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+
+{% codetitle "JavaScript", "Syntax" %}
+
+{% raw %}
+
+```js
+exports.data = {
+	pagination: {
+		data: "testdata",
+		size: 1,
+	},
+	testdata: {
+		itemkey1: "itemvalue1",
+		itemkey2: "itemvalue2",
+		itemkey3: "itemvalue3",
+	},
+};
+
+exports.render = function (data) {
+	return `<ol>
+		${data.pagination.items
+			.map(function (item) {
+				return `<li>${(item = data.testdata[item])}</li>`;
+			})
+			.join("")}
+	</ol>`;
+};
+```
+
+{% endraw %}
+
   </div>
   <div id="pagedobj-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
@@ -190,10 +225,10 @@ In this example, we would get 3 pages that each print a key/value pair from `tes
 
 ```js
 [
-  [ "itemkey1" ], // pagination.items[0] holds the object key
-  [ "itemkey2" ],
-  [ "itemkey3" ]
-]
+	["itemkey1"], // pagination.items[0] holds the object key
+	["itemkey2"],
+	["itemkey3"],
+];
 ```
 
 You can use these keys to get access to the original value: `testdata[ pagination.items[0] ]`.
@@ -203,6 +238,7 @@ If you’d like the pagination to iterate over the values instead of the keys (u
 {% codetitle "YAML Front Matter", "Syntax" %}
 
 {% raw %}
+
 ```markdown
 ---
 pagination:
@@ -215,6 +251,7 @@ testdata:
   itemkey3: itemvalue3
 ---
 ```
+
 {% endraw %}
 
 This resolves to:
@@ -223,10 +260,10 @@ This resolves to:
 
 ```js
 [
-  [ "itemvalue1" ], // pagination.items[0] holds the object value
-  [ "itemvalue2" ],
-  [ "itemvalue3" ]
-]
+	["itemvalue1"], // pagination.items[0] holds the object value
+	["itemvalue2"],
+	["itemvalue3"],
+];
 ```
 
 ## Paginate a global or local data file
@@ -237,25 +274,21 @@ This resolves to:
 
 ```json
 {
-  "myData": [
-    "item1",
-    "item2",
-    "item3",
-    "item4"
-  ]
+	"myData": ["item1", "item2", "item3", "item4"]
 }
 ```
 
 Your front matter would look like this:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedatafile"} %}
   <div id="pagedatafile-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 ---
 pagination:
@@ -268,6 +301,7 @@ pagination:
 {% endfor -%}
 </ol>
 ```
+
 {% endraw %}
 
   </div>
@@ -276,6 +310,7 @@ pagination:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 ---
 pagination:
@@ -288,11 +323,38 @@ pagination:
 {% endfor -%}
 </ol>
 ```
+
 {% endraw %}
 
   </div>
+
   <div id="pagedatafile-js" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+
+{% codetitle "JavaScript", "Syntax" %}
+
+{% raw %}
+
+```js
+exports.data = {
+	pagination: {
+		data: "globalDataSet.myData",
+		size: 1,
+	},
+};
+
+exports.render = function (data) {
+	return `<ol>
+    ${data.pagination.items
+			.map(function (item) {
+				return `<li>${item}</li>`;
+			})
+			.join("")}
+  </ol>`;
+};
+```
+
+{% endraw %}
+
   </div>
   <div id="pagedatafile-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
@@ -307,11 +369,13 @@ Normally, front matter does not support template syntax, but `permalink` does, e
 {% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```markdown
 ---
 permalink: "different/page-{{ pagination.pageNumber }}/index.html"
 ---
 ```
+
 {% endraw %}
 
 Writes to `_site/different/page-0/index.html`, `_site/different/page-1/index.html`, et cetera.
@@ -321,11 +385,13 @@ That means Nunjucks will also let you start your page numbers with 1 instead of 
 {% codetitle "YAML Front Matter using Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```markdown
 ---
 permalink: "different/page-{{ pagination.pageNumber + 1 }}/index.html"
 ---
 ```
+
 {% endraw %}
 
 Writes to `_site/different/page-1/index.html`, `_site/different/page-2/index.html`, et cetera.
@@ -333,11 +399,13 @@ Writes to `_site/different/page-1/index.html`, `_site/different/page-2/index.htm
 You can even use template logic here too:
 
 {% raw %}
+
 ```markdown
 ---
 permalink: "different/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 ---
 ```
+
 {% endraw %}
 
 Writes to `_site/different/index.html`, `_site/different/page-2/index.html`, et cetera.
@@ -351,6 +419,7 @@ You can do more advanced things like this:
 {% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```markdown
 ---
 pagination:
@@ -361,6 +430,7 @@ testdata:
 permalink: "different/{{ pagination.items[0] | slugify }}/index.html"
 ---
 ```
+
 {% endraw %}
 
 Using a universal `slug` filter (transforms `My Item` to `my-item`), this outputs: `_site/different/my-item/index.html`.
@@ -370,13 +440,14 @@ Using a universal `slug` filter (transforms `My Item` to `my-item`), this output
 Ok, so `pagination.items[0]` is ugly. We provide an option to alias this to something different.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedalias"} %}
   <div id="pagedalias-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 ---
 pagination:
@@ -390,6 +461,7 @@ permalink: "different/{{ wonder | slugify }}/index.html"
 ---
 You can use the alias in your content too {{ wonder }}.
 ```
+
 {% endraw %}
 
   </div>
@@ -398,6 +470,7 @@ You can use the alias in your content too {{ wonder }}.
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 ---
 pagination:
@@ -411,11 +484,36 @@ permalink: "different/{{ wonder | slugify }}/index.html"
 ---
 You can use the alias in your content too {{ wonder }}.
 ```
+
 {% endraw %}
 
   </div>
   <div id="pagedalias-js" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+
+{% codetitle "JavaScript", "Syntax" %}
+
+{% raw %}
+
+```js
+exports.data = {
+	pagination: {
+		data: "testdata",
+		size: 1,
+		alias: "wonder",
+	},
+	testdata: ["Item1", "Item2"],
+	permalink: function (data) {
+		return `different/${this.slugify(data.wonder)}/index.html`;
+	},
+};
+
+exports.render = function (data) {
+	return `You can use the alias in your content too ${data.wonder}.`;
+};
+```
+
+{% endraw %}
+
   </div>
   <div id="pagedalias-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
@@ -429,15 +527,15 @@ This writes to `_site/different/item1/index.html` and `_site/different/item2/ind
 
 If your chunk `size` is greater than 1, the alias will be an array instead of a single value.
 
-
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedchunk"} %}
   <div id="pagedchunk-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 ---
 pagination:
@@ -453,6 +551,7 @@ permalink: "different/{{ wonder[0] | slugify }}/index.html"
 ---
 You can use the alias in your content too {{ wonder[0] }}.
 ```
+
 {% endraw %}
 
   </div>
@@ -461,6 +560,7 @@ You can use the alias in your content too {{ wonder[0] }}.
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 ---
 pagination:
@@ -476,11 +576,43 @@ permalink: "different/{{ wonder[0] | slugify }}/index.html"
 ---
 You can use the alias in your content too {{ wonder[0] }}.
 ```
+
 {% endraw %}
 
   </div>
   <div id="pagedchunk-js" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+
+{% codetitle "JavaScript", "Syntax" %}
+
+{% raw %}
+
+```js
+exports.data = {
+  pagination: {
+    data: "testdata",
+    size: 2,
+    alias: "wonder"
+  },
+  testdata: [
+    "Item1",
+    "Item2",
+    "Item3",
+    "Item4"
+  ],
+  permalink: {
+    function(data) {
+      return `different/${this.slugify(data.wonder[0])}/index.html`
+    };
+  }
+};
+
+exports.render = function (data) {
+  return `You can use the alias in your content too ${data.wonder[0]}.`;
+}
+```
+
+{% endraw %}
+
   </div>
   <div id="pagedchunk-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
@@ -494,15 +626,15 @@ This writes to `_site/different/item1/index.html` and `_site/different/item3/ind
 
 If you’d like to make a paginated list of all of your blog posts (any content with the tag `post` on it), use something like the following template to iterate over a specific collection:
 
-
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedcollection"} %}
   <div id="pagedcollection-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 ---
 title: My Posts
@@ -518,6 +650,7 @@ pagination:
 {% endfor %}
 </ol>
 ```
+
 {% endraw %}
 
   </div>
@@ -526,6 +659,7 @@ pagination:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 ---
 title: My Posts
@@ -541,11 +675,39 @@ pagination:
 {% endfor %}
 </ol>
 ```
+
 {% endraw %}
 
   </div>
   <div id="pagedcollection-js" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+    
+{% codetitle "JavaScript", "Syntax" %}
+
+{% raw %}
+
+```js
+exports.data = {
+	title: "My Posts",
+	pagination: {
+		data: "collections.post",
+		size: 6,
+		alias: "posts",
+	},
+};
+
+exports.render = function (data) {
+	return `<ol>
+		${data.posts
+			.map(function (post) {
+				return `<li><a href="${post.url}">${post.title}</a></li>`;
+			})
+			.join("")}
+	</ol>`;
+};
+```
+
+{% endraw %}
+
   </div>
   <div id="pagedcollection-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
@@ -559,11 +721,12 @@ The above generates a list of links but you could do a lot more. See what’s av
 
 {% addedin "2.0.0-canary.10" %}
 
-By default, if the specified data set is empty, Eleventy will not render any pages. Use `generatePageOnEmptyData: true` to generate one  pagination output with an empty chunk `[]` of items.
+By default, if the specified data set is empty, Eleventy will not render any pages. Use `generatePageOnEmptyData: true` to generate one pagination output with an empty chunk `[]` of items.
 
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```markdown
 ---
 title: Available Products
@@ -573,12 +736,12 @@ pagination:
   generatePageOnEmptyData: true
 ---
 ```
+
 {% endraw %}
 
 <div class="youtube-related">
   {%- youtubeEmbed "oCTAZumAGNc", "Empty-results Pagination (Weekly №11)", "207" -%}
 </div>
-
 
 ## Modifying the Data Set prior to Pagination
 
@@ -593,10 +756,10 @@ pagination:
   size: 2
   reverse: true
 testdata:
- - item1
- - item2
- - item3
- - item4
+  - item1
+  - item2
+  - item3
+  - item4
 ---
 ```
 
@@ -604,9 +767,9 @@ Paginates to:
 
 ```js
 [
-  ["item4", "item3"],
-  ["item2", "item1"],
-]
+	["item4", "item3"],
+	["item2", "item1"],
+];
 ```
 
 _(More discussion at [Issue #194](https://github.com/11ty/eleventy/issues/194))_
@@ -638,10 +801,7 @@ Paginates to:
 {% codetitle "JavaScript Object", "Syntax" %}
 
 ```js
-[
-  [ "item1" ],
-  [ "item2" ],
-]
+[["item1"], ["item2"]];
 ```
 
 This will work the same with paginated arrays or with `resolve: values` for paginated objects.
@@ -668,17 +828,15 @@ Paginates to:
 {% codetitle "JavaScript Object", "Syntax" %}
 
 ```js
-[
-  [ "itemvalue1" ],
-  [ "itemvalue2" ],
-]
+[["itemvalue1"], ["itemvalue2"]];
 ```
 
 ### The `before` Callback {% addedin "0.10.0" %}
 
-The most powerful tool to change the data. Use this callback to modify, filter, or otherwise change the pagination data however you see fit *before* pagination occurs.
+The most powerful tool to change the data. Use this callback to modify, filter, or otherwise change the pagination data however you see fit _before_ pagination occurs.
 
 {% raw %}
+
 ```js
 ---js
 {
@@ -701,6 +859,7 @@ The most powerful tool to change the data. Use this callback to modify, filter, 
 ---
 <!-- the rest of the template -->
 ```
+
 {% endraw %}
 
 The above will iterate over a data set containing: `["item1 with a suffix", "item2 with a suffix", "item3 with a suffix", "item4 with a suffix"]`.
@@ -724,9 +883,9 @@ before: function() {
 
 If you use more than one of these data set modification features, here’s the order in which they operate:
 
-* The `before` callback
-* `reverse: true`
-* `filter` entries
+- The `before` callback
+- `reverse: true`
+- `filter` entries
 
 ## Add All Pagination Pages to Collections {% addedin "0.8.0" %}
 
@@ -775,14 +934,14 @@ Now `collections.myCollection` will have both output pages in the collection arr
 
 ## Full Pagination Option List
 
-* `data` (String) [Lodash.get path](https://lodash.com/docs/4.17.15#get) to point to the target data set.
-* `size` (Number, required)
-* `alias` (String) [Lodash.set path](https://lodash.com/docs/4.17.15#set) to point to the property to set.
-* `generatePageOnEmptyData` (Boolean) if target data set is empty, render first page with empty chunk `[]`.
-* `resolve: values` {% addedin "0.4.0" %}
-* `filter` (Array) {% addedin "0.4.0" %}
-* `reverse: true` (Boolean) {% addedin "0.7.0" %}
-* `addAllPagesToCollections: true` (Boolean) {% addedin "0.8.0" %}
+- `data` (String) [Lodash.get path](https://lodash.com/docs/4.17.15#get) to point to the target data set.
+- `size` (Number, required)
+- `alias` (String) [Lodash.set path](https://lodash.com/docs/4.17.15#set) to point to the property to set.
+- `generatePageOnEmptyData` (Boolean) if target data set is empty, render first page with empty chunk `[]`.
+- `resolve: values` {% addedin "0.4.0" %}
+- `filter` (Array) {% addedin "0.4.0" %}
+- `reverse: true` (Boolean) {% addedin "0.7.0" %}
+- `addAllPagesToCollections: true` (Boolean) {% addedin "0.8.0" %}
 
 ## Related
 

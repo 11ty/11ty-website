@@ -4,6 +4,7 @@ eleventyNavigation:
   parent: Configuration
   order: 11
 ---
+
 # Watch and Serve Configuration
 
 {% tableofcontents %}
@@ -15,14 +16,14 @@ The `addWatchTarget` config method allows you to manually add a file or director
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addWatchTarget("./src/scss/");
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addWatchTarget("./src/scss/");
 };
 ```
 
 **Advanced usage note:** This works with [`chokidar` under the hood](https://github.com/paulmillr/chokidar#api) and chokidar uses [`picomatch` for globbing](https://github.com/micromatch/picomatch):
 
-* Both `**/*.(png|jpeg)` and `**/*.{png,jpeg}` are valid globs to matches any `png` or `jpeg` file in your project.
+- Both `**/*.(png|jpeg)` and `**/*.{png,jpeg}` are valid globs to matches any `png` or `jpeg` file in your project.
 
 ## Ignore Watching Files
 
@@ -37,12 +38,12 @@ Previously, [the configuration API ignores for template processing](/docs/ignore
 New in {{ "2.0.0-canary.18" | coerceVersion }}, watch target ignores now have their own dedicated API:
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Do not rebuild when README.md changes (You can use a glob here too)
-  eleventyConfig.watchIgnores.add("README.md");
+module.exports = function (eleventyConfig) {
+	// Do not rebuild when README.md changes (You can use a glob here too)
+	eleventyConfig.watchIgnores.add("README.md");
 
-  // Or delete entries too
-  eleventyConfig.watchIgnores.delete("README.md");
+	// Or delete entries too
+	eleventyConfig.watchIgnores.delete("README.md");
 };
 ```
 
@@ -55,9 +56,9 @@ When in `--watch` mode, Eleventy will spider the dependencies of your [JavaScrip
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Enabled by default
-  eleventyConfig.setWatchJavaScriptDependencies(false);
+module.exports = function (eleventyConfig) {
+	// Enabled by default
+	eleventyConfig.setWatchJavaScriptDependencies(false);
 };
 ```
 
@@ -66,9 +67,9 @@ module.exports = function(eleventyConfig) {
 A hardcoded amount of time Eleventy will wait before triggering a new build when files have changes during `--watch` or `--serve` modes. You probably won’t need this, but is useful in some edge cases with other task runners (Gulp, Grunt, etc).
 
 ```js
-module.exports = function(eleventyConfig) {
-  // default is 0
-  eleventyConfig.setWatchThrottleWaitTime(100); // in milliseconds
+module.exports = function (eleventyConfig) {
+	// default is 0
+	eleventyConfig.setWatchThrottleWaitTime(100); // in milliseconds
 };
 ```
 
@@ -76,8 +77,8 @@ module.exports = function(eleventyConfig) {
 
 <div id="swap-back-to-browsersync"></div>
 
-* [This content has moved to `/docs/dev-server/`](/docs/dev-server/)
+- [This content has moved to `/docs/dev-server/`](/docs/dev-server/)
 
 ## Browsersync
 
-* [This content has moved to `/docs/server-browsersync/`](/docs/server-browsersync/)
+- [This content has moved to `/docs/server-browsersync/`](/docs/server-browsersync/)

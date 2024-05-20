@@ -26,14 +26,12 @@
 <style webc:scoped webc:if="variant == 'home'">
 /* Variant for the home page */
 :host[variant='home'] {
-	margin-left: -1rem;
-	margin-right: -1rem;
 	padding: 1rem;
 	background-color: #272822;
 	color: #fff;
 	border-radius: .3em;
-	padding-top: .5em;
-	padding-bottom: .5em;
+	padding-block: .5em;
+	margin-block: .5em;
 }
 :host[variant='home'] thead th {
 	color: #ccc;

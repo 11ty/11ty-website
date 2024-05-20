@@ -46,7 +46,13 @@ force = true
 
 [[redirects]]
 from = "/docs/getting-started/"
-to = "/docs/get-started/"
+to = "/docs/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/docs/get-started/"
+to = "/docs/"
 status = 301
 force = true
 

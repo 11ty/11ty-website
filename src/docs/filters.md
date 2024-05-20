@@ -12,6 +12,7 @@ tags:
   - related-handlebars
   - related-javascript
 ---
+
 # Filters
 
 {% tableofcontents %}
@@ -21,7 +22,7 @@ A <dfn>filter</dfn> is a function which can be used within templating syntax to 
 Various template engines can be extended with custom filters to modify content. Here are a few examples:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "filter"} %}
   <div id="filter-njk" role="tabpanel">
     {% codetitle "sample.njk" %}
@@ -84,10 +85,10 @@ We also provide a few universal filters, built-in:
 If you’d like to reuse existing filters, you can use the Configuration API’s `getFilter` method. When called with a valid filter name, it will return that filter’s callback function. It can be helpful when aliasing a filter to a different name, using a filter inside of your own filter, or using a filter inside of a shortcode.
 
 ```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addShortcode("myCustomImage", function(url, alt) {
-    return `<img src="${eleventyConfig.getFilter("url")(url)}" alt="${alt}">`;
-  });
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addShortcode("myCustomImage", function (url, alt) {
+		return `<img src="${eleventyConfig.getFilter("url")(url)}" alt="${alt}">`;
+	});
 };
 ```
 
@@ -98,21 +99,21 @@ Eleventy has added a new universal filter API for asynchronous filters and exten
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Async universal filters add to:
-  // * Liquid
-  // * Nunjucks
-  // * JavaScript
+module.exports = function (eleventyConfig) {
+	// Async universal filters add to:
+	// * Liquid
+	// * Nunjucks
+	// * JavaScript
 
-  eleventyConfig.addFilter("myFilter", async function(value) {
-    // do some Async work
-    return value;
-  });
+	eleventyConfig.addFilter("myFilter", async function (value) {
+		// do some Async work
+		return value;
+	});
 
-  eleventyConfig.addAsyncFilter("myFilter", async function(value) {
-    // do some Async work
-    return value;
-  });
+	eleventyConfig.addAsyncFilter("myFilter", async function (value) {
+		// do some Async work
+		return value;
+	});
 };
 ```
 
@@ -124,18 +125,18 @@ module.exports = function(eleventyConfig) {
 
 A few Eleventy-specific data properties are available to filter callbacks.
 
-* `this.page` {% addedin "2.0.0-canary.19" %}
-* `this.eleventy` {% addedin "2.0.0-canary.19" %}
+- `this.page` {% addedin "2.0.0-canary.19" %}
+- `this.eleventy` {% addedin "2.0.0-canary.19" %}
 
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Make sure you’re not using an arrow function here: () => {}
-  eleventyConfig.addFilter("myFilter", function() {
-    // this.page
-    // this.eleventy
-  });
+module.exports = function (eleventyConfig) {
+	// Make sure you’re not using an arrow function here: () => {}
+	eleventyConfig.addFilter("myFilter", function () {
+		// this.page
+		// this.eleventy
+	});
 };
 ```
 

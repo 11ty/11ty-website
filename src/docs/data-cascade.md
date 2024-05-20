@@ -6,6 +6,7 @@ eleventyNavigation:
 communityLinksKey: "data-cascade"
 overrideCommunityLinks: true
 ---
+
 # The Data Cascade
 
 {% tableofcontents %}
@@ -49,14 +50,10 @@ The data cascade results in the following data when `my-template.md` is rendered
 
 ```json
 {
-  "title": "This is a Good Blog Post",
-  "author": "Zach",
-  "tags": [
-    "CSS",
-    "HTML",
-    "JavaScript"
-  ],
-  "layout": "my-layout.njk"
+	"title": "This is a Good Blog Post",
+	"author": "Zach",
+	"tags": ["CSS", "HTML", "JavaScript"],
+	"layout": "my-layout.njk"
 }
 ```
 

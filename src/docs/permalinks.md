@@ -5,6 +5,7 @@ eleventyNavigation:
   order: 6
   excerpt: Remap a template to a new output location (or prevent writing a file)
 ---
+
 # Permalinks
 
 {% tableofcontents %}
@@ -145,15 +146,17 @@ For example:
 {% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```markdown
 ---
 title: This is a New Path
 permalink: "subdir/{{ title | slugify }}/index.html"
 ---
 ```
+
 {% endraw %}
 
-* Pagination variables also work here! [Read more about Pagination](/docs/pagination/)
+- Pagination variables also work here! [Read more about Pagination](/docs/pagination/)
 
 Writes to `_site/subdir/this-is-a-new-path/index.html`.
 
@@ -165,12 +168,14 @@ Writes to `_site/subdir/this-is-a-new-path/index.html`.
 {% codetitle "YAML Front Matter using Liquid", "Syntax" %}
 
 {% raw %}
+
 ```markdown
 ---
 date: "2016-01-01T06:00-06:00"
 permalink: "/{{ page.date | date: '%Y/%m/%d' }}/index.html"
 ---
 ```
+
 {% endraw %}
 
 Writes to `_site/2016/01/01/index.html`. There are a variety of ways that the page.date variable can be set (using `date` in your front matter is just one of them). Read more about [Content dates](/docs/dates/).
@@ -186,9 +191,11 @@ Writes to `_site/2016/01/01/index.html`. There are a variety of ways that the pa
 {% codetitle "YAML", "Syntax" %}
 
 {% raw %}
+
 ```yaml
 permalink: "{{ page.filePathStem }}.html"
 ```
+
 {% endraw %}
 
 The error message might look like `can not read a block mapping entry; a multiline key may not be an implicit key`.
@@ -203,10 +210,27 @@ You can change the file extension in the permalink to output to any file type. F
 ---
 permalink: "index.json"
 ---
+
 <%- JSON.stringify(collections.all) -%>
 ```
 
 ## Advanced Usage
+
+### Dynamic permalinks for a directory of content templates
+
+Let's say you have a directory of content templates like `recipes/cookies.md` and `recipes/soup.md` and 50 more. Each of these content templates has a title in their frontmatter. While you could manually set a permalink in the frontmatter of each recipe you can also dynamically generate the permalink inside a [Directory Data File](/docs/data-template-dir/) like `recipes.11tydata.js`.
+
+Because of the order of the [data cascade](/docs/data-cascade/) the title of a content template is not immediately available in the directory data file. However, `permalink` is a special case of implied [Computed Data](docs/data-computed/) and will have this data available. Inside of your directory data file `recipes.11tydata.js` you could write this:
+
+```javascript
+module.exports = {
+	permalink: function ({ title }) {
+		return `/recipes/${this.slugify(title)}`;
+	},
+};
+```
+
+The title will be [slugified](/docs/filters/slugify/) to be URL-friendly.
 
 ### Mapping one URL to Multiple Files for Internationalization {% addedin "2.0.0-canary.13" %}
 
@@ -216,8 +240,8 @@ As an example, say you have two content files: `about.en.html` and `about.es.htm
 
 Use [server-side redirects](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language) to control which of these files is shown.
 
-* [Netlify Redirects](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language)
-* [Apache Content Negotiation](https://fantasai.inkedblade.net/web-design/l10n) related to [Issue #761](https://github.com/11ty/eleventy/issues/761)
+- [Netlify Redirects](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language)
+- [Apache Content Negotiation](https://fantasai.inkedblade.net/web-design/l10n) related to [Issue #761](https://github.com/11ty/eleventy/issues/761)
 
 These will work as expected out of the box, except for the [`page.url`](/docs/data-eleventy-supplied/#page-variable) variable and the URL reported in [collection objects](/docs/collections/#collection-item-data-structure) (et al).
 
@@ -226,15 +250,15 @@ Say we want two or more files on the file system (e.g. `about.en.html` and `abou
 This example matches any `.xx.html` URL:
 
 ```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addUrlTransform(({url}) => {
-    // `url` is guaranteed to be a string here even if you’re using `permalink: false`
-    if (url.match(/\.[a-z]{2}\.html$/i)) {
-        return url.slice(0, -1 * ".en.html".length) + "/";
-    }
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addUrlTransform(({ url }) => {
+		// `url` is guaranteed to be a string here even if you’re using `permalink: false`
+		if (url.match(/\.[a-z]{2}\.html$/i)) {
+			return url.slice(0, -1 * ".en.html".length) + "/";
+		}
 
-    // Returning undefined skips the url transform.
-  });
+		// Returning undefined skips the url transform.
+	});
 };
 ```
 
@@ -262,9 +286,9 @@ Eleventy includes a global configuration option to disable dynamic templating al
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Enabled by default
-  eleventyConfig.setDynamicPermalinks(false);
+module.exports = function (eleventyConfig) {
+	// Enabled by default
+	eleventyConfig.setDynamicPermalinks(false);
 };
 ```
 

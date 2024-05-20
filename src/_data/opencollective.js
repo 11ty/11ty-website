@@ -20,15 +20,18 @@ const FilteredProfiles = [
 ];
 
 function isMonthlyOrYearlyOrder(order) {
-	return (order.frequency === 'MONTHLY' || order.frequency === 'YEARLY') && order.status === 'ACTIVE';
+	return (
+		(order.frequency === "MONTHLY" || order.frequency === "YEARLY") &&
+		order.status === "ACTIVE"
+	);
 }
 
 function getUniqueContributors(orders) {
 	let uniqueContributors = {};
-	for(let order of orders) {
-		if(uniqueContributors[order.slug]) {
+	for (let order of orders) {
+		if (uniqueContributors[order.slug]) {
 			// if order already exists, overwrite only if existing is not an active monthly contribution
-			if(!isMonthlyOrYearlyOrder(uniqueContributors[order.slug])) {
+			if (!isMonthlyOrYearlyOrder(uniqueContributors[order.slug])) {
 				uniqueContributors[order.slug] = order;
 			}
 		} else {
@@ -38,7 +41,7 @@ function getUniqueContributors(orders) {
 	return Object.values(uniqueContributors);
 }
 
-export default async function() {
+export default async function () {
 	try {
 		let url = `https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000&status=paid,active`;
 		let json = await EleventyFetch(url, {
@@ -48,20 +51,24 @@ export default async function() {
 			dryRun: false,
 		});
 
-		let orders = json.nodes.map(order => {
-			order.name = order.fromAccount.name;
-			order.slug = order.fromAccount.slug;
-			order.twitter = order.fromAccount.twitterHandle;
-			order.image = order.fromAccount.imageUrl;
-			order.website = order.fromAccount.website;
-			order.profile = `https://opencollective.com/${order.slug}`;
-			order.totalAmountDonated = order.totalDonations.value;
-			order.isMonthly = isMonthlyOrYearlyOrder(order);
-			order.hasDefaultAvatar = order.image === `https://images.opencollective.com/${order.slug}/avatar.png`;
-			return order;
-		}).filter(order => {
-			return FilteredProfiles.indexOf(order.slug) === -1;
-		});
+		let orders = json.nodes
+			.map((order) => {
+				order.name = order.fromAccount.name;
+				order.slug = order.fromAccount.slug;
+				order.twitter = order.fromAccount.twitterHandle;
+				order.image = order.fromAccount.imageUrl;
+				order.website = order.fromAccount.website;
+				order.profile = `https://opencollective.com/${order.slug}`;
+				order.totalAmountDonated = order.totalDonations.value;
+				order.isMonthly = isMonthlyOrYearlyOrder(order);
+				order.hasDefaultAvatar =
+					order.image ===
+					`https://images.opencollective.com/${order.slug}/avatar.png`;
+				return order;
+			})
+			.filter((order) => {
+				return FilteredProfiles.indexOf(order.slug) === -1;
+			});
 
 		// lol hardcoded
 		orders.push({
@@ -69,7 +76,8 @@ export default async function() {
 			slug: "zach-leatherman",
 			twitter: "zachleat",
 			github: "zachleat",
-			image: "https://images.opencollective.com/zachleat/70606f4/avatar/256.png",
+			image:
+				"https://images.opencollective.com/zachleat/70606f4/avatar/256.png",
 			website: "https://www.zachleat.com/",
 			profile: "https://opencollective.com/zachleat",
 			totalAmountDonated: 0,
@@ -77,35 +85,47 @@ export default async function() {
 			hasDefaultAvatar: false,
 		});
 
+		// Temporary hardcoded
+		orders.push({
+			name: "CloudCannon",
+			slug: "cloudcannon1",
+			twitter: "CloudCannon",
+			github: "CloudCannon",
+			image: "https://logo.clearbit.com/cloudcannon.com",
+			website: "https://cloudcannon.com/",
+			profile: "https://opencollective.com/cloudcannon1",
+			isMonthly: true,
+		});
+
 		orders = getUniqueContributors(orders);
 
-		orders.sort(function(a, b) {
+		orders.sort(function (a, b) {
 			// Sort by total amount donated (desc)
 			return b.totalAmountDonated - a.totalAmountDonated;
 		});
 
 		let backers = orders.length;
 
-		let monthlyBackers = orders.filter(function(order) {
+		let monthlyBackers = orders.filter(function (order) {
 			return isMonthlyOrYearlyOrder(order);
 		}).length;
 
 		return {
 			supporters: orders,
 			backers: backers,
-			monthlyBackers: monthlyBackers
+			monthlyBackers: monthlyBackers,
 		};
-	} catch(e) {
-		if(process.env.NODE_ENV === "production") {
+	} catch (e) {
+		if (process.env.NODE_ENV === "production") {
 			// Fail the build in production.
 			return Promise.reject(e);
 		}
 
-		console.log( "Failed, returning 0 opencollective backers.", e );
+		console.log("Failed, returning 0 opencollective backers.", e);
 		return {
 			supporters: [],
 			backers: 0,
-			monthlyBackers: 0
+			monthlyBackers: 0,
 		};
 	}
-};
+}
