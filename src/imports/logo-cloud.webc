@@ -30,6 +30,7 @@ permalink: /imports/logo-cloud.html
 <li><img webc:is="indieweb-avatar" url="https://www.filamentgroup.com/">Filament Group</li>
 <li><img webc:is="indieweb-avatar" url="https://set.studio/">Set Studio</li>
 <li><img webc:is="indieweb-avatar" url="https://www.ookla.com/">Ookla</li>
+<li><img webc:is="indieweb-avatar" url="https://www.kandji.io/">Kandji</li>
 <li><img webc:is="indieweb-avatar" url="https://www.khanacademy.org/">Khan Academy</li>
 <li><img webc:is="indieweb-avatar" url="https://basecamp.com/">Basecamp</li>
 <li><img webc:is="indieweb-avatar" url="https://www.snowpack.dev/">Snowpack</li>
