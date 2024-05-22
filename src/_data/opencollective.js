@@ -27,9 +27,25 @@ function isMonthlyOrYearlyOrder(order) {
 }
 
 function getUniqueContributors(orders) {
+	let GITHUB_SPONSORS_MONTHS = 3;
+
 	let uniqueContributors = {};
 	for (let order of orders) {
-		if (uniqueContributors[order.slug]) {
+		if(order.slug === "github-sponsors") {
+			// within the last 30 days
+			if((Date.now() - Date.parse(order.createdAt)) < 1000*60*60*24*30*GITHUB_SPONSORS_MONTHS) {
+				if(!uniqueContributors[order.slug]) {
+					uniqueContributors[order.slug] = Object.assign({}, order, {
+						frequency: "MONTHLY",
+						status: "ACTIVE",
+						isMonthly: true,
+					});
+					uniqueContributors[order.slug].fromAccount.name = "GitHub Sponsors (Estimate)"
+				} else {
+					uniqueContributors[order.slug].amount.value += order.amount.value;
+				}
+			}
+		} else if (uniqueContributors[order.slug]) {
 			// if order already exists, overwrite only if existing is not an active monthly contribution
 			if (!isMonthlyOrYearlyOrder(uniqueContributors[order.slug])) {
 				uniqueContributors[order.slug] = order;
@@ -38,6 +54,12 @@ function getUniqueContributors(orders) {
 			uniqueContributors[order.slug] = order;
 		}
 	}
+
+	// last 90 days, divided by 3 to estimate monthly
+	if(uniqueContributors["github-sponsors"]?.amount?.value) {
+		uniqueContributors["github-sponsors"].amount.value /= GITHUB_SPONSORS_MONTHS;
+	}
+
 	return Object.values(uniqueContributors);
 }
 

@@ -36,3 +36,19 @@
 .announcement a:after {
 	display: none;
 }
+
+.announcement a.fundraising {
+	display: block;
+	font-size: .75em;
+	text-decoration: none;
+	width: 100%;
+	padding: 0;
+}
+.announcement a.fundraising fundraising-status:defined {
+	margin-inline: auto;
+	max-width: 30em;
+}
+.announcement a.fundraising img {
+	width: 2em;
+	height: 2em;
+}
