@@ -27,25 +27,9 @@ function isMonthlyOrYearlyOrder(order) {
 }
 
 function getUniqueContributors(orders) {
-	let GITHUB_SPONSORS_MONTHS = 3;
-
 	let uniqueContributors = {};
 	for (let order of orders) {
-		if(order.slug === "github-sponsors") {
-			// within the last 30 days
-			if((Date.now() - Date.parse(order.createdAt)) < 1000*60*60*24*30*GITHUB_SPONSORS_MONTHS) {
-				if(!uniqueContributors[order.slug]) {
-					uniqueContributors[order.slug] = Object.assign({}, order, {
-						frequency: "MONTHLY",
-						status: "ACTIVE",
-						isMonthly: true,
-					});
-					uniqueContributors[order.slug].fromAccount.name = "GitHub Sponsors Aggregate (Estimate)"
-				} else {
-					uniqueContributors[order.slug].amount.value += order.amount.value;
-				}
-			}
-		} else if (uniqueContributors[order.slug]) {
+		if (uniqueContributors[order.slug]) {
 			// if order already exists, overwrite only if existing is not an active monthly contribution
 			if (!isMonthlyOrYearlyOrder(uniqueContributors[order.slug])) {
 				uniqueContributors[order.slug] = order;
@@ -55,16 +39,23 @@ function getUniqueContributors(orders) {
 		}
 	}
 
-	// last 90 days, divided by 3 to estimate monthly
-	if(uniqueContributors["github-sponsors"]?.amount?.value) {
-		uniqueContributors["github-sponsors"].amount.value /= GITHUB_SPONSORS_MONTHS;
-
-		// Better estimate here: https://github.com/sponsors/11ty/dashboard
-		// Hardcoded, to workaround the retroactive non-recurring payments from GitHub Sponsors
-		uniqueContributors["github-sponsors"].amount.value = 77;
-
-		// console.log( "[11ty/$] GitHub Sponsors monthly recurring:", uniqueContributors["github-sponsors"].amount.value );
-	}
+	// Better estimate here: https://github.com/sponsors/11ty/dashboard
+	// Hardcoded, to workaround the retroactive non-recurring payments from GitHub Sponsors
+	uniqueContributors["github-sponsors"] = {
+		amount: { value: 77 },
+		frequency: 'MONTHLY',
+		status: 'ACTIVE',
+		name: 'GitHub Sponsors Aggregate (Estimate)',
+		slug: 'github-sponsors',
+		twitter: null,
+		github: null,
+		image: 'https://images.opencollective.com/github-sponsors/dc0ae97/logo.png',
+		website: 'https://github.com/sponsors/',
+		profile: 'https://opencollective.com/github-sponsors',
+		totalAmountDonated: uniqueContributors["github-sponsors"].totalAmountDonated,
+		isMonthly: true,
+		hasDefaultAvatar: false
+	};
 
 	return Object.values(uniqueContributors);
 }
