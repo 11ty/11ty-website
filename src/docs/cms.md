@@ -6,7 +6,7 @@ eleventyNavigation:
 featuredCmses:
   - name: CloudCannon
     url: https://cloudcannon.com/eleventy-cms/?utm_campaign=11ty-partner&utm_source=official-sponsor
-    tags: [Recommended Partner, Git-based]
+    tags: [Git-based]
     class: sites-featured
     screenshotOverride:
       src: "/img/screenshot-fallbacks/cloudcannon-cms.png"
@@ -112,16 +112,11 @@ Digging deeper, there are two main types of Headless CMS options:
 
 _The list above is not meant to be exhaustive._
 
-## Related
-
-<div class="youtube-related">
-  {%- youtubeEmbed "yXcxvBJuULU", "From Zero to CMS in 2 Minutes with CloudCannon and Eleventy" -%}
-</div>
-
 ### From the Community
 
 <ul class="list-bare">
 	<li>{% indieweblink "Headless CMS List on Jamstack.org", "https://jamstack.org/headless-cms/" %}</li>
+	<li>{% indieweblink "YouTube: From Zero to CMS in 2 Minutes with CloudCannon and Eleventy", "https://www.youtube.com/watch?v=yXcxvBJuULU" %}</li>
 	<li>{% indieweblink "How to get started with the 11ty (Eleventy) Blog Starter", "https://www.sanity.io/guides/how-to-get-started-with-the-11ty-eleventy-blog-starter" %}</li>
 </ul>
 
