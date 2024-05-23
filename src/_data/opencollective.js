@@ -40,7 +40,7 @@ function getUniqueContributors(orders) {
 						status: "ACTIVE",
 						isMonthly: true,
 					});
-					uniqueContributors[order.slug].fromAccount.name = "GitHub Sponsors (Estimate)"
+					uniqueContributors[order.slug].fromAccount.name = "GitHub Sponsors Aggregate (Estimate)"
 				} else {
 					uniqueContributors[order.slug].amount.value += order.amount.value;
 				}
@@ -58,6 +58,12 @@ function getUniqueContributors(orders) {
 	// last 90 days, divided by 3 to estimate monthly
 	if(uniqueContributors["github-sponsors"]?.amount?.value) {
 		uniqueContributors["github-sponsors"].amount.value /= GITHUB_SPONSORS_MONTHS;
+
+		// Better estimate here: https://github.com/sponsors/11ty/dashboard
+		// Hardcoded, to workaround the retroactive non-recurring payments from GitHub Sponsors
+		uniqueContributors["github-sponsors"].amount.value = 66;
+
+		// console.log( "[11ty/$] GitHub Sponsors monthly recurring:", uniqueContributors["github-sponsors"].amount.value );
 	}
 
 	return Object.values(uniqueContributors);
@@ -143,7 +149,8 @@ export default async function () {
 			return Promise.reject(e);
 		}
 
-		console.log("Failed, returning 0 opencollective backers.", e);
+		console.error("Failed, returning 0 opencollective backers.", e);
+
 		return {
 			supporters: [],
 			backers: 0,

@@ -4,11 +4,8 @@ ignoreSupporters: true
 ignoreFooterTestimonial: true
 ignoreGitHubButtons: true
 eleventyExcludeFromCollections: true
-layout: layouts/main.njk
+layout: layouts/docs.njk
 ---
-
-{{ title }}
-
 ## Budget
 
 - See also the [Open Collective Budget page for the current balance](https://opencollective.com/11ty#section-budget).
