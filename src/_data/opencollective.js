@@ -61,7 +61,7 @@ function getUniqueContributors(orders) {
 
 		// Better estimate here: https://github.com/sponsors/11ty/dashboard
 		// Hardcoded, to workaround the retroactive non-recurring payments from GitHub Sponsors
-		uniqueContributors["github-sponsors"].amount.value = 66;
+		uniqueContributors["github-sponsors"].amount.value = 77;
 
 		// console.log( "[11ty/$] GitHub Sponsors monthly recurring:", uniqueContributors["github-sponsors"].amount.value );
 	}
