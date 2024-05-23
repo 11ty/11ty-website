@@ -167,3 +167,19 @@ details.toc[open] > summary {
 .table-of-contents > ul ul > li {
 	padding: 0;
 }
+
+/* Fundraising */
+.fundraising-sidebar {
+	display: block;
+	text-decoration: none;
+}
+.fundraising-sidebar-percent {
+	font-size: 2.5em;
+	text-align: center;
+	font-weight: 700;
+	line-height: 1;
+	margin-block: .25em .25em;
+}
+.fundraising-sidebar-percent:after {
+	content: "%";
+}

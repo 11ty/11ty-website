@@ -68,7 +68,7 @@ export default async function () {
 		let url = `https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000&status=paid,active`;
 		let json = await EleventyFetch(url, {
 			type: "json",
-			duration: process.env.ELEVENTY_AVATARS ? "0s" : "1d",
+			duration: "1h",
 			directory: ".cache/eleventy-fetch/",
 			dryRun: false,
 		});
