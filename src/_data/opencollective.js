@@ -42,7 +42,7 @@ function getUniqueContributors(orders) {
 	// Better estimate here: https://github.com/sponsors/11ty/dashboard
 	// Hardcoded, to workaround the retroactive non-recurring payments from GitHub Sponsors
 	uniqueContributors["github-sponsors"] = {
-		amount: { value: 77 },
+		amount: { value: 88 },
 		frequency: 'MONTHLY',
 		status: 'ACTIVE',
 		name: 'GitHub Sponsors Aggregate (Estimate)',
@@ -65,7 +65,7 @@ export default async function () {
 		let url = `https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000&status=paid,active`;
 		let json = await EleventyFetch(url, {
 			type: "json",
-			duration: "1h",
+			duration: "30m",
 			directory: ".cache/eleventy-fetch/",
 			dryRun: false,
 		});
