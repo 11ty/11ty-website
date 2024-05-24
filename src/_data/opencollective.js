@@ -1,5 +1,6 @@
 // https://opencollective.com/11ty/members/all.json
 import EleventyFetch from "@11ty/eleventy-fetch";
+import githubSponsors from "./githubSponsors.js";
 
 const FilteredProfiles = [
 	"bca-account1", // website is buycheapaccounts.com
@@ -26,7 +27,7 @@ function isMonthlyOrYearlyOrder(order) {
 	);
 }
 
-function getUniqueContributors(orders) {
+function getUniqueContributors(orders, githubSponsorsAmount) {
 	let uniqueContributors = {};
 	for (let order of orders) {
 		if (uniqueContributors[order.slug]) {
@@ -40,9 +41,9 @@ function getUniqueContributors(orders) {
 	}
 
 	// Better estimate here: https://github.com/sponsors/11ty/dashboard
-	// Hardcoded, to workaround the retroactive non-recurring payments from GitHub Sponsors
+	// Inject manually to workaround the retroactive non-recurring payments from GitHub Sponsors
 	uniqueContributors["github-sponsors"] = {
-		amount: { value: 88 },
+		amount: { value: githubSponsorsAmount },
 		frequency: 'MONTHLY',
 		status: 'ACTIVE',
 		name: 'GitHub Sponsors Aggregate (Estimate)',
@@ -52,7 +53,7 @@ function getUniqueContributors(orders) {
 		image: 'https://images.opencollective.com/github-sponsors/dc0ae97/logo.png',
 		website: 'https://github.com/sponsors/',
 		profile: 'https://opencollective.com/github-sponsors',
-		totalAmountDonated: uniqueContributors["github-sponsors"].totalAmountDonated,
+		totalAmountDonated: githubSponsorsAmount,
 		isMonthly: true,
 		hasDefaultAvatar: false
 	};
@@ -104,7 +105,8 @@ export default async function () {
 			hasDefaultAvatar: false,
 		});
 
-		orders = getUniqueContributors(orders);
+		let githubSponsorsAmount = await githubSponsors();
+		orders = getUniqueContributors(orders, githubSponsorsAmount);
 
 		orders.sort(function (a, b) {
 			// Sort by total amount donated (desc)
