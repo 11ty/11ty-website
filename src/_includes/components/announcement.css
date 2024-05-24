@@ -37,18 +37,31 @@
 	display: none;
 }
 
-.announcement a.fundraising {
+.announcement .fundraising {
 	display: block;
 	font-size: .75em;
-	text-decoration: none;
 	width: 100%;
 	padding: 0;
 }
-.announcement a.fundraising fundraising-status:defined {
+.announcement a.fundraising {
+	text-decoration: none;
+}
+@media (prefers-color-scheme: dark) {
+	.announcement .fundraising fundraising-status {
+		--fs-background: rgba(255,255,255,.6);
+	}
+}
+.announcement .fundraising fundraising-status:defined {
 	margin-inline: auto;
 	max-width: 30em;
 }
-.announcement a.fundraising img {
+.announcement .fundraising img {
 	width: 2em;
 	height: 2em;
+}
+.announcement .fundraising-label {
+	display: flex;
+	align-items: center;
+	gap: .5em;
+	margin-right: .5em;
 }
