@@ -7,9 +7,8 @@ featuredCmses:
   - name: CloudCannon
     url: https://cloudcannon.com/eleventy-cms/?utm_campaign=11ty-partner&utm_source=official-sponsor
     tags: [Git-based]
-    class: sites-featured
     screenshotOverride:
-      src: "/img/screenshot-fallbacks/cloudcannon-cms.png"
+      src: "/img/screenshot-fallbacks/cloudcannon-cms-sq.png"
       alt: "The Eleventy CMS for Visual Editing, CloudCannon CMS"
 cmses:
   - name: WordPress REST API
