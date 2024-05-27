@@ -126,7 +126,7 @@ function randomTestimonialLink(testimonials) {
 		<template data-island>
 			<h2><a href="https://opencollective.com/11ty">Open Collective</a> Supporters</h2>
 			<facepile webc:nokeep>
-				<html-fetch src="/imports/supporters.html" show-gold-sponsors></html-fetch>
+				<html-fetch src="/imports/supporters.html" show-gold-sponsors show-silver-sponsors></html-fetch>
 			</facepile>
 		</template>
 	</is-land>
