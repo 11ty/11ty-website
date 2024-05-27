@@ -116,7 +116,7 @@ const shortcodes = {
 		if (siteUrl) {
 			screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(
 				siteUrl
-			)}/${preset}/1:1/${zoom ? `${zoom}/` : ""}`;
+			)}/${preset}/1:1/${zoom ? `${zoom}/` : ""}_wait:2/`;
 		}
 
 		// 11ty.dev
@@ -263,6 +263,7 @@ export default async function (eleventyConfig) {
 		},
 	});
 
+	// for WebC
 	eleventyConfig.addPlugin(eleventyImagePlugin, {
 		// options via https://www.11ty.dev/docs/plugins/image/#usage
 		formats: ["avif", "jpeg"],
