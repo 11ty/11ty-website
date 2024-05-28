@@ -17,6 +17,11 @@
 .supporters-silver .facepile > a ~ a {
 	margin-left: 0;
 }
+.supporters-silver .facepile .avatar {
+	border-radius: .25em;
+	border-width: 0;
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.08);
+}
 
 .facepile > a:focus,
 .facepile > a:hover {
