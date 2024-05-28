@@ -110,3 +110,17 @@ module.exports = function (eleventyConfig) {
 ```
 
 The `changedFiles` parameter was {% addedin "0.11.1" %}.
+
+## `eleventy.contentMap` {% addedin "2.0.0" %}
+
+This event facilitates the [i18n plugin](/docs/plugins/i18n/) (but is available independent of it).
+
+```js
+module.exports = function (eleventyConfig) {
+	// Async-friendly
+	eleventyConfig.on("eleventy.contentMap", async ({ inputPathToUrl, urlToInputPath }) => {
+		// inputPathToUrl is an object mapping input file paths to output URLs
+		// urlToInputPath is an object mapping output URLs to input file paths
+	});
+};
+```
