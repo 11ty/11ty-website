@@ -32,8 +32,15 @@ function getUniqueContributors(orders, githubSponsorsAmount) {
 	let uniqueContributors = {};
 	for (let order of orders) {
 		if (uniqueContributors[order.slug]) {
-			// if order already exists, overwrite only if existing is not an active monthly contribution
-			if (!isMonthlyOrYearlyOrder(uniqueContributors[order.slug])) {
+			// if order already exists, overwrite only if existing entry is not an active monthly contribution
+			if (isMonthlyOrYearlyOrder(uniqueContributors[order.slug])) {
+				if(isMonthlyOrYearlyOrder(order)) {
+					if(order.amount.value > uniqueContributors[order.slug].amount.value) {
+						uniqueContributors[order.slug] = order;
+						// console.log( "Multiple active Open Collective contributions tiers for (picked largest):", order.slug );
+					}
+				}
+			} else {
 				uniqueContributors[order.slug] = order;
 			}
 		} else {
@@ -116,14 +123,9 @@ export default async function () {
 
 		let backers = orders.length;
 
-		let monthlyBackers = orders.filter(function (order) {
-			return isMonthlyOrYearlyOrder(order);
-		}).length;
-
 		return {
 			supporters: orders,
 			backers: backers,
-			monthlyBackers: monthlyBackers,
 		};
 	} catch (e) {
 		if (process.env.NODE_ENV === "production") {
@@ -136,7 +138,6 @@ export default async function () {
 		return {
 			supporters: [],
 			backers: 0,
-			monthlyBackers: 0,
 		};
 	}
 }
