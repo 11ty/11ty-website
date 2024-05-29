@@ -855,7 +855,26 @@ ${text.trim()}
 
 	eleventyConfig.addFilter("supportersFacepile", (supporters) => {
 		return supporters.filter((supporter) => {
-			return supporter.status === "ACTIVE" && !supporter.hasDefaultAvatar;
+			return supporter.status === "ACTIVE" && !supporter.hasDefaultAvatar && [
+				"bca-account1", // website is buycheapaccounts.com
+				"baocasino", // gambling
+				"woorke", // sells social media accounts
+				"suominettikasinot24", // gambling
+				"masonslots", //gambling
+				"trust-my-paper", // selling term papers
+				"kiirlaenud", // some quick loans site
+				"kajino-bitcoin", // crypto
+				"seo25-com", // selling website traffic
+				"relief-factor", // profile link was some weird PDF
+				"targetedwebtraffic", // selling website traffic
+				"forexbrokerz", // crypto
+				"viewality-media", // broken site on wix?
+				"aviator-game1", // gambling
+				"igrovye-avtomaty", // gambling
+				"sidesmedia", // selling social media
+				"best-casinos-australia-bca", // gambling
+				"buy-tiktok-likes", // selling social media
+			].includes(supporter.slug) === false;
 		});
 	});
 

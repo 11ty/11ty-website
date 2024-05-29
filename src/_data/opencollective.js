@@ -2,25 +2,6 @@
 import EleventyFetch from "@11ty/eleventy-fetch";
 import githubSponsors from "./githubSponsors.js";
 
-const FilteredProfiles = [
-	"bca-account1", // website is buycheapaccounts.com
-	"baocasino", // gambling
-	"woorke", // sells social media accounts
-	"suominettikasinot24", // gambling
-	"masonslots", //gambling
-	"trust-my-paper", // selling term papers
-	"kiirlaenud", // some quick loans site
-	"kajino-bitcoin", // crypto
-	"seo25-com", // selling website traffic
-	"relief-factor", // profile link was some weird PDF
-	"targetedwebtraffic", // selling website traffic
-	"forexbrokerz", // crypto
-	"viewality-media", // broken site on wix?
-	"aviator-game1", // gambling
-	"igrovye-avtomaty", // gambling
-	"sidesmedia", // selling social media
-];
-
 function isMonthlyOrYearlyOrder(order) {
 	return (
 		(order.frequency === "MONTHLY" || order.frequency === "YEARLY") &&
@@ -93,9 +74,6 @@ export default async function () {
 					order.image ===
 					`https://images.opencollective.com/${order.slug}/avatar.png`;
 				return order;
-			})
-			.filter((order) => {
-				return FilteredProfiles.indexOf(order.slug) === -1;
 			});
 
 		// lol hardcoded
