@@ -52,6 +52,10 @@ let page = {
 	// Added in 2.0+
 	templateSyntax: "liquid,md",
 
+	// The raw unparsed/unrendered plaintext content for the current template
+	// Added in 3.0+
+	rawInput: "<!doctype html>…"
+
 	// Available in 2.0 with the i18n plugin
 	// The default is the value of `defaultLanguage` passed to the i18n plugin
 	lang: "",
