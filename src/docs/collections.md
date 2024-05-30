@@ -317,6 +317,17 @@ tags: post
 This will not be available in `collections.all` or `collections.post`.
 ```
 
+{% addedin "3.0.0-alpha.1" %} `eleventyExcludeFromCollections` can now also accept an array of tag names:
+
+```markdown
+---
+eleventyExcludeFromCollections:
+  - post
+---
+
+This will be available in `collections.all` but not `collections.post`.
+```
+
 ## Add to a Collection using Tags
 
 You can use a single tag, as in the above example OR you can use any number of tags for the content, using YAML syntax for a list.
