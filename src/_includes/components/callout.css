@@ -260,6 +260,10 @@ body > .elv-callout-sticky .elv-callout-label {
 	justify-content: center;
 	margin: -1.5em auto 2em;
 }
+#carbon-responsive a[href].carbon-poweredby {
+	color: hsl(0deg 0% 13.33% / 76%);
+	opacity: 1;
+}
 #carbonads a[href]:after {
 	display: none; /* no external link icons */
 }
