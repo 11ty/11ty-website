@@ -1,0 +1,21 @@
+#carbonads {
+	display: flex;
+	justify-content: center;
+	margin: -1.5em auto 2em;
+}
+#carbon-responsive a[href].carbon-poweredby {
+	color: inherit;
+	opacity: 1;
+}
+#carbonads a[href]:after {
+	display: none; /* no external link icons */
+}
+#carbon-responsive .carbon-responsive-wrap {
+	border-radius: .25em;
+}
+@media (min-width: 55em) {
+	#carbonads {
+		margin-right: 0;
+		margin-left: -1rem;
+	}
+}
