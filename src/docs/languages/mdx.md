@@ -66,3 +66,7 @@ export function Thing() {
 The above is rendered as `<h1>Hello, World!</h1>`.
 
 Read more on the [What is MDX? docs](https://mdxjs.com/docs/what-is-mdx/).
+
+## Community Contributions
+
+* [`eleventy-plugin-mdx`](https://github.com/jamshop/eleventy-plugin-mdx)

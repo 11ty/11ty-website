@@ -50,3 +50,8 @@ npx @11ty/eleventy --formats=11ty.jsx,11ty.tsx
 ```
 
 Alternatively, you can add `eleventyConfig.addTemplateFormats("11ty.jsx,11ty.tsx")` to your configuration file.
+
+## Community Contributions
+
+* [`eleventy-hast-jsx`](https://github.com/j-f1/eleventy-hast-jsx)
+* [`eleventy-plugin-react-ssr`](https://github.com/scinos/eleventy-plugin-react-ssr)
