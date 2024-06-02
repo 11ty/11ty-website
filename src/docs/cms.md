@@ -72,8 +72,11 @@ cmses:
     url: https://directus.io/
     screenshotSize: medium
     tags: [API]
+  - name: CraftCMS
+    url: https://craftcms.com/
+    screenshotSize: medium
+    tags: [API]
 ---
-
 # Using a CMS
 
 {% tableofcontents %}
