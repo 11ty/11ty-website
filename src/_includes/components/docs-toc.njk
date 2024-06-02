@@ -17,7 +17,10 @@
 	</dl>
 {%- endcallout %}
 
+{# only show ads in production #}
+{% if eleventy.env.runMode == "build" %}
 <script async src="//cdn.carbonads.com/carbon.js?serve=CW7D6K7I&placement=www11tydev&format=responsive" id="_carbonads_js"></script>
+{% endif %}
 
 <details-force-state>
 	<details>
