@@ -55,6 +55,7 @@ Alternatively, you can add `eleventyConfig.addTemplateFormats("11ty.jsx,11ty.tsx
 
 * {% indieweblink "eleventy-hast-jsx", "https://github.com/j-f1/eleventy-hast-jsx" %}
 * {% indieweblink "eleventy-plugin-react-ssr", "https://github.com/scinos/eleventy-plugin-react-ssr" %}
+* {% indieweblink "JetBrains: Better 11ty Development with Tooling", "https://www.jetbrains.com/guide/javascript/tutorials/eleventy-tsx/" %}
 
 ## Alternative Approaches
 
