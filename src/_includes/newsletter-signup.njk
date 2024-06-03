@@ -1,0 +1,27 @@
+{% callout %}
+<h2 class="elv-h2 newsletter-signup-hed">Subscribe to the <a href="https://buttondown.email/11ty" class="elv-externalexempt">11ty Newsletter</a></h2>
+<form
+  action="https://buttondown.email/api/emails/embed-subscribe/11ty"
+  method="post"
+  target="popupwindow"
+  onsubmit="window.open('https://buttondown.email/11ty', 'popupwindow')"
+  class="newsletter-signup embeddable-buttondown-form"
+>
+  <label for="bd-email">Your Email Address</label>
+  <input type="email" name="email" id="bd-email">
+
+  <input type="submit" value="Subscribe" />
+  <p>
+    Powered by <a href="https://buttondown.email/refer/11ty" target="_blank" class="elv-externalexempt">Buttondown</a>
+  </p>
+</form>
+
+<ul class="inlinelist">
+	<li class="inlinelist-item"><a href="/blog/">Read the <strong>Blog</strong></a></li>
+	<li class="inlinelist-item"><a href="https://fosstodon.org/@eleventy">Follow on <strong>Mastodon</strong></a></li>
+	<li class="inlinelist-item"><a href="https://www.youtube.com/c/EleventyVideo">Watch on <strong>YouTube</strong></a></li>
+	<li class="inlinelist-item"><a href="https://github.com/11ty/eleventy">Star on <strong>GitHub</strong></a></li>
+	<li class="inlinelist-item"><a href="/blog/discord/">Chat on <strong>Discord</strong></a></li>
+</ul>
+
+{% endcallout %}

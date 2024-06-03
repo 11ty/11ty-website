@@ -1,0 +1,22 @@
+.newsletter-signup-hed {
+	margin-top: 0;
+	border: none;
+}
+.newsletter-signup {
+	display: flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	align-items: center;
+}
+.newsletter-signup input {
+	font: inherit;
+	height: 100%;
+}
+.newsletter-signup input[type="submit"],
+.newsletter-signup button {
+	/* border-radius: 1em; */
+	padding-inline: 1em;
+}
+.newsletter-signup p {
+	margin: 0;
+}
