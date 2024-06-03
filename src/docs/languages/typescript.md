@@ -15,7 +15,7 @@ layout: layouts/langs.njk
 | `11ty.ts`                                 | `.11ty.ts`     | [`tsx`](https://tsx.is/node/esm)  |
 | [`11ty.tsx`](/docs/languages/typescript/) | `.11ty.tsx`    | [`tsx`](https://tsx.is/node/esm)  |
 
-* Related languages: [JSX](/docs/languages/jsx/), [JavaScript](/docs/languages/javascript/)
+* Related languages: [JSX](/docs/languages/jsx/), [JavaScript](/docs/languages/javascript/), [Custom](/docs/languages/custom/)
 * _[Front matter](/docs/data-frontmatter/) is not yet supported in TypeScript files._
 
 {% callout "info", "md" %}TypeScript requires ESM (when used with Eleventy, read more at [Issue #3304](https://github.com/11ty/eleventy/issues/3304)). This means your project `package.json` must contain `"type": "module"` or your configuration file must use the `.mjs` file extension, e.g. `eleventy.config.mjs`.{% endcallout %}
@@ -52,3 +52,30 @@ npx @11ty/eleventy --formats=11ty.ts,11ty.tsx
 ```
 
 Alternatively, you can add `eleventyConfig.addTemplateFormats("11ty.ts,11ty.tsx")` to your configuration file.
+
+## Alternative Approaches
+
+If you’d like an approach that works with CommonJS and Eleventy 2.0, you can use `esbuild-register` with Eleventy (using the same conventions as [`11ty.js` templates](/docs/languages/javascript/)). Check out the [full gist from `@pspeter3` on GitHub](https://gist.github.com/zachleat/b274ee939759b032bc320be1a03704a2).
+
+Your config file might look like this:
+
+{% codetitle "eleventy.config.js (CommonJS)" %}
+
+```js
+const { register } = require('esbuild-register/dist/node')
+
+register();
+
+module.exports = function(eleventyConfig) {
+	// We can add support for JSX too, at the same time:
+	eleventyConfig.addExtension(["11ty.jsx", "11ty.ts", "11ty.tsx"], {
+		key: "11ty.js",
+	});
+};
+```
+
+Now run Eleventy and tell it to process `11ty.ts` and `11ty.tsx` files:
+
+```sh
+npx @11ty/eleventy --formats=11ty.ts,11ty.tsx
+```

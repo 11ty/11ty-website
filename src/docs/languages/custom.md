@@ -190,15 +190,13 @@ module.exports = function (eleventyConfig) {
 };
 ```
 
-You can use aliasing with `esbuild-register` to use first-party JSX, TypeScript, and TSX files in Eleventy (using the same conventions as [`11ty.js` templates](/docs/languages/javascript/), with these templates populating back into the Data Cascade). Check out the [full gist from `@pspeter3` on GitHub](https://gist.github.com/zachleat/b274ee939759b032bc320be1a03704a2).
+You can read about the above approach (and see more detailed examples of its usage) on the [TypeScript](/docs/languages/typescript/), [JSX](/docs/languages/jsx/), or [MDX](/docs/languages/mdx/) documentation pages.
 
-```bash
-node --require esbuild-register node_modules/.bin/eleventy
-```
+{% addedin "3.0.0-alpha.11" %} `key` needn’t be the only property in the options object in Eleventy 3.0+. If you want to add your own `compile` function, [keep reading](#overriding-or-extending-an-existing-template-language)!
 
-## Overriding a Built-in Template Language
+## Overriding or Extending an Existing Template Language
 
-<span id="#overriding-an-existing-template-language"></span> You can override built-in template languages too! (Thank you to [Ben Holmes of Slinkity for this contribution](https://github.com/11ty/eleventy/pull/1871)).
+<span id="overriding-a-built-in-template-language"></span><span id="#overriding-an-existing-template-language"></span> You can override or extend existing template languages too! (Thank you to [Ben Holmes for this contribution](https://github.com/11ty/eleventy/pull/1871)).
 
 In these example, we switch from the Eleventy default `markdown-it` to `marked` for markdown processing.
 
@@ -226,7 +224,9 @@ module.exports = function (eleventyConfig) {
 
 Note that overriding `md` opts-out of the default pre-processing by another template language [Markdown Files](/docs/config/#default-template-engine-for-markdown-files). As mentioned elsewhere, improvements to add additional hooks for preprocessing will likely come later.
 
-You can override an existing template language once. Attempts to override an override will throw an error (though this may be relaxed later).
+You can override a template language once. Any attempts to override an more than once via `addExtension` will throw an error.
+
+{% addedin "3.0.0-alpha.11" %} Adding `key` in the options object unlocks use of the target `defaultRenderer`. You can read about this approach (and see examples of its usage) on the [TypeScript](/docs/languages/typescript/), [JSX](/docs/languages/jsx/), or [MDX](/docs/languages/mdx/) documentation pages (all of which use `key: "11ty.js"` to extend [JavaScript](/docs/languages/javascript/) templates).
 
 ## Full Options List
 
