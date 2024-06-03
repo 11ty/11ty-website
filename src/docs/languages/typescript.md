@@ -20,7 +20,6 @@ layout: layouts/langs.njk
 
 {% callout "info", "md" %}TypeScript requires ESM (when used with Eleventy, read more at [Issue #3304](https://github.com/11ty/eleventy/issues/3304)). This means your project `package.json` must contain `"type": "module"` or your configuration file must use the `.mjs` file extension, e.g. `eleventy.config.mjs`.{% endcallout %}
 
-
 ## Configuration
 
 {% addedin "3.0.0-alpha.11" %}Here we use [`tsx`](https://tsx.is/node/esm) to process TypeScript files.
@@ -52,6 +51,18 @@ npx @11ty/eleventy --formats=11ty.ts,11ty.tsx
 ```
 
 Alternatively, you can add `eleventyConfig.addTemplateFormats("11ty.ts,11ty.tsx")` to your configuration file.
+
+## Using a TypeScript Configuration File
+
+You can use `tsx` to process your configuration file too, just run it directly like so:
+
+```sh
+npx tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts --formats=11ty.tsx
+```
+
+## Community Contributions
+
+* {% indieweblink "JetBrains: Better 11ty Development with Tooling", "https://www.jetbrains.com/guide/javascript/tutorials/eleventy-tsx/" %}
 
 ## Alternative Approaches
 
