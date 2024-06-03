@@ -6,7 +6,7 @@ eleventyNavigation:
   order: 8
 featuredHosts:
   - name: "Want your logo here? Contact us!"
-    url: ""
+    url: "mailto:partners@11ty.dev"
     tags: [Hosting Partner]
     class: sites-featured
     screenshotSize: opengraph
@@ -59,6 +59,9 @@ hosts:
     url: https://srht.site/
     screenshotSize: medium
 classicHosts:
+  - name: Vercel CLI
+    url: https://vercel.com/cli
+    screenshotSize: medium
   - name: NearlyFreeSpeech
     url: https://www.nearlyfreespeech.net/
     screenshotSize: medium
@@ -103,31 +106,15 @@ If you want to customize Eleventy to do your own local development/production op
 
 Take a look at the list below for some ideas on where to deploy your Eleventy project. There are many deployment options available and this is not meant to be an exhaustive list.
 
-### Classic Web Hosts
-
-Eleventy can work with any web host that supports static files!
-
-With these hosts deployment is _not_ automatically triggered for you, so after you run the Eleventy build command you’ll need to upload your [Eleventy output directory](/docs/config/#output-directory) (defaults to `_site`) to the host manually.
-
-This is a great place to start if you’re not familiar with source control (e.g. git or GitHub).
-
-<div class="sites-vert sites-vert--md sites--reverse sites--center">
-  <div class="lo-grid" style="--fl-gap-v: 5em;">
-{%- for site in classicHosts | shuffle %}
-{% include "site-card.njk" %}
-{%- endfor %}
-  </div>
-</div>
-
 ### Jamstack Providers
 
 Jamstack providers can trigger your Eleventy build command automatically when you commit a file to your source control repository (GitHub, GitLab, Codeberg, etc.) and deploy [Eleventy’s build output directory](/docs/config/#output-directory) for you.
 
 <div class="sites-vert sites-vert--md sites--reverse sites--center">
   <div class="lo-grid" style="--fl-gap-v: 5em;">
-{# {%- for site in featuredHosts %}
+{%- for site in featuredHosts %}
 {% include "site-card.njk" %}
-{%- endfor %} #}
+{%- endfor %}
 {%- for site in hosts | shuffle %}
 {% include "site-card.njk" %}
 {%- endfor %}
@@ -149,6 +136,22 @@ One common practice when deploying Eleventy via a Jamstack provider is to use an
 ```
 
 This allows you to configure your host to run `npm run build` and allows you to make future changes to that command in your code and not the host’s configuration.
+
+### Classic Web Hosts
+
+Eleventy can work with any web host that supports static files!
+
+With these hosts deployment is _not_ automatically triggered for you, so after you run the Eleventy build command you’ll need to upload your [Eleventy output directory](/docs/config/#output-directory) (defaults to `_site`) to the host manually.
+
+This is a great place to start if you’re not familiar with source control (e.g. git or GitHub).
+
+<div class="sites-vert sites-vert--md sites--reverse sites--center">
+  <div class="lo-grid" style="--fl-gap-v: 5em;">
+{%- for site in classicHosts | shuffle %}
+{% include "site-card.njk" %}
+{%- endfor %}
+  </div>
+</div>
 
 ### Edit on the Web
 

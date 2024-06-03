@@ -4,13 +4,18 @@ eleventyNavigation:
   key: Using a CMS
   order: 10
 featuredCmses:
+  - name: "Want your logo here? Contact us!"
+    url: "mailto:partners@11ty.dev"
+    tags: [Hosting Partner]
+    class: sites-featured
+    screenshotSize: opengraph
+cmses:
   - name: CloudCannon
     url: https://cloudcannon.com/eleventy-cms/?utm_campaign=11ty-partner&utm_source=official-sponsor
     tags: [Git-based]
     screenshotOverride:
       src: "/img/screenshot-fallbacks/cloudcannon-cms-sq.png"
       alt: "The Eleventy CMS for Visual Editing, CloudCannon CMS"
-cmses:
   - name: WordPress REST API
     url: https://developer.wordpress.org/rest-api/
     screenshotSize: medium
