@@ -60,11 +60,11 @@ You can use `tsx` to process your configuration file too, just run it directly l
 npx tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts --formats=11ty.tsx
 ```
 
-## Community Contributions
+## Community Contributions <span id="alternative-approaches"></span>
 
 * {% indieweblink "JetBrains: Better 11ty Development with Tooling", "https://www.jetbrains.com/guide/javascript/tutorials/eleventy-tsx/" %}
 
-## Alternative Approaches
+### Using `esbuild-register`
 
 If you’d like an approach that works with CommonJS and Eleventy 2.0, you can use [`esbuild-register`](https://github.com/egoist/esbuild-register) with Eleventy (using the same conventions as [`11ty.js` templates](/docs/languages/javascript/)). Check out [this gist from `@pspeter3` on GitHub](https://gist.github.com/zachleat/b274ee939759b032bc320be1a03704a2) or [this GitHub comment from `@danielrob`](https://github.com/11ty/eleventy/issues/577#issuecomment-1464868585).
 
@@ -73,7 +73,7 @@ Your config file might look like this:
 {% codetitle "eleventy.config.js (CommonJS)" %}
 
 ```js
-const { register } = require('esbuild-register/dist/node')
+const { register } = require("esbuild-register/dist/node");
 
 register();
 
