@@ -7,7 +7,7 @@ eleventyNavigation:
 featuredHosts:
   - name: "Want your logo here? Contact us!"
     url: "mailto:partners@11ty.dev"
-    tags: [Hosting Partner]
+    tags: [Recommended Partner]
     class: sites-featured
     screenshotSize: opengraph
 hosts:
