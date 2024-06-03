@@ -55,7 +55,7 @@ Alternatively, you can add `eleventyConfig.addTemplateFormats("11ty.ts,11ty.tsx"
 
 ## Alternative Approaches
 
-If you’d like an approach that works with CommonJS and Eleventy 2.0, you can use `esbuild-register` with Eleventy (using the same conventions as [`11ty.js` templates](/docs/languages/javascript/)). Check out the [full gist from `@pspeter3` on GitHub](https://gist.github.com/zachleat/b274ee939759b032bc320be1a03704a2).
+If you’d like an approach that works with CommonJS and Eleventy 2.0, you can use [`esbuild-register`](https://github.com/egoist/esbuild-register) with Eleventy (using the same conventions as [`11ty.js` templates](/docs/languages/javascript/)). Check out the [full gist from `@pspeter3` on GitHub](https://gist.github.com/zachleat/b274ee939759b032bc320be1a03704a2).
 
 Your config file might look like this:
 
