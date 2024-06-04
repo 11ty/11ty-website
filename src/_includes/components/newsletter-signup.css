@@ -30,6 +30,5 @@
 }
 .newsletter-signup + ul {
 	text-align: center;
-	font-size: 0.875em; /* 14px /16 */
-	margin: 1.142857142857em; /* 16px /14 */
+	margin: 1em 0; /* 16px /14 */
 }
