@@ -72,7 +72,7 @@
 	justify-content: center;
 }
 .supporters-gold-nordhealth {
-	flex-grow: 1.8;
+	translate: 0 0.2em
 }
 .supporters-gold-cloudcannon {
 	flex-grow: 1.7;
@@ -92,12 +92,6 @@
 @media (prefers-color-scheme: dark) {
 	.supporters-gold-transloadit svg {
 		color: #fff;
-	}
-}
-@media (min-width: 55em) {
-	/* 880px */
-	.supporters-gold-nordhealth {
-		flex-grow: 1.3;
 	}
 }
 
