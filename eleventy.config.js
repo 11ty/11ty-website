@@ -9,7 +9,7 @@ import shortHash from "short-hash";
 
 import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 import navigationPlugin from "@11ty/eleventy-navigation";
-import rssPlugin from "@11ty/eleventy-plugin-rss";
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import eleventyImage, { eleventyImagePlugin } from "@11ty/eleventy-img";
 import eleventyWebcPlugin from "@11ty/eleventy-plugin-webc";
 import { RenderPlugin, InputPathToUrlTransformPlugin } from "@11ty/eleventy";
@@ -236,7 +236,6 @@ export default async function (eleventyConfig) {
 	} else {
 		// Skip on local dev
 		eleventyConfig.ignores.add("src/api/*");
-		eleventyConfig.ignores.add("src/docs/feed.njk");
 		eleventyConfig.ignores.add("src/docs/quicktipsfeed.njk");
 		eleventyConfig.ignores.add("src/blog/blog-feed.njk");
 		eleventyConfig.ignores.add("src/authors/author-pages.md");
@@ -277,11 +276,6 @@ export default async function (eleventyConfig) {
 	});
 
 	eleventyConfig.addPlugin(markdownPlugin);
-	eleventyConfig.addPlugin(rssPlugin, {
-		posthtmlRenderOptions: {
-			closingSingleTag: "default",
-		},
-	});
 	eleventyConfig.addPlugin(navigationPlugin);
 	eleventyConfig.addPlugin(monthDiffPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
@@ -304,6 +298,36 @@ export default async function (eleventyConfig) {
 			],
 		},
 	});
+
+	// Feeds
+	if (process.env.NODE_ENV === "production") {
+		eleventyConfig.addCollection("docsFeed", function (collection) {
+			return collection.getFilteredByGlob("src/docs/**/*.md").filter(entry => {
+				// remove permalink: false templates
+				return !!entry.url;
+			}).sort((a, b) => {
+				return a.date - b.date; // sort by date - ascending (feed plugin reverses)
+			});
+		});
+
+		eleventyConfig.addPlugin(feedPlugin, {
+			type: "atom",
+			outputPath: "/docs/feed.xml",
+			collection: {
+				name: "docsFeed",
+				limit: 10,
+			},
+			metadata: {
+				language: "en",
+				title: "Eleventy Documentation",
+				subtitle: "Updates to the Eleventy Documentation, sorted by recent git commits.",
+				base: "https://www.11ty.dev/",
+				author: {
+					name: "Zach Leatherman"
+				}
+			}
+		});
+	}
 
 	/* End plugins */
 
@@ -617,12 +641,6 @@ ${text.trim()}
 	eleventyConfig.addCollection("quicktipssorted", function (collection) {
 		return collection.getFilteredByTag("quicktips").sort(function (a, b) {
 			return parseInt(a.data.tipindex, 10) - parseInt(b.data.tipindex, 10);
-		});
-	});
-
-	eleventyConfig.addCollection("docsFeed", function (collection) {
-		return collection.getFilteredByGlob("src/docs/**/*.md").sort((a, b) => {
-			return b.date - a.date; // sort by date - descending
 		});
 	});
 

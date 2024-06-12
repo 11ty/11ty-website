@@ -1,5 +1,6 @@
 ---node
 // <script>
+let headerTitle = "Eleventy is a simpler static site generator";
 let layout = "layouts/main.njk";
 let logoLink = "/docs/";
 

@@ -1,5 +1,5 @@
 ---
-title: Eleventy Not-So-Private Admin Dashboard
+headerTitle: Eleventy Not-So-Private Admin Dashboard
 ignoreSupporters: true
 ignoreFooterTestimonial: true
 ignoreGitHubButtons: true
