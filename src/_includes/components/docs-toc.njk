@@ -18,7 +18,7 @@
 {%- endcallout %}
 
 {# only show ads in production #}
-{% if true or eleventy.env.runMode == "build" %}
+{% if eleventy.env.runMode == "build" %}
 <is-land on:visible>
 	<template data-island>
 		<script async src="https://cdn.carbonads.com/carbon.js?serve=CW7D6K7I&placement=www11tydev&format=responsive" id="_carbonads_js"></script>
