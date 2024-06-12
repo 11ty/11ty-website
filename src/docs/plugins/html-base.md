@@ -72,13 +72,6 @@ module.exports = function (eleventyConfig) {
 		// Comma separated list of output file extensions to apply
 		// our transform to. Use `false` to opt-out of the transform.
 		extensions: "html",
-
-		// Rename the filters
-		filters: {
-			base: "htmlBaseUrl",
-			html: "transformWithHtmlBase",
-			pathPrefix: "addPathPrefixToUrl",
-		},
 	});
 };
 ```
@@ -87,7 +80,7 @@ module.exports = function (eleventyConfig) {
 
 ### Usage
 
-For HTML content, you won’t need to do anything else. The HTML plugin will automatically apply the Path Prefix to URLs in any `.html` file in your output directory.
+For templates that output `*.html` files, you don’t need to do anything else. The HTML plugin will automatically apply the Path Prefix to URLs in any `html` file in your output directory.
 
 ### Advanced Usage
 
