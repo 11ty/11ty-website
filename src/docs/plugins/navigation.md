@@ -24,7 +24,7 @@ A plugin for creating infinite-depth hierarchical navigation in Eleventy project
 Available on [npm](https://www.npmjs.com/package/@11ty/eleventy-navigation).
 
 ```
-npm install @11ty/eleventy-navigation --save-dev
+npm install @11ty/eleventy-navigation
 ```
 
 Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:

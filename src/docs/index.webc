@@ -51,7 +51,7 @@ npm init -y
 [`@11ty/eleventy` is published on npm](https://www.npmjs.com/package/@11ty/eleventy) and we can install and save it into our project’s `package.json` by running:
 
 ```bash
-npm install @11ty/eleventy --save-dev
+npm install @11ty/eleventy
 ```
 
 _You may also [install Eleventy globally](/docs/global-installation/) but the `package.json` installation method above is recommended._
