@@ -13,19 +13,6 @@
 			</fundraising-status>
 		</a>
 	</div>
-	{# {%- set bannerLink = bannerlinks | matchbannerlink(bannerlinkOverride) %}
-	{%- if not bannerLink %}
-	{%- set bannerLink = bannerlinks | randompick %}
-	{%- endif %}
-	{%- if bannerLink %}
-	<div class="announcement">
-{% if bannerLink.url %}
-		<a href="{{ bannerLink.url }}">{{ bannerLink.label }}</a>
-{% else %}
-		<span>{{ bannerLink.label }}</span>
-{% endif %}
-	</div>
-	{%- endif %} #}
 
 	<div class="elv-menu">
 		<ul class="elv-nav-menu list-bare fl fl-inline fl-nowrap">
