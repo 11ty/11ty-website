@@ -1,5 +1,4 @@
 ---
-tipindex: "007"
 tiptitle: "Fetch GitHub Stargazers Count (and More) at Build Time"
 date: 2019-01-31
 ---

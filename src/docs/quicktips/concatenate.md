@@ -1,8 +1,6 @@
 ---
-tipindex: "005"
 tiptitle: "Super Simple CSS Concatenation"
 date: 2018-06-27
-relatedTitle: "Quick Tip #005—Super Simple CSS Concatenation"
 ---
 
 In some situations you may want to concatenate content files together into a single top level template. Maybe you want to create a single CSS file with all of your component CSS inside.

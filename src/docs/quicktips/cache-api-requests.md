@@ -1,5 +1,4 @@
 ---
-tipindex: "009"
 tiptitle: "Cache Data Requests"
 date: 2020-04-23
 ---

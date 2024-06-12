@@ -1,5 +1,4 @@
 ---
-tipindex: "003"
 tiptitle: "Add Edit on GitHub Links to All Pages"
 date: 2018-06-08
 ---

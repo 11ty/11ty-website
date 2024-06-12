@@ -4,7 +4,7 @@ eleventyNavigation:
   key: Pagination Navigation
   excerpt: Create a list of links to every paginated page on a pagination template.
 tags: ["related-pagination"]
-relatedTitle: "Create a list of Navigation Links for your Pagination."
+relatedTitle: Create a list of Navigation Links for your Pagination.
 ---
 
 # Pagination Navigation

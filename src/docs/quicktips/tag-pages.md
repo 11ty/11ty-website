@@ -1,9 +1,7 @@
 ---
-tipindex: "004"
 tiptitle: "Zero Maintenance Tag Pages for your Blog"
 date: 2018-06-08
 tags: ["related-pagination"]
-relatedTitle: "Quick Tip #004—Zero Maintenance Tag Pages for your Blog"
 ---
 
 This quick tip will show you how to automatically generate Tag Pages (lists of content tagged into a collection).

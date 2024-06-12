@@ -9,7 +9,6 @@ import shortHash from "short-hash";
 
 import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 import navigationPlugin from "@11ty/eleventy-navigation";
-import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import eleventyImage, { eleventyImagePlugin } from "@11ty/eleventy-img";
 import eleventyWebcPlugin from "@11ty/eleventy-plugin-webc";
 import { RenderPlugin, InputPathToUrlTransformPlugin } from "@11ty/eleventy";
@@ -20,6 +19,7 @@ import minificationLocalPlugin from "./config/minification.js";
 import cleanName from "./config/cleanAuthorName.js";
 import objectHas from "./config/object-has.js";
 import markdownPlugin from "./config/markdownPlugin.js";
+import feedPlugin from "./config/feedPlugin.js";
 
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
@@ -231,13 +231,11 @@ export default async function (eleventyConfig) {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
 	if (process.env.NODE_ENV === "production") {
-		// Skip on non-local
+		// Skip on production
 		eleventyConfig.ignores.add("src/admin.md");
 	} else {
 		// Skip on local dev
 		eleventyConfig.ignores.add("src/api/*");
-		eleventyConfig.ignores.add("src/docs/quicktipsfeed.njk");
-		eleventyConfig.ignores.add("src/blog/blog-feed.njk");
 		eleventyConfig.ignores.add("src/authors/author-pages.md");
 		eleventyConfig.ignores.add("src/firehose.11ty.js");
 		eleventyConfig.ignores.add("src/firehose-feed.11ty.js");
@@ -299,34 +297,9 @@ export default async function (eleventyConfig) {
 		},
 	});
 
-	// Feeds
+	// Feeds (only in production)
 	if (process.env.NODE_ENV === "production") {
-		eleventyConfig.addCollection("docsFeed", function (collection) {
-			return collection.getFilteredByGlob("src/docs/**/*.md").filter(entry => {
-				// remove permalink: false templates
-				return !!entry.url;
-			}).sort((a, b) => {
-				return a.date - b.date; // sort by date - ascending (feed plugin reverses)
-			});
-		});
-
-		eleventyConfig.addPlugin(feedPlugin, {
-			type: "atom",
-			outputPath: "/docs/feed.xml",
-			collection: {
-				name: "docsFeed",
-				limit: 10,
-			},
-			metadata: {
-				language: "en",
-				title: "Eleventy Documentation",
-				subtitle: "Updates to the Eleventy Documentation, sorted by recent git commits.",
-				base: "https://www.11ty.dev/",
-				author: {
-					name: "Zach Leatherman"
-				}
-			}
-		});
+		feedPlugin(eleventyConfig);
 	}
 
 	/* End plugins */
@@ -630,18 +603,6 @@ ${text.trim()}
 
 	eleventyConfig.addShortcode("addToSampleSites", function () {
 		return `<a href="https://github.com/11ty/11ty-website/issues/new/choose"><strong>Want to add your site to this list?</strong></a>`;
-	});
-
-	eleventyConfig.addFilter("sortByQuickTipsIndex", function (collection) {
-		return collection.sort(function (a, b) {
-			return parseInt(a.data.tipindex, 10) - parseInt(b.data.tipindex, 10);
-		});
-	});
-
-	eleventyConfig.addCollection("quicktipssorted", function (collection) {
-		return collection.getFilteredByTag("quicktips").sort(function (a, b) {
-			return parseInt(a.data.tipindex, 10) - parseInt(b.data.tipindex, 10);
-		});
 	});
 
 	function testimonialNameHtml(testimonial) {

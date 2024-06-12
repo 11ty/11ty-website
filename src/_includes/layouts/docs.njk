@@ -37,7 +37,7 @@ headerTag: div
 <h3>Related Docs</h3>
 <ul>
 {% for related in collections[ "related-" + relatedKey ] %}
-	<li><a href="{{ related.url }}">{{ related.data.relatedTitle }}</a></li>
+	<li><a href="{{ related.url }}">{{ related.data.relatedTitle or related.data.title }}</a></li>
 {%- endfor %}
 {% for url,title in relatedLinks %}
 	<li><a href="{{ url }}">{{ title }}</a></li>
