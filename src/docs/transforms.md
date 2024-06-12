@@ -27,6 +27,10 @@ module.exports = function (eleventyConfig) {
 
 Access to [Eleventy’s `page` variable](/docs/data-eleventy-supplied/#page-variable) (via `this.page`) was added in Eleventy v2.0. For previous versions, [consult the older versions of the docs](https://v1-0-2.11ty.dev/docs/config/#transforms).
 
+## Running Transforms Manually
+
+{% addedin "3.0.0-alpha.11" %} The [`renderTransforms` universal filter](/docs/filters/render-transforms/) allows projects to run transforms manually on blocks of arbitrary HTML content.
+
 ## Order of Execution
 
 Transforms are executed in order of insertion in your configuration file.
