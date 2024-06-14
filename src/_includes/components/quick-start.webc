@@ -1,4 +1,4 @@
-<h2 class="mt-0">Quick Start</h2>
+<h2 class="mt-0" id="quick-start">Quick Start</h2>
 
 <p><strong>Eleventy requires Node.js <node-minimum></node-minimum>.</strong> You can check whether or not you have Node installed by running <code>node --version</code> in a Terminal. (<a href="/docs/terminal-window/"><em>Well, wait—what is a Terminal?</em></a>) If <code>node</code> is not found or it reports a version number below <node-minimum></node-minimum>, you will need to <a href="https://nodejs.org/en/download/">install Node.js</a> before moving on.</p>
 
