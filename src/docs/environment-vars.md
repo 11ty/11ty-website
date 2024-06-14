@@ -27,7 +27,7 @@ For private keys and other sensitive information, you’ll want to create a `.en
 
 ### Via the command line
 
-#### Mac OS (or Linux, etc)
+#### macOS or Linux (et al)
 
 ```bash
 MY_ENVIRONMENT=production npx @11ty/eleventy
@@ -39,22 +39,27 @@ MY_ENVIRONMENT=production npx @11ty/eleventy
 set MY_ENVIRONMENT=production & npx @11ty/eleventy
 ```
 
-#### Windows Powershell (VS Code default)
+#### Windows Powershell (default in VS Code)
 
 ```bash
 $env:MY_ENVIRONMENT="production"; npx @11ty/eleventy
 ```
 
-### Via an npm script
+#### Cross Platform npm scripts
 
-You can also use the above commands in an npm script in your project’s `package.json` file.
+Use the [`cross-env` package](https://github.com/kentcdodds/cross-env) to compatibly set your environment variables cross-platform.
+
+```sh
+npm install cross-env
+```
+
 
 {% codetitle "package.json" %}
 
 ```js
 {
   "scripts": {
-    "build:prod": "MY_ENVIRONMENT=production npx @11ty/eleventy"
+    "build:prod": "cross-env MY_ENVIRONMENT=production npx @11ty/eleventy"
   }
 }
 ```

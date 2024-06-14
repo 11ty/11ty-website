@@ -6,31 +6,41 @@ eleventyNavigation:
 excludeFromSidebar: true
 ---
 
-# Opening a Terminal Window
+# Opening a Terminal
 
 {% tableofcontents %}
 
-Eleventy runs in a [Terminal window](https://en.wikipedia.org/wiki/Terminal_emulator). If you’re not familiar with Terminal windows, they’re used to run typed commands (and programs) on your computer. A Terminal window is mostly synonymous with terms like Command Line Interface (CLI) or shell prompt.
+Eleventy runs in a [Terminal application](https://en.wikipedia.org/wiki/Terminal_emulator). If you’re not familiar with Terminal applications, they’re used to run typed commands (and programs) on your computer. A Terminal application is mostly synonymous with terms like Command Line Interface (CLI) or shell prompt.
 
-Here’s how to open a Terminal window in various operating systems:
+Here’s how to open a Terminal in various operating systems:
 
-## Mac OS
+## macOS
 
-Mac OS includes an Application called `Terminal.app` which can be used to run Eleventy. Depending on your version of Mac OS, it may be in `/Applications/Utilities/Terminal.app`.
+macOS includes an application called `Terminal` which can be used to run Eleventy. Depending on your version of macOS, it likely lives in `/Applications/Utilities/Terminal`. It may also be called `Terminal.app` if your operating system is configured to show file extensions.
 
 - [Open or quit Terminal on Mac on the _Apple Terminal User Guide_](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac)
 
 ## Windows
 
-Depending on your version of Windows, it may include the `Terminal` App (aka Windows PowerShell), the `Command Prompt` (also known as `cmd.exe`), or both.
+Depending on your version of Windows, it may include the `Terminal` application (aka Windows PowerShell, preferred), or the `Command Prompt` (also known as `cmd.exe`, not preferred), or both.
 
-## Popular Alternatives
+For the best terminal experience, we recommend installing [PowerShell Core](https://github.com/PowerShell/PowerShell) on your Windows machine, a newer and more future-compatible terminal application (also newly cross-platform!).
 
-- [iTerm2](https://iterm2.com/) (Mac OS)
+## Linux
 
-### Editors bundled with Terminals
+Depending on your flavor of Linux, it may be called `Terminal`, `Shell`, `Gnome Terminal`, `Konsole`, or `XTerm`.
 
-- [Nova](https://nova.app/) (Mac OS)
-- [Visual Studio Code](https://code.visualstudio.com/) (Mac OS, Windows, Linux)
+## Editors
+
+Some code editors bundle a terminal for you!
+
+- [Nova](https://nova.app/) (macOS)
+- [Visual Studio Code](https://code.visualstudio.com/) (macOS, Windows, Linux)
   - On Windows, Visual Studio Code is bundled with Windows Powershell.
-- [WebStorm](https://www.jetbrains.com/webstorm/) (Mac OS, Windows, Linux)
+- [WebStorm](https://www.jetbrains.com/webstorm/) (macOS, Windows, Linux)
+
+## More resources
+
+- [DigitalOcean: An introduction to the Linux Terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal#terminal-emulator)
+- [Ubuntu guide: The Linux command line for beginners](https://ubuntu.com/tutorials/command-line-for-beginners#3-opening-a-terminal)
+- [OpenSource.com: A guide to the Linux terminal for beginners](https://opensource.com/article/21/8/linux-terminal)

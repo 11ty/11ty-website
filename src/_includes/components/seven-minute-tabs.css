@@ -17,6 +17,12 @@ seven-minute-tabs [role="tablist"] {
 	line-height: 1.8;
 	text-align: right;
 }
+seven-minute-tabs.tabs-full [role="tablist"] {
+	font-size: 0.9375em; /* 15px /16 */
+}
+seven-minute-tabs.tabs-left [role="tablist"] {
+	text-align: left;
+}
 seven-minute-tabs [role="tablist"]:first-child {
 	margin-bottom: 0.5rem;
 }

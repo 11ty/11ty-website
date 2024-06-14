@@ -26,20 +26,13 @@
 	margin: 4px 4px 4px 0;
 	transition: 0.15s linear outline;
 }
-/* .inlinelist .inlinelist-item:has(> a) {
-	padding: 0;
-}
-.inlinelist .inlinelist-item:has(> a) > a {
-	padding: .2em .5em;
-} */
 
-.inlinelist .inlinelist-item.active {
+.inlinelist .inlinelist-item:is(:has([aria-selected="true"]), .active) {
 	background-color: #222;
 	color: #fff;
 	font-weight: inherit;
 }
-.inlinelist .inlinelist-item.active :link,
-.inlinelist .inlinelist-item.active :visited {
+.inlinelist .inlinelist-item:is(:has([aria-selected="true"]), .active) :is(:link, :visited) {
 	color: #fff;
 }
 .inlinelist .inlinelist-item code {

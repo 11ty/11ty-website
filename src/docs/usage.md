@@ -9,12 +9,12 @@ eleventyNavigation:
 
 **Prerequisites:**
 
-1. Eleventy runs in a Terminal window. [_Well, wait—what is a Terminal window?_](/docs/terminal-window/)
+1. Eleventy runs in a Terminal application. [_Well, wait—what is a Terminal?_](/docs/terminal-window/)
 2. Have you already [installed Eleventy](/docs/)?
 
 ---
 
-Here’s the first command you can enter in your Terminal window to run Eleventy:
+Here’s the first command you can enter in your Terminal application to run Eleventy:
 
 ```bash
 # Searches the current directory, outputs to ./_site
