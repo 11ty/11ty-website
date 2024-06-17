@@ -24,7 +24,7 @@ But, after all that, you can still add a Custom Tag using the [Configuration API
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs persist sync>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "customtag"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "customtag", subtractions: "js"} %}
   <div id="customtag-liquid" role="tabpanel">
 
 - [LiquidJS: Tags](https://liquidjs.com/tutorials/register-filters-tags.html)
@@ -91,27 +91,6 @@ module.exports = function (eleventyConfig) {
 				callback(null, ret);
 			};
 		})();
-	});
-};
-```
-
-{% endraw %}
-
-  </div>
-  <div id="customtag-hbs" role="tabpanel">
-
-Surprise—these are helpers!
-
-{% codetitle ".eleventy.js" %}
-
-{% raw %}
-
-```js
-module.exports = function (eleventyConfig) {
-	// Usage: {{ uppercase myVar }} where myVar has a value of "alice"
-	// Usage: {{ uppercase "alice" }}
-	eleventyConfig.addHandlebarsHelper("uppercase", function (myStringArg) {
-		return myStringArg.toUpperCase();
 	});
 };
 ```

@@ -4,18 +4,14 @@
 	--callout-primarytext: #000;
 	--callout-secondary: #dff7ff;
 	line-height: 1.5;
-	margin-left: -1rem;
-	margin-right: -1rem;
-	margin-bottom: 2em;
+	margin-inline: -1rem;
+	margin-block: 1em;
 	background-color: var(--callout-secondary);
 	border: 3px solid var(--callout-border, var(--callout-primary));
 }
 details .elv-callout {
 	margin-left: 0;
 	margin-right: 0;
-}
-[role="tabpanel"] > .elv-callout:last-child {
-	margin-bottom: 0;
 }
 .elv-callout-pinned {
 	--callout-primary: #d7f4cf;

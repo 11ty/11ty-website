@@ -92,7 +92,7 @@ Transform a single URL string using the base.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs persist sync>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "htmlbase"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "htmlbase", additions: "hbs"} %}
   <div id="htmlbase-liquid" role="tabpanel">
 
 With path prefix set to `"/pathprefix/"`:
@@ -216,7 +216,7 @@ You can override the `baseHref` option by passing another argument to the filter
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs persist sync>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "htmlbasefull"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "htmlbasefull", additions: "hbs"} %}
   <div id="htmlbasefull-liquid" role="tabpanel">
 
 With path prefix set to `"/pathprefix/"`:
@@ -341,7 +341,7 @@ We use this in the RSS plugin to change your content to be absolute URLs for bro
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs persist sync>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "htmlbasehtmlblock"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "htmlbasehtmlblock", additions: "hbs"} %}
   <div id="htmlbasehtmlblock-liquid" role="tabpanel">
 
 With path prefix set to `"/pathprefix/"`:
@@ -491,7 +491,7 @@ However, if you do want to force addition of pathPrefix to a URL, you can use th
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs persist sync>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "htmlbase-fullurl"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "htmlbase-fullurl", additions: "hbs"} %}
   <div id="htmlbase-fullurl-liquid" role="tabpanel">
 
 With path prefix set to `"/pathprefix/"`:

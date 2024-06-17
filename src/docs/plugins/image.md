@@ -367,12 +367,6 @@ ${img2}`;
 {% endraw %}{% endhighlight %}
 
 </div>
-<div id="shortcode-hbs" role="tabpanel">
-
-This `image` shortcode example [requires an async-friendly template language](#asynchronous-shortcode) and is not available in Handlebars.
-
-    </div>
-
 </seven-minute-tabs>
 </is-land>
 

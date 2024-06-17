@@ -61,49 +61,18 @@ module.exports = function (eleventyConfig) {
 
 ## Add your own plugins {% addedin "0.3.0" %}
 
-Pass in your own `markdown-it` plugins using the `amendLibrary` (Eleventy &gt;= 2.0) or `setLibrary` (Eleventy &lt;= 1.0) Configuration API methods (building on the method described in “Options” above).
+Pass in your own `markdown-it` plugins using the `amendLibrary` (Eleventy &gt;= 2.0) or [`setLibrary` (Eleventy &lt;= 1.0)](https://v1-0-2.11ty.dev/docs/languages/markdown/#add-your-own-plugins) Configuration API methods (building on the method described in “Options” above).
 
 1. Find your [own `markdown-it` plugin on NPM](https://www.npmjs.com/search?q=keywords:markdown-it-plugin)
 2. `npm install` the plugin.
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
-  <div role="tablist" aria-label="Choose a template language">
-    Eleventy version:
-    <a href="#plugins-two" role="tab">&gt;= 2.0</a>
-    <a href="#plugins-one" role="tab">&lt;= 1.0</a>
-  </div>
-  <div id="plugins-two" role="tabpanel">
-
 ```js
 const markdownItEmoji = require("markdown-it-emoji");
 
 module.exports = function (eleventyConfig) {
-	// New in 2.0
 	eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItEmoji));
 };
 ```
-
-  </div>
-  <div id="plugins-one" role="tabpanel">
-
-```js
-const markdownIt = require("markdown-it");
-const markdownItEmoji = require("markdown-it-emoji");
-
-module.exports = function (eleventyConfig) {
-	let options = {
-		html: true,
-	};
-	let markdownLibrary = markdownIt(options).use(markdownItEmoji);
-
-	eleventyConfig.setLibrary("md", markdownLibrary);
-};
-```
-
-  </div>
-</seven-minute-tabs>
-</is-land>
 
 ## Indented Code Blocks
 

@@ -88,7 +88,7 @@ Let’s run two commands to create two new template files.
 </template>
 
 <script type="module" src="/js/seven-minute-tabs.js" webc:keep></script>
-<seven-minute-tabs class="tabs-full tabs-left" persist sync>
+<seven-minute-tabs class="tabs-full tabs-flush" persist sync>
 	<div role="tablist" aria-label="Choose your Operating System">
 		<a href="#quickstart-os-nix" role="tab" data-tabs-persist="os:posix">macOS or Linux</a>
 		<a href="#quickstart-os-win" role="tab" data-tabs-persist="os:win">Windows</a>
@@ -97,16 +97,12 @@ Let’s run two commands to create two new template files.
 	<div id="quickstart-os-nix" role="tabpanel">
 <syntax-highlight language="bash">
 echo '<!doctype html><title>Page title</title><p>Hi</p>' > index.html
-</syntax-highlight>
-<syntax-highlight language="bash">
 echo '# Heading' > README.md
 </syntax-highlight>
 	</div>
 	<div id="quickstart-os-win" role="tabpanel">
 <syntax-highlight language="bash">
 echo '<!doctype html><title>Page title</title><p>Hi</p>' | out-file -encoding utf8 'index.html'
-</syntax-highlight>
-<syntax-highlight language="bash">
 echo '# Heading' | out-file -encoding utf8 'README.md'
 </syntax-highlight>
 		<p>If the <code>out-file</code> command is not available in your Windows Terminal window (it’s PowerShell specific), use the Cross Platform method instead.</p>
@@ -114,8 +110,6 @@ echo '# Heading' | out-file -encoding utf8 'README.md'
 	<div id="quickstart-os-all" role="tabpanel">
 <syntax-highlight language="bash">
 npx @11ty/create index.html "<!doctype html><title>Page title</title><p>Hi</p>"
-</syntax-highlight>
-<syntax-highlight language="bash">
 npx @11ty/create README.md "# Heading"
 </syntax-highlight>
 		<p>Learn more about <a href="https://github.com/11ty/create"><code>@11ty/create</code></a> <em>(requires Node.js 18 or newer)</em>.</p>

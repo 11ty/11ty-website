@@ -16,7 +16,7 @@ To denote that a piece of content should be wrapped in a template, use the `layo
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs persist sync>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layouts", additions: "md"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layouts", additions: "md,hbs"} %}
   <div id="layouts-md" role="tabpanel">
 
 {% codetitle "index.md" %}
@@ -97,7 +97,10 @@ module.exports = {
 {% raw %}
 
 ```handlebars
---- layout: mylayout.njk title: My Rad Handlebars Blog Post ---
+---
+layout: mylayout.njk
+title: My Rad Handlebars Blog Post
+---
 <h1>{{title}}</h1>
 ```
 
@@ -127,11 +130,11 @@ Layouts can contain their own front matter data! It’ll be merged with the cont
 
 All of this will output the following HTML content to `_site/content-using-layout/index.html`:
 
+{% callout "demo" %}
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layoutoutput", additions: "md", label: "View the output from"} %}
   <div id="layoutoutput-md" role="tabpanel">
-{% callout "demo" %}
 
 ```html
 <!DOCTYPE html>
@@ -147,11 +150,8 @@ All of this will output the following HTML content to `_site/content-using-layou
 </html>
 ```
 
-{% endcallout %}
-
   </div>
   <div id="layoutoutput-liquid" role="tabpanel">
-{% callout "demo" %}
 
 ```html
 <!DOCTYPE html>
@@ -167,11 +167,8 @@ All of this will output the following HTML content to `_site/content-using-layou
 </html>
 ```
 
-{% endcallout %}
-
   </div>
   <div id="layoutoutput-njk" role="tabpanel">
-{% callout "demo" %}
 
 ```html
 <!DOCTYPE html>
@@ -187,11 +184,8 @@ All of this will output the following HTML content to `_site/content-using-layou
 </html>
 ```
 
-{% endcallout %}
-
   </div>
   <div id="layoutoutput-js" role="tabpanel">
-{% callout "demo" %}
 
 ```html
 <!DOCTYPE html>
@@ -207,11 +201,8 @@ All of this will output the following HTML content to `_site/content-using-layou
 </html>
 ```
 
-{% endcallout %}
-
   </div>
   <div id="layoutoutput-hbs" role="tabpanel">
-{% callout "demo" %}
 
 ```html
 <!DOCTYPE html>
@@ -227,11 +218,10 @@ All of this will output the following HTML content to `_site/content-using-layou
 </html>
 ```
 
-{% endcallout %}
-
   </div>
 </seven-minute-tabs>
 </is-land>
+{% endcallout %}
 
 ## Front Matter Data in Layouts
 

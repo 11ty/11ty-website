@@ -1,51 +1,75 @@
 seven-minute-tabs {
+	--smt-border: #111;
+	--smt-tab-bg: #eee;
+	--smt-tab-text: #111;
+	--smt-tabselected-bg: #111;
+	--smt-tabselected-text: #fff;
 	display: block;
-	padding: 0 1rem;
-	border-radius: 0.5rem;
-	margin: 0 -1rem 1rem;
-	border: 2px solid #111;
+	margin-inline: -1rem;
+	margin-block: 1rem;
 }
 @media (prefers-color-scheme: dark) {
 	seven-minute-tabs {
-		border-color: #555;
+		--smt-border: #555;
 	}
 }
 seven-minute-tabs [role="tablist"] {
-	padding: 0 1rem;
-	margin: 0 -1rem;
-	font-size: 0.8125em; /* 13px /16 */
+	padding: 0;
+	font-size: 0.875em; /* 14px /16 */
 	line-height: 1.8;
-	text-align: right;
+	text-align: left;
+	padding-left: 1rem;
 }
 seven-minute-tabs.tabs-full [role="tablist"] {
 	font-size: 0.9375em; /* 15px /16 */
-}
-seven-minute-tabs.tabs-left [role="tablist"] {
-	text-align: left;
-}
-seven-minute-tabs [role="tablist"]:first-child {
-	margin-bottom: 0.5rem;
 }
 seven-minute-tabs [role="tablist"]:last-child {
 	margin-top: 0.5rem;
 }
 seven-minute-tabs [role="tab"] {
+	background-color: var(--smt-tab-bg);
+	color: var(--smt-tab-text);
 	display: inline-block;
 	font-weight: 500;
-	padding: 0 0.25em;
-	margin: 0 0.1em;
+	padding: 0 .5em;
+	margin: 0;
 	text-decoration: none;
-	border-top: 5px solid transparent;
+	border-radius: .25em .25em 0 0;
 }
 seven-minute-tabs [role="tab"][aria-selected="true"] {
-	border-color: #e6c304;
-	background-color: #e6c30438;
+	--smt-tab-bg: var(--smt-tabselected-bg);
+	--smt-tab-text: var(--smt-tabselected-text);
 }
 
 /* Code samples in tabs */
+seven-minute-tabs [role="tabpanel"] {
+	border: 2px solid var(--smt-border);
+}
+seven-minute-tabs [role="tabpanel"] {
+	padding: 1rem;
+}
+seven-minute-tabs.tabs-flush [role="tabpanel"] {
+	padding-block: 0;
+}
+@media (min-width: 55em) { /* 880px */
+	seven-minute-tabs [role="tabpanel"] {
+		border-radius: .3125rem;
+	}
+}
 seven-minute-tabs [role="tabpanel"] pre {
 	border-radius: 0;
+	margin-block: 0;
+}
+seven-minute-tabs [role="tabpanel"] pre:first-child {
+	/* margin-top: -1rem; */
 }
 seven-minute-tabs [role="tabpanel"] pre:last-child {
-	margin-bottom: 0;
+	/* margin-bottom: -1rem; */
+}
+
+seven-minute-tabs [role="tabpanel"] .elv-callout {
+	margin-inline: 0;
+}
+seven-minute-tabs:not(.tabs-flush) [role="tabpanel"] > :last-child {
+	margin-block-end: 0;
 }

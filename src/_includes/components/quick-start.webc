@@ -5,7 +5,7 @@
 <p>Now we’ll create an <code>index.md</code> <a href="https://commonmark.org/help/">Markdown</a> file. You can do this in the text editor of your choice or by running one of these commands in your terminal:</p>
 
 <script type="module" src="/js/seven-minute-tabs.js" webc:keep></script>
-<seven-minute-tabs class="tabs-left tabs-full" persist sync>
+<seven-minute-tabs class="tabs-full tabs-flush" persist sync>
 	<div role="tablist" aria-label="Choose your Operating System">
 		<a href="#quickstart-os-nix" role="tab" data-tabs-persist="os:posix">macOS or Linux</a>
 		<a href="#quickstart-os-win" role="tab" data-tabs-persist="os:win">Windows</a>

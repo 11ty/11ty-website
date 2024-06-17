@@ -207,9 +207,6 @@ Template languages that support [universal filters](/docs/filters/) are supporte
   <div id="navtohtml-js" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
-  <div id="navtohtml-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -264,9 +261,6 @@ Template languages that support [universal filters](/docs/filters/) are supporte
   <div id="navtomd-js" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
-  <div id="navtomd-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -312,9 +306,6 @@ For our documented templates above with the following template:
 
   </div>
   <div id="navrender-js" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
-  <div id="navrender-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
@@ -386,9 +377,6 @@ Just show the children of a specific key, pass a key to `eleventyNavigation`:
   <div id="navrenderbranch-js" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
-  <div id="navrenderbranch-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -447,9 +435,6 @@ You can also render only the parents of a specific key too, to make breadcrumb n
   <div id="navbread-js" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
-  <div id="navbread-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -503,9 +488,6 @@ navOptions:
 
   </div>
   <div id="navbreadself-js" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
-  <div id="navbreadself-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
@@ -606,9 +588,6 @@ The `eleventyNavigationToMarkdown` filter is {% addedin "Navigation 0.3.1" %}.
   <div id="navrenderfilter-js" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
-  <div id="navrenderfilter-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -666,9 +645,6 @@ navToHtmlOptions:
   <div id="navexcerpt-js" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
-  <div id="navexcerpt-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -719,9 +695,6 @@ navToMdOptions:
 
   </div>
   <div id="navmdoptions-js" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
-  <div id="navmdoptions-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
@@ -811,9 +784,6 @@ You can change the HTML elements, classes on the list and list items, and add an
   <div id="navhtmloptions-js" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
-  <div id="navhtmloptions-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -871,9 +841,6 @@ Note that `eleventyNavigationToMarkdown` is {% addedin "Navigation 0.3.1" %}.
 
   </div>
   <div id="navbyoh-js" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
-  <div id="navbyoh-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>

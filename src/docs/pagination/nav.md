@@ -73,9 +73,6 @@ testdata:
   <div id="paginationnavarray-js" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
-  <div id="paginationnavarray-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -125,9 +122,6 @@ Alright, you definitely read all of those right? 😇 Here’s some accessible c
     {%- highlight "js" %}
     {%- include "examples/pagination/nav/starter.js" %}
     {%- endhighlight %}
-  </div>
-  <div id="paged-nav-starter-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -190,9 +184,6 @@ testdata:
   <div id="pagenavorig-js" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
-  <div id="pagenavorig-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
 </seven-minute-tabs>
 
 - When `size` is set to 2, `pagination.pages` will look like: `[['item1', 'item2'], ['item3', 'item4'], ['item5', 'item6']]`
@@ -235,9 +226,6 @@ testdata:
 
   </div>
   <div id="pagenavobjectlit-js" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
-  <div id="pagenavobjectlit-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
@@ -283,9 +271,6 @@ Note that if the current page (`page.url`) is the first or last in the set, we w
     {%- include "examples/pagination/nav/nextprev.js" %}
     {%- endhighlight %}
   </div>
-  <div id="paged-nav-nextprev-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -313,9 +298,6 @@ For clarity here, we’re omitting the previous and next links from the previous
     {%- include "examples/pagination/nav/firstlast.js" %}
     {%- endhighlight %}
   </div>
-  <div id="paged-nav-firstlast-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -341,10 +323,6 @@ Here’s the final pagination navigation template code, pieced together:
     {%- include "examples/pagination/nav/combined.js" %}
     {%- endhighlight %}
   </div>
-  <div id="paged-nav-combined-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
-
 </seven-minute-tabs>
 </is-land>
 

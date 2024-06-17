@@ -49,9 +49,6 @@ If the above file were named `paged.njk`, it would create two pages in your outp
 If the above file were named `paged.11ty.js`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
 
   </div>
-  <div id="paged-array-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -213,9 +210,6 @@ exports.render = function (data) {
 {% endraw %}
 
   </div>
-  <div id="pagedobj-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -355,9 +349,6 @@ exports.render = function (data) {
 
 {% endraw %}
 
-  </div>
-  <div id="pagedatafile-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -515,9 +506,6 @@ exports.render = function (data) {
 {% endraw %}
 
   </div>
-  <div id="pagedalias-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -614,9 +602,6 @@ exports.render = function (data) {
 {% endraw %}
 
   </div>
-  <div id="pagedchunk-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -680,7 +665,7 @@ pagination:
 
   </div>
   <div id="pagedcollection-js" role="tabpanel">
-    
+
 {% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
@@ -708,9 +693,6 @@ exports.render = function (data) {
 
 {% endraw %}
 
-  </div>
-  <div id="pagedcollection-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 </is-land>

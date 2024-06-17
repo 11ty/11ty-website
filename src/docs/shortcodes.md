@@ -24,7 +24,7 @@ Here are a few examples:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs persist sync>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "shortcode"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "shortcode", additions: "hbs"} %}
   <div id="shortcode-liquid" role="tabpanel">
     {% codetitle "sample.liquid" %}
 {%- highlight "liquid" %}{% raw %}
@@ -102,7 +102,7 @@ The shortcodes we saw above were nice, I suppose. But really, they are not all t
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs persist sync>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pairedshortcodes"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pairedshortcodes", additions: "hbs"} %}
   <div id="pairedshortcodes-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
