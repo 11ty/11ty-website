@@ -14,14 +14,11 @@ seven-minute-tabs {
 	}
 }
 seven-minute-tabs [role="tablist"] {
-	padding: 0;
-	font-size: 0.875em; /* 14px /16 */
+	display: flex;
+	flex-wrap: wrap;
+	gap: .125em .25em;
+	padding: 0 1rem;
 	line-height: 1.8;
-	text-align: left;
-	padding-left: 1rem;
-}
-seven-minute-tabs.tabs-full [role="tablist"] {
-	font-size: 0.9375em; /* 15px /16 */
 }
 seven-minute-tabs [role="tablist"]:last-child {
 	margin-top: 0.5rem;
@@ -29,12 +26,22 @@ seven-minute-tabs [role="tablist"]:last-child {
 seven-minute-tabs [role="tab"] {
 	background-color: var(--smt-tab-bg);
 	color: var(--smt-tab-text);
-	display: inline-block;
+	display: block;
 	font-weight: 500;
-	padding: 0 .5em;
-	margin: 0;
+	padding: .25em 1rem;
+	margin: 0 -1rem;
 	text-decoration: none;
-	border-radius: .25em .25em 0 0;
+	flex-basis: 20em;
+	flex-grow: 1;
+}
+@media (min-width: 28.125em) { /* 450px */
+	seven-minute-tabs [role="tab"] {
+		flex-basis: auto;
+		flex-grow: 0;
+		border-radius: .25em .25em 0 0;
+		padding: 0 .5em;
+		margin: 0;
+	}
 }
 seven-minute-tabs [role="tab"][aria-selected="true"] {
 	--smt-tab-bg: var(--smt-tabselected-bg);
