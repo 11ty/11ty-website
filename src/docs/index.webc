@@ -109,7 +109,7 @@ echo '<!doctype html><title>Page title</title><p>Hi</p>' | out-file -encoding ut
 <syntax-highlight language="bash">
 echo '# Heading' | out-file -encoding utf8 'README.md'
 </syntax-highlight>
-		<p>If the <code>out-file</code> command is not available in your Windows Terminal window, switch to use the Cross Platform method!</p>
+		<p>If the <code>out-file</code> command is not available in your Windows Terminal window (it’s PowerShell specific), use the Cross Platform method instead.</p>
 	</div>
 	<div id="quickstart-os-all" role="tabpanel">
 <syntax-highlight language="bash">

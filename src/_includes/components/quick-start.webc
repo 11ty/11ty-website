@@ -9,7 +9,6 @@
 	<div role="tablist" aria-label="Choose your Operating System">
 		<a href="#quickstart-os-nix" role="tab" data-tabs-persist="os:posix">macOS or Linux</a>
 		<a href="#quickstart-os-win" role="tab" data-tabs-persist="os:win">Windows</a>
-		<a href="#quickstart-os-oldwin" role="tab" data-tabs-persist="os:winold">Windows (Older)</a>
 		<a href="#quickstart-os-all" role="tab" data-tabs-persist="os:all">Cross Platform</a>
 	</div>
 	<div id="quickstart-os-nix" role="tabpanel">
@@ -21,11 +20,10 @@ echo '# Heading' > index.md
 		<syntax-highlight language="bash">
 echo '# Heading' | out-file -encoding utf8 'index.md'
 		</syntax-highlight>
-	</div>
-	<div id="quickstart-os-oldwin" role="tabpanel">
-		<syntax-highlight language="bash">
+		<p>If the <code>out-file</code> command is not available in your Windows Terminal window (it’s PowerShell specific), use the Cross Platform method.</p>
+		<!--- <syntax-highlight language="bash">
 echo # Heading > index.md
-		</syntax-highlight>
+		</syntax-highlight> --->
 	</div>
 	<div id="quickstart-os-all" role="tabpanel">
 		<syntax-highlight language="bash">
