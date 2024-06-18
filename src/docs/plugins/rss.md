@@ -124,7 +124,6 @@ The following feed samples **require RSS Plugin v2.0** or newer. [Samples for RS
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
   <div role="tablist" aria-label="Choose a template language">
-    View this example in:
     <a href="#rss-atom" role="tab">Atom</a>
     <a href="#rss-rss" role="tab">RSS</a>
     <a href="#rss-json" role="tab">JSON</a>

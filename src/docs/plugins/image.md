@@ -689,7 +689,6 @@ If you have an advanced use case and don’t want to use our methods to generate
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
 <div role="tablist" aria-label="DIY mode chooser">
-	Choose one:
 	<a href="#filter-diy-img" role="tab">Do it yourself: &lt;img&gt;</a>
 	<a href="#filter-diy-picture" role="tab">Do it yourself: &lt;picture&gt;</a>
 </div>

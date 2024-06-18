@@ -73,8 +73,8 @@ async function render({ id, valid, additions, subtractions, only, label }) {
 
 	let liquidTemplate = `
 {% assign syntax = false %}
-<div role="tablist" aria-label="Template Language Chooser">
-	${label ? `${label}: ` : "View this example in: "}${str.join("\n")}
+<div role="tablist" aria-label="Template Language Chooser"${label ? ` class="has-label"` : ""}>
+	${label ? `${label}: ` : ""}${str.join("\n")}
 </div>`;
 
 	return await this.renderTemplate(liquidTemplate, "liquid");

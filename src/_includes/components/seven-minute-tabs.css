@@ -22,6 +22,8 @@ seven-minute-tabs [role="tablist"] {
 	flex-wrap: wrap;
 	gap: .125em .25em;
 	line-height: 1.8;
+}
+seven-minute-tabs [role="tablist"].has-label {
 	text-indent: 1rem;
 }
 seven-minute-tabs [role="tablist"]:last-child {
@@ -31,6 +33,7 @@ seven-minute-tabs [role="tab"] {
 	background-color: var(--smt-tab-bg);
 	color: var(--smt-tab-text);
 	display: block;
+	font-size: 0.9375em; /* 15px /16 */
 	font-weight: 500;
 	padding: .25em 1rem;
 	text-decoration: none;
@@ -48,7 +51,7 @@ seven-minute-tabs [role="tab"] {
 	}
 }
 @media (min-width: 28.125em) and (max-width: 54.9375em) { /* 450px–879px */
-	seven-minute-tabs [role="tab"]:first-child {
+	seven-minute-tabs [role="tablist"]:not(.has-label) [role="tab"]:first-child {
 		border-top-left-radius: 0;
 	}
 }
