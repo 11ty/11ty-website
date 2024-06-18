@@ -789,6 +789,9 @@ a[href].elv-hero:visited {
 		font-size: 5.25em; /* 84px /16 */
 	}
 }
+.btn-primary-nogrow {
+	font-size: 1.4em;
+}
 
 /* Emoji */
 .emoji {
