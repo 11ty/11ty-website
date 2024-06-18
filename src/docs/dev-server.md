@@ -176,20 +176,9 @@ module.exports = function(eleventyConfig) {
 }
 ```
 
-### Advanced `chokidar` options
+## Advanced `chokidar` options
 
-Advanced [`chokidar` options](https://github.com/paulmillr/chokidar) can be defined using the `setChokidarConfig` configuration API method:
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-	eleventyConfig.setChokidarConfig({
-		usePolling: true,
-		interval: 500,
-	});
-}
-```
+Access to advanced `chokidar` configuration is available via the [`eleventyConfig.setChokidarConfig` method (on the Watch and Serve documentation)](/docs/watch-serve/#advanced-chokidar-configuration).
 
 ## Swap back to Browsersync {% addedin "2.0.0" %}
 

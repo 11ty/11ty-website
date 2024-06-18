@@ -73,6 +73,23 @@ module.exports = function (eleventyConfig) {
 };
 ```
 
+## Advanced `chokidar` Configuration
+
+Advanced [`chokidar` options](https://github.com/paulmillr/chokidar) can be defined using the `setChokidarConfig` configuration API method:
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+	eleventyConfig.setChokidarConfig({
+		usePolling: true,
+		interval: 500,
+	});
+}
+```
+
+{% callout "warn", "md" %}If you’re using [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/) and your project exists _outside_ of your home directory (`~`), you will likely want to use the `usePolling` feature to ensure watching works correctly. This is a `chokidar` limitation.{% endcallout %}
+
 ## Eleventy Dev Server {% addedin "2.0.0" %}
 
 <div id="swap-back-to-browsersync"></div>
