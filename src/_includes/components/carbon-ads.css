@@ -1,7 +1,7 @@
 #carbonads {
 	display: flex;
 	justify-content: center;
-	margin: -1.5em auto 2em;
+	margin-block-end: 1em;
 }
 #carbon-responsive a[href].carbon-poweredby {
 	color: inherit;
@@ -11,7 +11,7 @@
 	display: none; /* no external link icons */
 }
 #carbon-responsive .carbon-responsive-wrap {
-	border-radius: .25em;
+	border-radius: .3em;
 }
 @media (min-width: 55em) {
 	#carbonads {
