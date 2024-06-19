@@ -88,7 +88,7 @@ module.exports = function(eleventyConfig) {
 }
 ```
 
-{% callout "warn", "md" %}If you’re using [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/) and your project exists _outside_ of your home directory (`~`), you will likely want to use the `usePolling` feature to ensure watching works correctly. This is a `chokidar` limitation.{% endcallout %}
+{% callout "warn", "md" %}If you’re using [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/) and your project exists _outside_ of your home directory (`~`), you will likely want to use the `usePolling` feature to ensure watching works correctly. This is a WSL limitation.{% endcallout %}
 
 ## Eleventy Dev Server {% addedin "2.0.0" %}
 
