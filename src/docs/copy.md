@@ -216,7 +216,7 @@ const duplexify = require('duplexify')
 const concatStream = require('concat-stream')
 const from2String = require('from2-string')
 module.exports = function (eleventyConfig) {
-	async function transform(ext, raw) {
+	async function minify(ext, raw) {
 		switch (ext) {
 			case ".js": {
 				const minified = await jsMinify(raw, {});
@@ -227,6 +227,7 @@ module.exports = function (eleventyConfig) {
 		}
 	}
 	let copyOptions = {
+		// transform files: minify all .js files
 		transform: function(src, dest, stats) {
 			const ext = path.extname(src)
 			switch (ext) {
@@ -237,7 +238,7 @@ module.exports = function (eleventyConfig) {
 			}
 			const stream = duplexify()
 			const writer = concatStream({ encoding: 'string' }, function (raw) {
-				transform(ext, raw)
+				minify(ext, raw)
 					.then(minified => {
 						stream.setReadable(from2String(minified))
 					})
