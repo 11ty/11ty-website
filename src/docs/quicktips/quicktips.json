@@ -3,5 +3,8 @@
 	"permalink": "/docs/quicktips/{{ page.fileSlug }}/",
 	"feedTitle": "Quick Tips RSS Feed",
 	"feedUrl": "/docs/quicktips/feed.xml",
-	"tags": ["quicktips", "docs-quicktips"]
+	"tags": ["quicktips", "docs-quicktips"],
+	"eleventyComputed": {
+		"title": "Quick Tip: {{ tiptitle }}"
+	}
 }

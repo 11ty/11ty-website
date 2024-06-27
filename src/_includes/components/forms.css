@@ -1,5 +1,5 @@
 label.radio-align,
-input[type=radio] + label {
+input[type="radio"] + label {
 	vertical-align: middle;
 }
 
@@ -16,7 +16,7 @@ footer .formprefs {
 	padding-right: 1rem;
 	margin-left: -1rem;
 	margin-right: -1rem;
-	margin-bottom: .5em;
+	margin-bottom: 0.5em;
 }
 @media (prefers-color-scheme: dark) {
 	footer .formprefs {
@@ -33,7 +33,7 @@ footer .formprefs {
 	padding: 0;
 }
 .formprefs label {
-	margin-left: .25em;
+	margin-left: 0.25em;
 	font-weight: bold;
 }
 
@@ -50,7 +50,8 @@ footer .formprefs {
 	font-size: 0.8125em;
 	position: relative;
 }
-@media (max-width: 31.1875em) { /* 499px */
+@media (max-width: 31.1875em) {
+	/* 499px */
 	/* No room! Use the one in the footer */
 	.tmplsyntax-default {
 		display: none;
@@ -72,13 +73,14 @@ footer .formprefs {
 	left: 0;
 	right: 0;
 	z-index: 1;
-	box-shadow: rgba(0, 0, 0, 0.07) 0px 16px 24px 0px, rgba(0, 0, 0, 0.06) 0px 6px 30px 0px, rgba(0, 0, 0, 0.1) 0px 8px 10px 0px;
+	box-shadow: rgba(0, 0, 0, 0.07) 0px 16px 24px 0px,
+		rgba(0, 0, 0, 0.06) 0px 6px 30px 0px, rgba(0, 0, 0, 0.1) 0px 8px 10px 0px;
 }
 .tmplsyntax legend {
 	display: none;
 }
 .tmplsyntax label {
 	display: block;
-	margin: .5em .25em;
+	margin: 0.5em 0.25em;
 	white-space: nowrap;
 }

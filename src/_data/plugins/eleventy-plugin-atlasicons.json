@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-atlasicons",
+	"author": "reatlat",
+	"description": "The shortcode enables the embedding of atlas-icons as inline SVG icons into templates."
+}

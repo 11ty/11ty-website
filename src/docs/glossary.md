@@ -1,7 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Overview
+  parent: Getting Started
   key: Glossary
+  order: 1.4
 ---
 
 # Glossary
@@ -116,7 +117,7 @@ To be honest it’s kind of a stretch to relate Lean methodology to this project
 
 Zero config means that Eleventy can run without any command line parameters or configuration files.
 
-We’ve taken care to setup Eleventy so that that running the stock  `eleventy` command uses sensible defaults. Lower the barrier to entry for that first project build to get up and running faster.
+We’ve taken care to setup Eleventy so that that running the stock `eleventy` command uses sensible defaults. Lower the barrier to entry for that first project build to get up and running faster.
 
 ### Convention over Configuration Routing
 
@@ -128,8 +129,8 @@ With the rise of client side rendering of templates in JavaScript came significa
 
 Many frameworks switched to Server Side Rendering, which meant running an application server with middleware that would render the markup on demand for each request. Eleventy templates by default are generated (some call this pre-rendering) at build time for maximum performance. This way the web server only needs to fetch the static file and send it back to the user.
 
-* If you want to add dynamic server-side functionality to your Eleventy project, use [Eleventy Edge](/docs/plugins/edge/) on top of your build or server generated templates.
-* Eleventy can also run in [Serverless mode](/docs/plugins/serverless/) for server side rendering _On Request_ or even _On Request Once and Cached for Subsequent Visitors_.
+- If you want to add dynamic server-side functionality to your Eleventy project, use [Eleventy Edge](/docs/plugins/edge/) on top of your build or server generated templates.
+- Eleventy can also run in [Serverless mode](/docs/plugins/serverless/) for server side rendering _On Request_ or even _On Request Once and Cached for Subsequent Visitors_.
 
 ### Hydration-less
 

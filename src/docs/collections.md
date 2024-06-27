@@ -6,7 +6,9 @@ eleventyNavigation:
   order: 2
   excerpt: Group, reuse, and sort content in interesting ways.
 communityLinksKey: collections
+overrideCommunityLinks: true
 ---
+
 {% tableofcontents %}
 
 While [pagination](/docs/pagination/) allows you to iterate over a data set to create multiple templates, a collection allows you to group content in interesting ways. A piece of content can be a part of multiple collections, if you assign the same string value to the `tags` key in the front matter.
@@ -29,13 +31,14 @@ title: Hot Take—Social Media is Considered Harmful
 This will place this `mypost.md` into the `post` collection with all other pieces of content sharing the `post` tag. To reference this collection and make a list of all posts, use the `collections` object in any template:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collections"} %}
   <div id="collections-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 <ul>
 {%- for post in collections.post -%}
@@ -43,6 +46,7 @@ This will place this `mypost.md` into the `post` collection with all other piece
 {%- endfor -%}
 </ul>
 ```
+
 {% endraw %}
 
   </div>
@@ -51,6 +55,7 @@ This will place this `mypost.md` into the `post` collection with all other piece
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 <ul>
 {%- for post in collections.post -%}
@@ -58,6 +63,7 @@ This will place this `mypost.md` into the `post` collection with all other piece
 {%- endfor -%}
 </ul>
 ```
+
 {% endraw %}
 
   </div>
@@ -66,13 +72,17 @@ This will place this `mypost.md` into the `post` collection with all other piece
 {% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
+
 ```js
-exports.render = function(data) {
-  return `<ul>
-    ${data.collections.post.map(post => `<li>${post.data.title}</li>`).join("\n")}
+exports.render = function (data) {
+	return `<ul>
+    ${data.collections.post
+			.map((post) => `<li>${post.data.title}</li>`)
+			.join("\n")}
   </ul>`;
 };
 ```
+
 {% endraw %}
 
   </div>
@@ -84,13 +94,14 @@ exports.render = function(data) {
 {% addedin "2.0.0-canary.21" %}Use the `eleventyImport` object to declare any collections you use (data cascade friendly) to inform the relationships for smarter incremental builds. This is an Array of collection names. Read more about [importing collections](https://github.com/11ty/eleventy/issues/975).
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collections-import"} %}
   <div id="collections-import-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 ---
 eleventyImport:
@@ -102,6 +113,7 @@ eleventyImport:
 {%- endfor -%}
 </ul>
 ```
+
 {% endraw %}
 
   </div>
@@ -110,6 +122,7 @@ eleventyImport:
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 ---
 eleventyImport:
@@ -121,6 +134,7 @@ eleventyImport:
 {%- endfor -%}
 </ul>
 ```
+
 {% endraw %}
 
   </div>
@@ -129,39 +143,43 @@ eleventyImport:
 {% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
+
 ```js
-exports.data = function() {
-  return {
-    eleventyImport: {
-      collections: ["post"]
-    }
-  }
+exports.data = function () {
+	return {
+		eleventyImport: {
+			collections: ["post"],
+		},
+	};
 };
-exports.render = function(data) {
-  return `<ul>
-    ${data.collections.post.map(post => `<li>${post.data.title}</li>`).join("\n")}
+exports.render = function (data) {
+	return `<ul>
+    ${data.collections.post
+			.map((post) => `<li>${post.data.title}</li>`)
+			.join("\n")}
   </ul>`;
 };
 ```
+
 {% endraw %}
 
   </div>
 </seven-minute-tabs>
 </is-land>
 
-
-### Using an `[aria-current]` attribute for on the current page
+### Use an `[aria-current]` attribute on the current page
 
 Compare the `post.url` and special Eleventy-provided `page.url` variable to find the current page. Building on the previous example:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsnav"} %}
   <div id="collectionsnav-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 <ul>
 {%- for post in collections.post -%}
@@ -169,6 +187,7 @@ Compare the `post.url` and special Eleventy-provided `page.url` variable to find
 {%- endfor -%}
 </ul>
 ```
+
 {% endraw %}
 
   </div>
@@ -177,6 +196,7 @@ Compare the `post.url` and special Eleventy-provided `page.url` variable to find
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 <ul>
 {%- for post in collections.post -%}
@@ -184,8 +204,8 @@ Compare the `post.url` and special Eleventy-provided `page.url` variable to find
 {%- endfor -%}
 </ul>
 ```
-{% endraw %}
 
+{% endraw %}
 
   </div>
   <div id="collectionsnav-js" role="tabpanel">
@@ -193,15 +213,22 @@ Compare the `post.url` and special Eleventy-provided `page.url` variable to find
 {% codetitle "JavaScript .11ty.js", "Syntax" %}
 
 {% raw %}
+
 ```js
-exports.render = function(data) {
-  return `<ul>
-    ${data.collections.post.map(post =>
-      `<li${data.page.url === post.url ? ` aria-current="page"` : ""}>${post.data.title}</li>`
-    ).join("\n")}
+exports.render = function (data) {
+	return `<ul>
+    ${data.collections.post
+			.map(
+				(post) =>
+					`<li${data.page.url === post.url ? ` aria-current="page"` : ""}>${
+						post.data.title
+					}</li>`
+			)
+			.join("\n")}
   </ul>`;
 };
 ```
+
 {% endraw %}
 
   </div>
@@ -217,13 +244,14 @@ By default Eleventy puts all of your content (independent of whether or not it h
 ### Link to all Eleventy generated content
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsall"} %}
   <div id="collectionsall-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 <ul>
 {%- for post in collections.all -%}
@@ -231,6 +259,7 @@ By default Eleventy puts all of your content (independent of whether or not it h
 {%- endfor -%}
 </ul>
 ```
+
 {% endraw %}
 
   </div>
@@ -239,6 +268,7 @@ By default Eleventy puts all of your content (independent of whether or not it h
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 <ul>
 {%- for post in collections.all -%}
@@ -246,6 +276,7 @@ By default Eleventy puts all of your content (independent of whether or not it h
 {%- endfor -%}
 </ul>
 ```
+
 {% endraw %}
 
   </div>
@@ -254,15 +285,17 @@ By default Eleventy puts all of your content (independent of whether or not it h
 {% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
+
 ```js
-exports.render = function(data) {
-  return `<ul>
-    ${data.collections.all.map(post =>
-      `<li><a href="${post.url}">${post.url}</a></li>`
-    ).join("\n")}
+exports.render = function (data) {
+	return `<ul>
+    ${data.collections.all
+			.map((post) => `<li><a href="${post.url}">${post.url}</a></li>`)
+			.join("\n")}
   </ul>`;
 };
 ```
+
 {% endraw %}
 
   </div>
@@ -280,7 +313,19 @@ In front matter (or further upstream in the data cascade), set the `eleventyExcl
 eleventyExcludeFromCollections: true
 tags: post
 ---
+
 This will not be available in `collections.all` or `collections.post`.
+```
+
+{% addedin "3.0.0-alpha.1" %} `eleventyExcludeFromCollections` can now also accept an array of tag names:
+
+```markdown
+---
+eleventyExcludeFromCollections:
+  - post
+---
+
+This will be available in `collections.all` but not `collections.post`.
 ```
 
 ## Add to a Collection using Tags
@@ -311,7 +356,7 @@ If you use multiple words for one tag you can access the content by the followin
 
 ```markdown
 ---
-tags: ['cat', 'dog']
+tags: ["cat", "dog"]
 ---
 ```
 
@@ -343,15 +388,15 @@ This content would not show up in any of the collections it was added to with `t
 
 ## Collection Item Data Structure
 
-
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsitem"} %}
   <div id="collectionsitem-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 <ul>
 {%- for post in collections.post -%}
@@ -359,6 +404,7 @@ This content would not show up in any of the collections it was added to with `t
 {%- endfor -%}
 </ul>
 ```
+
 {% endraw %}
 
   </div>
@@ -367,6 +413,7 @@ This content would not show up in any of the collections it was added to with `t
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 <ul>
 {%- for post in collections.post -%}
@@ -374,6 +421,7 @@ This content would not show up in any of the collections it was added to with `t
 {%- endfor -%}
 </ul>
 ```
+
 {% endraw %}
 
   </div>
@@ -382,13 +430,17 @@ This content would not show up in any of the collections it was added to with `t
 {% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
+
 ```js
-exports.render = function(data) {
-  return `<ul>
-    ${data.collections.post.map(post => `<li>${post.data.title}</li>`).join("\n")}
+exports.render = function (data) {
+	return `<ul>
+    ${data.collections.post
+			.map((post) => `<li>${post.data.title}</li>`)
+			.join("\n")}
   </ul>`;
 };
 ```
+
 {% endraw %}
 
   </div>
@@ -397,9 +449,10 @@ exports.render = function(data) {
 
 Note in the above example that we output the `post.data.title` value? Similarly, each collection item will have the following data:
 
-* `page`: everything in [Eleventy’s supplied page variable](/docs/data-eleventy-supplied/#page-variable) for this template (including `inputPath`, `url`, `date`, and others). {% addedin "2.0.0-canary.19" %}
-* `data`: all data for this piece of content (includes any data inherited from layouts)
-* `content`: the rendered content of this template. This does _not_ include layout wrappers. {% addedin "2.0.0-canary.19" %}
+- `page`: everything in [Eleventy’s supplied page variable](/docs/data-eleventy-supplied/#page-variable) for this template (including `inputPath`, `url`, `date`, and others). {% addedin "2.0.0-canary.19" %}
+- `data`: all data for this piece of content (includes any data inherited from layouts)
+- `rawInput`: the raw input of the template (before any processing). This does _not_ include front matter. {% addedin "v3.0.0-alpha.1" %} _(Related: [#1206](https://github.com/11ty/eleventy/issues/1206))_
+- `content`: the rendered content of this template. This does _not_ include layout wrappers. {% addedin "2.0.0-canary.19" %}
 
 ```js
 {
@@ -410,14 +463,18 @@ Note in the above example that we output the `post.data.title` value? Similarly,
     // … and everything else in Eleventy’s `page`
   },
   data: { title: 'Test Title', tags: ['tag1', 'tag2'], date: 'Last Modified', /* … */ },
-  content: '<h1>This is my title</h1>\n\n<p>This is content…'
+  content: '<h1>Test Title</h1>\n\n<p>This is text content…',
+  // Pre-release only: {{ "3.0.0-alpha.1" | coerceVersion }}
+{%- raw %}
+  rawInput: '<h1>{{ title }}</h1>\n\n<p>This is text content…',
 }
+{% endraw %}
 ```
 
 _Backwards compatibility notes:_
 
-* Top level properties for `inputPath`, `fileSlug`, `outputPath`, `url`, `date` are still available, though use of `page.*` {% addedin "2.0.0-canary.19" %} for these is encouraged moving forward.
-* `content` {% addedin "2.0.0-canary.19" %} is aliased to the previous property `templateContent`.
+- Top level properties for `inputPath`, `fileSlug`, `outputPath`, `url`, `date` are still available, though use of `page.*` {% addedin "2.0.0-canary.19" %} for these is encouraged moving forward.
+- `content` {% addedin "2.0.0-canary.19" %} is aliased to the previous property `templateContent`.
 
 You can [view the previous Collection Item Data Structure docs for 1.0](https://v1-0-2.11ty.dev/docs/collections/#collection-item-data-structure).
 
@@ -449,13 +506,14 @@ This collection would be sorted like this:
 To sort descending in your template, you can use a filter to reverse the sort order. For example, it might look like this:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionssort"} %}
   <div id="collectionssort-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 <ul>
 {%- for post in collections.post reversed -%}
@@ -463,6 +521,7 @@ To sort descending in your template, you can use a filter to reverse the sort or
 {%- endfor -%}
 </ul>
 ```
+
 {% endraw %}
 
   </div>
@@ -471,6 +530,7 @@ To sort descending in your template, you can use a filter to reverse the sort or
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 <ul>
 {%- for post in collections.post | reverse -%}
@@ -478,6 +538,7 @@ To sort descending in your template, you can use a filter to reverse the sort or
 {%- endfor -%}
 </ul>
 ```
+
 {% endraw %}
 
   </div>
@@ -486,14 +547,16 @@ To sort descending in your template, you can use a filter to reverse the sort or
 {% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
+
 ```js
-exports.render = function(data) {
-  let posts = data.collections.post.reverse();
-  return `<ul>
-    ${posts.map(post => `<li>${post.data.title}</li>`).join("\n")}
+exports.render = function (data) {
+	let posts = data.collections.post.reverse();
+	return `<ul>
+    ${posts.map((post) => `<li>${post.data.title}</li>`).join("\n")}
   </ul>`;
 };
 ```
+
 {% endraw %}
 
   </div>
@@ -501,6 +564,7 @@ exports.render = function(data) {
 </is-land>
 
 {% callout "warn" %}
+
   <p id="array-reverse">You should <em><strong>not</strong></em> use Array <code>reverse()</code> on collection arrays in your templates, like so:</p>
   <p><code>{%raw %}{%- for post in collections.post.reverse() -%}{% endraw %}</code></p>
   <p>This applies any time you use `reverse`, for example in a custom shortcode:</p>
@@ -536,13 +600,11 @@ Inside of your `.eleventy.js` config file, use the first argument to the config 
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-
-  eleventyConfig.addCollection("myCollectionName", function(collectionApi) {
-    // get unsorted items
-    return collectionApi.getAll();
-  });
-
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addCollection("myCollectionName", function (collectionApi) {
+		// get unsorted items
+		return collectionApi.getAll();
+	});
 };
 ```
 
@@ -550,7 +612,7 @@ module.exports = function(eleventyConfig) {
 
 ### Return values
 
-* {% addedin "0.5.3" %} `addCollection` callbacks can return any arbitrary object type and it’ll be available as data in the template. Arrays, strings, objects—have fun with it.
+- {% addedin "0.5.3" %} `addCollection` callbacks can return any arbitrary object type and it’ll be available as data in the template. Arrays, strings, objects—have fun with it.
 
 ### Collection API Methods
 
@@ -563,41 +625,41 @@ Returns an array.
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Unsorted items (in whatever order they were added)
-  eleventyConfig.addCollection("allMyContent", function(collectionApi) {
-    return collectionApi.getAll();
-  });
+module.exports = function (eleventyConfig) {
+	// Unsorted items (in whatever order they were added)
+	eleventyConfig.addCollection("allMyContent", function (collectionApi) {
+		return collectionApi.getAll();
+	});
 };
 ```
 
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Filter using `Array.filter`
-  eleventyConfig.addCollection("keyMustExistInData", function(collectionApi) {
-    return collectionApi.getAll().filter(function(item) {
-      // Side-step tags and do your own filtering
-      return "myCustomDataKey" in item.data;
-    });
-  });
+module.exports = function (eleventyConfig) {
+	// Filter using `Array.filter`
+	eleventyConfig.addCollection("keyMustExistInData", function (collectionApi) {
+		return collectionApi.getAll().filter(function (item) {
+			// Side-step tags and do your own filtering
+			return "myCustomDataKey" in item.data;
+		});
+	});
 };
 ```
 
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Sort with `Array.sort`
-  eleventyConfig.addCollection("myCustomSort", function(collectionApi) {
-    return collectionApi.getAll().sort(function(a, b) {
-      //return a.date - b.date; // sort by date - ascending
-      return b.date - a.date; // sort by date - descending
-      //return a.inputPath.localeCompare(b.inputPath); // sort by path - ascending
-      //return b.inputPath.localeCompare(a.inputPath); // sort by path - descending
-    });
-  });
+module.exports = function (eleventyConfig) {
+	// Sort with `Array.sort`
+	eleventyConfig.addCollection("myCustomSort", function (collectionApi) {
+		return collectionApi.getAll().sort(function (a, b) {
+			//return a.date - b.date; // sort by date - ascending
+			return b.date - a.date; // sort by date - descending
+			//return a.inputPath.localeCompare(b.inputPath); // sort by path - ascending
+			//return b.inputPath.localeCompare(a.inputPath); // sort by path - descending
+		});
+	});
 };
 ```
 
@@ -612,23 +674,23 @@ Returns an array.
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Use the default sorting algorithm (ascending by date, filename tiebreaker)
-  eleventyConfig.addCollection("allMySortedContent", function(collectionApi) {
-    return collectionApi.getAllSorted();
-  });
+module.exports = function (eleventyConfig) {
+	// Use the default sorting algorithm (ascending by date, filename tiebreaker)
+	eleventyConfig.addCollection("allMySortedContent", function (collectionApi) {
+		return collectionApi.getAllSorted();
+	});
 };
 ```
 
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Use the default sorting algorithm in reverse (descending dir, date, filename)
-  // Note that using a template engine’s `reverse` filter might be easier here
-  eleventyConfig.addCollection("myPostsReverse", function(collectionApi) {
-    return collectionApi.getAllSorted().reverse();
-  });
+module.exports = function (eleventyConfig) {
+	// Use the default sorting algorithm in reverse (descending dir, date, filename)
+	// Note that using a template engine’s `reverse` filter might be easier here
+	eleventyConfig.addCollection("myPostsReverse", function (collectionApi) {
+		return collectionApi.getAllSorted().reverse();
+	});
 };
 ```
 
@@ -637,15 +699,15 @@ Note that while Array `.reverse()` mutates the array _in-place_, all Eleventy Co
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Filter using `Array.filter`
-  eleventyConfig.addCollection("onlyMarkdown", function(collectionApi) {
-    return collectionApi.getAllSorted().filter(function(item) {
-      // Only return content that was originally a markdown file
-      let extension = item.inputPath.split('.').pop();
-      return extension === "md";
-    });
-  });
+module.exports = function (eleventyConfig) {
+	// Filter using `Array.filter`
+	eleventyConfig.addCollection("onlyMarkdown", function (collectionApi) {
+		return collectionApi.getAllSorted().filter(function (item) {
+			// Only return content that was originally a markdown file
+			let extension = item.inputPath.split(".").pop();
+			return extension === "md";
+		});
+	});
 };
 ```
 
@@ -656,36 +718,38 @@ Returns an array.
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Get only content that matches a tag
-  eleventyConfig.addCollection("myPosts", function(collectionApi) {
-    return collectionApi.getFilteredByTag("post");
-  });
+module.exports = function (eleventyConfig) {
+	// Get only content that matches a tag
+	eleventyConfig.addCollection("myPosts", function (collectionApi) {
+		return collectionApi.getFilteredByTag("post");
+	});
 };
 ```
 
 #### getFilteredByTags( tagName, secondTagName, […] )
 
-Retrieve content that includes *all* of the tags passed in. Returns an array.
+Retrieve content that includes _all_ of the tags passed in. Returns an array.
 
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Get only content that matches a tag
-  eleventyConfig.addCollection("myTravelPostsWithPhotos", function(collectionApi) {
-    return collectionApi.getFilteredByTags("post", "travel", "photo");
-  });
+module.exports = function (eleventyConfig) {
+	// Get only content that matches a tag
+	eleventyConfig.addCollection(
+		"myTravelPostsWithPhotos",
+		function (collectionApi) {
+			return collectionApi.getFilteredByTags("post", "travel", "photo");
+		}
+	);
 };
 ```
-
 
 #### getFilteredByGlob( glob )
 
 Returns an array. Will match an arbitrary glob (or an array of globs) against the input file’s full `inputPath` (including the input directory).
 
 {% callout "info" %}
-<strong>Note</strong>: <code>getFilteredByGlob</code> filters results returned from <a href="#getallsorted()"><code>getAllSorted</code></a>. It will not search the file system for new templates. It will not match files in your <code>_includes</code> directory or anything excluded by <code>eleventyExcludeFromCollections</code>.
+<strong>Note</strong>: <code>getFilteredByGlob</code> filters results returned from <a href="#getallsorted()"><code>getAllSorted</code></a>. It will not search the file system for new templates. It will not match files in your <code>\_includes</code> directory or anything excluded by <code>eleventyExcludeFromCollections</code>.
 {% endcallout %}
 
 {% callout "info" %}
@@ -696,11 +760,11 @@ Returns an array. Will match an arbitrary glob (or an array of globs) against th
 {% addedin "0.2.14" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Filter source file names using a glob
-  eleventyConfig.addCollection("onlyMarkdown", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("**/*.md");
-  });
+module.exports = function (eleventyConfig) {
+	// Filter source file names using a glob
+	eleventyConfig.addCollection("onlyMarkdown", function (collectionApi) {
+		return collectionApi.getFilteredByGlob("**/*.md");
+	});
 };
 ```
 
@@ -708,11 +772,11 @@ module.exports = function(eleventyConfig) {
 {% addedin "0.2.14" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Filter source file names using a glob
-  eleventyConfig.addCollection("posts", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("_posts/*.md");
-  });
+module.exports = function (eleventyConfig) {
+	// Filter source file names using a glob
+	eleventyConfig.addCollection("posts", function (collectionApi) {
+		return collectionApi.getFilteredByGlob("_posts/*.md");
+	});
 };
 ```
 
@@ -720,11 +784,17 @@ module.exports = function(eleventyConfig) {
 {% addedin "0.2.14" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Filter source file names using a glob
-  eleventyConfig.addCollection("posts", function(collectionApi) {
-    // Also accepts an array of globs!
-    return collectionApi.getFilteredByGlob(["posts/*.md", "notes/*.md"]);
-  });
+module.exports = function (eleventyConfig) {
+	// Filter source file names using a glob
+	eleventyConfig.addCollection("posts", function (collectionApi) {
+		// Also accepts an array of globs!
+		return collectionApi.getFilteredByGlob(["posts/*.md", "notes/*.md"]);
+	});
 };
 ```
+
+## From the Community
+
+{% include "community-contributed.njk" %}
+
+{% include "11tybundle.njk" %}

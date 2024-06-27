@@ -1,14 +1,42 @@
 <div class="elv-toc" data-pagefind-ignore>
+{%- set adTitle = "<a href='/blog/sustainability-fundraising/' class='elv-externalexempt'>Sustainability Fundraising</a>" %}
+{%- callout "", "html", adTitle %}
+<a href="/blog/sustainability-fundraising/" class="fundraising-sidebar elv-externalexempt">
+	<div class="fundraising-sidebar-percent">{{ (opencollectiveMonthly.recurringAmount * 100 / 6000) | round(1) }}</div>
+	<fundraising-status min="0" max="6000" value="{{ opencollectiveMonthly.recurringAmount }}" hide-currency style="--fs-color: hsl(195deg 98.53% 46.26%);"></fundraising-status>
+</a>
+{%- endcallout %}
+
+{%- set versionsTitle = "<a href='/docs/versions/'>Versions</a>" %}
+{%- callout "box", "html", versionsTitle -%}
+	<dl>
+		<dt>Stable</dt>
+		<dd><code>{{ npmVersions.latest }}</code></dd>
+		<dt>Canary</dt>
+		<dd><code>{{ npmVersions.canary }}</code></dd>
+	</dl>
+{%- endcallout %}
+
+{# only show ads in production #}
+{% if eleventy.env.runMode == "build" %}
+<is-land on:visible>
+	<template data-island>
+		<script async src="https://cdn.carbonads.com/carbon.js?serve=CW7D6K7I&placement=www11tydev&format=responsive" id="_carbonads_js"></script>
+	</template>
+</is-land>
+{% endif %}
+
 <details-force-state>
-	<details open>
-		<summary class="btn-primary benchnine rainbow-active rainbow-active-noanim">Menu</summary>
+	<details>
+		<summary class="btn-primary benchnine rainbow-active rainbow-active-noanim">Toggle Menu</summary>
 
 		{%- if eleventyNavigation -%}
 			{%- set navKey = eleventyNavigation.key -%}
 		{%- endif -%}
-		{{ collections.sidebarNav | eleventyNavigation | eleventyNavigationToHtml({ activeKey: navKey, listClass: 'elv-toc-list', activeListItemClass: 'elv-toc-active' }) | safe }}
-
-		{%- if not page.inputPath.endsWith("/docs/performance.webc") %}
+		<div id="skip-nav">
+			{{ collections.sidebarNav | eleventyNavigation | eleventyNavigationToHtml({ activeKey: navKey, listClass: 'elv-toc-list', activeListItemClass: 'elv-toc-active' }) | safe }}
+		</div>
+		{%- if not ignoreSidebarCallout %}
 		{%- set comparison = comparisons | randompick %}
 		{%- set comparisonTitle = "<a href='" + comparison.url + "'>Compare " + comparison.title + "</a>" %}
 		{%- callout "box", "html", comparisonTitle %}

@@ -4,6 +4,7 @@ eleventyNavigation:
   key: Ignore Files
   order: 2
 ---
+
 # Ignore Template Files
 
 {% tableofcontents %}
@@ -27,9 +28,9 @@ You can programmatically add and delete ignores in your configuration file. `ele
 The `ignores` Set starts with a default `**/node_modules/**` entry in Eleventy v2.0 (it was `node_modules/**` in v1.0).
 
 ```js
-module.exports = function(eleventyConfig) {
-    eleventyConfig.ignores.add("README.md");
-    eleventyConfig.ignores.delete("README.md");
+module.exports = function (eleventyConfig) {
+	eleventyConfig.ignores.add("README.md");
+	eleventyConfig.ignores.delete("README.md");
 };
 ```
 
@@ -52,12 +53,12 @@ If you want to opt-out and search for templates inside of your `node_modules` fo
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // in Eleventy 2.0
-  eleventyConfig.ignores.delete("**/node_modules/**");
+module.exports = function (eleventyConfig) {
+	// in Eleventy 2.0
+	eleventyConfig.ignores.delete("**/node_modules/**");
 
-  // in Eleventy 1.0
-  eleventyConfig.ignores.delete("node_modules/**");
+	// in Eleventy 1.0
+	eleventyConfig.ignores.delete("node_modules/**");
 };
 ```
 
@@ -71,11 +72,11 @@ module.exports = function(eleventyConfig) {
 
 We look for ignores in these files. Entries are relative to the ignore file’s location.
 
-* Project root directory (top level, where you ran Eleventy from)
-  * `.eleventyignore`
-  * `.gitignore`
-* Input directory (while this matches the project root by default, these can be different [using `--input`](/docs/usage/))
-  * `.eleventyignore`
+- Project root directory (top level, where you ran Eleventy from)
+  - `.eleventyignore`
+  - `.gitignore`
+- Input directory (while this matches the project root by default, these can be different [using `--input`](/docs/usage/))
+  - `.eleventyignore`
 
 {% callout "info", "md" %}Starting in Eleventy `1.0` support for a `.gitignore` file in a separate input directory was removed. Read more at [Issue #364](https://github.com/11ty/eleventy/issues/364).{% endcallout %}
 
@@ -86,8 +87,8 @@ You can disable automatic use of your `.gitignore` file by using the Configurati
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-    eleventyConfig.setUseGitIgnore(false);
+module.exports = function (eleventyConfig) {
+	eleventyConfig.setUseGitIgnore(false);
 };
 ```
 

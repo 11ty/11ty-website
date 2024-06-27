@@ -1,7 +1,11 @@
 /* Buzzwords */
 @keyframes rainbow {
-	0% { background-position: 0% 50%; }
-	100% { background-position: 100% 50%; }
+	0% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
 }
 .buzzword-list,
 .inlinelist {
@@ -18,24 +22,17 @@
 	box-decoration-break: clone;
 	font-size: 116%;
 	white-space: normal;
-	padding: .2em .5em;
+	padding: 0.2em 0.5em;
 	margin: 4px 4px 4px 0;
-	transition: .15s linear outline;
+	transition: 0.15s linear outline;
 }
-/* .inlinelist .inlinelist-item:has(> a) {
-	padding: 0;
-}
-.inlinelist .inlinelist-item:has(> a) > a {
-	padding: .2em .5em;
-} */
 
-.inlinelist .inlinelist-item.active {
+.inlinelist .inlinelist-item:is(:has([aria-selected="true"]), .active) {
 	background-color: #222;
 	color: #fff;
 	font-weight: inherit;
 }
-.inlinelist .inlinelist-item.active :link,
-.inlinelist .inlinelist-item.active :visited {
+.inlinelist .inlinelist-item:is(:has([aria-selected="true"]), .active) :is(:link, :visited) {
 	color: #fff;
 }
 .inlinelist .inlinelist-item code {
@@ -46,7 +43,8 @@
 	display: inline-block;
 	position: relative;
 }
-@media (max-width: 26.8125em) { /* 429px */
+@media (max-width: 26.8125em) {
+	/* 429px */
 	.inlinelist .inlinelist-item {
 		overflow: hidden;
 	}
@@ -55,13 +53,14 @@
 		line-height: 1.75;
 	}
 }
-@media (min-width: 26.875em) { /* 430px */
+@media (min-width: 26.875em) {
+	/* 430px */
 	.inlinelist .inlinelist-item code {
 		float: none;
 	}
 	.inlinelist .inlinelist-item code:before {
 		content: " ";
-		border-left: 1px solid rgba(255,255,255,.8);
+		border-left: 1px solid rgba(255, 255, 255, 0.8);
 		position: absolute;
 		left: -2px;
 		top: -2px;
@@ -69,7 +68,7 @@
 	}
 	@media (prefers-color-scheme: dark) {
 		.inlinelist .inlinelist-item code:before {
-			border-left-color: rgba(0,0,0,.8);
+			border-left-color: rgba(0, 0, 0, 0.8);
 		}
 	}
 }
@@ -85,7 +84,7 @@ a.buzzword {
 	font-size: 100%;
 	line-height: 2;
 }
-@supports not(-webkit-box-decoration-break: clone) {
+@supports not (-webkit-box-decoration-break: clone) {
 	.buzzword,
 	.buzzword-list li,
 	.inlinelist .inlinelist-item {
@@ -126,11 +125,24 @@ a.buzzword {
 .rainbow-active:hover,
 .rainbow-active:focus {
 	position: relative;
-	background-image: linear-gradient(238deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff0080);
+	background-image: linear-gradient(
+		238deg,
+		#ff0000,
+		#ff8000,
+		#ffff00,
+		#80ff00,
+		#00ff00,
+		#00ff80,
+		#00ffff,
+		#0080ff,
+		#0000ff,
+		#8000ff,
+		#ff0080
+	);
 	background-size: 1200% 1200%;
 	background-position: 2% 80%;
 	color: #fff;
-	text-shadow: 0 0 2px rgba(0,0,0,.9);
+	text-shadow: 0 0 2px rgba(0, 0, 0, 0.9);
 	animation: rainbow 4s ease-out alternate infinite;
 }
 .inlinelist .inlinelist-item.inert,
@@ -183,7 +195,7 @@ a.rainbow-active:focus {
 	font-weight: 700;
 	text-transform: uppercase;
 	transform: rotate(-10deg) translate(-25%, -125%);
-	text-shadow: 1px 1px 5px rgba(0,0,0,.6);
+	text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
 	line-height: 1.2;
 	pointer-events: none;
 }
@@ -201,7 +213,8 @@ main p a.buzzword {
 }
 
 /* Small viewport */
-@media (max-width: 26.8125em) { /* 429px */
+@media (max-width: 26.8125em) {
+	/* 429px */
 	.inlinelist .inlinelist-item {
 		display: block;
 		width: auto;
@@ -210,10 +223,11 @@ main p a.buzzword {
 	}
 	.inlinelist .inlinelist-item > a {
 		display: block;
-		padding: .2em .5em;
+		padding: 0.2em 0.5em;
 	}
 }
-@media (min-width: 26.875em) { /* 430px */
+@media (min-width: 26.875em) {
+	/* 430px */
 	.inlinelist .inlinelist-item > a {
 		display: inline-block;
 		white-space: nowrap;
@@ -260,27 +274,6 @@ h2 .numberflag:after {
 @media (prefers-color-scheme: dark) {
 	h2 .numberflag:after {
 		background-color: #222;
-	}
-}
-
-/* Super featured list on home page */
-.list-superfeatured .avatar {
-	width: calc(30px + 5vw);
-	height: calc(30px + 5vw);
-	max-width: 60px;
-	max-height: 60px;
-	margin-left: 0;
-}
-@media (max-width: 26.8125em) { /* 429px */
-	.list-superfeatured .inlinelist-item > a {
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-}
-@media (min-width: 26.875em) { /* 430px */
-	.list-superfeatured .inlinelist-item {
-		font-size: 110%;
 	}
 }
 

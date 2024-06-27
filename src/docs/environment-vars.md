@@ -4,6 +4,7 @@ eleventyNavigation:
   key: Environment Variables
   order: 1.5
 ---
+
 # Environment Variables
 
 {% tableofcontents %}
@@ -11,6 +12,8 @@ eleventyNavigation:
 You can set and use your own environment variables in your projects. They will be available in your code via [Node.js’ `process.env` property](https://nodejs.org/api/process.html#process_process_env).
 
 These are typically used for setting your deployment context and private API keys. This is also the approach used to [enable `DEBUG` mode](/docs/debugging/).
+
+{% callout "info", "md" %}Note that Eleventy exposes environment variables only to JavaScript files that are evaluated during the build time. This includes the config file and all JavaScript files required from there, JavaScript data files, etc. **Environment variables are not available in the templates.** You need to expose them yourself. For example, using a [Global Data file](/docs/data-js/#example-exposing-environment-variables).{% endcallout %}
 
 [[toc]]
 
@@ -24,7 +27,7 @@ For private keys and other sensitive information, you’ll want to create a `.en
 
 ### Via the command line
 
-#### Mac OS (or Linux, etc)
+#### macOS or Linux (et al)
 
 ```bash
 MY_ENVIRONMENT=production npx @11ty/eleventy
@@ -36,32 +39,37 @@ MY_ENVIRONMENT=production npx @11ty/eleventy
 set MY_ENVIRONMENT=production & npx @11ty/eleventy
 ```
 
-#### Windows Powershell (VS Code default)
+#### Windows Powershell (default in VS Code)
 
 ```bash
 $env:MY_ENVIRONMENT="production"; npx @11ty/eleventy
 ```
 
-### Via an npm script
+#### Cross Platform npm scripts
 
-You can also use the above commands in an npm script in your project’s `package.json` file.
+Use the [`cross-env` package](https://github.com/kentcdodds/cross-env) to compatibly set your environment variables cross-platform.
+
+```sh
+npm install cross-env
+```
+
 
 {% codetitle "package.json" %}
 
 ```js
 {
   "scripts": {
-    "build:prod": "MY_ENVIRONMENT=production npx @11ty/eleventy"
+    "build:prod": "cross-env MY_ENVIRONMENT=production npx @11ty/eleventy"
   }
 }
 ```
 
 ## Use Case Ideas
 
-* [Expose Environment Variables to your templates using JavaScript Data Files](/docs/data-js/#example-exposing-environment-variables).
-* [Opt-in to `git Last Modified` only in production](/docs/dates/)
-* [Only perform Eleventy Serverless plugin copy (via `copyEnabled`) in production](/docs/plugins/serverless/#bundler-options)
-* Use fewer image formats in the [Image plugin](/docs/plugins/image/) to speed up local development
+- [Expose Environment Variables to your templates using JavaScript Data Files](/docs/data-js/#example-exposing-environment-variables).
+- [Opt-in to `git Last Modified` only in production](/docs/dates/)
+- [Only perform Eleventy Serverless plugin copy (via `copyEnabled`) in production](/docs/plugins/serverless/#bundler-options)
+- Use fewer image formats in the [Image plugin](/docs/plugins/image/) to speed up local development
 
 ## Eleventy Supplied
 
@@ -69,7 +77,8 @@ You can also use the above commands in an npm script in your project’s `packag
 
 Eleventy also supplies its own Eleventy-specific environment variables, usually intended for more advanced use cases. You can use these in your configuration or in data files as needed.
 
-* `process.env.ELEVENTY_ROOT` {% addedin "1.0.0" %} the absolute path to the directory in which you’ve run the Eleventy command.
-* `process.env.ELEVENTY_SOURCE` {% addedin "1.0.0" %} is the method in which Eleventy has run, current either `cli` or `script`.
-* `process.env.ELEVENTY_SERVERLESS` {% addedin "1.0.0" %} is set to `true` (String) if Eleventy is running in [serverless mode](/docs/plugins/serverless/). If Eleventy is _not_ running in serverless mode—due to Node forcing environment variables to be strings—this variable will not exist.
-* `process.env.ELEVENTY_RUN_MODE` {% addedin "2.0.0-beta.2" %} is one of `build`, `serve`, or `watch`.
+- `process.env.ELEVENTY_ROOT` {% addedin "1.0.0" %} the absolute path to the directory in which you’ve run the Eleventy command.
+- `process.env.ELEVENTY_SOURCE` {% addedin "1.0.0" %} is the method in which Eleventy has run, current either `cli` or `script`.
+- `process.env.ELEVENTY_SERVERLESS` {% addedin "1.0.0" %} is set to `true` (String) if Eleventy is running in [serverless mode](/docs/plugins/serverless/). If Eleventy is _not_ running in serverless mode—due to Node forcing environment variables to be strings—this variable will not exist.
+- `process.env.ELEVENTY_RUN_MODE` {% addedin "2.0.0-beta.2" %} is one of `build`, `serve`, or `watch`.
+- `process.env.ELEVENTY_VERSION` {% addedin "3.0.0-alpha.6" %} the current version of Eleventy (e.g. `"3.0.0-alpha.5"`).

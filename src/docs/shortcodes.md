@@ -13,6 +13,7 @@ tags:
   - related-handlebars
   - related-javascript
 ---
+
 # Shortcodes {% addedin "0.5.0" %}
 
 {% tableofcontents %}
@@ -22,8 +23,8 @@ Various template engines can be extended with shortcodes for easy reusable conte
 Here are a few examples:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "shortcode"} %}
+<seven-minute-tabs persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "shortcode", additions: "hbs"} %}
   <div id="shortcode-liquid" role="tabpanel">
     {% codetitle "sample.liquid" %}
 {%- highlight "liquid" %}{% raw %}
@@ -90,23 +91,24 @@ Markdown files are pre-processed as Liquid templates by default—any shortcodes
 
 Read more about using shortcodes on the individual Template Language documentation pages:
 
-* [JavaScript `*.11ty.js`](/docs/languages/javascript/#javascript-template-functions) (with async support)
-* [Liquid `*.liquid`](/docs/languages/liquid/#shortcodes) (with async support)
-* [Nunjucks `*.njk`](/docs/languages/nunjucks/#shortcodes) (with async support)
-* [Handlebars `*.hbs`](/docs/languages/handlebars/#shortcodes) (no async support)
+- [JavaScript `*.11ty.js`](/docs/languages/javascript/#javascript-template-functions) (with async support)
+- [Liquid `*.liquid`](/docs/languages/liquid/#shortcodes) (with async support)
+- [Nunjucks `*.njk`](/docs/languages/nunjucks/#shortcodes) (with async support)
+- [Handlebars `*.hbs`](/docs/languages/handlebars/#shortcodes) (no async support)
 
 ## Paired Shortcodes
 
 The shortcodes we saw above were nice, I suppose. But really, they are not all that different from a filter. The real ultimate power of Shortcodes comes when they are paired. Paired Shortcodes have a start and end tag—and allow you to nest other template content inside!
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pairedshortcodes"} %}
+<seven-minute-tabs persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pairedshortcodes", additions: "hbs"} %}
   <div id="pairedshortcodes-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
+
 ```liquid
 {% user firstName, lastName %}
   Hello {{ someOtherVariable }}.
@@ -114,6 +116,7 @@ The shortcodes we saw above were nice, I suppose. But really, they are not all t
   Hello {% anotherShortcode %}.
 {% enduser %}
 ```
+
 {% endraw %}
 
 The comma between arguments is **optional** in Liquid templates.
@@ -124,6 +127,7 @@ The comma between arguments is **optional** in Liquid templates.
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```jinja2
 {% user firstName, lastName %}
   Hello {{ someOtherVariable }}.
@@ -131,6 +135,7 @@ The comma between arguments is **optional** in Liquid templates.
   Hello {% anotherShortcode %}.
 {% enduser %}
 ```
+
 {% endraw %}
 
 The comma between arguments is **required** in Nunjucks.
@@ -141,33 +146,34 @@ The comma between arguments is **required** in Nunjucks.
 {% codetitle "Handlebars", "Syntax" %}
 
 {% raw %}
-```handlebars
-{{# user firstName lastName }}
-  Hello {{ someOtherVariable }}.
 
-  Hello {{ anotherShortcode }}.
-{{/ user }}
+```handlebars
+{{#user firstName lastName}}
+	Hello
+	{{someOtherVariable}}. Hello
+	{{anotherShortcode}}.
+{{/user}}
 ```
+
 {% endraw %}
 
   </div>
   <div id="pairedshortcodes-js" role="tabpanel">
 
 ```js
-module.exports = function(data) {
-  let userContent = `Hello ${data.someOtherVariable}
+module.exports = function (data) {
+	let userContent = `Hello ${data.someOtherVariable}
 
 Hello ${this.anotherShortCode()}`;
 
-  // pass the content as the first parameter.
-  return `<h1>${this.user(userContent, data.firstName, data.lastName)}</h1>`;
+	// pass the content as the first parameter.
+	return `<h1>${this.user(userContent, data.firstName, data.lastName)}</h1>`;
 };
 ```
 
   </div>
 </seven-minute-tabs>
 </is-land>
-
 
 When adding paired shortcodes using the Configuration API, the first argument to your shortcode callback is the nested content.
 
@@ -196,13 +202,12 @@ module.exports = function(eleventyConfig) {
 Markdown files are pre-processed as Liquid templates by default—any shortcodes available in Liquid templates are also available in Markdown files. Likewise, if you <a href="/docs/config/#default-template-engine-for-markdown-files">change the template engine for Markdown files</a>, the shortcodes available for that templating language will also be available in Markdown files.
 {% endcallout %}
 
-
 Read more about using paired shortcodes on the individual Template Language documentation pages:
 
-* [JavaScript `*.11ty.js`](/docs/languages/javascript/#javascript-template-functions) (with async support)
-* [Liquid `*.liquid`](/docs/languages/liquid/#shortcodes) (with async support)
-* [Nunjucks `*.njk`](/docs/languages/nunjucks/#shortcodes) (with async support)
-* [Handlebars `*.hbs`](/docs/languages/handlebars/#shortcodes) (no async support)
+- [JavaScript `*.11ty.js`](/docs/languages/javascript/#javascript-template-functions) (with async support)
+- [Liquid `*.liquid`](/docs/languages/liquid/#shortcodes) (with async support)
+- [Nunjucks `*.njk`](/docs/languages/nunjucks/#shortcodes) (with async support)
+- [Handlebars `*.hbs`](/docs/languages/handlebars/#shortcodes) (no async support)
 
 ## Asynchronous Shortcodes
 
@@ -211,14 +216,25 @@ This is supported by Liquid, Nunjucks, and JavaScript template types (Handlebars
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Async support for `addShortcode` and `addPairedShortcode` is new in Eleventy {{ "2.0.0-canary.24" | coerceVersion }}
-  eleventyConfig.addShortcode("single", async function(myName) { /* … */ });
-  eleventyConfig.addPairedShortcode("paired", async function(content, myName) { /* … */ });
+module.exports = function (eleventyConfig) {
+	// Async support for `addShortcode` and `addPairedShortcode` is new in Eleventy {{ "2.0.0-canary.24" | coerceVersion }}
+	eleventyConfig.addShortcode("single", async function (myName) {
+		/* … */
+	});
+	eleventyConfig.addPairedShortcode("paired", async function (content, myName) {
+		/* … */
+	});
 
-  // Async methods available in Eleventy v0.10.0+
-  eleventyConfig.addAsyncShortcode("single", async function(myName) { /* … */ });
-  eleventyConfig.addPairedAsyncShortcode("paired", async function(content, myName) { /* … */ });
+	// Async methods available in Eleventy v0.10.0+
+	eleventyConfig.addAsyncShortcode("single", async function (myName) {
+		/* … */
+	});
+	eleventyConfig.addPairedAsyncShortcode(
+		"paired",
+		async function (content, myName) {
+			/* … */
+		}
+	);
 };
 ```
 
@@ -226,21 +242,20 @@ module.exports = function(eleventyConfig) {
 
 A few Eleventy-specific data properties are available to shortcode callbacks.
 
-* `this.page` {% addedin "0.11.0" %}
-* `this.eleventy` {% addedin "2.0.0-canary.5" %}
+- `this.page` {% addedin "0.11.0" %}
+- `this.eleventy` {% addedin "2.0.0-canary.5" %}
 
 {% codetitle ".eleventy.js" %}
 
 ```js
-module.exports = function(eleventyConfig) {
-  // Make sure you’re not using an arrow function here: () => {}
-  eleventyConfig.addShortcode("myShortcode", function() {
-    // this.page
-    // this.eleventy
-  });
+module.exports = function (eleventyConfig) {
+	// Make sure you’re not using an arrow function here: () => {}
+	eleventyConfig.addShortcode("myShortcode", function () {
+		// this.page
+		// this.eleventy
+	});
 };
 ```
-
 
 ## Per-Engine Shortcodes
 

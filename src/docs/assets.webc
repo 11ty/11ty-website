@@ -75,7 +75,7 @@ module.exports = function(eleventyConfig) {
 		<li data-filter-code="js">Reference the JavaScript file in your HTML using <syntax-highlight language="html"><script src="/bundle.js"></script></syntax-highlight></li>
 	</ol>
 
-	<details class="expand-background" data-filter-code="js,css">
+	<details class="details-expand-bg" data-filter-code="js,css">
 		<summary>Expand for an example using Concatention, pulling in from <span data-filter-code="css">CSS</span><span data-filter-code="js">JavaScript</span> from multiple sources.</summary>
 
 		<p>You can use the Nunjucks and Liquid <code>include</code> tag to do simple concatenation.</p>
@@ -152,7 +152,7 @@ permalink: bundle.js
 		</ul>
 	</details>
 
-	<details class="expand-background">
+	<details class="details-expand-bg">
 		<summary>Expand to see Community Resources using this approach.</summary>
 		<p>In the article below, Max showcases how to use an <code>styles.11ty.js</code> template file to generate a one-off Sass-compiled stylesheet:</p>
 

@@ -1,16 +1,14 @@
 ---
-title: Eleventy Not-So-Private Admin Dashboard
+headerTitle: Eleventy Not-So-Private Admin Dashboard
 ignoreSupporters: true
 ignoreFooterTestimonial: true
 ignoreGitHubButtons: true
 eleventyExcludeFromCollections: true
-layout: layouts/main.njk
+layout: layouts/docs.njk
 ---
-{{ title }}
-
 ## Budget
 
-* See also the [Open Collective Budget page for the current balance](https://opencollective.com/11ty#section-budget).
+- See also the [Open Collective Budget page for the current balance](https://opencollective.com/11ty#section-budget).
 
 ### Monthly Contributor Count
 
@@ -23,8 +21,9 @@ layout: layouts/main.njk
 _Monthly donations:_
 
 {%- for donation,count in opencollectiveMonthly.buckets %}
-* `{{ donation | displayPrice }}` _(×{{ count }}) {{ opencollectiveMonthly.names[donation] | join(", ") }}_
-{%- endfor %}
+
+- `{{ donation | displayPrice }}` _(×{{ count }}) {{ opencollectiveMonthly.names[donation] | join(", ") }}_
+  {%- endfor %}
 
 _Median monthly donation:_ `{{ opencollectiveMonthly.stats.median | displayPrice }}`
 _Mean monthly donation:_ `{{ opencollectiveMonthly.stats.mean | displayPrice }}`
@@ -37,6 +36,6 @@ _The monthly amount ×12_ 😇
 
 ## Sites
 
-{% for key, site in builtwith -%}{% if site.url and site.superfeatured -%}
+{% for key, site in builtwith -%}{% if site.url and site.featured -%}
 {% generatoravatar site.url %} [`{{ site.url }}`]({{site.url}})
 {% endif %}{%- endfor %}

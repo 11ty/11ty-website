@@ -1,18 +1,16 @@
 .announcement {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	width: 100%;
 	background-color: #111;
 	font-weight: 500;
-	padding: .25em 1em;
+	padding: 0.25em 1em;
 	text-align: center;
-	width: calc(100% + 2rem);
-	margin-left: -1rem;
-	margin-right: -1rem;
 	line-height: 1;
 }
-@media (min-width: 48em) { /* 768px */
+@media (min-width: 48em) {
+	/* 768px */
 	.announcement {
 		font-size: 1em;
 		font-size: clamp(1em, 2vw, 1.25em);
@@ -21,8 +19,11 @@
 .announcement > a,
 .announcement > span {
 	display: inline-block;
-	padding: .35em 0;
+	padding: 0.35em 0;
 	text-decoration: none;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .announcement a:hover {
 	text-decoration: underline;
@@ -35,7 +36,32 @@
 .announcement a:after {
 	display: none;
 }
-/* Blend the banner on the home page */
-.elv-header-default .announcement {
-  background-color: #222;
+
+.announcement .fundraising {
+	display: block;
+	font-size: .75em;
+	width: 100%;
+	padding: 0;
+}
+.announcement a.fundraising {
+	text-decoration: none;
+}
+@media (prefers-color-scheme: dark) {
+	.announcement .fundraising fundraising-status {
+		--fs-background: rgba(255,255,255,.6);
+	}
+}
+.announcement .fundraising fundraising-status:defined {
+	margin-inline: auto;
+	max-width: 30em;
+}
+.announcement .fundraising img {
+	width: 2em;
+	height: 2em;
+}
+.announcement .fundraising-label {
+	display: flex;
+	align-items: center;
+	gap: .5em;
+	margin-right: .5em;
 }

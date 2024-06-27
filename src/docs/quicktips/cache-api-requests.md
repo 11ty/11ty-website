@@ -1,8 +1,8 @@
 ---
-tipindex: "009"
 tiptitle: "Cache Data Requests"
 date: 2020-04-23
 ---
+
 {% callout "info" %}
 Read the full <a href="/docs/plugins/fetch/">documentation at the <code>eleventy-fetch</code> plugin page</a>.
 {% endcallout %}
@@ -19,9 +19,9 @@ npm install @11ty/eleventy-fetch
 
 ## Features
 
-* Makes at most one network request in the `duration` time span—save on both your API limit count and your build time!
-* Easy graceful handling of bad network requests to an API.
-* If your cache expires and it makes another request, and that request fails—it automatically falls back to the expired cache entry! This is especially useful if you’re developing without a network connection (airplane-driven-development)—your site will work the same as it did with the network connection—no changes required to your local development environment.
+- Makes at most one network request in the `duration` time span—save on both your API limit count and your build time!
+- Easy graceful handling of bad network requests to an API.
+- If your cache expires and it makes another request, and that request fails—it automatically falls back to the expired cache entry! This is especially useful if you’re developing without a network connection (airplane-driven-development)—your site will work the same as it did with the network connection—no changes required to your local development environment.
 
 ## Example
 
@@ -32,16 +32,16 @@ This code is currently in use on the Eleventy web site to display GitHub stars i
 ```js
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
-module.exports = async function() {
-  // https://developer.github.com/v3/repos/#get
-  let json = await EleventyFetch("https://api.github.com/repos/11ty/eleventy", {
-    duration: "1d", // 1 day
-    type: "json" // also supports "text" or "buffer"
-  });
+module.exports = async function () {
+	// https://developer.github.com/v3/repos/#get
+	let json = await EleventyFetch("https://api.github.com/repos/11ty/eleventy", {
+		duration: "1d", // 1 day
+		type: "json", // also supports "text" or "buffer"
+	});
 
-  return {
-    stargazers: json.stargazers_count
-  };
+	return {
+		stargazers: json.stargazers_count,
+	};
 };
 ```
 
@@ -59,22 +59,25 @@ Wrap the above code in a nice `try catch` allows you to return a fake data set i
 ```js
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
-module.exports = async function() {
-  try {
-    // https://developer.github.com/v3/repos/#get
-    let json = await EleventyFetch("https://api.github.com/repos/11ty/eleventy", {
-      duration: "1d", // 1 day
-      type: "json" // also supports "text" or "buffer"
-    });
+module.exports = async function () {
+	try {
+		// https://developer.github.com/v3/repos/#get
+		let json = await EleventyFetch(
+			"https://api.github.com/repos/11ty/eleventy",
+			{
+				duration: "1d", // 1 day
+				type: "json", // also supports "text" or "buffer"
+			}
+		);
 
-    return {
-      stargazers: json.stargazers_count
-    };
-  } catch(e) {
-    console.log( "Failed getting GitHub stargazers count, returning 0" );
-    return {
-      stargazers: 0
-    };
-  }
+		return {
+			stargazers: json.stargazers_count,
+		};
+	} catch (e) {
+		console.log("Failed getting GitHub stargazers count, returning 0");
+		return {
+			stargazers: 0,
+		};
+	}
 };
 ```
