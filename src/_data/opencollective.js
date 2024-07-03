@@ -52,7 +52,7 @@ function getUniqueContributors(orders, githubSponsorsAmount) {
 
 export default async function () {
 	try {
-		let url = `https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000&status=paid,active`;
+		let url = `https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000`;
 		let json = await EleventyFetch(url, {
 			type: "json",
 			duration: "30m",
@@ -61,6 +61,9 @@ export default async function () {
 		});
 
 		let orders = json.nodes
+			.filter(order => {
+				return order.status !== "CANCELLED";
+			})
 			.map((order) => {
 				order.name = order.fromAccount.name;
 				order.slug = order.fromAccount.slug;
@@ -73,6 +76,7 @@ export default async function () {
 				order.hasDefaultAvatar =
 					order.image ===
 					`https://images.opencollective.com/${order.slug}/avatar.png`;
+
 				return order;
 			});
 
