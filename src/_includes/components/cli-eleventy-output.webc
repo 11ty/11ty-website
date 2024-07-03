@@ -1,6 +1,10 @@
 <style webc:scoped>
 .highlight-line:last-child,
 .highlight-line:last-child * {
+	color: #5e78d6 !important;
+}
+.highlight-line:nth-last-child(5),
+.highlight-line:nth-last-child(5) * {
 	color: #10875a !important;
 }
 :host pre {
@@ -17,5 +21,5 @@
 <script webc:type="js">
 let version = latestVersion($data.versions, $data.config);
 let versionSuffix = showVersion === "" ? ` (${version})` : "";
-this.helpers.highlight("", `${this.slots.text.default.trim()}${versionSuffix}`, "/", "-"); // `"/", "-"` enables line wrapping
+this.helpers.highlight("", this.slots.text.default.trim().replaceAll("%%VERSION%%", versionSuffix), "/", "-"); // `"/", "-"` enables line wrapping
 </script>

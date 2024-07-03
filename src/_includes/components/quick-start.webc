@@ -44,18 +44,18 @@ npx @11ty/create index.md "# Heading"
 	</div>
 	<div id="quickstart-run-npm" role="tabpanel">
 		<syntax-highlight language="bash">
-npx @11ty/eleventy
+npx @11ty/eleventy --serve
 		</syntax-highlight>
 	</div>
 	<div id="quickstart-run-pnpm" role="tabpanel">
 		<syntax-highlight language="bash">
-pnpm dlx @11ty/eleventy
+pnpm dlx @11ty/eleventy --serve
 		</syntax-highlight>
 		<p>Learn more about <a href="https://pnpm.io/">pnpm</a> (it requires separate installation).</p>
 	</div>
 	<div id="quickstart-run-yarn" role="tabpanel">
 		<syntax-highlight language="bash">
-yarn dlx @11ty/eleventy
+yarn dlx @11ty/eleventy --serve
 		</syntax-highlight>
 		<p>Learn more about <a href="https://yarnpkg.com/">yarn</a> (it requires separate installation).</p>
 	</div>
@@ -64,11 +64,13 @@ yarn dlx @11ty/eleventy
 <p>Eleventy compiles any files in the current directory matching valid <a href="/docs/languages/">file extensions</a> (<code>md</code> is one of many) to the <code>_site</code> output folder. It might look like this:</p>
 
 <cli-eleventy-output @show-version>
-Writing _site/index.html from ./index.md (liquid)
-Wrote 1 file in 0.03 seconds
+[11ty] Writing _site/index.html from ./index.md (liquid)
+[11ty] Wrote 1 file in 0.03 seconds%%VERSION%%
+[11ty] Watching…
+[11ty] Server at http://localhost:8080/
 </cli-eleventy-output>
 
-<p>Run <code>npx @11ty/eleventy --serve</code> to start up a <a href="/docs/dev-server/">local development server</a> and open <code>http://localhost:8080/</code> in your web browser of choice to see your web site.</p>
+<p>The <code>--serve</code> option also starts a <a href="/docs/dev-server/">local development server</a>. Open up <code>http://localhost:8080/</code> in your favorite web browser to view your web site.</p>
 
 <ul>
 	<li>Read our full <a href="/docs/"><strong>Get Started guide</strong></a> on the docs.</li>
