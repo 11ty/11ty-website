@@ -50,12 +50,17 @@ table .elv-callout {
 	padding: 0.75em 1em; /* 12px 16px /16 */
 }
 
-.elv-callout-c > p:first-child {
+.elv-callout-c > p:first-child,
+.elv-callout-c > ul:first-child,
+.elv-callout-c > ol:first-child {
 	margin-top: 0;
 }
-.elv-callout-c > p:last-child {
+.elv-callout-c > p:last-child,
+.elv-callout-c > ul:last-child,
+.elv-callout-c > ol:last-child {
 	margin-bottom: 0;
 }
+
 
 .elv-callout {
 	display: flex;

@@ -34,11 +34,32 @@ npx @11ty/create index.md "# Heading"
 	</div>
 </seven-minute-tabs>
 
-<p>Run Eleventy.</p>
+<p>Run Eleventy using <code>npx</code>, an <a href="https://www.npmjs.com/">npm</a>-provided command that is bundled with Node.js.</p>
 
-<syntax-highlight language="bash">
+<seven-minute-tabs class="tabs-full tabs-flush tabs-firstonly" persist sync>
+	<div role="tablist" aria-label="Choose your Package Manager">
+		<a href="#quickstart-run-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
+		<a href="#quickstart-run-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
+		<a href="#quickstart-run-yarn" role="tab" data-tabs-persist="pkgmgr:yarn">yarn</a>
+	</div>
+	<div id="quickstart-run-npm" role="tabpanel">
+		<syntax-highlight language="bash">
 npx @11ty/eleventy
-</syntax-highlight>
+		</syntax-highlight>
+	</div>
+	<div id="quickstart-run-pnpm" role="tabpanel">
+		<syntax-highlight language="bash">
+pnpm dlx @11ty/eleventy
+		</syntax-highlight>
+		<p>Learn more about <a href="https://pnpm.io/">pnpm</a> (it requires separate installation).</p>
+	</div>
+	<div id="quickstart-run-yarn" role="tabpanel">
+		<syntax-highlight language="bash">
+yarn dlx @11ty/eleventy
+		</syntax-highlight>
+		<p>Learn more about <a href="https://yarnpkg.com/">yarn</a> (it requires separate installation).</p>
+	</div>
+</seven-minute-tabs>
 
 <p>Eleventy compiles any files in the current directory matching valid <a href="/docs/languages/">file extensions</a> (<code>md</code> is one of many) to the <code>_site</code> output folder. It might look like this:</p>
 

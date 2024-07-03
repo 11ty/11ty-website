@@ -23,6 +23,9 @@ seven-minute-tabs [role="tablist"] {
 	gap: .125em .25em;
 	line-height: 1.8;
 }
+seven-minute-tabs.tabs-right [role="tablist"] {
+	justify-content: flex-end;
+}
 seven-minute-tabs [role="tablist"].has-label {
 	text-indent: 1rem;
 }
@@ -51,8 +54,11 @@ seven-minute-tabs [role="tab"] {
 	}
 }
 @media (min-width: 28.125em) and (max-width: 54.9375em) { /* 450px–879px */
-	seven-minute-tabs [role="tablist"]:not(.has-label) [role="tab"]:first-child {
+	seven-minute-tabs:not(.tabs-right) [role="tablist"]:not(.has-label) [role="tab"]:first-child {
 		border-top-left-radius: 0;
+	}
+	seven-minute-tabs.tabs-right [role="tablist"]:not(.has-label) [role="tab"]:last-child {
+		border-top-right-radius: 0;
 	}
 }
 seven-minute-tabs [role="tab"][aria-selected="true"] {
@@ -69,7 +75,12 @@ seven-minute-tabs [role="tabpanel"] {
 @media (min-width: 55em) { /* 880px */
 	seven-minute-tabs [role="tabpanel"] {
 		border-radius: .3125rem;
+	}
+	seven-minute-tabs:not(.tabs-right) [role="tabpanel"] {
 		border-top-left-radius: 0;
+	}
+	seven-minute-tabs.tabs-right [role="tabpanel"] {
+		border-top-right-radius: 0;
 	}
 }
 
@@ -89,3 +100,15 @@ seven-minute-tabs [role="tabpanel"] .elv-callout {
 	margin-inline: 0;
 }
 
+/* Only show the first tab pre-JS */
+seven-minute-tabs.tabs-firstonly:not(:defined) [role="tablist"] {
+	display: none;
+}
+seven-minute-tabs.tabs-firstonly:not(:defined) [role="tablist"] + [role="tabpanel"] ~ * {
+	display: none;
+}
+@media (min-width: 55em) { /* 880px */
+	seven-minute-tabs.tabs-firstonly:not(:defined) [role="tabpanel"] {
+		border-radius: .3125rem;
+	}
+}

@@ -109,6 +109,10 @@ pre + .note {
 	color: #aaa;
 	content: "~/eleventy-sample $ ";
 }
+[data-preprefix-lastlinegreen] .highlight-line:last-child,
+[data-preprefix-lastlinegreen] .highlight-line:last-child * {
+	color: #0dbc79 !important;
+}
 
 pre[class*="language-diff-"] {
 	padding-left: 0;

@@ -976,6 +976,15 @@ to:
 				shortcodes.getIndieAvatarHtml("https://www.11ty.dev/") + "Eleventy"
 			);
 	});
+
+	eleventyConfig.addFilter("packageManagerCodeTransform", (content, type) => {
+		if(type === "yarn") {
+			return content.replaceAll("npx @11ty/", "yarn exec ");
+		} else if(type === "pnpm") {
+			return content.replaceAll("npx @11ty/", "pnpm exec ");
+		}
+		return content;
+	});
 };
 
 export const config = {
