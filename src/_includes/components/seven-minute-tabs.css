@@ -19,12 +19,13 @@ seven-minute-tabs {
 }
 seven-minute-tabs [role="tablist"] {
 	display: flex;
-	flex-wrap: wrap;
-	gap: .125em .25em;
+	gap: .25em;
 	line-height: 1.8;
+	margin: 0 .5em 0 0;
 }
 seven-minute-tabs.tabs-right [role="tablist"] {
 	justify-content: flex-end;
+	margin: 0 0 0 .5em;
 }
 seven-minute-tabs [role="tablist"].has-label {
 	text-indent: 1rem;
@@ -35,25 +36,27 @@ seven-minute-tabs [role="tablist"]:last-child {
 seven-minute-tabs [role="tab"] {
 	background-color: var(--smt-tab-bg);
 	color: var(--smt-tab-text);
-	display: block;
+	display: flex;
+	align-items: flex-end;
 	font-size: 0.9375em; /* 15px /16 */
 	font-weight: 500;
-	padding: .25em 1rem;
+	padding: 0 1rem;
+	margin: 0;
 	text-decoration: none;
-	flex-basis: 20em;
-	flex-grow: 1;
+	min-width: min-content;
+	flex-basis: auto;
+	flex-grow: 0;
 	text-indent: 0;
+	border-radius: .25em .25em 0 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
-@media (min-width: 28.125em) { /* 450px */
+@media (max-width: 24.9375em) { /* 399px */
 	seven-minute-tabs [role="tab"] {
-		flex-basis: auto;
-		flex-grow: 0;
-		border-radius: .25em .25em 0 0;
-		padding: 0 1rem;
-		margin: 0;
+		font-size: 0.8125em; /* 13px /16 */
 	}
 }
-@media (min-width: 28.125em) and (max-width: 54.9375em) { /* 450px–879px */
+@media (max-width: 54.9375em) { /* 879px */
 	seven-minute-tabs:not(.tabs-right) [role="tablist"]:not(.has-label) [role="tab"]:first-child {
 		border-top-left-radius: 0;
 	}
@@ -112,3 +115,42 @@ seven-minute-tabs.tabs-firstonly:not(:defined) [role="tablist"] + [role="tabpane
 		border-radius: .3125rem;
 	}
 }
+
+/* Make tab padding slightly smaller at small viewport */
+@media (max-width: 31.1875em) { /* 499px */
+	seven-minute-tabs {
+		&:not(.tabs-right) {
+			[role="tab"]:not(:first-child) {
+				padding-left: .5rem;
+			}
+
+			[role="tab"] {
+				padding-right: .5rem;
+			}
+		}
+
+		&.tabs-right {
+			[role="tab"]:not(:last-child) {
+				padding-right: .5rem;
+			}
+
+			[role="tab"] {
+				padding-left: .5rem;
+			}
+		}
+	}
+}
+
+/* More than 5 tabs, tabs wrap and grow */
+seven-minute-tabs:has([role="tab"]:nth-last-child(n+5)) [role="tablist"] {
+	flex-wrap: wrap;
+}
+
+@media (max-width: 31.1875em) { /* 499px */
+	seven-minute-tabs:has([role="tab"]:nth-last-child(n+5)) {
+		[role="tab"] {
+			flex-grow: 1;
+		}
+	}
+}
+
