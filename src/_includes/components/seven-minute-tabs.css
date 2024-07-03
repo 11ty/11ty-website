@@ -118,26 +118,20 @@ seven-minute-tabs.tabs-firstonly:not(:defined) [role="tablist"] + [role="tabpane
 
 /* Make tab padding slightly smaller at small viewport */
 @media (max-width: 31.1875em) { /* 499px */
-	seven-minute-tabs {
-		&:not(.tabs-right) {
-			[role="tab"]:not(:first-child) {
-				padding-left: .5rem;
-			}
+	seven-minute-tabs:not(.tabs-right) [role="tab"]:not(:first-child) {
+		padding-left: .5rem;
+	}
 
-			[role="tab"] {
-				padding-right: .5rem;
-			}
-		}
+	seven-minute-tabs:not(.tabs-right) [role="tab"] {
+		padding-right: .5rem;
+	}
 
-		&.tabs-right {
-			[role="tab"]:not(:last-child) {
-				padding-right: .5rem;
-			}
+	seven-minute-tabs.tabs-right [role="tab"]:not(:last-child) {
+		padding-right: .5rem;
+	}
 
-			[role="tab"] {
-				padding-left: .5rem;
-			}
-		}
+	seven-minute-tabs.tabs-right [role="tab"] {
+		padding-left: .5rem;
 	}
 }
 
@@ -147,10 +141,8 @@ seven-minute-tabs:has([role="tab"]:nth-last-child(n+5)) [role="tablist"] {
 }
 
 @media (max-width: 31.1875em) { /* 499px */
-	seven-minute-tabs:has([role="tab"]:nth-last-child(n+5)) {
-		[role="tab"] {
-			flex-grow: 1;
-		}
+	seven-minute-tabs:has([role="tab"]:nth-last-child(n+5)) [role="tab"] {
+		flex-grow: 1;
 	}
 }
 
