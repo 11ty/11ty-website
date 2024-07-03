@@ -1076,6 +1076,41 @@ There are a few wrinkles when using an HTML parser with custom elements. Notably
 
 </details>
 
+#### `<table>` Components
+
+Due to WebC's use of the parse5 library, all WebC files to be processed undergo parsing and tokenization in the same way a web browser would parse them. For this reason, putting a `<table>` tag in a custom WebC element and it's `<tr>` and `<td>` tags in a slot to be inserted into the table will cause the `<tr>` and `<td>` elements to be removed upon initial parsing and all internals of the table to be placed as a sibling to itself. This is caused by the parse5 library believing the `<tr>` and `<td>` tags are orphaned.
+
+To workaround this limitation, use [`webc:is`](#webcis) for the `<table>`, `<tr>`, and `<td>` elements.
+
+<details>
+<summary>Expand for an example workaround</summary>
+
+The above example assumes the existence of `_includes/my-layout.webc` (an [Eleventy layout](/docs/layouts/)).
+
+{% codetitle "_includes/my-layout.webc" %}
+
+```html
+...
+<my-table>
+	<x webc:is="tr">
+		<x webc:is="td">
+			My Table Content
+		</x>
+	</x>
+</my-table>
+...
+```
+
+
+{% codetitle "components/my-table.webc" %}
+```html
+<x webc:is="table">
+	<slot></slot>
+</x>
+```
+
+</details>
+
 #### Rendering Modes
 
 There are two different rendering modes in Eleventy: `page` and `component`. We attempt to guess the rendering mode that you’d like based on the markup you supply. The `page` rendering mode is for rendering full HTML pages. The `component` rendering mode is for fragments of HTML. Most of the time you won’t need to worry about this distinction but it is included in the documentation for completeness.
