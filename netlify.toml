@@ -104,6 +104,12 @@ to = "/docs/plugins/fetch/"
 status = 301
 force = true
 
+[[redirects]]
+from = "/docs/plugins/partial-hydration/"
+to = "/docs/plugins/is-land/"
+status = 301
+force = true
+
 [[headers]]
 for = "/api/*"
 
