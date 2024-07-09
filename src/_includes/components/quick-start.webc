@@ -51,13 +51,13 @@ npx @11ty/eleventy --serve
 		<syntax-highlight language="bash">
 pnpm dlx @11ty/eleventy --serve
 		</syntax-highlight>
-		<p>Learn more about <a href="https://pnpm.io/">pnpm</a> (it requires separate installation).</p>
+		<p><a href="https://pnpm.io/">pnpm</a> is an <em>optional</em> alternative to npm that needs to be installed separately.</p>
 	</div>
 	<div id="quickstart-run-yarn" role="tabpanel">
 		<syntax-highlight language="bash">
 yarn dlx @11ty/eleventy --serve
 		</syntax-highlight>
-		<p>Learn more about <a href="https://yarnpkg.com/">yarn</a> (it requires separate installation).</p>
+		<p><a href="https://yarnpkg.com/">Yarn</a> is an <em>optional</em> alternative to npm that needs to be installed separately.</p>
 	</div>
 </seven-minute-tabs>
 
