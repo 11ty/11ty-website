@@ -78,7 +78,7 @@ module.exports = async function (eleventyConfig) {
 
 Per feedback from our [community survey](https://www.11ty.dev/blog/community-survey-results/) we’re making a few big changes in Eleventy v3.0 we’re referring to as [Project Slipstream](https://github.com/11ty/eleventy/pull/3074).
 
-- Low interest in `pug`, `hbs`, `mustache`, `ejs`, or `haml` has prompted their removal (from core) as well. But if you use these, do not despair. We have a future plan to [move `pug` into plugin-land as an officially supported plugin for the v3.0 stable release](https://github.com/11ty/eleventy/issues/3081). I you are interested in the others, please [leave an upvote on the appropriate comment in Issue #3124](https://github.com/11ty/eleventy/issues/3124).
+- Low interest in `pug`, `hbs`, `mustache`, `ejs`, or `haml` has prompted their removal (from core) as well. But if you use these, do not despair. We have a future plan to [move `pug` into plugin-land as an officially supported plugin for the v3.0 stable release](https://github.com/11ty/eleventy/issues/3081). If you are interested in the others, please [leave an upvote on the appropriate comment in Issue #3124](https://github.com/11ty/eleventy/issues/3124).
 - Low-interest in our vendor-locked 😬 plugins (Netlify Serverless and Netlify Edge) prompted their removal as we rededicate to static site generation and the hosting portability of Jamstack. You will still be able to run Eleventy in serverless environments, but the Eleventy project will not manage this code directly.
 
 _If you’re interested in the [unique benefits of the Jamstack](https://www.zachleat.com/web/jamstack-future/) and want to learn more, join us at [thefutureofjamstack.org](https://thefutureofjamstack.org/):_
