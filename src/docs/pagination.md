@@ -20,10 +20,10 @@ To iterate over a data set and create pages for individual chunks of data, use p
 Consider the following template, which will result in two pages being created, each of which will display two items from `testdata`:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-array"} %}
   <div id="paged-array-liquid" role="tabpanel">
-    {%- codetitle "paged.liquid" %}
+
     {%- highlight "liquid" %}
     {%- include "examples/pagination/paged-array.njk" %}
     {%- endhighlight %}
@@ -32,7 +32,7 @@ If the above file were named `paged.liquid`, it would create two pages in your o
 
   </div>
   <div id="paged-array-njk" role="tabpanel">
-    {%- codetitle "paged.njk" %}
+
     {%- highlight "jinja2" %}
     {%- include "examples/pagination/paged-array.njk" %}
     {%- endhighlight %}
@@ -41,7 +41,7 @@ If the above file were named `paged.njk`, it would create two pages in your outp
 
   </div>
   <div id="paged-array-js" role="tabpanel">
-    {%- codetitle "paged.11ty.js" %}
+
     {%- highlight "js" %}
     {%- include "examples/pagination/paged-array.js" %}
     {%- endhighlight %}
@@ -123,11 +123,9 @@ Learn how to create a list of links to every paginated page on a pagination temp
 All of the examples thus far have paged Array data. Eleventy does allow paging objects too. Objects are resolved to pagination arrays using either the `Object.keys` or `Object.values` JavaScript functions. Consider the following templates:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedobj"} %}
   <div id="pagedobj-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -153,8 +151,6 @@ testdata:
   </div>
   <div id="pagedobj-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -178,8 +174,6 @@ testdata:
 
   </div>
   <div id="pagedobj-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 
