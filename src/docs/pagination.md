@@ -275,11 +275,9 @@ This resolves to:
 Your front matter would look like this:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedatafile"} %}
   <div id="pagedatafile-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -301,8 +299,6 @@ pagination:
   </div>
   <div id="pagedatafile-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -323,8 +319,6 @@ pagination:
   </div>
 
   <div id="pagedatafile-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 
@@ -431,11 +425,9 @@ Using a universal `slug` filter (transforms `My Item` to `my-item`), this output
 Ok, so `pagination.items[0]` is ugly. We provide an option to alias this to something different.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedalias"} %}
   <div id="pagedalias-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -458,8 +450,6 @@ You can use the alias in your content too {{ wonder }}.
   </div>
   <div id="pagedalias-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -480,8 +470,6 @@ You can use the alias in your content too {{ wonder }}.
 
   </div>
   <div id="pagedalias-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 
@@ -516,11 +504,9 @@ This writes to `_site/different/item1/index.html` and `_site/different/item2/ind
 If your chunk `size` is greater than 1, the alias will be an array instead of a single value.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedchunk"} %}
   <div id="pagedchunk-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -545,8 +531,6 @@ You can use the alias in your content too {{ wonder[0] }}.
   </div>
   <div id="pagedchunk-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -569,8 +553,6 @@ You can use the alias in your content too {{ wonder[0] }}.
 
   </div>
   <div id="pagedchunk-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 
@@ -612,11 +594,9 @@ This writes to `_site/different/item1/index.html` and `_site/different/item3/ind
 If you’d like to make a paginated list of all of your blog posts (any content with the tag `post` on it), use something like the following template to iterate over a specific collection:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedcollection"} %}
   <div id="pagedcollection-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -641,8 +621,6 @@ pagination:
   </div>
   <div id="pagedcollection-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -665,8 +643,6 @@ pagination:
 
   </div>
   <div id="pagedcollection-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 

@@ -32,6 +32,9 @@ seven-minute-tabs.tabs-right [role="tablist"] {
 seven-minute-tabs [role="tablist"].has-label {
 	text-indent: 1rem;
 }
+seven-minute-tabs [role="tablist"].has-label [role="tab"]:first-child {
+	margin-left: .5em;
+}
 seven-minute-tabs [role="tablist"]:last-child {
 	margin-top: 0.5rem;
 }
