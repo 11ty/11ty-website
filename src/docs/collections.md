@@ -83,6 +83,64 @@ exports.render = function (data) {
 </seven-minute-tabs>
 </is-land>
 
+### A note about using `-` in `tags`
+
+If you use the `-` to delimit your collection name in your `tags` (e.g. `tags: "post-with-dash"`), note that some template languages require square bracket notation to reference this in collections.
+
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collections-dashwarn"} %}
+  <div id="collections-dashwarn-liquid" role="tabpanel">
+
+{% raw %}
+
+```liquid
+<ul>
+{%- for post in collections.post-with-dash -%}
+  <li>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+```
+
+{% endraw %}
+
+  </div>
+  <div id="collections-dashwarn-njk" role="tabpanel">
+
+{% raw %}
+
+```jinja2
+<ul>
+{%- for post in collections['post-with-dash'] -%}
+  <li>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+```
+
+{% endraw %}
+
+  </div>
+  <div id="collections-dashwarn-js" role="tabpanel">
+
+{% raw %}
+
+```js
+exports.render = function (data) {
+	return `<ul>
+    ${data.collections['post-with-dash']
+			.map((post) => `<li>${post.data.title}</li>`)
+			.join("\n")}
+  </ul>`;
+};
+```
+
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>
+
+
 ### Declare your collections for incremental builds
 
 {% addedin "2.0.0-canary.21" %}Use the `eleventyImport` object to declare any collections you use (data cascade friendly) to inform the relationships for smarter incremental builds. This is an Array of collection names. Read more about [importing collections](https://github.com/11ty/eleventy/issues/975).
