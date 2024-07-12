@@ -537,22 +537,6 @@ ${text.trim()}
 		}
 	);
 
-	eleventyConfig.addFilter("orphanWrap", (str) => {
-		let splitSpace = str.split(" ");
-		let after = "";
-		if (splitSpace.length > 2) {
-			after += " ";
-
-			// TODO strip HTML from this?
-			let lastWord = splitSpace.pop();
-			let secondLastWord = splitSpace.pop();
-
-			after += `${secondLastWord}&nbsp;${lastWord}`;
-		}
-
-		return splitSpace.join(" ") + after;
-	});
-
 	function randomizeArray(arr) {
 		let a = arr.slice(0);
 		for (let i = a.length - 1; i > 0; i--) {
