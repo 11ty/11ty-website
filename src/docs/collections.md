@@ -85,7 +85,7 @@ exports.render = function (data) {
 
 ### A note about using `-` in `tags`
 
-If you use the `-` to delimit your collection name in your `tags` (e.g. `tags: "post-with-dash"`), note that some template languages require square bracket notation to reference this in collections. Read more at [Issue #567](https://github.com/11ty/eleventy/issues/567).
+If you use `-` in your collection names (e.g. `tags: "post-with-dash"`), remember that some template languages require square bracket notation to reference it in collections. Read more at [Issue #567](https://github.com/11ty/eleventy/issues/567).
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs persist sync class="tabs-flush">
