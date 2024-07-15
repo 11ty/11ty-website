@@ -24,5 +24,7 @@ src/_data/builtwith/
 netlify/edge-functions/_generated
 
 # Serverless
+netlify/functions/dynamic/*
+!netlify/functions/dynamic/index.js
 netlify/functions/serverless/*
 !netlify/functions/serverless/index.js
