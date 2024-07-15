@@ -82,3 +82,29 @@ Eleventy also supplies its own Eleventy-specific environment variables, usually 
 - `process.env.ELEVENTY_SERVERLESS` {% addedin "1.0.0" %} is set to `true` (String) if Eleventy is running in [serverless mode](/docs/plugins/serverless/). If Eleventy is _not_ running in serverless mode—due to Node forcing environment variables to be strings—this variable will not exist.
 - `process.env.ELEVENTY_RUN_MODE` {% addedin "2.0.0-beta.2" %} is one of `build`, `serve`, or `watch`.
 - `process.env.ELEVENTY_VERSION` {% addedin "3.0.0-alpha.6" %} the current version of Eleventy (e.g. `"3.0.0-alpha.5"`).
+
+## Disable Colors
+
+Node.js supports a [`NODE_DISABLE_COLORS` environment variable](https://nodejs.org/api/cli.html#node_disable_colors1) that will disable colorized text in the terminal output.
+
+<script type="module" src="/js/seven-minute-tabs.js"></script>
+<seven-minute-tabs class="tabs-full tabs-flush" persist sync>
+	<div role="tablist" aria-label="Choose your Operating System">
+		<a href="#disable-colors-nix" id="disable-colors-mac-btn" role="tab" data-tabs-persist="os:mac">macOS</a>
+		<a href="#disable-colors-nix" role="tab" data-tabs-persist="os:posix">Linux</a>
+		<a href="#disable-colors-win" role="tab" data-tabs-persist="os:win">Windows</a>
+		<a href="#disable-colors-all" role="tab" data-tabs-persist="os:all">Cross Platform</a>
+	</div>
+	<div id="disable-colors-nix" role="tabpanel">
+		{% highlight "sh" %}NODE_DISABLE_COLORS=1 npx @11ty/eleventy{% endhighlight %}
+	</div>
+	<div id="disable-colors-win" role="tabpanel">
+		{% highlight "sh" %}$env:NODE_DISABLE_COLORS="1"; npx @11ty/eleventy{% endhighlight %}
+		<p>Or with the older <code>cmd.exe</code>:</p>
+		{% highlight "sh" %}set NODE_DISABLE_COLORS=1 & npx @11ty/eleventy{% endhighlight %}
+	</div>
+	<div id="disable-colors-all" role="tabpanel">
+		{%- highlight "sh" %}npx cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy{% endhighlight %}
+		<p>Use the <a href="https://github.com/kentcdodds/cross-env"><code>cross-env</code> package</a> to compatibly set your environment variables cross-platform.</p>
+	</div>
+</seven-minute-tabs>
