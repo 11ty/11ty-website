@@ -2,7 +2,7 @@
 subtitle: Quick Tips
 menuSectionName: docs-quicktips
 tags:
-	- docs-getting-started
+  - docs-getting-started
 feedTitle: Quick Tips RSS Feed
 feedUrl: /docs/quicktips/feed.xml
 ---
