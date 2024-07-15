@@ -1,14 +1,14 @@
 ---
 subtitle: Usage
 tags:
-	- docs-getting-started
+  - docs-getting-started
 ---
 # Command Line Usage
 
 ```bash
 # Defaults: searches the current directory, outputs to ./_site
 eleventy
- 
+
 # Equivalent to
 eleventy --input=. --output=_site
 ```
@@ -76,7 +76,7 @@ eleventy --input=. --output=. --formats=md
 
 <div class="elv-callout elv-callout-warn">Careful with <code>--formats=html</code> here! If you run eleventy more than once, it’ll try to process the output files too. Read more at <a href="/docs/pitfalls/">Common Pitfalls</a>.
 
-<!-- 
+<!--
 ### Example: Process a Single File
 
 ```bash
