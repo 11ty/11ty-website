@@ -144,7 +144,7 @@ const shortcodes = {
 	},
 	getOpenCollectiveAvatarHtml(url, alt = "") {
 		if(!alt) {
-			alt = `Open Collective Avatar for ${slug}`;
+			alt = `Open Collective Avatar for ${url}`;
 		}
 
 		return `<img src="https://v1.image.11ty.dev/${encodeURIComponent(url)}/jpeg/66/" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
