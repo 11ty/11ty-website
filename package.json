@@ -8,11 +8,8 @@
   },
   "scripts": {
     "assets": "cp node_modules/@11ty/logo/logo.png .",
-    "links-external": "hyperlink -r --root _site --canonicalroot https://11ty.dev/ --skip '/.netlify/functions' _site/*.html | tap-spot",
-    "links-internal": "hyperlink -ri --root _site --canonicalroot https://11ty.dev/ --skip '/.netlify/functions' _site/*.html | tap-spot",
-    "deploy": "eleventy && node node-avatars && node node-screenshots && ./deploy.sh",
     "build": "eleventy",
-    "build-production": "node node-avatars.js && ELEVENTY_PRODUCTION=true eleventy"
+    "build-production": "ELEVENTY_PRODUCTION=true eleventy"
   },
   "repository": {
     "type": "git",
@@ -65,5 +62,8 @@
     "@11ty/logo": "2.0.4",
     "instant.page": "3.0.0",
     "prismjs": "1.19.0"
+  },
+  "overrides": {
+    "sharp": "^0.33.4"
   }
 }
