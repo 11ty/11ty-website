@@ -5,7 +5,8 @@
   "main": "_site/index.html",
   "scripts": {
     "assets": "cp node_modules/@11ty/logo/logo.png .",
-    "build": "npx eleventy"
+    "build": "npx eleventy",
+    "build-production": "npx eleventy"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,7 @@
   },
   "homepage": "https://github.com/11ty/11ty.io#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.5.4",
+    "@11ty/eleventy": "v0.5.4",
     "@11ty/eleventy-plugin-rss": "^1.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^1.0.5",
     "clean-css": "^4.1.11",
