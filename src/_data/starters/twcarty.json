@@ -4,5 +4,4 @@
   "description": "Eleventy starter project with card layout from DaisyUI",
 	"author": "Apoxicam",
   "demo": "https://twcarty.netlify.app"
-  "excludedFromLeaderboards": false
 }
