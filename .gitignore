@@ -6,3 +6,4 @@ node-supporters/
 .log
 .cache
 .netlify
+src/_data/builtwith
