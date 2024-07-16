@@ -265,7 +265,7 @@ Your command line might look something like:
 {% codewithprompt "noop", "getting-started-serve" %}
 [11ty] Writing _site/index.html from ./index.html (liquid)
 [11ty] Writing _site/README/index.html from ./README.md (liquid)
-[11ty] Wrote 2 files in 0.04 seconds (v2.0.0)
+[11ty] Wrote 2 files in 0.04 seconds ({% latestVersion versions, config %})
 [11ty] Watching…
 [11ty] Server at http://localhost:8080/
 {% endcodewithprompt %}
