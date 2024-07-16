@@ -123,9 +123,10 @@ function randomTestimonialLink(testimonials) {
 
 	<p><a href="/docs/"><strong>Get started with Eleventy today!</strong></a> or read more about <a href="https://www.zachleat.com/web/introducing-eleventy/">Eleventy’s project goals</a>.</p>
 
+	<h2><a href="https://opencollective.com/11ty">Open Collective</a> Supporters</h2>
 	<is-land on:visible on:save-data="false">
-		<template data-island>
-			<h2><a href="https://opencollective.com/11ty">Open Collective</a> Supporters</h2>
+		<p><em>Loading…</em></p>
+		<template data-island="replace">
 			<facepile webc:nokeep>
 				<html-fetch src="/imports/supporters.html" show-gold-sponsors show-silver-sponsors></html-fetch>
 			</facepile>

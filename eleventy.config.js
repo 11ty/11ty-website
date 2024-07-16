@@ -400,6 +400,7 @@ ${text.trim()}
 		"src/_includes/components/throbber.js": "js/throbber.js",
 		"src/_includes/components/throbber.css": "css/throbber.css",
 		"src/_includes/components/intl-number.js": "js/intl-number.js",
+		"src/_includes/components/heading-anchors.js": "js/heading-anchors.js",
 	});
 
 	eleventyConfig.addPassthroughCopy({

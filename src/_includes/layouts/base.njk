@@ -67,6 +67,7 @@ let eleventyComputed = {
 {% include 'components/external-links.css' %}
 {% include 'components/toc.css' %}
 {% include "components/minilink.css" %}
+{% include 'components/direct-links.css' %}
 {# Sidebar ad for 11ty conf #}
 {% include 'components/callout.css' %}
 {% include 'components/carbon-ads.css' %}
@@ -77,7 +78,6 @@ let eleventyComputed = {
 
 {% if not skipLegacyBundle %}
 	{# these components are not yet used on WebC pages #}
-	{% include 'components/direct-links.css' %}
 	{% include 'components/breadcrumb.css' %}
 
 	{# these components have been converted to WebC #}

@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="supporters.css">
 
 <div class="fullwidth-module supporters-tiered supporters-gold">
-	<h3 class="subhed ta-c"><strong>Gold Sponsors</strong></h3>
+	<div class="subhed ta-c"><strong>Gold Sponsors</strong></div>
 	<div class="lo-grid">
 		<template webc:type="11ty" 11ty:type="njk">
 		{%- for supporter in $data.opencollective.supporters | shuffle %}{% if supporter.tier.slug == "gold-sponsor" and supporter.isMonthly -%}
@@ -15,7 +15,7 @@
 </div>
 
 <div class="fullwidth-module supporters-tiered supporters-silver">
-	<h3 class="subhed"><strong>Silver Sponsors</strong></h3>
+	<div class="subhed"><strong>Silver Sponsors</strong></div>
 	<div class="facepile facepile-supporters">
 		<template webc:type="11ty" 11ty:type="njk">
 		{%- for supporter in $data.opencollective.supporters | supportersFacepile | shuffle %}{% if supporter.tier.slug == "silver-sponsor" and supporter.isMonthly -%}

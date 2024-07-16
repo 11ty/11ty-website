@@ -14,7 +14,9 @@ headerClass: elv-header-default
 <main class="elv-layout elv-layout-toc" {% if not excludeFromSearch %} data-pagefind-body{% endif %}>
 	{% include "components/docs-toc.njk" %}
 
-	<div id="skip-content">{{ content | safe }}</div>
+	<div id="skip-content">
+		<heading-anchors>{{ content | safe }}</heading-anchors>
+	</div>
 </main>
 
 <footer class="elv-footer elv-layout elv-layout-toc">
@@ -30,3 +32,5 @@ headerClass: elv-header-default
 
 	{% include "footer-nav.njk" %}
 </footer>
+
+<script type="module" src="/js/heading-anchors.js"></script>
