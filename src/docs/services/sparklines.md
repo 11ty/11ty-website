@@ -15,8 +15,6 @@ Feed this runtime service a comma separated list of numeric values and it will r
 
 - [`11ty/api-sparkline` on GitHub](https://github.com/11ty/api-sparkline)
 
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/11ty/api-sparkline" class="elv-externalexempt"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
-
 ## Usage
 
 Try it out on the [Eleventy API Explorer](https://api-explorer.11ty.dev/).

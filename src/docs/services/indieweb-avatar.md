@@ -24,8 +24,6 @@ All `rel` lookups match against attribute values that are space separated lists.
 
 - [`11ty/api-indieweb-avatar` on GitHub](https://github.com/11ty/api-indieweb-avatar)
 
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/11ty/api-indieweb-avatar" class="elv-externalexempt"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
-
 ## Usage
 
 Try it out on the [Eleventy API Explorer](https://api-explorer.11ty.dev/).
