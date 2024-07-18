@@ -48,6 +48,9 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(EleventyRenderPlugin, {
 		tagName: "renderTemplate", // Change the renderTemplate shortcode name
 		tagNameFile: "renderFile", // Change the renderFile shortcode name
+
+		// Only available in Liquid right now
+		accessGlobalData: false,   // Does rendered content has access to the data cascade?
 	});
 };
 ```
@@ -63,11 +66,9 @@ module.exports = function (eleventyConfig) {
 Use the `renderTemplate` paired shortcode to render a template string.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "rendertmpl"} %}
   <div id="rendertmpl-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -85,8 +86,6 @@ Use the `renderTemplate` paired shortcode to render a template string.
   </div>
   <div id="rendertmpl-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -102,8 +101,6 @@ Use the `renderTemplate` paired shortcode to render a template string.
 
   </div>
   <div id="rendertmpl-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 
@@ -130,7 +127,7 @@ The content inside of the shortcode will be rendered using Markdown (`"md"`). Fr
 The first argument to `renderTemplate` can be any valid [`templateEngineOverride`](/docs/languages/#templateengineoverride-examples) value. You can even use `"liquid,md"` to preprocess markdown with liquid. You can use [custom template types](/docs/languages/custom/) here too, including [the Vue plugin](https://github.com/11ty/eleventy-plugin-vue)!
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "rendertmplvue"} %}
   <div id="rendertmplvue-liquid" role="tabpanel">
 
@@ -164,8 +161,6 @@ The first argument to `renderTemplate` can be any valid [`templateEngineOverride
   </div>
   <div id="rendertmplvue-js" role="tabpanel">
 
-{% codetitle "JavaScript", "Syntax" %}
-
 {% raw %}
 
 ```js
@@ -194,11 +189,9 @@ To add Vue support, don’t forget to install [`@11ty/eleventy-plugin-vue` (v0.6
 Both the [`eleventy`](/docs/data-eleventy-supplied/#eleventy-variable) and [`page` variables](/docs/data-eleventy-supplied/#page-variable) are available inside of these templates by default. If you want to pass in additional data, you can do so like this:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "rendertmpldata"} %}
   <div id="rendertmpldata-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -217,8 +210,6 @@ myData:
   </div>
   <div id="rendertmpldata-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -235,8 +226,6 @@ myData:
 
   </div>
   <div id="rendertmpldata-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 
@@ -264,11 +253,9 @@ Outputs `myValue`.
 Use the `renderFile` shortcode to render an include file.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfile"} %}
   <div id="renderfile-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -281,8 +268,6 @@ Use the `renderFile` shortcode to render an include file.
   </div>
   <div id="renderfile-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -293,8 +278,6 @@ Use the `renderFile` shortcode to render an include file.
 
   </div>
   <div id="renderfile-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 
@@ -315,11 +298,9 @@ The first argument to `renderFile` is a project root relative path to any templa
 Note that you can use files supported by any [custom file extensions](/docs/languages/custom/) you’ve added too, including a Vue Single File Component from the [Eleventy Vue plugin](https://github.com/11ty/eleventy-plugin-vue)!
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfilevue"} %}
   <div id="renderfilevue-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -332,8 +313,6 @@ Note that you can use files supported by any [custom file extensions](/docs/lang
   </div>
   <div id="renderfilevue-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -344,8 +323,6 @@ Note that you can use files supported by any [custom file extensions](/docs/lang
 
   </div>
   <div id="renderfilevue-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 
@@ -368,11 +345,9 @@ To add Vue support, don’t forget to install [`@11ty/eleventy-plugin-vue` (v0.6
 Both the [`eleventy`](/docs/data-eleventy-supplied/#eleventy-variable) and [`page` variables](/docs/data-eleventy-supplied/#page-variable) are available inside of these templates by default. If you want to pass in additional data, you can do so like this:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfiledata"} %}
   <div id="renderfiledata-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -389,8 +364,6 @@ myData:
   </div>
   <div id="renderfiledata-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -405,8 +378,6 @@ myData:
 
   </div>
   <div id="renderfiledata-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 
@@ -432,11 +403,9 @@ module.exports.render = async function (data) {
 The syntax is normally inferred using the file extension, but it can be overridden using a third argument. It can be any valid [`templateEngineOverride`](/docs/languages/#templateengineoverride-examples) value. You can even use `"liquid,md"` to preprocess markdown with liquid.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfileoverride"} %}
   <div id="renderfileoverride-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -453,8 +422,6 @@ myData:
   </div>
   <div id="renderfileoverride-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -469,8 +436,6 @@ myData:
 
   </div>
   <div id="renderfileoverride-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 
