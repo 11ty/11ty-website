@@ -9,7 +9,7 @@ import shortHash from "short-hash";
 
 import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 import navigationPlugin from "@11ty/eleventy-navigation";
-import eleventyImage, { eleventyImagePlugin } from "@11ty/eleventy-img";
+import eleventyImage, { eleventyImagePlugin, eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import eleventyWebcPlugin from "@11ty/eleventy-plugin-webc";
 import { RenderPlugin, InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 
@@ -47,6 +47,7 @@ const shortcodes = {
 		slug = cleanName(slug).toLowerCase();
 
 		try {
+			// TODO move away from twitter avatars
 			let mapEntry = Object.assign(
 				{},
 				require(`./avatars/${datasource}/${slug}.json`)
@@ -58,6 +59,7 @@ const shortcodes = {
 				loading: "lazy",
 				decoding: "async",
 				class: "avatar",
+				"eleventy:ignore": ""
 			});
 		} catch (e) {
 			return defaultAvatarHtml;
@@ -90,6 +92,7 @@ const shortcodes = {
 					decoding: "async",
 					sizes,
 					class: classes || "",
+					"eleventy:ignore": "",
 				},
 				attributes
 			)
@@ -148,6 +151,7 @@ const shortcodes = {
 			decoding: "async",
 			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
 			class: "sites-screenshot",
+			"eleventy:ignore": "",
 			// No longer necessary because we have a default fallback image when timeouts happen.
 			// onerror: "let p=this.closest('picture');if(p){p.remove();}this.remove();"
 		});
@@ -158,12 +162,12 @@ const shortcodes = {
 		let cacheBuster = `_${d.getFullYear()}_${d.getMonth()}_${d.getDate()}`;
 		return `<img src="https://v1.generator.11ty.dev/image/${encodeURIComponent(
 			url
-		)}/${cacheBuster}/" width="66" height="66" alt="Meta Generator tag icon for ${url}" class="avatar avatar-large" loading="lazy" decoding="async">`;
+		)}/${cacheBuster}/" width="66" height="66" alt="Meta Generator tag icon for ${url}" class="avatar avatar-large" loading="lazy" decoding="async" eleventy:ignore>`;
 	},
 	getHostingImageHtml(url) {
 		return `<img src="https://v1.builtwith.11ty.dev/${encodeURIComponent(
 			url
-		)}/image/host/" width="66" height="66" alt="Hosting provider icon for ${url}" class="avatar avatar-large" loading="lazy" decoding="async">`;
+		)}/image/host/" width="66" height="66" alt="Hosting provider icon for ${url}" class="avatar avatar-large" loading="lazy" decoding="async" eleventy:ignore>`;
 	},
 	// WebC migration: indieweb-avatar.webc
 	// size = "large"
@@ -180,26 +184,28 @@ const shortcodes = {
 				dims[1]
 			}" alt="IndieWeb Avatar for ${iconUrl}" class="avatar avatar-indieweb${
 				cls ? ` ${cls}` : ""
-			}" loading="lazy" decoding="async">`;
+			}" loading="lazy" decoding="async" eleventy:ignore>`;
 		}
 		return imgHtml;
 	},
 	getGitHubAvatarHtml(username, alt = "") {
+		if(!username) {
+			return "";
+		}
 		if (!alt) {
 			alt = `GitHub Avatar for ${username}`;
 		}
 
 		let url = `https://avatars.githubusercontent.com/${username}?s=66`;
-		return `<img src="https://v1.image.11ty.dev/${encodeURIComponent(
-			url
-		)}/webp/66/" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
+		return `<img src="${url}" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
 	},
 	getOpenCollectiveAvatarHtml(url, username = "") {
 		let alt = `Open Collective Avatar for ${username}`;
+		if(username === "Jonathan Wright" || username === "Richard Herbert" || username === "Boris Schapira" || username === "Panagiotis Kontogiannis") {
+			return "";
+		}
 
-		return `<img src="https://v1.image.11ty.dev/${encodeURIComponent(
-			url
-		)}/webp/66/" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
+		return `<img src="${url}" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
 	},
 };
 
@@ -267,6 +273,28 @@ export default async function (eleventyConfig) {
 
 		urlPath: "/img/built/",
 
+		defaultAttributes: {
+			loading: "lazy",
+			decoding: "async",
+			"eleventy:ignore": "",
+		},
+	});
+
+	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+		// which file extensions to process
+		extensions: "html",
+
+		// Add any other Image utility options here:
+
+		// optional, output image formats
+		formats: ["avif", "jpeg"],
+
+		// optional, output image widths
+		// widths: ["auto"],
+
+		urlPath: "/img/built/",
+
+		// optional, attributes assigned on <img> override these values.
 		defaultAttributes: {
 			loading: "lazy",
 			decoding: "async",
