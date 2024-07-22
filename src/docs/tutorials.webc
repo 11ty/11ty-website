@@ -13,7 +13,7 @@ feedUrl: /docs/quicktips/feed.xml
 <sites-list @size="lg">
 	<site-card @url="https://www.youtube.com/watch?v=BKdQEXqfFA0" @name="Build an 11ty Site in 3 Minutes" @date="2021-02-20" @medialength="3m"></site-card>
 	<site-card @url="https://www.learnwithjason.dev/lets-learn-eleventy" @name="Let’s Learn Eleventy! on Learn with Jason" @date="2020-01-08" @medialength="1h32m"></site-card>
-	<site-card @url="https://www.mikeaparicio.com/template-talk/" @name="Templating: Eleventy’s Superpower" @date="2021-07-17" @medialength="15m"></site-card>
+	<site-card @url="https://www.youtube.com/watch?v=rZyNBd1WgVM" @name="Templating: Eleventy’s Superpower" @date="2021-07-17" @medialength="15m"></site-card>
 	<site-card @url="https://learneleventyfromscratch.com/" @name="Learn Eleventy from Scratch" @date="2020-05"></site-card>
 	<site-card @url="https://tatianamac.com/posts/beginner-eleventy-tutorial-parti/" @name="Beginner’s Guide to Eleventy" @date="2020-04-02"></site-card>
 	<site-card @url="https://sia.codes/posts/itsiest-bitsiest-eleventy-tutorial/" @name="Itsiest, Bitsiest Eleventy Tutorial" @date="2021-05-24"></site-card>

@@ -115,11 +115,22 @@ const shortcodes = {
 			zoom = "bigger";
 		}
 
+		let isYouTubeUrl = siteUrl.includes("www.youtube.com");
+		let isSquare = viewport.width === viewport.height;
 		let screenshotUrl;
 		if (siteUrl) {
-			screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(
-				siteUrl
-			)}/${preset}/1:1/${zoom ? `${zoom}/` : ""}_wait:2/`;
+			if(isYouTubeUrl) {
+				screenshotUrl = `https://v1.opengraph.11ty.dev/${encodeURIComponent(
+					siteUrl
+				)}/small/jpeg/`;
+
+				viewport.width = 650;
+				viewport.height = 366;
+			} else {
+				screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(
+					siteUrl
+				)}/${preset}/1:1/${zoom ? `${zoom}/` : ""}`;
+			}
 		}
 
 		// 11ty.dev
@@ -150,7 +161,7 @@ const shortcodes = {
 			loading: "lazy",
 			decoding: "async",
 			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
-			class: "sites-screenshot",
+			class: "sites-screenshot" + (isYouTubeUrl ? ` sites-screenshot-youtube${isSquare ? "-sq" : ""}` : ""),
 			"eleventy:ignore": "",
 			// No longer necessary because we have a default fallback image when timeouts happen.
 			// onerror: "let p=this.closest('picture');if(p){p.remove();}this.remove();"
