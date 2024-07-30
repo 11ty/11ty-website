@@ -210,10 +210,28 @@ const shortcodes = {
 		let url = `https://avatars.githubusercontent.com/${username}?s=66`;
 		return `<img src="${url}" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
 	},
-	getOpenCollectiveAvatarHtml(url, username = "") {
-		let alt = `Open Collective Avatar for ${username}`;
+	getOpenCollectiveAvatarHtml(supporter) {
 		// Another vote for https://github.com/11ty/eleventy-img/issues/225
-		if(username === "Jonathan Wright" || username === "Richard Herbert" || username === "Boris Schapira" || username === "Panagiotis Kontogiannis" || username === "Heather Buchel") {
+		let missingAvatarsNames = [
+			"Jonathan Wright",
+			"Richard Herbert",
+			"Boris Schapira",
+			"Panagiotis Kontogiannis",
+			"Heather Buchel",
+		];
+		let preferIndiewebAvatarSlugs = [
+			"nejlepsiceskacasinacom",
+			"slovenskeonlinecasinocom",
+		]
+		let {image: url, name: username} = supporter;
+		let alt = `Open Collective Avatar for ${username}`;
+		if(preferIndiewebAvatarSlugs.includes(supporter.slug) && supporter.website) {
+			return shortcodes.getIndieAvatarHtml(supporter.website);
+		}
+		if(missingAvatarsNames.includes(username)) {
+			if(supporter.website) {
+				return shortcodes.getIndieAvatarHtml(supporter.website);
+			}
 			return "";
 		}
 
