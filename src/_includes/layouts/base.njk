@@ -1,4 +1,4 @@
----node
+---js
 // <script>
 let headerTitle = "Eleventy";
 
@@ -16,7 +16,7 @@ let eleventyComputed = {
 	},
 	social: {
 		imgsrc: function({ domain, page }) {
-			return `https://v1.screenshot.11ty.dev/${encodeURIComponent(domain + page.url)}/opengraph/_cachebust/`;
+			return `https://v1.screenshot.11ty.dev/${encodeURIComponent(domain + page.url)}/opengraph/`;
 		},
 		imgalt: function({ domain, page }) {
 			return `A screenshot of the web page at ${domain + page.url}`;
