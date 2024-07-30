@@ -212,7 +212,8 @@ const shortcodes = {
 	},
 	getOpenCollectiveAvatarHtml(url, username = "") {
 		let alt = `Open Collective Avatar for ${username}`;
-		if(username === "Jonathan Wright" || username === "Richard Herbert" || username === "Boris Schapira" || username === "Panagiotis Kontogiannis") {
+		// Another vote for https://github.com/11ty/eleventy-img/issues/225
+		if(username === "Jonathan Wright" || username === "Richard Herbert" || username === "Boris Schapira" || username === "Panagiotis Kontogiannis" || username === "Heather Buchel") {
 			return "";
 		}
 
