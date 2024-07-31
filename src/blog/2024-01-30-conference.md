@@ -9,7 +9,7 @@ In May 2024 (this year!) we’ll gather together our _extremely-online_ communit
 We’ll publish a full schedule of relevant conference dates (call for proposals, et cetera) in the coming weeks!
 
 <a href="https://conf.11ty.dev" class="elv-externalexempt opengraph-card">
-  <img src="https://v1.opengraph.11ty.dev/https%3A%2F%2Fconf.11ty.dev%2F/medium/" alt="The 11ty International Symposium on Making Web Sites Real Good" loading="lazy" decoding="async" width="650" height="341">
+  <img src="https://v1.opengraph.11ty.dev/https%3A%2F%2Fconf.11ty.dev%2F/medium/" alt="The 11ty International Symposium on Making Web Sites Real Good" loading="lazy" decoding="async" width="650" height="341" eleventy:ignore>
 </a>
 
 And [registration for the conference will be opening soon](https://conf.11ty.dev/#subscription)!
