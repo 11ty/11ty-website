@@ -13,5 +13,5 @@ Looking forward, the goal for next week is to launch our public Call for Proposa
 **Register on the [11ty Conference web site](https://conf.11ty.dev/#register)**:
 
 <a href="https://conf.11ty.dev/#register" class="elv-externalexempt opengraph-card">
-  <img src="https://v1.opengraph.11ty.dev/https%3A%2F%2Fconf.11ty.dev%2F/medium/" alt="The 11ty International Symposium on Making Web Sites Real Good" loading="lazy" decoding="async" width="650" height="341" eleventy:ignore>
+  <img src="https://v1.opengraph.11ty.dev/https%3A%2F%2Fconf.11ty.dev%2F/medium/" alt="The 11ty International Symposium on Making Web Sites Real Good" loading="lazy" decoding="async" width="650" height="341">
 </a>
