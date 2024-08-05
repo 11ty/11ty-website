@@ -13,6 +13,7 @@
 }
 .supporters-silver .facepile {
 	text-align: center;
+	text-wrap: balance; /* Not supported with display: inline-block on FF yet */
 }
 .supporters-silver .facepile > a ~ a {
 	margin-left: 0;
