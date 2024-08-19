@@ -1,8 +1,0 @@
-{
-	"url": "https://github.com/sira313/eleventy-card",
-	"name": "Eleventy-card",
-	"description": "Clean and minimalist starter website for artists/photographers to post their artwork in a masonry layout and blog separately in a very simple layout. Created with Bulma CSS and Feather Icons.",
-	"author": "Apoxicam",
-	"demo": "https://eleventy-card.netlify.app/",
-	"excludedFromLeaderboards": true
-}
