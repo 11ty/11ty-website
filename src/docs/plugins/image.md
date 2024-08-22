@@ -387,7 +387,7 @@ Use `Image.statsSync` to get the metadata of a source even if the image generati
 const Image = require("@11ty/eleventy-img");
 function imageShortcode(src, cls, alt, widths = ["auto"], sizes = "100vh") {
 	let options = {
-		widths: widths,
+		widths,
 		formats: ["jpeg"],
 	};
 
