@@ -267,9 +267,9 @@ const Image = require("@11ty/eleventy-img");
 
 // Only one module.exports per configuration file, please!
 module.exports = function (eleventyConfig) {
-	eleventyConfig.addShortcode("image", async function (src, alt, sizes) {
+	eleventyConfig.addShortcode("image", async function (src, alt, widths = [300, 600], sizes = "100vh") {
 		let metadata = await Image(src, {
-			widths: [300, 600],
+			widths,
 			formats: ["avif", "jpeg"],
 		});
 
@@ -296,7 +296,7 @@ const Image = require("@11ty/eleventy-img");
 
 // Only one module.exports per configuration file, please!
 module.exports = function (eleventyConfig) {
-	eleventyConfig.addShortcode("image", async function (src, alt, sizes) {
+	eleventyConfig.addShortcode("image", async function (src, alt, widths = ["auto"], sizes = "100vh") {
 		let metadata = await Image(src, {
 			// omitted for brevity
 		});
@@ -385,9 +385,9 @@ Use `Image.statsSync` to get the metadata of a source even if the image generati
 
 ```js
 const Image = require("@11ty/eleventy-img");
-function imageShortcode(src, cls, alt, sizes, widths) {
+function imageShortcode(src, cls, alt, widths = ["auto"], sizes = "100vh") {
 	let options = {
-		widths: widths,
+		widths,
 		formats: ["jpeg"],
 	};
 
@@ -730,14 +730,14 @@ const Image = require("@11ty/eleventy-img");
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addShortcode(
 		"image",
-		async function (src, alt, sizes = "100vw") {
+		async function (src, alt, widths = [300, 600], sizes = "100vh") {
 			if (alt === undefined) {
 				// You bet we throw an error on missing alt (alt="" works okay)
 				throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
 			}
 
 			let metadata = await Image(src, {
-				widths: [300, 600],
+				widths,
 				formats: ["webp", "jpeg"],
 			});
 
