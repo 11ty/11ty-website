@@ -19,15 +19,6 @@
 	</dl>
 {%- endcallout %}
 
-{# only show ads in production #}
-{% if eleventy.env.runMode == "build" %}
-<is-land on:visible>
-	<template data-island>
-		<script async src="https://cdn.carbonads.com/carbon.js?serve=CW7D6K7I&placement=www11tydev&format=responsive" id="_carbonads_js"></script>
-	</template>
-</is-land>
-{% endif %}
-
 <details-force-state>
 	<details>
 		<summary class="btn-primary benchnine rainbow-active rainbow-active-noanim">Toggle Menu</summary>
