@@ -26,7 +26,7 @@ headerTag: div
 {%- set otherPages = collections.sidebarNav | eleventyNavigation(navKey) -%}
 {% if otherPages.length > 1 %}
 <hr>
-<h3>{% if eleventyNavigation.parent %}Other pages in {% endif %}{{ navKey }}:</h3>
+<h3 data-ha-exclude>{% if eleventyNavigation.parent %}Other pages in {% endif %}{{ navKey }}:</h3>
 {{ otherPages | eleventyNavigationToHtml({ activeKey: eleventyNavigation.key, listClass: 'inlinelist inlinelist-no-nest', listItemClass: 'inlinelist-item', activeListItemClass: 'elv-cat-list-active' }) | safe }}
 {% endif %}
 
