@@ -459,9 +459,6 @@ Note the use of `in` instead of `of`.
 
 Loops can be nested but access to outer scope from the inner loop doesn't work currently. More at [issue #175](https://github.com/11ty/webc/issues/175).
 
-
-
-
 ### Slots
 
 Child content optionally precompiles using `<slot>` and `[slot]` too. This example is using an [HTML-only component](#html-only-components).
