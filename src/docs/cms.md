@@ -4,14 +4,18 @@ eleventyNavigation:
   key: Using a CMS
   order: 10
 featuredCmses:
+  - name: "Want your logo here? Contact us!"
+    url: "mailto:partners@11ty.dev"
+    tags: [Recommended Partner]
+    class: sites-featured
+    screenshotSize: opengraph
+cmses:
   - name: CloudCannon
     url: https://cloudcannon.com/eleventy-cms/?utm_campaign=11ty-partner&utm_source=official-sponsor
-    tags: [Recommended Partner, Git-based]
-    class: sites-featured
+    tags: [Git-based]
     screenshotOverride:
-      src: "/img/screenshot-fallbacks/cloudcannon-cms.png"
+      src: "/img/screenshot-fallbacks/cloudcannon-cms-sq.png"
       alt: "The Eleventy CMS for Visual Editing, CloudCannon CMS"
-cmses:
   - name: WordPress REST API
     url: https://developer.wordpress.org/rest-api/
     screenshotSize: medium
@@ -73,8 +77,11 @@ cmses:
     url: https://directus.io/
     screenshotSize: medium
     tags: [API]
+  - name: CraftCMS
+    url: https://craftcms.com/
+    screenshotSize: medium
+    tags: [API]
 ---
-
 # Using a CMS
 
 {% tableofcontents %}
@@ -112,16 +119,11 @@ Digging deeper, there are two main types of Headless CMS options:
 
 _The list above is not meant to be exhaustive._
 
-## Related
-
-<div class="youtube-related">
-  {%- youtubeEmbed "yXcxvBJuULU", "From Zero to CMS in 2 Minutes with CloudCannon and Eleventy" -%}
-</div>
-
 ### From the Community
 
 <ul class="list-bare">
 	<li>{% indieweblink "Headless CMS List on Jamstack.org", "https://jamstack.org/headless-cms/" %}</li>
+	<li>{% indieweblink "YouTube: From Zero to CMS in 2 Minutes with CloudCannon and Eleventy", "https://www.youtube.com/watch?v=yXcxvBJuULU" %}</li>
 	<li>{% indieweblink "How to get started with the 11ty (Eleventy) Blog Starter", "https://www.sanity.io/guides/how-to-get-started-with-the-11ty-eleventy-blog-starter" %}</li>
 </ul>
 

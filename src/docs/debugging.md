@@ -19,7 +19,7 @@ You can enable this feature by using the `DEBUG` [environment variable](/docs/en
 
 _The commands below assume that Eleventy is installed locally (recommended) but you can learn more about the difference between Local and [Global installation](/docs/global-installation/)._
 
-### Mac OS (or Linux, etc)
+### macOS or Linux (et al)
 
 ```sh
 DEBUG=Eleventy* npx @11ty/eleventy
@@ -35,10 +35,28 @@ Read more about [Windows environment variables](https://www.npmjs.com/package/de
 set DEBUG=Eleventy* & npx @11ty/eleventy
 ```
 
-#### Powershell (VS Code default)
+#### Powershell (default in VS Code)
 
 ```sh
 $env:DEBUG="Eleventy*"; npx @11ty/eleventy
+```
+
+### Cross Platform
+
+Use the [`cross-env` package](https://github.com/kentcdodds/cross-env) to compatibly set your environment variables cross-platform.
+
+```sh
+npm install cross-env
+```
+
+Now add an npm script in your `package.json`, unlocking `npm run debug`:
+
+```json
+{
+	"scripts": {
+		"debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy"
+	}
+}
 ```
 
 ## Learn More

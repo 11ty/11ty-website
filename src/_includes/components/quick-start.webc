@@ -1,31 +1,76 @@
-<h2 class="mt-0">Quick Start in 2 Steps</h2>
+<h2 class="mt-0" id="quick-start">Quick Start</h2>
 
-<p>Create a Markdown file.</p>
+<p><strong>Eleventy requires Node.js <node-minimum></node-minimum>.</strong> You can check whether or not you have Node installed by running <code>node --version</code> in a Terminal. (<a href="/docs/terminal-window/"><em>Well, wait—what is a Terminal?</em></a>) If <code>node</code> is not found or it reports a version number below <node-minimum></node-minimum>, you will need to <a href="https://nodejs.org/en/download/">install Node.js</a> before moving on.</p>
 
-<syntax-highlight language="bash">
-echo '# Page header' > index.md
-</syntax-highlight>
+<p>Now we’ll create an <code>index.md</code> <a href="https://commonmark.org/help/">Markdown</a> file. You can do this in the text editor of your choice or by running one of these commands in your terminal:</p>
 
-<details class="details-expand-bg details-rounded">
-	<summary>Eleventy requires Node.js <node-minimum></node-minimum> <em>(expand to learn more)</em></summary>
-	<p>You can check whether or not you have Node installed by running `node --version` in a terminal window. (<a href="/docs/terminal-window/"><em>Well, wait—what is a Terminal window?</em></a>)</p>
-	<p>If the command is not found or it reports a number lower than <node-minimum></node-minimum>, you will need to <a href="https://nodejs.org/en/download/">download and install Node.js</a> before moving on to the next step.</p>
-</details>
+<script type="module" src="/js/seven-minute-tabs.js" webc:keep></script>
+<seven-minute-tabs class="tabs-full tabs-flush" persist sync>
+	<div role="tablist" aria-label="Choose your Operating System">
+		<a href="#quickstart-os-nix" id="quickstart-os-mac-btn" role="tab" data-tabs-persist="os:mac">macOS</a>
+		<a href="#quickstart-os-nix" role="tab" data-tabs-persist="os:posix">Linux</a>
+		<a href="#quickstart-os-win" role="tab" data-tabs-persist="os:win">Windows</a>
+		<a href="#quickstart-os-all" role="tab" data-tabs-persist="os:all">Cross Platform</a>
+	</div>
+	<div id="quickstart-os-nix" role="tabpanel">
+		<syntax-highlight language="bash">
+echo '# Heading' > index.md
+		</syntax-highlight>
+	</div>
+	<div id="quickstart-os-win" role="tabpanel">
+		<syntax-highlight language="bash">
+echo '# Heading' | out-file -encoding utf8 'index.md'
+		</syntax-highlight>
+		<p>If the <code>out-file</code> command is not available in your Windows Terminal window (it’s PowerShell specific), use the Cross Platform method.</p>
+		<!--- <syntax-highlight language="bash">
+echo # Heading > index.md
+		</syntax-highlight> --->
+	</div>
+	<div id="quickstart-os-all" role="tabpanel">
+		<syntax-highlight language="bash">
+npx @11ty/create index.md "# Heading"
+		</syntax-highlight>
+		<p>Learn more about <a href="https://github.com/11ty/create"><code>@11ty/create</code></a> <em>(requires Node.js 18 or newer)</em>.</p>
+	</div>
+</seven-minute-tabs>
 
-<p>Run Eleventy.</p>
+<p>Run Eleventy using <code>npx</code>, an <a href="https://www.npmjs.com/">npm</a>-provided command that is bundled with Node.js.</p>
 
-<syntax-highlight language="bash">
-npx @11ty/eleventy
-</syntax-highlight>
+<seven-minute-tabs class="tabs-full tabs-flush tabs-firstonly" persist sync>
+	<div role="tablist" aria-label="Choose your Package Manager">
+		<a href="#quickstart-run-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
+		<a href="#quickstart-run-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
+		<a href="#quickstart-run-yarn" role="tab" data-tabs-persist="pkgmgr:yarn">yarn</a>
+	</div>
+	<div id="quickstart-run-npm" role="tabpanel">
+		<syntax-highlight language="bash">
+npx @11ty/eleventy --serve
+		</syntax-highlight>
+	</div>
+	<div id="quickstart-run-pnpm" role="tabpanel">
+		<syntax-highlight language="bash">
+pnpm dlx @11ty/eleventy --serve
+		</syntax-highlight>
+		<p><a href="https://pnpm.io/">pnpm</a> is an <em>optional</em> alternative to npm that needs to be installed separately.</p>
+	</div>
+	<div id="quickstart-run-yarn" role="tabpanel">
+		<syntax-highlight language="bash">
+yarn dlx @11ty/eleventy --serve
+		</syntax-highlight>
+		<p><a href="https://yarnpkg.com/">Yarn</a> is an <em>optional</em> alternative to npm that needs to be installed separately.</p>
+	</div>
+</seven-minute-tabs>
 
-<p>Eleventy compiles any files in the current directory matching valid <a href="/docs/languages/">file extensions</a> (<code>.md</code> is one of many) to the output folder (<code>_site</code> by default). It might look like this:</p>
+<p>Eleventy compiles any files in the current directory matching valid <a href="/docs/languages/">file extensions</a> (<code>md</code> is one of many) to the <code>_site</code> output folder. It might look like this:</p>
 
 <cli-eleventy-output @show-version>
-Writing _site/index.html from ./index.md (liquid)
-Wrote 1 file in 0.03 seconds
+[11ty] Writing _site/index.html from ./index.md (liquid)
+[11ty] Wrote 1 file in 0.03 seconds%%VERSION%%
+[11ty] Watching…
+[11ty] Server at http://localhost:8080/
 </cli-eleventy-output>
 
-<p>Run <code>npx @11ty/eleventy --serve</code> to start up a <a href="/docs/dev-server/">local development server</a> and open <code>http://localhost:8080/</code> in your web browser of choice to see your web site.</p>
+<p>The <code>--serve</code> option also starts a <a href="/docs/dev-server/">local development server</a>. Open up <code>http://localhost:8080/</code> in your favorite web browser to view your web site.</p>
 
 <ul>
 	<li>Read our full <a href="/docs/"><strong>Get Started guide</strong></a> on the docs.</li>

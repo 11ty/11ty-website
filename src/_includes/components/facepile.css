@@ -11,6 +11,19 @@
 	transition: opacity 0.3s;
 	opacity: 0.9;
 }
+.supporters-silver .facepile {
+	text-align: center;
+	text-wrap: balance; /* Not supported with display: inline-block on FF yet */
+}
+.supporters-silver .facepile > a ~ a {
+	margin-left: 0;
+}
+.supporters-silver .facepile .avatar {
+	border-radius: .25em;
+	border-width: 0;
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.08);
+}
+
 .facepile > a:focus,
 .facepile > a:hover {
 	opacity: 1;
@@ -122,11 +135,11 @@
 }
 
 /* Filter out gold sponsors when the giant logos are adjacent (in the footer, everywhere but the home page) */
-.facepile-supporters [data-supporters-tier="gold-sponsor"] {
+.facepile-supporters [data-supporters-tier="gold-sponsor"],
+.facepile-supporters [data-supporters-tier="silver-sponsor"] {
 	display: none;
 }
-[show-gold-sponsors]
-	.facepile-supporters
-	[data-supporters-tier="gold-sponsor"] {
+[show-gold-sponsors] .facepile-supporters [data-supporters-tier="gold-sponsor"],
+[show-silver-sponsors] .facepile-supporters [data-supporters-tier="silver-sponsor"] {
 	display: inline-block;
 }

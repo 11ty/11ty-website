@@ -1,5 +1,5 @@
 ---
-title: 11ty.dev Style Guide
+headerTitle: 11ty.dev Style Guide
 layout: layouts/docs.njk
 ---
 <style>
@@ -24,6 +24,10 @@ layout: layouts/docs.njk
 	<build-cost cost="5"></build-cost>
 	<a href="#"><build-cost cost="5"></build-cost></a>
 	<build-cost cost="99"></build-cost>
+</div>
+
+<div class="styleguide-layout">
+	<build-cost @cost="1" @icon="🍦" @rating-icon="🍨" label="Serve Cost"></build-cost>
 </div>
 
 <div class="styleguide-layout">

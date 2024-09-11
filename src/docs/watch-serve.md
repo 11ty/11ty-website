@@ -9,6 +9,13 @@ eleventyNavigation:
 
 {% tableofcontents %}
 
+<div id="browsersync"></div>
+<div id="swap-back-to-browsersync"></div>
+
+## Eleventy Dev Server {% addedin "2.0.0" %}
+
+Starting in Eleventy v2.0, we bundle a [dedicated Development Server](/docs/dev-server/). The previous development server used [Browsersync, which you can still use with Eleventy if you’d like](/docs/server-browsersync/).
+
 ## Add Your Own Watch Targets {% addedin "0.10.0" %}
 
 The `addWatchTarget` config method allows you to manually add a file or directory for Eleventy to watch. When the file or the files in this directory change Eleventy will trigger a build. This is useful if Eleventy is not directly aware of any external file dependencies.
@@ -73,12 +80,19 @@ module.exports = function (eleventyConfig) {
 };
 ```
 
-## Eleventy Dev Server {% addedin "2.0.0" %}
+## Advanced `chokidar` Configuration
 
-<div id="swap-back-to-browsersync"></div>
+Advanced [`chokidar` options](https://github.com/paulmillr/chokidar) can be defined using the `setChokidarConfig` configuration API method:
 
-- [This content has moved to `/docs/dev-server/`](/docs/dev-server/)
+{% codetitle ".eleventy.js" %}
 
-## Browsersync
+```js
+module.exports = function(eleventyConfig) {
+	eleventyConfig.setChokidarConfig({
+		usePolling: true,
+		interval: 500,
+	});
+}
+```
 
-- [This content has moved to `/docs/server-browsersync/`](/docs/server-browsersync/)
+{% callout "warn", "md" %}If you’re using [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/) and your project exists _outside_ of your home directory (`~`), you will likely want to use the `usePolling` feature to ensure watching works correctly. This is a WSL limitation.{% endcallout %}

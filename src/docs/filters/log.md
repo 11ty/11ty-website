@@ -61,9 +61,7 @@ module.exports = function (data) {
 
 is functionally the same as running `console.log("My Title")` inside of your template.
 
-### Using `log` in filter chains
-
-{% addedin "2.0.0-canary.13"%}
+### Using `log` in filter chains {% addedin "2.0.0-canary.13"%}
 
 You can drop log in between any filter chain you already have and it will log the incoming data and pass it through to the next filter.
 

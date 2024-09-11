@@ -16,9 +16,9 @@ export default class {
 
 		return feed.toRssFeed({
 			title: "The Eleventy Firehose",
+			subtitle: "One centralized feed of Eleventy activity across the web.",
 			language: "en",
 			url: `https://www.11ty.dev${PERMALINK}`,
-			subtitle: "One centralized feed of Eleventy activity across the web.",
 		});
 	}
 }

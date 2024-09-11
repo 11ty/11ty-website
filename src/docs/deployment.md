@@ -6,8 +6,8 @@ eleventyNavigation:
   order: 8
 featuredHosts:
   - name: "Want your logo here? Contact us!"
-    url: ""
-    tags: [Hosting Partner]
+    url: "mailto:partners@11ty.dev"
+    tags: [Recommended Partner]
     class: sites-featured
     screenshotSize: opengraph
 hosts:
@@ -50,7 +50,7 @@ hosts:
     url: https://codeberg.page/
     screenshotSize: medium
   - name: Kinsta
-    url: https://kinsta.com/
+    url: https://kinsta.com/docs/eleventy-static-site-example/
     screenshotSize: medium
   - name: CloudCannon
     url: https://cloudcannon.com/hosting/
@@ -59,6 +59,9 @@ hosts:
     url: https://srht.site/
     screenshotSize: medium
 classicHosts:
+  - name: Vercel CLI
+    url: https://vercel.com/cli
+    screenshotSize: medium
   - name: NearlyFreeSpeech
     url: https://www.nearlyfreespeech.net/
     screenshotSize: medium
@@ -74,6 +77,9 @@ classicHosts:
     screenshotSize: medium
   - name: Cloudflare Direct Upload
     url: https://developers.cloudflare.com/pages/get-started/direct-upload/#drag-and-drop
+    screenshotSize: medium
+  - name: xmit
+    url: https://xmit.co/
     screenshotSize: medium
 webides:
   - name: Glitch
@@ -100,31 +106,15 @@ If you want to customize Eleventy to do your own local development/production op
 
 Take a look at the list below for some ideas on where to deploy your Eleventy project. There are many deployment options available and this is not meant to be an exhaustive list.
 
-### Classic Web Hosts
-
-Eleventy can work with any web host that supports static files!
-
-With these hosts deployment is _not_ automatically triggered for you, so after you run the Eleventy build command you’ll need to upload your [Eleventy output directory](/docs/config/#output-directory) (defaults to `_site`) to the host manually.
-
-This is a great place to start if you’re not familiar with source control (e.g. git or GitHub).
-
-<div class="sites-vert sites-vert--md sites--reverse sites--center">
-  <div class="lo-grid" style="--fl-gap-v: 5em;">
-{%- for site in classicHosts | shuffle %}
-{% include "site-card.njk" %}
-{%- endfor %}
-  </div>
-</div>
-
 ### Jamstack Providers
 
 Jamstack providers can trigger your Eleventy build command automatically when you commit a file to your source control repository (GitHub, GitLab, Codeberg, etc.) and deploy [Eleventy’s build output directory](/docs/config/#output-directory) for you.
 
 <div class="sites-vert sites-vert--md sites--reverse sites--center">
   <div class="lo-grid" style="--fl-gap-v: 5em;">
-{# {%- for site in featuredHosts %}
+{%- for site in featuredHosts %}
 {% include "site-card.njk" %}
-{%- endfor %} #}
+{%- endfor %}
 {%- for site in hosts | shuffle %}
 {% include "site-card.njk" %}
 {%- endfor %}
@@ -147,6 +137,22 @@ One common practice when deploying Eleventy via a Jamstack provider is to use an
 
 This allows you to configure your host to run `npm run build` and allows you to make future changes to that command in your code and not the host’s configuration.
 
+### Classic Web Hosts
+
+Eleventy can work with any web host that supports static files!
+
+With these hosts deployment is _not_ automatically triggered for you, so after you run the Eleventy build command you’ll need to upload your [Eleventy output directory](/docs/config/#output-directory) (defaults to `_site`) to the host manually.
+
+This is a great place to start if you’re not familiar with source control (e.g. git or GitHub).
+
+<div class="sites-vert sites-vert--md sites--reverse sites--center">
+  <div class="lo-grid" style="--fl-gap-v: 5em;">
+{%- for site in classicHosts | shuffle %}
+{% include "site-card.njk" %}
+{%- endfor %}
+  </div>
+</div>
+
 ### Edit on the Web
 
 There are some great Web editors popping up that you can use to run and edit Eleventy projects online! Here are some options:
@@ -168,7 +174,7 @@ Some Jamstack providers have additional features to persist this folder between 
 
 - **CloudCannon**: use [Preserved paths](https://cloudcannon.com/documentation/articles/caching-specific-folders-to-reduce-build-times/#preserved-paths). [Tutorial on YouTube](https://www.youtube.com/watch?v=ULwVlFMth1U).
 - **Vercel**: zero-configuration support (when the [Eleventy framework is detected](https://vercel.com/docs/deployments/configure-a-build#framework-preset), [source](https://github.com/vercel/vercel/blob/20237d4f7b55b0697b57db15636c11204cb0dc39/packages/frameworks/src/frameworks.ts#L363)).
-- [**Cloudflare Pages**](https://developers.cloudflare.com/pages/configuration/build-caching/#frameworks): _not yet supported_ but we’ve been working with the team to add it—coming soon!
+- [**Cloudflare Pages**](https://developers.cloudflare.com/pages/configuration/build-caching/#frameworks): now preserves the `.cache` folder by default! _(shipped April 2024)_
 - **GitHub Pages**: use the [`cache` action](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows#using-the-cache-action). [Mini-tutorial included below](#deploy-an-eleventy-project-to-github-pages).
 - **Netlify**: use [`netlify-plugin-cache`](https://www.npmjs.com/package/netlify-plugin-cache). [Mini-tutorial included below](#using-netlify-plugin-cache-to-persist-cache). [Video on YouTube](https://www.youtube.com/watch?v=JCQQgtOcjH4&t=322s).
 
@@ -179,7 +185,7 @@ Additionally, _if_ you’re writing your [Eleventy Image output](/docs/plugins/i
 - [**CloudCannon** Tutorial on YouTube](https://www.youtube.com/watch?v=ULwVlFMth1U) _({{ "2023-10-23" | newsDate("yyyy") }})_
 - [Source example on GitHub for **Netlify**](https://github.com/11ty/demo-eleventy-img-netlify-cache) _({{ "2022-02-24" | newsDate("yyyy") }})_
 
-## Mini-tutorials
+## Mini-Tutorials
 
 ### Deploy an Eleventy project to GitHub pages
 

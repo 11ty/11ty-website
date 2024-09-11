@@ -1,9 +1,7 @@
 ---
-tipindex: "002"
 tiptitle: "Inline Minified JavaScript"
 date: 2018-06-08
 tags: ["related-filters"]
-relatedTitle: "Quick Tip #002—Inline Minified JavaScript"
 ---
 
 _Originally posted on [The Simplest Web Site That Could Possible Work Well on zachleat.com](https://www.zachleat.com/web/that-could-possibly-work/)_

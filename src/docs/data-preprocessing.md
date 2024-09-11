@@ -3,6 +3,7 @@ eleventyNavigation:
   parent: Global Data Files
   key: Data Preprocessing
   order: 4
+excludeFromSidebar: true
 ---
 
 # Global Data File Preprocessing

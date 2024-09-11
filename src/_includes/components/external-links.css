@@ -1,14 +1,12 @@
 /* External links */
 a[href^="http://"]:not([href^="http://11ty.dev"], [href^="http://www.11ty.dev"]):not(.minilink):not(.elv-externalexempt),
 a[href^="https://"]:not([href^="https://11ty.dev"], [href^="https://www.11ty.dev"]):not(.minilink):not(.elv-externalexempt),
-a[href^="//"]:not([href^="//11ty.dev"], [href^="//www.11ty.dev"]):not(.minilink):not(.elv-externalexempt)
-{
+a[href^="//"]:not([href^="//11ty.dev"], [href^="//www.11ty.dev"]):not(.minilink):not(.elv-externalexempt) {
 	text-decoration-color: #00bcd4;
 }
 a[href^="http://"]:not([href^="http://11ty.dev"], [href^="http://www.11ty.dev"]):not(.minilink):not(.elv-externalexempt):after,
 a[href^="https://"]:not([href^="https://11ty.dev"], [href^="https://www.11ty.dev"]):not(.minilink):not(.elv-externalexempt):after,
-a[href^="//"]:not([href^="//11ty.dev"], [href^="//www.11ty.dev"]):not(.minilink):not(.elv-externalexempt):after
-{
+a[href^="//"]:not([href^="//11ty.dev"], [href^="//www.11ty.dev"]):not(.minilink):not(.elv-externalexempt):after {
 	content: "↗";
 	font-family: system-ui, -apple-system, sans-serif;
 	font-style: normal;
@@ -21,14 +19,12 @@ a[href^="//"]:not([href^="//11ty.dev"], [href^="//www.11ty.dev"]):not(.minilink)
 /* External link hovers */
 a[href^="http://"]:not([href^="http://11ty.dev"], [href^="http://www.11ty.dev"]):not(.minilink):not(.elv-externalexempt):hover,
 a[href^="https://"]:not([href^="https://11ty.dev"], [href^="https://www.11ty.dev"]):not(.minilink):not(.elv-externalexempt):hover,
-a[href^="//"]:not([href^="//11ty.dev"], [href^="//www.11ty.dev"]):not(.minilink):not(.elv-externalexempt):hover
-{
+a[href^="//"]:not([href^="//11ty.dev"], [href^="//www.11ty.dev"]):not(.minilink):not(.elv-externalexempt):hover {
 	text-decoration-color: inherit;
 }
 a[href^="http://"]:not([href^="http://11ty.dev"], [href^="http://www.11ty.dev"]):not(.minilink):not(.elv-externalexempt):hover:after,
 a[href^="https://"]:not([href^="https://11ty.dev"], [href^="https://www.11ty.dev"]):not(.minilink):not(.elv-externalexempt):hover:after,
-a[href^="//"]:not([href^="//11ty.dev"], [href^="//www.11ty.dev"]):not(.minilink):not(.elv-externalexempt):hover:after
-{
+a[href^="//"]:not([href^="//11ty.dev"], [href^="//www.11ty.dev"]):not(.minilink):not(.elv-externalexempt):hover:after {
 	color: inherit;
 }
 
@@ -41,8 +37,7 @@ a[href^="https://fediverse.zachleat.com"]:not(.elv-externalexempt):before,
 a[href^="https://fosstodon.org"]:not(.elv-externalexempt):before,
 a[href^="https://wikipedia.org"]:not(.elv-externalexempt):before,
 a[href^="/blog/discord/"]:not(.elv-externalexempt):before,
-a[href^="https://en.wikipedia.org"]:not(.elv-externalexempt):before
-{
+a[href^="https://en.wikipedia.org"]:not(.elv-externalexempt):before {
 	content: "";
 	display: inline-block;
 	vertical-align: text-bottom;
@@ -60,8 +55,7 @@ a[href^="https://fediverse.zachleat.com"]:not(.elv-externalexempt):after,
 a[href^="https://fosstodon.org"]:not(.elv-externalexempt):after,
 a[href^="https://wikipedia.org"]:not(.elv-externalexempt):after,
 a[href^="/blog/discord/"]:not(.elv-externalexempt):after,
-a[href^="https://en.wikipedia.org"]:not(.elv-externalexempt):after
-{
+a[href^="https://en.wikipedia.org"]:not(.elv-externalexempt):after {
 	display: none;
 }
 
@@ -69,36 +63,30 @@ a[href^="/blog/discord/"]:not(.elv-externalexempt):before {
 	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fdiscord.com%2F/");
 }
 a[href^="https://youtube.com"]:before,
-a[href^="https://www.youtube.com"]:before
-{
+a[href^="https://www.youtube.com"]:before {
 	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.youtube.com%2F/");
 }
 a[href^="https://fediverse.zachleat.com"]:before,
-a[href^="https://fosstodon.org"]:before
-{
+a[href^="https://fosstodon.org"]:before {
 	border-radius: 0.3125em; /* 5px /16 */
 	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ffosstodon.org%2F/");
 }
-a[href^="https://github.com"]:before
-{
+a[href^="https://github.com"]:before {
 	border-radius: 7px;
 	box-shadow: 0px 0px 0px 2px #fff;
 	background-color: #fff;
 	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fgithub.com%2F/");
 }
-a[href^="https://gitlab.com"]:before
-{
+a[href^="https://gitlab.com"]:before {
 	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fabout.gitlab.com%2F/");
 }
 a[href^="https://wikipedia.org"]:before,
-a[href^="https://en.wikipedia.org"]:before
-{
+a[href^="https://en.wikipedia.org"]:before {
 	border: 0.0625em solid rgba(0, 0, 0, 0.3); /* 1px /16 */
 	border-radius: 0.125em; /* 2px /16 */
 	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fwww.wikipedia.org%2F/");
 }
-a[href^="https://github.com"].elv-skipicon:before
-{
+a[href^="https://github.com"].elv-skipicon:before {
 	display: none;
 }
 
@@ -109,8 +97,7 @@ a[href^="https://github.com"].elv-skipicon:before
 a[href^="https://youtube.com"].lty-playbtn:before,
 .facepile a[href^="https://github.com"]:before,
 .facepile a[href^="https://fosstodon.org"]:before,
-.facepile a[href^="https://fediverse.zachleat.com"]:before
-{
+.facepile a[href^="https://fediverse.zachleat.com"]:before {
 	display: none;
 }
 
@@ -123,7 +110,6 @@ a[href^="https://fediverse.zachleat.com"]:not(.elv-externalexempt) .avatar,
 a[href^="https://fosstodon.org"]:not(.elv-externalexempt) .avatar,
 a[href^="https://wikipedia.org"]:not(.elv-externalexempt) .avatar,
 a[href^="/blog/discord/"]:not(.elv-externalexempt) .avatar,
-a[href^="https://en.wikipedia.org"]:not(.elv-externalexempt) .avatar
-{
+a[href^="https://en.wikipedia.org"]:not(.elv-externalexempt) .avatar {
 	display: none;
 }

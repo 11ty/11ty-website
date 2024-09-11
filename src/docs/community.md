@@ -28,10 +28,11 @@ ignoreGitHubButtons: true
 
 ## <span class="numberflag"><span class="sr-only">Step</span> {{ count }}</span> Stay up-to-date
 
-- [**Follow @eleventy@fosstodon.org on Mastodon**](https://fosstodon.org/@eleventy)
-- Read the [**Eleventy Blog**](/blog/)
-- Subscribe/unsubscribe to the [Eleventy YouTube Channel](https://www.youtube.com/channel/UCskGTioqrMBcw8pd14_334A)
-- We publish RSS feeds for: [**Everything** (the firehose)](/firehose/?type=youtube&type=github&type=blog&type=quick-tips), just [**Blog Posts**](/blog/feed.xml) or just [**Documentation Updates**](/docs/feed.xml)
+- [Follow @eleventy@fosstodon.org on **Mastodon**](https://fosstodon.org/@eleventy)
+- Read the [Eleventy **Blog**](/blog/)
+- Subscribe to the [Eleventy **YouTube Channel**](https://www.youtube.com/c/EleventyVideo)
+- [Subscribe to the 11ty **Email Newsletter**](https://buttondown.email/11ty)
+- We publish feeds for: [**Firehose**](/firehose/?type=youtube&type=github&type=blog&type=quick-tips) _(everything)_, [**Blog Posts**](/blog/feed.xml), or [**Documentation Updates**](/docs/feed.xml)
 - View the full [Eleventy Release History](/docs/versions/) (with documentation for previous versions)
 
 {% set count = count + 1 %}

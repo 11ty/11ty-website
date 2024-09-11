@@ -8,22 +8,22 @@ eleventyNavigation:
 
 {% tableofcontents %}
 
-The Eleventy 2.0 release bundles a new development server. Check out the [`11ty/eleventy-dev-server` repository on GitHub](https://github.com/11ty/eleventy-dev-server).
+The Eleventy 2.0 release includes a brand new development server. Check out the [`11ty/eleventy-dev-server` repository on GitHub](https://github.com/11ty/eleventy-dev-server).
 
-At time of release, this new server helps Eleventy by:
+At time of release, this new server has:
 
 - 🏋🏻‍♀️ Minimal footprint: 1.4 MB node_modules
-  - Eleventy `node_modules` dropped from 155 MB to 34.3 MB
-  - Faster Eleventy `npm install` times (30.5% faster)
-  - Reduced Eleventy dependency count from 311 -> 211
-- 📦 Decoupled from any Bundler
+	- Eleventy `node_modules` dropped from 155 MB to 34.3 MB
+	- Faster Eleventy `npm install` times (30.5% faster)
+	- Reduced Eleventy dependency count from 311 -> 211
+- 📦 Bundler Decoupled
 - 🚄 Fast ~2ms startup times
 - ⚡️ WebSockets-based Live reload
 - 🔬 DOM-diffing HTML updates
 - ⚠️ No unresolved `npm audit` errors or warnings 👀
 - 🚤 Supports [emulated passthrough file copy](/docs/copy/#emulate-passthrough-copy-during-serve) for faster builds!
 
-Read more on the [Eleventy Dev Server 1.0 release notes](https://github.com/11ty/eleventy-dev-server/releases/tag/v1.0.0).
+_Read more detail on the [Eleventy Dev Server 1.0 release notes](https://github.com/11ty/eleventy-dev-server/releases/tag/v1.0.0)._
 
 ## Options
 
@@ -66,6 +66,15 @@ module.exports = function (eleventyConfig) {
 
 		// Show the dev server version number on the command line
 		showVersion: false,
+
+		// Added in Dev Server 2.0+
+		// The default file name to show when a directory is requested.
+		indexFileName: "index.html",
+
+		// Added in Dev Server 2.0+
+		// An object mapping a URLPattern pathname to a callback function
+		// for on-request processing (read more below).
+		onRequest: {},
 	});
 };
 ```
@@ -110,25 +119,66 @@ Try out the [`devcert-cli`](https://github.com/davewasmer/devcert-cli) package t
 {%- endcallout %}
 
 <div class="youtube-related">
-  {%- youtubeEmbed "wWs38M38vr8", "New Dev Server Preview (Weekly №3)" -%}
-  {%- youtubeEmbed "7hER8HddlhQ", "Shipping the New Dev Server (Weekly №4)" -%}
-  {%- youtubeEmbed "ZE5Np95-PeU", "Dev Server CLI (Weekly №14)", "463" -%}
+	{%- youtubeEmbed "wWs38M38vr8", "New Dev Server Preview (Weekly №3)" -%}
+	{%- youtubeEmbed "7hER8HddlhQ", "Shipping the New Dev Server (Weekly №4)" -%}
+	{%- youtubeEmbed "ZE5Np95-PeU", "Dev Server CLI (Weekly №14)", "463" -%}
 </div>
 
-### Advanced `chokidar` options
+### `onRequest` for request-time processing
 
-Advanced [`chokidar` options](https://github.com/paulmillr/chokidar) can be defined using the `setChokidarConfig` configuration API method:
+{% addedin "3.0.0-alpha.7" %}{% addedin "Dev Server 2.0.0" %} Use the new `onRequest` object to configure some of your project to use on-request-time processing. The keys in this object represent strings from the [URL Pattern API](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API).
 
 {% codetitle ".eleventy.js" %}
 
 ```js
 module.exports = function(eleventyConfig) {
-  eleventyConfig.setChokidarConfig({
-    usePolling: true,
-    interval: 500,
-  });
+	eleventyConfig.setServerOptions({
+		onRequest: {
+			"/": function({ url }) {
+				// will fallback to serve static files if we return any falsy value other than ""
+			},
+			"/empty": function({ url }) {
+				// render an empty page
+				return "";
+			},
+			"/foo/:name": function({ url, pattern, patternGroups }) {
+				// patternGroups will include URLPattern matches e.g. /foo/zach => { name: "zach" }
+				return {
+					status: 200,
+					headers: {
+						"Content-Type": "text/html",
+					},
+					body: "Hello."
+				};
+			}
+		}
+	});
 }
 ```
+
+Works great with the [`process.env.ELEVENTY_RUN_MODE` environment variable](/docs/environment-vars/#eleventy-supplied) to change how your server operates during`--serve` mode.
+
+{% codetitle ".eleventy.js" %}
+
+```js
+module.exports = function(eleventyConfig) {
+	// Intercept all requests during --serve mode.
+	if(process.env.ELEVENTY_RUN_MODE === "serve") {
+		eleventyConfig.setServerOptions({
+			onRequest: {
+				"/*": function({ url }) {
+					// Don’t return any static files, only show a help message
+					return "Help I am trapped in the computer.";
+				},
+			}
+		});
+	}
+}
+```
+
+## Advanced `chokidar` options
+
+Access to advanced `chokidar` configuration is available via the [`eleventyConfig.setChokidarConfig` method (on the Watch and Serve documentation)](/docs/watch-serve/#advanced-chokidar-configuration).
 
 ## Swap back to Browsersync {% addedin "2.0.0" %}
 
@@ -165,7 +215,7 @@ module.exports = function (eleventyConfig) {
 View the [full list of Browsersync options](https://browsersync.io/docs/options).
 
 <div class="youtube-related">
-  {%- youtubeEmbed "7hER8HddlhQ", "Fallback to browsersync (Weekly №4)", "235" -%}
+	{%- youtubeEmbed "7hER8HddlhQ", "Fallback to browsersync (Weekly №4)", "235" -%}
 </div>
 
 ### `setBrowserSyncConfig`

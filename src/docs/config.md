@@ -271,7 +271,7 @@ module.exports = function (eleventyConfig) {
 npx @11ty/eleventy --formats=html,liquid,njk
 ```
 
-{% callout "info" %}{% addedin "0.9.0" %} <strong>Case sensitivity</strong>: File extensions should be considered case insensitive, cross-platform. While Mac OS—by default—already behaves this way, other operating systems do not and needed additional Eleventy code to enable this behavior.{% endcallout %}
+{% callout "info" %}{% addedin "0.9.0" %} <strong>Case sensitivity</strong>: File extensions should be considered case insensitive, cross-platform. While macOS, by default, already behaves this way, other operating systems require additional Eleventy code to enable this behavior.{% endcallout %}
 
 ### Enable Quiet Mode to Reduce Console Noise
 
@@ -423,59 +423,7 @@ module.exports = function (eleventyConfig) {
 
 ### Transforms
 
-Transforms can modify a template’s output. For example, use a transform to format/prettify an HTML file with proper whitespace.
-
-The provided transform function must return the original or transformed content.
-
-| Transforms              |                |
-| ----------------------- | -------------- |
-| _Configuration API_     | `addTransform` |
-| _Default_               | `{}`           |
-| _Valid Options_         | Object literal |
-| _Command Line Override_ | _None_         |
-
-```js
-module.exports = function (eleventyConfig) {
-	// Can be sync or async
-	eleventyConfig.addTransform("transform-name", async function (content) {
-		console.log(this.inputPath);
-		console.log(this.outputPath);
-
-		// Eleventy 2.0+ has full access to Eleventy’s `page` variable
-		console.log(this.page.inputPath);
-		console.log(this.page.outputPath);
-
-		return content; // no change done.
-	});
-};
-```
-
-<details>
-<summary><strong>Transforms Example: Minify HTML Output</strong></summary>
-
-{% codetitle ".eleventy.js" %}
-
-```js
-const htmlmin = require("html-minifier");
-
-module.exports = function (eleventyConfig) {
-	eleventyConfig.addTransform("htmlmin", function (content) {
-		// Prior to Eleventy 2.0: use this.outputPath instead
-		if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
-			let minified = htmlmin.minify(content, {
-				useShortDoctype: true,
-				removeComments: true,
-				collapseWhitespace: true,
-			});
-			return minified;
-		}
-
-		return content;
-	});
-};
-```
-
-</details>
+- Documented moved to [Transforms](/docs/transforms.md).
 
 ### Linters
 
@@ -594,6 +542,10 @@ Files found (that don’t have a valid template engine) from opt-in file extensi
 #### Override Browsersync Server Options {% addedin "0.7.0" %}
 
 - Documented at [Watch and Serve Configuration](/docs/watch-serve/).
+
+#### Transforms
+
+- Documented at [Transforms](/docs/transforms.md).
 
 <!--
 ### Experiments

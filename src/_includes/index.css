@@ -42,6 +42,9 @@
 	box-sizing: border-box;
 }
 html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
 	overflow-y: scroll;
 }
 body {
@@ -330,7 +333,6 @@ h2,
 	font-size: 2.222222222222em; /* 40px /18 */
 	border-bottom: 1px solid #ddd;
 	margin: 2em 0 0.25em;
-	line-height: 1.1;
 	letter-spacing: -0.5px;
 }
 @media (prefers-color-scheme: dark) {
@@ -788,6 +790,9 @@ a[href].elv-hero:visited {
 	.btn-primary {
 		font-size: 5.25em; /* 84px /16 */
 	}
+}
+.btn-primary-nogrow {
+	font-size: 1.4em;
 }
 
 /* Emoji */

@@ -1,5 +1,4 @@
 ---
-tipindex: "011"
 tiptitle: "Use local plugins to reduce config file size"
 date: 2022-02-20
 ---

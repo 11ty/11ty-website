@@ -19,10 +19,6 @@ Feed this runtime service a URL and it returns a fully rendered screenshot image
 
 - [`11ty/api-screenshot` on GitHub](https://github.com/11ty/api-screenshot)
 
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/11ty/api-screenshot" class="elv-externalexempt"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
-
-- You will _need_ to set an environment variable in the Netlify App UI `AWS_LAMBDA_JS_RUNTIME` with the value `nodejs12.x`. Read more at [Issue #17](https://github.com/11ty/api-screenshot/issues/17).
-
 ## Usage
 
 Image URLs have the format:
@@ -73,19 +69,6 @@ Try it out on the [Eleventy API Explorer](https://api-explorer.11ty.dev/).
 
 ## Advanced Options
 
-### Manual Cache Busting
-
-If the screenshots aren’t updating at a high enough frequency you can pass in your own cache busting key using an underscore prefix `_` after your URL.
-
-This can be any arbitrary string tied to your unique build, here’s some examples that use today’s date:
-
-```
-/:url/_20210802/
-/:url/:size/_20210802/
-/:url/:size/:aspectratio/_20210802/
-/:url/:size/:aspectratio/:zoom/_20210802/
-```
-
 ### Custom Wait Conditions
 
 You can customize the conditions with which the headless browser will wait to take the screenshot. At a low level, this controls the [`waitUntil` property in Puppeteer’s `goto` call](https://pptr.dev/#?product=Puppeteer&version=v13.3.1&show=api-pagegotourl-options). The options are:
@@ -116,4 +99,4 @@ Number of seconds to wait before the request times out. We will attempt to simul
 
 ### Combine these options
 
-You can use any of these advanced options together, like `/:url/_20210802_wait:0_timeout:2/`. Order only matters to the uniqueness of the URL caching on the CDN: `/:url/_20210802_wait:0/` and `/:url/_wait:0_20210802/` will be functionally equivalent but make two different screenshot requests.
+You can use any of these advanced options together, like `/:url/_wait:0_timeout:2/`. Order only matters to the uniqueness of the URL caching on the CDN.

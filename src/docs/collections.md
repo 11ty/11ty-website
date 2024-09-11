@@ -31,11 +31,9 @@ title: Hot Take—Social Media is Considered Harmful
 This will place this `mypost.md` into the `post` collection with all other pieces of content sharing the `post` tag. To reference this collection and make a list of all posts, use the `collections` object in any template:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collections"} %}
   <div id="collections-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -52,8 +50,6 @@ This will place this `mypost.md` into the `post` collection with all other piece
   </div>
   <div id="collections-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -68,8 +64,6 @@ This will place this `mypost.md` into the `post` collection with all other piece
 
   </div>
   <div id="collections-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 
@@ -89,16 +83,72 @@ exports.render = function (data) {
 </seven-minute-tabs>
 </is-land>
 
+### A note about using `-` in `tags`
+
+If you use `-` in your collection names (e.g. `tags: "post-with-dash"`), remember that some template languages require square bracket notation to reference it in collections. Read more at [Issue #567](https://github.com/11ty/eleventy/issues/567).
+
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collections-dashwarn"} %}
+  <div id="collections-dashwarn-liquid" role="tabpanel">
+
+{% raw %}
+
+```liquid
+<ul>
+{%- for post in collections.post-with-dash -%}
+  <li>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+```
+
+{% endraw %}
+
+  </div>
+  <div id="collections-dashwarn-njk" role="tabpanel">
+
+{% raw %}
+
+```jinja2
+<ul>
+{%- for post in collections['post-with-dash'] -%}
+  <li>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+```
+
+{% endraw %}
+
+  </div>
+  <div id="collections-dashwarn-js" role="tabpanel">
+
+{% raw %}
+
+```js
+exports.render = function (data) {
+	return `<ul>
+    ${data.collections['post-with-dash']
+			.map((post) => `<li>${post.data.title}</li>`)
+			.join("\n")}
+  </ul>`;
+};
+```
+
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>
+
+
 ### Declare your collections for incremental builds
 
 {% addedin "2.0.0-canary.21" %}Use the `eleventyImport` object to declare any collections you use (data cascade friendly) to inform the relationships for smarter incremental builds. This is an Array of collection names. Read more about [importing collections](https://github.com/11ty/eleventy/issues/975).
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync  class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collections-import"} %}
   <div id="collections-import-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -119,8 +169,6 @@ eleventyImport:
   </div>
   <div id="collections-import-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -139,8 +187,6 @@ eleventyImport:
 
   </div>
   <div id="collections-import-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 
@@ -172,11 +218,9 @@ exports.render = function (data) {
 Compare the `post.url` and special Eleventy-provided `page.url` variable to find the current page. Building on the previous example:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsnav"} %}
   <div id="collectionsnav-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -193,8 +237,6 @@ Compare the `post.url` and special Eleventy-provided `page.url` variable to find
   </div>
   <div id="collectionsnav-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -209,8 +251,6 @@ Compare the `post.url` and special Eleventy-provided `page.url` variable to find
 
   </div>
   <div id="collectionsnav-js" role="tabpanel">
-
-{% codetitle "JavaScript .11ty.js", "Syntax" %}
 
 {% raw %}
 
@@ -244,11 +284,9 @@ By default Eleventy puts all of your content (independent of whether or not it h
 ### Link to all Eleventy generated content
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsall"} %}
   <div id="collectionsall-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -265,8 +303,6 @@ By default Eleventy puts all of your content (independent of whether or not it h
   </div>
   <div id="collectionsall-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -281,8 +317,6 @@ By default Eleventy puts all of your content (independent of whether or not it h
 
   </div>
   <div id="collectionsall-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 
@@ -315,6 +349,17 @@ tags: post
 ---
 
 This will not be available in `collections.all` or `collections.post`.
+```
+
+{% addedin "3.0.0-alpha.1" %} `eleventyExcludeFromCollections` can now also accept an array of tag names:
+
+```markdown
+---
+eleventyExcludeFromCollections:
+  - post
+---
+
+This will be available in `collections.all` but not `collections.post`.
 ```
 
 ## Add to a Collection using Tags
@@ -378,11 +423,9 @@ This content would not show up in any of the collections it was added to with `t
 ## Collection Item Data Structure
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsitem"} %}
   <div id="collectionsitem-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -399,8 +442,6 @@ This content would not show up in any of the collections it was added to with `t
   </div>
   <div id="collectionsitem-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -415,8 +456,6 @@ This content would not show up in any of the collections it was added to with `t
 
   </div>
   <div id="collectionsitem-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 
@@ -495,11 +534,9 @@ This collection would be sorted like this:
 To sort descending in your template, you can use a filter to reverse the sort order. For example, it might look like this:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionssort"} %}
   <div id="collectionssort-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -516,8 +553,6 @@ To sort descending in your template, you can use a filter to reverse the sort or
   </div>
   <div id="collectionssort-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -532,8 +567,6 @@ To sort descending in your template, you can use a filter to reverse the sort or
 
   </div>
   <div id="collectionssort-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 

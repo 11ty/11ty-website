@@ -51,9 +51,9 @@
 	padding-left: 0.625rem; /* 10px /16 */
 }
 /* Hide inactive menus 3 or more deep */
-.elv-toc-list ul ul > li:not(.elv-toc-active) > ul > li:not(.elv-toc-active) {
+/* .elv-toc-list ul ul > li:not(.elv-toc-active) > ul > li:not(.elv-toc-active) {
 	display: none;
-}
+} */
 
 /* List items */
 .elv-toc summary,
@@ -166,4 +166,20 @@ details.toc[open] > summary {
 }
 .table-of-contents > ul ul > li {
 	padding: 0;
+}
+
+/* Fundraising */
+.fundraising-sidebar {
+	display: block;
+	text-decoration: none;
+}
+.fundraising-sidebar-percent {
+	font-size: 2.5em;
+	text-align: center;
+	font-weight: 700;
+	line-height: 1;
+	margin-block: .25em .25em;
+}
+.fundraising-sidebar-percent:after {
+	content: "%";
 }

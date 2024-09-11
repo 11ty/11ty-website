@@ -1,6 +1,6 @@
----node
+---js
 // <script>
-let title = "Eleventy is a simpler static site generator";
+let headerTitle = "Eleventy";
 
 let social = {
 	imgsrc: "https://www.11ty.dev/img/open-graph.jpg",
@@ -11,15 +11,18 @@ let domain = process.env.URL || "https://www.11ty.dev";
 
 // For things that rely on the data cascade
 let eleventyComputed = {
+	title: function(data) {
+		return data.newstitle || data.searchTitle || data.relatedTitle || data.tiptitle || data.eleventyNavigation?.key || data.title || data.headerTitle;
+	},
 	social: {
 		imgsrc: function({ domain, page }) {
-			return `https://v1.screenshot.11ty.dev/${encodeURIComponent(domain + page.url)}/opengraph/_cachebust/`;
+			return `https://v1.screenshot.11ty.dev/${encodeURIComponent(domain + page.url)}/opengraph/`;
 		},
 		imgalt: function({ domain, page }) {
 			return `A screenshot of the web page at ${domain + page.url}`;
 		},
 		description: function({ versions, config }) {
-			return `A docs page for Eleventy ${this.latestVersion(versions, config)}, a simpler static site generator.`;
+			return `A docs page for Eleventy, a simpler static site generator.`;
 		}
 	}
 };
@@ -29,8 +32,7 @@ let eleventyComputed = {
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		{%- set subtitle %}{{ newstitle or searchTitle or relatedTitle or tiptitle or eleventyNavigation.key or title }}{% endset %}
-		{%- set subtitleText %}{{ subtitle }}{% if subtitle and subtitle != "Eleventy is a simpler static site generator" %} — Eleventy{% endif %}{% endset %}
+		{%- set subtitleText %}{{ title }}{% if title and title != "Eleventy is a simpler static site generator" %} — Eleventy{% endif %}{% endset %}
 		<title>{{ subtitleText }}</title>
 		<meta name="description" content="{{ subtitleText }}">
 		<meta name="generator" content="{{ eleventy.generator }}">
@@ -43,7 +45,7 @@ let eleventyComputed = {
 		<meta property="og:url" content="https://www.11ty.dev{{ page.url }}">
 		<meta property="og:site_name" content="Eleventy">
 		<meta property="og:locale" content="en_US">
-		<meta property="og:title" content="{{ subtitle }}">
+		<meta property="og:title" content="{{ title }}">
 		<meta property="og:description" content="{{ social.description }}">
 		<meta property="og:image" content="{{ social.imgsrc }}">
 		<meta property="og:image:width" content="1280">
@@ -51,32 +53,32 @@ let eleventyComputed = {
 		<meta property="og:image:alt" content="{{ social.imgalt }}">
 
 		<!-- Feeds -->
-{%- if not feedExclusive %}
 		<link rel="alternate" href="/blog/feed.xml" title="Eleventy Blog" type="application/atom+xml">
 		<link rel="alternate" href="/firehose/firehose.rss" title="Eleventy Firehose" type="application/rss+xml">
-{%- endif %}
 {%- if feedTitle and feedUrl %}
 		<link rel="alternate" href="{{ feedUrl }}" title="{{ feedTitle }}" type="application/atom+xml">
 {%- endif %}
 
 {%- set css %}
 {% include 'components/font-titles.css' %}
+{{ robotoMonoGoogleFontsCss | safe }}
 {% include 'index.css' %}
 {% include 'components/navigation.css' %}
 {% include 'components/announcement.css' %}
 {% include 'components/external-links.css' %}
 {% include 'components/toc.css' %}
 {% include "components/minilink.css" %}
+{% include 'components/direct-links.css' %}
 {# Sidebar ad for 11ty conf #}
 {% include 'components/callout.css' %}
+{% include 'components/newsletter-signup.css' %}
 {# TODO convert to WebC #}
 {% include 'components/grid-layout.css' %}
+{% include 'components/seven-minute-tabs.css' %}
 
 {% if not skipLegacyBundle %}
 	{# these components are not yet used on WebC pages #}
-	{% include 'components/direct-links.css' %}
 	{% include 'components/breadcrumb.css' %}
-	{% include 'components/seven-minute-tabs.css' %}
 
 	{# these components have been converted to WebC #}
 	{% include 'components/prism-theme.css' %}
@@ -98,8 +100,6 @@ let eleventyComputed = {
 		font-size: 16px;
 		padding: .3em .5em;
 	}
-
-	{{ robotoMonoGoogleFontsCss | safe }}
 {% endif %}
 {% endset %}
 
@@ -126,6 +126,7 @@ let eleventyComputed = {
 {%- endif %}
 {%- endif %}
 		<script>{% include "components/details-force-state.js" %}</script>
+		<script>{% include "../../../node_modules/@zachleat/fundraising-status/fundraising-status.js" %}</script>
 	</head>
 	<body>
 		{{ content | safe }}

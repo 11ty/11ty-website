@@ -23,7 +23,7 @@ Various template engines can be extended with custom filters to modify content. 
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs persist sync>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "filter"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "filter", additions: "hbs"} %}
   <div id="filter-njk" role="tabpanel">
     {% codetitle "sample.njk" %}
 {%- highlight "html" %}{% raw %}

@@ -19,7 +19,7 @@ A pack of Eleventy plugins for PrismJS syntax highlighting. No browser/client Ja
 Available on [npm](https://www.npmjs.com/package/@11ty/eleventy-plugin-syntaxhighlight).
 
 ```
-npm install @11ty/eleventy-plugin-syntaxhighlight --save-dev
+npm install @11ty/eleventy-plugin-syntaxhighlight
 ```
 
 Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:

@@ -1,9 +1,6 @@
 ---
-tipindex: "011"
 tiptitle: "Draft Posts using Computed Data"
 date: 2023-01-24
-tags: []
-relatedTitle: "Quick Tip #011—Draft Posts using Computed Data"
 ---
 
 Here’s a quick snippet that shows how to combine Eleventy’s [Configuration API Global Data](/docs/data-global-custom/) and [Computed Data](/docs/data-computed/) features in your Eleventy Configuration file to implement a simple drafts feature for any piece of content.

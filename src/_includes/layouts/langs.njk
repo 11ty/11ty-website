@@ -25,6 +25,9 @@ layout: layouts/docs.njk
 	display: inline;
 	margin-left: 1em;
 }
+.elv-langlist-logo {
+	max-width: 200px;
+}
 {% endcss %}
 
 <h1>{{ eleventyNavigation.key }}{% if addedInVersion %}{% addedin addedInVersion%}{% endif %}</h1>
@@ -35,7 +38,7 @@ layout: layouts/docs.njk
 </div>
 
 {% if logoImage %}
-<p>{% image logoImage, "Logo for " + eleventyNavigation.key, [200] %}</p>
+<p>{% image logoImage, "Logo for " + eleventyNavigation.key, [200, 400], "elv-langlist-logo", "200px" %}</p>
 {% endif %}
 
 {{ content | safe }}

@@ -145,3 +145,11 @@ Application servers can be slow. Instead of PHP, Java, or even Node.js dynamical
 Single Page Applications (SPA) use JavaScript to enable navigations between pages on a web site. Multi-Page Applications use the classic navigation model of the web and do a full page refresh to a new page.
 
 Should you [build a Single Page Application with Eleventy](/docs/single-page-applications/)?
+
+## Where did the Name Come From?
+
+> Some might think that the name Eleventy is an homage to Spinal Tap (turn it up to eleven) or more directly, Lord of the Rings. I chose it because of a story my grandma Nonnie loved to tell about how I learned to count. Rather than move from ten to eleven like a normal child, I felt it appropriate to use the teen suffix for the numbers eleven and twelve, counting “ten, eleventy-teen, twelvety-teen, thirteen, …” I always liked that story and it seemed as appropriate a reason as any.—[via `zachleat.com`](https://www.zachleat.com/web/eleventy-birthday/#project-naming)
+
+### What’s the difference between 11ty and Eleventy?
+
+The `11ty` name refers to the over-arching organization and community. `Eleventy` refers to the static site generator specifically. —[via Issue #1283](https://github.com/11ty/eleventy/issues/1283#issuecomment-656708009)
