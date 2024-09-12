@@ -28,11 +28,25 @@ _Monthly donations:_
 _Median monthly donation:_ `{{ opencollectiveMonthly.stats.median | displayPrice }}`
 _Mean monthly donation:_ `{{ opencollectiveMonthly.stats.mean | displayPrice }}`
 
+### One-time donations in the last 12 months
+
+* `{{ opencollective.onetimeDonations.count }}` donations in the last 12 months
+* Totalling `{{ opencollective.onetimeDonations.total | displayPrice }}`
+* Approximately `{{ (opencollective.onetimeDonations.total/12) | displayPrice }}` per month
+
+#### Months ago:
+
+{%- for month in opencollective.onetimeDonations.months %}
+1. {% if month %}`{{ month | displayPrice }}`{% endif %}
+{%- endfor %}
+
 ### Yearly estimate
 
 <p style="font-size: 3em"><code>{{ (opencollectiveMonthly.recurringAmount * 12) | displayPrice }}</code></p>
 
 _The monthly amount ×12_ 😇
+
+`{{ (opencollectiveMonthly.recurringAmount * 12 + opencollective.onetimeDonations.total) | displayPrice }}` with amortized one time payments.
 
 ## Sites
 

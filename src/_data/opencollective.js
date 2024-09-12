@@ -2,6 +2,34 @@
 import EleventyFetch from "@11ty/eleventy-fetch";
 import githubSponsors from "./githubSponsors.js";
 
+function getAmortizedOneTimeDonations(orders) {
+	let total = 0;
+	let count = 0;
+	let monthsBuckets = Array(12);
+
+	for (let order of orders) {
+		if(order.frequency === "ONETIME" && order.fromAccount.slug !== "github-sponsors") {
+			let monthsAgo = (Date.now() - Date.parse(order.createdAt)) / (1000*60*60*24*365 / 12);
+			if(monthsAgo < 12) {
+				let index = Math.floor(monthsAgo);
+				if(!monthsBuckets[index]) {
+					monthsBuckets[index] = 0;
+				}
+				monthsBuckets[index] += order.amount.value;
+
+				total += order.amount.value;
+				count++;
+			}
+		}
+	}
+
+	return {
+		total,
+		count,
+		months: monthsBuckets,
+	};
+}
+
 function isMonthlyOrYearlyOrder(order) {
 	return (
 		(order.frequency === "MONTHLY" || order.frequency === "YEARLY") &&
@@ -95,6 +123,7 @@ export default async function () {
 			hasDefaultAvatar: false,
 		});
 
+		let onetimeDonations = getAmortizedOneTimeDonations(orders);
 		let githubSponsorsAmount = await githubSponsors();
 		orders = getUniqueContributors(orders, githubSponsorsAmount);
 
@@ -107,7 +136,8 @@ export default async function () {
 
 		return {
 			supporters: orders,
-			backers: backers,
+			backers,
+			onetimeDonations,
 		};
 	} catch (e) {
 		if (process.env.NODE_ENV === "production") {
@@ -119,6 +149,10 @@ export default async function () {
 
 		return {
 			supporters: [],
+			onetimeDonations: {
+				count: 0,
+				total: 0,
+			},
 			backers: 0,
 		};
 	}
