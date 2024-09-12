@@ -168,18 +168,19 @@ details.toc[open] > summary {
 	padding: 0;
 }
 
-/* Fundraising */
-.fundraising-sidebar {
+/* Sidebar ad */
+.elv-toc .elv-callout:first-child {
+	--callout-primary: #63e6be;
+	--callout-secondary: transparent;
+}
+@media (prefers-color-scheme: dark) {
+	.elv-toc .elv-callout:first-child {
+		--callout-primary: #31b089;
+	}
+}
+.elv-toc-callout-link {
 	display: block;
-	text-decoration: none;
-}
-.fundraising-sidebar-percent {
-	font-size: 2.5em;
-	text-align: center;
-	font-weight: 700;
-	line-height: 1;
-	margin-block: .25em .25em;
-}
-.fundraising-sidebar-percent:after {
-	content: "%";
+	font-size: 1.25em;
+	line-height: 1.4;
+	text-wrap: balance;
 }

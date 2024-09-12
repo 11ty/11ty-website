@@ -1,10 +1,7 @@
 <div class="elv-toc" data-pagefind-ignore>
-{%- set adTitle = "<a href='/blog/sustainability-fundraising/' class='elv-externalexempt'>Sustainability Fundraising</a>" %}
-{%- callout "", "html", adTitle %}
-<a href="/blog/sustainability-fundraising/" class="fundraising-sidebar elv-externalexempt">
-	<div class="fundraising-sidebar-percent">{{ (opencollectiveMonthly.recurringAmount * 100 / 6000) | round(1) }}</div>
-	<fundraising-status min="0" max="6000" value="{{ opencollectiveMonthly.recurringAmount }}" hide-currency style="--fs-color: hsl(195deg 98.53% 46.26%);"></fundraising-status>
-</a>
+{%- set calloutTitle %}<a href="/blog/">Blog</a>{% endset %}
+{%- callout "", "html", calloutTitle %}
+<a href="/blog/eleventy-font-awesome/" class="elv-toc-callout-link"><strong>11ty is joining Font Awesome{% indieavatar "https://fontawesome.com/", "avatar-flush" %}</strong></a>
 {%- endcallout %}
 
 {%- set versionsTitle = "<a href='/docs/versions/'>Versions</a>" %}
