@@ -4,8 +4,9 @@ eleventyNavigation:
   parent: Blog
 homePageHighlight: true
 external_url: https://blog.fontawesome.com/
+ogimageOverride: /blog/fa-2.png
 ---
-<img src="./fa.png" alt="Font Awesome + 11ty logos" class="blog-poster-md">
+<img src="./fa-2.png" alt="Font Awesome + 11ty logos">
 
 Today—I’m delighted to announce that 11ty is joining the excellent team at [{% indieavatar "https://fontawesome.com/", "avatar-flush" %}_Font Awesome_](https://fontawesome.com/).
 

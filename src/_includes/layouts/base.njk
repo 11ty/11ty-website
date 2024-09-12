@@ -15,7 +15,10 @@ let eleventyComputed = {
 		return data.newstitle || data.searchTitle || data.relatedTitle || data.tiptitle || data.eleventyNavigation?.key || data.title || data.headerTitle;
 	},
 	social: {
-		imgsrc: function({ domain, page }) {
+		imgsrc: function({ domain, page, ogimageOverride }) {
+			if(ogimageOverride) {
+				return new URL(ogimageOverride, process.env.DEPLOY_PRIME_URL || domain).toString();
+			}
 			if(process.env.NETLIFY && process.env.CONTEXT !== "production") {
 				return "";
 			}
