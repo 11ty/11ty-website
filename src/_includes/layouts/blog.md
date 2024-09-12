@@ -12,6 +12,11 @@ eleventyComputed:
   <div>
     <em>{{ page.date | newsDate }}</em>
   </div>
+{%- if postAuthor and postAuthors[postAuthor] %}
+	<div>
+    <a href="{{ postAuthors[postAuthor] }}" class="elv-externalexempt">{% indieavatar postAuthors[postAuthor] %}{{ postAuthor }}</a>
+  </div>
+{%- endif %}
   <div>
     {% emoji "📢" %} <a href="/blog/feed.xml">Subscribe to the Eleventy News Feed</a>
   </div>

@@ -192,6 +192,11 @@ h1 .avatar {
 	vertical-align: baseline;
 }
 
+.avatar-flush {
+	margin-right: 0;
+	vertical-align: text-bottom;
+}
+
 /* Main */
 main {
 	font-size: 1.125em; /* 18px /16 */
@@ -828,4 +833,11 @@ filter-container:defined form {
 }
 .mb-8 {
 	margin-bottom: 4em;
+}
+
+/* Blog styles */
+.blog-poster-md {
+	display: block;
+	margin-inline: auto;
+	max-width: 22em;
 }
