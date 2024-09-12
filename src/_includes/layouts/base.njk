@@ -16,7 +16,10 @@ let eleventyComputed = {
 	},
 	social: {
 		imgsrc: function({ domain, page }) {
-			return `https://v1.screenshot.11ty.dev/${encodeURIComponent(domain + page.url)}/opengraph/`;
+			if(process.env.NETLIFY && process.env.CONTEXT !== "production") {
+				return "";
+			}
+			return `https://v1.screenshot.11ty.dev/${encodeURIComponent(domain + page.url + "?cache=1")}/opengraph/`;
 		},
 		imgalt: function({ domain, page }) {
 			return `A screenshot of the web page at ${domain + page.url}`;

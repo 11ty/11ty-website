@@ -15,6 +15,8 @@ You’re probably already familiar with the folks at Font Awesome.
 * Perhaps you’ve used the newly minted open source web components library [Web Awesome](https://blog.fontawesome.com/introducing-web-awesome/) (a.k.a. Shoelace).
 * But surely you remember one of the [legendary promo videos from their wildly successful Kickstarter campaigns](https://www.youtube.com/playlist?list=PLd3CSqexVW6fZv3VTnquaZPmY1XOC9A9h).
 
+_Read more on [Blog Awesome: Eleventy joins Font Awesome](https://blog.fontawesome.com/eleventy-joins-font-awesome/)._
+
 ## What does this mean for Eleventy?
 
 No action is required by folks using and building with Eleventy. We will continue to help you build fast web sites (with fast build times!) and we will continue to develop and maintain the open source project as before!
