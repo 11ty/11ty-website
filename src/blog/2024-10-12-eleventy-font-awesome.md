@@ -10,13 +10,13 @@ ogimageOverride: /blog/fa-2.png
 
 Today—I’m delighted to announce that 11ty is joining the excellent team at [{% indieavatar "https://fontawesome.com/", "avatar-flush" %}_Font Awesome_](https://fontawesome.com/).
 
+_Read more on [Blog Awesome: Eleventy joins Font Awesome](https://blog.fontawesome.com/eleventy-joins-font-awesome/)._
+
 You’re probably already familiar with the folks at Font Awesome.
 
 * Maybe you’ve used their excellent open source [icon library](https://fontawesome.com/icons).
 * Perhaps you’ve used the newly minted open source web components library [Web Awesome](https://blog.fontawesome.com/introducing-web-awesome/) (a.k.a. Shoelace).
 * But surely you remember one of the [legendary promo videos from their wildly successful Kickstarter campaigns](https://www.youtube.com/playlist?list=PLd3CSqexVW6fZv3VTnquaZPmY1XOC9A9h).
-
-_Read more on [Blog Awesome: Eleventy joins Font Awesome](https://blog.fontawesome.com/eleventy-joins-font-awesome/)._
 
 ## What does this mean for Eleventy?
 
