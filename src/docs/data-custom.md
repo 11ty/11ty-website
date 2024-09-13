@@ -78,7 +78,7 @@ module.exports = (eleventyConfig) => {
 
 ### TOML
 
-Here we’re using the [`toml` package](https://www.npmjs.com/package/toml). Don’t forget to `npm install toml`.
+Here we’re using the [`@iarna/toml` package](https://www.npmjs.com/package/@iarna/toml). Don’t forget to `npm install @iarna/toml`.
 
 {% codetitle ".eleventy.js" %}
 
