@@ -5,7 +5,7 @@ eleventyNavigation:
 homePageHighlight: true
 external_url: https://www.zachleat.com/web/independent-sustainable-11ty/
 ---
-{% callout %}<strong>Updated September 11, 2024</strong>: As <a href="/blog/eleventy-font-awesome/">11ty is now joining Font Awesome</a>, we’re winding down our sustainability fundraising campaign. I’ll post more detail about this soon and I sincerely appreciate everyone that donated!{% endcallout %}
+{% callout %}<strong>Updated September 11, 2024</strong>: As <a href="/blog/eleventy-font-awesome/">11ty is now joining Font Awesome</a>, we’re winding down our sustainability fundraising campaign. I sincerely appreciate everyone that donated!{% endcallout %}
 
 Read [this post about 11ty’s goal of being fully independent and sustainable in 2024]({{ external_url }}):
 
