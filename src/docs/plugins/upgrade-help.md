@@ -24,6 +24,9 @@ npm install @11ty/eleventy@1
 
 # Or, upgrading from Eleventy v1 to v2
 npm install @11ty/eleventy@2
+
+# Or, upgrading from Eleventy v2 to v3
+npm install @11ty/eleventy@3
 ```
 
 ### <span class="numberflag"><span class="sr-only">Step</span> 2</span> Install the Helper
@@ -36,6 +39,9 @@ npm install @11ty/eleventy-upgrade-help@1
 
 # Or, upgrading from Eleventy v1 to v2
 npm install @11ty/eleventy-upgrade-help@2
+
+# Or, upgrading from Eleventy v2 to v3
+npm install @11ty/eleventy-upgrade-help@3
 ```
 
 ### <span class="numberflag"><span class="sr-only">Step</span> 3</span> Add to Configuration File
