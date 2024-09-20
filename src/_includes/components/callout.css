@@ -213,8 +213,7 @@ body > .elv-callout-sticky .elv-callout {
 body > .elv-callout-sticky .elv-callout-c {
 	text-align: center;
 }
-@media (min-width: 37.5em) and (min-height: 25em) {
-	/* 600px / 400px */
+@media (min-height: 43.75em) { /* 700px */
 	body > .elv-callout-sticky {
 		position: sticky;
 		top: 0;
