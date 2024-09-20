@@ -210,6 +210,9 @@ body > .elv-callout-sticky .elv-callout {
 	border-radius: 0;
 	margin-bottom: 1em;
 }
+body > .elv-callout-sticky .elv-callout-c {
+	text-align: center;
+}
 @media (min-width: 37.5em) and (min-height: 25em) {
 	/* 600px / 400px */
 	body > .elv-callout-sticky {
