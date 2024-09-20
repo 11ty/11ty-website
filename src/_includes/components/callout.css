@@ -208,11 +208,15 @@ body > .elv-callout-sticky .elv-callout-label {
 	body > .elv-callout-sticky {
 		position: sticky;
 		top: 0;
-		z-index: 2;
+		z-index: 12;
 		box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.08);
 	}
 	body > .elv-callout-sticky .elv-callout {
 		margin: 0;
+		border-left: 0;
+		border-right: 0;
+		border-radius: 0;
+		margin-bottom: 1em;
 	}
 }
 
