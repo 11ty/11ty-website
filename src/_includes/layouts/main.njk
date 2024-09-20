@@ -8,7 +8,7 @@ headerClass: elv-header-default
 <div class="elv-callout-sticky">{% callout "warn" %}This is an <strong>older version of Eleventy</strong>. Go to the <a href="https://www.11ty.dev/docs/">newest Eleventy docs</a> (current path: <a href="https://www.11ty.dev{{ page.url }}"><code>{{ page.url }}</code></a>) or the <a href="https://www.11ty.dev/docs/versions/">full release history</a>.{% endcallout %}</div>
 {% endif -%}
 {% if config.prerelease -%}
-<div class="elv-callout-sticky">{% callout "info" %}This documentation is for an upcoming version of Eleventy. Go to the <a href="https://www.11ty.dev/docs/">latest stable version of Eleventy docs</a> or check out the <a href="https://www.11ty.dev/docs/versions/">full release history.</a>{% endcallout %}</div>
+<div class="elv-callout-sticky">{% callout "info" %}These docs are for an upcoming version of Eleventy and <em>subject to change</em>—take extra care before linking here! Look to the <a href="https://www.11ty.dev/docs/">latest docs</a> instead (or full <a href="https://www.11ty.dev/docs/versions/">release history</a>).{% endcallout %}</div>
 {% endif -%}
 
 <main class="elv-layout elv-layout-toc" {% if not excludeFromSearch %} data-pagefind-body{% endif %}>
