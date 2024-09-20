@@ -14,6 +14,23 @@
 			{# <li><a href="/firehose/" class="elv-nav-light">Firehose</a></li> #}
 			<li><a href="https://conf.11ty.dev/" class="elv-nav-light elv-externalexempt">Conference</a></li>
 			{# <li><a href="https://merch.11ty.dev/products/11ty-merch-bundle-2024-limited-edition" class="elv-externalexempt">Merch</a></li> #}
+			<li>
+				<details-utils close-click-outside close-esc>
+					<details class="elv-popover">
+						<summary>Versions</summary>
+						<div>
+						  <ul class="list-bare">
+								<li><a href="https://www.11ty.dev/docs/" class="elv-externalexempt">Latest</a></li>
+								<li><a href="https://v3.11ty.dev/docs/" class="elv-externalexempt"><code>v3</code></a> <small>Beta</small></li>
+								<li><a href="https://v2.11ty.dev/docs/" class="elv-externalexempt"><code>v2</code></a> <small>Stable</small></li>
+								<li><a href="https://v1.11ty.dev/docs/" class="elv-externalexempt"><code>v1</code></a></li>
+								<li><a href="https://v0.11ty.dev/docs/" class="elv-externalexempt"><code>v0</code></a></li>
+								<li><a href="/docs/versions/" class="elv-externalexempt">History</a></li>
+							</dl>
+						</div>
+					</details>
+				</details-utils>
+			</li>
 			<li class="spacer" aria-hidden="true"></li>
 			<li><a href="https://github.com/11ty/eleventy/" class="naked elv-nav-sociallink elv-skipicon">GitHub</a></li>
 			{%- if github.stargazers %}<li class="elv-nav-menu-hidesmall"><a href="https://github.com/11ty/eleventy" class="minilink minilink-github elv-skipicon"><span>★</span> <strong title="{{ github.stargazers }}">{{ github.stargazers | humanReadableNum }}</strong></a></li>{% endif %}

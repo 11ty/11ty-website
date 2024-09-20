@@ -834,3 +834,20 @@ filter-container:defined form {
 .mb-8 {
 	margin-bottom: 4em;
 }
+
+/* Popover */
+details.elv-popover {
+	position: relative;
+}
+details.elv-popover summary + * {
+	position: absolute;
+	z-index: 999;
+	background-color: #fff;
+	color: #444;
+	border: 1px solid;
+	padding: .5em;
+	box-shadow: 0 0 0 .25rem rgba(0, 0, 0, 0.08);
+}
+details.elv-popover * {
+	white-space: nowrap;
+}
