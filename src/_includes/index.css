@@ -196,6 +196,10 @@ h1 .avatar {
 	margin-right: 0;
 	vertical-align: text-bottom;
 }
+.avatar-right {
+	margin-left: .25em;
+	vertical-align: text-bottom;
+}
 
 /* Main */
 main {
