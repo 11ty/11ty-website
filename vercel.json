@@ -1,4 +1,5 @@
 {
+	"trailingSlash": true,
   "redirects": [
     { "source": "/mastodon", "destination": "https://fosstodon.org/@eleventy", "statusCode": 301 },
     { "source": "/youtube", "destination": "https://www.youtube.com/c/EleventyVideo", "statusCode": 301 },
@@ -19,6 +20,10 @@
     { "source": "/docs/plugins/partial-hydration/", "destination": "/docs/plugins/is-land/", "statusCode": 301 }
   ],
 	"rewrites": [
+		{
+      "source": "/speedlify/",
+      "destination": "https://built-with-eleventy.netlify.app/speedlify/"
+    },
     {
       "source": "/speedlify/:match*",
       "destination": "https://built-with-eleventy.netlify.app/speedlify/:match*"
