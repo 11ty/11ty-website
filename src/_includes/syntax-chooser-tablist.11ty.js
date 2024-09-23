@@ -5,8 +5,8 @@ async function render({ id, valid, additions, subtractions, only, label }) {
 		html: "HTML",
 		md: "Markdown",
 		webc: "WebC",
-		jscjs: "CommonJS",
 		jsesm: "ESM",
+		jscjs: "CommonJS",
 		any: "Any",
 		hbs: "Handlebars",
 	};

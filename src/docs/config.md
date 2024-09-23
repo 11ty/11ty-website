@@ -8,11 +8,12 @@ eleventyNavigation:
 
 {% tableofcontents %}
 
-Configuration files are optional. Add an `.eleventy.js` file to root directory of your project to configure Eleventy to your own project’s needs. It might look like this:
+Configuration files are optional. Add an `eleventy.config.js` file to the root directory of your project (read more about [default configuration filenames](#default-filenames)) to configure Eleventy to your own project’s needs. It might look like this:
 
 {% include "config/intro.njk" %}
 
-We support returning both a callback function (shown above) or an object literal (`module.exports = {}`). Callback functions are preferred and allow you further customization options using Eleventy’s provided helper methods.
+There are a few different ways to [shape your configuration file](/docs/config-shapes/). {% addedin "3.0.0-alpha.1" %}Support for ESM and Asynchronous callbacks was added in Eleventy v3.0.
+
 
 - Add [Filters](/docs/filters/).
 - Add [Shortcodes](/docs/shortcodes/).
@@ -21,14 +22,15 @@ We support returning both a callback function (shown above) or an object literal
 - Add custom [Collections](/docs/collections/) and use [Advanced Collection Filtering and Sorting](/docs/collections/#advanced-custom-filtering-and-sorting).
 - Add some [Plugins](/docs/plugins/).
 
-## Default filenames
-
 {% callout %}Is your config file getting big and hard to understand? You can <a href="/docs/quicktips/local-plugin/">create your own plugin</a> to move some code out.{% endcallout %}
+
+## Default filenames
 
 We look for the following configuration files:
 
 1. `.eleventy.js`
 1. `eleventy.config.js` {% addedin "2.0.0-canary.15" %}
+1. `eleventy.config.mjs` {% addedin "3.0.0-alpha.1" %}
 1. `eleventy.config.cjs` {% addedin "2.0.0-canary.15" %}
 
 The first configuration file found is used. The others are ignored.
@@ -70,7 +72,7 @@ npx @11ty/eleventy --input=views
 
 ##### Configuration
 
-{% include "config/config.njk" %}
+{% include "config/config-input.njk" %}
 
 ### Directory for Includes
 
@@ -85,18 +87,7 @@ The includes directory is meant for [Eleventy layouts](/docs/layouts/), include 
 
 #### Example
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
-	return {
-		dir: {
-			// ⚠️ This value is relative to your input directory.
-			includes: "my_includes",
-		},
-	};
-};
-```
+{% include "config/config-includes.njk" %}
 
 ### Directory for Layouts (Optional) {% addedin "0.8.0" %}
 
@@ -117,19 +108,7 @@ This configuration option is optional but useful if you want your [Eleventy layo
 
 #### Example
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
-	return {
-		dir: {
-			// ⚠️ These values are both relative to your input directory.
-			includes: "_includes",
-			layouts: "_layouts",
-		},
-	};
-};
-```
+{% include "config/config-layouts.njk" %}
 
 ### Directory for Global Data Files
 
@@ -144,18 +123,7 @@ Controls the directory inside which the global data template files, available to
 
 #### Example
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
-	return {
-		dir: {
-			// ⚠️ This value is relative to your input directory.
-			data: "lore",
-		},
-	};
-};
-```
+{% include "config/config-data.njk" %}
 
 ### Output Directory
 
@@ -168,23 +136,17 @@ Controls the directory inside which the finished templates will be written to.
 | _Valid Options_         | Any string that will work as a directory name. Eleventy creates this if it doesn’t exist. |
 | _Command Line Override_ | `--output`                                                                                |
 
-#### Example
+#### Examples
 
-{% codetitle ".eleventy.js" %}
+##### Command Line
 
-```js
-module.exports = function (eleventyConfig) {
-	return {
-		dir: {
-			output: "dist",
-		},
-	};
-};
+```bash
+npx @11ty/eleventy --output=_site
 ```
 
-### Default template engine for global data files
+##### Configuration
 
-{% callout "warn" %}<strong>Feature Removal</strong>: <a href="/docs/data-preprocessing/">This feature was removed in Eleventy 2.0.</a>{% endcallout %}
+{% include "config/config-output.njk" %}
 
 ### Default template engine for Markdown files
 
@@ -199,15 +161,7 @@ Markdown files run through this template engine before transforming to HTML.
 
 #### Example
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
-	return {
-		markdownTemplateEngine: "njk",
-	};
-};
-```
+{% include "config/config-mdengine.njk" %}
 
 ### Default template engine for HTML files
 
@@ -222,15 +176,7 @@ HTML templates run through this template engine before transforming to (better) 
 
 #### Example
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
-	return {
-		htmlTemplateEngine: "njk",
-	};
-};
-```
+{% include "config/config-htmlengine.njk" %}
 
 ### Template Formats
 
@@ -244,34 +190,25 @@ Specify which types of templates should be transformed.
 | _Command Line Override_ | `--formats` _(accepts a comma separated string)_         |
 | _Configuration API_     | `setTemplateFormats` {% addedin "0.2.14" %}              |
 
+{% callout "info" %}{% addedin "0.9.0" %} <strong>Case sensitivity</strong>: File extensions should be considered case insensitive, cross-platform. While macOS already behaves this way (by default), other operating systems require additional Eleventy code to enable this behavior.{% endcallout %}
+
 #### Examples
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
-	return {
-		templateFormats: ["html", "liquid", "njk"],
-	};
-};
-```
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
-	eleventyConfig.setTemplateFormats("html,liquid,njk");
-
-	// Or:
-	// eleventyConfig.setTemplateFormats([ "html", "liquid", "njk" ]);
-};
-```
+##### Command Line
 
 ```
 npx @11ty/eleventy --formats=html,liquid,njk
 ```
 
-{% callout "info" %}{% addedin "0.9.0" %} <strong>Case sensitivity</strong>: File extensions should be considered case insensitive, cross-platform. While macOS, by default, already behaves this way, other operating systems require additional Eleventy code to enable this behavior.{% endcallout %}
+##### Configuration File Static Export
+
+{% include "config/config-templatelangs.njk" %}
+
+There are many [different shapes of configuration file](/docs/config-shapes.md).
+
+##### Configuration API
+
+{% include "config/config-templatelangs-api.njk" %}
 
 ### Enable Quiet Mode to Reduce Console Noise
 

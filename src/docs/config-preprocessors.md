@@ -15,8 +15,8 @@ The Preprocessor Configuration API allows you to intercept and modify the conten
 
 Here’s an example that uses the Preprocessor API to implement a Drafts workflow:
 
-```js
 {% raw %}
+```js
 export default function(eleventyConfig) {
 	eleventyConfig.addProcessor("drafts", "njk,md,liquid", (data, content) => {
 		// If `draft` is truthy in the template’s Data Cascade, ignore the file.
@@ -30,8 +30,8 @@ export default function(eleventyConfig) {
 		// If you return nothing or `undefined`, no changes will be made to this template.
 	});
 };
-{% endraw %}
 ```
+{% endraw %}
 
 * The first argument is an arbitrary `name` (`String`) used for error messaging.
 * The second argument can be:

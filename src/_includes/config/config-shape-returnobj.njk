@@ -1,4 +1,4 @@
-{%- set tabid = "configintro" %}
+{%- set tabid = "configshapes-returnobj" %}
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs class="tabs-full tabs-flush" persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
@@ -6,7 +6,12 @@
 
 ```js
 module.exports = async function(eleventyConfig) {
-  // Configure Eleventy
+  return {
+    dir: {
+      input: "views",
+      output: "dist"
+    }
+  };
 };
 ```
 
@@ -15,7 +20,12 @@ module.exports = async function(eleventyConfig) {
 
 ```js
 export default async function(eleventyConfig) {
-	// Configure Eleventy
+	return {
+    dir: {
+      input: "views",
+      output: "dist"
+    }
+  };
 };
 ```
 

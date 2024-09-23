@@ -1,21 +1,21 @@
-{%- set tabid = "configintro" %}
+{%- set tabid = "config-templatelangs" %}
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs class="tabs-full tabs-flush" persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
-  <div id="{{ tabid }}-jscjs" role="tabpanel">
+  <div id="{{ tabid }}-jsesm" role="tabpanel">
 
 ```js
-module.exports = async function(eleventyConfig) {
-  // Configure Eleventy
+export const config = {
+  templateFormats: ["html", "liquid", "njk"],
 };
 ```
 
   </div>
-  <div id="{{ tabid }}-jsesm" role="tabpanel">
+  <div id="{{ tabid }}-jscjs" role="tabpanel">
 
 ```js
-export default async function(eleventyConfig) {
-	// Configure Eleventy
+module.exports.config = {
+  templateFormats: ["html", "liquid", "njk"],
 };
 ```
 

@@ -1,0 +1,34 @@
+{%- set tabid = "config-layouts" %}
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs class="tabs-full tabs-flush" persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
+  <div id="{{ tabid }}-jsesm" role="tabpanel">
+
+```js
+export const config = {
+  dir: {
+    // ⚠️ These values are both relative to your input directory.
+    includes: "_includes",
+    layouts: "_layouts",
+  }
+};
+```
+
+  </div>
+  <div id="{{ tabid }}-jscjs" role="tabpanel">
+
+```js
+module.exports.config = {
+  dir: {
+    // ⚠️ These values are both relative to your input directory.
+    includes: "_includes",
+    layouts: "_layouts",
+  }
+};
+```
+
+  </div>
+</seven-minute-tabs>
+</is-land>
+
+There are many [different shapes of configuration file](/docs/config-shapes.md).
