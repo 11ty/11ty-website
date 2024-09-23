@@ -189,11 +189,11 @@ Additionally, _if_ you’re writing your [Eleventy Image output](/docs/plugins/i
 
 ### Deploy an Eleventy project to GitHub pages
 
-Includes persisted cache across builds. Using [`peaceiris/actions-gh-pages`](https://github.com/peaceiris/actions-gh-pages).
+Includes persisted cache across builds.
 
 <ol>
 <li>Go to your repository’s Settings on GitHub.</li>
-<li>In the GitHub Pages section change:<ul><li>Source: <code>Deploy from a branch</code></li><li>Branch: <code>gh-pages/(root)</code></li></ul></li>
+<li>In the GitHub Pages section change:<ul><li>Source: <code>GitHub Actions</code></li></ul></li>
 <li>Create a new GitHub workflow file in <details><summary><code>.github/workflows/deploy-to-ghpages.yml</code></summary>
 
 {% raw %}
@@ -205,44 +205,59 @@ on:
   push:
     branches:
       - main
-  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  deploy:
-    runs-on: ubuntu-22.04
-    permissions:
-      contents: write
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+  build:
+    name: Build
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: "18"
-
-      - name: Persist npm cache
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
-
-      - name: Persist Eleventy .cache
-        uses: actions/cache@v3
+          node-version: "20"
+          cache: npm
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Install dependencies
+        run: npm ci
+      - name: Get current timestamp
+        id: timestamp
+        run: echo "now=$(date +%Y%m%d%H%M)" >> "$GITHUB_OUTPUT"
+      - name: Restore .cache
+        uses: actions/cache@v4
         with:
           path: ./.cache
-          key: ${{ runner.os }}-eleventy-fetch-cache
+          key: eleventy-fetch-cache-${{ steps.timestamp.outputs.now }}
+          restore-keys: eleventy-fetch-cache-
+      - name: Build site
+        run: npx --no @11ty/eleventy --pathprefix="${{ steps.pages.outputs.base_path }}"
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
 
-      - run: npm install
-      - run: npm run build-ghpages
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+  deploy:
+    name: Deploy
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 ```
 
 {% endraw %}
