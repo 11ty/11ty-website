@@ -17,11 +17,16 @@ layout: layouts/langs.njk
 
 {% tableofcontents "open" %}
 
-| Eleventy Short Name | File Extension | npm Package |
+| Eleventy Short Name | File Extension | Version Added |
 | ------------------- | -------------- | ----------- |
-| `11ty.js`           | `.11ty.js`     | N/A         |
+| `11ty.js`           | `.11ty.js`     | `*` |
+| `11ty.js`           | `.11ty.cjs`    | `0.11.0` |
+| `11ty.js`           | `.11ty.mjs`    | `3.0.0` |
 
-Eleventy supports many different types of JavaScript content that will be parsed as Eleventy templates:
+* Related languages: [JSX](/docs/languages/jsx/), [TypeScript](/docs/languages/typescript/), [MDX](/docs/languages/mdx/)
+* _[Front matter](/docs/data-frontmatter/) is not supported in JavaScript files._
+
+Eleventy supports many different types of JavaScript content that will be parsed as Eleventy templates. They are comprehensively described below.
 
 ## Raw Values
 
@@ -131,7 +136,7 @@ module.exports = Test;
 
 ### Optional `data` Method
 
-{% callout "info" %}<a href="/docs/data-frontmatter/">YAML Front Matter</a> is not supported in JavaScript template types. Use <code>data</code> methods instead!{% endcallout %}
+{% callout "info" %}<a href="/docs/data-frontmatter/">Front Matter</a> is not supported in JavaScript template types. Use <code>data</code> methods instead! Additionally, there are more alternative options in the <a href="/docs/data-cascade/">Data Cascade</a>.{% endcallout %}
 
 This data acts as Front Matter for the template and similarly to Front Matter will take precedence over all other data in the data cascade. The `data` method can be asynchronous `async data()` or it can be a getter `get data()`.
 
@@ -256,7 +261,7 @@ class Test {
 module.exports = Test;
 ```
 
-{% callout "info" %}While <code>templateEngineOverride: 11ty.js,md</code> works to add markdown support, the special behavior of JavaScript templates does not allow other template engines to be supported here (e.g. <code>templateEngineOverride: njk,md</code>). This will be mitigated with <a href="https://github.com/11ty/eleventy/issues/148">Enhancement Request Issue #148</a>.{% endcallout %}
+{% callout "info" %}While <code>templateEngineOverride: 11ty.js,md</code> works to add markdown support, the special behavior of JavaScript templates does not allow other template engines to be supported here (e.g. <code>templateEngineOverride: njk,md</code>). One workaround is to use the <a href="/docs/plugins/render/">Render Plugin</a>.{% endcallout %}
 
 <span id="filters"></span><span id="shortcodes"></span>
 

@@ -1,9 +1,7 @@
 ---
-tipindex: "010"
 tiptitle: "Transform Global Data using an `eleventyComputed.js` Global Data File"
 date: 2020-11-01
 tags: ["related-pagination"]
-relatedTitle: "Quick Tip #010—Transform Global Data using an `eleventyComputed.js` Global Data File"
 ---
 
 You can generate multiple data cascade elements in one `eleventyComputed.js` file. Following is a working example.

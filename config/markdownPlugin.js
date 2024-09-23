@@ -1,7 +1,8 @@
 import slugify from "slugify";
 import markdownIt from "markdown-it";
-import markdownItAnchor from "markdown-it-anchor";
 import markdownItToc from "markdown-it-table-of-contents";
+import { IdAttributePlugin } from "@11ty/eleventy";
+import { decodeHTML } from "entities";
 
 function markdownItSlugify(s) {
 	return slugify(removeExtraText(s), { lower: true, remove: /[\=\":’'`,]/g });
@@ -21,25 +22,20 @@ function removeExtraText(s) {
 }
 
 export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(IdAttributePlugin, {
+		// custom slugify function, otherwise we use Eleventy’s built-in `slugify` filter.
+		slugify: function(textContent) {
+			// TODO Eleventy 3.0.0-beta.2 will handle decodeHTML automatically
+			return markdownItSlugify(decodeHTML(textContent));
+		},
+		selector: "h1,h2,h3,h4,h5,h6", // default
+	});
+
 	let mdIt = markdownIt({
 		html: true,
 		breaks: true,
 		linkify: true,
-	})
-		.disable("code") // disable indent -> code block
-		.use(markdownItAnchor, {
-			slugify: markdownItSlugify,
-			level: [2, 3, 4],
-			permalink: markdownItAnchor.permalink.linkInsideHeader({
-				symbol: `
-				<span class="sr-only" data-pagefind-ignore>Jump to heading</span>
-				<span aria-hidden="true" data-pagefind-ignore>#</span>
-			`,
-				class: "direct-link",
-				placement: "after",
-			}),
-		})
-		.use(markdownItToc, {
+	}).use(markdownItToc, {
 			includeLevel: [2, 3],
 			slugify: markdownItSlugify,
 			format: function (heading) {

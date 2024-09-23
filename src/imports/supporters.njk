@@ -2,8 +2,11 @@
 permalink: /imports/supporters.html
 ---
 <div class="facepile facepile-supporters">
-{% for supporter in opencollective.supporters | supportersFacepile %}
+{%- for supporter in opencollective.supporters | supportersFacepile %}
 {%- set nameToSlug = supporter.name | slug | lower -%}
-	<a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-tier="{{ supporter.tier.slug | slugify }}" data-supporters-slug="{{ nameToSlug }}" rel="sponsored">{% opencollectiveavatar supporter.image, supporter.name %}</a>
-{% endfor %}
+{%- set avatarHtml %}{% opencollectiveavatar supporter %}{% endset %}
+{%- if avatarHtml != "" %}
+	<a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-tier="{{ supporter.tier.slug | slugify }}" data-supporters-slug="{{ nameToSlug }}" rel="sponsored">{{ avatarHtml | safe }}</a>
+{%- endif %}
+{%- endfor %}
 </div>

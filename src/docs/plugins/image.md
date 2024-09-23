@@ -267,9 +267,9 @@ const Image = require("@11ty/eleventy-img");
 
 // Only one module.exports per configuration file, please!
 module.exports = function (eleventyConfig) {
-	eleventyConfig.addShortcode("image", async function (src, alt, sizes) {
+	eleventyConfig.addShortcode("image", async function (src, alt, widths = [300, 600], sizes = "100vh") {
 		let metadata = await Image(src, {
-			widths: [300, 600],
+			widths,
 			formats: ["avif", "jpeg"],
 		});
 
@@ -296,7 +296,7 @@ const Image = require("@11ty/eleventy-img");
 
 // Only one module.exports per configuration file, please!
 module.exports = function (eleventyConfig) {
-	eleventyConfig.addShortcode("image", async function (src, alt, sizes) {
+	eleventyConfig.addShortcode("image", async function (src, alt, widths = ["auto"], sizes = "100vh") {
 		let metadata = await Image(src, {
 			// omitted for brevity
 		});
@@ -367,12 +367,6 @@ ${img2}`;
 {% endraw %}{% endhighlight %}
 
 </div>
-<div id="shortcode-hbs" role="tabpanel">
-
-This `image` shortcode example [requires an async-friendly template language](#asynchronous-shortcode) and is not available in Handlebars.
-
-    </div>
-
 </seven-minute-tabs>
 </is-land>
 
@@ -391,9 +385,9 @@ Use `Image.statsSync` to get the metadata of a source even if the image generati
 
 ```js
 const Image = require("@11ty/eleventy-img");
-function imageShortcode(src, cls, alt, sizes, widths) {
+function imageShortcode(src, cls, alt, widths = ["auto"], sizes = "100vh") {
 	let options = {
-		widths: widths,
+		widths,
 		formats: ["jpeg"],
 	};
 
@@ -695,7 +689,6 @@ If you have an advanced use case and don’t want to use our methods to generate
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs>
 <div role="tablist" aria-label="DIY mode chooser">
-	Choose one:
 	<a href="#filter-diy-img" role="tab">Do it yourself: &lt;img&gt;</a>
 	<a href="#filter-diy-picture" role="tab">Do it yourself: &lt;picture&gt;</a>
 </div>
@@ -737,14 +730,14 @@ const Image = require("@11ty/eleventy-img");
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addShortcode(
 		"image",
-		async function (src, alt, sizes = "100vw") {
+		async function (src, alt, widths = [300, 600], sizes = "100vh") {
 			if (alt === undefined) {
 				// You bet we throw an error on missing alt (alt="" works okay)
 				throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
 			}
 
 			let metadata = await Image(src, {
-				widths: [300, 600],
+				widths,
 				formats: ["webp", "jpeg"],
 			});
 

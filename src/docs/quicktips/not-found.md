@@ -1,5 +1,4 @@
 ---
-tipindex: "006"
 tiptitle: "Adding a 404 Not Found Page to your Static Site"
 date: 2018-09-20
 ---

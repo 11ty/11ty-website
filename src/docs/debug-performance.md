@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  key: Performance
+  key: Debug Performance
   parent: Debug Mode
   excerpt: How to analyze your Eleventy build to find bottlenecks.
   order: 1
@@ -24,7 +24,9 @@ This list is not considered to be exhaustive. It’s just what has been implemen
 
 {% addedin "0.11.0" %} You can use the following `debug` command to show performance measurements for all of these entries (not just those that take longer than 8%).
 
-#### Mac OS (or Linux, etc)
+Learn more about [environment variables for debug output](/docs/debugging/#commands).
+
+#### macOS or Linux (et al)
 
 ```bash
 DEBUG=Eleventy:Benchmark* npx @11ty/eleventy

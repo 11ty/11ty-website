@@ -51,8 +51,7 @@
 	}
 }
 
-@media (max-width: 64.9375em) {
-	/* 1039px */
+@media (max-width: 66.875em) { /* 1070px */
 	.elv-nav-menu-hidesmall {
 		display: none;
 	}

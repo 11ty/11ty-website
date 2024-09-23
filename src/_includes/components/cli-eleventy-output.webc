@@ -1,7 +1,15 @@
 <style webc:scoped>
 .highlight-line:last-child,
 .highlight-line:last-child * {
-	color: #10875a !important;
+	color: var(--highlight-server) !important;
+}
+.highlight-line:nth-last-child(5),
+.highlight-line:nth-last-child(5) * {
+	color: var(--highlight-output) !important;
+}
+:host {
+	--highlight-output: #10875a;
+	--highlight-server: #4359ab;
 }
 :host pre {
 	background: inherit;
@@ -9,6 +17,10 @@
 	border: 1px solid rgba(0,0,0,.1);
 }
 @media (prefers-color-scheme: dark) {
+	:host {
+		--highlight-output: #18d08a;
+		--highlight-server: #6d8af6;
+	}
 	:host pre {
 		border-color: rgba(255,255,255,.1);
 	}
@@ -17,5 +29,5 @@
 <script webc:type="js">
 let version = latestVersion($data.versions, $data.config);
 let versionSuffix = showVersion === "" ? ` (${version})` : "";
-this.helpers.highlight("", `${this.slots.text.default.trim()}${versionSuffix}`, "/", "-"); // `"/", "-"` enables line wrapping
+this.helpers.highlight("", this.slots.text.default.trim().replaceAll("%%VERSION%%", versionSuffix), "/", "-"); // `"/", "-"` enables line wrapping
 </script>

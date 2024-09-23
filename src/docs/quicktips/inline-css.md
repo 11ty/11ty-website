@@ -1,9 +1,7 @@
 ---
-tipindex: "001"
 tiptitle: "Inline Minified CSS"
 date: 2018-06-07
 tags: ["related-filters"]
-relatedTitle: "Quick Tip #001—Inline Minified CSS"
 ---
 
 _Originally posted on [The Simplest Web Site That Could Possibly Work Well on zachleat.com](https://www.zachleat.com/web/that-could-possibly-work/)_

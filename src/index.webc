@@ -1,5 +1,6 @@
----node
+---js
 // <script>
+let headerTitle = "Eleventy is a simpler static site generator";
 let layout = "layouts/main.njk";
 let logoLink = "/docs/";
 
@@ -14,7 +15,6 @@ let ignoreGitHubButtons = true;
 let ignoreSupporters = true;
 let ignoreSidebarCallout = true;
 let searchTitle = "Eleventy is a simpler static site generator";
-let skipAuth = true;
 
 let eleventyImport = {
 	collections: ["blog"]
@@ -122,11 +122,12 @@ function randomTestimonialLink(testimonials) {
 
 	<p><a href="/docs/"><strong>Get started with Eleventy today!</strong></a> or read more about <a href="https://www.zachleat.com/web/introducing-eleventy/">Eleventy’s project goals</a>.</p>
 
+	<h2><a href="https://opencollective.com/11ty">Open Collective</a> Supporters</h2>
 	<is-land on:visible on:save-data="false">
-		<template data-island>
-			<h2><a href="https://opencollective.com/11ty">Open Collective</a> Supporters</h2>
+		<p><em>Loading…</em></p>
+		<template data-island="replace">
 			<facepile webc:nokeep>
-				<html-fetch src="/imports/supporters.html" show-gold-sponsors></html-fetch>
+				<html-fetch src="/imports/supporters.html" show-gold-sponsors show-silver-sponsors></html-fetch>
 			</facepile>
 		</template>
 	</is-land>
@@ -171,7 +172,7 @@ function randomTestimonialLink(testimonials) {
 			<li class="inlinelist-item"><a href="https://astro.build/">Astro (JavaScript)</a></li>
 			<li class="inlinelist-item"><a href="https://remix.run/">Remix (JavaScript using React)</a></li>
 			<li class="inlinelist-item"><a href="https://kit.svelte.dev/">SvelteKit (JavaScript using Svelte)</a></li>
-			<li class="inlinelist-item"><em>More at <a href="https://jamstack.org/generators/">jamstack.org</a></em></li>
+			<li class="inlinelist-item"><a href="https://jamstack.org/generators/"><em>More at jamstack.org</em></a></li>
 		</ul>
 	</lists>
 </div>

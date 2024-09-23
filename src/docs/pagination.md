@@ -20,10 +20,10 @@ To iterate over a data set and create pages for individual chunks of data, use p
 Consider the following template, which will result in two pages being created, each of which will display two items from `testdata`:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-array"} %}
   <div id="paged-array-liquid" role="tabpanel">
-    {%- codetitle "paged.liquid" %}
+
     {%- highlight "liquid" %}
     {%- include "examples/pagination/paged-array.njk" %}
     {%- endhighlight %}
@@ -32,7 +32,7 @@ If the above file were named `paged.liquid`, it would create two pages in your o
 
   </div>
   <div id="paged-array-njk" role="tabpanel">
-    {%- codetitle "paged.njk" %}
+
     {%- highlight "jinja2" %}
     {%- include "examples/pagination/paged-array.njk" %}
     {%- endhighlight %}
@@ -41,16 +41,13 @@ If the above file were named `paged.njk`, it would create two pages in your outp
 
   </div>
   <div id="paged-array-js" role="tabpanel">
-    {%- codetitle "paged.11ty.js" %}
+
     {%- highlight "js" %}
     {%- include "examples/pagination/paged-array.js" %}
     {%- endhighlight %}
 
 If the above file were named `paged.11ty.js`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
 
-  </div>
-  <div id="paged-array-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -126,11 +123,9 @@ Learn how to create a list of links to every paginated page on a pagination temp
 All of the examples thus far have paged Array data. Eleventy does allow paging objects too. Objects are resolved to pagination arrays using either the `Object.keys` or `Object.values` JavaScript functions. Consider the following templates:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedobj"} %}
   <div id="pagedobj-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -156,8 +151,6 @@ testdata:
   </div>
   <div id="pagedobj-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -181,8 +174,6 @@ testdata:
 
   </div>
   <div id="pagedobj-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 
@@ -212,9 +203,6 @@ exports.render = function (data) {
 
 {% endraw %}
 
-  </div>
-  <div id="pagedobj-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -281,11 +269,9 @@ This resolves to:
 Your front matter would look like this:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedatafile"} %}
   <div id="pagedatafile-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -307,8 +293,6 @@ pagination:
   </div>
   <div id="pagedatafile-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -329,8 +313,6 @@ pagination:
   </div>
 
   <div id="pagedatafile-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 
@@ -355,9 +337,6 @@ exports.render = function (data) {
 
 {% endraw %}
 
-  </div>
-  <div id="pagedatafile-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -440,11 +419,9 @@ Using a universal `slug` filter (transforms `My Item` to `my-item`), this output
 Ok, so `pagination.items[0]` is ugly. We provide an option to alias this to something different.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedalias"} %}
   <div id="pagedalias-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -467,8 +444,6 @@ You can use the alias in your content too {{ wonder }}.
   </div>
   <div id="pagedalias-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -489,8 +464,6 @@ You can use the alias in your content too {{ wonder }}.
 
   </div>
   <div id="pagedalias-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 
@@ -515,9 +488,6 @@ exports.render = function (data) {
 {% endraw %}
 
   </div>
-  <div id="pagedalias-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -528,11 +498,9 @@ This writes to `_site/different/item1/index.html` and `_site/different/item2/ind
 If your chunk `size` is greater than 1, the alias will be an array instead of a single value.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedchunk"} %}
   <div id="pagedchunk-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -557,8 +525,6 @@ You can use the alias in your content too {{ wonder[0] }}.
   </div>
   <div id="pagedchunk-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -581,8 +547,6 @@ You can use the alias in your content too {{ wonder[0] }}.
 
   </div>
   <div id="pagedchunk-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 
@@ -614,9 +578,6 @@ exports.render = function (data) {
 {% endraw %}
 
   </div>
-  <div id="pagedchunk-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -627,11 +588,9 @@ This writes to `_site/different/item1/index.html` and `_site/different/item3/ind
 If you’d like to make a paginated list of all of your blog posts (any content with the tag `post` on it), use something like the following template to iterate over a specific collection:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedcollection"} %}
   <div id="pagedcollection-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -656,8 +615,6 @@ pagination:
   </div>
   <div id="pagedcollection-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -680,8 +637,6 @@ pagination:
 
   </div>
   <div id="pagedcollection-js" role="tabpanel">
-    
-{% codetitle "JavaScript", "Syntax" %}
 
 {% raw %}
 
@@ -708,9 +663,6 @@ exports.render = function (data) {
 
 {% endraw %}
 
-  </div>
-  <div id="pagedcollection-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
 </is-land>

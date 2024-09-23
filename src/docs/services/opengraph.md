@@ -20,8 +20,6 @@ Feed this runtime service a URL and it will extract an optimized OpenGraph image
 
 - [`11ty/api-opengraph-image` on GitHub](https://github.com/11ty/api-opengraph-image)
 
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/11ty/api-opengraph-image" class="elv-externalexempt"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
-
 ## Usage
 
 Try it out on the [Eleventy API Explorer](https://api-explorer.11ty.dev/).

@@ -1,5 +1,5 @@
 ---
-title: 11ty.dev Style Guide
+headerTitle: 11ty.dev Style Guide
 layout: layouts/docs.njk
 ---
 <style>

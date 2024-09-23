@@ -8,20 +8,25 @@ async function render({ id, valid, additions, subtractions, only, label }) {
 		jscjs: "CommonJS",
 		jsesm: "ESM",
 		any: "Any",
+		hbs: "Handlebars",
 	};
 
 	let syntaxMap = {
 		liquid: "Liquid",
 		njk: "Nunjucks",
 		js: "11ty.js",
-		hbs: "Handlebars",
 	};
 
-	// Extras go first
+	// Extras go first (unless hbs)
+	let addHbs = false;
 	let syntaxAddArray = (additions || "").split(",").filter((entry) => !!entry);
 	for (let syn of syntaxAddArray) {
 		if (extraSyntaxes[syn]) {
-			syntaxes[syn] = extraSyntaxes[syn];
+			if(syn == "hbs") {
+				addHbs = true;
+			} else {
+				syntaxes[syn] = extraSyntaxes[syn];
+			}
 		}
 	}
 
@@ -31,6 +36,10 @@ async function render({ id, valid, additions, subtractions, only, label }) {
 		}
 	} else {
 		Object.assign(syntaxes, syntaxMap);
+	}
+
+	if(addHbs) {
+		syntaxes.hbs = extraSyntaxes.hbs;
 	}
 
 	for (let syn of (subtractions || "").split(",")) {
@@ -64,9 +73,8 @@ async function render({ id, valid, additions, subtractions, only, label }) {
 
 	let liquidTemplate = `
 {% assign syntax = false %}
-<div role="tablist" aria-label="Template Language Chooser">
-	${label || "View this example in"}:
-	${str.join("\n")}
+<div role="tablist" aria-label="Template Language Chooser"${label ? ` class="has-label"` : ""}>
+	${label ? `${label}: ` : ""}${str.join("\n")}
 </div>`;
 
 	return await this.renderTemplate(liquidTemplate, "liquid");

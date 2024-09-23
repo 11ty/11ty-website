@@ -20,6 +20,11 @@
 	width: 100%;
 	height: auto;
 }
+.sites-screenshot-youtube-sq {
+	aspect-ratio: 1/1;
+	object-fit: cover;
+	object-position: 100% 50%;
+}
 .sites-icon-auto.sites-icon-auto.sites-icon-auto {
 	width: 23.4375em; /* 375px /16 */
 	height: auto;

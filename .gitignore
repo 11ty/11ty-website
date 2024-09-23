@@ -12,10 +12,6 @@ yarn.lock
 **/.DS_Store
 
 # App-specific
-cache
 _site/
 node-supporters/
 src/_data/builtwith/
-
-# Netlify generated stuff
-.netlify/

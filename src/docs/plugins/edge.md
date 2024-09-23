@@ -248,11 +248,6 @@ ${await this.edge(`The content inside of this.edge() is generated on the Edge.
 As documented in [Limitations](#limitations), we are using `liquid` here because `11ty.js` is not _yet_ supported as an Edge content target.
 
   </div>
-  <div id="edgetmpl-hbs" role="tabpanel">
-
-The `edge` shortcode [requires an async-friendly template language](#limitations) and is not available in Handlebars.
-
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -331,11 +326,6 @@ ${await this.edge("# Markdown heading", "md")}
 {% endraw %}
 
   </div>
-  <div id="edgelang-hbs" role="tabpanel">
-
-The `edge` shortcode [requires an async-friendly template language](#limitations) and is not available in Handlebars.
-
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -403,11 +393,6 @@ ${await this.edge("# Markdown heading for {{ _ }}", "liquid,md", data.name)}
 ```
 
 {% endraw %}
-
-  </div>
-  <div id="edgedata-hbs" role="tabpanel">
-
-The `edge` shortcode [requires an async-friendly template language](#limitations) and is not available in Handlebars.
 
   </div>
 </seven-minute-tabs>
@@ -480,11 +465,6 @@ ${await this.edge(
 {% endraw %}
 
   </div>
-  <div id="edgedataobj-hbs" role="tabpanel">
-
-The `edge` shortcode [requires an async-friendly template language](#limitations) and is not available in Handlebars.
-
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -527,7 +507,6 @@ Notably, the above adds a `search` global from a file we’ve created to populat
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs persist sync>
   <div role="tablist" aria-label="Choose a template language">
-    View this example in:
     <a href="#edgeglobaldata-liquid" role="tab">Liquid</a>
     <a href="#edgeglobaldata-njk" role="tab">Nunjucks</a>
     <a href="#edgeglobaldata-js" role="tab">11ty.js</a>

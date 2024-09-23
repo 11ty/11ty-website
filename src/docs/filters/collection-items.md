@@ -48,9 +48,6 @@ Fetch the previous and next items in a collection when you pass in the current `
   <div id="nextprev-js" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
-  <div id="nextprev-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
 </seven-minute-tabs>
 
 Useful when you’d like to link to the previous or next template in your collection:
@@ -87,9 +84,6 @@ Useful when you’d like to link to the previous or next template in your collec
 
   </div>
   <div id="nextprevlink-js" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
-  <div id="nextprevlink-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>
@@ -139,9 +133,6 @@ Or pass it in:
   <div id="getitemindex-js" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
-  <div id="getitemindex-hbs" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
 </seven-minute-tabs>
 </is-land>
 
@@ -177,9 +168,6 @@ For completeness, a `getCollectionItem` filter is also included that fetches the
 
   </div>
   <div id="getitem-js" role="tabpanel">
-    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
-  </div>
-  <div id="getitem-hbs" role="tabpanel">
     <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
   </div>
 </seven-minute-tabs>

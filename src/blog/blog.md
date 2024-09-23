@@ -1,5 +1,5 @@
 ---
-title: Eleventy Blog
+headerTitle: Eleventy Community
 eleventyNavigation:
   key: Blog
   parent: Community

@@ -1,5 +1,5 @@
 ---
-newstitle: "Big Announcement: Eleventy and CloudCannon!"
+newstitle: "Eleventy and CloudCannon!"
 eleventyNavigation:
   parent: Blog
 ---

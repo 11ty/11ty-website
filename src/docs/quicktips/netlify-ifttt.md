@@ -1,5 +1,4 @@
 ---
-tipindex: "008"
 tiptitle: "Trigger a Netlify Build Every Day"
 date: 2019-02-01
 ---

@@ -25,7 +25,7 @@ This uses an [Eleventy Transform](/docs/config/#transforms) to modify the output
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs persist sync>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "inputpathtourl", additions: "html,md"} %}
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "inputpathtourl", additions: "html,md,hbs"} %}
   <div id="inputpathtourl-html" role="tabpanel">
 
 {% codetitle "HTML", "Syntax" %}

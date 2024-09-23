@@ -75,19 +75,6 @@ export default function (data) {
 {% endraw %}
 
   </div>
-  <div id="inputpathtourl-hbs" role="tabpanel">
-
-{% codetitle "Handlebars", "Syntax" %}
-
-{% raw %}
-
-```hbs
-<a href="{{inputPathToUrl 'index.md'}}">Home</a>
-```
-
-{% endraw %}
-
-  </div>
 </seven-minute-tabs>
 </is-land>
 

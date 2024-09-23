@@ -78,9 +78,3 @@
 	font-weight: 600;
 	content: "—THANK YOU! 🎉";
 }
-.is-eleventy-supporter .supporters-facepile img {
-	filter: grayscale(1);
-}
-.is-eleventy-supporter .supporters-facepile .supporters-active img {
-	filter: grayscale(0);
-}

@@ -3,19 +3,7 @@ export default [
 		title: "<code>npm install</code>",
 		url: "/docs/performance/#installation-performance",
 		eleventy: { readable: "5.81s", ms: 5810 },
-		other: { label: "Astro", readable: "12.52s", ms: 12520 },
-	},
-	{
-		title: "<code>npm install</code>",
-		url: "/docs/performance/#installation-performance",
-		eleventy: { readable: "5.81s", ms: 5810 },
 		other: { label: "Gatsby", readable: "43.36s", ms: 43360 },
-	},
-	{
-		title: "<code>npm install</code>",
-		url: "/docs/performance/#installation-performance",
-		eleventy: { readable: "5.81s", ms: 5810 },
-		other: { label: "Nuxt", readable: "14.77s", ms: 14770 },
 	},
 	{
 		title: "<code>npm install</code>",

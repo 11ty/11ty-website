@@ -36,6 +36,8 @@ module.exports = function (eleventyConfig) {
 
 {% addedin "2.0.0-canary.18" %}These were decoupled from the [ignores used for the file watcher](/docs/watch-serve/#ignore-watching-files).
 
+You can also use the new [Preprocessor Configuration API](/docs/config-preprocessors.md) to ignore files.
+
 ## Defaults
 
 ### `.gitignore` entries

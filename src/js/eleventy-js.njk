@@ -10,5 +10,7 @@ eleventyExcludeFromCollections: true
 {% include "components/html-fetch.js" %}
 {% include "../../node_modules/@zachleat/filter-container/filter-container.js" %}
 {% include "../../node_modules/@zachleat/details-utils/details-utils.js" %}
+
+{% include "components/search.js" %}
 {% endset %}
 {{ js | jsmin | safe }}

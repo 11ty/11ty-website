@@ -167,3 +167,22 @@ details.toc[open] > summary {
 .table-of-contents > ul ul > li {
 	padding: 0;
 }
+
+/* Sidebar ad */
+.elv-toc .elv-callout:first-child {
+	--callout-primary: #63e6be;
+	--callout-secondary: #e4fdf5;
+}
+@media (prefers-color-scheme: dark) {
+	.elv-toc .elv-callout:first-child {
+		--callout-primary: #31b089;
+		--callout-secondary: #135340;
+	}
+}
+.elv-toc-callout-link {
+	display: block;
+	font-size: 1.15em;
+	line-height: 1.4;
+	text-wrap: balance;
+}
+

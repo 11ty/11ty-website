@@ -2,5 +2,9 @@
 	"tags": ["blog"],
 	"excludeFromSidebar": true,
 	"layout": "layouts/blog.md",
-	"permalink": "/blog/{{ page.fileSlug }}/"
+	"permalink": "/blog/{{ page.fileSlug }}/",
+	"postAuthor": "zachleat",
+	"postAuthors": {
+		"zachleat": "https://www.zachleat.com/"
+	}
 }

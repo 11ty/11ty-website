@@ -16,6 +16,7 @@ export async function data() {
 	const entries = await feed.getEntries();
 
 	return {
+		headerTitle: "Eleventy Community",
 		entries: entries,
 		layout: "layouts/docs.njk",
 	};

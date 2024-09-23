@@ -28,17 +28,18 @@ ignoreGitHubButtons: true
 
 ## <span class="numberflag"><span class="sr-only">Step</span> {{ count }}</span> Stay up-to-date
 
-- [**Follow @eleventy@fosstodon.org on Mastodon**](https://fosstodon.org/@eleventy)
-- Read the [**Eleventy Blog**](/blog/)
-- Subscribe/unsubscribe to the [Eleventy YouTube Channel](https://www.youtube.com/channel/UCskGTioqrMBcw8pd14_334A)
-- We publish RSS feeds for: [**Everything** (the firehose)](/firehose/?type=youtube&type=github&type=blog&type=quick-tips), just [**Blog Posts**](/blog/feed.xml) or just [**Documentation Updates**](/docs/feed.xml)
+- [Follow @eleventy@fosstodon.org on **Mastodon**](https://fosstodon.org/@eleventy)
+- Read the [Eleventy **Blog**](/blog/)
+- Subscribe to the [Eleventy **YouTube Channel**](https://www.youtube.com/c/EleventyVideo)
+- [Subscribe to the 11ty **Email Newsletter**](https://buttondown.email/11ty)
+- We publish feeds for: [**Firehose**](/firehose/?type=youtube&type=github&type=blog&type=quick-tips) _(everything)_, [**Blog Posts**](/blog/feed.xml), or [**Documentation Updates**](/docs/feed.xml)
 - View the full [Eleventy Release History](/docs/versions/) (with documentation for previous versions)
 
 {% set count = count + 1 %}
 
 ## <span class="numberflag"><span class="sr-only">Step</span> {{ count }}</span> Contribute on [Open Collective](https://opencollective.com/11ty)
 
-Eleventy is supported by [folks <strong>like {% emoji "👋" %} <span class="nowrap" data-investors-avatar="prepend">you</span></strong>](/docs/supporters/) that want to invest in better, longer lasting tools to create on the web.
+Eleventy is supported by [folks <strong>like {% emoji "👋" %} you</strong>](/docs/supporters/) that want to invest in better, longer lasting tools to create on the web.
 
 <div class="fl">
     <div>
@@ -51,7 +52,5 @@ As a thank you to our Supporters, Eleventy will:
 {% include "supporter-benefits.njk" %}
 
 </div></div>
-
-All Eleventy contributors on Open Collective will be given a <a href="/docs/account/">Contributor Account</a> with access to Contributor-only features. To sign up, donate to <a href="https://opencollective.com/11ty"><strong>Support Eleventy</strong> on Open Collective {% emoji "🎁" %}</a>!
 
 {% include "supporters.njk" %}

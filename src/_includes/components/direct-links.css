@@ -1,25 +1,6 @@
 /* Direct Links / Markdown Headers */
-.direct-link {
-	font-family: sans-serif;
-	text-decoration: none;
+.ha-placeholder {
+	font-family: system-ui, sans-serif;
 	font-style: normal;
-	margin-left: 0.1em;
 	font-weight: normal;
-}
-a[href].direct-link,
-a[href].direct-link:visited {
-	color: #949494;
-	visibility: hidden;
-}
-a[href].direct-link:focus,
-a[href].direct-link:focus:visited,
-:hover > a[href].direct-link,
-:hover > a[href].direct-link:visited,
-:focus > a[href].direct-link,
-:focus > a[href].direct-link:visited {
-	visibility: visible;
-}
-/* don’t use a direct link, should be a link to the page */
-main .elv-toc + #skip-content > h1:first-child .direct-link {
-	display: none;
 }

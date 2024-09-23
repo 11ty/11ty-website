@@ -35,7 +35,7 @@ An Eleventy linter plugin to check for inclusive language in markdown files. Ins
 Available on [npm](https://www.npmjs.com/package/@11ty/eleventy-plugin-inclusive-language).
 
 ```
-npm install @11ty/eleventy-plugin-inclusive-language --save-dev
+npm install @11ty/eleventy-plugin-inclusive-language
 ```
 
 Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
