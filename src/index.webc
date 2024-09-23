@@ -15,7 +15,6 @@ let ignoreGitHubButtons = true;
 let ignoreSupporters = true;
 let ignoreSidebarCallout = true;
 let searchTitle = "Eleventy is a simpler static site generator";
-let skipAuth = true;
 
 let eleventyImport = {
 	collections: ["blog"]

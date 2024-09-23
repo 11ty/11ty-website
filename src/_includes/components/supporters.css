@@ -23,16 +23,7 @@
 }
 
 /* Inline list of support avatars */
-.is-eleventy-supporter .facepile-supporters img {
-	filter: grayscale(1);
-}
-.is-eleventy-supporter .facepile-supporters .supporters-active {
-	opacity: 1;
-	position: relative;
-	z-index: 2;
-}
-.supporters-tiered .facepile-supporters .supporters-active img,
-.is-eleventy-supporter .facepile-supporters .supporters-active img {
+.supporters-tiered .facepile-supporters .supporters-active img {
 	filter: grayscale(0);
 }
 /* Supporters Header */

@@ -474,7 +474,6 @@ ${text.trim()}
 		"node_modules/artificial-chart/artificial-chart.{css,js}": `static/`,
 	});
 
-	eleventyConfig.addPassthroughCopy("netlify-email");
 	eleventyConfig.addPassthroughCopy("src/img");
 	eleventyConfig.addPassthroughCopy("src/blog/*.png");
 	eleventyConfig.addPassthroughCopy("src/blog/pretty-atom-feed-v3.xsl");

@@ -45,7 +45,7 @@
 		<{{ headerTag or "h1" }} class="elv-hed">{{ headerTitle | safe }}</{{ headerTag or "h1" }}>
 		<is-land on:visible on:idle on:save-data="false" on:media="(prefers-reduced-motion: no-preference)">
 			<template data-island>
-				<a href="/blog/mascot-david/" class="elv-externalexempt elv-possum-anchor" data-investors-avatar>
+				<a href="/blog/mascot-david/" class="elv-externalexempt elv-possum-anchor">
 					<div class="elv-possum-pic">
 						{% if isDocs %}
 						{% image "./src/img/mascots/david.svg", "The possum is Eleventy’s mascot", [222], "elv-possum" %}

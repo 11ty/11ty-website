@@ -137,17 +137,11 @@ let eleventyComputed = {
 		{{ content | safe }}
 
 		<!-- Built on {{ config.now }} by Eleventy -->
-{% if loadNetlifyIdentity %}
-		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-{% endif %}
 {%- if useWebCBundle %}
 		<script type="module" src="{% getBundleFileUrl 'js', 'async' %}"></script>
 {%- endif %}
 {%- if not skipLegacyBundle %}
 		<script src="/js/eleventy.js" type="module"></script>
 {%- endif %}
-{% if not skipAuth %}
-		<script src="/js/eleventy-auth.js" type="module"></script>
-{% endif %}
 	</body>
 </html>

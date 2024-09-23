@@ -39,7 +39,7 @@ ignoreGitHubButtons: true
 
 ## <span class="numberflag"><span class="sr-only">Step</span> {{ count }}</span> Contribute on [Open Collective](https://opencollective.com/11ty)
 
-Eleventy is supported by [folks <strong>like {% emoji "👋" %} <span class="nowrap" data-investors-avatar="prepend">you</span></strong>](/docs/supporters/) that want to invest in better, longer lasting tools to create on the web.
+Eleventy is supported by [folks <strong>like {% emoji "👋" %} you</strong>](/docs/supporters/) that want to invest in better, longer lasting tools to create on the web.
 
 <div class="fl">
     <div>
@@ -52,7 +52,5 @@ As a thank you to our Supporters, Eleventy will:
 {% include "supporter-benefits.njk" %}
 
 </div></div>
-
-All Eleventy contributors on Open Collective will be given a <a href="/docs/account/">Contributor Account</a> with access to Contributor-only features. To sign up, donate to <a href="https://opencollective.com/11ty"><strong>Support Eleventy</strong> on Open Collective {% emoji "🎁" %}</a>!
 
 {% include "supporters.njk" %}
