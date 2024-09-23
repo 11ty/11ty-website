@@ -13,6 +13,7 @@ Plugins are custom code that Eleventy can import into a project from an external
 
 - [Official Eleventy Plugins](/docs/plugins/official.md) (look for the `@11ty/` prefix on npm)
 - [Community Contributed Plugins](/docs/plugins/community.md)
+- [Retired Plugins](/docs/plugins/retired.md)
 
 ## Adding a Plugin
 
