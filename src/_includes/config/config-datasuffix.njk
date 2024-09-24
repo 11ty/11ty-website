@@ -1,0 +1,38 @@
+{%- set tabid = "config-datasuffix" %}
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs class="tabs-full tabs-flush" persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
+  <div id="{{ tabid }}-jsesm" role="tabpanel">
+
+```js
+export default function (eleventyConfig) {
+	// e.g. file.json and file.11tydata.json
+	eleventyConfig.setDataFileSuffixes([".11tydata", ""]);
+
+	// e.g. file.11tydata.json
+	eleventyConfig.setDataFileSuffixes([".11tydata"]);
+
+	// No data files are used.
+	eleventyConfig.setDataFileSuffixes([]);
+};
+```
+
+  </div>
+  <div id="{{ tabid }}-jscjs" role="tabpanel">
+
+```js
+module.exports = function (eleventyConfig) {
+	// e.g. file.json and file.11tydata.json
+	eleventyConfig.setDataFileSuffixes([".11tydata", ""]);
+
+	// e.g. file.11tydata.json
+	eleventyConfig.setDataFileSuffixes([".11tydata"]);
+
+	// No data files are used.
+	eleventyConfig.setDataFileSuffixes([]);
+};
+```
+
+  </div>
+</seven-minute-tabs>
+</is-land>

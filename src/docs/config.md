@@ -52,9 +52,7 @@ Controls the top level directory/file/glob that we’ll use to look for template
 | _Valid Options_         | Any valid directory.      |
 | _Command Line Override_ | `--input`                 |
 
-#### Examples
-
-##### Command Line
+#### Command Line
 
 ```bash
 # The current directory
@@ -70,7 +68,7 @@ npx @11ty/eleventy --input=*.md
 npx @11ty/eleventy --input=views
 ```
 
-##### Configuration
+#### Configuration
 
 {% include "config/config-input.njk" %}
 
@@ -84,8 +82,6 @@ The includes directory is meant for [Eleventy layouts](/docs/layouts/), include 
 | _Default_               | `_includes`                                                                   |
 | _Valid Options_         | Any valid directory inside of `dir.input` (an empty string `""` is supported) |
 | _Command Line Override_ | _None_                                                                        |
-
-#### Example
 
 {% include "config/config-includes.njk" %}
 
@@ -106,8 +102,6 @@ This configuration option is optional but useful if you want your [Eleventy layo
 | _Valid Options_         | Any valid directory inside of `dir.input` (an empty string `""` is supported) |
 | _Command Line Override_ | _None_                                                                        |
 
-#### Example
-
 {% include "config/config-layouts.njk" %}
 
 ### Directory for Global Data Files
@@ -120,8 +114,6 @@ Controls the directory inside which the global data template files, available to
 | _Default_               | `_data`                                   |
 | _Valid Options_         | Any valid directory inside of `dir.input` |
 | _Command Line Override_ | _None_                                    |
-
-#### Example
 
 {% include "config/config-data.njk" %}
 
@@ -136,15 +128,13 @@ Controls the directory inside which the finished templates will be written to.
 | _Valid Options_         | Any string that will work as a directory name. Eleventy creates this if it doesn’t exist. |
 | _Command Line Override_ | `--output`                                                                                |
 
-#### Examples
-
-##### Command Line
+#### Command Line
 
 ```bash
 npx @11ty/eleventy --output=_site
 ```
 
-##### Configuration
+#### Configuration
 
 {% include "config/config-output.njk" %}
 
@@ -159,8 +149,6 @@ Markdown files run through this template engine before transforming to HTML.
 | _Valid Options_          | A valid [template engine short name](/docs/languages/) or `false` |
 | _Command Line Override_  | _None_                                                            |
 
-#### Example
-
 {% include "config/config-mdengine.njk" %}
 
 ### Default template engine for HTML files
@@ -173,8 +161,6 @@ HTML templates run through this template engine before transforming to (better) 
 | _Default_               | `liquid`                                                          |
 | _Valid Options_         | A valid [template engine short name](/docs/languages/) or `false` |
 | _Command Line Override_ | _None_                                                            |
-
-#### Example
 
 {% include "config/config-htmlengine.njk" %}
 
@@ -192,21 +178,19 @@ Specify which types of templates should be transformed.
 
 {% callout "info" %}{% addedin "0.9.0" %} <strong>Case sensitivity</strong>: File extensions should be considered case insensitive, cross-platform. While macOS already behaves this way (by default), other operating systems require additional Eleventy code to enable this behavior.{% endcallout %}
 
-#### Examples
-
-##### Command Line
+#### Command Line
 
 ```
 npx @11ty/eleventy --formats=html,liquid,njk
 ```
 
-##### Configuration File Static Export
+#### Configuration File Static Export
 
 {% include "config/config-templatelangs.njk" %}
 
 There are many [different shapes of configuration file](/docs/config-shapes.md).
 
-##### Configuration API
+#### Configuration API
 
 {% include "config/config-templatelangs-api.njk" %}
 
@@ -219,8 +203,6 @@ In order to maximize user-friendliness to beginners, Eleventy will show each fil
 | _Default_               | `false`           |
 | _Valid Options_         | `true` or `false` |
 | _Command Line Override_ | `--quiet`         |
-
-#### Example
 
 {% include "config/config-quiet.njk" %}
 
@@ -241,13 +223,11 @@ If your site lives in a different subdirectory (particularly useful with GitHub 
 | _Valid Options_         | A prefix directory added to urls in HTML files |
 | _Command Line Override_ | `--pathprefix` {% addedin "0.2.11" %} |
 
-#### Example
-
 {% include "config/config-pathprefix.njk" %}
 
 Deploy to https://11ty.github.io/eleventy-base-blog/ on GitHub pages without modifying your config. This allows you to use the same code-base to deploy to either GitHub pages or Netlify, like the [`eleventy-base-blog`](https://github.com/11ty/eleventy-base-blog) project does.
 
-```
+```bash
 npx @11ty/eleventy --pathprefix=eleventy-base-blog
 ```
 
@@ -262,14 +242,7 @@ npx @11ty/eleventy --pathprefix=eleventy-base-blog
 | _Valid Options_         | String                |
 | _Command Line Override_ | _None_                |
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
-	// Looks for index.json and index.11tydata.json instead of using folder names
-	eleventyConfig.setDataFileBaseName("index");
-};
-```
+{% include "config/config-databasename.njk" %}
 
 ### Change File Suffix for Data Files
 
@@ -288,17 +261,7 @@ This feature can also be used to disable Template and Directory Data Files altog
 
 Read more about [Template and Directory Specific Data Files](/docs/data-template-dir/).
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
-	eleventyConfig.setDataFileSuffixes([".11tydata", ""]); // e.g. file.json and file.11tydata.json
-
-	eleventyConfig.setDataFileSuffixes([".11tydata"]); // e.g. file.11tydata.json
-
-	eleventyConfig.setDataFileSuffixes([]); // No data files are used.
-};
-```
+{% include "config/config-datasuffix.njk" %}
 
 <details>
 <summary><em><strong>Backwards Compatibility Note</strong></em> (<code>{{ "2.0.0-canary.19" | coerceVersion }}</code>)</summary>
@@ -332,19 +295,7 @@ Similar to Transforms, Linters are provided to analyze a template’s output wit
 | _Valid Options_         | Callback function |
 | _Command Line Override_ | _None_            |
 
-```js
-module.exports = function (eleventyConfig) {
-	// Can be sync or async
-	eleventyConfig.addLinter("linter-name", async function (content) {
-		console.log(this.inputPath);
-		console.log(this.outputPath);
-
-		// Eleventy 2.0+ has full access to Eleventy’s `page` variable
-		console.log(this.page.inputPath);
-		console.log(this.page.outputPath);
-	});
-};
-```
+{% include "config/config-linters.njk" %}
 
 <details>
 <summary><strong>Linters Example: Use Inclusive Language</strong></summary>
@@ -353,10 +304,10 @@ Inspired by the [CSS Tricks post _Words to Avoid in Educational Writing_](https:
 
 This example has been packaged as a plugin in [`eleventy-plugin-inclusive-language`](https://github.com/11ty/eleventy-plugin-inclusive-language).
 
-{% codetitle ".eleventy.js" %}
+{% codetitle "eleventy.config.js" %}
 
 ```js
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addLinter(
 		"inclusive-language",
 		function (content, inputPath, outputPath) {
@@ -387,29 +338,19 @@ module.exports = function (eleventyConfig) {
 
 {% addedin "1.0.0" %}<!-- Beta 4 -->
 
-A `Set` of [`lodash` selectors](https://lodash.com/docs/4.17.15#get) that allow you to include data from the data cascade in the output from `--to=json`, `--to=ndjson`, or the `EleventyServerless.prototype.getOutput` method.
+A `Set` of [`lodash` selectors](https://lodash.com/docs/4.17.15#get) that allow you to include data from the data cascade in the output from `--to=json`, `--to=ndjson`.
 
-```js
-module.exports = function (eleventyConfig) {
-	eleventyConfig.dataFilterSelectors.add("page");
-	eleventyConfig.dataFilterSelectors.delete("page");
-};
-```
+{% include "config/config-datafilters.njk" %}
 
 This will now include a `data` property in your JSON output that includes the `page` variable for each matching template.
 
-### Type Definitions
+### TypeScript Type Definitions
 
 This may enable some extra autocomplete features in your IDE (where supported).
 
-```js
-/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
-module.exports = function (eleventyConfig) {
-	// …
-};
-```
+{% include "config/config-typedef.njk" %}
 
-- More background information at [Issue 2091](https://github.com/11ty/eleventy/pull/2091).
+- Related: [GitHub #2091](https://github.com/11ty/eleventy/pull/2091) and [GitHub #3097](https://github.com/11ty/eleventy/issues/3097)
 
 ### Removed Features
 
@@ -448,16 +389,3 @@ Files found (that don’t have a valid template engine) from opt-in file extensi
 #### Transforms
 
 - Documented at [Transforms](/docs/transforms.md).
-
-<!--
-### Experiments
-
-Experiments are experimental Eleventy features that need a public trial. Power users may opt-in to these features in order to try out new things before they are released to the general public. Do not use these in production code! Experiments are not guaranteed and may be removed at any time.
-
-| Experiments |  |
-| --- | --- |
-| _Object Key_ | _N/A_ |
-| _Valid Options_ | String |
-| _Command Line Override_ | _None_ |
-| _Configuration API_ | `addExperiment` {% addedin "0.6.0" %} |
--->

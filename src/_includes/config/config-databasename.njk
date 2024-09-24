@@ -1,0 +1,26 @@
+{%- set tabid = "config-databasename" %}
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs class="tabs-full tabs-flush" persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
+  <div id="{{ tabid }}-jsesm" role="tabpanel">
+
+```js
+export default function (eleventyConfig) {
+	// Looks for index.json and index.11tydata.json instead of using folder names
+	eleventyConfig.setDataFileBaseName("index");
+};
+```
+
+  </div>
+  <div id="{{ tabid }}-jscjs" role="tabpanel">
+
+```js
+module.exports = function (eleventyConfig) {
+	// Looks for index.json and index.11tydata.json instead of using folder names
+	eleventyConfig.setDataFileBaseName("index");
+};
+```
+
+  </div>
+</seven-minute-tabs>
+</is-land>
