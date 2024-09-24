@@ -1,5 +1,5 @@
 {% raw %}
-export const data = {
+exports.data = {
   pagination: {
     data: "testdata",
     size: 2
@@ -12,7 +12,7 @@ export const data = {
   ]
 };
 
-export function render(data) {
+exports.render = function(data) {
   return `<ol>
     ${data.pagination.items.map(function(item) {
         return `<li>${item}</li>`;

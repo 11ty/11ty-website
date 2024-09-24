@@ -1,0 +1,98 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedatafile"} %}
+  <div id="pagedatafile-liquid" role="tabpanel">
+
+{% raw %}
+
+```liquid
+---
+pagination:
+  data: globalDataSet.myData
+  size: 1
+---
+<ol>
+{%- for item in pagination.items %}
+  <li>{{ item }}</li>
+{% endfor -%}
+</ol>
+```
+
+{% endraw %}
+
+  </div>
+  <div id="pagedatafile-njk" role="tabpanel">
+
+{% raw %}
+
+```jinja2
+---
+pagination:
+  data: globalDataSet.myData
+  size: 1
+---
+<ol>
+{%- for item in pagination.items %}
+  <li>{{ item }}</li>
+{% endfor -%}
+</ol>
+```
+
+{% endraw %}
+
+  </div>
+
+  <div id="pagedatafile-js" role="tabpanel">
+
+{% raw %}
+
+```js
+export const data = {
+	pagination: {
+		data: "globalDataSet.myData",
+		size: 1,
+	},
+};
+
+export function render(data) {
+	return `<ol>
+    ${data.pagination.items
+			.map(function (item) {
+				return `<li>${item}</li>`;
+			})
+			.join("")}
+  </ol>`;
+};
+```
+
+{% endraw %}
+
+  </div>
+	<div id="pagedatafile-cjs" role="tabpanel">
+
+{% raw %}
+
+```js
+exports.data = {
+	pagination: {
+		data: "globalDataSet.myData",
+		size: 1,
+	},
+};
+
+exports.render = function (data) {
+	return `<ol>
+    ${data.pagination.items
+			.map(function (item) {
+				return `<li>${item}</li>`;
+			})
+			.join("")}
+  </ol>`;
+};
+```
+
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>
