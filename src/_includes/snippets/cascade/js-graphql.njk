@@ -1,0 +1,48 @@
+{%- set tabid = "js-graphql" %}
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs class="tabs-flush" persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
+  <div id="{{ tabid }}-jsesm" role="tabpanel">
+
+```js
+import { graphql, buildSchema } from "graphql";
+
+// this could also be `async function`
+export default function () {
+	// if you want to `await` for other things here, use `async function`
+	var schema = buildSchema(`type Query {
+    hello: String
+  }`);
+
+	var root = {
+		hello: () => "Hello world async!",
+	};
+
+	return graphql(schema, "{ hello }", root);
+};
+```
+
+  </div>
+  <div id="{{ tabid }}-jscjs" role="tabpanel">
+
+```js
+const { graphql, buildSchema } = require("graphql");
+
+// this could also be `async function`
+module.exports = function () {
+	// if you want to `await` for other things here, use `async function`
+	var schema = buildSchema(`type Query {
+    hello: String
+  }`);
+
+	var root = {
+		hello: () => "Hello world async!",
+	};
+
+	return graphql(schema, "{ hello }", root);
+};
+```
+
+  </div>
+</seven-minute-tabs>
+</is-land>

@@ -1,0 +1,32 @@
+{%- set tabid = "js-args" %}
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs class="tabs-flush" persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
+  <div id="{{ tabid }}-jsesm" role="tabpanel">
+
+```js
+export default function (configData) {
+	if (configData.eleventy.env.source === "cli") {
+		return "I am on the command line";
+	}
+
+	return "I am running programmatically via a script";
+}
+```
+
+  </div>
+  <div id="{{ tabid }}-jscjs" role="tabpanel">
+
+```js
+module.exports = function (configData) {
+	if (configData.eleventy.env.source === "cli") {
+		return "I am on the command line";
+	}
+
+	return "I am running programmatically via a script";
+}
+```
+
+  </div>
+</seven-minute-tabs>
+</is-land>
