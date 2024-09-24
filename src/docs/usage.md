@@ -22,7 +22,7 @@ npx @11ty/eleventy
 npx @11ty/eleventy --input=. --output=_site
 {% endset %}
 <script type="module" src="/js/seven-minute-tabs.js"></script>
-<seven-minute-tabs class="tabs-full tabs-flush tabs-right tabs-firstonly" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right tabs-firstonly" persist sync>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#usage-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#usage-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
@@ -44,7 +44,7 @@ npx @11ty/eleventy --formats=md,html,ejs
 # Find out the most up-to-date list of commands (there are more)
 npx @11ty/eleventy --help
 {% endset %}
-<seven-minute-tabs class="tabs-full tabs-flush tabs-right tabs-firstonly" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right tabs-firstonly" persist sync>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#usage-formats-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#usage-formats-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
@@ -68,7 +68,7 @@ npx @11ty/eleventy --serve --port=8081
 # Watch and re-run when files change, without the web server.
 npx @11ty/eleventy --watch
 {% endset %}
-<seven-minute-tabs class="tabs-full tabs-flush tabs-right tabs-firstonly" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right tabs-firstonly" persist sync>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#usage-serve-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#usage-serve-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
@@ -85,7 +85,7 @@ npx @11ty/eleventy --watch
 # Shhhhh—Don’t log so much to the console
 npx @11ty/eleventy --quiet
 {% endset %}
-<seven-minute-tabs class="tabs-full tabs-flush tabs-right tabs-firstonly" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right tabs-firstonly" persist sync>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#usage-quiet-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#usage-quiet-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
@@ -104,7 +104,7 @@ Runs without writing to the file system. Useful when [debugging](/docs/debugging
 # Run Eleventy but don’t write any files
 npx @11ty/eleventy --dryrun
 {% endset %}
-<seven-minute-tabs class="tabs-full tabs-flush tabs-right tabs-firstonly" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right tabs-firstonly" persist sync>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#usage-dry-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#usage-dry-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
@@ -121,7 +121,7 @@ npx @11ty/eleventy --dryrun
 # Override the default eleventy project config filename (.eleventy.js)
 npx @11ty/eleventy --config=myeleventyconfig.js
 {% endset %}
-<seven-minute-tabs class="tabs-full tabs-flush tabs-right tabs-firstonly" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right tabs-firstonly" persist sync>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#usage-cfg-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#usage-cfg-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
@@ -146,7 +146,7 @@ npx @11ty/eleventy --to=ndjson
 # Default behavior (Output to file system)
 npx @11ty/eleventy --to=fs
 {% endset %}
-<seven-minute-tabs class="tabs-full tabs-flush tabs-right tabs-firstonly" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right tabs-firstonly" persist sync>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#usage-json-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#usage-json-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
@@ -169,7 +169,7 @@ npx @11ty/eleventy --serve --incremental
 # Skip the initial full build with `--ignore-initial`
 npx @11ty/eleventy --serve --incremental --ignore-initial
 {% endset %}
-<seven-minute-tabs class="tabs-full tabs-flush tabs-right tabs-firstonly" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right tabs-firstonly" persist sync>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#usage-inc-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#usage-inc-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
@@ -194,7 +194,7 @@ npx @11ty/eleventy --serve --ignore-initial
 # Works great with Incremental
 npx @11ty/eleventy --serve --incremental --ignore-initial
 {% endset %}
-<seven-minute-tabs class="tabs-full tabs-flush tabs-right tabs-firstonly" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right tabs-firstonly" persist sync>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#usage-initial-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#usage-initial-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
@@ -213,7 +213,7 @@ Yes, you can use the same `input` and `output` directories, like so:
 # Parse and write Markdown to HTML, respecting directory structure.
 npx @11ty/eleventy --input=. --output=. --formats=md
 {% endset %}
-<seven-minute-tabs class="tabs-full tabs-flush tabs-right tabs-firstonly" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right tabs-firstonly" persist sync>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#usage-same-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#usage-same-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
