@@ -16,7 +16,7 @@ This tip works well on small sites that don’t have a lot of CSS. Inlining your
 
 Add the following `cssmin` filter to your Eleventy Config file:
 
-{% include "quicktips/minify-css.njk" %}
+{% include "snippets/quicktips/minify-css.njk" %}
 
 ## Create your CSS File
 
@@ -57,5 +57,5 @@ _Contributed by [Zach Green](https://github.com/zgreen)_
 
 You can also inline minified CSS in a [JavaScript template](/docs/languages/javascript/). This technique does not use filters, and instead uses `async` functions:
 
-{% include "quicktips/minify-css-11tyjs.njk" %}
+{% include "snippets/quicktips/minify-css-11tyjs.njk" %}
 

@@ -12,4 +12,4 @@ Assume you have data files named `links.json` and `copyrights.json`, and you onl
 
 The corresponding `eleventyComputed.js` file contents can look like the following:
 
-{% include "quicktips/eleventycomputed.njk" %}
+{% include "snippets/quicktips/eleventycomputed.njk" %}

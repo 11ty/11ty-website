@@ -20,7 +20,7 @@ This is a bit different from our client-side implementation because this data is
 - It’s better to use the [Eleventy Fetch utility](/docs/plugins/fetch.md) instead, which will cache your fetch results to avoid hitting the GitHub API on every build.
 	- Related [Quick Tip: Cache Data Requests](/docs/quicktips/cache-api-requests.md)
 
-{% include "quicktips/fetch-github-stars.njk" %}
+{% include "snippets/quicktips/fetch-github-stars.njk" %}
 
 Now in your templates you can output the stargazers count with:
 

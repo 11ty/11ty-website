@@ -17,7 +17,7 @@ Don’t forget to [install Eleventy into your local project first](/docs/#step-2
 
 Now create a file called `my-node-script.js` with the following contents:
 
-{% include "programmatic/node-script.njk" %}
+{% include "snippets/programmatic/node-script.njk" %}
 
 Then run your new script from the command line. _Don’t include `~ $` when you run this command._
 
@@ -31,17 +31,17 @@ Using `.write()` will write your output to the file system. If, instead, you wan
 
 ### JSON Output
 
-{% include "programmatic/json-out.njk" %}
+{% include "snippets/programmatic/json-out.njk" %}
 
 ### ndjson Output
 
-{% include "programmatic/ndjson-out.njk" %}
+{% include "snippets/programmatic/ndjson-out.njk" %}
 
 ## Changing the Input and Output Directories
 
 The first argument is the input directory. The second argument is the output directory.
 
-{% include "programmatic/chdirs.njk" %}
+{% include "snippets/programmatic/chdirs.njk" %}
 
 ## Full Options List
 
@@ -49,4 +49,4 @@ The third argument to Eleventy is an options object.
 
 _(This documentation section is a work in progress but [you’re welcome to dig into the `Eleventy` class source code in `{% latestVersion versions, config %}` to learn more](https://github.com/11ty/eleventy/blob/{% latestVersion versions, config %}/src/Eleventy.js))_
 
-{% include "programmatic/fullopts.njk" %}
+{% include "snippets/programmatic/fullopts.njk" %}

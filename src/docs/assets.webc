@@ -51,7 +51,7 @@ filter-container:defined .filter-code--hide {
 		<li>
 			Use <a href="/docs/copy/">passthrough file copy</a> to copy the file to the build output folder (you could use a <code>glob</code> here, too):
 			<template webc:type="11ty" 11ty:type="njk,md">
-			{% include "assets/addfiles.njk" %}
+			{% include "snippets/assets/addfiles.njk" %}
 			</template>
 		</li>
 		<li data-filter-code="font">Reference the Web Font file in your CSS using: <syntax-highlight language="css">@font-face {

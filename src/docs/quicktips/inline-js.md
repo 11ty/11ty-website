@@ -16,7 +16,7 @@ This tip works great if you have small JS utilities that you’d like to have in
 
 Add the following `jsmin` filter to your Eleventy Config file:
 
-{% include "quicktips/minify-js.njk" %}
+{% include "snippets/quicktips/minify-js.njk" %}
 
 ## Create your JavaScript File
 

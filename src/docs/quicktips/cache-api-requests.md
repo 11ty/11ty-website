@@ -27,7 +27,7 @@ npm install @11ty/eleventy-fetch
 
 This code is currently in use on the Eleventy web site to display GitHub stars in the footer. Check out the [full source code](https://github.com/11ty/11ty-website/blob/768b97fb27543e3139fe53dfb19cdeafb12e3d1c/_data/github.js).
 
-{% include "quicktips/fetch-github-stars-cached.njk" %}
+{% include "snippets/quicktips/fetch-github-stars-cached.njk" %}
 
 {% callout "info" %}<p>Take note that if you’re using this on a hosted build server, it may not maintain updates to the cache and will likely re-run every time. You can learn how to <a href="/docs/deployment/#persisting-cache"><strong>persist this cache</strong> on your build server</a>.</p>
 
@@ -38,4 +38,4 @@ This code is currently in use on the Eleventy web site to display GitHub stars i
 Wrap the above code in a nice `try catch` allows you to return a fake data set if the very first request fails (no expired cache entry is available). <strong>Note that if there is already an expired cache entry available, we use that instead.</strong>
 
 
-{% include "quicktips/fetch-github-stars-cachefail.njk" %}
+{% include "snippets/quicktips/fetch-github-stars-cachefail.njk" %}
