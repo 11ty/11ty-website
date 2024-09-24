@@ -1,0 +1,53 @@
+{%- set tabid = "customexif" %}
+<div class="codetitle codetitle-right-md">eleventy.config.js</div>
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs class="tabs-flush" persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
+  <div id="{{ tabid }}-jsesm" role="tabpanel">
+
+```js
+import exifr from "exifr";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addDataExtension("png,jpeg", {
+		parser: async (file) => {
+			let exif = await exifr.parse(file);
+
+			return {
+				exif,
+			};
+		},
+
+		// Using `read: false` changes the parser argument to
+		// a file path instead of file contents.
+		read: false,
+	});
+};
+```
+
+  </div>
+  <div id="{{ tabid }}-jscjs" role="tabpanel">
+
+```js
+const exifr = require("exifr");
+
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addDataExtension("png,jpeg", {
+		parser: async (file) => {
+			let exif = await exifr.parse(file);
+
+			return {
+				exif,
+			};
+		},
+
+		// Using `read: false` changes the parser argument to
+		// a file path instead of file contents.
+		read: false,
+	});
+};
+```
+
+  </div>
+</seven-minute-tabs>
+</is-land>

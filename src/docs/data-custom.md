@@ -19,42 +19,14 @@ Note that you can also add [Custom Front Matter Formats](/docs/data-frontmatter-
 
 ## Usage
 
-{% codetitle ".eleventy.js" %}
-
-```js
-// Receives file contents, return parsed data
-eleventyConfig.addDataExtension("fileExtension", (contents, filePath) => {
-	return {};
-});
-```
+{% include "snippets/cascade/custom.njk" %}
 
 - {% addedin "2.0.0-canary.10" %} Pass a comma-separated list of extensions.
 - {% addedin "2.0.0-canary.19" %} `filePath` was added as a second argument.
 
-{% codetitle ".eleventy.js" %}
+### Usage with Options {% addedin "2.0.0-canary.10" %}
 
-```js
-eleventyConfig.addDataExtension("yml, yaml", (contents, filePath) => {
-	// …
-});
-```
-
-### Usage with Options
-
-{% addedin "2.0.0-canary.10" %}
-
-{% codetitle ".eleventy.js" %}
-
-```js
-// or with options (new in 2.0)
-eleventyConfig.addDataExtension("fileExtension", {
-	parser: (contents, filePath) => ({}),
-
-	// defaults are shown:
-	read: true,
-	encoding: "utf8",
-});
-```
+{% include "snippets/cascade/customopts.njk" %}
 
 - `parser`: the callback function used to parse the data. The first argument is the data file’s contents (unless `read: false`). The second argument is the file path {% addedin "2.0.0-canary.19" %}.
 - `read` (default: `true`): use `read: false` to change the parser function’s first argument to be a file path string instead of file contents.
@@ -66,41 +38,17 @@ eleventyConfig.addDataExtension("fileExtension", {
 
 Here we’re using the [`js-yaml` package](https://www.npmjs.com/package/js-yaml). Don’t forget to `npm install js-yaml`.
 
-{% codetitle ".eleventy.js" %}
-
-```js
-const yaml = require("js-yaml");
-
-module.exports = (eleventyConfig) => {
-	eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
-};
-```
+{% include "snippets/cascade/custom-yaml.njk" %}
 
 ### TOML
 
 Here we’re using the [`@iarna/toml` package](https://www.npmjs.com/package/@iarna/toml). Don’t forget to `npm install @iarna/toml`.
 
-{% codetitle ".eleventy.js" %}
-
-```js
-const toml = require("@iarna/toml");
-
-module.exports = (eleventyConfig) => {
-	eleventyConfig.addDataExtension("toml", (contents) => toml.parse(contents));
-};
-```
+{% include "snippets/cascade/custom-toml.njk" %}
 
 ### Adding a custom JSON file extension
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = (eleventyConfig) => {
-	eleventyConfig.addDataExtension("geojson", (contents) =>
-		JSON.parse(contents)
-	);
-};
-```
+{% include "snippets/cascade/custom-json.njk" %}
 
 ### Feed EXIF image data into the Data Cascade
 
@@ -108,27 +56,7 @@ module.exports = (eleventyConfig) => {
 
 Note that the second argument is an object with a `parser` function.
 
-{% codetitle ".eleventy.js" %}
-
-```js
-const exifr = require("exifr");
-
-module.exports = function (eleventyConfig) {
-	eleventyConfig.addDataExtension("png,jpeg", {
-		parser: async (file) => {
-			let exif = await exifr.parse(file);
-
-			return {
-				exif,
-			};
-		},
-
-		// Using `read: false` changes the parser argument to
-		// a file path instead of file contents.
-		read: false,
-	});
-};
-```
+{% include "snippets/cascade/custom-exif.njk" %}
 
 - Example using a _template data file_:
   - Given `my-blog-post.md` and `my-blog-post.jpeg` then `exif` will be available for use in `my-blog-post.md` (e.g. `{% raw %}{{ exif | log }}{% endraw %}`)
@@ -141,20 +69,7 @@ Note that in the [data cascade](/docs/data-cascade/) there is a specific conflic
 
 If you add multiple file extensions, the latter ones take priority over the earlier ones. In the following example, if there is ever conflicting data between `*.toml` and `*.yaml` files, the `yaml` file will take precedence.
 
-{% codetitle ".eleventy.js" %}
-
-```js
-const toml = require("@iarna/toml");
-const yaml = require("js-yaml");
-
-module.exports = (eleventyConfig) => {
-	// Lower priority
-	eleventyConfig.addDataExtension("toml", (contents) => toml.parse(contents));
-
-	// Higher priority
-	eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
-};
-```
+{% include "snippets/cascade/custom-order.njk" %}
 
 ### Example
 
