@@ -1,0 +1,33 @@
+{%- set tabid = "collections-getsortedrev" %}
+<div class="codetitle codetitle-right-md">eleventy.config.js</div>
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs class="tabs-flush" persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
+  <div id="{{ tabid }}-jsesm" role="tabpanel">
+
+```js
+export default function (eleventyConfig) {
+	// Use the default sorting algorithm in reverse (descending dir, date, filename)
+	// Note that using a template engine’s `reverse` filter might be easier here
+	eleventyConfig.addCollection("myPostsReverse", function (collectionsApi) {
+		return collectionsApi.getAllSorted().reverse();
+	});
+};
+```
+
+  </div>
+  <div id="{{ tabid }}-jscjs" role="tabpanel">
+
+```js
+module.exports = function (eleventyConfig) {
+	// Use the default sorting algorithm in reverse (descending dir, date, filename)
+	// Note that using a template engine’s `reverse` filter might be easier here
+	eleventyConfig.addCollection("myPostsReverse", function (collectionsApi) {
+		return collectionsApi.getAllSorted().reverse();
+	});
+};
+```
+
+  </div>
+</seven-minute-tabs>
+</is-land>
