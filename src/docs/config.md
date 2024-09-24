@@ -222,17 +222,11 @@ In order to maximize user-friendliness to beginners, Eleventy will show each fil
 
 #### Example
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
-	eleventyConfig.setQuietMode(true);
-};
-```
+{% include "config/config-quiet.njk" %}
 
 The command line will override any setting in configuration:
 
-```
+```bash
 npx @11ty/eleventy --quiet
 ```
 
@@ -244,52 +238,17 @@ If your site lives in a different subdirectory (particularly useful with GitHub 
 | ----------------------- | ------------------------------------- |
 | _Object Key_            | `pathPrefix`                          |
 | _Default_               | `/`                                   |
-| _Valid Options_         | A prefix directory added to links     |
+| _Valid Options_         | A prefix directory added to urls in HTML files |
 | _Command Line Override_ | `--pathprefix` {% addedin "0.2.11" %} |
 
 #### Example
 
-{% codetitle ".eleventy.js" %}
-
-```js
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
-
-module.exports = function (eleventyConfig) {
-	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
-
-	return {
-		pathPrefix: "/eleventy-base-blog/",
-	};
-};
-```
+{% include "config/config-pathprefix.njk" %}
 
 Deploy to https://11ty.github.io/eleventy-base-blog/ on GitHub pages without modifying your config. This allows you to use the same code-base to deploy to either GitHub pages or Netlify, like the [`eleventy-base-blog`](https://github.com/11ty/eleventy-base-blog) project does.
 
 ```
 npx @11ty/eleventy --pathprefix=eleventy-base-blog
-```
-
-### Change exception case suffix for HTML files
-
-If an HTML template has matching input and output directories, index.html files will have this suffix added to their output filename to prevent overwriting the template. Read more at the [HTML template docs](/docs/languages/html/#using-the-same-input-and-output-directories).
-
-| Exception Suffix        |                    |
-| ----------------------- | ------------------ |
-| _Object Key_            | `htmlOutputSuffix` |
-| _Default_               | `-o`               |
-| _Valid Options_         | Any valid string   |
-| _Command Line Override_ | _None_             |
-
-#### Example
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
-	return {
-		htmlOutputSuffix: "-o",
-	};
-};
 ```
 
 ### Change Base File Name for Data Files
@@ -451,6 +410,12 @@ module.exports = function (eleventyConfig) {
 ```
 
 - More background information at [Issue 2091](https://github.com/11ty/eleventy/pull/2091).
+
+### Removed Features
+
+#### Change exception case suffix for HTML files
+
+{% callout "warn", "", "Feature Removal" %}The <code>htmlOutputSuffix</code> feature was removed in Eleventy 3.0. You can read about the feature on the <a href="https://v2-0-1.11ty.dev/docs/config/#change-exception-case-suffix-for-html-files">v2 documentation</a>. Related: <a href="https://github.com/11ty/eleventy/issues/3327">GitHub #3327</a>.{% endcallout %}
 
 ### Documentation Moved to Dedicated Pages
 

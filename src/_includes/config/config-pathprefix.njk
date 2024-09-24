@@ -1,0 +1,36 @@
+{%- set tabid = "config-pathprefix" %}
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs class="tabs-full tabs-flush" persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
+  <div id="{{ tabid }}-jsesm" role="tabpanel">
+
+```js
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+};
+
+export const config = {
+	pathPrefix: "/eleventy-base-blog/",
+}
+```
+
+  </div>
+  <div id="{{ tabid }}-jscjs" role="tabpanel">
+
+```js
+module.exports = async function (eleventyConfig) {
+	const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
+
+	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+};
+
+module.exports.config = {
+	pathPrefix: "/eleventy-base-blog/",
+}
+```
+
+  </div>
+</seven-minute-tabs>
+</is-land>
