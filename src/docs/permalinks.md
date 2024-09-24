@@ -216,19 +216,21 @@ permalink: "index.json"
 
 ## Advanced Usage
 
-### Dynamic permalinks for a directory of content templates
+### Change permalinks globally for a project
+
+{% addedin "2.0.0-canary.9" %}Want to change `resource.md` to write to `/resource.html` instead of `/resource/index.html`? This uses [global data via the configuration API](/docs/data-global-custom.md) but you could set this using a [Global Data file](/docs/data-global.md) too.
+
+{% include "snippets/permalinks/global.njk" %}
+
+{% callout "warn", "md" %}When using this approach for URLs _without_ trailing slashes (file `/resource.html` ▶︎ url `/resource`), please do note that using trailing slashes with `index.html` files (file `/resource/index.html` ▶︎ url `/resource/`) is a bit friendlier on various JAMstack hosting providers. You may encounter unexpected 404 errors—make [sure you study up on how this works and test appropriately!](https://www.zachleat.com/web/trailing-slash/#results-table)!{% endcallout %}
+
+### Change permalinks for one directory
 
 Let's say you have a directory of content templates like `recipes/cookies.md` and `recipes/soup.md` and 50 more. Each of these content templates has a title in their frontmatter. While you could manually set a permalink in the frontmatter of each recipe you can also dynamically generate the permalink inside a [Directory Data File](/docs/data-template-dir/) like `recipes.11tydata.js`.
 
 Because of the order of the [data cascade](/docs/data-cascade/) the title of a content template is not immediately available in the directory data file. However, `permalink` is a special case of implied [Computed Data](docs/data-computed/) and will have this data available. Inside of your directory data file `recipes.11tydata.js` you could write this:
 
-```javascript
-module.exports = {
-	permalink: function ({ title }) {
-		return `/recipes/${this.slugify(title)}`;
-	},
-};
-```
+{% include "snippets/permalinks/advanced.njk" %}
 
 The title will be [slugified](/docs/filters/slugify/) to be URL-friendly.
 
@@ -249,18 +251,7 @@ Say we want two or more files on the file system (e.g. `about.en.html` and `abou
 
 This example matches any `.xx.html` URL:
 
-```js
-module.exports = function (eleventyConfig) {
-	eleventyConfig.addUrlTransform(({ url }) => {
-		// `url` is guaranteed to be a string here even if you’re using `permalink: false`
-		if (url.match(/\.[a-z]{2}\.html$/i)) {
-			return url.slice(0, -1 * ".en.html".length) + "/";
-		}
-
-		// Returning undefined skips the url transform.
-	});
-};
-```
+{% include "snippets/permalinks/i18n.njk" %}
 
 This approach unlocks functionality for the default build mode of Eleventy but you could also achieve some of the same functionality using the [Edge](/docs/plugins/edge/) or [Serverless plugins](/docs/plugins/serverless/).
 
@@ -283,14 +274,8 @@ dynamicPermalink: false
 
 Eleventy includes a global configuration option to disable dynamic templating altogether. This will save a few template renders and is probably marginally faster, too.
 
-{% codetitle ".eleventy.js" %}
 
-```js
-module.exports = function (eleventyConfig) {
-	// Enabled by default
-	eleventyConfig.setDynamicPermalinks(false);
-};
-```
+{% include "snippets/permalinks/dynperm.njk" %}
 
 ### Ignore the output directory {% addedin "0.1.4" %}
 

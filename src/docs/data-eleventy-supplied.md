@@ -99,6 +99,10 @@ The `fileSlug` variable is mapped from `inputPath`, and is useful for creating y
 
 The `filePathStem` variable is mapped from `inputPath`, and is useful if you’ve inherited a project that doesn’t use clean [permalinks](/docs/permalinks/).
 
+<div id="changing-your-projects-default-permalinks"></div>
+
+You can use this feature to [globally change your project’s default permalinks](/docs/permalinks.md#change-permalinks-globally-for-a-project).
+
 {% callout "info" %}<strong>Careful with this one!</strong> Remember that <a href="/docs/permalinks/#cool-uris-dont-change">Cool URIs don’t change</a>.{% endcallout %}
 
 If you absolutely need a file extension on your output, you might use it like this:
@@ -121,25 +125,6 @@ This example output uses the above permalink value.
 | ------------------------ | -------------------------- | ------------------- |
 | `"2018-01-01-myFile.md"` | `"myFile"`                 | `myFile.html`       |
 | `"myDir/myFile.md"`      | `"myDir/myFile"`           | `myDir/myFile.html` |
-
-#### Changing your project’s default permalinks
-
-{% addedin "2.0.0-canary.9" %} [Deep-link to `3c49f22`](https://github.com/11ty/eleventy/commit/3c49f22b31b10e5dae0daf661a54750875ae5d0f).
-
-Want to change `resource.md` to write to `/resource.html` instead of `/resource/index.html`? Use this configuration API code sample.
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
-	eleventyConfig.addGlobalData("permalink", () => {
-		return (data) =>
-			`${data.page.filePathStem}.${data.page.outputFileExtension}`;
-	});
-};
-```
-
-{% callout "warn", "md" %}When using this approach for URLs _without_ trailing slashes (file `/resource.html` ▶︎ url `/resource`), please do note that using trailing slashes with `index.html` files (file `/resource/index.html` ▶︎ url `/resource/`) is a bit friendlier on various JAMstack hosting providers. You may encounter unexpected 404 errors—make [sure you study up on how this works and test appropriately!](https://www.zachleat.com/web/trailing-slash/#results-table)!{% endcallout %}
 
 ## `eleventy` Variable {% addedin "1.0.0" %}
 
