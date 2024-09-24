@@ -1,0 +1,33 @@
+{%- set tabid = "copyinput" %}
+<div class="codetitle codetitle-right-md">eleventy.config.js</div>
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs class="tabs-flush" persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
+  <div id="{{ tabid }}-jsesm" role="tabpanel">
+
+```js
+export default function (eleventyConfig) {
+	// Input directory: src
+	// Output directory: _site
+
+	// The following copies to `_site/img`
+	eleventyConfig.addPassthroughCopy("src/img");
+};
+```
+
+  </div>
+  <div id="{{ tabid }}-jscjs" role="tabpanel">
+
+```js
+module.exports = function (eleventyConfig) {
+	// Input directory: src
+	// Output directory: _site
+
+	// The following copies to `_site/img`
+	eleventyConfig.addPassthroughCopy("src/img");
+};
+```
+
+  </div>
+</seven-minute-tabs>
+</is-land>
