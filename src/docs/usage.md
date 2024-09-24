@@ -33,7 +33,7 @@ npx @11ty/eleventy --input=. --output=_site
 	<div id="usage-yarn" role="tabpanel">{% highlight "bash" %}{{ usageCode | packageManagerCodeTransform("yarn") }}{% endhighlight %}</div>
 </seven-minute-tabs>
 
-Read more about [`--input`](/docs/config/#input-directory) and [`--output`](/docs/config/#output-directory). Note that setting the input and output directories via a [config](/docs/config/) file is more reliable, especially when using tools like [`netlify dev`](https://docs.netlify.com/cli/get-started/#run-a-local-development-environment).
+Read more about [`--input`](/docs/config/#input-directory) and [`--output`](/docs/config/#output-directory). Note that setting the input and output directories via [config](/docs/config/) file is preferred.
 
 A hypothetical `template.md` in the current directory would be rendered to `_site/template/index.html`. Read more at [Permalinks](/docs/permalinks/).
 
@@ -131,6 +131,8 @@ npx @11ty/eleventy --config=myeleventyconfig.js
 	<div id="usage-cfg-pnpm" role="tabpanel">{% highlight "bash" %}{{ usageCfgCode | packageManagerCodeTransform("pnpm") }}{% endhighlight %}</div>
 	<div id="usage-cfg-yarn" role="tabpanel">{% highlight "bash" %}{{ usageCfgCode | packageManagerCodeTransform("yarn") }}{% endhighlight %}</div>
 </seven-minute-tabs>
+
+Read more about [Configuration files](/docs/config.md).
 
 ### `--to` can output JSON {% addedin "1.0.0" %}
 

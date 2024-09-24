@@ -1,0 +1,27 @@
+{%- set tabid = "localplugin" %}
+<div class="codetitle codetitle-right-md">config/local-plugin.js</div>
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs class="tabs-full tabs-flush" persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
+  <div id="{{ tabid }}-jsesm" role="tabpanel">
+
+```js
+export default function(eleventyConfig) {
+	// Move any code from `eleventy.config.js` here.
+	// Use eleventyConfig as you would in your top-level config file
+}
+```
+
+  </div>
+  <div id="{{ tabid }}-jscjs" role="tabpanel">
+
+```js
+module.exports = function(eleventyConfig) {
+	// Move any code from `eleventy.config.js` here.
+	// Use eleventyConfig as you would in your top-level config file
+};
+```
+
+  </div>
+</seven-minute-tabs>
+</is-land>

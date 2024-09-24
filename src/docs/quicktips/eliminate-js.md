@@ -15,28 +15,12 @@ Read more at the [GitHub API documentation](https://developer.github.com/v3/repo
 
 This is a bit different from our client-side implementation because this data is only updated as often as your build runs. This is implemented using a global [JavaScript data file](/docs/data-js/) at `_data/github.js`.
 
-- Install new dependencies: `npm install node-fetch@cjs`
+- Install new dependencies: `npm install node-fetch`
 - Read more about [`node-fetch`](https://www.npmjs.com/package/node-fetch)
+- It’s better to use the [Eleventy Fetch utility](/docs/plugins/fetch.md) instead, which will cache your fetch results to avoid hitting the GitHub API on every build.
+	- Related [Quick Tip: Cache Data Requests](/docs/quicktips/cache-api-requests.md)
 
-{% codetitle "_data/github.js" %}
-
-```js
-const fetch = require("node-fetch");
-
-module.exports = async function () {
-	console.log("Fetching new github stargazers count…");
-
-	// GitHub API: https://developer.github.com/v3/repos/#get
-	return fetch("https://api.github.com/repos/11ty/eleventy")
-		.then((res) => res.json()) // node-fetch option to transform to json
-		.then((json) => {
-			// prune the data to return only what we want
-			return {
-				stargazers: json.stargazers_count,
-			};
-		});
-};
-```
+{% include "quicktips/fetch-github-stars.njk" %}
 
 Now in your templates you can output the stargazers count with:
 

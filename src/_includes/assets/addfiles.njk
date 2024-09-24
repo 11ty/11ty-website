@@ -1,0 +1,53 @@
+{%- set tabid = "addfiles" %}
+<div class="codetitle codetitle-right-md">eleventy.config.js</div>
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs class="tabs-full tabs-flush" persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
+  <div id="{{ tabid }}-jsesm" role="tabpanel">
+    <div data-filter-code="css">
+{% highlight "js" %}
+export default function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("bundle.css");
+};
+{% endhighlight %}
+    </div>
+    <div data-filter-code="font">
+{% highlight "js" %}
+export default function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("font.woff2");
+};
+{% endhighlight %}
+    </div>
+    <div data-filter-code="js">
+{% highlight "js" %}
+export default function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("bundle.js");
+};
+{% endhighlight %}
+    </div>
+  </div>
+  <div id="{{ tabid }}-jscjs" role="tabpanel">
+    <div data-filter-code="css">
+{% highlight "js" %}
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("bundle.css");
+};
+{% endhighlight %}
+    </div>
+    <div data-filter-code="font">
+{% highlight "js" %}
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("font.woff");
+};
+{% endhighlight %}
+    </div>
+    <div data-filter-code="js">
+{% highlight "js" %}
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("bundle.js");
+};
+{% endhighlight %}
+    </div>
+  </div>
+</seven-minute-tabs>
+</is-land>

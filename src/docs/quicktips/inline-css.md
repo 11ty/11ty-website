@@ -16,14 +16,7 @@ This tip works well on small sites that don’t have a lot of CSS. Inlining your
 
 Add the following `cssmin` filter to your Eleventy Config file:
 
-```js
-const CleanCSS = require("clean-css");
-module.exports = function (eleventyConfig) {
-	eleventyConfig.addFilter("cssmin", function (code) {
-		return new CleanCSS({}).minify(code).styles;
-	});
-};
-```
+{% include "quicktips/minify-css.njk" %}
 
 ## Create your CSS File
 
@@ -52,27 +45,17 @@ Capture the CSS into a variable and run it through the filter (this sample is us
 
 {% endraw %}
 
-## Using JavaScript templates
+## Warning about Content Security Policy
+
+{% callout "warn" %}
+If you are using a Content Security Policy on your website, make sure the <code>style-src</code> directive allows <code>'unsafe-inline'</code>. Otherwise, your inline CSS will not load.
+{% endcallout %}
+
+## Or: use an `11ty.js` Template
 
 _Contributed by [Zach Green](https://github.com/zgreen)_
 
 You can also inline minified CSS in a [JavaScript template](/docs/languages/javascript/). This technique does not use filters, and instead uses `async` functions:
 
-```js
-const fs = require("fs/promises");
-const path = require("path");
-const CleanCSS = require("clean-css");
+{% include "quicktips/minify-css-11tyjs.njk" %}
 
-module.exports = async () => `
-<style>
-  ${await fs
-		.readFile(path.resolve(__dirname, "./sample.css"))
-		.then((data) => new CleanCSS().minify(data).styles)}
-</style>`;
-```
-
-### Warning about Content Security Policy
-
-{% callout "warn" %}
-If you are using a Content Security Policy on your website, make sure the <code>style-src</code> directive allows <code>'unsafe-inline'</code>. Otherwise, your inline CSS will not load.
-{% endcallout %}

@@ -12,15 +12,4 @@ Assume you have data files named `links.json` and `copyrights.json`, and you onl
 
 The corresponding `eleventyComputed.js` file contents can look like the following:
 
-{% codetitle "_data/eleventyComputed.js" %}
-
-```js
-module.exports = {
-	myCopyrights: (data) => {
-		return data.copyrights.feed.entry;
-	},
-	myLinks: (data) => {
-		return data.links.feed.entry;
-	},
-};
-```
+{% include "quicktips/eleventycomputed.njk" %}

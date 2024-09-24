@@ -50,21 +50,9 @@ filter-container:defined .filter-code--hide {
 		<li data-filter-code="js,css">Create a <code data-filter-code="css">bundle.css</code><code data-filter-code="js">bundle.js</code> file in your root project folder and add some <span data-filter-code="css">CSS</span><span data-filter-code="js">JavaScript</span> code to this file.</li>
 		<li>
 			Use <a href="/docs/copy/">passthrough file copy</a> to copy the file to the build output folder (you could use a <code>glob</code> here, too):
-			<syntax-highlight language="js" hed=".eleventy.js" data-filter-code="css">
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("bundle.css");
-};
-			</syntax-highlight>
-			<syntax-highlight language="js" hed=".eleventy.js" data-filter-code="font">
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("font.woff2");
-};
-			</syntax-highlight>
-			<syntax-highlight language="js" hed=".eleventy.js" data-filter-code="js">
-module.exports = function(eleventyConfig) {
-	eleventyConfig.addPassthroughCopy("bundle.js");
-};
-			</syntax-highlight>
+			<template webc:type="11ty" 11ty:type="njk,md">
+			{% include "assets/addfiles.njk" %}
+			</template>
 		</li>
 		<li data-filter-code="font">Reference the Web Font file in your CSS using: <syntax-highlight language="css">@font-face {
 	font-family: My Font Name;
@@ -74,6 +62,12 @@ module.exports = function(eleventyConfig) {
 		<li data-filter-code="css">Reference the CSS file in your HTML using: <syntax-highlight language="html"><link rel="stylesheet" href="/bundle.css"></syntax-highlight></li>
 		<li data-filter-code="js">Reference the JavaScript file in your HTML using <syntax-highlight language="html"><script src="/bundle.js"></script></syntax-highlight></li>
 	</ol>
+
+	<ul class="inlinelist">
+		<li class="inlinelist-item inert">Quick tips:</li>
+		<li class="inlinelist-item"><a href="/docs/quicktips/inline-css/">#001—Inline Minified CSS</a></li>
+		<li class="inlinelist-item"><a href="/docs/quicktips/inline-js/">#002—Inline Minified JavaScript</a></li>
+	</ul>
 
 	<details class="details-expand-bg" data-filter-code="js,css">
 		<summary>Expand for an example using Concatention, pulling in from <span data-filter-code="css">CSS</span><span data-filter-code="js">JavaScript</span> from multiple sources.</summary>
@@ -96,15 +90,6 @@ module.exports = function(eleventyConfig) {
 {% include "./node_modules/my-ficticious-package-name/package.js" %}
 </script>
 		</syntax-highlight>
-	</details>
-
-	<details>
-		<summary>Expand to see more Quick Tips, showing how to minify these bundles.</summary>
-
-		<ul class="inlinelist">
-			<li class="inlinelist-item"><a href="/docs/quicktips/inline-css/">#001—Inline Minified CSS</a></li>
-			<li class="inlinelist-item"><a href="/docs/quicktips/inline-js/">#002—Inline Minified JavaScript</a></li>
-		</ul>
 	</details>
 </filter-container>
 

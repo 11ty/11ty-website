@@ -1,0 +1,39 @@
+{%- set tabid = "ndjsonout" %}
+<div class="codetitle codetitle-right-md">my-node-script.js</div>
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs class="tabs-full tabs-flush" persist>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
+  <div id="{{ tabid }}-jsesm" role="tabpanel">
+
+```js
+import Eleventy from "@11ty/eleventy";
+
+let elev = new Eleventy();
+let stream = await elev.toNDJSON();
+stream.on("data", (entry) => {
+	// Stream one output result at a time
+	let json = JSON.parse(entry.toString());
+	console.log(json);
+});
+```
+
+  </div>
+  <div id="{{ tabid }}-jscjs" role="tabpanel">
+
+```js
+(async function () {
+	const Eleventy = await import("@11ty/eleventy");
+
+	let elev = new Eleventy();
+	let stream = await elev.toNDJSON();
+	stream.on("data", (entry) => {
+		// Stream one output result at a time
+		let json = JSON.parse(entry.toString());
+		console.log(json);
+	});
+})();
+```
+
+  </div>
+</seven-minute-tabs>
+</is-land>

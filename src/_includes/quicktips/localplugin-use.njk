@@ -1,4 +1,4 @@
-{%- set tabid = "config-mdengine" %}
+{%- set tabid = "localpluginuse" %}
 <div class="codetitle codetitle-right-md">eleventy.config.js</div>
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs class="tabs-full tabs-flush" persist sync>
@@ -6,22 +6,24 @@
   <div id="{{ tabid }}-jsesm" role="tabpanel">
 
 ```js
-export const config = {
-  markdownTemplateEngine: "njk",
-};
+import localPlugin from "./config/local-plugin.js";
+
+export default function(eleventyConfig) {
+	eleventyConfig.addPlugin(localPlugin);
+}
 ```
 
   </div>
   <div id="{{ tabid }}-jscjs" role="tabpanel">
 
 ```js
-module.exports.config = {
-  markdownTemplateEngine: "njk",
+const localPlugin = require("./config/local-plugin.js");
+
+module.exports = function(eleventyConfig) {
+	eleventyConfig.addPlugin(localPlugin);
 };
 ```
 
   </div>
 </seven-minute-tabs>
 </is-land>
-
-There are many [different shapes of configuration file](/docs/config-shapes.md).

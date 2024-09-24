@@ -1,4 +1,4 @@
-{%- set tabid = "config-mdengine" %}
+{%- set tabid = "minifycss" %}
 <div class="codetitle codetitle-right-md">eleventy.config.js</div>
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs class="tabs-full tabs-flush" persist sync>
@@ -6,8 +6,12 @@
   <div id="{{ tabid }}-jsesm" role="tabpanel">
 
 ```js
-export const config = {
-  markdownTemplateEngine: "njk",
+import CleanCSS from "clean-css";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addFilter("cssmin", function (code) {
+		return new CleanCSS({}).minify(code).styles;
+	});
 };
 ```
 
@@ -15,13 +19,15 @@ export const config = {
   <div id="{{ tabid }}-jscjs" role="tabpanel">
 
 ```js
-module.exports.config = {
-  markdownTemplateEngine: "njk",
+const CleanCSS = require("clean-css");
+
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addFilter("cssmin", function (code) {
+		return new CleanCSS({}).minify(code).styles;
+	});
 };
 ```
 
   </div>
 </seven-minute-tabs>
 </is-land>
-
-There are many [different shapes of configuration file](/docs/config-shapes.md).
