@@ -20,11 +20,9 @@ _Inspired by [GitHub issue #84](https://github.com/11ty/eleventy/issues/84)._
 ## Usage
 
 <is-land import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "inputpathtourl"} %}
   <div id="inputpathtourl-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -37,8 +35,6 @@ _Inspired by [GitHub issue #84](https://github.com/11ty/eleventy/issues/84)._
   </div>
   <div id="inputpathtourl-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -50,7 +46,18 @@ _Inspired by [GitHub issue #84](https://github.com/11ty/eleventy/issues/84)._
   </div>
   <div id="inputpathtourl-js" role="tabpanel">
 
-{% codetitle "JavaScript (CommonJS)", "Syntax" %}
+{% raw %}
+
+```js
+export default function (data) {
+	return `<a href="${this.inputPathToUrl("index.md")}">Home</a>`;
+}
+```
+
+{% endraw %}
+
+  </div>
+  <div id="inputpathtourl-cjs" role="tabpanel">
 
 {% raw %}
 
@@ -58,18 +65,6 @@ _Inspired by [GitHub issue #84](https://github.com/11ty/eleventy/issues/84)._
 module.exports = function (data) {
 	return `<a href="${this.inputPathToUrl("index.md")}">Home</a>`;
 };
-```
-
-{% endraw %}
-
-{% codetitle "JavaScript (ESM)", "Syntax" %}
-
-{% raw %}
-
-```js
-export default function (data) {
-	return `<a href="${this.inputPathToUrl("index.md")}">Home</a>`;
-}
 ```
 
 {% endraw %}

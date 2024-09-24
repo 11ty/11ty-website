@@ -12,11 +12,9 @@ eleventyNavigation:
 {% addedin "0.11.0" %} An easy way to <code>console.log</code> anything from inside of a template file.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "log"} %}
   <div id="log-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
 
 {% raw %}
 
@@ -29,8 +27,6 @@ eleventyNavigation:
   </div>
   <div id="log-njk" role="tabpanel">
 
-{% codetitle "Nunjucks", "Syntax" %}
-
 {% raw %}
 
 ```jinja2
@@ -42,7 +38,19 @@ eleventyNavigation:
   </div>
   <div id="log-js" role="tabpanel">
 
-{% codetitle "JavaScript", "Syntax" %}
+{% raw %}
+
+```js
+module.exports = function (data) {
+	// Caveat: you have access to `console.log` here, so probably use that.
+	return this.log("My Title");
+};
+```
+
+{% endraw %}
+
+  </div>
+	<div id="log-cjs" role="tabpanel">
 
 {% raw %}
 
@@ -67,7 +75,7 @@ You can drop log in between any filter chain you already have and it will log th
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs persist sync>
-	{% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "log-chain-demo", subtractions: "js,hbs"} %}
+	{% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "log-chain-demo", subtractions: "js,cjs,hbs"} %}
   <div id="log-chain-demo-liquid" role="tabpanel">
 
 {% codetitle "Liquid", "Syntax" %}
