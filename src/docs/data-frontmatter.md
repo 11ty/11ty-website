@@ -39,30 +39,15 @@ Eleventy allows many options to control how your template works. The most popula
 
 {% include "datasources.md" %}
 
-## Alternative Front Matter Formats
+## Front Matter Formats
 
-Eleventy uses the [`gray-matter` package](https://github.com/jonschlinkert/gray-matter) for front matter processing. `gray-matter` (and thus, Eleventy) includes support out of the box for `yaml`, `json`, and `js` for JavaScript object literals in front matter (some [aliases](https://github.com/jonschlinkert/gray-matter/blob/ce67a86dba419381db0dd01cc84e2d30a1d1e6a5/lib/engine.js) are also included).
+Eleventy uses the [`gray-matter` package](https://github.com/jonschlinkert/gray-matter) for front matter processing. `gray-matter` (and thus, Eleventy) includes support out of the box for `yaml`, `json`, and `js` front matter (with some [aliases](https://github.com/jonschlinkert/gray-matter/blob/ce67a86dba419381db0dd01cc84e2d30a1d1e6a5/lib/engine.js) also included).
 
 ### Change the default format project-wide {% addedin "0.9.0" %}
 
 By default, `yaml` is used when a front matter syntax is not explicitly specified. You can change this project-wide with:
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
-	eleventyConfig.setFrontMatterParsingOptions({
-		language: "json", // default is "yaml"
-	});
-};
-```
-
-### Add your own format {% addedin "0.9.0" %}
-
-You can [customize Front Matter Parsing](/docs/data-frontmatter-customize/) in Eleventy to add your own custom format, and we provide examples for:
-
-- [JavaScript in front matter](/docs/data-frontmatter-customize/#example-use-javascript-in-your-front-matter).
-- [TOML in front matter](/docs/data-frontmatter-customize/#example-using-toml-for-front-matter-parsing).
+{% include "snippets/frontmatter/default.njk" %}
 
 ### JSON Front Matter
 
@@ -79,16 +64,64 @@ You can [customize Front Matter Parsing](/docs/data-frontmatter-customize/) in E
 </html>
 ```
 
-### JavaScript Object Front Matter <span id="javascript-front-matter"></span>
+### JavaScript Front Matter <span id="javascript-front-matter"></span>
 
-This method makes use of a JavaScript Object in front matter. You can also easily extend Eleventy to add [arbitrary JavaScript in your front matter too](/docs/data-frontmatter-customize/#example-use-javascript-in-your-front-matter)!
-
-_Warning: while Nunjucks and Liquid syntax are similar, the following example will **not** work in Liquid. Liquid does not allow function execution in output (e.g. `{% raw %}{{ currentDate() }}{% endraw %}`)._
+{% addedin "3.0.0-alpha.18" %}You can use any arbitrary JavaScript here and we’ll export all of the top level variables and functions to your template. This uses the [`node-retrieve-globals` library](https://github.com/zachleat/node-retrieve-globals).
 
 {% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
+```html
+---js
+const title = "My page title";
 
+function currentDate() {
+	return (new Date()).toLocaleString();
+}
+---
+
+<h1>{{ title }}</h1>
+<p>Published on {{ currentDate() }}</p>
+```
+{% endraw %}
+
+_Warning: while Nunjucks and Liquid syntax are similar, the above example will **not** work in Liquid. Liquid does not allow function execution in output (e.g. `{% raw %}{{ currentDate() }}{% endraw %}`)._
+
+
+<details>
+<summary><strong>More Advanced Examples of JavaScript Front Matter</strong></summary>
+
+{% raw %}
+
+```js
+---js
+// async-friendly
+const myAsyncString = await Promise.resolve("HELLO FROM THE OTHER SIDE");
+
+// export via destructuring assignment
+const { myKey } = { myKey: "myValue" };
+const [ first, second ] = [ "first", "second" ];
+
+// export via dynamic import
+const { noop } = await import("@zachleat/noop");
+
+// access Node.js globals like console.log
+console.log({ noop });
+---
+<!-- The template content goes here -->
+```
+
+{% endraw %}
+
+</details>
+
+#### JavaScript Object Front Matter
+
+In previous versions of Eleventy, `js` front matter was required to use a JavaScript object notation. This method is still supported moving forward.
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
 ```html
 ---js
 {
@@ -103,12 +136,17 @@ _Warning: while Nunjucks and Liquid syntax are similar, the following example wi
 <h1>{{ title }}</h1>
 <p>Published on {{ currentDate() }}</p>
 ```
-
 {% endraw %}
 
-## Advanced: Customize Front Matter Parsing {% addedin "0.9.0" %}
+_Warning: while Nunjucks and Liquid syntax are similar, the above example will **not** work in Liquid. Liquid does not allow function execution in output (e.g. `{% raw %}{{ currentDate() }}{% endraw %}`)._
 
-Configure [front matter for customized excerpts, TOML parsing, and more](/docs/data-frontmatter-customize/).
+### Add your own format {% addedin "0.9.0" %}
+
+You can [customize Front Matter Parsing](/docs/data-frontmatter-customize/) in Eleventy to add your own custom format, and we provide examples for:
+
+- [JavaScript in front matter](/docs/data-frontmatter-customize/#example-use-javascript-in-your-front-matter).
+- [TOML in front matter](/docs/data-frontmatter-customize/#example-using-toml-for-front-matter-parsing).
+- You can also configure [front matter for customized excerpts](/docs/data-frontmatter-customize/).
 
 ## From the Community
 

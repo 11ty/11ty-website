@@ -13,17 +13,7 @@ Use a full deep merge when combining the Data Cascade. This will use something s
 
 Read more at [Issue #147](https://github.com/11ty/eleventy/issues/147). As of Eleventy 1.0 this defaults to enabled (but API still exists for opt-out).
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
-	// defaults to true in 1.0, use false to opt-out
-	eleventyConfig.setDataDeepMerge(false);
-
-	// requires opt-in for 0.x
-	eleventyConfig.setDataDeepMerge(true);
-};
-```
+{% include "snippets/cascade/deepmerge.njk" %}
 
 Note that all data stored in the `pagination` variable is exempted from this behavior (we don’t want `pagination.items` to be merged together).
 
