@@ -27,7 +27,7 @@ Next, we need to create a `mylayout.njk` file. It may contain any arbitrary text
 {% codetitle "_includes/mylayout.njk" %}
 
 {%- highlight "html" %}
-{% include "examples/layouts/mylayout.njk" %}
+{% include "snippets/layouts/mylayout.njk" %}
 {%- endhighlight %}
 
 Note that the layout template will populate the `content` data with the child template’s content. Also note that we don’t want to double-escape the output, so we’re using the provided Nunjucks `safe` filter here (see more language double-escaping syntax below).

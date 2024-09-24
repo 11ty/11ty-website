@@ -38,7 +38,7 @@ npm install @11ty/eleventy-plugin-rss
 
 {% addedin "v3.0.0-alpha.13" %}{% addedin "RSS 2.0.0" %} This method creates a feed template directly from your plugin configuration, without requiring additional files in your project.
 
-{% include "examples/rss/virtual-template.njk" %}
+{% include "snippets/rss/virtual-template.njk" %}
 
 This configuration is the only step you need. If you need additional control over the template output, you can use the [Manual Template](#manual-template) method.
 
@@ -62,7 +62,7 @@ This configuration is the only step you need. If you need additional control ove
 
 Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
 
-{% include "examples/rss/install.njk" %}
+{% include "snippets/rss/install.njk" %}
 
 <details>
 <summary>Expand to see full options list</summary>

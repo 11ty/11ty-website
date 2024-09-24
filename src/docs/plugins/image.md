@@ -40,7 +40,7 @@ npm install @11ty/eleventy-img
 
 This example is the lowest-level use of Eleventy Image and returns a promise. This usage works independent of Eleventy.
 
-{% include "examples/image/intro.njk" %}
+{% include "snippets/image/intro.njk" %}
 
 Three things happen here:
 

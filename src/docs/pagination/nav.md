@@ -108,19 +108,19 @@ Alright, you definitely read all of those right? 😇 Here’s some accessible c
   <div id="paged-nav-starter-liquid" role="tabpanel">
     {%- codetitle "starter.liquid" %}
     {%- highlight "html" %}
-    {%- include "examples/pagination/nav/starter.liquid" %}
+    {%- include "snippets/pagination/nav/starter.liquid" %}
     {%- endhighlight %}
   </div>
   <div id="paged-nav-starter-njk" role="tabpanel">
     {%- codetitle "starter.njk" %}
     {%- highlight "html" %}
-    {%- include "examples/pagination/nav/starter.njk" %}
+    {%- include "snippets/pagination/nav/starter.njk" %}
     {%- endhighlight %}
   </div>
   <div id="paged-nav-starter-js" role="tabpanel">
     {%- codetitle "starter.11ty.js" %}
     {%- highlight "js" %}
-    {%- include "examples/pagination/nav/starter.js" %}
+    {%- include "snippets/pagination/nav/starter.js" %}
     {%- endhighlight %}
   </div>
 </seven-minute-tabs>
@@ -262,13 +262,13 @@ Note that if the current page (`page.url`) is the first or last in the set, we w
   <div id="paged-nav-nextprev-njk" role="tabpanel">
     {%- codetitle "nextprev.njk" %}
     {%- highlight "jinja2 3,7" %}
-    {%- include "examples/pagination/nav/nextprev.njk" %}
+    {%- include "snippets/pagination/nav/nextprev.njk" %}
     {%- endhighlight %}
   </div>
   <div id="paged-nav-nextprev-js" role="tabpanel">
     {%- codetitle "nextprev.11ty.js" %}
     {%- highlight "js" %}
-    {%- include "examples/pagination/nav/nextprev.js" %}
+    {%- include "snippets/pagination/nav/nextprev.js" %}
     {%- endhighlight %}
   </div>
 </seven-minute-tabs>
@@ -289,13 +289,13 @@ For clarity here, we’re omitting the previous and next links from the previous
   <div id="paged-nav-firstlast-njk" role="tabpanel">
     {%- codetitle "firstlast.njk" %}
     {%- highlight "jinja2 3,7" %}
-    {%- include "examples/pagination/nav/firstlast.njk" %}
+    {%- include "snippets/pagination/nav/firstlast.njk" %}
     {%- endhighlight %}
   </div>
   <div id="paged-nav-firstlast-js" role="tabpanel">
     {%- codetitle "firstlast.11ty.js" %}
     {%- highlight "js" %}
-    {%- include "examples/pagination/nav/firstlast.js" %}
+    {%- include "snippets/pagination/nav/firstlast.js" %}
     {%- endhighlight %}
   </div>
 </seven-minute-tabs>
@@ -314,13 +314,13 @@ Here’s the final pagination navigation template code, pieced together:
   <div id="paged-nav-combined-njk" role="tabpanel">
     {%- codetitle "combined.njk" %}
     {%- highlight "jinja2" %}
-    {%- include "examples/pagination/nav/combined.njk" %}
+    {%- include "snippets/pagination/nav/combined.njk" %}
     {%- endhighlight %}
   </div>
   <div id="paged-nav-combined-js" role="tabpanel">
     {%- codetitle "combined.11ty.js" %}
     {%- highlight "js" %}
-    {%- include "examples/pagination/nav/combined.js" %}
+    {%- include "snippets/pagination/nav/combined.js" %}
     {%- endhighlight %}
   </div>
 </seven-minute-tabs>

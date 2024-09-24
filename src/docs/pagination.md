@@ -25,7 +25,7 @@ Consider the following template, which will result in two pages being created, e
   <div id="paged-array-liquid" role="tabpanel">
 
     {%- highlight "liquid" %}
-    {%- include "examples/pagination/paged-array.njk" %}
+    {%- include "snippets/pagination/paged-array.njk" %}
     {%- endhighlight %}
 
 If the above file were named `paged.liquid`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
@@ -34,7 +34,7 @@ If the above file were named `paged.liquid`, it would create two pages in your o
   <div id="paged-array-njk" role="tabpanel">
 
     {%- highlight "jinja2" %}
-    {%- include "examples/pagination/paged-array.njk" %}
+    {%- include "snippets/pagination/paged-array.njk" %}
     {%- endhighlight %}
 
 If the above file were named `paged.njk`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
@@ -43,7 +43,7 @@ If the above file were named `paged.njk`, it would create two pages in your outp
   <div id="paged-array-js" role="tabpanel">
 
     {%- highlight "js" %}
-    {%- include "examples/pagination/paged-array.js" %}
+    {%- include "snippets/pagination/paged-array.js" %}
     {%- endhighlight %}
 
 If the above file were named `paged.11ty.js`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
