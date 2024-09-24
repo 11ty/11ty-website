@@ -14,109 +14,15 @@ Eleventy Layouts are special templates that can be used to wrap other content.
 
 To denote that a piece of content should be wrapped in a template, use the `layout` key in your front matter, like so:
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layouts", additions: "md,hbs"} %}
-  <div id="layouts-md" role="tabpanel">
-
-{% codetitle "index.md" %}
-{% codetitle "Markdown", "Syntax" %}
-{% raw %}
-
-```markdown
----
-layout: mylayout.njk
-title: My Rad Markdown Blog Post
----
-
-# {{ title }}
-```
-
-{% endraw %}
-
-  </div>
-  <div id="layouts-liquid" role="tabpanel">
-
-{% codetitle "index.liquid" %}
-{% codetitle "Liquid", "Syntax" %}
-{% raw %}
-
-```liquid
----
-layout: mylayout.njk
-title: My Rad Liquid Blog Post
----
-<h1>{{ title }}</h1>
-```
-
-{% endraw %}
-
-  </div>
-  <div id="layouts-njk" role="tabpanel">
-
-{% codetitle "index.njk" %}
-{% codetitle "Nunjucks", "Syntax" %}
-{% raw %}
-
-```jinja2
----
-layout: mylayout.njk
-title: My Rad Nunjucks Blog Post
----
-<h1>{{ title }}</h1>
-```
-
-{% endraw %}
-
-  </div>
-  <div id="layouts-js" role="tabpanel">
-
-{% codetitle "index.11ty.js" %}
-{% codetitle "JavaScript", "Syntax" %}
-{% raw %}
-
-```js
-module.exports = {
-	data: {
-		layout: "mylayout.njk",
-		title: "My Rad JavaScript Blog Post",
-	},
-	render(data) {
-		return `<h1>${data.title}</h1>`;
-	},
-};
-```
-
-{% endraw %}
-
-  </div>
-  <div id="layouts-hbs" role="tabpanel">
-
-{% codetitle "index.hbs" %}
-{% codetitle "Handlebars", "Syntax" %}
-{% raw %}
-
-```handlebars
----
-layout: mylayout.njk
-title: My Rad Handlebars Blog Post
----
-<h1>{{title}}</h1>
-```
-
-{% endraw %}
-
-  </div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/layouts/intro.njk" %}
 
 This will look for a `mylayout.njk` Nunjucks file in your _includes_ folder at `_includes/mylayout.njk`.
 
 - You can use any template language in your layout file—it doesn’t need to match the template language of the content: an `ejs` template can use a `njk` layout.
-- Layouts can include subdirectories: `layout: "layouts/base.njk"` maps to `_includes/layouts/base.njk`.
+- Layouts paths can use subdirectories: `layout: "layouts/base.njk"` maps to `_includes/layouts/base.njk`.
 - You can have a [separate folder for Eleventy layouts](</docs/config/#directory-for-layouts-(optional)>) if you’d prefer to have them separate from your _includes_ folder.
 
-Next, we need to create a `mylayout.njk` file. It can contain any type of text, but here we’re using HTML:
+Next, we need to create a `mylayout.njk` file. It may contain any arbitrary text, but here we’re using HTML:
 
 {% codetitle "_includes/mylayout.njk" %}
 
@@ -131,96 +37,7 @@ Layouts can contain their own front matter data! It’ll be merged with the cont
 All of this will output the following HTML content to `_site/content-using-layout/index.html`:
 
 {% callout "demo" %}
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync class="tabs-flush">
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layoutoutput", additions: "md", label: "View the output from"} %}
-  <div id="layoutoutput-md" role="tabpanel">
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>My Rad Markdown Blog Post</title>
-	</head>
-	<body>
-		<h1>My Rad Markdown Blog Post</h1>
-	</body>
-</html>
-```
-
-  </div>
-  <div id="layoutoutput-liquid" role="tabpanel">
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>My Rad Liquid Blog Post</title>
-	</head>
-	<body>
-		<h1>My Rad Liquid Blog Post</h1>
-	</body>
-</html>
-```
-
-  </div>
-  <div id="layoutoutput-njk" role="tabpanel">
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>My Rad Nunjucks Blog Post</title>
-	</head>
-	<body>
-		<h1>My Rad Nunjucks Blog Post</h1>
-	</body>
-</html>
-```
-
-  </div>
-  <div id="layoutoutput-js" role="tabpanel">
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>My Rad JavaScript Blog Post</title>
-	</head>
-	<body>
-		<h1>My Rad JavaScript Blog Post</h1>
-	</body>
-</html>
-```
-
-  </div>
-  <div id="layoutoutput-hbs" role="tabpanel">
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>My Rad Handlebars Blog Post</title>
-	</head>
-	<body>
-		<h1>My Rad Handlebars Blog Post</h1>
-	</body>
-</html>
-```
-
-  </div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/layouts/output.njk" %}
 {% endcallout %}
 
 ## Front Matter Data in Layouts
@@ -239,13 +56,7 @@ Front matter data set in a content template takes priority over layout front mat
 
 Configuration API: use `eleventyConfig.addLayoutAlias(from, to)` to add layout aliases. Say you have a bunch of existing content using `layout: post`. If you don’t want to rewrite all of those values, map `post` to a new file like this:
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
-	eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
-};
-```
+{% include "snippets/layouts/aliasing.njk" %}
 
 ## Prevent double-escaping in layouts
 
@@ -274,10 +85,4 @@ Omitting the layout file extension (for example `layout: mylayout`) causes Eleve
 
 You can disable extensionless layouts in your project with the `setLayoutResolution` Configuration API method {% addedin "2.0.0-canary.21" %} (we may swap this to be the default in a future major version of Eleventy):
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
-	eleventyConfig.setLayoutResolution(false);
-};
-```
+{% include "snippets/layouts/resolution.njk" %}
