@@ -1,5 +1,5 @@
 {% raw %}
-export function render(data) {
+exports.render = function(data) {
   return `<nav aria-labelledby="my-pagination">
     <h2 id="my-pagination">This is my Pagination</h2>
     <ol>
