@@ -11,10 +11,7 @@ Transforms can modify a template’s output. For example, use a transform to for
 
 {% callout "info", "md" %}The provided transform function **must** return the original or transformed content.{% endcallout %}
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
+{% set configCodeContent %}
 	// Can be sync or async
 	eleventyConfig.addTransform("transform-name", async function (content) {
 		console.log(this.page.inputPath);
@@ -22,8 +19,8 @@ module.exports = function (eleventyConfig) {
 
 		return content; // no changes made.
 	});
-};
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 Access to [Eleventy’s `page` variable](/docs/data-eleventy-supplied/#page-variable) (via `this.page`) was added in Eleventy v2.0. For previous versions, [consult the older versions of the docs](https://v1-0-2.11ty.dev/docs/config/#transforms).
 
@@ -57,27 +54,6 @@ eleventyConfig.addTransform("second", () => {});
 
 ### Minify HTML Output
 
-{% codetitle ".eleventy.js" %}
-
-```js
-const htmlmin = require("html-minifier-terser");
-
-module.exports = function (eleventyConfig) {
-	eleventyConfig.addTransform("htmlmin", function (content) {
-		if ((this.page.outputPath || "").endsWith(".html")) {
-			let minified = htmlmin.minify(content, {
-				useShortDoctype: true,
-				removeComments: true,
-				collapseWhitespace: true,
-			});
-
-			return minified;
-		}
-
-		// If not an HTML output, return content as-is
-		return content;
-	});
-};
-```
+{% include "snippets/config/transforms.njk" %}
 
 Note that `html-minifier-terser` has a [significant number of options](https://github.com/terser/html-minifier-terser?tab=readme-ov-file#options-quick-reference), most of which are disabled by default.

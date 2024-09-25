@@ -22,81 +22,16 @@ Custom Tags are unrelated to Eleventy’s [Collections using Tags](/docs/collect
 
 But, after all that, you can still add a Custom Tag using the [Configuration API](/docs/config/#using-the-configuration-api).
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "customtag", subtractions: "js"} %}
-  <div id="customtag-liquid" role="tabpanel">
+## Liquid
 
 - [LiquidJS: Tags](https://liquidjs.com/tutorials/register-filters-tags.html)
 
-{% codetitle ".eleventy.js" %}
-
-{% raw %}
-
-```js
-module.exports = function (eleventyConfig) {
-	// Usage: {% uppercase myVar %} where myVar has a value of "alice"
-	// Usage: {% uppercase "alice" %}
-	eleventyConfig.addLiquidTag("uppercase", function (liquidEngine) {
-		return {
-			parse: function (tagToken, remainingTokens) {
-				this.str = tagToken.args; // myVar or "alice"
-			},
-			render: async function (scope, hash) {
-				// Resolve variables
-				var str = await this.liquid.evalValue(this.str, scope); // "alice"
-
-				// Do the uppercasing
-				return str.toUpperCase(); // "ALICE"
-			},
-		};
-	});
-};
-```
-
-{% endraw %}
+{% include "snippets/config/liquidtags.njk" %}
 
 See all of the [built-in tag implementations for LiquidJS](https://liquidjs.com/tags/overview.html).
 
-  </div>
-  <div id="customtag-njk" role="tabpanel">
+## Nunjucks
 
 - [Nunjucks: Custom Tags](https://mozilla.github.io/nunjucks/api.html#custom-tags)
 
-{% codetitle ".eleventy.js" %}
-
-{% raw %}
-
-```js
-module.exports = function (eleventyConfig) {
-	// Usage: {% uppercase myVar %} where myVar has a value of "alice"
-	// Usage: {% uppercase "alice" %}
-	eleventyConfig.addNunjucksTag("uppercase", function (nunjucksEngine) {
-		return new (function () {
-			this.tags = ["uppercase"];
-
-			this.parse = function (parser, nodes, lexer) {
-				var tok = parser.nextToken();
-
-				var args = parser.parseSignature(null, true);
-				parser.advanceAfterBlockEnd(tok.value);
-
-				return new nodes.CallExtensionAsync(this, "run", args);
-			};
-
-			this.run = function (context, myStringArg, callback) {
-				let ret = new nunjucksEngine.runtime.SafeString(
-					myStringArg.toUpperCase()
-				);
-				callback(null, ret);
-			};
-		})();
-	});
-};
-```
-
-{% endraw %}
-
-  </div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/config/nunjuckstags.njk" %}

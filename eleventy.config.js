@@ -406,6 +406,14 @@ export default async function (eleventyConfig) {
 		}
 	});
 
+	let ref = 0;
+	eleventyConfig.on("eleventy.before", () => {
+		ref = 0;
+	});
+	eleventyConfig.addShortcode("uid", () => {
+		return `id-${++ref}`;
+	});
+
 	eleventyConfig.addShortcode("image", shortcodes.image);
 	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatar);
 	eleventyConfig.addShortcode("communityavatar", shortcodes.communityAvatar);

@@ -1,0 +1,67 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pairedshortcodes"} %}
+  <div id="pairedshortcodes-liquid" role="tabpanel">
+
+{% raw %}
+
+```liquid
+{% user firstName, lastName %}
+  Hello {{ someOtherVariable }}.
+
+  Hello {% anotherShortcode %}.
+{% enduser %}
+```
+
+{% endraw %}
+
+The comma between arguments is **optional** in Liquid templates.
+
+  </div>
+  <div id="pairedshortcodes-njk" role="tabpanel">
+
+{% raw %}
+
+```jinja2
+{% user firstName, lastName %}
+  Hello {{ someOtherVariable }}.
+
+  Hello {% anotherShortcode %}.
+{% enduser %}
+```
+
+{% endraw %}
+
+The comma between arguments is **required** in Nunjucks.
+
+  </div>
+  <div id="pairedshortcodes-js" role="tabpanel">
+
+```js
+export default function (data) {
+  let userContent = `Hello ${data.someOtherVariable}
+
+Hello ${this.anotherShortCode()}`;
+
+  // pass the content as the first parameter.
+  return `<h1>${this.user(userContent, data.firstName, data.lastName)}</h1>`;
+};
+```
+
+  </div>
+  <div id="pairedshortcodes-cjs" role="tabpanel">
+
+```js
+module.exports = function (data) {
+  let userContent = `Hello ${data.someOtherVariable}
+
+Hello ${this.anotherShortCode()}`;
+
+  // pass the content as the first parameter.
+  return `<h1>${this.user(userContent, data.firstName, data.lastName)}</h1>`;
+};
+```
+
+  </div>
+</seven-minute-tabs>
+</is-land>

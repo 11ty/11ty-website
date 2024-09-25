@@ -1,0 +1,49 @@
+{%- set tabid = "perengineasync" %}
+<div class="codetitle codetitle-right-md">eleventy.config.js</div>
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs class="tabs-flush" persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
+  <div id="{{ tabid }}-jsesm" role="tabpanel">
+
+```js
+export default function (eleventyConfig) {
+  // Async-friendly
+  // Liquid is already async-friendly
+  eleventyConfig.addLiquidShortcode("user", async function() {});
+  eleventyConfig.addPairedLiquidShortcode("user", async function(content) {});
+
+  // Nunjucks Async
+  eleventyConfig.addNunjucksAsyncShortcode("user", async function() {});
+  eleventyConfig.addPairedNunjucksAsyncShortcode("user", async function(content) {});
+
+  // JavaScript Template function
+  // (make sure you `await` these when using in templates!)
+  eleventyConfig.addJavaScriptFunction("user", async function() {});
+  eleventyConfig.addJavaScriptFunction("user", async function(content) {}); // Faux-paired shortcode
+};
+```
+
+  </div>
+  <div id="{{ tabid }}-jscjs" role="tabpanel">
+
+```js
+module.exports = function (eleventyConfig) {
+  // Async-friendly
+  // Liquid is already async-friendly
+  eleventyConfig.addLiquidShortcode("user", async function() {});
+  eleventyConfig.addPairedLiquidShortcode("user", async function(content) {});
+
+  // Nunjucks Async
+  eleventyConfig.addNunjucksAsyncShortcode("user", async function() {});
+  eleventyConfig.addPairedNunjucksAsyncShortcode("user", async function(content) {});
+
+  // JavaScript Template Function
+  // (make sure you `await` these when using in templates!)
+  eleventyConfig.addJavaScriptFunction("user", async function() {});
+  eleventyConfig.addJavaScriptFunction("user", async function(content) {}); // Faux-paired shortcode
+};
+```
+
+  </div>
+</seven-minute-tabs>
+</is-land>

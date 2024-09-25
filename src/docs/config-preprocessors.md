@@ -11,23 +11,7 @@ eleventyNavigation:
 
 The Preprocessor Configuration API allows you to intercept and modify the content in template files (_not_ [Layouts](/docs/layouts.md)) before they’re processed and rendered by Eleventy.
 
-{% raw %}
-```js
-export default function(eleventyConfig) {
-	eleventyConfig.addProcessor("drafts", "njk,md,liquid", (data, content) => {
-		if(data.draft) {
-			// Ignore this file.
-			return false;
-		}
-
-		// You can also modify the raw input of the template here too, be careful!
-		return `${content}<!-- Template file: {{ page.inputPath }} -->`;
-
-		// If you return nothing or `undefined`, no changes will be made to this template.
-	});
-};
-```
-{% endraw %}
+{% include "snippets/config/preprocessors.njk" %}
 
 * The first argument is an arbitrary `name` (`String`) used for error messaging.
 * The second argument can be:
@@ -46,14 +30,4 @@ Set `draft: true` anywhere in a file’s [data cascade](/docs/data-cascade/) and
 
 You might imagine how this could be extended to add a publishing date feature too: to exclude content from builds before a specific date set in a post’s front matter (or elsewhere in the data cascade).
 
-{% raw %}
-```js
-export default function(eleventyConfig) {
-	eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
-		if(data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
-			return false;
-		}
-	});
-};
-```
-{% endraw %}
+{% include "snippets/config/preprocessors-drafts.njk" %}
