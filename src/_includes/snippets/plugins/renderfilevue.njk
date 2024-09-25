@@ -1,0 +1,53 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfilevue"} %}
+  <div id="renderfilevue-liquid" role="tabpanel">
+
+{% raw %}
+
+```liquid
+{% renderFile "./_includes/header.vue" %}
+```
+
+{% endraw %}
+
+  </div>
+  <div id="renderfilevue-njk" role="tabpanel">
+
+{% raw %}
+
+```jinja2
+{% renderFile "./_includes/header.vue" %}
+```
+
+{% endraw %}
+
+  </div>
+  <div id="renderfilevue-js" role="tabpanel">
+
+{% raw %}
+
+```js
+export default async function () {
+  return await this.renderFile("./includes/header.vue");
+};
+```
+
+{% endraw %}
+
+  </div>
+  <div id="renderfilevue-cjs" role="tabpanel">
+
+{% raw %}
+
+```js
+module.exports = async function () {
+  return await this.renderFile("./includes/header.vue");
+};
+```
+
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>

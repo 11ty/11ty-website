@@ -24,27 +24,24 @@ Everything you’ve added to project’s configuration file will also be availab
 
 ## Installation
 
-This plugin is bundled with Eleventy core so it doesn’t require additional installation. But you do have to add it to your configuration file (probably `.eleventy.js`) with `addPlugin`:
+This plugin is bundled with Eleventy core so it doesn’t require additional installation. But you do have to add it to your configuration file (probably `eleventy.config.js`) with `addPlugin`:
 
-{% codetitle ".eleventy.js" %}
+{% set codeContent %}
+import { EleventyRenderPlugin } from "@11ty/eleventy";
 
-```js
-const { EleventyRenderPlugin } = require("@11ty/eleventy");
-
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 <details>
   <summary>Expand to view all of the Plugin Options</summary>
 
-{% codetitle ".eleventy.js" %}
+{% set codeContent %}
+import { EleventyRenderPlugin } from "@11ty/eleventy";
 
-```js
-const { EleventyRenderPlugin } = require("@11ty/eleventy");
-
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(EleventyRenderPlugin, {
 		tagName: "renderTemplate", // Change the renderTemplate shortcode name
 		tagNameFile: "renderFile", // Change the renderFile shortcode name
@@ -53,7 +50,8 @@ module.exports = function (eleventyConfig) {
 		accessGlobalData: false,   // Does rendered content has access to the data cascade?
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 </details>
 
@@ -65,120 +63,13 @@ module.exports = function (eleventyConfig) {
 
 Use the `renderTemplate` paired shortcode to render a template string.
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync class="tabs-flush">
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "rendertmpl"} %}
-  <div id="rendertmpl-liquid" role="tabpanel">
-
-{% raw %}
-
-```liquid
-{% renderTemplate "md" %}
-# I am a title
-
-* I am a list
-* I am a list
-{% endrenderTemplate %}
-```
-
-{% endraw %}
-
-  </div>
-  <div id="rendertmpl-njk" role="tabpanel">
-
-{% raw %}
-
-```jinja2
-{% renderTemplate "md" %}
-# I am a title
-
-* I am a list
-* I am a list
-{% endrenderTemplate %}
-```
-
-{% endraw %}
-
-  </div>
-  <div id="rendertmpl-js" role="tabpanel">
-
-{% raw %}
-
-```js
-module.exports = async function () {
-	return await this.renderTemplate(
-		`# I am a title
-
-* I am a list
-* I am a list`,
-		"md"
-	);
-};
-```
-
-{% endraw %}
-
-  </div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/plugins/render.njk" %}
 
 The content inside of the shortcode will be rendered using Markdown (`"md"`). Front matter is not yet supported.
 
 The first argument to `renderTemplate` can be any valid [`templateEngineOverride`](/docs/languages/#templateengineoverride-examples) value. You can even use `"liquid,md"` to preprocess markdown with liquid. You can use [custom template types](/docs/languages/custom/) here too, including [the Vue plugin](https://github.com/11ty/eleventy-plugin-vue)!
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync class="tabs-flush">
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "rendertmplvue"} %}
-  <div id="rendertmplvue-liquid" role="tabpanel">
-
-{% raw %}
-
-```liquid
-{% renderTemplate "vue" %}
-<div>
-  THIS IS VUE <p v-html="hi"></p>
-</div>
-{% endrenderTemplate %}
-```
-
-{% endraw %}
-
-  </div>
-  <div id="rendertmplvue-njk" role="tabpanel">
-
-{% raw %}
-
-```jinja2
-{% renderTemplate "vue" %}
-<div>
-  THIS IS VUE <p v-html="hi"></p>
-</div>
-{% endrenderTemplate %}
-```
-
-{% endraw %}
-
-  </div>
-  <div id="rendertmplvue-js" role="tabpanel">
-
-{% raw %}
-
-```js
-module.exports = async function () {
-	return await this.renderTemplate(
-		`<div>
-  THIS IS VUE <p v-html="hi"></p>
-</div>`,
-		"vue"
-	);
-};
-```
-
-{% endraw %}
-
-  </div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/plugins/rendervue.njk" %}
 
 {% callout "info", "md" %}The one exception here is that `{% raw %}{% renderTemplate "11ty.js" %}{% endraw %}` JavaScript string templates are not yet supported—use `renderFile` below instead.{% endcallout %}
 
@@ -188,63 +79,7 @@ To add Vue support, don’t forget to install [`@11ty/eleventy-plugin-vue` (v0.6
 
 Both the [`eleventy`](/docs/data-eleventy-supplied/#eleventy-variable) and [`page` variables](/docs/data-eleventy-supplied/#page-variable) are available inside of these templates by default. If you want to pass in additional data, you can do so like this:
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync class="tabs-flush">
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "rendertmpldata"} %}
-  <div id="rendertmpldata-liquid" role="tabpanel">
-
-{% raw %}
-
-```liquid
----
-myData:
-  myKey: myValue
----
-{% renderTemplate "liquid", myData %}
-{{ myKey }}
-{% endrenderTemplate %}
-```
-
-{% endraw %}
-
-  </div>
-  <div id="rendertmpldata-njk" role="tabpanel">
-
-{% raw %}
-
-```jinja2
----
-myData:
-  myKey: myValue
----
-{% renderTemplate "liquid", myData %}
-{{ myKey }}
-{% endrenderTemplate %}
-```
-
-{% endraw %}
-
-  </div>
-  <div id="rendertmpldata-js" role="tabpanel">
-
-{% raw %}
-
-```js
-module.exports.data = {
-	myData: {
-		myKey: "myValue",
-	},
-};
-module.exports.render = async function (data) {
-	return await this.renderTemplate(`{{ myKey }}`, "liquid", data.myData);
-};
-```
-
-{% endraw %}
-
-  </div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/plugins/renderdata.njk" %}
 
 Outputs `myValue`.
 
@@ -252,91 +87,13 @@ Outputs `myValue`.
 
 Use the `renderFile` shortcode to render an include file.
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync class="tabs-flush">
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfile"} %}
-  <div id="renderfile-liquid" role="tabpanel">
-
-{% raw %}
-
-```liquid
-{% renderFile "./_includes/blogpost.md" %}
-```
-
-{% endraw %}
-
-  </div>
-  <div id="renderfile-njk" role="tabpanel">
-
-{% raw %}
-
-```jinja2
-{% renderFile "./_includes/blogpost.md" %}
-```
-
-{% endraw %}
-
-  </div>
-  <div id="renderfile-js" role="tabpanel">
-
-{% raw %}
-
-```js
-module.exports = async function () {
-	return await this.renderFile("./includes/blogpost.md");
-};
-```
-
-{% endraw %}
-
-  </div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/plugins/renderfile.njk" %}
 
 The first argument to `renderFile` is a project root relative path to any template file. Front matter inside of the target files is not yet supported. The template syntax used is inferred by the file extension.
 
 Note that you can use files supported by any [custom file extensions](/docs/languages/custom/) you’ve added too, including a Vue Single File Component from the [Eleventy Vue plugin](https://github.com/11ty/eleventy-plugin-vue)!
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync class="tabs-flush">
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfilevue"} %}
-  <div id="renderfilevue-liquid" role="tabpanel">
-
-{% raw %}
-
-```liquid
-{% renderFile "./_includes/header.vue" %}
-```
-
-{% endraw %}
-
-  </div>
-  <div id="renderfilevue-njk" role="tabpanel">
-
-{% raw %}
-
-```jinja2
-{% renderFile "./_includes/header.vue" %}
-```
-
-{% endraw %}
-
-  </div>
-  <div id="renderfilevue-js" role="tabpanel">
-
-{% raw %}
-
-```js
-module.exports = async function () {
-	return await this.renderFile("./includes/header.vue");
-};
-```
-
-{% endraw %}
-
-  </div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/plugins/renderfilevue.njk" %}
 
 To add Vue support, don’t forget to install [`@11ty/eleventy-plugin-vue` (v0.6.0 or newer)](https://github.com/11ty/eleventy-plugin-vue) and add the Vue plugin in your config file.
 
@@ -344,116 +101,12 @@ To add Vue support, don’t forget to install [`@11ty/eleventy-plugin-vue` (v0.6
 
 Both the [`eleventy`](/docs/data-eleventy-supplied/#eleventy-variable) and [`page` variables](/docs/data-eleventy-supplied/#page-variable) are available inside of these templates by default. If you want to pass in additional data, you can do so like this:
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync class="tabs-flush">
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfiledata"} %}
-  <div id="renderfiledata-liquid" role="tabpanel">
-
-{% raw %}
-
-```liquid
----
-myData:
-  myKey: myValue
----
-{% renderFile "./_includes/blogpost.md", myData %}
-```
-
-{% endraw %}
-
-  </div>
-  <div id="renderfiledata-njk" role="tabpanel">
-
-{% raw %}
-
-```jinja2
----
-myData:
-  myKey: myValue
----
-{% renderFile "./_includes/blogpost.md", myData %}
-```
-
-{% endraw %}
-
-  </div>
-  <div id="renderfiledata-js" role="tabpanel">
-
-{% raw %}
-
-```js
-module.exports.data = {
-	myData: {
-		myKey: "myValue",
-	},
-};
-module.exports.render = async function (data) {
-	return await this.renderFile("./includes/blogpost.md", data.myData);
-};
-```
-
-{% endraw %}
-
-  </div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/plugins/renderfiledata.njk" %}
 
 #### Override the target file syntax
 
 The syntax is normally inferred using the file extension, but it can be overridden using a third argument. It can be any valid [`templateEngineOverride`](/docs/languages/#templateengineoverride-examples) value. You can even use `"liquid,md"` to preprocess markdown with liquid.
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync class="tabs-flush">
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfileoverride"} %}
-  <div id="renderfileoverride-liquid" role="tabpanel">
-
-{% raw %}
-
-```liquid
----
-myData:
-  key: value
----
-{% renderFile "./_includes/blogpost.md", myData, "njk" %}
-```
-
-{% endraw %}
-
-  </div>
-  <div id="renderfileoverride-njk" role="tabpanel">
-
-{% raw %}
-
-```jinja2
----
-myData:
-  key: value
----
-{% renderFile "./_includes/blogpost.md", myData, "njk" %}
-```
-
-{% endraw %}
-
-  </div>
-  <div id="renderfileoverride-js" role="tabpanel">
-
-{% raw %}
-
-```js
-module.exports.data = {
-	myData: {
-		myKey: "myValue",
-	},
-};
-module.exports.render = async function (data) {
-	return await this.renderFile("./includes/blogpost.md", data.myData, "njk");
-};
-```
-
-{% endraw %}
-
-  </div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/plugins/renderfileoverride.njk" %}
 
 Will render `blogpost.md` using Nunjucks instead of Markdown!

@@ -31,22 +31,22 @@ npm install @11ty/eleventy-plugin-rss --save
 
 Your config file is probably named `.eleventy.js`.
 
-{% codetitle ".eleventy.js" %}
-
-```js
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+import pluginRss from "@11ty/eleventy-plugin-rss";
+export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginRss);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Plugin Configuration Options {% addedin "0.5.4" %}
 
 Use an optional second argument to `addPlugin` to customize your plugin’s behavior. These options are specific to the plugin. Please consult the plugin’s documentation (e.g. the [`eleventy-plugin-syntaxhighlight` README](https://github.com/11ty/eleventy-plugin-syntaxhighlight/blob/master/README.md)) to learn what options are available to you.
 
-```js
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+
+export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
 		// only install the markdown highlighter
 		templateFormats: ["md"],
@@ -56,24 +56,25 @@ module.exports = function (eleventyConfig) {
 		},
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 <details>
 <summary><strong>Advanced Usage: Namespacing a plugin</strong></summary>
 
 It’s unlikely you’ll need this feature _but_ you can namespace parts of your configuration using `eleventyConfig.namespace`. This will add a string prefix to all filters, tags, helpers, shortcodes, collections, and transforms.
 
-{% codetitle ".eleventy.js" %}
+{% set codeContent %}
+import pluginRss from "@11ty/eleventy-plugin-rss";
 
-```js
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.namespace("myPrefix_", () => {
 		// the rssLastUpdatedDate filter is now myPrefix_rssLastUpdatedDate
 		eleventyConfig.addPlugin(pluginRss);
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 {% callout "warn" %}
 Plugin namespacing is an application feature and should not be used if you are creating your own plugin (in your plugin configuration code). Follow along at <a href="https://github.com/11ty/eleventy/issues/256">Issue #256</a>.
@@ -85,13 +86,14 @@ Plugin namespacing is an application feature and should not be used if you are c
 
 A plugin primarily provides a “configuration function.” This function is called when Eleventy is first initialized, and operates similarly to a user’s configuration function (the same `eleventyConfig` argument passed to the user’s `.eleventy.js` file is passed here), in addition to any config passed by the user:
 
-{% codetitle "plugin.js" %}
+<div class="codetitle">plugin.js</div>
 
-```js
-module.exports = function (eleventyConfig, pluginOptions) {
+{% set codeContent %}
+export default function (eleventyConfig, pluginOptions) {
 	// Your plugin code goes here
 };
-```
+{% endset %}
+{% include "snippets/esmCjsTabs.njk" %}
 
 Note that plugins run as a second stage after the user’s primary configuration file has executed (to have access to the return object values).
 
@@ -100,21 +102,20 @@ Note that plugins run as a second stage after the user’s primary configuration
 
 If you want to allow developers to use custom arguments provided by your plugin, you can export an object. Prefer using the above syntax unless you need this behavior. For an example of how this is used, see the [syntax highlighting plugin](https://github.com/11ty/eleventy-plugin-syntaxhighlight/blob/23761d7fd54de0312040520175959327b1a0ab9b/.eleventy.js#L10)
 
-{% codetitle "fancy-plugin.js" %}
+<div class="codetitle">plugin-with-args.js</div>
 
-```js
-module.exports = {
+{% set codeContent %}
+export default {
 	initArguments: {},
 	configFunction: function (eleventyConfig, pluginOptions) {
 		// Your plugin code goes here
 	},
 };
-```
+{% endset %}
+{% include "snippets/esmCjsTabs.njk" %}
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(require("./fancy-plugin.js"), {
 		init: function (initArguments) {
 			// `this` is the eleventyConfig object
@@ -122,7 +123,8 @@ module.exports = function (eleventyConfig) {
 		},
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 </details>
 
@@ -130,20 +132,25 @@ module.exports = function (eleventyConfig) {
 
 If your plugin requires a specific feature in Eleventy, you should feature test it!
 
-```js
-module.exports = function (eleventyConfig, pluginOptions) {
+<div class="codetitle">plugin.js</div>
+
+{% set codeContent %}
+export default function (eleventyConfig, pluginOptions) {
 	if(!("addTemplate" in eleventyConfig)) {
 		console.log( `[my-test-plugin] WARN Eleventy plugin compatibility: Virtual Templates are required for this plugin, please use Eleventy v3.0 or newer.` );
 	}
 };
-```
+{% endset %}
+{% include "snippets/esmCjsTabs.njk" %}
 
 ### Version Checking
 
 If feature testing is not available for your specific use case, you can add this code to your plugin configuration to show a warning if the plugin consumer does not have a compatible version of Eleventy:
 
-```js
-module.exports = function (eleventyConfig, pluginOptions) {
+<div class="codetitle">plugin.js</div>
+
+{% set codeContent %}
+export default function (eleventyConfig, pluginOptions) {
 	try {
 		// Emit a warning message if the application is not using Eleventy 3.0 or newer (including prereleases).
 		eleventyConfig.versionCheck(">=3.0");
@@ -151,7 +158,8 @@ module.exports = function (eleventyConfig, pluginOptions) {
 		console.log( `[my-test-plugin] WARN Eleventy plugin compatibility: ${e.message}` );
 	}
 };
-```
+{% endset %}
+{% include "snippets/esmCjsTabs.njk" %}
 
 * This uses the [`semver` package](https://www.npmjs.com/package/semver) and is compatible with advanced range syntax.
 * **Upper bounding your version number is _not recommended_**. Eleventy works very hard to maintain backwards compatibility between major versions. Please ensure your plugin code does the same!
@@ -172,8 +180,8 @@ Plugins (by default) execute in a second stage of configuration after the user�
 
 You are unlikely to need this, but you can execute a plugin’s code immediately using the `immediate` option.
 
-```js
-module.exports = function (eleventyConfig, pluginOptions) {
+{% set codeContent %}
+export default function (eleventyConfig, pluginOptions) {
 	console.log( "first" );
 
 	eleventyConfig.addPlugin(eleventyConfig => {
@@ -188,4 +196,5 @@ module.exports = function (eleventyConfig, pluginOptions) {
 
 	console.log("third");
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}

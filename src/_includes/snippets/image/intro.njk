@@ -1,10 +1,9 @@
 {%- set tabid = "imageintro" %}
+<div class="codetitle">my-node-script.js</div>
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
+<seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
   <div id="{{ tabid }}-jsesm" role="tabpanel">
-
-{% codetitle "my-node-script.js" %}
 
 ```js
 import Image from "@11ty/eleventy-img";
@@ -19,8 +18,6 @@ console.log(stats);
 
   </div>
   <div id="{{ tabid }}-jscjs" role="tabpanel">
-
-{% codetitle "my-node-script.js" %}
 
 ```js
 const Image = require("@11ty/eleventy-img");

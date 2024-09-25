@@ -1,0 +1,77 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "rendertmpldata"} %}
+  <div id="rendertmpldata-liquid" role="tabpanel">
+
+{% raw %}
+
+```liquid
+---
+myData:
+  myKey: myValue
+---
+{% renderTemplate "liquid", myData %}
+{{ myKey }}
+{% endrenderTemplate %}
+```
+
+{% endraw %}
+
+  </div>
+  <div id="rendertmpldata-njk" role="tabpanel">
+
+{% raw %}
+
+```jinja2
+---
+myData:
+  myKey: myValue
+---
+{% renderTemplate "liquid", myData %}
+{{ myKey }}
+{% endrenderTemplate %}
+```
+
+{% endraw %}
+
+  </div>
+  <div id="rendertmpldata-js" role="tabpanel">
+
+{% raw %}
+
+```js
+export const data = {
+	myData: {
+		myKey: "myValue",
+	},
+};
+
+export async function render(data) {
+	return await this.renderTemplate(`{{ myKey }}`, "liquid", data.myData);
+};
+```
+
+{% endraw %}
+
+  </div>
+	<div id="rendertmpldata-cjs" role="tabpanel">
+
+{% raw %}
+
+```js
+module.exports.data = {
+	myData: {
+		myKey: "myValue",
+	},
+};
+
+module.exports.render = async function (data) {
+	return await this.renderTemplate(`{{ myKey }}`, "liquid", data.myData);
+};
+```
+
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>

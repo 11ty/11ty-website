@@ -167,45 +167,7 @@ There are four different ways to use Eleventy Image in Eleventy projects:
 
 {% addedin "v3.0.0-alpha.7" %}{% addedin "Image v5.0.0" %}During local development (when using `--serve`), images optimized via transform are _not_ processed at build time and instead are optimized when requested in the browser. Read more about [`transformOnRequest`](#optimize-images-on-request).
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "transform-config", only: "jscjs,jsesm"} %}
-  <div id="transform-config-jscjs" role="tabpanel">
-
-{% codetitle ".eleventy.js" %}
-
-```js
-const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
-
-module.exports = function (eleventyConfig) {
-	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-		// which file extensions to process
-		extensions: "html",
-
-		// Add any other Image utility options here:
-
-		// optional, output image formats
-		formats: ["webp", "jpeg"],
-		// formats: ["auto"],
-
-		// optional, output image widths
-		// widths: ["auto"],
-
-		// optional, attributes assigned on <img> override these values.
-		defaultAttributes: {
-			loading: "lazy",
-			decoding: "async",
-		},
-	});
-};
-```
-
-  </div>
-  <div id="transform-config-jsesm" role="tabpanel">
-
-{% codetitle ".eleventy.js" %}
-
-```js
+{% set codeContent %}
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 export default function (eleventyConfig) {
@@ -228,12 +190,9 @@ export default function (eleventyConfig) {
 			decoding: "async",
 		},
 	});
-}
-```
-
-  </div>
-</seven-minute-tabs>
-</is-land>
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 #### Relative paths
 
@@ -260,13 +219,12 @@ You can configure individual `<img>` elements with per-instance overrides:
 
 The examples below require an [async-friendly shortcodes](/docs/shortcodes/#asynchronous-shortcodes) (works in Nunjucks, Liquid, JavaScript, and [WebC](/docs/languages/webc/)).
 
-{% codetitle ".eleventy.js" %}
+<br><br>
 
-```js
-const Image = require("@11ty/eleventy-img");
+{% set codeContent %}
+import Image from "@11ty/eleventy-img";
 
-// Only one module.exports per configuration file, please!
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addShortcode("image", async function (src, alt, widths = [300, 600], sizes = "100vh") {
 		let metadata = await Image(src, {
 			widths,
@@ -284,18 +242,16 @@ module.exports = function (eleventyConfig) {
 		return Image.generateHTML(metadata, imageAttributes);
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 <details>
 <summary>Expand to see full options list for <code>Image.generateHTML</code></summary>
 
-{% codetitle ".eleventy.js" %}
+{% set codeContent %}
+import Image from "@11ty/eleventy-img";
 
-```js
-const Image = require("@11ty/eleventy-img");
-
-// Only one module.exports per configuration file, please!
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addShortcode("image", async function (src, alt, widths = ["auto"], sizes = "100vh") {
 		let metadata = await Image(src, {
 			// omitted for brevity
@@ -320,7 +276,8 @@ module.exports = function (eleventyConfig) {
 		return Image.generateHTML(metadata, imageAttributes, options);
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 </details>
 
@@ -334,41 +291,7 @@ If you want to use Eleventy Image in WebC, take note that it is possible to wire
 
 Now you can use the `image` shortcode in your templates and the appropriate HTML will be generated for you (based on your specified Image options).
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
-	{% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "shortcode"} %}
-	<div id="shortcode-liquid" role="tabpanel">
-		{% codetitle "Liquid", "Syntax" %}
-{%- highlight "liquid" %}{% raw %}
-{% image "cat.jpg", "photo of my tabby cat" %}
-{% image "cat.jpg", "photo of my tabby cat", "(min-width: 30em) 50vw, 100vw" %}
-{% endraw %}{% endhighlight %}
-		<p>The comma between arguments is <strong>optional</strong> in Liquid templates.</p>
-	</div>
-	<div id="shortcode-njk" role="tabpanel">
-		{% codetitle "Nunjucks", "Syntax" %}
-{%- highlight "jinja2" %}{% raw %}
-{% image "cat.jpg", "photo of my tabby cat" %}
-{% image "cat.jpg", "photo of my tabby cat", "(min-width: 30em) 50vw, 100vw" %}
-{% endraw %}{% endhighlight %}
-		<p>The comma between arguments is <strong>required</strong> in Nunjucks templates.</p>
-	</div>
-	<div id="shortcode-js" role="tabpanel">
-		{% codetitle "JavaScript", "Syntax" %}
-{%- highlight "js" %}{% raw %}
-module.exports = function() {
-	let img1 = await this.image("cat.jpg", "photo of my tabby cat");
-	let img2 = await this.image("cat.jpg", "photo of my tabby cat", "(min-width: 30em) 50vw, 100vw");
-
-    return `${img1}
-
-${img2}`;
-};
-{% endraw %}{% endhighlight %}
-
-</div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/image/templates.njk" %}
 
 #### Synchronous Shortcode
 
@@ -381,10 +304,9 @@ ${img2}`;
 
 Use `Image.statsSync` to get the metadata of a source even if the image generation is not finished yet:
 
-{% codetitle ".eleventy.js" %}
+{% set codeContent %}
+import Image from "@11ty/eleventy-img";
 
-```js
-const Image = require("@11ty/eleventy-img");
 function imageShortcode(src, cls, alt, widths = ["auto"], sizes = "100vh") {
 	let options = {
 		widths,
@@ -406,10 +328,11 @@ function imageShortcode(src, cls, alt, widths = ["auto"], sizes = "100vh") {
 	return Image.generateHTML(metadata, imageAttributes);
 }
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addShortcode("myImage", imageShortcode);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 </details>
 
@@ -428,14 +351,11 @@ Using Eleventy Image in [WebC](/docs/languages/webc/) offers all the same great 
 
 First, add the following to your project’s configuration file:
 
-{% codetitle ".eleventy.js" %}
+{% set codeContent %}
+import eleventyWebcPlugin from "@11ty/eleventy-plugin-webc";
+import { eleventyImagePlugin } from "@11ty/eleventy-img";
 
-```js
-const eleventyWebcPlugin = require("@11ty/eleventy-plugin-webc");
-const { eleventyImagePlugin } = require("@11ty/eleventy-img");
-
-// Only one module.exports per configuration file, please!
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	// WebC
 	eleventyConfig.addPlugin(eleventyWebcPlugin, {
 		components: [
@@ -460,7 +380,8 @@ module.exports = function (eleventyConfig) {
 		},
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 {% addedin "v3.0.0-alpha.7" %}{% addedin "Image v5.0.0" %}During local development (when using `--serve`), `<eleventy-image>` images are _not_ processed at build time and instead are optimized when requested in the browser. Read more about [`transformOnRequest`](#optimize-images-on-request).
 
@@ -543,14 +464,11 @@ Image optimization is likely one of the costlier pieces of your Eleventy build. 
 
 {% addedin "v3.0.0-alpha.7" %}{% addedin "Image v5.0.0" %}You _can_ use this with the Eleventy Shortcode directly too, with a little bit more configuration:
 
-{% codetitle ".eleventy.js" %}
+{% set codeContent %}
+import Image from "@11ty/eleventy-img";
+import { eleventyImageOnRequestDuringServePlugin } from "@11ty/eleventy-img";
 
-```js
-const Image = require("@11ty/eleventy-img");
-const { eleventyImageOnRequestDuringServePlugin } = Image;
-
-// Only one module.exports per configuration file, please!
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addShortcode("image", async function (src, alt) {
 		let metadata = await Image(src, {
 			transformOnRequest: process.env.ELEVENTY_RUN_MODE === "serve"
@@ -563,7 +481,8 @@ module.exports = function (eleventyConfig) {
 	// Add the dev server middleware manually
 	eleventyConfig.addPlugin(eleventyImageOnRequestDuringServePlugin);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 <div id="caching"></div>
 
@@ -589,31 +508,27 @@ You can disable this behavior by using the `useCache` boolean option:
 {% codetitle ".eleventy.js" %}
 
 ```js
-const Image = require("@11ty/eleventy-img");
+import Image from "@11ty/eleventy-img";
 
-(async () => {
-	let stats1 = Image("./test/bio-2017.jpg");
-	let stats2 = Image("./test/bio-2017.jpg");
+let stats1 = Image("./test/bio-2017.jpg");
+let stats2 = Image("./test/bio-2017.jpg");
 
-	console.assert(stats1 === stats2, "The same promise");
-})();
+console.assert(stats1 === stats2, "The same promise");
 ```
 
 </details>
 <details>
 <summary>Example of in-memory cache (returns a new promise with different options)</summary>
 
-{% codetitle ".eleventy.js" %}
+{% codetitle "eleventy.config.js" %}
 
 ```js
-const Image = require("@11ty/eleventy-img");
+import Image from "@11ty/eleventy-img";
 
-(async () => {
-	let stats1 = Image("./test/bio-2017.jpg");
-	let stats2 = Image("./test/bio-2017.jpg", { widths: [300] });
+let stats1 = Image("./test/bio-2017.jpg");
+let stats2 = Image("./test/bio-2017.jpg", { widths: [300] });
 
-	console.assert(stats1 !== stats2, "A different promise");
-})();
+console.assert(stats1 !== stats2, "A different promise");
 ```
 
 </details>
@@ -638,7 +553,7 @@ You can use this to [speed up builds on your build server](/docs/deployment/#per
 Don’t like those hash ids? Make your own!
 
 ```js
-{
+	// (some configuration truncated…)
 	// Define custom filenames for generated images
 	filenameFormat: function (id, src, width, format, options) {
 		// id: hash of the original image
@@ -649,15 +564,14 @@ Don’t like those hash ids? Make your own!
 
 		return `${id}-${width}.${format}`;
 	}
-}
 ```
 
 <details>
 <summary>Custom Filename Example: Use the original file slug</summary>
 
 ```js
-const path = require("path");
-const Image = require("@11ty/eleventy-img");
+import path from "node:path";
+import Image from "@11ty/eleventy-img";
 
 await Image("./test/bio-2017.jpg", {
 	widths: [300],
@@ -686,90 +600,7 @@ If you want to try the utility out and not write any files (useful for testing),
 
 If you have an advanced use case and don’t want to use our methods to generate the image markup, you can do it yourself!
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
-<div role="tablist" aria-label="DIY mode chooser">
-	<a href="#filter-diy-img" role="tab">Do it yourself: &lt;img&gt;</a>
-	<a href="#filter-diy-picture" role="tab">Do it yourself: &lt;picture&gt;</a>
-</div>
-<div id="filter-diy-img" role="tabpanel">
-
-{% codetitle ".eleventy.js" %}
-
-```js
-const Image = require("@11ty/eleventy-img");
-
-// Only one module.exports per configuration file, please!
-module.exports = function (eleventyConfig) {
-	eleventyConfig.addShortcode("image", async function (src, alt) {
-		if (alt === undefined) {
-			// You bet we throw an error on missing alt (alt="" works okay)
-			throw new Error(`Missing \`alt\` on myImage from: ${src}`);
-		}
-
-		let metadata = await Image(src, {
-			widths: [600],
-			formats: ["jpeg"],
-		});
-
-		let data = metadata.jpeg[metadata.jpeg.length - 1];
-		return `<img src="${data.url}" width="${data.width}" height="${data.height}" alt="${alt}" loading="lazy" decoding="async">`;
-	});
-};
-```
-
-</div>
-<div id="filter-diy-picture" role="tabpanel">
-
-{% codetitle ".eleventy.js" %}
-
-```js
-const Image = require("@11ty/eleventy-img");
-
-// Only one module.exports per configuration file, please!
-module.exports = function (eleventyConfig) {
-	eleventyConfig.addShortcode(
-		"image",
-		async function (src, alt, widths = [300, 600], sizes = "100vh") {
-			if (alt === undefined) {
-				// You bet we throw an error on missing alt (alt="" works okay)
-				throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
-			}
-
-			let metadata = await Image(src, {
-				widths,
-				formats: ["webp", "jpeg"],
-			});
-
-			let lowsrc = metadata.jpeg[0];
-			let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
-
-			return `<picture>
-			${Object.values(metadata)
-				.map((imageFormat) => {
-					return `  <source type="${
-						imageFormat[0].sourceType
-					}" srcset="${imageFormat
-						.map((entry) => entry.srcset)
-						.join(", ")}" sizes="${sizes}">`;
-				})
-				.join("\n")}
-				<img
-					src="${lowsrc.url}"
-					width="${highsrc.width}"
-					height="${highsrc.height}"
-					alt="${alt}"
-					loading="lazy"
-					decoding="async">
-			</picture>`;
-		}
-	);
-};
-```
-
-</div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/image/diy.njk" %}
 
 ### Process images as a Custom Template
 
@@ -790,13 +621,11 @@ Use Eleventy’s [Custom Template Language](/docs/languages/custom/) feature to 
 <details>
 	<summary><strong>Show the code</strong></summary>
 
-{% codetitle ".eleventy.js" %}
+{% set codeContent %}
+import path from "node:path";
+import Image from "@11ty/eleventy-img";
 
-```js
-const Image = require("@11ty/eleventy-img");
-const path = require("path");
-
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addDataExtension("png,jpeg", {
 		read: false, // Don’t read the input file, argument is now a file path
 		parser: async (imagePath) => {
@@ -825,7 +654,8 @@ module.exports = function (eleventyConfig) {
 		return Image.generateHTML(stats, imageAttributes);
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 With a template `my-blog-post.md` and an image file `my-blog-post.jpeg`, you could use the above configuration code in your template like this:
 
@@ -850,7 +680,7 @@ Note this also means that `folder/folder.jpeg` would be processed for all templa
 ### Change Global Plugin Concurrency
 
 ```js
-const Image = require("@11ty/eleventy-img");
+import Image from "@11ty/eleventy-img";
 Image.concurrency = 4; // default is 10
 ```
 
@@ -869,7 +699,7 @@ Image.concurrency = 4; // default is 10
 {% addedin "Image v1.1.0" %} To process and output animated `gif` or `webp` images, use the `animated` option for the Sharp constructor.
 
 ```js
-const Image = require("@11ty/eleventy-img");
+import Image from "@11ty/eleventy-img";
 
 await Image("./test/bio-2017.jpg", {
 	formats: ["webp", "gif"],
@@ -885,7 +715,7 @@ await Image("./test/bio-2017.jpg", {
 {% addedin "1.0.0" %} You can customize the length of the default filename format hash by using the `hashLength` property.
 
 ```js
-const Image = require("@11ty/eleventy-img");
+import Image from "@11ty/eleventy-img";
 
 await Image("./test/bio-2017.jpg", {
 	hashLength: 8, // careful, don’t make it _too_ short!
