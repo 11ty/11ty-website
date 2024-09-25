@@ -12,6 +12,7 @@ Transforms can modify a template’s output. For example, use a transform to for
 {% callout "info", "md" %}The provided transform function **must** return the original or transformed content.{% endcallout %}
 
 {% set configCodeContent %}
+export default function(eleventyConfig) {
 	// Can be sync or async
 	eleventyConfig.addTransform("transform-name", async function (content) {
 		console.log(this.page.inputPath);
@@ -19,6 +20,7 @@ Transforms can modify a template’s output. For example, use a transform to for
 
 		return content; // no changes made.
 	});
+};
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 

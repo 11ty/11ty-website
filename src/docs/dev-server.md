@@ -30,6 +30,7 @@ _Read more detail on the [Eleventy Dev Server 1.0 release notes](https://github.
 You can configure the server with the new `setServerOptions` Configuration API method.
 
 {% set configCodeContent %}
+export default function(eleventyConfig) {
 	eleventyConfig.setServerOptions({
 		// Default values are shown:
 
@@ -73,6 +74,7 @@ You can configure the server with the new `setServerOptions` Configuration API m
 		// for on-request processing (read more below).
 		onRequest: {},
 	});
+};
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
@@ -80,6 +82,7 @@ You can configure the server with the new `setServerOptions` Configuration API m
 <summary><strong>Expand to see the Full options list</strong></summary>
 
 {% set configCodeContent %}
+export default function(eleventyConfig) {
 	eleventyConfig.setServerOptions({
 		// Change the name of the folder name used for injected scripts
 		injectedScriptsFolder: ".11ty",
@@ -96,6 +99,7 @@ You can configure the server with the new `setServerOptions` Configuration API m
 		// Alias for backwards compatibility, renamed to `domDiff` in Dev Server 1.0+
 		domdiff: true,
 	});
+};
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
@@ -120,6 +124,7 @@ Try out the [`devcert-cli`](https://github.com/davewasmer/devcert-cli) package t
 {% addedin "3.0.0-alpha.7" %}{% addedin "Dev Server 2.0.0" %} Use the new `onRequest` object to configure some of your project to use on-request-time processing. The keys in this object represent strings from the [URL Pattern API](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API).
 
 {% set configCodeContent %}
+export default function(eleventyConfig) {
 	eleventyConfig.setServerOptions({
 		onRequest: {
 			"/": function({ url }) {
@@ -141,12 +146,14 @@ Try out the [`devcert-cli`](https://github.com/davewasmer/devcert-cli) package t
 			}
 		}
 	});
+};
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
 Works great with the [`process.env.ELEVENTY_RUN_MODE` environment variable](/docs/environment-vars/#eleventy-supplied) to change how your server operates during`--serve` mode.
 
 {% set configCodeContent %}
+export default function(eleventyConfig) {
 	// Intercept all requests during --serve mode.
 	if(process.env.ELEVENTY_RUN_MODE === "serve") {
 		eleventyConfig.setServerOptions({
@@ -158,6 +165,7 @@ Works great with the [`process.env.ELEVENTY_RUN_MODE` environment variable](/doc
 			}
 		});
 	}
+};
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
@@ -178,6 +186,7 @@ npm install @11ty/eleventy-server-browsersync
 Then, enable it in your configuration file:
 
 {% set configCodeContent %}
+export default function(eleventyConfig) {
 	eleventyConfig.setServerOptions({
 		module: "@11ty/eleventy-server-browsersync",
 
@@ -191,6 +200,7 @@ Then, enable it in your configuration file:
 		// Opt-out of the Browsersync snippet
 		// snippet: false,
 	});
+};
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 

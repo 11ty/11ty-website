@@ -6,6 +6,7 @@ import commaNumber from "comma-number";
 import slugify from "slugify";
 import lodashGet from "lodash/get.js";
 import shortHash from "short-hash";
+import { ImportTransformer } from "esm-import-transformer";
 
 import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 import navigationPlugin from "@11ty/eleventy-navigation";
@@ -413,6 +414,19 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addShortcode("uid", () => {
 		return `id-${++ref}`;
 	});
+
+	// TODO memoize
+	eleventyConfig.addFilter("esmToCjs", (sourceCode) => {
+		try {
+			let it = new ImportTransformer(sourceCode);
+
+			let outputCode = it.transformToRequire();
+			return outputCode.replace("export default ", "module.exports = ");
+		} catch(e) {
+			console.log( sourceCode );
+			throw e;
+		}
+	})
 
 	eleventyConfig.addShortcode("image", shortcodes.image);
 	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatar);

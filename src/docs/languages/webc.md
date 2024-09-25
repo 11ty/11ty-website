@@ -75,25 +75,24 @@ npm install @11ty/eleventy-plugin-webc
 
 To add support for `.webc` files in Eleventy, add the plugin in your Eleventy configuration file:
 
-{% codetitle ".eleventy.js" %}
+{% set configCodeContent %}
+import pluginWebc from "@11ty/eleventy-plugin-webc";
 
-```js
-const pluginWebc = require("@11ty/eleventy-plugin-webc");
-
-module.exports = function (eleventyConfig) {
+export default function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebc);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
-_You’re only allowed one `module.exports` in your configuration file. If you already have a configuration file, only copy the `require` and the `addPlugin` lines above!_
+_When using CommonJS remember that you’re only allowed one `module.exports` in your configuration file. If you already have a configuration file, only copy the `require` and the `addPlugin` lines above!_
 
 <details>
 <summary><strong>Full options list</strong> (defaults shown)</summary>
 
-```js
-const pluginWebc = require("@11ty/eleventy-plugin-webc");
+{% set configCodeContent %}
+import pluginWebc from "@11ty/eleventy-plugin-webc";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebc, {
 		// Glob to find no-import global components
 		// (The default changed from `false` in Eleventy WebC v0.7.0)
@@ -109,7 +108,8 @@ module.exports = function (eleventyConfig) {
 		bundlePluginOptions: {},
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 View the [full options list for `@11ty/eleventy-plugin-bundle`](https://github.com/11ty/eleventy-plugin-bundle#installation). As an example, you can use the [`transforms` array to modify bundle content with postcss](https://github.com/11ty/eleventy-plugin-bundle#modify-the-bundle-output).
 
@@ -152,60 +152,7 @@ WebC uses an HTML parser to process input files: use any HTML here!
 
 Using Eleventy’s built-in [Render plugin](/docs/plugins/render/) allows you to render WebC inside of an existing Liquid, Nunjucks, or 11ty.js template.
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
-{% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "webc-render"} %}
-<div id="webc-render-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
-
-{% raw %}
-
-```liquid
-{% renderTemplate "webc" %}
-<my-custom-component></my-custom-component>
-{% endrenderTemplate %}
-```
-
-{% endraw %}
-
-</div>
-<div id="webc-render-njk" role="tabpanel">
-
-{% codetitle "Nunjucks", "Syntax" %}
-
-{% raw %}
-
-```njk
-{% renderTemplate "webc" %}
-<my-custom-component></my-custom-component>
-{% endrenderTemplate %}
-```
-
-{% endraw %}
-
-</div>
-<div id="webc-render-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
-
-{% raw %}
-
-```js
-module.exports = async function () {
-	let content = await this.renderTemplate(
-		`<my-custom-component></my-custom-component>`,
-		"webc"
-	);
-	return content;
-};
-```
-
-{% endraw %}
-
-</div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/webc/render.njk" %}
 
 #### Pre-process HTML input as WebC
 
@@ -223,15 +170,16 @@ A few drawbacks to the transform method:
 <details>
 <summary>The transform is disabled by default, you will need to use the <code>useTransform</code> option to enable it.</summary>
 
-```js
-const pluginWebc = require("@11ty/eleventy-plugin-webc");
+{% set configCodeContent %}
+import pluginWebc from "@11ty/eleventy-plugin-webc";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebc, {
 		useTransform: true,
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 </details>
 
@@ -1025,10 +973,8 @@ This includes [`url`, `slugify`, `log`, and others](/docs/filters/#eleventy-prov
 
 #### Supply your own Helper
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
+{% set configCodeContent %}
+export default function (eleventyConfig) {
 	// via Universal Filter
 	eleventyConfig.addFilter("alwaysRed", () => "Red");
 
@@ -1037,7 +983,8 @@ module.exports = function (eleventyConfig) {
 
 	// Don’t forget to add the WebC plugin in your config file too!
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ```html
 <div @html="alwaysRed()"></div>
@@ -1188,12 +1135,10 @@ We accept:
 - Array (of file paths or globs) [{% addedin "@11ty/eleventy-plugin-webc@0.9.2" %}](https://github.com/11ty/eleventy-plugin-webc/releases/tag/v0.9.2)
 - [`npm:` prefix aliases](#webcimport) [{% addedin "@11ty/eleventy-plugin-webc@0.9.2" %}](https://github.com/11ty/eleventy-plugin-webc/releases/tag/v0.9.2)
 
-{% codetitle ".eleventy.js" %}
+{% set configCodeContent %}
+import pluginWebc from "@11ty/eleventy-plugin-webc";
 
-```js
-const pluginWebc = require("@11ty/eleventy-plugin-webc");
-
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebc, {
 		// Glob to find no-import global components
 		// This path is relative to the project-root!
@@ -1208,7 +1153,8 @@ module.exports = function (eleventyConfig) {
 		],
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 Notably, the path for `components` is relative to your project root (**not** your [project’s `input` directory](/docs/config/#input-directory)).
 

@@ -24,11 +24,13 @@ Asynchronous callback function support added in v1.0.
 The `eleventy.before` event runs every time Eleventy starts building, so it will run before the start of each stand-alone build, as well as each time building starts as either part of `--watch` or `--serve`. To use it, attach the event handler to your Eleventy config:
 
 {% set configCodeContent %}
+export default function(eleventyConfig) {
 	// Async-friendly in 1.0+
 	// Arguments added in 2.0+
 	eleventyConfig.on("eleventy.before", async ({ dir, runMode, outputMode }) => {
 		// Run me before the build starts
 	});
+}
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
@@ -39,6 +41,7 @@ The `eleventy.before` event runs every time Eleventy starts building, so it will
 The `eleventy.after` event runs every time Eleventy finishes building, so it will run after the end of each stand-alone build, as well as each time building ends as either part of `--watch` or `--serve`. To use it, attach the event handler to your Eleventy config:
 
 {% set configCodeContent %}
+export default function(eleventyConfig) {
 	// Async-friendly in 1.0+
 	// Arguments added in 2.0+
 	eleventyConfig.on(
@@ -47,6 +50,7 @@ The `eleventy.after` event runs every time Eleventy finishes building, so it wil
 			// Run me after the build ends
 		}
 	);
+};
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
@@ -55,6 +59,7 @@ The `eleventy.after` event runs every time Eleventy finishes building, so it wil
 Eleventy now provides an object with metadata on the build as an argument to the `eleventy.before` and `eleventy.after` event callbacks.
 
 {% set configCodeContent %}
+export default function(eleventyConfig) {
 	eleventyConfig.on("eleventy.before", async ({ dir, runMode, outputMode }) => {
 		// Read more below
 	});
@@ -65,6 +70,7 @@ Eleventy now provides an object with metadata on the build as an argument to the
 			// Read more below
 		}
 	);
+};
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
@@ -96,12 +102,14 @@ Eleventy now provides an object with metadata on the build as an argument to the
 The `eleventy.beforeWatch` event runs before a build is run _only_ if it's a re-run during `--watch` or `--serve`. This means it will neither run during the initial build nor during stand-alone builds. To use it, attach the event handler to your Eleventy config:
 
 {% set configCodeContent %}
+export default function(eleventyConfig) {
 	// Async-friendly in 1.0+
 	eleventyConfig.on("eleventy.beforeWatch", async (changedFiles) => {
 		// Run me before --watch or --serve re-runs
 		// changedFiles is an array of files that changed
 		// to trigger the watch/serve build
 	});
+};
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
@@ -112,10 +120,12 @@ The `changedFiles` parameter was {% addedin "0.11.1" %}.
 This event facilitates the [i18n plugin](/docs/plugins/i18n/) (but is available independent of it).
 
 {% set configCodeContent %}
+export default function(eleventyConfig) {
 	// Async-friendly
 	eleventyConfig.on("eleventy.contentMap", async ({ inputPathToUrl, urlToInputPath }) => {
 		// inputPathToUrl is an object mapping input file paths to output URLs
 		// urlToInputPath is an object mapping output URLs to input file paths
 	});
+};
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
