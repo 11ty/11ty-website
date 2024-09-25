@@ -15,7 +15,7 @@ export default async function(eleventyConfig) {
 	// Configure Eleventy
 };
 {% endset %}
-{% include "snippets/configDefinition.njk" %}
+{% include "snippets/configDefinitionEager.njk" %}
 
 There are a few different ways to [shape your configuration file](/docs/config-shapes/). {% addedin "3.0.0-alpha.1" %}Support for ESM and Asynchronous callbacks was added in Eleventy v3.0.
 

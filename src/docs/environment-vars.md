@@ -87,7 +87,7 @@ Eleventy also supplies its own Eleventy-specific environment variables, usually 
 
 Node.js supports a [`NODE_DISABLE_COLORS` environment variable](https://nodejs.org/api/cli.html#node_disable_colors1) that will disable colorized text in the terminal output.
 
-<script type="module" src="/js/seven-minute-tabs.js"></script>
+<is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs class="tabs-flush" persist sync>
 	<div role="tablist" aria-label="Choose your Operating System">
 		<a href="#disable-colors-nix" id="disable-colors-mac-btn" role="tab" data-tabs-persist="os:mac">macOS</a>
@@ -108,3 +108,4 @@ Node.js supports a [`NODE_DISABLE_COLORS` environment variable](https://nodejs.o
 		<p>Use the <a href="https://github.com/kentcdodds/cross-env"><code>cross-env</code> package</a> to compatibly set your environment variables cross-platform.</p>
 	</div>
 </seven-minute-tabs>
+<is-land>
