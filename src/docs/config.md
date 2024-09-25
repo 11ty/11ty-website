@@ -10,7 +10,12 @@ eleventyNavigation:
 
 Configuration files are optional. Add an `eleventy.config.js` file to the root directory of your project (read more about [default configuration filenames](#default-filenames)) to configure Eleventy to your own project’s needs. It might look like this:
 
-{% include "snippets/config/intro.njk" %}
+{% set codeContent %}
+export default async function(eleventyConfig) {
+	// Configure Eleventy
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 There are a few different ways to [shape your configuration file](/docs/config-shapes/). {% addedin "3.0.0-alpha.1" %}Support for ESM and Asynchronous callbacks was added in Eleventy v3.0.
 
@@ -192,7 +197,15 @@ There are many [different shapes of configuration file](/docs/config-shapes.md).
 
 #### Configuration API
 
-{% include "snippets/config/config-templatelangs-api.njk" %}
+{% set codeContent %}
+export default function (eleventyConfig) {
+	eleventyConfig.setTemplateFormats("html,liquid,njk");
+
+	// Or:
+	// eleventyConfig.setTemplateFormats([ "html", "liquid", "njk" ]);
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Enable Quiet Mode to Reduce Console Noise
 
@@ -204,7 +217,12 @@ In order to maximize user-friendliness to beginners, Eleventy will show each fil
 | _Valid Options_         | `true` or `false` |
 | _Command Line Override_ | `--quiet`         |
 
-{% include "snippets/config/config-quiet.njk" %}
+{% set codeContent %}
+export default function (eleventyConfig) {
+	eleventyConfig.setQuietMode(true);
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 The command line will override any setting in configuration:
 
@@ -242,7 +260,13 @@ npx @11ty/eleventy --pathprefix=eleventy-base-blog
 | _Valid Options_         | String                |
 | _Command Line Override_ | _None_                |
 
-{% include "snippets/config/config-databasename.njk" %}
+{% set codeContent %}
+export default function (eleventyConfig) {
+	// Looks for index.json and index.11tydata.json instead of using folder names
+	eleventyConfig.setDataFileBaseName("index");
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Change File Suffix for Data Files
 
@@ -261,22 +285,33 @@ This feature can also be used to disable Template and Directory Data Files altog
 
 Read more about [Template and Directory Specific Data Files](/docs/data-template-dir/).
 
-{% include "snippets/config/config-datasuffix.njk" %}
+{% set codeContent %}
+export default function (eleventyConfig) {
+	// e.g. file.json and file.11tydata.json
+	eleventyConfig.setDataFileSuffixes([".11tydata", ""]);
+
+	// e.g. file.11tydata.json
+	eleventyConfig.setDataFileSuffixes([".11tydata"]);
+
+	// No data files are used.
+	eleventyConfig.setDataFileSuffixes([]);
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 <details>
 <summary><em><strong>Backwards Compatibility Note</strong></em> (<code>{{ "2.0.0-canary.19" | coerceVersion }}</code>)</summary>
 
 Prior to {{ "2.0.0-canary.19" | coerceVersion }} this feature was exposed using a `jsDataFileSuffix` property in the configuration return object. When the `setDataFileSuffixes` method has not been used, Eleventy maintains backwards compatibility for old projects by using this property as a fallback.
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	return {
 		jsDataFileSuffix: ".11tydata",
 	};
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 </details>
 
@@ -295,14 +330,27 @@ Similar to Transforms, Linters are provided to analyze a template’s output wit
 | _Valid Options_         | Callback function |
 | _Command Line Override_ | _None_            |
 
-{% include "snippets/config/config-linters.njk" %}
+{% set codeContent %}
+export default function (eleventyConfig) {
+	// Sync or async
+	eleventyConfig.addLinter("linter-name", async function (content) {
+		console.log(this.inputPath);
+		console.log(this.outputPath);
+
+		// Eleventy 2.0+ has full access to Eleventy’s `page` variable
+		console.log(this.page.inputPath);
+		console.log(this.page.outputPath);
+	});
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 <details>
 <summary><strong>Linters Example: Use Inclusive Language</strong></summary>
 
 Inspired by the [CSS Tricks post _Words to Avoid in Educational Writing_](https://css-tricks.com/words-avoid-educational-writing/), this linter will log a warning to the console when it finds a trigger word in a markdown file.
 
-This example has been packaged as a plugin in [`eleventy-plugin-inclusive-language`](https://github.com/11ty/eleventy-plugin-inclusive-language).
+This example has been packaged as a plugin in [`eleventy-plugin-inclusive-language`](/docs/plugins/inclusive-language.md).
 
 {% codetitle "eleventy.config.js" %}
 
@@ -340,7 +388,13 @@ export default function (eleventyConfig) {
 
 A `Set` of [`lodash` selectors](https://lodash.com/docs/4.17.15#get) that allow you to include data from the data cascade in the output from `--to=json`, `--to=ndjson`.
 
-{% include "snippets/config/config-datafilters.njk" %}
+{% set codeContent %}
+export default function (eleventyConfig) {
+	eleventyConfig.dataFilterSelectors.add("page");
+	eleventyConfig.dataFilterSelectors.delete("page");
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 This will now include a `data` property in your JSON output that includes the `page` variable for each matching template.
 
@@ -348,7 +402,13 @@ This will now include a `data` property in your JSON output that includes the `p
 
 This may enable some extra autocomplete features in your IDE (where supported).
 
-{% include "snippets/config/config-typedef.njk" %}
+{% set codeContent %}
+/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
+export default function (eleventyConfig) {
+	// …
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 - Related: [GitHub #2091](https://github.com/11ty/eleventy/pull/2091) and [GitHub #3097](https://github.com/11ty/eleventy/issues/3097)
 

@@ -218,7 +218,15 @@ To sort descending in your template, you can use a filter to reverse the sort or
 
 This applies any time you use <code>reverse</code>, for example in a custom shortcode:
 
-{% include "snippets/collections/reverse.njk" %}
+{% set codeContent %}
+export default function (eleventyConfig) {
+	eleventyConfig.addShortcode("myShortcode", function (aCollection){
+	  // WARNING
+	  aCollection.reverse();
+	})
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 Instead of `reverse` use:
 

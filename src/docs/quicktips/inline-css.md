@@ -16,7 +16,16 @@ This tip works well on small sites that don’t have a lot of CSS. Inlining your
 
 Add the following `cssmin` filter to your Eleventy Config file:
 
-{% include "snippets/quicktips/minify-css.njk" %}
+{% set codeContent %}
+import CleanCSS from "clean-css";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addFilter("cssmin", function (code) {
+		return new CleanCSS({}).minify(code).styles;
+	});
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ## Create your CSS File
 
@@ -57,5 +66,18 @@ _Contributed by [Zach Green](https://github.com/zgreen)_
 
 You can also inline minified CSS in a [JavaScript template](/docs/languages/javascript/). This technique does not use filters, and instead uses `async` functions:
 
-{% include "snippets/quicktips/minify-css-11tyjs.njk" %}
+{% set codeContent %}
+import fs from "node:fs/promises";
+import path from "node:path";
+import CleanCSS from "clean-css";
+
+export default async function (data) {
+	return `<style>
+	  ${await fs
+			.readFile(path.resolve(__dirname, "./sample.css"))
+			.then((data) => new CleanCSS().minify(data).styles)}
+	</style>`;
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 

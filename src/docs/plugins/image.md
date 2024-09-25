@@ -600,7 +600,27 @@ If you want to try the utility out and not write any files (useful for testing),
 
 If you have an advanced use case and don’t want to use our methods to generate the image markup, you can do it yourself!
 
-{% include "snippets/image/diy.njk" %}
+{% set codeContent %}
+import Image from "@11ty/eleventy-img";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addShortcode("image", async function (src, alt) {
+		if (alt === undefined) {
+			// You bet we throw an error on missing alt (alt="" works okay)
+			throw new Error(`Missing \`alt\` on myImage from: ${src}`);
+		}
+
+		let metadata = await Image(src, {
+			widths: [600],
+			formats: ["jpeg"],
+		});
+
+		let data = metadata.jpeg[metadata.jpeg.length - 1];
+		return `<img src="${data.url}" width="${data.width}" height="${data.height}" alt="${alt}" loading="lazy" decoding="async">`;
+	});
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Process images as a Custom Template
 

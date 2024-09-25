@@ -16,7 +16,23 @@ This tip works great if you have small JS utilities that you’d like to have in
 
 Add the following `jsmin` filter to your Eleventy Config file:
 
-{% include "snippets/quicktips/minify-js.njk" %}
+{% set codeContent %}
+import { minify } from "terser";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addFilter("jsmin", async function (code, callback) {
+		try {
+			const minified = await minify(code);
+			callback(null, minified.code);
+		} catch (err) {
+			console.error("Terser error: ", err);
+			// Fail gracefully.
+			callback(null, code);
+		}
+	});
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ## Create your JavaScript File
 

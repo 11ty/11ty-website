@@ -27,7 +27,22 @@ npm install @11ty/eleventy-fetch
 
 This code is currently in use on the Eleventy web site to display GitHub stars in the footer. Check out the [full source code](https://github.com/11ty/11ty-website/blob/768b97fb27543e3139fe53dfb19cdeafb12e3d1c/_data/github.js).
 
-{% include "snippets/quicktips/fetch-github-stars-cached.njk" %}
+{% set codeContent %}
+import Fetch from "@11ty/eleventy-fetch";
+
+export default async function () {
+	// https://developer.github.com/v3/repos/#get
+	let json = await Fetch("https://api.github.com/repos/11ty/eleventy", {
+		duration: "1d", // 1 day
+		type: "json", // also supports "text" or "buffer"
+	});
+
+	return {
+		stargazers: json.stargazers_count,
+	};
+};
+{% endset %}
+{% include "snippets/esmCjsTabs.njk" %}
 
 {% callout "info" %}<p>Take note that if you’re using this on a hosted build server, it may not maintain updates to the cache and will likely re-run every time. You can learn how to <a href="/docs/deployment/#persisting-cache"><strong>persist this cache</strong> on your build server</a>.</p>
 
@@ -37,5 +52,29 @@ This code is currently in use on the Eleventy web site to display GitHub stars i
 
 Wrap the above code in a nice `try catch` allows you to return a fake data set if the very first request fails (no expired cache entry is available). <strong>Note that if there is already an expired cache entry available, we use that instead.</strong>
 
+{% set codeContent %}
+import Fetch from "@11ty/eleventy-fetch";
 
-{% include "snippets/quicktips/fetch-github-stars-cachefail.njk" %}
+export default async function () {
+	try {
+		// https://developer.github.com/v3/repos/#get
+		let json = await EleventyFetch(
+			"https://api.github.com/repos/11ty/eleventy",
+			{
+				duration: "1d", // 1 day
+				type: "json", // also supports "text" or "buffer"
+			}
+		);
+
+		return {
+			stargazers: json.stargazers_count,
+		};
+	} catch (e) {
+		console.log("Failed getting GitHub stargazers count, returning 0");
+		return {
+			stargazers: 0,
+		};
+	}
+};
+{% endset %}
+{% include "snippets/esmCjsTabs.njk" %}

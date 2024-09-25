@@ -20,7 +20,24 @@ This is a bit different from our client-side implementation because this data is
 - It’s better to use the [Eleventy Fetch utility](/docs/plugins/fetch.md) instead, which will cache your fetch results to avoid hitting the GitHub API on every build.
 	- Related [Quick Tip: Cache Data Requests](/docs/quicktips/cache-api-requests.md)
 
-{% include "snippets/quicktips/fetch-github-stars.njk" %}
+<div class="codetitle codetitle-right-md">_data/github.js</div>
+{% set codeContent %}
+import fetch from "node-fetch";
+
+export default async function () {
+	console.log("Fetching new github stargazers count…");
+
+	// GitHub API: https://developer.github.com/v3/repos/#get
+	let res = await fetch("https://api.github.com/repos/11ty/eleventy");
+	let json = await res.json();
+
+	// prune the data to return only what we want
+	return {
+		stargazers: json.stargazers_count,
+	};
+};
+{% endset %}
+{% include "snippets/esmCjsTabs.njk" %}
 
 Now in your templates you can output the stargazers count with:
 

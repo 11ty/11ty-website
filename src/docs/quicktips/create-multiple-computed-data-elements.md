@@ -12,4 +12,15 @@ Assume you have data files named `links.json` and `copyrights.json`, and you onl
 
 The corresponding `eleventyComputed.js` file contents can look like the following:
 
-{% include "snippets/quicktips/eleventycomputed.njk" %}
+<div class="codetitle codetitle-right-md">_data/eleventyComputed.js</div>
+{% set codeContent %}
+export default {
+	myCopyrights: (data) => {
+		return data.copyrights.feed.entry;
+	},
+	myLinks: (data) => {
+		return data.links.feed.entry;
+	},
+};
+{% endset %}
+{% include "snippets/esmCjsTabs.njk" %}

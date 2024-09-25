@@ -220,7 +220,15 @@ permalink: "index.json"
 
 {% addedin "2.0.0-canary.9" %}Want to change `resource.md` to write to `/resource.html` instead of `/resource/index.html`? This uses [global data via the configuration API](/docs/data-global-custom.md) but you could set this using a [Global Data file](/docs/data-global.md) too.
 
-{% include "snippets/permalinks/global.njk" %}
+{% set codeContent %}
+export default function(eleventyConfig) {
+	eleventyConfig.addGlobalData("permalink", () => {
+		return (data) =>
+			`${data.page.filePathStem}.${data.page.outputFileExtension}`;
+	});
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 {% callout "warn", "md" %}When using this approach for URLs _without_ trailing slashes (file `/resource.html` ▶︎ url `/resource`), please do note that using trailing slashes with `index.html` files (file `/resource/index.html` ▶︎ url `/resource/`) is a bit friendlier on various JAMstack hosting providers. You may encounter unexpected 404 errors—make [sure you study up on how this works and test appropriately!](https://www.zachleat.com/web/trailing-slash/#results-table)!{% endcallout %}
 
@@ -230,7 +238,15 @@ Let's say you have a directory of content templates like `recipes/cookies.md` an
 
 Because of the order of the [data cascade](/docs/data-cascade/) the title of a content template is not immediately available in the directory data file. However, `permalink` is a special case of implied [Computed Data](docs/data-computed/) and will have this data available. Inside of your directory data file `recipes.11tydata.js` you could write this:
 
-{% include "snippets/permalinks/advanced.njk" %}
+<div class="codetitle codetitle-right-md">recipes.11tydata.js</div>
+{% set codeContent %}
+export default {
+	permalink: function ({ title }) {
+		return `/recipes/${this.slugify(title)}`;
+	},
+};
+{% endset %}
+{% include "snippets/esmCjsTabs.njk" %}
 
 The title will be [slugified](/docs/filters/slugify/) to be URL-friendly.
 
@@ -251,7 +267,19 @@ Say we want two or more files on the file system (e.g. `about.en.html` and `abou
 
 This example matches any `.xx.html` URL:
 
-{% include "snippets/permalinks/i18n.njk" %}
+{% set codeContent %}
+export default function (eleventyConfig) {
+	eleventyConfig.addUrlTransform(({ url }) => {
+		// `url` is guaranteed to be a string here even if you’re using `permalink: false`
+		if (url.match(/\.[a-z]{2}\.html$/i)) {
+			return url.slice(0, -1 * ".en.html".length) + "/";
+		}
+
+		// Returning undefined skips the url transform.
+	});
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 This approach unlocks functionality for the default build mode of Eleventy but you could also achieve some of the same functionality using the [Edge](/docs/plugins/edge/) or [Serverless plugins](/docs/plugins/serverless/).
 
@@ -274,8 +302,14 @@ dynamicPermalink: false
 
 Eleventy includes a global configuration option to disable dynamic templating altogether. This will save a few template renders and is probably marginally faster, too.
 
+{% set codeContent %}
+export default function (eleventyConfig) {
+	// Enabled by default
+	eleventyConfig.setDynamicPermalinks(false);
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
-{% include "snippets/permalinks/dynperm.njk" %}
 
 ### Ignore the output directory {% addedin "0.1.4" %}
 

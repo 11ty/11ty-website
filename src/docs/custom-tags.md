@@ -26,7 +26,27 @@ But, after all that, you can still add a Custom Tag using the [Configuration API
 
 - [LiquidJS: Tags](https://liquidjs.com/tutorials/register-filters-tags.html)
 
-{% include "snippets/config/liquidtags.njk" %}
+{% set codeContent %}
+export default function (eleventyConfig) {
+{% raw %}  // Usage: {% uppercase myVar %} where myVar has a value of "alice"
+  // Usage: {% uppercase "alice" %}{% endraw %}
+  eleventyConfig.addLiquidTag("uppercase", function (liquidEngine) {
+    return {
+      parse: function (tagToken, remainingTokens) {
+        this.str = tagToken.args; // myVar or "alice"
+      },
+      render: async function (scope, hash) {
+        // Resolve variables
+        var str = await this.liquid.evalValue(this.str, scope); // "alice"
+
+        // Do the uppercasing
+        return str.toUpperCase(); // "ALICE"
+      },
+    };
+  });
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 See all of the [built-in tag implementations for LiquidJS](https://liquidjs.com/tags/overview.html).
 
@@ -34,4 +54,31 @@ See all of the [built-in tag implementations for LiquidJS](https://liquidjs.com/
 
 - [Nunjucks: Custom Tags](https://mozilla.github.io/nunjucks/api.html#custom-tags)
 
-{% include "snippets/config/nunjuckstags.njk" %}
+{% set codeContent %}
+export default function (eleventyConfig) {
+{% raw %}  // Usage: {% uppercase myVar %} where myVar has a value of "alice"
+  // Usage: {% uppercase "alice" %}{% endraw %}
+  eleventyConfig.addNunjucksTag("uppercase", function (nunjucksEngine) {
+    return new (function () {
+      this.tags = ["uppercase"];
+
+      this.parse = function (parser, nodes, lexer) {
+        var tok = parser.nextToken();
+
+        var args = parser.parseSignature(null, true);
+        parser.advanceAfterBlockEnd(tok.value);
+
+        return new nodes.CallExtensionAsync(this, "run", args);
+      };
+
+      this.run = function (context, myStringArg, callback) {
+        let ret = new nunjucksEngine.runtime.SafeString(
+          myStringArg.toUpperCase()
+        );
+        callback(null, ret);
+      };
+    })();
+  });
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}

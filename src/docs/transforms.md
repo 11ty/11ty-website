@@ -56,6 +56,26 @@ eleventyConfig.addTransform("second", () => {});
 
 ### Minify HTML Output
 
-{% include "snippets/config/transforms.njk" %}
+{% set codeContent %}
+import htmlmin from "html-minifier-terser";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addTransform("htmlmin", function (content) {
+		if ((this.page.outputPath || "").endsWith(".html")) {
+			let minified = htmlmin.minify(content, {
+				useShortDoctype: true,
+				removeComments: true,
+				collapseWhitespace: true,
+			});
+
+			return minified;
+		}
+
+		// If not an HTML output, return content as-is
+		return content;
+	});
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 Note that `html-minifier-terser` has a [significant number of options](https://github.com/terser/html-minifier-terser?tab=readme-ov-file#options-quick-reference), most of which are disabled by default.

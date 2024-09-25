@@ -19,14 +19,34 @@ Note that you can also add [Custom Front Matter Formats](/docs/data-frontmatter-
 
 ## Usage
 
-{% include "snippets/cascade/custom.njk" %}
+{% set codeContent %}
+export default function (eleventyConfig) {
+	// Receives file contents, return parsed data
+	eleventyConfig.addDataExtension("yml,yaml", (contents, filePath) => {
+		return {};
+	});
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 - {% addedin "2.0.0-canary.10" %} Pass a comma-separated list of extensions.
 - {% addedin "2.0.0-canary.19" %} `filePath` was added as a second argument.
 
 ### Usage with Options {% addedin "2.0.0-canary.10" %}
 
-{% include "snippets/cascade/customopts.njk" %}
+{% set codeContent %}
+export default function (eleventyConfig) {
+	// or with options (new in 2.0)
+	eleventyConfig.addDataExtension("fileExtension", {
+		parser: (contents, filePath) => ({}),
+
+		// defaults are shown:
+		read: true,
+		encoding: "utf8",
+	});
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 - `parser`: the callback function used to parse the data. The first argument is the data file’s contents (unless `read: false`). The second argument is the file path {% addedin "2.0.0-canary.19" %}.
 - `read` (default: `true`): use `read: false` to change the parser function’s first argument to be a file path string instead of file contents.
@@ -38,17 +58,38 @@ Note that you can also add [Custom Front Matter Formats](/docs/data-frontmatter-
 
 Here we’re using the [`js-yaml` package](https://www.npmjs.com/package/js-yaml). Don’t forget to `npm install js-yaml`.
 
-{% include "snippets/cascade/custom-yaml.njk" %}
+{% set codeContent %}
+import yaml from "js-yaml";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### TOML
 
 Here we’re using the [`@iarna/toml` package](https://www.npmjs.com/package/@iarna/toml). Don’t forget to `npm install @iarna/toml`.
 
-{% include "snippets/cascade/custom-toml.njk" %}
+{% set codeContent %}
+import toml from "@iarna/toml";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addDataExtension("toml", (contents) => toml.parse(contents));
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Adding a custom JSON file extension
 
-{% include "snippets/cascade/custom-json.njk" %}
+{% set codeContent %}
+export default function (eleventyConfig) {
+	eleventyConfig.addDataExtension("geojson", (contents) =>
+		JSON.parse(contents)
+	);
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Feed EXIF image data into the Data Cascade
 
@@ -56,7 +97,26 @@ Here we’re using the [`@iarna/toml` package](https://www.npmjs.com/package/@ia
 
 Note that the second argument is an object with a `parser` function.
 
-{% include "snippets/cascade/custom-exif.njk" %}
+{% set codeContent %}
+import exifr from "exifr";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addDataExtension("png,jpeg", {
+		parser: async (file) => {
+			let exif = await exifr.parse(file);
+
+			return {
+				exif,
+			};
+		},
+
+		// Using `read: false` changes the parser argument to
+		// a file path instead of file contents.
+		read: false,
+	});
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 - Example using a _template data file_:
   - Given `my-blog-post.md` and `my-blog-post.jpeg` then `exif` will be available for use in `my-blog-post.md` (e.g. `{% raw %}{{ exif | log }}{% endraw %}`)
@@ -69,7 +129,19 @@ Note that in the [data cascade](/docs/data-cascade/) there is a specific conflic
 
 If you add multiple file extensions, the latter ones take priority over the earlier ones. In the following example, if there is ever conflicting data between `*.toml` and `*.yaml` files, the `yaml` file will take precedence.
 
-{% include "snippets/cascade/custom-order.njk" %}
+{% set codeContent %}
+import toml from "@iarna/toml";
+import yaml from "js-yaml";
+
+export default function (eleventyConfig) {
+	// Lower priority
+	eleventyConfig.addDataExtension("toml", (contents) => toml.parse(contents));
+
+	// Higher priority
+	eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Example
 
