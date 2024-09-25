@@ -208,3 +208,16 @@ These videos also provide some additional context as to why this is important:
 ## Environment Variables on `process.env`
 
 - Read more about [Eleventy-supplied environment variables](/docs/environment-vars/#eleventy-supplied).
+
+## Frozen Data
+
+Starting in Eleventy 3.0, the `pkg`, `eleventy`, `page`, `content`, and `collections` properties are now frozen from external modification to prevent accidental overrides interfering with Eleventy internals.
+
+You can temporarily opt-out of the behavior using:
+
+{% set codeContent %}
+export default function(eleventyConfig) {
+	eleventyConfig.setFreezeReservedData(false);
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
