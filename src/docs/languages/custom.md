@@ -20,10 +20,8 @@ Eleventy now allows the addition of custom template extensions, meaning that you
 
 `clowd` is a pretend templating language that we’ve just created. It uses the `.clowd` file extension. The purpose of the language is to translate any occurrences of the word `cloud` to the word `butt` instead.
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	// Add as a valid extension to process
 	// Alternatively, add this to the list of formats you pass to the `--formats` CLI argument
 	eleventyConfig.addTemplateFormats("clowd");
@@ -40,7 +38,8 @@ module.exports = function (eleventyConfig) {
 		},
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 {% callout "info", "md-block" -%}
 Situations where you might want to use `addExtension` but probably shouldn’t:
@@ -53,13 +52,11 @@ Situations where you might want to use `addExtension` but probably shouldn’t:
 
 For a more realistic sample, here’s an example of Eleventy looking for all `.scss` files in a project’s input directory to process them to your output directory.
 
-{% codetitle ".eleventy.js" %}
-
-```js
+{% set codeContent %}
 // Don’t forget to `npm install sass`!
-const sass = require("sass");
+import sass from "sass";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addTemplateFormats("scss");
 
 	// Creates the extension for use
@@ -77,7 +74,8 @@ module.exports = function (eleventyConfig) {
 		},
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 We’re using `compileString` from the Sass library above for speed benefits over their asynchronous counterparts (reported by [the Sass documentation](https://sass-lang.com/documentation/js-api#usage)).
 
@@ -89,20 +87,11 @@ The above extension would process a file located at `subdir/test.scss` to the ou
 
 You can pass in both the file’s `inputPath` and the Eleventy includes folder to provide a set of directories to look for when using Sass’ `@use`, `@forward`, and `@import` features. Read more about [`loadPaths` on the Sass documentation](https://sass-lang.com/documentation/js-api/interfaces/Options#loadPaths).
 
-{% codetitle ".eleventy.js" %}
+<!-- TODO -->
+{% codetitle "eleventy.config.js" %}
 
-```js/10,11,15-18
-const sass = require("sass");
-const path = require("node:path");
-
-module.exports = function(eleventyConfig) {
-   // add as a valid template language to process, e.g. this adds to --formats
-  eleventyConfig.addTemplateFormats("scss");
-
-  eleventyConfig.addExtension("scss", {
-    outputFileExtension: "css", // optional, default: "html"
-
-    // can be an async function
+```js/1,5-8
+		// some configuration truncated …
     compile: function (inputContent, inputPath) {
       let parsed = path.parse(inputPath);
 
@@ -117,8 +106,6 @@ module.exports = function(eleventyConfig) {
         return result.css;
       };
     }
-  });
-};
 ```
 
 Make special note of the `this.config.dir.includes` folder above. Declaring your includes folder means that you don’t need to prefix any file paths with the includes folder name (e.g. `_includes/_code.scss` can be consumed with `@use "code"`).
@@ -177,8 +164,8 @@ This functionality is more-or-less identical to the [`compileOptions` `permalink
 
 {% addedin "2.0.0-canary.19" %} If `key` is the _only_ property in the options object, we treat the extension as an alias and use the existing upstream template syntax.
 
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	eleventyConfig.addExtension("11ty.jsx", {
 		key: "11ty.js",
 	});
@@ -188,7 +175,8 @@ module.exports = function (eleventyConfig) {
 		key: "11ty.js",
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 You can read about the above approach (and see more detailed examples of its usage) on the [TypeScript](/docs/languages/typescript/), [JSX](/docs/languages/jsx/), or [MDX](/docs/languages/mdx/) documentation pages.
 
@@ -200,10 +188,10 @@ You can read about the above approach (and see more detailed examples of its usa
 
 In these example, we switch from the Eleventy default `markdown-it` to `marked` for markdown processing.
 
-```js
-const { marked } = require("marked");
+{% set codeContent %}
+import { marked } from "marked";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addExtension("md", {
 		compile: function (inputContent, inputPath) {
 			let html = marked.parse(inputContent);
@@ -220,7 +208,8 @@ module.exports = function (eleventyConfig) {
 		},
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 Note that overriding `md` opts-out of the default pre-processing by another template language [Markdown Files](/docs/config/#default-template-engine-for-markdown-files). As mentioned elsewhere, improvements to add additional hooks for preprocessing will likely come later.
 
@@ -245,11 +234,12 @@ You can override a template language once. Any attempts to override an more than
 - a render function (also async-friendly)
 
 ```js
-compile: async (inputContent, inputPath) => {
-	return async () => {
-		return inputContent;
-	};
-};
+	// some configuration truncated …
+	compile: async (inputContent, inputPath) => {
+		return async () => {
+			return inputContent;
+		};
+	},
 ```
 
 The render function is passed the merged data object (i.e. the full Data Cascade available inside templates). The render function returned from `compile` is called once per output file generated (one for basic templates and more for [paginated templates](/docs/pagination/)).
@@ -271,11 +261,10 @@ An async-friendly function that runs _once_ (no matter how many files use the ex
 Note that `init` will **not** re-run on watch/serve mode. If you’d like something that runs before _every_ build, use the [`eleventy.before` event](/docs/events/#eleventy.before).
 
 ```js
-{
+	// some configuration truncated …
   init: async function() {
     // has access to current configuration settings in `this.config`
   },
-}
 ```
 
 ### `read`
@@ -285,9 +274,8 @@ Note that `init` will **not** re-run on watch/serve mode. If you’d like someth
 Set to `false` to opt out of reading the contents of files from the file system. This is useful if you’re using an external bundler to read the files (e.g. the Vue plugin uses rollup to read and compile `.vue` files).
 
 ```js
-{
+	// some configuration truncated …
   read: false,
-}
 ```
 
 Use with `compileOptions.setCacheKey` to get more fine-grained control over how the template is cached.
@@ -305,23 +293,21 @@ Controls if and how additional data should be retrieved from a JavaScript object
 Notably, this is separate from (in addition to) front matter parsing (which requires `read: true`). As an example, this is used by the Vue plugin to retrieve the return from the Vue `data()` function in the Vue component to feed back into the Data Cascade.
 
 ```js
-{
-	// this is the default
-	getData: false; // no additional data is used
-}
+	// some configuration truncated …
+	// `false` is the default
+	getData: false, // no additional data is used
 ```
 
 ```js
-{
+	// some configuration truncated …
   getData: async function(inputPath) {
     // DIY, this object will be merged into data cascade
     return {};
   },
-}
 ```
 
 ```js
-{
+	// some configuration truncated …
   // get the `data` property from the instance.
   getData: ["data"],
   // * `getData: true` is aliased to ["data"]
@@ -332,7 +318,6 @@ Notably, this is separate from (in addition to) front matter parsing (which requ
     let instance = doSomethingMyselfToFetchAJavaScriptObject(inputPath);
     return instance;
   }
-}
 ```
 
 <details>
@@ -341,7 +326,7 @@ Notably, this is separate from (in addition to) front matter parsing (which requ
 If the JavaScript object returned from `getInstanceFromInputPath` has an `eleventyDataKey` property, this is used to override the keys returned from the `getData` Array for this specific instance only. Anything you can pass into a [`new Set()` constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/Set) works here (Array, Map, another Set).
 
 ```js
-{
+	// some configuration truncated …
   // if getData is `false`, `eleventyDataKey` will not be used.
   getData: true,
 
@@ -360,8 +345,7 @@ If the JavaScript object returned from `getInstanceFromInputPath` has an `eleven
         availableOnGlobalData: 123
       }
     }
-  }
-}
+  },
 ```
 
 In the above example, the data cascade will include a top-level variable `availableOnGlobalData` with a value of `123`. Using `eleventyDataKey` overrides any keys set in `getData`, which means (for this instance) `data` will be ignored and `notAvailableOnGlobalData` will not be present.
@@ -377,7 +361,7 @@ In the above example, the data cascade will include a top-level variable `availa
 This has the same signature as the `compile` function and expects a reusable `render` function to be returned.
 
 ```js
-{
+	// some configuration truncated …
   compileOptions: {
     permalink: function(contents, inputPath) {
       return (data) => {
@@ -385,8 +369,7 @@ This has the same signature as the `compile` function and expects a reusable `re
         // Or `return;` (return undefined) to fallback to default behavior
       }
     }
-  }
-}
+  },
 ```
 
 - Don’t compile permalink strings in the parent template language
@@ -402,12 +385,10 @@ This has the same signature as the `compile` function and expects a reusable `re
 
 This provides another way to implement Sass’ underscore convention to skip writing the file to the output directory:
 
-{% codetitle ".eleventy.js" %}
+{% codetitle "eleventy.config.js" %}
 
 ```js
-// … some configuration truncated
-
-{
+	// … some configuration truncated
   compileOptions: {
     permalink: function(contents, inputPath) {
       let parsed = path.parse(inputPath);
@@ -415,8 +396,7 @@ This provides another way to implement Sass’ underscore convention to skip wri
         return false;
       }
     }
-  }
-}
+  },
 ```
 
 #### `compileOptions.spiderJavaScriptDependencies`
@@ -441,7 +421,7 @@ You can also granularly control the caching key using a `getCacheKey` callback. 
 <summary><strong>Expand to see the default <code>getCacheKey</code> implementation</strong> (you can override this!)</summary>
 
 ```js
-{
+	// some configuration truncated …
   read: false,
   compileOptions: {
     cache: true,
@@ -457,8 +437,7 @@ You can also granularly control the caching key using a `getCacheKey` callback. 
       //   return false;
       // }
     }
-  }
-}
+  },
 ```
 
 </details>
@@ -475,7 +454,7 @@ A callback used for advanced control of template dependency matching. This deter
 <summary><strong>Expand to see the default `isIncrementalMatch` implementation</strong> (you can override this!)</summary>
 
 ```js
-{
+	// some configuration truncated …
   // Called once for each template (matching this custom template’s file extension) in your project.
   isIncrementalMatch: function(modifiedFile) {
     // is modifiedFile relevant to this.inputPath?
@@ -493,8 +472,7 @@ A callback used for advanced control of template dependency matching. This deter
 
     // Skip it
     return false;
-  }
-}
+  },
 ```
 
 </details>

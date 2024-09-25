@@ -20,25 +20,28 @@ You can override a `.ejs` file’s template engine. Read more at [Changing a Tem
 
 See “Options” on the [EJS home page](https://ejs.co/).
 
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	eleventyConfig.setEjsOptions({
 		// use <? ?> instead of <% %>
 		delimiter: "?",
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Optional: Set your own Library instance {% addedin "0.3.0" %}
 
 As an escape mechanism for advanced usage, pass in your own instance of the EJS library using the Configuration API.
 
-```js
-module.exports = function (eleventyConfig) {
-	let ejs = require("ejs");
+{% set codeContent %}
+import ejs from "ejs";
+
+export default function (eleventyConfig) {
 	eleventyConfig.setLibrary("ejs", ejs);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ## Supported Features
 

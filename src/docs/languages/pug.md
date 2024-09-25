@@ -22,22 +22,25 @@ You can override a `.pug` file’s template engine. Read more at [Changing a Tem
 
 Set compile/render options using the Configuration API. See all [Pug options](https://pugjs.org/api/reference.html#options).
 
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	eleventyConfig.setPugOptions({ debug: true });
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Optional: Set your own Library instance {% addedin "0.3.0" %}
 
 As an escape mechanism for advanced usage, pass in your own instance of the Pug library using the Configuration API.
 
-```js
-module.exports = function (eleventyConfig) {
-	let pug = require("pug");
+{% set codeContent %}
+import pug from "pug";
+
+export default function (eleventyConfig) {
 	eleventyConfig.setLibrary("pug", pug);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ## Supported Features
 

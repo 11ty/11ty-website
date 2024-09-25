@@ -30,7 +30,7 @@ A plugin to use [Vite](https://vitejs.dev/) with Eleventy 2.0+.
 npm install @11ty/eleventy-plugin-vite
 ```
 
-{% set configCodeContent %}
+{% set codeContent %}
 import EleventyVitePlugin from "@11ty/eleventy-plugin-vite";
 
 export default function (eleventyConfig) {
@@ -45,7 +45,7 @@ export default function (eleventyConfig) {
 
 View the [full list of Vite Configuration options](https://vitejs.dev/config/).
 
-{% set configCodeContent %}
+{% set codeContent %}
 import EleventyVitePlugin from "@11ty/eleventy-plugin-vite";
 
 export default function (eleventyConfig) {

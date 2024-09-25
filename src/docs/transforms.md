@@ -11,7 +11,7 @@ Transforms can modify a template’s output. For example, use a transform to for
 
 {% callout "info", "md" %}The provided transform function **must** return the original or transformed content.{% endcallout %}
 
-{% set configCodeContent %}
+{% set codeContent %}
 export default function(eleventyConfig) {
 	// Can be sync or async
 	eleventyConfig.addTransform("transform-name", async function (content) {

@@ -20,12 +20,14 @@ You can override a `.mustache` file’s template engine. Read more at [Changing 
 
 As an escape mechanism for advanced usage, pass in your own instance of the Mustache library using the Configuration API.
 
-```js
-module.exports = function (eleventyConfig) {
-	let mustache = require("mustache");
+{% set codeContent %}
+import mustache from "mustache";
+
+export default function (eleventyConfig) {
 	eleventyConfig.setLibrary("mustache", mustache);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ## Supported Features
 

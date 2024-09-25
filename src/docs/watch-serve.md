@@ -20,7 +20,7 @@ Starting in Eleventy v2.0, we bundle a [dedicated Development Server](/docs/dev-
 
 The `addWatchTarget` config method allows you to manually add a file or directory for Eleventy to watch. When the file or the files in this directory change Eleventy will trigger a build. This is useful if Eleventy is not directly aware of any external file dependencies.
 
-{% set configCodeContent %}
+{% set codeContent %}
 export default function(eleventyConfig) {
 	eleventyConfig.addWatchTarget("./src/scss/");
 };
@@ -43,7 +43,7 @@ Previously, [the configuration API ignores for template processing](/docs/ignore
 
 New in {{ "2.0.0-canary.18" | coerceVersion }}, watch target ignores now have their own dedicated API:
 
-{% set configCodeContent %}
+{% set codeContent %}
 export default function(eleventyConfig) {
 	// Do not rebuild when README.md changes (You can use a glob here too)
 	eleventyConfig.watchIgnores.add("README.md");
@@ -60,7 +60,7 @@ The `watchIgnores` Set starts with a default `**/node_modules/**` entry.
 
 When in `--watch` mode, Eleventy will spider the dependencies of your [JavaScript Templates](/docs/languages/javascript/) (`.11ty.js`), [JavaScript Data Files](/docs/data-js/) (`.11tydata.js` or `_data/**/*.js`), or Configuration File (usually `eleventy.config.js`) to watch those files too. Files in `node_modules` directories are ignored. This feature is _enabled by default_.
 
-{% set configCodeContent %}
+{% set codeContent %}
 export default function(eleventyConfig) {
 	// Enabled by default
 	eleventyConfig.setWatchJavaScriptDependencies(false);
@@ -72,7 +72,7 @@ export default function(eleventyConfig) {
 
 A hardcoded amount of time Eleventy will wait before triggering a new build when files have changes during `--watch` or `--serve` modes. You probably won’t need this, but is useful in some edge cases with other task runners (Gulp, Grunt, etc).
 
-{% set configCodeContent %}
+{% set codeContent %}
 export default function(eleventyConfig) {
 	// default is 0
 	eleventyConfig.setWatchThrottleWaitTime(100); // in milliseconds
@@ -84,7 +84,7 @@ export default function(eleventyConfig) {
 
 Advanced [`chokidar` options](https://github.com/paulmillr/chokidar) can be defined using the `setChokidarConfig` configuration API method:
 
-{% set configCodeContent %}
+{% set codeContent %}
 export default function(eleventyConfig) {
 	eleventyConfig.setChokidarConfig({
 		usePolling: true,

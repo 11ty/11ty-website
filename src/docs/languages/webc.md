@@ -75,7 +75,7 @@ npm install @11ty/eleventy-plugin-webc
 
 To add support for `.webc` files in Eleventy, add the plugin in your Eleventy configuration file:
 
-{% set configCodeContent %}
+{% set codeContent %}
 import pluginWebc from "@11ty/eleventy-plugin-webc";
 
 export default function(eleventyConfig) {
@@ -89,7 +89,7 @@ _When using CommonJS remember that you’re only allowed one `module.exports` in
 <details>
 <summary><strong>Full options list</strong> (defaults shown)</summary>
 
-{% set configCodeContent %}
+{% set codeContent %}
 import pluginWebc from "@11ty/eleventy-plugin-webc";
 
 export default function (eleventyConfig) {
@@ -170,7 +170,7 @@ A few drawbacks to the transform method:
 <details>
 <summary>The transform is disabled by default, you will need to use the <code>useTransform</code> option to enable it.</summary>
 
-{% set configCodeContent %}
+{% set codeContent %}
 import pluginWebc from "@11ty/eleventy-plugin-webc";
 
 export default function (eleventyConfig) {
@@ -973,7 +973,7 @@ This includes [`url`, `slugify`, `log`, and others](/docs/filters/#eleventy-prov
 
 #### Supply your own Helper
 
-{% set configCodeContent %}
+{% set codeContent %}
 export default function (eleventyConfig) {
 	// via Universal Filter
 	eleventyConfig.addFilter("alwaysRed", () => "Red");
@@ -1135,7 +1135,7 @@ We accept:
 - Array (of file paths or globs) [{% addedin "@11ty/eleventy-plugin-webc@0.9.2" %}](https://github.com/11ty/eleventy-plugin-webc/releases/tag/v0.9.2)
 - [`npm:` prefix aliases](#webcimport) [{% addedin "@11ty/eleventy-plugin-webc@0.9.2" %}](https://github.com/11ty/eleventy-plugin-webc/releases/tag/v0.9.2)
 
-{% set configCodeContent %}
+{% set codeContent %}
 import pluginWebc from "@11ty/eleventy-plugin-webc";
 
 export default function (eleventyConfig) {

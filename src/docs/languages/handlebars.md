@@ -26,12 +26,13 @@ You can override a `.hbs` file’s template engine. Read more at [Changing a Tem
 
 As an escape mechanism for advanced usage, pass in your own instance of the Handlebars library using the Configuration API.
 
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	let handlebars = require("handlebars");
 	eleventyConfig.setLibrary("hbs", handlebars);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ## Supported Features
 
@@ -51,16 +52,18 @@ Helpers are used to transform or modify content. You can add Handlebars specific
 
 Read more about [Handlebars Helpers syntax](https://handlebarsjs.com/#helpers)
 
-```js
-module.exports = function(eleventyConfig) {
+{% set codeContent %}
+export default function(eleventyConfig) {
   // Handlebars Helper
-  eleventyConfig.addHandlebarsHelper("myHandlebarsHelper", function(value) { … });
+  eleventyConfig.addHandlebarsHelper("myHandlebarsHelper", function(value) { /* … */ });
 
   // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
   // Read the note about Universal Filters below: Use a shortcode instead!
-  eleventyConfig.addFilter("myFilter", function(value) { … });
+  eleventyConfig.addFilter("myFilter", function(value) { /* … */ });
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
 
 #### Usage
 
@@ -82,12 +85,13 @@ These are not supported by Handlebars. Read more at [this Handlebars issue](http
 
 Universal filters have always been funneled into Handlebars helpers. However, shortcodes (Paired/Single) match better with the semantic footprint of Handlebars Helpers.
 
-```js
-module.exports = function(eleventyConfig) {
+{% set codeContent %}
+export default function(eleventyConfig) {
   // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
-  eleventyConfig.addFilter("myFilter", function(value) { … });
+  eleventyConfig.addFilter("myFilter", function(value) { /* … */ });
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 Moving forward for Handlebars content, using Universal Shortcodes are preferred to Universal Filters. We will continue to support funneling Universal filters to Handlebars helpers. This will not affect your template content as the syntax for Handlebars filters/helpers/shortcodes will continue to be the same. They’re all just helpers.
 
@@ -97,10 +101,10 @@ Shortcodes are basically reusable bits of content. You can add Handlebars specif
 
 ### Single Shortcode
 
-```js
-module.exports = function(eleventyConfig) {
+{% set codeContent %}
+export default function(eleventyConfig) {
   // Handlebars Shortcode
-  eleventyConfig.addHandlebarsShortcode("user", function(name, twitterUsername) { … });
+  eleventyConfig.addHandlebarsShortcode("user", function(name, twitterUsername) { /* … */ });
 
   // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
   eleventyConfig.addShortcode("user", function(name, twitterUsername) {
@@ -110,7 +114,8 @@ module.exports = function(eleventyConfig) {
 </div>`;
   });
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 #### Usage
 
@@ -135,10 +140,10 @@ module.exports = function(eleventyConfig) {
 
 ### Paired Shortcode
 
-```js
-module.exports = function(eleventyConfig) {
+{% set codeContent %}
+export default function(eleventyConfig) {
   // Handlebars Shortcode
-  eleventyConfig.addPairedHandlebarsShortcode("user", function(bioContent, name, twitterUsername) { … });
+  eleventyConfig.addPairedHandlebarsShortcode("user", function(bioContent, name, twitterUsername) { /* … */ });
 
   // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
   eleventyConfig.addPairedShortcode("user", function(bioContent, name, twitterUsername) {
@@ -149,7 +154,8 @@ module.exports = function(eleventyConfig) {
 </div>`;
   });
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 #### Usage
 
@@ -184,8 +190,8 @@ These are not supported by Handlebars. Read more at [this Handlebars issue](http
 
 If you aren’t using an arrow function, Handlebars Shortcodes (and Nunjucks, Liquid, and 11ty.js JavaScript Functions) will have access to Eleventy [`page` data values](/docs/data-eleventy-supplied/#page-variable-contents) without needing to pass them in as arguments.
 
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	eleventyConfig.addHandlebarsShortcode("myShortcode", function () {
 		// Available in 0.11.0 and above
 		console.log(this.page);
@@ -196,4 +202,5 @@ module.exports = function (eleventyConfig) {
 		console.log(this.page.fileSlug);
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}

@@ -20,12 +20,14 @@ You can override a `.haml` file’s template engine. Read more at [Changing a Te
 
 As an escape mechanism for advanced usage, pass in your own instance of the HAML library using the Configuration API.
 
-```js
-module.exports = function (eleventyConfig) {
-	let haml = require("hamljs");
+{% set codeContent %}
+import haml from "hamljs";
+
+export default function (eleventyConfig) {
 	eleventyConfig.setLibrary("haml", haml);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ## Supported Features
 
