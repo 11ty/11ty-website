@@ -64,6 +64,7 @@
     "luxon": "^3.4.0",
     "markdown-it": "^13.0.1",
     "markdown-it-table-of-contents": "^0.6.0",
+    "memoize": "^10.0.0",
     "node-fetch": "^2.6.8",
     "node-retrieve-globals": "^2.0.6",
     "pagefind": "^1.0.3",

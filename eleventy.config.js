@@ -1,5 +1,6 @@
 import "dotenv/config";
 
+import memoize from "memoize";
 import { DateTime } from "luxon";
 import HumanReadable from "human-readable-numbers";
 import commaNumber from "comma-number";
@@ -415,8 +416,7 @@ export default async function (eleventyConfig) {
 		return `id-${++ref}`;
 	});
 
-	// TODO memoize
-	eleventyConfig.addFilter("esmToCjs", (sourceCode) => {
+	eleventyConfig.addFilter("esmToCjs", memoize((sourceCode) => {
 		try {
 			let it = new ImportTransformer(sourceCode);
 
@@ -426,7 +426,7 @@ export default async function (eleventyConfig) {
 			console.log( sourceCode );
 			throw e;
 		}
-	})
+	}));
 
 	eleventyConfig.addShortcode("image", shortcodes.image);
 	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatar);
