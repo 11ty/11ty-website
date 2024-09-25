@@ -1,0 +1,41 @@
+{% set tabid %}tab-{% uid %}{% endset %}
+<div class="codetitle codetitle-right-md">eleventy.config.js</div>
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs class="tabs-flush" persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
+  <div id="{{ tabid }}-jsesm" role="tabpanel">
+
+```js
+import { EleventyRenderPlugin } from "@11ty/eleventy";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(EleventyRenderPlugin, {
+		tagName: "renderTemplate", // Change the renderTemplate shortcode name
+		tagNameFile: "renderFile", // Change the renderFile shortcode name
+
+		// Only available in Liquid right now
+		accessGlobalData: false,   // Does rendered content has access to the data cascade?
+	});
+};
+```
+
+  </div>
+  <div id="{{ tabid }}-jscjs" role="tabpanel">
+
+```js
+module.exports = async function (eleventyConfig) {
+	const { EleventyRenderPlugin } = await import("@11ty/eleventy");
+
+	eleventyConfig.addPlugin(EleventyRenderPlugin, {
+		tagName: "renderTemplate", // Change the renderTemplate shortcode name
+		tagNameFile: "renderFile", // Change the renderFile shortcode name
+
+		// Only available in Liquid right now
+		accessGlobalData: false,   // Does rendered content has access to the data cascade?
+	});
+};
+```
+
+  </div>
+</seven-minute-tabs>
+</is-land>

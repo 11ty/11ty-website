@@ -26,36 +26,14 @@ Everything you’ve added to project’s configuration file will also be availab
 
 This plugin is bundled with Eleventy core so it doesn’t require additional installation. But you do have to add it to your configuration file (probably `eleventy.config.js`) with `addPlugin`:
 
-{% set codeContent %}
-import { EleventyRenderPlugin } from "@11ty/eleventy";
-
-export default function (eleventyConfig) {
-	eleventyConfig.addPlugin(EleventyRenderPlugin);
-};
-{% endset %}
-{% include "snippets/configDefinition.njk" %}
+{% include "snippets/plugins/renderinstall.njk" %}
 
 <details>
   <summary>Expand to view all of the Plugin Options</summary>
 
-{% set codeContent %}
-import { EleventyRenderPlugin } from "@11ty/eleventy";
-
-export default function (eleventyConfig) {
-	eleventyConfig.addPlugin(EleventyRenderPlugin, {
-		tagName: "renderTemplate", // Change the renderTemplate shortcode name
-		tagNameFile: "renderFile", // Change the renderFile shortcode name
-
-		// Only available in Liquid right now
-		accessGlobalData: false,   // Does rendered content has access to the data cascade?
-	});
-};
-{% endset %}
-{% include "snippets/configDefinition.njk" %}
+{% include "snippets/plugins/renderinstall-advanced.njk" %}
 
 </details>
-
-{% callout "info", "md" %}You’re only allowed one `module.exports` in your configuration file, so make sure you only copy the `require` and the `addPlugin` lines above!{% endcallout %}
 
 ## Usage
 

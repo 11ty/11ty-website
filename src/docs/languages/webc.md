@@ -84,8 +84,6 @@ export default function(eleventyConfig) {
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
-_When using CommonJS remember that you’re only allowed one `module.exports` in your configuration file. If you already have a configuration file, only copy the `require` and the `addPlugin` lines above!_
-
 <details>
 <summary><strong>Full options list</strong> (defaults shown)</summary>
 

@@ -46,18 +46,17 @@ npm install @11ty/eleventy-upgrade-help@3
 
 ### <span class="numberflag"><span class="sr-only">Step</span> 3</span> Add to Configuration File
 
-Add to your configuration file (probably `.eleventy.js` or `eleventy.config.js`):
+Add to your configuration file (probably `eleventy.config.js` or `eleventy.config.js`):
 
-{% codetitle ".eleventy.js" %}
+{% set codeContent %}
+import UpgradeHelper from "@11ty/eleventy-upgrade-help";
 
-```js
-const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
-
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	// If you have other `addPlugin` calls, it’s important that UpgradeHelper is added last.
 	eleventyConfig.addPlugin(UpgradeHelper);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### <span class="numberflag"><span class="sr-only">Step</span> 4</span> Run your Build
 
