@@ -61,7 +61,6 @@ Filters can be added using the [Configuration API](/docs/config/#using-the-confi
 export default function (eleventyConfig) {
 	eleventyConfig.addFilter("makeUppercase", function(value) { /* … */ });
 
-  // New in {{ "2.0.0-canary.15" | coerceVersion }}
   eleventyConfig.addAsyncFilter("makeUppercase", async function(value) { /* … */ });
 };
 {% endset %}
