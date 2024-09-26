@@ -356,12 +356,10 @@ In the above example, the data cascade will include a top-level variable `availa
 
 #### `compileOptions.permalink` to Override Permalink Compilation
 
-- _Optional_
-
-This has the same signature as the `compile` function and expects a reusable `render` function to be returned.
+_Optional_. This has the same signature as the `compile` function and expects a reusable `render` function to be returned.
 
 ```js
-	// some configuration truncated …
+  // some configuration truncated …
   compileOptions: {
     permalink: function(contents, inputPath) {
       return (data) => {
@@ -373,7 +371,7 @@ This has the same signature as the `compile` function and expects a reusable `re
 ```
 
 - Don’t compile permalink strings in the parent template language
-  - `permalink: "raw"`
+  - `permalink: "raw"` (new default in v3.0, related [GitHub #2780](https://github.com/11ty/eleventy/issues/2780))
 - Don’t write _any_ files to the file system:
   - `permalink: false`
   - `permalink: (contents, inputPath) => false`
