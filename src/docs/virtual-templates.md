@@ -23,6 +23,8 @@ eleventyConfig.addTemplate(virtualPath, content, data = {});
 
 ## Example
 
+### Markdown, HTML (via Liquid) Layout
+
 {% set codeContent %}
 export default function(eleventyConfig) {
 	// Create content templates Files
@@ -32,6 +34,20 @@ export default function(eleventyConfig) {
 
 	// Works great with Layouts too
 	eleventyConfig.addTemplate("_includes/virtual.html", `<!-- Layout -->{% raw %}{{ content }}{% endraw %}`);
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
+### JavaScript
+
+Any of the JavaScript shapes on [`11ty.js` templates](/docs/languages/javascript.md) are also supported here.
+
+{% set codeContent %}
+export default function(eleventyConfig) {
+	// Create content templates Files
+	eleventyConfig.addTemplate("virtual.11ty.js", function(data) {
+		return `<h1>Hello</h1>`;
+	});
 };
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
