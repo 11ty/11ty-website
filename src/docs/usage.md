@@ -134,6 +134,8 @@ npx @11ty/eleventy --config=myeleventyconfig.js
 
 Read more about [Configuration files](/docs/config.md).
 
+{% addedin "v3.0.0-alpha.18" %}If the file you specify with `--config` does not exist, Eleventy will throw an error.
+
 ### `--to` can output JSON {% addedin "1.0.0" %}
 
 {% set usageJsonCode %}
