@@ -15,7 +15,7 @@ Here are a few data values we supply to your page that you can use in your templ
 - `pagination`: Using the `pagination` key in [front matter](/docs/data-frontmatter/), this divides data into chunks for multiple output pages. [Read more about Pagination](/docs/pagination/).
 - `collections`: Lists of all of your content, grouped by tags. [Read more about Collections](/docs/collections/)
 - `page`: Has information about the current page (see the code block below for `page` contents). For example, `page.url` is useful for finding the current page in a collection. [Read more about Collections](/docs/collections/) (look at _Example: Navigation Links with an `active` class added for on the current page_).
-- `eleventy`: {% addedin "1.0.0" %} contains Eleventy-specific data from [environment variables](/docs/environment-vars/) and the [Serverless plugin](/docs/plugins/serverless/) (if used).
+- `eleventy`: {% addedin "1.0.0" %} contains Eleventy-specific data from [environment variables](/docs/environment-vars/).
 
 <div id="page-variable-contents"></div>
 
@@ -151,20 +151,6 @@ let eleventy = {
 
     // One of `serve`, `watch`, or `build`
     runMode: "build", // New in {{ "2.0.0-beta.2" | coerceVersion }}
-  },
-
-  serverless: {
-    // An object containing the values from any Dynamic URL
-    //   slugs from Serverless paths
-    // e.g. A slug for /path/:id/ and a URL for /path/1/
-    //   would give { id: 1 }
-    path: {}
-
-    // The `event.queryStringParameters` received from the
-    // serverless function. Note these are not available in
-    // Netlify On-demand Builders
-    // e.g. ?id=1 would be { id: 1 }
-    query: {},
   }
 
 };
@@ -201,9 +187,6 @@ These videos also provide some additional context as to why this is important:
 ### Learn more
 
 - [Eleventy-supplied Environment Variables on `process.env`](/docs/environment-vars/#eleventy-supplied)
-- [Serverless](/docs/plugins/serverless/)
-  - [Dynamic Slugs and Serverless Global Data](/docs/plugins/serverless/#dynamic-slugs-and-serverless-global-data).
-  - `event.queryStringParameters`, which are very similar to [URL.searchParams](https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams). It’s an object representing the name/value pairs for things after the `?` in a URL.
 
 ## Environment Variables on `process.env`
 

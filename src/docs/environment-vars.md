@@ -68,7 +68,6 @@ npm install cross-env
 
 - [Expose Environment Variables to your templates using JavaScript Data Files](/docs/data-js/#example-exposing-environment-variables).
 - [Opt-in to `git Last Modified` only in production](/docs/dates/)
-- [Only perform Eleventy Serverless plugin copy (via `copyEnabled`) in production](/docs/plugins/serverless/#bundler-options)
 - Use fewer image formats in the [Image plugin](/docs/plugins/image/) to speed up local development
 
 ## Eleventy Supplied
@@ -79,7 +78,6 @@ Eleventy also supplies its own Eleventy-specific environment variables, usually 
 
 - `process.env.ELEVENTY_ROOT` {% addedin "1.0.0" %} the absolute path to the directory in which you’ve run the Eleventy command.
 - `process.env.ELEVENTY_SOURCE` {% addedin "1.0.0" %} is the method in which Eleventy has run, current either `cli` or `script`.
-- `process.env.ELEVENTY_SERVERLESS` {% addedin "1.0.0" %} is set to `true` (String) if Eleventy is running in [serverless mode](/docs/plugins/serverless/). If Eleventy is _not_ running in serverless mode—due to Node forcing environment variables to be strings—this variable will not exist.
 - `process.env.ELEVENTY_RUN_MODE` {% addedin "2.0.0-beta.2" %} is one of `build`, `serve`, or `watch`.
 - `process.env.ELEVENTY_VERSION` {% addedin "3.0.0-alpha.6" %} the current version of Eleventy (e.g. `"3.0.0-alpha.5"`).
 

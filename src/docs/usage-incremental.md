@@ -42,7 +42,7 @@ The previously stated incremental features are implemented in Eleventy core and 
 
 - **Cold Start Incremental**: `--incremental` does a full build to start out to provide a fresh starting point to work from. This feature would save the state of the build to the file system for faster cold starts. [Issue #984](https://github.com/11ty/eleventy/issues/984)
 - **Incremental on a Build Server**: Cache the output folder between builds on a CI server like Netlify and only process/write templates that have changed since the last build. [Issue #2775](https://github.com/11ty/eleventy/issues/2775)
-- Global/directory/template Data file usage mapped to templates (would give some improvements to serverless too) [Issue #2706](https://github.com/11ty/eleventy/issues/2706)
+- Global/directory/template Data file usage mapped to templates [Issue #2706](https://github.com/11ty/eleventy/issues/2706)
 - Template types
   - `11ty.js`: Map JavaScript dependencies
   - `liquid`: Dependency mapping for Liquid templates (`{% raw %}{% include %}{% endraw %}`, etc)

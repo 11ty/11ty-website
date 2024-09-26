@@ -281,8 +281,6 @@ export default function (eleventyConfig) {
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
-This approach unlocks functionality for the default build mode of Eleventy but you could also achieve some of the same functionality using the [Edge](/docs/plugins/edge/) or [Serverless plugins](/docs/plugins/serverless/).
-
 ### Disable templating in permalinks {% addedin "0.7.0" %}
 
 Some template syntaxes are nicer than others and you may want to opt-out of the templating engine here. Use the `dynamicPermalink` option in your front matter to disable this on a per-template basis.
