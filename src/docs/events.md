@@ -137,3 +137,14 @@ export default function(eleventyConfig) {
 };
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
+
+## Emitter Modes
+
+Currently Eleventy triggers event callbacks in parallel. If you need to run the event callbacks sequentially, you can do so with the `setEmitterMode` configuration API method. Related [GitHub #3415](https://github.com/11ty/eleventy/issues/3415).
+
+{% set codeContent %}
+export default function(eleventyConfig){
+	eleventyConfig.setEmitterMode("sequential");
+}
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
