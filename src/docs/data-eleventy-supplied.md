@@ -14,7 +14,7 @@ Here are a few data values we supply to your page that you can use in your templ
 - `pkg`: The local project’s `package.json` values.
 - `pagination`: Using the `pagination` key in [front matter](/docs/data-frontmatter/), this divides data into chunks for multiple output pages. [Read more about Pagination](/docs/pagination/).
 - `collections`: Lists of all of your content, grouped by tags. [Read more about Collections](/docs/collections/)
-- `page`: Has information about the current page (see the code block below for `page` contents). For example, `page.url` is useful for finding the current page in a collection. [Read more about Collections](/docs/collections/) (look at _Example: Navigation Links with an `active` class added for on the current page_).
+- `page`: Has information about the current page (see the code block below for `page` contents). For example, `page.url` is useful for [finding the current page in a collection](/docs/collections.md#use-an-[aria-current]-attribute-on-the-current-page).
 - `eleventy`: {% addedin "1.0.0" %} contains Eleventy-specific data from [environment variables](/docs/environment-vars/).
 
 <div id="page-variable-contents"></div>
