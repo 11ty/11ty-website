@@ -14,18 +14,38 @@ layout: layouts/langs.njk
 
 You can override a `.haml` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
 
-## HAML Options
+## Installation
 
-### Optional: Set your own Library instance {% addedin "0.3.0" %}
+The `haml` templating language was moved out of Eleventy core in v3 and now requires a plugin installation.
 
-As an escape mechanism for advanced usage, pass in your own instance of the HAML library using the Configuration API.
+
+```sh
+npm install @11ty/eleventy-plugin-haml
+```
+
+Add to your configuration file:
+
+{% set codeContent %}
+import hamlPlugin from "@11ty/eleventy-plugin-haml";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(hamlPlugin);
+}
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
+Use more options:
 
 {% set codeContent %}
 import haml from "hamljs";
+import hamlPlugin from "@11ty/eleventy-plugin-haml";
 
 export default function (eleventyConfig) {
-	eleventyConfig.setLibrary("haml", haml);
-};
+	eleventyConfig.addPlugin(hamlPlugin, {
+		// Override the `haml` library instance
+		eleventyLibraryOverride: haml,
+	});
+}
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 

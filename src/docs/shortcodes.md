@@ -51,9 +51,10 @@ Markdown files are pre-processed as Liquid templates by default—any shortcodes
 
 Read more about using shortcodes on the individual Template Language documentation pages:
 
-- [JavaScript `*.11ty.js`](/docs/languages/javascript/#javascript-template-functions) (with async support)
-- [Liquid `*.liquid`](/docs/languages/liquid/#shortcodes) (with async support)
-- [Nunjucks `*.njk`](/docs/languages/nunjucks/#shortcodes) (with async support)
+- [JavaScript `*.11ty.js`](/docs/languages/javascript/#javascript-template-functions) (async-friendly)
+- [Liquid `*.liquid`](/docs/languages/liquid/#shortcodes) (async-friendly)
+- [Nunjucks `*.njk`](/docs/languages/nunjucks/#shortcodes) (async-friendly)
+- [Handlebars `*.hbs`](/docs/languages/handlebars/#shortcodes) (sync only)
 
 ## Paired Shortcodes
 
@@ -89,9 +90,10 @@ Markdown files are pre-processed as Liquid templates by default—any shortcodes
 
 Read more about using paired shortcodes on the individual Template Language documentation pages:
 
-- [JavaScript `*.11ty.js`](/docs/languages/javascript/#javascript-template-functions) (with async support)
-- [Liquid `*.liquid`](/docs/languages/liquid/#shortcodes) (with async support)
-- [Nunjucks `*.njk`](/docs/languages/nunjucks/#shortcodes) (with async support)
+- [JavaScript `*.11ty.js`](/docs/languages/javascript/#javascript-template-functions) (async-friendly)
+- [Liquid `*.liquid`](/docs/languages/liquid/#shortcodes) (async-friendly)
+- [Nunjucks `*.njk`](/docs/languages/nunjucks/#shortcodes) (async-friendly)
+- [Handlebars `*.hbs`](/docs/languages/handlebars/#shortcodes) (sync only)
 
 ## Asynchronous Shortcodes
 

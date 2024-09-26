@@ -419,8 +419,9 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addFilter("esmToCjs", memoize((sourceCode) => {
 		try {
 			let it = new ImportTransformer(sourceCode);
-
 			let outputCode = it.transformToRequire();
+
+			// lol
 			return outputCode.replace("export default ", "module.exports = ");
 		} catch(e) {
 			console.log( sourceCode );

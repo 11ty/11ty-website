@@ -12,7 +12,7 @@ let domain = process.env.URL || "https://www.11ty.dev";
 // For things that rely on the data cascade
 let eleventyComputed = {
 	title: function(data) {
-		return data.newstitle || data.searchTitle || data.relatedTitle || data.tiptitle || data.eleventyNavigation?.key || data.title || data.headerTitle;
+		return data.newstitle || data.searchTitle || data.tiptitle || data.eleventyNavigation?.key || data.title || data.headerTitle;
 	},
 	social: {
 		imgsrc: function({ domain, page, ogimageOverride }) {

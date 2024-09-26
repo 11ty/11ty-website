@@ -9,7 +9,6 @@ tags:
   - related-shortcodes
   - related-nunjucks
   - related-liquid
-  - related-handlebars
 ---
 
 # Custom Tags

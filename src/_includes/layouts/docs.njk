@@ -6,7 +6,7 @@ headerTag: div
 ---
 {% if eleventyNavigation and eleventyNavigation.parent %}
 <nav class="breadcrumb" aria-labelledby="breadcrumb">
-  <h2 class="sr-only" id="breadcrumb">Breadcrumbs: </h2>
+  <div class="sr-only" id="breadcrumb">Breadcrumbs: </div>
   {{ collections.sidebarNav | eleventyNavigationBreadcrumb(eleventyNavigation.parent, {includeSelf: true}) | eleventyNavigationToHtml({ listClass: 'fl fl-inline', activeListItemClass: 'breadcrumb-active' }) | safe }}
 </nav>
 {% endif %}

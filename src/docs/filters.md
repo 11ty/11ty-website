@@ -9,7 +9,6 @@ tags:
   - related-shortcodes
   - related-nunjucks
   - related-liquid
-  - related-handlebars
   - related-javascript
 ---
 
@@ -55,7 +54,7 @@ module.exports = function({name}) {
 </seven-minute-tabs>
 </is-land>
 
-Filters can be added using the [Configuration API](/docs/config/#using-the-configuration-api) and are available to multiple template engines, simultaneously. They are currently supported in JavaScript {% addedin "0.7.0" %}, Markdown, Nunjucks, Liquid, Handlebars, and WebC.
+Filters can be added using the [Configuration API](/docs/config/#using-the-configuration-api) and are available to multiple template engines, simultaneously. They are currently supported in JavaScript {% addedin "0.7.0" %}, Markdown, Nunjucks, Liquid, and WebC.
 
 {% set codeContent %}
 export default function (eleventyConfig) {
@@ -72,7 +71,7 @@ Markdown files are pre-processed as Liquid templates by default—any filters av
 
 Read more about filters on the individual Template Language documentation pages:
 
-{% templatelangs templatetypes, page, ["njk", "liquid", "hbs", "11ty.js"], "#filters" %}
+{% templatelangs templatetypes, page, ["njk", "liquid", "11ty.js"], "#filters" %}
 
 ## Eleventy Provided Filters
 
@@ -95,7 +94,7 @@ export default function (eleventyConfig) {
 
 ## Asynchronous Filters {% addedin "2.0.0" %}
 
-Eleventy has added a new universal filter API for asynchronous filters and extended the currently available `addFilter` method to be async-friendly. _Note that even though Handlebars is used for synchronous filters in `addFilter`, it is excluded from asynchronous filters because Handlebars is not async-friendly._
+Eleventy has added a new universal filter API for asynchronous filters and extended the currently available `addFilter` method to be async-friendly.
 
 {% set codeContent %}
 export default function (eleventyConfig) {
@@ -154,9 +153,6 @@ export default function (eleventyConfig) {
   // Nunjucks Async Filter
   // Read the Nunjucks docs before using this (link below)
   eleventyConfig.addNunjucksAsyncFilter("myFilter", function() { /* … */ });
-
-  // Handlebars Filter (no async support)
-  eleventyConfig.addHandlebarsHelper("myFilter", function(value) { /* … */ });
 
   // JavaScript Template Function (async-friendly)
   eleventyConfig.addJavaScriptFunction("myFilter", async function(value) { /* … */ });
