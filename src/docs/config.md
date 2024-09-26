@@ -55,6 +55,7 @@ Controls the top level directory/file/glob that we’ll use to look for template
 | _Object Key_            | `dir.input`               |
 | _Default Value_         | `.` _(current directory)_ |
 | _Valid Options_         | Any valid directory.      |
+| _Configuration API_     | `eleventyConfig.setInputDirectory()` |
 | _Command Line Override_ | `--input`                 |
 
 #### Command Line
@@ -75,7 +76,19 @@ npx @11ty/eleventy --input=views
 
 #### Configuration
 
+Via named export (order doesn’t matter). Note that there are many [different shapes of configuration file](/docs/config-shapes.md).
+
 {% include "snippets/config/config-input.njk" %}
+
+Or via method (not available in plugins):
+
+{% set codeContent %}
+export default function(eleventyConfig) {
+	// Order matters, put this at the top of your configuration file.
+  eleventyConfig.setInputDirectory("views");
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Directory for Includes
 
@@ -86,9 +99,24 @@ The includes directory is meant for [Eleventy layouts](/docs/layouts/), include 
 | _Object Key_            | `dir.includes`                                                                |
 | _Default_               | `_includes`                                                                   |
 | _Valid Options_         | Any valid directory inside of `dir.input` (an empty string `""` is supported) |
+| _Configuration API_     | `eleventyConfig.setIncludesDirectory()` |
 | _Command Line Override_ | _None_                                                                        |
 
+
+Via named export (order doesn’t matter). Note that there are many [different shapes of configuration file](/docs/config-shapes.md).
+
 {% include "snippets/config/config-includes.njk" %}
+
+Or via method (not available in plugins):
+
+{% set codeContent %}
+export default function(eleventyConfig) {
+	// Order matters, put this at the top of your configuration file.
+	// This is relative to your input directory!
+  eleventyConfig.setIncludesDirectory("my_includes");
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Directory for Layouts (Optional) {% addedin "0.8.0" %}
 
@@ -105,9 +133,23 @@ This configuration option is optional but useful if you want your [Eleventy layo
 | _Object Key_            | `dir.layouts`                                                                 |
 | _Default_               | _The value in `dir.includes`_                                                 |
 | _Valid Options_         | Any valid directory inside of `dir.input` (an empty string `""` is supported) |
+| _Configuration API_     | `eleventyConfig.setLayoutsDirectory()` |
 | _Command Line Override_ | _None_                                                                        |
 
+Via named export (order doesn’t matter). Note that there are many [different shapes of configuration file](/docs/config-shapes.md).
+
 {% include "snippets/config/config-layouts.njk" %}
+
+Or via method (not available in plugins):
+
+{% set codeContent %}
+export default function(eleventyConfig) {
+	// Order matters, put this at the top of your configuration file.
+	// This is relative to your input directory!
+  eleventyConfig.setLayoutsDirectory("_layouts");
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Directory for Global Data Files
 
@@ -118,9 +160,22 @@ Controls the directory inside which the global data template files, available to
 | _Object Key_            | `dir.data`                                |
 | _Default_               | `_data`                                   |
 | _Valid Options_         | Any valid directory inside of `dir.input` |
+| _Configuration API_     | `eleventyConfig.setDataDirectory()` |
 | _Command Line Override_ | _None_                                    |
 
+Via named export (order doesn’t matter). Note that there are many [different shapes of configuration file](/docs/config-shapes.md).
+
 {% include "snippets/config/config-data.njk" %}
+
+Or via method (not available in plugins):
+
+{% set codeContent %}
+export default function(eleventyConfig) {
+	// Order matters, put this at the top of your configuration file.
+  eleventyConfig.setDataDirectory("lore");
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Output Directory
 
@@ -131,6 +186,7 @@ Controls the directory inside which the finished templates will be written to.
 | _Object Key_            | `dir.output`                                                                              |
 | _Default_               | `_site`                                                                                   |
 | _Valid Options_         | Any string that will work as a directory name. Eleventy creates this if it doesn’t exist. |
+| _Configuration API_     | `eleventyConfig.setOutputDirectory()` |
 | _Command Line Override_ | `--output`                                                                                |
 
 #### Command Line
@@ -141,7 +197,19 @@ npx @11ty/eleventy --output=_site
 
 #### Configuration
 
+Via named export (order doesn’t matter). Note that there are many [different shapes of configuration file](/docs/config-shapes.md).
+
 {% include "snippets/config/config-output.njk" %}
+
+Or via method (not available in plugins):
+
+{% set codeContent %}
+export default function(eleventyConfig) {
+	// Order matters, put this at the top of your configuration file.
+  eleventyConfig.setOutputDirectory("dist");
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Default template engine for Markdown files
 
