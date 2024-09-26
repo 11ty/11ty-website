@@ -8,36 +8,6 @@ eleventyNavigation:
 
 {% templatelangs templatetypes, page %}
 
-## Virtual Templates {% addedin "3.0.0-alpha.15" %}
-
-In addition to template files in your input directory, Eleventy can also process virtual templates defined in your configuration file (or plugins). Related [GitHub #1612](https://github.com/11ty/eleventy/issues/1612).
-
-The [RSS plugin offers a virtual template](/docs/plugins/rss.md#virtual-template) to add feeds to your project.
-
-### API
-
-```js
-eleventyConfig.addTemplate(virtualPath, content, data = {});
-```
-
-* `virtualPath`: used to determine the template language and data cascade for this template. This path is relative to your project’s input directory.
-* `content`: usually a string, but maybe JavaScript (if using an `11ty.js` template). Can include front matter if the template language supports it.
-* `data`: a data object tied to the template. A little more ergonomic than front matter but functionally the same.
-
-### Example
-
-{% set codeContent %}
-export default function(eleventyConfig) {
-	// Create content templates Files
-	eleventyConfig.addTemplate("virtual.md", `# Hello`, {
-        	layout: "virtual.html"
-	});
-
-	// Works great with Layouts too
-	eleventyConfig.addTemplate("_includes/virtual.html", `<!-- Layout -->{% raw %}{{ content }}{% endraw %}`);
-};
-{% endset %}
-{% include "snippets/configDefinition.njk" %}
 
 ## Overriding the Template Language {% addedin "0.2.14" %}
 

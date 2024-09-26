@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Working with Templates
   key: Common Pitfalls
-  order: 7
+  order: 8
   excerpt: Some common problems that people run into.
 ---
 
