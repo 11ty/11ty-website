@@ -180,7 +180,9 @@ export default function (eleventyConfig) {
 
 You can read about the above approach (and see more detailed examples of its usage) on the [TypeScript](/docs/languages/typescript/), [JSX](/docs/languages/jsx/), or [MDX](/docs/languages/mdx/) documentation pages.
 
-{% addedin "3.0.0-alpha.11" %} `key` needn’t be the only property in the options object in Eleventy 3.0+. If you want to add your own `compile` function, [keep reading](#overriding-or-extending-an-existing-template-language)!
+{% addedin "3.0.0-alpha.11" %} `key` needn’t be the only property in the options object. If you want to add your own `compile` function, [keep reading](#overriding-or-extending-an-existing-template-language)!
+
+{% addedin "3.0.0-alpha.11" %} **Breaking Change**: Starting in Eleventy 3.0 you must add the new alias to [your declared template formats](/docs/config.md#template-formats) for the new template type to be processed.
 
 ## Overriding or Extending an Existing Template Language
 
