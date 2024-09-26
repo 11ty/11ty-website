@@ -55,7 +55,7 @@ Controls the top level directory/file/glob that we’ll use to look for template
 | _Object Key_            | `dir.input`               |
 | _Default Value_         | `.` _(current directory)_ |
 | _Valid Options_         | Any valid directory.      |
-| _Configuration API_     | `eleventyConfig.setInputDirectory()` |
+| _Configuration API_     | `eleventyConfig.setInputDirectory()` {% addedin "3.0.0-alpha.6" %} |
 | _Command Line Override_ | `--input`                 |
 
 #### Command Line
@@ -80,7 +80,7 @@ Via named export (order doesn’t matter). Note that there are many [different s
 
 {% include "snippets/config/config-input.njk" %}
 
-Or via method (not available in plugins):
+Or via method (not available in plugins) {% addedin "3.0.0-alpha.6" %}:
 
 {% set codeContent %}
 export default function(eleventyConfig) {
@@ -99,7 +99,7 @@ The includes directory is meant for [Eleventy layouts](/docs/layouts/), include 
 | _Object Key_            | `dir.includes`                                                                |
 | _Default_               | `_includes`                                                                   |
 | _Valid Options_         | Any valid directory inside of `dir.input` (an empty string `""` is supported) |
-| _Configuration API_     | `eleventyConfig.setIncludesDirectory()` |
+| _Configuration API_     | `eleventyConfig.setIncludesDirectory()` {% addedin "3.0.0-alpha.6" %} |
 | _Command Line Override_ | _None_                                                                        |
 
 
@@ -107,7 +107,7 @@ Via named export (order doesn’t matter). Note that there are many [different s
 
 {% include "snippets/config/config-includes.njk" %}
 
-Or via method (not available in plugins):
+Or via method (not available in plugins) {% addedin "3.0.0-alpha.6" %}:
 
 {% set codeContent %}
 export default function(eleventyConfig) {
@@ -133,14 +133,14 @@ This configuration option is optional but useful if you want your [Eleventy layo
 | _Object Key_            | `dir.layouts`                                                                 |
 | _Default_               | _The value in `dir.includes`_                                                 |
 | _Valid Options_         | Any valid directory inside of `dir.input` (an empty string `""` is supported) |
-| _Configuration API_     | `eleventyConfig.setLayoutsDirectory()` |
+| _Configuration API_     | `eleventyConfig.setLayoutsDirectory()` {% addedin "3.0.0-alpha.6" %} |
 | _Command Line Override_ | _None_                                                                        |
 
 Via named export (order doesn’t matter). Note that there are many [different shapes of configuration file](/docs/config-shapes.md).
 
 {% include "snippets/config/config-layouts.njk" %}
 
-Or via method (not available in plugins):
+Or via method (not available in plugins) {% addedin "3.0.0-alpha.6" %}:
 
 {% set codeContent %}
 export default function(eleventyConfig) {
@@ -160,14 +160,14 @@ Controls the directory inside which the global data template files, available to
 | _Object Key_            | `dir.data`                                |
 | _Default_               | `_data`                                   |
 | _Valid Options_         | Any valid directory inside of `dir.input` |
-| _Configuration API_     | `eleventyConfig.setDataDirectory()` |
+| _Configuration API_     | `eleventyConfig.setDataDirectory()` {% addedin "3.0.0-alpha.6" %} |
 | _Command Line Override_ | _None_                                    |
 
 Via named export (order doesn’t matter). Note that there are many [different shapes of configuration file](/docs/config-shapes.md).
 
 {% include "snippets/config/config-data.njk" %}
 
-Or via method (not available in plugins):
+Or via method (not available in plugins) {% addedin "3.0.0-alpha.6" %}:
 
 {% set codeContent %}
 export default function(eleventyConfig) {
@@ -186,7 +186,7 @@ Controls the directory inside which the finished templates will be written to.
 | _Object Key_            | `dir.output`                                                                              |
 | _Default_               | `_site`                                                                                   |
 | _Valid Options_         | Any string that will work as a directory name. Eleventy creates this if it doesn’t exist. |
-| _Configuration API_     | `eleventyConfig.setOutputDirectory()` |
+| _Configuration API_     | `eleventyConfig.setOutputDirectory()` {% addedin "3.0.0-alpha.6" %} |
 | _Command Line Override_ | `--output`                                                                                |
 
 #### Command Line
@@ -201,7 +201,7 @@ Via named export (order doesn’t matter). Note that there are many [different s
 
 {% include "snippets/config/config-output.njk" %}
 
-Or via method (not available in plugins):
+Or via method (not available in plugins) {% addedin "3.0.0-alpha.6" %}:
 
 {% set codeContent %}
 export default function(eleventyConfig) {
