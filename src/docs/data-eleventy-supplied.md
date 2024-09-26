@@ -22,7 +22,7 @@ Here are a few data values we supply to your page that you can use in your templ
 ## `page` Variable
 
 ```js
-let page = {
+const page = {
 	// URL can be used in <a href> to link to other templates
 	// NOTE: This value will be `false` if `permalink` is set to `false`.
 	url: "/current/page/myFile/",
@@ -129,32 +129,42 @@ This example output uses the above permalink value.
 ## `eleventy` Variable {% addedin "1.0.0" %}
 
 ```js
-let eleventy = {
+const eleventy = {
 
-  // Eleventy version
-  version: "1.0.1", // New in {{ "1.0.1" | coerceVersion }}
+	// Eleventy version
+	version: "1.0.1",
 
-  // For use with `<meta name="generator">`
-  generator: "Eleventy v1.0.1", // New in {{ "1.0.1" | coerceVersion }}
+	// For use with `<meta name="generator">`
+	generator: "Eleventy v1.0.1",
 
-  // Read more about their `process.env` counterparts below
-  env: {
-    // Absolute path to the directory in which
-    // you’ve run the Eleventy command.
-    root: "/Users/zachleat/myProject/",
+	// Read more about their `process.env` counterparts below
+	env: {
+		// Absolute path to the directory in which
+		// you’ve run the Eleventy command.
+		root: "/Users/zachleat/myProject/",
 
-    // Absolute path to the current config file
-    config: "/Users/zachleat/myProject/.eleventy.js",
+		// Absolute path to the current config file
+		config: "/Users/zachleat/myProject/.eleventy.js",
 
-    // The method, either `cli` or `script`
-    source: "cli",
+		// The method, either `cli` or `script`
+		source: "cli",
 
-    // One of `serve`, `watch`, or `build`
-    runMode: "build", // New in {{ "2.0.0-beta.2" | coerceVersion }}
-  }
+		// One of `serve`, `watch`, or `build`
+		runMode: "build", // New in {{ "2.0.0-beta.2" | coerceVersion }}
+	},
+
+	// Project root-relative normalized paths, new in {{ "3.0.0-alpha.6" | coerceVersion }}
+	directories: {
+		"input": "./",
+		"includes": "./_includes/",
+		"data": "./_data/",
+		"output": "./_site/"
+	},
 
 };
 ```
+
+* {% addedin "v3.0.0-alpha.6" %}`eleventy.directories` contains project-root relative normalized paths for the important Eleventy directories: [`input`](/docs/config.md#input-directory),  [`includes`](/docs/config.md#directory-for-includes),  [`layouts`](/docs/config.md##directory-for-layouts-(optional)) (if used),  [`data`](/docs/config.md##directory-for-global-data-files), and [`output`](/docs/config.md#output-directory).
 
 ### Feature Availability
 
@@ -180,8 +190,8 @@ It’s helpful if you add `<meta name="generator">` to your existing Eleventy pr
 These videos also provide some additional context as to why this is important:
 
 <div class="youtube-related">
-  {%- youtubeEmbed "b4frtsT4Cgo", "Full control over HTML, a look at requiring opt-in for the meta name=generator in Eleventy" -%}
-  {%- youtubeEmbed "_YvwTHeqBZY", "eleventy.version and eleventy.generator Data (Weekly №7)", "235" -%}
+	{%- youtubeEmbed "b4frtsT4Cgo", "Full control over HTML, a look at requiring opt-in for the meta name=generator in Eleventy" -%}
+	{%- youtubeEmbed "_YvwTHeqBZY", "eleventy.version and eleventy.generator Data (Weekly №7)", "235" -%}
 </div>
 
 ### Learn more
