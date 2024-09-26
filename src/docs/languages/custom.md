@@ -271,7 +271,7 @@ Note that `init` will **not** re-run on watch/serve mode. If you’d like someth
 
 - _Optional_: Defaults to `true`
 
-Set to `false` to opt out of reading the contents of files from the file system. This is useful if you’re using an external bundler to read the files (e.g. the Vue plugin uses rollup to read and compile `.vue` files).
+Set to `false` to opt out of reading the contents of files from the file system. This is useful if you’re using an external bundler to read the files.
 
 ```js
 	// some configuration truncated …
@@ -284,13 +284,19 @@ Use with `compileOptions.setCacheKey` to get more fine-grained control over how 
 
 You probably won’t need this but it’s useful if your extension doesn’t match the template language key. -->
 
+### `useLayouts` {% addedin "v3.0.0-alpha.14" %}
+
+- _Optional_: Defaults to `true`
+
+Whether or not [Layouts](/docs/layouts.md) will be applied to this template language. This will also exclude data from layout files to play a part in the data cascade of this template type as well. Related [GitHub #2830](https://github.com/11ty/eleventy/issues/2830).
+
 ### `getData` and `getInstanceFromInputPath`
 
 - _Optional_
 
 Controls if and how additional data should be retrieved from a JavaScript object to populate the Data Cascade. If your templates aren’t compiling JavaScript objects, you probably won’t need this.
 
-Notably, this is separate from (in addition to) front matter parsing (which requires `read: true`). As an example, this is used by the Vue plugin to retrieve the return from the Vue `data()` function in the Vue component to feed back into the Data Cascade.
+Notably, this is separate from (in addition to) front matter parsing (which requires `read: true`).
 
 ```js
 	// some configuration truncated …
@@ -475,4 +481,4 @@ A callback used for advanced control of template dependency matching. This deter
 
 </details>
 
-You can see more advanced override implementations in [`@11ty/eleventy-plugin-webc`](https://github.com/11ty/eleventy-plugin-webc/blob/a33dc641dfc7845d179f7bc60f9ab2d9a9177773/src/eleventyWebcTemplate.js) and [`@11ty/eleventy-plugin-vue`](https://github.com/11ty/eleventy-plugin-vue/blob/f705297dea3442b918b0659b5770d7eb069bb886/.eleventy.js).
+You can see more advanced override implementations in [`@11ty/eleventy-plugin-webc`](https://github.com/11ty/eleventy-plugin-webc/blob/a33dc641dfc7845d179f7bc60f9ab2d9a9177773/src/eleventyWebcTemplate.js) ~~and [`@11ty/eleventy-plugin-vue`](https://github.com/11ty/eleventy-plugin-vue/blob/f705297dea3442b918b0659b5770d7eb069bb886/.eleventy.js)~~.
