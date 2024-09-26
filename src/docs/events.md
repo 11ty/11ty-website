@@ -19,7 +19,7 @@ Asynchronous callback function support added in v1.0.
 
 ## `eleventy.before` {% addedin "1.0.0" %}
 
-- Previously known as the now deprecated (but not removed) `beforeBuild` {% addedin "0.11.1" %} event.
+- Previously known as the now deprecated `beforeBuild` {% addedin "0.11.1" %} event.
 
 The `eleventy.before` event runs every time Eleventy starts building, so it will run before the start of each stand-alone build, as well as each time building starts as either part of `--watch` or `--serve`. To use it, attach the event handler to your Eleventy config:
 
@@ -36,7 +36,7 @@ export default function(eleventyConfig) {
 
 ## `eleventy.after` {% addedin "1.0.0" %}
 
-- Previously known as the now deprecated (but not removed) `afterBuild` {% addedin "0.11.1" %} event.
+- Previously known as the now deprecated `afterBuild` {% addedin "0.11.1" %} event.
 
 The `eleventy.after` event runs every time Eleventy finishes building, so it will run after the end of each stand-alone build, as well as each time building ends as either part of `--watch` or `--serve`. To use it, attach the event handler to your Eleventy config:
 
@@ -74,12 +74,9 @@ export default function(eleventyConfig) {
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
-- `dir`: an object with current project directories, set in [your configuration file](https://www.11ty.dev/docs/config/#input-directory) (or populated with Eleventy defaults).
-  - `dir.input` (default `"."`)
-  - `dir.output` (default `"_site"`)
-  - `dir.includes` (default `"_includes"`)
-  - `dir.data` (default `"_data"`)
-  - `dir.layouts` (no default value)
+- `directories`
+- `dir` (deprecated, use `directories` instead): an object with current project directories, set in [your configuration file](/docs/config/#input-directory) (or populated with Eleventy defaults).
+	- Included properties: `input` (default `"."`), `output` (default `"_site"`), `includes` (default `"_includes"`), `data` (default `"_data"`), and `layouts` (no default value).
 - `outputMode`: a string representing the value of [`--to` on the command line](/docs/usage/#to-can-output-json)
   - `fs` (default)
   - `json`
@@ -95,15 +92,28 @@ export default function(eleventyConfig) {
   {%- youtubeEmbed "f0LsgyPV7j0", "New Event Arguments (Weekly №5)", "491" -%}
 </div>
 
+## `eleventy.beforeConfig` {% addedin "3.0.0-alpha.3" %}
+
+The `eleventy.beforeConfig` runs before your configuration is initialized and was added as an escape hatch for folks unable to update their top-level configuration callback to be `async` (usually due to some limitation in a third-party tool). You probably won’t need this.
+
+```js
+// Synchronous configuration callback
+module.exports = function (eleventyConfig) {
+	// async-friendly event
+  eleventyConfig.on("eleventy.beforeConfig", async function (eleventyConfig) {
+    const { HtmlBasePlugin } = await import("@11ty/eleventy");
+		eleventyConfig.addPlugin(HtmlBasePlugin);
+  });
+};
+```
+
 ## `eleventy.beforeWatch` {% addedin "1.0.0" %}
 
-- Previously known as the now deprecated (but not removed) `beforeWatch` {% addedin "0.11.0" %} event.
-
-The `eleventy.beforeWatch` event runs before a build is run _only_ if it's a re-run during `--watch` or `--serve`. This means it will neither run during the initial build nor during stand-alone builds. To use it, attach the event handler to your Eleventy config:
+The `eleventy.beforeWatch` event runs before a build _only_ if it's a re-run during `--watch` or `--serve`. This means it will not run during the initial build nor during stand-alone builds.
 
 {% set codeContent %}
 export default function(eleventyConfig) {
-	// Async-friendly in 1.0+
+	// Async-friendly
 	eleventyConfig.on("eleventy.beforeWatch", async (changedFiles) => {
 		// Run me before --watch or --serve re-runs
 		// changedFiles is an array of files that changed
@@ -112,8 +122,6 @@ export default function(eleventyConfig) {
 };
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
-
-The `changedFiles` parameter was {% addedin "0.11.1" %}.
 
 ## `eleventy.contentMap` {% addedin "2.0.0" %}
 
