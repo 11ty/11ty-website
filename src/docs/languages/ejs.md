@@ -18,6 +18,8 @@ You can override a `.ejs` file’s template engine. Read more at [Changing a Tem
 
 The `ejs` templating language was moved out of Eleventy core in v3 and now requires a plugin installation.
 
+* [`11ty/eleventy-plugin-template-languages` on GitHub](https://github.com/11ty/eleventy-plugin-template-languages)
+
 Add to your configuration file:
 
 {% set codeContent %}

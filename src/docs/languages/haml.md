@@ -18,6 +18,7 @@ You can override a `.haml` file’s template engine. Read more at [Changing a Te
 
 The `haml` templating language was moved out of Eleventy core in v3 and now requires a plugin installation.
 
+* [`11ty/eleventy-plugin-template-languages` on GitHub](https://github.com/11ty/eleventy-plugin-template-languages)
 
 ```sh
 npm install @11ty/eleventy-plugin-haml
