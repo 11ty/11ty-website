@@ -86,7 +86,7 @@ export default function (eleventyConfig) {
 | ✅ Include (pass in Data)                                         | `{% raw %}{% include 'user' with 'Ava' %}{% endraw %}`. Does not process front matter in the include file.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | ✅ Include (pass in Data)                                         | `{% raw %}{% include 'user', user1: 'Ava', user2: 'Bill' %}{% endraw %}`. Does not process front matter in the include file.                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ✅ Custom Filters                                                 | `{% raw %}{{ name \| upper }}{% endraw %}` Read more about [Filters](/docs/filters/)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| ✅ [Eleventy Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{% name \| filterName %}{% endraw %}` Read more about [Filters](/docs/filters/)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ✅ [Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{% name \| filterName %}{% endraw %}` Read more about [Filters](/docs/filters/)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | ✅ [Custom Tags](/docs/custom-tags/) {% addedin "0.5.0" %}        | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Custom Tags](/docs/custom-tags/).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | ✅ [Shortcodes](/docs/shortcodes/) {% addedin "0.5.0" %}          | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
@@ -286,6 +286,21 @@ Zach likes to take long walks on Nebraska beaches. {% enduser2 %}
 ```
 
 {% endraw %}
+
+### Shortcode Parameter Parsing
+
+Eleventy’s includes its own parameter parsing implementation for shortcodes. To swap to a more robust, Liquid-native solution, use the `setLiquidParameterParsing` Configuration API method. This will likely be enabled by default in a future major version of Eleventy. Related [GitHub #2679](https://github.com/11ty/eleventy/issues/2679).
+
+{% set codeContent %}
+export default function (eleventyConfig) {
+	// Current default:
+	// eleventyConfig.setLiquidParameterParsing("legacy");
+
+	// Liquid-native
+	eleventyConfig.setLiquidParameterParsing("builtin");
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Access to `page` data values {% addedin "0.11.0" %}
 
