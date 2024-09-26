@@ -15,6 +15,65 @@ Plugins are custom code that Eleventy can import into a project from an external
 - [Community Contributed Plugins](/docs/plugins/community.md)
 - [Retired Plugins](/docs/plugins/retired.md)
 
+## Plugins are Configuration
+
+At their simplest, Eleventy plugins are a function passed to the `addPlugin` method.
+
+{% set codeContent %}
+export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(function(eleventyConfig) {
+		// I am a plugin!
+	});
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
+The plugin can be defined elsewhere in the same file:
+
+{% set codeContent %}
+function myPlugin(eleventyConfig) {
+	// I am a plugin!
+}
+
+export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(myPlugin);
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
+Or in a different file:
+
+{% set codeContent %}
+import myPlugin from "./_config/plugin.js";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(myPlugin);
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
+Or in an `npm` package:
+
+{% set codeContent %}
+import pluginRss from "@11ty/eleventy-plugin-rss";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(pluginRss);
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
+Plugins are async-friendly {% addedin "3.0.0-alpha.1" %} but you must `await` the `addPlugin` method.
+
+{% set codeContent %}
+export default async function (eleventyConfig) {
+	await eleventyConfig.addPlugin(async function(eleventyConfig) {
+		// I am an asynchronous plugin!
+	});
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
 ## Adding a Plugin
 
 ### Installation
@@ -29,10 +88,11 @@ npm install @11ty/eleventy-plugin-rss --save
 
 ### Add the plugin to Eleventy in your config file
 
-Your config file is probably named `.eleventy.js`.
+Your config file is probably named `eleventy.config.js` or `.eleventy.js`.
 
 {% set codeContent %}
 import pluginRss from "@11ty/eleventy-plugin-rss";
+
 export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginRss);
 };
@@ -82,9 +142,34 @@ Plugin namespacing is an application feature and should not be used if you are c
 
 </details>
 
+### Advanced: Execute a plugin immediately {% addedin "3.0.0-alpha.5" %}
+
+Plugins (by default) execute in a second stage of configuration after the user’s configuration file has finished, in order to have access to [the return object in the configuration callback](/docs/config/).
+
+You are unlikely to need this, but you can execute a plugin’s code immediately using the `immediate` option.
+
+{% set codeContent %}
+export default function (eleventyConfig, pluginOptions) {
+	console.log( "first" );
+
+	eleventyConfig.addPlugin(eleventyConfig => {
+		console.log("fourth");
+	});
+
+	eleventyConfig.addPlugin(eleventyConfig => {
+		console.log("second");
+	}, {
+		immediate: true
+	});
+
+	console.log("third");
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
 ## Creating a Plugin
 
-A plugin primarily provides a “configuration function.” This function is called when Eleventy is first initialized, and operates similarly to a user’s configuration function (the same `eleventyConfig` argument passed to the user’s `.eleventy.js` file is passed here), in addition to any config passed by the user:
+A plugin primarily provides a “configuration function.” This function is called when Eleventy is first initialized, and operates similarly to a user’s configuration function (the same `eleventyConfig` argument passed to the user’s `eleventy.config.js` file is passed here), in addition to any config passed by the user:
 
 <div class="codetitle">plugin.js</div>
 
@@ -173,28 +258,3 @@ If you’re distributing your plugin as a package, consider following these conv
 - Add `"eleventy-plugin"` to your package.json’s `keywords` field.
 - Prefix your package name with `eleventy-plugin-`
 - Open a PR to add your plugin to our [list of community plugins](https://github.com/11ty/11ty-website/tree/main/src/_data/plugins) for publication on [our community plugins directory](/docs/plugins/community.md).
-
-### Advanced: Execute a plugin immediately {% addedin "3.0.0-alpha.5" %}
-
-Plugins (by default) execute in a second stage of configuration after the user’s configuration file has finished, in order to have access to [the return object in the configuration callback](/docs/config/).
-
-You are unlikely to need this, but you can execute a plugin’s code immediately using the `immediate` option.
-
-{% set codeContent %}
-export default function (eleventyConfig, pluginOptions) {
-	console.log( "first" );
-
-	eleventyConfig.addPlugin(eleventyConfig => {
-		console.log("fourth");
-	});
-
-	eleventyConfig.addPlugin(eleventyConfig => {
-		console.log("second");
-	}, {
-		immediate: true
-	});
-
-	console.log("third");
-};
-{% endset %}
-{% include "snippets/configDefinition.njk" %}

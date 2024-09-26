@@ -97,7 +97,7 @@ export default function(eleventyConfig) {
 The `eleventy.beforeConfig` runs before your configuration is initialized and was added as an escape hatch for folks unable to update their top-level configuration callback to be `async` (usually due to some limitation in a third-party tool). You probably won’t need this.
 
 ```js
-// Synchronous configuration callback
+// sync configuration callback
 module.exports = function (eleventyConfig) {
 	// async-friendly event
   eleventyConfig.on("eleventy.beforeConfig", async function (eleventyConfig) {
