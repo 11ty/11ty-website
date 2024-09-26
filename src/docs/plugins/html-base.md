@@ -14,7 +14,7 @@ A build-time application of `<base>` to HTML (without relying on `<base>`) by mo
 
 - Read about [HTML’s `<base>` element on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base)
 
-If you want to deploy your project in a different directory without changing the content, Eleventy provides a [Path Prefix feature to specify the target directory](https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix).
+If you want to deploy your project in a different directory without changing the content, Eleventy provides a [Path Prefix feature to specify the target directory](/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix).
 
 - via `--pathprefix` on the command line
 - or via `pathPrefix` object key in your configuration file return object

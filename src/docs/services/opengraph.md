@@ -34,7 +34,7 @@ https://v1.opengraph.11ty.dev/:url/:size/:format/
 
 - `url` must be URI encoded.
 - `size` (optional) can be `small` (375×*), `medium` (650×*), or `auto` (keep original width)
-- `format` must by an output image format supported by [Eleventy Image](https://www.11ty.dev/docs/plugins/image/)
+- `format` must by an output image format supported by [Eleventy Image](/docs/plugins/image/)
 
 ## Samples
 

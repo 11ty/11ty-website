@@ -107,7 +107,7 @@ You can expose environment variables to your templates by utilizing [Node.js’ 
 
 - [**Learn how to set your own environment variables**](/docs/environment-vars/#setting-your-own)
 
-Start by creating a [Global Data file](https://www.11ty.dev/docs/data-global/) (`*.js` inside of your `_data` directory) and export the environment variables for use in a template:
+Start by creating a [Global Data file](/docs/data-global/) (`*.js` inside of your `_data` directory) and export the environment variables for use in a template:
 
 <div class="codetitle codetitle-right-md">_data/myProject.js</div>
 {% set codeContent %}

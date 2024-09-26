@@ -154,7 +154,7 @@ permalink: bundle.js
 
 <p>This also (optionally) allows you to post-process the CSS (using Sass, PostCSS, or LightningCSS) or client-JavaScript (using esbuild, rollup, WebPack, etc) and write the processed content to your output folder. This also allows you to use features in your bundle code that aren’t available in web browsers, like nesting CSS, TypeScript, or JSX.</p>
 
-<p><em>Side note: this is strictly for code that runs in a web browser. There is a <a href="https://www.11ty.dev/docs/languages/custom/#aliasing-an-existing-template-language">different approach</a> if you want to use TypeScript or JSX in your Node.js JavaScript files that run as part of your build.</em></p>
+<p><em>Side note: this is strictly for code that runs in a web browser. There is a <a href="/docs/languages/custom/#aliasing-an-existing-template-language">different approach</a> if you want to use TypeScript or JSX in your Node.js JavaScript files that run as part of your build.</em></p>
 
 <p>Here are a few great guides to get you started:</p>
 

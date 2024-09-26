@@ -36,7 +36,7 @@ Let’s check in on the current capabilities and the roadmap:
 
 The previously stated incremental features are implemented in Eleventy core and are available to all template languages. Some template types offer additional `--incremental` build support:
 
-- [WebC](https://www.11ty.dev/docs/languages/webc/): deep knowledge of the full component dependency graph allows us to smartly build templates that use a component when that component is changed.
+- [WebC](/docs/languages/webc/): deep knowledge of the full component dependency graph allows us to smartly build templates that use a component when that component is changed.
 
 ## 🗓 To Do
 
