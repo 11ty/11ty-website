@@ -101,11 +101,11 @@ The `filePathStem` variable is mapped from `inputPath`, and is useful if you’v
 
 <div id="changing-your-projects-default-permalinks"></div>
 
-You can use this feature to [globally change your project’s default permalinks](/docs/permalinks.md#change-permalinks-globally-for-a-project).
+You can use this feature to [globally change your project’s default permalinks](/docs/permalinks.md#change-permalinks-globally-for-a-project) but make sure you also read the section about [Trailing Slashes](docs/permalinks.md#trailing-slashes).
 
-{% callout "info" %}<strong>Careful with this one!</strong> Remember that <a href="/docs/permalinks/#cool-uris-dont-change">Cool URIs don’t change</a>.{% endcallout %}
+{% callout "info" %}<strong>Careful with this one!</strong> Remember the recommendation to leave off the file extension from URLs in <a href="/docs/permalinks/#cool-uris-dont-change">Cool URIs don’t change</a>.{% endcallout %}
 
-If you absolutely need a file extension on your output, you might use it like this:
+If you want a file extension in your URL, you might use it like this:
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 

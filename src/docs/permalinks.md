@@ -101,7 +101,7 @@ To remap your template’s output to a different path than the default, use the 
 
 ```markdown
 ---
-permalink: "this-is-a-new-path/subdirectory/testing/index.html"
+permalink: "this-is-a-new-path/subdirectory/testing/"
 ---
 ```
 
@@ -111,11 +111,11 @@ The above is functionally equivalent to:
 
 ```markdown
 ---
-permalink: "this-is-a-new-path/subdirectory/testing/"
+permalink: "this-is-a-new-path/subdirectory/testing/index.html"
 ---
 ```
 
-Both of the above examples will write to `_site/this-is-a-new-path/subdirectory/testing/index.html`.
+Both of the above examples write to `_site/this-is-a-new-path/subdirectory/testing/index.html`.
 
 Fear not: if multiple input files _attempt to write to the same output location_, Eleventy will throw an error for you!
 
@@ -214,23 +214,83 @@ permalink: "index.json"
 <%- JSON.stringify(collections.all) -%>
 ```
 
-## Advanced Usage
+## Trailing Slashes
 
-### Change permalinks globally for a project
+Eleventy projects use trailing slashes by default, as they have shown to be the most reliable approach for URL design and [hosting provider compatibility](https://www.zachleat.com/web/trailing-slash/#results-table). That’s why we write to `/resource/index.html` and use `/resource/`-style URLs.
 
-{% addedin "2.0.0-canary.9" %}Want to change `resource.md` to write to `/resource.html` instead of `/resource/index.html`? This uses [global data via the configuration API](/docs/data-global-custom.md) but you could set this using a [Global Data file](/docs/data-global.md) too.
+We do offer the option to instead write `/resource.html` files and use `/resource`-style URLs **(but it is not recommended)**.
+
+### Permalinks without File Extensions
+
+{% callout "warn", "md-block" -%}
+While `index.html` is optional on `permalink: /resource/index.html`, it is a [**Common Pitfall**](/docs/pitfalls/) to leave off the trailing slash.
+{% endcallout %}
+
+If you leave off the file name **and** forget the trailing slash on your permalink, this will write to a file without a file extension. Your web browser may attempt to download the file instead of displaying it (unless you’ve done some extra work to set up your `Content-Type` headers correctly).
+
+This will also cause more problems when attempting to create additional templates inside of `/resource/` later.
+
+- `permalink: /resource/` ✅ Fine
+- `permalink: /resource/index.html` ✅ The same as above
+- `permalink: /resource` ❌ Not fine, throws an error in 3.0
+
+{% addedin "3.0.0-beta.2" %}Eleventy will throw an error if you attempt to write to a file without a file extension. This is not always an error (think `_redirects` on Netlify), so you can opt out of this feature by setting `eleventyAllowMissingExtension: true` somewhere in your data cascade (front matter, directory data file, etc) or disable the error messaging globally.
+
+```yaml
+---
+eleventyAllowMissingExtension: true
+---
+```
 
 {% set codeContent %}
 export default function(eleventyConfig) {
+	// Disable this error for the project.
+	eleventyConfig.configureErrorReporting({ allowMissingExtensions: true })
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
+<div id="change-permalinks-globally-for-a-project"></div>
+
+### Remove trailing slashes
+
+The following configuration (using [global data via the configuration API](/docs/data-global-custom.md) but you could set this using a [Global Data file](/docs/data-global.md) too) unlocks `/resource`-style URLs on your Eleventy project and works on GitHub Pages, Netlify, Cloudflare Pages, Render, and Azure Static Web Apps. This approach **does _not_ work on Vercel** (due to a [Vercel hosting limitation](https://www.zachleat.com/web/trailing-slash/#results-table)).
+
+{% set codeContent %}
+export default function(eleventyConfig) {
+	// Set global permalinks to resource.html style
 	eleventyConfig.addGlobalData("permalink", () => {
 		return (data) =>
 			`${data.page.filePathStem}.${data.page.outputFileExtension}`;
+	});
+
+	// Remove .html from `page.url` entries
+	eleventyConfig.addUrlTransform((page) => {
+		if (page.url.endsWith(".html")) {
+			return page.url.slice(0, -1 * ".html".length);
+		}
 	});
 };
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
-{% callout "warn", "md" %}When using this approach for URLs _without_ trailing slashes (file `/resource.html` ▶︎ url `/resource`), please do note that using trailing slashes with `index.html` files (file `/resource/index.html` ▶︎ url `/resource/`) is a bit friendlier on various JAMstack hosting providers. You may encounter unexpected 404 errors—make [sure you study up on how this works and test appropriately!](https://www.zachleat.com/web/trailing-slash/#results-table)!{% endcallout %}
+#### Remove trailing slashes on Vercel
+
+The following works for `/resource`-style URLs on Vercel but additionally requires [`"trailingSlash": false` in your `vercel.json` file](https://vercel.com/docs/projects/project-configuration#trailingslash).
+
+{% set codeContent %}
+export default function(eleventyConfig) {
+	eleventyConfig.addUrlTransform((page) => {
+		if (page.url.length !== "/" && page.url.endsWith("/")) {
+			return page.url.slice(0, -1);
+		}
+	});
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
+
+## Advanced Usage
 
 ### Change permalinks for one directory
 
