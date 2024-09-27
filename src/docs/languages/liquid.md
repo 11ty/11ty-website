@@ -120,7 +120,7 @@ export default function(eleventyConfig) {
   // Async-friendly too
   eleventyConfig.addLiquidFilter("myAsyncLiquidFilter", async function(myVariable) { /* … */ });
 
-  // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
+  // Universal filters (Adds to Liquid, Nunjucks, 11ty.js)
   eleventyConfig.addFilter("myFilter", function(myVariable) { /* … */ });
 };
 {% endset %}
@@ -171,7 +171,7 @@ export default function(eleventyConfig) {
   // These can be async functions too
   eleventyConfig.addLiquidShortcode("user", function(name, twitterUsername) { /* … */ });
 
-  // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
+  // Universal Shortcodes (Adds to Liquid, Nunjucks, 11ty.js)
   eleventyConfig.addShortcode("user", function(name, twitterUsername) {
     return `<div class="user">
 <div class="user_name">${name}</div>
@@ -214,7 +214,7 @@ export default function(eleventyConfig) {
   // These can be async functions too
   eleventyConfig.addPairedLiquidShortcode("user2", function(bioContent, name, twitterUsername) { /* … */ });
 
-  // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
+  // Universal Shortcodes (Adds to Liquid, Nunjucks, 11ty.js)
   eleventyConfig.addPairedShortcode("user2", function(bioContent, name, twitterUsername) {
     return `<div class="user">
 <div class="user_name">${name}</div>
@@ -304,7 +304,7 @@ export default function (eleventyConfig) {
 
 ### Access to `page` data values {% addedin "0.11.0" %}
 
-If you aren’t using an arrow function, Liquid Shortcodes (and Nunjucks, Handlebars, and 11ty.js JavaScript Functions) will have access to Eleventy [`page` data values](/docs/data-eleventy-supplied/#page-variable-contents) without needing to pass them in as arguments.
+If you aren’t using an arrow function, Liquid Shortcodes (and Nunjucks and 11ty.js JavaScript Functions) will have access to Eleventy [`page` data values](/docs/data-eleventy-supplied/#page-variable-contents) without needing to pass them in as arguments.
 
 {% set codeContent %}
 export default function (eleventyConfig) {

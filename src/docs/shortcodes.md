@@ -29,8 +29,8 @@ export default function (eleventyConfig) {
   // * Markdown
   // * Liquid
   // * Nunjucks
-  // * Handlebars (not async)
   // * JavaScript
+  // * Handlebars (not async)
 
   eleventyConfig.addShortcode("user", function(firstName, lastName) { /* … */ });
 
@@ -70,8 +70,8 @@ export default function (eleventyConfig) {
   // * Markdown
   // * Liquid
   // * Nunjucks
-  // * Handlebars (not async)
   // * JavaScript
+  // * Handlebars (sync only)
 
   eleventyConfig.addPairedShortcode("user", function(content, firstName, lastName) { /* … */ });
 

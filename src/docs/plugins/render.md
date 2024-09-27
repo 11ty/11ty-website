@@ -14,13 +14,13 @@ communityLinksKey: syntaxrender
 
 ## Template Compatibility
 
-This plugin adds a `renderTemplate` and `renderFile` asynchronous shortcode to:
+This plugin adds a `renderTemplate` and `renderFile` asynchronous universal shortcode and a `renderContent` universal filter to:
 
 - Nunjucks
 - Liquid
 - JavaScript (11ty.js)
 
-Everything you’ve added to project’s configuration file will also be available in these renders too: shortcodes, filters, etc. That means you can nest 😱 them, too!
+Everything you’ve added to project’s configuration file will also be available in these renders too: shortcodes, filters, etc. That means you can nest 😱 them!
 
 ## Installation
 
@@ -37,7 +37,7 @@ This plugin is bundled with Eleventy core so it doesn’t require additional ins
 
 ## Usage
 
-### `renderTemplate`
+### `renderTemplate` Paired Shortcode
 
 Use the `renderTemplate` paired shortcode to render a template string.
 
@@ -46,8 +46,6 @@ Use the `renderTemplate` paired shortcode to render a template string.
 The content inside of the shortcode will be rendered using Markdown (`"md"`). Front matter is not yet supported.
 
 The first argument to `renderTemplate` can be any valid [`templateEngineOverride`](/docs/languages/#templateengineoverride-examples) value. You can even use `"liquid,md"` to preprocess markdown with liquid. You can use [custom template types](/docs/languages/custom/) here too.
-
-{% include "snippets/plugins/rendervue.njk" %}
 
 {% callout "info", "md" %}The one exception here is that `{% raw %}{% renderTemplate "11ty.js" %}{% endraw %}` JavaScript string templates are not yet supported—use `renderFile` below instead.{% endcallout %}
 
@@ -59,7 +57,7 @@ Both the [`eleventy`](/docs/data-eleventy-supplied/#eleventy-variable) and [`pag
 
 Outputs `myValue`.
 
-### `renderFile`
+### `renderFile` Shortcode
 
 Use the `renderFile` shortcode to render an include file.
 
@@ -82,3 +80,26 @@ The syntax is normally inferred using the file extension, but it can be overridd
 {% include "snippets/plugins/renderfileoverride.njk" %}
 
 Will render `blogpost.md` using Nunjucks instead of Markdown!
+
+### `renderContent` Filter
+
+Directly render a string of arbitrary template content.
+
+Consider the following Nunjucks template:
+
+{% raw %}
+```yaml
+---
+myContent: "{{ 'Second' }}"
+---
+{% renderTemplate %}{{ myContent }}{% endrenderTemplate %} from renderTemplate
+{{ myContent | renderContent("njk") }} from renderContent
+```
+
+Outputs:
+
+```
+{{ 'Second' }} from renderTemplate
+Second from renderContent
+```
+{% endraw %}

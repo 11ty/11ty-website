@@ -86,7 +86,7 @@ export default function(eleventyConfig) {
   // Nunjucks Asynchronous Filter (read on below)
   eleventyConfig.addNunjucksAsyncFilter("myAsyncNjkFilter", function(value, callback) { /* … */ });
 
-  // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
+  // Universal filters (Adds to Liquid, Nunjucks, and 11ty.js)
   eleventyConfig.addFilter("myFilter", function(value) { /* … */ });
 };
 {% endset %}
@@ -174,7 +174,7 @@ export default function(eleventyConfig) {
   // Nunjucks Shortcode
   eleventyConfig.addNunjucksShortcode("user", function(name, twitterUsername) { /* … */ });
 
-  // Universal Shortcodes (Adds to Liquid, Nunjucks, JavaScript, Handlebars)
+  // Universal Shortcodes (Adds to Liquid, Nunjucks, 11ty.js)
   eleventyConfig.addShortcode("user", function(name, twitterUsername) {
     return `<div class="user">
 <div class="user_name">${name}</div>
@@ -212,7 +212,7 @@ export default function(eleventyConfig) {
   // Nunjucks Shortcode
   eleventyConfig.addPairedNunjucksShortcode("user", function(bioContent, name, twitterUsername) { /* … */ });
 
-  // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
+  // Universal Shortcodes (Adds to Liquid, Nunjucks, 11ty.js)
   eleventyConfig.addPairedShortcode("user", function(bioContent, name, twitterUsername) {
     return `<div class="user">
 <div class="user_name">${name}</div>

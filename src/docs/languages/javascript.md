@@ -317,13 +317,13 @@ Any universal filters or shortcodes will also be available as JavaScript Templat
 
 {% set codeContent %}
 export default function(eleventyConfig) {
-  // Universal filters (Adds to Liquid, Nunjucks, 11ty.js, and Handlebars)
+  // Universal filters (Adds to Liquid, Nunjucks, 11ty.js)
   eleventyConfig.addFilter("myFilter", function(myVariable) { /* … */ });
 
-  // Universal Shortcodes (Adds to Liquid, Nunjucks, 11ty.js, Handlebars)
+  // Universal Shortcodes (Adds to Liquid, Nunjucks, 11ty.js)
   eleventyConfig.addShortcode("user", function(firstName, lastName) { /* … */ });
 
-  // Universal Paired Shortcodes (Adds to Liquid, Nunjucks, 11ty.js, Handlebars)
+  // Universal Paired Shortcodes (Adds to Liquid, Nunjucks, 11ty.js)
   eleventyConfig.addPairedShortcode("pairedUser", function(content, firstName, lastName) { /* … */ });
 };
 {% endset %}
@@ -348,7 +348,7 @@ export default function (data) {
 
 ### Access to `page` data values {% addedin "0.11.0" %}
 
-If you aren’t using an arrow function, JavaScript Functions (and Nunjucks, Liquid, and Handlebars Shortcodes) will have access to Eleventy [`page` data values](/docs/data-eleventy-supplied/#page-variable-contents) without needing to pass them in as arguments.
+If you aren’t using an arrow function, JavaScript Functions (and Nunjucks, Liquid Shortcodes) will have access to Eleventy [`page` data values](/docs/data-eleventy-supplied/#page-variable-contents) without needing to pass them in as arguments.
 
 {% set codeContent %}
 export default function (eleventyConfig) {
