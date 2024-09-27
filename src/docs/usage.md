@@ -41,6 +41,9 @@ A hypothetical `template.md` in the current directory would be rendered to `_sit
 # Use only a subset of template types
 npx @11ty/eleventy --formats=md,html,ejs
 
+# Don’t process any formats
+npx @11ty/eleventy --formats=
+
 # Find out the most up-to-date list of commands (there are more)
 npx @11ty/eleventy --help
 {% endset %}
@@ -54,6 +57,8 @@ npx @11ty/eleventy --help
 	<div id="usage-formats-pnpm" role="tabpanel">{% highlight "bash" %}{{ usageFormatsCode | packageManagerCodeTransform("pnpm") }}{% endhighlight %}</div>
 	<div id="usage-formats-yarn" role="tabpanel">{% highlight "bash" %}{{ usageFormatsCode | packageManagerCodeTransform("yarn") }}{% endhighlight %}</div>
 </seven-minute-tabs>
+
+* The default for `--formats=` changed in {{ "3.0.0-alpha.7" | coerceVersion }} from an alias of `*` to an empty set.
 
 ### Re-run Eleventy when you save
 

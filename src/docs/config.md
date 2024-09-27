@@ -247,7 +247,7 @@ Specify which types of templates should be transformed.
 | _Default_               | `html,liquid,ejs,md,hbs,mustache,haml,pug,njk,11ty.js`   |
 | _Valid Options_         | Array of [template engine short names](/docs/languages/) |
 | _Command Line Override_ | `--formats` _(accepts a comma separated string)_         |
-| _Configuration API_     | `setTemplateFormats` {% addedin "0.2.14" %}              |
+| _Configuration API_     | `setTemplateFormats` {% addedin "0.2.14" %} and `addTemplateFormats` {% addedin "0.11.0" %}              |
 
 {% callout "info" %}{% addedin "0.9.0" %} <strong>Case sensitivity</strong>: File extensions should be considered case insensitive, cross-platform. While macOS already behaves this way (by default), other operating systems require additional Eleventy code to enable this behavior.{% endcallout %}
 
@@ -267,10 +267,15 @@ There are many [different shapes of configuration file](/docs/config-shapes.md).
 
 {% set codeContent %}
 export default function (eleventyConfig) {
+	// Reset to this value
 	eleventyConfig.setTemplateFormats("html,liquid,njk");
+
+	// Additive to existing
+	eleventyConfig.addTemplateFormats("pug,haml");
 
 	// Or:
 	// eleventyConfig.setTemplateFormats([ "html", "liquid", "njk" ]);
+	// eleventyConfig.addTemplateFormats([ "pug", "haml" ]);
 };
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
