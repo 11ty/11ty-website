@@ -91,7 +91,10 @@ The above all render as the following in your output:
 <a href="/my-template/">Home</a>
 ```
 
-- The paths used here should be [relative to the input directory](/docs/config/#input-directory) though they _can_ be relative to the project root (the former is simpler and more robust).
+- The paths used here can be relative to:
+  - [the input directory](/docs/config/#input-directory)
+  - the current template path {% addedin "3.0.0-alpha.19" %}
+  - to the project root (you’ll regret this if your input directory ever changes 😅)
 - As this transform is implicit it _does not_ error when an inputPath match is not found—it only returns the original URL string.
 - When pointing to a [**Pagination template**](/docs/pagination/), the first URL in the pagination set is returned.
 
