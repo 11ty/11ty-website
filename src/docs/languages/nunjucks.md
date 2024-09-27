@@ -346,7 +346,9 @@ This is identical to the synchronous Nunjucks usage.
 
 {% endraw %}
 
-### Warning: The `set` Tag Does Not Work With Async Content
+<div id="warning-the-set-tag-does-not-work-with-async-content"></div>
+
+## Warning: `set` is not async-friendly
 
 {% callout "warn" %}This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.{% endcallout %}
 
@@ -367,26 +369,13 @@ This is identical to the synchronous Nunjucks usage.
 
 {% endraw %}
 
-### Access to `page` data values {% addedin "0.11.0" %}
+<div id="access-to-page-data-values"></div>
 
-If you aren’t using an arrow function, Nunjucks Shortcodes (and Handlebars, Liquid, and 11ty.js JavaScript Functions) will have access to Eleventy [`page` data values](/docs/data-eleventy-supplied/#page-variable-contents) without needing to pass them in as arguments.
+## Access to Eleventy supplied data
 
-{% set codeContent %}
-export default function (eleventyConfig) {
-	eleventyConfig.addNunjucksShortcode("myShortcode", function () {
-		// Available in 0.11.0 and above
-		console.log(this.page);
+You can access `page`, `eleventy`, `ctx`, and `env` in filters and shortcodes. Read more on the [Shortcodes](/docs/shortcodes/#scoped-data-in-shortcodes) and [Filters](/docs/filters/#scoped-data-in-filters) documentation.
 
-		// For example:
-		console.log(this.page.url);
-		console.log(this.page.inputPath);
-		console.log(this.page.fileSlug);
-	});
-};
-{% endset %}
-{% include "snippets/configDefinition.njk" %}
-
-### Generic Global {% addedin "1.0.0" %}
+## Generic Global {% addedin "1.0.0" %}
 
 Nunjucks provides a custom way to [add globals](https://mozilla.github.io/nunjucks/api.html#addglobal) to templates. These can be any arbitrary JavaScript: functions, variables, etc. Note that this is not async-friendly (Nunjucks does not support `await` inside of templates).
 

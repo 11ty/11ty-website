@@ -134,7 +134,7 @@ npx @11ty/eleventy --config=myeleventyconfig.js
 
 Read more about [Configuration files](/docs/config.md).
 
-{% addedin "v3.0.0-alpha.18" %}If the file you specify with `--config` does not exist, Eleventy will throw an error.
+{% addedin "v3.0.0-alpha.18" %}If your specified `--config` file does not exist, Eleventy will throw an error.
 
 ### `--to` can output JSON {% addedin "1.0.0" %}
 
@@ -226,7 +226,7 @@ npx @11ty/eleventy --input=. --output=. --formats=md
 	<div id="usage-same-yarn" role="tabpanel">{% highlight "bash" %}{{ usageSameDirsCode | packageManagerCodeTransform("yarn") }}{% endhighlight %}</div>
 </seven-minute-tabs>
 
-{% callout "warn" %}Careful with <code>--formats=html</code> here! If you run eleventy more than once, it’ll try to process the output files too. Read more at the <a href="/docs/languages/html/#using-the-same-input-and-output-directories">HTML template docs</a>.{% endcallout %}
+{% callout "warn" %}Careful with <code>--formats=html</code> here! If you run Eleventy more than once, we will attempt to process your new output files as input files (which will throw errors). Read more at the <a href="/docs/languages/html/#using-the-same-input-and-output-directories">HTML template docs</a>.{% endcallout %}
 
 <!--
 ### Example: Process a Single File

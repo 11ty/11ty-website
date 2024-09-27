@@ -103,8 +103,10 @@ Read more about using paired shortcodes on the individual Template Language docu
 
 A few Eleventy-specific data properties are available to shortcode callbacks.
 
-- `this.page` {% addedin "0.11.0" %}
-- `this.eleventy` {% addedin "2.0.0-canary.5" %}
+- `this.page` {% addedin "0.11.0" %} (Learn about [`page`](/docs/data-eleventy-supplied.md#page-variable))
+- `this.eleventy` {% addedin "2.0.0-canary.5" %} (Learn about [`eleventy`](/docs/data-eleventy-supplied.md##eleventy-variable))
+- `this.env` (Nunjucks-specific) {% addedin "3.0.0-canary.5" %}
+- `this.ctx` (Nunjucks-specific) {% addedin "3.0.0-canary.5" %}
 
 {% set codeContent %}
 export default function (eleventyConfig) {
