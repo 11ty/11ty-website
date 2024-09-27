@@ -228,7 +228,7 @@ While `index.html` is optional on `permalink: /resource/index.html`, it is a [**
 
 If you leave off the file name **and** forget the trailing slash on your permalink, this will write to a file without a file extension. Your web browser may attempt to download the file instead of displaying it (unless you’ve done some extra work to set up your `Content-Type` headers correctly).
 
-This will also cause more problems when attempting to create additional templates inside of `/resource/` later.
+This may also cause local development issues if you later attempt to write to a subdirectory of the same name (anyting inside `/resource/`).
 
 - `permalink: /resource/` ✅ Fine
 - `permalink: /resource/index.html` ✅ The same as above
