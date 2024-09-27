@@ -170,6 +170,10 @@ npx @11ty/eleventy --serve --incremental
 
 # Skip the initial full build with `--ignore-initial`
 npx @11ty/eleventy --serve --incremental --ignore-initial
+
+# Pass in a template path, watch/serve not required
+# Added in {{ "3.0.0-alpha.14" | coerceVersion }}
+npx @11ty/eleventy --incremental=myfile.md
 {% endset %}
 <seven-minute-tabs class="tabs-flush tabs-right tabs-firstonly" persist sync>
 	<div role="tablist" aria-label="Choose your Package Manager">
@@ -182,7 +186,7 @@ npx @11ty/eleventy --serve --incremental --ignore-initial
 	<div id="usage-inc-yarn" role="tabpanel">{% highlight "bash" %}{{ usageIncrementalCode | packageManagerCodeTransform("yarn") }}{% endhighlight %}</div>
 </seven-minute-tabs>
 
-Read more about [incremental builds](/docs/usage/incremental/).
+Read more about [incremental builds](/docs/usage/incremental/). Related [GitHub #3324](https://github.com/11ty/eleventy/issues/3324)
 
 ### `--ignore-initial` to run Eleventy without an Initial Build {% addedin "2.0.0-canary.25" %}
 
