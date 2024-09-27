@@ -45,13 +45,11 @@ Use the `renderTemplate` paired shortcode to render a template string.
 
 The content inside of the shortcode will be rendered using Markdown (`"md"`). Front matter is not yet supported.
 
-The first argument to `renderTemplate` can be any valid [`templateEngineOverride`](/docs/languages/#templateengineoverride-examples) value. You can even use `"liquid,md"` to preprocess markdown with liquid. You can use [custom template types](/docs/languages/custom/) here too, including [the Vue plugin](https://github.com/11ty/eleventy-plugin-vue)!
+The first argument to `renderTemplate` can be any valid [`templateEngineOverride`](/docs/languages/#templateengineoverride-examples) value. You can even use `"liquid,md"` to preprocess markdown with liquid. You can use [custom template types](/docs/languages/custom/) here too.
 
 {% include "snippets/plugins/rendervue.njk" %}
 
 {% callout "info", "md" %}The one exception here is that `{% raw %}{% renderTemplate "11ty.js" %}{% endraw %}` JavaScript string templates are not yet supported—use `renderFile` below instead.{% endcallout %}
-
-To add Vue support, don’t forget to install [`@11ty/eleventy-plugin-vue` (v0.6.0 or newer)](https://github.com/11ty/eleventy-plugin-vue) and add the Vue plugin in your config file. There is an example on the Eleventy Vue Plugin documentation showing [how to call the render plugin inside of Vue components](https://github.com/11ty/eleventy-plugin-vue#advanced-run-async-things-before-component-render).
 
 #### Pass in data
 
@@ -69,11 +67,7 @@ Use the `renderFile` shortcode to render an include file.
 
 The first argument to `renderFile` is a project root relative path to any template file. Front matter inside of the target files is not yet supported. The template syntax used is inferred by the file extension.
 
-Note that you can use files supported by any [custom file extensions](/docs/languages/custom/) you’ve added too, including a Vue Single File Component from the [Eleventy Vue plugin](https://github.com/11ty/eleventy-plugin-vue)!
-
-{% include "snippets/plugins/renderfilevue.njk" %}
-
-To add Vue support, don’t forget to install [`@11ty/eleventy-plugin-vue` (v0.6.0 or newer)](https://github.com/11ty/eleventy-plugin-vue) and add the Vue plugin in your config file.
+Note that you can use files supported by any [custom file extensions](/docs/languages/custom/) you’ve added too!
 
 #### Pass in data
 
