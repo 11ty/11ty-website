@@ -219,6 +219,17 @@ You can override a template language once. Any attempts to override an more than
 
 {% addedin "3.0.0-alpha.11" %} Adding `key` in the options object unlocks use of the target `defaultRenderer`. You can read about this approach (and see examples of its usage) on the [TypeScript](/docs/languages/typescript/), [JSX](/docs/languages/jsx/), or [MDX](/docs/languages/mdx/) documentation pages (all of which use `key: "11ty.js"` to extend [JavaScript](/docs/languages/javascript/) templates).
 
+## Access to Existing Filters and Shortcodes
+
+If you want to add support for universal filters and shortcodes in your custom template language, you can do so with the following configuration API methods. Related [GitHub #3310](https://github.com/11ty/eleventy/issues/3310).
+
+* `eleventyConfig.getFilter(name)` {% addedin "0.10.0" %}
+* `eleventyConfig.getFilters()` {% addedin "3.0.0-alpha.15" %}
+* `eleventyConfig.getShortcode(name)` {% addedin "3.0.0-alpha.15" %}
+* `eleventyConfig.getShortcodes()` {% addedin "3.0.0-alpha.15" %}
+* `eleventyConfig.getPairedShortcode(name)` {% addedin "3.0.0-alpha.15" %}
+* `eleventyConfig.getPairedShortcodes()` {% addedin "3.0.0-alpha.15" %}
+
 ## Full Options List
 
 ### `compile`
@@ -247,6 +258,33 @@ You can override a template language once. Any attempts to override an more than
 The render function is passed the merged data object (i.e. the full Data Cascade available inside templates). The render function returned from `compile` is called once per output file generated (one for basic templates and more for [paginated templates](/docs/pagination/)).
 
 {% callout "info", "md" %}`inputContent` will **not include front matter**. This will have been parsed, removed, and inserted into the Data Cascade. Also note that if `read: false` (as documented below), `inputContent` will be `undefined`.{% endcallout %}
+
+<details>
+<summary><strong>Advanced: Adding Eleventy’s Scoped Data to your Compile Function</strong></summary>
+
+Shortcodes and Filters both provide access to `page` and `eleventy` (via `this.page` and `this.eleventy` specifically). If you’d like to add the same for your custom template, you can do so via the `augmentFunctionContext` method.
+
+```js
+	compile: function(compileFn) {
+		return function(data) {
+			// Binds this.page and this.eleventy to your render context (and any future additions added later)
+			let renderFn = eleventyConfig.augmentFunctionContext(compileFn, {
+				source: data,
+
+				// Overwrite existing values?
+				// overwrite: true,
+
+				// Lazily fetch the key using `getter`
+				// lazy: false,
+				// getter: (key, context) => context?.[key];
+			});
+
+			return renderFn(data);
+		};
+	}
+```
+
+</details>
 
 ### `outputFileExtension`
 
