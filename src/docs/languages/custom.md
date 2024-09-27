@@ -330,6 +330,19 @@ You probably won’t need this but it’s useful if your extension doesn’t mat
 
 Whether or not [Layouts](/docs/layouts.md) will be applied to this template language. This will also exclude data from layout files to play a part in the data cascade of this template type as well. Related [GitHub #2830](https://github.com/11ty/eleventy/issues/2830).
 
+### `useJavaScriptImport` {% addedin "v3.0.0-beta.2" %}
+
+Use the JavaScript loader instead of reading from the file system. If enabled, this takes precedence over `read` option.
+
+```js
+	useJavaScriptImport: true,
+	getInstanceFromInputPath: async function(inputPath) {
+		let mod = await import(inputPath);
+		return mod.default;
+	},
+	compile: (compileFn) => compileFn,
+```
+
 ### `getData` and `getInstanceFromInputPath`
 
 - _Optional_
