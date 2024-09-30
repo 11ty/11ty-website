@@ -109,7 +109,7 @@ export default function (eleventyConfig) {
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
-View the [full options list for `@11ty/eleventy-plugin-bundle`](https://github.com/11ty/eleventy-plugin-bundle#installation). As an example, you can use the [`transforms` array to modify bundle content with postcss](https://github.com/11ty/eleventy-plugin-bundle#modify-the-bundle-output).
+View the [full options list for the Bundle plugin](/docs/plugins/bundle.md). As an example, you can use the [`transforms` array to modify bundle content with postcss](/docs/plugins/bundle.md#postprocess-the-bundle-output).
 
 </details>
 
@@ -1241,7 +1241,7 @@ You can opt-out of bundling on a per-element basis [using `webc:keep`](#webckeep
 </html>
 ```
 
-- {% addedin "@11ty/eleventy-plugin-webc@0.9.0" %}Eleventy WebC uses [`eleventy-plugin-bundle`](https://github.com/11ty/eleventy-plugin-bundle/#use-with-webc) behind the scenes to implement bundling. `getBundle('css')` and `getBundle('js')` can now be used instead of `getCss(page.url)` and `getJs(page.url)` respectively.
+- {% addedin "@11ty/eleventy-plugin-webc@0.9.0" %}Eleventy WebC uses the [Bundle Plugin](/docs/plugins/bundle.md#using-with-webc) behind the scenes to implement bundling. `getBundle('css')` and `getBundle('js')` can now be used instead of `getCss(page.url)` and `getJs(page.url)` respectively.
 - {% addedin "@11ty/webc@0.8.0" %}`webc:keep` is required on `<style>` and `<script>` in your layout files to prevent re-bundling the bundles.
 - {% addedin "@11ty/webc@0.8.0" %}The `getCss` and `getJs` helpers are now available to all WebC templates without restriction. Previous versions required them to be used in an _Eleventy Layout_ file.
 - `@raw` was {% addedin "@11ty/webc@0.7.1" %}. Previous versions can use `webc:raw @html`.
@@ -1286,7 +1286,7 @@ The CSS bundle will look like:
 
 You can access these bundles in other templates types too (`.njk`, `.liquid`, etc.).
 
-{% addedin "@11ty/eleventy-plugin-webc@0.9.0" %}Eleventy WebC uses [`eleventy-plugin-bundle`](https://github.com/11ty/eleventy-plugin-bundle/#use-with-webc) behind the scenes to implement bundling. This plugin provides [`getBundle`](https://github.com/11ty/eleventy-plugin-bundle/#render-bundle-code) and [`getBundleFileUrl`](https://github.com/11ty/eleventy-plugin-bundle/#write-a-bundle-to-a-file) universal shortcodes for use in any template type (including WebC as shown above).
+{% addedin "@11ty/eleventy-plugin-webc@0.9.0" %}Eleventy WebC uses the [Bundle Plugin](/docs/plugins/bundle.md#using-with-webc) behind the scenes to implement bundling. This plugin provides `getBundle` and `getBundleFileUrl` universal shortcodes for use in any template type (including WebC as shown above).
 
 <details>
 <summary><em>WebC v0.8.0 and older:</em> Check out the deprecated (but still in place for backwards compatibility) <code>webcGetCss</code> and <code>webcGetJs</code> universal filters for bundle output.</summary>
