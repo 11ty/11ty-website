@@ -6,10 +6,7 @@ pagination:
   resolve: values
   generatePageOnEmptyData: true
 permalink: "/authors/{{ author.name }}/"
-eleventyNavigation:
-  parent: Authors
 excludeFromSearch: true
-excludeFromSidebar: true
 layout: layouts/docs.njk
 ---
 
