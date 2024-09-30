@@ -56,6 +56,10 @@ Installing Eleventy into a project requires a `package.json` file.
 			npm init -y
 		</syntax-highlight>
 		<p>The <code>npm</code> command (included with Node.js) will create a <code>package.json</code> file for you with <a href="https://docs.npmjs.com/cli/init"><code>npm init -y</code></a>. The <code>-y</code> flag tells <code>npm</code> to use default values and skips the questionnaire.</p>
+		<p>Use the following command if you want to use <a href="/docs/cjs-esm.md">ESM in your project and not CommonJS</a>.</p>
+		<syntax-highlight language="bash">
+			npm pkg set type="module"
+		</syntax-highlight>
 	</div>
 	<div id="quickstart-run-2a-pnpm" role="tabpanel">
 		<syntax-highlight language="bash">
