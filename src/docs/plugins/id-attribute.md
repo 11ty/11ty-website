@@ -5,7 +5,7 @@ eleventyNavigation:
   excerpt: A plugin to add `id` attributes to headings.
 ---
 
-# Id Attribute
+# Id Attribute {% addedin "3.0.0-beta.1" %}
 
 {% tableofcontents %}
 
@@ -20,7 +20,7 @@ This is best paired with a user interface piece to add anchor links to heading e
 * [`<heading-anchors>` from David Darnes](https://github.com/daviddarnes/heading-anchors)
 * [`<heading-anchors>` from Zach Leatherman](https://github.com/zachleat/heading-anchors) (only for anchor links as siblings)
 
-## Example
+## Examples
 
 ```html
 <h1>Welcome to Eleventy</h1>
@@ -32,12 +32,27 @@ is transformed into:
 <h1 id="welcome-to-eleventy">Welcome to Eleventy</h1>
 ```
 
+### Ignore a node {% addedin "3.0.0-beta.2" %}
+
+Use the `eleventy:id-ignore` attribute on a child node to ignore it (only for the purposes of `id` attribute generation).
+
+```html
+<h1>Welcome to Eleventy<span eleventy:id-ignore> ignore this</span></h1>
+```
+
+is transformed into:
+
+```html
+<h1 id="welcome-to-eleventy">Welcome to Eleventy</h1>
+```
+
 ## Usage
 
-This plugin is bundled with Eleventy and requires no additional installation.
+This plugin is bundled with Eleventy and requires no additional package installation (though you do need to opt-in via `addPlugin`).
 
 {% include "snippets/plugins/idattr.njk" %}
 
 ### With options
 
 {% include "snippets/plugins/idattr-opts.njk" %}
+
