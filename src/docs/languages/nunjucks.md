@@ -201,7 +201,6 @@ export default function(eleventyConfig) {
 <div class="user">
 	<div class="user_name">Zach Leatherman</div>
 	<div class="user_twitter">@zachleat</div>
-	>
 </div>
 ```
 

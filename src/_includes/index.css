@@ -99,10 +99,6 @@ iframe {
 	width: 100%;
 }
 
-is-land {
-	content-visibility: auto;
-}
-
 /* Utility classes */
 .nowrap {
 	white-space: nowrap;
