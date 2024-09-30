@@ -1,8 +1,7 @@
 ---
 eleventyNavigation:
-  parent: Getting Started
+  parent: Deployment
   key: Using a CMS
-  order: 10
 featuredCmses:
   - name: "Want your logo here? Contact us!"
     url: "mailto:partners@11ty.dev"

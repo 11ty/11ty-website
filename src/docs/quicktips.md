@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: Quick Tips
-  parent: Working with Templates
+  parent: Eleventy Projects
   order: 7
   excerpt: A selection of common use cases.
 communityLinksKey: quicktips

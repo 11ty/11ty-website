@@ -5,6 +5,7 @@ eleventyNavigation:
   excerpt: A plugin to run Eleventy in an Edge Function to add dynamic content to your Eleventy sites.
 # communityLinksKey: edge
 overrideCommunityLinks: true
+excludeFromSidebar: true
 ---
 
 # Edge

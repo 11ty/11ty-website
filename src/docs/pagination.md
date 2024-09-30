@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Working with Templates
+  parent: Eleventy Projects
   key: Pagination
   order: 4
   excerpt: Iterate over a data set and create multiple files from a single template.

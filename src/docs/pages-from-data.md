@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Working with Templates
+  parent: Eleventy Projects
   key: Create Pages From Data
   order: 3
   excerpt: Iterate over a data set and create multiple output files.

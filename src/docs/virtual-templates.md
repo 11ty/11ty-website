@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Working with Templates
+  parent: Eleventy Projects
   key: Virtual Templates
   order: 6
   excerpt: Create a template or layout using configuration only.

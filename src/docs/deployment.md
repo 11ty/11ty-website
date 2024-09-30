@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Getting Started
+  parent: Eleventy Projects
   key: Deployment
   title: "Deployment & Hosting"
   order: 8

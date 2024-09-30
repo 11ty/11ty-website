@@ -3,6 +3,7 @@ eleventyNavigation:
   key: Serverless
   parent: Retired Plugins
   excerpt: A plugin to run Eleventy in a serverless function for server side rendering or to speed up builds for very large sites.
+excludeFromSidebar: true
 ---
 
 # Serverless

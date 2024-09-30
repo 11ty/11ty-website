@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Working with Templates
+  parent: Eleventy Projects
   key: Common Pitfalls
   order: 8
   excerpt: Some common problems that people run into.
