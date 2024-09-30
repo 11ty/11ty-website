@@ -10,11 +10,13 @@ function markdownItSlugify(s) {
 
 function removeExtraText(s) {
 	let newStr = String(s);
+	newStr = newStr.replace(/\-alpha\.\d+/, "");
 	newStr = newStr.replace(/\-beta\.\d+/, "");
 	newStr = newStr.replace(/\-canary\.\d+/, "");
 	newStr = newStr.replace(/New\ in\ v\d+\.\d+\.\d+/, "");
 	newStr = newStr.replace(/Added\ in\ v\d+\.\d+\.\d+/, "");
 	newStr = newStr.replace(/Coming\ soon\ in\ v\d+\.\d+\.\d+/, "");
+	newStr = newStr.replace(/Pre-release\ only\:\ v\d+\.\d+\.\d+/, "");
 	newStr = newStr.replace(/⚠️/g, "");
 	newStr = newStr.replace(/[?!]/g, "");
 	newStr = newStr.replace(/<[^>]*>/g, "");

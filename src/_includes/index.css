@@ -279,6 +279,7 @@ table thead th a[href] {
 	color: inherit;
 }
 table .numeric {
+	white-space: nowrap;
 	text-align: right;
 	font-family: Roboto Mono, Consolas, Monaco, Andale Mono, Ubuntu Mono,
 		monospace;
