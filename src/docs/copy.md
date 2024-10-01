@@ -17,10 +17,8 @@ If we want to copy additional files that are not Eleventy templates, we use a fe
 
 Use a configuration API method to specify _files_ or _directories_ for Eleventy to copy.
 
-{% codetitle ".eleventy.js" %}{% codetitle "_site", "Output Directory" %}
-
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	// Output directory: _site
 
 	// Copy `img/` to `_site/img`
@@ -34,7 +32,8 @@ module.exports = function (eleventyConfig) {
 	// Keeps the same directory structure.
 	eleventyConfig.addPassthroughCopy("**/*.jpg");
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 {% callout "info" %}Passthrough File Copy entries are relative to the root of your project and <em>not</em> your Eleventy input directory.{% endcallout %}
 
@@ -51,18 +50,16 @@ For example:
 
 If we copy `src/img` using passthrough file copy, it will copy to `_site/img`.
 
-{% codetitle ".eleventy.js" %}{% codetitle "src", "Input Directory" %}
-{% codetitle "_site", "Output Directory" %}
-
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	// Input directory: src
 	// Output directory: _site
 
 	// The following copies to `_site/img`
 	eleventyConfig.addPassthroughCopy("src/img");
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Using Globs {% addedin "0.9.0" %}
 
@@ -70,14 +67,13 @@ In this example, we copy all `jpg` image files to the output folder, maintaining
 
 Note that this method is slower than non-glob methods, as it searches the entire directory structure and copies each file in Eleventy individually.
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	// Find and copy any `jpg` files, maintaining directory structure.
 	eleventyConfig.addPassthroughCopy("**/*.jpg");
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 With an output directory of `_site`:
 
@@ -88,11 +84,8 @@ With an output directory of `_site`:
 
 Instead of a string, pass in an object of the following structure: `{ "input": "target" }`.
 
-{% codetitle ".eleventy.js" %}{% codetitle "src", "Input Directory" %}
-{% codetitle "_site", "Output Directory" %}
-
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	// Input directory: src
 	// Output directory: _site
 
@@ -105,23 +98,23 @@ module.exports = function (eleventyConfig) {
 	// Copy `random-folder/img/` to `_site/subfolder/img`
 	eleventyConfig.addPassthroughCopy({ "random-folder/img": "subfolder/img" });
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 #### Using Globs and Output Directories
 
 Note that this method is slower than non-glob methods, as it is searching the entire directory structure and copies each file in Eleventy individually.
 
-{% codetitle ".eleventy.js" %}{% codetitle "_site", "Output Dir" %}
-
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	// Output directory: _site
 
 	// Find and copy any `jpg` files in any folder to _site/img
 	// Does not keep the same directory structure.
 	eleventyConfig.addPassthroughCopy({ "**/*.jpg": "img" });
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 With an output directory of `_site`:
 
@@ -134,16 +127,15 @@ Eleventy, by default, searches for any file in the input directory with a file e
 
 If a file format is not recognized by Eleventy as a template file extension, Eleventy will ignore the file. You can modify this behavior by adding supported template formats:
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	eleventyConfig.setTemplateFormats([
 		"md",
 		"css", // css is not yet a recognized template extension in Eleventy
 	]);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 In the above code sample `css` is not currently a recognized Eleventy template, but Eleventy will search for any `*.css` files inside of the input directory and copy them to output (keeping directory structure).
 
@@ -161,14 +153,13 @@ Practically speaking, this means that (during `--serve` only!) files are referen
 
 You can enable this behavior in your project using this configuration API method:
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	// the default is "copy"
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 This behavior will revert to `"copy"` in your project automatically if:
 
@@ -185,27 +176,18 @@ This behavior will revert to `"copy"` in your project automatically if:
 
 Additionally, you can pass additional configuration options to the `recursive-copy` package. This unlocks the use passthrough file copy with symlinks, transforming or renaming copied files. Here are just a few examples:
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("img", {
 		expand: true, // expand symbolic links
 	});
-};
-```
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
-	let copyOptions = {
+	eleventyConfig.addPassthroughCopy({ img: "subfolder/img" }, {
 		debug: true, // log debug information
-	};
-
-	eleventyConfig.addPassthroughCopy({ img: "subfolder/img" }, copyOptions);
+	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 Review the [full list of options on the `recursive-copy` GitHub repository](https://github.com/timkendrick/recursive-copy#usage).
 

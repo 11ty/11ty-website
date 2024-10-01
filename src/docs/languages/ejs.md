@@ -14,31 +14,43 @@ layout: layouts/langs.njk
 
 You can override a `.ejs` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
 
-## EJS Options
+## Installation
 
-### Optional: Compile/Render Options {% addedin "0.3.0" %}
+The `ejs` templating language was moved out of Eleventy core in v3 and now requires a plugin installation.
 
-See “Options” on the [EJS home page](https://ejs.co/).
+* [`11ty/eleventy-plugin-template-languages` on GitHub](https://github.com/11ty/eleventy-plugin-template-languages)
 
-```js
-module.exports = function (eleventyConfig) {
-	eleventyConfig.setEjsOptions({
+Add to your configuration file:
+
+{% set codeContent %}
+import ejsPlugin from "@11ty/eleventy-plugin-ejs";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(ejsPlugin);
+}
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
+
+Use more `ejs` options ([full options list](https://github.com/mde/ejs#options)):
+
+{% set codeContent %}
+import ejs from "ejs";
+import ejsPlugin from "@11ty/eleventy-plugin-ejs";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(ejsPlugin, {
+		async: false, // default
+
 		// use <? ?> instead of <% %>
 		delimiter: "?",
+
+		// Override the `ejs` library instance
+		eleventyLibraryOverride: ejs,
 	});
-};
-```
-
-### Optional: Set your own Library instance {% addedin "0.3.0" %}
-
-As an escape mechanism for advanced usage, pass in your own instance of the EJS library using the Configuration API.
-
-```js
-module.exports = function (eleventyConfig) {
-	let ejs = require("ejs");
-	eleventyConfig.setLibrary("ejs", ejs);
-};
-```
+}
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ## Supported Features
 

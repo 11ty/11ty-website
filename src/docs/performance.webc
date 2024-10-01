@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: Performance
-  parent: Getting Started
+  parent: Learn
   excerpt: The build and site performance of Eleventy projects
   order: 3
 ignoreSidebarCallout: true

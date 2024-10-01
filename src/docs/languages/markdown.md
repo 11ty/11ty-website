@@ -35,10 +35,10 @@ Starting in Eleventy 2.0, we’ve disabled the [Indented Code Blocks](#indented-
 
 Pass in your own instance of the Markdown library using the Configuration API. See [all `markdown-it` options](https://github.com/markdown-it/markdown-it#init-with-presets-and-options).
 
-```js
-const markdownIt = require("markdown-it");
+{% set codeContent %}
+import markdownIt from "markdown-it";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	let options = {
 		html: true,
 		breaks: true,
@@ -47,7 +47,8 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.setLibrary("md", markdownIt(options));
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Optional: Amend the Library instance {% addedin "2.0.0" %}
 

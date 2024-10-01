@@ -216,11 +216,11 @@ layout: layouts/docs.njk
 Use the <code>elv-callout-sticky</code> class to affix to the top of the viewport while scrolling.
 
 <!-- <div class="elv-sg-component">
-    <div class="elv-callout elv-callout-info">This documentation is for an upcoming version of Eleventy. Go to the <a href="https://www.11ty.dev/docs/">latest stable version of Eleventy docs</a> or check out the <a href="https://www.11ty.dev/docs/versions/">full release history.</a></div>
+    <div class="elv-callout elv-callout-info">This documentation is for an upcoming version of Eleventy. Go to the <a href="/docs/">latest stable version of Eleventy docs</a> or check out the <a href="/docs/versions/">full release history.</a></div>
 </div>
 
 <div class="elv-sg-component">
-    <div class="elv-callout elv-callout-warn">This documentation is for an older version. Go to the <a href="https://www.11ty.dev/docs/">newest Eleventy docs</a> or check out the <a href="https://www.11ty.dev/docs/versions/">full release history.</a></div>
+    <div class="elv-callout elv-callout-warn">This documentation is for an older version. Go to the <a href="/docs/">newest Eleventy docs</a> or check out the <a href="/docs/versions/">full release history.</a></div>
 </div> -->
 
 <h3>OpenGraph card</h3>

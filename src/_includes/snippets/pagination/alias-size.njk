@@ -1,0 +1,115 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedchunk"} %}
+  <div id="pagedchunk-liquid" role="tabpanel">
+
+{% raw %}
+
+```liquid
+---
+pagination:
+  data: testdata
+  size: 2
+  alias: wonder
+testdata:
+  - Item1
+  - Item2
+  - Item3
+  - Item4
+permalink: "different/{{ wonder[0] | slugify }}/index.html"
+---
+You can use the alias in your content too {{ wonder[0] }}.
+```
+
+{% endraw %}
+
+  </div>
+  <div id="pagedchunk-njk" role="tabpanel">
+
+{% raw %}
+
+```jinja2
+---
+pagination:
+  data: testdata
+  size: 2
+  alias: wonder
+testdata:
+  - Item1
+  - Item2
+  - Item3
+  - Item4
+permalink: "different/{{ wonder[0] | slugify }}/index.html"
+---
+You can use the alias in your content too {{ wonder[0] }}.
+```
+
+{% endraw %}
+
+  </div>
+  <div id="pagedchunk-js" role="tabpanel">
+
+{% raw %}
+
+```js
+export const data = {
+  pagination: {
+    data: "testdata",
+    size: 2,
+    alias: "wonder"
+  },
+  testdata: [
+    "Item1",
+    "Item2",
+    "Item3",
+    "Item4"
+  ],
+  permalink: {
+    function(data) {
+      return `different/${this.slugify(data.wonder[0])}/index.html`
+    };
+  }
+};
+
+export function render(data) {
+  return `You can use the alias in your content too ${data.wonder[0]}.`;
+}
+```
+
+{% endraw %}
+
+  </div>
+	<div id="pagedchunk-cjs" role="tabpanel">
+
+{% raw %}
+
+```js
+exports.data = {
+  pagination: {
+    data: "testdata",
+    size: 2,
+    alias: "wonder"
+  },
+  testdata: [
+    "Item1",
+    "Item2",
+    "Item3",
+    "Item4"
+  ],
+  permalink: {
+    function(data) {
+      return `different/${this.slugify(data.wonder[0])}/index.html`
+    };
+  }
+};
+
+exports.render = function (data) {
+  return `You can use the alias in your content too ${data.wonder[0]}.`;
+}
+```
+
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>

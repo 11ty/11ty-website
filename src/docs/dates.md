@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Working with Templates
+  parent: Eleventy Projects
   key: Content Dates
   order: 5
   excerpt: Assigning dates to content, using dates in front matter.
@@ -32,11 +32,11 @@ date: Last Modified
 
 Valid `date` values:
 
-- `Last Modified`: automatically resolves to the file’s last modified date
-- `Created`: automatically resolves to the file’s created date (default, this is what is used when `date` is omitted).
-- `git Last Modified`: {% addedin "1.0.1" %} automatically resolves to the file’s latest git commit. If a file is not yet checked in to git, it assigns `Date.now()` to `page.date` instead.
+- `"Last Modified"`: automatically resolves to the file’s last modified date
+- `"Created"`: automatically resolves to the file’s created date (default, this is what is used when `date` is omitted).
+- `"git Last Modified"`: {% addedin "1.0.1" %} automatically resolves to the file’s latest git commit. If a file is not yet checked in to git, it assigns `Date.now()` to `page.date` instead.
   - This one is a bit resource intensive, so you may want to limit this to your CI server environment only using JavaScript data files and [Environment Variables](/docs/environment-vars/). Check out [this real-world directory data file](https://github.com/11ty/11ty-website/blob/5403f2b853e09165bec8bc6f7466a6a041487bcc/src/docs/docs.11tydata.js#L5-L7).
-- `git Created`: {% addedin "2.0.0-canary.13" %} automatically resolves to the file’s first git commit. It uses git's `--follow` flag to make a "best effort" renaming tracking. If a file is not yet checked in to git, it assigns `Date.now()` to `page.date` instead.
+- `"git Created"`: {% addedin "2.0.0-canary.13" %} automatically resolves to the file’s first git commit. It uses git's `--follow` flag to make a "best effort" renaming tracking. If a file is not yet checked in to git, it assigns `Date.now()` to `page.date` instead.
   - This one is a bit resource intensive, so you may want to limit this to your CI server environment only using JavaScript data files and [Environment Variables](/docs/environment-vars/). Check out [this real-world directory data file](https://github.com/11ty/11ty-website/blob/5403f2b853e09165bec8bc6f7466a6a041487bcc/src/docs/docs.11tydata.js#L5-L7).
 - `2016-01-01` or any other valid [YAML date value](https://yaml.org/type/timestamp.html) (leaving off the time assumes midnight in UTC, or `00:00:00Z`)
 - `"2016-01-01"` or any other valid ISO 8601 **string** that [Luxon’s `DateTime.fromISO`](https://moment.github.io/luxon/#/parsing?id=iso-8601) can parse (see also the [Luxon API docs](https://moment.github.io/luxon/api-docs/index.html#datetimefromiso)).
@@ -46,6 +46,38 @@ If a `date` key is omitted from the file, we then look for a `YYYY-MM-DD` format
 As a last resort, the file creation date is used. [Careful when relying on file creation dates on a deployment server](#collections-out-of-order-when-you-run-eleventy-on-your-server).
 
 {% callout "info" %}<strong>Trying to use <code>date</code> in your templates?</strong> The <code>date</code> value will likely not be of much use, since Eleventy performs no transformation on this front matter value. You probably want <code>page.date</code> instead. Check out <a href="/docs/data-eleventy-supplied/#page-variable-contents">the values available in the <code>page</code> variable</a>.{% endcallout %}
+
+## Configuration API for Custom Date Parsing
+
+Eleventy v3.0 <!-- v3.0.0-alpha.15 --> includes an `eleventyConfig.addDateParsing` method for adding your own custom date parsing logic. This is a preprocessing step for existing Date logic. Any number of callbacks can be assigned using `eleventyConfig.addDateParsing` and we’ll run them serially. Related [GitHub #867](https://github.com/11ty/eleventy/issues/867).
+
+In the callback, you can return:
+
+1. a [Luxon](https://moment.github.io/luxon/) DateTime instance to short-circuit `page.date` with this new value (we do the `.toJSDate()` conversion for you).
+1. a JavaScript Date to short-circuit `page.date` with this new value.
+1. any new valid value will be processed using existing Date parsing rules. As an example, you can return a new string that will be processed by [Luxon](https://moment.github.io/luxon/) (as already happens).
+1. anything falsy (or no return) will ignore the callback.
+
+### Custom Date Parsing Example
+
+Here’s an example using IANA time zone codes:
+
+```yaml
+---
+date: 2019-08-31 23:59:56 America/New_York
+---
+```
+
+{% set codeContent %}
+import { DateTime } from "luxon";
+
+export default function(eleventyConfig) {
+	eleventyConfig.addDateParsing(function(dateValue) {
+		return DateTime.fromFormat(dateValue, "yyyy-MM-dd hh:mm:ss z");
+	});
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ## Dates off by one day?
 

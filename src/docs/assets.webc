@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Working with Templates
+  parent: Eleventy Projects
   key: Add CSS, JS, Fonts
   order: 0
   excerpt: Add assets to your Eleventy project.
@@ -50,21 +50,9 @@ filter-container:defined .filter-code--hide {
 		<li data-filter-code="js,css">Create a <code data-filter-code="css">bundle.css</code><code data-filter-code="js">bundle.js</code> file in your root project folder and add some <span data-filter-code="css">CSS</span><span data-filter-code="js">JavaScript</span> code to this file.</li>
 		<li>
 			Use <a href="/docs/copy/">passthrough file copy</a> to copy the file to the build output folder (you could use a <code>glob</code> here, too):
-			<syntax-highlight language="js" hed=".eleventy.js" data-filter-code="css">
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("bundle.css");
-};
-			</syntax-highlight>
-			<syntax-highlight language="js" hed=".eleventy.js" data-filter-code="font">
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("font.woff2");
-};
-			</syntax-highlight>
-			<syntax-highlight language="js" hed=".eleventy.js" data-filter-code="js">
-module.exports = function(eleventyConfig) {
-	eleventyConfig.addPassthroughCopy("bundle.js");
-};
-			</syntax-highlight>
+			<template webc:type="11ty" 11ty:type="njk,md">
+			{% include "snippets/assets/addfiles.njk" %}
+			</template>
 		</li>
 		<li data-filter-code="font">Reference the Web Font file in your CSS using: <syntax-highlight language="css">@font-face {
 	font-family: My Font Name;
@@ -74,6 +62,12 @@ module.exports = function(eleventyConfig) {
 		<li data-filter-code="css">Reference the CSS file in your HTML using: <syntax-highlight language="html"><link rel="stylesheet" href="/bundle.css"></syntax-highlight></li>
 		<li data-filter-code="js">Reference the JavaScript file in your HTML using <syntax-highlight language="html"><script src="/bundle.js"></script></syntax-highlight></li>
 	</ol>
+
+	<ul class="inlinelist">
+		<li class="inlinelist-item inert">Quick tips:</li>
+		<li class="inlinelist-item"><a href="/docs/quicktips/inline-css/">#001—Inline Minified CSS</a></li>
+		<li class="inlinelist-item"><a href="/docs/quicktips/inline-js/">#002—Inline Minified JavaScript</a></li>
+	</ul>
 
 	<details class="details-expand-bg" data-filter-code="js,css">
 		<summary>Expand for an example using Concatention, pulling in from <span data-filter-code="css">CSS</span><span data-filter-code="js">JavaScript</span> from multiple sources.</summary>
@@ -96,15 +90,6 @@ module.exports = function(eleventyConfig) {
 {% include "./node_modules/my-ficticious-package-name/package.js" %}
 </script>
 		</syntax-highlight>
-	</details>
-
-	<details>
-		<summary>Expand to see more Quick Tips, showing how to minify these bundles.</summary>
-
-		<ul class="inlinelist">
-			<li class="inlinelist-item"><a href="/docs/quicktips/inline-css/">#001—Inline Minified CSS</a></li>
-			<li class="inlinelist-item"><a href="/docs/quicktips/inline-js/">#002—Inline Minified JavaScript</a></li>
-		</ul>
 	</details>
 </filter-container>
 
@@ -169,7 +154,7 @@ permalink: bundle.js
 
 <p>This also (optionally) allows you to post-process the CSS (using Sass, PostCSS, or LightningCSS) or client-JavaScript (using esbuild, rollup, WebPack, etc) and write the processed content to your output folder. This also allows you to use features in your bundle code that aren’t available in web browsers, like nesting CSS, TypeScript, or JSX.</p>
 
-<p><em>Side note: this is strictly for code that runs in a web browser. There is a <a href="https://www.11ty.dev/docs/languages/custom/#aliasing-an-existing-template-language">different approach</a> if you want to use TypeScript or JSX in your Node.js JavaScript files that run as part of your build.</em></p>
+<p><em>Side note: this is strictly for code that runs in a web browser. There is a <a href="/docs/languages/custom/#aliasing-an-existing-template-language">different approach</a> if you want to use TypeScript or JSX in your Node.js JavaScript files that run as part of your build.</em></p>
 
 <p>Here are a few great guides to get you started:</p>
 
@@ -185,15 +170,14 @@ permalink: bundle.js
 
 <h2 id="component-driven-bundles"><number-flag>4</number-flag> Component-driven Bundles</h2>
 
-<p>Eleventy also provides an optional <a href="https://github.com/11ty/eleventy-plugin-bundle/"><code>@11ty/eleventy-plugin-bundle</code></a> plugin that allows you to populate bundles with code from content pages. This allows you to make the CSS and JavaScript content-driven. The bundle plugin can be used in Nunjucks, Liquid, Handlebars, 11ty.js, and WebC templates and is provided for free with the <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code> Starter Project</a>.</p>
+<p>Eleventy also provides an optional plaintext <a href="/docs/plugins/bundle.md"><strong>Bundle plugin</strong></a> that allows you to populate bundles with code from content pages. This allows you to make the CSS and JavaScript content-driven. The bundle plugin can be used in Nunjucks, Liquid, Handlebars, 11ty.js, and WebC templates and is provided for free with the <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code> Starter Project</a>.</p>
 
-<p>Furthermore, <em>the bundle plugin is used by <a href="/docs/languages/webc/#css-and-js-(bundler-mode)">WebC to create minimal bundles</a> that are comprised only of CSS and JavaScript from components used on each WebC page</em>.</p>
+<p>Furthermore, <em>the bundle plugin is used by <a href="/docs/languages/webc/#css-and-js-(bundler-mode)">WebC to create minimal bundles</a> that are comprised only of CSS and JavaScript from components used on each WebC page</em>. Using WebC in this way provides the best and least-effort investment in the long-term maintenance of a page. When components on the page change, the JavaScript and CSS bundles are automatically streamlined and will not contain extra code from previous designs.</p>
 
-<p>Using WebC in this way provides the best and least-effort investment in the long-term maintenance of a page. When components on the page change, the JavaScript and CSS bundles are automatically streamlined and will not contain extra code from previous designs.</p>
-
-<p><a href="/docs/languages/webc/"><strong>Get started with WebC!</strong></a></p>
+<p>Get started with the <a href="/docs/plugins/bundle.md"><strong>Bundle plugin</strong></a> or <a href="/docs/languages/webc/"><strong>WebC</strong></a>!</p>
 
 <sites-list>
+	<!--- <site-card @url="/docs/plugins/bundle/" @name="Bundle Plugin" @date=""></site-card> --->
 	<site-card :@image-html="image('./src/img/logos/webc.png', 'WebC Logo', [154], 'sites-screenshot', '6.25em')" @url="/docs/languages/webc/" @name="WebC" @date=""></site-card>
 	<site-card @url="https://www.youtube.com/watch?v=fzo_S9UiYYk" @name="Rebuilding 11ty.dev using WebC" @date="2023-03-08"></site-card>
 </sites-list>

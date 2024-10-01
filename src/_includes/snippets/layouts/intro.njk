@@ -1,0 +1,82 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layouts", additions: "md"} %}
+  <div id="layouts-md" role="tabpanel">
+
+{% codetitle "index.md" %}
+{% raw %}
+```markdown
+---
+layout: mylayout.njk
+title: My Rad Markdown Blog Post
+---
+
+# {{ title }}
+```
+{% endraw %}
+
+  </div>
+  <div id="layouts-liquid" role="tabpanel">
+
+{% codetitle "index.liquid" %}
+{% raw %}
+```liquid
+---
+layout: mylayout.njk
+title: My Rad Liquid Blog Post
+---
+<h1>{{ title }}</h1>
+```
+{% endraw %}
+
+  </div>
+  <div id="layouts-njk" role="tabpanel">
+
+{% codetitle "index.njk" %}
+{% raw %}
+```njk
+---
+layout: mylayout.njk
+title: My Rad Nunjucks Blog Post
+---
+<h1>{{ title }}</h1>
+```
+{% endraw %}
+
+  </div>
+  <div id="layouts-js" role="tabpanel">
+
+{% codetitle "index.11ty.js" %}
+{% raw %}
+```js
+export const data = {
+	layout: "mylayout.njk",
+	title: "My Rad JavaScript Blog Post",
+};
+
+export function render(data) {
+	return `<h1>${data.title}</h1>`;
+};
+```
+{% endraw %}
+
+  </div>
+  <div id="layouts-cjs" role="tabpanel">
+
+{% codetitle "index.11ty.cjs" %}
+{% raw %}
+```js
+module.exports.data = {
+	layout: "mylayout.njk",
+	title: "My Rad JavaScript Blog Post",
+};
+
+module.exports.render = function(data) {
+	return `<h1>${data.title}</h1>`;
+};
+```
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>

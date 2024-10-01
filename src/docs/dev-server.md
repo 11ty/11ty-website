@@ -29,10 +29,8 @@ _Read more detail on the [Eleventy Dev Server 1.0 release notes](https://github.
 
 You can configure the server with the new `setServerOptions` Configuration API method.
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function(eleventyConfig) {
 	eleventyConfig.setServerOptions({
 		// Default values are shown:
 
@@ -77,19 +75,15 @@ module.exports = function (eleventyConfig) {
 		onRequest: {},
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 <details>
 <summary><strong>Expand to see the Full options list</strong></summary>
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function(eleventyConfig) {
 	eleventyConfig.setServerOptions({
-		// Show the server version number on the command line
-		showVersion: false,
-
 		// Change the name of the folder name used for injected scripts
 		injectedScriptsFolder: ".11ty",
 
@@ -106,7 +100,8 @@ module.exports = function (eleventyConfig) {
 		domdiff: true,
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 </details>
 
@@ -128,10 +123,8 @@ Try out the [`devcert-cli`](https://github.com/davewasmer/devcert-cli) package t
 
 {% addedin "3.0.0-alpha.7" %}{% addedin "Dev Server 2.0.0" %} Use the new `onRequest` object to configure some of your project to use on-request-time processing. The keys in this object represent strings from the [URL Pattern API](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API).
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
+{% set codeContent %}
+export default function(eleventyConfig) {
 	eleventyConfig.setServerOptions({
 		onRequest: {
 			"/": function({ url }) {
@@ -153,15 +146,14 @@ module.exports = function(eleventyConfig) {
 			}
 		}
 	});
-}
-```
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 Works great with the [`process.env.ELEVENTY_RUN_MODE` environment variable](/docs/environment-vars/#eleventy-supplied) to change how your server operates during`--serve` mode.
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
+{% set codeContent %}
+export default function(eleventyConfig) {
 	// Intercept all requests during --serve mode.
 	if(process.env.ELEVENTY_RUN_MODE === "serve") {
 		eleventyConfig.setServerOptions({
@@ -173,8 +165,9 @@ module.exports = function(eleventyConfig) {
 			}
 		});
 	}
-}
-```
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ## Advanced `chokidar` options
 
@@ -192,10 +185,8 @@ npm install @11ty/eleventy-server-browsersync
 
 Then, enable it in your configuration file:
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function(eleventyConfig) {
 	eleventyConfig.setServerOptions({
 		module: "@11ty/eleventy-server-browsersync",
 
@@ -210,7 +201,8 @@ module.exports = function (eleventyConfig) {
 		// snippet: false,
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 View the [full list of Browsersync options](https://browsersync.io/docs/options).
 

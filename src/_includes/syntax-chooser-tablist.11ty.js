@@ -5,8 +5,8 @@ async function render({ id, valid, additions, subtractions, only, label }) {
 		html: "HTML",
 		md: "Markdown",
 		webc: "WebC",
-		jscjs: "CommonJS",
 		jsesm: "ESM",
+		jscjs: "CommonJS",
 		any: "Any",
 		hbs: "Handlebars",
 	};
@@ -15,6 +15,7 @@ async function render({ id, valid, additions, subtractions, only, label }) {
 		liquid: "Liquid",
 		njk: "Nunjucks",
 		js: "11ty.js",
+		cjs: "11ty.cjs",
 	};
 
 	// Extras go first (unless hbs)

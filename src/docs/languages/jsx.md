@@ -23,7 +23,7 @@ layout: layouts/langs.njk
 
 {% addedin "3.0.0-alpha.11" %}Here we use [`tsx`](https://tsx.is/node/esm) to process JSX files.
 
-{% codetitle "eleventy.config.js (ESM)" %}
+<div class="codetitle">eleventy.config.js</div>
 
 ```js
 import "tsx/esm";

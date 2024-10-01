@@ -20,18 +20,17 @@ Group and sort Eleventy’s verbose output by directory (and show file size with
 npm install @11ty/eleventy-plugin-directory-output
 ```
 
-Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
+Open up your Eleventy config file (probably `eleventy.config.js`) and use `addPlugin`:
 
-{% codetitle ".eleventy.js" %}
+{% set codeContent %}
+import dirOutputPlugin from "@11ty/eleventy-plugin-directory-output";
 
-```js
-const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
-
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.setQuietMode(true);
-	eleventyConfig.addPlugin(directoryOutputPlugin);
+	eleventyConfig.addPlugin(dirOutputPlugin);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 {% callout "info", "md" %}You’re only allowed one `module.exports` in your configuration file, so make sure you only copy the `require` and the `addPlugin` lines above!{% endcallout %}
 
@@ -39,12 +38,12 @@ Read more about [Eleventy plugins.](/docs/plugins/)
 
 ## Options
 
-```js
-const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
+{% set codeContent %}
+import dirOutputPlugin from "@11ty/eleventy-plugin-directory-output";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.setQuietMode(true);
-	eleventyConfig.addPlugin(directoryOutputPlugin, {
+	eleventyConfig.addPlugin(dirOutputPlugin, {
 		// Customize columns
 		columns: {
 			filesize: true, // Use `false` to disable
@@ -55,7 +54,8 @@ module.exports = function (eleventyConfig) {
 		warningFileSize: 400 * 1000,
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 {% callout "info", "md" %}The `benchmark` column is only compatible with Eleventy 1.0.1 or newer.{% endcallout %}
 

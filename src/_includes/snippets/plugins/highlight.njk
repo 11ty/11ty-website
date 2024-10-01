@@ -1,0 +1,156 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlight", additions: "md,webc"} %}
+  <div id="highlight-md" role="tabpanel">
+
+````markdown
+```js
+function myFunction() {
+	return true;
+}
+```
+````
+
+    Optionally specify a language after the start of the markdown fenced code block.
+
+  </div>
+  <div id="highlight-liquid" role="tabpanel">
+
+{% raw %}
+
+```liquid
+{% highlight js %}
+function myFunction() {
+  return true;
+}
+{% endhighlight %}
+```
+
+{% endraw %}
+
+  </div>
+  <div id="highlight-njk" role="tabpanel">
+
+{% raw %}
+
+```jinja2
+{% highlight "js" %}
+function myFunction() {
+  return true;
+}
+{% endhighlight %}
+```
+
+{% endraw %}
+
+  </div>
+  <div id="highlight-js" role="tabpanel">
+
+{% raw %}
+
+```js
+export default function (data) {
+	let code = `
+function myFunction() {
+  return true;
+}`;
+
+	return this.highlight("js", code);
+};
+```
+
+{% endraw %}
+
+The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %}.
+
+  </div>
+	<div id="highlight-cjs" role="tabpanel">
+
+{% raw %}
+
+```js
+module.exports = function (data) {
+	let code = `
+function myFunction() {
+  return true;
+}`;
+
+	return this.highlight("js", code);
+};
+```
+
+{% endraw %}
+
+The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %}.
+
+  </div>
+  <div id="highlight-webc" role="tabpanel">
+
+{% codetitle "webc", "Syntax" %}
+
+{% raw %}
+
+```html
+<!-- Requires WebC v0.6.2+ -->
+<!-- Requires Syntax Highlighter v4.2.0+ -->
+
+<syntax-highlight
+	language="js"
+	webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
+>
+	function myFunction() { return true; }
+</syntax-highlight>
+```
+
+{% endraw %}
+
+<details>
+<summary>Expand to see an example of importing this as a global component in your configuration file.</summary>
+
+{% codetitle ".eleventy.js" %}
+
+```js
+const pluginWebc = require("@11ty/eleventy-plugin-webc");
+
+export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(pluginWebc, {
+		// Array `components` requires Eleventy WebC v0.9.2+
+		components: [
+			"_components/**/*.webc",
+			"npm:@11ty/eleventy-plugin-syntaxhighlight/*.webc",
+		],
+	});
+};
+```
+
+{% codetitle "page.webc" %}
+
+```html
+<syntax-highlight language="js">
+	function myFunction() { return true; }
+</syntax-highlight>
+```
+
+</details>
+
+<details>
+<summary>Expand to see an example of importing for use anywhere on the page via front matter.</summary>
+
+{% codetitle "page.webc" %}
+
+```html
+---
+webc:
+  components: ./node_modules/@11ty/eleventy-plugin-syntaxhighlight/syntax-highlight.webc
+---
+
+<syntax-highlight language="js">
+	function myFunction() { return true; }
+</syntax-highlight>
+```
+
+</details>
+
+  </div>
+</seven-minute-tabs>
+</is-land>

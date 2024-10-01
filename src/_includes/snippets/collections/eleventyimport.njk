@@ -1,0 +1,93 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync  class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collections-import"} %}
+  <div id="collections-import-liquid" role="tabpanel">
+
+{% raw %}
+
+```liquid
+---
+eleventyImport:
+  collections: ["post"]
+---
+<ul>
+{%- for post in collections.post -%}
+  <li>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+```
+
+{% endraw %}
+
+  </div>
+  <div id="collections-import-njk" role="tabpanel">
+
+{% raw %}
+
+```jinja2
+---
+eleventyImport:
+  collections: ["post"]
+---
+<ul>
+{%- for post in collections.post -%}
+  <li>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+```
+
+{% endraw %}
+
+  </div>
+  <div id="collections-import-js" role="tabpanel">
+
+{% raw %}
+
+```js
+export function data() {
+  return {
+    eleventyImport: {
+      collections: ["post"],
+    },
+  };
+};
+
+export function render(data) {
+  return `<ul>
+    ${data.collections.post
+      .map((post) => `<li>${post.data.title}</li>`)
+      .join("\n")}
+  </ul>`;
+};
+```
+
+{% endraw %}
+
+  </div>
+  <div id="collections-import-cjs" role="tabpanel">
+
+{% raw %}
+
+```js
+exports.data = function () {
+  return {
+    eleventyImport: {
+      collections: ["post"],
+    },
+  };
+};
+
+exports.render = function (data) {
+  return `<ul>
+    ${data.collections.post
+      .map((post) => `<li>${post.data.title}</li>`)
+      .join("\n")}
+  </ul>`;
+};
+```
+
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>

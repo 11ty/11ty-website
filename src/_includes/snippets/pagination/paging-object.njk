@@ -1,0 +1,115 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedobj"} %}
+  <div id="pagedobj-liquid" role="tabpanel">
+
+{% raw %}
+
+```liquid
+---
+pagination:
+  data: testdata
+  size: 1
+testdata:
+  itemkey1: itemvalue1
+  itemkey2: itemvalue2
+  itemkey3: itemvalue3
+---
+<ol>
+{%- for item in pagination.items %}
+  <li>{{ item }}={{testdata[item] }}</li>
+{% endfor -%}
+</ol>
+```
+
+{% endraw %}
+
+  </div>
+  <div id="pagedobj-njk" role="tabpanel">
+
+{% raw %}
+
+```jinja2
+---
+pagination:
+  data: testdata
+  size: 1
+testdata:
+  itemkey1: itemvalue1
+  itemkey2: itemvalue2
+  itemkey3: itemvalue3
+---
+<ol>
+{%- for item in pagination.items %}
+  <li>{{ item }}={{testdata[item] }}</li>
+{% endfor -%}
+</ol>
+```
+
+{% endraw %}
+
+  </div>
+  <div id="pagedobj-js" role="tabpanel">
+
+{% raw %}
+
+```js
+export const data = {
+	pagination: {
+		data: "testdata",
+		size: 1,
+	},
+	testdata: {
+		itemkey1: "itemvalue1",
+		itemkey2: "itemvalue2",
+		itemkey3: "itemvalue3",
+	},
+};
+
+export function render(data) {
+	return `<ol>
+		${data.pagination.items
+			.map(function (item) {
+				return `<li>${(item = data.testdata[item])}</li>`;
+			})
+			.join("")}
+	</ol>`;
+};
+```
+
+{% endraw %}
+
+  </div>
+<div id="pagedobj-cjs" role="tabpanel">
+
+{% raw %}
+
+```js
+exports.data = {
+	pagination: {
+		data: "testdata",
+		size: 1,
+	},
+	testdata: {
+		itemkey1: "itemvalue1",
+		itemkey2: "itemvalue2",
+		itemkey3: "itemvalue3",
+	},
+};
+
+exports.render = function (data) {
+	return `<ol>
+		${data.pagination.items
+			.map(function (item) {
+				return `<li>${(item = data.testdata[item])}</li>`;
+			})
+			.join("")}
+	</ol>`;
+};
+```
+
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>

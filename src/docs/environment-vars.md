@@ -13,7 +13,7 @@ You can set and use your own environment variables in your projects. They will b
 
 These are typically used for setting your deployment context and private API keys. This is also the approach used to [enable `DEBUG` mode](/docs/debugging/).
 
-{% callout "info", "md" %}Note that Eleventy exposes environment variables only to JavaScript files that are evaluated during the build time. This includes the config file and all JavaScript files required from there, JavaScript data files, etc. **Environment variables are not available in the templates.** You need to expose them yourself. For example, using a [Global Data file](/docs/data-js/#example-exposing-environment-variables).{% endcallout %}
+{% callout "info", "md" %}Note that environment variables are only available in JavaScript files in your project, evaluated at build time. This includes your config file, JavaScript data files, JavaScript templates, etc. To use environment variables in other template languages, you can use a [Javascript Data file](/docs/data-js/#example-exposing-environment-variables).{% endcallout %}
 
 [[toc]]
 
@@ -68,7 +68,6 @@ npm install cross-env
 
 - [Expose Environment Variables to your templates using JavaScript Data Files](/docs/data-js/#example-exposing-environment-variables).
 - [Opt-in to `git Last Modified` only in production](/docs/dates/)
-- [Only perform Eleventy Serverless plugin copy (via `copyEnabled`) in production](/docs/plugins/serverless/#bundler-options)
 - Use fewer image formats in the [Image plugin](/docs/plugins/image/) to speed up local development
 
 ## Eleventy Supplied
@@ -79,7 +78,6 @@ Eleventy also supplies its own Eleventy-specific environment variables, usually 
 
 - `process.env.ELEVENTY_ROOT` {% addedin "1.0.0" %} the absolute path to the directory in which you’ve run the Eleventy command.
 - `process.env.ELEVENTY_SOURCE` {% addedin "1.0.0" %} is the method in which Eleventy has run, current either `cli` or `script`.
-- `process.env.ELEVENTY_SERVERLESS` {% addedin "1.0.0" %} is set to `true` (String) if Eleventy is running in [serverless mode](/docs/plugins/serverless/). If Eleventy is _not_ running in serverless mode—due to Node forcing environment variables to be strings—this variable will not exist.
 - `process.env.ELEVENTY_RUN_MODE` {% addedin "2.0.0-beta.2" %} is one of `build`, `serve`, or `watch`.
 - `process.env.ELEVENTY_VERSION` {% addedin "3.0.0-alpha.6" %} the current version of Eleventy (e.g. `"3.0.0-alpha.5"`).
 
@@ -87,8 +85,8 @@ Eleventy also supplies its own Eleventy-specific environment variables, usually 
 
 Node.js supports a [`NODE_DISABLE_COLORS` environment variable](https://nodejs.org/api/cli.html#node_disable_colors1) that will disable colorized text in the terminal output.
 
-<script type="module" src="/js/seven-minute-tabs.js"></script>
-<seven-minute-tabs class="tabs-full tabs-flush" persist sync>
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs class="tabs-flush" persist sync>
 	<div role="tablist" aria-label="Choose your Operating System">
 		<a href="#disable-colors-nix" id="disable-colors-mac-btn" role="tab" data-tabs-persist="os:mac">macOS</a>
 		<a href="#disable-colors-nix" role="tab" data-tabs-persist="os:posix">Linux</a>
@@ -108,3 +106,4 @@ Node.js supports a [`NODE_DISABLE_COLORS` environment variable](https://nodejs.o
 		<p>Use the <a href="https://github.com/kentcdodds/cross-env"><code>cross-env</code> package</a> to compatibly set your environment variables cross-platform.</p>
 	</div>
 </seven-minute-tabs>
+<is-land>

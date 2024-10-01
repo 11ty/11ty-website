@@ -36,9 +36,33 @@ npm install @11ty/eleventy-plugin-rss
 
 ## Virtual Template
 
-{% addedin "v3.0.0-alpha.13" %}{% addedin "RSS 2.0.0" %} This method creates a feed template directly from your plugin configuration, without requiring additional files in your project.
+{% addedin "v3.0.0-alpha.13" %}{% addedin "RSS 2.0.0" %} This method creates a feed template directly from your plugin configuration, without requiring additional files in your project. Read more about [Virtual Templates](/docs/virtual-templates.md).
 
-{% include "examples/rss/virtual-template.njk" %}
+{% set codeContent %}
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(feedPlugin, {
+		type: "atom", // or "rss", "json"
+		outputPath: "/feed.xml",
+		collection: {
+			name: "posts", // iterate over `collections.posts`
+			limit: 10,     // 0 means no limit
+		},
+		metadata: {
+			language: "en",
+			title: "Blog Title",
+			subtitle: "This is a longer description about your blog.",
+			base: "https://example.com/",
+			author: {
+				name: "Your Name",
+				email: "", // Optional
+			}
+		}
+	});
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 This configuration is the only step you need. If you need additional control over the template output, you can use the [Manual Template](#manual-template) method.
 
@@ -60,26 +84,34 @@ This configuration is the only step you need. If you need additional control ove
 
 ### Configuration
 
-Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
+Open up your Eleventy config file (probably `eleventy.config.js`) and use `addPlugin`:
 
-{% include "examples/rss/install.njk" %}
+{% set codeContent %}
+import pluginRss from "@11ty/eleventy-plugin-rss";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(pluginRss);
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 <details>
 <summary>Expand to see full options list</summary>
 
 {% addedin "RSS 1.1.0" %} Advanced control of [PostHTML rendering options](https://github.com/posthtml/posthtml-render#options) via `posthtmlRenderOptions`.
 
-```js
-const pluginRss = require("@11ty/eleventy-plugin-rss");
+{% set codeContent %}
+import pluginRss from "@11ty/eleventy-plugin-rss";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginRss, {
 		posthtmlRenderOptions: {
 			closingSingleTag: "default", // opt-out of <img/>-style XHTML single tags
 		},
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 </details>
 
@@ -100,16 +132,17 @@ module.exports = function (eleventyConfig) {
 
 {% addedin "RSS 1.1.0" %} This plugin exports `dateToRfc3339`, `dateToRfc822` ({% addedin "RSS 1.2.0" %}), `getNewestCollectionItemDate`, `absoluteUrl`, and `convertHtmlToAbsoluteUrls` functions so you can use with your own filters. For example:
 
-```js
-const pluginRss = require("@11ty/eleventy-plugin-rss");
+{% set codeContent %}
+import pluginRss from "@11ty/eleventy-plugin-rss";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addLiquidFilter("dateToRfc3339", pluginRss.dateToRfc3339);
 
 	// New in RSS 1.2.0
 	eleventyConfig.addLiquidFilter("dateToRfc822", pluginRss.dateToRfc822);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 {% callout "info", "md" %}Do keep in mind that _escaping_ HTML content is a feature provided as [part of Nunjucks](https://mozilla.github.io/nunjucks/templating.html#autoescaping). Moving to another template language may require a different option for escaping (for example, [`html-entities`](https://www.npmjs.com/package/html-entities)).{% endcallout %}
 
@@ -122,7 +155,7 @@ The following feed samples **require RSS Plugin v2.0** or newer. [Samples for RS
 {%- endcallout %}
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
+<seven-minute-tabs class="tabs-flush">
   <div role="tablist" aria-label="Choose a template language">
     <a href="#rss-atom" role="tab">Atom</a>
     <a href="#rss-rss" role="tab">RSS</a>

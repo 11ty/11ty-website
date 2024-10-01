@@ -45,7 +45,7 @@ Installing Eleventy into a project requires a `package.json` file.
 </template>
 
 <script type="module" src="/js/seven-minute-tabs.js" webc:keep></script>
-<seven-minute-tabs class="tabs-full tabs-flush tabs-right tabs-firstonly" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right tabs-firstonly" persist sync>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#quickstart-run-2a-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#quickstart-run-2a-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
@@ -56,6 +56,10 @@ Installing Eleventy into a project requires a `package.json` file.
 			npm init -y
 		</syntax-highlight>
 		<p>The <code>npm</code> command (included with Node.js) will create a <code>package.json</code> file for you with <a href="https://docs.npmjs.com/cli/init"><code>npm init -y</code></a>. The <code>-y</code> flag tells <code>npm</code> to use default values and skips the questionnaire.</p>
+		<p>Use the following command if you want to use <a href="/docs/cjs-esm.md">ESM in your project and not CommonJS</a>.</p>
+		<syntax-highlight language="bash">
+			npm pkg set type="module"
+		</syntax-highlight>
 	</div>
 	<div id="quickstart-run-2a-pnpm" role="tabpanel">
 		<syntax-highlight language="bash">
@@ -79,7 +83,7 @@ Installing Eleventy into a project requires a `package.json` file.
 
 </template>
 
-<seven-minute-tabs class="tabs-full tabs-flush tabs-right tabs-firstonly" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right tabs-firstonly" persist sync>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#quickstart-run-2b-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#quickstart-run-2b-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
@@ -110,7 +114,7 @@ _You may also [install Eleventy globally](/docs/global-installation/) but the `p
 
 </template>
 
-<seven-minute-tabs class="tabs-full tabs-flush tabs-right tabs-firstonly" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right tabs-firstonly" persist sync>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#quickstart-run-3a-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#quickstart-run-3a-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
@@ -151,7 +155,7 @@ A <dfn>template</dfn> is a content file written in a [format such as Markdown, H
 Let’s run two commands to create two new template files.
 </template>
 
-<seven-minute-tabs class="tabs-full tabs-flush" persist sync>
+<seven-minute-tabs class="tabs-flush" persist sync>
 	<div role="tablist" aria-label="Choose your Operating System">
 		<a href="#quickstart-os-nix" id="quickstart-os-mac-btn" role="tab" data-tabs-persist="os:mac">macOS</a>
 		<a href="#quickstart-os-nix" role="tab" data-tabs-persist="os:posix">Linux</a>
@@ -184,7 +188,7 @@ npx @11ty/create README.md "# Heading"
 
 <p>After you’ve created an HTML template and a Markdown template, let’s run Eleventy again with the following command:</p>
 
-<seven-minute-tabs class="tabs-full tabs-flush tabs-right tabs-firstonly" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right tabs-firstonly" persist sync>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#quickstart-run-4-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#quickstart-run-4-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
@@ -224,7 +228,7 @@ Use `--serve` to start up a hot-reloading local web server.
 
 </template>
 
-<seven-minute-tabs class="tabs-full tabs-flush tabs-right tabs-firstonly" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right tabs-firstonly" persist sync>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#quickstart-run-5-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#quickstart-run-5-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
@@ -282,6 +286,7 @@ Congratulations—you made something with Eleventy! Now put it to work:
 
 1. Add more content! In the above tutorial we used [HTML](/docs/languages/html/) and [Markdown](/docs/languages/markdown/). Why not [JavaScript](/docs/languages/javascript/) or [WebC](/docs/languages/webc/) (for components) next? [Nunjucks](/docs/languages/nunjucks/) and [Liquid](/docs/languages/liquid/) are also very popular. Maybe you’re feeling super adventurous and want to [add your own custom type?](/docs/languages/custom/).
 1. Use [a layout file so that you don’t have to repeat boilerplate on every template](/docs/layouts/).
+1. Add a [configuration file](/docs/config/) to unlock advanced Eleventy capabilities!
 1. Add [CSS, JavaScript, or Web Fonts](/docs/assets/) to your project.
 1. Learn more of the [command line options for Eleventy](/docs/usage/).
 1. Perhaps you’d like to [consume data from third party APIs](/docs/data-js/) in your project?

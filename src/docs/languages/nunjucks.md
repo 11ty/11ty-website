@@ -28,14 +28,15 @@ We use [Nunjucks defaults for all environment options](https://mozilla.github.io
 
 It’s recommended to use the Configuration API to override the default Nunjucks options.
 
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	eleventyConfig.setNunjucksEnvironmentOptions({
 		throwOnUndefined: true,
 		autoescape: false, // warning: don’t do this!
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Advanced: Use your Nunjucks Environment {% addedin "0.3.0" %}
 
@@ -43,17 +44,18 @@ While it is preferred and simpler to use the Options-specific API method above (
 
 {% callout "warn" %}Not compatible with <code>setNunjucksEnvironmentOptions</code> above—this method will <em>override</em> any configuration set there.{% endcallout %}
 
-```js
-let Nunjucks = require("nunjucks");
+{% set codeContent %}
+import Nunjucks from "nunjucks";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	let nunjucksEnvironment = new Nunjucks.Environment(
 		new Nunjucks.FileSystemLoader("_includes")
 	);
 
 	eleventyConfig.setLibrary("njk", nunjucksEnvironment);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ## Supported Features
 
@@ -66,7 +68,7 @@ module.exports = function (eleventyConfig) {
 | ✅ Imports                                                        | `{% raw %}{% import 'macros.njk' %}{% endraw %}` looks in `_includes/macros.njk`. Does not process front matter in the include file.                                                                                                                                          |
 | ✅ Imports (Relative Path) {% addedin "0.9.0" %}                  | Relative paths use `./` (template’s directory) or `../` (template’s parent directory):<br>`{% raw %}{% import './macros.njk' %}{% endraw %}` looks for `macros.njk` in the template’s current directory. Does not process front matter in the include file.                   |
 | ✅ Filters                                                        | `{% raw %}{% name \| filterName %}{% endraw %}` Read more about [Filters](/docs/filters/).                                                                                                                                                                                    |
-| ✅ [Eleventy Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{% name \| filterName %}{% endraw %}` Read more about [Filters](/docs/filters/).                                                                                                                                                                                    |
+| ✅ [Universal Filters](/docs/filters/#universal-filters) | `{% raw %}{% name \| filterName %}{% endraw %}` Read more about [Filters](/docs/filters/).                                                                                                                                                                                    |
 | ✅ [Custom Tags](/docs/custom-tags/)                              | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Custom Tags](/docs/custom-tags/). {% addedin "0.5.0" %}                                                                                                                                                          |
 | ✅ [Shortcodes](/docs/shortcodes/)                                | `{% raw %}{% uppercase name %}{% endraw %}` Read more about [Shortcodes](/docs/shortcodes/). {% addedin "0.5.0" %}                                                                                                                                                            |
 
@@ -76,18 +78,19 @@ Filters are used to transform or modify content. You can add Nunjucks specific f
 
 Read more about [Nunjucks Filter syntax](https://mozilla.github.io/nunjucks/templating.html#filters).
 
-```js
-module.exports = function(eleventyConfig) {
+{% set codeContent %}
+export default function(eleventyConfig) {
   // Nunjucks Filter
-  eleventyConfig.addNunjucksFilter("myNjkFilter", function(value) { … });
+  eleventyConfig.addNunjucksFilter("myNjkFilter", function(value) { /* … */ });
 
   // Nunjucks Asynchronous Filter (read on below)
-  eleventyConfig.addNunjucksAsyncFilter("myAsyncNjkFilter", function(value, callback) { … });
+  eleventyConfig.addNunjucksAsyncFilter("myAsyncNjkFilter", function(value, callback) { /* … */ });
 
-  // Universal filters (Adds to Liquid, Nunjucks, and Handlebars)
-  eleventyConfig.addFilter("myFilter", function(value) { … });
+  // Universal filters (Adds to Liquid, Nunjucks, and 11ty.js)
+  eleventyConfig.addFilter("myFilter", function(value) { /* … */ });
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Usage
 
@@ -101,8 +104,8 @@ module.exports = function(eleventyConfig) {
 
 ### Multiple Filter Arguments
 
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	// Nunjucks Filter
 	eleventyConfig.addNunjucksFilter(
 		"concatThreeStrings",
@@ -111,7 +114,8 @@ module.exports = function (eleventyConfig) {
 		}
 	);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 {% raw %}
 
@@ -125,8 +129,8 @@ module.exports = function (eleventyConfig) {
 
 By default, almost all templating engines are synchronous. Nunjucks supports some asynchronous behavior, like filters. Here’s how that works:
 
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	eleventyConfig.addNunjucksAsyncFilter(
 		"myAsyncFilter",
 		function (value, callback) {
@@ -136,14 +140,15 @@ module.exports = function (eleventyConfig) {
 		}
 	);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 The last argument here is the callback function, the first argument of which is the error object and the second is the result data. Use this filter like you would any other: `{% raw %}{{ myValue | myAsyncFilter }}{% endraw %}`.
 
 Here’s a Nunjucks example with 2 arguments:
 
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	eleventyConfig.addNunjucksAsyncFilter(
 		"myAsyncFilter",
 		function (value1, value2, callback) {
@@ -153,7 +158,8 @@ module.exports = function (eleventyConfig) {
 		}
 	);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 Multi-argument filters in Nunjucks are called like this: `{% raw %}{{ myValue1 | myAsyncFilter(myValue2) }}{% endraw %}`.
 
@@ -163,12 +169,12 @@ Shortcodes are reusable bits of content. You can add Nunjucks specific shortcode
 
 ### Single Shortcode
 
-```js
-module.exports = function(eleventyConfig) {
+{% set codeContent %}
+export default function(eleventyConfig) {
   // Nunjucks Shortcode
-  eleventyConfig.addNunjucksShortcode("user", function(name, twitterUsername) { … });
+  eleventyConfig.addNunjucksShortcode("user", function(name, twitterUsername) { /* … */ });
 
-  // Universal Shortcodes (Adds to Liquid, Nunjucks, JavaScript, Handlebars)
+  // Universal Shortcodes (Adds to Liquid, Nunjucks, 11ty.js)
   eleventyConfig.addShortcode("user", function(name, twitterUsername) {
     return `<div class="user">
 <div class="user_name">${name}</div>
@@ -176,7 +182,8 @@ module.exports = function(eleventyConfig) {
 </div>`;
   });
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 #### Nunjucks Template Usage
 
@@ -199,12 +206,12 @@ module.exports = function(eleventyConfig) {
 
 ### Paired Shortcode
 
-```js
-module.exports = function(eleventyConfig) {
+{% set codeContent %}
+export default function(eleventyConfig) {
   // Nunjucks Shortcode
-  eleventyConfig.addPairedNunjucksShortcode("user", function(bioContent, name, twitterUsername) { … });
+  eleventyConfig.addPairedNunjucksShortcode("user", function(bioContent, name, twitterUsername) { /* … */ });
 
-  // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
+  // Universal Shortcodes (Adds to Liquid, Nunjucks, 11ty.js)
   eleventyConfig.addPairedShortcode("user", function(bioContent, name, twitterUsername) {
     return `<div class="user">
 <div class="user_name">${name}</div>
@@ -213,7 +220,8 @@ module.exports = function(eleventyConfig) {
 </div>`;
   });
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 #### Nunjucks Usage
 
@@ -243,8 +251,8 @@ Note that you can put any Nunjucks tags or content inside the `{% raw %}{% user 
 
 Creates a single argument object to pass to the shortcode.
 
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function(eleventyConfig) {
 	// Nunjucks Shortcode
 	eleventyConfig.addNunjucksShortcode("user", function (user) {
 		return `<div class="user">
@@ -253,7 +261,8 @@ ${user.twitter ? `<div class="user_twitter">@${user.twitter}</div>` : ""}
 </div>`;
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 #### Nunjucks Usage
 
@@ -301,10 +310,8 @@ Importantly, this syntax means that any of the arguments can be optional (withou
 
 Note that the configuration methods here to add asynchronous shortcodes are different than their synchronous counterparts. This is just another gentle reminder here that these API methods are pretty verbose and it’s probably easier to add a [Universal shortcode](/docs/shortcodes/) instead.
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	eleventyConfig.addNunjucksAsyncShortcode(
 		"user",
 		async function (name, twitterUsername) {
@@ -319,7 +326,8 @@ module.exports = function (eleventyConfig) {
 		}
 	);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 #### Nunjucks Usage
 
@@ -337,7 +345,9 @@ This is identical to the synchronous Nunjucks usage.
 
 {% endraw %}
 
-### Warning: The `set` Tag Does Not Work With Async Content
+<div id="warning-the-set-tag-does-not-work-with-async-content"></div>
+
+## Warning: `set` is not async-friendly
 
 {% callout "warn" %}This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.{% endcallout %}
 
@@ -358,33 +368,22 @@ This is identical to the synchronous Nunjucks usage.
 
 {% endraw %}
 
-### Access to `page` data values {% addedin "0.11.0" %}
+<div id="access-to-page-data-values"></div>
 
-If you aren’t using an arrow function, Nunjucks Shortcodes (and Handlebars, Liquid, and 11ty.js JavaScript Functions) will have access to Eleventy [`page` data values](/docs/data-eleventy-supplied/#page-variable-contents) without needing to pass them in as arguments.
+## Access to Eleventy supplied data
 
-```js
-module.exports = function (eleventyConfig) {
-	eleventyConfig.addNunjucksShortcode("myShortcode", function () {
-		// Available in 0.11.0 and above
-		console.log(this.page);
+You can access `page`, `eleventy`, `ctx`, and `env` in filters and shortcodes. Read more on the [Shortcodes](/docs/shortcodes/#scoped-data-in-shortcodes) and [Filters](/docs/filters/#scoped-data-in-filters) documentation.
 
-		// For example:
-		console.log(this.page.url);
-		console.log(this.page.inputPath);
-		console.log(this.page.fileSlug);
-	});
-};
-```
-
-### Generic Global {% addedin "1.0.0" %}
+## Generic Global {% addedin "1.0.0" %}
 
 Nunjucks provides a custom way to [add globals](https://mozilla.github.io/nunjucks/api.html#addglobal) to templates. These can be any arbitrary JavaScript: functions, variables, etc. Note that this is not async-friendly (Nunjucks does not support `await` inside of templates).
 
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	eleventyConfig.addNunjucksGlobal("fortythree", 43);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 {% raw %}
 
@@ -394,13 +393,14 @@ module.exports = function (eleventyConfig) {
 
 {% endraw %}
 
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	eleventyConfig.addNunjucksGlobal("fortytwo", function () {
 		return 42;
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 {% raw %}
 

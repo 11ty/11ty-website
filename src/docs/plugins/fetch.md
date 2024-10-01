@@ -53,10 +53,10 @@ Formerly known as [`@11ty/eleventy-cache-assets`](https://www.npmjs.com/package/
 
 Consider the following example, perhaps in an Eleventy [Global Data File](/docs/data-global/).
 
-```js
-const EleventyFetch = require("@11ty/eleventy-fetch");
+{% set codeContent %}
+import EleventyFetch from "@11ty/eleventy-fetch";
 
-module.exports = async function () {
+export default async function () {
 	let url = "https://api.github.com/repos/11ty/eleventy";
 
 	/* This returns a promise */
@@ -65,7 +65,8 @@ module.exports = async function () {
 		type: "json", // we’ll parse JSON for you
 	});
 };
-```
+{% endset %}
+{% include "snippets/esmCjsTabs.njk" %}
 
 ### Options
 
@@ -106,9 +107,9 @@ The `directory` option let’s you change where the cache is stored. It is stron
 {% callout "warn" %}Read the <a href="#installation">Important Security and Privacy Notice</a>.{% endcallout %}
 
 ```js
-const EleventyFetch = require("@11ty/eleventy-fetch");
+import EleventyFetch from "@11ty/eleventy-fetch";
 
-EleventyFetch("https://…", {
+await EleventyFetch("https://…", {
 	directory: ".cache",
 });
 ```
@@ -122,9 +123,9 @@ If you want to use this utility inside of a Netlify Function (or AWS Lambda), us
 - `removeUrlQueryParams: true` (`false` is default)
 
 ```js
-const EleventyFetch = require("@11ty/eleventy-fetch");
+import EleventyFetch from "@11ty/eleventy-fetch";
 
-EleventyFetch(
+await EleventyFetch(
 	"https://www.zachleat.com/img/avatar-2017-big.png?Get=rid&of=these",
 	{
 		removeUrlQueryParams: true,
@@ -140,10 +141,10 @@ Note that query params are removed before—and are relevant to how—the hash k
 2. If a failure happens and a cache entry already exists (_even if it’s expired_), it will use the cached entry.
 3. If you prefer the build to _fail_ when your API requests fail, leave out the `try` `catch` and let the error throw without handling it!
 
-```js
-const EleventyFetch = require("@11ty/eleventy-fetch");
+{% set codeContent %}
+import EleventyFetch from "@11ty/eleventy-fetch";
 
-module.exports = async function () {
+export default async function () {
 	try {
 		let url = "https://api.github.com/repos/11ty/eleventy";
 
@@ -158,7 +159,8 @@ module.exports = async function () {
 		};
 	}
 };
-```
+{% endset %}
+{% include "snippets/esmCjsTabs.njk" %}
 
 ## Running this on your Build Server
 
@@ -170,10 +172,10 @@ This [documentation has moved to the Deployment page](/docs/deployment/#persisti
 
 This is what [`eleventy-img`](/docs/plugins/image/) uses internally.
 
-```js
-const EleventyFetch = require("@11ty/eleventy-fetch");
+{% set codeContent %}
+import EleventyFetch from "@11ty/eleventy-fetch";
 
-module.exports = async function () {
+export default async function () {
 	let url = "https://www.zachleat.com/img/avatar-2017-big.png";
 	let imageBuffer = await EleventyFetch(url, {
 		duration: "1d",
@@ -183,29 +185,32 @@ module.exports = async function () {
 
 	// (Example truncated)
 };
-```
+{% endset %}
+{% include "snippets/esmCjsTabs.njk" %}
 
 ### Fetch Google Fonts CSS
 
 Also a good example of using `fetchOptions` to pass in a custom user agent. Full option list is available on the [`node-fetch` documentation](https://www.npmjs.com/package/node-fetch#options).
 
-```js
-const EleventyFetch = require("@11ty/eleventy-fetch");
+{% set codeContent %}
+import EleventyFetch from "@11ty/eleventy-fetch";
 
-let url =
-	"https://fonts.googleapis.com/css?family=Roboto+Mono:400&display=swap";
-let fontCss = await EleventyFetch(url, {
-	duration: "1d",
-	type: "text",
-	fetchOptions: {
-		headers: {
-			// lol
-			"user-agent":
-				"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
+export default async function() {
+	let url = "https://fonts.googleapis.com/css?family=Roboto+Mono:400&display=swap";
+	let fontCss = await EleventyFetch(url, {
+		duration: "1d",
+		type: "text",
+		fetchOptions: {
+			headers: {
+				// lol
+				"user-agent":
+					"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
+			},
 		},
-	},
-});
-```
+	});
+};
+{% endset %}
+{% include "snippets/esmCjsTabs.njk" %}
 
 ### Fetching GitHub Stars for a repo
 
@@ -217,10 +222,10 @@ let fontCss = await EleventyFetch(url, {
 
 **You probably won’t need to do this.** If you’d like to store data of your own choosing in the cache (some expensive thing, but perhaps not related to a network request), you may do so! Consider the following [Global Data File](/docs/data-global/):
 
-```js
-const { AssetCache } = require("@11ty/eleventy-fetch");
+{% set codeContent %}
+import { AssetCache } from "@11ty/eleventy-fetch";
 
-module.exports = async function () {
+export default async function () {
 	// Pass in your unique custom cache key
 	// (normally this would be tied to your API URL)
 	let asset = new AssetCache("zachleat_twitter_followers");
@@ -238,12 +243,13 @@ module.exports = async function () {
 
 	return fakeTwitterApiContents;
 };
-```
+{% endset %}
+{% include "snippets/esmCjsTabs.njk" %}
 
 ### Change Global Concurrency
 
 ```js
-const EleventyFetch = require("@11ty/eleventy-fetch");
+import EleventyFetch from "@11ty/eleventy-fetch";
 EleventyFetch.concurrency = 4; // default is 10
 ```
 

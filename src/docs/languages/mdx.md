@@ -24,7 +24,7 @@ layout: layouts/langs.njk
 
 {% addedin "3.0.0-alpha.11" %}MDX provides a Node.js loader ([`@mdx-js/node-loader`](https://mdxjs.com/packages/node-loader/) on npm). We can add this to our Eleventy configuration file to render `*.mdx` files.
 
-{% codetitle "eleventy.config.js (ESM)" %}
+<div class="codetitle">eleventy.config.js</div>
 
 ```js
 import {renderToStaticMarkup} from 'react-dom/server'
