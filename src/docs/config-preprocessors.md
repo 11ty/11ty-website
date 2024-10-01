@@ -20,7 +20,7 @@ export default function (eleventyConfig) {
 		}
 
 		// You can also modify the raw input of the template here too, be careful!
-		return `${content}<!-- Template file: {{ page.inputPath }} -->`;
+		return `${content}<!-- Template file: {% raw %}{{ page.inputPath }}{% endraw %} -->`;
 
 		// If you return nothing or `undefined`, no changes will be made to this template.
 	});
