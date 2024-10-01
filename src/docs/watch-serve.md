@@ -31,6 +31,22 @@ export default function(eleventyConfig) {
 
 - Both `**/*.(png|jpeg)` and `**/*.{png,jpeg}` are valid globs to matches any `png` or `jpeg` file in your project.
 
+### Reset configuration {% addedin "3.0.0" %}
+
+We do automatically look for dependencies in your configuration file based on JavaScript `require` or `import`—watch targets not included in that dependency graph will not reset or re-run your configuration automatically.
+
+To reset your configuration for a specific watch target, use the `resetConfig` option.
+
+{% set codeContent %}
+export default function(eleventyConfig) {
+	// You probably don’t need this
+	eleventyConfig.addWatchTarget("./_config/**", {
+		resetConfig: true
+	});
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
 ## Ignore Watching Files
 
 ### `.gitignore`
