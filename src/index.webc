@@ -29,7 +29,7 @@ let eleventyComputed = {
 ---
 <script webc:setup>
 function getHighlightedBlogPostContent(collection) {
-	let posts = findBy(collection, 'data.homePageHighlight', true);
+	let posts = findBy(collection, 'data.blogHighlight', true);
 	if(!posts.length) {
 		return "";
 	}
@@ -65,10 +65,10 @@ function randomTestimonialLink(testimonials) {
 <quick-start></quick-start>
 
 <div webc:bucket="async">
-	<sponsors-list></sponsors-list>
-
 	<h2>News from the Blog</h2>
 	<ul @html="getHighlightedBlogPostContent(collections.blog)"></ul>
+
+	<sponsors-list></sponsors-list>
 
 	<h2>Why should you use Eleventy?</h2>
 	<ul>

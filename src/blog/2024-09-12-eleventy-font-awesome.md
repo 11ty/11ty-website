@@ -2,7 +2,7 @@
 newstitle: "11ty is joining Font Awesome"
 eleventyNavigation:
   parent: Blog
-homePageHighlight: true
+blogHighlight: true
 external_url: https://blog.fontawesome.com/
 ogimageOverride: /blog/fa-2.png
 ---
