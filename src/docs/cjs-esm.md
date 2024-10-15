@@ -20,7 +20,7 @@ However, ESM (EcmaScript Modules) are a newer JavaScript standard that will work
 
 ### Node.js
 
-If you want to start using ESM in your project, tthere are two ways to do it in Node.js (both of which work fine in Eleventy v3):
+If you want to start using ESM in your project, there are two ways to do it in Node.js (both of which work fine in Eleventy v3):
 
 1. **Project-wide**: Adding `"type": "module"` in your `package.json`, which swaps the default for `.js` files from CommonJS to ESM.
 1. **Individual files** (incremental migration): by using the `.mjs` file extension instead of `.js` you can change a single file to use ESM.
