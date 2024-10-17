@@ -12,7 +12,8 @@ permalink: /imports/logo-cloud.html
 <li><img webc:is="indieweb-avatar" url="https://css-tricks.com/">CSS Tricks</li>
 <li><img webc:is="indieweb-avatar" url="https://www.webpagetest.org/">WebPageTest</li>
 <li><img webc:is="indieweb-avatar" url="https://www.a11yproject.com/">A11Y Project</li>
-<!-- <li><img webc:is="indieweb-avatar" url="https://www.noaa.gov/"><abbr title="National Oceanic and Atmospheric Administration">NOAA</abbr></li> -->
+<li><img webc:is="indieweb-avatar" url="https://www.noaa.gov/"><abbr title="National Oceanic and Atmospheric Administration">NOAA</abbr></li>
+<li><img webc:is="indieweb-avatar" url="https://cloud.gov/">United States (gov)</li>
 <li><img webc:is="indieweb-avatar" url="https://www.gov.uk/">United Kingdom (gov)</li>
 <li><img webc:is="indieweb-avatar" url="https://www.numerique.gouv.fr/">France (gov)</li>
 <li><img webc:is="indieweb-avatar" url="https://stackoverflow.com/">Stack Overflow</li>
