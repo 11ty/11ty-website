@@ -46,7 +46,7 @@ npm install @11ty/eleventy-upgrade-help@3
 
 ### <span class="numberflag"><span class="sr-only">Step</span> 3</span> Add to Configuration File
 
-Add to your configuration file (probably `eleventy.config.js` or `eleventy.config.js`):
+Add to your configuration file (probably `eleventy.config.js` or `.eleventy.js`):
 
 {% set codeContent %}
 import UpgradeHelper from "@11ty/eleventy-upgrade-help";
