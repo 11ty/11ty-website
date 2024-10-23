@@ -79,6 +79,8 @@ Now you can place these markdown files in your Eleventy input directory and weâ€
 
 ## Community Resources
 
+_Resources via <strong><a href="https://11tybundle.dev/categories/migrating-to-eleventy/">11tybundle.dev (Migrating to Eleventy)</a></strong> curated by {% indieweblink "Bob Monsour", "https://www.bobmonsour.com/" %}._
+
 <ul class="list-bare">
 {%- for post in exportCommunityLinks %}
 	<li><small><code>{{ post.date | newsDate("LLL yyyy") }}</code></small> <a href="{{ post.url }}">{% indieavatar post.url %}{{ post.title }}</a>{% if post.author %}â€”{{ post.author }}{% endif %}</li>
