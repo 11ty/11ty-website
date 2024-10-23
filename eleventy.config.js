@@ -310,6 +310,10 @@ export default async function (eleventyConfig) {
 			decoding: "async",
 			"eleventy:ignore": "",
 		},
+
+		cacheOptions: {
+			duration: "14d",
+		},
 	});
 
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
@@ -330,6 +334,10 @@ export default async function (eleventyConfig) {
 		defaultAttributes: {
 			loading: "lazy",
 			decoding: "async",
+		},
+
+		cacheOptions: {
+			duration: "14d",
 		},
 	});
 
