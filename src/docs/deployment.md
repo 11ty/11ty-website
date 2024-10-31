@@ -40,9 +40,6 @@ hosts:
   - name: Edgio
     url: https://docs.edg.io/guides/v7/sites_frameworks/getting_started/eleventy
     screenshotSize: medium
-  - name: Begin
-    url: https://begin.com/
-    screenshotSize: medium
   - name: Digital Ocean
     url: https://www.digitalocean.com/community/tutorials/how-to-create-and-deploy-your-first-eleventy-website
     screenshotSize: medium
