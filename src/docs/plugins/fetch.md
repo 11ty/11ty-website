@@ -112,10 +112,8 @@ Special values:
 
 #### Return Type {% addedin "Fetch 5.0" %}
 
-- _returnType: undefined_
-	- returns the processed body of the request specific to the `type`
-- `returnType: "response"`
-	- returns a cached object with `url`, `status`, `headers`, and `body` properties.
+- `returnType: undefined` (default) returns the processed body of the request specific to the `type`
+- `returnType: "response"` returns a cached object with `url`, `status`, `headers`, and `body` properties.
 
 ## What happens when a request fails?
 
