@@ -61,7 +61,30 @@ exportCommunityLinks:
 ---
 # Migrating from {% indieavatar iconUrl %}WordPress to Eleventy
 
-## Using a WordPress Export File
+## Use `@11ty/import`
+
+Eleventy provides a command line tool to import various data sources to projects as static content files.
+
+- [`11ty/eleventy-import` on GitHub](https://github.com/11ty/eleventy-import)
+
+This importer accepts a number of different types of import sources—in this example we’ll use a WordPress blog home page URL. This will convert *all* of the posts (via the [WordPress REST API](https://developer.wordpress.org/rest-api/)) from that blog to static content files in your local project.
+
+```sh
+> npx @11ty/import wordpress https://example.com/
+Wrote 141 documents and 810 assets (933 cleaned, unused) from WordPress (7 errors) in 2.14 seconds (v1.0.0)
+```
+
+The importer will:
+
+1. Import the post content to the file system maintaining the same URL structure (change the root directory with `--output`)
+1. Download all of the assets referenced in that content to your project (so that you can version them in `git`, for example) and change the reference URLs in the markup to point to those files.
+1. Will _not_ overwriting existing content (unless using the `--overwrite` option) so that you can repeat the same import command to only fetch _new_ content.
+1. All downloads are cached locally so that you can stop and resume a large import without losing your import progress (using the [Eleventy Fetch](/docs/plugins/fetch/) plugin).
+1. Optionally convert the content to Markdown.
+
+Try it out with `--dryrun` first to be safe!
+
+## Alternatively, use a WordPress Export File <span id="using-a-wordpress-export-file"></span>
 
 If you would like to permanently escape the WordPress ecosystem, you can do a [one-time export of your content](https://wordpress.com/support/export/) via the Admin panel of your WordPress site. At time of writing this feature exists in the WordPress sidebar in **Tools** → **Export** → **Export content** (section) → **Export all** (button).
 
