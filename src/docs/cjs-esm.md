@@ -14,7 +14,7 @@ eleventyNavigation:
 
 Historically, Eleventy (prior to version 3) has worked with the Node.js default flavor of JavaScript modules: CommonJS. Practically speaking, this means you used `module.exports` and `require()` in any `.js` (or `.cjs`) files in your project. This affected Configuration files, JavaScript Data Files, and JavaScript (`.11ty.js`) templates.
 
-However, ESM (EcmaScript Modules) are a newer JavaScript standard that will work in more JavaScript environments and runtimes. Instead of `module.exports` and `require()`, you’ll use `export` and `import()`.
+However, ESM (ECMAScript Modules) are a newer JavaScript standard that will work in more JavaScript environments and runtimes. Instead of `module.exports` and `require()`, you’ll use `export` and `import()`.
 
 ## Runtimes
 
