@@ -87,19 +87,6 @@ layout: layouts/docs.njk
 			<td><code>v4.0.0-alpha.1</code></td>
 			<td>{% addedin "v4.0.0-alpha.1" %}</td>
 		</tr>
-	</tbody>
-</table>
-
-<h4>Plugins</h4>
-
-<table>
-	<thead>
-		<tr>
-			<th>Version</th>
-			<th>Tag</th>
-		</tr>
-	</thead>
-	<tbody>
 		<tr>
 			<td><code>Image v4.0.0</code></td>
 			<td>{% addedin "Image v4.0.0" %}</td>
@@ -107,6 +94,7 @@ layout: layouts/docs.njk
 	</tbody>
 </table>
 
+{#
 <h2>Header/Footer</h2>
 
 <h3>Home Header</h3>
@@ -130,7 +118,7 @@ layout: layouts/docs.njk
 <div class="elv-sg-component" webc:raw>
 {% include "footer-nav.njk" %}
 </div>
-
+#}
 
 <h2>Lists</h2>
 
