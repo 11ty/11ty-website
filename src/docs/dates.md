@@ -109,7 +109,7 @@ Sun Dec 31 2017 18:00:00 GMT-0600 (Central Standard Time)
 
 Note that this appears to be the wrong day!
 
-Nunjucks allows you to call JavaScript methods in output `{% raw %}{{ page.date.toString() }}{% endraw %}`. Liquid does not allow this.
+Nunjucks allows you to call JavaScript methods in output `{% raw %}{{ page.date.toString() }}{% endraw %}`.
 
 {% codetitle "Nunjucks", "Syntax" %}
 
@@ -120,7 +120,15 @@ display a date with a UTC time zone like:
 Mon, 01 Jan 2018 00:00:00 GMT
 ```
 
-You could add your own `toUTCString` [filter in Liquid](/docs/filters/) to perform the same task.
+On Liquid, you can't do this, though you can create your own `toUTCString` [filter in Liquid](/docs/filters/) to perform the same task, or pass a timezone parameter to your filter to point to the one you desire in your template.
+
+The valid strings accepted are the [TZ identifiers](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+
+```
+Given the date above this {% raw %}{{ page.date | date: '%b %d, %Y', 'UCT' }}{% endraw %} would render in UTC as:
+
+Jan 01, 2018
+```
 
 ### Also on YouTube
 
