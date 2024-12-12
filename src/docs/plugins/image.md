@@ -701,7 +701,7 @@ Note this also means that `folder/folder.jpeg` would be processed for all templa
 
 ```js
 import Image from "@11ty/eleventy-img";
-Image.concurrency = 4; // default is 10
+Image.concurrency = 4; // default is 20
 ```
 
 ### Advanced control of Sharp image processor
