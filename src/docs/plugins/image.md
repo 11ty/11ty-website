@@ -188,11 +188,15 @@ export default function (eleventyConfig) {
 		defaultAttributes: {
 			loading: "lazy",
 			decoding: "async",
+			sizes: "auto",
 		},
 	});
 };
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
+
+{% callout "info", "md" %}Note that the `sizes` attribute must be present if more than one width is specified. [[MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/sizes)] The `eleventyImageTransformPlugin` does not provide a default value for `sizes`, so it must be explicitly included in the `defaultAttributes` object.
+{% endcallout %}
 
 #### Relative paths
 
