@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/LIGMATV/11ty-gmx",
+	"name": "11ty GMX",
+	"description": "An 11ty blog template with Material Design, PWA and minified files that simply works.",
+	"author": "LIGMATV",
+	"demo": "https://11ty-gmx.vercel.app/"
+}
