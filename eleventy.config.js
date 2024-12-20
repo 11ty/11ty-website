@@ -268,6 +268,11 @@ function findBy(data, path, value) {
 export default async function (eleventyConfig) {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
+
+	if (process.env.NODE_ENV === "production") {
+		eleventyConfig.setConcurrency(1);
+	}
+
 	if (process.env.NODE_ENV === "production") {
 		// Skip on production
 		eleventyConfig.ignores.add("src/admin.md");
