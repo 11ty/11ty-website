@@ -41,7 +41,7 @@
     ]
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy": "3.0.1-alpha.1",
     "@11ty/eleventy-activity-feed": "^2.0.0",
     "@11ty/eleventy-fetch": "^5.0.1",
     "@11ty/eleventy-img": "^5.0.0",
