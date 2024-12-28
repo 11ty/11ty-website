@@ -37,7 +37,8 @@ a[href^="https://fediverse.zachleat.com"]:not(.elv-externalexempt):before,
 a[href^="https://fosstodon.org"]:not(.elv-externalexempt):before,
 a[href^="https://wikipedia.org"]:not(.elv-externalexempt):before,
 a[href^="/blog/discord/"]:not(.elv-externalexempt):before,
-a[href^="https://en.wikipedia.org"]:not(.elv-externalexempt):before {
+a[href^="https://en.wikipedia.org"]:not(.elv-externalexempt):before,
+a[href^="https://bsky.app"]:not(.elv-externalexempt):before {
 	content: "";
 	display: inline-block;
 	vertical-align: text-bottom;
@@ -53,6 +54,7 @@ a[href^="https://github.com"]:not(.elv-externalexempt):after,
 a[href^="https://gitlab.com"]:not(.elv-externalexempt):after,
 a[href^="https://fediverse.zachleat.com"]:not(.elv-externalexempt):after,
 a[href^="https://fosstodon.org"]:not(.elv-externalexempt):after,
+a[href^="https://bsky.app"]:not(.elv-externalexempt):after,
 a[href^="https://wikipedia.org"]:not(.elv-externalexempt):after,
 a[href^="/blog/discord/"]:not(.elv-externalexempt):after,
 a[href^="https://en.wikipedia.org"]:not(.elv-externalexempt):after {
@@ -70,6 +72,10 @@ a[href^="https://fediverse.zachleat.com"]:before,
 a[href^="https://fosstodon.org"]:before {
 	border-radius: 0.3125em; /* 5px /16 */
 	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Ffosstodon.org%2F/");
+}
+a[href^="https://bsky.app"]:before {
+	border-radius: 0.3125em; /* 5px /16 */
+	background-image: url("https://v1.indieweb-avatar.11ty.dev/https%3A%2F%2Fbsky.app%2F/");
 }
 a[href^="https://github.com"]:before {
 	border-radius: 7px;

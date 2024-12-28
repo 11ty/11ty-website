@@ -2,7 +2,6 @@
 newstitle: "Eleventy (software) is now on Wikipedia"
 eleventyNavigation:
   parent: Blog
-blogHighlight: true
 external_url: https://en.wikipedia.org/wiki/Eleventy_(software)
 ---
 I will admit—I’m a bit excited to announce that we’ve finally made it. We have our own Wikipedia page!

@@ -5,6 +5,8 @@ import { ActivityFeed } from "@11ty/eleventy-activity-feed";
 export default async function () {
 	let feed = new ActivityFeed();
 
+	// feed.importer.setVerbose(true);
+
 	feed.setCacheDuration("1d"); // note that cache is persisted on CI server
 
 	// The Eleventy Activity Feed
@@ -15,8 +17,8 @@ export default async function () {
 		"Quick Tips",
 		"https://www.11ty.dev/docs/quicktips/feed.xml"
 	);
-	feed.addSource("rss", "Mastodon", "https://fosstodon.org/users/eleventy.rss");
-	// feed.addSource("twitterUser", "Twitter", "eleven_ty", "949639269433380864");
+	feed.addSource("fediverse", "Mastodon", "@eleventy@fosstodon.org");
+	feed.addSource("bluesky", "Bluesky", "@11ty.dev");
 
 	if (process.env.NODE_ENV === "production") {
 		// Warning: at time of writing Eleventy has 51 repos, beware if this grows beyond the max of 100

@@ -1,7 +1,7 @@
 <div class="elv-toc" data-pagefind-ignore>
 {%- set calloutTitle %}<a href="/blog/">Blog</a>{% endset %}
 {%- callout "", "html", calloutTitle %}
-<a href="/blog/eleventy-font-awesome/" class="elv-toc-callout-link"><strong>11ty is joining <span class="nowrap">Font Awesome{% indieavatar "https://fontawesome.com/", "avatar-right" %}</span></strong></a>
+<a href="/blog/survey-awesome/" class="elv-toc-callout-link">Help Eleventy: Fill out <strong><span class="nowrap">Survey Awesome</span></strong>!</a>
 {%- endcallout %}
 
 {%- set versionsTitle = "<a href='/docs/versions/'>Versions</a>" %}
@@ -10,9 +10,9 @@
 		<dt>Stable</dt>
 		<dd><code>{{ npmVersions.latest }}</code></dd>
 		{# <dt>Beta</dt>
-		<dd><code>{{ npmVersions.beta }}</code></dd>
+		<dd><code>{{ npmVersions.beta }}</code></dd> #}
 		<dt>Canary</dt>
-		<dd><code>{{ npmVersions.canary }}</code></dd> #}
+		<dd><code>{{ npmVersions.canary }}</code></dd>
 	</dl>
 {%- endcallout %}
 
