@@ -22,7 +22,7 @@ stream.on("data", (entry) => {
 
 ```js
 (async function () {
-  const { Eleventy } = await import("@11ty/eleventy");
+	const { Eleventy } = await import("@11ty/eleventy");
 
 	let elev = new Eleventy();
 	let stream = await elev.toNDJSON();
