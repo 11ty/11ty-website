@@ -8,7 +8,7 @@ layout: layouts/docs.njk
 
 <div class="business-network">
 {%- for author in authors | filterBusinessPeople | shuffle %}
-{%- set supporter = opencollective.supporters | isSupporter(author.name, githubTwitterMap[author.name], author.opencollective) -%}
+{%- set supporter = opencollective.supporters | isSupporter(author.name, author.opencollective) -%}
 {%- if supporter | isBusinessPerson %}
   <div class="business-network-primary fl">
     <div>

@@ -33,11 +33,7 @@ const shortcodes = {
 			return defaultAvatarHtml;
 		}
 		if ((slug || "").startsWith("twitter:")) {
-			return shortcodes.avatar(
-				"twitter",
-				slug.substring("twitter:".length),
-				alt
-			);
+			return "";
 		}
 		return shortcodes.getGitHubAvatarHtml(slug, alt);
 	},
@@ -135,14 +131,6 @@ const shortcodes = {
 			}
 		}
 
-		// 11ty.dev
-		let overrides = {
-			dLN_2kDPpB: "11ty",
-		};
-		if (overrides[siteSlug]) {
-			screenshotUrl = `./src/img/screenshot-fallbacks/${overrides[siteSlug]}.jpg`;
-		}
-
 		let options = {
 			formats: ["jpeg"], // this format is irrelevant
 			widths: ["auto"], // 260-440 in layout
@@ -158,16 +146,16 @@ const shortcodes = {
 			options
 		);
 
-		return eleventyImage.generateHTML(stats, {
+		let attrs = {
 			alt: `Screenshot of ${siteUrl}`,
 			loading: "lazy",
 			decoding: "async",
 			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
 			class: "sites-screenshot" + (isYouTubeUrl ? ` sites-screenshot-youtube${isSquare ? "-sq" : ""}` : ""),
 			"eleventy:ignore": "",
-			// No longer necessary because we have a default fallback image when timeouts happen.
-			// onerror: "let p=this.closest('picture');if(p){p.remove();}this.remove();"
-		});
+		};
+
+		return eleventyImage.generateHTML(stats, attrs);
 	},
 	getGeneratorImageHtml(url) {
 		let d = new Date();
@@ -544,13 +532,6 @@ ${text.trim()}
 		return commaNumber(num);
 	});
 
-	eleventyConfig.addFilter("friendlyAuthorName", function (name) {
-		if (name && name.startsWith("twitter:")) {
-			return `<em>${name.substring("twitter:".length)}</em>`;
-		}
-		return name;
-	});
-
 	eleventyConfig.addFilter("displayPrice", function (num) {
 		return new Intl.NumberFormat("en-US", {
 			style: "currency",
@@ -711,17 +692,8 @@ ${text.trim()}
 		function (
 			supporters,
 			githubUsername,
-			twitterUsernames = [],
 			hardcodedOpencollectiveUsername
 		) {
-			let supporter;
-			for (let twitter of twitterUsernames) {
-				supporter = findBy(supporters, "twitter", twitter);
-				if (supporter && supporter.length) {
-					return supporter.pop();
-				}
-			}
-
 			let slug = {
 				// hardcoded map for github => opencollective slugs
 				"twitter:unabridgedsoft": "unabridged-software",
@@ -735,7 +707,7 @@ ${text.trim()}
 				slug = hardcodedOpencollectiveUsername || githubUsername;
 			}
 
-			supporter = findBy(supporters, "slug", slug);
+			let supporter = findBy(supporters, "slug", slug);
 			if (supporter && supporter.length) {
 				return supporter.pop();
 			}
@@ -882,7 +854,7 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addFilter("sortAuthors", (authors) => {
-		return Object.values(authors).sort((a, b) => {
+		return Object.values(authors).filter(author => !author.name.startsWith("twitter:")).sort((a, b) => {
 			return b.sites.length - a.sites.length;
 		});
 	});

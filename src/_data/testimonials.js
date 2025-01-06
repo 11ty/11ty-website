@@ -26,7 +26,7 @@ export default function () {
 			text: "Seriously can't remember enjoying using a Static Site Generator this much. Yes Hugo is rapid, but this is all so logical. It feels like it was designed by someone who has been through lots of pain and success using other SSGs.",
 			twitter: "philhawksworth",
 			name: "Phil Hawksworth",
-			source: "https://twitter.com/philhawksworth/",
+			source: "https://www.hawksworx.com/",
 		},
 		{
 			text: "Don’t tell Zach I said it but Eleventy is seeming fresh as hell so far",
@@ -145,7 +145,7 @@ export default function () {
 			text: "Eleventy is absolutely wonderful. It’s by far the nicest static site generator I’ve used in what feels like forever.",
 			twitter: "addyosmani",
 			name: "Addy Osmani",
-			source: "https://twitter.com/addyosmani/",
+			source: "https://addyosmani.com/",
 			featured: true,
 		},
 		{

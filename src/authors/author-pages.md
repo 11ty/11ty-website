@@ -1,31 +1,28 @@
----
-pagination:
-  data: authors
-  size: 1
-  alias: author
-  resolve: values
-  generatePageOnEmptyData: true
-permalink: "/authors/{{ author.name | slugify }}/"
-excludeFromSearch: true
-layout: layouts/docs.njk
+---js
+let pagination = {
+	data: "authors",
+	size: 1,
+	alias: "author",
+	resolve: "values",
+	generatePageOnEmptyData: true,
+	before: function(paginationData) {
+		return paginationData.filter(page => !page.name.startsWith("twitter:"));
+	}
+};
+let permalink = "/authors/{{ author.name | slugify }}/";
+let excludeFromSearch = true;
+let layout = "layouts/docs.njk";
 ---
 
 <style>{% include "components/page-sites.css" %}</style>
 
-{# @TODO add support for githubTwitterMap.js data #}
-{%- set twitterUrl = "https://twitter.com/" + author.name.substring("twitter:".length) | canonicalTwitterUrl %}
 {%- set githubUrl = "https://github.com/" + author.name %}
-
-{%- set supporter = opencollective.supporters | isSupporter(author.name, githubTwitterMap[author.name], author.opencollective) -%}
+{%- set supporter = opencollective.supporters | isSupporter(author.name, author.opencollective) -%}
 {%- set displayName = supporter.name or author.name %}
 
 # {{ displayName }}
 
-{%- if author.name.startsWith("twitter:") %}
-- <a href="{{ twitterUrl }}">{% communityavatar author.name %}{{ author.name | friendlyAuthorName | safe }}</a> on Twitter
-{%- else %}
 - <a href="{{ githubUrl }}">{% communityavatar author.name %}{{ author.name }}</a> on GitHub
-{%- endif %}
 {%- if supporter %}
 - <a href="{{ supporter.profile }}" class="elv-externalexempt supporters-link"><strong>{% if supporter.tier and supporter.isActive %} {% emoji "📅" %} Monthly{% endif %} Eleventy Contributor</strong> on Open Collective</a> 🎈
 {%- else %}
