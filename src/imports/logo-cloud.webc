@@ -14,6 +14,7 @@ permalink: /imports/logo-cloud.html
 <li><img webc:is="indieweb-avatar" url="https://www.a11yproject.com/">A11Y Project</li>
 <li><img webc:is="indieweb-avatar" url="https://www.noaa.gov/"><abbr title="National Oceanic and Atmospheric Administration">NOAA</abbr></li>
 <li><img webc:is="indieweb-avatar" url="https://cloud.gov/">United States (gov)</li>
+<li><img webc:is="indieweb-avatar" url="https://data.gov/">data.gov</li>
 <li><img webc:is="indieweb-avatar" url="https://www.gov.uk/">United Kingdom (gov)</li>
 <li><img webc:is="indieweb-avatar" url="https://www.numerique.gouv.fr/">France (gov)</li>
 <li><img webc:is="indieweb-avatar" url="https://www.louvre.fr/">The Louvre Museum</li>
