@@ -36,7 +36,7 @@ npm install @11ty/eleventy-plugin-rss
 
 ## Virtual Template
 
-{% addedin "v3.0.0-alpha.13" %}{% addedin "RSS 2.0.0" %} This method creates a feed template directly from your plugin configuration, without requiring additional files in your project. Read more about [Virtual Templates](/docs/virtual-templates.md).
+{% addedin "v3.0.0-alpha.13" %}{% addedin "RSS 2.0.0" %} This method creates a feed template directly from your plugin configuration, without requiring additional files in your project. The default template uses Nunjucks, so make sure `njk` is included `templateFormats` in your [Eleventy config](/docs/config/#template-formats). Read more about [Virtual Templates](/docs/virtual-templates.md).
 
 {% set codeContent %}
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";

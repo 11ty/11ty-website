@@ -68,10 +68,6 @@ cmses:
     url: https://www.builder.io/
     screenshotSize: medium
     tags: [API]
-  - name: Publii
-    url: https://getpublii.com/
-    screenshotSize: medium
-    tags: [Git-based]
   - name: Directus
     url: https://directus.io/
     screenshotSize: medium

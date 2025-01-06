@@ -1,8 +1,6 @@
 import slugify from "slugify";
-import markdownIt from "markdown-it";
 import markdownItToc from "markdown-it-table-of-contents";
 import { IdAttributePlugin } from "@11ty/eleventy";
-import { decodeHTML } from "entities";
 
 function markdownItSlugify(s) {
 	return slugify(removeExtraText(s), { lower: true, remove: /[\=\":’'`,]/g });
@@ -27,17 +25,15 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(IdAttributePlugin, {
 		// custom slugify function, otherwise we use Eleventy’s built-in `slugify` filter.
 		slugify: function(textContent) {
-			// TODO Eleventy 3.0.0-beta.2 will handle decodeHTML automatically
-			return markdownItSlugify(decodeHTML(textContent));
+			return markdownItSlugify(textContent);
 		},
 		selector: "h1,h2,h3,h4,h5,h6", // default
 	});
 
-	let mdIt = markdownIt({
-		html: true,
-		breaks: true,
-		linkify: true,
-	}).use(markdownItToc, {
+	let mdIt;
+	eleventyConfig.amendLibrary("md", (mdLib) => {
+		mdIt = mdLib;
+		mdLib.use(markdownItToc, {
 			includeLevel: [2, 3],
 			slugify: markdownItSlugify,
 			format: function (heading) {
@@ -52,10 +48,9 @@ export default function (eleventyConfig) {
 			},
 		});
 
-	// opt out of linkification for .io TLD, e.g. 11ty.io
-	mdIt.linkify.tlds(".io", false);
-
-	eleventyConfig.setLibrary("md", mdIt);
+		// opt out of linkification for .io TLD, e.g. 11ty.io
+		mdLib.linkify.tlds(".io", false);
+	});
 
 	eleventyConfig.addPairedShortcode("markdown", function (content) {
 		return mdIt.renderInline(content);

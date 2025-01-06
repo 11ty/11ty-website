@@ -234,7 +234,7 @@ If you want to add support for universal filters and shortcodes in your custom t
 
 ### `compile`
 
-- _Required_ for new file extensions. _Optional_ for [extension overrides](#overriding-an-existing-template-language).
+- _Required_ for new file extensions. _Optional_ for [aliases](#aliasing-an-existing-template-language).
 
 `compile` is an async-friendly function that takes two parameters:
 

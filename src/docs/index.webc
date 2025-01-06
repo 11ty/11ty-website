@@ -246,7 +246,7 @@ Use `--serve` to start up a hot-reloading local web server.
 	</div>
 	<div id="quickstart-run-5-yarn" role="tabpanel">
 		<syntax-highlight language="bash">
-			yarn exec eleventy --serve
+			yarn exec eleventy -- --serve
 		</syntax-highlight>
 	</div>
 </seven-minute-tabs>

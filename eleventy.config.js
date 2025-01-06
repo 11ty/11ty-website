@@ -140,7 +140,7 @@ const shortcodes = {
 			dLN_2kDPpB: "11ty",
 		};
 		if (overrides[siteSlug]) {
-			screenshotUrl = `/img/screenshot-fallbacks/${overrides[siteSlug]}.jpg`;
+			screenshotUrl = `./src/img/screenshot-fallbacks/${overrides[siteSlug]}.jpg`;
 		}
 
 		let options = {
@@ -213,14 +213,6 @@ const shortcodes = {
 		return `<img src="${url}" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
 	},
 	getOpenCollectiveAvatarHtml(supporter) {
-		// Another vote for https://github.com/11ty/eleventy-img/issues/225
-		let missingAvatarsNames = [
-			"Jonathan Wright",
-			"Richard Herbert",
-			"Boris Schapira",
-			"Panagiotis Kontogiannis",
-			"Heather Buchel",
-		];
 		let preferIndiewebAvatarSlugs = [
 			"nejlepsiceskacasinacom",
 			"slovenskeonlinecasinocom",
@@ -230,14 +222,8 @@ const shortcodes = {
 		if(preferIndiewebAvatarSlugs.includes(supporter.slug) && supporter.website) {
 			return shortcodes.getIndieAvatarHtml(supporter.website);
 		}
-		if(missingAvatarsNames.includes(username)) {
-			if(supporter.website) {
-				return shortcodes.getIndieAvatarHtml(supporter.website);
-			}
-			return "";
-		}
 
-		return `<img src="${url}" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
+		return `<img src="${url}" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async" eleventy:optional>`;
 	},
 };
 
@@ -267,6 +253,11 @@ function findBy(data, path, value) {
 
 export default async function (eleventyConfig) {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+
+
+	if (process.env.NODE_ENV === "production") {
+		eleventyConfig.setConcurrency(1);
+	}
 
 	if (process.env.NODE_ENV === "production") {
 		// Skip on production
@@ -310,6 +301,10 @@ export default async function (eleventyConfig) {
 			decoding: "async",
 			"eleventy:ignore": "",
 		},
+
+		cacheOptions: {
+			duration: "14d",
+		},
 	});
 
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
@@ -330,6 +325,10 @@ export default async function (eleventyConfig) {
 		defaultAttributes: {
 			loading: "lazy",
 			decoding: "async",
+		},
+
+		cacheOptions: {
+			duration: "14d",
 		},
 	});
 
@@ -672,15 +671,16 @@ ${text.trim()}
 
 	function testimonialNameHtml(testimonial) {
 		let avatarHtml = "";
-		if (testimonial.twitter) {
+		if (testimonial.avatarUrl) {
+			avatarHtml = shortcodes.getIndieAvatarHtml(testimonial.avatarUrl);
+		} else if (testimonial.twitter) {
 			avatarHtml = shortcodes.avatar(
 				"twitter",
 				testimonial.twitter,
 				`${testimonial.name}’s Twitter Photo`
 			);
-		} else if (testimonial.avatarUrl) {
-			avatarHtml = shortcodes.getIndieAvatarHtml(testimonial.avatarUrl);
 		}
+
 		return avatarHtml + testimonial.name;
 	}
 

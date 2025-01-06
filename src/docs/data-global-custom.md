@@ -50,7 +50,7 @@ If you want a `function` returned, make sure you nest it:
 ```js
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addGlobalData("myFunction", () => {
-		return () => new Date(),
+		return () => new Date();
 	});
 
 	// myFunction’s value will be a function that returns a Date instance
@@ -62,7 +62,7 @@ The above is important to know when using this API with [Computed Data](/docs/da
 ```js
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addGlobalData("eleventyComputed.myString", () => {
-		return (data) => "This is a string!",
+		return (data) => "This is a string!";
 	});
 
 	// myString’s value will be "This is a string!"
