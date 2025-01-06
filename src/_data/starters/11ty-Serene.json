@@ -1,7 +1,7 @@
 {
 	"url": "https://github.com/CLCK0622/11ty-Serene",
 	"name": "11ty-Serene",
-	"description": "A minimal theme for a landing page, featuring a simple structure, smooth scrolling, and scroll-revealing effects.",
+	"description": "A minimal theme for a landing page and integrated blog. Built with 11ty and Sass.",
 	"author": "CLCK0622",
 	"demo": "https://11ty-serene.vercel.app/"
 }

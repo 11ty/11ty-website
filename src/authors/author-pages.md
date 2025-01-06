@@ -5,7 +5,7 @@ pagination:
   alias: author
   resolve: values
   generatePageOnEmptyData: true
-permalink: "/authors/{{ author.name }}/"
+permalink: "/authors/{{ author.name | slugify }}/"
 excludeFromSearch: true
 layout: layouts/docs.njk
 ---

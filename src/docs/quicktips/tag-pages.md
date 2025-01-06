@@ -81,4 +81,4 @@ Now Eleventy will only generate a `/tags/personal/` template and `tech` will be 
 
 ## In Practice
 
-This is currently in use on the [`eleventy-base-blog` sample project](https://github.com/11ty/eleventy-base-blog). Check out source code in the [`tags.njk` template](https://github.com/11ty/eleventy-base-blog/blob/main/content/tags.njk) and [see a live demo](https://eleventy-base-blog.netlify.com/tags/another-tag/).
+This is currently in use on the [`eleventy-base-blog` sample project](https://github.com/11ty/eleventy-base-blog). Check out source code in the [`tags.njk` template](https://github.com/11ty/eleventy-base-blog/blob/main/content/tags.njk) and [see a live demo](https://demo-base-blog.11ty.dev/tags/another-tag/).
