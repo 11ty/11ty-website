@@ -1,8 +1,10 @@
 <div class="elv-toc" data-pagefind-ignore>
 {%- set calloutTitle %}<a href="/blog/">Blog</a>{% endset %}
+{%- for post in collections.sidebarHighlight %}
 {%- callout "", "html", calloutTitle %}
-<a href="/blog/survey-awesome/" class="elv-toc-callout-link">Help Eleventy: Fill out <strong><span class="nowrap">Survey Awesome</span></strong>!</a>
+<a href="{{ post.url }}" class="elv-toc-callout-link"><strong>{{ post.data.title }}</strong></a>
 {%- endcallout %}
+{%- endfor %}
 
 {%- set versionsTitle = "<a href='/docs/versions/'>Versions</a>" %}
 {%- callout "box", "html", versionsTitle -%}
