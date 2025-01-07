@@ -1,6 +1,6 @@
 # `slug` Universal Filter
 
-{% callout "warn", "md" %}Starting in Eleventy v1.0.0 it is recommended to use [the `slugify` Universal Filter](/docs/filters/slugify/) instead of `slug`. For backwards compatibility, `slug` is still included and supported but `slugify` has better default behavior for URLs with special characters. **If you want to swap `slug` to `slugify` wholesale in old projects, please [read this warning about breaking URLs](/docs/filters/slugify/#upgrade-from-slug-to-slugify). Be careful!**{% endcallout %}
+{% callout "warn", "md" %}Starting in Eleventy v1.0.0 it is recommended to use [the `slugify` Universal Filter](/docs/filters/slugify/) instead of `slug`. For backwards compatibility, `slug` is still included and supported but `slugify` has better default behavior for URLs with special characters. **If you want to swap `slug` to `slugify` wholesale in old projects, please [read this warning about breaking URLs](/docs/filters/slugify/#changing-slug-to-slugify). Be careful!**{% endcallout %}
 
 Uses the [`slugify` npm package](https://www.npmjs.com/package/slugify) to convert a string into a URL slug. Can be used in pagination or permalinks.
 

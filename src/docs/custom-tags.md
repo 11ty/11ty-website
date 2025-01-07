@@ -19,7 +19,7 @@ Various template engines can be extended with custom tags.
 
 Custom Tags are unrelated to Eleventy’s [Collections using Tags](/docs/collections/) feature. Unfortunately we’ve inherited this name from various upstream template languages.
 
-But, after all that, you can still add a Custom Tag using the [Configuration API](/docs/config/#using-the-configuration-api).
+But, after all that, you can still add a Custom Tag using the [Configuration API](/docs/config/).
 
 ## Liquid
 

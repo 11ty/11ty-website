@@ -47,7 +47,7 @@ A function which can be used within templating syntax to inject content into tem
 
 ### Collection
 
-An array of [templates](#template), used to group similar content. Collections can be created by using [tags](/docs/collections/#tag-syntax) or by calling the [collections API in the Eleventy configuration](/docs/collections/#advanced-custom-filtering-and-sorting).
+An array of [templates](#template), used to group similar content. Collections can be created by using [tags](/docs/collections/#add-to-a-collection-using-tags) or by calling the [collections API in the Eleventy configuration](/docs/collections/#advanced-custom-filtering-and-sorting).
 
 [Read more about collections.](/docs/collections/)
 

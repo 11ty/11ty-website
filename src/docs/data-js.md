@@ -4,7 +4,7 @@ eleventyNavigation:
   key: JavaScript Data Files
   order: 2
 relatedLinks:
-  /docs/config/#change-file-suffix-for-template-and-directory-data-files: Change the file suffix `.11tydata` for Template/Directory data files
+  /docs/config/#change-file-suffix-for-data-files: Change the file suffix `.11tydata` for Data Files
   /docs/watch-serve/#watch-javascript-dependencies: Watch JavaScript Dependencies
 ---
 

@@ -102,7 +102,7 @@ export default {
 
 If you want to use eleventyComputed in YAML front matter, you can use the template syntax string that matches the syntax of the template.
 
-This is how [`permalink` works](/docs/permalinks/#use-data-variables-in-permalink), if you’re already familiar with that.
+This is how [`permalink` works](/docs/permalinks/#use-template-syntax-in-permalink), if you’re already familiar with that.
 
 Consider our first example, but using Nunjucks (this example is also valid Liquid syntax).
 

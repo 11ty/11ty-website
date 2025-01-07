@@ -54,5 +54,4 @@ export default function (eleventyConfig) {
 
 | Feature                                                           | Syntax                                                                                   |
 | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| 🚫 Filters                                                        | **Not yet supported** `:filterName some text` Read more about [Filters](/docs/filters/). |
-| 🚫 [Universal Filters](/docs/filters/#universal-filters) | **Not yet supported** `:filterName some text` Read more about [Filters](/docs/filters/). |
+| 🚫 [Universal Filters](/docs/filters/) | **Not yet supported** `:filterName some text` Read more about [Filters](/docs/filters/). |

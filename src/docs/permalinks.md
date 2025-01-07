@@ -296,7 +296,7 @@ export default function(eleventyConfig) {
 
 Let's say you have a directory of content templates like `recipes/cookies.md` and `recipes/soup.md` and 50 more. Each of these content templates has a title in their frontmatter. While you could manually set a permalink in the frontmatter of each recipe you can also dynamically generate the permalink inside a [Directory Data File](/docs/data-template-dir/) like `recipes.11tydata.js`.
 
-Because of the order of the [data cascade](/docs/data-cascade/) the title of a content template is not immediately available in the directory data file. However, `permalink` is a special case of implied [Computed Data](docs/data-computed/) and will have this data available. Inside of your directory data file `recipes.11tydata.js` you could write this:
+Because of the order of the [data cascade](/docs/data-cascade/) the title of a content template is not immediately available in the directory data file. However, `permalink` is a special case of implied [Computed Data](./data-computed.md) and will have this data available. Inside of your directory data file `recipes.11tydata.js` you could write this:
 
 <div class="codetitle codetitle-right-md">recipes.11tydata.js</div>
 {% set codeContent %}

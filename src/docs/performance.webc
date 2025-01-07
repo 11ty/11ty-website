@@ -15,7 +15,7 @@ Eleventy is known for both its lightweight core in the form of speedy installs/b
 
 Eleventy allows you full control over the output. That also means that by-default we do not include any costly runtime JavaScript bundles that often hamper site performance!
 
-{% callout "", "md" %}Have a look at our new [Partial Hydration `<is-land>` component](/docs/plugins/partial-hydration/)!{% endcallout %}
+{% callout "", "md" %}Have a look at our new [Partial Hydration `<is-land>` component](/docs/plugins/is-land/)!{% endcallout %}
 
 Sites listed on the [Eleventy Leaderboards](/speedlify/) are tested and ranked (approximately) monthly as a fun community way to maintain speedy site performance for Eleventy sites.
 

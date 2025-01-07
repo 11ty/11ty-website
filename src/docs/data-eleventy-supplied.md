@@ -14,7 +14,7 @@ Here are a few data values we supply to your page that you can use in your templ
 - `pkg`: The local project’s `package.json` values.
 - `pagination`: Using the `pagination` key in [front matter](/docs/data-frontmatter/), this divides data into chunks for multiple output pages. [Read more about Pagination](/docs/pagination/).
 - `collections`: Lists of all of your content, grouped by tags. [Read more about Collections](/docs/collections/)
-- `page`: Has information about the current page (see the code block below for `page` contents). For example, `page.url` is useful for [finding the current page in a collection](/docs/collections.md#use-an-[aria-current]-attribute-on-the-current-page).
+- `page`: Has information about the current page (see the code block below for `page` contents). For example, `page.url` is useful for [finding the current page in a collection](/docs/collections.md#use-an-aria-current-attribute-on-the-current-page).
 - `eleventy`: {% addedin "1.0.0" %} contains Eleventy-specific data from [environment variables](/docs/environment-vars/).
 
 <div id="page-variable-contents"></div>
@@ -99,7 +99,7 @@ The `fileSlug` variable is mapped from `inputPath`, and is useful for creating y
 
 The `filePathStem` variable is mapped from `inputPath`, and is useful if you’ve inherited a project that doesn’t use clean [permalinks](/docs/permalinks/).
 
-<div id="changing-your-projects-default-permalinks"></div>
+<div id="changing-your-project-default-permalinks"></div>
 
 You can use this feature to [globally change your project’s default permalinks](/docs/permalinks.md#change-permalinks-globally-for-a-project) but make sure you also read the section about [Trailing Slashes](docs/permalinks.md#trailing-slashes).
 

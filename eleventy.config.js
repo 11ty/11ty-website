@@ -916,6 +916,7 @@ ${text.trim()}
 			let isAuthor = objectHas(authors, name);
 			if (isAuthor) {
 				html.push(`<a href="/authors/${name.toLowerCase()}/" class="nowrap">`);
+				html.push(`<a href="/authors/${slugify(name)}/" class="nowrap">`);
 			} else {
 				html.push(`<span class="nowrap">`);
 			}

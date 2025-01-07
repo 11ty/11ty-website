@@ -21,7 +21,7 @@ layout: layouts/docs.njk
 {%- for author in authors | sortAuthors %}
 {%- set supporter = opencollective.supporters | isSupporter(author.name, author.opencollective) -%}
 		<tr>
-			<td><a href="/authors/{{ author.name | slug }}/">{% communityavatar author.name %}{{ supporter.name or author.name | safe }}</a></td>
+			<td><a href="/authors/{{ author.name | slugify }}/">{% communityavatar author.name %}{{ supporter.name or author.name | safe }}</a></td>
 			<td>{% if author.sites.length > 1 %}×{{ author.sites.length }} sites{% endif %}</td>
 			<td>{% if supporter %}🎈{% endif %}</td>
 		</tr>
