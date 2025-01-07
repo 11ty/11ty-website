@@ -70,10 +70,14 @@ If you explicitly define the [`urlPath` option](#url-path), the `urlPath` is use
 
 You can configure individual `<img>` elements with per-instance overrides:
 
-- `<img eleventy:ignore>` skips this image.
+- `<img width>` is aliased to `eleventy:widths` when it is valid HTML (a single `integer` value) {% addedin "Image v6.0.0" %} _Related [#234](https://github.com/11ty/eleventy-img/issues/234)_.
 - `<img eleventy:widths="200,600">` comma separated string to override the default widths.
 - `<img eleventy:formats="webp">` comma separated string to override the default formats.
-- `<img eleventy:output>` overrides the output directory. Similar to `urlPath`, absolute paths (e.g. `<img eleventy:output="/mydirectory/">`) are relative to the Eleventy output directory and relative paths are relative to the template’s URL (e.g. `<img eleventy:output="./mydirectory/">`).
+- `<img eleventy:ignore>` skips this image.
+- `<img eleventy:optional>` {% addedin "Image v6.0.0" %}controls what happens when processing this image throws an Error (good for remote images), see [`failOnError` option](#fail-on-error). Default behavior removes the `src` attribute from the `<img>` node.
+	- `<img eleventy:optional="keep">`: leave as-is, which would likely result in an error when a user visits your page.
+	- `<img eleventy:optional="placeholder">`: replace the `src` attribute with a transparent PNG Data URI.
+- `<img eleventy:output>` overrides the output directory. Similar to [`urlPath`](#url-path), absolute paths (e.g. `<img eleventy:output="/mydirectory/">`) are relative to the Eleventy output directory and relative paths are relative to the template’s URL (e.g. `<img eleventy:output="./mydirectory/">`).
 
 ### More configuration options
 
@@ -104,7 +108,8 @@ export default function (eleventyConfig) {
 {% include "snippets/configDefinition.njk" %}
 
 - {% addedin "v3.0.0-alpha.7" %}{% addedin "Image v5.0.0" %}During local development (when using `--serve`), images are optimized when requested in the browser. Read more about [`transformOnRequest`](#optimize-images-on-request).
-- The `sizes` attribute must be present if `widths` has more than one entry (unless using `loading="lazy"`, we’ll use `sizes="auto"` for you) ([MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/sizes)). The `eleventyImageTransformPlugin` does not provide a default value for `sizes`, so it must be explicitly included in the `defaultAttributes` object.
+- The `sizes` attribute must be present if `widths` has more than one entry ([MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/sizes)). The `eleventyImageTransformPlugin` does not provide a default value for `sizes`, so it must be explicitly included in the HTML attribute or with `htmlOptions.imgAttributes`.
+	- {% addedin "Image v6.0.0" %}When using `loading="lazy"` and `sizes` is not supplied in markup — we’ll use `sizes="auto"` automatically. _Related [#207](https://github.com/11ty/eleventy-img/issues/207)_.
 
 ## Build Performance <span id="build-cost"></span><span id="build-cost-🧰"></span>
 
@@ -174,7 +179,7 @@ You can use this to [speed up builds on your build server](/docs/deployment/#per
 
 ### Output File Extensions
 
-Used in Image HTML Transform to determine which output files to process.
+Comma separated list of file extensions used in the [Image HTML Transform](#html-transform) to determine which template output files to process.
 
 - `extensions: "html"` (default)
 
@@ -222,6 +227,30 @@ While we do prevent raster images from upscaling (and filter upscaling `widths` 
 - `svgAllowUpscale: true` (default)
 - `svgAllowUpscale: false`
 
+### Transparent Images
+
+Transparency friendly formats: `avif`, `png`, `webp`, `gif`, and `svg`.
+
+{% addedin "Image v6.0.0" %}We will [filter out any non-transparency-friendly output formats](#format-filtering) from your `formats` list automatically (as long as at least _one_ of them is `png`, `gif`, or `svg`).
+
+### Animated Images <span id="{{ 'Output Animated GIF or WebP' | slugify }}"></span>
+
+{% addedin "Image v1.1.0" %} To process and output animated `gif` or `webp` images, [use `sharpOptions`](#advanced-control-of-sharp-image-processor) to pass in an `animated` option.
+
+```js
+import Image from "@11ty/eleventy-img";
+
+await Image("./test/bio-2017.jpg", {
+	formats: ["webp", "gif"],
+
+	sharpOptions: {
+		animated: true,
+	},
+});
+```
+
+{% addedin "Image v6.0.0" %}We will [filter out any non-animation-friendly output formats](#format-filtering) from your `formats` list automatically (as long as at least _one_ of them supports animation).
+
 ### Transform on Request
 
 Development build performance improvement to [optimize images when they are requested in the browser](#optimize-images-on-request).
@@ -235,13 +264,15 @@ You can use [`transformOnRequest` with Shortcodes too](./image-shortcodes.md#boo
 
 By default, Eleventy Image will return a metadata JavaScript object. To return HTML instead, use `returnType: "html"`. This is useful for the [Image JavaScript API](./image-js.md#return-html) and [Image Shortcode](./image-shortcodes.md) types.
 
-- `returnType: "object"` (default) or `"html"`
+- `returnType: "object"` (default) or `"html"` {% addedin "Image v6.0.0" %}
 
-Further customize the markup with `htmlOptions`:
+Further customize the markup with `htmlOptions` {% addedin "Image v6.0.0" %}:
 
 ```js
 {
-	// Added in v6.0.0
+	// …
+	returnType: "html",
+
 	htmlOptions: {
 		imgAttributes: {
 			alt : "", // required
@@ -252,7 +283,7 @@ Further customize the markup with `htmlOptions`:
 		// HTML attributes added to `<picture>` (omitted when <img> used)
 		pictureAttributes: {},
 
-		// Use largest source for `<img width height src>` attributes
+		// Which source to use for `<img width height src>` attributes
 		fallback: "largest", // or "smallest"
 	}
 }
@@ -270,9 +301,10 @@ Further customize the markup with `htmlOptions`:
 Don’t like the hashes used in output file names? Make your own!
 
 ```js
-	// (some configuration truncated…)
-	// Define custom filenames for generated images
+{
+	// …
 	filenameFormat: function (id, src, width, format, options) {
+		// Define custom filenames for generated images
 		// id: hash of the original image
 		// src: original image path
 		// width: current width in px
@@ -281,6 +313,7 @@ Don’t like the hashes used in output file names? Make your own!
 
 		return `${id}-${width}.${format}`;
 	}
+}
 ```
 
 <details>
@@ -313,23 +346,24 @@ If you want to try the utility out and not write any files (useful for testing),
 - `dryRun: false` (default)
 - `dryRun: true`
 
-#### Output Animated GIF or WebP
-
-{% addedin "Image v1.1.0" %} To process and output animated `gif` or `webp` images, use the `animated` option for the Sharp constructor.
-
-```js
-import Image from "@11ty/eleventy-img";
-
-await Image("./test/bio-2017.jpg", {
-	formats: ["webp", "gif"],
-
-	sharpOptions: {
-		animated: true,
-	},
-});
-```
-
 ## Advanced Options
+
+### Fail on Error
+
+{% addedin "Image v6.0.0" %}What happens when processing an image encounters an error? Useful for remote images.
+
+- `failOnError: true` (default)
+- `failOnError: false` no error is thrown (warning output is logged)
+
+See also the [`eleventy:optional` attribute](#attribute-overrides). _Related [#225](https://github.com/11ty/eleventy-img/issues/225)_
+
+### Format Filtering
+
+{% addedin "Image v6.0.0" %}When using [animated images](#animated-images) or images with transparency, we will automatically filter your [output `formats`](#output-formats) list to formats that support those features. If there are no valid `formats` left after filtering, the original `formats` list is used as-is. You can enable or disable this feature using the `formatFiltering` option.
+
+- `formatFiltering: ["transparent", "animated"]`
+
+_Related [#105](https://github.com/11ty/eleventy-img/issues/105) and [#260](https://github.com/11ty/eleventy-img/issues/260)_
 
 ### Output Directory
 
@@ -344,6 +378,8 @@ If you’re using the Image HTML Transform, we recommended **_not_** to define `
 A path-prefix-esque directory for the `<img src>` attribute. e.g. `/img/` for `<img src="/img/MY_IMAGE.jpeg">`:
 
 - `urlPath: "/img/"` (default)
+
+{% addedin "Image v6.0.0" %}Full URLs are now supported, e.g. `urlPath: "https://example.com/img/"`. _Related [#239](https://github.com/11ty/eleventy-img/issues/239)_.
 
 If you’re using the Image HTML Transform, we recommended **_not_** to define `urlPath`.
 
@@ -365,6 +401,21 @@ If you’re using the Image HTML Transform, we recommended **_not_** to define `
 - `sharpJpegOptions: {}`
 - `sharpAvifOptions: {}`
 
+{% addedin "Image v6.0.0" %}[ICC Profiles](https://sharp.pixelplumbing.com/api-output#keepiccprofile) are preserved by default (when available) for better colors when images have `srgb`, `p3`, or `cmyk` color profiles. _Related [#244](https://github.com/11ty/eleventy-img/issues/244)_.
+
+#### Full Sharp API Access
+
+Use the `transform` callback to access anything in the [Sharp API](https://sharp.pixelplumbing.com/api-constructor). _Related [#52](https://github.com/11ty/eleventy-img/issues/52)_. This runs before Eleventy Image processing (resize, rotation, et al).
+
+```js
+{
+	// …
+	transform: (sharp) => {
+		sharp.keepExif();
+	}
+}
+```
+
 ### Change Global Plugin Concurrency
 
 ```js
@@ -378,8 +429,9 @@ Image.concurrency = 4; // default is between 8 and 16 based on os.availableParal
 
 ```js
 {
+	// …
 	hashLength: 8, // careful, don’t make it _too_ short!
-};
+}
 ```
 
 ### Advanced Caching Options for Remote Images
@@ -388,6 +440,7 @@ For any full URL first argument to this plugin, the full-size remote image will 
 
 ```js
 {
+	// …
 	cacheOptions: {
 		// if a remote image URL, this is the amount of time before it fetches a fresh copy
 		duration: "1d",
@@ -412,6 +465,7 @@ The metadata object returned will not include `filename` or `outputPath` propert
 
 ```js
 {
+	// …
 	urlFormat: function ({
 		hash, // not included for `statsOnly` images
 		src,
