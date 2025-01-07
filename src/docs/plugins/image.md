@@ -25,6 +25,8 @@ Utility to perform build-time image transformations for both vector and raster i
 
 Published as [`@11ty/eleventy-img`](https://www.npmjs.com/package/@11ty/eleventy-img) on npm. [Source code on GitHub](https://github.com/11ty/eleventy-img).
 
+_Image v6.0.0 requires Node 18+._
+
 ```
 npm install @11ty/eleventy-img
 ```
