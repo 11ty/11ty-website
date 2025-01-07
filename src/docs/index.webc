@@ -91,17 +91,17 @@ Installing Eleventy into a project requires a `package.json` file.
 	</div>
 	<div id="quickstart-run-2b-npm" role="tabpanel">
 		<syntax-highlight language="bash">
-			npm install @11ty/eleventy
+			npm install @11ty/eleventy --save-dev
 		</syntax-highlight>
 	</div>
 	<div id="quickstart-run-2b-pnpm" role="tabpanel">
 		<syntax-highlight language="bash">
-			pnpm install @11ty/eleventy
+			pnpm add -D @11ty/eleventy
 		</syntax-highlight>
 	</div>
 	<div id="quickstart-run-2b-yarn" role="tabpanel">
 		<syntax-highlight language="bash">
-			yarn add @11ty/eleventy
+			yarn add --dev @11ty/eleventy
 		</syntax-highlight>
 	</div>
 </seven-minute-tabs>
