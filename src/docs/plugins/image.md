@@ -405,7 +405,7 @@ If you’re using the Image HTML Transform, we recommended **_not_** to define `
 
 #### Full Sharp API Access
 
-Use the `transform` callback to access anything in the [Sharp API](https://sharp.pixelplumbing.com/api-constructor). _Related [#52](https://github.com/11ty/eleventy-img/issues/52)_. This runs before Eleventy Image processing (resize, rotation, et al).
+Use the `transform` callback to access anything in the [Sharp API](https://sharp.pixelplumbing.com/api-constructor). _Related [#52](https://github.com/11ty/eleventy-img/issues/52)_. This runs before Eleventy Image processing (keep EXIF metadata, rotation, cropping, et al).
 
 ```js
 {
