@@ -16,7 +16,7 @@ A pack of plugins for generating an RSS (or Atom or JSON) feed using the _Nunjuc
 This plugin has a few excellent features:
 
 * URLs are normalized to absolute URLs pointing to your hosted domain for maximum feed reader compatibility. Read more about [the dangers of relative URLs in your feeds on CSS Tricks](https://css-tricks.com/working-with-web-feeds-its-more-than-rss/#aa-beware-of-relative-urls) (Related: [#36](https://github.com/11ty/eleventy-plugin-rss/issues/36)).
-* Existing project [Transforms](/docs/transforms/) are applied to feed entries (e.g. [Image transform](/docs/plugins/image/#eleventy-transform), [`<base>`](/docs/plugins/html-base/), [InputPath to URL](/docs/plugins/inputpath-to-url/) etc.) If you’re using a [`--pathprefix`](/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix) in your project, the URLs in your feed content are normalized for you.
+* Existing project [Transforms](/docs/transforms/) are applied to feed entries (e.g. [Image HTML Transform](/docs/plugins/image/#html-transform), [`<base>`](/docs/plugins/html-base/), [InputPath to URL](/docs/plugins/inputpath-to-url/) etc.) If you’re using a [`--pathprefix`](/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix) in your project, the URLs in your feed content are normalized for you.
 
 Starting with RSS Plugin v2.0 and newer, there are two options to create feeds in your project using this plugin:
 

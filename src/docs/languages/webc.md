@@ -1193,7 +1193,7 @@ The following plugins offer official WebC components for use in your projects:
 - `@11ty/eleventy-img` supplies `<eleventy-image>`
   - {% addedin "Image v3.1.0" %}
   - Example: `<img webc:is="eleventy-image" webc:import="npm:@11ty/eleventy-img">`
-  - Read more at [the Image utility](/docs/plugins/image/#webc).
+  - Read more at [the Image WebC component](../plugins/image-webc.md).
 
 ### CSS and JS (Bundler mode)
 

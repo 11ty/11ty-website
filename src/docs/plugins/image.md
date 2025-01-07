@@ -10,27 +10,20 @@ overrideCommunityLinks: true
 
 {% tableofcontents %}
 
-{% renderTemplate "webc" %}<div class="build-cost-inline"><a href="#build-cost-🧰"><build-cost cost="3"></build-cost></a></div>{% endrenderTemplate %}
+{% renderTemplate "webc" %}<div class="build-cost-inline"><a href="#build-cost"><build-cost cost="3"></build-cost></a></div>{% endrenderTemplate %}
 
-Low level utility to perform build-time image transformations for both vector and raster images. Output multiple sizes, save multiple formats, cache remote images locally.
+Utility to perform build-time image transformations for both vector and raster images: output multiple image sizes, multiple formats, and cache remote images locally. Uses the [sharp](https://sharp.pixelplumbing.com/) image processor.
 
-- Uses the [sharp](https://sharp.pixelplumbing.com/) image processor.
-- [`eleventy-img` on GitHub](https://github.com/11ty/eleventy-img)
-
-You maintain full control of markup. Use with `<picture>`, `<img>`, CSS `background-image`, or others!
-
-- Easily add `width` and `height` attributes on `<img>` elements for [proper aspect ratio](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping) to reduce layout shift.
-- Accepts a variety of image types as input: `jpeg`, `png`, `webp`, `gif`, `tiff`, `avif`, and `svg`.
-	- Does _not_ rely on file extensions (like `.png` or `.jpg`) in URLs or local files, which may be missing or inaccurate.
-- Output multiple sizes, maintaining the original aspect ratio.
-  - Never upscales raster images larger than original size (with the option to upscale SVG input).
-- Output multiple formats, supports: `jpeg`, `png`, `webp`, `avif` <a href="#build-cost-🧰"><span class="minilink minilink-buildcost"><code>+1</code> Build Cost</span></a>, and `svg` (SVG output requires SVG input)
-- Fast: de-duplicates image requests with both an in-memory and disk cache. During local development, images are [processed on request for even faster build performance](#optimize-images-on-request).
-- Robust: Save remote images locally to prevent broken image URLs (via [`eleventy-fetch`](/docs/plugins/fetch/)).
+- Easily add `width` and `height` attributes for [proper aspect ratio](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping) to reduce layout shift.
+- Accepts a wide variety of input image types: `jpeg`, `png`, `webp`, `gif`, `tiff`, `avif`, and `svg`. _Does not_ rely on file extensions (e.g. `.png` or `.jpg`), which may be missing or inaccurate.
+- Output multiple sizes, maintaining the original aspect ratio. Does not upscale raster images larger than original size. Intelligently generates `srcset` attributes.
+- Output multiple formats: `jpeg`, `png`, `webp`, `avif` <a href="#build-cost"><span class="minilink minilink-buildcost"><code>+1</code> Build Cost</span></a>, and `svg`. Intelligently generates the most efficient markup with zero server-dependencies, using `<img>` or `<picture>`.
+- Fast: de-duplicates with both an in-memory and disk cache. During local development, images are [processed on request for even faster build performance](#optimize-images-on-request).
+- Robust and works offline: save remote images to prevent broken image URLs later (via [`eleventy-fetch`](/docs/plugins/fetch/)).
 
 ## Installation
 
-Published as [`@11ty/eleventy-img`](https://www.npmjs.com/package/@11ty/eleventy-img) on npm.
+Published as [`@11ty/eleventy-img`](https://www.npmjs.com/package/@11ty/eleventy-img) on npm. [Source code on GitHub](https://github.com/11ty/eleventy-img).
 
 ```
 npm install @11ty/eleventy-img
@@ -38,473 +31,107 @@ npm install @11ty/eleventy-img
 
 ## Usage
 
-This example is the lowest-level use of Eleventy Image and returns a promise. This usage works independent of Eleventy.
+There are a few different ways to use Eleventy image:
 
-{% include "snippets/image/intro.njk" %}
+{% include "image-usage.njk" %}
 
-Three things happen here:
-
-1. (Optional) If the first argument is a full URL (not a local file path), we download [the remote image](https://unsplash.com/photos/uXchDIKs4qI) and cache it locally using the [Fetch plugin](/docs/plugins/fetch/). This cached original is then used for the cache duration to avoid a bunch of network requests.
-2. Images are then created for each format and width from the input source. In this example, two files are created: `./img/6dfd7ac6-300.webp` and `./img/6dfd7ac6-300.jpeg`.
-3. The promise resolves with a metadata object describing those newly created optimized images.
-
-<details><summary>Expand to see a sample returned metadata object</summary>
-<div id="sample-return-object"></div>
-
-```js
-{
-	webp: [
-		{
-			format: 'webp',
-			width: 300,
-			height: 300,
-			filename: '6dfd7ac6-300.webp',
-			outputPath: 'img/6dfd7ac6-300.webp',
-			url: '/img/6dfd7ac6-300.webp',
-			sourceType: 'image/webp',
-			srcset: '/img/6dfd7ac6-300.webp 300w',
-			size: 10184
-		}
-	],
-	jpeg: [
-		{
-			format: 'jpeg',
-			width: 300,
-			height: 300,
-			filename: '6dfd7ac6-300.jpeg',
-			outputPath: 'img/6dfd7ac6-300.jpeg',
-			url: '/img/6dfd7ac6-300.jpeg',
-			sourceType: 'image/jpeg',
-			srcset: '/img/6dfd7ac6-300.jpeg 300w',
-			size: 15616
-		}
-	]
-}
-```
-
-</details>
-
-### Output Widths
-
-Controls how many output images will be created for each image format. Aspect ratio is preserved.
-
-- `widths: ["auto"]` (default, keep original width) `"auto"`.
-- `widths: [200]` (output one 200px width)
-- `widths: [200, "auto"]` (output 200px and original width)
-
-### Output Formats
-
-Use almost any combination of these:
-
-- `formats: ["webp", "jpeg"]` (default)
-- `formats: ["png"]`
-- `formats: ["auto"]` (keep original format) `"auto"`
-- `formats: ["svg"]` (requires SVG input)
-- `formats: ["avif"]` <a href="#build-cost-🧰"><span class="minilink minilink-buildcost"><code>+1</code> Build Cost</span></a>
-
-### Output Locations
-
-#### URL Path
-
-A path-prefix-esque directory for the `<img src>` attribute. e.g. `/img/` for `<img src="/img/MY_IMAGE.jpeg">`:
-
-- `urlPath: "/img/"` (default)
-
-#### Output Directory
-
-Where to write the new images to disk. Project-relative path to the output image directory. Maybe you want to write these to your output directory directly (e.g. `./_site/img/`)?
-
-- `outputDir: "./img/"` (default)
-
-### Options for SVG
-
-#### Skip raster formats for SVG
-
-If using SVG output (the input format is SVG and `svg` is added to your `formats` array), we will skip all of the raster formats even if they’re in `formats`. This may be useful in a CMS-driven workflow when the input could be vector or raster.
-
-- `svgShortCircuit: false` (default)
-- `svgShortCircuit: true`
-- `svgShortCircuit: "size"` {% addedin "Image v3.1.8" %}
-
-Using `svgShortCircuit: "size"` means that raster image format entries will only be thrown out if the optimized raster size is larger than the SVG. This helps with large SVG images that compress to smaller raster sizes at smaller widths and will prefer the SVG over raster formats when the SVG file size is smaller.
-
-To use Brotli compressed SVG sizes when making file size comparisons, use the `svgCompressionSize: "br"` option {% addedin "Image v3.1.8" %}.
-
-##### Related:
-
-<ul class="list-bare">
-	<li>{% indieweblink "A New Technique for Image Optimization: SVG Short Circuiting", "https://www.zachleat.com/web/svg-short-circuit/" %} <em>({{ "2023-11-15" | newsDate("yyyy") }})</em></li>
-	<li>{% indieweblink "Automatically optimize your images with Eleventy Image and CloudCannon", "https://cloudcannon.com/blog/automatically-optimize-your-images-with-eleventy-image-and-cloudcannon/" %} <em>({{ "2023-11-14" | newsDate("yyyy") }})</em></li>
-</ul>
-
-#### Allow SVG to upscale
-
-While we do prevent raster images from upscaling (and filter upscaling `widths` from the output), you can optionally enable SVG input to upscale to larger sizes when converting to raster format.
-
-- `svgAllowUpscale: true` (default)
-- `svgAllowUpscale: false`
-
-
-## Use this in your templates
-
-There are four different ways to use Eleventy Image in Eleventy projects:
-
-1. [Eleventy Transform](#eleventy-transform) (**Recommended.** Easiest to configure, works with all template types)
-1. [Asynchronous Shortcode](<#nunjucks-liquid-javascript-(asynchronous-shortcodes)>) (Nunjucks, Liquid, 11ty.js)
-1. [WebC Component](#webc)
-1. [Synchronous Shortcode](#synchronous-shortcode) _(Deprecated)_
-
-### Eleventy Transform
+### HTML Transform <span id="eleventy-transform"></span>
 
 {% renderTemplate "webc" %}
 <div class="build-cost-inline">
 <div><a href="#optimize-images-on-request"><build-cost @cost="1" @icon="🍦" @rating-icon="🍨" label="Serve Cost"></build-cost></a></div>
-<div><a href="#build-cost-🧰"><build-cost @cost="3"></build-cost></a></div>
+<div><a href="#build-cost"><build-cost @cost="3"></build-cost></a></div>
 </div>
 {% endrenderTemplate %}
 
-{% addedin "v3.0.0-alpha.5" %} {% addedin "Image v4.0.1" %}This is the easiest method to configure. You add a bit of code to your configuration file and we’ll transform _any_ `<img>` tags in HTML files that exist in your output folder (probably `_site/**/*.html`).
+{% addedin "v3.0.0-alpha.5" %} {% addedin "Image v4.0.1" %}This is the easiest method to configure. Eleventy will transform _any_ `<img>` or `<picture>` tags in HTML files as a post-processing step in your build.
 
-{% addedin "v3.0.0-alpha.7" %}{% addedin "Image v5.0.0" %}During local development (when using `--serve`), images optimized via transform are _not_ processed at build time and instead are optimized when requested in the browser. Read more about [`transformOnRequest`](#optimize-images-on-request).
+<br><br>
+
+{% set codeContent %}
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
+That’s it! All `<img>` and `<picture>` elements will not be processed for you by Eleventy Image.
+
+#### Resolving image sources <span id="relative-paths"></span>
+
+1. Relative image sources (`<img src="./possum.png">`) will be co-located to your output directory with the template they are used in. If the same source image is used in multiple templates, it will be written to two different output locations!
+2. Absolute image sources (`<img src="/possum.png">`) will be normalized relative to your input/content directory and written to your output directory with the default directory (e.g. `_site/img/`).
+
+If you explicitly define the [`urlPath` option](#url-path), the `urlPath` is used to determine the output location instead.
+
+#### Attribute Overrides
+
+You can configure individual `<img>` elements with per-instance overrides:
+
+- `<img eleventy:ignore>` skips this image.
+- `<img eleventy:widths="200,600">` comma separated string to override the default widths.
+- `<img eleventy:formats="webp">` comma separated string to override the default formats.
+- `<img eleventy:output>` overrides the output directory. Similar to `urlPath`, absolute paths (e.g. `<img eleventy:output="/mydirectory/">`) are relative to the Eleventy output directory and relative paths are relative to the template’s URL (e.g. `<img eleventy:output="./mydirectory/">`).
+
+### More configuration options
+
+Any of the [configuration options](#options) can be defined when you add the plugin:
 
 {% set codeContent %}
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-		// which file extensions to process
-		extensions: "html",
+		// output image formats
+		formats: ["avif", "webp", "jpeg"],
 
-		// Add any other Image utility options here:
+		// output image widths
+		widths: ["auto"],
 
-		// optional, output image formats
-		formats: ["webp", "jpeg"],
-		// formats: ["auto"],
-
-		// optional, output image widths
-		// widths: ["auto"],
-
-		// optional, attributes assigned on <img> override these values.
-		defaultAttributes: {
-			loading: "lazy",
-			decoding: "async",
-			sizes: "auto",
+		// optional, attributes assigned on <img> nodes override these values
+		htmlOptions: {
+			imgAttributes: {
+				loading: "lazy",
+				decoding: "async",
+			},
+			pictureAttributes: {}
 		},
 	});
 };
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
-{% callout "info", "md" %}Note that the `sizes` attribute must be present if more than one width is specified. [[MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/sizes)] The `eleventyImageTransformPlugin` does not provide a default value for `sizes`, so it must be explicitly included in the `defaultAttributes` object.
-{% endcallout %}
+- {% addedin "v3.0.0-alpha.7" %}{% addedin "Image v5.0.0" %}During local development (when using `--serve`), images are optimized when requested in the browser. Read more about [`transformOnRequest`](#optimize-images-on-request).
+- The `sizes` attribute must be present if `widths` has more than one entry (unless using `loading="lazy"`, we’ll use `sizes="auto"` for you) ([MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/sizes)). The `eleventyImageTransformPlugin` does not provide a default value for `sizes`, so it must be explicitly included in the `defaultAttributes` object.
 
-#### Relative paths
+## Build Performance <span id="build-cost"></span><span id="build-cost-🧰"></span>
 
-If you **do not** specify the `urlPath` option:
+Image optimization is likely one of the costlier pieces of your Eleventy build. The total build cost of this utility is dependent on a few things (in order of priority):
 
-1. Relative image sources (`<img src="./possum.png">`) will be co-located in your output directory with the template they are used in. Note that if the same source image is used in multiple templates, it will be written to two different locations!
-2. Absolute image sources (`<img src="/possum.png">`) will be normalized relative to your input/content directory and written to your output directory with the default directory (e.g. `_site/img/`).
-
-#### Attribute overrides
-
-You can configure individual `<img>` elements with per-instance overrides:
-
-- `<img eleventy:ignore>` skips this image.
-- `<img eleventy:formats="webp">` comma separated string to override the default formats.
-- `<img eleventy:widths="200,600">` comma separated string to override the default widths.
-- `<img eleventy:output>` overrides the output directory. Similar to `urlPath` above, absolute paths (e.g. `<img eleventy:output="/mydirectory/">`) are relative to the Eleventy output directory and relative paths are relative to the template’s URL (e.g. `<img eleventy:output="./mydirectory/">`).
-
-{% callout "info", "md" %}If you’re adding the transform method to a project that is already using an Image shortcode or the WebC component, make sure you add `eleventy:ignore` to the `<img>` attributes so the images aren’t optimized twice (e.g. `Image.generateHTML(metadata, { "eleventy:ignore": "" });`).{% endcallout %}
-
-### Nunjucks, Liquid, JavaScript (Asynchronous Shortcodes)
-
-<div id="asynchronous-shortcode"></div>
-{% renderTemplate "webc" %}<div class="build-cost-inline"><a href="#build-cost-🧰"><build-cost cost="3"></build-cost></a></div>{% endrenderTemplate %}
-
-The examples below require an [async-friendly shortcodes](/docs/shortcodes/#asynchronous-shortcodes) (works in Nunjucks, Liquid, JavaScript, and [WebC](/docs/languages/webc/)).
-
-<br><br>
-
-{% set codeContent %}
-import Image from "@11ty/eleventy-img";
-
-export default function (eleventyConfig) {
-	eleventyConfig.addShortcode("image", async function (src, alt, widths = [300, 600], sizes = "100vh") {
-		let metadata = await Image(src, {
-			widths,
-			formats: ["avif", "jpeg"],
-		});
-
-		let imageAttributes = {
-			alt,
-			sizes,
-			loading: "lazy",
-			decoding: "async",
-		};
-
-		// You bet we throw an error on a missing alt (alt="" works okay)
-		return Image.generateHTML(metadata, imageAttributes);
-	});
-};
-{% endset %}
-{% include "snippets/configDefinition.njk" %}
-
-<details>
-<summary>Expand to see full options list for <code>Image.generateHTML</code></summary>
-
-{% set codeContent %}
-import Image from "@11ty/eleventy-img";
-
-export default function (eleventyConfig) {
-	eleventyConfig.addShortcode("image", async function (src, alt, widths = ["auto"], sizes = "100vh") {
-		let metadata = await Image(src, {
-			// omitted for brevity
-		});
-
-		let imageAttributes = {
-			// omitted for brevity
-		};
-
-		let options = {
-			// HTML attributes added to `<picture>` (left out if <img> is used)
-			// Added in v4.0.0
-			pictureAttributes: {},
-
-			// Condense HTML output to one line (no new lines)
-			// Added in v0.7.3
-			whitespaceMode: "inline", // or: "block"
-		};
-
-		// You bet we throw an error on a missing alt (alt="" works okay)
-		// Note that `options` are *optional*
-		return Image.generateHTML(metadata, imageAttributes, options);
-	});
-};
-{% endset %}
-{% include "snippets/configDefinition.njk" %}
-
-</details>
-
-The [`addShortcode` method is async-friendly in Eleventy 2.0+](/docs/shortcodes/#asynchronous-shortcodes). Use `addAsyncShortcode` in older versions of Eleventy. You can also [add these shortcodes to individual template engines](/docs/shortcodes/#async-friendly-per-engine-shortcodes), if you’d like!
-
-{% callout "info", "md" %}Note that [Nunjucks macros cannot use async shortcodes](https://mozilla.github.io/nunjucks/templating.html#macro). If you use macros, use [synchronous shortcodes](#synchronous-shortcode) described below.{% endcallout %}
-
-If you want to use Eleventy Image in WebC, take note that it is possible to wire up the method below in WebC. However it is **recommended to use the [provided `<eleventy-image>` WebC component](#webc) instead**.
-
-- _HTML Tip:_ Read more about the special (and very useful) [`loading`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading) and [`decoding`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-decoding) HTML attributes.
-
-Now you can use the `image` shortcode in your templates and the appropriate HTML will be generated for you (based on your specified Image options).
-
-{% include "snippets/image/templates.njk" %}
-
-#### Synchronous Shortcode
-
-{% callout "info", "md" %}The new [Eleventy Transform](#eleventy-transform) is now preferred for situations that are not asynchronous-friendly (Handlebars, macros in Nunjucks, et al). For asynchronous-friendly templates (e.g. Nunjucks, Liquid, JavaScript), the [Asynchronous Shortcode](#asynchronous-shortcode) is another option. If you’re using WebC, use the provided [WebC component](#webc).{% endcallout %}
-
-<details>
-<summary>Expand to see an example of Synchronous usage.</summary>
-
-{% callout "warn" %}Deprecated in <a href="https://github.com/11ty/eleventy-img/issues/211">Eleventy Image v4.0.0</a>.{% endcallout %}
-
-Use `Image.statsSync` to get the metadata of a source even if the image generation is not finished yet:
-
-{% set codeContent %}
-import Image from "@11ty/eleventy-img";
-
-function imageShortcode(src, cls, alt, widths = ["auto"], sizes = "100vh") {
-	let options = {
-		widths,
-		formats: ["jpeg"],
-	};
-
-	// generate images, while this is async we don’t wait
-	Image(src, options);
-
-	let imageAttributes = {
-		class: cls,
-		alt,
-		sizes,
-		loading: "lazy",
-		decoding: "async",
-	};
-	// get metadata even if the images are not fully generated yet
-	let metadata = Image.statsSync(src, options);
-	return Image.generateHTML(metadata, imageAttributes);
-}
-
-export default function (eleventyConfig) {
-	eleventyConfig.addShortcode("myImage", imageShortcode);
-};
-{% endset %}
-{% include "snippets/configDefinition.njk" %}
-
-</details>
-
-### WebC
-
-{% renderTemplate "webc" %}
-<div class="build-cost-inline">
-<div><a href="#optimize-images-on-request"><build-cost @cost="1" @icon="🍦" @rating-icon="🍨" label="Serve Cost"></build-cost></a></div>
-<div><a href="#build-cost-🧰"><build-cost @cost="3"></build-cost></a></div>
-</div>
-{% endrenderTemplate %}
-
-{% addedin "Image v3.1.0" %} Eleventy Image now provides a built-in `<eleventy-image>` WebC component for use in your Eleventy project.
-
-Using Eleventy Image in [WebC](/docs/languages/webc/) offers all the same great benefits you’re used to from Eleventy Image with an intuitive declarative HTML-only developer experience. WebC components work in `*.webc` files. For similar functionality in other template formats, use the the [Liquid/Nunjucks/JavaScript shortcodes](#nunjucks-liquid-javascript-(asynchronous-shortcodes)) above (or even `<eleventy-image>` with the [Render plugin](/docs/plugins/render.md)).
-
-First, add the following to your project’s configuration file:
-
-{% set codeContent %}
-import eleventyWebcPlugin from "@11ty/eleventy-plugin-webc";
-import { eleventyImagePlugin } from "@11ty/eleventy-img";
-
-export default function (eleventyConfig) {
-	// WebC
-	eleventyConfig.addPlugin(eleventyWebcPlugin, {
-		components: [
-			// …
-			// Add as a global WebC component
-			"npm:@11ty/eleventy-img/*.webc",
-		],
-	});
-
-	// Image plugin
-	eleventyConfig.addPlugin(eleventyImagePlugin, {
-		// Set global default options
-		formats: ["webp", "jpeg"],
-		urlPath: "/img/",
-
-		// Notably `outputDir` is resolved automatically
-		// to the project output directory
-
-		defaultAttributes: {
-			loading: "lazy",
-			decoding: "async",
-		},
-	});
-};
-{% endset %}
-{% include "snippets/configDefinition.njk" %}
-
-{% addedin "v3.0.0-alpha.7" %}{% addedin "Image v5.0.0" %}During local development (when using `--serve`), `<eleventy-image>` images are _not_ processed at build time and instead are optimized when requested in the browser. Read more about [`transformOnRequest`](#optimize-images-on-request).
-
-- _HTML Tip:_ Read more about the special (and very useful) [`loading`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading) and [`decoding`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-decoding) HTML attributes.
-
-Now you can use the `<eleventy-image>` WebC component in your templates.
-
-<details>
-<summary><strong>Expand to see Eleventy Image WebC component Examples</strong></summary>
-
-```html
-<img webc:is="eleventy-image" src="cat.jpg" alt="photo of my tabby cat" />
-<eleventy-image src="cat.jpg" alt="photo of my tabby cat"></eleventy-image>
-
-<!-- Specify widths: -->
-<img
-	webc:is="eleventy-image"
-	width="100, 200"
-	src="cat.jpg"
-	alt="photo of my tabby cat"
-/>
-<img
-	webc:is="eleventy-image"
-	:width="[100, 200]"
-	src="cat.jpg"
-	alt="photo of my tabby cat"
-/>
-
-<!-- Specify formats (overriding defaults set via the configuration) -->
-<img
-	webc:is="eleventy-image"
-	formats="avif, png"
-	src="cat.jpg"
-	alt="photo of my tabby cat"
-/>
-<img
-	webc:is="eleventy-image"
-	:formats="['avif', 'png']"
-	src="cat.jpg"
-	alt="photo of my tabby cat"
-/>
-
-<!-- Change the url path or output dir (overriding defaults set via the configuration above) -->
-<img
-	webc:is="eleventy-image"
-	url-path="/some-dir/"
-	output-dir="_site/some-dir/"
-	src="cat.jpg"
-	alt="photo of my tabby cat"
-/>
-```
-
-</details>
-
-## Build Cost 🧰
-
-Image optimization is likely one of the costlier pieces of your Eleventy build. The total build cost of this utility is dependent on a few things:
-
-1. Number of unique images optimized (not number of pages)
-1. Number of `widths` you generate for each source image.
-1. Number of `formats` you generate for each source image.
-   - `avif` is more costly than other image formats. <span class="minilink minilink-buildcost"><code>+1</code> Build Cost</span>
-1. File size of images being optimized (larger source images are more expensive).
+1. Number of unique images optimized (not page count)
 1. Optimizing a lot of remote images (image content must be fetched from a remote server and is subsequently cached via [`eleventy-fetch`](/docs/plugins/fetch/)).
+1. Number of `formats` you generate for each source image: `avif` is more costly than other image formats. <span class="minilink minilink-buildcost"><code>+1</code> Build Cost</span>
+1. Number of `widths` you generate for each source image.
+1. File size of images being optimized (larger source images are more expensive).
 
 ### Optimize Images on Request
 
-{% renderTemplate "webc" %}
-<div class="build-cost-inline">
-<div><a href="#optimize-images-on-request"><build-cost @cost="1" @icon="🍦" @rating-icon="🍨" label="Serve Cost"></build-cost></a></div>
-</div>
-{% endrenderTemplate %}
-
-{% addedin "v3.0.0-alpha.7" %}{% addedin "Image v5.0.0" %}When using the [transform method](#eleventy-transform) or the [WebC component](#webc), image processing is removed from the build for extra performance. Instead, they are processed when requested by the browser using a special middleware built-in to the Eleventy Dev Server. This is enabled or disabled using the `transformOnRequest` option.
-
-* `transformOnRequest: false` (default)
-* `transformOnRequest: process.env.ELEVENTY_RUN_MODE === "serve"` (default for Transform method and WebC)
-
-#### Optimize On Request with Shortcodes
-
-{% addedin "v3.0.0-alpha.7" %}{% addedin "Image v5.0.0" %}You _can_ use this with the Eleventy Shortcode directly too, with a little bit more configuration:
-
-{% set codeContent %}
-import Image from "@11ty/eleventy-img";
-import { eleventyImageOnRequestDuringServePlugin } from "@11ty/eleventy-img";
-
-export default function (eleventyConfig) {
-	eleventyConfig.addShortcode("image", async function (src, alt) {
-		let metadata = await Image(src, {
-			transformOnRequest: process.env.ELEVENTY_RUN_MODE === "serve"
-		});
-
-		// You bet we throw an error on a missing alt (alt="" works okay)
-		return Image.generateHTML(metadata, imageAttributes);
-	});
-
-	// Add the dev server middleware manually
-	eleventyConfig.addPlugin(eleventyImageOnRequestDuringServePlugin);
-};
-{% endset %}
-{% include "snippets/configDefinition.njk" %}
+{% addedin "v3.0.0-alpha.7" %}{% addedin "Image v5.0.0" %}When using the [Image HTML transform](#html-transform) or the [Image WebC component](./image-webc.md) during local development, image processing is removed from the build for extra performance. Instead, they are processed when requested by the browser using a special middleware built-in to the Eleventy Dev Server. This is enabled or disabled using the [`transformOnRequest` option](#transform-on-request).
 
 <div id="caching"></div>
 
 ### In-Memory Cache
 
-To prevent duplicate work and improve build performance, repeated calls to the same source image (remote or local) _with the same options_ will return a cached results object. If a request in-progress, the pending promise will be returned. This in-memory cache is maintained across builds in watch/serve mode. If you quit Eleventy, the in-memory cache will be lost.
+To prevent duplicate work and improve build performance, repeated calls to the same source image (remote or local) _with the same options_ will return a cached results object. If a request in-progress, the pending promise will be returned. This in-memory cache is maintained across builds in watch/serve mode. If you quit Eleventy, the in-memory cache will be discarded.
 
-Images will be regenerated (and the cache ignored) if:
+Images will be regenerated (and the cache bypassed) if:
 
 - The source image file size changes (on local image files)
 - The [cache asset](/docs/plugins/fetch/) duration expires (for remote images).
 
-You can disable this behavior by using the `useCache` boolean option:
-
-- `useCache: true` (default)
-- `useCache: false` to bypass the cache and generate a new image every time.
-
-##### Examples
+You can disable this behavior by using the [`useCache` option](#use-cache).
 
 <details>
 <summary>Example of in-memory cache reuse (returns the same promise)</summary>
@@ -539,11 +166,97 @@ console.assert(stats1 !== stats2, "A different promise");
 
 ### Disk Cache
 
-{% addedin "Image v1.0.0" %} Eleventy will skip processing files that are unchanged and already exist in the output directory. This requires the built-in hashing algorithm and is not yet supported with custom filenames. More background at <a href="https://github.com/11ty/eleventy-img/issues/51">Issue #51</a>.
+{% addedin "Image v1.0.0" %} Eleventy will skip processing files that are unchanged and already exist in the output directory. This requires the built-in hashing algorithm and is not supported with custom filenames. More background at <a href="https://github.com/11ty/eleventy-img/issues/51">Issue #51</a>.
 
 You can use this to [speed up builds on your build server](/docs/deployment/#persisting-cache).
 
-## Advanced Usage
+## Options
+
+### Output File Extensions
+
+Used in Image HTML Transform to determine which output files to process.
+
+- `extensions: "html"` (default)
+
+### Output Widths
+
+Controls how many output images will be created for each image format. Aspect ratio is preserved.
+
+- `widths: ["auto"]` (default, keep original width)
+- `widths: [200]` (output one 200px width)
+- `widths: [200, "auto"]` (output 200px and original width)
+
+### Output Formats
+
+Use almost any combination of `webp`, `jpeg`, `png`, `svg`, `avif`, `gif`, and `auto`:
+
+- `formats: ["webp", "jpeg"]` (default)
+- `formats: ["png"]`
+- `formats: ["auto"]` (keep original format)
+- `formats: ["svg"]` (requires SVG input)
+- `formats: ["avif"]` <a href="#build-cost"><span class="minilink minilink-buildcost"><code>+1</code> Build Cost</span></a>
+
+### Skip raster formats for SVG
+
+If using SVG output (the input format is SVG and `svg` is added to your `formats` array), we will skip all of the raster formats even if they’re in `formats`. This may be useful in a CMS-driven workflow when the input could be vector or raster.
+
+- `svgShortCircuit: false` (default)
+- `svgShortCircuit: true`
+- `svgShortCircuit: "size"` {% addedin "Image v3.1.8" %}
+
+Using `svgShortCircuit: "size"` means that raster image format entries will only be thrown out if the optimized raster size is larger than the SVG. This helps with large SVG images that compress to smaller raster sizes at smaller widths and will prefer the SVG over raster formats when the SVG file size is smaller.
+
+To use Brotli compressed SVG sizes when making file size comparisons, use the `svgCompressionSize: "br"` option {% addedin "Image v3.1.8" %}.
+
+#### Related:
+
+<ul class="list-bare">
+	<li>{% indieweblink "A New Technique for Image Optimization: SVG Short Circuiting", "https://www.zachleat.com/web/svg-short-circuit/" %} <em>({{ "2023-11-15" | newsDate("yyyy") }})</em></li>
+	<li>{% indieweblink "Automatically optimize your images with Eleventy Image and CloudCannon", "https://cloudcannon.com/blog/automatically-optimize-your-images-with-eleventy-image-and-cloudcannon/" %} <em>({{ "2023-11-14" | newsDate("yyyy") }})</em></li>
+</ul>
+
+### Allow SVG to upscale
+
+While we do prevent raster images from upscaling (and filter upscaling `widths` from the output), you can optionally enable SVG input to upscale to larger sizes when converting to raster format.
+
+- `svgAllowUpscale: true` (default)
+- `svgAllowUpscale: false`
+
+### Transform on Request
+
+Development build performance improvement to [optimize images when they are requested in the browser](#optimize-images-on-request).
+
+* `transformOnRequest: false` (default)
+* `transformOnRequest: process.env.ELEVENTY_RUN_MODE === "serve"` (default for HTML Transform and WebC component)
+
+You can use [`transformOnRequest` with Shortcodes too](./image-shortcodes.md#boost-performance-optimize-images-on-request).
+
+### `returnType` and `htmlOptions`
+
+By default, Eleventy Image will return a metadata JavaScript object. To return HTML instead, use `returnType: "html"`. This is useful for the [Image JavaScript API](./image-js.md#return-html) and [Image Shortcode](./image-shortcodes.md) types.
+
+- `returnType: "object"` (default) or `"html"`
+
+Further customize the markup with `htmlOptions`:
+
+```js
+{
+	// Added in v6.0.0
+	htmlOptions: {
+		imgAttributes: {
+			alt : "", // required
+			loading: "lazy",
+			decoding: "async",
+		},
+
+		// HTML attributes added to `<picture>` (omitted when <img> used)
+		pictureAttributes: {},
+
+		// Use largest source for `<img width height src>` attributes
+		fallback: "largest", // or "smallest"
+	}
+}
+```
 
 ### Fix Orientation
 
@@ -554,7 +267,7 @@ You can use this to [speed up builds on your build server](/docs/deployment/#per
 
 ### Custom Filenames
 
-Don’t like those hash ids? Make your own!
+Don’t like the hashes used in output file names? Make your own!
 
 ```js
 	// (some configuration truncated…)
@@ -595,128 +308,10 @@ await Image("./test/bio-2017.jpg", {
 
 ### Dry-Run
 
-If you want to try the utility out and not write any files (useful for testing), use the `dryRun` option.
+If you want to try the utility out and not write any files (useful for testing), use the `dryRun` option. Will include a `buffer` property in your return object.
 
 - `dryRun: false` (default)
 - `dryRun: true`
-
-### Make your own Markup
-
-If you have an advanced use case and don’t want to use our methods to generate the image markup, you can do it yourself!
-
-{% set codeContent %}
-import Image from "@11ty/eleventy-img";
-
-export default function (eleventyConfig) {
-	eleventyConfig.addShortcode("image", async function (src, alt) {
-		if (alt === undefined) {
-			// You bet we throw an error on missing alt (alt="" works okay)
-			throw new Error(`Missing \`alt\` on myImage from: ${src}`);
-		}
-
-		let metadata = await Image(src, {
-			widths: [600],
-			formats: ["jpeg"],
-		});
-
-		let data = metadata.jpeg[metadata.jpeg.length - 1];
-		return `<img src="${data.url}" width="${data.width}" height="${data.height}" alt="${alt}" loading="lazy" decoding="async">`;
-	});
-};
-{% endset %}
-{% include "snippets/configDefinition.njk" %}
-
-### Process images as a Custom Template
-
-Use Eleventy’s [Custom Template Language](/docs/languages/custom/) feature to process images. _This one is not yet available on the docs: do you want to contribute it?_
-
-### Process images as Data Files
-
-{% addedin "2.0.0-canary.10" %} _Nontraditional use case._ Eleventy’s [Custom Data File Formats](/docs/data-custom/) features an example of [processing Images as data files to feed EXIF data into the Data Cascade](/docs/data-custom/#feed-exif-image-data-into-the-data-cascade). You can use the same feature to add the metadata stats returned from the Image utility directly to the Data Cascade for use in your templates.
-
-- Benefits:
-  - Processing happens in the data cascade so this works in any template language.
-  - Images stored in the [global data folder](/docs/data-global/) will be processed and available to all templates
-- Drawbacks:
-  - You can’t customize the Image options (e.g. `widths` or `formats`) from the template code. It is set globally in the config.
-- Both a benefit and a drawback:
-  - Beholden to Eleventy’s Data Cascade file name conventions when using with [template/directory data files](/docs/data-template-dir/).
-
-<details>
-	<summary><strong>Show the code</strong></summary>
-
-{% set codeContent %}
-import path from "node:path";
-import Image from "@11ty/eleventy-img";
-
-export default function (eleventyConfig) {
-	eleventyConfig.addDataExtension("png,jpeg", {
-		read: false, // Don’t read the input file, argument is now a file path
-		parser: async (imagePath) => {
-			let stats = await Image(imagePath, {
-				widths: ["auto"],
-				formats: ["avif", "webp", "jpeg"],
-				outputDir: path.join(eleventyConfig.dir.output, "img", "built"),
-			});
-
-			return {
-				image: {
-					stats,
-				},
-			};
-		},
-	});
-
-	// This works sync or async: images were processed ahead of time in the data cascade
-	eleventyConfig.addShortcode("dataCascadeImage", (stats, alt, sizes) => {
-		let imageAttributes = {
-			alt,
-			sizes,
-			loading: "lazy",
-			decoding: "async",
-		};
-		return Image.generateHTML(stats, imageAttributes);
-	});
-};
-{% endset %}
-{% include "snippets/configDefinition.njk" %}
-
-With a template `my-blog-post.md` and an image file `my-blog-post.jpeg`, you could use the above configuration code in your template like this:
-
-{% codetitle "my-blog-post.md" %}
-
-{% raw %}
-
-```liquid
-{% dataCascadeImage image.stats, "My alt text" %}
-```
-
-{% endraw %}
-
-Note this also means that `folder/folder.jpeg` would be processed for all templates in `folder/*` and any images stored in your global `_data` would also be populated into the data cascade based on their folder structure.
-
-</details>
-
-<div class="youtube-related">
-	{%- youtubeEmbed "oCTAZumAGNc", "Use images as data files (Weekly №11)", "244" -%}
-</div>
-
-### Change Global Plugin Concurrency
-
-```js
-import Image from "@11ty/eleventy-img";
-Image.concurrency = 4; // default is 20
-```
-
-### Advanced control of Sharp image processor
-
-[Extra options to pass to the Sharp constructor](https://sharp.pixelplumbing.com/api-constructor#parameters) or the [Sharp image format converter for webp](https://sharp.pixelplumbing.com/api-output#webp), [png](https://sharp.pixelplumbing.com/api-output#png), [jpeg](https://sharp.pixelplumbing.com/api-output#jpeg), or [avif](https://sharp.pixelplumbing.com/api-output#avif).
-
-- `sharpOptions: {}`
-- `sharpWebpOptions: {}`
-- `sharpPngOptions: {}`
-- `sharpJpegOptions: {}`
-- `sharpAvifOptions: {}`
 
 #### Output Animated GIF or WebP
 
@@ -734,16 +329,57 @@ await Image("./test/bio-2017.jpg", {
 });
 ```
 
+## Advanced Options
+
+### Output Directory
+
+Where to write the new images to disk. Project-relative path to the output image directory. Maybe you want to write these to your output directory directly (e.g. `./_site/img/`)?
+
+- `outputDir: "./img/"` (default)
+
+If you’re using the Image HTML Transform, we recommended **_not_** to define `outputDir`.
+
+### URL Path
+
+A path-prefix-esque directory for the `<img src>` attribute. e.g. `/img/` for `<img src="/img/MY_IMAGE.jpeg">`:
+
+- `urlPath: "/img/"` (default)
+
+If you’re using the Image HTML Transform, we recommended **_not_** to define `urlPath`.
+
+### Use Cache
+
+(Boolean) Controls whether to use the [disk cache](#disk-cache) and [memory cache](#in-memory-cache).
+
+- `useCache: true` (default)
+- `useCache: false` to bypass the cache and generate a new image every time.
+
+
+### Advanced control of Sharp image processor
+
+[Extra options to pass to the Sharp constructor](https://sharp.pixelplumbing.com/api-constructor#parameters) or the [Sharp image format converter for webp](https://sharp.pixelplumbing.com/api-output#webp), [png](https://sharp.pixelplumbing.com/api-output#png), [jpeg](https://sharp.pixelplumbing.com/api-output#jpeg), or [avif](https://sharp.pixelplumbing.com/api-output#avif).
+
+- `sharpOptions: {}`
+- `sharpWebpOptions: {}`
+- `sharpPngOptions: {}`
+- `sharpJpegOptions: {}`
+- `sharpAvifOptions: {}`
+
+### Change Global Plugin Concurrency
+
+```js
+import Image from "@11ty/eleventy-img";
+Image.concurrency = 4; // default is between 8 and 16 based on os.availableParallelism()
+```
+
 ### Change the default Hash length
 
 {% addedin "1.0.0" %} You can customize the length of the default filename format hash by using the `hashLength` property.
 
 ```js
-import Image from "@11ty/eleventy-img";
-
-await Image("./test/bio-2017.jpg", {
+{
 	hashLength: 8, // careful, don’t make it _too_ short!
-});
+};
 ```
 
 ### Advanced Caching Options for Remote Images
@@ -791,24 +427,10 @@ The metadata object returned will not include `filename` or `outputPath` propert
 
 #### Stats Only
 
-{% addedin "Image v1.1.0" %} Skips all image processing to return metadata. Doesn’t read files, doesn’t write files. Use this as an alternative to the separate `statsSync*` functions—this will use in-memory cache and de-duplicate requests.
+{% addedin "Image v1.1.0" %} Skips all image processing to return metadata. Doesn’t write files. Use this as an alternative to the separate `statsSync*` functions—this will use in-memory cache and de-duplicate requests.
 
 - `statsOnly: false` (default)
 - `statsOnly: true`
-
-For versions prior to Image 5.0, you need to supply the dimensions when using `statsOnly` via `remoteImageMetadata`:
-
-```js
-{
-	statsOnly: true,
-	// Not required in Image 5.0+
-	remoteImageMetadata: {
-		width,
-		height,
-		format, // optional
-	}
-}
-```
 
 ## From the Community
 
