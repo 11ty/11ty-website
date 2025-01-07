@@ -43,6 +43,18 @@
 	"ext": "pug",
 	"url": "/docs/languages/pug/"
 },{
+	"name": "TypeScript",
+	"ext": "ts",
+	"url": "/docs/languages/typescript/"
+},{
+	"name": "JSX",
+	"ext": "jsx",
+	"url": "/docs/languages/jsx/"
+},{
+	"name": "MDX",
+	"ext": "mdx",
+	"url": "/docs/languages/mdx/"
+},{
 	"name": "Custom",
 	"ext": "*",
 	"url": "/docs/languages/custom/"

@@ -2,7 +2,9 @@
 subtitle: Open Collective Contributors
 ignoreSupporters: true
 ---
+
 {%- css %}{% include "components/page-supporters.css" %}{% endcss %}
+
 # Thank You Eleventy Contributors!
 
 Eleventy is made possible by financial contributions from these lovely people:
@@ -12,7 +14,7 @@ Eleventy is made possible by financial contributions from these lovely people:
 {%- set nameToSlug = supporter.name | slug | lower -%}
 {%- if nameToSlug != "zach-leatherman" %}
   <div>
-    <a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt supporters-link" rel="sponsored">{% opencollectiveavatar supporter.image, supporter.name %}{{ supporter.name }}</a>
+    <a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt supporters-link" rel="sponsored">{% opencollectiveavatar supporter %}{{ supporter.name }}</a>
     <span class="fl fl-inline fl-nowrap">
         <span class="supporters-hearts">{% supporterAmount supporter.totalAmountDonated %}</span>
         {%- if supporter.isMonthly %}

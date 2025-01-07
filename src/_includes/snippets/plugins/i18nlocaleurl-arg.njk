@@ -1,0 +1,65 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "localeurlforce"} %}
+  <div id="localeurlforce-njk" role="tabpanel">
+
+{% codetitle "/en/index.njk" %}
+
+{% raw %}
+
+```njk
+<a href="{{ "/blog/" | locale_url("es") }}">Blog</a>
+<!-- <a href="/es/blog/">Blog</a> -->
+```
+
+{% endraw %}
+
+  </div>
+  <div id="localeurlforce-liquid" role="tabpanel">
+
+{% codetitle "/en/index.liquid" %}
+
+{% raw %}
+
+```liquid
+<a href="{{ "/blog/" | locale_url: "es" }}">Blog</a>
+<!-- <a href="/es/blog/">Blog</a> -->
+```
+
+{% endraw %}
+
+  </div>
+  <div id="localeurlforce-js" role="tabpanel">
+
+{% codetitle "/en/index.11ty.js" %}
+
+{% raw %}
+
+```js
+export default function (data) {
+	return `<a href="${this.locale_url("/blog/", "es")}">Blog</a>`;
+	// returns <a href="/es/blog/">Blog</a>
+};
+```
+
+{% endraw %}
+
+  </div>
+	<div id="localeurlforce-cjs" role="tabpanel">
+
+{% codetitle "/en/index.11ty.cjs" %}
+
+{% raw %}
+
+```js
+module.exports = function (data) {
+	return `<a href="${this.locale_url("/blog/", "es")}">Blog</a>`;
+	// returns <a href="/es/blog/">Blog</a>
+};
+```
+
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>

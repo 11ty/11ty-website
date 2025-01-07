@@ -16,26 +16,27 @@ layout: layouts/docs.njk
 }
 .elv-langlist-hed {
 	margin: 0;
-	display: inline;
-	vertical-align: middle;
 	border: none;
-	font-size: 1.4em; /* 21px /15 */
+	font-weight: 700;
 }
 .elv-langlist > .inlinelist {
 	display: inline;
 	margin-left: 1em;
+}
+.elv-langlist-logo {
+	max-width: 200px;
 }
 {% endcss %}
 
 <h1>{{ eleventyNavigation.key }}{% if addedInVersion %}{% addedin addedInVersion%}{% endif %}</h1>
 
 <div class="elv-langlist" data-pagefind-ignore>
-<h2 class="elv-langlist-hed">Template Languages:</h2>
+	<span class="elv-langlist-hed">Template Languages:</span>
 {% templatelangs templatetypes, page %}
 </div>
 
 {% if logoImage %}
-<p>{% image logoImage, "Logo for " + eleventyNavigation.key, [200] %}</p>
+<p>{% image logoImage, "Logo for " + eleventyNavigation.key, [200, 400], "elv-langlist-logo", "200px" %}</p>
 {% endif %}
 
 {{ content | safe }}

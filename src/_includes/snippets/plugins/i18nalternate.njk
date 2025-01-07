@@ -1,0 +1,104 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "localelinksrel"} %}
+  <div id="localelinksrel-njk" role="tabpanel">
+
+{% codetitle "_includes/mylayout.njk" %}
+
+{% raw %}
+
+```njk
+{# `{{lang}}` must be set by you in the data cascade, see above note #}
+<!doctype html>
+<html lang="{{lang}}">
+  <head>
+    <link rel="alternate" hreflang="{{lang}}" href="{{page.url}}">
+  {% for link in page.url | locale_links %}
+    <link rel="alternate" hreflang="{{link.lang}}" href="https://www.11ty.dev{{link.url}}">
+  {% endfor %}
+```
+
+{% endraw %}
+
+  </div>
+  <div id="localelinksrel-liquid" role="tabpanel">
+
+{% codetitle "_includes/mylayout.njk" %}
+
+{% raw %}
+
+```liquid
+<!doctype html>
+{% comment %} `{{lang}}` must be set by you in the data cascade, see above note {% endcomment %}
+<html lang="{{lang}}">
+  <head>
+    <link rel="alternate" hreflang="{{lang}}" href="{{page.url}}">
+{% assign links = page.url | locale_links %}
+{%- for link in links %}
+    <link rel="alternate" hreflang="{{link.lang}}" href="https://www.11ty.dev{{link.url}}">
+{%- endfor -%}
+```
+
+{% endraw %}
+
+  </div>
+  <div id="localelinksrel-js" role="tabpanel">
+
+{% codetitle "/_includes/mylayout.11ty.js" %}
+
+{% raw %}
+
+```js
+export default function (data) {
+	let links = this.locale_links(data.page.url);
+	// side note: url argument is optional for current page
+
+	// `${data.lang}` must be set by you in the data cascade, see above note
+	return `
+<!doctype html>
+<html lang="${data.lang}">
+  <head>
+    <link rel="alternate" hreflang="${data.lang}" href="{{data.page.url}}">
+  ${links
+		.map((link) => {
+			return `    <link rel="alternate" hreflang="${link.lang}" href="https://www.11ty.dev${link.url}">`;
+		})
+		.join("\n")}
+`;
+};
+```
+
+{% endraw %}
+
+  </div>
+	<div id="localelinksrel-cjs" role="tabpanel">
+
+{% codetitle "/_includes/mylayout.11ty.cjs" %}
+
+{% raw %}
+
+```js
+module.exports = function (data) {
+	let links = this.locale_links(data.page.url);
+	// side note: url argument is optional for current page
+
+	// `${data.lang}` must be set by you in the data cascade, see above note
+	return `
+<!doctype html>
+<html lang="${data.lang}">
+  <head>
+    <link rel="alternate" hreflang="${data.lang}" href="{{data.page.url}}">
+  ${links
+		.map((link) => {
+			return `    <link rel="alternate" hreflang="${link.lang}" href="https://www.11ty.dev${link.url}">`;
+		})
+		.join("\n")}
+`;
+};
+```
+
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>

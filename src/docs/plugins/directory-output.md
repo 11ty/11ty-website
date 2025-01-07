@@ -4,6 +4,7 @@ eleventyNavigation:
   order: 3.2
   excerpt: A plugin to group and sort console output by directory, with file size and benchmarks.
 ---
+
 # Directory Output
 
 {% tableofcontents %}
@@ -12,50 +13,49 @@ Group and sort Eleventy’s verbose output by directory (and show file size with
 
 ## Installation
 
-* Compatible with Eleventy 1.0.0 and newer.
-* [`eleventy-plugin-directory-output` on npm](https://www.npmjs.com/package/@11ty/eleventy-plugin-directory-output)
+- Compatible with Eleventy 1.0.0 and newer.
+- [`eleventy-plugin-directory-output` on npm](https://www.npmjs.com/package/@11ty/eleventy-plugin-directory-output)
 
 ```
 npm install @11ty/eleventy-plugin-directory-output
 ```
 
-Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
+Open up your Eleventy config file (probably `eleventy.config.js`) and use `addPlugin`:
 
-{% codetitle ".eleventy.js" %}
+{% set codeContent %}
+import dirOutputPlugin from "@11ty/eleventy-plugin-directory-output";
 
-```js
-const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
-
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setQuietMode(true);
-  eleventyConfig.addPlugin(directoryOutputPlugin);
+export default function (eleventyConfig) {
+	eleventyConfig.setQuietMode(true);
+	eleventyConfig.addPlugin(dirOutputPlugin);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 {% callout "info", "md" %}You’re only allowed one `module.exports` in your configuration file, so make sure you only copy the `require` and the `addPlugin` lines above!{% endcallout %}
 
 Read more about [Eleventy plugins.](/docs/plugins/)
 
-
 ## Options
 
-```js
-const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
+{% set codeContent %}
+import dirOutputPlugin from "@11ty/eleventy-plugin-directory-output";
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setQuietMode(true);
-  eleventyConfig.addPlugin(directoryOutputPlugin, {
-    // Customize columns
-    columns: {
-      filesize: true, // Use `false` to disable
-      benchmark: true, // Use `false` to disable
-    },
+export default function (eleventyConfig) {
+	eleventyConfig.setQuietMode(true);
+	eleventyConfig.addPlugin(dirOutputPlugin, {
+		// Customize columns
+		columns: {
+			filesize: true, // Use `false` to disable
+			benchmark: true, // Use `false` to disable
+		},
 
-    // Will show in yellow if greater than this number of bytes
-    warningFileSize: 400 * 1000,
-  });
+		// Will show in yellow if greater than this number of bytes
+		warningFileSize: 400 * 1000,
+	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 {% callout "info", "md" %}The `benchmark` column is only compatible with Eleventy 1.0.1 or newer.{% endcallout %}
 

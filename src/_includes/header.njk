@@ -1,41 +1,61 @@
-<header class="elv-layout elv-layout-full elv-header{% if headerClass %} {{ headerClass }}{% endif %}">
-	{%- set bannerLink = bannerlinks | matchbannerlink(bannerlinkOverride) %}
-	{%- if not bannerLink %}
-	{%- set bannerLink = bannerlinks | randompick %}
-	{%- endif %}
-	{%- if bannerLink %}
-	<div class="announcement">
-{% if bannerLink.url %}
-		<a href="{{ bannerLink.url }}">{{ bannerLink.label }}</a>
-{% else %}
-		<span>{{ bannerLink.label }}</span>
-{% endif %}
+<header class="elv-header{% if headerClass %} {{ headerClass }}{% endif %}">
+	<div class="elv-header-skip-content">
+		<a href="#skip-nav">Skip to navigation</a>
+		<a href="#skip-content">Skip to main content</a>
 	</div>
-	{%- endif %}
 
-	<div class="elv-header-c">
+	<div class="elv-menu">
+		<ul class="elv-nav-menu list-bare fl fl-inline fl-nowrap">
+			<li><a href="/" class="naked">11ty</a></li>
+			<li><a href="/docs/">Docs</a></li>
+			<li><a href="/docs/search/" class="elv-nav-light">Search</a></li>
+			<li><a href="/blog/" class="elv-nav-light">Blog</a></li>
+			<li><a href="/docs/community/" class="elv-nav-light">Community</a></li>
+			{# <li><a href="/firehose/" class="elv-nav-light">Firehose</a></li> #}
+			{# <li><a href="https://conf.11ty.dev/" class="elv-nav-light elv-externalexempt">Conference</a></li> #}
+			{# <li><a href="https://merch.11ty.dev/products/11ty-merch-bundle-2024-limited-edition" class="elv-externalexempt">Merch</a></li> #}
+			<li>
+				<details-utils close-click-outside close-esc>
+					<details class="elv-popover">
+						<summary>Versions</summary>
+						<div>
+						  <ul class="list-bare">
+								<li><a href="/docs/" class="elv-externalexempt"><code>v3</code> <small>Stable</small></a></li>
+								<li><a href="https://v2.11ty.dev/docs/" class="elv-externalexempt"><code>v2</code></a></li>
+								<li><a href="https://v1.11ty.dev/docs/" class="elv-externalexempt"><code>v1</code></a></li>
+								<li><a href="https://v0.11ty.dev/docs/" class="elv-externalexempt"><code>v0</code></a></li>
+								<li><a href="/docs/versions/" class="elv-externalexempt">History</a></li>
+							</dl>
+						</div>
+					</details>
+				</details-utils>
+			</li>
+			<li class="spacer" aria-hidden="true"></li>
+			<li><a href="https://github.com/11ty/eleventy/" class="naked elv-nav-sociallink elv-skipicon">GitHub</a></li>
+			{%- if github.stargazers %}<li class="elv-nav-menu-hidesmall"><a href="https://github.com/11ty/eleventy" class="minilink minilink-github elv-skipicon"><span>★</span> <strong title="{{ github.stargazers }}">{{ github.stargazers | humanReadableNum }}</strong></a></li>{% endif %}
+			<li><a href="https://fosstodon.org/@eleventy" class="naked elv-nav-sociallink elv-nav-light"><span class="elv-nav-sociallink-text">Mastodon</span></a></li>
+			<li><a href="https://bsky.app/profile/11ty.dev" class="naked elv-nav-sociallink elv-nav-light"><span class="elv-nav-sociallink-text">Bluesky</span></a></li>
+			<li><a href="https://www.youtube.com/c/EleventyVideo" class="naked elv-nav-sociallink elv-nav-light"><span class="elv-nav-sociallink-text">YouTube</span></a></li>
+			<li><a href="/blog/discord/" class="naked elv-nav-sociallink elv-nav-light"><span class="elv-nav-sociallink-text">Discord</span></a></li>
+		</ul>
+	</div>
+
+	<div class="elv-nav-header">
 		<a href="{% if logoLink %}{{ logoLink }}{% else %}/{% endif %}" class="elv-hero elv-externalexempt">{% if logoContent %}{{ logoContent | safe }}{% else %}{% include "../img/logo.svg" %}{% endif %}<span class="sr-only">Eleventy</span></a>
-		<a href="/blog/new-mascot-from-geri-coady/" class="elv-externalexempt elv-possum-anchor" data-investors-avatar>
-			<div class="elv-possum-pic">
-				{% image "./src/img/possum-geri.png", "The possum is Eleventy’s mascot", [222, 350], "elv-possum" %}
-			</div>
-		</a>
-		<{{ headerTag or "h1" }} class="elv-hed">{{ title | orphanWrap | safe }}</{{ headerTag or "h1" }}>
-		<div class="elv-nav-header">
-			<ul class="list-bare fl fl-inline fl-nowrap">
-				<li><a href="/docs/">Docs</a></li>
-				<li><a href="/docs/getting-started/">Get Started</a></li>
-				{%- if github.stargazers and page.inputPath !== "./src/index.webc" %}<li><a href="https://github.com/11ty/eleventy" class="minilink minilink-github elv-skipicon"><span>★</span> <strong title="{{ github.stargazers }}">{{ github.stargazers | humanReadableNum }}</strong></a></li>{% endif %}
-				<li class="elv-nav-docs-only"><a href="/docs/search/">Search</a></li>
-				<li><a href="/blog/" class="elv-nav-light">Blog</a></li>
-				<li class="elv-nav-docs-only"><a href="/docs/community/" class="elv-nav-light">Community</a></li>
-				<li class="elv-nav-docs-only"><a href="/firehose/" class="elv-nav-light">Firehose</a></li>
-				<li class="elv-nav-docs-only spacer"></li>
-				<li><a href="https://github.com/11ty/eleventy/" class="naked elv-nav-sociallink elv-nav-light">GitHub</a></li>
-				<li><a href="https://fosstodon.org/@eleventy" class="naked elv-nav-sociallink elv-nav-light"><span class="elv-nav-sociallink-text">Mastodon</span></a></li>
-				<li><a href="https://www.youtube.com/c/EleventyVideo" class="naked elv-nav-sociallink elv-nav-light"><span class="elv-nav-sociallink-text">YouTube</span></a></li>
-				<li><a href="/blog/discord/" class="naked elv-nav-sociallink elv-nav-light"><span class="elv-nav-sociallink-text">Discord</span></a></li>
-			</ul>
-		</div>
-	</div><!-- /elv-nav-header -->
+		<{{ headerTag or "h1" }} class="elv-hed">{{ headerTitle | safe }}</{{ headerTag or "h1" }}>
+		<is-land on:visible on:idle on:save-data="false" on:media="(prefers-reduced-motion: no-preference)">
+			<template data-island>
+				<a href="/blog/mascot-david/" class="elv-externalexempt elv-possum-anchor">
+					<div class="elv-possum-pic">
+						{% if isDocs %}
+						{% image "./src/img/mascots/david.svg", "The possum is Eleventy’s mascot", [222], "elv-possum" %}
+						{% else %}
+						{% image "./src/img/mascots/david.svg", "The possum is Eleventy’s mascot", [222, 350], "elv-possum", "20vh" %}
+						{% endif %}
+						</is-land>
+					</div>
+				</a>
+			</template>
+		</is-land>
+	</div>
 </header>

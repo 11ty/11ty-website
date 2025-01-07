@@ -1,0 +1,69 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsall"} %}
+  <div id="collectionsall-liquid" role="tabpanel">
+
+{% raw %}
+
+```liquid
+<ul>
+{%- for post in collections.all -%}
+  <li><a href="{{ post.url }}">{{ post.url }}</a></li>
+{%- endfor -%}
+</ul>
+```
+
+{% endraw %}
+
+  </div>
+  <div id="collectionsall-njk" role="tabpanel">
+
+{% raw %}
+
+```jinja2
+<ul>
+{%- for post in collections.all -%}
+  <li><a href="{{ post.url }}">{{ post.url }}</a></li>
+{%- endfor -%}
+</ul>
+```
+
+{% endraw %}
+
+  </div>
+  <div id="collectionsall-js" role="tabpanel">
+
+{% raw %}
+
+```js
+export function render(data) {
+  return `<ul>
+    ${data.collections.all
+      .map((post) => `<li><a href="${post.url}">${post.url}</a></li>`)
+      .join("\n")}
+  </ul>`;
+};
+```
+
+{% endraw %}
+
+  </div>
+  <div id="collectionsall-cjs" role="tabpanel">
+
+{% raw %}
+
+```js
+exports.render = function (data) {
+  return `<ul>
+    ${data.collections.all
+      .map((post) => `<li><a href="${post.url}">${post.url}</a></li>`)
+      .join("\n")}
+  </ul>`;
+};
+```
+
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>

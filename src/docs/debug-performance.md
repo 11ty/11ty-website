@@ -1,21 +1,22 @@
 ---
 eleventyNavigation:
-  key: Performance
+  key: Debug Performance
   parent: Debug Mode
   excerpt: How to analyze your Eleventy build to find bottlenecks.
   order: 1
 excludeFromSidebar: true
 ---
+
 # Performance
 
 {% callout "info" %}You’ll probably want to read the <a href="/docs/debugging/">Debug mode documentation</a> before continuing here.{% endcallout %}
 
 Eleventy by default will warn you if certain pieces of your build take longer than 8% of your total build time. This list includes:
 
-* [Filters/Helpers/11ty.js JavaScript Functions](/docs/filters/)
-* [Shortcodes](/docs/shortcodes/)
-* [Data Files](/docs/data/)
-* Resolving `--watch` Dependencies (not subject to the 8% rule—these only show if longer than `500ms` as watch tasks are not counted as part of the traditional build time)
+- [Filters/Helpers/11ty.js JavaScript Functions](/docs/filters/)
+- [Shortcodes](/docs/shortcodes/)
+- [Data Files](/docs/data/)
+- Resolving `--watch` Dependencies (not subject to the 8% rule—these only show if longer than `500ms` as watch tasks are not counted as part of the traditional build time)
 
 This list is not considered to be exhaustive. It’s just what has been implemented thus far!
 
@@ -23,7 +24,9 @@ This list is not considered to be exhaustive. It’s just what has been implemen
 
 {% addedin "0.11.0" %} You can use the following `debug` command to show performance measurements for all of these entries (not just those that take longer than 8%).
 
-#### Mac OS (or Linux, etc)
+Learn more about [environment variables for debug output](/docs/debugging/#commands).
+
+#### macOS or Linux (et al)
 
 ```bash
 DEBUG=Eleventy:Benchmark* npx @11ty/eleventy

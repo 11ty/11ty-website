@@ -1,0 +1,25 @@
+{%- set tabid = "config-templatelangs" %}
+<div class="codetitle codetitle-right-md">eleventy.config.js</div>
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs class="tabs-flush" persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
+  <div id="{{ tabid }}-jsesm" role="tabpanel">
+
+```js
+export const config = {
+  templateFormats: ["html", "liquid", "njk"],
+};
+```
+
+  </div>
+  <div id="{{ tabid }}-jscjs" role="tabpanel">
+
+```js
+module.exports.config = {
+  templateFormats: ["html", "liquid", "njk"],
+};
+```
+
+  </div>
+</seven-minute-tabs>
+</is-land>

@@ -1,7 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Overview
+  parent: Learn
   key: Glossary
+  order: 1.4
 ---
 
 # Glossary
@@ -62,18 +63,6 @@ A portable, installable Eleventy configuration which can add [data](#data), [fil
 
 [Read more about plugins.](/docs/plugins/)
 
-### Eleventy Edge
-
-Opt-in shortcodes for Eleventy in which pieces of dynamic functionality can be coupled with build-generated or serverless templates.
-
-[Read more about Eleventy Edge.](/docs/plugins/edge/)
-
-### Eleventy Serverless
-
-An opt-in build mode for Eleventy in which specified pages are built when a user requests them, rather than ahead of time during a build step. Optionally, pages that are built on request can be cached by the content delivery network to be used for future visits to that page.
-
-[Read more about Eleventy Serverless.](/docs/plugins/serverless/)
-
 ## Industry Terms and Buzzwords
 
 Bask in the warm glow of this _“Nobody ever got fired for buying IBM”_-style feel-good industry jargon.
@@ -104,9 +93,9 @@ Make components and markup data-driven so that you don’t have a bunch of one-o
 
 ### Serverless Friendly
 
-> “You can take your front-end skills and do things that typically only a back-end can do. You can write a JavaScript function that you run and receive a response from by hitting a URL.”—[The Power of Serverless](https://serverless.css-tricks.com/) from [Chris Coyier]({{ "https://twitter.com/chriscoyier" | canonicalTwitterUrl }})
+> “You can take your front-end skills and do things that typically only a back-end can do. You can write a JavaScript function that you run and receive a response from by hitting a URL.”—[The Power of Serverless](https://serverless.css-tricks.com/) from [Chris Coyier](https://chriscoyier.net/)
 
-Take care to make sure that <span class="buzzword">serverless</span> functions are <span class="buzzword">progressively enhanced</span>. If you call <span class="buzzword">serverless</span> functions in client-side JavaScript, they should be used for features that are outside the core functionality of the site. Use [Eleventy Serverless](/docs/plugins/serverless/) to generate pages on-request without any client-side JavaScript.
+Take care to make sure that <span class="buzzword">serverless</span> functions are <span class="buzzword">progressively enhanced</span>. If you call <span class="buzzword">serverless</span> functions in client-side JavaScript, they should be used for features that are outside the core functionality of the site.
 
 ### Lean Web
 
@@ -116,7 +105,7 @@ To be honest it’s kind of a stretch to relate Lean methodology to this project
 
 Zero config means that Eleventy can run without any command line parameters or configuration files.
 
-We’ve taken care to setup Eleventy so that that running the stock  `eleventy` command uses sensible defaults. Lower the barrier to entry for that first project build to get up and running faster.
+We’ve taken care to setup Eleventy so that that running the stock `eleventy` command uses sensible defaults. Lower the barrier to entry for that first project build to get up and running faster.
 
 ### Convention over Configuration Routing
 
@@ -127,9 +116,6 @@ Can you believe that some frameworks require a centralized piece of configuratio
 With the rise of client side rendering of templates in JavaScript came significant performance problems, especially with users of less-capable (but none-the-less still modern) hardware. Did you know they’re selling new mobile devices that are pretty hardware-limited?
 
 Many frameworks switched to Server Side Rendering, which meant running an application server with middleware that would render the markup on demand for each request. Eleventy templates by default are generated (some call this pre-rendering) at build time for maximum performance. This way the web server only needs to fetch the static file and send it back to the user.
-
-* If you want to add dynamic server-side functionality to your Eleventy project, use [Eleventy Edge](/docs/plugins/edge/) on top of your build or server generated templates.
-* Eleventy can also run in [Serverless mode](/docs/plugins/serverless/) for server side rendering _On Request_ or even _On Request Once and Cached for Subsequent Visitors_.
 
 ### Hydration-less
 
@@ -144,3 +130,11 @@ Application servers can be slow. Instead of PHP, Java, or even Node.js dynamical
 Single Page Applications (SPA) use JavaScript to enable navigations between pages on a web site. Multi-Page Applications use the classic navigation model of the web and do a full page refresh to a new page.
 
 Should you [build a Single Page Application with Eleventy](/docs/single-page-applications/)?
+
+## Where did the Name Come From?
+
+> Some might think that the name Eleventy is an homage to Spinal Tap (turn it up to eleven) or more directly, Lord of the Rings. I chose it because of a story my grandma Nonnie loved to tell about how I learned to count. Rather than move from ten to eleven like a normal child, I felt it appropriate to use the teen suffix for the numbers eleven and twelve, counting “ten, eleventy-teen, twelvety-teen, thirteen, …” I always liked that story and it seemed as appropriate a reason as any.—[via `zachleat.com`](https://www.zachleat.com/web/eleventy-birthday/#project-naming)
+
+### What’s the difference between 11ty and Eleventy?
+
+The `11ty` name refers to the over-arching organization and community. `Eleventy` refers to the static site generator specifically. —[via Issue #1283](https://github.com/11ty/eleventy/issues/1283#issuecomment-656708009)

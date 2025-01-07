@@ -1,10 +1,11 @@
 ---
 eleventyNavigation:
-  parent: Working with Templates
+  parent: Eleventy Projects
   key: Layouts
   order: 1
   excerpt: Wrap content in other content.
 ---
+
 # Layouts
 
 {% tableofcontents %}
@@ -13,103 +14,20 @@ Eleventy Layouts are special templates that can be used to wrap other content.
 
 To denote that a piece of content should be wrapped in a template, use the `layout` key in your front matter, like so:
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layouts", additions: "md"} %}
-  <div id="layouts-md" role="tabpanel">
-
-{% codetitle "index.md" %}
-{% codetitle "Markdown", "Syntax" %}
-{% raw %}
-```markdown
----
-layout: mylayout.njk
-title: My Rad Markdown Blog Post
----
-# {{ title }}
-```
-{% endraw %}
-
-  </div>
-  <div id="layouts-liquid" role="tabpanel">
-
-{% codetitle "index.liquid" %}
-{% codetitle "Liquid", "Syntax" %}
-{% raw %}
-```liquid
----
-layout: mylayout.njk
-title: My Rad Liquid Blog Post
----
-<h1>{{ title }}</h1>
-```
-{% endraw %}
-
-  </div>
-  <div id="layouts-njk" role="tabpanel">
-
-{% codetitle "index.njk" %}
-{% codetitle "Nunjucks", "Syntax" %}
-{% raw %}
-```jinja2
----
-layout: mylayout.njk
-title: My Rad Nunjucks Blog Post
----
-<h1>{{ title }}</h1>
-```
-{% endraw %}
-
-  </div>
-  <div id="layouts-js" role="tabpanel">
-
-{% codetitle "index.11ty.js" %}
-{% codetitle "JavaScript", "Syntax" %}
-{% raw %}
-```js
-module.exports = {
-  data: {
-    layout: "mylayout.njk",
-    title: "My Rad JavaScript Blog Post"
-  },
-  render(data) {
-    return `<h1>${data.title}</h1>`;
-  }
-}
-```
-{% endraw %}
-
-  </div>
-  <div id="layouts-hbs" role="tabpanel">
-
-{% codetitle "index.hbs" %}
-{% codetitle "Handlebars", "Syntax" %}
-{% raw %}
-```handlebars
----
-layout: mylayout.njk
-title: My Rad Handlebars Blog Post
----
-<h1>{{title}}</h1>
-```
-{% endraw %}
-
-  </div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/layouts/intro.njk" %}
 
 This will look for a `mylayout.njk` Nunjucks file in your _includes_ folder at `_includes/mylayout.njk`.
 
-* You can use any template language in your layout file—it doesn’t need to match the template language of the content: an `ejs` template can use a `njk` layout.
-* Layouts can include subdirectories: `layout: "layouts/base.njk"` maps to `_includes/layouts/base.njk`.
-* You can have a [separate folder for Eleventy layouts](/docs/config/#directory-for-layouts-(optional)) if you’d prefer to have them separate from your _includes_ folder.
+- You can use any template language in your layout file—it doesn’t need to match the template language of the content: an `ejs` template can use a `njk` layout.
+- Layouts paths can use subdirectories: `layout: "layouts/base.njk"` maps to `_includes/layouts/base.njk`.
+- You can have a [separate folder for Eleventy layouts](</docs/config/#directory-for-layouts-(optional)>) if you’d prefer to have them separate from your _includes_ folder.
 
-Next, we need to create a `mylayout.njk` file. It can contain any type of text, but here we’re using HTML:
+Next, we need to create a `mylayout.njk` file. It may contain any arbitrary text, but here we’re using HTML:
 
 {% codetitle "_includes/mylayout.njk" %}
 
 {%- highlight "html" %}
-{% include "examples/layouts/mylayout.njk" %}
+{% include "snippets/layouts/mylayout.njk" %}
 {%- endhighlight %}
 
 Note that the layout template will populate the `content` data with the child template’s content. Also note that we don’t want to double-escape the output, so we’re using the provided Nunjucks `safe` filter here (see more language double-escaping syntax below).
@@ -118,106 +36,9 @@ Layouts can contain their own front matter data! It’ll be merged with the cont
 
 All of this will output the following HTML content to `_site/content-using-layout/index.html`:
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layoutoutput", additions: "md", label: "View the output from"} %}
-  <div id="layoutoutput-md" role="tabpanel">
 {% callout "demo" %}
-
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Rad Markdown Blog Post</title>
-  </head>
-  <body>
-    <h1>My Rad Markdown Blog Post</h1>
-  </body>
-</html>
-```
-
+{% include "snippets/layouts/output.njk" %}
 {% endcallout %}
-  </div>
-  <div id="layoutoutput-liquid" role="tabpanel">
-{% callout "demo" %}
-
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Rad Liquid Blog Post</title>
-  </head>
-  <body>
-    <h1>My Rad Liquid Blog Post</h1>
-  </body>
-</html>
-```
-
-{% endcallout %}
-  </div>
-  <div id="layoutoutput-njk" role="tabpanel">
-{% callout "demo" %}
-
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Rad Nunjucks Blog Post</title>
-  </head>
-  <body>
-    <h1>My Rad Nunjucks Blog Post</h1>
-  </body>
-</html>
-```
-
-{% endcallout %}
-  </div>
-  <div id="layoutoutput-js" role="tabpanel">
-{% callout "demo" %}
-
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Rad JavaScript Blog Post</title>
-  </head>
-  <body>
-    <h1>My Rad JavaScript Blog Post</h1>
-  </body>
-</html>
-```
-
-{% endcallout %}
-  </div>
-  <div id="layoutoutput-hbs" role="tabpanel">
-{% callout "demo" %}
-
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Rad Handlebars Blog Post</title>
-  </head>
-  <body>
-    <h1>My Rad Handlebars Blog Post</h1>
-  </body>
-</html>
-```
-
-{% endcallout %}
-  </div>
-</seven-minute-tabs>
-</is-land>
 
 ## Front Matter Data in Layouts
 
@@ -235,26 +56,25 @@ Front matter data set in a content template takes priority over layout front mat
 
 Configuration API: use `eleventyConfig.addLayoutAlias(from, to)` to add layout aliases. Say you have a bunch of existing content using `layout: post`. If you don’t want to rewrite all of those values, map `post` to a new file like this:
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
+{% set codeContent %}
+export default function(eleventyConfig) {
+	eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ## Prevent double-escaping in layouts
 
 {% raw %}
-| Template Language | Unescaped Content (for layout content)                 | Comparison with an Escaped Output | Docs                                                                                 |
+| Template Language | Unescaped Content (for layout content) | Comparison with an Escaped Output | Docs |
 | ----------------- | ------------------------------------------------------ | --------------------------------- | ------------------------------------------------------------------------------------ |
-| Nunjucks          | `{{ content \| safe }}`                                | `{{ value }}`                     | [Docs](https://mozilla.github.io/nunjucks/templating.html#safe)                      |
-| EJS               | `<%- content %>`                                       | `<%= value %>`                    | [Docs](https://www.npmjs.com/package/ejs#tags)                                       |
-| Handlebars        | `{{{ content }}}` (triple stash)                       | `{{ value }}` (double stash)      | [Docs](https://handlebarsjs.com/#html-escaping)                                       |
-| Mustache          | `{{{ content }}}` (triple stash)                       | `{{ value }}` (double stash)      | [Docs](https://github.com/janl/mustache.js#variables)                                |
-| Liquid            | is by default unescaped so you can use `{{ content }}` | `{{ value \| escape }}`            | [Docs](https://liquidjs.com/filters/escape.html)                              |
-| HAML              | `! #{ content }`                                       | `= #{ content }`                  | [Docs](http://haml.info/docs/yardoc/file.REFERENCE.html#unescaping_html)             |
-| Pug               | `!{content}`                                           | `#{value}`                        | [Docs](https://pugjs.org/language/interpolation.html#string-interpolation-unescaped) |
+| Nunjucks | `{{ content \| safe }}` | `{{ value }}` | [Docs](https://mozilla.github.io/nunjucks/templating.html#safe) |
+| EJS | `<%- content %>` | `<%= value %>` | [Docs](https://www.npmjs.com/package/ejs#tags) |
+| Handlebars | `{{{ content }}}` (triple stash) | `{{ value }}` (double stash) | [Docs](https://handlebarsjs.com/#html-escaping) |
+| Mustache | `{{{ content }}}` (triple stash) | `{{ value }}` (double stash) | [Docs](https://github.com/janl/mustache.js#variables) |
+| Liquid | is by default unescaped so you can use `{{ content }}` | `{{ value \| escape }}` | [Docs](https://liquidjs.com/filters/escape.html) |
+| HAML | `! #{ content }` | `= #{ content }` | [Docs](https://haml.info/docs/yardoc/file.REFERENCE.html#unescaping_html) |
+| Pug | `!{content}` | `#{value}` | [Docs](https://pugjs.org/language/interpolation.html#string-interpolation-unescaped) |
 {% endraw %}
 
 ## Layout Chaining
@@ -264,15 +84,15 @@ Chaining multiple layouts together. [Read more about Layout Chaining](/docs/layo
 ## Omitting the Layout’s File Extension
 
 Omitting the layout file extension (for example `layout: mylayout`) causes Eleventy to cycle through all of the supported template formats (`mylayout.*`) to look for a matching layout file. There are a few drawbacks to this approach:
+
 1. It is slower! Including the file extension bypasses the file search.
 2. It is ambiguous if you have multiple layout files with the same name and different extensions (e.g. `mylayout.njk` and `mylayout.liquid`).
 
 You can disable extensionless layouts in your project with the `setLayoutResolution` Configuration API method {% addedin "2.0.0-canary.21" %} (we may swap this to be the default in a future major version of Eleventy):
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setLayoutResolution(false);
+{% set codeContent %}
+export default function(eleventyConfig) {
+	eleventyConfig.setLayoutResolution(false);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}

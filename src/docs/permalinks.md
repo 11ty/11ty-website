@@ -1,10 +1,11 @@
 ---
 eleventyNavigation:
-  parent: Working with Templates
+  parent: Eleventy Projects
   key: Permalinks
   order: 6
   excerpt: Remap a template to a new output location (or prevent writing a file)
 ---
+
 # Permalinks
 
 {% tableofcontents %}
@@ -100,7 +101,7 @@ To remap your template’s output to a different path than the default, use the 
 
 ```markdown
 ---
-permalink: "this-is-a-new-path/subdirectory/testing/index.html"
+permalink: "this-is-a-new-path/subdirectory/testing/"
 ---
 ```
 
@@ -110,11 +111,11 @@ The above is functionally equivalent to:
 
 ```markdown
 ---
-permalink: "this-is-a-new-path/subdirectory/testing/"
+permalink: "this-is-a-new-path/subdirectory/testing/index.html"
 ---
 ```
 
-Both of the above examples will write to `_site/this-is-a-new-path/subdirectory/testing/index.html`.
+Both of the above examples write to `_site/this-is-a-new-path/subdirectory/testing/index.html`.
 
 Fear not: if multiple input files _attempt to write to the same output location_, Eleventy will throw an error for you!
 
@@ -145,15 +146,17 @@ For example:
 {% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
+
 ```markdown
 ---
 title: This is a New Path
 permalink: "subdir/{{ title | slugify }}/index.html"
 ---
 ```
+
 {% endraw %}
 
-* Pagination variables also work here! [Read more about Pagination](/docs/pagination/)
+- Pagination variables also work here! [Read more about Pagination](/docs/pagination/)
 
 Writes to `_site/subdir/this-is-a-new-path/index.html`.
 
@@ -165,12 +168,14 @@ Writes to `_site/subdir/this-is-a-new-path/index.html`.
 {% codetitle "YAML Front Matter using Liquid", "Syntax" %}
 
 {% raw %}
+
 ```markdown
 ---
 date: "2016-01-01T06:00-06:00"
 permalink: "/{{ page.date | date: '%Y/%m/%d' }}/index.html"
 ---
 ```
+
 {% endraw %}
 
 Writes to `_site/2016/01/01/index.html`. There are a variety of ways that the page.date variable can be set (using `date` in your front matter is just one of them). Read more about [Content dates](/docs/dates/).
@@ -186,9 +191,11 @@ Writes to `_site/2016/01/01/index.html`. There are a variety of ways that the pa
 {% codetitle "YAML", "Syntax" %}
 
 {% raw %}
+
 ```yaml
 permalink: "{{ page.filePathStem }}.html"
 ```
+
 {% endraw %}
 
 The error message might look like `can not read a block mapping entry; a multiline key may not be an implicit key`.
@@ -203,10 +210,105 @@ You can change the file extension in the permalink to output to any file type. F
 ---
 permalink: "index.json"
 ---
+
 <%- JSON.stringify(collections.all) -%>
 ```
 
+## Trailing Slashes
+
+Eleventy projects use trailing slashes by default, as they have shown to be the most reliable approach for URL design and [hosting provider compatibility](https://www.zachleat.com/web/trailing-slash/#results-table). That’s why we write to `/resource/index.html` and use `/resource/`-style URLs.
+
+We do offer the option to instead write `/resource.html` files and use `/resource`-style URLs **(but it is not recommended)**.
+
+### Permalinks without File Extensions
+
+{% callout "warn", "md-block" -%}
+While `index.html` is optional on `permalink: /resource/index.html`, it is a [**Common Pitfall**](/docs/pitfalls/) to leave off the trailing slash.
+{% endcallout %}
+
+If you leave off the file name **and** forget the trailing slash on your permalink, this will write to a file without a file extension. Your web browser may attempt to download the file instead of displaying it (unless you’ve done some extra work to set up your `Content-Type` headers correctly).
+
+This may also cause local development issues if you later attempt to write to a subdirectory of the same name (anything inside `/resource/`).
+
+- `permalink: /resource/` ✅ Fine
+- `permalink: /resource/index.html` ✅ The same as above
+- `permalink: /resource` ❌ Not fine, throws an error in 3.0
+
+{% addedin "3.0.0-beta.2" %}Eleventy will throw an error if you attempt to write to a file without a file extension. This is not always an error (think `_redirects` on Netlify), so you can opt out of this feature by setting `eleventyAllowMissingExtension: true` somewhere in your data cascade (front matter, directory data file, etc) or disable the error messaging globally.
+
+```yaml
+---
+eleventyAllowMissingExtension: true
+---
+```
+
+{% set codeContent %}
+export default function(eleventyConfig) {
+	// Disable this error for the project.
+	eleventyConfig.configureErrorReporting({ allowMissingExtensions: true })
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
+<div id="change-permalinks-globally-for-a-project"></div>
+
+### Remove trailing slashes
+
+The following configuration (using [global data via the configuration API](/docs/data-global-custom.md) but you could set this using a [Global Data file](/docs/data-global.md) too) unlocks `/resource`-style URLs on your Eleventy project and works on GitHub Pages, Netlify, Cloudflare Pages, Render, and Azure Static Web Apps. This approach **does _not_ work on Vercel** (due to a [Vercel hosting limitation](https://www.zachleat.com/web/trailing-slash/#results-table)).
+
+{% set codeContent %}
+export default function(eleventyConfig) {
+	// Set global permalinks to resource.html style
+	eleventyConfig.addGlobalData("permalink", () => {
+		return (data) =>
+			`${data.page.filePathStem}.${data.page.outputFileExtension}`;
+	});
+
+	// Remove .html from `page.url` entries
+	eleventyConfig.addUrlTransform((page) => {
+		if (page.url.endsWith(".html")) {
+			return page.url.slice(0, -1 * ".html".length);
+		}
+	});
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
+#### Remove trailing slashes on Vercel
+
+The following works for `/resource`-style URLs on Vercel but additionally requires [`"trailingSlash": false` in your `vercel.json` file](https://vercel.com/docs/projects/project-configuration#trailingslash).
+
+{% set codeContent %}
+export default function(eleventyConfig) {
+	eleventyConfig.addUrlTransform((page) => {
+		if (page.url.length !== "/" && page.url.endsWith("/")) {
+			return page.url.slice(0, -1);
+		}
+	});
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
+
 ## Advanced Usage
+
+### Change permalinks for one directory
+
+Let's say you have a directory of content templates like `recipes/cookies.md` and `recipes/soup.md` and 50 more. Each of these content templates has a title in their frontmatter. While you could manually set a permalink in the frontmatter of each recipe you can also dynamically generate the permalink inside a [Directory Data File](/docs/data-template-dir/) like `recipes.11tydata.js`.
+
+Because of the order of the [data cascade](/docs/data-cascade/) the title of a content template is not immediately available in the directory data file. However, `permalink` is a special case of implied [Computed Data](docs/data-computed/) and will have this data available. Inside of your directory data file `recipes.11tydata.js` you could write this:
+
+<div class="codetitle codetitle-right-md">recipes.11tydata.js</div>
+{% set codeContent %}
+export default {
+	permalink: function ({ title }) {
+		return `/recipes/${this.slugify(title)}`;
+	},
+};
+{% endset %}
+{% include "snippets/esmCjsTabs.njk" %}
+
+The title will be [slugified](/docs/filters/slugify/) to be URL-friendly.
 
 ### Mapping one URL to Multiple Files for Internationalization {% addedin "2.0.0-canary.13" %}
 
@@ -216,8 +318,8 @@ As an example, say you have two content files: `about.en.html` and `about.es.htm
 
 Use [server-side redirects](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language) to control which of these files is shown.
 
-* [Netlify Redirects](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language)
-* [Apache Content Negotiation](https://fantasai.inkedblade.net/web-design/l10n) related to [Issue #761](https://github.com/11ty/eleventy/issues/761)
+- [Netlify Redirects](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language)
+- [Apache Content Negotiation](https://fantasai.inkedblade.net/web-design/l10n) related to [Issue #761](https://github.com/11ty/eleventy/issues/761)
 
 These will work as expected out of the box, except for the [`page.url`](/docs/data-eleventy-supplied/#page-variable) variable and the URL reported in [collection objects](/docs/collections/#collection-item-data-structure) (et al).
 
@@ -225,20 +327,19 @@ Say we want two or more files on the file system (e.g. `about.en.html` and `abou
 
 This example matches any `.xx.html` URL:
 
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addUrlTransform(({url}) => {
-    // `url` is guaranteed to be a string here even if you’re using `permalink: false`
-    if (url.match(/\.[a-z]{2}\.html$/i)) {
-        return url.slice(0, -1 * ".en.html".length) + "/";
-    }
+{% set codeContent %}
+export default function (eleventyConfig) {
+	eleventyConfig.addUrlTransform(({ url }) => {
+		// `url` is guaranteed to be a string here even if you’re using `permalink: false`
+		if (url.match(/\.[a-z]{2}\.html$/i)) {
+			return url.slice(0, -1 * ".en.html".length) + "/";
+		}
 
-    // Returning undefined skips the url transform.
-  });
+		// Returning undefined skips the url transform.
+	});
 };
-```
-
-This approach unlocks functionality for the default build mode of Eleventy but you could also achieve some of the same functionality using the [Edge](/docs/plugins/edge/) or [Serverless plugins](/docs/plugins/serverless/).
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ### Disable templating in permalinks {% addedin "0.7.0" %}
 
@@ -259,14 +360,14 @@ dynamicPermalink: false
 
 Eleventy includes a global configuration option to disable dynamic templating altogether. This will save a few template renders and is probably marginally faster, too.
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function(eleventyConfig) {
-  // Enabled by default
-  eleventyConfig.setDynamicPermalinks(false);
+{% set codeContent %}
+export default function (eleventyConfig) {
+	// Enabled by default
+	eleventyConfig.setDynamicPermalinks(false);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
 
 ### Ignore the output directory {% addedin "0.1.4" %}
 

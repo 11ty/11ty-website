@@ -1,9 +1,10 @@
 ---
 eleventyNavigation:
   key: Performance
-  parent: Overview
+  parent: Learn
   excerpt: The build and site performance of Eleventy projects
   order: 3
+ignoreSidebarCallout: true
 ---
 <template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
 # Eleventy Performance

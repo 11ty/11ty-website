@@ -4,22 +4,24 @@ eleventyNavigation:
   parent: Blog
   key: Docs Moved to 11ty.dev
 ---
+
 The Eleventy project is deprecating the 11ty.io domain and moving to 11ty.dev. 11ty.dev now has feature parity and the 11ty.io DNS will begin redirecting to 11ty.dev as soon as your DNS updates.
 
 A couple of wrinkles here:
-* We switched DNS providers to enable proper forwarding behavior here (including all prior versions of docs on subdomains). This may result in some temporary downtime for 11ty.io URLs, but they will begin forwarding correctly in a matter of time. Sorry for this!
-* Eleventy Contributor Accounts need to be migrated to 11ty.dev. This means you’ll need to set a new password for your account. Check your email for new invite links.
+
+- We switched DNS providers to enable proper forwarding behavior here (including all prior versions of docs on subdomains). This may result in some temporary downtime for 11ty.io URLs, but they will begin forwarding correctly in a matter of time. Sorry for this!
+- Eleventy Contributor Accounts need to be migrated to 11ty.dev. This means you’ll need to set a new password for your account. Check your email for new invite links.
 
 This was no small thing! (But it wasn’t too terrible either). We migrated:
 
-* All [versioned documentation subdomains (×15)](/docs/versions/) (e.g. the [Eleventy v0.5.3 documentation](https://v0-5-3.11ty.dev/docs/))
-* Netlify custom features (Analytics) and for Contributor Accounts: Identity and Serverless Functions for auth.
-* Web Hooks to run the docs build every day to update avatars and footer stats.
-* GitHub repo renamed to a more generic [`11ty/11ty-website`](https://github.com/11ty/11ty-website/) (GitHub handles the redirects here)
+- All [versioned documentation subdomains (×15)](/docs/versions/) (e.g. the [Eleventy v0.5.3 documentation](https://v0-5-3.11ty.dev/docs/))
+- Netlify custom features (Analytics) and for Contributor Accounts: Identity and Serverless Functions for auth.
+- Web Hooks to run the docs build every day to update avatars and footer stats.
+- GitHub repo renamed to a more generic [`11ty/11ty-website`](https://github.com/11ty/11ty-website/) (GitHub handles the redirects here)
 
 ## Why?
 
-This has been on the agenda for about six months. [{% communityavatar "TatianaMac" %}Tatiana Mac]({{ "https://twitter.com/TatianaTMac/"  | canonicalTwitterUrl }}) said it better:
+This has been on the agenda for about six months. [{% communityavatar "TatianaMac" %}Tatiana Mac](https://www.tatianamac.com/) said it better:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">ICYMI: .io domains benefit the British government and not the Chagossian and Ilois people that they should, whom the Brits expelled from their island home.<br><br>So, migrating off of .io domains is one way to exhibit solidarity. <br><br>Read more: <a href="https://gigaom.com/2014/06/30/the-dark-side-of-io-how-the-u-k-is-making-web-domain-profits-from-a-shady-cold-war-land-deal/">https://gigaom.com/2014/06/30/the-dark-side-of-io-how-the-u-k-is-making-web-domain-profits-from-a-shady-cold-war-land-deal/</a> <a href="{{ "https://twitter.com/eleven_ty/status/1202457672756404224" | canonicalTwitterUrl }}">twitter.com/eleven_ty/status/…4224</a></p>&mdash; Tatiana Mac (@TatianaTMac) <a href="{{ "https://twitter.com/TatianaTMac/status/1202467104722571264" | canonicalTwitterUrl }}">December 5, 2019</a></blockquote>
 

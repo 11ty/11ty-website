@@ -5,6 +5,7 @@ eleventyNavigation:
   order: 11
 layout: layouts/langs.njk
 ---
+
 {% tableofcontents "open" %}
 
 | Eleventy Short Name | File Extension | npm Package                           |
@@ -15,35 +16,49 @@ Pug templates used to be called Jade templates and the project was renamed.
 
 You can override a `.pug` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
 
+## Installation
+
+The `pug` templating language was moved out of Eleventy core in v3 and now requires a plugin installation.
+
+* [`11ty/eleventy-plugin-template-languages` on GitHub](https://github.com/11ty/eleventy-plugin-template-languages)
+
+```sh
+npm install @11ty/eleventy-plugin-pug
+```
+
+Add to your configuration file:
+
+{% set codeContent %}
+import pugPlugin from "@11ty/eleventy-plugin-pug";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(pugPlugin);
+}
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
 ## Pug Options
 
-### Optional: Compile/Render Options {% addedin "0.2.15" %}
+### Add Compile/Render Options
 
 Set compile/render options using the Configuration API. See all [Pug options](https://pugjs.org/api/reference.html#options).
 
-```js
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setPugOptions({ debug: true });
-};
-```
+{% set codeContent %}
+import pugPlugin from "@11ty/eleventy-plugin-pug";
 
-### Optional: Set your own Library instance {% addedin "0.3.0" %}
-
-As an escape mechanism for advanced usage, pass in your own instance of the Pug library using the Configuration API.
-
-```js
-module.exports = function(eleventyConfig) {
-  let pug = require("pug");
-  eleventyConfig.setLibrary("pug", pug);
-};
-```
-
+export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(pugPlugin, {
+		debug: true
+	});
+}
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ## Supported Features
 
-| Feature                                              | Syntax                                                          |
-| ---------------------------------------------------- | --------------------------------------------------------------- |
-| ✅ Includes (Absolute Path)                               | `include /includedvar.pug` looks in `_includes/includedvar.pug`. Does not process front matter in the include file. |
-| ✅ Includes (Relative Path) {% addedin "0.2.15" %} | Relative paths use `./` (template’s directory) or `../` (template’s parent directory).<br><br>Example: `{% raw %}{% include ./included.pug %}{% endraw %}` looks for `included.pug` in the template’s current directory. Does not process front matter in the include file. |
-| ✅ Extends (Absolute Path)                                | `extends /layout.pug` looks in `_includes/layout.pug`. Does not process front matter in the include file.           |
-| ✅ Extends (Relative Path) {% addedin "0.2.15" %}  | Relative paths use `./` (template’s directory) or `../` (template’s parent directory).<br><br>Example: `{% raw %}{% extends ./layout.pug %}{% endraw %}` looks for `layout.pug` in the template’s current directory. Does not process front matter in the extends file.           |
+| Feature                                            | Syntax                                                                                                                                                                                                                                                                      |
+| -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ✅ Includes (Absolute Path)                        | `include /includedvar.pug` looks in `_includes/includedvar.pug`. Does not process front matter in the include file.                                                                                                                                                         |
+| ✅ Includes (Relative Path) | Relative paths use `./` (template’s directory) or `../` (template’s parent directory).<br><br>Example: `{% raw %}{% include ./included.pug %}{% endraw %}` looks for `included.pug` in the template’s current directory. Does not process front matter in the include file. |
+| ✅ Extends (Absolute Path)                         | `extends /layout.pug` looks in `_includes/layout.pug`. Does not process front matter in the include file.                                                                                                                                                                   |
+| ✅ Extends (Relative Path) | Relative paths use `./` (template’s directory) or `../` (template’s parent directory).<br><br>Example: `{% raw %}{% extends ./layout.pug %}{% endraw %}` looks for `layout.pug` in the template’s current directory. Does not process front matter in the extends file.     |

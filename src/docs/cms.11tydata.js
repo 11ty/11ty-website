@@ -1,4 +1,4 @@
-const EleventyFetch = require("@11ty/eleventy-fetch");
+import EleventyFetch from "@11ty/eleventy-fetch";
 
 async function getData() {
 	let url = `https://11tybundle.dev/api/cms.json`;
@@ -11,37 +11,29 @@ async function getData() {
 
 	let urls = {};
 	// remove duplicates
-	json = json.filter(entry => {
-		if(!urls[entry.Link]) {
+	json = json.filter((entry) => {
+		if (!urls[entry.Link]) {
 			urls[entry.Link] = true;
 			return true;
 		}
 		return false;
 	});
 
-	return json.sort((a, b) => {
-		if(a.Date > b.Date) {
-			return -1;
-		}
-		if(a.Date < b.Date) {
-			return 1;
-		}
-		return 0;
-	});
+	return json;
 }
 
-module.exports = async function() {
+export default async function () {
 	try {
 		return {
-			bundle: await getData()
-		}
-	} catch(e) {
-		if(process.env.NODE_ENV === "production") {
+			bundle: await getData(),
+		};
+	} catch (e) {
+		if (process.env.NODE_ENV === "production") {
 			// Fail the build in production.
 			return Promise.reject(e);
 		}
 
-		console.log( "Failed getting CMS resources from 11tybundle.dev." );
+		console.log("Failed getting CMS resources from 11tybundle.dev.");
 		return { bundle: [] };
 	}
-};
+}

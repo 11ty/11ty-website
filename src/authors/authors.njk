@@ -1,8 +1,5 @@
 ---
-eleventyNavigation:
-  parent: Community
-  key: Authors
-  order: 2
+headerTitle: Eleventy Authors
 layout: layouts/docs.njk
 ---
 <h1>Eleventy Authors</h1>
@@ -22,9 +19,9 @@ layout: layouts/docs.njk
   </thead>
 	<tbody>
 {%- for author in authors | sortAuthors %}
-{%- set supporter = opencollective.supporters | isSupporter(author.name, githubTwitterMap[author.name], author.opencollective) -%}
+{%- set supporter = opencollective.supporters | isSupporter(author.name, author.opencollective) -%}
 		<tr>
-			<td><a href="/authors/{{ author.name | slug }}/">{% communityavatar author.name %}{{ supporter.name or author.name | friendlyAuthorName | safe }}</a></td>
+			<td><a href="/authors/{{ author.name | slug }}/">{% communityavatar author.name %}{{ supporter.name or author.name | safe }}</a></td>
 			<td>{% if author.sites.length > 1 %}×{{ author.sites.length }} sites{% endif %}</td>
 			<td>{% if supporter %}🎈{% endif %}</td>
 		</tr>

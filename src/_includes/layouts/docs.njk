@@ -1,17 +1,12 @@
 ---
 layout: layouts/main.njk
-title: Eleventy Documentation
-templateClass: elv-docs
 headerClass: elv-header-docs
-layoutClass: elv-layout-toc
 isDocs: true
 headerTag: div
 ---
-{% include "components/docs-toc.njk" %}
-
 {% if eleventyNavigation and eleventyNavigation.parent %}
 <nav class="breadcrumb" aria-labelledby="breadcrumb">
-  <h2 class="sr-only" id="breadcrumb">Breadcrumbs: </h2>
+  <div class="sr-only" id="breadcrumb">Breadcrumbs: </div>
   {{ collections.sidebarNav | eleventyNavigationBreadcrumb(eleventyNavigation.parent, {includeSelf: true}) | eleventyNavigationToHtml({ listClass: 'fl fl-inline', activeListItemClass: 'breadcrumb-active' }) | safe }}
 </nav>
 {% endif %}
@@ -21,7 +16,7 @@ headerTag: div
 
 {%- if not overrideCommunityLinks and (communityLinks or communityLinksKey) %}
 <div class="elv-community" id="community-resources">
-  <h2>Community Resources</h2>
+  <h2>From the Community</h2>
   {%- include "community-contributed.njk" -%}
 </div>
 {%- endif %}
@@ -31,7 +26,7 @@ headerTag: div
 {%- set otherPages = collections.sidebarNav | eleventyNavigation(navKey) -%}
 {% if otherPages.length > 1 %}
 <hr>
-<h3>{% if eleventyNavigation.parent %}Other pages in {% endif %}{{ navKey }}:</h3>
+<h3 data-ha-exclude>{% if eleventyNavigation.parent %}Other pages in {% endif %}{{ navKey }}:</h3>
 {{ otherPages | eleventyNavigationToHtml({ activeKey: eleventyNavigation.key, listClass: 'inlinelist inlinelist-no-nest', listItemClass: 'inlinelist-item', activeListItemClass: 'elv-cat-list-active' }) | safe }}
 {% endif %}
 
@@ -42,7 +37,7 @@ headerTag: div
 <h3>Related Docs</h3>
 <ul>
 {% for related in collections[ "related-" + relatedKey ] %}
-	<li><a href="{{ related.url }}">{{ related.data.relatedTitle }}</a></li>
+	<li><a href="{{ related.url }}">{{ related.data.relatedTitle or related.data.title }}</a></li>
 {%- endfor %}
 {% for url,title in relatedLinks %}
 	<li><a href="{{ url }}">{{ title }}</a></li>

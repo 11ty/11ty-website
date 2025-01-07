@@ -1,0 +1,193 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "htmlbasehtmlblock"} %}
+  <div id="htmlbasehtmlblock-liquid" role="tabpanel">
+
+With path prefix set to `"/pathprefix/"`:
+
+{% codetitle "Liquid", "Syntax" %}
+
+{% raw %}
+
+```liquid
+{{ '<a href="/test/">Link</a>' | transformWithHtmlBase }}
+=> '<a href="/pathprefix/test/">Link</a>'
+
+{{ '<a href="/test/">Link</a>' | transformWithHtmlBase: "http://example.com/" }}
+=> '<a href="http://example.com/pathprefix/test/">Link</a>'
+```
+
+{% endraw %}
+
+Resolving relative URLs (with path prefix still at `"/pathprefix/"`):
+
+{% codetitle "Liquid", "Syntax" %}
+
+{% raw %}
+
+```liquid
+On a page with URL `/my-template/`:
+
+{{ '<a href="test/">Link</a>' | transformWithHtmlBase: "http://example.com/" }}
+=> '<a href="http://example.com/pathprefix/my-template/test/">Link</a>'
+
+Override the page URL:
+
+{{ '<a href="test/">Link</a>' | transformWithHtmlBase: "http://example.com/", "/my-other-template/" }}
+=> '<a href="http://example.com/pathprefix/my-other-template/test/">Link</a>'
+```
+
+{% endraw %}
+
+  </div>
+  <div id="htmlbasehtmlblock-njk" role="tabpanel">
+
+With path prefix set to `"/pathprefix/"`:
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+
+```njk
+{{ '<a href="/test/">Link</a>' | transformWithHtmlBase }}
+=> '<a href="/pathprefix/test/">Link</a>'
+
+{{ '<a href="/test/">Link</a>' | transformWithHtmlBase("http://example.com/") }}
+=> '<a href="http://example.com/pathprefix/test/">Link</a>'
+```
+
+{% endraw %}
+
+Resolving relative URLs (with path prefix still at `"/pathprefix/"`):
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+
+```njk
+On a page with URL `/my-template/`:
+
+{{ '<a href="test/">Link</a>' | transformWithHtmlBase("http://example.com/") }}
+=> '<a href="http://example.com/pathprefix/my-template/test/">Link</a>'
+
+Override the page URL:
+
+{{ '<a href="test/">Link</a>' | transformWithHtmlBase("http://example.com/", "/my-other-template/") }}
+=> '<a href="http://example.com/pathprefix/my-other-template/test/">Link</a>'
+```
+
+{% endraw %}
+
+  </div>
+  <div id="htmlbasehtmlblock-js" role="tabpanel">
+
+With path prefix set to `"/pathprefix/"`:
+
+{% codetitle "11ty.js", "Syntax" %}
+
+{% raw %}
+
+```js
+export default async function () {
+	return `
+${await this.transformWithHtmlBase(`<a href="/test/">Link</a>`)}
+=> '<a href="/pathprefix/test/">Link</a>'
+
+${await this.transformWithHtmlBase(
+	`<a href="/test/">Link</a>`,
+	"http://example.com/"
+)}
+=> '<a href="http://example.com/pathprefix/test/">Link</a>'`;
+};
+```
+
+{% endraw %}
+
+Resolving relative URLs (with path prefix still at `"/pathprefix/"`):
+
+{% codetitle "11ty.js", "Syntax" %}
+
+{% raw %}
+
+```js
+export default async function () {
+	return `
+On a page with URL "/my-template/":
+
+${await this.transformWithHtmlBase(
+	'<a href="test/">Link</a>',
+	"http://example.com/"
+)}
+=> '<a href="http://example.com/pathprefix/my-template/test/">Link</a>'
+
+Override the page URL:
+
+${await this.transformWithHtmlBase(
+	'<a href="test/">Link</a>',
+	"http://example.com/",
+	"/my-other-template/"
+)}
+=> '<a href="http://example.com/pathprefix/my-other-template/test/">Link</a>''`;
+};
+```
+
+{% endraw %}
+
+  </div>
+	<div id="htmlbasehtmlblock-cjs" role="tabpanel">
+
+With path prefix set to `"/pathprefix/"`:
+
+{% codetitle "11ty.cjs", "Syntax" %}
+
+{% raw %}
+
+```js
+module.exports = async function () {
+	return `
+${await this.transformWithHtmlBase(`<a href="/test/">Link</a>`)}
+=> '<a href="/pathprefix/test/">Link</a>'
+
+${await this.transformWithHtmlBase(
+	`<a href="/test/">Link</a>`,
+	"http://example.com/"
+)}
+=> '<a href="http://example.com/pathprefix/test/">Link</a>'`;
+};
+```
+
+{% endraw %}
+
+Resolving relative URLs (with path prefix still at `"/pathprefix/"`):
+
+{% codetitle "11ty.cjs", "Syntax" %}
+
+{% raw %}
+
+```js
+module.exports = async function () {
+	return `
+On a page with URL "/my-template/":
+
+${await this.transformWithHtmlBase(
+	'<a href="test/">Link</a>',
+	"http://example.com/"
+)}
+=> '<a href="http://example.com/pathprefix/my-template/test/">Link</a>'
+
+Override the page URL:
+
+${await this.transformWithHtmlBase(
+	'<a href="test/">Link</a>',
+	"http://example.com/",
+	"/my-other-template/"
+)}
+=> '<a href="http://example.com/pathprefix/my-other-template/test/">Link</a>''`;
+};
+```
+
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>

@@ -1,117 +1,65 @@
 <ul class="logos-list" id="logos">
-  <li class="logos-list-hed subhed">Trusted by</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.nasa.gov/"><abbr title="National Aeronautics and Space Administration">NASA</abbr></li>
-  <li><img webc:is="indieweb-avatar" url="https://home.web.cern.ch/">Cern</li>
-  <li><img webc:is="indieweb-avatar" url="https://tc39.es/">TC39</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.w3.org/">W3C</li>
-  <li><img webc:is="indieweb-avatar" url="https://about.google/">Google</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.netlify.com/">Netlify</li>
-  <li><img webc:is="indieweb-avatar" url="https://web.dev/">web.dev</li>
-  <li><img webc:is="indieweb-avatar" url="https://web.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></li>
-  <li><img webc:is="indieweb-avatar" url="https://www.stanford.edu/"><abbr title="Stanford">Stanford</abbr></li>
-  <li><img webc:is="indieweb-avatar" url="https://v8.dev/">V8</li>
-  <li><img webc:is="indieweb-avatar" url="https://gsap.com/">GSAP</li>
-  <li><img webc:is="indieweb-avatar" url="https://developer.chrome.com/">Chrome Developers</li>
-	<li><img webc:is="indieweb-avatar" url="https://foursquare.com/">Foursquare</li>
-  <li><img webc:is="indieweb-avatar" url="https://css-tricks.com/">CSS Tricks</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.webpagetest.org/">WebPageTest</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.a11yproject.com/">A11Y Project</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.noaa.gov/"><abbr title="National Oceanic and Atmospheric Administration">NOAA</abbr></li>
-  <li><img webc:is="indieweb-avatar" url="https://www.gov.uk/">United Kingdom (gov)</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.numerique.gouv.fr/">France (gov)</li>
-  <li><img webc:is="indieweb-avatar" url="https://stackoverflow.com/">Stack Overflow</li>
-  <li><img webc:is="indieweb-avatar" url="https://lit.dev/" width="120">Lit</li>
-  <li><img webc:is="indieweb-avatar" url="https://glitch.com/">Glitch</li>
-  <li><img webc:is="indieweb-avatar" url="https://stackblitz.com/">Stackblitz</li>
-  <li><img webc:is="indieweb-avatar" url="https://openwebdocs.org/">Open Web Docs</li>
-  <li><img webc:is="indieweb-avatar" url="https://jamstack.org/">jamstack.org</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.greenpeace.org/">Greenpeace</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.csis.org/"><abbr title="Center for Strategic & International Studies">CSIS</abbr></li>
-  <li><img webc:is="indieweb-avatar" url="https://eslint.org/">ESLint</li>
-  <li><img webc:is="indieweb-avatar" url="https://mochajs.org/">Mocha</li>
-  <li><img webc:is="indieweb-avatar" url="https://revealjs.com/">reveal.js</li>
-  <li><img webc:is="indieweb-avatar" url="https://panic.com/">Panic</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.filamentgroup.com/">Filament Group</li>
-  <li><img webc:is="indieweb-avatar" url="https://set.studio/">Set Studio</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.ookla.com/">Ookla</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.khanacademy.org/">Khan Academy</li>
-  <li><img webc:is="indieweb-avatar" url="https://basecamp.com/">Basecamp</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.snowpack.dev/">Snowpack</li>
-  <li><img webc:is="indieweb-avatar" url="https://ffconf.org/">ffconf</li>
-  <li><img webc:is="indieweb-avatar" url="https://2022.uxlondon.com/">UX London</li>
-  <li><img webc:is="indieweb-avatar" url="https://nordhealth.com/">Nordhealth</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.orange.com/">Orange</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.wisc.edu/">Univ. of Wisconsin-Madison</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.ca.gov/">California (gov)</li>
-  <li><img webc:is="indieweb-avatar" url="https://ux.redhat.com">Red Hat</li>
-  <li><img webc:is="indieweb-avatar" url="https://www.pie.design/">Just Eat Takeaway</li>
-  <li class="logos-list-more">…and more</li>
+	<li class="logos-list-hed subhed">Trusted by</li>
+	<li><img webc:is="indieweb-avatar" url="https://www.nasa.gov/"><abbr title="National Aeronautics and Space Administration">NASA</abbr></li>
+	<li><img webc:is="indieweb-avatar" url="https://home.web.cern.ch/">Cern</li>
+	<li><img webc:is="indieweb-avatar" url="https://tc39.es/">TC39</li>
+	<li><img webc:is="indieweb-avatar" url="https://www.w3.org/">W3C</li>
+	<li><img webc:is="indieweb-avatar" url="https://about.google/">Google</li>
+	<li><img webc:is="indieweb-avatar" url="https://www.mozilla.org/">Mozilla</li>
+	<li><img webc:is="indieweb-avatar" url="https://www.jetbrains.com/">JetBrains</li>
+	<li>
+		<html-fetch src="/imports/logo-cloud.html" target="li" replace></html-fetch>
+	</li>
+	<li class="logos-list-more">…and more</li>
 </ul>
 
 <style>
-  .logos-list {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    list-style: none;
-    margin: .5em 0 1em;
-  }
+.logos-list {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	list-style: none;
+	margin: .5em 0 1em;
+	padding: .75em;
+	border: 1px solid #ddd;
+	border-radius: .5em;
+	gap: 1em;
+}
 
-  /* Home page */
-  .elv-default .logos-list {
-    justify-content: center;
-    gap: .75em 1em;
-    font-size: 0.875em; /* 14px /16 */
-    padding: 1em;
-    color: #666;
-  }
-  @media (prefers-color-scheme: dark) {
-    .elv-default .logos-list {
-      color: #adadad;
-    }
-  }
+/* List items */
+.logos-list li {
+	padding: 0;
+	white-space: nowrap;
+}
+.logos-list-more {
+	font-style: italic;
+}
+@media (max-width: 62.4375em) { /* 999px */
+	.logos-list li:nth-child(n+18):not(.logos-list-more) {
+		display: none;
+	}
+}
 
-  /* Docs page */
-  .elv-docs .logos-list {
-    padding: .75em;
-    border: 1px solid #ddd;
-    border-radius: .5em;
-    gap: 1em;
-  }
+/* Header */
+.logos-list-hed {
+	display: none;
+	text-align: center;
+	flex-basis: 100%;
+	margin-bottom: 1em;
+}
+logo-cloud[showtag] .logos-list-hed {
+	display: initial;
+}
 
-  /* List items */
-  .logos-list li {
-    padding: 0;
-    white-space: nowrap;
-  }
-  .logos-list-more {
-    font-style: italic;
-  }
-  @media (max-width: 62.4375em) { /* 999px */
-    .logos-list li:nth-child(n+18):not(.logos-list-more) {
-      display: none;
-    }
-  }
-
-  /* Header */
-  .logos-list-hed {
-    text-align: center;
-    flex-basis: 100%;
-    margin-bottom: 1em;
-  }
-  .elv-docs .logos-list-hed {
-    display: none;
-  }
-
-  .logos-list .avatar {
-    width: 1.6em;
-    height: 1.6em;
-    margin-right: .5em;
-    opacity: .9;
-    object-fit: contain;
-  }
-  .logos-list .avatar-tall {
-    aspect-ratio: 8 / 10;
-    width: auto;
-  }
-  </style>
+.logos-list .avatar {
+	width: 1.6em;
+	height: 1.6em;
+	margin-right: .5em;
+	opacity: .9;
+	object-fit: contain;
+}
+.logos-list .avatar-tall {
+	aspect-ratio: 8 / 10;
+	width: auto;
+}
+</style>

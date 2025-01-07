@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="prism-theme.css">
 <link rel="stylesheet" href="code.css">
-<style @html="robotoMonoGoogleFontsCss"></style>
 <style>
 syntax-highlight > pre {
 	margin-bottom: 0;
