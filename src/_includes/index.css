@@ -280,6 +280,20 @@ table .numeric {
 	font-family: Roboto Mono, Consolas, Monaco, Andale Mono, Ubuntu Mono,
 		monospace;
 }
+.numeric-note:before {
+	content: "*";
+	color: red;
+}
+table .numeric-up:after {
+	content: "↑";
+	color: green;
+}
+.numeric-note:before,
+table .numeric-up:after {
+	margin: 0 .25em;
+	font-weight: bold;
+	font-family: system-ui, sans-serif;
+}
 
 @media (prefers-color-scheme: dark) {
 	table td {
