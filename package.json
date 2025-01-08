@@ -44,7 +44,7 @@
     "@11ty/eleventy": "3.0.1-alpha.1",
     "@11ty/eleventy-activity-feed": "^2.0.0",
     "@11ty/eleventy-fetch": "^5.0.2",
-    "@11ty/eleventy-img": "^6.0.0-beta.4",
+    "@11ty/eleventy-img": "^6.0.0-beta.5",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-rss": "^2.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
