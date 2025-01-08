@@ -54,7 +54,7 @@ module.exports = function({name}) {
 </seven-minute-tabs>
 </is-land>
 
-Filters can be added using the [Configuration API](/docs/config/#using-the-configuration-api) and are available to multiple template engines, simultaneously. They are currently supported in JavaScript {% addedin "0.7.0" %}, Markdown, Nunjucks, Liquid, and WebC.
+Filters can be added using the [Configuration API](/docs/config/) and are available to multiple template engines, simultaneously. They are currently supported in JavaScript {% addedin "0.7.0" %}, Markdown, Nunjucks, Liquid, and WebC.
 
 {% set codeContent %}
 export default function (eleventyConfig) {

@@ -735,7 +735,7 @@ The [Custom Transforms feature](https://github.com/11ty/webc#custom-transforms) 
 
 {% callout "info", "md" %}**Note:** The `webc:type="11ty"` feature is exclusive to the **Eleventy** WebC plugin and is not available in non-Eleventy independent WebC.{% endcallout %}
 
-Use `webc:type="11ty"` with the `11ty:type` attribute to specify a [valid template syntax](/docs/plugins/render/#rendertemplate).
+Use `webc:type="11ty"` with the `11ty:type` attribute to specify a [valid template syntax](/docs/plugins/render/#rendertemplate-paired-shortcode).
 
 {% codetitle "my-page.webc" %}
 
@@ -960,9 +960,9 @@ WebC [Helpers](https://github.com/11ty/webc#helper-functions) are JavaScript fun
 
 #### Eleventy-provided Helpers
 
-{% addedin "@11ty/eleventy-plugin-webc@0.5.0" %}Included with Eleventy WebC, [JavaScript template functions](/docs/languages/javascript/#javascript-template-functions) and [Universal Filters](/docs/filters/#universal-filters) are provided automatically as WebC Helpers.
+{% addedin "@11ty/eleventy-plugin-webc@0.5.0" %}Included with Eleventy WebC, [JavaScript template functions](/docs/languages/javascript/#javascript-template-functions) and [Universal Filters](/docs/filters/) are provided automatically as WebC Helpers.
 
-This includes [`url`, `slugify`, `log`, and others](/docs/filters/#eleventy-provided-universal-filters)!
+This includes [`url`, `slugify`, `log`, and others](/docs/filters/#eleventy-provided-filters)!
 
 ```html
 <!-- Use the  Eleventy provided `url` universal filter -->
@@ -1193,7 +1193,7 @@ The following plugins offer official WebC components for use in your projects:
 - `@11ty/eleventy-img` supplies `<eleventy-image>`
   - {% addedin "Image v3.1.0" %}
   - Example: `<img webc:is="eleventy-image" webc:import="npm:@11ty/eleventy-img">`
-  - Read more at [the Image utility](/docs/plugins/image/#webc).
+  - Read more at [the Image WebC component](../plugins/image-webc.md).
 
 ### CSS and JS (Bundler mode)
 
@@ -1413,7 +1413,7 @@ When duplicates and conflicts occur, WebC will hoist the component code to find 
 
 ### Use with `is-land`
 
-You can also use this out of the box with Eleventy’s [`is-land` component for web component hydration](/docs/plugins/partial-hydration/).
+You can also use this out of the box with Eleventy’s [`is-land` component for web component hydration](/docs/plugins/is-land/).
 
 At the component level, components can declare their own is-land loading conditions.
 

@@ -10,6 +10,6 @@ excludeFromSidebar: true
 - [A big ol’ list of thanks on the Eleventy 1.0 Beta release blog post](/blog/eleventy-v1-beta/#a-big-list-of-thanks)
 - A special thank you to our [Monetary contributors via Open Collective](/docs/supporters/)
 - A huge thank you to anyone that [has helped answer questions on GitHub](https://github.com/11ty/eleventy/issues) or [Discord](/blog/discord/).
-- [How can you contribute?](/docs/how-to-support/)
+- [How can you contribute?](/docs/community/)
 - [Eleventy Mascots](/mascot/)
 - Gift box icon in our navigation is via <a href="https://www.freepik.com/">Freepik</a> from <a href="https://www.flaticon.com/">Flaticon</a>

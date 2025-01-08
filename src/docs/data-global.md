@@ -3,8 +3,6 @@ eleventyNavigation:
   parent: Data Cascade
   key: Global Data Files
   order: 3
-relatedLinks:
-  /docs/config/#default-template-engine-for-global-data-files: Default Template Engine for Global Data Files
 ---
 
 # Global Data Files

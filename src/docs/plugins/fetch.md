@@ -86,7 +86,7 @@ Option to log requested remote URLs to the console.
 
 #### Change the Cache Duration
 
-After this amount of time has passed, we’ll make a new network request to the URL to fetch fresh data.
+After this amount of time has passed, we’ll make a new network request to the URL to fetch fresh data. The default duration is `1d` (1 day).
 
 The `duration` option supports the following shorthand values:
 

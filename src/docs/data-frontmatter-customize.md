@@ -21,7 +21,7 @@ Check out the [full list of available `gray-matter` options](https://www.npmjs.c
 
 ### Example: using TOML for front matter parsing {% addedin "0.9.0" %}
 
-While Eleventy does include support for [JSON, YAML, and JS front matter out of the box](/docs/data-frontmatter/#alternative-front-matter-formats), you may want to add additional formats too.
+While Eleventy does include support for [JSON, YAML, and JS front matter out of the box](./data-frontmatter.md#front-matter-formats), you may want to add additional formats too.
 
 {% include "snippets/frontmatter/toml.njk" %}
 

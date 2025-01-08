@@ -79,4 +79,4 @@ npm install @11ty/eleventy@beta -g
 
 {% include "supporters.njk" %}
 
-Wow, such a big list! **[Do you want to help too?](/docs/how-to-support/)**
+Wow, such a big list! **[Do you want to help too?](../docs/community.md)**

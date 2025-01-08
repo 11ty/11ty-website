@@ -77,4 +77,4 @@ The commands above limit the messages from `debug` to Eleventy specific things w
 
 ## Debug individual variables
 
-{% addedin "0.11.0" %} In addition to using `debug`, you can use the global filter [`log`](/docs/filters/log) to `console.log` anything from inside a template file.
+{% addedin "0.11.0" %} In addition to using `debug`, you can use the global filter [`log`](/docs/filters/log/) to `console.log` anything from inside a template file.

@@ -202,7 +202,7 @@ export default Test;
 
 #### Permalink Function using a Filter
 
-Universal filters, shortcodes, and other JavaScript Template Functions work here and are exposed on `this`. Read more about [Eleventy provided Universal Filters](/docs/filters/#eleventy-provided-universal-filters).
+Universal filters, shortcodes, and other JavaScript Template Functions work here and are exposed on `this`. Read more about [Eleventy provided Universal Filters](/docs/filters/#eleventy-provided-filters).
 
 {% set codeContent %}
 class Test {

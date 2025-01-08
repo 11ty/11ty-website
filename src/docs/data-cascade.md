@@ -7,7 +7,7 @@ communityLinksKey: "data-cascade"
 overrideCommunityLinks: true
 ---
 
-# The Data Cascade
+# Data Cascade
 
 {% tableofcontents %}
 
