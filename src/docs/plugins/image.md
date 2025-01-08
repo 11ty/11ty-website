@@ -59,7 +59,7 @@ export default function (eleventyConfig) {
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
-That’s it! All `<img>` and `<picture>` elements will not be processed for you by Eleventy Image.
+That’s it! All `<img>` and `<picture>` elements will be processed for you by Eleventy Image.
 
 #### Resolving image sources <span id="relative-paths"></span>
 
