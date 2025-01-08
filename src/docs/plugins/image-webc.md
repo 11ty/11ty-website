@@ -4,6 +4,7 @@ eleventyNavigation:
   key: Image WebC
   parent: Image
   excerpt: Use a WebC component for WebC templates.
+excludeFromSidebar: true
 ---
 
 {% tableofcontents %}

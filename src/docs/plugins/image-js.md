@@ -4,6 +4,7 @@ eleventyNavigation:
   key: Image JavaScript API
   parent: Image
   excerpt: Low-level JavaScript API works independent of Eleventy.
+excludeFromSidebar: true
 ---
 
 {% tableofcontents %}

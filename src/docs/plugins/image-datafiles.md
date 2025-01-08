@@ -4,6 +4,7 @@ eleventyNavigation:
   key: Image Data Files
   parent: Image
   excerpt: Use images to populate data in the Data Cascade.
+excludeFromSidebar: true
 ---
 
 {% tableofcontents %}

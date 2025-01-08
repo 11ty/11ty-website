@@ -4,6 +4,7 @@ eleventyNavigation:
   key: Image Shortcodes
   parent: Image
   excerpt: Use universal shortcodes in Nunjucks, Liquid, or 11ty.js templates.
+excludeFromSidebar: true
 ---
 
 {% tableofcontents %}
