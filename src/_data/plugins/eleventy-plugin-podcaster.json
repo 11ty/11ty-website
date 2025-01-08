@@ -1,0 +1,5 @@
+{
+  "npm": "eleventy-plugin-podcaster",
+  "author": "nathanbottomley",
+  "description": "Helps you create a feed and a website for your podcast."
+}
