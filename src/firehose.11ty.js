@@ -1,5 +1,5 @@
 // import { decodeHTML } from "entities";
-import { escapeText } from "entities/lib/escape.js";
+import { escapeText } from "entities/escape";
 import activity from "../config/activity.js";
 
 function getSlugFromTitle(str) {

@@ -1,4 +1,4 @@
-import slugify from "slugify";
+import slugify from "@sindresorhus/slugify";
 import markdownItToc from "markdown-it-table-of-contents";
 import { IdAttributePlugin } from "@11ty/eleventy";
 

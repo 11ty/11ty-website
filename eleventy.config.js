@@ -4,7 +4,6 @@ import memoize from "memoize";
 import { DateTime } from "luxon";
 import HumanReadable from "human-readable-numbers";
 import commaNumber from "comma-number";
-import slugify from "slugify";
 import lodashGet from "lodash/get.js";
 import shortHash from "short-hash";
 import { ImportTransformer } from "esm-import-transformer";
@@ -907,6 +906,8 @@ ${text.trim()}
 
 	// Case insensitive check an object for a key
 	eleventyConfig.addFilter("has", objectHas);
+
+	let slugify = eleventyConfig.getFilter("slugify");
 
 	// Case insensitive check an object for a key
 	eleventyConfig.addShortcode("authorLink", (authors, name) => {
