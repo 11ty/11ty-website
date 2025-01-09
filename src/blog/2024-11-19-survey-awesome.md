@@ -2,7 +2,6 @@
 newstitle: Help Eleventy by filling out Survey Awesome!
 eleventyNavigation:
   parent: Blog
-blogHighlight: true
 external_url: https://survey.awesome.me/?from=11ty
 ---
 In the past we have used [The Eleventy Community Survey](/blog/community-survey/) to help guide and focus our project’s priorities using feedback from the community. This was immensely useful data and helped inform a lot of long-term decision making for the project, providing good insights on various industry trends.
