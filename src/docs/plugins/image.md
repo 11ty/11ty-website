@@ -61,6 +61,10 @@ export default function (eleventyConfig) {
 
 That’s it! All `<img>` and `<picture>` elements will be processed for you by Eleventy Image.
 
+<div class="youtube-related">
+  {%- youtubeEmbed "e0OHgC677ec", "Optimize your Images with Eleventy Image" -%}
+</div>
+
 #### Resolving image sources <span id="relative-paths"></span>
 
 1. Relative image sources (`<img src="./possum.png">`) will be co-located to your output directory with the template they are used in. If the same source image is used in multiple templates, it will be written to two different output locations!
