@@ -49,7 +49,7 @@ filter-container:defined .filter-code--hide {
 	<ol>
 		<li data-filter-code="js,css">Create a <code data-filter-code="css">bundle.css</code><code data-filter-code="js">bundle.js</code> file in your root project folder and add some <span data-filter-code="css">CSS</span><span data-filter-code="js">JavaScript</span> code to this file.</li>
 		<li>
-			Use <a href="/docs/copy/">passthrough file copy</a> to copy the file to the build output folder (you could use a <code>glob</code> here, too):
+			<p>Use <a href="/docs/copy/">passthrough file copy</a> to copy the file to the build output folder (you could use a <code>glob</code> here, too):</p>
 			<template webc:type="11ty" 11ty:type="njk,md">
 			{% include "snippets/assets/addfiles.njk" %}
 			</template>
