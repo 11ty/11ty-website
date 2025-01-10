@@ -44,7 +44,7 @@ let layout = "layouts/docs.njk";
 
 {%- for site in authorStarters %}
 {%- if not site.disabled %}
-- [{% avatarlocalcache "twitter", site.author, site.author %}{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}
+- [{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}
 {%- endif %}
 {%- endfor %}
 {%- endif %}
@@ -55,7 +55,7 @@ let layout = "layouts/docs.njk";
 ### {{ displayName }}’s Plugins:
 
 {%- for plugin in authorPlugins %}
-- [{% avatarlocalcache "twitter", plugin.author, plugin.author %}{% if plugin.deprecated %}~~{% endif %}{{ plugin.npm }}{% if plugin.deprecated %}~~{% endif %}](https://www.npmjs.com/package/{{ plugin.npm }}){% if plugin.description %} {% if plugin.deprecated %}~~{% endif %}{{ plugin.description | safe }}{% if plugin.deprecated %}~~{% endif %}{% endif %} {{ plugin.deprecated }}
+- [{% if plugin.deprecated %}~~{% endif %}{{ plugin.npm }}{% if plugin.deprecated %}~~{% endif %}](https://www.npmjs.com/package/{{ plugin.npm }}){% if plugin.description %} {% if plugin.deprecated %}~~{% endif %}{{ plugin.description | safe }}{% if plugin.deprecated %}~~{% endif %}{% endif %} {{ plugin.deprecated }}
 {%- endfor %}
 {%- endif %}
 

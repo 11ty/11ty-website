@@ -43,7 +43,7 @@ eleventyNavigation:
 
 ## Lists
 
-- [{% avatarlocalcache "twitter", "stackbithq" %}Jamstack Themes](https://jamstackthemes.dev/ssg/eleventy/) A list of starter themes filterable by supported static site generator and CMS.
+- [Jamstack Themes](https://jamstackthemes.dev/ssg/eleventy/) A list of starter themes filterable by supported static site generator and CMS.
 
 ## Source Code Samples
 
