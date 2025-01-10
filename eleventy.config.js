@@ -902,7 +902,6 @@ ${text.trim()}
 		return html.join("");
 	});
 
-	// TODO
 	eleventyConfig.addFilter(
 		"convertCommunityLinkToSiteCard",
 		function ({ url, author, title }) {
