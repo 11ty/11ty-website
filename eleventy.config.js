@@ -36,32 +36,6 @@ const shortcodes = {
 		}
 		return shortcodes.getGitHubAvatarHtml(slug, alt);
 	},
-	avatar(datasource, slug, alt = "") {
-		if (!slug) {
-			return "";
-		}
-
-		slug = cleanName(slug).toLowerCase();
-
-		try {
-			// TODO move away from twitter avatars
-			let mapEntry = Object.assign(
-				{},
-				require(`./avatars/${datasource}/${slug}.json`)
-			);
-			delete mapEntry.slug; // dunno why the slug is saved here ok bye
-
-			return eleventyImage.generateHTML(mapEntry, {
-				alt: `${alt || `${slug}’s ${datasource} avatar`}`,
-				loading: "lazy",
-				decoding: "async",
-				class: "avatar",
-				"eleventy:ignore": ""
-			});
-		} catch (e) {
-			return defaultAvatarHtml;
-		}
-	},
 	link(linkUrl, content) {
 		return (
 			(linkUrl ? `<a href="${linkUrl}">` : "") +
@@ -169,24 +143,26 @@ const shortcodes = {
 			url
 		)}/image/host/" width="66" height="66" alt="Hosting provider icon for ${url}" class="avatar avatar-large" loading="lazy" decoding="async" eleventy:ignore>`;
 	},
-	// WebC migration: indieweb-avatar.webc
-	// size = "large"
-	getIndieAvatarHtml(iconUrl, cls = "") {
-		let imgHtml = "";
+	getAvatarHtmlFromFullUrl(fullUrl, cls = "", attrs = "") {
 		let dims = [150, 150];
 		if (cls === "avatar-tall") {
 			dims = [120, 150];
 		}
-		if (!iconUrl.startsWith("/")) {
-			imgHtml = `<img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(
-				iconUrl
-			)}/" width="${dims[0]}" height="${
-				dims[1]
-			}" alt="IndieWeb Avatar for ${iconUrl}" class="avatar avatar-indieweb${
-				cls ? ` ${cls}` : ""
-			}" loading="lazy" decoding="async" eleventy:ignore>`;
+
+		return `<img src="${fullUrl}" width="${dims[0]}" height="${
+			dims[1]
+		}" alt="IndieWeb Avatar for ${fullUrl}" class="avatar avatar-indieweb${
+			cls ? ` ${cls}` : ""
+		}" loading="lazy" decoding="async"${attrs ? ` ${attrs}` : ""}>`;
+	},
+	// WebC migration: indieweb-avatar.webc
+	// size = "large"
+	getIndieAvatarHtml(iconUrl, cls = "") {
+		if(typeof iconUrl !== "string" || iconUrl.startsWith("/")) {
+			return "";
 		}
-		return imgHtml;
+		let fullUrl = `https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(iconUrl)}/`;
+		return shortcodes.getAvatarHtmlFromFullUrl(fullUrl, cls, "eleventy:ignore");
 	},
 	getGitHubAvatarHtml(username, alt = "") {
 		if(!username) {
@@ -209,7 +185,6 @@ const shortcodes = {
 		if(preferIndiewebAvatarSlugs.includes(supporter.slug) && supporter.website) {
 			return shortcodes.getIndieAvatarHtml(supporter.website);
 		}
-
 		return `<img src="${url}" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async" eleventy:optional>`;
 	},
 };
@@ -416,7 +391,6 @@ export default async function (eleventyConfig) {
 	}));
 
 	eleventyConfig.addShortcode("image", shortcodes.image);
-	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatar);
 	eleventyConfig.addShortcode("communityavatar", shortcodes.communityAvatar);
 	eleventyConfig.addShortcode(
 		"opencollectiveavatar",
@@ -651,14 +625,10 @@ ${text.trim()}
 
 	function testimonialNameHtml(testimonial) {
 		let avatarHtml = "";
-		if (testimonial.avatarUrl) {
+		if (testimonial.avatarSource) {
+			avatarHtml = shortcodes.getAvatarHtmlFromFullUrl(testimonial.avatarSource);
+		} else if (testimonial.avatarUrl) {
 			avatarHtml = shortcodes.getIndieAvatarHtml(testimonial.avatarUrl);
-		} else if (testimonial.twitter) {
-			avatarHtml = shortcodes.avatar(
-				"twitter",
-				testimonial.twitter,
-				`${testimonial.name}’s Twitter Photo`
-			);
 		}
 
 		return avatarHtml + testimonial.name;
@@ -945,7 +915,6 @@ to:
 
 <div class="sites-site-vert">
   <a href="{{ site.url }}" class="elv-externalexempt">
-    {% avatarlocalcache "twitter", site.twitter %}{{ site.name }}
     <div class="sites-screenshot-container">
       {% getScreenshotHtml site.fileSlug, site.url %}
     </div>
@@ -954,7 +923,7 @@ to:
 
 			return {
 				url,
-				twitter: author,
+				// author removed, the great twitter prune of 2025
 				name: title,
 				fileSlug: slugify(url),
 			};
