@@ -84,6 +84,7 @@ You can configure individual `<img>` elements with per-instance overrides:
 	- `<img eleventy:optional="keep">`: leave as-is, which would likely result in an error when a user visits your page.
 	- `<img eleventy:optional="placeholder">`: replace the `src` attribute with a transparent PNG Data URI.
 - `<img eleventy:output>` overrides the output directory. Similar to [`urlPath`](#url-path), absolute paths (e.g. `<img eleventy:output="/mydirectory/">`) are relative to the Eleventy output directory and relative paths are relative to the template’s URL (e.g. `<img eleventy:output="./mydirectory/">`).
+- `<img eleventy:pictureattr:NAME="VALUE">` {% addedin "Image v6.0.0" %} attributes are hoisted as `<picture NAME="VALUE">` (if `<picture>` is in use)
 
 ### More configuration options
 
