@@ -27,7 +27,7 @@ let layout = "layouts/docs.njk";
 - <a href="{{ supporter.profile }}" class="elv-externalexempt supporters-link"><strong>{% if supporter.tier and supporter.isActive %} {% emoji "📅" %} Monthly{% endif %} Eleventy Contributor</strong> on Open Collective</a> 🎈
 {%- else %}
 - <a href="https://opencollective.com/11ty">Not yet <strong>Supporting Eleventy</strong> on Open Collective.</a>
-- <em>Already a supporter but it’s not showing here? Make sure your Twitter account is listed on your Open Collective Profile.</em>
+- <em>Already a supporter but it’s not showing here? Make sure your GitHub account is listed the <em>social links</em> section of your Open Collective Profile.</em>
 {%- endif %}
 
 {%- if author.business_url and supporter | isBusinessPerson %}

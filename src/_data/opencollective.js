@@ -65,7 +65,6 @@ function getUniqueContributors(orders, githubSponsorsAmount) {
 		status: 'ACTIVE',
 		name: 'GitHub Sponsors Aggregate (Estimate)',
 		slug: 'github-sponsors',
-		twitter: null,
 		github: null,
 		image: 'https://images.opencollective.com/github-sponsors/dc0ae97/logo.png',
 		website: 'https://github.com/sponsors/',
@@ -95,7 +94,6 @@ export default async function () {
 			.map((order) => {
 				order.name = order.fromAccount.name;
 				order.slug = order.fromAccount.slug;
-				order.twitter = order.fromAccount.twitterHandle;
 				order.image = order.fromAccount.imageUrl;
 				order.website = order.fromAccount.website;
 				order.profile = `https://opencollective.com/${order.slug}`;
@@ -112,7 +110,6 @@ export default async function () {
 		orders.push({
 			name: "Zach Leatherman",
 			slug: "zach-leatherman",
-			twitter: "zachleat",
 			github: "zachleat",
 			image:
 				"https://images.opencollective.com/zachleat/70606f4/avatar/256.png",
