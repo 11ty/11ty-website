@@ -338,8 +338,12 @@ h5,
 }
 h1,
 .elv-hed {
-	font-size: 2.666666666667em; /* 48px /18 */
 	margin: 0 0 0.5em;
+}
+h1,
+.elv-hed,
+.elv-type1 {
+	font-size: 2.666666666667em; /* 48px /18 */
 }
 main .elv-toc + #skip-content >  heading-anchors > h1:first-child {
 	margin-top: 0.5em;
@@ -359,10 +363,14 @@ main .elv-toc + #skip-content >  heading-anchors > h1:first-child {
 }
 h2,
 .elv-h2 {
-	font-size: 2.222222222222em; /* 40px /18 */
 	border-bottom: 1px solid #ddd;
 	margin: 2em 0 0.25em;
 	letter-spacing: -0.5px;
+}
+h2,
+.elv-h2,
+.elv-type2 {
+	font-size: 2.222222222222em; /* 40px /18 */
 }
 @media (prefers-color-scheme: dark) {
 	h2,
@@ -372,16 +380,26 @@ h2,
 }
 h3,
 .elv-h3 {
-	font-size: 1.666666666667em; /* 30px /18 */
 	margin-bottom: 0.5em;
+}
+h3,
+.elv-h3,
+.elv-type3 {
+	font-size: 1.666666666667em; /* 30px /18 */
 }
 h4 {
-	font-size: 1.444444444444em; /* 26px /18 */
 	margin-bottom: 0.5em;
 }
+h4,
+.elv-type4 {
+	font-size: 1.444444444444em; /* 26px /18 */
+}
 h5 {
-	font-size: 1.277777777778em; /* 23px /18 */
 	margin-bottom: 0.5em;
+}
+h5,
+.elv-type5 {
+	font-size: 1.277777777778em; /* 23px /18 */
 }
 h1 code,
 h2 code,
