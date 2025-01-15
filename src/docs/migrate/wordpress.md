@@ -67,6 +67,10 @@ Eleventy provides a command line tool to import various data sources to projects
 
 - [`11ty/eleventy-import` on GitHub](https://github.com/11ty/eleventy-import)
 
+<div class="youtube-related">
+  {%- youtubeEmbed "WuH5QYCdh6w", "Start Your Escape from WordPress Using 11ty (in 3 minutes!)" -%}
+</div>
+
 This importer accepts a number of different types of import sources—in this example we’ll use a WordPress blog home page URL. This will convert *all* of the posts (via the [WordPress REST API](https://developer.wordpress.org/rest-api/)) from that blog to static content files in your local project.
 
 ```sh
@@ -84,6 +88,7 @@ The importer will:
 
 Try it out with `--dryrun` first to be safe!
 
+
 ## Alternatively, use a WordPress Export File <span id="using-a-wordpress-export-file"></span>
 
 If you would like to permanently escape the WordPress ecosystem, you can do a [one-time export of your content](https://wordpress.com/support/export/) via the Admin panel of your WordPress site. At time of writing this feature exists in the WordPress sidebar in **Tools** → **Export** → **Export content** (section) → **Export all** (button).
@@ -100,7 +105,7 @@ Now you can place these markdown files in your Eleventy input directory and we�
 * [`jmhobbs/wp-to-11ty`](https://github.com/jmhobbs/wp-to-11ty)
 * [`Swizec/wordpress-to-markdown`](https://github.com/Swizec/wordpress-to-markdown)
 
-## Community Resources
+## Resources
 
 _Resources via <strong><a href="https://11tybundle.dev/categories/migrating-to-eleventy/">11tybundle.dev (Migrating to Eleventy)</a></strong> curated by {% indieweblink "Bob Monsour", "https://www.bobmonsour.com/" %}._
 

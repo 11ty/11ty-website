@@ -19,3 +19,9 @@ eleventyNavigation:
 	<li><a href="{{ post.url }}">{% if post.data.iconUrl %}{% indieavatar post.data.iconUrl %}{% endif %}{{ post.data.title }}</a></li>
 {%- endfor %}
 </ul>
+
+## Related
+
+<div class="youtube-related">
+  {%- youtubeEmbed "WuH5QYCdh6w", "Start Your Escape from WordPress Using 11ty (in 3 minutes!)" -%}
+</div>

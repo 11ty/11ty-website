@@ -115,6 +115,14 @@ Digging deeper, there are two main types of Headless CMS options:
 
 _The list above is not meant to be exhaustive._
 
+## Resources
+
+- [Migrating from WordPress to Eleventy](/docs/migrate/wordpress/) — or, you can keep using WordPress as a headless CMS, too!
+
+<div class="youtube-related">
+  {%- youtubeEmbed "WuH5QYCdh6w", "Start Your Escape from WordPress Using 11ty (in 3 minutes!)" -%}
+</div>
+
 ### From the Community
 
 <ul class="list-bare">
