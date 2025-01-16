@@ -7,7 +7,7 @@ export default async function () {
 
 	// feed.importer.setVerbose(true);
 
-	feed.setCacheDuration("1d"); // note that cache is persisted on CI server
+	feed.setCacheDuration("12h"); // note that cache is persisted on CI server
 
 	// The Eleventy Activity Feed
 	feed.addSource("youtubeUser", "YouTube", "UCskGTioqrMBcw8pd14_334A"); // Eleventy
@@ -27,7 +27,7 @@ export default async function () {
 			`https://api.github.com/orgs/11ty/repos?per_page=${PER_PAGE}`,
 			{
 				type: "json",
-				duration: "1d",
+				duration: "12h",
 				directory: ".cache/eleventy-fetch/",
 				fetchOptions: {
 					headers: {
