@@ -258,7 +258,7 @@ import Fetch from "@11ty/eleventy-fetch";
 await Fetch("https://…", {
 	filenameFormat: function(cacheKey, hash) {
 		// do not include the file extension
-		return `custom-name-${key}-${hash}`
+		return `custom-name-${cacheKey}-${hash}`
 	}
 });
 {% endset %}
