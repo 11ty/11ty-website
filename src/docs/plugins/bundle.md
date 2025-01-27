@@ -43,15 +43,15 @@ export default function(eleventyConfig) {
 {% set codeContent %}
 export default function(eleventyConfig) {
 	eleventyConfig.addBundle("css", {
-		// Folder (relative to output directory) files will write to
-		toFileDirectory: "bundle",
-
 		// File extension used for bundle file output, defaults to bundle name
 		outputFileExtension: "css",
 
 		// Name of shortcode for use in templates, defaults to bundle name
 		shortcodeName: "css",
 		// shortcodeName: false, // disable this feature.
+
+		// Optional subfolder (relative to output directory) files will write to
+		toFileDirectory: "",
 
 		// Modify bundle content
 		transforms: [],
