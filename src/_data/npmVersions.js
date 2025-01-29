@@ -15,7 +15,7 @@ async function getLatestVersions() {
 
 export default async function () {
 	try {
-		return await getLatestVersions();
+		return getLatestVersions();
 	} catch (e) {
 		if (process.env.NODE_ENV === "production") {
 			// Fail the build in production.

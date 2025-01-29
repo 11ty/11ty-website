@@ -35,5 +35,8 @@ syntax-highlight > pre {
 </style>
 <div webc:if="hed" class="syntax-title"><b @text="hedType || 'Filename'"></b><span @text="hed"></span></div>
 <script webc:type="js">
+if(!language) {
+	throw new Error("Missing `language` attribute on <syntax-highlight>.");
+}
 this.helpers.highlight(language, this.slots.text.default.trim()); // TODO? line highlighting
 </script>
