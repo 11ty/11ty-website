@@ -444,7 +444,6 @@ ${text.trim()}
 	eleventyConfig.addPassthroughCopy({
 		"src/_includes/components/throbber.js": "js/throbber.js",
 		"src/_includes/components/throbber.css": "css/throbber.css",
-		"src/_includes/components/intl-number.js": "js/intl-number.js",
 		"node_modules/@zachleat/heading-anchors/heading-anchors.js": "js/heading-anchors.js",
 	});
 

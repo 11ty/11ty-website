@@ -8,7 +8,7 @@ ogimageOverride: /blog/fa-2.png
 ---
 <img src="./fa-2.png" alt="Font Awesome + 11ty logos">
 
-Today—I’m delighted to announce that 11ty is joining the excellent team at [{% indieavatar "https://fontawesome.com/", "avatar-flush" %}_Font Awesome_](https://fontawesome.com/).
+Today—I’m delighted to announce that 11ty is joining the excellent team at [<i class="fa-brands fa-font-awesome"></i>_Font Awesome_](https://fontawesome.com/).
 
 _Read more on [Blog Awesome: Eleventy joins Font Awesome](https://blog.fontawesome.com/eleventy-joins-font-awesome/)._
 

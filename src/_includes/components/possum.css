@@ -3,7 +3,7 @@
 }
 .elv-possum {
 	position: absolute;
-	right: 0.5rem;
+	right: 0;
 	top: 0.5rem;
 	transition: 0.3s opacity ease-out;
 }
