@@ -25,7 +25,7 @@ Follow David on his socials:
 
 - [Twitter @reverentgeek](https://twitter.com/reverentgeek)
 - [Mastodon @reverentgeek@reverentgeek.com](https://techhub.social/@reverentgeek)
-- [BlueSky @reverentgeek.com](https://staging.bsky.app/profile/reverentgeek.com)
+- [BlueSky @reverentgeek.com](https://bsky.app/profile/reverentgeek.com)
 - [@reverentgeek on Threads](https://www.threads.net/@reverentgeek)
 
 ## Eleventy Mascot Series

@@ -19,9 +19,6 @@ let eleventyComputed = {
 			if(ogimageOverride) {
 				return new URL(ogimageOverride, process.env.DEPLOY_PRIME_URL || domain).toString();
 			}
-			if(process.env.NETLIFY && process.env.CONTEXT !== "production") {
-				return "";
-			}
 			return `https://v1.screenshot.11ty.dev/${encodeURIComponent(domain + page.url + "?cache=1")}/opengraph/`;
 		},
 		imgalt: function({ domain, page }) {
@@ -137,6 +134,7 @@ let eleventyComputed = {
 		{{ content | safe }}
 
 		<!-- Built on {{ config.now }} by Eleventy -->
+		{% getBundle "fontawesome" %}
 {%- if useWebCBundle %}
 		<script type="module" src="{% getBundleFileUrl 'js', 'async' %}"></script>
 {%- endif %}

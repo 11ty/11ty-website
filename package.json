@@ -41,14 +41,14 @@
     ]
   },
   "devDependencies": {
-    "@11ty/eleventy": "3.0.1-alpha.3",
+    "@11ty/eleventy": "3.0.1-alpha.4",
     "@11ty/eleventy-activity-feed": "^2.0.0",
     "@11ty/eleventy-fetch": "^5.0.2",
     "@11ty/eleventy-img": "^6.0.0",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-rss": "^2.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@11ty/eleventy-plugin-webc": "^0.11.2",
+    "@11ty/eleventy-plugin-webc": "^0.12.0-beta.3",
     "@11ty/webc": "0.11.3",
     "@tweetback/canonical": "^2.0.46",
     "clean-css": "^5.3.3",
@@ -71,6 +71,7 @@
     "terser": "^5.37.0"
   },
   "dependencies": {
+    "@11ty/font-awesome": "^1.0.0-beta.6",
     "@11ty/is-land": "^4.0.0",
     "@11ty/logo": "^2.0.6",
     "@zachleat/details-utils": "^2.0.2",

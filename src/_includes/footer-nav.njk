@@ -5,11 +5,11 @@
 	<li><a href="https://zachleat.com" class="elv-externalexempt">{% communityavatar "zachleat" %}</a></li>
 </ul>
 <ul class="list-bare mb-2 fl fl-inline fl-nowrap fl-separator-h">
-	<li><a href="/docs/credits/" class="elv-nav-light">Credits</a></li>
+	<li><a href="/docs/credits/">Credits</a></li>
 	<li><a href="/firehose/">Firehose</a></li>
-	<li><a href="/styleguide/" class="elv-nav-light">Style Guide</a></li>
+	<li><a href="/styleguide/">Style Guide</a></li>
 {% if github and github.stargazers %}
-	<li><a href="https://github.com/11ty/eleventy/" class="elv-externalexempt elv-nav-light" title="{{ github.stargazers }}">{{ github.stargazers | humanReadableNum }} Stars</a></li>
+	<li><a href="https://github.com/11ty/eleventy/" class="elv-externalexempt" title="{{ github.stargazers }}">{{ github.stargazers | humanReadableNum }} Stars</a></li>
 {% endif %}
 {% if npm and npm.downloads %}
 	<li>
@@ -17,7 +17,7 @@
 			<template data-island="once">
 				<script src="/js/intl-number.js"></script>
 			</template>
-			<a href="https://www.npmjs.com/package/@11ty/eleventy" class="elv-externalexempt elv-nav-light">
+			<a href="https://www.npmjs.com/package/@11ty/eleventy" class="elv-externalexempt">
 				<intl-number>{{ npm.downloads | commaNumber }}</intl-number>
 				Downloads
 			</a>
@@ -25,6 +25,6 @@
 	</li>
 {% endif %}
 {% if opencollective and opencollective.backers %}
-	<li><a href="/docs/supporters/" class="elv-externalexempt elv-nav-light">{{ opencollective.backers | humanReadableNum }} Backers</a></li>
+	<li><a href="/docs/supporters/" class="elv-externalexempt">{{ opencollective.backers | humanReadableNum }} Backers</a></li>
 {% endif %}
 </ul>

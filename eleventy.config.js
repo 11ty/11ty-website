@@ -13,6 +13,7 @@ import navigationPlugin from "@11ty/eleventy-navigation";
 import eleventyImage, { eleventyImagePlugin, eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import eleventyWebcPlugin from "@11ty/eleventy-plugin-webc";
 import { RenderPlugin, InputPathToUrlTransformPlugin } from "@11ty/eleventy";
+import fontAwesomePlugin from "@11ty/font-awesome";
 
 import { addedIn, coerceVersion } from "./config/addedin.js";
 import monthDiffPlugin from "./config/monthDiff.js";
@@ -21,9 +22,6 @@ import cleanName from "./config/cleanAuthorName.js";
 import objectHas from "./config/object-has.js";
 import markdownPlugin from "./config/markdownPlugin.js";
 import feedPlugin from "./config/feedPlugin.js";
-
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
 
 let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" decoding="async" class="avatar" width="200" height="200">`;
 const shortcodes = {
@@ -249,6 +247,12 @@ export default async function (eleventyConfig) {
 				},
 			});
 		},
+	});
+
+	eleventyConfig.addPlugin(fontAwesomePlugin, {
+		defaultAttributes: {
+			class: "fa11ty-icon"
+		}
 	});
 
 	// for WebC
