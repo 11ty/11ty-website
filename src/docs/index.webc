@@ -16,7 +16,7 @@ overrideCommunityLinks: true
 
 <p>Eleventy <eleventy-version></eleventy-version> requires a <a href="javascript-runtime.webc">JavaScript runtime</a>, usually <strong><a href="https://nodejs.org/">Node.js</a></strong> — <strong>version <node-minimum></node-minimum></strong> or higher.</p>
 
-<p>You can check whether or not you have Node installed by running <code>node --version</code> in a terminal application. (<a href="/docs/terminal-window/"><em>Well, wait—what is a Terminal?</em></a>) If the command is not found or it reports a number lower than <node-minimum></node-minimum>, you will need to <a href="https://nodejs.org/en/download/">download and install Node.js</a> before moving on to the next step. We encourage folks to use <a href="javascript-runtime.webc#odd-versions-of-node-js">even numbered releases</a> of Node.js.</p>
+<p>You can check whether or not you have Node.js installed by running <code>node --version</code> in a terminal application. (<a href="/docs/terminal-window/"><em>Well, wait—what is a Terminal?</em></a>) If the command is not found or it reports a number lower than <node-minimum></node-minimum>, you will need to <a href="https://nodejs.org/en/download/">download and install Node.js</a> before moving on to the next step. We encourage folks to use <a href="javascript-runtime.webc#odd-versions-of-node-js">even numbered releases</a> of Node.js.</p>
 
 <p>Prefer to watch videos instead? Check out <a href="https://www.youtube.com/watch?v=kzf9A9tkkl4"><strong>6 minutes to Build a Blog from Scratch</strong></a>.</p>
 
