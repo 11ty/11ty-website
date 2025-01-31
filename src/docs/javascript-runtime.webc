@@ -32,7 +32,7 @@ const excludeFromSidebar = true;
 
 <p>You can check whether or not you have Deno installed by running <code>deno --version</code> in a terminal application. (<a href="/docs/terminal-window/"><em>Well, wait—what is a Terminal?</em></a>)</p>
 
-<p>Rather than using <code>npx</code>, you’ll run Eleventy on Deno like this:</p>
+<p>You’ll run Eleventy on Deno using a command like one of these:</p>
 
 <syntax-highlight language="shell">
 deno --allow-all npm:@11ty/eleventy
