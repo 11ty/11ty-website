@@ -10,9 +10,8 @@ You can also browse the latest releases [on npm](https://www.npmjs.com/package/@
 ## Major Branches
 
 <ul>
-  <li class="inlinelist-item"><a href="https://www.11ty.dev/docs/"><code>www.11ty.dev</code></a> (Latest)</li>
-{# <li class="inlinelist-item"><a href="https://v3.11ty.dev/docs/"><code>v3.11ty.dev</code></a> (Beta)</li>
-#}	<li class="inlinelist-item"><a href="https://v2.11ty.dev/docs/"><code>v2.11ty.dev</code></a> (Stable)</li>
+	<li class="inlinelist-item"><a href="https://www.11ty.dev/docs/"><code>www.11ty.dev</code></a> for <code>v3</code> (Latest, stable)</li>
+	<li class="inlinelist-item"><a href="https://v2.11ty.dev/docs/"><code>v2.11ty.dev</code></a></li>
 	<li class="inlinelist-item"><a href="https://v1.11ty.dev/docs/"><code>v1.11ty.dev</code></a></li>
 	<li class="inlinelist-item"><a href="https://v0.11ty.dev/docs/"><code>v0.11ty.dev</code></a></li>
 </ul>

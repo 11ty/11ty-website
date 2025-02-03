@@ -27,4 +27,4 @@ Eleventy is made possible by financial contributions from these lovely people:
   <div><a href="https://opencollective.com/11ty"><img src="/img/default-avatar.png" alt="Default Avatar Image" loading="lazy" class="avatar"><strong>and you?</strong> {% emoji "🎁" %}{% emoji "🎁" %}{% emoji "🎁" %}</a></div>
 </div>
 
-There are <a href="/docs/how-to-support/"><strong>other ways to support Eleventy</strong> too</a>!
+There are <a href="/docs/community/"><strong>other ways to support Eleventy</strong> too</a>!

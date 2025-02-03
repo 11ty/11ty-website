@@ -1,0 +1,50 @@
+{%- set tabid = "imageintrohtml" %}
+<div class="codetitle">my-node-script.js</div>
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
+  <div id="{{ tabid }}-jsesm" role="tabpanel">
+
+```js
+import Image from "@11ty/eleventy-img";
+
+let src = "https://images.unsplash.com/photo-1608178398319-48f814d0750c";
+let html = await Image(src, {
+	widths: [300],
+	returnType: "html", // Added in v6.0
+	htmlOptions: {
+		imgAttributes: {
+			alt: "", // required
+		}
+	}
+});
+
+console.log(html);
+```
+
+  </div>
+  <div id="{{ tabid }}-jscjs" role="tabpanel">
+
+```js
+const Image = require("@11ty/eleventy-img");
+
+// ESM is required for top level async/await.
+(async () => {
+	let src = "https://images.unsplash.com/photo-1608178398319-48f814d0750c";
+	let html = await Image(src, {
+		widths: [300],
+		returnType: "html", // Added in v6.0
+		htmlOptions: {
+			imgAttributes: {
+				alt: "", // required
+			}
+		}
+	});
+
+	console.log(html);
+})();
+```
+
+  </div>
+</seven-minute-tabs>
+</is-land>

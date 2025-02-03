@@ -1,10 +1,12 @@
-import { escapeText } from "entities/lib/escape.js";
+// import { decodeHTML } from "entities";
+import { escapeText } from "entities/escape";
 import activity from "../config/activity.js";
 
 function getSlugFromTitle(str) {
 	if (str.startsWith("GitHub Releases [")) {
 		return "github";
 	}
+
 	if (str.includes(": ")) {
 		return str.split(": ")[0].replace(/\s/g, "-").toLowerCase();
 	}
@@ -62,6 +64,10 @@ export async function render({ entries }) {
 				Mastodon
 			</label>
 			<label>
+				<input type="checkbox" value="bluesky" data-filter-key="type">
+				Bluesky
+			</label>
+			<label>
 				<input type="checkbox" value="youtube" data-filter-key="type" checked>
 				YouTube
 			</label>
@@ -80,12 +86,13 @@ export async function render({ entries }) {
 		</form>
 ${entries
 	.map((entry) => {
-		let content =
-			entry.type === "tweet" || entry.title.startsWith("Mastodon: ")
-				? entry.content || ""
-				: "";
+		// Only show content on Mastodon
+		let content = entry.sourceLabel === "Mastodon" || entry.sourceLabel === "Bluesky"
+			? entry.content || ""
+			: "";
+
 		if (
-			entry.title.startsWith("YouTube") &&
+			entry.sourceLabel.startsWith("YouTube") &&
 			entry.url.startsWith("https://www.youtube.com/watch?v=")
 		) {
 			// TODO support startTime in URL
@@ -94,8 +101,9 @@ ${entries
 			let startTime = 0;
 			content = this.youtubeEmbed(slug, entry.title, startTime);
 		}
+
 		return `<div data-filter-type="${getSlugFromTitle(
-			entry.title
+			`${entry.sourceLabel}: ${entry.title}`
 		)}">${this.callout(
 			content,
 			"box",

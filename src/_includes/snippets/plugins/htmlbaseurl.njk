@@ -1,0 +1,129 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "htmlbase"} %}
+  <div id="htmlbase-liquid" role="tabpanel">
+
+With path prefix set to `"/pathprefix/"`:
+
+{% codetitle "Liquid", "Syntax" %}
+
+{% raw %}
+
+```liquid
+{{ "/test/" | htmlBaseUrl }}
+=> "/pathprefix/test/"
+
+Relative paths are ignored:
+
+{{ "test/" | htmlBaseUrl }}
+=> "test/"
+
+{{ "../test/" | htmlBaseUrl }}
+=> "../test/"
+
+Absolute URLs are ignored:
+
+{{ "http://example.com/" | htmlBaseUrl }}
+=> "http://example.com/"
+```
+
+{% endraw %}
+
+  </div>
+  <div id="htmlbase-njk" role="tabpanel">
+
+With path prefix set to `"/pathprefix/"`:
+
+{% codetitle "Nunjucks", "Syntax" %}
+
+{% raw %}
+
+```njk
+{{ "/test/" | htmlBaseUrl }}
+=> "/pathprefix/test/"
+
+Relative paths are ignored:
+
+{{ "test/" | htmlBaseUrl }}
+=> "test/"
+
+{{ "../test/" | htmlBaseUrl }}
+=> "../test/"
+
+Absolute URLs are ignored:
+
+{{ "http://example.com/" | htmlBaseUrl }}
+=> "http://example.com/"
+```
+
+{% endraw %}
+
+  </div>
+  <div id="htmlbase-js" role="tabpanel">
+
+With path prefix set to `"/pathprefix/"`:
+
+{% codetitle "11ty.js", "Syntax" %}
+
+{% raw %}
+
+```js
+export default function () {
+	return `
+${this.htmlBaseUrl("/test/")}
+=> "/pathprefix/test/"
+
+Relative paths are ignored:
+
+${this.htmlBaseUrl("test/")}
+=> "test/"
+
+${this.htmlBaseUrl("../test/")}
+=> "../test/"
+
+Absolute URLs are ignored:
+
+${this.htmlBaseUrl("http://example.com/")}
+=> "http://example.com/"
+`;
+};
+```
+
+{% endraw %}
+
+  </div>
+	<div id="htmlbase-cjs" role="tabpanel">
+
+With path prefix set to `"/pathprefix/"`:
+
+{% codetitle "11ty.js", "Syntax" %}
+
+{% raw %}
+
+```js
+module.exports = function () {
+	return `
+${this.htmlBaseUrl("/test/")}
+=> "/pathprefix/test/"
+
+Relative paths are ignored:
+
+${this.htmlBaseUrl("test/")}
+=> "test/"
+
+${this.htmlBaseUrl("../test/")}
+=> "../test/"
+
+Absolute URLs are ignored:
+
+${this.htmlBaseUrl("http://example.com/")}
+=> "http://example.com/"
+`;
+};
+```
+
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>

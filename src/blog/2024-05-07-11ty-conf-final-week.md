@@ -2,7 +2,6 @@
 newstitle: "11ty Conference is this week!"
 eleventyNavigation:
   parent: Blog
-homePageHighlight: true
 ---
 [11ty’s International Symposium on Making Web Sites Real Good](https://conf.11ty.dev/) is a mere two days away! [Not registered yet? You can still get in!](https://conf.11ty.dev/#register)
 

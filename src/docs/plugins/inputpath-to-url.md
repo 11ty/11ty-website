@@ -24,11 +24,9 @@ You can link to `inputPath` in any `a[href]`, `video[src]`, `audio[src]`, `sourc
 This uses an [Eleventy Transform](/docs/config/#transforms) to modify the output of all template syntaxes that output an `.html` file.
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "inputpathtourl", additions: "html,md,hbs"} %}
+<seven-minute-tabs persist sync class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "inputpathtourl", additions: "html,md"} %}
   <div id="inputpathtourl-html" role="tabpanel">
-
-{% codetitle "HTML", "Syntax" %}
 
 ```html
 <a href="my-template.md">Home</a>
@@ -37,8 +35,6 @@ This uses an [Eleventy Transform](/docs/config/#transforms) to modify the output
   </div>
   <div id="inputpathtourl-md" role="tabpanel">
 
-{% codetitle "Markdown", "Syntax" %}
-
 ```md
 [Home](my-template.md)
 ```
@@ -46,20 +42,14 @@ This uses an [Eleventy Transform](/docs/config/#transforms) to modify the output
   </div>
   <div id="inputpathtourl-liquid" role="tabpanel">
 
-{% codetitle "Liquid", "Syntax" %}
-
 {% raw %}
-
 ```liquid
 <a href="my-template.md">Home</a>
 ```
-
 {% endraw %}
 
   </div>
   <div id="inputpathtourl-njk" role="tabpanel">
-
-{% codetitle "Nunjucks", "Syntax" %}
 
 {% raw %}
 
@@ -72,41 +62,23 @@ This uses an [Eleventy Transform](/docs/config/#transforms) to modify the output
   </div>
   <div id="inputpathtourl-js" role="tabpanel">
 
-{% codetitle "JavaScript (CommonJS)", "Syntax" %}
-
 {% raw %}
-
-```js
-module.exports = function (data) {
-	return `<a href="my-template.md">Home</a>`;
-};
-```
-
-{% endraw %}
-
-{% codetitle "JavaScript (ESM)", "Syntax" %}
-
-{% raw %}
-
 ```js
 export default function (data) {
 	return `<a href="my-template.md">Home</a>`;
-}
+};
 ```
-
 {% endraw %}
 
   </div>
-  <div id="inputpathtourl-hbs" role="tabpanel">
-
-{% codetitle "Handlebars", "Syntax" %}
+  <div id="inputpathtourl-cjs" role="tabpanel">
 
 {% raw %}
-
-```hbs
-<a href="my-template.md">Home</a>
+```js
+module.exports = function (data) {
+  return `<a href="my-template.md">Home</a>`;
+};
 ```
-
 {% endraw %}
 
   </div>
@@ -119,7 +91,10 @@ The above all render as the following in your output:
 <a href="/my-template/">Home</a>
 ```
 
-- The paths used here should be [relative to the input directory](/docs/config/#input-directory) though they _can_ be relative to the project root (the former is simpler and more robust).
+- The paths used here can be relative to:
+  - [the input directory](/docs/config/#input-directory)
+  - the current template path {% addedin "3.0.0-alpha.19" %}
+  - to the project root (you’ll regret this if your input directory ever changes 😅)
 - As this transform is implicit it _does not_ error when an inputPath match is not found—it only returns the original URL string.
 - When pointing to a [**Pagination template**](/docs/pagination/), the first URL in the pagination set is returned.
 
@@ -129,80 +104,15 @@ The above all render as the following in your output:
 
 Note that the [`inputPathToUrl` filter](/docs/filters/inputpath-to-url/) is available by default and does not require use of `addPlugin`.
 
-Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
+Open up your Eleventy config file (probably `eleventy.config.js`) and use `addPlugin`:
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs><!-- persist someday but not yet -->
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "configfile", only: "jsesm,jscjs" } %}
-  <div id="configfile-jsesm" role="tabpanel">
-
-{% codetitle ".eleventy.js (ESM)" %}
-
-```js
-import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
-
-export default function (eleventyConfig) {
-	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
-}
-```
-
-_You’re only allowed one `export default` in your configuration file, so make sure you only copy the `import` and the `addPlugin` lines above!_
+{% include "snippets/plugins/inputpath.njk" %}
 
 <details class="details-expand-bg">
 <summary>Expand for full options list</summary>
 
-{% codetitle ".eleventy.js (ESM)" %}
+{% include "snippets/plugins/inputpath-options.njk" %}
 
-```js
-import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
-
-export default function (eleventyConfig) {
-	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin, {
-		// Comma separated list of outputPath file extensions to apply the transform
-		extensions: "html",
-	});
-}
-```
-
-- Read more about [Transform outputPaths](/docs/config/#transforms).
+- Read more about [Transform outputPaths](/docs/transforms/).
 
 </details>
-
-  </div>
-  <div id="configfile-jscjs" role="tabpanel">
-
-{% codetitle ".eleventy.js (CommonJS)" %}
-
-```js
-module.exports = async function (eleventyConfig) {
-	const { InputPathToUrlTransformPlugin } = await import("@11ty/eleventy");
-
-	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
-};
-```
-
-_You’re only allowed one `module.exports` in your configuration file, so make sure you only copy the `import` and the `addPlugin` lines above!_
-
-<details class="details-expand-bg">
-<summary>Expand for full options list</summary>
-
-{% codetitle ".eleventy.js (CommonJS)" %}
-
-```js
-module.exports = async function (eleventyConfig) {
-	const { InputPathToUrlTransformPlugin } = await import("@11ty/eleventy");
-
-	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin, {
-		// Comma separated list of outputPath file extensions to apply the transform
-		extensions: "html",
-	});
-};
-```
-
-- Read more about [Transform outputPaths](/docs/config/#transforms).
-
-</details>
-
-  </div>
-</seven-minute-tabs>
-</is-land>

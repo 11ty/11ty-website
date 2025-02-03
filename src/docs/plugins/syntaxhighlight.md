@@ -22,29 +22,26 @@ Available on [npm](https://www.npmjs.com/package/@11ty/eleventy-plugin-syntaxhig
 npm install @11ty/eleventy-plugin-syntaxhighlight
 ```
 
-Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
+Open up your Eleventy config file (probably `eleventy.config.js`) and use `addPlugin`:
 
-{% codetitle ".eleventy.js" %}
+{% set codeContent %}
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 
-```js
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(syntaxHighlight);
 };
-```
-
-{% callout "info", "md" %}You’re only allowed one `module.exports` in your configuration file, so make sure you only copy the `require` and the `addPlugin` lines above!{% endcallout %}
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 Optionally pass in an options object as the second argument to `addPlugin` to further customize this plugin pack.
 
 <details>
   <summary>Expand to see Advanced Options</summary>
 
-```js
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+{% set codeContent %}
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight, {
 
     // Line separator for line breaks
@@ -58,7 +55,7 @@ module.exports = function(eleventyConfig) {
 
     // init callback lets you customize Prism
     init: function({ Prism }) {
-      Prism.languages.myCustomLanguage = /* */;
+      Prism.languages.myCustomLanguage = { /* … */ };
     },
 
     // Added in 3.1.1, add HTML attributes to the <pre> or <code> tags
@@ -76,7 +73,8 @@ module.exports = function(eleventyConfig) {
     errorOnInvalidLanguage: false,
   });
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 </details>
 
@@ -110,150 +108,7 @@ This plugin provides the following syntax highlighters using PrismJS, all of whi
 
 - [Review the list of supported PrismJS languages](http://prismjs.com/#languages-list)
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlight", additions: "md,webc", subtractions: "hbs"} %}
-  <div id="highlight-md" role="tabpanel">
-
-{% codetitle "Markdown", "Syntax" %}
-
-````markdown
-```js
-function myFunction() {
-	return true;
-}
-```
-````
-
-    Optionally specify a language after the start of the markdown fenced code block.
-
-  </div>
-  <div id="highlight-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
-
-{% raw %}
-
-```liquid
-{% highlight js %}
-function myFunction() {
-  return true;
-}
-{% endhighlight %}
-```
-
-{% endraw %}
-
-  </div>
-  <div id="highlight-njk" role="tabpanel">
-
-{% codetitle "Nunjucks", "Syntax" %}
-
-{% raw %}
-
-```jinja2
-{% highlight "js" %}
-function myFunction() {
-  return true;
-}
-{% endhighlight %}
-```
-
-{% endraw %}
-
-  </div>
-  <div id="highlight-js" role="tabpanel">
-
-{% codetitle "11ty.js", "Syntax" %}
-
-{% raw %}
-
-```js
-module.exports = function (data) {
-	let code = `
-function myFunction() {
-  return true;
-}`;
-
-	return this.highlight("js", code);
-};
-```
-
-{% endraw %}
-
-The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %}.
-
-  </div>
-  <div id="highlight-webc" role="tabpanel">
-
-{% codetitle "webc", "Syntax" %}
-
-{% raw %}
-
-```html
-<!-- Requires WebC v0.6.2+ -->
-<!-- Requires Syntax Highlighter v4.2.0+ -->
-
-<syntax-highlight
-	language="js"
-	webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
->
-	function myFunction() { return true; }
-</syntax-highlight>
-```
-
-{% endraw %}
-
-<details>
-<summary>Expand to see an example of importing this as a global component in your configuration file.</summary>
-
-{% codetitle ".eleventy.js" %}
-
-```js
-const pluginWebc = require("@11ty/eleventy-plugin-webc");
-
-module.exports = function (eleventyConfig) {
-	eleventyConfig.addPlugin(pluginWebc, {
-		// Array `components` requires Eleventy WebC v0.9.2+
-		components: [
-			"_components/**/*.webc",
-			"npm:@11ty/eleventy-plugin-syntaxhighlight/*.webc",
-		],
-	});
-};
-```
-
-{% codetitle "page.webc" %}
-
-```html
-<syntax-highlight language="js">
-	function myFunction() { return true; }
-</syntax-highlight>
-```
-
-</details>
-
-<details>
-<summary>Expand to see an example of importing for use anywhere on the page via front matter.</summary>
-
-{% codetitle "page.webc" %}
-
-```html
----
-webc:
-  components: ./node_modules/@11ty/eleventy-plugin-syntaxhighlight/syntax-highlight.webc
----
-
-<syntax-highlight language="js">
-	function myFunction() { return true; }
-</syntax-highlight>
-```
-
-</details>
-
-  </div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/plugins/highlight.njk" %}
 
 Will render like this in the browser:
 
@@ -261,7 +116,7 @@ Will render like this in the browser:
 
 {% highlight "js" %}
 function myFunction() {
-return true;
+	return true;
 }
 {% endhighlight %}
 
@@ -273,105 +128,7 @@ return true;
 
 Add the `diff-` prefix to the language name on the previous examples to show code changes. Use a `+` or `-` at the beginning of the line to denote the addition or removal of that line.
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "highlightdiff", additions: "md,webc", subtractions: "hbs"} %}
-  <div id="highlightdiff-md" role="tabpanel">
-
-{% codetitle "Markdown", "Syntax" %}
-
-````
-```diff-js
-+function myFunction() {
-   // …
--  return true;
- }
-```
-````
-
-  </div>
-  <div id="highlightdiff-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
-
-{% raw %}
-
-```markdown
-{% highlight diff-js %}
-+function myFunction() {
-// …
-
-- return true;
-  }
-  {% endhighlight %}
-```
-
-{% endraw %}
-
-  </div>
-  <div id="highlightdiff-njk" role="tabpanel">
-
-{% codetitle "Nunjucks", "Syntax" %}
-
-{% raw %}
-
-```markdown
-{% highlight "diff-js" %}
-+function myFunction() {
-// …
-
-- return true;
-  }
-  {% endhighlight %}
-```
-
-{% endraw %}
-
-  </div>
-  <div id="highlightdiff-js" role="tabpanel">
-
-{% codetitle "11ty.js", "Syntax" %}
-
-{% raw %}
-
-```js
-module.exports = function (data) {
-	let code = `
-+function myFunction() {
-   // …
--  return true;
- }`;
-
-	return this.highlight("diff-js", code);
-};
-```
-
-{% endraw %}
-
-The `highlight` JavaScript function was {% addedin "Syntax Highlighter v4.0.0" %}.
-
-  </div>
-  <div id="highlightdiff-webc" role="tabpanel">
-
-{% codetitle "webc", "Syntax" %}
-
-{% raw %}
-
-```html
-<!-- Requires WebC v0.6.2+ -->
-<!-- Requires Syntax Highlighter v4.2.0+ -->
-
-<syntax-highlight
-	language="diff-js"
-	webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight"
->
-	+function myFunction() { // … - return true; }
-</syntax-highlight>
-```
-
-  </div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/plugins/highlight-diff.njk" %}
 
 Will render like this in the browser:
 
@@ -379,11 +136,10 @@ Will render like this in the browser:
 
 {% highlight "diff-js" %}
 +function myFunction() {
-// …
-
-- return true;
-  }
-  {% endhighlight %}
+   // …
+-  return true;
+ }
+{% endhighlight %}
 
 {% endcallout %}
 

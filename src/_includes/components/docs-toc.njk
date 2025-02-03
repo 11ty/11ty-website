@@ -1,16 +1,18 @@
 <div class="elv-toc" data-pagefind-ignore>
 {%- set calloutTitle %}<a href="/blog/">Blog</a>{% endset %}
+{%- for post in collections.sidebarHighlight %}
 {%- callout "", "html", calloutTitle %}
-<a href="/blog/eleventy-font-awesome/" class="elv-toc-callout-link"><strong>11ty is joining <span class="nowrap">Font Awesome{% indieavatar "https://fontawesome.com/", "avatar-right" %}</span></strong></a>
+<a href="{{ post.url }}" class="elv-toc-callout-link"><strong>{{ post.data.title }}</strong></a>
 {%- endcallout %}
+{%- endfor %}
 
 {%- set versionsTitle = "<a href='/docs/versions/'>Versions</a>" %}
 {%- callout "box", "html", versionsTitle -%}
 	<dl>
 		<dt>Stable</dt>
 		<dd><code>{{ npmVersions.latest }}</code></dd>
-		<dt>Beta</dt>
-		<dd><code>{{ npmVersions.beta }}</code></dd>
+		{# <dt>Beta</dt>
+		<dd><code>{{ npmVersions.beta }}</code></dd> #}
 		<dt>Canary</dt>
 		<dd><code>{{ npmVersions.canary }}</code></dd>
 	</dl>

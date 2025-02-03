@@ -1,8 +1,7 @@
 ---
 eleventyNavigation:
-  parent: Getting Started
+  parent: Deployment
   key: Using a CMS
-  order: 10
 featuredCmses:
   - name: "Want your logo here? Contact us!"
     url: "mailto:partners@11ty.dev"
@@ -13,9 +12,6 @@ cmses:
   - name: CloudCannon
     url: https://cloudcannon.com/eleventy-cms/?utm_campaign=11ty-partner&utm_source=official-sponsor
     tags: [Git-based]
-    screenshotOverride:
-      src: "/img/screenshot-fallbacks/cloudcannon-cms-sq.png"
-      alt: "The Eleventy CMS for Visual Editing, CloudCannon CMS"
   - name: WordPress REST API
     url: https://developer.wordpress.org/rest-api/
     screenshotSize: medium
@@ -69,14 +65,14 @@ cmses:
     url: https://www.builder.io/
     screenshotSize: medium
     tags: [API]
-  - name: Publii
-    url: https://getpublii.com/
-    screenshotSize: medium
-    tags: [Git-based]
   - name: Directus
     url: https://directus.io/
     screenshotSize: medium
     tags: [API]
+  - name: Mattrbld
+    url: https://mattrbld.com/
+    screenshotSize: medium
+    tags: [Git-based]
   - name: CraftCMS
     url: https://craftcms.com/
     screenshotSize: medium
@@ -118,6 +114,14 @@ Digging deeper, there are two main types of Headless CMS options:
 </div>
 
 _The list above is not meant to be exhaustive._
+
+## Resources
+
+- [Migrating from WordPress to Eleventy](/docs/migrate/wordpress/) — or, you can keep using WordPress as a headless CMS, too!
+
+<div class="youtube-related">
+  {%- youtubeEmbed "WuH5QYCdh6w", "Start Your Escape from WordPress Using 11ty (in 3 minutes!)" -%}
+</div>
 
 ### From the Community
 

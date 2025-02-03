@@ -30,57 +30,60 @@ A plugin to use [Vite](https://vitejs.dev/) with Eleventy 2.0+.
 npm install @11ty/eleventy-plugin-vite
 ```
 
-```js
-const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite");
+{% set codeContent %}
+import EleventyVitePlugin from "@11ty/eleventy-plugin-vite";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(EleventyVitePlugin);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
 
 <details>
 <summary>Expand for full list of options</summary>
 
 View the [full list of Vite Configuration options](https://vitejs.dev/config/).
 
-```js
-const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite");
+{% set codeContent %}
+import EleventyVitePlugin from "@11ty/eleventy-plugin-vite";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(EleventyVitePlugin, {
-		tempFolderName: ".11ty-vite", // Default name of the temp folder
+    tempFolderName: ".11ty-vite", // Default name of the temp folder
 
-		// Options passed to the Eleventy Dev Server
-		// e.g. domdiff, enabled, etc.
+    // Options passed to the Eleventy Dev Server
+    // e.g. domdiff, enabled, etc.
 
-		// Added in Vite plugin v2.0.0
-		serverOptions: {},
+    // Added in Vite plugin v2.0.0
+    serverOptions: {},
 
-		// Defaults are shown:
-		viteOptions: {
-			clearScreen: false,
-			appType: "mpa", // New in v2.0.0
+    // Defaults are shown:
+    viteOptions: {
+      clearScreen: false,
+      appType: "mpa", // New in v2.0.0
 
-			server: {
-				mode: "development",
-				middlewareMode: true,
-			},
+      server: {
+        mode: "development",
+        middlewareMode: true,
+      },
 
-			build: {
-				mode: "production",
-			},
+      build: {
+        mode: "production",
+      },
 
-			// New in v2.0.0
-			resolve: {
-				alias: {
-					// Allow references to `node_modules` folder directly
-					"/node_modules": path.resolve(".", "node_modules"),
-				},
-			},
-		},
-	});
+      // New in v2.0.0
+      resolve: {
+        alias: {
+          // Allow references to `node_modules` folder directly
+          "/node_modules": path.resolve(".", "node_modules"),
+        },
+      },
+    },
+  });
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 See the full list of [`serverOptions` on the Dev Server documentation](/docs/dev-server/).
 

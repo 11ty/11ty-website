@@ -12,7 +12,6 @@
 		{%- if showMetadata %}
 		<em class="list-bare-desc list-bare-desc-avatar">
 			<div class="fl fl-inline fl-nowrap fl-separator-h" style="--fl-gap-h: 1.5rem; --fl-gap-v: 2px">
-				{%- if site.twitter or site.authoredBy %}<div><a href="/authors/{{ site.twitter | cleanAuthorName }}/" class="elv-externalexempt">{{ site.twitter | cleanAuthorName }}</a>{% if site.authoredBy %} by {% endif %}{% for author in site.authoredBy %} <a href="/authors/{{ author | cleanAuthorName }}/" class="elv-externalexempt">{% avatarlocalcache "twitter", author %}{{ author | cleanAuthorName }}</a>{% endfor %}</div>{% endif -%}
 				{%- if site.source_url %}<div><a href="{{ site.source_url }}" class="elv-externalexempt">Source Code</a></div>{% endif -%}
 			</div>
 		</em>

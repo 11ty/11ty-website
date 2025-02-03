@@ -16,10 +16,8 @@ layout: layouts/docs.njk
 }
 .elv-langlist-hed {
 	margin: 0;
-	display: inline;
-	vertical-align: middle;
 	border: none;
-	font-size: 1.4em; /* 21px /15 */
+	font-weight: 700;
 }
 .elv-langlist > .inlinelist {
 	display: inline;
@@ -33,7 +31,7 @@ layout: layouts/docs.njk
 <h1>{{ eleventyNavigation.key }}{% if addedInVersion %}{% addedin addedInVersion%}{% endif %}</h1>
 
 <div class="elv-langlist" data-pagefind-ignore>
-<h2 class="elv-langlist-hed">Template Languages:</h2>
+	<span class="elv-langlist-hed">Template Languages:</span>
 {% templatelangs templatetypes, page %}
 </div>
 

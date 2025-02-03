@@ -14,10 +14,10 @@ code {
 pre[class*="language-"] code {
 	background-color: inherit;
 }
-table code {
+/* table code {
 	-ms-word-break: normal;
 	word-break: normal;
-}
+} */
 em code {
 	font-style: normal;
 }

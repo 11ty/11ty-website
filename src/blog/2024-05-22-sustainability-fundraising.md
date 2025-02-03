@@ -2,7 +2,6 @@
 newstitle: "Help 11ty become sustainable in 2024"
 eleventyNavigation:
   parent: Blog
-homePageHighlight: true
 external_url: https://www.zachleat.com/web/independent-sustainable-11ty/
 ---
 {% callout %}<strong>Updated September 11, 2024</strong>: As <a href="/blog/eleventy-font-awesome/">11ty is now joining Font Awesome</a>, we’re winding down our sustainability fundraising campaign. I sincerely appreciate everyone that donated!{% endcallout %}

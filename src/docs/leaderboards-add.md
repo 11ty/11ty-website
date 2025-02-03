@@ -1,9 +1,3 @@
----
-eleventyNavigation:
-  parent: Leaderboards
-  key: Add your site
----
-
 # Add your site to the [Eleventy Leaderboards](/speedlify/)
 
 ## <span class="numberflag"><span class="sr-only">Step</span> 1</span> Open a GitHub Issue

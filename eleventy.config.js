@@ -1,17 +1,19 @@
 import "dotenv/config";
 
+import memoize from "memoize";
 import { DateTime } from "luxon";
 import HumanReadable from "human-readable-numbers";
 import commaNumber from "comma-number";
-import slugify from "slugify";
 import lodashGet from "lodash/get.js";
 import shortHash from "short-hash";
+import { ImportTransformer } from "esm-import-transformer";
 
 import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 import navigationPlugin from "@11ty/eleventy-navigation";
 import eleventyImage, { eleventyImagePlugin, eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import eleventyWebcPlugin from "@11ty/eleventy-plugin-webc";
 import { RenderPlugin, InputPathToUrlTransformPlugin } from "@11ty/eleventy";
+import fontAwesomePlugin from "@11ty/font-awesome";
 
 import { addedIn, coerceVersion } from "./config/addedin.js";
 import monthDiffPlugin from "./config/monthDiff.js";
@@ -21,9 +23,6 @@ import objectHas from "./config/object-has.js";
 import markdownPlugin from "./config/markdownPlugin.js";
 import feedPlugin from "./config/feedPlugin.js";
 
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
-
 let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" decoding="async" class="avatar" width="200" height="200">`;
 const shortcodes = {
 	communityAvatar(slug, alt = "") {
@@ -31,39 +30,9 @@ const shortcodes = {
 			return defaultAvatarHtml;
 		}
 		if ((slug || "").startsWith("twitter:")) {
-			return shortcodes.avatar(
-				"twitter",
-				slug.substring("twitter:".length),
-				alt
-			);
-		}
-		return shortcodes.getGitHubAvatarHtml(slug, alt);
-	},
-	avatar(datasource, slug, alt = "") {
-		if (!slug) {
 			return "";
 		}
-
-		slug = cleanName(slug).toLowerCase();
-
-		try {
-			// TODO move away from twitter avatars
-			let mapEntry = Object.assign(
-				{},
-				require(`./avatars/${datasource}/${slug}.json`)
-			);
-			delete mapEntry.slug; // dunno why the slug is saved here ok bye
-
-			return eleventyImage.generateHTML(mapEntry, {
-				alt: `${alt || `${slug}’s ${datasource} avatar`}`,
-				loading: "lazy",
-				decoding: "async",
-				class: "avatar",
-				"eleventy:ignore": ""
-			});
-		} catch (e) {
-			return defaultAvatarHtml;
-		}
+		return shortcodes.getGitHubAvatarHtml(slug, alt);
 	},
 	link(linkUrl, content) {
 		return (
@@ -133,14 +102,6 @@ const shortcodes = {
 			}
 		}
 
-		// 11ty.dev
-		let overrides = {
-			dLN_2kDPpB: "11ty",
-		};
-		if (overrides[siteSlug]) {
-			screenshotUrl = `/img/screenshot-fallbacks/${overrides[siteSlug]}.jpg`;
-		}
-
 		let options = {
 			formats: ["jpeg"], // this format is irrelevant
 			widths: ["auto"], // 260-440 in layout
@@ -156,16 +117,16 @@ const shortcodes = {
 			options
 		);
 
-		return eleventyImage.generateHTML(stats, {
+		let attrs = {
 			alt: `Screenshot of ${siteUrl}`,
 			loading: "lazy",
 			decoding: "async",
 			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
 			class: "sites-screenshot" + (isYouTubeUrl ? ` sites-screenshot-youtube${isSquare ? "-sq" : ""}` : ""),
 			"eleventy:ignore": "",
-			// No longer necessary because we have a default fallback image when timeouts happen.
-			// onerror: "let p=this.closest('picture');if(p){p.remove();}this.remove();"
-		});
+		};
+
+		return eleventyImage.generateHTML(stats, attrs);
 	},
 	getGeneratorImageHtml(url) {
 		let d = new Date();
@@ -180,24 +141,26 @@ const shortcodes = {
 			url
 		)}/image/host/" width="66" height="66" alt="Hosting provider icon for ${url}" class="avatar avatar-large" loading="lazy" decoding="async" eleventy:ignore>`;
 	},
-	// WebC migration: indieweb-avatar.webc
-	// size = "large"
-	getIndieAvatarHtml(iconUrl, cls = "") {
-		let imgHtml = "";
+	getAvatarHtmlFromFullUrl(fullUrl, cls = "", attrs = "") {
 		let dims = [150, 150];
 		if (cls === "avatar-tall") {
 			dims = [120, 150];
 		}
-		if (!iconUrl.startsWith("/")) {
-			imgHtml = `<img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(
-				iconUrl
-			)}/" width="${dims[0]}" height="${
-				dims[1]
-			}" alt="IndieWeb Avatar for ${iconUrl}" class="avatar avatar-indieweb${
-				cls ? ` ${cls}` : ""
-			}" loading="lazy" decoding="async" eleventy:ignore>`;
+
+		return `<img src="${fullUrl}" width="${dims[0]}" height="${
+			dims[1]
+		}" alt="IndieWeb Avatar for ${fullUrl}" class="avatar avatar-indieweb${
+			cls ? ` ${cls}` : ""
+		}" loading="lazy" decoding="async"${attrs ? ` ${attrs}` : ""}>`;
+	},
+	// WebC migration: indieweb-avatar.webc
+	// size = "large"
+	getIndieAvatarHtml(iconUrl, cls = "") {
+		if(typeof iconUrl !== "string" || iconUrl.startsWith("/")) {
+			return "";
 		}
-		return imgHtml;
+		let fullUrl = `https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(iconUrl)}/`;
+		return shortcodes.getAvatarHtmlFromFullUrl(fullUrl, cls, "eleventy:ignore");
 	},
 	getGitHubAvatarHtml(username, alt = "") {
 		if(!username) {
@@ -211,14 +174,6 @@ const shortcodes = {
 		return `<img src="${url}" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
 	},
 	getOpenCollectiveAvatarHtml(supporter) {
-		// Another vote for https://github.com/11ty/eleventy-img/issues/225
-		let missingAvatarsNames = [
-			"Jonathan Wright",
-			"Richard Herbert",
-			"Boris Schapira",
-			"Panagiotis Kontogiannis",
-			"Heather Buchel",
-		];
 		let preferIndiewebAvatarSlugs = [
 			"nejlepsiceskacasinacom",
 			"slovenskeonlinecasinocom",
@@ -228,14 +183,7 @@ const shortcodes = {
 		if(preferIndiewebAvatarSlugs.includes(supporter.slug) && supporter.website) {
 			return shortcodes.getIndieAvatarHtml(supporter.website);
 		}
-		if(missingAvatarsNames.includes(username)) {
-			if(supporter.website) {
-				return shortcodes.getIndieAvatarHtml(supporter.website);
-			}
-			return "";
-		}
-
-		return `<img src="${url}" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async">`;
+		return `<img src="${url}" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async" eleventy:optional>`;
 	},
 };
 
@@ -265,6 +213,11 @@ function findBy(data, path, value) {
 
 export default async function (eleventyConfig) {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+
+
+	if (process.env.NODE_ENV === "production") {
+		eleventyConfig.setConcurrency(1);
+	}
 
 	if (process.env.NODE_ENV === "production") {
 		// Skip on production
@@ -296,6 +249,12 @@ export default async function (eleventyConfig) {
 		},
 	});
 
+	eleventyConfig.addPlugin(fontAwesomePlugin, {
+		defaultAttributes: {
+			class: "fa11ty-icon"
+		}
+	});
+
 	// for WebC
 	eleventyConfig.addPlugin(eleventyImagePlugin, {
 		// options via https://www.11ty.dev/docs/plugins/image/#usage
@@ -307,6 +266,10 @@ export default async function (eleventyConfig) {
 			loading: "lazy",
 			decoding: "async",
 			"eleventy:ignore": "",
+		},
+
+		cacheOptions: {
+			duration: "14d",
 		},
 	});
 
@@ -328,6 +291,10 @@ export default async function (eleventyConfig) {
 		defaultAttributes: {
 			loading: "lazy",
 			decoding: "async",
+		},
+
+		cacheOptions: {
+			duration: "14d",
 		},
 	});
 
@@ -406,8 +373,28 @@ export default async function (eleventyConfig) {
 		}
 	});
 
+	let ref = 0;
+	eleventyConfig.on("eleventy.before", () => {
+		ref = 0;
+	});
+	eleventyConfig.addShortcode("uid", () => {
+		return `id-${++ref}`;
+	});
+
+	eleventyConfig.addFilter("esmToCjs", memoize((sourceCode) => {
+		try {
+			let it = new ImportTransformer(sourceCode);
+			let outputCode = it.transformToRequire();
+
+			// lol
+			return outputCode.replace("export default ", "module.exports = ");
+		} catch(e) {
+			console.log( sourceCode );
+			throw e;
+		}
+	}));
+
 	eleventyConfig.addShortcode("image", shortcodes.image);
-	eleventyConfig.addShortcode("avatarlocalcache", shortcodes.avatar);
 	eleventyConfig.addShortcode("communityavatar", shortcodes.communityAvatar);
 	eleventyConfig.addShortcode(
 		"opencollectiveavatar",
@@ -457,7 +444,6 @@ ${text.trim()}
 	eleventyConfig.addPassthroughCopy({
 		"src/_includes/components/throbber.js": "js/throbber.js",
 		"src/_includes/components/throbber.css": "css/throbber.css",
-		"src/_includes/components/intl-number.js": "js/intl-number.js",
 		"node_modules/@zachleat/heading-anchors/heading-anchors.js": "js/heading-anchors.js",
 	});
 
@@ -520,13 +506,6 @@ ${text.trim()}
 
 	eleventyConfig.addFilter("commaNumber", function (num) {
 		return commaNumber(num);
-	});
-
-	eleventyConfig.addFilter("friendlyAuthorName", function (name) {
-		if (name && name.startsWith("twitter:")) {
-			return `<em>${name.substring("twitter:".length)}</em>`;
-		}
-		return name;
 	});
 
 	eleventyConfig.addFilter("displayPrice", function (num) {
@@ -649,15 +628,12 @@ ${text.trim()}
 
 	function testimonialNameHtml(testimonial) {
 		let avatarHtml = "";
-		if (testimonial.twitter) {
-			avatarHtml = shortcodes.avatar(
-				"twitter",
-				testimonial.twitter,
-				`${testimonial.name}’s Twitter Photo`
-			);
+		if (testimonial.avatarSource) {
+			avatarHtml = shortcodes.getAvatarHtmlFromFullUrl(testimonial.avatarSource);
 		} else if (testimonial.avatarUrl) {
 			avatarHtml = shortcodes.getIndieAvatarHtml(testimonial.avatarUrl);
 		}
+
 		return avatarHtml + testimonial.name;
 	}
 
@@ -688,17 +664,8 @@ ${text.trim()}
 		function (
 			supporters,
 			githubUsername,
-			twitterUsernames = [],
 			hardcodedOpencollectiveUsername
 		) {
-			let supporter;
-			for (let twitter of twitterUsernames) {
-				supporter = findBy(supporters, "twitter", twitter);
-				if (supporter && supporter.length) {
-					return supporter.pop();
-				}
-			}
-
 			let slug = {
 				// hardcoded map for github => opencollective slugs
 				"twitter:unabridgedsoft": "unabridged-software",
@@ -712,7 +679,7 @@ ${text.trim()}
 				slug = hardcodedOpencollectiveUsername || githubUsername;
 			}
 
-			supporter = findBy(supporters, "slug", slug);
+			let supporter = findBy(supporters, "slug", slug);
 			if (supporter && supporter.length) {
 				return supporter.pop();
 			}
@@ -859,7 +826,7 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addFilter("sortAuthors", (authors) => {
-		return Object.values(authors).sort((a, b) => {
+		return Object.values(authors).filter(author => !author.name.startsWith("twitter:")).sort((a, b) => {
 			return b.sites.length - a.sites.length;
 		});
 	});
@@ -913,6 +880,8 @@ ${text.trim()}
 	// Case insensitive check an object for a key
 	eleventyConfig.addFilter("has", objectHas);
 
+	let slugify = eleventyConfig.getFilter("slugify");
+
 	// Case insensitive check an object for a key
 	eleventyConfig.addShortcode("authorLink", (authors, name) => {
 		let html = [];
@@ -920,7 +889,7 @@ ${text.trim()}
 		if (name) {
 			let isAuthor = objectHas(authors, name);
 			if (isAuthor) {
-				html.push(`<a href="/authors/${name.toLowerCase()}/" class="nowrap">`);
+				html.push(`<a href="/authors/${slugify(name)}/" class="nowrap">`);
 			} else {
 				html.push(`<span class="nowrap">`);
 			}
@@ -949,7 +918,6 @@ to:
 
 <div class="sites-site-vert">
   <a href="{{ site.url }}" class="elv-externalexempt">
-    {% avatarlocalcache "twitter", site.twitter %}{{ site.name }}
     <div class="sites-screenshot-container">
       {% getScreenshotHtml site.fileSlug, site.url %}
     </div>
@@ -958,7 +926,7 @@ to:
 
 			return {
 				url,
-				twitter: author,
+				// author removed, the great twitter prune of 2025
 				name: title,
 				fileSlug: slugify(url),
 			};

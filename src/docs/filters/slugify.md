@@ -9,7 +9,7 @@ eleventyNavigation:
 
 # `slugify` Universal Filter {% addedin "1.0.0" %}
 
-Uses the [`@sindresorhus/slugify` npm package](https://www.npmjs.com/package/@sindresorhus/slugify) to convert a string into a URL slug. Typically used with permalinks.
+Uses the [`@sindresorhus/slugify` npm package](https://www.npmjs.com/package/@sindresorhus/slugify) to convert a string into a URL slug. Typically used with permalinks. Eleventy 3.0 <!-- 3.0.0-alpha.15 --> [memoizes this filter](/docs/memoize.md).
 
 {% codetitle "slugify.md" %}
 {% raw %}
@@ -25,7 +25,7 @@ Outputs to `/my-title/`.
 {% endraw %}
 
 - [`slug` Universal Filter](/docs/filters/slug/)
-- [← Back to Filters documentation.](/docs/filters/)
+- [← Back to Filters documentation](/docs/filters/)
 
 {% callout "info", "md" %}In versions prior to 1.0.0, [the `slug` Universal Filter was used](/docs/filters/slug/). To maintain backwards compatibility moving forward, `slug` is still included and supported but `slugify` is now recommended as best practice—it has better default behavior for URLs with special characters.{% endcallout %}
 

@@ -87,19 +87,6 @@ layout: layouts/docs.njk
 			<td><code>v4.0.0-alpha.1</code></td>
 			<td>{% addedin "v4.0.0-alpha.1" %}</td>
 		</tr>
-	</tbody>
-</table>
-
-<h4>Plugins</h4>
-
-<table>
-	<thead>
-		<tr>
-			<th>Version</th>
-			<th>Tag</th>
-		</tr>
-	</thead>
-	<tbody>
 		<tr>
 			<td><code>Image v4.0.0</code></td>
 			<td>{% addedin "Image v4.0.0" %}</td>
@@ -107,6 +94,7 @@ layout: layouts/docs.njk
 	</tbody>
 </table>
 
+{#
 <h2>Header/Footer</h2>
 
 <h3>Home Header</h3>
@@ -130,7 +118,7 @@ layout: layouts/docs.njk
 <div class="elv-sg-component" webc:raw>
 {% include "footer-nav.njk" %}
 </div>
-
+#}
 
 <h2>Lists</h2>
 
@@ -175,7 +163,7 @@ layout: layouts/docs.njk
 <h2>Blockquotes</h2>
 
 <div class="elv-sg-component">
-    <blockquote>“Seriously can't remember enjoying using a Static Site Generator this much. Yes Hugo is rapid, but this is all so logical. It feels like it was designed by someone who has been through lots of pain and success using other SSGs.”—<a href="{{ "https://twitter.com/philhawksworth" | canonicalTwitterUrl }}">{% communityavatar "philhawksworth" %}Phil Hawksworth</a></blockquote>
+    <blockquote>“Seriously can't remember enjoying using a Static Site Generator this much. Yes Hugo is rapid, but this is all so logical. It feels like it was designed by someone who has been through lots of pain and success using other SSGs.”—<a href="https://www.hawksworx.com/">{% communityavatar "philhawksworth" %}Phil Hawksworth</a></blockquote>
 </div>
 
 <h2>Buzzwords</h2>
@@ -216,11 +204,11 @@ layout: layouts/docs.njk
 Use the <code>elv-callout-sticky</code> class to affix to the top of the viewport while scrolling.
 
 <!-- <div class="elv-sg-component">
-    <div class="elv-callout elv-callout-info">This documentation is for an upcoming version of Eleventy. Go to the <a href="https://www.11ty.dev/docs/">latest stable version of Eleventy docs</a> or check out the <a href="https://www.11ty.dev/docs/versions/">full release history.</a></div>
+    <div class="elv-callout elv-callout-info">This documentation is for an upcoming version of Eleventy. Go to the <a href="/docs/">latest stable version of Eleventy docs</a> or check out the <a href="/docs/versions/">full release history.</a></div>
 </div>
 
 <div class="elv-sg-component">
-    <div class="elv-callout elv-callout-warn">This documentation is for an older version. Go to the <a href="https://www.11ty.dev/docs/">newest Eleventy docs</a> or check out the <a href="https://www.11ty.dev/docs/versions/">full release history.</a></div>
+    <div class="elv-callout elv-callout-warn">This documentation is for an older version. Go to the <a href="/docs/">newest Eleventy docs</a> or check out the <a href="/docs/versions/">full release history.</a></div>
 </div> -->
 
 <h3>OpenGraph card</h3>

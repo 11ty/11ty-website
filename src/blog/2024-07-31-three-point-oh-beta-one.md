@@ -2,7 +2,6 @@
 newstitle: "Eleventy v3.0.0-beta.1 now available"
 eleventyNavigation:
   parent: Blog
-homePageHighlight: true
 external_url: https://github.com/11ty/eleventy/releases/tag/v3.0.0-beta.1
 ---
 After over a year of work, our very first beta release of ESM-friendly 3.0 is now available: **Eleventy v3.0.0-beta.1** 🎈🐀

@@ -1,0 +1,86 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "localelinks"} %}
+  <div id="localelinks-njk" role="tabpanel">
+
+{% codetitle "/en/blog.njk" %}
+
+{% raw %}
+
+```njk
+This page is also available in:
+{% for link in page.url | locale_links %}
+{%- if not loop.first %},{% endif %}
+<a href="{{link.url}}" lang="{{link.lang}}" hreflang="{{link.lang}}">{{link.label}}</a>
+{% endfor %}
+```
+
+{% endraw %}
+
+  </div>
+  <div id="localelinks-liquid" role="tabpanel">
+
+{% codetitle "/en/blog.liquid" %}
+
+{% raw %}
+
+```liquid
+This page is also available in:
+{% assign links = page.url | locale_links %}
+{%- for link in links %}
+{%- unless forloop.first %},{% endunless %}
+<a href="{{link.url}}" lang="{{link.lang}}" hreflang="{{link.lang}}">{{link.label}}</a>
+{%- endfor -%}
+```
+
+{% endraw %}
+
+  </div>
+  <div id="localelinks-js" role="tabpanel">
+
+{% codetitle "/en/blog.11ty.js" %}
+
+{% raw %}
+
+```js
+export default function (data) {
+	let links = this.locale_links(data.page.url);
+
+	// Don’t forget to localize this text too
+	return `This page is also available in:
+${links
+	.map((link) => {
+		return `<a href="${link.url}" lang="${link.lang}" hreflang="${link.lang}">${link.label}</a>`;
+	})
+	.join(", ")}`;
+};
+```
+
+{% endraw %}
+
+  </div>
+	<div id="localelinks-cjs" role="tabpanel">
+
+{% codetitle "/en/blog.11ty.cjs" %}
+
+{% raw %}
+
+```js
+module.exports = function (data) {
+	let links = this.locale_links(data.page.url);
+
+	// Don’t forget to localize this text too
+	return `This page is also available in:
+${links
+	.map((link) => {
+		return `<a href="${link.url}" lang="${link.lang}" hreflang="${link.lang}">${link.label}</a>`;
+	})
+	.join(", ")}`;
+};
+```
+
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>

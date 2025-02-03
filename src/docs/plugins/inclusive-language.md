@@ -38,17 +38,16 @@ Available on [npm](https://www.npmjs.com/package/@11ty/eleventy-plugin-inclusive
 npm install @11ty/eleventy-plugin-inclusive-language
 ```
 
-Open up your Eleventy config file (probably `.eleventy.js`) and use `addPlugin`:
+Open up your Eleventy config file (probably `eleventy.config.js`) and use `addPlugin`:
 
-{% codetitle ".eleventy.js" %}
+{% set codeContent %}
+import inclusiveLangPlugin from "@11ty/eleventy-plugin-inclusive-language";
 
-```js
-const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language");
-
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(inclusiveLangPlugin);
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 {% callout "info", "md" %}You’re only allowed one `module.exports` in your configuration file, so make sure you only copy the `require` and the `addPlugin` lines above!{% endcallout %}
 
@@ -56,9 +55,10 @@ module.exports = function (eleventyConfig) {
 
 Optionally pass in an options object as the second argument to `addPlugin` to further customize this plugin.
 
-```js
-const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language");
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+import inclusiveLangPlugin from "@11ty/eleventy-plugin-inclusive-language";
+
+export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(inclusiveLangPlugin, {
 		templateFormats: ["md"], // default, add more file extensions here
 
@@ -67,4 +67,5 @@ module.exports = function (eleventyConfig) {
 			"simply,obviously,basically,of course,clearly,just,everyone knows,however,easy",
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}

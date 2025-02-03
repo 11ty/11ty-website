@@ -22,6 +22,7 @@ ignoreGitHubButtons: true
 - **Ask a question, answer a question**: We welcome questions from people of all experience levels on [Discord](/blog/discord/), [GitHub Discussions](https://github.com/11ty/eleventy/discussions), and the [issue tracker](https://github.com/11ty/eleventy/issues). We _really_ appreciate help answering those questions too!
 - **Tell a friend!** Our project doesn’t have a big marketing budget so we rely on word of mouth!
 - {% include "star-on-github.njk" %}
+- Join us at the [**11ty Conference**](https://conf.11ty.dev/) or the [**Eleventy Meetup**](https://www.11tymeetup.dev/)!
 - Looking to **Hire an Eleventy developer**? Browse the [Eleventy Super Professional Business Network 💼](/super-professional-business-network/)
 
 {% set count = count + 1 %}

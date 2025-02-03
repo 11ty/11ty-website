@@ -1,39 +1,33 @@
----
-pagination:
-  data: authors
-  size: 1
-  alias: author
-  resolve: values
-  generatePageOnEmptyData: true
-permalink: "/authors/{{ author.name }}/"
-eleventyNavigation:
-  parent: Authors
-excludeFromSearch: true
-excludeFromSidebar: true
-layout: layouts/docs.njk
+---js
+let pagination = {
+	data: "authors",
+	size: 1,
+	alias: "author",
+	resolve: "values",
+	generatePageOnEmptyData: true,
+	before: function(paginationData) {
+		return paginationData.filter(page => !page.name.startsWith("twitter:"));
+	}
+};
+let permalink = "/authors/{{ author.name | slugify }}/";
+let excludeFromSearch = true;
+let layout = "layouts/docs.njk";
 ---
 
 <style>{% include "components/page-sites.css" %}</style>
 
-{# @TODO add support for githubTwitterMap.js data #}
-{%- set twitterUrl = "https://twitter.com/" + author.name.substring("twitter:".length) | canonicalTwitterUrl %}
 {%- set githubUrl = "https://github.com/" + author.name %}
-
-{%- set supporter = opencollective.supporters | isSupporter(author.name, githubTwitterMap[author.name], author.opencollective) -%}
+{%- set supporter = opencollective.supporters | isSupporter(author.name, author.opencollective) -%}
 {%- set displayName = supporter.name or author.name %}
 
 # {{ displayName }}
 
-{%- if author.name.startsWith("twitter:") %}
-- <a href="{{ twitterUrl }}">{% communityavatar author.name %}{{ author.name | friendlyAuthorName | safe }}</a> on Twitter
-{%- else %}
 - <a href="{{ githubUrl }}">{% communityavatar author.name %}{{ author.name }}</a> on GitHub
-{%- endif %}
 {%- if supporter %}
 - <a href="{{ supporter.profile }}" class="elv-externalexempt supporters-link"><strong>{% if supporter.tier and supporter.isActive %} {% emoji "📅" %} Monthly{% endif %} Eleventy Contributor</strong> on Open Collective</a> 🎈
 {%- else %}
 - <a href="https://opencollective.com/11ty">Not yet <strong>Supporting Eleventy</strong> on Open Collective.</a>
-- <em>Already a supporter but it’s not showing here? Make sure your Twitter account is listed on your Open Collective Profile.</em>
+- <em>Already a supporter but it’s not showing here? Make sure your GitHub account is listed the <em>social links</em> section of your Open Collective Profile.</em>
 {%- endif %}
 
 {%- if author.business_url and supporter | isBusinessPerson %}
@@ -50,7 +44,7 @@ layout: layouts/docs.njk
 
 {%- for site in authorStarters %}
 {%- if not site.disabled %}
-- [{% avatarlocalcache "twitter", site.author, site.author %}{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}
+- [{{ site.name }}]({{ site.url }}){% if site.description %} {{ site.description}}{% endif %}
 {%- endif %}
 {%- endfor %}
 {%- endif %}
@@ -61,7 +55,7 @@ layout: layouts/docs.njk
 ### {{ displayName }}’s Plugins:
 
 {%- for plugin in authorPlugins %}
-- [{% avatarlocalcache "twitter", plugin.author, plugin.author %}{% if plugin.deprecated %}~~{% endif %}{{ plugin.npm }}{% if plugin.deprecated %}~~{% endif %}](https://www.npmjs.com/package/{{ plugin.npm }}){% if plugin.description %} {% if plugin.deprecated %}~~{% endif %}{{ plugin.description | safe }}{% if plugin.deprecated %}~~{% endif %}{% endif %} {{ plugin.deprecated }}
+- [{% if plugin.deprecated %}~~{% endif %}{{ plugin.npm }}{% if plugin.deprecated %}~~{% endif %}](https://www.npmjs.com/package/{{ plugin.npm }}){% if plugin.description %} {% if plugin.deprecated %}~~{% endif %}{{ plugin.description | safe }}{% if plugin.deprecated %}~~{% endif %}{% endif %} {{ plugin.deprecated }}
 {%- endfor %}
 {%- endif %}
 

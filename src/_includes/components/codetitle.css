@@ -6,6 +6,16 @@
 	font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 	font-size: 0.75em; /* 12px /16 */
 }
+@media (max-width: 31.1875em) { /* 499px */
+	.codetitle-right-md {
+		float: none;
+		clear: both;
+		padding-inline-start: 0;
+	}
+	.codetitle-right-md + is-land > seven-minute-tabs {
+		margin-block-start: .5em;
+	}
+}
 .codetitle-left {
 	float: left;
 	clear: left;

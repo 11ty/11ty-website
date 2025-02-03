@@ -75,25 +75,22 @@ npm install @11ty/eleventy-plugin-webc
 
 To add support for `.webc` files in Eleventy, add the plugin in your Eleventy configuration file:
 
-{% codetitle ".eleventy.js" %}
+{% set codeContent %}
+import pluginWebc from "@11ty/eleventy-plugin-webc";
 
-```js
-const pluginWebc = require("@11ty/eleventy-plugin-webc");
-
-module.exports = function (eleventyConfig) {
+export default function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebc);
 };
-```
-
-_You’re only allowed one `module.exports` in your configuration file. If you already have a configuration file, only copy the `require` and the `addPlugin` lines above!_
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 <details>
 <summary><strong>Full options list</strong> (defaults shown)</summary>
 
-```js
-const pluginWebc = require("@11ty/eleventy-plugin-webc");
+{% set codeContent %}
+import pluginWebc from "@11ty/eleventy-plugin-webc";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebc, {
 		// Glob to find no-import global components
 		// (The default changed from `false` in Eleventy WebC v0.7.0)
@@ -109,9 +106,10 @@ module.exports = function (eleventyConfig) {
 		bundlePluginOptions: {},
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
-View the [full options list for `@11ty/eleventy-plugin-bundle`](https://github.com/11ty/eleventy-plugin-bundle#installation). As an example, you can use the [`transforms` array to modify bundle content with postcss](https://github.com/11ty/eleventy-plugin-bundle#modify-the-bundle-output).
+View the [full options list for the Bundle plugin](/docs/plugins/bundle.md). As an example, you can use the [`transforms` array to modify bundle content with postcss](/docs/plugins/bundle.md#postprocess-the-bundle-output).
 
 </details>
 
@@ -152,60 +150,7 @@ WebC uses an HTML parser to process input files: use any HTML here!
 
 Using Eleventy’s built-in [Render plugin](/docs/plugins/render/) allows you to render WebC inside of an existing Liquid, Nunjucks, or 11ty.js template.
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync>
-{% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "webc-render"} %}
-<div id="webc-render-liquid" role="tabpanel">
-
-{% codetitle "Liquid", "Syntax" %}
-
-{% raw %}
-
-```liquid
-{% renderTemplate "webc" %}
-<my-custom-component></my-custom-component>
-{% endrenderTemplate %}
-```
-
-{% endraw %}
-
-</div>
-<div id="webc-render-njk" role="tabpanel">
-
-{% codetitle "Nunjucks", "Syntax" %}
-
-{% raw %}
-
-```njk
-{% renderTemplate "webc" %}
-<my-custom-component></my-custom-component>
-{% endrenderTemplate %}
-```
-
-{% endraw %}
-
-</div>
-<div id="webc-render-js" role="tabpanel">
-
-{% codetitle "JavaScript", "Syntax" %}
-
-{% raw %}
-
-```js
-module.exports = async function () {
-	let content = await this.renderTemplate(
-		`<my-custom-component></my-custom-component>`,
-		"webc"
-	);
-	return content;
-};
-```
-
-{% endraw %}
-
-</div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/webc/render.njk" %}
 
 #### Pre-process HTML input as WebC
 
@@ -218,20 +163,21 @@ This is a (last-resort?) catch-all option to let WebC process `.html` output fil
 A few drawbacks to the transform method:
 
 1. This is the slowest build-performance method to implement WebC in a project, so try the other methods first!
-2. The WebC Eleventy transform operates with [bundler mode disabled](<#css-and-js-(bundler-mode)>), which means that processes WebC but _does not_ aggregate component JS or CSS. ([Upvote this enhancement request](https://github.com/11ty/eleventy-plugin-webc/issues/55))
+2. The WebC Eleventy transform operates with [bundler mode disabled](<#css-and-js-bundler-mode>), which means that processes WebC but _does not_ aggregate component JS or CSS. ([Upvote this enhancement request](https://github.com/11ty/eleventy-plugin-webc/issues/55))
 
 <details>
 <summary>The transform is disabled by default, you will need to use the <code>useTransform</code> option to enable it.</summary>
 
-```js
-const pluginWebc = require("@11ty/eleventy-plugin-webc");
+{% set codeContent %}
+import pluginWebc from "@11ty/eleventy-plugin-webc";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebc, {
 		useTransform: true,
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 </details>
 
@@ -326,7 +272,7 @@ Outputs:
 
 </details>
 
-Eleventy runs WebC in Bundler mode. That means that when it finds `<style>`, `<link rel="stylesheet">`, or `<script>` elements in component definitions, they are removed from the output markup and _their content_ is aggregated together for re-use in asset bundles on the page. Read more about [CSS and JS in WebC](<#css-and-js-(bundler-mode)>). _(You can opt-out of this behavior with `webc:keep`.)_
+Eleventy runs WebC in Bundler mode. That means that when it finds `<style>`, `<link rel="stylesheet">`, or `<script>` elements in component definitions, they are removed from the output markup and _their content_ is aggregated together for re-use in asset bundles on the page. Read more about [CSS and JS in WebC](<#css-and-js-bundler-mode>). _(You can opt-out of this behavior with `webc:keep`.)_
 
 ### `webc:keep`
 
@@ -789,7 +735,7 @@ The [Custom Transforms feature](https://github.com/11ty/webc#custom-transforms) 
 
 {% callout "info", "md" %}**Note:** The `webc:type="11ty"` feature is exclusive to the **Eleventy** WebC plugin and is not available in non-Eleventy independent WebC.{% endcallout %}
 
-Use `webc:type="11ty"` with the `11ty:type` attribute to specify a [valid template syntax](/docs/plugins/render/#rendertemplate).
+Use `webc:type="11ty"` with the `11ty:type` attribute to specify a [valid template syntax](/docs/plugins/render/#rendertemplate-paired-shortcode).
 
 {% codetitle "my-page.webc" %}
 
@@ -1014,9 +960,9 @@ WebC [Helpers](https://github.com/11ty/webc#helper-functions) are JavaScript fun
 
 #### Eleventy-provided Helpers
 
-{% addedin "@11ty/eleventy-plugin-webc@0.5.0" %}Included with Eleventy WebC, [JavaScript template functions](/docs/languages/javascript/#javascript-template-functions) and [Universal Filters](/docs/filters/#universal-filters) are provided automatically as WebC Helpers.
+{% addedin "@11ty/eleventy-plugin-webc@0.5.0" %}Included with Eleventy WebC, [JavaScript template functions](/docs/languages/javascript/#javascript-template-functions) and [Universal Filters](/docs/filters/) are provided automatically as WebC Helpers.
 
-This includes [`url`, `slugify`, `log`, and others](/docs/filters/#eleventy-provided-universal-filters)!
+This includes [`url`, `slugify`, `log`, and others](/docs/filters/#eleventy-provided-filters)!
 
 ```html
 <!-- Use the  Eleventy provided `url` universal filter -->
@@ -1025,10 +971,8 @@ This includes [`url`, `slugify`, `log`, and others](/docs/filters/#eleventy-prov
 
 #### Supply your own Helper
 
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	// via Universal Filter
 	eleventyConfig.addFilter("alwaysRed", () => "Red");
 
@@ -1037,7 +981,8 @@ module.exports = function (eleventyConfig) {
 
 	// Don’t forget to add the WebC plugin in your config file too!
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ```html
 <div @html="alwaysRed()"></div>
@@ -1188,12 +1133,10 @@ We accept:
 - Array (of file paths or globs) [{% addedin "@11ty/eleventy-plugin-webc@0.9.2" %}](https://github.com/11ty/eleventy-plugin-webc/releases/tag/v0.9.2)
 - [`npm:` prefix aliases](#webcimport) [{% addedin "@11ty/eleventy-plugin-webc@0.9.2" %}](https://github.com/11ty/eleventy-plugin-webc/releases/tag/v0.9.2)
 
-{% codetitle ".eleventy.js" %}
+{% set codeContent %}
+import pluginWebc from "@11ty/eleventy-plugin-webc";
 
-```js
-const pluginWebc = require("@11ty/eleventy-plugin-webc");
-
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebc, {
 		// Glob to find no-import global components
 		// This path is relative to the project-root!
@@ -1208,7 +1151,8 @@ module.exports = function (eleventyConfig) {
 		],
 	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 Notably, the path for `components` is relative to your project root (**not** your [project’s `input` directory](/docs/config/#input-directory)).
 
@@ -1249,7 +1193,7 @@ The following plugins offer official WebC components for use in your projects:
 - `@11ty/eleventy-img` supplies `<eleventy-image>`
   - {% addedin "Image v3.1.0" %}
   - Example: `<img webc:is="eleventy-image" webc:import="npm:@11ty/eleventy-img">`
-  - Read more at [the Image utility](/docs/plugins/image/#webc).
+  - Read more at [the Image WebC component](../plugins/image-webc.md).
 
 ### CSS and JS (Bundler mode)
 
@@ -1297,7 +1241,7 @@ You can opt-out of bundling on a per-element basis [using `webc:keep`](#webckeep
 </html>
 ```
 
-- {% addedin "@11ty/eleventy-plugin-webc@0.9.0" %}Eleventy WebC uses [`eleventy-plugin-bundle`](https://github.com/11ty/eleventy-plugin-bundle/#use-with-webc) behind the scenes to implement bundling. `getBundle('css')` and `getBundle('js')` can now be used instead of `getCss(page.url)` and `getJs(page.url)` respectively.
+- {% addedin "@11ty/eleventy-plugin-webc@0.9.0" %}Eleventy WebC uses the [Bundle Plugin](/docs/plugins/bundle.md#using-with-webc) behind the scenes to implement bundling. `getBundle('css')` and `getBundle('js')` can now be used instead of `getCss(page.url)` and `getJs(page.url)` respectively.
 - {% addedin "@11ty/webc@0.8.0" %}`webc:keep` is required on `<style>` and `<script>` in your layout files to prevent re-bundling the bundles.
 - {% addedin "@11ty/webc@0.8.0" %}The `getCss` and `getJs` helpers are now available to all WebC templates without restriction. Previous versions required them to be used in an _Eleventy Layout_ file.
 - `@raw` was {% addedin "@11ty/webc@0.7.1" %}. Previous versions can use `webc:raw @html`.
@@ -1342,7 +1286,7 @@ The CSS bundle will look like:
 
 You can access these bundles in other templates types too (`.njk`, `.liquid`, etc.).
 
-{% addedin "@11ty/eleventy-plugin-webc@0.9.0" %}Eleventy WebC uses [`eleventy-plugin-bundle`](https://github.com/11ty/eleventy-plugin-bundle/#use-with-webc) behind the scenes to implement bundling. This plugin provides [`getBundle`](https://github.com/11ty/eleventy-plugin-bundle/#render-bundle-code) and [`getBundleFileUrl`](https://github.com/11ty/eleventy-plugin-bundle/#write-a-bundle-to-a-file) universal shortcodes for use in any template type (including WebC as shown above).
+{% addedin "@11ty/eleventy-plugin-webc@0.9.0" %}Eleventy WebC uses the [Bundle Plugin](/docs/plugins/bundle.md#using-with-webc) behind the scenes to implement bundling. This plugin provides `getBundle` and `getBundleFileUrl` universal shortcodes for use in any template type (including WebC as shown above).
 
 <details>
 <summary><em>WebC v0.8.0 and older:</em> Check out the deprecated (but still in place for backwards compatibility) <code>webcGetCss</code> and <code>webcGetJs</code> universal filters for bundle output.</summary>
@@ -1469,7 +1413,7 @@ When duplicates and conflicts occur, WebC will hoist the component code to find 
 
 ### Use with `is-land`
 
-You can also use this out of the box with Eleventy’s [`is-land` component for web component hydration](/docs/plugins/partial-hydration/).
+You can also use this out of the box with Eleventy’s [`is-land` component for web component hydration](/docs/plugins/is-land/).
 
 At the component level, components can declare their own is-land loading conditions.
 

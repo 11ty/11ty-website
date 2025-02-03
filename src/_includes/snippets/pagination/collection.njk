@@ -1,0 +1,107 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedcollection"} %}
+  <div id="pagedcollection-liquid" role="tabpanel">
+
+{% raw %}
+
+```liquid
+---
+title: My Posts
+pagination:
+  data: collections.post
+  size: 6
+  alias: posts
+---
+
+<ol>
+{% for post in posts %}
+  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+{% endfor %}
+</ol>
+```
+
+{% endraw %}
+
+  </div>
+  <div id="pagedcollection-njk" role="tabpanel">
+
+{% raw %}
+
+```jinja2
+---
+title: My Posts
+pagination:
+  data: collections.post
+  size: 6
+  alias: posts
+---
+
+<ol>
+{% for post in posts %}
+  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+{% endfor %}
+</ol>
+```
+
+{% endraw %}
+
+  </div>
+  <div id="pagedcollection-js" role="tabpanel">
+
+{% raw %}
+
+```js
+export const data = {
+	title: "My Posts",
+	pagination: {
+		data: "collections.post",
+		size: 6,
+		alias: "posts",
+	},
+};
+
+export function render(data) {
+	return `<ol>
+		${data.posts
+			.map(function (post) {
+				return `<li><a href="${post.url}">${post.title}</a></li>`;
+			})
+			.join("")}
+	</ol>`;
+};
+```
+
+{% endraw %}
+
+  </div>
+	<div id="pagedcollection-cjs" role="tabpanel">
+
+{% raw %}
+
+```js
+exports.data = {
+	title: "My Posts",
+	pagination: {
+		data: "collections.post",
+		size: 6,
+		alias: "posts",
+	},
+};
+
+exports.render = function (data) {
+	return `<ol>
+		${data.posts
+			.map(function (post) {
+				return `<li><a href="${post.url}">${post.title}</a></li>`;
+			})
+			.join("")}
+	</ol>`;
+};
+```
+
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>

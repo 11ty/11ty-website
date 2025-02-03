@@ -24,6 +24,7 @@ eleventyComputed:
 
 {{ content | safe }}
 
+{% if not hideRelatedBlogPosts %}
 ---
 
 ### Read more blog posts:
@@ -33,3 +34,5 @@ eleventyComputed:
 
 {% if nextPost %}- Next: <a href="{{ nextPost.url }}">{{ nextPost.data.newstitle }}</a>{% endif %}
 {% if previousPost %}- Previous: <a href="{{ previousPost.url }}">{{ previousPost.data.newstitle }}</a>{% endif %}
+
+{%- endif %}

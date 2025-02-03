@@ -25,22 +25,6 @@ _The commands below assume that Eleventy is installed locally (recommended) but 
 DEBUG=Eleventy* npx @11ty/eleventy
 ```
 
-### Windows
-
-Read more about [Windows environment variables](https://www.npmjs.com/package/debug#windows-command-prompt-notes).
-
-#### cmd.exe
-
-```sh
-set DEBUG=Eleventy* & npx @11ty/eleventy
-```
-
-#### Powershell (default in VS Code)
-
-```sh
-$env:DEBUG="Eleventy*"; npx @11ty/eleventy
-```
-
 ### Cross Platform
 
 Use the [`cross-env` package](https://github.com/kentcdodds/cross-env) to compatibly set your environment variables cross-platform.
@@ -57,6 +41,22 @@ Now add an npm script in your `package.json`, unlocking `npm run debug`:
 		"debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy"
 	}
 }
+```
+
+### Windows
+
+Read more about [Windows environment variables](https://www.npmjs.com/package/debug#windows-command-prompt-notes).
+
+#### cmd.exe
+
+```sh
+set DEBUG=Eleventy* & npx @11ty/eleventy
+```
+
+#### Powershell (default in VS Code)
+
+```sh
+$env:DEBUG="Eleventy*"; npx @11ty/eleventy
 ```
 
 ## Learn More
@@ -77,4 +77,4 @@ The commands above limit the messages from `debug` to Eleventy specific things w
 
 ## Debug individual variables
 
-{% addedin "0.11.0" %} In addition to using `debug`, you can use the global filter [`log`](/docs/filters/log) to `console.log` anything from inside a template file.
+{% addedin "0.11.0" %} In addition to using `debug`, you can use the global filter [`log`](/docs/filters/log/) to `console.log` anything from inside a template file.

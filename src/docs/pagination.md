@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Working with Templates
+  parent: Eleventy Projects
   key: Pagination
   order: 4
   excerpt: Iterate over a data set and create multiple files from a single template.
@@ -25,7 +25,7 @@ Consider the following template, which will result in two pages being created, e
   <div id="paged-array-liquid" role="tabpanel">
 
     {%- highlight "liquid" %}
-    {%- include "examples/pagination/paged-array.njk" %}
+    {%- include "snippets/pagination/paged-array.njk" %}
     {%- endhighlight %}
 
 If the above file were named `paged.liquid`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
@@ -34,7 +34,7 @@ If the above file were named `paged.liquid`, it would create two pages in your o
   <div id="paged-array-njk" role="tabpanel">
 
     {%- highlight "jinja2" %}
-    {%- include "examples/pagination/paged-array.njk" %}
+    {%- include "snippets/pagination/paged-array.njk" %}
     {%- endhighlight %}
 
 If the above file were named `paged.njk`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
@@ -43,7 +43,16 @@ If the above file were named `paged.njk`, it would create two pages in your outp
   <div id="paged-array-js" role="tabpanel">
 
     {%- highlight "js" %}
-    {%- include "examples/pagination/paged-array.js" %}
+    {%- include "snippets/pagination/paged-array.js" %}
+    {%- endhighlight %}
+
+If the above file were named `paged.11ty.js`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
+
+  </div>
+  <div id="paged-array-cjs" role="tabpanel">
+
+    {%- highlight "js" %}
+    {%- include "snippets/pagination/paged-array.cjs" %}
     {%- endhighlight %}
 
 If the above file were named `paged.11ty.js`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
@@ -122,90 +131,7 @@ Learn how to create a list of links to every paginated page on a pagination temp
 
 All of the examples thus far have paged Array data. Eleventy does allow paging objects too. Objects are resolved to pagination arrays using either the `Object.keys` or `Object.values` JavaScript functions. Consider the following templates:
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync class="tabs-flush">
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedobj"} %}
-  <div id="pagedobj-liquid" role="tabpanel">
-
-{% raw %}
-
-```liquid
----
-pagination:
-  data: testdata
-  size: 1
-testdata:
-  itemkey1: itemvalue1
-  itemkey2: itemvalue2
-  itemkey3: itemvalue3
----
-<ol>
-{%- for item in pagination.items %}
-  <li>{{ item }}={{testdata[item] }}</li>
-{% endfor -%}
-</ol>
-```
-
-{% endraw %}
-
-  </div>
-  <div id="pagedobj-njk" role="tabpanel">
-
-{% raw %}
-
-```jinja2
----
-pagination:
-  data: testdata
-  size: 1
-testdata:
-  itemkey1: itemvalue1
-  itemkey2: itemvalue2
-  itemkey3: itemvalue3
----
-<ol>
-{%- for item in pagination.items %}
-  <li>{{ item }}={{testdata[item] }}</li>
-{% endfor -%}
-</ol>
-```
-
-{% endraw %}
-
-  </div>
-  <div id="pagedobj-js" role="tabpanel">
-
-{% raw %}
-
-```js
-exports.data = {
-	pagination: {
-		data: "testdata",
-		size: 1,
-	},
-	testdata: {
-		itemkey1: "itemvalue1",
-		itemkey2: "itemvalue2",
-		itemkey3: "itemvalue3",
-	},
-};
-
-exports.render = function (data) {
-	return `<ol>
-		${data.pagination.items
-			.map(function (item) {
-				return `<li>${(item = data.testdata[item])}</li>`;
-			})
-			.join("")}
-	</ol>`;
-};
-```
-
-{% endraw %}
-
-  </div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/pagination/paging-object.njk" %}
 
 In this example, we would get 3 pages that each print a key/value pair from `testdata`. The paged items hold the object keys:
 
@@ -268,78 +194,7 @@ This resolves to:
 
 Your front matter would look like this:
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync class="tabs-flush">
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedatafile"} %}
-  <div id="pagedatafile-liquid" role="tabpanel">
-
-{% raw %}
-
-```liquid
----
-pagination:
-  data: globalDataSet.myData
-  size: 1
----
-<ol>
-{%- for item in pagination.items %}
-  <li>{{ item }}</li>
-{% endfor -%}
-</ol>
-```
-
-{% endraw %}
-
-  </div>
-  <div id="pagedatafile-njk" role="tabpanel">
-
-{% raw %}
-
-```jinja2
----
-pagination:
-  data: globalDataSet.myData
-  size: 1
----
-<ol>
-{%- for item in pagination.items %}
-  <li>{{ item }}</li>
-{% endfor -%}
-</ol>
-```
-
-{% endraw %}
-
-  </div>
-
-  <div id="pagedatafile-js" role="tabpanel">
-
-{% raw %}
-
-```js
-exports.data = {
-	pagination: {
-		data: "globalDataSet.myData",
-		size: 1,
-	},
-};
-
-exports.render = function (data) {
-	return `<ol>
-    ${data.pagination.items
-			.map(function (item) {
-				return `<li>${item}</li>`;
-			})
-			.join("")}
-  </ol>`;
-};
-```
-
-{% endraw %}
-
-  </div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/pagination/paging-datafile.njk" %}
 
 ## Remapping with permalinks
 
@@ -418,168 +273,15 @@ Using a universal `slug` filter (transforms `My Item` to `my-item`), this output
 
 Ok, so `pagination.items[0]` is ugly. We provide an option to alias this to something different.
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync class="tabs-flush">
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedalias"} %}
-  <div id="pagedalias-liquid" role="tabpanel">
-
-{% raw %}
-
-```liquid
----
-pagination:
-  data: testdata
-  size: 1
-  alias: wonder
-testdata:
-  - Item1
-  - Item2
-permalink: "different/{{ wonder | slugify }}/index.html"
----
-You can use the alias in your content too {{ wonder }}.
-```
-
-{% endraw %}
-
-  </div>
-  <div id="pagedalias-njk" role="tabpanel">
-
-{% raw %}
-
-```jinja2
----
-pagination:
-  data: testdata
-  size: 1
-  alias: wonder
-testdata:
-  - Item1
-  - Item2
-permalink: "different/{{ wonder | slugify }}/index.html"
----
-You can use the alias in your content too {{ wonder }}.
-```
-
-{% endraw %}
-
-  </div>
-  <div id="pagedalias-js" role="tabpanel">
-
-{% raw %}
-
-```js
-exports.data = {
-	pagination: {
-		data: "testdata",
-		size: 1,
-		alias: "wonder",
-	},
-	testdata: ["Item1", "Item2"],
-	permalink: function (data) {
-		return `different/${this.slugify(data.wonder)}/index.html`;
-	},
-};
-
-exports.render = function (data) {
-	return `You can use the alias in your content too ${data.wonder}.`;
-};
-```
-
-{% endraw %}
-
-  </div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/pagination/alias.njk" %}
 
 This writes to `_site/different/item1/index.html` and `_site/different/item2/index.html`.
 
-{% callout "info" %}Note that <code>page</code> is a reserved word so you cannot use <code>alias: page</code>. Read about Eleventy’s reserved data names in <a href="/docs/data-eleventy-supplied">Eleventy Supplied Data</a>.{% endcallout %}
+{% callout "info" %}Note that <code>page</code> is a reserved word so you cannot use <code>alias: page</code>. Read about Eleventy’s reserved data names in <a href="/docs/data-eleventy-supplied/">Eleventy Supplied Data</a>.{% endcallout %}
 
 If your chunk `size` is greater than 1, the alias will be an array instead of a single value.
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync class="tabs-flush">
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedchunk"} %}
-  <div id="pagedchunk-liquid" role="tabpanel">
-
-{% raw %}
-
-```liquid
----
-pagination:
-  data: testdata
-  size: 2
-  alias: wonder
-testdata:
-  - Item1
-  - Item2
-  - Item3
-  - Item4
-permalink: "different/{{ wonder[0] | slugify }}/index.html"
----
-You can use the alias in your content too {{ wonder[0] }}.
-```
-
-{% endraw %}
-
-  </div>
-  <div id="pagedchunk-njk" role="tabpanel">
-
-{% raw %}
-
-```jinja2
----
-pagination:
-  data: testdata
-  size: 2
-  alias: wonder
-testdata:
-  - Item1
-  - Item2
-  - Item3
-  - Item4
-permalink: "different/{{ wonder[0] | slugify }}/index.html"
----
-You can use the alias in your content too {{ wonder[0] }}.
-```
-
-{% endraw %}
-
-  </div>
-  <div id="pagedchunk-js" role="tabpanel">
-
-{% raw %}
-
-```js
-exports.data = {
-  pagination: {
-    data: "testdata",
-    size: 2,
-    alias: "wonder"
-  },
-  testdata: [
-    "Item1",
-    "Item2",
-    "Item3",
-    "Item4"
-  ],
-  permalink: {
-    function(data) {
-      return `different/${this.slugify(data.wonder[0])}/index.html`
-    };
-  }
-};
-
-exports.render = function (data) {
-  return `You can use the alias in your content too ${data.wonder[0]}.`;
-}
-```
-
-{% endraw %}
-
-  </div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/pagination/alias-size.njk" %}
 
 This writes to `_site/different/item1/index.html` and `_site/different/item3/index.html`.
 
@@ -587,85 +289,7 @@ This writes to `_site/different/item1/index.html` and `_site/different/item3/ind
 
 If you’d like to make a paginated list of all of your blog posts (any content with the tag `post` on it), use something like the following template to iterate over a specific collection:
 
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync class="tabs-flush">
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedcollection"} %}
-  <div id="pagedcollection-liquid" role="tabpanel">
-
-{% raw %}
-
-```liquid
----
-title: My Posts
-pagination:
-  data: collections.post
-  size: 6
-  alias: posts
----
-
-<ol>
-{% for post in posts %}
-  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
-{% endfor %}
-</ol>
-```
-
-{% endraw %}
-
-  </div>
-  <div id="pagedcollection-njk" role="tabpanel">
-
-{% raw %}
-
-```jinja2
----
-title: My Posts
-pagination:
-  data: collections.post
-  size: 6
-  alias: posts
----
-
-<ol>
-{% for post in posts %}
-  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
-{% endfor %}
-</ol>
-```
-
-{% endraw %}
-
-  </div>
-  <div id="pagedcollection-js" role="tabpanel">
-
-{% raw %}
-
-```js
-exports.data = {
-	title: "My Posts",
-	pagination: {
-		data: "collections.post",
-		size: 6,
-		alias: "posts",
-	},
-};
-
-exports.render = function (data) {
-	return `<ol>
-		${data.posts
-			.map(function (post) {
-				return `<li><a href="${post.url}">${post.title}</a></li>`;
-			})
-			.join("")}
-	</ol>`;
-};
-```
-
-{% endraw %}
-
-  </div>
-</seven-minute-tabs>
-</is-land>
+{% include "snippets/pagination/collection.njk" %}
 
 The above generates a list of links but you could do a lot more. See what’s available in the [Collection documentation](/docs/collections/#collection-item-data-structure) (specifically `templateContent`). If you’d like to use this to automatically generate Tag pages for your content, please read [Quick Tip #004—Create Tag Pages for your Blog](/docs/quicktips/tag-pages/).
 

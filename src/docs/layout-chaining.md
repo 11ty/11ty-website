@@ -28,7 +28,7 @@ Here’s what `mainlayout.njk` would look like:
 
 {% codetitle "_includes/mainlayout.njk" %}
 {% highlight "html" %}
-{% include "examples/layout-chaining/mainlayout.njk" %}
+{% include "snippets/layout-chaining/mainlayout.njk" %}
 {% endhighlight %}
 
 This layout would then be itself wrapped in the same `mylayout.njk` we used in our previous example:

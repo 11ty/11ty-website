@@ -12,10 +12,9 @@ Assume you have data files named `links.json` and `copyrights.json`, and you onl
 
 The corresponding `eleventyComputed.js` file contents can look like the following:
 
-{% codetitle "_data/eleventyComputed.js" %}
-
-```js
-module.exports = {
+<div class="codetitle codetitle-right-md">_data/eleventyComputed.js</div>
+{% set codeContent %}
+export default {
 	myCopyrights: (data) => {
 		return data.copyrights.feed.entry;
 	},
@@ -23,4 +22,5 @@ module.exports = {
 		return data.links.feed.entry;
 	},
 };
-```
+{% endset %}
+{% include "snippets/esmCjsTabs.njk" %}

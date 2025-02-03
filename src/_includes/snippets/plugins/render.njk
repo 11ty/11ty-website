@@ -1,0 +1,75 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "rendertmpl"} %}
+  <div id="rendertmpl-liquid" role="tabpanel">
+
+{% raw %}
+
+```liquid
+{% renderTemplate "md" %}
+# I am a title
+
+* I am a list
+* I am a list
+{% endrenderTemplate %}
+```
+
+{% endraw %}
+
+  </div>
+  <div id="rendertmpl-njk" role="tabpanel">
+
+{% raw %}
+
+```jinja2
+{% renderTemplate "md" %}
+# I am a title
+
+* I am a list
+* I am a list
+{% endrenderTemplate %}
+```
+
+{% endraw %}
+
+  </div>
+  <div id="rendertmpl-js" role="tabpanel">
+
+{% raw %}
+
+```js
+export default async function () {
+  return await this.renderTemplate(
+    `# I am a title
+
+* I am a list
+* I am a list`,
+    "md"
+  );
+};
+```
+
+{% endraw %}
+
+  </div>
+  <div id="rendertmpl-cjs" role="tabpanel">
+
+{% raw %}
+
+```js
+module.exports = async function () {
+  return await this.renderTemplate(
+    `# I am a title
+
+* I am a list
+* I am a list`,
+    "md"
+  );
+};
+```
+
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>

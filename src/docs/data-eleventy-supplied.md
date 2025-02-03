@@ -14,15 +14,15 @@ Here are a few data values we supply to your page that you can use in your templ
 - `pkg`: The local project’s `package.json` values.
 - `pagination`: Using the `pagination` key in [front matter](/docs/data-frontmatter/), this divides data into chunks for multiple output pages. [Read more about Pagination](/docs/pagination/).
 - `collections`: Lists of all of your content, grouped by tags. [Read more about Collections](/docs/collections/)
-- `page`: Has information about the current page (see the code block below for `page` contents). For example, `page.url` is useful for finding the current page in a collection. [Read more about Collections](/docs/collections/) (look at _Example: Navigation Links with an `active` class added for on the current page_).
-- `eleventy`: {% addedin "1.0.0" %} contains Eleventy-specific data from [environment variables](/docs/environment-vars/) and the [Serverless plugin](/docs/plugins/serverless/) (if used).
+- `page`: Has information about the current page (see the code block below for `page` contents). For example, `page.url` is useful for [finding the current page in a collection](/docs/collections.md#use-an-aria-current-attribute-on-the-current-page).
+- `eleventy`: {% addedin "1.0.0" %} contains Eleventy-specific data from [environment variables](/docs/environment-vars/).
 
 <div id="page-variable-contents"></div>
 
 ## `page` Variable
 
 ```js
-let page = {
+const page = {
 	// URL can be used in <a href> to link to other templates
 	// NOTE: This value will be `false` if `permalink` is set to `false`.
 	url: "/current/page/myFile/",
@@ -99,9 +99,13 @@ The `fileSlug` variable is mapped from `inputPath`, and is useful for creating y
 
 The `filePathStem` variable is mapped from `inputPath`, and is useful if you’ve inherited a project that doesn’t use clean [permalinks](/docs/permalinks/).
 
-{% callout "info" %}<strong>Careful with this one!</strong> Remember that <a href="/docs/permalinks/#cool-uris-dont-change">Cool URIs don’t change</a>.{% endcallout %}
+<div id="changing-your-project-default-permalinks"></div>
 
-If you absolutely need a file extension on your output, you might use it like this:
+You can use this feature to [globally change your project’s default permalinks](/docs/permalinks.md#change-permalinks-globally-for-a-project) but make sure you also read the section about [Trailing Slashes](docs/permalinks.md#trailing-slashes).
+
+{% callout "info" %}<strong>Careful with this one!</strong> Remember the recommendation to leave off the file extension from URLs in <a href="/docs/permalinks/#cool-uris-dont-change">Cool URIs don’t change</a>.{% endcallout %}
+
+If you want a file extension in your URL, you might use it like this:
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
@@ -122,68 +126,45 @@ This example output uses the above permalink value.
 | `"2018-01-01-myFile.md"` | `"myFile"`                 | `myFile.html`       |
 | `"myDir/myFile.md"`      | `"myDir/myFile"`           | `myDir/myFile.html` |
 
-#### Changing your project’s default permalinks
-
-{% addedin "2.0.0-canary.9" %} [Deep-link to `3c49f22`](https://github.com/11ty/eleventy/commit/3c49f22b31b10e5dae0daf661a54750875ae5d0f).
-
-Want to change `resource.md` to write to `/resource.html` instead of `/resource/index.html`? Use this configuration API code sample.
-
-{% codetitle ".eleventy.js" %}
-
-```js
-module.exports = function (eleventyConfig) {
-	eleventyConfig.addGlobalData("permalink", () => {
-		return (data) =>
-			`${data.page.filePathStem}.${data.page.outputFileExtension}`;
-	});
-};
-```
-
-{% callout "warn", "md" %}When using this approach for URLs _without_ trailing slashes (file `/resource.html` ▶︎ url `/resource`), please do note that using trailing slashes with `index.html` files (file `/resource/index.html` ▶︎ url `/resource/`) is a bit friendlier on various JAMstack hosting providers. You may encounter unexpected 404 errors—make [sure you study up on how this works and test appropriately!](https://www.zachleat.com/web/trailing-slash/#results-table)!{% endcallout %}
-
 ## `eleventy` Variable {% addedin "1.0.0" %}
 
 ```js
-let eleventy = {
+const eleventy = {
 
-  // Eleventy version
-  version: "1.0.1", // New in {{ "1.0.1" | coerceVersion }}
+	// Eleventy version
+	version: "1.0.1",
 
-  // For use with `<meta name="generator">`
-  generator: "Eleventy v1.0.1", // New in {{ "1.0.1" | coerceVersion }}
+	// For use with `<meta name="generator">`
+	generator: "Eleventy v1.0.1",
 
-  // Read more about their `process.env` counterparts below
-  env: {
-    // Absolute path to the directory in which
-    // you’ve run the Eleventy command.
-    root: "/Users/zachleat/myProject/",
+	// Read more about their `process.env` counterparts below
+	env: {
+		// Absolute path to the directory in which
+		// you’ve run the Eleventy command.
+		root: "/Users/zachleat/myProject/",
 
-    // Absolute path to the current config file
-    config: "/Users/zachleat/myProject/.eleventy.js",
+		// Absolute path to the current config file
+		config: "/Users/zachleat/myProject/.eleventy.js",
 
-    // The method, either `cli` or `script`
-    source: "cli",
+		// The method, either `cli` or `script`
+		source: "cli",
 
-    // One of `serve`, `watch`, or `build`
-    runMode: "build", // New in {{ "2.0.0-beta.2" | coerceVersion }}
-  },
+		// One of `serve`, `watch`, or `build`
+		runMode: "build", // New in {{ "2.0.0-beta.2" | coerceVersion }}
+	},
 
-  serverless: {
-    // An object containing the values from any Dynamic URL
-    //   slugs from Serverless paths
-    // e.g. A slug for /path/:id/ and a URL for /path/1/
-    //   would give { id: 1 }
-    path: {}
-
-    // The `event.queryStringParameters` received from the
-    // serverless function. Note these are not available in
-    // Netlify On-demand Builders
-    // e.g. ?id=1 would be { id: 1 }
-    query: {},
-  }
+	// Project root-relative normalized paths, new in {{ "3.0.0-alpha.6" | coerceVersion }}
+	directories: {
+		"input": "./",
+		"includes": "./_includes/",
+		"data": "./_data/",
+		"output": "./_site/"
+	},
 
 };
 ```
+
+* {% addedin "v3.0.0-alpha.6" %}`eleventy.directories` contains project-root relative normalized paths for the important Eleventy directories: [`input`](/docs/config.md#input-directory),  [`includes`](/docs/config.md#directory-for-includes),  [`layouts`](/docs/config.md##directory-for-layouts-(optional)) (if used),  [`data`](/docs/config.md##directory-for-global-data-files), and [`output`](/docs/config.md#output-directory).
 
 ### Feature Availability
 
@@ -209,17 +190,27 @@ It’s helpful if you add `<meta name="generator">` to your existing Eleventy pr
 These videos also provide some additional context as to why this is important:
 
 <div class="youtube-related">
-  {%- youtubeEmbed "b4frtsT4Cgo", "Full control over HTML, a look at requiring opt-in for the meta name=generator in Eleventy" -%}
-  {%- youtubeEmbed "_YvwTHeqBZY", "eleventy.version and eleventy.generator Data (Weekly №7)", "235" -%}
+	{%- youtubeEmbed "b4frtsT4Cgo", "Full control over HTML, a look at requiring opt-in for the meta name=generator in Eleventy" -%}
+	{%- youtubeEmbed "_YvwTHeqBZY", "eleventy.version and eleventy.generator Data (Weekly №7)", "235" -%}
 </div>
 
 ### Learn more
 
 - [Eleventy-supplied Environment Variables on `process.env`](/docs/environment-vars/#eleventy-supplied)
-- [Serverless](/docs/plugins/serverless/)
-  - [Dynamic Slugs and Serverless Global Data](/docs/plugins/serverless/#dynamic-slugs-and-serverless-global-data).
-  - `event.queryStringParameters`, which are very similar to [URL.searchParams](https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams). It’s an object representing the name/value pairs for things after the `?` in a URL.
 
 ## Environment Variables on `process.env`
 
 - Read more about [Eleventy-supplied environment variables](/docs/environment-vars/#eleventy-supplied).
+
+## Frozen Data
+
+Starting in Eleventy 3.0, the `pkg`, `eleventy`, `page`, `content`, and `collections` properties are now frozen from external modification to prevent accidental overrides interfering with Eleventy internals.
+
+You can temporarily opt-out of the behavior using:
+
+{% set codeContent %}
+export default function(eleventyConfig) {
+	eleventyConfig.setFreezeReservedData(false);
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}

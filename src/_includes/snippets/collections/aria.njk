@@ -1,0 +1,79 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "collectionsnav"} %}
+  <div id="collectionsnav-liquid" role="tabpanel">
+
+{% raw %}
+
+```liquid
+<ul>
+{%- for post in collections.post -%}
+  <li{% if page.url == post.url %} aria-current="page"{% endif %}>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+```
+
+{% endraw %}
+
+  </div>
+  <div id="collectionsnav-njk" role="tabpanel">
+
+{% raw %}
+
+```jinja2
+<ul>
+{%- for post in collections.post -%}
+  <li{% if page.url == post.url %} aria-current="page"{% endif %}>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+```
+
+{% endraw %}
+
+  </div>
+  <div id="collectionsnav-js" role="tabpanel">
+
+{% raw %}
+
+```js
+export function render(data) {
+	return `<ul>
+    ${data.collections.post
+			.map(
+				(post) =>
+					`<li${data.page.url === post.url ? ` aria-current="page"` : ""}>${
+						post.data.title
+					}</li>`
+			)
+			.join("\n")}
+  </ul>`;
+};
+```
+
+{% endraw %}
+
+  </div>
+  <div id="collectionsnav-cjs" role="tabpanel">
+
+{% raw %}
+
+```js
+exports.render = function (data) {
+	return `<ul>
+    ${data.collections.post
+			.map(
+				(post) =>
+					`<li${data.page.url === post.url ? ` aria-current="page"` : ""}>${
+						post.data.title
+					}</li>`
+			)
+			.join("\n")}
+  </ul>`;
+};
+```
+
+{% endraw %}
+
+  </div>
+</seven-minute-tabs>
+</is-land>

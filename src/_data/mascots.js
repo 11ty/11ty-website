@@ -35,6 +35,13 @@ export default [
 		description: "July 2021. Our second commission! The community has grown.",
 	},
 	{
+		url: "https://a.singlediv.com/#rise",
+		image: "./src/img/mascots/lynn-fisher.png",
+		name: "A Single Div",
+		author: "Lynn Fisher",
+		description: "October 2022. From a.singlediv.com."
+	},
+	{
 		url: "/blog/mascot-david/",
 		image: "./src/img/mascots/david.svg",
 		name: "Elle",

@@ -1,9 +1,5 @@
 ---
 headerTitle: Eleventy Community
-eleventyNavigation:
-  parent: Community
-  key: Testimonials
-  order: 1.1
 ---
 
 # Testimonials

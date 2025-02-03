@@ -1,0 +1,57 @@
+<is-land import="/js/seven-minute-tabs.js">
+<seven-minute-tabs class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paginationnavarray"} %}
+  <div id="paginationnavarray-liquid" role="tabpanel">
+
+{% raw %}
+
+```liquid
+---
+pagination:
+  data: testdata
+  size: 2
+testdata:
+ - item1
+ - item2
+ - item3
+ - item4
+ - item5
+ - item6
+---
+{% comment %}pagination.items has the data for the current page{% endcomment %}
+```
+
+{% endraw %}
+
+  </div>
+  <div id="paginationnavarray-njk" role="tabpanel">
+
+{% raw %}
+
+```jinja2
+---
+pagination:
+  data: testdata
+  size: 2
+testdata:
+ - item1
+ - item2
+ - item3
+ - item4
+ - item5
+ - item6
+---
+{# pagination.items has the data for the current page #}
+```
+
+{% endraw %}
+
+  </div>
+  <div id="paginationnavarray-js" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
+  <div id="paginationnavarray-cjs" role="tabpanel">
+    <p><em>This example has not yet been added—you can swap to another template language above! Or maybe you want to contribute it? {% include "edit-on-github.njk" %}</em></p>
+  </div>
+</seven-minute-tabs>
+</is-land>

@@ -20,19 +20,17 @@ HTML files are pre-processed by default as [Liquid templates](/docs/languages/li
 
 {% callout "warn" %}This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.{% endcallout %}
 
-Careful with the HTML template type when using the same <code>--input</code> and <code>--output</code> directory (this is not the default).
+Take care with the HTML template type when using the same <code>--input</code> and <code>--output</code> directory (this is not the default).
 
-If you run eleventy more than once, it’ll try to process your output files too.
+If you run Eleventy more than once, it’ll try to process your output files too which may result in duplicate template errors.
 
 ```
 $ eleventy --input=. --output=. --formats=md,html
 Writing ./README/index.html from ./README.md
 
 $ eleventy --input=. --output=. --formats=md,html
-Writing ./README/index.html from ./README.md
-Writing ./README/index-o.html from ./README/index.html
 ```
+
+The second run will attempt to write `./README/index.html` from both `./README.md` and `./README/index.html`, resulting in a Duplicate Permalink Error (two templates writing to the same location). You can workaround this issue using the [Ignores feature](/docs/ignores.md).
 
 If you’re going to use `--formats=html`, it’s probably best not using the same input and output directories.
-
-Moreover, you may notice in the above output that the second template wrote to `index-o.html`. When the input and output directories are the same _and_ the source template is named `index.html`, we add an `-o` suffix to avoid overwriting itself. This is a special case that only applies to `index.html` filenames. You can customize the `-o` suffix with the [`htmlOutputSuffix` configuration option](/docs/config/#change-exception-case-suffix-for-html-files).
