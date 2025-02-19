@@ -232,7 +232,7 @@ jobs:
           key: ${{ runner.os }}-eleventy-fetch-cache
 
       - run: npm install
-      - run: npm run build-ghpages
+      - run: npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
