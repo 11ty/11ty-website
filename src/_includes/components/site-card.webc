@@ -4,29 +4,31 @@ function getIconHtml(url) {
 		return indieavatar(url, 'sites-screenshot sites-icon-auto');
 	}
 }
-async function getScreenshotStyle(url, iconUrl) {
-	let colors = await getImageColorsForUrl(iconUrl || url);
-	if(colors.length === 0) {
-		return false;
-	}
 
-	let styles = [];
-	let filteredColors = colors.map(entry => getColorObject(entry.original)).sort((a, b) => {
-		return (b.oklch.l + b.oklch.c) - (a.oklch.l + a.oklch.c);
-	}).filter(entry => {
-		return entry.oklch.l > .4 && entry.oklch.l <= .95;
-	});
+// :style="getScreenshotStyle(url, iconUrl)"
+// async function getScreenshotStyle(url, iconUrl) {
+// 	let colors = await getImageColorsForUrl(iconUrl || url);
+// 	if(colors.length === 0) {
+// 		return false;
+// 	}
 
-	if(filteredColors[0]) {
-		styles.push(`--card-primary: ${filteredColors[0].toString({format: "hex"})};`);
-	}
+// 	let styles = [];
+// 	let filteredColors = colors.map(entry => getColorObject(entry.original)).sort((a, b) => {
+// 		return (b.oklch.l + b.oklch.c) - (a.oklch.l + a.oklch.c);
+// 	}).filter(entry => {
+// 		return entry.oklch.l > .4 && entry.oklch.l <= .95;
+// 	});
 
-	if(iconUrl) {
-		styles.push(`--card-background: linear-gradient(${colors.slice(0, 3).map(entry => entry.background).join(',')})`);
-	}
+// 	if(filteredColors[0]) {
+// 		styles.push(`--card-primary: ${filteredColors[0].toString({format: "hex"})};`);
+// 	}
 
-	return styles.join(";");
-}
+// 	if(iconUrl) {
+// 		styles.push(`--card-background: linear-gradient(${colors.slice(0, 3).map(entry => entry.background).join(',')})`);
+// 	}
+
+// 	return styles.join(";");
+// }
 </script>
 <style webc:scoped>
 .metadata {
@@ -36,7 +38,7 @@ async function getScreenshotStyle(url, iconUrl) {
 <link rel="stylesheet" href="site-entry.css">
 
 <div class="sites-site-vert">
-	<a :href="url" class="elv-externalexempt" :title="name || false" :style="getScreenshotStyle(url, iconUrl)">
+	<a :href="url" class="elv-externalexempt" :title="name || false">
 		<div class="sites-screenshot-container" @html="imageHtml || getIconHtml(iconUrl) || getScreenshotHtml(undefined, screenshotUrl || url, null, size)"></div>
 		<span class="sites-site-name">
 			<span webc:nokeep @html="indieavatar(url, 'avatar-large')"></span>
