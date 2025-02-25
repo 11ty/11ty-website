@@ -330,12 +330,12 @@ export default async function (eleventyConfig) {
 		});
 	});
 
-	eleventyConfig.addShortcode("getImageColorsForUrl", async (url) => {
-		return getImageColors(`https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(url)}/`);
-	});
+	eleventyConfig.addShortcode("getFilteredColorsForUrl", async (url) => {
+		let colors = await getImageColors(`https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(url)}/`);
 
-	eleventyConfig.addShortcode("getColorObject", (colorString) => {
-		return new Color(colorString);
+		return colors.map(entry => new Color(entry.original)).sort((a, b) => {
+			return (b.oklch.l + b.oklch.c) - (a.oklch.l + a.oklch.c);
+		});
 	});
 
 	eleventyConfig.addFilter("coerceVersion", coerceVersion);
