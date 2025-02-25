@@ -81,6 +81,7 @@
     "@zachleat/heading-anchors": "^1.0.3",
     "@zachleat/seven-minute-tabs": "^3.0.2",
     "artificial-chart": "^2.0.3",
+    "colorjs.io": "^0.5.2",
     "lite-youtube-embed": "^0.3.3",
     "speedlify-score": "^4.0.4"
   }

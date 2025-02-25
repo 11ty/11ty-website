@@ -7,6 +7,7 @@ import commaNumber from "comma-number";
 import lodashGet from "lodash/get.js";
 import shortHash from "short-hash";
 import { ImportTransformer } from "esm-import-transformer";
+import Color from "colorjs.io";
 
 import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 import navigationPlugin from "@11ty/eleventy-navigation";
@@ -333,6 +334,10 @@ export default async function (eleventyConfig) {
 		return getImageColors(`https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(url)}/`);
 	});
 
+	eleventyConfig.addShortcode("getColorObject", (colorString) => {
+		return new Color(colorString);
+	});
+
 	eleventyConfig.addFilter("coerceVersion", coerceVersion);
 	eleventyConfig.addShortcode("addedin", addedIn);
 
@@ -532,7 +537,11 @@ ${text.trim()}
 
 		// remove trailing slash
 		if (url.endsWith("/")) {
-			url = url.substring(0, url.length - 1);
+			url = url.slice(0, -1);
+		}
+
+		if(url.startsWith("www.")) {
+			url = url.slice("www.".length);
 		}
 
 		return url;
