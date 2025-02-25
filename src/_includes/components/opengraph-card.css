@@ -8,7 +8,7 @@
 	text-align: center;
 	font-size: 1.25em; /* 20px /16 */
 	font-weight: bold;
-	box-shadow: 0 0 0 4px var(--shadow-color, transparent);
+	box-shadow: 0 0 0 3px var(--shadow-color, transparent);
 	opacity: .8;
 }
 a[href].opengraph-card:focus,

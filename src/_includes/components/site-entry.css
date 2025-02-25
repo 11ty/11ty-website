@@ -22,13 +22,14 @@
 }
 .sites-screenshot-youtube-sq {
 	aspect-ratio: 1/1;
-	object-fit: cover;
-	object-position: 100% 50%;
+	object-fit: contain;
+	background-color: #222;
 }
 .sites-icon-auto.sites-icon-auto.sites-icon-auto {
 	width: 23.4375em; /* 375px /16 */
 	height: auto;
 	padding: 2.5em;
+	object-fit: none;
 }
 .sites-site-official .sites-screenshot {
 	border-color: #666;
@@ -148,10 +149,26 @@
 	overflow: hidden;
 	width: 100%;
 }
-.sites-site-vert a:focus .sites-screenshot,
-.sites-site-vert a:hover .sites-screenshot {
-	--shadow-color: rgba(234, 0, 255, 0.747);
-	box-shadow: 0 0 0 4px var(--shadow-color);
+.sites-site-vert a:is(:focus, :hover) .sites-screenshot {
+	--card-shadow-color: var(--card-primary, rgba(234, 0, 255, 0.747));
+}
+.sites-site-vert .sites-screenshot-container {
+	position: relative;
+}
+.sites-site-vert .sites-screenshot-container:after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	opacity: .15;
+	background: var(--card-background);
+	z-index: -1;
+	border-radius: .4em;
+}
+.sites-site-vert a:is(:focus, :hover) .sites-screenshot-container:after {
+	opacity: .3;
+}
+.sites-site-vert a .sites-screenshot {
+	box-shadow: 0 0 0 3px var(--card-shadow-color, var(--shadow-color));
 }
 
 .sites-site-vert > a {

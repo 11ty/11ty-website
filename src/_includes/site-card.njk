@@ -1,5 +1,6 @@
+{%- set siteUrl = site.demo or site.url %}
 <div class="sites-site-vert{% if site.official %} sites-site-official{% endif %}{% if site.class %} {{ site.class }}{% endif %}" data-filter-tags="{% if siteData | lighthousePerfectScore %}perfectlh{% endif %}">
-  <a {% if site.url or site.demo %}href="{{ site.demo or site.url }}"{% endif %} class="elv-externalexempt" title="{{ site.name }}">
+  <a {% if siteUrl %}href="{{ site.demo or site.url }}"{% endif %} class="elv-externalexempt" title="{{ site.name }}">
     <span class="sites-site-name">
       {%- if not site.skipIcon %}
         {%- if site.iconUrl or site.url %}
@@ -14,17 +15,7 @@
         {{ site.url | displayUrl }}
       {%- endif -%}
     </span>
-    <div class="sites-screenshot-container">
-{%- if site.url or site.demo %}
-  {%- if site.screenshotOverride %}
-    <img alt="{{ site.screenshotOverride.alt }}" loading="lazy" decoding="async" class="sites-screenshot" src="{{ site.screenshotOverride.src }}" width="{{ site.screenshotOverride.width }}" height="{{ site.screenshotOverride.height }}">
-  {%- else %}
-    {%- getScreenshotHtml site.fileSlug, site.demo or site.url, null, site.screenshotSize, site.screenshotAspectRatio -%}
-  {%- endif %}
-{%- else %}
-    <img class="sites-screenshot">
-{%- endif %}
-    </div>
+    {{ site | cardScreenshotHtml | safe }}
 {%- if siteData | lighthouseGoodDataCheck %}
     <div class="sites-site-lighthouse">
       <is-land on:visible import="/js/speedlify-score.js">
@@ -38,7 +29,6 @@
 {%- if not sourceUrl and site.url and (site.url.startsWith("https://github.com/") or site.url.startsWith("https://gitlab.com/")) %}
   {%- set sourceUrl = site.url %}
 {%- endif %}
-
 
 {%- if not hideRelatedLinks %}
 {%- if site.url.startsWith("https://glitch.com/") %}

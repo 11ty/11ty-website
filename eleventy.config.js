@@ -14,6 +14,7 @@ import eleventyImage, { eleventyImagePlugin, eleventyImageTransformPlugin } from
 import eleventyWebcPlugin from "@11ty/eleventy-plugin-webc";
 import { RenderPlugin, InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 import fontAwesomePlugin from "@11ty/font-awesome";
+import { getImageColors } from "@11ty/image-color";
 
 import { addedIn, coerceVersion } from "./config/addedin.js";
 import monthDiffPlugin from "./config/monthDiff.js";
@@ -310,16 +311,6 @@ export default async function (eleventyConfig) {
 			"npm:@11ty/is-land/*.webc",
 			"npm:@11ty/eleventy-img/*.webc",
 		],
-		bundlePluginOptions: {
-			transforms: [
-				// 			function(bundleContent) {
-				// 				// careful with HTML bundles here in the future
-				// 				return `
-				// /* @11ty/eleventy-plugin-bundle: ${bundleContent.length/1000} kB */
-				// ${bundleContent}`;
-				// 			}
-			],
-		},
 	});
 
 	// Feeds (only in production)
@@ -336,6 +327,10 @@ export default async function (eleventyConfig) {
 				item.data?.eleventyNavigation && item.data?.excludeFromSidebar !== true
 			);
 		});
+	});
+
+	eleventyConfig.addShortcode("getImageColorsForUrl", async (url) => {
+		return getImageColors(`https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(url)}/`);
 	});
 
 	eleventyConfig.addFilter("coerceVersion", coerceVersion);
@@ -475,6 +470,17 @@ ${text.trim()}
 
 	eleventyConfig.addFilter("lighthousePerfectScore", function (data) {
 		return !!data && !("error" in data) && data.lighthouse.total === 400;
+	});
+
+	eleventyConfig.addFilter("cardScreenshotHtml", function (site) {
+		let url = site.demo || site.url;
+		if(!url) {
+			return `<div class="sites-screenshot-container"><img class="sites-screenshot"></div>`;
+		}
+		if(site.screenshotOverride) {
+			return `<div class="sites-screenshot-container"><img alt="${site.screenshotOverride.alt}" loading="lazy" decoding="async" class="sites-screenshot" src="${site.screenshotOverride.src}" width="${site.screenshotOverride.width}" height="${site.screenshotOverride.height}"></div>`;
+		}
+		return `<div class="sites-screenshot-container">${shortcodes.getScreenshotHtml(site.fileSlug, url, null, site.screenshotSize, site.screenshotAspectRatio)}</div>`;
 	});
 
 	eleventyConfig.addFilter("speedlifyHash", function (site) {

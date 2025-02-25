@@ -4,13 +4,13 @@ eleventyNavigation:
   parent: Watch and Serve
 ---
 
-# Vite {% indieavatar "https://vitejs.dev/" %}
+# Vite {% indieavatar "https://vite.dev/" %}
 
 {% tableofcontents %}
 
 - [`eleventy-plugin-vite` on GitHub](https://github.com/11ty/eleventy-plugin-vite)
 
-A plugin to use [Vite](https://vitejs.dev/) with Eleventy 2.0+.
+A plugin to use [Vite](https://vite.dev/) with Eleventy 2.0+.
 
 - Runs Vite as Middleware in [Eleventy Dev Server](/docs/dev-server/) (try with Eleventy’s `--incremental`)
 - Runs Vite build to postprocess your Eleventy build output
@@ -43,7 +43,7 @@ export default function (eleventyConfig) {
 <details>
 <summary>Expand for full list of options</summary>
 
-View the [full list of Vite Configuration options](https://vitejs.dev/config/).
+View the [full list of Vite Configuration options](https://vite.dev/config/).
 
 {% set codeContent %}
 import EleventyVitePlugin from "@11ty/eleventy-plugin-vite";
