@@ -79,6 +79,34 @@ export default function(eleventyConfig) {
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
+### Change a Project’s Default Time Zone
+
+Relevant [GitHub Issue #3668](https://github.com/11ty/eleventy/issues/3668). Examples of [valid time zones](https://moment.github.io/luxon/#/zones?id=specifying-a-zone) are available on the Luxon documentation.
+
+{% set codeContent %}
+import { DateTime } from "luxon";
+
+// See https://moment.github.io/luxon/#/zones?id=specifying-a-zone
+const TIME_ZONE = "America/Chicago";
+
+export default function(eleventyConfig) {
+	eleventyConfig.addDateParsing(function(dateValue) {
+		let localDate;
+		if(dateValue instanceof Date) { // and YAML
+			localDate = DateTime.fromJSDate(dateValue, { zone: "utc" }).setZone(TIME_ZONE, { keepLocalTime: true });
+		} else if(typeof dateValue === "string") {
+			localDate = DateTime.fromISO(dateValue, { zone: TIME_ZONE });
+		}
+		if (localDate?.isValid === false) {
+			throw new Error(`Invalid \`date\` value (${dateValue}) is invalid for ${this.page.inputPath}: ${localDate.invalidReason}`);
+		}
+		return localDate;
+	});
+};
+
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
 ## Dates off by one day?
 
 {% callout "warn" %}This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.{% endcallout %}
