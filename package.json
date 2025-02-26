@@ -9,7 +9,7 @@
   "scripts": {
     "check-links": "npx check-html-links _site",
     "build": "npx @11ty/eleventy --quiet && npm run create-search-index",
-    "build-production": "npm run get-new-data && NODE_ENV=production npx @11ty/eleventy && npm run create-search-index",
+    "build-production": "npm run get-new-data && NODE_ENV=production DEBUG=Eleventy* npx @11ty/eleventy && npm run create-search-index",
     "start": "npx @11ty/eleventy --serve --quiet --port=8091 --incremental",
     "start-production": "NODE_ENV=production npx @11ty/eleventy --serve --quiet --port=8091",
     "create-search-index": "npx pagefind --site \"_site\" --glob \"{docs,blog}/**/*.html\"",
