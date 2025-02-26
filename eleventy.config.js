@@ -215,11 +215,6 @@ function findBy(data, path, value) {
 export default async function (eleventyConfig) {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
-
-	if (process.env.NODE_ENV === "production") {
-		eleventyConfig.setConcurrency(1);
-	}
-
 	if (process.env.NODE_ENV === "production") {
 		// Skip on production
 		eleventyConfig.ignores.add("src/admin.md");
@@ -329,12 +324,14 @@ export default async function (eleventyConfig) {
 		});
 	});
 
-	eleventyConfig.addShortcode("getFilteredColorsForUrl", async (url) => {
-		let colors = await getImageColors(`https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(url)}/`);
+	eleventyConfig.addShortcode("getColorsForUrl", async (url) => {
+		let avatarUrl = `https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(url)}/`;
 
-		return colors.map(entry => entry.colorjs).sort((a, b) => {
-			return (b.oklch.l + b.oklch.c) - (a.oklch.l + a.oklch.c);
-		});
+		return getImageColors(avatarUrl).then(colors => {
+			return colors.map(c => c.colorjs).sort((a, b) => {
+				return (b.oklch.l + b.oklch.c) - (a.oklch.l + a.oklch.c);
+			});
+		})
 	});
 
 	eleventyConfig.addFilter("coerceVersion", coerceVersion);

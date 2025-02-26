@@ -6,22 +6,21 @@ function getIconHtml(url) {
 }
 
 async function getScreenshotStyle(url, iconUrl) {
-	let colors = await getFilteredColorsForUrl(iconUrl || url);
-	if(colors.length === 0) {
+	let colors = await getColorsForUrl(iconUrl || url);
+	if(!colors || colors.length === 0) {
 		return false;
 	}
 
 	let styles = [];
-	let filteredColors = colors.filter(entry => {
-		return entry.oklch.l > .4 && entry.oklch.l <= .95;
+	let filteredColors = colors.filter(color => {
+		return color.oklch.l > .4 && color.oklch.l <= .95;
 	});
-
 	if(filteredColors[0]) {
 		styles.push(`--card-primary: ${filteredColors[0].toString({format: "hex"})};`);
 	}
 
 	if(iconUrl) {
-		styles.push(`--card-background: linear-gradient(${colors.slice(0, 3).map(entry => entry.toString({format: "hex"})).join(',')})`);
+		styles.push(`--card-background: linear-gradient(${colors.slice(0, 3).map(c => c.toString({format: "hex"})).join(',')})`);
 	}
 
 	return styles.join(";");
