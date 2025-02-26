@@ -7,7 +7,6 @@ import commaNumber from "comma-number";
 import lodashGet from "lodash/get.js";
 import shortHash from "short-hash";
 import { ImportTransformer } from "esm-import-transformer";
-import Color from "colorjs.io";
 
 import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 import navigationPlugin from "@11ty/eleventy-navigation";
@@ -333,7 +332,7 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addShortcode("getFilteredColorsForUrl", async (url) => {
 		let colors = await getImageColors(`https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(url)}/`);
 
-		return colors.map(entry => new Color(entry.original)).sort((a, b) => {
+		return colors.map(entry => entry.colorjs).sort((a, b) => {
 			return (b.oklch.l + b.oklch.c) - (a.oklch.l + a.oklch.c);
 		});
 	});
