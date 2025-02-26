@@ -4,7 +4,7 @@
   "description": "The website of 11ty.dev",
   "type": "module",
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
   "scripts": {
     "check-links": "npx check-html-links _site",
