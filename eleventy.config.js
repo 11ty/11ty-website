@@ -161,7 +161,7 @@ const shortcodes = {
 			return "";
 		}
 		let fullUrl = `https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(iconUrl)}/`;
-		return shortcodes.getAvatarHtmlFromFullUrl(fullUrl, cls, "eleventy:ignore");
+		return shortcodes.getAvatarHtmlFromFullUrl(fullUrl, cls, "eleventy:ignore", [60, 60]);
 	},
 	getGitHubAvatarHtml(username, alt = "") {
 		if(!username) {

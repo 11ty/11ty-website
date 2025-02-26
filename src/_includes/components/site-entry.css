@@ -12,24 +12,31 @@
 .sites-lo > .site-top .sites-perf-si {
 	display: block;
 }
-.sites-screenshot {
-	display: block;
+.sites-screenshot-container {
 	border: 1px solid #ccc;
 	border-radius: 0.4em;
-	margin: 0.5em 0;
+	box-shadow: 0 0 0 3px var(--card-shadow-color, var(--shadow-color));
+}
+.sites-screenshot {
+	display: block;
 	width: 100%;
 	height: auto;
+	border-radius: .3em;
 }
 .sites-screenshot-youtube-sq {
 	aspect-ratio: 1/1;
 	object-fit: contain;
 	background-color: #222;
 }
-.sites-icon-auto.sites-icon-auto.sites-icon-auto {
-	width: 23.4375em; /* 375px /16 */
-	height: auto;
-	padding: 2.5em;
-	object-fit: none;
+.sites-screenshot-container--icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 1 / 1;
+}
+.sites-screenshot-container--icon .avatar.sites-icon-auto {
+	width: 3.333333333333em; /* 60px /18 */
+	height: 3.333333333333em; /* 60px /18 */
 }
 .sites-site-official .sites-screenshot {
 	border-color: #666;
@@ -92,16 +99,19 @@
 	margin-top: 1em;
 	margin-bottom: 0;
 }
-.sites-vert .sites-screenshot {
+.sites-vert .sites-screenshot-container {
 	margin-top: 4px;
 	margin-bottom: 4px;
 }
 .sites-vert .avatar {
-	margin-right: 0;
+	margin-right: 3px;
 	margin-left: 0;
 	width: 1em;
 	height: 1em;
 	object-fit: contain;
+}
+.sites-vert--wc .avatar {
+	margin-right: 0;
 }
 .sites-vert > .lo-grid {
 	--fl-gap-h: 1rem;
@@ -149,26 +159,27 @@
 	overflow: hidden;
 	width: 100%;
 }
-.sites-site-vert a:is(:focus, :hover) .sites-screenshot {
+.sites-site-vert a:is(:focus, :hover) {
 	--card-shadow-color: var(--card-primary, rgba(234, 0, 255, 0.747));
 }
 .sites-site-vert .sites-screenshot-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 1/1;
 	position: relative;
 }
 .sites-site-vert .sites-screenshot-container:after {
 	content: "";
 	position: absolute;
 	inset: 0;
-	opacity: .15;
+	opacity: .3;
 	background: var(--card-background);
 	z-index: -1;
 	border-radius: .4em;
 }
 .sites-site-vert a:is(:focus, :hover) .sites-screenshot-container:after {
-	opacity: .3;
-}
-.sites-site-vert a .sites-screenshot {
-	box-shadow: 0 0 0 3px var(--card-shadow-color, var(--shadow-color));
+	opacity: .5;
 }
 
 .sites-site-vert > a {
