@@ -22,7 +22,7 @@ layout: layouts/docs.njk
   {%- if author.sites.length %}
   <div class="business-network-sites lo-grid lo-grid-fill" style="--fl-gap-h: .25rem; --fl-gap-v: .25rem; --lo-c-minwidth: 75px;">
   {%- for site in author.sites %}
-    <div><a href="{{ site.url }}" class="elv-externalexempt">{%- getScreenshotHtml site.fileSlug, site.url, "80px" -%}</a></div>
+    <div><a href="{{ site.url }}" class="elv-externalexempt">{%- getScreenshotHtml "", site.url, "80px" -%}</a></div>
   {%- endfor %}
   </div>
   {%- endif %}

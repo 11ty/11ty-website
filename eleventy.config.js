@@ -68,7 +68,7 @@ const shortcodes = {
 			)
 		);
 	},
-	getScreenshotHtml(siteSlug, siteUrl, sizes, preset = "small") {
+	getScreenshotHtml(alt, siteUrl, sizes, preset = "small") {
 		let zoom;
 		let viewport = {
 			width: 375,
@@ -119,7 +119,7 @@ const shortcodes = {
 		);
 
 		let attrs = {
-			alt: `Screenshot of ${siteUrl}`,
+			alt: alt ?? `Screenshot of ${siteUrl}`,
 			loading: "lazy",
 			decoding: "async",
 			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
@@ -142,8 +142,7 @@ const shortcodes = {
 			url
 		)}/image/host/" width="66" height="66" alt="Hosting provider icon for ${url}" class="avatar avatar-large" loading="lazy" decoding="async" eleventy:ignore>`;
 	},
-	getAvatarHtmlFromFullUrl(fullUrl, cls = "", attrs = "") {
-		let dims = [150, 150];
+	getAvatarHtmlFromFullUrl(fullUrl, cls = "", attrs = "", dims = [150, 150]) {
 		if (cls === "avatar-tall") {
 			dims = [120, 150];
 		}
@@ -930,7 +929,7 @@ to:
 <div class="sites-site-vert">
   <a href="{{ site.url }}" class="elv-externalexempt">
     <div class="sites-screenshot-container">
-      {% getScreenshotHtml site.fileSlug, site.url %}
+      {% getScreenshotHtml "", site.url %}
     </div>
   </a>
 </div> */
