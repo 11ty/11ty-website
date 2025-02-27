@@ -15,7 +15,7 @@
 .sites-screenshot-container {
 	border: 1px solid #ccc;
 	border-radius: 0.4em;
-	box-shadow: 0 0 0 3px var(--card-shadow-color, var(--shadow-color));
+	box-shadow: 0 0 0 var(--card-shadow-size, 3px) var(--card-shadow-color, var(--shadow-color));
 }
 .sites-screenshot {
 	display: block;
@@ -159,9 +159,6 @@
 	overflow: hidden;
 	width: 100%;
 }
-.sites-site-vert a:is(:focus, :hover) {
-	--card-shadow-color: var(--card-primary, rgba(234, 0, 255, 0.747));
-}
 .sites-site-vert .sites-screenshot-container {
 	display: flex;
 	align-items: center;
@@ -178,9 +175,20 @@
 	z-index: -1;
 	border-radius: .4em;
 }
-.sites-site-vert a:is(:focus, :hover) .sites-screenshot-container:after {
-	opacity: .5;
+
+/* Borders and hovers */
+.sites-site-vert a:is(:focus, :hover) {
+	--card-shadow-color: rgba(234, 0, 255, 0.747);
+	--card-shadow-size: 0.4444444444444em; /* 8px /18 */
 }
+.sites-site-vert a {
+	--card-shadow-color: var(--card-primary);
+}
+.sites-site-vert a:is(:focus, :hover) img,
+.sites-site-vert a:is(:focus, :hover) .sites-screenshot-container:after {
+	opacity: .75;
+}
+/* End borders and hovers */
 
 .sites-site-vert > a {
 	text-decoration: none;
