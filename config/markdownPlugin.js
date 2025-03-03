@@ -1,22 +1,18 @@
 import slugify from "@sindresorhus/slugify";
 import markdownItToc from "markdown-it-table-of-contents";
 import { IdAttributePlugin } from "@11ty/eleventy";
+import memoize from "memoize";
 
-function markdownItSlugify(s) {
-	return slugify(removeExtraText(s), { lower: true, remove: /[\=\":’'`,]/g });
-}
+const markdownItSlugify = memoize((s => {
+	return slugify(removeExtraText(s));
+}));
 
 function removeExtraText(s) {
 	let newStr = String(s);
-	newStr = newStr.replace(/\-alpha\.\d+/, "");
-	newStr = newStr.replace(/\-beta\.\d+/, "");
-	newStr = newStr.replace(/\-canary\.\d+/, "");
-	newStr = newStr.replace(/New\ in\ v\d+\.\d+\.\d+/, "");
-	newStr = newStr.replace(/Added\ in\ v\d+\.\d+\.\d+/, "");
-	newStr = newStr.replace(/Coming\ soon\ in\ v\d+\.\d+\.\d+/, "");
-	newStr = newStr.replace(/Pre-release\ only\:\ v\d+\.\d+\.\d+/, "");
-	newStr = newStr.replace(/⚠️/g, "");
-	newStr = newStr.replace(/[?!]/g, "");
+	newStr = newStr.replace(/\-(alpha|beta|canary)\.\d+/, "");
+	newStr = newStr.replace(/(New\ in|Added\ in|Pre-release\ only)\ v\d+\.\d+\.\d+/, "");
+	newStr = newStr.replace(/[⚠️?!]/g, "");
+	newStr = newStr.replace(/[\=\":’'`,]/g, "");
 	newStr = newStr.replace(/<[^>]*>/g, "");
 	return newStr;
 }
@@ -24,9 +20,7 @@ function removeExtraText(s) {
 export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(IdAttributePlugin, {
 		// custom slugify function, otherwise we use Eleventy’s built-in `slugify` filter.
-		slugify: function(textContent) {
-			return markdownItSlugify(textContent);
-		},
+		slugify: markdownItSlugify,
 		selector: "h1,h2,h3,h4,h5,h6", // default
 	});
 
@@ -52,12 +46,12 @@ export default function (eleventyConfig) {
 		mdLib.linkify.tlds(".io", false);
 	});
 
-	eleventyConfig.addPairedShortcode("markdown", function (content) {
+	const renderMarkdownInline = memoize(content => {
 		return mdIt.renderInline(content);
 	});
-	eleventyConfig.addFilter("markdown", function (content) {
-		return mdIt.renderInline(content);
-	});
+
+	eleventyConfig.addPairedShortcode("markdown", renderMarkdownInline);
+	eleventyConfig.addFilter("markdown", renderMarkdownInline);
 
 	// WebC migration: callout.webc
 	eleventyConfig.addPairedShortcode(
