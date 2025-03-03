@@ -26,13 +26,13 @@ This list is not considered to be exhaustive. It’s just what has been implemen
 
 Learn more about [environment variables for debug output](/docs/debugging/#commands).
 
-#### macOS or Linux (et al)
+### macOS or Linux (et al)
 
 ```bash
 DEBUG=Eleventy:Benchmark* npx @11ty/eleventy
 ```
 
-#### Windows
+### Windows
 
 ```bash
 set DEBUG=Eleventy:Benchmark* & npx @11ty/eleventy
@@ -53,3 +53,17 @@ Benchmark (Aggregate): Template Write took 2088ms (27.6%, called 312×, 6.7ms ea
 ```
 
 Note that while we do make every attempt to make these as accurate as possible, the percentages for these entries may be greater than 100% due to the asynchronous nature of these tasks (passthrough copy especially).
+
+## Node.js Profiling
+
+The most reliable mechanism for tracking down performance issues in any Node.js based code is to use Node’s built-in [CPU Profiling](https://nodejs.org/docs/latest/api/cli.html#--cpu-prof) feature (Node v12+). You can run Node with the `--cpu-prof` argument and point to the Eleventy bin like so (noting that `--quiet` is an Eleventy CLI argument and you can add any others there too):
+
+```sh
+# Instead of:
+# npx @11ty/eleventy --quiet
+
+# Use this:
+node --cpu-prof ./node_modules/.bin/eleventy --quiet
+```
+
+This will write a `CPU.***.cpuprofile` file to the same directory. [SpeedScope](https://www.speedscope.app/) is a great web site that will help you look at a visual representation of this data, with a special node to the `Left Heavy` and `Sandwich` visuals!
