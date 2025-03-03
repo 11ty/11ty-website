@@ -1005,6 +1005,10 @@ to:
 		}
 		return content;
 	});
+
+	eleventyConfig.addFilter("opencollectiveTier", (supporters = [], tier = undefined) => {
+		return supporters.filter(s => s.isMonthly && (!tier || s?.tier?.slug == tier));
+	})
 };
 
 export const config = {

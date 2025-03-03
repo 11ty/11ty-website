@@ -79,7 +79,7 @@ function getUniqueContributors(orders, githubSponsorsAmount) {
 
 export default async function () {
 	try {
-		let url = `https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000`;
+		let url = `https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000&status=ACTIVE`;
 		let json = await EleventyFetch(url, {
 			type: "json",
 			duration: "30m",
