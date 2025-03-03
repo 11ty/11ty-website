@@ -61,6 +61,17 @@ Note the `async` configuration callback. This change is to work around limitatio
 
 If you attempt to `require("@11ty/eleventy")` with Eleventy v3, we’ll throw a [very helpful error message which will provide you exact instructions on how to fix the issue](https://www.zachleat.com/web/future-friendly-esm/).
 
+#### `default` and ESM plugins
+
+When using plugin code that uses the default export as the plugin callback, you will need to use the special `default` property supplied from dynamic `import()`.
+
+```js
+module.exports = async function (eleventyConfig) {
+	const { default: myPlugin } = await import("my-eleventy-plugin");
+	// …
+};
+```
+
 ### ESM Configuration
 
 Your [configuration file](/docs/config.md) using ESM will look like this:
