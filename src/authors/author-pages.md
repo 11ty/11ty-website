@@ -5,9 +5,6 @@ let pagination = {
 	alias: "author",
 	resolve: "values",
 	generatePageOnEmptyData: true,
-	before: function(paginationData) {
-		return paginationData.filter(page => !page.name.startsWith("twitter:"));
-	}
 };
 let permalink = "/authors/{{ author.name | slugify }}/";
 let excludeFromSearch = true;
