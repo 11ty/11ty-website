@@ -66,4 +66,6 @@ The most reliable mechanism for tracking down performance issues in any Node.js 
 node --cpu-prof ./node_modules/.bin/eleventy --quiet
 ```
 
-This will write a `CPU.***.cpuprofile` file to the same directory. [SpeedScope](https://www.speedscope.app/) is a great web site that will help you look at a visual representation of this data, with a special node to the `Left Heavy` and `Sandwich` visuals!
+This will write a `CPU.***.cpuprofile` file to the same directory.
+
+[SpeedScope](https://www.speedscope.app/) is a great web site that will help you look at a visual representation of this data, with a special nod to the `Left Heavy` and `Sandwich` visuals!
