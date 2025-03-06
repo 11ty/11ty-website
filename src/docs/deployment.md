@@ -4,12 +4,6 @@ eleventyNavigation:
   key: Deployment
   title: "Deployment & Hosting"
   order: 8
-featuredHosts:
-  - name: "Want your logo here? Contact us!"
-    url: "mailto:partners@11ty.dev"
-    tags: [Recommended Partner]
-    class: sites-featured
-    screenshotSize: opengraph
 hosts:
   - name: Cloudflare Pages
     url: https://pages.cloudflare.com/
@@ -109,9 +103,6 @@ Jamstack providers can trigger your Eleventy build command automatically when yo
 
 <div class="sites-vert sites-vert--md sites--reverse sites--center">
   <div class="lo-grid" style="--fl-gap-v: 5em;">
-{%- for site in featuredHosts %}
-{% include "site-card.njk" %}
-{%- endfor %}
 {%- for site in hosts | shuffle %}
 {% include "site-card.njk" %}
 {%- endfor %}

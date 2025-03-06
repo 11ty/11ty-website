@@ -2,12 +2,6 @@
 eleventyNavigation:
   parent: Deployment
   key: Using a CMS
-featuredCmses:
-  - name: "Want your logo here? Contact us!"
-    url: "mailto:partners@11ty.dev"
-    tags: [Recommended Partner]
-    class: sites-featured
-    screenshotSize: opengraph
 cmses:
   - name: CloudCannon
     url: https://cloudcannon.com/eleventy-cms/?utm_campaign=11ty-partner&utm_source=official-sponsor
@@ -104,9 +98,6 @@ Digging deeper, there are two main types of Headless CMS options:
 
 <div class="sites-vert sites-vert--md sites--reverse sites--center">
   <div class="lo-grid" style="--fl-gap-v: 5em;">
-{%- for site in featuredCmses %}
-{% include "site-card.njk" %}
-{%- endfor %}
 {%- for site in cmses | shuffle %}
 {% include "site-card.njk" %}
 {%- endfor %}
