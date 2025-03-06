@@ -72,6 +72,9 @@ classicHosts:
   - name: xmit
     url: https://xmit.co/
     screenshotSize: medium
+  - name: Tiiny Host
+    url: https://tiiny.host
+    screenshotSize: medium
 webides:
   - name: Glitch
     url: https://glitch.com/
