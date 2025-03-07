@@ -13,15 +13,14 @@
 	display: block;
 }
 .sites-screenshot-container {
-	border: 1px solid #ccc;
 	border-radius: 0.4em;
-	box-shadow: 0 0 0 var(--card-shadow-size, 2px) var(--card-shadow-color, var(--shadow-color));
+	box-shadow: 0 0 0 var(--card-shadow-size, 3px) var(--card-shadow-color, var(--shadow-color));
 }
 .sites-screenshot {
 	display: block;
 	width: 100%;
 	height: auto;
-	border-radius: .3em;
+	border-radius: .4em;
 }
 .sites-screenshot-youtube-sq {
 	aspect-ratio: 1/1;
@@ -116,7 +115,7 @@
 .sites-vert > .lo-grid {
 	--fl-gap-h: 1rem;
 	--fl-gap-v: 1rem;
-	--lo-c-minwidth: 10em;
+	--lo-c-minwidth: 8.5em;
 	--lo-grid-repeat: auto-fill;
 }
 .sites-vert--md > .lo-grid,
