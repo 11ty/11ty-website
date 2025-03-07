@@ -38,11 +38,7 @@
 {%- endif %}
 <ul class="inlinelist inlinelist-sm">
   {%- if sourceUrl %}
-  {%- set stackblitzUrl = sourceUrl | getStackblitzUrl(site.npmStartScript) %}
   <li class="inlinelist-item"><a href="{{ sourceUrl }}" class="elv-externalexempt">Source code</a></li>
-  {%- if stackblitzUrl %}
-  <li class="inlinelist-item"><a href="{{ stackblitzUrl }}" class="elv-externalexempt">Try on StackBlitz</a></li>
-  {%- endif %}
   {%- endif %}
   {%- if glitchUrl -%}
   <li class="inlinelist-item"><a href="{{ glitchUrl }}" class="elv-externalexempt">Remix on Glitch</a></li>
