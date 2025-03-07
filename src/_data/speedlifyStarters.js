@@ -4,6 +4,7 @@ import { createRequire } from "module";
 
 const require = createRequire(import.meta.url);
 const URL = "https://eleventy-starters--speedlify.netlify.app/";
+const CACHE_DURATION = process.env.ELEVENTY_RUN_MODE === "serve" ? "30d" : "1d";
 
 export default async function () {
 	let returnData = {
@@ -13,7 +14,7 @@ export default async function () {
 
 	let url = `${URL}api/urls.json`;
 	let urlsJson = await EleventyFetch(url, {
-		duration: "1d",
+		duration: CACHE_DURATION,
 		type: "json",
 	});
 
@@ -31,7 +32,7 @@ export default async function () {
 		let urlLookup = urlsJson[siteData.demo] || urlsJson[siteData.url];
 		if (urlLookup && urlLookup.hash) {
 			let data = await EleventyFetch(`${URL}api/${urlLookup.hash}.json`, {
-				duration: process.env.NODE_ENV === "production" ? "1d" : "*",
+				duration: process.env.NODE_ENV === "production" ? CACHE_DURATION : "*",
 				type: "json",
 			});
 			data.hash = urlLookup.hash;

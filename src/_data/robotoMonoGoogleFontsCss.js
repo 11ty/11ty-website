@@ -1,11 +1,13 @@
 import EleventyFetch from "@11ty/eleventy-fetch";
 
+const CACHE_DURATION = process.env.ELEVENTY_RUN_MODE === "serve" ? "1w" : "1d";
+
 export default async function () {
 	try {
 		let css = await EleventyFetch(
 			"https://fonts.googleapis.com/css?family=Roboto+Mono:400&display=swap",
 			{
-				duration: "1d",
+				duration: CACHE_DURATION,
 				type: "text",
 				directory: ".cache/eleventy-fetch/",
 				fetchOptions: {
