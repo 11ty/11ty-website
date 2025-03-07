@@ -41,7 +41,7 @@
 	color: #fff;
 	border: 2px solid;
 	transition: border 0.3s;
-	object-fit: cover;
+	object-fit: contain;
 }
 @media (prefers-color-scheme: dark) {
 	.facepile .avatar {
