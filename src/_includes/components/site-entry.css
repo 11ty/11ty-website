@@ -291,11 +291,16 @@
 }
 
 /* Host /generator icons on author pages on screenshots */
+.sites-screenshot-container {
+	position: relative;
+}
 .sites-screenshot-container-icons {
+	position: absolute;
+	inset: 0;
 	display: flex;
 	gap: 0.25em;
-	justify-content: space-between;
-	margin-top: -0.5em;
+	align-items: flex-end;
+	justify-content: flex-start;
 	padding: 0.25em;
 }
 .sites-screenshot-container-icons img {

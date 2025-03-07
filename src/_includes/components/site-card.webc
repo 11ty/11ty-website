@@ -35,7 +35,10 @@ async function getScreenshotStyle(url, iconUrl) {
 
 <div class="sites-site-vert">
 	<a :href="url" class="elv-externalexempt" :title="name || false" :style="getScreenshotStyle(url, iconUrl)">
-		<div class="sites-screenshot-container" :class="iconUrl ? 'sites-screenshot-container--icon' : ''" @html="imageHtml || getIconHtml(iconUrl) || getScreenshotHtml(undefined, screenshotUrl || url, null, size)"></div>
+		<div class="sites-screenshot-container" :class="iconUrl ? 'sites-screenshot-container--icon' : ''">
+			<div webc:nokeep @html="imageHtml || getIconHtml(iconUrl) || getScreenshotHtml(undefined, screenshotUrl || url, null, size)"></div>
+			<div webc:if="showIcons" class="sites-screenshot-container-icons" @html="generatoravatar(url)"></div>
+		</div>
 		<span :class="featured ? 'sites-site-name' : 'sites-site-name--nowrap'">
 			<span webc:nokeep @html="indieavatar(url, 'avatar-large')"></span>
 			<span webc:nokeep @text="name || displayUrl(url)"></span>
