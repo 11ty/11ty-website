@@ -586,6 +586,10 @@ ${text.trim()}
 
 	function randomizeArray(arr) {
 		let a = arr.slice(0);
+		if(process.env.DISABLE_RANDOM) {
+			return a;
+		}
+
 		for (let i = a.length - 1; i > 0; i--) {
 			const j = Math.floor(Math.random() * (i + 1));
 			[a[i], a[j]] = [a[j], a[i]];
@@ -614,13 +618,22 @@ ${text.trim()}
 		return a;
 	});
 
+	function getRandomArrayEntry(arr) {
+		if(process.env.DISABLE_RANDOM) {
+			return arr.at(0);
+		}
+
+		let index = Math.floor(Math.random() * arr.length);
+		return arr.at(index);
+	}
+
 	// Thanks to https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
 	eleventyConfig.addFilter("randompick", (arr) => {
 		if (Array.isArray(arr)) {
-			return arr[Math.floor(Math.random() * arr.length)];
+			return getRandomArrayEntry(arr);
 		}
 
-		let randkey = Object.keys(arr)[Math.floor(Math.random() * arr.length)];
+		let randkey = getRandomArrayEntry(Object.keys(arr));
 		return arr[randkey];
 	});
 

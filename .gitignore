@@ -15,3 +15,5 @@ yarn.lock
 _site/
 node-supporters/
 src/_data/builtwith/
+
+tmp/

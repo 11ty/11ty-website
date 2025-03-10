@@ -133,7 +133,7 @@ let eleventyComputed = {
 	<body>
 		{{ content | safe }}
 
-		<!-- Built on {{ config.now }} by Eleventy -->
+		<!-- Built on {{ config.now | newsDate }} by Eleventy -->
 		{% getBundle "fontawesome" %}
 {%- if useWebCBundle %}
 		<script type="module" src="{% getBundleFileUrl 'js', 'async' %}"></script>
