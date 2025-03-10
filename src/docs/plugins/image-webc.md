@@ -22,7 +22,7 @@ excludeFromSidebar: true
 
 {% addedin "Image v3.1.0" %} Eleventy Image now provides a built-in `<eleventy-image>` WebC component for use in your Eleventy project.
 
-Using Eleventy Image in [WebC](/docs/languages/webc.md) offers all the same great benefits you’re used to from Eleventy Image with an intuitive declarative HTML-only developer experience. WebC components work in `*.webc` files. For similar functionality in other template formats, use the the [Liquid/Nunjucks/JavaScript shortcodes](./image-shortcodes.md) above (or even `<eleventy-image>` with the [Render plugin](/docs/plugins/render.md)).
+Using Eleventy Image in [WebC](/docs/languages/webc.md) offers all the same great benefits you’re used to from Eleventy Image with an intuitive declarative HTML-only developer experience. WebC components work in `*.webc` files. For similar functionality in other template formats, use the [Liquid/Nunjucks/JavaScript shortcodes](./image-shortcodes.md) above (or even `<eleventy-image>` with the [Render plugin](/docs/plugins/render.md)).
 
 ### Configuration
 
