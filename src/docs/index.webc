@@ -1,5 +1,6 @@
 ---
 eleventyNavigation:
+  parent: Eleventy Documentation
   key: Getting Started
   title: Get Started
   order: 2

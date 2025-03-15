@@ -324,6 +324,10 @@ export default async function (eleventyConfig) {
 	});
 
 	eleventyConfig.addShortcode("getColorsForUrl", async (url) => {
+		if(process.env.ELEVENTY_RUN_MODE !== "build") {
+			return [];
+		}
+
 		let avatarUrl = `https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(url)}/`;
 
 		return getImageColors(avatarUrl).then(colors => {

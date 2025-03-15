@@ -1,5 +1,6 @@
 ---
 eleventyNavigation:
+  parent: Eleventy Documentation
   key: Release History
   order: 9.2
 ---

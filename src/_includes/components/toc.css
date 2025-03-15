@@ -9,13 +9,13 @@
 	font-size: 1.375rem; /* 22px /16 */
 	margin-bottom: 0.5em;
 }
-@media (min-width: 55em) {
-	/* 880px */
+@media (min-width: 55em) { /* 880px */
 	.elv-toc {
 		position: absolute;
 		left: 1rem;
 		width: 13rem;
 		z-index: 1;
+		height: 100%;
 	}
 	.elv-toc details > summary {
 		margin-top: 0;

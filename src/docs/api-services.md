@@ -1,5 +1,6 @@
 ---
 eleventyNavigation:
+  parent: Eleventy Documentation
   key: API Services
   order: 8
 pageTitle: API Services

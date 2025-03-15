@@ -13,8 +13,10 @@ headerClass: elv-header-default
 
 <main class="elv-layout elv-layout-toc" {% if not excludeFromSearch %} data-pagefind-body{% endif %}>
 	{% include "components/docs-toc.njk" %}
-
 	<div id="skip-content">
+		{%- if not isDocs %}
+		<h1 class="elv-hed">{{ headerTitle | safe }}</h1>
+		{%- endif %}
 		<heading-anchors selector="h2,h3,h4">{{ content | safe }}</heading-anchors>
 	</div>
 </main>

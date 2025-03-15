@@ -21,6 +21,11 @@ export async function data() {
 		headerTitle: "Eleventy Community",
 		entries: entries,
 		layout: "layouts/docs.njk",
+		eleventyNavigation: {
+			key: "Firehose",
+			parent: "Community",
+			order: 1.1,
+		}
 	};
 }
 

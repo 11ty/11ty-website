@@ -1,5 +1,6 @@
 ---
 eleventyNavigation:
+  parent: Eleventy Documentation
   key: Community
   order: 2.5
 ignoreSupporters: true

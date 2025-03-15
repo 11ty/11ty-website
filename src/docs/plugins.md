@@ -1,5 +1,6 @@
 ---
 eleventyNavigation:
+  parent: Eleventy Documentation
   key: Plugins
   order: 7.5
 communityLinksKey: plugins

@@ -2,6 +2,7 @@
 eleventyNavigation:
   key: Eleventy Projects
   title: Projects
+  parent: Eleventy Documentation
   order: 4
 ---
 

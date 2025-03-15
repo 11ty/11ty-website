@@ -6,7 +6,7 @@
 
 	<div class="elv-menu">
 		<ul class="elv-nav-menu list-bare fl fl-inline fl-nowrap">
-			<li><a href="/" class="naked">11ty</a></li>
+			<li><a href="/" class="elv-nav-menu-logo">{% include "../img/logo.svg" %}<span class="sr-only">11ty</span></a></li>
 			<li><a href="/docs/">Docs</a></li>
 			<li><a href="/docs/search/">Search</a></li>
 			<li><a href="/blog/">Blog</a></li>
@@ -42,17 +42,18 @@
 	</div>
 
 	<div class="elv-nav-header">
-		<a href="{% if logoLink %}{{ logoLink }}{% else %}/{% endif %}" class="elv-hero elv-externalexempt">{% if logoContent %}{{ logoContent | safe }}{% else %}{% include "../img/logo.svg" %}{% endif %}<span class="sr-only">Eleventy</span></a>
-		<{{ headerTag or "h1" }} class="elv-hed">{{ headerTitle | safe }}</{{ headerTag or "h1" }}>
+		{% if not isDocs %}
+		<a href="{% if logoLink %}{{ logoLink }}{% else %}/{% endif %}" class="elv-hero">{% if logoContent %}{{ logoContent | safe }}{% else %}{% include "../img/logo.svg" %}{% endif %}<span class="sr-only">Eleventy</span></a>
+		{% endif %}
 		<is-land on:visible on:idle on:save-data="false" on:media="(prefers-reduced-motion: no-preference)">
 			<template data-island>
 				<a href="/blog/mascot-david/" class="elv-possum-anchor">
 					<div class="elv-possum-pic">
-						{% if isDocs %}
+						{%- if isDocs %}
 						{% image "./src/img/mascots/david.svg", "The possum is Eleventy’s mascot", [222], "elv-possum" %}
-						{% else %}
+						{%- else %}
 						{% image "./src/img/mascots/david.svg", "The possum is Eleventy’s mascot", [222, 350], "elv-possum", "20vh" %}
-						{% endif %}
+						{%- endif %}
 						</is-land>
 					</div>
 				</a>

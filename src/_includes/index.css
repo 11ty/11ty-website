@@ -576,6 +576,15 @@ dl:last-child {
 .elv-nav-menu {
 	max-width: calc(var(--layout-max));
 }
+.elv-nav-menu-logo {
+	display: block;
+	max-height: 2em;
+}
+.elv-nav-menu-logo svg {
+	width: auto;
+	height: 2em;
+	transform: scale(1.25);
+}
 /* Full width logo */
 .elv-header-default .elv-nav-header {
 	max-width: none;
@@ -583,12 +592,19 @@ dl:last-child {
 
 /* Make room for the possum */
 .elv-nav-menu {
+	padding-right: 1rem;
+}
+.elv-header-docs .elv-nav-menu {
 	padding-right: 15vw;
 }
-@media (min-width: 25em) {
-	/* 400px */
-	.elv-nav-menu {
+@media (min-width: 25em) { /* 400px */
+	.elv-header-docs .elv-nav-menu {
 		padding-right: 6em;
+	}
+}
+@media (min-width: 79.25em) { /* 1268px */
+	.elv-header-docs .elv-nav-menu {
+		padding-right: 1rem;
 	}
 }
 
@@ -714,11 +730,8 @@ a[href].elv-hero:visited {
 	text-align: center;
 	text-transform: none;
 }
-.elv-header-docs .elv-hed {
-	font-size: 2.125em; /* 34px /16 */
-	line-height: 1.5;
-	margin: 0;
-	text-align: left;
+main h1.elv-hed:first-child {
+	border: none;
 }
 @media (min-width: 43.75em) {
 	/* 700px */
