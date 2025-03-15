@@ -578,7 +578,12 @@ dl:last-child {
 }
 .elv-nav-menu-logo {
 	display: block;
+	width: 2em;
+	height: 2em;
 	max-height: 2em;
+	background-color: #222;
+	text-align: center;
+	border-radius: .15em;
 }
 .elv-nav-menu-logo svg {
 	width: auto;
