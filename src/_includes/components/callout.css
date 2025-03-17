@@ -13,11 +13,6 @@ details .elv-callout {
 	margin-left: 0;
 	margin-right: 0;
 }
-.elv-callout-pinned {
-	--callout-primary: #d7f4cf;
-	--callout-primarytext: #000;
-	--callout-secondary: #f1feee;
-}
 .elv-callout-box {
 	--callout-primary: #dff7ff;
 	--callout-primarytext: #000;
@@ -224,29 +219,35 @@ body > .elv-callout-sticky .elv-callout-c {
 }
 
 /* in left nav */
-.elv-toc .elv-callout-pinned .elv-callout-c {
-	text-wrap: balance;
+.elv-toc .elv-callout {
+	margin-block-start: 0;
 }
 .elv-toc .elv-callout:first-child {
-	margin-top: 0;
-	margin-bottom: 0.25em;
+	margin-block: 0 0.25em;
 }
-@media (max-width: 54.9375em) {
-	/* 880px - 1 */
+.elv-toc .elv-callout-c {
+	flex-grow: 1;
+}
+.elv-toc .elv-callout-label {
+	margin-inline-end: 0;
+}
+@media (max-width: 54.9375em) { /* 880px - 1 */
 	.elv-toc .elv-callout {
-		border-left: 0;
-		border-right: 0;
+		border-inline-width: 0;
 	}
-	.elv-toc .elv-callout-pinned {
-		display: none;
+	.elv-toc .elv-callout {
+		display: flex;
+		flex-direction: row;
 	}
 }
-@media (min-width: 55em) {
-	/* 880px */
+@media (min-width: 55em) { /* 880px */
+	.elv-toc .elv-callout:first-child {
+		display: flex;
+		flex-direction: row;
+	}
 	.elv-toc .elv-callout-label,
 	.elv-toc .elv-callout-c {
-		padding-left: 1rem;
-		padding-right: 1rem;
+		padding-inline-start: 1.25rem; /* 20px /16 */
 	}
 	.elv-toc .elv-callout {
 		margin-right: 0;

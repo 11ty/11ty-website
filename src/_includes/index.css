@@ -401,11 +401,12 @@ h4 code,
 h5 code {
 	font-family: inherit;
 }
-h1,
+/* Broken with <heading-anchors> plugin in Safari */
+/* h1,
 h2,
 h3 {
 	text-wrap: balance;
-}
+} */
 
 .subhed {
 	display: block;
@@ -491,6 +492,9 @@ footer.elv-layout {
 }
 .elv-layout-full {
 	max-width: none;
+}
+.elv-layout-toc {
+	padding-block-start: 0;
 }
 @media (min-width: 55em) {
 	/* 880px */

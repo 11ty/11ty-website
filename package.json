@@ -43,7 +43,7 @@
   "devDependencies": {
     "@11ty/eleventy": "3.0.1-alpha.5",
     "@11ty/eleventy-activity-feed": "^2.0.0",
-    "@11ty/eleventy-fetch": "5.1.0-beta.1",
+    "@11ty/eleventy-fetch": "^5.1.0-beta.1",
     "@11ty/eleventy-img": "^6.0.1",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-rss": "^2.0.3",
@@ -60,17 +60,17 @@
     "entities": "^6.0.0",
     "esm-import-transformer": "^3.0.2",
     "fast-glob": "^3.3.3",
-    "fs-extra": "^11.2.0",
+    "fs-extra": "^11.3.0",
     "human-readable-numbers": "0.9.5",
     "lodash": "^4.17.21",
     "luxon": "^3.5.0",
-    "markdown-it-table-of-contents": "^0.8.0",
-    "memoize": "^10.0.0",
+    "markdown-it-table-of-contents": "^0.9.0",
+    "memoize": "^10.1.0",
     "pagefind": "^1.3.0",
-    "prettier": "^3.4.2",
-    "semver": "^7.6.3",
+    "prettier": "^3.5.3",
+    "semver": "^7.7.1",
     "short-hash": "^1.0.0",
-    "terser": "^5.37.0"
+    "terser": "^5.39.0"
   },
   "dependencies": {
     "@11ty/is-land": "^5.0.0-beta.4",
