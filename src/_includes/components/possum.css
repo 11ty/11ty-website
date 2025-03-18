@@ -14,8 +14,3 @@
 	aspect-ratio: 222 / 388;
 	max-width: 6.25rem; /* 100px /16 */
 }
-@media (max-width: 34.375em) { /* 550px */
-	.elv-header-docs .elv-possum-pic {
-		display: none;
-	}
-}
