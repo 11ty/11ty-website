@@ -533,12 +533,14 @@ dl:last-child {
 	border: 1px solid var(--border-color);
 	border-left: none;
 	border-right: none;
-	margin-block-end: 1rem;
 }
 :where(.elv-menu) a,
 :where(.elv-menu) a:visited,
 :where(.elv-menu) a[href] {
 	color: inherit;
+}
+.elv-header-docs .elv-menu {
+	margin-block-end: 1rem;
 }
 /* Dark mode menu on home page */
 .elv-header-default .elv-menu {
