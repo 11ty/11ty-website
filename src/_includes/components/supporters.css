@@ -1,27 +1,3 @@
-.elv-possum-pic + .supporters-avatar {
-	display: none;
-	position: absolute;
-	width: 5vw;
-	height: auto;
-	margin: 0;
-}
-@media (min-width: 41.875em) {
-	/* 670px */
-	.elv-possum-pic + .supporters-avatar {
-		display: block;
-		top: 0.8625rem;
-		right: 1.8875rem;
-		width: 2.9rem;
-		object-fit: cover;
-		height: 3.8em;
-		transform: rotate(5.2deg);
-		border: 2px solid #352a24;
-	}
-}
-.elv-header-default .elv-possum-pic + .supporters-avatar {
-	display: none;
-}
-
 /* Inline list of support avatars */
 .supporters-tiered .facepile-supporters .supporters-active img {
 	filter: grayscale(0);

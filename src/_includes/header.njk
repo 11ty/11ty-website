@@ -45,16 +45,15 @@
 		{% if not isDocs %}
 		<a href="{% if logoLink %}{{ logoLink }}{% else %}/{% endif %}" class="elv-hero">{% if logoContent %}{{ logoContent | safe }}{% else %}{% include "../img/logo.svg" %}{% endif %}<span class="sr-only">Eleventy</span></a>
 		{% endif %}
-		<is-land on:visible on:idle on:save-data="false" on:media="(prefers-reduced-motion: no-preference)">
+		<is-land on:visible on:idle on:load on:save-data="false" on:media="(prefers-reduced-motion: no-preference)">
 			<template data-island>
 				<a href="/blog/mascot-david/" class="elv-possum-anchor">
 					<div class="elv-possum-pic">
 						{%- if isDocs %}
-						{% image "./src/img/mascots/david.svg", "The possum is Eleventy’s mascot", [222], "elv-possum" %}
+						{% image "./src/img/mascots/david.svg", "The possum is Eleventy’s mascot", [222], "elv-possum", "", {loading: "eager"} %}
 						{%- else %}
-						{% image "./src/img/mascots/david.svg", "The possum is Eleventy’s mascot", [222, 350], "elv-possum", "20vh" %}
+						{% image "./src/img/mascots/david.svg", "The possum is Eleventy’s mascot", [222, 350], "elv-possum", "20vh", {loading: "eager"} %}
 						{%- endif %}
-						</is-land>
 					</div>
 				</a>
 			</template>

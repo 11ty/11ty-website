@@ -7,11 +7,15 @@
 	top: 0.5rem;
 	transition: 0.3s opacity ease-out;
 }
-
 .elv-header-docs .elv-possum {
 	width: 15vw;
 	height: auto;
 	/* aspect ratio 0.57216495 */
 	aspect-ratio: 222 / 388;
 	max-width: 6.25rem; /* 100px /16 */
+}
+@media (max-width: 34.375em) { /* 550px */
+	.elv-header-docs .elv-possum-pic {
+		display: none;
+	}
 }

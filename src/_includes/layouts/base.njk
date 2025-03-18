@@ -134,7 +134,9 @@ let eleventyComputed = {
 		{{ content | safe }}
 
 		<!-- Built on {{ config.now | newsDate }} by Eleventy -->
-		{% getBundle "fontawesome" %}
+		<div>
+			{% getBundle "fontawesome" %}
+		</div>
 {%- if useWebCBundle %}
 		<script type="module" src="{% getBundleFileUrl 'js', 'async' %}"></script>
 {%- endif %}
