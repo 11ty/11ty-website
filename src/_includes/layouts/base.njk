@@ -63,6 +63,7 @@ let eleventyComputed = {
 {%- endif %}
 
 {%- set css %}
+{{ googleFontsCss | safe }}
 {% include 'index.css' %}
 {% include 'components/navigation.css' %}
 {% include 'components/announcement.css' %}
@@ -105,7 +106,6 @@ let eleventyComputed = {
 		<!-- Preconnect -->
 		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
 
-		<link rel="stylesheet" href="/css/fonts.css">
 		<style>{{ css | cssmin | safe }}</style>
 		<style>{% getBundle "css" %}</style>
 
