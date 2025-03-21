@@ -50,7 +50,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@11ty/eleventy-plugin-webc": "^0.12.0-beta.3",
     "@11ty/font-awesome": "1.0.0-beta.10",
-    "@11ty/image-color": "^1.0.5",
+    "@11ty/image-color": "^1.0.6",
     "@11ty/webc": "0.11.3",
     "@tweetback/canonical": "^2.0.46",
     "clean-css": "^5.3.3",
