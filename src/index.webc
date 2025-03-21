@@ -6,10 +6,6 @@ let logoLink = "/docs/";
 
 let useWebCBundle = true;
 
-// Update the emoji in CSS
-// let logoLink = "/blog/eleventy-v2/"
-// let logoContent = "<span class='elv-hero-content'>2.0</span>"
-
 let ignoreGitHubButtons = true;
 let ignoreSupporters = true;
 let ignoreSidebarCallout = true;
