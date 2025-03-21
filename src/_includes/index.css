@@ -598,12 +598,6 @@ dl:last-child {
 .elv-header-default .elv-nav-header {
 	max-width: none;
 }
-@media (max-width: 34.375em) { /* 550px */
-	/* Hide possum */
-	.elv-nav-header {
-		display: none;
-	}
-}
 
 /* Make room for the possum */
 .elv-nav-menu {

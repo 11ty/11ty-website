@@ -45,7 +45,7 @@
 		{% if not isDocs %}
 		<a href="{% if logoLink %}{{ logoLink }}{% else %}/{% endif %}" class="elv-hero">{% if logoContent %}{{ logoContent | safe }}{% else %}{% include "../img/logo.svg" %}{% endif %}<span class="sr-only">Eleventy</span></a>
 		{% endif %}
-		<is-land on:visible on:idle on:load on:save-data="false" on:media="(prefers-reduced-motion: no-preference)">
+		<is-land class="elv-possum-island" on:visible on:idle on:load on:save-data="false" on:media="(prefers-reduced-motion: no-preference)">
 			<template data-island>
 				<a href="/blog/mascot-david/" class="elv-possum-anchor">
 					<div class="elv-possum-pic">
