@@ -33,7 +33,7 @@ Open up your Eleventy config file (probably `eleventy.config.js`) and use `addPl
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 
 export default function (eleventyConfig) {
-	eleventyConfig.addPlugin(eleventyNavigationPlugin);
+eleventyConfig.addPlugin(eleventyNavigationPlugin);
 };
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
@@ -731,6 +731,9 @@ navToMdOptions:
 
 You can change the HTML elements, classes on the list and list items, and add an additional class for the current page’s navigation entry!
 
+You can also add an `aria-current="page"` attribute (see [more details here](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-current))
+{% addedin "Navigation 1.0.0" %}
+
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs persist sync>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "navhtmloptions"} %}
@@ -754,6 +757,8 @@ You can change the HTML elements, classes on the list and list items, and add an
 
     anchorClass: "",              // Add a class to the anchor
     activeAnchorClass: "",        // Add a class to the current page’s anchor
+
+    useAriaCurrentAttr: true      // Add aria-current="page" to the current page’s anchor
 
     // If matched, `activeListItemClass` and `activeAnchorClass` will be added
     activeKey: "",
@@ -791,6 +796,8 @@ You can change the HTML elements, classes on the list and list items, and add an
 
     anchorClass: "",              // Add a class to the anchor
     activeAnchorClass: "",        // Add a class to the current page’s anchor
+
+    useAriaCurrentAttr: true      // Add aria-current="page" to the current page’s anchor
 
     // If matched, `activeListItemClass` and `activeAnchorClass` will be added
     activeKey: "",
