@@ -2,6 +2,11 @@
 layout: layouts/base.njk
 headerClass: elv-header-default
 ---
+<div class="elv-skip">
+	<a href="#skip-nav">Skip to navigation</a>
+	<a href="#skip-content">Skip to main content</a>
+</div>
+
 {% include "header.njk" %}
 
 {% if config.outdated -%}
