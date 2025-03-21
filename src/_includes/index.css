@@ -301,6 +301,7 @@ h5,
 .elv-h3,
 .benchnine {
 	font-family: BenchNine, system-ui, -apple-system, sans-serif;
+	font-weight: 700;
 }
 h1,
 .elv-hed {
@@ -626,6 +627,7 @@ dl:last-child {
 	background-color: #222;
 	font-family: BenchNine, system-ui, -apple-system, sans-serif;
 	text-decoration: none;
+	font-weight: 700;
 }
 a[href].elv-hero,
 a[href].elv-hero:visited {
