@@ -62,9 +62,9 @@ let eleventyComputed = {
 		<link rel="alternate" href="{{ feedUrl }}" title="{{ feedTitle }}" type="application/atom+xml">
 {%- endif %}
 
+		<link rel="stylesheet" href="/css/fonts.css">
+
 {%- set css %}
-{% include 'components/font-titles.css' %}
-{{ robotoMonoGoogleFontsCss | safe }}
 {% include 'index.css' %}
 {% include 'components/navigation.css' %}
 {% include 'components/announcement.css' %}
@@ -72,9 +72,7 @@ let eleventyComputed = {
 {% include 'components/toc.css' %}
 {% include "components/minilink.css" %}
 {% include 'components/direct-links.css' %}
-{# Sidebar ad for 11ty conf #}
 {% include 'components/callout.css' %}
-{% include 'components/newsletter-signup.css' %}
 {# TODO convert to WebC #}
 {% include 'components/grid-layout.css' %}
 {% include 'components/seven-minute-tabs.css' %}
@@ -111,6 +109,7 @@ let eleventyComputed = {
 
 		<style>{{ css | cssmin | safe }}</style>
 		<style>{% getBundle "css" %}</style>
+		<link rel="stylesheet" href="">
 {%- if useWebCBundle %}
 		<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'async' %}" media="print" onload="this.media='all'" fetchpriority="low">
 		<noscript>
@@ -136,12 +135,13 @@ let eleventyComputed = {
 		</script>
 	</head>
 	<body>
-		{{ content | safe }}
-
-		<!-- Built on {{ config.now | newsDate }} by Eleventy -->
 		<div>
 			{% getBundle "fontawesome" %}
 		</div>
+
+		{{ content | safe }}
+
+		<!-- Built on {{ config.now | newsDate }} by Eleventy -->
 {%- if useWebCBundle %}
 
 		{% js "async" %}{% include "../../../node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
