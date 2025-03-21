@@ -113,7 +113,10 @@ let eleventyComputed = {
 		<style>{{ css | cssmin | safe }}</style>
 		<style>{% getBundle "css" %}</style>
 {%- if useWebCBundle %}
-		<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'async' %}" fetchpriority="low">
+		<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'async' %}" media="print" onload="this.media='all'" fetchpriority="low">
+		<noscript>
+			<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'async' %}" fetchpriority="low">
+		</noscript>
 {%- endif %}
 
 {%- if not skipLegacyBundle %}
