@@ -4,8 +4,6 @@ let headerTitle = "Eleventy is a simpler static site generator";
 let layout = "layouts/main.njk";
 let logoLink = "/docs/";
 
-let useWebCBundle = true;
-
 let ignoreGitHubButtons = true;
 let ignoreSidebarCallout = true;
 let searchTitle = "Eleventy is a simpler static site generator";
@@ -160,6 +158,6 @@ function randomTestimonialLink(testimonials) {
 	</lists>
 </div>
 
-<!-- Home page CSS (not in WebC) -->
-<link rel="stylesheet" href="./_includes/components/supporters.css" webc:bucket="async">
+<!--- Home page CSS (not in WebC); some <script> are included via base.njk --->
+<link rel="stylesheet" href="./_includes/components/supporters.css">
 <link rel="stylesheet" href="./_includes/components/newsletter-signup.css" webc:bucket="async">

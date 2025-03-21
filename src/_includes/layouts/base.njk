@@ -75,7 +75,7 @@ let eleventyComputed = {
 {% include 'components/grid-layout.css' %}
 {% include 'components/seven-minute-tabs.css' %}
 
-{% if not useWebCBundle %}
+{% if page.url != '/' %}
 	{# these components are not yet used on WebC pages #}
 	{% include 'components/breadcrumb.css' %}
 
@@ -109,24 +109,22 @@ let eleventyComputed = {
 		<style>{{ css | cssmin | safe }}</style>
 		<style>{% getBundle "css" %}</style>
 
-{%- if useWebCBundle %}
+{%- if page.url == '/' %}
 		<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'async' %}" media="print" onload="this.media='all'" fetchpriority="low">
 		<noscript>
 			<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'async' %}" fetchpriority="low">
 		</noscript>
-{%- endif %}
-
-{%- if not useWebCBundle %}
-{%- if page.inputPath.endsWith(".webc") %}
+{%- else %}
+	{%- if page.inputPath.endsWith(".webc") %}
 		<link rel="stylesheet" href="/css/async-webc.css" fetchpriority="low">
-{%- elseif config.env === "production" %}
+	{%- elseif config.env === "production" %}
 		<link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'" fetchpriority="low">
 		<noscript>
 			<link rel="stylesheet" href="/css/async.css" fetchpriority="low">
 		</noscript>
-{%- else %}
+	{%- else %}
 		<link rel="stylesheet" href="/css/async.css" fetchpriority="low">
-{%- endif %}
+	{%- endif %}
 {%- endif %}
 		<script type="module">
 			{% include "components/details-force-state.js" %}
@@ -141,8 +139,7 @@ let eleventyComputed = {
 		{{ content | safe }}
 
 		<!-- Built on {{ config.now | newsDate }} by Eleventy -->
-{%- if useWebCBundle %}
-
+{%- if page.url == '/' %}
 		{% js "async" %}{% include "../../../node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
 		{% js "async" %}{% include "../../../node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js" %}{% endjs %}
 		<script type="module" src="{% getBundleFileUrl 'js', 'async' %}"></script>
