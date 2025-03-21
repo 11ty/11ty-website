@@ -62,8 +62,6 @@ let eleventyComputed = {
 		<link rel="alternate" href="{{ feedUrl }}" title="{{ feedTitle }}" type="application/atom+xml">
 {%- endif %}
 
-		<link rel="stylesheet" href="/css/fonts.css">
-
 {%- set css %}
 {% include 'index.css' %}
 {% include 'components/navigation.css' %}
@@ -107,9 +105,10 @@ let eleventyComputed = {
 		<!-- Preconnect -->
 		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
 
+		<link rel="stylesheet" href="/css/fonts.css">
 		<style>{{ css | cssmin | safe }}</style>
 		<style>{% getBundle "css" %}</style>
-		<link rel="stylesheet" href="">
+
 {%- if useWebCBundle %}
 		<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'async' %}" media="print" onload="this.media='all'" fetchpriority="low">
 		<noscript>
