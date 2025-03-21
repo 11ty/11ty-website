@@ -62,17 +62,18 @@ let eleventyComputed = {
 		<link rel="alternate" href="{{ feedUrl }}" title="{{ feedTitle }}" type="application/atom+xml">
 {%- endif %}
 
+{# Not currently used:
+{% include 'components/announcement.css' %}
+#}
+
 {%- set css %}
 {% include "components/font-titles.css" %}
 {{ googleFontsCss | safe }}
 {% include 'index.css' %}
 {% include 'components/navigation.css' %}
-{% include 'components/announcement.css' %}
 {% include 'components/toc.css' %}
-{% include "components/minilink.css" %}
 {% include 'components/direct-links.css' %}
 {% include 'components/callout.css' %}
-{# TODO convert to WebC #}
 {% include 'components/grid-layout.css' %}
 {% include 'components/seven-minute-tabs.css' %}
 
@@ -114,29 +115,16 @@ let eleventyComputed = {
 		<noscript>
 			<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'async' %}" fetchpriority="low">
 		</noscript>
-{%- else %}
-	{%- if page.inputPath.endsWith(".webc") %}
-		<link rel="stylesheet" href="/css/async-webc.css" fetchpriority="low">
-	{%- elseif config.env === "production" %}
-		<link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'" fetchpriority="low">
-		<noscript>
-			<link rel="stylesheet" href="/css/async.css" fetchpriority="low">
-		</noscript>
-	{%- else %}
+{%- elseif config.env === "production" %}
+	<link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'" fetchpriority="low">
+	<noscript>
 		<link rel="stylesheet" href="/css/async.css" fetchpriority="low">
-	{%- endif %}
+	</noscript>
+{%- else %}
+	<link rel="stylesheet" href="/css/async.css" fetchpriority="low">
 {%- endif %}
 
-		<script type="module">{% include "components/details-force-state.js" %}</script>
-	</head>
-	<body>
-		{{ content | safe }}
-
-		<!-- Built on {{ config.now | newsDate }} by Eleventy -->
-		<div>
-			{% getBundle "fontawesome" %}
-		</div>
-
+		<script type="module">{% include "../components/details-force-state.js" %}</script>
 {%- if page.url == '/' %}
 		{% js %}{% include "../../../node_modules/@11ty/is-land/is-land.js" %}{% endjs %}
 		{% js "async" %}{% include "../../../node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
@@ -147,5 +135,13 @@ let eleventyComputed = {
 {%- else %}
 		<script src="/js/eleventy.js" type="module"></script>
 {%- endif %}
+	</head>
+	<body>
+		{{ content | safe }}
+
+		<!-- Built on {{ config.now | newsDate }} by Eleventy -->
+		<div>
+			{% getBundle "fontawesome" %}
+		</div>
 	</body>
 </html>
