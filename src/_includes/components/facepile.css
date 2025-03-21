@@ -8,8 +8,6 @@
 .facepile > a {
 	display: inline-block;
 	margin-left: -25px;
-	transition: opacity 0.3s;
-	opacity: 0.9;
 }
 .supporters-silver .facepile {
 	text-align: center;
