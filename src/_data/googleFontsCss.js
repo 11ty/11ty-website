@@ -16,17 +16,20 @@ const options = {
 
 export default async function () {
 	try {
-		let benchNine = EleventyFetch(
-			"https://fonts.googleapis.com/css?family=BenchNine:wght@700&display=swap",
-			options
-		);
+		// let benchNine = EleventyFetch(
+		// 	"https://fonts.googleapis.com/css?family=BenchNine:wght@700&display=swap",
+		// 	options
+		// );
 
 		let robotoMono = EleventyFetch(
 			"https://fonts.googleapis.com/css?family=Roboto+Mono:400&display=swap",
 			options
 		);
 
-		return Promise.all([robotoMono, benchNine]).then(results => results.join("\n"));
+		return Promise.all([
+			robotoMono,
+			// benchNine,
+		]).then(results => results.join("\n"));
 	} catch (e) {
 		console.log("Failed getting Google Fonts CSS, returning ''");
 		return "";

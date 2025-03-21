@@ -159,5 +159,6 @@ function randomTestimonialLink(testimonials) {
 </div>
 
 <!--- Home page CSS (not in WebC); some <script> are included via base.njk --->
+<link rel="stylesheet" href="./_includes/components/external-links.css">
 <link rel="stylesheet" href="./_includes/components/supporters.css">
 <link rel="stylesheet" href="./_includes/components/newsletter-signup.css" webc:bucket="async">

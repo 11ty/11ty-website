@@ -63,11 +63,11 @@ let eleventyComputed = {
 {%- endif %}
 
 {%- set css %}
+{% include "components/font-titles.css" %}
 {{ googleFontsCss | safe }}
 {% include 'index.css' %}
 {% include 'components/navigation.css' %}
 {% include 'components/announcement.css' %}
-{% include 'components/external-links.css' %}
 {% include 'components/toc.css' %}
 {% include "components/minilink.css" %}
 {% include 'components/direct-links.css' %}
