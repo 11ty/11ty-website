@@ -5,7 +5,6 @@ let layout = "layouts/main.njk";
 let logoLink = "/docs/";
 
 let useWebCBundle = true;
-let skipLegacyBundle = true;
 
 // Update the emoji in CSS
 // let logoLink = "/blog/eleventy-v2/"

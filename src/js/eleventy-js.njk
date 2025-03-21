@@ -3,12 +3,10 @@ permalink: js/eleventy.js
 eleventyExcludeFromCollections: true
 ---
 {% set js %}
-{# Islands must come first #}
-{% include "../../node_modules/@11ty/is-land/is-land.js" %}
-
 {% include "components/html-fetch.js" %}
 {% include "../../node_modules/@zachleat/filter-container/filter-container.js" %}
 {% include "../../node_modules/@zachleat/details-utils/details-utils.js" %}
+{% include "../../node_modules/@zachleat/heading-anchors/heading-anchors.js" %}
 
 {% include "components/search.js" %}
 {% endset %}

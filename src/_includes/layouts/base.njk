@@ -79,7 +79,7 @@ let eleventyComputed = {
 {% include 'components/grid-layout.css' %}
 {% include 'components/seven-minute-tabs.css' %}
 
-{% if not skipLegacyBundle %}
+{% if not useWebCBundle %}
 	{# these components are not yet used on WebC pages #}
 	{% include 'components/breadcrumb.css' %}
 
@@ -107,7 +107,6 @@ let eleventyComputed = {
 {% endset %}
 
 		<!-- Preconnect -->
-		<link href="https://v1.indieweb-avatar.11ty.dev" rel="preconnect" crossorigin>
 		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
 
 		<style>{{ css | cssmin | safe }}</style>
@@ -119,7 +118,7 @@ let eleventyComputed = {
 		</noscript>
 {%- endif %}
 
-{%- if not skipLegacyBundle %}
+{%- if not useWebCBundle %}
 {%- if page.inputPath.endsWith(".webc") %}
 		<link rel="stylesheet" href="/css/async-webc.css" fetchpriority="low">
 {%- elseif config.env === "production" %}
@@ -131,7 +130,10 @@ let eleventyComputed = {
 		<link rel="stylesheet" href="/css/async.css" fetchpriority="low">
 {%- endif %}
 {%- endif %}
-		<script>{% include "components/details-force-state.js" %}</script>
+		<script type="module">
+			{% include "components/details-force-state.js" %}
+			{% include "../../../node_modules/@11ty/is-land/is-land.js" %}
+		</script>
 	</head>
 	<body>
 		{{ content | safe }}
@@ -141,9 +143,11 @@ let eleventyComputed = {
 			{% getBundle "fontawesome" %}
 		</div>
 {%- if useWebCBundle %}
+
+		{% js "async" %}{% include "../../../node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
+		{% js "async" %}{% include "../../../node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js" %}{% endjs %}
 		<script type="module" src="{% getBundleFileUrl 'js', 'async' %}"></script>
-{%- endif %}
-{%- if not skipLegacyBundle %}
+{%- else %}
 		<script src="/js/eleventy.js" type="module"></script>
 {%- endif %}
 	</body>

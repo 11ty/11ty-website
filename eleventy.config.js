@@ -18,7 +18,7 @@ import { getImageColors } from "@11ty/image-color";
 
 import { addedIn, coerceVersion } from "./config/addedin.js";
 import monthDiffPlugin from "./config/monthDiff.js";
-import minificationLocalPlugin from "./config/minification.js";
+import minificationLocalPlugin, { minifyJavaScript } from "./config/minification.js";
 import cleanName from "./config/cleanAuthorName.js";
 import objectHas from "./config/object-has.js";
 import markdownPlugin from "./config/markdownPlugin.js";
@@ -302,7 +302,7 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addPlugin(eleventyWebcPlugin, {
 		components: [
 			"./src/_includes/components/*.webc",
-			"npm:@11ty/is-land/*.webc",
+			// "npm:@11ty/is-land/*.webc",
 			"npm:@11ty/eleventy-img/*.webc",
 		],
 	});
@@ -443,7 +443,6 @@ ${text.trim()}
 	eleventyConfig.addPassthroughCopy({
 		"src/_includes/components/throbber.js": "js/throbber.js",
 		"src/_includes/components/throbber.css": "css/throbber.css",
-		"node_modules/@zachleat/heading-anchors/heading-anchors.js": "js/heading-anchors.js",
 	});
 
 	eleventyConfig.addPassthroughCopy({
@@ -453,8 +452,7 @@ ${text.trim()}
 		"node_modules/@11ty/logo/img/logo-200x200.png": "img/logo-github.png",
 		"node_modules/@11ty/logo/img/logo-96x96.png": "img/favicon.png",
 		"node_modules/speedlify-score/speedlify-score.js": "js/speedlify-score.js",
-		"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js":
-			"js/seven-minute-tabs.js",
+		"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js": "js/seven-minute-tabs.js",
 		"node_modules/lite-youtube-embed/src/lite-yt-embed.js": `js/lite-yt-embed.js`,
 		"node_modules/artificial-chart/artificial-chart.{css,js}": `static/`,
 	});

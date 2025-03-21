@@ -1,23 +1,23 @@
 import CleanCSS from "clean-css";
 import { minify } from "terser";
 
-export default function (eleventyConfig) {
-	eleventyConfig.addNunjucksAsyncFilter(
-		"jsmin",
-		async function (code, callback) {
-			if (process.env.NODE_ENV === "production") {
-				try {
-					let result = await minify(code);
-					callback(null, result.code);
-				} catch (e) {
-					console.log("Terser error: ", e);
-					throw e;
-				}
-			}
-
-			callback(null, code);
+export async function minifyJavaScript(code) {
+	if (process.env.NODE_ENV === "production") {
+		try {
+			let result = await minify(code);
+			console.log( {result} );
+			return result.code;
+		} catch (e) {
+			console.log("Terser error: ", e);
+			throw e;
 		}
-	);
+	}
+
+	return code;
+}
+
+export default function (eleventyConfig) {
+	eleventyConfig.addFilter("jsmin", minifyJavaScript);
 
 	eleventyConfig.addFilter("cssmin", function (code) {
 		if (process.env.NODE_ENV === "production") {
@@ -27,3 +27,4 @@ export default function (eleventyConfig) {
 		return code;
 	});
 }
+
