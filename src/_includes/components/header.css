@@ -1,0 +1,181 @@
+
+/* Header */
+.elv-menu {
+	background-color: #f4f4f4;
+	color: var(--color);
+	border: 1px solid var(--border-color);
+	border-left: none;
+	border-right: none;
+}
+:where(.elv-menu) a,
+:where(.elv-menu) a:visited,
+:where(.elv-menu) a[href] {
+	color: inherit;
+}
+.elv-header-docs .elv-menu {
+	margin-block-end: 1rem;
+}
+/* Dark mode menu on home page */
+.elv-header-default .elv-menu {
+	background-color: #222;
+	border-color: transparent;
+}
+.elv-header-default .elv-menu {
+	color: var(--color_dark);
+}
+@media (prefers-color-scheme: dark) {
+	.elv-menu,
+	.elv-header-default .elv-menu {
+		background-color: #292929;
+	}
+}
+.elv-header {
+	position: relative;
+}
+.elv-hed,
+.elv-nav-header {
+	width: 100%;
+	margin: 0 auto;
+}
+.elv-nav-header {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+.elv-nav-menu {
+	padding-left: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+.elv-hed,
+.elv-nav-header,
+.elv-nav-menu {
+	max-width: calc(var(--layout-max));
+}
+.elv-nav-menu-logo {
+	display: block;
+	width: 2em;
+	height: 2em;
+	max-height: 2em;
+	background-color: #222;
+	text-align: center;
+	border-radius: .15em;
+}
+.elv-nav-menu-logo svg {
+	width: auto;
+	height: 2em;
+	transform: scale(1.25);
+}
+/* Full width logo */
+.elv-header-default .elv-nav-header {
+	max-width: none;
+}
+
+/* Make room for the possum */
+.elv-nav-menu {
+	padding-right: 1rem;
+}
+@media (min-width: 34.4375em) { /* 551px */
+	.elv-header-docs .elv-nav-menu {
+		padding-right: 6em;
+	}
+}
+@media (min-width: 79.25em) { /* 1268px */
+	.elv-header-docs .elv-nav-menu {
+		padding-right: 1rem;
+	}
+}
+
+.elv-header-docs:before,
+.elv-header-docs:after {
+	content: " ";
+	display: table;
+}
+.elv-header-docs:after {
+	clear: both;
+}
+
+/* Header Hero */
+.elv-hero {
+	display: block;
+	background-color: #222;
+	font-family: BenchNine, system-ui, -apple-system, sans-serif;
+	text-decoration: none;
+	font-weight: 700;
+}
+a[href].elv-hero,
+a[href].elv-hero:visited {
+	color: #fff;
+}
+@media (prefers-color-scheme: dark) {
+	.elv-hero {
+		background-color: #292929;
+	}
+}
+.elv-hero img,
+.elv-hero svg {
+	display: block;
+	width: 60vh;
+	height: 60vh;
+	max-width: 100%;
+}
+.elv-hero:hover img,
+.elv-hero:hover svg {
+	background-color: inherit;
+}
+.elv-header-default .elv-hero {
+	display: flex;
+	justify-content: center;
+	width: calc(100% + 2rem);
+	margin-left: -1rem;
+	margin-right: -1rem;
+}
+.elv-hero:hover {
+	background-color: #333;
+}
+
+.elv-header-docs .elv-hero {
+	float: left;
+	margin-right: 0.5em;
+}
+.elv-header-default .elv-hero img,
+.elv-header-default .elv-hero svg {
+	position: relative;
+	background-color: transparent;
+	z-index: 1;
+}
+.elv-header-docs .elv-hero img,
+.elv-header-docs .elv-hero svg {
+	width: 3em;
+	height: 3em;
+}
+@media (min-width: 43.75em) {
+	/* 700px */
+	.elv-header-docs .elv-hero {
+		margin-right: 1em;
+	}
+	.elv-header-docs .elv-hero img,
+	.elv-header-docs .elv-hero svg {
+		width: 4em; /* 64px /16 */
+		height: 4em; /* 64px /16 */
+	}
+}
+
+/* Header Heading */
+.elv-hed {
+	font-size: 3.125em; /* 50px /16 */
+	line-height: 1.2;
+	margin-block: 1em;
+	text-align: center;
+	text-transform: none;
+}
+main h1.elv-hed:first-child {
+	border: none;
+}
+@media (min-width: 43.75em) {
+	/* 700px */
+	.elv-header-docs .elv-hed {
+		font-size: 2.625em; /* 42px /16 */
+	}
+}
