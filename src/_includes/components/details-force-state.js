@@ -1,39 +1,28 @@
 class DetailsForceState extends HTMLElement {
-	constructor() {
-		super();
-		this._observer = new MutationObserver(this._init.bind(this));
-	}
-
-	connectedCallback() {
-		if (this.children.length) {
-			this._init();
-		}
-		this._observer.observe(this, { childList: true });
-	}
-
-	_init() {
-		let details = this.querySelector(":scope details");
-		if (!details) {
-			return;
-		}
-
-		let forceOpen = window
-			.getComputedStyle(details)
-			.getPropertyValue("--details-force-closed");
-
-		function forceState(isOpen) {
-			if (isOpen) {
+	forceState(details, isOpen) {
+		if (isOpen) {
+			if(!details.open) {
 				details.setAttribute("open", "open");
-			} else {
+			}
+		} else {
+			if(details.open) {
 				details.removeAttribute("open");
 			}
 		}
+	}
 
+	connectedCallback() {
+		let details = this.querySelector(":scope details");
+		if (!details || !details.hasAttribute("data-force-media")) {
+			return;
+		}
+
+		let forceOpen = details.getAttribute("data-force-media");
 		if (forceOpen && "matchMedia" in window) {
 			let mm1 = window.matchMedia(forceOpen);
-			forceState(!mm1.matches);
-			mm1.addListener(function (e) {
-				forceState(!e.matches);
+			this.forceState(details, !mm1.matches);
+			mm1.addListener(e => {
+				this.forceState(details, !e.matches);
 			});
 		}
 	}

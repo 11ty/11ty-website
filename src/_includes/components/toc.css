@@ -2,7 +2,6 @@
 	font-size: 1rem; /* Reset */
 }
 .elv-toc details {
-	--details-force-closed: (max-width: 54.9375em); /* 880px - 1 */
 	margin-top: 0;
 }
 .elv-toc details > summary {
