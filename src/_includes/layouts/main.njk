@@ -23,7 +23,7 @@ headerClass: elv-header-default
 
 <footer class="elv-footer elv-layout elv-layout-toc">
 	{% include "newsletter-signup.njk" %}
-{% if ignoreSupporters %}{% else %}
+{% if not ignoreSupporters %}
 	{% include "supporters.njk" %}
 {% endif %}
 {%- if ignoreGitHubButtons %}{% else %}

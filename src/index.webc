@@ -7,7 +7,6 @@ let logoLink = "/docs/";
 let useWebCBundle = true;
 
 let ignoreGitHubButtons = true;
-let ignoreSupporters = true;
 let ignoreSidebarCallout = true;
 let searchTitle = "Eleventy is a simpler static site generator";
 
@@ -63,8 +62,6 @@ function randomTestimonialLink(testimonials) {
 	<h2>News from the Blog</h2>
 	<ul @html="getHighlightedBlogPostContent(collections.blog)"></ul>
 
-	<sponsors-list></sponsors-list>
-
 	<h2>Why should you use Eleventy?</h2>
 	<ul>
 		<li>
@@ -117,19 +114,8 @@ function randomTestimonialLink(testimonials) {
 
 	<p><a href="/docs/"><strong>Get started with Eleventy today!</strong></a> or read more about <a href="https://www.zachleat.com/web/introducing-eleventy/">Eleventy’s project goals</a>.</p>
 
-	<h2><a href="https://opencollective.com/11ty">Open Collective</a> Supporters</h2>
-	<is-land on:visible on:save-data="false">
-		<p><em>Loading…</em></p>
-		<template data-island="replace">
-			<facepile webc:nokeep>
-				<html-fetch src="/imports/supporters.html" show-gold-sponsors show-silver-sponsors></html-fetch>
-			</facepile>
-		</template>
-	</is-land>
-
 	<giant-docs-button></giant-docs-button>
 	<giant-docs-button-subtext></giant-docs-button-subtext>
-
 
 	<h2>Built With Eleventy</h2>
 
@@ -173,3 +159,7 @@ function randomTestimonialLink(testimonials) {
 		</ul>
 	</lists>
 </div>
+
+<!-- Home page CSS (not in WebC) -->
+<link rel="stylesheet" href="./_includes/components/supporters.css" webc:bucket="async">
+<link rel="stylesheet" href="./_includes/components/newsletter-signup.css" webc:bucket="async">
