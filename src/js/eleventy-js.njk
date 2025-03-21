@@ -3,6 +3,8 @@ permalink: js/eleventy.js
 eleventyExcludeFromCollections: true
 ---
 {% set js %}
+{% include "../../node_modules/@11ty/is-land/is-land.js" %}
+
 {% include "components/html-fetch.js" %}
 {% include "../../node_modules/@zachleat/filter-container/filter-container.js" %}
 {% include "../../node_modules/@zachleat/details-utils/details-utils.js" %}
