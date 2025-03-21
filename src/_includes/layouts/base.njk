@@ -126,20 +126,23 @@ let eleventyComputed = {
 		<link rel="stylesheet" href="/css/async.css" fetchpriority="low">
 	{%- endif %}
 {%- endif %}
+
 		<script type="module">{% include "components/details-force-state.js" %}</script>
 	</head>
 	<body>
+		{{ content | safe }}
+
+		<!-- Built on {{ config.now | newsDate }} by Eleventy -->
 		<div>
 			{% getBundle "fontawesome" %}
 		</div>
 
-		{{ content | safe }}
-
-		<!-- Built on {{ config.now | newsDate }} by Eleventy -->
 {%- if page.url == '/' %}
-		{% js "async" %}{% include "../../../node_modules/@11ty/is-land/is-land.js" %}{% endjs %}
+		{% js %}{% include "../../../node_modules/@11ty/is-land/is-land.js" %}{% endjs %}
 		{% js "async" %}{% include "../../../node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
 		{% js "async" %}{% include "../../../node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js" %}{% endjs %}
+
+		<script type="module" src="{% getBundleFileUrl 'js' %}"></script>
 		<script type="module" src="{% getBundleFileUrl 'js', 'async' %}"></script>
 {%- else %}
 		<script src="/js/eleventy.js" type="module"></script>
