@@ -1,5 +1,6 @@
-<link rel="stylesheet" href="prism-theme.css">
+<link rel="stylesheet" href="prism-theme.css" webc:bucket="async">
 <link rel="stylesheet" href="code.css">
+<link rel="stylesheet" href="code-more.css" webc:bucket="async">
 <style>
 syntax-highlight > pre {
 	margin-bottom: 0;

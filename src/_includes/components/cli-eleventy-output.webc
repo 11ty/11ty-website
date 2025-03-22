@@ -1,4 +1,4 @@
-<style webc:scoped>
+<style webc:scoped webc:bucket="async">
 .highlight-line:last-child,
 .highlight-line:last-child * {
 	color: var(--highlight-server) !important;

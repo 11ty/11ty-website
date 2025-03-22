@@ -67,9 +67,6 @@ a:visited,
 a[href] {
 	color: var(--link-color);
 }
-a[href].naked {
-	text-decoration: none;
-}
 
 strong,
 b {
@@ -239,8 +236,7 @@ main .elv-toc + #skip-content >  heading-anchors > h1:first-child {
 }
 @media (min-width: 55em) {
 	/* 880px */
-	main .elv-toc + #skip-content > heading-anchors > h1:first-child,
-	main .elv-toc + #skip-content > heading-anchors > h2:first-child {
+	main .elv-toc + #skip-content > heading-anchors > :is(h1, h2):first-child {
 		margin-top: 0;
 	}
 }
@@ -284,37 +280,8 @@ h5,
 .elv-type5 {
 	font-size: 1.277777777778em; /* 23px /18 */
 }
-h1 code,
-h2 code,
-h3 code,
-h4 code,
-h5 code {
+:is(h1, h2, h3, h4, h5) code {
 	font-family: inherit;
-}
-/* Broken with <heading-anchors> plugin in Safari */
-/* h1,
-h2,
-h3 {
-	text-wrap: balance;
-} */
-
-.subhed {
-	display: block;
-	font-family: system-ui, -apple-system, sans-serif;
-	font-size: 0.9375em; /* 15px /16 */
-	line-height: 1;
-	font-weight: 400;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	margin: 0;
-	color: #666;
-	text-align: center;
-	border: none;
-}
-@media (prefers-color-scheme: dark) {
-	.subhed {
-		color: #adadad;
-	}
 }
 
 /* Lists */

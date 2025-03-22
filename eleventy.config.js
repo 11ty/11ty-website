@@ -17,7 +17,6 @@ import fontAwesomePlugin from "@11ty/font-awesome";
 import { getImageColors } from "@11ty/image-color";
 
 import { addedIn, coerceVersion } from "./config/addedin.js";
-import monthDiffPlugin from "./config/monthDiff.js";
 import minificationLocalPlugin, { minifyJavaScript } from "./config/minification.js";
 import cleanName from "./config/cleanAuthorName.js";
 import objectHas from "./config/object-has.js";
@@ -295,7 +294,6 @@ export default async function (eleventyConfig) {
 
 	eleventyConfig.addPlugin(markdownPlugin);
 	eleventyConfig.addPlugin(navigationPlugin);
-	eleventyConfig.addPlugin(monthDiffPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
 	eleventyConfig.addPlugin(RenderPlugin);
 	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);

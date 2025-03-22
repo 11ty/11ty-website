@@ -48,10 +48,10 @@ function randomTestimonialLink(testimonials) {
 }
 </script>
 
-<!-- css-only components -->
+<!--- css-only components --->
 <possum variant="home" webc:nokeep></possum>
 
-<!-- this is a workaround for the layout used in the header -->
+<!--- this is a workaround for the layout used in the header --->
 <flex-luthor webc:nokeep></flex-luthor>
 
 <quick-start></quick-start>
@@ -159,6 +159,7 @@ function randomTestimonialLink(testimonials) {
 </div>
 
 <!--- Home page CSS (not in WebC); some <script> are included via base.njk --->
+<link rel="stylesheet" href="./_includes/components/subhed.css" webc:bucket="async">
 <link rel="stylesheet" href="./_includes/components/supporters.css" webc:bucket="async">
 <link rel="stylesheet" href="./_includes/components/forms.css" webc:bucket="async">
 <link rel="stylesheet" href="./_includes/components/tables.css" webc:bucket="async">
