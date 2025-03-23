@@ -38,7 +38,7 @@
 
 	<div class="elv-nav-header">
 		{% if not isDocs %}
-		<a href="{% if logoLink %}{{ logoLink }}{% else %}/{% endif %}" class="elv-hero">{#{% include "../img/logo.svg" %}<span class="sr-only">Eleventy</span>#}<img src="/img/logo.svg" alt="11ty Logo" eleventy:formats="auto"></a>
+		<a href="{% if logoLink %}{{ logoLink }}{% else %}/{% endif %}" class="elv-hero">{#{% include "../img/logo.svg" %}<span class="sr-only">Eleventy</span>#}<img src="/img/logo.svg" alt="11ty Logo" eleventy:formats="auto" loading="eager" decoding="auto"></a>
 		{% endif %}
 		<is-land class="elv-possum-island" on:visible on:idle on:load on:save-data="false" on:media="(prefers-reduced-motion: no-preference)">
 			<template data-island>
