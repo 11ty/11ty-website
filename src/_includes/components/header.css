@@ -12,9 +12,6 @@
 :where(.elv-menu) a[href] {
 	color: inherit;
 }
-.elv-header-docs .elv-menu {
-	margin-block-end: 1rem;
-}
 /* Dark mode menu on home page */
 .elv-header-default .elv-menu {
 	background-color: #222;
@@ -40,6 +37,11 @@
 .elv-nav-header {
 	padding-left: 1rem;
 	padding-right: 1rem;
+}
+@media (min-width: 34.4375em) { /* 551px */
+	.elv-nav-header {
+		margin-block-end: 1rem;
+	}
 }
 .elv-nav-menu {
 	padding-left: 1rem;
@@ -172,6 +174,7 @@ a[href].elv-hero:visited {
 }
 main h1.elv-hed:first-child {
 	border: none;
+	margin-block-start: 0;
 }
 @media (min-width: 43.75em) {
 	/* 700px */
