@@ -40,6 +40,9 @@ let eleventyComputed = {
 		<meta name="description" content="{{ subtitleText }}">
 		<meta name="generator" content="{{ eleventy.generator }}">
 
+		<link rel="preload" href="/css/fonts/benchnine-bold.woff2" as="font" type="font/woff2" crossorigin>
+		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+
 		<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon.png">
 		<link rel="me" href="https://fosstodon.org/@eleventy">
 
@@ -106,11 +109,10 @@ let eleventyComputed = {
 {% endif %}
 {% endset %}
 
-		<!-- Preconnect -->
-		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-
-		<style>{{ css | cssmin | safe }}</style>
-		<style>{% getBundle "css" %}</style>
+		<style>
+		{{ css | cssmin | safe }}
+		{% getBundle "css" %}
+		</style>
 
 {%- if page.url == '/' %}
 		<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'async' %}" media="print" onload="this.media='all'" fetchpriority="low">
