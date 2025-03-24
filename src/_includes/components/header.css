@@ -174,7 +174,6 @@ a[href].elv-hero:visited {
 }
 main h1.elv-hed:first-child {
 	border: none;
-	margin-block-start: 0;
 }
 @media (min-width: 43.75em) {
 	/* 700px */
