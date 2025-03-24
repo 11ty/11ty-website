@@ -129,8 +129,10 @@ let eleventyComputed = {
 
 		<script type="module">{% include "../components/details-force-state.js" %}</script>
 {%- if page.url == '/' %}
+		{# see also "eleventy-js.njk" #}
 		{% js %}{% include "../../../node_modules/@11ty/is-land/is-land.js" %}{% endjs %}
 		{% js "async" %}{% include "../../../node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
+		{% js "async" %}{% include "../../../node_modules/@zachleat/details-utils/details-utils.js" %}{% endjs %}
 		{% js "async" %}{% include "../../../node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js" %}{% endjs %}
 
 		<script type="module" src="{% getBundleFileUrl 'js' %}"></script>
