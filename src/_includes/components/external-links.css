@@ -4,7 +4,7 @@ a[href^="https://"]:not([href^="https://11ty.dev"], [href^="http://www.11ty.dev"
 }
 a[href^="https://"]:not([href^="https://11ty.dev"], [href^="http://www.11ty.dev"], .minilink, .elv-externalexempt):after {
 	content: "↗";
-	font-family: system-ui, -apple-system, sans-serif;
+	font-family: system-ui, sans-serif;
 	font-style: normal;
 	font-weight: 900;
 	color: #00bcd4;
