@@ -52,7 +52,7 @@ html {
 	overflow-y: scroll;
 }
 body {
-	font-family: system-ui, -apple-system, sans-serif;
+	font-family: system-ui, sans-serif;
 	background-color: var(--background-color);
 	color: var(--color);
 	margin: 0;
@@ -161,7 +161,7 @@ h5,
 .elv-h2,
 .elv-h3,
 .benchnine {
-	font-family: BenchNine, system-ui, -apple-system, sans-serif;
+	font-family: BenchNine, system-ui, sans-serif;
 	font-weight: 700;
 }
 h1 {

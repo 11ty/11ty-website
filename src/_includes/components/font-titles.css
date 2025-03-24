@@ -1,7 +1,0 @@
-@font-face {
-	font-family: BenchNine;
-	src: url("/css/fonts/benchnine-bold.woff2") format("woff2");
-	font-weight: 700;
-	font-display: swap;
-	unicode-range: U+20-7E,U+D6,U+D8,U+E9,U+F4,U+F6,U+F8,U+15A,U+200B,U+2014,U+2019,U+2026;
-}

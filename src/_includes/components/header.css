@@ -102,7 +102,7 @@
 .elv-hero {
 	display: block;
 	background-color: #222;
-	font-family: BenchNine, system-ui, -apple-system, sans-serif;
+	font-family: BenchNine, system-ui, sans-serif;
 	text-decoration: none;
 	font-weight: 700;
 }
