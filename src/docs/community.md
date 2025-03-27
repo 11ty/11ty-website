@@ -1,9 +1,9 @@
 ---
 eleventyNavigation:
-  parent: Ecosystem
-  key: Community
+  parent: Community
+  key: How can I contribute?
   pinned: true
-  order: 2
+  order: 0
 ignoreSupporters: true
 ignoreGitHubButtons: true
 ---

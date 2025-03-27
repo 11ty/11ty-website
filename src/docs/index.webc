@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Eleventy Documentation
+  parent: Introduction
   key: Getting Started
   title: Get Started
   pinned: true

@@ -3,6 +3,7 @@ eleventyNavigation:
   parent: Eleventy Documentation
   key: Advanced
   order: 9
+  url: false
 ---
 
 # Advanced

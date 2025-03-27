@@ -19,10 +19,14 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	padding-left: 0;
-	padding-right: 0;
+	padding-inline: 0;
 	margin: 0 0 2.5em;
 	list-style: "";
+}
+@media (max-width: 54.9375em) { /* 879px */
+	.elv-toc-list.elv-toc-list {
+		margin-block: 2.5em;
+	}
 }
 .elv-toc-list li {
 	font-size: 0.9375em; /* 15px /16 */
@@ -76,7 +80,7 @@
 }
 .elv-toc-list > li {
 	flex-grow: 1;
-	flex-basis: 14.375rem; /* 230px /16 */
+	flex-basis: 100%;
 }
 @media (min-width: 55em) { /* 880px */
 	.elv-toc-list > li:not(:first-child) {

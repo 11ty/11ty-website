@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Getting Started
+  parent: Introduction
   key: Tutorials
   order: 3
 feedTitle: Quick Tips RSS Feed

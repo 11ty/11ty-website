@@ -4,6 +4,7 @@ eleventyNavigation:
   key: Code of Conduct
   parent: Community
   pinned: true
+  order: 1
 ---
 
 # Community Code of Conduct

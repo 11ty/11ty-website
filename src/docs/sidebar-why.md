@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Getting Started
+  parent: Introduction
   key: Why Eleventy?
   pinned: true
   order: 1
