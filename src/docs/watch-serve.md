@@ -1,8 +1,8 @@
 ---
 eleventyNavigation:
+  parent: Eleventy Projects
   key: Watch and Serve
-  parent: Configuration
-  order: 11
+  order: 9
 ---
 
 # Watch and Serve Configuration

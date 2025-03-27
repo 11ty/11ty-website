@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Eleventy Projects
+  parent: Configure Templates with Data
   key: Layouts
   order: 1
   excerpt: Wrap content in other content.

@@ -1,7 +1,9 @@
 ---
 eleventyNavigation:
   key: Fetch
-  order: -0.15
+  title: '<i class="fa-solid fa-bone"></i>Fetch'
+  pinned: true
+  order: 2
   excerpt: A utility to fetch and cache network requests.
 ---
 

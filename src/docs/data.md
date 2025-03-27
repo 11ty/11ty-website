@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Eleventy Documentation
+  parent: Eleventy Projects
   key: Using Data
   order: 5
 communityLinksKey: data

@@ -1,8 +1,9 @@
 ---
 eleventyNavigation:
-  parent: Eleventy Documentation
+  parent: Ecosystem
   key: Community
-  order: 2.5
+  pinned: true
+  order: 2
 ignoreSupporters: true
 ignoreGitHubButtons: true
 ---

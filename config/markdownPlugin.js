@@ -88,7 +88,7 @@ export default function (eleventyConfig) {
 		// Markdown only.
 		if (this.page.inputPath.endsWith("md")) {
 			return `<details class="toc"${isOpen ? " open" : ""}>
-<summary>Contents</summary>
+<summary>On this page</summary>
 
 [[toc]]
 

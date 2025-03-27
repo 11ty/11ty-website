@@ -1,8 +1,7 @@
 ---
 eleventyNavigation:
-  parent: Eleventy Projects
+  parent: Create Pages From Data
   key: Pagination
-  order: 4
   excerpt: Iterate over a data set and create multiple files from a single template.
 relatedKey: pagination
 ---

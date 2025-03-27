@@ -1,17 +1,14 @@
 ---js
 // <script>
 const eleventyNavigation = {
-	parent: "Getting Started",
+	parent: "Learn",
 	key: "Installing a JavaScript Runtime (like Node.js)",
 	title: "Installing JavaScript",
-	order: 0,
 };
-
-const excludeFromSidebar = true;
 ---
 <h1>Installing a JavaScript Runtime</h1>
 
-<p>To run Eleventy on your machine, you need at least one JavaScript Runtime (a program to run JavaScript code) installed on your computer. The most common of these is <a href="https://nodejs.org/">Node.js</a>.</p>
+<p>To run Eleventy on your machine, you need at least one JavaScript Runtime (a program to run JavaScript code) installed on your computer, typically <a href="https://nodejs.org/">Node.js</a>.</p>
 
 <h2>Node.js</h2>
 

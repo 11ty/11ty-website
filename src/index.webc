@@ -2,7 +2,6 @@
 // <script>
 let headerTitle = "Eleventy is a simpler static site generator";
 let layout = "layouts/main.njk";
-let logoLink = "/docs/";
 
 let ignoreGitHubButtons = true;
 let ignoreSidebarCallout = true;
@@ -73,7 +72,7 @@ function randomTestimonialLink(testimonials) {
 			<is-land on:visible on:save-data="false">
 				<logo-cloud></logo-cloud>
 			</is-land>
-			<small>Eleventy has been downloaded <a href="/blog/eight-million/">over 8 million times</a> and is used on <a href="https://github.com/11ty/eleventy/network/dependents">70,000+ repositories on GitHub</a></a>.</small>
+			<small>Eleventy has been downloaded <span @text="commaNumber($data.npm.downloads)"></span> times and is used on <a href="https://github.com/11ty/eleventy/network/dependents">82,000+ repositories on GitHub</a></a>.</small>
 		</li>
 		<li>
 			Eleventy offers <strong>full control over your project’s output</strong>. We don’t <a href="https://www.youtube.com/watch?v=b4frtsT4Cgo">inject our own markup into your pages</a>.

@@ -77,7 +77,7 @@ Read more about filters on the individual Template Language documentation pages:
 
 We also provide a few universal filters, built-in:
 
-{{ collections.all | eleventyNavigation("Filters") | eleventyNavigationToHtml({ showExcerpt: true }) | safe }}
+{{ "Filters" | nav | eleventyNavigationToHtml({ showExcerpt: true }) | safe }}
 
 ### Access existing filters in your Configuration File {% addedin "0.11.0" %}
 

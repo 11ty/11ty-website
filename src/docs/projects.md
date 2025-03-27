@@ -8,4 +8,4 @@ eleventyNavigation:
 
 # Working with Eleventy Projects
 
-{{ collections.all | eleventyNavigation("Eleventy Projects") | eleventyNavigationToHtml({ showExcerpt: true }) | safe }}
+{{ "Eleventy Projects" | nav | eleventyNavigationToHtml({ showExcerpt: true }) | safe }}

@@ -1,7 +1,9 @@
 ---
 eleventyNavigation:
-  parent: Template Languages
+  parent: Templates
   key: Markdown
+  # title: '<i class="fa-brands fa-markdown"></i>Markdown'
+  pinned: true
   order: 2
 layout: layouts/langs.njk
 logoImage: "./src/img/logos/markdown.svg"
@@ -174,7 +176,7 @@ module.exports = function (eleventyConfig) {
 
 {% callout "warn" %}This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.{% endcallout %}
 
-The truth is, **you can** return markdown inside shortcodes (as long as the file is transforming markdown, either as a `.md` file extension or [with `templateEngineOverride`](/docs/languages/#overriding-the-template-language)). However, there is one small wrinkle that might catch you off guard.
+The truth is, **you can** return markdown inside shortcodes (as long as the file is transforming markdown, either as a `.md` file extension or [with `templateEngineOverride`](/docs/template-overrides/)). However, there is one small wrinkle that might catch you off guard.
 
 {% codetitle ".eleventy.js" %}
 

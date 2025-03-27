@@ -1,15 +1,13 @@
 ---
 eleventyNavigation:
+  parent: Why Eleventy?
   key: Performance
-  parent: Learn
-  excerpt: The build and site performance of Eleventy projects
-  order: 3
+  excerpt: Eleventy is known for both its lightweight core in the form of speedy builds/installs and lightweight site output in the form of speedy sites!
 ignoreSidebarCallout: true
 ---
-<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
-# Eleventy Performance
+# Performance
 
-Eleventy is known for both its lightweight core in the form of speedy installs/builds and lightweight site output in the form of speedy sites!
+{% tableofcontents "open" %}
 
 ## Site Performance
 
@@ -31,14 +29,12 @@ Looking for guidance on [single page applications (SPA)](/docs/single-page-appli
 ## Build Performance
 
 **Eleventy offers best-in-class build performance for JavaScript site generators.**
-</template>
 
 <is-land on:visible on:media="(prefers-reduced-motion: no-preference)">
-	<template data-island="once"><link rel="stylesheet" href="/css/throbber.css" webc:keep><script src="/js/throbber.js" webc:keep></script></template>
-	<build-comparison @show-all></build-comparison>
+	<template data-island="once"><link rel="stylesheet" href="/css/throbber.css"><script src="/js/throbber.js"></script></template>
+	{% renderTemplate "webc" %}<build-comparison @show-all></build-comparison>{% endrenderTemplate %}
 </is-land>
 
-<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
 Data taken from [_Which Generator Builds Markdown the Fastest?_ (July 2022)](https://www.zachleat.com/web/build-benchmark/#benchmark-results).
 
 ### Performance Tips
@@ -56,13 +52,10 @@ Data taken from [_Which Generator Builds Markdown the Fastest?_ (July 2022)](htt
 </div>
 
 ## Installation Performance
-</template>
 
 <is-land on:visible on:media="(prefers-reduced-motion: no-preference)">
-	<template data-island="once"><link rel="stylesheet" href="/css/throbber.css" webc:keep><script src="/js/throbber.js" webc:keep></script></template>
-	<install-comparison></install-comparison>
+	<template data-island="once"><link rel="stylesheet" href="/css/throbber.css"><script src="/js/throbber.js"></script></template>
+	{% renderTemplate "webc" %}<install-comparison></install-comparison>{% endrenderTemplate %}
 </is-land>
 
-<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
 Data taken from [_The JavaScript Site Generator Review, 2023_ (February 2023)](https://www.zachleat.com/web/site-generator-review/).
-</template>

@@ -1,7 +1,9 @@
 ---
 eleventyNavigation:
-  parent: Template Languages
+  parent: Templates
   key: HTML
+  # title: '<i class="fa-solid fa-code"></i>HTML'
+  pinned: true
   order: 1
 layout: layouts/langs.njk
 relatedLinks:

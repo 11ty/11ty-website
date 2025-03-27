@@ -1,8 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Using Data
+  parent: Eleventy Projects
   key: Environment Variables
-  order: 1.5
+  order: 5.1
 ---
 
 # Environment Variables

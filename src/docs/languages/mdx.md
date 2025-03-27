@@ -2,7 +2,6 @@
 eleventyNavigation:
   parent: Markdown
   key: MDX
-  order: 11.1
 addedInVersion: 3.0.0-alpha.11
 relatedTitle: Template Language—MDX
 layout: layouts/langs.njk

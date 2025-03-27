@@ -26,7 +26,7 @@
 			{%- set navKey = eleventyNavigation.key -%}
 		{%- endif -%}
 		<div id="skip-nav">
-			{{ collections.sidebarNav | eleventyNavigation("Eleventy Documentation") | eleventyNavigationToHtml({ activeKey: navKey, listClass: 'elv-toc-list', activeListItemClass: 'elv-toc-active' }) | safe }}
+			{{ "Eleventy Documentation,Ecosystem" | navFiltered | eleventyNavigationToHtml({ activeKey: navKey, listClass: 'elv-toc-list', activeListItemClass: 'elv-toc-active' }) | safe }}
 		</div>
 		{%- if not ignoreSidebarCallout %}
 		{%- set comparison = comparisons | randompick %}

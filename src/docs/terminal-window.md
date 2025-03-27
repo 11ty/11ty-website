@@ -1,9 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Getting Started
+  parent: Learn
   key: Opening a Terminal
-  order: 1
-excludeFromSidebar: true
+  order: 2
 ---
 
 # Opening a Terminal

@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Data Cascade
+  parent: Using Data
   key: Validate Data
   order: 6
 ---

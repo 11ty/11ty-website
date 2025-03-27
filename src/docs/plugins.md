@@ -1,8 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Eleventy Documentation
+  parent: Ecosystem
   key: Plugins
-  order: 7.5
+  order: 7.1
 communityLinksKey: plugins
 ---
 
@@ -12,9 +12,9 @@ communityLinksKey: plugins
 
 Plugins are custom code that Eleventy can import into a project from an external repository.
 
-- [Official Eleventy Plugins](/docs/plugins/official.md) (look for the `@11ty/` prefix on npm)
-- [Community Contributed Plugins](/docs/plugins/community.md)
-- [Retired Plugins](/docs/plugins/retired.md)
+All _official_ plugins live under the `@11ty` npm organization and plugin names will include the `@11ty/` prefix.
+
+{{ "Plugins" | nav | eleventyNavigationToHtml({ showExcerpt: true }) | safe }}
 
 ## Plugins are Configuration
 

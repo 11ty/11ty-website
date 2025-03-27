@@ -7,4 +7,4 @@ eleventyNavigation:
 
 # Advanced
 
-{{ collections.all | eleventyNavigation("Advanced") | eleventyNavigationToHtml({ showExcerpt: true }) | safe }}
+{{ "Advanced" | nav | eleventyNavigationToHtml({ showExcerpt: true }) | safe }}

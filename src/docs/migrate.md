@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
-  parent: Getting Started
-  key: Migrating to Eleventy
+  parent: Introduction
+  key: Importing Content
   order: 3
 ---
 

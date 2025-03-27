@@ -59,6 +59,7 @@ export async function render({ entries }) {
 </style>
 
 <div class="activity-feed">
+	<script type="module" src="/js/filter-container.js"></script>
 	<filter-container oninit>
 		<p data-filter-results="result/results" aria-live="polite"></p>
 

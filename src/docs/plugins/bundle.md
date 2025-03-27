@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: Bundle
+  title: '<i class="fa-solid fa-file-zipper"></i>Bundle'
   order: 3.15
   excerpt: A plugin create small plain-text bundles of code (CSS, JS, HTML, SVG, etc)
 ---

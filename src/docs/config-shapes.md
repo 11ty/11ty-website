@@ -2,6 +2,7 @@
 eleventyNavigation:
   key: Configuration Shapes
   parent: Configuration
+  pinned: true
 ---
 # Configuration Shapes
 

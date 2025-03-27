@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: Navigation
+  title: '<i class="fa-solid fa-compass"></i>Navigation'
   order: 3
   excerpt: A plugin for creating hierarchical navigation in Eleventy projects. Supports breadcrumbs too!
 ---

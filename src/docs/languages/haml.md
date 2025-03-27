@@ -1,8 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Template Languages
+  parent: Templates
   key: HAML
-  order: 10
+  order: 7
 layout: layouts/langs.njk
 ---
 

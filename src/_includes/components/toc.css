@@ -57,11 +57,14 @@
 .elv-toc summary,
 .elv-toc-list a {
 	padding: 0.15em 0.25em;
+}
+.elv-toc summary,
+.elv-toc-list a[href] {
 	color: #1873a5;
 }
 @media (prefers-color-scheme: dark) {
 	.elv-toc summary,
-	.elv-toc-list a {
+	.elv-toc-list a[href] {
 		color: #86d0fb;
 	}
 }
@@ -81,10 +84,13 @@
 }
 /* Top level links */
 .elv-toc-list > li > a {
-	color: #222;
 	font-weight: 600;
-	border-bottom: 1px solid #ddd;
 	margin-bottom: 1em;
+	display: block;
+}
+.elv-toc-list > li > a[href] {
+	color: #222;
+	text-decoration: underline;
 }
 .elv-toc-list > li:has(> ul) > a {
 	margin-bottom: 0.25em; /* 4px /16 */
@@ -92,7 +98,6 @@
 @media (prefers-color-scheme: dark) {
 	.elv-toc-list > li > a {
 		color: #fff;
-		border-color: #444;
 	}
 }
 
@@ -123,8 +128,10 @@
 /* Wrapper around the markdown Table of contents plugin */
 details.toc {
 	border-radius: 0.4em;
-	padding: 0.5rem 0.5rem 0 0.5rem;
-	margin: 0 -0.5rem 3em -0.5rem;
+	padding: .5rem;
+	margin-inline: -.5rem;
+	/* padding: 0.5rem 0.5rem 0 0.5rem; */
+	/* margin: 0 -0.5rem 3em -0.5rem; */
 }
 h1 + details.toc {
 	margin-top: -1.444444444444em; /* -26px /18 */
@@ -143,16 +150,7 @@ details.toc[open] {
 		background-color: #292929;
 	}
 }
-details.toc:not([open]) > summary {
-	margin-bottom: 0;
-}
-
-details.toc > summary {
-	padding-bottom: 0.5rem;
-	border-bottom: 2px dotted transparent;
-}
 details.toc[open] > summary {
-	border-color: #ccc;
 	font-weight: bold;
 }
 
@@ -184,3 +182,10 @@ details.toc[open] > summary {
 	text-wrap: balance;
 }
 
+.elv-toc-list ul .fa11ty-icon {
+	margin-inline-start: 0;
+}
+.elv-toc ul ul .fa11ty-icon use[href] {
+	opacity: .8;
+	color: inherit !important;
+}

@@ -17,7 +17,8 @@
     { "source": "/docs/how-to-support/", "destination": "/docs/community/", "statusCode": 301 },
     { "source": "/docs/plugins/cache/", "destination": "/docs/plugins/fetch/", "statusCode": 301 },
     { "source": "/docs/plugins/partial-hydration/", "destination": "/docs/plugins/is-land/", "statusCode": 301 },
-    { "source": "/docs/templates/", "destination": "/docs/projects/", "statusCode": 301 }
+    { "source": "/docs/templates/", "destination": "/docs/projects/", "statusCode": 301 },
+    { "source": "/docs/plugins/official/", "destination": "/docs/plugins/", "statusCode": 301 }
   ],
 	"rewrites": [
     {

@@ -3,7 +3,6 @@ pageTitle: Collections API
 eleventyNavigation:
   parent: Collections
   key: Collections API
-  order: 2
   excerpt: Advanced control over collections.
 ---
 {% tableofcontents %}
