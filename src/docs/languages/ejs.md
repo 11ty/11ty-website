@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Templates
+  parent: Template Languages
   key: EJS
   order: 6
 layout: layouts/langs.njk

@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   parent: Eleventy Documentation
-  key: Templates
+  key: Template Languages
   order: 7
 ---
 # Template Languages

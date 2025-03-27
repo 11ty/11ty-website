@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Templates
+  parent: Template Languages
   key: Markdown
   # title: '<i class="fa-brands fa-markdown"></i>Markdown'
   pinned: true

@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Templates
+  parent: Template Languages
   key: Nunjucks
   order: 2
 relatedKey: nunjucks

@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Templates
+  parent: Template Languages
   key: WebC
   order: 1
 logoImage: "./src/img/logos/webc.png"

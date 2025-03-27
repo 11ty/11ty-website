@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Eleventy Projects
   key: Using Data
-  order: 5
+  order: 2
 communityLinksKey: data
 ---
 

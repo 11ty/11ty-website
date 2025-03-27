@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Templates
+  parent: Template Languages
   key: Virtual Templates
   order: 9
   excerpt: Create a template or layout using configuration only.

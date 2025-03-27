@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Templates
+  parent: Template Languages
   key: JavaScript
   # title: '<i class="fa-brands fa-js"></i>JavaScript'
   pinned: true

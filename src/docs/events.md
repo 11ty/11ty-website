@@ -2,7 +2,6 @@
 eleventyNavigation:
   parent: Configuration
   key: Events
-  order: 10
 ---
 
 # Events

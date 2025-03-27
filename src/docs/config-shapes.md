@@ -2,7 +2,7 @@
 eleventyNavigation:
   key: Configuration Shapes
   parent: Configuration
-  pinned: true
+excludeFromSidebar: true
 ---
 # Configuration Shapes
 

@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Templates
+  parent: Template Languages
   key: Mustache
   order: 5
 layout: layouts/langs.njk

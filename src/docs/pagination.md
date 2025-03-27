@@ -3,6 +3,7 @@ eleventyNavigation:
   parent: Create Pages From Data
   key: Pagination
   excerpt: Iterate over a data set and create multiple files from a single template.
+  pinned: true
 relatedKey: pagination
 ---
 

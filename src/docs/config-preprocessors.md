@@ -1,8 +1,9 @@
 ---
 eleventyNavigation:
-  parent: Configuration
+  parent: Template Features
   key: Preprocessors
-  order: 4.5
+  title: Preprocess Content
+  order: 0.1
 ---
 
 # Preprocessors {% addedin "3.0.0-alpha.17" %}

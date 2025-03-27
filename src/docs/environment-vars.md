@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Eleventy Projects
   key: Environment Variables
-  order: 5.1
+  order: 6
 ---
 
 # Environment Variables

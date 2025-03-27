@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Templates
+  parent: Template Languages
   key: HTML
   # title: '<i class="fa-solid fa-code"></i>HTML'
   pinned: true

@@ -307,12 +307,12 @@ export default async function (eleventyConfig) {
 			return Boolean(item.data?.eleventyNavigation) && item.data?.excludeFromSidebar !== true
 		});
 	}
-	eleventyConfig.addFilter("nav", memoize(function(key) {
+	eleventyConfig.addFilter("nav", function(key) {
 		return navigation.find(this.ctx.collections.all, key);
-	}));
-	eleventyConfig.addFilter("navFiltered", memoize(function(key) {
+	});
+	eleventyConfig.addFilter("navFiltered", function(key) {
 		return filterNavSidebar(navigation.find(this.ctx.collections.all, key));
-	}));
+	});
 	eleventyConfig.addFilter("navBreadcrumbs", memoize(function(key) {
 		return navigation.findBreadcrumbs(this.ctx.collections.all, key, {includeSelf: true})
 	}));

@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Eleventy Documentation
   key: Advanced
-  order: 10
+  order: 9
 ---
 
 # Advanced

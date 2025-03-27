@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Pagination
+  parent: Create Pages From Data
   key: Pagination Navigation
   excerpt: Create a list of links to every paginated page on a pagination template.
 tags: ["related-pagination"]
