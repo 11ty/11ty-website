@@ -45,7 +45,7 @@
     "@11ty/eleventy-activity-feed": "^2.0.0",
     "@11ty/eleventy-fetch": "5.1.0-beta.2",
     "@11ty/eleventy-img": "^6.0.1",
-    "@11ty/eleventy-navigation": "^1.0.1",
+    "@11ty/eleventy-navigation": "^1.0.2",
     "@11ty/eleventy-plugin-rss": "^2.0.3",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@11ty/eleventy-plugin-webc": "^0.12.0-beta.3",

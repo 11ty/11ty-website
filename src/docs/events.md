@@ -1,7 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Configuration
-  key: Events
+  parent: Advanced
+  key: Configuration Events
+  order: 2
 ---
 
 # Events
@@ -26,7 +27,7 @@ The `eleventy.before` event runs every time Eleventy starts building, so it will
 export default function(eleventyConfig) {
 	// Async-friendly in 1.0+
 	// Arguments added in 2.0+
-	eleventyConfig.on("eleventy.before", async ({ dir, runMode, outputMode }) => {
+	eleventyConfig.on("eleventy.before", async ({ directories, runMode, outputMode }) => {
 		// Run me before the build starts
 	});
 }
@@ -45,7 +46,7 @@ export default function(eleventyConfig) {
 	// Arguments added in 2.0+
 	eleventyConfig.on(
 		"eleventy.after",
-		async ({ dir, results, runMode, outputMode }) => {
+		async ({ directories, results, runMode, outputMode }) => {
 			// Run me after the build ends
 		}
 	);
@@ -59,7 +60,7 @@ Eleventy now provides an object with metadata on the build as an argument to the
 
 {% set codeContent %}
 export default function(eleventyConfig) {
-	eleventyConfig.on("eleventy.before", async ({ dir, runMode, outputMode }) => {
+	eleventyConfig.on("eleventy.before", async ({ directories, runMode, outputMode }) => {
 		// Read more below
 	});
 
@@ -73,8 +74,9 @@ export default function(eleventyConfig) {
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
-- `directories`
-- `dir` (deprecated, use `directories` instead): an object with current project directories, set in [your configuration file](/docs/config/#input-directory) (or populated with Eleventy defaults).
+- `directories`: an object with normalized project directory paths, set in your in [your configuration file](/docs/config/#input-directory) (or populated with Eleventy defaults).
+	- Included properties: `input`, `inputFile`, `inputGlob`, `data`, `includes`, `layouts`, and `output`. Works best with a [named `config` export](./config-shapes.md#optional-export-config-object) in your configuration file.
+- `dir` (deprecated, use `directories` instead):
 	- Included properties: `input` (default `"."`), `output` (default `"_site"`), `includes` (default `"_includes"`), `data` (default `"_data"`), and `layouts` (no default value).
 - `outputMode`: a string representing the value of [`--to` on the command line](/docs/usage/#to-can-output-json)
   - `fs` (default)

@@ -1,6 +1,7 @@
 class DetailsForceState extends HTMLElement {
 	forceState(details, isOpen) {
-		if (isOpen) {
+		let isSectionActive = Boolean(details.querySelector(".elv-toc-active") || details.closest(".elv-toc-active"));
+		if (isOpen && isSectionActive) {
 			if(!details.open) {
 				details.setAttribute("open", "open");
 			}
@@ -12,18 +13,20 @@ class DetailsForceState extends HTMLElement {
 	}
 
 	connectedCallback() {
-		let details = this.querySelector(":scope details");
-		if (!details || !details.hasAttribute("data-force-media")) {
+		let forceOpen = this.getAttribute("data-force-media");
+		let details = this.querySelectorAll(":scope details");
+		if (!details || !forceOpen) {
 			return;
 		}
 
-		let forceOpen = details.getAttribute("data-force-media");
-		if (forceOpen && "matchMedia" in window) {
-			let mm1 = window.matchMedia(forceOpen);
-			this.forceState(details, !mm1.matches);
-			mm1.addListener(e => {
-				this.forceState(details, !e.matches);
-			});
+		for(let d of details) {
+			if (forceOpen && "matchMedia" in window) {
+				let mm1 = window.matchMedia(forceOpen);
+				this.forceState(d, !mm1.matches);
+				mm1.addListener(e => {
+					this.forceState(d, !e.matches);
+				});
+			}
 		}
 	}
 }

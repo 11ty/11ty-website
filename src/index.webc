@@ -4,7 +4,6 @@ let headerTitle = "Eleventy is a simpler static site generator";
 let layout = "layouts/main.njk";
 
 let ignoreGitHubButtons = true;
-let ignoreSidebarCallout = true;
 let searchTitle = "Eleventy is a simpler static site generator";
 
 let eleventyImport = {

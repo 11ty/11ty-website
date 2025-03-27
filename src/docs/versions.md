@@ -2,6 +2,7 @@
 eleventyNavigation:
   parent: Advanced
   key: Release History
+  pinned: true
 ---
 # Release History
 

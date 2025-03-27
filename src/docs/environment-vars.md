@@ -77,7 +77,7 @@ npm install cross-env
 Eleventy also supplies its own Eleventy-specific environment variables, usually intended for more advanced use cases. You can use these in your configuration or in data files as needed.
 
 - `process.env.ELEVENTY_ROOT` {% addedin "1.0.0" %} the absolute path to the directory in which you’ve run the Eleventy command.
-- `process.env.ELEVENTY_SOURCE` {% addedin "1.0.0" %} is the method in which Eleventy has run, current either `cli` or `script`.
+- `process.env.ELEVENTY_SOURCE` {% addedin "1.0.0" %} is the method in which Eleventy has run, current either `cli` or `script` (via the [programmatic API](./programmatic.md)).
 - `process.env.ELEVENTY_RUN_MODE` {% addedin "2.0.0-beta.2" %} is one of `build`, `serve`, or `watch`.
 - `process.env.ELEVENTY_VERSION` {% addedin "3.0.0-alpha.6" %} the current version of Eleventy (e.g. `"3.0.0-alpha.5"`).
 

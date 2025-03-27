@@ -3,7 +3,6 @@ eleventyNavigation:
   parent: Why Eleventy?
   key: Performance
   excerpt: Eleventy is known for both its lightweight core in the form of speedy builds/installs and lightweight site output in the form of speedy sites!
-ignoreSidebarCallout: true
 ---
 # Performance
 

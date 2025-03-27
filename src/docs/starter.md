@@ -1,8 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Introduction
+  parent: Getting Started
   key: Starter Projects
-  order: 3
+  order: 2
 ---
 
 # Starter Projects

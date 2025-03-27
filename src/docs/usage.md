@@ -2,6 +2,7 @@
 eleventyNavigation:
   parent: Getting Started
   key: Command Line Usage
+  pinned: true
 ---
 
 # Command Line Usage

@@ -3,6 +3,7 @@ eleventyNavigation:
   key: Order of Operations
   parent: Advanced
   excerpt: How Eleventy works internally.
+  order: 3
 ---
 
 # Order of Operations

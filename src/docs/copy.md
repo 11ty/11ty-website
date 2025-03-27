@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Eleventy Projects
   key: Passthrough File Copy
-  title: Copy files to Output
+  title: Copy Files to Output
   order: 0.1
 ---
 
