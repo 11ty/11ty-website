@@ -3,6 +3,7 @@ eleventyNavigation:
   parent: Template Features
   key: Transforms
   title: Postprocess Content
+  excerpt: Use Transforms to post-process content after Eleventy builds but before it outputs (usually by writing to disk).
   order: 0.2
 ---
 

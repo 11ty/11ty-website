@@ -4,6 +4,7 @@ eleventyNavigation:
   # title: '<i class="fa-solid fa-folder-open"></i>Directory Output'
   order: 3.2
   excerpt: A plugin to group and sort console output by directory, with file size and benchmarks.
+excludeFromSidebar: true
 ---
 
 # Directory Output

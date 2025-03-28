@@ -3,6 +3,7 @@ eleventyNavigation:
   parent: Template Features
   key: Preprocessors
   title: Preprocess Content
+  excerpt: Use preprocessors to intercept and modify content (in-memory) before Eleventy builds.
   order: 0.1
 ---
 
