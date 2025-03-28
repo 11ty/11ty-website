@@ -24,10 +24,17 @@
 	list-style: "";
 }
 @media (max-width: 54.9375em) { /* 879px */
-	.elv-toc-list.elv-toc-list {
+	.elv-toc-list {
 		background-color: #f4f4f4;
 		margin-inline: -1rem;
 		padding: 1rem;
+	}
+	@media (prefers-color-scheme: dark) {
+		.elv-toc-list {
+			background: #111;
+		}
+	}
+	.elv-toc-list.elv-toc-list {
 		margin-block: 2.5em;
 	}
 }
@@ -87,8 +94,9 @@
 }
 @media (min-width: 55em) { /* 880px */
 	.elv-toc-list > li:not(:first-child) {
-		border-top: 1px solid #eee;
+		border-top: 1px solid var(--border-color);
 	}
+
 	.elv-toc-list > li:last-child {
 		margin-bottom: var(--elv-toc-spacing);
 	}
@@ -117,7 +125,7 @@
 	text-decoration: underline;
 }
 @media (prefers-color-scheme: dark) {
-	.elv-toc-list > li > a {
+	.elv-toc-list > li > details > summary a[href] {
 		color: #fff;
 	}
 }
