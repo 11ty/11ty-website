@@ -25,11 +25,11 @@ There are a few different ways to [shape your configuration file](/docs/config-s
 - Add [Filters](/docs/filters/).
 - Add [Shortcodes](/docs/shortcodes/).
 - Add [Custom Tags](/docs/custom-tags/).
-- Add [JavaScript Functions](/docs/languages/javascript/#javascript-template-functions) {% addedin "0.7.0" %}
+- Add [JavaScript Template Functions](/docs/languages/javascript/#javascript-template-functions) {% addedin "0.7.0" %}
 - Add custom [Collections](/docs/collections/) and use [Advanced Collection Filtering and Sorting](/docs/collections/#advanced-custom-filtering-and-sorting).
-- Add some [Plugins](/docs/plugins/).
+- Add [Plugins](/docs/plugins/).
 
-{% callout %}Is your config file getting big and hard to understand? You can <a href="/docs/quicktips/local-plugin/">create your own plugin</a> to move some code out.{% endcallout %}
+{% callout %}Is your config file getting big and hard to understand? You can <a href="/docs/quicktips/local-plugin/">create a project-specific plugin</a> to better organize your code.{% endcallout %}
 
 ## Default filenames
 
