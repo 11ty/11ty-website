@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Eleventy Projects
   key: Add CSS, JS, Fonts
-  order: 0
+  order: 0.1
   excerpt: Add assets to your Eleventy project.
 ---
 <h1>Adding CSS, JavaScript, Fonts</h1>

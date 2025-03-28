@@ -1,4 +1,5 @@
 .elv-toc {
+	--elv-toc-spacing: .75em;
 	font-size: 1rem; /* Reset */
 }
 @media (min-width: 55em) { /* 880px */
@@ -11,32 +12,31 @@
 	}
 }
 
+@media (max-width: 54.9375em) { /* 879px */
+	.elv-toc-c {
+		display: block;
+		background-color: #f4f4f4;
+		margin-inline: -1rem;
+		padding: 1rem;
+		margin-block-end: 2.5em;
+	}
+	@media (prefers-color-scheme: dark) {
+		.elv-toc-c {
+			background: #111;
+		}
+	}
+}
+
 .elv-toc-list details {
 	margin: 0;
 }
 .elv-toc-list {
-	--elv-toc-spacing: .75em;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	padding-inline: 0;
 	margin: 0 0 2.5em;
 	list-style: "";
-}
-@media (max-width: 54.9375em) { /* 879px */
-	.elv-toc-list {
-		background-color: #f4f4f4;
-		margin-inline: -1rem;
-		padding: 1rem;
-	}
-	@media (prefers-color-scheme: dark) {
-		.elv-toc-list {
-			background: #111;
-		}
-	}
-	.elv-toc-list.elv-toc-list {
-		margin-block: 2.5em;
-	}
 }
 .elv-toc-list li {
 	font-size: 0.9375em; /* 15px /16 */
@@ -75,6 +75,11 @@
 .elv-toc summary,
 .elv-toc-list a {
 	padding: 0.15em 0.25em;
+}
+@media (max-width: 54.9375em) { /* 879px */
+	.elv-toc-list a {
+		padding-block: .5em;
+	}
 }
 .elv-toc-list a[href] {
 	color: #1873a5;

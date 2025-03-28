@@ -3,7 +3,7 @@ eleventyNavigation:
   parent: Eleventy Projects
   key: Passthrough File Copy
   title: Copy Files to Output
-  order: 0.1
+  order: 0
 ---
 
 # Passthrough File Copy {% addedin "0.2.14" %}
