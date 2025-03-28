@@ -1,8 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Eleventy Documentation
+  parent: Eleventy Projects
   key: Advanced
-  order: 9
+  order: 11
 ---
 
 # Advanced

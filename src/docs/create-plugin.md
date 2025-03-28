@@ -3,7 +3,7 @@ eleventyNavigation:
   parent: Plugins
   key: Create or use Plugins
   pinned: true
-  order: -1
+  order: 0
   excerpt: Plugins are just configuration. Learn how to create a plugin of your own to reuse functionality or to organize your configuration file.
 communityLinksKey: plugins
 ---

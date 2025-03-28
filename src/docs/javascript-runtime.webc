@@ -4,11 +4,12 @@ const eleventyNavigation = {
 	parent: "Learn",
 	key: "Installing a JavaScript Runtime (like Node.js)",
 	title: "Installing JavaScript",
+	order: 2,
 };
 ---
 <h1>Installing a JavaScript Runtime</h1>
 
-<p>To run Eleventy on your machine, you need at least one JavaScript Runtime (a program to run JavaScript code) installed on your computer, typically <a href="https://nodejs.org/">Node.js</a>.</p>
+<p>To run Eleventy on your machine, you need at least one JavaScript Runtime (a program to run JavaScript code) installed on your computer. We recommend <a href="https://nodejs.org/">Node.js</a>.</p>
 
 <h2>Node.js</h2>
 
@@ -16,11 +17,11 @@ const eleventyNavigation = {
 
 <p>If the command is not found or it reports a number lower than <node-minimum></node-minimum>, you will need to head over to <a href="https://nodejs.org/en"><code>nodejs.org</code></a> to download and install <strong>Node.js version <node-minimum></node-minimum></strong> or higher (required by Eleventy <eleventy-version></eleventy-version>).</p>
 
-<p>For more advanced use cases (e.g. installing multiple versions of Node.js simultaneously), it’s common to use tools like <a href="https://github.com/nvm-sh/nvm"><code>nvm</code></a> or <a href="https://github.com/Schniz/fnm"><code>fnm</code></a>. Platform-specific installation instructions for these tools are available at: <a href="https://nodejs.org/en/download"><code>nodejs.org/en/download</code></a>.</p>
+<p>For more advanced use cases (e.g. having multiple versions of Node.js installed simultaneously), it’s common to use tools like <a href="https://github.com/nvm-sh/nvm"><code>nvm</code></a> or <a href="https://github.com/Schniz/fnm"><code>fnm</code></a>. Platform-specific installation instructions for these tools are available at: <a href="https://nodejs.org/en/download"><code>nodejs.org/en/download</code></a>.</p>
 
-<h3>Odd Versions of Node.js</h3>
+<h3>Odd Numbered Versions of Node.js</h3>
 
-<p>It is not recommended (or supported by the Eleventy project) to use an odd major version of Node.js (e.g. Node 19), per guidance on the <a href="https://nodejs.org/en/about/previous-releases">Node.js Releases documentation</a>. Our experience has found that even-numbered major versions are more reliable and we encourage folks to stick with even-numbered releases of Node.js whenever possible!</p>
+<p>It is not recommended (or supported by the Eleventy project) to use an odd major version of Node.js (e.g. Node 19, 21, 23), per guidance on the <a href="https://nodejs.org/en/about/previous-releases">Node.js Releases documentation</a>. Our experience has found that even-numbered major versions are more reliable and we encourage folks to stick with even-numbered releases of Node.js when possible.</p>
 
 <h2>Deno</h2>
 

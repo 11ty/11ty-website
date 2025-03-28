@@ -56,10 +56,19 @@
 .elv-toc-list > li > details > ul > li:has(ul ul) {
 	margin-block: var(--elv-toc-spacing);
 }
+.elv-toc-list > li > details > ul > li:has(ul ul) > a,
+.elv-toc-list > li > details > ul > li:has(ul ul) + li > a {
+	border-block-start: 1px solid var(--border-color);
+	padding-block-start: .5em;
+}
 
 /* Menus nested 2 or more deep */
 .elv-toc-list ul ul {
-	padding-inline-start: 0.875em; /* 14px /16 */
+	padding-inline-start: 1.25em; /* 20px /16 */
+}
+/* Exactly two deep */
+.elv-toc-list > li > details > ul > li > ul {
+	list-style: circle;
 }
 
 /* List items */
@@ -226,4 +235,7 @@ details.toc[open] > summary {
 .elv-page-toc > ul > li > a {
 	font-size: 1.25em; /* 20px /16 */
 	font-weight: 600;
+}
+.elv-page-toc .fa11ty-icon {
+	margin-left: 0;
 }

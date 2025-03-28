@@ -2,6 +2,7 @@
 eleventyNavigation:
   key: Eleventy Dev Server
   parent: Watch and Serve
+  pinned: true
 ---
 
 # Eleventy Dev Server {% addedin "2.0.0" %}

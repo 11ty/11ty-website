@@ -1,8 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Template Features
+  parent: Eleventy Projects
   key: Importing Content
-  order: 0.3
+  order: 0.2
 ---
 
 # {{ eleventyNavigation.key }}

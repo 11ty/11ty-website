@@ -14,15 +14,6 @@ You can learn more about the [default file names for configuration files](/docs/
 
 {% addedin "3.0.0-alpha.1" %}Support for ESM and Asynchronous callbacks was added in Eleventy v3.0.
 
-{% set codeContent %}
-export default async function(eleventyConfig) {
-  // Access to the full `eleventyConfig` Configuration API
-};
-{% endset %}
-{% include "snippets/configDefinition.njk" %}
-
-### Optional: Export `config` Object
-
 {% include "snippets/config/config-shape-callback-export.njk" %}
 
 ### Optional: Return Object

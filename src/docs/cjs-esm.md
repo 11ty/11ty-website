@@ -2,7 +2,6 @@
 eleventyNavigation:
   parent: Learn
   key: CommonJS vs. ESM
-  order: 2.1
   excerpt: Two different flavors of JavaScript
 ---
 

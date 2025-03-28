@@ -1,6 +1,6 @@
 import "dotenv/config";
 
-import memoize from "memoize";
+import memoize, { memoizeClear } from "memoize";
 import { DateTime } from "luxon";
 import HumanReadable from "human-readable-numbers";
 import commaNumber from "comma-number";
@@ -297,25 +297,36 @@ export default async function (eleventyConfig) {
 	/* Navigation */
 	eleventyConfig.addPlugin(navigationPlugin);
 
-	function filterNavSidebar(collection = []) {
-		// filter out excludeFromSidebar options
+	function filterNavSidebar(collection = [], propName) {
+		if(!propName) {
+			return collection;
+		}
+		// filter out excludeFromSidebar items
 		return collection.filter(item => {
 			if(Array.isArray(item.children)) {
-				item.children = filterNavSidebar(item.children);
+				item.children = filterNavSidebar(item.children, propName);
 			}
 
-			return Boolean(item.data?.eleventyNavigation) && item.data?.excludeFromSidebar !== true
+			return Boolean(item.data?.eleventyNavigation) && item.data?.[propName] !== true;
 		});
 	}
-	eleventyConfig.addFilter("nav", function(key) {
-		return navigation.find(this.ctx.collections.all, key);
+	const navFn = memoize(function(key) {
+		return filterNavSidebar(navigation.find(this.ctx.collections.all, key), "removedFeature");
 	});
-	eleventyConfig.addFilter("navFiltered", function(key) {
-		return filterNavSidebar(navigation.find(this.ctx.collections.all, key));
+	const navFilteredFn = memoize(function(key) {
+		return filterNavSidebar(navigation.find(this.ctx.collections.all, key), "excludeFromSidebar");
 	});
-	eleventyConfig.addFilter("navBreadcrumbs", memoize(function(key) {
+	const navBreadcrumbsFn = memoize(function(key) {
 		return navigation.findBreadcrumbs(this.ctx.collections.all, key, {includeSelf: true})
-	}));
+	});
+	eleventyConfig.on("eleventy.after", () => {
+		memoizeClear(navFn);
+		memoizeClear(navFilteredFn);
+		memoizeClear(navBreadcrumbsFn);
+	})
+	eleventyConfig.addFilter("nav", navFn);
+	eleventyConfig.addFilter("navFiltered", navFilteredFn);
+	eleventyConfig.addFilter("navBreadcrumbs", navBreadcrumbsFn);
 	/* End navigation */
 
 	eleventyConfig.addShortcode("getColorsForUrl", async (url) => {

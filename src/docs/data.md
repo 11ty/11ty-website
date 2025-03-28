@@ -2,6 +2,7 @@
 eleventyNavigation:
   parent: Eleventy Projects
   key: Using Data
+  title: Using Data in Templates
   order: 2
 communityLinksKey: data
 ---

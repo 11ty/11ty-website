@@ -125,7 +125,7 @@ function randomTestimonialLink(testimonials) {
 		</facepile>
 	</is-land>
 
-	<p>Sample of <code>110</code> authors shown. View the <a href="/speedlify/">full list of <code><span @text="getsize(objectFilterNot(builtwith, 'disabled'))" webc:nokeep></span></code> web sites</a>.</p>
+	<p>A random sample taken from <a href="/authors/"><code><span @text="Object.keys($data.authors).length"></span></code> authors</a>. Check out the <a href="/speedlify/">fastest of their <code><span @text="getsize(objectFilterNot(builtwith, 'disabled'))" webc:nokeep></span></code> web sites</a>.</p>
 
 	<h2>Don’t take my word for it <emoji @char="🌈" @alt="Rainbow"></emoji></h2>
 

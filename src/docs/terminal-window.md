@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Learn
   key: Opening a Terminal
-  order: 2
+  order: 1
 ---
 
 # Opening a Terminal

@@ -2,19 +2,26 @@
 eleventyNavigation:
   parent: Eleventy Projects
   key: Watch and Serve
+  title: Development Servers
   order: 9
 ---
 
-# Watch and Serve Configuration
+# Development Servers
 
 {% tableofcontents %}
 
 <div id="browsersync"></div>
 <div id="swap-back-to-browsersync"></div>
 
+Running Eleventy with [`--serve`](./usage.md#re-run-eleventy-when-you-save) starts a hot reloading local development server for you.
+
+{{ "Watch and Serve" | nav | eleventyNavigationToHtml({ showExcerpt: true }) | safe }}
+
+A development server is optional! Using [`--watch`](./usage.md#re-run-eleventy-when-you-save) will run Eleventy (and re-run when you save your files) without a server.
+
 ## Eleventy Dev Server {% addedin "2.0.0" %}
 
-Starting in Eleventy v2.0, we bundle a [dedicated Development Server](/docs/dev-server/). The previous development server used [Browsersync, which you can still use with Eleventy if you’d like](/docs/server-browsersync/).
+Eleventy bundles its own [dedicated Development Server](/docs/dev-server/). In versions prior to v2, we used [Browsersync, which you can still use with Eleventy if you’d like](/docs/server-browsersync/).
 
 ## Add Your Own Watch Targets {% addedin "0.10.0" %}
 

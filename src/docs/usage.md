@@ -1,8 +1,9 @@
 ---
 eleventyNavigation:
-  parent: Getting Started
+  parent: Eleventy Projects
   key: Command Line Usage
   pinned: true
+  order: -1
 ---
 
 # Command Line Usage

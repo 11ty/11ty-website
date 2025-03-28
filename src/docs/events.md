@@ -9,11 +9,11 @@ eleventyNavigation:
 
 {% tableofcontents %}
 
-You may want to run some code at certain times during the compiling process. To do that, you can use _configuration events_, which will run at specific times during the compiling process.
+You may want to run some custom JavaScript code in your configuration file at varying times during Eleventy’s build process. _Configuration events_ unlock this ability.
 
 [[toc]]
 
-All events are configured in your `.eleventy.js` configuration file, with the code run every time the event triggers.
+All events are configured in your [configuration file](./config.md), with the code run every time the event triggers.
 
 Asynchronous callback function support added in v1.0.
 
