@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: RSS
+  title: '<i class="fa-solid fa-square-rss"></i>RSS'
   order: 1
   excerpt: Generate an RSS or Atom feed to allow others to subscribe to your content using a feed reader.
 ---

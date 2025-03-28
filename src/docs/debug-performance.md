@@ -1,13 +1,13 @@
 ---
 eleventyNavigation:
-  key: Debug Performance
-  parent: Debug Mode
+  parent: Command Line Usage
+  key: Analyzing Build Performance
   excerpt: How to analyze your Eleventy build to find bottlenecks.
-  order: 1
 excludeFromSidebar: true
 ---
+# Analyzing Build Performance
 
-# Performance
+{% tableofcontents "open" %}
 
 {% callout "info" %}You’ll probably want to read the <a href="/docs/debugging/">Debug mode documentation</a> before continuing here.{% endcallout %}
 
@@ -54,7 +54,7 @@ Benchmark (Aggregate): Template Write took 2088ms (27.6%, called 312×, 6.7ms ea
 
 Note that while we do make every attempt to make these as accurate as possible, the percentages for these entries may be greater than 100% due to the asynchronous nature of these tasks (passthrough copy especially).
 
-## Node.js Profiling
+## Node.js CPU Profiling <span id="node-js-profiling"></span>
 
 The most reliable mechanism for tracking down performance issues in any Node.js based code is to use Node’s built-in [CPU Profiling](https://nodejs.org/docs/latest/api/cli.html#--cpu-prof) feature (Node v12+). You can run Node with the `--cpu-prof` argument and point to the Eleventy bin like so (noting that `--quiet` is an Eleventy CLI argument and you can add any others there too):
 

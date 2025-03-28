@@ -2,8 +2,10 @@
 pageTitle: Image
 eleventyNavigation:
   key: Image
-  order: -.2
+  title: '<i class="fa-solid fa-image"></i>Image'
   excerpt: A utility to resize and generate images.
+  pinned: true
+  order: 1
 communityLinksKey: image
 overrideCommunityLinks: true
 ---

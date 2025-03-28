@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Template Languages
   key: Nunjucks
-  order: 5
+  order: 2
 relatedKey: nunjucks
 relatedTitle: Template Language—Nunjucks
 tags:

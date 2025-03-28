@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: InputPath to URL
+  title: '<i class="fa-solid fa-file"></i>InputPath to URL'
   order: 3
   excerpt: Maps an Eleventy input file path to its output URL.
 ---

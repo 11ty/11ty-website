@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Using Data
   key: Custom Data File Formats
-  order: 3
+  order: 5
 relatedLinks:
   /docs/data-frontmatter-customize/: Customize Front Matter Parsing
 ---

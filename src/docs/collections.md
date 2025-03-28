@@ -1,7 +1,7 @@
 ---
 pageTitle: Collections (Using Tags)
 eleventyNavigation:
-  parent: Eleventy Projects
+  parent: Configure Templates with Data
   key: Collections
   order: 2
   excerpt: Group, reuse, and sort content in interesting ways.

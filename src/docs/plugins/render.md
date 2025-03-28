@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: Render
+  title: '<i class="fa-solid fa-film"></i>Render'
   order: 0
   excerpt: A plugin to add shortcodes to render an Eleventy template string (or file) inside of another template.
 communityLinksKey: syntaxrender

@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Eleventy Projects
   key: Add CSS, JS, Fonts
-  order: 0
+  order: 0.1
   excerpt: Add assets to your Eleventy project.
 ---
 <h1>Adding CSS, JavaScript, Fonts</h1>
@@ -21,6 +21,7 @@ filter-container:defined .filter-code--hide {
 }
 </style>
 
+<script type="module" src="/js/filter-container.js" webc:keep></script>
 <filter-container oninit leave-url-alone>
 	<h2 id="copy-files"><number-flag>1</number-flag> Copy <span data-filter-code="css">CSS</span><span data-filter-code="font">Web Font</span><span data-filter-code="js">JavaScript</span> Files</h2>
 

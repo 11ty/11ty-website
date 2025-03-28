@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Using Data
   key: JavaScript Data Files
-  order: 2
+  order: 4
 relatedLinks:
   /docs/config/#change-file-suffix-for-data-files: Change the file suffix `.11tydata` for Data Files
   /docs/watch-serve/#watch-javascript-dependencies: Watch JavaScript Dependencies

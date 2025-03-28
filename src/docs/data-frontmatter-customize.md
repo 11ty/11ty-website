@@ -2,7 +2,6 @@
 eleventyNavigation:
   parent: Front Matter Data
   key: Custom Front Matter
-  order: 1
 relatedLinks:
   /docs/data-custom/: Custom Data File Formats
 ---

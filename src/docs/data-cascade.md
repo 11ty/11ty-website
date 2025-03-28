@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Using Data
   key: Data Cascade
-  order: 1
+  order: 3
 communityLinksKey: "data-cascade"
 overrideCommunityLinks: true
 ---

@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: Id Attribute
+  title: '<i class="fa-solid fa-id-badge"></i>Id Attribute'
   order: 3.15
   excerpt: A plugin to add `id` attributes to headings.
 ---

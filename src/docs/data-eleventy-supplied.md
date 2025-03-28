@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Using Data
   key: Eleventy Supplied Data
-  order: 0.5
+  order: 2
 ---
 
 # Eleventy Supplied Data

@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Data Cascade
   key: Data Deep Merge
-  order: 4
+excludeFromSidebar: true
 ---
 
 # Data Deep Merge {% addedin "0.6.0" %}

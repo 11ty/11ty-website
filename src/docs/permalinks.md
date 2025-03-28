@@ -1,8 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Eleventy Projects
+  parent: Configure Templates with Data
   key: Permalinks
-  order: 6
+  pinned: true
   excerpt: Remap a template to a new output location (or prevent writing a file)
 ---
 
@@ -10,7 +10,7 @@ eleventyNavigation:
 
 {% tableofcontents %}
 
-You can customize the default location of templates to the output directory using Eleventy’s permalinks feature.
+You can customize the default location of templates to the output directory (or disable writing a file to disk entirely) using Eleventy’s permalinks feature.
 
 <div id="default-input/output-examples"></div>
 

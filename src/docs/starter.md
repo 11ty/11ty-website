@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Getting Started
+  parent: Introduction
   key: Starter Projects
   order: 2
 ---
@@ -9,6 +9,7 @@ eleventyNavigation:
 
 [Add your own starter project](https://github.com/11ty/11ty-website/tree/main/src/_data/starters). Community contributions are shown in random order. [Lighthouse scores are updated daily](https://eleventy-starters--speedlify.netlify.app/eleventy-starters/).
 
+<script type="module" src="/js/filter-container.js"></script>
 <filter-container oninit>
 <form>
   <label>

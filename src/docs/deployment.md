@@ -1,9 +1,9 @@
 ---
 eleventyNavigation:
-  parent: Eleventy Projects
+  parent: Services
   key: Deployment
   title: "Deployment & Hosting"
-  order: 8
+  order: 1
 hosts:
   - name: Cloudflare Pages
     url: https://pages.cloudflare.com/

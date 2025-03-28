@@ -2,7 +2,6 @@
 eleventyNavigation:
   parent: JavaScript
   key: TypeScript
-  order: 11.1
 addedInVersion: 3.0.0-alpha.11
 relatedTitle: Template Language—TypeScript
 layout: layouts/langs.njk

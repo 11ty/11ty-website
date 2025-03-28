@@ -3,6 +3,7 @@ eleventyNavigation:
   parent: Layouts
   key: Layout Chaining
   excerpt: Wrap layouts in other layouts.
+excludeFromSidebar: true
 ---
 
 # Layout Chaining

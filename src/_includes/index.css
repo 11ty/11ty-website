@@ -426,7 +426,7 @@ filter-container:defined form {
 .fa-discord {
 	color: #5865f2;
 }
-.fa-square-rss {
+.fa11ty-icon [href="#fas-fa-square-rss"] {
 	color: #e57516;
 }
 .fa-font-awesome {

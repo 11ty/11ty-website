@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Learn
   key: Glossary
-  order: 1.4
+  pinned: true
 ---
 
 # Glossary

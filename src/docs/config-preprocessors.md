@@ -1,8 +1,10 @@
 ---
 eleventyNavigation:
-  parent: Configuration
+  parent: Template Features
   key: Preprocessors
-  order: 4.5
+  title: Preprocess Content
+  excerpt: Use preprocessors to intercept and modify content (in-memory) before Eleventy builds.
+  order: 0.1
 ---
 
 # Preprocessors {% addedin "3.0.0-alpha.17" %}

@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: Bundle
+  title: '<i class="fa-solid fa-file-zipper"></i>Bundle'
   order: 3.15
   excerpt: A plugin create small plain-text bundles of code (CSS, JS, HTML, SVG, etc)
 ---
@@ -23,7 +24,7 @@ For more larger, more complex use cases you may want to use a more full featured
 
 ## Usage
 
-This plugin is added to Eleventy by default and requires no additional installation. However, the plugin does not include any default bundles. You must add these yourself via `addBundle`.
+This plugin is included with Eleventy core and requires no additional installation. However, the plugin is opt-in and does not include any bundles by default: you must add these yourself via the `addBundle` configuration method.
 
 {% set codeContent %}
 export default function(eleventyConfig) {

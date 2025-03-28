@@ -2,7 +2,9 @@
 eleventyNavigation:
   parent: Template Languages
   key: JavaScript
-  order: 4
+  # title: 'JavaScript<i class="fa-brands fa-js"></i>'
+  pinned: true
+  order: 3
 addedInVersion: 0.7.0
 relatedKey: javascript
 relatedTitle: Template Language—JavaScript
@@ -227,7 +229,7 @@ export default Test;
 
 ### Markdown and JavaScript
 
-Yes, you can use JavaScript as your preprocessor language for Markdown. Read more about [`templateEngineOverride`](/docs/languages/#overriding-the-template-language).
+Yes, you can use JavaScript as your preprocessor language for Markdown. Read more about [`templateEngineOverride`](/docs/template-overrides/).
 
 {% set codeContent %}
 class Test {

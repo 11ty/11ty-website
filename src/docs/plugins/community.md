@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: Community Plugins
-  order: 2
+  order: 99
   parent: Plugins
 ---
 

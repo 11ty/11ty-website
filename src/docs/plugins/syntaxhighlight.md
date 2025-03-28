@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: Syntax Highlighting
+  title: '<i class="fa-solid fa-file-code"></i>Syntax Highlighting'
   order: 2
   excerpt: Code syntax highlighting using PrismJS without client-side JavaScript.
 ---

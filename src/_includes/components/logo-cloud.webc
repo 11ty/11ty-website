@@ -1,12 +1,11 @@
 <ul class="logos-list" id="logos">
-	<li class="logos-list-hed subhed">Trusted by</li>
 	<li><img webc:is="indieweb-avatar" url="https://www.nasa.gov/"><abbr title="National Aeronautics and Space Administration">NASA</abbr></li>
 	<li><img webc:is="indieweb-avatar" url="https://home.web.cern.ch/">Cern</li>
 	<li><img webc:is="indieweb-avatar" url="https://tc39.es/">TC39</li>
 	<li><img webc:is="indieweb-avatar" url="https://www.w3.org/">W3C</li>
 	<li><img webc:is="indieweb-avatar" url="https://about.google/">Google</li>
 	<li><img webc:is="indieweb-avatar" url="https://www.mozilla.org/">Mozilla</li>
-	<li><img webc:is="indieweb-avatar" url="https://www.jetbrains.com/">JetBrains</li>
+	<li><img webc:is="indieweb-avatar" url="https://fontawesome.com/">Font Awesome</li>
 	<li>
 		<html-fetch src="/imports/logo-cloud.html" target="li" replace></html-fetch>
 	</li>
@@ -41,16 +40,6 @@
 }
 
 /* Header */
-.logos-list-hed {
-	display: none;
-	text-align: center;
-	flex-basis: 100%;
-	margin-bottom: 1em;
-}
-logo-cloud[showtag] .logos-list-hed {
-	display: initial;
-}
-
 .logos-list .avatar {
 	width: 1.6em;
 	height: 1.6em;

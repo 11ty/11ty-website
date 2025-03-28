@@ -1,7 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Deployment
+  parent: Services
   key: Using a CMS
+  order: 2
 cmses:
   - name: CloudCannon
     url: https://cloudcannon.com/eleventy-cms/?utm_campaign=11ty-partner&utm_source=official-sponsor

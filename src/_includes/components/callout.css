@@ -222,9 +222,6 @@ body > .elv-callout-sticky .elv-callout-c {
 .elv-toc .elv-callout {
 	margin-block-start: 0;
 }
-.elv-toc .elv-callout:first-child {
-	margin-block: 0 0.25em;
-}
 .elv-toc .elv-callout-c {
 	flex-grow: 1;
 }

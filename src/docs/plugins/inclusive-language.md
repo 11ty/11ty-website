@@ -1,8 +1,10 @@
 ---
 eleventyNavigation:
   key: Inclusive Language
+  # title: '<i class="fa-solid fa-handshake-angle"></i>Inclusive Language'
   order: 4
   excerpt: A plugin to check for inclusive language in markdown files.
+excludeFromSidebar: true
 ---
 
 # Inclusive Language Plugin

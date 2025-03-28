@@ -1,10 +1,10 @@
 ---
 eleventyNavigation:
-  parent: Data Cascade
+  parent: Using Data
   key: Validate Data
   order: 6
 ---
-# Validate Data
+# Validate Data {% addedin "v3.0.0-alpha.7" %}
 
 Use the special `eleventyDataSchema` data property to validate data in your Data Cascade. You can set this anywhere in your Data Cascade (front matter, directory data file, global data, etc).
 

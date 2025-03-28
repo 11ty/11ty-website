@@ -1,6 +1,6 @@
 import "dotenv/config";
 
-import memoize from "memoize";
+import memoize, { memoizeClear } from "memoize";
 import { DateTime } from "luxon";
 import HumanReadable from "human-readable-numbers";
 import commaNumber from "comma-number";
@@ -9,8 +9,8 @@ import shortHash from "short-hash";
 import { ImportTransformer } from "esm-import-transformer";
 
 import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
-import navigationPlugin from "@11ty/eleventy-navigation";
-import eleventyImage, { eleventyImagePlugin, eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import navigationPlugin, { navigation } from "@11ty/eleventy-navigation";
+import eleventyImage, { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import eleventyWebcPlugin from "@11ty/eleventy-plugin-webc";
 import { RenderPlugin, InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 import fontAwesomePlugin from "@11ty/font-awesome";
@@ -249,24 +249,6 @@ export default async function (eleventyConfig) {
 		}
 	});
 
-	// for WebC
-	eleventyConfig.addPlugin(eleventyImagePlugin, {
-		// options via https://www.11ty.dev/docs/plugins/image/#usage
-		formats: ["avif", "jpeg"],
-
-		urlPath: "/img/built/",
-
-		defaultAttributes: {
-			loading: "lazy",
-			decoding: "async",
-			"eleventy:ignore": "",
-		},
-
-		cacheOptions: {
-			duration: "14d",
-		},
-	});
-
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
 		// which file extensions to process
 		extensions: "html",
@@ -293,7 +275,7 @@ export default async function (eleventyConfig) {
 	});
 
 	eleventyConfig.addPlugin(markdownPlugin);
-	eleventyConfig.addPlugin(navigationPlugin);
+
 	eleventyConfig.addPlugin(minificationLocalPlugin);
 	eleventyConfig.addPlugin(RenderPlugin);
 	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
@@ -312,14 +294,40 @@ export default async function (eleventyConfig) {
 
 	/* End plugins */
 
-	eleventyConfig.addCollection("sidebarNav", function (collection) {
-		// filter out excludeFromSidebar options
-		return collection.getAll().filter((item) => {
-			return (
-				item.data?.eleventyNavigation && item.data?.excludeFromSidebar !== true
-			);
+	/* Navigation */
+	eleventyConfig.addPlugin(navigationPlugin);
+
+	function filterNavSidebar(collection = [], propName) {
+		if(!propName) {
+			return collection;
+		}
+		// filter out excludeFromSidebar items
+		return collection.filter(item => {
+			if(Array.isArray(item.children)) {
+				item.children = filterNavSidebar(item.children, propName);
+			}
+
+			return Boolean(item.data?.eleventyNavigation) && item.data?.[propName] !== true;
 		});
+	}
+	const navFn = memoize(function(key) {
+		return filterNavSidebar(navigation.find(this.ctx.collections.all, key), "removedFeature");
 	});
+	const navFilteredFn = memoize(function(key) {
+		return filterNavSidebar(navigation.find(this.ctx.collections.all, key), "excludeFromSidebar");
+	});
+	const navBreadcrumbsFn = memoize(function(key) {
+		return navigation.findBreadcrumbs(this.ctx.collections.all, key, {includeSelf: true})
+	});
+	eleventyConfig.on("eleventy.after", () => {
+		memoizeClear(navFn);
+		memoizeClear(navFilteredFn);
+		memoizeClear(navBreadcrumbsFn);
+	})
+	eleventyConfig.addFilter("nav", navFn);
+	eleventyConfig.addFilter("navFiltered", navFilteredFn);
+	eleventyConfig.addFilter("navBreadcrumbs", navBreadcrumbsFn);
+	/* End navigation */
 
 	eleventyConfig.addShortcode("getColorsForUrl", async (url) => {
 		if(process.env.ELEVENTY_RUN_MODE !== "build") {
@@ -454,6 +462,7 @@ ${text.trim()}
 		"node_modules/@11ty/logo/img/logo-96x96.png": "img/favicon.png",
 		"node_modules/speedlify-score/speedlify-score.js": "js/speedlify-score.js",
 		"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js": "js/seven-minute-tabs.js",
+		"node_modules/@zachleat/filter-container/filter-container.js": "js/filter-container.js",
 		"node_modules/lite-youtube-embed/src/lite-yt-embed.js": `js/lite-yt-embed.js`,
 		"node_modules/artificial-chart/artificial-chart.{css,js}": `static/`,
 	});
