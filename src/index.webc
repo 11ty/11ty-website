@@ -164,4 +164,3 @@ function randomTestimonialLink(testimonials) {
 <link rel="stylesheet" href="./_includes/components/tables.css" webc:bucket="async">
 <link rel="stylesheet" href="./_includes/components/minilink.css" webc:bucket="async">
 <link rel="stylesheet" href="./_includes/components/external-links.css" webc:bucket="async">
-<link rel="stylesheet" href="./_includes/components/newsletter-signup.css" webc:bucket="async">
