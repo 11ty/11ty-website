@@ -6,4 +6,8 @@ eleventyNavigation:
 ---
 # Template Languages
 
-{{ eleventyNavigation.key | nav | eleventyNavigationToMarkdown({ showExcerpt: true }) }}
+<div class="elv-page-toc">
+
+{{ eleventyNavigation.key | navFiltered | eleventyNavigationToMarkdown({ showExcerpt: true }) }}
+
+</div>

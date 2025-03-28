@@ -8,4 +8,8 @@ eleventyNavigation:
 
 # Working with Eleventy Projects
 
+<div class="elv-page-toc">
+
 {{ "Eleventy Projects" | nav | eleventyNavigationToHtml({ showExcerpt: true }) | safe }}
+
+</div>

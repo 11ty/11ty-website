@@ -1,6 +1,9 @@
 class DetailsForceState extends HTMLElement {
 	forceState(details) {
 		let isSectionActive = Boolean(details.querySelector(".elv-toc-active") || details.closest(".elv-toc-active"));
+		if(document.location.pathname === "/" && !details.querySelector(":scope > summary > a[href]")) {
+			isSectionActive = true;
+		}
 		if (isSectionActive) {
 			if(!details.open) {
 				details.setAttribute("open", "open");

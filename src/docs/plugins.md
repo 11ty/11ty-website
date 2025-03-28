@@ -5,10 +5,7 @@ eleventyNavigation:
   order: 7.1
 communityLinksKey: plugins
 ---
-
 # Plugins
-
-{% tableofcontents %}
 
 Plugins are custom code that Eleventy can import into a project from an external repository.
 
