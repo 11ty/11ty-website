@@ -26,6 +26,13 @@
 		}
 	}
 }
+@media (min-width: 55em) and (min-height: 43.75em) { /* 880×700px */
+	/* Sticky on menus except Guide/Projects */
+	.elv-toc-c:not(:has(details[open] > summary a[href="/docs/projects/"])) {
+		position: sticky;
+		top: 0;
+	}
+}
 
 .elv-toc-list details {
 	margin: 0;
