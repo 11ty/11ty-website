@@ -22,16 +22,20 @@
 
 @media (max-width: 54.9375em) { /* 879px */
 	.elv-toc-c {
-		display: block;
-		background-color: #f4f4f4;
-		margin-inline: -1rem;
-		padding: 1rem;
-		margin-block-end: 2.5em;
+		--elv-toc-bg: #f4f4f4;
 	}
 	@media (prefers-color-scheme: dark) {
 		.elv-toc-c {
-			background: #111;
+			--elv-toc-bg: #111;
 		}
+	}
+
+	.elv-toc-c {
+		display: block;
+		background-color: var(--elv-toc-bg);
+		margin-inline: -1rem;
+		padding: 1rem;
+		margin-block-end: 2.5em;
 	}
 }
 @media (min-width: 55em) and (min-height: 43.75em) { /* 880×700px */
@@ -141,8 +145,20 @@
 }
 
 /* Hide top level summary when JS and there is a sibling link */
-details-force-state:defined .elv-toc-list > li > a + details > summary {
-	display: none;
+details-force-state:defined .elv-toc-list > li {
+	position: relative;
+}
+details-force-state:defined .elv-toc-list > li > a:has(+ details) {
+	position: absolute;
+	margin-left: 0.8125em; /* 13px /16 */
+	padding-inline: 0 0.5em; /* 8px /16 */
+	background-color: var(--elv-toc-bg, var(--background-color));
+}
+details-force-state:defined .elv-toc-list > li.elv-toc-active > a:has(+ details),
+details-force-state:defined .elv-toc-list > li > a:has(+ details):hover,
+details-force-state:defined .elv-toc-list > li > a:hover + details > summary,
+details-force-state:defined .elv-toc-list > li > a:has(+ details > summary:hover) {
+	background-color: var(--elv-toc-hover-color);
 }
 
 /* Footer category navigation */
