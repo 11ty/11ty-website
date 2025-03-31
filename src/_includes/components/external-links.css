@@ -3,14 +3,15 @@ a[href^="https://"]:not([href^="https://11ty.dev"], [href^="http://www.11ty.dev"
 	text-decoration-color: #00bcd4;
 }
 a[href^="https://"]:not([href^="https://11ty.dev"], [href^="http://www.11ty.dev"], .minilink, .elv-externalexempt):after {
-	content: "↗";
+	content: " ↗";
 	font-family: system-ui, sans-serif;
 	font-style: normal;
 	font-weight: 900;
 	color: #00bcd4;
-	padding-left: 0.1875em; /* 3px /16 */
+	padding-left: 0;
 	font-size: 0.75em;
 	line-height: 0.75;
+	letter-spacing: -0.08333333333333em; /* -1px /12 */
 }
 /* Contains Font Awesome icon */
 a[href^="https://"]:not([href^="https://11ty.dev"], [href^="http://www.11ty.dev"], .minilink, .elv-externalexempt):has(.fa11ty-icon):after {

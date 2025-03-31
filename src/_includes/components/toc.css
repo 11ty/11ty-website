@@ -80,10 +80,6 @@
 .elv-toc-list ul ul {
 	padding-inline-start: 1.25em; /* 20px /16 */
 }
-/* Exactly two deep */
-.elv-toc-list > li > details > ul > li > ul {
-	list-style: circle;
-}
 
 /* List items */
 .elv-toc-list a {
@@ -98,8 +94,20 @@
 .elv-toc-list > li details a[href] {
 	color: var(--elv-toc-link-color);
 }
-.elv-toc-list > li details a[href]:not(:hover) {
-	text-decoration: none;
+.elv-toc-list > li > a[href] {
+	text-decoration-line: underline;
+}
+.elv-toc-list > li > details a[href]:hover {
+	background-color: var(--elv-toc-hover-color);
+}
+.elv-toc-list > li > details a[href]:not(:hover) {
+	text-decoration-line: none;
+}
+.elv-toc-list > li > details > ul > li > a {
+	font-weight: 500;
+}
+.elv-toc-list > li > details > ul > li > a[href]:not(:hover) {
+	text-decoration-line: underline;
 }
 .elv-toc-list li {
 	margin: 0;
