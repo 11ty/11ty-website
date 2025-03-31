@@ -9,6 +9,11 @@ let pagination = {
 let permalink = "/authors/{{ author.name | slugify }}/";
 let excludeFromSearch = true;
 let layout = "layouts/docs.njk";
+
+let eleventyNavigation = {
+	parent: "Authors",
+};
+let excludeFromSidebar = true;
 ---
 
 <style>{% include "components/page-sites.css" %}</style>

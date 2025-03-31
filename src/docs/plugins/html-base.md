@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: HTML Base
-  title: "HTML <code>&lt;base&gt;</code>"
+  title: '<i class="fa-solid fa-chess-rook"></i>HTML <code>&lt;base&gt;</code>'
   order: 3.1
   excerpt: Emulate the <code>&lt;base&gt;</code> element by adding a prefix to all URLs in <code>.html</code> output files.
 ---

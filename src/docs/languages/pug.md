@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Template Languages
   key: Pug
-  order: 11
+  order: 8
 layout: layouts/langs.njk
 ---
 

@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  parent: Eleventy Projects
+  parent: Configure Templates with Data
   key: Create Pages From Data
   order: 3
   excerpt: Iterate over a data set and create multiple output files.
@@ -59,7 +59,7 @@ This template will generate four files, one for each possum, where the filename 
 
 {% callout "info" %}Note that <code>page</code> is a reserved word so you cannot use <code>alias: page</code>. Read about Eleventy’s reserved data names in <a href="/docs/data-eleventy-supplied/">Eleventy Supplied Data</a>.{% endcallout %}
 
-## Related Pagination Topics:
+## Related
 
 - [Pagination: Paging an Object](/docs/pagination/#paging-an-object)
 - [Pagination: Remapping with Permalinks](/docs/pagination/#remapping-with-permalinks)

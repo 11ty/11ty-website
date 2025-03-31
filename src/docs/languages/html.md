@@ -2,6 +2,7 @@
 eleventyNavigation:
   parent: Template Languages
   key: HTML
+  pinned: true
   order: 1
 layout: layouts/langs.njk
 relatedLinks:

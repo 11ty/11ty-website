@@ -1,8 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Getting Started
-  key: Migrating to Eleventy
-  order: 3
+  parent: Eleventy Projects
+  key: Importing Content
+  order: 0.2
 ---
 
 # {{ eleventyNavigation.key }}

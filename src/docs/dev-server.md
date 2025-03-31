@@ -2,20 +2,20 @@
 eleventyNavigation:
   key: Eleventy Dev Server
   parent: Watch and Serve
+  pinned: true
 ---
 
 # Eleventy Dev Server {% addedin "2.0.0" %}
 
 {% tableofcontents %}
 
-The Eleventy 2.0 release includes a brand new development server. Check out the [`11ty/eleventy-dev-server` repository on GitHub](https://github.com/11ty/eleventy-dev-server).
+Eleventy includes its own hot-reloading development server.
 
-At time of release, this new server has:
-
-- 🏋🏻‍♀️ Minimal footprint: 1.4 MB node_modules
-	- Eleventy `node_modules` dropped from 155 MB to 34.3 MB
-	- Faster Eleventy `npm install` times (30.5% faster)
-	- Reduced Eleventy dependency count from 311 -> 211
+- [`11ty/eleventy-dev-server` on GitHub](https://github.com/11ty/eleventy-dev-server).
+- 🏋🏻‍♀️ Minimal footprint: `1.4 MB` node_modules
+	- Helped Eleventy `node_modules` drop from `155 MB` to `34.3 MB`
+	- Faster Eleventy `npm install` times (`30.5%` faster)
+	- Reduced Eleventy dependency count from `311` to `211`
 - 📦 Bundler Decoupled
 - 🚄 Fast ~2ms startup times
 - ⚡️ WebSockets-based Live reload

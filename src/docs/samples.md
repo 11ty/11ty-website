@@ -21,7 +21,7 @@ This list shows all of the sample sites that have provided a link to their sourc
 {% for key, site in builtwith | shuffle -%}
 {% if site.disabled != true and site.source_url -%}
     <tr>
-      <td>{% if site.url %}<a href="{{ site.url }}">{% endif %}{% communityavatar site.opened_by %}{{ site.name | safe }}{% if site.url %}</a>{% endif %}</td>
+      <td>{% if site.url %}<a href="{{ site.url }}">{% endif %}{% communityavatar site.opened_by %}{{ site.url | displayUrl }}{% if site.url %}</a>{% endif %}</td>
       <td>{% if site.source_url %}<a href="{{ site.source_url }}" class="minilink">Source Code</a>{% endif %}</td>
     </tr>
 {% endif -%}

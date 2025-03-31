@@ -2,10 +2,8 @@
 // <script>
 let headerTitle = "Eleventy is a simpler static site generator";
 let layout = "layouts/main.njk";
-let logoLink = "/docs/";
 
 let ignoreGitHubButtons = true;
-let ignoreSidebarCallout = true;
 let searchTitle = "Eleventy is a simpler static site generator";
 
 let eleventyImport = {
@@ -73,7 +71,7 @@ function randomTestimonialLink(testimonials) {
 			<is-land on:visible on:save-data="false">
 				<logo-cloud></logo-cloud>
 			</is-land>
-			<small>Eleventy has been downloaded <a href="/blog/eight-million/">over 8 million times</a> and is used on <a href="https://github.com/11ty/eleventy/network/dependents">70,000+ repositories on GitHub</a></a>.</small>
+			<small>Eleventy has been downloaded <span @text="commaNumber($data.npm.downloads)"></span> times and is used on <a href="https://github.com/11ty/eleventy/network/dependents">82,000+ repositories on GitHub</a></a>.</small>
 		</li>
 		<li>
 			Eleventy offers <strong>full control over your project’s output</strong>. We don’t <a href="https://www.youtube.com/watch?v=b4frtsT4Cgo">inject our own markup into your pages</a>.
@@ -127,7 +125,7 @@ function randomTestimonialLink(testimonials) {
 		</facepile>
 	</is-land>
 
-	<p>Sample of <code>110</code> authors shown. View the <a href="/speedlify/">full list of <code><span @text="getsize(objectFilterNot(builtwith, 'disabled'))" webc:nokeep></span></code> web sites</a>.</p>
+	<p>A random sample taken from <a href="/authors/"><code><span @text="Object.keys($data.authors).length"></span></code> authors</a>. Check out the <a href="/speedlify/">fastest of their <code><span @text="getsize(objectFilterNot(builtwith, 'disabled'))" webc:nokeep></span></code> web sites</a>.</p>
 
 	<h2>Don’t take my word for it <emoji @char="🌈" @alt="Rainbow"></emoji></h2>
 
@@ -166,4 +164,3 @@ function randomTestimonialLink(testimonials) {
 <link rel="stylesheet" href="./_includes/components/tables.css" webc:bucket="async">
 <link rel="stylesheet" href="./_includes/components/minilink.css" webc:bucket="async">
 <link rel="stylesheet" href="./_includes/components/external-links.css" webc:bucket="async">
-<link rel="stylesheet" href="./_includes/components/newsletter-signup.css" webc:bucket="async">

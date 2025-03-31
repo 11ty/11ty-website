@@ -1,8 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Eleventy Documentation
+  parent: Advanced
   key: Release History
-  order: 9.2
+  pinned: true
 ---
 # Release History
 

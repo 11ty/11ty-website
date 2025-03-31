@@ -2,7 +2,8 @@
 eleventyNavigation:
   parent: Template Languages
   key: Custom
-  order: 12
+  pinned: true
+  order: 4
 relatedKey: customlang
 relatedTitle: Template Language—Custom
 layout: layouts/langs.njk
@@ -45,7 +46,7 @@ export default function (eleventyConfig) {
 Situations where you might want to use `addExtension` but probably shouldn’t:
 
 1. If you want to post-process the content of an existing template language (a file extension already processed by Eleventy), use a [Configuration API Transform](/docs/config/#transforms) instead.
-2. If you want to pre-process `md` or `html` files using another template language, change the _Default Template Engine for [Markdown Files](/docs/config/#default-template-engine-for-markdown-files)_ or _[HTML Files](/docs/config/#default-template-engine-for-html-files)_, respectively. This can also be done on [a per-template basis](/docs/languages/#overriding-the-template-language). We will likely add additional hooks for preprocessing in the future.
+2. If you want to pre-process `md` or `html` files using another template language, change the _Default Template Engine for [Markdown Files](/docs/config/#default-template-engine-for-markdown-files)_ or _[HTML Files](/docs/config/#default-template-engine-for-html-files)_, respectively. This can also be done on [a per-template basis](/docs/template-overrides/). We will likely add additional hooks for preprocessing in the future.
    {%- endcallout %}
 
 ## Example: Add Sass support to Eleventy

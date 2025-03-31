@@ -1,8 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Configuration
+  parent: Template Features
   key: Shortcodes
-  order: 4
+  order: 2
 relatedKey: shortcodes
 relatedTitle: Template Shortcodes
 tags:
@@ -118,6 +118,24 @@ export default function (eleventyConfig) {
 };
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
+
+## Memoize Shortcodes
+
+> Memoize functions - An optimization used to speed up consecutive function calls by caching the result of calls with identical input
+
+There are many popular libraries to cache or memoize functions (filters, shortcodes, etc): [`memoize`](https://www.npmjs.com/package/memoize) (ESM-only) is one such package. You can use `memoize` (or any [other memoization library](https://www.npmjs.com/search?q=memoize)) to cache things in your Eleventy Configuration file.
+
+<div class="codetitle">eleventy.config.js</div>
+
+```js
+import memoize from "memoize";
+
+export default function(eleventyConfig) {
+	eleventyConfig.addShortcode("htmlEntities", memoize(str => {
+		return encode(str);
+	}));
+};
+```
 
 ## Per-Engine Shortcodes
 

@@ -1,8 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Eleventy Projects
+  parent: Advanced
   key: Programmatic API
-  order: 6.6
+  order: 1
 ---
 
 # Programmatic API {% addedin "1.0.0" %}<!-- Beta 10 or Canary 50 -->

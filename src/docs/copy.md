@@ -1,8 +1,9 @@
 ---
 eleventyNavigation:
-  parent: Configuration
+  parent: Eleventy Projects
   key: Passthrough File Copy
-  order: 1
+  title: Copy Files to Output
+  order: 0
 ---
 
 # Passthrough File Copy {% addedin "0.2.14" %}

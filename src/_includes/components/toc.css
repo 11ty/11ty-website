@@ -1,11 +1,14 @@
 .elv-toc {
+	--elv-toc-spacing: .75em;
+	--elv-toc-link-color: #1873a5;
+	--elv-toc-hover-color: #dff7ff;
 	font-size: 1rem; /* Reset */
 }
-.elv-toc details {
-	margin-block: 0 2em;
-}
-.elv-toc details > summary {
-	font-size: 1.375rem; /* 22px /16 */
+@media (prefers-color-scheme: dark) {
+	.elv-toc {
+		--elv-toc-link-color: #86d0fb;
+		--elv-toc-hover-color: #353535;
+	}
 }
 @media (min-width: 55em) { /* 880px */
 	.elv-toc {
@@ -15,22 +18,39 @@
 		z-index: 1;
 		height: 100%;
 	}
-	.elv-toc details > summary {
-		margin-top: 0;
+}
+
+@media (max-width: 54.9375em) { /* 879px */
+	.elv-toc-c {
+		display: block;
+		background-color: #f4f4f4;
+		margin-inline: -1rem;
+		padding: 1rem;
+		margin-block-end: 2.5em;
 	}
-	details-force-state:defined > details > summary {
-		display: none;
+	@media (prefers-color-scheme: dark) {
+		.elv-toc-c {
+			background: #111;
+		}
+	}
+}
+@media (min-width: 55em) and (min-height: 43.75em) { /* 880×700px */
+	/* Sticky on menus except Guide/Projects */
+	.elv-toc-c:not(:has(a[href="/docs/projects/"] + details[open])) {
+		position: sticky;
+		top: 0;
 	}
 }
 
+.elv-toc-list details,
+.elv-toc-list details[open] > summary {
+	margin: 0;
+}
 .elv-toc-list {
-	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-between;
-	padding-left: 0;
-	padding-right: 0;
+	padding-inline: 0;
 	margin: 0 0 2.5em;
-	list-style: none;
+	list-style: "";
 }
 .elv-toc-list li {
 	font-size: 0.9375em; /* 15px /16 */
@@ -38,81 +58,91 @@
 }
 /* Nested lists */
 .elv-toc-list ul {
-	padding: 0 0 0.75em 0;
+	padding: 0;
 	margin: 0;
-	list-style: none;
+	list-style: "";
+}
+/* First-order nested list */
+.elv-toc-list > li > details > ul {
+	margin-block: var(--elv-toc-spacing);
+}
+/* List items with deeply nested lists inside */
+.elv-toc-list > li > details > ul > li:has(ul ul) {
+	margin-block: var(--elv-toc-spacing);
+}
+.elv-toc-list > li > details > ul > li:has(ul ul) > a,
+.elv-toc-list > li > details > ul > li:has(ul ul) + li > a {
+	border-block-start: 1px solid var(--border-color);
+	padding-block-start: .5em;
 }
 
 /* Menus nested 2 or more deep */
 .elv-toc-list ul ul {
-	padding-bottom: 0;
-	padding-left: 0.625rem; /* 10px /16 */
+	padding-inline-start: 1.25em; /* 20px /16 */
 }
-/* Hide inactive menus 3 or more deep */
-/* .elv-toc-list ul ul > li:not(.elv-toc-active) > ul > li:not(.elv-toc-active) {
-	display: none;
-} */
 
 /* List items */
-.elv-toc summary,
-.elv-toc-list a {
-	padding: 0.15em 0.25em;
-	color: #1873a5;
-}
-@media (prefers-color-scheme: dark) {
-	.elv-toc summary,
-	.elv-toc-list a {
-		color: #86d0fb;
-	}
-}
 .elv-toc-list a {
 	display: block;
+	padding: 0.15em 0.25em;
 }
-.elv-toc-list a:not(:hover) {
-	text-decoration: none;
+@media (max-width: 54.9375em) { /* 879px */
+	.elv-toc-list a {
+		padding-block: .5em;
+	}
+}
+.elv-toc-list > li details a[href] {
+	color: var(--elv-toc-link-color);
+}
+.elv-toc-list > li > a[href] {
+	text-decoration-line: underline;
+}
+.elv-toc-list > li > details a[href]:hover {
+	background-color: var(--elv-toc-hover-color);
+}
+.elv-toc-list > li > details a[href]:not(:hover) {
+	text-decoration-line: none;
+}
+.elv-toc-list > li > details > ul > li > a {
+	font-weight: 500;
+}
+.elv-toc-list > li > details > ul > li > a[href]:not(:hover) {
+	text-decoration-line: underline;
 }
 .elv-toc-list li {
 	margin: 0;
 	padding: 0;
 }
-.elv-toc-list > li {
-	flex-grow: 1;
-	flex-basis: 14.375rem; /* 230px /16 */
-}
-/* Top level links */
-.elv-toc-list > li > a {
-	color: #222;
-	font-weight: 600;
-	border-bottom: 1px solid #ddd;
-	margin-bottom: 1em;
-}
-.elv-toc-list > li:has(> ul) > a {
-	margin-bottom: 0.25em; /* 4px /16 */
-}
-@media (prefers-color-scheme: dark) {
-	.elv-toc-list > li > a {
-		color: #fff;
-		border-color: #444;
+@media (min-width: 55em) { /* 880px */
+	.elv-toc-list > li:not(:first-child) {
+		border-top: 1px solid var(--border-color);
+	}
+
+	.elv-toc-list > li:last-child {
+		margin-bottom: var(--elv-toc-spacing);
 	}
 }
+
+/* Top level links */
+.elv-toc-list > li > details > summary,
+.elv-toc-list > li > a {
+	font-weight: 700;
+	padding-block: var(--elv-toc-spacing);
+	color: var(--color);
+}
+
 
 /* Active links */
-.elv-toc-list li.elv-toc-active > a {
-	background-color: #dff7ff;
-}
-@media (prefers-color-scheme: dark) {
-	.elv-toc-list li.elv-toc-active > a {
-		background-color: #353535;
-	}
-}
-.elv-toc-list ul .elv-toc-active > a:after {
-	content: "";
+.elv-toc-list li.elv-toc-active > a,
+.elv-toc-list li.elv-toc-active > details > summary,
+.elv-toc-list > li > a:hover,
+.elv-toc-list > li > details > summary:hover {
+	background-color: var(--elv-toc-hover-color);
 }
 
-/* Show only active nested lists */
-.elv-toc-list ul.elv-toc-active,
-.elv-toc-list li.elv-toc-active > ul {
-	display: block;
+/* Hide top level summary when JS and there is a sibling link */
+details-force-state:defined .elv-toc-list > li > a + details > summary {
+	display: none;
 }
 
 /* Footer category navigation */
@@ -123,8 +153,10 @@
 /* Wrapper around the markdown Table of contents plugin */
 details.toc {
 	border-radius: 0.4em;
-	padding: 0.5rem 0.5rem 0 0.5rem;
-	margin: 0 -0.5rem 3em -0.5rem;
+	padding: .5rem;
+	margin-inline: -.5rem;
+	/* padding: 0.5rem 0.5rem 0 0.5rem; */
+	/* margin: 0 -0.5rem 3em -0.5rem; */
 }
 h1 + details.toc {
 	margin-top: -1.444444444444em; /* -26px /18 */
@@ -143,16 +175,7 @@ details.toc[open] {
 		background-color: #292929;
 	}
 }
-details.toc:not([open]) > summary {
-	margin-bottom: 0;
-}
-
-details.toc > summary {
-	padding-bottom: 0.5rem;
-	border-bottom: 2px dotted transparent;
-}
 details.toc[open] > summary {
-	border-color: #ccc;
 	font-weight: bold;
 }
 
@@ -184,3 +207,29 @@ details.toc[open] > summary {
 	text-wrap: balance;
 }
 
+.elv-toc-list ul .fa11ty-icon {
+	margin-inline-start: 0;
+}
+.elv-toc ul ul .fa11ty-icon use[href] {
+	opacity: .8;
+	color: inherit !important;
+}
+
+
+/* Full page nav as main content */
+.elv-page-toc > ul {
+	list-style: "";
+	padding: 0;
+}
+.elv-page-toc > ul > li:has(ul) {
+	margin-block-end: 1.5em;
+}
+.elv-page-toc > ul > li > a,
+/* asterisk on languages */
+.elv-page-toc > ul > li:has(> a):after {
+	font-size: 1.25em; /* 20px /16 */
+	font-weight: 600;
+}
+.elv-page-toc .fa11ty-icon {
+	margin-left: 0;
+}

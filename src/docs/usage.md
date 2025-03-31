@@ -1,8 +1,9 @@
 ---
 eleventyNavigation:
-  parent: Getting Started
+  parent: Eleventy Projects
   key: Command Line Usage
-  order: 1
+  pinned: true
+  order: -1
 ---
 
 # Command Line Usage
@@ -215,6 +216,23 @@ npx @11ty/eleventy --serve --incremental --ignore-initial
 	<div id="usage-initial-pnpm" role="tabpanel">{% highlight "bash" %}{{ usageInitialCode | packageManagerCodeTransform("pnpm") }}{% endhighlight %}</div>
 	<div id="usage-initial-yarn" role="tabpanel">{% highlight "bash" %}{{ usageInitialCode | packageManagerCodeTransform("yarn") }}{% endhighlight %}</div>
 </seven-minute-tabs>
+
+### Deeper insight into Eleventy Internals
+
+You can use the `DEBUG` [environment variable](./environment-vars.md) to enable the [special debug log output](./debugging.md), allowing deeper insight into Eleventy’s internals. For simplicity this example is using the [`cross-env`](https://github.com/kentcdodds/cross-env) package.
+
+<seven-minute-tabs class="tabs-flush tabs-right tabs-firstonly" persist sync>
+	<div role="tablist" aria-label="Choose your Package Manager">
+		<a href="#usage-debugging-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
+		<a href="#usage-debugging-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
+		<a href="#usage-debugging-yarn" role="tab" data-tabs-persist="pkgmgr:yarn">yarn</a>
+	</div>
+	<div id="usage-debugging-npm" role="tabpanel">{% highlight "bash" %}npx cross-env DEBUG=Eleventy:\* npx @11ty/eleventy --dryrun{% endhighlight %}</div>
+	<div id="usage-debugging-pnpm" role="tabpanel">{% highlight "bash" %}pnpm exec cross-env DEBUG=Eleventy:\* pnpm exec @11ty/eleventy --dryrun{% endhighlight %}</div>
+	<div id="usage-debugging-yarn" role="tabpanel">{% highlight "bash" %}yarn exec cross-env DEBUG=Eleventy:\* yarn exec @11ty/eleventy --dryrun{% endhighlight %}</div>
+</seven-minute-tabs>
+
+Learn more about [Eleventy’s Debug Mode log output](./debugging.md).
 
 ### Using the Same Input and Output
 

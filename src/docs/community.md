@@ -1,8 +1,9 @@
 ---
 eleventyNavigation:
-  parent: Eleventy Documentation
-  key: Community
-  order: 2.5
+  parent: Community
+  key: How can I contribute?
+  pinned: true
+  order: 0
 ignoreSupporters: true
 ignoreGitHubButtons: true
 ---

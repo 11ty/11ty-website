@@ -1,32 +1,24 @@
 :root {
 	--layout-max: 70rem;
 
-	--background-color_light: #fff;
-	--color_light: #383838;
-	--border-color_light: #ddd;
-	--link-color_light: #222;
-	--shadow-color_light: rgba(0, 0, 0, 0.08);
+	--color_dark: #fff; /* reused in header */
 
-	--background-color_dark: #222;
-	--color_dark: #fff;
-	--border-color-dark: #444;
-	--link-color-dark: #fff;
-	--shadow-color_dark: rgba(255, 255, 255, 0.25);
-
-	--background-color: var(--background-color_light);
-	--color: var(--color_light);
-	--border-color: var(--border-color_light);
-	--link-color: var(--link-color_light);
-	--shadow-color: var(--shadow-color_light);
+	--background-color: #fff;
+	--color: #383838;
+	--border-color: #ddd;
+	--link-color: #222;
+	--link-underline: rgba(0,0,0,.25);
+	--shadow-color: rgba(0, 0, 0, 0.08);
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--background-color: var(--background-color_dark);
+		--background-color: #222;
 		--color: var(--color_dark);
-		--border-color: var(--border-color-dark);
-		--link-color: var(--link-color-dark);
-		--shadow-color: var(--shadow-color_dark);
+		--border-color: #444;
+		--link-color: #fff;
+		--link-underline: rgba(255,255,255,.25);
+		--shadow-color: rgba(255, 255, 255, 0.25);
 	}
 }
 
@@ -66,6 +58,11 @@ a,
 a:visited,
 a[href] {
 	color: var(--link-color);
+	text-decoration-color: var(--link-underline);
+	text-decoration-thickness: 0.1em;
+}
+a[href]:hover {
+	text-decoration-color: currentColor;
 }
 
 strong,
@@ -426,7 +423,7 @@ filter-container:defined form {
 .fa-discord {
 	color: #5865f2;
 }
-.fa-square-rss {
+.fa11ty-icon [href="#fas-fa-square-rss"] {
 	color: #e57516;
 }
 .fa-font-awesome {

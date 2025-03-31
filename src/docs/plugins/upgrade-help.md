@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
   key: Upgrade Helper
+  title: '<i class="fa-solid fa-circle-up"></i>Upgrade Helper'
   order: 1
   excerpt: A plugin to help you upgrade your Eleventy project between major version releases.
 ---

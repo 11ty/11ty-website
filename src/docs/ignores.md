@@ -1,8 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Configuration
+  parent: Template Features
   key: Ignore Files
-  order: 2
+  order: 0
 ---
 
 # Ignore Template Files

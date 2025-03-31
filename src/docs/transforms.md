@@ -1,8 +1,10 @@
 ---
 eleventyNavigation:
-  parent: Configuration
+  parent: Template Features
   key: Transforms
-  order: 10
+  title: Postprocess Content
+  excerpt: Use Transforms to post-process content after Eleventy builds.
+  order: 0.2
 ---
 
 # Transforms

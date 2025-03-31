@@ -2,7 +2,8 @@
 eleventyNavigation:
   parent: Command Line Usage
   key: Debug Mode
-  order: 1
+  pinned: true
+excludeFromSidebar: true
 ---
 
 # Debug Mode

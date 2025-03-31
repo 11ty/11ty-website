@@ -2,6 +2,7 @@
 eleventyNavigation:
   key: Browsersync
   parent: Watch and Serve
+excludeFromSidebar: true
 ---
 
 # Browsersync

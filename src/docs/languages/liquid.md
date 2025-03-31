@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Template Languages
   key: Liquid
-  order: 6
+  order: 3
 relatedKey: liquid
 relatedTitle: Template Language—Liquid
 tags:

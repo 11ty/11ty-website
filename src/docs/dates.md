@@ -1,8 +1,8 @@
 ---
 eleventyNavigation:
-  parent: Eleventy Projects
+  parent: Configure Templates with Data
   key: Content Dates
-  order: 5
+  order: 3
   excerpt: Assigning dates to content, using dates in front matter.
 ---
 

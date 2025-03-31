@@ -29,12 +29,12 @@
 	z-index: 1;
 }
 .facepile .avatar {
-	width: 30px;
-	height: 30px;
-	width: calc(30px + 5vw);
-	height: calc(30px + 5vw);
-	max-width: 60px;
-	max-height: 60px;
+	width: 24px;
+	height: 24px;
+	width: calc(24px + 4vw);
+	height: calc(24px + 4vw);
+	max-width: 50px;
+	max-height: 50px;
 	margin-bottom: 6px;
 	color: #fff;
 	border: 2px solid;
@@ -47,8 +47,8 @@
 	}
 }
 .facepile-supporters .avatar {
-	width: calc(30px + 2vw);
-	height: calc(30px + 2vw);
+	width: calc(24px + 2vw);
+	height: calc(24px + 2vw);
 }
 .facepile > a:after {
 	content: "";
