@@ -5,12 +5,12 @@ class DetailsForceState extends HTMLElement {
 			isSectionActive = false;
 		} else {
 			isSectionActive = Boolean(details.querySelector(".elv-toc-active") || details.closest(".elv-toc-active"));
-			let titleNode = details.querySelector(":scope > summary > a");
-			if(document.location.pathname === "/" && !titleNode.hasAttribute("href")) {
+			let titleNode = details.querySelector(":scope > summary + a");
+			if(document.location.pathname === "/" && !titleNode) {
 				isSectionActive = true;
 			}
 			// Use breadcrumbs to work with pages excluded from sidebar
-			if(document.querySelector(".breadcrumb li:nth-child(2) > a")?.textContent === titleNode.textContent){
+			if(titleNode && document.querySelector(".breadcrumb li:nth-child(2) > a")?.textContent === titleNode?.textContent){
 				isSectionActive = true;
 			}
 		}
