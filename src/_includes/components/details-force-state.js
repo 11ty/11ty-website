@@ -5,7 +5,7 @@ class DetailsForceState extends HTMLElement {
 			isSectionActive = false;
 		} else {
 			isSectionActive = Boolean(details.querySelector(".elv-toc-active") || details.closest(".elv-toc-active"));
-			let titleNode = details.querySelector(":scope > summary + a");
+			let titleNode = details.previousElementSibling;
 			if(document.location.pathname === "/" && !titleNode) {
 				isSectionActive = true;
 			}
