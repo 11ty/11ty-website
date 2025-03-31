@@ -216,7 +216,9 @@ details.toc[open] > summary {
 .elv-page-toc > ul > li:has(ul) {
 	margin-block-end: 1.5em;
 }
-.elv-page-toc > ul > li > a {
+.elv-page-toc > ul > li > a,
+/* asterisk on languages */
+.elv-page-toc > ul > li:has(> a):after {
 	font-size: 1.25em; /* 20px /16 */
 	font-weight: 600;
 }
