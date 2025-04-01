@@ -38,7 +38,7 @@
 	padding-left: 1rem;
 	padding-right: 1rem;
 }
-@media (min-width: 34.4375em) { /* 551px */
+@media (min-width: 55em) { /* 880px */
 	.elv-nav-header {
 		margin-block-end: 1rem;
 	}

@@ -233,8 +233,7 @@ body > .elv-callout-sticky .elv-callout-c {
 		border-inline-width: 0;
 	}
 	.elv-toc .elv-callout {
-		display: flex;
-		flex-direction: row;
+		display: none;
 	}
 }
 @media (min-width: 55em) { /* 880px */
