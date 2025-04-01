@@ -72,6 +72,10 @@ cmses:
     url: https://craftcms.com/
     screenshotSize: medium
     tags: [API]
+  - name: Pages CMS
+    url: https://pagescms.org/
+    screenshotSize: medium
+    tags: [Git-based]
 ---
 # Using a CMS
 
