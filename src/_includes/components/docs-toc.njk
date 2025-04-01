@@ -23,7 +23,7 @@
 		{%- set navKey = eleventyNavigation.key -%}
 	{%- endif -%}
 	<div id="skip-nav">
-		{{ "Eleventy Documentation,Ecosystem" | navFiltered | eleventyNavigationToHtml({ activeKey: navKey, listClass: 'elv-toc-list', activeListItemClass: 'elv-toc-active', useTopLevelDetails: true }) | safe }}
+		{{ "Eleventy Documentation,Ecosystem" | navFiltered | eleventyNavigationToHtml({ activeKey: navKey, listClass: 'elv-toc-list', activeListItemClass: 'elv-toc-active', useTopLevelDetails: true, anchorElementWithoutHref: "span" }) | safe }}
 	</div>
 </details-force-state>
 </div>

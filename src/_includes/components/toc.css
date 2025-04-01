@@ -86,12 +86,14 @@
 }
 
 /* List items */
-.elv-toc-list a {
+.elv-toc-list a,
+.elv-toc-list span:where(:has(+ ul)) {
 	display: block;
 	padding: 0.15em 0.25em;
 }
 @media (max-width: 54.9375em) { /* 879px */
-	.elv-toc-list a {
+	.elv-toc-list a,
+	.elv-toc-list span:where(:has(+ ul)) {
 		padding-block: .5em;
 	}
 }
