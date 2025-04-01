@@ -1,13 +1,13 @@
 /* External links */
 a[href^="https://"]:not([href^="https://11ty.dev"], [href^="http://www.11ty.dev"], .minilink, .elv-externalexempt) {
-	text-decoration-color: #00bcd4;
+	text-decoration-color: var(--external-link-underline);
 }
 a[href^="https://"]:not([href^="https://11ty.dev"], [href^="http://www.11ty.dev"], .minilink, .elv-externalexempt):after {
 	content: " ↗";
 	font-family: system-ui, sans-serif;
 	font-style: normal;
 	font-weight: 900;
-	color: #00bcd4;
+	color: var(--external-link-underline);
 	padding-left: 0;
 	font-size: 0.75em;
 	line-height: 0.75;
@@ -19,9 +19,6 @@ a[href^="https://"]:not([href^="https://11ty.dev"], [href^="http://www.11ty.dev"
 }
 
 /* External link hovers */
-a[href^="https://"]:not([href^="https://11ty.dev"], [href^="https://www.11ty.dev"], .minilink, .elv-externalexempt):hover {
-	text-decoration-color: inherit;
-}
 a[href^="https://"]:not([href^="https://11ty.dev"], [href^="https://www.11ty.dev"], .minilink, .elv-externalexempt):hover:after {
 	color: inherit;
 }

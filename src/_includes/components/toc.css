@@ -95,6 +95,9 @@
 		padding-block: .5em;
 	}
 }
+.elv-toc-list a:hover {
+	text-underline-offset: .1em;
+}
 .elv-toc-list > li details a[href] {
 	color: var(--elv-toc-link-color);
 }

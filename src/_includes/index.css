@@ -9,6 +9,7 @@
 	--link-color: #222;
 	--link-underline: rgba(0,0,0,.25);
 	--shadow-color: rgba(0, 0, 0, 0.08);
+	--external-link-underline: rgba(0,188,212,.6);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -62,7 +63,10 @@ a[href] {
 	text-decoration-thickness: 0.1em;
 }
 a[href]:hover {
-	text-decoration-color: currentColor;
+	text-decoration-color: rgba(255,0,0,.3);
+	text-decoration-thickness: .3em;
+	text-underline-offset: -0.1em;
+	text-decoration-skip-ink: none;
 }
 
 strong,
