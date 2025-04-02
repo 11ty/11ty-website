@@ -40,6 +40,12 @@ let eleventyComputed = {
 		<meta name="description" content="{{ subtitleText }}">
 		<meta name="generator" content="{{ eleventy.generator }}">
 
+		{%- if page.url != "/" %}
+		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f2f2f2">
+		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2a2a">
+		{%- endif %}
+		<meta name="theme-color" content="#1f1f1f">
+
 		<link rel="preload" href="/css/fonts/benchnine-bold.woff2" as="font" type="font/woff2" crossorigin>
 
 		<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon.png">
