@@ -33,6 +33,12 @@ Using `.write()` will write your output to the file system. If, instead, you wan
 
 {% include "snippets/programmatic/json-out.njk" %}
 
+#### Adding data to JSON output
+
+You can use the `eleventyConfig.dataFilterSelectors` configuration API `Set` to add or remove lodash-style selectors for Data Cascade entries to be included in individual entries from the `toJSON` method.
+
+{% include "snippets/programmatic/json-out-data.njk" %}
+
 ### ndjson Output
 
 {% include "snippets/programmatic/ndjson-out.njk" %}
