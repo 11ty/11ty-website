@@ -63,7 +63,7 @@ function randomTestimonialLink(testimonials) {
 		<li>
 			Eleventy has <a href="/docs/performance/"><strong>fast builds and even faster web sites</strong></a>.
 			<is-land on:visible on:media="(prefers-reduced-motion: no-preference)">
-				<build-comparison variant="home"></build-comparison>
+				<build-comparison></build-comparison>
 			</is-land>
 		</li>
 		<li>
