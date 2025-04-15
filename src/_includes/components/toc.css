@@ -239,12 +239,25 @@ details.toc[open] > summary {
 
 
 /* Full page nav as main content */
+.elv-page-toc {
+	columns: 18em;
+	column-gap: 3em;
+}
 .elv-page-toc > ul {
 	list-style: "";
 	padding: 0;
+	margin: 0;
 }
 .elv-page-toc > ul > li:has(ul) {
 	margin-block-end: 1.5em;
+}
+.elv-page-toc > ul > li {
+	break-inside: avoid;
+	padding: 0;
+	margin: 1em 0;
+}
+.elv-page-toc > ul > li:first-child {
+	margin-block-start: 0;
 }
 .elv-page-toc > ul > li > a,
 /* asterisk on languages */
