@@ -14,7 +14,7 @@ communityLinksKey: plugins
 
 ## Plugins are Configuration
 
-At their simplest, Eleventy plugins are a function passed to the `addPlugin` method.
+At their simplest, Eleventy plugins are a function passed to the `addPlugin` method. If you’re familiar with [Eleventy configuration files](/docs/config/), this will look and feel very similar!
 
 {% set codeContent %}
 export default function (eleventyConfig) {

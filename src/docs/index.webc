@@ -1,9 +1,10 @@
 ---
 eleventyNavigation:
-  parent: Introduction
+  parent: Eleventy Projects
   key: Getting Started
   title: Get Started
   pinned: true
+  order: -2
 communityLinksKey: getting-started
 overrideCommunityLinks: true
 ---

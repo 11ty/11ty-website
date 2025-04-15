@@ -15,7 +15,7 @@ layout: layouts/langs.njk
 | [`11ty.tsx`](/docs/languages/typescript/) | `.11ty.tsx`    | [`tsx`](https://tsx.is/node/esm)  |
 
 - Related languages: [TypeScript](/docs/languages/typescript/), [JavaScript](/docs/languages/javascript/), [MDX](/docs/languages/mdx/), [Custom](/docs/languages/custom/)
-- _[Front matter](/docs/data-frontmatter/) is not yet supported in JSX files._
+- _[Front matter](/docs/data-frontmatter/) is not supported in JSX files. Use a `data` export instead._
 
 {% callout "info", "md" %}JSX requires ESM (when used with Eleventy, read more at [Issue #3304](https://github.com/11ty/eleventy/issues/3304)). This means your project `package.json` must contain `"type": "module"` or your configuration file must use the `.mjs` file extension, e.g. `eleventy.config.mjs`.{% endcallout %}
 

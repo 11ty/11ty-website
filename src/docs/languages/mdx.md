@@ -14,7 +14,7 @@ layout: layouts/langs.njk
 | `mdx`          | `.mdx`         | [`@mdx-js/node-loader`](https://mdxjs.com/packages/node-loader/) |
 
 * Related languages: [Markdown](/docs/languages/markdown/), [JSX](/docs/languages/jsx/), [Custom](/docs/languages/custom/)
-* _[Front matter](/docs/data-frontmatter/) is not yet supported in MDX files._
+* _[Front matter](/docs/data-frontmatter/) is not supported in MDX files. Use a `data` export instead._
 * While [Markdown files](/docs/languages/markdown/) are preprocessed as Liquid, MDX files are not preprocessed by any other template syntax.
 
 {% callout "info", "md" %}MDX requires ESM. This means your project `package.json` must contain `"type": "module"` or your configuration file must use the `.mjs` file extension, e.g. `eleventy.config.mjs`.{% endcallout %}

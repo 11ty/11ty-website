@@ -15,7 +15,7 @@ layout: layouts/langs.njk
 | [`11ty.tsx`](/docs/languages/typescript/) | `.11ty.tsx`    | [`tsx`](https://tsx.is/node/esm)  |
 
 * Related languages: [JSX](/docs/languages/jsx/), [JavaScript](/docs/languages/javascript/), [Custom](/docs/languages/custom/)
-* _[Front matter](/docs/data-frontmatter/) is not yet supported in TypeScript files._
+* _[Front matter](/docs/data-frontmatter/) is not supported in TypeScript files. Use a `data` export instead._
 
 {% callout "info", "md" %}TypeScript requires ESM (when used with Eleventy, read more at [Issue #3304](https://github.com/11ty/eleventy/issues/3304)). This means your project `package.json` must contain `"type": "module"` or your configuration file must use the `.mjs` file extension, e.g. `eleventy.config.mjs`. Read more about [CommonJS versus ESM](../cjs-esm.md).{% endcallout %}
 

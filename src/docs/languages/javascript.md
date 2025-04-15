@@ -25,7 +25,7 @@ layout: layouts/langs.njk
 | `11ty.js`           | `.11ty.mjs`    | `3.0.0` |
 
 * Related languages: [JSX](/docs/languages/jsx/), [TypeScript](/docs/languages/typescript/), [MDX](/docs/languages/mdx/)
-* _[Front matter](/docs/data-frontmatter/) is not supported in JavaScript files._
+* _[Front matter](/docs/data-frontmatter/) is not supported in JavaScript files. Use a `data` export instead._
 
 Eleventy supports many different types of JavaScript content that will be parsed as Eleventy templates. They are comprehensively described below.
 
