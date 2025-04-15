@@ -4,8 +4,11 @@
 	<li><img webc:is="indieweb-avatar" url="https://tc39.es/">TC39</li>
 	<li><img webc:is="indieweb-avatar" url="https://www.w3.org/">W3C</li>
 	<li><img webc:is="indieweb-avatar" url="https://about.google/">Google</li>
+	<li><img webc:is="indieweb-avatar" url="https://www.microsoft.com/">Microsoft</li>
 	<li><img webc:is="indieweb-avatar" url="https://www.mozilla.org/">Mozilla</li>
 	<li><img webc:is="indieweb-avatar" url="https://fontawesome.com/">Font Awesome</li>
+	<li><img webc:is="indieweb-avatar" url="https://apache.org/">Apache</li>
+	<li><img webc:is="indieweb-avatar" url="https://www.freecodecamp.org/">freeCodeCamp</li>
 	<li>
 		<html-fetch src="/imports/logo-cloud.html" target="li" replace></html-fetch>
 	</li>
