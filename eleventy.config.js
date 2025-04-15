@@ -341,6 +341,7 @@ export default async function (eleventyConfig) {
 				return (b.oklch.l + b.oklch.c) - (a.oklch.l + a.oklch.c);
 			});
 		}, error => {
+			console.warn( `Error fetching colors from avatar for ${url}`, error );
 			return []; // error, return empty set.
 		})
 	});
