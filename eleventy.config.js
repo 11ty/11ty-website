@@ -340,6 +340,8 @@ export default async function (eleventyConfig) {
 			return colors.map(c => c.colorjs).sort((a, b) => {
 				return (b.oklch.l + b.oklch.c) - (a.oklch.l + a.oklch.c);
 			});
+		}, error => {
+			return []; // error, return empty set.
 		})
 	});
 
