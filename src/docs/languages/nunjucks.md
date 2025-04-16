@@ -345,6 +345,12 @@ This is identical to the synchronous Nunjucks usage.
 
 {% endraw %}
 
+## Warning: Macros are not async-friendly
+
+Per the Nunjucks documentation, [Nunjucks macros are not async-friendly](https://mozilla.github.io/nunjucks/templating.html#macro).
+
+> If you are using the asynchronous API, please be aware that you cannot do anything asynchronous inside macros. This is because macros are called like normal functions. In the future we may have a way to call a function asynchronously. If you do this now, the behavior is undefined.
+
 <div id="warning-the-set-tag-does-not-work-with-async-content"></div>
 
 ## Warning: `set` is not async-friendly

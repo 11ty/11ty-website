@@ -58,7 +58,7 @@ export default function (eleventyConfig) {
 #### More about Shortcodes
 
 - Read more about [`eleventyConfig.addShortcode`](/docs/shortcodes/#asynchronous-shortcodes) and universal shortcodes. Use `addAsyncShortcode` in versions of Eleventy older than v2.0. You can also [add these shortcodes to individual template engines](/docs/shortcodes/#async-friendly-per-engine-shortcodes), if you’d like!
-- **Warning about Nunjucks Macros:** [Nunjucks macros cannot use async shortcodes](https://mozilla.github.io/nunjucks/templating.html#macro). If you use macros, use the [transform](./image.md#html-transform) or [synchronous shortcode](#synchronous-shortcode) methods.
+- **Warning** [Nunjucks macros are not async-friendly](/docs/languages/nunjucks/#warning-macros-are-not-async-friendly). If you make use of Nunjucks macros in your project, do **not** use asynchronous shortcodes for Image optimization. Instead use the [transform](./image.md#html-transform) or [synchronous shortcode](#synchronous-shortcode) methods.
 
 ### Template Usage
 
