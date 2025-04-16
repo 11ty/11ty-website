@@ -412,6 +412,17 @@ filter-container:defined form {
 .mb-8 {
 	margin-bottom: 4em;
 }
+.util-stack {
+	display: grid;
+}
+.util-stack > * {
+	display: block;
+	grid-area: 1/1;
+}
+.util-grow.util-grow {
+	flex-grow: 999;
+	place-items: center;
+}
 
 /* Font Awesome Icons */
 .fa11ty-icon {
@@ -437,4 +448,9 @@ filter-container:defined form {
 }
 .fa-font-awesome {
 	color: #538cd7;
+}
+.fa11ty-npm {
+	width: 2.2em;
+	height: 2.2em;
+	color: #c70000;
 }

@@ -112,8 +112,8 @@
 }
 
 .elv-nav-menu form {
-	display: flex;
 	color: var(--search-text);
+	max-width: 14em;
 }
 .elv-nav-menu input[type="search"] {
 	font: inherit;
@@ -121,7 +121,8 @@
 	border: 1px solid var(--search-border);
 	border-radius: var(--search-radius);
 	padding-inline: var(--search-radius) 2.75em;
-	max-width: 13em;
+	width: 100%;
+	min-width: 10em;
 	color: inherit;
 	background-color: var(--search-bg);
 }
@@ -129,11 +130,14 @@
 	font-size: .75em;
 	margin: 0;
 	padding-inline: .75em;
-	translate: -100% 0;
 	border-radius: var(--search-radius);
 	border: none;
 	color: var(--search-icon);
 	background-color: transparent;
+}
+.elv-nav-menu .util-stack > button {
+	place-self: end;
+	height: 100%;
 }
 
 .elv-header-docs:before,
