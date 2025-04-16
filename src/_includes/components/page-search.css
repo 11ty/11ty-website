@@ -30,6 +30,19 @@
 }
 
 /* Search results */
+.search-results-item {
+	--search-result-active-bg: #f7f7f7;
+	--search-result-active-code-bg: #ddd;
+	--search-result-underline: #ffff03;
+}
+
+@media (prefers-color-scheme: dark) {
+	.search-results-item {
+		--search-result-active-bg: #333;
+		--search-result-active-code-bg: #111;
+		--search-result-underline: #828200;
+	}
+}
 .search-results-notfound {
 	list-style-type: none;
 }
@@ -38,25 +51,18 @@
 	padding: 0.25em 0.5em;
 }
 .search-results-item:is(:hover, :focus) {
-	background-color: #f7f7f7;
+	background-color: var(--search-result-active-bg);
 }
 .search-results-item:is(:hover, :focus) code {
-	background-color: #ddd;
+	background-color: var(--search-result-active-code-bg);
 }
-@media (prefers-color-scheme: dark) {
-	.search-results-item:is(:hover, :focus) {
-		background-color: #333;
-	}
-	.search-results-item:is(:hover, :focus) code {
-		background-color: #111;
-	}
+a[href].search-results-item:not(:hover, :focus) {
+	text-decoration-color: rgba(0,0,0,0); /* transparent */
 }
 a[href].search-results-item:is(:hover, :focus) {
-	text-decoration-color: #ffff03;
+	text-decoration-color: var(--search-result-underline);
 }
-a[href].search-results-item:not(:hover, :focus-within) {
-	text-decoration-color: rgba(0,0,0,0);
-}
+
 .search-results-item-title {
 	display: block;
 }

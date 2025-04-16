@@ -89,6 +89,52 @@
 	}
 }
 
+.elv-nav-menu {
+	--search-bg: rgba(255,255,255,.8);
+	--search-icon: rgba(0,0,0,.4);
+	--search-border: rgba(0,0,0,.2);
+	--search-text: #000;
+	--search-radius: 1rem;
+}
+@media (prefers-color-scheme: dark) {
+	.elv-nav-menu {
+		--search-bg: rgba(0,0,0,.8);
+		--search-icon: rgba(255,255,255,.4);
+		--search-border: rgba(255,255,255,.2);
+		--search-text: #fff;
+	}
+}
+.elv-header-default .elv-nav-menu {
+	--search-bg: rgba(0,0,0,.8);
+	--search-icon: rgba(255,255,255,.4);
+	--search-border: rgba(255,255,255,.2);
+	--search-text: #fff;
+}
+
+.elv-nav-menu form {
+	display: flex;
+	color: var(--search-text);
+}
+.elv-nav-menu input[type="search"] {
+	font: inherit;
+	font-size: 0.875em; /* 14px /16 */
+	border: 1px solid var(--search-border);
+	border-radius: var(--search-radius);
+	padding-inline: var(--search-radius) 2em;
+	max-width: 12em;
+	color: inherit;
+	background-color: var(--search-bg);
+}
+.elv-nav-menu button {
+	font-size: .75em;
+	margin: 0;
+	translate: -100% 0;
+	border-radius: var(--search-radius);
+	border: none;
+	color: var(--search-icon);
+	background-color: transparent;
+}
+
 .elv-header-docs:before,
 .elv-header-docs:after {
 	content: " ";

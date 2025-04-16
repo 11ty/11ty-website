@@ -116,6 +116,11 @@ blockquote + blockquote {
 	margin-top: 2em;
 }
 
+input[disabled],
+button[disabled] {
+	cursor: not-allowed;
+}
+
 /* Main */
 main {
 	font-size: 1.125em; /* 18px /16 */

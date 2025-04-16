@@ -1,4 +1,14 @@
 class Search {
+	get headerInput() {
+		return document.querySelector("header input[type='search']");
+	}
+
+	setValue(val) {
+		if(this.headerInput) {
+			this.headerInput.value = val;
+		}
+	}
+
 	clearResults() {
 		this.searchResultsCount.innerHTML = "Results";
 		this.searchResultsList.innerHTML = "";
@@ -32,6 +42,8 @@ class Search {
 	}
 
 	async onInput(value) {
+		this.setValue(value);
+
 		let pagefind = await this.getLibrary();
 		window.clearTimeout(this.onInputTimeout);
 		this.onInputTimeout = window.setTimeout(async () => {
@@ -79,6 +91,9 @@ class Search {
 				false
 			);
 		}
+		// if(this.headerInput && location.pathname.startsWith("/docs/search/")) {
+		// 	this.headerInput.setAttribute("readonly", true);
+		// }
 
 		let text = document.getElementById("search-term");
 		if (text) {
