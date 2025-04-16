@@ -120,14 +120,15 @@
 	font-size: 0.9375em; /* 15px /16 */
 	border: 1px solid var(--search-border);
 	border-radius: var(--search-radius);
-	padding-inline: var(--search-radius) 2em;
-	max-width: 12em;
+	padding-inline: var(--search-radius) 2.75em;
+	max-width: 13em;
 	color: inherit;
 	background-color: var(--search-bg);
 }
 .elv-nav-menu button {
 	font-size: .75em;
 	margin: 0;
+	padding-inline: .75em;
 	translate: -100% 0;
 	border-radius: var(--search-radius);
 	border: none;
