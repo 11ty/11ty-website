@@ -11,7 +11,7 @@ layout: layouts/langs.njk
 
 | Eleventy Short Name | File Extension | npm Package |
 | ------------------- | -------------- | ----------- |
-| `mdx`          | `.mdx`         | [`@mdx-js/node-loader`](https://mdxjs.com/packages/node-loader/) |
+| `mdx`          | `.mdx`         | [`@mdx-js/mdx`](https://mdxjs.com/packages/mdx/) |
 
 * Related languages: [Markdown](/docs/languages/markdown/), [JSX](/docs/languages/jsx/), [Custom](/docs/languages/custom/)
 * While [Markdown files](/docs/languages/markdown/) are preprocessed as Liquid, MDX files are not preprocessed by any other template syntax.
@@ -71,7 +71,7 @@ Read more on the [What is MDX? docs](https://mdxjs.com/docs/what-is-mdx/).
 
 ## Alternate Configuration: use MDX Loader
 
-{% addedin "3.0.0-alpha.11" %}MDX provides a Node.js loader ([`@mdx-js/node-loader`](https://mdxjs.com/packages/node-loader/) on npm). This approach may be marginally faster but will **not** include support for Front Matter in `.mdx` files.
+{% addedin "3.0.0-alpha.11" %}MDX also provides a Node.js loader ([`@mdx-js/node-loader`](https://mdxjs.com/packages/node-loader/) on npm). This approach may be marginally faster but will **not** include support for Front Matter in `.mdx` files.
 
 <div class="codetitle">eleventy.config.js</div>
 
