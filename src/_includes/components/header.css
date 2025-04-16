@@ -117,7 +117,7 @@
 }
 .elv-nav-menu input[type="search"] {
 	font: inherit;
-	font-size: 0.875em; /* 14px /16 */
+	font-size: 0.9375em; /* 15px /16 */
 	border: 1px solid var(--search-border);
 	border-radius: var(--search-radius);
 	padding-inline: var(--search-radius) 2em;
