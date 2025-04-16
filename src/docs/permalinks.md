@@ -264,7 +264,7 @@ export default function(eleventyConfig) {
 			`${data.page.filePathStem}.${data.page.outputFileExtension}`;
 	});
 
-	// Remove .html from `page.url` entries
+	// Remove .html from `page.url`
 	eleventyConfig.addUrlTransform((page) => {
 		if (page.url.endsWith(".html")) {
 			return page.url.slice(0, -1 * ".html".length);
@@ -281,7 +281,8 @@ The following works for `/resource`-style URLs on Vercel but additionally requir
 {% set codeContent %}
 export default function(eleventyConfig) {
 	eleventyConfig.addUrlTransform((page) => {
-		if (page.url.length !== "/" && page.url.endsWith("/")) {
+		// remove trailing slash from `page.url`
+		if (page.url !== "/" && page.url.endsWith("/")) {
 			return page.url.slice(0, -1);
 		}
 	});
