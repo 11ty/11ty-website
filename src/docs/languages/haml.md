@@ -12,7 +12,7 @@ layout: layouts/langs.njk
 | ------------------- | -------------- | ------------------------------------------ |
 | `haml`              | `.haml`        | [`haml.js`](https://github.com/tj/haml.js) |
 
-You can override a `.haml` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
+You can override a `.haml` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/template-overrides/).
 
 ## Installation
 

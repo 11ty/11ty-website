@@ -12,7 +12,7 @@ layout: layouts/langs.njk
 | ------------------- | -------------- | ------------------------------------------ |
 | `ejs`               | `.ejs`         | [`ejs`](https://www.npmjs.com/package/ejs) |
 
-You can override a `.ejs` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
+You can override a `.ejs` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/template-overrides/).
 
 ## Installation
 

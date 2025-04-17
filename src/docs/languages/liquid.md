@@ -18,7 +18,7 @@ layout: layouts/langs.njk
 | ------------------- | -------------- | ---------------------------------------------------- |
 | `liquid`            | `.liquid`      | [`liquidjs`](https://www.npmjs.com/package/liquidjs) |
 
-You can override a `.liquid` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
+You can override a `.liquid` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/template-overrides/).
 
 ## Liquid Options
 

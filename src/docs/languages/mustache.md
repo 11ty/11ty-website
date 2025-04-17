@@ -12,7 +12,7 @@ layout: layouts/langs.njk
 | ------------------- | -------------- | ----------------------------------------------------- |
 | `mustache`          | `.mustache`    | [`mustache.js`](https://github.com/janl/mustache.js/) |
 
-You can override a `.mustache` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
+You can override a `.mustache` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/template-overrides/).
 
 ## Installation
 

@@ -18,7 +18,7 @@ layout: layouts/langs.njk
 | ------------------- | -------------- | ------------------------------------------------- |
 | `njk`               | `.njk`         | [`nunjucks`](https://mozilla.github.io/nunjucks/) |
 
-You can override a `.njk` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
+You can override a `.njk` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/template-overrides/).
 
 ## Nunjucks Environment Options
 

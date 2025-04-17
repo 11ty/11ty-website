@@ -14,7 +14,7 @@ layout: layouts/langs.njk
 
 Pug templates used to be called Jade templates and the project was renamed.
 
-You can override a `.pug` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/languages/).
+You can override a `.pug` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/template-overrides/).
 
 ## Installation
 
