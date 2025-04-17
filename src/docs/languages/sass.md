@@ -70,3 +70,7 @@ npx @11ty/eleventy --formats=scss
 Alternatively, you can add `eleventyConfig.addTemplateFormats("scss")` to your configuration file.
 
 ## Community Contributions
+
+{% renderTemplate "webc" %}
+<sites-list><site-card @url="https://11ty.rocks/posts/process-css-with-lightningcss/" @name="Process CSS or Sass with LightningCSS" @using="LightningCSS" @date="2023-02-25"></site-card></sites-list>
+{% endrenderTemplate %}
