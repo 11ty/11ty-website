@@ -151,7 +151,7 @@ permalink: bundle.js
 
 <h2 id="eleventy-custom-templates"><number-flag>3</number-flag> Eleventy Custom Templates</h2>
 
-<p>You can add <code>js</code> and <code>css</code> (or even <code>scss</code> for Sass) as <a href="/docs/languages/custom/">custom template types</a> in Eleventy. This means that any <code>js</code> and <code>css</code> files added to your project are processed by Eleventy.</p>
+<p>You can add <code>js</code> and <code>css</code> (or even <a href="/docs/languages/sass/"><code>scss</code> for Sass</a>) as <a href="/docs/languages/custom/">custom template types</a> in Eleventy. This means that any <code>js</code> and <code>css</code> files added to your project are processed by Eleventy.</p>
 
 <p>This also (optionally) allows you to post-process the CSS (using Sass, PostCSS, or LightningCSS) or client-JavaScript (using esbuild, rollup, WebPack, etc) and write the processed content to your output folder. This also allows you to use features in your bundle code that aren’t available in web browsers, like nesting CSS, TypeScript, or JSX.</p>
 
@@ -160,10 +160,15 @@ permalink: bundle.js
 <p>Here are a few great guides to get you started:</p>
 
 <sites-list>
+	<!--- <site-card
+		@icon-url="https://sass-lang.com/"
+		@url="/docs/languages/custom/#example-add-sass-support-to-eleventy"
+		@name="Using Eleventy Custom Templates to Add Sass Support to Eleventy"
+		@date=""></site-card> --->
 	<site-card
 		@icon-url="https://sass-lang.com/"
-		@url="https://www.11ty.dev/docs/languages/custom/#example-add-sass-support-to-eleventy"
-		@name="Using Eleventy Custom Templates to Add Sass Support to Eleventy"
+		@url="/docs/languages/sass/"
+		@name="Configure Sass as a Custom Template Syntax in Eleventy"
 		@date=""></site-card>
 	<site-card @url="https://pepelsbey.dev/articles/eleventy-css-js/" @name="CSS and JavaScript as First-Class Citizens in Eleventy" @using="esbuild, PostCSS" @date="2022-11-25"></site-card>
 	<site-card @url="https://11ty.rocks/posts/process-css-with-lightningcss/" @name="Process CSS or Sass with LightningCSS" @using="LightningCSS" @date="2023-02-25"></site-card>

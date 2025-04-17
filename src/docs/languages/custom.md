@@ -55,7 +55,7 @@ For a more realistic sample, here’s an example of Eleventy looking for all `.s
 
 {% set codeContent %}
 // Don’t forget to `npm install sass`!
-import sass from "sass";
+import * as sass from "sass";
 
 export default function (eleventyConfig) {
 	eleventyConfig.addTemplateFormats("scss");

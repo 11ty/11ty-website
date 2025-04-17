@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Template Languages
   key: Overriding Languages
-  order: 10
+  order: 11
 ---
 
 # Overriding the Template Language {% addedin "0.2.14" %}

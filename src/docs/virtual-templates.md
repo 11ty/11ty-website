@@ -2,7 +2,7 @@
 eleventyNavigation:
   parent: Template Languages
   key: Virtual Templates
-  order: 9
+  order: 10
   excerpt: Create a template or layout that only lives in your configuration file.
 ---
 # Virtual Templates {% addedin "3.0.0-alpha.15" %}

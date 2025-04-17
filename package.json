@@ -58,7 +58,7 @@
     "degit": "^2.8.4",
     "dotenv": "^16.4.7",
     "entities": "^6.0.0",
-    "esm-import-transformer": "^3.0.2",
+    "esm-import-transformer": "^3.0.3",
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.3.0",
     "human-readable-numbers": "0.9.5",
