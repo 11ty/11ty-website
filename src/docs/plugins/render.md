@@ -104,3 +104,9 @@ Outputs:
 Second from renderContent
 ```
 {% endraw %}
+
+#### Pass in data
+
+Both the [`eleventy`](/docs/data-eleventy-supplied/#eleventy-variable) and [`page` variables](/docs/data-eleventy-supplied/#page-variable) are available inside of these templates by default. If you want to pass in additional data, you can do so like this:
+
+{% include "snippets/plugins/renderfilterdata.njk" %}
