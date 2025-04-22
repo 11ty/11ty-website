@@ -1,50 +1,52 @@
 <header class="elv-header{% if headerClass %} {{ headerClass }}{% endif %}">
 	<div class="elv-menu">
-		<ul class="elv-nav-menu list-bare fl fl-inline fl-nowrap">
-			<li><a href="/" class="elv-nav-menu-logo">{% include "../img/logo.svg" %}<span class="sr-only">11ty</span></a></li>
-			<li><a href="/docs/">Get Started</a></li>
-			<li><a href="/blog/">Blog</a></li>
-			<li><a href="/docs/community/">Community</a></li>
-			{# <li><a href="/firehose/">Firehose</a></li> #}
-			{# <li><a href="https://conf.11ty.dev/" class= elv-externalexempt">Conference</a></li> #}
-			{# <li><a href="https://merch.11ty.dev/products/11ty-merch-bundle-2024-limited-edition" class="elv-externalexempt">Merch</a></li> #}
-			<li>
-				<details-utils close-click-outside close-esc>
-					<details class="elv-popover">
-						<summary>Versions</summary>
-						<div>
-						  <ul class="list-bare">
-								<li><a href="/docs/" class="elv-externalexempt"><code>v3</code> <small>Stable</small></a></li>
-								<li><a href="https://v2.11ty.dev/docs/" class="elv-externalexempt"><code>v2</code></a></li>
-								<li><a href="https://v1.11ty.dev/docs/" class="elv-externalexempt"><code>v1</code></a></li>
-								<li><a href="https://v0.11ty.dev/docs/" class="elv-externalexempt"><code>v0</code></a></li>
-								<li><a href="/docs/versions/" class="elv-externalexempt">History</a></li>
-							</dl>
-						</div>
-					</details>
-				</details-utils>
-			</li>
-			<li class="util-grow">
-				<disabled-form>
-					<form action="/docs/search/" class="util-stack">
-						<label>
-							<span class="sr-only">Search</span>
-							<input type="search" name="q" placeholder="Search…" value="" disabled>
-						</label>
-						<button type="submit" disabled><i class="fa-solid fa-magnifying-glass"></i><span class="sr-only">Search</span></button>
-					</form>
-				</disabled-form>
-			</li>
-			{# <li class="spacer" aria-hidden="true"></li> #}
-			{# <li><a href="/blog/feed.xml" class="nound elv-externalexempt elv-nav-sociallink"><i class="fa-solid fa-square-rss"></i><span class="elv-nav-sociallink-text">Feed</span></a></li> #}
-			<li><a href="https://github.com/11ty/eleventy/" class="elv-skipicon"><i class="fa-brands fa-github" style="font-size: .9em"></i>GitHub</a></li>
-			{# <li><a href="https://www.npmjs.com/org/11ty" class="nound elv-externalexempt elv-nav-sociallink"><i class="fa-brands fa-npm fa11ty-npm"></i><span class="sr-only">npm</span></a></li> #}
-			<li><a href="https://www.youtube.com/c/EleventyVideo" class="nound elv-externalexempt elv-nav-sociallink"><i class="fa-brands fa-youtube"></i><span class="sr-only">YouTube</span></a></li>
-			<li><a href="https://fosstodon.org/@eleventy" class="nound elv-nav-sociallink"><i class="fa-brands fa-mastodon"></i><span class="sr-only">Mastodon</span></a></li>
-			<li><a href="https://bsky.app/profile/11ty.dev" class="nound elv-nav-sociallink"><i class="fa-brands fa-bluesky"></i><span class="sr-only">Bluesky</span></a></li>
-			<li><a href="/blog/discord/" class="nound elv-nav-sociallink"><i class="fa-brands fa-discord"></i><span class="sr-only">Discord</span></a></li>
-			<li><a href="https://fontawesome.com/" class="nound elv-nav-sociallink"><i class="fa-brands fa-font-awesome"></i><span class="sr-only">Font Awesome</span></a></li>
-		</ul>
+		<active-background>
+			<ul class="elv-nav-menu list-bare fl fl-inline fl-nowrap">
+				<li><a href="/" class="elv-nav-menu-logo">{% include "../img/logo.svg" %}<span class="sr-only">11ty</span></a></li>
+				<li><a href="/docs/">Get Started</a></li>
+				<li><a href="/blog/">Blog</a></li>
+				<li><a href="/docs/community/">Community</a></li>
+				{# <li><a href="/firehose/">Firehose</a></li> #}
+				{# <li><a href="https://conf.11ty.dev/" class= elv-externalexempt">Conference</a></li> #}
+				{# <li><a href="https://merch.11ty.dev/products/11ty-merch-bundle-2024-limited-edition" class="elv-externalexempt">Merch</a></li> #}
+				<li>
+					<details-utils close-click-outside close-esc>
+						<details class="elv-popover">
+							<summary>Versions</summary>
+							<div>
+							  <ul class="list-bare">
+									<li><a href="/docs/" class="elv-externalexempt"><code>v3</code> <small>Stable</small></a></li>
+									<li><a href="https://v2.11ty.dev/docs/" class="elv-externalexempt"><code>v2</code></a></li>
+									<li><a href="https://v1.11ty.dev/docs/" class="elv-externalexempt"><code>v1</code></a></li>
+									<li><a href="https://v0.11ty.dev/docs/" class="elv-externalexempt"><code>v0</code></a></li>
+									<li><a href="/docs/versions/" class="elv-externalexempt">History</a></li>
+								</dl>
+							</div>
+						</details>
+					</details-utils>
+				</li>
+				<li class="util-grow">
+					<disabled-form>
+						<form action="/docs/search/" class="util-stack">
+							<label>
+								<span class="sr-only">Search</span>
+								<input type="search" name="q" placeholder="Search…" value="" disabled>
+							</label>
+							<button type="submit" disabled><i class="fa-solid fa-magnifying-glass"></i><span class="sr-only">Search</span></button>
+						</form>
+					</disabled-form>
+				</li>
+				{# <li class="spacer" aria-hidden="true"></li> #}
+				{# <li><a href="/blog/feed.xml" class="nound elv-externalexempt elv-nav-sociallink"><i class="fa-solid fa-square-rss"></i><span class="elv-nav-sociallink-text">Feed</span></a></li> #}
+				<li><a href="https://github.com/11ty/eleventy/" class="elv-skipicon"><i class="fa-brands fa-github" style="font-size: .9em"></i>GitHub</a></li>
+				{# <li><a href="https://www.npmjs.com/org/11ty" class="nound elv-externalexempt elv-nav-sociallink"><i class="fa-brands fa-npm fa11ty-npm"></i><span class="sr-only">npm</span></a></li> #}
+				<li data-active-background="rgba(255,0,51,.35)"><a href="https://www.youtube.com/c/EleventyVideo" class="nound elv-externalexempt elv-nav-sociallink"><i class="fa-brands fa-youtube"></i><span class="sr-only">YouTube</span></a></li>
+				<li data-active-background="rgba(123,104,218,.35)"><a href="https://fosstodon.org/@eleventy" class="nound elv-nav-sociallink"><i class="fa-brands fa-mastodon"></i><span class="sr-only">Mastodon</span></a></li>
+				<li data-active-background="rgba(18,133,254,.35)"><a href="https://bsky.app/profile/11ty.dev" class="nound elv-nav-sociallink"><i class="fa-brands fa-bluesky"></i><span class="sr-only">Bluesky</span></a></li>
+				<li data-active-background="rgba(88,101,242,.35)"><a href="/blog/discord/" class="nound elv-nav-sociallink"><i class="fa-brands fa-discord"></i><span class="sr-only">Discord</span></a></li>
+				<li data-active-background="rgba(83,140,215,.35)"><a href="https://fontawesome.com/" class="nound elv-nav-sociallink"><i class="fa-brands fa-font-awesome"></i><span class="sr-only">Font Awesome</span></a></li>
+			</ul>
+		</active-background>
 	</div>
 
 	<div class="elv-nav-header">
