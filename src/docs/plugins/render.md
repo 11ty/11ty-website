@@ -109,9 +109,11 @@ Second from renderContent
 
 Both the [`eleventy`](/docs/data-eleventy-supplied/#eleventy-variable) and [`page` variables](/docs/data-eleventy-supplied/#page-variable) are available inside of these templates by default. If you want to pass in additional data, you can do so like this:
 
-```
+{% raw %}
+```yaml
 ---
 myContent: "{{ 'Second' }}"
 ---
 {{ myContent | renderContent("njk", myData) }}
 ```
+{% endraw %}
