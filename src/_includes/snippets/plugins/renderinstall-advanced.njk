@@ -6,10 +6,10 @@
   <div id="{{ tabid }}-jsesm" role="tabpanel">
 
 ```js
-import { EleventyRenderPlugin } from "@11ty/eleventy";
+import { RenderPlugin } from "@11ty/eleventy";
 
 export default function (eleventyConfig) {
-	eleventyConfig.addPlugin(EleventyRenderPlugin, {
+	eleventyConfig.addPlugin(RenderPlugin, {
 		tagName: "renderTemplate", // Change the renderTemplate shortcode name
 		tagNameFile: "renderFile", // Change the renderFile shortcode name
 		filterName: "renderContent", // Change the renderContent filter name
@@ -25,9 +25,9 @@ export default function (eleventyConfig) {
 
 ```js
 module.exports = async function (eleventyConfig) {
-	const { EleventyRenderPlugin } = await import("@11ty/eleventy");
+	const { RenderPlugin } = await import("@11ty/eleventy");
 
-	eleventyConfig.addPlugin(EleventyRenderPlugin, {
+	eleventyConfig.addPlugin(RenderPlugin, {
 		tagName: "renderTemplate", // Change the renderTemplate shortcode name
 		tagNameFile: "renderFile", // Change the renderFile shortcode name
 		filterName: "renderContent", // Change the renderContent filter name

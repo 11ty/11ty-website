@@ -6,10 +6,10 @@
   <div id="{{ tabid }}-jsesm" role="tabpanel">
 
 ```js
-import { EleventyI18nPlugin } from "@11ty/eleventy";
+import { I18nPlugin } from "@11ty/eleventy";
 
 export default function (eleventyConfig) {
-	eleventyConfig.addPlugin(EleventyI18nPlugin, {
+	eleventyConfig.addPlugin(I18nPlugin, {
 		// any valid BCP 47-compatible language tag is supported
 		defaultLanguage: "", // Required, this site uses "en"
 
@@ -35,9 +35,9 @@ export default function (eleventyConfig) {
 
 ```js
 module.exports = async function (eleventyConfig) {
-	const { EleventyI18nPlugin } = await import("@11ty/eleventy");
+	const { I18nPlugin } = await import("@11ty/eleventy");
 
-	eleventyConfig.addPlugin(EleventyI18nPlugin, {
+	eleventyConfig.addPlugin(I18nPlugin, {
 		// any valid BCP 47-compatible language tag is supported
 		defaultLanguage: "", // Required, this site uses "en"
 

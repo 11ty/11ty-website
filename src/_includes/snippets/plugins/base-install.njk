@@ -6,10 +6,10 @@
   <div id="{{ tabid }}-jsesm" role="tabpanel">
 
 ```js
-import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import { HtmlBasePlugin } from "@11ty/eleventy";
 
 export default function (eleventyConfig) {
-	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+	eleventyConfig.addPlugin(HtmlBasePlugin);
 }
 ```
 
@@ -18,9 +18,9 @@ export default function (eleventyConfig) {
 
 ```js
 module.exports = async function (eleventyConfig) {
-	const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
+	const { HtmlBasePlugin } = await import("@11ty/eleventy");
 
-	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+	eleventyConfig.addPlugin(HtmlBasePlugin);
 }
 ```
 
