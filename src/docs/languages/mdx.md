@@ -55,17 +55,22 @@ npx @11ty/eleventy --formats=mdx
 
 Alternatively, you can add `eleventyConfig.addTemplateFormats("mdx")` to your configuration file.
 
-## Example MDX Template
+### Example
+
+<div class="codetitle">sample.mdx</div>
 
 ```jsx
-export function Thing() {
-  return <>World!</>
+---
+key: World
+---
+export function Exclaim(props) {
+  return <>{props.target}!!!</>
 }
 
-# Hello, <Thing />
+# Hello from <Exclaim target={props.key} />
 ```
 
-The above is rendered as `<h1>Hello, World!</h1>`.
+The above is rendered as `<h1>Hello, World!!!</h1>`.
 
 Read more on the [What is MDX? docs](https://mdxjs.com/docs/what-is-mdx/).
 
