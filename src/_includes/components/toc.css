@@ -74,15 +74,26 @@
 .elv-toc-list > li > details > ul > li:has(ul ul) {
 	margin-block: var(--elv-toc-spacing);
 }
-.elv-toc-list > li > details > ul > li:has(ul ul) > a,
-.elv-toc-list > li > details > ul > li:has(ul ul) + li > a {
-	border-block-start: 1px solid var(--border-color);
-	padding-block-start: .5em;
-}
 
-/* Menus nested 2 or more deep */
+/* Menus nested exact 2 levels deep */
+.elv-toc-list {
+	--toc-border-color: rgba(0,0,0,.06);
+}
+.elv-toc-list > li > details > ul > li > ul > li {
+	border-inline-start: 2px solid var(--toc-border-color);
+}
+.elv-toc-list > li > details > ul > li > ul > li:is(.elv-toc-active, :has(.elv-toc-active)) {
+	--toc-border-color: #63e6be;
+	--toc-border-width: 2px;
+}
+.elv-toc-list > li > details > ul > li > ul > li > a {
+	padding-inline: .5em;
+}
 .elv-toc-list ul ul {
-	padding-inline-start: 1.25em; /* 20px /16 */
+	margin-inline-start: .25em;
+}
+.elv-toc-list ul ul ul {
+	margin-inline-start: 1.5em; /* 24px /16 */
 }
 
 /* List items */
