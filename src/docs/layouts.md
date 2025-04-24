@@ -20,7 +20,7 @@ This will look for a `mylayout.njk` Nunjucks file in your _includes_ folder at `
 
 - You can use any template language in your layout file—it doesn’t need to match the template language of the content: an `ejs` template can use a `njk` layout.
 - Layouts paths can use subdirectories: `layout: "layouts/base.njk"` maps to `_includes/layouts/base.njk`.
-- You can have a [separate folder for Eleventy layouts](</docs/config/#directory-for-layouts-(optional)>) if you’d prefer to have them separate from your _includes_ folder.
+- You can have a [separate folder for Eleventy layouts](</docs/config/#directory-for-layouts-optional>) if you’d prefer to have them separate from your _includes_ folder.
 
 Next, we need to create a `mylayout.njk` file. It may contain any arbitrary text, but here we’re using HTML:
 
