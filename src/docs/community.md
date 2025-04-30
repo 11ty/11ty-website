@@ -31,7 +31,7 @@ ignoreGitHubButtons: true
 
 ## <span class="numberflag"><span class="sr-only">Step</span> {{ count }}</span> Stay up-to-date
 
-- [Follow @eleventy@fosstodon.org on **Mastodon**](https://fosstodon.org/@eleventy)
+- [Follow @11ty@neighborhood.11ty.dev on **Mastodon**](https://neighborhood.11ty.dev/@11ty)
 - Read the [Eleventy **Blog**](/blog/)
 - Subscribe to the [Eleventy **YouTube Channel**](https://www.youtube.com/c/EleventyVideo)
 - [Subscribe to the 11ty **Email Newsletter**](https://buttondown.email/11ty)

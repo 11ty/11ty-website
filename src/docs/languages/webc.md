@@ -950,7 +950,7 @@ Instead of an HTML comment that will show up in rendered output, you can add one
 
 This plugin provides a few transforms out of the box: `webc:type="js"`, `webc:type="render"`, `webc:type="css:scoped"`, and `webc:type="11ty"`.
 
-However, adding your own [`webc:type` Custom Transform](https://github.com/11ty/webc#custom-transforms) **directly** to WebC is not yet available in the Eleventy WebC plugin! If this is something folks would like to see added, [please let us know](https://fosstodon.org/@eleventy)!
+However, adding your own [`webc:type` Custom Transform](https://github.com/11ty/webc#custom-transforms) **directly** to WebC is not yet available in the Eleventy WebC plugin! If this is something folks would like to see added, [please let us know](https://neighborhood.11ty.dev/@11ty)!
 
 Do note that you **can** [add your own custom template engine](/docs/languages/custom/) which would be available via `webc:type="11ty"` (e.g. `<style webc:type="11ty" 11ty:type="sass">`).
 

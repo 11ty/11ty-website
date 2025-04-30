@@ -18,6 +18,7 @@ export default async function () {
 		"https://www.11ty.dev/docs/quicktips/feed.xml"
 	);
 	feed.addSource("fediverse", "Mastodon", "@eleventy@fosstodon.org");
+	feed.addSource("fediverse", "Mastodon", "@11ty@neighborhood.11ty.dev");
 	feed.addSource("bluesky", "Bluesky", "@11ty.dev");
 
 	if (process.env.NODE_ENV === "production") {
