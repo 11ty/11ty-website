@@ -1,11 +1,6 @@
 {
 	"trailingSlash": true,
   "redirects": [
-    { "source": "/@11ty", "destination": "https://neighborhood.11ty.dev/@11ty", "statusCode": 301 },
-    { "source": "/users/11ty.rss", "destination": "https://neighborhood.11ty.dev/users/11ty.rss", "statusCode": 301 },
-    { "source": "/.well-known/host-meta(.*)", "destination": "https://neighborhood.11ty.dev/.well-known/host-meta$1", "statusCode": 301 },
-    { "source": "/.well-known/webfinger(.*)", "destination": "https://neighborhood.11ty.dev/.well-known/webfinger$1", "statusCode": 301 },
-    { "source": "/.well-known/nodeinfo(.*)", "destination": "https://neighborhood.11ty.dev/.well-known/nodeinfo$1", "statusCode": 301 },
     { "source": "/mastodon", "destination": "https://neighborhood.11ty.dev/@11ty", "statusCode": 301 },
     { "source": "/youtube", "destination": "https://www.youtube.com/c/EleventyVideo", "statusCode": 301 },
     { "source": "/twitter", "destination": "https://twitter.com/eleven_ty", "statusCode": 301 },
