@@ -1,7 +1,7 @@
 import CleanCSS from "clean-css";
 import { minify } from "terser";
 
-export async function minifyJavaScript(code) {
+async function minifyJavaScript(code) {
 	if (process.env.NODE_ENV === "production") {
 		try {
 			let result = await minify(code);

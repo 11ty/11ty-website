@@ -17,7 +17,7 @@ import fontAwesomePlugin from "@11ty/font-awesome";
 import { getImageColors } from "@11ty/image-color";
 
 import { addedIn, coerceVersion } from "./config/addedin.js";
-import minificationLocalPlugin, { minifyJavaScript } from "./config/minification.js";
+import minificationLocalPlugin from "./config/minification.js";
 import cleanName from "./config/cleanAuthorName.js";
 import objectHas from "./config/object-has.js";
 import markdownPlugin from "./config/markdownPlugin.js";
