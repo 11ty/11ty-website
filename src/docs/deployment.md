@@ -75,6 +75,9 @@ classicHosts:
   - name: Tiiny Host
     url: https://tiiny.host
     screenshotSize: medium
+  - name: Orbiter
+    url: https://orbiter.host
+    screenshotSize: medium
 webides:
   - name: Glitch
     url: https://glitch.com/
