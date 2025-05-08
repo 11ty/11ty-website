@@ -18,7 +18,9 @@ permalink: /imports/logo-cloud.html
 <li><img webc:is="indieweb-avatar" url="https://css-tricks.com/">CSS Tricks</li>
 <li><img webc:is="indieweb-avatar" url="https://www.webpagetest.org/">WebPageTest</li>
 <li><img webc:is="indieweb-avatar" url="https://www.a11yproject.com/">A11Y Project</li>
+<li><img webc:is="indieweb-avatar" url="https://eslint.org/">ESLint</li>
 <li><img webc:is="indieweb-avatar" url="https://www.noaa.gov/"><abbr title="National Oceanic and Atmospheric Administration">NOAA</abbr></li>
+<li><img webc:is="indieweb-avatar" url="https://18f.org/">18F</li>
 <li><img webc:is="indieweb-avatar" url="https://cloud.gov/">United States (gov)</li>
 <li><img webc:is="indieweb-avatar" url="https://data.gov/">data.gov</li>
 <li><img webc:is="indieweb-avatar" url="https://www.gov.uk/">United Kingdom (gov)</li>
@@ -34,7 +36,7 @@ permalink: /imports/logo-cloud.html
 <li><img webc:is="indieweb-avatar" url="https://jamstack.org/">jamstack.org</li>
 <li><img webc:is="indieweb-avatar" url="https://www.greenpeace.org/">Greenpeace</li>
 <li><img webc:is="indieweb-avatar" url="https://www.csis.org/"><abbr title="Center for Strategic & International Studies">CSIS</abbr></li>
-<li><img webc:is="indieweb-avatar" url="https://eslint.org/">ESLint</li>
+<li><img webc:is="indieweb-avatar" url="https://www.springernature.com/">Springer Nature</li>
 <li><img webc:is="indieweb-avatar" url="https://mochajs.org/">Mocha</li>
 <li><img webc:is="indieweb-avatar" url="https://revealjs.com/">reveal.js</li>
 <li><img webc:is="indieweb-avatar" url="https://panic.com/">Panic</li>
