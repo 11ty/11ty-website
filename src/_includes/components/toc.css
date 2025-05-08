@@ -1,8 +1,12 @@
 .elv-toc {
+	--elv-toc-sticky-top: 0;
 	--elv-toc-spacing: .75em;
 	--elv-toc-link-color: #1873a5;
 	--elv-toc-hover-color: #dff7ff;
 	font-size: 1rem; /* Reset */
+}
+.elv-header-docs + .elv-layout .elv-toc {
+	--elv-toc-sticky-top: 4em;
 }
 @media (prefers-color-scheme: dark) {
 	.elv-toc {
@@ -42,7 +46,7 @@
 	/* Sticky on menus except Guide/Projects */
 	.elv-toc-c:not(:has(a[href="/docs/projects/"] + details[open])) {
 		position: sticky;
-		top: 0;
+		top: var(--elv-toc-sticky-top);
 	}
 }
 

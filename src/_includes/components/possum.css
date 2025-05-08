@@ -7,16 +7,22 @@
 	top: 0.5rem;
 	transition: 0.3s opacity ease-out;
 }
-.elv-header-docs .elv-possum {
-	width: 15vw;
-	height: auto;
-	/* aspect ratio 0.57216495 */
-	aspect-ratio: 222 / 388;
-	max-width: 6.25rem; /* 100px /16 */
-}
 @media (max-width: 34.375em) { /* 550px */
 	/* Hide possum on docs only */
 	.elv-possum-island {
 		display: none;
+	}
+}
+
+.elv-header-docs .elv-possum {
+	width: 10vw;
+	height: auto;
+	aspect-ratio: 222 / 388;
+	max-width: 3.75em; /* 60px /16 */
+}
+@media (min-width: 81.25em) { /* 1300px */
+	.elv-header-docs .elv-possum {
+		width: 15vw;
+		max-width: 6.25rem; /* 100px /16 */
 	}
 }

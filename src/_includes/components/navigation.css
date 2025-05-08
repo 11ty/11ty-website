@@ -30,24 +30,6 @@
 	}
 }
 
-@media (min-width: 60.625em) {
-	/* 970px */
-	.elv-nav-sociallink {
-		font-size: 0.875em; /* 14px /16 */
-	}
-	.spacer {
-		display: inherit;
-	}
-	.elv-nav-menu .spacer {
-		flex-grow: 999;
-	}
-	.elv-nav-sociallink-text {
-		position: static;
-		overflow: visible;
-		clip: auto;
-	}
-}
-
 @media (max-width: 66.875em) { /* 1070px */
 	.elv-nav-menu-hidesmall {
 		display: none;

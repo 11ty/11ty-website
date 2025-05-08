@@ -1,11 +1,16 @@
 
 /* Header */
 .elv-menu {
-	background-color: #f4f4f4;
+	background-color: rgba(255, 255, 255, .65);
 	color: var(--color);
 	border: 1px solid var(--border-color);
 	border-left: none;
 	border-right: none;
+	backdrop-filter: blur(15px);
+}
+.elv-header-docs .elv-menu:has(active-background.active) {
+	/* let the backdrop-filter work with active-background too */
+	background-color: transparent;
 }
 :where(.elv-menu) a,
 :where(.elv-menu) a:visited,
@@ -21,9 +26,8 @@
 	color: var(--color_dark);
 }
 @media (prefers-color-scheme: dark) {
-	.elv-menu,
-	.elv-header-default .elv-menu {
-		background-color: #292929;
+	.elv-menu {
+		background-color: rgba(0,0,0,.65);
 	}
 }
 .elv-header {
@@ -84,14 +88,18 @@
 .elv-nav-menu {
 	padding-right: 1rem;
 }
-@media (min-width: 34.4375em) { /* 551px */
+@media (min-width: 34.4375em) and (max-width: 74.9375em) { /* 551px–1199px */
 	.elv-header-docs .elv-nav-menu {
-		padding-right: 6em;
+		padding-right: 4em;
 	}
 }
-@media (min-width: 79.25em) { /* 1268px */
-	.elv-header-docs .elv-nav-menu {
-		padding-right: 1rem;
+/* Sticky */
+@media (min-width: 55em) and (min-height: 37.5em) { /* 880px × 600px */
+	/* Take care with the sticky toc too */
+	.elv-header.elv-header-docs {
+		position: sticky;
+		top: 0;
+		z-index: 2;
 	}
 }
 
