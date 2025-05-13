@@ -55,6 +55,19 @@ function randomTestimonialLink(testimonials) {
 <quick-start></quick-start>
 
 <div webc:bucket="async">
+	<h2>Try Eleventy in the Browser</h2>
+	<is-land on:visible import="/js/eleventy-ide.js">
+		<eleventy-ide>
+		<textarea>---js
+// You can type here
+export const subject = "World";
+---
+# Hello {{ subject }}
+
+Use Markdown or Liquid. Maybe a [link](/).</textarea>
+		</eleventy-ide>
+	</is-land>
+
 	<h2>News from the Blog</h2>
 	<ul @html="getHighlightedBlogPostContent(collections.blog)"></ul>
 
