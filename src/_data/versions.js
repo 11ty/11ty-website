@@ -7,6 +7,11 @@ export default [
 		ignore_release_notes: true,
 	},
 	{
+		tag: "v3.1.0",
+		docs_url: "https://www.11ty.dev/docs/",
+		minimumNodeVersion: 18,
+	},
+	{
 		tag: "v3.0.0",
 		docs_url: "https://www.11ty.dev/docs/",
 		minimumNodeVersion: 18,
