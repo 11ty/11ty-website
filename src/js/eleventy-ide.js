@@ -39,13 +39,14 @@ iframe {
 }
 .error {
 	position: absolute;
+	background-color: rgba(255,0,0,.9);
+	color: #fff;
 }
 .error:not(:empty) {
 	left: 0;
 	right: 0;
 	bottom: 0;
 	translate: 0 100%;
-	background-color: rgba(255,0,0,.9);
 	padding: .5em;
 	border-radius: 0 0 .25em .25em;
 }
