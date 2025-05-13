@@ -101,6 +101,9 @@
 		top: 0;
 		z-index: 2;
 	}
+	:root:has(.elv-header.elv-header-docs, :target) {
+		scroll-padding-top: 3.75em; /* 60px /16 */
+	}
 }
 
 .elv-nav-menu {
