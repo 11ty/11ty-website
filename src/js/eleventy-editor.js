@@ -13,10 +13,9 @@ import { Liquid } from "/js/eleventy.engine-liquid.browser.js";
 class Editor extends HTMLElement {
 	#engines = {};
 
-	static classes = {};
-
 	static attrs = {
-		focusOnInit: "focus"
+		focusOnInit: "focus",
+		filename: "data-editor-filename",
 	};
 
 	static tagName = "eleventy-editor";
@@ -29,6 +28,9 @@ class Editor extends HTMLElement {
   }
 
 	static style = css`
+* {
+	box-sizing: border-box;
+}
 :host {
 	display: flex;
 	flex-wrap: wrap;
@@ -44,11 +46,19 @@ class Editor extends HTMLElement {
 	flex-basis: 12em;
 	min-height: 10em;
 }
+:host > :first-child {
+	flex-grow: 2;
+}
 :host > div {
 	position: relative;
 }
+.input,
+.output {
+	width: 100%;
+	height: 100%;
+}
 .input {
-	flex-grow: 2;
+	display: flex;
 	font-size: inherit;
 	font-family: Roboto Mono, monospace;
 	resize: vertical;
@@ -57,32 +67,48 @@ class Editor extends HTMLElement {
 	background-color: #272822;
 	color: #fff;
 	border: none;
-	box-sizing: border-box;
 }
 .output {
 	display: block;
 	border: none;
-	width: 100%;
-	height: 100%;
 	padding: .5em;
 	background-color: #f4f4f4;
-	box-sizing: border-box;
 }
 .error {
 	position: absolute;
 	left: 0;
 	bottom: 0;
 	right: 0;
-	background-color: rgba(255,0,0,.85);
+	background-color: rgba(206, 0, 0, 0.85);
 	color: #fff;
 	padding: .5em;
 }
 .error:empty {
 	display: none;
 }
+.filename {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: .25em .5em;
+	font-size: .75em;
+	font-family: Roboto Mono, monospace;
+	border-bottom-left-radius: .5em;
+}
+.filename--input {
+	color: #fff;
+	background-color: rgba(0,0,0,.2);
+}
+.filename--output {
+	color: #000;
+	background-color: rgba(0,0,0,.05);
+}
 `;
 
-	async getRenderedContent(templateContent) {
+	async getRenderedContent(templateContent, filename) {
+		if(!filename) {
+			throw new Error("Missing filename");
+		}
 		let engines = this.#engines;
 		let elev = new Eleventy(undefined, undefined, {
 			config(eleventyConfig) {
@@ -92,14 +118,20 @@ class Editor extends HTMLElement {
 				// eleventyConfig.setMarkdownTemplateEngine(false);
 				// eleventyConfig.setHtmlTemplateEngine(false);
 
-				eleventyConfig.setTemplateFormats("md");
-				eleventyConfig.addTemplate("index.md", templateContent);
+				eleventyConfig.addTemplate(filename, templateContent);
 			}
 		});
 		elev.disableLogger();
 
 		let json = await elev.toJSON();
-		return json?.[0]?.content;
+		let [result] = json;
+
+		this.outputFilenameEl.textContent = result?.outputPath;
+		return result?.content;
+	}
+
+	get sourceEl() {
+		return this.querySelector("pre");
 	}
 
 	get inputEl() {
@@ -114,8 +146,12 @@ class Editor extends HTMLElement {
 		return this.shadowRoot.querySelector(".error");
 	}
 
-	getSourceContent() {
-		return this.querySelector("pre")?.innerText;
+	get inputFilenameEl() {
+		return this.shadowRoot.querySelector(".filename--input");
+	}
+
+	get outputFilenameEl() {
+		return this.shadowRoot.querySelector(".filename--output");
 	}
 
 	setOutput(content) {
@@ -130,9 +166,14 @@ class Editor extends HTMLElement {
 		});
 	}
 
+	getInputFilename() {
+		return this.sourceEl?.closest(`[${Editor.attrs.filename}]`)?.getAttribute(Editor.attrs.filename);
+	}
+
 	async render() {
 		try {
-			let content = await this.getRenderedContent(this.inputEl.value);
+			let filename = this.getInputFilename();
+			let content = await this.getRenderedContent(this.inputEl.value, filename);
 			requestAnimationFrame(() => this.setOutput(content));
 			this.errorEl.textContent = "";
 		} catch(e) {
@@ -145,7 +186,8 @@ class Editor extends HTMLElement {
 			return;
 		}
 
-		let sourceContent = this.getSourceContent();
+		// must come before shadowRoot attach
+		let sourceContent = this.sourceEl?.innerText;
 
 		let shadowroot = this.attachShadow({ mode: "open" });
 		let sheet = new CSSStyleSheet();
@@ -153,10 +195,22 @@ class Editor extends HTMLElement {
 		shadowroot.adoptedStyleSheets = [sheet];
 
 		let template = document.createElement("template");
-		template.innerHTML = `<textarea class="input"></textarea><div><output class="output"></output><output class="error"></output></div>`;
+		template.innerHTML = `<div>
+	<textarea class="input"></textarea>
+	<output class="filename filename--input"></output>
+</div>
+<div>
+	<output class="output"></output>
+	<output class="filename filename--output"></output>
+	<output class="error"></output>
+</div>`;
 		shadowroot.appendChild(template.content.cloneNode(true));
 
 		this.inputEl.value = sourceContent;
+		let inputFilename = this.getInputFilename();
+		if(inputFilename) {
+			this.inputFilenameEl.textContent = inputFilename;
+		}
 
 		this.sizeInputToContent();
 		await this.render();

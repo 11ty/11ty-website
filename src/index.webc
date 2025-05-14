@@ -58,7 +58,7 @@ function randomTestimonialLink(testimonials) {
 	<h2>Try Eleventy in the Browser</h2>
 	<is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
 		<eleventy-editor focus>
-			<syntax-highlight language="md">---
+			<syntax-highlight language="md" data-editor-filename="index.md">---
 subject: World
 ---
 # Hello {{ subject }}
