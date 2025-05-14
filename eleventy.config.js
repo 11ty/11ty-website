@@ -286,6 +286,7 @@ export default async function (eleventyConfig) {
 		components: [
 			"./src/_includes/components/*.webc",
 			// "npm:@11ty/is-land/*.webc",
+			// "npm:@11ty/eleventy-plugin-syntaxhighlight/*.webc",
 			"npm:@11ty/eleventy-img/*.webc",
 		],
 	});
