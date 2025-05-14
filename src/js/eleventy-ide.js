@@ -60,6 +60,7 @@ class Ide extends HTMLElement {
 	box-sizing: border-box;
 }
 .output {
+	display: block;
 	border: none;
 	width: 100%;
 	height: 100%;
@@ -127,9 +128,9 @@ class Ide extends HTMLElement {
 	}
 
 	sizeInputToContent() {
-		this.inputEl.style.height = "";
+		this.inputEl.style.minHeight = "";
 		requestAnimationFrame(() => {
-			this.inputEl.style.height = `${this.inputEl.scrollHeight}px`;
+			this.inputEl.style.minHeight = `${this.inputEl.scrollHeight}px`;
 		});
 	}
 
@@ -154,7 +155,7 @@ class Ide extends HTMLElement {
 		shadowroot.adoptedStyleSheets = [sheet];
 
 		let template = document.createElement("template");
-		template.innerHTML = `<textarea class="input"></textarea><div><div class="output"></div><output class="error"></output></div>`;
+		template.innerHTML = `<textarea class="input"></textarea><div><output class="output"></output><output class="error"></output></div>`;
 		shadowroot.appendChild(template.content.cloneNode(true));
 
 		this.inputEl.value = this.getSourceContent();
