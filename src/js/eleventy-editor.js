@@ -47,11 +47,10 @@ class Editor extends HTMLElement {
 }
 :host > * {
 	flex-grow: 1;
-	flex-basis: 14em;
+	flex-basis: 18em;
 }
 :host > :first-child {
 	flex-grow: 2;
-	flex-basis: 16em;
 }
 :host > div {
 	position: relative;
