@@ -35,7 +35,7 @@ npx @11ty/create index.md "# Heading"
 
 <p>Run Eleventy using <code>npx</code>, an <a href="https://www.npmjs.com/">npm</a>-provided command that is bundled with Node.js.</p>
 
-<seven-minute-tabs class="tabs-flush tabs-firstonly" persist sync>
+<seven-minute-tabs class="tabs-flush" persist sync>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#quickstart-run-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#quickstart-run-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>

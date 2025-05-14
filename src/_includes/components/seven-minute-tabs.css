@@ -126,16 +126,15 @@ seven-minute-tabs [role="tabpanel"] .elv-callout {
 }
 
 /* Only show the first tab pre-JS */
-seven-minute-tabs.tabs-firstonly:not(:defined) [role="tablist"] {
+seven-minute-tabs:not(:defined) [role="tabpanel"] ~ [role="tabpanel"] {
 	display: none;
 }
-seven-minute-tabs.tabs-firstonly:not(:defined) [role="tablist"] + [role="tabpanel"] ~ * {
+/* Use :target to make the tabs work without JavaScript */
+seven-minute-tabs:not(:defined):has([role="tabpanel"] ~ [role="tabpanel"]:target) [role="tablist"] + [role="tabpanel"] {
 	display: none;
 }
-@media (min-width: 55em) { /* 880px */
-	seven-minute-tabs.tabs-firstonly:not(:defined) [role="tabpanel"] {
-		border-radius: .3125rem;
-	}
+seven-minute-tabs:not(:defined) [role="tabpanel"] ~ [role="tabpanel"]:target {
+	display: block;
 }
 
 /* Make tab padding slightly smaller at small viewport */
