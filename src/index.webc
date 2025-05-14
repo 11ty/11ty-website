@@ -58,7 +58,7 @@ function randomTestimonialLink(testimonials) {
 	<h2>Try Eleventy in the Browser</h2>
 	<is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
 		<eleventy-editor focus group="group1">
-			<syntax-highlight language="md" data-editor-filename="./index.md">---
+			<syntax-highlight language="markdown" data-editor-filename="./index.md">---
 subject: World
 ---
 # Hello {{ subject }}
@@ -78,7 +78,7 @@ _Built with {{ eleventy.generator }}_</syntax-highlight>
 		</eleventy-editor>
 
 		<eleventy-editor group="group1" html>
-			<syntax-highlight language="md" data-editor-filename="./post1.md">---
+			<syntax-highlight language="markdown" data-editor-filename="./post1.md">---
 title: First blog post
 tags: posts
 permalink: /blog/post1/
@@ -87,7 +87,7 @@ permalink: /blog/post1/
 		</eleventy-editor>
 
 		<eleventy-editor group="group1" html>
-			<syntax-highlight language="md" data-editor-filename="./post2.md">---
+			<syntax-highlight language="markdown" data-editor-filename="./post2.md">---
 title: Second blog post
 tags: posts
 permalink: false
