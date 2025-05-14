@@ -47,7 +47,6 @@ class Editor extends HTMLElement {
 :host > * {
 	flex-grow: 1;
 	flex-basis: 12em;
-	min-height: 10em;
 }
 :host > :first-child {
 	flex-grow: 2;

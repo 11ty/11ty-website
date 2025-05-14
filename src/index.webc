@@ -79,7 +79,7 @@ _Built with {{ eleventy.generator }}_</syntax-highlight>
 
 		<eleventy-editor group="group1">
 			<syntax-highlight language="md" data-editor-filename="./post1.md">---
-title: My first blog post
+title: First blog post
 tags: posts
 ---
 # {{ title }}</syntax-highlight>
@@ -87,7 +87,7 @@ tags: posts
 
 		<eleventy-editor group="group1">
 			<syntax-highlight language="md" data-editor-filename="./post2.md">---
-title: My second blog post
+title: Second blog post
 tags: posts
 ---
 # {{ title }}</syntax-highlight>
