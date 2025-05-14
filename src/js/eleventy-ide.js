@@ -1,6 +1,10 @@
 //! <eleventy-ide>
 const css = String.raw;
 
+// TODO dynamic selection of engine
+// TODO show output files
+// TODO one Eleventy build can run multiple editors??
+
 import { Eleventy } from "/js/eleventy.core.browser.js";
 import { Markdown } from "/js/eleventy.engine-md.browser.js";
 import { Liquid } from "/js/eleventy.engine-liquid.browser.js";
@@ -10,6 +14,10 @@ class Ide extends HTMLElement {
 	#engines = {};
 
 	static classes = {};
+
+	static attrs = {
+		focusOnInit: "autofocus"
+	};
 
 	static tagName = "eleventy-ide";
 
@@ -24,9 +32,9 @@ class Ide extends HTMLElement {
 :host {
 	display: flex;
 	flex-wrap: wrap;
-	border-radius: .5em;
-	border: 1px solid #eee;
+	border-radius: .3em;
 	overflow: clip;
+	margin: 1em -1rem;
 }
 :host:has(:focus, :focus-visible) {
 	outline: 3px solid #03a9f4;
@@ -34,27 +42,30 @@ class Ide extends HTMLElement {
 :host > * {
 	flex-grow: 1;
 	flex-basis: 12em;
-	min-height: 12em;
+	min-height: 10em;
 }
 :host > div {
 	position: relative;
 }
 .input {
+	flex-grow: 2;
 	font-size: inherit;
 	font-family: Roboto Mono, monospace;
 	resize: vertical;
-	padding: .5em;
-	background-color: #222;
+	padding: .75rem .75rem .75rem 1rem;
+	line-height: 1.5;
+	background-color: #272822;
 	color: #fff;
 	border: none;
 	box-sizing: border-box;
-	box-shadow: inset 0 0 .25em 0 #666;
 }
 .output {
 	border: none;
 	width: 100%;
 	height: 100%;
 	padding: .5em;
+	background-color: #f4f4f4;
+	box-sizing: border-box;
 }
 .error {
 	position: absolute;
@@ -77,7 +88,6 @@ class Ide extends HTMLElement {
 				eleventyConfig.addEngine("liquid", Liquid);
 				eleventyConfig.addEngine("md", Markdown);
 
-				// TODO make this default in Core (not Eleventy.js)
 				// eleventyConfig.setMarkdownTemplateEngine(false);
 				// eleventyConfig.setHtmlTemplateEngine(false);
 
@@ -91,6 +101,10 @@ class Ide extends HTMLElement {
 		return json?.[0]?.content;
 	}
 
+	get sourceEl() {
+		return this.querySelector("pre");
+	}
+
 	get inputEl() {
 		return this.shadowRoot.querySelector(".input");
 	}
@@ -101,6 +115,10 @@ class Ide extends HTMLElement {
 
 	get errorEl() {
 		return this.shadowRoot.querySelector(".error");
+	}
+
+	getSourceContent() {
+		return this.sourceEl?.textContent;
 	}
 
 	setOutput(content) {
@@ -139,9 +157,8 @@ class Ide extends HTMLElement {
 		template.innerHTML = `<textarea class="input"></textarea><div><div class="output"></div><output class="error"></output></div>`;
 		shadowroot.appendChild(template.content.cloneNode(true));
 
-		let originalInput = this.querySelector("textarea");
-		this.inputEl.value = originalInput?.value;
-		originalInput.remove();
+		this.inputEl.value = this.getSourceContent();
+		this.sourceEl.remove();
 
 		this.sizeInputToContent();
 		await this.render();
@@ -150,6 +167,10 @@ class Ide extends HTMLElement {
 			this.sizeInputToContent();
 			await this.render();
 		});
+
+		if(this.hasAttribute(Ide.attrs.focusOnInit)) {
+			this.inputEl.focus();
+		}
 	}
 }
 

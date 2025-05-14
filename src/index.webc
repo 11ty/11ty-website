@@ -56,15 +56,17 @@ function randomTestimonialLink(testimonials) {
 
 <div webc:bucket="async">
 	<h2>Try Eleventy in the Browser</h2>
-	<is-land on:visible import="/js/eleventy-ide.js">
-		<eleventy-ide>
-		<textarea>---js
+	<is-land on:interaction import="/js/eleventy-ide.js">
+		<eleventy-ide autofocus tabindex="0">
+		<pre>---js
 // You can type here
 export const subject = "World";
 ---
 # Hello {{ subject }}
 
-Use Markdown or Liquid. Maybe a [link](/).</textarea>
+Try a [link](/).
+
+Built with {{ eleventy.generator }}</pre>
 		</eleventy-ide>
 	</is-land>
 
