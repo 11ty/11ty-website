@@ -81,6 +81,7 @@ _Built with {{ eleventy.generator }}_</syntax-highlight>
 			<syntax-highlight language="md" data-editor-filename="./post1.md">---
 title: First blog post
 tags: posts
+permalink: /blog/post1/
 ---
 # {{ title }}</syntax-highlight>
 		</eleventy-editor>
@@ -89,6 +90,7 @@ tags: posts
 			<syntax-highlight language="md" data-editor-filename="./post2.md">---
 title: Second blog post
 tags: posts
+permalink: false
 ---
 # {{ title }}</syntax-highlight>
 		</eleventy-editor>

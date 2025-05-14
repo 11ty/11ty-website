@@ -46,7 +46,7 @@ class Editor extends HTMLElement {
 }
 :host > * {
 	flex-grow: 1;
-	flex-basis: 12em;
+	flex-basis: 14em;
 }
 :host > :first-child {
 	flex-grow: 2;
@@ -133,6 +133,7 @@ class Editor extends HTMLElement {
 .filename--output {
 	overflow: hidden;
 	text-overflow: ellipsis;
+	max-width: calc(100% - 4rem);
 }
 .viewsource {
 	display: flex;
@@ -235,8 +236,12 @@ class Editor extends HTMLElement {
 		});
 	}
 
+	resetOutput() {
+		this.outputEl.parentNode.style.maxWidth = "";
+	}
+
 	sizeOutput() {
-		this.outputEl.style.maxWidth = `${this.outputEl.offsetWidth}px`;
+		this.outputEl.parentNode.style.maxWidth = `${this.outputEl.parentNode.offsetWidth}px`;
 	}
 
 	getInputContent() {
@@ -286,7 +291,7 @@ class Editor extends HTMLElement {
 <div>
 	<div class="toolbar">
 		<div class="filename filename--output"></div>
-		<label class="viewsource"><input type="checkbox">View Source</label>
+		<label class="viewsource"><input type="checkbox">HTML</label>
 	</div>
 	<output class="output"></output>
 	<output class="error"></output>
@@ -316,7 +321,7 @@ class Editor extends HTMLElement {
 			let [entry] = entries;
 			if(entry?.contentRect?.width) {
 				if(cachedWidth !== entry?.contentRect?.width) {
-					this.outputEl.style.maxWidth = "";
+					this.resetOutput();
 				}
 				cachedWidth = entry?.contentRect?.width;
 			}
