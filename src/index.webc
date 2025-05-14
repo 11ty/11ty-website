@@ -70,9 +70,9 @@ You can type here!
 
 ## Posts
 
-{% for post in collections.posts %}
+{%- for post in collections.posts %}
 - [{{ post.data.title }}]({{ post.url}})
-{% endfor %}
+{%- endfor %}
 
 _Built with {{ eleventy.generator }}_</syntax-highlight>
 		</eleventy-editor>
