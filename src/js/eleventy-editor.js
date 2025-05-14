@@ -1,8 +1,8 @@
-//! <eleventy-ide>
+//! <eleventy-editor>
 const css = String.raw;
 
+// TODO show output files (tabs: Rendered | View Source)
 // TODO dynamic selection of engine
-// TODO show output files
 // TODO one Eleventy build can run multiple editors??
 
 import { Eleventy } from "/js/eleventy.core.browser.js";
@@ -10,16 +10,16 @@ import { Markdown } from "/js/eleventy.engine-md.browser.js";
 import { Liquid } from "/js/eleventy.engine-liquid.browser.js";
 // import { Nunjucks } from "/js/eleventy.engine-njk.browser.js";
 
-class Ide extends HTMLElement {
+class Editor extends HTMLElement {
 	#engines = {};
 
 	static classes = {};
 
 	static attrs = {
-		focusOnInit: "autofocus"
+		focusOnInit: "focus"
 	};
 
-	static tagName = "eleventy-ide";
+	static tagName = "eleventy-editor";
 
 	static define(registry = window.customElements) {
     if(!registry.get(this.tagName)) {
@@ -102,10 +102,6 @@ class Ide extends HTMLElement {
 		return json?.[0]?.content;
 	}
 
-	get sourceEl() {
-		return this.querySelector("pre");
-	}
-
 	get inputEl() {
 		return this.shadowRoot.querySelector(".input");
 	}
@@ -119,7 +115,7 @@ class Ide extends HTMLElement {
 	}
 
 	getSourceContent() {
-		return this.sourceEl?.innerText;
+		return this.querySelector("pre")?.innerText;
 	}
 
 	setOutput(content) {
@@ -153,7 +149,7 @@ class Ide extends HTMLElement {
 
 		let shadowroot = this.attachShadow({ mode: "open" });
 		let sheet = new CSSStyleSheet();
-		sheet.replaceSync(Ide.style);
+		sheet.replaceSync(Editor.style);
 		shadowroot.adoptedStyleSheets = [sheet];
 
 		let template = document.createElement("template");
@@ -161,7 +157,6 @@ class Ide extends HTMLElement {
 		shadowroot.appendChild(template.content.cloneNode(true));
 
 		this.inputEl.value = sourceContent;
-		this.sourceEl.remove();
 
 		this.sizeInputToContent();
 		await this.render();
@@ -171,12 +166,14 @@ class Ide extends HTMLElement {
 			await this.render();
 		});
 
-		if(this.hasAttribute(Ide.attrs.focusOnInit)) {
-			this.inputEl.focus();
+		if(this.hasAttribute(Editor.attrs.focusOnInit)) {
+			this.inputEl.focus({
+				preventScroll: true,
+			});
 		}
 	}
 }
 
 if(!(new URL(import.meta.url)).searchParams.has("nodefine")) {
-  Ide.define();
+  Editor.define();
 }

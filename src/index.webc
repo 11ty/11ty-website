@@ -56,18 +56,20 @@ function randomTestimonialLink(testimonials) {
 
 <div webc:bucket="async">
 	<h2>Try Eleventy in the Browser</h2>
-	<is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-ide.js">
-		<eleventy-ide autofocus tabindex="0">
-			<syntax-highlight language="liquid">---js
-// You can type here
-export const subject = "World";
+	<is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
+		<eleventy-editor focus>
+			<syntax-highlight language="md">---
+subject: World
 ---
 # Hello {{ subject }}
 
-Maybe a markdown [link](/).
+You can type here!
+
+- [Markdown](/docs/languages/markdown/)
+- [Liquid](/docs/languages/liquid/)
 
 Built with {{ eleventy.generator }}</syntax-highlight>
-		</eleventy-ide>
+		</eleventy-editor>
 	</is-land>
 
 	<h2>News from the Blog</h2>
@@ -172,6 +174,7 @@ Built with {{ eleventy.generator }}</syntax-highlight>
 </div>
 
 <!--- Home page CSS (not in WebC); some <script> are included via base.njk --->
+<link rel="stylesheet" href="./_includes/components/editor.css" webc:bucket="async">
 <link rel="stylesheet" href="./_includes/components/popover.css" webc:bucket="async">
 <link rel="stylesheet" href="./_includes/components/avatars.css" webc:bucket="async">
 <link rel="stylesheet" href="./_includes/components/subhed.css" webc:bucket="async">

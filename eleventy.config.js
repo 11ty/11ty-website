@@ -232,6 +232,9 @@ export default async function (eleventyConfig) {
 	/* Plugins */
 	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
 		lineSeparator: "<br>",
+		preAttributes: {
+			tabindex: "0",
+		},
 		init: function ({ Prism }) {
 			Prism.languages.markdown = Prism.languages.extend("markup", {
 				frontmatter: {

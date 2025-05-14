@@ -1,0 +1,21 @@
+is-land--eleventy-editor:hover {
+	--bg: rgba(255,255,255,.2);
+	cursor: pointer;
+}
+is-land--eleventy-editor pre {
+	position: relative;
+	white-space: pre-wrap;
+}
+is-land--eleventy-editor pre:before {
+	pointer-events: none;
+	content: "📝";
+	line-height: 1;
+	font-size: 2em;
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-end;
+	padding: 1rem;
+	background-color: var(--bg);
+}
