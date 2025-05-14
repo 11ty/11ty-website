@@ -57,8 +57,8 @@ function randomTestimonialLink(testimonials) {
 <div webc:bucket="async">
 	<h2>Try Eleventy in the Browser</h2>
 	<is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
-		<eleventy-editor focus>
-			<syntax-highlight language="md" data-editor-filename="index.md">---
+		<eleventy-editor focus group="group1">
+			<syntax-highlight language="md" data-editor-filename="./index.md">---
 subject: World
 ---
 # Hello {{ subject }}
@@ -68,7 +68,29 @@ You can type here!
 - [Markdown](/docs/languages/markdown/)
 - [Liquid](/docs/languages/liquid/)
 
-Built with {{ eleventy.generator }}</syntax-highlight>
+## Posts
+
+{% for post in collections.posts %}
+- [{{ post.data.title }}]({{ post.url}})
+{% endfor %}
+
+_Built with {{ eleventy.generator }}_</syntax-highlight>
+		</eleventy-editor>
+
+		<eleventy-editor group="group1">
+			<syntax-highlight language="md" data-editor-filename="./post1.md">---
+title: My first blog post
+tags: posts
+---
+# {{ title }}</syntax-highlight>
+		</eleventy-editor>
+
+		<eleventy-editor group="group1">
+			<syntax-highlight language="md" data-editor-filename="./post2.md">---
+title: My second blog post
+tags: posts
+---
+# {{ title }}</syntax-highlight>
 		</eleventy-editor>
 	</is-land>
 

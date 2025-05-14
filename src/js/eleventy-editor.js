@@ -1,10 +1,9 @@
 //! <eleventy-editor>
 const css = String.raw;
 
-// TODO show output files (tabs: Rendered | View Source)
 // TODO dynamic selection of engine
-// TODO one Eleventy build can run multiple editors??
 // TODO set input font to match original <pre>
+// TODO viewsource attribute to enable by default
 
 import { Eleventy } from "/js/eleventy.core.browser.js";
 import { Markdown } from "/js/eleventy.engine-md.browser.js";
@@ -12,24 +11,24 @@ import { Liquid } from "/js/eleventy.engine-liquid.browser.js";
 // import { Nunjucks } from "/js/eleventy.engine-njk.browser.js";
 
 class Editor extends HTMLElement {
-	#engines = {};
-
 	static classes = {
 		plaintext: "output--text"
 	};
 
 	static attrs = {
+		groupName: "group",
 		focusOnInit: "focus",
 		filename: "data-editor-filename",
 	};
 
 	static tagName = "eleventy-editor";
+	static preinitTagName = "is-land--eleventy-editor";
 
 	static define(registry = window.customElements) {
-    if(!registry.get(this.tagName)) {
-      registry.define(this.tagName, this);
-    }
-  }
+		if(!registry.get(this.tagName)) {
+			registry.define(this.tagName, this);
+		}
+	}
 
 	static style = css`
 * {
@@ -144,12 +143,27 @@ class Editor extends HTMLElement {
 }
 `;
 
-	async getRenderedContent(templateContent, filename) {
-		if(!filename) {
-			throw new Error("Missing `input` filename for Eleventy editor. Try setting the " + Editor.attrs.filename + " attribute on the <pre> input.");
+	getInputsForGroup(groupName) {
+		let inputs = [];
+		// TODO fix this tag name
+		let sel = `:is(${Editor.tagName}, ${Editor.preinitTagName})${groupName ? `[group="${groupName}"]` : ""}`;
+		let groupEditors = document.documentElement.querySelectorAll(sel);
+
+		for(let editor of groupEditors) {
+			let sourceElement = editor.querySelector(`[${Editor.attrs.filename}]`);
+			inputs.push({
+				editor,
+				inputFilename: sourceElement?.getAttribute(Editor.attrs.filename),
+				// Works even before the element is initialized.
+				content: typeof editor.getInputContent === "function" ? editor.getInputContent() : sourceElement.innerText,
+			});
 		}
 
-		let engines = this.#engines;
+		return inputs;
+	}
+
+	async getEleventyProjectResults(groupName) {
+		let inputs = this.getInputsForGroup(groupName);
 		let elev = new Eleventy(undefined, undefined, {
 			config(eleventyConfig) {
 				eleventyConfig.addEngine("liquid", Liquid);
@@ -157,18 +171,22 @@ class Editor extends HTMLElement {
 
 				// eleventyConfig.setMarkdownTemplateEngine(false);
 				// eleventyConfig.setHtmlTemplateEngine(false);
-
-				eleventyConfig.addTemplate(filename, templateContent);
+				for(let {inputFilename, content} of inputs) {
+					eleventyConfig.addTemplate(inputFilename, content);
+				}
 			}
 		});
 		elev.disableLogger();
 
-		let json = await elev.toJSON();
-		let [result] = json;
+		// render all of the other initialized editors in the group (Eleventy build happens once per group)
+		let results = await elev.toJSON();
+		for(let {editor} of inputs) {
+			if(editor !== this && typeof editor.render === "function") {
+				editor.render(results);
+			}
+		}
 
-		this.outputFilenameEl.innerHTML = typeof result?.outputPath === "string" ? result?.outputPath : "<em>(output skipped)</em>";
-
-		return result?.content;
+		return results;
 	}
 
 	get sourceEl() {
@@ -222,17 +240,28 @@ class Editor extends HTMLElement {
 		this.outputEl.style.maxWidth = `${this.outputEl.offsetWidth}px`;
 	}
 
+	getInputContent() {
+		return this.inputEl?.value;
+	}
+
 	getInputFilename() {
 		return this.sourceEl?.closest(`[${Editor.attrs.filename}]`)?.getAttribute(Editor.attrs.filename);
 	}
 
-	async render() {
+	async render(resultsOverride) {
 		try {
 			let filename = this.getInputFilename();
-			let content = await this.getRenderedContent(this.inputEl.value, filename);
-			requestAnimationFrame(() => this.setOutput(content));
+			let groupName = this.getAttribute(Editor.attrs.groupName);
+			let json = resultsOverride ?? await this.getEleventyProjectResults(groupName);
+			let [result] = json.filter(entry => entry.inputPath === filename);
+
+			this.outputFilenameEl.innerHTML = typeof result?.outputPath === "string" ? result?.outputPath : "<em>(output skipped)</em>";
+
+			requestAnimationFrame(() => this.setOutput(result?.content));
 			this.errorEl.textContent = "";
 		} catch(e) {
+			// Development mode
+			console.error( e );
 			this.errorEl.textContent = e.originalError?.message || e.message;
 		}
 	}
@@ -243,7 +272,7 @@ class Editor extends HTMLElement {
 		}
 
 		// must come before shadowRoot attach
-		let sourceContent = this.sourceEl?.innerText;
+		this.originalSourceContent = this.sourceEl?.innerText;
 
 		let shadowroot = this.attachShadow({ mode: "open" });
 		let sheet = new CSSStyleSheet();
@@ -265,7 +294,7 @@ class Editor extends HTMLElement {
 </div>`;
 		shadowroot.appendChild(template.content.cloneNode(true));
 
-		this.inputEl.value = sourceContent;
+		this.inputEl.value = this.originalSourceContent;
 		let inputFilename = this.getInputFilename();
 		if(inputFilename) {
 			this.inputFilenameEl.textContent = inputFilename;
@@ -304,5 +333,5 @@ class Editor extends HTMLElement {
 }
 
 if(!(new URL(import.meta.url)).searchParams.has("nodefine")) {
-  Editor.define();
+	Editor.define();
 }
