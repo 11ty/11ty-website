@@ -9,6 +9,8 @@ import { Liquid } from "/js/eleventy.engine-liquid.browser.js";
 class Ide extends HTMLElement {
 	#engines = {};
 
+	static classes = {};
+
 	static tagName = "eleventy-ide";
 
 	static define(registry = window.customElements) {
@@ -20,35 +22,51 @@ class Ide extends HTMLElement {
 
 	static style = css`
 :host {
-	position: relative;
 	display: flex;
-	min-height: 12em;
+	flex-wrap: wrap;
+	border-radius: .5em;
+	border: 1px solid #eee;
+	overflow: clip;
+}
+:host:has(:focus, :focus-visible) {
+	outline: 3px solid #03a9f4;
 }
 :host > * {
 	flex-grow: 1;
+	flex-basis: 12em;
+	min-height: 12em;
 }
-textarea {
+:host > div {
+	position: relative;
+}
+.input {
 	font-size: inherit;
 	font-family: Roboto Mono, monospace;
-	min-height: 100%;
 	resize: vertical;
 	padding: .5em;
+	background-color: #222;
+	color: #fff;
+	border: none;
+	box-sizing: border-box;
+	box-shadow: inset 0 0 .25em 0 #666;
 }
-iframe {
-	border: 1px solid #ddd;
+.output {
+	border: none;
+	width: 100%;
+	height: 100%;
+	padding: .5em;
 }
 .error {
 	position: absolute;
-	background-color: rgba(255,0,0,.9);
-	color: #fff;
-}
-.error:not(:empty) {
 	left: 0;
-	right: 0;
 	bottom: 0;
-	translate: 0 100%;
+	right: 0;
+	background-color: rgba(255,0,0,.85);
+	color: #fff;
 	padding: .5em;
-	border-radius: 0 0 .25em .25em;
+}
+.error:empty {
+	display: none;
 }
 `;
 
@@ -67,40 +85,43 @@ iframe {
 				eleventyConfig.addTemplate("index.md", templateContent);
 			}
 		});
+		elev.disableLogger();
 
 		let json = await elev.toJSON();
 		return json?.[0]?.content;
+	}
+
+	get inputEl() {
+		return this.shadowRoot.querySelector(".input");
+	}
+
+	get outputEl() {
+		return this.shadowRoot.querySelector(".output");
 	}
 
 	get errorEl() {
 		return this.shadowRoot.querySelector(".error");
 	}
 
-	get inputEl() {
-		return this.shadowRoot.querySelector("textarea");
+	setOutput(content) {
+		// this.outputEl.setAttribute("srcdoc", content);
+		this.outputEl.innerHTML = content;
 	}
 
-	get outputEl() {
-		return this.shadowRoot.querySelector("iframe");
-	}
-
-	setErrorMessage(msg) {
-		if(msg) {
-			this.classList.add("error");
-			this.errorEl.textContent = msg;
-		} else {
-			this.classList.remove("error");
-			this.errorEl.textContent = "";
-		}
+	sizeInputToContent() {
+		this.inputEl.style.height = "";
+		requestAnimationFrame(() => {
+			this.inputEl.style.height = `${this.inputEl.scrollHeight}px`;
+		});
 	}
 
 	async render() {
 		try {
 			let content = await this.getRenderedContent(this.inputEl.value);
-			requestAnimationFrame(() => this.outputEl.setAttribute("srcdoc", content));
-			this.setErrorMessage();
+			requestAnimationFrame(() => this.setOutput(content));
+			this.errorEl.textContent = "";
 		} catch(e) {
-			this.setErrorMessage( e.originalError?.message );
+			this.errorEl.textContent = e.originalError?.message;
 		}
 	}
 
@@ -115,16 +136,18 @@ iframe {
 		shadowroot.adoptedStyleSheets = [sheet];
 
 		let template = document.createElement("template");
-		template.innerHTML = `<textarea class="editor"></textarea><iframe class="output"></iframe><output class="error"></output>`;
+		template.innerHTML = `<textarea class="input"></textarea><div><div class="output"></div><output class="error"></output></div>`;
 		shadowroot.appendChild(template.content.cloneNode(true));
 
 		let originalInput = this.querySelector("textarea");
 		this.inputEl.value = originalInput?.value;
 		originalInput.remove();
 
+		this.sizeInputToContent();
 		await this.render();
 
 		this.inputEl.addEventListener("input", async () => {
+			this.sizeInputToContent();
 			await this.render();
 		});
 	}
