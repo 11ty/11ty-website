@@ -4,7 +4,6 @@ const css = String.raw;
 // TODO dynamic selection of engine
 // TODO dynamic change input file name
 // TODO set input font to match original <pre>
-// TODO viewsource attribute to enable by default
 
 import { Eleventy } from "/js/eleventy.core.browser.js";
 import { Markdown } from "/js/eleventy.engine-md.browser.js";
@@ -17,6 +16,7 @@ class Editor extends HTMLElement {
 	};
 
 	static attrs = {
+		viewSourceMode: "html",
 		groupName: "group",
 		focusOnInit: "focus",
 		filename: "data-editor-filename",
@@ -312,9 +312,14 @@ class Editor extends HTMLElement {
 			this.sizeInputToContent();
 			await this.render();
 		});
+
 		this.viewSourceEl.addEventListener("input", async () => {
 			await this.render();
 		});
+
+		if(this.hasAttribute(Editor.attrs.viewSourceMode)) {
+			this.viewSourceEl.checked = true;
+		}
 
 		// Remove max-width on resize
 		let cachedWidth;

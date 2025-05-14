@@ -77,7 +77,7 @@ You can type here!
 _Built with {{ eleventy.generator }}_</syntax-highlight>
 		</eleventy-editor>
 
-		<eleventy-editor group="group1">
+		<eleventy-editor group="group1" html>
 			<syntax-highlight language="md" data-editor-filename="./post1.md">---
 title: First blog post
 tags: posts
@@ -86,7 +86,7 @@ permalink: /blog/post1/
 # {{ title }}</syntax-highlight>
 		</eleventy-editor>
 
-		<eleventy-editor group="group1">
+		<eleventy-editor group="group1" html>
 			<syntax-highlight language="md" data-editor-filename="./post2.md">---
 title: Second blog post
 tags: posts
