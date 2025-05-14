@@ -58,7 +58,7 @@ function randomTestimonialLink(testimonials) {
 	<h2>Try Eleventy in the Browser</h2>
 	<is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-ide.js">
 		<eleventy-ide autofocus tabindex="0">
-		<pre>---js
+			<syntax-highlight language="liquid">---js
 // You can type here
 export const subject = "World";
 ---
@@ -66,7 +66,7 @@ export const subject = "World";
 
 Maybe a markdown [link](/).
 
-Built with {{ eleventy.generator }}</pre>
+Built with {{ eleventy.generator }}</syntax-highlight>
 		</eleventy-ide>
 	</is-land>
 

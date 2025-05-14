@@ -119,7 +119,7 @@ class Ide extends HTMLElement {
 	}
 
 	getSourceContent() {
-		return this.sourceEl?.textContent;
+		return this.sourceEl?.innerText;
 	}
 
 	setOutput(content) {
@@ -149,6 +149,8 @@ class Ide extends HTMLElement {
 			return;
 		}
 
+		let sourceContent = this.getSourceContent();
+
 		let shadowroot = this.attachShadow({ mode: "open" });
 		let sheet = new CSSStyleSheet();
 		sheet.replaceSync(Ide.style);
@@ -158,7 +160,7 @@ class Ide extends HTMLElement {
 		template.innerHTML = `<textarea class="input"></textarea><div><output class="output"></output><output class="error"></output></div>`;
 		shadowroot.appendChild(template.content.cloneNode(true));
 
-		this.inputEl.value = this.getSourceContent();
+		this.inputEl.value = sourceContent;
 		this.sourceEl.remove();
 
 		this.sizeInputToContent();
