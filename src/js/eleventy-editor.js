@@ -372,6 +372,7 @@ class Editor extends HTMLElement {
 
 		this.inputEl.addEventListener("input", async () => {
 			this.sizeInputToContent();
+			this.resetOutputSize();
 			await this.render();
 		});
 
