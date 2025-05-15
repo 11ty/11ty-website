@@ -3,7 +3,7 @@ const css = String.raw;
 
 // TODO dynamic selection of engine
 // TODO dynamic change input file name
-// TODO set input font to match original <pre>
+// TODO set input font to match original <pre> font
 
 import { Eleventy } from "/js/eleventy.core.browser.js";
 import { Markdown } from "/js/eleventy.engine-md.browser.js";
@@ -32,8 +32,18 @@ class Editor extends HTMLElement {
 	}
 
 	static style = css`
-* {
-	box-sizing: border-box;
+:host {
+	--outline-color: #03a9f4;
+	--input-background: #272822;
+	--input-color: #fff;
+	--output-background: #f4f4f4;
+	--output-color: #000;
+	--error-background: rgba(206, 0, 0, 0.85);
+	--error-color: #fff;
+	--toolbar-background: #ddd;
+	--toolbar-color: #000;
+	--filename-background: #000;
+	--filename-color: #fff;
 }
 :host {
 	display: flex;
@@ -42,8 +52,8 @@ class Editor extends HTMLElement {
 	overflow: clip;
 	margin: 1em -1rem;
 }
-:host:has(:focus, :focus-visible) {
-	outline: 3px solid #03a9f4;
+:host:has(:focus) {
+	outline: 4px solid var(--outline-color);
 }
 :host > * {
 	flex-grow: 1;
@@ -54,6 +64,9 @@ class Editor extends HTMLElement {
 }
 :host > div {
 	position: relative;
+}
+* {
+	box-sizing: border-box;
 }
 .input,
 .output {
@@ -77,8 +90,8 @@ class Editor extends HTMLElement {
 	overflow: auto;
 }
 .input {
-	background-color: #272822;
-	color: #fff;
+	background-color: var(--input-background);
+	color: var(--input-color);
 	resize: vertical;
 	white-space: pre-wrap;
 }
@@ -86,7 +99,8 @@ class Editor extends HTMLElement {
 	display: block;
 	border: none;
 	padding: .5em;
-	background-color: #f4f4f4;
+	background-color: var(--output-background);
+	color: var(--output-color);
 }
 
 .error {
@@ -94,8 +108,8 @@ class Editor extends HTMLElement {
 	left: 0;
 	right: 0;
 	top: 0;
-	background-color: rgba(206, 0, 0, 0.85);
-	color: #fff;
+	background-color: var(--error-background);
+	color: var(--error-color);
 	padding: .5em;
 	max-height: 100%;
 	overflow: auto;
@@ -115,8 +129,8 @@ class Editor extends HTMLElement {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	color: #000;
-	background-color: rgba(0,0,0,.15);
+	background-color: var(--toolbar-background);
+	color: var(--toolbar-color);
 	white-space: nowrap;
 }
 .filename {
@@ -126,8 +140,8 @@ class Editor extends HTMLElement {
 	position: absolute;
 	top: 0;
 	right: 0;
-	color: #fff;
-	background-color: #000;
+	color: var(--filename-color);
+	background-color: var(--filename-background);
 	border-bottom-left-radius: .5em;
 }
 .filename--output {
