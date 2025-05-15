@@ -1,6 +1,7 @@
 is-land--eleventy-editor {
 	--edit-bg: rgba(0,0,0,.4);
 	--edit-color: #fff;
+	display: block;
 }
 is-land--eleventy-editor:hover {
 	--edit-curtain: rgba(255,255,255,.1);
