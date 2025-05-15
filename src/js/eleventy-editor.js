@@ -306,14 +306,10 @@ html {
 		}
 	}
 
-	#setMinimumHeight(el) {
-		el.style.minHeight = `${el.scrollHeight}px`;
-	}
-
 	sizeInputToContent() {
 		this.inputEl.style.minHeight = "";
 		requestAnimationFrame(() => {
-			this.#setMinimumHeight(this.inputEl);
+			this.inputEl.style.minHeight = `clamp(1.5em, ${this.inputEl.scrollHeight}px, 40vh)`;
 		});
 	}
 
@@ -323,7 +319,7 @@ html {
 	}
 
 	sizeOutput() {
-		this.#setMinimumHeight(this.outputContainerEl);
+		this.outputContainerEl.style.minHeight = `${this.outputContainerEl.scrollHeight}px`;
 		this.outputContainerEl.style.maxWidth = `${this.outputContainerEl.offsetWidth}px`;
 	}
 
