@@ -180,6 +180,12 @@ class Editor extends HTMLElement {
 }
 `;
 
+	static defaultIframeStyle = css`
+html {
+	font-family: system-ui, sans-serif;
+}
+`
+
 	getInputsForGroup(groupName) {
 		let inputs = [];
 		let groupEditors = [this];
@@ -261,11 +267,19 @@ class Editor extends HTMLElement {
 		return this.shadowRoot.querySelector(".viewsource input[type='checkbox']")
 	}
 
+	isIframeOutput() {
+		return this.getAttribute("output") === "iframe";
+	}
+
 	setOutput(content) {
 		this.sizeOutput();
 
-		if(this.viewSourceEl.checked) {
+		if(this.isIframeOutput()) {
+			this.outputEl.setAttribute("srcdoc", `<style>${Editor.defaultIframeStyle}</style>${content}`);
+			this.outputEl.classList.remove(Editor.classes.plaintext);
+		} else if(this.viewSourceEl.checked) {
 			this.outputEl.textContent = content;
+
 			this.outputEl.classList.add(Editor.classes.plaintext);
 		} else {
 			this.outputEl.innerHTML = content;
@@ -333,6 +347,7 @@ class Editor extends HTMLElement {
 		}
 
 		let viewSourceDefault = this.hasAttribute(Editor.attrs.viewSourceMode);
+		let iframeOutput = this.isIframeOutput();
 
 		// must come before shadowRoot attach
 		this.originalSourceContent = this.sourceEl?.innerText;
@@ -351,9 +366,9 @@ class Editor extends HTMLElement {
 	<div class="toolbar">
 		<div class="filename filename--input"></div>
 		<div class="filename filename--output"></div>
-		<label class="viewsource${viewSourceDefault ? " viewsource--disabletoggle" : ""}"><input type="checkbox">HTML</label>
+		<label class="viewsource${viewSourceDefault || iframeOutput ? " viewsource--disabletoggle" : ""}"><input type="checkbox">HTML</label>
 	</div>
-	<output class="output"></output>
+	${iframeOutput ? `<iframe class="output"></iframe>` : `<output class="output"></output>`}
 	<output class="error"></output>
 </div>`;
 		shadowroot.appendChild(template.content.cloneNode(true));
