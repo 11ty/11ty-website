@@ -43,9 +43,7 @@ class Editor extends HTMLElement {
 	--error-background: rgba(206, 0, 0, 0.85);
 	--error-color: #fff;
 	--toolbar-background: #ddd;
-	--toolbar-color: #000;
-	--filename-background: #000;
-	--filename-color: #fff;
+	--toolbar-color: #222;
 }
 @media (prefers-color-scheme: dark) {
 	:host {
@@ -140,17 +138,16 @@ class Editor extends HTMLElement {
 .filename:empty {
 	display: none;
 }
-.filename--input,
 .toolbar {
 	font-size: 0.875rem; /* 14px /16 */
 }
-.filename--input,
 .toolbar,
 .${Editor.classes.plaintext} {
 	font-family: Roboto Mono, monospace;
 	line-height: 1.428571428571; /* 20px /14 */
 }
 .toolbar {
+	--toolbar-gap: .5em;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -159,30 +156,27 @@ class Editor extends HTMLElement {
 	white-space: nowrap;
 }
 .filename {
-	padding: 0.21428571em .5em;
+	padding: 0.21428571em 0;
+	padding-inline-start: var(--toolbar-gap);
 }
-.filename--input {
-	position: absolute;
-	top: 0;
-	right: 0;
-	color: var(--filename-color);
-	background-color: var(--filename-background);
-	border-bottom-left-radius: .5em;
-}
-.filename--input.reverse {
-	top: auto;
-	bottom: 0;
+.filename--input:after {
+	content: "→";
+	padding-inline-start: var(--toolbar-gap);
 }
 .filename--output {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	max-width: calc(100% - 4rem);
+	flex-grow: 999;
 }
 .viewsource {
 	display: flex;
 	align-items: center;
 	font-size: 0.75rem; /* 12px /16 */
-	margin-inline: .5em;
+	padding-inline: var(--toolbar-gap);
+}
+.viewsource--disabletoggle {
+	display: none;
 }
 `;
 
@@ -309,10 +303,10 @@ class Editor extends HTMLElement {
 			let json = resultsOverride ?? await this.getEleventyProjectResults(groupName);
 			let [result] = json.filter(entry => entry.inputPath === filename);
 
-			this.outputFilenameEl.innerHTML = typeof result?.outputPath === "string" ? result?.outputPath : "<em>(output skipped)</em>";
+			this.errorEl.textContent = "";
+			this.outputFilenameEl.innerHTML = typeof result?.outputPath === "string" ? this.cleanFilename(result?.outputPath) : "<em>(skipped)</em>";
 
 			requestAnimationFrame(() => this.setOutput(result?.content));
-			this.errorEl.textContent = "";
 		} catch(e) {
 			// Development mode
 			console.error( e );
@@ -320,10 +314,19 @@ class Editor extends HTMLElement {
 		}
 	}
 
+	cleanFilename(str) {
+		if(str && str.startsWith("./")) {
+			return str.slice(2);
+		}
+		return str;
+	}
+
 	async connectedCallback() {
 		if (!("replaceSync" in CSSStyleSheet.prototype) || this.shadowRoot) {
 			return;
 		}
+
+		let viewSourceDefault = this.hasAttribute(Editor.attrs.viewSourceMode);
 
 		// must come before shadowRoot attach
 		this.originalSourceContent = this.sourceEl?.innerText;
@@ -337,12 +340,12 @@ class Editor extends HTMLElement {
 		let isReversed = this.getAttribute("toolbar-position") === "bottom";
 		template.innerHTML = `<div>
 	<textarea class="input"></textarea>
-	<div class="filename filename--input${isReversed ? " reverse" : ""}"></div>
-</div>
-<div class="output-c${isReversed ? " reverse" : ""}">
+	</div>
+	<div class="output-c${isReversed ? " reverse" : ""}">
 	<div class="toolbar">
+		<div class="filename filename--input"></div>
 		<div class="filename filename--output"></div>
-		<label class="viewsource"><input type="checkbox">HTML</label>
+		<label class="viewsource${viewSourceDefault ? " viewsource--disabletoggle" : ""}"><input type="checkbox">HTML</label>
 	</div>
 	<output class="output"></output>
 	<output class="error"></output>
@@ -352,10 +355,13 @@ class Editor extends HTMLElement {
 		this.inputEl.value = this.originalSourceContent;
 		let inputFilename = this.getInputFilename();
 		if(inputFilename) {
-			this.inputFilenameEl.textContent = inputFilename;
+			this.inputFilenameEl.textContent = this.cleanFilename(inputFilename);
 		}
 
 		this.sizeInputToContent();
+		if(viewSourceDefault) {
+			this.viewSourceEl.checked = true;
+		}
 		await this.render();
 
 		this.inputEl.addEventListener("input", async () => {
@@ -366,10 +372,6 @@ class Editor extends HTMLElement {
 		this.viewSourceEl.addEventListener("input", async () => {
 			await this.render();
 		});
-
-		if(this.hasAttribute(Editor.attrs.viewSourceMode)) {
-			this.viewSourceEl.checked = true;
-		}
 
 		// Remove max-width on resize
 		let cachedWidth;
