@@ -55,8 +55,8 @@ function randomTestimonialLink(testimonials) {
 <quick-start></quick-start>
 
 <div webc:bucket="async">
-	<h2>Try Eleventy in the Browser</h2>
-	<p>If you’d like a bit more to play with, edit one of the three files in this Eleventy project. Try changing the <code>title</code> in front matter on a blog post and watch the list update on the index page!</p>
+	<h2>Try Eleventy in Your Browser</h2>
+	<p>Next try editing one of the three files in this Eleventy project. Change the <code>title</code> in front matter on a blog post and watch the list update on the index page!</p>
 	<is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
 		<eleventy-editor focus group="group1" label="Edit index.md" data-editor-filename="index.md">
 			<syntax-highlight language="liquid">---
