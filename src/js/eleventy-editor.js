@@ -68,7 +68,7 @@ class Editor extends HTMLElement {
 :host > * {
 	flex-grow: 1;
 	min-width: 18em;
-	flex-basis: 50%;
+	flex-basis: 40%;
 }
 :host > div {
 	position: relative;
@@ -86,6 +86,7 @@ class Editor extends HTMLElement {
 .output-c {
 	display: flex;
 	flex-direction: column;
+	flex-basis: 25%;
 }
 .output-c.reverse {
 	flex-direction: column-reverse;
