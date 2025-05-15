@@ -333,7 +333,8 @@ html {
 	}
 
 	static getInputFilename(el) {
-		return el.closest(`[${Editor.attrs.filename}]`)?.getAttribute(Editor.attrs.filename);
+		let filename = el.closest(`[${Editor.attrs.filename}]`)?.getAttribute(Editor.attrs.filename);
+		return (!filename.startsWith("./") ? "./" : "") + filename;
 	}
 
 	getInputFilename() {

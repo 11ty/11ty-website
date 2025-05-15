@@ -12,11 +12,13 @@ eleventyNavigation:
 
 You can customize the default location of templates to the output directory (or disable writing a file to disk entirely) using Eleventy’s permalinks feature.
 
-## Default Behavior
+## Default Output
 
 <div id="default-input/output-examples"></div>
 
-Here’s a few examples of how it works by default (assuming the default output directory: `_site`):
+We’ll start with a few simple examples of the default permalink behavior, showing where input files are written to the output directory (default: `_site`):
+
+### `index` files
 
 <table>
     <tbody>
@@ -36,7 +38,7 @@ Here’s a few examples of how it works by default (assuming the default output 
 </table>
 
 <is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
-	<eleventy-editor html toolbar-position="bottom" data-editor-filename="./index.liquid">
+	<eleventy-editor html toolbar-position="bottom" data-editor-filename="index.liquid">
 {% highlight "liquid" %}{% raw %}
 Filename   index.liquid
 Writes to  {{ page.outputPath }}
@@ -44,6 +46,8 @@ With URL   {{ page.url }}
 {% endraw %}{% endhighlight %}
 	</eleventy-editor>
 </is-land>
+
+### Not-`index` files
 
 <table>
     <tbody>
@@ -63,7 +67,7 @@ With URL   {{ page.url }}
 </table>
 
 <is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
-	<eleventy-editor html toolbar-position="bottom" data-editor-filename="./template.liquid">
+	<eleventy-editor html toolbar-position="bottom" data-editor-filename="template.liquid">
 {% highlight "liquid" %}{% raw %}
 Filename   template.liquid
 Writes to  {{ page.outputPath }}
@@ -71,6 +75,8 @@ With URL   {{ page.url }}
 {% endraw %}{% endhighlight %}
 	</eleventy-editor>
 </is-land>
+
+### Deeper directories
 
 <table>
     <tbody>
@@ -90,7 +96,7 @@ With URL   {{ page.url }}
 </table>
 
 <is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
-	<eleventy-editor html toolbar-position="bottom" data-editor-filename="./subdir/template.liquid">
+	<eleventy-editor html toolbar-position="bottom" data-editor-filename="subdir/template.liquid">
 {% highlight "liquid" %}{% raw %}
 Filename   subdir/template.liquid
 Writes to  {{ page.outputPath }}
@@ -98,6 +104,8 @@ With URL   {{ page.url }}
 {% endraw %}{% endhighlight %}
 	</eleventy-editor>
 </is-land>
+
+### File name is the same as the Directory name
 
 <table>
     <tbody>
@@ -117,7 +125,7 @@ With URL   {{ page.url }}
 </table>
 
 <is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
-	<eleventy-editor html toolbar-position="bottom" data-editor-filename="./subdir/template/template.liquid">
+	<eleventy-editor html toolbar-position="bottom" data-editor-filename="subdir/template/template.liquid">
 {% highlight "liquid" %}{% raw %}
 Filename   subdir/template/template.liquid
 Writes to  {{ page.outputPath }}
@@ -126,8 +134,10 @@ With URL   {{ page.url }}
 	</eleventy-editor>
 </is-land>
 
+is the same as:
+
 <is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
-	<eleventy-editor html toolbar-position="bottom" data-editor-filename="./subdir/template/index.liquid">
+	<eleventy-editor html toolbar-position="bottom" data-editor-filename="subdir/template/index.liquid">
 {% highlight "liquid" %}{% raw %}
 Filename   subdir/template/index.liquid
 Writes to  {{ page.outputPath }}
@@ -147,12 +157,12 @@ Eleventy automatically helps you make sure that [Cool URIs don’t change](https
 
 <div id="remapping-output-(permalink)"></div>
 
-To remap your template’s output to a different path than the default, use the `permalink` key in the template’s front matter. If a subdirectory does not exist, it will be created.
+To remap your template’s output to a different path than the default, use the `permalink` key in the template’s front matter (or elsewhere in the [Data Cascade](/docs/data-cascade.md)). If a subdirectory does not exist, it will be created.
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="./index.md">
-{% highlight "markdown" %}{% raw %}
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.html">
+{% highlight "html" %}{% raw %}
 ---
 permalink: this-is-a-new-path/subdirectory/testing/
 ---
@@ -164,8 +174,8 @@ The above is the same as:
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="./index.md">
-{% highlight "markdown" %}{% raw %}
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.html">
+{% highlight "html" %}{% raw %}
 ---
 permalink: this-is-a-new-path/subdirectory/testing/index.html
 ---
@@ -180,11 +190,13 @@ Fear not: if multiple input files _attempt to write to the same output location_
 
 <div id="permalink-false"></div>
 
-If you set the `permalink` value to be `false`, this will disable writing the file to disk in your output folder. The file will still be processed normally (and present in collections, with its [`url` and `outputPath` properties](/docs/data-eleventy-supplied/) set to `false`) but will not be available in your output directory as a standalone template.
+If you set the `permalink` value to be `false`, this will disable writing the file to disk in the output folder (typically `_site`).
+
+The file will still be processed and rendered for use in [collections](/docs/collections.md) (with [`url` and `outputPath` properties](/docs/data-eleventy-supplied/) set to `false`) but will not be available in your output directory as a standalone file.
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="./index.md">
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.html">
 {% highlight "markdown" %}{% raw %}
 ---
 permalink: false
@@ -200,10 +212,10 @@ You may use data variables here (and template syntax, too). These will be parsed
 
 For example:
 
-{% codetitle "YAML Front Matter using Liquid, Nunjucks", "Syntax" %}
+{% codetitle "YAML Front Matter using Liquid or Nunjucks", "Syntax" %}
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="./index.md">
-{% highlight "markdown" %}{% raw %}
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.liquid">
+{% highlight "liquid" %}{% raw %}
 ---
 title: This is a New Path
 permalink: "subdir/{{ title | slugify }}/index.html"
@@ -221,8 +233,8 @@ Here’s another example using Liquid’s <code>date</code> filter:
 
 {% codetitle "YAML Front Matter using Liquid", "Syntax" %}
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="./index.md">
-{% highlight "markdown" %}{% raw %}
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.liquid">
+{% highlight "liquid" %}{% raw %}
 ---
 date: "2016-01-01T06:00-06:00"
 permalink: "/{{ page.date | date: '%Y/%m/%d' }}/index.html"
@@ -240,8 +252,8 @@ Writes to `_site/2016/01/01/index.html`. There are a variety of ways that the pa
 
 {% codetitle "YAML Front Matter using Liquid", "Syntax" %}
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="./index.md">
-{% highlight "markdown" %}{% raw %}
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.liquid">
+{% highlight "liquid" %}{% raw %}
 ---
 permalink: "{{ page.filePathStem }}.html"
 ---
@@ -252,8 +264,8 @@ The error message might look like `can not read a block mapping entry; a multili
 
 If you run the following code you’ll see the error:
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="./index.md">
-{% highlight "markdown" %}{% raw %}
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.liquid">
+{% highlight "liquid" %}{% raw %}
 ---
 permalink: {{ page.filePathStem }}.html
 ---
@@ -262,14 +274,14 @@ permalink: {{ page.filePathStem }}.html
 
 ### Custom File Formats
 
-You can change the file extension in the permalink to output to any file type. For example:
+You can change the permalink to output to _any file extension_! For example:
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="./index.liquid">
-{% highlight "markdown" %}{% raw %}
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.liquid">
+{% highlight "liquid" %}{% raw %}
 ---
 permalink: index.json
 ---
-{{ page | json }}
+{{ page | json: 2 }}
 {% endraw %}{% endhighlight %}
 </eleventy-editor></is-land></div>
 
@@ -289,7 +301,7 @@ If you leave off the file name **and** forget the trailing slash on your permali
 
 This may also cause local development issues if you later attempt to write to a subdirectory of the same name (anything inside `/resource/`).
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="./index.html">
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.html">
 {% highlight "markdown" %}{% raw %}
 ---
 # ✅ OK
@@ -298,7 +310,7 @@ permalink: /resource/
 {% endraw %}{% endhighlight %}
 </eleventy-editor></is-land></div>
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="./index.html">
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.html">
 {% highlight "markdown" %}{% raw %}
 ---
 # ✅ OK (same as above)
@@ -307,7 +319,7 @@ permalink: /resource/index.html
 {% endraw %}{% endhighlight %}
 </eleventy-editor></is-land></div>
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="./index.html">
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.html">
 {% highlight "markdown" %}{% raw %}
 ---
 # ⛔️ Throws an error.
@@ -320,7 +332,7 @@ permalink: /resource
 
 {% addedin "3.0.0-beta.2" %}Eleventy will throw an error if you attempt to write to a file without a file extension. This is not always an error (think `_redirects` on Netlify), so you can opt out of this feature by setting `eleventyAllowMissingExtension: true` somewhere in your data cascade (front matter, directory data file, etc) or disable the error messaging globally.
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="./index.html">
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.html">
 {% highlight "markdown" %}{% raw %}
 ---
 # ⚠️ Careful!
@@ -342,7 +354,7 @@ export default function(eleventyConfig) {
 {% include "snippets/configDefinition.njk" %}
 {% set tabIdOverride = "" %}
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="./index.html" config="#permalink-configure-error-reporting-jsesm">
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.html" config="#permalink-configure-error-reporting-jsesm">
 {% highlight "markdown" %}{% raw %}
 ---
 # ⚠️ Careful!
@@ -379,7 +391,7 @@ export default function(eleventyConfig) {
 
 Try out the above configuration with the following template:
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html toolbar-position="bottom" data-editor-filename="./template.html" config="#permalink-remove-trailing-slashes-jsesm">
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html toolbar-position="bottom" data-editor-filename="template.html" config="#permalink-remove-trailing-slashes-jsesm">
 {% highlight "markdown" %}{% raw %}
 {{ page.url }}
 {% endraw %}{% endhighlight %}
@@ -387,7 +399,7 @@ Try out the above configuration with the following template:
 
 Compared to the default behavior:
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html toolbar-position="bottom" data-editor-filename="./template.html">
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html toolbar-position="bottom" data-editor-filename="template.html">
 {% highlight "markdown" %}{% raw %}
 {{ page.url }}
 {% endraw %}{% endhighlight %}
@@ -463,7 +475,7 @@ export default function (eleventyConfig) {
 {% include "snippets/configDefinition.njk" %}
 {% set tabIdOverride = "" %}
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html toolbar-position="bottom" data-editor-filename="./about.es.html" config="#permalink-url-transform-jsesm">
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html toolbar-position="bottom" data-editor-filename="about.es.html" config="#permalink-url-transform-jsesm">
 {% highlight "markdown" %}{% raw %}
 ---
 permalink: about.es.html
@@ -481,8 +493,8 @@ Some template syntaxes are nicer than others and you may want to opt-out of the 
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html toolbar-position="bottom" data-editor-filename="./index.md">
-{% highlight "markdown" %}{% raw %}
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html toolbar-position="bottom" data-editor-filename="index.md">
+{% highlight "yaml" %}{% raw %}
 ---
 permalink: "/this-will-be-a-string-without-{{templating}}/"
 dynamicPermalink: false
@@ -504,8 +516,8 @@ export default function (eleventyConfig) {
 {% include "snippets/configDefinition.njk" %}
 {% set tabIdOverride = "" %}
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html toolbar-position="bottom" data-editor-filename="./index.md" config="#permalink-dynamic-permalinks-jsesm">
-{% highlight "markdown" %}{% raw %}
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html toolbar-position="bottom" data-editor-filename="index.md" config="#permalink-dynamic-permalinks-jsesm">
+{% highlight "yaml" %}{% raw %}
 ---
 permalink: "/this-will-be-a-string-without-{{templating}}/"
 ---
@@ -519,8 +531,8 @@ To remap your template’s output to a directory independent of the output direc
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html toolbar-position="bottom" data-editor-filename="./index.md">
-{% highlight "markdown" %}{% raw %}
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html toolbar-position="bottom" data-editor-filename="index.html">
+{% highlight "yaml" %}{% raw %}
 ---
 permalink: _includes/index.html
 permalinkBypassOutputDir: true

@@ -228,8 +228,8 @@ If you’d like to experiment further with [template file syntax](/docs/language
 </template>
 
 <is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
-	<eleventy-editor focus>
-		<syntax-highlight language="markdown" data-editor-filename="./README.md">
+	<eleventy-editor focus label="Edit README.md" data-editor-filename="README.md">
+		<syntax-highlight language="markdown">
 ---
 title: Heading
 ---

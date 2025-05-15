@@ -1,6 +1,6 @@
 is-land--eleventy-editor {
 	--edit-bg: rgba(0,0,0,.4);
-	--edit-color: inherit;
+	--edit-color: #fff;
 }
 is-land--eleventy-editor:hover {
 	--edit-curtain: rgba(255,255,255,.1);
@@ -11,12 +11,13 @@ is-land--eleventy-editor:hover {
 is-land--eleventy-editor:hover pre {
 	outline: 4px solid var(--edit-bg);
 }
+is-land--eleventy-editor,
 is-land--eleventy-editor pre {
 	position: relative;
-	white-space: pre-wrap;
+	/* white-space: pre-wrap; */
 }
 is-land--eleventy-editor pre:before,
-is-land--eleventy-editor pre:after {
+is-land--eleventy-editor:after {
 	pointer-events: none;
 	position: absolute;
 	display: flex;
@@ -28,16 +29,22 @@ is-land--eleventy-editor pre:before {
 	inset: 0;
 	background-color: var(--edit-curtain);
 }
-is-land--eleventy-editor pre:after {
+is-land--eleventy-editor:after {
 	content: "Run";
-	line-height: 1;
-	text-transform: uppercase;
-	padding: .75rem;
 	top: 0;
-	right: 0;
+	right: -1rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	line-height: 1;
+	padding: .75rem;
 	background-color: var(--edit-bg);
 	color: var(--edit-color);
+	border-top-right-radius: .3em;
 	border-bottom-left-radius: .3em;
+}
+is-land--eleventy-editor[label]:after {
+	content: attr(label);
+	text-transform: none;
 }
 eleventy-editor {
 	margin: 1em -1rem;
