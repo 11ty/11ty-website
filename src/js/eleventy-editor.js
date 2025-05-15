@@ -1,9 +1,10 @@
 //! <eleventy-editor>
 const css = String.raw;
 
+// TODO set input font to match original <pre> font
 // TODO dynamic selection of engine
 // TODO dynamic change input file name
-// TODO set input font to match original <pre> font
+// TODO add option to edit global data files
 
 import { Eleventy } from "/js/eleventy.core.browser.js";
 import { Markdown } from "/js/eleventy.engine-md.browser.js";
@@ -45,6 +46,16 @@ class Editor extends HTMLElement {
 	--filename-background: #000;
 	--filename-color: #fff;
 }
+@media (prefers-color-scheme: dark) {
+	:host {
+		--input-background: #000;
+		--output-background: #353535;
+		--output-color: #fff;
+		--toolbar-background: #111;
+		--toolbar-color: #fff;
+	}
+}
+
 :host {
 	display: flex;
 	flex-wrap: wrap;
@@ -67,6 +78,9 @@ class Editor extends HTMLElement {
 }
 * {
 	box-sizing: border-box;
+}
+:any-link {
+	color: inherit;
 }
 .input,
 .output {
