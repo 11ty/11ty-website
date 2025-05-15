@@ -29,7 +29,7 @@ is-land--eleventy-editor pre:before {
 	background-color: var(--edit-curtain);
 }
 is-land--eleventy-editor pre:after {
-	content: "Edit";
+	content: "Run";
 	line-height: 1;
 	text-transform: uppercase;
 	padding: .75rem;
@@ -38,6 +38,9 @@ is-land--eleventy-editor pre:after {
 	background-color: var(--edit-bg);
 	color: var(--edit-color);
 	border-bottom-left-radius: .3em;
+}
+eleventy-editor {
+	margin: 1em -1rem;
 }
 @media (max-width: 54.9375em) { /* 879px */
 	eleventy-editor {

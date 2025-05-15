@@ -17,6 +17,7 @@ class Editor extends HTMLElement {
 	};
 
 	static attrs = {
+		config: "config",
 		viewSourceMode: "html",
 		groupName: "group",
 		focusOnInit: "focus",
@@ -60,7 +61,6 @@ class Editor extends HTMLElement {
 	flex-wrap: wrap;
 	border-radius: var(--border-radius);
 	overflow: clip;
-	margin: 1em -1rem;
 }
 :host:has(:focus) {
 	outline: 4px solid var(--outline-color);
@@ -135,11 +135,9 @@ class Editor extends HTMLElement {
 	overflow: auto;
 }
 .error:empty,
+.output:empty,
 .filename:empty {
 	display: none;
-}
-.toolbar {
-	font-size: 0.875rem; /* 14px /16 */
 }
 .toolbar,
 .${Editor.classes.plaintext} {
@@ -149,11 +147,14 @@ class Editor extends HTMLElement {
 .toolbar {
 	--toolbar-gap: .5em;
 	display: flex;
+	font-size: 0.875rem; /* 14px /16 */
 	justify-content: space-between;
 	align-items: center;
 	background-color: var(--toolbar-background);
 	color: var(--toolbar-color);
-	white-space: nowrap;
+}
+.output-c:has(.output:empty) .toolbar {
+	flex-basis: 100%;
 }
 .filename {
 	padding: 0.21428571em 0;
@@ -168,6 +169,7 @@ class Editor extends HTMLElement {
 	text-overflow: ellipsis;
 	max-width: calc(100% - 4rem);
 	flex-grow: 999;
+	padding-inline-end: var(--toolbar-gap);
 }
 .viewsource {
 	display: flex;
@@ -186,6 +188,19 @@ html {
 }
 `
 
+	async getConfiguration() {
+		let configSelector = this.getAttribute("config");
+		if(!configSelector) {
+			return;
+		}
+		let configEl = document.querySelector(configSelector);
+		if(!configEl) {
+			return;
+		}
+		let target = `data:text/javascript;charset=utf-8,${encodeURIComponent(configEl.innerText)}`;
+		return import(target).then(mod => mod.default);
+	}
+
 	getInputsForGroup(groupName) {
 		let inputs = [];
 		let groupEditors = [this];
@@ -195,10 +210,10 @@ html {
 		}
 
 		for(let editor of groupEditors) {
-			let sourceElement = editor.querySelector(`[${Editor.attrs.filename}]`);
+			let sourceElement = editor.querySelector("pre");
 			inputs.push({
 				editor,
-				inputFilename: sourceElement?.getAttribute(Editor.attrs.filename),
+				inputFilename: Editor.getInputFilename(sourceElement),
 				// Works even before the element is initialized.
 				content: typeof editor.getInputContent === "function" ? editor.getInputContent() : sourceElement.innerText,
 			});
@@ -209,8 +224,13 @@ html {
 
 	async getEleventyProjectResults(groupName) {
 		let inputs = this.getInputsForGroup(groupName);
+		let configFn = await this.getConfiguration();
 		let elev = new Eleventy(undefined, undefined, {
-			config(eleventyConfig) {
+			async config(eleventyConfig) {
+				if(configFn) {
+					await configFn(eleventyConfig);
+				}
+
 				eleventyConfig.addEngine("liquid", Liquid);
 				eleventyConfig.addEngine("md", Markdown);
 
@@ -312,8 +332,14 @@ html {
 		return this.inputEl?.value;
 	}
 
+	static getInputFilename(el) {
+		return el.closest(`[${Editor.attrs.filename}]`)?.getAttribute(Editor.attrs.filename);
+	}
+
 	getInputFilename() {
-		return this.sourceEl?.closest(`[${Editor.attrs.filename}]`)?.getAttribute(Editor.attrs.filename);
+		if(this.sourceEl) {
+			return Editor.getInputFilename(this.sourceEl);
+		}
 	}
 
 	async render(resultsOverride) {
@@ -329,7 +355,7 @@ html {
 			requestAnimationFrame(() => this.setOutput(result?.content));
 		} catch(e) {
 			// Development mode
-			console.error( e );
+			console.error( e.originalError || e );
 			this.errorEl.textContent = e.originalError?.message || e.message;
 		}
 	}

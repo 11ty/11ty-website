@@ -70,11 +70,16 @@ yarn dlx @11ty/eleventy --serve
 </cli-eleventy-output>
 
 <p>The <code>--serve</code> option also starts a <a href="/docs/dev-server/">local development server</a>. Open up <code>http://localhost:8080/</code> in your favorite web browser to view your web site.</p>
+<p>If you’d like to experiment further with syntax, edit the following sample <code>index.md</code> file in your browser. <a href="/docs/data-frontmatter/">Front Matter</a>, <a href="/docs/languages/liquid/">Liquid</a> and <a href="/docs/languages/markdown/">Markdown</a> syntax are in use.</p>
 
 <is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
-	<eleventy-editor focus toolbar-position="bottom">
-		<syntax-highlight language="markdown" data-editor-filename="./index.md"><!-- Edit me! -->
-# Heading</syntax-highlight>
+	<eleventy-editor focus>
+		<syntax-highlight language="markdown" data-editor-filename="./index.md">
+---
+title: Heading
+---
+# {{ title }}
+		</syntax-highlight>
 	</eleventy-editor>
 </is-land>
 
