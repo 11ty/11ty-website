@@ -98,7 +98,7 @@ class Editor extends HTMLElement {
 	flex-grow: 999;
 }
 .input,
-.output--text {
+.${Editor.classes.plaintext} {
 	display: flex;
 	font-size: inherit;
 	font-family: Roboto Mono, monospace;
@@ -106,7 +106,7 @@ class Editor extends HTMLElement {
 	line-height: 1.5;
 	border: none;
 }
-.output--text {
+.${Editor.classes.plaintext} {
 	white-space: pre;
 	overflow: auto;
 }
@@ -146,7 +146,7 @@ class Editor extends HTMLElement {
 }
 .filename--input,
 .toolbar,
-.output--text {
+.${Editor.classes.plaintext} {
 	font-family: Roboto Mono, monospace;
 	line-height: 1.428571428571; /* 20px /14 */
 }
