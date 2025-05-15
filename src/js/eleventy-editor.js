@@ -34,6 +34,7 @@ class Editor extends HTMLElement {
 
 	static style = css`
 :host {
+	--border-radius: .3em;
 	--outline-color: #03a9f4;
 	--input-background: #272822;
 	--input-color: #fff;
@@ -59,7 +60,7 @@ class Editor extends HTMLElement {
 :host {
 	display: flex;
 	flex-wrap: wrap;
-	border-radius: .3em;
+	border-radius: var(--border-radius);
 	overflow: clip;
 	margin: 1em -1rem;
 }
@@ -83,12 +84,18 @@ class Editor extends HTMLElement {
 	color: inherit;
 }
 .input,
-.output {
+.output-c {
 	width: 100%;
-	height: 100%;
+}
+.output-c {
+	display: flex;
+	flex-direction: column;
+}
+.output-c.reverse {
+	flex-direction: column-reverse;
 }
 .output {
-	height: calc(100% - 1.625rem);
+	flex-grow: 999;
 }
 .input,
 .output--text {
@@ -104,6 +111,7 @@ class Editor extends HTMLElement {
 	overflow: auto;
 }
 .input {
+	height: 100%;
 	background-color: var(--input-background);
 	color: var(--input-color);
 	resize: vertical;
@@ -133,9 +141,12 @@ class Editor extends HTMLElement {
 	display: none;
 }
 .filename--input,
+.toolbar {
+	font-size: 0.875rem; /* 14px /16 */
+}
+.filename--input,
 .toolbar,
 .output--text {
-	font-size: 0.875rem; /* 14px /16 */
 	font-family: Roboto Mono, monospace;
 	line-height: 1.428571428571; /* 20px /14 */
 }
@@ -158,6 +169,10 @@ class Editor extends HTMLElement {
 	background-color: var(--filename-background);
 	border-bottom-left-radius: .5em;
 }
+.filename--input.reverse {
+	top: auto;
+	bottom: 0;
+}
 .filename--output {
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -173,9 +188,11 @@ class Editor extends HTMLElement {
 
 	getInputsForGroup(groupName) {
 		let inputs = [];
-		// TODO fix this tag name
-		let sel = `:is(${Editor.tagName}, ${Editor.preinitTagName})${groupName ? `[group="${groupName}"]` : ""}`;
-		let groupEditors = document.documentElement.querySelectorAll(sel);
+		let groupEditors = [this];
+		if(groupName) {
+			let sel = `:is(${Editor.tagName}, ${Editor.preinitTagName})${groupName ? `[group="${groupName}"]` : ""}`;
+			groupEditors = document.documentElement.querySelectorAll(sel);
+		}
 
 		for(let editor of groupEditors) {
 			let sourceElement = editor.querySelector(`[${Editor.attrs.filename}]`);
@@ -199,6 +216,7 @@ class Editor extends HTMLElement {
 
 				// eleventyConfig.setMarkdownTemplateEngine(false);
 				// eleventyConfig.setHtmlTemplateEngine(false);
+
 				for(let {inputFilename, content} of inputs) {
 					eleventyConfig.addTemplate(inputFilename, content);
 				}
@@ -227,6 +245,10 @@ class Editor extends HTMLElement {
 
 	get outputEl() {
 		return this.shadowRoot.querySelector(".output");
+	}
+
+	get outputContainerEl() {
+		return this.shadowRoot.querySelector(".output-c");
 	}
 
 	get errorEl() {
@@ -265,11 +287,11 @@ class Editor extends HTMLElement {
 	}
 
 	resetOutput() {
-		this.outputEl.parentNode.style.maxWidth = "";
+		this.outputContainerEl.style.maxWidth = "";
 	}
 
 	sizeOutput() {
-		this.outputEl.parentNode.style.maxWidth = `${this.outputEl.parentNode.offsetWidth}px`;
+		this.outputContainerEl.style.maxWidth = `${this.outputContainerEl.offsetWidth}px`;
 	}
 
 	getInputContent() {
@@ -312,11 +334,12 @@ class Editor extends HTMLElement {
 		shadowroot.adoptedStyleSheets = [sheet];
 
 		let template = document.createElement("template");
+		let isReversed = this.getAttribute("toolbar-position") === "bottom";
 		template.innerHTML = `<div>
 	<textarea class="input"></textarea>
-	<div class="filename filename--input"></div>
+	<div class="filename filename--input${isReversed ? " reverse" : ""}"></div>
 </div>
-<div>
+<div class="output-c${isReversed ? " reverse" : ""}">
 	<div class="toolbar">
 		<div class="filename filename--output"></div>
 		<label class="viewsource"><input type="checkbox">HTML</label>
