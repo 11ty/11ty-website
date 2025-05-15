@@ -273,18 +273,24 @@ class Editor extends HTMLElement {
 		}
 	}
 
+	#setMinimumHeight(el) {
+		el.style.minHeight = `${el.scrollHeight}px`;
+	}
+
 	sizeInputToContent() {
 		this.inputEl.style.minHeight = "";
 		requestAnimationFrame(() => {
-			this.inputEl.style.minHeight = `${this.inputEl.scrollHeight}px`;
+			this.#setMinimumHeight(this.inputEl);
 		});
 	}
 
-	resetOutput() {
+	resetOutputSize() {
+		this.outputContainerEl.style.minHeight = "";
 		this.outputContainerEl.style.maxWidth = "";
 	}
 
 	sizeOutput() {
+		this.#setMinimumHeight(this.outputContainerEl);
 		this.outputContainerEl.style.maxWidth = `${this.outputContainerEl.offsetWidth}px`;
 	}
 
@@ -379,7 +385,7 @@ class Editor extends HTMLElement {
 			let [entry] = entries;
 			if(entry?.contentRect?.width) {
 				if(cachedWidth !== entry?.contentRect?.width) {
-					this.resetOutput();
+					this.resetOutputSize();
 				}
 				cachedWidth = entry?.contentRect?.width;
 			}

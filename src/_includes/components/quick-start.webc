@@ -72,7 +72,7 @@ yarn dlx @11ty/eleventy --serve
 <p>The <code>--serve</code> option also starts a <a href="/docs/dev-server/">local development server</a>. Open up <code>http://localhost:8080/</code> in your favorite web browser to view your web site.</p>
 
 <is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
-	<eleventy-editor focus html toolbar-position="bottom">
+	<eleventy-editor focus toolbar-position="bottom">
 		<syntax-highlight language="markdown" data-editor-filename="./index.md"><!-- Edit me! -->
 # Heading</syntax-highlight>
 	</eleventy-editor>
