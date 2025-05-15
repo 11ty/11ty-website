@@ -8,9 +8,9 @@ is-land--eleventy-editor pre {
 }
 is-land--eleventy-editor pre:before {
 	pointer-events: none;
-	content: "📝";
+	content: "Edit 📝";
 	line-height: 1;
-	font-size: 1.5em;
+	text-transform: uppercase;
 	position: absolute;
 	inset: 0;
 	display: flex;
