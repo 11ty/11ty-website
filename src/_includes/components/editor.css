@@ -1,23 +1,43 @@
+is-land--eleventy-editor {
+	--edit-bg: rgba(0,0,0,.4);
+	--edit-color: inherit;
+}
 is-land--eleventy-editor:hover {
-	--bg: rgba(255,255,255,.2);
+	--edit-curtain: rgba(255,255,255,.1);
+	--edit-bg: rgb(255, 216, 72);
+	--edit-color: #000;
 	cursor: pointer;
+}
+is-land--eleventy-editor:hover pre {
+	outline: 4px solid var(--edit-bg);
 }
 is-land--eleventy-editor pre {
 	position: relative;
 	white-space: pre-wrap;
 }
-is-land--eleventy-editor pre:before {
+is-land--eleventy-editor pre:before,
+is-land--eleventy-editor pre:after {
 	pointer-events: none;
-	content: "Edit 📝";
-	line-height: 1;
-	text-transform: uppercase;
 	position: absolute;
-	inset: 0;
 	display: flex;
 	align-items: flex-start;
 	justify-content: flex-end;
+}
+is-land--eleventy-editor pre:before {
+	content: "";
+	inset: 0;
+	background-color: var(--edit-curtain);
+}
+is-land--eleventy-editor pre:after {
+	content: "Edit";
+	line-height: 1;
+	text-transform: uppercase;
 	padding: .75rem;
-	background-color: var(--bg);
+	top: 0;
+	right: 0;
+	background-color: var(--edit-bg);
+	color: var(--edit-color);
+	border-bottom-left-radius: .3em;
 }
 @media (max-width: 54.9375em) { /* 879px */
 	eleventy-editor {

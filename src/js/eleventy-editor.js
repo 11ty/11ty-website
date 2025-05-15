@@ -35,7 +35,7 @@ class Editor extends HTMLElement {
 	static style = css`
 :host {
 	--border-radius: .3em;
-	--outline-color: #03a9f4;
+	--outline-color: rgba(255, 216, 72, .9);
 	--input-background: #272822;
 	--input-color: #fff;
 	--output-background: #f4f4f4;
