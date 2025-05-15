@@ -14,7 +14,9 @@ is-land--eleventy-editor:hover pre {
 is-land--eleventy-editor,
 is-land--eleventy-editor pre {
 	position: relative;
-	/* white-space: pre-wrap; */
+}
+is-land--eleventy-editor pre {
+	max-height: 45vh;
 }
 is-land--eleventy-editor pre:before,
 is-land--eleventy-editor:after {

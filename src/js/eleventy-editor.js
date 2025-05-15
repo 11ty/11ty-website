@@ -309,7 +309,7 @@ html {
 	sizeInputToContent() {
 		this.inputEl.style.minHeight = "";
 		requestAnimationFrame(() => {
-			this.inputEl.style.minHeight = `clamp(1.5em, ${this.inputEl.scrollHeight}px, 40vh)`;
+			this.inputEl.style.minHeight = `clamp(1em, ${this.inputEl.scrollHeight}px, 45vh)`;
 		});
 	}
 
