@@ -305,6 +305,7 @@ Congratulations—you made something with Eleventy! Now put it to work:
 1. Use [a layout file so that you don’t have to repeat boilerplate on every template](/docs/layouts/).
 1. Add a [configuration file](/docs/config/) to unlock advanced Eleventy capabilities!
 1. Add [CSS, JavaScript, or Web Fonts](/docs/assets/) to your project.
+1. It’s super easy to add automated [Image optimization](/docs/plugins/image/) too!
 1. Learn more of the [command line options for Eleventy](/docs/usage/).
 1. Perhaps you’d like to [consume data from third party APIs](/docs/data-js/) in your project?
 </template>
