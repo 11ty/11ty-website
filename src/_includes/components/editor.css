@@ -50,10 +50,6 @@ eleventy-editor,
 is-land--eleventy-editor pre {
 	margin: 1em -1rem;
 }
-is-land--eleventy-editor ~ is-land--eleventy-editor pre,
-eleventy-editor ~ eleventy-editor {
-	margin-block-start: -.5em;
-}
 @media (max-width: 54.9375em) { /* 879px */
 	eleventy-editor {
 		--border-radius: 0;

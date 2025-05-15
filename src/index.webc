@@ -56,7 +56,7 @@ function randomTestimonialLink(testimonials) {
 
 <div webc:bucket="async">
 	<h2>Try Eleventy in the Browser</h2>
-	<p>If you’d like a bit more to play with, edit this minimum viable Eleventy project. These editors are grouped together as part of the same project. Edit the <code>title</code> on a blog post will update the blog post listing on the index page!</p>
+	<p>If you’d like a bit more to play with, edit one of the three files in this Eleventy project. Try changing the <code>title</code> in front matter on a blog post and watch the list update on the index page!</p>
 	<is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
 		<eleventy-editor focus group="group1" label="Edit index.md" data-editor-filename="index.md">
 			<syntax-highlight language="liquid">---
@@ -80,9 +80,8 @@ _Built with {{ eleventy.generator }}_</syntax-highlight>
 
 		<eleventy-editor group="group1" label="Edit post1.md" data-editor-filename="post1.md">
 			<syntax-highlight language="liquid">---
-title: First blog post
+title: First blog post ⬅️
 tags: posts
-permalink: /blog/post1/
 ---
 # {{ title }}</syntax-highlight>
 		</eleventy-editor>
@@ -91,7 +90,6 @@ permalink: /blog/post1/
 			<syntax-highlight language="liquid">---
 title: Second blog post
 tags: posts
-permalink: false
 ---
 # {{ title }}</syntax-highlight>
 		</eleventy-editor>
