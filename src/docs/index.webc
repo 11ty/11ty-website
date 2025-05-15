@@ -186,7 +186,7 @@ npx @11ty/create README.md "# Heading"
 	</div>
 </seven-minute-tabs>
 
-<p>Alternatively, you can create these using any text editor—just make sure you save them into your project folder and they have the correct file extensions.</p>
+<p>Alternatively, you can create these using any text editor — make sure you save them into your project folder and they have the correct file extensions.</p>
 
 <p>After you’ve created an HTML template and a Markdown template, let’s run Eleventy again with the following command:</p>
 
@@ -222,8 +222,23 @@ The output might look like this:
 [11ty] Wrote 2 files in 0.04 seconds ({% latestVersion versions, config %})
 {% endcodewithprompt %}
 
-We’ve compiled our two content templates in the current directory into the output folder (`_site` is the default).
+We’ve now compiled our two content templates in the current directory into the output folder (`_site` is the default).
 
+If you’d like to experiment further with [template file syntax](/docs/languages/), edit the following sample `README.md` file in your browser. [Front Matter](/docs/data-frontmatter/), [Liquid](/docs/languages/liquid/) and [Markdown](/docs/languages/markdown/) syntax are in use.
+</template>
+
+<is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
+	<eleventy-editor focus>
+		<syntax-highlight language="markdown" data-editor-filename="./README.md">
+---
+title: Heading
+---
+# {{ title }}
+		</syntax-highlight>
+	</eleventy-editor>
+</is-land>
+
+<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
 ## <span class="numberflag"><span class="sr-only">Step</span> 5</span> Gaze upon your templates
 
 Use `--serve` to start up a hot-reloading local web server.
@@ -280,7 +295,7 @@ Open `http://localhost:8080/` or `http://localhost:8080/README/` in your favorit
 
 ## <span class="numberflag"><span class="sr-only">Step</span> 6</span> Put it online (optional)
 
-Head over to our [deployment documentation](/docs/deployment/) to read more about putting your Eleventy project online for everyone to see.
+Your output folder (`_site`) now contains all of the statically built files for your new web site. You can upload this folder to any web host! Head over to our [deployment documentation](/docs/deployment/) to read more about putting your Eleventy project online for everyone to see.
 
 ## <span class="numberflag"><span class="sr-only">Step</span> 7</span> Continue Learning…
 
