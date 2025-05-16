@@ -493,7 +493,7 @@ Some template syntaxes are nicer than others and you may want to opt-out of the 
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html toolbar-position="bottom" data-editor-filename="index.md">
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.md">
 {% highlight "yaml" %}{% raw %}
 ---
 permalink: "/this-will-be-a-string-without-{{templating}}/"
@@ -516,7 +516,7 @@ export default function (eleventyConfig) {
 {% include "snippets/configDefinition.njk" %}
 {% set tabIdOverride = "" %}
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html toolbar-position="bottom" data-editor-filename="index.md" config="#permalink-dynamic-permalinks-jsesm">
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.md" config="#permalink-dynamic-permalinks-jsesm">
 {% highlight "yaml" %}{% raw %}
 ---
 permalink: "/this-will-be-a-string-without-{{templating}}/"
@@ -531,7 +531,7 @@ To remap your template’s output to a directory independent of the output direc
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html toolbar-position="bottom" data-editor-filename="index.html">
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.html">
 {% highlight "yaml" %}{% raw %}
 ---
 permalink: _includes/index.html
