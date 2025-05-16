@@ -49,6 +49,8 @@ class Editor extends HTMLElement {
 		}
 	}
 
+	static scrollbarSize;
+
 	static style = css`
 :host {
 	--max-height: 45vh;
@@ -446,15 +448,16 @@ html {
 		return str;
 	}
 
-	constructor() {
-		super();
-		this.style.setProperty("--scrollbar-width", getObtrusiveScrollbarWidth() + "px");
-	}
-
 	async connectedCallback() {
 		if (!("replaceSync" in CSSStyleSheet.prototype) || this.shadowRoot) {
 			return;
 		}
+
+		if(!Editor.scrollbarSize) {
+			Editor.scrollbarSize = getObtrusiveScrollbarWidth();
+		}
+
+		this.style.setProperty("--scrollbar-width",  Editor.scrollbarSize + "px");
 
 		let viewSourceDefault = this.hasAttribute(Editor.attrs.viewSourceMode);
 		let iframeOutput = this.isIframeOutput();
