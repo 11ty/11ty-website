@@ -1,60 +1,81 @@
+/* Only pre-JS */
 is-land--eleventy-editor {
+	cursor: pointer;
+
+	/* Only constrain height with JS (we’re enhancing from <pre>) */
+	& pre {
+		max-height: 45vh;
+		overflow: hidden;
+	}
+
+	& pre:before {
+		content: "";
+		pointer-events: none;
+		position: absolute;
+		inset: 0;
+		background-color: var(--edit-curtain);
+	}
+}
+
+/* pre-JS and no-JS */
+is-land--eleventy-editor,
+eleventy-editor:not(:defined) {
 	--edit-bg: rgba(0,0,0,.4);
 	--edit-color: #fff;
 	display: block;
-}
-is-land--eleventy-editor:hover {
-	--edit-curtain: rgba(255,255,255,.1);
-	--edit-bg: rgb(255, 216, 72);
-	--edit-color: #000;
-	cursor: pointer;
-}
-is-land--eleventy-editor:hover pre {
-	outline: 4px solid var(--edit-bg);
-}
-is-land--eleventy-editor,
-is-land--eleventy-editor pre {
 	position: relative;
+
+	&:hover {
+		--edit-curtain: rgba(255,255,255,.1);
+		--edit-bg: rgb(255, 216, 72);
+		--edit-color: #000;
+	}
+
+	&:hover pre {
+		outline: 4px solid var(--edit-bg);
+	}
+
+	& pre {
+		position: relative;
+		margin: 1em -1rem;
+	}
+
+	&:after {
+		pointer-events: none;
+		position: absolute;
+	}
+
+	&:after {
+		content: "Run";
+		top: 0;
+		right: -1rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		line-height: 1;
+		padding: .75rem;
+		background-color: var(--edit-bg);
+		color: var(--edit-color);
+		border-top-right-radius: .3em;
+		border-bottom-left-radius: .3em;
+	}
+
+	&[label]:after {
+		content: attr(label);
+		text-transform: none;
+	}
 }
-is-land--eleventy-editor pre {
-	max-height: 45vh;
-}
-is-land--eleventy-editor pre:before,
-is-land--eleventy-editor:after {
-	pointer-events: none;
-	position: absolute;
-	display: flex;
-	align-items: flex-start;
-	justify-content: flex-end;
-}
-is-land--eleventy-editor pre:before {
-	content: "";
-	inset: 0;
-	background-color: var(--edit-curtain);
-}
-is-land--eleventy-editor:after {
-	content: "Run";
-	top: 0;
-	right: -1rem;
-	font-weight: 600;
-	text-transform: uppercase;
-	line-height: 1;
-	padding: .75rem;
-	background-color: var(--edit-bg);
-	color: var(--edit-color);
-	border-top-right-radius: .3em;
-	border-bottom-left-radius: .3em;
-}
-is-land--eleventy-editor[label]:after {
-	content: attr(label);
-	text-transform: none;
-}
-eleventy-editor,
-is-land--eleventy-editor pre {
+
+eleventy-editor:defined {
 	margin: 1em -1rem;
 }
 @media (max-width: 54.9375em) { /* 879px */
 	eleventy-editor {
 		--border-radius: 0;
 	}
+}
+
+/* No-JS */
+eleventy-editor:not(:defined):after,
+eleventy-editor:not(:defined)[label]:after {
+	content: "Editing requires JavaScript"
 }
