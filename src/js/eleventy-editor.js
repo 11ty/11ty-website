@@ -6,6 +6,19 @@ const css = String.raw;
 // TODO dynamic change input file name
 // TODO add option to edit global data files
 
+function getObtrusiveScrollbarWidth() {
+	let width = 30;
+	let parent = document.createElement("div");
+	parent.setAttribute("style", `width:${width}px;height:${width}px;overflow:auto;`);
+	let child = document.createElement("div");
+	child.setAttribute("style", `height:${width+10}px;`);
+	parent.appendChild(child);
+	document.body.appendChild(parent);
+	let scrollbarWidth = width - parent.firstChild.clientWidth;
+	parent.remove();
+	return scrollbarWidth;
+}
+
 import { Eleventy } from "/js/eleventy.core.browser.js";
 import { Markdown } from "/js/eleventy.engine-md.browser.js";
 import { Liquid } from "/js/eleventy.engine-liquid.browser.js";
@@ -200,7 +213,7 @@ class Editor extends HTMLElement {
 	left: 0;
 	top: 0;
 	min-width: 1.866666666667em; /* 28px /15 */
-	min-height: 100%;
+	min-height: calc(100% - var(--scrollbar-width, 0px));
 	pointer-events: none;
 	color: var(--number-color);
 	background-color: var(--input-background);
@@ -377,7 +390,7 @@ html {
 				if(!this.#initialHeight) {
 					this.#initialHeight = this.scrollHeight;
 				}
-				this.inputEl.style.minHeight = `clamp(${this.#initialHeight}px, ${maxHeight}px, var(--max-height))`;
+				this.inputEl.style.minHeight = `clamp(${this.#initialHeight}px, calc(${maxHeight}px + var(--scrollbar-width, 0px)), var(--max-height))`;
 				this.linesEl.style.maxHeight = maxHeight;
 				resolve();
 			});
@@ -431,6 +444,11 @@ html {
 			return str.slice(2);
 		}
 		return str;
+	}
+
+	constructor() {
+		super();
+		this.style.setProperty("--scrollbar-width", getObtrusiveScrollbarWidth() + "px");
 	}
 
 	async connectedCallback() {
