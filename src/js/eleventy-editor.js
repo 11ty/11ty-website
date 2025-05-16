@@ -13,9 +13,10 @@ import { Liquid } from "/js/eleventy.engine-liquid.browser.js";
 
 class Editor extends HTMLElement {
 	#positionPause = false;
+	#initialHeight;
 
 	static classes = {
-		plaintext: "output--text"
+		plaintext: "output--text",
 	};
 
 	static attrs = {
@@ -75,9 +76,6 @@ class Editor extends HTMLElement {
 	min-width: 18em;
 	flex-basis: 40%;
 }
-:host > div {
-	position: relative;
-}
 * {
 	box-sizing: border-box;
 }
@@ -88,7 +86,11 @@ class Editor extends HTMLElement {
 .output-c {
 	width: 100%;
 }
+.input-c {
+	position: relative;
+}
 .output-c {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	flex-basis: 25%;
@@ -122,6 +124,7 @@ class Editor extends HTMLElement {
 }
 .output {
 	display: block;
+	height: 100%;
 	border: none;
 	padding: .5em;
 	background-color: var(--output-background);
@@ -140,9 +143,18 @@ class Editor extends HTMLElement {
 	overflow: auto;
 }
 .error:empty,
-.output:empty,
 .filename:empty {
 	display: none;
+}
+.output:empty:before {
+	content: "(no content)";
+	font-style: italic;
+	font-size: .75em;
+	display: flex;
+	height: 100%;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
 }
 .toolbar,
 .${Editor.classes.plaintext} {
@@ -151,15 +163,13 @@ class Editor extends HTMLElement {
 }
 .toolbar {
 	--toolbar-gap: .5em;
+	flex-grow: 0;
 	display: flex;
 	font-size: 0.875rem; /* 14px /16 */
 	justify-content: space-between;
 	align-items: center;
 	background-color: var(--toolbar-background);
 	color: var(--toolbar-color);
-}
-.output-c:has(.output:empty) .toolbar {
-	flex-basis: 100%;
 }
 .filename {
 	padding: 0.21428571em 0;
@@ -364,7 +374,10 @@ html {
 			this.inputEl.style.minHeight = "";
 			requestAnimationFrame(() => {
 				let maxHeight = this.inputEl.scrollHeight;
-				this.inputEl.style.minHeight = `clamp(100%, ${maxHeight}px, var(--max-height))`;
+				if(!this.#initialHeight) {
+					this.#initialHeight = this.scrollHeight;
+				}
+				this.inputEl.style.minHeight = `clamp(${this.#initialHeight}px, ${maxHeight}px, var(--max-height))`;
 				this.linesEl.style.maxHeight = maxHeight;
 				resolve();
 			});
