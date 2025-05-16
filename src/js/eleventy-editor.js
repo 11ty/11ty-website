@@ -35,6 +35,7 @@ class Editor extends HTMLElement {
 
 	static style = css`
 :host {
+	--max-height: 45vh;
 	--border-radius: .3em;
 	--outline-color: rgba(255, 216, 72, .9);
 	--input-background: #272822;
@@ -309,7 +310,7 @@ html {
 	sizeInputToContent() {
 		this.inputEl.style.minHeight = "";
 		requestAnimationFrame(() => {
-			this.inputEl.style.minHeight = `clamp(1em, ${this.inputEl.scrollHeight}px, 45vh)`;
+			this.inputEl.style.minHeight = `clamp(1em, ${this.inputEl.scrollHeight}px, var(--max-height))`;
 		});
 	}
 
