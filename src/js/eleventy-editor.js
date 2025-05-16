@@ -355,7 +355,7 @@ html {
 	// Warning: does not handle long lines wrapping (defers to no-wrap on textarea)
 	setupLines() {
 		let lines = this.inputEl.value.split("\n");
-		if(this.inputEl.childElementCount !== lines.length) {
+		if(this.linesEl.childElementCount !== lines.length) {
 			this.linesEl.innerHTML = lines.map(noop => "<li></li>").join("");
 		}
 	}
