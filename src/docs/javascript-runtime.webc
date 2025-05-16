@@ -21,7 +21,7 @@ const eleventyNavigation = {
 
 <h3>Odd Numbered Versions of Node.js</h3>
 
-<p>It is not recommended (or supported by the Eleventy project) to use an odd major version of Node.js (e.g. Node 19, 21, 23), per guidance on the <a href="https://nodejs.org/en/about/previous-releases">Node.js Releases documentation</a>. Our experience has found that even-numbered major versions are more reliable and we encourage folks to stick with even-numbered releases of Node.js when possible.</p>
+<p>It is not recommended (nor supported by the Eleventy project) to use an odd major version of Node.js (e.g. Node 19, 21, 23), per guidance on the <a href="https://nodejs.org/en/about/previous-releases">Node.js Releases documentation</a>. Our experience has found that even-numbered major versions are more reliable and we encourage folks to stick with even-numbered releases of Node.js when possible.</p>
 
 <h2>Deno</h2>
 
