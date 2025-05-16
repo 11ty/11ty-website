@@ -452,7 +452,7 @@ html {
 		let template = document.createElement("template");
 		let isReversed = this.getAttribute("toolbar-position") === "bottom";
 		template.innerHTML = `<div class="input-c">
-		<textarea class="input"></textarea>
+		<textarea class="input" spellcheck="false"></textarea>
 		<ol class="lines" aria-hidden="true"></ol>
 	</div>
 	<div class="output-c${isReversed ? " reverse" : ""}">
