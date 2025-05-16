@@ -491,6 +491,8 @@ html {
 		})
 		this.inputEl.addEventListener("scroll", () => {
 			this.positionLines();
+		}, {
+			passive: true
 		});
 
 		this.viewSourceEl.addEventListener("input", async () => {
