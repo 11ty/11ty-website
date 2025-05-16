@@ -12,6 +12,8 @@ import { Liquid } from "/js/eleventy.engine-liquid.browser.js";
 // import { Nunjucks } from "/js/eleventy.engine-njk.browser.js";
 
 class Editor extends HTMLElement {
+	#positionPause = false;
+
 	static classes = {
 		plaintext: "output--text"
 	};
@@ -36,6 +38,7 @@ class Editor extends HTMLElement {
 	static style = css`
 :host {
 	--max-height: 45vh;
+	--padding: .75rem;
 	--border-radius: .3em;
 	--outline-color: rgba(255, 216, 72, .9);
 	--input-background: #272822;
@@ -46,6 +49,7 @@ class Editor extends HTMLElement {
 	--error-color: #fff;
 	--toolbar-background: #ddd;
 	--toolbar-color: #222;
+	--number-color: #777;
 }
 @media (prefers-color-scheme: dark) {
 	:host {
@@ -100,7 +104,8 @@ class Editor extends HTMLElement {
 	display: flex;
 	font-size: inherit;
 	font-family: Roboto Mono, monospace;
-	padding: .75rem .75rem .75rem 1rem;
+	padding: var(--padding);
+	padding-inline-start: 2rem; /* 32px /16 */
 	line-height: 1.5;
 	border: none;
 }
@@ -113,7 +118,7 @@ class Editor extends HTMLElement {
 	background-color: var(--input-background);
 	color: var(--input-color);
 	resize: vertical;
-	white-space: pre-wrap;
+	white-space: pre;
 }
 .output {
 	display: block;
@@ -179,6 +184,32 @@ class Editor extends HTMLElement {
 }
 .viewsource--disabletoggle {
 	display: none;
+}
+.lines {
+	position: absolute;
+	left: 0;
+	top: 0;
+	min-width: 1.866666666667em; /* 28px /15 */
+	min-height: 100%;
+	pointer-events: none;
+	color: var(--number-color);
+	background-color: var(--input-background);
+	font-family: Roboto Mono, monospace;
+	font-size: 0.8333333333333em; /* 15px /18 */
+	line-height: 1.8; /* 27px /15 */
+	padding-inline: .3em;
+	padding-block: var(--padding);
+	margin: 0;
+	list-style: none;
+	list-style-position: inside;
+	counter-reset: decimal-without-dot;
+}
+.lines li {
+	text-align: right;
+	counter-increment: decimal-without-dot;
+}
+.lines li:before {
+	content: counter(decimal-without-dot);
 }
 `;
 
@@ -287,13 +318,15 @@ html {
 		return this.shadowRoot.querySelector(".viewsource input[type='checkbox']")
 	}
 
+	get linesEl() {
+		return this.shadowRoot.querySelector(".lines")
+	}
+
 	isIframeOutput() {
 		return this.getAttribute("output") === "iframe";
 	}
 
 	setOutput(content) {
-		this.sizeOutput();
-
 		if(this.isIframeOutput()) {
 			this.outputEl.setAttribute("srcdoc", `<style>${Editor.defaultIframeStyle}</style>${content}`);
 			this.outputEl.classList.remove(Editor.classes.plaintext);
@@ -305,13 +338,37 @@ html {
 			this.outputEl.innerHTML = content;
 			this.outputEl.classList.remove(Editor.classes.plaintext);
 		}
+
+		this.sizeOutput();
+	}
+
+	// Warning: does not handle long lines wrapping (defers to no-wrap on textarea)
+	setupLines() {
+		let lines = this.inputEl.value.split("\n");
+		if(this.inputEl.childElementCount !== lines.length) {
+			this.linesEl.innerHTML = lines.map(noop => "<li></li>").join("");
+		}
+	}
+
+	positionLines(isForced = false) {
+		if(this.#positionPause && !isForced) {
+			return;
+		}
+		let top = Math.max(this.inputEl.scrollTop, 0);
+		this.linesEl.style.top = (-1 * top) + "px"
 	}
 
 	sizeInputToContent() {
-		this.inputEl.style.minHeight = "";
-		requestAnimationFrame(() => {
-			this.inputEl.style.minHeight = `clamp(1em, ${this.inputEl.scrollHeight}px, var(--max-height))`;
-		});
+		// optionally async
+		return new Promise(resolve => {
+			this.inputEl.style.minHeight = "";
+			requestAnimationFrame(() => {
+				let maxHeight = this.inputEl.scrollHeight;
+				this.inputEl.style.minHeight = `clamp(100%, ${maxHeight}px, var(--max-height))`;
+				this.linesEl.style.maxHeight = maxHeight;
+				resolve();
+			});
+		})
 	}
 
 	resetOutputSize() {
@@ -320,7 +377,6 @@ html {
 	}
 
 	sizeOutput() {
-		this.outputContainerEl.style.minHeight = `${this.outputContainerEl.scrollHeight}px`;
 		this.outputContainerEl.style.maxWidth = `${this.outputContainerEl.offsetWidth}px`;
 	}
 
@@ -352,7 +408,7 @@ html {
 			requestAnimationFrame(() => this.setOutput(result?.content));
 		} catch(e) {
 			// Development mode
-			console.error( e.originalError || e );
+			console.error( "Eleventy Demo Runner error:", e.originalError || e );
 			this.errorEl.textContent = e.originalError?.message || e.message;
 		}
 	}
@@ -382,8 +438,9 @@ html {
 
 		let template = document.createElement("template");
 		let isReversed = this.getAttribute("toolbar-position") === "bottom";
-		template.innerHTML = `<div>
-	<textarea class="input"></textarea>
+		template.innerHTML = `<div class="input-c">
+		<textarea class="input"></textarea>
+		<ol class="lines" aria-hidden="true"></ol>
 	</div>
 	<div class="output-c${isReversed ? " reverse" : ""}">
 	<div class="toolbar">
@@ -403,15 +460,24 @@ html {
 		}
 
 		this.sizeInputToContent();
+		this.setupLines();
+
 		if(viewSourceDefault) {
 			this.viewSourceEl.checked = true;
 		}
 		await this.render();
 
 		this.inputEl.addEventListener("input", async () => {
-			this.sizeInputToContent();
+			this.#positionPause = true;
+			await this.sizeInputToContent();
+			this.setupLines();
+			this.positionLines(true);
 			this.resetOutputSize();
 			await this.render();
+			this.#positionPause = false;
+		})
+		this.inputEl.addEventListener("scroll", () => {
+			this.positionLines();
 		});
 
 		this.viewSourceEl.addEventListener("input", async () => {
