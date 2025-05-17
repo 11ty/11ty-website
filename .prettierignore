@@ -1,3 +1,4 @@
+src/_includes/examples/pagination/
 _site/**
 src/_includes/components/auth/gotrue.js
 src/docs/versions.md
