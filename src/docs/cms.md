@@ -7,6 +7,9 @@ cmses:
   - name: CloudCannon
     url: https://cloudcannon.com/eleventy-cms/?utm_campaign=11ty-partner&utm_source=official-sponsor
     tags: [Git-based]
+  - name: GitCMS
+    url: https://gitcms.blog/
+    tags: [Git-based]
   - name: WordPress REST API
     url: https://developer.wordpress.org/rest-api/
     screenshotSize: medium
