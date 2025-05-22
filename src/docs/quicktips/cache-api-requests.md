@@ -58,7 +58,7 @@ import Fetch from "@11ty/eleventy-fetch";
 export default async function () {
 	try {
 		// https://developer.github.com/v3/repos/#get
-		let json = await EleventyFetch(
+		let json = await Fetch(
 			"https://api.github.com/repos/11ty/eleventy",
 			{
 				duration: "1d", // 1 day
