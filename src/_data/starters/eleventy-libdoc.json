@@ -3,5 +3,6 @@
 	"name": "eleventy-libdoc",
 	"description": "An Eleventy starter project to craft slick and responsive documentation",
 	"author": "Olivier 3lanc",
-	"demo": "https://eleventy-libdoc.netlify.app/"
+	"demo": "https://eleventy-libdoc.netlify.app/",
+	"featured": true
 }
