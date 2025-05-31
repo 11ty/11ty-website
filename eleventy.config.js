@@ -1,6 +1,6 @@
 import "dotenv/config";
 
-import memoize, { memoizeClear } from "memoize";
+import memoize from "memoize";
 import { DateTime } from "luxon";
 import HumanReadable from "human-readable-numbers";
 import commaNumber from "comma-number";
@@ -9,7 +9,7 @@ import shortHash from "short-hash";
 import { ImportTransformer } from "esm-import-transformer";
 
 import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
-import navigationPlugin, { navigation } from "@11ty/eleventy-navigation";
+import navigationPlugin from "@11ty/eleventy-navigation";
 import eleventyImage, { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import eleventyWebcPlugin from "@11ty/eleventy-plugin-webc";
 import { RenderPlugin, InputPathToUrlTransformPlugin } from "@11ty/eleventy";
@@ -22,6 +22,7 @@ import cleanName from "./config/cleanAuthorName.js";
 import objectHas from "./config/object-has.js";
 import markdownPlugin from "./config/markdownPlugin.js";
 import feedPlugin from "./config/feedPlugin.js";
+import sidebarPlugin from "./config/sidebarPlugin.js";
 
 let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" decoding="async" class="avatar" width="200" height="200">`;
 const shortcodes = {
@@ -298,40 +299,8 @@ export default async function (eleventyConfig) {
 
 	/* End plugins */
 
-	/* Navigation */
 	eleventyConfig.addPlugin(navigationPlugin);
-
-	function filterNavSidebar(collection = [], propName) {
-		if(!propName) {
-			return collection;
-		}
-		// filter out excludeFromSidebar items
-		return collection.filter(item => {
-			if(Array.isArray(item.children)) {
-				item.children = filterNavSidebar(item.children, propName);
-			}
-
-			return Boolean(item.data?.eleventyNavigation) && item.data?.[propName] !== true;
-		});
-	}
-	const navFn = memoize(function(key) {
-		return filterNavSidebar(navigation.find(this.ctx.collections.all, key), "removedFeature");
-	});
-	const navFilteredFn = memoize(function(key) {
-		return filterNavSidebar(navigation.find(this.ctx.collections.all, key), "excludeFromSidebar");
-	});
-	const navBreadcrumbsFn = memoize(function(key) {
-		return navigation.findBreadcrumbs(this.ctx.collections.all, key, {includeSelf: true})
-	});
-	eleventyConfig.on("eleventy.after", () => {
-		memoizeClear(navFn);
-		memoizeClear(navFilteredFn);
-		memoizeClear(navBreadcrumbsFn);
-	})
-	eleventyConfig.addFilter("nav", navFn);
-	eleventyConfig.addFilter("navFiltered", navFilteredFn);
-	eleventyConfig.addFilter("navBreadcrumbs", navBreadcrumbsFn);
-	/* End navigation */
+	eleventyConfig.addPlugin(sidebarPlugin);
 
 	eleventyConfig.addShortcode("getColorsForUrl", async (url) => {
 		if(process.env.ELEVENTY_RUN_MODE !== "build") {
