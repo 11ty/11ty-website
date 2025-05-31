@@ -75,7 +75,8 @@ b {
 }
 s,
 del {
-	text-decoration-color: red;
+	text-decoration-color: rgba(255, 0, 0, 0.6);
+	text-decoration-thickness: 0.25em;
 	opacity: 0.67;
 }
 hr {
