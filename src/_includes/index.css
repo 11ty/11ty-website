@@ -77,7 +77,7 @@ s,
 del {
 	text-decoration-color: rgba(255, 0, 0, 0.6);
 	text-decoration-thickness: 0.25em;
-	opacity: 0.67;
+	opacity: 0.8;
 }
 hr {
 	margin: 3em 0;
