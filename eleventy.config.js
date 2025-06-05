@@ -438,6 +438,7 @@ ${text.trim()}
 		"node_modules/@11ty/logo/img/logo-200x200.png": "img/logo-github.png",
 		"node_modules/@11ty/logo/img/logo-96x96.png": "img/favicon.png",
 		"node_modules/speedlify-score/speedlify-score.js": "js/speedlify-score.js",
+		"node_modules/@zachleat/line-numbers/line-numbers.js": "js/line-numbers.js",
 		"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js": "js/seven-minute-tabs.js",
 		"node_modules/@zachleat/filter-container/filter-container.js": "js/filter-container.js",
 		"node_modules/lite-youtube-embed/src/lite-yt-embed.js": `js/lite-yt-embed.js`,

@@ -1,3 +1,5 @@
+import "/js/line-numbers.js";
+
 //! <eleventy-editor>
 const css = String.raw;
 
@@ -6,30 +8,17 @@ const css = String.raw;
 // TODO dynamic change input file name
 // TODO add option to edit global data files
 
-function getObtrusiveScrollbarWidth() {
-	let width = 30;
-	let parent = document.createElement("div");
-	parent.setAttribute("style", `width:${width}px;height:${width}px;overflow:auto;`);
-	let child = document.createElement("div");
-	child.setAttribute("style", `height:${width+10}px;`);
-	parent.appendChild(child);
-	document.body.appendChild(parent);
-	let scrollbarWidth = width - parent.firstChild.clientWidth;
-	parent.remove();
-	return scrollbarWidth;
-}
-
 import { Eleventy } from "/js/eleventy.core.browser.js";
 import { Markdown } from "/js/eleventy.engine-md.browser.js";
 import { Liquid } from "/js/eleventy.engine-liquid.browser.js";
 // import { Nunjucks } from "/js/eleventy.engine-njk.browser.js";
 
 class Editor extends HTMLElement {
-	#positionPause = false;
 	#initialHeight;
 
 	static classes = {
 		plaintext: "output--text",
+		focused: "focused",
 	};
 
 	static attrs = {
@@ -83,8 +72,11 @@ class Editor extends HTMLElement {
 	border-radius: var(--border-radius);
 	overflow: clip;
 }
-:host:has(:focus) {
+:host(.focused) {
 	outline: 4px solid var(--outline-color);
+}
+:host(.focused) .input {
+	outline: none;
 }
 :host > * {
 	flex-grow: 1;
@@ -102,13 +94,22 @@ class Editor extends HTMLElement {
 	width: 100%;
 }
 .input-c {
-	position: relative;
+	--uln-lh: 1.5;
+	--uln-padding-v: var(--padding);
+	--uln-padding-h: .5rem .25rem;
+	--uln-color: var(--number-color);
+	display: flex;
+	background-color: var(--input-background);
+	color: var(--input-color);
+	width: 100%;
 }
 .output-c {
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	flex-basis: 25%;
+	background-color: var(--output-background);
+	color: var(--output-color);
 }
 .output-c.reverse {
 	flex-direction: column-reverse;
@@ -121,8 +122,6 @@ class Editor extends HTMLElement {
 	display: flex;
 	font-size: inherit;
 	font-family: Roboto Mono, monospace;
-	padding: var(--padding);
-	padding-inline-start: 2rem; /* 32px /16 */
 	line-height: 1.5;
 	border: none;
 }
@@ -131,19 +130,17 @@ class Editor extends HTMLElement {
 	overflow: auto;
 }
 .input {
-	height: 100%;
 	background-color: var(--input-background);
 	color: var(--input-color);
 	resize: vertical;
 	white-space: pre;
+	padding: var(--padding);
 }
 .output {
 	display: block;
 	height: 100%;
 	border: none;
 	padding: .5em;
-	background-color: var(--output-background);
-	color: var(--output-color);
 }
 
 .error {
@@ -210,32 +207,6 @@ class Editor extends HTMLElement {
 .viewsource--disabletoggle {
 	display: none;
 }
-.lines {
-	position: absolute;
-	left: 0;
-	top: 0;
-	min-width: 1.866666666667em; /* 28px /15 */
-	min-height: calc(100% - var(--scrollbar-width, 0px));
-	pointer-events: none;
-	color: var(--number-color);
-	background-color: var(--input-background);
-	font-family: Roboto Mono, monospace;
-	font-size: 0.8333333333333em; /* 15px /18 */
-	line-height: 1.8; /* 27px /15 */
-	padding-inline: .3em;
-	padding-block: var(--padding);
-	margin: 0;
-	list-style: none;
-	list-style-position: inside;
-	counter-reset: decimal-without-dot;
-}
-.lines li {
-	text-align: right;
-	counter-increment: decimal-without-dot;
-}
-.lines li:before {
-	content: counter(decimal-without-dot);
-}
 `;
 
 	static defaultIframeStyle = css`
@@ -289,6 +260,7 @@ html {
 
 				eleventyConfig.addEngine("liquid", Liquid);
 				eleventyConfig.addEngine("md", Markdown);
+				// eleventyConfig.addEngine("njk", Nunjucks);
 
 				// eleventyConfig.setMarkdownTemplateEngine(false);
 				// eleventyConfig.setHtmlTemplateEngine(false);
@@ -343,10 +315,6 @@ html {
 		return this.shadowRoot.querySelector(".viewsource input[type='checkbox']")
 	}
 
-	get linesEl() {
-		return this.shadowRoot.querySelector(".lines")
-	}
-
 	isIframeOutput() {
 		return this.getAttribute("output") === "iframe";
 	}
@@ -367,40 +335,27 @@ html {
 		this.sizeOutput();
 	}
 
-	// Warning: does not handle long lines wrapping (defers to no-wrap on textarea)
-	setupLines() {
-		let lines = this.inputEl.value.split("\n");
-		if(this.linesEl.childElementCount !== lines.length) {
-			this.linesEl.innerHTML = lines.map(noop => "<li></li>").join("");
+	// render line-numbers parent component
+	renderNumberLines() {
+		// await customElements.whenDefined("line-numbers");
+		let lineNumbersElement = this.inputEl?.closest("line-numbers:defined");
+		if(lineNumbersElement) {
+			lineNumbersElement.render();
+		} else {
+			throw new Error("Missing <line-numbers> component: did you load the JS?");
 		}
-	}
-
-	positionLines(isForced = false) {
-		if(this.#positionPause && !isForced) {
-			return;
-		}
-		let top = Math.max(this.inputEl.scrollTop, 0);
-		this.linesEl.style.top = (-1 * top) + "px"
 	}
 
 	sizeInputToContent() {
-		// optionally async
-		return new Promise(resolve => {
-			this.inputEl.style.minHeight = "";
-			requestAnimationFrame(() => {
-				let maxHeight = this.inputEl.scrollHeight;
-				if(!this.#initialHeight) {
-					this.#initialHeight = this.scrollHeight;
-				}
-				this.inputEl.style.minHeight = `clamp(${this.#initialHeight}px, calc(${maxHeight}px + var(--scrollbar-width, 0px)), var(--max-height))`;
-				this.linesEl.style.maxHeight = maxHeight;
-				resolve();
-			});
-		})
+		let scrollHeight = this.inputEl.scrollHeight;
+		if(!this.#initialHeight) {
+			this.#initialHeight = scrollHeight;
+		}
+		// uln-scrollbar-height is only set when obtrusive (and horizontal overflow is active)
+		this.inputEl.style.minHeight = `clamp(${this.#initialHeight}px, calc(${scrollHeight}px + var(--uln-scrollbar-height, 0px)), var(--max-height))`;
 	}
 
 	resetOutputSize() {
-		this.outputContainerEl.style.minHeight = "";
 		this.outputContainerEl.style.maxWidth = "";
 	}
 
@@ -433,7 +388,10 @@ html {
 			this.errorEl.textContent = "";
 			this.outputFilenameEl.innerHTML = typeof result?.outputPath === "string" ? this.cleanFilename(result?.outputPath) : "<em>(skipped)</em>";
 
-			requestAnimationFrame(() => this.setOutput(result?.content));
+			requestAnimationFrame(() => {
+				this.setOutput(result?.content);
+				this.renderNumberLines();
+			});
 		} catch(e) {
 			// Development mode
 			console.error( "Eleventy Demo Runner error:", e.originalError || e );
@@ -453,12 +411,6 @@ html {
 			return;
 		}
 
-		if(!Editor.scrollbarSize) {
-			Editor.scrollbarSize = getObtrusiveScrollbarWidth();
-		}
-
-		this.style.setProperty("--scrollbar-width",  Editor.scrollbarSize + "px");
-
 		let viewSourceDefault = this.hasAttribute(Editor.attrs.viewSourceMode);
 		let iframeOutput = this.isIframeOutput();
 
@@ -472,10 +424,9 @@ html {
 
 		let template = document.createElement("template");
 		let isReversed = this.getAttribute("toolbar-position") === "bottom";
-		template.innerHTML = `<div class="input-c">
-		<textarea class="input" spellcheck="false"></textarea>
-		<ol class="lines" aria-hidden="true"></ol>
-	</div>
+		template.innerHTML = `<line-numbers manual-render class="input-c" obtrusive>
+		<textarea class="input" spellcheck="false">${this.originalSourceContent}</textarea>
+	</line-numbers>
 	<div class="output-c${isReversed ? " reverse" : ""}">
 	<div class="toolbar">
 		<div class="filename filename--input"></div>
@@ -487,34 +438,24 @@ html {
 </div>`;
 		shadowroot.appendChild(template.content.cloneNode(true));
 
-		this.inputEl.value = this.originalSourceContent;
 		let inputFilename = this.getInputFilename();
 		if(inputFilename) {
 			this.inputFilenameEl.textContent = this.cleanFilename(inputFilename);
 		}
 
 		this.sizeInputToContent();
-		this.setupLines();
 
 		if(viewSourceDefault) {
 			this.viewSourceEl.checked = true;
 		}
+
 		await this.render();
 
 		this.inputEl.addEventListener("input", async () => {
-			this.#positionPause = true;
-			await this.sizeInputToContent();
-			this.setupLines();
-			this.positionLines(true);
-			this.resetOutputSize();
+			// this.resetOutputSize();
+			this.sizeInputToContent();
 			await this.render();
-			this.#positionPause = false;
 		})
-		this.inputEl.addEventListener("scroll", () => {
-			this.positionLines();
-		}, {
-			passive: true
-		});
 
 		this.viewSourceEl.addEventListener("input", async () => {
 			await this.render();
@@ -532,6 +473,15 @@ html {
 			}
 		})).observe(this);
 
+		// Firefox required this because our textarea is in Shadow DOM.
+		// Could refactor to put the <textarea> in light dom for :has() compat, if this causes more issues later.
+		this.inputEl.addEventListener("focus", () => {
+			this.classList.add(Editor.classes.focused);
+		});
+
+		this.inputEl.addEventListener("blur", () => {
+			this.classList.remove(Editor.classes.focused);
+		});
 
 		if(this.hasAttribute(Editor.attrs.focusOnInit)) {
 			this.inputEl.focus({
