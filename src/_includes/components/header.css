@@ -257,3 +257,13 @@ main h1.elv-hed:first-child {
 		font-size: 2.625em; /* 42px /16 */
 	}
 }
+
+/* fix: big header link fighting with versions overlay */
+.elv-header-default .elv-menu {
+	position: relative;
+	z-index: 1;
+}
+.elv-header-default .elv-nav-header {
+	position: relative;
+	z-index: 0;
+}
