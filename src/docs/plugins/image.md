@@ -212,7 +212,7 @@ Use almost any combination of `webp`, `jpeg`, `png`, `svg`, `avif`, `gif`, and `
 
 ### Skip raster formats for SVG
 
-If using SVG output (the input format is SVG and `svg` is added to your `formats` array), we will skip all of the raster formats even if they’re in `formats`. This may be useful in a CMS-driven workflow when the input could be vector or raster.
+If using SVG output (the input format is SVG and `svg` is in your `formats` array option), we will skip all of the raster formats even if they’re in `formats`. This may be useful in a CMS-driven workflow when the input could be vector or raster.
 
 - `svgShortCircuit: false` (default)
 - `svgShortCircuit: true`
