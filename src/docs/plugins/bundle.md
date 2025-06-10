@@ -60,6 +60,12 @@ export default function(eleventyConfig) {
 		// If two identical code blocks exist in non-default buckets, they’ll be hoisted to the first bucket in common.
 		hoist: true,
 
+		// Bundle content from nodes selected by an arbitrary selector
+		// e.g. "script" would bundle `<script>` content
+		// Use an eleventy:ignore attribute on a node to opt-out.
+		// Supported selectors: https://www.npmjs.com/package/posthtml-match-helper
+		bundleHtmlContentFromSelector: "",
+
 		// In 11ty.js templates, having a named export of `bundle` will populate your bundles.
 		bundleExportKey: "bundle",
 		// bundleExportKey: false, // disable this feature.
@@ -107,6 +113,31 @@ Results in a removal of the bundle additions from the rendered output, like so:
 
 <h2>More Markdown</h2>
 ```
+
+#### Bundling HTML Node Content
+
+{% addedin "Bundle v3.0.2" %} Using the `bundleHtmlContentFromSelector` option allows bundling content inside HTML nodes.
+
+```html
+# My Blog Post
+
+This is some content, I am writing markup.
+
+<style>
+em { font-style: italic; }
+</style>
+
+## More Markdown
+
+<style>
+strong { font-weight: bold; }
+</style>
+```
+
+When using `bundleHtmlContentFromSelector: "style"`, the `<style>` nodes in an HTML file will roll up into the bundle.
+
+- `<style eleventy:ignore>` to opt-out per node
+- `<style eleventy:bucket="async">` to change the bucket for a node {% addedin "Bundle v3.0.5" %}
 
 ### Rendering Bundles
 
