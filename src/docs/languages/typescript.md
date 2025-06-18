@@ -11,8 +11,8 @@ layout: layouts/langs.njk
 
 | Eleventy Short Name                       | File Extension | npm Package                       |
 | ----------------------------------------- | -------------- | --------------------------------- |
-| `11ty.ts`                                 | `.11ty.ts`     | [`tsx`](https://tsx.is/node/esm)  |
-| [`11ty.tsx`](/docs/languages/typescript/) | `.11ty.tsx`    | [`tsx`](https://tsx.is/node/esm)  |
+| `11ty.ts`                                 | `.11ty.ts`     | [`tsx`]({{ externalLinks.tsxNodeUse }})  |
+| [`11ty.tsx`](/docs/languages/typescript/) | `.11ty.tsx`    | [`tsx`]({{ externalLinks.tsxNodeUse }})  |
 
 * Related languages: [JSX](/docs/languages/jsx/), [JavaScript](/docs/languages/javascript/), [Custom](/docs/languages/custom/)
 * _[Front matter](/docs/data-frontmatter/) is not supported in TypeScript files. Use a `data` export instead._
@@ -21,7 +21,7 @@ layout: layouts/langs.njk
 
 ## Configuration
 
-{% addedin "3.0.0-alpha.11" %}Here we use [`tsx`](https://tsx.is/node/esm) to process TypeScript files.
+{% addedin "3.0.0-alpha.11" %}Here we use [`tsx`]({{ externalLinks.tsxNodeUse }}) to process TypeScript files.
 
 <div class="codetitle">eleventy.config.js</div>
 
