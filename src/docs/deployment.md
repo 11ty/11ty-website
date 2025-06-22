@@ -79,10 +79,6 @@ classicHosts:
     url: https://orbiter.host
     screenshotSize: medium
 webides:
-  - name: Glitch
-    url: https://glitch.com/
-    screenshotSize: medium
-    hideRelatedLinks: true
   - name: Stackblitz
     url: https://stackblitz.com/
     screenshotSize: medium

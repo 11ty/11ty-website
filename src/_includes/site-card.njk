@@ -31,17 +31,9 @@
 {%- endif %}
 
 {%- if not hideRelatedLinks %}
-{%- if site.url.startsWith("https://glitch.com/") %}
-  {%- set glitchUrl = "https://glitch.com/edit/#!/remix/" + site.url %}
-{%- elseif site.url.startsWith("https://glitch.new/") %}
-  {%- set glitchUrl = site.url %}
-{%- endif %}
 <ul class="inlinelist inlinelist-sm">
   {%- if sourceUrl %}
   <li class="inlinelist-item"><a href="{{ sourceUrl }}" class="elv-externalexempt">Source code</a></li>
-  {%- endif %}
-  {%- if glitchUrl -%}
-  <li class="inlinelist-item"><a href="{{ glitchUrl }}" class="elv-externalexempt">Remix on Glitch</a></li>
   {%- endif %}
 </ul>
 {%- endif %}
