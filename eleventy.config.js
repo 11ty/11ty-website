@@ -588,7 +588,7 @@ ${text.trim()}
 	}
 
 	// Thanks to https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
-	eleventyConfig.addFilter("shuffle", (arr, sliceNum) => {
+	eleventyConfig.addFilter("shuffle", (arr = [], sliceNum = undefined) => {
 		if (Array.isArray(arr)) {
 			if (!sliceNum) {
 				return randomizeArray(arr);
