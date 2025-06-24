@@ -97,7 +97,7 @@ const shortcodes = {
 				viewport.width = 650;
 				viewport.height = 366;
 			} else {
-				screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(
+				screenshotUrl = `https://screenshot.11ty.app/${encodeURIComponent(
 					siteUrl
 				)}/${preset}/1:1/${zoom ? `${zoom}/` : ""}`;
 			}

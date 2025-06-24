@@ -11,5 +11,5 @@ As [11ty joined Font Awesome](/blog/eleventy-font-awesome/) a few short months a
 If ever you wanted a say in future projects and priorities in the 11ty Ecosystem, now is the time to weigh in. Help us by [adding your voice to **Survey Awesome** today]({{ external_url }})!
 
 <a href="{{ external_url }}" class="elv-externalexempt opengraph-card">
-  <img src="https://v1.screenshot.11ty.dev/{{ external_url | urlencode }}/opengraph/" alt="A screenshot of Survey Awesome!" loading="lazy" decoding="async" width="650" height="341">
+  <img src="https://screenshot.11ty.app/{{ external_url | urlencode }}/opengraph/" alt="A screenshot of Survey Awesome!" loading="lazy" decoding="async" width="650" height="341">
 </a>

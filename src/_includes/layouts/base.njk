@@ -19,7 +19,7 @@ let eleventyComputed = {
 			if(ogimageOverride) {
 				return new URL(ogimageOverride, process.env.DEPLOY_PRIME_URL || domain).toString();
 			}
-			return `https://v1.screenshot.11ty.dev/${encodeURIComponent(domain + page.url + "?cache=1")}/opengraph/`;
+			return `https://screenshot.11ty.app/${encodeURIComponent(domain + page.url + "?cache=1")}/opengraph/`;
 		},
 		imgalt: function({ domain, page }) {
 			return `A screenshot of the web page at ${domain + page.url}`;
