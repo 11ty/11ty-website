@@ -16,7 +16,7 @@ import { RenderPlugin, InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 import fontAwesomePlugin from "@11ty/font-awesome";
 import { getImageColors } from "@11ty/image-color";
 
-import { addedIn, coerceVersion } from "./config/addedin.js";
+import { addedIn, coerceVersion, greaterThan } from "./config/addedin.js";
 import minificationLocalPlugin from "./config/minification.js";
 import cleanName from "./config/cleanAuthorName.js";
 import objectHas from "./config/object-has.js";
@@ -320,6 +320,7 @@ export default async function (eleventyConfig) {
 	});
 
 	eleventyConfig.addFilter("coerceVersion", coerceVersion);
+	eleventyConfig.addNunjucksGlobal("semverGreaterThan", greaterThan);
 	eleventyConfig.addShortcode("addedin", addedIn);
 
 	eleventyConfig.addShortcode(

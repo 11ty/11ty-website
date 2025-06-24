@@ -93,4 +93,8 @@ function addedIn(version, tag, extraClass) {
 	)}</${tag}>`;
 }
 
-export { addedIn, coerceVersion };
+function greaterThan(first, second) {
+	return semver.gt(first, second);
+}
+
+export { addedIn, coerceVersion, greaterThan };

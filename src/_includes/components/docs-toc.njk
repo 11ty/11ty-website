@@ -11,10 +11,14 @@
 	<dl>
 		<dt>Stable</dt>
 		<dd><a href="https://github.com/11ty/eleventy/releases/tag/v{{ npmVersions.latest }}" class="elv-externalexempt"><code>{{ npmVersions.latest }}</code></a></dd>
+		{%- if semverGreaterThan(npmVersions.beta, npmVersions.latest) %}
 		<dt>Beta</dt>
 		<dd><a href="https://github.com/11ty/eleventy/releases/tag/v{{ npmVersions.beta }}" class="elv-externalexempt"><code>{{ npmVersions.beta }}</code></a></dd>
-		{# <dt>Canary</dt>
-		<dd><a href="https://github.com/11ty/eleventy/releases/tag/v{{ npmVersions.canary }}" class="elv-externalexempt"><code>{{ npmVersions.canary }}</code></a></dd> #}
+		{%- endif %}
+		{%- if semverGreaterThan(npmVersions.canary, npmVersions.latest) and semverGreaterThan(npmVersions.canary, npmVersions.beta) %}
+		<dt>Canary</dt>
+		<dd><a href="https://github.com/11ty/eleventy/releases/tag/v{{ npmVersions.canary }}" class="elv-externalexempt"><code>{{ npmVersions.canary }}</code></a></dd>
+		{%- endif %}
 	</dl>
 {%- endcallout %}
 
