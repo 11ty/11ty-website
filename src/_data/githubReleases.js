@@ -8,7 +8,6 @@ async function getPagedGitHubData(url, pageIndex = 1) {
 	let PER_PAGE = 100;
 	let json = [];
 	while(pageIndex) {
-		console.log( `Fetching ${url}?per_page=${PER_PAGE}&page=${pageIndex}` );
 		let page = await EleventyFetch(
 			`${url}?per_page=${PER_PAGE}&page=${pageIndex}`,
 			{

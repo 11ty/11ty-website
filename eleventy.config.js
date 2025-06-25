@@ -560,9 +560,6 @@ ${text.trim()}
 		"latestVersion",
 		function (versions, config, prefix = "v") {
 			for (let version of versions) {
-				if (version.tag === "LATEST") {
-					continue;
-				}
 				if (version.channel && version.channel !== "latest") {
 					continue;
 				}
