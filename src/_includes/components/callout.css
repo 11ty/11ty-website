@@ -260,3 +260,7 @@ body > .elv-callout-sticky .elv-callout-c {
 		border-bottom-left-radius: 0;
 	}
 }
+
+.versions-callout small {
+	margin-inline-start: .5em;
+}
