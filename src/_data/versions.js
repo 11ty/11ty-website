@@ -1,11 +1,7 @@
-export default [
-	// tag: "v2.0.0-beta.1",
-	// "channel": "beta"
-	{
-		tag: "LATEST",
-		docs_url: "https://www.11ty.dev/docs/",
-		ignore_release_notes: true,
-	},
+import semver from "semver";
+import fetchGitHubReleases from "./githubReleases.js";
+
+const HARDCODED_VERSIONS = [
 	{
 		tag: "v3.1.2",
 		docs_url: "https://www.11ty.dev/docs/",
@@ -245,3 +241,42 @@ export default [
 		ignore_release_notes: true,
 	},
 ];
+
+let githubReleases = await fetchGitHubReleases();
+
+for(let version of HARDCODED_VERSIONS) {
+	let key = version.tag.slice(1);
+	if(githubReleases[key]) {
+		githubReleases[key] = {
+			...githubReleases[key],
+			...version,
+		}
+	} else {
+		githubReleases[key] = {
+			...version
+		};
+	}
+
+	// Override tag only
+	githubReleases[key].tagOnly = false;
+}
+
+let versions = Object.values(githubReleases);
+
+versions.sort((a, b) => {
+	if(semver.gt(a.tag, b.tag)) {
+		return -1;
+	}
+	if(semver.lt(a.tag, b.tag)) {
+		return 1;
+	}
+	return 0;
+})
+
+// versions.unshift(	{
+// 	tag: "LATEST",
+// 	docs_url: "https://www.11ty.dev/docs/",
+// 	ignore_release_notes: true,
+// });
+
+export default versions;

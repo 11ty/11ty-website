@@ -19,7 +19,26 @@ You can also browse the latest releases [on npm](https://www.npmjs.com/package/@
 
 ## Full Release History
 
-{%- for version in versions %}
-{%- set releaseInfo = githubReleases[ version.tag | normalizeVersion ] %}
-- `{{ version.tag }}`{% if version.channel %} on the `@{{ version.channel }}` channel{% endif %}—[Docs]({% if version.docs_url %}{{ version.docs_url }}{% else %}https://github.com/11ty/eleventy/blob/{{ version.tag }}/README.md{% endif %}){% if version.ignore_release_notes !== true %} and [Release Notes](https://github.com/11ty/eleventy/releases/tag/{{ version.tag }}){% endif %}{% if releaseInfo.date %} _({{ releaseInfo.date | newsDate }})_{% endif %}
+_×{{ versions.length }} releases total_
+
+<table>
+  <thead>
+    <tr>
+      <th>Version</th>
+      <th>Docs</th>
+			<th>Date</th>
+      <th>More…</th>
+    </tr>
+  </thead>
+  <tbody>
+{%- for v in versions %}
+{%- set releaseInfo = githubReleases[ v.tag | normalizeVersion ] %}
+    <tr>
+      <td><code>{{ v.tag }}</code>{% if v.prerelease %} <span class="minilink">Prelease</span>{% endif %}</td>
+			<td>{% if not v.prerelease and not v.tagOnly %}<a href="{% if v.docs_url %}{{ v.docs_url }}{% else %}https://github.com/11ty/eleventy/blob/{{ v.tag }}/README.md{% endif %}"><strong>Docs</strong></a>{% endif %}</td>
+			<td>{% if releaseInfo.date %}<em>{{ releaseInfo.date | newsDate("yyyy LLL dd") }}</em>{% endif %}</td>
+			<td>{% if not v.ignore_release_notes %}<a href="https://github.com/11ty/eleventy/releases/tag/{{ v.tag }}">{% if v.tagOnly %}GitHub Tag{% else %}GitHub Release{% endif %}</a>{% endif %}</td>
+    </tr>
 {%- endfor -%}
+  </tbody>
+</table>

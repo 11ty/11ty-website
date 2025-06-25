@@ -1,15 +1,16 @@
-//  /repos/{owner}/{repo}/releases
-
 import "dotenv/config";
+import semver from "semver";
 import EleventyFetch from "@11ty/eleventy-fetch";
 
-const CACHE_DURATION = process.env.ELEVENTY_RUN_MODE === "serve" ? "1w" : "1d";
+const CACHE_DURATION = process.env.ELEVENTY_RUN_MODE === "serve" ? "1h" : "1d";
 
-export default async function () {
-	try {
-		// https://developer.github.com/v3/repos/#get
-		let json = await EleventyFetch(
-			"https://api.github.com/repos/11ty/eleventy/releases?per_page=100",
+async function getPagedGitHubData(url, pageIndex = 1) {
+	let PER_PAGE = 100;
+	let json = [];
+	while(pageIndex) {
+		console.log( `Fetching ${url}?per_page=${PER_PAGE}&page=${pageIndex}` );
+		let page = await EleventyFetch(
+			`${url}?per_page=${PER_PAGE}&page=${pageIndex}`,
 			{
 				type: "json",
 				duration: CACHE_DURATION,
@@ -22,13 +23,28 @@ export default async function () {
 				},
 			}
 		);
+		json.push(...page);
+		if(page.length < PER_PAGE) {
+			pageIndex = false;
+		} else {
+			pageIndex++;
+		}
+	}
+	return json;
+}
 
-		let releases = json.filter(entry => {
+export default async function () {
+	try {
+		// https://developer.github.com/v3/repos/#get
+		let releasesJson = await getPagedGitHubData("https://api.github.com/repos/11ty/eleventy/releases");
+		let tagsJson = await getPagedGitHubData("https://api.github.com/repos/11ty/eleventy/tags");
+
+		let releases = releasesJson.filter(entry => {
 			// no drafts
 			return entry.draft !== true;
 		}).map(entry => {
 			return {
-				version: entry.tag_name,
+				tag: entry.tag_name,
 				date: entry.created_at,
 				prerelease: entry.prerelease,
 			}
@@ -36,11 +52,27 @@ export default async function () {
 
 		let lookupObj = {};
 		for(let release of releases) {
-			let key = release.version;
+			let key = release.tag;
 			if(key.startsWith("v")) {
 				key = key.slice(1);
 			}
 			lookupObj[key] = release;
+		}
+		for(let tag of tagsJson) {
+			let key = tag.name;
+			if(key.startsWith("v")) {
+				key = key.slice(1);
+			}
+
+			// leave as-is if release already exists
+			if(!lookupObj[key]) {
+				// Note: date for tags does not exist in the data source
+				lookupObj[key] = {
+					tag: tag.name,
+					tagOnly: true,
+					prerelease: semver.parse(tag.name).prerelease.length > 0,
+				};
+			}
 		}
 
 		return lookupObj;
