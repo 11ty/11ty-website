@@ -1006,16 +1006,18 @@ to:
 	 * JavaScript Pretty Date
 	 * Copyright (c) 2011 John Resig (ejohn.org)
 	 * Licensed under the MIT and GPL licenses.
+	 *
+	 * Floor for minutes/hours, Round for days, Ceil for weeks
 	 */
 	eleventyConfig.addFilter("timeDiff", dateStr => {
 		let diff = (Date.now() - Date.parse(dateStr)) / 1000;
-		let day_diff = Math.floor(diff / 86400);
+		let day_diff = Math.round(diff / 86400);
 
 		if ( isNaN(day_diff) || day_diff < 0 || day_diff >= 31 ) {
 			return;
 		}
 
-		return day_diff == 0 && (
+		let result = day_diff == 0 && (
 				diff < 60 && "now" ||
 				diff < 120 && "1 minute ago" ||
 				diff < 3600 && Math.floor( diff / 60 ) + " minutes ago" ||
@@ -1024,6 +1026,8 @@ to:
 			day_diff == 1 && "1 day ago" || // Yesterday
 			day_diff < 7 && day_diff + " days ago" ||
 			day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks ago";
+
+		return result;
 	})
 
 	eleventyConfig.addFilter("normalizeVersion", (version = "") => {
