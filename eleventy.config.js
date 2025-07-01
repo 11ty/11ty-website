@@ -1025,6 +1025,7 @@ to:
 				diff < 86400 && Math.floor( diff / 3600 ) + " hours ago") ||
 			day_diff == 1 && "1 day ago" || // Yesterday
 			day_diff < 7 && day_diff + " days ago" ||
+			day_diff <= 11 && "1 week ago" ||
 			day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks ago";
 
 		return result;
