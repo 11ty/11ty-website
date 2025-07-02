@@ -1,5 +1,7 @@
 import "dotenv/config";
 
+import fs from "node:fs";
+import path from "node:path";
 import { fileURLToPath } from "node:url";
 import memoize from "memoize";
 import { DateTime } from "luxon";
@@ -18,12 +20,13 @@ import fontAwesomePlugin from "@11ty/font-awesome";
 import { getImageColors } from "@11ty/image-color";
 
 import { addedIn, coerceVersion, greaterThan } from "./config/addedin.js";
-import minificationLocalPlugin from "./config/minification.js";
+import minificationLocalPlugin, { minifyJavaScriptFile } from "./config/minification.js";
 import cleanName from "./config/cleanAuthorName.js";
 import objectHas from "./config/object-has.js";
 import markdownPlugin from "./config/markdownPlugin.js";
 import feedPlugin from "./config/feedPlugin.js";
 import sidebarPlugin from "./config/sidebarPlugin.js";
+import timeDiff from "./config/timeDiff.js";
 
 function resolveModule(target) {
 	return fileURLToPath(import.meta.resolve(target));
@@ -452,11 +455,15 @@ ${text.trim()}
 
 		// Eleventy Editor
 		[resolveModule("@zachleat/line-numbers")]: "js/line-numbers.js",
-		// TODO minify
-		[resolveModule("@11ty/eleventy/bundle")]: `js/eleventy.core.browser.js`,
-		[resolveModule("@11ty/eleventy/bundle/md")]: `js/eleventy.engine-md.browser.js`,
-		[resolveModule("@11ty/eleventy/bundle/liquid")]: `js/eleventy.engine-liquid.browser.js`,
 	});
+
+	// Eleventy Editor
+	eleventyConfig.on("eleventy.after", async () => {
+		// Minification only happens in production
+		await minifyJavaScriptFile(resolveModule("@11ty/eleventy/bundle"), path.join(eleventyConfig.directories.output, "js/eleventy.core.browser.js"));
+		await minifyJavaScriptFile(resolveModule("@11ty/eleventy/bundle/md"), path.join(eleventyConfig.directories.output, "js/eleventy.engine-md.browser.js"));
+		await minifyJavaScriptFile(resolveModule("@11ty/eleventy/bundle/liquid"), path.join(eleventyConfig.directories.output, "js/eleventy.engine-liquid.browser.js"));
+	})
 
 	eleventyConfig.addPassthroughCopy("src/img");
 	eleventyConfig.addPassthroughCopy("src/blog/*.png");
@@ -1014,34 +1021,7 @@ to:
 		return supporters.filter(s => s.isMonthly && (!tier || s?.tier?.slug == tier));
 	});
 
-	/*
-	 * JavaScript Pretty Date
-	 * Copyright (c) 2011 John Resig (ejohn.org)
-	 * Licensed under the MIT and GPL licenses.
-	 *
-	 * Floor for minutes/hours, Round for days, Ceil for weeks
-	 */
-	eleventyConfig.addFilter("timeDiff", dateStr => {
-		let diff = (Date.now() - Date.parse(dateStr)) / 1000;
-		let day_diff = Math.round(diff / 86400);
-
-		if ( isNaN(day_diff) || day_diff < 0 || day_diff >= 31 ) {
-			return;
-		}
-
-		let result = day_diff == 0 && (
-				diff < 60 && "now" ||
-				diff < 120 && "1 minute ago" ||
-				diff < 3600 && Math.floor( diff / 60 ) + " minutes ago" ||
-				diff < 7200 && "1 hour ago" ||
-				diff < 86400 && Math.floor( diff / 3600 ) + " hours ago") ||
-			day_diff == 1 && "1 day ago" || // Yesterday
-			day_diff < 7 && day_diff + " days ago" ||
-			day_diff <= 11 && "1 week ago" ||
-			day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks ago";
-
-		return result;
-	})
+	eleventyConfig.addFilter("timeDiff", timeDiff);
 
 	eleventyConfig.addFilter("normalizeVersion", (version = "") => {
 		if(version.startsWith("v")) {
