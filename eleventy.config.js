@@ -1,5 +1,6 @@
 import "dotenv/config";
 
+import { mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import memoize from "memoize";
@@ -457,6 +458,9 @@ ${text.trim()}
 
 	// Eleventy Editor
 	// Minification only happens in production
+	mkdirSync(eleventyConfig.directories.output, {
+		recursive: true
+	});
 	await minifyJavaScriptFile(resolveModule("@11ty/eleventy/bundle"), path.join(eleventyConfig.directories.output, "js/eleventy.core.browser.js"));
 	await minifyJavaScriptFile(resolveModule("@11ty/eleventy/bundle/md"), path.join(eleventyConfig.directories.output, "js/eleventy.engine-md.browser.js"));
 	await minifyJavaScriptFile(resolveModule("@11ty/eleventy/bundle/liquid"), path.join(eleventyConfig.directories.output, "js/eleventy.engine-liquid.browser.js"));
