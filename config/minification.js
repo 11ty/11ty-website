@@ -1,16 +1,22 @@
 import CleanCSS from "clean-css";
 import { minify } from "terser";
-import fs from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { parse } from "node:path";
 
 export async function minifyJavaScriptFile(source, target) {
-	let contents = fs.readFileSync(source, "utf8");
+	let contents = readFileSync(source, "utf8");
+
+	let { dir } = parse(target);
+	mkdirSync(dir, {
+		recursive: true
+	});
 
 	if (process.env.NODE_ENV === "production") {
 		let minified = await minifyJavaScript(contents);
-		fs.writeFileSync(target, minified, "utf8")
+		writeFileSync(target, minified, "utf8")
 	} else {
 		// passthrough during dev
-		fs.writeFileSync(target, `/* Minification skipped during dev mode */\n${contents}`, "utf8")
+		writeFileSync(target, `/* Minification skipped during dev mode */\n${contents}`, "utf8")
 	}
 }
 
