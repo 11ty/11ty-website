@@ -25,7 +25,7 @@ export async function minifyJavaScript(code) {
 }
 
 export default function (eleventyConfig) {
-	eleventyConfig.addFilter("jsmin", function(code) {
+	eleventyConfig.addFilter("jsmin", async function(code) {
 		if (process.env.NODE_ENV === "production") {
 			return minifyJavaScript(code);
 		}
