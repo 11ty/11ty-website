@@ -458,12 +458,10 @@ ${text.trim()}
 	});
 
 	// Eleventy Editor
-	eleventyConfig.on("eleventy.after", async () => {
-		// Minification only happens in production
-		await minifyJavaScriptFile(resolveModule("@11ty/eleventy/bundle"), path.join(eleventyConfig.directories.output, "js/eleventy.core.browser.js"));
-		await minifyJavaScriptFile(resolveModule("@11ty/eleventy/bundle/md"), path.join(eleventyConfig.directories.output, "js/eleventy.engine-md.browser.js"));
-		await minifyJavaScriptFile(resolveModule("@11ty/eleventy/bundle/liquid"), path.join(eleventyConfig.directories.output, "js/eleventy.engine-liquid.browser.js"));
-	})
+	// Minification only happens in production
+	await minifyJavaScriptFile(resolveModule("@11ty/eleventy/bundle"), path.join(eleventyConfig.directories.output, "js/eleventy.core.browser.js"));
+	await minifyJavaScriptFile(resolveModule("@11ty/eleventy/bundle/md"), path.join(eleventyConfig.directories.output, "js/eleventy.engine-md.browser.js"));
+	await minifyJavaScriptFile(resolveModule("@11ty/eleventy/bundle/liquid"), path.join(eleventyConfig.directories.output, "js/eleventy.engine-liquid.browser.js"));
 
 	eleventyConfig.addPassthroughCopy("src/img");
 	eleventyConfig.addPassthroughCopy("src/blog/*.png");
