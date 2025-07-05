@@ -80,13 +80,24 @@ export default function (eleventyConfig) {
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
+### JSON5 - JSON for Humans
+
+[JSON5](https://www.npmjs.com/package/json5) is an extension to JSON that aims to be easier to write and maintain by hand. It omits quotes for the keys, allows for comments, trailing spaces, line breaks, and more. JSON5 is backwards-compatible with JSON. Don’t forget to `npm install json5`.
+
+{% set codeContent %}
+import JSON5 from "json5";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addDataExtension("json5", (contents) => JSON5.parse(contents));
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
+
 ### Adding a custom JSON file extension
 
 {% set codeContent %}
 export default function (eleventyConfig) {
-	eleventyConfig.addDataExtension("geojson", (contents) =>
-		JSON.parse(contents)
-	);
+	eleventyConfig.addDataExtension("geojson", (contents) => JSON.parse(contents));
 };
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
