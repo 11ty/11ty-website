@@ -82,7 +82,7 @@ export default function (eleventyConfig) {
 
 ### JSON5 - JSON for Humans
 
-[JSON5](https://www.npmjs.com/package/json5) is an extension to JSON that aims to be easier to write and maintain by hand. It omits quotes for the keys, allows for comments, trailing spaces, line breaks, and more. JSON5 is backwards-compatible with JSON.
+[JSON5](https://www.npmjs.com/package/json5) is an extension to JSON that aims to be easier to write and maintain by hand. It omits quotes for the keys, allows for comments, trailing spaces, line breaks, and more. JSON5 is backwards-compatible with JSON. Don’t forget to `npm install json5`.
 
 {% set codeContent %}
 import JSON5 from "json5";
