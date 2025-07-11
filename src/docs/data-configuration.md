@@ -7,7 +7,7 @@ eleventyNavigation:
 
 # Configure your Templates
 
-There are a few special data keys you can assign in your data to control how templates behave. These can live anywhere in the [Data Cascade](/docs/data-cascade/).
+There are a few special data keys you can assign in your data to control how templates behave. These can live anywhere in the [Data Cascade](/docs/data-cascade/) except as computed data. The only special key you can [define in computed data is `permalink`](/docs/data-computed/#advanced-details).
 
 - `permalink`: Change the output target of the current template. Normally, you cannot use template syntax to reference other variables in your data, but `permalink` is an exception. [Read more about Permalinks](/docs/permalinks/).
 - `layout`: Wrap current template with a layout template found in the `_includes` folder. [Read more about Layouts](/docs/layouts/).
