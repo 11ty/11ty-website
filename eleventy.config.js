@@ -1007,7 +1007,7 @@ to:
 	 * Copyright (c) 2011 John Resig (ejohn.org)
 	 * Licensed under the MIT and GPL licenses.
 	 *
-	 * Floor for minutes/hours, Round for days, Ceil for weeks
+	 * Floor for minutes/hours, Round for days and weeks
 	 */
 	eleventyConfig.addFilter("timeDiff", dateStr => {
 		let diff = (Date.now() - Date.parse(dateStr)) / 1000;
@@ -1026,7 +1026,7 @@ to:
 			day_diff == 1 && "1 day ago" || // Yesterday
 			day_diff < 7 && day_diff + " days ago" ||
 			day_diff <= 11 && "1 week ago" ||
-			day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks ago";
+			day_diff < 31 && Math.round( day_diff / 7 ) + " weeks ago";
 
 		return result;
 	})
