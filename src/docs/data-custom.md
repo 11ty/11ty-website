@@ -56,13 +56,13 @@ export default function (eleventyConfig) {
 
 ### YAML
 
-Here we’re using the [`js-yaml` package](https://www.npmjs.com/package/js-yaml). Don’t forget to `npm install js-yaml`.
+Here we’re using the [`yaml` package](https://www.npmjs.com/package/yaml). Don’t forget to `npm install yaml`.
 
 {% set codeContent %}
-import yaml from "js-yaml";
+import YAML from "yaml";
 
 export default function (eleventyConfig) {
-	eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
+	eleventyConfig.addDataExtension("yaml", (contents) => YAML.parse(contents));
 };
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
