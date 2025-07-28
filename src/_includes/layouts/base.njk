@@ -72,6 +72,7 @@ let eleventyComputed = {
 {%- if feedTitle and feedUrl %}
 		<link rel="alternate" href="{{ feedUrl }}" title="{{ feedTitle }}" type="application/atom+xml">
 {%- endif %}
+		<link rel="search" href="/opensearch.xml" type="application/opensearchdescription+xml" title="Eleventy">
 
 {# Not currently used:
 {% include 'components/announcement.css' %}
