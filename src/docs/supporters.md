@@ -11,7 +11,7 @@ Eleventy is made possible by financial contributions from these lovely people:
 
 <div class="facepile supporters-facepile fl">
 {% for supporter in opencollective.supporters %}
-{%- set nameToSlug = supporter.name | slug | lower -%}
+{%- set nameToSlug = supporter.name | slugify | lower -%}
 {%- if nameToSlug != "zach-leatherman" %}
   <div>
     <a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt supporters-link" rel="sponsored">{% opencollectiveavatar supporter %}{{ supporter.name }}</a>

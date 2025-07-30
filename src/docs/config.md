@@ -495,7 +495,7 @@ export default function (eleventyConfig) {
 
 ### Documentation Moved to Dedicated Pages
 
-<a id="{{ 'Copy Files to Output using Pass-through File Copy' | slug }}"></a>
+<a id="{{ 'Copy Files to Output using Pass-through File Copy' | slugify }}"></a>
 
 #### Copy Files to Output using Passthrough File Copy
 

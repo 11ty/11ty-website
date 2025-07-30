@@ -252,7 +252,7 @@ html {
 	async getEleventyProjectResults(groupName) {
 		let inputs = this.getInputsForGroup(groupName);
 		let configFn = await this.getConfiguration();
-		let elev = new Eleventy(undefined, undefined, {
+		let elev = new Eleventy({
 			async config(eleventyConfig) {
 				if(configFn) {
 					await configFn(eleventyConfig);

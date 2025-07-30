@@ -14,7 +14,7 @@ If we want to copy additional files that are not Eleventy templates, we use a fe
 
 ## Configuration API Method
 
-<a id="{{ 'Manual Pass-through Copy (Faster)' | slug }}"></a><a id="{{ 'Manual Passthrough Copy (Faster)' | slug }}"></a>
+<a id="{{ 'Manual Pass-through Copy (Faster)' | slugify }}"></a><a id="{{ 'Manual Passthrough Copy (Faster)' | slugify }}"></a>
 
 Use a configuration API method to specify _files_ or _directories_ for Eleventy to copy to the output folder.
 
