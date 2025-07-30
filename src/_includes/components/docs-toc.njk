@@ -10,7 +10,7 @@
 {%- callout "box", "html", versionsTitle -%}
 	<dl class="versions-callout">
 		<dt>Stable</dt>
-			<dd><a href="https://github.com/11ty/eleventy/releases/tag/v{{ npmVersions.latest }}" class="elv-externalexempt"><code>{{ npmVersions.latest }}</code>{# <small>{{ githubReleases[ npmVersions.latest | normalizeVersion ].date | timeDiff }}</small> #}</a></dd>
+		<dd><a href="https://github.com/11ty/eleventy/releases/tag/v{{ npmVersions.latest }}" class="elv-externalexempt"><code>{{ npmVersions.latest }}</code>{# <small>{{ githubReleases[ npmVersions.latest | normalizeVersion ].date | timeDiff }}</small> #}</a></dd>
 		{%- if semverGreaterThan(npmVersions.beta, npmVersions.latest) %}
 		<dt>Beta</dt>
 		<dd><a href="https://github.com/11ty/eleventy/releases/tag/v{{ npmVersions.beta }}" class="elv-externalexempt"><code>{{ npmVersions.beta }}</code>{# <small>{{ githubReleases[ npmVersions.beta | normalizeVersion ].date | timeDiff }}</small> #}</a></dd>
