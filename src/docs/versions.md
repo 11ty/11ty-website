@@ -19,7 +19,7 @@ You can also browse the latest releases [on npm](https://www.npmjs.com/package/@
 
 ## Full Release History
 
-_×{{ versions.length }} releases total_
+_×{{ versions.length }} releases total since [November 26, 2017](https://github.com/11ty/eleventy/commit/00ad9192605d5d501de6aae193701c5a2297ef2c)_
 
 <table>
   <thead>
