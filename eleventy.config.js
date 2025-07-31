@@ -1,5 +1,7 @@
 import "dotenv/config";
 
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import memoize from "memoize";
 import { DateTime } from "luxon";
 import HumanReadable from "human-readable-numbers";
@@ -17,12 +19,16 @@ import fontAwesomePlugin from "@11ty/font-awesome";
 import { getImageColors } from "@11ty/image-color";
 
 import { addedIn, coerceVersion, greaterThan } from "./config/addedin.js";
-import minificationLocalPlugin from "./config/minification.js";
+import minificationLocalPlugin, { minifyJavaScriptFile } from "./config/minification.js";
 import cleanName from "./config/cleanAuthorName.js";
 import objectHas from "./config/object-has.js";
 import markdownPlugin from "./config/markdownPlugin.js";
 import feedPlugin from "./config/feedPlugin.js";
 import sidebarPlugin from "./config/sidebarPlugin.js";
+
+function resolveModule(target) {
+	return fileURLToPath(import.meta.resolve(target));
+}
 
 let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" decoding="async" class="avatar" width="200" height="200">`;
 const shortcodes = {
@@ -434,18 +440,27 @@ ${text.trim()}
 	});
 
 	eleventyConfig.addPassthroughCopy({
-		"node_modules/@11ty/logo/assets/logo-bg.svg": "img/logo-github.svg",
-		"node_modules/@11ty/logo/assets/open-graph.jpg": "img/open-graph.jpg",
-		"node_modules/@11ty/logo/img/logo-784x1093.png": "img/logo.png",
-		"node_modules/@11ty/logo/img/logo-200x200.png": "img/logo-github.png",
-		"node_modules/@11ty/logo/img/logo-96x96.png": "img/favicon.png",
-		"node_modules/speedlify-score/speedlify-score.js": "js/speedlify-score.js",
-		"node_modules/@zachleat/line-numbers/line-numbers.js": "js/line-numbers.js",
-		"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js": "js/seven-minute-tabs.js",
-		"node_modules/@zachleat/filter-container/filter-container.js": "js/filter-container.js",
-		"node_modules/lite-youtube-embed/src/lite-yt-embed.js": `js/lite-yt-embed.js`,
+		[resolveModule("@11ty/logo/assets/logo-bg.svg")]: "img/logo-github.svg",
+		[resolveModule("@11ty/logo/assets/open-graph.jpg")]: "img/open-graph.jpg",
+		[resolveModule("@11ty/logo/img/logo-784x1093.png")]: "img/logo.png",
+		[resolveModule("@11ty/logo/img/logo-200x200.png")]: "img/logo-github.png",
+		[resolveModule("@11ty/logo/img/logo-96x96.png")]: "img/favicon.png",
+
+		[resolveModule("speedlify-score")]: "js/speedlify-score.js",
+		[resolveModule("@zachleat/seven-minute-tabs")]: "js/seven-minute-tabs.js",
+		[resolveModule("@zachleat/filter-container")]: "js/filter-container.js",
+		[resolveModule("lite-youtube-embed")]: `js/lite-yt-embed.js`,
 		"node_modules/artificial-chart/artificial-chart.{css,js}": `static/`,
+
+		// Eleventy Editor
+		[resolveModule("@zachleat/line-numbers")]: "js/line-numbers.js",
 	});
+
+	// Eleventy Editor
+	// Minification only happens in production
+	await minifyJavaScriptFile(resolveModule("@11ty/client"), path.join(eleventyConfig.directories.output, "js/eleventy.core.browser.js"));
+	await minifyJavaScriptFile(resolveModule("@11ty/client/md"), path.join(eleventyConfig.directories.output, "js/eleventy.engine-md.browser.js"));
+	await minifyJavaScriptFile(resolveModule("@11ty/client/liquid"), path.join(eleventyConfig.directories.output, "js/eleventy.engine-liquid.browser.js"));
 
 	eleventyConfig.addPassthroughCopy("src/img");
 	eleventyConfig.addPassthroughCopy("src/blog/*.png");

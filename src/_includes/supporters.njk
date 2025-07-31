@@ -4,7 +4,7 @@
 	<h3 class="subhed"><strong>Gold Sponsors</strong></h3>
 	<div class="lo-grid">
 	{%- for supporter in goldSponsors | shuffle %}
-	{%- set nameToSlug = supporter.name | slug | lower -%}
+	{%- set nameToSlug = supporter.name | slugify | lower -%}
 		<div class="{% if opencollectiveExtra[nameToSlug].containerClass %} {{ opencollectiveExtra[nameToSlug].containerClass }}{% endif %}">
 			<a href="{{ opencollectiveExtra[nameToSlug].href or supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}" rel="sponsored">{% if opencollectiveExtra[nameToSlug].icon %}{{ opencollectiveExtra[nameToSlug].icon | safe }}<span class="sr-only">{{ supporter.name }}</span>{% else %}{% opencollectiveavatar supporter %}{{ supporter.name }}{% endif %}</a>
 		</div>
@@ -17,7 +17,7 @@
 	<h3 class="subhed"><strong>{% if goldSponsors.length > 0 %}Silver {% endif %}Sponsors</strong></h3>
 	<div class="facepile facepile-supporters">
 	{%- for supporter in opencollective.supporters | supportersFacepile | shuffle %}{% if supporter.tier.slug == "silver-sponsor" and supporter.isMonthly -%}
-		{%- set nameToSlug = supporter.name | slug | lower -%}
+		{%- set nameToSlug = supporter.name | slugify | lower -%}
 		<a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}" rel="sponsored">{% opencollectiveavatar supporter %}</a>
 	{%- endif %}{% endfor %}
 	</div>
