@@ -272,6 +272,7 @@ export default async function (eleventyConfig) {
 		// widths: ["auto"],
 
 		urlPath: "/img/built/",
+		outputDir: ".cache/@11ty/img/",
 
 		// optional, attributes assigned on <img> override these values.
 		defaultAttributes: {
@@ -283,6 +284,12 @@ export default async function (eleventyConfig) {
 			duration: "14d",
 		},
 	});
+
+	if(process.env.ELEVENTY_RUN_MODE === "build") {
+		eleventyConfig.on("eleventy.after", () => {
+			fs.cpSync(".cache/@11ty/img/", path.join(eleventyConfig.directories.output, "img/built/"), { recursive: true });
+		});
+	}
 
 	eleventyConfig.addPlugin(markdownPlugin);
 
