@@ -50,6 +50,17 @@ let eleventyComputed = {
 		{%- endif %}
 		<meta name="theme-color" content="#1f1f1f">
 
+{%- if scriptImportMap %}
+		<script type="importmap">
+			{
+				"imports": {
+{%- for key, url in scriptImportMap %}
+					"{{ key }}": "{{ url }}"{% if not loop.last %},{% endif %}
+{%- endfor %}
+				}
+			}
+		</script>
+{%- endif %}
 		<link rel="preload" href="/css/fonts/benchnine-bold.woff2" as="font" type="font/woff2" crossorigin>
 
 		<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon.png">
@@ -145,17 +156,6 @@ let eleventyComputed = {
 		{% include "../components/details-force-state.js" %}
 		{% include "../components/disabled-form.js" %}
 		</script>
-{%- if scriptImportMap %}
-		<script type="importmap">
-			{
-				"imports": {
-{%- for key, url in scriptImportMap %}
-					"{{ key }}": "{{ url }}"{% if not loop.last %},{% endif %}
-{%- endfor %}
-				}
-			}
-		</script>
-{%- endif %}
 {%- if page.url == '/' %}
 		{# see also "eleventy-js.njk" #}
 		{% js %}{% include "../../../node_modules/@11ty/is-land/is-land.js" %}{% endjs %}
