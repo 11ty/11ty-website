@@ -795,7 +795,7 @@ You can also transform individual element content using `webc:type`. In addition
 
 ```html
 <script webc:type="render">
-	function() {
+	export default function() {
 		if(!this.alt) {
 			throw new Error("oh no you didn’t");
 		}
@@ -824,7 +824,9 @@ Or use a JavaScript render function to generate some CSS:
 ```html
 <template webc:is="style" webc:root="override">
 	<script webc:type="js">
-		`/* ${license} */`;
+		export default function({ license }) {
+			return `/* ${license} */`;
+		}
 	</script>
 	<slot></slot>
 </template>
@@ -836,7 +838,7 @@ Or use a JavaScript render function to generate some CSS:
 ```html
 <template webc:is="style" webc:root="override">
 	<script webc:type="render">
-		function() {
+		export default function() {
 			return `/* ${this.license} */`;
 		}
 	</script>
@@ -853,11 +855,13 @@ Note that you can also use `webc:if`!
 
 ```html
 <script webc:type="js">
+export default function({ src, alt }) {
 	if (alt) {
-		`<img src="${src}" alt="${alt}">`;
+		return `<img src="${src}" alt="${alt}">`;
 	} else {
-		`<a href="${src}">Your image didn’t have an alt so you get this link instead.</a>`;
+		return `<a href="${src}">Your image didn’t have an alt so you get this link instead.</a>`;
 	}
+}
 </script>
 ```
 

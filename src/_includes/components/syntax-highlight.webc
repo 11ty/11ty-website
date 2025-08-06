@@ -36,7 +36,7 @@ syntax-highlight > pre {
 </style>
 <div webc:if="hed" class="syntax-title"><b @text="hedType || 'Filename'"></b><span @text="hed"></span></div>
 <script webc:type="render" webc:is="template" webc:raw webc:nokeep>
-	function() {
+	export default function() {
 		let errorPrefix = "[11ty/11ty-website] <syntax-highlight> WebC component: ";
 
 		if(!this.helpers || !this.helpers.highlight) {
