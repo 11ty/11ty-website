@@ -78,7 +78,15 @@ module.exports = function (eleventyConfig) {
 
 ## Indented Code Blocks
 
-Markdown has a lesser known feature called [Indented Code Blocks](https://spec.commonmark.org/0.28/#indented-code-blocks), which means any content that is indented by four or more spaces (and has a preceding line break) will be transformed into a code block.
+In common Markdown, any content indented by four or more spaces (and has a preceding line break) will be transformed into a code block.
+Eleventy 2.0.0 and later disables
+[Indented Code Blocks](https://spec.commonmark.org/0.28/#indented-code-blocks)
+based on feedback from the community.
+
+(For how to format code blocks, see [Syntax Highlighting Plugin](https://www.11ty.dev/docs/plugins/syntaxhighlight/).) 
+
+<details>
+  <summary>Example</summary>
 
 ```markdown
     a simple
@@ -94,6 +102,8 @@ is transformed into:
 ```
 
 _(Example borrowed from the [CommonMark Specification](https://spec.commonmark.org/0.28/#indented-code-blocks))_
+
+</details>
 
 After [listening to community feedback](https://github.com/11ty/eleventy/issues/2438), starting with Eleventy 2.0.0 <strong>Indented Code Blocks</strong> are disabled for both the default Markdown library instance _and_ any set via `setLibrary`.
 
