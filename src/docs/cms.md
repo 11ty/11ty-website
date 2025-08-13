@@ -26,6 +26,10 @@ cmses:
     url: https://www.sanity.io/
     screenshotSize: medium
     tags: [API]
+  - name: DatoCMS
+    url: https://datocms.com/
+    screenshotSize: medium
+    tags: [API]
   - name: Notion
     url: https://developers.notion.com/
     screenshotSize: medium
