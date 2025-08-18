@@ -49,6 +49,9 @@ hosts:
   - name: Sourcehut Pages
     url: https://srht.site/
     screenshotSize: medium
+  - name: CloudRay
+    url: https://cloudray.io/articles/how-to-deploy-your-eleventy-website
+    screenshotSize: medium
 classicHosts:
   - name: Vercel CLI
     url: https://vercel.com/cli
