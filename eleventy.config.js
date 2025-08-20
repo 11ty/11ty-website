@@ -126,7 +126,7 @@ const shortcodes = {
 		);
 
 		let attrs = {
-			alt: "",
+			alt: alt ?? "",
 			loading: "lazy",
 			decoding: "async",
 			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
