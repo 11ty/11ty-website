@@ -126,7 +126,7 @@ const shortcodes = {
 		);
 
 		let attrs = {
-			alt: alt ?? `Screenshot of ${siteUrl}`,
+			alt: alt ?? "",
 			loading: "lazy",
 			decoding: "async",
 			sizes: sizes || "(min-width: 22em) 30vw, 100vw",
@@ -142,12 +142,12 @@ const shortcodes = {
 		let cacheBuster = `_${d.getFullYear()}_${d.getMonth()}_${d.getDate()}`;
 		return `<img src="https://v1.generator.11ty.dev/image/${encodeURIComponent(
 			url
-		)}/${cacheBuster}/" width="66" height="66" alt="Meta Generator tag icon for ${url}" class="avatar avatar-large" loading="lazy" decoding="async" eleventy:ignore>`;
+		)}/${cacheBuster}/" width="66" height="66" alt="" class="avatar avatar-large" loading="lazy" decoding="async" eleventy:ignore>`;
 	},
 	getHostingImageHtml(url) {
 		return `<img src="https://v1.builtwith.11ty.dev/${encodeURIComponent(
 			url
-		)}/image/host/" width="66" height="66" alt="Hosting provider icon for ${url}" class="avatar avatar-large" loading="lazy" decoding="async" eleventy:ignore>`;
+		)}/image/host/" width="66" height="66" alt="" class="avatar avatar-large" loading="lazy" decoding="async" eleventy:ignore>`;
 	},
 	getAvatarHtmlFromFullUrl(fullUrl, cls = "", attrs = "", dims = [150, 150]) {
 		if (cls === "avatar-tall") {
@@ -156,7 +156,7 @@ const shortcodes = {
 
 		return `<img src="${fullUrl}" width="${dims[0]}" height="${
 			dims[1]
-		}" alt="IndieWeb Avatar for ${fullUrl}" class="avatar avatar-indieweb${
+		}" alt="" class="avatar avatar-indieweb${
 			cls ? ` ${cls}` : ""
 		}" loading="lazy" decoding="async"${attrs ? ` ${attrs}` : ""}>`;
 	},
