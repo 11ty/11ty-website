@@ -58,7 +58,7 @@ export default function(eleventyConfig) {
 
 ### `.gitignore`
 
-Eleventy will ignore changes to files or folders listed in your `.gitignore` file by default, [unless `setUseGitIgnore` is turned off](/docs/ignores/#opt-out-of-using-.gitignore).
+Eleventy will ignore changes to files or folders listed in your `.gitignore` file by default, [unless `setUseGitIgnore` is turned off](/docs/ignores/#opt-out-of-using-gitignore).
 
 ### Configuration API {% addedin "2.0.0-canary.18" %}
 

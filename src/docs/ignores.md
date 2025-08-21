@@ -43,7 +43,7 @@ You can also use the new [Preprocessor Configuration API](/docs/config-preproces
 
 ### `.gitignore` entries
 
-Paths listed in your project’s `.gitignore` file are automatically ignored. You can [opt-out of this behavior](#opt-out-of-using-.gitignore).
+Paths listed in your project’s `.gitignore` file are automatically ignored. You can [opt-out of this behavior](#opt-out-of-using-gitignore).
 
 ### `node_modules` {% addedin "1.0.0" %}
 
