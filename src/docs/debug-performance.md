@@ -63,7 +63,10 @@ The most reliable mechanism for tracking down performance issues in any Node.js 
 # npx @11ty/eleventy --quiet
 
 # Use this:
-node --cpu-prof ./node_modules/.bin/eleventy --quiet
+npx --node-options="--cpu-prof" @11ty/eleventy --quiet
+
+# Alternatively, you can try this:
+# node --cpu-prof ./node_modules/.bin/eleventy --quiet
 ```
 
 This will write a `CPU.***.cpuprofile` file to the same directory.
