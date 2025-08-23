@@ -18,7 +18,7 @@ let eleventyComputed = {
 // </script>
 ---
 <script webc:setup>
-function getHighlightedBlogPostContent(collection) {
+export function getHighlightedBlogPostContent(collection) {
 	let posts = findBy(collection, 'data.blogHighlight', true);
 	if(!posts.length) {
 		return "";
@@ -37,7 +37,7 @@ function getHighlightedBlogPostContent(collection) {
 	return `${content.join("")}`;
 }
 
-function randomTestimonialLink(testimonials) {
+export function randomTestimonialLink(testimonials) {
 	let featuredOnly = testimonials.filter(entry => entry.featured && !entry.filteredFromRandomPick);
 	let random = randompick(featuredOnly);
 	let slug = slugify(random.name);

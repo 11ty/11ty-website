@@ -36,20 +36,20 @@ syntax-highlight > pre {
 </style>
 <div webc:if="hed" class="syntax-title"><b @text="hedType || 'Filename'"></b><span @text="hed"></span></div>
 <script webc:type="render" webc:is="template" webc:raw webc:nokeep>
-	function() {
-		let errorPrefix = "[11ty/11ty-website] <syntax-highlight> WebC component: ";
+export default function() {
+	let errorPrefix = "[11ty/11ty-website] <syntax-highlight> WebC component: ";
 
-		if(!this.helpers || !this.helpers.highlight) {
-			throw new Error(errorPrefix+ "missing the `highlight` helper! Did you run addPlugin on the syntax highlighter in your Eleventy config file?");
-		}
-
-		if(!this.language) {
-			throw new Error("Missing `language` attribute on <syntax-highlight>.");
-		}
-
-		let content = this.slots.text.default;
-		// Using the helper in this way should respect plugin `options` too.
-		// TODO wire up @attributes to `options.preAttributes`
-		return this.helpers.highlight(this.language, content);
+	if(!this.helpers || !this.helpers.highlight) {
+		throw new Error(errorPrefix+ "missing the `highlight` helper! Did you run addPlugin on the syntax highlighter in your Eleventy config file?");
 	}
+
+	if(!this.language) {
+		throw new Error("Missing `language` attribute on <syntax-highlight>.");
+	}
+
+	let content = this.slots.text.default;
+	// Using the helper in this way should respect plugin `options` too.
+	// TODO wire up @attributes to `options.preAttributes`
+	return this.helpers.highlight(this.language, content);
+}
 </script>

@@ -1,11 +1,11 @@
 <script webc:setup>
-function getIconHtml(url) {
+export function getIconHtml(url) {
 	if(url) {
 		return indieavatar(url, 'sites-screenshot sites-icon-auto');
 	}
 }
 
-async function getScreenshotStyle(url, iconUrl) {
+export async function getScreenshotStyle(url, iconUrl) {
 	let colors = await getColorsForUrl(iconUrl || url);
 	if(!colors || colors.length === 0) {
 		return false;

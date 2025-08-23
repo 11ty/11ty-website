@@ -27,7 +27,9 @@
 }
 </style>
 <script webc:type="js">
-let version = latestVersion($data.versions, $data.config);
-let versionSuffix = showVersion === "" ? ` (${version})` : "";
-this.helpers.highlight("", this.slots.text.default.trim().replaceAll("%%VERSION%%", versionSuffix), "/", "-"); // `"/", "-"` enables line wrapping
+export default function({ latestVersion, showVersion, $data }) {
+	let version = latestVersion($data.versions, $data.config);
+	let versionSuffix = showVersion === "" ? ` (${version})` : "";
+	return this.helpers.highlight("", this.slots.text.default.trim().replaceAll("%%VERSION%%", versionSuffix), "/", "-"); // `"/", "-"` enables line wrapping
+}
 </script>
