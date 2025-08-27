@@ -10,6 +10,7 @@ import commaNumber from "comma-number";
 import lodashGet from "lodash/get.js";
 import shortHash from "short-hash";
 import { ImportTransformer } from "esm-import-transformer";
+import { transform as tweetbackTransform } from "@tweetback/canonical";
 
 import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 import navigationPlugin from "@11ty/eleventy-navigation";
@@ -360,10 +361,9 @@ export default async function (eleventyConfig) {
 		);
 	});
 
-	eleventyConfig.addAsyncFilter("canonicalTwitterUrl", async (url) => {
+	eleventyConfig.addFilter("canonicalTwitterUrl", (url) => {
 		try {
-			const { transform } = await import("@tweetback/canonical");
-			return transform(url);
+			return tweetbackTransform(url);
 		} catch (e) {
 			return url;
 		}
