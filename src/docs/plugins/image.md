@@ -132,7 +132,7 @@ Image optimization is likely one of the costlier pieces of your Eleventy build. 
 
 ### Optimize Images on Request
 
-{% addedin "v3.0.0-alpha.7" %}{% addedin "Image v5.0.0" %}When using the [Image HTML transform](#html-transform) or the [Image WebC component](./image-webc.md) during local development, image processing is removed from the build for extra performance. Instead, they are processed when requested by the browser using a special middleware built-in to the Eleventy Dev Server. This is enabled or disabled using the [`transformOnRequest` option](#transform-on-request).
+{% addedin "v3.0.0-alpha.7" %}{% addedin "Image v5.0.0" %}When using the [Image HTML transform](#html-transform) during local development, image processing is removed from the build for extra performance. Instead, they are processed when requested by the browser using a special middleware built-in to the Eleventy Dev Server. This is enabled or disabled using the [`transformOnRequest` option](#transform-on-request).
 
 <div id="caching"></div>
 
@@ -265,7 +265,7 @@ await Image("./test/bio-2017.jpg", {
 Development build performance improvement to [optimize images when they are requested in the browser](#optimize-images-on-request).
 
 * `transformOnRequest: false` (default)
-* `transformOnRequest: process.env.ELEVENTY_RUN_MODE === "serve"` (default for HTML Transform and WebC component)
+* `transformOnRequest: process.env.ELEVENTY_RUN_MODE === "serve"` (default for HTML Transform)
 
 You can use [`transformOnRequest` with Shortcodes too](./image-shortcodes.md#boost-performance-optimize-images-on-request).
 
