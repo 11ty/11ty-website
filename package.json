@@ -73,7 +73,7 @@
   },
   "dependencies": {
     "@11ty/client": "4.0.0-alpha.3",
-    "@11ty/is-land": "^5.0.0-beta.5",
+    "@11ty/is-land": "^5.0.0",
     "@11ty/logo": "^2.0.6",
     "@zachleat/details-utils": "^2.0.2",
     "@zachleat/filter-container": "^4.0.0",
