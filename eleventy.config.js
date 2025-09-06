@@ -32,6 +32,26 @@ function resolveModule(target) {
 	return fileURLToPath(import.meta.resolve(target));
 }
 
+function displayUrl(url) {
+	url = url.replace("https://", "");
+	url = url.replace("http://", "");
+
+	if (url.endsWith("/index.html")) {
+		url = url.replace("/index.html", "/");
+	}
+
+	// remove trailing slash
+	if (url.endsWith("/")) {
+		url = url.slice(0, -1);
+	}
+
+	if(url.startsWith("www.")) {
+		url = url.slice("www.".length);
+	}
+
+	return url;
+}
+
 let defaultAvatarHtml = `<img src="/img/default-avatar.png" alt="Default Avatar" loading="lazy" decoding="async" class="avatar" width="200" height="200">`;
 const shortcodes = {
 	communityAvatar(slug, alt = "") {
@@ -157,7 +177,7 @@ const shortcodes = {
 
 		return `<img src="${fullUrl}" width="${dims[0]}" height="${
 			dims[1]
-		}" alt="" class="avatar avatar-indieweb${
+		}" alt="Favicon for ${displayUrl(fullUrl)}" class="avatar avatar-indieweb${
 			cls ? ` ${cls}` : ""
 		}" loading="lazy" decoding="async"${attrs ? ` ${attrs}` : ""}>`;
 	},
@@ -183,8 +203,8 @@ const shortcodes = {
 	},
 	getOpenCollectiveAvatarHtml(supporter) {
 		let preferIndiewebAvatarSlugs = [
-			"nejlepsiceskacasinacom",
-			"slovenskeonlinecasinocom",
+			"nejlepsiceskacasina-com",
+			"slovenskeonlinecasino-com",
 		]
 		let {image: url, name: username} = supporter;
 		let alt = `Open Collective Avatar for ${username}`;
@@ -537,25 +557,7 @@ ${text.trim()}
 		}).format(num);
 	});
 
-	eleventyConfig.addFilter("displayUrl", function (url) {
-		url = url.replace("https://", "");
-		url = url.replace("http://", "");
-
-		if (url.endsWith("/index.html")) {
-			url = url.replace("/index.html", "/");
-		}
-
-		// remove trailing slash
-		if (url.endsWith("/")) {
-			url = url.slice(0, -1);
-		}
-
-		if(url.startsWith("www.")) {
-			url = url.slice("www.".length);
-		}
-
-		return url;
-	});
+	eleventyConfig.addFilter("displayUrl", displayUrl);
 
 	eleventyConfig.addShortcode(
 		"templatelangs",
