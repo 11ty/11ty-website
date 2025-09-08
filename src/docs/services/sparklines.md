@@ -36,7 +36,7 @@ Using color `#123456`:
 
 {% callout "demo" %}
 
-<img src="https://v1.sparkline.11ty.dev/120x30/41,25,9,12,10,6,12,14,19,17,23,30,36,21,40/%23123456/" width="120" height="30" alt="Sparkline representing frequency of posts written from 2007 to 2021" loading="lazy" decoding="async">
+<img src="https://v1.sparkline.11ty.dev/120x30/41,25,9,12,10,6,12,14,19,17,23,30,36,21,40/%23123456/" width="120" height="30" alt="Sparkline representing frequency of posts written from 2007 to 2021" loading="lazy" decoding="async" eleventy:ignore>
 
 {% endcallout %}
 

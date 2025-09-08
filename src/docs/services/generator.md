@@ -37,9 +37,9 @@ https://v1.generator.11ty.dev/json/:url/
 
 {% callout "demo" %}
 
-<img src="https://v1.generator.11ty.dev/image/https%3A%2F%2Fwww.11ty.dev%2F/" alt="Site Generator logo for 11ty.dev/" loading="lazy" decoding="async" width="40" height="40">
-<img src="https://v1.generator.11ty.dev/image/https%3A%2F%2Fwww.gatsbyjs.com%2F/" alt="Site Generator logo for gatsbyjs.com/" loading="lazy" decoding="async" width="40" height="40">
-<img src="https://v1.generator.11ty.dev/image/https%3A%2F%2Fastro.build%2F/" alt="Site Generator logo for astro.build/" loading="lazy" decoding="async" width="40" height="40">
+<img src="https://v1.generator.11ty.dev/image/https%3A%2F%2Fwww.11ty.dev%2F/" alt="Site Generator logo for 11ty.dev/" loading="lazy" decoding="async" width="40" height="40" eleventy:ignore>
+<img src="https://v1.generator.11ty.dev/image/https%3A%2F%2Fwww.gatsbyjs.com%2F/" alt="Site Generator logo for gatsbyjs.com/" loading="lazy" decoding="async" width="40" height="40" eleventy:ignore>
+<img src="https://v1.generator.11ty.dev/image/https%3A%2F%2Fastro.build%2F/" alt="Site Generator logo for astro.build/" loading="lazy" decoding="async" width="40" height="40" eleventy:ignore>
 
 {% endcallout %}
 
