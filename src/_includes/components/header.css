@@ -73,11 +73,13 @@
 	background-color: #222;
 	text-align: center;
 	border-radius: .15em;
+	padding: 0 .25em;
 }
 .elv-nav-menu-logo svg {
-	width: auto;
-	height: 2em;
-	transform: scale(1.25);
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	margin: 0;
 }
 /* Full width logo */
 .elv-header-default .elv-nav-header {
@@ -194,8 +196,9 @@ a[href].elv-hero:visited {
 .elv-hero img,
 .elv-hero svg {
 	display: block;
-	width: 60vh;
-	height: 60vh;
+	width: 40vh;
+	height: 40vh;
+	margin: 10vh;
 	max-width: 100%;
 }
 .elv-hero:hover img,

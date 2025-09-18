@@ -49,7 +49,7 @@
     "@11ty/eleventy-plugin-rss": "^2.0.4",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "@11ty/eleventy-plugin-webc": "^0.12.0-beta.7",
-    "@11ty/font-awesome": "1.0.0-beta.12",
+    "@11ty/font-awesome": "^1.0.0",
     "@11ty/image-color": "^1.0.7",
     "@tweetback/canonical": "^2.0.48",
     "clean-css": "^5.3.3",

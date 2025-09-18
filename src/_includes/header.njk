@@ -2,7 +2,7 @@
 	<div class="elv-menu">
 		<active-background>
 			<ul class="elv-nav-menu list-bare fl fl-inline fl-nowrap">
-				<li><a href="/" class="elv-nav-menu-logo">{% include "../img/logo.svg" %}<span class="sr-only">11ty</span></a></li>
+				<li><a href="/" class="elv-nav-menu-logo"><i class="fa-brands fa-eleventy"></i><span class="sr-only">11ty</span></a></li>
 				<li><a href="/docs/">Get Started</a></li>
 				<li><a href="/blog/">Blog</a></li>
 				<li><a href="/docs/community/">Community</a></li>
@@ -51,7 +51,7 @@
 
 	<div class="elv-nav-header">
 		{% if not isDocs %}
-		<a href="{% if page.url === '/' %}/docs/{% else %}/{% endif %}" class="elv-hero">{% if logoContent %}{{ logoContent | safe }}{% else %}{% include "../img/logo.svg" %}{% endif %}<span class="sr-only">Eleventy</span>{#<img src="/img/logo.svg" alt="11ty Logo" eleventy:formats="auto" loading="eager" decoding="auto">#}</a>
+		<a href="{% if page.url === '/' %}/docs/{% else %}/{% endif %}" class="elv-hero">{% if logoContent %}{{ logoContent | safe }}{% else %}<i class="fa-brands fa-eleventy"></i>{% endif %}<span class="sr-only">Eleventy</span></a>
 		{% endif %}
 		<is-land class="elv-possum-island" on:visible on:idle on:load on:save-data="false" on:media="(prefers-reduced-motion: no-preference)">
 			<template data-island>
