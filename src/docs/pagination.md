@@ -11,57 +11,18 @@ relatedKey: pagination
 
 {% tableofcontents %}
 
-Pagination allows you to iterate over a data set and create multiple files from a single template. The input data can be in the form of an array or object defined in your frontmatter or in [global data](/docs/data-global/), or you can paginate a collection to make an easily digestible list of your posts.
+Pagination allows you to iterate over a data set and create multiple files from a single template. The input data can be defined in your frontmatter or in [global data](/docs/data-global/), or you can paginate a collection to make an easily digestible list of your posts.
 
-## Paging an Array
+- `data`: The name of the data set to iterate and generate the pages. The data set can be an Array or an Object.
+- `size`: Sets the number of elements available on each iteration through `data`.
+- `alias`: A variable name to identify the current element on each iteration of `data` items. Similar to the variable in a `for...in` loop. [Read more about Pagination alias](#aliasing-to-a-different-variable).
+- `generatePageOnEmptyData`: Set to `true` to generate a page when `data` is empty. [Read more about Generating an Empty Results Page](#generating-an-empty-results-page).
+- `resolve`: {% addedin "0.4.0" %} Set to `values` to iterate over an Object values instead of its keys.
+- `filter`: {% addedin "0.4.0" %} A list of items to be excluded while iterating `data`.
+- `reverse`: {% addedin "0.7.0" %} Set to `true` to reverse the order of the items in `data`.
+- `addAllPagesToCollections`: {% addedin "0.8.0" %} Set to `true` to add all the generated pages to collections when using the `tags` key. [Read more about adding all pages to collections](#add-all-pagination-pages-to-collections).
 
-To iterate over a data set and create pages for individual chunks of data, use pagination. Enable in your template’s front matter by adding the `pagination` key.
-
-Consider the following template, which will result in two pages being created, each of which will display two items from `testdata`:
-
-<is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync class="tabs-flush">
-  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-array"} %}
-  <div id="paged-array-liquid" role="tabpanel">
-
-    {%- highlight "liquid" %}
-    {%- include "snippets/pagination/paged-array.njk" %}
-    {%- endhighlight %}
-
-If the above file were named `paged.liquid`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
-
-  </div>
-  <div id="paged-array-njk" role="tabpanel">
-
-    {%- highlight "jinja2" %}
-    {%- include "snippets/pagination/paged-array.njk" %}
-    {%- endhighlight %}
-
-If the above file were named `paged.njk`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
-
-  </div>
-  <div id="paged-array-js" role="tabpanel">
-
-    {%- highlight "js" %}
-    {%- include "snippets/pagination/paged-array.js" %}
-    {%- endhighlight %}
-
-If the above file were named `paged.11ty.js`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
-
-  </div>
-  <div id="paged-array-cjs" role="tabpanel">
-
-    {%- highlight "js" %}
-    {%- include "snippets/pagination/paged-array.cjs" %}
-    {%- endhighlight %}
-
-If the above file were named `paged.11ty.js`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
-
-  </div>
-</seven-minute-tabs>
-</is-land>
-
-We enable pagination and then give it a dataset with the `data` key. We control the number of items in each chunk with `size`. The pagination data variable will be populated with what you need to create each template. Here’s what’s in `pagination`:
+The pagination data variable will be populated with what you need to create each template. Here’s what’s in `pagination`:
 
 {% codetitle "JavaScript Object", "Syntax" %}
 
@@ -123,13 +84,61 @@ In addition to the `pagination` object entries documented above, it also has:
 
 </details>
 
+## Paging an Array
+
+Consider the following template, which will result in two pages being created, each of which will display two items from `testdata`:
+
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-array"} %}
+  <div id="paged-array-liquid" role="tabpanel">
+
+    {%- highlight "liquid" %}
+    {%- include "snippets/pagination/paged-array.njk" %}
+    {%- endhighlight %}
+
+If the above file were named `paged.liquid`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
+
+  </div>
+  <div id="paged-array-njk" role="tabpanel">
+
+    {%- highlight "jinja2" %}
+    {%- include "snippets/pagination/paged-array.njk" %}
+    {%- endhighlight %}
+
+If the above file were named `paged.njk`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
+
+  </div>
+  <div id="paged-array-js" role="tabpanel">
+
+    {%- highlight "js" %}
+    {%- include "snippets/pagination/paged-array.js" %}
+    {%- endhighlight %}
+
+If the above file were named `paged.11ty.js`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
+
+  </div>
+  <div id="paged-array-cjs" role="tabpanel">
+
+    {%- highlight "js" %}
+    {%- include "snippets/pagination/paged-array.cjs" %}
+    {%- endhighlight %}
+
+If the above file were named `paged.11ty.js`, it would create two pages in your output folder: `_site/paged/index.html` and `_site/paged/1/index.html`. These output paths are configurable with `permalink` (see below).
+
+  </div>
+</seven-minute-tabs>
+</is-land>
+
+We enable pagination and then give it a dataset with the `data` key. We control the number of items in each chunk with `size`.
+
 ## Creating Navigation Links to your Pages
 
 Learn how to create a list of links to every paginated page on a pagination template with a full [Pagination Navigation](/docs/pagination/nav/) tutorial.
 
 ## Paging an Object
 
-All of the examples thus far have paged Array data. Eleventy does allow paging objects too. Objects are resolved to pagination arrays using either the `Object.keys` or `Object.values` JavaScript functions. Consider the following templates:
+All of the examples thus far have paged Array data. Eleventy does allow paging objects too. Objects are resolved to pagination arrays using either the `Object.keys` (which is default behaviour) or `Object.values` JavaScript functions. Consider the following templates:
 
 {% include "snippets/pagination/paging-object.njk" %}
 
@@ -271,11 +280,13 @@ Using a universal `slug` filter (transforms `My Item` to `my-item`), this output
 
 ## Aliasing to a different variable
 
-Ok, so `pagination.items[0]` is ugly. We provide an option to alias this to something different.
+Instead of accessing to `pagination.items` by the array index (e.g. `pagination.items[0]`), there's an option to alias each iteration value to a variable.
 
 {% include "snippets/pagination/alias.njk" %}
 
-This writes to `_site/different/item1/index.html` and `_site/different/item2/index.html`.
+The `wonder` alias stores the value of `pagination.items[i]` on each iteration.
+
+Due to the `permalink` configuration, this writes to `_site/different/item1/index.html` and `_site/different/item2/index.html`.
 
 {% callout "info" %}Note that <code>page</code> is a reserved word so you cannot use <code>alias: page</code>. Read about Eleventy’s reserved data names in <a href="/docs/data-eleventy-supplied/">Eleventy Supplied Data</a>.{% endcallout %}
 
@@ -283,7 +294,7 @@ If your chunk `size` is greater than 1, the alias will be an array instead of a 
 
 {% include "snippets/pagination/alias-size.njk" %}
 
-This writes to `_site/different/item1/index.html` and `_site/different/item3/index.html`.
+Notice how the position `0` of `wonder` is the only one accessed so this example writes a page only for `Item1` (`_site/different/item1/index.html`) and `Item3` (`_site/different/item3/index.html`) while it ignores `Item2` and `Item4`.
 
 ## Paging a Collection
 
@@ -354,7 +365,7 @@ As an aside, this could also be achieved in a more verbose way using the [Collec
 
 ### Filtering Values {% addedin "0.4.0" %}
 
-Use the `filter` pagination property to remove values from paginated data.
+Use the `filter` pagination property to exclude values from paginated data.
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
@@ -508,16 +519,6 @@ testdata:
 
 Now `collections.myCollection` will have both output pages in the collection array (`_site/my-page/index.html` and `_site/my-page/1/index.html`).
 
-## Full Pagination Option List
-
-- `data` (String) [Lodash.get path](https://lodash.com/docs/4.17.15#get) to point to the target data set.
-- `size` (Number, required)
-- `alias` (String) [Lodash.set path](https://lodash.com/docs/4.17.15#set) to point to the property to set.
-- `generatePageOnEmptyData` (Boolean) if target data set is empty, render first page with empty chunk `[]`.
-- `resolve: values` {% addedin "0.4.0" %}
-- `filter` (Array) {% addedin "0.4.0" %}
-- `reverse: true` (Boolean) {% addedin "0.7.0" %}
-- `addAllPagesToCollections: true` (Boolean) {% addedin "0.8.0" %}
 
 ## Related
 
