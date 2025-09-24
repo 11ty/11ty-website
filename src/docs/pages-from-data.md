@@ -10,7 +10,14 @@ eleventyNavigation:
 
 The [Pagination feature](/docs/pagination/) is used for iterating over any data to create multiple output files.
 
-Pagination can be used for traditional style pagination outputs like `/result/page-0/`, `/result/page-1/`. Pagination can also iterate over an object too and output any `permalink` value!
+Pagination can be used for traditional style pagination outputs like:
+
+- `/result/page-0/`
+- `/result/page-1/`
+
+Pagination can also iterate over an object too and output any `permalink` value. The object could be a collection so the `tags` key could be used to paginate and generate Tag pages for your content.
+
+Check the [Pagination](/docs/pagination/) documentation to know more about its available options and other use cases.
 
 ## An Example
 
