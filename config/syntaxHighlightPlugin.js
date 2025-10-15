@@ -52,7 +52,7 @@ ${ticks}
 ${wrapper[1]}`;
 		}
 
-		let highlightedCode = syntaxHighlightFunction(code, language, "", {
+		let highlightedCode = syntaxHighlightFunction(code, language, options.lineHighlights || "", {
 			lineSeparator: "\n",
 			preAttributes: attrs,
 		});
