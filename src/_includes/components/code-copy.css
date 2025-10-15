@@ -1,8 +1,10 @@
 /* Copy button */
+/* clean-css doesn’t support CSS Nesting: https://github.com/clean-css/clean-css/issues/1254 */
+/* clean-css ignore:start */
 :is(syntax-highlight, .syntax-highlight):has(wa-copy-button) {
 	position: relative;
 
-	& wa-copy-button {
+	wa-copy-button {
 		position: absolute;
 		right: -1rem;
 		bottom: .25rem;
@@ -30,3 +32,4 @@
 		}
 	}
 }
+/* clean-css ignore:end */
