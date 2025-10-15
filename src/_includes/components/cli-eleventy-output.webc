@@ -31,7 +31,8 @@ export default function({ latestVersion, showVersion, $data }) {
 	let version = latestVersion($data.versions, $data.config);
 	let versionSuffix = showVersion === "" ? ` (${version})` : "";
 	return this.helpers.highlight(this.slots.text.default.trim().replaceAll("%%VERSION%%", versionSuffix), "", undefined, {
-		lineHighlights: "/ -"
+		lineHighlights: "/ -",
+		copyButtonEnabled: false,
 	});
 }
 </script>
