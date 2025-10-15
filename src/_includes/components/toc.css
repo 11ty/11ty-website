@@ -185,6 +185,9 @@ details-force-state:defined .elv-toc-list > li > a:hover + details > summary,
 details-force-state:defined .elv-toc-list > li > a:has(+ details > summary:hover) {
 	background-color: var(--elv-toc-hover-color);
 }
+details-force-state:not(:defined) .elv-toc-list > li > a:has(+ details) + details > summary:after {
+	content: " Menu";
+}
 
 /* Footer category navigation */
 .elv-cat-list-active {
