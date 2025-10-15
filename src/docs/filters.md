@@ -25,31 +25,35 @@ Various template engines can be extended with custom filters to modify content. 
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "filter"} %}
   <div id="filter-njk" role="tabpanel">
     {% codetitle "sample.njk" %}
-{%- highlight "html" %}{% raw %}
+{%- set codeBlock %}{% raw %}
 <h1>{{ name | makeUppercase }}</h1>
-{% endraw %}{% endhighlight %}
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
   </div>
   <div id="filter-liquid" role="tabpanel">
     {% codetitle "sample.liquid" %}
-{%- highlight "html" %}{% raw %}
+{%- set codeBlock %}{% raw %}
 <h1>{{ name | makeUppercase }}</h1>
-{% endraw %}{% endhighlight %}
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
   </div>
   <div id="filter-js" role="tabpanel">
     {% codetitle "sample.11ty.js" %}
-{%- highlight "js" %}{% raw %}
+{%- set codeBlock %}{% raw %}
 export default function({name}) {
   return `<h1>${this.makeUppercase(name)}</h1>`;
 };
-{% endraw %}{% endhighlight %}
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
   </div>
 	<div id="filter-cjs" role="tabpanel">
     {% codetitle "sample.11ty.cjs" %}
-{%- highlight "js" %}{% raw %}
+{%- set codeBlock %}{% raw %}
 module.exports = function({name}) {
   return `<h1>${this.makeUppercase(name)}</h1>`;
 };
-{% endraw %}{% endhighlight %}
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -150,7 +154,7 @@ Note that Eleventy 3.0 <!-- 3.0.0-alpha.15 --> ships with a memoization layer ar
 
 <div class="codetitle">eleventy.config.js</div>
 
-```js
+{%- set codeBlock %}{% raw %}
 import memoize from "memoize";
 
 export default function(eleventyConfig) {
@@ -158,7 +162,8 @@ export default function(eleventyConfig) {
 		return encode(str);
 	}));
 };
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
 
 ## Per-Engine filters
 

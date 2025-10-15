@@ -108,16 +108,12 @@ You can use this feature to [globally change your project’s default permalinks
 If you want a file extension in your URL, you might use it like this:
 
 {% codetitle "YAML Front Matter", "Syntax" %}
-
-{% raw %}
-
-```markdown
+{%- set codeBlock %}{% raw %}
 ---
 permalink: "{{ page.filePathStem }}.html"
 ---
-```
-
-{% endraw %}
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("yaml") | safe }}
 
 This example output uses the above permalink value.
 
@@ -179,13 +175,10 @@ It’s helpful if you add `<meta name="generator">` to your existing Eleventy pr
 
 {% codetitle "Nunjucks, Liquid", "Syntax" %}
 
-{% raw %}
-
-```njk
+{%- set codeBlock %}{% raw %}
 <meta name="generator" content="{{ eleventy.generator }}">
-```
-
-{% endraw %}
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("jinja2") | safe }}
 
 These videos also provide some additional context as to why this is important:
 

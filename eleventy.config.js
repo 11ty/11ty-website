@@ -12,7 +12,6 @@ import shortHash from "short-hash";
 import { ImportTransformer } from "esm-import-transformer";
 import { transform as tweetbackTransform } from "@tweetback/canonical";
 
-import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 import navigationPlugin from "@11ty/eleventy-navigation";
 import eleventyImage, { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import eleventyWebcPlugin from "@11ty/eleventy-plugin-webc";
@@ -27,6 +26,7 @@ import objectHas from "./config/object-has.js";
 import markdownPlugin from "./config/markdownPlugin.js";
 import feedPlugin from "./config/feedPlugin.js";
 import sidebarPlugin from "./config/sidebarPlugin.js";
+import syntaxHighlightPlugin from "./config/syntaxHighlightPlugin.js";
 
 function resolveModule(target) {
 	return fileURLToPath(import.meta.resolve(target));
@@ -259,21 +259,7 @@ export default async function (eleventyConfig) {
 	});
 
 	/* Plugins */
-	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
-		lineSeparator: "<br>",
-		preAttributes: {
-			tabindex: "0",
-		},
-		init: function ({ Prism }) {
-			Prism.languages.markdown = Prism.languages.extend("markup", {
-				frontmatter: {
-					pattern: /^---[\s\S]*?^---$/m,
-					greedy: true,
-					inside: Prism.languages.yaml,
-				},
-			});
-		},
-	});
+	eleventyConfig.addPlugin(syntaxHighlightPlugin);
 
 	eleventyConfig.addPlugin(fontAwesomePlugin, {
 		defaultAttributes: {

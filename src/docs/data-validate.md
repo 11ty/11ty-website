@@ -16,7 +16,7 @@ In the following example, each content template with an `eleventyDataSchema` cal
 
 <div class="codetitle">blog/blog.11tydata.js</div>
 
-```js
+{%- set codeBlock %}{% raw %}
 import { z } from "zod";
 import { fromZodError } from 'zod-validation-error';
 
@@ -31,4 +31,5 @@ export default {
 		}
 	}
 };
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("js") | safe }}

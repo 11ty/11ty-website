@@ -5,7 +5,6 @@ eleventyNavigation:
   order: 3
   excerpt: Iterate over a data set and create multiple output files.
 ---
-
 # Create Pages From Data
 
 The [Pagination feature](/docs/pagination/) is used for iterating over any data to create multiple output files.
@@ -16,7 +15,7 @@ Pagination can be used for traditional style pagination outputs like `/result/pa
 
 Let's look at an example where we dynamically build pages based on data from a json file. First let's consider this simple data file stored in `_data/possums.json`:
 
-```js
+{%- set codeBlock %}{% raw %}
 [
 	{
 		name: "Fluffy",
@@ -35,13 +34,12 @@ Let's look at an example where we dynamically build pages based on data from a j
 		age: 9,
 	},
 ];
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
 
 In order to create one page per possum, we can use the following template. The file name isn’t important, but the file extension is (e.g. `possum-pages.liquid` or `possum-pages.njk`).
 
-{% raw %}
-
-```markdown
+{%- set codeBlock %}{% raw %}
 ---
 pagination:
   data: possums
@@ -51,9 +49,8 @@ permalink: "possums/{{ possum.name | slugify }}/"
 ---
 
 {{ possum.name }} is {{ possum.age }} years old
-```
-
-{% endraw %}
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("markdown") | safe }}
 
 This template will generate four files, one for each possum, where the filename is based on the possum's name passed through the [`slugify`](/docs/filters/slugify/) function. As possums are added and edited the resultant possum details page will be updated automatically.
 

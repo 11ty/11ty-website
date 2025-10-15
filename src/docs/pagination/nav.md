@@ -50,27 +50,31 @@ Alright, you definitely read all of those right? 😇 Here’s some accessible c
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-nav-starter", valid: "liquid,njk,js" } %}
   <div id="paged-nav-starter-liquid" role="tabpanel">
     {%- codetitle "starter.liquid" %}
-    {%- highlight "html" %}
-    {%- include "snippets/pagination/nav/starter.liquid" %}
-    {%- endhighlight %}
+{%- set codeBlock %}
+{%- include "snippets/pagination/nav/starter.liquid" %}
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
   </div>
   <div id="paged-nav-starter-njk" role="tabpanel">
     {%- codetitle "starter.njk" %}
-    {%- highlight "html" %}
-    {%- include "snippets/pagination/nav/starter.njk" %}
-    {%- endhighlight %}
+{%- set codeBlock %}
+{%- include "snippets/pagination/nav/starter.njk" %}
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
   </div>
   <div id="paged-nav-starter-js" role="tabpanel">
     {%- codetitle "starter.11ty.js" %}
-    {%- highlight "js" %}
-    {%- include "snippets/pagination/nav/starter.js" %}
-    {%- endhighlight %}
+{%- set codeBlock %}
+{%- include "snippets/pagination/nav/starter.js" %}
+{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
   </div>
 	<div id="paged-nav-starter-cjs" role="tabpanel">
     {%- codetitle "starter.11ty.cjs" %}
-    {%- highlight "js" %}
-    {%- include "snippets/pagination/nav/starter.cjs" %}
-    {%- endhighlight %}
+{%- set codeBlock %}
+{%- include "snippets/pagination/nav/starter.cjs" %}
+{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -78,8 +82,7 @@ Alright, you definitely read all of those right? 😇 Here’s some accessible c
 For our example, this code will output the following markup for our example (on the first page):
 
 {% codetitle "HTML", "Syntax" %}
-
-```html
+{%- set codeBlock %}{% raw %}
 <nav aria-labelledby="my-pagination">
 	<h2 id="my-pagination">This is my Pagination</h2>
 	<ol>
@@ -88,7 +91,8 @@ For our example, this code will output the following markup for our example (on 
 		<li><a href="/test/2/">Page 3</a></li>
 	</ol>
 </nav>
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
 
 {% callout "info" %}<strong>HTML tip</strong>: make sure the <code>id</code> attribute used on your heading (<code>id="my-pagination"</code>) is unique to your page!{% endcallout %}
 
@@ -99,8 +103,7 @@ Say you want to output something from the paginated data instead of bland `Page 
 #### When Paginating Arrays
 
 {% codetitle "YAML", "Syntax" %}
-
-```yaml
+{%- set codeBlock %}{% raw %}
 testdata:
   - item1
   - item2
@@ -108,7 +111,8 @@ testdata:
   - item4
   - item5
   - item6
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("yaml") | safe }}
 
 {% include "snippets/pagination/original.njk" %}
 
@@ -120,8 +124,7 @@ testdata:
 #### When Paginating Object Literals
 
 {% codetitle "YAML", "Syntax" %}
-
-```yaml
+{%- set codeBlock %}{% raw %}
 testdata:
   key1: item1
   key2: item2
@@ -129,7 +132,8 @@ testdata:
   key4: item4
   key5: item5
   key6: item6
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("yaml") | safe }}
 
 {% include "snippets/pagination/object-lit.njk" %}
 
@@ -143,12 +147,12 @@ testdata:
 You’ll probably also want to add some kind of visual styling to indicate that the user is on the current page. For this let’s use a light `background-color`.
 
 {% codetitle "CSS", "Syntax" %}
-
-```css
+{%- set codeBlock %}{% raw %}
 [aria-current] {
 	background-color: #eee;
 }
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("css") | safe }}
 
 {% callout "info" %}<strong id="annoy-zach">A Tip to avoid something that annoys Zach™</strong>: If you use something like <code>font-weight</code> here make sure the change in text size for the current page doesn’t make your navigation shift around between pages! This is especially important if your navigation links are displayed side-by-side on the same line.{% endcallout %}
 
@@ -164,21 +168,24 @@ Note that if the current page (`page.url`) is the first or last in the set, we w
   </div>
   <div id="paged-nav-nextprev-njk" role="tabpanel">
     {%- codetitle "nextprev.njk" %}
-    {%- highlight "jinja2 3,7" %}
-    {%- include "snippets/pagination/nav/nextprev.njk" %}
-    {%- endhighlight %}
+{%- set codeBlock %}
+{%- include "snippets/pagination/nav/nextprev.njk" %}
+{%- endset %}
+{{ codeBlock | highlight("jinja2") | safe }}
   </div>
   <div id="paged-nav-nextprev-js" role="tabpanel">
     {%- codetitle "nextprev.11ty.js" %}
-    {%- highlight "js" %}
-    {%- include "snippets/pagination/nav/nextprev.js" %}
-    {%- endhighlight %}
+{%- set codeBlock %}
+{%- include "snippets/pagination/nav/nextprev.js" %}
+{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
   </div>
 	<div id="paged-nav-nextprev-cjs" role="tabpanel">
     {%- codetitle "nextprev.11ty.cjs" %}
-    {%- highlight "js" %}
-  {%- include "snippets/pagination/nav/nextprev.cjs" %}
-    {%- endhighlight %}
+{%- set codeBlock %}
+{%- include "snippets/pagination/nav/nextprev.cjs" %}
+{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -197,21 +204,24 @@ For clarity here, we’re omitting the previous and next links from the previous
   </div>
   <div id="paged-nav-firstlast-njk" role="tabpanel">
     {%- codetitle "firstlast.njk" %}
-    {%- highlight "jinja2 3,7" %}
-    {%- include "snippets/pagination/nav/firstlast.njk" %}
-    {%- endhighlight %}
+{%- set codeBlock %}
+{%- include "snippets/pagination/nav/firstlast.njk" %}
+{%- endset %}
+{{ codeBlock | highlight("jinja2") | safe }}
   </div>
   <div id="paged-nav-firstlast-js" role="tabpanel">
     {%- codetitle "firstlast.11ty.js" %}
-    {%- highlight "js" %}
-    {%- include "snippets/pagination/nav/firstlast.js" %}
-    {%- endhighlight %}
+{%- set codeBlock %}
+{%- include "snippets/pagination/nav/firstlast.js" %}
+{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
   </div>
 	<div id="paged-nav-firstlast-cjs" role="tabpanel">
     {%- codetitle "firstlast.11ty.cjs" %}
-    {%- highlight "js" %}
-    {%- include "snippets/pagination/nav/firstlast.cjs" %}
-    {%- endhighlight %}
+{%- set codeBlock %}
+{%- include "snippets/pagination/nav/firstlast.cjs" %}
+{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
   </div>
 </seven-minute-tabs>
 </is-land>
@@ -228,21 +238,24 @@ Here’s the final pagination navigation template code, pieced together:
   </div>
   <div id="paged-nav-combined-njk" role="tabpanel">
     {%- codetitle "combined.njk" %}
-    {%- highlight "jinja2" %}
-    {%- include "snippets/pagination/nav/combined.njk" %}
-    {%- endhighlight %}
+{%- set codeBlock %}
+{%- include "snippets/pagination/nav/combined.njk" %}
+{%- endset %}
+{{ codeBlock | highlight("jinja2") | safe }}
   </div>
   <div id="paged-nav-combined-js" role="tabpanel">
     {%- codetitle "combined.11ty.js" %}
-    {%- highlight "js" %}
-    {%- include "snippets/pagination/nav/combined.js" %}
-    {%- endhighlight %}
+{%- set codeBlock %}
+{%- include "snippets/pagination/nav/combined.js" %}
+{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
   </div>
 	<div id="paged-nav-combined-cjs" role="tabpanel">
     {%- codetitle "combined.11ty.cjs" %}
-    {%- highlight "js" %}
-    {%- include "snippets/pagination/nav/combined.cjs" %}
-    {%- endhighlight %}
+{%- set codeBlock %}
+{%- include "snippets/pagination/nav/combined.cjs" %}
+{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
   </div>
 </seven-minute-tabs>
 </is-land>

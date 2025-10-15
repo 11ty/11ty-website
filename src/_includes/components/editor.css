@@ -71,3 +71,8 @@ eleventy-editor:not(:defined):after,
 eleventy-editor:not(:defined)[label]:after {
 	content: "Run requires JavaScript"
 }
+
+/* No copy button on editors */
+:is(is-land--eleventy-editor, eleventy-editor) :is(is-land--syntax-highlight, syntax-highlight) > is-land {
+	display: none;
+}

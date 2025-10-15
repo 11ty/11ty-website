@@ -28,9 +28,10 @@ Starting with RSS Plugin v2.0 and newer, there are two options to create feeds i
 
 Available on [npm](https://www.npmjs.com/package/@11ty/eleventy-plugin-rss).
 
-```
+{%- set codeBlock %}
 npm install @11ty/eleventy-plugin-rss
-```
+{%- endset %}
+{{ codeBlock | highlight("sh") | safe }}
 
 * `v2` of this this plugin requires Eleventy v3.0 or newer.
 * `v1` of this plugin is compatible with Eleventy 0.11 or newer.

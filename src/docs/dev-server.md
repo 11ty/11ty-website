@@ -179,9 +179,10 @@ You can swap back to Eleventy Dev Server using the `setServerOptions` configurat
 
 First, install it:
 
-```
+{%- set codeBlock %}
 npm install @11ty/eleventy-server-browsersync
-```
+{%- endset %}
+{{ codeBlock | highlight("sh") | safe }}
 
 Then, enable it in your configuration file:
 

@@ -29,9 +29,10 @@ Published as [`@11ty/eleventy-img`](https://www.npmjs.com/package/@11ty/eleventy
 
 _Image v6.0.0 requires Node 18+._
 
-```
+{%- set codeBlock %}
 npm install @11ty/eleventy-img
-```
+{%- endset %}
+{{ codeBlock | highlight("sh") | safe }}
 
 ## Usage
 

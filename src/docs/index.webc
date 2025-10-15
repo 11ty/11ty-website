@@ -23,21 +23,24 @@ overrideCommunityLinks: true
 <p>Prefer to watch videos instead? Check out <a href="https://www.youtube.com/watch?v=kzf9A9tkkl4"><strong>6 minutes to Build a Blog from Scratch</strong></a>.</p>
 
 <template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
-
 ## <span class="numberflag"><span class="sr-only">Step</span> 1</span> Make a Project Directory
 
 Create a directory for your project using the `mkdir` command (short for _make directory_):
+</template>
 
-```bash
+<syntax-highlight language="bash">
 mkdir eleventy-sample
-```
+</syntax-highlight>
 
+<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
 Now move into that directory with the `cd` command (short for _change directory_):
+</template>
 
-```bash
+<syntax-highlight language="bash">
 cd eleventy-sample
-```
+</syntax-highlight>
 
+<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
 ## <span class="numberflag"><span class="sr-only">Step</span> 2</span> Install Eleventy
 
 ### Create a `package.json`
@@ -54,25 +57,17 @@ Installing Eleventy into a project requires a `package.json` file.
 		<a href="#quickstart-run-2a-yarn" role="tab" data-tabs-persist="pkgmgr:yarn">Yarn</a>
 	</div>
 	<div id="quickstart-run-2a-npm" role="tabpanel">
-		<syntax-highlight language="bash">
-			npm init -y
-		</syntax-highlight>
+		<syntax-highlight language="bash">npm init -y</syntax-highlight>
 		<p>The <code>npm</code> command (included with Node.js) will create a <code>package.json</code> file for you with <a href="https://docs.npmjs.com/cli/init"><code>npm init -y</code></a>. The <code>-y</code> flag tells <code>npm</code> to use default values and skips the questionnaire.</p>
 		<p>Use the following command if you want to use <a href="/docs/cjs-esm.md">ESM in your project and not CommonJS</a>.</p>
-		<syntax-highlight language="bash">
-			npm pkg set type="module"
-		</syntax-highlight>
+		<syntax-highlight language="bash">npm pkg set type="module"</syntax-highlight>
 	</div>
 	<div id="quickstart-run-2a-pnpm" role="tabpanel">
-		<syntax-highlight language="bash">
-			pnpm init
-		</syntax-highlight>
+		<syntax-highlight language="bash">pnpm init</syntax-highlight>
 		<p>Learn more about <a href="https://pnpm.io/">pnpm</a> (it requires separate installation).</p>
 	</div>
 	<div id="quickstart-run-2a-yarn" role="tabpanel">
-		<syntax-highlight language="bash">
-			yarn init
-		</syntax-highlight>
+		<syntax-highlight language="bash">yarn init</syntax-highlight>
 		<p>Learn more about <a href="https://yarnpkg.com/">yarn</a> (it requires separate installation).</p>
 	</div>
 </seven-minute-tabs>

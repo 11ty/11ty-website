@@ -129,9 +129,7 @@ When `MY_ENVIRONMENT` is set, the value from `myProject.environment` will be glo
 
 Working from our [Inline CSS Quick Tip](/docs/quicktips/inline-css/), we can modify the output to only minify our CSS if we’re building for production:
 
-{% raw %}
-
-```html
+{% set codeBlock %}{% raw %}
 <style>
 {% if myProject.environment == "production" %}
 	{{ css | cssmin | safe }}
@@ -139,6 +137,5 @@ Working from our [Inline CSS Quick Tip](/docs/quicktips/inline-css/), we can mod
 	{{ css | safe }}
 {% endif %}
 </style>
-```
-
-{% endraw %}
+{% endraw %}{% endset %}
+{{ codeBlock | highlight("html") | safe }}

@@ -38,23 +38,25 @@ If you use Eleventy bundled plugins (e.g. I18nPlugin, RenderPlugin, or HTMLBaseP
 
 Consider this CommonJS configuration file:
 
-```js
+{%- set codeBlock %}{% raw %}
 // Any combination of these
 const { I18nPlugin, RenderPlugin, HtmlBasePlugin } = require("@11ty/eleventy");
 
 module.exports = function (eleventyConfig) {
 	// …
 };
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
 
 In Eleventy v3 you’ll need to use a dynamic `import()` instead of `require` (or change your configuration file to use ESM):
 
-```js
+{%- set codeBlock %}{% raw %}
 module.exports = async function (eleventyConfig) {
 	const { I18nPlugin, RenderPlugin, HtmlBasePlugin } = await import("@11ty/eleventy");
 	// …
 };
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
 
 Note the `async` configuration callback. This change is to work around limitations in Node.js with `require("ARBITRARY_ESM_PACKAGE")`. [Future versions of Node.js may fix this limitation](https://joyeecheung.github.io/blog/2024/03/18/require-esm-in-node-js/).
 
@@ -64,25 +66,27 @@ If you attempt to `require("@11ty/eleventy")` with Eleventy v3, we’ll throw a 
 
 When using plugin code that uses the default export as the plugin callback, you will need to use the special `default` property supplied from dynamic `import()`.
 
-```js
+{%- set codeBlock %}{% raw %}
 module.exports = async function (eleventyConfig) {
 	const { default: myPlugin } = await import("my-eleventy-plugin");
 	// …
 };
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
 
 ### ESM Configuration
 
 Your [configuration file](/docs/config.md) using ESM will look like this:
 
-```js
+{%- set codeBlock %}{% raw %}
 // Any combination of these
 import { I18nPlugin, RenderPlugin, HtmlBasePlugin } from "@11ty/eleventy";
 
 export default function (eleventyConfig) {
 	// …
 };
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
 
 Note the use of `import` and `export default`.
 

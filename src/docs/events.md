@@ -95,9 +95,9 @@ export default function(eleventyConfig) {
 
 ## `eleventy.beforeConfig` {% addedin "3.0.0-alpha.3" %}
 
-The `eleventy.beforeConfig` runs before your configuration is initialized and was added as an escape hatch for folks unable to update their top-level configuration callback to be `async` (usually due to some limitation in a third-party tool). You probably won’t need this.
+The `eleventy.beforeConfig` runs before your configuration is initialized and was added as an escape hatch for folks unable to update their top-level configuration callback to be `async` (usually due to some limitation in a third-party tool or a requirement to use CommonJS). You probably won’t need this.
 
-```js
+{%- set codeBlock %}
 // sync configuration callback
 module.exports = function (eleventyConfig) {
 	// async-friendly event
@@ -106,7 +106,8 @@ module.exports = function (eleventyConfig) {
 		eleventyConfig.addPlugin(HtmlBasePlugin);
   });
 };
-```
+{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
 
 ## `eleventy.beforeWatch` {% addedin "1.0.0" %}
 

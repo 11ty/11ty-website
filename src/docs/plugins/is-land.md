@@ -39,9 +39,10 @@ Features:
 
 ## Installation
 
-```
+{%- set codeBlock %}
 npm install @11ty/is-land
-```
+{%- endset %}
+{{ codeBlock | highlight("sh") | safe }}
 
 {% callout "info", "md" -%}
 _You can skip the next steps if you [use `<is-land>` via WebC](/docs/languages/webc/#use-with-is-land)._
@@ -51,17 +52,19 @@ Add `is-land.js` to your primary bundle. It can be deferred and/or loaded asynch
 
 When using with web components it _must_ be defined before any other custom elements are defined (via `customElements.define`) on the page.
 
-```html
+{%- set codeBlock %}
 <script type="module" src="/is-land.js"></script>
-```
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
 
 Or you can use `import "/is-land.js";`.
 
 ## Usage
 
-```html
+{%- set codeBlock %}
 <is-land>This is an island.</is-land>
-```
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
 
 Add any number of loading conditions to this tag to control how and when the island is initialized. You can mix and match. _All_ conditions be satisfied to initialize.
 
@@ -79,7 +82,7 @@ Add any number of loading conditions to this tag to control how and when the isl
   - When Save Data is active `on:save-data`
   - When Save Data is inactive `on:save-data="false"`
 
-```html
+{%- set codeBlock %}
 <is-land on:visible on:idle>
 	<!-- your HTML here -->
 
@@ -88,25 +91,27 @@ Add any number of loading conditions to this tag to control how and when the isl
 		<!-- Islands inherit all of their parents’ loading conditions -->
 	</is-land>
 </is-land>
-```
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
 
 ### Controlling Fallback Content
 
 #### Pre-JS
 
-```html
+{%- set codeBlock %}
 <is-land on:visible on:idle>
 	<vanilla-web-component>
 		Put your pre-JS fallback content in your web component.
 	</vanilla-web-component>
 </is-land>
-```
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
 
 #### Post-JS with `<template>`
 
 Place any post-JS content inside of one or more `<template data-island>` elements anywhere in the `<is-land>`. These will be swapped with their template content. You can nest an `<is-land>` in there if you want!
 
-```html
+{%- set codeBlock %}
 <is-land on:visible on:idle>
   <template data-island>
     <vanilla-web-component>
@@ -114,7 +119,8 @@ Place any post-JS content inside of one or more `<template data-island>` element
     </vanilla-web-component>
   </template>
 </is-land>
-```
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
 
 * Use `data-island="replace"` to replace the contents of the `<is-land>` with the template.
 * Use `data-island="once"` to run a template’s contents once per page (keyed from template contents). _(New in v2.0.1)_
@@ -123,7 +129,7 @@ Place any post-JS content inside of one or more `<template data-island>` element
 
 Embed a script inside the template to run custom JS when the island’s loading conditions have been satisfied!
 
-```html
+{%- set codeBlock %}
 <is-land on:visible>
 	<template data-island>
 		<!-- CSS -->
@@ -139,17 +145,19 @@ Embed a script inside the template to run custom JS when the island’s loading 
 		<script type="module" src="my-js-file.js"></script>
 	</template>
 </is-land>
-```
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
 
 You can also use the `ready` attribute for styling, added to the `<is-land>` when the island has been hydrated.
 
-```html
+{%- set codeBlock %}
 <style>
 	is-land[ready] {
 		background-color: lightgreen;
 	}
 </style>
-```
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
 
 ### Framework Component Support
 
@@ -164,9 +172,9 @@ You can also use the `ready` attribute for styling, added to the `<is-land>` whe
 - Rendering modes: Client
 - Progressive-enhancement friendly (full control of fallback content)
 
-```html
+{%- set codeBlock %}
 <script type="module">
-// Define once for any number of Petite Vue islands.
+	// Define once for any number of Petite Vue islands.
 Island.addInitType("petite-vue", async (target) => {
 	const { createApp } = await import("https://unpkg.com/petite-vue@0.4.1/dist/petite-vue.es.js");
 	createApp().mount(target);
@@ -175,7 +183,8 @@ Island.addInitType("petite-vue", async (target) => {
 <is-land on:visible type="petite-vue" v-scope="{ name: 'Vue' }">
   Hello from <span v-html="name">HTML</span>
 </is-land>
-```
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
 
 #### Vue
 
@@ -183,9 +192,9 @@ Island.addInitType("petite-vue", async (target) => {
 - Larger library (~73 kB)
 - Rendering modes: Client (shown), Server, Server + Client (Hydration)
 
-```html
+{%- set codeBlock %}
 <script type="module">
-// Define once for any number of Vue islands.
+	// Define once for any number of Vue islands.
 Island.addInitType("vue", async (target) => {
 	const { createApp } = await import("https://unpkg.com/vue@3.5.13/dist/vue.esm-browser.js");
 	createApp({
@@ -196,7 +205,8 @@ Island.addInitType("vue", async (target) => {
 <is-land on:visible type="vue" data-name="Vue">
 	Hello from <span v-text="name"></span>
 </is-land>
-```
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
 
 #### Svelte
 
@@ -205,10 +215,9 @@ Island.addInitType("vue", async (target) => {
 * Rendering modes: Client, Server, Server + Client (Hydration)
 * Requires a compiler for client mode (uncommon)
 
-{% raw %}
-```html
+{%- set codeBlock %}{% raw %}
 <script type="module">
-// Define once for any number of Svelte islands.
+	// Define once for any number of Svelte islands.
 Island.addInitType("svelte", async (target) => {
 	// requires an Import map and svelte is lazy loaded when island is ready
 	const { mount } = await import("svelte");
@@ -223,18 +232,18 @@ Island.addInitType("svelte", async (target) => {
 <!-- This example uses an Eleventy `svelte` Universal Filter (see SveltePlugin.cjs) -->
 {% assign component = "./lib/svelte/my-component-js-only.svelte" | svelte %}
 <is-land on:visible type="svelte" import="{{ component.clientJsUrl }}"></is-land>
-```
-{% endraw %}
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
 
 <details>
   <summary>Show sample Import Map</summary>
 
-```html
+{%- set codeBlock %}
 <!-- importmap from https://generator.jspm.io/ -->
 <script type="importmap">
-{
-	"imports": {
-		"svelte": "https://unpkg.com/svelte@5.19.10/src/index-client.js",
+	{
+		"imports": {
+			"svelte": "https://unpkg.com/svelte@5.19.10/src/index-client.js",
 		"svelte/internal/client": "https://unpkg.com/svelte@5.19.10/src/internal/client/index.js",
 		"svelte/internal/flags/legacy": "https://unpkg.com/svelte@5.19.10/src/internal/flags/legacy.js"
 	},
@@ -249,7 +258,8 @@ Island.addInitType("svelte", async (target) => {
 	}
 }
 </script>
-```
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
 
 </details>
 
@@ -260,21 +270,22 @@ Island.addInitType("svelte", async (target) => {
 * Rendering modes: Client (shown), Server, Server + Client (Hydration)
 * No compiler needed when using [`htm`](https://github.com/developit/htm) rather than JSX.
 
-```html
+{%- set codeBlock %}
 <script type="module">
-// Define once for any number of Preact islands.
+	// Define once for any number of Preact islands.
 Island.addInitType("preact", async (target) => {
 	const component = await import(target.getAttribute("import"));
 	component.default(target);
 });
 </script>
 <is-land on:visible type="preact" import="preact-component.js"></is-land>
-```
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
 
 <details>
   <summary>Example component code for <code>preact-component.js</code>:</summary>
 
-```js
+{%- set codeBlock %}
 import { html, render } from 'https://unpkg.com/htm/preact/index.mjs?module'
 
 function App (props) {
@@ -284,7 +295,8 @@ function App (props) {
 export default function(el) {
   render(html`<${App} name="from Preact" />`, el);
 }
-```
+{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
 
 </details>
 
@@ -294,21 +306,22 @@ export default function(el) {
 * Small library (~10 kB)
 * Rendering modes: Client, Server, Server + Client (Hydration)
 
-```html
+{%- set codeBlock %}
 <is-land on:visible import="lit-component.js">
   <lit-component name="Post-JS">Pre-JS Content</lit-web-component>
 </is-land>
-```
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
 
 <details>
   <summary>Show sample Import Map</summary>
 
-```html
+{%- set codeBlock %}
 <!-- importmap from https://generator.jspm.io/ -->
 <script type="importmap">
-{
-	"imports": {
-		"lit": "https://unpkg.com/lit@3.2.1/index.js"
+	{
+		"imports": {
+			"lit": "https://unpkg.com/lit@3.2.1/index.js"
 	},
 	"scopes": {
 		"https://unpkg.com/": {
@@ -320,13 +333,14 @@ export default function(el) {
 	}
 }
 </script>
-```
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
 </details>
 
 <details>
   <summary>Example component code <code>lit-component.js</code>:</summary>
 
-```js
+{%- set codeBlock %}
 import {html, css, LitElement} from "lit";
 
 customElements.define('lit-component', class extends LitElement {
@@ -338,7 +352,8 @@ customElements.define('lit-component', class extends LitElement {
     return html`<p>Hello, ${this.name || "Stranger"}!</p>`;
   }
 });
-```
+{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
 
 </details>
 
@@ -349,26 +364,26 @@ customElements.define('lit-component', class extends LitElement {
 * Rendering modes: Client
 * Progressive-enhancement friendly (control fallback content)
 
-```html
+{%- set codeBlock %}
 <script type="module">
-// Define once for any number of Alpine islands.
+	// Define once for any number of Alpine islands.
 Island.addInitType("alpine", async (target) => {
 	await import("https://unpkg.com/alpinejs@3.14.8/dist/cdn.min.js");
 });
 
 // Workaround for Alpine global mount
 Island.addFallback("[x-data]", (node) => {
-  if(node.hasAttribute("x-ignore")) {
-    return;
+	if(node.hasAttribute("x-ignore")) {
+		return;
   }
 
   node.setAttribute("x-ignore", "");
 
   return () => {
-    node.removeAttribute("x-ignore");
+		node.removeAttribute("x-ignore");
 
     if(Alpine) {
-      Alpine.nextTick(() => Alpine.initTree(node));
+			Alpine.nextTick(() => Alpine.initTree(node));
     }
   };
 });
@@ -378,7 +393,8 @@ Island.addFallback("[x-data]", (node) => {
     Hello from <span x-text="name">HTML</span>!
   </div>
 </is-land>
-```
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
 
 #### Solid.js
 

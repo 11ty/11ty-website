@@ -69,9 +69,10 @@ relatedLinks:
 
 It’s on [npm at `@11ty/eleventy-plugin-webc`](https://www.npmjs.com/package/@11ty/eleventy-plugin-webc)!
 
-```
+{%- set codeBlock %}
 npm install @11ty/eleventy-plugin-webc
-```
+{%- endset %}
+{{ codeBlock | highlight("sh") | safe }}
 
 To add support for `.webc` files in Eleventy, add the plugin in your Eleventy configuration file:
 
