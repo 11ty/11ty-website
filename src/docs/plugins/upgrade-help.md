@@ -24,20 +24,20 @@ Upgrading from Eleventy v0 to v1:
 {%- set codeBlock %}
 npm install @11ty/eleventy@1
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 Or, upgrading from Eleventy v1 to v2:
 
 {%- set codeBlock %}
 npm install @11ty/eleventy@2
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 Or, upgrading from Eleventy v2 to v3:
 {%- set codeBlock %}
 npm install @11ty/eleventy@3
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 ### <span class="numberflag"><span class="sr-only">Step</span> 2</span> Install the Helper
 
@@ -48,21 +48,21 @@ Upgrading from Eleventy v0 to v1:
 {%- set codeBlock %}
 npm install @11ty/eleventy-upgrade-help@1
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 Or, upgrading from Eleventy v1 to v2:
 
 {%- set codeBlock %}
 npm install @11ty/eleventy-upgrade-help@2
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 Or, upgrading from Eleventy v2 to v3:
 
 {%- set codeBlock %}
 npm install @11ty/eleventy-upgrade-help@3
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 ### <span class="numberflag"><span class="sr-only">Step</span> 3</span> Add to Configuration File
 

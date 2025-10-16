@@ -27,7 +27,7 @@ Available on [npm](https://www.npmjs.com/package/@11ty/eleventy-navigation).
 {%- set codeBlock %}
 npm install @11ty/eleventy-navigation
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 Open up your Eleventy config file (probably `eleventy.config.js`) and use `addPlugin`:
 

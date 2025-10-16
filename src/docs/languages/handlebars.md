@@ -27,7 +27,7 @@ The `hbs` templating language was moved out of Eleventy core in v3 and now requi
 {%- set codeBlock %}
 npm install @11ty/eleventy-plugin-handlebars
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 Add to your configuration file (ESM version shown):
 

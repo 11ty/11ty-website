@@ -29,7 +29,7 @@ A plugin to use [Vite](https://vite.dev/) with Eleventy 2.0+.
 {%- set codeBlock %}
 npm install @11ty/eleventy-plugin-vite
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 {% set codeContent %}
 import EleventyVitePlugin from "@11ty/eleventy-plugin-vite";

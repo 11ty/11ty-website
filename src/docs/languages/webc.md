@@ -72,7 +72,7 @@ It’s on [npm at `@11ty/eleventy-plugin-webc`](https://www.npmjs.com/package/@1
 {%- set codeBlock %}
 npm install @11ty/eleventy-plugin-webc
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 To add support for `.webc` files in Eleventy, add the plugin in your Eleventy configuration file:
 

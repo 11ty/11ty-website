@@ -25,7 +25,7 @@ Install from npm:
 {%- set codeBlock %}
 npm install @11ty/eleventy-plugin-ejs
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 Add to your configuration file:
 

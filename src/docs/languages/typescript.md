@@ -48,7 +48,7 @@ Now run Eleventy and tell it to process `11ty.ts` and `11ty.tsx` files:
 {%- set codeBlock %}
 npx @11ty/eleventy --formats=11ty.ts,11ty.tsx
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 Alternatively, you can add `eleventyConfig.addTemplateFormats("11ty.ts,11ty.tsx")` to your configuration file.
 
@@ -59,7 +59,7 @@ You can use `tsx` to process your configuration file too, just run it directly l
 {%- set codeBlock %}
 npx tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts --formats=11ty.tsx
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 ## Community Contributions <span id="alternative-approaches"></span>
 
@@ -91,4 +91,4 @@ Now run Eleventy and tell it to process `11ty.ts` and `11ty.tsx` files:
 {%- set codeBlock %}
 npx @11ty/eleventy --formats=11ty.ts,11ty.tsx
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}

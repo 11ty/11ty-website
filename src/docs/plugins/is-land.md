@@ -42,7 +42,7 @@ Features:
 {%- set codeBlock %}
 npm install @11ty/is-land
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 {% callout "info", "md" -%}
 _You can skip the next steps if you [use `<is-land>` via WebC](/docs/languages/webc/#use-with-is-land)._

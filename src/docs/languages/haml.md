@@ -23,7 +23,7 @@ The `haml` templating language was moved out of Eleventy core in v3 and now requ
 {%- set codeBlock %}
 npm install @11ty/eleventy-plugin-haml
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 Add to your configuration file:
 

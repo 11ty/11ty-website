@@ -32,7 +32,7 @@ _Image v6.0.0 requires Node 18+._
 {%- set codeBlock %}
 npm install @11ty/eleventy-img
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 ## Usage
 

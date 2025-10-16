@@ -52,7 +52,7 @@ Now run Eleventy and tell it to process `mdx` files:
 {%- set codeBlock %}
 npx @11ty/eleventy --formats=mdx
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 Alternatively, you can add `eleventyConfig.addTemplateFormats("mdx")` to your configuration file.
 

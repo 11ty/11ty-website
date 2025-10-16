@@ -26,7 +26,7 @@ Install the `sass` plugin from npm:
 {%- set codeBlock %}
 npm install sass
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 Next add your configuration:
 

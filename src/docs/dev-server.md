@@ -182,7 +182,7 @@ First, install it:
 {%- set codeBlock %}
 npm install @11ty/eleventy-server-browsersync
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 Then, enable it in your configuration file:
 

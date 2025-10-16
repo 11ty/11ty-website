@@ -48,7 +48,7 @@ Now run Eleventy and tell it to process `11ty.jsx` and `11ty.tsx` files:
 {%- set codeBlock %}
 npx @11ty/eleventy --formats=11ty.jsx,11ty.tsx
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
 
 Alternatively, you can add `eleventyConfig.addTemplateFormats("11ty.jsx,11ty.tsx")` to your configuration file.
 
@@ -84,4 +84,4 @@ Now run Eleventy and tell it to process `11ty.jsx` and `11ty.tsx` files:
 {%- set codeBlock %}
 npx @11ty/eleventy --formats=11ty.jsx,11ty.tsx
 {%- endset %}
-{{ codeBlock | highlight("sh") | safe }}
+{{ codeBlock | highlight("bash") | safe }}
