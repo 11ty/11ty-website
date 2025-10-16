@@ -15,20 +15,20 @@ eleventyNavigation:
 Add a `date` key to your front matter to override the default date (file creation) and customize how the file is sorted in a collection.
 
 {% codetitle "YAML Front Matter", "Syntax" %}
-
-```markdown
+{%- set codeBlock %}{% raw %}
 ---
 date: 2016-01-01
 ---
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("markdown") | safe }}
 
 {% codetitle "YAML Front Matter", "Syntax" %}
-
-```markdown
+{%- set codeBlock %}{% raw %}
 ---
 date: Last Modified
 ---
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("markdown") | safe }}
 
 Valid `date` values:
 
@@ -62,11 +62,12 @@ In the callback, you can return:
 
 Here’s an example using IANA time zone codes:
 
-```yaml
+{%- set codeBlock %}{% raw %}
 ---
 date: 2019-08-31 23:59:56 America/New_York
 ---
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("yaml") | safe }}
 
 {% set codeContent %}
 import { DateTime } from "luxon";
@@ -119,11 +120,12 @@ Many date formats in Eleventy (when set in your content‘s filename as `YYYY-MM
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
-```markdown
+{%- set codeBlock %}{% raw %}
 ---
 date: 2018-01-01
 ---
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("markdown") | safe }}
 
 If you output the Date object in a template, it will convert it to a string for display:
 

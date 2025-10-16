@@ -21,6 +21,7 @@ pre {
 
 	background-color: #272822;
 	color: #fff;
+	scrollbar-color: #aaa transparent;
 }
 
 .fl > * > pre {

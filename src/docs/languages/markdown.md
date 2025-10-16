@@ -55,11 +55,12 @@ export default function (eleventyConfig) {
 
 Run your own callback on the provided Library instance (the default _or_ any provided by `setLibrary` above).
 
-```js
-module.exports = function (eleventyConfig) {
+{% set codeContent %}
+export default function (eleventyConfig) {
 	eleventyConfig.amendLibrary("md", (mdLib) => mdLib.enable("code"));
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ## Add your own plugins {% addedin "0.3.0" %}
 
@@ -68,13 +69,14 @@ Pass in your own `markdown-it` plugins using the `amendLibrary` (Eleventy &gt;= 
 1. Find your [own `markdown-it` plugin on NPM](https://www.npmjs.com/search?q=keywords:markdown-it-plugin)
 2. `npm install` the plugin.
 
-```js
-const markdownItEmoji = require("markdown-it-emoji");
+{%- set codeBlock %}
+import { full as emoji } from "markdown-it-emoji";
 
-module.exports = function (eleventyConfig) {
-	eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItEmoji));
+export default function (eleventyConfig) {
+	eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(emoji));
 };
-```
+{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
 
 ## Indented Code Blocks
 
@@ -177,23 +179,24 @@ module.exports = function (eleventyConfig) {
 
 The truth is, **you can** return markdown inside shortcodes (as long as the file is transforming markdown, either as a `.md` file extension or [with `templateEngineOverride`](/docs/template-overrides/)). However, there is one small wrinkle that might catch you off guard.
 
-{% codetitle ".eleventy.js" %}
+{% set codeContent %}
+export default function(eleventyConfig) {
+	eleventyConfig.addPairedShortcode("myShortcode", function (content) {
+		// Method A: ✅ This works fine
+		return content;
 
-```js
-eleventyConfig.addPairedShortcode("myShortcode", function (content) {
-	// Method A: ✅ This works fine
-	return content;
-
-	// Method B: ⚠️ Careful when wrapping with HTML
-	return `<div>${content}</div>`;
-});
-```
+		// Method B: ⚠️ Careful when wrapping with HTML
+		return `<div>${content}</div>`;
+	});
+}
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 {% codetitle "Liquid, Nunjucks", "Syntax" %}
 
 {% raw %}
 
-```
+```jinja2
 {% myShortcode %}My really *important* content.{% endmyShortcode %}
 ```
 

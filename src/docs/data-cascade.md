@@ -20,8 +20,7 @@ In Eleventy, data is merged from multiple different sources before the template 
 ## Example
 
 {% codetitle "my-template.md" %}
-
-```yaml
+{%- set codeBlock %}{% raw %}
 ---
 title: This is a Good Blog Post
 tags:
@@ -29,33 +28,34 @@ tags:
   - HTML
 layout: my-layout.njk
 ---
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("yaml") | safe }}
 
 {% codetitle "_includes/my-layout.njk" %}
-
-```yaml
+{%- set codeBlock %}{% raw %}
 ---
 title: This is a Very Good Blog Post
 author: Zach
 tags:
   - JavaScript
 ---
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("yaml") | safe }}
 
 Note that when `my-template.md` and `my-layout.njk` share data with the same object key (`title` and `tags`), the “leaf template” `my-template.md` takes precedence.
 
 The data cascade results in the following data when `my-template.md` is rendered:
 
 {% codetitle "JavaScript", "Syntax" %}
-
-```json
+{%- set codeBlock %}{% raw %}
 {
 	"title": "This is a Good Blog Post",
 	"author": "Zach",
 	"tags": ["CSS", "HTML", "JavaScript"],
 	"layout": "my-layout.njk"
 }
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("json") | safe }}
 
 By default in v1.0, Eleventy does a deep data merge to combine Object literals and Arrays. If you want to opt-out of this behavior and revert to a simple top level merge (`Object.assign`) from the different data sources, you can turn off [Data Deep Merge](/docs/data-deep-merge/). You can override this on a per-property basis too—read more at the [Data Deep Merge documentation](/docs/data-deep-merge/).
 

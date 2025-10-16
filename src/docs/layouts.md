@@ -25,10 +25,10 @@ This will look for a `mylayout.njk` Nunjucks file in your _includes_ folder at `
 Next, we need to create a `mylayout.njk` file. It may contain any arbitrary text, but here we’re using HTML:
 
 {% codetitle "_includes/mylayout.njk" %}
-
-{%- highlight "html" %}
+{% set codeBlock %}
 {% include "snippets/layouts/mylayout.njk" %}
-{%- endhighlight %}
+{% endset %}
+{{ codeBlock | highlight("html") | safe }}
 
 Note that the layout template will populate the `content` data with the child template’s content. Also note that we don’t want to double-escape the output, so we’re using the provided Nunjucks `safe` filter here (see more language double-escaping syntax below).
 

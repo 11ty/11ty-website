@@ -28,60 +28,44 @@ This uses an [Eleventy Transform](/docs/config/#transforms) to modify the output
 <seven-minute-tabs persist sync class="tabs-flush">
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "inputpathtourl", additions: "html,md"} %}
   <div id="inputpathtourl-html" role="tabpanel">
-
-```html
+{%- set codeBlock %}
 <a href="my-template.md">Home</a>
-```
-
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
   </div>
   <div id="inputpathtourl-md" role="tabpanel">
-
-```md
+{%- set codeBlock %}
 [Home](my-template.md)
-```
-
+{%- endset %}
+{{ codeBlock | highlight("markdown") | safe }}
   </div>
   <div id="inputpathtourl-liquid" role="tabpanel">
-
-{% raw %}
-```liquid
+{%- set codeBlock %}
 <a href="my-template.md">Home</a>
-```
-{% endraw %}
-
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
   </div>
   <div id="inputpathtourl-njk" role="tabpanel">
-
-{% raw %}
-
-```jinja2
+{%- set codeBlock %}
 <a href="my-template.md">Home</a>
-```
-
-{% endraw %}
-
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
   </div>
   <div id="inputpathtourl-js" role="tabpanel">
-
-{% raw %}
-```js
+{%- set codeBlock %}
 export default function (data) {
 	return `<a href="my-template.md">Home</a>`;
 };
-```
-{% endraw %}
-
+{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
   </div>
   <div id="inputpathtourl-cjs" role="tabpanel">
-
-{% raw %}
-```js
+{%- set codeBlock %}
 module.exports = function (data) {
   return `<a href="my-template.md">Home</a>`;
 };
-```
-{% endraw %}
-
+{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
   </div>
 </seven-minute-tabs>
 </is-land>

@@ -62,7 +62,7 @@ Controls the top level directory/file/glob that we’ll use to look for template
 
 #### Command Line
 
-```bash
+{% set codeBlock %}
 # The current directory
 npx @11ty/eleventy --input=.
 
@@ -74,7 +74,8 @@ npx @11ty/eleventy --input=*.md
 
 # A subdirectory
 npx @11ty/eleventy --input=views
-```
+{% endset %}
+{{ codeBlock | highlight("bash") | safe }}
 
 #### Configuration
 
@@ -193,9 +194,7 @@ Controls the directory inside which the finished templates will be written to.
 
 #### Command Line
 
-```bash
-npx @11ty/eleventy --output=_site
-```
+{{ "npx @11ty/eleventy --output=_site" | highlight("bash") | safe }}
 
 #### Configuration
 

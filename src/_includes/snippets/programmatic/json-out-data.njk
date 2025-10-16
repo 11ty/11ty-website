@@ -4,8 +4,7 @@
 <seven-minute-tabs class="tabs-flush" persist>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
   <div id="{{ tabid }}-jsesm" role="tabpanel">
-
-```js
+{%- set codeBlock %}{% raw %}
 import Eleventy from "@11ty/eleventy";
 
 let elev = new Eleventy(".", "_site", {
@@ -23,12 +22,11 @@ let json = await elev.toJSON();
 // json[…].data.globalData.key2
 // json[…].data.someProperty.key
 console.log(json);
-```
-
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
   </div>
   <div id="{{ tabid }}-jscjs" role="tabpanel">
-
-```js
+{%- set codeBlock %}{% raw %}
 (async function () {
 	const { Eleventy } = await import("@11ty/eleventy");
 
@@ -48,8 +46,8 @@ console.log(json);
 	// json[…].data.someProperty.key
 	console.log(json);
 })();
-```
-
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
   </div>
 </seven-minute-tabs>
 </is-land>

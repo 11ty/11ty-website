@@ -21,8 +21,14 @@ _If you’d like to read a more detailed explanation of the following code, ther
 
 The following configuration will read and render `*.scss` files as `.css` files in your output directory. _[GitHub #408](https://github.com/11ty/eleventy/issues/408)._
 
-Don’t forget to `npm install sass`!
+Install the `sass` plugin from npm:
 
+{%- set codeBlock %}
+npm install sass
+{%- endset %}
+{{ codeBlock | highlight("bash") | safe }}
+
+Next add your configuration:
 
 {% set codeContent %}
 import path from "node:path";

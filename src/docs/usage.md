@@ -29,9 +29,9 @@ npx @11ty/eleventy --input=. --output=_site
 		<a href="#usage-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
 		<a href="#usage-yarn" role="tab" data-tabs-persist="pkgmgr:yarn">yarn</a>
 	</div>
-	<div id="usage-npm" role="tabpanel">{% highlight "bash" %}{{ usageCode | packageManagerCodeTransform("npm") }}{% endhighlight %}</div>
-	<div id="usage-pnpm" role="tabpanel">{% highlight "bash" %}{{ usageCode | packageManagerCodeTransform("pnpm") }}{% endhighlight %}</div>
-	<div id="usage-yarn" role="tabpanel">{% highlight "bash" %}{{ usageCode | packageManagerCodeTransform("yarn") }}{% endhighlight %}</div>
+	<div id="usage-npm" role="tabpanel">{{ usageCode | packageManagerCodeTransform("npm") | highlight("bash") | safe }}</div>
+	<div id="usage-pnpm" role="tabpanel">{{ usageCode | packageManagerCodeTransform("pnpm") | highlight("bash") | safe }}</div>
+	<div id="usage-yarn" role="tabpanel">{{ usageCode | packageManagerCodeTransform("yarn") | highlight("bash") | safe }}</div>
 </seven-minute-tabs>
 
 Read more about [`--input`](/docs/config/#input-directory) and [`--output`](/docs/config/#output-directory). Note that setting the input and output directories via [config](/docs/config/) file is preferred.
@@ -54,9 +54,9 @@ npx @11ty/eleventy --help
 		<a href="#usage-formats-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
 		<a href="#usage-formats-yarn" role="tab" data-tabs-persist="pkgmgr:yarn">yarn</a>
 	</div>
-	<div id="usage-formats-npm" role="tabpanel">{% highlight "bash" %}{{ usageFormatsCode | packageManagerCodeTransform("npm") }}{% endhighlight %}</div>
-	<div id="usage-formats-pnpm" role="tabpanel">{% highlight "bash" %}{{ usageFormatsCode | packageManagerCodeTransform("pnpm") }}{% endhighlight %}</div>
-	<div id="usage-formats-yarn" role="tabpanel">{% highlight "bash" %}{{ usageFormatsCode | packageManagerCodeTransform("yarn") }}{% endhighlight %}</div>
+	<div id="usage-formats-npm" role="tabpanel">{{ usageFormatsCode | packageManagerCodeTransform("npm") | highlight("bash") | safe }}</div>
+	<div id="usage-formats-pnpm" role="tabpanel">{{ usageFormatsCode | packageManagerCodeTransform("pnpm") | highlight("bash") | safe }}</div>
+	<div id="usage-formats-yarn" role="tabpanel">{{ usageFormatsCode | packageManagerCodeTransform("yarn") | highlight("bash") | safe }}</div>
 </seven-minute-tabs>
 
 * The default for `--formats=` changed in {{ "3.0.0-alpha.7" | coerceVersion }} from an alias of `*` to an empty set.
@@ -80,9 +80,9 @@ npx @11ty/eleventy --watch
 		<a href="#usage-serve-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
 		<a href="#usage-serve-yarn" role="tab" data-tabs-persist="pkgmgr:yarn">yarn</a>
 	</div>
-	<div id="usage-serve-npm" role="tabpanel">{% highlight "bash" %}{{ usageServeCode | packageManagerCodeTransform("npm") }}{% endhighlight %}</div>
-	<div id="usage-serve-pnpm" role="tabpanel">{% highlight "bash" %}{{ usageServeCode | packageManagerCodeTransform("pnpm") }}{% endhighlight %}</div>
-	<div id="usage-serve-yarn" role="tabpanel">{% highlight "bash" %}{{ usageServeCode | packageManagerCodeTransform("yarn") }}{% endhighlight %}</div>
+	<div id="usage-serve-npm" role="tabpanel">{{ usageServeCode | packageManagerCodeTransform("npm") | highlight("bash") | safe }}</div>
+	<div id="usage-serve-pnpm" role="tabpanel">{{ usageServeCode | packageManagerCodeTransform("pnpm") | highlight("bash") | safe }}</div>
+	<div id="usage-serve-yarn" role="tabpanel">{{ usageServeCode | packageManagerCodeTransform("yarn") | highlight("bash") | safe }}</div>
 </seven-minute-tabs>
 
 ### `--quiet` if the Output is Too Noisy
@@ -97,9 +97,9 @@ npx @11ty/eleventy --quiet
 		<a href="#usage-quiet-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
 		<a href="#usage-quiet-yarn" role="tab" data-tabs-persist="pkgmgr:yarn">yarn</a>
 	</div>
-	<div id="usage-quiet-npm" role="tabpanel">{% highlight "bash" %}{{ usageQuietCode | packageManagerCodeTransform("npm") }}{% endhighlight %}</div>
-	<div id="usage-quiet-pnpm" role="tabpanel">{% highlight "bash" %}{{ usageQuietCode | packageManagerCodeTransform("pnpm") }}{% endhighlight %}</div>
-	<div id="usage-quiet-yarn" role="tabpanel">{% highlight "bash" %}{{ usageQuietCode | packageManagerCodeTransform("yarn") }}{% endhighlight %}</div>
+	<div id="usage-quiet-npm" role="tabpanel">{{ usageQuietCode | packageManagerCodeTransform("npm") | highlight("bash") | safe }}</div>
+	<div id="usage-quiet-pnpm" role="tabpanel">{{ usageQuietCode | packageManagerCodeTransform("pnpm") | highlight("bash") | safe }}</div>
+	<div id="usage-quiet-yarn" role="tabpanel">{{ usageQuietCode | packageManagerCodeTransform("yarn") | highlight("bash") | safe }}</div>
 </seven-minute-tabs>
 
 ### `--dryrun` to do a Little Testing
@@ -116,9 +116,9 @@ npx @11ty/eleventy --dryrun
 		<a href="#usage-dry-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
 		<a href="#usage-dry-yarn" role="tab" data-tabs-persist="pkgmgr:yarn">yarn</a>
 	</div>
-	<div id="usage-dry-npm" role="tabpanel">{% highlight "bash" %}{{ usageDryCode | packageManagerCodeTransform("npm") }}{% endhighlight %}</div>
-	<div id="usage-dry-pnpm" role="tabpanel">{% highlight "bash" %}{{ usageDryCode | packageManagerCodeTransform("pnpm") }}{% endhighlight %}</div>
-	<div id="usage-dry-yarn" role="tabpanel">{% highlight "bash" %}{{ usageDryCode | packageManagerCodeTransform("yarn") }}{% endhighlight %}</div>
+	<div id="usage-dry-npm" role="tabpanel">{{ usageDryCode | packageManagerCodeTransform("npm") | highlight("bash") | safe }}</div>
+	<div id="usage-dry-pnpm" role="tabpanel">{{ usageDryCode | packageManagerCodeTransform("pnpm") | highlight("bash") | safe }}</div>
+	<div id="usage-dry-yarn" role="tabpanel">{{ usageDryCode | packageManagerCodeTransform("yarn") | highlight("bash") | safe }}</div>
 </seven-minute-tabs>
 
 ### `--config` to Change the Config file name
@@ -133,9 +133,9 @@ npx @11ty/eleventy --config=myeleventyconfig.js
 		<a href="#usage-cfg-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
 		<a href="#usage-cfg-yarn" role="tab" data-tabs-persist="pkgmgr:yarn">yarn</a>
 	</div>
-	<div id="usage-cfg-npm" role="tabpanel">{% highlight "bash" %}{{ usageCfgCode | packageManagerCodeTransform("npm") }}{% endhighlight %}</div>
-	<div id="usage-cfg-pnpm" role="tabpanel">{% highlight "bash" %}{{ usageCfgCode | packageManagerCodeTransform("pnpm") }}{% endhighlight %}</div>
-	<div id="usage-cfg-yarn" role="tabpanel">{% highlight "bash" %}{{ usageCfgCode | packageManagerCodeTransform("yarn") }}{% endhighlight %}</div>
+	<div id="usage-cfg-npm" role="tabpanel">{{ usageCfgCode | packageManagerCodeTransform("npm") | highlight("bash") | safe }}</div>
+	<div id="usage-cfg-pnpm" role="tabpanel">{{ usageCfgCode | packageManagerCodeTransform("pnpm") | highlight("bash") | safe }}</div>
+	<div id="usage-cfg-yarn" role="tabpanel">{{ usageCfgCode | packageManagerCodeTransform("yarn") | highlight("bash") | safe }}</div>
 </seven-minute-tabs>
 
 Read more about [Configuration files](/docs/config.md).
@@ -160,9 +160,9 @@ npx @11ty/eleventy --to=fs
 		<a href="#usage-json-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
 		<a href="#usage-json-yarn" role="tab" data-tabs-persist="pkgmgr:yarn">yarn</a>
 	</div>
-	<div id="usage-json-npm" role="tabpanel">{% highlight "bash" %}{{ usageJsonCode | packageManagerCodeTransform("npm") }}{% endhighlight %}</div>
-	<div id="usage-json-pnpm" role="tabpanel">{% highlight "bash" %}{{ usageJsonCode | packageManagerCodeTransform("pnpm") }}{% endhighlight %}</div>
-	<div id="usage-json-yarn" role="tabpanel">{% highlight "bash" %}{{ usageJsonCode | packageManagerCodeTransform("yarn") }}{% endhighlight %}</div>
+	<div id="usage-json-npm" role="tabpanel">{{ usageJsonCode | packageManagerCodeTransform("npm") | highlight("bash") | safe }}</div>
+	<div id="usage-json-pnpm" role="tabpanel">{{ usageJsonCode | packageManagerCodeTransform("pnpm") | highlight("bash") | safe }}</div>
+	<div id="usage-json-yarn" role="tabpanel">{{ usageJsonCode | packageManagerCodeTransform("yarn") | highlight("bash") | safe }}</div>
 </seven-minute-tabs>
 
 Read more about [ndjson](https://github.com/ndjson/ndjson-spec).
@@ -187,9 +187,9 @@ npx @11ty/eleventy --incremental=myfile.md
 		<a href="#usage-inc-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
 		<a href="#usage-inc-yarn" role="tab" data-tabs-persist="pkgmgr:yarn">yarn</a>
 	</div>
-	<div id="usage-inc-npm" role="tabpanel">{% highlight "bash" %}{{ usageIncrementalCode | packageManagerCodeTransform("npm") }}{% endhighlight %}</div>
-	<div id="usage-inc-pnpm" role="tabpanel">{% highlight "bash" %}{{ usageIncrementalCode | packageManagerCodeTransform("pnpm") }}{% endhighlight %}</div>
-	<div id="usage-inc-yarn" role="tabpanel">{% highlight "bash" %}{{ usageIncrementalCode | packageManagerCodeTransform("yarn") }}{% endhighlight %}</div>
+	<div id="usage-inc-npm" role="tabpanel">{{ usageIncrementalCode | packageManagerCodeTransform("npm") | highlight("bash") | safe }}</div>
+	<div id="usage-inc-pnpm" role="tabpanel">{{ usageIncrementalCode | packageManagerCodeTransform("pnpm") | highlight("bash") | safe }}</div>
+	<div id="usage-inc-yarn" role="tabpanel">{{ usageIncrementalCode | packageManagerCodeTransform("yarn") | highlight("bash") | safe }}</div>
 </seven-minute-tabs>
 
 Read more about [incremental builds](/docs/usage/incremental/). Related [GitHub #3324](https://github.com/11ty/eleventy/issues/3324)
@@ -212,9 +212,9 @@ npx @11ty/eleventy --serve --incremental --ignore-initial
 		<a href="#usage-initial-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
 		<a href="#usage-initial-yarn" role="tab" data-tabs-persist="pkgmgr:yarn">yarn</a>
 	</div>
-	<div id="usage-initial-npm" role="tabpanel">{% highlight "bash" %}{{ usageInitialCode | packageManagerCodeTransform("npm") }}{% endhighlight %}</div>
-	<div id="usage-initial-pnpm" role="tabpanel">{% highlight "bash" %}{{ usageInitialCode | packageManagerCodeTransform("pnpm") }}{% endhighlight %}</div>
-	<div id="usage-initial-yarn" role="tabpanel">{% highlight "bash" %}{{ usageInitialCode | packageManagerCodeTransform("yarn") }}{% endhighlight %}</div>
+	<div id="usage-initial-npm" role="tabpanel">{{ usageInitialCode | packageManagerCodeTransform("npm") | highlight("bash") | safe }}</div>
+	<div id="usage-initial-pnpm" role="tabpanel">{{ usageInitialCode | packageManagerCodeTransform("pnpm") | highlight("bash") | safe }}</div>
+	<div id="usage-initial-yarn" role="tabpanel">{{ usageInitialCode | packageManagerCodeTransform("yarn") | highlight("bash") | safe }}</div>
 </seven-minute-tabs>
 
 ### Deeper insight into Eleventy Internals
@@ -227,9 +227,9 @@ You can use the `DEBUG` [environment variable](./environment-vars.md) to enable 
 		<a href="#usage-debugging-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
 		<a href="#usage-debugging-yarn" role="tab" data-tabs-persist="pkgmgr:yarn">yarn</a>
 	</div>
-	<div id="usage-debugging-npm" role="tabpanel">{% highlight "bash" %}npx cross-env DEBUG=Eleventy:\* npx @11ty/eleventy --dryrun{% endhighlight %}</div>
-	<div id="usage-debugging-pnpm" role="tabpanel">{% highlight "bash" %}pnpm exec cross-env DEBUG=Eleventy:\* pnpm exec @11ty/eleventy --dryrun{% endhighlight %}</div>
-	<div id="usage-debugging-yarn" role="tabpanel">{% highlight "bash" %}yarn exec cross-env DEBUG=Eleventy:\* yarn exec @11ty/eleventy --dryrun{% endhighlight %}</div>
+	<div id="usage-debugging-npm" role="tabpanel">{{ "npx cross-env DEBUG=Eleventy:\* npx @11ty/eleventy --dryrun" | highlight("bash") | safe }}</div>
+	<div id="usage-debugging-pnpm" role="tabpanel">{{ "pnpm exec cross-env DEBUG=Eleventy:\* pnpm exec @11ty/eleventy --dryrun" | highlight("bash") | safe }}</div>
+	<div id="usage-debugging-yarn" role="tabpanel">{{ "yarn exec cross-env DEBUG=Eleventy:\* yarn exec @11ty/eleventy --dryrun" | highlight("bash") | safe }}</div>
 </seven-minute-tabs>
 
 Learn more about [Eleventy’s Debug Mode log output](./debugging.md).
@@ -248,9 +248,9 @@ npx @11ty/eleventy --input=. --output=. --formats=md
 		<a href="#usage-same-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
 		<a href="#usage-same-yarn" role="tab" data-tabs-persist="pkgmgr:yarn">yarn</a>
 	</div>
-	<div id="usage-same-npm" role="tabpanel">{% highlight "bash" %}{{ usageSameDirsCode | packageManagerCodeTransform("npm") }}{% endhighlight %}</div>
-	<div id="usage-same-pnpm" role="tabpanel">{% highlight "bash" %}{{ usageSameDirsCode | packageManagerCodeTransform("pnpm") }}{% endhighlight %}</div>
-	<div id="usage-same-yarn" role="tabpanel">{% highlight "bash" %}{{ usageSameDirsCode | packageManagerCodeTransform("yarn") }}{% endhighlight %}</div>
+	<div id="usage-same-npm" role="tabpanel">{{ usageSameDirsCode | packageManagerCodeTransform("npm") | highlight("bash") | safe }}</div>
+	<div id="usage-same-pnpm" role="tabpanel">{{ usageSameDirsCode | packageManagerCodeTransform("pnpm") | highlight("bash") | safe }}</div>
+	<div id="usage-same-yarn" role="tabpanel">{{ usageSameDirsCode | packageManagerCodeTransform("yarn") | highlight("bash") | safe }}</div>
 </seven-minute-tabs>
 
 {% callout "warn" %}Careful with <code>--formats=html</code> here! If you run Eleventy more than once, we will attempt to process your new output files as input files (which will throw errors). Read more at the <a href="/docs/languages/html/#using-the-same-input-and-output-directories">HTML template docs</a>.{% endcallout %}

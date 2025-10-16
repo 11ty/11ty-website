@@ -19,9 +19,10 @@ A pack of Eleventy plugins for PrismJS syntax highlighting. No browser/client Ja
 
 Available on [npm](https://www.npmjs.com/package/@11ty/eleventy-plugin-syntaxhighlight).
 
-```
+{% set codeBlock %}{% raw %}
 npm install @11ty/eleventy-plugin-syntaxhighlight
-```
+{% endraw %}{% endset %}
+{{ codeBlock | highlight("bash") | safe }}
 
 Open up your Eleventy config file (probably `eleventy.config.js`) and use `addPlugin`:
 

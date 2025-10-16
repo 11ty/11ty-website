@@ -127,7 +127,7 @@ There are many popular libraries to cache or memoize functions (filters, shortco
 
 <div class="codetitle">eleventy.config.js</div>
 
-```js
+{%- set codeBlock %}{% raw %}
 import memoize from "memoize";
 
 export default function(eleventyConfig) {
@@ -135,7 +135,8 @@ export default function(eleventyConfig) {
 		return encode(str);
 	}));
 };
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
 
 ## Per-Engine Shortcodes
 

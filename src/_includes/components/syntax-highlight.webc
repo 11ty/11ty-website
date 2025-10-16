@@ -1,7 +1,11 @@
 <link rel="stylesheet" href="prism-theme.css" webc:bucket="async">
 <link rel="stylesheet" href="code.css">
+<link rel="stylesheet" href="code-copy.css">
 <link rel="stylesheet" href="code-more.css" webc:bucket="async">
 <style>
+syntax-highlight {
+	display: block;
+}
 syntax-highlight > pre {
 	margin-bottom: 0;
 }
@@ -25,7 +29,8 @@ syntax-highlight > pre {
 	color: #666;
 	font-weight: 100;
 }
-.syntax-title + pre {
+.syntax-title + .syntax-highlight > pre,
+.syntax-title ~ pre {
 	margin-top: 0;
 }
 @media (prefers-color-scheme: dark) {
@@ -36,7 +41,7 @@ syntax-highlight > pre {
 </style>
 <div webc:if="hed" class="syntax-title"><b @text="hedType || 'Filename'"></b><span @text="hed"></span></div>
 <script webc:type="render" webc:is="template" webc:raw webc:nokeep>
-export default function({ slots, language }) {
+export default function({ copyButtonEnabled, uid, slots, language }) {
 	if(!this.helpers || !this.helpers.highlight) {
 		throw new Error("Missing the `highlight` helper in <syntax-highlight> WebC component. Did you run addPlugin on the syntax highlighter in your Eleventy config file?");
 	}
@@ -47,6 +52,7 @@ export default function({ slots, language }) {
 
 	// Using the helper in this way should respect plugin `options` too.
 	// TODO wire up @attributes to `options.preAttributes`
-	return this.helpers.highlight(language, slots.text.default);
+	// see `syntaxHighlightPlugin.js`
+	return this.helpers.highlight(slots.text.default, language, { id: uid }, { copyButtonEnabled: copyButtonEnabled ?? true });
 }
 </script>

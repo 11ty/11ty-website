@@ -3,8 +3,8 @@
 .highlight-line:last-child * {
 	color: var(--highlight-server) !important;
 }
-.highlight-line:nth-last-child(5),
-.highlight-line:nth-last-child(5) * {
+.highlight-line:nth-last-child(3),
+.highlight-line:nth-last-child(3) * {
 	color: var(--highlight-output) !important;
 }
 :host {
@@ -30,6 +30,10 @@
 export default function({ latestVersion, showVersion, $data }) {
 	let version = latestVersion($data.versions, $data.config);
 	let versionSuffix = showVersion === "" ? ` (${version})` : "";
-	return this.helpers.highlight("", this.slots.text.default.trim().replaceAll("%%VERSION%%", versionSuffix), "/", "-"); // `"/", "-"` enables line wrapping
+	return this.helpers.highlight(this.slots.text.default.trim().replaceAll("%%VERSION%%", versionSuffix), "", undefined, {
+		// Passed to wrap code in line elements, see syntaxHighlightPlugin.js and https://github.com/11ty/eleventy-plugin-syntaxhighlight/blob/33e44b017adb9a41602e5ee1fb88b97d9a962a52/src/HighlightPairedShortcode.js#L24
+		lineHighlights: "/ -",
+		copyButtonEnabled: false,
+	});
 }
 </script>

@@ -23,8 +23,7 @@ layout: layouts/langs.njk
 The following configuration will read `*.mdx` files with full compatibility for [front matter](../data-frontmatter.md) (in `.mdx` files!). _[GitHub #3760](https://github.com/11ty/eleventy/issues/3760)._
 
 <div class="codetitle">eleventy.config.js</div>
-
-```js
+{%- set codeBlock %}
 import {pathToFileURL} from "node:url";
 import {evaluate} from "@mdx-js/mdx";
 import {renderToStaticMarkup} from "react-dom/server";
@@ -45,13 +44,15 @@ export default function(eleventyConfig) {
 		}
 	});
 };
-```
+{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
 
 Now run Eleventy and tell it to process `mdx` files:
 
-```sh
+{%- set codeBlock %}
 npx @11ty/eleventy --formats=mdx
-```
+{%- endset %}
+{{ codeBlock | highlight("bash") | safe }}
 
 Alternatively, you can add `eleventyConfig.addTemplateFormats("mdx")` to your configuration file.
 
@@ -59,7 +60,7 @@ Alternatively, you can add `eleventyConfig.addTemplateFormats("mdx")` to your co
 
 <div class="codetitle">sample.mdx</div>
 
-```jsx
+{%- set codeBlock %}
 ---
 key: World
 ---
@@ -68,7 +69,8 @@ export function Exclaim(props) {
 }
 
 # Hello from <Exclaim target={props.key} />
-```
+{%- endset %}
+{{ codeBlock | highlight("jsx") | safe }}
 
 The above is rendered as `<h1>Hello, World!!!</h1>`.
 
@@ -79,8 +81,7 @@ Read more on the [What is MDX? docs](https://mdxjs.com/docs/what-is-mdx/).
 {% addedin "3.0.0-alpha.11" %}MDX also provides a Node.js loader ([`@mdx-js/node-loader`](https://mdxjs.com/packages/node-loader/) on npm). This approach may be marginally faster but will **not** include support for Front Matter in `.mdx` files.
 
 <div class="codetitle">eleventy.config.js</div>
-
-```js
+{%- set codeBlock %}
 import {register} from 'node:module';
 import {renderToStaticMarkup} from 'react-dom/server'
 
@@ -97,7 +98,8 @@ export default function(eleventyConfig) {
 		}
 	});
 };
-```
+{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
 
 ## Community Contributions
 

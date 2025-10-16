@@ -24,8 +24,7 @@ layout: layouts/langs.njk
 {% addedin "3.0.0-alpha.11" %}Here we use [`tsx`]({{ externalLinks.tsxNodeUse }}) to process JSX files.
 
 <div class="codetitle">eleventy.config.js</div>
-
-```js
+{%- set codeBlock %}
 import "tsx/esm";
 import { renderToStaticMarkup } from "react-dom/server";
 
@@ -41,13 +40,15 @@ export default function (eleventyConfig) {
 		},
 	});
 }
-```
+{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
 
 Now run Eleventy and tell it to process `11ty.jsx` and `11ty.tsx` files:
 
-```sh
+{%- set codeBlock %}
 npx @11ty/eleventy --formats=11ty.jsx,11ty.tsx
-```
+{%- endset %}
+{{ codeBlock | highlight("bash") | safe }}
 
 Alternatively, you can add `eleventyConfig.addTemplateFormats("11ty.jsx,11ty.tsx")` to your configuration file.
 
@@ -64,8 +65,7 @@ If you’d like an approach that works with CommonJS and Eleventy 2.0, you can u
 Your config file might look like this:
 
 {% codetitle "eleventy.config.js (CommonJS)" %}
-
-```js
+{%- set codeBlock %}
 const { register } = require("esbuild-register/dist/node");
 
 register();
@@ -76,10 +76,12 @@ module.exports = function(eleventyConfig) {
 		key: "11ty.js",
 	});
 };
-```
+{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
 
 Now run Eleventy and tell it to process `11ty.jsx` and `11ty.tsx` files:
 
-```sh
+{%- set codeBlock %}
 npx @11ty/eleventy --formats=11ty.jsx,11ty.tsx
-```
+{%- endset %}
+{{ codeBlock | highlight("bash") | safe }}

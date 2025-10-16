@@ -59,7 +59,7 @@ export function randomTestimonialLink(testimonials) {
 	<p>Next try editing one of the three files in this Eleventy project. Change the <code>title</code> in front matter on a blog post and watch the list update on the index page!</p>
 	<is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
 		<eleventy-editor focus group="group1" label="Edit index.md" data-editor-filename="index.md">
-			<syntax-highlight language="liquid">---
+			<syntax-highlight language="liquid" :copy-button-enabled="false">---
 subject: World
 ---
 # Hello {{ subject }}
@@ -79,7 +79,7 @@ _Built with {{ eleventy.generator }}_</syntax-highlight>
 		</eleventy-editor>
 
 		<eleventy-editor group="group1" label="Edit post1.md" data-editor-filename="post1.md">
-			<syntax-highlight language="liquid">---
+			<syntax-highlight language="liquid" :copy-button-enabled="false">---
 title: First blog post ⬅️
 tags: posts
 ---
@@ -87,7 +87,7 @@ tags: posts
 		</eleventy-editor>
 
 		<eleventy-editor group="group1" label="Edit post2.md" data-editor-filename="post2.md">
-			<syntax-highlight language="liquid">---
+			<syntax-highlight language="liquid" :copy-button-enabled="false">---
 title: Second blog post
 tags: posts
 ---

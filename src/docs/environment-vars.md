@@ -29,40 +29,43 @@ For private keys and other sensitive information, you’ll want to create a `.en
 
 #### macOS or Linux (et al)
 
-```bash
+{%- set codeBlock %}
 MY_ENVIRONMENT=production npx @11ty/eleventy
-```
+{%- endset %}
+{{ codeBlock | highlight("bash") | safe }}
 
 #### Windows cmd.exe
 
-```bash
+{%- set codeBlock %}
 set MY_ENVIRONMENT=production & npx @11ty/eleventy
-```
+{%- endset %}
+{{ codeBlock | highlight("bash") | safe }}
 
 #### Windows Powershell (default in VS Code)
 
-```bash
+{%- set codeBlock %}
 $env:MY_ENVIRONMENT="production"; npx @11ty/eleventy
-```
+{%- endset %}
+{{ codeBlock | highlight("bash") | safe }}
 
 #### Cross Platform npm scripts
 
 Use the [`cross-env` package](https://github.com/kentcdodds/cross-env) to compatibly set your environment variables cross-platform.
 
-```sh
+{%- set codeBlock %}
 npm install cross-env
-```
-
+{%- endset %}
+{{ codeBlock | highlight("bash") | safe }}
 
 {% codetitle "package.json" %}
-
-```js
+{%- set codeBlock %}
 {
-  "scripts": {
-    "build:prod": "cross-env MY_ENVIRONMENT=production npx @11ty/eleventy"
+	"scripts": {
+		"build:prod": "cross-env MY_ENVIRONMENT=production npx @11ty/eleventy"
   }
 }
-```
+{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
 
 ## Use Case Ideas
 
@@ -94,15 +97,27 @@ Node.js supports a [`NODE_DISABLE_COLORS` environment variable](https://nodejs.o
 		<a href="#disable-colors-all" role="tab" data-tabs-persist="os:all">Cross Platform</a>
 	</div>
 	<div id="disable-colors-nix" role="tabpanel">
-		{% highlight "sh" %}NODE_DISABLE_COLORS=1 npx @11ty/eleventy{% endhighlight %}
+{%- set codeBlock %}{% raw %}
+NODE_DISABLE_COLORS=1 npx @11ty/eleventy
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("bash") | safe }}
 	</div>
 	<div id="disable-colors-win" role="tabpanel">
-		{% highlight "sh" %}$env:NODE_DISABLE_COLORS="1"; npx @11ty/eleventy{% endhighlight %}
+{%- set codeBlock %}
+$env:NODE_DISABLE_COLORS="1"; npx @11ty/eleventy
+{%- endset %}
+{{ codeBlock | highlight("bash") | safe }}
 		<p>Or with the older <code>cmd.exe</code>:</p>
-		{% highlight "sh" %}set NODE_DISABLE_COLORS=1 & npx @11ty/eleventy{% endhighlight %}
+{%- set codeBlock %}
+set NODE_DISABLE_COLORS=1 & npx @11ty/eleventy
+{%- endset %}
+{{ codeBlock | highlight("bash") | safe }}
 	</div>
 	<div id="disable-colors-all" role="tabpanel">
-		{%- highlight "sh" %}npx cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy{% endhighlight %}
+{%- set codeBlock %}
+npx cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy
+{%- endset %}
+{{ codeBlock | highlight("bash") | safe }}
 		<p>Use the <a href="https://github.com/kentcdodds/cross-env"><code>cross-env</code> package</a> to compatibly set your environment variables cross-platform.</p>
 	</div>
 </seven-minute-tabs>

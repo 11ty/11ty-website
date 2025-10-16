@@ -22,9 +22,10 @@ The `pug` templating language was moved out of Eleventy core in v3 and now requi
 
 * [`11ty/eleventy-plugin-template-languages` on GitHub](https://github.com/11ty/eleventy-plugin-template-languages)
 
-```sh
+{%- set codeBlock %}
 npm install @11ty/eleventy-plugin-pug
-```
+{%- endset %}
+{{ codeBlock | highlight("bash") | safe }}
 
 Add to your configuration file:
 

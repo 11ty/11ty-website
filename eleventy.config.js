@@ -12,7 +12,6 @@ import shortHash from "short-hash";
 import { ImportTransformer } from "esm-import-transformer";
 import { transform as tweetbackTransform } from "@tweetback/canonical";
 
-import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 import navigationPlugin from "@11ty/eleventy-navigation";
 import eleventyImage, { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import eleventyWebcPlugin from "@11ty/eleventy-plugin-webc";
@@ -22,11 +21,13 @@ import { getImageColors } from "@11ty/image-color";
 
 import { addedIn, coerceVersion, greaterThan } from "./config/addedin.js";
 import minificationLocalPlugin, { minifyJavaScriptFile } from "./config/minification.js";
+import { bundle as bundleJavaScriptFile } from "./config/bundleJavaScript.js";
 import cleanName from "./config/cleanAuthorName.js";
 import objectHas from "./config/object-has.js";
 import markdownPlugin from "./config/markdownPlugin.js";
 import feedPlugin from "./config/feedPlugin.js";
 import sidebarPlugin from "./config/sidebarPlugin.js";
+import syntaxHighlightPlugin from "./config/syntaxHighlightPlugin.js";
 
 function resolveModule(target) {
 	return fileURLToPath(import.meta.resolve(target));
@@ -259,21 +260,7 @@ export default async function (eleventyConfig) {
 	});
 
 	/* Plugins */
-	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
-		lineSeparator: "<br>",
-		preAttributes: {
-			tabindex: "0",
-		},
-		init: function ({ Prism }) {
-			Prism.languages.markdown = Prism.languages.extend("markup", {
-				frontmatter: {
-					pattern: /^---[\s\S]*?^---$/m,
-					greedy: true,
-					inside: Prism.languages.yaml,
-				},
-			});
-		},
-	});
+	eleventyConfig.addPlugin(syntaxHighlightPlugin);
 
 	eleventyConfig.addPlugin(fontAwesomePlugin, {
 		defaultAttributes: {
@@ -489,6 +476,7 @@ ${text.trim()}
 	await minifyJavaScriptFile(resolveModule("@11ty/client"), path.join(eleventyConfig.directories.output, "js/eleventy.core.browser.js"));
 	await minifyJavaScriptFile(resolveModule("@11ty/client/md"), path.join(eleventyConfig.directories.output, "js/eleventy.engine-md.browser.js"));
 	await minifyJavaScriptFile(resolveModule("@11ty/client/liquid"), path.join(eleventyConfig.directories.output, "js/eleventy.engine-liquid.browser.js"));
+	await bundleJavaScriptFile("node_modules/@awesome.me/webawesome/dist/components/copy-button/copy-button.js", path.join(eleventyConfig.directories.output, "js/copy-button.js"));
 
 	eleventyConfig.addPassthroughCopy("src/img");
 	eleventyConfig.addPassthroughCopy("src/blog/*.png");
