@@ -1,0 +1,4 @@
+@keyframes check-id-assignment{}
+wa-copy-button {
+	animation: check-id-assignment 0s;
+}

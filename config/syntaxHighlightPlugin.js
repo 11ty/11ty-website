@@ -1,7 +1,5 @@
 import syntaxHighlightPlugin, { pairedShortcode as syntaxHighlightFunction } from "@11ty/eleventy-plugin-syntaxhighlight";
 
-const WEBAWESOME_URL = "/js/copy-button.js";
-
 export default function(eleventyConfig) {
 	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
 		lineSeparator: "\n",
@@ -34,19 +32,16 @@ export default function(eleventyConfig) {
 		let [openTag, closeTag] = Boolean(attrs?.id) ? ["", ""] : [`<div class="syntax-highlight">`, "</div>"]
 		attrs.id ??=  `highlighted-source-${highlightCounter++}`;
 
-		let ticks = rawMarkdown ? "````" : "```";
+		let preamble = `${copyButtonEnabled ? `<is-land on:visible>
+<wa-copy-button from="${attrs.id}" tooltip-placement="left"></wa-copy-button>
+<template data-island="once"><script type="module" src="/js/copy-button.js"${this.page.inputPath.endsWith(".webc") ? " webc:keep" : ""}></script></template>
+</is-land>` : ""}`;
 
 		if(this.page.inputPath.endsWith(".md")) {
+			let ticks = rawMarkdown ? "````" : "```";
+
 			// Markdown requires special care so that new lines in code blocks aren’t converted to paragraphs (we’ll pass the buck to the markdown syntax highlighter)
-			return `${openTag}${copyButtonEnabled ? `<is-land on:visible>
-<wa-copy-button from="${attrs.id}" tooltip-placement="left"></wa-copy-button>
-<template data-island>
-	<script type="module">
-	import "${WEBAWESOME_URL}";
-	document.querySelector("wa-copy-button[from='${attrs.id}']")?.closest(".syntax-highlight").querySelector("pre").setAttribute("id", "${attrs.id}");
-	</script>
-</template>
-</is-land>` : ""}
+			return `${openTag}${preamble}
 
 ${ticks}${language}
 ${code.trim()}
@@ -60,9 +55,6 @@ ${closeTag}`;
 			preAttributes: attrs,
 		});
 
-		return `${openTag}${copyButtonEnabled ? `<is-land on:visible>
-<wa-copy-button from="${attrs.id}" tooltip-placement="left"></wa-copy-button>
-<template data-island="once"><script type="module" src="${WEBAWESOME_URL}"${this.page.inputPath.endsWith(".webc") ? " webc:keep" : ""}></script></template>
-</is-land>` : ""}${highlightedCode}${closeTag}`;
+		return `${openTag}${preamble}${highlightedCode}${closeTag}`;
 	});
 };
