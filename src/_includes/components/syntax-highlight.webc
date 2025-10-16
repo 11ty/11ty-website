@@ -41,7 +41,7 @@ syntax-highlight > pre {
 </style>
 <div webc:if="hed" class="syntax-title"><b @text="hedType || 'Filename'"></b><span @text="hed"></span></div>
 <script webc:type="render" webc:is="template" webc:raw webc:nokeep>
-export default function({ uid, slots, language }) {
+export default function({ copyButtonEnabled, uid, slots, language }) {
 	if(!this.helpers || !this.helpers.highlight) {
 		throw new Error("Missing the `highlight` helper in <syntax-highlight> WebC component. Did you run addPlugin on the syntax highlighter in your Eleventy config file?");
 	}
@@ -53,6 +53,6 @@ export default function({ uid, slots, language }) {
 	// Using the helper in this way should respect plugin `options` too.
 	// TODO wire up @attributes to `options.preAttributes`
 	// see `syntaxHighlightPlugin.js`
-	return this.helpers.highlight(slots.text.default, language, { id: uid });
+	return this.helpers.highlight(slots.text.default, language, { id: uid }, { copyButtonEnabled: copyButtonEnabled ?? true });
 }
 </script>
