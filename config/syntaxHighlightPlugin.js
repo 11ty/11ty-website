@@ -1,6 +1,6 @@
 import syntaxHighlightPlugin, { pairedShortcode as syntaxHighlightFunction } from "@11ty/eleventy-plugin-syntaxhighlight";
 
-const WEBAWESOME_URL = "https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/components/copy-button/copy-button.js";
+const WEBAWESOME_URL = "/js/copy-button.js";
 
 export default function(eleventyConfig) {
 	eleventyConfig.addPlugin(syntaxHighlightPlugin, {
