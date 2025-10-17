@@ -1,6 +1,8 @@
 import fetch from "@11ty/eleventy-fetch";
 import "dotenv/config";
 
+const CACHE_DURATION = process.env.ELEVENTY_RUN_MODE === "serve" ? "14d" : "23h";
+
 export default async function() {
 	if(!process.env.BUTTONDOWN_API_KEY) {
 		console.warn("Missing BUTTONDOWN_API_KEY in src/_data/buttondown.js, returning unknown newsletter count.");
@@ -13,7 +15,7 @@ export default async function() {
 	let API_URL = `https://api.buttondown.email/v1/subscribers`;
 
 	let json = await fetch(API_URL, {
-		duration: "23h",
+		duration: CACHE_DURATION,
     type: "json",
 		fetchOptions: {
 			headers: {
