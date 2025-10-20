@@ -1,31 +1,23 @@
 import esbuild from "esbuild";
+import { fileURLToPath } from "node:url";
 
-export async function bundle(entryFile, outputFile, options = {}, esbuildOptions = {}) {
-	if(!entryFile || !outputFile) {
-		throw new Error("Missing input or output file arguments");
-	}
-
-	let { external, banner } = Object.assign({
-		external: [],
-		banner: `/* via ${entryFile} */`,
-	}, options);
-
+export async function bundle(entryPoints, outfile, options = {}) {
 	return esbuild.build(Object.assign({
-		entryPoints: [entryFile],
-		bundle: true,
+		entryPoints,
 		platform: "browser",
 		format: "esm",
-
-		treeShaking: true,
+		bundle: true,
 		minify: true,
-		keepNames: false,
-
-		external,
-		plugins: [],
+		// package names to exclude
+		// external: [],
 		banner: {
-			js: banner,
+			js: `/* via ${entryPoints} */`,
 		},
-		// metafile: true,
-		outfile: outputFile,
-	}, esbuildOptions));
+		outfile,
+	}, options));
+}
+
+export async function bundleModulePath(componentPath, outfile) {
+	let sourcefile = fileURLToPath(import.meta.resolve(componentPath));
+	return bundle([ sourcefile ], outfile);
 }

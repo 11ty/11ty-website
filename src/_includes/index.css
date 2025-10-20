@@ -456,6 +456,6 @@ filter-container:defined form {
 	color: #c70000;
 }
 
-is-land {
-	display: block;
+is-land[ready] {
+	display: contents;
 }
