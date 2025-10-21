@@ -3,8 +3,6 @@ newstitle: "The very first beta release of Eleventy v2.0"
 eleventyNavigation:
   parent: Blog
 ---
-
-<br>
 {% callout %}<strong><em>Update:</em></strong> The <a href="/blog/eleventy-v2/">Eleventy v2.0.0 stable release</a> is now available!{% endcallout %}
 
 The very first Eleventy 2.0 Beta release is now available on the `@beta` channel and we’re looking for Beta testers! You can try it out now:
