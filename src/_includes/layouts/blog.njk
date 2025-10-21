@@ -6,7 +6,7 @@ eleventyComputed:
     description: "An Eleventy blog post published on {{ page.date | newsDate('LLLL yyyy') }}."
 ---
 
-# {{ newstitle }}
+<h1>{{ newstitle }}</h1>
 
 <div class="fl fl-inline fl-separator-h fl-nowrap mb-4" style="--fl-gap-h: 1.5em; --fl-gap-v: .5em">
   <div>
@@ -25,14 +25,18 @@ eleventyComputed:
 {{ content | safe }}
 
 {% if not hideRelatedBlogPosts %}
----
+<hr>
 
-### Read more blog posts:
+<h3>Read more blog posts:</h3>
 
-{% set previousPost = collections.blog | getPreviousCollectionItem(page) %}
-{% set nextPost = collections.blog | getNextCollectionItem(page) %}
+{%- set previousPost = collections.blog | getPreviousCollectionItem(page) %}
+{%- set nextPost = collections.blog | getNextCollectionItem(page) %}
 
-{% if nextPost %}- Next: <a href="{{ nextPost.url }}">{{ nextPost.data.newstitle }}</a>{% endif %}
-{% if previousPost %}- Previous: <a href="{{ previousPost.url }}">{{ previousPost.data.newstitle }}</a>{% endif %}
+{%- if nextPost or previousPost %}
+<ul>
+{% if nextPost %}<li>Next: <a href="{{ nextPost.url }}">{{ nextPost.data.newstitle }}</a></li>{% endif %}
+{% if previousPost %}<li>Previous: <a href="{{ previousPost.url }}">{{ previousPost.data.newstitle }}</a></li>{% endif %}
+</ul>
+{%- endif %}
 
 {%- endif %}
