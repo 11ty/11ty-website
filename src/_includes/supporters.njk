@@ -1,4 +1,4 @@
-{%- set goldSponsors = opencollective.supporters | opencollectiveTier("gold-sponsor") %}
+{%- set goldSponsors = opencollective.supporters | opencollectiveTier("gold-sponsor") | filterSupportersActive %}
 {%- if goldSponsors.length > 0 %}
 <div class="fullwidth-module supporters-tiered supporters-gold">
 	<h3 class="subhed"><strong>Gold Sponsors</strong></h3>
@@ -16,17 +16,17 @@
 <div class="fullwidth-module supporters-tiered supporters-silver">
 	<h3 class="subhed"><strong>{% if goldSponsors.length > 0 %}Silver {% endif %}Sponsors</strong></h3>
 	<div class="facepile facepile-supporters">
-	{%- for supporter in opencollective.supporters | supportersFacepile | shuffle %}{% if supporter.tier.slug == "silver-sponsor" and supporter.isMonthly -%}
+	{%- for supporter in opencollective.supporters | filterSupportersActive | shuffle %}{% if supporter.tier.slug == "silver-sponsor" -%}
 		{%- set nameToSlug = supporter.name | slugify | lower -%}
 		<a href="{{ supporter.website or supporter.profile }}" class="elv-externalexempt" data-supporters-slug="{{ nameToSlug }}" rel="sponsored">{% opencollectiveavatar supporter %}</a>
 	{%- endif %}{% endfor %}
 	</div>
 </div>
 
-<div class="fullwidth-module">
+<div class="fullwidth-module supporters-untiered">
 	<is-land on:visible on:save-data="false">
 		<template data-island>
-			<h3 class="subhed ta-c"><strong>Supporters</strong></h3>
+			<h3 class="subhed ta-c"><a href="https://opencollective.com/11ty"><strong>{% if opencollective.backersCount %}×{{ opencollective.backersCount }} {% endif %}Supporters</strong></a></h3>
 			<html-fetch src="/imports/supporters.html"></html-fetch>
 		</template>
 	</is-land>

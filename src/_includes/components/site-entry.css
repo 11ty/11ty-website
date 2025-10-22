@@ -285,8 +285,8 @@
 	font-weight: 700;
 }
 .sites-vert:has(.sites-featured)
-	.sites-site-vert:not(.sites-featured)
-	.avatar-indieweb {
+.sites-site-vert:not(.sites-featured)
+.avatar-indieweb {
 	display: none;
 }
 

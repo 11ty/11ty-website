@@ -207,10 +207,10 @@ const shortcodes = {
 			"nejlepsiceskacasina-com",
 			"slovenskeonlinecasino-com",
 		]
-		let {image: url, name: username} = supporter;
+		let {image: url, name: username, hasDefaultAvatar, website} = supporter;
 		let alt = `Open Collective Avatar for ${username}`;
-		if(preferIndiewebAvatarSlugs.includes(supporter.slug) && supporter.website) {
-			return shortcodes.getIndieAvatarHtml(supporter.website);
+		if(website && (hasDefaultAvatar || preferIndiewebAvatarSlugs.includes(supporter.slug))) {
+			return shortcodes.getIndieAvatarHtml(website);
 		}
 		return `<img src="${url}" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async" eleventy:optional>`;
 	},
@@ -866,28 +866,9 @@ ${text.trim()}
 		return num ? arr.slice(num) : arr;
 	});
 
-	eleventyConfig.addFilter("supportersFacepile", (supporters) => {
+	eleventyConfig.addFilter("filterSupportersActive", (supporters) => {
 		return supporters.filter((supporter) => {
-			return supporter.status === "ACTIVE" && !supporter.hasDefaultAvatar && [
-				"bca-account1", // website is buycheapaccounts.com
-				"baocasino", // gambling
-				"woorke", // sells social media accounts
-				"suominettikasinot24", // gambling
-				"masonslots", //gambling
-				"trust-my-paper", // selling term papers
-				"kiirlaenud", // some quick loans site
-				"kajino-bitcoin", // crypto
-				"seo25-com", // selling website traffic
-				"relief-factor", // profile link was some weird PDF
-				"targetedwebtraffic", // selling website traffic
-				"forexbrokerz", // crypto
-				"viewality-media", // broken site on wix?
-				"aviator-game1", // gambling
-				"igrovye-avtomaty", // gambling
-				"sidesmedia", // selling social media
-				"best-casinos-australia-bca", // gambling
-				"buy-tiktok-likes", // selling social media
-			].includes(supporter.slug) === false;
+			return supporter.status === "ACTIVE";
 		});
 	});
 

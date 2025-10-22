@@ -36,30 +36,37 @@
 	max-width: 50px;
 	max-height: 50px;
 	margin-bottom: 6px;
+	background-color: #fff;
 	color: #fff;
 	border: 2px solid;
 	transition: border 0.3s;
 	object-fit: contain;
+	transition: 300ms all;
 }
 @media (prefers-color-scheme: dark) {
 	.facepile .avatar {
+		background-color: #222;
 		color: #222;
 	}
+}
+.facepile .avatar,
+.facepile .avatar-indieweb {
+	border-radius: 50%;
+}
+.facepile .avatar-indieweb {
+	/* border-color: yellow; */
 }
 .facepile-supporters .avatar {
 	width: calc(24px + 2vw);
 	height: calc(24px + 2vw);
 }
-.facepile > a:after {
+.facepile > a:is(:focus, :hover):after {
 	content: "";
 	position: absolute;
 	border-radius: 50%;
 	z-index: -1;
 	pointer-events: none;
 	opacity: 0;
-}
-.facepile > a:focus:after,
-.facepile > a:hover:after {
 	left: -24px; /* Right - 4px */
 	right: -20px;
 	top: -24px; /* Right - 4px */
@@ -83,48 +90,37 @@
 	background-size: 1200% 1200%;
 	background-position: 0 80%;
 }
-.facepile > a:nth-child(11n + 1):focus:after,
-.facepile > a:nth-child(11n + 1):hover:after {
+.facepile > a:nth-child(11n + 1):is(:focus, :hover):after {
 	background-position: 0% 80%;
 }
-.facepile > a:nth-child(11n + 2):focus:after,
-.facepile > a:nth-child(11n + 2):hover:after {
+.facepile > a:nth-child(11n + 2):is(:focus, :hover):after {
 	background-position: 9% 80%;
 }
-.facepile > a:nth-child(11n + 3):focus:after,
-.facepile > a:nth-child(11n + 3):hover:after {
+.facepile > a:nth-child(11n + 3):is(:focus, :hover):after {
 	background-position: 18% 80%;
 }
-.facepile > a:nth-child(11n + 4):focus:after,
-.facepile > a:nth-child(11n + 4):hover:after {
+.facepile > a:nth-child(11n + 4):is(:focus, :hover):after {
 	background-position: 27% 80%;
 }
-.facepile > a:nth-child(11n + 5):focus:after,
-.facepile > a:nth-child(11n + 5):hover:after {
+.facepile > a:nth-child(11n + 5):is(:focus, :hover):after {
 	background-position: 36% 80%;
 }
-.facepile > a:nth-child(11n + 6):focus:after,
-.facepile > a:nth-child(11n + 6):hover:after {
+.facepile > a:nth-child(11n + 6):is(:focus, :hover):after {
 	background-position: 45% 80%;
 }
-.facepile > a:nth-child(11n + 7):focus:after,
-.facepile > a:nth-child(11n + 7):hover:after {
+.facepile > a:nth-child(11n + 7):is(:focus, :hover):after {
 	background-position: 54% 80%;
 }
-.facepile > a:nth-child(11n + 8):focus:after,
-.facepile > a:nth-child(11n + 8):hover:after {
+.facepile > a:nth-child(11n + 8):is(:focus, :hover):after {
 	background-position: 63% 80%;
 }
-.facepile > a:nth-child(11n + 9):focus:after,
-.facepile > a:nth-child(11n + 9):hover:after {
+.facepile > a:nth-child(11n + 9):is(:focus, :hover):after {
 	background-position: 72% 80%;
 }
-.facepile > a:nth-child(11n + 10):focus:after,
-.facepile > a:nth-child(11n + 10):hover:after {
+.facepile > a:nth-child(11n + 10):is(:focus, :hover):after {
 	background-position: 81% 80%;
 }
-.facepile > a:nth-child(11n + 11):focus:after,
-.facepile > a:nth-child(11n + 11):hover:after {
+.facepile > a:nth-child(11n + 11):is(:focus, :hover):after {
 	background-position: 90% 80%;
 }
 
