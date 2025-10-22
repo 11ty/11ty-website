@@ -712,31 +712,6 @@ ${text.trim()}
 		}
 	);
 
-	eleventyConfig.addShortcode(
-		"supporterAmount",
-		function (amount, maxAmount = 2000) {
-			// mostly fibonacci
-			let increments = [
-				5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584,
-			];
-			let incrementCounter = 0;
-			let fullHearts = [];
-			let emptyHearts = [];
-			let j = 0;
-			for (let k = amount; j <= k; j += increments[incrementCounter]) {
-				fullHearts.push("🎈");
-				incrementCounter++;
-			}
-			for (; j <= maxAmount; j += increments[incrementCounter]) {
-				emptyHearts.push("🎈");
-				incrementCounter++;
-			}
-			return `${fullHearts.join(
-				""
-			)}<span class="supporters-hearts-empty">${emptyHearts.join("")}</span>`;
-		}
-	);
-
 	eleventyConfig.addFilter("toISO", (dateObj) => {
 		return dateObj.toISOString();
 	});
