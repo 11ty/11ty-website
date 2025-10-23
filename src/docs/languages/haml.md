@@ -10,7 +10,15 @@ layout: layouts/langs.njk
 
 | Eleventy Short Name | File Extension | npm Package                                |
 | ------------------- | -------------- | ------------------------------------------ |
-| `haml`              | `.haml`        | [`haml.js`](https://github.com/tj/haml.js) |
+| `haml`              | `.haml`        | [`hamljs`](https://github.com/tj/haml.js) |
+
+| Eleventy or Plugin version | `hamljs` version |
+| --- | --- |
+| `@11ty/eleventy@0.x` | `hamljs@0.6.x` |
+| `@11ty/eleventy@1.x` | `hamljs@0.6.x` |
+| `@11ty/eleventy@2.x` | `hamljs@0.6.x` |
+| `@11ty/eleventy@3.x` and newer | N/A |
+| `@11ty/eleventy-plugin-haml@1.x` | `hamljs@0.6.x` |
 
 You can override a `.haml` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/template-overrides/).
 

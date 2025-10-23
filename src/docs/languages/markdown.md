@@ -18,6 +18,13 @@ relatedLinks:
 
 * Related languages: [MDX](/docs/languages/mdx/)
 
+| Eleventy version | `markdown-it` version |
+| --- | --- |
+| `@11ty/eleventy@0.x` | `markdown-it@10.x` |
+| `@11ty/eleventy@1.x` | `markdown-it@12.x` |
+| `@11ty/eleventy@2.x` | `markdown-it@13.x` |
+| `@11ty/eleventy@3.x` | `markdown-it@14.x` |
+
 {% callout "info" %}
 Markdown files are by default pre-processed as Liquid templates. <a href="/docs/config/#default-template-engine-for-markdown-files">You can change this default in your configuration file</a> (or disable it altogether). To change this for a single template and not globally, read <a href="/docs/languages/">Changing a Template’s Rendering Engine</a>.
 {% endcallout %}

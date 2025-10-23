@@ -10,7 +10,15 @@ layout: layouts/langs.njk
 
 | Eleventy Short Name | File Extension | npm Package                                           |
 | ------------------- | -------------- | ----------------------------------------------------- |
-| `mustache`          | `.mustache`    | [`mustache.js`](https://github.com/janl/mustache.js/) |
+| `mustache`          | `.mustache`    | [`mustache`](https://github.com/janl/mustache.js/) |
+
+| Eleventy or Plugin version | `mustache` version |
+| --- | --- |
+| `@11ty/eleventy@0.x` | `mustache@2.x` |
+| `@11ty/eleventy@1.x` | `mustache@4.x` |
+| `@11ty/eleventy@2.x` | `mustache@4.x` |
+| `@11ty/eleventy@3.x` and newer | N/A |
+| `@11ty/eleventy-plugin-mustache@1.x` | `mustache@4.x` |
 
 You can override a `.mustache` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/template-overrides/).
 

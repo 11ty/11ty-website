@@ -14,7 +14,15 @@ layout: layouts/langs.njk
 
 | Eleventy Short Name | File Extension | npm Package                                                |
 | ------------------- | -------------- | ---------------------------------------------------------- |
-| `hbs`               | `.hbs`         | [`handlebars.js`](https://github.com/wycats/handlebars.js) |
+| `hbs`               | `.hbs`         | [`handlebars`](https://github.com/wycats/handlebars.js) |
+
+| Eleventy or Plugin version | `handlebars` version |
+| --- | --- |
+| `@11ty/eleventy@0.x` | `handlebars@4.x` |
+| `@11ty/eleventy@1.x` | `handlebars@4.x` |
+| `@11ty/eleventy@2.x` | `handlebars@4.x` |
+| `@11ty/eleventy@3.x` and newer | N/A |
+| `@11ty/eleventy-plugin-handlebars@1.x` | `handlebars@4.x` |
 
 You can override a `.hbs` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/template-overrides/).
 

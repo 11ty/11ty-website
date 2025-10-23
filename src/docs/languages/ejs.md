@@ -12,6 +12,14 @@ layout: layouts/langs.njk
 | ------------------- | -------------- | ------------------------------------------ |
 | `ejs`               | `.ejs`         | [`ejs`](https://www.npmjs.com/package/ejs) |
 
+| Eleventy or Plugin version | `ejs` version |
+| --- | --- |
+| `@11ty/eleventy@0.x` | `ejs@2.x` |
+| `@11ty/eleventy@1.x` | `ejs@3.x` |
+| `@11ty/eleventy@2.x` | `ejs@3.x` |
+| `@11ty/eleventy@3.x` and newer | N/A |
+| `@11ty/eleventy-plugin-ejs@1.x` | `ejs@3.x` |
+
 You can override a `.ejs` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/template-overrides/).
 
 ## Installation

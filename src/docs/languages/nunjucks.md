@@ -18,6 +18,13 @@ layout: layouts/langs.njk
 | ------------------- | -------------- | ------------------------------------------------- |
 | `njk`               | `.njk`         | [`nunjucks`](https://mozilla.github.io/nunjucks/) |
 
+| Eleventy version | `nunjucks` version |
+| --- | --- |
+| `@11ty/eleventy@0.x` | `nunjucks@3.x` |
+| `@11ty/eleventy@1.x` | `nunjucks@3.x` |
+| `@11ty/eleventy@2.x` | `nunjucks@3.x` |
+| `@11ty/eleventy@3.x` | `nunjucks@3.x` |
+
 You can override a `.njk` file’s template engine. Read more at [Changing a Template’s Rendering Engine](/docs/template-overrides/).
 
 ## Nunjucks Environment Options
