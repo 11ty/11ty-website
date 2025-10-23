@@ -9,9 +9,11 @@ excludeFromSidebar: true
 
 {% tableofcontents "open" %}
 
-{% callout "info" %}You’ll probably want to read the <a href="/docs/debugging/">Debug mode documentation</a> before continuing here.{% endcallout %}
+{% callout "info", "md" %}Check out the [common recommendations for projects to improve their build performance](/docs/performance/#performance-tips).{% endcallout %}
 
-Eleventy by default will warn you if certain pieces of your build take longer than 8% of your total build time. This list includes:
+## Warnings
+
+Eleventy (by default) will warn you if certain pieces of your build take longer than 8% of your total build time. This list includes:
 
 - [Filters/Helpers/11ty.js JavaScript Functions](/docs/filters/)
 - [Shortcodes](/docs/shortcodes/)
@@ -20,7 +22,9 @@ Eleventy by default will warn you if certain pieces of your build take longer th
 
 This list is not considered to be exhaustive. It’s just what has been implemented thus far!
 
-## Show All Performance Measurements
+## Show Debug Measurements
+
+{% callout "info" %}You’ll probably want to read the <a href="/docs/debugging/">Debug mode documentation</a> before continuing here.{% endcallout %}
 
 {% addedin "0.11.0" %} You can use the following `debug` command to show performance measurements for all of these entries (not just those that take longer than 8%).
 

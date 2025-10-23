@@ -38,11 +38,12 @@ Data taken from [_Which Generator Builds Markdown the Fastest?_ (July 2022)](htt
 
 ### Performance Tips
 
-- You can analyze your [project’s specific build performance metrics using Debug Mode](/docs/debug-performance/).
+- You can analyze your [project’s specific build performance metrics (via DEBUG or Node.js CPU Profiling)](/docs/debug-performance/).
+- [Memoize costly Shortcodes](/docs/shortcodes/#memoize-shortcodes) and [Filters](/docs/filters/#memoize-filters) (we typically see the most expensive ones are those performing JavaScript, CSS, or HTML minification)
 - Take [passthrough copy out of your build-loop with the Eleventy Dev Server](/docs/copy/#emulate-passthrough-copy-during-serve).
 - Use the [Image HTML Transform method to optimize images on-request during development](/docs/plugins/image.md#build-performance).
 - Use [`--incremental` for Incremental builds](/docs/usage/#incremental-for-partial-incremental-builds).
-- The [Directory Output plugin](/docs/plugins/directory-output/) will also report per-template performance and file size information.
+- Use the [Directory Output plugin](/docs/plugins/directory-output/) to report per-template performance and file size information.
 
 <div class="youtube-related">
   {%- youtubeEmbed "KETQ4zS9Yp4", "28% build time performance improvement for Google’s web.dev (Weekly №1)", "30" -%}
