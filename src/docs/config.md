@@ -222,6 +222,7 @@ Markdown files run through this template engine before transforming to HTML.
 | _Default_                | `liquid`                                                          |
 | _Valid Options_          | A valid [template engine short name](/docs/languages/) or `false` |
 | _Command Line Override_  | _None_                                                            |
+| _Configuration API_      | `setMarkdownTemplateEngine` {% addedin "4.0.0-alpha.1" %} |
 
 {% include "snippets/config/config-mdengine.njk" %}
 
@@ -235,6 +236,7 @@ HTML templates run through this template engine before transforming to (better) 
 | _Default_               | `liquid`                                                          |
 | _Valid Options_         | A valid [template engine short name](/docs/languages/) or `false` |
 | _Command Line Override_ | _None_                                                            |
+| _Configuration API_      | `setHtmlTemplateEngine` {% addedin "4.0.0-alpha.1" %} |
 
 {% include "snippets/config/config-htmlengine.njk" %}
 
