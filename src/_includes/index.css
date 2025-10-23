@@ -455,7 +455,3 @@ filter-container:defined form {
 	height: 2.2em;
 	color: #c70000;
 }
-
-is-land[ready] {
-	display: contents;
-}

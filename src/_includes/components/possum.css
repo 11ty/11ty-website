@@ -7,7 +7,7 @@
 	top: 0.5rem;
 	transition: 0.3s opacity ease-out;
 }
-@media (max-width: 34.375em) { /* 550px */
+@media (max-width: 54.9375em) { /* 879px */
 	/* Hide possum on docs only */
 	.elv-possum-island {
 		display: none;
