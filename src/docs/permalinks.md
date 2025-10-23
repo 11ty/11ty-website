@@ -206,7 +206,9 @@ permalink: false
 
 ### Use template syntax in Permalink
 
-You may use data variables here (and template syntax, too). These will be parsed with the current template’s rendering engine. It’s recommended to use the provided [`slugify` filter](/docs/filters/slugify/) to create URL-safe strings from data.
+You may use data variables here (and template syntax, too). These will be parsed with the current template’s rendering engine (take special note that in [Markdown](/docs/config/#default-template-engine-for-markdown-files) and [HTML files this might be influenced by configuration](/docs/config/#default-template-engine-for-html-files)).
+
+It’s recommended to use the provided [`slugify` filter](/docs/filters/slugify/) to create URL-safe strings from data (like a blog post title).
 
 <div id="use-filters"></div>
 
