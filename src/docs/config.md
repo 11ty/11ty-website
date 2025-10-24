@@ -502,10 +502,6 @@ export default function (eleventyConfig) {
 
 Files found (that don’t have a valid template engine) from opt-in file extensions in `templateFormats` will passthrough to the output directory. Read more about [Passthrough Copy](/docs/copy/).
 
-#### Data Deep Merge {% addedin "0.6.0" %}
-
-- Documentation for [Data Deep Merging has been moved to its own page](/docs/data-deep-merge/) under the Data Cascade.
-
 #### Customize Front Matter Parsing Options {% addedin "0.9.0" %}
 
 - Documented at [Customize Front Matter Parsing](/docs/data-frontmatter-customize/).

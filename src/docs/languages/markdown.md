@@ -26,7 +26,7 @@ relatedLinks:
 | `@11ty/eleventy@3.x` | `markdown-it@14.x` |
 
 {% callout "info" %}
-Markdown files are by default pre-processed as Liquid templates. <a href="/docs/config/#default-template-engine-for-markdown-files">You can change this default in your configuration file</a> (or disable it altogether). To change this for a single template and not globally, read <a href="/docs/languages/">Changing a Template’s Rendering Engine</a>.
+Markdown files are by default pre-processed as Liquid templates. <a href="/docs/config/#default-template-engine-for-markdown-files">You can change this default in your configuration file</a> (or disable it altogether). To change this for a single template and not globally, read <a href="/docs/template-overrides/">Changing a Template’s Rendering Engine</a>.
 {% endcallout %}
 
 ## Markdown Options

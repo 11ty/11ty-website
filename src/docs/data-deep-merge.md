@@ -3,111 +3,27 @@ eleventyNavigation:
   parent: Data Cascade
   key: Data Deep Merge
 excludeFromSidebar: true
+removedFeature: true
 ---
-
 # Data Deep Merge {% addedin "0.6.0" %}
 
 {% tableofcontents %}
 
-Use a full deep merge when combining the Data Cascade. This will use something similar to [`lodash.mergewith`](https://docs-lodash.com/v4/merge-with/) to combine Arrays and deep merge Objects, rather than a simple top-level merge using `Object.assign`.
+{% callout "error", "md-block", "Feature Removed" %}This feature was removed in Eleventy v4.0. Read more at [GitHub Issue #3937](https://github.com/11ty/eleventy/issues/3937) (originally inspired by [GitHub Issue #147](https://github.com/11ty/eleventy/issues/147)).{% endcallout %}
 
-Read more at [Issue #147](https://github.com/11ty/eleventy/issues/147). As of Eleventy 1.0 this defaults to enabled (but API still exists for opt-out).
+Historically, it may be important to remember that the default for this feature was changed to `true` in [Eleventy v1](https://github.com/11ty/eleventy/releases/tag/v1.0.0).
 
 {% set codeContent %}
 export default function (eleventyConfig) {
-	// defaults to true in 1.0, use false to opt-out
+	// throws an error in Eleventy v4
 	eleventyConfig.setDataDeepMerge(false);
 
-	// requires opt-in for 0.x
+	// is a no-op in Eleventy v4
 	eleventyConfig.setDataDeepMerge(true);
 };
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
-Note that all data stored in the `pagination` variable is exempted from this behavior (we don’t want `pagination.items` to be merged together).
-
-## Example
-
-{% codetitle "my-template.md" %}
-
-```yaml
----
-title: This is a Good Blog Post
-tags:
-  - CSS
-  - HTML
-layout: my-layout.njk
-eleventyNavigation:
-  key: my-key
----
-```
-
-{% codetitle "_includes/my-layout.njk" %}
-
-```yaml
----
-title: This is a Very Good Blog Post
-author: Zach
-tags:
-  - JavaScript
-eleventyNavigation:
-  parent: test
----
-```
-
-### Without Deep Data Merge
-
-Results in the following data available in `my-template.md`:
-
-{% codetitle "JavaScript", "Syntax" %}
-
-```json
-{
-	"title": "This is a Good Blog Post",
-	"author": "Zach",
-	"tags": ["CSS", "HTML"],
-	"eleventyNavigation": {
-		"key": "my-key"
-	}
-}
-```
-
-### With Data Deep Merge
-
-With this enabled, your data structure will look like this when `my-template.md` is rendered:
-
-{% codetitle "JavaScript", "Syntax" %}
-
-```json
-{
-	"title": "This is a Good Blog Post",
-	"author": "Zach",
-	"tags": ["CSS", "HTML", "JavaScript"],
-	"eleventyNavigation": {
-		"key": "my-key",
-		"parent": "test"
-	}
-}
-```
-
 ## Using the `override:` prefix
 
-Use the `override:` prefix on any data key to opt-out of this merge behavior for specific values or nested values.
-
-{% codetitle "posts/posts.json" %}
-
-```json
-{
-	"tags": ["posts"]
-}
-```
-
-{% codetitle "posts/firstpost.md" %}
-
-```markdown
----
-override:tags: []
----
-```
-
-Even though normally the `posts/firstpost.md` file would inherit the `posts` tag from the directory data file (per normal [data cascade rules](/docs/data/)), we can override the `tags` value to be an empty array to opt-out of this behavior.
+The `override:` prefix in the Data Cascade is still available! Read more [about `override:` on the Data Cascade documentation](/docs/data-cascade/#using-the-override-prefix).

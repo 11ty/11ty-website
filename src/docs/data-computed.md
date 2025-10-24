@@ -151,7 +151,7 @@ We put a lot of work into making this feature as easy to use as possible. Most o
   - The order of the keys in the object doesn’t matter—we smartly figure out what order these should be computed in.
   - We will let you know if you have circular references (`key1` uses on `key2` which uses `key1` again)
   - When we calculate the dependency graph for your variable references, we may get it wrong if your references to other computed properties are nested inside of conditional logic. Read more at [Declaring your Dependencies](#declaring-your-dependencies).
-- You can use a nested object of any depth. It can mix, match, and merge with the standard (non-computed) data. This will always do deep merging (independent of your [Data Deep Merge configuration](/docs/data-deep-merge/)).
+- You can use a nested object of any depth. It can mix, match, and merge with the standard (non-computed) data. This will always do deep merging.
 - You can reuse _and_ override properties at the same time. In the following example `key` will have `This Is My Key` as its value.
 
 {% set codeBlock %}{% raw %}
