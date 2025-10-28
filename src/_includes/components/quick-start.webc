@@ -9,7 +9,6 @@
 		<a href="#quickstart-os-nix" id="quickstart-os-mac-btn" role="tab" data-tabs-persist="os:mac">macOS</a>
 		<a href="#quickstart-os-nix" role="tab" data-tabs-persist="os:posix">Linux</a>
 		<a href="#quickstart-os-win" role="tab" data-tabs-persist="os:win">Windows</a>
-		<a href="#quickstart-os-all" role="tab" data-tabs-persist="os:all">Cross Platform</a>
 	</div>
 	<div id="quickstart-os-nix" role="tabpanel">
 		<syntax-highlight language="bash">
@@ -17,15 +16,6 @@ echo '# Heading' > index.md
 		</syntax-highlight>
 	</div>
 	<div id="quickstart-os-win" role="tabpanel">
-		<syntax-highlight language="bash">
-echo '# Heading' | out-file -encoding utf8 'index.md'
-		</syntax-highlight>
-		<p>If the <code>out-file</code> command is not available in your Windows Terminal window (it’s PowerShell specific), use the Cross Platform method.</p>
-		<!--- <syntax-highlight language="bash">
-echo # Heading > index.md
-		</syntax-highlight> --->
-	</div>
-	<div id="quickstart-os-all" role="tabpanel">
 		<syntax-highlight language="bash">
 echo '# Heading' | npx @11ty/create index.md
 		</syntax-highlight>

@@ -94,7 +94,7 @@ Node.js supports a [`NODE_DISABLE_COLORS` environment variable](https://nodejs.o
 		<a href="#disable-colors-nix" id="disable-colors-mac-btn" role="tab" data-tabs-persist="os:mac">macOS</a>
 		<a href="#disable-colors-nix" role="tab" data-tabs-persist="os:posix">Linux</a>
 		<a href="#disable-colors-win" role="tab" data-tabs-persist="os:win">Windows</a>
-		<a href="#disable-colors-all" role="tab" data-tabs-persist="os:all">Cross Platform</a>
+		<a href="#disable-colors-all" role="tab">Cross Platform</a>
 	</div>
 	<div id="disable-colors-nix" role="tabpanel">
 {%- set codeBlock %}{% raw %}
