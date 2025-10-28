@@ -164,6 +164,7 @@ let eleventyComputed = {
 		{% js "async" %}{% include "../../../node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
 		{% js "async" %}{% include "../../../node_modules/@zachleat/details-utils/details-utils.js" %}{% endjs %}
 		{% js "async" %}{% include "../../../node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js" %}{% endjs %}
+		{% js "async" %}{% include "components/eleventy-shell-syntax.js" %}{% endjs %}
 
 		<script type="module" src="{% getBundleFileUrl 'js' %}"></script>
 		<script type="module" src="{% getBundleFileUrl 'js', 'async' %}"></script>
