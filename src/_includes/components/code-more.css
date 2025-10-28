@@ -33,19 +33,6 @@
 	background-color: #902f2f;
 }
 
-[data-preprefix-cmdhomedir] .highlight-line:first-child:before {
-	color: #aaa;
-	content: "~ $ ";
-}
-[data-preprefix-eleventysample] .highlight-line:first-child:before {
-	color: #aaa;
-	content: "~/eleventy-sample $ ";
-}
-[data-preprefix-lastlinegreen] .highlight-line:last-child,
-[data-preprefix-lastlinegreen] .highlight-line:last-child * {
-	color: #0dbc79 !important;
-}
-
 pre[class*="language-diff-"] {
 	padding-left: 0;
 	padding-right: 0;

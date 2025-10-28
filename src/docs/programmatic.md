@@ -19,11 +19,11 @@ Now create a file called `my-node-script.js` with the following contents:
 
 {% include "snippets/programmatic/node-script.njk" %}
 
-Then run your new script from the command line. _Don’t include `~ $` when you run this command._
+Then run your new script from the command line.
 
-{% codewithprompt "cmdhomedir" %}
+```
 node my-node-script.js
-{% endcodewithprompt %}
+```
 
 ## Don’t write to the file system
 

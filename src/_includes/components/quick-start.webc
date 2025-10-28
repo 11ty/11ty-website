@@ -27,7 +27,7 @@ echo # Heading > index.md
 	</div>
 	<div id="quickstart-os-all" role="tabpanel">
 		<syntax-highlight language="bash">
-npx @11ty/create index.md "# Heading"
+echo '# Heading' | npx @11ty/create index.md
 		</syntax-highlight>
 		<p>Learn more about <a href="https://github.com/11ty/create"><code>@11ty/create</code></a> <em>(requires Node.js 18 or newer)</em>.</p>
 	</div>
@@ -62,12 +62,16 @@ yarn dlx @11ty/eleventy --serve
 
 <p>Eleventy compiles any files in the current directory matching valid <a href="/docs/languages/">file extensions</a> (<code>md</code> is one of many) to the <code>_site</code> output folder. It might look like this:</p>
 
-<cli-eleventy-output @show-version>
+<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
+
+```11ty-output
 [11ty] Writing _site/index.html from ./index.md (liquid)
-[11ty] Wrote 1 file in 0.03 seconds%%VERSION%%
+[11ty] Wrote 1 file in 0.03 seconds ({% latestVersion $data.versions, $data.config %})
 [11ty] Watching…
 [11ty] Server at http://localhost:8080/
-</cli-eleventy-output>
+```
+
+</template>
 
 <p>The <code>--serve</code> option also starts a <a href="/docs/dev-server/">local development server</a>. Open up <code>http://localhost:8080/</code> in your favorite web browser to view your web site.</p>
 <p>If you’d like to experiment further with different template syntax, edit the following sample <code>index.md</code> file in your browser. <a href="/docs/data-frontmatter/">Front Matter</a>, <a href="/docs/languages/liquid/">Liquid</a> and <a href="/docs/languages/markdown/">Markdown</a> are in use.</p>

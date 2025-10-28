@@ -137,11 +137,11 @@ _You may also [install Eleventy globally](/docs/global-installation/) but the `p
 
 <template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
 
-Here’s what your command line might look like after you run Eleventy:
+Here’s what your command line should look like after you run Eleventy:
 
-{% codewithprompt "lastlinegreen" %}
+```11ty-output
 [11ty] Wrote 0 files in 0.03 seconds ({% latestVersion versions, config %})
-{% endcodewithprompt %}
+```
 
 If you see `({% latestVersion versions, config %})` in your output you know you’re using the newest version. However, Eleventy didn’t process any files! This is expected—we have an empty folder with no templates inside.
 
@@ -211,11 +211,11 @@ yarn exec eleventy
 <template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
 The output might look like this:
 
-{% codewithprompt "lastlinegreen" %}
+```11ty-output
 [11ty] Writing _site/README/index.html from ./README.md (liquid)
 [11ty] Writing _site/index.html from ./index.html (liquid)
 [11ty] Wrote 2 files in 0.04 seconds ({% latestVersion versions, config %})
-{% endcodewithprompt %}
+```
 
 We’ve now compiled our two content templates in the current directory into the output folder (`_site` is the default).
 
@@ -267,24 +267,13 @@ Use `--serve` to start up a hot-reloading local web server.
 
 Your command line might look something like:
 
-<style>
-#getting-started-serve .highlight-line:first-child + br + .highlight-line + br + .highlight-line,
-#getting-started-serve .highlight-line:first-child + br + .highlight-line + br + .highlight-line * {
-  color: #0dbc79 !important;
-}
-#getting-started-serve .highlight-line:first-child + br + .highlight-line + br + .highlight-line + br + .highlight-line + br + .highlight-line,
-#getting-started-serve .highlight-line:first-child + br + .highlight-line + br + .highlight-line + br + .highlight-line + br + .highlight-line * {
-  color: #4c8bcf !important;
-}
-</style>
-
-{% codewithprompt "noop", "getting-started-serve" %}
+```11ty-output
 [11ty] Writing _site/index.html from ./index.html (liquid)
 [11ty] Writing _site/README/index.html from ./README.md (liquid)
 [11ty] Wrote 2 files in 0.04 seconds ({% latestVersion versions, config %})
 [11ty] Watching…
 [11ty] Server at http://localhost:8080/
-{% endcodewithprompt %}
+```
 
 Open `http://localhost:8080/` or `http://localhost:8080/README/` in your favorite web browser to see your Eleventy site live! When you save your template files—Eleventy will refresh the browser with your new changes automatically!
 

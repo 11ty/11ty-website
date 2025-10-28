@@ -419,30 +419,6 @@ export default async function (eleventyConfig) {
 		return `<a href="${href}" class="minilink minilink-lower">${text}</a>`;
 	});
 
-	eleventyConfig.addPairedShortcode(
-		"codewithprompt",
-		function (text, prePrefixCode, id) {
-			let ret = [];
-			if (prePrefixCode) {
-				ret.push(`<div data-preprefix-${prePrefixCode}${
-					id ? ` id="${id}"` : ""
-				}>
-`);
-			}
-
-			ret.push(`\`\`\`bash/-
-${text.trim()}
-\`\`\``);
-
-			if (prePrefixCode) {
-				ret.push(`
-</div>`);
-			}
-
-			return ret.join("\n");
-		}
-	);
-
 	// WebC migration: TODO remove this after full conversion
 	eleventyConfig.addPassthroughCopy({
 		"src/js/*.js": "js/",

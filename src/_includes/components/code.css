@@ -65,3 +65,9 @@ pre + .note {
 		border-radius: 0.3em;
 	}
 }
+
+pre.language-11ty-output {
+	border: 2px solid var(--border-color);
+	background-color: inherit;
+	color: inherit;
+}
