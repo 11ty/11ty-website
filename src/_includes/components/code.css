@@ -66,7 +66,8 @@ pre + .note {
 	}
 }
 
-pre.language-11ty-output {
+pre.language-11ty-output,
+pre.language-text {
 	border: 2px solid var(--border-color);
 	background-color: inherit;
 	color: inherit;

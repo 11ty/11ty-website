@@ -25,7 +25,7 @@ overrideCommunityLinks: true
 <template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
 ## <span class="numberflag"><span class="sr-only">Step</span> 1</span> Make a Project Directory
 
-Create a directory for your project using the `mkdir` command (short for _make directory_):
+Create a directory for your project and the template files using the `mkdir` command (short for _make directory_):
 </template>
 
 <syntax-highlight language="bash">
@@ -119,18 +119,18 @@ _You may also [install Eleventy globally](/docs/global-installation/) but the `p
 	</div>
 	<div id="quickstart-run-3a-npm" role="tabpanel">
 		<syntax-highlight language="bash">
-			npx @11ty/eleventy
+			npx @11ty/eleventy --input=content
 		</syntax-highlight>
 		<p>We can use the <code>npx</code> command (also provided by Node.js) to run our local project's version of Eleventy.</p>
 	</div>
 	<div id="quickstart-run-3a-pnpm" role="tabpanel">
 		<syntax-highlight language="bash">
-			pnpm exec eleventy
+			pnpm exec eleventy --input=content
 		</syntax-highlight>
 	</div>
 	<div id="quickstart-run-3a-yarn" role="tabpanel">
 		<syntax-highlight language="bash">
-			yarn exec eleventy
+			yarn exec eleventy --input=content
 		</syntax-highlight>
 	</div>
 </seven-minute-tabs>
@@ -143,7 +143,7 @@ Here’s what your command line should look like after you run Eleventy:
 [11ty] Wrote 0 files in 0.03 seconds ({% latestVersion versions, config %})
 ```
 
-If you see `({% latestVersion versions, config %})` in your output you know you’re using the newest version. However, Eleventy didn’t process any files! This is expected—we have an empty folder with no templates inside.
+If you see `({% latestVersion versions, config %})` in your output you know you’re using the newest version of Eleventy. However, Eleventy didn’t process any files! This is expected—we have an empty `content` folder without any template files.
 
 ## <span class="numberflag"><span class="sr-only">Step</span> 4</span> Create some templates
 
@@ -157,31 +157,44 @@ Let’s run two commands to create two new template files.
 		<a href="#quickstart-os-nix" id="quickstart-os-mac-btn" role="tab" data-tabs-persist="os:mac">macOS</a>
 		<a href="#quickstart-os-nix" role="tab" data-tabs-persist="os:posix">Linux</a>
 		<a href="#quickstart-os-win" role="tab" data-tabs-persist="os:win">Windows</a>
-		<a href="#quickstart-os-all" role="tab" data-tabs-persist="os:all">Cross Platform</a>
 	</div>
 	<div id="quickstart-os-nix" role="tabpanel">
+		<p>First we’ll make a directory for our content:</p>
 <syntax-highlight language="bash">
-echo '<!doctype html><title>Page title</title><p>Hi</p>' > index.html
-echo '# Heading' > README.md
+	mkdir content
+</syntax-highlight>
+		<p>Now we’ll create one Markdown file:</p>
+<syntax-highlight language="bash">
+echo '# Heading' > content/README.md
+</syntax-highlight>
+		<p>And one HTML file:</p>
+<syntax-highlight language="bash">
+echo '<!doctype html><title>Page title</title><p>Hi</p>' > content/index.html
 </syntax-highlight>
 	</div>
 	<div id="quickstart-os-win" role="tabpanel">
+		<p>Now we’ll create one Markdown file:</p>
 <syntax-highlight language="bash">
-echo '<!doctype html><title>Page title</title><p>Hi</p>' | out-file -encoding utf8 'index.html'
-echo '# Heading' | out-file -encoding utf8 'README.md'
+echo '# Heading' | npx @11ty/create content/README.md
 </syntax-highlight>
-		<p>If the <code>out-file</code> command is not available in your Windows Terminal window (it’s PowerShell specific), use the Cross Platform method instead.</p>
-	</div>
-	<div id="quickstart-os-all" role="tabpanel">
+		<p>And one HTML file:</p>
 <syntax-highlight language="bash">
-echo '<!doctype html><title>Page title</title><p>Hi</p>' | npx @11ty/create index.html
-echo '# Heading' | npx @11ty/create README.md
+echo '<!doctype html><title>Page title</title><p>Hi</p>' | npx @11ty/create content/index.html
 </syntax-highlight>
 		<p>Learn more about <a href="https://github.com/11ty/create"><code>@11ty/create</code></a> <em>(requires Node.js 18 or newer)</em>.</p>
 	</div>
 </seven-minute-tabs>
 
-<p>Alternatively, you can create these using any text editor — make sure you save them into your project folder and they have the correct file extensions.</p>
+<p>Your local file system should now look something like this:</p>
+
+<syntax-highlight language="text" :copy-button-enabled="false">
+📁 eleventy-sample
+↳ 📁 content
+	↳ 📄 index.html
+	↳ 📄 README.md
+</syntax-highlight>
+
+<p>Alternatively, you can create these using any text editor — make sure you save them into your project folder and ensure they have the correct file extensions.</p>
 
 <p>After you’ve created an HTML template and a Markdown template, let’s run Eleventy again with the following command:</p>
 
@@ -193,17 +206,17 @@ echo '# Heading' | npx @11ty/create README.md
 	</div>
 	<div id="quickstart-run-4-npm" role="tabpanel">
 		<syntax-highlight language="bash">
-npx @11ty/eleventy
+npx @11ty/eleventy --input=content
 		</syntax-highlight>
 	</div>
 	<div id="quickstart-run-4-pnpm" role="tabpanel">
 		<syntax-highlight language="bash">
-pnpm exec eleventy
+pnpm exec eleventy --input=content
 		</syntax-highlight>
 	</div>
 	<div id="quickstart-run-4-yarn" role="tabpanel">
 		<syntax-highlight language="bash">
-yarn exec eleventy
+yarn exec eleventy --input=content
 		</syntax-highlight>
 	</div>
 </seven-minute-tabs>
@@ -212,8 +225,8 @@ yarn exec eleventy
 The output might look like this:
 
 ```11ty-output
-[11ty] Writing _site/README/index.html from ./README.md (liquid)
-[11ty] Writing _site/index.html from ./index.html (liquid)
+[11ty] Writing _site/README/index.html from ./content/README.md (liquid)
+[11ty] Writing _site/index.html from ./content/index.html (liquid)
 [11ty] Wrote 2 files in 0.04 seconds ({% latestVersion versions, config %})
 ```
 
@@ -268,8 +281,8 @@ Use `--serve` to start up a hot-reloading local web server.
 Your command line might look something like:
 
 ```11ty-output
-[11ty] Writing _site/index.html from ./index.html (liquid)
-[11ty] Writing _site/README/index.html from ./README.md (liquid)
+[11ty] Writing _site/index.html from ./content/index.html (liquid)
+[11ty] Writing _site/README/index.html from ./content/README.md (liquid)
 [11ty] Wrote 2 files in 0.04 seconds ({% latestVersion versions, config %})
 [11ty] Watching…
 [11ty] Server at http://localhost:8080/
