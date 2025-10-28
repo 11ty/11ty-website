@@ -174,8 +174,8 @@ echo '# Heading' | out-file -encoding utf8 'README.md'
 	</div>
 	<div id="quickstart-os-all" role="tabpanel">
 <syntax-highlight language="bash">
-npx @11ty/create index.html "<!doctype html><title>Page title</title><p>Hi</p>"
-npx @11ty/create README.md "# Heading"
+echo '<!doctype html><title>Page title</title><p>Hi</p>' | npx @11ty/create index.html
+echo '# Heading' | npx @11ty/create README.md
 </syntax-highlight>
 		<p>Learn more about <a href="https://github.com/11ty/create"><code>@11ty/create</code></a> <em>(requires Node.js 18 or newer)</em>.</p>
 	</div>
