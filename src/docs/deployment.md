@@ -19,7 +19,7 @@ hosts:
     url: https://stormkit.io/
     screenshotSize: medium
   - name: GitHub Pages
-    url: https://pages.github.com/
+    url: https://docs.github.com/en/pages
     screenshotSize: medium
   - name: GitLab Pages
     url: https://docs.gitlab.com/ee/user/project/pages/

@@ -45,7 +45,7 @@ If a `date` key is omitted from the file, we then look for a `YYYY-MM-DD` format
 
 As a last resort, the file creation date is used. [Careful when relying on file creation dates on a deployment server](#collections-out-of-order-when-you-run-eleventy-on-your-server).
 
-{% callout "info" %}<strong>Trying to use <code>date</code> in your templates?</strong> The <code>date</code> value will likely not be of much use, since Eleventy performs no transformation on this front matter value. You probably want <code>page.date</code> instead. Check out <a href="/docs/data-eleventy-supplied/#page-variable-contents">the values available in the <code>page</code> variable</a>.{% endcallout %}
+{% callout "info" %}<strong>Trying to use <code>date</code> in your templates?</strong> The <code>date</code> value contains the raw Data Cascade value (not a resolved Date object). You probably want <code>page.date</code> instead. Check out <a href="/docs/data-eleventy-supplied/#page-variable-contents">the values available in the <code>page</code> variable</a>.{% endcallout %}
 
 ## Configuration API for Custom Date Parsing
 
