@@ -50,7 +50,7 @@ The first configuration file found is used. The others are ignored.
 
 ### Input Directory
 
-Controls the top level directory/file/glob that we’ll use to look for templates.
+Controls the top level directory/file/glob that we’ll use to look for templates. By default Eleventy looks in the current working directory but for more complex projects it’s recommended to set this to a directory inside of your project (e.g. a `content` folder, as shown on the [Getting Started guide](/docs/)).
 
 | Input Directory         |                           |
 | ----------------------- | ------------------------- |
@@ -72,8 +72,8 @@ npx @11ty/eleventy --input=README.md
 # A glob of files
 npx @11ty/eleventy --input=*.md
 
-# A subdirectory
-npx @11ty/eleventy --input=views
+# A subdirectory (Recommended)
+npx @11ty/eleventy --input=content
 {% endset %}
 {{ codeBlock | highlight("bash") | safe }}
 
