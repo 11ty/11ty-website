@@ -2,8 +2,18 @@ const css = String.raw;
 
 // Properly highlights Eleventy syntax in a terminal window
 class EleventyShell {
+	static selector = "code.language-11ty-output";
 	static PREFIX = "[11ty] ";
 	static cssAdded = false;
+
+	static register(root) {
+		if(typeof CSS === "undefined" || !("highlights" in CSS)) {
+			return;
+		}
+		for(let el of (root || document).querySelectorAll(this.selector)) {
+			(new EleventyShell(el)).highlight();
+		}
+	}
 
 	constructor(node) {
 		this.node = node;
@@ -41,7 +51,6 @@ class EleventyShell {
 	}
 
 	static getRanges(node) {
-
 		return this.getLines(node).map(location => {
 			let { start, end, textNode, content } = location;
 			let ranges = [];
@@ -83,15 +92,16 @@ class EleventyShell {
 		if(this.cssAdded) {
 			return;
 		}
+		this.cssAdded = true;
 
 		let style = css`:root {
-	--shell-prefix: #595959;
+	--shell-prefix: rgba(0,0,0,.6);
 	--shell-wrote: #056800;
 	--shell-benchmark: #685800;
 	--shell-server: #2A52B8;
 
 	@media (prefers-color-scheme: dark) {
-		--shell-prefix: #b2b2b2;
+		--shell-prefix: rgba(255,255,255,.75);
 		--shell-wrote: #20C683;
 		--shell-benchmark: #e5e510;
 		--shell-server: #6AB2FF;
@@ -128,18 +138,15 @@ class EleventyShell {
 
 	highlight() {
 		let ranges = EleventyShell.getRanges(this.node);
-		for(let { type, range } of ranges) {
-			let h = EleventyShell.getHighlightSet(type);
-			h.add(range);
+		if(ranges.length) {
+			EleventyShell.addCss();
+
+			for(let { type, range } of ranges) {
+				let h = EleventyShell.getHighlightSet(type);
+				h.add(range);
+			}
 		}
 	}
 }
 
-EleventyShell.addCss();
-
-if(typeof CSS !== "undefined" && "highlights" in CSS) {
-	for(let el of document.querySelectorAll(`code.language-11ty-output`)) {
-		let b = new EleventyShell(el);
-		b.highlight();
-	}
-}
+EleventyShell.register();
