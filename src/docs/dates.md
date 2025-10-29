@@ -110,7 +110,7 @@ export default function(eleventyConfig) {
 
 ## Dates off by one day?
 
-{% callout "warn" %}This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.{% endcallout %}
+{% callout "pitfall" %}This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.{% endcallout %}
 
 You’re probably displaying UTC dates in a local time zone.
 
@@ -160,7 +160,7 @@ You could add your own `toUTCString` [filter in Liquid](/docs/filters/) to perfo
 
 ## Collections out of order when you run Eleventy on your Server?
 
-{% callout "warn", "md" -%}
+{% callout "pitfall", "md" -%}
 This is a [**Common Pitfall**](/docs/pitfalls/).
 {%- endcallout %}
 

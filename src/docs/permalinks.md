@@ -250,7 +250,7 @@ Writes to `_site/2016/01/01/index.html`. There are a variety of ways that the pa
 
 <div id="warning-about-yaml-objects"></div>
 
-{% callout "warn", "md" %}**YAML Pitfall:** If your permalink uses template syntax, make sure that you use quotes! Without quotes YAML may try to parse this as an object if the first character is a `{`, for example `permalink: {% raw %}{{ page.filePathStem }}{% endraw %}.html`. This is a [**common pitfall**](/docs/pitfalls/).{% endcallout %}
+{% callout "pitfall", "md" %}**YAML Pitfall:** If your permalink uses template syntax, make sure that you use quotes! Without quotes YAML may try to parse this as an object if the first character is a `{`, for example `permalink: {% raw %}{{ page.filePathStem }}{% endraw %}.html`. This is a [**common pitfall**](/docs/pitfalls/).{% endcallout %}
 
 {% codetitle "YAML Front Matter using Liquid", "Syntax" %}
 
@@ -295,7 +295,7 @@ We do offer the option to instead write `/resource.html` files and use `/resourc
 
 ### Permalinks without File Extensions
 
-{% callout "warn", "md-block" -%}
+{% callout "pitfall", "md-block" -%}
 While `index.html` is optional on `permalink: /resource/index.html`, it is a [**Common Pitfall**](/docs/pitfalls/) to leave off the trailing slash.
 {% endcallout %}
 
@@ -491,7 +491,7 @@ permalink: about.es.html
 
 Some template syntaxes are nicer than others and you may want to opt-out of the templating engine to render your permalink string. Use the `dynamicPermalink` option in your front matter to disable this on a per-template basis.
 
-{% callout "warn" %}This is a <a href="/docs/pitfalls/"><strong>common pitfall</strong></a> for users of the Pug templating engine.{% endcallout %}
+{% callout "pitfall" %}This is a <a href="/docs/pitfalls/"><strong>common pitfall</strong></a> for users of the Pug templating engine.{% endcallout %}
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 

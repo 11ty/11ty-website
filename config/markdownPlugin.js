@@ -63,13 +63,27 @@ export default function (eleventyConfig) {
 				content = mdIt.render(content);
 			}
 			let label = "";
+			let classLevel = "";
 			if (customLabel) {
 				label = customLabel;
-			} else if (level === "info" || level === "error") {
-				label = level.toUpperCase() + ":";
+				classLevel = "elv-callout-info";
+			} else if (level === "error") {
+				label = level.toUpperCase();
+				classLevel = "elv-callout-error";
 			} else if (level === "warn") {
-				label = "WARNING:";
+				label = "WARNING";
+				classLevel = "elv-callout-warn";
+			} else if(level === "info") {
+				// label is skipped
+				classLevel = "elv-callout-info";
+			} else if(level === "demo") {
+				// label is skipped
+				classLevel = "elv-callout-skew elv-callout-skew--demo";
+			} else if(level === "pitfall") {
+				// label is skipped
+				classLevel = "elv-callout-skew elv-callout-skew--pitfall";
 			}
+
 			let labelHtml = label
 				? `<div class="elv-callout-label">${customLabel || label}</div>`
 				: "";
@@ -78,9 +92,7 @@ export default function (eleventyConfig) {
 					? `<div class="elv-callout-c">${content}</div>`
 					: "";
 
-			return `<div class="elv-callout${
-				level ? ` elv-callout-${level}` : ""
-			}">${labelHtml}${contentHtml}</div>`;
+			return `<div class="elv-callout${classLevel ? ` ${classLevel}` : ""}">${labelHtml}${contentHtml}</div>`;
 		}
 	);
 

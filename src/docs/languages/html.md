@@ -19,7 +19,7 @@ HTML files are pre-processed by default as [Liquid templates](/docs/languages/li
 
 ## Using the Same Input and Output Directories
 
-{% callout "warn" %}This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.{% endcallout %}
+{% callout "pitfall" %}This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.{% endcallout %}
 
 Take care with the HTML template type when using the same <code>--input</code> and <code>--output</code> directory (this is not the default).
 

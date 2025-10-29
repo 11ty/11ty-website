@@ -216,7 +216,7 @@ To sort descending in your template, you can use a filter to reverse the sort or
 
 ### Do not use Array `reverse()`
 
-{% callout "warn" %}
+{% callout "pitfall" %}
 <p id="array-reverse">You should <em><strong>not</strong></em> use Array <code>reverse()</code> on collection arrays in your templates, like so:</p>
 <p><code>{%raw %}{%- for post in collections.post.reverse() -%}{% endraw %}</code></p>
 <p>This will <a href="https://doesitmutate.xyz/reverse/">mutate the array</a> and re-order it <em>in-place</em> and will have side effects for any use of that collection in other templates.</p>

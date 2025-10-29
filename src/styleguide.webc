@@ -196,6 +196,7 @@ layout: layouts/docs.njk
 {% callout "warn" %}Default warning message with an inline <code>Code block</code>{% endcallout %}
 {% callout "error" %}Default error message with an inline <code>Code block</code>{% endcallout %}
 {% callout "demo" %}Default demo with an inline <code>Code block</code>. Default demo with an inline <code>Code block</code>. Default demo with an inline <code>Code block</code>.{% endcallout %}
+{% callout "pitfall" %}This is a <strong>common pitfall</strong>.{% endcallout %}
 
 </template>
 

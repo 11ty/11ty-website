@@ -362,7 +362,7 @@ Per the Nunjucks documentation, [Nunjucks macros are not async-friendly](https:/
 
 ## Warning: `set` is not async-friendly
 
-{% callout "warn" %}This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.{% endcallout %}
+{% callout "pitfall" %}This is a <a href="/docs/pitfalls/"><strong>Common Pitfall</strong></a>.{% endcallout %}
 
 [Nunjucks’ {% raw %}`{% set %}`{% endraw %} tag](https://mozilla.github.io/nunjucks/templating.html#set) does not work to capture asynchronous content (e.g. asynchronous shortcodes).
 
