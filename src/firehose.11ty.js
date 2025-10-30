@@ -111,10 +111,10 @@ ${entries
 		return `<div data-filter-type="${getSlugFromTitle(
 			`${entry.sourceLabel}: ${entry.title}`
 		)}">${this.callout(
-			content,
-			"box",
+			`<p><strong><a href="${entry.url}">${escapeText(entry.title)}</a></strong></p>`,
+			"info",
 			"html",
-			`<a href="${entry.url}">${escapeText(entry.title)}</a>`
+			entry.sourceLabel,
 		)}</div>`;
 	})
 	.join("\n")}
