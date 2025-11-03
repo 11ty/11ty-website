@@ -12,9 +12,9 @@ body:
   - type: input
     id: os
     attributes:
-      label: Operating system
-      description: Which operating system do you use?
-      placeholder: macOS Big Sur 11.5.2
+      label: Web Browser
+      description: What web browser are you using? (please include the version number!)
+      placeholder: e.g. Mozilla Firefox, Vivaldi Browser, Zen Browesr
     validations:
       required: true
   - type: textarea
