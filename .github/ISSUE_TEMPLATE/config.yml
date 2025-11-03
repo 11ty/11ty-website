@@ -6,7 +6,7 @@ contact_links:
     url: https://github.com/11ty/11ty-community/issues/new/choose
     about: Sites to add to your authors page or to the Eleventy Leaderboards are now added on the `11ty/11ty-community` repository.
   - name: I have a feature request for the docs
-    url: https://github.com/11ty/11ty-website/discussions/categories/enhancement-queue
+    url: https://github.com/11ty/11ty-website/discussions/categories/documentation-queue
     about: Enhancement or new Features for the documentation. e.g. “I wish the Eleventy docs did this.” Suggest an idea! (Please search existing discussions first!)
   - name: Discord Community
     url: https://discord.gg/GBkBy9u
