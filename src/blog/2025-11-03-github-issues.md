@@ -46,4 +46,6 @@ The other nice thing is that GitHub Issues becomes very focused to actionable wo
 
 Feel free to watch as the previous queue is converted to the new [**Eleventy Enhancement Queue**](https://github.com/11ty/eleventy/discussions/categories/enhancement-queue) (and leave your votes!).
 
+Our new issue funnels on both [`eleventy`](https://github.com/11ty/eleventy/issues/new/choose) and [`11ty-website`](https://github.com/11ty/11ty-website/issues/new/choose) will help you find the right place to be!
+
 Appreciate y’all!
