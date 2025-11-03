@@ -25,7 +25,7 @@ body:
       value: |
         1. Go to '...'
         2. Scroll down to '....'
-        3. I get *this* error or I expected this to happen and it didn’t
+        3. I see *this* error or I expected this to happen and it didn’t
     validations:
       required: true
   - type: textarea
