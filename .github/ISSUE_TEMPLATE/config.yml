@@ -1,4 +1,7 @@
 contact_links:
+  - name: I’m having trouble with Eleventy!
+    url: https://github.com/11ty/eleventy/issues/new/choose
+    about: If you have a question or suggestion regarding Eleventy (not the docs), head over to the `eleventy` repo!
   - name: I built something with Eleventy and want to add it to 11ty.dev!
     url: https://github.com/11ty/11ty-community/issues/new/choose
     about: Sites to add to your authors page or to the Eleventy Leaderboards are now added on the `11ty/11ty-community` repository.
