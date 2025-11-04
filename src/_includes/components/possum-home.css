@@ -1,5 +1,5 @@
-.elv-header-default .elv-nav-header {
-	overflow-x: hidden;
+.elv-header-default {
+	overflow: hidden;
 }
 .elv-header-default .elv-possum {
 	--possum-top: 26%;
