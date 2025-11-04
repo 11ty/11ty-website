@@ -20,7 +20,7 @@ To iterate over a data set and create pages for individual chunks of data, use p
 Consider the following template, which will result in two pages being created, each of which will display two items from `testdata`:
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs persist sync class="tabs-flush">
+<seven-minute-tabs persist sync class="tabs-flush" autoheight>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "paged-array"} %}
   <div id="paged-array-liquid" role="tabpanel">
 

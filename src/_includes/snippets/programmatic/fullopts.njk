@@ -1,7 +1,7 @@
 {%- set tabid = "fullopts" %}
 <div class="codetitle codetitle-right-md">my-node-script.js</div>
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs class="tabs-flush" persist>
+<seven-minute-tabs class="tabs-flush" persist autoheight>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: tabid, only: "jsesm,jscjs"} %}
   <div id="{{ tabid }}-jsesm" role="tabpanel">
 {%- set codeBlock %}{% raw %}

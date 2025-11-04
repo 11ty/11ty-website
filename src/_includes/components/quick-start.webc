@@ -4,7 +4,7 @@
 
 <p>Now we’ll create an <code>index.md</code> <a href="https://commonmark.org/help/">Markdown</a> file. You can do this in the text editor of your choice or by running one of these commands in your terminal:</p>
 
-<seven-minute-tabs class="tabs-flush" persist sync>
+<seven-minute-tabs class="tabs-flush" persist sync autoheight>
 	<div role="tablist" aria-label="Choose your Operating System">
 		<a href="#quickstart-os-nix" id="quickstart-os-mac-btn" role="tab" data-tabs-persist="os:mac">macOS</a>
 		<a href="#quickstart-os-nix" role="tab" data-tabs-persist="os:posix">Linux</a>
@@ -35,7 +35,7 @@ echo '# Heading' | npx @11ty/create index.md
 
 <p>Run Eleventy using <code>npx</code>, an <a href="https://www.npmjs.com/">npm</a>-provided command that is bundled with Node.js.</p>
 
-<seven-minute-tabs class="tabs-flush" persist sync>
+<seven-minute-tabs class="tabs-flush" persist sync autoheight>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#quickstart-run-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#quickstart-run-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>

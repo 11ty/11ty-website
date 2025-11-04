@@ -50,7 +50,7 @@ Installing Eleventy into a project requires a `package.json` file.
 </template>
 
 <script type="module" src="/js/seven-minute-tabs.js" webc:keep></script>
-<seven-minute-tabs class="tabs-flush tabs-right" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right" persist sync autoheight>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#quickstart-run-2a-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#quickstart-run-2a-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
@@ -80,7 +80,7 @@ Installing Eleventy into a project requires a `package.json` file.
 
 </template>
 
-<seven-minute-tabs class="tabs-flush tabs-right" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right" persist sync autoheight>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#quickstart-run-2b-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#quickstart-run-2b-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
@@ -111,7 +111,7 @@ _You may also [install Eleventy globally](/docs/global-installation/) but the `p
 
 </template>
 
-<seven-minute-tabs class="tabs-flush tabs-right" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right" persist sync autoheight>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#quickstart-run-3a-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#quickstart-run-3a-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
@@ -152,7 +152,7 @@ A <dfn>template</dfn> is a content file written in a [format such as Markdown, H
 Let’s run two commands to create two new template files.
 </template>
 
-<seven-minute-tabs class="tabs-flush" persist sync>
+<seven-minute-tabs class="tabs-flush" persist sync autoheight>
 	<div role="tablist" aria-label="Choose your Operating System">
 		<a href="#quickstart-os-nix" id="quickstart-os-mac-btn" role="tab" data-tabs-persist="os:mac">macOS</a>
 		<a href="#quickstart-os-nix" role="tab" data-tabs-persist="os:posix">Linux</a>
@@ -185,7 +185,7 @@ echo '# Heading' | npx @11ty/create README.md
 
 <p>After you’ve created an HTML template and a Markdown template, let’s run Eleventy again with the following command:</p>
 
-<seven-minute-tabs class="tabs-flush tabs-right" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right" persist sync autoheight>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#quickstart-run-4-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#quickstart-run-4-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>
@@ -240,7 +240,7 @@ Use `--serve` to start up a hot-reloading local web server.
 
 </template>
 
-<seven-minute-tabs class="tabs-flush tabs-right" persist sync>
+<seven-minute-tabs class="tabs-flush tabs-right" persist sync autoheight>
 	<div role="tablist" aria-label="Choose your Package Manager">
 		<a href="#quickstart-run-5-npm" role="tab" data-tabs-persist="pkgmgr:npm">npm</a>
 		<a href="#quickstart-run-5-pnpm" role="tab" data-tabs-persist="pkgmgr:pnpm">pnpm</a>

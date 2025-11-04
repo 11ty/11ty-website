@@ -157,7 +157,7 @@ The following feed samples **require RSS Plugin v2.0** or newer. [Samples for RS
 {%- endcallout %}
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
-<seven-minute-tabs class="tabs-flush">
+<seven-minute-tabs class="tabs-flush" autoheight>
   <div role="tablist" aria-label="Choose a template language">
     <a href="#rss-atom" role="tab">Atom</a>
     <a href="#rss-rss" role="tab">RSS</a>
