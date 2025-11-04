@@ -1,8 +1,12 @@
+.elv-header-default .elv-nav-header {
+	overflow-x: hidden;
+}
 .elv-header-default .elv-possum {
+	--possum-top: 26%;
 	pointer-events: none;
 	width: auto;
 	height: calc((60vh - 2rem) / 1.6);
-	top: 36%;
+	top: var(--possum-top);
 	left: 1vw;
 	right: auto;
 	animation-duration: 180s;
@@ -16,7 +20,7 @@
 }
 @keyframes balloonFloat {
 	from {
-		transform: translate(-7vw, 30%);
+		transform: translate(-7vw, var(--possum-top));
 	}
 	to {
 		transform: translate(100vw, -52%);
