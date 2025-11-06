@@ -1,170 +1,128 @@
+/* All of these styles are *optional* and not required by the component JavaScript */
+/* Warning: uses CSS nesting */
+
 seven-minute-tabs {
-	--smt-border: #272822;
-	--smt-border-width: 2px;
-	--smt-tab-bg: transparent;
-	--smt-tabactive-bg: #eee;
-	--smt-tab-text: #555;
-	--smt-tabselected-bg: #272822;
-	--smt-tabselected-text: #fff;
-	display: block;
-	margin-inline: -1rem;
-	margin-block: 1rem;
+  --smt-active: hsl(241, 100%, 47%);
+	--smt-passiveborder: hsl(0 0% 0% / .26);
+  --smt-intent: rgba(0,0,0,.06);
+
+  --smt-border-size: 0.125em; /* 2px /16 */
+  --smt-passiveborder-size: 0.0625em; /* 1px /16 */
+  --smt-padding-block: .125em;
+  --smt-padding-inline: 1rem;
 }
 @media (prefers-color-scheme: dark) {
-	seven-minute-tabs {
-		--smt-border: #000000;
-		--smt-tab-bg: transparent;
-		--smt-tabactive-bg: #333;
-		--smt-tab-text: #ddd;
-		--smt-tabselected-bg: #000;
-		--smt-tabselected-text: #fff;
-	}
-}
-seven-minute-tabs [role="tablist"] {
-	display: flex;
-	line-height: 1.8;
-	border-radius: .25em .25em 0 0;
-}
-seven-minute-tabs.tabs-right [role="tablist"] {
-	justify-content: flex-end;
-	margin: 0 0 0 .5em;
-}
-seven-minute-tabs [role="tablist"].has-label {
-	text-indent: 1rem;
-}
-seven-minute-tabs [role="tablist"].has-label [role="tab"]:first-child {
-	margin-left: .5em;
-}
-seven-minute-tabs [role="tablist"]:last-child {
-	margin-top: 0.5rem;
-}
-seven-minute-tabs [role="tab"] {
-	background-color: var(--smt-tab-bg);
-	color: var(--smt-tab-text);
-	display: flex;
-	align-items: center;
-	font-size: 0.9375em; /* 15px /16 */
-	font-weight: 500;
-	padding: 0 1rem;
-	margin: 0;
-	text-decoration: none;
-	min-width: min-content;
-	flex-basis: auto;
-	flex-grow: 0;
-	text-indent: 0;
-	border-radius: 0;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	border: var(--smt-border-width) solid var(--smt-border);
-	border-bottom: none;
-}
-seven-minute-tabs [role="tab"]:not(:first-child) {
-	border-left: none;
-}
-seven-minute-tabs [role="tab"]:not(:last-child) {
-	border-right: none;
-}
-seven-minute-tabs [role="tab"]:first-child {
-	border-top-left-radius: .25em;
-}
-seven-minute-tabs [role="tab"]:last-child {
-	border-top-right-radius: .25em;
-}
-seven-minute-tabs [role="tab"]:not([aria-selected="true"]):is(:hover, :focus) {
-	background-color: var(--smt-tabactive-bg);
-}
-@media (max-width: 24.9375em) { /* 399px */
-	seven-minute-tabs [role="tab"] {
-		font-size: 0.8125em; /* 13px /16 */
-	}
-}
-@media (max-width: 54.9375em) { /* 879px */
-	seven-minute-tabs:not(.tabs-right) [role="tablist"]:not(.has-label) [role="tab"]:first-child {
-		border-top-left-radius: 0;
-	}
-	seven-minute-tabs.tabs-right [role="tablist"]:not(.has-label) [role="tab"]:last-child {
-		border-top-right-radius: 0;
-	}
-}
-seven-minute-tabs [role="tab"][aria-selected="true"] {
-	--smt-tab-bg: var(--smt-tabselected-bg);
-	--smt-tab-text: var(--smt-tabselected-text);
+  seven-minute-tabs {
+    --smt-active: hsl(241, 85%, 47%);
+    --smt-passiveborder: hsl(0 100% 100% / .15);
+    --smt-intent: rgba(255,255,255,.1);
+  }
 }
 
-seven-minute-tabs [role="tabpanel"] {
-	border: var(--smt-border-width) solid var(--smt-border);
-	padding: 1rem;
+seven-minute-tabs {
+	display: block;
+
+  [role="tablist"] {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 1.8;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-block: var(--smt-passiveborder-size) solid var(--smt-passiveborder);
+    border-block-start-width: 0;
+  }
+
+  [role="tabpanel"] {
+    padding: var(--smt-padding-inline);
+  }
+
+  [role="tab"] {
+    display: flex;
+    align-items: center;
+    padding: var(--smt-padding-block) var(--smt-padding-inline);
+    margin: 0;
+    text-decoration: none;
+    min-width: min-content;
+    flex-basis: auto;
+    flex-grow: 0;
+    text-indent: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: inherit;
+    border-block: var(--smt-border-size) solid transparent;
+    border-block-start-width: 0;
+  }
+  [role="tab"][aria-selected="true"] {
+    border-color: var(--smt-active);
+  }
+  [role="tab"]:is(:hover, :focus):not([aria-selected="true"]) {
+    background-color: var(--smt-intent);
+  }
 }
 
-/* Two column */
+/* Tabs on bottom */
+seven-minute-tabs [role="tablist"]:is(:last-child) {
+  border-block-start-width: var(--smt-passiveborder-size);
+  border-block-end-width: 0;
+
+  [role="tab"] {
+    border-block-start-width: var(--smt-border-size);
+    border-block-end-width: 0;
+  }
+}
+
+/* Redesign */
+seven-minute-tabs {
+	--smt-active: transparent;
+	--smt-passiveborder: #272822;
+	--smt-passiveborder-size: 0;
+	border: 2px solid;
+	background-color: #f6f6f6;
+	margin-block: 1em;
+	margin-inline: -1rem;
+
+	[role="tabpanel"] {
+		overflow: hidden;
+	}
+	[role="tab"] {
+		font-size: 0.9375em; /* 15px /16 */
+	}
+	[role="tab"][aria-selected="true"] {
+		background-color: #272822;
+		color: #fff;
+	}
+	/* tabs on bottom */
+	[role="tablist"]:is(:last-child) {
+		--smt-passiveborder-size: 1px;
+	}
+}
+
 @media (min-width: 55em) { /* 880px */
-	seven-minute-tabs [role="tabpanel"] {
-		border-radius: .3125rem;
-	}
-	seven-minute-tabs:not(.tabs-right) [role="tabpanel"] {
-		border-top-left-radius: 0;
-	}
-	seven-minute-tabs.tabs-right [role="tabpanel"] {
-		border-top-right-radius: 0;
+	seven-minute-tabs {
+		border-radius: .5rem;
 	}
 }
 
+@media (prefers-color-scheme: dark) {
+	seven-minute-tabs {
+		background-color: #121212;
+		border-color: #121212;
+
+		[role="tab"][aria-selected="true"] {
+			background-color: #000;
+		}
+	}
+}
+
+/* Flush panel to tablist */
 seven-minute-tabs.tabs-flush [role="tabpanel"] {
 	padding-block: 0;
 }
-seven-minute-tabs:not(.tabs-flush) [role="tabpanel"] > :last-child {
-	margin-block-end: 0;
-}
 
-/* Other components */
-seven-minute-tabs [role="tabpanel"] pre {
-	border-radius: 0;
-	margin-block: 0;
-}
+/* Callout */
 seven-minute-tabs [role="tabpanel"] .elv-callout {
 	margin-inline: 0;
-}
-
-/* Only show the first tab pre-JS */
-seven-minute-tabs:not(:defined) [role="tabpanel"] ~ [role="tabpanel"] {
-	display: none;
-}
-/* Use :target to make the tabs work without JavaScript */
-seven-minute-tabs:not(:defined):has([role="tabpanel"] ~ [role="tabpanel"]:target) [role="tablist"] + [role="tabpanel"] {
-	display: none;
-}
-seven-minute-tabs:not(:defined) [role="tabpanel"] ~ [role="tabpanel"]:target {
-	display: block;
-}
-
-/* Make tab padding slightly smaller at small viewport */
-@media (max-width: 31.1875em) { /* 499px */
-	seven-minute-tabs:not(.tabs-right) [role="tab"]:not(:first-child) {
-		padding-left: .5rem;
-	}
-
-	seven-minute-tabs:not(.tabs-right) [role="tab"] {
-		padding-right: .5rem;
-	}
-
-	seven-minute-tabs.tabs-right [role="tab"]:not(:last-child) {
-		padding-right: .5rem;
-	}
-
-	seven-minute-tabs.tabs-right [role="tab"] {
-		padding-left: .5rem;
-	}
-}
-
-/* More than 5 tabs, tabs wrap and grow */
-seven-minute-tabs:has([role="tab"]:nth-last-child(n+5)) [role="tablist"] {
-	flex-wrap: wrap;
-}
-
-@media (max-width: 31.1875em) { /* 499px */
-	seven-minute-tabs:has([role="tab"]:nth-last-child(n+5)) [role="tab"] {
-		flex-grow: 1;
-	}
 }
 
 /* Visual deprecation for CommonJS */
@@ -187,14 +145,21 @@ seven-minute-tabs :is([data-tabs-persist="templatelang:cjs"], [data-tabs-persist
 	font-size: 0.75rem; /* 12px /16 */
 }
 
+/* Syntax highlighter */
+seven-minute-tabs [role=tabpanel] pre {
+	border-radius: 0;
+	margin-block: 0;
+}
 /* Min height */
 seven-minute-tabs [role="tabpanel"]:has(> :is(.syntax-highlight, syntax-highlight):only-child) {
 	height: var(--smt-height);
 }
-seven-minute-tabs [role="tabpanel"]:not(:has(> :is(.syntax-highlight, syntax-highlight):only-child)) {
+/* Expand height */
+seven-minute-tabs[autoheight] [role="tabpanel"]:not(:has(> :is(.syntax-highlight, syntax-highlight):only-child)) {
 	min-height: var(--smt-height);
 }
-seven-minute-tabs :is(.syntax-highlight, syntax-highlight):only-child,
-seven-minute-tabs :is(.syntax-highlight, syntax-highlight):only-child > pre {
+seven-minute-tabs[autoheight] :is(.syntax-highlight, syntax-highlight):only-child,
+seven-minute-tabs[autoheight] :is(.syntax-highlight, syntax-highlight):only-child > pre {
 	height: 100%;
+	border-radius: 0;
 }

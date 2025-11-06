@@ -2,9 +2,9 @@
 <seven-minute-tabs persist sync class="tabs-flush" autoheight>
   {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "layouts", additions: "md"} %}
   <div id="layouts-md" role="tabpanel">
-{% codetitle "index.md" %}
 {% set codeBlock %}{% raw %}
 ---
+# Filename: index.md
 layout: mylayout.njk
 title: My Rad Markdown Blog Post
 ---
@@ -13,9 +13,9 @@ title: My Rad Markdown Blog Post
 {{ codeBlock | highlight("markdown") | safe }}
   </div>
   <div id="layouts-liquid" role="tabpanel">
-{% codetitle "index.liquid" %}
 {% set codeBlock %}{% raw %}
 ---
+# Filename: index.liquid
 layout: mylayout.njk
 title: My Rad Liquid Blog Post
 ---
@@ -24,9 +24,9 @@ title: My Rad Liquid Blog Post
 {{ codeBlock | highlight("liquid") | safe }}
   </div>
   <div id="layouts-njk" role="tabpanel">
-{% codetitle "index.njk" %}
 {% set codeBlock %}{% raw %}
 ---
+# Filename: index.njk
 layout: mylayout.njk
 title: My Rad Nunjucks Blog Post
 ---
@@ -35,8 +35,8 @@ title: My Rad Nunjucks Blog Post
 {{ codeBlock | highlight("jinja2") | safe }}
   </div>
   <div id="layouts-js" role="tabpanel">
-{% codetitle "index.11ty.js" %}
 {% set codeBlock %}{% raw %}
+// Filename: index.11ty.js
 export const data = {
 	layout: "mylayout.njk",
 	title: "My Rad JavaScript Blog Post",
@@ -49,8 +49,8 @@ export function render(data) {
 {{ codeBlock | highlight("js") | safe }}
   </div>
   <div id="layouts-cjs" role="tabpanel">
-{% codetitle "index.11ty.cjs" %}
 {% set codeBlock %}{% raw %}
+// Filename: index.11ty.cjs
 module.exports.data = {
 	layout: "mylayout.njk",
 	title: "My Rad JavaScript Blog Post",
