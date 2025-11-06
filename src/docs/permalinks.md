@@ -18,7 +18,7 @@ You can customize the default location of templates to the output directory (or 
 
 We’ll start with a few simple examples of the default permalink behavior, showing where input files are written to the output directory (default: `_site`):
 
-### `index` files
+### `index.*` file names
 
 <table>
     <tbody>
@@ -37,17 +37,20 @@ We’ll start with a few simple examples of the default permalink behavior, show
     </tbody>
 </table>
 
-<is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
-	<eleventy-editor html toolbar-position="bottom" data-editor-filename="index.liquid">
+<is-land on:visible import="/js/eleventy-editor.js">
+	<template data-island>
+		<p>See it in action for <code>index.liquid</code>:</p>
+		<eleventy-editor html toolbar-position="bottom" data-editor-filename="index.liquid" style="--width-text: 18em">
 {% highlight "liquid" %}{% raw %}
-Filename   index.liquid
-Writes to  {{ page.outputPath }}
-With URL   {{ page.url }}
+File   {{ page.inputPath }}
+Writes {{ page.outputPath }}
+URL    {{ page.url }}
 {% endraw %}{% endhighlight %}
-	</eleventy-editor>
+		</eleventy-editor>
+	</template>
 </is-land>
 
-### Not-`index` files
+### Not-`index.*` file names
 
 <table>
     <tbody>
@@ -66,14 +69,17 @@ With URL   {{ page.url }}
     </tbody>
 </table>
 
-<is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
-	<eleventy-editor html toolbar-position="bottom" data-editor-filename="template.liquid">
+<is-land on:visible import="/js/eleventy-editor.js">
+	<template data-island>
+		<p>See it in action for <code>template.liquid</code>:</p>
+		<eleventy-editor html toolbar-position="bottom" data-editor-filename="template.liquid" style="--width-text: 18em">
 {% highlight "liquid" %}{% raw %}
-Filename   template.liquid
-Writes to  {{ page.outputPath }}
-With URL   {{ page.url }}
+File   {{ page.inputPath }}
+Writes {{ page.outputPath }}
+URL    {{ page.url }}
 {% endraw %}{% endhighlight %}
-	</eleventy-editor>
+		</eleventy-editor>
+	</template>
 </is-land>
 
 ### Deeper directories
@@ -95,17 +101,20 @@ With URL   {{ page.url }}
     </tbody>
 </table>
 
-<is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
-	<eleventy-editor html toolbar-position="bottom" data-editor-filename="subdir/template.liquid">
+<is-land on:visible import="/js/eleventy-editor.js">
+	<template data-island>
+		<p>See it in action for <code>subdir/template.liquid</code>:</p>
+		<eleventy-editor html toolbar-position="bottom" data-editor-filename="subdir/template.liquid" style="--width-text: 18em">
 {% highlight "liquid" %}{% raw %}
-Filename   subdir/template.liquid
-Writes to  {{ page.outputPath }}
-With URL   {{ page.url }}
+File   {{ page.inputPath }}
+Writes {{ page.outputPath }}
+URL    {{ page.url }}
 {% endraw %}{% endhighlight %}
-	</eleventy-editor>
+		</eleventy-editor>
+	</template>
 </is-land>
 
-### File name is the same as the Directory name
+### When the File name is the same as the Directory name
 
 <table>
     <tbody>
@@ -124,31 +133,30 @@ With URL   {{ page.url }}
     </tbody>
 </table>
 
-<is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
-	<eleventy-editor html toolbar-position="bottom" data-editor-filename="subdir/template/template.liquid">
+<is-land on:visible import="/js/eleventy-editor.js">
+	<template data-island>
+		<p>See it in action for <code>subdir/template/template.liquid</code>:</p>
+		<eleventy-editor html toolbar-position="bottom" data-editor-filename="subdir/template/template.liquid" style="--width-text: 18em">
 {% highlight "liquid" %}{% raw %}
-Filename   subdir/template/template.liquid
-Writes to  {{ page.outputPath }}
-With URL   {{ page.url }}
+File   {{ page.inputPath }}
+Writes {{ page.outputPath }}
+URL    {{ page.url }}
 {% endraw %}{% endhighlight %}
-	</eleventy-editor>
-</is-land>
-
-is the same as:
-
-<is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js">
-	<eleventy-editor html toolbar-position="bottom" data-editor-filename="subdir/template/index.liquid">
+		</eleventy-editor>
+		<p>Note that <code>subdir/template/template.liquid</code> writes to the same location as <code>subdir/template/index.liquid</code>.</p>
+		<eleventy-editor html toolbar-position="bottom" data-editor-filename="subdir/template/index.liquid" style="--width-text: 18em">
 {% highlight "liquid" %}{% raw %}
-Filename   subdir/template/index.liquid
-Writes to  {{ page.outputPath }}
-With URL   {{ page.url }}
+File   {{ page.inputPath }}
+Writes {{ page.outputPath }}
+URL    {{ page.url }}
 {% endraw %}{% endhighlight %}
-	</eleventy-editor>
+		</eleventy-editor>
+	</template>
 </is-land>
 
 ### Cool URIs don’t change
 
-Eleventy automatically helps you make sure that [Cool URIs don’t change](https://www.w3.org/Provider/Style/URI).
+Eleventy uses `index.html` files by default to help you make sure that your [Cool URIs don’t change](https://www.w3.org/Provider/Style/URI).
 
 > What to leave out…
 > File name extension. This is a very common one. "cgi", even ".html" is something which will change. You may not be using HTML for that page in 20 years time, but you might want today's links to it to still be valid. The canonical way of making links to the W3C site doesn't use the extension.
@@ -159,9 +167,11 @@ Eleventy automatically helps you make sure that [Cool URIs don’t change](https
 
 To remap your template’s output to a different path than the default, use the `permalink` key in the template’s front matter (or elsewhere in the [Data Cascade](/docs/data-cascade.md)). If a subdirectory does not exist, it will be created.
 
+Consider the follwing `index.md` input file file:
+
 {% codetitle "YAML Front Matter", "Syntax" %}
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.html">
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.md" style="--width-text: 100%">
 {% highlight "html" %}{% raw %}
 ---
 permalink: this-is-a-new-path/subdirectory/testing/
@@ -169,12 +179,11 @@ permalink: this-is-a-new-path/subdirectory/testing/
 {% endraw %}{% endhighlight %}
 </eleventy-editor></is-land></div>
 
-
-The above is the same as:
+When `permalink` points to a directory, we add `index.html` for you. So the above directory permalink is the same as writing this:
 
 {% codetitle "YAML Front Matter", "Syntax" %}
 
-<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.html">
+<div><is-land on:interaction="touchstart,click,focusin" import="/js/eleventy-editor.js"><eleventy-editor html data-editor-filename="index.md" style="--width-text: 100%">
 {% highlight "html" %}{% raw %}
 ---
 permalink: this-is-a-new-path/subdirectory/testing/index.html
@@ -184,7 +193,7 @@ permalink: this-is-a-new-path/subdirectory/testing/index.html
 
 Both of the above examples write to `_site/this-is-a-new-path/subdirectory/testing/index.html`.
 
-Fear not: if multiple input files _attempt to write to the same output location_, Eleventy will throw an error!
+Eleventy checks for collisions automatically. If multiple input files _attempt to write to the same output location_, Eleventy will throw an error!
 
 ### Skip writing to the file system
 

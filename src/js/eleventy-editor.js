@@ -81,13 +81,21 @@ class Editor extends HTMLElement {
 :host > * {
 	flex-grow: 1;
 	min-width: 18em;
-	flex-basis: 40%;
+}
+:host > :first-child {
+	flex-basis: var(--width-text, 50%);
+}
+:host > :last-child {
+	flex-basis: var(--width-output, 50%);
 }
 * {
 	box-sizing: border-box;
 }
 :any-link {
 	color: inherit;
+}
+.input {
+	scrollbar-color: #aaa transparent;
 }
 .input,
 .output-c {
@@ -423,16 +431,18 @@ html {
 		shadowroot.adoptedStyleSheets = [sheet];
 
 		let template = document.createElement("template");
-		let isReversed = this.getAttribute("toolbar-position") === "bottom";
+		let toolbarPosition = this.getAttribute("toolbar-position");
+		let isReversed = toolbarPosition === "bottom";
+		let hasToolbar = toolbarPosition !== "skip";
 		template.innerHTML = `<line-numbers manual-render class="input-c" obtrusive>
 		<textarea class="input" spellcheck="false">${this.originalSourceContent}</textarea>
 	</line-numbers>
 	<div class="output-c${isReversed ? " reverse" : ""}">
-	<div class="toolbar">
+	${hasToolbar ? `<div class="toolbar">
 		<div class="filename filename--input"></div>
 		<div class="filename filename--output"></div>
 		<label class="viewsource${viewSourceDefault || iframeOutput ? " viewsource--disabletoggle" : ""}"><input type="checkbox">HTML</label>
-	</div>
+	</div>` : ""}
 	${iframeOutput ? `<iframe class="output"></iframe>` : `<output class="output"></output>`}
 	<output class="error"></output>
 </div>`;
