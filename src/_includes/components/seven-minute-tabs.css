@@ -188,13 +188,13 @@ seven-minute-tabs :is([data-tabs-persist="templatelang:cjs"], [data-tabs-persist
 }
 
 /* Min height */
-seven-minute-tabs [role="tabpanel"]:has(> :is(.syntax-highlight, syntax-highlight, pre[class*="language-"]):only-child) {
+seven-minute-tabs[autoheight] [role="tabpanel"]:has(> :is(.syntax-highlight, syntax-highlight, pre[class*="language-"]):only-child) {
 	height: var(--smt-height);
 }
-seven-minute-tabs [role="tabpanel"]:not(:has(> :is(.syntax-highlight, syntax-highlight, pre[class*="language-"]):only-child)) {
+seven-minute-tabs[autoheight] [role="tabpanel"]:not(:has(> :is(.syntax-highlight, syntax-highlight, pre[class*="language-"]):only-child)) {
 	min-height: var(--smt-height);
 }
-seven-minute-tabs :is(.syntax-highlight, syntax-highlight, pre[class*="language-"]):only-child,
-seven-minute-tabs :is(.syntax-highlight, syntax-highlight):only-child > pre {
+seven-minute-tabs[autoheight] :is(.syntax-highlight, syntax-highlight, pre[class*="language-"]):only-child,
+seven-minute-tabs[autoheight] :is(.syntax-highlight, syntax-highlight):only-child > pre {
 	height: 100%;
 }
