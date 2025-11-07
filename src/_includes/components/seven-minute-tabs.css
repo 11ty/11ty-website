@@ -206,13 +206,8 @@ seven-minute-tabs[autoheight] [role="tabpanel"]:not([hidden]):has(> .codetitle:f
 	position: relative;
 	display: flex;
 	flex-direction: column;
-
-	.syntax-highlight,
-	.syntax-highlight pre {
-		height: 100%;
-	}
-	.codetitle {
-		float: none;
-		clear: none;
-	}
+}
+seven-minute-tabs[autoheight] [role="tabpanel"]:not([hidden]):has(> .codetitle:first-child + .syntax-highlight:last-child) :is(.syntax-highlight, .syntax-highlight pre),
+seven-minute-tabs[autoheight] [role="tabpanel"]:not([hidden]):has(> .codetitle:first-child + .syntax-highlight + .codetitle + .syntax-highlight:last-child)  :is(.syntax-highlight, .syntax-highlight pre) {
+	height: 100%;
 }
