@@ -174,7 +174,7 @@ seven-minute-tabs [data-tabs-persist="templatelang:cjs"] {
 seven-minute-tabs [data-tabs-persist="templatelang:cjs"]:after {
 	content: "(CommonJS)";
 }
-seven-minute-tabs [data-tabs-persist="templatelang:js"]:after {
+seven-minute-tabs:has([data-tabs-persist="templatelang:cjs"]) [data-tabs-persist="templatelang:js"]:after {
 	content: "(ESM)";
 }
 /* not on demo blocks */
@@ -187,7 +187,7 @@ seven-minute-tabs :is([data-tabs-persist="templatelang:cjs"], [data-tabs-persist
 	font-size: 0.75rem; /* 12px /16 */
 }
 
-/* Min height */
+/* Expand height */
 seven-minute-tabs[autoheight] [role="tabpanel"]:has(> :is(.syntax-highlight, syntax-highlight, pre[class*="language-"]):only-child) {
 	height: var(--smt-height);
 }
@@ -197,4 +197,22 @@ seven-minute-tabs[autoheight] [role="tabpanel"]:not(:has(> :is(.syntax-highlight
 seven-minute-tabs[autoheight] :is(.syntax-highlight, syntax-highlight, pre[class*="language-"]):only-child,
 seven-minute-tabs[autoheight] :is(.syntax-highlight, syntax-highlight):only-child > pre {
 	height: 100%;
+}
+
+/* Expand height with codetitle (requires tabs-flush) */
+seven-minute-tabs[autoheight] [role="tabpanel"]:not([hidden]):has(> .codetitle:first-child + .syntax-highlight:last-child),
+seven-minute-tabs[autoheight] [role="tabpanel"]:not([hidden]):has(> .codetitle:first-child + .syntax-highlight + .codetitle + .syntax-highlight:last-child) {
+	height: var(--smt-height);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+
+	.syntax-highlight,
+	.syntax-highlight pre {
+		height: 100%;
+	}
+	.codetitle {
+		float: none;
+		clear: none;
+	}
 }
