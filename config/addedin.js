@@ -2,7 +2,7 @@ import semver from "semver";
 import versions from "../src/_data/versions.js";
 
 // Warning: using 2.0.0 excludes 2.0.0-beta.x, 2.0.0-alpha.x releases
-const MINIMUM_VERSION_SHOWN = "1.99999.0";
+const MINIMUM_VERSION_SHOWN = "0.99999.0";
 
 const COERCE = {
 	// should have `v` prefix
