@@ -2,11 +2,11 @@
 eleventyNavigation:
   parent: Eleventy Projects
   key: Watch and Serve
-  title: Development Servers
+  title: Watch Files and Dev Servers
   order: 9
 ---
 
-# Development Servers
+# Watch Files and use Development Servers
 
 {% tableofcontents %}
 
@@ -23,9 +23,11 @@ A development server is optional! Using [`--watch`](./usage.md#re-run-eleventy-w
 
 Eleventy bundles its own [dedicated Development Server](/docs/dev-server/). In versions prior to v2, we used [Browsersync, which you can still use with Eleventy if you’d like](/docs/server-browsersync/).
 
+For most use cases, the default behavior of this server should handle most things automatically. Changing files in your local environment will re-run an Eleventy build and refresh any active web browser sessions on the local site.
+
 ## Add Your Own Watch Targets {% addedin "0.10.0" %}
 
-The `addWatchTarget` config method allows you to manually add a file or directory for Eleventy to watch. When the file or the files in this directory change Eleventy will trigger a build. This is useful if Eleventy is not directly aware of any external file dependencies.
+The `addWatchTarget` config method allows you to manually add a file or directory for Eleventy to watch. When the file or the files in this directory change Eleventy will trigger a build. This is useful if Eleventy is not aware of your project-specific external dependencies.
 
 {% set codeContent %}
 export default function(eleventyConfig) {
@@ -53,6 +55,10 @@ export default function(eleventyConfig) {
 };
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
+
+### Reload without running a build
+
+Use the [`watch` option configurable with Eleventy Dev Server](/docs/dev-server/#options) to refresh your local browser when local files change _without_ triggering an Eleventy build. This is useful to decouple build processes outside of Eleventy.
 
 ## Ignore Watching Files
 
