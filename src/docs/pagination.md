@@ -103,6 +103,7 @@ In addition to the `pagination` object entries documented above, it also has:
 {
   data: "…", // the original string key to the dataset
   size: 1, // page chunk sizes
+  alias: "…", // the original string alias for pagination.items[0]
 
   // Cool URLs
   // Use pagination.href.next, pagination.href.previous, et al instead.
