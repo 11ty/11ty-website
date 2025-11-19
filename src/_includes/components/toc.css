@@ -234,7 +234,7 @@ details.toc[open] > summary {
 }
 
 /* Sidebar ads */
-.elv-toc .elv-callout:first-child {
+.elv-toc .elv-callout:first-child:has(+ .elv-callout) {
 	--callout-hue: 162;
 }
 .elv-toc-callout-link {
