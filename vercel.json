@@ -1,11 +1,10 @@
 {
 	"trailingSlash": true,
   "redirects": [
-    { "source": "/survey", "destination": "https://forms.gle/v8mjUuf5cyRZy2GG7", "statusCode": 301 },
-    { "source": "/survey/2025", "destination": "https://forms.gle/v8mjUuf5cyRZy2GG7", "statusCode": 301 },
-    { "source": "/mastodon", "destination": "https://neighborhood.11ty.dev/@11ty", "statusCode": 301 },
-    { "source": "/youtube", "destination": "https://www.youtube.com/c/EleventyVideo", "statusCode": 301 },
-    { "source": "/twitter", "destination": "https://twitter.com/eleven_ty", "statusCode": 301 },
+    { "source": "/survey/", "destination": "https://forms.gle/v8mjUuf5cyRZy2GG7", "statusCode": 301 },
+    { "source": "/survey/2025/", "destination": "https://forms.gle/v8mjUuf5cyRZy2GG7", "statusCode": 301 },
+    { "source": "/mastodon/", "destination": "https://neighborhood.11ty.dev/@11ty", "statusCode": 301 },
+    { "source": "/youtube/", "destination": "https://www.youtube.com/c/EleventyVideo", "statusCode": 301 },
     { "source": "/follow/", "destination": "/firehose/firehose.rss", "statusCode": 301 },
     { "source": "/follow/follow.rss", "destination": "/firehose/firehose.rss", "statusCode": 301 },
     { "source": "/docs/getting-started/", "destination": "/docs/", "statusCode": 301 },
