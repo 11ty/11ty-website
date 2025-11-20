@@ -18,9 +18,12 @@ export default function(eleventyConfig) {
 	// Can be sync or async
 	eleventyConfig.addTransform("transform-name", async function (content) {
 		console.log(this.page.inputPath);
+
+		// Caution: this could be `false` (from permalink)
 		console.log(this.page.outputPath);
 
-		return content; // no changes made.
+		// No changes made, return as-is
+		return content;
 	});
 };
 {% endset %}
@@ -63,6 +66,7 @@ import htmlmin from "html-minifier-terser";
 
 export default function (eleventyConfig) {
 	eleventyConfig.addTransform("htmlmin", function (content) {
+		// String conversion to handle `permalink: false`
 		if ((this.page.outputPath || "").endsWith(".html")) {
 			let minified = htmlmin.minify(content, {
 				useShortDoctype: true,
