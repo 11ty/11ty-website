@@ -12,7 +12,7 @@
 	margin-inline: -1rem;
 	margin-block: 1em;
 	background-color: var(--callout-secondary);
-	border: 3px solid var(--callout-primary);
+	border: 1.5px solid var(--callout-primary);
 }
 details .elv-callout {
 	margin-left: 0;
