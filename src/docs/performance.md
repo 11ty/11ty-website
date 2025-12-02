@@ -44,6 +44,7 @@ Data taken from [_Which Generator Builds Markdown the Fastest?_ (July 2022)](htt
 - Use the [Image HTML Transform method to optimize images on-request during development](/docs/plugins/image.md#build-performance).
 - Use [`--incremental` for Incremental builds](/docs/usage/#incremental-for-partial-incremental-builds).
 - Use the [Directory Output plugin](/docs/plugins/directory-output/) to report per-template performance and file size information.
+- Making network requests (to an API) can be expensive! Use the [Fetch utility](/docs/plugins/fetch/) to create a local cache of external network requests (use `duration` to configure how long the cache should last).
 
 <div class="youtube-related">
   {%- youtubeEmbed "KETQ4zS9Yp4", "28% build time performance improvement for Google’s web.dev (Weekly №1)", "30" -%}
