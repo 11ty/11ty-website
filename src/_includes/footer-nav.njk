@@ -1,4 +1,5 @@
 <ul class="list-bare mb-2 fl fl-inline fl-nowrap fl-separator-h">
+	{%- if not config.outdated %}<li>{% include "edit-on-github.njk" %}</li>{% endif %}
 	<li><a href="/blog/">Blog</a></li>
 	<li><a href="/docs/accessibility/">Accessibility</a></li>
 	<li><a href="/docs/account/" class="elv-externalexempt">Contributor Account</a></li>
