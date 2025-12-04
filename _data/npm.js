@@ -1,5 +1,5 @@
 // https://blog.npmjs.org/post/78719826768/download-counts-are-back
-const Cache = require("@11ty/eleventy-cache-assets");
+const Cache = require("@11ty/eleventy-fetch");
 
 function pad(num) {
 	return `${num < 10 ? "0" : ""}${num}`;

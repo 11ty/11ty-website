@@ -1,4 +1,4 @@
-const RemoteCache = require("@11ty/eleventy-cache-assets");
+const RemoteCache = require("@11ty/eleventy-fetch");
 const AssetCache = RemoteCache.AssetCache;
 
 module.exports = async function() {

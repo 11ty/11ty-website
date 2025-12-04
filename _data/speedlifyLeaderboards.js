@@ -1,15 +1,14 @@
-const CacheAsset = require("@11ty/eleventy-cache-assets");
-const fastglob = require("fast-glob");
+// const Fetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
-	let url = "https://www.11ty.dev/speedlify/api/urls.json";
-	let urlsJson = await CacheAsset(url, {
-		duration: "1d",
-		type: "json",
-	});
+	// let url = "https://www.11ty.dev/speedlify/api/urls.json";
+	// let urlsJson = await Fetch(url, {
+	// 	duration: "1d",
+	// 	type: "json",
+	// });
 
 	let returnData = {
-		urls: urlsJson
+		urls: []
 	};
 
 	return returnData;

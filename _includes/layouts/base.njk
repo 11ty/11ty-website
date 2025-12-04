@@ -14,6 +14,9 @@ social:
 		<title>{{ subtitleText }}</title>
 		<meta name="title" content="{{ subtitleText }}">
 		<meta name="description" content="{{ subtitleText }}">
+{%- if refreshLocation %}
+		<meta http-equiv="Refresh" content="0; url={{ refreshLocation }}" />
+{%- endif %}
 		<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon.png">
 
 		<!-- Open Graph / Facebook -->

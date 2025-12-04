@@ -1,4 +1,3 @@
-const fetch = require("node-fetch");
 const slugify = require("slugify");
 const avatarmap = require("./utils/avatarmap.json");
 

@@ -6,6 +6,7 @@ ignoreSupporters: true
 ignoreFastestSite: true
 searchTitle: Eleventy Home
 bigPossum: true
+refreshLocation: /docs/
 ---
 
 ## Quick Start

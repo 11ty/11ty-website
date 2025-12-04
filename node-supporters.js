@@ -1,8 +1,8 @@
 require('dotenv').config();
 
-const Cache = require("@11ty/eleventy-cache-assets");
+const Cache = require("@11ty/eleventy-fetch");
 const fs = require("fs-extra");
-const fetch = require("node-fetch");
+
 // const query = `
 // query eleventyMembers {
 //   collective(slug: "11ty") {

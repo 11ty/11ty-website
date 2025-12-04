@@ -1,4 +1,4 @@
-const CacheAsset = require("@11ty/eleventy-cache-assets");
+const CacheAsset = require("@11ty/eleventy-fetch");
 const fastglob = require("fast-glob");
 
 module.exports = async function() {

@@ -1,5 +1,5 @@
 // https://opencollective.com/11ty/members/all.json
-const Cache = require("@11ty/eleventy-cache-assets");
+const Cache = require("@11ty/eleventy-fetch");
 const FilteredProfiles = [
 	"https://opencollective.com/bca-account1", // website is buycheapaccounts.com
 	"https://opencollective.com/baocasino", // gambling
