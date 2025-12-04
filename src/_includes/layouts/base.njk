@@ -34,6 +34,9 @@ let eleventyComputed = {
 		<title>{{ subtitleText }}</title>
 		<meta name="description" content="{{ subtitleText }}">
 		<meta name="generator" content="{{ eleventy.generator }}">
+{%- if refreshLocation %}
+		<meta http-equiv="Refresh" content="0; url={{ refreshLocation }}" />
+{%- endif %}
 
 		<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon.png">
 		<link rel="me" href="https://fosstodon.org/@eleventy">

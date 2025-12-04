@@ -11,15 +11,7 @@
 {% if github and github.stargazers %}
 	<li><a href="https://github.com/11ty/eleventy/" class="elv-externalexempt elv-nav-light">{{ github.stargazers | humanReadableNum }} Stars</a></li>
 {% endif %}
-{% if npm and npm.downloads %}
-	<li><a href="https://www.npmjs.com/package/@11ty/eleventy" class="elv-externalexempt elv-nav-light">{{ npm.downloads | humanReadableNum }} Downloads (Last Year)</a></li>
-{% endif %}
 {% if opencollective and opencollective.backers %}
 	<li><a href="/docs/supporters/" class="elv-externalexempt elv-nav-light">{{ opencollective.backers | humanReadableNum }} Backers</a></li>
 {% endif %}
 </ul>
-{%- if page.url === "/" %}
-<ul class="list-bare">
-	<li><a href="/reports/lighthouse/" class="elv-nav-light"><em>View this page’s Lighthouse Score</em></a></li>
-</ul>
-{%- endif %}

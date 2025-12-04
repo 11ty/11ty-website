@@ -1,4 +1,7 @@
-import { EleventyEdge, precompiledAppData } from "./_generated/eleventy-edge-app.js";
+import {
+  EleventyEdge,
+  precompiledAppData,
+} from "./_generated/eleventy-edge-app.js";
 
 export default async (request, context) => {
   try {
@@ -8,7 +11,7 @@ export default async (request, context) => {
       precompiled: precompiledAppData,
 
       // default is [], add more keys to opt-in e.g. ["appearance", "username"]
-      cookies: ["syntax"],
+      cookies: [],
     });
 
     edge.config((eleventyConfig) => {

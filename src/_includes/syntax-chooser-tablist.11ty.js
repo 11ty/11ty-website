@@ -52,18 +52,5 @@ exports.render = async function({id, valid, additions, subtractions, label}) {
 	${str.join("\n")}
 </div>`;
 
-	// Fancy: only use the Edge plugin on NETLIFY or when using Netlify CLI
-	if(false && (process.env.NETLIFY || process.env.NETLIFY_DEV)) {
-		return `<div class="tmplsyntax">
-	${await this.edge(liquidTemplate, "liquid")}
-	<details-utils close-esc close-click-outside>
-	<details class="tmplsyntax-default">
-		<summary>Always prefer…</summary>
-		<div class="tmplsyntax-dropdown">${await this.renderFile("./src/_includes/syntax-chooser-form.njk")}</div>
-	</details>
-</details-utils></div>`;
-	} else {
-		// Fallback to edge-less tabs on Eleventy Dev Server
-		return await this.renderTemplate(liquidTemplate, "liquid");
-	}
+	return await this.renderTemplate(liquidTemplate, "liquid");
 };

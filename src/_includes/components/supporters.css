@@ -68,6 +68,7 @@
 }
 .supporters-gold-cloudcannon svg {
 	color: #034AD8;
+	max-width: 20em;
 }
 @media (prefers-color-scheme: dark) {
 	.supporters-gold-cloudcannon svg {

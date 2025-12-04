@@ -26,9 +26,5 @@ headerClass: elv-header-default
 	{% endcallout %}
 {%- endif %}
 
-  {% if page.url and page.url.startsWith("/docs/") %}
-  {% renderFile "./src/_includes/syntax-chooser-form.njk" %}
-  {% endif %}
-
 	{% include "footer-nav.njk" %}
 </footer>

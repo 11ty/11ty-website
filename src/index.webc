@@ -24,6 +24,8 @@ let eleventyComputed = {
     description: () => "Eleventy, a simpler static site generator."
   },
 };
+
+let refreshLocation = "/docs/";
 // </script>
 ---
 <script webc:setup>

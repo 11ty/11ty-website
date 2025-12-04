@@ -7,7 +7,7 @@ const slugify = require("slugify");
 const lodashGet = require("lodash/get");
 const shortHash = require("short-hash");
 
-const { EleventyServerlessBundlerPlugin, EleventyEdgePlugin, EleventyRenderPlugin } = require("@11ty/eleventy");
+const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
@@ -227,7 +227,6 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(monthDiffPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
-	eleventyConfig.addPlugin(EleventyEdgePlugin);
 	eleventyConfig.addPlugin(javascriptFrontMatter);
 	eleventyConfig.addPlugin(pluginWebc, {
 		components: [
@@ -245,21 +244,6 @@ module.exports = function(eleventyConfig) {
 			]
 		}
 	});
-
-	if(process.env.NODE_ENV === "production") {
-		eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
-			name: "serverless",
-			functionsDir: "./netlify/functions/",
-			redirects: "netlify-toml-builders",
-			copy: [
-				"config/",
-				"avatars/",
-				"src/img/logo.svg",
-				"src/img/possum-geri.png",
-				".cache/eleventy-fetch/",
-			]
-		});
-	}
 
 	eleventyConfig.addCollection("sidebarNav", function(collection) {
 		// filter out excludeFromSidebar options
