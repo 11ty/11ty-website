@@ -11,7 +11,6 @@ const shortHash = require("short-hash");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItToc = require("markdown-it-table-of-contents");
 
-const { EleventyServerlessBundlerPlugin } = require("@11ty/eleventy");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const navigationPlugin = require("@11ty/eleventy-navigation");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
@@ -202,40 +201,6 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(addedInLocalPlugin);
 	eleventyConfig.addPlugin(monthDiffPlugin);
 	eleventyConfig.addPlugin(minificationLocalPlugin);
-
-	eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
-		name: "serverless",
-		inputDir: "src",
-		functionsDir: "./netlify/functions/",
-		redirects: "netlify-toml-builders",
-		// copyEnabled: process.env.NODE_ENV === "production",
-		copy: [
-			"config/",
-			"avatars/",
-			"src/img/logo.svg",
-			"src/img/gift.svg",
-			"src/img/possum-geri.png",
-			"_generated-serverless-collections.json",
-			{ from: ".cache/eleventy-fetch/", to: "cache" },
-		]
-	});
-
-	eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
-		name: "dynamic",
-		inputDir: "src",
-		functionsDir: "./netlify/functions/",
-		redirects: "netlify-toml-functions",
-		// copyEnabled: process.env.NODE_ENV === "production",
-		copy: [
-			"config/",
-			"avatars/",
-			"src/img/logo.svg",
-			"src/img/gift.svg",
-			"src/img/possum-geri.png",
-			"_generated-serverless-collections.json",
-			{ from: ".cache/eleventy-fetch/", to: "cache" },
-		]
-	});
 
 	eleventyConfig.addCollection("sidebarNav", function(collection) {
 		// filter out excludeFromSidebar options

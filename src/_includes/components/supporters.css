@@ -57,6 +57,7 @@
 	flex-grow: 1.7;
 }
 .supporters-gold-cloudcannon svg {
+	max-width: 20em;
 	color: #034AD8;
 }
 @media (prefers-color-scheme: dark) {
