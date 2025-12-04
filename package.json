@@ -1,7 +1,8 @@
 {
   "name": "@11ty/website",
-  "version": "1.0.2",
-  "description": "The website of 11ty.dev",
+  "version": "2.0.0",
+	"private": true,
+  "description": "The website at 11ty.dev",
   "type": "module",
   "engines": {
     "node": ">=18"
