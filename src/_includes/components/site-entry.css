@@ -21,6 +21,7 @@
 	width: 100%;
 	height: auto;
 	border-radius: .4em;
+	box-shadow: 0 0 0.125em; /* 2px /16 */
 }
 .sites-screenshot-youtube-sq {
 	aspect-ratio: 1/1;
