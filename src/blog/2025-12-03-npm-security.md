@@ -2,6 +2,7 @@
 newstitle: "Securely Publishing our Packages to npm"
 eleventyNavigation:
   parent: Blog
+blogHighlight: true
 ---
 As we harden our release practices in the wake of numerous recent vulnerabilities in npm packages amongst high profile authors, it seems worthwhile to celebrate a major milestone for 11ty core and our official suite of plugins: _we are now npm Access Token-free!_
 
