@@ -7,7 +7,7 @@ As we harden our release practices in the wake of numerous recent vulnerabilitie
 
 The `@11ty/*` ecosystem on npm is now fully migrated to [Trusted Publishers](https://docs.npmjs.com/trusted-publishers).
 
-If you’re interested in taking steps to improve your own security footprint, you can read more about the steps we took at [_No more tokens! Locking down npm Publish Workflows_](ttps://www.zachleat.com/web/npm-security/)
+If you’re interested in taking steps to improve your own security footprint, you can read more about the steps we took at [_No more tokens! Locking down npm Publish Workflows_](https://www.zachleat.com/web/npm-security/)
 
 <a href="https://www.zachleat.com/web/npm-security/" style="display: block; max-width: 16em;">{% getScreenshotHtml "No more tokens! Locking down npm Publish Workflows", "https://www.zachleat.com/web/npm-security/" %}</a>
 
