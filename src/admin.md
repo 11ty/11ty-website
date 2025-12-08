@@ -21,9 +21,8 @@ layout: layouts/docs.njk
 _Monthly donations:_
 
 {%- for donation,count in opencollectiveMonthly.buckets %}
-
 - `{{ donation | displayPrice }}` _(×{{ count }}) {{ opencollectiveMonthly.names[donation] | join(", ") }}_
-  {%- endfor %}
+{%- endfor %}
 
 _Median monthly donation:_ `{{ opencollectiveMonthly.stats.median | displayPrice }}`
 _Mean monthly donation:_ `{{ opencollectiveMonthly.stats.mean | displayPrice }}`
@@ -50,6 +49,6 @@ _The monthly amount ×12_ 😇
 
 ## Sites
 
-{% for key, site in builtwith -%}{% if site.url and site.featured -%}
-{% generatoravatar site.url %} [`{{ site.url }}`]({{site.url}})
-{% endif %}{%- endfor %}
+{%- for key, site in builtwith %}{% if site.url and site.featured %}
+- {% generatoravatar site.url %} [`{{ site.url }}`]({{site.url}})
+{%- endif %}{% endfor %}
