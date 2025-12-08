@@ -31,9 +31,6 @@ hosts:
     url: https://azure.microsoft.com/en-us/services/app-service/static/
     screenshotSize: medium
     skipIcon: true
-  - name: Edgio
-    url: https://docs.edg.io/guides/v7/sites_frameworks/getting_started/eleventy
-    screenshotSize: medium
   - name: Digital Ocean
     url: https://www.digitalocean.com/community/tutorials/how-to-create-and-deploy-your-first-eleventy-website
     screenshotSize: medium
@@ -66,9 +63,6 @@ classicHosts:
     url: https://neocities.org/
     screenshotSize: medium
     skipIcon: true
-  - name: yay.boo
-    url: https://yay.boo/
-    screenshotSize: medium
   - name: Cloudflare Direct Upload
     url: https://developers.cloudflare.com/pages/get-started/direct-upload/#drag-and-drop
     screenshotSize: medium
