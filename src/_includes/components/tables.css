@@ -45,16 +45,30 @@ table .numeric {
 	content: "*";
 	color: red;
 }
-table .numeric-up:after {
+.numeric-up:after {
 	content: "↑";
+}
+.numeric-down-before:before {
+	content: "↓";
+}
+.numeric-down-before:before,
+.numeric-up:after {
 	color: green;
 }
 .numeric-note:before,
-table .numeric-up:after {
+.numeric-up:after {
 	margin: 0 .25em;
+}
+.numeric-down-before:before {
+	margin: 0 .25em 0 0;
+}
+.numeric-note:before,
+.numeric-down-before:before,
+.numeric-up:after {
 	font-weight: bold;
 	font-family: system-ui, sans-serif;
 }
+
 
 @media (prefers-color-scheme: dark) {
 	table td {

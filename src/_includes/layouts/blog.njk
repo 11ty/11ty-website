@@ -26,7 +26,7 @@ eleventyComputed:
 {% if not hideRelatedBlogPosts %}
 <hr>
 
-<h3>Read more blog posts:</h3>
+<h3>Read more <a href="/blog/">blog posts</a>:</h3>
 
 {%- set previousPost = collections.blog | getPreviousCollectionItem(page) %}
 {%- set nextPost = collections.blog | getNextCollectionItem(page) %}
