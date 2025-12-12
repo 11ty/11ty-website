@@ -67,11 +67,18 @@ Here’s how things have looked over the full length of the project:
 			<td class="numeric numeric-down numeric-good">22.2%</td>
 		</tr>
 		<tr>
+			<td><a href="https://github.com/11ty/eleventy/releases/tag/v4.0.0-alpha.5"><code>v4.0.0-alpha.1</code></a> (2025 July)</td>
+			<td><code>×130</code> (<code>116</code>)</td>
+			<td class="numeric numeric-down numeric-good">2.9%</td>
+			<td><code>16 MiB</code></td>
+			<td class="numeric numeric-down numeric-good">23.8%</td>
+		</tr>
+		<tr>
 			<td><a href="https://github.com/11ty/eleventy/releases/tag/v4.0.0-alpha.6"><code>v4.0.0-alpha.6</code></a> (2025 December)</td>
 			<td><code>×105</code> (<code>89</code>)</td>
-			<td class="numeric numeric-down numeric-good">21.6%</td>
+			<td class="numeric numeric-down numeric-good">19.2%</td>
 			<td><code>14 MiB</code></td>
-			<td class="numeric numeric-down numeric-good">33.3%</td>
+			<td class="numeric numeric-down numeric-good">12.5%</td>
 		</tr>
 	</tbody>
 </table>
