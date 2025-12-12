@@ -9,6 +9,8 @@ Notably when comparing `v4.0.0-alpha.6` to `v3.1.2`, we’ve:
 - Dropped third-party dependency count from `123` to `89` (<code class="numeric-down numeric-good">27.6%</code>)
 - Decreased `node_modules` weight from `21 MiB` to `14 MiB`  (<code class="numeric-down numeric-good">33.3%</code>)
 
+## Full History
+
 Here’s how things have looked over the full length of the project:
 
 <table>
