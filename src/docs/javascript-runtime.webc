@@ -38,3 +38,10 @@ deno --allow-all npm:@11ty/eleventy --serve
 </syntax-highlight>
 
 <p>Read about our plans to <a href="https://github.com/11ty/eleventy/issues/3278">move away from <code>--allow-all</code> on #3278</a>.</p>
+
+<p>If you're on <a href="https://deno.com/blog/v2.6">Deno 2.6</a> or higher, you can also use <code>deno x</code>:</p>
+
+<syntax-highlight language="shell">
+deno x @11ty/eleventy
+deno x @11ty/eleventy --serve
+</syntax-highlight>
