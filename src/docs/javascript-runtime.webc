@@ -6,6 +6,7 @@ const eleventyNavigation = {
 	title: "Installing JavaScript",
 	order: 2,
 };
+// </script>
 ---
 <h1>Installing a JavaScript Runtime</h1>
 
@@ -26,11 +27,11 @@ const eleventyNavigation = {
 <h2>Deno</h2>
 
 
-<p>You can run Eleventy on <a href="https://deno.com/">Deno</a> too. Only the latest major version of Deno is supported by Eleventy.</p>
+<p>You can run Eleventy on <a href="https://deno.com/">Deno</a> too. The latest major version of Deno is the only version supported by Eleventy.</p>
 
 <p>You can check whether or not you have Deno installed by running <code>deno --version</code> in a terminal application. (<a href="/docs/terminal-window/"><em>Well, wait—what is a Terminal?</em></a>)</p>
 
-<p>You’ll run Eleventy on Deno using a command like one of these:</p>
+<p>You’ll run Eleventy on Deno using one of these commands:</p>
 
 <syntax-highlight language="shell">
 deno --allow-all npm:@11ty/eleventy
@@ -39,9 +40,17 @@ deno --allow-all npm:@11ty/eleventy --serve
 
 <p>Read about our plans to <a href="https://github.com/11ty/eleventy/issues/3278">move away from <code>--allow-all</code> on #3278</a>.</p>
 
-<p>If you're on <a href="https://deno.com/blog/v2.6">Deno 2.6</a> or higher, you can also use <code>deno x</code>:</p>
+<h3>Deno v2.6+</h3>
+
+<p>If you're on <a href="https://deno.com/blog/v2.6">Deno 2.6</a> or higher you can also use <code>deno x</code> (which includes an implied <code>--allow-all</code> and <code>npm:</code> by default):</p>
 
 <syntax-highlight language="shell">
 deno x @11ty/eleventy
 deno x @11ty/eleventy --serve
+</syntax-highlight>
+
+<p>Alternatively, you can use <code>dx</code> (after running <code>deno x --install-alias</code>):</p>
+<syntax-highlight language="shell">
+dx @11ty/eleventy
+dx @11ty/eleventy --serve
 </syntax-highlight>
