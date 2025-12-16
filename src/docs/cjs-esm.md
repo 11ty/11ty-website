@@ -1,19 +1,25 @@
 ---
 eleventyNavigation:
   parent: Learn
-  key: CommonJS and ESM
-  excerpt: Two different flavors of JavaScript
+  key: CommonJS, ESM, TypeScript
+  excerpt: Different flavors of JavaScript
 ---
 
-# {{ eleventyNavigation.key }}
+# CommonJS, ESM, and TypeScript
 
 {% tableofcontents %}
 
 * Related: [JavaScript Modules on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 
-Eleventy has always been compatible with CommonJS, the default Node.js flavor of JavaScript modules. ECMAScript Modules (also known as: ESM) is a newer JavaScript standard is supported by more JavaScript environments and runtimes (browsers, even!). **ESM is also supported by Eleventy (v3 and newer).**
+Eleventy works with many different flavors of JavaScript:
 
-It’s important to remember that Eleventy is **compatible with both module types** and will continue to support both moving forward. The module type affects the JavaScript syntax for Exports, Imports, and your file extensions:
+- **CommonJS**: the original flavor of Node.js, for broadest compatibility with older versions of Node.js.
+- **ECMAScript Modules (ESM)** _(recommended)_: the new JavaScript standard for future-friendly code. This is most compatible with alternative JavaScript environments and runtimes (browsers, even!).
+- **[TypeScript](/docs/languages/typescript/)**: adds types to JavaScript. Typically requires transpilation but natively supported in Node.js (via type stripping in 22.6+) and Deno.
+
+## Compatibility
+
+Eleventy is **compatible with ESM, CommonJS, and TypeScript** (with some runtime limitations). Note the following:
 
 <table>
 	<thead>
@@ -21,11 +27,22 @@ It’s important to remember that Eleventy is **compatible with both module type
 			<th>Feature</th>
 			<th>CommonJS</th>
 			<th>ESM</th>
+			<th>TypeScript (CommonJS)</th>
+			<th>TypeScript (ESM)</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
+			<td><code>@11ty/eleventy</code> Compatibility</td>
+			<td><code>v0+</code></td>
+			<td><code>v3+</code></td>
+			<td><code>v3+</code> <small>(<a href="/docs/languages/typescript/#configuration">additional configuration</a> required)</small></td>
+			<td><code>v3+</code> <small>(<a href="/docs/languages/typescript/#configuration">additional configuration</a> required)</small></td>
+		</tr>
+		<!-- <tr>
 			<td>Exports</td>
+			<td><code>module.exports</code></td>
+			<td><code>export</code></td>
 			<td><code>module.exports</code></td>
 			<td><code>export</code></td>
 		</tr>
@@ -33,16 +50,60 @@ It’s important to remember that Eleventy is **compatible with both module type
 			<td>Imports</td>
 			<td><code>require</code></td>
 			<td><code>import</code></td>
+			<td><code>require</code></td>
+			<td><code>import</code></td>
+		</tr> -->
+		<tr>
+			<td><code>.js</code> files use (unless <code>package.json</code>→<code>type</code>)</td>
+			<td>✅ <code>.js</code> in Node.js</td>
+			<td>✅ <code>.js</code> in Deno</td>
+			<td>-</td>
+			<td>-</td>
 		</tr>
 		<tr>
-			<td>File Extension</td>
-			<td><code>.js</code> and <code>.cjs</code></td>
-			<td><code>.js</code> and <code>.mjs</code></td>
+			<td><code>.ts</code> files use (unless <code>package.json</code>→<code>type</code>)</td>
+			<td>-</td>
+			<td>-</td>
+			<td>✅ <code>.ts</code> in Node.js</td>
+			<td>✅ <code>.ts</code> in Deno</td>
+		</tr>
+		<!-- <tr>
+			<td>Implicit File Extension via <code>package.json</code>→<code>type</code></td>
+			<td><code>.js</code></td>
+			<td><code>.js</code></td>
+			<td><code>.ts</code></td>
+			<td><code>.ts</code></td>
+		</tr> -->
+		<tr>
+			<td>Explicit File Extension</td>
+			<td><code>.cjs</code></td>
+			<td><code>.mjs</code></td>
+			<td><code>.cts</code></td>
+			<td><code>.mts</code></td>
+		</tr>
+		<!-- <tr>
+			<td>TypeScript File Extensions (Node 22.6+ or Deno)</td>
+			<td><code>.ts</code> <code>.cts</code></td>
+			<td><code>.ts</code> <code>.mts</code></td>
+		</tr> -->
+		<tr>
+			<td>Node.js Compatibility</td>
+			<td>Node.js <code>*</code></td>
+			<td>Node.js <code>v12.20+</code></td>
+			<td>Node.js <code>v22.6+</code></td>
+			<td>Node.js <code>v22.6+</code></td>
+		</tr>
+		<tr>
+			<td>Deno Compatibility</td>
+			<td>Deno <code>v2+</code></td>
+			<td>Deno <code>*</code></td>
+			<td>Deno <code>v2+</code></td>
+			<td>Deno <code>*</code></td>
 		</tr>
 	</tbody>
 </table>
 
-This applies to the following Eleventy project files and features:
+You can mix and match different flavors when using the following Eleventy project files and features:
 
 - [Configuration files](/docs/config/)
 - [JavaScript Data Files](/docs/data-js/)
@@ -51,41 +112,20 @@ This applies to the following Eleventy project files and features:
 
 ## JavaScript Runtimes
 
-Eleventy has goals to broadly support the same module formats as the [JavaScript runtime](/docs/javascript-runtime/) you choose to run Eleventy in.
+Eleventy has goals to broadly support the same module formats as your chosen [JavaScript runtime](/docs/javascript-runtime/).
 
 ### Node.js and Deno
 
-<table>
-	<thead>
-		<tr>
-			<th>Eleventy Version</th>
-			<th>ESM</th>
-			<th>CommonJS</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><code>@11ty/eleventy@2</code> and older</td>
-			<td>❌ Not available</td>
-			<td>✅ Supported</td>
-		</tr>
-		<tr>
-			<td><code>@11ty/eleventy@3</code> and newer</td>
-			<td>✅ Supported</td>
-			<td>✅ Supported</td>
-		</tr>
-	</tbody>
-</table>
+CommonJS, ESM, and TypeScript are supported in Node.js and Deno.
 
-Both CommonJS and ESM are supported in Node.js and Deno. If you want to use ESM in your Eleventy (v3+) project running Node.js, you can do this project-wide or incrementally on a per-file basis:
+If you want to use ESM (in JavaScript or TypeScript) in your Eleventy (v3+) project, you can do this project-wide or incrementally on a per-file basis:
 
-1. **Project-wide**: Adding `"type": "module"` in your `package.json`, which swaps the default for `.js` files from CommonJS to ESM.
-	- Notably, Deno uses `"type": "module"` as the default and Node.js uses `"type": "commonjs"` as the default (if not specified).
-1. **Individual files** (incremental migration): by using the `.mjs` file extension instead of `.js` you can change a single file to use ESM.
+1. **Project-wide**: Adding `"type": "module"` in your `package.json`, which specifies that `.js` (and `.ts`) files use ESM (this is the default in Deno, swap back to CommonJS using `"type": "commonjs"`). When using ESM, use `.cjs` (or `.cts`) file extensions to mark individual files as CommonJS.
+1. **Individual files** (incremental migration): by using the `.mjs` (and `.mts`) file extension instead of `.js` you can change a single file to use ESM.
 
 **If your Eleventy project already uses CommonJS, you can keep using CommonJS**: using _ESM is not required_. Eleventy will continue to support CommonJS moving forward. Our docs include code snippets for both CommonJS and ESM.
 
-`.js`, `.cjs`, and `.mjs` file extensions are supported for [Configuration Files](/docs/config.md), [JavaScript Data Files](/docs/data-js.md) and [JavaScript (`.11ty.js`) templates](/docs/languages/javascript.md).
+`.js`, `.cjs`, and `.mjs` file extensions are supported for [Configuration Files](/docs/config.md), [JavaScript Data Files](/docs/data-js.md) and [JavaScript (`.11ty.js`) templates](/docs/languages/javascript.md). With <a href="/docs/languages/typescript/#configuration">additional configuration</a>, you can use `.ts`, `.cts`, and `.mts` file extensions for TypeScript for these features as well.
 
 - Related: read more about [Deno’s CommonJS compatibility](https://docs.deno.com/runtime/fundamentals/node/#commonjs-support).
 
