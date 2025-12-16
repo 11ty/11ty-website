@@ -21,7 +21,7 @@ layout: layouts/langs.njk
 
 ## Configuration
 
-{% addedin "3.0.0-alpha.11" %}Here we use [`tsx`]({{ externalLinks.tsxNodeUse }}) to process JSX files.
+{% addedin "3.0.0-alpha.11" %}Here we use [`tsx`]({{ externalLinks.tsxNodeUse }}) to process JSX files. If you’re looking for TypeScript only, there are [simpler methods in Node.js](/docs/languages/typescript/).
 
 <div class="codetitle">eleventy.config.js</div>
 {%- set codeBlock %}
@@ -39,18 +39,15 @@ export default function (eleventyConfig) {
 			};
 		},
 	});
+
+	// Add to --formats via Configuration
+	// or via CLI: --formats=11ty.jsx,11ty.ts,11ty.tsx
+	eleventyConfig.addTemplateFormats(["11ty.jsx", "11ty.ts", "11ty.tsx"]);
 }
 {%- endset %}
 {{ codeBlock | highlight("js") | safe }}
 
-Now run Eleventy and tell it to process `11ty.jsx` and `11ty.tsx` files:
-
-{%- set codeBlock %}
-npx @11ty/eleventy --formats=11ty.jsx,11ty.tsx
-{%- endset %}
-{{ codeBlock | highlight("bash") | safe }}
-
-Alternatively, you can add `eleventyConfig.addTemplateFormats("11ty.jsx,11ty.tsx")` to your configuration file.
+Now Eleventy will find and process `**/*.11ty.{jsx,ts,tsx}` files.
 
 ## Community Contributions <span id="alternative-approaches"></span>
 
