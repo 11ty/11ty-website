@@ -53,3 +53,7 @@ deno x @11ty/eleventy --serve
 dx @11ty/eleventy
 dx @11ty/eleventy --serve
 </syntax-highlight>
+
+<h2>Web Browsers</h2>
+
+<div class="elv-callout elv-callout-info"><div class="elv-callout-c">We’re working on a feature to run Eleventy v4 in your web browser (this won’t require any installation or terminal windows). Stay tuned!</div></div>

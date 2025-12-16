@@ -89,10 +89,6 @@ Both CommonJS and ESM are supported in Node.js and Deno. If you want to use ESM 
 
 - Related: read more about [Deno’s CommonJS compatibility](https://docs.deno.com/runtime/fundamentals/node/#commonjs-support).
 
-### Web Browsers
-
-{% callout "info" %}Coming to Eleventy v4 via <code>@11ty/client</code>!{% endcallout %}
-
 ## Configuration
 
 Read more about [supported configuration file names](/docs/config.md#default-filenames).
