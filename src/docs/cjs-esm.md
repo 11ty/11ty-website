@@ -15,7 +15,7 @@ Eleventy works with many different flavors of JavaScript:
 
 - **CommonJS**: the original flavor of Node.js, for broadest compatibility with older versions of Node.js.
 - **ECMAScript Modules (ESM)** _(recommended)_: the new JavaScript standard for future-friendly code. This is most compatible with alternative JavaScript environments and runtimes (browsers, even!).
-- **[TypeScript](/docs/languages/typescript/)**: adds types to JavaScript. Typically requires transpilation but natively supported in Node.js (via type stripping in 22.6+) and Deno.
+- **[TypeScript](/docs/languages/typescript/)**: adds types to JavaScript. Typically requires transpilation but natively supported in Node.js (via type stripping in Node 22.6+) and Deno.
 
 ## Compatibility
 
