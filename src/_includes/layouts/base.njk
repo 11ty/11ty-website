@@ -18,9 +18,9 @@ let eleventyComputed = {
 	},
 	social: {
 		imgsrc: function({ config, page, ogimageOverride, social }) {
-			//if(page.url === "/") {
-			//	return social.imgsrc;
-			//}
+			if(page.url === "/") {
+				return social.imgsrc;
+			}
 
 			if(ogimageOverride) {
 				return new URL(ogimageOverride, config.origin).toString();
