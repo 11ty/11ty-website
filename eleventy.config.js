@@ -304,6 +304,8 @@ export default async function (eleventyConfig) {
 
 	eleventyConfig.addPlugin(minificationLocalPlugin);
 	eleventyConfig.addPlugin(RenderPlugin);
+
+	eleventyConfig.htmlTransformer.posthtmlProcessOptions.closingSingleTag = "slash";
 	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 	eleventyConfig.addPlugin(eleventyWebcPlugin, {
 		components: [
