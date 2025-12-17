@@ -21,9 +21,11 @@ let eleventyComputed = {
 			//if(page.url === "/") {
 			//	return social.imgsrc;
 			//}
+
 			if(ogimageOverride) {
 				return new URL(ogimageOverride, config.origin).toString();
 			}
+
 			//return `https://screenshot.11ty.app/${encodeURIComponent(config.origin + page.url + "?cache=1")}/opengraph/`;
 			return `https://screenshot.11ty.app/${encodeURIComponent(config.origin + page.url)}/opengraph/x.jpg`;
 		},
@@ -78,10 +80,11 @@ let eleventyComputed = {
 		<meta property="og:locale" content="en_US">
 		<meta property="og:title" content="{{ title }}">
 		<meta property="og:description" content="{{ social.description }}">
-		<meta property="og:image" content="{{ social.imgsrc }}">
-		<meta property="og:image:type" content="image/jpeg">
-		<meta property="og:image:width" content="1280">
-		<meta property="og:image:height" content="640">
+
+		<meta property="og:image" content="{% if optimizeOpenGraphImage %}{{ page.url | getOpengraphImageUrl }}{% else %}{{ social.imgsrc }}{% endif %}">
+		<meta property="og:image:type" content="{% if optimizeOpenGraphImage %}image/png{% else %}image/jpeg{% endif %}">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
 		<meta property="og:image:alt" content="{{ social.imgalt }}">
 
 		<!-- Feeds -->
