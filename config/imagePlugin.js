@@ -46,7 +46,15 @@ export function optimizeImage(filePath, width, format) {
 	return eleventyImage(filePath, options);
 }
 
+function productionUrl(imagePath) {
+	let hostname = (process.env.VERCEL_TARGET_ENV === "production" ? "" : process.env.VERCEL_BRANCH_URL);
+	let u = new URL(imagePath, hostname ? `https://${hostname}` : config.origin);
+	return u.toString();
+}
+
 export default function(eleventyConfig) {
+	eleventyConfig.addFilter("productionUrl", productionUrl);
+
 	// Resize and transform an image format, return URL to that image
 	// Supports Font Awesome icons via protocol handler (e.g. `fas:font-awesome-flag`)
 	eleventyConfig.addFilter("getOpengraphImageUrl", async function(pageUrl) {
@@ -60,9 +68,7 @@ export default function(eleventyConfig) {
 		}
 
 		// absolute URL required for opengraph images
-		let hostname = (process.env.VERCEL_TARGET_ENV === "production" ? "" : process.env.VERCEL_BRANCH_URL);
-		let u = new URL(formatStats.url, hostname ? `https://${hostname}` : config.origin);
-		return u.toString();
+		return productionUrl(formatStats.url);
 	});
 
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, imageOptions);
