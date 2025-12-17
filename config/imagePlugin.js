@@ -60,7 +60,8 @@ export default function(eleventyConfig) {
 		}
 
 		// absolute URL required for opengraph images
-		let u = new URL(formatStats.url, config.origin);
+		let hostname = (process.env.VERCEL_TARGET_ENV === "production" ? "" : process.env.VERCEL_BRANCH_URL);
+		let u = new URL(formatStats.url, hostname ? `https://${hostname}` : config.origin);
 		return u.toString();
 	});
 
