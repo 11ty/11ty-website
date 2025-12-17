@@ -61,7 +61,7 @@ let eleventyComputed = {
 		<meta property="og:title" content="{{ title }}">
 		<meta property="og:description" content="{{ social.description }}">
 
-{%- if eleventy.env.runMode == "serve" or page.url == "/" %}
+{%- if eleventy.env.runMode == "serve" or page.url == "/" or page.inputPath.endsWith("author-pages.md") %}
 		<meta property="og:image" content="{{ '/img/open-graph.jpg' | productionUrl }}">
 		<meta property="og:image:type" content="image/jpeg">
 {%- elseif ogimageOverride %}
