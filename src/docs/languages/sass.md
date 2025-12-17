@@ -4,7 +4,7 @@ eleventyNavigation:
   key: Sass
   order: 9
 layout: layouts/langs.njk
-logoImage: "./src/img/logos/sass.svg"
+logoImage: "/img/logos/sass.svg"
 ---
 
 <!-- {% tableofcontents "open" %} -->

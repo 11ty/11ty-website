@@ -1,6 +1,5 @@
 import "dotenv/config";
 
-import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import memoize from "memoize";
@@ -13,12 +12,13 @@ import { ImportTransformer } from "esm-import-transformer";
 import { transform as tweetbackTransform } from "@tweetback/canonical";
 
 import navigationPlugin from "@11ty/eleventy-navigation";
-import eleventyImage, { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import eleventyImage from "@11ty/eleventy-img";
 import eleventyWebcPlugin from "@11ty/eleventy-plugin-webc";
-import { RenderPlugin, InputPathToUrlTransformPlugin } from "@11ty/eleventy";
+import { RenderPlugin, InputPathToUrlTransformPlugin/*, PreserveClosingTagsPlugin*/ } from "@11ty/eleventy";
 import fontAwesomePlugin from "@11ty/font-awesome";
 import { getImageColors } from "@11ty/image-color";
 
+import imagePlugin from "./config/imagePlugin.js";
 import { addedIn, coerceVersion, greaterThan } from "./config/addedin.js";
 import minificationLocalPlugin, { minifyJavaScriptFile } from "./config/minification.js";
 import { bundleModulePath } from "./config/bundleJavaScript.js";
@@ -69,32 +69,6 @@ const shortcodes = {
 			(linkUrl ? `<a href="${linkUrl}">` : "") +
 			content +
 			(linkUrl ? `</a>` : "")
-		);
-	},
-	image: async function (filepath, alt, widths, classes, sizes, attributes) {
-		let options = {
-			formats: ["avif", "png"],
-			widths: widths || ["auto"],
-			urlPath: "/img/built/",
-			outputDir: "_site/img/built/",
-			transformOnRequest: process.env.ELEVENTY_RUN_MODE === "serve",
-		};
-
-		let stats = await eleventyImage(filepath, options);
-
-		return eleventyImage.generateHTML(
-			stats,
-			Object.assign(
-				{
-					alt,
-					loading: "lazy",
-					decoding: "async",
-					sizes,
-					class: classes || "",
-					"eleventy:ignore": "",
-				},
-				attributes
-			)
 		);
 	},
 	getScreenshotHtml(alt, siteUrl, sizes, preset = "small") {
@@ -268,45 +242,19 @@ export default async function (eleventyConfig) {
 		}
 	});
 
-	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-		// which file extensions to process
-		extensions: "html",
-
-		// Add any other Image utility options here:
-
-		// optional, output image formats
-		formats: ["avif", "jpeg"],
-
-		// optional, output image widths
-		// widths: ["auto"],
-
-		urlPath: "/img/built/",
-		outputDir: ".cache/@11ty/img/",
-
-		// optional, attributes assigned on <img> override these values.
-		defaultAttributes: {
-			loading: "lazy",
-			decoding: "async",
-		},
-
-		cacheOptions: {
-			duration: "14d",
-		},
-	});
-
-	if(process.env.ELEVENTY_RUN_MODE === "build") {
-		eleventyConfig.on("eleventy.after", () => {
-			fs.cpSync(".cache/@11ty/img/", path.join(eleventyConfig.directories.output, "img/built/"), { recursive: true });
-		});
-	}
-
+	eleventyConfig.addPlugin(imagePlugin);
 	eleventyConfig.addPlugin(markdownPlugin);
 
 	eleventyConfig.addPlugin(minificationLocalPlugin);
 	eleventyConfig.addPlugin(RenderPlugin);
 
 	eleventyConfig.htmlTransformer.posthtmlProcessOptions.closingSingleTag = "slash";
+	// eleventyConfig.addPlugin(PreserveClosingTagsPlugin, {
+	// 	tags: ["meta"]
+	// });
+
 	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
+
 	eleventyConfig.addPlugin(eleventyWebcPlugin, {
 		components: [
 			"./src/_includes/components/*.webc",
@@ -399,7 +347,6 @@ export default async function (eleventyConfig) {
 		}
 	}));
 
-	eleventyConfig.addShortcode("image", shortcodes.image);
 	eleventyConfig.addShortcode("communityavatar", shortcodes.communityAvatar);
 	eleventyConfig.addShortcode(
 		"opencollectiveavatar",

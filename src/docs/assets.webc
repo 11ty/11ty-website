@@ -184,7 +184,9 @@ permalink: bundle.js
 
 <sites-list>
 	<!--- <site-card @url="/docs/plugins/bundle/" @name="Bundle Plugin" @date=""></site-card> --->
-	<site-card :@image-html="image('./src/img/logos/webc.png', 'WebC Logo', [196], 'sites-screenshot', '12.25em')" @url="/docs/languages/webc/" @name="WebC" @date=""></site-card>
+	<site-card @url="/docs/languages/webc/" @name="WebC" @date="">
+		<img src="/img/logos/webc.png" alt="WebC Logo" width="196" class="sites-screenshot" sizes="12.25em">
+	</site-card>
 	<site-card @url="https://www.youtube.com/watch?v=fzo_S9UiYYk" @name="Rebuilding 11ty.dev using WebC" @date="2023-03-08"></site-card>
 </sites-list>
 

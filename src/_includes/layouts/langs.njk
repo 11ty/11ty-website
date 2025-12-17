@@ -36,7 +36,7 @@ layout: layouts/docs.njk
 </div>
 
 {% if logoImage %}
-<p>{% image logoImage, "Logo for " + eleventyNavigation.key, [200, 400], "elv-langlist-logo", "200px" %}</p>
+<p><img src="{{ logoImage }}" alt="Logo for {{ eleventyNavigation.key }}" eleventy:widths="200,400" class="elv-langlist-logo" sizes="200px"></p>
 {% endif %}
 
 {{ content | safe }}
