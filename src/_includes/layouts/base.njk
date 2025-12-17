@@ -24,7 +24,7 @@ let eleventyComputed = {
 			if(ogimageOverride) {
 				return new URL(ogimageOverride, config.origin).toString();
 			}
-			return `https://screenshot.11ty.app/${encodeURIComponent(config.origin + page.url + "?cache=1")}/opengraph/x.jpg`;
+			return `https://screenshot.11ty.app/${encodeURIComponent(config.origin + page.url + "?cache=1")}/opengraph/`;
 		},
 		imgalt: function({ config, page }) {
 			return `A screenshot of the web page at ${config.origin + page.url}`;
