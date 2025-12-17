@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import eleventyImage, { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import config from "../src/_data/config.js";
 
 const IS_COPY_CACHE_FOLDER = process.env.ELEVENTY_RUN_MODE === "build";
 
@@ -34,7 +35,35 @@ if(IS_COPY_CACHE_FOLDER) {
 	imageOptions.outputDir = ".cache/@11ty/img/";
 }
 
+export function optimizeImage(filePath, width, format) {
+	let options = Object.assign({}, imageOptions, {
+		widths: [width],
+		formats: format || "auto",
+		failOnError: true,
+		transformOnRequest: !IS_COPY_CACHE_FOLDER,
+	});
+
+	return eleventyImage(filePath, options);
+}
+
 export default function(eleventyConfig) {
+	// Resize and transform an image format, return URL to that image
+	// Supports Font Awesome icons via protocol handler (e.g. `fas:font-awesome-flag`)
+	eleventyConfig.addFilter("getOpengraphImageUrl", async function(pageUrl) {
+		let screenshotUrl = `https://screenshot.11ty.app/${encodeURIComponent(config.origin + pageUrl)}/opengraph/x.jpg`;
+		let stats = await optimizeImage(screenshotUrl, 1200, "png");
+		let outputFormat = Object.keys(stats).pop();
+		let formatStats = stats[outputFormat][0];
+
+		if(!IS_COPY_CACHE_FOLDER) {
+			return formatStats.url;
+		}
+
+		// absolute URL required for opengraph images
+		let u = new URL(formatStats.url, config.origin);
+		return u.toString();
+	});
+
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, imageOptions);
 
 	if(IS_COPY_CACHE_FOLDER) {
