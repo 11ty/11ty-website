@@ -4,7 +4,10 @@ eleventyNavigation:
   parent: Blog
 blogHighlight: true
 external_url: https://blog.fontawesome.com/
-ogimageOverride: /blog/fa-2.png
+ogimageOverride:
+  src: /blog/fa-2.png
+  alt: The Font Awesome logo + the 11ty logo
+  type: image/png
 ---
 <img src="./fa-2.png" alt="Font Awesome + 11ty logos">
 

@@ -31,8 +31,9 @@ let eleventyComputed = {
 		{%- if page.url != "/" %}
 		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f2f2f2">
 		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2a2a">
-		{%- endif %}
+		{%- else %}
 		<meta name="theme-color" content="#1f1f1f">
+		{%- endif %}
 
 {%- if scriptImportMap %}
 		<script type="importmap">
@@ -61,19 +62,21 @@ let eleventyComputed = {
 		<meta property="og:title" content="{{ title }}">
 		<meta property="og:description" content="{{ social.description }}">
 
-{%- if eleventy.env.runMode == "serve" or page.url == "/" or page.inputPath.endsWith("author-pages.md") %}
+{%- if ogimageOverride.src %}
+		<meta property="og:image" content="{{ ogimageOverride.src | productionUrl }}">
+		<meta property="og:image:type" content="{{ ogimageOverride.type or 'image/png' }}">
+		<meta property="og:image:alt" content="{{ ogimageOverride.alt | throwErrorWhenMissing('Missing alt image on opengraph image') }}">
+{%- elseif eleventy.env.runMode == "serve" or page.url == "/" or page.inputPath.endsWith("author-pages.md") %}
 		<meta property="og:image" content="{{ '/img/open-graph.jpg' | productionUrl }}">
 		<meta property="og:image:type" content="image/jpeg">
-{%- elseif ogimageOverride %}
-		<meta property="og:image" content="{{ ogimageOverride | productionUrl }}">
-		<meta property="og:image:type" content="image/png">{# assumption #}
+		<meta property="og:image:alt" content="The 11ty logo (with a small floating possum hiding in the letter y)">
 {%- else %}
 		<meta property="og:image" content="{{ page.url | getOpengraphImageUrl }}">
 		<meta property="og:image:type" content="image/png">
+		<meta property="og:image:alt" content="A screenshot of the web page at {{ config.origin }}{{ page.url }}">
 {%- endif %}
 		<meta property="og:image:width" content="1200">
 		<meta property="og:image:height" content="630">
-		<meta property="og:image:alt" content="A screenshot of the web page at {{ config.origin }}{{ page.url }}">
 
 		<!-- Feeds -->
 		<link rel="alternate" href="/blog/feed.xml" title="Eleventy Blog" type="application/atom+xml">

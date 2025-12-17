@@ -291,6 +291,12 @@ export default async function (eleventyConfig) {
 		})
 	});
 
+	eleventyConfig.addFilter("throwErrorWhenMissing", function (arg, msg) {
+		if(arg) {
+			return;
+		}
+		throw new Error(msg + ` (via throwErrorWhenMissing filter on ${this.page.url})`);
+	});
 	eleventyConfig.addFilter("coerceVersion", coerceVersion);
 	eleventyConfig.addNunjucksGlobal("semverGreaterThan", greaterThan);
 	eleventyConfig.addShortcode("addedin", addedIn);

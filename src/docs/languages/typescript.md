@@ -5,7 +5,6 @@ eleventyNavigation:
 addedInVersion: 3.0.0-alpha.11
 relatedTitle: Template Language—TypeScript
 layout: layouts/langs.njk
-optimizeOpenGraphImage: true
 ---
 
 <!-- {% tableofcontents "open" %} -->
