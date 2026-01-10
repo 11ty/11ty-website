@@ -3,5 +3,5 @@
 	"name": "Snappy Lemon",
 	"description": "Modern 11ty v3 starter with TailwindCSS v4, Alpine.js, CloudCannon CMS integration, Bookshop visual editing, Pagefind search, and accessibility-first design",
 	"author": "freshjuice-dev",
-	"demo": "https://snappy-lemon.cloudvent.net/"
+	"demo": "https://snappy-lemon-starter.freshjuice.dev/"
 }
