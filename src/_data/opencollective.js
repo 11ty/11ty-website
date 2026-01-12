@@ -34,6 +34,10 @@ const EXCLUDED_OPENCOLLECTIVE_USERNAME_SLUGS = [
 	"sidesmedia", // selling social media
 	"best-casinos-australia-bca", // gambling
 	"buy-tiktok-likes", // selling social media
+	"fameverge", // site does not exist
+	"buy-instagram-auto-likes",
+	"buy-active-youtube-subscribers",
+	"socialfans", // site does not exist
 ];
 
 function getAmortizedOneTimeDonations(orders) {
