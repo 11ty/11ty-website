@@ -3,6 +3,7 @@ import path from "node:path";
 import eleventyImage, { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import config from "../src/_data/config.js";
 
+const ONE_DAY = 24*60*60*1000;
 const IS_COPY_CACHE_FOLDER = process.env.ELEVENTY_RUN_MODE === "build";
 
 // Warning: changing these options could impact cold-cache build-server build times
@@ -67,13 +68,18 @@ function addCacheBusterQueryParam(fullUrl, queryParamValue) {
 	return u.toString();
 }
 
+function isRecentPost(date) {
+	return (Date.now() - date.getTime()) < ONE_DAY*14;
+}
+
 export default function(eleventyConfig) {
 	eleventyConfig.addFilter("productionUrl", productionUrl);
 
 	// Resize and transform an image format, return URL to that image
 	// Supports Font Awesome icons via protocol handler (e.g. `fas:font-awesome-flag`)
 	eleventyConfig.addFilter("getOpengraphImageUrl", async function({ url, date }, screenshotCacheBustParam) {
-		if(screenshotCacheBustParam) {
+		// skip optimization of recent posts that have a cache buster (we don’t want to screenshot pages that aren’t deployed yet)
+		if(isRecentPost(date) && screenshotCacheBustParam) {
 			return getScreenshotUrl(url, screenshotCacheBustParam);
 		}
 
