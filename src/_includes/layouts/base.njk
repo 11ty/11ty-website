@@ -71,7 +71,7 @@ let eleventyComputed = {
 		<meta property="og:image:type" content="image/jpeg">
 		<meta property="og:image:alt" content="The 11ty logo (with a small floating possum hiding in the letter y)">
 {%- else %}
-		<meta property="og:image" content="{{ page.url | getOpengraphImageUrl }}">
+		<meta property="og:image" content="{{ page | getOpengraphImageUrl(screenshotCacheBust) }}">
 		<meta property="og:image:type" content="image/png">
 		<meta property="og:image:alt" content="A screenshot of the web page at {{ config.origin }}{{ page.url }}">
 {%- endif %}

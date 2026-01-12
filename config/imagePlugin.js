@@ -52,14 +52,32 @@ function productionUrl(imagePath) {
 	return u.toString();
 }
 
+function getScreenshotUrl(urlPath, screenshotCacheBustParam = "") {
+	let fullUrl = addCacheBusterQueryParam(config.origin + urlPath, screenshotCacheBustParam);
+	return `https://screenshot.11ty.app/${encodeURIComponent(fullUrl)}/opengraph/x.jpg`;
+}
+
+function addCacheBusterQueryParam(fullUrl, queryParamValue) {
+	if(!queryParamValue) {
+		return fullUrl;
+	}
+
+	let u = new URL(fullUrl);
+	u.searchParams.set("cachebust", queryParamValue);
+	return u.toString();
+}
+
 export default function(eleventyConfig) {
 	eleventyConfig.addFilter("productionUrl", productionUrl);
 
 	// Resize and transform an image format, return URL to that image
 	// Supports Font Awesome icons via protocol handler (e.g. `fas:font-awesome-flag`)
-	eleventyConfig.addFilter("getOpengraphImageUrl", async function(pageUrl) {
-		let screenshotUrl = `https://screenshot.11ty.app/${encodeURIComponent(config.origin + pageUrl)}/opengraph/x.jpg`;
-		let stats = await optimizeImage(screenshotUrl, 1200, "png");
+	eleventyConfig.addFilter("getOpengraphImageUrl", async function({ url, date }, screenshotCacheBustParam) {
+		if(screenshotCacheBustParam) {
+			return getScreenshotUrl(url, screenshotCacheBustParam);
+		}
+
+		let stats = await optimizeImage(getScreenshotUrl(url), 1200, "png");
 		let outputFormat = Object.keys(stats).pop();
 		let formatStats = stats[outputFormat][0];
 
