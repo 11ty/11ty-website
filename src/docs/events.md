@@ -66,7 +66,7 @@ export default function(eleventyConfig) {
 
 	eleventyConfig.on(
 		"eleventy.after",
-		async ({ dir, results, runMode, outputMode }) => {
+		async ({ directories, results, runMode, outputMode }) => {
 			// Read more below
 		}
 	);
