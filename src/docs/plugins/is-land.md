@@ -66,7 +66,7 @@ Or you can use `import "/is-land.js";`.
 {%- endset %}
 {{ codeBlock | highlight("html") | safe }}
 
-Add any number of loading conditions to this tag to control how and when the island is initialized. You can mix and match. _All_ conditions be satisfied to initialize.
+Add any number of loading conditions to this tag to control how and when the island is initialized. You can mix and match. _All_ conditions must be satisfied to initialize.
 
 - `on:visible`
 - `on:load` (new in v5)
