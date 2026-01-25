@@ -101,7 +101,6 @@ function hello(name: string) {
 
 Markdown has a lesser known feature called [Indented Code Blocks](https://spec.commonmark.org/0.28/#indented-code-blocks), which means any content that is indented by four or more spaces (and has a preceding line break) will be transformed into a code block.
 
-
 ```markdown
     a simple
       indented code block
