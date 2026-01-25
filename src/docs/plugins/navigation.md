@@ -33,7 +33,7 @@ Open up your Eleventy config file (probably `eleventy.config.js`) and use `addPl
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 
 export default function (eleventyConfig) {
-  eleventyConfig.addPlugin(eleventyNavigationPlugin);
+	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 };
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
