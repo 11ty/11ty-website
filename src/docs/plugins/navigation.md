@@ -798,9 +798,9 @@ You can also add an `aria-current="page"` [ARIA attribute](https://developer.moz
     anchorClass: "",              // Add a class to the anchor
     activeAnchorClass: "",        // Add a class to the current page’s anchor
 
-    useAriaCurrentAttr: true      // Add aria-current="page" to the current page’s anchor
+    useAriaCurrentAttr: true,     // Add aria-current="page" to the current page’s anchor
 
-    // If matched, `activeListItemClass` and `activeAnchorClass` will be added
+    // If matched, `activeListItemClass`, `activeAnchorClass`, and `aria-current` will be added
     activeKey: "",
     // It’s likely you want to pass in `eleventyNavigation.key` here, e.g.:
     // activeKey: eleventyNavigation.key
