@@ -731,7 +731,11 @@ navToMdOptions:
 
 #### Advanced: All Rendering Options for `eleventyNavigationToHtml`
 
-You can change the HTML elements, classes on the list and list items, and add an additional class for the current page’s navigation entry!
+You can change the HTML elements, classes on the list and list items, and add an additional class for the current page’s navigation entry.
+
+You can also add an `aria-current="page"` [ARIA attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-current) with the
+`useAriaCurrentAttr` option.
+{% addedin "Navigation 1.0.0" %}
 
 <is-land on:visible import="/js/seven-minute-tabs.js">
 <seven-minute-tabs persist sync autoheight>
@@ -757,7 +761,9 @@ You can change the HTML elements, classes on the list and list items, and add an
     anchorClass: "",              // Add a class to the anchor
     activeAnchorClass: "",        // Add a class to the current page’s anchor
 
-    // If matched, `activeListItemClass` and `activeAnchorClass` will be added
+    useAriaCurrentAttr: true,     // Add aria-current="page" to the current page’s anchor
+
+    // If matched, `activeListItemClass`, `activeAnchorClass`, and `aria-current` will be added
     activeKey: "",
     // It’s likely you want to pass in `eleventyNavigation.key` here, e.g.:
     // activeKey: eleventyNavigation.key
@@ -794,7 +800,9 @@ You can change the HTML elements, classes on the list and list items, and add an
     anchorClass: "",              // Add a class to the anchor
     activeAnchorClass: "",        // Add a class to the current page’s anchor
 
-    // If matched, `activeListItemClass` and `activeAnchorClass` will be added
+    useAriaCurrentAttr: true,     // Add aria-current="page" to the current page’s anchor
+
+    // If matched, `activeListItemClass`, `activeAnchorClass`, and `aria-current` will be added
     activeKey: "",
     // It’s likely you want to pass in `eleventyNavigation.key` here, e.g.:
     // activeKey: eleventyNavigation.key
