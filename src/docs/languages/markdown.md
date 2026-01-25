@@ -85,17 +85,22 @@ export default function (eleventyConfig) {
 {%- endset %}
 {{ codeBlock | highlight("js") | safe }}
 
+## Highlighting Code
+
+Use [fenced code blocks](https://spec.commonmark.org/0.28/#fenced-code-blocks) to include code examples in your Markdown content, and install the [Syntax Highlighting Plugin](https://www.11ty.dev/docs/plugins/syntaxhighlight/) if you want them to be highlighted.
+
+````md
+```ts
+function hello(name: string) {
+	console.log(`Hello ${name}`);
+}
+```
+````
+
 ## Indented Code Blocks
 
-In common Markdown, any content indented by four or more spaces (and has a preceding line break) will be transformed into a code block.
-Eleventy 2.0.0 and later disables
-[Indented Code Blocks](https://spec.commonmark.org/0.28/#indented-code-blocks)
-based on feedback from the community.
+Markdown has a lesser known feature called [Indented Code Blocks](https://spec.commonmark.org/0.28/#indented-code-blocks), which means any content that is indented by four or more spaces (and has a preceding line break) will be transformed into a code block.
 
-(For how to format code blocks, see [Syntax Highlighting Plugin](https://www.11ty.dev/docs/plugins/syntaxhighlight/).) 
-
-<details>
-  <summary>Example</summary>
 
 ```markdown
     a simple
@@ -111,8 +116,6 @@ is transformed into:
 ```
 
 _(Example borrowed from the [CommonMark Specification](https://spec.commonmark.org/0.28/#indented-code-blocks))_
-
-</details>
 
 After [listening to community feedback](https://github.com/11ty/eleventy/issues/2438), starting with Eleventy 2.0.0 <strong>Indented Code Blocks</strong> are disabled for both the default Markdown library instance _and_ any set via `setLibrary`.
 
