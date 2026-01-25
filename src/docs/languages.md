@@ -8,8 +8,6 @@ eleventyNavigation:
 
 Eleventy’s super power is that it is built on an extensible architecture that can work with one or more template syntaxes in the same project.
 
-{% templatelangs templatetypes, page %}
-
 <style>
 .elv-page-toc-asterisk:before,
 .elv-page-toc li:has(> a[href="/docs/languages/mdx/"]):after,
