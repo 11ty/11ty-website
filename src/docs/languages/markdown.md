@@ -85,6 +85,18 @@ export default function (eleventyConfig) {
 {%- endset %}
 {{ codeBlock | highlight("js") | safe }}
 
+## Highlighting Code
+
+Use [fenced code blocks](https://spec.commonmark.org/0.28/#fenced-code-blocks) to include code examples in your Markdown content, and install the [Syntax Highlighting Plugin](https://www.11ty.dev/docs/plugins/syntaxhighlight/) if you want them to be highlighted.
+
+````md
+```ts
+function hello(name: string) {
+	console.log(`Hello ${name}`);
+}
+```
+````
+
 ## Indented Code Blocks
 
 Markdown has a lesser known feature called [Indented Code Blocks](https://spec.commonmark.org/0.28/#indented-code-blocks), which means any content that is indented by four or more spaces (and has a preceding line break) will be transformed into a code block.
