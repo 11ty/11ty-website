@@ -64,7 +64,7 @@
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.3.2",
     "human-readable-numbers": "0.9.5",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "luxon": "^3.7.2",
     "markdown-it-table-of-contents": "^0.9.0",
     "memoize": "^10.2.0",
