@@ -12,7 +12,6 @@ Eleventy’s super power is that it is built on an extensible architecture that 
 .elv-page-toc-asterisk:before,
 .elv-page-toc li:has(> a[href="/docs/languages/mdx/"]):after,
 .elv-page-toc li:has(> a[href="/docs/languages/jsx/"]):after,
-.elv-page-toc li:has(> a[href="/docs/languages/typescript/"]):after,
 .elv-page-toc li:has(> a[href="/docs/languages/handlebars/"]):after,
 .elv-page-toc li:has(> a[href="/docs/languages/mustache/"]):after,
 .elv-page-toc li:has(> a[href="/docs/languages/ejs/"]):after,
