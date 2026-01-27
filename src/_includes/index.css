@@ -315,6 +315,11 @@ footer.elv-layout {
 	}
 }
 
+/* Footer */
+.elv-footer .fa11ty-icon {
+	margin-inline-start: 0;
+}
+
 /* Definition Lists */
 dl {
 	display: grid;
@@ -449,6 +454,9 @@ filter-container:defined form {
 }
 .fa-font-awesome {
 	color: #538cd7;
+}
+.fa-web-awesome {
+	color: #f36944;
 }
 .fa11ty-npm {
 	width: 2.2em;
