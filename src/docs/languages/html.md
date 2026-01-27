@@ -4,6 +4,7 @@ eleventyNavigation:
   key: HTML
   pinned: true
   order: 1
+  excerpt: Pre-processed by default as Liquid templates
 layout: layouts/langs.njk
 relatedLinks:
   /docs/config/#default-template-engine-for-html-files: Default Template Engine for HTML Files

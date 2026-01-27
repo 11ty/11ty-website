@@ -3,6 +3,7 @@ eleventyNavigation:
   parent: Template Languages
   key: Mustache
   order: 5
+  excerpt: Fast, minimal template language
 layout: layouts/langs.njk
 ---
 

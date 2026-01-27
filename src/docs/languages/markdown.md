@@ -4,6 +4,7 @@ eleventyNavigation:
   key: Markdown
   pinned: true
   order: 2
+  excerpt: Most common language for authoring content
 layout: layouts/langs.njk
 logoImage: "/img/logos/markdown.svg"
 relatedLinks:

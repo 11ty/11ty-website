@@ -3,6 +3,7 @@ eleventyNavigation:
   parent: Template Languages
   key: Handlebars
   order: 4
+  excerpt: Expanded version of Mustache
 relatedKey: handlebars
 relatedTitle: Template Language—Handlebars
 tags:
