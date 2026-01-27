@@ -6,7 +6,9 @@ eleventyNavigation:
 ---
 # Template Languages
 
-Eleventy’s super power is that it is built on an extensible architecture that can work with one or more template syntaxes in the same project.
+Eleventy’s super power is that it is built on an extensible architecture that can work with one or more template languages in the same project.
+
+Not sure which one to choose? [Nunjucks](/docs/languages/nunjucks/) is a popular option for building creating HTML pages, with plenty of examples in this documentation.
 
 <style>
 .elv-page-toc-asterisk:before,
