@@ -3,6 +3,7 @@ eleventyNavigation:
   parent: Template Languages
   key: Pug
   order: 8
+  excerpt: Shorthand syntax for HTML
 layout: layouts/langs.njk
 ---
 

@@ -3,6 +3,8 @@ eleventyNavigation:
   parent: Template Languages
   key: Sass
   order: 9
+  language: CSS extension language
+description:
 layout: layouts/langs.njk
 logoImage: "/img/logos/sass.svg"
 ---

@@ -3,6 +3,7 @@ eleventyNavigation:
   parent: Template Languages
   key: HAML
   order: 7
+  excerpt: Shorthand syntax for HTML
 layout: layouts/langs.njk
 ---
 
