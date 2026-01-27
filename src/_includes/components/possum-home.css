@@ -1,4 +1,4 @@
-.elv-header-default {
+body:has(.elv-header-default .elv-possum) {
 	overflow: hidden;
 }
 .elv-header-default .elv-possum {

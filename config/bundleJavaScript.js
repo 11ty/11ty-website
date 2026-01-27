@@ -17,7 +17,7 @@ export async function bundle(entryPoints, outfile, options = {}) {
 	}, options));
 }
 
-export async function bundleModulePath(componentPath, outfile) {
+export async function bundleModulePath(componentPath, outfile, options = {}) {
 	let sourcefile = fileURLToPath(import.meta.resolve(componentPath));
-	return bundle([ sourcefile ], outfile);
+	return bundle([ sourcefile ], outfile, options);
 }

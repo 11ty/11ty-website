@@ -33,7 +33,7 @@ function highlightCode(code, language, attrs = {}, options = {}) {
 
 	let preamble = `${copyButtonEnabled ? `<is-land on:visible data-wa-copy-button-target="${attrs.id}">
 <wa-copy-button from="${attrs.id}" tooltip-placement="left"></wa-copy-button>
-<template data-island="once"><script type="module" src="/js/copy-button.js"${inputPath?.endsWith(".webc") ? " webc:keep" : ""}></script></template>
+${!inputPath?.endsWith("/src/index.webc") ? `<template data-island="once"><script type="module" src="/js/copy-button.js"${inputPath?.endsWith(".webc") ? " webc:keep" : ""}></script></template>` : ""}
 </is-land>` : ""}`;
 
 	if(inputPath?.endsWith(".md")) {

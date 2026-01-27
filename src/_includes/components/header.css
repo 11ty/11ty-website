@@ -38,12 +38,8 @@
 	width: 100%;
 	margin: 0 auto;
 }
-.elv-nav-header {
-	padding-left: 1rem;
-	padding-right: 1rem;
-}
 @media (min-width: 55em) { /* 880px */
-	.elv-nav-header {
+	.elv-header-docs .elv-nav-header {
 		margin-block-end: 1rem;
 	}
 }
@@ -178,11 +174,26 @@
 
 /* Header Hero */
 .elv-hero {
-	display: block;
+	--stripe-color-1: #222;
+	--stripe-color-2: #222;
+	display: flex;
+	align-items: center;
+	min-width: 40vh;
+	height: 40vh;
 	background-color: #222;
-	font-family: BenchNine, system-ui, sans-serif;
 	text-decoration: none;
-	font-weight: 700;
+}
+.elv-hero:has(.elv-hero-ba) {
+	background-image: repeating-linear-gradient(-45deg, var(--stripe-color-1), var(--stripe-color-1) 10px, var(--stripe-color-2) 10px, var(--stripe-color-2) 20px);
+	background-color: var(--stripe-color-1);
+}
+.elv-hero-ba {
+	display: block;
+	margin-block: 1rem;
+	text-align: center;
+}
+.elv-hero-11ty {
+	font-size: clamp(3em, 20vh, 20vh);
 }
 a[href].elv-hero,
 a[href].elv-hero:visited {
@@ -193,14 +204,6 @@ a[href].elv-hero:visited {
 		background-color: #292929;
 	}
 }
-.elv-hero img,
-.elv-hero svg {
-	display: block;
-	width: 40vh;
-	height: 40vh;
-	margin: 10vh;
-	max-width: 100%;
-}
 .elv-hero:hover img,
 .elv-hero:hover svg {
 	background-color: inherit;
@@ -208,9 +211,6 @@ a[href].elv-hero:visited {
 .elv-header-default .elv-hero {
 	display: flex;
 	justify-content: center;
-	width: calc(100% + 2rem);
-	margin-left: -1rem;
-	margin-right: -1rem;
 }
 .elv-hero:hover {
 	background-color: #333;
@@ -219,12 +219,6 @@ a[href].elv-hero:visited {
 .elv-header-docs .elv-hero {
 	float: left;
 	margin-right: 0.5em;
-}
-.elv-header-default .elv-hero img,
-.elv-header-default .elv-hero svg {
-	position: relative;
-	background-color: transparent;
-	z-index: 1;
 }
 .elv-header-docs .elv-hero img,
 .elv-header-docs .elv-hero svg {
@@ -269,4 +263,24 @@ main h1.elv-hed:first-child {
 .elv-header-default .elv-nav-header {
 	position: relative;
 	z-index: 0;
+}
+
+/* Comparison component */
+.elv-nav-header wa-comparison:not(:defined) :where([slot="before"], [slot="handle"]) {
+	display: none;
+}
+.elv-nav-header wa-comparison {
+	--wa-color-surface-default: #111;
+	--wa-color-neutral-on-quiet: #fff;
+	--wa-border-radius-circle: 2.5em;
+	height: 40vh;
+	min-height: 11rem;
+}
+.elv-nav-header wa-comparison::part(handle):focus-visible {
+	box-shadow: 0 0 0 .25em #00aaff;
+}
+.elv-nav-header wa-comparison .fa11ty-icon[slot="handle"] {
+	width: 1em;
+	height: 1em;
+	margin: 0;
 }
