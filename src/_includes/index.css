@@ -319,6 +319,10 @@ footer.elv-layout {
 .elv-footer .fa11ty-icon {
 	margin-inline-start: 0;
 }
+.elv-footer-nav.elv-footer-nav {
+	--fl-gap-h: 3em;
+	justify-content: space-between;
+}
 
 /* Definition Lists */
 dl {
