@@ -237,7 +237,6 @@ body > .elv-callout-sticky .elv-callout-c {
 /* #2col × 1130px */
 @media (min-width: 41.4375em) and (max-width: 70.625em) {
 	.elv-toc .elv-callout {
-		border-left: 0;
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 0;
 	}
