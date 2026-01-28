@@ -218,7 +218,7 @@ a[href].elv-hero:visited {
 	display: flex;
 	justify-content: center;
 }
-.elv-hero:hover {
+.elv-hero:is(:hover, :focus) {
 	background-color: #333;
 }
 
@@ -283,10 +283,9 @@ main h1.elv-hed:first-child {
 	--wa-color-surface-default: #111;
 	--wa-color-neutral-on-quiet: #fff;
 	--wa-border-radius-circle: 2.5em;
+	--wa-focus-ring: solid .1875rem #00a877;
+	--wa-focus-ring-offset: 0.0625em;
 	height: 40vh;
-}
-.elv-nav-header wa-comparison::part(handle):focus-visible {
-	box-shadow: 0 0 0 .25em #00aaff;
 }
 .elv-nav-header wa-comparison .fa11ty-icon[slot="handle"] {
 	width: 1em;
