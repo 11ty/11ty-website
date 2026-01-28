@@ -18,12 +18,14 @@ details .elv-callout {
 	margin-left: 0;
 	margin-right: 0;
 }
-@media (min-width: 55em) {
-	/* 880px */
+
+/* #2col */
+@media (min-width: 41.4375em) {
 	.elv-callout {
 		border-radius: 0.3em;
 	}
 }
+
 @media (prefers-color-scheme: dark) {
 	.elv-callout {
 		--callout-primary: hsl(var(--callout-hue), 100%, 22%);
@@ -203,7 +205,9 @@ body > .elv-callout-sticky .elv-callout-c {
 .elv-toc .elv-callout-label {
 	margin-inline-end: 0;
 }
-@media (max-width: 54.9375em) { /* 880px - 1 */
+
+/* #2col */
+@media (max-width: 41.375em) {
 	.elv-toc .elv-callout {
 		border-inline-width: 0;
 	}
@@ -211,7 +215,9 @@ body > .elv-callout-sticky .elv-callout-c {
 		display: none;
 	}
 }
-@media (min-width: 55em) { /* 880px */
+
+/* #2col */
+@media (min-width: 41.4375em) {
 	.elv-toc .elv-callout:first-child:has(+ .elv-callout) {
 		display: flex;
 		flex-direction: row;
@@ -227,8 +233,9 @@ body > .elv-callout-sticky .elv-callout-c {
 		line-height: 2;
 	}
 }
-@media (min-width: 55em) and (max-width: 70.625em) {
-	/* 880px–1130px */
+
+/* #2col × 1130px */
+@media (min-width: 41.4375em) and (max-width: 70.625em) {
 	.elv-toc .elv-callout {
 		border-left: 0;
 		border-top-left-radius: 0;

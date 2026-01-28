@@ -60,7 +60,8 @@ is-land--eleventy-editor pre:before {
 eleventy-editor:defined {
 	margin: 1em -1rem;
 }
-@media (max-width: 54.9375em) { /* 879px */
+/* #2col */
+@media (max-width: 41.375em) {
 	eleventy-editor {
 		--border-radius: 0;
 	}

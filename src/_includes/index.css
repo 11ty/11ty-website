@@ -189,7 +189,6 @@ main .elv-toc + #skip-content >  heading-anchors > h1:first-child {
 	border-bottom: 1px solid #aaa;
 }
 @media (min-width: 55em) {
-	/* 880px */
 	main .elv-toc + #skip-content > heading-anchors > :is(h1, h2):first-child {
 		margin-top: 0;
 	}
@@ -307,8 +306,8 @@ footer.elv-layout {
 .elv-layout-toc {
 	padding-block-start: 0;
 }
-@media (min-width: 55em) {
-	/* 880px */
+/* #2col */
+@media (min-width: 41.4375em) {
 	.elv-layout-toc {
 		padding: 0 2rem 2rem 16rem;
 		position: relative;

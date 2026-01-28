@@ -38,7 +38,8 @@
 	width: 100%;
 	margin: 0 auto;
 }
-@media (min-width: 55em) { /* 880px */
+/* #2col */
+@media (min-width: 41.4375em) {
 	.elv-header-docs .elv-nav-header {
 		margin-block-end: 1rem;
 	}
@@ -50,7 +51,7 @@
 	margin-left: auto;
 	margin-right: auto;
 }
-@media (min-width: 55em) { /* 880px */
+@media (min-width: 55em) {
 	.elv-nav-menu.elv-nav-menu {
 		flex-wrap: nowrap;
 		white-space: nowrap;
@@ -91,8 +92,8 @@
 		padding-right: 4em;
 	}
 }
-/* Sticky */
-@media (min-width: 55em) and (min-height: 37.5em) { /* 880px × 600px */
+/* Sticky, #2col × 600px */
+@media (min-width: 41.4375em) and (min-height: 37.5em) {
 	/* Take care with the sticky toc too */
 	.elv-header.elv-header-docs {
 		position: sticky;

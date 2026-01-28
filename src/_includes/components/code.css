@@ -54,13 +54,12 @@ pre + .note {
 	}
 }
 @media (min-width: 37.5em) {
-	/* 600px */
 	pre {
 		font-size: 1em; /* 16px /16 */
 	}
 }
-@media (min-width: 55em) {
-	/* 880px */
+/* #2col */
+@media (min-width: 41.4375em) {
 	pre {
 		border-radius: 0.3em;
 	}
