@@ -184,6 +184,12 @@
 	background-color: #222;
 	text-decoration: none;
 }
+.elv-hero[slot="after"] {
+	background-color: #222d;
+}
+.elv-hero[slot="after"]:is(:hover, :focus) {
+	background-color: #2228;
+}
 .elv-hero:has(.elv-hero-ba) {
 	background-image: repeating-linear-gradient(-45deg, var(--stripe-color-1), var(--stripe-color-1) 10px, var(--stripe-color-2) 10px, var(--stripe-color-2) 20px);
 	background-color: var(--stripe-color-1);
@@ -211,24 +217,15 @@ a[href].elv-hero:visited {
 		background-color: #292929;
 	}
 }
-.elv-hero:hover img,
-.elv-hero:hover svg {
-	background-color: inherit;
-}
 .elv-header-default .elv-hero {
 	display: flex;
 	justify-content: center;
 }
-.elv-hero:is(:hover, :focus) {
-	background-color: #333;
-}
-
 .elv-header-docs .elv-hero {
 	float: left;
 	margin-right: 0.5em;
 }
-.elv-header-docs .elv-hero img,
-.elv-header-docs .elv-hero svg {
+.elv-header-docs .elv-hero :is(img, svg) {
 	width: 3em;
 	height: 3em;
 }
