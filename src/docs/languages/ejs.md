@@ -3,6 +3,7 @@ eleventyNavigation:
   parent: Template Languages
   key: EJS
   order: 6
+  excerpt: Embedded JavaScript
 layout: layouts/langs.njk
 ---
 

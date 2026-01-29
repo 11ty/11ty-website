@@ -4,6 +4,7 @@ eleventyNavigation:
   key: JavaScript
   pinned: true
   order: 3
+  excerpt: Run JavaScript to generate content
 addedInVersion: 0.7.0
 relatedKey: javascript
 relatedTitle: Template Language—JavaScript

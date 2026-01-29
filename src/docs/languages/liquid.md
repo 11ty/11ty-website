@@ -3,6 +3,7 @@ eleventyNavigation:
   parent: Template Languages
   key: Liquid
   order: 3
+  excerpt: Simple language also used by Jekyll and Shopify
 relatedKey: liquid
 relatedTitle: Template Language—Liquid
 tags:
@@ -327,4 +328,3 @@ export default function (eleventyConfig) {
 };
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
-

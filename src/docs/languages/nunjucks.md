@@ -3,6 +3,7 @@ eleventyNavigation:
   parent: Template Languages
   key: Nunjucks
   order: 2
+  excerpt: Popular language for generating HTML and more
 relatedKey: nunjucks
 relatedTitle: Template Language—Nunjucks
 tags:

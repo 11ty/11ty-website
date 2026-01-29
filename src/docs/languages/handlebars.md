@@ -3,6 +3,7 @@ eleventyNavigation:
   parent: Template Languages
   key: Handlebars
   order: 4
+  excerpt: A logicless templating engine similar to Mustache
 relatedKey: handlebars
 relatedTitle: Template Language—Handlebars
 tags:

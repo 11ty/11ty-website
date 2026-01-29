@@ -4,6 +4,7 @@ eleventyNavigation:
   key: Custom
   pinned: true
   order: 4
+  excerpt: Use your own template language
 relatedKey: customlang
 relatedTitle: Template Language—Custom
 layout: layouts/langs.njk
