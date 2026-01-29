@@ -277,16 +277,81 @@ Your command line might look something like:
 
 Open `http://localhost:8080/` or `http://localhost:8080/README/` in your favorite web browser to see your Eleventy site live! When you save your template files—Eleventy will refresh the browser with your new changes automatically!
 
-## <span class="numberflag"><span class="sr-only">Step</span> 6</span> Put it online (optional)
+## <span class="numberflag"><span class="sr-only">Step</span> 6</span> Create a layout
+
+You might have noticed that both HTML files and Markdown files are templates. There is no hard distinction between _content_ and _templates_ in 11ty. However, most websites have some template files that are never rendered directly, instead being used as layouts. 11ty keeps these templates in the ([configurable](/docs/config/#directory-for-includes)) `_includes` directory.
+
+Let's create one: first create the `_includes` directory:
+
+</template>
+
+<syntax-highlight language="bash">
+mkdir _includes
+</syntax-highlight>
+
+<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
+
+And then create a file that will serve as a layout, called `mylayout.njk`.
+
+{% codetitle "_includes/mylayout.njk" %}
+{% set codeBlock %}
+{% include "snippets/layouts/mylayout.njk" %}
+{% endset %}
+{{ codeBlock | highlight("html") | safe }}
+
+Now update `README.md` to indicate that it should be rendered using that template:
+
+```md
+---
+layout: mylayout.njk
+---
+
+# Heading
+```
+
+Now if you restart or reload your development server, you'll see that the page is rendered with a proper title element and HTML structure thanks to the layout.
+
+## <span class="numberflag"><span class="sr-only">Step</span> 9</span> Create a collection
+
+Listing content is fundamental to most websites. We support [collections](/docs/collections/) as a way to group templates together and list them. To add something to a collection, you add a tag to it. Let's edit that `README.md` file again and add a tag and a title to it:
+
+</template>
+<syntax-highlight @language="md" @hed="README.md">
+---
+tags: post
+title: README
+layout: mylayout.njk
+---
+
+# Heading
+</syntax-highlight>
+<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
+
+And then update the `index.html` file to list all of the posts:
+
+</template>
+<syntax-highlight @language="liquid" @hed="index.html">
+<ul>
+{%- for post in collections.post -%}
+  <li>{{ post.data.title }}</li>
+{%- endfor -%}
+</ul>
+</syntax-highlight>
+<template webc:type="11ty" 11ty:type="njk,md" webc:raw webc:nokeep>
+
+Now you should get a list of all the posts on the home page of your site.
+
+Note that `README.md` isn't in any special directory. 11ty is very unopinionated about where your content lives. However, you can configure a directory of templates to all have the same layout and tags by using a [directory specific data file](/docs/data-template-dir/). The front matter of a template, where we've specified `tags: post`, `title: README`, and `layout: mylayout.njk`, is only one of the ways that you can configure the [11ty data cascade](/docs/data-cascade/).
+
+## <span class="numberflag"><span class="sr-only">Step</span> 9</span> Put it online (optional)
 
 Your output folder (`_site`) now contains all of the statically built files for your new web site. You can upload this folder to any web host! Head over to our [deployment documentation](/docs/deployment/) to read more about putting your Eleventy project online for everyone to see.
 
-## <span class="numberflag"><span class="sr-only">Step</span> 7</span> Continue Learning…
+## <span class="numberflag"><span class="sr-only">Step</span> 10</span> Continue Learning…
 
 Congratulations—you made something with Eleventy! Now put it to work:
 
 1. Add more content! In the above tutorial we used [HTML](/docs/languages/html/) and [Markdown](/docs/languages/markdown/). Why not [JavaScript](/docs/languages/javascript/) or [WebC](/docs/languages/webc/) (for components) next? [Nunjucks](/docs/languages/nunjucks/) and [Liquid](/docs/languages/liquid/) are also very popular. Maybe you’re feeling super adventurous and want to [add your own custom type?](/docs/languages/custom/).
-1. Use [a layout file so that you don’t have to repeat boilerplate on every template](/docs/layouts/).
 1. Add a [configuration file](/docs/config/) to unlock advanced Eleventy capabilities!
 1. Add [CSS, JavaScript, or Web Fonts](/docs/assets/) to your project.
 1. It’s super easy to add automated [Image optimization](/docs/plugins/image/) too!
