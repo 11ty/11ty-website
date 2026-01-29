@@ -251,15 +251,10 @@ a[href].elv-hero:visited {
 	margin-block: 1em;
 	text-align: center;
 	text-transform: none;
+	text-wrap: balance;
 }
-main h1.elv-hed:first-child {
+main h1.elv-hed {
 	border: none;
-}
-@media (min-width: 43.75em) {
-	/* 700px */
-	.elv-header-docs .elv-hed {
-		font-size: 2.625em; /* 42px /16 */
-	}
 }
 
 /* fix: big header link fighting with versions overlay */
