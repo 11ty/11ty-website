@@ -11,6 +11,17 @@ relatedLinks:
   /docs/config/#default-template-engine-for-markdown-files: Default Template Engine for Markdown Files
 ---
 
+For many websites, Markdown is the primary template language for authoring content: it's intended to be an easy-to-read markup language for authoring blog posts, documentation, and more. The [Markdown Guide](https://www.markdownguide.org/cheat-sheet/) is a good resource for learning Markdown if you're not familiar with the syntax.
+
+{% codetitle "example.md" %}
+{% codetitle "Markdown", "Syntax" %}
+{% set codeBlock %}
+**Markdown** is a great language for writing _content_.
+You can create [links](https://11ty.dev), lists,
+tables, and more.
+{% endset %}
+{{ codeBlock | highlight("markdown") | safe }}
+
 {% tableofcontents "open" %}
 
 | Eleventy Short Name | File Extension | npm Package                                                |
@@ -19,12 +30,6 @@ relatedLinks:
 
 * Related languages: [MDX](/docs/languages/mdx/)
 
-| Eleventy version | `markdown-it` version |
-| --- | --- |
-| `@11ty/eleventy@0.x` | `markdown-it@10.x` |
-| `@11ty/eleventy@1.x` | `markdown-it@12.x` |
-| `@11ty/eleventy@2.x` | `markdown-it@13.x` |
-| `@11ty/eleventy@3.x` | `markdown-it@14.x` |
 
 {% callout "info" %}
 Markdown files are by default pre-processed as Liquid templates. <a href="/docs/config/#default-template-engine-for-markdown-files">You can change this default in your configuration file</a> (or disable it altogether). To change this for a single template and not globally, read <a href="/docs/template-overrides/">Changing a Template’s Rendering Engine</a>.
@@ -224,3 +229,12 @@ export default function(eleventyConfig) {
 
 1. Method A returns: `My really *important* content.` which is successfully [transformed as markdown into `My really <em>important</em> content`](https://spec.commonmark.org/dingus/?text=My%20really%20*important*%20content.).
 1. Method B returns: `<div>My really *important* content.</div>` which markdown treats as an HTML block which cannot have nested markdown inside of it. It’s [transformed into `<div>My really *important* content.</div>`](https://spec.commonmark.org/dingus/?text=%3Cdiv%3EMy%20really%20*important*%20content.%3C%2Fdiv%3E). Read more at the [CommonMark specification on HTML blocks](https://spec.commonmark.org/0.28/#html-blocks).
+
+## Module versions
+
+| Eleventy version | `markdown-it` version |
+| --- | --- |
+| `@11ty/eleventy@0.x` | `markdown-it@10.x` |
+| `@11ty/eleventy@1.x` | `markdown-it@12.x` |
+| `@11ty/eleventy@2.x` | `markdown-it@13.x` |
+| `@11ty/eleventy@3.x` | `markdown-it@14.x` |
