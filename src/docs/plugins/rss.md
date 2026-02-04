@@ -21,7 +21,7 @@ A pack of plugins for generating an RSS (or Atom or JSON) feed using the _Nunjuc
 
 Since RSS Plugin v2.0, this plugin offers two options to create feeds in your project:
 
-1. **Virtual templates** let you create a feed with just a few lines of configuration.  _(This is easier, more abstracted.)_
+1. **Virtual templates** let you create a feed with a few lines of configuration.  _(This is easier, more abstracted.)_
 1. **Manual templates** need more configuration and a template file. _(This requires more setup, but offers more control.)_
 
 ## Installation
