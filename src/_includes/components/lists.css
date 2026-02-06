@@ -16,10 +16,11 @@
 }
 .buzzword,
 .buzzword-list li,
-.inlinelist .inlinelist-item {
+.inlinelist-item {
 	display: inline;
 	-webkit-box-decoration-break: clone;
 	box-decoration-break: clone;
+	border-radius: .15em;
 	font-size: 116%;
 	white-space: normal;
 	padding: 0.2em 0.5em;
@@ -27,15 +28,15 @@
 	transition: 0.15s linear outline;
 }
 
-.inlinelist .inlinelist-item:is(:has([aria-selected="true"]), .active) {
+.inlinelist-item:is(:has([aria-selected="true"]), .active) {
 	background-color: #222;
 	color: #fff;
 	font-weight: inherit;
 }
-.inlinelist .inlinelist-item:is(:has([aria-selected="true"]), .active) :is(:link, :visited) {
+.inlinelist-item:is(:has([aria-selected="true"]), .active) :is(:link, :visited) {
 	color: #fff;
 }
-.inlinelist .inlinelist-item code {
+.inlinelist-item code {
 	background-color: transparent;
 	font-size: 80%;
 	margin-left: 6px;
@@ -45,20 +46,20 @@
 }
 @media (max-width: 26.8125em) {
 	/* 429px */
-	.inlinelist .inlinelist-item {
+	.inlinelist-item {
 		overflow: hidden;
 	}
-	.inlinelist .inlinelist-item code {
+	.inlinelist-item code {
 		float: right;
 		line-height: 1.75;
 	}
 }
 @media (min-width: 26.875em) {
 	/* 430px */
-	.inlinelist .inlinelist-item code {
+	.inlinelist-item code {
 		float: none;
 	}
-	.inlinelist .inlinelist-item code:before {
+	.inlinelist-item code:before {
 		content: " ";
 		border-left: 1px solid rgba(255, 255, 255, 0.8);
 		position: absolute;
@@ -67,7 +68,7 @@
 		bottom: 2px;
 	}
 	@media (prefers-color-scheme: dark) {
-		.inlinelist .inlinelist-item code:before {
+		.inlinelist-item code:before {
 			border-left-color: rgba(0, 0, 0, 0.8);
 		}
 	}
@@ -80,14 +81,14 @@ a.buzzword {
 .inlinelist a {
 	text-decoration: none;
 }
-.inlinelist .inlinelist-item {
+.inlinelist-item {
 	font-size: 100%;
 	line-height: 2;
 }
 @supports not (-webkit-box-decoration-break: clone) {
 	.buzzword,
 	.buzzword-list li,
-	.inlinelist .inlinelist-item {
+	.inlinelist-item {
 		display: inline-block;
 	}
 }
@@ -101,23 +102,23 @@ a.buzzword {
 		background-color: #080808;
 	}
 }
-.inlinelist .inlinelist-item {
+.inlinelist-item {
 	background-color: #e9e9e9;
 }
 @media (prefers-color-scheme: dark) {
-	.inlinelist .inlinelist-item {
+	.inlinelist-item {
 		background-color: #000;
 	}
-	.inlinelist .inlinelist-item a {
+	.inlinelist-item a {
 		color: #fff;
 	}
-	.inlinelist .inlinelist-item code {
+	.inlinelist-item code {
 		color: inherit;
 	}
 }
-/* .inlinelist .inlinelist-item:has(> a):hover, */
-.inlinelist .inlinelist-item:hover,
-.inlinelist .inlinelist-item:focus,
+/* .inlinelist-item:has(> a):hover, */
+.inlinelist-item:hover,
+.inlinelist-item:focus,
 .buzzword-list li:hover,
 .buzzword-list li:focus,
 .buzzword:hover,
@@ -145,9 +146,7 @@ a.buzzword {
 	text-shadow: 0 0 2px rgba(0, 0, 0, 0.9);
 	animation: rainbow 4s ease-out alternate infinite;
 }
-.inlinelist .inlinelist-item.inert,
-.inlinelist .inlinelist-item.inert:hover,
-.inlinelist .inlinelist-item.inert:focus {
+.inlinelist-item.inert {
 	background-color: transparent;
 	background-image: none;
 	color: inherit;
@@ -157,8 +156,8 @@ a.buzzword {
 .rainbow-active-noanim {
 	animation: none !important;
 }
-.inlinelist .inlinelist-item:hover a,
-.inlinelist .inlinelist-item:focus a,
+.inlinelist-item:hover a,
+.inlinelist-item:focus a,
 .buzzword-list li:hover a,
 .buzzword-list li:focus a,
 a.buzzword:hover,
@@ -169,8 +168,8 @@ a.rainbow-active:focus {
 	text-decoration: none;
 }
 @media (prefers-reduced-motion: reduce) {
-	.inlinelist .inlinelist-item:hover,
-	.inlinelist .inlinelist-item:focus,
+	.inlinelist-item:hover,
+	.inlinelist-item:focus,
 	.buzzword-list li:hover,
 	.buzzword-list li:focus,
 	.buzzword:hover,
@@ -215,20 +214,20 @@ main p a.buzzword {
 /* Small viewport */
 @media (max-width: 26.8125em) {
 	/* 429px */
-	.inlinelist .inlinelist-item {
+	.inlinelist-item {
 		display: block;
 		width: auto;
 		padding: 0;
-		line-height: 1.4;
+		/* line-height: 1.4; */
 	}
-	.inlinelist .inlinelist-item > a {
+	.inlinelist-item > * {
 		display: block;
 		padding: 0.2em 0.5em;
 	}
 }
 @media (min-width: 26.875em) {
 	/* 430px */
-	.inlinelist .inlinelist-item > a {
+	.inlinelist-item > * {
 		display: inline-block;
 		white-space: nowrap;
 	}
@@ -287,7 +286,7 @@ h2 .numberflag:after {
 .inlinelist-sm {
 	font-size: 0.6666666666667em; /* 12px /18 */
 }
-.inlinelist-sm .inlinelist-item {
+:where(.inlinelist-sm) .inlinelist-item {
 	font-family: system-ui, sans-serif;
 	font-weight: 600;
 }

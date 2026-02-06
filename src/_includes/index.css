@@ -335,6 +335,9 @@ footer.elv-layout {
 .elv-footer .fa11ty-icon {
 	margin-inline-start: 0;
 }
+.elv-footer .elv-callout {
+	margin: 0;
+}
 .elv-footer .elv-callout .fl {
 	--fl-stackpoint: 30em;
 	--fl-gap-h: 5vw;
@@ -342,6 +345,11 @@ footer.elv-layout {
 }
 .elv-footer .elv-callout :is(p, .inlinelist) {
 	margin: 0;
+}
+@media (min-width: 31.25em) { /* 500px */
+	.elv-footer-nav > :last-child {
+		text-align: right;
+	}
 }
 
 /* Definition Lists */

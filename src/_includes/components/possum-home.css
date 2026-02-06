@@ -5,7 +5,7 @@ body:has(.elv-header-default .elv-possum) {
 	--possum-top: 26%;
 	pointer-events: none;
 	width: auto;
-	height: calc((60vh - 2rem) / 1.6);
+	height: calc((50vh - 2rem) / 1.6);
 	top: var(--possum-top);
 	left: 1vw;
 	right: auto;
