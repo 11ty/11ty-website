@@ -309,14 +309,17 @@ footer.elv-layout {
 /* #2col */
 @media (min-width: 41.4375em) {
 	.elv-layout-toc {
-		padding: 0 2rem 2rem 16rem;
-		position: relative;
+		display: grid;
+		gap: 2rem;
+		grid-template-columns: 12.5rem minmax(1px, 1fr);
+		padding: 0 1rem 2rem 1rem;
 	}
 }
 
 /* Footer */
 .elv-footer-wrap {
-	margin-block-start: 2em;
+	--elv-footer-spacing: clamp(1rem, 5vw, 3rem);
+	margin-block-start: var(--elv-footer-spacing);
 	background-color: #f4f4f4;
 	border-top: 1px solid #999;
 }
@@ -326,11 +329,19 @@ footer.elv-layout {
 		border-color: #444;
 	}
 }
+.elv-footer {
+	padding-block: var(--elv-footer-spacing);
+}
 .elv-footer .fa11ty-icon {
 	margin-inline-start: 0;
 }
-.elv-footer-nav.elv-footer-nav {
-	--fl-gap-h: 3em;
+.elv-footer .elv-callout .fl {
+	--fl-stackpoint: 30em;
+	--fl-gap-h: 5vw;
+	align-items: center;
+}
+.elv-footer .elv-callout :is(p, .inlinelist) {
+	margin: 0;
 }
 
 /* Definition Lists */
@@ -433,6 +444,9 @@ filter-container:defined form {
 }
 .mi-auto {
 	margin-inline: auto;
+}
+.ta-r {
+	text-align: right;
 }
 .util-stack {
 	display: grid;

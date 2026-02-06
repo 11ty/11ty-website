@@ -44,16 +44,10 @@ ignoreGitHubButtons: true
 
 Eleventy is supported by [folks <strong>like {% emoji "👋" %} you</strong>](/docs/supporters/) that want to invest in better, longer lasting tools to create on the web.
 
-<div class="fl">
-    <div>
-        <a href="https://opencollective.com/11ty" class="btn-primary btn-primary-sm benchnine rainbow-active rainbow-active-noanim elv-externalexempt">Contribute</a>
-    </div>
-    <div style="flex-basis: 30em">
+<div><a href="https://opencollective.com/11ty" class="btn-primary btn-primary-sm benchnine rainbow-active rainbow-active-noanim elv-externalexempt">Contribute</a></div>
 
 As a thank you to our Supporters, Eleventy will:
 
 {% include "supporter-benefits.njk" %}
-
-</div></div>
 
 {% include "supporters.njk" %}

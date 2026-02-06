@@ -28,9 +28,6 @@ headerClass: elv-header-default
 
 <footer class="elv-footer-wrap">
 	<div class="elv-footer elv-layout">
-{%- if not ignoreGitHubButtons %}
-		{% include "star-on-github.njk" %}
-{%- endif %}
 	{% include "social-callout.njk" %}
 {% if not ignoreSupporters %}
 	{% include "supporters.njk" %}
