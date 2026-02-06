@@ -315,22 +315,12 @@ footer.elv-layout {
 }
 
 /* Footer */
-.elv-footer-wrap {
-	margin-block-start: 2em;
-	background-color: #f4f4f4;
-	border-top: 1px solid #999;
-}
-@media (prefers-color-scheme: dark) {
-	.elv-footer-wrap {
-		background-color: #131313;
-		border-color: #444;
-	}
-}
 .elv-footer .fa11ty-icon {
 	margin-inline-start: 0;
 }
 .elv-footer-nav.elv-footer-nav {
 	--fl-gap-h: 3em;
+	justify-content: space-between;
 }
 
 /* Definition Lists */
@@ -430,9 +420,6 @@ filter-container:defined form {
 }
 .mb-8 {
 	margin-bottom: 4em;
-}
-.mi-auto {
-	margin-inline: auto;
 }
 .util-stack {
 	display: grid;
