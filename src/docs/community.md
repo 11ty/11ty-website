@@ -5,7 +5,6 @@ eleventyNavigation:
   pinned: true
   order: 0
 ignoreSupporters: true
-ignoreGitHubButtons: true
 ---
 
 # Community

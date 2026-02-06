@@ -2,7 +2,6 @@
 headerTitle: Eleventy Not-So-Private Admin Dashboard
 ignoreSupporters: true
 ignoreFooterTestimonial: true
-ignoreGitHubButtons: true
 eleventyExcludeFromCollections: true
 layout: layouts/docs.njk
 ---
