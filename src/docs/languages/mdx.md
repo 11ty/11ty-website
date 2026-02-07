@@ -7,6 +7,8 @@ relatedTitle: Template Language—MDX
 layout: layouts/langs.njk
 ---
 
+[MDX](https://mdxjs.com/) is an extension of [Markdown](/docs/languages/markdown/) that adds JavaScript support and embedded components using [JSX syntax](/docs/languages/jsx/). It can be a powerful language for writing content if you intend to include interactive components or intermix text with elements.
+
 <!-- {% tableofcontents "open" %} -->
 
 | Eleventy Short Name | File Extension | npm Package |
@@ -15,6 +17,7 @@ layout: layouts/langs.njk
 
 * Related languages: [Markdown](/docs/languages/markdown/), [JSX](/docs/languages/jsx/), [Custom](/docs/languages/custom/)
 * While [Markdown files](/docs/languages/markdown/) are preprocessed as Liquid, MDX files are not preprocessed by any other template syntax.
+* The Markdown in MDX files is parsed and transformed using [Remark](https://remark.js.org/), which is different from Eleventy's default Markdown parser, [markdown-it](https://github.com/markdown-it/markdown-it). Changes to Markdown options won't affect MDX, and output can be different from the same Markdown input.
 
 {% callout "info", "md" %}MDX requires ESM. This means your project `package.json` must contain `"type": "module"` or your configuration file must use the `.mjs` file extension, e.g. `eleventy.config.mjs`.{% endcallout %}
 
