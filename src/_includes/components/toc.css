@@ -41,7 +41,7 @@
 /* #2col × 700px */
 @media (min-width: 41.4375em) and (min-height: 43.75em) {
 	/* Sticky on menus except Guide/Projects */
-	.elv-toc-c:not(:has(a[href="/docs/projects/"] + details[open])) {
+	.elv-toc-c:has(a[href="/docs/projects/"] + details:not([open])) {
 		position: sticky;
 		top: var(--elv-toc-sticky-top);
 	}
