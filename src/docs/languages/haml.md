@@ -7,6 +7,10 @@ eleventyNavigation:
 layout: layouts/langs.njk
 ---
 
+[HAML](https://haml.info/), or "HTML abstraction markup language," is a template language that lets you write HTML in a very terse style. The language was initially popular in the Ruby programming language, and was ported to JavaScript.
+
+If you're interested in the HTML shorthand style, the [Pug template language](/docs/languages/pug/) is likely a better option for new projects because it is more actively maintained and adopted.
+
 {% tableofcontents "open" %}
 
 | Eleventy Short Name | File Extension | npm Package                                |

@@ -7,13 +7,14 @@ eleventyNavigation:
 layout: layouts/langs.njk
 ---
 
+[Pug templates](https://pugjs.org/api/getting-started.html) let you write HTML pages in a terse shorthand.
+Previously these were known as Jade templates (the project was renamed).
+
 {% tableofcontents "open" %}
 
 | Eleventy Short Name | File Extension | npm Package                           |
 | ------------------- | -------------- | ------------------------------------- |
 | `pug`               | `.pug`         | [`pug`](https://github.com/pugjs/pug) |
-
-Pug templates were previously known as Jade templates (the project was renamed).
 
 | Eleventy or Plugin version | `pug` version |
 | --- | --- |
