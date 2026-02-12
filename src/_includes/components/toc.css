@@ -6,7 +6,12 @@
 	font-size: 1rem; /* Reset */
 }
 .elv-header-docs + .elv-layout .elv-toc {
-	--elv-toc-sticky-top: 4em;
+	--elv-toc-sticky-top: 5.625rem;
+}
+@media (min-width: 55em) { /* 880px */
+	.elv-header-docs + .elv-layout .elv-toc {
+		--elv-toc-sticky-top: 3.125rem;
+	}
 }
 @media (prefers-color-scheme: dark) {
 	.elv-toc {
