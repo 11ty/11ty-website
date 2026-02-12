@@ -204,8 +204,9 @@
 }
 .elv-hero-ba svg {
 	display: block;
-	width: 5em;
-	height: 5em;
+	width: clamp(3vh, 10vh, 10em);
+	height: auto;
+	aspect-ratio: 1/1;
 	margin: .5em auto;
 }
 .elv-hero-11ty {
