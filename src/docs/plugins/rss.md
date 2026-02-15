@@ -14,15 +14,15 @@ A pack of plugins for generating an RSS (or Atom or JSON) feed using the _Nunjuc
 
 - [GitHub](https://github.com/11ty/eleventy-plugin-rss).
 
-This plugin has a few excellent features:
+## Feature highlights
 
-* URLs are normalized to absolute URLs pointing to your hosted domain for maximum feed reader compatibility. Read more about [the dangers of relative URLs in your feeds on CSS Tricks](https://css-tricks.com/working-with-web-feeds-its-more-than-rss/#aa-beware-of-relative-urls) (Related: [#36](https://github.com/11ty/eleventy-plugin-rss/issues/36)).
-* Existing project [Transforms](/docs/transforms/) are applied to feed entries (e.g. [Image HTML Transform](/docs/plugins/image/#html-transform), [`<base>`](/docs/plugins/html-base/), [InputPath to URL](/docs/plugins/inputpath-to-url/) etc.) If you’re using a [`--pathprefix`](/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix) in your project, the URLs in your feed content are normalized for you.
+* URLs are normalized to absolute URLs, pointing to your hosted domain for maximum feed reader compatibility. Read more about [the dangers of relative URLs in your feeds on CSS Tricks](https://css-tricks.com/working-with-web-feeds-its-more-than-rss/#aa-beware-of-relative-urls) (Related: [#36](https://github.com/11ty/eleventy-plugin-rss/issues/36)).
+* Existing project [Transforms](/docs/transforms/) are applied to feed entries (e.g. [Image HTML Transform](/docs/plugins/image/#html-transform), [`<base>`](/docs/plugins/html-base/), [InputPath to URL](/docs/plugins/inputpath-to-url/), etc.) If you’re using a [`--pathprefix`](/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix) in your project, the URLs in your feed content are normalized for you.
 
-Starting with RSS Plugin v2.0 and newer, there are two options to create feeds in your project using this plugin:
+Since RSS Plugin v2.0, this plugin offers two options to create feeds in your project:
 
-1. Using a _virtual template_ to create a feed with a few lines of configuration (easier, more abstracted).
-1. Using a _manual template_, adding configuration and a template file (more setup, but more control).
+1. **Virtual templates** let you create a feed with a few lines of configuration.  _(This is easier, more abstracted.)_
+1. **Manual templates** need more configuration and a template file. _(This requires more setup, but offers more control.)_
 
 ## Installation
 
@@ -66,7 +66,7 @@ export default function (eleventyConfig) {
 {% endset %}
 {% include "snippets/configDefinition.njk" %}
 
-This configuration is the only step you need. If you need additional control over the template output, you can use the [Manual Template](#manual-template) method.
+This configuration is the only step for the Virtual Template method. If you need additional control over the template output, you can use the [Manual Template](#manual-template) method.
 
 <details>
 <summary>Expand for full options list</summary>
@@ -75,7 +75,7 @@ This configuration is the only step you need. If you need additional control ove
 * `outputPath`: (required, default: `/feed.xml`) Where to write the template in the output directory.
 * `inputPath`: (optional, default based on `metadata.title`) Change where the virtual template pretends to live on the file system (e.g. if you want project directory data files to apply via the [Data Cascade](/docs/data-cascade/))
 * `collection.name`: Collection entries to iterate over to populate your feed (e.g. `name: "posts"` for `collections.posts`)
-* `collection.limit`: Number of entries to include (`0` means no limit).
+* `collection.limit`: Number of entries to include. (Use `0` for no limit.)
 * `metadata`: Content used to populate the feed boilerplate.
 * `stylesheet`: URL to an XSL stylesheet to change how the feed is rendered in the browser (only for Atom and RSS feeds).
 * `templateData`, defaults to `{}`: Additional data to apply to the template (e.g. to add your feed to the [Navigation plugin](/docs/plugins/navigation/))
@@ -125,8 +125,8 @@ export default function (eleventyConfig) {
 
 #### Less Important Filters
 
-- **Deprecated** `absoluteUrl`: _For performance reasons, the [`renderTransforms` filter](/docs/filters/render-transforms/) is recommended instead, making use of the HTML `<base>` plugin._ converts a single URL (relative or absolute path) to a full absolute URL including protocol, domain, full path.
-- **Deprecated** `htmlToAbsoluteUrls`: _For performance reasons, the [`renderTransforms` filter](/docs/filters/render-transforms/) is recommended instead, making use of the HTML `<base>` plugin._ (async) transforms all of the URLs in a block of HTML with `absoluteUrl` above. Uses [posthtml-urls](https://github.com/11ty/posthtml-urls) with `a[href]`, `video[src]`, `audio[src]`, `source`, `img[src]`, `[srcset]` and [a whole bunch more](https://github.com/11ty/eleventy-posthtml-urls/blob/6e064c8a03174835eb15afbb5b759fecd696f901/lib/defaultOptions.js#L12-L33).
+- **Deprecated** `absoluteUrl`: _For performance reasons, the [`renderTransforms` filter](/docs/filters/render-transforms/) is recommended instead, making use of the HTML `<base>` plugin._ Converts a single URL (relative or absolute path) to a full absolute URL including protocol, domain, full path.
+- **Deprecated** `htmlToAbsoluteUrls`: _For performance reasons, the [`renderTransforms` filter](/docs/filters/render-transforms/) is recommended instead, making use of the HTML `<base>` plugin._ (async) Transforms all of the URLs in a block of HTML with `absoluteUrl` above. Uses [posthtml-urls](https://github.com/11ty/posthtml-urls) with `a[href]`, `video[src]`, `audio[src]`, `source`, `img[src]`, `[srcset]` and [a whole bunch more](https://github.com/11ty/eleventy-posthtml-urls/blob/6e064c8a03174835eb15afbb5b759fecd696f901/lib/defaultOptions.js#L12-L33).
 - **⚠️ Removed in RSS v2.0.0** `rssLastUpdatedDate`, poorly named (works with Atom and JSON feeds, not RSS). Use `getNewestCollectionItemDate | dateToRfc3339` instead.
 - **⚠️ Removed in RSS v2.0.0** `rssDate`, poorly named (works with Atom and JSON feeds, not RSS). Use `dateToRfc3339` instead.
 
@@ -309,9 +309,9 @@ The following feed samples **require RSS Plugin v2.0** or newer. [Samples for RS
 </div>
 </seven-minute-tabs>
 
-Place the file in your input directory (and give it a `.njk` extension). For example: src/feed.njk or src/feed.json. If your input directory is `src`, the file will be transformed into a `feed.xml` (or `feed.json` if you’re using the JSON variant) file at the root of your website when Eleventy builds. It can then be useful to check the file against a feed validator, such as the [W3C Feed Validation Service](https://validator.w3.org/feed/) to make sure that the output was good.
+Place the file in your input directory, and give it a `.njk` extension. (For example: `src/feed.njk` or `src/feed.json`.) If your input directory is `src`, the file will be transformed into a `feed.xml` (or `feed.json` if you’re using the JSON variant) file at the root of your website when Eleventy builds. It can then be useful to check the file against a feed validator, such as the [W3C Feed Validation Service](https://validator.w3.org/feed/) to make sure that the output was good.
 
-Ultimately your feed will be available at `https://yourwebsite.com/feed.xml` (or `https://yourwebsite.com/feed.json`)
+Ultimately, your feed will be available at `https://yourwebsite.com/feed.xml` (or `https://yourwebsite.com/feed.json`).
 
 ## Community Plugins
 
