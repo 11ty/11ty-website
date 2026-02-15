@@ -1,6 +1,16 @@
+.toc ul {
+	list-style: none;
+	padding-left: 0;
+	margin-left: 1em;
+}
+.toc li::before {
+	content: "•";
+	margin-right: 0.4em; /* Adjust this for bullet-text spacing */
+}
+
 .elv-toc {
 	--elv-toc-sticky-top: 0;
-	--elv-toc-spacing: .75em;
+	--elv-toc-spacing: 0.75em;
 	--elv-toc-link-color: #1873a5;
 	--elv-toc-hover-color: #dff7ff;
 	font-size: 1rem; /* Reset */
@@ -8,7 +18,8 @@
 .elv-header-docs + .elv-layout .elv-toc {
 	--elv-toc-sticky-top: 5.625rem;
 }
-@media (min-width: 55em) { /* 880px */
+@media (min-width: 55em) {
+	/* 880px */
 	.elv-header-docs + .elv-layout .elv-toc {
 		--elv-toc-sticky-top: 3.125rem;
 	}
@@ -34,7 +45,7 @@
 		display: block;
 		background-color: var(--elv-toc-bg);
 		margin-inline: -1rem;
-		padding: .5rem;
+		padding: 0.5rem;
 		margin-block-end: 2.5em;
 	}
 }
@@ -78,25 +89,31 @@
 
 /* Menus nested exact 2 levels deep */
 .elv-toc-list {
-	--toc-border-color: rgba(0,0,0,.06);
+	--toc-border-color: rgba(0, 0, 0, 0.06);
 }
 @media (prefers-color-scheme: dark) {
 	.elv-toc-list {
-		--toc-border-color: rgba(255,255,255,.06);
+		--toc-border-color: rgba(255, 255, 255, 0.06);
 	}
 }
 .elv-toc-list > li > details > ul > li > ul > li {
 	border-inline-start: 2px solid var(--toc-border-color);
 }
-.elv-toc-list > li > details > ul > li > ul > li:is(.elv-toc-active, :has(.elv-toc-active)) {
+.elv-toc-list
+	> li
+	> details
+	> ul
+	> li
+	> ul
+	> li:is(.elv-toc-active, :has(.elv-toc-active)) {
 	--toc-border-color: #63e6be;
 	--toc-border-width: 2px;
 }
 .elv-toc-list > li > details > ul > li > ul > li > a {
-	padding-inline: .5em;
+	padding-inline: 0.5em;
 }
 .elv-toc-list ul ul {
-	margin-inline-start: .25em;
+	margin-inline-start: 0.25em;
 }
 .elv-toc-list ul ul ul {
 	margin-inline-start: 1.5em; /* 24px /16 */
@@ -112,11 +129,11 @@
 @media (max-width: 41.375em) {
 	.elv-toc-list a,
 	.elv-toc-list span:where(:has(+ ul)) {
-		padding-block: .5em;
+		padding-block: 0.5em;
 	}
 }
 .elv-toc-list a:hover {
-	text-underline-offset: .1em;
+	text-underline-offset: 0.1em;
 }
 .elv-toc-list > li details a[href] {
 	color: var(--elv-toc-link-color);
@@ -159,7 +176,6 @@
 	color: var(--color);
 }
 
-
 /* Active links */
 .elv-toc-list li.elv-toc-active > a,
 .elv-toc-list li.elv-toc-active > details > summary,
@@ -178,13 +194,24 @@ details-force-state:defined .elv-toc-list > li > a:has(+ details) {
 	padding-inline: 0 0.5em; /* 8px /16 */
 	background-color: var(--elv-toc-bg, var(--background-color));
 }
-details-force-state:defined .elv-toc-list > li.elv-toc-active > a:has(+ details),
+details-force-state:defined
+	.elv-toc-list
+	> li.elv-toc-active
+	> a:has(+ details),
 details-force-state:defined .elv-toc-list > li > a:has(+ details):hover,
 details-force-state:defined .elv-toc-list > li > a:hover + details > summary,
-details-force-state:defined .elv-toc-list > li > a:has(+ details > summary:hover) {
+details-force-state:defined
+	.elv-toc-list
+	> li
+	> a:has(+ details > summary:hover) {
 	background-color: var(--elv-toc-hover-color);
 }
-details-force-state:not(:defined) .elv-toc-list > li > a:has(+ details) + details > summary:after {
+details-force-state:not(:defined)
+	.elv-toc-list
+	> li
+	> a:has(+ details)
+	+ details
+	> summary:after {
 	content: " Menu";
 }
 
@@ -196,8 +223,8 @@ details-force-state:not(:defined) .elv-toc-list > li > a:has(+ details) + detail
 /* Wrapper around the markdown Table of contents plugin */
 details.toc {
 	border-radius: 0.4em;
-	padding: .5rem;
-	margin-inline: -.5rem;
+	padding: 0.5rem;
+	margin-inline: -0.5rem;
 	/* padding: 0.5rem 0.5rem 0 0.5rem; */
 	/* margin: 0 -0.5rem 3em -0.5rem; */
 }
@@ -223,10 +250,24 @@ details.toc[open] > summary {
 }
 
 /* Markdown table of contents plugin */
+.table-of-contents {
+	margin-left: 1em;
+}
+.table-of-contents > ul {
+	margin: 0;
+	padding: 0;
+	list-style-position: inside;
+}
+.table-of-contents > ul > li {
+	margin: 0.25em 0;
+	padding: 0;
+}
 .table-of-contents > ul ul {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 0.5em 2em;
+	gap: 0.25em 2em;
+	margin-top: 0;
+	padding-top: 0;
 }
 .table-of-contents > ul ul > li {
 	padding: 0;
@@ -247,10 +288,9 @@ details.toc[open] > summary {
 	margin-inline-start: 0;
 }
 .elv-toc ul ul .fa11ty-icon use[href] {
-	opacity: .8;
+	opacity: 0.8;
 	color: inherit !important;
 }
-
 
 /* Full page nav as main content */
 .elv-page-toc {
