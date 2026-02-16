@@ -306,12 +306,16 @@ footer.elv-layout {
 .elv-layout-toc {
 	padding-block-start: 0;
 }
+.elv-local-toc {
+	position: sticky;
+	top: 3.5rem;
+}
 /* #2col */
 @media (min-width: 41.4375em) {
 	.elv-layout-toc {
 		display: grid;
 		gap: 2rem;
-		grid-template-columns: 12.5rem minmax(1px, 1fr);
+		grid-template-columns: 12.5rem minmax(1px, 1fr) 12.5rem;
 		padding: 0 1rem 2rem 1rem;
 	}
 }

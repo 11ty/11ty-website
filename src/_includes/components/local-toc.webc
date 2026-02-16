@@ -1,0 +1,17 @@
+<style webc:scoped>
+:host .data {
+	background: red;
+}
+:host .page {
+	background: yellow;
+}
+</style>
+
+<div webc:if="tocData">
+	<div class='post' webc:for="child of tocData.children">
+		<div>
+			<div @text="JSON.stringify(Object.keys(child))"/>
+			<a :href="`#${child.anchor}`" @text="child.text" />
+		</div>
+	</div>
+</div>
