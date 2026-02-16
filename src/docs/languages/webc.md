@@ -1201,6 +1201,30 @@ The following plugins offer official WebC components for use in your projects:
   - Example: `<img webc:is="eleventy-image" webc:import="npm:@11ty/eleventy-img">`
   - Read more at [the Image WebC component](../plugins/image-webc.md).
 
+### Eleventy Data Cascade
+
+To access **global data** from the Data Cascade, you can use `$data` variable in your component's javascript. For example:
+
+For example, if you have this in `_data/site.json`:
+
+```json
+{
+  "title": "My Site Title"
+}
+```
+
+In an internal webc component, that is in a sub-folder such as `src/_includes/components/*`, you can access that data via:
+
+```html
+<h1 @text="$data.site.title"></h1>
+```
+
+In a top-level webc component, such as a layout file or other \*.webc files in the Eleventy input folder, you can access global data variables directly without `$data`:
+
+```html
+<h1 @text="site.title"></h1>
+```
+
 ### CSS and JS (Bundler mode)
 
 Eleventy WebC will bundle any specific page’s assets (CSS and JS used by components on the page). These are automatically rolled up when a component uses `<script>`, `<script src>`, `<style>`, or `<link rel="stylesheet">`. You can use this to implement component-driven Critical CSS.
