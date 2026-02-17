@@ -710,6 +710,10 @@ You can also specify an attribute value to `webc:scoped` to hard code your own c
 
 This is similar to using [JavaScript as a custom Eleventy Front Matter type](/docs/data-frontmatter-customize/#example-use-javascript-in-your-front-matter), although data in `webc:setup` is scoped to the component and _does not_ flow back up in the Data Cascade.
 
+{% callout "info", "md" %}
+**Note:** This JavaScript is run _only once_ per build, even if the component is used in multiple instances. Therefore, there is no access inside the `<script webc:setup>` tag to instance-specific data such as attributes, props, or slots.
+{% endcallout %}
+
 {% codetitle "components/my-component.webc" %}
 
 ```html
