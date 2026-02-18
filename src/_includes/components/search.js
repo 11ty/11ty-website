@@ -55,6 +55,15 @@ class Search {
 				let search = await pagefind.search(value);
 				let results = await Promise.all(search.results.map((r) => r.data()));
 
+				// Deprioritize blog search results
+				results.sort((a, b) => {
+					const aIsBlog = a.url.startsWith('/blog');
+					const bIsBlog = b.url.startsWith('/blog');
+					if (aIsBlog && !bIsBlog) return 1;
+					if (!aIsBlog && bIsBlog) return -1;
+					return 0; // keep Pagefind's order otherwise
+				});
+
 				for (let result of results) {
 					this.addResult(result, value);
 				}
