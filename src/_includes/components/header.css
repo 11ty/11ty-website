@@ -289,3 +289,11 @@ main h1.elv-hed {
 	height: 1em;
 	margin: 0;
 }
+
+.elv-mascot-image {
+	position: absolute;
+	bottom: 0;
+	right: 15%;
+	width: 100px;
+	height: auto;
+}
