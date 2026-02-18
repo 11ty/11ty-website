@@ -27,6 +27,7 @@ class Search {
 		.replace(/&lt;mark>/g, "<mark>")
 		.replace(/&lt;\/mark>/g, "</mark>")}</code>
 	</p>
+	<p class="search-result-doc-path">${result.url}</p>
 </a>
 `;
 

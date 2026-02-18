@@ -53,14 +53,17 @@
 .search-results-item:is(:hover, :focus) {
 	background-color: var(--search-result-active-bg);
 }
+.search-results-item code {
+	background-color: var(--background-color);
+}
 .search-results-item:is(:hover, :focus) code {
-	background-color: var(--search-result-active-code-bg);
+	background-color: var(--search-result-active-bg);
 }
 a[href].search-results-item:not(:hover, :focus) {
 	text-decoration-color: rgba(0,0,0,0); /* transparent */
 }
 a[href].search-results-item:is(:hover, :focus) {
-	text-decoration-color: var(--search-result-underline);
+	text-decoration: none;
 }
 
 .search-results-item-title {
@@ -69,5 +72,15 @@ a[href].search-results-item:is(:hover, :focus) {
 .search-results-item-matches {
 	font-size: 0.75em;
 	line-height: 1.8;
-	max-width: 50em;
+	max-width: 60em;
+}
+
+.search-result-doc-path {
+	margin: 0px;
+	font-size: 0.75em;
+	opacity: 0.8;
+	text-decoration: underline;
+	text-underline-position: under;
+  text-decoration-thickness: 1px;
+  text-underline-offset: -2px;
 }
