@@ -1,17 +1,78 @@
-<style webc:scoped>
-:host .data {
-	background: red;
+<style>
+.local-toc {
+	--elv-toc-link-color: #1873a5;
+	--elv-toc-hover-color: #dff7ff;
 }
-:host .page {
-	background: yellow;
+@media (prefers-color-scheme: dark) {
+	.elv-local-toc {
+		--elv-toc-link-color: #86d0fb;
+		--elv-toc-hover-color: #353535;
+	}
+}
+.local-toc {
+	font-size: 0.85rem;
+	list-style-type: none;
+	padding: 0 0 0 10px;
+}
+.local-toc li {
+	padding: 0;
+}
+.local-toc li a {
+	padding: 2px 0;
+	font-weight: 500;
+	color: var(--elv-toc-link-color);
+	text-underline-offset: 0.1em;
+	display: block;
+	border-left: 1px solid #eee;
+	text-decoration: none;
+	opacity: 0.6;
+}
+.local-toc li a:hover {
+	opacity: 1;
+}
+.local-toc li.level-2 a {
+	padding-left: 5px;
+}
+.local-toc li.level-3 a {
+	padding-left: 10px;
+}
+.local-toc li a.active {
+	opacity: 1;
+	border-left: 1px solid #000;
 }
 </style>
+<ul class='local-toc' webc:if="tocData?.length">
+	<local-toc-item webc:for="item of tocData" :href="`#${item.anchor}`" :text="item.text" :level="item.level" />
+</ul>
+<script>
+{
+	const toc = document.querySelector(".local-toc");
+	if (toc) {
+		const links = toc.querySelectorAll("a[href^='#']");
+		const ids = Array.from(links).map(a => a.getAttribute("href").slice(1));
+		const headings = ids.map(id => document.getElementById(id)).filter(Boolean);
+		const visible = new Set();
 
-<div webc:if="tocData">
-	<div class='post' webc:for="child of tocData.children">
-		<div>
-			<div @text="JSON.stringify(Object.keys(child))"/>
-			<a :href="`#${child.anchor}`" @text="child.text" />
-		</div>
-	</div>
-</div>
+		const observer = new IntersectionObserver((entries) => {
+			for (const entry of entries) {
+				if (entry.isIntersecting) {
+					visible.add(entry.target.id);
+				} else {
+					visible.delete(entry.target.id);
+				}
+			}
+			const first = headings.find(h => visible.has(h.id));
+			if (first) {
+				for (const link of links) link.classList.remove("active");
+				const active = toc.querySelector(`a[href="#${first.id}"]`);
+				if (active) active.classList.add("active");
+			}
+		}, {
+			rootMargin: "0px 0px -70% 0px",
+			threshold: 0,
+		});
+
+		for (const heading of headings) observer.observe(heading);
+	}
+}
+</script>
