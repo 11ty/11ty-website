@@ -309,6 +309,8 @@ footer.elv-layout {
 .elv-local-toc {
 	position: sticky;
 	top: 3.5rem;
+	max-height: calc(100vh - 4rem);
+	overflow-y: auto;
 }
 
 /** #1col */

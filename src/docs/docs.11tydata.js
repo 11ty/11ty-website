@@ -27,6 +27,11 @@ let data = {
 	eleventyComputed: {
 		tocData: (data) => {
 			const cleaned = data.page.rawInput
+				// Strip frontmatter
+				.replace(/^---[\s\S]*?---\n*/m, "")
+				// Strip raw blocks (code examples) entirely
+				.replace(/\{%[-\s]*raw\s*%\}[\s\S]*?\{%[-\s]*endraw\s*%\}/g, "")
+				// Strip remaining nunjucks tags
 				.replace(/\{%.*?%\}/gs, "")
 				.replace(/\{\{.*?\}\}/gs, "");
 			const toc = createToc(cleaned, {

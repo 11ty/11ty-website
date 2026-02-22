@@ -1,18 +1,33 @@
 <style>
-.local-toc {
+.local-toc-details {
 	--elv-toc-link-color: #1873a5;
 	--elv-toc-hover-color: #dff7ff;
 }
 @media (prefers-color-scheme: dark) {
-	.elv-local-toc {
+	.local-toc-details {
 		--elv-toc-link-color: #86d0fb;
 		--elv-toc-hover-color: #353535;
+	}
+}
+.local-toc-details summary {
+	font-weight: 600;
+	font-size: 0.85rem;
+	cursor: pointer;
+	padding: 0.5rem 0;
+}
+@media (min-width: 41.4375em) {
+	.local-toc-details summary {
+		display: none;
+	}
+	.local-toc-details > .local-toc {
+		display: block;
 	}
 }
 .local-toc {
 	font-size: 0.85rem;
 	list-style-type: none;
-	padding: 0 0 0 10px;
+	padding: 0;
+	margin: 0;
 }
 .local-toc li {
 	padding: 0;
@@ -41,11 +56,19 @@
 	border-left: 1px solid #000;
 }
 </style>
-<ul class='local-toc' webc:if="tocData?.length">
-	<local-toc-item webc:for="item of tocData" :href="`#${item.anchor}`" :text="item.text" :level="item.level" />
-</ul>
+<details class="local-toc-details" webc:if="tocData?.length">
+	<summary>On this page</summary>
+	<ul class='local-toc'>
+		<local-toc-item webc:for="item of tocData" :href="`#${item.anchor}`" :text="item.text" :level="item.level" />
+	</ul>
+</details>
 <script>
 {
+	const details = document.querySelector(".local-toc-details");
+	if (details && window.matchMedia("(min-width: 41.4375em)").matches) {
+		details.open = true;
+	}
+
 	const toc = document.querySelector(".local-toc");
 	if (toc) {
 		const links = toc.querySelectorAll("a[href^='#']");
