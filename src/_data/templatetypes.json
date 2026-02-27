@@ -51,6 +51,10 @@
 	"ext": "jsx",
 	"url": "/docs/languages/jsx/"
 },{
+	"name": "Edge.js",
+	"ext": "edge",
+	"url": "/docs/languages/edgejs/"
+},{
 	"name": "MDX",
 	"ext": "mdx",
 	"url": "/docs/languages/mdx/"
