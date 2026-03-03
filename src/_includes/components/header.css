@@ -209,6 +209,13 @@
 	aspect-ratio: 1/1;
 	margin: .5em auto;
 }
+.elv-hero-ba svg + svg {
+	display: block;
+	width: clamp(5vh, 25vh, 20em);
+	height: auto;
+	aspect-ratio: 300/109;
+	margin-block: clamp(5vh, 5vh, 2.5em);
+}
 .elv-hero-11ty {
 	font-size: clamp(7em, 20vh, 20vh);
 }
@@ -296,4 +303,5 @@ main h1.elv-hed {
 	right: 15%;
 	width: 100px;
 	height: auto;
+	filter: drop-shadow(3px 3px #0006);
 }

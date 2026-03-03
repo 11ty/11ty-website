@@ -6,6 +6,7 @@
 	right: 0;
 	top: 0.5rem;
 	transition: 0.3s opacity ease-out;
+	filter: drop-shadow(3px 3px #0006);
 }
 /* #2col */
 @media (max-width: 41.375em) {
@@ -18,8 +19,9 @@
 .elv-header-docs .elv-possum {
 	width: 10vw;
 	height: auto;
-	aspect-ratio: 222 / 388;
+	aspect-ratio: 790 / 2125;
 	max-width: 3.75em; /* 60px /16 */
+	filter: drop-shadow(1px 1px #0006);
 }
 @media (min-width: 81.25em) { /* 1300px */
 	.elv-header-docs .elv-possum {
