@@ -187,12 +187,6 @@
 	background-color: #222;
 	text-decoration: none;
 }
-.elv-hero[slot="after"] {
-	background-color: #222e;
-}
-.elv-hero[slot="after"]:is(:hover, :focus) {
-	background-color: #222a;
-}
 .elv-hero:has(.elv-hero-ba) {
 	background-image: repeating-linear-gradient(-45deg, var(--stripe-color-1), var(--stripe-color-1) 10px, var(--stripe-color-2) 10px, var(--stripe-color-2) 20px);
 	background-color: var(--stripe-color-1);
