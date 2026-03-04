@@ -1,7 +1,6 @@
-
 /* Header */
 .elv-menu {
-	background-color: rgba(255, 255, 255, .65);
+	background-color: rgba(255, 255, 255, 0.65);
 	color: var(--color);
 	backdrop-filter: blur(15px);
 }
@@ -24,7 +23,7 @@
 }
 @media (prefers-color-scheme: dark) {
 	.elv-menu {
-		background-color: rgba(0,0,0,.65);
+		background-color: rgba(0, 0, 0, 0.65);
 	}
 }
 .elv-header {
@@ -69,8 +68,8 @@
 	max-height: 2em;
 	background-color: #222;
 	text-align: center;
-	border-radius: .15em;
-	padding: 0 .25em;
+	border-radius: 0.15em;
+	padding: 0 0.25em;
 }
 .elv-nav-menu-logo svg {
 	width: 100%;
@@ -87,7 +86,8 @@
 .elv-nav-menu {
 	padding-right: 1rem;
 }
-@media (min-width: 34.4375em) and (max-width: 74.9375em) { /* 551px–1199px */
+@media (min-width: 34.4375em) and (max-width: 74.9375em) {
+	/* 551px–1199px */
 	.elv-header-docs .elv-nav-menu {
 		padding-right: 4em;
 	}
@@ -110,31 +110,32 @@
 }
 
 .elv-nav-menu {
-	--search-bg: rgba(255,255,255,.8);
-	--search-icon: rgba(0,0,0,.4);
-	--search-border: rgba(0,0,0,.2);
+	--search-bg: rgba(255, 255, 255, 0.8);
+	--search-icon: rgba(0, 0, 0, 0.4);
+	--search-border: rgba(0, 0, 0, 0.2);
 	--search-text: #000;
 	--search-radius: 1rem;
 }
 @media (prefers-color-scheme: dark) {
 	.elv-nav-menu {
-		--search-bg: rgba(0,0,0,.8);
-		--search-icon: rgba(255,255,255,.4);
-		--search-border: rgba(255,255,255,.2);
+		--search-bg: rgba(0, 0, 0, 0.8);
+		--search-icon: rgba(255, 255, 255, 0.4);
+		--search-border: rgba(255, 255, 255, 0.2);
 		--search-text: #fff;
 	}
 }
 .elv-header-default .elv-nav-menu {
-	--search-bg: rgba(0,0,0,.8);
-	--search-icon: rgba(255,255,255,.4);
-	--search-border: rgba(255,255,255,.2);
+	--search-bg: rgba(0, 0, 0, 0.8);
+	--search-icon: rgba(255, 255, 255, 0.4);
+	--search-border: rgba(255, 255, 255, 0.2);
 	--search-text: #fff;
 }
 
 .elv-nav-menu form {
 	color: var(--search-text);
 }
-@media (min-width: 67.5em) { /* 1080px */
+@media (min-width: 67.5em) {
+	/* 1080px */
 	.elv-nav-menu form {
 		margin-inline: 2em;
 	}
@@ -151,9 +152,9 @@
 	background-color: var(--search-bg);
 }
 .elv-nav-menu button {
-	font-size: .75em;
+	font-size: 0.75em;
 	margin: 0;
-	padding-inline: .75em;
+	padding-inline: 0.75em;
 	border-radius: var(--search-radius);
 	border: none;
 	color: var(--search-icon);
@@ -185,7 +186,13 @@
 	text-decoration: none;
 }
 .elv-hero:has(.elv-hero-ba) {
-	background-image: repeating-linear-gradient(-45deg, var(--stripe-color-1), var(--stripe-color-1) 10px, var(--stripe-color-2) 10px, var(--stripe-color-2) 20px);
+	background-image: repeating-linear-gradient(
+		-45deg,
+		var(--stripe-color-1),
+		var(--stripe-color-1) 10px,
+		var(--stripe-color-2) 10px,
+		var(--stripe-color-2) 20px
+	);
 	background-color: var(--stripe-color-1);
 }
 .elv-hero-ba {
@@ -198,7 +205,7 @@
 	width: clamp(3vh, 10vh, 10em);
 	height: auto;
 	aspect-ratio: 1/1;
-	margin: .5em auto;
+	margin: 0.5em auto;
 	color: #183153;
 }
 .elv-hero-ba svg + svg {
@@ -269,7 +276,9 @@ main h1.elv-hed {
 }
 
 /* Comparison component */
-.elv-nav-header wa-comparison:not(:defined) :where([slot="before"], [slot="handle"]) {
+.elv-nav-header
+	wa-comparison:not(:defined)
+	:where([slot="before"], [slot="handle"]) {
 	display: none;
 }
 .elv-nav-header wa-comparison,
@@ -280,7 +289,7 @@ main h1.elv-hed {
 	--wa-color-surface-default: #111;
 	--wa-color-neutral-on-quiet: #fff;
 	--wa-border-radius-circle: 2.5em;
-	--wa-focus-ring: solid .1875rem #00a877;
+	--wa-focus-ring: solid 0.1875rem #00a877;
 	--wa-focus-ring-offset: 0.0625em;
 	height: 40vh;
 }
@@ -299,14 +308,15 @@ main h1.elv-hed {
 	filter: drop-shadow(3px 3px #0006);
 }
 
-
 .promo-dialog {
 	--width: 40em;
-	display: block;
 	margin-block: auto;
 }
-.promo-dialog wa-button::part(base)  {
+.promo-dialog wa-button::part(base) {
 	background: #00a877;
 	color: #fff;
 	font-weight: 700;
+}
+.promo-dialog p {
+	color: black;
 }

@@ -67,7 +67,6 @@
 			</a>
 			<i class="fa-solid fa-grip-vertical" slot="handle"></i>
 		</wa-comparison>
-		<script type="module" src="/js/web-awesome.js"></script>
 {%- endif %}
 
 		<is-land class="elv-possum-island" on:visible on:idle on:load on:save-data="false" on:media="(prefers-reduced-motion: no-preference)">
@@ -82,28 +81,33 @@
 	</div>
 
 
-	<wa-dialog class="promo-dialog" light-dismiss>
+	<wa-dialog id="promo-dialog" class="promo-dialog" light-dismiss>
 		<iframe class="video-player" src="https://player.vimeo.com/video/1168551192?h=6ba669b3ff&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Now on Kickstarter: Build Awesome — Collaborate on Web Sites That Last"></iframe>
 
-		{# <script src="https://player.vimeo.com/api/player.js"></script> #}
+		<p class=""><strong>The same static site generator you know and love, now with endless Pro 'possum-bilities. But just like other parts of the Awesomeverse, Build Awesome will continue to be free and open source.</strong></p>
 
-		{# <iframe class="video-player" src="https://www.kickstarter.com/projects/fontawesome/build-awesome/widget/video.html" frameborder="0" scrolling="no" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> #}
-
-		<p><strong>The same static site generator you know and love, now with endless Pro 'possum-bilities. But just like other parts of the Awesomeverse, Build Awesome will continue to be free and open source.</strong></p>
 		<wa-button slot="footer" variant="brand" href="{{ config.kickstarterUrl }}">Support the Kickstarter!</wa-button>
 	</wa-dialog>
 
-	<script type="module">
-		const dialog = document.querySelector('.promo-dialog');
-		if(!localStorage.getItem("ba-promo-dialog") && dialog) {
-			let link = document.createElement("link");
-			link.setAttribute("rel", "stylesheet");
-			link.setAttribute("href", "/css/web-awesome.css");
-			document.head.appendChild(link);
-			link.onload = function() {
-				dialog.open = true;
-			};
-			// set localStorage on close
-		}
-	</script>
+	<button id="reset-promo-dialog" onclick="localStorage.removeItem('ba-promo-dialog'); location.reload();">Reset Promo Dialog</button>
 </header>
+
+<script type="module">
+	if (!localStorage.getItem('ba-promo-dialog')) {
+
+		// Wait for Web Awesome kit to load and register components
+		try {
+			await customElements.whenDefined('wa-dialog');
+
+			const dialog = document.querySelector('#promo-dialog');
+			dialog.open = true;
+
+			// Save to localStorage when dialog is closed
+			dialog.addEventListener('wa-hide', () => {
+				localStorage.setItem('ba-promo-dialog', 'closed');
+			}, { once: true });
+		} catch (error) {
+			console.error('Error loading dialog:', error);
+		}
+	}
+</script>
