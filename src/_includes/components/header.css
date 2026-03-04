@@ -310,7 +310,7 @@ main h1.elv-hed {
 
 .promo-dialog {
 	--width: 40em;
-	margin-block: auto;
+	--spacing: 0;
 }
 .promo-dialog wa-button::part(base) {
 	background: #00a877;
@@ -319,4 +319,15 @@ main h1.elv-hed {
 }
 .promo-dialog p {
 	color: black;
+	padding: 1em;
+}
+
+.promo-footer {
+	padding: 1em;
+	width: 100%;
+}
+
+#promo-dialog wa-button[appearance="plain"]::part(base) {
+	background-color: white;
+	color: #000;
 }

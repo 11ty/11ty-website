@@ -80,13 +80,26 @@
 		</is-land>
 	</div>
 
-
-	<wa-dialog id="promo-dialog" class="promo-dialog" light-dismiss>
+	<wa-dialog id="promo-dialog" class="promo-dialog" light-dismiss without-header>
 		<iframe class="video-player" src="https://player.vimeo.com/video/1168551192?h=6ba669b3ff&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Now on Kickstarter: Build Awesome — Collaborate on Web Sites That Last"></iframe>
 
-		<p class=""><strong>The same static site generator you know and love, now with endless Pro 'possum-bilities. But just like other parts of the Awesomeverse, Build Awesome will continue to be free and open source.</strong></p>
+ 		<div class="wa-stack wa-gap-2xl">
+      <div class="wa-stack wa-gap-s">
+        <p>The same static site generation you know and love, now with endless Pro 'possum-bilties. But just like the other parts of the Awesomeverse, the core of Build Awesome will continue to be free and open source.</p>
+      </div>
 
-		<wa-button slot="footer" variant="brand" href="{{ config.kickstarterUrl }}">Support the Kickstarter!</wa-button>
+			<div class="promo-footer wa-flank">
+				<wa-button type="button" appearance="plain" data-dialog="close">Got It</wa-button>
+				<wa-button
+					variant="brand"
+					appearance="accent"
+					href="{{ config.kickstarterUrl }}"
+					class="brand-font">
+					Support the Kickstarter!
+				</wa-button>
+			</div>
+		</div>
+
 	</wa-dialog>
 
 	<button id="reset-promo-dialog" onclick="localStorage.removeItem('ba-promo-dialog'); location.reload();">Reset Promo Dialog</button>
@@ -100,11 +113,18 @@
 			await customElements.whenDefined('wa-dialog');
 
 			const dialog = document.querySelector('#promo-dialog');
+			const videoIframe = dialog.querySelector('.video-player');
+
 			dialog.open = true;
 
-			// Save to localStorage when dialog is closed
+			// Save to localStorage and stop video when dialog is closed
 			dialog.addEventListener('wa-hide', () => {
 				localStorage.setItem('ba-promo-dialog', 'closed');
+
+				// Stop the Vimeo video by sending a pause command
+				if (videoIframe && videoIframe.contentWindow) {
+					videoIframe.contentWindow.postMessage('{"method":"pause"}', '*');
+				}
 			}, { once: true });
 		} catch (error) {
 			console.error('Error loading dialog:', error);
