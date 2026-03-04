@@ -1,4 +1,7 @@
 <div class="elv-toc" data-pagefind-ignore>
+{% callout "", "html" %}
+<p><a href="{{ config.kickstarterUrl }}"><strong><i class="fa-brands fa-kickstarter"></i>Now on Kickstarter!</strong></a></p>
+{% endcallout %}
 {%- set calloutTitle %}<a href="/blog/">Blog</a>{% endset %}
 {%- for post in collections.sidebarHighlight %}
 {%- callout "", "html", calloutTitle %}
