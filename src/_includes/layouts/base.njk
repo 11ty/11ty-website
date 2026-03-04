@@ -86,11 +86,8 @@ let eleventyComputed = {
 {%- endif %}
 		<link rel="search" href="/opensearch.xml" type="application/opensearchdescription+xml" title="Eleventy">
 
-{# Not currently used:
-{% include 'components/announcement.css' %}
-#}
-
 {%- set css %}
+{% include 'components/announcement.css' %}
 {% include "components/fonts.css" %}
 {% include 'index.css' %}
 {% include 'components/header.css' %}
