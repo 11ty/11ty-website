@@ -80,4 +80,30 @@
 			</template>
 		</is-land>
 	</div>
+
+
+	<wa-dialog class="promo-dialog" light-dismiss>
+		<iframe class="video-player" src="https://player.vimeo.com/video/1168551192?h=6ba669b3ff&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Now on Kickstarter: Build Awesome — Collaborate on Web Sites That Last"></iframe>
+
+		{# <script src="https://player.vimeo.com/api/player.js"></script> #}
+
+		{# <iframe class="video-player" src="https://www.kickstarter.com/projects/fontawesome/build-awesome/widget/video.html" frameborder="0" scrolling="no" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> #}
+
+		<p><strong>The same static site generator you know and love, now with endless Pro 'possum-bilities. But just like other parts of the Awesomeverse, Build Awesome will continue to be free and open source.</strong></p>
+		<wa-button slot="footer" variant="brand" href="{{ config.kickstarterUrl }}">Support the Kickstarter!</wa-button>
+	</wa-dialog>
+
+	<script type="module">
+		const dialog = document.querySelector('.promo-dialog');
+		if(!localStorage.getItem("ba-promo-dialog") && dialog) {
+			let link = document.createElement("link");
+			link.setAttribute("rel", "stylesheet");
+			link.setAttribute("href", "/css/web-awesome.css");
+			document.head.appendChild(link);
+			link.onload = function() {
+				dialog.open = true;
+			};
+			// set localStorage on close
+		}
+	</script>
 </header>

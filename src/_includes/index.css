@@ -98,6 +98,11 @@ iframe {
 	width: 100%;
 }
 
+iframe.video-player {
+	aspect-ratio: 16/9;
+	border-radius: .5em;
+}
+
 /* Blockquotes */
 blockquote {
 	font-family: Georgia, serif;

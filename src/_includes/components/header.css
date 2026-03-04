@@ -298,3 +298,15 @@ main h1.elv-hed {
 	height: auto;
 	filter: drop-shadow(3px 3px #0006);
 }
+
+
+.promo-dialog {
+	--width: 40em;
+	display: block;
+	margin-block: auto;
+}
+.promo-dialog wa-button::part(base)  {
+	background: #00a877;
+	color: #fff;
+	font-weight: 700;
+}
