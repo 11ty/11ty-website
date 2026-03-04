@@ -1,18 +1,18 @@
 .announcement {
+	--btn-bg: #f0f1f3;
+	--btn-color: #183153;
+	--btn-shadow-color: #0f1f36;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	width: 100%;
 	background-color: rgb(24, 49, 83);
 	color: #fff;
-	font-weight: 500;
+	font-weight: 600;
 	padding: 0.25em 1em;
 	text-align: center;
 	line-height: 1;
 	gap: .5em;
-}
-.elv-header-default .announcement {
-	background-color: #222;
 }
 @media (min-width: 48em) {
 	/* 768px */
@@ -24,21 +24,34 @@
 .announcement > a,
 .announcement > span {
 	display: flex;
-	gap: .25em;
-	padding: 0.35em 0;
+	align-items: center;
+	gap: .5em;
+	padding: .5em 2em;
 	text-decoration: none;
-	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	white-space: nowrap;
+	border-radius: .5em;
+	margin: .25em .25em .5em .25em;
+	border: .125rem solid var(--btn-shadow-color);
+}
+.announcement > a,
+.announcement > a:visited,
+.announcement > a:any-link {
+	background-color: var(--btn-bg);
+	color: var(--btn-color);
+	box-shadow: 0 .375rem 0 var(--btn-shadow-color);
 }
 .announcement a:hover {
 	text-decoration: underline;
 }
-.announcement,
-.announcement a,
-.announcement a:visited {
-	color: #eee;
-}
 .announcement a:after {
 	display: none;
+}
+
+.elv-header-default .announcement {
+	--btn-bg: #f0f1f3;
+	--btn-color: #333;
+	--btn-shadow-color: #666;
+	background-color: #222;
 }
