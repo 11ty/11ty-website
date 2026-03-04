@@ -53,21 +53,17 @@
 
 	<div class="elv-nav-header">
 {%- if not isDocs %}
-		<wa-comparison position="5">
-			<a class="elv-hero elv-externalexempt" style="--stripe-color-1: #00A776;--stripe-color-2: #00A776;" slot="before" href="{{ config.kickstarterUrl }}">
-				<div class="elv-hero-ba">
-					{% include "components/ba-balloon.svg" %}
-					{% include "components/build-awesome.svg" %}
-					<span class="sr-only">Build Awesome</span>
-					<img src="/img/mascots/ba-didelphis-awesomenicus.svg" alt="A cartoon possum wearing a green tshirt with a balloon logo on front" class="elv-mascot-image">
-				</div>
-			</a>
-			<a class="elv-hero" slot="after" href="{% if page.url === '/' %}/docs/{% else %}/{% endif %}">
-				<i class="elv-hero-11ty fa-brands fa-eleventy"></i><span class="sr-only">Eleventy</span>
-			</a>
-			<i class="fa-solid fa-grip-vertical" slot="handle"></i>
-		</wa-comparison>
-		<script type="module" src="/js/web-awesome.js"></script>
+		<a class="elv-hero elv-externalexempt" href="{{ config.kickstarterUrl }}">
+			<div class="elv-hero-ba">
+				{% include "components/ba-balloon.svg" %}
+				{% include "components/build-awesome.svg" %}
+				<span class="sr-only">Build Awesome</span>
+			</div>
+		</a>
+		<a href="/docs/" class="elv-hero-11ty">
+			<i class="fa-brands fa-eleventy"></i><span class="sr-only">Eleventy</span>
+			<img src="/img/mascots/ba-didelphis-awesomenicus.svg" alt="A cartoon possum wearing a green tshirt with a balloon logo on front" class="elv-mascot-image">
+		</a>
 {%- endif %}
 
 		<is-land class="elv-possum-island" on:visible on:idle on:load on:save-data="false" on:media="(prefers-reduced-motion: no-preference)">
