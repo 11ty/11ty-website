@@ -237,11 +237,6 @@ a[href].elv-hero-11ty:visited {
 	color: #fff;
 	background-color: #222;
 }
-@media (prefers-color-scheme: dark) {
-	.elv-hero {
-		background-color: #292929;
-	}
-}
 .elv-header-default .elv-hero {
 	display: flex;
 	justify-content: center;
