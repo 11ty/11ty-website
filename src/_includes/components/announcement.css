@@ -1,16 +1,8 @@
 .announcement {
-	--btn-bg: #f0f1f3;
-	--btn-color: #183153;
-	--btn-shadow-color: #0f1f36;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
 	width: 100%;
 	background-color: rgb(24, 49, 83);
 	color: #fff;
-	font-weight: 600;
 	padding: 0.25em 1em;
-	text-align: center;
 	line-height: 1;
 	gap: .5em;
 }
@@ -21,6 +13,18 @@
 		font-size: clamp(1em, 2vw, 1.25em);
 	}
 }
+.announcement,
+.announcement-btn {
+	--btn-bg: #f0f1f3;
+	--btn-color: #183153;
+	--btn-shadow-color: #0f1f36;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	font-weight: 600;
+	text-align: center;
+}
+.announcement-btn,
 .announcement > a,
 .announcement > span {
 	display: flex;
@@ -35,6 +39,7 @@
 	margin: .25em .25em .5em .25em;
 	border: .125rem solid var(--btn-shadow-color);
 }
+.announcement-btn,
 .announcement > a,
 .announcement > a:visited,
 .announcement > a:any-link {
@@ -47,11 +52,16 @@
 		display: none;
 	}
 }
+.announcement-btn:hover,
 .announcement a:hover {
 	text-decoration: underline;
 }
 .announcement a:after {
 	display: none;
+}
+.announcement-btn {
+	line-height: 1.6;
+	margin-block: 2em;
 }
 
 .elv-header-default .announcement {

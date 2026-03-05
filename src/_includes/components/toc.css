@@ -275,22 +275,7 @@ details.toc[open] > summary {
 
 /* Sidebar ads */
 .elv-toc .elv-callout:first-child:has(+ .elv-callout) {
-	--callout-hue: 154;
-	background-color: #00AC79;
-	border-color: #00AC79;
-	color: #000;
-}
-.elv-toc .elv-callout:first-child:has(+ .elv-callout) a[href] strong {
-	display: flex;
-	align-items: center;
-	font-weight: 700;
-}
-.elv-toc .elv-callout:first-child:has(+ .elv-callout) a[href],
-.elv-toc .elv-callout:first-child:has(+ .elv-callout) a[href]:visited {
-	color: inherit;
-	text-decoration-color: inherit;
-	text-decoration-thickness: inherit;
-	text-underline-offset: .1em;
+	--callout-hue: 162;
 }
 .elv-toc-callout-link {
 	display: block;

@@ -1,5 +1,9 @@
 :root {
 	--layout-max: 70rem;
+	--brand-ba: rgb(0, 167, 118); /* 00a676 */
+	--brand-fa: rgb(84, 140, 216); /* 548cd8 */
+	--brand-wa: rgb(243, 105, 69); /* f36945 */
+	--brand-navy: #183153;
 
 	--color_dark: #fff; /* reused in header */
 

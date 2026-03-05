@@ -14,14 +14,6 @@
 :where(.elv-menu) a[href] {
 	color: inherit;
 }
-/* Dark mode menu on home page */
-.elv-header-default .elv-menu {
-	background-color: #222;
-	border-color: transparent;
-}
-.elv-header-default .elv-menu {
-	color: var(--color_dark);
-}
 @media (prefers-color-scheme: dark) {
 	.elv-menu {
 		background-color: rgba(0,0,0,.65);
@@ -46,8 +38,8 @@
 }
 .elv-nav-menu {
 	padding-left: 1rem;
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -123,12 +115,6 @@
 		--search-border: rgba(255,255,255,.2);
 		--search-text: #fff;
 	}
-}
-.elv-header-default .elv-nav-menu {
-	--search-bg: rgba(0,0,0,.8);
-	--search-icon: rgba(255,255,255,.4);
-	--search-border: rgba(255,255,255,.2);
-	--search-text: #fff;
 }
 
 .elv-nav-menu form {
