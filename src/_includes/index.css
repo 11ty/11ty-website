@@ -100,7 +100,7 @@ iframe {
 
 iframe.video-player {
 	aspect-ratio: 16/9;
-	border-radius: .5em;
+	border-radius: 0.5em 0.5em 0 0;
 }
 
 /* Blockquotes */
