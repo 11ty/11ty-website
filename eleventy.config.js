@@ -408,7 +408,6 @@ export default async function (eleventyConfig) {
 	await minifyJavaScriptFile(resolveModule("@11ty/client/md"), path.join(eleventyConfig.directories.output, "js/eleventy.engine-md.browser.js"));
 	await minifyJavaScriptFile(resolveModule("@11ty/client/liquid"), path.join(eleventyConfig.directories.output, "js/eleventy.engine-liquid.browser.js"));
 	await bundleModulePath("@awesome.me/webawesome/dist/components/copy-button/copy-button.js", path.join(eleventyConfig.directories.output, "js/copy-button.js"));
-	await bundle(["./config/webAwesomeBundle.css"], path.join(eleventyConfig.directories.output, "css/web-awesome.css"));
 	await bundle(["./config/webAwesomeBundle.js"], path.join(eleventyConfig.directories.output, "js/web-awesome.js"));
 
 	eleventyConfig.addPassthroughCopy("src/img");
