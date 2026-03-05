@@ -1,5 +1,5 @@
 .products {
-	--products-spacing: .75em;
+	--products-spacing: 1em;
 	background-color: rgb(240 241 243);
 }
 @media (prefers-color-scheme: dark) {
@@ -65,7 +65,7 @@
 	background-color: #fff;
 	border-radius: 0.1875em .1875em 0 0; /* 3px /16 */
 	padding: 1em var(--products-spacing);
-	margin-right: calc(var(--products-spacing) - 1em);
+	margin-inline-end: 1em;
 }
 @media (prefers-color-scheme: dark) {
 	.products-ba {
@@ -84,6 +84,7 @@ a[href].products-wa {
 .products-ba ~ a[href] {
 	padding: 1em;
 }
+
 /* Tooltips */
 .products a[href]:is(:hover, :focus-visible) {
 	position: relative;
