@@ -4,7 +4,6 @@ eleventyNavigation:
   key: How can I contribute?
   pinned: true
   order: 0
-ignoreSupporters: true
 ---
 
 # Community
@@ -39,14 +38,20 @@ ignoreSupporters: true
 
 {% set count = count + 1 %}
 
-## <span class="numberflag"><span class="sr-only">Step</span> {{ count }}</span> Contribute on [Open Collective](https://opencollective.com/11ty)
+## <span class="numberflag"><span class="sr-only">Step</span> {{ count }}</span> Go Pro
+
+We’re going to Kickstarter to fund a suite of Pro tools for folks wanting a streamling building and content editing experience. Subscribe to the pre-launch of the [**Build Awesome Kickstarter**]({{ config.kickstarterUrl }}) to get notified when the Kickstarter launches.
+
+<a href="{{ config.kickstarterUrl }}" class="announcement-btn">{% include "components/ba-balloon.svg" %}Subscribe to the Build Awesome Kickstarter</a>
+
+{% set count = count + 1 %}
+
+## <span class="numberflag"><span class="sr-only">Step</span> {{ count }}</span> Donate
 
 Eleventy is supported by [folks <strong>like {% emoji "👋" %} you</strong>](/docs/supporters/) that want to invest in better, longer lasting tools to create on the web.
 
-<div><a href="https://opencollective.com/11ty" class="btn-primary btn-primary-sm benchnine rainbow-active rainbow-active-noanim elv-externalexempt">Contribute</a></div>
+<a href="https://opencollective.com/11ty" class="announcement-btn">Contribute on Open Collective</a>
 
 As a thank you to our Supporters, Eleventy will:
 
 {% include "supporter-benefits.njk" %}
-
-{% include "supporters.njk" %}
