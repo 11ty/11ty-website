@@ -12,7 +12,7 @@ screenshotCacheBust: 1
 
 When [11ty joined Font Awesome in September 2024](/blog/eleventy-font-awesome/), it was hot on the heels of the successful [Web Awesome](https://webawesome.com/) Kickstarter, notably upgrading the Shoelace project from a bootstrapped side project to a sustainable and thriving full-time open source project with employees supporting its maintenance, new feature development, and future.
 
-We are following the same playbook for Eleventy! To support us, subscribe to the upcoming [Build_Awesome_Kickstarter_final_Final_v2.psd]({{ config.kickstarterUrl }}) and get notified when the campaign launches!
+We are following the same playbook for Eleventy! To support us, subscribe to the upcoming [Build_Awesome_Kickstarter `final_Final_v2.psd`]({{ config.kickstarterUrl }}) and get notified when the campaign launches!
 
 _Folks following along closely may have noticed the [_oopsie-daisy_ false-start fundraising campaign](https://blog.fontawesome.com/pausing-kickstarter/) earlier this week. Given a few email deliverability hiccups, folks not following along closely may [not know](https://blog.fontawesome.com/we-have-a-99-email-reputation-gmail-disagrees/) about the campaign at all! We are taking a mulligan._
 

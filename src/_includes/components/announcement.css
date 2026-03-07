@@ -39,12 +39,15 @@
 	gap: .5em;
 	padding: .5em 2em;
 	text-decoration: none;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
 	border-radius: .5em;
 	margin: .25em .25em .5em .25em;
 	border: .125rem solid var(--btn-shadow-color);
+}
+.announcement > a,
+.announcement > span {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 .announcement-btn,
 .announcement > a,
