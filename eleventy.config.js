@@ -203,19 +203,13 @@ function findBy(data, path, value) {
 
 		if (Array.isArray(gotten)) {
 			if (typeof value === "string") {
-				let valueLower = value.toLowerCase();
-				return gotten.some((item) => typeof item === "string" && item.toLowerCase() === valueLower);
+				return gotten.some((item) => typeof item === "string" && item.localeCompare(value, undefined, { sensitivity: "base" }) === 0);
 			}
 			return gotten.includes(value);
 		}
 
 		if (typeof value === "string") {
-			let valueLower = value.toLowerCase();
-			let dataLower = gotten.toLowerCase();
-			if (valueLower === dataLower) {
-				return true;
-			}
-			return false;
+			return gotten.localeCompare(value, undefined, {sensitivity: "base"}) === 0;
 		}
 
 		return value === gotten;
