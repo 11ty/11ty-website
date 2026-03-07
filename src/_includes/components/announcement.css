@@ -24,6 +24,13 @@
 	font-weight: 600;
 	text-align: center;
 }
+@media (prefers-color-scheme: dark) {
+	.announcement,
+	.announcement-btn {
+		--btn-bg: #183153;
+		--btn-color: #f0f1f3;
+	}
+}
 .announcement-btn,
 .announcement > a,
 .announcement > span {
