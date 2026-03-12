@@ -415,7 +415,7 @@ In the above example, the data cascade will include a top-level variable `availa
 
 ### `compileOptions`
 
-<div id="compileoptions.permalink-to-override-permalink-compilation"></div>
+<div id="compileoptions.permalink-to-override-permalink-compilation"><!-- this id necessary for upgrade plugin https://github.com/11ty/eleventy-upgrade-help/issues/12 --></div>
 
 #### `compileOptions.permalink` to Override Permalink Compilation
 
