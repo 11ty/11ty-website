@@ -160,7 +160,7 @@ To add support for Sass’ underscore convention (file names that start with an 
 
 Note that files inside of the `_includes` folder are left out of processing by default, so if you store your sass `@use`, `@forward`, and `@import` files in there you’ll get this for free (see the [Using `inputPath` example](#using-inputpath) above)!
 
-This functionality is more-or-less identical to the [`compileOptions` `permalink: false` overrides](#compileoptions.permalink-to-override-permalink-compilation), documented later on this page.
+This functionality is more-or-less identical to the [`compileOptions` `permalink: false` overrides](#compile-options-permalink-to-override-permalink-compilation), documented later on this page.
 
 ## Aliasing an Existing Template Language
 
@@ -414,6 +414,8 @@ In the above example, the data cascade will include a top-level variable `availa
 </details>
 
 ### `compileOptions`
+
+<div id="compileoptions.permalink-to-override-permalink-compilation"></div>
 
 #### `compileOptions.permalink` to Override Permalink Compilation
 
