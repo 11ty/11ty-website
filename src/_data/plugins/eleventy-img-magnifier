@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-img-magnifier",
+	"author": "teotimepacreau",
+	"description": "Enlarge images and create a lightbox to view fullscreen. When hovering an img, the cursor is changed as a magnifying glass to indicates to the user that the img can be enlarged. A click and the img appears enlarged, through a fade-in animation and the background get darker. A click outside the image quit the enlarged view."
+}

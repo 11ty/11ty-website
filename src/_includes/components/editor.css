@@ -1,0 +1,79 @@
+/* Only pre-JS */
+is-land--eleventy-editor {
+	cursor: pointer;
+}
+/* Only constrain height with JS (we’re enhancing from <pre>) */
+is-land--eleventy-editor pre {
+	max-height: 45vh;
+	overflow: hidden;
+}
+is-land--eleventy-editor pre:before {
+	content: "";
+	pointer-events: none;
+	position: absolute;
+	inset: 0;
+	background-color: var(--edit-curtain);
+}
+
+/* pre-JS and no-JS */
+:is(is-land--eleventy-editor, eleventy-editor:not(:defined)) {
+	--edit-bg: rgba(0,0,0,.4);
+	--edit-color: #fff;
+	display: block;
+	position: relative;
+}
+
+:is(is-land--eleventy-editor, eleventy-editor:not(:defined)):hover {
+	--edit-curtain: rgba(255,255,255,.1);
+	--edit-bg: rgb(255, 216, 72);
+	--edit-color: #000;
+}
+
+:is(is-land--eleventy-editor, eleventy-editor:not(:defined)):hover pre {
+	outline: 4px solid var(--edit-bg);
+}
+
+:is(is-land--eleventy-editor, eleventy-editor:not(:defined)) pre {
+	position: relative;
+	margin: 1em -1rem;
+}
+
+:is(is-land--eleventy-editor, eleventy-editor:not(:defined)):after {
+	pointer-events: none;
+	position: absolute;
+	content: "Run";
+	top: 0;
+	right: -1rem;
+	font-weight: 600;
+	line-height: 1;
+	padding: .75rem;
+	background-color: var(--edit-bg);
+	color: var(--edit-color);
+	border-top-right-radius: .3em;
+	border-bottom-left-radius: .3em;
+}
+
+:is(is-land--eleventy-editor, eleventy-editor:not(:defined))[label]:after {
+	content: attr(label);
+}
+
+eleventy-editor:defined {
+	margin: 1em -1rem;
+}
+/* #2col */
+@media (max-width: 41.375em) {
+	eleventy-editor {
+		--border-radius: 0;
+	}
+}
+
+/* No-JS */
+eleventy-editor:not(:defined):after,
+eleventy-editor:not(:defined)[label]:after {
+	content: "Run requires JavaScript"
+}
+
+/* No copy button on editors */
+:is(is-land--eleventy-editor, eleventy-editor) :is(is-land--syntax-highlight, syntax-highlight) > is-land {
+	display: none;
+}

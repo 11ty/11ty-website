@@ -3,5 +3,4 @@ export default {
 	category: ["serverless"],
 	url: "https://github.com/SomeAnticsDev/eleventy-serverless-color-contrast",
 	twitter: "BenDMyers",
-}
-
+};

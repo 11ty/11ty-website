@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-speculation-rules",
+	"author": "reatlat",
+	"description": "This plugin adds support for the Speculation Rules API, which allows defining rules by which certain URLs are dynamically prefetched or prerendered based on user interaction."
+}

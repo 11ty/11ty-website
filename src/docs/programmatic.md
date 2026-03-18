@@ -1,86 +1,53 @@
 ---
 eleventyNavigation:
-  parent: Getting Started
+  parent: Advanced
   key: Programmatic API
-  order: 6
+  order: 1
 ---
+
 # Programmatic API {% addedin "1.0.0" %}<!-- Beta 10 or Canary 50 -->
 
 {% tableofcontents %}
 
-Starting in Eleventy 1.0, you can run Eleventy in your own Node script. _(This is how the [Eleventy Serverless](/docs/plugins/serverless/) plugin works, behind the scenes)_
+You can run Eleventy in any arbitrary Node script.
 
-## Examples
+## Write to the file system
 
-### Write to the file system
-
-Don’t forget to [install Eleventy into your local project first](/docs/get-started/#step-2-install-eleventy)!
+Don’t forget to [install Eleventy into your local project first](/docs/#step-2-install-eleventy)!
 
 Now create a file called `my-node-script.js` with the following contents:
 
-{% codetitle "my-node-script.js" %}
+{% include "snippets/programmatic/node-script.njk" %}
 
-```js
-const Eleventy = require("@11ty/eleventy");
+Then run your new script from the command line.
 
-(async function() {
-  let elev = new Eleventy();
-  await elev.write();
-})();
+```
+node my-node-script.js
 ```
 
-Then run your new script from the command line. _Don’t include `~ $` when you run this command._
-
-{% codewithprompt "cmdhomedir" %}
-node my-node-script.js
-{% endcodewithprompt %}
-
-### Don’t write to the file system
+## Don’t write to the file system
 
 Using `.write()` will write your output to the file system. If, instead, you want to retrieve the content programmatically without writing, use `.toJSON()` or `.toNDJSON()`.
 
-#### JSON Output
+### JSON Output
 
-```js
-const Eleventy = require("@11ty/eleventy");
+{% include "snippets/programmatic/json-out.njk" %}
 
-(async function() {
-  let elev = new Eleventy();
-  let json = await elev.toJSON();
-  // All results
-  console.log( json );
-})();
-```
+#### Adding data to JSON output
 
-#### ndjson Output
+You can use the `eleventyConfig.dataFilterSelectors` configuration API `Set` to add or remove lodash-style selectors for Data Cascade entries to be included in individual entries from the `toJSON` method.
 
-```js
-const Eleventy = require("@11ty/eleventy");
+{% include "snippets/programmatic/json-out-data.njk" %}
 
-(async function() {
-  let elev = new Eleventy();
-  let stream = await elev.toNDJSON();
-  stream.on("data", (entry) => {
-    // Stream one output result at a time
-    let json = JSON.parse(entry.toString());
-    console.log( json );
-  });
-})();
-```
+### ndjson Output
 
-### Changing the Input and Output Directories
+{% include "snippets/programmatic/ndjson-out.njk" %}
+
+## Changing the Input and Output Directories
 
 The first argument is the input directory. The second argument is the output directory.
 
-```js
-const Eleventy = require("@11ty/eleventy");
-
-(async function() {
-  let elev = new Eleventy( ".", "_site" );
-
-  // Use `write` or `toJSON` or `toNDJSON`
-})();
-```
+{% include "snippets/programmatic/chdirs.njk" %}
 
 ## Full Options List
 
@@ -88,28 +55,4 @@ The third argument to Eleventy is an options object.
 
 _(This documentation section is a work in progress but [you’re welcome to dig into the `Eleventy` class source code in `{% latestVersion versions, config %}` to learn more](https://github.com/11ty/eleventy/blob/{% latestVersion versions, config %}/src/Eleventy.js))_
 
-```js
-const Eleventy = require("@11ty/eleventy");
-
-(async function() {
-  let elev = new Eleventy( ".", "_site", {
-    // --quiet
-    quietMode: true,
-
-    // --config
-    configPath: ".eleventy.js",
-
-    config: function(eleventyConfig) {
-      // Do some custom Configuration API stuff
-      // Works great with eleventyConfig.addGlobalData
-    },
-  });
-
-  // Use `write` or `toJSON` or `toNDJSON`
-})();
-```
-
-<!--
-    // Only useful if the first argument above is a single file (or glob)
-    inputDir: ".",
--->
+{% include "snippets/programmatic/fullopts.njk" %}

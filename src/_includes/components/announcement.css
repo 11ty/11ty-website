@@ -1,41 +1,82 @@
 .announcement {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 	width: 100%;
-	background-color: #111;
-	font-weight: 500;
-	padding: .25em 1em;
-	text-align: center;
-	width: calc(100% + 2rem);
-	margin-left: -1rem;
-	margin-right: -1rem;
+	background-color: rgb(24, 49, 83);
+	color: #fff;
+	padding: 0.25em 1em;
 	line-height: 1;
+	gap: .5em;
 }
-@media (min-width: 48em) { /* 768px */
+@media (min-width: 48em) {
+	/* 768px */
 	.announcement {
 		font-size: 1em;
 		font-size: clamp(1em, 2vw, 1.25em);
 	}
 }
+.announcement,
+.announcement-btn {
+	--btn-bg: #f0f1f3;
+	--btn-color: #183153;
+	--btn-shadow-color: #0f1f36;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	font-weight: 600;
+	text-align: center;
+}
+@media (prefers-color-scheme: dark) {
+	.announcement,
+	.announcement-btn {
+		--btn-bg: #183153;
+		--btn-color: #f0f1f3;
+	}
+}
+.announcement-btn,
 .announcement > a,
 .announcement > span {
-	display: inline-block;
-	padding: .35em 0;
+	display: flex;
+	align-items: center;
+	gap: .5em;
+	padding: .5em 2em;
 	text-decoration: none;
+	border-radius: .5em;
+	margin: .25em .25em .5em .25em;
+	border: .125rem solid var(--btn-shadow-color);
 }
+.announcement > a,
+.announcement > span {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.announcement-btn,
+.announcement > a,
+.announcement > a:visited,
+.announcement > a:any-link {
+	background-color: var(--btn-bg);
+	color: var(--btn-color);
+	box-shadow: 0 .375rem 0 var(--btn-shadow-color);
+}
+@media (max-width: 31.1875em) { /* 499px */
+	.announcement > a > span > b {
+		display: none;
+	}
+}
+.announcement-btn:hover,
 .announcement a:hover {
 	text-decoration: underline;
-}
-.announcement,
-.announcement a,
-.announcement a:visited {
-	color: #eee;
 }
 .announcement a:after {
 	display: none;
 }
-/* Blend the banner on the home page */
+.announcement-btn {
+	line-height: 1.6;
+	margin-block: 2em;
+}
+
 .elv-header-default .announcement {
-  background-color: #222;
+	--btn-bg: #f0f1f3;
+	--btn-color: #333;
+	--btn-shadow-color: #666;
+	background-color: #222;
 }

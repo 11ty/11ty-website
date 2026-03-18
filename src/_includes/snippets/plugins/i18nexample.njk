@@ -1,0 +1,66 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync autoheight class="tabs-flush">
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "localelinks"} %}
+  <div id="localelinks-njk" role="tabpanel">
+
+{% codetitle "/en/blog.njk" %}
+{% set codeBlock %}{% raw %}
+This page is also available in:
+{% for link in page.url | locale_links %}
+{%- if not loop.first %},{% endif %}
+<a href="{{link.url}}" lang="{{link.lang}}" hreflang="{{link.lang}}">{{link.label}}</a>
+{% endfor %}
+{% endraw %}{% endset %}
+{{ codeBlock | highlight("jinja2") | safe }}
+  </div>
+  <div id="localelinks-liquid" role="tabpanel">
+
+{% codetitle "/en/blog.liquid" %}
+{% set codeBlock %}{% raw %}
+This page is also available in:
+{% assign links = page.url | locale_links %}
+{%- for link in links %}
+{%- unless forloop.first %},{% endunless %}
+<a href="{{link.url}}" lang="{{link.lang}}" hreflang="{{link.lang}}">{{link.label}}</a>
+{%- endfor -%}
+{% endraw %}{% endset %}
+{{ codeBlock | highlight("liquid") | safe }}
+  </div>
+  <div id="localelinks-js" role="tabpanel">
+
+{% codetitle "/en/blog.11ty.js" %}
+{% set codeBlock %}{% raw %}
+export default function (data) {
+	let links = this.locale_links(data.page.url);
+
+	// Don’t forget to localize this text too
+	return `This page is also available in:
+${links
+	.map((link) => {
+		return `<a href="${link.url}" lang="${link.lang}" hreflang="${link.lang}">${link.label}</a>`;
+	})
+	.join(", ")}`;
+};
+{% endraw %}{% endset %}
+{{ codeBlock | highlight("js") | safe }}
+  </div>
+	<div id="localelinks-cjs" role="tabpanel">
+
+{% codetitle "/en/blog.11ty.cjs" %}
+{% set codeBlock %}{% raw %}
+module.exports = function (data) {
+	let links = this.locale_links(data.page.url);
+
+	// Don’t forget to localize this text too
+	return `This page is also available in:
+${links
+	.map((link) => {
+		return `<a href="${link.url}" lang="${link.lang}" hreflang="${link.lang}">${link.label}</a>`;
+	})
+	.join(", ")}`;
+};
+{% endraw %}{% endset %}
+{{ codeBlock | highlight("js") | safe }}
+  </div>
+</seven-minute-tabs>
+</is-land>

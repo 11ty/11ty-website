@@ -3,7 +3,9 @@ eleventyNavigation:
   parent: Layouts
   key: Layout Chaining
   excerpt: Wrap layouts in other layouts.
+excludeFromSidebar: true
 ---
+
 # Layout Chaining
 
 Your layouts can also use a layout! Add the same `layout` front matter data to your layout template file and it’ll chain. You do not have to use the same template engine across layouts and content, you can mix and match.
@@ -11,43 +13,43 @@ Your layouts can also use a layout! Add the same `layout` front matter data to y
 To chain a layout, let’s look at an example:
 
 {% codetitle "layout-chain-example.md" %}
-
-```markdown
+{%- set codeBlock %}{% raw %}
 ---
 layout: mainlayout.njk
 title: My Rad Blog
 ---
+
 # My Rad Markdown Blog Post
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("markdown") | safe }}
 
 We want to add a main element around our post’s content because we like accessibility.
 
 Here’s what `mainlayout.njk` would look like:
 
 {% codetitle "_includes/mainlayout.njk" %}
-{% highlight "html" %}
-{% include "examples/layout-chaining/mainlayout.njk" %}
-{% endhighlight %}
+{%- set codeBlock %}
+{% include "snippets/layout-chaining/mainlayout.njk" %}
+{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
 
 This layout would then be itself wrapped in the same `mylayout.njk` we used in our previous example:
 
 {% codetitle "_includes/mylayout.njk" %}
-
-{% raw %}
-```html
-<!doctype html>
+{%- set codeBlock %}{% raw %}
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
-  </head>
-  <body>
-    {{ content | safe }}
-  </body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{{title}}</title>
+	</head>
+	<body>
+		{{ content | safe }}
+	</body>
 </html>
-```
-{% endraw %}
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
 
 Used together, this would output:
 
@@ -55,7 +57,7 @@ Used together, this would output:
 
 {% codetitle "_site/layout-chain-example/index.html", "Output Filename" %}
 
-```html
+{%- set codeBlock %}{% raw %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -69,7 +71,8 @@ Used together, this would output:
     </main>
   </body>
 </html>
-```
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("html") | safe }}
 
 {% endcallout %}
 

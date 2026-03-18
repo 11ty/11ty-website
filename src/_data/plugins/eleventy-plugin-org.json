@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-org",
+	"author": "kijowski_dev",
+	"description": "Eleventy plugin to generate posts from org-mode files"
+}

@@ -1,18 +1,20 @@
 import EleventyFetch from "@11ty/eleventy-fetch";
 
+const CACHE_DURATION = process.env.ELEVENTY_RUN_MODE === "serve" ? "1w" : "1d";
+
 async function getData() {
 	let url = `https://11tybundle.dev/api/data-cascade.json`;
 	let json = await EleventyFetch(url, {
 		type: "json",
-		duration: "1d",
+		duration: CACHE_DURATION,
 		directory: ".cache/eleventy-fetch/",
 		dryRun: false,
 	});
 
 	let urls = {};
 	// remove duplicates
-	json = json.filter(entry => {
-		if(!urls[entry.Link]) {
+	json = json.filter((entry) => {
+		if (!urls[entry.Link]) {
 			urls[entry.Link] = true;
 			return true;
 		}
@@ -22,18 +24,18 @@ async function getData() {
 	return json;
 }
 
-export default async function() {
+export default async function () {
 	try {
 		return {
-			bundle: await getData()
-		}
-	} catch(e) {
-		if(process.env.NODE_ENV === "production") {
+			bundle: await getData(),
+		};
+	} catch (e) {
+		if (process.env.NODE_ENV === "production") {
 			// Fail the build in production.
 			return Promise.reject(e);
 		}
 
-		console.log( "Failed getting Data Cascade resources from 11tybundle.dev." );
+		console.log("Failed getting Data Cascade resources from 11tybundle.dev.");
 		return { bundle: [] };
 	}
-};
+}

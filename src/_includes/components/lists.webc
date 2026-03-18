@@ -1,0 +1,2 @@
+<link rel="stylesheet" href="./lists.css">
+<slot></slot>

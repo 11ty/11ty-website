@@ -1,7 +1,7 @@
 lite-youtube,
 is-land--lite-youtube {
 	max-width: 100%;
-	border-radius: .5em;
+	border-radius: 0.5em;
 	overflow: hidden;
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -27,7 +27,7 @@ lite-youtube:defined > .lty-playbtn {
 	max-width: 22em;
 }
 .elv-callout .youtube-related {
-	margin: .5em 0;
+	margin: 0.5em 0;
 }
 .elv-callout .youtube-related > :first-child:last-child {
 	max-width: 14em;

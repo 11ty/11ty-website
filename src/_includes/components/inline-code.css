@@ -1,5 +1,6 @@
 code {
-	font-family: Roboto Mono, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+	font-family: Roboto Mono, Consolas, Monaco, Andale Mono, Ubuntu Mono,
+		monospace;
 	-ms-word-break: break-all;
 	word-break: break-word;
 	-webkit-hyphens: manual;
@@ -8,15 +9,15 @@ code {
 	background-color: #efefef;
 	padding-left: 4px;
 	padding-right: 4px;
-	border-radius: .15em;
+	border-radius: 0.15em;
 }
 pre[class*="language-"] code {
 	background-color: inherit;
 }
-table code {
+/* table code {
 	-ms-word-break: normal;
 	word-break: normal;
-}
+} */
 em code {
 	font-style: normal;
 }

@@ -1,4 +1,14 @@
 class Search {
+	get headerInput() {
+		return document.querySelector("header input[type='search']");
+	}
+
+	setValue(val) {
+		if(this.headerInput) {
+			this.headerInput.value = val;
+		}
+	}
+
 	clearResults() {
 		this.searchResultsCount.innerHTML = "Results";
 		this.searchResultsList.innerHTML = "";
@@ -12,8 +22,12 @@ class Search {
 		${result.meta.title ? `<strong>${result.meta.title}</strong>` : result.url}
 	</span>
 	<p class="search-results-item-matches truncate-overflow" style="--truncate-lh: 1.8em; --truncate-lines: 3">
-	<code>${result.excerpt.replace(/</g, "&lt;").replace(/&lt;mark>/g, "<mark>").replace(/&lt;\/mark>/g, "</mark>")}</code>
+	<code>${result.excerpt
+		.replace(/</g, "&lt;")
+		.replace(/&lt;mark>/g, "<mark>")
+		.replace(/&lt;\/mark>/g, "</mark>")}</code>
 	</p>
+	<p class="search-result-doc-path">${result.url}</p>
 </a>
 `;
 
@@ -21,7 +35,7 @@ class Search {
 	}
 
 	async getLibrary() {
-		if(!this.pagefind) {
+		if (!this.pagefind) {
 			this.pagefind = await import("/pagefind/pagefind.js");
 			this.pagefind.init();
 		}
@@ -29,26 +43,41 @@ class Search {
 	}
 
 	async onInput(value) {
+		this.setValue(value);
+
 		let pagefind = await this.getLibrary();
 		window.clearTimeout(this.onInputTimeout);
 		this.onInputTimeout = window.setTimeout(async () => {
 			this.clearResults();
 
-			if(value.length > 1) {
+			if (value.length > 1) {
 				this.searchResults.classList.remove("hide");
 
 				let search = await pagefind.search(value);
-				let results = await Promise.all(search.results.map(r => r.data()));
+				let results = await Promise.all(search.results.map((r) => r.data()));
 
-				for(let result of results) {
-					this.addResult( result, value );
+				// Deprioritize blog search results
+				results.sort((a, b) => {
+					const aIsBlog = a.url.startsWith('/blog');
+					const bIsBlog = b.url.startsWith('/blog');
+					if (aIsBlog && !bIsBlog) return 1;
+					if (!aIsBlog && bIsBlog) return -1;
+					return 0; // keep Pagefind's order otherwise
+				});
+
+				for (let result of results) {
+					this.addResult(result, value);
 				}
-				if(results.length) {
-					this.searchResultsCount.innerHTML = `${results.length} Result${results.length != 1 ? "s" : ""}`;
+				if (results.length) {
+					this.searchResultsCount.innerHTML = `${results.length} Result${
+						results.length != 1 ? "s" : ""
+					}`;
 				} else {
 					this.searchResultsList.innerHTML = "<li>No Matches Found.</li>";
 				}
-				this.searchResultsList.classList[results.length > 0 ? "remove" : "add"]("search-results-notfound");
+				this.searchResultsList.classList[results.length > 0 ? "remove" : "add"](
+					"search-results-notfound"
+				);
 			} else {
 				this.searchResults.classList.add("hide");
 			}
@@ -63,22 +92,37 @@ class Search {
 
 	hydrate() {
 		let form = document.getElementById("eleventy-search");
-		if(form) {
-			form.addEventListener("submit", function(event) {
-				event.preventDefault();
-			}, false);
+		if (form) {
+			form.addEventListener(
+				"submit",
+				function (event) {
+					event.preventDefault();
+				},
+				false
+			);
 		}
+		// if(this.headerInput && location.pathname.startsWith("/docs/search/")) {
+		// 	this.headerInput.setAttribute("readonly", true);
+		// }
 
 		let text = document.getElementById("search-term");
-		if(text) {
-			text.addEventListener("input", async (event) => {
-				let value = event.target.value;
-				await this.onInput(value);
-				window.history.replaceState({}, "", `/docs/search/${value ? `?q=${encodeURIComponent(value)}` : ""}`);
-			}, false);
+		if (text) {
+			text.addEventListener(
+				"input",
+				async (event) => {
+					let value = event.target.value;
+					await this.onInput(value);
+					window.history.replaceState(
+						{},
+						"",
+						`/docs/search/${value ? `?q=${encodeURIComponent(value)}` : ""}`
+					);
+				},
+				false
+			);
 
 			let queryString = this.getQueryString();
-			if( queryString ) {
+			if (queryString) {
 				text.value = queryString;
 				this.onInput(queryString);
 			} else {
@@ -87,17 +131,17 @@ class Search {
 		}
 
 		let results = document.getElementById("search-results");
-		if(results) {
+		if (results) {
 			this.searchResults = results;
 		}
 
 		let resultsList = document.getElementById("search-results-list");
-		if(resultsList) {
+		if (resultsList) {
 			this.searchResultsList = resultsList;
 		}
 
 		let resultsCount = document.getElementById("search-results-count");
-		if(resultsCount) {
+		if (resultsCount) {
 			this.searchResultsCount = resultsCount;
 		}
 	}

@@ -1,0 +1,4 @@
+{
+	"npm": "eleventy-plugin-embed-itch-io",
+	"description": "Creates embedded Itch.io widget for games from the game page url."
+}

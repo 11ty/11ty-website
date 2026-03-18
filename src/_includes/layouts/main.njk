@@ -1,30 +1,38 @@
 ---
 layout: layouts/base.njk
-templateClass: elv-default
 headerClass: elv-header-default
 ---
+<div class="elv-skip">
+	<a href="#skip-nav">Skip to navigation</a>
+	<a href="#skip-content">Skip to main content</a>
+</div>
+
 {% include "header.njk" %}
 
 {% if config.outdated -%}
 <div class="elv-callout-sticky">{% callout "warn" %}This is an <strong>older version of Eleventy</strong>. Go to the <a href="https://www.11ty.dev/docs/">newest Eleventy docs</a> (current path: <a href="https://www.11ty.dev{{ page.url }}"><code>{{ page.url }}</code></a>) or the <a href="https://www.11ty.dev/docs/versions/">full release history</a>.{% endcallout %}</div>
 {% endif -%}
 {% if config.prerelease -%}
-<div class="elv-callout-sticky">{% callout "info" %}This documentation is for an upcoming version of Eleventy. Go to the <a href="https://www.11ty.dev/docs/">latest stable version of Eleventy docs</a> or check out the <a href="https://www.11ty.dev/docs/versions/">full release history.</a>{% endcallout %}</div>
+<div class="elv-callout-sticky">{% callout "info" %}These docs are for an upcoming version of Eleventy and <em>subject to change</em>—take extra care before linking here! Look to the <a href="https://www.11ty.dev/docs/">latest docs</a> instead (or full <a href="https://www.11ty.dev/docs/versions/">release history</a>).{% endcallout %}</div>
 {% endif -%}
 
-<main class="elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}" {% if not excludeFromSearch %} data-pagefind-body{% endif %}>
-	{{ content | safe }}
+<main class="elv-layout elv-layout-toc" {% if not excludeFromSearch %} data-pagefind-body{% endif %}>
+	{% include "components/docs-toc.njk" %}
+	<div id="skip-content">
+		{%- if not isDocs %}
+		<h1 class="elv-hed">{{ headerTitle | safe }}</h1>
+		{%- endif %}
+		<heading-anchors selector="h2,h3,h4">{{ content | safe }}</heading-anchors>
+	</div>
 </main>
 
-<footer class="elv-footer elv-layout{% if layoutClass %} {{ layoutClass }}{% endif %}">
-{% if ignoreSupporters %}{% else %}
+<footer class="elv-footer-wrap">
+	<div class="elv-footer elv-layout">
+	{% include "social-callout.njk" %}
+{% if not ignoreSupporters %}
 	{% include "supporters.njk" %}
 {% endif %}
-{%- if ignoreGitHubButtons %}{% else %}
-	{% callout %}
-		{% include "star-on-github.njk" %}
-	{% endcallout %}
-{%- endif %}
 
 	{% include "footer-nav.njk" %}
+	</div>
 </footer>

@@ -1,5 +1,5 @@
 <script webc:setup>
-function latestVersionNodeMinimum(versions, config) {
+export function latestVersionNodeMinimum(versions, config) {
   for( let version of versions ) {
     if( version.tag === "LATEST" ) {
       continue;

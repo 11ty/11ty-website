@@ -1,0 +1,94 @@
+<style>
+.build-cost-inline {
+	display: flex;
+	flex-direction: column;
+	gap: .5em;
+}
+@media (min-width: 37.5em) { /* 600px */
+	.build-cost-inline {
+		float: right;
+		margin: 0 0 1em 1em;
+	}
+	.build-cost-inline ~ .codetitle {
+		clear: both;
+	}
+}
+</style>
+<style webc:scoped>
+:host {
+	--internal-border: rgba(0,0,0,.1);
+	--internal-shadow-hsl: 0deg 0% 75%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: .5em 1em;
+	text-align: center;
+	padding: .5em 1em;
+	border: 1px solid var(--internal-border);
+	border-radius: .5em;
+	font-weight: 700;
+}
+@media (prefers-color-scheme: dark) {
+	:host {
+		--internal-shadow-hsl: 0deg 0% 25%;
+		--internal-border: rgba(0,0,0,.7);
+	}
+}
+:host .cost:before {
+	content: "🧰";
+	padding-right: .25em;
+	vertical-align: baseline;
+	margin-top: -.15em;
+}
+:host .cost[data-icon]:before {
+	content: attr(data-icon);
+}
+:host .cost {
+	display: flex;
+	font-size: 3.2em;
+	font-family: monospace;
+}
+:host .metadata {
+	display: flex;
+	flex-direction: column;
+}
+:host .label {
+	letter-spacing: 1px;
+	text-align: left;
+	text-transform: uppercase;
+}
+:host .ranger {
+	display: flex;
+	justify-content: space-between;
+}
+:host .dot:before {
+	font-size: 1.25em;
+	content: "🐢";
+}
+:host .dot[data-rating-icon]:before {
+	content: attr(data-rating-icon);
+}
+:host .dot.empty:before {
+	opacity: .2;
+	filter: grayscale(1);
+}
+
+:host-context(a[href]):hover,
+:host-context(a[href]):focus {
+	outline: 2px solid blue;
+}
+
+:host p {
+	margin: 0;
+}
+</style>
+<span class="metadata">
+	<span class="label" @text="label || 'Build Cost'"></span>
+	<span class="ranger" :class="cost > 3 ? 'warn' : (cost <= 2 ? 'ok' : '')" aria-hidden="true">
+		<div class="dot" :data-rating-icon="ratingIcon" :class="index > cost ? 'empty' : ''" webc:for="index of [1,2,3,4,5]"></div>
+	</span>
+</span>
+<span class="cost" :data-icon="icon">
+	<b @text="cost"></b>
+</span>

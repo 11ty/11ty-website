@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-poison",
+	"author": "gingerchew",
+	"description": "Poison your content against AI scrapers."
+}

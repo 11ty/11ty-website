@@ -1,0 +1,8 @@
+{
+	"url": "https://github.com/anydigital/sveleven",
+	"name": "Sveleven",
+	"description": "Ultra-lightweight, zero-config Eleventy starter (with Tailwind & CMS included!)",
+	"author": "Anton Staroverov",
+	"demo": "https://sveleven.com/",
+	"npmStartScript": "start"
+}

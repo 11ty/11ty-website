@@ -1,9 +1,7 @@
 ---
-tipindex: "001"
 tiptitle: "Inline Minified CSS"
 date: 2018-06-07
 tags: ["related-filters"]
-relatedTitle: "Quick Tip #001—Inline Minified CSS"
 ---
 
 _Originally posted on [The Simplest Web Site That Could Possibly Work Well on zachleat.com](https://www.zachleat.com/web/that-could-possibly-work/)_
@@ -18,14 +16,16 @@ This tip works well on small sites that don’t have a lot of CSS. Inlining your
 
 Add the following `cssmin` filter to your Eleventy Config file:
 
-```js
-const CleanCSS = require("clean-css");
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addFilter("cssmin", function(code) {
-    return new CleanCSS({}).minify(code).styles;
-  });
+{% set codeContent %}
+import CleanCSS from "clean-css";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addFilter("cssmin", function (code) {
+		return new CleanCSS({}).minify(code).styles;
+	});
 };
-```
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
 ## Create your CSS File
 
@@ -33,7 +33,7 @@ Add a sample CSS file to your `_includes` directory. Let’s call it `sample.css
 
 ```css
 body {
-    font-family: fantasy;
+	font-family: fantasy;
 }
 ```
 
@@ -42,39 +42,42 @@ body {
 Capture the CSS into a variable and run it through the filter (this sample is using Nunjucks syntax)
 
 {% raw -%}
+
 ```html
 <!-- capture the CSS content as a Nunjucks variable -->
-{% set css %}
-  {% include "sample.css" %}
-{% endset %}
+{% set css %} {% include "sample.css" %} {% endset %}
 <!-- feed it through our cssmin filter to minify -->
 <style>
-  {{ css | cssmin | safe }}
+	{{ css | cssmin | safe }}
 </style>
 ```
+
 {% endraw %}
 
-## Using JavaScript templates
+## Warning about Content Security Policy
+
+{% callout "warn" %}
+If you are using a Content Security Policy on your website, make sure the <code>style-src</code> directive allows <code>'unsafe-inline'</code>. Otherwise, your inline CSS will not load.
+{% endcallout %}
+
+## Or: use an `11ty.js` Template
 
 _Contributed by [Zach Green](https://github.com/zgreen)_
 
 You can also inline minified CSS in a [JavaScript template](/docs/languages/javascript/). This technique does not use filters, and instead uses `async` functions:
 
-```js
-const fs = require("fs/promises");
-const path = require("path");
-const CleanCSS = require("clean-css");
+{% set codeContent %}
+import fs from "node:fs/promises";
+import path from "node:path";
+import CleanCSS from "clean-css";
 
-module.exports = async () => `
-<style>
-  ${await fs
-    .readFile(path.resolve(__dirname, "./sample.css"))
-    .then((data) => new CleanCSS().minify(data).styles)}
-</style>`;
-```
+export default async function (data) {
+	return `<style>
+	  ${await fs
+			.readFile(path.resolve(__dirname, "./sample.css"))
+			.then((data) => new CleanCSS().minify(data).styles)}
+	</style>`;
+};
+{% endset %}
+{% include "snippets/configDefinition.njk" %}
 
-### Warning about Content Security Policy
-
-{% callout "warn" %}
-If you are using a Content Security Policy on your website, make sure the <code>style-src</code> directive allows <code>'unsafe-inline'</code>. Otherwise, your inline CSS will not load.
-{% endcallout %}

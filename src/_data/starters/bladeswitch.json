@@ -1,0 +1,8 @@
+{
+	"url": "https://github.com/anydigital/bladeswitch",
+	"name": "Bladeswitch",
+	"description": "The Eleventy⇔Jekyll starter compatible with BOTH (!) at the same time (so you can develop locally using 11ty w/o Ruby, but deploy natively to GitHub Pages using Jekyll w/o any GitHub Actions).",
+	"author": "Anton Staroverov",
+	"demo": "https://bladeswitch.com/",
+	"npmStartScript": "start"
+}

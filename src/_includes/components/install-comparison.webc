@@ -7,8 +7,8 @@
 	<thead>
 		<tr>
 			<th>Tool</th>
-			<th class="ta-c"><code>node_<wbr>modules</code><br>Weight</th>
-			<th class="ta-c"><code>npm install</code><br>Time</th>
+			<th class="ta-c"><code class="nowrap">node_<wbr>modules</code><br>Weight</th>
+			<th class="ta-c"><code class="nowrap">npm install</code><br>Time</th>
 			<th></th>
 		</tr>
 	</thead>

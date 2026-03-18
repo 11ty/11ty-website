@@ -1,0 +1,51 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync class="tabs-flush" autoheight>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "renderfiledata"} %}
+  <div id="renderfiledata-liquid" role="tabpanel">
+{%- set codeBlock %}{% raw %}
+---
+myData:
+  myKey: myValue
+---
+{% renderFile "./_includes/blogpost.md", myData %}
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("liquid") | safe }}
+  </div>
+  <div id="renderfiledata-njk" role="tabpanel">
+{%- set codeBlock %}{% raw %}
+---
+myData:
+  myKey: myValue
+---
+{% renderFile "./_includes/blogpost.md", myData %}
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("jinja2") | safe }}
+  </div>
+  <div id="renderfiledata-js" role="tabpanel">
+{%- set codeBlock %}{% raw %}
+export const data = {
+  myData: {
+    myKey: "myValue",
+  },
+};
+export async function render(data) {
+  return await this.renderFile("./includes/blogpost.md", data.myData);
+};
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
+  </div>
+  <div id="renderfiledata-cjs" role="tabpanel">
+{%- set codeBlock %}{% raw %}
+module.exports.data = {
+  myData: {
+    myKey: "myValue",
+  },
+};
+module.exports.render = async function (data) {
+  return await this.renderFile("./includes/blogpost.md", data.myData);
+};
+{% endraw %}{%- endset %}
+{{ codeBlock | highlight("js") | safe }}
+  </div>
+</seven-minute-tabs>
+</is-land>

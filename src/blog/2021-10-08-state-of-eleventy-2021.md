@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: Blog
 ---
 
-* [Watch on YouTube](https://www.youtube.com/watch?v=kcRtANKWCLQ)
-* Read a bunch more detail on [zachleat.com](https://www.zachleat.com/web/state-of-eleventy/).
+- [Watch on YouTube](https://www.youtube.com/watch?v=kcRtANKWCLQ)
+- Read a bunch more detail on [zachleat.com](https://www.zachleat.com/web/state-of-eleventy/).
 
 {% youtubeEmbed "kcRtANKWCLQ" %}

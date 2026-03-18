@@ -1,0 +1,77 @@
+<is-land on:visible import="/js/seven-minute-tabs.js">
+<seven-minute-tabs persist sync class="tabs-flush" autoheight>
+  {% renderFile "./src/_includes/syntax-chooser-tablist.11ty.js", {id: "pagedalias"} %}
+  <div id="pagedalias-liquid" role="tabpanel">
+{% set codeBlock %}{% raw %}
+---
+pagination:
+  data: testdata
+  size: 1
+  alias: wonder
+testdata:
+  - Item1
+  - Item2
+permalink: "different/{{ wonder | slugify }}/index.html"
+---
+You can use the alias in your content too {{ wonder }}.
+{% endraw %}{% endset %}
+{{ codeBlock | highlight("liquid") | safe }}
+  </div>
+  <div id="pagedalias-njk" role="tabpanel">
+{% set codeBlock %}{% raw %}
+---
+pagination:
+  data: testdata
+  size: 1
+  alias: wonder
+testdata:
+  - Item1
+  - Item2
+permalink: "different/{{ wonder | slugify }}/index.html"
+---
+You can use the alias in your content too {{ wonder }}.
+{% endraw %}{% endset %}
+{{ codeBlock | highlight("jinja2") | safe }}
+  </div>
+  <div id="pagedalias-js" role="tabpanel">
+{% set codeBlock %}{% raw %}
+export const data = {
+	pagination: {
+		data: "testdata",
+		size: 1,
+		alias: "wonder",
+	},
+	testdata: ["Item1", "Item2"],
+	permalink: function (data) {
+		return `different/${this.slugify(data.wonder)}/index.html`;
+	},
+};
+
+export function render(data) {
+	return `You can use the alias in your content too ${data.wonder}.`;
+};
+{% endraw %}{% endset %}
+{{ codeBlock | highlight("js") | safe }}
+  </div>
+	<div id="pagedalias-cjs" role="tabpanel">
+{% set codeBlock %}{% raw %}
+exports.data = {
+	pagination: {
+		data: "testdata",
+		size: 1,
+		alias: "wonder",
+	},
+	testdata: ["Item1", "Item2"],
+	permalink: function (data) {
+		return `different/${this.slugify(data.wonder)}/index.html`;
+	},
+};
+
+exports.render = function (data) {
+	return `You can use the alias in your content too ${data.wonder}.`;
+};
+{% endraw %}{% endset %}
+{{ codeBlock | highlight("js") | safe }}
+  </div>
+</seven-minute-tabs>
+</is-land>

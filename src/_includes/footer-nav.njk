@@ -1,30 +1,27 @@
-<ul class="list-bare mb-2 fl fl-inline fl-nowrap fl-separator-h">
-	<li><em>Built using Eleventy v{{ eleventy.version }}</em></li>
-	<li>{% include "edit-on-github.njk" %}</li>
-	<li><a href="/docs/accessibility/">Accessibility</a></li>
-	<li><a href="/docs/account/" class="elv-externalexempt">Contributor Account</a></li>
-	<li><a href="https://zachleat.com" class="elv-externalexempt">{% communityavatar "zachleat" %}</a></li>
-</ul>
-<ul class="list-bare mb-2 fl fl-inline fl-nowrap fl-separator-h">
-	<li><a href="/styleguide/" class="elv-nav-light">Style Guide</a></li>
-	<li><a href="/docs/credits/" class="elv-nav-light">Credits</a></li>
-{% if github and github.stargazers %}
-	<li><a href="https://github.com/11ty/eleventy/" class="elv-externalexempt elv-nav-light" title="{{ github.stargazers }}">{{ github.stargazers | humanReadableNum }} Stars</a></li>
-{% endif %}
-{% if npm and npm.downloads %}
-	<li>
-		<is-land on:idle on:visible>
-			<template data-island="once">
-				<script src="/js/intl-number.js"></script>
-			</template>
-			<a href="https://www.npmjs.com/package/@11ty/eleventy" class="elv-externalexempt elv-nav-light">
-				<intl-number>{{ npm.downloads | commaNumber }}</intl-number>
-				Downloads
-			</a>
-		</is-land>
-	</li>
-{% endif %}
-{% if opencollective and opencollective.backers %}
-	<li><a href="/docs/supporters/" class="elv-externalexempt elv-nav-light">{{ opencollective.backers | humanReadableNum }} Backers</a></li>
-{% endif %}
-</ul>
+<div class="fl fl-nowrap elv-footer-nav">
+	<ul class="list-bare">
+		<li>{% include "edit-on-github.njk" %}</li>
+		<li><a href="/docs/accessibility/">Accessibility</a></li>
+		<li><a href="/docs/credits/">Credits</a></li>
+		<li><a href="/firehose/">Firehose</a></li>
+		<li><a href="/styleguide/">Style Guide</a></li>
+	</ul>
+	<ul class="list-bare">
+		<li><strong class="subhed">Built With</strong></li>
+		<li><em><i class="fa-brands fa-eleventy"></i>Eleventy v{{ eleventy.version }}</em></li>
+		<li><strong class="subhed">Statistics</strong></li>
+{%- if github and github.stargazers %}
+		<li><a href="https://github.com/11ty/eleventy/" class="elv-externalexempt" title="{{ github.stargazers }}"><i class="fa-solid fa-star"></i>{{ github.stargazers | humanReadableNum }} Stars</a></li>
+{%- endif %}
+{%- if npm and npm.downloads %}
+		<li><i class="fa-solid fa-download"></i><abbr title="{{ npm.downloads }}">{{ npm.downloads | humanReadableNum }}</abbr> Downloads</li>
+{%- endif %}
+	</ul>
+	<ul class="list-bare">
+		<li><strong class="subhed">Awesomeverse</strong></li>
+		<li><a href="https://fontawesome.com/"><i class="fa-brands fa-font-awesome"></i>Font Awesome</a></li>
+		<li><a href="https://webawesome.com/"><i class="fa-brands fa-web-awesome"></i>Web Awesome</a></li>
+		<li><a href="https://www.podcastawesome.com/">Podcast Awesome</a></li>
+		<li><a href="https://blog.fontawesome.com/">Blog Awesome</a></li>
+	</ul>
+</div>

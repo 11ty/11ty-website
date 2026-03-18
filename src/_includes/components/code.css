@@ -1,12 +1,14 @@
 /* Syntax highlighting and Code blocks */
 pre {
 	display: block;
-	padding: .75rem 1rem;
-	margin: 1em -1rem 2em -1rem;
+	padding: 0.75rem 1rem;
+	margin: 1em -1rem;
 	line-height: 1.5;
 
 	overflow-x: auto;
-	font-size: 0.875em; /* 14px /16 */
+	font-family: Roboto Mono, Consolas, Monaco, Andale Mono, Ubuntu Mono,
+		monospace;
+
 	-moz-tab-size: 2;
 	-o-tab-size: 2;
 	tab-size: 2;
@@ -19,14 +21,9 @@ pre {
 
 	background-color: #272822;
 	color: #fff;
+	scrollbar-color: #aaa transparent;
 }
-details[open] pre {
-	margin-left: 0;
-	margin-right: 0;
-}
-pre {
-	font-family: Roboto Mono, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
-}
+
 .fl > * > pre {
 	margin-top: 0;
 }
@@ -56,82 +53,20 @@ pre + .note {
 		color: unset;
 	}
 }
-@media (min-width: 37.5em) { /* 600px */
+@media (min-width: 37.5em) {
 	pre {
 		font-size: 1em; /* 16px /16 */
 	}
 }
-@media (min-width: 64em) { /* 1024px */
+/* #2col */
+@media (min-width: 41.4375em) {
 	pre {
 		border-radius: 0.3em;
 	}
 }
 
-
-.highlight-line {
-	display: inline-block;
-
-	/* del, ins, mark default styles */
-	text-decoration: none;
+pre.language-11ty-output {
+	border: 2px solid var(--border-color);
+	background-color: inherit;
 	color: inherit;
-}
-
-/* allow highlighting empty lines */
-.highlight-line:empty:before {
-	content: " ";
-}
-
-.highlight-line {
-	min-width: 100%;
-}
-.highlight-line .highlight-line {
-	min-width: 0;
-}
-
-.highlight-line-isdir {
-	color: #b0b0b0;
-	background-color: #222;
-}
-.highlight-line-active {
-	background-color: #444;
-	background-color: hsla(0, 0%, 27%, .8);
-}
-.highlight-line-add {
-	background-color: #45844b;
-}
-.highlight-line-remove {
-	background-color: #902f2f;
-}
-
-
-[data-preprefix-cmdhomedir] .highlight-line:first-child:before {
-	color: #aaa;
-	content: "~ $ ";
-}
-[data-preprefix-eleventysample] .highlight-line:first-child:before {
-	color: #aaa;
-	content: "~/eleventy-sample $ ";
-}
-
-pre[class*="language-diff-"] {
-	padding-left: 0;
-	padding-right: 0;
-}
-.token.deleted {
-	background-color: hsl(350deg 100% 88% / 20%);
-}
-.token.inserted {
-	background-color: hsl(120deg 73% 75% / 20%);
-}
-.token.inserted:not(.prefix),
-.token.deleted:not(.prefix) {
-	display: block;
-}
-.token.prefix.unchanged,
-.token.prefix.inserted,
-.token.prefix.deleted {
-	-webkit-user-select: none;
-	user-select: none;
-	margin-right: .5em;
-	padding: 0 .2em;
 }

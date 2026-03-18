@@ -3,5 +3,15 @@
 	"permalink": "/docs/quicktips/{{ page.fileSlug }}/",
 	"feedTitle": "Quick Tips RSS Feed",
 	"feedUrl": "/docs/quicktips/feed.xml",
-	"tags": ["quicktips", "docs-quicktips"]
+	"tags": ["quicktips", "docs-quicktips"],
+	"eleventyNavigation": {
+		"parent": "Quick Tips"
+	},
+	"eleventyComputed": {
+		"title": "Quick Tip: {{ tiptitle }}",
+		"eleventyNavigation": {
+			"key": "Quick Tip: {{ tiptitle }}"
+		}
+	},
+	"excludeFromSidebar": true
 }

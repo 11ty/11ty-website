@@ -1,0 +1,7 @@
+{
+	"url": "https://github.com/madrilene/eleventy-esm-minimal",
+	"name": "eleventy-esm-minimal",
+	"description": "A very minimal starter for Eleventy 3.0. Built with the help of CUBE CSS, Utopia and Every Layout.",
+	"author": "lene",
+	"demo": "https://eleventy-esm-minimal.netlify.app/"
+}

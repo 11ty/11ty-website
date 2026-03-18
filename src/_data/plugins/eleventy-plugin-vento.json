@@ -1,0 +1,5 @@
+{
+	"npm": "eleventy-plugin-vento",
+	"author": "noelforte",
+	"description": "adds support for the Vento templating language."
+}

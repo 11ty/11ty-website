@@ -1,0 +1,6 @@
+_site/**
+src/_includes/components/auth/gotrue.js
+src/docs/versions.md
+src/authors/author-pages.md
+src/docs/plugins/community.md
+src/docs/quicktips.md

@@ -1,0 +1,5 @@
+{
+	"npm": "@myxotod/eleventy-plugin-furigana",
+	"author": "myxotod",
+	"description": "adds a filter to parse content for kanji followed by []-brackets containing hiragana and converts it to furigana"
+}

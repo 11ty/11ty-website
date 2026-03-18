@@ -3,6 +3,7 @@ newstitle: "The Stability of Eleventy"
 eleventyNavigation:
   parent: Blog
 ---
+
 In [_The Need for Speed: Why Eleventy Leaves Bundlers Behind_](/blog/newstack/), we discussed the stability of Eleventy.
 
 > “Stability is kind of a hard thing to sell, but our track record of being a five or six-year-old project now and really delivering value to folks over those five or six years speaks for itself,” he added.
