@@ -8,6 +8,16 @@
 	transition: 0.3s opacity ease-out;
 	filter: drop-shadow(3px 3px #0006);
 }
+
+:root {
+	--possum-margin: 5rem;
+}
+.elv-header-docs .elv-possum {
+	width: calc(var(--possum-margin) - .5rem);
+	height: auto;
+	aspect-ratio: 790 / 2125;
+	filter: drop-shadow(1px 1px #0006);
+}
 /* #2col */
 @media (max-width: 41.375em) {
 	/* Hide moving possum on docs only */
@@ -15,17 +25,11 @@
 		display: none;
 	}
 }
-
-.elv-header-docs .elv-possum {
-	width: 10vw;
-	height: auto;
-	aspect-ratio: 790 / 2125;
-	max-width: 3.75em; /* 60px /16 */
-	filter: drop-shadow(1px 1px #0006);
-}
-@media (min-width: 81.25em) { /* 1300px */
-	.elv-header-docs .elv-possum {
-		width: 15vw;
-		max-width: 6.25rem; /* 100px /16 */
+@media (min-width: 41.4375em) and (max-width: 78.125em) { /* 663px-1250px */
+	.elv-header-docs:has(.announcement) .products-max {
+		padding-right: calc(var(--possum-margin) - 1em); /* subtract link padding */
+	}
+	.elv-header-docs .elv-nav-menu {
+		padding-right: var(--possum-margin);
 	}
 }
