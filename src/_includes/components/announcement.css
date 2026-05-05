@@ -93,13 +93,6 @@
 	white-space: normal;
 }
 
-.elv-header-default .announcement {
-	--btn-bg: #f0f1f3;
-	--btn-color: #333;
-	--btn-shadow-color: #666;
-	background-color: #222;
-}
-
 .products .announcement svg {
 	min-width: 1em;
 }
