@@ -413,6 +413,9 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("src/blog/*.png");
 	eleventyConfig.addPassthroughCopy("src/blog/pretty-atom-feed-v3.xsl");
 	eleventyConfig.addPassthroughCopy("src/favicon.ico");
+	eleventyConfig.addPassthroughCopy({
+		"./node_modules/@awesome.me/webawesome/dist-cdn/": "/static/web-awesome/",
+	});
 
 	eleventyConfig.addFilter("matchbannerlink", (links, text) => {
 		return links.find((entry) => entry.label.indexOf(text) !== -1);

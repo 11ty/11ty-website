@@ -78,7 +78,7 @@
     "@11ty/client": "4.0.0-alpha.7",
     "@11ty/is-land": "^5.0.1",
     "@11ty/logo": "^3.0.0",
-    "@awesome.me/webawesome": "^3.3.1",
+    "@awesome.me/webawesome": "^3.6.0",
     "@zachleat/details-utils": "^2.0.2",
     "@zachleat/filter-container": "^4.0.0",
     "@zachleat/flex-luthor": "^4.0.2",

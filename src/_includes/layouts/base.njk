@@ -167,8 +167,9 @@ let eleventyComputed = {
 		<script src="/js/eleventy.js" type="module"></script>
 {%- endif %}
 
-		<!-- Web Awesome Kit -->
-		<script src="https://kit.webawesome.com/a2ff939369d44af1.js" crossorigin="anonymous" type="module"></script>
+		<!-- Web Awesome -->
+		<link rel="stylesheet" href="/static/web-awesome/styles/themes/default.css" media="print" onload="this.media='all'" fetchpriority="low">
+		<script type="module" src="/static/web-awesome/webawesome.loader.js"></script>
 	</head>
 	<body>
 		{{ content | safe }}
