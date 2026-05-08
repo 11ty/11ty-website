@@ -24,6 +24,13 @@ pre {
 	scrollbar-color: #aaa transparent;
 }
 
+:is(.syntax-highlight, syntax-highlight) {
+	margin-inline: -1rem;
+}
+:is(.syntax-highlight, syntax-highlight) pre {
+	margin-inline: 0;
+}
+
 .fl > * > pre {
 	margin-top: 0;
 }

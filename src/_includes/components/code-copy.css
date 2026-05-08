@@ -6,8 +6,8 @@
 
 	wa-copy-button {
 		position: absolute;
-		right: -1rem;
-		bottom: .25rem;
+		right: 0;
+		bottom: 0;
 		margin: .25em;
 		color: #fff;
 
