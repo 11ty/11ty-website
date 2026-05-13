@@ -101,16 +101,16 @@ class TimeDifference extends HTMLElement {
 		}
 
 		let rtf = new Intl.RelativeTimeFormat(locale, { numeric: "always" });
-
+		let str;
 		// super close to next whole unit, round up
 		if( amountDiff < 1 && amountDiff > this.MINIMUM_ROUND_UP ) {
-			return rtf.format(Math.round(diff), units);
-		}
-		if(diff < 0) {
-			return rtf.format(Math.ceil(diff), units);
+			str = rtf.format(Math.round(diff), units);
+		} else if(diff < 0) {
+			str = rtf.format(Math.ceil(diff), units);
+		} else {
+			str = rtf.format(Math.floor(diff), units);
 		}
 
-		let str = rtf.format(Math.floor(diff), units);
 		if(mode === "strip-prefix" && str?.toLowerCase().startsWith("in ")) {
 			str = str.slice(3);
 		}
