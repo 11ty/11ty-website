@@ -30,3 +30,7 @@ You can also watch the video here:
 
 - It’s the same video on the [Build Awesome Pro Kickstarter]({{ config.kickstarterUrl }}).
 - Or even on [YouTube: Now on Kickstarter: Build Awesome — Collaborate on Web Sites That Last](https://www.youtube.com/watch?v=G4Xm4lLmRgg)
+
+## Full Coverage
+
+{% include "related-build-awesome.njk" %}

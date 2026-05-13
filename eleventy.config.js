@@ -88,6 +88,12 @@ const shortcodes = {
 			zoom = "bigger";
 		}
 
+		// wait a little longer for small images
+		let advanced = "";
+		if(preset === "small") {
+			advanced = "_wait:2";
+		}
+
 		let isYouTubeUrl = siteUrl.includes("www.youtube.com");
 		let isSquare = viewport.width === viewport.height;
 		let screenshotUrl;
@@ -102,7 +108,7 @@ const shortcodes = {
 			} else {
 				screenshotUrl = `https://screenshot.11ty.app/${encodeURIComponent(
 					siteUrl
-				)}/${preset}/1:1/${zoom ? `${zoom}/` : ""}`;
+				)}/${preset}/1:1/${zoom ? `${zoom}/` : ""}${advanced ? `${advanced}/` : ""}`;
 			}
 		}
 

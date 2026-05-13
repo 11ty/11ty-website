@@ -90,9 +90,8 @@ Build Awesome Pro is a better way to build and collaborate on websites! Convenie
 
 _**Stay tuned: Build Awesome (11ty) v4 is coming** with that same great 11ty flavor you’re used to: more features with fewer dependencies and an ever-improving focus on build performance!_
 
-### Related
+## Full Coverage
 
-- [Eleventy is now Build Awesome](/blog/build-awesome/)
-- [Podcast Awesome: Eleventy Is Rebranding to Build Awesome: What Changes (and What Doesn’t)](https://www.podcastawesome.com/2092855/episodes/18785266-eleventy-is-rebranding-to-build-awesome-what-changes-and-what-doesn-t) <code class="elv-tag"><i class="fa-solid fa-headphones"></i>24m</code>
-- [Youtube: Eleventy Meetup: AMA about Build Awesome, an Open Town Hall](https://www.youtube.com/watch?v=lA-wD89m6jM) <code class="elv-tag"><i class="fa-solid fa-video"></i>44m</code>
-- [Blog Awesome: We’re Pressing Pause on our Kickstarter](https://blog.fontawesome.com/pausing-kickstarter/)
+{% include "related-build-awesome.njk" %}
+
+{# - [Blog Awesome: We’re Pressing Pause on our Kickstarter](https://blog.fontawesome.com/pausing-kickstarter/) #}
