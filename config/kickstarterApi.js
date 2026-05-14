@@ -1,4 +1,5 @@
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
+import chromium from "@sparticuz/chromium";
 import { AssetCache } from "@11ty/eleventy-fetch";
 
 /**
@@ -39,8 +40,10 @@ export async function fetchKickstarterStats(campaignUrl, options = {}) {
 
 async function fetchWithPuppeteer(jsonUrl, campaignUrl) {
   const browser = await puppeteer.launch({
-    headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: await chromium.executablePath(),
+    headless: chromium.headless,
   });
 
   try {
