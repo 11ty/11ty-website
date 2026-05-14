@@ -297,8 +297,8 @@ export default async function (eleventyConfig) {
 		})
 	});
 
-	eleventyConfig.addFilter("moduloUntil", function (num, div) {
-		return div - num % div;
+	eleventyConfig.addFilter("modulo", function (num, div) {
+		return num % div;
 	});
 
 	eleventyConfig.addFilter("throwErrorWhenMissing", function (arg, msg) {

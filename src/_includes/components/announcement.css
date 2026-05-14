@@ -44,13 +44,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	text-align: center;
 	flex-wrap: wrap;
 	gap: .5em;
 	padding: .5em 2em;
 	text-decoration: none;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
 	border-radius: .5em;
 	margin: .25em .25em .5em .25em;
 	border: .125rem solid var(--btn-shadow-color);
@@ -113,4 +111,45 @@
 	padding: .25em .75em;
 	border-radius: .25em;
 	background-color: rgba(0,0,0,.4);
+}
+.announcement-progress {
+	--fundraise-accent-color: var(--brand-ba);
+	font-size: .75em;
+	font-weight: 500;
+	flex-grow: 1;
+	display: flex;
+	gap: .5em;
+	align-items: center;
+	justify-content: center;
+
+	@media (prefers-color-scheme: dark) {
+		--fundraise-accent-color: #183153;
+	}
+
+	.fa11ty-icon {
+		min-width: 1em;
+	}
+
+	progress {
+		flex-grow: 1;
+		accent-color: var(--fundraise-accent-color);
+		width: 100%;
+		min-width: 5em;
+		max-width: 18em;
+		display: flex;
+		height: 1em;
+		border-radius: .125em;
+		overflow: hidden;
+		appearance: none;
+	}
+	::-webkit-progress-value {
+		background: var(--fundraise-accent-color);
+	}
+	::-moz-progress-bar {
+		background: var(--fundraise-accent-color);
+	}
+	::-webkit-progress-bar {
+		background-color: var(--btn-color);
+		box-shadow: 0 .125em .3125em rgba(0, 0, 0, 0.25) inset;
+	}
 }
