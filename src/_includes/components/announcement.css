@@ -44,13 +44,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	text-align: center;
 	flex-wrap: wrap;
 	gap: .5em;
 	padding: .5em 2em;
 	text-decoration: none;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
 	border-radius: .5em;
 	margin: .25em .25em .5em .25em;
 	border: .125rem solid var(--btn-shadow-color);
@@ -113,4 +111,55 @@
 	padding: .25em .75em;
 	border-radius: .25em;
 	background-color: rgba(0,0,0,.4);
+}
+
+/* Progress bar */
+.announcement-progress {
+	--fundraise-accent-color: var(--brand-ba);
+	--fundraise-bg: rgba(255,255,255,.4);
+	flex-basis: 20em;
+	font-size: 0.75em; /* 12px /16 */
+	font-weight: 500;
+	flex-grow: 1;
+	display: flex;
+	gap: .75em;
+	align-items: center;
+	justify-content: center;
+	white-space: nowrap;
+}
+@media (prefers-color-scheme: dark) {
+	.announcement-progress {
+		--fundraise-accent-color: #183153;
+		--fundraise-bg: rgba(0,0,0,.2);
+	}
+}
+.announcement-progress > span {
+	display: flex;
+	align-items: center;
+	gap: .25em;
+}
+.announcement-progress .fa11ty-icon {
+	min-width: 1em;
+}
+.announcement-progress progress {
+	flex-grow: 1;
+	accent-color: var(--fundraise-accent-color);
+	width: 100%;
+	min-width: 8em;
+	max-width: 18em;
+	display: flex;
+	height: 1em;
+	border-radius: .125em;
+	overflow: hidden;
+	appearance: none;
+}
+.announcement-progress ::-webkit-progress-value {
+	background: var(--fundraise-accent-color);
+}
+.announcement-progress ::-moz-progress-bar {
+	background: var(--fundraise-accent-color);
+}
+.announcement-progress ::-webkit-progress-bar {
+	background-color: var(--fundraise-bg);
+	box-shadow: 0 .125em .3125em rgba(0, 0, 0, 0.25) inset;
 }

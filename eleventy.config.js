@@ -297,6 +297,10 @@ export default async function (eleventyConfig) {
 		})
 	});
 
+	eleventyConfig.addFilter("modulo", function (num, div) {
+		return num % div;
+	});
+
 	eleventyConfig.addFilter("throwErrorWhenMissing", function (arg, msg) {
 		if(arg) {
 			return;
