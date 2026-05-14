@@ -53,7 +53,6 @@
     "@11ty/font-awesome": "^1.0.1",
     "@11ty/image-color": "^1.0.8",
     "@sindresorhus/slugify": "^3.0.0",
-    "@sparticuz/chromium": "^148.0.0",
     "@tweetback/canonical": "^2.0.48",
     "clean-css": "^5.3.3",
     "comma-number": "^2.1.0",
@@ -71,7 +70,6 @@
     "memoize": "^10.2.0",
     "pagefind": "^1.4.0",
     "prettier": "^3.8.1",
-    "puppeteer-core": "^24.43.1",
     "semver": "^7.7.4",
     "short-hash": "^1.0.0",
     "terser": "^5.46.1"
