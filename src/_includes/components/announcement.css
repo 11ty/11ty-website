@@ -112,10 +112,12 @@
 	border-radius: .25em;
 	background-color: rgba(0,0,0,.4);
 }
+
+/* Progress bar */
 .announcement-progress {
-	flex-basis: 20em;
 	--fundraise-accent-color: var(--brand-ba);
 	--fundraise-bg: rgba(255,255,255,.4);
+	flex-basis: 20em;
 	font-size: 0.75em; /* 12px /16 */
 	font-weight: 500;
 	flex-grow: 1;
@@ -124,8 +126,9 @@
 	align-items: center;
 	justify-content: center;
 	white-space: nowrap;
-
-	@media (prefers-color-scheme: dark) {
+}
+@media (prefers-color-scheme: dark) {
+	.announcement-progress {
 		--fundraise-accent-color: #183153;
 		--fundraise-bg: rgba(0,0,0,.2);
 	}
@@ -135,32 +138,28 @@
 	align-items: center;
 	gap: .25em;
 }
-
-.announcement-progress {
-	.fa11ty-icon {
-		min-width: 1em;
-	}
-
-	progress {
-		flex-grow: 1;
-		accent-color: var(--fundraise-accent-color);
-		width: 100%;
-		min-width: 8em;
-		max-width: 18em;
-		display: flex;
-		height: 1em;
-		border-radius: .125em;
-		overflow: hidden;
-		appearance: none;
-	}
-	::-webkit-progress-value {
-		background: var(--fundraise-accent-color);
-	}
-	::-moz-progress-bar {
-		background: var(--fundraise-accent-color);
-	}
-	::-webkit-progress-bar {
-		background-color: var(--fundraise-bg);
-		box-shadow: 0 .125em .3125em rgba(0, 0, 0, 0.25) inset;
-	}
+.announcement-progress .fa11ty-icon {
+	min-width: 1em;
+}
+.announcement-progress progress {
+	flex-grow: 1;
+	accent-color: var(--fundraise-accent-color);
+	width: 100%;
+	min-width: 8em;
+	max-width: 18em;
+	display: flex;
+	height: 1em;
+	border-radius: .125em;
+	overflow: hidden;
+	appearance: none;
+}
+.announcement-progress ::-webkit-progress-value {
+	background: var(--fundraise-accent-color);
+}
+.announcement-progress ::-moz-progress-bar {
+	background: var(--fundraise-accent-color);
+}
+.announcement-progress ::-webkit-progress-bar {
+	background-color: var(--fundraise-bg);
+	box-shadow: 0 .125em .3125em rgba(0, 0, 0, 0.25) inset;
 }
