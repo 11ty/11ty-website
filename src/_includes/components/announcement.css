@@ -125,17 +125,18 @@
 	justify-content: center;
 	white-space: nowrap;
 
-	& > span {
-		display: flex;
-		align-items: center;
-		gap: .25em;
-	}
-
 	@media (prefers-color-scheme: dark) {
 		--fundraise-accent-color: #183153;
 		--fundraise-bg: rgba(0,0,0,.2);
 	}
+}
+.announcement-progress > span {
+	display: flex;
+	align-items: center;
+	gap: .25em;
+}
 
+.announcement-progress {
 	.fa11ty-icon {
 		min-width: 1em;
 	}
