@@ -1,7 +1,4 @@
 .announcement {
-	--btn-bg: #f0f1f3;
-	--btn-color: #183153;
-	--btn-shadow-color: #0f1f36;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -114,18 +111,32 @@
 }
 
 /* Progress bar */
+.announcement a[href] {
+	position: relative;
+}
+.announcement a[href] > :not(.announcement-progress) {
+	position: relative;
+	z-index: 1;
+}
+
 .announcement-progress {
 	--fundraise-accent-color: var(--brand-ba);
 	--fundraise-bg: rgba(255,255,255,.4);
-	flex-basis: 20em;
-	font-size: 0.75em; /* 12px /16 */
-	font-weight: 500;
-	flex-grow: 1;
-	display: flex;
-	gap: .75em;
-	align-items: center;
-	justify-content: center;
-	white-space: nowrap;
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	accent-color: var(--fundraise-accent-color);
+	width: 100%;
+	height: 100%;
+	border-radius: .4em;
+	overflow: hidden;
+	appearance: none;
+	pointer-events: none;
+	background-color: transparent;
+	border-width: 0;
 }
 @media (prefers-color-scheme: dark) {
 	.announcement-progress {
@@ -133,33 +144,12 @@
 		--fundraise-bg: rgba(0,0,0,.2);
 	}
 }
-.announcement-progress > span {
-	display: flex;
-	align-items: center;
-	gap: .25em;
-}
-.announcement-progress .fa11ty-icon {
-	min-width: 1em;
-}
-.announcement-progress progress {
-	flex-grow: 1;
-	accent-color: var(--fundraise-accent-color);
-	width: 100%;
-	min-width: 8em;
-	max-width: 18em;
-	display: flex;
-	height: 1em;
-	border-radius: .125em;
-	overflow: hidden;
-	appearance: none;
-}
-.announcement-progress ::-webkit-progress-value {
+.announcement-progress::-webkit-progress-value {
 	background: var(--fundraise-accent-color);
 }
-.announcement-progress ::-moz-progress-bar {
+.announcement-progress::-moz-progress-bar {
 	background: var(--fundraise-accent-color);
 }
-.announcement-progress ::-webkit-progress-bar {
-	background-color: var(--fundraise-bg);
-	box-shadow: 0 .125em .3125em rgba(0, 0, 0, 0.25) inset;
+.announcement-progress::-webkit-progress-bar {
+	background-color: transparent;
 }
