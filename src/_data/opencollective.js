@@ -126,22 +126,32 @@ function isAllowedUrl(websiteUrl) {
 	}
 }
 
+let logged = false;
+
 export default async function () {
 	try {
 		// let url = `https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000&status=ACTIVE`;
-		let url = `https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000`;
-		let json = await EleventyFetch(url, {
+		let jsonA = await EleventyFetch(`https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000&offset=0`, {
+			type: "json",
+			duration: "30m",
+			directory: ".cache/eleventy-fetch/",
+			dryRun: false,
+		});
+		let jsonB = await EleventyFetch(`https://rest.opencollective.com/v2/11ty/orders/incoming?limit=1000&offset=1000`, {
 			type: "json",
 			duration: "30m",
 			directory: ".cache/eleventy-fetch/",
 			dryRun: false,
 		});
 
-		if(json.nodes.length > 980) {
-			console.warn( json.nodes.length, "OpenCollective supporter results (careful when this hits the API max limit of 1000)" );
+		let nodes = [...jsonA.nodes, ...jsonB.nodes]
+
+		if(!logged) {
+			console.log( nodes.length, "OpenCollective supporter results (careful when this hits the API max limit of 2000)" );
+			logged = true;
 		}
 
-		let orders = json.nodes
+		let orders = nodes
 			.map((order) => {
 				order.name = order.fromAccount.name;
 				order.accountType = order.fromAccount.type;
