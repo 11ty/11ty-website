@@ -51,10 +51,6 @@ export function randomTestimonialLink(testimonials) {
 <!--- this is a workaround for the layout used in the header --->
 <flex-luthor webc:nokeep></flex-luthor>
 
-<is-land import="/js/time-difference.js" on:idle>
-  <p><time-difference live>This build ran <time @html="(new Date()).toString()" :datetime="(new Date()).toISOString()"></time>.</time-difference></p>
-</is-land>
-
 <quick-start></quick-start>
 
 <div webc:bucket="async">
