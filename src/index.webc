@@ -1,6 +1,6 @@
 ---js
 // <script>
-let headerTitle = "Eleventy is a simpler static site generator";
+let headerTitle = "Eleventy is a simpler <code>static</code> site generator";
 let layout = "layouts/main.njk";
 
 let searchTitle = "Eleventy is a simpler static site generator";
