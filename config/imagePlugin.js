@@ -54,7 +54,11 @@ function productionUrl(imagePath) {
 }
 
 function getScreenshotUrl(urlPath, screenshotCacheBustParam = "") {
+	if(!urlPath) {
+		return config.origin + "/img/open-graph.jpg"; // Default!
+	}
 	let fullUrl = addCacheBusterQueryParam(config.origin + urlPath, screenshotCacheBustParam);
+
 	return `https://screenshot.11ty.app/${encodeURIComponent(fullUrl)}/opengraph/x.jpg`;
 }
 
