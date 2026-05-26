@@ -73,6 +73,7 @@ class TimeDifference extends HTMLElement {
 
 	static getText(dateStr, options = {}) {
 		let { units, locale, mode, suffix } = options;
+		let modes = (mode || "").split(",");
 
 		let date1;
 		if(!isNaN(Date.parse(dateStr))) {
@@ -91,27 +92,27 @@ class TimeDifference extends HTMLElement {
 		let diff = (date1 - date2) / divisor;
 		let amountDiff = diff/Math.round(diff);
 		// stops at 0
-		if(mode === "countdown") {
+		if(modes.includes("countdown")) {
 			diff = Math.max(Math.floor(diff), 0); // minimum 0
 		}
+		let str = "";
 		if(units === "milliseconds") {
 			// milliseconds are not supported by RelativeTimeFormat
 			let numFormat = new Intl.NumberFormat();
-			return `${diff > 0 ? "in " : ""}${numFormat.format(diff)} milliseconds`;
-		}
-
-		let rtf = new Intl.RelativeTimeFormat(locale, { numeric: "always" });
-		let str;
-		// super close to next whole unit, round up
-		if( amountDiff < 1 && amountDiff > this.MINIMUM_ROUND_UP ) {
-			str = rtf.format(Math.round(diff), units);
-		} else if(diff < 0) {
-			str = rtf.format(Math.ceil(diff), units);
+			str = `${diff > 0 ? "in " : ""}${numFormat.format(diff)} milliseconds`;
 		} else {
-			str = rtf.format(Math.floor(diff), units);
+			let rtf = new Intl.RelativeTimeFormat(locale, { numeric: "always" });
+			// super close to next whole unit, round up
+			if( amountDiff < 1 && amountDiff > this.MINIMUM_ROUND_UP ) {
+				str = rtf.format(Math.round(diff), units);
+			} else if(diff < 0) {
+				str = rtf.format(Math.ceil(diff), units);
+			} else {
+				str = rtf.format(Math.floor(diff), units);
+			}
 		}
 
-		if(mode === "strip-prefix" && str?.toLowerCase().startsWith("in ")) {
+		if(modes.includes("strip-prefix") && str?.toLowerCase().startsWith("in ")) {
 			str = str.slice(3);
 		}
 
