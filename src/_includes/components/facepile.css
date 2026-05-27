@@ -1,20 +1,30 @@
 /* Featured sites */
 .facepile {
+	--facepile-offset: 0.375em; /* 6px /16 */
+	--facepile-border-size: 1px;
+	--facepile-rainbow-offset: 1em;
+	--facepile-avatar-size: 2.75em;
+	display: flex;
+	flex-wrap: wrap;
+	gap: .25em 0;
 	margin-top: 2em;
 	margin-bottom: 3em;
-	line-height: 2;
-	padding: 0 0 0 25px;
+	padding: 0 0 0 var(--facepile-offset);
 }
 .facepile > a {
-	display: inline-block;
-	margin-left: -25px;
+	width: var(--facepile-avatar-size);
+	height: var(--facepile-avatar-size);
+	aspect-ratio: 1;
+	margin-left: calc(-1 * var(--facepile-offset));
 }
+
 .supporters-silver .facepile {
-	text-align: center;
-	text-wrap: balance; /* Not supported with display: inline-block on FF yet */
+	--facepile-avatar-size: 3.25em;
+	gap: .5em;
+	justify-content: center;
 }
-.supporters-silver .facepile > a ~ a {
-	margin-left: 0;
+.supporters-silver .facepile a[href] {
+	margin: 0;
 }
 .supporters-silver .facepile .avatar {
 	border-radius: .25em;
@@ -29,19 +39,13 @@
 	z-index: 1;
 }
 .facepile .avatar {
-	width: 24px;
-	height: 24px;
-	width: calc(24px + 4vw);
-	height: calc(24px + 4vw);
-	max-width: 50px;
-	max-height: 50px;
-	margin-bottom: 6px;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	margin: 0;
 	background-color: #fff;
 	color: #fff;
-	border: 2px solid;
-	transition: border 0.3s;
-	object-fit: contain;
-	transition: 300ms all;
+	border: var(--facepile-border-size) solid;
 }
 @media (prefers-color-scheme: dark) {
 	.facepile .avatar {
@@ -53,13 +57,7 @@
 .facepile .avatar-indieweb {
 	border-radius: 50%;
 }
-.facepile .avatar-indieweb {
-	/* border-color: yellow; */
-}
-.facepile-supporters .avatar {
-	width: calc(24px + 2vw);
-	height: calc(24px + 2vw);
-}
+
 .facepile > a:is(:focus, :hover):after {
 	content: "";
 	position: absolute;
@@ -67,10 +65,10 @@
 	z-index: -1;
 	pointer-events: none;
 	opacity: 0;
-	left: -24px; /* Right - 4px */
-	right: -20px;
-	top: -24px; /* Right - 4px */
-	bottom: -20px;
+	left: calc(-1 * var(--facepile-rainbow-offset));
+	right: calc(-1 * var(--facepile-rainbow-offset));
+	top: calc(-1 * var(--facepile-rainbow-offset));
+	bottom: calc(-1 * var(--facepile-rainbow-offset));
 	opacity: 0.6;
 	background-color: currentColor;
 	background-image: linear-gradient(
@@ -87,7 +85,7 @@
 		#8000ff,
 		#ff0080
 	);
-	background-size: 1200% 1200%;
+	background-size: 600% 600%;
 	background-position: 0 80%;
 }
 .facepile > a:nth-child(11n + 1):is(:focus, :hover):after {
