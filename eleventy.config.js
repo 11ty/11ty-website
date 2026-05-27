@@ -192,7 +192,7 @@ const shortcodes = {
 		if(website && (hasDefaultAvatar || preferIndiewebAvatarSlugs.includes(supporter.slug))) {
 			return shortcodes.getIndieAvatarHtml(website);
 		}
-		return `<img src="${url}" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async" eleventy:optional>`;
+		return `<img src="${url}" width="66" height="66" alt="${alt}" class="avatar avatar-large" loading="lazy" decoding="async" eleventy:optional="placeholder">`;
 	},
 };
 

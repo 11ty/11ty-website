@@ -59,6 +59,8 @@ const FILTERED_OPENCOLLECTIVE_USERNAME_SLUGS = [
 	"buy-instagram-auto-likes",
 	"buy-active-youtube-subscribers",
 	"socialfans", // site does not exist
+	// archived
+	"richard-herbert",
 ];
 
 function getAmortizedOneTimeDonations(orders) {
