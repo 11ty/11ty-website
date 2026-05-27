@@ -230,11 +230,17 @@ export default async function () {
 
 		// Filter banned slugs (spam, donation terms violations)
 		orders = orders.filter(order => {
+			// filter out Incognito users (an Open Collective thing)
+			if(order.name?.toLowerCase() === "incognito" || order.slug?.toLowerCase()?.startsWith("incognito-")) {
+				return false;
+			}
 			if(FILTERED_OPENCOLLECTIVE_USERNAME_SLUGS.includes(order.slug)) {
 				return false;
 			}
 			return true;
 		});
+
+		console.log( "Pruned backers (incognito users, filtered usernames):", backersCount - orders.length );
 
 		return {
 			supporters: orders,
