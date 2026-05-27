@@ -2,19 +2,40 @@
 import EleventyFetch from "@11ty/eleventy-fetch";
 import githubSponsors from "./githubSponsors.js";
 
+function isHostnameMatchTo(websiteUrl, filteredList = []) {
+	if(!websiteUrl || filteredList.length === 0) {
+		return false;
+	}
+
+	try {
+		let u = new URL(websiteUrl);
+		if(filteredList.find(hostname => u.hostname.endsWith(hostname))) {
+			return true;
+		}
+	} catch(e) {}
+
+	return false;
+}
+
 const CUMULATIVE_MINIMIUM = {
 	INDIVIDUAL: 55, // minimum total amount to show inactive logo
 	DEFAULT_AVATAR: 200, // minimum amount for default avatar (previously never shown)
 	ORGANIZATION: 999999, // minimum total amount to show inactive logo
 };
 
-const EXCLUDED_WEB_HOSTNAMES = [
+// These hostnames are not *linked to* but profiles are still shown.
+const BYPASSED_HOSTNAME_LINKS = [
 	"example.com",
 	"x.com",
 	"twitter.com",
 ];
 
-const EXCLUDED_OPENCOLLECTIVE_USERNAME_SLUGS = [
+// Not shown at all
+const FILTERED_HOSTNAMES = [
+	"trustpilot.com",
+];
+
+const FILTERED_OPENCOLLECTIVE_USERNAME_SLUGS = [
 	"zach-leatherman", // me
 	"bca-account1", // website is buycheapaccounts.com
 	"baocasino", // gambling
@@ -113,19 +134,6 @@ function getUniqueContributors(orders, githubSponsorsAmount) {
 	return Object.values(uniqueContributors);
 }
 
-function isAllowedUrl(websiteUrl) {
-	if(!websiteUrl) {
-		return false;
-	}
-
-	try {
-		let u = new URL(websiteUrl);
-		return EXCLUDED_WEB_HOSTNAMES.includes(u.hostname) === false;
-	} catch(e) {
-		return false;
-	}
-}
-
 let logged = false;
 
 export default async function () {
@@ -146,7 +154,7 @@ export default async function () {
 
 		let nodes = [...jsonA.nodes, ...jsonB.nodes]
 
-		if(!logged) {
+		if(!logged && nodes.length > 1950) {
 			console.log( nodes.length, "OpenCollective supporter results (careful when this hits the API max limit of 2000)" );
 			logged = true;
 		}
@@ -158,7 +166,7 @@ export default async function () {
 				order.slug = order.fromAccount.slug;
 				order.image = order.fromAccount.imageUrl;
 
-				if(isAllowedUrl(order.fromAccount.website)) {
+				if(!isHostnameMatchTo(order.fromAccount.website, BYPASSED_HOSTNAME_LINKS)) {
 					order.website = order.fromAccount.website;
 				}
 
@@ -181,6 +189,10 @@ export default async function () {
 				}
 
 				if(order.slug.startsWith("guest-")) {
+					order.showOnFacepile = false;
+				}
+
+				if(isHostnameMatchTo(order.website, FILTERED_HOSTNAMES)) {
 					order.showOnFacepile = false;
 				}
 
@@ -215,7 +227,12 @@ export default async function () {
 		let backersCount = orders.length - 1; // subtract one for hardcoded me
 
 		// Filter banned slugs (spam, donation terms violations)
-		orders = orders.filter(order => EXCLUDED_OPENCOLLECTIVE_USERNAME_SLUGS.includes(order.slug) === false);
+		orders = orders.filter(order => {
+			if(FILTERED_OPENCOLLECTIVE_USERNAME_SLUGS.includes(order.slug)) {
+				return false;
+			}
+			return true;
+		});
 
 		return {
 			supporters: orders,
