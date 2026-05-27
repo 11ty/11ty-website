@@ -240,11 +240,10 @@ export default async function () {
 			return true;
 		});
 
-		console.log( "Pruned backers (incognito users, filtered usernames):", backersCount - orders.length );
-
 		return {
 			supporters: orders,
 			backersCount,
+			prunedBackersCount: backersCount - orders.length, // incognito/filtered usernames
 			onetimeDonations,
 		};
 	} catch (e) {

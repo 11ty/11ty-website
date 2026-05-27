@@ -1,8 +1,8 @@
 import getOpenCollectiveData from "./opencollective.js";
 
-export default async function () {
-	const opencollective = await getOpenCollectiveData();
+const opencollective = await getOpenCollectiveData();
 
+export default async function () {
 	let backers = opencollective.supporters.filter((supporter) => {
 		return (
 			(supporter.frequency === "MONTHLY" || supporter.frequency === "YEARLY") &&
