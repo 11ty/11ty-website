@@ -201,6 +201,10 @@ export default async function () {
 				return order;
 			});
 
+		let backersCount = orders.filter(entry => {
+			return entry.totalAmountDonated > 0;
+		}).length;
+
 		// lol hardcoded
 		orders.push({
 			name: "Zach Leatherman",
@@ -226,8 +230,6 @@ export default async function () {
 			return b.totalAmountDonated - a.totalAmountDonated;
 		});
 
-		let backersCount = orders.length - 1; // subtract one for hardcoded me
-
 		// Filter banned slugs (spam, donation terms violations)
 		orders = orders.filter(order => {
 			// filter out Incognito users (an Open Collective thing)
@@ -243,7 +245,6 @@ export default async function () {
 		return {
 			supporters: orders,
 			backersCount,
-			prunedBackersCount: backersCount - orders.length, // incognito/filtered usernames
 			onetimeDonations,
 		};
 	} catch (e) {
