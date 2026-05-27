@@ -165,16 +165,18 @@ export default async function () {
 				order.profile = `https://opencollective.com/${order.slug}`;
 				order.totalAmountDonated = Number(order.totalDonations.value);
 				order.isMonthly = isMonthlyOrYearlyOrder(order);
+				order.isActive = order.status === "ACTIVE" ? true : false;
+
 				order.hasDefaultAvatar =
 					order.image ===
 					`https://images.opencollective.com/${order.slug}/avatar.png`;
 
-				order.showOnFacepile = order.status === "ACTIVE" ||
+				order.showOnFacepile = order.isActive ||
 					order.accountType === "INDIVIDUAL" && order.totalAmountDonated > CUMULATIVE_MINIMIUM.INDIVIDUAL ||
 					order.accountType === "ORGANIZATION" && order.totalAmountDonated > CUMULATIVE_MINIMIUM.ORGANIZATION;
 
 				// Active orders usually *must* have an avatar (or a website)
-				if(order.hasDefaultAvatar && !order.website && order.accountType === "INDIVIDUAL") {
+				if(order.showOnFacepile && order.accountType === "INDIVIDUAL" && order.hasDefaultAvatar && !order.website) {
 					order.showOnFacepile = order.totalAmountDonated > CUMULATIVE_MINIMIUM.DEFAULT_AVATAR;
 				}
 

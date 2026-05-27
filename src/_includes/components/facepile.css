@@ -128,7 +128,7 @@
 	background-color: #eee;
 }
 
-/* Filter out gold sponsors when the giant logos are adjacent (in the footer, everywhere but the home page) */
+/* Filter out duplicate and inactive gold/silvers sponsors */
 .facepile-supporters [data-supporters-tier="gold-sponsor"],
 .facepile-supporters [data-supporters-tier="silver-sponsor"] {
 	display: none;
