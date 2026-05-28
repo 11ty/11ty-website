@@ -4,6 +4,6 @@ export default async function () {
   const url = "https://11ty.github.io/kickstarter-api/build-awesome-pro.json";
   return Fetch(url, {
 		type: "json",
-		duration: "30m",
+		duration: "15m",
 	});
 }
