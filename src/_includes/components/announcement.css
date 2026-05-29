@@ -102,7 +102,7 @@
 .elv-footer-wrap .announcement {
 	background-color: color-mix(in oklab, var(--background-color), var(--btn-bg) 85%);
 }
-.announcement time-difference {
+.announcement .announcement-tag {
 	font-size: .75em;
 	text-transform: uppercase;
 	padding: .25em .75em;
