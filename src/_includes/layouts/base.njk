@@ -168,9 +168,12 @@ let eleventyComputed = {
 		<script src="/js/eleventy.js" type="module"></script>
 {%- endif %}
 
+{#
+		See also: `<is-land import>` in syntaxHighlightPlugin.js
 		<!-- Web Awesome -->
 		<link rel="stylesheet" href="/static/web-awesome/styles/themes/default.css" media="print" onload="this.media='all'" fetchpriority="low">
 		<script type="module" src="/static/web-awesome/webawesome.loader.js"></script>
+#}
 	</head>
 	<body>
 		{{ content | safe }}

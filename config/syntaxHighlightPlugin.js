@@ -31,7 +31,8 @@ function highlightCode(code, language, attrs = {}, options = {}) {
 	let [openTag, closeTag] = Boolean(attrs?.id) ? ["", ""] : [`<div class="syntax-highlight">`, "</div>"]
 	attrs.id ??=  `highlighted-source-${options.highlightCounter}`;
 
-	let preamble = `${copyButtonEnabled ? `<is-land on:visible data-wa-copy-button-target="${attrs.id}">
+	// When more Web Awesome components are in place, remove this `import` and re-enable Web Awesome script/link in base.njk
+	let preamble = `${copyButtonEnabled ? `<is-land on:visible data-wa-copy-button-target="${attrs.id}" import="/static/web-awesome/components/copy-button/copy-button.js">
 <wa-copy-button from="${attrs.id}" tooltip-placement="left"></wa-copy-button>
 </is-land>` : ""}`;
 
