@@ -92,22 +92,22 @@ You can pass in both the file’s `inputPath` and the Eleventy includes folder t
 <!-- TODO -->
 {% codetitle "eleventy.config.js" %}
 
-```js/1,5-8
+```diff-js
 		// some configuration truncated …
-    compile: function (inputContent, inputPath) {
-      let parsed = path.parse(inputPath);
++		compile: function (inputContent, inputPath) {
++			let { dir } = path.parse(inputPath);
 
-      let result = sass.compileString(inputContent, {
-        loadPaths: [
-          parsed.dir || ".",
-          this.config.dir.includes
-        ]
-      });
+			let result = sass.compileString(inputContent, {
++				loadPaths: [
++					dir || ".",
++					this.config.dir.includes
++				]
+			});
 
-      return (data) => {
-        return result.css;
-      };
-    }
+			return (data) => {
+				return result.css;
+			};
+		}
 ```
 
 Make special note of the `this.config.dir.includes` folder above. Declaring your includes folder means that you don’t need to prefix any file paths with the includes folder name (e.g. `_includes/_code.scss` can be consumed with `@use "code"`).
