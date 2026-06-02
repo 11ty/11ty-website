@@ -93,21 +93,22 @@ You can pass in both the file’s `inputPath` and the Eleventy includes folder t
 {% codetitle "eleventy.config.js" %}
 
 ```diff-js
-		// some configuration truncated …
-+		compile: function (inputContent, inputPath) {
-+			let { dir } = path.parse(inputPath);
+// some configuration omitted…
++compile: function (inputContent, inputPath) {
++	let { dir } = path.parse(inputPath);
 
-			let result = sass.compileString(inputContent, {
-+				loadPaths: [
-+					dir || ".",
-+					this.config.dir.includes
-+				]
-			});
+let result = sass.compileString(inputContent, {
++		loadPaths: [
++			dir || ".",
++			this.config.dir.includes
++		]
+	});
 
-			return (data) => {
-				return result.css;
-			};
-		}
+	return (data) => {
+		return result.css;
+	};
+}
+// …
 ```
 
 Make special note of the `this.config.dir.includes` folder above. Declaring your includes folder means that you don’t need to prefix any file paths with the includes folder name (e.g. `_includes/_code.scss` can be consumed with `@use "code"`).
@@ -123,17 +124,18 @@ To facilitate these features, if a template syntax allows use of other templates
 
 In our Sass example, this is exposed by Sass via the [`loadedUrls` property from the `compileString` function](https://sass-lang.com/documentation/js-api/interfaces/CompileResult), and you can see an example of how we register our dependencies in the `compile` method below:
 
-```js/4
-    // some configuration truncated …
-    compile: function (inputContent, inputPath) {
-      let result = sass.compileString(inputContent);
+```diff-js
+// some configuration omitted…
+compile: function (inputContent, inputPath) {
+	let result = sass.compileString(inputContent);
 
-      this.addDependencies(inputPath, result.loadedUrls);
++	this.addDependencies(inputPath, result.loadedUrls);
 
-      return async (data) => {
-        return result.css;
-      };
-    }
+	return async (data) => {
+		return result.css;
+	};
+}
+// …
 ```
 
 `addDependencies`’s first parameter is the parent template file path. The second parameter is an Array of child file paths used by the template. The dependencies can be either relative or absolute paths and we will normalize them as needed.
@@ -142,20 +144,21 @@ In our Sass example, this is exposed by Sass via the [`loadedUrls` property from
 
 To add support for Sass’ underscore convention (file names that start with an underscore aren’t written to the output directory), just return early in the `compile` function (don’t return a `render` function).
 
-```js/3-5
-    // some configuration truncated …
-    compile: async function (inputContent, inputPath) {
-      let parsed = path.parse(inputPath);
-      if(parsed.name.startsWith("_")) {
-        return;
-      }
+```diff-js
+// some configuration omitted…
+compile: async function (inputContent, inputPath) {
+	let parsed = path.parse(inputPath);
++	if(parsed.name.startsWith("_")) {
++		return;
++	}
 
-      let result = sass.compileString(inputContent);
+	let result = sass.compileString(inputContent);
 
-      return async (data) => {
-        return result.css;
-      };
-    }
+	return async (data) => {
+		return result.css;
+	};
+}
+// …
 ```
 
 Note that files inside of the `_includes` folder are left out of processing by default, so if you store your sass `@use`, `@forward`, and `@import` files in there you’ll get this for free (see the [Using `inputPath` example](#using-inputpath) above)!
