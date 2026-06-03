@@ -111,10 +111,14 @@
 }
 
 /* Progress bar */
-.announcement a[href] {
+.announcement:not(:has(.announcement-progress)) a[href] {
+	/* Change background color when no progress bar is active */
+	--btn-bg: #00a776;
+}
+.announcement:has(.announcement-progress) a[href] {
 	position: relative;
 }
-.announcement a[href] > :not(.announcement-progress) {
+.announcement:has(.announcement-progress) a[href] > :not(.announcement-progress) {
 	position: relative;
 	z-index: 1;
 }
