@@ -17,6 +17,8 @@ function isHostnameMatchTo(websiteUrl, filteredList = []) {
 	return false;
 }
 
+const ACTIVE_MINIMUM = 1.00000001;
+
 const CUMULATIVE_MINIMIUM = {
 	INDIVIDUAL: 55, // minimum total amount to show inactive logo
 	DEFAULT_AVATAR: 200, // minimum amount for default avatar (previously never shown)
@@ -181,7 +183,7 @@ export default async function () {
 					order.image ===
 					`https://images.opencollective.com/${order.slug}/avatar.png`;
 
-				order.showOnFacepile = order.isActive ||
+				order.showOnFacepile = order.isActive && order.amount.value >= ACTIVE_MINIMUM ||
 					order.accountType === "INDIVIDUAL" && order.totalAmountDonated > CUMULATIVE_MINIMIUM.INDIVIDUAL ||
 					order.accountType === "ORGANIZATION" && order.totalAmountDonated > CUMULATIVE_MINIMIUM.ORGANIZATION;
 
