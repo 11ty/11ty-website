@@ -8,15 +8,14 @@
 			<li><a href="/docs/">Get Started</a></li>
 			<li><a href="/blog/">Blog</a></li>
 			<li><a href="/docs/community/">Community</a></li>
-			{# <li><a href="/firehose/">Firehose</a></li> #}
-			{# <li><a href="https://conf.11ty.dev/" class= elv-externalexempt">Conference</a></li> #}
-			{# <li><a href="https://merch.11ty.dev/products/11ty-merch-bundle-2024-limited-edition" class="elv-externalexempt">Merch</a></li> #}
+			<li><a href="/docs/versions/"><code class="elv-header-version">v{{ npmVersions.latest }}</code></a></li>
 			<li>
 				<details-utils close-click-outside close-esc>
 					<details class="elv-popover">
 						<summary>Versions</summary>
 						<div>
 							<ul class="list-bare">
+								<li class="listitem-disabled"><code>v4</code> <small>Pre-release</small></li>
 								<li><a href="/docs/" class="elv-externalexempt"><code>v3</code> <small>Stable</small></a></li>
 								<li><a href="https://v2.11ty.dev/docs/" class="elv-externalexempt"><code>v2</code></a></li>
 								<li><a href="https://v1.11ty.dev/docs/" class="elv-externalexempt"><code>v1</code></a></li>
@@ -28,6 +27,9 @@
 					</details>
 				</details-utils>
 			</li>
+			{# <li><a href="/firehose/">Firehose</a></li> #}
+			{# <li><a href="https://conf.11ty.dev/" class= elv-externalexempt">Conference</a></li> #}
+			{# <li><a href="https://merch.11ty.dev/products/11ty-merch-bundle-2024-limited-edition" class="elv-externalexempt">Merch</a></li> #}
 			<li class="util-grow">
 				<disabled-form>
 					<form action="/docs/search/" class="util-stack">

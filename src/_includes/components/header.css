@@ -266,8 +266,6 @@ main h1.elv-hed {
 	z-index: 0;
 }
 
-/* Comparison component */
-
 .elv-mascot-image {
 	position: absolute;
 	bottom: 0;
@@ -275,4 +273,14 @@ main h1.elv-hed {
 	width: 100px;
 	height: auto;
 	filter: drop-shadow(3px 3px #0006);
+}
+
+.elv-header-version {
+	padding: .25em .75em;
+	border-radius: .25em;
+}
+@media (prefers-color-scheme: dark) {
+	.elv-header-version {
+		background-color: #1a1a1a;
+	}
 }

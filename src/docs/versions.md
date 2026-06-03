@@ -11,10 +11,11 @@ You can also browse the latest releases [on npm](https://www.npmjs.com/package/@
 ## Major Branches
 
 <ul>
-	<li class="inlinelist-item"><a href="https://www.11ty.dev/docs/"><code>www.11ty.dev</code></a> for <code>v3</code> (Latest, stable)</li>
-	<li class="inlinelist-item"><a href="https://v2.11ty.dev/docs/"><code>v2.11ty.dev</code></a></li>
-	<li class="inlinelist-item"><a href="https://v1.11ty.dev/docs/"><code>v1.11ty.dev</code></a></li>
-	<li class="inlinelist-item"><a href="https://v0.11ty.dev/docs/"><code>v0.11ty.dev</code></a></li>
+	<li class="listitem-disabled">Soon: <code>v4</code> (Currently in alpha)</li>
+	<li><a href="https://www.11ty.dev/docs/"><code>www.11ty.dev</code></a> for <code>v3</code> (Latest, stable)</li>
+	<li><a href="https://v2.11ty.dev/docs/"><code>v2.11ty.dev</code></a></li>
+	<li><a href="https://v1.11ty.dev/docs/"><code>v1.11ty.dev</code></a></li>
+	<li><a href="https://v0.11ty.dev/docs/"><code>v0.11ty.dev</code></a></li>
 </ul>
 
 ## Full Release History
@@ -35,7 +36,7 @@ _×{{ versions.length }} releases total since [November 26, 2017](https://github
 {%- set releaseInfo = githubReleases[ v.tag | normalizeVersion ] %}
     <tr>
       <td><code>{{ v.tag }}</code>{% if v.prerelease %} <span class="minilink">Prerelease</span>{% endif %}</td>
-			<td>{% if not v.prerelease and not v.tagOnly %}<a href="{% if v.docs_url %}{{ v.docs_url }}{% else %}https://github.com/11ty/eleventy/blob/{{ v.tag }}/README.md{% endif %}"><strong>Docs</strong></a>{% endif %}</td>
+			<td>{% if not v.prerelease and not v.tagOnly %}<a href="{{ v.docs_url }}"><strong>Docs</strong></a>{% endif %}</td>
 			<td>{% if releaseInfo.date %}<em>{{ releaseInfo.date | newsDate("yyyy LLL dd") }}</em>{% endif %}</td>
 			<td>{% if not v.ignore_release_notes %}<a href="https://github.com/11ty/eleventy/releases/tag/{{ v.tag }}">{% if v.tagOnly %}GitHub Tag{% else %}GitHub Release{% endif %}</a>{% endif %}</td>
     </tr>
