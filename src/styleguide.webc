@@ -153,8 +153,8 @@ layout: layouts/docs.njk
 
 <div class="elv-sg-component">
 <ul class="inlinelist">
-  <li class="inlinelist-item"><a href="/docs/glossary/#static-sites">Static Sites</a></li>
-  <li class="inlinelist-item"><a href="/docs/glossary/#jamstack">Jamstack</a></li>
+  <li><a href="/docs/glossary/#static-sites">Static Sites</a></li>
+  <li><a href="/docs/glossary/#jamstack">Jamstack</a></li>
 </ul>
 </div>
 
@@ -195,15 +195,6 @@ layout: layouts/docs.njk
 <h3>This <a href="#" class="buzzword">Buzzword</a> is in a header</h3>
 <div><a href="#" class="buzzword">Buzzword</a></div>
 <p><span class="buzzword">Buzzword</span></p>
-</div>
-
-<h3>Buzzword Lists</h3>
-
-<div class="elv-sg-component">
-<ul class="buzzword-list">
-  <li><a href="/docs/glossary/#static-sites">Static Sites</a></li>
-  <li><a href="/docs/glossary/#jamstack">Jamstack</a></li>
-</ul>
 </div>
 
 <h2>Callout</h2>
