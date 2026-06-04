@@ -6,7 +6,12 @@ eleventyNavigation:
 ---
 # Release History
 
-You can also browse the latest releases [on npm](https://www.npmjs.com/package/@11ty/eleventy?activeTab=versions) or [on GitHub](https://github.com/11ty/eleventy/releases).
+You can also browse the latest releases on:
+- [<i class="fa-brands fa-npm"></i>`npm`](https://www.npmjs.com/package/@11ty/eleventy?activeTab=versions)
+- [GitHub](https://github.com/11ty/eleventy/releases).
+- [`npmx`](https://npmx.dev/package/@11ty/eleventy)
+- [`node-modules.dev`](https://node-modules.dev/grid/depth#install=@11ty/eleventy)
+- [`socket.dev`](https://socket.dev/npm/package/@11ty/eleventy)
 
 ## Major Branches
 
