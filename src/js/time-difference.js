@@ -37,6 +37,10 @@ class TimeDifference extends HTMLElement {
 		return this.getAttribute("suffix");
 	}
 
+	get prefix() {
+		return this.getAttribute("prefix");
+	}
+
 	get intervalTimeout() {
 		// numeric override (seconds)
 		let attr = this.getAttribute("interval");
@@ -72,7 +76,7 @@ class TimeDifference extends HTMLElement {
 	}
 
 	static getText(dateStr, options = {}) {
-		let { units, locale, mode, suffix } = options;
+		let { units, locale, mode, suffix, prefix } = options;
 		let modes = (mode || "").split(",");
 
 		let date1;
@@ -115,8 +119,11 @@ class TimeDifference extends HTMLElement {
 		if(modes.includes("strip-prefix") && str?.toLowerCase().startsWith("in ")) {
 			str = str.slice(3);
 		}
+		if(modes.includes("strip-suffix") && str?.toLowerCase().endsWith(" ago")) {
+			str = str.slice(0, -4);
+		}
 
-		return str + (suffix ? ` ${suffix}` : "");
+		return (prefix || "") + str + (suffix || "");
 	}
 
 	isPaused() {
@@ -141,7 +148,8 @@ class TimeDifference extends HTMLElement {
 					units: this.units,
 					locale,
 					mode: this.mode,
-					suffix: this.suffix
+					prefix: this.prefix,
+					suffix: this.suffix,
 				});
 			})
 		});
