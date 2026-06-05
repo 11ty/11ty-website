@@ -171,8 +171,8 @@ Returns an array. Will match an arbitrary glob (or an array of globs) against th
 
 {% set codeContent %}
 export default function (eleventyConfig) {
-	eleventyConfig.addCollection("onlyMarkdown", function (collectionApi) {
-		return collectionApi.getFilteredByGlob("**/*.md");
+	eleventyConfig.addCollection("onlyMarkdown", function (collectionsApi) {
+		return collectionsApi.getFilteredByGlob("**/*.md");
 	});
 
 	eleventyConfig.addCollection("posts", function (collectionApi) {
