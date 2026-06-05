@@ -786,8 +786,13 @@ export default async function (eleventyConfig) {
 	});
 
 	eleventyConfig.addFilter("filterSupportersActive", (supporters) => {
+		// workaround a bug in the open collective API
+		const ALLOWED_SLUGS = [
+			"superluxuryreps"
+		];
+
 		return supporters.filter((supporter) => {
-			return supporter.status === "ACTIVE";
+			return ALLOWED_SLUGS.includes(supporter.slug) || supporter.status === "ACTIVE";
 		});
 	});
 

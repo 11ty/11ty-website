@@ -131,10 +131,6 @@
 .facepile-supporters [data-supporters-tier="silver-sponsor"] {
 	display: none;
 }
-[show-gold-sponsors] .facepile-supporters [data-supporters-tier="gold-sponsor"],
-[show-silver-sponsors] .facepile-supporters [data-supporters-tier="silver-sponsor"] {
-	display: inline-block;
-}
 
 .facepile > a:has(img.avatar:not([src])) {
 	display: none;

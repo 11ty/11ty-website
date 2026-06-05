@@ -25,6 +25,9 @@ const CUMULATIVE_MINIMIUM = {
 	ORGANIZATION: 999999, // minimum total amount to show inactive logo
 };
 
+// see also filterSupportersActive filter in config file
+const ALLOWED_EXCEPTIONS_OPENCOLLECTIVE_SLUGS = [];
+
 // These hostnames are not *linked to* but profiles are still shown.
 const BYPASSED_HOSTNAME_LINKS = [
 	"example.com",
@@ -37,7 +40,7 @@ const FILTERED_HOSTNAMES = [
 	"trustpilot.com",
 ];
 
-const FILTERED_OPENCOLLECTIVE_USERNAME_SLUGS = [
+const FILTERED_OPENCOLLECTIVE_SLUGS = [
 	"zach-leatherman", // me
 	"bca-account1", // website is buycheapaccounts.com
 	"baocasino", // gambling
@@ -100,19 +103,24 @@ function isMonthlyOrYearlyOrder(order) {
 function getUniqueContributors(orders, githubSponsorsAmount) {
 	let uniqueContributors = {};
 	for (let order of orders) {
-		if (uniqueContributors[order.slug]) {
-			// if order already exists, overwrite only if existing entry is not an active monthly contribution
-			if (isMonthlyOrYearlyOrder(uniqueContributors[order.slug])) {
-				if(isMonthlyOrYearlyOrder(order)) {
-					if(order.amount.value > uniqueContributors[order.slug].amount.value) {
-						uniqueContributors[order.slug] = order;
-						// console.log( "Multiple active Open Collective contributions tiers for (picked largest):", order.slug );
-					}
+		if (!uniqueContributors[order.slug]) {
+			uniqueContributors[order.slug] = order;
+			continue;
+		}
+
+		// if order already exists, overwrite only if existing entry is not an active monthly contribution
+		let isPreviousRecurring = isMonthlyOrYearlyOrder(uniqueContributors[order.slug]);
+		let isNewRecurring = isMonthlyOrYearlyOrder(order);
+		if (isPreviousRecurring) {
+			if(isNewRecurring) {
+				if(order.amount.value > uniqueContributors[order.slug].amount.value) {
+					// replace old with new if new amount is larger
+					uniqueContributors[order.slug] = order;
 				}
-			} else {
-				uniqueContributors[order.slug] = order;
 			}
+		// } else if(order.createdAt > uniqueContributors[order.slug].createdAt) {
 		} else {
+			// replace old with new
 			uniqueContributors[order.slug] = order;
 		}
 	}
@@ -183,7 +191,8 @@ export default async function () {
 					order.image ===
 					`https://images.opencollective.com/${order.slug}/avatar.png`;
 
-				order.showOnFacepile = order.isActive && order.amount.value >= ACTIVE_MINIMUM ||
+				order.showOnFacepile = ALLOWED_EXCEPTIONS_OPENCOLLECTIVE_SLUGS.includes(order.slug) ||
+					order.isActive && order.amount.value >= ACTIVE_MINIMUM ||
 					order.accountType === "INDIVIDUAL" && order.totalAmountDonated > CUMULATIVE_MINIMIUM.INDIVIDUAL ||
 					order.accountType === "ORGANIZATION" && order.totalAmountDonated > CUMULATIVE_MINIMIUM.ORGANIZATION;
 
@@ -238,7 +247,7 @@ export default async function () {
 			if(order.name?.toLowerCase() === "incognito" || order.slug?.toLowerCase()?.startsWith("incognito-")) {
 				return false;
 			}
-			if(FILTERED_OPENCOLLECTIVE_USERNAME_SLUGS.includes(order.slug)) {
+			if(FILTERED_OPENCOLLECTIVE_SLUGS.includes(order.slug)) {
 				return false;
 			}
 			return true;
