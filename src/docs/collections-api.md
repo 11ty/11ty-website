@@ -175,13 +175,13 @@ export default function (eleventyConfig) {
 		return collectionsApi.getFilteredByGlob("**/*.md");
 	});
 
-	eleventyConfig.addCollection("posts", function (collectionApi) {
-		return collectionApi.getFilteredByGlob("_posts/*.md");
+	eleventyConfig.addCollection("posts", function (collectionsApi) {
+		return collectionsApi.getFilteredByGlob("_posts/*.md");
 	});
 
-	eleventyConfig.addCollection("posts", function (collectionApi) {
+	eleventyConfig.addCollection("posts", function (collectionsApi) {
 		// Also accepts an array of globs!
-		return collectionApi.getFilteredByGlob(["posts/*.md", "notes/*.md"]);
+		return collectionsApi.getFilteredByGlob(["posts/*.md", "notes/*.md"]);
 	});
 };
 {% endset %}
