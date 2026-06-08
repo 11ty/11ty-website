@@ -49,6 +49,10 @@ hosts:
   - name: CloudRay
     url: https://cloudray.io/articles/how-to-deploy-your-eleventy-website
     screenshotSize: medium
+  - name: DeployHQ
+    url: https://www.deployhq.com/
+    screenshotSize: medium
+    description: Git-based deployment platform that runs your Eleventy build on its servers and transfers the <code>_site/</code> output to your own server via SSH/SFTP/FTP (or to S3, Azure Blob, or Rackspace Cloud Files). Supports multiple environments with branch-to-server mapping, config-file injection, atomic releases, one-click rollback, and pre/post deploy hooks.
 classicHosts:
   - name: Vercel CLI
     url: https://vercel.com/cli
