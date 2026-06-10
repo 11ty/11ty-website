@@ -30,7 +30,7 @@
 @media (prefers-color-scheme: dark) {
 	.announcement,
 	.announcement-btn {
-		--btn-bg: #00a776;
+		--btn-bg: #007150;
 		--btn-color: #f0f1f3;
 		--btn-shadow-color: #165b46;
 	}
@@ -111,10 +111,6 @@
 }
 
 /* Progress bar */
-.announcement:not(:has(.announcement-progress)) a[href] {
-	/* Change background color when no progress bar is active */
-	--btn-bg: #00a776;
-}
 .announcement:has(.announcement-progress) a[href] {
 	position: relative;
 }
