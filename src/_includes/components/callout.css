@@ -219,10 +219,6 @@ body > .elv-callout-sticky .elv-callout-c {
 		flex-direction: row;
 		flex-wrap: wrap;
 	}
-	.elv-toc .elv-callout-label,
-	.elv-toc .elv-callout-c {
-		padding-inline-start: 1.25rem; /* 20px /16 */
-	}
 	.elv-toc .elv-callout:first-child:has(+ .elv-callout) .elv-callout-c {
 		padding-inline-start: 1rem;
 		padding-block: .5rem;
