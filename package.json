@@ -5,7 +5,7 @@
   "description": "The website at 11ty.dev",
   "type": "module",
   "engines": {
-    "node": ">=18"
+    "node": ">=22.15"
   },
   "scripts": {
     "check-links": "npx check-html-links _site",
@@ -42,7 +42,7 @@
     ]
   },
   "devDependencies": {
-    "@11ty/eleventy": "4.0.0-alpha.7",
+    "@11ty/eleventy": "4.0.0-alpha.8",
     "@11ty/eleventy-activity-feed": "^2.0.0",
     "@11ty/eleventy-fetch": "^5.1.2",
     "@11ty/eleventy-img": "7.0.0-alpha.4",
@@ -88,5 +88,8 @@
     "artificial-chart": "^2.0.3",
     "lite-youtube-embed": "^0.3.4",
     "speedlify-score": "^4.0.4"
+  },
+  "overrides": {
+    "@11ty/eleventy-img": "7.0.0-alpha.4"
   }
 }
