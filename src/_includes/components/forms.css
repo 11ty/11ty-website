@@ -38,11 +38,19 @@ input[type="checkbox"] {
 	margin: 0;
 	padding: 0.5em 1em 0.4em;
 	box-shadow: 0 8px 6px -6px #000;
+	border-color: rgba(0,0,0,.8);
+}
+@media (prefers-color-scheme: dark) {
+	.btn-primary {
+		border-color: rgba(255,255,255,.8);
+	}
+}
+.btn-primary:is(:hover, :focus) {
+	border-color: rgba(255,255,255,.3);
 }
 
 .btn-form:hover,
-.btn-form:focus,
-.btn-primary:hover {
+.btn-form:focus {
 	border-color: transparent;
 	background-color: #222;
 	color: #fff;
@@ -54,12 +62,7 @@ input[type="checkbox"] {
 		color: #222;
 	}
 }
-.btn-primary:hover {
-	border-color: rgba(255, 255, 255, 0.3);
-}
-.btn-primary span {
-	text-transform: none;
-}
+
 .btn-c {
 	margin-left: auto;
 	margin-right: auto;

@@ -9,9 +9,8 @@ a.btn-primary {
 	a.btn-primary,
 	a.btn-primary[href],
 	a.btn-primary:visited {
-		background-color: #fff;
-		color: #222;
-		border-color: #ccc;
+		background-color: #222;
+		color: #fff;
 	}
 }
 a.btn-primary:hover {
@@ -40,4 +39,4 @@ a.btn-primary:hover {
 }
 </style>
 
-<a href="/docs/" class="btn-primary benchnine rainbow-active rainbow-active-noanim">Documentation</a>
+<a href="/docs/" class="btn-primary benchnine rainbow-active">Documentation</a>

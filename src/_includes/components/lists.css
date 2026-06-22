@@ -98,8 +98,11 @@ a.buzzword {
 	background-size: 1200% 1200%;
 	background-position: 2% 80%;
 	color: #fff;
-	text-shadow: 0 0 2px rgba(0, 0, 0, 0.9);
 	animation: rainbow 4s ease-out alternate infinite;
+}
+.inlinelist > li:is(:hover, :focus),
+.buzzword:is(:hover, :focus) {
+	text-shadow: 0 0 2px rgba(0, 0, 0, 0.9);
 }
 .inlinelist > li.inert {
 	background-color: transparent;
