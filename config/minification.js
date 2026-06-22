@@ -1,4 +1,5 @@
-import CleanCSS from "clean-css";
+import { transform } from 'lightningcss';
+
 import { minify } from "terser";
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { parse } from "node:path";
@@ -32,12 +33,18 @@ export default function (eleventyConfig) {
 		return `/* [11ty-website] minification skipped during dev mode */\n${code}`;
 	});
 
-	eleventyConfig.addFilter("cssmin", function (code) {
+	eleventyConfig.addFilter("cssmin", function (inputCode) {
 		if (process.env.NODE_ENV === "production") {
-			return new CleanCSS({}).minify(code).styles;
+			let { code } = transform({
+				// filename: undefined,
+				code: Buffer.from(inputCode),
+				minify: true,
+				sourceMap: false
+			});
+			return code;
 		}
 
-		return `/* [11ty-website] minification skipped during dev mode */\n${code}`;
+		return `/* [11ty-website] minification skipped during dev mode */\n${inputCode}`;
 	});
 }
 
