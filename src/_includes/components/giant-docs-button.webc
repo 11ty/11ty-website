@@ -5,12 +5,13 @@ a.btn-primary {
 	border-width: .3em;
 }
 
+a.btn-primary:any-link {
+	background-color: #fff;
+}
+
 @media (prefers-color-scheme: dark) {
-	a.btn-primary,
-	a.btn-primary[href],
-	a.btn-primary:visited {
+	a.btn-primary:any-link {
 		background-color: #222;
-		color: #fff;
 	}
 }
 a.btn-primary:hover {
@@ -32,9 +33,6 @@ a.btn-primary:hover {
 		left: 0;
 		right: 0;
 		z-index: 10;
-	}
-	:host-context(html:not(:has(:focus-visible))) .btn-primary {
-		background-color: #fff;
 	}
 }
 </style>
