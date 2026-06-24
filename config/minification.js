@@ -1,5 +1,4 @@
 import { transform } from 'lightningcss';
-
 import { minify } from "terser";
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { parse } from "node:path";
@@ -12,7 +11,7 @@ export async function minifyJavaScriptFile(source, target) {
 		recursive: true
 	});
 
-	if (process.env.NODE_ENV === "production") {
+	if (process.env.ELEVENTY_RUN_MODE === "build") {
 		let minified = await minifyJavaScript(contents);
 		writeFileSync(target, minified, "utf8")
 	} else {
@@ -26,7 +25,7 @@ export async function minifyJavaScript(code) {
 
 export default function (eleventyConfig) {
 	eleventyConfig.addFilter("jsmin", async function(code) {
-		if (process.env.NODE_ENV === "production") {
+		if (process.env.ELEVENTY_RUN_MODE === "build") {
 			return minifyJavaScript(code);
 		}
 
@@ -34,7 +33,7 @@ export default function (eleventyConfig) {
 	});
 
 	eleventyConfig.addFilter("cssmin", function (inputCode) {
-		if (process.env.NODE_ENV === "production") {
+		if (process.env.ELEVENTY_RUN_MODE === "build") {
 			let { code } = transform({
 				// filename: undefined,
 				code: Buffer.from(inputCode),
