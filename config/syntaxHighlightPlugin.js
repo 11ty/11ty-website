@@ -75,9 +75,11 @@ export default function(eleventyConfig) {
 
 	// This wires up Markdown’s triple-tick syntax
 	eleventyConfig.amendLibrary("md", (mdLib) => {
+		let o = Object.assign({}, HIGHLIGHT_OPTIONS);
+		o.trim = false;
 		mdLib.set({
 			highlight: function(code, language) {
-				return syntaxHighlightFunction(code, language, "", HIGHLIGHT_OPTIONS);
+				return syntaxHighlightFunction(code, language, "", o);
 			}
 		})
 	});
