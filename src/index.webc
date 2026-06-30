@@ -110,7 +110,7 @@ tags: posts
 			<is-land on:visible on:save-data="false">
 				<logo-cloud></logo-cloud>
 			</is-land>
-			<small>Eleventy has been downloaded <span @text="commaNumber($data.npm.downloads)"></span> times and is used on <a href="https://github.com/11ty/eleventy/network/dependents">82,000+ repositories on GitHub</a></a>.</small>
+			<small>Eleventy has been downloaded <span @text="commaNumber($data.npm.downloads)"></span> times and is used on <a href="https://github.com/11ty/eleventy/network/dependents?package_id=UGFja2FnZS00NjY3NjEyNjg%3D">88,000+ repositories on GitHub</a></a>.</small>
 		</li>
 		<li>
 			Eleventy offers <strong>full control over your project’s output</strong>. <a href="https://www.youtube.com/watch?v=b4frtsT4Cgo">We don’t inject our own markup into your pages</a>.
