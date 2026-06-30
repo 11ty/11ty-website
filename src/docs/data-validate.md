@@ -18,16 +18,15 @@ In the following example, each content template with an `eleventyDataSchema` cal
 
 {%- set codeBlock %}{% raw %}
 import { z } from "zod";
-import { fromZodError } from 'zod-validation-error';
 
 export default {
 	eleventyDataSchema: function(data) {
 		let result = z.object({
-			draft: z.boolean().or(z.undefined()),
+			draft: z.optional(z.boolean())
 		}).safeParse(data);
 
 		if(result.error) {
-			throw fromZodError(result.error);
+			throw new Error(z.prettifyError(result.error));
 		}
 	}
 };
