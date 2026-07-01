@@ -254,4 +254,4 @@ If you’re distributing your plugin as a package, consider following these conv
 
 - Add `"eleventy-plugin"` to your package.json’s `keywords` field.
 - Prefix your package name with `eleventy-plugin-`
-- Open a PR to add your plugin to our [list of community plugins](https://github.com/11ty/11ty-website/tree/main/src/_data/plugins) for publication on [our community plugins directory](/docs/plugins/community.md).
+- Open a PR to add your plugin to our [list of community plugins](https://github.com/11ty/docs/tree/main/src/_data/plugins) for publication on [our community plugins directory](/docs/plugins/community.md).

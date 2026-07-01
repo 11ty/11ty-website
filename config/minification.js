@@ -15,7 +15,7 @@ export async function minifyJavaScriptFile(source, target) {
 		let minified = await minifyJavaScript(contents);
 		writeFileSync(target, minified, "utf8")
 	} else {
-		writeFileSync(target, `/* [11ty-website] minification skipped during dev mode */\n${contents}`, "utf8")
+		writeFileSync(target, `/* [11ty/docs] minification skipped during dev mode */\n${contents}`, "utf8")
 	}
 }
 
@@ -29,7 +29,7 @@ export default function (eleventyConfig) {
 			return minifyJavaScript(code);
 		}
 
-		return `/* [11ty-website] minification skipped during dev mode */\n${code}`;
+		return `/* [11ty/docs] minification skipped during dev mode */\n${code}`;
 	});
 
 	eleventyConfig.addFilter("cssmin", function (inputCode) {
@@ -43,7 +43,7 @@ export default function (eleventyConfig) {
 			return code;
 		}
 
-		return `/* [11ty-website] minification skipped during dev mode */\n${inputCode}`;
+		return `/* [11ty/docs] minification skipped during dev mode */\n${inputCode}`;
 	});
 }
 

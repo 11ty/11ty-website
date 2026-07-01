@@ -17,7 +17,7 @@ eleventyNavigation:
   </div>
 </div>
 
-[Add your own starter project](https://github.com/11ty/11ty-website/tree/main/src/_data/starters). Community contributions are shown in random order.
+[Add your own starter project](https://github.com/11ty/docs/tree/main/src/_data/starters). Community contributions are shown in random order.
 
 <div class="sites-vert sites-vert--lg">
   <div class="lo-grid" style="--fl-gap-v: 5em;">

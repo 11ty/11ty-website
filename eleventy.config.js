@@ -592,7 +592,7 @@ export default async function (eleventyConfig) {
 	});
 
 	eleventyConfig.addShortcode("addToSampleSites", function () {
-		return `<a href="https://github.com/11ty/11ty-website/issues/new/choose"><strong>Want to add your site to this list?</strong></a>`;
+		return `<a href="https://github.com/11ty/docs/issues/new/choose"><strong>Want to add your site to this list?</strong></a>`;
 	});
 
 	function testimonialNameHtml(testimonial) {

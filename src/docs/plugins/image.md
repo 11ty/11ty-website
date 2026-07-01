@@ -487,7 +487,7 @@ The metadata object returned will not include `filename` or `outputPath` propert
 }
 ```
 
-- [_Example on `11ty-website`_](https://github.com/11ty/11ty-website/blob/516faa397a98f8990f3d02eb41e1c99bedfab9cf/.eleventy.js#L105)
+- [_Example on `11ty/docs`_](https://github.com/11ty/docs/blob/516faa397a98f8990f3d02eb41e1c99bedfab9cf/.eleventy.js#L105)
 
 #### Stats Only
 
