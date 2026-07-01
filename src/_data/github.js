@@ -1,7 +1,7 @@
 import "dotenv/config";
 import Fetch from "@11ty/eleventy-fetch";
 
-const CACHE_DURATION = process.env.ELEVENTY_RUN_MODE === "serve" ? "7d" : "6h";
+const CACHE_DURATION = process.env.ELEVENTY_RUN_MODE === "serve" ? "7d" : "30m";
 
 export default async function () {
 	try {
