@@ -137,7 +137,8 @@ main {
 	font-size: 1.125em; /* 18px /16 */
 }
 main img {
-	max-width: 100%;
+	max-inline-size: 100%;
+	block-size: auto;
 }
 main img[height] {
 	height: auto;
