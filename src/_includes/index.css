@@ -384,6 +384,7 @@ dl:last-child {
 }
 .elv-toc dl {
 	line-height: 1.6;
+	gap: 0 0.9375em; /* 15px /16 */
 }
 
 /* Skip to links */
